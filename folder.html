@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    .content {
+      text-align: left;
+    }
+    .centered-link {
+      display: block;
+      text-align: center;
+      margin: 20px 0;
+    }
+    a, button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      border: none;
+    }
+    a:hover, button:hover {
+      background-color: #45a049;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+    .small-text {
+      font-size: 0.8em; /* Smaller font size */
+      color: #555; /* Optional: adjust color for readability */
+    }
+    .centered-italic {
+      text-align: center;
+      font-style: italic;
+      font-size: 0.7em;
+      color: #666;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+
+    <h2 id="title"></h2>
+    <p id="errorMessage" class="error"></p>
+
+    <p class="centered-italic">Folder-<span id="inviteCodeDisplay"></span></p>
+
+    <p>To access the folder, please follow the instructions below.</p>
+
+    <h3>6180 Not Installed</h3>
+    <p>Click the button below to copy your invite code and download the app.</p>
+    <div class="centered-link">
+      <button onclick="copyAndNavigateDownload()">Copy Invite and Download App</button>
+    </div>
+    <p id="copyMessage"></p>
+
+    <h3>6180 Installed</h3>
+    <p>If you already have the 6180 app installed, click the button below to copy and use your invite code.</p>
+    <div class="centered-link">
+      <!-- Updated button label -->
+      <button onclick="copyAndNavigateInviteCode()">Copy and Use Invite Code</button>
+    </div>
+    <p id="inviteActionMessage"></p> <!-- Updated ID for displaying message -->
+
+    <script>
+      let hasErrors = false;
+    
+      function isValidName(name) {
+        const namePattern = /^[A-Za-z0-9-]+$/;
+        return namePattern.test(name);
+      }
+    
+      function getTimeFromUUIDv1(uuid) {
+        if (!uuid || uuid.length < 13) return null;
+    
+        const uuidTimestamp = uuid.substring(0, 13);
+        const uuidEpoch = 122192928000000000;
+        const timestampIn100Ns = parseInt(uuidTimestamp, 16);
+        const timestampInMs = (timestampIn100Ns - uuidEpoch) / 10000;
+    
+        const date = new Date(timestampInMs);
+
+        if (date.getFullYear() < 1900) {
+          return null;
+        }
+    
+        return date;
+        
+      }
+    
+      function getPositionalUrlParameters() {
+        const queryString = window.location.search.substring(1);
+        const params = queryString.split("+");
+    
+        return {
+          name: params[0] || 'User',
+          inviteCode: params[1] || ''
+        };
+      }
+    
+      function setTitle(name, dateTime) {
+        document.getElementById('title').textContent = `${name} uploaded a folder to the 6180 app at ${dateTime}`;
+      }
+    
+      function copyAndNavigateDownload() {
+        const params = getPositionalUrlParameters();
+    
+        if (params.inviteCode && !hasErrors) {
+          navigator.clipboard.writeText(`Folder-${params.inviteCode}`)
+            .then(() => {
+              document.getElementById('copyMessage').innerHTML = "<em>Invitation copied. Redirecting to the app store...</em>";
+              window.location.href = "https://apps.apple.com/app/6180/id6468679610";  // Redirect to App Store
+            })
+            .catch(() => {
+              document.getElementById('copyMessage').textContent = "Failed to copy the invite code.";
+            });
+        } else {
+          document.getElementById('copyMessage').textContent = "Error: Invalid or missing invite code.";
+        }
+      }
+    
+      function copyAndNavigateInviteCode() {
+        const params = getPositionalUrlParameters();
+        
+        if (params.inviteCode && !hasErrors) {
+          const deepLink = `i6180://folder/Folder-${params.inviteCode}`;
+
+          navigator.clipboard.writeText(deepLink)
+            .then(() => {
+              // Display the success message under the button
+              document.getElementById('inviteActionMessage').innerHTML = "<em>Your invite code has been copied. To use it, open the People tab on 6180. Then, click the top right 'Open Invite'.</em>";
+              
+              // Ensure the deep link can be accessed again
+              setTimeout(() => {
+                window.location.href = deepLink;
+              }, 500); // Allow some delay for smooth transition
+              
+            })
+            .catch(() => {
+              document.getElementById('inviteActionMessage').textContent = "Failed to copy the invite code.";
+            });
+        } else {
+          document.getElementById('inviteActionMessage').textContent = "Error: Invalid or missing invite code.";
+        }
+      }
+      
+      (function initializePage() {
+        const params = getPositionalUrlParameters();
+        const uuidDateTime = getTimeFromUUIDv1(params.inviteCode.split(':')[0]); // Use the first part of the inviteCode before ':'
+        let dateTime;
+    
+        if (uuidDateTime) {
+          dateTime = uuidDateTime;
+        } else {
+          const now = new Date();
+          dateTime = new Date(now.getTime() - (6 * 60 * 1000 + 18 * 1000));
+        }
+    
+        if (!hasErrors) {
+          setTitle(params.name, dateTime.toLocaleString());
+        }
+    
+        if (params.inviteCode) {
+          document.getElementById('inviteCodeDisplay').textContent = params.inviteCode;
+        } else {
+          document.getElementById('inviteCodeDisplay').textContent = "No invite code provided";
+        }
+      })();
+    </script>
+  </div>
+</body>
+</html>
