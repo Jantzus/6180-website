@@ -49,7 +49,7 @@
     <h2 id="title"></h2>
     <p id="errorMessage" class="error"></p>
 
-    <p class="centered-italic">Invite-<span id="inviteCodeDisplay"></span></p>
+    <p class="centered-italic">Message-<span id="inviteCodeDisplay"></span></p>
 
     <p id="instructions"></p>
 
@@ -72,35 +72,373 @@
 
       function getBrowserLanguage() {
         const lang = navigator.language || navigator.userLanguage;
-        return lang.startsWith('zh') ? 'zh-Hans' : 'en';  // Check for Simplified Chinese
+        const languageMap = {
+          "zh-CN": "zh-Hans",  // Simplified Chinese (Mainland China)
+          "zh-SG": "zh-Hans",  // Simplified Chinese (Singapore)
+          "zh-Hans": "zh-Hans",  // Generic Simplified Chinese
+          "zh-TW": "zh-Hant",  // Traditional Chinese (Taiwan)
+          "zh-HK": "zh-Hant",  // Traditional Chinese (Hong Kong)
+          "zh-Hant": "zh-Hant",  // Generic Traditional Chinese
+          "da": "da",  // Danish
+          "da-DK": "da",  // Danish (Denmark)
+          "nl": "nl",  // Dutch
+          "nl-NL": "nl",  // Dutch (Netherlands)
+          "nl-BE": "nl",  // Dutch (Belgium)
+          "fi": "fi",  // Finnish
+          "fi-FI": "fi",  // Finnish (Finland)
+          "fr": "fr",  // French
+          "fr-FR": "fr",  // French (France)
+          "fr-CA": "fr",  // French (Canada)
+          "de": "de",  // German
+          "de-DE": "de",  // German (Germany)
+          "de-AT": "de",  // German (Austria)
+          "de-CH": "de",  // German (Switzerland)
+          "el": "el",  // Greek
+          "el-GR": "el",  // Greek (Greece)
+          "he": "he",  // Hebrew
+          "he-IL": "he",  // Hebrew (Israel)
+          "hi": "hi",  // Hindi
+          "hi-IN": "hi",  // Hindi (India)
+          "hu": "hu",  // Hungarian
+          "hu-HU": "hu",  // Hungarian (Hungary)
+          "id": "id",  // Indonesian
+          "id-ID": "id",  // Indonesian (Indonesia)
+          "it": "it",  // Italian
+          "it-IT": "it",  // Italian (Italy)
+          "it-CH": "it",  // Italian (Switzerland)
+          "ja": "ja",  // Japanese
+          "ja-JP": "ja",  // Japanese (Japan)
+          "ko": "ko",  // Korean
+          "ko-KR": "ko",  // Korean (South Korea)
+          "ms": "ms",  // Malay
+          "ms-MY": "ms",  // Malay (Malaysia)
+          "nb": "nb",  // Norwegian Bokmål
+          "nb-NO": "nb",  // Norwegian Bokmål (Norway)
+          "pl": "pl",  // Polish
+          "pl-PL": "pl",  // Polish (Poland)
+          "pt-BR": "pt-BR",  // Portuguese (Brazil)
+          "pt-PT": "pt-PT",  // Portuguese (Portugal)
+          "ro": "ro",  // Romanian
+          "ro-RO": "ro",  // Romanian (Romania)
+          "ru": "ru",  // Russian
+          "ru-RU": "ru",  // Russian (Russia)
+          "sk": "sk",  // Slovak
+          "sk-SK": "sk",  // Slovak (Slovakia)
+          "es": "es",  // Spanish
+          "es-ES": "es",  // Spanish (Spain)
+          "es-MX": "es",  // Spanish (Mexico)
+          "es-US": "es",  // Spanish (United States)
+          "sv": "sv",  // Swedish
+          "sv-SE": "sv",  // Swedish (Sweden)
+          "th": "th",  // Thai
+          "th-TH": "th",  // Thai (Thailand)
+          "tr": "tr",  // Turkish
+          "tr-TR": "tr",  // Turkish (Turkey)
+          "uk": "uk",  // Ukrainian
+          "uk-UA": "uk",  // Ukrainian (Ukraine)
+          "vi": "vi",  // Vietnamese
+          "vi-VN": "vi"  // Vietnamese (Vietnam)
+        };
+
+        return languageMap[lang] || 'en';  // Default to English if language is not found
+        
       }
 
       function setTranslations(language) {
         const translations = {
-          en: {
-            title: " uploaded memories to the 6180 app at ",
-            instructions: "To access them, please follow the instructions below.",
-            appNotInstalledTitle: "6180 Not Installed",
-            appNotInstalledInstructions: "Click the button below to copy your invite code and download the app.",
-            downloadButton: "Copy Invite and Download App",
-            appInstalledTitle: "6180 Installed",
-            appInstalledInstructions: "If you already have the 6180 app installed, click the button below to copy and use your invite code.",
-            inviteButton: "Copy and Use Invite Code"
+          "en": {
+            "titleTemplate": "{name} uploaded memories to the 6180 app at {time}",
+            "instructions": "To access them, please follow the instructions below.",
+            "appNotInstalledTitle": "6180 Not Installed",
+            "appNotInstalledInstructions": "Click the button below to copy your invite code and download the app.",
+            "downloadButton": "Copy Invite and Download App",
+            "appInstalledTitle": "6180 Installed",
+            "appInstalledInstructions": "If you already have the 6180 app installed, click the button below to copy and use your invite code.",
+            "inviteButton": "Copy and Use Invite Code"
           },
           "zh-Hans": {
-            title: " 在 6180 应用程序中上传了回忆，上传时间为 ",
-            instructions: "要访问这些内容，请按照以下说明进行操作。",
-            appNotInstalledTitle: "未安装 6180",
-            appNotInstalledInstructions: "点击下面的按钮复制邀请代码并下载应用程序。",
-            downloadButton: "复制邀请并下载应用程序",
-            appInstalledTitle: "已安装 6180",
-            appInstalledInstructions: "如果您已安装 6180 应用程序，请点击下面的按钮复制并使用邀请代码。",
-            inviteButton: "复制并使用邀请代码"
+            "titleTemplate": "{name} 在 6180 应用程序中上传了回忆，上传时间为 {time}",
+            "instructions": "要访问这些内容，请按照以下说明进行操作。",
+            "appNotInstalledTitle": "未安装 6180",
+            "appNotInstalledInstructions": "点击下面的按钮复制邀请代码并下载应用程序。",
+            "downloadButton": "复制邀请并下载应用程序",
+            "appInstalledTitle": "已安装 6180",
+            "appInstalledInstructions": "如果您已安装 6180 应用程序，请点击下面的按钮复制并使用邀请代码。",
+            "inviteButton": "复制并使用邀请代码"
+          },
+          "zh-Hant": {
+            "titleTemplate": "{name} 在 6180 應用程式中上傳了回憶，上傳時間為 {time}",
+            "instructions": "要訪問這些內容，請按照以下說明進行操作。",
+            "appNotInstalledTitle": "未安裝 6180",
+            "appNotInstalledInstructions": "點擊下面的按鈕複製邀請代碼並下載應用程式。",
+            "downloadButton": "複製邀請並下載應用程式",
+            "appInstalledTitle": "已安裝 6180",
+            "appInstalledInstructions": "如果您已安裝 6180 應用程式，請點擊下面的按鈕複製並使用邀請代碼。",
+            "inviteButton": "複製並使用邀請代碼"
+          },
+          "nl": {
+            "titleTemplate": "{name} uploadde herinneringen naar de 6180-app op {time}",
+            "instructions": "Om toegang te krijgen, volg de onderstaande instructies.",
+            "appNotInstalledTitle": "6180 Niet Geïnstalleerd",
+            "appNotInstalledInstructions": "Klik op de knop hieronder om je uitnodigingscode te kopiëren en de app te downloaden.",
+            "downloadButton": "Kopieer Uitnodiging en Download App",
+            "appInstalledTitle": "6180 Geïnstalleerd",
+            "appInstalledInstructions": "Als je de 6180-app al hebt geïnstalleerd, klik op de knop hieronder om je uitnodigingscode te kopiëren en te gebruiken.",
+            "inviteButton": "Kopieer en Gebruik Uitnodigingscode"
+          },
+          "fi": {
+            "titleTemplate": "{name} latasi muistoja 6180-sovellukseen klo {time}",
+            "instructions": "Päästäksesi niihin, noudata alla olevia ohjeita.",
+            "appNotInstalledTitle": "6180 Ei Asennettu",
+            "appNotInstalledInstructions": "Kopioi kutsukoodisi ja lataa sovellus alla olevasta painikkeesta.",
+            "downloadButton": "Kopioi Kutsu ja Lataa Sovellus",
+            "appInstalledTitle": "6180 Asennettu",
+            "appInstalledInstructions": "Jos olet jo asentanut 6180-sovelluksen, kopioi ja käytä kutsukoodia alla olevasta painikkeesta.",
+            "inviteButton": "Kopioi ja Käytä Kutsukoodia"
+          },
+          "fr": {
+            "titleTemplate": "{name} a téléchargé des souvenirs sur l'application 6180 à {time}",
+            "instructions": "Pour y accéder, veuillez suivre les instructions ci-dessous.",
+            "appNotInstalledTitle": "6180 Non Installé",
+            "appNotInstalledInstructions": "Cliquez sur le bouton ci-dessous pour copier votre code d'invitation et télécharger l'application.",
+            "downloadButton": "Copier l'Invitation et Télécharger l'Application",
+            "appInstalledTitle": "6180 Installé",
+            "appInstalledInstructions": "Si vous avez déjà installé l'application 6180, cliquez sur le bouton ci-dessous pour copier et utiliser votre code d'invitation.",
+            "inviteButton": "Copier et Utiliser le Code d'Invitation"
+          },
+          "de": {
+            "titleTemplate": "{name} hat Erinnerungen in die 6180-App hochgeladen um {time}",
+            "instructions": "Um darauf zuzugreifen, folgen Sie bitte den untenstehenden Anweisungen.",
+            "appNotInstalledTitle": "6180 Nicht Installiert",
+            "appNotInstalledInstructions": "Klicken Sie auf die Schaltfläche unten, um Ihren Einladungscode zu kopieren und die App herunterzuladen.",
+            "downloadButton": "Einladung Kopieren und App Herunterladen",
+            "appInstalledTitle": "6180 Installiert",
+            "appInstalledInstructions": "Wenn Sie die 6180-App bereits installiert haben, klicken Sie auf die Schaltfläche unten, um Ihren Einladungscode zu kopieren und zu verwenden.",
+            "inviteButton": "Einladungscode Kopieren und Verwenden"
+          },
+          "el": {
+            "titleTemplate": "{name} ανέβασε αναμνήσεις στην εφαρμογή 6180 στις {time}",
+            "instructions": "Για να τις αποκτήσετε, ακολουθήστε τις παρακάτω οδηγίες.",
+            "appNotInstalledTitle": "6180 Δεν Εγκαταστάθηκε",
+            "appNotInstalledInstructions": "Κάντε κλικ στο παρακάτω κουμπί για να αντιγράψετε τον κωδικό πρόσκλησής σας και να κατεβάσετε την εφαρμογή.",
+            "downloadButton": "Αντιγραφή Πρόσκλησης και Λήψη Εφαρμογής",
+            "appInstalledTitle": "6180 Εγκαταστάθηκε",
+            "appInstalledInstructions": "Αν έχετε ήδη εγκαταστήσει την εφαρμογή 6180, κάντε κλικ στο παρακάτω κουμπί για να αντιγράψετε και να χρησιμοποιήσετε τον κωδικό πρόσκλησής σας.",
+            "inviteButton": "Αντιγραφή και Χρήση Κωδικού Πρόσκλησης"
+          },
+          "he": {
+            "titleTemplate": "{name} העלה זיכרונות לאפליקציית 6180 בשעה {time}",
+            "instructions": "כדי לגשת אליהם, אנא עקוב אחר ההוראות להלן.",
+            "appNotInstalledTitle": "6180 לא מותקן",
+            "appNotInstalledInstructions": "לחץ על הכפתור למטה כדי להעתיק את קוד ההזמנה שלך ולהוריד את האפליקציה.",
+            "downloadButton": "העתק את ההזמנה והורד את האפליקציה",
+            "appInstalledTitle": "6180 מותקן",
+            "appInstalledInstructions": "אם כבר התקנת את אפליקציית 6180, לחץ על הכפתור למטה כדי להעתיק ולהשתמש בקוד ההזמנה שלך.",
+            "inviteButton": "העתק ושימוש בקוד ההזמנה"
+          },
+          "hi": {
+            "titleTemplate": "{name} ने 6180 ऐप पर यादें अपलोड कीं {time} पर",
+            "instructions": "उन्हें एक्सेस करने के लिए, कृपया नीचे दिए गए निर्देशों का पालन करें।",
+            "appNotInstalledTitle": "6180 इंस्टॉल नहीं है",
+            "appNotInstalledInstructions": "नीचे दिए गए बटन पर क्लिक करें, अपना निमंत्रण कोड कॉपी करें और ऐप डाउनलोड करें।",
+            "downloadButton": "निमंत्रण कॉपी करें और ऐप डाउनलोड करें",
+            "appInstalledTitle": "6180 इंस्टॉल हो गया है",
+            "appInstalledInstructions": "यदि आपने पहले से 6180 ऐप इंस्टॉल कर लिया है, तो अपना निमंत्रण कोड कॉपी और उपयोग करने के लिए नीचे दिए गए बटन पर क्लिक करें।",
+            "inviteButton": "निमंत्रण कोड कॉपी करें और उपयोग करें"
+          },
+          "hu": {
+            "titleTemplate": "{name} emlékeket töltött fel a 6180 alkalmazásba ekkor: {time}",
+            "instructions": "Az eléréshez kövesse az alábbi utasításokat.",
+            "appNotInstalledTitle": "6180 Nincs Telepítve",
+            "appNotInstalledInstructions": "Kattintson az alábbi gombra a meghívókód másolásához és az alkalmazás letöltéséhez.",
+            "downloadButton": "Meghívó Másolása és Alkalmazás Letöltése",
+            "appInstalledTitle": "6180 Telepítve",
+            "appInstalledInstructions": "Ha már telepítette a 6180 alkalmazást, kattintson az alábbi gombra a meghívókód másolásához és használatához.",
+            "inviteButton": "Meghívókód Másolása és Használata"
+          },
+          "id": {
+            "titleTemplate": "{name} mengunggah kenangan ke aplikasi 6180 pada {time}",
+            "instructions": "Untuk mengaksesnya, silakan ikuti instruksi di bawah ini.",
+            "appNotInstalledTitle": "6180 Belum Terinstal",
+            "appNotInstalledInstructions": "Klik tombol di bawah ini untuk menyalin kode undangan dan mengunduh aplikasi.",
+            "downloadButton": "Salin Undangan dan Unduh Aplikasi",
+            "appInstalledTitle": "6180 Sudah Terinstal",
+            "appInstalledInstructions": "Jika Anda sudah menginstal aplikasi 6180, klik tombol di bawah ini untuk menyalin dan menggunakan kode undangan Anda.",
+            "inviteButton": "Salin dan Gunakan Kode Undangan"
+          },
+          "it": {
+            "titleTemplate": "{name} ha caricato ricordi nell'app 6180 alle {time}",
+            "instructions": "Per accedervi, segui le istruzioni qui sotto.",
+            "appNotInstalledTitle": "6180 Non Installata",
+            "appNotInstalledInstructions": "Clicca sul pulsante qui sotto per copiare il tuo codice d'invito e scaricare l'app.",
+            "downloadButton": "Copia Invito e Scarica App",
+            "appInstalledTitle": "6180 Installata",
+            "appInstalledInstructions": "Se hai già installato l'app 6180, clicca sul pulsante qui sotto per copiare e utilizzare il tuo codice d'invito.",
+            "inviteButton": "Copia e Usa Codice d'Invito"
+          },
+          "ja": {
+            "titleTemplate": "{name} は6180アプリに思い出をアップロードしました {time} に",
+            "instructions": "アクセスするには、以下の手順に従ってください。",
+            "appNotInstalledTitle": "6180がインストールされていません",
+            "appNotInstalledInstructions": "下のボタンをクリックして、招待コードをコピーし、アプリをダウンロードしてください。",
+            "downloadButton": "招待をコピーしてアプリをダウンロード",
+            "appInstalledTitle": "6180がインストールされています",
+            "appInstalledInstructions": "すでに6180アプリをインストールしている場合は、下のボタンをクリックして招待コードをコピーして使用してください。",
+            "inviteButton": "招待コードをコピーして使用"
+          },
+          "ko": {
+            "titleTemplate": "{name} 가 6180 앱에 추억을 업로드했습니다 {time}",
+            "instructions": "액세스하려면 아래 지침을 따르세요.",
+            "appNotInstalledTitle": "6180이 설치되지 않음",
+            "appNotInstalledInstructions": "아래 버튼을 클릭하여 초대 코드를 복사하고 앱을 다운로드하세요.",
+            "downloadButton": "초대 복사 및 앱 다운로드",
+            "appInstalledTitle": "6180이 설치됨",
+            "appInstalledInstructions": "이미 6180 앱을 설치한 경우, 아래 버튼을 클릭하여 초대 코드를 복사하고 사용하세요.",
+            "inviteButton": "초대 코드 복사 및 사용"
+          },
+          "ms": {
+            "titleTemplate": "{name} memuat naik kenangan ke aplikasi 6180 pada {time}",
+            "instructions": "Untuk mengaksesnya, sila ikuti arahan di bawah.",
+            "appNotInstalledTitle": "6180 Tidak Dipasang",
+            "appNotInstalledInstructions": "Klik butang di bawah untuk menyalin kod jemputan anda dan muat turun aplikasi.",
+            "downloadButton": "Salin Jemputan dan Muat Turun Aplikasi",
+            "appInstalledTitle": "6180 Dipasang",
+            "appInstalledInstructions": "Jika anda sudah memasang aplikasi 6180, klik butang di bawah untuk menyalin dan menggunakan kod jemputan anda.",
+            "inviteButton": "Salin dan Gunakan Kod Jemputan"
+          },
+          "nb": {
+            "titleTemplate": "{name} lastet opp minner til 6180-appen kl {time}",
+            "instructions": "For å få tilgang til dem, følg instruksjonene nedenfor.",
+            "appNotInstalledTitle": "6180 Ikke Installert",
+            "appNotInstalledInstructions": "Klikk på knappen nedenfor for å kopiere invitasjonskoden din og laste ned appen.",
+            "downloadButton": "Kopier Invitasjon og Last Ned App",
+            "appInstalledTitle": "6180 Installert",
+            "appInstalledInstructions": "Hvis du allerede har installert 6180-appen, klikk på knappen nedenfor for å kopiere og bruke invitasjonskoden din.",
+            "inviteButton": "Kopier og Bruk Invitasjonskode"
+          },
+          "pl": {
+            "titleTemplate": "{name} przesłał wspomnienia do aplikacji 6180 o godzinie {time}",
+            "instructions": "Aby uzyskać do nich dostęp, postępuj zgodnie z poniższymi instrukcjami.",
+            "appNotInstalledTitle": "6180 Niezainstalowana",
+            "appNotInstalledInstructions": "Kliknij poniższy przycisk, aby skopiować kod zaproszenia i pobrać aplikację.",
+            "downloadButton": "Kopiuj Zaproszenie i Pobierz Aplikację",
+            "appInstalledTitle": "6180 Zainstalowana",
+            "appInstalledInstructions": "Jeśli masz już zainstalowaną aplikację 6180, kliknij poniższy przycisk, aby skopiować i użyć kodu zaproszenia.",
+            "inviteButton": "Kopiuj i Użyj Kodu Zaproszenia"
+          },
+          "pt-BR": {
+            "titleTemplate": "{name} enviou memórias para o aplicativo 6180 em {time}",
+            "instructions": "Para acessá-las, siga as instruções abaixo.",
+            "appNotInstalledTitle": "6180 Não Instalado",
+            "appNotInstalledInstructions": "Clique no botão abaixo para copiar o código de convite e baixar o aplicativo.",
+            "downloadButton": "Copiar Convite e Baixar Aplicativo",
+            "appInstalledTitle": "6180 Instalado",
+            "appInstalledInstructions": "Se você já instalou o aplicativo 6180, clique no botão abaixo para copiar e usar o código de convite.",
+            "inviteButton": "Copiar e Usar Código de Convite"
+          },
+          "pt-PT": {
+            "titleTemplate": "{name} carregou memórias para a aplicação 6180 em {time}",
+            "instructions": "Para aceder a elas, siga as instruções abaixo.",
+            "appNotInstalledTitle": "6180 Não Instalado",
+            "appNotInstalledInstructions": "Clique no botão abaixo para copiar o código de convite e baixar a aplicação.",
+            "downloadButton": "Copiar Convite e Baixar Aplicação",
+            "appInstalledTitle": "6180 Instalado",
+            "appInstalledInstructions": "Se já tiver a aplicação 6180 instalada, clique no botão abaixo para copiar e usar o código de convite.",
+            "inviteButton": "Copiar e Usar Código de Convite"
+          },
+          "ro": {
+            "titleTemplate": "{name} a încărcat amintiri în aplicația 6180 la {time}",
+            "instructions": "Pentru a le accesa, urmați instrucțiunile de mai jos.",
+            "appNotInstalledTitle": "6180 Neinstalat",
+            "appNotInstalledInstructions": "Faceți clic pe butonul de mai jos pentru a copia codul de invitație și pentru a descărca aplicația.",
+            "downloadButton": "Copiați Invitația și Descărcați Aplicația",
+            "appInstalledTitle": "6180 Instalată",
+            "appInstalledInstructions": "Dacă ați instalat deja aplicația 6180, faceți clic pe butonul de mai jos pentru a copia și utiliza codul de invitație.",
+            "inviteButton": "Copiați și Utilizați Codul de Invitație"
+          },
+          "ru": {
+            "titleTemplate": "{name} загрузил воспоминания в приложение 6180 в {time}",
+            "instructions": "Чтобы получить к ним доступ, следуйте инструкциям ниже.",
+            "appNotInstalledTitle": "6180 Не Установлено",
+            "appNotInstalledInstructions": "Нажмите кнопку ниже, чтобы скопировать код приглашения и скачать приложение.",
+            "downloadButton": "Скопировать Приглашение и Скачать Приложение",
+            "appInstalledTitle": "6180 Установлено",
+            "appInstalledInstructions": "Если вы уже установили приложение 6180, нажмите кнопку ниже, чтобы скопировать и использовать код приглашения.",
+            "inviteButton": "Скопировать и Использовать Код Приглашения"
+          },
+          "sk": {
+            "titleTemplate": "{name} nahrali spomienky do aplikácie 6180 o {time}",
+            "instructions": "Ak chcete k nim získať prístup, postupujte podľa pokynov nižšie.",
+            "appNotInstalledTitle": "6180 Nie Je Nainštalovaná",
+            "appNotInstalledInstructions": "Kliknite na tlačidlo nižšie a skopírujte svoj pozývací kód a stiahnite si aplikáciu.",
+            "downloadButton": "Skopírujte Pozvanie a Stiahnite Si Aplikáciu",
+            "appInstalledTitle": "6180 Nainštalovaná",
+            "appInstalledInstructions": "Ak už máte nainštalovanú aplikáciu 6180, kliknite na tlačidlo nižšie a skopírujte a použite pozývací kód.",
+            "inviteButton": "Skopírujte a Použite Pozývací Kód"
+          },
+          "es": {
+            "titleTemplate": "{name} subió recuerdos a la aplicación 6180 a las {time}",
+            "instructions": "Para acceder a ellos, siga las instrucciones a continuación.",
+            "appNotInstalledTitle": "6180 No Instalado",
+            "appNotInstalledInstructions": "Haga clic en el botón de abajo para copiar su código de invitación y descargar la aplicación.",
+            "downloadButton": "Copiar Invitación y Descargar la Aplicación",
+            "appInstalledTitle": "6180 Instalado",
+            "appInstalledInstructions": "Si ya ha instalado la aplicación 6180, haga clic en el botón de abajo para copiar y usar su código de invitación.",
+            "inviteButton": "Copiar y Usar el Código de Invitación"
+          },
+          "sv": {
+            "titleTemplate": "{name} laddade upp minnen till 6180-appen klockan {time}",
+            "instructions": "För att komma åt dem, följ instruktionerna nedan.",
+            "appNotInstalledTitle": "6180 Inte Installerad",
+            "appNotInstalledInstructions": "Klicka på knappen nedan för att kopiera din inbjudningskod och ladda ner appen.",
+            "downloadButton": "Kopiera Inbjudan och Ladda Ner Appen",
+            "appInstalledTitle": "6180 Installerad",
+            "appInstalledInstructions": "Om du redan har installerat 6180-appen, klicka på knappen nedan för att kopiera och använda din inbjudningskod.",
+            "inviteButton": "Kopiera och Använd Inbjudningskod"
+          },
+          "th": {
+            "titleTemplate": "{name} อัปโหลดความทรงจำไปยังแอป 6180 ที่ {time}",
+            "instructions": "ในการเข้าถึง โปรดทำตามคำแนะนำด้านล่าง",
+            "appNotInstalledTitle": "ไม่ได้ติดตั้ง 6180",
+            "appNotInstalledInstructions": "คลิกที่ปุ่มด้านล่างเพื่อคัดลอกรหัสคำเชิญและดาวน์โหลดแอป",
+            "downloadButton": "คัดลอกคำเชิญและดาวน์โหลดแอป",
+            "appInstalledTitle": "ติดตั้ง 6180 แล้ว",
+            "appInstalledInstructions": "หากคุณติดตั้งแอป 6180 แล้ว คลิกที่ปุ่มด้านล่างเพื่อคัดลอกและใช้รหัสคำเชิญของคุณ",
+            "inviteButton": "คัดลอกและใช้รหัสคำเชิญ"
+          },
+          "tr": {
+            "titleTemplate": "{name} anılarını 6180 uygulamasına yükledi {time}",
+            "instructions": "Onlara erişmek için lütfen aşağıdaki talimatları izleyin.",
+            "appNotInstalledTitle": "6180 Yüklenmedi",
+            "appNotInstalledInstructions": "Davet kodunuzu kopyalamak ve uygulamayı indirmek için aşağıdaki düğmeye tıklayın.",
+            "downloadButton": "Davetiyeyi Kopyala ve Uygulamayı İndir",
+            "appInstalledTitle": "6180 Yüklendi",
+            "appInstalledInstructions": "6180 uygulamasını zaten yüklediyseniz, davet kodunuzu kopyalamak ve kullanmak için aşağıdaki düğmeye tıklayın.",
+            "inviteButton": "Davet Kodunu Kopyala ve Kullan"
+          },
+          "uk": {
+            "titleTemplate": "{name} завантажив спогади в додаток 6180 о {time}",
+            "instructions": "Щоб отримати доступ до них, дотримуйтесь наведених нижче інструкцій.",
+            "appNotInstalledTitle": "6180 Не Встановлено",
+            "appNotInstalledInstructions": "Натисніть кнопку нижче, щоб скопіювати свій код запрошення та завантажити додаток.",
+            "downloadButton": "Скопіювати Запрошення і Завантажити Додаток",
+            "appInstalledTitle": "6180 Встановлено",
+            "appInstalledInstructions": "Якщо ви вже встановили додаток 6180, натисніть кнопку нижче, щоб скопіювати та використати код запрошення.",
+            "inviteButton": "Скопіювати і Використати Код Запрошення"
+          },
+          "vi": {
+            "titleTemplate": "{name} đã tải kỷ niệm lên ứng dụng 6180 lúc {time}",
+            "instructions": "Để truy cập chúng, vui lòng làm theo hướng dẫn bên dưới.",
+            "appNotInstalledTitle": "6180 Chưa Cài Đặt",
+            "appNotInstalledInstructions": "Nhấp vào nút bên dưới để sao chép mã mời và tải xuống ứng dụng.",
+            "downloadButton": "Sao Chép Lời Mời và Tải Ứng Dụng",
+            "appInstalledTitle": "6180 Đã Cài Đặt",
+            "appInstalledInstructions": "Nếu bạn đã cài đặt ứng dụng 6180, nhấp vào nút bên dưới để sao chép và sử dụng mã mời.",
+            "inviteButton": "Sao Chép và Sử Dụng Mã Mời"
           }
         };
 
-        // Apply the translations to the page
-        const translation = translations[language];
+        const translation = translations[language] || translations.en;
         document.getElementById('instructions').textContent = translation.instructions;
         document.getElementById('appNotInstalledTitle').textContent = translation.appNotInstalledTitle;
         document.getElementById('appNotInstalledInstructions').textContent = translation.appNotInstalledInstructions;
@@ -108,31 +446,26 @@
         document.getElementById('appInstalledTitle').textContent = translation.appInstalledTitle;
         document.getElementById('appInstalledInstructions').textContent = translation.appInstalledInstructions;
         document.getElementById('inviteButton').textContent = translation.inviteButton;
-      }      
+
+        return translation.titleTemplate;
+
+      }
 
       function isValidName(name) {
         const namePattern = /^[A-Za-z0-9-]+$/;
         return namePattern.test(name);
       }
-    
+
       function getTimeFromUUIDv1(uuid) {
         if (!uuid || uuid.length < 13) return null;
-    
         const uuidTimestamp = uuid.substring(0, 13);
         const uuidEpoch = 122192928000000000;
         const timestampIn100Ns = parseInt(uuidTimestamp, 16);
         const timestampInMs = (timestampIn100Ns - uuidEpoch) / 10000;
-    
         const date = new Date(timestampInMs);
 
-        if (date.getFullYear() < 1900) {
-
-          return null;
-          
-        }
-    
+        if (date.getFullYear() < 1900) return null;
         return date;
-
       }
     
       function getPositionalUrlParameters() {
@@ -144,16 +477,16 @@
           inviteCode: params[1] || ''
         };
       }
-    
-      function setTitle(name, dateTime) {
-        document.getElementById('title').textContent = `${name} uploaded memories to the 6180 app at ${dateTime}`;
+
+      function setTitle(name, dateTime, titleTemplate) {
+        const title = titleTemplate.replace("{name}", name).replace("{time}", dateTime);
+        document.getElementById('title').textContent = title;
       }
-    
+
       function copyAndNavigateDownload() {
         const params = getPositionalUrlParameters();
-    
         if (params.inviteCode && !hasErrors) {
-          navigator.clipboard.writeText(`Invite-${params.inviteCode}`)
+          navigator.clipboard.writeText(`Message-${params.inviteCode}`)
             .then(() => {
               document.getElementById('copyMessage').innerHTML = "<em>Invitation copied. Redirecting to the app store...</em>";
               window.location.href = "https://apps.apple.com/app/6180/id6468679610";  // Redirect to App Store
@@ -165,23 +498,17 @@
           document.getElementById('copyMessage').textContent = "Error: Invalid or missing invite code.";
         }
       }
-    
+
       function copyAndNavigateInviteCode() {
         const params = getPositionalUrlParameters();
-        
         if (params.inviteCode && !hasErrors) {
-          const deepLink = `i6180://invite/Invite-${params.inviteCode}`;
-
+          const deepLink = `i6180://invite/Message-${params.inviteCode}`;
           navigator.clipboard.writeText(deepLink)
             .then(() => {
-              // Display the success message under the button
               document.getElementById('inviteActionMessage').innerHTML = "<em>Your invite code has been copied. To use it, open the People tab on 6180. Then, click the top right 'Open Invite'.</em>";
-              
-              // Ensure the deep link can be accessed again
               setTimeout(() => {
                 window.location.href = deepLink;
-              }, 500); // Allow some delay for smooth transition
-              
+              }, 500); // Delay for smooth transition
             })
             .catch(() => {
               document.getElementById('inviteActionMessage').textContent = "Failed to copy the invite code.";
@@ -190,26 +517,18 @@
           document.getElementById('inviteActionMessage').textContent = "Error: Invalid or missing invite code.";
         }
       }
-      
+
       (function initializePage() {
         const language = getBrowserLanguage();
-        setTranslations(language);
-
+        const titleTemplate = setTranslations(language);
         const params = getPositionalUrlParameters();
-        const uuidDateTime = getTimeFromUUIDv1(params.inviteCode.split(':')[0]); // Use the first part of the inviteCode before ':'
-        let dateTime;
-    
-        if (uuidDateTime) {
-          dateTime = uuidDateTime;
-        } else {
-          const now = new Date();
-          dateTime = new Date(now.getTime() - (6 * 60 * 1000 + 18 * 1000));
-        }
-    
+        const uuidDateTime = getTimeFromUUIDv1(params.inviteCode.split(':')[0]);
+        let dateTime = uuidDateTime || new Date(new Date().getTime() - (6 * 60 * 1000 + 18 * 1000));
+
         if (!hasErrors) {
-          setTitle(params.name, dateTime.toLocaleString());
+          setTitle(params.name, dateTime.toLocaleString(), titleTemplate);
         }
-    
+
         if (params.inviteCode) {
           document.getElementById('inviteCodeDisplay').textContent = params.inviteCode;
         } else {
