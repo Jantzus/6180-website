@@ -49,7 +49,7 @@
     <h2 id="title"></h2>
     <p id="errorMessage" class="error"></p>
 
-    <p class="centered-italic">Message-<span id="inviteCodeDisplay"></span></p>
+    <p class="centered-italic">Message-<span id="accessCodeDisplay"></span></p>
 
     <p id="instructions"></p>
 
@@ -63,7 +63,7 @@
     <h3 id="appInstalledTitle"></h3>
     <p id="appInstalledInstructions"></p>
     <div class="centered-link">
-      <button id="inviteButton" onclick="copyAndNavigateInviteCode()"></button>
+      <button id="inviteButton" onclick="copyAndNavigateAccessCode()"></button>
     </div>
     <p id="inviteActionMessage"></p>
 
@@ -71,370 +71,940 @@
       let hasErrors = false;
 
       function getBrowserLanguage() {
-        const lang = navigator.language || navigator.userLanguage;
+        const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        
         const languageMap = {
-          "zh-CN": "zh-Hans",  // Simplified Chinese (Mainland China)
-          "zh-SG": "zh-Hans",  // Simplified Chinese (Singapore)
-          "zh-Hans": "zh-Hans",  // Generic Simplified Chinese
-          "zh-TW": "zh-Hant",  // Traditional Chinese (Taiwan)
-          "zh-HK": "zh-Hant",  // Traditional Chinese (Hong Kong)
-          "zh-Hant": "zh-Hant",  // Generic Traditional Chinese
-          "da": "da",  // Danish
-          "da-DK": "da",  // Danish (Denmark)
-          "nl": "nl",  // Dutch
-          "nl-NL": "nl",  // Dutch (Netherlands)
-          "nl-BE": "nl",  // Dutch (Belgium)
-          "fi": "fi",  // Finnish
-          "fi-FI": "fi",  // Finnish (Finland)
-          "fr": "fr",  // French
-          "fr-FR": "fr",  // French (France)
-          "fr-CA": "fr",  // French (Canada)
-          "de": "de",  // German
-          "de-DE": "de",  // German (Germany)
-          "de-AT": "de",  // German (Austria)
-          "de-CH": "de",  // German (Switzerland)
-          "el": "el",  // Greek
-          "el-GR": "el",  // Greek (Greece)
-          "he": "he",  // Hebrew
-          "he-IL": "he",  // Hebrew (Israel)
-          "hi": "hi",  // Hindi
-          "hi-IN": "hi",  // Hindi (India)
-          "hu": "hu",  // Hungarian
-          "hu-HU": "hu",  // Hungarian (Hungary)
-          "id": "id",  // Indonesian
-          "id-ID": "id",  // Indonesian (Indonesia)
-          "it": "it",  // Italian
-          "it-IT": "it",  // Italian (Italy)
-          "it-CH": "it",  // Italian (Switzerland)
-          "ja": "ja",  // Japanese
-          "ja-JP": "ja",  // Japanese (Japan)
-          "ko": "ko",  // Korean
-          "ko-KR": "ko",  // Korean (South Korea)
-          "ms": "ms",  // Malay
-          "ms-MY": "ms",  // Malay (Malaysia)
-          "nb": "nb",  // Norwegian Bokmål
-          "nb-NO": "nb",  // Norwegian Bokmål (Norway)
-          "pl": "pl",  // Polish
-          "pl-PL": "pl",  // Polish (Poland)
-          "pt-BR": "pt-BR",  // Portuguese (Brazil)
-          "pt-PT": "pt-PT",  // Portuguese (Portugal)
-          "ro": "ro",  // Romanian
-          "ro-RO": "ro",  // Romanian (Romania)
-          "ru": "ru",  // Russian
-          "ru-RU": "ru",  // Russian (Russia)
-          "sk": "sk",  // Slovak
-          "sk-SK": "sk",  // Slovak (Slovakia)
-          "es": "es",  // Spanish
-          "es-ES": "es",  // Spanish (Spain)
-          "es-MX": "es",  // Spanish (Mexico)
-          "es-US": "es",  // Spanish (United States)
-          "sv": "sv",  // Swedish
-          "sv-SE": "sv",  // Swedish (Sweden)
-          "th": "th",  // Thai
-          "th-TH": "th",  // Thai (Thailand)
-          "tr": "tr",  // Turkish
-          "tr-TR": "tr",  // Turkish (Turkey)
-          "uk": "uk",  // Ukrainian
-          "uk-UA": "uk",  // Ukrainian (Ukraine)
-          "vi": "vi",  // Vietnamese
-          "vi-VN": "vi"  // Vietnamese (Vietnam)
+          // Amharic
+          "am": "am",
+          "am-et": "am",
+
+          // Arabic
+          "ar": "ar",
+          "ar-dz": "ar",
+          "ar-bh": "ar",
+          "ar-eg": "ar",
+          "ar-iq": "ar",
+          "ar-jo": "ar",
+          "ar-kw": "ar",
+          "ar-lb": "ar",
+          "ar-ly": "ar",
+          "ar-ma": "ar",
+          "ar-om": "ar",
+          "ar-qa": "ar",
+          "ar-sa": "ar",
+          "ar-sy": "ar",
+          "ar-tn": "ar",
+          "ar-ae": "ar",
+          "ar-ye": "ar",
+
+          // Bengali
+          "bn": "bn",
+          "bn-bd": "bn",
+          "bn-in": "bn",
+
+          // Catalan
+          "ca": "ca",
+          "ca-es": "ca",
+
+          // Czech
+          "cs": "cs",
+          "cs-cz": "cs",
+
+          // Danish
+          "da": "da",
+          "da-dk": "da",
+
+          // German
+          "de": "de",
+          "de-de": "de",
+          "de-at": "de",
+          "de-ch": "de",
+          "de-li": "de",
+          "de-lu": "de",
+
+          // Greek
+          "el": "el",
+          "el-gr": "el",
+
+          // English
+          "en": "en",
+          "en-us": "en",
+          "en-gb": "en",
+          "en-au": "en",
+          "en-ca": "en",
+          "en-in": "en",
+          "en-ie": "en",
+          "en-nz": "en",
+          "en-ph": "en",
+          "en-za": "en",
+          "en-sg": "en",
+
+          // Spanish
+          "es": "es",
+          "es-es": "es",
+          "es-ar": "es",
+          "es-bo": "es",
+          "es-cl": "es",
+          "es-co": "es",
+          "es-cr": "es",
+          "es-cu": "es",
+          "es-do": "es",
+          "es-ec": "es",
+          "es-gt": "es",
+          "es-hn": "es",
+          "es-mx": "es",
+          "es-ni": "es",
+          "es-pa": "es",
+          "es-pe": "es",
+          "es-pr": "es",
+          "es-py": "es",
+          "es-sv": "es",
+          "es-us": "es",
+          "es-uy": "es",
+          "es-ve": "es",
+
+          // Persian
+          "fa": "fa",
+          "fa-ir": "fa",
+
+          // Finnish
+          "fi": "fi",
+          "fi-fi": "fi",
+
+          // Filipino
+          "fil": "fil",
+          "tl": "fil",
+          "tl-ph": "fil",
+
+          // French
+          "fr": "fr",
+          "fr-fr": "fr",
+          "fr-ca": "fr",
+          "fr-be": "fr",
+          "fr-ch": "fr",
+          "fr-lu": "fr",
+
+          // Hausa
+          "ha": "ha",
+          "ha-ng": "ha",
+          "ha-gh": "ha",
+          "ha-ne": "ha",
+
+          // Hebrew
+          "he": "he",
+          "he-il": "he",
+          "iw": "he",
+
+          // Hindi
+          "hi": "hi",
+          "hi-in": "hi",
+
+          // Croatian
+          "hr": "hr",
+          "hr-hr": "hr",
+
+          // Hungarian
+          "hu": "hu",
+          "hu-hu": "hu",
+
+          // Indonesian
+          "id": "id",
+          "id-id": "id",
+
+          // Igbo
+          "ig": "ig",
+          "ig-ng": "ig",
+
+          // Italian
+          "it": "it",
+          "it-it": "it",
+          "it-ch": "it",
+
+          // Japanese
+          "ja": "ja",
+          "ja-jp": "ja",
+
+          // Javanese
+          "jv": "jv",
+          "jv-id": "jv",
+
+          // Khmer
+          "km": "km",
+          "km-kh": "km",
+
+          // Kannada
+          "kn": "kn",
+          "kn-in": "kn",
+
+          // Korean
+          "ko": "ko",
+          "ko-kr": "ko",
+
+          // Lao
+          "lo": "lo",
+          "lo-la": "lo",
+
+          // Malayalam
+          "ml": "ml",
+          "ml-in": "ml",
+
+          // Marathi
+          "mr": "mr",
+          "mr-in": "mr",
+
+          // Malay
+          "ms": "ms",
+          "ms-my": "ms",
+
+          // Burmese
+          "my": "my",
+          "my-mm": "my",
+
+          // Norwegian Bokmål
+          "nb": "nb",
+          "nb-no": "nb",
+          "no": "nb",
+          "no-no": "nb",
+
+          // Nepali
+          "ne": "ne",
+          "ne-np": "ne",
+
+          // Dutch
+          "nl": "nl",
+          "nl-nl": "nl",
+          "nl-be": "nl",
+
+          // Odia (Oriya)
+          "or": "or",
+          "or-in": "or",
+
+          // Punjabi
+          "pa": "pa",
+          "pa-in": "pa",
+          "pa-guru": "pa",
+
+          // Polish
+          "pl": "pl",
+          "pl-pl": "pl",
+
+          // Pashto
+          "ps": "ps",
+          "ps-af": "ps",
+
+          // Portuguese
+          "pt": "pt-PT",    // default to pt-PT if no region specified
+          "pt-pt": "pt-PT",
+          "pt-br": "pt-BR",
+
+          // Romanian
+          "ro": "ro",
+          "ro-ro": "ro",
+
+          // Russian
+          "ru": "ru",
+          "ru-ru": "ru",
+
+          // Sindhi
+          "sd": "sd",
+          "sd-in": "sd",
+          "sd-pk": "sd",
+
+          // Sinhala
+          "si": "si",
+          "si-lk": "si",
+
+          // Slovak
+          "sk": "sk",
+          "sk-sk": "sk",
+
+          // Serbian
+          "sr": "sr",
+          "sr-rs": "sr",
+          "sr-latn": "sr",
+
+          // Swedish
+          "sv": "sv",
+          "sv-se": "sv",
+          "sv-fi": "sv",
+
+          // Swahili
+          "sw": "sw",
+          "sw-ke": "sw",
+          "sw-tz": "sw",
+          "sw-ug": "sw",
+
+          // Tamil
+          "ta": "ta",
+          "ta-in": "ta",
+          "ta-lk": "ta",
+          "ta-my": "ta",
+          "ta-sg": "ta",
+
+          // Telugu
+          "te": "te",
+          "te-in": "te",
+
+          // Thai
+          "th": "th",
+          "th-th": "th",
+
+          // Turkish
+          "tr": "tr",
+          "tr-tr": "tr",
+
+          // Ukrainian
+          "uk": "uk",
+          "uk-ua": "uk",
+
+          // Urdu
+          "ur": "ur",
+          "ur-pk": "ur",
+          "ur-in": "ur",
+
+          // Vietnamese
+          "vi": "vi",
+          "vi-vn": "vi",
+
+          // Yoruba
+          "yo": "yo",
+          "yo-bj": "yo",
+          "yo-ng": "yo",
+
+          // Simplified Chinese (Map various codes)
+          "zh": "zh-Hans",     // If just 'zh', assume simplified
+          "zh-cn": "zh-Hans",
+          "zh-sg": "zh-Hans",
+          "zh-hans": "zh-Hans",
+
+          // Traditional Chinese
+          "zh-tw": "zh-Hant",
+          "zh-hk": "zh-HK",    // Hong Kong variant
+          "zh-mo": "zh-Hant",  // Macau often considered Traditional
+          "zh-hant": "zh-Hant",
+
+          // Zulu
+          "zu": "zu",
+          "zu-za": "zu"
         };
 
-        return languageMap[lang] || 'en';  // Default to English if language is not found
-        
+        // Return the mapped language if found, otherwise default to English
+        return languageMap[lang] || 'en';
+
       }
 
       function setTranslations(language) {
+
         const translations = {
+          "am": {
+            "titleTemplate": "{name} በ {time} ወቅት ወደ 6180 መተግበሪያ ማህበራዊ ዝርዝሮች አስገባ።",
+            "instructions": "ለመድረስ እባክዎትን የተከተሉትን መመሪያዎች ይከተሉ።",
+            "appNotInstalledTitle": "6180 አልተጫነም",
+            "appNotInstalledInstructions": "የይዘት ኮድዎን ለመቅዳት እና መተግበሪያውን ለመውሰድ ከታች ያለውን ቁልፍ ይጫኑ።",
+            "downloadButton": "የተግባራዊ ኮድ ይቅዱ እና አፕ ይውሰዱ",
+            "appInstalledTitle": "6180 ተጫኗል",
+            "appInstalledInstructions": "የ6180 መተግበሪያውን ከዚህ በፊት ካስጫኑ ከታች ያለውን ቁልፍ ይጫኑ እና የተግባራዊ ኮድዎን ይጠቀሙ።",
+            "inviteButton": "የተግባራዊ ኮድ ይቅዱ እና ይጠቀሙ"
+          },
+          "ar": {
+            "titleTemplate": "{name} قام بتحميل الذكريات إلى تطبيق 6180 في {time}",
+            "instructions": "للوصول إليها، يرجى اتباع التعليمات أدناه.",
+            "appNotInstalledTitle": "تطبيق 6180 غير مثبت",
+            "appNotInstalledInstructions": "اضغط على الزر أدناه لنسخ رمز الوصول وتحميل التطبيق.",
+            "downloadButton": "انسخ رمز الوصول وقم بتنزيل التطبيق",
+            "appInstalledTitle": "تم تثبيت 6180",
+            "appInstalledInstructions": "إذا كان لديك تطبيق 6180 مثبتًا بالفعل، اضغط على الزر أدناه لنسخ واستخدام رمز الوصول.",
+            "inviteButton": "انسخ واستخدم رمز الوصول"
+          },
+          "bn": {
+            "titleTemplate": "{name} {time} এ 6180 অ্যাপে স্মৃতিচারণ আপলোড করেছেন",
+            "instructions": "সেগুলিতে প্রবেশ করতে নিচের নির্দেশাবলী অনুসরণ করুন।",
+            "appNotInstalledTitle": "6180 ইনস্টল করা নেই",
+            "appNotInstalledInstructions": "আপনার অ্যাক্সেস কোড কপি করতে এবং অ্যাপটি ডাউনলোড করতে নিচের বোতামে ক্লিক করুন।",
+            "downloadButton": "অ্যাক্সেস কোড কপি করুন এবং অ্যাপ ডাউনলোড করুন",
+            "appInstalledTitle": "6180 ইনস্টল করা আছে",
+            "appInstalledInstructions": "যদি আপনার ডিভাইসে আগে থেকেই 6180 অ্যাপটি ইনস্টল করা থাকে, তবে নিচের বোতামে ক্লিক করে আপনার অ্যাক্সেস কোড কপি ও ব্যবহার করুন।",
+            "inviteButton": "অ্যাক্সেস কোড কপি করুন এবং ব্যবহার করুন"
+          },
+          "ca": {
+            "titleTemplate": "{name} ha penjat records a l'app 6180 a les {time}",
+            "instructions": "Per accedir-hi, si us plau, seguiu les instruccions següents.",
+            "appNotInstalledTitle": "6180 no instal·lat",
+            "appNotInstalledInstructions": "Feu clic al botó de sota per copiar el vostre codi d'accés i descarregar l'aplicació.",
+            "downloadButton": "Copieu el codi d'accés i descarregueu l'aplicació",
+            "appInstalledTitle": "6180 Instal·lat",
+            "appInstalledInstructions": "Si ja teniu instal·lada l'aplicació 6180, feu clic al botó de sota per copiar i utilitzar el vostre codi d'accés.",
+            "inviteButton": "Copieu i utilitzeu el codi d'accés"
+          },
+          "cs": {
+            "titleTemplate": "{name} nahrál vzpomínky do aplikace 6180 v {time}",
+            "instructions": "Chcete-li k nim získat přístup, postupujte podle pokynů níže.",
+            "appNotInstalledTitle": "6180 Nenainstalováno",
+            "appNotInstalledInstructions": "Klikněte na tlačítko níže pro zkopírování svého přístupového kódu a stažení aplikace.",
+            "downloadButton": "Zkopírovat přístupový kód a stáhnout aplikaci",
+            "appInstalledTitle": "6180 Nainstalováno",
+            "appInstalledInstructions": "Pokud již máte aplikaci 6180 nainstalovanou, klikněte na tlačítko níže pro zkopírování a použití vašeho přístupového kódu.",
+            "inviteButton": "Zkopírovat a použít přístupový kód"
+          },
+          "da": {
+            "titleTemplate": "{name} uploadede minder til 6180 appen kl. {time}",
+            "instructions": "For at få adgang til dem, følg venligst nedenstående instruktioner.",
+            "appNotInstalledTitle": "6180 er ikke installeret",
+            "appNotInstalledInstructions": "Klik på knappen nedenfor for at kopiere din adgangskode og downloade appen.",
+            "downloadButton": "Kopiér adgangskode og download app",
+            "appInstalledTitle": "6180 er installeret",
+            "appInstalledInstructions": "Hvis du allerede har 6180 appen installeret, klik på knappen nedenfor for at kopiere og bruge din adgangskode.",
+            "inviteButton": "Kopiér og brug adgangskode"
+          },
+          "de": {
+            "titleTemplate": "{name} hat um {time} Erinnerungen in die 6180-App hochgeladen",
+            "instructions": "Um darauf zuzugreifen, folgen Sie bitte den unten stehenden Anweisungen.",
+            "appNotInstalledTitle": "6180 Nicht installiert",
+            "appNotInstalledInstructions": "Klicken Sie auf die Schaltfläche unten, um Ihren Zugangscode zu kopieren und die App herunterzuladen.",
+            "downloadButton": "Zugangscode kopieren und App herunterladen",
+            "appInstalledTitle": "6180 Installiert",
+            "appInstalledInstructions": "Wenn Sie die 6180-App bereits installiert haben, klicken Sie auf die Schaltfläche unten, um Ihren Zugangscode zu kopieren und zu verwenden.",
+            "inviteButton": "Zugangscode kopieren und verwenden"
+          },
+          "el": {
+            "titleTemplate": "Ο/Η {name} ανέβασε αναμνήσεις στην εφαρμογή 6180 στις {time}",
+            "instructions": "Για να αποκτήσετε πρόσβαση, ακολουθήστε τις παρακάτω οδηγίες.",
+            "appNotInstalledTitle": "Το 6180 δεν είναι εγκατεστημένο",
+            "appNotInstalledInstructions": "Πατήστε το κουμπί παρακάτω για να αντιγράψετε τον κωδικό πρόσβασης και να κατεβάσετε την εφαρμογή.",
+            "downloadButton": "Αντιγράψτε τον κωδικό πρόσβασης και κατεβάστε την εφαρμογή",
+            "appInstalledTitle": "Το 6180 είναι εγκατεστημένο",
+            "appInstalledInstructions": "Εάν έχετε ήδη εγκατεστημένη την εφαρμογή 6180, πατήστε το κουμπί παρακάτω για να αντιγράψετε και να χρησιμοποιήσετε τον κωδικό πρόσβασης.",
+            "inviteButton": "Αντιγράψτε και χρησιμοποιήστε τον κωδικό πρόσβασης"
+          },
           "en": {
             "titleTemplate": "{name} uploaded memories to the 6180 app at {time}",
             "instructions": "To access them, please follow the instructions below.",
             "appNotInstalledTitle": "6180 Not Installed",
-            "appNotInstalledInstructions": "Click the button below to copy your invite code and download the app.",
-            "downloadButton": "Copy Invite and Download App",
+            "appNotInstalledInstructions": "Click the button below to copy your access code and download the app.",
+            "downloadButton": "Copy Access Code and Download App",
             "appInstalledTitle": "6180 Installed",
-            "appInstalledInstructions": "If you already have the 6180 app installed, click the button below to copy and use your invite code.",
-            "inviteButton": "Copy and Use Invite Code"
+            "appInstalledInstructions": "If you already have the 6180 app installed, click the button below to copy and use your access code.",
+            "inviteButton": "Copy and Use Access Code"
           },
-          "zh-Hans": {
-            "titleTemplate": "{name} 在 6180 应用程序中上传了回忆，上传时间为 {time}",
-            "instructions": "要访问这些内容，请按照以下说明进行操作。",
-            "appNotInstalledTitle": "未安装 6180",
-            "appNotInstalledInstructions": "点击下面的按钮复制邀请代码并下载应用程序。",
-            "downloadButton": "复制邀请并下载应用程序",
-            "appInstalledTitle": "已安装 6180",
-            "appInstalledInstructions": "如果您已安装 6180 应用程序，请点击下面的按钮复制并使用邀请代码。",
-            "inviteButton": "复制并使用邀请代码"
+          "es": {
+            "titleTemplate": "{name} subió recuerdos a la app 6180 a las {time}",
+            "instructions": "Para acceder a ellos, sigue las instrucciones a continuación.",
+            "appNotInstalledTitle": "6180 no está instalado",
+            "appNotInstalledInstructions": "Haz clic en el botón de abajo para copiar tu código de acceso y descargar la aplicación.",
+            "downloadButton": "Copiar código de acceso y descargar la aplicación",
+            "appInstalledTitle": "6180 instalado",
+            "appInstalledInstructions": "Si ya tienes la app 6180 instalada, haz clic en el botón de abajo para copiar y usar tu código de acceso.",
+            "inviteButton": "Copiar y usar código de acceso"
           },
-          "zh-Hant": {
-            "titleTemplate": "{name} 在 6180 應用程式中上傳了回憶，上傳時間為 {time}",
-            "instructions": "要訪問這些內容，請按照以下說明進行操作。",
-            "appNotInstalledTitle": "未安裝 6180",
-            "appNotInstalledInstructions": "點擊下面的按鈕複製邀請代碼並下載應用程式。",
-            "downloadButton": "複製邀請並下載應用程式",
-            "appInstalledTitle": "已安裝 6180",
-            "appInstalledInstructions": "如果您已安裝 6180 應用程式，請點擊下面的按鈕複製並使用邀請代碼。",
-            "inviteButton": "複製並使用邀請代碼"
-          },
-          "nl": {
-            "titleTemplate": "{name} uploadde herinneringen naar de 6180-app op {time}",
-            "instructions": "Om toegang te krijgen, volg de onderstaande instructies.",
-            "appNotInstalledTitle": "6180 Niet Geïnstalleerd",
-            "appNotInstalledInstructions": "Klik op de knop hieronder om je uitnodigingscode te kopiëren en de app te downloaden.",
-            "downloadButton": "Kopieer Uitnodiging en Download App",
-            "appInstalledTitle": "6180 Geïnstalleerd",
-            "appInstalledInstructions": "Als je de 6180-app al hebt geïnstalleerd, klik op de knop hieronder om je uitnodigingscode te kopiëren en te gebruiken.",
-            "inviteButton": "Kopieer en Gebruik Uitnodigingscode"
+          "fa": {
+            "titleTemplate": "{name} در زمان {time} خاطراتی را در اپلیکیشن 6180 آپلود کرد",
+            "instructions": "برای دسترسی به آن‌ها لطفاً دستورالعمل‌های زیر را دنبال کنید.",
+            "appNotInstalledTitle": "6180 نصب نشده است",
+            "appNotInstalledInstructions": "روی دکمه زیر کلیک کنید تا کد دسترسی خود را کپی کرده و اپلیکیشن را دانلود کنید.",
+            "downloadButton": "کپی کد دسترسی و دانلود اپ",
+            "appInstalledTitle": "6180 نصب شده است",
+            "appInstalledInstructions": "اگر اپلیکیشن 6180 را نصب کرده‌اید، روی دکمه زیر کلیک کنید تا کد دسترسی خود را کپی و استفاده نمایید.",
+            "inviteButton": "کپی و استفاده از کد دسترسی"
           },
           "fi": {
             "titleTemplate": "{name} latasi muistoja 6180-sovellukseen klo {time}",
-            "instructions": "Päästäksesi niihin, noudata alla olevia ohjeita.",
-            "appNotInstalledTitle": "6180 Ei Asennettu",
-            "appNotInstalledInstructions": "Kopioi kutsukoodisi ja lataa sovellus alla olevasta painikkeesta.",
-            "downloadButton": "Kopioi Kutsu ja Lataa Sovellus",
-            "appInstalledTitle": "6180 Asennettu",
-            "appInstalledInstructions": "Jos olet jo asentanut 6180-sovelluksen, kopioi ja käytä kutsukoodia alla olevasta painikkeesta.",
-            "inviteButton": "Kopioi ja Käytä Kutsukoodia"
+            "instructions": "Päästäksesi niihin, seuraa alla olevia ohjeita.",
+            "appNotInstalledTitle": "6180 ei ole asennettuna",
+            "appNotInstalledInstructions": "Klikkaa alla olevaa painiketta kopioidaksesi pääsykoodin ja ladataksesi sovelluksen.",
+            "downloadButton": "Kopioi pääsykoodi ja lataa sovellus",
+            "appInstalledTitle": "6180 asennettu",
+            "appInstalledInstructions": "Jos olet jo asentanut 6180-sovelluksen, klikkaa alla olevaa painiketta kopioidaksesi ja käyttääksesi pääsykoodiasi.",
+            "inviteButton": "Kopioi ja käytä pääsykoodia"
+          },
+          "fil": {
+            "titleTemplate": "Nag-upload si {name} ng mga alaala sa 6180 app noong {time}",
+            "instructions": "Upang ma-access ang mga ito, sundin ang mga tagubilin sa ibaba.",
+            "appNotInstalledTitle": "6180 Hindi Naka-install",
+            "appNotInstalledInstructions": "I-click ang button sa ibaba para kopyahin ang iyong access code at i-download ang app.",
+            "downloadButton": "Kopyahin ang Access Code at I-download ang App",
+            "appInstalledTitle": "6180 Naka-install",
+            "appInstalledInstructions": "Kung naka-install na ang 6180 app, i-click ang button sa ibaba upang kopyahin at gamitin ang iyong access code.",
+            "inviteButton": "Kopyahin at Gamitin ang Access Code"
           },
           "fr": {
             "titleTemplate": "{name} a téléchargé des souvenirs sur l'application 6180 à {time}",
             "instructions": "Pour y accéder, veuillez suivre les instructions ci-dessous.",
-            "appNotInstalledTitle": "6180 Non Installé",
-            "appNotInstalledInstructions": "Cliquez sur le bouton ci-dessous pour copier votre code d'invitation et télécharger l'application.",
-            "downloadButton": "Copier l'Invitation et Télécharger l'Application",
-            "appInstalledTitle": "6180 Installé",
-            "appInstalledInstructions": "Si vous avez déjà installé l'application 6180, cliquez sur le bouton ci-dessous pour copier et utiliser votre code d'invitation.",
-            "inviteButton": "Copier et Utiliser le Code d'Invitation"
+            "appNotInstalledTitle": "6180 non installé",
+            "appNotInstalledInstructions": "Cliquez sur le bouton ci-dessous pour copier votre code d'accès et télécharger l'application.",
+            "downloadButton": "Copier le code d'accès et télécharger l'application",
+            "appInstalledTitle": "6180 installé",
+            "appInstalledInstructions": "Si vous avez déjà installé l'application 6180, cliquez sur le bouton ci-dessous pour copier et utiliser votre code d'accès.",
+            "inviteButton": "Copier et utiliser le code d'accès"
           },
-          "de": {
-            "titleTemplate": "{name} hat Erinnerungen in die 6180-App hochgeladen um {time}",
-            "instructions": "Um darauf zuzugreifen, folgen Sie bitte den untenstehenden Anweisungen.",
-            "appNotInstalledTitle": "6180 Nicht Installiert",
-            "appNotInstalledInstructions": "Klicken Sie auf die Schaltfläche unten, um Ihren Einladungscode zu kopieren und die App herunterzuladen.",
-            "downloadButton": "Einladung Kopieren und App Herunterladen",
-            "appInstalledTitle": "6180 Installiert",
-            "appInstalledInstructions": "Wenn Sie die 6180-App bereits installiert haben, klicken Sie auf die Schaltfläche unten, um Ihren Einladungscode zu kopieren und zu verwenden.",
-            "inviteButton": "Einladungscode Kopieren und Verwenden"
-          },
-          "el": {
-            "titleTemplate": "{name} ανέβασε αναμνήσεις στην εφαρμογή 6180 στις {time}",
-            "instructions": "Για να τις αποκτήσετε, ακολουθήστε τις παρακάτω οδηγίες.",
-            "appNotInstalledTitle": "6180 Δεν Εγκαταστάθηκε",
-            "appNotInstalledInstructions": "Κάντε κλικ στο παρακάτω κουμπί για να αντιγράψετε τον κωδικό πρόσκλησής σας και να κατεβάσετε την εφαρμογή.",
-            "downloadButton": "Αντιγραφή Πρόσκλησης και Λήψη Εφαρμογής",
-            "appInstalledTitle": "6180 Εγκαταστάθηκε",
-            "appInstalledInstructions": "Αν έχετε ήδη εγκαταστήσει την εφαρμογή 6180, κάντε κλικ στο παρακάτω κουμπί για να αντιγράψετε και να χρησιμοποιήσετε τον κωδικό πρόσκλησής σας.",
-            "inviteButton": "Αντιγραφή και Χρήση Κωδικού Πρόσκλησης"
+          "ha": {
+            "titleTemplate": "{name} ya loda tunani a manhajar 6180 a {time}",
+            "instructions": "Domin samun damar ganin su, da fatan za a bi umarnin da ke ƙasa.",
+            "appNotInstalledTitle": "6180 Ba a girka ba",
+            "appNotInstalledInstructions": "Danna maɓallin da ke ƙasa domin kwafa lamban iznin ka da sauke manhajar.",
+            "downloadButton": "Kwafi Lambar Izin da Sauke Manhaja",
+            "appInstalledTitle": "6180 An girka",
+            "appInstalledInstructions": "Idan ka riga ka girka manhajar 6180, danna maɓallin da ke ƙasa domin kwafa da amfani da lamban iznin ka.",
+            "inviteButton": "Kwafi da Amfani da Lambar Izin"
           },
           "he": {
-            "titleTemplate": "{name} העלה זיכרונות לאפליקציית 6180 בשעה {time}",
-            "instructions": "כדי לגשת אליהם, אנא עקוב אחר ההוראות להלן.",
-            "appNotInstalledTitle": "6180 לא מותקן",
-            "appNotInstalledInstructions": "לחץ על הכפתור למטה כדי להעתיק את קוד ההזמנה שלך ולהוריד את האפליקציה.",
-            "downloadButton": "העתק את ההזמנה והורד את האפליקציה",
-            "appInstalledTitle": "6180 מותקן",
-            "appInstalledInstructions": "אם כבר התקנת את אפליקציית 6180, לחץ על הכפתור למטה כדי להעתיק ולהשתמש בקוד ההזמנה שלך.",
-            "inviteButton": "העתק ושימוש בקוד ההזמנה"
+            "titleTemplate": "{name} העלה זיכרונות לאפליקציית 6180 ב- {time}",
+            "instructions": "כדי לגשת אליהם, אנא עקוב אחר ההנחיות שלהלן.",
+            "appNotInstalledTitle": "6180 לא מותקנת",
+            "appNotInstalledInstructions": "לחץ על הכפתור למטה כדי להעתיק את קוד הגישה שלך ולהוריד את האפליקציה.",
+            "downloadButton": "העתק קוד גישה והורד אפליקציה",
+            "appInstalledTitle": "6180 מותקנת",
+            "appInstalledInstructions": "אם האפליקציה 6180 כבר מותקנת, לחץ על הכפתור למטה כדי להעתיק ולהשתמש בקוד הגישה שלך.",
+            "inviteButton": "העתק והשתמש בקוד הגישה"
           },
           "hi": {
-            "titleTemplate": "{name} ने 6180 ऐप पर यादें अपलोड कीं {time} पर",
-            "instructions": "उन्हें एक्सेस करने के लिए, कृपया नीचे दिए गए निर्देशों का पालन करें।",
+            "titleTemplate": "{name} ने {time} पर 6180 ऐप में स्मृतियाँ अपलोड कीं",
+            "instructions": "उन तक पहुँचने के लिए, कृपया नीचे दिए गए निर्देशों का पालन करें।",
             "appNotInstalledTitle": "6180 इंस्टॉल नहीं है",
-            "appNotInstalledInstructions": "नीचे दिए गए बटन पर क्लिक करें, अपना निमंत्रण कोड कॉपी करें और ऐप डाउनलोड करें।",
-            "downloadButton": "निमंत्रण कॉपी करें और ऐप डाउनलोड करें",
-            "appInstalledTitle": "6180 इंस्टॉल हो गया है",
-            "appInstalledInstructions": "यदि आपने पहले से 6180 ऐप इंस्टॉल कर लिया है, तो अपना निमंत्रण कोड कॉपी और उपयोग करने के लिए नीचे दिए गए बटन पर क्लिक करें।",
-            "inviteButton": "निमंत्रण कोड कॉपी करें और उपयोग करें"
+            "appNotInstalledInstructions": "अपना एक्सेस कोड कॉपी करने और ऐप डाउनलोड करने के लिए नीचे दिए बटन पर क्लिक करें।",
+            "downloadButton": "एक्सेस कोड कॉपी करें और ऐप डाउनलोड करें",
+            "appInstalledTitle": "6180 इंस्टॉल है",
+            "appInstalledInstructions": "यदि आपके पास पहले से ही 6180 ऐप इंस्टॉल है, तो अपना एक्सेस कोड कॉपी और उपयोग करने के लिए नीचे दिए बटन पर क्लिक करें।",
+            "inviteButton": "एक्सेस कोड कॉपी करें और उपयोग करें"
+          },
+          "hr": {
+            "titleTemplate": "{name} je učitao uspomene u 6180 aplikaciju u {time}",
+            "instructions": "Za pristup njima, slijedite upute u nastavku.",
+            "appNotInstalledTitle": "6180 Nije instaliran",
+            "appNotInstalledInstructions": "Kliknite na gumb ispod da kopirate pristupni kôd i preuzmete aplikaciju.",
+            "downloadButton": "Kopiraj pristupni kôd i preuzmi aplikaciju",
+            "appInstalledTitle": "6180 Instaliran",
+            "appInstalledInstructions": "Ako imate 6180 aplikaciju već instaliranu, kliknite na gumb ispod da kopirate i koristite svoj pristupni kôd.",
+            "inviteButton": "Kopiraj i koristi pristupni kôd"
           },
           "hu": {
-            "titleTemplate": "{name} emlékeket töltött fel a 6180 alkalmazásba ekkor: {time}",
-            "instructions": "Az eléréshez kövesse az alábbi utasításokat.",
-            "appNotInstalledTitle": "6180 Nincs Telepítve",
-            "appNotInstalledInstructions": "Kattintson az alábbi gombra a meghívókód másolásához és az alkalmazás letöltéséhez.",
-            "downloadButton": "Meghívó Másolása és Alkalmazás Letöltése",
-            "appInstalledTitle": "6180 Telepítve",
-            "appInstalledInstructions": "Ha már telepítette a 6180 alkalmazást, kattintson az alábbi gombra a meghívókód másolásához és használatához.",
-            "inviteButton": "Meghívókód Másolása és Használata"
+            "titleTemplate": "{name} feltöltött emlékeket a 6180 alkalmazásba ekkor: {time}",
+            "instructions": "A hozzáféréshez kövesse az alábbi utasításokat.",
+            "appNotInstalledTitle": "6180 nincs telepítve",
+            "appNotInstalledInstructions": "Kattintson az alábbi gombra a hozzáférési kód másolásához és az alkalmazás letöltéséhez.",
+            "downloadButton": "Hozzáférési kód másolása és alkalmazás letöltése",
+            "appInstalledTitle": "6180 telepítve",
+            "appInstalledInstructions": "Ha már telepítette a 6180 alkalmazást, kattintson az alábbi gombra a kód másolásához és használatához.",
+            "inviteButton": "Hozzáférési kód másolása és használata"
           },
           "id": {
             "titleTemplate": "{name} mengunggah kenangan ke aplikasi 6180 pada {time}",
             "instructions": "Untuk mengaksesnya, silakan ikuti instruksi di bawah ini.",
-            "appNotInstalledTitle": "6180 Belum Terinstal",
-            "appNotInstalledInstructions": "Klik tombol di bawah ini untuk menyalin kode undangan dan mengunduh aplikasi.",
-            "downloadButton": "Salin Undangan dan Unduh Aplikasi",
-            "appInstalledTitle": "6180 Sudah Terinstal",
-            "appInstalledInstructions": "Jika Anda sudah menginstal aplikasi 6180, klik tombol di bawah ini untuk menyalin dan menggunakan kode undangan Anda.",
-            "inviteButton": "Salin dan Gunakan Kode Undangan"
+            "appNotInstalledTitle": "6180 Belum Terpasang",
+            "appNotInstalledInstructions": "Klik tombol di bawah untuk menyalin kode akses Anda dan mengunduh aplikasinya.",
+            "downloadButton": "Salin Kode Akses dan Unduh Aplikasi",
+            "appInstalledTitle": "6180 Terpasang",
+            "appInstalledInstructions": "Jika Anda telah memasang aplikasi 6180, klik tombol di bawah untuk menyalin dan menggunakan kode akses Anda.",
+            "inviteButton": "Salin dan Gunakan Kode Akses"
+          },
+          "ig": {
+            "titleTemplate": "{name} tinyere ncheta na ngwa 6180 na {time}",
+            "instructions": "Iji nweta ha, biko soro ntuziaka dị n'okpuru.",
+            "appNotInstalledTitle": "6180 Adịghị Ịwụnye",
+            "appNotInstalledInstructions": "Pịa bọtịnụ dị n'okpuru ka i kopya koodu ntinye gị ma budata ngwa.",
+            "downloadButton": "Kopya Koodu Ntinye na Budata Ngwa",
+            "appInstalledTitle": "6180 Ewụnyego",
+            "appInstalledInstructions": "Ọ bụrụ na i nwụnyego ngwa 6180, pịa bọtịnụ dị n'okpuru ka i kopya ma jiri koodu ntinye gị.",
+            "inviteButton": "Kopya na Jiri Koodu Ntinye"
           },
           "it": {
-            "titleTemplate": "{name} ha caricato ricordi nell'app 6180 alle {time}",
+            "titleTemplate": "{name} ha caricato dei ricordi sull'app 6180 alle {time}",
             "instructions": "Per accedervi, segui le istruzioni qui sotto.",
             "appNotInstalledTitle": "6180 Non Installata",
-            "appNotInstalledInstructions": "Clicca sul pulsante qui sotto per copiare il tuo codice d'invito e scaricare l'app.",
-            "downloadButton": "Copia Invito e Scarica App",
+            "appNotInstalledInstructions": "Clicca sul pulsante qui sotto per copiare il tuo codice di accesso e scaricare l'app.",
+            "downloadButton": "Copia Codice di Accesso e Scarica l'App",
             "appInstalledTitle": "6180 Installata",
-            "appInstalledInstructions": "Se hai già installato l'app 6180, clicca sul pulsante qui sotto per copiare e utilizzare il tuo codice d'invito.",
-            "inviteButton": "Copia e Usa Codice d'Invito"
+            "appInstalledInstructions": "Se hai già installato l'app 6180, clicca sul pulsante qui sotto per copiare e usare il tuo codice di accesso.",
+            "inviteButton": "Copia e Usa il Codice di Accesso"
           },
           "ja": {
-            "titleTemplate": "{name} は6180アプリに思い出をアップロードしました {time} に",
+            "titleTemplate": "{name} は {time} に6180アプリに思い出をアップロードしました",
             "instructions": "アクセスするには、以下の手順に従ってください。",
             "appNotInstalledTitle": "6180がインストールされていません",
-            "appNotInstalledInstructions": "下のボタンをクリックして、招待コードをコピーし、アプリをダウンロードしてください。",
-            "downloadButton": "招待をコピーしてアプリをダウンロード",
+            "appNotInstalledInstructions": "下のボタンをクリックしてアクセスコードをコピーし、アプリをダウンロードしてください。",
+            "downloadButton": "アクセスコードをコピーしてアプリをダウンロード",
             "appInstalledTitle": "6180がインストールされています",
-            "appInstalledInstructions": "すでに6180アプリをインストールしている場合は、下のボタンをクリックして招待コードをコピーして使用してください。",
-            "inviteButton": "招待コードをコピーして使用"
+            "appInstalledInstructions": "既に6180アプリをインストール済みの場合は、下のボタンをクリックしてアクセスコードをコピーして使用してください。",
+            "inviteButton": "アクセスコードをコピーして使用"
+          },
+          "jv": {
+            "titleTemplate": "{name} ngunggah kenangan ing aplikasi 6180 jam {time}",
+            "instructions": "Kanggo ngakses, tulung tindakna pandhuan ing ngisor iki.",
+            "appNotInstalledTitle": "6180 Durung diinstal",
+            "appNotInstalledInstructions": "Pencet tombol ing ngisor iki kanggo nyalin kode akses lan ngundhuh aplikasi.",
+            "downloadButton": "Salin Kode Akses lan Undhuh Aplikasi",
+            "appInstalledTitle": "6180 Wis Diinstal",
+            "appInstalledInstructions": "Yen wis nginstal aplikasi 6180, pencet tombol ing ngisor iki kanggo nyalin lan nggunakake kode akses sampeyan.",
+            "inviteButton": "Salin lan Gunakake Kode Akses"
+          },
+          "km": {
+            "titleTemplate": "{name} បានផ្ទុកអនុស្សាវរីយ៍ទៅក្នុងកម្មវិធី 6180 នៅម៉ោង {time}",
+            "instructions": "ដើម្បីចូលដំណើរការវា សូមអនុវត្តតាមសេចក្ដីណែនាំខាងក្រោម។",
+            "appNotInstalledTitle": "6180 មិនបានដំឡើងទេ",
+            "appNotInstalledInstructions": "ចុចប៊ូតុងខាងក្រោម ដើម្បីចម្លងកូដចូលរបស់អ្នក និងទាញយកកម្មវិធី។",
+            "downloadButton": "ចម្លងកូដចូល និងទាញយកកម្មវិធី",
+            "appInstalledTitle": "6180 បានដំឡើងរួចរាល់",
+            "appInstalledInstructions": "ប្រសិនបើអ្នកមានកម្មវិធី 6180 រួចហើយ សូមចុចប៊ូតុងខាងក្រោម ដើម្បីចម្លង និងប្រើកូដចូលរបស់អ្នក។",
+            "inviteButton": "ចម្លង និងប្រើកូដចូល"
+          },
+          "kn": {
+            "titleTemplate": "{name} {time} ರಲ್ಲಿ 6180 ಅನ್ವಯಣಕ್ಕೆ ಸ್ಮರಣೆಗಳು ಅಪ್ಲೋಡ್ ಮಾಡಿದ್ದಾರೆ",
+            "instructions": "ಅದಕ್ಕೆ ಪ್ರವೇಶಿಸಲು, ಕೆಳಗಿನ ನಿರ್ದೇಶನಗಳನ್ನು ಪಾಲಿಸಿ.",
+            "appNotInstalledTitle": "6180 ಅನ್ವಯಣಯನ್ನು ಇನ್ಸ್ಟಾಲ್ ಮಾಡಿಲ್ಲ",
+            "appNotInstalledInstructions": "ನಿಮ್ಮ ಪ್ರವೇಶ ಕೋಡ್ ಸರಪಡಿ ಮಾಡಿಕೊಳ್ಳಲು ಮತ್ತು ಅನ್ವಯಣ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಕೆಳಗಿನ ಬಟನ್ ಕ್ಲಿಕ್ ಮಾಡಿ.",
+            "downloadButton": "ಪ್ರವೇಶ ಕೋಡ್ ನಕಲು ಮಾಡಿ ಮತ್ತು ಅನ್ವಯಣ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+            "appInstalledTitle": "6180 ಇನ್ಸ್ಟಾಲ್ ಆಗಿದೆ",
+            "appInstalledInstructions": "ನೀವು ಈಗಾಗಲೇ 6180 ಅನ್ವಯಣವನ್ನು ಇನ್ಸ್ಟಾಲ್ ಮಾಡಿಕೊಂಡಿದ್ದರೆ, ಕೆಳಗಿನ ಬಟನ್ ಕ್ಲಿಕ್ ಮಾಡಿ ನಿಮ್ಮ ಪ್ರವೇಶ ಕೋಡ್ ನಕಲು ಮಾಡಿ ಬಳಸಿ.",
+            "inviteButton": "ಪ್ರವೇಶ ಕೋಡ್ ನಕಲು ಮಾಡಿ ಮತ್ತು ಬಳಸಿ"
           },
           "ko": {
-            "titleTemplate": "{name} 가 6180 앱에 추억을 업로드했습니다 {time}",
-            "instructions": "액세스하려면 아래 지침을 따르세요.",
-            "appNotInstalledTitle": "6180이 설치되지 않음",
-            "appNotInstalledInstructions": "아래 버튼을 클릭하여 초대 코드를 복사하고 앱을 다운로드하세요.",
-            "downloadButton": "초대 복사 및 앱 다운로드",
-            "appInstalledTitle": "6180이 설치됨",
-            "appInstalledInstructions": "이미 6180 앱을 설치한 경우, 아래 버튼을 클릭하여 초대 코드를 복사하고 사용하세요.",
-            "inviteButton": "초대 코드 복사 및 사용"
+            "titleTemplate": "{name}님이 {time}에 6180 앱에 추억을 업로드했습니다",
+            "instructions": "접근하려면 아래 안내를 따라주세요.",
+            "appNotInstalledTitle": "6180 미설치",
+            "appNotInstalledInstructions": "아래 버튼을 눌러 접근 코드를 복사하고 앱을 다운로드하세요.",
+            "downloadButton": "접근 코드 복사 및 앱 다운로드",
+            "appInstalledTitle": "6180 설치됨",
+            "appInstalledInstructions": "이미 6180 앱을 설치하셨다면, 아래 버튼을 눌러 접근 코드를 복사하여 사용하세요.",
+            "inviteButton": "접근 코드 복사 및 사용"
+          },
+          "lo": {
+            "titleTemplate": "{name} ອັບໂຫລດຄວາມຊຶ້ງຊ້ອງເຂົ້າໃນແອັບ 6180 ເວລາ {time}",
+            "instructions": "ເພື່ອເຂົ້າຫາພວກມັນ ກະລຸນາປฏິບັດຕາມຄຳແນະນຳຂ້າງລຸ່ມ.",
+            "appNotInstalledTitle": "ບໍ່ໄດ້ຕິດຕັ້ງ 6180",
+            "appNotInstalledInstructions": "ກົດປຸ່ມຂ້າງລຸ່ມເພື່ອສຳເນົົາລະຫັດເຂົ້າເຖິງຂອງທ່ານ ແລະດາວໂລດແອັບ.",
+            "downloadButton": "ສຳເນົົາລະຫັດເຂົ້າເຖິງ ແລະດາວໂລດແອັບ",
+            "appInstalledTitle": "ຕິດຕັ້ງ 6180 ແລ້ວ",
+            "appInstalledInstructions": "ຖ້າທ່ານຕິດຕັ້ງແອັບ 6180 ມາແລ້ວ, ກົດປຸ່ມຂ້າງລຸ່ມເພື່ອສຳເນົົາ ແລະໃຊ້ລະຫັດເຂົ້າເຖິງຂອງທ່ານ.",
+            "inviteButton": "ສຳເນົົາ ແລະໃຊ້ລະຫັດເຂົ້າເຖິງ"
+          },
+          "ml": {
+            "titleTemplate": "{name} {time} 6180 ആപ്പിലോട്ട് ഓര്‍മ്മകള്‍ അപ്‌ലോഡ് ചെയ്തു",
+            "instructions": "അവിലേക്ക് പ്രവേശിക്കാൻ, താഴെ നല്‍കിയിരിക്കുന്ന നിർദേശങ്ങൾ പാലിക്കുക.",
+            "appNotInstalledTitle": "6180 ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല",
+            "appNotInstalledInstructions": "താഴെ കാണുന്ന ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ആക്‌സസ് കോഡ് കോപ്പി ചെയ്തു ആപ്പ് ഡൗൺലോഡ് ചെയ്യുക.",
+            "downloadButton": "ആക്‌സസ് കോഡ് കോപ്പി ചെയ്യുക & ആപ്പ് ഡൗൺലോഡ് ചെയ്യുക",
+            "appInstalledTitle": "6180 ഇൻസ്റ്റാൾ ചെയ്തു",
+            "appInstalledInstructions": "നിങ്ങൾക്ക് 6180 ആപ്പ് ഇതിനകം ഇൻസ്റ്റാൾ ചെയ്തിട്ടുണ്ടെങ്കിൽ, ചുവടെയുള്ള ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ആക്‌സസ് കോഡ് കോപ്പി ചെയ്തു ഉപയോഗിക്കുക.",
+            "inviteButton": "ആക്‌സസ് കോഡ് കോപ്പി ചെയ്തു ഉപയോഗിക്കുക"
+          },
+          "mr": {
+            "titleTemplate": "{name} यांनी {time} वाजता 6180 अॅपवर आठवणी अपलोड केल्या",
+            "instructions": "त्यांपर्यंत पोहोचण्यासाठी, कृपया खालील सूचनांचे पालन करा.",
+            "appNotInstalledTitle": "6180 इंस्टॉल झालेले नाही",
+            "appNotInstalledInstructions": "तुमचा अॅक्सेस कोड कॉपी करण्यासाठी आणि अॅप डाउनलोड करण्यासाठी खालील बटण दाबा.",
+            "downloadButton": "अॅक्सेस कोड कॉपी करा आणि अॅप डाउनलोड करा",
+            "appInstalledTitle": "6180 इंस्टॉल झाले आहे",
+            "appInstalledInstructions": "जर तुमच्या कडे आधीच 6180 अॅप इंस्टॉल असेल तर, तुमचा अॅक्सेस कोड कॉपी करून वापरण्यासाठी खालील बटण दाबा.",
+            "inviteButton": "अॅक्सेस कोड कॉपी करा आणि वापरा"
           },
           "ms": {
-            "titleTemplate": "{name} memuat naik kenangan ke aplikasi 6180 pada {time}",
+            "titleTemplate": "{name} telah memuat naik memori ke aplikasi 6180 pada {time}",
             "instructions": "Untuk mengaksesnya, sila ikuti arahan di bawah.",
             "appNotInstalledTitle": "6180 Tidak Dipasang",
-            "appNotInstalledInstructions": "Klik butang di bawah untuk menyalin kod jemputan anda dan muat turun aplikasi.",
-            "downloadButton": "Salin Jemputan dan Muat Turun Aplikasi",
-            "appInstalledTitle": "6180 Dipasang",
-            "appInstalledInstructions": "Jika anda sudah memasang aplikasi 6180, klik butang di bawah untuk menyalin dan menggunakan kod jemputan anda.",
-            "inviteButton": "Salin dan Gunakan Kod Jemputan"
+            "appNotInstalledInstructions": "Klik butang di bawah untuk menyalin kod akses anda dan memuat turun aplikasi.",
+            "downloadButton": "Salin Kod Akses dan Muat Turun Aplikasi",
+            "appInstalledTitle": "6180 Telah Dipasang",
+            "appInstalledInstructions": "Jika anda sudah memasang aplikasi 6180, klik butang di bawah untuk menyalin dan menggunakan kod akses anda.",
+            "inviteButton": "Salin dan Guna Kod Akses"
+          },
+          "my": {
+            "titleTemplate": "{name} သည် {time} တွင် 6180 အပ်ပလီကေးရှင်းသို့ အမှတ်တရများ ကိုတင်လိုက်ပါသည်",
+            "instructions": "ရန်သူ့ထံရောက်ရန် ကျေးဇူးပြု၍ အောက်တွင်ဖော်ပြထားသောညွှန်ကြားချက်များအားလိုက်နာပါ။",
+            "appNotInstalledTitle": "6180 တင်ထားခြင်းမရှိပါ",
+            "appNotInstalledInstructions": "အောက်ပါခလုတ်ကိုနှိပ်ပြီး သင့်၏ ဝင်ကြေးကုဒ် ကိုကော်ပီဆောင်ပြီး အပ်ပလီကေးရှင်း ကိုဒေါင်းလုတ်ဆွဲပါ။",
+            "downloadButton": "ဝင်ကြေးကုဒ်ကော်ပီပြီး အပ်ဒေါင်းလုတ်ဆွဲပါ",
+            "appInstalledTitle": "6180 တင်ပြီးပါပြီ",
+            "appInstalledInstructions": "သင့်တွင် 6180 အပ် 이미 တင်ပြီးပါက အောက်ပါခလုတ်ကိုနှိပ်ပြီး ကိုယ့်ဝင်ကြေးကုဒ်ကိုကော်ပီပြီး အသုံးပြုပါ။",
+            "inviteButton": "ဝင်ကြေးကုဒ်ကော်ပီပြီး အသုံးပြုပါ"
           },
           "nb": {
-            "titleTemplate": "{name} lastet opp minner til 6180-appen kl {time}",
-            "instructions": "For å få tilgang til dem, følg instruksjonene nedenfor.",
-            "appNotInstalledTitle": "6180 Ikke Installert",
-            "appNotInstalledInstructions": "Klikk på knappen nedenfor for å kopiere invitasjonskoden din og laste ned appen.",
-            "downloadButton": "Kopier Invitasjon og Last Ned App",
+            "titleTemplate": "{name} lastet opp minner til 6180-appen kl. {time}",
+            "instructions": "For å få tilgang, følg instruksjonene nedenfor.",
+            "appNotInstalledTitle": "6180 Ikke installert",
+            "appNotInstalledInstructions": "Klikk på knappen nedenfor for å kopiere tilgangskoden din og laste ned appen.",
+            "downloadButton": "Kopier tilgangskode og last ned app",
             "appInstalledTitle": "6180 Installert",
-            "appInstalledInstructions": "Hvis du allerede har installert 6180-appen, klikk på knappen nedenfor for å kopiere og bruke invitasjonskoden din.",
-            "inviteButton": "Kopier og Bruk Invitasjonskode"
+            "appInstalledInstructions": "Hvis du allerede har 6180-appen installert, klikk på knappen nedenfor for å kopiere og bruke tilgangskoden din.",
+            "inviteButton": "Kopier og bruk tilgangskode"
+          },
+          "ne": {
+            "titleTemplate": "{name} ले {time} मा 6180 एपमा स्मृतिहरू अपलोड गर्नुभयो",
+            "instructions": "तिनीहरूमा पहुँच गर्न, कृपया तल दिएको निर्देशिका पालना गर्नुहोस्।",
+            "appNotInstalledTitle": "6180 स्थापित गरिएको छैन",
+            "appNotInstalledInstructions": "तपाईंको पहुँच कोड कपी गर्न र एप डाउनलोड गर्न तलको बटन क्लिक गर्नुहोस्।",
+            "downloadButton": "पहुँच कोड कपी गरी एप डाउनलोड गर्नुहोस्",
+            "appInstalledTitle": "6180 स्थापित भइसकेको छ",
+            "appInstalledInstructions": "यदि तपाईंसँग 6180 एप पहिल्यै छ भने, तलको बटन क्लिक गरी तपाईंको पहुँच कोड कपी र प्रयोग गर्नुहोस्।",
+            "inviteButton": "पहुँच कोड कपी गरी प्रयोग गर्नुहोस्"
+          },
+          "nl": {
+            "titleTemplate": "{name} heeft om {time} herinneringen geüpload naar de 6180-app",
+            "instructions": "Volg onderstaande instructies om toegang te krijgen.",
+            "appNotInstalledTitle": "6180 Niet geïnstalleerd",
+            "appNotInstalledInstructions": "Klik op de knop hieronder om je toegangscode te kopiëren en de app te downloaden.",
+            "downloadButton": "Kopieer Toegangscode en Download App",
+            "appInstalledTitle": "6180 Geïnstalleerd",
+            "appInstalledInstructions": "Als je de 6180-app al hebt geïnstalleerd, klik dan op de knop hieronder om je toegangscode te kopiëren en te gebruiken.",
+            "inviteButton": "Kopieer en Gebruik Toegangscode"
+          },
+          "or": {
+            "titleTemplate": "{name} {time} ରେ 6180 ଆପ୍ଲିକେଶନ୍-re ସ୍ମୃତି ଅପ୍ଲୋଡ୍ କରିଛନ୍ତି",
+            "instructions": "ସେଗୁଡ଼ିକୁ ଆକ୍ସେସ୍ କରିବାପାଇଁ, ଦୟାକରି ନିମ୍ନଲିଖିତ ନିର୍ଦ୍ଦେଶାବଳୀ ପାଳନ କରନ୍ତୁ.",
+            "appNotInstalledTitle": "6180 ଇନ୍ଷ୍ଟାଲ୍ ହୋଇନାହିଁ",
+            "appNotInstalledInstructions": "ନିମ୍ନେ ଥିବା ବଟନ୍ କ୍ଲିକ୍ କରି ଆପଣଙ୍କର ଆକ୍ସେସ୍ କୋଡ୍ କପି କରି ଏବଂ ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ.",
+            "downloadButton": "ଆକ୍ସେସ୍ କୋଡ୍ କପି କରନ୍ତୁ ଏବଂ ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ",
+            "appInstalledTitle": "6180 ଇନ୍ଷ୍ଟାଲ୍ ହୋଇଯାଇଛି",
+            "appInstalledInstructions": "ଯଦି ଆପଣ 6180 ଆପ୍ ପୂର୍ବରୁ ଇନ୍ଷ୍ଟାଲ୍ କରିଛନ୍ତି, ନିମ୍ନେ ଥିବା ବଟନ୍ ଉପରେ କ୍ଲିକ୍ କରି ଆପଣଙ୍କର ଆକ୍ସେସ୍ କୋଡ୍ କପି ଏବଂ ବ୍ୟବହାର କରନ୍ତୁ.",
+            "inviteButton": "ଆକ୍ସେସ୍ କୋଡ୍ କପି କରନ୍ତୁ ଏବଂ ବ୍ୟବହାର କରନ୍ତୁ"
+          },
+          "pa": {
+            "titleTemplate": "{name} ਨੇ {time} 'ਤੇ 6180 ਐਪ 'ਤੇ ਸਮ੍ਰਿਤੀਆਂ ਅੱਪਲੋਡ ਕੀਤੀਆਂ",
+            "instructions": "ਉਨ੍ਹਾਂ ਤੱਕ ਪਹੁੰਚਣ ਲਈ, ਦਿੱਤੇ ਜਾਣ ਵਾਲੇ ਹਿਦਾਇਤਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ।",
+            "appNotInstalledTitle": "6180 ਇੰਸਟਾਲ ਨਹੀਂ ਹੋਇਆ",
+            "appNotInstalledInstructions": "ਆਪਣਾ ਐਕਸੈੱਸ ਕੋਡ ਕਾਪੀ ਕਰਨ ਅਤੇ ਐਪ ਡਾਊਨਲੋਡ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨ ਤੇ ਕਲਿੱਕ ਕਰੋ।",
+            "downloadButton": "ਐਕਸੈੱਸ ਕੋਡ ਕਾਪੀ ਕਰੋ ਅਤੇ ਐਪ ਡਾਊਨਲੋਡ ਕਰੋ",
+            "appInstalledTitle": "6180 ਇੰਸਟਾਲ ਹੋ ਗਿਆ",
+            "appInstalledInstructions": "ਜੇ ਤੁਸੀਂ ਪਹਿਲਾਂ ਤੋਂ 6180 ਐਪ ਇੰਸਟਾਲ ਕਰ ਚੁੱਕੇ ਹੋ, ਤਾਂ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨ ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਆਪਣੇ ਐਕਸੈੱਸ ਕੋਡ ਨੂੰ ਕਾਪੀ ਕਰਕੇ ਵਰਤੋ।",
+            "inviteButton": "ਐਕਸੈੱਸ ਕੋਡ ਕਾਪੀ ਕਰੋ ਅਤੇ ਵਰਤੋ"
           },
           "pl": {
-            "titleTemplate": "{name} przesłał wspomnienia do aplikacji 6180 o godzinie {time}",
-            "instructions": "Aby uzyskać do nich dostęp, postępuj zgodnie z poniższymi instrukcjami.",
-            "appNotInstalledTitle": "6180 Niezainstalowana",
-            "appNotInstalledInstructions": "Kliknij poniższy przycisk, aby skopiować kod zaproszenia i pobrać aplikację.",
-            "downloadButton": "Kopiuj Zaproszenie i Pobierz Aplikację",
-            "appInstalledTitle": "6180 Zainstalowana",
-            "appInstalledInstructions": "Jeśli masz już zainstalowaną aplikację 6180, kliknij poniższy przycisk, aby skopiować i użyć kodu zaproszenia.",
-            "inviteButton": "Kopiuj i Użyj Kodu Zaproszenia"
+            "titleTemplate": "{name} przesłał wspomnienia do aplikacji 6180 o {time}",
+            "instructions": "Aby uzyskać dostęp, postępuj zgodnie z poniższymi instrukcjami.",
+            "appNotInstalledTitle": "6180 Nie Zainstalowane",
+            "appNotInstalledInstructions": "Kliknij przycisk poniżej, aby skopiować swój kod dostępu i pobrać aplikację.",
+            "downloadButton": "Skopiuj kod dostępu i pobierz aplikację",
+            "appInstalledTitle": "6180 Zainstalowane",
+            "appInstalledInstructions": "Jeśli masz już zainstalowaną aplikację 6180, kliknij przycisk poniżej, aby skopiować i użyć swojego kodu dostępu.",
+            "inviteButton": "Skopiuj i użyj kodu dostępu"
+          },
+          "ps": {
+            "titleTemplate": "{name} د {time} پر مهال 6180 اپلیکیشن ته خاطرات پورته کړل",
+            "instructions": "د لاسرسي لپاره، لطفاً لاندې لارښوونې تعقیب کړئ.",
+            "appNotInstalledTitle": "6180 ندی نصب شوی",
+            "appNotInstalledInstructions": "خپل د لاسرسي کود د کاپي کولو او اپلیکیشن د ډاونلوډ لپاره لاندې تڼۍ کلیک کړئ.",
+            "downloadButton": "د لاسرسي کود کاپي کړئ او اپلیکیشن ډاونلوډ کړئ",
+            "appInstalledTitle": "6180 نصب شوی",
+            "appInstalledInstructions": "که تاسې دمخه 6180 اپلیکیشن نصب کړی وي، نو لاندې تڼۍ کلیک کړئ ترڅو خپل د لاسرسي کود کاپي او استعمال کړئ.",
+            "inviteButton": "د لاسرسي کود کاپي او استعمال کړئ"
           },
           "pt-BR": {
-            "titleTemplate": "{name} enviou memórias para o aplicativo 6180 em {time}",
+            "titleTemplate": "{name} enviou memórias para o aplicativo 6180 às {time}",
             "instructions": "Para acessá-las, siga as instruções abaixo.",
-            "appNotInstalledTitle": "6180 Não Instalado",
-            "appNotInstalledInstructions": "Clique no botão abaixo para copiar o código de convite e baixar o aplicativo.",
-            "downloadButton": "Copiar Convite e Baixar Aplicativo",
-            "appInstalledTitle": "6180 Instalado",
-            "appInstalledInstructions": "Se você já instalou o aplicativo 6180, clique no botão abaixo para copiar e usar o código de convite.",
-            "inviteButton": "Copiar e Usar Código de Convite"
+            "appNotInstalledTitle": "6180 não instalado",
+            "appNotInstalledInstructions": "Clique no botão abaixo para copiar seu código de acesso e baixar o aplicativo.",
+            "downloadButton": "Copiar código de acesso e baixar o aplicativo",
+            "appInstalledTitle": "6180 instalado",
+            "appInstalledInstructions": "Se você já tem o aplicativo 6180 instalado, clique no botão abaixo para copiar e usar seu código de acesso.",
+            "inviteButton": "Copiar e usar código de acesso"
           },
           "pt-PT": {
-            "titleTemplate": "{name} carregou memórias para a aplicação 6180 em {time}",
-            "instructions": "Para aceder a elas, siga as instruções abaixo.",
-            "appNotInstalledTitle": "6180 Não Instalado",
-            "appNotInstalledInstructions": "Clique no botão abaixo para copiar o código de convite e baixar a aplicação.",
-            "downloadButton": "Copiar Convite e Baixar Aplicação",
-            "appInstalledTitle": "6180 Instalado",
-            "appInstalledInstructions": "Se já tiver a aplicação 6180 instalada, clique no botão abaixo para copiar e usar o código de convite.",
-            "inviteButton": "Copiar e Usar Código de Convite"
+            "titleTemplate": "{name} carregou memórias na aplicação 6180 às {time}",
+            "instructions": "Para aceder às mesmas, siga as instruções abaixo.",
+            "appNotInstalledTitle": "6180 não instalado",
+            "appNotInstalledInstructions": "Clique no botão abaixo para copiar o seu código de acesso e descarregar a aplicação.",
+            "downloadButton": "Copiar código de acesso e descarregar aplicação",
+            "appInstalledTitle": "6180 instalado",
+            "appInstalledInstructions": "Se já tem a aplicação 6180 instalada, clique no botão abaixo para copiar e usar o seu código de acesso.",
+            "inviteButton": "Copiar e usar código de acesso"
           },
           "ro": {
-            "titleTemplate": "{name} a încărcat amintiri în aplicația 6180 la {time}",
-            "instructions": "Pentru a le accesa, urmați instrucțiunile de mai jos.",
+            "titleTemplate": "{name} a încărcat amintiri în aplicația 6180 la ora {time}",
+            "instructions": "Pentru a accesa, vă rugăm să urmați instrucțiunile de mai jos.",
             "appNotInstalledTitle": "6180 Neinstalat",
-            "appNotInstalledInstructions": "Faceți clic pe butonul de mai jos pentru a copia codul de invitație și pentru a descărca aplicația.",
-            "downloadButton": "Copiați Invitația și Descărcați Aplicația",
+            "appNotInstalledInstructions": "Apăsați butonul de mai jos pentru a copia codul de acces și a descărca aplicația.",
+            "downloadButton": "Copiați codul de acces și descărcați aplicația",
             "appInstalledTitle": "6180 Instalată",
-            "appInstalledInstructions": "Dacă ați instalat deja aplicația 6180, faceți clic pe butonul de mai jos pentru a copia și utiliza codul de invitație.",
-            "inviteButton": "Copiați și Utilizați Codul de Invitație"
+            "appInstalledInstructions": "Dacă aveți deja aplicația 6180 instalată, apăsați butonul de mai jos pentru a copia și utiliza codul de acces.",
+            "inviteButton": "Copiați și utilizați codul de acces"
           },
           "ru": {
-            "titleTemplate": "{name} загрузил воспоминания в приложение 6180 в {time}",
-            "instructions": "Чтобы получить к ним доступ, следуйте инструкциям ниже.",
-            "appNotInstalledTitle": "6180 Не Установлено",
-            "appNotInstalledInstructions": "Нажмите кнопку ниже, чтобы скопировать код приглашения и скачать приложение.",
-            "downloadButton": "Скопировать Приглашение и Скачать Приложение",
+            "titleTemplate": "{name} загрузил(а) воспоминания в приложение 6180 в {time}",
+            "instructions": "Чтобы получить доступ, пожалуйста, следуйте инструкциям ниже.",
+            "appNotInstalledTitle": "6180 Не установлено",
+            "appNotInstalledInstructions": "Нажмите на кнопку ниже, чтобы скопировать свой код доступа и скачать приложение.",
+            "downloadButton": "Скопировать код доступа и скачать приложение",
             "appInstalledTitle": "6180 Установлено",
-            "appInstalledInstructions": "Если вы уже установили приложение 6180, нажмите кнопку ниже, чтобы скопировать и использовать код приглашения.",
-            "inviteButton": "Скопировать и Использовать Код Приглашения"
+            "appInstalledInstructions": "Если у вас уже установлено приложение 6180, нажмите на кнопку ниже, чтобы скопировать и использовать свой код доступа.",
+            "inviteButton": "Скопировать и использовать код доступа"
+          },
+          "sd": {
+            "titleTemplate": "{name} {time} تي 6180 ايپ تي يادون اپلوڊ ڪيون",
+            "instructions": "انهن تائين رسائي لاءِ، مهرباني ڪري هيٺ ڏنل هدايتن تي عمل ڪريو.",
+            "appNotInstalledTitle": "6180 انسٽال ناهي",
+            "appNotInstalledInstructions": "هيٺين بٽڻ تي ڪلڪ ڪري پنهنجو رسائي ڪوڊ ڪاپي ڪري ايپ ڊائونلوڊ ڪريو.",
+            "downloadButton": "رسائي ڪوڊ ڪاپي ڪريو ۽ ايپ ڊائونلوڊ ڪريو",
+            "appInstalledTitle": "6180 انسٽال ٿيل آهي",
+            "appInstalledInstructions": "جيڪڏھن اوهان اڳ ئي 6180 ايپ انسٽال ڪئي آهي، ته هيٺين بٽڻ تي ڪلڪ ڪري پنهنجو رسائي ڪوڊ ڪاپي ڪري استعمال ڪريو.",
+            "inviteButton": "رسائي ڪوڊ ڪاپي ڪريو ۽ استعمال ڪريو"
+          },
+          "si": {
+            "titleTemplate": "{name} විසින් {time} ට 6180 යෙදුමේ සම්භරණ අප්ලෝඩ් කර ඇත",
+            "instructions": "එවැනිව ලබාගැනීමට, කරුණාකර පහත උපදෙස් අනුගමනය කරන්න.",
+            "appNotInstalledTitle": "6180 ස්ථාපිත කර නොමැත",
+            "appNotInstalledInstructions": "ඔබගේ ප්‍රවේශ කේතය පිටපත් කර යෙදුම බාගත කිරීමට පහතින් දක්වා ඇති බොත්තම ක්ලික් කරන්න.",
+            "downloadButton": "ප්‍රවේශ කේතය පිටපත් කර යෙදුම බාගත කරන්න",
+            "appInstalledTitle": "6180 ස්ථාපිත කර ඇත",
+            "appInstalledInstructions": "ඔබ දැනටමත් 6180 යෙදුම ස්ථාපිත කර තිබේ නම්, පහතින් දක්වා ඇති බොත්තම ක්ලික් කොට ඔබගේ ප්‍රවේශ කේතය පිටපත් කර භාවිතා කරන්න.",
+            "inviteButton": "ප්‍රවේශ කේතය පිටපත් කර භාවිතා කරන්න"
           },
           "sk": {
-            "titleTemplate": "{name} nahrali spomienky do aplikácie 6180 o {time}",
-            "instructions": "Ak chcete k nim získať prístup, postupujte podľa pokynov nižšie.",
-            "appNotInstalledTitle": "6180 Nie Je Nainštalovaná",
-            "appNotInstalledInstructions": "Kliknite na tlačidlo nižšie a skopírujte svoj pozývací kód a stiahnite si aplikáciu.",
-            "downloadButton": "Skopírujte Pozvanie a Stiahnite Si Aplikáciu",
-            "appInstalledTitle": "6180 Nainštalovaná",
-            "appInstalledInstructions": "Ak už máte nainštalovanú aplikáciu 6180, kliknite na tlačidlo nižšie a skopírujte a použite pozývací kód.",
-            "inviteButton": "Skopírujte a Použite Pozývací Kód"
+            "titleTemplate": "{name} nahral spomienky do aplikácie 6180 o {time}",
+            "instructions": "Ak chcete získať prístup, postupujte podľa pokynov nižšie.",
+            "appNotInstalledTitle": "6180 Nie je nainštalované",
+            "appNotInstalledInstructions": "Kliknite na tlačidlo nižšie, aby ste skopírovali svoj prístupový kód a stiahli aplikáciu.",
+            "downloadButton": "Skopírovať prístupový kód a stiahnuť aplikáciu",
+            "appInstalledTitle": "6180 Nainštalované",
+            "appInstalledInstructions": "Ak už máte nainštalovanú aplikáciu 6180, kliknite nižšie, aby ste skopírovali a použili prístupový kód.",
+            "inviteButton": "Skopírovať a použiť prístupový kód"
           },
-          "es": {
-            "titleTemplate": "{name} subió recuerdos a la aplicación 6180 a las {time}",
-            "instructions": "Para acceder a ellos, siga las instrucciones a continuación.",
-            "appNotInstalledTitle": "6180 No Instalado",
-            "appNotInstalledInstructions": "Haga clic en el botón de abajo para copiar su código de invitación y descargar la aplicación.",
-            "downloadButton": "Copiar Invitación y Descargar la Aplicación",
-            "appInstalledTitle": "6180 Instalado",
-            "appInstalledInstructions": "Si ya ha instalado la aplicación 6180, haga clic en el botón de abajo para copiar y usar su código de invitación.",
-            "inviteButton": "Copiar y Usar el Código de Invitación"
+          "sr": {
+            "titleTemplate": "{name} je učitao uspomene u 6180 aplikaciju u {time}",
+            "instructions": "Da biste pristupili, sledite uputstva ispod.",
+            "appNotInstalledTitle": "6180 Nije Instaliran",
+            "appNotInstalledInstructions": "Kliknite na dugme ispod da kopirate vaš pristupni kod i preuzmete aplikaciju.",
+            "downloadButton": "Kopiraj pristupni kod i preuzmi aplikaciju",
+            "appInstalledTitle": "6180 Instaliran",
+            "appInstalledInstructions": "Ako već imate instaliranu 6180 aplikaciju, kliknite na dugme ispod da kopirate i iskoristite vaš pristupni kod.",
+            "inviteButton": "Kopiraj i iskoristi pristupni kod"
           },
           "sv": {
-            "titleTemplate": "{name} laddade upp minnen till 6180-appen klockan {time}",
-            "instructions": "För att komma åt dem, följ instruktionerna nedan.",
-            "appNotInstalledTitle": "6180 Inte Installerad",
-            "appNotInstalledInstructions": "Klicka på knappen nedan för att kopiera din inbjudningskod och ladda ner appen.",
-            "downloadButton": "Kopiera Inbjudan och Ladda Ner Appen",
-            "appInstalledTitle": "6180 Installerad",
-            "appInstalledInstructions": "Om du redan har installerat 6180-appen, klicka på knappen nedan för att kopiera och använda din inbjudningskod.",
-            "inviteButton": "Kopiera och Använd Inbjudningskod"
+            "titleTemplate": "{name} laddade upp minnen till 6180-appen kl. {time}",
+            "instructions": "För att få tillgång, följ instruktionerna nedan.",
+            "appNotInstalledTitle": "6180 ej installerad",
+            "appNotInstalledInstructions": "Klicka på knappen nedan för att kopiera din åtkomstkod och ladda ner appen.",
+            "downloadButton": "Kopiera åtkomstkod och ladda ner app",
+            "appInstalledTitle": "6180 installerad",
+            "appInstalledInstructions": "Om du redan har 6180-appen installerad, klicka på knappen nedan för att kopiera och använda din åtkomstkod.",
+            "inviteButton": "Kopiera och använd åtkomstkod"
+          },
+          "sw": {
+            "titleTemplate": "{name} alipakia kumbukumbu kwenye app ya 6180 saa {time}",
+            "instructions": "Ili kupata, tafadhali fuata maelekezo hapa chini.",
+            "appNotInstalledTitle": "6180 Haijawekwa",
+            "appNotInstalledInstructions": "Bofya kitufe hapa chini ili kunakili msimbo wako wa kufikia na kupakua app.",
+            "downloadButton": "Nakili Msimbo wa Kufikia na Pakua App",
+            "appInstalledTitle": "6180 Imewekwa",
+            "appInstalledInstructions": "Ikiwa tayari una app ya 6180 imewekwa, bofya kitufe hapa chini kunakili na kutumia msimbo wako wa kufikia.",
+            "inviteButton": "Nakili na Tumia Msimbo wa Kufikia"
+          },
+          "ta": {
+            "titleTemplate": "{name} {time} நேரத்தில் 6180 பயன்பாட்டில் நினைவுகள் பதிவேற்றினார்",
+            "instructions": "அவற்றை அணுக கீழ்கண்ட பணிப்பாட்டு வழிமுறைகளை பின்பற்றவும்.",
+            "appNotInstalledTitle": "6180 நிறுவப்படவில்லை",
+            "appNotInstalledInstructions": "உங்கள் அணுகல் குறியீட்டை நகலெடுத்து பயன்பாட்டைப் பதிவிறக்க கீழே உள்ள பொத்தானை கிளிக் செய்யவும்.",
+            "downloadButton": "அணுகல் குறியீட்டை நகலெடுத்து பயன்பாட்டைப் பதிவிறக்கவும்",
+            "appInstalledTitle": "6180 நிறுவப்பட்டுள்ளது",
+            "appInstalledInstructions": "உங்களிடம் ஏற்கனவே 6180 பயன்பாடு உள்ளதெனில் கீழே உள்ள பொத்தானை கிளிக் செய்து உங்கள் அணுகல் குறியீட்டை நகலெடுத்து பயன்படுத்தவும்.",
+            "inviteButton": "அணுகல் குறியீட்டை நகலெடுத்து பயன்படுத்தவும்"
+          },
+          "te": {
+            "titleTemplate": "{name} {time} సమయానికి 6180 యాప్‌లో స్మృతులు అప్‌లోడ్ చేశారు",
+            "instructions": "వాటిని యాక్సెస్ చేసేందుకు దయచేసి క్రింది సూచనలను అనుసరించండి.",
+            "appNotInstalledTitle": "6180 ఇన్‌స్టాల్ కాలేదు",
+            "appNotInstalledInstructions": "మీ యాక్సెస్ కోడ్‌ను కాపీ చేసేందుకు మరియు యాప్‌ను డౌన్‌లోడ్ చేసేందుకు క్రింది బటన్‌ను క్లిక్ చేయండి.",
+            "downloadButton": "యాక్సెస్ కోడ్ కాపీ చేసి యాప్ డౌన్‌లోడ్ చేయండి",
+            "appInstalledTitle": "6180 ఇన్‌స్టాల్ అయింది",
+            "appInstalledInstructions": "మీరు ముందే 6180 యాప్‌ను ఇన్‌స్టాల్ చేసుంటే, క్రింది బటన్‌పై క్లిక్ చేసి మీ యాక్సెస్ కోడ్‌ను కాపీ చేసి ఉపయోగించండి.",
+            "inviteButton": "యాక్సెస్ కోడ్ కాపీ చేసి ఉపయోగించండి"
           },
           "th": {
-            "titleTemplate": "{name} อัปโหลดความทรงจำไปยังแอป 6180 ที่ {time}",
-            "instructions": "ในการเข้าถึง โปรดทำตามคำแนะนำด้านล่าง",
-            "appNotInstalledTitle": "ไม่ได้ติดตั้ง 6180",
-            "appNotInstalledInstructions": "คลิกที่ปุ่มด้านล่างเพื่อคัดลอกรหัสคำเชิญและดาวน์โหลดแอป",
-            "downloadButton": "คัดลอกคำเชิญและดาวน์โหลดแอป",
+            "titleTemplate": "{name} อัปโหลดความทรงจำไปยังแอป 6180 เมื่อเวลา {time}",
+            "instructions": "เพื่อเข้าถึงโปรดทำตามคำแนะนำด้านล่าง",
+            "appNotInstalledTitle": "ยังไม่ได้ติดตั้ง 6180",
+            "appNotInstalledInstructions": "คลิกปุ่มด้านล่างเพื่อคัดลอกรหัสเข้าถึงของคุณและดาวน์โหลดแอป",
+            "downloadButton": "คัดลอกรหัสเข้าถึงและดาวน์โหลดแอป",
             "appInstalledTitle": "ติดตั้ง 6180 แล้ว",
-            "appInstalledInstructions": "หากคุณติดตั้งแอป 6180 แล้ว คลิกที่ปุ่มด้านล่างเพื่อคัดลอกและใช้รหัสคำเชิญของคุณ",
-            "inviteButton": "คัดลอกและใช้รหัสคำเชิญ"
+            "appInstalledInstructions": "หากคุณติดตั้งแอป 6180 แล้ว ให้คลิกปุ่มด้านล่างเพื่อคัดลอกรหัสเข้าถึงและใช้งาน",
+            "inviteButton": "คัดลอกรหัสเข้าถึงและใช้งาน"
           },
           "tr": {
-            "titleTemplate": "{name} anılarını 6180 uygulamasına yükledi {time}",
-            "instructions": "Onlara erişmek için lütfen aşağıdaki talimatları izleyin.",
-            "appNotInstalledTitle": "6180 Yüklenmedi",
-            "appNotInstalledInstructions": "Davet kodunuzu kopyalamak ve uygulamayı indirmek için aşağıdaki düğmeye tıklayın.",
-            "downloadButton": "Davetiyeyi Kopyala ve Uygulamayı İndir",
-            "appInstalledTitle": "6180 Yüklendi",
-            "appInstalledInstructions": "6180 uygulamasını zaten yüklediyseniz, davet kodunuzu kopyalamak ve kullanmak için aşağıdaki düğmeye tıklayın.",
-            "inviteButton": "Davet Kodunu Kopyala ve Kullan"
+            "titleTemplate": "{name} {time}'da 6180 uygulamasına anılar yükledi",
+            "instructions": "Erişim için lütfen aşağıdaki talimatları izleyin.",
+            "appNotInstalledTitle": "6180 Yüklü Değil",
+            "appNotInstalledInstructions": "Erişim kodunuzu kopyalamak ve uygulamayı indirmek için aşağıdaki butona tıklayın.",
+            "downloadButton": "Erişim Kodunu Kopyala ve Uygulamayı İndir",
+            "appInstalledTitle": "6180 Yüklü",
+            "appInstalledInstructions": "6180 uygulamasını zaten yüklediyseniz, erişim kodunuzu kopyalamak ve kullanmak için aşağıdaki butona tıklayın.",
+            "inviteButton": "Erişim Kodunu Kopyala ve Kullan"
           },
           "uk": {
-            "titleTemplate": "{name} завантажив спогади в додаток 6180 о {time}",
-            "instructions": "Щоб отримати доступ до них, дотримуйтесь наведених нижче інструкцій.",
-            "appNotInstalledTitle": "6180 Не Встановлено",
-            "appNotInstalledInstructions": "Натисніть кнопку нижче, щоб скопіювати свій код запрошення та завантажити додаток.",
-            "downloadButton": "Скопіювати Запрошення і Завантажити Додаток",
+            "titleTemplate": "{name} завантажив(ла) спогади в додаток 6180 о {time}",
+            "instructions": "Щоб отримати доступ, будь ласка, дотримуйтесь інструкцій нижче.",
+            "appNotInstalledTitle": "6180 Не встановлено",
+            "appNotInstalledInstructions": "Натисніть кнопку нижче, щоб скопіювати ваш код доступу та завантажити додаток.",
+            "downloadButton": "Скопіювати код доступу та завантажити додаток",
             "appInstalledTitle": "6180 Встановлено",
-            "appInstalledInstructions": "Якщо ви вже встановили додаток 6180, натисніть кнопку нижче, щоб скопіювати та використати код запрошення.",
-            "inviteButton": "Скопіювати і Використати Код Запрошення"
+            "appInstalledInstructions": "Якщо додаток 6180 вже встановлено, натисніть кнопку нижче, щоб скопіювати та використати ваш код доступу.",
+            "inviteButton": "Скопіювати та використати код доступу"
+          },
+          "ur": {
+            "titleTemplate": "{name} نے {time} پر 6180 ایپ پر یادیں اپ لوڈ کیں",
+            "instructions": "ان تک رسائی کے لیے، براہ مہربانی نیچے دی گئی ہدایات پر عمل کریں۔",
+            "appNotInstalledTitle": "6180 انسٹال نہیں ہے",
+            "appNotInstalledInstructions": "اپنا ایکسیس کوڈ کاپی کرنے اور ایپ ڈاؤن لوڈ کرنے کے لیے نیچے دیئے گئے بٹن پر کلک کریں۔",
+            "downloadButton": "ایکسیس کوڈ کاپی کریں اور ایپ ڈاؤن لوڈ کریں",
+            "appInstalledTitle": "6180 انسٹال ہو چکی ہے",
+            "appInstalledInstructions": "اگر آپ نے پہلے ہی 6180 ایپ انسٹال کر رکھی ہے تو، اپنا ایکسیس کوڈ کاپی اور استعمال کرنے کے لیے نیچے دیئے گئے بٹن پر کلک کریں۔",
+            "inviteButton": "ایکسیس کوڈ کاپی کریں اور استعمال کریں"
           },
           "vi": {
-            "titleTemplate": "{name} đã tải kỷ niệm lên ứng dụng 6180 lúc {time}",
-            "instructions": "Để truy cập chúng, vui lòng làm theo hướng dẫn bên dưới.",
-            "appNotInstalledTitle": "6180 Chưa Cài Đặt",
-            "appNotInstalledInstructions": "Nhấp vào nút bên dưới để sao chép mã mời và tải xuống ứng dụng.",
-            "downloadButton": "Sao Chép Lời Mời và Tải Ứng Dụng",
-            "appInstalledTitle": "6180 Đã Cài Đặt",
-            "appInstalledInstructions": "Nếu bạn đã cài đặt ứng dụng 6180, nhấp vào nút bên dưới để sao chép và sử dụng mã mời.",
-            "inviteButton": "Sao Chép và Sử Dụng Mã Mời"
+            "titleTemplate": "{name} đã tải kỷ niệm lên ứng dụng 6180 vào lúc {time}",
+            "instructions": "Để truy cập, vui lòng làm theo hướng dẫn bên dưới.",
+            "appNotInstalledTitle": "Chưa cài đặt 6180",
+            "appNotInstalledInstructions": "Nhấn nút bên dưới để sao chép mã truy cập và tải ứng dụng.",
+            "downloadButton": "Sao chép Mã Truy cập và Tải Ứng dụng",
+            "appInstalledTitle": "Đã cài đặt 6180",
+            "appInstalledInstructions": "Nếu bạn đã cài đặt ứng dụng 6180, nhấn nút bên dưới để sao chép và sử dụng mã truy cập.",
+            "inviteButton": "Sao chép và Sử dụng Mã Truy cập"
+          },
+          "yo": {
+            "titleTemplate": "{name} tải irántí sí app 6180 ní {time}",
+            "instructions": "Láti wọ́n wọ̀le, jọ̀wọ́ tẹ̀lé àpèjọṣepọ̀ wà lókè.",
+            "appNotInstalledTitle": "6180 Kò tí í fi sílẹ̀",
+            "appNotInstalledInstructions": "Tẹ bọ́tìnì nísàlẹ̀ láti kóòdìiràyè wọlé rẹ kópíi àti láti gbà app náà xuống.",
+            "downloadButton": "Kopí kóòdìiràyè àti gbà app xuống",
+            "appInstalledTitle": "6180 Ti fi sílẹ̀",
+            "appInstalledInstructions": "Tí o bá ti fi app 6180 sílẹ̀, tẹ bọ́tìnì nísàlẹ̀ láti kópíi kóòdìiràyè rẹ àti lò ó.",
+            "inviteButton": "Kópíi kóòdìiràyè rẹ àti lò ó"
+          },
+          "zh-Hans": {
+            "titleTemplate": "{name} 于 {time} 向 6180 应用上传了回忆",
+            "instructions": "要访问这些内容，请按照以下说明进行操作。",
+            "appNotInstalledTitle": "未安装 6180",
+            "appNotInstalledInstructions": "点击下方按钮复制您的访问码并下载应用。",
+            "downloadButton": "复制访问码并下载应用",
+            "appInstalledTitle": "已安装 6180",
+            "appInstalledInstructions": "如果您已安装 6180 应用，请点击下方按钮复制并使用您的访问码。",
+            "inviteButton": "复制并使用访问码"
+          },
+          "zh-Hant": {
+            "titleTemplate": "{name} 於 {time} 將回憶上傳至 6180 應用程式",
+            "instructions": "要存取它們，請遵循以下指示。",
+            "appNotInstalledTitle": "未安裝 6180",
+            "appNotInstalledInstructions": "點擊下方按鈕複製您的存取代碼並下載應用程式。",
+            "downloadButton": "複製存取代碼並下載應用程式",
+            "appInstalledTitle": "已安裝 6180",
+            "appInstalledInstructions": "如果您已安裝 6180 應用程式，請點擊下方按鈕複製並使用您的存取代碼。",
+            "inviteButton": "複製並使用存取代碼"
+          },
+          "zh-HK": {
+            "titleTemplate": "{name} 於 {time} 將回憶上載至 6180 應用程式",
+            "instructions": "如要存取，請按照以下指示。",
+            "appNotInstalledTitle": "未安裝 6180",
+            "appNotInstalledInstructions": "按下面按鈕複製您的訪問代碼並下載應用程式。",
+            "downloadButton": "複製訪問代碼並下載應用程式",
+            "appInstalledTitle": "已安裝 6180",
+            "appInstalledInstructions": "如果您已安裝 6180 應用程式，請按下面按鈕複製及使用您的訪問代碼。",
+            "inviteButton": "複製及使用訪問代碼"
+          },
+          "zu": {
+            "titleTemplate": "{name} ulayishe izinkumbulo kuhlelo lokusebenza lwe-6180 ngo-{time}",
+            "instructions": "Ukufinyelela kuzo, landela imiyalelo engezansi.",
+            "appNotInstalledTitle": "6180 Awekho",
+            "appNotInstalledInstructions": "Chofoza inkinobho engezansi ukuze ukopishe ikhodi yakho yokufinyelela bese ulanda uhlelo lokusebenza.",
+            "downloadButton": "Kopisha Ikhodi Yokufinyelela futhi Ulande Uhlelo Lokusebenza",
+            "appInstalledTitle": "6180 Kufakiwe",
+            "appInstalledInstructions": "Uma usuvele ufake uhlelo lokusebenza lwe-6180, chofoza inkinobho engezansi ukuze ukopishe futhi usebenzise ikhodi yakho yokufinyelela.",
+            "inviteButton": "Kopisha futhi Usebenzise Ikhodi Yokufinyelela"
           }
         };
 
@@ -474,7 +1044,7 @@
     
         return {
           name: params[0] || 'User',
-          inviteCode: params[1] || ''
+          accessCode: params[1] || ''
         };
       }
 
@@ -485,54 +1055,1736 @@
 
       function copyAndNavigateDownload() {
         const params = getPositionalUrlParameters();
-        if (params.inviteCode && !hasErrors) {
-          navigator.clipboard.writeText(`Message-${params.inviteCode}`)
+        const inviteLink = `https://apps.apple.com/app/6180/id6468679610/?meta=Message-${params.accessCode}`;
+        const language = getBrowserLanguage(); // Detect the browser language
+        
+        const messages = {
+          "am": {
+            "success": `እንቅስቃሴ ሊንክ ተቀምጧል። ወደ App Store በሚቀጥለው ሂደት ታቀድሳላችሁ...<br><br><span style="color: red;">
+              በራስዎ ሊገባ እንደማይችል በቀጥታ ወደ App Store ማስተናገድ ካልተሰራበት፣ ከሚከተሉት አንዱን አሳሽ ማንበብ ይችላሉ፡፡
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              ከዚያ በኋላ፣ ወደ አድራሻ መስመር ቦታ ይግቡ፡፡
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ፈልግ ወይም የድህረ ገጽ ስም አስገባ...">
+              <br><br>
+              እና "ቅርጸት" ቁልፍ ይጠቀሙ፣ የሚከተለውን 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              ወደ አድራሻ መስመር ቦታ ያስቀምጡ። ከዚያም "ሂደት" ወይም "ኤንተር" ቁልፍ ይጫኑ።
+            </span>`,
+            "failure": `የመዳረሻ ኮድ መቅየር አልተሳካም።`,
+            "error": `ስህተት: ትክክለኛ ወይም የተጠፋ የመዳረሻ ኮድ።`
+          },
+          "ar": {
+            "success": `تم نسخ رابط الدعوة. يتم إعادة التوجيه إلى متجر التطبيقات...<br><br><span style="color: red;">
+              إذا لم يتم إعادة توجيهك تلقائيًا إلى متجر التطبيقات، يمكنك فتح أحد المتصفحات التالية:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              ثم، انقر في شريط العنوان:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ابحث أو أدخل اسم الموقع...">
+              <br><br>
+              وانقر على زر "لصق"، والذي سيقوم بلصق 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              في شريط العنوان. ثم انقر على زر "اذهب" أو "أدخل".
+            </span>`,
+            "failure": `فشل في نسخ رمز الدخول.`,
+            "error": `خطأ: رمز الدخول غير صالح أو مفقود.`
+          },
+          "bn": {
+            "success": `আমন্ত্রণ লিঙ্ক কপি করা হয়েছে। অ্যাপ স্টোরে পুনঃনির্দেশ করা হচ্ছে...<br><br><span style="color: red;">
+              যদি আপনি স্বয়ংক্রিয়ভাবে অ্যাপ স্টোরে পুনঃনির্দেশ না হন, তাহলে আপনি নিম্নলিখিত ব্রাউজারগুলির একটি খুলতে পারেন:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              তারপর, ঠিকানা বারে ক্লিক করুন:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="সার্চ করুন বা ওয়েবসাইটের নাম লিখুন...">
+              <br><br>
+              এবং "পেস্ট" বোতামে ক্লিক করুন, যা 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              ঠিকানা বারে পেস্ট করবে। তারপর "গো" বা "এন্টার" বোতামে ক্লিক করুন।
+            </span>`,
+            "failure": `অ্যাক্সেস কোড কপি করতে ব্যর্থ হয়েছে।`,
+            "error": `ত্রুটি: অবৈধ বা অনুপস্থিত অ্যাক্সেস কোড।`
+          },
+          "ca": {
+            "success": `Enllaç d'invitació copiat. Redirigint a l'App Store...<br><br><span style="color: red;">
+              Si no ets redirigit automàticament a l'App Store, pots obrir un dels següents navegadors:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Després, fes clic a la barra d'adreces:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Cerca o introdueix el nom del lloc web...">
+              <br><br>
+              i fes clic al botó "enganxar", que enganxarà 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              a la barra d'adreces. Després, fes clic al botó "anar" o "entrar".
+            </span>`,
+            "failure": `No s'ha pogut copiar el codi d'accés.`,
+            "error": `Error: Codi d'accés invàlid o manca.`
+          },
+          "cs": {
+            "success": `Odkaz na pozvánku byl zkopírován. Přesměrování do App Store...<br><br><span style="color: red;">
+              Pokud nejste automaticky přesměrováni do App Store, můžete otevřít jeden z následujících prohlížečů:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Poté klikněte na adresní řádek:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Hledat nebo zadat název webu...">
+              <br><br>
+              a klikněte na tlačítko "vložit", které vloží 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              do adresního řádku. Poté klikněte na tlačítko "jít" nebo "enter".
+            </span>`,
+            "failure": `Nepodařilo se zkopírovat přístupový kód.`,
+            "error": `Chyba: Neplatný nebo chybějící přístupový kód.`
+          },
+          "da": {
+            "success": `Invite-link kopieret. Omdirigerer til App Store...<br><br><span style="color: red;">
+              Hvis du ikke bliver automatisk omdirigeret til App Store, kan du åbne en af følgende browsere:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Klik derefter på adressebjælken:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Søg eller indtast webstedsnavn...">
+              <br><br>
+              og klik på "indsæt" knappen, som vil indsætte 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              i adressebjælken. Klik derefter på "gå" eller "enter" knappen.
+            </span>`,
+            "failure": `Kunne ikke kopiere adgangskoden.`,
+            "error": `Fejl: Ugyldig eller manglende adgangskode.`
+          },
+          "de": {
+            "success": `Einladungslink kopiert. Weiterleitung zum App Store...<br><br><span style="color: red;">
+              Wenn Sie nicht automatisch zum App Store weitergeleitet werden, können Sie einen der folgenden Browser öffnen:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Klicken Sie dann in die Adressleiste:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Suchen oder Webseitenname eingeben...">
+              <br><br>
+              und klicken Sie auf die "Einfügen" Taste, die 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              in die Adressleiste einfügt. Klicken Sie dann auf die "Los" oder "Enter" Taste.
+            </span>`,
+            "failure": `Zugangscode konnte nicht kopiert werden.`,
+            "error": `Fehler: Ungültiger oder fehlender Zugangscode.`
+          },
+          "el": {
+            "success": `Ο σύνδεσμος πρόσκλησης αντιγράφηκε. Ανακατεύθυνση στο App Store...<br><br><span style="color: red;">
+              Εάν δεν ανακατευθυνθείτε αυτόματα στο App Store, μπορείτε να ανοίξετε έναν από τους παρακάτω browsers:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Στη συνέχεια, κάντε κλικ στη γραμμή διευθύνσεων:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Αναζήτηση ή εισαγωγή ονόματος ιστοσελίδας...">
+              <br><br>
+              και κάντε κλικ στο κουμπί "επικόλληση", που θα επικολλήσει 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              στη γραμμή διευθύνσεων. Στη συνέχεια, κάντε κλικ στο κουμπί "πήγαινε" ή "Enter".
+            </span>`,
+            "failure": `Αποτυχία αντιγραφής του κωδικού πρόσβασης.`,
+            "error": `Σφάλμα: Μη έγκυρος ή λείπει κωδικός πρόσβασης.`
+          },
+          "en": {
+            "success": `<em>Invite link copied. Redirecting to the App Store...</em><br><br><span style="color: red;">
+              If you are not automatically redirected to the App Store, you can open one of the following browsers:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Then, click into the address bar:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Search or enter website name...">
+              <br><br>
+              and click the "paste" button, which will paste 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              into the address bar. Then click the "go" or "enter" button.
+            </span>`,
+            "failure": `Failed to copy the access code.`,
+            "error": `Error: Invalid or missing access code.`
+          },
+          "es": {
+            "success": ` <em>Enlace de invitación copiado. Redirigiendo a la App Store...</em><br><br><span style="color: red;">
+                  Si no eres redirigido automáticamente a la App Store, puedes abrir uno de los siguientes navegadores:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Luego, haz clic en la barra de direcciones:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Buscar o ingresar nombre del sitio web...">
+                  <br><br>
+                  y haz clic en el botón "pegar", que pegará 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  en la barra de direcciones. Luego haz clic en el botón "ir" o "enter".
+                </span>`,
+            "failure": `No se pudo copiar el código de acceso.`,
+            "error": `Error: Código de acceso inválido o faltante.`
+          },
+          "fa": {
+            "success": `<em>لینک دعوت کپی شد. در حال هدایت به App Store...</em><br><br><span style="color: red;">
+                  اگر به طور خودکار به App Store هدایت نشدید، می‌توانید یکی از مرورگرهای زیر را باز کنید:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  سپس، در نوار آدرس کلیک کنید:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="جستجو کنید یا نام وب‌سایت را وارد کنید...">
+                  <br><br>
+                  و روی دکمه "چسباندن" کلیک کنید، که 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  را در نوار آدرس بچسباند. سپس روی دکمه "برو" یا "Enter" کلیک کنید.
+                </span>`,
+            "failure": `کپی کردن کد دسترسی ناموفق بود.`,
+            "error": `خطا: کد دسترسی نامعتبر یا غایب است.`
+          },
+          "fi": {
+            "success": `<em>Kutsu-linkki kopioitu. Ohjataan App Storeen...</em><br><br><span style="color: red;">
+                  Jos sinut ei ohjata automaattisesti App Storeen, voit avata jonkin seuraavista selaimista:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Klikkaa sitten osoiteriville:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Etsi tai kirjoita verkkosivuston nimi...">
+                  <br><br>
+                  ja napsauta "liitä" -painiketta, joka liittää 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  osoiteriville. Klikkaa sitten "mene" tai "enter" -painiketta.
+                </span>`,
+            "failure": `Pääsytunnuksen kopiointi epäonnistui.`,
+            "error": `Virhe: Virheellinen tai puuttuva pääsytunnus.`
+          },
+          "fil": {
+            "success": `<em>Nakopya ang invite link. Nidirirekta sa App Store...</em><br><br><span style="color: red;">
+                  Kung hindi ka awtomatikong nadidirekta sa App Store, maaari mong buksan ang isa sa mga sumusunod na browser:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Pagkatapos, i-click ang address bar:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Maghanap o mag-type ng pangalan ng website...">
+                  <br><br>
+                  at i-click ang "paste" na button, na maglalagay ng 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  sa address bar. Pagkatapos ay i-click ang "go" o "enter" na button.
+                </span>`,
+            "failure": `Nabigong kopyahin ang access code.`,
+            "error": `Error: Di-wasto o nawawalang access code.`
+          },
+          "fr": {
+            "success": `<em>Lien d'invitation copié. Redirection vers l'App Store...</em><br><br><span style="color: red;">
+                  Si vous n'êtes pas automatiquement redirigé vers l'App Store, vous pouvez ouvrir l'un des navigateurs suivants :
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Ensuite, cliquez dans la barre d'adresse :
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Rechercher ou entrer le nom du site...">
+                  <br><br>
+                  et cliquez sur le bouton "coller", qui collera 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  dans la barre d'adresse. Ensuite, cliquez sur le bouton "aller" ou "entrer".
+                </span>`,
+            "failure": `Échec de la copie du code d'accès.`,
+            "error": `Erreur : Code d'accès invalide ou manquant.`
+          },
+          "ha": {
+            "success": `<em>Anfani na gayyata an kwafi. Ana mayar da kai zuwa App Store...</em><br><br><span style="color: red;">
+                  Idan ba a mayar da kai kai tsaye zuwa App Store ba, zaka iya buɗe ɗaya daga cikin masu bincike masu zuwa:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Sannan, danna cikin sandar adireshin:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Bincika ko shigar da sunan gidan yanar gizo...">
+                  <br><br>
+                  kuma danna maɓallin "liƙa", wanda zai liƙa 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  cikin sandar adireshin. Sannan danna maɓallin "tafi" ko "enter".
+                </span>`,
+            "failure": `Gaza kwafin lambar samun damar.`,
+            "error": `Kuskure: Lambar samun damar mara inganci ko babu.`
+          },
+          "he": {
+            "success": `<em>קישור ההזמנה הועתק. מופנה ל-App Store...</em><br><br><span style="color: red;">
+                  אם לא תופנה אוטומטית ל-App Store, תוכל לפתוח אחד מהדפדפנים הבאים:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  לאחר מכן, לחץ על שורת הכתובת:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="חפש או הזן שם אתר...">
+                  <br><br>
+                  ולחץ על כפתור "הדבק", אשר ידביק 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  בשורת הכתובת. לאחר מכן לחץ על כפתור "הגש" או "Enter".
+                </span>`,
+            "failure": `נכשל בהעתקת קוד הגישה.`,
+            "error": `שגיאה: קוד גישה לא חוקי או חסר.`
+          },
+          "hi": {
+            "success": `<em>आमंत्रण लिंक कॉपी किया गया। ऐप स्टोर पर रीडायरेक्ट कर रहे हैं...</em><br><br><span style="color: red;">
+                  यदि आप स्वचालित रूप से ऐप स्टोर पर रीडायरेक्ट नहीं होते हैं, तो आप निम्नलिखित ब्राउज़र में से एक खोल सकते हैं:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  फिर, एड्रेस बार में क्लिक करें:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="सर्च करें या वेबसाइट का नाम दर्ज करें...">
+                  <br><br>
+                  और "पेस्ट" बटन पर क्लिक करें, जो 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  को एड्रेस बार में चिपकाएगा। फिर "गो" या "एंटर" बटन पर क्लिक करें।
+                </span>`,
+            "failure": `एक्सेस कोड कॉपी करने में विफल रहा।`,
+            "error": `त्रुटि: अवैध या गायब एक्सेस कोड।`
+          },
+          "hr": {
+            "success": `<em>Poveznica za pozivnicu kopirana. Preusmjeravanje na App Store...</em><br><br><span style="color: red;">
+                  Ako vas se ne preusmjeri automatski na App Store, možete otvoriti jedan od sljedećih preglednika:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Zatim kliknite na adresnu traku:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Pretraži ili unesi naziv web stranice...">
+                  <br><br>
+                  i kliknite na gumb "zalijepi", koji će zalijepiti 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  u adresnu traku. Zatim kliknite na gumb "idi" ili "enter".
+                </span>`,
+            "failure": `Neuspjelo kopiranje pristupnog koda.`,
+            "error": `Pogreška: Nevažeći ili nedostajući pristupni kod.`
+          },
+          "hu": {
+            "success": `<em>Meghívó link másolva. Átirányítás az App Store-ba...</em><br><br><span style="color: red;">
+                  Ha nem irányítanak át automatikusan az App Store-ba, megnyithatja az alábbi böngészők egyiket:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Ezután kattintson a címsorra:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Keresés vagy webhely név beírása...">
+                  <br><br>
+                  és kattintson a "beillesztés" gombra, amely beilleszti 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  a címsorra. Ezután kattintson a "menj" vagy "Enter" gombra.
+                </span>`,
+            "failure": `Nem sikerült a hozzáférési kód másolása.`,
+            "error": `Hiba: Érvénytelen vagy hiányzó hozzáférési kód.`
+          },
+          "id": {
+            "success": `<em>Tautan undangan disalin. Mengarahkan ke App Store...</em><br><br><span style="color: red;">
+                  Jika Anda tidak secara otomatis diarahkan ke App Store, Anda dapat membuka salah satu browser berikut:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Kemudian, klik pada bilah alamat:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Cari atau masukkan nama situs web...">
+                  <br><br>
+                  dan klik tombol "tempel", yang akan menempelkan 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  ke bilah alamat. Kemudian klik tombol "pergi" atau "enter".
+                </span>`,
+            "failure": `Gagal menyalin kode akses.`,
+            "error": `Kesalahan: Kode akses tidak valid atau hilang.`
+          },
+          "ig": {
+            "success": `<em>Njikọ ịkpọ oku edepụtara. Na-ebufe na App Store...</em><br><br><span style="color: red;">
+                  Ọ bụrụ na ị naghị ebufe na-akpaghị aka na App Store, ị nwere ike imeghe otu n'ime nchọgharị ndị a:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Mgbe ahụ, pịa na ogidi adreesị:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Chọọ ma ọ bụ tinye aha weebụsaịtị...">
+                  <br><br>
+                  wee pịa bọtịnụ "paste", nke ga-etinye 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  na ogidi adreesị. Mgbe ahụ pịa bọtịnụ "go" ma ọ bụ "enter".
+                </span>`,
+            "failure": `Emechaghị ịdetuo koodu ohere.`,
+            "error": `Njehie: Koodu ohere ezighi ezi ma ọ bụ na-adịghị.` 
+          },
+          "it": {
+            "success": `<em>Link di invito copiato. Reindirizzamento all'App Store...</em><br><br><span style="color: red;">
+                  Se non vieni reindirizzato automaticamente all'App Store, puoi aprire uno dei seguenti browser:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Quindi, fai clic nella barra degli indirizzi:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Cerca o inserisci il nome del sito...">
+                  <br><br>
+                  e fai clic sul pulsante "incolla", che incollerà 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  nella barra degli indirizzi. Poi fai clic sul pulsante "vai" o "invio".
+                </span>`,
+            "failure": `Copia del codice di accesso non riuscita.`,
+            "error": `Errore: Codice di accesso non valido o mancante.`
+          },
+          "ja": {
+            "success": `<em>招待リンクをコピーしました。App Storeにリダイレクトしています...</em><br><br><span style="color: red;">
+                  自動的にApp Storeにリダイレクトされない場合は、以下のいずれかのブラウザを開くことができます：
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  次に、アドレスバーをクリックします：
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="検索またはウェブサイト名を入力...">
+                  <br><br>
+                  そして「貼り付け」ボタンをクリックします。これにより 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  がアドレスバーに貼り付けられます。その後、「移動」または「Enter」ボタンをクリックします。
+                </span>`,
+            "failure": `アクセスコードのコピーに失敗しました。`,
+            "error": `エラー：無効なアクセスコードまたはアクセスコードがありません。`
+          },
+          "jv": {
+            "success": `<em>Tautan undhangan wis dicopy. Nglimpah menyang App Store...</em><br><br><span style="color: red;">
+                  Yen sampeyan ora langsung dialihake menyang App Store, sampeyan bisa mbukak salah siji saka browser ing ngisor iki:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Banjur, klik ing bar alamat:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Golek utawa lebokake jeneng situs web...">
+                  <br><br>
+                  lan klik tombol "paste", sing bakal nempel 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  menyang bar alamat. Banjur klik tombol "meneh" utawa "enter".
+                </span>`,
+            "failure": `Gagal nyalin kode akses.`,
+            "error": `Kesalahan: Kode akses ora valid utawa ilang.`
+          },
+          "km": {
+            "success": `<em>តំណភ្ជាប់អញ្ជើញបានចម្លង។ កំពុងផ្ទេរទៅ App Store...</em><br><br><span style="color: red;">
+                  ប្រសិនបើអ្នកមិនត្រូវបានផ្ទេរយ៉ាងស្វ័យប្រវត្តិទៅ App Store នោះអ្នកអាចបើកកម្មវិធីរុករកខាងក្រោមមួយក្នុងចំណោម៖
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  បន្ទាប់មក ចុចទៅក្នុងរបារអាសយដ្ឋាន៖
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ស្វែងរក ឬបញ្ចូលឈ្មោះគេហទំព័រ...">
+                  <br><br>
+                  ហើយចុចប៊ូតុង "បិទភ្ជាប់" ដែលនឹងបិទភ្ជាប់ 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  ទៅក្នុងរបារអាសយដ្ឋាន។ បន្ទាប់មកចុចប៊ូតុង "ទៅ" ឬ "Enter"។
+                </span>`,
+            "failure": `មិនអាចចម្លងកូដចូលបានទេ។`,
+            "error": `កំហុស៖ កូដចូលមិនត្រឹមត្រូវ ឬខ្វះ។`
+          },
+          "kn": {
+            "success": `<em>ಆಮಂತ್ರಣ ಲಿಂಕ್ ನಕಲಿಸಲಾಗಿದೆ. App Store ಗೆ ಮರುನಿರ್ದೇಶಿಸಲಾಗುತ್ತಿದೆ...</em><br><br><span style="color: red;">
+                  ನೀವು ಸ್ವಯಂಚಾಲಿತವಾಗಿ App Store ಗೆ ಮರುನಿರ್ದೇಶಿತರಾಗದಿದ್ದರೆ, ಕೆಳಗಿನ ಬ್ರೌಸರ್‌ಗಳಲ್ಲಿ ಯಾವುದನ್ನಾದರೂ ತೆರೆಯಬಹುದು:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  ನಂತರ, ವಿಳಾಸ ಪಟ್ಟಿಯಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ಸರ್ಚ್ ಅಥವಾ ವೆಬ್‌ಸೈಟ್ ಹೆಸರು ನಮೂದಿಸಿ...">
+                  <br><br>
+                  ಮತ್ತು "ಪೇಸ್ಟ್" ಬಟನ್ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ, ಅದು 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  ಅನ್ನು ವಿಳಾಸ ಪಟ್ಟಿಯಲ್ಲಿ ಪೇಸ್ಟ್ ಮಾಡುತ್ತದೆ. ನಂತರ "ಗೋ" ಅಥವಾ "ಎಂಟರ್" ಬಟನ್ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ.
+                </span>`,
+            "failure": `ಪ್ರವೇಶ ಕೋಡ್ ನಕಲಿಸಲು ವಿಫಲವಾಗಿದೆ.`,
+            "error": `ದೋಷ: ಅಮಾನ್ಯ ಅಥವಾ ಕಾಣೆಯಾಗಿರುವ ಪ್ರವೇಶ ಕೋಡ್.`
+          },
+          "ko": {
+            "success": `<em>초대 링크가 복사되었습니다. App Store로 리디렉션 중...</em><br><br><span style="color: red;">
+                  자동으로 App Store로 리디렉션되지 않는 경우, 다음 브라우저 중 하나를 열 수 있습니다:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  그런 다음 주소 표시줄을 클릭하세요:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="검색하거나 웹사이트 이름을 입력하세요...">
+                  <br><br>
+                  그리고 "붙여넣기" 버튼을 클릭하면 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  가 주소 표시줄에 붙여넣어집니다. 그런 다음 "이동" 또는 "엔터" 버튼을 클릭하세요.
+                </span>`,
+            "failure": `접근 코드 복사에 실패했습니다.`,
+            "error": `오류: 유효하지 않거나 누락된 접근 코드입니다.`
+          },
+          "lo": {
+            "success": `<em>ລິ້ງຊ່ອງທ່ານຖືກຄັດລຽງໄວ້ແລ້ວ. ກຳລັງຍ້າຍຄືນໄປທີ່ App Store...</em><br><br><span style="color: red;">
+                  ຖ້າທ່ານບໍ່ຖືກຍ້າຍຄືນອັດຕະໂນມັດໄປທີ່ App Store, ທ່ານສາມາດເປີດຜູ້ບັນທຶກທີ່ຕ້ອງການເລືອກເລືອກໄດ້:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  ຫຼັງຈາກນັ້ນ, ກົດເຂົ້າໃນແຖວທີ່ຢູ່:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ຄົ້ນຫາ ຫຼື ປ້ອນຊື່ເວັບໄຊທ໌...">
+                  <br><br>
+                  ແລະ ກົດປຸ່ມ "ສຸດຕິການ", ທີ່ຈະສຸດຕິການ 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  ລະຫັດທີ່ຢູ່. ຫຼັງຈາກນັ້ນ ກົດປຸ່ມ "ໄປ" ຫຼື "Enter".
+                </span>`,
+            "failure": `ການຄັດລຽງລະຫັດການເຂົ້າຂອງທ່ານໄດ້ຜິດພາດ.`,
+            "error": `ຜິດພາດ: ລະຫັດການເຂົ້າບໍ່ຖືກຕ້ອງ ຫຼື ຂາດຂຶ້ນ.`
+          },
+          "ml": {
+            "success": `<em> ക്ഷണ ലിങ്ക് പകർത്തി. ആപ്പ് സ്റ്റോറിലേക്ക് റീഡയറക്ട് ചെയ്യുന്നു...</em><br><br><span style="color: red;">
+                  നിങ്ങൾക്ക് സ്വയമേവ ആപ്പ് സ്റ്റോറിലേക്ക് റീഡയറക്ട് ചെയ്യപ്പെടാത്ത പക്ഷം, താഴെ പറയുന്ന ബ്രൗസറുകളിൽ ഒന്നിനെ തുറക്കാം:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  തുടർന്ന്, അഡ്രസ് ബാറിൽ ക്ലിക്കുചെയ്യൂ:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="തിരയുക അല്ലെങ്കിൽ വെബ്സൈറ്റ് പേരു നൽകുക...">
+                  <br><br>
+                  "പേസ്റ്റ്" ബട്ടണിൽ ക്ലിക്കുചെയ്യൂ, ഇത് 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  അഡ്രസ് ബാറിലേക്ക് പേസ്റ്റ് ചെയ്യും. തുടർന്ന് "ഗോ" അല്ലെങ്കിൽ "എന്റർ" ബട്ടൺ ക്ലിക്കുചെയ്യൂ.
+                </span>`,
+            "failure": `ആക്‌സസ് കോഡ് പകർത്താൻ പരാജയപ്പെട്ടു.`,
+            "error": `പിശക്: അസാധുവായ അല്ലെങ്കിൽ മിസ്സിംഗ് ആക്‌സസ് കോഡ്.`
+          },
+          "mr": {
+            "success": `<em>आमंत्रण लिंक कॉपी केले. ऍप स्टोअरकडे पुनर्निर्देशित करीत आहे...</em><br><br><span style="color: red;">
+                  जर आपल्याला आपोआप ऍप स्टोअरकडे पुनर्निर्देशित केले गेले नाही, तर आपण खालील ब्राउझरपैकी एक उघडू शकता:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  नंतर, अ‍ॅड्रेस बारवर क्लिक करा:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="शोधा किंवा वेबसाइटचे नाव टाका...">
+                  <br><br>
+                  आणि "पेस्ट" बटणावर क्लिक करा, जे 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  अ‍ॅड्रेस बारमध्ये पेस्ट करेल. नंतर "गो" किंवा "एंटर" बटणावर क्लिक करा.
+                </span>`,
+            "failure": `ऍक्सेस कोड कॉपी करण्यात अयशस्वी.`,
+            "error": `त्रुटी: अवैध किंवा अनुपस्थित ऍक्सेस कोड.`
+          },
+          "ms": {
+            "success": `<em>Pautan jemputan disalin. Mengalihkan ke App Store...</em><br><br><span style="color: red;">
+                  Jika anda tidak diarahkan secara automatik ke App Store, anda boleh membuka salah satu penyemak imbas berikut:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Kemudian, klik pada bar alamat:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Cari atau masukkan nama laman web...">
+                  <br><br>
+                  dan klik butang "tampal", yang akan menampal 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  ke bar alamat. Kemudian klik butang "pergi" atau "enter".
+                </span>`,
+            "failure": `Gagal menyalin kod akses.`,
+            "error": `Ralat: Kod akses tidak sah atau hilang.`
+          },
+          "my": {
+            "success": `<em>ဖိတ်ကြားလင့်ခ်ကို ကူးယူပြီးဖြစ်သည်။ App Store သို့ ပြောင်းရွှေ့နေပါသည်...</em><br><br><span style="color: red;">
+                  သင်ကိုယ်တိုင် App Store သို့ ပြောင်းရွှေ့ခြင်း မဖြစ်ပျက်ပါက၊ အောက်ပါ Browser များထဲမှ တစ်ခုကို ဖွင့်နိုင်ပါသည်။
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  ထို့နောက် အဖိအားကြိုးတွင် ဂဏန်းတပ်ဆင်ပါ:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ရှာဖွေရန် သို့မဟုတ် ဝက်ဘ်ဆိုက်အမည် ထည့်ပါ...">
+                  <br><br>
+                  နှင့် "ကူးထည့်မည်" ခလုတ်ကို နှိပ်ပါ၊ သည် 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  ကို အဖိအားကြိုးတွင် ကူးထည့်မည်။ ထို့နောက် "သွားမည်" သို့မဟုတ် "Enter" ခလုတ်ကို နှိပ်ပါ။
+                </span>`,
+            "failure": `ဝင်ရောက်ခွင့်ကုဒ်ကို ကူးယူရန် မအောင်မြင်ပါ။`,
+            "error": `အမှား: မမှန်ကန်သည့် သို့မဟုတ် မပါဝင်သော ဝင်ရောက်ခွင့်ကုဒ်။`
+          },
+          "nb": {
+            "success": `<em>Invitasjonslenke kopiert. Omdirigerer til App Store...</em><br><br><span style="color: red;">
+                  Hvis du ikke automatisk blir omdirigert til App Store, kan du åpne en av følgende nettlesere:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Klikk deretter i adressefeltet:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Søk eller skriv inn nettstedets navn...">
+                  <br><br>
+                  og klikk på "lim inn"-knappen, som vil lime 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  inn i adressefeltet. Klikk deretter på "gå" eller "enter"-knappen.
+                </span>`,
+            "failure": `Kunne ikke kopiere tilgangskoden.`,
+            "error": `Feil: Ugyldig eller manglende tilgangskode.`
+          },
+          "ne": {
+            "success": `<em>आमन्त्रण लिङ्क कपी गरियो। App Store मा पुनर्निर्देश गरिँदैछ...</em><br><br><span style="color: red;">
+                  यदि तपाईंलाई स्वचालित रूपमा App Store मा पुनर्निर्देशित गरिँदैन भने, तपाईंले निम्न ब्राउजरहरू मध्ये कुनै एक खोल्न सक्नुहुन्छ:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  त्यसपछि, ठेगाना पट्टीमा क्लिक गर्नुहोस्:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="वेबसाइटको नाम खोज्नुहोस् वा टाइप गर्नुहोस्...">
+                  <br><br>
+                  र "पेस्ट" बटनमा क्लिक गर्नुहोस्, जसले 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  लाई ठेगाना पट्टीमा पेस्ट गर्नेछ। त्यसपछि "गो" वा "इन्टर" बटनमा क्लिक गर्नुहोस्।
+                </span>`,
+            "failure": `पहुँच कोड कपी गर्न असफल भयो।`,
+            "error": `त्रुटि: अवैध वा हराएको पहुँच कोड।`
+          },
+          "nl": {
+            "success": `<em>Uitnodigingslink gekopieerd. Omleiden naar de App Store...</em><br><br><span style="color: red;">
+                  Als je niet automatisch wordt omgeleid naar de App Store, kun je een van de volgende browsers openen:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Klik vervolgens in de adresbalk:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Zoeken of voer de naam van de website in...">
+                  <br><br>
+                  en klik op de knop "plakken", waarmee 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  in de adresbalk wordt geplakt. Klik vervolgens op de knop "ga" of "enter".
+                </span>`,
+            "failure": `Het kopiëren van de toegangscode is mislukt.`,
+            "error": `Fout: Ongeldige of ontbrekende toegangscode.`
+          },
+          "or": {
+            "success": `<em>ନିମନ୍ତ୍ରଣ ଲିଙ୍କ କପି ହୋଇଛି। App Store କୁ ପୁନର୍ନିର୍ଦ୍ଦେଶ ହେଉଛି...</em><br><br><span style="color: red;">
+                  ଯଦି ଆପଣ ସ୍ୱୟଂଚାଳିତ ଭାବରେ App Store କୁ ପୁନର୍ନିର୍ଦ୍ଦେଶ ହେବେ ନାହିଁ, ତେବେ ଆପଣ ନିମ୍ନଲିଖିତ ବ୍ରାଉଜରଗୁଡ଼ିକ ମଧ୍ୟରୁ ଗୋଟିଏ ଖୋଲିପାରିବେ:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  ପରେ, ଏଡ୍ରେସ ବାର୍‌ରେ କ୍ଲିକ୍ କରନ୍ତୁ:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ସର୍ଚ୍ଛ କରନ୍ତୁ ବା ୱେବସାଇଟ୍ ନାମ ଦିଅନ୍ତୁ...">
+                  <br><br>
+                  ଏବଂ "ପେସ୍ଟ୍" ବଟନ୍ ଉପରେ କ୍ଲିକ୍ କରନ୍ତୁ, ଯାହା 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  କୁ ଏଡ୍ରେସ ବାର୍‌ରେ ପେସ୍ଟ୍ କରିବ। ପରେ "ଗୋ" ବା "Enter" ବଟନ୍ ଉପରେ କ୍ଲିକ୍ କରନ୍ତୁ।
+                </span>`,
+            "failure": `ଅକ୍ସେସ୍ କୋଡ୍ କପି କରିବାରେ ବିଫଳ।`,
+            "error": `ତ୍ରୁଟି: ଅବୈଧ ବା ଅନୁପସ୍ଥିତ ଅକ୍ସେସ୍ କୋଡ୍।`
+          },
+          "pa": {
+            "success": `<em>ਦਾਅਵਾ ਲਿੰਕ ਕਾਪੀ ਕੀਤਾ ਗਿਆ। ਐਪ ਸਟੋਰ ਵੱਲ ਰੀਡਾਇਰੈਕਟ ਕਰ ਰਹੇ ਹਾਂ...</em><br><br><span style="color: red;">
+                  ਜੇ ਤੁਸੀਂ ਆਪੋ-ਆਪ ਰੂਪ ਵਿੱਚ ਐਪ ਸਟੋਰ ਵੱਲ ਰੀਡਾਇਰੈਕਟ ਨਹੀਂ ਹੋ ਰਹੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ ਹੇਠਾਂ ਦਿੱਤੇ ਬ੍ਰਾਉਜ਼ਰਾਂ ਵਿੱਚੋਂ ਇੱਕ ਖੋਲ੍ਹ ਸਕਦੇ ਹੋ:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  ਫਿਰ, ਐਡਰੈੱਸ ਬਾਰ ਵਿੱਚ ਕਲਿੱਕ ਕਰੋ:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ਸਰਚ ਕਰੋ ਜਾਂ ਵੈੱਬਸਾਈਟ ਦਾ ਨਾਮ ਦਰਜ ਕਰੋ...">
+                  <br><br>
+                  ਅਤੇ "ਪੇਸਟ" ਬਟਨ 'ਤੇ ਕਲਿੱਕ ਕਰੋ, ਜੋ 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  ਨੂੰ ਐਡਰੈੱਸ ਬਾਰ ਵਿੱਚ ਪੇਸਟ ਕਰੇਗਾ। ਫਿਰ "ਜਾਓ" ਜਾਂ "ਐਂਟਰ" ਬਟਨ 'ਤੇ ਕਲਿੱਕ ਕਰੋ।
+                </span>`,
+            "failure": `ਐਕਸੈੱਸ ਕੋਡ ਕਾਪੀ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।`,
+            "error": `ਗਲਤੀ: ਗਲਤ ਜਾਂ ਗੁੰਮ ਹੋਇਆ ਐਕਸੈੱਸ ਕੋਡ।`
+          },
+          "pl": {
+            "success": `<em>Link zaproszeniowy skopiowany. Przekierowywanie do App Store...</em><br><br><span style="color: red;">
+                  Jeśli nie zostaniesz automatycznie przekierowany do App Store, możesz otworzyć jedną z następujących przeglądarek:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Następnie kliknij w pasek adresu:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Szukaj lub wpisz nazwę strony...">
+                  <br><br>
+                  i kliknij przycisk "wklej", który wklei 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  w pasek adresu. Następnie kliknij przycisk "idź" lub "enter".
+                </span>`,
+            "failure": `Nie udało się skopiować kodu dostępu.`,
+            "error": `Błąd: Nieprawidłowy lub brakujący kod dostępu.`
+          },
+          "ps": {
+            "success": `<em>د بلنې لینک کاپي شو. App Store ته مخ اړول کېږي...</em><br><br><span style="color: red;">
+                  که تاسو په اوتومات ډول App Store ته نه شئ مخ اړول کیدی، نو تاسو کولی شئ لاندې براوزرونو څخه یو پرانیزئ:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  بیا، د پته بار کې کلیک وکړئ:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="پلټنه وکړئ یا د ویب پاڼې نوم ولیکئ...">
+                  <br><br>
+                  او په "چسپول" تڼۍ کلیک وکړئ، کوم چې 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  په پته بار کې چسپول به کوي. بیا په "لاړ شه" یا "اینټر" تڼۍ کلیک وکړئ.
+                </span>`,
+            "failure": `د لاسرسي کوډ کاپي کولو کې ناکامي.`,
+            "error": `تېروتنه: ناسم یا غایب لاسرسي کوډ.`
+          },
+          "pt-BR": {
+            "success": `<em>Link de convite copiado. Redirecionando para a App Store...</em><br><br><span style="color: red;">
+                  Se você não for redirecionado automaticamente para a App Store, você pode abrir um dos seguintes navegadores:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Em seguida, clique na barra de endereços:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Pesquisar ou digitar o nome do site...">
+                  <br><br>
+                  e clique no botão "colar", que irá colar 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  na barra de endereços. Em seguida, clique no botão "ir" ou "enter".
+                </span>`,
+            "failure": `Falha ao copiar o código de acesso.`,
+            "error": `Erro: Código de acesso inválido ou ausente.`
+          },
+          "pt-PT": {
+            "success": `<em>Link de convite copiado. Redirecionando para a App Store...</em><br><br><span style="color: red;">
+                  Se não for redirecionado automaticamente para a App Store, pode abrir um dos seguintes navegadores:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Em seguida, clique na barra de endereços:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Pesquisar ou introduzir o nome do site...">
+                  <br><br>
+                  e clique no botão "colar", que irá colar 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  na barra de endereços. Em seguida, clique no botão "ir" ou "enter".
+                </span>`,
+            "failure": `Falha ao copiar o código de acesso.`,
+            "error": `Erro: Código de acesso inválido ou ausente.`
+          },
+          "ro": {
+            "success": `<em>Linkul de invitație copiat. Redirecționare către App Store...</em><br><br><span style="color: red;">
+                  Dacă nu ești redirecționat automat către App Store, poți deschide unul dintre următoarele browsere:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Apoi, dă clic în bara de adrese:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Caută sau introdu numele site-ului...">
+                  <br><br>
+                  și dă clic pe butonul "lipire", care va lipi 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  în bara de adrese. Apoi dă clic pe butonul "mergi" sau "enter".
+                </span>`,
+            "failure": `Copierea codului de acces a eșuat.`,
+            "error": `Eroare: Cod de acces invalid sau lipsă.`
+          },
+          "ru": {
+            "success": `<em>Ссылка приглашения скопирована. Перенаправление в App Store...</em><br><br><span style="color: red;">
+                  Если вы не были автоматически перенаправлены в App Store, вы можете открыть один из следующих браузеров:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Затем кликните в адресной строке:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Поиск или введите название сайта...">
+                  <br><br>
+                  и нажмите кнопку "вставить", которая вставит 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  в адресную строку. Затем нажмите кнопку "идти" или "Enter".
+                </span>`,
+            "failure": `Не удалось скопировать код доступа.`,
+            "error": `Ошибка: Недействительный или отсутствующий код доступа.`
+          },
+          "sd": {
+            "success": `<em>دعوت جو لنڪ ڪاپي ڪيو ويو. App Store ڏانهن موٽايو پيو وڃي...</em><br><br><span style="color: red;">
+                  جيڪڏهن توهان پاڻمرادو App Store ڏانهن موٽايل نه ٿيو، توهان هيٺين برائوزرن مان هڪ کولڻ جي قابل آهيو:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  پوءِ، ايڊريس بار ۾ ڪلڪ ڪريو:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ڳوليو يا ويب سائيٽ جو نالو داخل ڪريو...">
+                  <br><br>
+                  ۽ "پيسٽ" بٽڻ تي ڪلڪ ڪريو، جيڪو 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  کي ايڊريس بار ۾ پيسٽ ڪندو. پوءِ "وڃو" يا "Enter" بٽڻ تي ڪلڪ ڪريو.
+                </span>`,
+            "failure": `رسائي ڪوڊ ڪاپي ڪرڻ ۾ ناڪامي.`,
+            "error": `غلطی: غير صحيح يا گم ٿيل رسائي ڪوڊ.`
+          },
+          "si": {
+            "success": `<em>උද්ධෘත ලින්ක් එක පිටපත් කරන ලදී. App Store වෙත යොමු වෙමින් පවතී...</em><br><br><span style="color: red;">
+                  ඔබට ස්වයංක්‍රීයව App Store වෙත යොමු නොවන්නේ නම්, පහත සඳහන් බ්‍රව්සර් එකක් විවෘත කළ හැක:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  පසුව, ලිපිනය පෙට්ටියට ක්ලික් කරන්න:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="සෙවීමක් කරන්න හෝ වෙබ්අඩවියේ නම ඇතුළත් කරන්න...">
+                  <br><br>
+                  සහ "අමුණන්න" බොත්තම ක්ලික් කරන්න, එය 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  ලිපිනය පෙට්ටියට අමුණා දමයි. පසුව "යන්න" හෝ "Enter" බොත්තම ක්ලික් කරන්න.
+                </span>`,
+            "failure": `ප්‍රවේශ කේතය පිටපත් කිරීමට අසාර්ථක විය.`,
+            "error": `දෝෂය: අසත්‍ය හෝ අහිමි ප්‍රවේශ කේතය.`
+          },
+          "sk": {
+            "success": `<em>Invitačný odkaz skopírovaný. Presmerovanie do App Store...</em><br><br><span style="color: red;">
+                  Ak nebudete automaticky presmerovaní do App Store, môžete otvoriť jeden z nasledujúcich prehliadačov:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Potom kliknite do adresného riadku:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Vyhľadať alebo zadať názov webovej stránky...">
+                  <br><br>
+                  a kliknite na tlačidlo "vložiť", ktoré vloží 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  do adresného riadku. Potom kliknite na tlačidlo "ísť" alebo "enter".
+                </span>`,
+            "failure": `Nepodarilo sa skopírovať prístupový kód.`,
+            "error": `Chyba: Neplatný alebo chýbajúci prístupový kód.`
+          },
+          "sr": {
+            "success": `<em>Линк за позив скопиран. Пренасељање на App Store...</em><br><br><span style="color: red;">
+                  Ако вас се аутоматски не преусмери на App Store, можете отворити један од следећих претраживача:
+                  <br><br>
+                  <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+                  <br><br>
+                  Затим, кликните у адресном траку:
+                  <br><br>
+                  <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Претражите или унесите име веб странице...">
+                  <br><br>
+                  и кликните на дугме "zalepi", које ће залепити 
+                  <br><br>
+                  ${inviteLink}
+                  <br><br>
+                  у адресни трак. Затим кликните на дугме "иди" или "Enter".
+                </span>`,
+            "failure": `Неуспело копирање приступног кода.`,
+            "error": `Грешка: Неважећи или недостајући приступни код.`
+          },
+          "sv": {
+            "success": `<em>Inbjudningslänken har kopierats. Omdirigerar till App Store...</em><br><br><span style="color: red;">
+              Om du inte automatiskt omdirigeras till App Store kan du öppna en av följande webbläsare:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Klicka sedan i adressfältet:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Sök eller ange webbplatsnamn...">
+              <br><br>
+              och klicka på "klistra in"-knappen, vilket kommer att klistra in 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              i adressfältet. Klicka sedan på knappen "gå" eller "enter".
+            </span>`,
+            "failure": `Misslyckades att kopiera åtkomstkoden.`,
+            "error": `Fel: Ogiltig eller saknad åtkomstkod.`
+          },
+          "sw": {
+            "success": `<em>Kiungo cha ushiriki kimeandikishwa. Inarejelea App Store...</em><br><br><span style="color: red;">
+              Ikiwa hurejelewa moja kwa moja App Store, unaweza kufungua kivinjari mojawapo yafuatayo:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Kisha, bonyeza kwenye barua ya anwani:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Tafuta au ingiza jina la tovuti...">
+              <br><br>
+              na bonyeza kitufe cha "bandika", ambacho kitachapisha 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              kwenye barua ya anwani. Kisha bonyeza kitufe cha "enda" au "enter".
+            </span>`,
+            "failure": `Imeshindwa nakili nambari ya ufikiaji.`,
+            "error": `Hitilafu: Nambari ya ufikiaji sio sahihi au imepotea.`
+          },
+          "ta": {
+            "success": `<em>அழைப்புக் கண்டு நகலெடுக்கப்பட்டது. App Store-க்கு திருப்பிச் செல்கிறது...</em><br><br><span style="color: red;">
+              நீங்கள் தானாக App Store-க்கு திருப்பிச் செல்லவில்லை என்றால், கீழ்காணும் உலாவிகளில் ஒன்றை திறக்கலாம்:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              பின்னர், முகவரிப் பட்டியலில் கிளிக் செய்யவும்:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="தேடுக அல்லது இணையதளத்தின் பெயரை உள்ளிடுக...">
+              <br><br>
+              மற்றும் "பேஸ்ட்" பொத்தானை கிளிக் செய்யவும், இது 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              முகவரிப் பட்டியலில் ஒட்டும். பின்னர் "போ" அல்லது "என்டர்" பொத்தானை கிளிக் செய்யவும்.
+            </span>`,
+            "failure": `ஏற்க்கும் குறியீட்டை நகலெடுக்க முடியவில்லை.`,
+            "error": `பிழை: தவறான அல்லது குறைந்த குறியீடு.`
+          },
+          "te": {
+            "success": `<em>ఆహ్వాన లింక్ కాపీ చేయబడింది. యాప్ స్టోర్ కి తిరిగి మారుతోంది...</em><br><br><span style="color: red;">
+              మీరు స్వయంచాలకంగా యాప్ స్టోర్ కి తిరిగి మారవలసినట్లయితే, మీరు క్రింది బ్రౌజర్లలో ఒకదాన్ని తెరవవచ్చు:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              తరువాత, అడ్రస్ బార్‌లో క్లిక్ చేయండి:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="సెర్చ్ చేయండి లేదా వెబ్‌సైట్ పేరు నమోదు చేయండి...">
+              <br><br>
+              మరియు "పేస్ట్" బటన్‌పై క్లిక్ చేయండి, ఇది 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              అడ్రస్ బార్‌లో పేస్ట్ చేస్తుంది. తరువాత "గో" లేదా "ఎంటర్" బటన్‌పై క్లిక్ చేయండి.
+            </span>`,
+            "failure": `ప్రవేశ కోడ్‌ను నకలెయ్యడం విఫలమైంది.`,
+            "error": `లోపం: చెల్లని లేదా కొరత గల ప్రవేశ కోడ్.`
+          },
+          "th": {
+            "success": `<em>คัดลิงก์เชิญสำเร็จ กำลังเปลี่ยนเส้นทางไปยัง App Store...</em><br><br><span style="color: red;">
+              หากคุณไม่ได้ถูกเปลี่ยนเส้นทางไปยัง App Store โดยอัตโนมัติ คุณสามารถเปิดหนึ่งในเบราว์เซอร์ต่อไปนี้:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              จากนั้น คลิกที่แถบที่อยู่:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="ค้นหาหรือป้อนชื่อเว็บไซต์...">
+              <br><br>
+              และคลิกที่ปุ่ม "วาง" ซึ่งจะวาง 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              ลงในแถบที่อยู่ จากนั้นคลิกปุ่ม "ไป" หรือ "Enter" ปุ่ม.
+            </span>`,
+            "failure": `ไม่สามารถคัดลอกรหัสการเข้าถึงได้`,
+            "error": `ข้อผิดพลาด: รหัสการเข้าถึงไม่ถูกต้องหรือขาดหายไป.`
+          },
+          "tr": {
+            "success": `<em>Davet bağlantısı kopyalandı. App Store'a yönlendiriliyor...</em><br><br><span style="color: red;">
+              App Store'a otomatik olarak yönlendirilmediyseniz, aşağıdaki tarayıcılardan birini açabilirsiniz:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Sonra, adres çubuğuna tıklayın:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Ara veya web sitesi adını gir...">
+              <br><br>
+              ve "yapıştır" düğmesine tıklayın, bu 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              adres çubuğuna yapıştıracaktır. Ardından "git" veya "enter" düğmesine tıklayın.
+            </span>`,
+            "failure": `Erişim kodu kopyalanamadı.`,
+            "error": `Hata: Geçersiz veya eksik erişim kodu.`
+          },
+          "uk": {
+            "success": `<em>Посилання на запрошення скопійовано. Перенаправлення до App Store...</em><br><br><span style="color: red;">
+              Якщо вас не було автоматично перенаправлено до App Store, ви можете відкрити один з наступних браузерів:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Потім натисніть на адресний рядок:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Пошук або введення назви веб-сайту...">
+              <br><br>
+              і натисніть кнопку "вставити", яка вставить 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              в адресний рядок. Потім натисніть кнопку "перейти" або "enter".
+            </span>`,
+            "failure": `Не вдалося скопіювати код доступу.`,
+            "error": `Помилка: Невірний або відсутній код доступу.`
+          },
+          "ur": {
+            "success": `<em>دعوتی لنک کاپی کر لیا گیا۔ App Store کی طرف ری ڈائریکٹ کیا جا رہا ہے...</em><br><br><span style="color: red;">
+              اگر آپ کو خود بخود App Store کی طرف ری ڈائریکٹ نہیں کیا جا رہا ہے، تو آپ مندرجہ ذیل براؤزرز میں سے کسی ایک کو کھول سکتے ہیں:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              پھر، ایڈریس بار میں کلک کریں:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="تلاش کریں یا ویب سائٹ کا نام درج کریں...">
+              <br><br>
+              اور "چسپاں کریں" بٹن پر کلک کریں، جو 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              کو ایڈریس بار میں چسپاں کرے گا۔ پھر "جائیں" یا "انٹر" بٹن پر کلک کریں۔
+            </span>`,
+            "failure": `رسائی کوڈ کو کاپی کرنے میں ناکام۔`,
+            "error": `خرابی: رسائی کوڈ غلط یا غیر موجود ہے.`
+          },
+          "vi": {
+            "success": `<em>Đã sao chép liên kết mời. Đang chuyển hướng đến App Store...</em><br><br><span style="color: red;">
+              Nếu bạn không được tự động chuyển hướng đến App Store, bạn có thể mở một trong các trình duyệt sau:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Sau đó, nhấp vào thanh địa chỉ:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Tìm kiếm hoặc nhập tên trang web...">
+              <br><br>
+              và nhấp vào nút "dán", nó sẽ dán 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              vào thanh địa chỉ. Sau đó nhấp vào nút "đi" hoặc "enter".
+            </span>`,
+            "failure": `Sao chép mã truy cập không thành công.`,
+            "error": `Lỗi: Mã truy cập không hợp lệ hoặc thiếu.`
+          },
+          "yo": {
+            "success": `<em>Ìjápọ ìpamọ̀ kóòpì. Ìtọ́kasí sí App Store...</em><br><br><span style="color: red;">
+              Tí o kò bá ti wa ní ìtọ́kasí àtẹ̀yìnwá sí App Store láìfẹ̀ẹ́, o lè ṣí ọ̀kan lára àwọn aṣàwákiri tó wà lórí:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Nígbà náà, tẹ sí inú àgbàrá àdírẹ́sì:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Ṣàwárí tàbí tẹ orúkọ ojú-òpó wẹẹbù...">
+              <br><br>
+              àti tẹ bọtini "paste", èyí yóò fi 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              sínú àgbàrá àdírẹ́sì. Léyìn náà, tẹ bọtini "lọ" tàbí "enter".
+            </span>`,
+            "failure": `Ìkópọ̀ kóòdù ìwọlé kò ṣeyebíye.`,
+            "error": `Àṣiṣe: Kóòdù ìwọlé àìtọ̀ tàbí tó ṣòfo.`
+          },
+          "zh-Hans": {
+            "success": `<em>邀请链接已复制。正在重定向到应用商店...</em><br><br><span style="color: red;">
+              如果您没有自动重定向到应用商店，您可以打开以下浏览器之一：
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              然后，点击地址栏：
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="搜索或输入网站名称...">
+              <br><br>
+              并点击“粘贴”按钮，这将粘贴 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              到地址栏。然后点击“前往”或“回车”按钮。
+            </span>`,
+            "failure": `复制访问代码失败。`,
+            "error": `错误：访问代码无效或缺失。`
+          },
+          "zh-Hant": {
+            "success": `<em>邀請連結已複製。正在重新導向至應用商店...</em><br><br><span style="color: red;">
+              如果您未被自動重新導向至應用商店，您可以開啟以下其中一個瀏覽器：
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              然後，點擊地址欄：
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="搜尋或輸入網站名稱...">
+              <br><br>
+              並點擊「貼上」按鈕，這將貼上 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              到地址欄。然後點擊「前往」或「Enter」按鈕。
+            </span>`,
+            "failure": `複製訪問代碼失敗。`,
+            "error": `錯誤：訪問代碼無效或缺失。`
+          },
+          "zh-HK": {
+            "success": `<em>邀請連結已複製。正在重新導向至應用商店...</em><br><br><span style="color: red;">
+              如果您未被自動重新導向至應用商店，您可以開啟以下其中一個瀏覽器：
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              然後，點擊地址欄：
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="搜尋或輸入網站名稱...">
+              <br><br>
+              並點擊「貼上」按鈕，這將貼上 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              到地址欄。然後點擊「前往」或「Enter」按鈕。
+            </span>`,
+            "failure": `複製訪問代碼失敗。`,
+            "error": `錯誤：訪問代碼無效或缺失。`
+          },
+          "zu": {
+            "success": `<em>Isixhumanisi sokuqinisekisa sikopishiwe. Uya ku-App Store...</em><br><br><span style="color: red;">
+              Uma ungawenzi ngokuzenzakalelayo uya ku-App Store, ungavula esinye salezi zibhrawuza ezilandelayo:
+              <br><br>
+              <img src="images/chrome_icon.jpeg" alt="Chrome" title="Chrome" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/firefox_icon.jpeg" alt="Firefox" title="Firefox" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <img src="images/microsoftedge_icon.jpg" alt="Edge" title="Microsoft Edge" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
+              <br><br>
+              Bese, chofoza ebhokisini lekheli:
+              <br><br>
+              <input type="text" style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Sesha noma faka igama lewebhusayithi...">
+              <br><br>
+              bese uchofoza inkinobho ethi "namathisela", ezonamathisela 
+              <br><br>
+              ${inviteLink}
+              <br><br>
+              ebhokisini lekheli. Bese uchofoza inkinobho ethi "iya" noma "enter".
+            </span>`,
+            "failure": `Kwenzeka iphutha ekukopisheni ikhodi yokufinyelela.`,
+            "error": `Iphutha: Ikhodi yokufinyelela ayilungile noma ilahlekile.`
+          }
+        };
+
+        const localizedMessages = messages[language] || messages["en"];
+
+        if (params.accessCode && !hasErrors) {
+
+          navigator.clipboard.writeText(inviteLink)
             .then(() => {
-              document.getElementById('copyMessage').innerHTML = "<em>Invitation copied. Redirecting to the app store...</em>";
-              window.location.href = "https://apps.apple.com/app/6180/id6468679610";  // Redirect to App Store
+
+              document.getElementById('copyMessage').innerHTML = localizedMessages.success;
+              window.location.href = inviteLink;
+
             })
             .catch(() => {
-              document.getElementById('copyMessage').textContent = "Failed to copy the invite code.";
+
+              document.getElementById('copyMessage').textContent = localizedMessages.failure;
+
             });
+
         } else {
-          document.getElementById('copyMessage').textContent = "Error: Invalid or missing invite code.";
+
+          document.getElementById('copyMessage').textContent = localizedMessages.error;
+
         }
+
       }
 
-      function copyAndNavigateInviteCode() {
+
+      function copyAndNavigateAccessCode() {
+
         const params = getPositionalUrlParameters();
-        if (params.inviteCode && !hasErrors) {
-          const deepLink = `i6180://invite/Message-${params.inviteCode}`;
+        const language = getBrowserLanguage();
+        
+        const messages = {
+          "am": {
+            "accessCodeSuccess": "<em>የመዳረሻ ኮድዎት ተቀይሯል። ለመጠቀም፣ በ6180 ላይ \"እንዲያያዩ\" ትዕይንት(ታብ)ን ክፈቱ። ከዚያም ከላይ የሚታየውን የ\"እንዲያያዩ\" ምናሌ ይጫኑ እና \"እንቁላል መጠቀም\" ይምረጡ።</em>",
+            "accessCodeFailure": "የመዳረሻ ኮድን መቅዳት አልተሳካም።",
+            "accessCodeError": "ስህተት፡ የመዳረሻ ኮድ ልክ አይደለም ወይም የለም።"
+          },
+          "ar": {
+            "accessCodeSuccess": "<em>تم نسخ رمز الدخول الخاص بك. لاستخدامه، افتح علامة تبويب \"جهات الاتصال\" في 6180. ثم انقر على قائمة \"جهات الاتصال\" العلوية واختر \"استخدم رمز الوصول\".</em>",
+            "accessCodeFailure": "فشل في نسخ رمز الدخول.",
+            "accessCodeError": "خطأ: رمز الدخول غير صالح أو مفقود."
+          },
+          "bn": {
+            "accessCodeSuccess": "<em>আপনার প্রবেশ কোড কপি করা হয়েছে। এটি ব্যবহার করতে, 6180 এ \"যোগাযোগ\" ট্যাবটি খুলুন। তারপর, উপরে থাকা \"যোগাযোগ\" মেনুতে ক্লিক করুন এবং \"এক্সেস কোড ব্যবহার করুন\" নির্বাচন করুন।</em>",
+            "accessCodeFailure": "প্রবেশ কোড কপি করতে ব্যর্থ হয়েছে।",
+            "accessCodeError": "ত্রুটি: অকার্যকর বা অনুপস্থিত প্রবেশ কোড।"
+          },
+          "ca": {
+            "accessCodeSuccess": "<em>El teu codi d'accés s'ha copiat. Per utilitzar-lo, obre la pestanya \"Contactes\" a 6180. A continuació, fes clic al menú \"Contactes\" situat a la part superior i selecciona \"Utilitzar Codi D'Accés\".</em>",
+            "accessCodeFailure": "No s'ha pogut copiar el codi d'accés.",
+            "accessCodeError": "Error: codi d'accés no vàlid o inexistent."
+          },
+          "cs": {
+            "accessCodeSuccess": "<em>Váš přístupový kód byl zkopírován. Chcete-li jej použít, otevřete na 6180 kartu \"Kontakty\". Poté klikněte na horní rozbalovací nabídku \"Kontakty\" a vyberte \"Použít Přístupový Kód\".</em>",
+            "accessCodeFailure": "Nepodařilo se zkopírovat přístupový kód.",
+            "accessCodeError": "Chyba: Neplatný nebo chybějící přístupový kód."
+          },
+          "da": {
+            "accessCodeSuccess": "<em>Din adgangskode er blevet kopieret. For at bruge den, åbn \"Kontakter\"-fanen på 6180. Klik derefter på den øverste \"Kontakter\"-menu og vælg \"Brug Adgangskode\".</em>",
+            "accessCodeFailure": "Det mislykkedes at kopiere adgangskoden.",
+            "accessCodeError": "Fejl: Ugyldig eller manglende adgangskode."
+          },
+          "de": {
+            "accessCodeSuccess": "<em>Ihr Zugangscode wurde kopiert. Um ihn zu verwenden, öffnen Sie die \"Kontakte\"-Registerkarte auf 6180. Klicken Sie dann auf das obere \"Kontakte\"-Menü und wählen Sie \"Zugangscode Verwenden\".</em>",
+            "accessCodeFailure": "Zugangscode konnte nicht kopiert werden.",
+            "accessCodeError": "Fehler: Ungültiger oder fehlender Zugangscode."
+          },
+          "el": {
+            "accessCodeSuccess": "<em>Ο κωδικός πρόσβασής σας αντιγράφηκε. Για να τον χρησιμοποιήσετε, ανοίξτε την καρτέλα \"επαφές\" στο 6180. Στη συνέχεια, κάντε κλικ στο επάνω μενού \"επαφές\" και επιλέξτε \"Χρησιμοποιήστε Τον Κωδικό Πρόσβασης\".</em>",
+            "accessCodeFailure": "Αποτυχία αντιγραφής του κωδικού πρόσβασης.",
+            "accessCodeError": "Σφάλμα: Μη έγκυρος ή ανύπαρκτος κωδικός πρόσβασης."
+          },
+          "en": {
+            "accessCodeSuccess": "<em>Your access code has been copied. To use it, open the \"Contacts\" tab on 6180. Then, click the top \"Contacts\" menu and select \"Use Access Code\".</em>",
+            "accessCodeFailure": "Failed to copy the access code.",
+            "accessCodeError": "Error: Invalid or missing access code."
+          },
+          "es": {
+            "accessCodeSuccess": "<em>Se ha copiado tu código de acceso. Para usarlo, abre la pestaña \"Contactos\" en 6180. Luego, haz clic en el menú \"Contactos\" superior y selecciona \"Usar Código De Acceso\".</em>",
+            "accessCodeFailure": "No se pudo copiar el código de acceso.",
+            "accessCodeError": "Error: Código de acceso inválido o faltante."
+          },
+          "fa": {
+            "accessCodeSuccess": "<em>کد دسترسی شما کپی شد. برای استفاده از آن، تب \"تماس‌ها\" را در 6180 باز کنید. سپس روی منوی بالایی \"تماس‌ها\" کلیک کرده و \"استفاده از کد دسترسی\" را انتخاب کنید.</em>",
+            "accessCodeFailure": "کپی کردن کد دسترسی ناموفق بود.",
+            "accessCodeError": "خطا: کد دسترسی نامعتبر یا موجود نیست."
+          },
+          "fi": {
+            "accessCodeSuccess": "<em>Pääsykoodisi on kopioitu. Käyttääksesi sitä, avaa \"Yhteystiedot\"-välilehti 6180:ssa. Napsauta sitten yläreunassa olevaa \"Yhteystiedot\"-valikkoa ja valitse \"Käytä Pääsykoodia\".</em>",
+            "accessCodeFailure": "Pääsykoodin kopiointi epäonnistui.",
+            "accessCodeError": "Virhe: Virheellinen tai puuttuva pääsykoodi."
+          },
+          "fil": {
+            "accessCodeSuccess": "<em>Na-kopya na ang iyong access code. Para gamitin ito, buksan ang \"Mga contact\" na tab sa 6180. Pagkatapos, i-click ang nasa itaas na \"Mga contact\" menu at piliin ang \"Gamitin Ang Access Code\".</em>",
+            "accessCodeFailure": "Nabigo ang pagkopya ng access code.",
+            "accessCodeError": "Error: Invalid o nawawalang access code."
+          },
+          "fr": {
+            "accessCodeSuccess": "<em>Votre code d'accès a été copié. Pour l'utiliser, ouvrez l'onglet \"Contacts\" sur 6180. Ensuite, cliquez sur le menu \"Contacts\" en haut et sélectionnez \"Utiliser Le Code D'Accès\".</em>",
+            "accessCodeFailure": "Échec de la copie du code d'accès.",
+            "accessCodeError": "Erreur : Code d'accès invalide ou manquant."
+          },
+          "ha": {
+            "accessCodeSuccess": "<em>An kwafi lambar shiga ɗinku. Don amfani da ita, buɗe shafin \"Lambobin Sadarwa\" a 6180. Sannan, danna saman menu na \"Lambobin Sadarwa\" kuma zaɓi \"Yi Amfani Da Lambar Samun Dama\".</em>",
+            "accessCodeFailure": "An kasa kwafin lambar shiga.",
+            "accessCodeError": "Kuskure: Lambar shiga ba daidai ba ce ko a bace take."
+          },
+          "he": {
+            "accessCodeSuccess": "<em>קוד הגישה שלך הועתק. כדי להשתמש בו, פתח את כרטיסיית \"אנשי קשר\" ב-6180. לאחר מכן, לחץ על תפריט \"אנשי קשר\" בחלק העליון ובחר \"השתמש בקוד גישה\".</em>",
+            "accessCodeFailure": "נכשל העתקת קוד הגישה.",
+            "accessCodeError": "שגיאה: קוד גישה שגוי או חסר."
+          },
+          "hi": {
+            "accessCodeSuccess": "<em>आपका एक्सेस कोड कॉपी कर लिया गया है। इसका उपयोग करने के लिए, 6180 में \"संपर्क\" टैब खोलें। फिर, शीर्ष पर स्थित \"संपर्क\" मेनू पर क्लिक करें और \"एक्सेस कोड का उपयोग करें\" चुनें।</em>",
+            "accessCodeFailure": "एक्सेस कोड कॉपी करने में विफल.",
+            "accessCodeError": "त्रुटि: अमान्य या अनुपलब्ध एक्सेस कोड."
+          },
+          "hr": {
+            "accessCodeSuccess": "<em>Vaš pristupni kod je kopiran. Da biste ga koristili, otvorite karticu \"Kontakti\" na 6180. Zatim kliknite na gornji izbornik \"Kontakti\" i odaberite \"Koristite Pristupni Kod\".</em>",
+            "accessCodeFailure": "Nije uspjelo kopiranje pristupnog koda.",
+            "accessCodeError": "Pogreška: Nevažeći ili nedostajući pristupni kod."
+          },
+          "hu": {
+            "accessCodeSuccess": "<em>A hozzáférési kódját lemásoltuk. Használatához nyissa meg a \"Kapcsolatok\" fület a 6180-on. Ezután kattintson a felső \"Kapcsolatok\" menüre, és válassza a \"Használja A Hozzáférési Kódot\" lehetőséget.</em>",
+            "accessCodeFailure": "A hozzáférési kód másolása sikertelen.",
+            "accessCodeError": "Hiba: Érvénytelen vagy hiányzó hozzáférési kód."
+          },
+          "id": {
+            "accessCodeSuccess": "<em>Kode akses Anda telah disalin. Untuk menggunakannya, buka tab \"Kontak\" di 6180. Lalu, klik menu \"Kontak\" di bagian atas dan pilih \"Gunakan Kode Akses\".</em>",
+            "accessCodeFailure": "Gagal menyalin kode akses.",
+            "accessCodeError": "Kesalahan: Kode akses tidak valid atau hilang."
+          },
+          "ig": {
+            "accessCodeSuccess": "<em>Edepụtara koodu ikike gị. Iji jiri ya, meghee taabụ \"Kọntaktị\" na 6180. Mgbe ahụ, pịa menu \"Kọntaktị\" n'elu ma họrọ \"Jiri Koodu Nchekwa\".</em>",
+            "accessCodeFailure": "Nafụla ikopi koodu ikike.",
+            "accessCodeError": "Njehie: Koodu ikike ezighi ezi ma ọ bụ efu."
+          },
+          "it": {
+            "accessCodeSuccess": "<em>Il tuo codice di accesso è stato copiato. Per usarlo, apri la scheda \"Contatti\" su 6180. Quindi, fai clic sul menu \"Contatti\" in alto e seleziona \"Usa Il Codice Di Accesso\".</em>",
+            "accessCodeFailure": "Impossibile copiare il codice di accesso.",
+            "accessCodeError": "Errore: Codice di accesso non valido o mancante."
+          },
+          "ja": {
+            "accessCodeSuccess": "<em>アクセスコードがコピーされました。使用するには、6180で\"連絡先\"タブを開いてください。その後、上部にある\"連絡先\"メニューをクリックして「アクセスコードを使用」を選択します。</em>",
+            "accessCodeFailure": "アクセスコードのコピーに失敗しました。",
+            "accessCodeError": "エラー：無効または不足しているアクセスコードです。"
+          },
+          "jv": {
+            "accessCodeSuccess": "<em>Kode akses panjenengan wis disalin. Kanggo migunakaké, bukak tab \"Kontak\" ing 6180. Banjur, klik ménu \"Kontak\" ing sisih ndhuwur lan pilih \"Gunakake Kode Akses\".</em>",
+            "accessCodeFailure": "Gagal nyalin kode akses.",
+            "accessCodeError": "Kesalahan: Kode akses ora sah utawa ora ana."
+          },
+          "km": {
+            "accessCodeSuccess": "<em>លេខកូដចូលរបស់អ្នកត្រូវបានចម្លងហើយ។ ដើម្បីប្រើវា, បើកផ្ទាំង \"ទំនាក់ទំនង\" លើ 6180 រួចចុចលើម៉ឺនុយ \"ទំនាក់ទំនង\" ខាងលើ ហើយជ្រើស \"ប្រើកូដចូល\".</em>",
+            "accessCodeFailure": "បានបរាជ័យក្នុងការចម្លង លេខកូដចូល។",
+            "accessCodeError": "កំហុស៖ លេខកូដចូល មិនត្រឹមត្រូវ ឬអវត្តមាន។"
+          },
+          "kn": {
+            "accessCodeSuccess": "<em>ನಿಮ್ಮ ಪ್ರವೇಶ ಕೋಡ್ ನಕಲಿಸಲಾಗಿದೆ. ಅದನ್ನು ಬಳಸಿ, 6180 ನಲ್ಲಿ \"ಸಂಪರ್ಕಗಳು\" ಟ್ಯಾಬ್ ತೆರೆಯಿರಿ. ನಂತರ, ಮೇಲಿನ \"ಸಂಪರ್ಕಗಳು\" ಮೆನು ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು \"ಪ್ರವೇಶ ಕೋಡ್ ಅನ್ನು ಬಳಸಿ\" ಎಂಬುದನ್ನು ಆಯ್ಕೆ ಮಾಡಿ.</em>",
+            "accessCodeFailure": "ಪ್ರವೇಶ ಕೋಡ್ ನಕಲಿ ಮಾಡಲು ಆಗಲಿಲ್ಲ.",
+            "accessCodeError": "ತೊಡಕು: ಅವೈಧ ಅಥವಾ ಇಲ್ಲದ ಪ್ರವೇಶ ಕೋಡ್."
+          },
+          "ko": {
+            "accessCodeSuccess": "<em>액세스 코드가 복사되었습니다. 사용하려면 6180에서 \"연락처\" 탭을 여세요. 그 다음 상단 \"연락처\" 메뉴를 클릭하고 \"액세스 코드를 사용하세요\"를 선택하세요.</em>",
+            "accessCodeFailure": "액세스 코드를 복사하지 못했습니다.",
+            "accessCodeError": "오류: 유효하지 않거나 누락된 액세스 코드입니다."
+          },
+          "lo": {
+            "accessCodeSuccess": "<em>ລະຫັດເຂົ້າຂອງທ່ານໄດ້ຖືກສຳເນົາແລ້ວ. ການນຳໃຊ້, ຈົ່ງເປີດແຖບ \"ຜູ້ຕິດຕໍ່\" ຢູ່ 6180. ລັງຈາກນັ້ນ, ກົດທີ່ເມນູ \"ຜູ້ຕິດຕໍ່\" ທາງເທິງແລ້ວເລືອກ \"ໃຊ້ລະຫັດທີ່ມີສິດຂອງທ່ານ\".</em>",
+            "accessCodeFailure": "ບໍ່ສາມາດສຳເນົາ ລະຫັດເຂົ້າ.",
+            "accessCodeError": "ຜິດພາດ: ລະຫັດເຂົ້າ ບໍ່ຖືກຕ້ອງ ຫຼື ບໍ່ມີ."
+          },
+          "ml": {
+            "accessCodeSuccess": "<em>താങ്കളുടെ ആക്‌സസ് കോഡ് പകർത്തിയിരിക്കുന്നു. അതുപയോഗിക്കാൻ, 6180-ൽ \"ബന്ധങ്ങൾ\" ടാബ് തുറക്കൂ. തുടർന്ന്, മുകളിലുള്ള \"ബന്ധങ്ങൾ\" മെനുവിൽ ക്ലിക്ക് ചെയ്ത് \"അക്‌സസ് കോഡ് ഉപയോഗിക്കുക\" തിരഞ്ഞെടുക്കൂ.</em>",
+            "accessCodeFailure": "ആക്‌സസ് കോഡ് പകർത്തുന്നതിൽ പരാജയപ്പെട്ടു.",
+            "accessCodeError": "പിശക്: അസാധുവായോ നഷ്ടപ്പെട്ടോ ഉള്ള ആക്‌സസ് കോഡ്."
+          },
+          "mr": {
+            "accessCodeSuccess": "<em>तुमचा प्रवेश कोड कॉपी करण्यात आला आहे. वापरण्यासाठी, 6180 वर \"संपर्क\" टॅब उघडा. मग वरच्या \"संपर्क\" मेनूवर क्लिक करा आणि \"ऍक्सेस कोड वापरा\" निवडा.</em>",
+            "accessCodeFailure": "प्रवेश कोड कॉपी करण्यात अयशस्वी.",
+            "accessCodeError": "त्रुटी: अवैध किंवा गायब प्रवेश कोड."
+          },
+          "ms": {
+            "accessCodeSuccess": "<em>Kod akses anda telah disalin. Untuk menggunakannya, buka tab \"Kenalan\" di 6180. Kemudian, klik menu \"Kenalan\" di atas dan pilih \"Guna Kod Akses\".</em>",
+            "accessCodeFailure": "Gagal menyalin kod akses.",
+            "accessCodeError": "Ralat: Kod akses tidak sah atau tiada."
+          },
+          "my": {
+            "accessCodeSuccess": "<em>သင့်ဝင်ခွင့်ကုဒ် မိတ္တူကူးပြီးပါပြီ။ သုံးရန်၊ 6180 မှာ \"ဆက်သွယ်မှုများ\" တဘ်ကို ဖွင့်ပါ။ ထို့နောက် မျက်နှာပြင်အထက်ရှိ \"ဆက်သွယ်မှုများ\" မီနူးကိုနှိပ်ပြီး \"အသုံးပြုခွင့် ကုဒ်ကို အသုံးပြုပါ\" ကိုရွေးပါ။</em>",
+            "accessCodeFailure": "ဝင်ခွင့်ကုဒ် ကိုကူးယူရာမှာမအောင်မြင်ပါ။",
+            "accessCodeError": "အမှား: မပြည့်စုံသော သို့မဟုတ် မတန်ဖိုးရှိသော ဝင်ခွင့်ကုဒ်။"
+          },
+          "nb": {
+            "accessCodeSuccess": "<em>Din tilgangskode er kopiert. For å bruke den, åpne \"Kontakter\"-fanen på 6180. Deretter klikker du på den øverste \"Kontakter\"-menyen og velger \"Bruk Tilgangskode\".</em>",
+            "accessCodeFailure": "Kunne ikke kopiere tilgangskoden.",
+            "accessCodeError": "Feil: Ugyldig eller manglende tilgangskode."
+          },
+          "ne": {
+            "accessCodeSuccess": "<em>तपाईंको प्रवेश कोड प्रतिलिपि गरिएको छ। यसलाई प्रयोग गर्न, 6180 मा \"सम्पर्कहरू\" ट्याब खोल्नुहोस्। त्यसपछि, माथिको \"सम्पर्कहरू\" मेनुमा क्लिक गरी \"प्रवेश कोड प्रयोग गर्नुहोस्\" चयन गर्नुहोस्।</em>",
+            "accessCodeFailure": "प्रवेश कोड प्रतिलिपि गर्न असफल।",
+            "accessCodeError": "त्रुटि: अमान्य वा अनुपस्थित प्रवेश कोड।"
+          },
+          "nl": {
+            "accessCodeSuccess": "<em>Uw toegangscode is gekopieerd. Om deze te gebruiken, opent u het \"Contacten\"-tabblad in 6180. Klik vervolgens op het bovenste \"Contacten\"-menu en kies \"Gebruik Toegangscode\".</em>",
+            "accessCodeFailure": "Kan de toegangscode niet kopiëren.",
+            "accessCodeError": "Fout: Ongeldige of ontbrekende toegangscode."
+          },
+          "or": {
+            "accessCodeSuccess": "<em>ଆପନଙ୍କର ଆକ୍ସେସ୍ କୋଡ୍ କପି କରାଯାଇଛି। ଏହাকে ବ୍ୟବହାର କରିବାକୁ, 6180 ରେ \"ଯୋଗାଯୋଗ\" ଟ୍ୟାବ୍ খুলନ୍ତୁ। ତେବେ, ଉପରେ ଥିବା \"ଯୋଗାଯୋଗ\" ମେନୁ କ୍ଲିକ୍ କରି \"ଅଭିଗମ କୋଡ ବ୍ୟବହାର କରନ୍ତୁ\" କୁ ଚୟନ କରନ୍ତୁ।</em>",
+            "accessCodeFailure": "ଆକ୍ସେସ୍ କୋଡ୍ କପି କରିବାରେ ବିଫଳ।",
+            "accessCodeError": "ତ୍ରୁଟି: ଅବୈଧ କିମ୍ବା ଅପସ୍ଥିତ ଆକ୍ସେସ୍ କୋଡ୍।"
+          },
+          "pa": {
+            "accessCodeSuccess": "<em>ਤੁਹਾਡਾ ਐਕਸੈੱਸ ਕੋਡ ਕਾਪੀ ਕਰ ਲਿਆ ਗਿਆ ਹੈ। ਇਸਨੂੰ ਵਰਤਣ ਲਈ, 6180 'ਤੇ \"ਸੰਪਰਕ\" ਟੈਬ ਖੋਲੋ। ਫਿਰ, ਉੱਪਰਲੇ \"ਸੰਪਰਕ\" ਮੀਨੂ 'ਤੇ ਕਲਿੱਕ ਕਰੋ ਅਤੇ \"ਐਕਸੈੱਸ ਕੋਡ ਵਰਤੋ\" ਚੁਣੋ।</em>",
+            "accessCodeFailure": "ਐਕਸੈੱਸ ਕੋਡ ਨੂੰ ਕਾਪੀ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।",
+            "accessCodeError": "ਗਲਤੀ: ਐਕਸੈੱਸ ਕੋਡ ਅਮਾਨਯੋਗ ਜਾਂ ਗੈਰਹਾਜ਼ਰ ਹੈ।"
+          },
+          "pl": {
+            "accessCodeSuccess": "<em>Twój kod dostępu został skopiowany. Aby go użyć, otwórz kartę \"Kontakty\" w 6180. Następnie kliknij górne menu \"Kontakty\" i wybierz \"Użyj Kodu Dostępu\".</em>",
+            "accessCodeFailure": "Nie udało się skopiować kodu dostępu.",
+            "accessCodeError": "Błąd: Nieprawidłowy lub brakujący kod dostępu."
+          },
+          "ps": {
+            "accessCodeSuccess": "<em>ستاسو د لاسرسي کوډ کاپي شوی دی. د دې کارولو لپاره، په 6180 کې د \"اړیکې\" ټب پرانیزئ. بیا، د پورته اړخ \"اړیکې\" مینو باندې کلیک وکړئ او \"د لاسرسي کوډ وکاروئ\" وټاکئ.</em>",
+            "accessCodeFailure": "د لاسرسي کوډ کاپي کول پاتې راغلل.",
+            "accessCodeError": "خطا: نا سم يا نشتون لرونکی د لاسرسي کوډ."
+          },
+          "pt-BR": {
+            "accessCodeSuccess": "<em>Seu código de acesso foi copiado. Para usá-lo, abra a guia \"Contatos\" no 6180. Em seguida, clique no menu \"Contatos\" na parte superior e selecione \"Use o Código de Acesso\".</em>",
+            "accessCodeFailure": "Falha ao copiar o código de acesso.",
+            "accessCodeError": "Erro: Código de acesso inválido ou ausente."
+          },
+          "pt-PT": {
+            "accessCodeSuccess": "<em>O seu código de acesso foi copiado. Para o utilizar, abra o separador \"Contactos\" em 6180. Em seguida, clique no menu \"Contactos\" no topo e selecione \"Use o Código de Acesso\".</em>",
+            "accessCodeFailure": "Falha ao copiar o código de acesso.",
+            "accessCodeError": "Erro: Código de acesso inválido ou em falta."
+          },
+          "ro": {
+            "accessCodeSuccess": "<em>Codul de acces a fost copiat. Pentru a-l utiliza, deschideți fila \"Contacte\" în 6180. Apoi, faceți clic pe meniul \"Contacte\" din partea de sus și selectați \"Folosește Codul De Acces\".</em>",
+            "accessCodeFailure": "Nu s-a putut copia codul de acces.",
+            "accessCodeError": "Eroare: Cod de acces invalid sau lipsă."
+          },
+          "ru": {
+            "accessCodeSuccess": "<em>Ваш код доступа скопирован. Чтобы использовать его, откройте вкладку \"Контакты\" в 6180. Затем нажмите на верхнее меню \"Контакты\" и выберите \"Использовать Код Доступа\".</em>",
+            "accessCodeFailure": "Не удалось скопировать код доступа.",
+            "accessCodeError": "Ошибка: Неверный или отсутствующий код доступа."
+          },
+          "sd": {
+            "accessCodeSuccess": "<em>توهنجو رسائي ڪوڊ ڪاپي ٿي ويو آهي. ان کي استعمال ڪرڻ لاءِ، 6180 تي \"رابطا\" ٽيب کوليو. پوءِ، مٿين \"رابطا\" مينيو تي ڪلڪ ڪريو ۽ \"رسائي ڪوڊ استعمال ڪريو\" چونڊيو.</em>",
+            "accessCodeFailure": "رسائي ڪوڊ ڪاپي ڪرڻ ۾ ناڪام.",
+            "accessCodeError": "غلطي: غلط يا غير موجود رسائي ڪوڊ."
+          },
+          "si": {
+            "accessCodeSuccess": "<em>ඔබගේ ප්‍රවේශ කේතය පිටපත් කර ඇත. එය භාවිතා කිරීමට, 6180 හි \"සම්බන්ධතා\" ටැබය ඇරන්න. එ之后, ඉහළ ඇති \"සම්බන්ධතා\" මෙනුව Click කර \"ප්‍රවේශ කේතය භාවිතා කරන්න\" තෝරන්න.</em>",
+            "accessCodeFailure": "ප්‍රවේශ කේතය පිටපත් කිරීමට අසමත් විය.",
+            "accessCodeError": "දෝෂය: අවලංගු හෝ නොමැති ප්‍රවේශ කේතය."
+          },
+          "sk": {
+            "accessCodeSuccess": "<em>Váš prístupový kód bol skopírovaný. Na jeho použitie otvorte na 6180 kartu \"Kontakty\". Potom kliknite na hornú ponuku \"Kontakty\" a vyberte \"Použite Prístupový Kód\".</em>",
+            "accessCodeFailure": "Nepodarilo sa skopírovať prístupový kód.",
+            "accessCodeError": "Chyba: Neplatný alebo chýbajúci prístupový kód."
+          },
+          "sr": {
+            "accessCodeSuccess": "<em>Ваш приступни код је копиран. Да бисте га користили, отворите картицу \"Контакти\" на 6180. Затим кликните на горњи мени \"Контакти\" и изаберите \"Koristite Pristupni Kod\".</em>",
+            "accessCodeFailure": "Копирање приступног кода није успело.",
+            "accessCodeError": "Грешка: Неважећи или недостајући приступни код."
+          },
+          "sv": {
+            "accessCodeSuccess": "<em>Din åtkomstkod har kopierats. För att använda den, öppna \"Kontakter\"-fliken på 6180. Klicka sedan på den översta \"Kontakter\"-menyn och välj \"Använd Åtkomstkod\".</em>",
+            "accessCodeFailure": "Misslyckades med att kopiera åtkomstkoden.",
+            "accessCodeError": "Fel: Ogiltig eller saknad åtkomstkod."
+          },
+          "sw": {
+            "accessCodeSuccess": "<em>Nambari ya ufikiaji yako imenakiliwa. Ili kuitumia, fungua kichupo cha \"Mawasiliano\" kwenye 6180. Kisha, bofya menyu ya juu ya \"Mawasiliano\" na chagua \"Tumia Nambari Ya Ufikiaji\".</em>",
+            "accessCodeFailure": "Imeshindikana kunakili nambari ya ufikiaji.",
+            "accessCodeError": "Hitilafu: Nambari ya ufikiaji si sahihi au haipatikani."
+          },
+          "ta": {
+            "accessCodeSuccess": "<em>உங்கள் அணுகல் குறியீடு நகலெடுக்கப்பட்டது. இதைப் பயன்படுத்த, 6180 இல் \"தொடர்புகள்\" தாவலை திறக்கவும். பின், மேலுள்ள \"தொடர்புகள்\" மெனுவை கிளிக் செய்து \"அணுகல் குறியீட்டை பயன்படுத்தவும்\" என்பதைத் தேர்ந்தெடுக்கவும்.</em>",
+            "accessCodeFailure": "அணுகல் குறியீட்டை நகலெடுக்க இயலவில்லை.",
+            "accessCodeError": "பிழை: செல்லாத அல்லது இல்லை அணுகல் குறியீடு."
+          },
+          "te": {
+            "accessCodeSuccess": "<em>మీ యాక్సెస్ కోడ్ కాపీ చేయబడింది. దాన్ని ఉపయోగించడానికి, 6180 లో \"సంప్రదింపులు\" ట్యాబ్‌ను తెరవండి. తరువాత, పైవైపు ఉన్న \"సంప్రదింపులు\" మెనూను క్లిక్ చేసి \"అక్సెస్ కోడ్ ను ఉపయోగించండి\" ఎంచుకోండి.</em>",
+            "accessCodeFailure": "యాక్సెస్ కోడ్‌ను కాపీ చేయడంలో విఫలమయ్యింది.",
+            "accessCodeError": "పొరపాటు: చెల్లని లేదా లేని యాక్సెస్ కోడ్."
+          },
+          "th": {
+            "accessCodeSuccess": "<em>รหัสผ่านของคุณถูกคัดลอกแล้ว ในการใช้งาน ให้เปิดแท็บ \"ผู้ติดต่อ\" ใน 6180 จากนั้นคลิกที่เมนู \"ผู้ติดต่อ\" ด้านบนและเลือก \"ใช้รหัสการเข้าถึง\"</em>",
+            "accessCodeFailure": "ไม่สามารถคัดลอกรหัสผ่านได้",
+            "accessCodeError": "ข้อผิดพลาด: รหัสผ่านไม่ถูกต้องหรือหายไป"
+          },
+          "tr": {
+            "accessCodeSuccess": "<em>Erişim kodunuz kopyalandı. Bunu kullanmak için, 6180'da \"Kişiler\" sekmesini açın. Ardından, üstteki \"Kişiler\" menüsüne tıklayın ve \"Erişim Kodu Kullan\"ı seçin.</em>",
+            "accessCodeFailure": "Erişim kodu kopyalanamadı.",
+            "accessCodeError": "Hata: Geçersiz veya eksik erişim kodu."
+          },
+          "uk": {
+            "accessCodeSuccess": "<em>Ваш код доступу скопійовано. Щоб його використати, відкрийте вкладку \"Контакти\" на 6180. Потім натисніть верхнє меню \"Контакти\" та оберіть \"Використати Код Доступу\".</em>",
+            "accessCodeFailure": "Не вдалося скопіювати код доступу.",
+            "accessCodeError": "Помилка: Неправильний або відсутній код доступу."
+          },
+          "ur": {
+            "accessCodeSuccess": "<em>آپ کا رسائی کوڈ کاپی کر لیا گیا है۔ اسے استعمال کرنے کے لیے، 6180 میں \"رابطے\" ٹیب کھولیں۔ پھر اوپر والے \"رابطے\" مینو پر کلک کریں اور \"ایکسیس کوڈ استعمال کریں\" منتخب کریں۔</em>",
+            "accessCodeFailure": "رسائی کوڈ کو کاپی کرنے میں ناکامی۔",
+            "accessCodeError": "خرابی: غلط یا غیر موجود رسائی کوڈ۔"
+          },
+          "vi": {
+            "accessCodeSuccess": "<em>Mã truy cập của bạn đã được sao chép. Để sử dụng nó, hãy mở tab \"Liên Hệ\" trên 6180. Sau đó, nhấp vào menu \"Liên Hệ\" phía trên và chọn \"Sử Dụng Mã Truy Cập\".</em>",
+            "accessCodeFailure": "Không thể sao chép mã truy cập.",
+            "accessCodeError": "Lỗi: Mã truy cập không hợp lệ hoặc thiếu."
+          },
+          "yo": {
+            "accessCodeSuccess": "<em>Koodu iraye sile rẹ ti a daakọ. Lati lo o, ṣii taabu \"Awọn Olubasọrọ\" lori 6180. Lẹ́yìn náà, tẹ menu \"Awọn Olubasọrọ\" loke ki o yan \"Lo Koodu Wiwọle\".</em>",
+            "accessCodeFailure": "Kò lè daakọ koodu iraye sile.",
+            "accessCodeError": "Àsìṣe: Koodu iraye sile aláìtètéwòyé tàbí kò sí."
+          },
+          "zh-Hans": {
+            "accessCodeSuccess": "<em>您的访问代码已被复制。要使用它，请在6180中打开\"联系人\"选项卡。然后，点击顶部的\"联系人\"菜单，并选择“使用访问码”。</em>",
+            "accessCodeFailure": "无法复制访问代码。",
+            "accessCodeError": "错误：无效或缺失的访问代码。"
+          },
+          "zh-Hant": {
+            "accessCodeSuccess": "<em>您的訪問代碼已被複製。要使用它，請在6180中打開\"聯絡人\"標籤。然後，點擊上方的\"聯絡人\"選單並選擇「使用訪問碼」。</em>",
+            "accessCodeFailure": "無法複製訪問代碼。",
+            "accessCodeError": "錯誤：無效或缺少訪問代碼。"
+          },
+          "zh-HK": {
+            "accessCodeSuccess": "<em>您的訪問代碼已被複製。要使用它，請在6180中開啟\"聯絡人\"標籤。然後，點選上方的\"聯絡人\"選單並選擇「使用訪問碼」。</em>",
+            "accessCodeFailure": "無法複製訪問代碼。",
+            "accessCodeError": "錯誤：無效或缺少訪問代碼。"
+          },
+          "zu": {
+            "accessCodeSuccess": "<em>Ikhodi yokufinyelela yakho isikopishiwe. Ukuze uyisebenzise, vula ithebhu \"Oxhumana Nabo\" ku-6180. Bese uchofoza imenyu \"Oxhumana Nabo\" engenhla bese ukhetha \"Sebenzisa Ikhodi Yokufinyelela\".</em>",
+            "accessCodeFailure": "Yehlulekile ukukopisha ikhodi yokufinyelela.",
+            "accessCodeError": "Iphutha: Ikhodi yokufinyelela engavumelekile noma engekho."
+          }
+        };
+
+        const localizedMessages = messages[language] || messages["en"];
+
+        if (params.accessCode && !hasErrors) {
+          const deepLink = `i6180://invite/Message-${params.accessCode}`;
+
           navigator.clipboard.writeText(deepLink)
             .then(() => {
-              document.getElementById('inviteActionMessage').innerHTML = "<em>Your invite code has been copied. To use it, open the People tab on 6180. Then, click the top right 'Open Invite'.</em>";
+              const successMessage = localizedMessages.accessCodeSuccess || messages["en"].accessCodeSuccess;
+              document.getElementById('inviteActionMessage').innerHTML = successMessage;
+
               setTimeout(() => {
                 window.location.href = deepLink;
-              }, 500); // Delay for smooth transition
+              }, 500); // Delay for a smooth transition
             })
             .catch(() => {
-              document.getElementById('inviteActionMessage').textContent = "Failed to copy the invite code.";
+              const failureMessage = localizedMessages.accessCodeFailure || messages["en"].accessCodeFailure;
+              document.getElementById('inviteActionMessage').textContent = failureMessage;
             });
+
         } else {
-          document.getElementById('inviteActionMessage').textContent = "Error: Invalid or missing invite code.";
+
+          const errorMessage = localizedMessages.accessCodeError || messages["en"].accessCodeError;
+          document.getElementById('inviteActionMessage').textContent = errorMessage;
+
         }
+
       }
 
       (function initializePage() {
         const language = getBrowserLanguage();
         const titleTemplate = setTranslations(language);
         const params = getPositionalUrlParameters();
-        const uuidDateTime = getTimeFromUUIDv1(params.inviteCode.split(':')[0]);
+        const uuidDateTime = getTimeFromUUIDv1(params.accessCode.split(':')[0]);
         let dateTime = uuidDateTime || new Date(new Date().getTime() - (6 * 60 * 1000 + 18 * 1000));
 
         if (!hasErrors) {
           setTitle(params.name, dateTime.toLocaleString(), titleTemplate);
         }
 
-        if (params.inviteCode) {
-          document.getElementById('inviteCodeDisplay').textContent = params.inviteCode;
+        if (params.accessCode) {
+          document.getElementById('accessCodeDisplay').textContent = params.accessCode;
         } else {
-          document.getElementById('inviteCodeDisplay').textContent = "No invite code provided";
+          document.getElementById('accessCodeDisplay').textContent = "No access code provided";
         }
       })();
     </script>
