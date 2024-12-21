@@ -10,18 +10,19 @@
       text-align: left;
     }
     .centered-link {
-      display: block;
-      text-align: center;
-      margin: 20px 0;
+      text-align: center; /* Ensures buttons are centered horizontally */
     }
-    a, button {
-      display: inline-block;
-      padding: 10px 20px;
+    .centered-link button {
+      font-size: 1.2em;
+      padding: 15px 30px; /* Padding inside the button */
+      margin: 10px auto;  /* Reduced vertical margin */
+      display: inline-block; /* Keeps the button inline, so it respects text alignment */
       background-color: #4CAF50;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       border: none;
+      text-align: center; /* Center-aligns text inside the button */
     }
     a:hover, button:hover {
       background-color: #45a049;
@@ -39,7 +40,17 @@
       font-style: italic;
       font-size: 0.7em;
       color: #666;
-      margin-bottom: 30px;
+    }
+    .hidden {
+      display: none;
+    }
+    #copyMessage {
+      font-size: 3em;
+      text-align: left;
+    }
+    #inviteActionMessage {
+      font-size: 3em;
+      text-align: left;
     }
   </style>
 </head>
@@ -50,7 +61,12 @@
     <h2 id="title"></h2>
     <p id="errorMessage" class="error"></p>
 
-    <p class="centered-italic" id="instructions"></p>
+    <p class="centered-italic" id="uploadDescription"></p>
+    <p class="centered-italic" id="appPurpose1"></p>
+    <p class="centered-italic" id="appPurpose2"></p>
+    <p class="centered-italic" id="appPurpose3"></p>
+
+    <br><br><br>
 
     <div class="centered-link">
       <button id="inviteButton" onclick="copyAndNavigateAccessCode()"></button>
@@ -62,8 +78,14 @@
     </div>
     <p id="copyMessage"></p>
 
+    <br><br><br><br>
+    <div class="footer">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+    </div>
+
     <script>
-      let hasErrors = false;
 
       function getBrowserLanguage() {
         const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
@@ -391,51 +413,74 @@
       function setTranslations(language) {
 
         const translations = {
-          "en": {
-            "titleTemplate": "Do you have the 6180 app?",
-            "instructions": "Steve uploaded memories to the 6180 app at 10:30 AM on June 1, 2024",
-            "appNotInstalledTitle": "I do not have 6180",
-            "downloadButton": "I do not have 6180",
-            "appInstalledTitle": "I have 6180",
-            "appInstalledInstructions": "I have 6180",
-            "inviteButton": "I have 6180"
+          title: {
+            "en": "Do you have the 6180 app?",
+            "zh-Hans": "您有 6180 应用吗？",
+            "zh-Hant": "您有 6180 應用嗎？",
+            "zh-HK": "您有 6180 應用嗎？"
           },
-          "zh-Hans": {
-            "titleTemplate": "您有 6180 应用吗？",
-            "instructions": "Steve 于 2024年6月1日 10:30 向 6180 应用上传了一个文件夹",
-            "appNotInstalledTitle": "我没有 6180",
-            "downloadButton": "我没有 6180",
-            "appInstalledTitle": "我有 6180",
-            "appInstalledInstructions": "我有 6180",
-            "inviteButton": "我有 6180"
+          uploadDescriptionTemplate: {
+            "en": "{name} created a photo album at {time}",
+            "zh-Hans": "{name} 于 {time} 创建了一个相册",
+            "zh-Hant": "{name} 於 {time} 建立了一個相簿",
+            "zh-HK": "{name} 於 {time} 建立了一個相簿"
           },
-          "zh-Hant": {
-            "titleTemplate": "您有 6180 應用嗎？",
-            "instructions": "Steve 於 2024年6月1日 10:30 向 6180 應用上傳了一個資料夾",
-            "appNotInstalledTitle": "我沒有 6180",
-            "downloadButton": "我沒有 6180",
-            "appInstalledTitle": "我有 6180",
-            "appInstalledInstructions": "我有 6180",
-            "inviteButton": "我有 6180"
+          appPurpose1: {
+            "en": "•  see the photos other people added",
+            "zh-Hans": "•  查看他人添加的照片",
+            "zh-Hant": "•  查看他人添加的照片",
+            "zh-HK": "•  查看他人添加的照片"
           },
-          "zh-HK": {
-            "titleTemplate": "你有冇 6180 應用程式？",
-            "instructions": "Steve 於 2024年6月1日 10:30 向 6180 應用上傳了一個資料夾",
-            "appNotInstalledTitle": "我冇 6180",
-            "downloadButton": "我冇 6180",
-            "appInstalledTitle": "我有 6180",
-            "appInstalledInstructions": "我有 6180",
-            "inviteButton": "我有 6180"
+          appPurpose2: {
+            "en": "•  add your own photos",
+            "zh-Hans": "•  添加自己的照片",
+            "zh-Hant": "•  添加自己的照片",
+            "zh-HK": "•  添加自己的照片"
+          },
+          "appPurpose3": {
+            "en": "•  tag selected photos to easily find them later",
+            "zh-Hans": "•  为选中的照片添加标签，方便日后查找",
+            "zh-Hant": "•  為選定的照片添加標籤，方便日後查找",
+            "zh-HK": "•  為選定的照片添加標籤，方便稍後查找"
+          },
+          downloadButton: {
+            "en": "I do not have 6180",
+            "zh-Hans": "我没有 6180",
+            "zh-Hant": "我沒有 6180",
+            "zh-HK": "我沒有 6180"
+          },
+          inviteButton: {
+            "en": "I have 6180",
+            "zh-Hans": "我有 6180",
+            "zh-Hant": "我有 6180",
+            "zh-HK": "我有 6180"
           }
         };
 
-        const translation = translations[language] || translations.en;
-        document.getElementById('instructions').textContent = translation.instructions;
+        const translation = {
+          title: translations.title[language] || translations.title.en,
+          uploadDescriptionTemplate: translations.uploadDescriptionTemplate[language] || translations.uploadDescriptionTemplate.en,
+          appPurpose1: translations.appPurpose1[language] || translations.appPurpose1.en,
+          appPurpose2: translations.appPurpose2[language] || translations.appPurpose2.en,
+          appPurpose3: translations.appPurpose3[language] || translations.appPurpose3.en,
+          downloadButton: translations.downloadButton[language] || translations.downloadButton.en,
+          inviteButton: translations.inviteButton[language] || translations.inviteButton.en
+        };
+
+        const params = getPositionalUrlParameters();
+        const uuidDateTime = getTimeFromUUIDv1(params.accessCode.split(':')[0]);
+        let dateTime = uuidDateTime || new Date(new Date().getTime() - (6 * 60 * 1000 + 18 * 1000));
+
+        const updatedUploadDescription = replaceWithNameAndDateTime(params.name, dateTime.toLocaleString(), translation.uploadDescriptionTemplate);
+
+        document.getElementById('title').textContent = translation.title;
+        document.getElementById('uploadDescription').textContent = updatedUploadDescription;
+        document.getElementById('appPurpose1').textContent = translation.appPurpose1;
+        document.getElementById('appPurpose2').textContent = translation.appPurpose2;
+        document.getElementById('appPurpose3').textContent = translation.appPurpose3;
         document.getElementById('downloadButton').textContent = translation.downloadButton;
         document.getElementById('inviteButton').textContent = translation.inviteButton;
 
-        return translation.titleTemplate;
-        
       }
 
       function isValidName(name) {
@@ -444,7 +489,9 @@
       }
 
       function getTimeFromUUIDv1(uuid) {
+
         if (!uuid || uuid.length < 13) return null;
+
         const uuidTimestamp = uuid.substring(0, 13);
         const uuidEpoch = 122192928000000000;
         const timestampIn100Ns = parseInt(uuidTimestamp, 16);
@@ -452,10 +499,13 @@
         const date = new Date(timestampInMs);
 
         if (date.getFullYear() < 1900) return null;
+        
         return date;
+
       }
 
       function getPositionalUrlParameters() {
+
         const queryString = window.location.search.substring(1);
         const params = queryString.split("+");
 
@@ -463,24 +513,59 @@
           name: params[0] || 'User',
           accessCode: params[1] || ''
         };
+
       }
 
-      function setTitle(name, dateTime, titleTemplate) {
-        const title = titleTemplate.replace("{name}", name).replace("{time}", dateTime);
-        document.getElementById('title').textContent = title;
+      function replaceWithNameAndDateTime(name, dateTime, originalString) {
+
+        const updatedString = originalString.replace("{name}", name).replace("{time}", dateTime);
+
+        return updatedString;
+
+      }
+
+      function hideAllExceptMessages() {
+
+        // Hide all content except messages
+        document.getElementById('title').classList.add('hidden');
+        document.getElementById('errorMessage').classList.add('hidden');
+        document.getElementById('uploadDescription').classList.add('hidden');
+        document.getElementById('appPurpose1').classList.add('hidden');
+        document.getElementById('appPurpose2').classList.add('hidden');
+        document.getElementById('appPurpose3').classList.add('hidden');
+                
+        // Hide entire centered-link containers
+        document.querySelectorAll('.centered-link').forEach(element => {
+          element.classList.add('hidden');
+        });
       }
 
       function copyAndNavigateDownload() {
+
+        hideAllExceptMessages();
 
         const params = getPositionalUrlParameters();
         const inviteLink = `https://apps.apple.com/app/6180/id6468679610/?meta=Folder-${params.accessCode}`;
         const language = getBrowserLanguage(); // Detect the browser language
         
-        const browserIcons = `
-          <br><br>
-          <img src="images/safari_icon.jpeg" alt="Safari" title="Safari" style="width:60px;height:60px;margin-right:5px;vertical-align:middle;">
-          <br><br>
-        `
+        const safariIcon = `
+          <div style="
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            margin: 20px 0;
+          ">
+            <img 
+              src="images/safari_icon.jpeg" 
+              alt="Safari" 
+              title="Safari" 
+              style="width: 60px; height: 60px;"
+            >
+            <span style="font-size: 0.8em; color: #555; margin-top: 5px;" id="safariAppName">Safari</span>
+          </div>
+        `;
+
         const addressBarCentering = `display: flex; justify-content: center; margin: 20px;`
 
         const addressBarStyling = `
@@ -500,83 +585,74 @@
         
         const messages = {
           "en": {
-            "success": `<em>Redirecting to the App Store...</em><br><br><span style="color: red;">
-              If your current app did not redirect you, use this app to open the App Store:
-              ${browserIcons}
-              Find the address bar at the bottom:
-              <div style="${addressBarCentering}">
-                <div style="${addressBarStyling}">
-                  🔍 Search or enter website name...
-                </div>
-              </div>
-              Delete any text in the bar. Click the bar and select "paste" to enter the App Store link. 
-              <br><br>
-              Then, click the bottom right "go" or "enter" button on your keyboard.
-            </span>`,
-            "failure": `Failed to copy the access code.`,
-            "error": `Error: Invalid or missing access code.`
+            "success": `<em>How To Open The 6180 Album:</em><br><br>
+                        The 6180 album has been copied to your clipboard.<br><br>
+                        Open the link in <span id="safariAppName">Safari</span>.<br><br><br>
+                        <em>Detailed Instructions:</em><br><br>
+                        <em>1. On your phone, find <span id="safariAppName">Safari</span> app:</em><br><br>
+                        ${safariIcon}
+                        <em>2. Paste link in address bar:</em><br><br>
+                        <span style="color: #555;">Highlight any text in the bottom bar and tap "Paste" to replace it with the link.</span><br><br>
+                        <em>3. Go to App Store:</em><br><br>
+                        <span style="color: #555;">Tap the "Go" or "Enter" button on your keyboard to open the App Store.</span>`,
+            "failure": `The access code could not be copied. Please try again.`,
+            "error": `Error: The access code is invalid or missing.`
           },
           "zh-Hans": {
-            "success": `<em>正在跳转到应用商店...</em><br><br><span style="color: red;">
-              如果您的当前应用未能跳转，请使用此应用打开应用商店：  
-              ${browserIcons}  
-              找到位于底部的地址栏：  
-              <div style="${addressBarCentering}">
-                <div style="${addressBarStyling}">
-                  🔍 搜索或输入网站名称...
-                </div>
-              </div>
-              清除地址栏中的任何文本。点击地址栏并选择“粘贴”以输入应用商店链接。  
-              <br><br>
-              然后，点击键盘右下角的“前往”或“回车”按钮。  
-            </span>`,
-            "failure": `无法复制访问代码。`,
-            "error": `错误：无效或缺失的访问代码。`
+            "success": `<em>如何打开 6180 相册：</em><br><br>
+                        6180 相册已复制到您的剪贴板。<br><br>
+                        在 <span id="safariAppName">Safari</span> 中打开链接。<br><br><br>
+                        <em>详细说明：</em><br><br>
+                        <em>1. 在您的手机上找到 <span id="safariAppName">Safari</span> 应用：</em><br><br>
+                        ${safariIcon}
+                        <em>2. 在地址栏中粘贴链接：</em><br><br>
+                        <span style="color: #555;">在底部栏中选中任何文字并点击“粘贴”以用链接替换。</span><br><br>
+                        <em>3. 打开 App Store：</em><br><br>
+                        <span style="color: #555;">点击键盘上的“前往”或“回车”按钮以打开 App Store。</span>`,
+            "failure": `访问代码无法复制。请重试。`,
+            "error": `错误：访问代码无效或缺失。`
           },
           "zh-Hant": {
-            "success": `<em>正在跳轉到應用程式商店...</em><br><br><span style="color: red;">
-              如果您的目前應用程式未能跳轉，請使用此應用程式打開應用程式商店：  
-              ${browserIcons}  
-              找到位於底部的地址欄：  
-              <div style="${addressBarCentering}">
-                <div style="${addressBarStyling}">
-                  🔍 搜尋或輸入網站名稱...
-                </div>
-              </div>
-              清除地址欄中的任何文字。點擊地址欄並選擇「貼上」以輸入應用程式商店連結。  
-              <br><br>
-              然後，點擊鍵盤右下角的「前往」或「Enter」按鈕。  
-            </span>`,
-            "failure": `無法複製訪問代碼。`,
-            "error": `錯誤：無效或缺失的訪問代碼。`
+            "success": `<em>如何打開 6180 相簿：</em><br><br>
+                        6180 相簿已複製到您的剪貼板。<br><br>
+                        在 <span id="safariAppName">Safari</span> 中打開連結。<br><br><br>
+                        <em>詳細說明：</em><br><br>
+                        <em>1. 在您的手機上找到 <span id="safariAppName">Safari</span> 應用程式：</em><br><br>
+                        ${safariIcon}
+                        <em>2. 在網址欄中貼上連結：</em><br><br>
+                        <span style="color: #555;">在底部欄位選取任何文字並點擊“貼上”以用連結替換。</span><br><br>
+                        <em>3. 打開 App Store：</em><br><br>
+                        <span style="color: #555;">點擊鍵盤上的“前往”或“輸入”按鈕以打開 App Store。</span>`,
+            "failure": `訪問代碼無法複製。請重試。`,
+            "error": `錯誤：訪問代碼無效或缺失。`
           },
           "zh-HK": {
-            "success": `<em>緊跳轉去 App Store...</em><br><br><span style="color: red;">
-              如果你而家嘅應用程式未成功跳轉，請用呢個應用程式打開 App Store：  
-              ${browserIcons}  
-              搵到下面嘅地址欄：  
-              <div style="${addressBarCentering}">
-                <div style="${addressBarStyling}">
-                  🔍 搜尋或者輸入網站名稱...
-                </div>
-              </div>
-              清除地址欄入面嘅所有文字。點擊地址欄，再揀「貼上」輸入 App Store 嘅連結。  
-              <br><br>
-              然後，喺鍵盤右下角揀「前往」或者「Enter」鍵。  
-            </span>`,
-            "failure": `複製訪問代碼失敗。`,
-            "error": `錯誤：無效或缺少訪問代碼。`
+            "success": `<em>如何打開 6180 相簿：</em><br><br>
+                        6180 相簿已複製到您的剪貼簿。<br><br>
+                        在 <span id="safariAppName">Safari</span> 中打開鏈接。<br><br><br>
+                        <em>詳細指引：</em><br><br>
+                        <em>1. 在您的手機上找到 <span id="safariAppName">Safari</span> 應用程式：</em><br><br>
+                        ${safariIcon}
+                        <em>2. 在網址欄中貼上鏈接：</em><br><br>
+                        <span style="color: #555;">在底部欄位選取任何文字並點擊“貼上”以用鏈接取代。</span><br><br>
+                        <em>3. 打開 App Store：</em><br><br>
+                        <span style="color: #555;">點擊鍵盤上的“前往”或“輸入”按鈕以打開 App Store。</span>`,
+            "failure": `訪問代碼無法複製。請再試一次。`,
+            "error": `錯誤：訪問代碼無效或缺失。`
           }
         };
 
         const localizedMessages = messages[language] || messages["en"]; // Default to English if no translation is found
 
-        if (params.accessCode && !hasErrors) {
+        if (params.accessCode) {
 
           navigator.clipboard.writeText(inviteLink)
             .then(() => {
 
               document.getElementById('copyMessage').innerHTML = localizedMessages.success;
+
+              setSafariName(language);
+
               window.location.href = inviteLink;
 
             })
@@ -595,6 +671,8 @@
       }      
 
       function copyAndNavigateAccessCode() {
+
+        hideAllExceptMessages();
 
         const params = getPositionalUrlParameters();
         const language = getBrowserLanguage();
@@ -624,7 +702,7 @@
                
         const localizedMessages = messages[language] || messages["en"]; // Default to English if no translation found
 
-        if (params.accessCode && !hasErrors) {
+        if (params.accessCode) {
 
           const deepLink = `i6180://folder/Folder-${params.accessCode}`;
 
@@ -653,23 +731,36 @@
       }
 
       (function initializePage() {
-        const language = getBrowserLanguage();
-        const titleTemplate = setTranslations(language);
-        const params = getPositionalUrlParameters();
-        const uuidDateTime = getTimeFromUUIDv1(params.accessCode.split(':')[0]);
-        let dateTime = uuidDateTime || new Date(new Date().getTime() - (6 * 60 * 1000 + 18 * 1000));
 
-        if (!hasErrors) {
-          setTitle(params.name, dateTime.toLocaleString(), titleTemplate);
-        }
+        const language = getBrowserLanguage();
+        setTranslations(language);
 
         if (params.accessCode) {
           document.getElementById('accessCodeDisplay').textContent = params.accessCode;
         } else {
           document.getElementById('accessCodeDisplay').textContent = "No access code provided";
         }
+
       })();
+
+      function setSafariName(language) {
+
+        const safariNames = {
+          "en": "Safari",
+          "zh-Hans": "Safari 浏览器",
+          "zh-Hant": "Safari 瀏覽器",
+          "zh-HK": "Safari 瀏覽器"
+        };
+
+        const safariName = safariNames[language] || safariNames["en"];
+
+        document.getElementById('safariAppName').textContent = safariName;
+
+      }
+
     </script>
+
   </div>
+
 </body>
 </html>
