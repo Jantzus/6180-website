@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Opening Folder...</title>
+  <script>
+    const folderId = window.location.pathname.split("/folder/")[1] || "";
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isIOS = /iphone|ipad|ipod/.test(userAgent);
+    const isAndroid = /android/.test(userAgent);
+
+    if (isIOS) {
+      // Let Universal Link try; if it fails, fallback to App Store
+      setTimeout(() => {
+        window.location.href = "https://apps.apple.com/app/6180/id6468679610";
+      }, 1500);
+    } else {
+      document.addEventListener("DOMContentLoaded", () => {
+        const message = document.getElementById("fallback-message");
+        message.textContent = "6180 is currently only available for iPhone.";
+        message.style.display = "block";
+      });
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting to your app...</p>
+  <p id="fallback-message" style="display:none; font-weight: bold;"></p>
+</body>
+</html>
