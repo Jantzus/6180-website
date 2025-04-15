@@ -237,7 +237,7 @@ function buildHtmlPage(folderId, mediaItems) {
 
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
-            const width = 800, height = 1000;
+            const width = 800, height = 1100;
             canvas.width = width;
             canvas.height = height;
 
@@ -245,18 +245,38 @@ function buildHtmlPage(folderId, mediaItems) {
             ctx.fillRect(0, 0, width, height);
 
             ctx.fillStyle = "#000000";
-            ctx.font = "22px sans-serif";
+            ctx.font = "26px sans-serif";
+
             const lines = [
-              "1. Save this invite QR code image to your phone’s photo gallery ⬇️",
-              "2. Open your Photos app. If you don’t have 6180 yet, tap or scan the QR code to get it from the App Store or Play Store, then sign up.",
-              "3. Open the 6180 app and tap “Files” at the bottom.",
-              "4. Tap “Album QR Code” at the top, then tap “Load Saved QR Code”."
+              "1. Save this invite QR code image to your iPhone Photos or Android Gallery app ⬇️",
+              "2. Open your phone’s photo gallery. If you don’t have 6180 yet, tap or scan the QR code to get it from the App Store or Play Store, then sign up.",
+              "3. Open the 6180 app and tap “Files” at the bottom middle.",
+              "4. Tap “Album QR Code” at the top left, then tap “Load Saved QR Code”."
             ];
-            let y = 50;
-            lines.forEach((line, i) => {
-              const lineHeight = i === 0 ? 40 : 30;
-              ctx.fillText(line, 30, y);
-              y += lineHeight;
+
+            const maxWidth = 740;
+            const lineHeight = 36;
+            let y = 60;
+
+            lines.forEach((paragraph, index) => {
+              const words = paragraph.split(" ");
+              let line = "";
+              for (let i = 0; i < words.length; i++) {
+                const testLine = line + words[i] + " ";
+                const { width: testWidth } = ctx.measureText(testLine);
+                if (testWidth > maxWidth && i > 0) {
+                  ctx.fillText(line, 30, y);
+                  line = words[i] + " ";
+                  y += lineHeight;
+                } else {
+                  line = testLine;
+                }
+              }
+              if (line) {
+                ctx.fillText(line, 30, y);
+                y += lineHeight;
+              }
+              y += 10;
             });
 
             QRCode.toDataURL(qrText, { margin: 1, width: 300 }, function(err, url) {
@@ -264,7 +284,7 @@ function buildHtmlPage(folderId, mediaItems) {
 
               const qrImg = new Image();
               qrImg.onload = () => {
-                ctx.drawImage(qrImg, (width - 300) / 2, y + 40, 300, 300);
+                ctx.drawImage(qrImg, (width - 300) / 2, y + 20, 300, 300);
                 const finalImage = canvas.toDataURL("image/png");
                 img.src = finalImage;
                 overlay.style.display = "flex";
@@ -284,7 +304,7 @@ function buildHtmlPage(folderId, mediaItems) {
           <div id="dropdown-menu" class="dropdown">
             <!-- <div>Add Photos To Album</div> -->
             <div>Save To Account</div>
-            <div onclick="getAlbumQRCode()">Get Album QR Code</div>
+            <div onclick="getAlbumQRCode()">Open in 6180 App</div>
           </div>
         </div>
 
