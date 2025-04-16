@@ -224,6 +224,21 @@ function buildHtmlPage(folderId, mediaItems) {
         </style>
         <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
         <script>
+          function openFilePicker() {
+            const fileInput = document.getElementById("file-input");
+            fileInput.click();
+          }
+
+          document.addEventListener("DOMContentLoaded", function () {
+            const input = document.getElementById("file-input");
+            input.addEventListener("change", function (e) {
+              const files = Array.from(e.target.files);
+              console.log("Selected files:", files);
+              alert("Selected " + files.length + " file(s). Upload coming soon.");
+              // TODO: Send files to server or 6180 app
+            });
+          });
+
           function toggleMenu() {
             const menu = document.getElementById('dropdown-menu');
             menu.classList.toggle('show');
@@ -302,10 +317,11 @@ function buildHtmlPage(folderId, mediaItems) {
         <div class="save-fixed">
           <button class="menu-button" onclick="toggleMenu()">☰ Save</button>
           <div id="dropdown-menu" class="dropdown">
-            <!-- <div>Add Photos To Album</div> -->
+            <div onclick="openFilePicker()">Add Photos To Album</div>
             <div>Save To Account</div>
             <div onclick="getAlbumQRCode()">Open in 6180 App</div>
           </div>
+          <input type="file" id="file-input" accept="image/*,video/*" multiple style="display:none" />
         </div>
 
         <div id="qr-overlay" class="overlay">
