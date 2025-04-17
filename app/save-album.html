@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Save Album – 6180</title>
+  <style>
+    body { font-family: sans-serif; padding: 40px; background: #f2f2f2; }
+    h1 { font-size: 1.5em; margin-bottom: 20px; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 8px 0; background: white; padding: 10px; border-radius: 5px; }
+    .button { margin-top: 20px; padding: 12px 20px; font-size: 1em; border: none; border-radius: 6px; cursor: pointer; background: #007bff; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Uploading Your Photos...</h1>
+  <ul id="file-list"></ul>
+  <button class="button" onclick="completeUpload()">Complete Upload</button>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem('selectedPhotos') || '{}');
+    const list = document.getElementById('file-list');
+    if (data && data.files) {
+      data.files.forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = f;
+        list.appendChild(li);
+      });
+    }
+
+    function completeUpload() {
+      alert("Upload simulated. Now saving album.");
+      setTimeout(() => {
+        window.location.href = `/app/my-albums.html`;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

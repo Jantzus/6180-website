@@ -164,8 +164,9 @@ function buildHtmlPage(folderId, mediaItems) {
             top: 20px;
             inset-inline-end: 20px;
             z-index: 1000;
-            background: white;
-            border: 1px solid #ccc;
+            background: #007BFF;
+            color: white;
+            border: none;
             border-radius: 6px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
           }
@@ -178,11 +179,14 @@ function buildHtmlPage(folderId, mediaItems) {
             width: 100%;
             text-align: left;
             border-radius: 6px 6px 0 0;
+            color: inherit;
           }
           .dropdown {
             display: none;
             border-top: 1px solid #ccc;
             font-size: 16px;
+            background: white;
+            color: black;
           }
           .dropdown.show {
             display: block;
@@ -235,7 +239,6 @@ function buildHtmlPage(folderId, mediaItems) {
               const files = Array.from(e.target.files);
               console.log("Selected files:", files);
               alert("Selected " + files.length + " file(s). Upload coming soon.");
-              // TODO: Send files to server or 6180 app
             });
           });
 
@@ -263,7 +266,7 @@ function buildHtmlPage(folderId, mediaItems) {
             ctx.font = "26px sans-serif";
 
             const lines = [
-              "1. Save this invite QR code image to your iPhone Photos or Android Gallery app ⬇️",
+              "1. Hold and save this QR code image to your iPhone Photos or Android Gallery app ⬇️",
               "2. Open your phone’s photo gallery. If you don’t have 6180 yet, tap or scan the QR code to get it from the App Store or Play Store, then sign up.",
               "3. Open the 6180 app and tap “Files” at the bottom middle.",
               "4. Tap “Album QR Code” at the top left, then tap “Load Saved QR Code”."
@@ -273,7 +276,7 @@ function buildHtmlPage(folderId, mediaItems) {
             const lineHeight = 36;
             let y = 60;
 
-            lines.forEach((paragraph, index) => {
+            lines.forEach((paragraph) => {
               const words = paragraph.split(" ");
               let line = "";
               for (let i = 0; i < words.length; i++) {

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Albums – 6180</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .album {
+      margin-bottom: 40px;
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .album-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .album-date {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .thumbnails-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .thumbnail {
+      flex: 0 0 auto;
+      width: 120px;
+      height: 80px;
+      border-radius: 6px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+  <h1>My Albums</h1>
+
+  <div class="album">
+    <div class="album-title">Summer Picnic</div>
+    <div class="album-date">Saved on Apr 17</div>
+    <div class="thumbnails-row">
+      <a href="/photos/sample1"><img src="https://via.placeholder.com/120x80?text=1" class="thumbnail" alt="Pic 1"></a>
+      <a href="/photos/sample1"><img src="https://via.placeholder.com/120x80?text=2" class="thumbnail" alt="Pic 2"></a>
+      <a href="/photos/sample1"><img src="https://via.placeholder.com/120x80?text=3" class="thumbnail" alt="Pic 3"></a>
+    </div>
+  </div>
+
+  <div class="album">
+    <div class="album-title">Wedding: Leo & Charlotte</div>
+    <div class="album-date">Saved on Apr 14</div>
+    <div class="thumbnails-row">
+      <a href="/photos/sample2"><img src="https://via.placeholder.com/120x80?text=A" class="thumbnail" alt="Pic A"></a>
+      <a href="/photos/sample2"><img src="https://via.placeholder.com/120x80?text=B" class="thumbnail" alt="Pic B"></a>
+      <a href="/photos/sample2"><img src="https://via.placeholder.com/120x80?text=C" class="thumbnail" alt="Pic C"></a>
+    </div>
+  </div>
+
+  <div class="album">
+    <div class="album-title">Birthday Bash</div>
+    <div class="album-date">Saved on Apr 10</div>
+    <div class="thumbnails-row">
+      <a href="/photos/sample3"><img src="https://via.placeholder.com/120x80?text=X" class="thumbnail" alt="Pic X"></a>
+      <a href="/photos/sample3"><img src="https://via.placeholder.com/120x80?text=Y" class="thumbnail" alt="Pic Y"></a>
+      <a href="/photos/sample3"><img src="https://via.placeholder.com/120x80?text=Z" class="thumbnail" alt="Pic Z"></a>
+    </div>
+  </div>
+</body>
+</html>
