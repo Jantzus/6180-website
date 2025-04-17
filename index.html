@@ -111,6 +111,14 @@
         const files = Array.from(e.target.files);
         console.log("Selected files:", files);
         alert("Selected " + files.length + " file(s). Upload coming soon.");
+
+        const folderId = crypto.randomUUID();
+        localStorage.setItem("selectedPhotos", JSON.stringify({
+          folderId: folderId,
+          files: files.map(f => f.name)
+        }));
+
+        window.location.href = `/app/save-album.html?folderId=${folderId}`;
       });
     });
   </script>

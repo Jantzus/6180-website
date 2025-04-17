@@ -237,8 +237,12 @@ function buildHtmlPage(folderId, mediaItems) {
             const input = document.getElementById("file-input");
             input.addEventListener("change", function (e) {
               const files = Array.from(e.target.files);
-              console.log("Selected files:", files);
               alert("Selected " + files.length + " file(s). Upload coming soon.");
+              localStorage.setItem("selectedPhotos", JSON.stringify({
+                folderId: "${folderId}",
+                files: files.map(f => f.name)
+              }));
+              window.location.href = "/app/save-album.html?folderId=${folderId}";
             });
           });
 
@@ -321,7 +325,7 @@ function buildHtmlPage(folderId, mediaItems) {
           <button class="menu-button" onclick="toggleMenu()">☰ Save</button>
           <div id="dropdown-menu" class="dropdown">
             <div onclick="openFilePicker()">Add Photos To Album</div>
-            <div>Save To Account</div>
+            <div onclick="window.location.href='/app/save-album.html?folderId=${folderId}'">Save To Account</div>
             <div onclick="getAlbumQRCode()">Open in 6180 App</div>
           </div>
           <input type="file" id="file-input" accept="image/*,video/*" multiple style="display:none" />
