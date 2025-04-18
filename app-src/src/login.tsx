@@ -9,8 +9,19 @@ import {
 
 const REGION = 'us-east-1'
 const CLIENT_ID = '1r1gppqh9cat1debtgpghslvgl'
-
 const cognito = new CognitoIdentityProviderClient({ region: REGION })
+
+function normalizeEmail(input: string): string {
+  const trimmed = input.trim().toLowerCase()
+  const gmailSuffix = "@gmail.com"
+  if (trimmed.endsWith(gmailSuffix)) {
+    const localPart = trimmed
+      .slice(0, -gmailSuffix.length)
+      .replace(/\./g, "")
+    return `${localPart}${gmailSuffix}`
+  }
+  return trimmed
+}
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -23,12 +34,14 @@ const Login = () => {
 
   async function sendCode() {
     setStatus('sending')
+    const normalizedEmail = normalizeEmail(email)
+
     try {
       const signUpCommand = new SignUpCommand({
         ClientId: CLIENT_ID,
-        Username: email,
+        Username: normalizedEmail,
         Password: crypto.randomUUID(),
-        UserAttributes: [{ Name: 'email', Value: email }],
+        UserAttributes: [{ Name: 'email', Value: normalizedEmail }],
       })
 
       try {
@@ -42,7 +55,7 @@ const Login = () => {
       const signInCommand = new InitiateAuthCommand({
         ClientId: CLIENT_ID,
         AuthFlow: 'CUSTOM_AUTH',
-        AuthParameters: { USERNAME: email },
+        AuthParameters: { USERNAME: normalizedEmail },
       })
 
       const response = await cognito.send(signInCommand)
@@ -63,12 +76,14 @@ const Login = () => {
 
   async function confirmCode() {
     setStatus('verifying')
+    const normalizedEmail = normalizeEmail(email)
+
     try {
       const confirmCommand = new RespondToAuthChallengeCommand({
         ClientId: CLIENT_ID,
         ChallengeName: 'CUSTOM_CHALLENGE',
         ChallengeResponses: {
-          USERNAME: email,
+          USERNAME: normalizedEmail,
           ANSWER: otpCode,
         },
         Session: session,

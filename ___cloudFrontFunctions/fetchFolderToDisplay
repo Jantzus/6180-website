@@ -235,14 +235,29 @@ function buildHtmlPage(folderId, mediaItems) {
 
           document.addEventListener("DOMContentLoaded", function () {
             const input = document.getElementById("file-input");
+
             input.addEventListener("change", function (e) {
               const files = Array.from(e.target.files);
-              alert("Selected " + files.length + " file(s). Upload coming soon.");
-              localStorage.setItem("selectedPhotos", JSON.stringify({
-                folderId: "${folderId}",
-                files: files.map(f => f.name)
-              }));
-              window.location.href = "/app/save-album.html?folderId=${folderId}";
+              if (!files.length) return;
+
+              const readerPromises = files.map(file => {
+                return new Promise(resolve => {
+                  const reader = new FileReader();
+                  reader.onload = function (event) {
+                    resolve({
+                      fileName: file.name,
+                      dataUrl: event.target.result,
+                      type: file.type.startsWith("video") ? "video" : "image"
+                    });
+                  };
+                  reader.readAsDataURL(file);
+                });
+              });
+
+              Promise.all(readerPromises).then(results => {
+                localStorage.setItem("selectedPhotos", JSON.stringify(results));
+                window.location.href = "/app/save-album.html?folderId=${folderId}";
+              });
             });
           });
 
@@ -254,8 +269,7 @@ function buildHtmlPage(folderId, mediaItems) {
           function getAlbumQRCode() {
             const overlay = document.getElementById('qr-overlay');
             const img = document.getElementById('qr-img');
-            const folderId = "${folderId}";
-            const qrText = "https://6180.io/folder/" + folderId;
+            const qrText = "https://6180.io/folder/${folderId}";
 
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
