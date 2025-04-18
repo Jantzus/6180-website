@@ -107,18 +107,31 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       const input = document.getElementById("file-input");
+
       input.addEventListener("change", function (e) {
         const files = Array.from(e.target.files);
-        console.log("Selected files:", files);
-        alert("Selected " + files.length + " file(s). Upload coming soon.");
+        if (!files.length) return;
 
-        const folderId = crypto.randomUUID();
-        localStorage.setItem("selectedPhotos", JSON.stringify({
-          folderId: folderId,
-          files: files.map(f => f.name)
-        }));
+        const readerPromises = files.map(file => {
+          return new Promise(resolve => {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+              resolve({
+                fileName: file.name,
+                mimeType: file.type,
+                dataUrl: event.target.result,
+                type: file.type.startsWith("video") ? "video" : "image"
+              });
+            };
+            reader.readAsDataURL(file);
+          });
+        });
 
-        window.location.href = `/app/save-album.html?folderId=${folderId}`;
+        Promise.all(readerPromises).then(results => {
+          localStorage.setItem("selectedPhotos", JSON.stringify(results));
+          const folderId = crypto.randomUUID();
+          window.location.href = `/app/save-album.html`;
+        });
       });
     });
   </script>

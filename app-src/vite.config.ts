@@ -8,7 +8,9 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        myAlbums: 'my-albums.html'
+        login: "login.html",
+        saveAlbum: "save-album.html",
+        myalbums: "my-albums.html"
         // add more HTML entry points here
       }
     }

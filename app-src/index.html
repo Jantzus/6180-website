@@ -4,59 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>6180</title>
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
   <style>
     body {
+      font-family: sans-serif;
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
+      padding: 0;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 24px;
-      background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      margin-bottom: 10px;
     }
 
-    .header img {
-      height: 40px;
-    }
-
-    .app-name {
-      font-size: 24px;
-      font-weight: 600;
+    .header .app-name {
+      font-size: 1.4em;
+      font-weight: bold;
       color: #222;
     }
 
-    .content {
-      padding: 60px 24px;
-      text-align: center;
+    .header img {
+      height: 32px;
     }
 
-    .content h1 {
-      font-size: 28px;
-      margin-bottom: 32px;
+    .content {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      margin: 40px 0;
     }
 
     .button-group {
       display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 300px;
+      margin: 0 auto;
     }
 
     .button {
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
+      padding: 12px 20px;
       text-decoration: none;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
     }
 
     .button-primary {
@@ -69,25 +75,23 @@
     }
 
     .button-secondary {
-      background-color: #e2e6ea;
+      background-color: #e0e0e0;
       color: #333;
     }
 
     .button-secondary:hover {
-      background-color: #cfd4d8;
+      background-color: #cfcfcf;
     }
 
     .footer {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      padding: 24px;
-      font-size: 14px;
-      background-color: #f1f3f5;
-      border-top: 1px solid #dee2e6;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
     }
 
     .footer a {
+      margin: 0 10px;
       color: #555;
       text-decoration: none;
     }
@@ -96,10 +100,13 @@
       text-decoration: underline;
     }
   </style>
-  <script>
+  <script type="module">
     function openFilePicker() {
       document.getElementById('file-input').click();
     }
+
+    // ✅ make the function accessible from HTML
+    window.openFilePicker = openFilePicker;
 
     document.addEventListener("DOMContentLoaded", function () {
       const input = document.getElementById("file-input");
@@ -114,6 +121,7 @@
             reader.onload = function (event) {
               resolve({
                 fileName: file.name,
+                mimeType: file.type,
                 dataUrl: event.target.result,
                 type: file.type.startsWith("video") ? "video" : "image"
               });
@@ -124,9 +132,7 @@
 
         Promise.all(readerPromises).then(results => {
           localStorage.setItem("selectedPhotos", JSON.stringify(results));
-
-          const folderId = crypto.randomUUID();
-          window.location.href = `/app/save-album.html`;
+          window.location.href = "/app/save-album.html";
         });
       });
     });
@@ -134,7 +140,7 @@
 </head>
 <body>
   <div class="header">
-    <img src="images/logo_no_background.png" alt="6180 Logo" />
+    <img src="/images/logo_no_background.png" alt="6180 Logo" />
     <div class="app-name">6180</div>
   </div>
 
@@ -148,9 +154,9 @@
   </div>
 
   <div class="footer">
-    <a href="terms.html">Terms of Service</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="support.html">Support</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/support.html">Support</a>
   </div>
 </body>
 </html>
