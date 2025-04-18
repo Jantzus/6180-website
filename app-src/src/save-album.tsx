@@ -8,10 +8,19 @@ type SelectedPhoto = {
   type: "image" | "video"
 }
 
+const generateUUID = () => {
+  return crypto.randomUUID?.() || "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
+    (
+      Number(c) ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & 15) >>
+      (Number(c) / 4)
+    ).toString(16)
+  )
+}
+
 const SaveAlbum = () => {
   const [folderId, setFolderId] = useState<string | null>(null)
   const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([])
-  const [cognitoUsername, setCognitoUsername] = useState<string | null>(null)
 
   useEffect(() => {
     const token = checkLoginOrRedirect()
@@ -19,38 +28,48 @@ const SaveAlbum = () => {
 
     try {
       const payload = JSON.parse(atob(token.split('.')[1]))
-      setCognitoUsername(payload["cognito:username"] || null)
+      const cognitoUsername = payload["cognito:username"]
+
+      const params = new URLSearchParams(window.location.search)
+      const id = params.get("folderId")
+
+      if (id) {
+        setFolderId(id)
+      } else {
+        const newId = `${cognitoUsername}_____${generateUUID()}____Folder`
+        setFolderId(newId)
+      }
+
+      const saved = localStorage.getItem("selectedPhotos")
+      if (saved) {
+        try {
+          const parsed: SelectedPhoto[] = JSON.parse(saved)
+          setSelectedPhotos(parsed)
+        } catch (e) {
+          console.error("Failed to parse selectedPhotos from localStorage")
+        }
+      }
     } catch (err) {
       console.error("Failed to decode idToken", err)
     }
-
-    const params = new URLSearchParams(window.location.search)
-    const id = params.get("folderId")
-    setFolderId(id)
-
-    const saved = localStorage.getItem("selectedPhotos")
-    if (saved) {
-      try {
-        const parsed: SelectedPhoto[] = JSON.parse(saved)
-        setSelectedPhotos(parsed)
-      } catch (e) {
-        console.error("Failed to parse selectedPhotos from localStorage")
-      }
-    }
   }, [])
+
+  const removePhoto = (indexToRemove: number) => {
+    const updated = selectedPhotos.filter((_, i) => i !== indexToRemove)
+    setSelectedPhotos(updated)
+    localStorage.setItem("selectedPhotos", JSON.stringify(updated))
+  }
 
   return (
     <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
       <h1>Save Album</h1>
 
-      {cognitoUsername && (
-        <p style={{ color: "#555" }}>
-          Logged in as: <strong>{cognitoUsername}</strong>
+      {folderId?.includes("_____") && (
+        <p style={{ color: "#333" }}>
+          {window.location.search.includes("folderId")
+            ? `Provided folderId: ${folderId}`
+            : `Generated folderId: ${folderId}`}
         </p>
-      )}
-
-      {!folderId && (
-        <p style={{ color: "red" }}>Missing folderId in URL</p>
       )}
 
       {selectedPhotos.length === 0 ? (
@@ -58,20 +77,58 @@ const SaveAlbum = () => {
       ) : (
         <>
           <p>{selectedPhotos.length} photo(s) ready to upload:</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
             {selectedPhotos.map((photo, i) => (
-              <img
+              <div
                 key={i}
-                src={photo.dataUrl}
-                alt={photo.fileName}
-                style={{ width: "120px", height: "auto", borderRadius: "8px", border: "1px solid #ccc" }}
-              />
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  border: "1px solid #ccc",
+                  borderRadius: "8px",
+                  padding: "8px",
+                  width: "fit-content",
+                  backgroundColor: "#fff",
+                }}
+              >
+                {photo.type === "video" ? (
+                  <video
+                    src={photo.dataUrl}
+                    controls
+                    style={{ width: "120px", height: "auto", borderRadius: "4px" }}
+                  />
+                ) : (
+                  <img
+                    src={photo.dataUrl}
+                    alt={photo.fileName}
+                    style={{ width: "120px", height: "auto", borderRadius: "4px" }}
+                  />
+                )}
+                <button
+                  onClick={() => removePhoto(i)}
+                  style={{
+                    marginLeft: "12px",
+                    backgroundColor: "#dc3545",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "6px",
+                    padding: "6px 10px",
+                    fontSize: "14px",
+                    cursor: "pointer",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Remove
+                </button>
+              </div>
             ))}
           </div>
+
           <button
             style={{
-              marginTop: "20px",
-              padding: "10px 20px",
+              marginTop: "24px",
+              padding: "12px 24px",
               fontSize: "16px",
               borderRadius: "8px",
               border: "none",
