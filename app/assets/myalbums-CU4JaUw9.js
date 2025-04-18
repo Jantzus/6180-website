@@ -1,4 +1,4 @@
-import{R as j,j as e,r as f}from"./client-Cud3CRJO.js";import{c as R}from"./checkLogin-qnSOvydV.js";const w="https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql",A="https://i6180-assets-prod-0.s3.amazonaws.com/public/",x=n=>n?new Date(n).toLocaleString(void 0,{year:"numeric",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}):"",v=()=>{const[n,h]=f.useState([]);f.useEffect(()=>{const t=R();if(!t)return;(async()=>{var r,a;const i=`
+import{R as j,j as e,r as f}from"./client-Cud3CRJO.js";import{c as R}from"./checkLogin-rqu5e6z9.js";const w="https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql",A="https://i6180-assets-prod-0.s3.amazonaws.com/public/",x=n=>n?new Date(n).toLocaleString(void 0,{year:"numeric",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}):"",v=()=>{const[n,h]=f.useState([]);f.useEffect(()=>{const t=R();if(!t)return;(async()=>{var r,a;const i=`
         mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
           fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
             items {
