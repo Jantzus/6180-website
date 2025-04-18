@@ -1,16 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Opening Folder...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 40px 20px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    a#invite-link {
+      color: #007bff;
+      word-break: break-all;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #copied-msg {
+      display: none;
+      color: green;
+      margin-left: 12px;
+      font-weight: 500;
+    }
+
+    #fallback-message {
+      color: #cc0000;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    p {
+      margin: 16px 0;
+      font-size: 17px;
+    }
+  </style>
   <script>
     const folderId = window.location.pathname.split("/folder/")[1] || "";
+
+    function getOwnerItemId(id) {
+      return id.split("_____")[0];
+    }
+
+    function getTargetItemIdentifier(id) {
+      return id.split("_____")[1]?.split("____")[0] || "";
+    }
+
+    const folderInvite = `${getOwnerItemId(folderId)}_${getTargetItemIdentifier(folderId)}`;
+    const inviteLink = `https://6180.io/photos/${folderInvite}`;
+
     const userAgent = navigator.userAgent.toLowerCase();
     const isIOS = /iphone|ipad|ipod/.test(userAgent);
     const isAndroid = /android/.test(userAgent);
 
     if (isIOS) {
-      // Let Universal Link try; if it fails, fallback to App Store
       setTimeout(() => {
         window.location.href = "https://apps.apple.com/app/6180/id6468679610";
       }, 1500);
@@ -21,10 +93,33 @@
         message.style.display = "block";
       });
     }
+
+    function copyLink() {
+      navigator.clipboard.writeText(inviteLink).then(() => {
+        const copiedMsg = document.getElementById("copied-msg");
+        copiedMsg.style.display = "inline";
+        setTimeout(() => copiedMsg.style.display = "none", 2000);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const inviteLinkElem = document.getElementById("invite-link");
+      inviteLinkElem.href = inviteLink;
+      inviteLinkElem.textContent = inviteLink;
+    });
   </script>
 </head>
 <body>
-  <p>Redirecting to your app...</p>
-  <p id="fallback-message" style="display:none; font-weight: bold;"></p>
+  <div class="container">
+    <p>Redirecting to your app...</p>
+    <p id="fallback-message" style="display: none;"></p>
+    <p>
+      You can also go to<br />
+      <a id="invite-link" href="#" target="_blank" rel="noopener noreferrer">loading...</a><br />
+      to view the photos and use 6180 on the web.
+    </p>
+    <button onclick="copyLink()">Copy Link</button>
+    <span id="copied-msg">Copied!</span>
+  </div>
 </body>
 </html>
