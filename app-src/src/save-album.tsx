@@ -1,6 +1,25 @@
 import { useEffect, useState } from "react"
 import ReactDOM from "react-dom/client"
 import { checkLoginOrRedirect } from "./checkLogin"
+import {
+  S3Client,
+  PutObjectCommand,
+  CopyObjectCommand,
+  DeleteObjectCommand
+} from "@aws-sdk/client-s3"
+import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-identity"
+
+const REGION = "us-east-1"
+const BUCKET_NAME = "i6180-assets-prod-0"
+const IDENTITY_POOL_ID = "us-east-1:a5655055-4c58-4173-8d05-af1bb538ec13"
+
+const s3 = new S3Client({
+  region: REGION,
+  credentials: fromCognitoIdentityPool({
+    identityPoolId: IDENTITY_POOL_ID,
+    clientConfig: { region: REGION },
+  }),
+})
 
 type SelectedPhoto = {
   fileName: string
@@ -18,6 +37,43 @@ const generateUUID = () => {
       (Number(c) / 4)
     ).toString(16)
   )
+}
+
+const uploadToTempS3 = async (file: File, type: "image" | "video") => {
+  const tempKey = `temp/Input/${type.charAt(0).toUpperCase() + type.slice(1)}/${file.name}`
+
+  await s3.send(new PutObjectCommand({
+    Bucket: BUCKET_NAME,
+    Key: tempKey,
+    Body: file,
+    ContentType: file.type,
+    ACL: "public-read"
+  }))
+
+  return {
+    fileName: file.name,
+    dataUrl: `https://${BUCKET_NAME}.s3.${REGION}.amazonaws.com/${tempKey}`,
+    type,
+    tempKey,
+  }
+}
+
+const moveToPublicS3 = async (tempKey: string) => {
+  const finalKey = tempKey.replace(/^temp\//, "public/")
+
+  await s3.send(new CopyObjectCommand({
+    Bucket: BUCKET_NAME,
+    CopySource: `${BUCKET_NAME}/${tempKey}`,
+    Key: finalKey,
+    ACL: "public-read"
+  }))
+
+  await s3.send(new DeleteObjectCommand({
+    Bucket: BUCKET_NAME,
+    Key: tempKey
+  }))
+
+  return `https://${BUCKET_NAME}.s3.${REGION}.amazonaws.com/${finalKey}`
 }
 
 const SaveAlbum = () => {
@@ -50,16 +106,6 @@ const SaveAlbum = () => {
         const newId = `${cognitoUsername}_____${generateUUID()}____Folder`
         setFolderId(newId)
       }
-
-      const saved = localStorage.getItem("selectedPhotos")
-      if (saved) {
-        try {
-          const parsed: SelectedPhoto[] = JSON.parse(saved)
-          setSelectedPhotos(parsed)
-        } catch (e) {
-          console.error("Failed to parse selectedPhotos from localStorage")
-        }
-      }
     } catch (err) {
       console.error("Failed to decode idToken", err)
     }
@@ -68,34 +114,41 @@ const SaveAlbum = () => {
   const removePhoto = (indexToRemove: number) => {
     const updated = selectedPhotos.filter((_, i) => i !== indexToRemove)
     setSelectedPhotos(updated)
-    localStorage.setItem("selectedPhotos", JSON.stringify(updated))
   }
 
   const handleAddPhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || [])
     if (!files.length) return
 
-    const readerPromises = files.map(file => {
-      return new Promise<SelectedPhoto>((resolve) => {
-        const reader = new FileReader()
-        reader.onload = event => {
-          resolve({
-            fileName: file.name,
-            dataUrl: event.target?.result as string,
-            type: file.type.startsWith("video") ? "video" : "image"
-          })
-        }
-        reader.readAsDataURL(file)
-      })
+    const uploadPromises = files.map(async file => {
+      const type: "image" | "video" = file.type.startsWith("video") ? "video" : "image"
+      return await uploadToTempS3(file, type)
     })
 
-    Promise.all(readerPromises).then(results => {
+    Promise.all(uploadPromises).then(results => {
       const combined = [...selectedPhotos, ...results]
       setSelectedPhotos(combined)
-      localStorage.setItem("selectedPhotos", JSON.stringify(combined))
     })
 
     e.target.value = ""
+  }
+
+  const handleSaveAlbum = async () => {
+    if (publicUsername?.startsWith("Profile-")) {
+      setUsernameInput(publicUsername)
+      setShowUsernamePrompt(true)
+      return
+    }
+
+    const movedPhotos = await Promise.all(
+      selectedPhotos.map(async photo => {
+        const finalUrl = await moveToPublicS3((photo as any).tempKey)
+        return { ...photo, dataUrl: finalUrl }
+      })
+    )
+
+    setSelectedPhotos(movedPhotos)
+    alert("Photos saved to public S3 path. Album save logic coming soon.")
   }
 
   const validateUsername = (username: string) => /^[a-zA-Z0-9-]+$/.test(username)
@@ -149,15 +202,6 @@ const SaveAlbum = () => {
       setShowAltButton(true)
     } finally {
       setIsSubmittingUsername(false)
-    }
-  }
-
-  const handleSaveAlbum = () => {
-    if (publicUsername?.startsWith("Profile-")) {
-      setUsernameInput(publicUsername)
-      setShowUsernamePrompt(true)
-    } else {
-      alert("Save logic coming soon")
     }
   }
 
