@@ -117,6 +117,11 @@ const MyAlbums = () => {
   const getTargetItemIdentifier = (id: string) =>
     id.split("_____")[1]?.split("____")[0] || ""
 
+  const handleLogout = () => {
+    localStorage.clear()
+    window.location.href = "/index.html"
+  }
+
   return (
     <div
       style={{
@@ -136,9 +141,25 @@ const MyAlbums = () => {
           }}
         >
           <h1 style={{ fontSize: 28, margin: 0, color: "#333" }}>My Albums</h1>
-          {publicUsername && (
-            <div style={{ fontSize: 16, color: "#666" }}>{publicUsername}</div>
-          )}
+            {publicUsername && (
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
+                <button
+                  onClick={handleLogout}
+                  style={{
+                    fontSize: "14px",
+                    padding: "6px 12px",
+                    backgroundColor: "#e53935",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "6px",
+                    cursor: "pointer"
+                  }}
+                >
+                  Log Out
+                </button>
+              </div>
+            )}
         </div>
 
         {folders.length === 0 && (

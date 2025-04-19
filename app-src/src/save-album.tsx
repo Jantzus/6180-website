@@ -168,6 +168,11 @@ const SaveAlbum = () => {
     submitUsername(modified)
   }
 
+  const handleLogout = () => {
+    localStorage.clear()
+    window.location.href = "/index.html"
+  }
+
   return (
     <div
       style={{
@@ -180,9 +185,25 @@ const SaveAlbum = () => {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
           <h1 style={{ fontSize: "28px", color: "#222", margin: 0 }}>Save Album</h1>
-          {publicUsername && (
-            <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
-          )}
+            {publicUsername && (
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
+                <button
+                  onClick={handleLogout}
+                  style={{
+                    fontSize: "14px",
+                    padding: "6px 12px",
+                    backgroundColor: "#e53935",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "6px",
+                    cursor: "pointer"
+                  }}
+                >
+                  Log Out
+                </button>
+              </div>
+            )}
         </div>
 
         <input

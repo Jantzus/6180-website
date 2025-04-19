@@ -132,7 +132,8 @@ const Login = () => {
         localStorage.setItem('publicUsername', displayName)
       }
 
-      window.location.href = `/app/${redirectTo}`
+      window.location.href = redirectTo
+
     } catch (e) {
       console.error(e)
       setStatus('error')
