@@ -9,6 +9,7 @@ import {
 
 const REGION = 'us-east-1'
 const CLIENT_ID = '1r1gppqh9cat1debtgpghslvgl'
+const GRAPHQL_ENDPOINT = "https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql"
 const cognito = new CognitoIdentityProviderClient({ region: REGION })
 
 function normalizeEmail(input: string): string {
@@ -90,12 +91,48 @@ const Login = () => {
       const response = await cognito.send(confirmCommand)
       const token = response.AuthenticationResult?.IdToken
 
-      if (token) {
-        localStorage.setItem('idToken', token)
-        window.location.href = `/app/${redirectTo}`
-      } else {
-        throw new Error('No token received')
+      if (!token) throw new Error('No token received')
+      localStorage.setItem('idToken', token)
+
+      const payload = JSON.parse(atob(token.split('.')[1]))
+      const username = payload['cognito:username']
+      const relationId = `${username}_____Public____Profile`
+
+      const gqlResponse = await fetch(GRAPHQL_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          query: `
+            mutation MyMutation($relationIds: [ID!]) {
+              batchGetItems(relationIds: $relationIds) {
+                items {
+                  id
+                  item {
+                    ... on Profile {
+                      anyDisplayName
+                    }
+                  }
+                }
+                nextToken
+              }
+            }
+          `,
+          variables: {
+            relationIds: [relationId],
+          },
+        }),
+      })
+
+      const json = await gqlResponse.json()
+      const displayName = json?.data?.batchGetItems?.items?.[0]?.item?.anyDisplayName
+      if (displayName) {
+        localStorage.setItem('publicUsername', displayName)
       }
+
+      window.location.href = `/app/${redirectTo}`
     } catch (e) {
       console.error(e)
       setStatus('error')

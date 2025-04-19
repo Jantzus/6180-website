@@ -33,8 +33,11 @@ const formatDate = (timestamp: number | null): string => {
 
 const MyAlbums = () => {
   const [folders, setFolders] = useState<Folder[]>([])
+  const [publicUsername, setPublicUsername] = useState<string | null>(null)
 
   useEffect(() => {
+    setPublicUsername(localStorage.getItem("publicUsername") || null)
+
     const token = checkLoginOrRedirect()
     if (!token) return
 
@@ -124,7 +127,19 @@ const MyAlbums = () => {
       }}
     >
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <h1 style={{ fontSize: 28, marginBottom: 24, color: "#333" }}>My Albums</h1>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 24,
+          }}
+        >
+          <h1 style={{ fontSize: 28, margin: 0, color: "#333" }}>My Albums</h1>
+          {publicUsername && (
+            <div style={{ fontSize: 16, color: "#666" }}>{publicUsername}</div>
+          )}
+        </div>
 
         {folders.length === 0 && (
           <p style={{ fontSize: 16, color: "#555" }}>No albums found or still loading...</p>
@@ -204,7 +219,6 @@ const MyAlbums = () => {
             </a>
           )
         })}
-
       </div>
     </div>
   )
