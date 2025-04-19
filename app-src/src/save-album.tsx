@@ -12,6 +12,7 @@ import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-id
 const REGION = "us-east-1"
 const BUCKET_NAME = "i6180-assets-prod-0"
 const IDENTITY_POOL_ID = "us-east-1:a5655055-4c58-4173-8d05-af1bb538ec13"
+const GRAPHQL_ENDPOINT = "https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql"
 
 const s3 = new S3Client({
   region: REGION,
@@ -25,9 +26,12 @@ type SelectedPhoto = {
   fileName: string
   dataUrl: string
   type: "image" | "video"
+  size?: number
+  file?: File
+  duration?: number | null
+  thumbnailDataKey?: string | null
+  thumbnailSize?: number | null
 }
-
-const GRAPHQL_ENDPOINT = "https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql"
 
 const generateUUID = () => {
   return crypto.randomUUID?.() || "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
@@ -76,7 +80,45 @@ const moveToPublicS3 = async (tempKey: string) => {
   return `https://${BUCKET_NAME}.s3.${REGION}.amazonaws.com/${finalKey}`
 }
 
+const getVideoDuration = (file: File): Promise<number> => {
+  return new Promise((resolve, reject) => {
+    const video = document.createElement("video")
+    video.preload = "metadata"
+    video.src = URL.createObjectURL(file)
+    video.onloadedmetadata = () => {
+      URL.revokeObjectURL(video.src)
+      resolve(video.duration)
+    }
+    video.onerror = () => reject("Could not load video metadata")
+  })
+}
+
+const getVideoThumbnailBlob = (file: File): Promise<Blob> => {
+  return new Promise((resolve, reject) => {
+    const video = document.createElement("video")
+    video.src = URL.createObjectURL(file)
+    video.crossOrigin = "anonymous"
+    video.muted = true
+    video.currentTime = 0
+    video.onloadeddata = () => {
+      const canvas = document.createElement("canvas")
+      canvas.width = video.videoWidth
+      canvas.height = video.videoHeight
+      const ctx = canvas.getContext("2d")
+      if (!ctx) return reject("No canvas context")
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+      canvas.toBlob(blob => {
+        if (blob) resolve(blob)
+        else reject("Failed to create blob")
+        URL.revokeObjectURL(video.src)
+      }, "image/jpeg", 0.8)
+    }
+    video.onerror = reject
+  })
+}
+
 const SaveAlbum = () => {
+
   const [folderId, setFolderId] = useState<string | null>(null)
   const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([])
   const [publicUsername, setPublicUsername] = useState<string | null>(null)
@@ -87,19 +129,30 @@ const SaveAlbum = () => {
   const [isSubmittingUsername, setIsSubmittingUsername] = useState(false)
 
   useEffect(() => {
+
     const token = checkLoginOrRedirect()
     if (!token) return
-
+  
     try {
       const savedUsername = localStorage.getItem("publicUsername")
       setPublicUsername(savedUsername || null)
-
+  
+      const stored = localStorage.getItem("selectedPhotos")
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored)
+          setSelectedPhotos(parsed)
+        } catch (err) {
+          console.warn("Failed to parse selectedPhotos from localStorage", err)
+        }
+      }
+  
       const payload = JSON.parse(atob(token.split('.')[1]))
       const cognitoUsername = payload["cognito:username"]
-
+  
       const params = new URLSearchParams(window.location.search)
       const id = params.get("folderId")
-
+  
       if (id) {
         setFolderId(id)
       } else {
@@ -117,39 +170,187 @@ const SaveAlbum = () => {
   }
 
   const handleAddPhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
+
     const files = Array.from(e.target.files || [])
     if (!files.length) return
 
     const uploadPromises = files.map(async file => {
       const type: "image" | "video" = file.type.startsWith("video") ? "video" : "image"
-      return await uploadToTempS3(file, type)
-    })
+      const uploadResult = await uploadToTempS3(file, type)
+    
+      return {
+        ...uploadResult,
+        size: file.size,
+        file,
+      }
+    })    
 
     Promise.all(uploadPromises).then(results => {
       const combined = [...selectedPhotos, ...results]
       setSelectedPhotos(combined)
+      localStorage.setItem("selectedPhotos", JSON.stringify(combined))
     })
 
     e.target.value = ""
+    
   }
 
   const handleSaveAlbum = async () => {
+
     if (publicUsername?.startsWith("Profile-")) {
       setUsernameInput(publicUsername)
       setShowUsernamePrompt(true)
       return
     }
-
+  
+    const now = Math.floor(Date.now() / 1000)
+    const token = localStorage.getItem("idToken")!
+    const payload = JSON.parse(atob(token.split('.')[1]))
+    const cognitoUsername = payload["cognito:username"]
+    const accountId = `${cognitoUsername}_____${cognitoUsername}____Account`
+  
+    const folderParts = folderId!.split("_____")
+    const folderTargetItemIdentifier = folderParts[1].split("____")[0]
+  
     const movedPhotos = await Promise.all(
       selectedPhotos.map(async photo => {
         const finalUrl = await moveToPublicS3((photo as any).tempKey)
-        return { ...photo, dataUrl: finalUrl }
+  
+        let duration: number | null = null
+        let thumbnailBlob: Blob | null = null
+        let thumbnailDataKey: string | null = null
+        let thumbnailSize: number | null = null
+  
+        if (photo.type === "video") {
+          try {
+            duration = Math.round(await getVideoDuration(photo.file!))
+            thumbnailBlob = await getVideoThumbnailBlob(photo.file!)
+            thumbnailDataKey = `Input/Image/${photo.fileName}-thumbnail`
+            thumbnailSize = Math.round(thumbnailBlob.size)
+  
+            await s3.send(new PutObjectCommand({
+              Bucket: BUCKET_NAME,
+              Key: `public/${thumbnailDataKey}`,
+              Body: thumbnailBlob,
+              ContentType: "image/jpeg",
+              ACL: "public-read"
+            }))
+          } catch (err) {
+            console.warn("Video metadata or thumbnail error", err)
+          }
+        }
+  
+        return {
+          ...photo,
+          dataUrl: finalUrl,
+          duration,
+          thumbnailDataKey,
+          thumbnailSize
+        }
       })
     )
-
+  
     setSelectedPhotos(movedPhotos)
-    alert("Photos saved to public S3 path. Album save logic coming soon.")
-  }
+  
+    const folderPositionInput = {
+      currentTime: now,
+      folderId,
+      profileIds: ["Only Me_____Only Me____Profile"],
+      folderPositionSelectedTagInputs: [],
+      folderPositionPoints: 1,
+      acceptedFileReferenceIds: movedPhotos.map(photo =>
+        `${folderTargetItemIdentifier}_____${photo.fileName}____FileReference`
+      ),
+      hiddenFileReferenceIds: [],
+      folderInput: {
+        folderSelectedTagInputs: [],
+        folderAboutContactIds: [accountId],
+        folderInviteParametersInput: {
+          folderIsOnlyVisibleThroughCode: true,
+          folderInviteHasBeenDisabled: false,
+          usingFolderInviteGrantsRightToRemoveItems: false,
+          tagContactIdUsingFolderInviteAsFolderAboutContact: true,
+          usingFolderInviteGrantsRightToAddItems: true,
+          addedItemsNeedFolderCreatorApproval: false
+        }
+      }
+    }
+  
+    const updatedFileReferenceInputs = movedPhotos.map(photo => {
+      const s3Key = photo.dataUrl.split("/").pop()!
+      const baseKey = `Input/Image/${s3Key}`
+      const fileId = `${cognitoUsername}_____${photo.fileName}____File`
+  
+      return {
+        fileReferencesHolderId: folderId,
+        currentTime: now,
+        points: 1,
+        hasBeenDeleted: false,
+        selectedTagInputs: [],
+        fileId,
+        fileInput: {
+          fileId,
+          ownerFileInput: {
+            editorContactIds: [accountId],
+            FileSharingOptionsEnum: "Anyone",
+            dataKey: baseKey,
+            thumbnailDataKey: photo.thumbnailDataKey || `${baseKey}-thumbnail`,
+            dataInBytes: photo.size!,
+            thumbnailDataInBytes: photo.thumbnailSize || 0,
+            s3UploadedAt: now,
+            durationInSeconds: photo.duration
+          },
+          editorFileInput: {
+            aboutContactIds: [accountId],
+            captionText: "",
+            numericFilterInputs: [],
+          }
+        }
+      }
+    })
+  
+    const mutation = `
+      mutation MyMutation(
+        $folderPositionInputs: [FolderPositionInput!],
+        $updatedFileReferenceInputs: [UpdatedFileReferenceInput!]
+      ) {
+        changeFiles0(updatedFileReferenceInputs: $updatedFileReferenceInputs) {
+          items { id }
+        }
+        changeFiles(folderPositionInputs: $folderPositionInputs) {
+          items { id }
+        }
+      }
+    `
+  
+    const variables = {
+      folderPositionInputs: [folderPositionInput],
+      updatedFileReferenceInputs,
+    }
+  
+    try {
+      const response = await fetch(GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: mutation, variables }),
+      })
+  
+      const json = await response.json()
+  
+      if (json.errors) {
+        console.error("GraphQL errors:", json.errors)
+        alert("❌ Upload failed. Please try again.")
+      } else {
+        alert("✅ Album successfully saved!")
+      }
+    } catch (err) {
+      console.error("Unexpected error:", err)
+      alert("❌ Something went wrong.")
+    }
+  }  
 
   const validateUsername = (username: string) => /^[a-zA-Z0-9-]+$/.test(username)
 
