@@ -9,6 +9,7 @@ type SelectedPhoto = {
 }
 
 const generateUUID = () => {
+
   return crypto.randomUUID?.() || "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
     (
       Number(c) ^
@@ -16,6 +17,7 @@ const generateUUID = () => {
       (Number(c) / 4)
     ).toString(16)
   )
+  
 }
 
 const SaveAlbum = () => {
@@ -36,7 +38,7 @@ const SaveAlbum = () => {
       if (id) {
         setFolderId(id)
       } else {
-        const newId = ${cognitoUsername}_____${generateUUID()}____Folder
+        const newId = `${cognitoUsername}_____${generateUUID()}____Folder`
         setFolderId(newId)
       }
 
@@ -60,6 +62,33 @@ const SaveAlbum = () => {
     localStorage.setItem("selectedPhotos", JSON.stringify(updated))
   }
 
+  const handleAddPhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || [])
+    if (!files.length) return
+
+    const readerPromises = files.map(file => {
+      return new Promise<SelectedPhoto>((resolve) => {
+        const reader = new FileReader()
+        reader.onload = event => {
+          resolve({
+            fileName: file.name,
+            dataUrl: event.target?.result as string,
+            type: file.type.startsWith("video") ? "video" : "image"
+          })
+        }
+        reader.readAsDataURL(file)
+      })
+    })
+
+    Promise.all(readerPromises).then(results => {
+      const combined = [...selectedPhotos, ...results]
+      setSelectedPhotos(combined)
+      localStorage.setItem("selectedPhotos", JSON.stringify(combined))
+    })
+
+    e.target.value = ""
+  }
+
   return (
     <div
       style={{
@@ -72,19 +101,24 @@ const SaveAlbum = () => {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <h1 style={{ fontSize: "28px", marginBottom: "20px", color: "#222" }}>Save Album</h1>
 
+        <input
+          type="file"
+          id="file-input"
+          accept="image/*,video/*"
+          multiple
+          onChange={handleAddPhotos}
+          style={{ display: "none" }}
+        />
+
         {folderId?.includes("_____") && (
           <p style={{ fontSize: "16px", color: "#555", marginBottom: "24px" }}>
             {window.location.search.includes("folderId")
-              ? Provided folderId: ${folderId}
-              : Generated folderId: ${folderId}}
+              ? `Provided folderId: ${folderId}`
+              : `Generated folderId: ${folderId}`}
           </p>
         )}
 
-        {selectedPhotos.length === 0 ? (
-          <p style={{ fontSize: "16px", color: "#666" }}>
-            No selected photos found in localStorage.
-          </p>
-        ) : (
+        {selectedPhotos.length > 0 && (
           <>
             <p style={{ fontSize: "16px", marginBottom: "16px", color: "#333" }}>
               {selectedPhotos.length} photo{selectedPhotos.length > 1 ? "s" : ""} ready to upload:
@@ -150,24 +184,45 @@ const SaveAlbum = () => {
                 </div>
               ))}
             </div>
-
-            <button
-              style={{
-                padding: "14px 28px",
-                fontSize: "16px",
-                borderRadius: "8px",
-                border: "none",
-                backgroundColor: "#007bff",
-                color: "white",
-                cursor: "pointer",
-                boxShadow: "0 4px 12px rgba(0, 123, 255, 0.2)"
-              }}
-              onClick={() => alert("Upload logic coming soon")}
-            >
-              Upload to Album
-            </button>
           </>
         )}
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "24px" }}>
+          <button
+            style={{
+              padding: "14px 28px",
+              fontSize: "16px",
+              borderRadius: "8px",
+              border: "none",
+              backgroundColor: "#007bff",
+              color: "white",
+              cursor: "pointer",
+              boxShadow: "0 4px 12px rgba(0, 123, 255, 0.2)"
+            }}
+            onClick={() => alert("Save logic coming soon")}
+          >
+            Save Album
+          </button>
+
+          <button
+            style={{
+              padding: "14px 28px",
+              fontSize: "16px",
+              borderRadius: "8px",
+              border: "none",
+              backgroundColor: "#6c757d",
+              color: "white",
+              cursor: "pointer",
+              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.08)"
+            }}
+            onClick={() => {
+              const input = document.getElementById("file-input") as HTMLInputElement
+              input?.click()
+            }}
+          >
+            Add More Photos
+          </button>
+        </div>
       </div>
     </div>
   )
