@@ -83,6 +83,20 @@ const getVideoThumbnailBlob = (file: File): Promise<Blob> => {
   })
 }
 
+function dataUrlToFile(dataUrl: string, filename: string): File {
+  const arr = dataUrl.split(",")
+  const mime = arr[0].match(/:(.*?);/)?.[1] || "application/octet-stream"
+  const bstr = atob(arr[1])
+  let n = bstr.length
+  const u8arr = new Uint8Array(n)
+
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n)
+  }
+
+  return new File([u8arr], filename, { type: mime })
+}
+
 const SaveAlbum = () => {
 
   const [folderId, setFolderId] = useState<string | null>(null)
@@ -195,6 +209,7 @@ const SaveAlbum = () => {
   
       const uploadedPhotos = await Promise.all(
         selectedPhotos.map(async (photo) => {
+
           const fileExt = photo.fileName.split('.').pop() || "jpg";
           const uuidFileName = `${generateUUID()}.${fileExt}`;
           const baseKey = photo.type === "video"
@@ -203,13 +218,18 @@ const SaveAlbum = () => {
   
           // Upload original image or video
           setDebugMessages(prev => [...prev, `📤 Uploading file: ${uuidFileName}`]);
+          const originalFile = photo.file ?? dataUrlToFile(photo.dataUrl, photo.fileName)
+          const blob = new Blob([originalFile], { type: originalFile.type })
+          const arrayBuffer = await blob.arrayBuffer()
+          const uint8 = new Uint8Array(arrayBuffer)
+
           await s3.send(new PutObjectCommand({
             Bucket: BUCKET_NAME,
             Key: `public/${baseKey}`,
-            Body: photo.file!,
-            ContentType: photo.file?.type || "application/octet-stream"
-          }));
-  
+            Body: uint8,
+            ContentType: originalFile.type || "application/octet-stream"
+          }))
+
           let duration: number | null = null;
           let thumbnailBlob: Blob | null = null;
           let thumbnailDataKey: string | null = null;
@@ -247,7 +267,7 @@ const SaveAlbum = () => {
         })
       );
   
-      setDebugMessages(prev => [...prev, "✅ All files uploaded to S3"]);
+      setDebugMessages(prev => [...prev, "✅ All files moved to public S3"]);
   
       const folderPositionInput = {
         currentTime: now,
@@ -277,6 +297,7 @@ const SaveAlbum = () => {
         const dataKey = photo.type === "video"
           ? `Input/Video/${photo.fileName}`
           : `Input/Image/${photo.fileName}`;
+  
         const fileId = `${cognitoUsername}_____${photo.fileName}____File`;
   
         return {
