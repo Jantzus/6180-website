@@ -87,6 +87,7 @@ const SaveAlbum = () => {
   const [folderId, setFolderId] = useState<string | null>(null)
   const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([])
   const [publicUsername, setPublicUsername] = useState<string | null>(null)
+  const [cognitoUsername, setCognitoUsername] = useState<string | null>(null)
   const [showUsernamePrompt, setShowUsernamePrompt] = useState(false)
   const [usernameInput, setUsernameInput] = useState("")
   const [usernameError, setUsernameError] = useState("")
@@ -115,6 +116,7 @@ const SaveAlbum = () => {
   
       const payload = JSON.parse(atob(token.split('.')[1]))
       const cognitoUsername = payload["cognito:username"]
+      setCognitoUsername(cognitoUsername)      
   
       const params = new URLSearchParams(window.location.search)
       const id = params.get("folderId")
@@ -136,95 +138,75 @@ const SaveAlbum = () => {
   }
 
   const handleAddPhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDebugMessages(prev => [...prev, `🟢 handleAddPhotos called with ${e.target.files?.length || 0} files`]);
+    if (!cognitoUsername) {
+      setDebugMessages(prev => [...prev, "❌ Missing Cognito Username"])
+      return
+    }
   
-    const files = Array.from(e.target.files || []);
-    if (!files.length) return;
+    const files = Array.from(e.target.files || [])
+    if (!files.length) return
   
-    const uploadPromises = files.map(async file => {
-      const type: "image" | "video" = file.type.startsWith("video") ? "video" : "image";
-      const s3Key = `public/Input/${type.charAt(0).toUpperCase() + type.slice(1)}/${file.name}`;
+    const updated = files.map(file => {
+      
+      const type: "image" | "video" = file.type.startsWith("video") ? "video" : "image"
   
-      setDebugMessages(prev => [...prev, `📤 Uploading to S3: ${s3Key}`]);
+      setDebugMessages(prev => [
+        ...prev,
+        `🆕 Added File: ${file.name}`,
+        `📁 Type: ${file.type}`,
+        `📏 Size: ${file.size}`,
+      ])
   
-      try {
-        await s3.send(new PutObjectCommand({
-          Bucket: BUCKET_NAME,
-          Key: s3Key,
-          Body: file,
-          ContentType: file.type,
-          ACL: "public-read",
-        }));
-  
-        setDebugMessages(prev => [...prev, `✅ Upload success: ${s3Key}`]);
-  
-        return {
-          fileName: file.name,
-          dataUrl: `https://${BUCKET_NAME}.s3.${REGION}.amazonaws.com/${s3Key}`,
-          type,
-          size: file.size,
-          file,
-        };
-      } catch (err) {
-        setDebugMessages(prev => [...prev, `❌ Upload failed for ${s3Key}`, String(err)]);
-        throw err;
+      return {
+        fileName: file.name,
+        dataUrl: URL.createObjectURL(file), // ✅ local preview URL
+        type,
+        size: file.size,
+        file,
       }
-    });
+    })
   
-    Promise.all(uploadPromises).then(results => {
-      const combined = [...selectedPhotos, ...results];
-      setSelectedPhotos(combined);
-      localStorage.setItem("selectedPhotos", JSON.stringify(combined));
-    });
+    const combined = [...selectedPhotos, ...updated]
+    setSelectedPhotos(combined)
+    localStorage.setItem("selectedPhotos", JSON.stringify(combined))
   
-    e.target.value = "";
-
-  };  
+    e.target.value = ""
+  }
 
   const handleSaveAlbum = async () => {
     setDebugMessages(prev => [...prev, "🟡 Save Album button clicked"])
   
     try {
       if (publicUsername?.startsWith("Profile-")) {
-        setDebugMessages(prev => [...prev, "🔒 Username starts with Profile-, prompting user..."])
         setUsernameInput(publicUsername)
         setShowUsernamePrompt(true)
         return
       }
   
       const now = Math.floor(Date.now() / 1000)
-      setDebugMessages(prev => [...prev, `📍 Now timestamp: ${now}`])
   
       const token = localStorage.getItem("idToken")
       if (!token) {
-        setDebugMessages(prev => [...prev, "❌ No idToken found"])
         return
       }
   
       const payload = JSON.parse(atob(token.split('.')[1]))
       const cognitoUsername = payload["cognito:username"]
-      setDebugMessages(prev => [...prev, `👤 Cognito username: ${cognitoUsername}`])
   
       const accountId = `${cognitoUsername}_____${cognitoUsername}____Account`
       if (!folderId) {
-        setDebugMessages(prev => [...prev, "❌ folderId is null"])
         return
       }
   
       const folderParts = folderId.split("_____")
       const folderTargetItemIdentifier = folderParts[1].split("____")[0]
-      setDebugMessages(prev => [...prev, `📂 folderTargetItemIdentifier: ${folderTargetItemIdentifier}`])
   
       if (selectedPhotos.length === 0) {
-        setDebugMessages(prev => [...prev, "⚠️ No selected photos to upload"])
         return
       }
   
-      setDebugMessages(prev => [...prev, `📸 ${selectedPhotos.length} selected photos to upload`])
-  
       const movedPhotos = await Promise.all(
         selectedPhotos.map(async (photo) => {
-          setDebugMessages(prev => [...prev, `🗂 Already uploaded: ${photo.fileName}`]);
       
           let duration: number | null = null;
           let thumbnailBlob: Blob | null = null;
@@ -243,8 +225,7 @@ const SaveAlbum = () => {
                 Bucket: BUCKET_NAME,
                 Key: `public/${thumbnailDataKey}`,
                 Body: thumbnailBlob,
-                ContentType: "image/jpeg",
-                ACL: "public-read"
+                ContentType: "image/jpeg"
               }));
       
               setDebugMessages(prev => [...prev, `🖼 Uploaded thumbnail for ${photo.fileName}`]);
@@ -322,8 +303,6 @@ const SaveAlbum = () => {
           }
         }
       })
-  
-      setDebugMessages(prev => [...prev, "🚀 Sending GraphQL mutation..."])
   
       const mutation = `
         mutation MyMutation(
