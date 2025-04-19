@@ -331,7 +331,35 @@ const SaveAlbum = () => {
           $updatedFileReferenceInputs: [UpdatedFileReferenceInput!]
         ) {
           changeFiles0(updatedFileReferenceInputs: $updatedFileReferenceInputs) {
-            items { id }
+            items {
+                ... on FileReference {
+                  id
+                  createdAt
+                  updatedAt
+                  fileReferencesHolderId
+                  originAccountId
+                  points
+                  fileId
+                  file {
+                    id
+                    createdAt
+                    updatedAt
+                    ownerContactId
+                    editorContactIds
+                    aboutContactIds
+                    FileSharingOptionsEnum
+                    captionText
+                    filterEnvironmentNumberSetId
+                    dataKey
+                    thumbnailDataKey
+                    dataInBytes
+                    thumbnailDataInBytes
+                    durationInSeconds
+                    s3UploadedAt
+                  }
+                  hasBeenDeleted
+                }
+            }
           }
           changeFiles(folderPositionInputs: $folderPositionInputs) {
             items { id }
