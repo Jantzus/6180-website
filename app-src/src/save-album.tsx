@@ -3,9 +3,7 @@ import ReactDOM from "react-dom/client"
 import { checkLoginOrRedirect } from "./checkLogin"
 import {
   S3Client,
-  PutObjectCommand,
-  CopyObjectCommand,
-  DeleteObjectCommand
+  PutObjectCommand
 } from "@aws-sdk/client-s3"
 import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-identity"
 
@@ -45,54 +43,6 @@ const generateUUID = () => {
       (Number(c) / 4)
     ).toString(16)
   )
-}
-
-const uploadToTempS3 = async (
-  file: File,
-  type: "image" | "video",
-  setDebugMessages: React.Dispatch<React.SetStateAction<string[]>>
-) => {
-  const tempKey = `temp/Input/${type.charAt(0).toUpperCase() + type.slice(1)}/${file.name}`
-  setDebugMessages(prev => [...prev, `📤 Uploading to temp S3: ${tempKey}`])
-
-  try {
-    await s3.send(new PutObjectCommand({
-      Bucket: BUCKET_NAME,
-      Key: tempKey,
-      Body: file,
-      ContentType: file.type,
-      ACL: "public-read"
-    }))
-    setDebugMessages(prev => [...prev, `✅ Upload success: ${tempKey}`])
-  } catch (err) {
-    setDebugMessages(prev => [...prev, `❌ Upload failed for ${tempKey}`, String(err)])
-    throw err
-  }
-
-  return {
-    fileName: file.name,
-    dataUrl: `https://${BUCKET_NAME}.s3.${REGION}.amazonaws.com/${tempKey}`,
-    type,
-    tempKey,
-  }
-}
-
-const moveToPublicS3 = async (tempKey: string) => {
-  const finalKey = tempKey.replace(/^temp\//, "public/")
-
-  await s3.send(new CopyObjectCommand({
-    Bucket: BUCKET_NAME,
-    CopySource: `${BUCKET_NAME}/${tempKey}`,
-    Key: finalKey,
-    ACL: "public-read"
-  }))
-
-  await s3.send(new DeleteObjectCommand({
-    Bucket: BUCKET_NAME,
-    Key: tempKey
-  }))
-
-  return `https://${BUCKET_NAME}.s3.${REGION}.amazonaws.com/${finalKey}`
 }
 
 const getVideoDuration = (file: File): Promise<number> => {
@@ -186,32 +136,50 @@ const SaveAlbum = () => {
   }
 
   const handleAddPhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
-
-    setDebugMessages(prev => [...prev, `🟢 handleAddPhotos called with ${e.target.files?.length || 0} files`])
-
-    const files = Array.from(e.target.files || [])
-    if (!files.length) return
-
+    setDebugMessages(prev => [...prev, `🟢 handleAddPhotos called with ${e.target.files?.length || 0} files`]);
+  
+    const files = Array.from(e.target.files || []);
+    if (!files.length) return;
+  
     const uploadPromises = files.map(async file => {
-      const type: "image" | "video" = file.type.startsWith("video") ? "video" : "image"
-      const uploadResult = await uploadToTempS3(file, type, setDebugMessages)
-    
-      return {
-        ...uploadResult,
-        size: file.size,
-        file,
+      const type: "image" | "video" = file.type.startsWith("video") ? "video" : "image";
+      const s3Key = `public/Input/${type.charAt(0).toUpperCase() + type.slice(1)}/${file.name}`;
+  
+      setDebugMessages(prev => [...prev, `📤 Uploading to S3: ${s3Key}`]);
+  
+      try {
+        await s3.send(new PutObjectCommand({
+          Bucket: BUCKET_NAME,
+          Key: s3Key,
+          Body: file,
+          ContentType: file.type,
+          ACL: "public-read",
+        }));
+  
+        setDebugMessages(prev => [...prev, `✅ Upload success: ${s3Key}`]);
+  
+        return {
+          fileName: file.name,
+          dataUrl: `https://${BUCKET_NAME}.s3.${REGION}.amazonaws.com/${s3Key}`,
+          type,
+          size: file.size,
+          file,
+        };
+      } catch (err) {
+        setDebugMessages(prev => [...prev, `❌ Upload failed for ${s3Key}`, String(err)]);
+        throw err;
       }
-    })    
-
+    });
+  
     Promise.all(uploadPromises).then(results => {
-      const combined = [...selectedPhotos, ...results]
-      setSelectedPhotos(combined)
-      localStorage.setItem("selectedPhotos", JSON.stringify(combined))
-    })
+      const combined = [...selectedPhotos, ...results];
+      setSelectedPhotos(combined);
+      localStorage.setItem("selectedPhotos", JSON.stringify(combined));
+    });
+  
+    e.target.value = "";
 
-    e.target.value = ""
-
-  }
+  };  
 
   const handleSaveAlbum = async () => {
     setDebugMessages(prev => [...prev, "🟡 Save Album button clicked"])
@@ -256,51 +224,44 @@ const SaveAlbum = () => {
   
       const movedPhotos = await Promise.all(
         selectedPhotos.map(async (photo) => {
-          setDebugMessages(prev => [...prev, `➡️ Moving ${photo.fileName} to public S3...`])
-          
-          const s3BaseUrl = `https://${BUCKET_NAME}.s3.${REGION}.amazonaws.com/`
-          const tempKey = photo.dataUrl.replace(s3BaseUrl, "")
-          
-          const finalUrl = await moveToPublicS3(tempKey)
-          
-          setDebugMessages(prev => [...prev, `✅ Moved to ${finalUrl}`])
-  
-          let duration: number | null = null
-          let thumbnailBlob: Blob | null = null
-          let thumbnailDataKey: string | null = null
-          let thumbnailSize: number | null = null
-  
+          setDebugMessages(prev => [...prev, `🗂 Already uploaded: ${photo.fileName}`]);
+      
+          let duration: number | null = null;
+          let thumbnailBlob: Blob | null = null;
+          let thumbnailDataKey: string | null = null;
+          let thumbnailSize: number | null = null;
+      
           if (photo.type === "video") {
             try {
-              setDebugMessages(prev => [...prev, `🎞 Extracting video metadata for ${photo.fileName}`])
-              duration = Math.round(await getVideoDuration(photo.file!))
-              thumbnailBlob = await getVideoThumbnailBlob(photo.file!)
-              thumbnailDataKey = `Input/Image/${photo.fileName}-thumbnail`
-              thumbnailSize = Math.round(thumbnailBlob.size)
-  
+              setDebugMessages(prev => [...prev, `🎞 Extracting video metadata for ${photo.fileName}`]);
+              duration = Math.round(await getVideoDuration(photo.file!));
+              thumbnailBlob = await getVideoThumbnailBlob(photo.file!);
+              thumbnailDataKey = `Input/Image/${photo.fileName}-thumbnail`;
+              thumbnailSize = Math.round(thumbnailBlob.size);
+      
               await s3.send(new PutObjectCommand({
                 Bucket: BUCKET_NAME,
                 Key: `public/${thumbnailDataKey}`,
                 Body: thumbnailBlob,
                 ContentType: "image/jpeg",
                 ACL: "public-read"
-              }))
-              setDebugMessages(prev => [...prev, `🖼 Uploaded thumbnail for ${photo.fileName}`])
+              }));
+      
+              setDebugMessages(prev => [...prev, `🖼 Uploaded thumbnail for ${photo.fileName}`]);
             } catch (err) {
-              console.warn("Video metadata or thumbnail error", err)
-              setDebugMessages(prev => [...prev, `⚠️ Error extracting metadata or thumbnail: ${String(err)}`])
+              console.warn("Video metadata or thumbnail error", err);
+              setDebugMessages(prev => [...prev, `⚠️ Error extracting metadata or thumbnail: ${String(err)}`]);
             }
           }
-  
+      
           return {
             ...photo,
-            dataUrl: finalUrl,
             duration,
             thumbnailDataKey,
             thumbnailSize
-          }
+          };
         })
-      )
+      );      
   
       setDebugMessages(prev => [...prev, "✅ All files moved to public S3"])
       setSelectedPhotos(movedPhotos)
