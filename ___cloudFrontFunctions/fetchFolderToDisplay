@@ -205,9 +205,10 @@ function buildHtmlPage(escapedFolderId, mediaItems) {
       ctx.font = "26px sans-serif";
 
       const lines = [
-        "1. Hold and save this QR code image to your Photos/Gallery ⬇️",
-        "2. If you don’t have 6180 yet, scan this to install it.",
-        "3. In the app, go to 'Files' > 'Album QR Code' > 'Load Saved QR Code'."
+        "1. Hold and save this QR code image to your iPhone Photos or Android Gallery app ⬇️",
+        "2. Open your phone’s photo gallery. If you don’t have 6180 yet, tap or scan the QR code to get it from the App Store or Play Store, then sign up.",
+        "3. Open the 6180 app and tap “Files” at the bottom middle.",
+        "4. Tap “Album QR Code” at the top left, then tap “Load Saved QR Code”."
       ];
 
       const maxWidth = 740;

@@ -146,7 +146,6 @@ const Login = () => {
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
       backgroundColor: '#f8f9fa',
       minHeight: '100vh',
-      padding: '40px 20px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
