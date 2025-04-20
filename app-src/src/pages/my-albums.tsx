@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import ReactDOM from "react-dom/client"
 import { checkLoginOrRedirect } from "@/lib/checkLogin"
 import { formatDate } from "@/lib/utils"
@@ -21,6 +21,7 @@ interface Folder {
 const MyAlbums = () => {
   const [folders, setFolders] = useState<Folder[]>([])
   const [publicUsername, setPublicUsername] = useState<string | null>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     setPublicUsername(localStorage.getItem("publicUsername") || null)
@@ -100,6 +101,39 @@ const MyAlbums = () => {
     fetchData()
   }, [])
 
+  // Function to open file picker
+  const openFilePicker = () => {
+    fileInputRef.current?.click()
+  }
+
+  // Handle file selection
+  const handleFileSelection = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || [])
+    if (!files.length) return
+
+    const readerPromises = files.map(file => {
+      return new Promise(resolve => {
+        const reader = new FileReader()
+        reader.onload = function (event) {
+          if (event.target) {
+            resolve({
+              fileName: file.name,
+              mimeType: file.type,
+              dataUrl: event.target.result,
+              type: file.type
+            })
+          }
+        }
+        reader.readAsDataURL(file)
+      })
+    })
+
+    Promise.all(readerPromises).then(results => {
+      localStorage.setItem("selectedPhotos", JSON.stringify(results))
+      window.location.href = "/app/save-album.html"
+    })
+  }
+
   const getOwnerItemId = (id: string) => id.split("_____")[0]
   const getTargetItemIdentifier = (id: string) =>
     id.split("_____")[1]?.split("____")[0] || ""
@@ -127,26 +161,52 @@ const MyAlbums = () => {
             marginBottom: 24,
           }}
         >
-          <h1 style={{ fontSize: 28, margin: 0, color: "#333" }}>My Albums</h1>
-            {publicUsername && (
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
-                <button
-                  onClick={handleLogout}
-                  style={{
-                    fontSize: "14px",
-                    padding: "6px 12px",
-                    backgroundColor: "#e53935",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "6px",
-                    cursor: "pointer"
-                  }}
-                >
-                  Log Out
-                </button>
-              </div>
-            )}
+          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+            <h1 style={{ fontSize: 28, margin: 0, color: "#333" }}>My Albums</h1>
+            <button
+              onClick={openFilePicker}
+              style={{
+                fontSize: "14px",
+                padding: "8px 16px",
+                backgroundColor: "#007bff",
+                color: "white",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer"
+              }}
+            >
+              New Album
+            </button>
+            <input 
+              type="file" 
+              id="file-input" 
+              ref={fileInputRef}
+              accept="image/*,video/*" 
+              multiple 
+              style={{ display: "none" }}
+              onChange={handleFileSelection}
+            />
+          </div>
+
+          {publicUsername && (
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
+              <button
+                onClick={handleLogout}
+                style={{
+                  fontSize: "14px",
+                  padding: "6px 12px",
+                  backgroundColor: "#e53935",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "6px",
+                  cursor: "pointer"
+                }}
+              >
+                Log Out
+              </button>
+            </div>
+          )}
         </div>
 
         {folders.length === 0 && (
@@ -155,76 +215,104 @@ const MyAlbums = () => {
 
         {folders.map((folder) => {
           const showCreated = folder.createdAt != null
-          const showUpdated =
-            folder.updatedAt != null && folder.updatedAt !== folder.createdAt
+          const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt
 
           const folderInvite = `${getOwnerItemId(folder.id)}_${getTargetItemIdentifier(folder.id)}`
           const inviteLink = `https://6180.io/photos/${folderInvite}`
 
+          const handleCopy = (e: React.MouseEvent) => {
+            e.preventDefault()
+            navigator.clipboard.writeText(inviteLink)
+          }
+
           return (
-            <a
+            <div
               key={folder.id}
-              href={inviteLink}
               style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "block",
+                display: "flex",
+                alignItems: "flex-start",
                 marginBottom: 30,
               }}
             >
-              <div
+              <button
+                onClick={handleCopy}
                 style={{
-                  background: "#fff",
-                  borderRadius: 12,
-                  padding: 20,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                  transition: "box-shadow 0.2s ease",
+                  marginRight: 16,
+                  padding: "8px 12px",
+                  backgroundColor: "#e0e0e0",
+                  border: "none",
+                  borderRadius: 6,
+                  cursor: "pointer",
+                  fontSize: 14,
+                  height: 40,
+                  alignSelf: "center",
                 }}
-                onMouseOver={(e) =>
-                  ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
-                }
-                onMouseOut={(e) =>
-                  ((e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"))
-                }
+              >
+                Copy Link
+              </button>
+
+              <a
+                href={inviteLink}
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  flex: 1,
+                }}
               >
                 <div
                   style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    marginBottom: 12,
+                    background: "#fff",
+                    borderRadius: 12,
+                    padding: 20,
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                    transition: "box-shadow 0.2s ease",
                   }}
+                  onMouseOver={(e) =>
+                    ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
+                  }
+                  onMouseOut={(e) =>
+                    ((e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"))
+                  }
                 >
-                  <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
-                    {folder.folderName || ""}
-                  </h2>
-                  {(showCreated || showUpdated) && (
-                    <div style={{ fontSize: 13, color: "#777", textAlign: "right" }}>
-                      {showCreated && <div>Created: {formatDate(folder.createdAt)}</div>}
-                      {showUpdated && <div>Updated: {formatDate(folder.updatedAt)}</div>}
-                    </div>
-                  )}
-                </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      marginBottom: 12,
+                    }}
+                  >
+                    <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
+                      {folder.folderName || ""}
+                    </h2>
+                    {(showCreated || showUpdated) && (
+                      <div style={{ fontSize: 13, color: "#777", textAlign: "right" }}>
+                        {showCreated && <div>Created: {formatDate(folder.createdAt)}</div>}
+                        {showUpdated && <div>Updated: {formatDate(folder.updatedAt)}</div>}
+                      </div>
+                    )}
+                  </div>
 
-                <div style={{ display: "flex", overflowX: "auto", gap: 12 }}>
-                  {folder.files.map((file, i) => (
-                    <img
-                      key={i}
-                      src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
-                      alt="Thumbnail"
-                      style={{
-                        width: 140,
-                        height: 90,
-                        objectFit: "cover",
-                        borderRadius: 6,
-                        border: "1px solid #ddd",
-                        flexShrink: 0,
-                      }}
-                    />
-                  ))}
+                  <div style={{ display: "flex", overflowX: "auto", gap: 12 }}>
+                    {folder.files.map((file, i) => (
+                      <img
+                        key={i}
+                        src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
+                        alt="Thumbnail"
+                        style={{
+                          width: 140,
+                          height: 90,
+                          objectFit: "cover",
+                          borderRadius: 6,
+                          border: "1px solid #ddd",
+                          flexShrink: 0,
+                        }}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           )
         })}
       </div>
