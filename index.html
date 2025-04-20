@@ -120,7 +120,7 @@
                 fileName: file.name,
                 mimeType: file.type,
                 dataUrl: event.target.result,
-                type: file.type.startsWith("video") ? "video" : "image"
+                type: file.type
               });
             };
             reader.readAsDataURL(file);

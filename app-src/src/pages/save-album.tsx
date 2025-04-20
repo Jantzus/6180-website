@@ -1,100 +1,23 @@
 import { useEffect, useState } from "react"
 import ReactDOM from "react-dom/client"
-import { checkLoginOrRedirect } from "./checkLogin"
-import {
-  S3Client,
-  PutObjectCommand
-} from "@aws-sdk/client-s3"
-import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-identity"
+import { checkLoginOrRedirect } from "@/lib/checkLogin"
+import { PutObjectCommand } from "@aws-sdk/client-s3"
 
-const GRAPHQL_ENDPOINT = "https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql"
+import { BUCKET_NAME, GRAPHQL_ENDPOINT } from "@/lib/config"
+import { createS3Client } from "@/lib/aws"
+import { dataUrlToFile, generateUUID, fileToDataUrl } from "@/lib/utils"
+import { getVideoDuration, getVideoThumbnailBlob } from "@/lib/video"
 
-const REGION = "us-east-1"
-const BUCKET_NAME = "i6180-assets-prod-0"
-const IDENTITY_POOL_ID = "us-east-1:a5655055-4c58-4173-8d05-af1bb538ec13"
-const USER_POOL_ID = "us-east-1_rqcAR61SV"
-
-const s3 = new S3Client({
-  region: REGION,
-  credentials: fromCognitoIdentityPool({
-    identityPoolId: IDENTITY_POOL_ID,
-    clientConfig: { region: REGION },
-    logins: {
-      [`cognito-idp.${REGION}.amazonaws.com/${USER_POOL_ID}`]: localStorage.getItem("idToken") || "",
-    },
-  }),
-})
+const s3 = createS3Client()
 
 type SelectedPhoto = {
   fileName: string
   dataUrl: string
-  type: "image" | "video"
+  type: string | undefined
   size?: number
-  file?: File
   duration?: number | null
   thumbnailDataKey?: string | null
   thumbnailSize?: number | null
-}
-
-const generateUUID = () => {
-  return crypto.randomUUID?.() || "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
-    (
-      Number(c) ^
-      (crypto.getRandomValues(new Uint8Array(1))[0] & 15) >>
-      (Number(c) / 4)
-    ).toString(16)
-  )
-}
-
-const getVideoDuration = (file: File): Promise<number> => {
-  return new Promise((resolve, reject) => {
-    const video = document.createElement("video")
-    video.preload = "metadata"
-    video.src = URL.createObjectURL(file)
-    video.onloadedmetadata = () => {
-      URL.revokeObjectURL(video.src)
-      resolve(video.duration)
-    }
-    video.onerror = () => reject("Could not load video metadata")
-  })
-}
-
-const getVideoThumbnailBlob = (file: File): Promise<Blob> => {
-  return new Promise((resolve, reject) => {
-    const video = document.createElement("video")
-    video.src = URL.createObjectURL(file)
-    video.crossOrigin = "anonymous"
-    video.muted = true
-    video.currentTime = 0
-    video.onloadeddata = () => {
-      const canvas = document.createElement("canvas")
-      canvas.width = video.videoWidth
-      canvas.height = video.videoHeight
-      const ctx = canvas.getContext("2d")
-      if (!ctx) return reject("No canvas context")
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
-      canvas.toBlob(blob => {
-        if (blob) resolve(blob)
-        else reject("Failed to create blob")
-        URL.revokeObjectURL(video.src)
-      }, "image/jpeg", 0.8)
-    }
-    video.onerror = reject
-  })
-}
-
-function dataUrlToFile(dataUrl: string, filename: string): File {
-  const arr = dataUrl.split(",")
-  const mime = arr[0].match(/:(.*?);/)?.[1] || "application/octet-stream"
-  const bstr = atob(arr[1])
-  let n = bstr.length
-  const u8arr = new Uint8Array(n)
-
-  while (n--) {
-    u8arr[n] = bstr.charCodeAt(n)
-  }
-
-  return new File([u8arr], filename, { type: mime })
 }
 
 const SaveAlbum = () => {
@@ -153,7 +76,7 @@ const SaveAlbum = () => {
     localStorage.setItem("selectedPhotos", JSON.stringify(updated))
   }
 
-  const handleAddPhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAddPhotos = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!cognitoUsername) {
       setDebugMessages(prev => [...prev, "❌ Missing Cognito Username"])
       return
@@ -161,33 +84,35 @@ const SaveAlbum = () => {
   
     const files = Array.from(e.target.files || [])
     if (!files.length) return
+    
+    const updated = await Promise.all(
+      files.map(async file => {
+        const type: string = file.type
+        const dataUrl = await fileToDataUrl(file)
   
-    const updated = files.map(file => {
-      
-      const type: "image" | "video" = file.type.startsWith("video") ? "video" : "image"
+        setDebugMessages(prev => [
+          ...prev,
+          `🆕 Added File: ${file.name}`,
+          `📁 Type: ${file.type}`,
+          `📏 Size: ${file.size}`,
+        ])
   
-      setDebugMessages(prev => [
-        ...prev,
-        `🆕 Added File: ${file.name}`,
-        `📁 Type: ${file.type}`,
-        `📏 Size: ${file.size}`,
-      ])
-  
-      return {
-        fileName: file.name,
-        dataUrl: URL.createObjectURL(file), // ✅ local preview URL
-        type,
-        size: file.size,
-        file,
-      }
-    })
+        return {
+          fileName: file.name,
+          dataUrl,
+          type,
+          size: file.size,
+          file,
+        }
+      })
+    )
   
     const combined = [...selectedPhotos, ...updated]
     setSelectedPhotos(combined)
     localStorage.setItem("selectedPhotos", JSON.stringify(combined))
   
     e.target.value = ""
-  }
+  }  
 
   const handleSaveAlbum = async () => {
     setDebugMessages(prev => [...prev, "🟡 Save Album button clicked"]);
@@ -218,10 +143,15 @@ const SaveAlbum = () => {
   
           // Upload original image or video
           setDebugMessages(prev => [...prev, `📤 Uploading file: ${uuidFileName}`]);
-          const originalFile = photo.file ?? dataUrlToFile(photo.dataUrl, photo.fileName)
-          const blob = new Blob([originalFile], { type: originalFile.type })
-          const arrayBuffer = await blob.arrayBuffer()
-          const uint8 = new Uint8Array(arrayBuffer)
+
+          setDebugMessages(prev => [
+            ...prev,
+            `🔍 dataUrl starts with: ${photo.dataUrl.slice(0, 80)}...`,
+          ])
+
+          const originalFile = dataUrlToFile(photo.dataUrl, photo.fileName)
+          const arrayBuffer = await originalFile.arrayBuffer()
+          const uint8 = new Uint8Array(arrayBuffer)          
 
           await s3.send(new PutObjectCommand({
             Bucket: BUCKET_NAME,
@@ -238,8 +168,8 @@ const SaveAlbum = () => {
           if (photo.type === "video") {
             try {
               setDebugMessages(prev => [...prev, `🎞 Extracting video metadata for ${photo.fileName}`]);
-              duration = Math.round(await getVideoDuration(photo.file!));
-              thumbnailBlob = await getVideoThumbnailBlob(photo.file!);
+              duration = Math.round(await getVideoDuration(originalFile));
+              thumbnailBlob = await getVideoThumbnailBlob(originalFile);
               thumbnailDataKey = `Input/Image/${uuidFileName}-thumbnail`;
               thumbnailSize = Math.round(thumbnailBlob.size);
   

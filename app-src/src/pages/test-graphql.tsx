@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import ReactDOM from "react-dom/client"
-import { checkLoginOrRedirect } from "./checkLogin"
+import { checkLoginOrRedirect } from "@/lib/checkLogin"
 
 const GRAPHQL_ENDPOINT = "https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql"
 

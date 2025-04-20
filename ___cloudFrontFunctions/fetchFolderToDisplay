@@ -247,7 +247,7 @@ function buildHtmlPage(folderId, mediaItems) {
                     resolve({
                       fileName: file.name,
                       dataUrl: event.target.result,
-                      type: file.type.startsWith("video") ? "video" : "image"
+                      type: file.type
                     });
                   };
                   reader.readAsDataURL(file);

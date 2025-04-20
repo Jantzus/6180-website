@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import ReactDOM from "react-dom/client"
-import { checkLoginOrRedirect } from "./checkLogin"
-
-const GRAPHQL_ENDPOINT = "https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql"
-const S3_BUCKET_URL = "https://i6180-assets-prod-0.s3.amazonaws.com/public/"
+import { checkLoginOrRedirect } from "@/lib/checkLogin"
+import { formatDate } from "@/lib/utils"
+import { GRAPHQL_ENDPOINT, BUCKET_NAME } from "@/lib/config"
 
 interface File {
   dataKey: string
@@ -17,18 +16,6 @@ interface Folder {
   createdAt: number | null
   updatedAt: number | null
   files: File[]
-}
-
-const formatDate = (timestamp: number | null): string => {
-  if (!timestamp) return ""
-  const date = new Date(timestamp)
-  return date.toLocaleString(undefined, {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-  })
 }
 
 const MyAlbums = () => {
@@ -223,7 +210,7 @@ const MyAlbums = () => {
                   {folder.files.map((file, i) => (
                     <img
                       key={i}
-                      src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
+                      src={`${BUCKET_NAME}${file.thumbnailDataKey || file.dataKey}`}
                       alt="Thumbnail"
                       style={{
                         width: 140,
