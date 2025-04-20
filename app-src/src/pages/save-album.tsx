@@ -394,14 +394,6 @@ const SaveAlbum = () => {
           style={{ display: "none" }}
         />
 
-        {folderId?.includes("_____") && (
-          <p style={{ fontSize: "16px", color: "#555", marginBottom: "24px" }}>
-            {window.location.search.includes("folderId")
-              ? `Provided folderId: ${folderId}`
-              : `Generated folderId: ${folderId}`}
-          </p>
-        )}
-
         {selectedPhotos.length > 0 && (
           <>
             <p style={{ fontSize: "16px", marginBottom: "16px", color: "#333" }}>
