@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ReactDOM from "react-dom/client"
 import { checkLoginOrRedirect } from "@/lib/checkLogin"
 import { formatDate } from "@/lib/utils"
-import { GRAPHQL_ENDPOINT, BUCKET_NAME } from "@/lib/config"
+import { GRAPHQL_ENDPOINT, S3_BUCKET_URL } from "@/lib/config"
 
 interface File {
   dataKey: string
@@ -210,7 +210,7 @@ const MyAlbums = () => {
                   {folder.files.map((file, i) => (
                     <img
                       key={i}
-                      src={`${BUCKET_NAME}${file.thumbnailDataKey || file.dataKey}`}
+                      src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
                       alt="Thumbnail"
                       style={{
                         width: 140,

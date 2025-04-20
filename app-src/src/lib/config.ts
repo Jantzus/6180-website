@@ -1,5 +1,6 @@
 export const GRAPHQL_ENDPOINT = "https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql"
 export const REGION = "us-east-1"
 export const BUCKET_NAME = "i6180-assets-prod-0"
+export const S3_BUCKET_URL = "https://i6180-assets-prod-0.s3.amazonaws.com/public/"
 export const IDENTITY_POOL_ID = "us-east-1:a5655055-4c58-4173-8d05-af1bb538ec13"
 export const USER_POOL_ID = "us-east-1_rqcAR61SV"

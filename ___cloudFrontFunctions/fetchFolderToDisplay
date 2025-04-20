@@ -8,13 +8,9 @@ const FETCH_FOLDERS_QUERY = `
   query FetchFolders($folderIds: [String!]!) {
     fetchFolders(folderIds: $folderIds) {
       items {
-        id
-        folderName
         fileReferencesPage {
           items {
-            id
             file {
-              id
               dataKey
               thumbnailDataKey
               durationInSeconds
@@ -41,14 +37,15 @@ exports.handler = async (event, context, callback) => {
   }
 
   const folderId = `${prefix}_____${suffix}____Folder`;
+  const escapedFolderId = JSON.stringify(folderId); // JS-safe
 
   const graphqlRes = await makeGraphQLRequest(folderId);
   if (!graphqlRes.success) {
     return callback(null, buildHtmlResponse(500, "Failed to fetch folder metadata"));
   }
 
-  const html = buildHtmlPage(folderId, graphqlRes.mediaItems);
-  return callback(null, buildHtmlResponse(200, html, "text/html"));
+  const html = buildHtmlPage(escapedFolderId, graphqlRes.mediaItems);
+  return callback(null, buildHtmlResponse(200, html));
 };
 
 function makeGraphQLRequest(folderId) {
@@ -65,7 +62,7 @@ function makeGraphQLRequest(folderId) {
       headers: {
         "Content-Type": "application/json",
         "x-api-key": API_KEY,
-        "Content-Length": body.length,
+        "Content-Length": Buffer.byteLength(body),
       },
     };
 
@@ -78,21 +75,17 @@ function makeGraphQLRequest(folderId) {
           const items = json?.data?.fetchFolders?.items ?? [];
           const mediaItems = [];
 
-          items.forEach((folder) => {
-            const fileItems = folder?.fileReferencesPage?.items ?? [];
-
-            fileItems.forEach((ref) => {
+          items.forEach(folder => {
+            const refs = folder?.fileReferencesPage?.items ?? [];
+            refs.forEach(ref => {
               const file = ref?.file;
-              if (!file) return;
+              if (!file?.dataKey) return;
 
               const { dataKey, thumbnailDataKey, durationInSeconds } = file;
 
-              if (dataKey?.startsWith("Input/Image/")) {
-                mediaItems.push({
-                  type: "image",
-                  url: `${BUCKET_URL}public/${dataKey}`,
-                });
-              } else if (dataKey?.startsWith("Input/Video/")) {
+              if (dataKey.startsWith("Input/Image/")) {
+                mediaItems.push({ type: "image", url: `${BUCKET_URL}public/${dataKey}` });
+              } else if (dataKey.startsWith("Input/Video/")) {
                 mediaItems.push({
                   type: "video",
                   url: `${BUCKET_URL}public/${dataKey}`,
@@ -105,14 +98,14 @@ function makeGraphQLRequest(folderId) {
 
           resolve({ success: true, mediaItems });
         } catch (e) {
-          console.error("[ERROR] Parsing GraphQL response failed:", e);
+          console.error("[ERROR] Parsing GraphQL:", e);
           resolve({ success: false });
         }
       });
     });
 
     req.on("error", (e) => {
-      console.error("[ERROR] GraphQL request failed:", e);
+      console.error("[ERROR] GraphQL request:", e);
       resolve({ success: false });
     });
 
@@ -127,232 +120,166 @@ function formatDuration(seconds = 0) {
   return `${min}:${sec.toString().padStart(2, "0")}`;
 }
 
-function buildHtmlPage(folderId, mediaItems) {
-  const mediaHtml = mediaItems
-    .map((item) => {
-      if (item.type === "image") {
-        return `<img src="${item.url}" style="max-width:100%;margin-bottom:20px;" loading="lazy"/>`;
-      } else {
-        return `
-          <div style="margin-bottom:20px;">
-            <img src="${item.thumb}" style="max-width:100%;display:block;margin-bottom:8px;" loading="lazy"/>
-            <video controls style="max-width:100%;">
-              <source src="${item.url}" type="video/mp4"/>
-            </video>
-            <div style="font-size:12px;color:#555;margin-top:4px;">Duration: ${item.duration}</div>
-          </div>`;
-      }
-    })
-    .join("\n");
+function buildHtmlPage(escapedFolderId, mediaItems) {
+  const mediaHtml = mediaItems.map(item => {
+    if (item.type === "image") {
+      return `<div class="media-block"><img src="${item.url}" loading="lazy"/></div>`;
+    } else {
+      return `
+        <div class="media-block">
+          <img src="${item.thumb}" loading="lazy" />
+          <video controls><source src="${item.url}" type="video/mp4" /></video>
+          <div class="video-meta">Duration: ${item.duration}</div>
+        </div>`;
+    }
+  }).join("\n");
 
   return `
-    <!DOCTYPE html>
-    <html dir="auto">
-      <head>
-        <meta charset="UTF-8" />
-        <title>6180 Folder</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <style>
-          body {
-            font-family: sans-serif;
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-          }
-          .save-fixed {
-            position: fixed;
-            top: 20px;
-            inset-inline-end: 20px;
-            z-index: 1000;
-            background: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-          }
-          .menu-button {
-            font-size: 18px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 10px 14px;
-            width: 100%;
-            text-align: left;
-            border-radius: 6px 6px 0 0;
-            color: inherit;
-          }
-          .dropdown {
-            display: none;
-            border-top: 1px solid #ccc;
-            font-size: 16px;
-            background: white;
-            color: black;
-          }
-          .dropdown.show {
-            display: block;
-          }
-          .dropdown div {
-            padding: 10px 16px;
-            cursor: pointer;
-            border-top: 1px solid #eee;
-          }
-          .dropdown div:hover {
-            background-color: #f5f5f5;
-          }
-          .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.85);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-          }
-          .overlay img {
-            max-width: 90%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-          }
-          .overlay-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-            z-index: 2001;
-          }
-        </style>
-        <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-        <script>
-          function openFilePicker() {
-            const fileInput = document.getElementById("file-input");
-            fileInput.click();
-          }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>6180 Album</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 24px; max-width: 800px; margin: auto; background-color: #f9fafb; }
+    .media-block { margin-bottom: 24px; }
+    img, video { max-width: 100%; border-radius: 8px; }
+    .video-meta { font-size: 12px; color: #555; margin-top: 4px; }
+    .save-fixed { position: fixed; top: 20px; inset-inline-end: 20px; z-index: 1000; background: #007BFF; color: white; border: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .menu-button { font-size: 18px; cursor: pointer; background: none; border: none; padding: 10px 14px; width: 100%; text-align: left; border-radius: 6px 6px 0 0; color: inherit; }
+    .dropdown { display: none; border-top: 1px solid #ccc; font-size: 16px; background: white; color: black; }
+    .dropdown.show { display: block; }
+    .dropdown div { padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee; }
+    .dropdown div:hover { background-color: #f5f5f5; }
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; z-index: 2000; }
+    .overlay img { max-width: 90%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
+    .overlay-close { position: absolute; top: 20px; right: 20px; font-size: 30px; color: white; cursor: pointer; z-index: 2001; }
+  </style>
+</head>
+<body>
+  <div class="save-fixed">
+    <button class="menu-button" onclick="toggleMenu()">☰ Save</button>
+    <div id="dropdown-menu" class="dropdown">
+      <div onclick="openFilePicker()">Add Photos To Album</div>
+      <div onclick="window.location.href='/app/save-album.html?folderId=' + FOLDER_ID">Save To Account</div>
+      <div onclick="getAlbumQRCode()">Open in 6180 App</div>
+    </div>
+    <input type="file" id="file-input" accept="image/*,video/*" multiple style="display:none" />
+  </div>
 
-          document.addEventListener("DOMContentLoaded", function () {
-            const input = document.getElementById("file-input");
+  <div id="qr-overlay" class="overlay">
+    <span class="overlay-close" onclick="closeOverlay()">×</span>
+    <img id="qr-img" src="" alt="QR Code" />
+  </div>
 
-            input.addEventListener("change", function (e) {
-              const files = Array.from(e.target.files);
-              if (!files.length) return;
+  <div id="media-container">${mediaHtml || "No media found."}</div>
 
-              const readerPromises = files.map(file => {
-                return new Promise(resolve => {
-                  const reader = new FileReader();
-                  reader.onload = function (event) {
-                    resolve({
-                      fileName: file.name,
-                      dataUrl: event.target.result,
-                      type: file.type
-                    });
-                  };
-                  reader.readAsDataURL(file);
-                });
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script>
+    const FOLDER_ID = ${escapedFolderId};
+
+    function toggleMenu() {
+      document.getElementById('dropdown-menu').classList.toggle('show');
+    }
+
+    function openFilePicker() {
+      document.getElementById("file-input").click();
+    }
+
+    function getAlbumQRCode() {
+      const overlay = document.getElementById('qr-overlay');
+      const img = document.getElementById('qr-img');
+      const qrText = "https://6180.io/folder/" + FOLDER_ID;
+
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const width = 800, height = 1100;
+      canvas.width = width;
+      canvas.height = height;
+
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = "#000000";
+      ctx.font = "26px sans-serif";
+
+      const lines = [
+        "1. Hold and save this QR code image to your Photos/Gallery ⬇️",
+        "2. If you don’t have 6180 yet, scan this to install it.",
+        "3. In the app, go to 'Files' > 'Album QR Code' > 'Load Saved QR Code'."
+      ];
+
+      const maxWidth = 740;
+      const lineHeight = 36;
+      let y = 60;
+
+      lines.forEach((paragraph) => {
+        const words = paragraph.split(" ");
+        let line = "";
+        for (let i = 0; i < words.length; i++) {
+          const testLine = line + words[i] + " ";
+          const { width: testWidth } = ctx.measureText(testLine);
+          if (testWidth > maxWidth && i > 0) {
+            ctx.fillText(line, 30, y);
+            line = words[i] + " ";
+            y += lineHeight;
+          } else {
+            line = testLine;
+          }
+        }
+        if (line) {
+          ctx.fillText(line, 30, y);
+          y += lineHeight;
+        }
+        y += 10;
+      });
+
+      QRCode.toDataURL(qrText, { margin: 1, width: 300 }, function(err, url) {
+        if (err) return alert("QR code generation failed");
+        const qrImg = new Image();
+        qrImg.onload = () => {
+          ctx.drawImage(qrImg, (width - 300) / 2, y + 20, 300, 300);
+          img.src = canvas.toDataURL("image/png");
+          overlay.style.display = "flex";
+        };
+        qrImg.src = url;
+      });
+    }
+
+    function closeOverlay() {
+      document.getElementById('qr-overlay').style.display = 'none';
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("file-input").addEventListener("change", (e) => {
+        const files = Array.from(e.target.files);
+        if (!files.length) return;
+
+        const readerPromises = files.map(file => {
+          return new Promise(resolve => {
+            const reader = new FileReader();
+            reader.onload = event => {
+              resolve({
+                fileName: file.name,
+                dataUrl: event.target.result,
+                type: file.type
               });
-
-              Promise.all(readerPromises).then(results => {
-                localStorage.setItem("selectedPhotos", JSON.stringify(results));
-                window.location.href = "/app/save-album.html?folderId=${folderId}";
-              });
-            });
+            };
+            reader.readAsDataURL(file);
           });
+        });
 
-          function toggleMenu() {
-            const menu = document.getElementById('dropdown-menu');
-            menu.classList.toggle('show');
-          }
-
-          function getAlbumQRCode() {
-            const overlay = document.getElementById('qr-overlay');
-            const img = document.getElementById('qr-img');
-            const qrText = "https://6180.io/folder/${folderId}";
-
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            const width = 800, height = 1100;
-            canvas.width = width;
-            canvas.height = height;
-
-            ctx.fillStyle = "#ffffff";
-            ctx.fillRect(0, 0, width, height);
-
-            ctx.fillStyle = "#000000";
-            ctx.font = "26px sans-serif";
-
-            const lines = [
-              "1. Hold and save this QR code image to your iPhone Photos or Android Gallery app ⬇️",
-              "2. Open your phone’s photo gallery. If you don’t have 6180 yet, tap or scan the QR code to get it from the App Store or Play Store, then sign up.",
-              "3. Open the 6180 app and tap “Files” at the bottom middle.",
-              "4. Tap “Album QR Code” at the top left, then tap “Load Saved QR Code”."
-            ];
-
-            const maxWidth = 740;
-            const lineHeight = 36;
-            let y = 60;
-
-            lines.forEach((paragraph) => {
-              const words = paragraph.split(" ");
-              let line = "";
-              for (let i = 0; i < words.length; i++) {
-                const testLine = line + words[i] + " ";
-                const { width: testWidth } = ctx.measureText(testLine);
-                if (testWidth > maxWidth && i > 0) {
-                  ctx.fillText(line, 30, y);
-                  line = words[i] + " ";
-                  y += lineHeight;
-                } else {
-                  line = testLine;
-                }
-              }
-              if (line) {
-                ctx.fillText(line, 30, y);
-                y += lineHeight;
-              }
-              y += 10;
-            });
-
-            QRCode.toDataURL(qrText, { margin: 1, width: 300 }, function(err, url) {
-              if (err) return alert("QR code generation failed");
-
-              const qrImg = new Image();
-              qrImg.onload = () => {
-                ctx.drawImage(qrImg, (width - 300) / 2, y + 20, 300, 300);
-                const finalImage = canvas.toDataURL("image/png");
-                img.src = finalImage;
-                overlay.style.display = "flex";
-              };
-              qrImg.src = url;
-            });
-          }
-
-          function closeOverlay() {
-            document.getElementById('qr-overlay').style.display = 'none';
-          }
-        </script>
-      </head>
-      <body>
-        <div class="save-fixed">
-          <button class="menu-button" onclick="toggleMenu()">☰ Save</button>
-          <div id="dropdown-menu" class="dropdown">
-            <div onclick="openFilePicker()">Add Photos To Album</div>
-            <div onclick="window.location.href='/app/save-album.html?folderId=${folderId}'">Save To Account</div>
-            <div onclick="getAlbumQRCode()">Open in 6180 App</div>
-          </div>
-          <input type="file" id="file-input" accept="image/*,video/*" multiple style="display:none" />
-        </div>
-
-        <div id="qr-overlay" class="overlay">
-          <span class="overlay-close" onclick="closeOverlay()">×</span>
-          <img id="qr-img" src="" alt="QR Code" />
-        </div>
-
-        ${mediaHtml}
-      </body>
-    </html>`;
+        Promise.all(readerPromises).then(results => {
+          localStorage.setItem("selectedPhotos", JSON.stringify(results));
+          window.location.href = "/app/save-album.html?folderId=" + FOLDER_ID;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+`;
 }
 
 function buildHtmlResponse(statusCode, body, contentType = "text/html") {
@@ -360,18 +287,8 @@ function buildHtmlResponse(statusCode, body, contentType = "text/html") {
     status: String(statusCode),
     statusDescription: statusCode === 200 ? "OK" : "Error",
     headers: {
-      "cache-control": [
-        {
-          key: "Cache-Control",
-          value: "public, max-age=300",
-        },
-      ],
-      "content-type": [
-        {
-          key: "Content-Type",
-          value: contentType,
-        },
-      ],
+      "cache-control": [{ key: "Cache-Control", value: "public, max-age=300" }],
+      "content-type": [{ key: "Content-Type", value: contentType }],
     },
     body,
   };

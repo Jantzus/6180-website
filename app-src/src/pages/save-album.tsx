@@ -89,14 +89,7 @@ const SaveAlbum = () => {
       files.map(async file => {
         const type: string = file.type
         const dataUrl = await fileToDataUrl(file)
-  
-        setDebugMessages(prev => [
-          ...prev,
-          `🆕 Added File: ${file.name}`,
-          `📁 Type: ${file.type}`,
-          `📏 Size: ${file.size}`,
-        ])
-  
+
         return {
           fileName: file.name,
           dataUrl,
@@ -115,7 +108,6 @@ const SaveAlbum = () => {
   }  
 
   const handleSaveAlbum = async () => {
-    setDebugMessages(prev => [...prev, "🟡 Save Album button clicked"]);
   
     try {
       if (publicUsername?.startsWith("Profile-")) {
@@ -140,14 +132,6 @@ const SaveAlbum = () => {
           const baseKey = photo.type === "video"
             ? `Input/Video/${uuidFileName}`
             : `Input/Image/${uuidFileName}`;
-  
-          // Upload original image or video
-          setDebugMessages(prev => [...prev, `📤 Uploading file: ${uuidFileName}`]);
-
-          setDebugMessages(prev => [
-            ...prev,
-            `🔍 dataUrl starts with: ${photo.dataUrl.slice(0, 80)}...`,
-          ])
 
           const originalFile = dataUrlToFile(photo.dataUrl, photo.fileName)
           const arrayBuffer = await originalFile.arrayBuffer()
@@ -166,8 +150,9 @@ const SaveAlbum = () => {
           let thumbnailSize: number | null = null;
   
           if (photo.type === "video") {
+
             try {
-              setDebugMessages(prev => [...prev, `🎞 Extracting video metadata for ${photo.fileName}`]);
+
               duration = Math.round(await getVideoDuration(originalFile));
               thumbnailBlob = await getVideoThumbnailBlob(originalFile);
               thumbnailDataKey = `Input/Image/${uuidFileName}-thumbnail`;
@@ -180,7 +165,6 @@ const SaveAlbum = () => {
                 ContentType: "image/jpeg"
               }));
   
-              setDebugMessages(prev => [...prev, `🖼 Uploaded thumbnail for ${photo.fileName}`]);
             } catch (err) {
               console.warn("Video metadata or thumbnail error", err);
               setDebugMessages(prev => [...prev, `⚠️ Error extracting metadata or thumbnail: ${String(err)}`]);
@@ -190,14 +174,13 @@ const SaveAlbum = () => {
           return {
             ...photo,
             fileName: uuidFileName,
+            size: originalFile.size,
             duration,
             thumbnailDataKey,
             thumbnailSize
           };
         })
       );
-  
-      setDebugMessages(prev => [...prev, "✅ All files moved to public S3"]);
   
       const folderPositionInput = {
         currentTime: now,
@@ -293,7 +276,10 @@ const SaveAlbum = () => {
       if (json.errors) {
         setDebugMessages(prev => [...prev, "❌ Upload failed", JSON.stringify(json.errors, null, 2)]);
       } else {
-        setDebugMessages(prev => [...prev, "✅ Album successfully saved!", JSON.stringify(json, null, 2)]);
+
+        localStorage.removeItem("selectedPhotos")
+        window.location.href = "/app/my-albums.html"
+
       }
     } catch (err) {
       setDebugMessages(prev => [...prev, "❌ Unexpected error", String(err)]);
