@@ -176,8 +176,8 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
               <div class="thumbnail-wrapper" onclick="playVideo(this, '${item.url}')">
                 <img src="${item.thumbnailUrl}" loading="lazy" alt="Video thumbnail" />
                 <div class="play-button"></div>
+                <div class="duration-badge">${item.duration}</div>
               </div>
-              <div class="video-meta">Duration: ${item.duration}</div>
               ${ownerBadge}
             </div>`;
         }
@@ -234,6 +234,17 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
       border-style: solid;
       border-width: 15px 0 15px 25px;
       border-color: transparent transparent transparent white;
+    }
+    .duration-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 4px 8px;
+      font-size: 14px;
+      border-radius: 4px;
+      font-weight: 500;
     }
   </style>
 </head>
