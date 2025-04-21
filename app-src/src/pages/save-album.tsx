@@ -38,6 +38,12 @@ type ProgressTracker = {
   overallProgress: number
 }
 
+// Storage keys for persistent data
+const STORAGE_KEYS = {
+  FOLDER_ID: 'album_folderId',
+  SELECTED_PHOTOS: 'album_selectedPhotos'
+}
+
 const SaveAlbum = () => {
 
   const [folderId, setFolderId] = useState<string | null>(null)
@@ -63,12 +69,58 @@ const SaveAlbum = () => {
   // Add a log function that updates both console and debug state
   const log = (message: string) => {
     console.log(message)
-    setDebugMessages(prev => [...prev, message])
+    
+    // Only add to debug messages if it's an error (starts with ❌)
+    if (message.includes("❌") || message.includes("⚠️")) {
+      setDebugMessages(prev => [...prev, message])
+    }
+  }
+
+  // Clear all album data when leaving the page
+  const clearAlbumData = () => {
+    log("🧹 Clearing all album data...")
+    
+    // Clear all album-related data from local storage
+    localStorage.removeItem(STORAGE_KEYS.FOLDER_ID)
+    localStorage.removeItem(STORAGE_KEYS.SELECTED_PHOTOS)
+    
+    // Also clear any session storage that might be holding state
+    sessionStorage.removeItem(STORAGE_KEYS.FOLDER_ID)
+    sessionStorage.removeItem(STORAGE_KEYS.SELECTED_PHOTOS)
+    
+    // Reset states
+    setFolderId(null)
+    setSelectedPhotos([])
+    setProgressTracker({
+      totalFiles: 0,
+      filesComplete: 0,
+      filesUploading: 0,
+      filesProcessing: 0,
+      filesWithError: 0,
+      overallProgress: 0
+    })
+    setIsSavingAlbum(false) // Reset saving state
+    
+    // Reset UI progress elements
+    const saveProgress = document.getElementById('saveProgress')
+    if (saveProgress) {
+      saveProgress.style.setProperty('width', '0%')
+    }
+    
+    const saveProgressText = document.getElementById('saveProgressText')
+    if (saveProgressText) {
+      saveProgressText.innerText = ""
+    }
+    
+    log("✅ Album data cleared successfully")
   }
 
   useEffect(() => {
     log("🔄 Component initializing...")
 
+    // Clear any leftover UI state first
+    setIsSavingAlbum(false)
+    
     try {
       const token = checkLoginOrRedirect()
       if (!token) {
@@ -87,17 +139,52 @@ const SaveAlbum = () => {
         const cognitoUsername = payload["cognito:username"]
         setCognitoUsername(cognitoUsername)
         log(`👤 Cognito username: ${cognitoUsername}`)
+        
+        // Clear any existing album data on fresh page load
+        // This ensures we don't see leftover saving UI
+        if (document.referrer && 
+            (document.referrer.includes('my-albums.html') || 
+             !document.referrer.includes('save-album.html'))) {
+          log("🧹 Fresh visit detected - clearing any old album data")
+          clearAlbumData()
+        }
     
+        // Check if we're returning to this page or starting fresh
+        const storedFolderId = localStorage.getItem(STORAGE_KEYS.FOLDER_ID)
         const params = new URLSearchParams(window.location.search)
         const id = params.get("folderId")
     
+        // Priority: URL param > localStorage > generate new
         if (id) {
           setFolderId(id)
-          log(`📁 Using existing folder ID: ${id}`)
+          localStorage.setItem(STORAGE_KEYS.FOLDER_ID, id)
+          log(`📁 Using folder ID from URL: ${id}`)
+        } else if (storedFolderId) {
+          setFolderId(storedFolderId)
+          log(`📁 Using stored folder ID: ${storedFolderId}`)
         } else {
           const newId = `${cognitoUsername}_____${generateUUID()}____Folder`
           setFolderId(newId)
+          localStorage.setItem(STORAGE_KEYS.FOLDER_ID, newId)
           log(`📁 Created new folder ID: ${newId}`)
+        }
+        
+        // Try to restore selected photos from localStorage
+        // Skip this if we're coming from my-albums page
+        if (!document.referrer || !document.referrer.includes('my-albums.html')) {
+          try {
+            const storedPhotos = localStorage.getItem(STORAGE_KEYS.SELECTED_PHOTOS)
+            if (storedPhotos) {
+              const parsedPhotos = JSON.parse(storedPhotos) as SelectedPhoto[]
+              if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
+                setSelectedPhotos(parsedPhotos)
+                log(`📸 Restored ${parsedPhotos.length} photos from storage`)
+              }
+            }
+          } catch (storageErr) {
+            log(`⚠️ Error restoring photos from storage: ${String(storageErr)}`)
+            // Not critical, can continue
+          }
         }
       } catch (err) {
         log(`❌ Error initializing: ${String(err)}`)
@@ -118,7 +205,30 @@ const SaveAlbum = () => {
     } catch (s3Err) {
       log(`❌ S3 connection test error: ${String(s3Err)}`)
     }
+    
+    // Add event listener for page unload/navigation
+    const handleBeforeUnload = () => {
+      clearAlbumData()
+      return null
+    }
+    
+    // Add the event listener
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    
+    // Return cleanup function
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+      clearAlbumData()
+    }
   }, [])
+
+  // Save selected photos to localStorage whenever they change
+  useEffect(() => {
+    if (selectedPhotos.length > 0) {
+      localStorage.setItem(STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(selectedPhotos))
+      log(`📸 Saved ${selectedPhotos.length} photos to storage`)
+    }
+  }, [selectedPhotos])
 
   // Update progress tracker whenever selectedPhotos changes
   useEffect(() => {
@@ -524,9 +634,9 @@ const SaveAlbum = () => {
       
       log("📊 Sending GraphQL mutation to save album...")
       const saveProgressText = document.getElementById('saveProgressText')
-if (saveProgressText) {
-  saveProgressText.innerText = "Finalizing album..."
-}
+      if (saveProgressText) {
+        saveProgressText.innerText = "Finalizing album..."
+      }
   
       const response = await fetch(GRAPHQL_ENDPOINT, {
         method: "POST",
@@ -544,10 +654,17 @@ if (saveProgressText) {
         setIsSavingAlbum(false)
       } else {
         log("✅ Album saved successfully!")
+        
+        // Clear all album data before redirecting
+        clearAlbumData()
+        
         const saveSuccessText = document.getElementById('saveProgressText')
-if (saveSuccessText) {
-  saveSuccessText.innerText = "Album saved successfully!"
-}
+        if (saveSuccessText) {
+          saveSuccessText.innerText = "Album saved successfully!"
+        }
+        
+        // Also set a flag in sessionStorage that we just completed an album
+        sessionStorage.setItem('album_just_saved', 'true')
         
         // Slight delay before redirect for user to see success message
         setTimeout(() => {
