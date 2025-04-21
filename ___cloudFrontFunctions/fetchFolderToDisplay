@@ -92,7 +92,7 @@ function fetchFolder(folderId) {
           const items = json?.data?.fetchFolders?.items || [];
           const mediaItems = [];
           const contacts = {};
-          let folderName = "6180 Album";
+          let folderName = "Photos";
           
           if (items.length > 0) {
             // Get folder name if available
@@ -122,10 +122,11 @@ function fetchFolder(folderId) {
                   ownerId: ownerContactId
                 });
               } else if (dataKey.startsWith("Input/Video/")) {
+                // Store the actual thumbnailDataKey value for direct use in the thumbnail URL
                 mediaItems.push({
                   type: "video",
                   url,
-                  thumb: `${BUCKET_URL}public/${thumbnailDataKey}`,
+                  thumbnailUrl: `${BUCKET_URL}public/${thumbnailDataKey}`,
                   duration: formatTime(durationInSeconds),
                   ownerId: ownerContactId
                 });
@@ -168,10 +169,14 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
               ${ownerBadge}
             </div>`;
         } else {
+          // Modified video rendering to consistently show thumbnails with a play button overlay
+          // Using the direct thumbnailUrl that was created from thumbnailDataKey
           return `
-            <div class="media-block">
-              <img src="${item.thumb}" loading="lazy" />
-              <video controls><source src="${item.url}" type="video/mp4" /></video>
+            <div class="media-block video-container">
+              <div class="thumbnail-wrapper" onclick="playVideo(this, '${item.url}')">
+                <img src="${item.thumbnailUrl}" loading="lazy" alt="Video thumbnail" />
+                <div class="play-button"></div>
+              </div>
               <div class="video-meta">Duration: ${item.duration}</div>
               ${ownerBadge}
             </div>`;
@@ -206,12 +211,36 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
     .dropdown .icon { font-size: 16px; color: #006adc; width: 18px; text-align: center; }
     .loading { text-align: center; padding: 40px; font-size: 18px; color: #666; }
     .error { text-align: center; padding: 40px; font-size: 18px; color: #d32f2f; }
+    
+    /* New styles for video thumbnails */
+    .video-container { cursor: pointer; }
+    .thumbnail-wrapper { position: relative; }
+    .play-button { 
+      position: absolute; 
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 50%;
+    }
+    .play-button:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      border-style: solid;
+      border-width: 15px 0 15px 25px;
+      border-color: transparent transparent transparent white;
+    }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="header-content">
-      <h2 id="album-title" class="album-title">${folderName}</h2>
+      <h2 id="album-title" class="album-title">${folderName !== "Photos" ? folderName : ""}</h2>
       <div style="position: relative;">
         <button class="save-button" onclick="toggleMenu()">Save Options</button>
         <div id="dropdown-menu" class="dropdown">
@@ -278,6 +307,31 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
     // Save to account
     function saveToAccount() {
       window.location.href = "/app/save-album.html?folderId=" + FOLDER_ID;
+    }
+    
+    // Play video function
+    function playVideo(element, videoUrl) {
+      const container = element.closest('.media-block');
+      
+      // Create video element dynamically
+      const video = document.createElement('video');
+      video.controls = true;
+      video.style.width = '100%';
+      
+      const source = document.createElement('source');
+      source.src = videoUrl;
+      source.type = 'video/mp4';
+      
+      video.appendChild(source);
+      
+      // Replace the thumbnail with the video
+      element.replaceWith(video);
+      
+      // Play the video automatically
+      video.play().catch(error => {
+        console.error('Error playing video:', error);
+        // If autoplay fails, just leave the video element with controls visible
+      });
     }
   </script>
 </body>
