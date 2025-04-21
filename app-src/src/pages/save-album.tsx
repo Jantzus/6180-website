@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import ReactDOM from "react-dom/client"
 import { checkLoginOrRedirect } from "@/lib/checkLogin"
-import { PutObjectCommand, CopyObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3"
+import { PutObjectCommand, CopyObjectCommand } from "@aws-sdk/client-s3"
 
 import { BUCKET_NAME, GRAPHQL_ENDPOINT } from "@/lib/config"
 import { createS3Client } from "@/lib/aws"
@@ -117,7 +117,7 @@ const SaveAlbum = () => {
 
   useEffect(() => {
     log("🔄 Component initializing...")
-
+  
     // Clear any leftover UI state first
     setIsSavingAlbum(false)
     
@@ -140,15 +140,6 @@ const SaveAlbum = () => {
         setCognitoUsername(cognitoUsername)
         log(`👤 Cognito username: ${cognitoUsername}`)
         
-        // Clear any existing album data on fresh page load
-        // This ensures we don't see leftover saving UI
-        if (document.referrer && 
-            (document.referrer.includes('my-albums.html') || 
-             !document.referrer.includes('save-album.html'))) {
-          log("🧹 Fresh visit detected - clearing any old album data")
-          clearAlbumData()
-        }
-    
         // Check if we're returning to this page or starting fresh
         const storedFolderId = localStorage.getItem(STORAGE_KEYS.FOLDER_ID)
         const params = new URLSearchParams(window.location.search)
@@ -170,21 +161,29 @@ const SaveAlbum = () => {
         }
         
         // Try to restore selected photos from localStorage
-        // Skip this if we're coming from my-albums page
-        if (!document.referrer || !document.referrer.includes('my-albums.html')) {
-          try {
-            const storedPhotos = localStorage.getItem(STORAGE_KEYS.SELECTED_PHOTOS)
-            if (storedPhotos) {
+        try {
+          const storedPhotos = localStorage.getItem(STORAGE_KEYS.SELECTED_PHOTOS)
+          log(`🔍 Checking for stored photos with key ${STORAGE_KEYS.SELECTED_PHOTOS}`)
+          if (storedPhotos) {
+            log(`📦 Found stored photos data: ${storedPhotos.substring(0, 100)}...`)
+            try {
               const parsedPhotos = JSON.parse(storedPhotos) as SelectedPhoto[]
+              log(`📊 Parsed photos data: ${JSON.stringify(parsedPhotos.length)} items`)
               if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
                 setSelectedPhotos(parsedPhotos)
                 log(`📸 Restored ${parsedPhotos.length} photos from storage`)
+              } else {
+                log(`⚠️ Parsed photos array is empty or not an array`)
               }
+            } catch (parseErr) {
+              log(`❌ Error parsing stored photos: ${String(parseErr)}`)
             }
-          } catch (storageErr) {
-            log(`⚠️ Error restoring photos from storage: ${String(storageErr)}`)
-            // Not critical, can continue
+          } else {
+            log(`⚠️ No stored photos found with key ${STORAGE_KEYS.SELECTED_PHOTOS}`)
           }
+        } catch (storageErr) {
+          log(`⚠️ Error restoring photos from storage: ${String(storageErr)}`)
+          // Not critical, can continue
         }
       } catch (err) {
         log(`❌ Error initializing: ${String(err)}`)
@@ -193,7 +192,7 @@ const SaveAlbum = () => {
     } catch (initErr) {
       log(`❌ Fatal initialization error: ${String(initErr)}`)
     }
-
+  
     // Test S3 connection
     try {
       if (s3) {
@@ -325,7 +324,7 @@ const SaveAlbum = () => {
           log(`📝 Processing file ${i + 1}/${files.length}: ${file.name} (${file.type})`)
           
           const type: string = file.type
-          const fileExt = file.name.split('.').pop() || "jpg"
+          // const fileExt = file.name.split('.').pop() || "jpg"
           const uuidFileName = photo.fileName
           log(`🆔 Generated UUID filename: ${uuidFileName}`)
           
