@@ -8,15 +8,15 @@ import { createS3Client } from "@/lib/aws"
 import { generateUUID } from "@/lib/utils"
 import { getVideoDuration, getVideoThumbnailBlob } from "@/lib/video"
 
-// Enable more detailed S3 error tracking
-console.log("Initializing with more detailed S3 error tracking")
-
-// Create S3 client with error logging
+// Create S3 client
 let s3 = createS3Client()
+
+// Define file upload status types
+type UploadStatus = 'pending' | 'uploading' | 'processing' | 'complete' | 'error';
 
 type SelectedPhoto = {
   fileName: string
-  previewUrl: string
+  s3PreviewUrl: string
   type: string | undefined
   size?: number
   duration?: number | null
@@ -24,6 +24,18 @@ type SelectedPhoto = {
   thumbnailSize?: number | null
   tempKey?: string | null
   tempThumbnailKey?: string | null
+  status: UploadStatus
+  progress: number
+  errorMessage?: string
+}
+
+type ProgressTracker = {
+  totalFiles: number
+  filesComplete: number
+  filesUploading: number
+  filesProcessing: number
+  filesWithError: number
+  overallProgress: number
 }
 
 const SaveAlbum = () => {
@@ -38,118 +50,207 @@ const SaveAlbum = () => {
   const [showAltButton, setShowAltButton] = useState(false)
   const [isSubmittingUsername, setIsSubmittingUsername] = useState(false)
   const [debugMessages, setDebugMessages] = useState<string[]>([])
+  const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
+    totalFiles: 0,
+    filesComplete: 0,
+    filesUploading: 0,
+    filesProcessing: 0,
+    filesWithError: 0,
+    overallProgress: 0
+  })
+  const [isSavingAlbum, setIsSavingAlbum] = useState(false)
+
+  // Add a log function that updates both console and debug state
+  const log = (message: string) => {
+    console.log(message)
+    setDebugMessages(prev => [...prev, message])
+  }
 
   useEffect(() => {
-    setDebugMessages(prev => [...prev, "🔄 Component initializing..."])
+    log("🔄 Component initializing...")
 
     try {
       const token = checkLoginOrRedirect()
       if (!token) {
-        setDebugMessages(prev => [...prev, "❌ No token available, redirecting..."])
+        log("❌ No token available, redirecting...")
         return
       }
       
-      setDebugMessages(prev => [...prev, "✅ Token available"])
+      log("✅ Token available")
     
       try {
         const savedUsername = localStorage.getItem("publicUsername")
         setPublicUsername(savedUsername || null)
-        setDebugMessages(prev => [...prev, `👤 Public username: ${savedUsername || "not set"}`])
+        log(`👤 Public username: ${savedUsername || "not set"}`)
     
         const payload = JSON.parse(atob(token.split('.')[1]))
         const cognitoUsername = payload["cognito:username"]
         setCognitoUsername(cognitoUsername)
-        setDebugMessages(prev => [...prev, `👤 Cognito username: ${cognitoUsername}`])
+        log(`👤 Cognito username: ${cognitoUsername}`)
     
         const params = new URLSearchParams(window.location.search)
         const id = params.get("folderId")
     
         if (id) {
           setFolderId(id)
-          setDebugMessages(prev => [...prev, `📁 Using existing folder ID: ${id}`])
+          log(`📁 Using existing folder ID: ${id}`)
         } else {
           const newId = `${cognitoUsername}_____${generateUUID()}____Folder`
           setFolderId(newId)
-          setDebugMessages(prev => [...prev, `📁 Created new folder ID: ${newId}`])
+          log(`📁 Created new folder ID: ${newId}`)
         }
       } catch (err) {
-        setDebugMessages(prev => [...prev, `❌ Error initializing: ${String(err)}`])
+        log(`❌ Error initializing: ${String(err)}`)
         console.error("Failed to decode idToken", err)
       }
     } catch (initErr) {
-      setDebugMessages(prev => [...prev, `❌ Fatal initialization error: ${String(initErr)}`])
+      log(`❌ Fatal initialization error: ${String(initErr)}`)
     }
 
     // Test S3 connection
     try {
       if (s3) {
-        setDebugMessages(prev => [...prev, "🔄 Testing S3 connection..."])
-        // Just check if s3 object is properly instantiated
-        setDebugMessages(prev => [...prev, `✅ S3 client appears to be configured correctly (${typeof s3})`])
+        log("🔄 Testing S3 connection...")
+        log(`✅ S3 client appears to be configured correctly (${typeof s3})`)
       } else {
-        setDebugMessages(prev => [...prev, "❌ S3 client not available"])
+        log("❌ S3 client not available")
       }
     } catch (s3Err) {
-      setDebugMessages(prev => [...prev, `❌ S3 connection test error: ${String(s3Err)}`])
+      log(`❌ S3 connection test error: ${String(s3Err)}`)
     }
   }, [])
+
+  // Update progress tracker whenever selectedPhotos changes
+  useEffect(() => {
+    if (selectedPhotos.length === 0) {
+      setProgressTracker({
+        totalFiles: 0,
+        filesComplete: 0,
+        filesUploading: 0,
+        filesProcessing: 0,
+        filesWithError: 0,
+        overallProgress: 0
+      })
+      return
+    }
+
+    const filesUploading = selectedPhotos.filter(p => p.status === 'uploading').length
+    const filesProcessing = selectedPhotos.filter(p => p.status === 'processing').length
+    const filesComplete = selectedPhotos.filter(p => p.status === 'complete').length
+    const filesWithError = selectedPhotos.filter(p => p.status === 'error').length
+    
+    // Calculate overall progress as a percentage
+    const totalProgress = selectedPhotos.reduce((sum, photo) => sum + photo.progress, 0)
+    const overallProgress = Math.round((totalProgress / selectedPhotos.length) * 100) / 100
+
+    setProgressTracker({
+      totalFiles: selectedPhotos.length,
+      filesComplete,
+      filesUploading,
+      filesProcessing, 
+      filesWithError,
+      overallProgress
+    })
+  }, [selectedPhotos])
 
   const removePhoto = (indexToRemove: number) => {
     const updated = selectedPhotos.filter((_, i) => i !== indexToRemove)
     setSelectedPhotos(updated)
   }
 
+  // Update specific photo's status and progress
+  const updatePhotoStatus = (index: number, status: UploadStatus, progress: number, errorMessage?: string) => {
+    setSelectedPhotos(prev => 
+      prev.map((photo, i) => 
+        i === index 
+          ? { ...photo, status, progress, errorMessage } 
+          : photo
+      )
+    )
+  }
+
   const handleAddPhotos = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDebugMessages(prev => [...prev, "🔍 Add Photos button clicked"])
+    log("🔍 Add Photos button clicked")
     
     if (!cognitoUsername) {
-      setDebugMessages(prev => [...prev, "❌ Missing Cognito Username"])
+      log("❌ Missing Cognito Username")
       return
     }
   
     const files = Array.from(e.target.files || [])
-    setDebugMessages(prev => [...prev, `📁 Files selected: ${files.length}`])
+    log(`📁 Files selected: ${files.length}`)
     
     if (!files.length) return
     
     try {
-      setDebugMessages(prev => [...prev, "🔄 Starting file processing..."])
+      log("🔄 Starting file processing...")
       
-      const updated = await Promise.all(
-        files.map(async (file, index) => {
-          setDebugMessages(prev => [...prev, `📝 Processing file ${index + 1}/${files.length}: ${file.name} (${file.type})`])
+      // First, add files to state with pending status
+      const initialPhotos = files.map(file => {
+        const type: string = file.type
+        const fileExt = file.name.split('.').pop() || "jpg"
+        const uuidFileName = `${generateUUID()}.${fileExt}`
+        
+        return {
+          fileName: uuidFileName,
+          s3PreviewUrl: URL.createObjectURL(file), // Use local object URL initially
+          type,
+          size: file.size,
+          status: 'pending' as UploadStatus,
+          progress: 0
+        } as SelectedPhoto
+      })
+      
+      // Add these pending photos to state
+      setSelectedPhotos(prev => [...prev, ...initialPhotos])
+      
+      // Now process each file one by one, updating its status as we go
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i]
+        const photo = initialPhotos[i]
+        const currentIndex = selectedPhotos.length + i
+        
+        try {
+          updatePhotoStatus(currentIndex, 'uploading', 0.1)
+          log(`📝 Processing file ${i + 1}/${files.length}: ${file.name} (${file.type})`)
           
           const type: string = file.type
           const fileExt = file.name.split('.').pop() || "jpg"
-          const uuidFileName = `${generateUUID()}.${fileExt}`
-          setDebugMessages(prev => [...prev, `🆔 Generated UUID filename: ${uuidFileName}`])
+          const uuidFileName = photo.fileName
+          log(`🆔 Generated UUID filename: ${uuidFileName}`)
           
           const baseKey = type.startsWith("video")
             ? `Input/Video/${uuidFileName}`
             : `Input/Image/${uuidFileName}`
           
-          // Create object URL for preview
-          const previewUrl = URL.createObjectURL(file)
-          setDebugMessages(prev => [...prev, `🖼️ Created preview URL`])
+          // Generate S3 key locations
+          const tempS3Key = `temp/${baseKey}`
           
           // Convert file to ArrayBuffer for S3 upload
           const arrayBuffer = await file.arrayBuffer()
-          setDebugMessages(prev => [...prev, `📦 Converted file to ArrayBuffer`])
+          log(`📦 Converted file to ArrayBuffer`)
+          updatePhotoStatus(currentIndex, 'uploading', 0.3)
           
           // Upload to temp folder
           try {
-            setDebugMessages(prev => [...prev, `⬆️ Uploading to temp/${baseKey}...`])
+            log(`⬆️ Uploading to ${tempS3Key}...`)
             await s3.send(new PutObjectCommand({
               Bucket: BUCKET_NAME,
-              Key: `temp/${baseKey}`,
+              Key: tempS3Key,
               Body: new Uint8Array(arrayBuffer),
               ContentType: file.type || "application/octet-stream"
             }))
-            setDebugMessages(prev => [...prev, `✅ Upload to temp/${baseKey} successful`])
+            log(`✅ Upload to ${tempS3Key} successful`)
+            updatePhotoStatus(currentIndex, 'uploading', 0.6)
           } catch (uploadErr) {
-            setDebugMessages(prev => [...prev, `❌ S3 upload error: ${String(uploadErr)}`])
-            throw uploadErr
+            log(`❌ S3 upload error: ${String(uploadErr)}`)
+            updatePhotoStatus(currentIndex, 'error', 0, String(uploadErr))
+            continue
           }
+          
+          // Create S3 preview URL - this would typically be constructed from your S3 bucket URL
+          const s3PreviewUrl = `https://${BUCKET_NAME}.s3.amazonaws.com/${tempS3Key}`
+          log(`🔗 Generated S3 preview URL: ${s3PreviewUrl}`)
           
           let duration: number | null = null
           let thumbnailDataKey: string | null = null
@@ -157,69 +258,91 @@ const SaveAlbum = () => {
           let tempThumbnailKey: string | null = null
 
           if (type.startsWith("video")) {
+            updatePhotoStatus(currentIndex, 'processing', 0.7)
             try {
-              setDebugMessages(prev => [...prev, `🎬 Processing video metadata...`])
+              log(`🎬 Processing video metadata...`)
               duration = Math.round(await getVideoDuration(file))
-              setDebugMessages(prev => [...prev, `⏱️ Video duration: ${duration} seconds`])
+              log(`⏱️ Video duration: ${duration} seconds`)
               
-              setDebugMessages(prev => [...prev, `🎬 Generating video thumbnail...`])
+              log(`🎬 Generating video thumbnail...`)
               const thumbnailBlob = await getVideoThumbnailBlob(file)
               thumbnailDataKey = `Input/Image/${uuidFileName}-thumbnail`
               tempThumbnailKey = `temp/${thumbnailDataKey}`
               thumbnailSize = Math.round(thumbnailBlob.size)
-              setDebugMessages(prev => [...prev, `🎬 Thumbnail generated: ${thumbnailSize} bytes`])
+              log(`🎬 Thumbnail generated: ${thumbnailSize} bytes`)
+              updatePhotoStatus(currentIndex, 'processing', 0.8)
 
               // Convert thumbnail blob to ArrayBuffer
               const thumbnailArrayBuffer = await thumbnailBlob.arrayBuffer()
-              setDebugMessages(prev => [...prev, `📦 Converted thumbnail to ArrayBuffer`])
+              log(`📦 Converted thumbnail to ArrayBuffer`)
               
-              setDebugMessages(prev => [...prev, `⬆️ Uploading thumbnail to ${tempThumbnailKey}...`])
+              log(`⬆️ Uploading thumbnail to ${tempThumbnailKey}...`)
               await s3.send(new PutObjectCommand({
                 Bucket: BUCKET_NAME,
                 Key: tempThumbnailKey,
                 Body: new Uint8Array(thumbnailArrayBuffer),
                 ContentType: "image/jpeg"
               }))
-              setDebugMessages(prev => [...prev, `✅ Thumbnail upload successful`])
+              log(`✅ Thumbnail upload successful`)
+              updatePhotoStatus(currentIndex, 'processing', 0.9)
             } catch (videoErr) {
-              setDebugMessages(prev => [...prev, `⚠️ Video processing error: ${String(videoErr)}`])
+              log(`⚠️ Video processing error: ${String(videoErr)}`)
+              // Don't fail the whole upload if just the thumbnail fails
             }
           }
 
-          setDebugMessages(prev => [...prev, `✅ File ${index + 1} processing complete`])
-          return {
-            fileName: uuidFileName,
-            previewUrl,
-            type,
-            size: file.size,
-            duration,
-            thumbnailDataKey,
-            thumbnailSize,
-            tempKey: `temp/${baseKey}`,
-            tempThumbnailKey
-          }
-        })
-      )
+          // Update the photo status to complete
+          updatePhotoStatus(currentIndex, 'complete', 1)
+          
+          // Update the photo in selectedPhotos with all the new information
+          setSelectedPhotos(prev => {
+            const updated = [...prev]
+            updated[currentIndex] = {
+              ...updated[currentIndex],
+              s3PreviewUrl, // Now use the S3 URL
+              duration,
+              thumbnailDataKey,
+              thumbnailSize,
+              tempKey: tempS3Key,
+              tempThumbnailKey,
+              status: 'complete',
+              progress: 1
+            }
+            return updated
+          })
+          
+          log(`✅ File ${i + 1} processing complete`)
+        } catch (fileErr) {
+          log(`❌ Error processing file ${i + 1}: ${String(fileErr)}`)
+          updatePhotoStatus(currentIndex, 'error', 0, String(fileErr))
+        }
+      }
     
-      setDebugMessages(prev => [...prev, `✅ All files processed successfully`])
-      const combined = [...selectedPhotos, ...updated]
-      setSelectedPhotos(combined)
-      setDebugMessages(prev => [...prev, `📊 Total photos in selection: ${combined.length}`])
+      log(`✅ All files processed`)
+      
+      // Revoke object URLs to prevent memory leaks
+      initialPhotos.forEach(photo => {
+        if (photo.s3PreviewUrl.startsWith('blob:')) {
+          URL.revokeObjectURL(photo.s3PreviewUrl)
+        }
+      })
     } catch (error) {
-      setDebugMessages(prev => [...prev, `❌ Fatal error in handleAddPhotos: ${String(error)}`])
+      log(`❌ Fatal error in handleAddPhotos: ${String(error)}`)
     } finally {
       e.target.value = ""
     }
   }  
 
   const handleSaveAlbum = async () => {
-    setDebugMessages(prev => [...prev, "🔍 Save Album button clicked"])
+    log("🔍 Save Album button clicked")
+    setIsSavingAlbum(true)
   
     try {
       if (publicUsername?.startsWith("Profile-")) {
-        setDebugMessages(prev => [...prev, "👤 Username starts with Profile-, showing username prompt"])
+        log("👤 Username starts with Profile-, showing username prompt")
         setUsernameInput(publicUsername)
         setShowUsernamePrompt(true)
+        setIsSavingAlbum(false)
         return
       }
   
@@ -227,80 +350,97 @@ const SaveAlbum = () => {
       const token = localStorage.getItem("idToken")
       
       if (!token) {
-        setDebugMessages(prev => [...prev, "❌ No ID token found"])
+        log("❌ No ID token found")
+        setIsSavingAlbum(false)
         return
       }
       
       if (!cognitoUsername) {
-        setDebugMessages(prev => [...prev, "❌ No Cognito username found"])
+        log("❌ No Cognito username found")
+        setIsSavingAlbum(false)
         return
       }
       
       if (!folderId) {
-        setDebugMessages(prev => [...prev, "❌ No folder ID found"])
+        log("❌ No folder ID found")
+        setIsSavingAlbum(false)
         return
       }
       
       if (selectedPhotos.length === 0) {
-        setDebugMessages(prev => [...prev, "❌ No photos selected"])
+        log("❌ No photos selected")
+        setIsSavingAlbum(false)
+        return
+      }
+      
+      // Filter out photos with error status
+      const validPhotos = selectedPhotos.filter(photo => photo.status === 'complete')
+      if (validPhotos.length === 0) {
+        log("❌ No successfully uploaded photos")
+        setIsSavingAlbum(false)
         return
       }
   
-      setDebugMessages(prev => [...prev, `📊 Processing ${selectedPhotos.length} photos`])
+      log(`📊 Processing ${validPhotos.length} photos`)
       const accountId = `${cognitoUsername}_____${cognitoUsername}____Account`
       const folderParts = folderId.split("_____")
       const folderTargetItemIdentifier = folderParts[1].split("____")[0]
-      setDebugMessages(prev => [...prev, `🆔 Folder target identifier: ${folderTargetItemIdentifier}`])
+      log(`🆔 Folder target identifier: ${folderTargetItemIdentifier}`)
   
-      // Move files from temp to public folder - but skip the delete step which is causing issues
-      setDebugMessages(prev => [...prev, "🔄 Starting to copy files from temp to public..."])
-      const processedPhotos = await Promise.all(
-        selectedPhotos.map(async (photo, index) => {
-          setDebugMessages(prev => [...prev, `📝 Processing photo ${index + 1}/${selectedPhotos.length}: ${photo.fileName}`])
-          
-          if (photo.tempKey) {
-            try {
-              // Move main file from temp to public
-              const publicKey = `public/${photo.tempKey.substring(5)}`
-              setDebugMessages(prev => [...prev, `⬆️ Copying from ${photo.tempKey} to ${publicKey}...`])
+      // Move files from temp to public folder
+      log("🔄 Starting to copy files from temp to public...")
+      
+      let completedMoves = 0
+      const totalMoves = validPhotos.length
+      
+      for (let index = 0; index < validPhotos.length; index++) {
+        const photo = validPhotos[index]
+        log(`📝 Processing photo ${index + 1}/${validPhotos.length}: ${photo.fileName}`)
+        
+        if (photo.tempKey) {
+          try {
+            // Move main file from temp to public
+            const publicKey = `public/${photo.tempKey.substring(5)}`
+            log(`⬆️ Copying from ${photo.tempKey} to ${publicKey}...`)
+            
+            await s3.send(new CopyObjectCommand({
+              Bucket: BUCKET_NAME,
+              CopySource: `${BUCKET_NAME}/${photo.tempKey}`,
+              Key: publicKey
+            }))
+            log(`✅ Copy successful`)
+            
+            // Skip the delete step for now as it's causing issues
+            log(`⏩ Skipping deletion of temp files to avoid errors`)
+            
+            // Move thumbnail if exists
+            if (photo.tempThumbnailKey) {
+              const publicThumbnailKey = `public/${photo.tempThumbnailKey.substring(5)}`
+              log(`⬆️ Copying thumbnail from ${photo.tempThumbnailKey} to ${publicThumbnailKey}...`)
               
               await s3.send(new CopyObjectCommand({
                 Bucket: BUCKET_NAME,
-                CopySource: `${BUCKET_NAME}/${photo.tempKey}`,
-                Key: publicKey
+                CopySource: `${BUCKET_NAME}/${photo.tempThumbnailKey}`,
+                Key: publicThumbnailKey
               }))
-              setDebugMessages(prev => [...prev, `✅ Copy successful`])
-              
-              // Skip the delete step for now as it's causing issues
-              setDebugMessages(prev => [...prev, `⏩ Skipping deletion of temp files to avoid errors`])
-              
-              // Move thumbnail if exists
-              if (photo.tempThumbnailKey) {
-                const publicThumbnailKey = `public/${photo.tempThumbnailKey.substring(5)}`
-                setDebugMessages(prev => [...prev, `⬆️ Copying thumbnail from ${photo.tempThumbnailKey} to ${publicThumbnailKey}...`])
-                
-                await s3.send(new CopyObjectCommand({
-                  Bucket: BUCKET_NAME,
-                  CopySource: `${BUCKET_NAME}/${photo.tempThumbnailKey}`,
-                  Key: publicThumbnailKey
-                }))
-                setDebugMessages(prev => [...prev, `✅ Thumbnail copy successful`])
-                
-                // Skip the thumbnail delete step too
-              }
-            } catch (moveErr) {
-              setDebugMessages(prev => [...prev, `❌ Error copying files: ${String(moveErr)}`])
-              throw moveErr
+              log(`✅ Thumbnail copy successful`)
             }
-          } else {
-            setDebugMessages(prev => [...prev, `⚠️ Photo ${index + 1} has no tempKey, skipping`])
+            
+            completedMoves++
+            // Update progress in UI
+            const moveProgress = (completedMoves / totalMoves) * 100
+            document.getElementById('saveProgress')?.style.setProperty('width', `${moveProgress}%`)
+          } catch (moveErr) {
+            log(`❌ Error copying files: ${String(moveErr)}`)
+            throw moveErr
           }
-          
-          setDebugMessages(prev => [...prev, `✅ Photo ${index + 1} processing complete`])
-          return photo
-        })
-      )
-      setDebugMessages(prev => [...prev, "✅ All files copied successfully"])
+        } else {
+          log(`⚠️ Photo ${index + 1} has no tempKey, skipping`)
+        }
+        
+        log(`✅ Photo ${index + 1} processing complete`)
+      }
+      log("✅ All files copied successfully")
   
       const folderPositionInput = {
         currentTime: now,
@@ -308,7 +448,7 @@ const SaveAlbum = () => {
         profileIds: ["Only Me_____Only Me____Profile"],
         folderPositionSelectedTagInputs: [],
         folderPositionPoints: 1,
-        acceptedFileReferenceIds: processedPhotos.map(photo =>
+        acceptedFileReferenceIds: validPhotos.map(photo =>
           `${folderTargetItemIdentifier}_____${photo.fileName}____FileReference`
         ),
         hiddenFileReferenceIds: [],
@@ -326,7 +466,7 @@ const SaveAlbum = () => {
         }
       }
   
-      const updatedFileReferenceInputs = processedPhotos.map(photo => {
+      const updatedFileReferenceInputs = validPhotos.map(photo => {
         const dataKey = photo.type === "video" || photo.type?.startsWith("video")
           ? `Input/Video/${photo.fileName}`
           : `Input/Image/${photo.fileName}`
@@ -381,6 +521,12 @@ const SaveAlbum = () => {
         folderPositionInputs: [folderPositionInput],
         updatedFileReferenceInputs,
       }
+      
+      log("📊 Sending GraphQL mutation to save album...")
+      const saveProgressText = document.getElementById('saveProgressText')
+if (saveProgressText) {
+  saveProgressText.innerText = "Finalizing album..."
+}
   
       const response = await fetch(GRAPHQL_ENDPOINT, {
         method: "POST",
@@ -394,19 +540,23 @@ const SaveAlbum = () => {
       const json = await response.json()
   
       if (json.errors) {
-        setDebugMessages(prev => [...prev, "❌ Upload failed", JSON.stringify(json.errors, null, 2)])
+        log("❌ Upload failed: " + (json.errors ? JSON.stringify(json.errors, null, 2) : "Unknown error"))
+        setIsSavingAlbum(false)
       } else {
-        // Clean up ObjectURLs
-        selectedPhotos.forEach(photo => {
-          if (photo.previewUrl) {
-            URL.revokeObjectURL(photo.previewUrl)
-          }
-        })
-
-        window.location.href = "/app/my-albums.html"
+        log("✅ Album saved successfully!")
+        const saveSuccessText = document.getElementById('saveProgressText')
+if (saveSuccessText) {
+  saveSuccessText.innerText = "Album saved successfully!"
+}
+        
+        // Slight delay before redirect for user to see success message
+        setTimeout(() => {
+          window.location.href = "/app/my-albums.html"
+        }, 1000)
       }
     } catch (err) {
-      setDebugMessages(prev => [...prev, "❌ Unexpected error", String(err)])
+      log("❌ Unexpected error: " + String(err))
+      setIsSavingAlbum(false)
     }
   }
   
@@ -509,6 +659,66 @@ const SaveAlbum = () => {
             )}
         </div>
 
+        {/* Progress Tracking Overview */}
+        {progressTracker.totalFiles > 0 && (
+          <div style={{ marginBottom: "24px", backgroundColor: "#fff", padding: "16px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
+            <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>Upload Progress</h3>
+            
+            <div style={{ marginBottom: "12px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", marginBottom: "6px" }}>
+                <span>Overall Progress: {Math.round(progressTracker.overallProgress * 100)}%</span>
+                <span>{progressTracker.filesComplete} of {progressTracker.totalFiles} complete</span>
+              </div>
+              <div style={{ height: "8px", backgroundColor: "#e0e0e0", borderRadius: "4px", overflow: "hidden" }}>
+                <div 
+                  style={{ 
+                    height: "100%", 
+                    width: `${progressTracker.overallProgress * 100}%`, 
+                    backgroundColor: "#4caf50",
+                    borderRadius: "4px",
+                    transition: "width 0.3s ease"
+                  }}
+                />
+              </div>
+            </div>
+            
+            <div style={{ display: "flex", gap: "12px", fontSize: "14px", color: "#666" }}>
+              {progressTracker.filesUploading > 0 && (
+                <div>📤 Uploading: {progressTracker.filesUploading}</div>
+              )}
+              {progressTracker.filesProcessing > 0 && (
+                <div>⚙️ Processing: {progressTracker.filesProcessing}</div>
+              )}
+              {progressTracker.filesComplete > 0 && (
+                <div>✅ Complete: {progressTracker.filesComplete}</div>
+              )}
+              {progressTracker.filesWithError > 0 && (
+                <div style={{ color: "#e53935" }}>❌ Failed: {progressTracker.filesWithError}</div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Save Album Progress */}
+        {isSavingAlbum && (
+          <div style={{ marginBottom: "24px", backgroundColor: "#fff", padding: "16px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
+            <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>Saving Album</h3>
+            <div id="saveProgressText" style={{ fontSize: "14px", marginBottom: "8px" }}>Moving files to permanent storage...</div>
+            <div style={{ height: "8px", backgroundColor: "#e0e0e0", borderRadius: "4px", overflow: "hidden" }}>
+              <div 
+                id="saveProgress"
+                style={{ 
+                  height: "100%", 
+                  width: "5%", 
+                  backgroundColor: "#2196f3",
+                  borderRadius: "4px",
+                  transition: "width 0.3s ease"
+                }}
+              />
+            </div>
+          </div>
+        )}
+
         <input
           type="file"
           id="file-input"
@@ -521,35 +731,107 @@ const SaveAlbum = () => {
         {selectedPhotos.length > 0 && (
           <>
             <p style={{ fontSize: "16px", marginBottom: "16px", color: "#333" }}>
-              {selectedPhotos.length} photo{selectedPhotos.length > 1 ? "s" : ""} ready to upload:
+              {selectedPhotos.length} photo{selectedPhotos.length > 1 ? "s" : ""} selected:
             </p>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginBottom: "32px" }}>
               {selectedPhotos.map((photo, i) => (
                 <div key={i} style={{
                   display: "flex",
-                  alignItems: "center",
+                  flexDirection: "column",
                   backgroundColor: "#fff",
                   border: "1px solid #ddd",
                   borderRadius: "10px",
                   padding: "10px",
-                  boxShadow: "0 2px 6px rgba(0,0,0,0.03)"
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.03)",
+                  width: "160px",
+                  position: "relative"
                 }}>
-                  {photo.type === "video" || photo.type?.startsWith("video") ? (
-                    <video src={photo.previewUrl} controls style={{ width: "120px", height: "auto", borderRadius: "6px" }} />
-                  ) : (
-                    <img src={photo.previewUrl} alt={photo.fileName} style={{ width: "120px", height: "auto", borderRadius: "6px" }} />
-                  )}
-                  <button onClick={() => removePhoto(i)} style={{
-                    marginLeft: "14px",
-                    backgroundColor: "#e53935",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "6px",
-                    padding: "6px 12px",
-                    fontSize: "14px",
-                    cursor: "pointer"
+                  {/* Status indicator */}
+                  <div style={{
+                    position: "absolute",
+                    top: "8px",
+                    right: "8px",
+                    width: "24px",
+                    height: "24px",
+                    borderRadius: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "12px",
+                    backgroundColor: 
+                      photo.status === 'complete' ? '#4caf50' : 
+                      photo.status === 'error' ? '#e53935' :
+                      photo.status === 'uploading' ? '#2196f3' :
+                      photo.status === 'processing' ? '#ff9800' : '#9e9e9e',
+                    color: 'white',
+                    zIndex: 1
                   }}>
+                    {photo.status === 'complete' ? '✓' : 
+                     photo.status === 'error' ? '✕' :
+                     photo.status === 'uploading' ? '↑' :
+                     photo.status === 'processing' ? '⚙️' : '•'}
+                  </div>
+
+                  {/* Media preview */}
+                  <div style={{ position: "relative", marginBottom: "8px", height: "120px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    {photo.type === "video" || photo.type?.startsWith("video") ? (
+                      <video src={photo.s3PreviewUrl} controls style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "6px" }} />
+                    ) : (
+                      <img src={photo.s3PreviewUrl} alt={photo.fileName} style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "6px" }} />
+                    )}
+                    
+                    {/* Upload progress bar for in-progress items */}
+                    {(photo.status === 'uploading' || photo.status === 'processing') && (
+                      <div style={{ 
+                        position: "absolute", 
+                        bottom: "4px", 
+                        left: "4px", 
+                        right: "4px", 
+                        height: "4px", 
+                        backgroundColor: "rgba(0,0,0,0.2)",
+                        borderRadius: "2px",
+                        overflow: "hidden"
+                      }}>
+                        <div style={{ 
+                          height: "100%", 
+                          width: `${photo.progress * 100}%`, 
+                          backgroundColor: photo.status === 'uploading' ? "#2196f3" : "#ff9800",
+                          transition: "width 0.3s ease"
+                        }} />
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* File info */}
+                  <div style={{ fontSize: "12px", color: "#666", marginBottom: "6px" }}>
+                    {photo.type?.startsWith("video") ? "Video" : "Image"}
+                    {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} MB`}
+                    {photo.duration && ` • ${photo.duration}s`}
+                  </div>
+
+                  {/* Error message if any */}
+                  {photo.status === 'error' && photo.errorMessage && (
+                    <div style={{ fontSize: "12px", color: "#e53935", marginBottom: "6px" }}>
+                      Error: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
+                    </div>
+                  )}
+                  
+                  {/* Remove button */}
+                  <button 
+                    onClick={() => removePhoto(i)} 
+                    style={{
+                      backgroundColor: "#e53935",
+                      color: "white",
+                      border: "none",
+                      borderRadius: "6px",
+                      padding: "6px 8px",
+                      fontSize: "12px",
+                      cursor: "pointer",
+                      marginTop: "auto"
+                    }}
+                    disabled={isSavingAlbum}
+                  >
                     Remove
                   </button>
                 </div>
@@ -568,11 +850,14 @@ const SaveAlbum = () => {
               backgroundColor: "#007bff",
               color: "white",
               cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(0, 123, 255, 0.2)"
+              boxShadow: "0 4px 12px rgba(0, 123, 255, 0.2)",
+              opacity: isSavingAlbum ? 0.6 : 1,
+              pointerEvents: isSavingAlbum ? "none" : "auto"
             }}
             onClick={handleSaveAlbum}
+            disabled={isSavingAlbum || selectedPhotos.length === 0}
           >
-            Save Album
+            {isSavingAlbum ? "Saving Album..." : "Save Album"}
           </button>
 
           <button
@@ -584,12 +869,15 @@ const SaveAlbum = () => {
               backgroundColor: "#6c757d",
               color: "white",
               cursor: "pointer",
-              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.08)"
+              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.08)",
+              opacity: isSavingAlbum ? 0.6 : 1,
+              pointerEvents: isSavingAlbum ? "none" : "auto"
             }}
             onClick={() => {
               const input = document.getElementById("file-input") as HTMLInputElement
               input?.click()
             }}
+            disabled={isSavingAlbum}
           >
             Add More Photos
           </button>
@@ -680,16 +968,13 @@ const SaveAlbum = () => {
         )}
       </div>
 
-      {(
+      {debugMessages.length > 0 && (
         <div style={{ marginTop: "40px", background: "#fff3cd", padding: "16px", borderRadius: "8px", border: "1px solid #ffeeba" }}>
           <h3 style={{ marginTop: 0, fontSize: "18px", color: "#856404" }}>Debug Log</h3>
           <pre style={{ fontSize: "14px", color: "#856404", whiteSpace: "pre-wrap", maxHeight: "400px", overflow: "auto" }}>
-            {debugMessages.length > 0 ? 
-              debugMessages.map((msg, i) => (
-                <div key={i} style={{ marginBottom: "8px" }}>{msg}</div>
-              )) : 
-              <div>No debug messages yet. Actions will be logged here.</div>
-            }
+            {debugMessages.map((msg, i) => (
+              <div key={i} style={{ marginBottom: "8px" }}>{msg}</div>
+            ))}
           </pre>
         </div>
       )}
