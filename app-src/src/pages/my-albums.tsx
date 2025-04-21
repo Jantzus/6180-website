@@ -505,18 +505,15 @@ const MyAlbums = () => {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         {/* Container for all content with consistent width */}
         <div style={{ width: "100%" }}>
-          {/* First row: My Albums and username */}
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "flex-end", // Changed from space-between to flex-end
               alignItems: "center",
               marginBottom: 16,
               width: "100%",
             }}
           >
-            <h1 style={{ fontSize: 28, margin: 0, color: "#333" }}>My Albums</h1>
-            
             {publicUsername && (
               <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
             )}
@@ -548,7 +545,7 @@ const MyAlbums = () => {
                 }}
                 disabled={isUploading}
               >
-                {isUploading ? "Creating Album..." : "New Album"}
+                {isUploading ? "Creating Album..." : "Create Album"}
               </button>
               <input 
                 type="file" 
@@ -647,43 +644,18 @@ const MyAlbums = () => {
               <div
                 key={folder.folderId}
                 style={{
-                  display: "flex",
-                  alignItems: "center",
                   marginBottom: 30,
                   width: "100%",
                 }}
               >
-                <div style={{ 
-                  marginRight: 16, 
-                  display: "flex", 
-                  flexDirection: "column", 
-                  justifyContent: "center",
-                  alignItems: "center",
-                  alignSelf: "center"
-                }}>
-                  <button
-                    onClick={handleCopy}
-                    style={{
-                      padding: "8px 12px",
-                      backgroundColor: "#e0e0e0",
-                      border: "none",
-                      borderRadius: 6,
-                      cursor: "pointer",
-                      fontSize: 14,
-                      textAlign: "center"
-                    }}
-                  >
-                    Copy Link
-                  </button>
-                </div>
-
                 <a
                   href={inviteLink}
                   style={{
                     textDecoration: "none",
                     color: "inherit",
-                    flex: 1,
+                    display: "block",
                     width: "100%",
+                    overflow: "hidden" // Add overflow hidden to prevent content from extending beyond container
                   }}
                 >
                   <div
@@ -693,8 +665,11 @@ const MyAlbums = () => {
                       padding: 20,
                       boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
                       transition: "box-shadow 0.2s ease",
-                      width: "100%", 
+                      width: "100%",
+                      maxWidth: "100%", // Ensure it doesn't exceed parent width
                       position: "relative",
+                      boxSizing: "border-box", // Include padding in width calculation
+                      overflow: "hidden" // Prevent content from extending beyond the card
                     }}
                     onMouseOver={(e) =>
                       ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
@@ -750,6 +725,7 @@ const MyAlbums = () => {
                           msOverflowStyle: "none", 
                           scrollbarWidth: "thin",
                           WebkitOverflowScrolling: "touch",
+                          maxWidth: "100%", // Ensure content doesn't exceed container width
                         }}
                       >
                         {folder.files.map((file, i) => (
@@ -782,6 +758,33 @@ const MyAlbums = () => {
                           }}
                         />
                       )}
+                    </div>
+                    
+                    {/* Footer section with Copy Link button */}
+                    <div style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      marginTop: 16
+                    }}>
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault(); 
+                          e.stopPropagation();
+                          handleCopy(e);
+                        }}
+                        style={{
+                          padding: "8px 12px",
+                          backgroundColor: "#e0e0e0",
+                          border: "none",
+                          borderRadius: 6,
+                          cursor: "pointer",
+                          fontSize: 14,
+                          textAlign: "center"
+                        }}
+                      >
+                        Copy Link
+                      </button>
+                      <div></div> {/* Empty div to push Copy Link to the left */}
                     </div>
                   </div>
                 </a>

@@ -758,24 +758,25 @@ const SaveAlbum = () => {
     >
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-          <h1 style={{ fontSize: "28px", color: "#222", margin: 0 }}>Save Album</h1>
+          <h1 style={{ fontSize: "28px", color: "#222", margin: 0 }}></h1>
             {publicUsername && (
               <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                 <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
-                <button
-                  onClick={handleLogout}
-                  style={{
-                    fontSize: "14px",
-                    padding: "6px 12px",
-                    backgroundColor: "#e53935",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "6px",
-                    cursor: "pointer"
-                  }}
-                >
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLogout();
+                    }}
+                    style={{
+                      fontSize: "14px",
+                      color: "#666",
+                      textDecoration: "underline",
+                      cursor: "pointer"
+                    }}
+                  >
                   Log Out
-                </button>
+                </a>
               </div>
             )}
         </div>
