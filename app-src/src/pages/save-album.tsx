@@ -428,19 +428,12 @@ const SaveAlbum = () => {
     }
   }  
 
-  const handleSaveAlbum = async () => {
-    log("🔍 Save Album button clicked")
+  // New function that contains just the album saving logic without the username checks
+  const saveAlbumDirectly = async () => {
+    log("🔍 Executing album save directly after username update")
     setIsSavingAlbum(true)
-  
+
     try {
-      if (publicUsername?.startsWith("Profile-")) {
-        log("👤 Username starts with Profile-, showing username prompt")
-        setUsernameInput(publicUsername)
-        setShowUsernamePrompt(true)
-        setIsSavingAlbum(false)
-        return
-      }
-  
       const now = Math.floor(Date.now() / 1000)
       const token = localStorage.getItem("idToken")
       
@@ -475,13 +468,13 @@ const SaveAlbum = () => {
         setIsSavingAlbum(false)
         return
       }
-  
+
       log(`📊 Processing ${validPhotos.length} photos`)
       const accountId = `${cognitoUsername}_____${cognitoUsername}____Account`
       const folderParts = folderId.split("_____")
       const folderTargetItemIdentifier = folderParts[1].split("____")[0]
       log(`🆔 Folder target identifier: ${folderTargetItemIdentifier}`)
-  
+
       // Move files from temp to public folder
       log("🔄 Starting to copy files from temp to public...")
       
@@ -536,7 +529,7 @@ const SaveAlbum = () => {
         log(`✅ Photo ${index + 1} processing complete`)
       }
       log("✅ All files copied successfully")
-  
+
       const folderPositionInput = {
         currentTime: now,
         folderId,
@@ -560,14 +553,14 @@ const SaveAlbum = () => {
           }
         }
       }
-  
+
       const updatedFileReferenceInputs = validPhotos.map(photo => {
         const dataKey = photo.type === "video" || photo.type?.startsWith("video")
           ? `Input/Video/${photo.fileName}`
           : `Input/Image/${photo.fileName}`
-  
+
         const fileId = `${cognitoUsername}_____${photo.fileName}____File`
-  
+
         return {
           fileReferencesHolderId: folderId,
           currentTime: now,
@@ -595,7 +588,7 @@ const SaveAlbum = () => {
           }
         }
       })
-  
+
       const mutation = `
         mutation MyMutation(
           $folderPositionInputs: [FolderPositionInput!],
@@ -611,7 +604,7 @@ const SaveAlbum = () => {
           }
         }
       `
-  
+
       const variables = {
         folderPositionInputs: [folderPositionInput],
         updatedFileReferenceInputs,
@@ -622,7 +615,7 @@ const SaveAlbum = () => {
       if (saveProgressText) {
         saveProgressText.innerText = "Finalizing album..."
       }
-  
+
       const response = await fetch(GRAPHQL_ENDPOINT, {
         method: "POST",
         headers: {
@@ -631,9 +624,9 @@ const SaveAlbum = () => {
         },
         body: JSON.stringify({ query: mutation, variables }),
       })
-  
+
       const json = await response.json()
-  
+
       if (json.errors) {
         log("❌ Upload failed: " + (json.errors ? JSON.stringify(json.errors, null, 2) : "Unknown error"))
         setIsSavingAlbum(false)
@@ -661,9 +654,32 @@ const SaveAlbum = () => {
       setIsSavingAlbum(false)
     }
   }
+
+  // Modified to check username and either show prompt or call saveAlbumDirectly
+  const handleSaveAlbum = async () => {
+    log("🔍 Save Album button clicked")
+    setIsSavingAlbum(true)
+
+    try {
+      if (publicUsername?.startsWith("Profile-")) {
+        log("👤 Username starts with Profile-, showing username prompt")
+        setUsernameInput(publicUsername)
+        setShowUsernamePrompt(true)
+        setIsSavingAlbum(false)
+        return
+      }
+
+      // If we have a valid username, proceed directly to saving
+      saveAlbumDirectly()
+    } catch (err) {
+      log("❌ Unexpected error in handleSaveAlbum: " + String(err))
+      setIsSavingAlbum(false)
+    }
+  }
   
   const validateUsername = (username: string) => /^[a-zA-Z0-9-]+$/.test(username)
 
+  // Modified to call saveAlbumDirectly instead of handleSaveAlbum
   const submitUsername = async (proposedName: string) => {
     setIsSubmittingUsername(true)
     setUsernameError("")
@@ -706,8 +722,9 @@ const SaveAlbum = () => {
         setShowUsernamePrompt(false)
         
         // Automatically proceed with saving the album after username is set
+        // Call saveAlbumDirectly instead of handleSaveAlbum to avoid the check loop
         log("👤 Username saved successfully, automatically proceeding to save album")
-        handleSaveAlbum()
+        saveAlbumDirectly()
       } else {
         throw new Error("Username taken")
       }

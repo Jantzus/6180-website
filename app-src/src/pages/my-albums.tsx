@@ -207,7 +207,6 @@ const MyAlbums = () => {
   }, [selectedPhotos])
 
   const clearAlbumData = () => {
-
     log("🧹 Clearing all album data...")
     
     setIsUploading(false)
@@ -224,7 +223,6 @@ const MyAlbums = () => {
     })
     
     log("✅ Album data cleared successfully")
-
   }
 
   // Function to open file picker
@@ -505,278 +503,296 @@ const MyAlbums = () => {
       }}
     >
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: 24,
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        {/* Container for all content with consistent width */}
+        <div style={{ width: "100%" }}>
+          {/* First row: My Albums and username */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: 16,
+              width: "100%",
+            }}
+          >
             <h1 style={{ fontSize: 28, margin: 0, color: "#333" }}>My Albums</h1>
-            <button
-              onClick={openFilePicker}
-              style={{
-                fontSize: "14px",
-                padding: "8px 16px",
-                backgroundColor: "#007bff",
-                color: "white",
-                border: "none",
-                borderRadius: "6px",
-                cursor: "pointer",
-                opacity: isUploading ? 0.6 : 1,
-                pointerEvents: isUploading ? "none" : "auto"
-              }}
-              disabled={isUploading}
-            >
-              {isUploading ? "Creating Album..." : "New Album"}
-            </button>
-            <input 
-              type="file" 
-              id="file-input" 
-              ref={fileInputRef}
-              accept="image/*,video/*" 
-              multiple 
-              style={{ display: "none" }}
-              onChange={handleFileSelection}
-            />
-          </div>
-
-          {publicUsername && (
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            
+            {publicUsername && (
               <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
+            )}
+          </div>
+          
+          {/* Second row: New Album and Log Out buttons */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: 24,
+              width: "100%",
+            }}
+          >
+            <div>
               <button
-                onClick={handleLogout}
+                onClick={openFilePicker}
                 style={{
                   fontSize: "14px",
-                  padding: "6px 12px",
-                  backgroundColor: "#e53935",
+                  padding: "8px 16px",
+                  backgroundColor: "#007bff",
                   color: "white",
                   border: "none",
                   borderRadius: "6px",
+                  cursor: "pointer",
+                  opacity: isUploading ? 0.6 : 1,
+                  pointerEvents: isUploading ? "none" : "auto"
+                }}
+                disabled={isUploading}
+              >
+                {isUploading ? "Creating Album..." : "New Album"}
+              </button>
+              <input 
+                type="file" 
+                id="file-input" 
+                ref={fileInputRef}
+                accept="image/*,video/*" 
+                multiple 
+                style={{ display: "none" }}
+                onChange={handleFileSelection}
+              />
+            </div>
+
+            {publicUsername && (
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLogout();
+                }}
+                style={{
+                  fontSize: "14px",
+                  color: "#666",
+                  textDecoration: "underline",
                   cursor: "pointer"
                 }}
               >
                 Log Out
-              </button>
+              </a>
+            )}
+          </div>
+
+          {/* Progress Tracking Overview */}
+          {progressTracker.totalFiles > 0 && (
+            <div style={{ marginBottom: "24px", backgroundColor: "#fff", padding: "16px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)", width: "100%" }}>
+              <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>Upload Progress</h3>
+              
+              <div style={{ marginBottom: "12px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", marginBottom: "6px" }}>
+                  <span>Overall Progress: {Math.round(progressTracker.overallProgress * 100)}%</span>
+                  <span>{progressTracker.filesComplete} of {progressTracker.totalFiles} complete</span>
+                </div>
+                <div style={{ height: "8px", backgroundColor: "#e0e0e0", borderRadius: "4px", overflow: "hidden" }}>
+                  <div 
+                    style={{ 
+                      height: "100%", 
+                      width: `${progressTracker.overallProgress * 100}%`, 
+                      backgroundColor: "#4caf50",
+                      borderRadius: "4px",
+                      transition: "width 0.3s ease"
+                    }}
+                  />
+                </div>
+              </div>
+              
+              <div style={{ display: "flex", gap: "12px", fontSize: "14px", color: "#666" }}>
+                {progressTracker.filesUploading > 0 && (
+                  <div>📤 Uploading: {progressTracker.filesUploading}</div>
+                )}
+                {progressTracker.filesProcessing > 0 && (
+                  <div>⚙️ Processing: {progressTracker.filesProcessing}</div>
+                )}
+                {progressTracker.filesComplete > 0 && (
+                  <div>✅ Complete: {progressTracker.filesComplete}</div>
+                )}
+                {progressTracker.filesWithError > 0 && (
+                  <div style={{ color: "#e53935" }}>❌ Failed: {progressTracker.filesWithError}</div>
+                )}
+              </div>
             </div>
           )}
-        </div>
 
-        {/* Progress Tracking Overview */}
-        {progressTracker.totalFiles > 0 && (
-          <div style={{ marginBottom: "24px", backgroundColor: "#fff", padding: "16px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
-            <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>Upload Progress</h3>
-            
-            <div style={{ marginBottom: "12px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", marginBottom: "6px" }}>
-                <span>Overall Progress: {Math.round(progressTracker.overallProgress * 100)}%</span>
-                <span>{progressTracker.filesComplete} of {progressTracker.totalFiles} complete</span>
-              </div>
-              <div style={{ height: "8px", backgroundColor: "#e0e0e0", borderRadius: "4px", overflow: "hidden" }}>
-                <div 
-                  style={{ 
-                    height: "100%", 
-                    width: `${progressTracker.overallProgress * 100}%`, 
-                    backgroundColor: "#4caf50",
-                    borderRadius: "4px",
-                    transition: "width 0.3s ease"
-                  }}
-                />
-              </div>
-            </div>
-            
-            <div style={{ display: "flex", gap: "12px", fontSize: "14px", color: "#666" }}>
-              {progressTracker.filesUploading > 0 && (
-                <div>📤 Uploading: {progressTracker.filesUploading}</div>
-              )}
-              {progressTracker.filesProcessing > 0 && (
-                <div>⚙️ Processing: {progressTracker.filesProcessing}</div>
-              )}
-              {progressTracker.filesComplete > 0 && (
-                <div>✅ Complete: {progressTracker.filesComplete}</div>
-              )}
-              {progressTracker.filesWithError > 0 && (
-                <div style={{ color: "#e53935" }}>❌ Failed: {progressTracker.filesWithError}</div>
-              )}
-            </div>
-          </div>
-        )}
+          {folders.length === 0 && !isUploading && (
+            <p style={{ fontSize: 16, color: "#555", width: "100%" }}>No albums found or still loading...</p>
+          )}
 
-        {folders.length === 0 && !isUploading && (
-          <p style={{ fontSize: 16, color: "#555" }}>No albums found or still loading...</p>
-        )}
+          {folders.map((folder) => {
+            const showCreated = folder.createdAt != null
+            const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt
 
-        {folders.map((folder) => {
-          const showCreated = folder.createdAt != null
-          const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt
+            const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`
+            const inviteLink = `https://6180.io/photos/${folderInvite}`
 
-          const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`
-          const inviteLink = `https://6180.io/photos/${folderInvite}`
-          
-          // No longer need folderState with the standard browser prompt
+            const handleCopy = (e: React.MouseEvent) => {
+              e.preventDefault()
+              navigator.clipboard.writeText(inviteLink)
+                .then(() => {
+                  alert("Link has been copied to your clipboard.")
+                })
+                .catch(err => {
+                  console.error("Failed to copy link:", err)
+                  alert("Failed to copy link to clipboard.")
+                })
+            }
 
-          const handleCopy = (e: React.MouseEvent) => {
-            e.preventDefault()
-            navigator.clipboard.writeText(inviteLink)
-              .then(() => {
-                alert("Link has been copied to your clipboard.")
-              })
-              .catch(err => {
-                console.error("Failed to copy link:", err)
-                alert("Failed to copy link to clipboard.")
-              })
-          }
-
-          return (
-            <div
-              key={folder.folderId}
-              style={{
-                display: "flex",
-                alignItems: "center", // Changed from flex-start to center for vertical alignment
-                marginBottom: 30,
-              }}
-            >
-              <div style={{ 
-                marginRight: 16, 
-                display: "flex", 
-                flexDirection: "column", 
-                justifyContent: "center",
-                alignItems: "center",
-                alignSelf: "center"
-              }}>
-                <button
-                  onClick={handleCopy}
-                  style={{
-                    padding: "8px 12px",
-                    backgroundColor: "#e0e0e0",
-                    border: "none",
-                    borderRadius: 6,
-                    cursor: "pointer",
-                    fontSize: 14,
-                    textAlign: "center"
-                  }}
-                >
-                  Copy Link
-                </button>
-              </div>
-
-              <a
-                href={inviteLink}
+            return (
+              <div
+                key={folder.folderId}
                 style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  flex: 1,
-                  maxWidth: "80%", // Limit the entire album container to 80% width
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: 30,
+                  width: "100%",
                 }}
               >
-                <div
+                <div style={{ 
+                  marginRight: 16, 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  justifyContent: "center",
+                  alignItems: "center",
+                  alignSelf: "center"
+                }}>
+                  <button
+                    onClick={handleCopy}
+                    style={{
+                      padding: "8px 12px",
+                      backgroundColor: "#e0e0e0",
+                      border: "none",
+                      borderRadius: 6,
+                      cursor: "pointer",
+                      fontSize: 14,
+                      textAlign: "center"
+                    }}
+                  >
+                    Copy Link
+                  </button>
+                </div>
+
+                <a
+                  href={inviteLink}
                   style={{
-                    background: "#fff",
-                    borderRadius: 12,
-                    padding: 20,
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                    transition: "box-shadow 0.2s ease",
-                    width: "100%", // Take full width of the parent (which is limited to 80%)
-                    position: "relative", // For positioning the delete link
+                    textDecoration: "none",
+                    color: "inherit",
+                    flex: 1,
+                    width: "100%",
                   }}
-                  onMouseOver={(e) =>
-                    ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
-                  }
-                  onMouseOut={(e) =>
-                    ((e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"))
-                  }
                 >
                   <div
                     style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      marginBottom: 16,
+                      background: "#fff",
+                      borderRadius: 12,
+                      padding: 20,
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                      transition: "box-shadow 0.2s ease",
+                      width: "100%", 
+                      position: "relative",
                     }}
+                    onMouseOver={(e) =>
+                      ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
+                    }
+                    onMouseOut={(e) =>
+                      ((e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"))
+                    }
                   >
-                    <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
-                      {folder.folderName || ""}
-                    </h2>
-                    <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                      {(showCreated || showUpdated) && (
-                        <div style={{ fontSize: 13, color: "#777", textAlign: "right" }}>
-                          {showCreated && <div>Created: {formatDate(folder.createdAt)}</div>}
-                          {showUpdated && <div>Updated: {formatDate(folder.updatedAt)}</div>}
-                        </div>
-                      )}
-                      <a
-                        href="#"
-                        onClick={(e) => handleDeleteClick(e, folder.folderPositionId)}
-                        style={{
-                          fontSize: "13px",
-                          color: "#d32f2f",
-                          textDecoration: "none",
-                        }}
-                      >
-                        Delete
-                      </a>
-                    </div>
-                  </div>
-
-                  <div 
-                    style={{ 
-                      width: "100%", // Full width of parent (which is already constrained)
-                      position: "relative", // For scroll indicator
-                    }}
-                  >
-                    <div 
-                      style={{ 
-                        display: "flex", 
-                        overflowX: "auto",
-                        gap: 12,
-                        paddingBottom: 8, // Space for scrollbar
-                        msOverflowStyle: "none", 
-                        scrollbarWidth: "thin",
-                        WebkitOverflowScrolling: "touch", // Smooth scrolling on iOS
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginBottom: 16,
                       }}
                     >
-                      {folder.files.map((file, i) => (
-                        <img
-                          key={i}
-                          src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
-                          alt="Thumbnail"
+                      <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
+                        {folder.folderName || ""}
+                      </h2>
+                      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                        {(showCreated || showUpdated) && (
+                          <div style={{ fontSize: 13, color: "#777", textAlign: "right" }}>
+                            {showCreated && <div>Created: {formatDate(folder.createdAt)}</div>}
+                            {showUpdated && <div>Updated: {formatDate(folder.updatedAt)}</div>}
+                          </div>
+                        )}
+                        <a
+                          href="#"
+                          onClick={(e) => handleDeleteClick(e, folder.folderPositionId)}
                           style={{
-                            width: 160, // Slightly larger thumbnails
-                            height: 100, // Maintain aspect ratio
-                            objectFit: "cover",
-                            borderRadius: 6,
-                            border: "1px solid #ddd",
-                            flexShrink: 0,
+                            fontSize: "13px",
+                            color: "#d32f2f",
+                            textDecoration: "none",
+                          }}
+                        >
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+
+                    <div 
+                      style={{ 
+                        width: "100%",
+                        position: "relative",
+                      }}
+                    >
+                      <div 
+                        style={{ 
+                          display: "flex", 
+                          overflowX: "auto",
+                          gap: 12,
+                          paddingBottom: 8,
+                          msOverflowStyle: "none", 
+                          scrollbarWidth: "thin",
+                          WebkitOverflowScrolling: "touch",
+                        }}
+                      >
+                        {folder.files.map((file, i) => (
+                          <img
+                            key={i}
+                            src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
+                            alt="Thumbnail"
+                            style={{
+                              width: 160,
+                              height: 100,
+                              objectFit: "cover",
+                              borderRadius: 6,
+                              border: "1px solid #ddd",
+                              flexShrink: 0,
+                            }}
+                          />
+                        ))}
+                      </div>
+                      
+                      {folder.files.length > 3 && (
+                        <div 
+                          style={{
+                            position: "absolute",
+                            right: 0,
+                            top: 0,
+                            bottom: 8,
+                            width: 30,
+                            background: "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
+                            pointerEvents: "none",
                           }}
                         />
-                      ))}
+                      )}
                     </div>
-                    
-                    {folder.files.length > 3 && (
-                      <div 
-                        style={{
-                          position: "absolute",
-                          right: 0,
-                          top: 0,
-                          bottom: 8, // Match padding of container
-                          width: 30,
-                          background: "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
-                          pointerEvents: "none", // Allow clicks to pass through
-                        }}
-                      />
-                    )}
                   </div>
-                </div>
-              </a>
-            </div>
-          )
-        })}
+                </a>
+              </div>
+            )
+          })}
+        </div>
       </div>
 
       {debugMessages.length > 0 && (
-        <div style={{ marginTop: "40px", background: "#fff3cd", padding: "16px", borderRadius: "8px", border: "1px solid #ffeeba" }}>
+        <div style={{ marginTop: "40px", background: "#fff3cd", padding: "16px", borderRadius: "8px", border: "1px solid #ffeeba", maxWidth: 900, margin: "0 auto" }}>
           <h3 style={{ marginTop: 0, fontSize: "18px", color: "#856404" }}>Debug Log</h3>
           <pre style={{ fontSize: "14px", color: "#856404", whiteSpace: "pre-wrap", maxHeight: "400px", overflow: "auto" }}>
             {debugMessages.map((msg, i) => (
