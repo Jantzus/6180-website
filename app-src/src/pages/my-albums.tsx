@@ -41,7 +41,8 @@ interface File {
 }
 
 interface Folder {
-  id: string
+  folderPositionId: string
+  folderId: string
   folderName: string | null
   createdAt: number | null
   updatedAt: number | null
@@ -104,6 +105,7 @@ const MyAlbums = () => {
           fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
             items {
               ... on FolderPosition {
+                id
                 folder {
                   id
                   folderName
@@ -153,7 +155,8 @@ const MyAlbums = () => {
           const folder = item.folder
           const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
           return {
-            id: folder.id,
+            folderPositionId: item.id,
+            folderId: folder.id,
             folderName: folder.folderName,
             createdAt: folder.createdAt,
             updatedAt: folder.updatedAt,
@@ -202,6 +205,27 @@ const MyAlbums = () => {
       overallProgress
     })
   }, [selectedPhotos])
+
+  const clearAlbumData = () => {
+
+    log("🧹 Clearing all album data...")
+    
+    setIsUploading(false)
+
+    // Reset states
+    setSelectedPhotos([])
+    setProgressTracker({
+      totalFiles: 0,
+      filesComplete: 0,
+      filesUploading: 0,
+      filesProcessing: 0,
+      filesWithError: 0,
+      overallProgress: 0
+    })
+    
+    log("✅ Album data cleared successfully")
+
+  }
 
   // Function to open file picker
   const openFilePicker = () => {
@@ -391,6 +415,9 @@ const MyAlbums = () => {
       
       // Redirect to save-album page
       window.location.href = "/app/save-album.html"
+
+      clearAlbumData()
+
     } catch (error) {
       log(`❌ Fatal error in handleFileSelection: ${String(error)}`)
       setIsUploading(false)
@@ -400,22 +427,28 @@ const MyAlbums = () => {
   }
 
   // Handle deletion confirmation dialog
-  const handleDeleteClick = (e: React.MouseEvent, folderId: string) => {
+  const handleDeleteClick = async (e: React.MouseEvent, folderPositionId: string) => {
     e.preventDefault()
     const confirmText = window.prompt("Please type \"delete\" to confirm that you want to permanently delete this album")
     
     if (confirmText && confirmText.toLowerCase() === "delete") {
       try {
-        // Delete logic here
-        console.log("Deleting album with id:", folderId)
+        console.log("Deleting album with id:", folderPositionId)
         
-        // Example delete request - replace with your actual implementation
-        /*
-        const token = localStorage.getItem("token")
+        const token = localStorage.getItem("token") || checkLoginOrRedirect()
+        if (!token) {
+          console.error("No token found")
+          return
+        }
+        
         const deleteQuery = `
-          mutation DeleteFolder($folderId: ID!) {
-            deleteFolder(id: $folderId) {
-              success
+          mutation DeleteFolderPosition($deletedFolderPositionIds: [ID!]) {
+            changeFiles(deletedFolderPositionIds: $deletedFolderPositionIds) {
+              items {
+                ... on IdObject {
+                  id
+                }
+              }
             }
           }
         `
@@ -428,22 +461,27 @@ const MyAlbums = () => {
           },
           body: JSON.stringify({ 
             query: deleteQuery, 
-            variables: { folderId } 
+            variables: { 
+              deletedFolderPositionIds: [folderPositionId] 
+            } 
           }),
         })
         
         const json = await res.json()
         
-        if (json?.data?.deleteFolder?.success) {
+        if (json?.data?.changeFiles?.items) {
+          log(`✅ Successfully deleted folder position ${folderPositionId}`)
           // Remove folder from the state
-          setFolders(prevFolders => prevFolders.filter(folder => folder.id !== folderId))
+          setFolders(prevFolders => prevFolders.filter(folder => folder.folderPositionId !== folderPositionId))
+        } else if (json.errors) {
+          const errorMessage = json.errors[0]?.message || "Unknown GraphQL error"
+          log(`❌ Failed to delete folder: ${errorMessage}`)
+          throw new Error(errorMessage)
         }
-        */
-        
-        // For now, just remove the folder from state
-        setFolders(prevFolders => prevFolders.filter(folder => folder.id !== folderId))
       } catch (err) {
+        log(`❌ Failed to delete folder: ${String(err)}`)
         console.error("Failed to delete folder:", err)
+        alert("Failed to delete this album. Please try again later.")
       }
     }
   }
@@ -574,7 +612,7 @@ const MyAlbums = () => {
           const showCreated = folder.createdAt != null
           const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt
 
-          const folderInvite = `${getOwnerItemId(folder.id)}_${getTargetItemIdentifier(folder.id)}`
+          const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`
           const inviteLink = `https://6180.io/photos/${folderInvite}`
           
           // No longer need folderState with the standard browser prompt
@@ -593,7 +631,7 @@ const MyAlbums = () => {
 
           return (
             <div
-              key={folder.id}
+              key={folder.folderId}
               style={{
                 display: "flex",
                 alignItems: "center", // Changed from flex-start to center for vertical alignment
@@ -670,7 +708,7 @@ const MyAlbums = () => {
                       )}
                       <a
                         href="#"
-                        onClick={(e) => handleDeleteClick(e, folder.id)}
+                        onClick={(e) => handleDeleteClick(e, folder.folderPositionId)}
                         style={{
                           fontSize: "13px",
                           color: "#d32f2f",

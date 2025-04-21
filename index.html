@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>6180</title>
-  <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" href="/favicon.ico"/>
   <style>
     body {
@@ -99,40 +98,498 @@
     .footer a:hover {
       text-decoration: underline;
     }
+
+    /* Upload progress styles */
+    .progress-container {
+      max-width: 300px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: #4caf50;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .progress-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .file-status {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.85em;
+      color: #666;
+    }
   </style>
+  <!-- AWS SDK is loaded dynamically in the getAWSCredentials function -->
   <script>
+    // Define storage keys for consistent access
+    const STORAGE_KEYS = {
+      FOLDER_ID: 'album_folderId',
+      SELECTED_PHOTOS: 'album_selectedPhotos'
+    };
+
+    // Define file upload status types
+    const UploadStatus = {
+      PENDING: 'pending',
+      UPLOADING: 'uploading',
+      PROCESSING: 'processing',
+      COMPLETE: 'complete',
+      ERROR: 'error'
+    };
+
+    // S3 bucket information (matches my-albums.tsx)
+    const GRAPHQL_ENDPOINT = "https://hhmbamfr3fhjjelhzs5fm7hrki.appsync-api.us-east-1.amazonaws.com/graphql";
+    const REGION = "us-east-1";
+    const BUCKET_NAME = "i6180-assets-prod-0";
+    const S3_BUCKET_URL = "https://i6180-assets-prod-0.s3.amazonaws.com/public/";
+    const IDENTITY_POOL_ID = "us-east-1:a5655055-4c58-4173-8d05-af1bb538ec13";
+    const USER_POOL_ID = "us-east-1_rqcAR61SV";
+
+    // Generate a UUID for unique filenames
+    function generateUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
+    // Get video duration using HTML5 video element
+    async function getVideoDuration(file) {
+      return new Promise((resolve, reject) => {
+        const video = document.createElement('video');
+        video.preload = 'metadata';
+        video.onloadedmetadata = () => {
+          resolve(video.duration);
+          URL.revokeObjectURL(video.src);
+        };
+        video.onerror = () => reject(new Error("Failed to load video metadata"));
+        video.src = URL.createObjectURL(file);
+      });
+    }
+
+    // Generate a thumbnail from a video file
+    async function getVideoThumbnailBlob(file) {
+      return new Promise((resolve, reject) => {
+        const video = document.createElement('video');
+        video.preload = 'metadata';
+        
+        video.onloadedmetadata = () => {
+          // Seek to 25% of the video
+          video.currentTime = Math.min(video.duration * 0.25, 5.0);
+        };
+        
+        video.onseeked = () => {
+          const canvas = document.createElement('canvas');
+          canvas.width = 640;
+          canvas.height = 360;
+          
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          
+          canvas.toBlob((blob) => {
+            resolve(blob);
+            URL.revokeObjectURL(video.src);
+          }, 'image/jpeg', 0.7);
+        };
+        
+        video.onerror = () => reject(new Error("Failed to load video"));
+        video.src = URL.createObjectURL(file);
+      });
+    }
+
+    // Initialize the Amazon Cognito credentials provider
+    async function getAWSCredentials() {
+      // Load AWS SDK scripts dynamically
+      if (!window.AWS) {
+        await new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://sdk.amazonaws.com/js/aws-sdk-2.1191.0.min.js';
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      }
+
+      AWS.config.region = REGION;
+      AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: IDENTITY_POOL_ID
+      });
+      
+      try {
+        await new Promise((resolve, reject) => {
+          AWS.config.credentials.get(function(err) {
+            if (err) {
+              console.error("Error getting AWS credentials:", err);
+              reject(err);
+            } else {
+              resolve();
+            }
+          });
+        });
+        return AWS.config.credentials;
+      } catch (error) {
+        console.error("Failed to initialize AWS credentials:", error);
+        throw error;
+      }
+    }
+
+    // Create S3 upload function
+    async function uploadToS3(file, key, contentType) {
+      try {
+        // Get AWS credentials
+        await getAWSCredentials();
+        
+        // Create S3 service object
+        const s3 = new AWS.S3({
+          apiVersion: '2006-03-01',
+          params: { Bucket: BUCKET_NAME }
+        });
+        
+        console.log(`⬆️ Uploading to S3: ${key}`);
+        
+        // Upload file to specified bucket
+        const uploadParams = {
+          Bucket: BUCKET_NAME,
+          Key: key,
+          Body: file,
+          ContentType: contentType || 'application/octet-stream'
+        };
+        
+        // Track upload progress
+        let upload = s3.upload(uploadParams);
+        
+        upload.on('httpUploadProgress', function(evt) {
+          const uploadPercentage = Math.round((evt.loaded / evt.total) * 100);
+          console.log(`Upload progress: ${uploadPercentage}%`);
+          // Here you could update UI with progress if needed
+        });
+        
+        // Wait for upload to complete
+        const data = await upload.promise();
+        console.log(`✅ Upload successful: ${data.Location}`);
+        
+        return data.Location;
+      } catch (err) {
+        console.error("Error uploading file:", err);
+        throw err;
+      }
+    }
+
+    // Progress tracking variables
+    let selectedPhotos = [];
+    let progressTracker = {
+      totalFiles: 0,
+      filesComplete: 0,
+      filesUploading: 0,
+      filesProcessing: 0,
+      filesWithError: 0,
+      overallProgress: 0
+    };
+    let isUploading = false;
+
+    // Update progress UI
+    function updateProgressUI() {
+      const progressContainer = document.getElementById('progress-container');
+      const progressFill = document.getElementById('progress-fill');
+      const progressPercent = document.getElementById('progress-percent');
+      const filesCompleteText = document.getElementById('files-complete');
+      const filesUploadingText = document.getElementById('files-uploading');
+      const filesProcessingText = document.getElementById('files-processing');
+      const filesErrorText = document.getElementById('files-error');
+      
+      if (progressTracker.totalFiles > 0) {
+        progressContainer.style.display = 'block';
+        progressFill.style.width = `${progressTracker.overallProgress * 100}%`;
+        progressPercent.textContent = `${Math.round(progressTracker.overallProgress * 100)}%`;
+        filesCompleteText.textContent = `✅ Complete: ${progressTracker.filesComplete}`;
+        filesUploadingText.textContent = `📤 Uploading: ${progressTracker.filesUploading}`;
+        filesProcessingText.textContent = `⚙️ Processing: ${progressTracker.filesProcessing}`;
+        filesErrorText.textContent = `❌ Failed: ${progressTracker.filesWithError}`;
+        
+        // Show/hide status elements based on count
+        filesUploadingText.style.display = progressTracker.filesUploading > 0 ? 'block' : 'none';
+        filesProcessingText.style.display = progressTracker.filesProcessing > 0 ? 'block' : 'none';
+        filesCompleteText.style.display = progressTracker.filesComplete > 0 ? 'block' : 'none';
+        filesErrorText.style.display = progressTracker.filesWithError > 0 ? 'block' : 'none';
+      } else {
+        progressContainer.style.display = 'none';
+      }
+    }
+
+    // Update progress tracker based on photos status
+    function updateProgressTracker() {
+      if (selectedPhotos.length === 0) {
+        progressTracker = {
+          totalFiles: 0,
+          filesComplete: 0,
+          filesUploading: 0,
+          filesProcessing: 0,
+          filesWithError: 0,
+          overallProgress: 0
+        };
+        return;
+      }
+      
+      const filesUploading = selectedPhotos.filter(p => p.status === UploadStatus.UPLOADING).length;
+      const filesProcessing = selectedPhotos.filter(p => p.status === UploadStatus.PROCESSING).length;
+      const filesComplete = selectedPhotos.filter(p => p.status === UploadStatus.COMPLETE).length;
+      const filesWithError = selectedPhotos.filter(p => p.status === UploadStatus.ERROR).length;
+      
+      // Calculate overall progress
+      const totalProgress = selectedPhotos.reduce((sum, photo) => sum + photo.progress, 0);
+      const overallProgress = Math.round((totalProgress / selectedPhotos.length) * 100) / 100;
+      
+      progressTracker = {
+        totalFiles: selectedPhotos.length,
+        filesComplete,
+        filesUploading,
+        filesProcessing,
+        filesWithError,
+        overallProgress
+      };
+      
+      updateProgressUI();
+    }
+
+    // Update specific photo's status and progress
+    function updatePhotoStatus(index, status, progress, errorMessage) {
+      if (index >= 0 && index < selectedPhotos.length) {
+        selectedPhotos[index] = {
+          ...selectedPhotos[index],
+          status,
+          progress,
+          errorMessage: errorMessage || selectedPhotos[index].errorMessage
+        };
+        updateProgressTracker();
+      }
+    }
+
+    // Clear all data and reset state
+    function clearAlbumData() {
+      console.log("🧹 Clearing all album data...");
+      isUploading = false;
+      selectedPhotos = [];
+      progressTracker = {
+        totalFiles: 0,
+        filesComplete: 0,
+        filesUploading: 0,
+        filesProcessing: 0,
+        filesWithError: 0,
+        overallProgress: 0
+      };
+      updateProgressUI();
+      console.log("✅ Album data cleared successfully");
+    }
+
+    // Open file picker
     function openFilePicker() {
+      if (isUploading) {
+        console.log("Upload in progress, can't open file picker");
+        return;
+      }
+      
       document.getElementById('file-input').click();
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const input = document.getElementById("file-input");
-
-      input.addEventListener("change", function (e) {
-        const files = Array.from(e.target.files);
-        if (!files.length) return;
-
-        const readerPromises = files.map(file => {
-          return new Promise(resolve => {
-            const reader = new FileReader();
-            reader.onload = function (event) {
-              resolve({
-                fileName: file.name,
-                mimeType: file.type,
-                dataUrl: event.target.result,
-                type: file.type
+    // Process uploaded files
+    async function processFiles(files) {
+      if (!files || files.length === 0) return;
+      
+      isUploading = true;
+      const createAlbumButton = document.getElementById('create-album-btn');
+      createAlbumButton.disabled = true;
+      createAlbumButton.textContent = 'Creating Album...';
+      
+      console.log(`📁 Files selected: ${files.length}`);
+      
+      try {
+        console.log("🔄 Starting file processing...");
+        
+        // Get username from localStorage if available, otherwise use a placeholder
+        const cognitoUsername = localStorage.getItem("cognitoUsername") || 'user';
+        
+        // Generate a new folder ID
+        const newFolderId = `${cognitoUsername}_____${generateUUID()}____Folder`;
+        localStorage.setItem(STORAGE_KEYS.FOLDER_ID, newFolderId);
+        console.log(`📁 Created new folder ID: ${newFolderId}`);
+        
+        // First, add files to state with pending status
+        selectedPhotos = Array.from(files).map(file => {
+          const type = file.type;
+          const fileExt = file.name.split('.').pop() || "jpg";
+          const uuidFileName = `${generateUUID()}.${fileExt}`;
+          
+          return {
+            fileName: uuidFileName,
+            s3PreviewUrl: URL.createObjectURL(file), // Use local object URL initially
+            type,
+            size: file.size,
+            status: UploadStatus.PENDING,
+            progress: 0
+          };
+        });
+        
+        updateProgressTracker();
+        
+        // Array to collect processed photos info
+        const processedPhotos = [];
+        
+        // Process each file one by one
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          
+          try {
+            updatePhotoStatus(i, UploadStatus.UPLOADING, 0.1);
+            console.log(`📝 Processing file ${i + 1}/${files.length}: ${file.name} (${file.type})`);
+            
+            const type = file.type;
+            const uuidFileName = selectedPhotos[i].fileName;
+            console.log(`🆔 Generated UUID filename: ${uuidFileName}`);
+            
+            const baseKey = type.startsWith("video")
+              ? `Input/Video/${uuidFileName}`
+              : `Input/Image/${uuidFileName}`;
+            
+            // Generate S3 key locations
+            const tempS3Key = `temp/${baseKey}`;
+            
+            // Upload to temp folder (simulated in this example)
+            try {
+              updatePhotoStatus(i, UploadStatus.UPLOADING, 0.3);
+              console.log(`⬆️ Uploading to ${tempS3Key}...`);
+              
+              // In a real app, replace this with actual S3 upload
+              const s3PreviewUrl = await uploadToS3(file, tempS3Key, file.type);
+              
+              console.log(`✅ Upload to ${tempS3Key} successful`);
+              updatePhotoStatus(i, UploadStatus.UPLOADING, 0.6);
+              
+              let duration = null;
+              let thumbnailDataKey = null;
+              let thumbnailSize = null;
+              let tempThumbnailKey = null;
+              
+              // Handle video files - create thumbnails
+              if (type.startsWith("video")) {
+                updatePhotoStatus(i, UploadStatus.PROCESSING, 0.7);
+                try {
+                  console.log(`🎬 Processing video metadata...`);
+                  duration = Math.round(await getVideoDuration(file));
+                  console.log(`⏱️ Video duration: ${duration} seconds`);
+                  
+                  console.log(`🎬 Generating video thumbnail...`);
+                  const thumbnailBlob = await getVideoThumbnailBlob(file);
+                  thumbnailDataKey = `Input/Image/${uuidFileName}-thumbnail`;
+                  tempThumbnailKey = `temp/${thumbnailDataKey}`;
+                  thumbnailSize = Math.round(thumbnailBlob.size);
+                  console.log(`🎬 Thumbnail generated: ${thumbnailSize} bytes`);
+                  updatePhotoStatus(i, UploadStatus.PROCESSING, 0.8);
+                  
+                  // Upload thumbnail (simulated)
+                  console.log(`⬆️ Uploading thumbnail to ${tempThumbnailKey}...`);
+                  await uploadToS3(thumbnailBlob, tempThumbnailKey, 'image/jpeg');
+                  
+                  console.log(`✅ Thumbnail upload successful`);
+                  updatePhotoStatus(i, UploadStatus.PROCESSING, 0.9);
+                } catch (videoErr) {
+                  console.log(`⚠️ Video processing error: ${String(videoErr)}`);
+                  // Don't fail the whole upload if just the thumbnail fails
+                }
+              }
+              
+              // Update the photo status to complete
+              updatePhotoStatus(i, UploadStatus.COMPLETE, 1);
+              
+              // Add processed photo info to our collection
+              processedPhotos.push({
+                fileName: uuidFileName,
+                s3PreviewUrl,
+                type,
+                size: file.size,
+                duration,
+                thumbnailDataKey,
+                thumbnailSize,
+                tempKey: tempS3Key,
+                tempThumbnailKey,
+                status: UploadStatus.COMPLETE,
+                progress: 1
               });
-            };
-            reader.readAsDataURL(file);
-          });
+              
+              console.log(`✅ File ${i + 1} processing complete`);
+            } catch (uploadErr) {
+              console.log(`❌ Upload error: ${String(uploadErr)}`);
+              updatePhotoStatus(i, UploadStatus.ERROR, 0, String(uploadErr));
+            }
+          } catch (fileErr) {
+            console.log(`❌ Error processing file ${i + 1}: ${String(fileErr)}`);
+            updatePhotoStatus(i, UploadStatus.ERROR, 0, String(fileErr));
+          }
+        }
+        
+        console.log(`✅ All files processed`);
+        
+        // Save to localStorage - ONLY the keys and metadata, not the file data
+        localStorage.setItem(STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos));
+        console.log(`📸 Saved ${processedPhotos.length} photos metadata to storage`);
+        
+        // Revoke object URLs to prevent memory leaks
+        selectedPhotos.forEach(photo => {
+          if (photo.s3PreviewUrl.startsWith('blob:')) {
+            URL.revokeObjectURL(photo.s3PreviewUrl);
+          }
         });
+        
+        // Redirect to save-album page
+        window.location.href = "/app/save-album.html";
+      } catch (error) {
+        console.log(`❌ Fatal error in file processing: ${String(error)}`);
+      } finally {
+        clearAlbumData();
+        createAlbumButton.disabled = false;
+        createAlbumButton.textContent = 'Create Album';
+        isUploading = false;
+      }
+    }
 
-        Promise.all(readerPromises).then(results => {
-          localStorage.setItem("selectedPhotos", JSON.stringify(results));
-          const folderId = crypto.randomUUID();
-          window.location.href = `/app/save-album.html`;
-        });
-      });
+    function handleFileSelection(e) {
+      const files = e.target.files;
+      if (files.length > 0) {
+        processFiles(files);
+      }
+      // Reset the input to allow selecting the same files again
+      e.target.value = "";
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // Set up event listener for file input
+      const fileInput = document.getElementById('file-input');
+      if (fileInput) {
+        fileInput.addEventListener('change', handleFileSelection);
+      }
+      
+      // Initialize progress UI
+      updateProgressUI();
     });
   </script>
 </head>
@@ -144,8 +601,26 @@
 
   <div class="content">
     <h1>Create Albums To Share With Others</h1>
+    
+    <!-- Progress tracking UI -->
+    <div id="progress-container" class="progress-container">
+      <div class="progress-stats">
+        <span>Progress: <span id="progress-percent">0%</span></span>
+        <span id="files-complete-count">0/0 complete</span>
+      </div>
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <div class="file-status">
+        <div id="files-uploading">📤 Uploading: 0</div>
+        <div id="files-processing">⚙️ Processing: 0</div>
+        <div id="files-complete">✅ Complete: 0</div>
+        <div id="files-error">❌ Failed: 0</div>
+      </div>
+    </div>
+    
     <div class="button-group">
-      <button class="button button-primary" onclick="openFilePicker()">Create Album</button>
+      <button id="create-album-btn" class="button button-primary" onclick="openFilePicker()">Create Album</button>
       <a href="/app/my-albums.html" class="button button-secondary">View My Albums</a>
       <input type="file" id="file-input" accept="image/*,video/*" multiple style="display: none;">
     </div>

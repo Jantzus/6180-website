@@ -205,20 +205,6 @@ const SaveAlbum = () => {
       log(`❌ S3 connection test error: ${String(s3Err)}`)
     }
     
-    // Add event listener for page unload/navigation
-    const handleBeforeUnload = () => {
-      clearAlbumData()
-      return null
-    }
-    
-    // Add the event listener
-    window.addEventListener('beforeunload', handleBeforeUnload)
-    
-    // Return cleanup function
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload)
-      clearAlbumData()
-    }
   }, [])
 
   // Save selected photos to localStorage whenever they change
@@ -718,14 +704,16 @@ const SaveAlbum = () => {
         localStorage.setItem("publicUsername", newName)
         setPublicUsername(newName)
         setShowUsernamePrompt(false)
-        alert("Username saved. You can now proceed.")
+        
+        // Automatically proceed with saving the album after username is set
+        log("👤 Username saved successfully, automatically proceeding to save album")
+        handleSaveAlbum()
       } else {
         throw new Error("Username taken")
       }
     } catch (e) {
       setUsernameError("Public profile username already taken. Please choose another one.")
       setShowAltButton(true)
-    } finally {
       setIsSubmittingUsername(false)
     }
   }
