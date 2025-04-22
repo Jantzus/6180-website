@@ -198,13 +198,49 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
   <style>
     body { font-family: Helvetica, Arial, sans-serif; max-width: 800px; margin: auto; background: #f9fafb; color: #333; line-height: 1.5; }
     .header { position: sticky; top: 0; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.06); z-index: 10; margin-bottom: 15px; }
-    .header-content { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
-    .save-button { color: #006adc; border: 1px solid #006adc; background: none; padding: 8px 16px; cursor: pointer; font-weight: 500; }
+    /* Styling for the header */
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+    }
+    
+    /* Update the save button to match the UI shown in the image */
+    .save-button { 
+      color: #006adc; 
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: white; 
+      padding: 8px 16px; 
+      cursor: pointer; 
+      font-weight: 500;
+      min-width: 80px;
+      text-align: center;
+    }
     .album-title { font-weight: 400; margin: 0; font-size: 20px; }
     .media-container { padding: 20px; }
-    .media-block { margin-bottom: 28px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); position: relative; transition: transform 0.2s; }
+    .media-block { 
+      height: 100%;  /* Make all media blocks fill their grid cell */
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04); 
+      position: relative; 
+      transition: transform 0.2s;
+      margin-bottom: 0; /* Remove the margin-bottom that was causing gaps */
+      display: flex;
+      flex-direction: column;
+    }
     .media-block:hover { transform: translateY(-2px); }
-    img, video { max-width: 100%; display: block; }
+    .lazy-image-container, .thumbnail-wrapper {
+      flex-grow: 1; /* Make these containers fill the available space */
+      display: flex;
+      flex-direction: column;
+    }
+    img, video { 
+      max-width: 100%; 
+      display: block; 
+      flex-grow: 1;
+      object-fit: cover; /* Ensure images cover their container properly */
+    }
     .video-meta { font-size: 12px; color: #555; margin-top: 4px; }
     .owner-badge { position: absolute; bottom: 12px; right: 12px; background: rgba(255,255,255,0.85); padding: 6px 12px; font-size: 12px; font-weight: 500; z-index: 3; }
     .loading { text-align: center; padding: 40px; font-size: 18px; color: #666; }
@@ -279,12 +315,72 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
+    
+    /* Pictures per row dropdown styles - match the UI in the image */
+    .row-selector {
+      display: flex;
+      align-items: center;
+    }
+    .row-selector label {
+      margin-right: 8px;
+      font-size: 16px;
+      color: #555;
+      font-weight: normal;
+    }
+    .row-selector select {
+      padding: 5px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: white;
+      cursor: pointer;
+      font-size: 14px;
+      min-width: 50px;
+    }
+    
+    /* Grid layout styles */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+    }
+    .media-grid.two-per-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .media-grid.three-per-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .media-grid.four-per-row {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .media-grid.five-per-row {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    /* Fix for consistent height */
+    .media-block {
+      margin-bottom: 0; /* Remove bottom margin that was causing gaps */
+      height: 100%;  /* Make all media blocks fill their grid cell */
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      position: relative;
+      transition: transform 0.2s;
+    }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="header-content">
-      <h2 id="album-title" class="album-title">${folderName !== "Photos" ? folderName : ""}</h2>
+      <div style="display: flex; align-items: center;">
+        <div class="row-selector">
+          <label for="pictures-per-row">Pictures per row:</label>
+          <select id="pictures-per-row" onchange="changePicturesPerRow(this.value)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <h2 id="album-title" class="album-title" style="margin-left: 20px;">${folderName !== "Photos" ? folderName : ""}</h2>
+      </div>
       <div>
         <button class="save-button" onclick="saveAlbum()">Save</button>
       </div>
@@ -292,7 +388,9 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
   </div>
 
   <div id="media-container" class="media-container">
-    ${mediaHtml}
+    <div id="media-grid" class="media-grid">
+      ${mediaHtml}
+    </div>
   </div>
 
   <script>
@@ -327,6 +425,25 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
         console.error('Error playing video:', error);
         // If autoplay fails, just leave the video element with controls visible
       });
+    }
+    
+    // Change pictures per row function
+    function changePicturesPerRow(value) {
+      const mediaGrid = document.getElementById('media-grid');
+      
+      // Remove existing layout classes
+      mediaGrid.classList.remove('two-per-row', 'three-per-row', 'four-per-row', 'five-per-row');
+      
+      // Add the appropriate class based on selection
+      if (value === '2') {
+        mediaGrid.classList.add('two-per-row');
+      } else if (value === '3') {
+        mediaGrid.classList.add('three-per-row');
+      } else if (value === '4') {
+        mediaGrid.classList.add('four-per-row');
+      } else if (value === '5') {
+        mediaGrid.classList.add('five-per-row');
+      }
     }
     
     // Setup Intersection Observer for lazy loading
