@@ -745,27 +745,37 @@ const SaveAlbum = () => {
     >
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-          <h1 style={{ fontSize: "28px", color: "#222", margin: 0 }}></h1>
-            {publicUsername && (
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleLogout();
-                    }}
-                    style={{
-                      fontSize: "14px",
-                      color: "#666",
-                      textDecoration: "underline",
-                      cursor: "pointer"
-                    }}
-                  >
-                  Log Out
-                </a>
-              </div>
-            )}
+          <a 
+            href="/app/my-albums.html"
+            style={{
+              fontSize: "16px",
+              color: "#007bff",
+              textDecoration: "none",
+              fontWeight: "500"
+            }}
+          >
+            My Albums
+          </a>
+          {publicUsername && (
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLogout();
+                  }}
+                  style={{
+                    fontSize: "14px",
+                    color: "#666",
+                    textDecoration: "underline",
+                    cursor: "pointer"
+                  }}
+                >
+                Log Out
+              </a>
+            </div>
+          )}
         </div>
 
         {/* Progress Tracking Overview */}

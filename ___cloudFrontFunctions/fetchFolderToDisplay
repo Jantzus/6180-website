@@ -158,23 +158,26 @@ function formatTime(seconds = 0) {
 
 function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
   const mediaHtml = mediaItems.length 
-    ? mediaItems.map(item => {
+    ? mediaItems.map((item, index) => {
         const ownerName = item.ownerId && contacts[item.ownerId] ? contacts[item.ownerId] : '';
         const ownerBadge = ownerName ? `<div class="owner-badge">${ownerName}</div>` : '';
         
         if (item.type === "image") {
           return `
             <div class="media-block">
-              <img src="${item.url}" loading="lazy"/>
+              <div class="lazy-image-container">
+                <img class="lazy-image" data-src="${item.url}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Album image ${index + 1}"/>
+                <div class="loading-placeholder"></div>
+              </div>
               ${ownerBadge}
             </div>`;
         } else {
-          // Modified video rendering to consistently show thumbnails with a play button overlay
-          // Using the direct thumbnailUrl that was created from thumbnailDataKey
+          // Modified video rendering with lazy loading for thumbnails
           return `
             <div class="media-block video-container">
               <div class="thumbnail-wrapper" onclick="playVideo(this, '${item.url}')">
-                <img src="${item.thumbnailUrl}" loading="lazy" alt="Video thumbnail" />
+                <img class="lazy-image" data-src="${item.thumbnailUrl}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Video thumbnail ${index + 1}" />
+                <div class="loading-placeholder"></div>
                 <div class="play-button"></div>
                 <div class="duration-badge">${item.duration}</div>
               </div>
@@ -203,11 +206,11 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
     .media-block:hover { transform: translateY(-2px); }
     img, video { max-width: 100%; display: block; }
     .video-meta { font-size: 12px; color: #555; margin-top: 4px; }
-    .owner-badge { position: absolute; bottom: 12px; right: 12px; background: rgba(255,255,255,0.85); padding: 6px 12px; font-size: 12px; font-weight: 500; }
+    .owner-badge { position: absolute; bottom: 12px; right: 12px; background: rgba(255,255,255,0.85); padding: 6px 12px; font-size: 12px; font-weight: 500; z-index: 3; }
     .loading { text-align: center; padding: 40px; font-size: 18px; color: #666; }
     .error { text-align: center; padding: 40px; font-size: 18px; color: #d32f2f; }
     
-    /* New styles for video thumbnails */
+    /* Video thumbnail styles */
     .video-container { cursor: pointer; }
     .thumbnail-wrapper { position: relative; }
     .play-button { 
@@ -219,6 +222,7 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
       height: 60px;
       background-color: rgba(0,0,0,0.7);
       border-radius: 50%;
+      z-index: 2;
     }
     .play-button:before {
       content: '';
@@ -240,6 +244,40 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
       font-size: 14px;
       border-radius: 4px;
       font-weight: 500;
+      z-index: 2;
+    }
+    
+    /* Lazy loading styles */
+    .lazy-image-container {
+      position: relative;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      width: 100%;
+      min-height: 200px;
+    }
+    .lazy-image {
+      position: relative;
+      z-index: 1;
+      transition: opacity 0.3s;
+      opacity: 0;
+    }
+    .lazy-image.loaded {
+      opacity: 1;
+    }
+    .loading-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading-animation 1.5s infinite;
+      z-index: 0;
+    }
+    @keyframes loading-animation {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
   </style>
 </head>
@@ -290,6 +328,49 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
         // If autoplay fails, just leave the video element with controls visible
       });
     }
+    
+    // Setup Intersection Observer for lazy loading
+    document.addEventListener('DOMContentLoaded', function() {
+      const lazyImages = document.querySelectorAll('.lazy-image');
+      
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              
+              img.onload = function() {
+                img.classList.add('loaded');
+                // Remove placeholder when image is loaded
+                const placeholder = img.parentNode.querySelector('.loading-placeholder');
+                if (placeholder) {
+                  placeholder.style.display = 'none';
+                }
+              };
+              
+              imageObserver.unobserve(img);
+            }
+          });
+        }, {
+          rootMargin: '50px 0px',
+          threshold: 0.01
+        });
+        
+        lazyImages.forEach(function(img) {
+          imageObserver.observe(img);
+        });
+      } else {
+        // Fallback for browsers that don't support Intersection Observer
+        // This is a simple implementation that loads all images after a short delay
+        setTimeout(function() {
+          lazyImages.forEach(function(img) {
+            img.src = img.dataset.src;
+            img.classList.add('loaded');
+          });
+        }, 250);
+      }
+    });
   </script>
 </body>
 </html>

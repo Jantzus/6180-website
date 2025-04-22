@@ -137,7 +137,7 @@ const Login = () => {
     } catch (e) {
       console.error(e)
       setStatus('error')
-      alert('Invalid code. Please try again.')
+      alert('Invalid or expired code. Please try again. Consider restarting.')
     }
   }
 
