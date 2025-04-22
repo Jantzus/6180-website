@@ -323,10 +323,10 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
     }
     .row-selector label {
       margin-right: 8px;
-      font-size: 16px;
+      font-size: 14px;
       color: #555;
       font-weight: normal;
-    }
+    }    
     .row-selector select {
       padding: 5px 8px;
       border: 1px solid #ccc;
@@ -370,7 +370,7 @@ function buildHtmlPage(folderId, { mediaItems, folderName, contacts }) {
     <div class="header-content">
       <div style="display: flex; align-items: center;">
         <div class="row-selector">
-          <label for="pictures-per-row">Pictures per row:</label>
+          <label for="pictures-per-row"><strong>Pictures per row:</strong></label>
           <select id="pictures-per-row" onchange="changePicturesPerRow(this.value)">
             <option value="1">1</option>
             <option value="2">2</option>
