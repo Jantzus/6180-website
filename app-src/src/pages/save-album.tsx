@@ -178,8 +178,6 @@ const SaveAlbum = () => {
             } catch (parseErr) {
               log(`❌ Error parsing stored photos: ${String(parseErr)}`)
             }
-          } else {
-            log(`⚠️ No stored photos found with key ${STORAGE_KEYS.SELECTED_PHOTOS}`)
           }
         } catch (storageErr) {
           log(`⚠️ Error restoring photos from storage: ${String(storageErr)}`)
@@ -455,19 +453,8 @@ const SaveAlbum = () => {
         return
       }
       
-      if (selectedPhotos.length === 0) {
-        log("❌ No photos selected")
-        setIsSavingAlbum(false)
-        return
-      }
-      
       // Filter out photos with error status
       const validPhotos = selectedPhotos.filter(photo => photo.status === 'complete')
-      if (validPhotos.length === 0) {
-        log("❌ No successfully uploaded photos")
-        setIsSavingAlbum(false)
-        return
-      }
 
       log(`📊 Processing ${validPhotos.length} photos`)
       const accountId = `${cognitoUsername}_____${cognitoUsername}____Account`
@@ -977,7 +964,7 @@ const SaveAlbum = () => {
               pointerEvents: isSavingAlbum ? "none" : "auto"
             }}
             onClick={handleSaveAlbum}
-            disabled={isSavingAlbum || selectedPhotos.length === 0}
+            disabled={isSavingAlbum}
           >
             {isSavingAlbum ? "Saving Album..." : "Save Album"}
           </button>

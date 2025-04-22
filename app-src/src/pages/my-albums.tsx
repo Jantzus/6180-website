@@ -74,6 +74,7 @@ const MyAlbums = () => {
     overallProgress: 0
   })
   const [debugMessages, setDebugMessages] = useState<string[]>([])
+  const [currentFolderId, setCurrentFolderId] = useState<string | null>(null)
 
   // Add a log function that updates both console and debug state
   const log = (message: string) => {
@@ -226,10 +227,15 @@ const MyAlbums = () => {
   }
 
   // Function to open file picker
-  const openFilePicker = () => {
+  const openFilePicker = (folderId: string | null = null) => {
+
+    // Set current folder ID if adding to existing folder
+    setCurrentFolderId(folderId)
+    
     // Clear current selected photos before opening file picker
     setSelectedPhotos([])
     fileInputRef.current?.click()
+    
   }
 
   // Update specific photo's status and progress
@@ -260,10 +266,10 @@ const MyAlbums = () => {
     try {
       log("🔄 Starting file processing...")
       
-      // Generate a new folder ID
-      const newFolderId = `${cognitoUsername}_____${generateUUID()}____Folder`
+      // Generate a new folder ID or use existing one
+      const newFolderId = currentFolderId || `${cognitoUsername}_____${generateUUID()}____Folder`
       localStorage.setItem(STORAGE_KEYS.FOLDER_ID, newFolderId)
-      log(`📁 Created new folder ID: ${newFolderId}`)
+      log(`📁 Using folder ID: ${newFolderId}`)
       
       // First, add files to state with pending status
       const initialPhotos = files.map(file => {
@@ -411,8 +417,12 @@ const MyAlbums = () => {
         }
       })
       
-      // Redirect to save-album page
-      window.location.href = "/app/save-album.html"
+      // Redirect to save-album page with folder ID parameter if adding to existing album
+      if (currentFolderId) {
+        window.location.href = `/app/save-album.html?folderId=${encodeURIComponent(currentFolderId)}`
+      } else {
+        window.location.href = "/app/save-album.html"
+      }
 
       clearAlbumData()
 
@@ -531,7 +541,7 @@ const MyAlbums = () => {
           >
             <div>
               <button
-                onClick={openFilePicker}
+                onClick={() => openFilePicker()}
                 style={{
                   fontSize: "14px",
                   padding: "8px 16px",
@@ -760,31 +770,52 @@ const MyAlbums = () => {
                       )}
                     </div>
                     
-                    {/* Footer section with Copy Link button */}
+                    {/* Footer section with Add Photos and Copy Link buttons */}
                     <div style={{
                       display: "flex",
                       justifyContent: "space-between",
                       marginTop: 16
                     }}>
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault(); 
-                          e.stopPropagation();
-                          handleCopy(e);
-                        }}
-                        style={{
-                          padding: "8px 12px",
-                          backgroundColor: "#e0e0e0",
-                          border: "none",
-                          borderRadius: 6,
-                          cursor: "pointer",
-                          fontSize: 14,
-                          textAlign: "center"
-                        }}
-                      >
-                        Copy Link
-                      </button>
-                      <div></div> {/* Empty div to push Copy Link to the left */}
+                      <div style={{ display: "flex", gap: "10px" }}>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault(); 
+                            e.stopPropagation();
+                            openFilePicker(folder.folderId);
+                          }}
+                          style={{
+                            padding: "8px 12px",
+                            backgroundColor: "#4caf50",
+                            color: "white",
+                            border: "none",
+                            borderRadius: 6,
+                            cursor: "pointer",
+                            fontSize: 14,
+                            textAlign: "center"
+                          }}
+                        >
+                          Add Photos
+                        </button>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault(); 
+                            e.stopPropagation();
+                            handleCopy(e);
+                          }}
+                          style={{
+                            padding: "8px 12px",
+                            backgroundColor: "#e0e0e0",
+                            border: "none",
+                            borderRadius: 6,
+                            cursor: "pointer",
+                            fontSize: 14,
+                            textAlign: "center"
+                          }}
+                        >
+                          Copy Link
+                        </button>
+                      </div>
+                      <div></div>
                     </div>
                   </div>
                 </a>
