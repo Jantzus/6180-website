@@ -1,22 +1,3 @@
-export type LanguageCode = 
-'en-US' | 'en' | 
-'zh-CN' | 'zh' | 
-'fr-FR' | 'fr' | 
-'de-DE' | 'de' | 
-'es-ES' | 'es' | 
-'ru' | 'ja' | 'pt-BR' | 'pt' | 
-'it' | 'ko' | 'ar' | 'nl' |
-'tr' | 'pl' |
-'sv-SE' | 'sv' | 'he' | 'uk' | 'th' | 'vi' | 'cs' | 'ro' | 'fi' | 
-'da' | 'hu' | 'id' | 'no' | 'nb' | 'sk' | 'el' | 'hi' | 'fa' | 
-'bn' | 'ta' | 'te' | 'kn' | 'ml' | 'mr' | 'ur' | 'zh-HK' | 'zh-TW' | 
-'af' | 'az' | 'eu' | 'bg' | 'ca' | 'et' | 'gl' | 'gu' | 'is' | 
-'kk' | 'ky' | 'lo' | 'lt' | 'lv' | 'mk' | 'mn' | 'ne' | 'pa' | 
-'si' | 'sl' | 'sq' | 'sr' | 'sw' | 'tg' | 'tl' | 'uz' | 'xh' | 
-'yo' | 'zu' | 'am' | 'ha' | 'ig' | 'jv' | 'km' | 'my' | 'or' | 
-'ps' | 'sd' | 'so' | 'as' | 'bho' | 'br' | 'eo' | 'fy' | 'ga' | 
-'gd' | 'mi' | 'mt' | 'nn' | 'rw' | 'sa' | 'sm' | 'st';
-
 export const supportedLanguages = [
   { code: 'en-US', name: 'English (US)' },
   { code: 'en', name: 'English' },

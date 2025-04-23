@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react"
 import ReactDOM from "react-dom/client"
-import { checkLoginOrRedirect } from "@/lib/checkLogin"
 import { PutObjectCommand, CopyObjectCommand } from "@aws-sdk/client-s3"
 
 import { BUCKET_NAME, GRAPHQL_ENDPOINT, STORAGE_KEYS } from "@/lib/config"
-import { createS3Client, ProgressTracker, UploadStatus } from "@/lib/aws"
+import { createS3Client } from "@/lib/aws"
+import { 
+  ProgressTracker,
+  UploadStatus,
+  LanguageCode,
+  SelectedPhoto
+} from "@/lib/types"
+
 import { generateUUID } from "@/lib/utils"
-import { getVideoDuration, getVideoThumbnailBlob } from "@/lib/video"
-import { LanguageCode } from "@/lib/languages"
-import { SelectedPhoto } from "@/lib/photos"
+import { getVideoDuration, getVideoThumbnailBlob, checkLoginOrRedirect } from "@/lib/utils"
+import {  } from "@/lib/languages"
 
 // Create S3 client
 let s3 = createS3Client()

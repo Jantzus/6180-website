@@ -1,2543 +1,32 @@
-import { useEffect, useState, useRef } from "react"
+import React from "react"
 import ReactDOM from "react-dom/client"
-import { checkLoginOrRedirect } from "@/lib/checkLogin"
-import { formatDate, generateUUID } from "@/lib/utils"
-import { GRAPHQL_ENDPOINT, S3_BUCKET_URL, BUCKET_NAME, STORAGE_KEYS } from "@/lib/config"
-import { createS3Client, ProgressTracker, UploadStatus } from "@/lib/aws"
+import { useEffect, useState, useRef } from "react"
+import { checkLoginOrRedirect, generateUUID, getVideoDuration, getVideoThumbnailBlob } from "@/lib/utils"
+import { createS3Client } from "@/lib/aws"
 import { PutObjectCommand } from "@aws-sdk/client-s3"
-import { getVideoDuration, getVideoThumbnailBlob } from "@/lib/video"
-import { LanguageCode } from "@/lib/languages"
-import { SelectedPhoto } from "@/lib/photos"
+import { GRAPHQL_ENDPOINT, BUCKET_NAME, STORAGE_KEYS } from "@/lib/config"
+import { 
+  Folder, 
+  SelectedPhoto, 
+  ProgressTracker,
+  UploadStatus,
+  LanguageCode
+} from "@/lib/types"
+import { translations } from "@/lib/translations"
 
 // Create S3 client
-let s3 = createS3Client()
+const s3 = createS3Client()
 
-interface File {
-  dataKey: string
-  thumbnailDataKey: string | null
-  durationInSeconds: number | null
-}
-
-interface Folder {
-  folderPositionId: string
-  folderId: string
-  folderName: string | null
-  createdAt: number | null
-  updatedAt: number | null
-  files: File[]
-}
-
-
-
-// Define translations object
-const translations: Record<LanguageCode, Record<string, string>> = {
-  'en-US': {
-    'noAlbums': 'No albums found or still loading...',
-    'createAlbum': 'Create Album',
-    'creatingAlbum': 'Creating Album...',
-    'logOut': 'Log Out',
-    'uploadProgress': 'Upload Progress',
-    'overallProgress': 'Overall Progress',
-    'of': 'of',
-    'complete': 'complete',
-    'uploading': 'Uploading',
-    'processing': 'Processing',
-    'failed': 'Failed',
-    'created': 'Created',
-    'updated': 'Updated',
-    'delete': 'Delete',
-    'addPhotos': 'Add Photos',
-    'copyLink': 'Copy Link',
-    'linkCopied': 'Link has been copied to your clipboard.',
-    'copyFailed': 'Failed to copy link to clipboard.',
-    'deleteConfirm': 'Please type "delete" to confirm that you want to permanently delete this album',
-    'deleteFailed': 'Failed to delete this album. Please try again later.',
-    'debugLog': 'Debug Log',
-    'language': 'Language',
-    'loading': 'Loading...'
-  },
-  'en': {
-    'noAlbums': 'No albums found or still loading...',
-    'createAlbum': 'Create Album',
-    'creatingAlbum': 'Creating Album...',
-    'logOut': 'Log Out',
-    'uploadProgress': 'Upload Progress',
-    'overallProgress': 'Overall Progress',
-    'of': 'of',
-    'complete': 'complete',
-    'uploading': 'Uploading',
-    'processing': 'Processing',
-    'failed': 'Failed',
-    'created': 'Created',
-    'updated': 'Updated',
-    'delete': 'Delete',
-    'addPhotos': 'Add Photos',
-    'copyLink': 'Copy Link',
-    'linkCopied': 'Link has been copied to your clipboard.',
-    'copyFailed': 'Failed to copy link to clipboard.',
-    'deleteConfirm': 'Please type "delete" to confirm that you want to permanently delete this album',
-    'deleteFailed': 'Failed to delete this album. Please try again later.',
-    'debugLog': 'Debug Log',
-    'language': 'Language',
-    'loading': 'Loading...'
-  },
-  'zh-CN': {
-    'noAlbums': '未找到相册或正在加载中...',
-    'createAlbum': '创建相册',
-    'creatingAlbum': '正在创建相册...',
-    'logOut': '退出登录',
-    'uploadProgress': '上传进度',
-    'overallProgress': '总体进度',
-    'of': '/',
-    'complete': '已完成',
-    'uploading': '上传中',
-    'processing': '处理中',
-    'failed': '失败',
-    'created': '创建于',
-    'updated': '更新于',
-    'delete': '删除',
-    'addPhotos': '添加照片',
-    'copyLink': '复制链接',
-    'linkCopied': '链接已复制到剪贴板。',
-    'copyFailed': '复制链接失败。',
-    'deleteConfirm': '请输入"delete"确认您要永久删除此相册',
-    'deleteFailed': '删除相册失败。请稍后再试。',
-    'debugLog': '调试日志',
-    'language': '语言',
-    'loading': '加载中...'
-  },
-  'zh': {
-    'noAlbums': '未找到相册或正在加载中...',
-    'createAlbum': '创建相册',
-    'creatingAlbum': '正在创建相册...',
-    'logOut': '退出登录',
-    'uploadProgress': '上传进度',
-    'overallProgress': '总体进度',
-    'of': '/',
-    'complete': '已完成',
-    'uploading': '上传中',
-    'processing': '处理中',
-    'failed': '失败',
-    'created': '创建于',
-    'updated': '更新于',
-    'delete': '删除',
-    'addPhotos': '添加照片',
-    'copyLink': '复制链接',
-    'linkCopied': '链接已复制到剪贴板。',
-    'copyFailed': '复制链接失败。',
-    'deleteConfirm': '请输入"delete"确认您要永久删除此相册',
-    'deleteFailed': '删除相册失败。请稍后再试。',
-    'debugLog': '调试日志',
-    'language': '语言',
-    'loading': '加载中...'
-  },
-  'fr-FR': {
-    'noAlbums': 'Aucun album trouvé ou chargement en cours...',
-    'createAlbum': 'Créer un album',
-    'creatingAlbum': 'Création d\'album...',
-    'logOut': 'Déconnexion',
-    'uploadProgress': 'Progression du téléchargement',
-    'overallProgress': 'Progression générale',
-    'of': 'sur',
-    'complete': 'terminé',
-    'uploading': 'Téléchargement',
-    'processing': 'Traitement',
-    'failed': 'Échec',
-    'created': 'Créé le',
-    'updated': 'Mis à jour le',
-    'delete': 'Supprimer',
-    'addPhotos': 'Ajouter des photos',
-    'copyLink': 'Copier le lien',
-    'linkCopied': 'Le lien a été copié dans votre presse-papiers.',
-    'copyFailed': 'Échec de la copie du lien dans le presse-papiers.',
-    'deleteConfirm': 'Veuillez taper "delete" pour confirmer que vous souhaitez supprimer définitivement cet album',
-    'deleteFailed': 'Échec de la suppression de cet album. Veuillez réessayer plus tard.',
-    'debugLog': 'Journal de débogage',
-    'language': 'Langue',
-    'loading': 'Chargement...'
-  },
-  'fr': {
-    'noAlbums': 'Aucun album trouvé ou chargement en cours...',
-    'createAlbum': 'Créer un album',
-    'creatingAlbum': 'Création d\'album...',
-    'logOut': 'Déconnexion',
-    'uploadProgress': 'Progression du téléchargement',
-    'overallProgress': 'Progression générale',
-    'of': 'sur',
-    'complete': 'terminé',
-    'uploading': 'Téléchargement',
-    'processing': 'Traitement',
-    'failed': 'Échec',
-    'created': 'Créé le',
-    'updated': 'Mis à jour le',
-    'delete': 'Supprimer',
-    'addPhotos': 'Ajouter des photos',
-    'copyLink': 'Copier le lien',
-    'linkCopied': 'Le lien a été copié dans votre presse-papiers.',
-    'copyFailed': 'Échec de la copie du lien dans le presse-papiers.',
-    'deleteConfirm': 'Veuillez taper "delete" pour confirmer que vous souhaitez supprimer définitivement cet album',
-    'deleteFailed': 'Échec de la suppression de cet album. Veuillez réessayer plus tard.',
-    'debugLog': 'Journal de débogage',
-    'language': 'Langue',
-    'loading': 'Chargement...'
-  },
-  'de-DE': {
-    'noAlbums': 'Keine Alben gefunden oder noch beim Laden...',
-    'createAlbum': 'Album erstellen',
-    'creatingAlbum': 'Album wird erstellt...',
-    'logOut': 'Abmelden',
-    'uploadProgress': 'Upload-Fortschritt',
-    'overallProgress': 'Gesamtfortschritt',
-    'of': 'von',
-    'complete': 'abgeschlossen',
-    'uploading': 'Hochladen',
-    'processing': 'Verarbeitung',
-    'failed': 'Fehlgeschlagen',
-    'created': 'Erstellt am',
-    'updated': 'Aktualisiert am',
-    'delete': 'Löschen',
-    'addPhotos': 'Fotos hinzufügen',
-    'copyLink': 'Link kopieren',
-    'linkCopied': 'Link wurde in die Zwischenablage kopiert.',
-    'copyFailed': 'Link konnte nicht in die Zwischenablage kopiert werden.',
-    'deleteConfirm': 'Bitte geben Sie "delete" ein, um zu bestätigen, dass Sie dieses Album endgültig löschen möchten',
-    'deleteFailed': 'Fehler beim Löschen dieses Albums. Bitte versuchen Sie es später erneut.',
-    'debugLog': 'Debug-Protokoll',
-    'language': 'Sprache',
-    'loading': 'Wird geladen...'
-  },
-  'de': {
-    'noAlbums': 'Keine Alben gefunden oder noch beim Laden...',
-    'createAlbum': 'Album erstellen',
-    'creatingAlbum': 'Album wird erstellt...',
-    'logOut': 'Abmelden',
-    'uploadProgress': 'Upload-Fortschritt',
-    'overallProgress': 'Gesamtfortschritt',
-    'of': 'von',
-    'complete': 'abgeschlossen',
-    'uploading': 'Hochladen',
-    'processing': 'Verarbeitung',
-    'failed': 'Fehlgeschlagen',
-    'created': 'Erstellt am',
-    'updated': 'Aktualisiert am',
-    'delete': 'Löschen',
-    'addPhotos': 'Fotos hinzufügen',
-    'copyLink': 'Link kopieren',
-    'linkCopied': 'Link wurde in die Zwischenablage kopiert.',
-    'copyFailed': 'Link konnte nicht in die Zwischenablage kopiert werden.',
-    'deleteConfirm': 'Bitte geben Sie "delete" ein, um zu bestätigen, dass Sie dieses Album endgültig löschen möchten',
-    'deleteFailed': 'Fehler beim Löschen dieses Albums. Bitte versuchen Sie es später erneut.',
-    'debugLog': 'Debug-Protokoll',
-    'language': 'Sprache',
-    'loading': 'Wird geladen...'
-  },
-  'es-ES': {
-    'noAlbums': 'No se encontraron álbumes o todavía cargando...',
-    'createAlbum': 'Crear álbum',
-    'creatingAlbum': 'Creando álbum...',
-    'logOut': 'Cerrar sesión',
-    'uploadProgress': 'Progreso de carga',
-    'overallProgress': 'Progreso general',
-    'of': 'de',
-    'complete': 'completo',
-    'uploading': 'Subiendo',
-    'processing': 'Procesando',
-    'failed': 'Fallido',
-    'created': 'Creado el',
-    'updated': 'Actualizado el',
-    'delete': 'Eliminar',
-    'addPhotos': 'Añadir fotos',
-    'copyLink': 'Copiar enlace',
-    'linkCopied': 'El enlace ha sido copiado al portapapeles.',
-    'copyFailed': 'Error al copiar el enlace al portapapeles.',
-    'deleteConfirm': 'Por favor escriba "delete" para confirmar que desea eliminar permanentemente este álbum',
-    'deleteFailed': 'Error al eliminar este álbum. Por favor intente de nuevo más tarde.',
-    'debugLog': 'Registro de depuración',
-    'language': 'Idioma',
-    'loading': 'Cargando...'
-  },
-  'es': {
-    'noAlbums': 'No se encontraron álbumes o todavía cargando...',
-    'createAlbum': 'Crear álbum',
-    'creatingAlbum': 'Creando álbum...',
-    'logOut': 'Cerrar sesión',
-    'uploadProgress': 'Progreso de carga',
-    'overallProgress': 'Progreso general',
-    'of': 'de',
-    'complete': 'completo',
-    'uploading': 'Subiendo',
-    'processing': 'Procesando',
-    'failed': 'Fallido',
-    'created': 'Creado el',
-    'updated': 'Actualizado el',
-    'delete': 'Eliminar',
-    'addPhotos': 'Añadir fotos',
-    'copyLink': 'Copiar enlace',
-    'linkCopied': 'El enlace ha sido copiado al portapapeles.',
-    'copyFailed': 'Error al copiar el enlace al portapapeles.',
-    'deleteConfirm': 'Por favor escriba "delete" para confirmar que desea eliminar permanentemente este álbum',
-    'deleteFailed': 'Error al eliminar este álbum. Por favor intente de nuevo más tarde.',
-    'debugLog': 'Registro de depuración',
-    'language': 'Idioma',
-    'loading': 'Cargando...'
-  },
-  'ru': {
-    'noAlbums': 'Альбомы не найдены или загружаются...',
-    'createAlbum': 'Создать альбом',
-    'creatingAlbum': 'Создание альбома...',
-    'logOut': 'Выйти',
-    'uploadProgress': 'Прогресс загрузки',
-    'overallProgress': 'Общий прогресс',
-    'of': 'из',
-    'complete': 'завершено',
-    'uploading': 'Загрузка',
-    'processing': 'Обработка',
-    'failed': 'Ошибка',
-    'created': 'Создано',
-    'updated': 'Обновлено',
-    'delete': 'Удалить',
-    'addPhotos': 'Добавить фото',
-    'copyLink': 'Копировать ссылку',
-    'linkCopied': 'Ссылка скопирована в буфер обмена.',
-    'copyFailed': 'Не удалось скопировать ссылку в буфер обмена.',
-    'deleteConfirm': 'Пожалуйста, введите "delete", чтобы подтвердить, что вы хотите навсегда удалить этот альбом',
-    'deleteFailed': 'Не удалось удалить этот альбом. Пожалуйста, попробуйте позже.',
-    'debugLog': 'Журнал отладки',
-    'language': 'Язык',
-    'loading': 'Загрузка...'
-  },
-  'ja': {
-    'noAlbums': 'アルバムが見つからないか、読み込み中です...',
-    'createAlbum': 'アルバムを作成',
-    'creatingAlbum': 'アルバム作成中...',
-    'logOut': 'ログアウト',
-    'uploadProgress': 'アップロード進捗',
-    'overallProgress': '全体の進捗',
-    'of': '/',
-    'complete': '完了',
-    'uploading': 'アップロード中',
-    'processing': '処理中',
-    'failed': '失敗',
-    'created': '作成日',
-    'updated': '更新日',
-    'delete': '削除',
-    'addPhotos': '写真を追加',
-    'copyLink': 'リンクをコピー',
-    'linkCopied': 'リンクがクリップボードにコピーされました。',
-    'copyFailed': 'リンクのコピーに失敗しました。',
-    'deleteConfirm': 'このアルバムを完全に削除することを確認するには、"delete"と入力してください',
-    'deleteFailed': 'このアルバムの削除に失敗しました。後でもう一度お試しください。',
-    'debugLog': 'デバッグログ',
-    'language': '言語',
-    'loading': '読み込み中...'
-  },
-  'pt-BR': {
-    'noAlbums': 'Nenhum álbum encontrado ou ainda carregando...',
-    'createAlbum': 'Criar álbum',
-    'creatingAlbum': 'Criando álbum...',
-    'logOut': 'Sair',
-    'uploadProgress': 'Progresso do upload',
-    'overallProgress': 'Progresso geral',
-    'of': 'de',
-    'complete': 'completo',
-    'uploading': 'Enviando',
-    'processing': 'Processando',
-    'failed': 'Falha',
-    'created': 'Criado em',
-    'updated': 'Atualizado em',
-    'delete': 'Excluir',
-    'addPhotos': 'Adicionar fotos',
-    'copyLink': 'Copiar link',
-    'linkCopied': 'O link foi copiado para a área de transferência.',
-    'copyFailed': 'Falha ao copiar o link para a área de transferência.',
-    'deleteConfirm': 'Digite "delete" para confirmar que deseja excluir permanentemente este álbum',
-    'deleteFailed': 'Falha ao excluir este álbum. Tente novamente mais tarde.',
-    'debugLog': 'Log de depuração',
-    'language': 'Idioma',
-    'loading': 'Carregando...'
-  },
-  'pt': {
-    'noAlbums': 'Nenhum álbum encontrado ou ainda carregando...',
-    'createAlbum': 'Criar álbum',
-    'creatingAlbum': 'Criando álbum...',
-    'logOut': 'Sair',
-    'uploadProgress': 'Progresso do upload',
-    'overallProgress': 'Progresso geral',
-    'of': 'de',
-    'complete': 'completo',
-    'uploading': 'Enviando',
-    'processing': 'Processando',
-    'failed': 'Falha',
-    'created': 'Criado em',
-    'updated': 'Atualizado em',
-    'delete': 'Excluir',
-    'addPhotos': 'Adicionar fotos',
-    'copyLink': 'Copiar link',
-    'linkCopied': 'O link foi copiado para a área de transferência.',
-    'copyFailed': 'Falha ao copiar o link para a área de transferência.',
-    'deleteConfirm': 'Digite "delete" para confirmar que deseja excluir permanentemente este álbum',
-    'deleteFailed': 'Falha ao excluir este álbum. Tente novamente mais tarde.',
-    'debugLog': 'Log de depuração',
-    'language': 'Idioma',
-    'loading': 'Carregando...'
-  },
-  'it': {
-    'noAlbums': 'Nessun album trovato o ancora in caricamento...',
-    'createAlbum': 'Crea album',
-    'creatingAlbum': 'Creazione album...',
-    'logOut': 'Esci',
-    'uploadProgress': 'Avanzamento caricamento',
-    'overallProgress': 'Avanzamento complessivo',
-    'of': 'di',
-    'complete': 'completato',
-    'uploading': 'In caricamento',
-    'processing': 'In elaborazione',
-    'failed': 'Fallito',
-    'created': 'Creato il',
-    'updated': 'Aggiornato il',
-    'delete': 'Elimina',
-    'addPhotos': 'Aggiungi foto',
-    'copyLink': 'Copia link',
-    'linkCopied': 'Il link è stato copiato negli appunti.',
-    'copyFailed': 'Impossibile copiare il link negli appunti.',
-    'deleteConfirm': 'Digita "delete" per confermare che desideri eliminare definitivamente questo album',
-    'deleteFailed': 'Impossibile eliminare questo album. Riprova più tardi.',
-    'debugLog': 'Log di debug',
-    'language': 'Lingua',
-    'loading': 'Caricamento in corso...'
-  },
-  'ko': {
-    'noAlbums': '앨범을 찾을 수 없거나 로딩 중입니다...',
-    'createAlbum': '앨범 만들기',
-    'creatingAlbum': '앨범 생성 중...',
-    'logOut': '로그아웃',
-    'uploadProgress': '업로드 진행 상황',
-    'overallProgress': '전체 진행 상황',
-    'of': '/',
-    'complete': '완료',
-    'uploading': '업로드 중',
-    'processing': '처리 중',
-    'failed': '실패',
-    'created': '생성일',
-    'updated': '업데이트일',
-    'delete': '삭제',
-    'addPhotos': '사진 추가',
-    'copyLink': '링크 복사',
-    'linkCopied': '링크가 클립보드에 복사되었습니다.',
-    'copyFailed': '링크를 클립보드에 복사하지 못했습니다.',
-    'deleteConfirm': '이 앨범을 영구적으로 삭제할 것인지 확인하려면 "delete"를 입력하세요',
-    'deleteFailed': '이 앨범을 삭제하지 못했습니다. 나중에 다시 시도하세요.',
-    'debugLog': '디버그 로그',
-    'language': '언어',
-    'loading': '로딩 중...'
-  },
-  'ar': {
-    'noAlbums': 'لم يتم العثور على ألبومات أو جاري التحميل...',
-    'createAlbum': 'إنشاء ألبوم',
-    'creatingAlbum': 'جاري إنشاء ألبوم...',
-    'logOut': 'تسجيل الخروج',
-    'uploadProgress': 'تقدم الرفع',
-    'overallProgress': 'التقدم الإجمالي',
-    'of': 'من',
-    'complete': 'مكتمل',
-    'uploading': 'جاري الرفع',
-    'processing': 'جاري المعالجة',
-    'failed': 'فشل',
-    'created': 'تم الإنشاء في',
-    'updated': 'تم التحديث في',
-    'delete': 'حذف',
-    'addPhotos': 'إضافة صور',
-    'copyLink': 'نسخ الرابط',
-    'linkCopied': 'تم نسخ الرابط إلى الحافظة.',
-    'copyFailed': 'فشل نسخ الرابط إلى الحافظة.',
-    'deleteConfirm': 'الرجاء كتابة "delete" للتأكيد أنك تريد حذف هذا الألبوم نهائيًا',
-    'deleteFailed': 'فشل حذف هذا الألبوم. الرجاء المحاولة لاحقًا.',
-    'debugLog': 'سجل التصحيح',
-    'language': 'اللغة',
-    'loading': 'جاري التحميل...'
-  },
-  'nl': {
-    'noAlbums': 'Geen albums gevonden of nog aan het laden...',
-    'createAlbum': 'Album maken',
-    'creatingAlbum': 'Album maken...',
-    'logOut': 'Uitloggen',
-    'uploadProgress': 'Voortgang uploaden',
-    'overallProgress': 'Algehele voortgang',
-    'of': 'van',
-    'complete': 'voltooid',
-    'uploading': 'Uploaden',
-    'processing': 'Verwerken',
-    'failed': 'Mislukt',
-    'created': 'Gemaakt op',
-    'updated': 'Bijgewerkt op',
-    'delete': 'Verwijderen',
-    'addPhotos': 'Foto\'s toevoegen',
-    'copyLink': 'Link kopiëren',
-    'linkCopied': 'Link is gekopieerd naar het klembord.',
-    'copyFailed': 'Kan link niet naar klembord kopiëren.',
-    'deleteConfirm': 'Typ "delete" om te bevestigen dat u dit album permanent wilt verwijderen',
-    'deleteFailed': 'Kan dit album niet verwijderen. Probeer het later opnieuw.',
-    'debugLog': 'Debug-logboek',
-    'language': 'Taal',
-    'loading': 'Laden...'
-  },
-  'tr': {
-    'noAlbums': 'Albüm bulunamadı veya hala yükleniyor...',
-    'createAlbum': 'Albüm Oluştur',
-    'creatingAlbum': 'Albüm Oluşturuluyor...',
-    'logOut': 'Çıkış Yap',
-    'uploadProgress': 'Yükleme İlerlemesi',
-    'overallProgress': 'Genel İlerleme',
-    'of': '/',
-    'complete': 'tamamlandı',
-    'uploading': 'Yükleniyor',
-    'processing': 'İşleniyor',
-    'failed': 'Başarısız',
-    'created': 'Oluşturulma',
-    'updated': 'Güncellenme',
-    'delete': 'Sil',
-    'addPhotos': 'Fotoğraf Ekle',
-    'copyLink': 'Bağlantıyı Kopyala',
-    'linkCopied': 'Bağlantı panoya kopyalandı.',
-    'copyFailed': 'Bağlantı panoya kopyalanamadı.',
-    'deleteConfirm': 'Bu albümü kalıcı olarak silmek istediğinizi onaylamak için lütfen "delete" yazın',
-    'deleteFailed': 'Bu albüm silinemedi. Lütfen daha sonra tekrar deneyin.',
-    'debugLog': 'Hata Ayıklama Günlüğü',
-    'language': 'Dil',
-    'loading': 'Yükleniyor...'
-  },
-  'pl': {
-    'noAlbums': 'Nie znaleziono albumów lub trwa ładowanie...',
-    'createAlbum': 'Utwórz album',
-    'creatingAlbum': 'Tworzenie albumu...',
-    'logOut': 'Wyloguj',
-    'uploadProgress': 'Postęp przesyłania',
-    'overallProgress': 'Ogólny postęp',
-    'of': 'z',
-    'complete': 'ukończono',
-    'uploading': 'Przesyłanie',
-    'processing': 'Przetwarzanie',
-    'failed': 'Niepowodzenie',
-    'created': 'Utworzono',
-    'updated': 'Zaktualizowano',
-    'delete': 'Usuń',
-    'addPhotos': 'Dodaj zdjęcia',
-    'copyLink': 'Kopiuj link',
-    'linkCopied': 'Link został skopiowany do schowka.',
-    'copyFailed': 'Nie udało się skopiować linku do schowka.',
-    'deleteConfirm': 'Wpisz "delete", aby potwierdzić, że chcesz trwale usunąć ten album',
-    'deleteFailed': 'Nie udało się usunąć tego albumu. Spróbuj ponownie później.',
-    'debugLog': 'Dziennik debugowania',
-    'language': 'Język',
-    'loading': 'Ładowanie...'
-  },
-'sv-SE': {
-    'noAlbums': 'Inga album hittades eller laddas fortfarande...',
-    'createAlbum': 'Skapa album',
-    'creatingAlbum': 'Skapar album...',
-    'logOut': 'Logga ut',
-    'uploadProgress': 'Uppladdningsframsteg',
-    'overallProgress': 'Totalt framsteg',
-    'of': 'av',
-    'complete': 'färdig',
-    'uploading': 'Laddar upp',
-    'processing': 'Bearbetar',
-    'failed': 'Misslyckades',
-    'created': 'Skapad',
-    'updated': 'Uppdaterad',
-    'delete': 'Ta bort',
-    'addPhotos': 'Lägg till foton',
-    'copyLink': 'Kopiera länk',
-    'linkCopied': 'Länken har kopierats till urklipp.',
-    'copyFailed': 'Det gick inte att kopiera länken till urklipp.',
-    'deleteConfirm': 'Skriv "delete" för att bekräfta att du vill ta bort detta album permanent',
-    'deleteFailed': 'Det gick inte att ta bort detta album. Försök igen senare.',
-    'debugLog': 'Felsökningslogg',
-    'language': 'Språk',
-    'loading': 'Laddar...'
-  },
-  'sv': {
-    'noAlbums': 'Inga album hittades eller laddas fortfarande...',
-    'createAlbum': 'Skapa album',
-    'creatingAlbum': 'Skapar album...',
-    'logOut': 'Logga ut',
-    'uploadProgress': 'Uppladdningsframsteg',
-    'overallProgress': 'Totalt framsteg',
-    'of': 'av',
-    'complete': 'färdig',
-    'uploading': 'Laddar upp',
-    'processing': 'Bearbetar',
-    'failed': 'Misslyckades',
-    'created': 'Skapad',
-    'updated': 'Uppdaterad',
-    'delete': 'Ta bort',
-    'addPhotos': 'Lägg till foton',
-    'copyLink': 'Kopiera länk',
-    'linkCopied': 'Länken har kopierats till urklipp.',
-    'copyFailed': 'Det gick inte att kopiera länken till urklipp.',
-    'deleteConfirm': 'Skriv "delete" för att bekräfta att du vill ta bort detta album permanent',
-    'deleteFailed': 'Det gick inte att ta bort detta album. Försök igen senare.',
-    'debugLog': 'Felsökningslogg',
-    'language': 'Språk',
-    'loading': 'Laddar...'
-  },
-  'he': {
-    'noAlbums': 'לא נמצאו אלבומים או שהם עדיין בטעינה...',
-    'createAlbum': 'צור אלבום',
-    'creatingAlbum': 'יוצר אלבום...',
-    'logOut': 'התנתק',
-    'uploadProgress': 'התקדמות העלאה',
-    'overallProgress': 'התקדמות כוללת',
-    'of': 'מתוך',
-    'complete': 'הושלם',
-    'uploading': 'מעלה',
-    'processing': 'מעבד',
-    'failed': 'נכשל',
-    'created': 'נוצר',
-    'updated': 'עודכן',
-    'delete': 'מחק',
-    'addPhotos': 'הוסף תמונות',
-    'copyLink': 'העתק קישור',
-    'linkCopied': 'הקישור הועתק ללוח.',
-    'copyFailed': 'העתקת הקישור ללוח נכשלה.',
-    'deleteConfirm': 'אנא הקלד "delete" כדי לאשר שברצונך למחוק אלבום זה לצמיתות',
-    'deleteFailed': 'מחיקת האלבום נכשלה. אנא נסה שוב מאוחר יותר.',
-    'debugLog': 'יומן ניפוי באגים',
-    'language': 'שפה',
-    'loading': 'טוען...'
-  },
-  'uk': {
-    'noAlbums': 'Альбоми не знайдено або ще завантажуються...',
-    'createAlbum': 'Створити альбом',
-    'creatingAlbum': 'Створення альбому...',
-    'logOut': 'Вийти',
-    'uploadProgress': 'Прогрес завантаження',
-    'overallProgress': 'Загальний прогрес',
-    'of': 'з',
-    'complete': 'завершено',
-    'uploading': 'Завантаження',
-    'processing': 'Обробка',
-    'failed': 'Не вдалося',
-    'created': 'Створено',
-    'updated': 'Оновлено',
-    'delete': 'Видалити',
-    'addPhotos': 'Додати фото',
-    'copyLink': 'Копіювати посилання',
-    'linkCopied': 'Посилання скопійовано в буфер обміну.',
-    'copyFailed': 'Не вдалося скопіювати посилання в буфер обміну.',
-    'deleteConfirm': 'Введіть "delete", щоб підтвердити, що ви хочете назавжди видалити цей альбом',
-    'deleteFailed': 'Не вдалося видалити цей альбом. Спробуйте ще раз пізніше.',
-    'debugLog': 'Журнал налагодження',
-    'language': 'Мова',
-    'loading': 'Завантаження...'
-  },
-  'th': {
-    'noAlbums': 'ไม่พบอัลบั้มหรือกำลังโหลด...',
-    'createAlbum': 'สร้างอัลบั้ม',
-    'creatingAlbum': 'กำลังสร้างอัลบั้ม...',
-    'logOut': 'ออกจากระบบ',
-    'uploadProgress': 'ความคืบหน้าการอัปโหลด',
-    'overallProgress': 'ความคืบหน้าโดยรวม',
-    'of': 'จาก',
-    'complete': 'เสร็จสมบูรณ์',
-    'uploading': 'กำลังอัปโหลด',
-    'processing': 'กำลังประมวลผล',
-    'failed': 'ล้มเหลว',
-    'created': 'สร้างเมื่อ',
-    'updated': 'อัปเดตเมื่อ',
-    'delete': 'ลบ',
-    'addPhotos': 'เพิ่มรูปภาพ',
-    'copyLink': 'คัดลอกลิงก์',
-    'linkCopied': 'คัดลอกลิงก์ไปยังคลิปบอร์ดแล้ว',
-    'copyFailed': 'ไม่สามารถคัดลอกลิงก์ไปยังคลิปบอร์ด',
-    'deleteConfirm': 'กรุณาพิมพ์ "delete" เพื่อยืนยันว่าคุณต้องการลบอัลบั้มนี้อย่างถาวร',
-    'deleteFailed': 'ไม่สามารถลบอัลบั้มนี้ได้ กรุณาลองอีกครั้งในภายหลัง',
-    'debugLog': 'บันทึกการแก้ไขข้อบกพร่อง',
-    'language': 'ภาษา',
-    'loading': 'กำลังโหลด...'
-  },
-  'vi': {
-    'noAlbums': 'Không tìm thấy album hoặc đang tải...',
-    'createAlbum': 'Tạo album',
-    'creatingAlbum': 'Đang tạo album...',
-    'logOut': 'Đăng xuất',
-    'uploadProgress': 'Tiến độ tải lên',
-    'overallProgress': 'Tiến độ tổng thể',
-    'of': 'trong số',
-    'complete': 'hoàn thành',
-    'uploading': 'Đang tải lên',
-    'processing': 'Đang xử lý',
-    'failed': 'Thất bại',
-    'created': 'Đã tạo',
-    'updated': 'Đã cập nhật',
-    'delete': 'Xóa',
-    'addPhotos': 'Thêm ảnh',
-    'copyLink': 'Sao chép liên kết',
-    'linkCopied': 'Đã sao chép liên kết vào bộ nhớ tạm.',
-    'copyFailed': 'Không thể sao chép liên kết vào bộ nhớ tạm.',
-    'deleteConfirm': 'Vui lòng nhập "delete" để xác nhận rằng bạn muốn xóa vĩnh viễn album này',
-    'deleteFailed': 'Không thể xóa album này. Vui lòng thử lại sau.',
-    'debugLog': 'Nhật ký gỡ lỗi',
-    'language': 'Ngôn ngữ',
-    'loading': 'Đang tải...'
-  },
-  'cs': {
-    'noAlbums': 'Nebyly nalezeny žádné alba nebo se stále načítají...',
-    'createAlbum': 'Vytvořit album',
-    'creatingAlbum': 'Vytváření alba...',
-    'logOut': 'Odhlásit se',
-    'uploadProgress': 'Průběh nahrávání',
-    'overallProgress': 'Celkový průběh',
-    'of': 'z',
-    'complete': 'dokončeno',
-    'uploading': 'Nahrávání',
-    'processing': 'Zpracování',
-    'failed': 'Selhalo',
-    'created': 'Vytvořeno',
-    'updated': 'Aktualizováno',
-    'delete': 'Smazat',
-    'addPhotos': 'Přidat fotky',
-    'copyLink': 'Kopírovat odkaz',
-    'linkCopied': 'Odkaz byl zkopírován do schránky.',
-    'copyFailed': 'Nepodařilo se zkopírovat odkaz do schránky.',
-    'deleteConfirm': 'Zadejte "delete" pro potvrzení, že chcete trvale odstranit toto album',
-    'deleteFailed': 'Nepodařilo se smazat toto album. Zkuste to prosím později.',
-    'debugLog': 'Protokol ladění',
-    'language': 'Jazyk',
-    'loading': 'Načítání...'
-  },
-  'ro': {
-    'noAlbums': 'Nu s-au găsit albume sau se încarcă încă...',
-    'createAlbum': 'Creare album',
-    'creatingAlbum': 'Se creează album...',
-    'logOut': 'Deconectare',
-    'uploadProgress': 'Progres încărcare',
-    'overallProgress': 'Progres general',
-    'of': 'din',
-    'complete': 'complet',
-    'uploading': 'Se încarcă',
-    'processing': 'Se procesează',
-    'failed': 'Eșuat',
-    'created': 'Creat',
-    'updated': 'Actualizat',
-    'delete': 'Șterge',
-    'addPhotos': 'Adaugă fotografii',
-    'copyLink': 'Copiază link',
-    'linkCopied': 'Link-ul a fost copiat în clipboard.',
-    'copyFailed': 'Nu s-a putut copia link-ul în clipboard.',
-    'deleteConfirm': 'Tastați "delete" pentru a confirma că doriți să ștergeți definitiv acest album',
-    'deleteFailed': 'Nu s-a putut șterge acest album. Încercați din nou mai târziu.',
-    'debugLog': 'Jurnal de depanare',
-    'language': 'Limbă',
-    'loading': 'Se încarcă...'
-  },
-  'fi': {
-    'noAlbums': 'Albumeja ei löytynyt tai ne latautuvat edelleen...',
-    'createAlbum': 'Luo albumi',
-    'creatingAlbum': 'Luodaan albumia...',
-    'logOut': 'Kirjaudu ulos',
-    'uploadProgress': 'Lähetyksen edistyminen',
-    'overallProgress': 'Kokonaisedistyminen',
-    'of': '/',
-    'complete': 'valmis',
-    'uploading': 'Lähetetään',
-    'processing': 'Käsitellään',
-    'failed': 'Epäonnistui',
-    'created': 'Luotu',
-    'updated': 'Päivitetty',
-    'delete': 'Poista',
-    'addPhotos': 'Lisää kuvia',
-    'copyLink': 'Kopioi linkki',
-    'linkCopied': 'Linkki on kopioitu leikepöydälle.',
-    'copyFailed': 'Linkin kopiointi leikepöydälle epäonnistui.',
-    'deleteConfirm': 'Kirjoita "delete" vahvistaaksesi, että haluat poistaa tämän albumin pysyvästi',
-    'deleteFailed': 'Tämän albumin poistaminen epäonnistui. Yritä myöhemmin uudelleen.',
-    'debugLog': 'Virheenkorjausloki',
-    'language': 'Kieli',
-    'loading': 'Ladataan...'
-  },
-  'da': {
-    'noAlbums': 'Ingen albums fundet eller indlæser stadig...',
-    'createAlbum': 'Opret album',
-    'creatingAlbum': 'Opretter album...',
-    'logOut': 'Log ud',
-    'uploadProgress': 'Upload-fremskridt',
-    'overallProgress': 'Samlet fremskridt',
-    'of': 'af',
-    'complete': 'fuldført',
-    'uploading': 'Uploader',
-    'processing': 'Behandler',
-    'failed': 'Mislykkedes',
-    'created': 'Oprettet',
-    'updated': 'Opdateret',
-    'delete': 'Slet',
-    'addPhotos': 'Tilføj fotos',
-    'copyLink': 'Kopiér link',
-    'linkCopied': 'Link er kopieret til udklipsholderen.',
-    'copyFailed': 'Kunne ikke kopiere link til udklipsholderen.',
-    'deleteConfirm': 'Skriv "delete" for at bekræfte, at du permanent vil slette dette album',
-    'deleteFailed': 'Kunne ikke slette dette album. Prøv igen senere.',
-    'debugLog': 'Fejlfindingslog',
-    'language': 'Sprog',
-    'loading': 'Indlæser...'
-  },
-  'hu': {
-    'noAlbums': 'Nem található album vagy még betöltés alatt...',
-    'createAlbum': 'Album létrehozása',
-    'creatingAlbum': 'Album létrehozása...',
-    'logOut': 'Kijelentkezés',
-    'uploadProgress': 'Feltöltés folyamata',
-    'overallProgress': 'Teljes folyamat',
-    'of': '/',
-    'complete': 'kész',
-    'uploading': 'Feltöltés',
-    'processing': 'Feldolgozás',
-    'failed': 'Sikertelen',
-    'created': 'Létrehozva',
-    'updated': 'Frissítve',
-    'delete': 'Törlés',
-    'addPhotos': 'Fotók hozzáadása',
-    'copyLink': 'Link másolása',
-    'linkCopied': 'A link a vágólapra másolva.',
-    'copyFailed': 'Nem sikerült a linket a vágólapra másolni.',
-    'deleteConfirm': 'Kérjük, írd be a "delete" szót annak megerősítéséhez, hogy véglegesen törölni szeretnéd ezt az albumot',
-    'deleteFailed': 'Nem sikerült törölni ezt az albumot. Kérjük, próbáld újra később.',
-    'debugLog': 'Hibakeresési napló',
-    'language': 'Nyelv',
-    'loading': 'Betöltés...'
-  },
-  'id': {
-    'noAlbums': 'Tidak ada album yang ditemukan atau masih memuat...',
-    'createAlbum': 'Buat Album',
-    'creatingAlbum': 'Membuat Album...',
-    'logOut': 'Keluar',
-    'uploadProgress': 'Kemajuan Unggah',
-    'overallProgress': 'Kemajuan Keseluruhan',
-    'of': 'dari',
-    'complete': 'selesai',
-    'uploading': 'Mengunggah',
-    'processing': 'Memproses',
-    'failed': 'Gagal',
-    'created': 'Dibuat',
-    'updated': 'Diperbarui',
-    'delete': 'Hapus',
-    'addPhotos': 'Tambah Foto',
-    'copyLink': 'Salin Tautan',
-    'linkCopied': 'Tautan telah disalin ke clipboard Anda.',
-    'copyFailed': 'Gagal menyalin tautan ke clipboard.',
-    'deleteConfirm': 'Silakan ketik "delete" untuk mengonfirmasi bahwa Anda ingin menghapus album ini secara permanen',
-    'deleteFailed': 'Gagal menghapus album ini. Silakan coba lagi nanti.',
-    'debugLog': 'Log Debug',
-    'language': 'Bahasa',
-    'loading': 'Memuat...'
-  },
-  'no': {
-    'noAlbums': 'Ingen album funnet eller laster fortsatt...',
-    'createAlbum': 'Opprett album',
-    'creatingAlbum': 'Oppretter album...',
-    'logOut': 'Logg ut',
-    'uploadProgress': 'Opplastingsfremgang',
-    'overallProgress': 'Total fremgang',
-    'of': 'av',
-    'complete': 'fullført',
-    'uploading': 'Laster opp',
-    'processing': 'Behandler',
-    'failed': 'Mislyktes',
-    'created': 'Opprettet',
-    'updated': 'Oppdatert',
-    'delete': 'Slett',
-    'addPhotos': 'Legg til bilder',
-    'copyLink': 'Kopier lenke',
-    'linkCopied': 'Lenken er kopiert til utklippstavlen.',
-    'copyFailed': 'Kunne ikke kopiere lenken til utklippstavlen.',
-    'deleteConfirm': 'Skriv "delete" for å bekrefte at du vil slette dette albumet permanent',
-    'deleteFailed': 'Kunne ikke slette dette albumet. Prøv igjen senere.',
-    'debugLog': 'Feilsøkingslogg',
-    'language': 'Språk',
-    'loading': 'Laster...'
-  },
-  'nb': {
-    'noAlbums': 'Ingen album funnet eller laster fortsatt...',
-    'createAlbum': 'Opprett album',
-    'creatingAlbum': 'Oppretter album...',
-    'logOut': 'Logg ut',
-    'uploadProgress': 'Opplastingsfremgang',
-    'overallProgress': 'Total fremgang',
-    'of': 'av',
-    'complete': 'fullført',
-    'uploading': 'Laster opp',
-    'processing': 'Behandler',
-    'failed': 'Mislyktes',
-    'created': 'Opprettet',
-    'updated': 'Oppdatert',
-    'delete': 'Slett',
-    'addPhotos': 'Legg til bilder',
-    'copyLink': 'Kopier lenke',
-    'linkCopied': 'Lenken er kopiert til utklippstavlen.',
-    'copyFailed': 'Kunne ikke kopiere lenken til utklippstavlen.',
-    'deleteConfirm': 'Skriv "delete" for å bekrefte at du vil slette dette albumet permanent',
-    'deleteFailed': 'Kunne ikke slette dette albumet. Prøv igjen senere.',
-    'debugLog': 'Feilsøkingslogg',
-    'language': 'Språk',
-    'loading': 'Laster...'
-  },
-  'sk': {
-    'noAlbums': 'Nenašli sa žiadne albumy alebo sa stále načítavajú...',
-    'createAlbum': 'Vytvoriť album',
-    'creatingAlbum': 'Vytvára sa album...',
-    'logOut': 'Odhlásiť sa',
-    'uploadProgress': 'Priebeh nahrávania',
-    'overallProgress': 'Celkový priebeh',
-    'of': 'z',
-    'complete': 'dokončené',
-    'uploading': 'Nahráva sa',
-    'processing': 'Spracúva sa',
-    'failed': 'Zlyhalo',
-    'created': 'Vytvorené',
-    'updated': 'Aktualizované',
-    'delete': 'Odstrániť',
-    'addPhotos': 'Pridať fotky',
-    'copyLink': 'Kopírovať odkaz',
-    'linkCopied': 'Odkaz bol skopírovaný do schránky.',
-    'copyFailed': 'Nepodarilo sa skopírovať odkaz do schránky.',
-    'deleteConfirm': 'Napíšte "delete" na potvrdenie, že chcete natrvalo odstrániť tento album',
-    'deleteFailed': 'Nepodarilo sa odstrániť tento album. Skúste to znova neskôr.',
-    'debugLog': 'Protokol ladenia',
-    'language': 'Jazyk',
-    'loading': 'Načítava sa...'
-  },
-  'el': {
-    'noAlbums': 'Δεν βρέθηκαν άλμπουμ ή φορτώνουν ακόμα...',
-    'createAlbum': 'Δημιουργία άλμπουμ',
-    'creatingAlbum': 'Δημιουργία άλμπουμ...',
-    'logOut': 'Αποσύνδεση',
-    'uploadProgress': 'Πρόοδος μεταφόρτωσης',
-    'overallProgress': 'Συνολική πρόοδος',
-    'of': 'από',
-    'complete': 'ολοκληρώθηκε',
-    'uploading': 'Μεταφόρτωση',
-    'processing': 'Επεξεργασία',
-    'failed': 'Αποτυχία',
-    'created': 'Δημιουργήθηκε',
-    'updated': 'Ενημερώθηκε',
-    'delete': 'Διαγραφή',
-    'addPhotos': 'Προσθήκη φωτογραφιών',
-    'copyLink': 'Αντιγραφή συνδέσμου',
-    'linkCopied': 'Ο σύνδεσμος αντιγράφηκε στο πρόχειρο.',
-    'copyFailed': 'Αποτυχία αντιγραφής συνδέσμου στο πρόχειρο.',
-    'deleteConfirm': 'Παρακαλώ πληκτρολογήστε "delete" για να επιβεβαιώσετε ότι θέλετε να διαγράψετε οριστικά αυτό το άλμπουμ',
-    'deleteFailed': 'Αποτυχία διαγραφής αυτού του άλμπουμ. Παρακαλώ δοκιμάστε ξανά αργότερα.',
-    'debugLog': 'Αρχείο καταγραφής εντοπισμού σφαλμάτων',
-    'language': 'Γλώσσα',
-    'loading': 'Φόρτωση...'
-  },
-  'hi': {
-    'noAlbums': 'कोई एल्बम नहीं मिला या अभी भी लोड हो रहा है...',
-    'createAlbum': 'एल्बम बनाएं',
-    'creatingAlbum': 'एल्बम बना रहा है...',
-    'logOut': 'लॉग आउट',
-    'uploadProgress': 'अपलोड प्रगति',
-    'overallProgress': 'समग्र प्रगति',
-    'of': 'का',
-    'complete': 'पूर्ण',
-    'uploading': 'अपलोड हो रहा है',
-    'processing': 'प्रोसेसिंग',
-    'failed': 'विफल',
-    'created': 'बनाया गया',
-    'updated': 'अपडेट किया गया',
-    'delete': 'हटाएं',
-    'addPhotos': 'फोटो जोड़ें',
-    'copyLink': 'लिंक कॉपी करें',
-    'linkCopied': 'लिंक आपके क्लिपबोर्ड पर कॉपी किया गया है।',
-    'copyFailed': 'लिंक को क्लिपबोर्ड पर कॉपी करने में विफल।',
-    'deleteConfirm': 'कृपया इस एल्बम को स्थायी रूप से हटाने की पुष्टि करने के लिए "delete" टाइप करें',
-    'deleteFailed': 'इस एल्बम को हटाने में विफल। कृपया बाद में पुनः प्रयास करें।',
-    'debugLog': 'डीबग लॉग',
-    'language': 'भाषा',
-    'loading': 'लोड हो रहा है...'
-  },
-  'fa': {
-    'noAlbums': 'آلبومی یافت نشد یا در حال بارگذاری است...',
-    'createAlbum': 'ایجاد آلبوم',
-    'creatingAlbum': 'در حال ایجاد آلبوم...',
-    'logOut': 'خروج',
-    'uploadProgress': 'پیشرفت آپلود',
-    'overallProgress': 'پیشرفت کلی',
-    'of': 'از',
-    'complete': 'کامل',
-    'uploading': 'در حال آپلود',
-    'processing': 'در حال پردازش',
-    'failed': 'ناموفق',
-    'created': 'ایجاد شده',
-    'updated': 'به‌روزرسانی شده',
-    'delete': 'حذف',
-    'addPhotos': 'افزودن عکس',
-    'copyLink': 'کپی لینک',
-    'linkCopied': 'لینک در کلیپ‌بورد کپی شد.',
-    'copyFailed': 'کپی لینک در کلیپ‌بورد ناموفق بود.',
-    'deleteConfirm': 'لطفاً برای تأیید حذف دائمی این آلبوم "delete" را تایپ کنید',
-    'deleteFailed': 'حذف این آلبوم ناموفق بود. لطفاً بعداً دوباره امتحان کنید.',
-    'debugLog': 'گزارش اشکال‌زدایی',
-    'language': 'زبان',
-    'loading': 'در حال بارگذاری...'
-  },
-  'bn': {
-    'noAlbums': 'কোন অ্যালবাম পাওয়া যায়নি বা এখনও লোড হচ্ছে...',
-    'createAlbum': 'অ্যালবাম তৈরি করুন',
-    'creatingAlbum': 'অ্যালবাম তৈরি করা হচ্ছে...',
-    'logOut': 'লগ আউট',
-    'uploadProgress': 'আপলোড অগ্রগতি',
-    'overallProgress': 'সামগ্রিক অগ্রগতি',
-    'of': 'এর',
-    'complete': 'সম্পন্ন',
-    'uploading': 'আপলোড হচ্ছে',
-    'processing': 'প্রক্রিয়াকরণ হচ্ছে',
-    'failed': 'ব্যর্থ হয়েছে',
-    'created': 'তৈরি করা হয়েছে',
-    'updated': 'আপডেট করা হয়েছে',
-    'delete': 'মুছুন',
-    'addPhotos': 'ছবি যোগ করুন',
-    'copyLink': 'লিঙ্ক কপি করুন',
-    'linkCopied': 'লিঙ্ক আপনার ক্লিপবোর্ডে কপি করা হয়েছে।',
-    'copyFailed': 'ক্লিপবোর্ডে লিঙ্ক কপি করতে ব্যর্থ হয়েছে।',
-    'deleteConfirm': 'আপনি যে এই অ্যালবামটি স্থায়ীভাবে মুছতে চান তা নিশ্চিত করতে "delete" টাইপ করুন',
-    'deleteFailed': 'এই অ্যালবাম মুছতে ব্যর্থ হয়েছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।',
-    'debugLog': 'ডিবাগ লগ',
-    'language': 'ভাষা',
-    'loading': 'লোড হচ্ছে...'
-  },
-  'ta': {
-    'noAlbums': 'ஆல்பங்கள் கிடைக்கவில்லை அல்லது இன்னும் ஏற்றுகிறது...',
-    'createAlbum': 'ஆல்பத்தை உருவாக்கு',
-    'creatingAlbum': 'ஆல்பத்தை உருவாக்குகிறது...',
-    'logOut': 'வெளியேறு',
-    'uploadProgress': 'பதிவேற்ற முன்னேற்றம்',
-    'overallProgress': 'மொத்த முன்னேற்றம்',
-    'of': 'இல்',
-    'complete': 'முடிந்தது',
-    'uploading': 'பதிவேற்றுகிறது',
-    'processing': 'செயலாக்குகிறது',
-    'failed': 'தோல்வி',
-    'created': 'உருவாக்கப்பட்டது',
-    'updated': 'புதுப்பிக்கப்பட்டது',
-    'delete': 'நீக்கு',
-    'addPhotos': 'புகைப்படங்களைச் சேர்',
-    'copyLink': 'இணைப்பை நகலெடு',
-    'linkCopied': 'இணைப்பு உங்கள் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது.',
-    'copyFailed': 'இணைப்பை கிளிப்போர்டுக்கு நகலெடுக்க முடியவில்லை.',
-    'deleteConfirm': 'இந்த ஆல்பத்தை நிரந்தரமாக நீக்க விரும்புகிறீர்கள் என்பதை உறுதிப்படுத்த "delete" என்று தட்டச்சு செய்யவும்',
-    'deleteFailed': 'இந்த ஆல்பத்தை நீக்க முடியவில்லை. பின்னர் மீண்டும் முயற்சிக்கவும்.',
-    'debugLog': 'பிழைத்திருத்த பதிவு',
-    'language': 'மொழி',
-    'loading': 'ஏற்றுகிறது...'
-  },
-  'te': {
-    'noAlbums': 'ఆల్బమ్‌లు కనుగొనబడలేదు లేదా ఇంకా లోడ్ అవుతున్నాయి...',
-    'createAlbum': 'ఆల్బమ్ సృష్టించు',
-    'creatingAlbum': 'ఆల్బమ్ సృష్టిస్తోంది...',
-    'logOut': 'లాగ్ అవుట్',
-    'uploadProgress': 'అప్‌లోడ్ ప్రగతి',
-    'overallProgress': 'మొత్తం ప్రగతి',
-    'of': 'యొక్క',
-    'complete': 'పూర్తి',
-    'uploading': 'అప్‌లోడ్ చేస్తోంది',
-    'processing': 'ప్రాసెస్ చేస్తోంది',
-    'failed': 'విఫలమైంది',
-    'created': 'సృష్టించబడింది',
-    'updated': 'నవీకరించబడింది',
-    'delete': 'తొలగించు',
-    'addPhotos': 'ఫోటోలను జోడించు',
-    'copyLink': 'లింక్ కాపీ చేయి',
-    'linkCopied': 'లింక్ మీ క్లిప్‌బోర్డ్‌కి కాపీ చేయబడింది.',
-    'copyFailed': 'లింక్‌ను క్లిప్‌బోర్డ్‌కి కాపీ చేయడం విఫలమైంది.',
-    'deleteConfirm': 'మీరు ఈ ఆల్బమ్‌ను శాశ్వతంగా తొలగించాలనుకుంటున్నారని నిర్ధారించడానికి "delete" అని టైప్ చేయండి',
-    'deleteFailed': 'ఈ ఆల్బమ్‌ను తొలగించడం విఫలమైంది. దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి.',
-    'debugLog': 'డీబగ్ లాగ్',
-    'language': 'భాష',
-    'loading': 'లోడ్ అవుతోంది...'
-  },
-  'kn': {
-    'noAlbums': 'ಆಲ್ಬಮ್‌ಗಳು ಕಂಡುಬಂದಿಲ್ಲ ಅಥವಾ ಇನ್ನೂ ಲೋಡ್ ಆಗುತ್ತಿವೆ...',
-    'createAlbum': 'ಆಲ್ಬಮ್ ರಚಿಸಿ',
-    'creatingAlbum': 'ಆಲ್ಬಮ್ ರಚಿಸಲಾಗುತ್ತಿದೆ...',
-    'logOut': 'ಲಾಗ್ ಔಟ್',
-    'uploadProgress': 'ಅಪ್‌ಲೋಡ್ ಪ್ರಗತಿ',
-    'overallProgress': 'ಒಟ್ಟಾರೆ ಪ್ರಗತಿ',
-    'of': 'ರಲ್ಲಿ',
-    'complete': 'ಪೂರ್ಣಗೊಂಡಿದೆ',
-    'uploading': 'ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ',
-    'processing': 'ಸಂಸ್ಕರಿಸಲಾಗುತ್ತಿದೆ',
-    'failed': 'ವಿಫಲವಾಗಿದೆ',
-    'created': 'ರಚಿಸಲಾಗಿದೆ',
-    'updated': 'ನವೀಕರಿಸಲಾಗಿದೆ',
-    'delete': 'ಅಳಿಸಿ',
-    'addPhotos': 'ಫೋಟೋಗಳನ್ನು ಸೇರಿಸಿ',
-    'copyLink': 'ಲಿಂಕ್ ನಕಲಿಸಿ',
-    'linkCopied': 'ಲಿಂಕ್ ನಿಮ್ಮ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲಾಗಿದೆ.',
-    'copyFailed': 'ಲಿಂಕ್ ಅನ್ನು ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲು ವಿಫಲವಾಗಿದೆ.',
-    'deleteConfirm': 'ಈ ಆಲ್ಬಮ್ ಅನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲು ಬಯಸುತ್ತೀರಿ ಎಂದು ದೃಢೀಕರಿಸಲು "delete" ಎಂದು ಟೈಪ್ ಮಾಡಿ',
-    'deleteFailed': 'ಈ ಆಲ್ಬಮ್ ಅನ್ನು ಅಳಿಸಲು ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
-    'debugLog': 'ಡೀಬಗ್ ಲಾಗ್',
-    'language': 'ಭಾಷೆ',
-    'loading': 'ಲೋಡ್ ಆಗುತ್ತಿದೆ...'
-  },
-  'ml': {
-    'noAlbums': 'ആൽബങ്ങൾ കണ്ടെത്തിയില്ല അല്ലെങ്കിൽ ഇപ്പോഴും ലോഡ് ചെയ്യുന്നു...',
-    'createAlbum': 'ആൽബം സൃഷ്ടിക്കുക',
-    'creatingAlbum': 'ആൽബം സൃഷ്ടിക്കുന്നു...',
-    'logOut': 'ലോഗ് ഔട്ട്',
-    'uploadProgress': 'അപ്‌ലോഡ് പുരോഗതി',
-    'overallProgress': 'മൊത്തത്തിലുള്ള പുരോഗതി',
-    'of': 'ൽ',
-    'complete': 'പൂർത്തിയായി',
-    'uploading': 'അപ്‌ലോഡ് ചെയ്യുന്നു',
-    'processing': 'പ്രോസസ്സ് ചെയ്യുന്നു',
-    'failed': 'പരാജയപ്പെട്ടു',
-    'created': 'സൃഷ്ടിച്ചത്',
-    'updated': 'അപ്‌ഡേറ്റ് ചെയ്തത്',
-    'delete': 'ഇല്ലാതാക്കുക',
-    'addPhotos': 'ഫോട്ടോകൾ ചേർക്കുക',
-    'copyLink': 'ലിങ്ക് പകർത്തുക',
-    'linkCopied': 'ലിങ്ക് നിങ്ങളുടെ ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തിയിരിക്കുന്നു.',
-    'copyFailed': 'ലിങ്ക് ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്താൻ പരാജയപ്പെട്ടു.',
-    'deleteConfirm': 'ഈ ആൽബം ശാശ്വതമായി ഇല്ലാതാക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുവെന്ന് സ്ഥിരീകരിക്കാൻ "delete" എന്ന് ടൈപ്പ് ചെയ്യുക',
-    'deleteFailed': 'ഈ ആൽബം ഇല്ലാതാക്കാൻ പരാജയപ്പെട്ടു. ദയവായി പിന്നീട് വീണ്ടും ശ്രമിക്കുക.',
-    'debugLog': 'ഡീബഗ് ലോഗ്',
-    'language': 'ഭാഷ',
-    'loading': 'ലോഡ് ചെയ്യുന്നു...'
-  },
-  'mr': {
-    'noAlbums': 'अल्बम आढळले नाहीत किंवा अजूनही लोड होत आहेत...',
-    'createAlbum': 'अल्बम तयार करा',
-    'creatingAlbum': 'अल्बम तयार करत आहे...',
-    'logOut': 'लॉग आउट',
-    'uploadProgress': 'अपलोड प्रगती',
-    'overallProgress': 'एकूण प्रगती',
-    'of': 'पैकी',
-    'complete': 'पूर्ण',
-    'uploading': 'अपलोड करत आहे',
-    'processing': 'प्रक्रिया करत आहे',
-    'failed': 'अयशस्वी',
-    'created': 'तयार केले',
-    'updated': 'अपडेट केले',
-    'delete': 'हटवा',
-    'addPhotos': 'फोटो जोडा',
-    'copyLink': 'लिंक कॉपी करा',
-    'linkCopied': 'लिंक तुमच्या क्लिपबोर्डवर कॉपी केली आहे.',
-    'copyFailed': 'लिंक क्लिपबोर्डवर कॉपी करण्यात अयशस्वी.',
-    'deleteConfirm': 'हा अल्बम कायमचा हटवण्याची पुष्टी करण्यासाठी कृपया "delete" टाइप करा',
-    'deleteFailed': 'हा अल्बम हटवण्यात अयशस्वी. कृपया नंतर पुन्हा प्रयत्न करा.',
-    'debugLog': 'डीबग लॉग',
-    'language': 'भाषा',
-    'loading': 'लोड करत आहे...'
-  },
-  'ur': {
-    'noAlbums': 'کوئی البم نہیں ملا یا ابھی بھی لوڈ ہو رہا ہے...',
-    'createAlbum': 'البم بنائیں',
-    'creatingAlbum': 'البم بنایا جا رہا ہے...',
-    'logOut': 'لاگ آؤٹ',
-    'uploadProgress': 'اپلوڈ کی ترقی',
-    'overallProgress': 'مجموعی ترقی',
-    'of': 'میں سے',
-    'complete': 'مکمل',
-    'uploading': 'اپلوڈ ہو رہا ہے',
-    'processing': 'پروسیسنگ',
-    'failed': 'ناکام',
-    'created': 'تخلیق کردہ',
-    'updated': 'اپ ڈیٹ کردہ',
-    'delete': 'حذف کریں',
-    'addPhotos': 'تصاویر شامل کریں',
-    'copyLink': 'لنک کاپی کریں',
-    'linkCopied': 'لنک آپ کے کلپ بورڈ پر کاپی کر دیا گیا ہے۔',
-    'copyFailed': 'لنک کو کلپ بورڈ پر کاپی کرنے میں ناکام۔',
-    'deleteConfirm': 'اس البم کو مستقل طور پر حذف کرنے کی تصدیق کرنے کے لیے براہ کرم "delete" ٹائپ کریں',
-    'deleteFailed': 'اس البم کو حذف کرنے میں ناکام۔ براہ کرم بعد میں دوبارہ کوشش کریں۔',
-    'debugLog': 'ڈیبگ لاگ',
-    'language': 'زبان',
-    'loading': 'لوڈ ہو رہا ہے...'
-  },
-  'zh-HK': {
-    'noAlbums': '未找到相冊或仍在載入中...',
-    'createAlbum': '建立相冊',
-    'creatingAlbum': '正在建立相冊...',
-    'logOut': '登出',
-    'uploadProgress': '上傳進度',
-    'overallProgress': '整體進度',
-    'of': '/',
-    'complete': '已完成',
-    'uploading': '上傳中',
-    'processing': '處理中',
-    'failed': '失敗',
-    'created': '建立於',
-    'updated': '更新於',
-    'delete': '刪除',
-    'addPhotos': '新增照片',
-    'copyLink': '複製連結',
-    'linkCopied': '連結已複製到剪貼簿。',
-    'copyFailed': '複製連結到剪貼簿失敗。',
-    'deleteConfirm': '請輸入"delete"以確認您要永久刪除此相冊',
-    'deleteFailed': '刪除相冊失敗。請稍後再試。',
-    'debugLog': '除錯記錄',
-    'language': '語言',
-    'loading': '載入中...'
-  },
-  'zh-TW': {
-    'noAlbums': '未找到相冊或仍在載入中...',
-    'createAlbum': '建立相冊',
-    'creatingAlbum': '正在建立相冊...',
-    'logOut': '登出',
-    'uploadProgress': '上傳進度',
-    'overallProgress': '整體進度',
-    'of': '/',
-    'complete': '已完成',
-    'uploading': '上傳中',
-    'processing': '處理中',
-    'failed': '失敗',
-    'created': '建立於',
-    'updated': '更新於',
-    'delete': '刪除',
-    'addPhotos': '新增照片',
-    'copyLink': '複製連結',
-    'linkCopied': '連結已複製到剪貼簿。',
-    'copyFailed': '複製連結到剪貼簿失敗。',
-    'deleteConfirm': '請輸入"delete"以確認您要永久刪除此相冊',
-    'deleteFailed': '刪除相冊失敗。請稍後再試。',
-    'debugLog': '除錯記錄',
-    'language': '語言',
-    'loading': '載入中...'
-  },
-  'af': {
-    'noAlbums': 'Geen albums gevind of steeds besig om te laai...',
-    'createAlbum': 'Skep Album',
-    'creatingAlbum': 'Skep Album...',
-    'logOut': 'Teken Uit',
-    'uploadProgress': 'Oplaaivordering',
-    'overallProgress': 'Algehele Vordering',
-    'of': 'van',
-    'complete': 'voltooi',
-    'uploading': 'Laai tans op',
-    'processing': 'Verwerk',
-    'failed': 'Misluk',
-    'created': 'Geskep',
-    'updated': 'Opgedateer',
-    'delete': 'Vee uit',
-    'addPhotos': 'Voeg Foto\'s by',
-    'copyLink': 'Kopieer Skakel',
-    'linkCopied': 'Skakel is na jou knipbord gekopieer.',
-    'copyFailed': 'Kon nie skakel na knipbord kopieer nie.',
-    'deleteConfirm': 'Tik "delete" om te bevestig dat jy hierdie album permanent wil uitvee',
-    'deleteFailed': 'Kon nie hierdie album uitvee nie. Probeer asseblief later weer.',
-    'debugLog': 'Ontfoutingslog',
-    'language': 'Taal',
-    'loading': 'Laai tans...'
-  },
-  'az': {
-    'noAlbums': 'Heç bir albom tapılmadı və ya hələ yüklənir...',
-    'createAlbum': 'Albom yarat',
-    'creatingAlbum': 'Albom yaradılır...',
-    'logOut': 'Çıxış',
-    'uploadProgress': 'Yükləmə irəliləyişi',
-    'overallProgress': 'Ümumi irəliləyiş',
-    'of': '/',
-    'complete': 'tamamlandı',
-    'uploading': 'Yüklənir',
-    'processing': 'İşlənir',
-    'failed': 'Uğursuz oldu',
-    'created': 'Yaradıldı',
-    'updated': 'Yeniləndi',
-    'delete': 'Sil',
-    'addPhotos': 'Foto əlavə et',
-    'copyLink': 'Linki kopyala',
-    'linkCopied': 'Link mübadilə buferinizə kopyalandı.',
-    'copyFailed': 'Linki mübadilə buferinə kopyalamaq alınmadı.',
-    'deleteConfirm': 'Bu albomu həmişəlik silmək istədiyinizi təsdiqləmək üçün "delete" yazın',
-    'deleteFailed': 'Bu albomu silmək alınmadı. Zəhmət olmasa sonra yenidən cəhd edin.',
-    'debugLog': 'Sazlama jurnalı',
-    'language': 'Dil',
-    'loading': 'Yüklənir...'
-  },
-  'eu': {
-    'noAlbums': 'Ez da albumik aurkitu edo oraindik kargatzen...',
-    'createAlbum': 'Sortu albuma',
-    'creatingAlbum': 'Albuma sortzen...',
-    'logOut': 'Saioa amaitu',
-    'uploadProgress': 'Igoera aurrerapena',
-    'overallProgress': 'Aurrerapen orokorra',
-    'of': '/',
-    'complete': 'osoa',
-    'uploading': 'Igotzen',
-    'processing': 'Prozesatzen',
-    'failed': 'Huts egin du',
-    'created': 'Sortua',
-    'updated': 'Eguneratua',
-    'delete': 'Ezabatu',
-    'addPhotos': 'Gehitu argazkiak',
-    'copyLink': 'Kopiatu esteka',
-    'linkCopied': 'Esteka arbelera kopiatu da.',
-    'copyFailed': 'Huts egin du esteka arbelera kopiatzean.',
-    'deleteConfirm': 'Idatzi "delete" album hau betirako ezabatu nahi duzula baieztatzeko',
-    'deleteFailed': 'Ezin izan da album hau ezabatu. Saiatu berriro geroago.',
-    'debugLog': 'Arazte erregistroa',
-    'language': 'Hizkuntza',
-    'loading': 'Kargatzen...'
-  },
-  'bg': {
-    'noAlbums': 'Не са намерени албуми или все още се зареждат...',
-    'createAlbum': 'Създай албум',
-    'creatingAlbum': 'Създаване на албум...',
-    'logOut': 'Излез',
-    'uploadProgress': 'Напредък на качването',
-    'overallProgress': 'Общ напредък',
-    'of': 'от',
-    'complete': 'завършено',
-    'uploading': 'Качване',
-    'processing': 'Обработка',
-    'failed': 'Неуспешно',
-    'created': 'Създаден',
-    'updated': 'Обновен',
-    'delete': 'Изтрий',
-    'addPhotos': 'Добави снимки',
-    'copyLink': 'Копирай връзка',
-    'linkCopied': 'Връзката е копирана в клипборда.',
-    'copyFailed': 'Неуспешно копиране на връзката в клипборда.',
-    'deleteConfirm': 'Моля, напишете "delete", за да потвърдите, че искате да изтриете този албум завинаги',
-    'deleteFailed': 'Неуспешно изтриване на този албум. Моля, опитайте отново по-късно.',
-    'debugLog': 'Дневник за отстраняване на грешки',
-    'language': 'Език',
-    'loading': 'Зареждане...'
-  },
-  'ca': {
-    'noAlbums': 'No s\'han trobat àlbums o encara s\'estan carregant...',
-    'createAlbum': 'Crear àlbum',
-    'creatingAlbum': 'Creant àlbum...',
-    'logOut': 'Tancar sessió',
-    'uploadProgress': 'Progrés de pujada',
-    'overallProgress': 'Progrés general',
-    'of': 'de',
-    'complete': 'complet',
-    'uploading': 'Pujant',
-    'processing': 'Processant',
-    'failed': 'Ha fallat',
-    'created': 'Creat',
-    'updated': 'Actualitzat',
-    'delete': 'Eliminar',
-    'addPhotos': 'Afegir fotos',
-    'copyLink': 'Copiar enllaç',
-    'linkCopied': 'L\'enllaç s\'ha copiat al porta-retalls.',
-    'copyFailed': 'No s\'ha pogut copiar l\'enllaç al porta-retalls.',
-    'deleteConfirm': 'Si us plau, escriu "delete" per confirmar que vols eliminar permanentment aquest àlbum',
-    'deleteFailed': 'No s\'ha pogut eliminar aquest àlbum. Si us plau, torna-ho a provar més tard.',
-    'debugLog': 'Registre de depuració',
-    'language': 'Idioma',
-    'loading': 'Carregant...'
-  },
-  'et': {
-    'noAlbums': 'Albumeid ei leitud või need laevad endiselt...',
-    'createAlbum': 'Loo album',
-    'creatingAlbum': 'Albumi loomine...',
-    'logOut': 'Logi välja',
-    'uploadProgress': 'Üleslaadimise progress',
-    'overallProgress': 'Üldine progress',
-    'of': '/',
-    'complete': 'valmis',
-    'uploading': 'Üleslaadimine',
-    'processing': 'Töötlemine',
-    'failed': 'Ebaõnnestus',
-    'created': 'Loodud',
-    'updated': 'Uuendatud',
-    'delete': 'Kustuta',
-    'addPhotos': 'Lisa fotosid',
-    'copyLink': 'Kopeeri link',
-    'linkCopied': 'Link on kopeeritud lõikelauale.',
-    'copyFailed': 'Lingi kopeerimine lõikelauale ebaõnnestus.',
-    'deleteConfirm': 'Palun kirjuta "delete", et kinnitada selle albumi jäädavat kustutamist',
-    'deleteFailed': 'Albumi kustutamine ebaõnnestus. Palun proovi hiljem uuesti.',
-    'debugLog': 'Silumislogi',
-    'language': 'Keel',
-    'loading': 'Laadimine...'
-  },
-  'gl': {
-    'noAlbums': 'Non se atoparon álbums ou aínda están a cargar...',
-    'createAlbum': 'Crear álbum',
-    'creatingAlbum': 'Creando álbum...',
-    'logOut': 'Pechar sesión',
-    'uploadProgress': 'Progreso de subida',
-    'overallProgress': 'Progreso xeral',
-    'of': 'de',
-    'complete': 'completo',
-    'uploading': 'Subindo',
-    'processing': 'Procesando',
-    'failed': 'Fallou',
-    'created': 'Creado',
-    'updated': 'Actualizado',
-    'delete': 'Eliminar',
-    'addPhotos': 'Engadir fotos',
-    'copyLink': 'Copiar ligazón',
-    'linkCopied': 'A ligazón foi copiada ao portapapeis.',
-    'copyFailed': 'Non se puido copiar a ligazón ao portapapeis.',
-    'deleteConfirm': 'Por favor, escribe "delete" para confirmar que queres eliminar permanentemente este álbum',
-    'deleteFailed': 'Non se puido eliminar este álbum. Por favor, téntao de novo máis tarde.',
-    'debugLog': 'Rexistro de depuración',
-    'language': 'Idioma',
-    'loading': 'Cargando...'
-  },
-  'gu': {
-    'noAlbums': 'કોઈ આલ્બમ મળ્યા નથી અથવા હજી લોડ થઈ રહ્યા છે...',
-    'createAlbum': 'આલ્બમ બનાવો',
-    'creatingAlbum': 'આલ્બમ બનાવી રહ્યું છે...',
-    'logOut': 'લૉગ આઉટ',
-    'uploadProgress': 'અપલોડ પ્રગતિ',
-    'overallProgress': 'સમગ્ર પ્રગતિ',
-    'of': '/',
-    'complete': 'પૂર્ણ',
-    'uploading': 'અપલોડ કરી રહ્યું છે',
-    'processing': 'પ્રક્રિયા કરી રહ્યું છે',
-    'failed': 'નિષ્ફળ',
-    'created': 'બનાવ્યું',
-    'updated': 'અપડેટ કર્યું',
-    'delete': 'કાઢી નાખો',
-    'addPhotos': 'ફોટા ઉમેરો',
-    'copyLink': 'લિંક કૉપિ કરો',
-    'linkCopied': 'લિંક તમારા ક્લિપબોર્ડ પર કૉપિ કરવામાં આવી છે.',
-    'copyFailed': 'લિંક ક્લિપબોર્ડ પર કૉપિ કરવામાં નિષ્ફળ.',
-    'deleteConfirm': 'કૃપા કરીને "delete" લખો એ પુષ્ટિ કરવા માટે કે તમે આ આલ્બમને કાયમી રીતે કાઢી નાખવા માંગો છો',
-    'deleteFailed': 'આ આલ્બમ કાઢી નાખવામાં નિષ્ફળ. કૃપા કરીને પછીથી ફરી પ્રયાસ કરો.',
-    'debugLog': 'ડીબગ લૉગ',
-    'language': 'ભાષા',
-    'loading': 'લોડ થઈ રહ્યું છે...'
-  },
-  'is': {
-    'noAlbums': 'Engin albúm fundust eða eru enn að hlaðast...',
-    'createAlbum': 'Búa til albúm',
-    'creatingAlbum': 'Bý til albúm...',
-    'logOut': 'Útskrá',
-    'uploadProgress': 'Framvinda upphleðslu',
-    'overallProgress': 'Heildarframvinda',
-    'of': 'af',
-    'complete': 'lokið',
-    'uploading': 'Hleð upp',
-    'processing': 'Vinn',
-    'failed': 'Mistókst',
-    'created': 'Búið til',
-    'updated': 'Uppfært',
-    'delete': 'Eyða',
-    'addPhotos': 'Bæta við myndum',
-    'copyLink': 'Afrita hlekk',
-    'linkCopied': 'Hlekkur hefur verið afritaður á klippispjald.',
-    'copyFailed': 'Mistókst að afrita hlekk á klippispjald.',
-    'deleteConfirm': 'Vinsamlegast skrifaðu "delete" til að staðfesta að þú viljir eyða þessu albúmi varanlega',
-    'deleteFailed': 'Mistókst að eyða þessu albúmi. Vinsamlegast reyndu aftur síðar.',
-    'debugLog': 'Villuleit',
-    'language': 'Tungumál',
-    'loading': 'Hleð...'
-  },
-  'kk': {
-    'noAlbums': 'Альбомдар табылмады немесе әлі жүктелуде...',
-    'createAlbum': 'Альбом жасау',
-    'creatingAlbum': 'Альбом жасалуда...',
-    'logOut': 'Шығу',
-    'uploadProgress': 'Жүктеу барысы',
-    'overallProgress': 'Жалпы барыс',
-    'of': '/',
-    'complete': 'аяқталды',
-    'uploading': 'Жүктелуде',
-    'processing': 'Өңделуде',
-    'failed': 'Сәтсіз',
-    'created': 'Жасалған',
-    'updated': 'Жаңартылған',
-    'delete': 'Жою',
-    'addPhotos': 'Фотосуреттер қосу',
-    'copyLink': 'Сілтемені көшіру',
-    'linkCopied': 'Сілтеме буферге көшірілді.',
-    'copyFailed': 'Сілтемені буферге көшіру сәтсіз аяқталды.',
-    'deleteConfirm': 'Бұл альбомды біржола жою үшін "delete" деп теріңіз',
-    'deleteFailed': 'Бұл альбомды жою сәтсіз аяқталды. Кейінірек қайталап көріңіз.',
-    'debugLog': 'Жөндеу журналы',
-    'language': 'Тіл',
-    'loading': 'Жүктелуде...'
-  },
-  'ky': {
-    'noAlbums': 'Альбомдор табылган жок же али жүктөлүүдө...',
-    'createAlbum': 'Альбом түзүү',
-    'creatingAlbum': 'Альбом түзүлүүдө...',
-    'logOut': 'Чыгуу',
-    'uploadProgress': 'Жүктөө прогресси',
-    'overallProgress': 'Жалпы прогресс',
-    'of': '/',
-    'complete': 'аяктады',
-    'uploading': 'Жүктөлүүдө',
-    'processing': 'Иштетилүүдө',
-    'failed': 'Ийгиликсиз',
-    'created': 'Түзүлгөн',
-    'updated': 'Жаңыртылган',
-    'delete': 'Өчүрүү',
-    'addPhotos': 'Сүрөттөрдү кошуу',
-    'copyLink': 'Шилтемени көчүрүү',
-    'linkCopied': 'Шилтеме алмашуу буферине көчүрүлдү.',
-    'copyFailed': 'Шилтемени алмашуу буферине көчүрүү мүмкүн болбоду.',
-    'deleteConfirm': 'Бул альбомду биротоло өчүрүүнү каалаганыңызды ырастоо үчүн "delete" деп жазыңыз',
-    'deleteFailed': 'Бул альбомду өчүрүү мүмкүн болбоду. Кийинчерээк кайталап көрүңүз.',
-    'debugLog': 'Мүчүлүштүктөрдү оңдоо журналы',
-    'language': 'Тил',
-    'loading': 'Жүктөлүүдө...'
-  },
-  'lo': {
-    'noAlbums': 'ບໍ່ພົບອະລະບ້ຳ ຫຼື ກຳລັງໂຫຼດຢູ່...',
-    'createAlbum': 'ສ້າງອະລະບ້ຳ',
-    'creatingAlbum': 'ກຳລັງສ້າງອະລະບ້ຳ...',
-    'logOut': 'ອອກຈາກລະບົບ',
-    'uploadProgress': 'ຄວາມຄືບໜ້າການອັບໂຫຼດ',
-    'overallProgress': 'ຄວາມຄືບໜ້າທັງໝົດ',
-    'of': '/',
-    'complete': 'ສຳເລັດ',
-    'uploading': 'ກຳລັງອັບໂຫຼດ',
-    'processing': 'ກຳລັງປະມວນຜົນ',
-    'failed': 'ລົ້ມເຫຼວ',
-    'created': 'ສ້າງເມື່ອ',
-    'updated': 'ອັບເດດເມື່ອ',
-    'delete': 'ລຶບ',
-    'addPhotos': 'ເພີ່ມຮູບພາບ',
-    'copyLink': 'ສຳເນົາລິ້ງ',
-    'linkCopied': 'ລິ້ງໄດ້ຖືກສຳເນົາໄປຍັງຄລິບບອດຂອງທ່ານແລ້ວ.',
-    'copyFailed': 'ບໍ່ສາມາດສຳເນົາລິ້ງໄປຍັງຄລິບບອດ.',
-    'deleteConfirm': 'ກະລຸນາພິມ "delete" ເພື່ອຢືນຢັນວ່າທ່ານຕ້ອງການລຶບອະລະບ້ຳນີ້ຖາວອນ',
-    'deleteFailed': 'ການລຶບອະລະບ້ຳນີ້ລົ້ມເຫຼວ. ກະລຸນາລອງໃໝ່ພາຍຫຼັງ.',
-    'debugLog': 'ບັນທຶກການແກ້ໄຂຂໍ້ບົກພ່ອງ',
-    'language': 'ພາສາ',
-    'loading': 'ກຳລັງໂຫຼດ...'
-  },
-  'lt': {
-    'noAlbums': 'Albumų nerasta arba jie dar kraunasi...',
-    'createAlbum': 'Sukurti albumą',
-    'creatingAlbum': 'Kuriamas albumas...',
-    'logOut': 'Atsijungti',
-    'uploadProgress': 'Įkėlimo eiga',
-    'overallProgress': 'Bendra eiga',
-    'of': 'iš',
-    'complete': 'baigta',
-    'uploading': 'Įkeliama',
-    'processing': 'Apdorojama',
-    'failed': 'Nepavyko',
-    'created': 'Sukurta',
-    'updated': 'Atnaujinta',
-    'delete': 'Ištrinti',
-    'addPhotos': 'Pridėti nuotraukų',
-    'copyLink': 'Kopijuoti nuorodą',
-    'linkCopied': 'Nuoroda nukopijuota į iškarpinę.',
-    'copyFailed': 'Nepavyko nukopijuoti nuorodos į iškarpinę.',
-    'deleteConfirm': 'Įveskite "delete", kad patvirtintumėte, jog norite visam laikui ištrinti šį albumą',
-    'deleteFailed': 'Nepavyko ištrinti šio albumo. Bandykite dar kartą vėliau.',
-    'debugLog': 'Derinimo žurnalas',
-    'language': 'Kalba',
-    'loading': 'Kraunama...'
-  },
-  'lv': {
-    'noAlbums': 'Albumi nav atrasti vai joprojām ielādējas...',
-    'createAlbum': 'Izveidot albumu',
-    'creatingAlbum': 'Veido albumu...',
-    'logOut': 'Iziet',
-    'uploadProgress': 'Augšupielādes progress',
-    'overallProgress': 'Kopējais progress',
-    'of': 'no',
-    'complete': 'pabeigts',
-    'uploading': 'Augšupielādē',
-    'processing': 'Apstrādā',
-    'failed': 'Neizdevās',
-    'created': 'Izveidots',
-    'updated': 'Atjaunināts',
-    'delete': 'Dzēst',
-    'addPhotos': 'Pievienot fotoattēlus',
-    'copyLink': 'Kopēt saiti',
-    'linkCopied': 'Saite ir kopēta starpliktuvē.',
-    'copyFailed': 'Neizdevās kopēt saiti starpliktuvē.',
-    'deleteConfirm': 'Lūdzu, ierakstiet "delete", lai apstiprinātu, ka vēlaties neatgriezeniski dzēst šo albumu',
-    'deleteFailed': 'Neizdevās dzēst šo albumu. Lūdzu, mēģiniet vēlāk.',
-    'debugLog': 'Atkļūdošanas žurnāls',
-    'language': 'Valoda',
-    'loading': 'Ielādē...'
-  },
-  'mk': {
-    'noAlbums': 'Не се пронајдени албуми или сè уште се вчитуваат...',
-    'createAlbum': 'Создај албум',
-    'creatingAlbum': 'Создавање албум...',
-    'logOut': 'Одјави се',
-    'uploadProgress': 'Напредок на прикачување',
-    'overallProgress': 'Вкупен напредок',
-    'of': 'од',
-    'complete': 'завршено',
-    'uploading': 'Прикачување',
-    'processing': 'Обработка',
-    'failed': 'Неуспешно',
-    'created': 'Создадено',
-    'updated': 'Ажурирано',
-    'delete': 'Избриши',
-    'addPhotos': 'Додај фотографии',
-    'copyLink': 'Копирај линк',
-    'linkCopied': 'Линкот е копиран во клипбордот.',
-    'copyFailed': 'Неуспешно копирање на линкот во клипбордот.',
-    'deleteConfirm': 'Ве молиме внесете "delete" за да потврдите дека сакате трајно да го избришете овој албум',
-    'deleteFailed': 'Неуспешно бришење на овој албум. Ве молиме обидете се повторно подоцна.',
-    'debugLog': 'Дневник за отстранување грешки',
-    'language': 'Јазик',
-    'loading': 'Се вчитува...'
-  },
-  'mn': {
-    'noAlbums': 'Цомог олдсонгүй эсвэл ачаалж байна...',
-    'createAlbum': 'Цомог үүсгэх',
-    'creatingAlbum': 'Цомог үүсгэж байна...',
-    'logOut': 'Гарах',
-    'uploadProgress': 'Байршуулах явц',
-    'overallProgress': 'Нийт явц',
-    'of': '/',
-    'complete': 'дууссан',
-    'uploading': 'Байршуулж байна',
-    'processing': 'Боловсруулж байна',
-    'failed': 'Амжилтгүй',
-    'created': 'Үүсгэсэн',
-    'updated': 'Шинэчилсэн',
-    'delete': 'Устгах',
-    'addPhotos': 'Зураг нэмэх',
-    'copyLink': 'Холбоос хуулах',
-    'linkCopied': 'Холбоос таны түр санах ойд хуулагдлаа.',
-    'copyFailed': 'Холбоосыг түр санах ойд хуулж чадсангүй.',
-    'deleteConfirm': 'Энэ цомгийг бүрмөсөн устгахыг баталгаажуулахын тулд "delete" гэж бичнэ үү',
-    'deleteFailed': 'Энэ цомгийг устгаж чадсангүй. Дараа дахин оролдоно уу.',
-    'debugLog': 'Алдааг илрүүлэх бүртгэл',
-    'language': 'Хэл',
-    'loading': 'Ачаалж байна...'
-  },
-  'ne': {
-    'noAlbums': 'कुनै एल्बम फेला परेन वा अझै लोड हुँदैछ...',
-    'createAlbum': 'एल्बम सिर्जना गर्नुहोस्',
-    'creatingAlbum': 'एल्बम सिर्जना गर्दै...',
-    'logOut': 'लग आउट',
-    'uploadProgress': 'अपलोड प्रगति',
-    'overallProgress': 'समग्र प्रगति',
-    'of': 'को',
-    'complete': 'पूरा',
-    'uploading': 'अपलोड गर्दै',
-    'processing': 'प्रशोधन गर्दै',
-    'failed': 'असफल',
-    'created': 'सिर्जना गरिएको',
-    'updated': 'अपडेट गरिएको',
-    'delete': 'मेटाउनुहोस्',
-    'addPhotos': 'फोटोहरू थप्नुहोस्',
-    'copyLink': 'लिङ्क प्रतिलिपि गर्नुहोस्',
-    'linkCopied': 'लिङ्क तपाईंको क्लिपबोर्डमा प्रतिलिपि गरिएको छ।',
-    'copyFailed': 'लिङ्क क्लिपबोर्डमा प्रतिलिपि गर्न असफल।',
-    'deleteConfirm': 'कृपया यो एल्बम स्थायी रूपमा मेटाउन चाहनुहुन्छ भनी पुष्टि गर्न "delete" टाइप गर्नुहोस्',
-    'deleteFailed': 'यो एल्बम मेटाउन असफल। कृपया पछि फेरि प्रयास गर्नुहोस्।',
-    'debugLog': 'डिबग लग',
-    'language': 'भाषा',
-    'loading': 'लोड हुँदैछ...'
-  },
-  'pa': {
-    'noAlbums': 'ਕੋਈ ਐਲਬਮ ਨਹੀਂ ਮਿਲੀ ਜਾਂ ਅਜੇ ਵੀ ਲੋਡ ਹੋ ਰਹੀ ਹੈ...',
-    'createAlbum': 'ਐਲਬਮ ਬਣਾਓ',
-    'creatingAlbum': 'ਐਲਬਮ ਬਣਾ ਰਿਹਾ ਹੈ...',
-    'logOut': 'ਲੌਗ ਆਊਟ',
-    'uploadProgress': 'ਅਪਲੋਡ ਪ੍ਰਗਤੀ',
-    'overallProgress': 'ਸਮੁੱਚੀ ਪ੍ਰਗਤੀ',
-    'of': 'ਵਿੱਚੋਂ',
-    'complete': 'ਪੂਰਾ',
-    'uploading': 'ਅਪਲੋਡ ਕਰ ਰਿਹਾ ਹੈ',
-    'processing': 'ਪ੍ਰੋਸੈਸਿੰਗ',
-    'failed': 'ਅਸਫਲ',
-    'created': 'ਬਣਾਇਆ ਗਿਆ',
-    'updated': 'ਅਪਡੇਟ ਕੀਤਾ ਗਿਆ',
-    'delete': 'ਮਿਟਾਓ',
-    'addPhotos': 'ਫੋਟੋਆਂ ਸ਼ਾਮਲ ਕਰੋ',
-    'copyLink': 'ਲਿੰਕ ਕਾਪੀ ਕਰੋ',
-    'linkCopied': 'ਲਿੰਕ ਤੁਹਾਡੇ ਕਲਿਪਬੋਰਡ ਤੇ ਕਾਪੀ ਕੀਤਾ ਗਿਆ ਹੈ।',
-    'copyFailed': 'ਲਿੰਕ ਨੂੰ ਕਲਿਪਬੋਰਡ ਤੇ ਕਾਪੀ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।',
-    'deleteConfirm': 'ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਗੱਲ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ "delete" ਟਾਈਪ ਕਰੋ ਕਿ ਤੁਸੀਂ ਇਸ ਐਲਬਮ ਨੂੰ ਸਥਾਈ ਤੌਰ ਤੇ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ',
-    'deleteFailed': 'ਇਸ ਐਲਬਮ ਨੂੰ ਮਿਟਾਉਣ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।',
-    'debugLog': 'ਡੀਬੱਗ ਲੌਗ',
-    'language': 'ਭਾਸ਼ਾ',
-    'loading': 'ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...'
-  },
-  'si': {
-    'noAlbums': 'ඇල්බම් හමු නොවීය හෝ තවමත් පූරණය වෙමින් පවතී...',
-    'createAlbum': 'ඇල්බමය සාදන්න',
-    'creatingAlbum': 'ඇල්බමය සාදමින්...',
-    'logOut': 'වරන්න',
-    'uploadProgress': 'උඩුගත කිරීමේ ප්‍රගතිය',
-    'overallProgress': 'සමස්ත ප්‍රගතිය',
-    'of': 'න්',
-    'complete': 'සම්පූර්ණයි',
-    'uploading': 'උඩුගත කරමින්',
-    'processing': 'සකසමින්',
-    'failed': 'අසාර්ථකයි',
-    'created': 'නිර්මාණය කළේ',
-    'updated': 'යාවත්කාලීන කළේ',
-    'delete': 'මකන්න',
-    'addPhotos': 'ඡායාරූප එකතු කරන්න',
-    'copyLink': 'සබැඳිය පිටපත් කරන්න',
-    'linkCopied': 'සබැඳිය ඔබගේ පසුරු පුවරුවට පිටපත් කර ඇත.',
-    'copyFailed': 'සබැඳිය පසුරු පුවරුවට පිටපත් කිරීමට අසමත් විය.',
-    'deleteConfirm': 'මෙම ඇල්බමය ස්ථිරවම මකා දැමීමට අවශ්‍ය බව තහවුරු කිරීමට කරුණාකර "delete" යනුවෙන් ටයිප් කරන්න',
-    'deleteFailed': 'මෙම ඇල්බමය මැකීමට අසමත් විය. කරුණාකර පසුව නැවත උත්සාහ කරන්න.',
-    'debugLog': 'නිදොස් කිරීමේ ලොගය',
-    'language': 'භාෂාව',
-    'loading': 'පූරණය වෙමින්...'
-  },
-  'sl': {
-    'noAlbums': 'Ni najdenih albumov ali se še nalagajo...',
-    'createAlbum': 'Ustvari album',
-    'creatingAlbum': 'Ustvarjanje albuma...',
-    'logOut': 'Odjava',
-    'uploadProgress': 'Napredek nalaganja',
-    'overallProgress': 'Skupni napredek',
-    'of': 'od',
-    'complete': 'končano',
-    'uploading': 'Nalaganje',
-    'processing': 'Obdelava',
-    'failed': 'Neuspešno',
-    'created': 'Ustvarjeno',
-    'updated': 'Posodobljeno',
-    'delete': 'Izbriši',
-    'addPhotos': 'Dodaj fotografije',
-    'copyLink': 'Kopiraj povezavo',
-    'linkCopied': 'Povezava je bila kopirana v odložišče.',
-    'copyFailed': 'Kopiranje povezave v odložišče ni uspelo.',
-    'deleteConfirm': 'Prosimo, vpišite "delete" za potrditev, da želite trajno izbrisati ta album',
-    'deleteFailed': 'Brisanje tega albuma ni uspelo. Poskusite znova kasneje.',
-    'debugLog': 'Dnevnik razhroščevanja',
-    'language': 'Jezik',
-    'loading': 'Nalaganje...'
-  },
-  'sq': {
-    'noAlbums': 'Nuk u gjetën albume ose po ngarkohen ende...',
-    'createAlbum': 'Krijo Album',
-    'creatingAlbum': 'Duke krijuar albumin...',
-    'logOut': 'Dil',
-    'uploadProgress': 'Progresi i ngarkimit',
-    'overallProgress': 'Progresi i përgjithshëm',
-    'of': 'nga',
-    'complete': 'plotësuar',
-    'uploading': 'Duke ngarkuar',
-    'processing': 'Duke përpunuar',
-    'failed': 'Dështoi',
-    'created': 'Krijuar',
-    'updated': 'Përditësuar',
-    'delete': 'Fshi',
-    'addPhotos': 'Shto Foto',
-    'copyLink': 'Kopjo lidhjen',
-    'linkCopied': 'Lidhja është kopjuar në kujtesën tuaj.',
-    'copyFailed': 'Dështoi kopjimi i lidhjes në kujtesë.',
-    'deleteConfirm': 'Ju lutemi shkruani "delete" për të konfirmuar se dëshironi të fshini përgjithmonë këtë album',
-    'deleteFailed': 'Dështoi fshirja e këtij albumi. Ju lutemi provoni përsëri më vonë.',
-    'debugLog': 'Ditari i korrigjimit të gabimeve',
-    'language': 'Gjuha',
-    'loading': 'Duke ngarkuar...'
-  },
-  'sr': {
-    'noAlbums': 'Није пронађен ниједан албум или се још увек учитавају...',
-    'createAlbum': 'Направи албум',
-    'creatingAlbum': 'Прављење албума...',
-    'logOut': 'Одјави се',
-    'uploadProgress': 'Напредак отпремања',
-    'overallProgress': 'Укупни напредак',
-    'of': 'од',
-    'complete': 'завршено',
-    'uploading': 'Отпремање',
-    'processing': 'Обрада',
-    'failed': 'Неуспешно',
-    'created': 'Направљено',
-    'updated': 'Ажурирано',
-    'delete': 'Обриши',
-    'addPhotos': 'Додај фотографије',
-    'copyLink': 'Копирај везу',
-    'linkCopied': 'Веза је копирана у клипборд.',
-    'copyFailed': 'Неуспешно копирање везе у клипборд.',
-    'deleteConfirm': 'Молимо унесите "delete" да бисте потврдили да желите трајно да избришете овај албум',
-    'deleteFailed': 'Неуспешно брисање овог албума. Покушајте поново касније.',
-    'debugLog': 'Дневник за отклањање грешака',
-    'language': 'Језик',
-    'loading': 'Учитавање...'
-  },
-  'sw': {
-    'noAlbums': 'Hakuna albamu zilizopatikana au bado zinapakia...',
-    'createAlbum': 'Unda Albamu',
-    'creatingAlbum': 'Inaunda Albamu...',
-    'logOut': 'Toka',
-    'uploadProgress': 'Maendeleo ya Kupakia',
-    'overallProgress': 'Maendeleo ya Jumla',
-    'of': 'kati ya',
-    'complete': 'imekamilika',
-    'uploading': 'Inapakia',
-    'processing': 'Inachakata',
-    'failed': 'Imeshindwa',
-    'created': 'Imeundwa',
-    'updated': 'Imesasishwa',
-    'delete': 'Futa',
-    'addPhotos': 'Ongeza Picha',
-    'copyLink': 'Nakili Kiungo',
-    'linkCopied': 'Kiungo kimenakiliwa kwenye ubao wako wa kunakili.',
-    'copyFailed': 'Imeshindwa kunakili kiungo kwenye ubao wa kunakili.',
-    'deleteConfirm': 'Tafadhali andika "delete" ili kuthibitisha kuwa unataka kufuta albamu hii kabisa',
-    'deleteFailed': 'Imeshindwa kufuta albamu hii. Tafadhali jaribu tena baadaye.',
-    'debugLog': 'Kumbukumbu ya Utatuzi',
-    'language': 'Lugha',
-    'loading': 'Inapakia...'
-  },
-  'tg': {
-    'noAlbums': 'Албомҳо ёфт нашуданд ё ҳоло боргузорӣ мешаванд...',
-    'createAlbum': 'Эҷоди албом',
-    'creatingAlbum': 'Эҷоди албом...',
-    'logOut': 'Баромадан',
-    'uploadProgress': 'Пешрафти боргузорӣ',
-    'overallProgress': 'Пешрафти умумӣ',
-    'of': 'аз',
-    'complete': 'анҷомёфта',
-    'uploading': 'Боргузорӣ',
-    'processing': 'Коркард',
-    'failed': 'Ноком',
-    'created': 'Эҷодшуда',
-    'updated': 'Навшуда',
-    'delete': 'Нест кардан',
-    'addPhotos': 'Иловаи аксҳо',
-    'copyLink': 'Нусхабардории пайванд',
-    'linkCopied': 'Пайванд ба буфери мубодила нусхабардорӣ шуд.',
-    'copyFailed': 'Нусхабардории пайванд ба буфери мубодила ноком шуд.',
-    'deleteConfirm': 'Лутфан "delete"-ро ворид кунед, то тасдиқ кунед, ки мехоҳед ин албомро ба таври доимӣ нест кунед',
-    'deleteFailed': 'Нест кардани ин албом ноком шуд. Лутфан баъдтар такрор кунед.',
-    'debugLog': 'Сабти рафъи хато',
-    'language': 'Забон',
-    'loading': 'Боргузорӣ...'
-  },
-  'tl': {
-    'noAlbums': 'Walang nakitang album o naglo-load pa...',
-    'createAlbum': 'Lumikha ng Album',
-    'creatingAlbum': 'Lumilikha ng Album...',
-    'logOut': 'Mag-log Out',
-    'uploadProgress': 'Progreso ng Pag-upload',
-    'overallProgress': 'Pangkalahatang Progreso',
-    'of': 'ng',
-    'complete': 'kumpleto',
-    'uploading': 'Nag-a-upload',
-    'processing': 'Nagpoproseso',
-    'failed': 'Nabigo',
-    'created': 'Nilikha',
-    'updated': 'Na-update',
-    'delete': 'Burahin',
-    'addPhotos': 'Magdagdag ng mga Larawan',
-    'copyLink': 'Kopyahin ang Link',
-    'linkCopied': 'Nakopya na ang link sa iyong clipboard.',
-    'copyFailed': 'Hindi nakopya ang link sa clipboard.',
-    'deleteConfirm': 'Mangyaring i-type ang "delete" upang kumpirmahin na gusto mong tuluyang burahin ang album na ito',
-    'deleteFailed': 'Hindi nabura ang album na ito. Pakisubukang muli mamaya.',
-    'debugLog': 'Debug Log',
-    'language': 'Wika',
-    'loading': 'Naglo-load...'
-  },
-  'uz': {
-    'noAlbums': 'Albomlar topilmadi yoki hali yuklanmoqda...',
-    'createAlbum': 'Albom yaratish',
-    'creatingAlbum': 'Albom yaratilmoqda...',
-    'logOut': 'Chiqish',
-    'uploadProgress': 'Yuklash jarayoni',
-    'overallProgress': 'Umumiy jarayon',
-    'of': '/',
-    'complete': 'tugallandi',
-    'uploading': 'Yuklanmoqda',
-    'processing': 'Ishlanmoqda',
-    'failed': 'Muvaffaqiyatsiz',
-    'created': 'Yaratilgan',
-    'updated': 'Yangilangan',
-    'delete': 'O\'chirish',
-    'addPhotos': 'Rasmlar qo\'shish',
-    'copyLink': 'Havolani nusxalash',
-    'linkCopied': 'Havola vaqtinchalik xotiraga nusxalandi.',
-    'copyFailed': 'Havolani vaqtinchalik xotiraga nusxalash muvaffaqiyatsiz tugadi.',
-    'deleteConfirm': 'Ushbu albomni butunlay o\'chirmoqchi ekanligingizni tasdiqlash uchun "delete" deb yozing',
-    'deleteFailed': 'Ushbu albomni o\'chirib bo\'lmadi. Iltimos, keyinroq qayta urinib ko\'ring.',
-    'debugLog': 'Nosozliklarni tuzatish jurnali',
-    'language': 'Til',
-    'loading': 'Yuklanmoqda...'
-  },
-  'xh': {
-    'noAlbums': 'Akukho i-albham efunyenweyo okanye isalayisha...',
-    'createAlbum': 'Yenza i-Albham',
-    'creatingAlbum': 'Ukwenza i-Albham...',
-    'logOut': 'Phuma',
-    'uploadProgress': 'Inkqubela yokulayisha',
-    'overallProgress': 'Inkqubela iyonke',
-    'of': 'ye',
-    'complete': 'igqityiwe',
-    'uploading': 'Iyalayisha',
-    'processing': 'Iyasetshenzwa',
-    'failed': 'Ayiphumelelanga',
-    'created': 'Yenziwe',
-    'updated': 'Ihlaziyiwe',
-    'delete': 'Cima',
-    'addPhotos': 'Yongeza iifoto',
-    'copyLink': 'Kopa ikhonkco',
-    'linkCopied': 'Ikhonkco likopyiwe kwiklipbhodi yakho.',
-    'copyFailed': 'Ukuhluleka ukukopa ikhonkco kwiklipbhodi.',
-    'deleteConfirm': 'Nceda chwetheza "delete" ukuqinisekisa ukuba ufuna ukucima le albham ngokusisigxina',
-    'deleteFailed': 'Ukuhluleka ukucima le albham. Nceda uzame kwakhona emva kwexesha.',
-    'debugLog': 'I-log yohlolo',
-    'language': 'Ulwimi',
-    'loading': 'Iyalayisha...'
-  },
-  'yo': {
-    'noAlbums': 'Ko si àwọn álbọ́mù tí a rí tàbí wọ́n ń gbára lọ́wọ́...',
-    'createAlbum': 'Ṣẹ̀dá Álbọ́mù',
-    'creatingAlbum': 'Ń ṣẹ̀dá Álbọ́mù...',
-    'logOut': 'Bọ́sí',
-    'uploadProgress': 'Ìlọsíwájú Ìgbàsókè',
-    'overallProgress': 'Ìlọsíwájú Gbogbo rẹ̀',
-    'of': 'ti',
-    'complete': 'parí',
-    'uploading': 'Ń gbàsókè',
-    'processing': 'Ń ṣe ìgbẹ́ṣẹ̀',
-    'failed': 'Kùnà',
-    'created': 'Tí a Ṣẹ̀dá',
-    'updated': 'Tí a Ṣe àfikún',
-    'delete': 'Parẹ́',
-    'addPhotos': 'Fi àwọn àwòrán kún',
-    'copyLink': 'Dà àjọmọ́',
-    'linkCopied': 'A ti da àjọmọ́ sí àpò ìdà rẹ.',
-    'copyFailed': 'Ìdà àjọmọ́ sí àpò ìdà kùnà.',
-    'deleteConfirm': 'Jọ̀wọ́ tẹ "delete" láti jẹ́rìí pé o fẹ́ parẹ́ álbọ́mù yìí lẹ́ẹ̀kan',
-    'deleteFailed': 'Ìparẹ́ álbọ́mù yìí kùnà. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan síi ní ìgbà míràn.',
-    'debugLog': 'Àkọọ́lẹ̀ Àṣìṣe',
-    'language': 'Èdè',
-    'loading': 'Ń gbára...'
-  },
-  'zu': {
-    'noAlbums': 'Awekho ama-albhamu atholakele noma asalayisha...',
-    'createAlbum': 'Dala i-Albhamu',
-    'creatingAlbum': 'Idala i-Albhamu...',
-    'logOut': 'Phuma',
-    'uploadProgress': 'Inqubekela phambili yokulayisha',
-    'overallProgress': 'Inqubekela phambili yonke',
-    'of': 'ye',
-    'complete': 'kuqediwe',
-    'uploading': 'Iyalayisha',
-    'processing': 'Iyacubungula',
-    'failed': 'Ihlulekile',
-    'created': 'Idalwe',
-    'updated': 'Ibuyekeziwe',
-    'delete': 'Susa',
-    'addPhotos': 'Engeza izithombe',
-    'copyLink': 'Kopisha isixhumanisi',
-    'linkCopied': 'Isixhumanisi sikopishwe ebhodini lakho lokunamathisela.',
-    'copyFailed': 'Kuhlulekile ukukopisha isixhumanisi ebhodini lokunamathisela.',
-    'deleteConfirm': 'Sicela uthayiphe "delete" ukuqinisekisa ukuthi ufuna ukususa le albhamu unomphela',
-    'deleteFailed': 'Kuhlulekile ukususa le albhamu. Sicela uzame futhi emuva kwesikhathi.',
-    'debugLog': 'I-log yokulungisa amaphutha',
-    'language': 'Ulimi',
-    'loading': 'Iyalayisha...'
-  },
-  'am': {
-    'noAlbums': 'ምንም አልበሞች አልተገኙም ወይም አሁንም በመጫን ላይ ናቸው...',
-    'createAlbum': 'አልበም ፍጠር',
-    'creatingAlbum': 'አልበም በመፍጠር ላይ...',
-    'logOut': 'ውጣ',
-    'uploadProgress': 'የመጫን ሂደት',
-    'overallProgress': 'አጠቃላይ ሂደት',
-    'of': 'ከ',
-    'complete': 'ተጠናቋል',
-    'uploading': 'በመጫን ላይ',
-    'processing': 'በማቀነባበር ላይ',
-    'failed': 'አልተሳካም',
-    'created': 'ተፈጥሯል',
-    'updated': 'ተዘምኗል',
-    'delete': 'ሰርዝ',
-    'addPhotos': 'ፎቶዎችን አክል',
-    'copyLink': 'አገናኝ ቅዳ',
-    'linkCopied': 'አገናኙ ወደ ቅንጥብ ሰሌዳዎ ተቀድቷል።',
-    'copyFailed': 'አገናኙን ወደ ቅንጥብ ሰሌዳ መቅዳት አልተሳካም።',
-    'deleteConfirm': 'እባክዎ ይህን አልበም በቋሚነት መሰረዝ ለማረጋገጥ "delete" ብለው ይጻፉ',
-    'deleteFailed': 'ይህን አልበም መሰረዝ አልተሳካም። እባክዎ ቆይተው እንደገና ይሞክሩ።',
-    'debugLog': 'የዲባግ ምዝግብ ማስታወሻ',
-    'language': 'ቋንቋ',
-    'loading': 'በመጫን ላይ...'
-  },
-  'ha': {
-    'noAlbums': 'Ba a samo wani littafi ko kuma ana lodin su...',
-    'createAlbum': 'Ƙirƙiri Littafi',
-    'creatingAlbum': 'Ana ƙirƙirar Littafi...',
-    'logOut': 'Fita',
-    'uploadProgress': 'Ci gaban ɗora',
-    'overallProgress': 'Ci gaban gaba ɗaya',
-    'of': 'na',
-    'complete': 'cikakke',
-    'uploading': 'Ana ɗora',
-    'processing': 'Ana aiwatarwa',
-    'failed': 'Ya gaza',
-    'created': 'An ƙirƙira',
-    'updated': 'An sabunta',
-    'delete': 'Share',
-    'addPhotos': 'Ƙara Hotuna',
-    'copyLink': 'Kwafi Hanyar',
-    'linkCopied': 'An kwafi hanyar zuwa allo na kwafi.',
-    'copyFailed': 'Ya gaza kwafi hanyar zuwa allo na kwafi.',
-    'deleteConfirm': 'Da fatan za a rubuta "delete" don tabbatar da kana son share wannan littafin har abada',
-    'deleteFailed': 'Ya gaza share wannan littafin. Da fatan a sake gwadawa daga baya.',
-    'debugLog': 'Lissafin gyara',
-    'language': 'Harshe',
-    'loading': 'Ana lodin...'
-  },
-  'ig': {
-    'noAlbums': 'Ahụghị ọnụ ụlọ akwụkwọ ọ bụla ma ọ bụ ka na-ebunye...',
-    'createAlbum': 'Mepụta ọnụ ụlọ akwụkwọ',
-    'creatingAlbum': 'Na-emepụta ọnụ ụlọ akwụkwọ...',
-    'logOut': 'Pụọ',
-    'uploadProgress': 'Ọganihu mbugharị',
-    'overallProgress': 'Ọganihu niile',
-    'of': 'nke',
-    'complete': 'zuru ezu',
-    'uploading': 'Na-ebugharị',
-    'processing': 'Na-arụ ọrụ',
-    'failed': 'Daala',
-    'created': 'Emepụtara',
-    'updated': 'Emelitere',
-    'delete': 'Kpochapụ',
-    'addPhotos': 'Tinye foto',
-    'copyLink': 'Detuo njikọ',
-    'linkCopied': 'Edetụrụ njikọ ahụ n\'okporo ụzọ mbipụta gị.',
-    'copyFailed': 'Ọdịda ịdetụ njikọ ahụ n\'okporo ụzọ mbipụta.',
-    'deleteConfirm': 'Biko dee "delete" iji kwenye na ịchọrọ ikpochapụ ọnụ ụlọ akwụkwọ a na-enwere ike iweghachi',
-    'deleteFailed': 'Ọdịda ikpochapụ ọnụ ụlọ akwụkwọ a. Biko gbalịa ọzọ mgbe e mesịrị.',
-    'debugLog': 'Ndetu ntuziaka',
-    'language': 'Asụsụ',
-    'loading': 'Na-ebunye...'
-  },
-  'jv': {
-    'noAlbums': 'Ora ana album sing ditemokake utawa isih dimot...',
-    'createAlbum': 'Gawe Album',
-    'creatingAlbum': 'Nggawe Album...',
-    'logOut': 'Metu',
-    'uploadProgress': 'Progres Unggah',
-    'overallProgress': 'Progres Sakabehe',
-    'of': 'saka',
-    'complete': 'rampung',
-    'uploading': 'Ngunggah',
-    'processing': 'Ngolah',
-    'failed': 'Gagal',
-    'created': 'Digawe',
-    'updated': 'Dianyari',
-    'delete': 'Busak',
-    'addPhotos': 'Tambah Foto',
-    'copyLink': 'Nyalin Pranala',
-    'linkCopied': 'Pranala wis disalin menyang clipboard sampeyan.',
-    'copyFailed': 'Gagal nyalin pranala menyang clipboard.',
-    'deleteConfirm': 'Tulung ketik "delete" kanggo mastekake yen sampeyan pengin mbusak album iki kanthi permanen',
-    'deleteFailed': 'Gagal mbusak album iki. Coba maneh mengko.',
-    'debugLog': 'Log Debug',
-    'language': 'Basa',
-    'loading': 'Ngamot...'
-  },
-  'km': {
-    'noAlbums': 'រកមិនឃើញអាល់ប៊ុម ឬកំពុងផ្ទុក...',
-    'createAlbum': 'បង្កើតអាល់ប៊ុម',
-    'creatingAlbum': 'កំពុងបង្កើតអាល់ប៊ុម...',
-    'logOut': 'ចាកចេញ',
-    'uploadProgress': 'ដំណើរការនៃការផ្ទុកឡើង',
-    'overallProgress': 'ដំណើរការទាំងមូល',
-    'of': '/',
-    'complete': 'បានបញ្ចប់',
-    'uploading': 'កំពុងផ្ទុកឡើង',
-    'processing': 'កំពុងដំណើរការ',
-    'failed': 'បរាជ័យ',
-    'created': 'បានបង្កើត',
-    'updated': 'បានធ្វើបច្ចុប្បន្នភាព',
-    'delete': 'លុប',
-    'addPhotos': 'បន្ថែមរូបថត',
-    'copyLink': 'ចម្លងតំណ',
-    'linkCopied': 'តំណត្រូវបានចម្លងទៅក្ដារតម្បៀតខ្ទាស់របស់អ្នក។',
-    'copyFailed': 'បរាជ័យក្នុងការចម្លងតំណទៅក្ដារតម្បៀតខ្ទាស់។',
-    'deleteConfirm': 'សូមវាយបញ្ចូល "delete" ដើម្បីបញ្ជាក់ថាអ្នកចង់លុបអាល់ប៊ុមនេះជាអចិន្ត្រៃយ៍',
-    'deleteFailed': 'បរាជ័យក្នុងការលុបអាល់ប៊ុមនេះ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។',
-    'debugLog': 'កំណត់ហេតុបំបាត់កំហុស',
-    'language': 'ភាសា',
-    'loading': 'កំពុងផ្ទុក...'
-  },
-  'my': {
-    'noAlbums': 'အယ်လ်ဘမ်များမတွေ့ရ သို့မဟုတ် ဆက်လက်ဖွင့်နေဆဲဖြစ်သည်...',
-    'createAlbum': 'အယ်လ်ဘမ်ဖန်တီးပါ',
-    'creatingAlbum': 'အယ်လ်ဘမ်ဖန်တီးနေသည်...',
-    'logOut': 'ထွက်ရန်',
-    'uploadProgress': 'တင်ဆက်မှုတိုးတက်မှု',
-    'overallProgress': 'ပေါင်းစပ်တိုးတက်မှု',
-    'of': '/',
-    'complete': 'ပြီးပြည့်စုံ',
-    'uploading': 'တင်နေသည်',
-    'processing': 'လုပ်ဆောင်နေသည်',
-    'failed': 'မအောင်မြင်ပါ',
-    'created': 'ဖန်တီးခဲ့သည်',
-    'updated': 'အပ်ဒိတ်လုပ်ခဲ့သည်',
-    'delete': 'ဖျက်ရန်',
-    'addPhotos': 'ဓာတ်ပုံများထည့်ရန်',
-    'copyLink': 'လင့်ခ်ကူးယူရန်',
-    'linkCopied': 'လင့်ခ်ကို သင့်ကလစ်ဘုတ်သို့ ကူးယူပြီးပါပြီ။',
-    'copyFailed': 'လင့်ခ်ကို ကလစ်ဘုတ်သို့ ကူးယူရန် မအောင်မြင်ပါ။',
-    'deleteConfirm': 'ဤအယ်လ်ဘမ်ကို အပြီးတိုင်ဖျက်လိုကြောင်း အတည်ပြုရန် "delete" ဟု ရိုက်ထည့်ပါ',
-    'deleteFailed': 'ဤအယ်လ်ဘမ်ကို ဖျက်ရန် မအောင်မြင်ပါ။ နောက်မှ ထပ်စမ်းကြည့်ပါ။',
-    'debugLog': 'အမှားရှာဖွေမှု မှတ်တမ်း',
-    'language': 'ဘာသာစကား',
-    'loading': 'ဖွင့်နေသည်...'
-  },
-  'or': {
-    'noAlbums': 'କୌଣସି ଆଲବମ୍ ମିଳିଲା ନାହିଁ କିମ୍ବା ଏବେ ବି ଲୋଡ୍ ହେଉଛି...',
-    'createAlbum': 'ଆଲବମ୍ ସୃଷ୍ଟି କରନ୍ତୁ',
-    'creatingAlbum': 'ଆଲବମ୍ ସୃଷ୍ଟି କରୁଛି...',
-    'logOut': 'ଲଗ୍ ଆଉଟ୍',
-    'uploadProgress': 'ଅପଲୋଡ୍ ପ୍ରଗତି',
-    'overallProgress': 'ସାମଗ୍ରିକ ପ୍ରଗତି',
-    'of': 'ର',
-    'complete': 'ସମ୍ପୂର୍ଣ୍ଣ',
-    'uploading': 'ଅପଲୋଡ୍ କରୁଛି',
-    'processing': 'ପ୍ରକ୍ରିୟାକରଣ',
-    'failed': 'ବିଫଳ',
-    'created': 'ସୃଷ୍ଟି କରାଯାଇଛି',
-    'updated': 'ଅପଡେଟ୍ କରାଯାଇଛି',
-    'delete': 'ଡିଲିଟ୍ କରନ୍ତୁ',
-    'addPhotos': 'ଫଟୋ ଯୋଡନ୍ତୁ',
-    'copyLink': 'ଲିଙ୍କ୍ କପି କରନ୍ତୁ',
-    'linkCopied': 'ଲିଙ୍କ୍ ଆପଣଙ୍କ କ୍ଲିପବୋର୍ଡକୁ କପି କରାଯାଇଛି।',
-    'copyFailed': 'କ୍ଲିପବୋର୍ଡକୁ ଲିଙ୍କ୍ କପି କରିବାରେ ବିଫଳ।',
-    'deleteConfirm': 'ଏହି ଆଲବମ୍ ସ୍ଥାୟୀ ଭାବରେ ଡିଲିଟ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି ବୋଲି ନିଶ୍ଚିତ କରିବାକୁ ଦୟାକରି "delete" ଟାଇପ୍ କରନ୍ତୁ',
-    'deleteFailed': 'ଏହି ଆଲବମ୍ ଡିଲିଟ୍ କରିବାରେ ବିଫଳ। ଦୟାକରି ପରେ ପୁନଃଚେଷ୍ଟା କରନ୍ତୁ।',
-    'debugLog': 'ଡିବଗ୍ ଲଗ୍',
-    'language': 'ଭାଷା',
-    'loading': 'ଲୋଡ୍ ହେଉଛି...'
-  },
-  'ps': {
-    'noAlbums': 'هیڅ البوم و نه موندل شو یا لا هم په بارېدو کې دی...',
-    'createAlbum': 'البوم جوړ کړئ',
-    'creatingAlbum': 'البوم جوړول...',
-    'logOut': 'وتل',
-    'uploadProgress': 'د پورته کولو پرمختګ',
-    'overallProgress': 'ټولیز پرمختګ',
-    'of': '/',
-    'complete': 'بشپړ',
-    'uploading': 'پورته کول',
-    'processing': 'پروسس کول',
-    'failed': 'ناکام',
-    'created': 'جوړ شوی',
-    'updated': 'تازه شوی',
-    'delete': 'ړنګول',
-    'addPhotos': 'انځورونه اضافه کړئ',
-    'copyLink': 'لینک کاپي کړئ',
-    'linkCopied': 'لینک ستاسو کلیپ بورډ ته کاپي شو.',
-    'copyFailed': 'کلیپ بورډ ته د لینک کاپي کول ناکام شول.',
-    'deleteConfirm': 'مهرباني وکړئ د "delete" ټایپ کړئ ترڅو تایید کړئ چې تاسو غواړئ دا البوم په دایمي توګه ړنګ کړئ',
-    'deleteFailed': 'د دې البوم ړنګول ناکام شول. مهرباني وکړئ وروسته بیا هڅه وکړئ.',
-    'debugLog': 'د عیب موندنې لاګ',
-    'language': 'ژبه',
-    'loading': 'په بارېدو کې...'
-  },
-  'sd': {
-    'noAlbums': 'ڪو به البم نه مليو آهي يا اڃان لوڊ ٿي رهيو آهي...',
-    'createAlbum': 'البم ٺاهيو',
-    'creatingAlbum': 'البم ٺاهي رهيو آهي...',
-    'logOut': 'لاگ آئوٽ',
-    'uploadProgress': 'اپلوڊ پروگريس',
-    'overallProgress': 'مجموعي پروگريس',
-    'of': '/',
-    'complete': 'مڪمل',
-    'uploading': 'اپلوڊ ٿي رهيو آهي',
-    'processing': 'پروسيسنگ',
-    'failed': 'ناڪام',
-    'created': 'ٺاهيل',
-    'updated': 'اپڊيٽ ٿيل',
-    'delete': 'ڊاهيو',
-    'addPhotos': 'فوٽو شامل ڪريو',
-    'copyLink': 'لنڪ ڪاپي ڪريو',
-    'linkCopied': 'لنڪ توهان جي ڪلپ بورڊ تي ڪاپي ٿي ويو آهي.',
-    'copyFailed': 'لنڪ کي ڪلپ بورڊ تي ڪاپي ڪرڻ ۾ ناڪامي.',
-    'deleteConfirm': 'مهرباني ڪري "delete" ٽائيپ ڪريو ته توهان هن البم کي مستقل طور تي ڊاهڻ چاهيو ٿا',
-    'deleteFailed': 'هن البم کي ڊاهڻ ۾ ناڪامي. مهرباني ڪري بعد ۾ ٻيهر ڪوشش ڪريو.',
-    'debugLog': 'ڊيبگ لاگ',
-    'language': 'ٻولي',
-    'loading': 'لوڊ ٿي رهيو آهي...'
-  },
-  'so': {
-    'noAlbums': 'Ma helin albaamo ama wali waa la soo raadinayaa...',
-    'createAlbum': 'Samee Albaam',
-    'creatingAlbum': 'Samaynta Albaamka...',
-    'logOut': 'Ka bax',
-    'uploadProgress': 'Horumarka soo gelinta',
-    'overallProgress': 'Horumarka guud',
-    'of': '/',
-    'complete': 'dhammaystiran',
-    'uploading': 'Soo gelinaya',
-    'processing': 'Diyaarinaya',
-    'failed': 'Fashilmay',
-    'created': 'La sameeyay',
-    'updated': 'La cusboonaysiiyay',
-    'delete': 'Tirtir',
-    'addPhotos': 'Ku dar sawirado',
-    'copyLink': 'Koobiyee linkiga',
-    'linkCopied': 'Linkiga waxaa lagu koobiyeeyay clipboard-kaaga.',
-    'copyFailed': 'Ku guuldareystay in la koobiyeeyo linkiga clipboard-ka.',
-    'deleteConfirm': 'Fadlan qor "delete" si aad u xaqiijiso inaad dooneyso inaad si joogto ah u tirtirto albaamkan',
-    'deleteFailed': 'Ku guuldareystay tirtiridda albaamkan. Fadlan mar dambe isku day.',
-    'debugLog': 'Diiwaanka khaladaadka',
-    'language': 'Luqadda',
-    'loading': 'Soo raadinaya...'
-  },
-  'as': {
-    'noAlbums': 'কোনো এলবাম পোৱা নাই বা এতিয়াও লোড হৈ আছে...',
-    'createAlbum': 'এলবাম সৃষ্টি কৰক',
-    'creatingAlbum': 'এলবাম সৃষ্টি কৰি আছে...',
-    'logOut': 'লগ আউট',
-    'uploadProgress': 'আপলোড প্ৰগতি',
-    'overallProgress': 'সামগ্ৰিক প্ৰগতি',
-    'of': '/',
-    'complete': 'সম্পূৰ্ণ',
-    'uploading': 'আপলোড কৰি আছে',
-    'processing': 'প্ৰক্ৰিয়াকৰণ কৰি আছে',
-    'failed': 'বিফল হৈছে',
-    'created': 'সৃষ্টি কৰা হৈছে',
-    'updated': 'আপডেট কৰা হৈছে',
-    'delete': 'মচি পেলাওক',
-    'addPhotos': 'ফটো যোগ কৰক',
-    'copyLink': 'লিংক কপি কৰক',
-    'linkCopied': 'লিংক আপোনাৰ ক্লিপবৰ্ডত কপি কৰা হৈছে।',
-    'copyFailed': 'ক্লিপবৰ্ডত লিংক কপি কৰিবলৈ বিফল হৈছে।',
-    'deleteConfirm': 'আপুনি এই এলবামটো স্থায়ীভাৱে মচিবলৈ বিচাৰে বুলি নিশ্চিত কৰিবলৈ অনুগ্ৰহ কৰি "delete" টাইপ কৰক',
-    'deleteFailed': 'এই এলবামটো মচিবলৈ বিফল হৈছে। অনুগ্ৰহ কৰি পিছত পুনৰ চেষ্টা কৰিব।',
-    'debugLog': 'ডিবাগ লগ',
-    'language': 'ভাষা',
-    'loading': 'লোড হৈ আছে...'
-  },
-  'bho': {
-    'noAlbums': 'कौनो एल्बम ना मिलल बा या अबहीं लोड हो रहल बा...',
-    'createAlbum': 'एल्बम बनाईं',
-    'creatingAlbum': 'एल्बम बनावत बानी...',
-    'logOut': 'लॉग आउट',
-    'uploadProgress': 'अपलोड प्रगति',
-    'overallProgress': 'कुल प्रगति',
-    'of': '/',
-    'complete': 'पूरा',
-    'uploading': 'अपलोड हो रहल बा',
-    'processing': 'प्रोसेस हो रहल बा',
-    'failed': 'फेल हो गइल',
-    'created': 'बनावल गइल',
-    'updated': 'अपडेट कइल गइल',
-    'delete': 'मिटाईं',
-    'addPhotos': 'फोटो जोड़ीं',
-    'copyLink': 'लिंक कॉपी करीं',
-    'linkCopied': 'लिंक आपके क्लिपबोर्ड पर कॉपी हो गइल बा।',
-    'copyFailed': 'लिंक के क्लिपबोर्ड पर कॉपी करे में विफल।',
-    'deleteConfirm': 'कृपया इ एल्बम के स्थायी रूप से मिटावे के पुष्टि खातिर "delete" टाइप करीं',
-    'deleteFailed': 'इ एल्बम के मिटावे में विफल। कृपया बाद में फेर से कोशिश करीं।',
-    'debugLog': 'डीबग लॉग',
-    'language': 'भाषा',
-    'loading': 'लोड हो रहल बा...'
-  },
-  'br': {
-    'noAlbums': 'N\'eus bet kavet album ebet pe o kargañ c\'hoazh...',
-    'createAlbum': 'Krouiñ un album',
-    'creatingAlbum': 'O krouiñ un album...',
-    'logOut': 'Digevreañ',
-    'uploadProgress': 'Araokadur ar pellgargañ',
-    'overallProgress': 'Araokadur hollek',
-    'of': '/',
-    'complete': 'klok',
-    'uploading': 'O pellgargañ',
-    'processing': 'O tretañ',
-    'failed': 'C\'hwitet',
-    'created': 'Krouet',
-    'updated': 'Hizivaet',
-    'delete': 'Dilemel',
-    'addPhotos': 'Ouzhpennañ luc\'hskeudennoù',
-    'copyLink': 'Eilañ al liamm',
-    'linkCopied': 'Al liamm zo bet eilet en ho klapioù.',
-    'copyFailed': 'C\'hwitet eo bet eilañ al liamm er c\'hlapioù.',
-    'deleteConfirm': 'Skrivit "delete" evit kadarnaat e fell deoc\'h dilemel an album-mañ da vat',
-    'deleteFailed': 'N\'eus ket bet gallet dilemel an album-mañ. Klaskit en-dro diwezhatoc\'h.',
-    'debugLog': 'Kazetenn diveugañ',
-    'language': 'Yezh',
-    'loading': 'O kargañ...'
-  },
-  'eo': {
-    'noAlbums': 'Neniuj albumoj trovitaj aŭ ankoraŭ ŝargante...',
-    'createAlbum': 'Krei Albumon',
-    'creatingAlbum': 'Kreante Albumon...',
-    'logOut': 'Elsaluti',
-    'uploadProgress': 'Alŝuta Progreso',
-    'overallProgress': 'Ĝenerala Progreso',
-    'of': 'el',
-    'complete': 'kompleta',
-    'uploading': 'Alŝutante',
-    'processing': 'Pritraktante',
-    'failed': 'Malsukcesis',
-    'created': 'Kreita',
-    'updated': 'Ĝisdatigita',
-    'delete': 'Forigi',
-    'addPhotos': 'Aldoni Fotojn',
-    'copyLink': 'Kopii Ligilon',
-    'linkCopied': 'Ligilo kopiita al via tondujo.',
-    'copyFailed': 'Malsukcesis kopii ligilon al tondujo.',
-    'deleteConfirm': 'Bonvolu tajpi "delete" por konfirmi ke vi volas daŭre forigi ĉi tiun albumon',
-    'deleteFailed': 'Malsukcesis forigi ĉi tiun albumon. Bonvolu provi denove poste.',
-    'debugLog': 'Sencimiga Protokolo',
-    'language': 'Lingvo',
-    'loading': 'Ŝargante...'
-  },
-  'fy': {
-    'noAlbums': 'Gjin albums fûn of noch oan it laden...',
-    'createAlbum': 'Meitsje Album',
-    'creatingAlbum': 'Album oan it meitsjen...',
-    'logOut': 'Ôfmelde',
-    'uploadProgress': 'Uploadfoartgong',
-    'overallProgress': 'Algemiene foartgong',
-    'of': 'fan',
-    'complete': 'foltôge',
-    'uploading': 'Uploaden',
-    'processing': 'Ferwurkje',
-    'failed': 'Mislearre',
-    'created': 'Makke',
-    'updated': 'Bywurke',
-    'delete': 'Ferwiderje',
-    'addPhotos': 'Foto\'s tafoegje',
-    'copyLink': 'Keppeling kopiearje',
-    'linkCopied': 'Keppeling is kopiearre nei jo klamboerd.',
-    'copyFailed': 'Keppeling kopiearjen nei klamboerd mislearre.',
-    'deleteConfirm': 'Typ "delete" om te befêstigjen dat jo dit album definityf ferwiderje wolle',
-    'deleteFailed': 'Dit album ferwiderje mislearre. Probearje letter opnij.',
-    'debugLog': 'Debug Log',
-    'language': 'Taal',
-    'loading': 'Laden...'
-  },
-  'ga': {
-    'noAlbums': 'Níor aimsíodh aon albam nó fós á lódáil...',
-    'createAlbum': 'Cruthaigh Albam',
-    'creatingAlbum': 'Ag cruthú Albam...',
-    'logOut': 'Logáil Amach',
-    'uploadProgress': 'Dul chun cinn Uaslódála',
-    'overallProgress': 'Dul chun cinn Iomlán',
-    'of': 'as',
-    'complete': 'críochnaithe',
-    'uploading': 'Ag uaslódáil',
-    'processing': 'Ag próiseáil',
-    'failed': 'Theip air',
-    'created': 'Cruthaithe',
-    'updated': 'Nuashonraithe',
-    'delete': 'Scrios',
-    'addPhotos': 'Cuir Grianghraif leis',
-    'copyLink': 'Cóipeáil Nasc',
-    'linkCopied': 'Cóipeáladh an nasc chuig do ghearrthaisce.',
-    'copyFailed': 'Theip ar chóipeáil an naisc chuig an ngearrthaisce.',
-    'deleteConfirm': 'Clóscríobh "delete" le deimhniú gur mian leat an t-albam seo a scriosadh go buan',
-    'deleteFailed': 'Theip ar scriosadh an albam seo. Bain triail as arís níos déanaí.',
-    'debugLog': 'Loga Dífhabhtaithe',
-    'language': 'Teanga',
-    'loading': 'Á lódáil...'
-  },
-  'gd': {
-    'noAlbums': 'Cha deach albam a lorg no tha e fhathast a\' luchdadh...',
-    'createAlbum': 'Cruthaich Albam',
-    'creatingAlbum': 'A\' cruthachadh Albam...',
-    'logOut': 'Log A-mach',
-    'uploadProgress': 'Adhartas Luchdaidh Suas',
-    'overallProgress': 'Adhartas Iomlan',
-    'of': 'de',
-    'complete': 'coileanta',
-    'uploading': 'A\' luchdadh suas',
-    'processing': 'A\' giullachd',
-    'failed': 'Dh\'fhàillig leis',
-    'created': 'Air a chruthachadh',
-    'updated': 'Air ùrachadh',
-    'delete': 'Sguab às',
-    'addPhotos': 'Cuir Dealbhan ris',
-    'copyLink': 'Dèan lethbhreac den cheangal',
-    'linkCopied': 'Chaidh lethbhreac den cheangal a chur gu d\' clipboard.',
-    'copyFailed': 'Cha deach lethbhreac den cheangal a chur chun a\' clipboard.',
-    'deleteConfirm': 'Sgrìobh "delete" gus dearbhadh gu bheil thu airson an t-albam seo a sguabadh às gu buan',
-    'deleteFailed': 'Cha deach leinn an t-albam seo a sguabadh às. Feuch ris a-rithist nas fhaide air adhart.',
-    'debugLog': 'Loga Dì-bhugachaidh',
-    'language': 'Cànan',
-    'loading': 'A\' luchdadh...'
-  },
-  'mi': {
-    'noAlbums': 'Kāore he pukapuka i kitea, kei te utaina tonu rānei...',
-    'createAlbum': 'Waihanga Pukapuka',
-    'creatingAlbum': 'Kei te waihanga Pukapuka...',
-    'logOut': 'Takiputa',
-    'uploadProgress': 'Ahunga Tukuake',
-    'overallProgress': 'Ahunga Katoa',
-    'of': 'o',
-    'complete': 'oti',
-    'uploading': 'Tukuake ana',
-    'processing': 'Tukatuka ana',
-    'failed': 'Rahua',
-    'created': 'Kua hangaia',
-    'updated': 'Kua whakahoutia',
-    'delete': 'Mukua',
-    'addPhotos': 'Tāpiri Whakaahua',
-    'copyLink': 'Tārua Hononga',
-    'linkCopied': 'Kua tāruatia te hononga ki tō papatohu.',
-    'copyFailed': 'I rahua te tārua i te hononga ki te papatohu.',
-    'deleteConfirm': 'Tēnā taipia "delete" ki te whakaū kei te hiahia koe ki te muku i tēnei pukapuka mō ake tonu atu',
-    'deleteFailed': 'I rahua te muku i tēnei pukapuka. Tēnā ngana anō ā muri ake.',
-    'debugLog': 'Rātaka Patuiro',
-    'language': 'Reo',
-    'loading': 'Kei te uta...'
-  },
-  'mt': {
-    'noAlbums': 'Ma nstabet l-ebda album jew għadu qed jillowdja...',
-    'createAlbum': 'Oħloq Album',
-    'creatingAlbum': 'Qed joħloq Album...',
-    'logOut': 'Oħroġ',
-    'uploadProgress': 'Progress tat-Tgħabbija',
-    'overallProgress': 'Progress Ġenerali',
-    'of': 'minn',
-    'complete': 'komplut',
-    'uploading': 'Qed itella\'',
-    'processing': 'Qed jipproċessa',
-    'failed': 'Falliet',
-    'created': 'Maħluq',
-    'updated': 'Aġġornat',
-    'delete': 'Ħassar',
-    'addPhotos': 'Żid Ritratti',
-    'copyLink': 'Ikkopja l-Link',
-    'linkCopied': 'Il-link ġie kkupjat fil-clipboard tiegħek.',
-    'copyFailed': 'Ma rnexxilux jikkopja l-link fil-clipboard.',
-    'deleteConfirm': 'Jekk jogħġbok ikteb "delete" biex tikkonferma li trid tħassar dan l-album permanentement',
-    'deleteFailed': 'Ma rnexxilux iħassar dan l-album. Jekk jogħġbok erġa\' pprova aktar tard.',
-    'debugLog': 'Log tad-Debug',
-    'language': 'Lingwa',
-    'loading': 'Qed jillowdja...'
-  },
-  'nn': {
-    'noAlbums': 'Ingen album funne eller dei vert framleis lasta inn...',
-    'createAlbum': 'Lag album',
-    'creatingAlbum': 'Lagar album...',
-    'logOut': 'Logg ut',
-    'uploadProgress': 'Opplastingsframgang',
-    'overallProgress': 'Total framgang',
-    'of': 'av',
-    'complete': 'fullført',
-    'uploading': 'Lastar opp',
-    'processing': 'Handsamar',
-    'failed': 'Mislukka',
-    'created': 'Laga',
-    'updated': 'Oppdatert',
-    'delete': 'Slett',
-    'addPhotos': 'Legg til bilete',
-    'copyLink': 'Kopier lenkje',
-    'linkCopied': 'Lenkja er kopiert til utklippstavla di.',
-    'copyFailed': 'Kunne ikkje kopiere lenkja til utklippstavla.',
-    'deleteConfirm': 'Skriv "delete" for å stadfeste at du vil slette dette albumet permanent',
-    'deleteFailed': 'Kunne ikkje slette dette albumet. Prøv igjen seinare.',
-    'debugLog': 'Feilsøkingslogg',
-    'language': 'Språk',
-    'loading': 'Lastar inn...'
-  },
-  'rw': {
-    'noAlbums': 'Nta mwirima iboneka cyangwa iracyurimo gutaha...',
-    'createAlbum': 'Kora Mwirima',
-    'creatingAlbum': 'Kurimo gukora Mwirima...',
-    'logOut': 'Sohoka',
-    'uploadProgress': 'Intambwe yo Kohereza',
-    'overallProgress': 'Intambwe y\'Icyikurikiranyije',
-    'of': 'ya',
-    'complete': 'birangiye',
-    'uploading': 'Kurimo kohereza',
-    'processing': 'Kurimo gutunganya',
-    'failed': 'Ntibyakunze',
-    'created': 'Byakozwe',
-    'updated': 'Byavuguruwe',
-    'delete': 'Siba',
-    'addPhotos': 'Ongeramo Amafoto',
-    'copyLink': 'Kora kopi y\'ihuza',
-    'linkCopied': 'Ihuza ryakopejwe ku kibaho cyawe.',
-    'copyFailed': 'Ntibyakunze gukora kopi y\'ihuza ku kibaho.',
-    'deleteConfirm': 'Nyamuneka andika "delete" kugira ngo wemeze ko ushaka gusiba iri riba burundu',
-    'deleteFailed': 'Ntibyakunze gusiba iri riba. Nyamuneka ongera ugerageze nyuma.',
-    'debugLog': 'Inyandiko yo gukosora',
-    'language': 'Ururimi',
-    'loading': 'Kurimo gutaha...'
-  },
-  'sa': {
-    'noAlbums': 'न कोऽपि सङ्ग्रहो प्राप्तो वा इदानीमपि अवरोपयति...',
-    'createAlbum': 'सङ्ग्रहं सृज',
-    'creatingAlbum': 'सङ्ग्रहः सृज्यते...',
-    'logOut': 'निर्गच्छ',
-    'uploadProgress': 'आरोपणप्रगतिः',
-    'overallProgress': 'समग्रप्रगतिः',
-    'of': '/',
-    'complete': 'पूर्णम्',
-    'uploading': 'आरोपयति',
-    'processing': 'प्रक्रियारत',
-    'failed': 'विफलम्',
-    'created': 'सृष्टम्',
-    'updated': 'अद्यतनीकृतम्',
-    'delete': 'विलोपय',
-    'addPhotos': 'छायाचित्राणि योजय',
-    'copyLink': 'सम्बन्धं प्रतिलिप्यताम्',
-    'linkCopied': 'सम्बन्धः तव क्लिपबोर्ड प्रतिलिपिरूपेण स्थापितः।',
-    'copyFailed': 'क्लिपबोर्डे सम्बन्धं प्रतिलिपितुं विफलम्।',
-    'deleteConfirm': 'कृपया "delete" लिखन्तु इदं सङ्ग्रहं स्थायिरूपेण विलोपयितुमिच्छन्ति इति पुष्टिकरणाय',
-    'deleteFailed': 'इदं सङ्ग्रहं विलोपयितुं विफलम्। कृपया पश्चात् पुनः प्रयासं कुर्वन्तु।',
-    'debugLog': 'दोषान्वेषणपत्रिका',
-    'language': 'भाषा',
-    'loading': 'अवरोपयति...'
-  },
-  'sm': {
-    'noAlbums': 'Leai ni alipumi na maua pe o loo uta pea...',
-    'createAlbum': 'Fatuina se Alipumi',
-    'creatingAlbum': 'O loo fatuina se Alipumi...',
-    'logOut': 'Sau i fafo',
-    'uploadProgress': 'Alualu i luma o le Uta',
-    'overallProgress': 'Alualu i luma Atoa',
-    'of': 'o',
-    'complete': 'mae\'a',
-    'uploading': 'Uta a\'e',
-    'processing': 'Galuega i ai',
-    'failed': 'Ua le manuia',
-    'created': 'Ua fatuina',
-    'updated': 'Ua fa\'afouina',
-    'delete': 'Tape',
-    'addPhotos': 'Fa\'aopoopo Ata',
-    'copyLink': 'Kopi le So\'oga',
-    'linkCopied': 'Ua kopi le so\'oga i lau laupapa kopi.',
-    'copyFailed': 'Ua le manuia le kopi o le so\'oga i le laupapa kopi.',
-    'deleteConfirm': 'Fa\'amolemole tusi "delete" e fa\'amaonia ai e te mana\'o e tape lea alipumi mo le tumau',
-    'deleteFailed': 'Ua le manuia le tapeeina o lenei alipumi. Fa\'amolemole toe taumafai mulimuli ane.',
-    'debugLog': 'Lisi o le Fa\'atonu',
-    'language': 'Gagana',
-    'loading': 'O loo utaina...'
-  },
-  'st': {
-    'noAlbums': 'Ha ho li-album tse fumanoeng kapa li ntse li jarisa...',
-    'createAlbum': 'Etsa Album',
-    'creatingAlbum': 'Ho etsa Album...',
-    'logOut': 'Tsoa',
-    'uploadProgress': 'Tsoelopele ea ho Kenya',
-    'overallProgress': 'Tsoelopele ea Kakaretso',
-    'of': 'ea',
-    'complete': 'phethahetse',
-    'uploading': 'Ho kenya',
-    'processing': 'Ho sebetsana',
-    'failed': 'E hlolehile',
-    'created': 'E entsoe',
-    'updated': 'E nchafatsoa',
-    'delete': 'Hlakola',
-    'addPhotos': 'Kenya Litšoantšo',
-    'copyLink': 'Kopitsa Khokahano',
-    'linkCopied': 'Khokahano e kopitsoe ho clipboard ea hau.',
-    'copyFailed': 'E hlolehile ho kopitsa khokahano ho clipboard.',
-    'deleteConfirm': 'Ka kopo ngola "delete" ho netefatsa hore u batla ho hlakola album ena ka ho sa feleng',
-    'deleteFailed': 'E hlolehile ho hlakola album ena. Ka kopo leka hape hamorao.',
-    'debugLog': 'Debug Log',
-    'language': 'Puo',
-    'loading': 'E jarisa...'
-  }
+type LazyImageProps = {
+  src: string;
+  alt: string;
+  style: React.CSSProperties;
 };
 
-// Create a new LazyImage component that uses IntersectionObserver
-const LazyImage = ({ src, alt, style }: { src: string, alt: string, style: React.CSSProperties }) => {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [isInView, setIsInView] = useState(false)
-  const imgRef = useRef<HTMLImageElement>(null)
+export const LazyImage = ({ src, alt, style }: LazyImageProps) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
   
   useEffect(() => {
     // Create an observer instance
@@ -2545,10 +34,10 @@ const LazyImage = ({ src, alt, style }: { src: string, alt: string, style: React
       (entries) => {
         // If the image is intersecting with the viewport
         if (entries[0].isIntersecting) {
-          setIsInView(true)
+          setIsInView(true);
           // Once we've started loading, we can disconnect the observer
           if (imgRef.current) {
-            observer.unobserve(imgRef.current)
+            observer.unobserve(imgRef.current);
           }
         }
       },
@@ -2557,20 +46,20 @@ const LazyImage = ({ src, alt, style }: { src: string, alt: string, style: React
         rootMargin: '200px 0px',
         threshold: 0.01
       }
-    )
+    );
     
     // Start observing the image element
     if (imgRef.current) {
-      observer.observe(imgRef.current)
+      observer.observe(imgRef.current);
     }
     
     // Clean up the observer when the component unmounts
     return () => {
       if (imgRef.current) {
-        observer.unobserve(imgRef.current)
+        observer.unobserve(imgRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
   
   return (
     <div 
@@ -2608,8 +97,503 @@ const LazyImage = ({ src, alt, style }: { src: string, alt: string, style: React
         </div>
       )}
     </div>
-  )
-}
+  );
+};
+
+// Header Component
+type HeaderProps = {
+  publicUsername: string | null;
+  isUploading: boolean;
+  openFilePicker: (folderId: string | null) => void;
+  handleLogout: () => void;
+  t: (key: string) => string;
+  isRTL: boolean;
+};
+
+export const Header: React.FC<HeaderProps> = ({ 
+  publicUsername, 
+  isUploading, 
+  openFilePicker, 
+  handleLogout,
+  t,
+  isRTL
+}) => {
+  return (
+    <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          marginBottom: 16,
+          width: "100%",
+          flexDirection: isRTL ? "row-reverse" : "row"
+        }}
+      >
+        {publicUsername && (
+          <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
+        )}
+      </div>
+      
+      {/* Second row: New Album and Log Out buttons */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 24,
+          width: "100%",
+          flexDirection: isRTL ? "row-reverse" : "row"
+        }}
+      >
+        <div>
+          <button
+            onClick={() => openFilePicker(null)}
+            style={{
+              fontSize: "14px",
+              padding: "8px 16px",
+              backgroundColor: "#007bff",
+              color: "white",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer",
+              opacity: isUploading ? 0.6 : 1,
+              pointerEvents: isUploading ? "none" : "auto"
+            }}
+            disabled={isUploading}
+          >
+            {isUploading ? t('creatingAlbum') : t('createAlbum')}
+          </button>
+        </div>
+
+        {publicUsername && (
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLogout();
+            }}
+            style={{
+              fontSize: "14px",
+              color: "#666",
+              textDecoration: "underline",
+              cursor: "pointer"
+            }}
+          >
+            {t('logOut')}
+          </a>
+        )}
+      </div>
+    </>
+  );
+};
+
+// UploadProgress Component
+type ProgressTrackerType = {
+  totalFiles: number;
+  filesComplete: number;
+  filesUploading: number;
+  filesProcessing: number;
+  filesWithError: number;
+  overallProgress: number;
+};
+
+type UploadProgressProps = {
+  progressTracker: ProgressTrackerType;
+  t: (key: string) => string;
+  isRTL: boolean;
+};
+
+export const UploadProgress: React.FC<UploadProgressProps> = ({ 
+  progressTracker,
+  t,
+  isRTL
+}) => {
+  if (progressTracker.totalFiles === 0) return null;
+  
+  return (
+    <div style={{ 
+      marginBottom: "24px", 
+      backgroundColor: "#fff", 
+      padding: "16px", 
+      borderRadius: "8px", 
+      boxShadow: "0 1px 3px rgba(0,0,0,0.1)", 
+      width: "100%",
+      direction: isRTL ? "rtl" : "ltr"
+    }}>
+      <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t('uploadProgress')}</h3>
+      
+      <div style={{ marginBottom: "12px" }}>
+        <div style={{ 
+          display: "flex", 
+          justifyContent: "space-between", 
+          fontSize: "14px", 
+          marginBottom: "6px" 
+        }}>
+          <span>{t('overallProgress')}: {Math.round(progressTracker.overallProgress * 100)}%</span>
+          <span>{progressTracker.filesComplete} {t('of')} {progressTracker.totalFiles} {t('complete')}</span>
+        </div>
+        <div style={{ 
+          height: "8px", 
+          backgroundColor: "#e0e0e0", 
+          borderRadius: "4px", 
+          overflow: "hidden" 
+        }}>
+          <div 
+            style={{ 
+              height: "100%", 
+              width: `${progressTracker.overallProgress * 100}%`, 
+              backgroundColor: "#4caf50",
+              borderRadius: "4px",
+              transition: "width 0.3s ease",
+              float: isRTL ? "right" : "left"
+            }}
+          />
+        </div>
+      </div>
+      
+      <div style={{ 
+        display: "flex", 
+        gap: "12px", 
+        fontSize: "14px", 
+        color: "#666",
+        flexDirection: isRTL ? "row-reverse" : "row"
+      }}>
+        {progressTracker.filesUploading > 0 && (
+          <div>📤 {t('uploading')}: {progressTracker.filesUploading}</div>
+        )}
+        {progressTracker.filesProcessing > 0 && (
+          <div>⚙️ {t('processing')}: {progressTracker.filesProcessing}</div>
+        )}
+        {progressTracker.filesComplete > 0 && (
+          <div>✅ {t('complete')}: {progressTracker.filesComplete}</div>
+        )}
+        {progressTracker.filesWithError > 0 && (
+          <div style={{ color: "#e53935" }}>❌ {t('failed')}: {progressTracker.filesWithError}</div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// AlbumList Component
+import { formatDate } from "@/lib/utils";
+import { S3_BUCKET_URL } from "@/lib/config";
+
+type FileType = {
+  dataKey: string;
+  thumbnailDataKey: string | null;
+  durationInSeconds: number | null;
+};
+
+type FolderType = {
+  folderPositionId: string;
+  folderId: string;
+  folderName: string | null;
+  createdAt: number | null;
+  updatedAt: number | null;
+  files: FileType[];
+};
+
+type AlbumListProps = {
+  folders: FolderType[];
+  handleDeleteClick: (e: React.MouseEvent, folderPositionId: string) => void;
+  openFilePicker: (folderId: string | null) => void;
+  isUploading: boolean;
+  t: (key: string) => string;
+  isRTL: boolean;
+};
+
+export const AlbumList: React.FC<AlbumListProps> = ({ 
+  folders, 
+  handleDeleteClick, 
+  openFilePicker,
+  isUploading,
+  t,
+  isRTL
+}) => {
+  if (folders.length === 0 && !isUploading) {
+    return <p style={{ fontSize: 16, color: "#555", width: "100%" }}>{t('noAlbums')}</p>;
+  }
+
+  const getOwnerItemId = (id: string) => id.split("_____")[0];
+  const getTargetItemIdentifier = (id: string) =>
+    id.split("_____")[1]?.split("____")[0] || "";
+
+  return (
+    <>
+      {folders.map((folder) => {
+        const showCreated = folder.createdAt != null;
+        const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt;
+
+        const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`;
+        const inviteLink = `https://6180.io/photos/${folderInvite}`;
+
+        const handleCopy = (e: React.MouseEvent) => {
+          e.preventDefault();
+          navigator.clipboard.writeText(inviteLink)
+            .then(() => {
+              alert(t('linkCopied'));
+            })
+            .catch(err => {
+              console.error("Failed to copy link:", err);
+              alert(t('copyFailed'));
+            });
+        };
+
+        return (
+          <div
+            key={folder.folderId}
+            style={{
+              marginBottom: 30,
+              width: "100%",
+              direction: isRTL ? "rtl" : "ltr"
+            }}
+          >
+            <a
+              href={inviteLink}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                display: "block",
+                width: "100%",
+                overflow: "hidden"
+              }}
+            >
+              <div
+                style={{
+                  background: "#fff",
+                  borderRadius: 12,
+                  padding: 20,
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                  transition: "box-shadow 0.2s ease",
+                  width: "100%",
+                  maxWidth: "100%",
+                  position: "relative",
+                  boxSizing: "border-box",
+                  overflow: "hidden"
+                }}
+                onMouseOver={(e) =>
+                  ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
+                }
+                onMouseOut={(e) =>
+                  ((e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"))
+                }
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: 16,
+                    flexDirection: isRTL ? "row-reverse" : "row"
+                  }}
+                >
+                  <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
+                    {folder.folderName || ""}
+                  </h2>
+                  <div style={{ 
+                    display: "flex", 
+                    alignItems: "center", 
+                    gap: "16px",
+                    flexDirection: isRTL ? "row-reverse" : "row"
+                  }}>
+                    {(showCreated || showUpdated) && (
+                      <div style={{ 
+                        fontSize: 13, 
+                        color: "#777", 
+                        textAlign: isRTL ? "left" : "right" 
+                      }}>
+                        {showCreated && <div>{t('created')}: {formatDate(folder.createdAt)}</div>}
+                        {showUpdated && <div>{t('updated')}: {formatDate(folder.updatedAt)}</div>}
+                      </div>
+                    )}
+                    <a
+                      href="#"
+                      onClick={(e) => handleDeleteClick(e, folder.folderPositionId)}
+                      style={{
+                        fontSize: "13px",
+                        color: "#d32f2f",
+                        textDecoration: "none",
+                      }}
+                    >
+                      {t('delete')}
+                    </a>
+                  </div>
+                </div>
+
+                <div 
+                  style={{ 
+                    width: "100%",
+                    position: "relative",
+                  }}
+                >
+                  <div 
+                    style={{ 
+                      display: "flex", 
+                      overflowX: "auto",
+                      gap: 12,
+                      paddingBottom: 8,
+                      msOverflowStyle: "none", 
+                      scrollbarWidth: "thin",
+                      WebkitOverflowScrolling: "touch",
+                      maxWidth: "100%",
+                      flexDirection: isRTL ? "row-reverse" : "row"
+                    }}
+                  >
+                    {folder.files.map((file, i) => (
+                      <LazyImage
+                        key={i}
+                        src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
+                        alt={t('thumbnail')}
+                        style={{
+                          width: 160,
+                          height: 100,
+                          objectFit: "cover",
+                          borderRadius: 6,
+                          border: "1px solid #ddd",
+                          flexShrink: 0,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  
+                  {folder.files.length > 3 && (
+                    <div 
+                      style={{
+                        position: "absolute",
+                        [isRTL ? "left" : "right"]: 0,
+                        top: 0,
+                        bottom: 8,
+                        width: 30,
+                        background: isRTL 
+                          ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
+                          : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
+                        pointerEvents: "none",
+                      }}
+                    />
+                  )}
+                </div>
+                
+                {/* Footer section with Add Photos and Copy Link buttons */}
+                <div style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: 16,
+                  flexDirection: isRTL ? "row-reverse" : "row"
+                }}>
+                  <div style={{ 
+                    display: "flex", 
+                    gap: "10px",
+                    flexDirection: isRTL ? "row-reverse" : "row"
+                  }}>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault(); 
+                        e.stopPropagation();
+                        openFilePicker(folder.folderId);
+                      }}
+                      style={{
+                        padding: "8px 12px",
+                        backgroundColor: "#4caf50",
+                        color: "white",
+                        border: "none",
+                        borderRadius: 6,
+                        cursor: "pointer",
+                        fontSize: 14,
+                        textAlign: "center"
+                      }}
+                    >
+                      {t('addPhotos')}
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault(); 
+                        e.stopPropagation();
+                        handleCopy(e);
+                      }}
+                      style={{
+                        padding: "8px 12px",
+                        backgroundColor: "#e0e0e0",
+                        border: "none",
+                        borderRadius: 6,
+                        cursor: "pointer",
+                        fontSize: 14,
+                        textAlign: "center"
+                      }}
+                    >
+                      {t('copyLink')}
+                    </button>
+                  </div>
+                  <div></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+// DebugLog Component
+type DebugLogProps = {
+  debugMessages: string[];
+  t: (key: string) => string;
+  isRTL: boolean;
+  textDirection: string;
+};
+
+export const DebugLog: React.FC<DebugLogProps> = ({ 
+  debugMessages,
+  t,
+  isRTL,
+  textDirection
+}) => {
+  if (debugMessages.length === 0) return null;
+  
+  return (
+    <div style={{ 
+      marginTop: "40px", 
+      background: "#fff3cd", 
+      padding: "16px", 
+      borderRadius: "8px", 
+      border: "1px solid #ffeeba", 
+      maxWidth: 900, 
+      margin: "0 auto",
+      direction: textDirection as "ltr" | "rtl"
+    }}>
+      <h3 style={{ 
+        marginTop: 0, 
+        fontSize: "18px", 
+        color: "#856404",
+        textAlign: isRTL ? "right" : "left"
+      }}>
+        {t('debugLog')}
+      </h3>
+      <pre style={{ 
+        fontSize: "14px", 
+        color: "#856404", 
+        whiteSpace: "pre-wrap", 
+        maxHeight: "400px", 
+        overflow: "auto",
+        textAlign: isRTL ? "right" : "left"
+      }}>
+        {debugMessages.map((msg, i) => (
+          <div key={i} style={{ marginBottom: "8px" }}>{msg}</div>
+        ))}
+      </pre>
+    </div>
+  );
+};
+
+
+export type TranslationType = {
+  [key in LanguageCode]: {
+    [key: string]: string;
+  };
+};
+
 
 const MyAlbums = () => {
   const [folders, setFolders] = useState<Folder[]>([])
@@ -2636,6 +620,10 @@ const MyAlbums = () => {
   const t = (key: string): string => {
     return translations[currentLanguage][key] || translations['en-US'][key] || key
   }
+
+  // Determine text direction based on language
+  const isRTL = currentLanguage === 'ar';
+  const textDirection = isRTL ? 'rtl' : 'ltr';
 
   // Add a log function that updates both console and debug state
   const log = (message: string) => {
@@ -2686,6 +674,7 @@ const MyAlbums = () => {
     localStorage.setItem(STORAGE_KEYS.LANGUAGE, currentLanguage)
   }, [currentLanguage])
 
+  // Load user data and fetch folders
   useEffect(() => {
     setPublicUsername(localStorage.getItem("publicUsername") || null)
 
@@ -2700,7 +689,7 @@ const MyAlbums = () => {
       console.error("Failed to decode token", err)
     }
 
-    const fetchData = async () => {
+    const fetchFolders = async () => {
       const query = `
         mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
           fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
@@ -2761,17 +750,18 @@ const MyAlbums = () => {
             folderName: folder.folderName,
             createdAt: folder.createdAt,
             updatedAt: folder.updatedAt,
-            files: files.filter((f: File) => f && f.dataKey),
+            files: files.filter((f: any) => f && f.dataKey),
           }
         })
 
         setFolders(parsed)
       } catch (err) {
         console.error("Failed to load folders:", err)
+        log(`❌ Failed to fetch folders: ${String(err)}`)
       }
     }
 
-    fetchData()
+    fetchFolders()
   }, [])
 
   // Update progress tracker whenever selectedPhotos changes
@@ -2828,14 +818,12 @@ const MyAlbums = () => {
 
   // Function to open file picker
   const openFilePicker = (folderId: string | null = null) => {
-
     // Set current folder ID if adding to existing folder
     setCurrentFolderId(folderId)
     
     // Clear current selected photos before opening file picker
     setSelectedPhotos([])
     fileInputRef.current?.click()
-    
   }
 
   // Update specific photo's status and progress
@@ -3030,7 +1018,8 @@ const MyAlbums = () => {
       log(`❌ Fatal error in handleFileSelection: ${String(error)}`)
       setIsUploading(false)
     } finally {
-      e.target.value = ""
+      // Clear the file input to allow selecting the same files again
+      if (e.target) e.target.value = ""
     }
   }
 
@@ -3094,18 +1083,10 @@ const MyAlbums = () => {
     }
   }
 
-  const getOwnerItemId = (id: string) => id.split("_____")[0]
-  const getTargetItemIdentifier = (id: string) =>
-    id.split("_____")[1]?.split("____")[0] || ""
-
   const handleLogout = () => {
     localStorage.clear()
     window.location.href = "/index.html"
   }
-
-  // Determine text direction based on language
-  const isRTL = currentLanguage === 'ar';
-  const textDirection = isRTL ? 'rtl' : 'ltr';
 
   return (
     <div
@@ -3120,344 +1101,52 @@ const MyAlbums = () => {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         {/* Container for all content with consistent width */}
         <div style={{ width: "100%" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: isRTL ? "flex-start" : "flex-end", // Adjust for RTL
-              alignItems: "center",
-              marginBottom: 16,
-              width: "100%",
-            }}
-          >
-            {publicUsername && (
-              <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
-            )}
-          </div>
+          <Header 
+            publicUsername={publicUsername}
+            isUploading={isUploading}
+            openFilePicker={openFilePicker}
+            handleLogout={handleLogout}
+            t={t}
+            isRTL={isRTL}
+          />
           
-          {/* Second row: New Album, Language selector, and Log Out buttons */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: 24,
-              width: "100%",
-              flexDirection: isRTL ? "row-reverse" : "row" // Adjust for RTL
-            }}
-          >
-            <div>
-              <button
-                onClick={() => openFilePicker()}
-                style={{
-                  fontSize: "14px",
-                  padding: "8px 16px",
-                  backgroundColor: "#007bff",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "6px",
-                  cursor: "pointer",
-                  opacity: isUploading ? 0.6 : 1,
-                  pointerEvents: isUploading ? "none" : "auto"
-                }}
-                disabled={isUploading}
-              >
-                {isUploading ? t('creatingAlbum') : t('createAlbum')}
-              </button>
-              <input 
-                type="file" 
-                id="file-input" 
-                ref={fileInputRef}
-                accept="image/*,video/*" 
-                multiple 
-                style={{ display: "none" }}
-                onChange={handleFileSelection}
-              />
-            </div>
+          <UploadProgress 
+            progressTracker={progressTracker}
+            t={t}
+            isRTL={isRTL}
+          />
 
-            {publicUsername && (
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLogout();
-                }}
-                style={{
-                  fontSize: "14px",
-                  color: "#666",
-                  textDecoration: "underline",
-                  cursor: "pointer"
-                }}
-              >
-                Log Out
-              </a>
-            )}            
-          </div>
-
-          {/* Progress Tracking Overview */}
-          {progressTracker.totalFiles > 0 && (
-            <div style={{ marginBottom: "24px", backgroundColor: "#fff", padding: "16px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)", width: "100%" }}>
-              <h3 style={{ fontSize: "18px", margin: "0 0 12px 0", textAlign: isRTL ? "right" : "left" }}>{t('uploadProgress')}</h3>
-              
-              <div style={{ marginBottom: "12px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", marginBottom: "6px", flexDirection: isRTL ? "row-reverse" : "row" }}>
-                  <span>{t('overallProgress')}: {Math.round(progressTracker.overallProgress * 100)}%</span>
-                  <span>{progressTracker.filesComplete} {t('of')} {progressTracker.totalFiles} {t('complete')}</span>
-                </div>
-                <div style={{ height: "8px", backgroundColor: "#e0e0e0", borderRadius: "4px", overflow: "hidden" }}>
-                  <div 
-                    style={{ 
-                      height: "100%", 
-                      width: `${progressTracker.overallProgress * 100}%`, 
-                      backgroundColor: "#4caf50",
-                      borderRadius: "4px",
-                      transition: "width 0.3s ease",
-                      float: isRTL ? "right" : "left"
-                    }}
-                  />
-                </div>
-              </div>
-              
-              <div style={{ 
-                display: "flex", 
-                gap: "12px", 
-                fontSize: "14px", 
-                color: "#666",
-                flexDirection: isRTL ? "row-reverse" : "row",
-                justifyContent: "flex-start",
-                textAlign: isRTL ? "right" : "left"
-              }}>
-                {progressTracker.filesUploading > 0 && (
-                  <div>📤 {t('uploading')}: {progressTracker.filesUploading}</div>
-                )}
-                {progressTracker.filesProcessing > 0 && (
-                  <div>⚙️ {t('processing')}: {progressTracker.filesProcessing}</div>
-                )}
-                {progressTracker.filesComplete > 0 && (
-                  <div>✅ {t('complete')}: {progressTracker.filesComplete}</div>
-                )}
-                {progressTracker.filesWithError > 0 && (
-                  <div style={{ color: "#e53935" }}>❌ {t('failed')}: {progressTracker.filesWithError}</div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {folders.length === 0 && !isUploading && (
-            <p style={{ fontSize: 16, color: "#555", width: "100%", textAlign: isRTL ? "right" : "left" }}>{t('noAlbums')}</p>
-          )}
-
-          {folders.map((folder) => {
-            const showCreated = folder.createdAt != null
-            const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt
-
-            const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`
-            const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`
-
-            const handleCopy = (e: React.MouseEvent) => {
-              e.preventDefault()
-              navigator.clipboard.writeText(inviteLink)
-                .then(() => {
-                  alert(t('linkCopied'))
-                })
-                .catch(err => {
-                  console.error("Failed to copy link:", err)
-                  alert(t('copyFailed'))
-                })
-            }
-
-            return (
-              <div
-                key={folder.folderId}
-                style={{
-                  marginBottom: 30,
-                  width: "100%",
-                }}
-              >
-                <a
-                  href={inviteLink}
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    display: "block",
-                    width: "100%",
-                    overflow: "hidden" // Add overflow hidden to prevent content from extending beyond container
-                  }}
-                >
-                  <div
-                    style={{
-                      background: "#fff",
-                      borderRadius: 12,
-                      padding: 20,
-                      boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                      transition: "box-shadow 0.2s ease",
-                      width: "100%",
-                      maxWidth: "100%", // Ensure it doesn't exceed parent width
-                      position: "relative",
-                      boxSizing: "border-box", // Include padding in width calculation
-                      overflow: "hidden" // Prevent content from extending beyond the card
-                    }}
-                    onMouseOver={(e) =>
-                      ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
-                    }
-                    onMouseOut={(e) =>
-                      ((e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"))
-                    }
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        marginBottom: 16,
-                        flexDirection: isRTL ? "row-reverse" : "row"
-                      }}
-                    >
-                      <h2 style={{ fontSize: 20, margin: 0, color: "#222", textAlign: isRTL ? "right" : "left" }}>
-                        {folder.folderName || ""}
-                      </h2>
-                      <div style={{ display: "flex", alignItems: "center", gap: "16px", flexDirection: isRTL ? "row-reverse" : "row" }}>
-                        {(showCreated || showUpdated) && (
-                          <div style={{ fontSize: 13, color: "#777", textAlign: isRTL ? "right" : "right" }}>
-                            {showCreated && <div>{t('created')}: {formatDate(folder.createdAt)}</div>}
-                            {showUpdated && <div>{t('updated')}: {formatDate(folder.updatedAt)}</div>}
-                          </div>
-                        )}
-                        <a
-                          href="#"
-                          onClick={(e) => handleDeleteClick(e, folder.folderPositionId)}
-                          style={{
-                            fontSize: "13px",
-                            color: "#d32f2f",
-                            textDecoration: "none",
-                          }}
-                        >
-                          {t('delete')}
-                        </a>
-                      </div>
-                    </div>
-
-                    <div 
-                      style={{ 
-                        width: "100%",
-                        position: "relative",
-                      }}
-                    >
-                      <div 
-                        style={{ 
-                          display: "flex", 
-                          overflowX: "auto",
-                          gap: 12,
-                          paddingBottom: 8,
-                          msOverflowStyle: "none", 
-                          scrollbarWidth: "thin",
-                          WebkitOverflowScrolling: "touch",
-                          maxWidth: "100%", // Ensure content doesn't exceed container width
-                          flexDirection: isRTL ? "row-reverse" : "row"
-                        }}
-                      >
-                        {folder.files.map((file, i) => (
-                          <LazyImage
-                            key={i}
-                            src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
-                            alt="Thumbnail"
-                            style={{
-                              width: 160,
-                              height: 100,
-                              objectFit: "cover",
-                              borderRadius: 6,
-                              border: "1px solid #ddd",
-                              flexShrink: 0,
-                            }}
-                          />
-                        ))}
-                      </div>
-                      
-                      {folder.files.length > 3 && (
-                        <div 
-                          style={{
-                            position: "absolute",
-                            right: isRTL ? "auto" : 0,
-                            left: isRTL ? 0 : "auto",
-                            top: 0,
-                            bottom: 8,
-                            width: 30,
-                            background: isRTL 
-                              ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))" 
-                              : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
-                            pointerEvents: "none",
-                          }}
-                        />
-                      )}
-                    </div>
-                    
-                    {/* Footer section with Add Photos and Copy Link buttons */}
-                    <div style={{
-                      display: "flex",
-                      justifyContent: isRTL ? "flex-end" : "space-between",
-                      marginTop: 16,
-                      flexDirection: isRTL ? "row-reverse" : "row"
-                    }}>
-                      <div style={{ display: "flex", gap: "10px", flexDirection: isRTL ? "row-reverse" : "row" }}>
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault(); 
-                            e.stopPropagation();
-                            openFilePicker(folder.folderId);
-                          }}
-                          style={{
-                            padding: "8px 12px",
-                            backgroundColor: "#4caf50",
-                            color: "white",
-                            border: "none",
-                            borderRadius: 6,
-                            cursor: "pointer",
-                            fontSize: 14,
-                            textAlign: "center"
-                          }}
-                        >
-                          {t('addPhotos')}
-                        </button>
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault(); 
-                            e.stopPropagation();
-                            handleCopy(e);
-                          }}
-                          style={{
-                            padding: "8px 12px",
-                            backgroundColor: "#e0e0e0",
-                            border: "none",
-                            borderRadius: 6,
-                            cursor: "pointer",
-                            fontSize: 14,
-                            textAlign: "center"
-                          }}
-                        >
-                          {t('copyLink')}
-                        </button>
-                      </div>
-                      <div></div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            )
-          })}
+          <AlbumList 
+            folders={folders}
+            handleDeleteClick={handleDeleteClick}
+            openFilePicker={openFilePicker}
+            isUploading={isUploading}
+            t={t}
+            isRTL={isRTL}
+          />
+          
+          {/* Hidden file input */}
+          <input 
+            type="file" 
+            id="file-input" 
+            ref={fileInputRef}
+            accept="image/*,video/*" 
+            multiple 
+            style={{ display: "none" }}
+            onChange={handleFileSelection}
+          />
         </div>
       </div>
 
-      {debugMessages.length > 0 && (
-        <div style={{ marginTop: "40px", background: "#fff3cd", padding: "16px", borderRadius: "8px", border: "1px solid #ffeeba", maxWidth: 900, margin: "0 auto" }}>
-          <h3 style={{ marginTop: 0, fontSize: "18px", color: "#856404", textAlign: isRTL ? "right" : "left" }}>{t('debugLog')}</h3>
-          <pre style={{ fontSize: "14px", color: "#856404", whiteSpace: "pre-wrap", maxHeight: "400px", overflow: "auto", textAlign: isRTL ? "right" : "left", direction: textDirection }}>
-            {debugMessages.map((msg, i) => (
-              <div key={i} style={{ marginBottom: "8px" }}>{msg}</div>
-            ))}
-          </pre>
-        </div>
-      )}
+      <DebugLog 
+        debugMessages={debugMessages}
+        t={t}
+        isRTL={isRTL}
+        textDirection={textDirection}
+      />
     </div>
   )
 }
 
+// Initialize the app
 ReactDOM.createRoot(document.getElementById("root")!).render(<MyAlbums />)

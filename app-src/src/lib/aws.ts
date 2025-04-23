@@ -13,15 +13,3 @@ export const createS3Client = () =>
       },
     }),
   })
-
-
-export type UploadStatus = 'pending' | 'uploading' | 'processing' | 'complete' | 'error';
-
-export type ProgressTracker = {
-  totalFiles: number
-  filesComplete: number
-  filesUploading: number
-  filesProcessing: number
-  filesWithError: number
-  overallProgress: number
-}
