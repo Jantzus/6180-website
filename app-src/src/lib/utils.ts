@@ -1,3 +1,44 @@
+import { STORAGE_KEYS } from "@/lib/config"
+import { LanguageCode } from "@/lib/types"
+import { myAlbumsTranslations } from "@/lib/translations"
+
+export function checkLoginOrRedirect(): string | null {
+  const token = localStorage.getItem("idToken");
+
+  if (!token) {
+    const redirect = encodeURIComponent(window.location.pathname + window.location.search);
+    window.location.href = `/app/login.html?redirect=${redirect}`;
+    return null;
+  }
+
+  try {
+    const parts = token.split(".");
+    if (parts.length !== 3) {
+      throw new Error("Token does not have 3 parts");
+    }
+
+    const payload = JSON.parse(atob(parts[1]));
+    const now = Math.floor(Date.now() / 1000);
+
+    if (payload.exp && payload.exp < now) {
+      console.warn("Token expired at", new Date(payload.exp * 1000).toISOString());
+      localStorage.removeItem("idToken");
+      const redirect = encodeURIComponent(window.location.pathname + window.location.search);
+      window.location.href = `/app/login.html?redirect=${redirect}`;
+      return null;
+    }
+
+    console.log("Valid idToken. Exp:", new Date(payload.exp * 1000).toISOString());
+    return token;
+  } catch (e) {
+    console.error("Invalid token:", e);
+    localStorage.removeItem("idToken");
+    const redirect = encodeURIComponent(window.location.pathname + window.location.search);
+    window.location.href = `/app/login.html?redirect=${redirect}`;
+    return null;
+  }
+}
+
 export const generateUUID = () =>
   crypto.randomUUID?.() || "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
     (
@@ -37,3 +78,70 @@ export const formatDate = (timestamp: number | null): string => {
     minute: "2-digit",
   })
 }
+export const getVideoDuration = (file: File): Promise<number> => {
+  return new Promise((resolve, reject) => {
+    const video = document.createElement("video")
+    video.preload = "metadata"
+    video.src = URL.createObjectURL(file)
+    video.onloadedmetadata = () => {
+      URL.revokeObjectURL(video.src)
+      resolve(video.duration)
+    }
+    video.onerror = () => reject("Could not load video metadata")
+  })
+}
+
+export const getVideoThumbnailBlob = (file: File): Promise<Blob> => {
+  return new Promise((resolve, reject) => {
+    const video = document.createElement("video")
+    video.src = URL.createObjectURL(file)
+    video.crossOrigin = "anonymous"
+    video.muted = true
+    video.currentTime = 0
+    video.onloadeddata = () => {
+      const canvas = document.createElement("canvas")
+      canvas.width = video.videoWidth
+      canvas.height = video.videoHeight
+      const ctx = canvas.getContext("2d")
+      if (!ctx) return reject("No canvas context")
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+      canvas.toBlob(blob => {
+        if (blob) resolve(blob)
+        else reject("Failed to create blob")
+        URL.revokeObjectURL(video.src)
+      }, "image/jpeg", 0.8)
+    }
+    video.onerror = reject
+  })
+}
+
+export const getOwnerItemId = (id: string) => id.split("_____")[0];
+export const getTargetItemIdentifier = (id: string) =>
+  id.split("_____")[1]?.split("____")[0] || "";
+
+
+export const detectBrowserLanguage = (): LanguageCode => {
+  // First try to get saved language preference
+  const savedLanguage = localStorage.getItem(STORAGE_KEYS.LANGUAGE) as LanguageCode | null;
+  
+  if (savedLanguage && myAlbumsTranslations[savedLanguage]) {
+    return savedLanguage;
+  }
+  
+  // Otherwise detect from browser
+  const browserLang = navigator.language;
+  
+  // Check if we have an exact match
+  if (browserLang && myAlbumsTranslations[browserLang as LanguageCode]) {
+    return browserLang as LanguageCode;
+  }
+  
+  // Check if we have a match for just the language part (e.g., 'en' from 'en-GB')
+  const langCode = browserLang.split('-')[0];
+  if (langCode && myAlbumsTranslations[langCode as LanguageCode]) {
+    return langCode as LanguageCode;
+  }
+  
+  // Default to en-US if no match
+  return 'en-US';
+};
