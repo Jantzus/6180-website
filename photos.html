@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      max-width: 1200px;
+      margin: auto;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.5;
+      padding: 20px;
+    }
+    .header {
+      margin-bottom: 20px;
+    }
+    .album-title {
+      font-weight: 400;
+      margin: 0;
+      font-size: 24px;
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    .media-block {
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      position: relative;
+      height: 100%;
+    }
+    .media-block:hover {
+      transform: translateY(-2px);
+    }
+    .lazy-image-container {
+      position: relative;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      width: 100%;
+      min-height: 200px;
+    }
+    .lazy-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+      transition: opacity 0.3s;
+      opacity: 0;
+    }
+    .lazy-image.loaded {
+      opacity: 1;
+    }
+    .loading-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading-animation 1.5s infinite;
+      z-index: 0;
+    }
+    @keyframes loading-animation {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .owner-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(255,255,255,0.85);
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      z-index: 3;
+    }
+    .video-container {
+      cursor: pointer;
+    }
+    .thumbnail-wrapper {
+      position: relative;
+    }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      z-index: 2;
+    }
+    .play-button:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      border-style: solid;
+      border-width: 15px 0 15px 25px;
+      border-color: transparent transparent transparent white;
+    }
+    .duration-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 4px 8px;
+      font-size: 14px;
+      border-radius: 4px;
+      font-weight: 500;
+      z-index: 2;
+    }
+    .error {
+      text-align: center;
+      padding: 40px;
+      font-size: 18px;
+      color: #d32f2f;
+    }
+    .loading {
+      text-align: center;
+      padding: 40px;
+      font-size: 18px;
+      color: #666;
+    }
+    #columns-selector {
+      margin-bottom: 20px;
+    }
+    select {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    label {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1 id="album-title" class="album-title">Loading album...</h1>
+    
+    <div id="columns-selector">
+      <label for="columns">Columns:</label>
+      <select id="columns" onchange="changeColumns(this.value)">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="media-container">
+    <div id="media-grid" class="media-grid">
+      <div class="loading">Loading album content...</div>
+    </div>
+  </div>
+
+  <script>
+    // Get folder ID from URL query parameter
+    function getFolderIdFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const folderId = urlParams.get('id');
+      
+      if (!folderId) {
+        // Check if the folder ID is in the URL path
+        const pathParts = window.location.pathname.split('/');
+        const lastPart = pathParts[pathParts.length - 1];
+        
+        if (lastPart && lastPart.includes('_')) {
+          return lastPart;
+        }
+      }
+      
+      return folderId;
+    }
+    
+    // Format the folder ID into the expected format
+    function formatFolderId(rawId) {
+      if (!rawId || !rawId.includes('_')) {
+        return null;
+      }
+      
+      const [prefix, suffix] = rawId.split('_');
+      return `${prefix}_____${suffix}____Folder`;
+    }
+    
+    // Constants
+    const GRAPHQL_ENDPOINT = "https://nmu355vgsbdbjcihhtekwdczxi.appsync-api.us-east-1.amazonaws.com/graphql";
+    const API_KEY = "da2-45aunjrsbfbdhlaaomrswhsszq";
+    const BUCKET_URL = "https://i6180-assets-prod-0.s3.amazonaws.com/";
+    
+    // GraphQL query to fetch folder data
+    const FETCH_FOLDERS_QUERY = `
+      query FetchFolders($folderIds: [String!]!) {
+        fetchFolders(folderIds: $folderIds) {
+          items {
+            folderName
+            fileReferencesPage {
+              items {
+                file {
+                  ownerContactId
+                  dataKey
+                  thumbnailDataKey
+                  durationInSeconds
+                }
+              }
+            }
+            contactsUsingInvite {
+              items {
+                id
+                item {
+                  ... on Persona {
+                    publicDisplayName
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `;
+    
+    // Format time in MM:SS
+    function formatTime(seconds = 0) {
+      return `${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, "0")}`;
+    }
+    
+    // Fetch folder data from the API
+    async function fetchFolder(folderId) {
+      try {
+        const response = await fetch(GRAPHQL_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': API_KEY
+          },
+          body: JSON.stringify({
+            query: FETCH_FOLDERS_QUERY,
+            variables: { folderIds: [folderId] }
+          })
+        });
+        
+        const result = await response.json();
+        return processData(result);
+      } catch (error) {
+        console.error('Error fetching folder data:', error);
+        showError('Failed to fetch album content. Please try again later.');
+        return null;
+      }
+    }
+    
+    // Process the data returned from the API
+    function processData(json) {
+      const items = json?.data?.fetchFolders?.items || [];
+      const mediaItems = [];
+      const contacts = {};
+      let folderName = "Photos";
+      
+      if (items.length > 0) {
+        // Get folder name if available
+        if (items[0]?.folderName && items[0].folderName.length > 1) {
+          folderName = items[0].folderName;
+        }
+        
+        // Build contacts map
+        (items[0]?.contactsUsingInvite?.items || []).forEach(contact => {
+          if (contact?.id && contact?.item?.publicDisplayName) {
+            contacts[contact.id] = contact.item.publicDisplayName;
+          }
+        });
+        
+        // Get media items
+        (items[0]?.fileReferencesPage?.items || []).forEach(ref => {
+          const file = ref?.file;
+          if (!file?.dataKey) return;
+
+          const { dataKey, thumbnailDataKey, durationInSeconds, ownerContactId } = file;
+          const url = `${BUCKET_URL}public/${dataKey}`;
+
+          if (dataKey.startsWith("Input/Image/")) {
+            mediaItems.push({ 
+              type: "image", 
+              url,
+              ownerId: ownerContactId
+            });
+          } else if (dataKey.startsWith("Input/Video/")) {
+            mediaItems.push({
+              type: "video",
+              url,
+              thumbnailUrl: `${BUCKET_URL}public/${thumbnailDataKey}`,
+              duration: formatTime(durationInSeconds),
+              ownerId: ownerContactId
+            });
+          }
+        });
+      }
+      
+      return { mediaItems, folderName, contacts };
+    }
+    
+    // Display the media items in the grid
+    function displayMedia(data) {
+      const { mediaItems, folderName, contacts } = data;
+      const mediaGrid = document.getElementById('media-grid');
+      const albumTitle = document.getElementById('album-title');
+      
+      // Set the album title
+      albumTitle.textContent = folderName;
+      
+      // Clear the loading message
+      mediaGrid.innerHTML = '';
+      
+      if (mediaItems.length === 0) {
+        mediaGrid.innerHTML = '<div class="error">No media found in this album</div>';
+        return;
+      }
+      
+      // Create HTML for each media item
+      mediaItems.forEach((item, index) => {
+        const ownerName = item.ownerId && contacts[item.ownerId] ? contacts[item.ownerId] : '';
+        const ownerBadge = ownerName ? `<div class="owner-badge">${ownerName}</div>` : '';
+        
+        const mediaBlock = document.createElement('div');
+        mediaBlock.className = 'media-block';
+        
+        if (item.type === "image") {
+          mediaBlock.innerHTML = `
+            <div class="lazy-image-container">
+              <img class="lazy-image" data-src="${item.url}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Album image ${index + 1}"/>
+              <div class="loading-placeholder"></div>
+            </div>
+            ${ownerBadge}
+          `;
+        } else { // Video
+          mediaBlock.classList.add('video-container');
+          mediaBlock.innerHTML = `
+            <div class="thumbnail-wrapper" onclick="playVideo(this, '${item.url}')">
+              <img class="lazy-image" data-src="${item.thumbnailUrl}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Video thumbnail ${index + 1}" />
+              <div class="loading-placeholder"></div>
+              <div class="play-button"></div>
+              <div class="duration-badge">${item.duration}</div>
+            </div>
+            ${ownerBadge}
+          `;
+        }
+        
+        mediaGrid.appendChild(mediaBlock);
+      });
+      
+      // Initialize lazy loading
+      initLazyLoading();
+    }
+    
+    // Initialize lazy loading for images
+    function initLazyLoading() {
+      const lazyImages = document.querySelectorAll('.lazy-image');
+      
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              
+              img.onload = function() {
+                img.classList.add('loaded');
+                // Remove placeholder when image is loaded
+                const placeholder = img.parentNode.querySelector('.loading-placeholder');
+                if (placeholder) {
+                  placeholder.style.display = 'none';
+                }
+              };
+              
+              imageObserver.unobserve(img);
+            }
+          });
+        }, {
+          rootMargin: '50px 0px',
+          threshold: 0.01
+        });
+        
+        lazyImages.forEach(function(img) {
+          imageObserver.observe(img);
+        });
+      } else {
+        // Fallback for browsers that don't support Intersection Observer
+        setTimeout(function() {
+          lazyImages.forEach(function(img) {
+            img.src = img.dataset.src;
+            img.classList.add('loaded');
+          });
+        }, 250);
+      }
+    }
+    
+    // Play video function
+    function playVideo(element, videoUrl) {
+      const container = element.closest('.media-block');
+      
+      // Create video element dynamically
+      const video = document.createElement('video');
+      video.controls = true;
+      video.style.width = '100%';
+      
+      const source = document.createElement('source');
+      source.src = videoUrl;
+      source.type = 'video/mp4';
+      
+      video.appendChild(source);
+      
+      // Replace the thumbnail with the video
+      element.replaceWith(video);
+      
+      // Play the video automatically
+      video.play().catch(error => {
+        console.error('Error playing video:', error);
+      });
+    }
+    
+    // Change the number of columns in the grid
+    function changeColumns(value) {
+      const mediaGrid = document.getElementById('media-grid');
+      mediaGrid.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
+    }
+    
+    // Show error message
+    function showError(message) {
+      const mediaGrid = document.getElementById('media-grid');
+      mediaGrid.innerHTML = `<div class="error">${message}</div>`;
+      
+      const albumTitle = document.getElementById('album-title');
+      albumTitle.textContent = 'Error Loading Album';
+    }
+    
+    // Main function to initialize the page
+    async function init() {
+      const rawFolderId = getFolderIdFromUrl();
+      
+      if (!rawFolderId) {
+        showError('No folder ID provided. Please add ?id=YOUR_FOLDER_ID to the URL.');
+        return;
+      }
+      
+      const folderId = formatFolderId(rawFolderId);
+      
+      if (!folderId) {
+        showError('Invalid folder ID format. Expected format: prefix_suffix');
+        return;
+      }
+      
+      const data = await fetchFolder(folderId);
+      
+      if (data) {
+        displayMedia(data);
+      }
+    }
+    
+    // Start the application
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

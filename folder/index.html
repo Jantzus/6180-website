@@ -63,8 +63,933 @@
       margin: 16px 0;
       font-size: 17px;
     }
+
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+
+    .language-selector select {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      background-color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* RTL support for Arabic */
+    html[lang="ar"] body {
+      direction: rtl;
+    }
   </style>
   <script>
+    // Language translations
+    const translations = {
+      "en-US": {
+        title: "Opening Folder...",
+        redirecting: "Redirecting to your app...",
+        fallbackIOS: "6180 is currently only available for iPhone.",
+        alsoGo: "You can also go to",
+        toView: "to view the photos and use 6180 on the web.",
+        copyLink: "Copy Link",
+        copied: "Copied!"
+      },
+      "en": {
+        title: "Opening Folder...",
+        redirecting: "Redirecting to your app...",
+        fallbackIOS: "6180 is currently only available for iPhone.",
+        alsoGo: "You can also go to",
+        toView: "to view the photos and use 6180 on the web.",
+        copyLink: "Copy Link",
+        copied: "Copied!"
+      },
+      "zh-CN": {
+        title: "正在打开文件夹...",
+        redirecting: "正在重定向到您的应用...",
+        fallbackIOS: "6180 目前仅适用于 iPhone。",
+        alsoGo: "您也可以访问",
+        toView: "查看照片并在网页上使用 6180。",
+        copyLink: "复制链接",
+        copied: "已复制！"
+      },
+      "zh": {
+        title: "正在打开文件夹...",
+        redirecting: "正在重定向到您的应用...",
+        fallbackIOS: "6180 目前仅适用于 iPhone。",
+        alsoGo: "您也可以访问",
+        toView: "查看照片并在网页上使用 6180。",
+        copyLink: "复制链接",
+        copied: "已复制！"
+      },
+      "fr-FR": {
+        title: "Ouverture du dossier...",
+        redirecting: "Redirection vers votre application...",
+        fallbackIOS: "6180 est actuellement disponible uniquement sur iPhone.",
+        alsoGo: "Vous pouvez également aller à",
+        toView: "pour voir les photos et utiliser 6180 sur le web.",
+        copyLink: "Copier le lien",
+        copied: "Copié !"
+      },
+      "fr": {
+        title: "Ouverture du dossier...",
+        redirecting: "Redirection vers votre application...",
+        fallbackIOS: "6180 est actuellement disponible uniquement sur iPhone.",
+        alsoGo: "Vous pouvez également aller à",
+        toView: "pour voir les photos et utiliser 6180 sur le web.",
+        copyLink: "Copier le lien",
+        copied: "Copié !"
+      },
+      "de-DE": {
+        title: "Ordner wird geöffnet...",
+        redirecting: "Weiterleitung zu Ihrer App...",
+        fallbackIOS: "6180 ist derzeit nur für iPhone verfügbar.",
+        alsoGo: "Sie können auch zu",
+        toView: "gehen, um die Fotos anzusehen und 6180 im Web zu nutzen.",
+        copyLink: "Link kopieren",
+        copied: "Kopiert!"
+      },
+      "de": {
+        title: "Ordner wird geöffnet...",
+        redirecting: "Weiterleitung zu Ihrer App...",
+        fallbackIOS: "6180 ist derzeit nur für iPhone verfügbar.",
+        alsoGo: "Sie können auch zu",
+        toView: "gehen, um die Fotos anzusehen und 6180 im Web zu nutzen.",
+        copyLink: "Link kopieren",
+        copied: "Kopiert!"
+      },
+      "es-ES": {
+        title: "Abriendo carpeta...",
+        redirecting: "Redirigiendo a su aplicación...",
+        fallbackIOS: "6180 actualmente solo está disponible para iPhone.",
+        alsoGo: "También puede ir a",
+        toView: "para ver las fotos y usar 6180 en la web.",
+        copyLink: "Copiar enlace",
+        copied: "¡Copiado!"
+      },
+      "es": {
+        title: "Abriendo carpeta...",
+        redirecting: "Redirigiendo a su aplicación...",
+        fallbackIOS: "6180 actualmente solo está disponible para iPhone.",
+        alsoGo: "También puede ir a",
+        toView: "para ver las fotos y usar 6180 en la web.",
+        copyLink: "Copiar enlace",
+        copied: "¡Copiado!"
+      },
+      "ru": {
+        title: "Открытие папки...",
+        redirecting: "Перенаправление в ваше приложение...",
+        fallbackIOS: "6180 в настоящее время доступен только для iPhone.",
+        alsoGo: "Вы также можете перейти по ссылке",
+        toView: "чтобы просмотреть фотографии и использовать 6180 в Интернете.",
+        copyLink: "Копировать ссылку",
+        copied: "Скопировано!"
+      },
+      "ja": {
+        title: "フォルダを開いています...",
+        redirecting: "アプリにリダイレクトしています...",
+        fallbackIOS: "6180は現在iPhoneでのみご利用いただけます。",
+        alsoGo: "または",
+        toView: "にアクセスして写真を表示し、ウェブ上で6180を使用することもできます。",
+        copyLink: "リンクをコピー",
+        copied: "コピーしました！"
+      },
+      "pt-BR": {
+        title: "Abrindo pasta...",
+        redirecting: "Redirecionando para seu aplicativo...",
+        fallbackIOS: "6180 atualmente está disponível apenas para iPhone.",
+        alsoGo: "Você também pode ir para",
+        toView: "para ver as fotos e usar o 6180 na web.",
+        copyLink: "Copiar link",
+        copied: "Copiado!"
+      },
+      "pt": {
+        title: "A abrir pasta...",
+        redirecting: "A redirecionar para a sua aplicação...",
+        fallbackIOS: "6180 está atualmente disponível apenas para iPhone.",
+        alsoGo: "Também pode aceder a",
+        toView: "para ver as fotos e usar o 6180 na web.",
+        copyLink: "Copiar link",
+        copied: "Copiado!"
+      },
+      "it": {
+        title: "Apertura cartella...",
+        redirecting: "Reindirizzamento alla tua app...",
+        fallbackIOS: "6180 è attualmente disponibile solo per iPhone.",
+        alsoGo: "Puoi anche andare a",
+        toView: "per vedere le foto e utilizzare 6180 sul web.",
+        copyLink: "Copia link",
+        copied: "Copiato!"
+      },
+      "ko": {
+        title: "폴더 여는 중...",
+        redirecting: "앱으로 리디렉션 중...",
+        fallbackIOS: "6180은 현재 iPhone에서만 사용 가능합니다.",
+        alsoGo: "다음 주소로 이동하여",
+        toView: "사진을 보고 웹에서 6180을 사용할 수도 있습니다.",
+        copyLink: "링크 복사",
+        copied: "복사됨!"
+      },
+      "ar": {
+        title: "جاري فتح المجلد...",
+        redirecting: "جاري إعادة التوجيه إلى التطبيق الخاص بك...",
+        fallbackIOS: "6180 متاح حاليًا فقط لأجهزة iPhone.",
+        alsoGo: "يمكنك أيضًا الذهاب إلى",
+        toView: "لعرض الصور واستخدام 6180 على الويب.",
+        copyLink: "نسخ الرابط",
+        copied: "تم النسخ!"
+      },
+      "nl": {
+        title: "Map wordt geopend...",
+        redirecting: "Doorverwijzen naar uw app...",
+        fallbackIOS: "6180 is momenteel alleen beschikbaar voor iPhone.",
+        alsoGo: "U kunt ook naar",
+        toView: "gaan om de foto's te bekijken en 6180 op het web te gebruiken.",
+        copyLink: "Link kopiëren",
+        copied: "Gekopieerd!"
+      },
+      "tr": {
+        title: "Klasör açılıyor...",
+        redirecting: "Uygulamanıza yönlendiriliyor...",
+        fallbackIOS: "6180 şu anda yalnızca iPhone için kullanılabilir.",
+        alsoGo: "Ayrıca",
+        toView: "adresine giderek fotoğrafları görüntüleyebilir ve 6180'i web üzerinde kullanabilirsiniz.",
+        copyLink: "Bağlantıyı kopyala",
+        copied: "Kopyalandı!"
+      },
+      "pl": {
+        title: "Otwieranie folderu...",
+        redirecting: "Przekierowywanie do aplikacji...",
+        fallbackIOS: "6180 jest obecnie dostępne tylko dla iPhone'a.",
+        alsoGo: "Możesz także przejść do",
+        toView: "aby zobaczyć zdjęcia i korzystać z 6180 w internecie.",
+        copyLink: "Kopiuj link",
+        copied: "Skopiowano!"
+      },
+      "sv-SE": {
+        title: "Öppnar mapp...",
+        redirecting: "Omdirigerar till din app...",
+        fallbackIOS: "6180 är för närvarande endast tillgänglig för iPhone.",
+        alsoGo: "Du kan också gå till",
+        toView: "för att se foton och använda 6180 på webben.",
+        copyLink: "Kopiera länk",
+        copied: "Kopierad!"
+      },
+      "sv": {
+        title: "Öppnar mapp...",
+        redirecting: "Omdirigerar till din app...",
+        fallbackIOS: "6180 är för närvarande endast tillgänglig för iPhone.",
+        alsoGo: "Du kan också gå till",
+        toView: "för att se foton och använda 6180 på webben.",
+        copyLink: "Kopiera länk",
+        copied: "Kopierad!"
+      },
+      "he": {
+        title: "פותח תיקייה...",
+        redirecting: "מפנה לאפליקציה שלך...",
+        fallbackIOS: "6180 זמין כרגע רק ל-iPhone.",
+        alsoGo: "אתה יכול גם לעבור אל",
+        toView: "כדי לצפות בתמונות ולהשתמש ב-6180 באינטרנט.",
+        copyLink: "העתק קישור",
+        copied: "הועתק!"
+      },
+      "uk": {
+        title: "Відкриття папки...",
+        redirecting: "Перенаправлення до вашого додатку...",
+        fallbackIOS: "6180 наразі доступний лише для iPhone.",
+        alsoGo: "Ви також можете перейти за посиланням",
+        toView: "щоб переглянути фотографії та використовувати 6180 в Інтернеті.",
+        copyLink: "Копіювати посилання",
+        copied: "Скопійовано!"
+      },
+      "th": {
+        title: "กำลังเปิดโฟลเดอร์...",
+        redirecting: "กำลังเปลี่ยนเส้นทางไปยังแอปของคุณ...",
+        fallbackIOS: "6180 ปัจจุบันมีให้ใช้งานเฉพาะบน iPhone เท่านั้น",
+        alsoGo: "คุณยังสามารถไปที่",
+        toView: "เพื่อดูรูปภาพและใช้ 6180 บนเว็บ",
+        copyLink: "คัดลอกลิงก์",
+        copied: "คัดลอกแล้ว!"
+      },
+      "vi": {
+        title: "Đang mở thư mục...",
+        redirecting: "Đang chuyển hướng đến ứng dụng của bạn...",
+        fallbackIOS: "6180 hiện chỉ có sẵn cho iPhone.",
+        alsoGo: "Bạn cũng có thể truy cập",
+        toView: "để xem ảnh và sử dụng 6180 trên web.",
+        copyLink: "Sao chép liên kết",
+        copied: "Đã sao chép!"
+      },
+      "cs": {
+        title: "Otevírání složky...",
+        redirecting: "Přesměrování do vaší aplikace...",
+        fallbackIOS: "6180 je v současnosti k dispozici pouze pro iPhone.",
+        alsoGo: "Můžete také přejít na",
+        toView: "pro zobrazení fotografií a použití 6180 na webu.",
+        copyLink: "Kopírovat odkaz",
+        copied: "Zkopírováno!"
+      },
+      "ro": {
+        title: "Se deschide folderul...",
+        redirecting: "Redirecționare către aplicația dvs...",
+        fallbackIOS: "6180 este disponibil în prezent doar pentru iPhone.",
+        alsoGo: "Puteți, de asemenea, să accesați",
+        toView: "pentru a vizualiza fotografiile și a utiliza 6180 pe web.",
+        copyLink: "Copiază link-ul",
+        copied: "Copiat!"
+      },
+      "fi": {
+        title: "Avataan kansiota...",
+        redirecting: "Ohjataan sovellukseesi...",
+        fallbackIOS: "6180 on tällä hetkellä saatavilla vain iPhonelle.",
+        alsoGo: "Voit myös mennä osoitteeseen",
+        toView: "katsellaksesi kuvia ja käyttääksesi 6180:tä verkossa.",
+        copyLink: "Kopioi linkki",
+        copied: "Kopioitu!"
+      },
+      "da": {
+        title: "Åbner mappe...",
+        redirecting: "Omdirigerer til din app...",
+        fallbackIOS: "6180 er i øjeblikket kun tilgængelig til iPhone.",
+        alsoGo: "Du kan også gå til",
+        toView: "for at se billeder og bruge 6180 på nettet.",
+        copyLink: "Kopiér link",
+        copied: "Kopieret!"
+      },
+      "hu": {
+        title: "Mappa megnyitása...",
+        redirecting: "Átirányítás az alkalmazásába...",
+        fallbackIOS: "A 6180 jelenleg csak iPhone-on érhető el.",
+        alsoGo: "Ellátogathat a következő címre is:",
+        toView: "a fényképek megtekintéséhez és a 6180 használatához a weben.",
+        copyLink: "Link másolása",
+        copied: "Másolva!"
+      },
+      "id": {
+        title: "Membuka Folder...",
+        redirecting: "Mengalihkan ke aplikasi Anda...",
+        fallbackIOS: "6180 saat ini hanya tersedia untuk iPhone.",
+        alsoGo: "Anda juga dapat mengunjungi",
+        toView: "untuk melihat foto dan menggunakan 6180 di web.",
+        copyLink: "Salin Tautan",
+        copied: "Tersalin!"
+      },
+      "no": {
+        title: "Åpner mappe...",
+        redirecting: "Omdirigerer til appen din...",
+        fallbackIOS: "6180 er for øyeblikket bare tilgjengelig for iPhone.",
+        alsoGo: "Du kan også gå til",
+        toView: "for å se bildene og bruke 6180 på nettet.",
+        copyLink: "Kopier lenke",
+        copied: "Kopiert!"
+      },
+      "nb": {
+        title: "Åpner mappe...",
+        redirecting: "Omdirigerer til appen din...",
+        fallbackIOS: "6180 er for øyeblikket bare tilgjengelig for iPhone.",
+        alsoGo: "Du kan også gå til",
+        toView: "for å se bildene og bruke 6180 på nettet.",
+        copyLink: "Kopier lenke",
+        copied: "Kopiert!"
+      },
+      "sk": {
+        title: "Otváranie priečinka...",
+        redirecting: "Presmerovanie do vašej aplikácie...",
+        fallbackIOS: "6180 je momentálne k dispozícii iba pre iPhone.",
+        alsoGo: "Môžete tiež prejsť na",
+        toView: "pre zobrazenie fotografií a používanie 6180 na webe.",
+        copyLink: "Kopírovať odkaz",
+        copied: "Skopírované!"
+      },
+      "el": {
+        title: "Άνοιγμα φακέλου...",
+        redirecting: "Ανακατεύθυνση στην εφαρμογή σας...",
+        fallbackIOS: "Το 6180 είναι προς το παρόν διαθέσιμο μόνο για iPhone.",
+        alsoGo: "Μπορείτε επίσης να μεταβείτε στο",
+        toView: "για να δείτε τις φωτογραφίες και να χρησιμοποιήσετε το 6180 στο διαδίκτυο.",
+        copyLink: "Αντιγραφή συνδέσμου",
+        copied: "Αντιγράφηκε!"
+      },
+      "hi": {
+        title: "फ़ोल्डर खोल रहा है...",
+        redirecting: "आपके ऐप पर रीडायरेक्ट कर रहा है...",
+        fallbackIOS: "6180 वर्तमान में केवल iPhone के लिए उपलब्ध है।",
+        alsoGo: "आप यहां भी जा सकते हैं",
+        toView: "फोटो देखने और वेब पर 6180 का उपयोग करने के लिए।",
+        copyLink: "लिंक कॉपी करें",
+        copied: "कॉपी किया गया!"
+      },
+      "fa": {
+        title: "در حال باز کردن پوشه...",
+        redirecting: "در حال هدایت به برنامه شما...",
+        fallbackIOS: "6180 در حال حاضر فقط برای آیفون در دسترس است.",
+        alsoGo: "همچنین می‌توانید به",
+        toView: "بروید تا عکس‌ها را مشاهده کنید و از 6180 در وب استفاده کنید.",
+        copyLink: "کپی لینک",
+        copied: "کپی شد!"
+      },
+      "bn": {
+        title: "ফোল্ডার খোলা হচ্ছে...",
+        redirecting: "আপনার অ্যাপে রিডাইরেক্ট করা হচ্ছে...",
+        fallbackIOS: "6180 বর্তমানে শুধুমাত্র আইফোনের জন্য উপলব্ধ।",
+        alsoGo: "আপনি এখানেও যেতে পারেন",
+        toView: "ছবি দেখতে এবং ওয়েবে 6180 ব্যবহার করতে।",
+        copyLink: "লিঙ্ক কপি করুন",
+        copied: "কপি করা হয়েছে!"
+      },
+      "ta": {
+        title: "கோப்புறையைத் திறக்கிறது...",
+        redirecting: "உங்கள் பயன்பாட்டிற்கு வழிநடத்துகிறது...",
+        fallbackIOS: "6180 தற்போது ஐபோனுக்கு மட்டுமே கிடைக்கிறது.",
+        alsoGo: "நீங்கள் இங்கும் செல்லலாம்",
+        toView: "புகைப்படங்களைப் பார்க்கவும் இணையத்தில் 6180 ஐப் பயன்படுத்தவும்.",
+        copyLink: "இணைப்பை நகலெடுக்கவும்",
+        copied: "நகலெடுக்கப்பட்டது!"
+      },
+      "te": {
+        title: "ఫోల్డర్ తెరవడం...",
+        redirecting: "మీ యాప్‌కి దారి మళ్లిస్తోంది...",
+        fallbackIOS: "6180 ప్రస్తుతం ఐఫోన్ కోసం మాత్రమే అందుబాటులో ఉంది.",
+        alsoGo: "మీరు ఇక్కడికి కూడా వెళ్లవచ్చు",
+        toView: "ఫోటోలను చూడటానికి మరియు వెబ్‌లో 6180ని ఉపయోగించడానికి.",
+        copyLink: "లింక్‌ను కాపీ చేయండి",
+        copied: "కాపీ చేయబడింది!"
+      },
+      "kn": {
+        title: "ಫೋಲ್ಡರ್ ತೆರೆಯುತ್ತಿದೆ...",
+        redirecting: "ನಿಮ್ಮ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಪುನರ್ನಿರ್ದೇಶಿಸುತ್ತಿದೆ...",
+        fallbackIOS: "6180 ಪ್ರಸ್ತುತ ಐಫೋನ್‌ಗೆ ಮಾತ್ರ ಲಭ್ಯವಿದೆ.",
+        alsoGo: "ನೀವು ಇಲ್ಲಿಗೂ ಹೋಗಬಹುದು",
+        toView: "ಫೋಟೋಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಮತ್ತು ವೆಬ್‌ನಲ್ಲಿ 6180 ಅನ್ನು ಬಳಸಲು.",
+        copyLink: "ಲಿಂಕ್ ಕಾಪಿ ಮಾಡಿ",
+        copied: "ಕಾಪಿ ಮಾಡಲಾಗಿದೆ!"
+      },
+      "ml": {
+        title: "ഫോൾഡർ തുറക്കുന്നു...",
+        redirecting: "നിങ്ങളുടെ ആപ്പിലേക്ക് റീഡയറക്റ്റ് ചെയ്യുന്നു...",
+        fallbackIOS: "6180 നിലവിൽ ഐഫോണിന് മാത്രമേ ലഭ്യമാകൂ.",
+        alsoGo: "നിങ്ങൾക്ക് ഇവിടെയും പോകാം",
+        toView: "ഫോട്ടോകൾ കാണാനും വെബിൽ 6180 ഉപയോഗിക്കാനും.",
+        copyLink: "ലിങ്ക് പകർത്തുക",
+        copied: "പകർത്തി!"
+      },
+      "mr": {
+        title: "फोल्डर उघडत आहे...",
+        redirecting: "तुमच्या अॅपकडे पुनर्निर्देशित करत आहे...",
+        fallbackIOS: "6180 सध्या फक्त iPhone साठी उपलब्ध आहे.",
+        alsoGo: "तुम्ही येथेही जाऊ शकता",
+        toView: "फोटो पाहण्यासाठी आणि वेबवर 6180 वापरण्यासाठी.",
+        copyLink: "लिंक कॉपी करा",
+        copied: "कॉपी केले!"
+      },
+      "ur": {
+        title: "فولڈر کھول رہا ہے...",
+        redirecting: "آپ کی ایپ پر ری ڈائریکٹ کر رہا ہے...",
+        fallbackIOS: "6180 فی الحال صرف آئی فون کے لیے دستیاب ہے۔",
+        alsoGo: "آپ یہاں بھی جا سکتے ہیں",
+        toView: "تصاویر دیکھنے اور ویب پر 6180 استعمال کرنے کے لیے۔",
+        copyLink: "لنک کاپی کریں",
+        copied: "کاپی ہو گیا!"
+      },
+      "zh-HK": {
+        title: "正在開啟文件夾...",
+        redirecting: "正在重定向到您的應用...",
+        fallbackIOS: "6180 目前僅適用於 iPhone。",
+        alsoGo: "您也可以訪問",
+        toView: "查看照片並在網頁上使用 6180。",
+        copyLink: "複製連結",
+        copied: "已複製！"
+      },
+      "zh-TW": {
+        title: "正在開啟資料夾...",
+        redirecting: "正在重新導向至您的應用程式...",
+        fallbackIOS: "6180 目前僅適用於 iPhone。",
+        alsoGo: "您也可以前往",
+        toView: "查看照片並在網頁上使用 6180。",
+        copyLink: "複製連結",
+        copied: "已複製！"
+      },
+      "af": {
+        title: "Maak lêer oop...",
+        redirecting: "Herlei na jou toepassing...",
+        fallbackIOS: "6180 is tans slegs beskikbaar vir iPhone.",
+        alsoGo: "Jy kan ook gaan na",
+        toView: "om foto's te sien en 6180 op die web te gebruik.",
+        copyLink: "Kopieer skakel",
+        copied: "Gekopieer!"
+      },
+      "az": {
+        title: "Qovluq açılır...",
+        redirecting: "Tətbiqinizə yönləndirilir...",
+        fallbackIOS: "6180 hazırda yalnız iPhone üçün mövcuddur.",
+        alsoGo: "Həmçinin buraya gedə bilərsiniz",
+        toView: "fotoları görmək və 6180-i vebdə istifadə etmək üçün.",
+        copyLink: "Linki kopyalayın",
+        copied: "Kopyalandı!"
+      },
+      "eu": {
+        title: "Karpeta irekitzen...",
+        redirecting: "Zure aplikaziora birbideratzen...",
+        fallbackIOS: "6180 momentuz iPhone-rako bakarrik dago eskuragarri.",
+        alsoGo: "Hona ere joan zaitezke",
+        toView: "argazkiak ikusteko eta 6180 webean erabiltzeko.",
+        copyLink: "Kopiatu esteka",
+        copied: "Kopiatuta!"
+      },
+      "bg": {
+        title: "Отваряне на папка...",
+        redirecting: "Пренасочване към вашето приложение...",
+        fallbackIOS: "6180 в момента е наличен само за iPhone.",
+        alsoGo: "Можете също да отидете на",
+        toView: "за да видите снимките и да използвате 6180 в уеб.",
+        copyLink: "Копиране на връзка",
+        copied: "Копирано!"
+      },
+      "ca": {
+        title: "Obrint carpeta...",
+        redirecting: "Redirigint a la teva aplicació...",
+        fallbackIOS: "6180 actualment només està disponible per a iPhone.",
+        alsoGo: "També pots anar a",
+        toView: "per veure les fotos i utilitzar 6180 a la web.",
+        copyLink: "Copiar enllaç",
+        copied: "Copiat!"
+      },
+      "et": {
+        title: "Kausta avamine...",
+        redirecting: "Ümbersuunamine teie rakendusse...",
+        fallbackIOS: "6180 on praegu saadaval ainult iPhone'ile.",
+        alsoGo: "Samuti võite minna",
+        toView: "et vaadata fotosid ja kasutada 6180 veebis.",
+        copyLink: "Kopeeri link",
+        copied: "Kopeeritud!"
+      },
+      "gl": {
+        title: "Abrindo cartafol...",
+        redirecting: "Redirixindo á túa aplicación...",
+        fallbackIOS: "6180 actualmente só está dispoñible para iPhone.",
+        alsoGo: "Tamén podes ir a",
+        toView: "para ver as fotos e usar 6180 na web.",
+        copyLink: "Copiar ligazón",
+        copied: "Copiado!"
+      },
+      "gu": {
+        title: "ફોલ્ડર ખોલી રહ્યું છે...",
+        redirecting: "તમારી એપ્લિકેશન પર રીડાયરેક્ટ કરી રહ્યું છે...",
+        fallbackIOS: "6180 હાલમાં ફક્ત iPhone માટે ઉપલબ્ધ છે.",
+        alsoGo: "તમે અહીં પણ જઈ શકો છો",
+        toView: "ફોટા જોવા અને વેબ પર 6180નો ઉપયોગ કરવા માટે.",
+        copyLink: "લિંક કૉપિ કરો",
+        copied: "કૉપિ થયું!"
+      },
+      "is": {
+        title: "Opna möppu...",
+        redirecting: "Áframsending í appið þitt...",
+        fallbackIOS: "6180 er aðeins í boði fyrir iPhone eins og er.",
+        alsoGo: "Þú getur líka farið á",
+        toView: "til að skoða myndir og nota 6180 á vefnum.",
+        copyLink: "Afrita tengil",
+        copied: "Afritað!"
+      },
+      "kk": {
+        title: "Қалта ашылуда...",
+        redirecting: "Қолданбаңызға қайта бағытталуда...",
+        fallbackIOS: "6180 қазіргі уақытта тек iPhone үшін қол жетімді.",
+        alsoGo: "Сондай-ақ, сіз мынаған өтіңіз",
+        toView: "фотосуреттерді көру және веб-те 6180 пайдалану үшін.",
+        copyLink: "Сілтемені көшіру",
+        copied: "Көшірілді!"
+      },
+      "ky": {
+        title: "Папканы ачуу...",
+        redirecting: "Колдонмоңузга багыттап жатабыз...",
+        fallbackIOS: "6180 учурда iPhone үчүн гана жеткиликтүү.",
+        alsoGo: "Ошондой эле сиз бара аласыз",
+        toView: "сүрөттөрдү көрүү жана интернетте 6180 колдонуу үчүн.",
+        copyLink: "Шилтемени көчүрүү",
+        copied: "Көчүрүлдү!"
+      },
+      "lo": {
+        title: "ກຳລັງເປີດໂຟລເດີ...",
+        redirecting: "ກຳລັງປ່ຽນເສັ້ນທາງໄປຫາແອັບຂອງທ່ານ...",
+        fallbackIOS: "6180 ປະຈຸບັນມີໃຫ້ໃຊ້ສະເພາະ iPhone ເທົ່ານັ້ນ.",
+        alsoGo: "ທ່ານຍັງສາມາດໄປທີ່",
+        toView: "ເພື່ອເບິ່ງຮູບພາບ ແລະ ໃຊ້ 6180 ເທິງເວັບ.",
+        copyLink: "ຄັດລອກລິ້ງ",
+        copied: "ຄັດລອກແລ້ວ!"
+      },
+      "lt": {
+        title: "Atidaromas aplankas...",
+        redirecting: "Nukreipiama į jūsų programėlę...",
+        fallbackIOS: "6180 šiuo metu galima naudoti tik „iPhone\".",
+        alsoGo: "Taip pat galite apsilankyti",
+        toView: "peržiūrėti nuotraukas ir naudoti 6180 internete.",
+        copyLink: "Kopijuoti nuorodą",
+        copied: "Nukopijuota!"
+      },
+      "lv": {
+        title: "Mapes atvēršana...",
+        redirecting: "Novirzīšana uz jūsu lietotni...",
+        fallbackIOS: "6180 pašlaik ir pieejams tikai iPhone.",
+        alsoGo: "Jūs varat arī doties uz",
+        toView: "lai skatītu fotoattēlus un izmantotu 6180 tīmeklī.",
+        copyLink: "Kopēt saiti",
+        copied: "Nokopēts!"
+      },
+      "mk": {
+        title: "Отворање на папка...",
+        redirecting: "Пренасочување кон вашата апликација...",
+        fallbackIOS: "6180 моментално е достапен само за iPhone.",
+        alsoGo: "Исто така можете да одите на",
+        toView: "за да ги видите фотографиите и да го користите 6180 на веб.",
+        copyLink: "Копирај линк",
+        copied: "Копирано!"
+      },
+      "mn": {
+        title: "Хавтас нээж байна...",
+        redirecting: "Таны аппликейшн руу дахин чиглүүлж байна...",
+        fallbackIOS: "6180 одоогоор зөвхөн iPhone-д зориулагдсан байна.",
+        alsoGo: "Та мөн энд очиж болно",
+        toView: "зургуудыг харах болон 6180-г вэб дээр ашиглах.",
+        copyLink: "Холбоосыг хуулах",
+        copied: "Хуулагдлаа!"
+      },
+      "ne": {
+        title: "फोल्डर खोल्दै...",
+        redirecting: "तपाईंको एपमा पुनर्निर्देशित गर्दै...",
+        fallbackIOS: "6180 हाल iPhone को लागि मात्र उपलब्ध छ।",
+        alsoGo: "तपाईं यहाँ पनि जान सक्नुहुन्छ",
+        toView: "फोटोहरू हेर्न र वेबमा 6180 प्रयोग गर्न।",
+        copyLink: "लिङ्क प्रतिलिपि गर्नुहोस्",
+        copied: "प्रतिलिपि गरियो!"
+      },
+      "pa": {
+        title: "ਫੋਲਡਰ ਖੋਲ੍ਹਿਆ ਜਾ ਰਿਹਾ ਹੈ...",
+        redirecting: "ਤੁਹਾਡੀ ਐਪ 'ਤੇ ਰੀਡਾਇਰੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+        fallbackIOS: "6180 ਇਸ ਸਮੇਂ ਸਿਰਫ਼ iPhone ਲਈ ਉਪਲਬਧ ਹੈ।",
+        alsoGo: "ਤੁਸੀਂ ਇੱਥੇ ਵੀ ਜਾ ਸਕਦੇ ਹੋ",
+        toView: "ਫੋਟੋਆਂ ਦੇਖਣ ਅਤੇ ਵੈੱਬ 'ਤੇ 6180 ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ।",
+        copyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ",
+        copied: "ਕਾਪੀ ਕੀਤਾ ਗਿਆ!"
+      },
+      "si": {
+        title: "ෆෝල්ඩරය විවෘත කරමින්...",
+        redirecting: "ඔබේ යෙදුමට යළි යොමු කරමින්...",
+        fallbackIOS: "6180 දැනට iPhone සඳහා පමණක් ලබා ගත හැක.",
+        alsoGo: "ඔබට මෙතනටත් යා හැකිය",
+        toView: "ඡායාරූප බැලීමට සහ වෙබ් හි 6180 භාවිතා කිරීමට.",
+        copyLink: "සබැඳිය පිටපත් කරන්න",
+        copied: "පිටපත් කරන ලදී!"
+      },
+      "sl": {
+        title: "Odpiranje mape...",
+        redirecting: "Preusmerjanje v vašo aplikacijo...",
+        fallbackIOS: "6180 je trenutno na voljo samo za iPhone.",
+        alsoGo: "Lahko obiščete tudi",
+        toView: "za ogled fotografij in uporabo 6180 na spletu.",
+        copyLink: "Kopiraj povezavo",
+        copied: "Kopirano!"
+      },
+      "sq": {
+        title: "Duke hapur dosjen...",
+        redirecting: "Duke ridrejtuar tek aplikacioni juaj...",
+        fallbackIOS: "6180 aktualisht është i disponueshëm vetëm për iPhone.",
+        alsoGo: "Gjithashtu mund të shkoni te",
+        toView: "për të parë fotot dhe për të përdorur 6180 në ueb.",
+        copyLink: "Kopjo lidhjen",
+        copied: "U kopjua!"
+      },
+      "sr": {
+        title: "Отварање фасцикле...",
+        redirecting: "Преусмеравање на вашу апликацију...",
+        fallbackIOS: "6180 је тренутно доступан само за iPhone.",
+        alsoGo: "Такође можете отићи на",
+        toView: "да видите фотографије и користите 6180 на вебу.",
+        copyLink: "Копирај везу",
+        copied: "Копирано!"
+      },
+      "sw": {
+        title: "Inafungua folda...",
+        redirecting: "Inaelekeza kwenye programu yako...",
+        fallbackIOS: "6180 kwa sasa inapatikana kwa iPhone pekee.",
+        alsoGo: "Unaweza pia kwenda",
+        toView: "kuona picha na kutumia 6180 kwenye wavuti.",
+        copyLink: "Nakili kiungo",
+        copied: "Imenakiliwa!"
+      },
+      "tg": {
+        title: "Кушодани ҷузвдон...",
+        redirecting: "Ба барномаи шумо равона карда истодааст...",
+        fallbackIOS: "6180 дар айни замон танҳо барои iPhone дастрас аст.",
+        alsoGo: "Шумо инчунин метавонед ба",
+        toView: "равед, то суратҳоро бинед ва 6180-ро дар Интернет истифода баред.",
+        copyLink: "Нусхабардории пайванд",
+        copied: "Нусхабардорӣ шуд!"
+      },
+      "tl": {
+        title: "Binubuksan ang folder...",
+        redirecting: "Nire-redirect sa iyong app...",
+        fallbackIOS: "Ang 6180 ay kasalukuyang available lamang para sa iPhone.",
+        alsoGo: "Maaari ka ring pumunta sa",
+        toView: "upang tingnan ang mga larawan at gamitin ang 6180 sa web.",
+        copyLink: "Kopyahin ang link",
+        copied: "Nakopya na!"
+      },
+      "uz": {
+        title: "Papka ochilmoqda...",
+        redirecting: "Ilovangizga yo'naltirilmoqda...",
+        fallbackIOS: "6180 hozirda faqat iPhone uchun mavjud.",
+        alsoGo: "Shuningdek, bu yerga ham o'tishingiz mumkin",
+        toView: "rasmlarni ko'rish va vebda 6180 dan foydalanish uchun.",
+        copyLink: "Havolani nusxalash",
+        copied: "Nusxalandi!"
+      },
+      "xh": {
+        title: "Kuvulwa ifolda...",
+        redirecting: "Kuthunyelwa kwi-app yakho...",
+        fallbackIOS: "I-6180 okwangoku iyafumaneka kuphela kwi-iPhone.",
+        alsoGo: "Ungaya nakuyo",
+        toView: "ukujonga iifoto nokusebenzisa i-6180 kwiwebhu.",
+        copyLink: "Kopa ilinki",
+        copied: "Ikotshiwe!"
+      },
+      "yo": {
+        title: "Ṣíṣí fódà...",
+        redirecting: "Ntún yín padà sí ìṣàmúlò rẹ...",
+        fallbackIOS: "6180 wà ní ìpèsè lọ́wọ́lọ́wọ́ fún iPhone nìkan.",
+        alsoGo: "O tún lè lọ sí",
+        toView: "láti wo àwọn fọ́tò àti lo 6180 lórí wẹ́ẹ̀bù.",
+        copyLink: "Dà ìtànná",
+        copied: "Ti da!"
+      },
+      "zu": {
+        title: "Kuvulwa ifolda...",
+        redirecting: "Kuthunyelwa ku-app yakho...",
+        fallbackIOS: "I-6180 okwamanje itholakala kuphela ku-iPhone.",
+        alsoGo: "Ungaya futhi ku-",
+        toView: "ukuze ubone izithombe futhi usebenzise i-6180 ewebhu.",
+        copyLink: "Kopisha isixhumanisi",
+        copied: "Kukopishiwe!"
+      },
+      "am": {
+        title: "አቃፊ በመክፈት ላይ...",
+        redirecting: "ወደ መተግበሪያዎ በማዞር ላይ...",
+        fallbackIOS: "6180 በአሁኑ ጊዜ ለ iPhone ብቻ ይገኛል።",
+        alsoGo: "እዚህም መሄድ ይችላሉ",
+        toView: "ፎቶዎችን ለመመልከት እና 6180ን በድር ላይ ለመጠቀም።",
+        copyLink: "አገናኙን ቅዳ",
+        copied: "ተቀድቷል!"
+      },
+      "ha": {
+        title: "Ana buɗe babban fayil...",
+        redirecting: "Ana mai da kai zuwa manhajarka...",
+        fallbackIOS: "6180 a halin yanzu yana samuwa ne kawai don iPhone.",
+        alsoGo: "Kuma zaku iya zuwa",
+        toView: "don kallon hotuna da amfani da 6180 a kan yanar gizo.",
+        copyLink: "Kwafi hanyar haɗin",
+        copied: "An kwafi!"
+      },
+      "ig": {
+        title: "Na-emepe folda...",
+        redirecting: "Na-akwụga gị na ngwa gị...",
+        fallbackIOS: "6180 dị ugbu a maka iPhone naanị.",
+        alsoGo: "Ị nwekwara ike ịga",
+        toView: "iji hụ foto ndị ahụ ma jiri 6180 na weebụ.",
+        copyLink: "Detuo njikọ",
+        copied: "Edetụrụ!"
+      },
+      "jv": {
+        title: "Mbukak folder...",
+        redirecting: "Ngalihake menyang aplikasi sampeyan...",
+        fallbackIOS: "6180 sak iki mung kasedhiya kanggo iPhone.",
+        alsoGo: "Sampeyan uga bisa menyang",
+        toView: "kanggo ndeleng foto lan nggunakake 6180 ing web.",
+        copyLink: "Nyalin pranala",
+        copied: "Wis disalin!"
+      },
+      "km": {
+        title: "កំពុងបើកថត...",
+        redirecting: "កំពុងបញ្ជូនបន្តទៅកម្មវិធីរបស់អ្នក...",
+        fallbackIOS: "6180 បច្ចុប្បន្នមានតែសម្រាប់ iPhone ប៉ុណ្ណោះ។",
+        alsoGo: "អ្នកក៏អាចទៅកាន់",
+        toView: "ដើម្បីមើលរូបថត និងប្រើប្រាស់ 6180 នៅលើវេបសាយ។",
+        copyLink: "ចម្លងតំណ",
+        copied: "បានចម្លង!"
+      },
+      "my": {
+        title: "ဖိုင်တွဲကို ဖွင့်နေသည်...",
+        redirecting: "သင့်အက်ပ်သို့ ပြန်လည်ညွှန်းဆိုနေသည်...",
+        fallbackIOS: "6180 သည် လက်ရှိတွင် iPhone အတွက်သာ ရရှိနိုင်ပါသည်။",
+        alsoGo: "သင်သည် ဤနေရာသို့လည်း သွားနိုင်ပါသည်",
+        toView: "ဓာတ်ပုံများကို ကြည့်ရှုရန်နှင့် ဝဘ်ပေါ်တွင် 6180 ကို အသုံးပြုရန်။",
+        copyLink: "လင့်ခ်ကို ကူးယူပါ",
+        copied: "ကူးယူပြီးပါပြီ!"
+      },
+      "or": {
+        title: "ଫୋଲ୍ଡର ଖୋଲୁଛି...",
+        redirecting: "ଆପଣଙ୍କ ଆପକୁ ପୁନଃନିର୍ଦ୍ଦେଶିତ କରୁଛି...",
+        fallbackIOS: "6180 ବର୍ତ୍ତମାନ କେବଳ iPhone ପାଇଁ ଉପଲବ୍ଧ।",
+        alsoGo: "ଆପଣ ମଧ୍ୟ ଯାଇପାରିବେ",
+        toView: "ଫଟୋଗୁଡ଼ିକ ଦେଖିବାକୁ ଏବଂ ୱେବରେ 6180 ବ୍ୟବହାର କରିବାକୁ।",
+        copyLink: "ଲିଙ୍କ କପି କରନ୍ତୁ",
+        copied: "କପି ହୋଇଗଲା!"
+      },
+      "ps": {
+        title: "فولډر پرانیستل کیږي...",
+        redirecting: "ستاسو اپلیکیشن ته بیا لیږدول کیږي...",
+        fallbackIOS: "6180 دا مهال یوازې د iPhone لپاره شتون لري.",
+        alsoGo: "تاسو کولی شئ دلته هم لاړ شئ",
+        toView: "د عکسونو لیدلو او په ویب کې د 6180 کارولو لپاره.",
+        copyLink: "لینک کاپي کړئ",
+        copied: "کاپي شو!"
+      },
+      "sd": {
+        title: "فولڊر کولي رهيو آهي...",
+        redirecting: "توهان جي ايپ ڏانهن ٻيهر موڙي رهيو آهي...",
+        fallbackIOS: "6180 هن وقت صرف آئي فون لاءِ دستياب آهي.",
+        alsoGo: "توهان اتي به وڃي سگهو ٿا",
+        toView: "فوٽو ڏسڻ لاءِ ۽ ويب تي 6180 استعمال ڪرڻ لاءِ.",
+        copyLink: "لنڪ ڪاپي ڪريو",
+        copied: "ڪاپي ٿي ويو!"
+      },
+      "so": {
+        title: "Furista Faylka...",
+        redirecting: "Dib ugu gudbinta app-kaaga...",
+        fallbackIOS: "6180 hadda waxaa laga heli karaa oo keliya iPhone.",
+        alsoGo: "Waxaad sidoo kale aadi kartaa",
+        toView: "si aad u aragto sawirrada oo aad u isticmaasho 6180 bogga internetka.",
+        copyLink: "Koobiyee xiriiriyaha",
+        copied: "Waa la koobiyeeyay!"
+      },
+      "as": {
+        title: "ফল্ডাৰ খুলি আছে...",
+        redirecting: "আপোনাৰ এপলৈ পুনৰ নিৰ্দেশিত কৰি আছে...",
+        fallbackIOS: "6180 বৰ্তমান কেৱল iPhone ৰ বাবেহে উপলব্ধ।",
+        alsoGo: "আপুনি ইয়াতো যাব পাৰে",
+        toView: "ফটোবোৰ চাবলৈ আৰু ৱেবত 6180 ব্যৱহাৰ কৰিবলৈ।",
+        copyLink: "লিংক কপি কৰক",
+        copied: "কপি কৰা হ'ল!"
+      },
+      "bho": {
+        title: "फोल्डर खोलत बानी...",
+        redirecting: "आपके ऐप पर रीडायरेक्ट करत बानी...",
+        fallbackIOS: "6180 अभी सिर्फ iPhone खातिर उपलब्ध बा।",
+        alsoGo: "आप एह पर भी जा सकत बानी",
+        toView: "फोटो देखे आ वेब पर 6180 के उपयोग करे खातिर।",
+        copyLink: "लिंक कॉपी करीं",
+        copied: "कॉपी हो गइल!"
+      },
+      "br": {
+        title: "O tigoriñ an teuliad...",
+        redirecting: "Oc'h adheñchañ d'ho arload...",
+        fallbackIOS: "N'eo hegerz 6180 nemet evit iPhone evit ar mare.",
+        alsoGo: "Gallout a rit mont ivez da",
+        toView: "evit gwelet ar skeudennoù hag implijout 6180 war ar web.",
+        copyLink: "Eilañ al liamm",
+        copied: "Eilet!"
+      },
+      "eo": {
+        title: "Malfermante dosierujon...",
+        redirecting: "Redirektante al via aplikaĵo...",
+        fallbackIOS: "6180 nuntempe haveblas nur por iPhone.",
+        alsoGo: "Vi ankaŭ povas iri al",
+        toView: "por vidi fotojn kaj uzi 6180 en la reto.",
+        copyLink: "Kopii ligilon",
+        copied: "Kopiita!"
+      },
+      "fy": {
+        title: "Map iepenje...",
+        redirecting: "Trochstjoere nei jo app...",
+        fallbackIOS: "6180 is op it stuit allinnich beskikber foar iPhone.",
+        alsoGo: "Jo kinne ek nei",
+        toView: "om de foto's te besjen en 6180 op it web te brûken.",
+        copyLink: "Keppeling kopiearje",
+        copied: "Kopiearre!"
+      },
+      "ga": {
+        title: "Ag oscailt fillteáin...",
+        redirecting: "Ag atreorú chuig d'aip...",
+        fallbackIOS: "Níl 6180 ar fáil faoi láthair ach amháin don iPhone.",
+        alsoGo: "Is féidir leat dul chuig",
+        toView: "freisin chun na grianghraif a fheiceáil agus 6180 a úsáid ar an ngréasán.",
+        copyLink: "Cóipeáil nasc",
+        copied: "Cóipeáilte!"
+      },
+      "gd": {
+        title: "A' fosgladh pasgan...",
+        redirecting: "Ag ath-stiùireadh gu d' aplacaid...",
+        fallbackIOS: "Chan eil 6180 ri fhaighinn aig an àm seo ach airson iPhone.",
+        alsoGo: "Faodaidh tu cuideachd a dhol gu",
+        toView: "gus na dealbhan fhaicinn agus 6180 a chleachdadh air an lìon.",
+        copyLink: "Dèan lethbhreac den cheangal",
+        copied: "Lethbhreac dèante!"
+      },
+      "mi": {
+        title: "E huaki ana i te kōpaki...",
+        redirecting: "E whakatika ana ki tō taupānga...",
+        fallbackIOS: "Kei te wātea a 6180 i tēnei wā mō te iPhone anake.",
+        alsoGo: "Ka taea hoki e koe te haere ki",
+        toView: "ki te tiro i ngā whakaahua me te whakamahi i a 6180 i te ipurangi.",
+        copyLink: "Tārua hononga",
+        copied: "Kua tāruatia!"
+      },
+      "mt": {
+        title: "Qed jinfetaħ il-folder...",
+        redirecting: "Qed jiġi ridirezzjonat għall-app tiegħek...",
+        fallbackIOS: "6180 bħalissa huwa disponibbli biss għall-iPhone.",
+        alsoGo: "Tista' wkoll tmur għal",
+        toView: "biex tara r-ritratti u tuża 6180 fuq il-web.",
+        copyLink: "Ikkopja l-link",
+        copied: "Ikkupjat!"
+      },
+      "nn": {
+        title: "Opnar mappe...",
+        redirecting: "Omdirigerer til appen din...",
+        fallbackIOS: "6180 er for tida berre tilgjengeleg for iPhone.",
+        alsoGo: "Du kan òg gå til",
+        toView: "for å sjå bileta og bruke 6180 på nettet.",
+        copyLink: "Kopier lenke",
+        copied: "Kopiert!"
+      },
+      "rw": {
+        title: "Gufungura dosiye...",
+        redirecting: "Kohereza ku porogaramu yawe...",
+        fallbackIOS: "6180 kuri ubu iboneka gusa kuri iPhone.",
+        alsoGo: "Ushobora kujya no",
+        toView: "kureba amafoto no gukoresha 6180 ku rubuga.",
+        copyLink: "Gukoporora ihuza",
+        copied: "Byakopowe!"
+      },
+      "sa": {
+        title: "सञ्चिकां उद्घाटयति...",
+        redirecting: "भवतः अनुप्रयोगं प्रति पुनर्निर्देशयति...",
+        fallbackIOS: "6180 सम्प्रति केवलम् iPhone कृते उपलब्धम् अस्ति।",
+        alsoGo: "भवान् अत्रापि गन्तुं शक्नोति",
+        toView: "छायाचित्राणि द्रष्टुं जालेन च 6180 उपयोक्तुम्।",
+        copyLink: "सम्बन्धनं प्रतिलिखतु",
+        copied: "प्रतिलिखितम्!"
+      },
+      "sm": {
+        title: "Tatala o le faila...",
+        redirecting: "Fa'aauauina i lau polokalama...",
+        fallbackIOS: "O le 6180 o lo'o maua i le taimi nei mo le iPhone.",
+        alsoGo: "E mafai fo'i ona e alu i",
+        toView: "e va'ai i ata ma fa'aoga le 6180 i le upega tafa'ilagi.",
+        copyLink: "Kopi le sootaga",
+        copied: "Ua kopi!"
+      },
+      "st": {
+        title: "Ho bula foldara...",
+        redirecting: "Ho lebisa ho app ea hau...",
+        fallbackIOS: "6180 hajoale e fumaneha feela bakeng sa iPhone.",
+        alsoGo: "U ka boela ua ea ho",
+        toView: "ho sheba litšoantšo le ho sebelisa 6180 marangrang.",
+        copyLink: "Kopitsa khokahano",
+        copied: "E kopitsoe!"
+      }
+    };
+
     const folderId = window.location.pathname.split("/folder/")[1] || "";
 
     function getOwnerItemId(id) {
@@ -82,16 +1007,54 @@
     const isIOS = /iphone|ipad|ipod/.test(userAgent);
     const isAndroid = /android/.test(userAgent);
 
+    // Set language based on browser preference or stored preference
+    function setLanguage(langCode) {
+      const lang = translations[langCode] ? langCode : 'en';
+      document.documentElement.lang = lang;
+      document.title = translations[lang].title;
+      
+      // Update all translatable elements
+      document.getElementById('redirecting').textContent = translations[lang].redirecting;
+      document.getElementById('fallback-message').textContent = translations[lang].fallbackIOS;
+      document.getElementById('also-go').textContent = translations[lang].alsoGo;
+      document.getElementById('to-view').textContent = translations[lang].toView;
+      document.getElementById('copy-button').textContent = translations[lang].copyLink;
+      document.getElementById('copied-msg').textContent = translations[lang].copied;
+      
+      // Store the selected language preference
+      localStorage.setItem('user_language', lang);
+    }
+
+    function detectPreferredLanguage() {
+      // Check if there's a stored preference
+      const storedLang = localStorage.getItem('user_language');
+      if (storedLang && translations[storedLang]) {
+        return storedLang;
+      }
+      
+      // Check browser language
+      const browserLang = navigator.language || navigator.userLanguage;
+      
+      // Try to match the exact language tag first
+      if (translations[browserLang]) {
+        return browserLang;
+      }
+      
+      // Try to match the language part only (e.g., 'en' from 'en-GB')
+      const langPart = browserLang.split('-')[0];
+      if (translations[langPart]) {
+        return langPart;
+      }
+      
+      // Default to English
+      return 'en';
+    }
+
+    // Handle redirection for iOS devices
     if (isIOS) {
       setTimeout(() => {
         window.location.href = "https://apps.apple.com/app/6180/id6468679610";
       }, 1500);
-    } else {
-      document.addEventListener("DOMContentLoaded", () => {
-        const message = document.getElementById("fallback-message");
-        message.textContent = "6180 is currently only available for iPhone.";
-        message.style.display = "block";
-      });
     }
 
     function copyLink() {
@@ -103,22 +1066,155 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      // Set up invite link
       const inviteLinkElem = document.getElementById("invite-link");
       inviteLinkElem.href = inviteLink;
       inviteLinkElem.textContent = inviteLink;
+      
+      // Show fallback message for non-iOS devices
+      if (!isIOS) {
+        const message = document.getElementById("fallback-message");
+        message.style.display = "block";
+      }
+      
+      // Set up language selector
+      const languageSelector = document.getElementById('language-selector');
+      
+      // Create and add all language options
+      Object.keys(translations).forEach(langCode => {
+        const option = document.createElement('option');
+        option.value = langCode;
+        
+        // Display language names in their native form
+        const languageNames = {
+          'en-US': 'English (US)',
+          'en': 'English',
+          'zh-CN': '简体中文 (中国)',
+          'zh': '中文',
+          'fr-FR': 'Français (France)',
+          'fr': 'Français',
+          'de-DE': 'Deutsch (Deutschland)',
+          'de': 'Deutsch',
+          'es-ES': 'Español (España)',
+          'es': 'Español',
+          'ru': 'Русский',
+          'ja': '日本語',
+          'pt-BR': 'Português (Brasil)',
+          'pt': 'Português',
+          'it': 'Italiano',
+          'ko': '한국어',
+          'ar': 'العربية',
+          'nl': 'Nederlands',
+          'tr': 'Türkçe',
+          'pl': 'Polski',
+          'sv-SE': 'Svenska (Sverige)',
+          'sv': 'Svenska',
+          'he': 'עברית',
+          'uk': 'Українська',
+          'th': 'ไทย',
+          'vi': 'Tiếng Việt',
+          'cs': 'Čeština',
+          'ro': 'Română',
+          'fi': 'Suomi',
+          'da': 'Dansk',
+          'hu': 'Magyar',
+          'id': 'Bahasa Indonesia',
+          'no': 'Norsk',
+          'nb': 'Norsk (Bokmål)',
+          'sk': 'Slovenčina',
+          'el': 'Ελληνικά',
+          'hi': 'हिन्दी',
+          'fa': 'فارسی',
+          'bn': 'বাংলা',
+          'ta': 'தமிழ்',
+          'te': 'తెలుగు',
+          'kn': 'ಕನ್ನಡ',
+          'ml': 'മലയാളം',
+          'mr': 'मराठी',
+          'ur': 'اردو',
+          'zh-HK': '繁體中文 (香港)',
+          'zh-TW': '繁體中文 (台灣)',
+          'af': 'Afrikaans',
+          'az': 'Azərbaycan',
+          'eu': 'Euskara',
+          'bg': 'Български',
+          'ca': 'Català',
+          'et': 'Eesti',
+          'gl': 'Galego',
+          'gu': 'ગુજરાતી',
+          'is': 'Íslenska',
+          'kk': 'Қазақша',
+          'ky': 'Кыргызча',
+          'lo': 'ລາວ',
+          'lt': 'Lietuvių',
+          'lv': 'Latviešu',
+          'mk': 'Македонски',
+          'mn': 'Монгол',
+          'ne': 'नेपाली',
+          'pa': 'ਪੰਜਾਬੀ',
+          'si': 'සිංහල',
+          'sl': 'Slovenščina',
+          'sq': 'Shqip',
+          'sr': 'Српски',
+          'sw': 'Kiswahili',
+          'tg': 'Тоҷикӣ',
+          'tl': 'Filipino',
+          'uz': 'O\'zbek',
+          'xh': 'isiXhosa',
+          'yo': 'Yorùbá',
+          'zu': 'isiZulu',
+          'am': 'አማርኛ',
+          'ha': 'Hausa',
+          'ig': 'Igbo',
+          'jv': 'Basa Jawa',
+          'km': 'ខ្មែរ',
+          'my': 'မြန်မာ',
+          'or': 'ଓଡ଼ିଆ',
+          'ps': 'پښتو',
+          'sd': 'سنڌي',
+          'so': 'Soomaali',
+          'as': 'অসমীয়া',
+          'bho': 'भोजपुरी',
+          'br': 'Brezhoneg',
+          'eo': 'Esperanto',
+          'fy': 'Frysk',
+          'ga': 'Gaeilge',
+          'gd': 'Gàidhlig',
+          'mi': 'Māori',
+          'mt': 'Malti',
+          'nn': 'Nynorsk',
+          'rw': 'Kinyarwanda',
+          'sa': 'संस्कृतम्',
+          'sm': 'Gagana Sāmoa',
+          'st': 'Sesotho'
+        };
+        
+        option.textContent = languageNames[langCode];
+        languageSelector.appendChild(option);
+      });
+      
+      // Set initial language
+      const initialLang = detectPreferredLanguage();
+      languageSelector.value = initialLang;
+      setLanguage(initialLang);
+      
+      // Add change event listener
+      languageSelector.addEventListener('change', (e) => {
+        setLanguage(e.target.value);
+      });
     });
   </script>
 </head>
 <body>
   <div class="container">
-    <p>Redirecting to your app...</p>
+    <p id="redirecting">Redirecting to your app...</p>
     <p id="fallback-message" style="display: none;"></p>
     <p>
-      You can also go to<br />
+      <span id="also-go">You can also go to</span><br />
       <a id="invite-link" href="#" target="_blank" rel="noopener noreferrer">loading...</a><br />
-      to view the photos and use 6180 on the web.
+      <span id="to-view">to view the photos and use 6180 on the web.</span>
     </p>
-    <button onclick="copyLink()">Copy Link</button>
+    <button id="copy-button" onclick="copyLink()">Copy Link</button>
     <span id="copied-msg">Copied!</span>
   </div>
 </body>
