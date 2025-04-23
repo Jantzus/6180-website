@@ -1,3 +1,7 @@
+import { STORAGE_KEYS } from "@/lib/config"
+import { LanguageCode } from "@/lib/types"
+import { myAlbumsTranslations } from "@/lib/translations"
+
 export function checkLoginOrRedirect(): string | null {
   const token = localStorage.getItem("idToken");
 
@@ -110,3 +114,34 @@ export const getVideoThumbnailBlob = (file: File): Promise<Blob> => {
     video.onerror = reject
   })
 }
+
+export const getOwnerItemId = (id: string) => id.split("_____")[0];
+export const getTargetItemIdentifier = (id: string) =>
+  id.split("_____")[1]?.split("____")[0] || "";
+
+
+export const detectBrowserLanguage = (): LanguageCode => {
+  // First try to get saved language preference
+  const savedLanguage = localStorage.getItem(STORAGE_KEYS.LANGUAGE) as LanguageCode | null;
+  
+  if (savedLanguage && myAlbumsTranslations[savedLanguage]) {
+    return savedLanguage;
+  }
+  
+  // Otherwise detect from browser
+  const browserLang = navigator.language;
+  
+  // Check if we have an exact match
+  if (browserLang && myAlbumsTranslations[browserLang as LanguageCode]) {
+    return browserLang as LanguageCode;
+  }
+  
+  // Check if we have a match for just the language part (e.g., 'en' from 'en-GB')
+  const langCode = browserLang.split('-')[0];
+  if (langCode && myAlbumsTranslations[langCode as LanguageCode]) {
+    return langCode as LanguageCode;
+  }
+  
+  // Default to en-US if no match
+  return 'en-US';
+};

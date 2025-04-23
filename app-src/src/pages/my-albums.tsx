@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { useEffect, useState, useRef } from "react"
-import { checkLoginOrRedirect, generateUUID, getVideoDuration, getVideoThumbnailBlob } from "@/lib/utils"
+import { checkLoginOrRedirect, generateUUID, getVideoDuration, getVideoThumbnailBlob, getOwnerItemId, getTargetItemIdentifier, detectBrowserLanguage } from "@/lib/utils"
 import { createS3Client } from "@/lib/aws"
 import { PutObjectCommand } from "@aws-sdk/client-s3"
 import { GRAPHQL_ENDPOINT, BUCKET_NAME, STORAGE_KEYS } from "@/lib/config"
@@ -10,102 +10,25 @@ import {
   SelectedPhoto, 
   ProgressTracker,
   UploadStatus,
-  LanguageCode
+  LanguageCode,
+  FolderType
 } from "@/lib/types"
-import { translations } from "@/lib/translations"
+import { LogoutButton } from "@/components/LogoutButton"
+import { LazyImage } from "@/components/LazyImage"
+import { UploadProgress } from "@/components/UploadProgress"
+import { FileInput } from "@/components/FileInput"
+import { DebugLog } from "@/components/DebugLog"
+import { myAlbumsTranslations } from "@/lib/translations"
 
 // Create S3 client
 const s3 = createS3Client()
 
-type LazyImageProps = {
-  src: string;
-  alt: string;
-  style: React.CSSProperties;
-};
-
-export const LazyImage = ({ src, alt, style }: LazyImageProps) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
-  
-  useEffect(() => {
-    // Create an observer instance
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // If the image is intersecting with the viewport
-        if (entries[0].isIntersecting) {
-          setIsInView(true);
-          // Once we've started loading, we can disconnect the observer
-          if (imgRef.current) {
-            observer.unobserve(imgRef.current);
-          }
-        }
-      },
-      {
-        // Load images when they're 200px before they appear in viewport
-        rootMargin: '200px 0px',
-        threshold: 0.01
-      }
-    );
-    
-    // Start observing the image element
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-    
-    // Clean up the observer when the component unmounts
-    return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
-      }
-    };
-  }, []);
-  
-  return (
-    <div 
-      ref={imgRef}
-      style={{
-        ...style,
-        backgroundColor: '#f0f0f0',
-        position: 'relative',
-      }}
-    >
-      {isInView && (
-        <img
-          src={src}
-          alt={alt}
-          style={{
-            ...style,
-            opacity: isLoaded ? 1 : 0,
-            transition: 'opacity 0.3s ease',
-          }}
-          onLoad={() => setIsLoaded(true)}
-        />
-      )}
-      
-      {/* Optional loading indicator */}
-      {isInView && !isLoaded && (
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          fontSize: '12px',
-          color: '#666'
-        }}>
-          Loading...
-        </div>
-      )}
-    </div>
-  );
-};
 
 // Header Component
 type HeaderProps = {
   publicUsername: string | null;
   isUploading: boolean;
   openFilePicker: (folderId: string | null) => void;
-  handleLogout: () => void;
   t: (key: string) => string;
   isRTL: boolean;
 };
@@ -114,7 +37,6 @@ export const Header: React.FC<HeaderProps> = ({
   publicUsername, 
   isUploading, 
   openFilePicker, 
-  handleLogout,
   t,
   isRTL
 }) => {
@@ -167,133 +89,18 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {publicUsername && (
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              handleLogout();
-            }}
-            style={{
-              fontSize: "14px",
-              color: "#666",
-              textDecoration: "underline",
-              cursor: "pointer"
-            }}
-          >
-            {t('logOut')}
-          </a>
+          <LogoutButton 
+            t={t}
+          />
         )}
       </div>
     </>
   );
 };
 
-// UploadProgress Component
-type ProgressTrackerType = {
-  totalFiles: number;
-  filesComplete: number;
-  filesUploading: number;
-  filesProcessing: number;
-  filesWithError: number;
-  overallProgress: number;
-};
-
-type UploadProgressProps = {
-  progressTracker: ProgressTrackerType;
-  t: (key: string) => string;
-  isRTL: boolean;
-};
-
-export const UploadProgress: React.FC<UploadProgressProps> = ({ 
-  progressTracker,
-  t,
-  isRTL
-}) => {
-  if (progressTracker.totalFiles === 0) return null;
-  
-  return (
-    <div style={{ 
-      marginBottom: "24px", 
-      backgroundColor: "#fff", 
-      padding: "16px", 
-      borderRadius: "8px", 
-      boxShadow: "0 1px 3px rgba(0,0,0,0.1)", 
-      width: "100%",
-      direction: isRTL ? "rtl" : "ltr"
-    }}>
-      <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t('uploadProgress')}</h3>
-      
-      <div style={{ marginBottom: "12px" }}>
-        <div style={{ 
-          display: "flex", 
-          justifyContent: "space-between", 
-          fontSize: "14px", 
-          marginBottom: "6px" 
-        }}>
-          <span>{t('overallProgress')}: {Math.round(progressTracker.overallProgress * 100)}%</span>
-          <span>{progressTracker.filesComplete} {t('of')} {progressTracker.totalFiles} {t('complete')}</span>
-        </div>
-        <div style={{ 
-          height: "8px", 
-          backgroundColor: "#e0e0e0", 
-          borderRadius: "4px", 
-          overflow: "hidden" 
-        }}>
-          <div 
-            style={{ 
-              height: "100%", 
-              width: `${progressTracker.overallProgress * 100}%`, 
-              backgroundColor: "#4caf50",
-              borderRadius: "4px",
-              transition: "width 0.3s ease",
-              float: isRTL ? "right" : "left"
-            }}
-          />
-        </div>
-      </div>
-      
-      <div style={{ 
-        display: "flex", 
-        gap: "12px", 
-        fontSize: "14px", 
-        color: "#666",
-        flexDirection: isRTL ? "row-reverse" : "row"
-      }}>
-        {progressTracker.filesUploading > 0 && (
-          <div>📤 {t('uploading')}: {progressTracker.filesUploading}</div>
-        )}
-        {progressTracker.filesProcessing > 0 && (
-          <div>⚙️ {t('processing')}: {progressTracker.filesProcessing}</div>
-        )}
-        {progressTracker.filesComplete > 0 && (
-          <div>✅ {t('complete')}: {progressTracker.filesComplete}</div>
-        )}
-        {progressTracker.filesWithError > 0 && (
-          <div style={{ color: "#e53935" }}>❌ {t('failed')}: {progressTracker.filesWithError}</div>
-        )}
-      </div>
-    </div>
-  );
-};
-
 // AlbumList Component
 import { formatDate } from "@/lib/utils";
 import { S3_BUCKET_URL } from "@/lib/config";
-
-type FileType = {
-  dataKey: string;
-  thumbnailDataKey: string | null;
-  durationInSeconds: number | null;
-};
-
-type FolderType = {
-  folderPositionId: string;
-  folderId: string;
-  folderName: string | null;
-  createdAt: number | null;
-  updatedAt: number | null;
-  files: FileType[];
-};
 
 type AlbumListProps = {
   folders: FolderType[];
@@ -316,10 +123,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     return <p style={{ fontSize: 16, color: "#555", width: "100%" }}>{t('noAlbums')}</p>;
   }
 
-  const getOwnerItemId = (id: string) => id.split("_____")[0];
-  const getTargetItemIdentifier = (id: string) =>
-    id.split("_____")[1]?.split("____")[0] || "";
-
   return (
     <>
       {folders.map((folder) => {
@@ -327,7 +130,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
         const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt;
 
         const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`;
-        const inviteLink = `https://6180.io/photos/${folderInvite}`;
+        const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`;
 
         const handleCopy = (e: React.MouseEvent) => {
           e.preventDefault();
@@ -536,65 +339,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   );
 };
 
-// DebugLog Component
-type DebugLogProps = {
-  debugMessages: string[];
-  t: (key: string) => string;
-  isRTL: boolean;
-  textDirection: string;
-};
-
-export const DebugLog: React.FC<DebugLogProps> = ({ 
-  debugMessages,
-  t,
-  isRTL,
-  textDirection
-}) => {
-  if (debugMessages.length === 0) return null;
-  
-  return (
-    <div style={{ 
-      marginTop: "40px", 
-      background: "#fff3cd", 
-      padding: "16px", 
-      borderRadius: "8px", 
-      border: "1px solid #ffeeba", 
-      maxWidth: 900, 
-      margin: "0 auto",
-      direction: textDirection as "ltr" | "rtl"
-    }}>
-      <h3 style={{ 
-        marginTop: 0, 
-        fontSize: "18px", 
-        color: "#856404",
-        textAlign: isRTL ? "right" : "left"
-      }}>
-        {t('debugLog')}
-      </h3>
-      <pre style={{ 
-        fontSize: "14px", 
-        color: "#856404", 
-        whiteSpace: "pre-wrap", 
-        maxHeight: "400px", 
-        overflow: "auto",
-        textAlign: isRTL ? "right" : "left"
-      }}>
-        {debugMessages.map((msg, i) => (
-          <div key={i} style={{ marginBottom: "8px" }}>{msg}</div>
-        ))}
-      </pre>
-    </div>
-  );
-};
-
-
-export type TranslationType = {
-  [key in LanguageCode]: {
-    [key: string]: string;
-  };
-};
-
-
 const MyAlbums = () => {
   const [folders, setFolders] = useState<Folder[]>([])
   const [publicUsername, setPublicUsername] = useState<string | null>(null)
@@ -618,7 +362,7 @@ const MyAlbums = () => {
 
   // Get translation function
   const t = (key: string): string => {
-    return translations[currentLanguage][key] || translations['en-US'][key] || key
+    return myAlbumsTranslations[currentLanguage][key] || myAlbumsTranslations['en-US'][key] || key
   }
 
   // Determine text direction based on language
@@ -637,36 +381,7 @@ const MyAlbums = () => {
 
   // Detect browser language on initial load
   useEffect(() => {
-    const detectBrowserLanguage = () => {
-      // First try to get saved language preference
-      const savedLanguage = localStorage.getItem(STORAGE_KEYS.LANGUAGE) as LanguageCode | null
-      
-      if (savedLanguage && translations[savedLanguage]) {
-        setCurrentLanguage(savedLanguage)
-        return
-      }
-      
-      // Otherwise detect from browser
-      const browserLang = navigator.language
-      
-      // Check if we have an exact match
-      if (browserLang && translations[browserLang as LanguageCode]) {
-        setCurrentLanguage(browserLang as LanguageCode)
-        return
-      }
-      
-      // Check if we have a match for just the language part (e.g., 'en' from 'en-GB')
-      const langCode = browserLang.split('-')[0]
-      if (langCode && translations[langCode as LanguageCode]) {
-        setCurrentLanguage(langCode as LanguageCode)
-        return
-      }
-      
-      // Default to en-US if no match
-      setCurrentLanguage('en-US')
-    }
-    
-    detectBrowserLanguage()
+    setCurrentLanguage(detectBrowserLanguage())
   }, [])
 
   // Save language preference when it changes
@@ -1083,11 +798,6 @@ const MyAlbums = () => {
     }
   }
 
-  const handleLogout = () => {
-    localStorage.clear()
-    window.location.href = "/index.html"
-  }
-
   return (
     <div
       style={{
@@ -1105,7 +815,6 @@ const MyAlbums = () => {
             publicUsername={publicUsername}
             isUploading={isUploading}
             openFilePicker={openFilePicker}
-            handleLogout={handleLogout}
             t={t}
             isRTL={isRTL}
           />
@@ -1125,15 +834,10 @@ const MyAlbums = () => {
             isRTL={isRTL}
           />
           
-          {/* Hidden file input */}
-          <input 
-            type="file" 
-            id="file-input" 
+          {/* Use the refactored FileInput component */}
+          <FileInput 
+            onFileSelection={handleFileSelection} 
             ref={fileInputRef}
-            accept="image/*,video/*" 
-            multiple 
-            style={{ display: "none" }}
-            onChange={handleFileSelection}
           />
         </div>
       </div>

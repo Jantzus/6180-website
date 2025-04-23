@@ -240,213 +240,904 @@
     const BUCKET_URL = "https://i6180-assets-prod-0.s3.amazonaws.com/";
     
     // Set default columns to 1 (or from localStorage if available)
-    const defaultColumns = localStorage.getItem('photosPerRow') || '1';
+    const defaultColumns = localStorage.getItem('columns') || '1';
     
     // Translations for UI elements in different languages
     const translations = {
-      // Original languages
-      'en': { // English (default)
-        "picturesPerRow": "Columns:",
+        'en': { // English (default)
+        "columns": "Columns:",
         "saveButton": "Save",
         "noMedia": "No media found in this album",
         "errorTitle": "Error Loading Album",
         "errorMessage": "Please try refreshing the page or contact support if the problem persists.",
         "refreshPage": "Refresh Page",
-        "photos": "Photos",
-        "loadingAlbum": "Loading album...",
-        "loadingContent": "Loading album content..."
+        "photos": "Photos"
       },
       'es': { // Spanish
-        "picturesPerRow": "Imágenes por fila:",
+        "columns": "Columnas:",
         "saveButton": "Guardar",
         "noMedia": "No se encontraron medios en este álbum",
         "errorTitle": "Error al cargar el álbum",
         "errorMessage": "Intente actualizar la página o póngase en contacto con el soporte si el problema persiste.",
         "refreshPage": "Actualizar página",
-        "photos": "Fotos",
-        "loadingAlbum": "Cargando álbum...",
-        "loadingContent": "Cargando contenido del álbum..."
+        "photos": "Fotos"
       },
       'fr': { // French
-        "picturesPerRow": "Images par ligne:",
+        "columns": "Colonnes:",
         "saveButton": "Enregistrer",
         "noMedia": "Aucun média trouvé dans cet album",
         "errorTitle": "Erreur de chargement de l'album",
         "errorMessage": "Veuillez actualiser la page ou contacter le support si le problème persiste.",
         "refreshPage": "Actualiser la page",
-        "photos": "Photos",
-        "loadingAlbum": "Chargement de l'album...",
-        "loadingContent": "Chargement du contenu de l'album..."
+        "photos": "Photos"
       },
       'de': { // German
-        "picturesPerRow": "Bilder pro Zeile:",
+        "columns": "Spalten:",
         "saveButton": "Speichern",
         "noMedia": "Keine Medien in diesem Album gefunden",
         "errorTitle": "Fehler beim Laden des Albums",
         "errorMessage": "Bitte aktualisieren Sie die Seite oder wenden Sie sich an den Support, wenn das Problem weiterhin besteht.",
         "refreshPage": "Seite aktualisieren",
-        "photos": "Fotos",
-        "loadingAlbum": "Album wird geladen...",
-        "loadingContent": "Albuminhalt wird geladen..."
+        "photos": "Fotos"
       },
       'zh': { // Chinese (Simplified)
-        "picturesPerRow": "每行图片数:",
+        "columns": "列数:",
         "saveButton": "保存",
         "noMedia": "此相册中未找到媒体",
         "errorTitle": "加载相册出错",
         "errorMessage": "请刷新页面，如果问题仍然存在，请联系支持人员。",
         "refreshPage": "刷新页面",
-        "photos": "照片",
-        "loadingAlbum": "加载相册中...",
-        "loadingContent": "加载相册内容中..."
+        "photos": "照片"
       },
       'ja': { // Japanese
-        "picturesPerRow": "行あたりの写真:",
+        "columns": "列数:",
         "saveButton": "保存",
         "noMedia": "このアルバムにメディアが見つかりません",
         "errorTitle": "アルバムの読み込みエラー",
         "errorMessage": "ページを更新するか、問題が解決しない場合はサポートに連絡してください。",
         "refreshPage": "ページを更新",
-        "photos": "写真",
-        "loadingAlbum": "アルバムを読み込み中...",
-        "loadingContent": "アルバムのコンテンツを読み込み中..."
+        "photos": "写真"
       },
       'ko': { // Korean
-        "picturesPerRow": "행당 사진 수:",
+        "columns": "열 수:",
         "saveButton": "저장",
         "noMedia": "이 앨범에서 미디어를 찾을 수 없습니다",
         "errorTitle": "앨범 로딩 오류",
         "errorMessage": "페이지를 새로고침하거나 문제가 지속되면 지원팀에 문의하세요.",
         "refreshPage": "페이지 새로고침",
-        "photos": "사진",
-        "loadingAlbum": "앨범 로딩 중...",
-        "loadingContent": "앨범 콘텐츠 로딩 중..."
+        "photos": "사진"
       },
       'it': { // Italian
-        "picturesPerRow": "Immagini per riga:",
+        "columns": "Colonne:",
         "saveButton": "Salva",
         "noMedia": "Nessun media trovato in questo album",
         "errorTitle": "Errore di caricamento dell'album",
         "errorMessage": "Prova ad aggiornare la pagina o contatta l'assistenza se il problema persiste.",
         "refreshPage": "Aggiorna pagina",
-        "photos": "Foto",
-        "loadingAlbum": "Caricamento album...",
-        "loadingContent": "Caricamento contenuto album..."
+        "photos": "Foto"
       },
       'pt': { // Portuguese
-        "picturesPerRow": "Imagens por linha:",
+        "columns": "Colunas:",
         "saveButton": "Salvar",
         "noMedia": "Nenhuma mídia encontrada neste álbum",
         "errorTitle": "Erro ao carregar álbum",
         "errorMessage": "Tente atualizar a página ou entre em contato com o suporte se o problema persistir.",
         "refreshPage": "Atualizar página",
-        "photos": "Fotos",
-        "loadingAlbum": "Carregando álbum...",
-        "loadingContent": "Carregando conteúdo do álbum..."
+        "photos": "Fotos"
       },
       'ru': { // Russian
-        "picturesPerRow": "Изображений в ряду:",
+        "columns": "Колонки:",
         "saveButton": "Сохранить",
         "noMedia": "В этом альбоме не найдено медиафайлов",
         "errorTitle": "Ошибка загрузки альбома",
         "errorMessage": "Пожалуйста, обновите страницу или обратитесь в службу поддержки, если проблема не устранена.",
         "refreshPage": "Обновить страницу",
-        "photos": "Фотографии",
-        "loadingAlbum": "Загрузка альбома...",
-        "loadingContent": "Загрузка содержимого альбома..."
+        "photos": "Фотографии"
       },
       'nl': { // Dutch
-        "picturesPerRow": "Afbeeldingen per rij:",
+        "columns": "Kolommen:",
         "saveButton": "Opslaan",
         "noMedia": "Geen media gevonden in dit album",
         "errorTitle": "Fout bij laden van album",
         "errorMessage": "Vernieuw de pagina of neem contact op met de ondersteuning als het probleem aanhoudt.",
         "refreshPage": "Pagina vernieuwen",
-        "photos": "Foto's",
-        "loadingAlbum": "Album laden...",
-        "loadingContent": "Albuminhoud laden..."
+        "photos": "Foto's"
       },
       'ar': { // Arabic
-        "picturesPerRow": "الصور في الصف:",
+        "columns": "الأعمدة:",
         "saveButton": "حفظ",
         "noMedia": "لم يتم العثور على وسائط في هذا الألبوم",
         "errorTitle": "خطأ في تحميل الألبوم",
         "errorMessage": "يرجى تحديث الصفحة أو الاتصال بالدعم إذا استمرت المشكلة.",
         "refreshPage": "تحديث الصفحة",
-        "photos": "صور",
-        "loadingAlbum": "جاري تحميل الألبوم...",
-        "loadingContent": "جاري تحميل محتوى الألبوم..."
+        "photos": "صور"
       },
       'pl': { // Polish
-        "picturesPerRow": "Obrazy w rzędzie:",
+        "columns": "Kolumny:",
         "saveButton": "Zapisz",
         "noMedia": "Nie znaleziono mediów w tym albumie",
         "errorTitle": "Błąd ładowania albumu",
         "errorMessage": "Spróbuj odświeżyć stronę lub skontaktuj się z pomocą techniczną, jeśli problem będzie się powtarzał.",
         "refreshPage": "Odśwież stronę",
-        "photos": "Zdjęcia",
-        "loadingAlbum": "Ładowanie albumu...",
-        "loadingContent": "Ładowanie zawartości albumu..."
+        "photos": "Zdjęcia"
       },
       'tr': { // Turkish
-        "picturesPerRow": "Satır başına resim:",
+        "columns": "Sütunlar:",
         "saveButton": "Kaydet",
         "noMedia": "Bu albümde medya bulunamadı",
         "errorTitle": "Albüm Yükleme Hatası",
         "errorMessage": "Lütfen sayfayı yenileyin veya sorun devam ederse destek ile iletişime geçin.",
         "refreshPage": "Sayfayı Yenile",
-        "photos": "Fotoğraflar",
-        "loadingAlbum": "Albüm yükleniyor...",
-        "loadingContent": "Albüm içeriği yükleniyor..."
+        "photos": "Fotoğraflar"
       },
       'hi': { // Hindi
-        "picturesPerRow": "प्रति पंक्ति चित्र:",
+        "columns": "कॉलम:",
         "saveButton": "सहेजें",
         "noMedia": "इस एल्बम में कोई मीडिया नहीं मिला",
         "errorTitle": "एल्बम लोड करने में त्रुटि",
         "errorMessage": "कृपया पेज को रीफ्रेश करें या यदि समस्या बनी रहती है तो सपोर्ट से संपर्क करें।",
         "refreshPage": "पेज रीफ्रेश करें",
-        "photos": "तस्वीरें",
-        "loadingAlbum": "एल्बम लोड हो रहा है...",
-        "loadingContent": "एल्बम सामग्री लोड हो रही है..."
+        "photos": "तस्वीरें"
       },
-      // Additional languages (adding just a sample of the many languages from the lambda)
+      
+      // Additional languages start here
+      'zh-CN': { // Chinese (Simplified) - Same as 'zh'
+        "columns": "列数:",
+        "saveButton": "保存",
+        "noMedia": "此相册中未找到媒体",
+        "errorTitle": "加载相册出错",
+        "errorMessage": "请刷新页面，如果问题仍然存在，请联系支持人员。",
+        "refreshPage": "刷新页面",
+        "photos": "照片"
+      },
+      'fr-FR': { // French (France) - Same as 'fr'
+        "columns": "Colonnes:",
+        "saveButton": "Enregistrer",
+        "noMedia": "Aucun média trouvé dans cet album",
+        "errorTitle": "Erreur de chargement de l'album",
+        "errorMessage": "Veuillez actualiser la page ou contacter le support si le problème persiste.",
+        "refreshPage": "Actualiser la page",
+        "photos": "Photos"
+      },
+      'de-DE': { // German (Germany) - Same as 'de'
+        "columns": "Spalten:",
+        "saveButton": "Speichern",
+        "noMedia": "Keine Medien in diesem Album gefunden",
+        "errorTitle": "Fehler beim Laden des Albums",
+        "errorMessage": "Bitte aktualisieren Sie die Seite oder wenden Sie sich an den Support, wenn das Problem weiterhin besteht.",
+        "refreshPage": "Seite aktualisieren",
+        "photos": "Fotos"
+      },
+      'es-ES': { // Spanish (Spain) - Same as 'es'
+        "columns": "Columnas:",
+        "saveButton": "Guardar",
+        "noMedia": "No se encontraron medios en este álbum",
+        "errorTitle": "Error al cargar el álbum",
+        "errorMessage": "Intente actualizar la página o póngase en contacto con el soporte si el problema persiste.",
+        "refreshPage": "Actualizar página",
+        "photos": "Fotos"
+      },
+      'pt-BR': { // Portuguese (Brazil) - Same as 'pt'
+        "columns": "Colunas:",
+        "saveButton": "Salvar",
+        "noMedia": "Nenhuma mídia encontrada neste álbum",
+        "errorTitle": "Erro ao carregar álbum",
+        "errorMessage": "Tente atualizar a página ou entre em contato com o suporte se o problema persistir.",
+        "refreshPage": "Atualizar página",
+        "photos": "Fotos"
+      },
       'sv': { // Swedish
-        "picturesPerRow": "Bilder per rad:",
+        "columns": "Kolumner:",
         "saveButton": "Spara",
         "noMedia": "Inga media hittades i detta album",
         "errorTitle": "Fel vid laddning av album",
         "errorMessage": "Försök att uppdatera sidan eller kontakta support om problemet kvarstår.",
         "refreshPage": "Uppdatera sidan",
-        "photos": "Foton",
-        "loadingAlbum": "Laddar album...",
-        "loadingContent": "Laddar albuminnehåll..."
+        "photos": "Foton"
+      },
+      'sv-SE': { // Swedish (Sweden) - Same as 'sv'
+        "columns": "Kolumner:",
+        "saveButton": "Spara",
+        "noMedia": "Inga media hittades i detta album",
+        "errorTitle": "Fel vid laddning av album",
+        "errorMessage": "Försök att uppdatera sidan eller kontakta support om problemet kvarstår.",
+        "refreshPage": "Uppdatera sidan",
+        "photos": "Foton"
       },
       'he': { // Hebrew
-        "picturesPerRow": "תמונות בשורה:",
+        "columns": "עמודות:",
         "saveButton": "שמור",
         "noMedia": "לא נמצאו מדיה באלבום זה",
         "errorTitle": "שגיאה בטעינת האלבום",
         "errorMessage": "אנא נסה לרענן את הדף או צור קשר עם התמיכה אם הבעיה נמשכת.",
         "refreshPage": "רענן דף",
-        "photos": "תמונות",
-        "loadingAlbum": "טוען אלבום...",
-        "loadingContent": "טוען תוכן אלבום..."
+        "photos": "תמונות"
+      },
+      'uk': { // Ukrainian
+        "columns": "Стовпці:",
+        "saveButton": "Зберегти",
+        "noMedia": "У цьому альбомі не знайдено медіафайлів",
+        "errorTitle": "Помилка завантаження альбому",
+        "errorMessage": "Спробуйте оновити сторінку або зверніться до служби підтримки, якщо проблема не усунена.",
+        "refreshPage": "Оновити сторінку",
+        "photos": "Фотографії"
       },
       'th': { // Thai
-        "picturesPerRow": "รูปภาพต่อแถว:",
+        "columns": "คอลัมน์:",
         "saveButton": "บันทึก",
         "noMedia": "ไม่พบสื่อในอัลบั้มนี้",
         "errorTitle": "เกิดข้อผิดพลาดในการโหลดอัลบั้ม",
         "errorMessage": "โปรดลองรีเฟรชหน้าหรือติดต่อฝ่ายสนับสนุนหากยังคงมีปัญหา",
         "refreshPage": "รีเฟรชหน้า",
-        "photos": "รูปภาพ",
-        "loadingAlbum": "กำลังโหลดอัลบั้ม...",
-        "loadingContent": "กำลังโหลดเนื้อหาอัลบั้ม..."
-      }
-      // Note: The actual implementation should include all languages from the lambda
+        "photos": "รูปภาพ"
+      },
+      'vi': { // Vietnamese
+        "columns": "Cột:",
+        "saveButton": "Lưu",
+        "noMedia": "Không tìm thấy phương tiện trong album này",
+        "errorTitle": "Lỗi khi tải album",
+        "errorMessage": "Vui lòng thử làm mới trang hoặc liên hệ với bộ phận hỗ trợ nếu vấn đề vẫn tiếp diễn.",
+        "refreshPage": "Làm mới trang",
+        "photos": "Hình ảnh"
+      },
+      'cs': { // Czech
+        "columns": "Sloupce:",
+        "saveButton": "Uložit",
+        "noMedia": "V tomto albu nebyla nalezena žádná média",
+        "errorTitle": "Chyba při načítání alba",
+        "errorMessage": "Zkuste obnovit stránku nebo kontaktujte podporu, pokud problém přetrvává.",
+        "refreshPage": "Obnovit stránku",
+        "photos": "Fotografie"
+      },
+      'ro': { // Romanian
+        "columns": "Coloane:",
+        "saveButton": "Salvează",
+        "noMedia": "Nu s-au găsit media în acest album",
+        "errorTitle": "Eroare la încărcarea albumului",
+        "errorMessage": "Încercați să reîmprospătați pagina sau contactați asistența dacă problema persistă.",
+        "refreshPage": "Reîmprospătează pagina",
+        "photos": "Fotografii"
+      },
+      'fi': { // Finnish
+        "columns": "Sarakkeet:",
+        "saveButton": "Tallenna",
+        "noMedia": "Tästä albumista ei löytynyt mediaa",
+        "errorTitle": "Virhe albumin lataamisessa",
+        "errorMessage": "Yritä päivittää sivu tai ota yhteyttä tukeen, jos ongelma jatkuu.",
+        "refreshPage": "Päivitä sivu",
+        "photos": "Kuvat"
+      },
+      'da': { // Danish
+        "columns": "Kolonner:",
+        "saveButton": "Gem",
+        "noMedia": "Ingen medier fundet i dette album",
+        "errorTitle": "Fejl ved indlæsning af album",
+        "errorMessage": "Prøv at genindlæse siden eller kontakt support, hvis problemet fortsætter.",
+        "refreshPage": "Genindlæs side",
+        "photos": "Billeder"
+      },
+      'hu': { // Hungarian
+        "columns": "Oszlopok:",
+        "saveButton": "Mentés",
+        "noMedia": "Nem található média ebben az albumban",
+        "errorTitle": "Hiba az album betöltésekor",
+        "errorMessage": "Kérjük, próbálja meg frissíteni az oldalt, vagy vegye fel a kapcsolatot az ügyfélszolgálattal, ha a probléma továbbra is fennáll.",
+        "refreshPage": "Oldal frissítése",
+        "photos": "Fényképek"
+      },
+      'id': { // Indonesian
+        "columns": "Kolom:",
+        "saveButton": "Simpan",
+        "noMedia": "Tidak ada media yang ditemukan di album ini",
+        "errorTitle": "Kesalahan Memuat Album",
+        "errorMessage": "Silakan coba menyegarkan halaman atau hubungi dukungan jika masalah berlanjut.",
+        "refreshPage": "Segarkan Halaman",
+        "photos": "Foto"
+      },
+      'no': { // Norwegian
+        "columns": "Kolonner:",
+        "saveButton": "Lagre",
+        "noMedia": "Ingen medier funnet i dette albumet",
+        "errorTitle": "Feil ved lasting av album",
+        "errorMessage": "Prøv å oppdatere siden eller kontakt support hvis problemet vedvarer.",
+        "refreshPage": "Oppdater siden",
+        "photos": "Bilder"
+      },
+      'nb': { // Norwegian Bokmål
+        "columns": "Kolonner:",
+        "saveButton": "Lagre",
+        "noMedia": "Ingen medier funnet i dette albumet",
+        "errorTitle": "Feil ved lasting av album",
+        "errorMessage": "Prøv å oppdatere siden eller kontakt support hvis problemet vedvarer.",
+        "refreshPage": "Oppdater siden",
+        "photos": "Bilder"
+      },
+      'sk': { // Slovak
+        "columns": "Stĺpce:",
+        "saveButton": "Uložiť",
+        "noMedia": "V tomto albume sa nenašli žiadne médiá",
+        "errorTitle": "Chyba pri načítaní albumu",
+        "errorMessage": "Skúste obnoviť stránku alebo kontaktujte podporu, ak problém pretrváva.",
+        "refreshPage": "Obnoviť stránku",
+        "photos": "Fotografie"
+      },
+      'el': { // Greek
+        "columns": "Στήλες:",
+        "saveButton": "Αποθήκευση",
+        "noMedia": "Δεν βρέθηκαν πολυμέσα σε αυτό το άλμπουμ",
+        "errorTitle": "Σφάλμα Φόρτωσης Άλμπουμ",
+        "errorMessage": "Παρακαλούμε δοκιμάστε να ανανεώσετε τη σελίδα ή επικοινωνήστε με την υποστήριξη αν το πρόβλημα επιμένει.",
+        "refreshPage": "Ανανέωση Σελίδας",
+        "photos": "Φωτογραφίες"
+      },
+      'fa': { // Persian
+        "columns": "ستون‌ها:",
+        "saveButton": "ذخیره",
+        "noMedia": "هیچ رسانه‌ای در این آلبوم یافت نشد",
+        "errorTitle": "خطا در بارگذاری آلبوم",
+        "errorMessage": "لطفاً صفحه را تازه‌سازی کنید یا اگر مشکل ادامه داشت با پشتیبانی تماس بگیرید.",
+        "refreshPage": "تازه‌سازی صفحه",
+        "photos": "عکس‌ها"
+      },
+      'bn': { // Bengali
+        "columns": "কলাম:",
+        "saveButton": "সংরক্ষণ করুন",
+        "noMedia": "এই অ্যালবামে কোন মিডিয়া পাওয়া যায়নি",
+        "errorTitle": "অ্যালবাম লোড করার সময় ত্রুটি",
+        "errorMessage": "অনুগ্রহ করে পৃষ্ঠাটি রিফ্রেশ করুন বা সমস্যা চলতে থাকলে সাপোর্টের সাথে যোগাযোগ করুন।",
+        "refreshPage": "পৃষ্ঠা রিফ্রেশ করুন",
+        "photos": "ছবি"
+      },
+      'ta': { // Tamil
+        "columns": "நெடுவரிசைகள்:",
+        "saveButton": "சேமி",
+        "noMedia": "இந்த ஆல்பத்தில் ஊடகங்கள் எதுவும் கிடைக்கவில்லை",
+        "errorTitle": "ஆல்பத்தை ஏற்றுவதில் பிழை",
+        "errorMessage": "பக்கத்தைப் புதுப்பிக்க முயற்சிக்கவும் அல்லது சிக்கல் தொடர்ந்தால் ஆதரவைத் தொடர்பு கொள்ளவும்.",
+        "refreshPage": "பக்கத்தைப் புதுப்பி",
+        "photos": "புகைப்படங்கள்"
+      },
+      'te': { // Telugu
+        "columns": "కాలమ్‌లు:",
+        "saveButton": "సేవ్",
+        "noMedia": "ఈ ఆల్బమ్‌లో మీడియా కనబడలేదు",
+        "errorTitle": "ఆల్బమ్ లోడ్ చేయడంలో లోపం",
+        "errorMessage": "దయచేసి పేజీని రిఫ్రెష్ చేయండి లేదా సమస్య కొనసాగితే సపోర్ట్‌ని సంప్రదించండి.",
+        "refreshPage": "పేజీని రిఫ్రెష్ చేయండి",
+        "photos": "ఫోటోలు"
+      },
+      'kn': { // Kannada
+        "columns": "ಕಾಲಮ್‌ಗಳು:",
+        "saveButton": "ಉಳಿಸಿ",
+        "noMedia": "ಈ ಆಲ್ಬಂನಲ್ಲಿ ಯಾವುದೇ ಮಾಧ್ಯಮ ಕಂಡುಬಂದಿಲ್ಲ",
+        "errorTitle": "ಆಲ್ಬಂ ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ",
+        "errorMessage": "ದಯವಿಟ್ಟು ಪುಟವನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಸಮಸ್ಯೆ ಮುಂದುವರಿದರೆ ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+        "refreshPage": "ಪುಟವನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ",
+        "photos": "ಚಿತ್ರಗಳು"
+      },
+      'ml': { // Malayalam
+        "columns": "കോളങ്ങൾ:",
+        "saveButton": "സംരക്ഷിക്കുക",
+        "noMedia": "ഈ ആൽബത്തിൽ മീഡിയ കണ്ടെത്തിയില്ല",
+        "errorTitle": "ആൽബം ലോഡ് ചെയ്യുന്നതിൽ പിശക്",
+        "errorMessage": "ദയവായി പേജ് പുതുക്കി നോക്കുക അല്ലെങ്കിൽ പ്രശ്നം തുടരുകയാണെങ്കിൽ സപ്പോർട്ടുമായി ബന്ധപ്പെടുക.",
+        "refreshPage": "പേജ് പുതുക്കുക",
+        "photos": "ഫോട്ടോകൾ"
+      },
+      'mr': { // Marathi
+        "columns": "स्तंभ:",
+        "saveButton": "जतन करा",
+        "noMedia": "या अल्बममध्ये कोणतेही मीडिया आढळले नाही",
+        "errorTitle": "अल्बम लोड करताना त्रुटी",
+        "errorMessage": "कृपया पृष्ठ रीफ्रेश करा किंवा समस्या कायम असल्यास सपोर्टशी संपर्क साधा.",
+        "refreshPage": "पृष्ठ रीफ्रेश करा",
+        "photos": "फोटो"
+      },
+      'ur': { // Urdu
+        "columns": "کالم:",
+        "saveButton": "محفوظ کریں",
+        "noMedia": "اس البم میں کوئی میڈیا نہیں ملا",
+        "errorTitle": "البم لوڈ کرنے میں خرابی",
+        "errorMessage": "براہ کرم صفحہ ریفریش کریں یا اگر مسئلہ برقرار رہے تو سپورٹ سے رابطہ کریں۔",
+        "refreshPage": "صفحہ ریفریش کریں",
+        "photos": "تصاویر"
+      },
+      'zh-HK': { // Chinese (Hong Kong)
+        "columns": "列數:",
+        "saveButton": "保存",
+        "noMedia": "此相冊中未找到媒體",
+        "errorTitle": "加載相冊出錯",
+        "errorMessage": "請刷新頁面，如果問題仍然存在，請聯繫支持人員。",
+        "refreshPage": "刷新頁面",
+        "photos": "相片"
+      },
+      'zh-TW': { // Chinese (Traditional)
+        "columns": "列數:",
+        "saveButton": "保存",
+        "noMedia": "此相冊中未找到媒體",
+        "errorTitle": "加載相冊出錯",
+        "errorMessage": "請刷新頁面，如果問題仍然存在，請聯繫支持人員。",
+        "refreshPage": "刷新頁面",
+        "photos": "相片"
+      },
+      'af': { // Afrikaans
+        "columns": "Kolomme:",
+        "saveButton": "Stoor",
+        "noMedia": "Geen media in hierdie album gevind nie",
+        "errorTitle": "Fout met die laai van album",
+        "errorMessage": "Probeer die bladsy verfris of kontak ondersteuning as die probleem voortduur.",
+        "refreshPage": "Verfris bladsy",
+        "photos": "Foto's"
+      },
+      'az': { // Azerbaijani
+        "columns": "Sütunlar:",
+        "saveButton": "Saxla",
+        "noMedia": "Bu albomda heç bir media tapılmadı",
+        "errorTitle": "Albom yüklənərkən xəta",
+        "errorMessage": "Xahiş edirik səhifəni yeniləyin və ya problem davam edərsə, dəstəklə əlaqə saxlayın.",
+        "refreshPage": "Səhifəni yeniləyin",
+        "photos": "Fotoşəkillər"
+      },
+      'eu': { // Basque
+        "columns": "Zutabeak:",
+        "saveButton": "Gorde",
+        "noMedia": "Ez da mediorik aurkitu album honetan",
+        "errorTitle": "Errorea albuma kargatzean",
+        "errorMessage": "Mesedez, saiatu orria freskatzen edo jarri harremanetan laguntzarekin arazoak jarraitzen badu.",
+        "refreshPage": "Freskatu orria",
+        "photos": "Argazkiak"
+      },
+      'bg': { // Bulgarian
+        "columns": "Колони:",
+        "saveButton": "Запази",
+        "noMedia": "Не са намерени медии в този албум",
+        "errorTitle": "Грешка при зареждане на албума",
+        "errorMessage": "Моля, опитайте да опресните страницата или се свържете с поддръжката, ако проблемът продължава.",
+        "refreshPage": "Опресни страницата",
+        "photos": "Снимки"
+      },
+      'ca': { // Catalan
+        "columns": "Columnes:",
+        "saveButton": "Desar",
+        "noMedia": "No s'han trobat mitjans en aquest àlbum",
+        "errorTitle": "Error en carregar l'àlbum",
+        "errorMessage": "Si us plau, proveu d'actualitzar la pàgina o contacteu amb suport si el problema persisteix.",
+        "refreshPage": "Actualitzar pàgina",
+        "photos": "Fotos"
+      },
+      'et': { // Estonian
+        "columns": "Veerud:",
+        "saveButton": "Salvesta",
+        "noMedia": "Sellest albumist ei leitud meediat",
+        "errorTitle": "Viga albumi laadimisel",
+        "errorMessage": "Palun proovige lehte värskendada või võtke ühendust toega, kui probleem püsib.",
+        "refreshPage": "Värskenda lehte",
+        "photos": "Fotod"
+      },
+      'gl': { // Galician
+        "columns": "Columnas:",
+        "saveButton": "Gardar",
+        "noMedia": "Non se atoparon medios neste álbum",
+        "errorTitle": "Erro ao cargar o álbum",
+        "errorMessage": "Tenta actualizar a páxina ou contacta co soporte se o problema persiste.",
+        "refreshPage": "Actualizar páxina",
+        "photos": "Fotos"
+      },
+      'gu': { // Gujarati
+        "columns": "કૉલમ:",
+        "saveButton": "સાચવો",
+        "noMedia": "આ આલ્બમમાં કોઈ મીડિયા મળ્યું નથી",
+        "errorTitle": "આલ્બમ લોડ કરવામાં ભૂલ",
+        "errorMessage": "કૃપા કરીને પૃષ્ઠને તાજું કરવાનો પ્રયાસ કરો અથવા જો સમસ્યા ચાલુ રહે તો સપોર્ટનો સંપર્ક કરો.",
+        "refreshPage": "પૃષ્ઠને તાજું કરો",
+        "photos": "ફોટા"
+      },
+      'is': { // Icelandic
+        "columns": "Dálkar:",
+        "saveButton": "Vista",
+        "noMedia": "Engin miðlar fundust í þessu albúmi",
+        "errorTitle": "Villa við að hlaða albúmi",
+        "errorMessage": "Vinsamlegast reyndu að endurhlaða síðunni eða hafðu samband við stuðning ef vandamálið er viðvarandi.",
+        "refreshPage": "Endurhlaða síðu",
+        "photos": "Myndir"
+      },
+      'kk': { // Kazakh
+        "columns": "Бағандар:",
+        "saveButton": "Сақтау",
+        "noMedia": "Бұл альбомда медиа табылмады",
+        "errorTitle": "Альбомды жүктеу қатесі",
+        "errorMessage": "Парақты жаңартып көріңіз немесе мәселе жалғасса, қолдау қызметіне хабарласыңыз.",
+        "refreshPage": "Парақты жаңарту",
+        "photos": "Фотосуреттер"
+      },
+      'ky': { // Kyrgyz
+        "columns": "Мамычалар:",
+        "saveButton": "Сактоо",
+        "noMedia": "Бул альбомдо эч кандай медиа табылган жок",
+        "errorTitle": "Альбомду жүктөөдө ката",
+        "errorMessage": "Баракты жаңыртып көрүңүз же көйгөй уланса, колдоо кызматына кайрылыңыз.",
+        "refreshPage": "Баракты жаңыртуу",
+        "photos": "Сүрөттөр"
+      },
+      'lo': { // Lao
+        "columns": "ຖັນ:",
+        "saveButton": "ບັນທຶກ",
+        "noMedia": "ບໍ່ພົບສື່ໃນອະລະບ້ຳນີ້",
+        "errorTitle": "ເກີດຂໍ້ຜິດພາດໃນການໂຫຼດອະລະບ້ຳ",
+        "errorMessage": "ກະລຸນາລອງໂຫຼດຫນ້າໃຫມ່ ຫຼື ຕິດຕໍ່ຝ່າຍສະຫນັບສະຫນູນຖ້າບັນຫາຍັງສືບຕໍ່.",
+        "refreshPage": "ໂຫຼດຫນ້າໃຫມ່",
+        "photos": "ຮູບພາບ"
+      },
+      'lt': { // Lithuanian
+        "columns": "Stulpeliai:",
+        "saveButton": "Išsaugoti",
+        "noMedia": "Šiame albume nerasta jokių medijos failų",
+        "errorTitle": "Klaida įkeliant albumą",
+        "errorMessage": "Bandykite atnaujinti puslapį arba susisiekite su palaikymo tarnyba, jei problema išlieka.",
+        "refreshPage": "Atnaujinti puslapį",
+        "photos": "Nuotraukos"
+      },
+      'lv': { // Latvian
+        "columns": "Kolonnas:",
+        "saveButton": "Saglabāt",
+        "noMedia": "Šajā albumā nav atrasti mediji",
+        "errorTitle": "Kļūda ielādējot albumu",
+        "errorMessage": "Lūdzu, mēģiniet atsvaidzināt lapu vai sazinieties ar atbalstu, ja problēma turpinās.",
+        "refreshPage": "Atsvaidzināt lapu",
+        "photos": "Fotoattēli"
+      },
+      'mk': { // Macedonian
+        "columns": "Колони:",
+        "saveButton": "Зачувај",
+        "noMedia": "Не се пронајдени медиуми во овој албум",
+        "errorTitle": "Грешка при вчитување на албумот",
+        "errorMessage": "Обидете се да ја освежите страницата или контактирајте ја поддршката ако проблемот продолжува.",
+        "refreshPage": "Освежи ја страницата",
+        "photos": "Фотографии"
+      },
+      'mn': { // Mongolian
+        "columns": "Багана:",
+        "saveButton": "Хадгалах",
+        "noMedia": "Энэ цомогт медиа олдсонгүй",
+        "errorTitle": "Цомог ачаалахад алдаа гарлаа",
+        "errorMessage": "Хуудсыг дахин ачаална уу эсвэл асуудал үргэлжилсэн тохиолдолд дэмжлэгтэй холбогдоно уу.",
+        "refreshPage": "Хуудсыг дахин ачаалах",
+        "photos": "Зургууд"
+      },
+      'ne': { // Nepali
+        "columns": "स्तम्भहरू:",
+        "saveButton": "बचत गर्नुहोस्",
+        "noMedia": "यस एल्बममा कुनै मिडिया फेला परेन",
+        "errorTitle": "एल्बम लोड गर्दा त्रुटि",
+        "errorMessage": "कृपया पृष्ठ ताजा गर्ने प्रयास गर्नुहोस् वा समस्या जारी रहेमा समर्थनमा सम्पर्क गर्नुहोस्।",
+        "refreshPage": "पृष्ठ ताजा गर्नुहोस्",
+        "photos": "तस्बिरहरू"
+      },
+      'pa': { // Punjabi
+        "columns": "ਕਾਲਮ:",
+        "saveButton": "ਸੰਭਾਲੋ",
+        "noMedia": "ਇਸ ਐਲਬਮ ਵਿੱਚ ਕੋਈ ਮੀਡੀਆ ਨਹੀਂ ਮਿਲਿਆ",
+        "errorTitle": "ਐਲਬਮ ਲੋਡ ਕਰਨ ਵਿੱਚ ਗਲਤੀ",
+        "errorMessage": "ਕਿਰਪਾ ਕਰਕੇ ਪੰਨਾ ਤਾਜ਼ਾ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜਾਂ ਜੇ ਸਮੱਸਿਆ ਬਣੀ ਰਹਿੰਦੀ ਹੈ ਤਾਂ ਸਹਾਇਤਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।",
+        "refreshPage": "ਪੰਨਾ ਤਾਜ਼ਾ ਕਰੋ",
+        "photos": "ਤਸਵੀਰਾਂ"
+      },
+      'si': { // Sinhala
+        "columns": "තීරු:",
+        "saveButton": "සුරකින්න",
+        "noMedia": "මෙම ඇල්බමයේ කිසිදු මාධ්‍යයක් හමු නොවීය",
+        "errorTitle": "ඇල්බමය පූරණය කිරීමේ දෝෂයකි",
+        "errorMessage": "කරුණාකර පිටුව නැවුම් කිරීමට උත්සාහ කරන්න හෝ ගැටලුව දිගටම පවතී නම් සහාය සම්බන්ධ කරගන්න.",
+        "refreshPage": "පිටුව නැවුම් කරන්න",
+        "photos": "ඡායාරූප"
+      },
+      'sl': { // Slovenian
+        "columns": "Stolpci:",
+        "saveButton": "Shrani",
+        "noMedia": "V tem albumu ni najdenih medijev",
+        "errorTitle": "Napaka pri nalaganju albuma",
+        "errorMessage": "Poskusite osvežiti stran ali se obrnite na podporo, če težava vztraja.",
+        "refreshPage": "Osveži stran",
+        "photos": "Fotografije"
+      },
+      'sq': { // Albanian
+        "columns": "Kolona:",
+        "saveButton": "Ruaj",
+        "noMedia": "Asnjë media nuk u gjet në këtë album",
+        "errorTitle": "Gabim në ngarkimin e albumit",
+        "errorMessage": "Ju lutemi provoni të rifreskoni faqen ose kontaktoni mbështetjen nëse problemi vazhdon.",
+        "refreshPage": "Rifresko faqen",
+        "photos": "Fotografi"
+      },
+      'sr': { // Serbian
+        "columns": "Колоне:",
+        "saveButton": "Сачувај",
+        "noMedia": "Није пронађен ниједан медиј у овом албуму",
+        "errorTitle": "Грешка при учитавању албума",
+        "errorMessage": "Покушајте да освежите страницу или контактирајте подршку ако проблем и даље постоји.",
+        "refreshPage": "Освежи страницу",
+        "photos": "Фотографије"
+      },
+      'sw': { // Swahili
+        "columns": "Safu wima:",
+        "saveButton": "Hifadhi",
+        "noMedia": "Hakuna media ilipatikana katika albamu hii",
+        "errorTitle": "Hitilafu ya Kupakia Albamu",
+        "errorMessage": "Tafadhali jaribu kuonyesha upya ukurasa au wasiliana na msaada ikiwa tatizo linaendelea.",
+        "refreshPage": "Onyesha Upya Ukurasa",
+        "photos": "Picha"
+      },
+      'tg': { // Tajik
+        "columns": "Сутунҳо:",
+        "saveButton": "Нигоҳ доштан",
+        "noMedia": "Дар ин албом ягон медиа ёфт нашуд",
+        "errorTitle": "Хатогии боркунии албом",
+        "errorMessage": "Лутфан кӯшиш кунед саҳифаро нав кунед ё агар мушкилӣ идома ёбад, бо дастгирӣ тамос гиред.",
+        "refreshPage": "Навсозии саҳифа",
+        "photos": "Аксҳо"
+      },
+      'tl': { // Tagalog / Filipino
+        "columns": "Mga hanay:",
+        "saveButton": "I-save",
+        "noMedia": "Walang nahanap na media sa album na ito",
+        "errorTitle": "Error sa Paglo-load ng Album",
+        "errorMessage": "Pakisubukang i-refresh ang page o makipag-ugnayan sa support kung patuloy ang problema.",
+        "refreshPage": "I-refresh ang Page",
+        "photos": "Mga Larawan"
+      },
+      'uz': { // Uzbek
+        "columns": "Ustunlar:",
+        "saveButton": "Saqlash",
+        "noMedia": "Ushbu albomda hech qanday media topilmadi",
+        "errorTitle": "Albomni yuklashda xatolik",
+        "errorMessage": "Iltimos, sahifani yangilashga harakat qiling yoki muammo davom etsa, qo'llab-quvvatlash xizmatiga murojaat qiling.",
+        "refreshPage": "Sahifani yangilash",
+        "photos": "Rasmlar"
+      },
+      'xh': { // Xhosa
+        "columns": "Iikholam:",
+        "saveButton": "Gcina",
+        "noMedia": "Akukho ndlela zoshicilelo zifunyenweyo kwi albham",
+        "errorTitle": "Imposiso Yokulayisha i-Albham",
+        "errorMessage": "Nceda uzame ukuvuselela iphepha okanye uqhagamshelane nenkxaso ukuba ingxaki iyaqhubeka.",
+        "refreshPage": "Vuselela Iphepha",
+        "photos": "Imifanekiso"
+      },
+      'yo': { // Yoruba
+        "columns": "Awọn ila:",
+        "saveButton": "Fipamọ",
+        "noMedia": "Ko si media ti a ri ni alubọọmu yii",
+        "errorTitle": "Aṣiṣe Igbasilẹ Alubọọmu",
+        "errorMessage": "Jọwọ gbiyanju lati tun oju-iwe ṣe tabi kan si atilẹyin ti iṣoro ba tẹsiwaju.",
+        "refreshPage": "Tun Oju-iwe ṣe",
+        "photos": "Awọn Fọto"
+      },
+      'zu': { // Zulu
+        "columns": "Amakholamu:",
+        "saveButton": "Londoloza",
+        "noMedia": "Ayikho imidiya etholakele kule albhamu",
+        "errorTitle": "Iphutha Lokulayisha i-Albhamu",
+        "errorMessage": "Sicela uzame ukuvuselela ikhasi noma uxhumane nosizo uma inkinga iqhubeka.",
+        "refreshPage": "Vuselela Ikhasi",
+        "photos": "Izithombe"
+      },
+      'am': { // Amharic
+        "columns": "አምዶች:",
+        "saveButton": "አስቀምጥ",
+        "noMedia": "በዚህ አልበም ውስጥ ምንም ሚዲያ አልተገኘም",
+        "errorTitle": "አልበም በመጫን ላይ ስህተት",
+        "errorMessage": "እባክዎን ገጹን ለማደስ ይሞክሩ ወይም ችግሩ ከቀጠለ ድጋፍን ያግኙ።",
+        "refreshPage": "ገጽ አድስ",
+        "photos": "ፎቶዎች"
+      },
+      'ha': { // Hausa
+        "columns": "Gindin layuka:",
+        "saveButton": "Ajiye",
+        "noMedia": "Ba a sami kowane kafofin watsa labarai a cikin wannan albomu ba",
+        "errorTitle": "Kuskure Yayin Loda Albomu",
+        "errorMessage": "Da fatan za a gwada sabuntawa shafin ko tuntuɓi tallafi idan matsalar ta ci gaba.",
+        "refreshPage": "Sabunta Shafin",
+        "photos": "Hotuna"
+      },
+      'ig': { // Igbo
+        "columns": "Ogidi:",
+        "saveButton": "Chekwa",
+        "noMedia": "Enweghị media hụrụ n'album a",
+        "errorTitle": "Nsogbu Na-ebufe Album",
+        "errorMessage": "Biko gbalịa imegharị ibe ma ọ bụ kpọtụrụ nkwado ma ọ bụrụ na nsogbu ahụ ka dị.",
+        "refreshPage": "Megharịa Ibe",
+        "photos": "Foto"
+      },
+      'jv': { // Javanese
+        "columns": "Kolom:",
+        "saveButton": "Simpen",
+        "noMedia": "Ora ana media sing ditemokake ing album iki",
+        "errorTitle": "Kesalahan Ngamot Album",
+        "errorMessage": "Mangga nyoba refresh kaca utawa hubungi bantuan yen masalah terus.",
+        "refreshPage": "Refresh Kaca",
+        "photos": "Foto"
+      },
+      'km': { // Khmer
+        "columns": "ជួរឈរ៖",
+        "saveButton": "រក្សាទុក",
+        "noMedia": "រកមិនឃើញមេឌៀក្នុងអាល់ប៊ុមនេះទេ",
+        "errorTitle": "កំហុសក្នុងការផ្ទុកអាល់ប៊ុម",
+        "errorMessage": "សូមព្យាយាមផ្ទុកទំព័រឡើងវិញ ឬទាក់ទងផ្នែកគាំទ្រប្រសិនបើបញ្ហានៅតែបន្ត។",
+        "refreshPage": "ផ្ទុកទំព័រឡើងវិញ",
+        "photos": "រូបថត"
+      },
+      'my': { // Burmese
+        "columns": "ကော်လံများ-",
+        "saveButton": "သိမ်းဆည်းပါ",
+        "noMedia": "ဤအယ်လ်ဘမ်တွင် မီဒီယာမတွေ့ပါ",
+        "errorTitle": "အယ်လ်ဘမ်တင်နေစဉ် အမှားဖြစ်ပေါ်သည်",
+        "errorMessage": "စာမျက်နှာအား ပြန်လည်စတင်ရန် ကြိုးစားပါ သို့မဟုတ် ပြဿနာဆက်လက်ဖြစ်ပေါ်နေပါက အကူအညီကို ဆက်သွယ်ပါ။",
+        "refreshPage": "စာမျက်နှာအား ပြန်လည်စတင်ပါ",
+        "photos": "ဓာတ်ပုံများ"
+      },
+      'or': { // Odia/Oriya
+        "columns": "ସ୍ତମ୍ଭଗୁଡିକ:",
+        "saveButton": "ସଞ୍ଚୟ କରନ୍ତୁ",
+        "noMedia": "ଏହି ଆଲବମରେ କୌଣସି ମିଡିଆ ମିଳିଲା ନାହିଁ",
+        "errorTitle": "ଆଲବାମ୍ ଲୋଡ୍ କରିବାରେ ତ୍ରୁଟି",
+        "errorMessage": "ଦୟାକରି ପୃଷ୍ଠାକୁ ରିଫ୍ରେସ୍ କରିବାକୁ ଚେଷ୍ଟା କରନ୍ତୁ କିମ୍ବା ଯଦି ସମସ୍ୟା ଜାରି ରହେ ତେବେ ସମର୍ଥନ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ।",
+        "refreshPage": "ପୃଷ୍ଠା ରିଫ୍ରେସ୍ କରନ୍ତୁ",
+        "photos": "ଫଟୋ"
+      },
+      'ps': { // Pashto
+        "columns": "ستنې:",
+        "saveButton": "خوندي کړئ",
+        "noMedia": "په دې البوم کې هیڅ میډیا ونه موندل شوه",
+        "errorTitle": "د البوم په پورته کولو کې تېروتنه",
+        "errorMessage": "مهرباني وکړئ د پاڼې د تازه کولو هڅه وکړئ یا که ستونزه دوام وکړي، د ملاتړ سره اړیکه ونیسئ.",
+        "refreshPage": "پاڼه تازه کړئ",
+        "photos": "انځورونه"
+      },
+      'sd': { // Sindhi
+        "columns": "ڪالم:",
+        "saveButton": "محفوظ ڪيو",
+        "noMedia": "هن البم ۾ ڪا به ميڊيا نه ملي",
+        "errorTitle": "البم لوڊ ڪرڻ ۾ خرابي",
+        "errorMessage": "مهرباني ڪري صفحي کي تازو ڪرڻ جي ڪوشش ڪريو يا مسئلو جاري رهي ته سپورٽ سان رابطو ڪريو.",
+        "refreshPage": "صفحو تازو ڪريو",
+        "photos": "تصويرون"
+      },
+      'so': { // Somali
+        "columns": "Tiirarka:",
+        "saveButton": "Kaydi",
+        "noMedia": "Ma laha warbaahinta laga helay albumkan",
+        "errorTitle": "Khalad Soo Gelinta Albumka",
+        "errorMessage": "Fadlan isku day inaad bogga cusbooneysid ama la xiriir taageerada haddii dhibaatadu sii socoto.",
+        "refreshPage": "Cusboonaysii Bogga",
+        "photos": "Sawirro"
+      },
+      'as': { // Assamese
+        "columns": "স্তম্ভসমূহ:",
+        "saveButton": "সংৰক্ষণ কৰক",
+        "noMedia": "এই এলবামত কোনো মিডিয়া পোৱা নাই",
+        "errorTitle": "এলবাম লোড কৰাত ত্ৰুটি",
+        "errorMessage": "অনুগ্ৰহ কৰি পৃষ্ঠা সতেজ কৰিবলৈ চেষ্টা কৰক বা সমস্যা অব্যাহত থাকিলে সমৰ্থনৰ সৈতে যোগাযোগ কৰক।",
+        "refreshPage": "পৃষ্ঠা সতেজ কৰক",
+        "photos": "ফটো"
+      },
+      'bho': { // Bhojpuri
+        "columns": "कॉलम:",
+        "saveButton": "सहेजीं",
+        "noMedia": "इस एलबम में कौनो मीडिया ना मिलल",
+        "errorTitle": "एलबम लोड करे में त्रुटि",
+        "errorMessage": "कृपया पेज के रिफ्रेश करे के कोशिश करीं या अगर समस्या बनल रहे त सपोर्ट से संपर्क करीं।",
+        "refreshPage": "पेज रिफ्रेश करीं",
+        "photos": "फोटो"
+      },
+      'br': { // Breton
+        "columns": "Kolonennoù:",
+        "saveButton": "Enrollañ",
+        "noMedia": "N'eus bet kavet media ebet en albom-mañ",
+        "errorTitle": "Fazi o kargañ an albom",
+        "errorMessage": "Klaskit freskaat ar bajenn pe kit e darempred gant ar skoazell ma kendalc'h ar gudenn.",
+        "refreshPage": "Freskaat ar bajenn",
+        "photos": "Luc'hskeudennoù"
+      },
+      'eo': { // Esperanto
+        "columns": "Kolumnoj:",
+        "saveButton": "Konservi",
+        "noMedia": "Neniu aŭdvidaĵo trovita en ĉi tiu albumo",
+        "errorTitle": "Eraro Ŝargante Albumon",
+        "errorMessage": "Bonvolu provi refreŝigi la paĝon aŭ kontakti subtenon se la problemo daŭras.",
+        "refreshPage": "Refreŝigi Paĝon",
+        "photos": "Fotoj"
+      },
+      'fy': { // Frisian
+        "columns": "Kolommen:",
+        "saveButton": "Bewarje",
+        "noMedia": "Gjin media fûn yn dit album",
+        "errorTitle": "Flater by laden fan album",
+        "errorMessage": "Probearje de side te ferfarskjen of nim kontakt op mei stipe as it probleem oanhâldt.",
+        "refreshPage": "Side ferfarskje",
+        "photos": "Foto's"
+      },
+      'ga': { // Irish
+        "columns": "Colúin:",
+        "saveButton": "Sábháil",
+        "noMedia": "Níor aimsíodh aon mheáin san albam seo",
+        "errorTitle": "Earráid ag Lódáil an Albam",
+        "errorMessage": "Déan iarracht an leathanach a athnuachan nó déan teagmháil le tacaíocht má leanann an fhadhb.",
+        "refreshPage": "Athnuaigh an Leathanach",
+        "photos": "Grianghraif"
+      },
+      'gd': { // Scottish Gaelic
+        "columns": "Colbhan:",
+        "saveButton": "Sàbhail",
+        "noMedia": "Cha deach meadhanan a lorg san albam seo",
+        "errorTitle": "Mearachd a' Luchdadh an Albam",
+        "errorMessage": "Feuch gun ùraich thu an duilleag no cuir fios gu taic ma tha an duilgheadas a' leantainn.",
+        "refreshPage": "Ùraich an Duilleag",
+        "photos": "Dealbhan"
+      },
+      'mi': { // Māori
+        "columns": "Pou:",
+        "saveButton": "Tiaki",
+        "noMedia": "Kaore he pāpāho i kitea i tēnei pukapuka",
+        "errorTitle": "He Hapa i te Utanga Pukapuka",
+        "errorMessage": "Tēnā koa ngana ki te tāmata i te whārangi, ki te mau tonu te raru, whakapā atu ki te tautoko.",
+        "refreshPage": "Tāmata Whārangi",
+        "photos": "Whakaahua"
+      },
+      'mt': { // Maltese
+        "columns": "Kolonni:",
+        "saveButton": "Żomm",
+        "noMedia": "L-ebda midja ma nstabet f'dan l-album",
+        "errorTitle": "Żball fit-Tagħbija tal-Album",
+        "errorMessage": "Jekk jogħġbok ipprova aġġorna l-paġna jew ikkuntattja l-appoġġ jekk il-problema tippersisti.",
+        "refreshPage": "Aġġorna l-Paġna",
+        "photos": "Ritratti"
+      },
+      'nn': { // Norwegian Nynorsk
+        "columns": "Kolonnar:",
+        "saveButton": "Lagre",
+        "noMedia": "Ingen media funne i dette albumet",
+        "errorTitle": "Feil ved lasting av album",
+        "errorMessage": "Prøv å oppdatere sida eller kontakt støtte viss problemet held fram.",
+        "refreshPage": "Oppdater sida",
+        "photos": "Bilete"
+      },
+      'rw': { // Kinyarwanda
+        "columns": "Inkingi:",
+        "saveButton": "Bika",
+        "noMedia": "Nta bitangazamakuru byabonetse muri iyi albumu",
+        "errorTitle": "Ikosa mu Gupakira Albumu",
+        "errorMessage": "Nyamuneka gerageza kongera guhindura urupapuro cyangwa wahamagara ubufasha niba ikibazo gikomeje.",
+        "refreshPage": "Ongera Uhindure Urupapuro",
+        "photos": "Amafoto"
+      },
+      'sa': { // Sanskrit
+        "columns": "स्तम्भाः:",
+        "saveButton": "रक्षतु",
+        "noMedia": "अस्मिन् सङ्ग्रहे न किमपि माध्यमं प्राप्तम्",
+        "errorTitle": "सङ्ग्रहस्य आरोपणे दोषः",
+        "errorMessage": "कृपया पृष्ठं पुनरारम्भं कर्तुं प्रयत्नं कुर्वन्तु अथवा समस्या यदि अनुवर्तते तर्हि समर्थनेन सह सम्पर्कं कुर्वन्तु।",
+        "refreshPage": "पृष्ठं पुनरारम्भं कुर्वन्तु",
+        "photos": "छायाचित्राणि"
+      },
+      'sm': { // Samoan
+        "columns": "Koluma:",
+        "saveButton": "Sefe",
+        "noMedia": "E leai ni media na maua i lenei faʻaputuga",
+        "errorTitle": "Mea Sese i le Utaina o le Faʻaputuga",
+        "errorMessage": "Faʻamolemole taumafai e faʻafou le itulau pe faʻafesootaʻi le lagolago pe afai e faʻaauau pea le faʻafitauli.",
+        "refreshPage": "Faʻafou le Itulau",
+        "photos": "Ata"
+      },
+      'st': { // Sesotho
+        "columns": "Maemo a boima:",
+        "saveButton": "Boloka",
+        "noMedia": "Ha ho media e fumanoeng albumong ena",
+        "errorTitle": "Phoso ea ho Jarisa Album",
+        "errorMessage": "Ka kopo leka ho nchafatsa leqephe kapa ikopanye le tšehetso haeba bothata bo tsoela pele.",
+        "refreshPage": "Nchafatsa Leqephe",
+        "photos": "Linehelo"
+      }      
     };
-    
     // Detect user's language
     function detectUserLanguage() {
       const browserLang = navigator.language || navigator.userLanguage;
@@ -485,7 +1176,7 @@
     // Update UI with translated text
     function updateUITranslations() {
       // Update UI elements
-      document.getElementById('columns-label').innerHTML = `<strong>${t.picturesPerRow}</strong>`;
+      document.getElementById('columns-label').innerHTML = `<strong>${t.columns}</strong>`;
       document.getElementById('save-button').textContent = t.saveButton;
       document.getElementById('album-title').textContent = t.loadingAlbum;
       document.getElementById('loading-message').textContent = t.loadingContent;
@@ -791,7 +1482,7 @@
       }
       
       // Save the preference to localStorage
-      localStorage.setItem('photosPerRow', value);
+      localStorage.setItem('columns', value);
     }
     
     // Save album function
@@ -847,7 +1538,7 @@
     // Start the application
     document.addEventListener('DOMContentLoaded', function() {
       // Set initial column layout based on saved preference or default
-      const savedColumnsValue = localStorage.getItem('photosPerRow') || '1';
+      const savedColumnsValue = localStorage.getItem('columns') || '1';
       document.getElementById('columns').value = savedColumnsValue;
       changeColumns(savedColumnsValue);
       

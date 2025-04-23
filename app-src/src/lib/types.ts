@@ -57,3 +57,18 @@ export type ProgressTracker = {
   filesWithError: number
   overallProgress: number
 }
+
+export type FileType = {
+  dataKey: string;
+  thumbnailDataKey: string | null;
+  durationInSeconds: number | null;
+};
+
+export type FolderType = {
+  folderPositionId: string;
+  folderId: string;
+  folderName: string | null;
+  createdAt: number | null;
+  updatedAt: number | null;
+  files: FileType[];
+};

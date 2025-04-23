@@ -9,7 +9,6 @@ import {
 import { supportedLanguages } from "@/lib/languages"
 import { GRAPHQL_ENDPOINT, REGION, CLIENT_ID, STORAGE_KEYS } from "@/lib/config"
 
-
 const cognito = new CognitoIdentityProviderClient({ region: REGION })
 
 function normalizeEmail(input: string): string {
