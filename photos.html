@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Photo Viewer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/app/favicon.ico">
   <style>
     body {
       font-family: Helvetica, Arial, sans-serif;
@@ -15,17 +16,56 @@
       padding: 20px;
     }
     .header {
-      margin-bottom: 20px;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+      z-index: 10;
+      margin-bottom: 15px;
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+    }
+    .save-button { 
+      color: #006adc; 
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: white; 
+      padding: 8px 16px; 
+      cursor: pointer; 
+      font-weight: 500;
+      min-width: 80px;
+      text-align: center;
     }
     .album-title {
       font-weight: 400;
       margin: 0;
       font-size: 24px;
     }
+    .media-container {
+      padding: 20px;
+    }
     .media-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       grid-gap: 20px;
+    }
+    .media-grid.one-per-row {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .media-grid.two-per-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .media-grid.three-per-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .media-grid.four-per-row {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .media-grid.five-per-row {
+      grid-template-columns: repeat(5, 1fr);
     }
     .media-block {
       background: white;
@@ -33,16 +73,21 @@
       transition: transform 0.2s;
       position: relative;
       height: 100%;
+      display: flex;
+      flex-direction: column;
     }
     .media-block:hover {
       transform: translateY(-2px);
     }
-    .lazy-image-container {
+    .lazy-image-container, .thumbnail-wrapper {
       position: relative;
       overflow: hidden;
       background-color: #f0f0f0;
       width: 100%;
       min-height: 200px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
     .lazy-image {
       width: 100%;
@@ -132,74 +177,67 @@
       font-size: 18px;
       color: #666;
     }
-    #columns-selector {
-      margin-bottom: 20px;
+    .row-selector {
+      display: flex;
+      align-items: center;
     }
-    select {
-      padding: 8px;
+    .row-selector label {
+      margin-right: 8px;
+      font-size: 14px;
+      color: #555;
+      font-weight: normal;
+    }
+    .row-selector select {
+      padding: 5px 8px;
+      border: 1px solid #ccc;
       border-radius: 4px;
-      border: 1px solid #ddd;
+      background-color: white;
+      cursor: pointer;
+      font-size: 14px;
+      min-width: 50px;
     }
-    label {
-      margin-right: 10px;
+    html[dir="rtl"] .row-selector label {
+      margin-right: 0;
+      margin-left: 8px;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1 id="album-title" class="album-title">Loading album...</h1>
-    
-    <div id="columns-selector">
-      <label for="columns">Columns:</label>
-      <select id="columns" onchange="changeColumns(this.value)">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3" selected>3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
+    <div class="header-content">
+      <div style="display: flex; align-items: center;">
+        <div class="row-selector">
+          <label for="columns"><strong>Columns:</strong></label>
+          <select id="columns" onchange="changeColumns(this.value)">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <h2 id="album-title" class="album-title" style="margin-left: 20px;">Loading album...</h2>
+      </div>
+      <div>
+        <button id="save-button" class="save-button" onclick="saveAlbum()">Save</button>
+      </div>
     </div>
   </div>
 
-  <div id="media-container">
-    <div id="media-grid" class="media-grid">
+  <div id="media-container" class="media-container">
+    <div id="media-grid" class="media-grid one-per-row">
       <div class="loading">Loading album content...</div>
     </div>
   </div>
 
   <script>
-    // Get folder ID from URL query parameter
-    function getFolderIdFromUrl() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const folderId = urlParams.get('id');
-      
-      if (!folderId) {
-        // Check if the folder ID is in the URL path
-        const pathParts = window.location.pathname.split('/');
-        const lastPart = pathParts[pathParts.length - 1];
-        
-        if (lastPart && lastPart.includes('_')) {
-          return lastPart;
-        }
-      }
-      
-      return folderId;
-    }
-    
-    // Format the folder ID into the expected format
-    function formatFolderId(rawId) {
-      if (!rawId || !rawId.includes('_')) {
-        return null;
-      }
-      
-      const [prefix, suffix] = rawId.split('_');
-      return `${prefix}_____${suffix}____Folder`;
-    }
-    
     // Constants
     const GRAPHQL_ENDPOINT = "https://nmu355vgsbdbjcihhtekwdczxi.appsync-api.us-east-1.amazonaws.com/graphql";
     const API_KEY = "da2-45aunjrsbfbdhlaaomrswhsszq";
     const BUCKET_URL = "https://i6180-assets-prod-0.s3.amazonaws.com/";
+    
+    // Set default columns to 1 (or from localStorage if available)
+    const defaultColumns = localStorage.getItem('picturesPerRow') || '1';
     
     // GraphQL query to fetch folder data
     const FETCH_FOLDERS_QUERY = `
@@ -231,6 +269,34 @@
         }
       }
     `;
+    
+    // Get folder ID from URL query parameter
+    function getFolderIdFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const folderId = urlParams.get('id');
+      
+      if (!folderId) {
+        // Check if the folder ID is in the URL path
+        const pathParts = window.location.pathname.split('/');
+        const lastPart = pathParts[pathParts.length - 1];
+        
+        if (lastPart && lastPart.includes('_')) {
+          return lastPart;
+        }
+      }
+      
+      return folderId;
+    }
+    
+    // Format the folder ID into the expected format
+    function formatFolderId(rawId) {
+      if (!rawId || !rawId.includes('_')) {
+        return null;
+      }
+      
+      const [prefix, suffix] = rawId.split('_');
+      return `${prefix}_____${suffix}____Folder`;
+    }
     
     // Format time in MM:SS
     function formatTime(seconds = 0) {
@@ -432,7 +498,45 @@
     // Change the number of columns in the grid
     function changeColumns(value) {
       const mediaGrid = document.getElementById('media-grid');
-      mediaGrid.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
+      
+      // Remove all existing row classes
+      mediaGrid.classList.remove('one-per-row', 'two-per-row', 'three-per-row', 'four-per-row', 'five-per-row');
+      
+      // Add the appropriate class based on selection
+      switch(value) {
+        case '1':
+          mediaGrid.classList.add('one-per-row');
+          break;
+        case '2':
+          mediaGrid.classList.add('two-per-row');
+          break;
+        case '3':
+          mediaGrid.classList.add('three-per-row');
+          break;
+        case '4':
+          mediaGrid.classList.add('four-per-row');
+          break;
+        case '5':
+          mediaGrid.classList.add('five-per-row');
+          break;
+        default:
+          mediaGrid.classList.add('one-per-row');
+      }
+      
+      // Save the preference to localStorage
+      localStorage.setItem('picturesPerRow', value);
+    }
+    
+    // Save album function
+    function saveAlbum() {
+      const folderId = getFolderIdFromUrl();
+      const formattedFolderId = formatFolderId(folderId);
+      
+      if (formattedFolderId) {
+        window.location.href = `/app/save-album.html?folderId=${formattedFolderId}`;
+      } else {
+        alert('Invalid folder ID. Cannot save album.');
+      }
     }
     
     // Show error message
@@ -460,6 +564,8 @@
         return;
       }
       
+      // We've already set the columns at page load, so we don't need to do it again here
+      
       const data = await fetchFolder(folderId);
       
       if (data) {
@@ -468,7 +574,15 @@
     }
     
     // Start the application
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set initial column layout based on saved preference or default
+      const savedColumnsValue = localStorage.getItem('picturesPerRow') || '1';
+      document.getElementById('columns').value = savedColumnsValue;
+      changeColumns(savedColumnsValue);
+      
+      // Initialize the page
+      init();
+    });
   </script>
 </body>
 </html>
