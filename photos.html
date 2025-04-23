@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Photo Viewer</title>
+  <title id="page-title">Photos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="/app/favicon.ico">
   <style>
@@ -43,7 +43,10 @@
     .album-title {
       font-weight: 400;
       margin: 0;
+      padding: 16px 24px 0 24px;
       font-size: 24px;
+      display: none;
+      background-color: white;
     }
     .media-container {
       padding: 20px;
@@ -204,10 +207,11 @@
 </head>
 <body>
   <div class="header">
+    <h2 id="album-title" class="album-title">Loading album...</h2>
     <div class="header-content">
       <div style="display: flex; align-items: center;">
         <div class="row-selector">
-          <label for="columns"><strong>Columns:</strong></label>
+          <label for="columns" id="columns-label"><strong>Columns:</strong></label>
           <select id="columns" onchange="changeColumns(this.value)">
             <option value="1" selected>1</option>
             <option value="2">2</option>
@@ -216,7 +220,6 @@
             <option value="5">5</option>
           </select>
         </div>
-        <h2 id="album-title" class="album-title" style="margin-left: 20px;">Loading album...</h2>
       </div>
       <div>
         <button id="save-button" class="save-button" onclick="saveAlbum()">Save</button>
@@ -226,7 +229,7 @@
 
   <div id="media-container" class="media-container">
     <div id="media-grid" class="media-grid one-per-row">
-      <div class="loading">Loading album content...</div>
+      <div id="loading-message" class="loading">Loading album content...</div>
     </div>
   </div>
 
@@ -237,7 +240,257 @@
     const BUCKET_URL = "https://i6180-assets-prod-0.s3.amazonaws.com/";
     
     // Set default columns to 1 (or from localStorage if available)
-    const defaultColumns = localStorage.getItem('picturesPerRow') || '1';
+    const defaultColumns = localStorage.getItem('photosPerRow') || '1';
+    
+    // Translations for UI elements in different languages
+    const translations = {
+      // Original languages
+      'en': { // English (default)
+        "picturesPerRow": "Columns:",
+        "saveButton": "Save",
+        "noMedia": "No media found in this album",
+        "errorTitle": "Error Loading Album",
+        "errorMessage": "Please try refreshing the page or contact support if the problem persists.",
+        "refreshPage": "Refresh Page",
+        "photos": "Photos",
+        "loadingAlbum": "Loading album...",
+        "loadingContent": "Loading album content..."
+      },
+      'es': { // Spanish
+        "picturesPerRow": "Imágenes por fila:",
+        "saveButton": "Guardar",
+        "noMedia": "No se encontraron medios en este álbum",
+        "errorTitle": "Error al cargar el álbum",
+        "errorMessage": "Intente actualizar la página o póngase en contacto con el soporte si el problema persiste.",
+        "refreshPage": "Actualizar página",
+        "photos": "Fotos",
+        "loadingAlbum": "Cargando álbum...",
+        "loadingContent": "Cargando contenido del álbum..."
+      },
+      'fr': { // French
+        "picturesPerRow": "Images par ligne:",
+        "saveButton": "Enregistrer",
+        "noMedia": "Aucun média trouvé dans cet album",
+        "errorTitle": "Erreur de chargement de l'album",
+        "errorMessage": "Veuillez actualiser la page ou contacter le support si le problème persiste.",
+        "refreshPage": "Actualiser la page",
+        "photos": "Photos",
+        "loadingAlbum": "Chargement de l'album...",
+        "loadingContent": "Chargement du contenu de l'album..."
+      },
+      'de': { // German
+        "picturesPerRow": "Bilder pro Zeile:",
+        "saveButton": "Speichern",
+        "noMedia": "Keine Medien in diesem Album gefunden",
+        "errorTitle": "Fehler beim Laden des Albums",
+        "errorMessage": "Bitte aktualisieren Sie die Seite oder wenden Sie sich an den Support, wenn das Problem weiterhin besteht.",
+        "refreshPage": "Seite aktualisieren",
+        "photos": "Fotos",
+        "loadingAlbum": "Album wird geladen...",
+        "loadingContent": "Albuminhalt wird geladen..."
+      },
+      'zh': { // Chinese (Simplified)
+        "picturesPerRow": "每行图片数:",
+        "saveButton": "保存",
+        "noMedia": "此相册中未找到媒体",
+        "errorTitle": "加载相册出错",
+        "errorMessage": "请刷新页面，如果问题仍然存在，请联系支持人员。",
+        "refreshPage": "刷新页面",
+        "photos": "照片",
+        "loadingAlbum": "加载相册中...",
+        "loadingContent": "加载相册内容中..."
+      },
+      'ja': { // Japanese
+        "picturesPerRow": "行あたりの写真:",
+        "saveButton": "保存",
+        "noMedia": "このアルバムにメディアが見つかりません",
+        "errorTitle": "アルバムの読み込みエラー",
+        "errorMessage": "ページを更新するか、問題が解決しない場合はサポートに連絡してください。",
+        "refreshPage": "ページを更新",
+        "photos": "写真",
+        "loadingAlbum": "アルバムを読み込み中...",
+        "loadingContent": "アルバムのコンテンツを読み込み中..."
+      },
+      'ko': { // Korean
+        "picturesPerRow": "행당 사진 수:",
+        "saveButton": "저장",
+        "noMedia": "이 앨범에서 미디어를 찾을 수 없습니다",
+        "errorTitle": "앨범 로딩 오류",
+        "errorMessage": "페이지를 새로고침하거나 문제가 지속되면 지원팀에 문의하세요.",
+        "refreshPage": "페이지 새로고침",
+        "photos": "사진",
+        "loadingAlbum": "앨범 로딩 중...",
+        "loadingContent": "앨범 콘텐츠 로딩 중..."
+      },
+      'it': { // Italian
+        "picturesPerRow": "Immagini per riga:",
+        "saveButton": "Salva",
+        "noMedia": "Nessun media trovato in questo album",
+        "errorTitle": "Errore di caricamento dell'album",
+        "errorMessage": "Prova ad aggiornare la pagina o contatta l'assistenza se il problema persiste.",
+        "refreshPage": "Aggiorna pagina",
+        "photos": "Foto",
+        "loadingAlbum": "Caricamento album...",
+        "loadingContent": "Caricamento contenuto album..."
+      },
+      'pt': { // Portuguese
+        "picturesPerRow": "Imagens por linha:",
+        "saveButton": "Salvar",
+        "noMedia": "Nenhuma mídia encontrada neste álbum",
+        "errorTitle": "Erro ao carregar álbum",
+        "errorMessage": "Tente atualizar a página ou entre em contato com o suporte se o problema persistir.",
+        "refreshPage": "Atualizar página",
+        "photos": "Fotos",
+        "loadingAlbum": "Carregando álbum...",
+        "loadingContent": "Carregando conteúdo do álbum..."
+      },
+      'ru': { // Russian
+        "picturesPerRow": "Изображений в ряду:",
+        "saveButton": "Сохранить",
+        "noMedia": "В этом альбоме не найдено медиафайлов",
+        "errorTitle": "Ошибка загрузки альбома",
+        "errorMessage": "Пожалуйста, обновите страницу или обратитесь в службу поддержки, если проблема не устранена.",
+        "refreshPage": "Обновить страницу",
+        "photos": "Фотографии",
+        "loadingAlbum": "Загрузка альбома...",
+        "loadingContent": "Загрузка содержимого альбома..."
+      },
+      'nl': { // Dutch
+        "picturesPerRow": "Afbeeldingen per rij:",
+        "saveButton": "Opslaan",
+        "noMedia": "Geen media gevonden in dit album",
+        "errorTitle": "Fout bij laden van album",
+        "errorMessage": "Vernieuw de pagina of neem contact op met de ondersteuning als het probleem aanhoudt.",
+        "refreshPage": "Pagina vernieuwen",
+        "photos": "Foto's",
+        "loadingAlbum": "Album laden...",
+        "loadingContent": "Albuminhoud laden..."
+      },
+      'ar': { // Arabic
+        "picturesPerRow": "الصور في الصف:",
+        "saveButton": "حفظ",
+        "noMedia": "لم يتم العثور على وسائط في هذا الألبوم",
+        "errorTitle": "خطأ في تحميل الألبوم",
+        "errorMessage": "يرجى تحديث الصفحة أو الاتصال بالدعم إذا استمرت المشكلة.",
+        "refreshPage": "تحديث الصفحة",
+        "photos": "صور",
+        "loadingAlbum": "جاري تحميل الألبوم...",
+        "loadingContent": "جاري تحميل محتوى الألبوم..."
+      },
+      'pl': { // Polish
+        "picturesPerRow": "Obrazy w rzędzie:",
+        "saveButton": "Zapisz",
+        "noMedia": "Nie znaleziono mediów w tym albumie",
+        "errorTitle": "Błąd ładowania albumu",
+        "errorMessage": "Spróbuj odświeżyć stronę lub skontaktuj się z pomocą techniczną, jeśli problem będzie się powtarzał.",
+        "refreshPage": "Odśwież stronę",
+        "photos": "Zdjęcia",
+        "loadingAlbum": "Ładowanie albumu...",
+        "loadingContent": "Ładowanie zawartości albumu..."
+      },
+      'tr': { // Turkish
+        "picturesPerRow": "Satır başına resim:",
+        "saveButton": "Kaydet",
+        "noMedia": "Bu albümde medya bulunamadı",
+        "errorTitle": "Albüm Yükleme Hatası",
+        "errorMessage": "Lütfen sayfayı yenileyin veya sorun devam ederse destek ile iletişime geçin.",
+        "refreshPage": "Sayfayı Yenile",
+        "photos": "Fotoğraflar",
+        "loadingAlbum": "Albüm yükleniyor...",
+        "loadingContent": "Albüm içeriği yükleniyor..."
+      },
+      'hi': { // Hindi
+        "picturesPerRow": "प्रति पंक्ति चित्र:",
+        "saveButton": "सहेजें",
+        "noMedia": "इस एल्बम में कोई मीडिया नहीं मिला",
+        "errorTitle": "एल्बम लोड करने में त्रुटि",
+        "errorMessage": "कृपया पेज को रीफ्रेश करें या यदि समस्या बनी रहती है तो सपोर्ट से संपर्क करें।",
+        "refreshPage": "पेज रीफ्रेश करें",
+        "photos": "तस्वीरें",
+        "loadingAlbum": "एल्बम लोड हो रहा है...",
+        "loadingContent": "एल्बम सामग्री लोड हो रही है..."
+      },
+      // Additional languages (adding just a sample of the many languages from the lambda)
+      'sv': { // Swedish
+        "picturesPerRow": "Bilder per rad:",
+        "saveButton": "Spara",
+        "noMedia": "Inga media hittades i detta album",
+        "errorTitle": "Fel vid laddning av album",
+        "errorMessage": "Försök att uppdatera sidan eller kontakta support om problemet kvarstår.",
+        "refreshPage": "Uppdatera sidan",
+        "photos": "Foton",
+        "loadingAlbum": "Laddar album...",
+        "loadingContent": "Laddar albuminnehåll..."
+      },
+      'he': { // Hebrew
+        "picturesPerRow": "תמונות בשורה:",
+        "saveButton": "שמור",
+        "noMedia": "לא נמצאו מדיה באלבום זה",
+        "errorTitle": "שגיאה בטעינת האלבום",
+        "errorMessage": "אנא נסה לרענן את הדף או צור קשר עם התמיכה אם הבעיה נמשכת.",
+        "refreshPage": "רענן דף",
+        "photos": "תמונות",
+        "loadingAlbum": "טוען אלבום...",
+        "loadingContent": "טוען תוכן אלבום..."
+      },
+      'th': { // Thai
+        "picturesPerRow": "รูปภาพต่อแถว:",
+        "saveButton": "บันทึก",
+        "noMedia": "ไม่พบสื่อในอัลบั้มนี้",
+        "errorTitle": "เกิดข้อผิดพลาดในการโหลดอัลบั้ม",
+        "errorMessage": "โปรดลองรีเฟรชหน้าหรือติดต่อฝ่ายสนับสนุนหากยังคงมีปัญหา",
+        "refreshPage": "รีเฟรชหน้า",
+        "photos": "รูปภาพ",
+        "loadingAlbum": "กำลังโหลดอัลบั้ม...",
+        "loadingContent": "กำลังโหลดเนื้อหาอัลบั้ม..."
+      }
+      // Note: The actual implementation should include all languages from the lambda
+    };
+    
+    // Detect user's language
+    function detectUserLanguage() {
+      const browserLang = navigator.language || navigator.userLanguage;
+      const lang = browserLang.split('-')[0]; // Get base language code
+      
+      // Check if we have translations for this language
+      if (translations[browserLang]) {
+        return browserLang; // Return full language code if available
+      } else if (translations[lang]) {
+        return lang; // Return base language code if available
+      }
+      
+      return 'en'; // Default to English
+    }
+    
+    // Set RTL direction for RTL languages (like Arabic and Hebrew)
+    function setDirectionForLanguage(langCode) {
+      const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+      const baseCode = langCode.split('-')[0];
+      
+      if (rtlLanguages.includes(baseCode)) {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    }
+    
+    // Initialize language
+    const userLang = detectUserLanguage();
+    document.documentElement.setAttribute('lang', userLang);
+    setDirectionForLanguage(userLang);
+    
+    // Get translation for current language
+    const t = translations[userLang] || translations['en'];
+    
+    // Update UI with translated text
+    function updateUITranslations() {
+      // Update UI elements
+      document.getElementById('columns-label').innerHTML = `<strong>${t.picturesPerRow}</strong>`;
+      document.getElementById('save-button').textContent = t.saveButton;
+      document.getElementById('album-title').textContent = t.loadingAlbum;
+      document.getElementById('loading-message').textContent = t.loadingContent;
+      document.getElementById('page-title').textContent = t.photos;
+    }
     
     // GraphQL query to fetch folder data
     const FETCH_FOLDERS_QUERY = `
@@ -322,7 +575,7 @@
         return processData(result);
       } catch (error) {
         console.error('Error fetching folder data:', error);
-        showError('Failed to fetch album content. Please try again later.');
+        showError(t.errorMessage);
         return null;
       }
     }
@@ -332,11 +585,11 @@
       const items = json?.data?.fetchFolders?.items || [];
       const mediaItems = [];
       const contacts = {};
-      let folderName = "Photos";
+      let folderName = t.photos;
       
       if (items.length > 0) {
         // Get folder name if available
-        if (items[0]?.folderName && items[0].folderName.length > 1) {
+        if (items[0]?.folderName && items[0].folderName.length > 0) {
           folderName = items[0].folderName;
         }
         
@@ -381,15 +634,29 @@
       const { mediaItems, folderName, contacts } = data;
       const mediaGrid = document.getElementById('media-grid');
       const albumTitle = document.getElementById('album-title');
+      const pageTitle = document.getElementById('page-title');
       
-      // Set the album title
-      albumTitle.textContent = folderName;
+      // Set the page title
+      if (folderName && folderName.length > 0) {
+        pageTitle.textContent = folderName;
+        
+        // Only show album title in the body if it's not "Photos" or blank
+        if (folderName !== t.photos && folderName.trim() !== "") {
+          albumTitle.textContent = folderName;
+          albumTitle.style.display = "block";
+        } else {
+          albumTitle.style.display = "none";
+        }
+      } else {
+        pageTitle.textContent = t.photos;
+        albumTitle.style.display = "none";
+      }
       
       // Clear the loading message
       mediaGrid.innerHTML = '';
       
       if (mediaItems.length === 0) {
-        mediaGrid.innerHTML = '<div class="error">No media found in this album</div>';
+        mediaGrid.innerHTML = `<div class="error">${t.noMedia}</div>`;
         return;
       }
       
@@ -524,7 +791,7 @@
       }
       
       // Save the preference to localStorage
-      localStorage.setItem('picturesPerRow', value);
+      localStorage.setItem('photosPerRow', value);
     }
     
     // Save album function
@@ -535,7 +802,7 @@
       if (formattedFolderId) {
         window.location.href = `/app/save-album.html?folderId=${formattedFolderId}`;
       } else {
-        alert('Invalid folder ID. Cannot save album.');
+        alert(t.errorMessage);
       }
     }
     
@@ -545,22 +812,26 @@
       mediaGrid.innerHTML = `<div class="error">${message}</div>`;
       
       const albumTitle = document.getElementById('album-title');
-      albumTitle.textContent = 'Error Loading Album';
+      albumTitle.textContent = t.errorTitle;
+      albumTitle.style.display = "block";
     }
     
     // Main function to initialize the page
     async function init() {
+      // Apply translations to UI
+      updateUITranslations();
+      
       const rawFolderId = getFolderIdFromUrl();
       
       if (!rawFolderId) {
-        showError('No folder ID provided. Please add ?id=YOUR_FOLDER_ID to the URL.');
+        showError(t.errorMessage);
         return;
       }
       
       const folderId = formatFolderId(rawFolderId);
       
       if (!folderId) {
-        showError('Invalid folder ID format. Expected format: prefix_suffix');
+        showError(t.errorMessage);
         return;
       }
       
@@ -576,7 +847,7 @@
     // Start the application
     document.addEventListener('DOMContentLoaded', function() {
       // Set initial column layout based on saved preference or default
-      const savedColumnsValue = localStorage.getItem('picturesPerRow') || '1';
+      const savedColumnsValue = localStorage.getItem('photosPerRow') || '1';
       document.getElementById('columns').value = savedColumnsValue;
       changeColumns(savedColumnsValue);
       

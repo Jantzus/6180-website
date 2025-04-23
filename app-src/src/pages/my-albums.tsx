@@ -3251,7 +3251,7 @@ const MyAlbums = () => {
             const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt
 
             const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`
-            const inviteLink = `https://6180.io/photos/${folderInvite}`
+            const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`
 
             const handleCopy = (e: React.MouseEvent) => {
               e.preventDefault()
