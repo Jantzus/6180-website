@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   CognitoIdentityProviderClient,
@@ -194,8 +194,6 @@ const translations: Record<string, Translation> = {
     errorVerifying: '無効または期限切れのコードです。もう一度お試しください。再起動をご検討ください。',
     language: '言語',
   },
-  // Include all other languages here with their translations
-  // For example for Portuguese (Brazil):
   'pt-BR': {
     signIn: 'Entrar no 6180',
     enterEmail: 'Digite seu email',
@@ -222,8 +220,6 @@ const translations: Record<string, Translation> = {
     errorVerifying: 'Código inválido ou expirado. Por favor, tente novamente. Considere reiniciar.',
     language: 'Idioma',
   },
-  // For all other languages, provide default English translations to start with
-  // In a real application, you would include complete translations for all languages
 }
 
 // Add English translations as fallback for all languages
@@ -250,8 +246,10 @@ function getBrowserLanguage(): string {
   
   // Default to English
   return 'en'
-  
 }
+
+// We'll remove the custom focus handling since it causes issues
+// The browser's default behavior should handle the keyboard appearing appropriately
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -269,6 +267,10 @@ const Login = () => {
     // If no localStorage value, use browser language
     return getBrowserLanguage()
   })
+  
+  // Refs for input elements
+  const emailInputRef = useRef<HTMLInputElement>(null)
+  const otpInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     // Get language from localStorage if available
@@ -286,6 +288,13 @@ const Login = () => {
       ['ar', 'he', 'fa', 'ur', 'ps', 'sd'].includes(language.split('-')[0]) ? 'rtl' : 'ltr'
   }, [language])
 
+  // Focus the OTP input when code is sent
+  useEffect(() => {
+    if (codeSent && otpInputRef.current) {
+      otpInputRef.current.focus()
+    }
+  }, [codeSent])
+
   const redirectTo = new URLSearchParams(location.search).get('redirect') || 'my-albums.html'
 
   // Get translations for current language, falling back to English if not available
@@ -293,6 +302,15 @@ const Login = () => {
 
   function handleLanguageChange(e: React.ChangeEvent<HTMLSelectElement>) {
     setLanguage(e.target.value)
+  }
+
+  // Only allow numeric input for OTP code
+  function handleOtpChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.target.value
+    // Only accept numbers and limit to 6 digits
+    if (/^\d*$/.test(value) && value.length <= 6) {
+      setOtpCode(value)
+    }
   }
 
   async function sendCode() {
@@ -413,6 +431,11 @@ const Login = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
     }}>
       <div style={{ 
         position: 'absolute',
@@ -468,6 +491,7 @@ const Login = () => {
         {!codeSent ? (
           <>
             <input
+              ref={emailInputRef}
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -506,9 +530,13 @@ const Login = () => {
               {t.checkEmail}
             </p>
             <input
-              type="text"
+              ref={otpInputRef}
+              type="tel"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              maxLength={6}
               value={otpCode}
-              onChange={(e) => setOtpCode(e.target.value)}
+              onChange={handleOtpChange}
               placeholder={t.enterCode}
               style={{
                 width: '100%',
@@ -522,7 +550,7 @@ const Login = () => {
             />
             <button
               onClick={confirmCode}
-              disabled={status === 'verifying'}
+              disabled={status === 'verifying' || otpCode.length !== 6}
               style={{
                 width: '100%',
                 padding: '12px',
@@ -532,7 +560,7 @@ const Login = () => {
                 border: 'none',
                 borderRadius: '6px',
                 cursor: 'pointer',
-                opacity: status === 'verifying' ? 0.7 : 1,
+                opacity: (status === 'verifying' || otpCode.length !== 6) ? 0.7 : 1,
               }}
             >
               {status === 'verifying' ? t.verifying : t.confirm}

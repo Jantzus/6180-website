@@ -6,7 +6,8 @@ import {
   detectBrowserLanguage, 
   initializeI18n,
   getAvailableLanguages,
-  SupportedLanguage
+  SupportedLanguage,
+  translations
 } from './index';
 
 // Initialize i18n when the script loads
@@ -55,9 +56,9 @@ export const translatePage = (): void => {
 };
 
 // Helper to check if a phrase is valid
-// This is a simplification - in a real app you might want more validation
 function isValidPhrase(phrase: string): boolean {
-  return true; // Since we're using English phrases directly
+  // Check if the phrase exists in our translations object
+  return phrase in translations || phrase.trim() !== '';
 }
 
 /**
@@ -76,6 +77,14 @@ export const createLanguageSelector = (targetId: string): void => {
   const select = document.createElement('select');
   select.id = 'language-selector';
   select.className = 'language-selector';
+  // Add some styling for better visibility
+  select.style.position = 'fixed';
+  select.style.bottom = '20px';
+  select.style.right = '20px';
+  select.style.zIndex = '1000';
+  select.style.padding = '8px';
+  select.style.borderRadius = '4px';
+  select.style.border = '1px solid #ccc';
   
   // Add options
   getAvailableLanguages().forEach(lang => {
@@ -86,7 +95,7 @@ export const createLanguageSelector = (targetId: string): void => {
   });
   
   // Set current value
-  select.value = currentLang;
+  select.value = currentLang as string;
   
   // Add event listener
   select.addEventListener('change', (e) => {
@@ -96,6 +105,9 @@ export const createLanguageSelector = (targetId: string): void => {
     // Save preference
     localStorage.setItem('preferred-language', newLanguage);
     
+    // Apply RTL/LTR direction based on language
+    setDirectionForLanguage(newLanguage);
+    
     // Translate the page again
     translatePage();
   });
@@ -103,6 +115,20 @@ export const createLanguageSelector = (targetId: string): void => {
   // Clear and append
   targetElement.innerHTML = '';
   targetElement.appendChild(select);
+};
+
+/**
+ * Sets the text direction (LTR/RTL) based on the language
+ */
+export const setDirectionForLanguage = (langCode: string): void => {
+  const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+  const baseCode = langCode.split('-')[0];
+  
+  if (rtlLanguages.includes(baseCode)) {
+    document.documentElement.setAttribute('dir', 'rtl');
+  } else {
+    document.documentElement.setAttribute('dir', 'ltr');
+  }
 };
 
 /**
@@ -116,24 +142,38 @@ export const exposeGlobally = (): void => {
       translatePage,
       createLanguageSelector,
       getAvailableLanguages,
+      detectBrowserLanguage,
+      initializeI18n,
+      setDirectionForLanguage
     };
   }
 };
 
 // Auto-initialization
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize with saved language if available
-  const savedLang = localStorage.getItem('preferred-language');
-  if (savedLang) {
-    setLanguage(savedLang);
-  }
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize with saved language if available
+    const savedLang = localStorage.getItem('preferred-language');
+    if (savedLang) {
+      setLanguage(savedLang as SupportedLanguage);
+    }
 
-  // Translate the page on load
-  translatePage();
+    // Set language direction
+    setDirectionForLanguage(savedLang || detectBrowserLanguage());
+    
+    // Set document language attribute
+    document.documentElement.setAttribute('lang', savedLang || detectBrowserLanguage());
 
-  // Create language selector if target element exists
-  createLanguageSelector('language-selector-container');
-});
+    // Translate the page on load
+    translatePage();
+
+    // Create language selector if target element exists
+    createLanguageSelector('language-selector-container');
+    
+    // Expose functions globally
+    exposeGlobally();
+  });
+}
 
 // Export for explicit imports
 export { translate, getAvailableLanguages };

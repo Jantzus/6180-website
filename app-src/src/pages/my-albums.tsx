@@ -23,98 +23,6 @@ import { myAlbumsTranslations } from "@/lib/translations"
 // Create S3 client
 const s3 = createS3Client()
 
-// Custom dialog component for the copy confirmation
-type CopyDialogProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  onCreateWatermarkLink: () => void;
-  message: string;
-  t: (key: string) => string;
-  isRTL: boolean;
-};
-
-export const CopyDialog: React.FC<CopyDialogProps> = ({
-  isOpen,
-  onClose,
-  onCreateWatermarkLink,
-  message,
-  t,
-  isRTL
-}) => {
-  if (!isOpen) return null;
-
-  return (
-    <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 1000,
-        padding: "20px",
-      }}
-      onClick={onClose}
-    >
-      <div
-        style={{
-          backgroundColor: "white",
-          borderRadius: 8,
-          padding: "24px",
-          width: "90%",
-          maxWidth: "400px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-          direction: isRTL ? "rtl" : "ltr",
-          margin: "20px",
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div style={{ marginBottom: "20px", textAlign: isRTL ? "right" : "left" }}>
-          {message}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            gap: "10px",
-            flexDirection: isRTL ? "row-reverse" : "row"
-          }}
-        >
-          <button
-            onClick={onClose}
-            style={{
-              padding: "8px 12px",
-              border: "1px solid #ddd",
-              borderRadius: 6,
-              backgroundColor: "#f1f1f1",
-              cursor: "pointer",
-            }}
-          >
-            {t('close') || "Close"}
-          </button>
-          <button
-            onClick={onCreateWatermarkLink}
-            style={{
-              padding: "8px 12px",
-              border: "none",
-              borderRadius: 6,
-              backgroundColor: "#007bff",
-              color: "white",
-              cursor: "pointer",
-            }}
-          >
-            {t('createWatermarkLink') || "Create Link With Watermark"}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 // Header Component
 type HeaderProps = {
   publicUsername: string | null;
@@ -231,18 +139,18 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
   t,
   isRTL
 }) => {
-  const handlePasswordClick = (e: React.MouseEvent) => {
+  const handleAddToPublicProfileClick = (e: React.MouseEvent) => {
     e.preventDefault(); 
     e.stopPropagation();
-    // Password functionality would go here
-    alert('"Set a password recipients must enter to view photos" coming soon.');
+    // Add to public profile functionality would go here
+    alert('"Make album accessible on your public profile" coming soon.');
   };
 
-  const handleMakePublicClick = (e: React.MouseEvent) => {
-    e.preventDefault(); 
+  const handleDownloadAlbumClick = (e: React.MouseEvent) => {
+    e.preventDefault();
     e.stopPropagation();
-    // Make public functionality would go here
-    alert('"Make album accessible on your public profile" coming soon.');
+    // Download album functionality would go here
+    alert('"Download all photos in this album as a zip file" coming soon.');
   };
 
   // Common button style to avoid repetition
@@ -258,86 +166,88 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
   };
 
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "space-between",
-      marginTop: 16,
-      flexDirection: isRTL ? "row-reverse" : "row"
-    }}>
-      <div style={{ 
+    <>
+      <div style={{
         display: "flex",
-        width: "100%", 
-        overflowX: "auto",
-        scrollbarWidth: "none",
-        msOverflowStyle: "none",
-        WebkitOverflowScrolling: "touch",
-        flexDirection: isRTL ? "row-reverse" : "row",
-        gap: "10px"
+        justifyContent: "space-between",
+        marginTop: 16,
+        flexDirection: isRTL ? "row-reverse" : "row"
       }}>
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-            flexDirection: isRTL ? "row-reverse" : "row"
-          }}
-        >
-          <button
-            onClick={(e) => {
-              e.preventDefault(); 
-              e.stopPropagation();
-              openFilePicker(folderId);
-            }}
+        <div style={{ 
+          display: "flex",
+          width: "100%", 
+          overflowX: "auto",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
+          flexDirection: isRTL ? "row-reverse" : "row",
+          gap: "10px"
+        }}>
+          <div
             style={{
-              ...buttonStyle,
-              backgroundColor: "#4caf50",
-              color: "white",
+              display: "flex",
+              gap: "10px",
+              flexDirection: isRTL ? "row-reverse" : "row"
             }}
           >
-            {t('addPhotos')}
-          </button>
-          <button
-            onClick={(e) => {
-              e.preventDefault(); 
-              e.stopPropagation();
-              handleCopy(e);
-            }}
-            style={{
-              ...buttonStyle,
-              backgroundColor: "#e0e0e0",
-            }}
-          >
-            {t('copyLink')}
-          </button>
-          <button
-            onClick={handlePasswordClick}
-            style={{
-              ...buttonStyle,
-              backgroundColor: "#e0e0e0",
-            }}
-          >
-            {t('password') || 'Password'}
-          </button>
-          <button
-            onClick={handleMakePublicClick}
-            style={{
-              ...buttonStyle,
-              backgroundColor: "#e0e0e0",
-            }}
-          >
-            {t('makePublic') || 'Make Public'}
-          </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault(); 
+                e.stopPropagation();
+                openFilePicker(folderId);
+              }}
+              style={{
+                ...buttonStyle,
+                backgroundColor: "#4caf50",
+                color: "white",
+              }}
+            >
+              {t('addPhotos')}
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault(); 
+                e.stopPropagation();
+                handleCopy(e);
+              }}
+              style={{
+                ...buttonStyle,
+                backgroundColor: "#e0e0e0",
+              }}
+            >
+              {t('copyLink')}
+            </button>
+            <button
+              onClick={handleDownloadAlbumClick}
+              style={{
+                ...buttonStyle,
+                backgroundColor: "#e0e0e0",
+              }}
+            >
+              {t('downloadAlbum') || 'Download Album'}
+            </button>
+            <button
+              onClick={handleAddToPublicProfileClick}
+              style={{
+                ...buttonStyle,
+                backgroundColor: "#e0e0e0",
+              }}
+            >
+              {t('addToPublicProfile') || 'Add To Public Profile'}
+            </button>
+          </div>
         </div>
+        
+        {/* Hide scrollbar for WebKit browsers */}
+        <style>
+          {`
+            div::-webkit-scrollbar {
+              display: none;
+            }
+          `}
+        </style>
       </div>
-      
-      {/* Hide scrollbar for WebKit browsers */}
-      <style>
-        {`
-          div::-webkit-scrollbar {
-            display: none;
-          }
-        `}
-      </style>
-    </div>
+    </>
   );
 };
 
@@ -364,27 +274,58 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   isRTL,
   cognitoUsername
 }) => {
-  // Add state for dialog
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [dialogMessage, setDialogMessage] = useState("");
-  const [currentInviteLink, setCurrentInviteLink] = useState("");
-  
-  // Handle creating watermark link
-  const handleCreateWatermarkLink = () => {
-    if (!currentInviteLink) return;
+  // Reference to keep track of active dropdown menu
+  const activeDropdownRef = useRef<HTMLElement | null>(null);
+
+  // Function to handle clicks outside dropdown menu and scrolling
+  useEffect(() => {
+    // Function to close active dropdown
+    function closeActiveDropdown() {
+      if (activeDropdownRef.current) {
+        activeDropdownRef.current.style.display = "none";
+        activeDropdownRef.current = null;
+      }
+    }
+
+    // Handle clicks outside the dropdown
+    function handleClickOutside(event: MouseEvent) {
+      if (activeDropdownRef.current && !activeDropdownRef.current.contains(event.target as Node)) {
+        closeActiveDropdown();
+      }
+    }
+
+    // Handle scroll events
+    function handleScroll() {
+      closeActiveDropdown();
+    }
+
+    // Add event listeners
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll, true); // Use capture phase to detect all scrolling
     
-    // Add watermark parameter to the URL
-    const watermarkedLink = `${currentInviteLink}&watermark=true`;
+    // Clean up
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll, true);
+    };
+  }, []);
+
+  // Function to toggle dropdown visibility
+  const toggleDropdown = (e: React.MouseEvent, dropdownElement: HTMLElement) => {
+    e.preventDefault();
+    e.stopPropagation();
     
-    navigator.clipboard.writeText(watermarkedLink)
-      .then(() => {
-        setDialogOpen(false);
-        alert(t('watermarkLinkCopied') || "Link with watermark has been copied to your clipboard.");
-      })
-      .catch(err => {
-        console.error("Failed to copy watermarked link:", err);
-        alert(t('copyFailed') || "Failed to copy link");
-      });
+    // If there's already an open dropdown and it's not this one, close it
+    if (activeDropdownRef.current && activeDropdownRef.current !== dropdownElement) {
+      activeDropdownRef.current.style.display = "none";
+    }
+    
+    // Toggle current dropdown
+    const isVisible = dropdownElement.style.display === "block";
+    dropdownElement.style.display = isVisible ? "none" : "block";
+    
+    // Update the active dropdown reference
+    activeDropdownRef.current = isVisible ? null : dropdownElement;
   };
 
   if (folders.length === 0 && !isUploading) {
@@ -393,16 +334,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
   return (
     <>
-      {/* Custom dialog component */}
-      <CopyDialog
-        isOpen={dialogOpen}
-        onClose={() => setDialogOpen(false)}
-        onCreateWatermarkLink={handleCreateWatermarkLink}
-        message={dialogMessage}
-        t={t}
-        isRTL={isRTL}
-      />
-      
       {folders.map((folder) => {
         const showCreated = folder.createdAt != null;
         const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt;
@@ -413,14 +344,12 @@ export const AlbumList: React.FC<AlbumListProps> = ({
         // Check if user is the creator of the album
         const isCreator = folder.creatorId === `${cognitoUsername}_____${cognitoUsername}____Account`;
 
-        // Modified handleCopy function
+        // Simple handleCopy function without watermark dialog
         const handleCopy = (e: React.MouseEvent) => {
           e.preventDefault();
           navigator.clipboard.writeText(inviteLink)
             .then(() => {
-              setCurrentInviteLink(inviteLink);
-              setDialogMessage(t('linkCopied') || "Link has been copied to your clipboard without a watermark.");
-              setDialogOpen(true);
+              alert(t('linkCopied') || "Link has been copied to your clipboard.");
             })
             .catch(err => {
               console.error("Failed to copy link:", err);
@@ -507,12 +436,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                         <a
                           href="#"
                           onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
                             const dropdownMenu = e.currentTarget.nextElementSibling as HTMLElement;
                             if (dropdownMenu) {
-                              const isVisible = dropdownMenu.style.display === "block";
-                              dropdownMenu.style.display = isVisible ? "none" : "block";
+                              toggleDropdown(e, dropdownMenu);
                             }
                           }}
                           style={{
@@ -594,6 +520,8 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     )}
                   </div>
                 </div>
+                
+                {/* Rest of your component remains the same */}
                 <div 
                   style={{ 
                     width: "100%",
