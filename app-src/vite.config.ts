@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
-  base: '/app/',
+  base: '/',
   build: {
-    outDir: '../app',
+    outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {

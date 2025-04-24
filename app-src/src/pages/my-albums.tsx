@@ -722,9 +722,9 @@ const MyAlbums = () => {
       
       // Redirect to save-album page with folder ID parameter if adding to existing album
       if (currentFolderId) {
-        window.location.href = `/app/save-album.html?folderId=${encodeURIComponent(currentFolderId)}`
+        window.location.href = `/save-album.html?folderId=${encodeURIComponent(currentFolderId)}`
       } else {
-        window.location.href = "/app/save-album.html"
+        window.location.href = "/save-album.html"
       }
 
       clearAlbumData()

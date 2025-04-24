@@ -7,7 +7,7 @@ export function checkLoginOrRedirect(): string | null {
 
   if (!token) {
     const redirect = encodeURIComponent(window.location.pathname + window.location.search);
-    window.location.href = `/app/login.html?redirect=${redirect}`;
+    window.location.href = `/login.html?redirect=${redirect}`;
     return null;
   }
 
@@ -24,7 +24,7 @@ export function checkLoginOrRedirect(): string | null {
       console.warn("Token expired at", new Date(payload.exp * 1000).toISOString());
       localStorage.removeItem("idToken");
       const redirect = encodeURIComponent(window.location.pathname + window.location.search);
-      window.location.href = `/app/login.html?redirect=${redirect}`;
+      window.location.href = `/login.html?redirect=${redirect}`;
       return null;
     }
 
@@ -34,7 +34,7 @@ export function checkLoginOrRedirect(): string | null {
     console.error("Invalid token:", e);
     localStorage.removeItem("idToken");
     const redirect = encodeURIComponent(window.location.pathname + window.location.search);
-    window.location.href = `/app/login.html?redirect=${redirect}`;
+    window.location.href = `/login.html?redirect=${redirect}`;
     return null;
   }
 }

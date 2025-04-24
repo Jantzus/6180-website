@@ -644,7 +644,7 @@ const SaveAlbum = () => {
         
         // Slight delay before redirect for user to see success message
         setTimeout(() => {
-          window.location.href = "/app/my-albums.html"
+          window.location.href = "/my-albums.html"
         }, 1000)
       }
     } catch (err) {
@@ -758,7 +758,7 @@ const SaveAlbum = () => {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
           <a 
-            href="/app/my-albums.html"
+            href="/my-albums.html"
             style={{
               fontSize: "16px",
               color: "#007bff",
