@@ -1356,6 +1356,16 @@
         return;
       }
       
+      // Add description area before the first photo
+      const descriptionBlock = document.createElement('div');
+      descriptionBlock.className = 'media-block description-block';
+      descriptionBlock.innerHTML = `
+        <div class="description-container" style="padding: 20px; background-color: white; border-radius: 4px;">
+          <p style="margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+        </div>
+      `;
+      mediaGrid.appendChild(descriptionBlock);
+      
       // Create HTML for each media item
       mediaItems.forEach((item, index) => {
         const ownerName = item.ownerId && contacts[item.ownerId] ? contacts[item.ownerId] : '';

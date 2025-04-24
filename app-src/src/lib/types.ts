@@ -1,18 +1,3 @@
-export interface File {
-  dataKey: string
-  thumbnailDataKey: string | null
-  durationInSeconds: number | null
-}
-
-export interface Folder {
-  folderPositionId: string
-  folderId: string
-  folderName: string | null
-  createdAt: number | null
-  updatedAt: number | null
-  files: File[]
-}
-
 export type LanguageCode = 
 'en-US' | 'en' | 
 'zh-CN' | 'zh' | 
@@ -67,8 +52,25 @@ export type FileType = {
 export type FolderType = {
   folderPositionId: string;
   folderId: string;
+  creatorId: string;
   folderName: string | null;
   createdAt: number | null;
   updatedAt: number | null;
   files: FileType[];
 };
+
+export interface File {
+  dataKey: string
+  thumbnailDataKey: string | null
+  durationInSeconds: number | null
+}
+
+export interface Folder {
+  folderPositionId: string
+  folderId: string
+  creatorId: string
+  folderName: string | null
+  createdAt: number | null
+  updatedAt: number | null
+  files: File[]
+}

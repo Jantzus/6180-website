@@ -23,6 +23,97 @@ import { myAlbumsTranslations } from "@/lib/translations"
 // Create S3 client
 const s3 = createS3Client()
 
+// Custom dialog component for the copy confirmation
+type CopyDialogProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  onCreateWatermarkLink: () => void;
+  message: string;
+  t: (key: string) => string;
+  isRTL: boolean;
+};
+
+export const CopyDialog: React.FC<CopyDialogProps> = ({
+  isOpen,
+  onClose,
+  onCreateWatermarkLink,
+  message,
+  t,
+  isRTL
+}) => {
+  if (!isOpen) return null;
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 1000,
+        padding: "20px",
+      }}
+      onClick={onClose}
+    >
+      <div
+        style={{
+          backgroundColor: "white",
+          borderRadius: 8,
+          padding: "24px",
+          width: "90%",
+          maxWidth: "400px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+          direction: isRTL ? "rtl" : "ltr",
+          margin: "20px",
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div style={{ marginBottom: "20px", textAlign: isRTL ? "right" : "left" }}>
+          {message}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            gap: "10px",
+            flexDirection: isRTL ? "row-reverse" : "row"
+          }}
+        >
+          <button
+            onClick={onClose}
+            style={{
+              padding: "8px 12px",
+              border: "1px solid #ddd",
+              borderRadius: 6,
+              backgroundColor: "#f1f1f1",
+              cursor: "pointer",
+            }}
+          >
+            {t('close') || "Close"}
+          </button>
+          <button
+            onClick={onCreateWatermarkLink}
+            style={{
+              padding: "8px 12px",
+              border: "none",
+              borderRadius: 6,
+              backgroundColor: "#007bff",
+              color: "white",
+              cursor: "pointer",
+            }}
+          >
+            {t('createWatermarkLink') || "Create Link With Watermark"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 // Header Component
 type HeaderProps = {
@@ -261,6 +352,7 @@ type AlbumListProps = {
   isUploading: boolean;
   t: (key: string) => string;
   isRTL: boolean;
+  cognitoUsername: string | null;
 };
 
 export const AlbumList: React.FC<AlbumListProps> = ({ 
@@ -269,30 +361,70 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   openFilePicker,
   isUploading,
   t,
-  isRTL
+  isRTL,
+  cognitoUsername
 }) => {
+  // Add state for dialog
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState("");
+  const [currentInviteLink, setCurrentInviteLink] = useState("");
+  
+  // Handle creating watermark link
+  const handleCreateWatermarkLink = () => {
+    if (!currentInviteLink) return;
+    
+    // Add watermark parameter to the URL
+    const watermarkedLink = `${currentInviteLink}&watermark=true`;
+    
+    navigator.clipboard.writeText(watermarkedLink)
+      .then(() => {
+        setDialogOpen(false);
+        alert(t('watermarkLinkCopied') || "Link with watermark has been copied to your clipboard.");
+      })
+      .catch(err => {
+        console.error("Failed to copy watermarked link:", err);
+        alert(t('copyFailed') || "Failed to copy link");
+      });
+  };
+
   if (folders.length === 0 && !isUploading) {
     return <p style={{ fontSize: 16, color: "#555", width: "100%" }}>{t('noAlbums')}</p>;
   }
 
   return (
     <>
+      {/* Custom dialog component */}
+      <CopyDialog
+        isOpen={dialogOpen}
+        onClose={() => setDialogOpen(false)}
+        onCreateWatermarkLink={handleCreateWatermarkLink}
+        message={dialogMessage}
+        t={t}
+        isRTL={isRTL}
+      />
+      
       {folders.map((folder) => {
         const showCreated = folder.createdAt != null;
         const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt;
 
         const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`;
         const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`;
+        
+        // Check if user is the creator of the album
+        const isCreator = folder.creatorId === `${cognitoUsername}_____${cognitoUsername}____Account`;
 
+        // Modified handleCopy function
         const handleCopy = (e: React.MouseEvent) => {
           e.preventDefault();
           navigator.clipboard.writeText(inviteLink)
             .then(() => {
-              alert(t('linkCopied'));
+              setCurrentInviteLink(inviteLink);
+              setDialogMessage(t('linkCopied') || "Link has been copied to your clipboard without a watermark.");
+              setDialogOpen(true);
             })
             .catch(err => {
               console.error("Failed to copy link:", err);
-              alert(t('copyFailed'));
+              alert(t('copyFailed') || "Failed to copy link");
             });
         };
 
@@ -364,21 +496,104 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                       </div>
                     )}
                   </div>
-                  <div>
-                    <a
-                      href="#"
-                      onClick={(e) => handleDeleteClick(e, folder.folderPositionId)}
-                      style={{
-                        fontSize: "13px",
-                        color: "#d32f2f",
-                        textDecoration: "none",
-                      }}
-                    >
-                      {t('delete')}
-                    </a>
+                  <div style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: isRTL ? "flex-start" : "flex-end",
+                    gap: "8px"
+                  }}>
+                    {isCreator ? (
+                      <div style={{ position: "relative" }}>
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const dropdownMenu = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (dropdownMenu) {
+                              const isVisible = dropdownMenu.style.display === "block";
+                              dropdownMenu.style.display = isVisible ? "none" : "block";
+                            }
+                          }}
+                          style={{
+                            fontSize: "13px",
+                            color: "#2196f3",
+                            textDecoration: "none",
+                          }}
+                        >
+                          {t('edit') || 'Edit'}
+                        </a>
+                        <div 
+                          style={{
+                            display: "none",
+                            position: "absolute",
+                            top: "100%",
+                            right: isRTL ? "auto" : 0,
+                            left: isRTL ? 0 : "auto",
+                            backgroundColor: "white",
+                            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+                            borderRadius: "4px",
+                            zIndex: 10,
+                            minWidth: "150px",
+                            padding: "8px 0",
+                            marginTop: "5px",
+                            textAlign: isRTL ? "right" : "left"
+                          }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                          }}
+                        >
+                          <a
+                            href={`/save-album.html?folderId=${encodeURIComponent(folder.folderId)}`}
+                            style={{
+                              display: "block",
+                              padding: "8px 16px",
+                              color: "#2196f3",
+                              textDecoration: "none",
+                              fontSize: "13px",
+                              whiteSpace: "nowrap"
+                            }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                            }}
+                          >
+                            {t('editDetails') || 'Edit Details'}
+                          </a>
+                          <a
+                            href="#"
+                            style={{
+                              display: "block",
+                              padding: "8px 16px",
+                              color: "#d32f2f",
+                              textDecoration: "none",
+                              fontSize: "13px",
+                              whiteSpace: "nowrap"
+                            }}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              handleDeleteClick(e, folder.folderPositionId);
+                            }}
+                          >
+                            {t('deleteMyCopy') || 'Delete My Copy'}
+                          </a>
+                        </div>
+                      </div>
+                    ) : (
+                      <a
+                        href="#"
+                        onClick={(e) => handleDeleteClick(e, folder.folderPositionId)}
+                        style={{
+                          fontSize: "13px",
+                          color: "#d32f2f",
+                          textDecoration: "none",
+                        }}
+                      >
+                        {t('delete')}
+                      </a>
+                    )}
                   </div>
                 </div>
-
                 <div 
                   style={{ 
                     width: "100%",
@@ -446,7 +661,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </div>
                 
-                {/* Use the new FooterSection component */}
+                {/* Pass the handleCopy function to the FooterSection */}
                 <FooterSection
                   folderId={folder.folderId}
                   handleCopy={handleCopy}
@@ -539,6 +754,7 @@ const MyAlbums = () => {
                 folder {
                   id
                   folderName
+                  creatorId
                   createdAt
                   updatedAt
                   fileReferencesPage {
@@ -588,6 +804,7 @@ const MyAlbums = () => {
             folderPositionId: item.id,
             folderId: folder.id,
             folderName: folder.folderName,
+            creatorId: folder.creatorId,
             createdAt: folder.createdAt,
             updatedAt: folder.updatedAt,
             files: files.filter((f: any) => f && f.dataKey),
@@ -696,7 +913,6 @@ const MyAlbums = () => {
       
       // Generate a new folder ID or use existing one
       const newFolderId = currentFolderId || `${cognitoUsername}_____${generateUUID()}____Folder`
-      localStorage.setItem(STORAGE_KEYS.FOLDER_ID, newFolderId)
       log(`📁 Using folder ID: ${newFolderId}`)
       
       // First, add files to state with pending status
@@ -985,6 +1201,7 @@ const MyAlbums = () => {
             isUploading={isUploading}
             t={t}
             isRTL={isRTL}
+            cognitoUsername={cognitoUsername}
           />
           
           {/* Use the refactored FileInput component */}

@@ -40,6 +40,11 @@ const SaveAlbum = () => {
   })
   const [isSavingAlbum, setIsSavingAlbum] = useState(false)
   
+  // New state for folder name and description
+  const [folderName, setFolderName] = useState("")
+  const [folderDescription, setFolderDescription] = useState("")
+  const [showFolderDetails, setShowFolderDetails] = useState(false)
+  
   // Language state
   const [language, setLanguage] = useState<LanguageCode>('en-US')
   const [t, setT] = useState<SaveAlbumTranslations>(saveAlbumTranslations['en-US'])
@@ -58,17 +63,17 @@ const SaveAlbum = () => {
   const clearAlbumData = () => {
     log("🧹 Clearing all album data...")
     
-    // Clear all album-related data from local storage
-    localStorage.removeItem(STORAGE_KEYS.FOLDER_ID)
+    // Clear selected photos from localStorage
     localStorage.removeItem(STORAGE_KEYS.SELECTED_PHOTOS)
     
     // Also clear any session storage that might be holding state
-    sessionStorage.removeItem(STORAGE_KEYS.FOLDER_ID)
     sessionStorage.removeItem(STORAGE_KEYS.SELECTED_PHOTOS)
     
     // Reset states
     setFolderId(null)
     setSelectedPhotos([])
+    setFolderName("")
+    setFolderDescription("")
     setProgressTracker({
       totalFiles: 0,
       filesComplete: 0,
@@ -119,12 +124,8 @@ const SaveAlbum = () => {
     }
   }, [])
 
-  // // Handle language change
-  // const handleLanguageChange = (newLang: LanguageCode) => {
-  //   setLanguage(newLang)
-  //   setT(translations[newLang])
-  //   localStorage.setItem(STORAGE_KEYS.LANGUAGE, newLang)
-  // }
+  // No need to store folder name and description in localStorage
+  // as they will be managed through the backend
 
   useEffect(() => {
     log("🔄 Component initializing...")
@@ -151,25 +152,31 @@ const SaveAlbum = () => {
         setCognitoUsername(cognitoUsername)
         log(`👤 Cognito username: ${cognitoUsername}`)
         
-        // Check if we're returning to this page or starting fresh
-        const storedFolderId = localStorage.getItem(STORAGE_KEYS.FOLDER_ID)
+        // Get folderId directly from URL query parameter
         const params = new URLSearchParams(window.location.search)
         const id = params.get("folderId")
-    
-        // Priority: URL param > localStorage > generate new
+        
         if (id) {
           setFolderId(id)
-          localStorage.setItem(STORAGE_KEYS.FOLDER_ID, id)
           log(`📁 Using folder ID from URL: ${id}`)
-        } else if (storedFolderId) {
-          setFolderId(storedFolderId)
-          log(`📁 Using stored folder ID: ${storedFolderId}`)
+          
+          // Check if this is an existing album (doesn't contain username)
+          const isExistingAlbum = id && !id.includes(cognitoUsername)
+          log(`📁 Is existing album: ${isExistingAlbum}`)
+          
+          // Only show folder details if creating a new album
+          setShowFolderDetails(!isExistingAlbum)
         } else {
+          // If no ID in URL, create a new one
           const newId = `${cognitoUsername}_____${generateUUID()}____Folder`
           setFolderId(newId)
-          localStorage.setItem(STORAGE_KEYS.FOLDER_ID, newId)
           log(`📁 Created new folder ID: ${newId}`)
+          
+          // Show folder details for new albums
+          setShowFolderDetails(true)
         }
+        
+        // Folder name and description will be loaded from the backend when needed
         
         // Try to restore selected photos from localStorage
         try {
@@ -260,6 +267,15 @@ const SaveAlbum = () => {
   const removePhoto = (indexToRemove: number) => {
     const updated = selectedPhotos.filter((_, i) => i !== indexToRemove)
     setSelectedPhotos(updated)
+    
+    // Also update localStorage
+    if (updated.length > 0) {
+      localStorage.setItem(STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(updated))
+      log(`📸 Updated localStorage after removing photo at index ${indexToRemove}`)
+    } else {
+      localStorage.removeItem(STORAGE_KEYS.SELECTED_PHOTOS)
+      log(`📸 Removed photos from localStorage as none remain`)
+    }
   }
 
   // Update specific photo's status and progress
@@ -528,6 +544,7 @@ const SaveAlbum = () => {
       }
       log("✅ All files copied successfully")
 
+      // Add folder name and description to the folderInput
       const folderPositionInput = {
         currentTime: now,
         folderId,
@@ -541,6 +558,8 @@ const SaveAlbum = () => {
         folderInput: {
           folderSelectedTagInputs: [],
           folderAboutContactIds: [accountId],
+          folderName: folderName, // Add folder name
+          folderDescription: folderDescription, // Add folder description
           folderInviteParametersInput: {
             folderIsOnlyVisibleThroughCode: true,
             folderInviteHasBeenDisabled: false,
@@ -656,6 +675,10 @@ const SaveAlbum = () => {
   // Modified to check username and either show prompt or call saveAlbumDirectly
   const handleSaveAlbum = async () => {
     log("🔍 Save Album button clicked")
+    
+    // No need to validate folder name since it's optional
+    log("🔍 Proceeding with save - folder name is optional")
+    
     setIsSavingAlbum(true)
 
     try {
@@ -756,40 +779,41 @@ const SaveAlbum = () => {
       }}
     >
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-          <a 
-            href="/my-albums.html"
-            style={{
-              fontSize: "16px",
-              color: "#007bff",
-              textDecoration: "none",
-              fontWeight: "500"
-            }}
-          >
-            {t.myAlbums}
-          </a>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            {publicUsername && (
-              <>
-                <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleLogout();
-                  }}
-                  style={{
-                    fontSize: "14px",
-                    color: "#666",
-                    textDecoration: "underline",
-                    cursor: "pointer"
-                  }}
-                >
-                  {t.logOut}
-                </a>
-              </>
-            )}
+        <div style={{ marginBottom: "20px" }}>
+          <div style={{ marginBottom: "12px" }}>
+            <a 
+              href="/my-albums.html"
+              style={{
+                fontSize: "16px",
+                color: "#007bff",
+                textDecoration: "none",
+                fontWeight: "500"
+              }}
+            >
+              {t.myAlbums}
+            </a>
           </div>
+          
+          {publicUsername && (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLogout();
+                }}
+                style={{
+                  fontSize: "14px",
+                  color: "#666",
+                  textDecoration: "underline",
+                  cursor: "pointer"
+                }}
+              >
+                {t.logOut}
+              </a>
+            </div>
+          )}
         </div>
 
         {/* Progress Tracking Overview */}
@@ -1014,7 +1038,96 @@ const SaveAlbum = () => {
           >
             {t.addMorePhotos}
           </button>
+          
+          {/* Select Photos To Delete button - only visible for existing folderIds */}
+          <button
+            style={{
+              padding: "14px 28px",
+              fontSize: "16px",
+              borderRadius: "8px",
+              border: "none",
+              backgroundColor: "#dc3545", // Red color
+              color: "white",
+              cursor: "pointer",
+              boxShadow: "0 4px 10px rgba(220, 53, 69, 0.2)",
+              opacity: isSavingAlbum ? 0.6 : 1,
+              pointerEvents: isSavingAlbum ? "none" : "auto"
+            }}
+            onClick={() => {
+              // Redirect to delete photos page with this folderId
+              window.location.href = `/delete-photos.html?folderId=${folderId}`
+            }}
+            disabled={isSavingAlbum}
+          >
+            Select Photos To Delete
+          </button>
         </div>
+
+        {/* Folder Details Form - Moved below the buttons */}
+        {showFolderDetails && (
+          <div style={{ marginBottom: "24px", backgroundColor: "#fff", padding: "24px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
+            <div style={{ marginBottom: "16px" }}>
+              <label 
+                htmlFor="folderName" 
+                style={{ 
+                  display: "block", 
+                  marginBottom: "8px", 
+                  fontSize: "14px", 
+                  fontWeight: "500", 
+                  color: "#333" 
+                }}
+              >
+                Album Name (Optional)
+              </label>
+              <input
+                id="folderName"
+                type="text"
+                value={folderName}
+                onChange={(e) => setFolderName(e.target.value)}
+                placeholder="Enter album name"
+                style={{
+                  width: "100%",
+                  padding: "10px 12px",
+                  fontSize: "16px",
+                  borderRadius: "6px",
+                  border: "1px solid #ddd",
+                  boxSizing: "border-box"
+                }}
+              />
+            </div>
+            
+            <div style={{ marginBottom: "16px" }}>
+              <label 
+                htmlFor="folderDescription" 
+                style={{ 
+                  display: "block", 
+                  marginBottom: "8px", 
+                  fontSize: "14px", 
+                  fontWeight: "500", 
+                  color: "#333" 
+                }}
+              >
+                Album Description (Optional)
+              </label>
+              <textarea
+                id="folderDescription"
+                value={folderDescription}
+                onChange={(e) => setFolderDescription(e.target.value)}
+                placeholder="Enter album description"
+                rows={4}
+                style={{
+                  width: "100%",
+                  padding: "10px 12px",
+                  fontSize: "16px",
+                  borderRadius: "6px",
+                  border: "1px solid #ddd",
+                  boxSizing: "border-box",
+                  resize: "vertical"
+                }}
+              />
+            </div>
+          </div>
+        )}
 
         {showUsernamePrompt && (
           <div style={{

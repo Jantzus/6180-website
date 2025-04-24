@@ -11,12 +11,14 @@ type UploadProgressProps = {
   progressTracker: ProgressTrackerType;
   t: (key: string) => string;
   isRTL: boolean;
+  style?: React.CSSProperties;
 };
 
 export const UploadProgress: React.FC<UploadProgressProps> = ({ 
   progressTracker,
   t,
-  isRTL
+  isRTL,
+  style
 }) => {
   if (progressTracker.totalFiles === 0) return null;
   
@@ -28,7 +30,10 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
       borderRadius: "8px", 
       boxShadow: "0 1px 3px rgba(0,0,0,0.1)", 
       width: "100%",
-      direction: isRTL ? "rtl" : "ltr"
+      direction: isRTL ? "rtl" : "ltr",
+      boxSizing: "border-box",
+      overflow: "hidden",
+      ...style
     }}>
       <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t('uploadProgress')}</h3>
       
@@ -66,7 +71,9 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
         gap: "12px", 
         fontSize: "14px", 
         color: "#666",
-        flexDirection: isRTL ? "row-reverse" : "row"
+        flexDirection: isRTL ? "row-reverse" : "row",
+        flexWrap: "wrap",
+        overflow: "hidden"
       }}>
         {progressTracker.filesUploading > 0 && (
           <div>📤 {t('uploading')}: {progressTracker.filesUploading}</div>
