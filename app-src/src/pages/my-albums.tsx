@@ -45,30 +45,17 @@ export const Header: React.FC<HeaderProps> = ({
       <div
         style={{
           display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          marginBottom: 16,
-          width: "100%",
-          flexDirection: isRTL ? "row-reverse" : "row"
-        }}
-      >
-        {publicUsername && (
-          <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
-        )}
-      </div>
-      
-      {/* Second row: New Album and Log Out buttons */}
-      <div
-        style={{
-          display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          marginBottom: 24,
-          width: "100%",
-          flexDirection: isRTL ? "row-reverse" : "row"
+          marginBottom: 16,
+          width: "100%"
         }}
       >
-        <div>
+        <div
+          style={{
+            order: isRTL ? 2 : 1
+          }}
+        >
           <button
             onClick={() => openFilePicker(null)}
             style={{
@@ -87,6 +74,45 @@ export const Header: React.FC<HeaderProps> = ({
             {isUploading ? t('creatingAlbum') : t('createAlbum')}
           </button>
         </div>
+        
+        <div 
+          style={{
+            order: isRTL ? 1 : 2
+          }}
+        >
+          <button
+            onClick={() => {
+              alert('"Show all public albums with a link to share with other users" coming soon.');
+            }}
+            style={{
+              fontSize: "14px",
+              padding: "8px 16px",
+              backgroundColor: "#6c757d",
+              color: "white",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer"
+            }}
+          >
+            {t('myPublicProfile') || "My Public Profile"}
+          </button>
+        </div>
+      </div>
+      
+      {/* Second row with username and Log Out button */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 24,
+          width: "100%",
+          flexDirection: isRTL ? "row-reverse" : "row"
+        }}
+      >
+        {publicUsername && (
+          <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
+        )}
 
         {publicUsername && (
           <LogoutButton 
@@ -95,6 +121,132 @@ export const Header: React.FC<HeaderProps> = ({
         )}
       </div>
     </>
+  );
+};
+
+// FooterSection Component
+type FooterSectionProps = {
+  folderId: string;
+  handleCopy: (e: React.MouseEvent) => void;
+  openFilePicker: (folderId: string | null) => void;
+  t: (key: string) => string;
+  isRTL: boolean;
+};
+
+export const FooterSection: React.FC<FooterSectionProps> = ({
+  folderId,
+  handleCopy,
+  openFilePicker,
+  t,
+  isRTL
+}) => {
+  const handlePasswordClick = (e: React.MouseEvent) => {
+    e.preventDefault(); 
+    e.stopPropagation();
+    // Password functionality would go here
+    alert('"Set a password recipients must enter to view photos" coming soon.');
+  };
+
+  const handleMakePublicClick = (e: React.MouseEvent) => {
+    e.preventDefault(); 
+    e.stopPropagation();
+    // Make public functionality would go here
+    alert('"Make album accessible on your public profile" coming soon.');
+  };
+
+  // Common button style to avoid repetition
+  const buttonStyle = {
+    padding: "8px 12px",
+    border: "none",
+    borderRadius: 6,
+    cursor: "pointer",
+    fontSize: 14,
+    textAlign: "center" as const,
+    whiteSpace: "nowrap" as const,
+    flexShrink: 0
+  };
+
+  return (
+    <div style={{
+      display: "flex",
+      justifyContent: "space-between",
+      marginTop: 16,
+      flexDirection: isRTL ? "row-reverse" : "row"
+    }}>
+      <div style={{ 
+        display: "flex",
+        width: "100%", 
+        overflowX: "auto",
+        scrollbarWidth: "none",
+        msOverflowStyle: "none",
+        WebkitOverflowScrolling: "touch",
+        flexDirection: isRTL ? "row-reverse" : "row",
+        gap: "10px"
+      }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            flexDirection: isRTL ? "row-reverse" : "row"
+          }}
+        >
+          <button
+            onClick={(e) => {
+              e.preventDefault(); 
+              e.stopPropagation();
+              openFilePicker(folderId);
+            }}
+            style={{
+              ...buttonStyle,
+              backgroundColor: "#4caf50",
+              color: "white",
+            }}
+          >
+            {t('addPhotos')}
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault(); 
+              e.stopPropagation();
+              handleCopy(e);
+            }}
+            style={{
+              ...buttonStyle,
+              backgroundColor: "#e0e0e0",
+            }}
+          >
+            {t('copyLink')}
+          </button>
+          <button
+            onClick={handlePasswordClick}
+            style={{
+              ...buttonStyle,
+              backgroundColor: "#e0e0e0",
+            }}
+          >
+            {t('password') || 'Password'}
+          </button>
+          <button
+            onClick={handleMakePublicClick}
+            style={{
+              ...buttonStyle,
+              backgroundColor: "#e0e0e0",
+            }}
+          >
+            {t('makePublic') || 'Make Public'}
+          </button>
+        </div>
+      </div>
+      
+      {/* Hide scrollbar for WebKit browsers */}
+      <style>
+        {`
+          div::-webkit-scrollbar {
+            display: none;
+          }
+        `}
+      </style>
+    </div>
   );
 };
 
@@ -192,25 +344,27 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     flexDirection: isRTL ? "row-reverse" : "row"
                   }}
                 >
-                  <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
-                    {folder.folderName || ""}
-                  </h2>
                   <div style={{ 
                     display: "flex", 
-                    alignItems: "center", 
-                    gap: "16px",
-                    flexDirection: isRTL ? "row-reverse" : "row"
+                    flexDirection: "column", 
+                    alignItems: isRTL ? "flex-end" : "flex-start" 
                   }}>
+                    <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
+                      {folder.folderName || ""}
+                    </h2>
                     {(showCreated || showUpdated) && (
                       <div style={{ 
                         fontSize: 13, 
                         color: "#777", 
-                        textAlign: isRTL ? "left" : "right" 
+                        textAlign: isRTL ? "right" : "left",
+                        marginTop: 4
                       }}>
                         {showCreated && <div>{t('created')}: {formatDate(folder.createdAt)}</div>}
                         {showUpdated && <div>{t('updated')}: {formatDate(folder.updatedAt)}</div>}
                       </div>
                     )}
+                  </div>
+                  <div>
                     <a
                       href="#"
                       onClick={(e) => handleDeleteClick(e, folder.folderPositionId)}
@@ -278,58 +432,28 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   )}
                 </div>
                 
-                {/* Footer section with Add Photos and Copy Link buttons */}
-                <div style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginTop: 16,
-                  flexDirection: isRTL ? "row-reverse" : "row"
-                }}>
-                  <div style={{ 
-                    display: "flex", 
-                    gap: "10px",
-                    flexDirection: isRTL ? "row-reverse" : "row"
-                  }}>
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault(); 
-                        e.stopPropagation();
-                        openFilePicker(folder.folderId);
-                      }}
-                      style={{
-                        padding: "8px 12px",
-                        backgroundColor: "#4caf50",
-                        color: "white",
-                        border: "none",
-                        borderRadius: 6,
-                        cursor: "pointer",
-                        fontSize: 14,
-                        textAlign: "center"
-                      }}
-                    >
-                      {t('addPhotos')}
-                    </button>
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault(); 
-                        e.stopPropagation();
-                        handleCopy(e);
-                      }}
-                      style={{
-                        padding: "8px 12px",
-                        backgroundColor: "#e0e0e0",
-                        border: "none",
-                        borderRadius: 6,
-                        cursor: "pointer",
-                        fontSize: 14,
-                        textAlign: "center"
-                      }}
-                    >
-                      {t('copyLink')}
-                    </button>
-                  </div>
-                  <div></div>
+                {/* Album description section */}
+                <div
+                  style={{
+                    marginTop: 16,
+                    marginBottom: 16,
+                    fontSize: 14,
+                    color: "#555",
+                    lineHeight: 1.5,
+                    textAlign: isRTL ? "right" : "left"
+                  }}
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </div>
+                
+                {/* Use the new FooterSection component */}
+                <FooterSection
+                  folderId={folder.folderId}
+                  handleCopy={handleCopy}
+                  openFilePicker={openFilePicker}
+                  t={t}
+                  isRTL={isRTL}
+                />
               </div>
             </a>
           </div>
@@ -356,6 +480,7 @@ const MyAlbums = () => {
   })
   const [debugMessages, setDebugMessages] = useState<string[]>([])
   const [currentFolderId, setCurrentFolderId] = useState<string | null>(null)
+  const [searchQuery, setSearchQuery] = useState<string>("")
   
   // Language state
   const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('en-US')
@@ -818,6 +943,34 @@ const MyAlbums = () => {
             t={t}
             isRTL={isRTL}
           />
+          
+          {/* Search Bar */}
+          <div 
+            style={{
+              width: "100%", 
+              marginBottom: 24,
+              display: "flex",
+              flexDirection: isRTL ? "row-reverse" : "row"
+            }}
+          >
+            <input
+              type="text"
+              placeholder={t('searchPlaceholder') || "Search album title or description"}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{
+                width: "100%",
+                padding: "10px 16px",
+                fontSize: "14px",
+                border: "1px solid #ddd",
+                borderRadius: "6px",
+                outline: "none",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+                textAlign: isRTL ? "right" : "left",
+                direction: textDirection
+              }}
+            />
+          </div>
           
           <UploadProgress 
             progressTracker={progressTracker}

@@ -48,6 +48,9 @@
       display: none;
       background-color: white;
     }
+    .album-title strong {
+      font-weight: 700;
+    }
     .media-container {
       padding: 20px;
     }
@@ -1138,6 +1141,7 @@
         "photos": "Linehelo"
       }      
     };
+    
     // Detect user's language
     function detectUserLanguage() {
       const browserLang = navigator.language || navigator.userLanguage;
@@ -1333,7 +1337,8 @@
         
         // Only show album title in the body if it's not "Photos" or blank
         if (folderName !== t.photos && folderName.trim() !== "") {
-          albumTitle.textContent = folderName;
+          // Make the folder name bold by wrapping it in a strong tag
+          albumTitle.innerHTML = `<strong>${folderName}</strong>`;
           albumTitle.style.display = "block";
         } else {
           albumTitle.style.display = "none";
