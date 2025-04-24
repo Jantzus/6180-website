@@ -18,6 +18,7 @@ interface Contact {
 interface AlbumData {
   mediaItems: MediaItem[];
   folderName: string;
+  folderDescription: string;
   contacts: Contact;
 }
 
@@ -250,6 +251,11 @@ const FETCH_FOLDERS_QUERY = `
     fetchFolders(folderIds: $folderIds) {
       items {
         folderName
+        folderDescription
+        folderPassword {
+          password
+          policy
+        }
         fileReferencesPage {
           items {
             file {
@@ -403,11 +409,17 @@ const PhotoAlbumContent: React.FC = () => {
     const mediaItems: MediaItem[] = [];
     const contacts: Contact = {};
     let folderName = t('Photos');
+    let folderDescription = '';
     
     if (items.length > 0) {
       // Get folder name if available
       if (items[0]?.folderName && items[0].folderName.length > 0) {
         folderName = items[0].folderName;
+      }
+      
+      // Get folder description if available
+      if (items[0]?.folderDescription && items[0].folderDescription.length > 0) {
+        folderDescription = items[0].folderDescription;
       }
       
       // Build contacts map
@@ -443,7 +455,7 @@ const PhotoAlbumContent: React.FC = () => {
       });
     }
     
-    return { mediaItems, folderName, contacts };
+    return { mediaItems, folderName, folderDescription, contacts };
   };
 
   // Fetch folder data
@@ -606,9 +618,12 @@ const PhotoAlbumContent: React.FC = () => {
       </div>
 
       <div id="media-container" style={styles.mediaContainer}>
-        <div id="description-container" style={styles.descriptionBlock}>
-          <p style={styles.descriptionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        </div>
+        {/* Updated description container to use folderDescription */}
+        {albumData?.folderDescription && albumData.folderDescription.trim() !== "" ? (
+          <div id="description-container" style={styles.descriptionBlock}>
+            <p style={styles.descriptionText}>{albumData.folderDescription}</p>
+          </div>
+        ) : null}
         
         <div id="media-grid" style={getGridStyle()}>
           {isLoading ? (

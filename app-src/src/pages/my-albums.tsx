@@ -293,9 +293,14 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
 };
 
 // AlbumList Component
+// AlbumList Component
+// Import types
+// Note: In a real implementation, this would be imported from the types.ts file
+// import { FolderType, PasswordPolicyEnum } from "@/lib/types";
+
 type AlbumListProps = {
   folders: FolderType[];
-  handleDeleteClick: (e: React.MouseEvent, folderPositionId: string) => void;
+  handleDeleteClick: (folderPositionId: string) => void;
   openFilePicker: (folderId: string | null) => void;
   isUploading: boolean;
   cognitoUsername: string | null;
@@ -365,6 +370,21 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     activeDropdownRef.current = isVisible ? null : dropdownElement;
   };
 
+  // Helper function to get password policy display text
+  const getPasswordPolicyText = (policy?: string) => {
+    switch(policy) {
+      case "NotVisible":
+        return t('Hidden');
+      case "Watermark":
+        return t('Watermarked');
+      case "CannotBeSaved":
+        return t('Cannot be saved');
+      case "NoPassword":
+      default:
+        return t('No password');
+    }
+  };
+
   if (folders.length === 0 && !isUploading) {
     return <p style={{ fontSize: 16, color: "#555", width: "100%" }}>{t('No albums found')}</p>;
   }
@@ -393,6 +413,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
               alert(t('Failed to copy link'));
             });
         };
+
+        // Get password policy from folder data
+        const passwordPolicy = folder.folderPassword?.policy || "NoPassword";
 
         return (
           <div
@@ -469,6 +492,19 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     justifyContent: "flex-end", // Added to ensure vertical alignment at the bottom
                     gap: "8px"
                   }}>
+                    {/* Password Policy Indicator - only show if there's a password */}
+                    {passwordPolicy !== "NoPassword" && (
+                      <div style={{
+                        display: "flex",
+                        alignItems: "center",
+                        fontSize: "12px",
+                        color: "#555", // Changed to regular text color
+                        marginBottom: "4px"
+                      }}>
+                        <span>{getPasswordPolicyText(passwordPolicy)}</span>
+                      </div>
+                    )}
+                    
                     {isCreator ? (
                       <div style={{ position: "relative" }}>
                         <a
@@ -536,7 +572,20 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
-                              handleDeleteClick(e, folder.folderPositionId);
+                              
+                              // Close dropdown first
+                              if (activeDropdownRef.current) {
+                                activeDropdownRef.current.style.display = "none";
+                                activeDropdownRef.current = null;
+                              }
+                              
+                              // Use setTimeout to ensure the dropdown has closed
+                              setTimeout(() => {
+                                const confirmDelete = window.confirm(t('Are you sure you want to delete this album?'));
+                                if (confirmDelete) {
+                                  handleDeleteClick(folder.folderPositionId);
+                                }
+                              }, 100);
                             }}
                           >
                             {t('Delete My Copy')}
@@ -546,7 +595,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     ) : (
                       <a
                         href="#"
-                        onClick={(e) => handleDeleteClick(e, folder.folderPositionId)}
+                        onClick={() => handleDeleteClick(folder.folderPositionId)}
                         style={{
                           fontSize: "13px",
                           color: "#d32f2f",
@@ -612,7 +661,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   )}
                 </div>
                 
-                {/* Album description section */}
+                {/* Album description section - updated to use folderDescription if available */}
                 <div
                   style={{
                     marginTop: 16,
@@ -623,7 +672,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     textAlign: isRTL ? "right" : "left"
                   }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  {folder.folderDescription && folder.folderDescription.length > 1 
+                    ? folder.folderDescription 
+                    : ""}
                 </div>
                 
                 {/* Pass the handleCopy function to the FooterSection */}
@@ -695,6 +746,11 @@ const MyAlbums = () => {
                 folder {
                   id
                   folderName
+                  folderDescription
+                  folderPassword {
+                    password
+                    policy
+                  }
                   creatorId
                   createdAt
                   updatedAt
@@ -745,6 +801,8 @@ const MyAlbums = () => {
             folderPositionId: item.id,
             folderId: folder.id,
             folderName: folder.folderName,
+            folderDescription: folder.folderDescription,
+            folderPassword: folder.folderPassword,
             creatorId: folder.creatorId,
             createdAt: folder.createdAt,
             updatedAt: folder.updatedAt,
@@ -1021,63 +1079,57 @@ const MyAlbums = () => {
   }
 
   // Handle deletion confirmation dialog
-  const handleDeleteClick = async (e: React.MouseEvent, folderPositionId: string) => {
-    e.preventDefault()
-    const { t } = useTranslation();
-    const confirmText = window.prompt(t('Are you sure you want to delete this album? Type "delete" to confirm.'))
-    
-    if (confirmText && confirmText.toLowerCase() === "delete") {
-      try {
-        console.log("Deleting album with id:", folderPositionId)
-        
-        const token = localStorage.getItem("token") || checkLoginOrRedirect()
-        if (!token) {
-          console.error("No token found")
-          return
-        }
-        
-        const deleteQuery = `
-          mutation DeleteFolderPosition($deletedFolderPositionIds: [ID!]) {
-            changeFiles(deletedFolderPositionIds: $deletedFolderPositionIds) {
-              items {
-                ... on IdObject {
-                  id
-                }
+  const handleDeleteClick = async (folderPositionId: string) => {
+    try {
+      console.log("Deleting album with id:", folderPositionId)
+      
+      const token = localStorage.getItem("token") || checkLoginOrRedirect()
+      if (!token) {
+        console.error("No token found")
+        return
+      }
+      
+      const deleteQuery = `
+        mutation DeleteFolderPosition($deletedFolderPositionIds: [ID!]) {
+          changeFiles(deletedFolderPositionIds: $deletedFolderPositionIds) {
+            items {
+              ... on IdObject {
+                id
               }
             }
           }
-        `
-        
-        const res = await fetch(GRAPHQL_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({ 
-            query: deleteQuery, 
-            variables: { 
-              deletedFolderPositionIds: [folderPositionId] 
-            } 
-          }),
-        })
-        
-        const json = await res.json()
-        
-        if (json?.data?.changeFiles?.items) {
-          log(`✅ Successfully deleted folder position ${folderPositionId}`)
-          // Remove folder from the state
-          setFolders(prevFolders => prevFolders.filter(folder => folder.folderPositionId !== folderPositionId))
-        } else if (json.errors) {
-          const errorMessage = json.errors[0]?.message || "Unknown GraphQL error"
-          log(`❌ Failed to delete folder: ${errorMessage}`)
-          throw new Error(errorMessage)
         }
-      } catch (err) {
-        log(`❌ Failed to delete folder: ${String(err)}`)
-        console.error("Failed to delete folder:", err)
-        alert(t('Failed to delete album. Please try again.'))
+      `
+      
+      const res = await fetch(GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ 
+          query: deleteQuery, 
+          variables: { 
+            deletedFolderPositionIds: [folderPositionId] 
+          } 
+        }),
+      })
+      
+      const json = await res.json()
+      
+      if (json?.data?.changeFiles?.items) {
+        log(`✅ Successfully deleted folder position ${folderPositionId}`)
+        // Remove folder from the state
+        setFolders(prevFolders => prevFolders.filter(folder => folder.folderPositionId !== folderPositionId))
+      } else if (json.errors) {
+        const errorMessage = json.errors[0]?.message || "Unknown GraphQL error"
+        log(`❌ Failed to delete folder: ${errorMessage}`)
+        throw new Error(errorMessage)
       }
+    } catch (err) {
+      log(`❌ Failed to delete folder: ${String(err)}`)
+      console.error("Failed to delete folder:", err)
+      alert(t('Failed to delete album. Please try again.'))
     }
   }
 

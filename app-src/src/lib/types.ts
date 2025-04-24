@@ -43,6 +43,13 @@ export type ProgressTracker = {
   overallProgress: number
 }
 
+export type PasswordPolicyEnum = 'NotVisible' | 'Watermark' | 'CannotBeSaved' | 'NoPassword';
+
+export type FolderPasswordParameters = {
+  password?: string;
+  policy?: PasswordPolicyEnum;
+};
+
 export type FileType = {
   dataKey: string;
   thumbnailDataKey: string | null;
@@ -54,6 +61,8 @@ export type FolderType = {
   folderId: string;
   creatorId: string;
   folderName: string | null;
+  folderDescription?: string;
+  folderPassword?: FolderPasswordParameters;
   createdAt: number | null;
   updatedAt: number | null;
   files: FileType[];
@@ -70,6 +79,8 @@ export interface Folder {
   folderId: string
   creatorId: string
   folderName: string | null
+  folderDescription?: string
+  folderPassword?: FolderPasswordParameters
   createdAt: number | null
   updatedAt: number | null
   files: File[]

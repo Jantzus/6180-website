@@ -1,4 +1,3 @@
-// First, I'll create the PasswordDialog component based on the provided code
 import { useState, useEffect } from "react"
 import ReactDOM from "react-dom/client"
 import { PutObjectCommand, CopyObjectCommand } from "@aws-sdk/client-s3"
@@ -22,21 +21,41 @@ let s3 = createS3Client()
 // Password Dialog Component
 type ProtectionOption = 'notVisible' | 'watermark' | 'cannotBeSaved' | 'noPassword';
 
+// Password Policy Enum matching the GraphQL API schema
+enum PasswordPolicyEnum {
+  NotVisible = "NotVisible",
+  Watermark = "Watermark",
+  CannotBeSaved = "CannotBeSaved",
+  NoPassword = "NoPassword"
+}
+
 type PasswordDialogProps = {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: (option?: ProtectionOption, password?: string) => void;
+  initialOption?: ProtectionOption;
+  initialPassword?: string;
 };
 
 const PasswordDialog: React.FC<PasswordDialogProps> = ({
   isOpen,
   onClose,
+  initialOption = 'noPassword',
+  initialPassword = ''
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
-  // Add state for selected protection option
-  const [selectedOption, setSelectedOption] = useState<ProtectionOption>('noPassword');
-  const [password, setPassword] = useState('');
+  // Initialize state with props
+  const [selectedOption, setSelectedOption] = useState<ProtectionOption>(initialOption);
+  const [password, setPassword] = useState(initialPassword);
+
+  // Reset state when dialog opens
+  useEffect(() => {
+    if (isOpen) {
+      setSelectedOption(initialOption);
+      setPassword(initialPassword);
+    }
+  }, [isOpen, initialOption, initialPassword]);
 
   if (!isOpen) return null;
 
@@ -45,25 +64,53 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
     display: "flex",
     alignItems: "center",
     marginBottom: "12px",
-    fontSize: "14px"
+    fontSize: "14px",
+    cursor: "pointer",
+    padding: "8px",
+    borderRadius: "4px",
+    backgroundColor: "transparent",
+    border: "1px solid transparent",
+    transition: "background-color 0.2s ease"
+  };
+
+  const selectedOptionStyle = {
+    ...optionStyle,
+    backgroundColor: "#e6f7ff",
+    border: "1px solid #91d5ff"
   };
 
   const radioStyle = {
     marginRight: isRTL ? "0" : "10px",
-    marginLeft: isRTL ? "10px" : "0"
+    marginLeft: isRTL ? "10px" : "0",
+    cursor: "pointer",
+    width: "18px",
+    height: "18px"
+  };
+
+  // Determine if password options should be disabled
+  const passwordRequired = password.trim() === '';
+
+  // Function to handle option selection
+  const handleOptionSelect = (option: ProtectionOption) => {
+    // Only allow password-protected options if password is entered
+    if ((option !== 'noPassword') && passwordRequired) {
+      return;
+    }
+    setSelectedOption(option);
   };
 
   // This function prevents any click events from propagating through the dialog
-  const preventPropagation = (e: React.MouseEvent) => {
+  const stopPropagation = (e: React.MouseEvent | React.FormEvent) => {
     e.preventDefault();  // Prevent default behavior
     e.stopPropagation(); // Stop propagation to parent elements
-    return false;        // Ensure no further handling
   };
-
-  // Handle radio button change
-  const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>, option: ProtectionOption) => {
-    preventPropagation(e as unknown as React.MouseEvent);
-    setSelectedOption(option);
+  
+  // Handle backdrop click
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    // Only close if the click was directly on the backdrop
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
   };
 
   return (
@@ -81,7 +128,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
         zIndex: 1000,
         padding: "20px",
       }}
-      onClick={onClose}
+      onClick={handleBackdropClick}
     >
       <div
         style={{
@@ -93,114 +140,182 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
           direction: isRTL ? "rtl" : "ltr",
           margin: "20px",
-          position: "relative", // Add position relative
+          position: "relative",
         }}
-        onClick={preventPropagation} // Use our enhanced prevention function
+        onClick={stopPropagation}
       >
         <div style={{ marginBottom: "20px", textAlign: isRTL ? "right" : "left" }}>
-          {t('Enter a password to protect this album.')}
+          {t('Enter a password for this album.')}
           <br />
           <br />
-          {t('Then, select picture settings prior to being unlocked.')}
+          {t('Select what can be done with photos and videos without a password.')}
         </div>
         
         <input
-          type="password"
+          type="text"
           style={{
             width: "100%",
-            padding: "10px 12px", // More balanced padding on both sides
+            padding: "10px 12px",
             marginBottom: "20px",
             borderRadius: "4px",
             border: "1px solid #ddd",
             fontSize: "14px",
-            boxSizing: "border-box" // Ensure padding is included in width calculation
+            boxSizing: "border-box",
+            WebkitTextSizeAdjust: "100%", // Prevent iOS zooming
+            touchAction: "manipulation" // Additional prevention for zooming
           }}
           placeholder={t('Enter password')}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          onClick={preventPropagation} // Prevent clicks on input from propagating
+          autoCapitalize="none"
+          autoComplete="off"
+          spellCheck="false"
+          autoCorrect="off"
         />
         
         <div style={{ marginBottom: "20px" }}>
-          <div style={optionStyle}>
+          {/* Not Visible Option */}
+          <div 
+            style={selectedOption === 'notVisible' ? selectedOptionStyle : {
+              ...optionStyle,
+              opacity: passwordRequired ? 0.5 : 1,
+            }}
+            onClick={() => !passwordRequired && handleOptionSelect('notVisible')}
+          >
             <input 
               type="radio" 
               name="protection" 
               id="notVisible" 
               style={radioStyle}
               checked={selectedOption === 'notVisible'}
-              onChange={(e) => handleOptionChange(e, 'notVisible')}
-              onClick={preventPropagation} // Prevent clicks on radio buttons from propagating
+              onChange={() => {}} // Empty handler to prevent React warning
+              disabled={passwordRequired}
+              onClick={(e) => {
+                e.stopPropagation();
+                !passwordRequired && handleOptionSelect('notVisible');
+              }}
             />
             <label 
               htmlFor="notVisible"
-              onClick={(e) => {
-                preventPropagation(e);
-                setSelectedOption('notVisible');
+              style={{ 
+                cursor: passwordRequired ? "not-allowed" : "pointer", 
+                width: "100%",
+                userSelect: "none" // Prevent text selection
               }}
+              onClick={() => !passwordRequired && handleOptionSelect('notVisible')}
             >
               {t('Not Visible')}
+              {passwordRequired && (
+                <span style={{ fontSize: "12px", color: "#999", display: "block" }}>
+                  {t('Password required')}
+                </span>
+              )}
             </label>
           </div>
           
-          <div style={optionStyle}>
+          {/* Watermark Option */}
+          <div 
+            style={selectedOption === 'watermark' ? selectedOptionStyle : {
+              ...optionStyle,
+              opacity: passwordRequired ? 0.5 : 1,
+            }}
+            onClick={() => !passwordRequired && handleOptionSelect('watermark')}
+          >
             <input 
               type="radio" 
               name="protection" 
               id="watermark" 
               style={radioStyle}
               checked={selectedOption === 'watermark'}
-              onChange={(e) => handleOptionChange(e, 'watermark')}
-              onClick={preventPropagation} // Prevent clicks on radio buttons from propagating
+              onChange={() => {}} // Empty handler to prevent React warning
+              disabled={passwordRequired}
+              onClick={(e) => {
+                e.stopPropagation();
+                !passwordRequired && handleOptionSelect('watermark');
+              }}
             />
             <label 
               htmlFor="watermark"
-              onClick={(e) => {
-                preventPropagation(e);
-                setSelectedOption('watermark');
+              style={{ 
+                cursor: passwordRequired ? "not-allowed" : "pointer", 
+                width: "100%",
+                userSelect: "none" // Prevent text selection
               }}
+              onClick={() => !passwordRequired && handleOptionSelect('watermark')}
             >
               {t('Watermark')}
+              {passwordRequired && (
+                <span style={{ fontSize: "12px", color: "#999", display: "block" }}>
+                  {t('Password required')}
+                </span>
+              )}
             </label>
           </div>
           
-          <div style={optionStyle}>
+          {/* Cannot Be Saved Option */}
+          <div 
+            style={selectedOption === 'cannotBeSaved' ? selectedOptionStyle : {
+              ...optionStyle,
+              opacity: passwordRequired ? 0.5 : 1,
+            }}
+            onClick={() => !passwordRequired && handleOptionSelect('cannotBeSaved')}
+          >
             <input 
               type="radio" 
               name="protection" 
               id="cannotBeSaved" 
               style={radioStyle}
               checked={selectedOption === 'cannotBeSaved'}
-              onChange={(e) => handleOptionChange(e, 'cannotBeSaved')}
-              onClick={preventPropagation} // Prevent clicks on radio buttons from propagating
+              onChange={() => {}} // Empty handler to prevent React warning
+              disabled={passwordRequired}
+              onClick={(e) => {
+                e.stopPropagation();
+                !passwordRequired && handleOptionSelect('cannotBeSaved');
+              }}
             />
             <label 
               htmlFor="cannotBeSaved"
-              onClick={(e) => {
-                preventPropagation(e);
-                setSelectedOption('cannotBeSaved');
+              style={{ 
+                cursor: passwordRequired ? "not-allowed" : "pointer", 
+                width: "100%",
+                userSelect: "none" // Prevent text selection
               }}
+              onClick={() => !passwordRequired && handleOptionSelect('cannotBeSaved')}
             >
               {t('Cannot Be Saved')}
+              {passwordRequired && (
+                <span style={{ fontSize: "12px", color: "#999", display: "block" }}>
+                  {t('Password required')}
+                </span>
+              )}
             </label>
           </div>
           
-          <div style={optionStyle}>
+          {/* No Password Option - Always available */}
+          <div 
+            style={selectedOption === 'noPassword' ? selectedOptionStyle : optionStyle}
+            onClick={() => handleOptionSelect('noPassword')}
+          >
             <input 
               type="radio" 
               name="protection" 
               id="noPassword" 
               style={radioStyle}
               checked={selectedOption === 'noPassword'}
-              onChange={(e) => handleOptionChange(e, 'noPassword')}
-              onClick={preventPropagation} // Prevent clicks on radio buttons from propagating
+              onChange={() => {}} // Empty handler to prevent React warning
+              onClick={(e) => {
+                e.stopPropagation();
+                handleOptionSelect('noPassword');
+              }}
             />
             <label 
               htmlFor="noPassword"
-              onClick={(e) => {
-                preventPropagation(e);
-                setSelectedOption('noPassword');
+              style={{ 
+                cursor: "pointer", 
+                width: "100%",
+                userSelect: "none" // Prevent text selection
               }}
+              onClick={() => handleOptionSelect('noPassword')}
             >
               {t('No Password')}
             </label>
@@ -216,10 +331,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
           }}
         >
           <button
-            onClick={(e) => {
-              preventPropagation(e);
-              onClose();
-            }}
+            onClick={() => onClose()} // Don't pass selected values when canceling
             style={{
               padding: "8px 12px",
               border: "1px solid #ddd",
@@ -231,11 +343,10 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
             {t('Cancel')}
           </button>
           <button
-            onClick={(e) => {
-              preventPropagation(e);
+            onClick={() => {
               console.log(`Saving with option: ${selectedOption}, password: ${password.length > 0 ? '********' : 'none'}`);
-              alert(t('Password protection feature will be implemented soon.'));
-              onClose();
+              // Pass the selected option and password to the parent component
+              onClose(selectedOption, password);
             }}
             style={{
               padding: "8px 12px",
@@ -285,6 +396,10 @@ const SaveAlbum = () => {
   
   // Add state for the password dialog
   const [showPasswordDialog, setShowPasswordDialog] = useState(false)
+  
+  // Add state for tracking selected password protection option and password
+  const [passwordProtectionOption, setPasswordProtectionOption] = useState<ProtectionOption>('noPassword')
+  const [albumPassword, setAlbumPassword] = useState("")
 
   // Add a log function that updates both console and debug state
   const log = (message: string) => {
@@ -766,8 +881,15 @@ const SaveAlbum = () => {
         folderInput: {
           folderSelectedTagInputs: [],
           folderAboutContactIds: [accountId],
-          folderName: folderName, // Add folder name
-          folderDescription: folderDescription, // Add folder description
+          folderName: folderName, // Save folder name from input field
+          folderDescription: folderDescription, // Save folder description from input field
+          // Add password protection based on selected option
+          folderPasswordInput: {
+            // Only add password if not using NoPassword option
+            password: passwordProtectionOption !== 'noPassword' ? albumPassword : null,
+            // Map our option type to the enum expected by the API
+            policy: PasswordPolicyEnum[passwordProtectionOption.charAt(0).toUpperCase() + passwordProtectionOption.slice(1) as keyof typeof PasswordPolicyEnum]
+          },
           folderInviteParametersInput: {
             folderIsOnlyVisibleThroughCode: true,
             folderInviteHasBeenDisabled: false,
@@ -976,16 +1098,41 @@ const SaveAlbum = () => {
     window.location.href = "/index.html"
   }
 
+  // Function to handle password dialog close and capture selected option
+  const handleClosePasswordDialog = (option?: ProtectionOption, password?: string) => {
+    log("🔒 Closing password policy dialog")
+    
+    // If option and password are provided, update the state
+    if (option) {
+      setPasswordProtectionOption(option)
+    }
+    
+    if (password !== undefined) {
+      setAlbumPassword(password)
+    }
+    
+    setShowPasswordDialog(false)
+  }
+  
+  // Get text for the Album Password Policy button
+  const getPasswordPolicyButtonText = () => {
+    if (passwordProtectionOption === 'noPassword') {
+      return t('Album Password Policy')
+    }
+    
+    const optionText = 
+      passwordProtectionOption === 'notVisible' ? t('Not Visible') :
+      passwordProtectionOption === 'watermark' ? t('Watermark') :
+      t('Cannot Be Saved')
+    
+    // Show the option with the password
+    return `${optionText} ${albumPassword ? `(${albumPassword})` : ''}`
+  }
+
   // Handle opening the password dialog
   const handleOpenPasswordDialog = () => {
     log("🔒 Opening password policy dialog")
     setShowPasswordDialog(true)
-  }
-
-  // Handle closing the password dialog
-  const handleClosePasswordDialog = () => {
-    log("🔒 Closing password policy dialog")
-    setShowPasswordDialog(false)
   }
 
   return (
@@ -1325,7 +1472,7 @@ const SaveAlbum = () => {
             {t('Add More Photos')}
           </button>
           
-          {/* Select Photos To Delete button - only visible for existing folderIds */}
+          {/* Select Photos To Delete button - COMMENTED OUT FOR NOW
           <button
             style={{
               padding: "14px 28px",
@@ -1347,16 +1494,18 @@ const SaveAlbum = () => {
           >
             {t('Select Photos To Delete')}
           </button>
+          */}
           
-          {/* Album Password Policy button */}
+          {/* Album Password Policy button - keep gray background but use bold black text for password options */}
           <button
             style={{
               padding: "14px 28px",
               fontSize: "16px",
               borderRadius: "8px",
               border: "none",
-              backgroundColor: "#8c8c8c", // More neutral gray color
-              color: "white",
+              backgroundColor: "#8c8c8c", // Keep gray color for background
+              color: passwordProtectionOption === 'noPassword' ? "white" : "#000000", // Black text for password options
+              fontWeight: passwordProtectionOption === 'noPassword' ? "normal" : "bold", // Bold when password is set
               cursor: "pointer",
               boxShadow: "0 4px 10px rgba(140, 140, 140, 0.2)",
               opacity: isSavingAlbum ? 0.6 : 1,
@@ -1365,7 +1514,7 @@ const SaveAlbum = () => {
             onClick={handleOpenPasswordDialog}
             disabled={isSavingAlbum}
           >
-            {t('Album Password Policy')}
+            {getPasswordPolicyButtonText()}
           </button>
         </div>
 
@@ -1456,11 +1605,13 @@ const SaveAlbum = () => {
           </div>
         )}
         
-        {/* Password Dialog Component */}
+        {/* Password Dialog Component with updated props */}
         {showPasswordDialog && (
           <PasswordDialog 
             isOpen={showPasswordDialog} 
-            onClose={handleClosePasswordDialog} 
+            onClose={handleClosePasswordDialog}
+            initialOption={passwordProtectionOption}
+            initialPassword={albumPassword} 
           />
         )}
       </div>
