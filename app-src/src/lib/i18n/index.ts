@@ -1,70 +1,75 @@
 // src/lib/i18n/index.ts
-import { translations, supportedLanguages } from '@/lib/i18n/translations';
-import type { EnglishPhrase, SupportedLanguage } from '@/lib/i18n/translations';
+import { 
+  translations, 
+  supportedLanguages, 
+  rtlLanguages,
+  getLanguageDirection
+} from '@/lib/i18n/translations';
+import type { SupportedLanguage, TranslationKey } from '@/lib/i18n/translations';
 
-// Current language - defaults to English
+// Current language state
 let currentLanguage: SupportedLanguage = 'en';
 
 /**
  * Sets the active language
  */
-export const setLanguage = (lang: string): void => {
-  if (lang === 'en' || lang in supportedLanguages) {
+export const setLanguage = (lang: string): SupportedLanguage => {
+  if (lang in supportedLanguages) {
     currentLanguage = lang as SupportedLanguage;
-  } else {
-    console.warn(`Language ${lang} not supported, falling back to en`);
-    currentLanguage = 'en';
+    return currentLanguage;
   }
+  
+  console.warn(`Language ${lang} not supported, falling back to en`);
+  currentLanguage = 'en';
+  return currentLanguage;
 };
 
 /**
- * Translates an English phrase to the current language
+ * Translates a key to the current language
  */
-export const translate = (phrase: EnglishPhrase): string => {
-  // If we're using English, just return the phrase itself
+export const t = (key: TranslationKey, params?: Record<string, string | number>): string => {
+  // For English, just return the key (which is the English phrase)
   if (currentLanguage === 'en') {
-    return phrase;
+    let text = key;
+    
+    // Handle parameter substitution
+    if (params) {
+      Object.entries(params).forEach(([param, value]) => {
+        text = text.replace(new RegExp(`{{${param}}}`, 'g'), String(value));
+      });
+    }
+    
+    return text;
   }
   
   // Look up translation in the current language
-  const translationsByLanguage = translations[phrase];
-  if (translationsByLanguage && currentLanguage in translationsByLanguage) {
-    return translationsByLanguage[currentLanguage];
+  const translationSet = translations[key];
+  let text = translationSet && currentLanguage in translationSet 
+    ? translationSet[currentLanguage] as string 
+    : key;
+  
+  // Handle parameter substitution
+  if (params) {
+    Object.entries(params).forEach(([param, value]) => {
+      text = text.replace(new RegExp(`{{${param}}}`, 'g'), String(value));
+    });
   }
   
-  // Return original English phrase as fallback
-  return phrase;
+  return text;
 };
 
 /**
- * Detects the browser language
+ * Detects browser language and returns a supported match or fallback
  */
 export const detectBrowserLanguage = (): SupportedLanguage => {
-  if (typeof window === 'undefined') {
-    return 'en';
-  }
+  if (typeof window === 'undefined') return 'en';
   
-  const browserLang = window.navigator.language.split('-')[0] as SupportedLanguage;
-  return (browserLang in supportedLanguages) ? browserLang : 'en';
+  const browserLang = window.navigator.language.split('-')[0];
+  return browserLang in supportedLanguages ? browserLang as SupportedLanguage : 'en';
 };
 
 /**
- * Initializes i18n with browser language or saved preference
- */
-export const initializeI18n = (): void => {
-  if (typeof window !== 'undefined' && window.localStorage) {
-    const savedLang = window.localStorage.getItem('preferred-language') as SupportedLanguage;
-    if (savedLang && (savedLang in supportedLanguages)) {
-      setLanguage(savedLang);
-      return;
-    }
-  }
-  
-  setLanguage(detectBrowserLanguage());
-};
-
-/**
- * Gets all available languages for selectors
+ * Gets all available languages for UI selectors
  */
 export const getAvailableLanguages = (): Array<{ code: SupportedLanguage; name: string }> => {
   return Object.entries(supportedLanguages).map(([code, name]) => ({
@@ -73,13 +78,26 @@ export const getAvailableLanguages = (): Array<{ code: SupportedLanguage; name: 
   }));
 };
 
-// Expose everything needed
-export { translations, EnglishPhrase, supportedLanguages, SupportedLanguage };
-export default {
-  translate,
-  setLanguage,
-  detectBrowserLanguage,
-  initializeI18n,
-  getAvailableLanguages,
-  supportedLanguages
+/**
+ * Initializes i18n with browser language or saved preference
+ */
+export const init = (): SupportedLanguage => {
+  let language: SupportedLanguage = 'en';
+  
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const saved = window.localStorage.getItem('preferred-language') as SupportedLanguage;
+    language = saved && (saved in supportedLanguages) ? saved : detectBrowserLanguage();
+  }
+  
+  return setLanguage(language);
+};
+
+// Re-export needed types and utilities
+export { 
+  translations, 
+  supportedLanguages, 
+  SupportedLanguage, 
+  TranslationKey,
+  rtlLanguages,
+  getLanguageDirection 
 };

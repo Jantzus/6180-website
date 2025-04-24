@@ -1,3 +1,6 @@
+import React from "react";
+import type { TranslationKey } from "@/lib/i18n/translations";
+
 type ProgressTrackerType = {
   totalFiles: number;
   filesComplete: number;
@@ -9,7 +12,7 @@ type ProgressTrackerType = {
 
 type UploadProgressProps = {
   progressTracker: ProgressTrackerType;
-  t: (key: string) => string;
+  t: (key: TranslationKey, params?: Record<string, string | number>) => string;
   isRTL: boolean;
   style?: React.CSSProperties;
 };
@@ -35,7 +38,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
       overflow: "hidden",
       ...style
     }}>
-      <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t('uploadProgress')}</h3>
+      <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t('Upload Progress')}</h3>
       
       <div style={{ marginBottom: "12px" }}>
         <div style={{ 
@@ -44,7 +47,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
           fontSize: "14px", 
           marginBottom: "6px" 
         }}>
-          <span>{t('overallProgress')}: {Math.round(progressTracker.overallProgress * 100)}%</span>
+          <span>{t('Overall Progress')}: {Math.round(progressTracker.overallProgress * 100)}%</span>
           <span>{progressTracker.filesComplete} {t('of')} {progressTracker.totalFiles} {t('complete')}</span>
         </div>
         <div style={{ 
@@ -76,16 +79,16 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
         overflow: "hidden"
       }}>
         {progressTracker.filesUploading > 0 && (
-          <div>📤 {t('uploading')}: {progressTracker.filesUploading}</div>
+          <div>📤 {t('Uploading')}: {progressTracker.filesUploading}</div>
         )}
         {progressTracker.filesProcessing > 0 && (
-          <div>⚙️ {t('processing')}: {progressTracker.filesProcessing}</div>
+          <div>⚙️ {t('Processing')}: {progressTracker.filesProcessing}</div>
         )}
         {progressTracker.filesComplete > 0 && (
-          <div>✅ {t('complete')}: {progressTracker.filesComplete}</div>
+          <div>✅ {t('Complete')}: {progressTracker.filesComplete}</div>
         )}
         {progressTracker.filesWithError > 0 && (
-          <div style={{ color: "#e53935" }}>❌ {t('failed')}: {progressTracker.filesWithError}</div>
+          <div style={{ color: "#e53935" }}>❌ {t('Failed')}: {progressTracker.filesWithError}</div>
         )}
       </div>
     </div>

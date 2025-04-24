@@ -1,6 +1,9 @@
+import React from "react";
+import type { TranslationKey } from "@/lib/i18n/translations";
+
 type DebugLogProps = {
   debugMessages: string[];
-  t: (key: string) => string;
+  t: (key: TranslationKey, params?: Record<string, string | number>) => string;
   isRTL: boolean;
   textDirection: string;
 };
@@ -30,7 +33,7 @@ export const DebugLog: React.FC<DebugLogProps> = ({
         color: "#856404",
         textAlign: isRTL ? "right" : "left"
       }}>
-        {t('debugLog')}
+        {t('Debug Log')}
       </h3>
       <pre style={{ 
         fontSize: "14px", 

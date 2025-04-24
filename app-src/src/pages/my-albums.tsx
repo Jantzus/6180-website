@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { useEffect, useState, useRef } from "react"
-import { checkLoginOrRedirect, generateUUID, getVideoDuration, getVideoThumbnailBlob, getOwnerItemId, getTargetItemIdentifier, detectBrowserLanguage } from "@/lib/utils"
+import { checkLoginOrRedirect, generateUUID, getVideoDuration, getVideoThumbnailBlob, getOwnerItemId, getTargetItemIdentifier } from "@/lib/utils"
 import { createS3Client } from "@/lib/aws"
 import { PutObjectCommand } from "@aws-sdk/client-s3"
 import { GRAPHQL_ENDPOINT, BUCKET_NAME, STORAGE_KEYS } from "@/lib/config"
@@ -10,15 +10,22 @@ import {
   SelectedPhoto, 
   ProgressTracker,
   UploadStatus,
-  LanguageCode,
   FolderType
 } from "@/lib/types"
+import { SupportedLanguage } from "@/lib/i18n/translations"
 import { LogoutButton } from "@/components/LogoutButton"
 import { LazyImage } from "@/components/LazyImage"
 import { UploadProgress } from "@/components/UploadProgress"
 import { FileInput } from "@/components/FileInput"
 import { DebugLog } from "@/components/DebugLog"
-import { myAlbumsTranslations } from "@/lib/translations"
+import { S3_BUCKET_URL } from "@/lib/config"
+import { formatDate } from "@/lib/utils"
+import { getLanguageDirection } from "@/lib/i18n"
+import { 
+  I18nProvider, 
+  LanguageSelector,
+  useTranslation
+} from "@/lib/i18n/react"
 
 // Create S3 client
 const s3 = createS3Client()
@@ -28,17 +35,16 @@ type HeaderProps = {
   publicUsername: string | null;
   isUploading: boolean;
   openFilePicker: (folderId: string | null) => void;
-  t: (key: string) => string;
-  isRTL: boolean;
 };
 
 export const Header: React.FC<HeaderProps> = ({ 
   publicUsername, 
   isUploading, 
-  openFilePicker, 
-  t,
-  isRTL
+  openFilePicker
 }) => {
+  const { t, language } = useTranslation();
+  const isRTL = getLanguageDirection(language) === "rtl";
+
   return (
     <>
       <div
@@ -70,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             disabled={isUploading}
           >
-            {isUploading ? t('creatingAlbum') : t('createAlbum')}
+            {isUploading ? t('Uploading...') : t('Create Album')}
           </button>
         </div>
         
@@ -81,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <button
             onClick={() => {
-              alert('"Show all public albums with a link to share with other users" coming soon.');
+              alert(t('Feature coming soon: "Show all public albums with a link to share with other users"'));
             }}
             style={{
               fontSize: "14px",
@@ -93,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({
               cursor: "pointer"
             }}
           >
-            {t('myPublicProfile') || "My Public Profile"}
+            {t('My Public Profile')}
           </button>
         </div>
       </div>
@@ -123,34 +129,69 @@ export const Header: React.FC<HeaderProps> = ({
   );
 };
 
+// Search Bar Component
+const SearchBar: React.FC<{
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+  t: (key: string) => string;
+  isRTL: boolean;
+}> = ({ searchQuery, setSearchQuery, t, isRTL }) => {
+  return (
+    <div 
+      style={{
+        width: "100%", 
+        marginBottom: 24,
+        boxSizing: "border-box", // Include padding in width calculation
+        direction: isRTL ? "rtl" : "ltr"
+      }}
+    >
+      <input
+        type="text"
+        placeholder={t('Search album title or description')}
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        style={{
+          width: "100%",
+          padding: "10px 16px",
+          fontSize: "14px",
+          border: "1px solid #ddd",
+          borderRadius: "6px",
+          outline: "none",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+          boxSizing: "border-box", // Include padding in width calculation
+        }}
+      />
+    </div>
+  );
+};
+
 // FooterSection Component
 type FooterSectionProps = {
   folderId: string;
   handleCopy: (e: React.MouseEvent) => void;
   openFilePicker: (folderId: string | null) => void;
-  t: (key: string) => string;
-  isRTL: boolean;
 };
 
 export const FooterSection: React.FC<FooterSectionProps> = ({
   folderId,
   handleCopy,
-  openFilePicker,
-  t,
-  isRTL
+  openFilePicker
 }) => {
+  const { t, language } = useTranslation();
+  const isRTL = getLanguageDirection(language) === "rtl";
+
   const handleAddToPublicProfileClick = (e: React.MouseEvent) => {
     e.preventDefault(); 
     e.stopPropagation();
     // Add to public profile functionality would go here
-    alert('"Make album accessible on your public profile" coming soon.');
+    alert(t('Feature coming soon: "Make album accessible on your public profile"'));
   };
 
   const handleDownloadAlbumClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     // Download album functionality would go here
-    alert('"Download all photos in this album as a zip file" coming soon.');
+    alert(t('Feature coming soon: "Download all photos in this album as a zip file"'));
   };
 
   // Common button style to avoid repetition
@@ -202,7 +243,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
                 color: "white",
               }}
             >
-              {t('addPhotos')}
+              {t('Add Photos')}
             </button>
             <button
               onClick={(e) => {
@@ -215,7 +256,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
                 backgroundColor: "#e0e0e0",
               }}
             >
-              {t('copyLink')}
+              {t('Copy Link')}
             </button>
             <button
               onClick={handleDownloadAlbumClick}
@@ -224,7 +265,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
                 backgroundColor: "#e0e0e0",
               }}
             >
-              {t('downloadAlbum') || 'Download Album'}
+              {t('Download Album')}
             </button>
             <button
               onClick={handleAddToPublicProfileClick}
@@ -233,7 +274,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
                 backgroundColor: "#e0e0e0",
               }}
             >
-              {t('addToPublicProfile') || 'Add To Public Profile'}
+              {t('Add To Public Profile')}
             </button>
           </div>
         </div>
@@ -252,16 +293,11 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
 };
 
 // AlbumList Component
-import { formatDate } from "@/lib/utils";
-import { S3_BUCKET_URL } from "@/lib/config";
-
 type AlbumListProps = {
   folders: FolderType[];
   handleDeleteClick: (e: React.MouseEvent, folderPositionId: string) => void;
   openFilePicker: (folderId: string | null) => void;
   isUploading: boolean;
-  t: (key: string) => string;
-  isRTL: boolean;
   cognitoUsername: string | null;
 };
 
@@ -270,10 +306,11 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   handleDeleteClick, 
   openFilePicker,
   isUploading,
-  t,
-  isRTL,
   cognitoUsername
 }) => {
+  const { t, language } = useTranslation();
+  const isRTL = getLanguageDirection(language) === "rtl";
+
   // Reference to keep track of active dropdown menu
   const activeDropdownRef = useRef<HTMLElement | null>(null);
 
@@ -329,7 +366,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   };
 
   if (folders.length === 0 && !isUploading) {
-    return <p style={{ fontSize: 16, color: "#555", width: "100%" }}>{t('noAlbums')}</p>;
+    return <p style={{ fontSize: 16, color: "#555", width: "100%" }}>{t('No albums found')}</p>;
   }
 
   return (
@@ -349,11 +386,11 @@ export const AlbumList: React.FC<AlbumListProps> = ({
           e.preventDefault();
           navigator.clipboard.writeText(inviteLink)
             .then(() => {
-              alert(t('linkCopied') || "Link has been copied to your clipboard.");
+              alert(t('Link has been copied to your clipboard.'));
             })
             .catch(err => {
               console.error("Failed to copy link:", err);
-              alert(t('copyFailed') || "Failed to copy link");
+              alert(t('Failed to copy link'));
             });
         };
 
@@ -420,8 +457,8 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                         textAlign: isRTL ? "right" : "left",
                         marginTop: 4
                       }}>
-                        {showCreated && <div>{t('created')}: {formatDate(folder.createdAt)}</div>}
-                        {showUpdated && <div>{t('updated')}: {formatDate(folder.updatedAt)}</div>}
+                        {showCreated && <div>{t('Created')}: {formatDate(folder.createdAt)}</div>}
+                        {showUpdated && <div>{t('Updated')}: {formatDate(folder.updatedAt)}</div>}
                       </div>
                     )}
                   </div>
@@ -447,7 +484,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             textDecoration: "none",
                           }}
                         >
-                          {t('edit') || 'Edit'}
+                          {t('Edit')}
                         </a>
                         <div 
                           style={{
@@ -483,7 +520,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                               e.stopPropagation();
                             }}
                           >
-                            {t('editDetails') || 'Edit Details'}
+                            {t('Edit Details')}
                           </a>
                           <a
                             href="#"
@@ -501,7 +538,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                               handleDeleteClick(e, folder.folderPositionId);
                             }}
                           >
-                            {t('deleteMyCopy') || 'Delete My Copy'}
+                            {t('Delete My Copy')}
                           </a>
                         </div>
                       </div>
@@ -515,13 +552,12 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                           textDecoration: "none",
                         }}
                       >
-                        {t('delete')}
+                        {t('Delete')}
                       </a>
                     )}
                   </div>
                 </div>
                 
-                {/* Rest of your component remains the same */}
                 <div 
                   style={{ 
                     width: "100%",
@@ -545,7 +581,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                       <LazyImage
                         key={i}
                         src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
-                        alt={t('thumbnail')}
+                        alt={t('Thumbnail')}
                         style={{
                           width: 160,
                           height: 100,
@@ -594,8 +630,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   folderId={folder.folderId}
                   handleCopy={handleCopy}
                   openFilePicker={openFilePicker}
-                  t={t}
-                  isRTL={isRTL}
                 />
               </div>
             </a>
@@ -625,18 +659,6 @@ const MyAlbums = () => {
   const [currentFolderId, setCurrentFolderId] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState<string>("")
   
-  // Language state
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('en-US')
-
-  // Get translation function
-  const t = (key: string): string => {
-    return myAlbumsTranslations[currentLanguage][key] || myAlbumsTranslations['en-US'][key] || key
-  }
-
-  // Determine text direction based on language
-  const isRTL = currentLanguage === 'ar';
-  const textDirection = isRTL ? 'rtl' : 'ltr';
-
   // Add a log function that updates both console and debug state
   const log = (message: string) => {
     console.log(message)
@@ -646,17 +668,7 @@ const MyAlbums = () => {
       setDebugMessages(prev => [...prev, message])
     }
   }
-
-  // Detect browser language on initial load
-  useEffect(() => {
-    setCurrentLanguage(detectBrowserLanguage())
-  }, [])
-
-  // Save language preference when it changes
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.LANGUAGE, currentLanguage)
-  }, [currentLanguage])
-
+  
   // Load user data and fetch folders
   useEffect(() => {
     setPublicUsername(localStorage.getItem("publicUsername") || null)
@@ -1010,7 +1022,8 @@ const MyAlbums = () => {
   // Handle deletion confirmation dialog
   const handleDeleteClick = async (e: React.MouseEvent, folderPositionId: string) => {
     e.preventDefault()
-    const confirmText = window.prompt(t('deleteConfirm'))
+    const { t } = useTranslation();
+    const confirmText = window.prompt(t('Are you sure you want to delete this album? Type "delete" to confirm.'))
     
     if (confirmText && confirmText.toLowerCase() === "delete") {
       try {
@@ -1062,10 +1075,14 @@ const MyAlbums = () => {
       } catch (err) {
         log(`❌ Failed to delete folder: ${String(err)}`)
         console.error("Failed to delete folder:", err)
-        alert(t('deleteFailed'))
+        alert(t('Failed to delete album. Please try again.'))
       }
     }
   }
+
+  // Get translation function from the hook for the main component
+  const { t, language } = useTranslation();
+  const isRTL = getLanguageDirection(language) === "rtl";
 
   return (
     <div
@@ -1074,47 +1091,33 @@ const MyAlbums = () => {
         backgroundColor: "#f8f9fa",
         minHeight: "100vh",
         padding: "40px 20px",
-        direction: textDirection,
       }}
     >
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
+        {/* Language Selector */}
+        <div style={{ 
+          marginBottom: 20, 
+          display: "flex", 
+          justifyContent: "flex-end" 
+        }}>
+          <LanguageSelector className="language-selector" />
+        </div>
+
         {/* Container for all content with consistent width */}
         <div style={{ width: "100%" }}>
           <Header 
             publicUsername={publicUsername}
             isUploading={isUploading}
             openFilePicker={openFilePicker}
+          />
+          
+          {/* Search Bar Component */}
+          <SearchBar 
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
             t={t}
             isRTL={isRTL}
           />
-          
-          {/* Search Bar */}
-          <div 
-            style={{
-              width: "100%", 
-              marginBottom: 24,
-              display: "flex",
-              flexDirection: isRTL ? "row-reverse" : "row"
-            }}
-          >
-            <input
-              type="text"
-              placeholder={t('searchPlaceholder') || "Search album title or description"}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              style={{
-                width: "100%",
-                padding: "10px 16px",
-                fontSize: "14px",
-                border: "1px solid #ddd",
-                borderRadius: "6px",
-                outline: "none",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
-                textAlign: isRTL ? "right" : "left",
-                direction: textDirection
-              }}
-            />
-          </div>
           
           <UploadProgress 
             progressTracker={progressTracker}
@@ -1127,8 +1130,6 @@ const MyAlbums = () => {
             handleDeleteClick={handleDeleteClick}
             openFilePicker={openFilePicker}
             isUploading={isUploading}
-            t={t}
-            isRTL={isRTL}
             cognitoUsername={cognitoUsername}
           />
           
@@ -1144,11 +1145,15 @@ const MyAlbums = () => {
         debugMessages={debugMessages}
         t={t}
         isRTL={isRTL}
-        textDirection={textDirection}
+        textDirection={isRTL ? "rtl" : "ltr"}
       />
     </div>
   )
 }
 
-// Initialize the app
-ReactDOM.createRoot(document.getElementById("root")!).render(<MyAlbums />)
+// Initialize the app with I18nProvider
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <I18nProvider initialLanguage={localStorage.getItem(STORAGE_KEYS.LANGUAGE) as SupportedLanguage || 'en'}>
+    <MyAlbums />
+  </I18nProvider>
+)

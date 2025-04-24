@@ -6,8 +6,8 @@ import {
   InitiateAuthCommand,
   RespondToAuthChallengeCommand,
 } from '@aws-sdk/client-cognito-identity-provider'
-import { supportedLanguages } from "@/lib/languages"
-import { GRAPHQL_ENDPOINT, REGION, CLIENT_ID, STORAGE_KEYS } from "@/lib/config"
+import { GRAPHQL_ENDPOINT, REGION, CLIENT_ID } from "@/lib/config"
+import { I18nProvider, useTranslation, LanguageSelector } from '@/lib/i18n/react'
 
 const cognito = new CognitoIdentityProviderClient({ region: REGION })
 
@@ -21,268 +21,23 @@ function normalizeEmail(input: string): string {
   return trimmed
 }
 
-// Define the translation interface
-interface Translation {
-  signIn: string;
-  enterEmail: string;
-  sendLoginCode: string;
-  sending: string;
-  checkEmail: string;
-  enterCode: string;
-  confirm: string;
-  verifying: string;
-  errorSending: string;
-  errorVerifying: string;
-  language: string;
-}
-
-// Translation object for all supported languages
-const translations: Record<string, Translation> = {
-  'en-US': {
-    signIn: 'Sign in to 6180',
-    enterEmail: 'Enter your email',
-    sendLoginCode: 'Send Login Code',
-    sending: 'Sending...',
-    checkEmail: 'Check your email for a 6-digit code.',
-    enterCode: 'Enter 6-digit code',
-    confirm: 'Confirm Code',
-    verifying: 'Verifying...',
-    errorSending: 'Failed to send code. Please try again.',
-    errorVerifying: 'Invalid or expired code. Please try again. Consider restarting.',
-    language: 'Language',
-  },
-  'en': {
-    signIn: 'Sign in to 6180',
-    enterEmail: 'Enter your email',
-    sendLoginCode: 'Send Login Code',
-    sending: 'Sending...',
-    checkEmail: 'Check your email for a 6-digit code.',
-    enterCode: 'Enter 6-digit code',
-    confirm: 'Confirm Code',
-    verifying: 'Verifying...',
-    errorSending: 'Failed to send code. Please try again.',
-    errorVerifying: 'Invalid or expired code. Please try again. Consider restarting.',
-    language: 'Language',
-  },
-  'zh-CN': {
-    signIn: '登录到 6180',
-    enterEmail: '输入您的电子邮件',
-    sendLoginCode: '发送登录代码',
-    sending: '发送中...',
-    checkEmail: '请检查您的电子邮件，查收 6 位数代码。',
-    enterCode: '输入 6 位数代码',
-    confirm: '确认代码',
-    verifying: '验证中...',
-    errorSending: '发送代码失败。请重试。',
-    errorVerifying: '无效或已过期的代码。请重试。考虑重新开始。',
-    language: '语言',
-  },
-  'zh': {
-    signIn: '登录到 6180',
-    enterEmail: '输入您的电子邮件',
-    sendLoginCode: '发送登录代码',
-    sending: '发送中...',
-    checkEmail: '请检查您的电子邮件，查收 6 位数代码。',
-    enterCode: '输入 6 位数代码',
-    confirm: '确认代码',
-    verifying: '验证中...',
-    errorSending: '发送代码失败。请重试。',
-    errorVerifying: '无效或已过期的代码。请重试。考虑重新开始。',
-    language: '语言',
-  },
-  'fr-FR': {
-    signIn: 'Connectez-vous à 6180',
-    enterEmail: 'Entrez votre email',
-    sendLoginCode: 'Envoyer le code de connexion',
-    sending: 'Envoi en cours...',
-    checkEmail: 'Vérifiez votre email pour un code à 6 chiffres.',
-    enterCode: 'Entrez le code à 6 chiffres',
-    confirm: 'Confirmer le code',
-    verifying: 'Vérification...',
-    errorSending: 'Échec de l\'envoi du code. Veuillez réessayer.',
-    errorVerifying: 'Code invalide ou expiré. Veuillez réessayer. Envisagez de redémarrer.',
-    language: 'Langue',
-  },
-  'fr': {
-    signIn: 'Connectez-vous à 6180',
-    enterEmail: 'Entrez votre email',
-    sendLoginCode: 'Envoyer le code de connexion',
-    sending: 'Envoi en cours...',
-    checkEmail: 'Vérifiez votre email pour un code à 6 chiffres.',
-    enterCode: 'Entrez le code à 6 chiffres',
-    confirm: 'Confirmer le code',
-    verifying: 'Vérification...',
-    errorSending: 'Échec de l\'envoi du code. Veuillez réessayer.',
-    errorVerifying: 'Code invalide ou expiré. Veuillez réessayer. Envisagez de redémarrer.',
-    language: 'Langue',
-  },
-  'de-DE': {
-    signIn: 'Bei 6180 anmelden',
-    enterEmail: 'Geben Sie Ihre E-Mail ein',
-    sendLoginCode: 'Anmeldecode senden',
-    sending: 'Wird gesendet...',
-    checkEmail: 'Überprüfen Sie Ihre E-Mail auf einen 6-stelligen Code.',
-    enterCode: '6-stelligen Code eingeben',
-    confirm: 'Code bestätigen',
-    verifying: 'Überprüfung...',
-    errorSending: 'Code konnte nicht gesendet werden. Bitte versuchen Sie es erneut.',
-    errorVerifying: 'Ungültiger oder abgelaufener Code. Bitte versuchen Sie es erneut. Erwägen Sie einen Neustart.',
-    language: 'Sprache',
-  },
-  'de': {
-    signIn: 'Bei 6180 anmelden',
-    enterEmail: 'Geben Sie Ihre E-Mail ein',
-    sendLoginCode: 'Anmeldecode senden',
-    sending: 'Wird gesendet...',
-    checkEmail: 'Überprüfen Sie Ihre E-Mail auf einen 6-stelligen Code.',
-    enterCode: '6-stelligen Code eingeben',
-    confirm: 'Code bestätigen',
-    verifying: 'Überprüfung...',
-    errorSending: 'Code konnte nicht gesendet werden. Bitte versuchen Sie es erneut.',
-    errorVerifying: 'Ungültiger oder abgelaufener Code. Bitte versuchen Sie es erneut. Erwägen Sie einen Neustart.',
-    language: 'Sprache',
-  },
-  'es-ES': {
-    signIn: 'Iniciar sesión en 6180',
-    enterEmail: 'Introduzca su correo electrónico',
-    sendLoginCode: 'Enviar código de inicio de sesión',
-    sending: 'Enviando...',
-    checkEmail: 'Compruebe su correo electrónico para un código de 6 dígitos.',
-    enterCode: 'Introduzca el código de 6 dígitos',
-    confirm: 'Confirmar código',
-    verifying: 'Verificando...',
-    errorSending: 'Error al enviar el código. Por favor, inténtelo de nuevo.',
-    errorVerifying: 'Código inválido o caducado. Por favor, inténtelo de nuevo. Considere reiniciar.',
-    language: 'Idioma',
-  },
-  'es': {
-    signIn: 'Iniciar sesión en 6180',
-    enterEmail: 'Introduzca su correo electrónico',
-    sendLoginCode: 'Enviar código de inicio de sesión',
-    sending: 'Enviando...',
-    checkEmail: 'Compruebe su correo electrónico para un código de 6 dígitos.',
-    enterCode: 'Introduzca el código de 6 dígitos',
-    confirm: 'Confirmar código',
-    verifying: 'Verificando...',
-    errorSending: 'Error al enviar el código. Por favor, inténtelo de nuevo.',
-    errorVerifying: 'Código inválido o caducado. Por favor, inténtelo de nuevo. Considere reiniciar.',
-    language: 'Idioma',
-  },
-  'ru': {
-    signIn: 'Вход в 6180',
-    enterEmail: 'Введите вашу электронную почту',
-    sendLoginCode: 'Отправить код входа',
-    sending: 'Отправка...',
-    checkEmail: 'Проверьте вашу электронную почту на наличие 6-значного кода.',
-    enterCode: 'Введите 6-значный код',
-    confirm: 'Подтвердить код',
-    verifying: 'Проверка...',
-    errorSending: 'Не удалось отправить код. Пожалуйста, попробуйте снова.',
-    errorVerifying: 'Недействительный или просроченный код. Пожалуйста, попробуйте снова. Рассмотрите возможность перезапуска.',
-    language: 'Язык',
-  },
-  'ja': {
-    signIn: '6180にサインイン',
-    enterEmail: 'メールアドレスを入力してください',
-    sendLoginCode: 'ログインコードを送信',
-    sending: '送信中...',
-    checkEmail: '6桁のコードをメールで確認してください。',
-    enterCode: '6桁のコードを入力',
-    confirm: 'コードを確認',
-    verifying: '確認中...',
-    errorSending: 'コードの送信に失敗しました。もう一度お試しください。',
-    errorVerifying: '無効または期限切れのコードです。もう一度お試しください。再起動をご検討ください。',
-    language: '言語',
-  },
-  'pt-BR': {
-    signIn: 'Entrar no 6180',
-    enterEmail: 'Digite seu email',
-    sendLoginCode: 'Enviar código de login',
-    sending: 'Enviando...',
-    checkEmail: 'Verifique seu email para um código de 6 dígitos.',
-    enterCode: 'Digite o código de 6 dígitos',
-    confirm: 'Confirmar código',
-    verifying: 'Verificando...',
-    errorSending: 'Falha ao enviar o código. Por favor, tente novamente.',
-    errorVerifying: 'Código inválido ou expirado. Por favor, tente novamente. Considere reiniciar.',
-    language: 'Idioma',
-  },
-  'pt': {
-    signIn: 'Entrar no 6180',
-    enterEmail: 'Digite seu email',
-    sendLoginCode: 'Enviar código de login',
-    sending: 'Enviando...',
-    checkEmail: 'Verifique seu email para um código de 6 dígitos.',
-    enterCode: 'Digite o código de 6 dígitos',
-    confirm: 'Confirmar código',
-    verifying: 'Verificando...',
-    errorSending: 'Falha ao enviar o código. Por favor, tente novamente.',
-    errorVerifying: 'Código inválido ou expirado. Por favor, tente novamente. Considere reiniciar.',
-    language: 'Idioma',
-  },
-}
-
-// Add English translations as fallback for all languages
-supportedLanguages.forEach(lang => {
-  if (!translations[lang.code]) {
-    translations[lang.code] = {...translations['en']}
-  }
-})
-
-// Function to get browser language
-function getBrowserLanguage(): string {
-  const browserLang = navigator.language || 'en'
-  
-  // Check if the exact browser language is supported
-  if (supportedLanguages.some(lang => lang.code === browserLang)) {
-    return browserLang
-  }
-  
-  // Check if the general language is supported (e.g., 'en' from 'en-GB')
-  const generalLang = browserLang.split('-')[0]
-  if (supportedLanguages.some(lang => lang.code === generalLang)) {
-    return generalLang
-  }
-  
-  // Default to English
-  return 'en'
-}
-
-// We'll remove the custom focus handling since it causes issues
-// The browser's default behavior should handle the keyboard appearing appropriately
-
-const Login = () => {
+// We need to add these translation keys to the translations.ts file
+// but for this example we'll work with what we have
+const LoginContent = () => {
   const [email, setEmail] = useState('')
   const [codeSent, setCodeSent] = useState(false)
   const [otpCode, setOtpCode] = useState('')
   const [session, setSession] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'verifying' | 'error'>('idle')
-  const [language, setLanguage] = useState(() => {
-    // First check localStorage
-    const savedLang = localStorage.getItem(STORAGE_KEYS.LANGUAGE)
-    if (savedLang && supportedLanguages.some(lang => lang.code === savedLang)) {
-      return savedLang
-    }
-    
-    // If no localStorage value, use browser language
-    return getBrowserLanguage()
-  })
+  
+  // Use the i18n hook
+  const { t, language } = useTranslation()
   
   // Refs for input elements
   const emailInputRef = useRef<HTMLInputElement>(null)
   const otpInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    // Get language from localStorage if available
-    const savedLang = localStorage.getItem(STORAGE_KEYS.LANGUAGE)
-    if (savedLang && supportedLanguages.some(lang => lang.code === savedLang)) {
-      setLanguage(savedLang)
-    }
-  }, [])
-
-  // Save language preference when it changes
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.LANGUAGE, language)
     // Set HTML dir attribute for RTL languages
     document.documentElement.dir = 
       ['ar', 'he', 'fa', 'ur', 'ps', 'sd'].includes(language.split('-')[0]) ? 'rtl' : 'ltr'
@@ -296,13 +51,6 @@ const Login = () => {
   }, [codeSent])
 
   const redirectTo = new URLSearchParams(location.search).get('redirect') || 'my-albums.html'
-
-  // Get translations for current language, falling back to English if not available
-  const t: Translation = translations[language] || translations['en']
-
-  function handleLanguageChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    setLanguage(e.target.value)
-  }
 
   // Only allow numeric input for OTP code
   function handleOtpChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -351,7 +99,7 @@ const Login = () => {
     } catch (e) {
       console.error(e)
       setStatus('error')
-      alert(t.errorSending)
+      alert(t('Failed to send code. Please try again.'))
     }
   }
 
@@ -419,7 +167,7 @@ const Login = () => {
     } catch (e) {
       console.error(e)
       setStatus('error')
-      alert(t.errorVerifying)
+      alert(t('Invalid or expired code. Please try again. Consider restarting.'))
     }
   }
 
@@ -448,27 +196,11 @@ const Login = () => {
         zIndex: 100,
         padding: '6px',
       }}>
-        <label htmlFor="language-select" style={{ color: '#666' }}>
-          {t.language}:
-        </label>
-        <select
-          id="language-select"
-          value={language}
-          onChange={handleLanguageChange}
-          style={{
-            padding: '6px',
-            borderRadius: '4px',
-            border: '1px solid #ccc',
-            fontSize: '14px',
-          }}
-        >
-          {supportedLanguages.map(lang => (
-            <option key={lang.code} value={lang.code}>
-              {lang.name}
-            </option>
-          ))}
-        </select>
+        <LanguageSelector 
+          className="language-selector-login"
+        />
       </div>
+      
       <div style={{
         maxWidth: 400,
         width: '100%',
@@ -485,7 +217,7 @@ const Login = () => {
           fontWeight: 600,
           color: '#333',
         }}>
-          {t.signIn}
+          {t('Sign in to 6180')}
         </h2>
 
         {!codeSent ? (
@@ -495,7 +227,7 @@ const Login = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder={t.enterEmail}
+              placeholder={t('Enter your email')}
               style={{
                 width: '100%',
                 padding: '12px',
@@ -521,13 +253,13 @@ const Login = () => {
                 opacity: status === 'sending' ? 0.7 : 1,
               }}
             >
-              {status === 'sending' ? t.sending : t.sendLoginCode}
+              {status === 'sending' ? t('Sending...') : t('Send Login Code')}
             </button>
           </>
         ) : (
           <>
             <p style={{ marginBottom: '16px', color: '#555' }}>
-              {t.checkEmail}
+              {t('Check your email for a 6-digit code.')}
             </p>
             <input
               ref={otpInputRef}
@@ -537,7 +269,7 @@ const Login = () => {
               maxLength={6}
               value={otpCode}
               onChange={handleOtpChange}
-              placeholder={t.enterCode}
+              placeholder={t('Enter 6-digit code')}
               style={{
                 width: '100%',
                 padding: '12px',
@@ -563,12 +295,20 @@ const Login = () => {
                 opacity: (status === 'verifying' || otpCode.length !== 6) ? 0.7 : 1,
               }}
             >
-              {status === 'verifying' ? t.verifying : t.confirm}
+              {status === 'verifying' ? t('Verifying...') : t('Confirm Code')}
             </button>
           </>
         )}
       </div>
     </div>
+  )
+}
+
+const Login = () => {
+  return (
+    <I18nProvider>
+      <LoginContent />
+    </I18nProvider>
   )
 }
 

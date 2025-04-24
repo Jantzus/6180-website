@@ -8,13 +8,13 @@ import { createS3Client } from "@/lib/aws"
 import { 
   ProgressTracker,
   UploadStatus,
-  LanguageCode,
   SelectedPhoto
 } from "@/lib/types"
 
 import { generateUUID } from "@/lib/utils"
 import { getVideoDuration, getVideoThumbnailBlob, checkLoginOrRedirect } from "@/lib/utils"
-import { SaveAlbumTranslations, saveAlbumTranslations } from "@/lib/translations"
+import { I18nProvider, useTranslation } from "@/lib/i18n/react"
+import { getLanguageDirection } from "@/lib/i18n/translations"
 
 // Create S3 client
 let s3 = createS3Client()
@@ -25,15 +25,15 @@ type ProtectionOption = 'cannotBeSeen' | 'watermark' | 'cannotBeSaved' | 'noPass
 type PasswordDialogProps = {
   isOpen: boolean;
   onClose: () => void;
-  t: SaveAlbumTranslations; // Using SaveAlbumTranslations type for consistency but not using the values
-  isRTL: boolean;
 };
 
 const PasswordDialog: React.FC<PasswordDialogProps> = ({
   isOpen,
   onClose,
-  isRTL
 }) => {
+  const { t, language } = useTranslation();
+  const isRTL = getLanguageDirection(language) === "rtl";
+  
   // Add state for selected protection option
   const [selectedOption, setSelectedOption] = useState<ProtectionOption>('noPassword');
   const [password, setPassword] = useState('');
@@ -98,10 +98,10 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
         onClick={preventPropagation} // Use our enhanced prevention function
       >
         <div style={{ marginBottom: "20px", textAlign: isRTL ? "right" : "left" }}>
-          Enter a password to protect this album.
+          {t('Enter a password to protect this album.')}
           <br />
           <br />
-          Then, select picture settings prior to being unlocked.
+          {t('Then, select picture settings prior to being unlocked.')}
         </div>
         
         <input
@@ -115,7 +115,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
             fontSize: "14px",
             boxSizing: "border-box" // Ensure padding is included in width calculation
           }}
-          placeholder="Enter password"
+          placeholder={t('Enter password')}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           onClick={preventPropagation} // Prevent clicks on input from propagating
@@ -139,7 +139,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 setSelectedOption('cannotBeSeen');
               }}
             >
-              Cannot Be Seen
+              {t('Cannot Be Seen')}
             </label>
           </div>
           
@@ -160,7 +160,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 setSelectedOption('watermark');
               }}
             >
-              6180 Watermark
+              {t('6180 Watermark')}
             </label>
           </div>
           
@@ -181,7 +181,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 setSelectedOption('cannotBeSaved');
               }}
             >
-              Cannot Be Saved
+              {t('Cannot Be Saved')}
             </label>
           </div>
           
@@ -202,7 +202,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 setSelectedOption('noPassword');
               }}
             >
-              No Password
+              {t('No Password')}
             </label>
           </div>
         </div>
@@ -228,13 +228,13 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
               cursor: "pointer",
             }}
           >
-            Cancel
+            {t('Cancel')}
           </button>
           <button
             onClick={(e) => {
               preventPropagation(e);
               console.log(`Saving with option: ${selectedOption}, password: ${password.length > 0 ? '********' : 'none'}`);
-              alert("Password protection feature will be implemented soon.");
+              alert(t('Password protection feature will be implemented soon.'));
               onClose();
             }}
             style={{
@@ -246,7 +246,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
               cursor: "pointer",
             }}
           >
-            Save
+            {t('Save')}
           </button>
         </div>
       </div>
@@ -255,6 +255,8 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
 };
 
 const SaveAlbum = () => {
+  const { t, language } = useTranslation();
+  const isRTL = getLanguageDirection(language) === "rtl";
 
   const [folderId, setFolderId] = useState<string | null>(null)
   const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([])
@@ -281,10 +283,6 @@ const SaveAlbum = () => {
   const [folderDescription, setFolderDescription] = useState("")
   const [showFolderDetails, setShowFolderDetails] = useState(false)
   
-  // Language state
-  const [language, setLanguage] = useState<LanguageCode>('en-US')
-  const [t, setT] = useState<SaveAlbumTranslations>(saveAlbumTranslations['en-US'])
-
   // Add state for the password dialog
   const [showPasswordDialog, setShowPasswordDialog] = useState(false)
 
@@ -336,35 +334,6 @@ const SaveAlbum = () => {
     
     log("✅ Album data cleared successfully")
   }
-
-  // Initialize language
-  useEffect(() => {
-    const storedLanguage = localStorage.getItem(STORAGE_KEYS.LANGUAGE)
-    if (storedLanguage && Object.keys(saveAlbumTranslations).includes(storedLanguage)) {
-      setLanguage(storedLanguage as LanguageCode)
-      setT(saveAlbumTranslations[storedLanguage as LanguageCode])
-    } else {
-      // Try to detect browser language
-      const browserLang = navigator.language
-      
-      if (browserLang && Object.keys(saveAlbumTranslations).includes(browserLang)) {
-        setLanguage(browserLang as LanguageCode)
-        setT(saveAlbumTranslations[browserLang as LanguageCode])
-        localStorage.setItem(STORAGE_KEYS.LANGUAGE, browserLang)
-      } else {
-        // Try language without region code
-        const langCode = browserLang?.split('-')[0]
-        if (langCode && Object.keys(saveAlbumTranslations).includes(langCode)) {
-          setLanguage(langCode as LanguageCode)
-          setT(saveAlbumTranslations[langCode as LanguageCode])
-          localStorage.setItem(STORAGE_KEYS.LANGUAGE, langCode)
-        }
-      }
-    }
-  }, [])
-
-  // No need to store folder name and description in localStorage
-  // as they will be managed through the backend
 
   useEffect(() => {
     log("🔄 Component initializing...")
@@ -869,7 +838,7 @@ const SaveAlbum = () => {
       log("📊 Sending GraphQL mutation to save album...")
       const saveProgressText = document.getElementById('saveProgressText')
       if (saveProgressText) {
-        saveProgressText.innerText = "Finalizing album..."
+        saveProgressText.innerText = t('Finalizing album...')
       }
 
       const response = await fetch(GRAPHQL_ENDPOINT, {
@@ -894,7 +863,7 @@ const SaveAlbum = () => {
         
         const saveSuccessText = document.getElementById('saveProgressText')
         if (saveSuccessText) {
-          saveSuccessText.innerText = "Album saved successfully!"
+          saveSuccessText.innerText = t('Album saved successfully!')
         }
         
         // Also set a flag in sessionStorage that we just completed an album
@@ -989,7 +958,7 @@ const SaveAlbum = () => {
         throw new Error("Username taken")
       }
     } catch (e) {
-      setUsernameError(t.usernameTakenError)
+      setUsernameError(t('Username is already taken. Please try a different one.'))
       setShowAltButton(true)
       setIsSubmittingUsername(false)
     }
@@ -1026,7 +995,7 @@ const SaveAlbum = () => {
         fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
         backgroundColor: "#f9fafb",
         minHeight: "100vh",
-        direction: language === 'ar' ? 'rtl' : 'ltr' // Add RTL support for Arabic
+        direction: isRTL ? 'rtl' : 'ltr'
       }}
     >
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -1041,7 +1010,7 @@ const SaveAlbum = () => {
                 fontWeight: "500"
               }}
             >
-              {t.myAlbums}
+              {t('My Albums')}
             </a>
           </div>
           
@@ -1061,7 +1030,7 @@ const SaveAlbum = () => {
                   cursor: "pointer"
                 }}
               >
-                {t.logOut}
+                {t('Log Out')}
               </a>
             </div>
           )}
@@ -1070,12 +1039,12 @@ const SaveAlbum = () => {
         {/* Progress Tracking Overview */}
         {progressTracker.totalFiles > 0 && (
           <div style={{ marginBottom: "24px", backgroundColor: "#fff", padding: "16px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
-            <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t.uploadProgress}</h3>
+            <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t('Upload Progress')}</h3>
             
             <div style={{ marginBottom: "12px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", marginBottom: "6px" }}>
-                <span>{t.overallProgress}: {Math.round(progressTracker.overallProgress * 100)}%</span>
-                <span>{progressTracker.filesComplete} {t.ofComplete} {progressTracker.totalFiles} {t.complete}</span>
+                <span>{t('Overall Progress')}: {Math.round(progressTracker.overallProgress * 100)}%</span>
+                <span>{progressTracker.filesComplete} {t('of')} {progressTracker.totalFiles} {t('complete')}</span>
               </div>
               <div style={{ height: "8px", backgroundColor: "#e0e0e0", borderRadius: "4px", overflow: "hidden" }}>
                 <div 
@@ -1092,16 +1061,16 @@ const SaveAlbum = () => {
             
             <div style={{ display: "flex", gap: "12px", fontSize: "14px", color: "#666" }}>
               {progressTracker.filesUploading > 0 && (
-                <div>📤 {t.uploading}: {progressTracker.filesUploading}</div>
+                <div>📤 {t('Uploading')}: {progressTracker.filesUploading}</div>
               )}
               {progressTracker.filesProcessing > 0 && (
-                <div>⚙️ {t.processing}: {progressTracker.filesProcessing}</div>
+                <div>⚙️ {t('Processing')}: {progressTracker.filesProcessing}</div>
               )}
               {progressTracker.filesComplete > 0 && (
-                <div>✅ {t.complete}: {progressTracker.filesComplete}</div>
+                <div>✅ {t('Complete')}: {progressTracker.filesComplete}</div>
               )}
               {progressTracker.filesWithError > 0 && (
-                <div style={{ color: "#e53935" }}>❌ {t.failed}: {progressTracker.filesWithError}</div>
+                <div style={{ color: "#e53935" }}>❌ {t('Failed')}: {progressTracker.filesWithError}</div>
               )}
             </div>
           </div>
@@ -1110,8 +1079,8 @@ const SaveAlbum = () => {
         {/* Save Album Progress */}
         {isSavingAlbum && (
           <div style={{ marginBottom: "24px", backgroundColor: "#fff", padding: "16px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
-            <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t.savingAlbum}</h3>
-            <div id="saveProgressText" style={{ fontSize: "14px", marginBottom: "8px" }}>{t.movingFiles}</div>
+            <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t('Saving Album')}</h3>
+            <div id="saveProgressText" style={{ fontSize: "14px", marginBottom: "8px" }}>{t('Moving files...')}</div>
             <div style={{ height: "8px", backgroundColor: "#e0e0e0", borderRadius: "4px", overflow: "hidden" }}>
               <div 
                 id="saveProgress"
@@ -1139,7 +1108,7 @@ const SaveAlbum = () => {
         {selectedPhotos.length > 0 && (
           <>
             <p style={{ fontSize: "16px", marginBottom: "16px", color: "#333" }}>
-              {selectedPhotos.length} {selectedPhotos.length > 1 ? t.photosSelected : t.photoSelected}:
+              {selectedPhotos.length} {selectedPhotos.length > 1 ? t('photos selected') : t('photo selected')}:
             </p>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginBottom: "32px" }}>
@@ -1213,7 +1182,7 @@ const SaveAlbum = () => {
                   
                   {/* File info */}
                   <div style={{ fontSize: "12px", color: "#666", marginBottom: "6px" }}>
-                    {photo.type?.startsWith("video") ? t.video : t.image}
+                    {photo.type?.startsWith("video") ? t('Video') : t('Image')}
                     {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} MB`}
                     {photo.duration && ` • ${photo.duration}s`}
                   </div>
@@ -1221,7 +1190,7 @@ const SaveAlbum = () => {
                   {/* Error message if any */}
                   {photo.status === 'error' && photo.errorMessage && (
                     <div style={{ fontSize: "12px", color: "#e53935", marginBottom: "6px" }}>
-                      {t.error}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
+                      {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
                     </div>
                   )}
                   
@@ -1240,7 +1209,7 @@ const SaveAlbum = () => {
                     }}
                     disabled={isSavingAlbum}
                   >
-                    {t.remove}
+                    {t('Remove')}
                   </button>
                 </div>
               ))}
@@ -1265,7 +1234,7 @@ const SaveAlbum = () => {
             onClick={handleSaveAlbum}
             disabled={isSavingAlbum}
           >
-            {isSavingAlbum ? t.savingAlbumProgress : t.saveAlbum}
+            {isSavingAlbum ? t('Saving Album...') : t('Save Album')}
           </button>
 
           <button
@@ -1287,7 +1256,7 @@ const SaveAlbum = () => {
             }}
             disabled={isSavingAlbum}
           >
-            {t.addMorePhotos}
+            {t('Add More Photos')}
           </button>
           
           {/* Select Photos To Delete button - only visible for existing folderIds */}
@@ -1310,10 +1279,10 @@ const SaveAlbum = () => {
             }}
             disabled={isSavingAlbum}
           >
-            Select Photos To Delete
+            {t('Select Photos To Delete')}
           </button>
           
-          {/* NEW: Album Password Policy button */}
+          {/* Album Password Policy button */}
           <button
             style={{
               padding: "14px 28px",
@@ -1330,7 +1299,7 @@ const SaveAlbum = () => {
             onClick={handleOpenPasswordDialog}
             disabled={isSavingAlbum}
           >
-            Album Password Policy
+            {t('Album Password Policy')}
           </button>
         </div>
 
@@ -1348,14 +1317,14 @@ const SaveAlbum = () => {
                   color: "#333" 
                 }}
               >
-                Album Name (Optional)
+                {t('Album Name (Optional)')}
               </label>
               <input
                 id="folderName"
                 type="text"
                 value={folderName}
                 onChange={(e) => setFolderName(e.target.value)}
-                placeholder="Enter album name"
+                placeholder={t('Enter album name')}
                 style={{
                   width: "100%",
                   padding: "10px 12px",
@@ -1378,13 +1347,13 @@ const SaveAlbum = () => {
                   color: "#333" 
                 }}
               >
-                Album Description (Optional)
+                {t('Album Description (Optional)')}
               </label>
               <textarea
                 id="folderDescription"
                 value={folderDescription}
                 onChange={(e) => setFolderDescription(e.target.value)}
-                placeholder="Enter album description"
+                placeholder={t('Enter album description')}
                 rows={4}
                 style={{
                   width: "100%",
@@ -1418,13 +1387,13 @@ const SaveAlbum = () => {
               width: "90%",
               maxWidth: 400,
               boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
-              direction: language === 'ar' ? 'rtl' : 'ltr' // RTL support for the modal
+              direction: isRTL ? 'rtl' : 'ltr' // RTL support for the modal
             }}>
               <p style={{ fontSize: 16, marginBottom: 12 }}>
-                {t.enterUsername}
+                {t('Enter Username')}
               </p>
               <p style={{ fontSize: 14, marginBottom: 16, color: "#666" }}>
-                {t.usernameExample}
+                {t('Username should contain only letters, numbers and hyphens. Example: john-doe2')}
               </p>
               <input
                 value={usernameInput}
@@ -1436,7 +1405,7 @@ const SaveAlbum = () => {
                   borderRadius: "6px",
                   border: "1px solid #ccc",
                   fontSize: "16px",
-                  textAlign: language === 'ar' ? 'right' : 'left' // Text alignment for RTL
+                  textAlign: isRTL ? 'right' : 'left' // Text alignment for RTL
                 }}
               />
               {usernameError && <div style={{ color: "#e53935", marginBottom: 12 }}>{usernameError}</div>}
@@ -1444,7 +1413,7 @@ const SaveAlbum = () => {
                 disabled={isSubmittingUsername}
                 onClick={() => {
                   if (!validateUsername(usernameInput)) {
-                    setUsernameError(t.usernameError)
+                    setUsernameError(t('Username must contain only letters, numbers, and hyphens.'))
                     return
                   }
                   submitUsername(usernameInput)
@@ -1462,7 +1431,7 @@ const SaveAlbum = () => {
                   marginBottom: showAltButton ? 10 : 0
                 }}
               >
-                {t.selectUsername}
+                {t('Select Username')}
               </button>
               {showAltButton && (
                 <button
@@ -1480,7 +1449,7 @@ const SaveAlbum = () => {
                     opacity: isSubmittingUsername ? 0.6 : 1
                   }}
                 >
-                  {t.selectUsernameDigits}
+                  {t('Add Random Digits to Username')}
                 </button>
               )}
             </div>
@@ -1492,15 +1461,13 @@ const SaveAlbum = () => {
           <PasswordDialog 
             isOpen={showPasswordDialog} 
             onClose={handleClosePasswordDialog} 
-            t={t} 
-            isRTL={language === 'ar'} 
           />
         )}
       </div>
 
       {debugMessages.length > 0 && (
         <div style={{ marginTop: "40px", background: "#fff3cd", padding: "16px", borderRadius: "8px", border: "1px solid #ffeeba" }}>
-          <h3 style={{ marginTop: 0, fontSize: "18px", color: "#856404" }}>{t.debugLog}</h3>
+          <h3 style={{ marginTop: 0, fontSize: "18px", color: "#856404" }}>{t('Debug Log')}</h3>
           <pre style={{ fontSize: "14px", color: "#856404", whiteSpace: "pre-wrap", maxHeight: "400px", overflow: "auto" }}>
             {debugMessages.map((msg, i) => (
               <div key={i} style={{ marginBottom: "8px" }}>{msg}</div>
@@ -1513,4 +1480,13 @@ const SaveAlbum = () => {
   )
 }
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<SaveAlbum />)
+// Wrap the SaveAlbum component with I18nProvider
+const SaveAlbumWithTranslations = () => {
+  return (
+    <I18nProvider>
+      <SaveAlbum />
+    </I18nProvider>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById("root")!).render(<SaveAlbumWithTranslations />)

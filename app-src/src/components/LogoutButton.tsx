@@ -12,8 +12,8 @@ export const LogoutButton: React.FC<LogoutButtonProps> = ({
       href="#"
       onClick={(e) => {
         e.preventDefault();
-        localStorage.clear()
-        window.location.href = "/index.html"
+        localStorage.clear();
+        window.location.href = "/index.html";
       }}
       style={{
         fontSize: "14px",
@@ -22,7 +22,7 @@ export const LogoutButton: React.FC<LogoutButtonProps> = ({
         cursor: "pointer"
       }}
     >
-      {t('logOut')}
+      {t('Log Out')}
     </a>
   );
 };
