@@ -7,7 +7,7 @@ import {
   RespondToAuthChallengeCommand,
 } from '@aws-sdk/client-cognito-identity-provider'
 import { GRAPHQL_ENDPOINT, REGION, CLIENT_ID } from "@/lib/config"
-import { I18nProvider, useTranslation, LanguageSelector } from '@/lib/i18n/react'
+import { I18nProvider, useTranslation } from '@/lib/i18n/react'
 
 const cognito = new CognitoIdentityProviderClient({ region: REGION })
 
@@ -185,7 +185,7 @@ const LoginContent = () => {
       right: 0,
       bottom: 0,
     }}>
-      <div style={{ 
+      {/* <div style={{ 
         position: 'absolute',
         top: '20px',
         right: '20px',
@@ -199,7 +199,7 @@ const LoginContent = () => {
         <LanguageSelector 
           className="language-selector-login"
         />
-      </div>
+      </div> */}
       
       <div style={{
         maxWidth: 400,

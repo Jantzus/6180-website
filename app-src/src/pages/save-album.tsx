@@ -20,7 +20,7 @@ import { getLanguageDirection } from "@/lib/i18n/translations"
 let s3 = createS3Client()
 
 // Password Dialog Component
-type ProtectionOption = 'cannotBeSeen' | 'watermark' | 'cannotBeSaved' | 'noPassword';
+type ProtectionOption = 'notVisible' | 'watermark' | 'cannotBeSaved' | 'noPassword';
 
 type PasswordDialogProps = {
   isOpen: boolean;
@@ -126,20 +126,20 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
             <input 
               type="radio" 
               name="protection" 
-              id="cannotBeSeen" 
+              id="notVisible" 
               style={radioStyle}
-              checked={selectedOption === 'cannotBeSeen'}
-              onChange={(e) => handleOptionChange(e, 'cannotBeSeen')}
+              checked={selectedOption === 'notVisible'}
+              onChange={(e) => handleOptionChange(e, 'notVisible')}
               onClick={preventPropagation} // Prevent clicks on radio buttons from propagating
             />
             <label 
-              htmlFor="cannotBeSeen"
+              htmlFor="notVisible"
               onClick={(e) => {
                 preventPropagation(e);
-                setSelectedOption('cannotBeSeen');
+                setSelectedOption('notVisible');
               }}
             >
-              {t('Cannot Be Seen')}
+              {t('Not Visible')}
             </label>
           </div>
           
@@ -160,7 +160,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 setSelectedOption('watermark');
               }}
             >
-              {t('6180 Watermark')}
+              {t('Watermark')}
             </label>
           </div>
           
@@ -1236,6 +1236,72 @@ const SaveAlbum = () => {
           >
             {isSavingAlbum ? t('Saving Album...') : t('Save Album')}
           </button>
+          
+          {/* Folder Details Form - Moved here between Save Album and Add More Photos buttons */}
+          {showFolderDetails && (
+            <div style={{ marginTop: "12px", marginBottom: "12px", backgroundColor: "#fff", padding: "24px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
+              <div style={{ marginBottom: "16px" }}>
+                <label 
+                  htmlFor="folderName" 
+                  style={{ 
+                    display: "block", 
+                    marginBottom: "8px", 
+                    fontSize: "14px", 
+                    fontWeight: "500", 
+                    color: "#333" 
+                  }}
+                >
+                  {t('Album Name (Optional)')}
+                </label>
+                <input
+                  id="folderName"
+                  type="text"
+                  value={folderName}
+                  onChange={(e) => setFolderName(e.target.value)}
+                  placeholder={t('Enter album name')}
+                  style={{
+                    width: "100%",
+                    padding: "10px 12px",
+                    fontSize: "16px",
+                    borderRadius: "6px",
+                    border: "1px solid #ddd",
+                    boxSizing: "border-box"
+                  }}
+                />
+              </div>
+              
+              <div style={{ marginBottom: "16px" }}>
+                <label 
+                  htmlFor="folderDescription" 
+                  style={{ 
+                    display: "block", 
+                    marginBottom: "8px", 
+                    fontSize: "14px", 
+                    fontWeight: "500", 
+                    color: "#333" 
+                  }}
+                >
+                  {t('Album Description (Optional)')}
+                </label>
+                <textarea
+                  id="folderDescription"
+                  value={folderDescription}
+                  onChange={(e) => setFolderDescription(e.target.value)}
+                  placeholder={t('Enter album description')}
+                  rows={4}
+                  style={{
+                    width: "100%",
+                    padding: "10px 12px",
+                    fontSize: "16px",
+                    borderRadius: "6px",
+                    border: "1px solid #ddd",
+                    boxSizing: "border-box",
+                    resize: "vertical"
+                  }}
+                />
+              </div>
+            </div>
+          )}
 
           <button
             style={{
@@ -1302,72 +1368,6 @@ const SaveAlbum = () => {
             {t('Album Password Policy')}
           </button>
         </div>
-
-        {/* Folder Details Form - Moved below the buttons */}
-        {showFolderDetails && (
-          <div style={{ marginBottom: "24px", backgroundColor: "#fff", padding: "24px", borderRadius: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
-            <div style={{ marginBottom: "16px" }}>
-              <label 
-                htmlFor="folderName" 
-                style={{ 
-                  display: "block", 
-                  marginBottom: "8px", 
-                  fontSize: "14px", 
-                  fontWeight: "500", 
-                  color: "#333" 
-                }}
-              >
-                {t('Album Name (Optional)')}
-              </label>
-              <input
-                id="folderName"
-                type="text"
-                value={folderName}
-                onChange={(e) => setFolderName(e.target.value)}
-                placeholder={t('Enter album name')}
-                style={{
-                  width: "100%",
-                  padding: "10px 12px",
-                  fontSize: "16px",
-                  borderRadius: "6px",
-                  border: "1px solid #ddd",
-                  boxSizing: "border-box"
-                }}
-              />
-            </div>
-            
-            <div style={{ marginBottom: "16px" }}>
-              <label 
-                htmlFor="folderDescription" 
-                style={{ 
-                  display: "block", 
-                  marginBottom: "8px", 
-                  fontSize: "14px", 
-                  fontWeight: "500", 
-                  color: "#333" 
-                }}
-              >
-                {t('Album Description (Optional)')}
-              </label>
-              <textarea
-                id="folderDescription"
-                value={folderDescription}
-                onChange={(e) => setFolderDescription(e.target.value)}
-                placeholder={t('Enter album description')}
-                rows={4}
-                style={{
-                  width: "100%",
-                  padding: "10px 12px",
-                  fontSize: "16px",
-                  borderRadius: "6px",
-                  border: "1px solid #ddd",
-                  boxSizing: "border-box",
-                  resize: "vertical"
-                }}
-              />
-            </div>
-          </div>
-        )}
 
         {/* Username Prompt Dialog */}
         {showUsernamePrompt && (

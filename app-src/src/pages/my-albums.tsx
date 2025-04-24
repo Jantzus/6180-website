@@ -23,7 +23,7 @@ import { formatDate } from "@/lib/utils"
 import { getLanguageDirection } from "@/lib/i18n"
 import { 
   I18nProvider, 
-  LanguageSelector,
+  // LanguageSelector,
   useTranslation
 } from "@/lib/i18n/react"
 
@@ -437,7 +437,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    alignItems: "center",
+                    alignItems: "flex-end", // Changed from "center" to "flex-end" to bottom-align
                     marginBottom: 16,
                     flexDirection: isRTL ? "row-reverse" : "row"
                   }}
@@ -466,6 +466,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     display: "flex",
                     flexDirection: "column",
                     alignItems: isRTL ? "flex-start" : "flex-end",
+                    justifyContent: "flex-end", // Added to ensure vertical alignment at the bottom
                     gap: "8px"
                   }}>
                     {isCreator ? (
@@ -1095,13 +1096,13 @@ const MyAlbums = () => {
     >
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         {/* Language Selector */}
-        <div style={{ 
+        {/* <div style={{ 
           marginBottom: 20, 
           display: "flex", 
           justifyContent: "flex-end" 
         }}>
           <LanguageSelector className="language-selector" />
-        </div>
+        </div> */}
 
         {/* Container for all content with consistent width */}
         <div style={{ width: "100%" }}>

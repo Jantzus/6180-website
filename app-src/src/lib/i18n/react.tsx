@@ -146,7 +146,7 @@ export const LanguageSelector: React.FC<{
   return (
     <div className={className || "language-selector"} style={containerWithLabelStyle}>
       <label style={{ fontWeight: 'normal', fontSize: '1em' }}>
-        A 文:
+        🌐
       </label>
       <select
         value={language}
