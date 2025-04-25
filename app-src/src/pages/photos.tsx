@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import { I18nProvider, useTranslation, LanguageSelector } from "@/lib/i18n/react";
+import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 
 // Types
 interface MediaItem {
@@ -611,10 +611,6 @@ const PhotoAlbumContent: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
-
-      <div style={styles.languageSelectorContainer}>
-        <LanguageSelector />
       </div>
 
       <div id="media-container" style={styles.mediaContainer}>

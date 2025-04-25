@@ -5,6 +5,7 @@ import { checkLoginOrRedirect, generateUUID, getVideoDuration, getVideoThumbnail
 import { createS3Client } from "@/lib/aws"
 import { PutObjectCommand } from "@aws-sdk/client-s3"
 import { GRAPHQL_ENDPOINT, BUCKET_NAME, STORAGE_KEYS } from "@/lib/config"
+import JSZip from 'jszip'
 import { 
   Folder, 
   SelectedPhoto, 
@@ -167,18 +168,19 @@ const SearchBar: React.FC<{
 
 // FooterSection Component
 type FooterSectionProps = {
-  folderId: string;
+  folder: FolderType;
   handleCopy: (e: React.MouseEvent) => void;
   openFilePicker: (folderId: string | null) => void;
 };
 
 export const FooterSection: React.FC<FooterSectionProps> = ({
-  folderId,
+  folder,
   handleCopy,
   openFilePicker
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  const [isDownloading, setIsDownloading] = useState<boolean>(false);
 
   const handleAddToPublicProfileClick = (e: React.MouseEvent) => {
     e.preventDefault(); 
@@ -187,11 +189,91 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
     alert(t('Feature coming soon: "Make album accessible on your public profile"'));
   };
 
-  const handleDownloadAlbumClick = (e: React.MouseEvent) => {
+  const handleDownloadAlbumClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    // Download album functionality would go here
-    alert(t('Feature coming soon: "Download all photos in this album as a zip file"'));
+    
+    if (!folder.files || folder.files.length === 0) {
+      alert(t('No files to download in this album.'));
+      return;
+    }
+    
+    try {
+      // Set downloading state
+      setIsDownloading(true);
+      
+      // Create a new JSZip instance
+      const zip = new JSZip();
+      
+      // Create a folder inside the zip with the album name
+      const folderName = folder.folderName || 'Album';
+      const albumFolder = zip.folder(folderName);
+      
+      if (!albumFolder) {
+        throw new Error('Failed to create folder in zip');
+      }
+      
+      // Add files to the zip
+      const downloadPromises = folder.files.map(async (file, index) => {
+        try {
+          // Determine which S3 key to use - original file, not thumbnail
+          const s3Key = file.dataKey;
+          
+          if (!s3Key) {
+            console.warn('File missing dataKey:', file);
+            return null;
+          }
+          
+          // Get file from S3
+          const response = await fetch(`${S3_BUCKET_URL}${s3Key}`);
+          
+          if (!response.ok) {
+            throw new Error(`Failed to fetch file: ${response.status} ${response.statusText}`);
+          }
+          
+          // Get the blob data
+          const blob = await response.blob();
+          
+          // Generate a filename from the S3 key
+          const filename = s3Key.split('/').pop() || `file_${index + 1}`;
+          
+          // Add file to the zip
+          albumFolder.file(filename, blob);
+          
+          return true;
+        } catch (error) {
+          console.error('Error downloading file:', error);
+          return null;
+        }
+      });
+      
+      // Wait for all downloads to complete
+      await Promise.all(downloadPromises);
+      
+      // Generate the zip file
+      const content = await zip.generateAsync({ type: 'blob' });
+      
+      // Create a download link
+      const downloadUrl = URL.createObjectURL(content);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = downloadUrl;
+      downloadLink.download = `${folderName}.zip`;
+      
+      // Trigger download
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      
+      // Clean up
+      URL.revokeObjectURL(downloadUrl);
+      
+    } catch (error) {
+      console.error('Error creating ZIP file:', error);
+      alert(t('Failed to create ZIP file. Please try again.'));
+    } finally {
+      // Reset downloading state
+      setIsDownloading(false);
+    }
   };
 
   // Common button style to avoid repetition
@@ -235,7 +317,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
               onClick={(e) => {
                 e.preventDefault(); 
                 e.stopPropagation();
-                openFilePicker(folderId);
+                openFilePicker(folder.folderId);
               }}
               style={{
                 ...buttonStyle,
@@ -263,9 +345,12 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
               style={{
                 ...buttonStyle,
                 backgroundColor: "#e0e0e0",
+                opacity: isDownloading ? 0.7 : 1,
+                cursor: isDownloading ? "default" : "pointer",
               }}
+              disabled={isDownloading}
             >
-              {t('Download Album')}
+              {isDownloading ? t('Preparing...') : t('Download Album')}
             </button>
             <button
               onClick={handleAddToPublicProfileClick}
@@ -492,19 +577,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     justifyContent: "flex-end", // Added to ensure vertical alignment at the bottom
                     gap: "8px"
                   }}>
-                    {/* Password Policy Indicator - only show if there's a password */}
-                    {passwordPolicy !== "NoPassword" && (
-                      <div style={{
-                        display: "flex",
-                        alignItems: "center",
-                        fontSize: "12px",
-                        color: "#555", // Changed to regular text color
-                        marginBottom: "4px"
-                      }}>
-                        <span>{getPasswordPolicyText(passwordPolicy)}</span>
-                      </div>
-                    )}
-                    
                     {isCreator ? (
                       <div style={{ position: "relative" }}>
                         <a
@@ -661,10 +733,31 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   )}
                 </div>
                 
+                {/* Password Policy Indicator - moved here under the pictures */}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: isRTL ? "flex-start" : "flex-end",
+                    marginTop: 8,
+                    marginBottom: 8
+                  }}
+                >
+                  {passwordPolicy !== "NoPassword" && (
+                    <div style={{
+                      display: "flex",
+                      alignItems: "center",
+                      fontSize: "12px",
+                      color: "#555"
+                    }}>
+                      <span>{getPasswordPolicyText(passwordPolicy)}</span>
+                    </div>
+                  )}
+                </div>
+                
                 {/* Album description section - updated to use folderDescription if available */}
                 <div
                   style={{
-                    marginTop: 16,
+                    marginTop: 8,
                     marginBottom: 16,
                     fontSize: 14,
                     color: "#555",
@@ -677,9 +770,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     : ""}
                 </div>
                 
-                {/* Pass the handleCopy function to the FooterSection */}
+                {/* Pass the folder to the FooterSection */}
                 <FooterSection
-                  folderId={folder.folderId}
+                  folder={folder}
                   handleCopy={handleCopy}
                   openFilePicker={openFilePicker}
                 />
