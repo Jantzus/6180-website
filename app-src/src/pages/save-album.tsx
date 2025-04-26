@@ -38,6 +38,45 @@ enum PasswordPolicyEnum {
   NoPassword = "NoPassword"
 }
 
+// GraphQL query for fetching folder details
+const FETCH_FOLDER_QUERY = `
+  query FetchFolders($folderIds: [String!]!) {
+    fetchFolders(folderIds: $folderIds) {
+      items {
+        folderName
+        folderDescription
+        folderPassword {
+          password
+          policy
+        }
+        fileReferencesPage {
+          items {
+            file {
+              ownerContactId
+              dataKey
+              thumbnailDataKey
+              durationInSeconds
+            }
+          }
+        }
+        contactsUsingInvite {
+          items {
+            id
+            item {
+              ... on Persona {
+                publicDisplayName
+              }
+            }
+          }
+        }
+        folderPosition {
+          id
+        }          
+      }
+    }
+  }
+`;
+
 const SaveAlbum = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
@@ -94,7 +133,6 @@ const SaveAlbum = () => {
   useEffect(() => {
     if (selectedPhotos.length > 0) {
       localStorage.setItem(STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(selectedPhotos))
-      log(`📸 Saved ${selectedPhotos.length} photos to storage`)
     }
   }, [selectedPhotos])
 
@@ -106,123 +144,177 @@ const SaveAlbum = () => {
   // ---------- INITIALIZATION ----------
 
   const initializeComponent = async () => {
-    log("🔄 Component initializing...")
     setIsSavingAlbum(false)
     
     try {
-      if (!initializeAuth()) return
-      initializeUserData()
-      initializeFolderId()
+      const token = checkLoginOrRedirect()
+      if (!token) {
+        return
+      }
+      
+      // Extract username directly here instead of in a separate function
+      try {
+        // Get public username
+        const savedUsername = localStorage.getItem("publicUsername")
+        setPublicUsername(savedUsername || null)
+        
+        // Extract Cognito username directly from token
+        const payload = JSON.parse(atob(token.split('.')[1]))
+        const username = payload["cognito:username"]
+        
+        if (username) {
+          // Set the username in state
+          setCognitoUsername(username)
+          
+          // Now that we have the username, we can proceed with folder initialization
+          await initializeFolderIdWithUsername(username)
+        }
+      } catch (err) {
+        console.error("User data initialization error:", err)
+      }
+      
       restorePhotosFromStorage()
       testS3Connection()
     } catch (initErr) {
-      log(`❌ Fatal initialization error: ${String(initErr)}`)
+      console.error("Initialization error:", initErr)
     }
   }
 
-  const initializeAuth = () => {
-    try {
-      const token = checkLoginOrRedirect()
-      if (!token) {
-        log("❌ No token available, redirecting...")
-        return false
-      }
-      
-      log("✅ Token available")
-      return true
-    } catch (err) {
-      log(`❌ Auth error: ${String(err)}`)
-      return false
-    }
-  }
-
-  const initializeUserData = () => {
-    try {
-      // Get public username
-      const savedUsername = localStorage.getItem("publicUsername")
-      setPublicUsername(savedUsername || null)
-      log(`👤 Public username: ${savedUsername || "not set"}`)
-    
-      // Get Cognito username from token
-      const token = localStorage.getItem("idToken")
-      if (token) {
-        const payload = JSON.parse(atob(token.split('.')[1]))
-        const cognitoUsername = payload["cognito:username"]
-        setCognitoUsername(cognitoUsername)
-        log(`👤 Cognito username: ${cognitoUsername}`)
-      }
-    } catch (err) {
-      log(`❌ User data initialization error: ${String(err)}`)
-    }
-  }
-
-  const initializeFolderId = () => {
+  // Adapted initializeFolderId that takes username directly as parameter
+  const initializeFolderIdWithUsername = async (username: string) => {
     try {
       // Get folderId from URL query parameter
       const params = new URLSearchParams(window.location.search)
       const id = params.get("folderId")
       
-      if (id && cognitoUsername) {
+      if (id) {
         setFolderId(id)
-        log(`📁 Using folder ID from URL: ${id}`)
         
-        // Check if this is an existing album (doesn't contain username)
-        const isExistingAlbum = !id.includes(cognitoUsername)
-        log(`📁 Is existing album: ${isExistingAlbum}`)
+        // Always show folder details, whether creating new or editing existing
+        setShowFolderDetails(true)
         
-        // Only show folder details if creating a new album
-        setShowFolderDetails(!isExistingAlbum)
-      } else if (cognitoUsername) {
+        // Since this is an existing album, fetch its details
+        try {
+          const folderDetails = await fetchFolderDetails(id)
+          
+          if (folderDetails) {
+            // Update album details in state
+            setFolderName(folderDetails.folderName)
+            setFolderDescription(folderDetails.folderDescription)
+            
+            // Handle password policy with proper enum mapping
+            const policy = folderDetails.passwordPolicy
+            
+            // Map the PasswordPolicyEnum values to our local state options
+            switch(policy) {
+              case 'NoPassword':
+                setPasswordProtectionOption('noPassword')
+                break
+              case 'NotVisible':
+                setPasswordProtectionOption('notVisible')
+                setAlbumPassword(folderDetails.password)
+                break
+              case 'Watermark':
+                setPasswordProtectionOption('watermark')
+                setAlbumPassword(folderDetails.password)
+                break
+              case 'CannotBeSaved':
+                setPasswordProtectionOption('cannotBeSaved')
+                setAlbumPassword(folderDetails.password)
+                break
+              default:
+                setPasswordProtectionOption('noPassword')
+            }
+          }
+        } catch (fetchErr) {
+          console.error("Error fetching folder details:", fetchErr)
+        }
+      } else {
         // If no ID in URL, create a new one
-        const newId = `${cognitoUsername}_____${generateUUID()}____Folder`
+        const newId = `${username}_____${generateUUID()}____Folder`
         setFolderId(newId)
-        log(`📁 Created new folder ID: ${newId}`)
         
         // Show folder details for new albums
         setShowFolderDetails(true)
       }
     } catch (err) {
-      log(`❌ Folder ID initialization error: ${String(err)}`)
+      console.error("Folder ID initialization error:", err)
+    }
+  }
+
+  const fetchFolderDetails = async (folderId: string) => {
+    try {
+      const token = localStorage.getItem("idToken")
+      if (!token) {
+        return null
+      }
+      
+      const response = await fetch(GRAPHQL_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          query: FETCH_FOLDER_QUERY,
+          variables: { folderIds: [folderId] }
+        })
+      })
+      
+      const result = await response.json()
+      
+      if (result.errors) {
+        console.error("GraphQL errors:", result.errors)
+        return null
+      }
+      
+      const items = result?.data?.fetchFolders?.items || []
+      
+      if (items.length === 0) {
+        return null
+      }
+      
+      const folder = items[0]
+      
+      return {
+        folderName: folder.folderName || '',
+        folderDescription: folder.folderDescription || '',
+        passwordPolicy: folder.folderPassword?.policy || 'NoPassword',
+        password: folder.folderPassword?.password || ''
+      }
+    } catch (error) {
+      console.error("Error in fetchFolderDetails:", error)
+      return null
     }
   }
 
   const restorePhotosFromStorage = () => {
     try {
       const storedPhotos = localStorage.getItem(STORAGE_KEYS.SELECTED_PHOTOS)
-      log(`🔍 Checking for stored photos with key ${STORAGE_KEYS.SELECTED_PHOTOS}`)
       
       if (storedPhotos) {
-        log(`📦 Found stored photos data: ${storedPhotos.substring(0, 100)}...`)
-        
         try {
           const parsedPhotos = JSON.parse(storedPhotos) as SelectedPhoto[]
-          log(`📊 Parsed photos data: ${JSON.stringify(parsedPhotos.length)} items`)
           
           if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
             setSelectedPhotos(parsedPhotos)
-            log(`📸 Restored ${parsedPhotos.length} photos from storage`)
-          } else {
-            log(`⚠️ Parsed photos array is empty or not an array`)
           }
         } catch (parseErr) {
-          log(`❌ Error parsing stored photos: ${String(parseErr)}`)
+          console.error("Error parsing stored photos:", parseErr)
         }
       }
     } catch (storageErr) {
-      log(`⚠️ Error restoring photos from storage: ${String(storageErr)}`)
+      console.error("Error restoring photos from storage:", storageErr)
     }
   }
 
   const testS3Connection = () => {
     try {
-      if (s3) {
-        log("🔄 Testing S3 connection...")
-        log(`✅ S3 client appears to be configured correctly (${typeof s3})`)
-      } else {
-        log("❌ S3 client not available")
+      if (!s3) {
+        console.error("S3 client not available")
       }
     } catch (s3Err) {
-      log(`❌ S3 connection test error: ${String(s3Err)}`)
+      console.error("S3 connection test error:", s3Err)
     }
   }
 
@@ -235,18 +327,13 @@ const SaveAlbum = () => {
     // Update localStorage
     if (updated.length > 0) {
       localStorage.setItem(STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(updated))
-      log(`📸 Updated localStorage after removing photo at index ${indexToRemove}`)
     } else {
       localStorage.removeItem(STORAGE_KEYS.SELECTED_PHOTOS)
-      log(`📸 Removed photos from localStorage as none remain`)
     }
   }
 
   const handleAddPhotos = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    log("🔍 Add Photos button clicked")
-    
     if (!cognitoUsername) {
-      log("❌ Missing Cognito Username")
       return
     }
   
@@ -274,7 +361,7 @@ const SaveAlbum = () => {
       // Update selected photos with processed info
       updatePhotosWithProcessedInfo(currentIndex, processedPhotos)
     } catch (error) {
-      log(`❌ Fatal error in handleAddPhotos: ${String(error)}`)
+      console.error("Error in handleAddPhotos:", error)
     } finally {
       e.target.value = ""
     }
@@ -316,14 +403,10 @@ const SaveAlbum = () => {
   // ---------- ALBUM SAVING ----------
 
   const handleSaveAlbum = async () => {
-    log("🔍 Save Album button clicked")
-    log("🔍 Proceeding with save - folder name is optional")
-    
     setIsSavingAlbum(true)
 
     try {
       if (publicUsername?.startsWith("Profile-")) {
-        log("👤 Username starts with Profile-, showing username prompt")
         setUsernameInput(publicUsername)
         setShowUsernamePrompt(true)
         setIsSavingAlbum(false)
@@ -333,13 +416,12 @@ const SaveAlbum = () => {
       // If we have a valid username, proceed directly to saving
       saveAlbumDirectly()
     } catch (err) {
-      log("❌ Unexpected error in handleSaveAlbum: " + String(err))
+      console.error("Error in handleSaveAlbum:", err)
       setIsSavingAlbum(false)
     }
   }
 
   const saveAlbumDirectly = async () => {
-    log("🔍 Executing album save directly after username update")
     setIsSavingAlbum(true)
 
     try {
@@ -351,14 +433,12 @@ const SaveAlbum = () => {
       
       // Filter out photos with error status
       const validPhotos = selectedPhotos.filter(photo => photo.status === 'complete')
-      log(`📊 Processing ${validPhotos.length} photos`)
       
       // Prepare folder and account IDs
       const now = Math.floor(Date.now() / 1000)
       const accountId = `${cognitoUsername}_____${cognitoUsername}____Account`
       const folderParts = folderId!.split("_____")
       const folderTargetItemIdentifier = folderParts[1].split("____")[0]
-      log(`🆔 Folder target identifier: ${folderTargetItemIdentifier}`)
 
       // Move files from temp to public folder
       await moveFilesToPublic(
@@ -374,7 +454,7 @@ const SaveAlbum = () => {
       // Send GraphQL mutation
       await sendAlbumSaveMutation(folderPositionInput, updatedFileReferenceInputs)
     } catch (err) {
-      log("❌ Unexpected error: " + String(err))
+      console.error("Error in saveAlbumDirectly:", err)
       setIsSavingAlbum(false)
     }
   }
@@ -383,17 +463,14 @@ const SaveAlbum = () => {
     const token = localStorage.getItem("idToken")
     
     if (!token) {
-      log("❌ No ID token found")
       return false
     }
     
     if (!cognitoUsername) {
-      log("❌ No Cognito username found")
       return false
     }
     
     if (!folderId) {
-      log("❌ No folder ID found")
       return false
     }
     
@@ -484,8 +561,6 @@ const SaveAlbum = () => {
   }
   
   const sendAlbumSaveMutation = async (folderPositionInput: any, updatedFileReferenceInputs: any[]) => {
-    log("📊 Sending GraphQL mutation to save album...")
-    
     const saveProgressText = document.getElementById('saveProgressText')
     if (saveProgressText) {
       saveProgressText.innerText = t('Finalizing album...')
@@ -525,7 +600,7 @@ const SaveAlbum = () => {
     const json = await response.json()
 
     if (json.errors) {
-      log("❌ Upload failed: " + (json.errors ? JSON.stringify(json.errors, null, 2) : "Unknown error"))
+      console.error("Upload failed:", json.errors)
       setIsSavingAlbum(false)
     } else {
       handleSuccessfulSave()
@@ -533,8 +608,6 @@ const SaveAlbum = () => {
   }
   
   const handleSuccessfulSave = () => {
-    log("✅ Album saved successfully!")
-    
     // Clear all album data before redirecting
     clearAlbumData(setSelectedPhotos, setProgressTracker, [STORAGE_KEYS.SELECTED_PHOTOS], log)
     
@@ -610,7 +683,6 @@ const SaveAlbum = () => {
     setShowUsernamePrompt(false)
     
     // Automatically proceed with saving the album
-    log("👤 Username saved successfully, automatically proceeding to save album")
     saveAlbumDirectly()
   }
 
@@ -624,8 +696,6 @@ const SaveAlbum = () => {
   // ---------- PASSWORD MANAGEMENT ----------
 
   const handleClosePasswordDialog = (option?: ProtectionOption, password?: string) => {
-    log("🔒 Closing password policy dialog")
-    
     if (option) {
       setPasswordProtectionOption(option)
     }
@@ -651,7 +721,6 @@ const SaveAlbum = () => {
   }
 
   const handleOpenPasswordDialog = () => {
-    log("🔒 Opening password policy dialog")
     setShowPasswordDialog(true)
   }
 
