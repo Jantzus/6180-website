@@ -1090,12 +1090,18 @@ const MyAlbums = () => {
               
               log(`🎬 Generating video thumbnail...`)
               const thumbnailBlob = await getVideoThumbnailBlob(file)
-              thumbnailDataKey = `Input/Image/${uuidFileName}-thumbnail`
-              tempThumbnailKey = `temp/${thumbnailDataKey}`
+              
+              // Extract the base filename without extension
+              const baseFileName = uuidFileName.split('.').slice(0, -1).join('.');
+              
+              // Set the thumbnail key with the proper jpg extension
+              thumbnailDataKey = `Input/Image/${baseFileName}-thumbnail.jpg`;
+              tempThumbnailKey = `temp/${thumbnailDataKey}`;
+              
               thumbnailSize = Math.round(thumbnailBlob.size)
-              log(`🎬 Thumbnail generated: ${thumbnailSize} bytes`)
+              log(`🎬 Thumbnail generated: ${thumbnailSize} bytes, path: ${thumbnailDataKey}`)
               updatePhotoStatus(i, 'processing', 0.8)
-
+          
               // Convert thumbnail blob to ArrayBuffer
               const thumbnailArrayBuffer = await thumbnailBlob.arrayBuffer()
               log(`📦 Converted thumbnail to ArrayBuffer`)
