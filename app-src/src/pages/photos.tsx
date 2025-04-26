@@ -276,6 +276,9 @@ const FETCH_FOLDERS_QUERY = `
             }
           }
         }
+        folderPosition {
+          id
+        }          
       }
     }
   }

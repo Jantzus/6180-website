@@ -93,27 +93,130 @@ export const getVideoDuration = (file: File): Promise<number> => {
 
 export const getVideoThumbnailBlob = (file: File): Promise<Blob> => {
   return new Promise((resolve, reject) => {
-    const video = document.createElement("video")
-    video.src = URL.createObjectURL(file)
-    video.crossOrigin = "anonymous"
-    video.muted = true
-    video.currentTime = 0
-    video.onloadeddata = () => {
-      const canvas = document.createElement("canvas")
-      canvas.width = video.videoWidth
-      canvas.height = video.videoHeight
-      const ctx = canvas.getContext("2d")
-      if (!ctx) return reject("No canvas context")
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
-      canvas.toBlob(blob => {
-        if (blob) resolve(blob)
-        else reject("Failed to create blob")
-        URL.revokeObjectURL(video.src)
-      }, "image/jpeg", 0.8)
-    }
-    video.onerror = reject
-  })
-}
+    // Create video element
+    const video = document.createElement("video");
+    const videoUrl = URL.createObjectURL(file);
+    
+    // Set up video properties
+    video.preload = "metadata";
+    video.playsInline = true;
+    video.muted = true;
+    video.src = videoUrl;
+    
+    // Flag to ensure we only resolve once
+    let thumbnailGenerated = false;
+    
+    // Add the video to the DOM temporarily (can help with some browsers)
+    video.style.display = "none";
+    document.body.appendChild(video);
+    
+    // Set up event handlers
+    video.onloadedmetadata = () => {
+      // Try to seek to a point where content is likely visible
+      try {
+        // Seek to either 1 second or 15% of the duration, whichever is less
+        const seekPoint = Math.min(1, video.duration * 0.15);
+        video.currentTime = seekPoint;
+      } catch (e) {
+        console.warn("Error setting video time:", e);
+        // If seeking fails, try to play instead
+        try {
+          video.play().catch(err => console.warn("Play failed:", err));
+        } catch (playErr) {
+          console.warn("Play attempt failed:", playErr);
+        }
+      }
+    };
+    
+    // Generate thumbnail when the frame is ready
+    const generateThumbnail = () => {
+      if (thumbnailGenerated) return;
+      thumbnailGenerated = true;
+      
+      try {
+        // Create canvas at video dimensions
+        const canvas = document.createElement("canvas");
+        const width = video.videoWidth;
+        const height = video.videoHeight;
+        
+        // Handle zero dimensions
+        if (width === 0 || height === 0) {
+          cleanup();
+          reject(new Error("Video has zero dimensions"));
+          return;
+        }
+        
+        // Set canvas size
+        canvas.width = width;
+        canvas.height = height;
+        
+        // Draw the current frame
+        const ctx = canvas.getContext("2d");
+        if (!ctx) {
+          cleanup();
+          reject(new Error("Could not get canvas context"));
+          return;
+        }
+        
+        // Draw video frame to canvas
+        ctx.drawImage(video, 0, 0, width, height);
+        
+        // Convert to blob and resolve
+        canvas.toBlob(
+          (blob) => {
+            if (blob) {
+              resolve(blob);
+            } else {
+              reject(new Error("Failed to create blob"));
+            }
+            cleanup();
+          },
+          "image/jpeg",
+          0.85
+        );
+      } catch (e) {
+        cleanup();
+        reject(e);
+      }
+    };
+    
+    // Clean up resources
+    const cleanup = () => {
+      video.pause();
+      video.removeAttribute("src");
+      video.load(); // Resets the media element
+      URL.revokeObjectURL(videoUrl);
+      if (document.body.contains(video)) {
+        document.body.removeChild(video);
+      }
+    };
+    
+    // Listen for multiple events that could indicate a frame is ready
+    video.addEventListener("loadeddata", () => {
+      // Try after a short delay to ensure frame is rendered
+      setTimeout(generateThumbnail, 200);
+    });
+    
+    video.addEventListener("seeked", generateThumbnail);
+    video.addEventListener("canplay", generateThumbnail);
+    
+    // Handle errors
+    video.onerror = (e) => {
+      cleanup();
+      reject(new Error(`Video error: ${video.error?.message || e}`));
+    };
+    
+    // Set a timeout in case nothing triggers
+    setTimeout(() => {
+      if (!thumbnailGenerated) {
+        generateThumbnail();
+      }
+    }, 2000);
+    
+    // Start loading the video
+    video.load();
+  });
+};
 
 export const getOwnerItemId = (id: string) => id.split("_____")[0];
 export const getTargetItemIdentifier = (id: string) =>
