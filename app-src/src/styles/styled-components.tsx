@@ -1,0 +1,461 @@
+import styled, { createGlobalStyle, css } from "styled-components";
+import { UploadStatus } from "@/lib/types";
+
+// ========== Styled Components ==========
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+`;
+
+const directionalStyles = (isRTL: boolean) => css`
+  direction: ${isRTL ? 'rtl' : 'ltr'};
+`;
+
+interface DirectionalProps {
+  isRTL: boolean;
+}
+
+export const AppContainer = styled.div<DirectionalProps>`
+  padding: 40px 20px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  ${props => directionalStyles(props.isRTL)}
+`;
+
+export const ContentContainer = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+`;
+
+// Header Components
+export const HeaderSection = styled.div`
+  margin-bottom: 20px;
+`;
+
+export const BackLinkContainer = styled.div`
+  margin-bottom: 12px;
+`;
+
+export const BackLink = styled.a`
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+`;
+
+export const UserInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Username = styled.div`
+  font-size: 16px;
+  color: #666;
+`;
+
+// Progress Tracking Components
+export const ProgressContainer = styled.div`
+  margin-bottom: 24px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+`;
+
+export const ProgressTitle = styled.h3`
+  font-size: 18px;
+  margin: 0 0 12px 0;
+`;
+
+export const OverallProgress = styled.div`
+  margin-bottom: 12px;
+`;
+
+export const ProgressStats = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+`;
+
+export const ProgressBarBg = styled.div`
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+`;
+
+interface ProgressBarProps {
+  progress: number;
+}
+
+export const ProgressBar = styled.div<ProgressBarProps>`
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  width: ${props => props.progress * 100}%;
+`;
+
+export const ProgressDetails = styled.div`
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: #666;
+`;
+
+interface ProgressItemProps {
+  isError?: boolean;
+}
+
+export const ProgressItem = styled.div<ProgressItemProps>`
+  color: ${props => props.isError ? '#e53935' : 'inherit'};
+`;
+
+// Saving Progress Components
+export const SavingProgressContainer = styled.div`
+  margin-bottom: 24px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+`;
+
+export const SavingProgressTitle = styled.h3`
+  font-size: 18px;
+  margin: 0 0 12px 0;
+`;
+
+export const SavingProgressText = styled.div`
+  font-size: 14px;
+  margin-bottom: 8px;
+`;
+
+export const SavingProgressBarBg = styled.div`
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+`;
+
+export const SavingProgressBar = styled.div`
+  height: 100%;
+  background-color: #2196f3;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+`;
+
+// Photo Grid Components
+export const SelectedCount = styled.p`
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #333;
+`;
+
+export const PhotoGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+`;
+
+export const PhotoCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  width: 160px;
+  position: relative;
+`;
+
+interface StatusIndicatorProps {
+  status: UploadStatus;
+}
+
+export const StatusIndicator = styled.div<StatusIndicatorProps>`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+  z-index: 1;
+  background-color: ${props => {
+    switch(props.status) {
+      case 'complete': return '#4caf50';
+      case 'error': return '#e53935';
+      case 'uploading': return '#2196f3';
+      case 'processing': return '#ff9800';
+      default: return '#9e9e9e';
+    }
+  }};
+`;
+
+export const MediaPreview = styled.div`
+  position: relative;
+  margin-bottom: 8px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const MediaItem = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
+`;
+
+export const VideoItem = styled.video`
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
+`;
+
+export const UploadProgressBarBg = styled.div`
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  height: 4px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 2px;
+  overflow: hidden;
+`;
+
+interface UploadProgressBarProps {
+  progress: number;
+  status: UploadStatus;
+}
+
+export const UploadProgressBar = styled.div<UploadProgressBarProps>`
+  height: 100%;
+  background-color: ${props => props.status === 'processing' ? '#ff9800' : '#2196f3'};
+  transition: width 0.3s ease;
+  width: ${props => props.progress * 100}%;
+`;
+
+export const FileInfo = styled.div`
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+`;
+
+export const ErrorMessage = styled.div`
+  font-size: 12px;
+  color: #e53935;
+  margin-bottom: 6px;
+`;
+
+interface ButtonProps {
+  disabled?: boolean;
+}
+
+export const RemoveButton = styled.button<ButtonProps>`
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  margin-top: auto;
+  opacity: ${props => props.disabled ? 0.6 : 1};
+`;
+
+// Action Button Components
+export const ActionButtons = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+`;
+
+export const Button = styled.button<ButtonProps>`
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  opacity: ${props => props.disabled ? 0.6 : 1};
+`;
+
+export const PrimaryButton = styled(Button)`
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+`;
+
+export const SecondaryButton = styled(Button)`
+  background-color: #8c8c8c;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+`;
+
+interface PasswordButtonProps extends ButtonProps {
+  passwordSet: boolean;
+}
+
+export const PasswordButton = styled(SecondaryButton)<PasswordButtonProps>`
+  color: ${props => props.passwordSet ? '#000000' : 'white'};
+  font-weight: ${props => props.passwordSet ? 'bold' : 'normal'};
+`;
+
+// Folder Details Components
+export const FolderDetails = styled.div`
+  margin-top: 12px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+`;
+
+export const FormGroup = styled.div`
+  margin-bottom: 16px;
+`;
+
+export const FormLabel = styled.label`
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+`;
+
+export const FormInput = styled.input`
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+`;
+
+export const FormTextarea = styled.textarea`
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  resize: vertical;
+`;
+
+// Username Modal Components
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+`;
+
+export const UsernameModal = styled.div<DirectionalProps>`
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  ${props => directionalStyles(props.isRTL)}
+`;
+
+export const UsernameTitle = styled.p`
+  font-size: 16px;
+  margin-bottom: 12px;
+`;
+
+export const UsernameDescription = styled.p`
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: #666;
+`;
+
+export const UsernameInput = styled.input<DirectionalProps>`
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: ${props => props.isRTL ? 'right' : 'left'};
+`;
+
+export const UsernameError = styled.div`
+  color: #e53935;
+  margin-bottom: 12px;
+`;
+
+export const UsernameButton = styled.button<ButtonProps>`
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  margin-bottom: 10px;
+  opacity: ${props => props.disabled ? 0.6 : 1};
+`;
+
+export const UsernameAltButton = styled.button<ButtonProps>`
+  width: 100%;
+  padding: 12px;
+  background-color: #6c757d;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  opacity: ${props => props.disabled ? 0.6 : 1};
+`;
+
+// Debug Components
+export const DebugContainer = styled.div`
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+`;
+
+export const DebugTitle = styled.h3`
+  margin: 0 0 12px 0;
+  font-size: 16px;
+`;
+
+export const DebugMessages = styled.pre`
+  margin: 0;
+  font-size: 12px;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+`;
+
+export const DebugMessage = styled.div`
+  margin-bottom: 4px;
+`;
+
+// File Input
+export const HiddenFileInput = styled.input`
+  display: none;
+`;
