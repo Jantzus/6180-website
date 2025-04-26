@@ -85,3 +85,5 @@ export interface Folder {
   updatedAt: number | null
   files: File[]
 }
+
+export type ProtectionOption = 'notVisible' | 'watermark' | 'cannotBeSaved' | 'noPassword';

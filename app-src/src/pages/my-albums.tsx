@@ -1,16 +1,13 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { useEffect, useState, useRef } from "react"
-import { checkLoginOrRedirect, generateUUID, getVideoDuration, getVideoThumbnailBlob, getOwnerItemId, getTargetItemIdentifier } from "@/lib/utils"
-import { createS3Client } from "@/lib/aws"
-import { PutObjectCommand } from "@aws-sdk/client-s3"
-import { GRAPHQL_ENDPOINT, BUCKET_NAME, STORAGE_KEYS } from "@/lib/config"
+import { checkLoginOrRedirect, generateUUID, getOwnerItemId, getTargetItemIdentifier } from "@/lib/utils"
+import { GRAPHQL_ENDPOINT, STORAGE_KEYS } from "@/lib/config"
 import JSZip from 'jszip'
 import { 
   Folder, 
   SelectedPhoto, 
   ProgressTracker,
-  UploadStatus,
   FolderType
 } from "@/lib/types"
 import { SupportedLanguage } from "@/lib/i18n/translations"
@@ -28,8 +25,14 @@ import {
   useTranslation
 } from "@/lib/i18n/react"
 
-// Create S3 client
-const s3 = createS3Client()
+// Import the utilities from file-upload-utils.ts
+import { 
+  createLogger, 
+  createPhotoStatusUpdater, 
+  updateProgressTracker,
+  processFiles,
+  clearAlbumData
+} from "@/lib/file-upload-utils"
 
 // Header Component
 type HeaderProps = {
@@ -804,15 +807,8 @@ const MyAlbums = () => {
   const [currentFolderId, setCurrentFolderId] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState<string>("")
   
-  // Add a log function that updates both console and debug state
-  const log = (message: string) => {
-    console.log(message)
-    
-    // Only add to debug messages if it's an error (starts with ❌)
-    if (message.includes("❌") || message.includes("⚠️")) {
-      setDebugMessages(prev => [...prev, message])
-    }
-  }
+  // Use the createLogger function from the utils
+  const log = createLogger(setDebugMessages);
   
   // Load user data and fetch folders
   useEffect(() => {
@@ -913,56 +909,15 @@ const MyAlbums = () => {
     fetchFolders()
   }, [])
 
-  // Update progress tracker whenever selectedPhotos changes
+  // Use updateProgressTracker from the utils
   useEffect(() => {
-    if (selectedPhotos.length === 0) {
-      setProgressTracker({
-        totalFiles: 0,
-        filesComplete: 0,
-        filesUploading: 0,
-        filesProcessing: 0,
-        filesWithError: 0,
-        overallProgress: 0
-      })
-      return
-    }
+    updateProgressTracker(selectedPhotos, setProgressTracker);
+  }, [selectedPhotos]);
 
-    const filesUploading = selectedPhotos.filter(p => p.status === 'uploading').length
-    const filesProcessing = selectedPhotos.filter(p => p.status === 'processing').length
-    const filesComplete = selectedPhotos.filter(p => p.status === 'complete').length
-    const filesWithError = selectedPhotos.filter(p => p.status === 'error').length
-    
-    // Calculate overall progress as a percentage
-    const totalProgress = selectedPhotos.reduce((sum, photo) => sum + photo.progress, 0)
-    const overallProgress = Math.round((totalProgress / selectedPhotos.length) * 100) / 100
-
-    setProgressTracker({
-      totalFiles: selectedPhotos.length,
-      filesComplete,
-      filesUploading,
-      filesProcessing, 
-      filesWithError,
-      overallProgress
-    })
-  }, [selectedPhotos])
-
-  const clearAlbumData = () => {
-    log("🧹 Clearing all album data...")
-    
-    setIsUploading(false)
-
-    // Reset states
-    setSelectedPhotos([])
-    setProgressTracker({
-      totalFiles: 0,
-      filesComplete: 0,
-      filesUploading: 0,
-      filesProcessing: 0,
-      filesWithError: 0,
-      overallProgress: 0
-    })
-    
-    log("✅ Album data cleared successfully")
+  // Use the clearAlbumData function from utils
+  const handleClearAlbumData = () => {
+    clearAlbumData(setSelectedPhotos, setProgressTracker, [], log);
+    setIsUploading(false);
   }
 
   // Function to open file picker
@@ -975,16 +930,8 @@ const MyAlbums = () => {
     fileInputRef.current?.click()
   }
 
-  // Update specific photo's status and progress
-  const updatePhotoStatus = (index: number, status: UploadStatus, progress: number, errorMessage?: string) => {
-    setSelectedPhotos(prev => 
-      prev.map((photo, i) => 
-        i === index 
-          ? { ...photo, status, progress, errorMessage } 
-          : photo
-      )
-    )
-  }
+  // Use the createPhotoStatusUpdater function from the utils
+  const updatePhotoStatus = createPhotoStatusUpdater(setSelectedPhotos);
 
   // Handle file selection
   const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -992,7 +939,6 @@ const MyAlbums = () => {
     if (!files.length) return
 
     setIsUploading(true)
-    log(`📁 Files selected: ${files.length}`)
     
     if (!cognitoUsername) {
       log("❌ Missing Cognito Username")
@@ -1001,163 +947,16 @@ const MyAlbums = () => {
     }
   
     try {
-      log("🔄 Starting file processing...")
-      
       // Generate a new folder ID or use existing one
       const newFolderId = currentFolderId || `${cognitoUsername}_____${generateUUID()}____Folder`
       log(`📁 Using folder ID: ${newFolderId}`)
       
-      // First, add files to state with pending status
-      const initialPhotos = files.map(file => {
-        const type: string = file.type
-        const fileExt = file.name.split('.').pop() || "jpg"
-        const uuidFileName = `${generateUUID()}.${fileExt}`
-        
-        return {
-          fileName: uuidFileName,
-          s3PreviewUrl: URL.createObjectURL(file), // Use local object URL initially
-          type,
-          size: file.size,
-          status: 'pending' as UploadStatus,
-          progress: 0
-        } as SelectedPhoto
-      })
-      
-      // Add these pending photos to state
-      setSelectedPhotos(initialPhotos)
-      
-      // Array to collect processed photos info
-      const processedPhotos: SelectedPhoto[] = []
-      
-      // Now process each file one by one, updating its status as we go
-      for (let i = 0; i < files.length; i++) {
-        const file = files[i]
-        const photo = initialPhotos[i]
-        
-        try {
-          updatePhotoStatus(i, 'uploading', 0.1)
-          log(`📝 Processing file ${i + 1}/${files.length}: ${file.name} (${file.type})`)
-          
-          const type: string = file.type
-          // const fileExt = file.name.split('.').pop() || "jpg"
-          const uuidFileName = photo.fileName
-          log(`🆔 Generated UUID filename: ${uuidFileName}`)
-          
-          const baseKey = type.startsWith("video")
-            ? `Input/Video/${uuidFileName}`
-            : `Input/Image/${uuidFileName}`
-          
-          // Generate S3 key locations
-          const tempS3Key = `temp/${baseKey}`
-          
-          // Convert file to ArrayBuffer for S3 upload
-          const arrayBuffer = await file.arrayBuffer()
-          log(`📦 Converted file to ArrayBuffer`)
-          updatePhotoStatus(i, 'uploading', 0.3)
-          
-          // Upload to temp folder
-          try {
-            log(`⬆️ Uploading to ${tempS3Key}...`)
-            await s3.send(new PutObjectCommand({
-              Bucket: BUCKET_NAME,
-              Key: tempS3Key,
-              Body: new Uint8Array(arrayBuffer),
-              ContentType: file.type || "application/octet-stream"
-            }))
-            log(`✅ Upload to ${tempS3Key} successful`)
-            updatePhotoStatus(i, 'uploading', 0.6)
-          } catch (uploadErr) {
-            log(`❌ S3 upload error: ${String(uploadErr)}`)
-            updatePhotoStatus(i, 'error', 0, String(uploadErr))
-            continue
-          }
-          
-          // Create S3 preview URL
-          const s3PreviewUrl = `https://${BUCKET_NAME}.s3.amazonaws.com/${tempS3Key}`
-          log(`🔗 Generated S3 preview URL: ${s3PreviewUrl}`)
-          
-          let duration: number | null = null
-          let thumbnailDataKey: string | null = null
-          let thumbnailSize: number | null = null
-          let tempThumbnailKey: string | null = null
-
-          if (type.startsWith("video")) {
-            updatePhotoStatus(i, 'processing', 0.7)
-            try {
-              log(`🎬 Processing video metadata...`)
-              duration = Math.round(await getVideoDuration(file))
-              log(`⏱️ Video duration: ${duration} seconds`)
-              
-              log(`🎬 Generating video thumbnail...`)
-              const thumbnailBlob = await getVideoThumbnailBlob(file)
-              
-              // Extract the base filename without extension
-              const baseFileName = uuidFileName.split('.').slice(0, -1).join('.');
-              
-              // Set the thumbnail key with the proper jpg extension
-              thumbnailDataKey = `Input/Image/${baseFileName}-thumbnail.jpg`;
-              tempThumbnailKey = `temp/${thumbnailDataKey}`;
-              
-              thumbnailSize = Math.round(thumbnailBlob.size)
-              log(`🎬 Thumbnail generated: ${thumbnailSize} bytes, path: ${thumbnailDataKey}`)
-              updatePhotoStatus(i, 'processing', 0.8)
-          
-              // Convert thumbnail blob to ArrayBuffer
-              const thumbnailArrayBuffer = await thumbnailBlob.arrayBuffer()
-              log(`📦 Converted thumbnail to ArrayBuffer`)
-              
-              log(`⬆️ Uploading thumbnail to ${tempThumbnailKey}...`)
-              await s3.send(new PutObjectCommand({
-                Bucket: BUCKET_NAME,
-                Key: tempThumbnailKey,
-                Body: new Uint8Array(thumbnailArrayBuffer),
-                ContentType: "image/jpeg"
-              }))
-              log(`✅ Thumbnail upload successful`)
-              updatePhotoStatus(i, 'processing', 0.9)
-            } catch (videoErr) {
-              log(`⚠️ Video processing error: ${String(videoErr)}`)
-              // Don't fail the whole upload if just the thumbnail fails
-            }
-          }
-
-          // Update the photo status to complete
-          updatePhotoStatus(i, 'complete', 1)
-          
-          // Add processed photo info to our collection
-          processedPhotos.push({
-            fileName: uuidFileName,
-            s3PreviewUrl, 
-            type,
-            size: file.size,
-            duration,
-            thumbnailDataKey,
-            thumbnailSize,
-            tempKey: tempS3Key,
-            tempThumbnailKey,
-            status: 'complete',
-            progress: 1
-          })
-          
-          log(`✅ File ${i + 1} processing complete`)
-        } catch (fileErr) {
-          log(`❌ Error processing file ${i + 1}: ${String(fileErr)}`)
-          updatePhotoStatus(i, 'error', 0, String(fileErr))
-        }
-      }
-    
-      log(`✅ All files processed`)
+      // Use the processFiles function from utils instead of implementing it here
+      const processedPhotos = await processFiles(files, cognitoUsername, updatePhotoStatus, log);
       
       // Save to localStorage - ONLY the keys and metadata, not the file data
       localStorage.setItem(STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos))
       log(`📸 Saved ${processedPhotos.length} photos metadata to storage`)
-      
-      // Revoke object URLs to prevent memory leaks
-      initialPhotos.forEach(photo => {
-        if (photo.s3PreviewUrl.startsWith('blob:')) {
-          URL.revokeObjectURL(photo.s3PreviewUrl)
-        }
-      })
       
       // Redirect to save-album page with folder ID parameter if adding to existing album
       if (currentFolderId) {
@@ -1166,7 +965,7 @@ const MyAlbums = () => {
         window.location.href = "/save-album.html"
       }
 
-      clearAlbumData()
+      handleClearAlbumData()
 
     } catch (error) {
       log(`❌ Fatal error in handleFileSelection: ${String(error)}`)
