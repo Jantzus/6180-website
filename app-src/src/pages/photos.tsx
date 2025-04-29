@@ -770,6 +770,9 @@ const PhotoAlbumContent: React.FC = () => {
     let folderName = t('Photos');
     let folderDescription = '';
     
+    // Set to track unique dataKeys
+    const uniqueDataKeys = new Set<string>();
+    
     if (items.length > 0) {
       // Get folder name if available
       if (items[0]?.folderName && items[0].folderName.length > 0) {
@@ -788,12 +791,21 @@ const PhotoAlbumContent: React.FC = () => {
         }
       });
       
-      // Get media items
+      // Get media items and filter duplicates by dataKey
       (items[0]?.fileReferencesPage?.items || []).forEach((ref: any) => {
         const file = ref?.file;
         if (!file?.dataKey) return;
 
         const { dataKey, thumbnailDataKey, durationInSeconds, ownerContactId } = file;
+        
+        // Skip this item if we've already seen this dataKey
+        if (uniqueDataKeys.has(dataKey)) {
+          return;
+        }
+        
+        // Add to our set of seen dataKeys
+        uniqueDataKeys.add(dataKey);
+        
         const url = `${BUCKET_URL}public/${dataKey}`;
 
         if (dataKey.startsWith("Input/Image/")) {
