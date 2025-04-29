@@ -1,8 +1,190 @@
 import { STORAGE_KEYS } from "@/lib/config"
 import { LanguageCode } from "@/lib/types"
 import { myAlbumsTranslations } from "@/lib/translations"
+import { API_ENDPOINT_REFRESHTOKEN, CLIENT_ID } from "@/lib/config"
 
+/**
+ * Attempts to refresh the token using the refresh token from localStorage
+ * @returns {Promise<boolean>} - True if refresh succeeded, false otherwise
+ */
+export async function refreshTokenIfNeeded(): Promise<boolean> {
+  const refreshToken = localStorage.getItem("refreshToken");
+  const idToken = localStorage.getItem("idToken");
+  
+  if (!refreshToken || !idToken) {
+    console.warn("No refresh token or ID token available");
+    return false;
+  }
+  
+  try {
+    // Check if current token is about to expire
+    const parts = idToken.split(".");
+    if (parts.length !== 3) {
+      throw new Error("Token does not have 3 parts");
+    }
+
+    const payload = JSON.parse(atob(parts[1]));
+    const now = Math.floor(Date.now() / 1000);
+    
+    // Only refresh if token is expired or about to expire (within 5 minutes)
+    if (!payload.exp || payload.exp > now + 300) {
+      console.log("Token not close to expiration, no refresh needed");
+      return true;
+    }
+    
+    console.log("Token expiring soon, attempting to refresh");
+    
+    // Make the refresh token API call
+    const response = await fetch(API_ENDPOINT_REFRESHTOKEN, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        refreshToken: refreshToken,
+        appClientId: CLIENT_ID,
+      }),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Refresh failed with status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    if (!data.idToken || !data.accessToken) {
+      throw new Error("Refresh response missing tokens");
+    }
+    
+    // Store the new tokens
+    localStorage.setItem("idToken", data.idToken);
+    localStorage.setItem("accessToken", data.accessToken);
+    
+    console.log("Token refreshed successfully");
+    return true;
+  } catch (error) {
+    console.error("Error refreshing token:", error);
+    return false;
+  }
+}
+
+/**
+ * Check if the user is logged in, attempt to refresh token if expired,
+ * and redirect to login page if refresh fails
+ * @returns {Promise<string | null>} - The JWT token if valid, null if redirected
+ */
+export async function checkLoginWithRefresh(): Promise<string | null> {
+  const token = localStorage.getItem("idToken");
+
+  if (!token) {
+    const redirect = encodeURIComponent(window.location.pathname + window.location.search);
+    window.location.href = `/login.html?redirect=${redirect}`;
+    return null;
+  }
+
+  try {
+    const parts = token.split(".");
+    if (parts.length !== 3) {
+      throw new Error("Token does not have 3 parts");
+    }
+
+    const payload = JSON.parse(atob(parts[1]));
+    const now = Math.floor(Date.now() / 1000);
+
+    // If token is expired or about to expire (within 5 minutes)
+    if (payload.exp && payload.exp < now + 300) {
+      console.warn("Token expired or expiring soon");
+      
+      // Attempt to refresh the token
+      const refreshSuccessful = await refreshTokenIfNeeded();
+      
+      if (!refreshSuccessful) {
+        // If refresh failed, redirect to login
+        console.warn("Token refresh failed, redirecting to login");
+        localStorage.removeItem("idToken");
+        const redirect = encodeURIComponent(window.location.pathname + window.location.search);
+        window.location.href = `/login.html?redirect=${redirect}`;
+        return null;
+      }
+      
+      // Return the new token
+      return localStorage.getItem("idToken");
+    }
+
+    console.log("Valid idToken. Exp:", new Date(payload.exp * 1000).toISOString());
+    return token;
+  } catch (e) {
+    console.error("Invalid token:", e);
+    localStorage.removeItem("idToken");
+    const redirect = encodeURIComponent(window.location.pathname + window.location.search);
+    window.location.href = `/login.html?redirect=${redirect}`;
+    return null;
+  }
+}
+
+/**
+ * Check if the user is logged in, attempt to refresh token if expired,
+ * and redirect to login page with a specific target if refresh fails
+ * @param {string} targetPath - The path to redirect to after successful login
+ * @returns {Promise<string | null>} - The JWT token if valid, null if redirected
+ */
+export async function checkLoginWithRefreshOrRedirectToTarget(targetPath: string): Promise<string | null> {
+  const token = localStorage.getItem("idToken");
+
+  if (!token) {
+    const redirect = encodeURIComponent(targetPath);
+    window.location.href = `/login.html?redirect=${redirect}`;
+    return null;
+  }
+
+  try {
+    const parts = token.split(".");
+    if (parts.length !== 3) {
+      throw new Error("Token does not have 3 parts");
+    }
+
+    const payload = JSON.parse(atob(parts[1]));
+    const now = Math.floor(Date.now() / 1000);
+
+    // If token is expired or about to expire (within 5 minutes)
+    if (payload.exp && payload.exp < now + 300) {
+      console.warn("Token expired or expiring soon");
+      
+      // Attempt to refresh the token
+      const refreshSuccessful = await refreshTokenIfNeeded();
+      
+      if (!refreshSuccessful) {
+        // If refresh failed, redirect to login
+        console.warn("Token refresh failed, redirecting to login");
+        localStorage.removeItem("idToken");
+        const redirect = encodeURIComponent(targetPath);
+        window.location.href = `/login.html?redirect=${redirect}`;
+        return null;
+      }
+      
+      // Return the new token
+      return localStorage.getItem("idToken");
+    }
+
+    console.log("Valid idToken. Exp:", new Date(payload.exp * 1000).toISOString());
+    return token;
+  } catch (e) {
+    console.error("Invalid token:", e);
+    localStorage.removeItem("idToken");
+    const redirect = encodeURIComponent(targetPath);
+    window.location.href = `/login.html?redirect=${redirect}`;
+    return null;
+  }
+}
+
+// Keep the original functions with their existing signatures for backward compatibility
 export function checkLoginOrRedirect(): string | null {
+  console.warn("checkLoginOrRedirect is deprecated, use checkLoginWithRefresh instead");
+  
+  // Start the async refresh process but don't await it
+  // This maintains the synchronous nature of the original function
+  checkLoginWithRefresh().catch(e => console.error("Background refresh failed:", e));
+  
   const token = localStorage.getItem("idToken");
 
   if (!token) {
@@ -39,6 +221,50 @@ export function checkLoginOrRedirect(): string | null {
   }
 }
 
+export function checkLoginOrRedirectToTarget(targetPath: string): string | null {
+  console.warn("checkLoginOrRedirectToTarget is deprecated, use checkLoginWithRefreshOrRedirectToTarget instead");
+  
+  // Start the async refresh process but don't await it
+  // This maintains the synchronous nature of the original function
+  checkLoginWithRefreshOrRedirectToTarget(targetPath).catch(e => console.error("Background refresh failed:", e));
+  
+  const token = localStorage.getItem("idToken");
+
+  if (!token) {
+    const redirect = encodeURIComponent(targetPath);
+    window.location.href = `/login.html?redirect=${redirect}`;
+    return null;
+  }
+
+  try {
+    const parts = token.split(".");
+    if (parts.length !== 3) {
+      throw new Error("Token does not have 3 parts");
+    }
+
+    const payload = JSON.parse(atob(parts[1]));
+    const now = Math.floor(Date.now() / 1000);
+
+    if (payload.exp && payload.exp < now) {
+      console.warn("Token expired at", new Date(payload.exp * 1000).toISOString());
+      localStorage.removeItem("idToken");
+      const redirect = encodeURIComponent(targetPath);
+      window.location.href = `/login.html?redirect=${redirect}`;
+      return null;
+    }
+
+    console.log("Valid idToken. Exp:", new Date(payload.exp * 1000).toISOString());
+    return token;
+  } catch (e) {
+    console.error("Invalid token:", e);
+    localStorage.removeItem("idToken");
+    const redirect = encodeURIComponent(targetPath);
+    window.location.href = `/login.html?redirect=${redirect}`;
+    return null;
+  }
+}
+
+// All the existing utility functions below remain unchanged
 export const generateUUID = () =>
   crypto.randomUUID?.() || "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
     (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation, LanguageSelector } from '@/lib/i18n/react';
 import { getLanguageDirection } from '@/lib/i18n/translations';
+import { checkLoginOrRedirectToTarget } from "@/lib/utils";
 
 // CSS Styles as JavaScript object
 const styles = {
@@ -114,8 +115,15 @@ const IndexPage: React.FC = () => {
 
   // Go to albums page
   const goToAlbums = () => {
-    // Pass the language parameter to the next page
-    window.location.href = `/my-albums.html?lang=${language}`;
+
+    let targetPath = `/my-albums.html?lang=${language}`
+
+    const token = checkLoginOrRedirectToTarget(targetPath);
+    
+    if (token) {
+      window.location.href = targetPath;
+    }
+    
   };
 
   // Check if RTL

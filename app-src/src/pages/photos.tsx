@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import JSZip from "jszip";
 import QRCode from "react-qr-code";
+import { checkLoginOrRedirectToTarget } from "@/lib/utils";
 
 // Types
 interface MediaItem {
@@ -411,7 +412,7 @@ const FETCH_FOLDERS_QUERY = `
         }
         folderPosition {
           id
-        }          
+        }
       }
     }
   }
@@ -861,14 +862,23 @@ const PhotoAlbumContent: React.FC = () => {
   
   // Save album function
   const saveAlbum = () => {
+    
     const folderId = getFolderIdFromUrl();
     const formattedFolderId = formatFolderId(folderId);
     
     if (formattedFolderId) {
-      window.location.href = `/save-album.html?folderId=${formattedFolderId}`;
+
+      const targetPath = `/save-album.html?folderId=${formattedFolderId}`
+      const token = checkLoginOrRedirectToTarget(targetPath);
+      
+      if (token) {
+        window.location.href = targetPath;
+      }
+
     } else {
       alert(t('Please try refreshing the page or contact support if the problem persists.'));
     }
+
   };
 
   // Handle Get QR Code function

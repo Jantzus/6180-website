@@ -4,7 +4,125 @@ import {
 } from "@/lib/types"
 import { useTranslation } from "@/lib/i18n/react"
 import { getLanguageDirection } from "@/lib/i18n/translations"
+import styled from "styled-components"
 
+// Styled Components for the dialog
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+`;
+
+const DialogContainer = styled.div`
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+`;
+
+const DialogTitle = styled.div`
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: #888;
+  padding: 15px 20px;
+  text-align: center;
+`;
+
+interface DirectionalProps {
+  isRTL: boolean;
+}
+
+const DialogContent = styled.div<DirectionalProps>`
+  direction: ${props => props.isRTL ? 'rtl' : 'ltr'};
+  padding: 30px;
+`;
+
+const DialogText = styled.p`
+  margin-bottom: 15px;
+  font-size: 16px;
+`;
+
+const PasswordInput = styled.input`
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  margin-top: 20px;
+  box-sizing: border-box;
+`;
+
+const OptionsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+`;
+
+interface OptionWrapperProps {
+  disabled: boolean;
+}
+
+const OptionWrapper = styled.div<OptionWrapperProps>`
+  display: flex;
+  align-items: center;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  opacity: ${props => props.disabled ? 0.7 : 1};
+`;
+
+const RadioInput = styled.input`
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  
+  &:disabled {
+    cursor: not-allowed;
+  }
+`;
+
+interface LabelProps {
+  disabled: boolean;
+}
+
+const OptionLabel = styled.label<LabelProps>`
+  display: flex;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  font-size: 16px;
+`;
+
+const PasswordRequiredText = styled.span`
+  color: #aaa;
+  margin-left: 8px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+`;
+
+const Button = styled.button`
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+`;
+
+// Component Props
 type PasswordDialogProps = {
   isOpen: boolean;
   onClose: (option?: ProtectionOption, password?: string) => void;
@@ -47,13 +165,7 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
     setSelectedOption(option);
   };
 
-  // This function prevents any click events from propagating through the dialog
-  const stopPropagation = (e: React.MouseEvent | React.FormEvent) => {
-    e.preventDefault();  // Prevent default behavior
-    e.stopPropagation(); // Stop propagation to parent elements
-  };
-  
-  // Handle backdrop click
+  // Handle backdrop click to close dialog
   const handleBackdropClick = (e: React.MouseEvent) => {
     // Only close if the click was directly on the backdrop
     if (e.target === e.currentTarget) {
@@ -62,173 +174,142 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
   };
 
   return (
-    <div className="modal-backdrop" onClick={handleBackdropClick}>
-      <div 
-        className={`modal-container ${isRTL ? 'rtl' : 'ltr'}`} 
-        onClick={stopPropagation}
-      >
-        <div className={`modal-header ${isRTL ? 'text-right' : 'text-left'}`}>
-          {t('Enter a password for this album.')}
-          <br />
-          <br />
-          {t('Select what can be done with photos and videos without a password.')}
-        </div>
+    <ModalOverlay onClick={handleBackdropClick}>
+      <DialogContainer>
+        <DialogTitle>
+          {t('Album Password Policy')}
+        </DialogTitle>
         
-        <input
-          type="text"
-          className="password-input"
-          placeholder={t('Enter password')}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoCapitalize="none"
-          autoComplete="off"
-          spellCheck="false"
-          autoCorrect="off"
-        />
-        
-        <div className="options-container">
-          {/* Not Visible Option */}
-          <div 
-            className={`option ${selectedOption === 'notVisible' ? 'selected' : ''} ${passwordRequired ? 'disabled' : ''}`}
-            onClick={() => !passwordRequired && handleOptionSelect('notVisible')}
-          >
-            <input 
-              type="radio" 
-              name="protection" 
-              id="notVisible" 
-              className={`radio-input ${isRTL ? 'rtl' : 'ltr'}`}
-              checked={selectedOption === 'notVisible'}
-              onChange={() => {}} // Empty handler to prevent React warning
-              disabled={passwordRequired}
-              onClick={(e) => {
-                e.stopPropagation();
-                !passwordRequired && handleOptionSelect('notVisible');
-              }}
-            />
-            <label 
-              htmlFor="notVisible"
-              className={`option-label ${passwordRequired ? 'disabled' : ''}`}
-              onClick={() => !passwordRequired && handleOptionSelect('notVisible')}
-            >
-              {t('Not Visible')}
-              {passwordRequired && (
-                <span className="password-required-text">
-                  {t('Password required')}
-                </span>
-              )}
-            </label>
-          </div>
+        <DialogContent isRTL={isRTL}>
+          <DialogText>
+            {t('Enter a password for this album.')}
+          </DialogText>
           
-          {/* Watermark Option */}
-          <div 
-            className={`option ${selectedOption === 'watermark' ? 'selected' : ''} ${passwordRequired ? 'disabled' : ''}`}
-            onClick={() => !passwordRequired && handleOptionSelect('watermark')}
-          >
-            <input 
-              type="radio" 
-              name="protection" 
-              id="watermark" 
-              className={`radio-input ${isRTL ? 'rtl' : 'ltr'}`}
-              checked={selectedOption === 'watermark'}
-              onChange={() => {}} // Empty handler to prevent React warning
-              disabled={passwordRequired}
-              onClick={(e) => {
-                e.stopPropagation();
-                !passwordRequired && handleOptionSelect('watermark');
-              }}
-            />
-            <label 
-              htmlFor="watermark"
-              className={`option-label ${passwordRequired ? 'disabled' : ''}`}
-              onClick={() => !passwordRequired && handleOptionSelect('watermark')}
-            >
-              {t('Watermark')}
-              {passwordRequired && (
-                <span className="password-required-text">
-                  {t('Password required')}
-                </span>
-              )}
-            </label>
-          </div>
+          <DialogText>
+            {t('Select what can be done with photos and videos without a password.')}
+          </DialogText>
           
-          {/* Cannot Be Saved Option */}
-          <div 
-            className={`option ${selectedOption === 'cannotBeSaved' ? 'selected' : ''} ${passwordRequired ? 'disabled' : ''}`}
-            onClick={() => !passwordRequired && handleOptionSelect('cannotBeSaved')}
-          >
-            <input 
-              type="radio" 
-              name="protection" 
-              id="cannotBeSaved" 
-              className={`radio-input ${isRTL ? 'rtl' : 'ltr'}`}
-              checked={selectedOption === 'cannotBeSaved'}
-              onChange={() => {}} // Empty handler to prevent React warning
-              disabled={passwordRequired}
-              onClick={(e) => {
-                e.stopPropagation();
-                !passwordRequired && handleOptionSelect('cannotBeSaved');
-              }}
-            />
-            <label 
-              htmlFor="cannotBeSaved"
-              className={`option-label ${passwordRequired ? 'disabled' : ''}`}
-              onClick={() => !passwordRequired && handleOptionSelect('cannotBeSaved')}
-            >
-              {t('Cannot Be Saved')}
-              {passwordRequired && (
-                <span className="password-required-text">
-                  {t('Password required')}
-                </span>
-              )}
-            </label>
-          </div>
+          <PasswordInput
+            type="text"
+            placeholder={t('Enter password')}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoCapitalize="none"
+            autoComplete="off"
+            spellCheck="false"
+            autoCorrect="off"
+          />
           
-          {/* No Password Option - Always available */}
-          <div 
-            className={`option ${selectedOption === 'noPassword' ? 'selected' : ''}`}
-            onClick={() => handleOptionSelect('noPassword')}
-          >
-            <input 
-              type="radio" 
-              name="protection" 
-              id="noPassword" 
-              className={`radio-input ${isRTL ? 'rtl' : 'ltr'}`}
-              checked={selectedOption === 'noPassword'}
-              onChange={() => {}} // Empty handler to prevent React warning
-              onClick={(e) => {
-                e.stopPropagation();
-                handleOptionSelect('noPassword');
-              }}
-            />
-            <label 
-              htmlFor="noPassword"
-              className="option-label"
-              onClick={() => handleOptionSelect('noPassword')}
+          <OptionsContainer>
+            {/* Not Visible Option */}
+            <OptionWrapper disabled={passwordRequired}>
+              <RadioInput 
+                type="radio" 
+                name="protection" 
+                id="notVisible" 
+                checked={selectedOption === 'notVisible'}
+                onChange={() => {}} // Empty handler to prevent React warning
+                disabled={passwordRequired}
+                onClick={() => !passwordRequired && handleOptionSelect('notVisible')}
+              />
+              <OptionLabel 
+                htmlFor="notVisible"
+                disabled={passwordRequired}
+              >
+                {t('Not Visible')}
+                {passwordRequired && (
+                  <PasswordRequiredText>
+                    {t('Password required')}
+                  </PasswordRequiredText>
+                )}
+              </OptionLabel>
+            </OptionWrapper>
+            
+            {/* Watermark Option */}
+            <OptionWrapper disabled={passwordRequired}>
+              <RadioInput 
+                type="radio" 
+                name="protection" 
+                id="watermark" 
+                checked={selectedOption === 'watermark'}
+                onChange={() => {}} // Empty handler to prevent React warning
+                disabled={passwordRequired}
+                onClick={() => !passwordRequired && handleOptionSelect('watermark')}
+              />
+              <OptionLabel 
+                htmlFor="watermark"
+                disabled={passwordRequired}
+              >
+                {t('Watermark')}
+                {passwordRequired && (
+                  <PasswordRequiredText>
+                    {t('Password required')}
+                  </PasswordRequiredText>
+                )}
+              </OptionLabel>
+            </OptionWrapper>
+            
+            {/* Cannot Be Saved Option */}
+            <OptionWrapper disabled={passwordRequired}>
+              <RadioInput 
+                type="radio" 
+                name="protection" 
+                id="cannotBeSaved" 
+                checked={selectedOption === 'cannotBeSaved'}
+                onChange={() => {}} // Empty handler to prevent React warning
+                disabled={passwordRequired}
+                onClick={() => !passwordRequired && handleOptionSelect('cannotBeSaved')}
+              />
+              <OptionLabel 
+                htmlFor="cannotBeSaved"
+                disabled={passwordRequired}
+              >
+                {t('Cannot Be Saved')}
+                {passwordRequired && (
+                  <PasswordRequiredText>
+                    {t('Password required')}
+                  </PasswordRequiredText>
+                )}
+              </OptionLabel>
+            </OptionWrapper>
+            
+            {/* No Password Option - Always available */}
+            <OptionWrapper disabled={false}>
+              <RadioInput 
+                type="radio" 
+                name="protection" 
+                id="noPassword" 
+                checked={selectedOption === 'noPassword'}
+                onChange={() => {}} // Empty handler to prevent React warning
+                onClick={() => handleOptionSelect('noPassword')}
+              />
+              <OptionLabel 
+                htmlFor="noPassword"
+                disabled={false}
+              >
+                {t('No Password')}
+              </OptionLabel>
+            </OptionWrapper>
+          </OptionsContainer>
+          
+          <ButtonContainer>
+            <Button
+              onClick={() => onClose()} // Don't pass selected values when canceling
             >
-              {t('No Password')}
-            </label>
-          </div>
-        </div>
-        
-        <div className={`button-container ${isRTL ? 'rtl' : 'ltr'}`}>
-          <button
-            className="cancel-button"
-            onClick={() => onClose()} // Don't pass selected values when canceling
-          >
-            {t('Cancel')}
-          </button>
-          <button
-            className="save-button"
-            onClick={() => {
-              console.log(`Saving with option: ${selectedOption}, password: ${password.length > 0 ? '********' : 'none'}`);
-              // Pass the selected option and password to the parent component
-              onClose(selectedOption, password);
-            }}
-          >
-            {t('Save')}
-          </button>
-        </div>
-      </div>
-    </div>
+              {t('Cancel')}
+            </Button>
+            <Button
+              onClick={() => {
+                console.log(`Saving with option: ${selectedOption}, password: ${password.length > 0 ? '********' : 'none'}`);
+                // Pass the selected option and password to the parent component
+                onClose(selectedOption, password);
+              }}
+            >
+              {t('Save')}
+            </Button>
+          </ButtonContainer>
+        </DialogContent>
+      </DialogContainer>
+    </ModalOverlay>
   );
 };

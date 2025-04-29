@@ -9,3 +9,4 @@ export const STORAGE_KEYS = {
   SELECTED_PHOTOS: 'album_selectedPhotos',
   LANGUAGE: 'user_language'
 }
+export const API_ENDPOINT_REFRESHTOKEN = "https://722k2cxb4l.execute-api.us-east-1.amazonaws.com/prod-0/refresh-token"

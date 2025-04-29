@@ -50,7 +50,14 @@ const LoginContent = () => {
     }
   }, [codeSent])
 
-  const redirectTo = new URLSearchParams(location.search).get('redirect') || 'my-albums.html'
+  // Get the redirect parameter, defaulting to my-albums.html if not provided
+  const redirectParam = new URLSearchParams(location.search).get('redirect') || '/my-albums.html'
+  
+  // Ensure the redirect path is properly formatted
+  // If it's already a full URL (starts with http), use it as is
+  // Otherwise ensure it starts with a slash for relative paths
+  const redirectTo = redirectParam.startsWith('http') ? redirectParam : 
+                    (redirectParam.startsWith('/') ? redirectParam : `/${redirectParam}`)
 
   // Only allow numeric input for OTP code
   function handleOtpChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -162,6 +169,7 @@ const LoginContent = () => {
         localStorage.setItem('publicUsername', displayName)
       }
 
+      // Redirect to the specified page after successful login
       window.location.href = redirectTo
 
     } catch (e) {

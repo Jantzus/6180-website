@@ -99,6 +99,7 @@ const FETCH_FOLDER_QUERY = `
   query FetchFolders($folderIds: [String!]!) {
     fetchFolders(folderIds: $folderIds) {
       items {
+        creatorId      
         folderName
         folderDescription
         folderPassword {
@@ -175,6 +176,9 @@ const SaveAlbum = () => {
   const [showPasswordDialog, setShowPasswordDialog] = useState(false);
   const [passwordProtectionOption, setPasswordProtectionOption] = useState<ProtectionOption>('noPassword');
   const [albumPassword, setAlbumPassword] = useState("");
+  
+  // New state for checking if user is the creator - initialize as null (undetermined)
+  const [isCreator, setIsCreator] = useState<boolean | null>(null);
 
   // Create utility instances
   const log = createLogger(setDebugMessages);
@@ -248,55 +252,74 @@ const SaveAlbum = () => {
       if (id) {
         setFolderId(id);
         
-        // Always show folder details, whether creating new or editing existing
-        setShowFolderDetails(true);
-        
         // Since this is an existing album, fetch its details
         try {
           const folderDetails = await fetchFolderDetails(id);
           
           if (folderDetails) {
-            // Update album details in state
-            setFolderName(folderDetails.folderName);
-            setFolderDescription(folderDetails.folderDescription);
+            // Check if current user is the creator
+            const accountId = `${username}_____${username}____Account`;
+            const userIsCreator = folderDetails.creatorId === accountId;
+            setIsCreator(userIsCreator);
             
-            // Handle password policy with proper enum mapping
-            const policy = folderDetails.passwordPolicy;
-            
-            // Map the PasswordPolicyEnum values to our local state options
-            switch(policy) {
-              case 'NoPassword':
-                setPasswordProtectionOption('noPassword');
-                break;
-              case 'NotVisible':
-                setPasswordProtectionOption('notVisible');
-                setAlbumPassword(folderDetails.password);
-                break;
-              case 'Watermark':
-                setPasswordProtectionOption('watermark');
-                setAlbumPassword(folderDetails.password);
-                break;
-              case 'CannotBeSaved':
-                setPasswordProtectionOption('cannotBeSaved');
-                setAlbumPassword(folderDetails.password);
-                break;
-              default:
-                setPasswordProtectionOption('noPassword');
+            // If user is creator, show folder details
+            if (userIsCreator) {
+              setShowFolderDetails(true);
+              
+              // Update album details in state
+              setFolderName(folderDetails.folderName);
+              setFolderDescription(folderDetails.folderDescription);
+              
+              // Handle password policy with proper enum mapping
+              const policy = folderDetails.passwordPolicy;
+              
+              // Map the PasswordPolicyEnum values to our local state options
+              switch(policy) {
+                case 'NoPassword':
+                  setPasswordProtectionOption('noPassword');
+                  break;
+                case 'NotVisible':
+                  setPasswordProtectionOption('notVisible');
+                  setAlbumPassword(folderDetails.password);
+                  break;
+                case 'Watermark':
+                  setPasswordProtectionOption('watermark');
+                  setAlbumPassword(folderDetails.password);
+                  break;
+                case 'CannotBeSaved':
+                  setPasswordProtectionOption('cannotBeSaved');
+                  setAlbumPassword(folderDetails.password);
+                  break;
+                default:
+                  setPasswordProtectionOption('noPassword');
+              }
+            } else {
+              // If not creator, still load the data but don't show editable fields
+              setShowFolderDetails(false);
             }
+          } else {
+            // If we couldn't fetch folder details, set isCreator to false as a fallback
+            setIsCreator(false);
           }
         } catch (fetchErr) {
           console.error("Error fetching folder details:", fetchErr);
+          // Set isCreator to false on error as a safety measure
+          setIsCreator(false);
         }
       } else {
         // If no ID in URL, create a new one
         const newId = `${username}_____${generateUUID()}____Folder`;
         setFolderId(newId);
         
+        // For new albums, user is automatically the creator
+        setIsCreator(true);
         // Show folder details for new albums
         setShowFolderDetails(true);
       }
     } catch (err) {
       console.error("Folder ID initialization error:", err);
+      // Set isCreator to false on error as a safety measure
+      setIsCreator(false);
     }
   };
 
@@ -335,6 +358,7 @@ const SaveAlbum = () => {
       const folder = items[0];
       
       return {
+        creatorId: folder.creatorId || '',
         folderName: folder.folderName || '',
         folderDescription: folder.folderDescription || '',
         passwordPolicy: folder.folderPassword?.policy || 'NoPassword',
@@ -923,15 +947,9 @@ const SaveAlbum = () => {
           
           {/* Action Buttons */}
           <ActionButtons>
-            <PrimaryButton
-              onClick={handleSaveAlbum}
-              disabled={isSavingAlbum}
-            >
-              {isSavingAlbum ? t('Saving Album...') : t('Save Album')}
-            </PrimaryButton>
             
-            {/* Folder Details */}
-            {showFolderDetails && (
+            {/* Folder Details - Only show if user is creator */}
+            {showFolderDetails && isCreator === true && (
               <FolderDetails>
                 <FormGroup>
                   <FormLabel htmlFor="folderName">
@@ -971,13 +989,23 @@ const SaveAlbum = () => {
               {t('Add More Photos')}
             </SecondaryButton>
             
-            <PasswordButton
-              passwordSet={passwordProtectionOption !== 'noPassword'}
-              onClick={handleOpenPasswordDialog}
+            {/* Only show password button if user is creator */}
+            {isCreator === true && (
+              <PasswordButton
+                passwordSet={passwordProtectionOption !== 'noPassword'}
+                onClick={handleOpenPasswordDialog}
+                disabled={isSavingAlbum}
+              >
+                {getPasswordPolicyButtonText()}
+              </PasswordButton>
+            )}
+
+            <PrimaryButton
+              onClick={handleSaveAlbum}
               disabled={isSavingAlbum}
             >
-              {getPasswordPolicyButtonText()}
-            </PasswordButton>
+              {isSavingAlbum ? t('Saving Album...') : t('Save Album')}
+            </PrimaryButton>
           </ActionButtons>
           
           {/* Username Prompt Modal */}
