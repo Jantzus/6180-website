@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { useEffect, useState, useRef } from "react"
-import { checkLoginOrRedirect, generateUUID, getOwnerItemId, getTargetItemIdentifier } from "@/lib/utils"
+import { checkLoginWithRefresh, generateUUID, getOwnerItemId, getTargetItemIdentifier } from "@/lib/utils"
 import { GRAPHQL_ENDPOINT, STORAGE_KEYS } from "@/lib/config"
 import { 
   Folder, 
@@ -1096,42 +1096,50 @@ const MyAlbums = () => {
   useEffect(() => {
     setPublicUsername(localStorage.getItem("publicUsername") || null)
 
-    const token = checkLoginOrRedirect()
-    if (!token) return
+    // Use async/await with the new checkLoginWithRefresh function
+    const fetchUserAndFolders = async () => {
+      const token = await checkLoginWithRefresh()
+      if (!token) return
 
-    try {
-      const payload = JSON.parse(atob(token.split('.')[1]))
-      const username = payload["cognito:username"]
-      setCognitoUsername(username)
-    } catch (err) {
-      console.error("Failed to decode token", err)
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]))
+        const username = payload["cognito:username"]
+        setCognitoUsername(username)
+      } catch (err) {
+        console.error("Failed to decode token", err)
+      }
+
+      await fetchFolders(token)
     }
 
-    const fetchFolders = async () => {
-      const query = `
-        mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
-          fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
-            items {
-              ... on FolderPosition {
+    fetchUserAndFolders()
+  }, [])
+
+  // Separated fetchFolders function to use with the token
+  const fetchFolders = async (token: string) => {
+    const query = `
+      mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
+        fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
+          items {
+            ... on FolderPosition {
+              id
+              folder {
                 id
-                folder {
-                  id
-                  folderName
-                  folderDescription
-                  folderPassword {
-                    password
-                    policy
-                  }
-                  creatorId
-                  createdAt
-                  updatedAt
-                  fileReferencesPage {
-                    items {
-                      file {
-                        dataKey
-                        thumbnailDataKey
-                        durationInSeconds
-                      }
+                folderName
+                folderDescription
+                folderPassword {
+                  password
+                  policy
+                }
+                creatorId
+                createdAt
+                updatedAt
+                fileReferencesPage {
+                  items {
+                    file {
+                      dataKey
+                      thumbnailDataKey
+                      durationInSeconds
                     }
                   }
                 }
@@ -1139,57 +1147,55 @@ const MyAlbums = () => {
             }
           }
         }
-      `
-
-      const variables = {
-        fetchRelationsInput: {
-          ownerItemId: "myAccountOwnerItemId",
-          rangeKeyPrefix: "FolderPosition",
-          index: "ownerItemId_____RelationType____sortParameter",
-          limit: 50,
-          scanIndexForward: false,
-        },
       }
+    `
 
-      try {
-        const res = await fetch(GRAPHQL_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({ query, variables }),
-        })
-
-        const json = await res.json()
-
-        const items = json?.data?.fetchRelations?.items || []
-
-        const parsed: Folder[] = items.map((item: any) => {
-          const folder = item.folder
-          const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
-          return {
-            folderPositionId: item.id,
-            folderId: folder.id,
-            folderName: folder.folderName,
-            folderDescription: folder.folderDescription,
-            folderPassword: folder.folderPassword,
-            creatorId: folder.creatorId,
-            createdAt: folder.createdAt,
-            updatedAt: folder.updatedAt,
-            files: files.filter((f: any) => f && f.dataKey),
-          }
-        })
-
-        setFolders(parsed)
-      } catch (err) {
-        console.error("Failed to load folders:", err)
-        log(`❌ Failed to fetch folders: ${String(err)}`)
-      }
+    const variables = {
+      fetchRelationsInput: {
+        ownerItemId: "myAccountOwnerItemId",
+        rangeKeyPrefix: "FolderPosition",
+        index: "ownerItemId_____RelationType____sortParameter",
+        limit: 50,
+        scanIndexForward: false,
+      },
     }
 
-    fetchFolders()
-  }, [])
+    try {
+      const res = await fetch(GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query, variables }),
+      })
+
+      const json = await res.json()
+
+      const items = json?.data?.fetchRelations?.items || []
+
+      const parsed: Folder[] = items.map((item: any) => {
+        const folder = item.folder
+        const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
+        return {
+          folderPositionId: item.id,
+          folderId: folder.id,
+          folderName: folder.folderName,
+          folderDescription: folder.folderDescription,
+          folderPassword: folder.folderPassword,
+          creatorId: folder.creatorId,
+          createdAt: folder.createdAt,
+          updatedAt: folder.updatedAt,
+          files: files.filter((f: any) => f && f.dataKey),
+        }
+      })
+
+      setFolders(parsed)
+    } catch (err) {
+      console.error("Failed to load folders:", err)
+      log(`❌ Failed to fetch folders: ${String(err)}`)
+    }
+  }
 
   // Use updateProgressTracker from the utils
   useEffect(() => {
@@ -1221,6 +1227,15 @@ const MyAlbums = () => {
     if (!files.length) return
 
     setIsUploading(true)
+    
+    // Get a fresh token using the async function
+    const token = await checkLoginWithRefresh();
+    
+    if (!token) {
+      log("❌ Authentication failed")
+      setIsUploading(false)
+      return
+    }
     
     if (!cognitoUsername) {
       log("❌ Missing Cognito Username")
@@ -1263,9 +1278,11 @@ const MyAlbums = () => {
     try {
       console.log("Deleting album with id:", folderPositionId)
       
-      const token = localStorage.getItem("token") || checkLoginOrRedirect()
+      // Get a fresh token using the async function
+      const token = await checkLoginWithRefresh();
+      
       if (!token) {
-        console.error("No token found")
+        console.error("Authentication failed")
         return
       }
       

@@ -69,7 +69,6 @@ import {
 } from "@/lib/types";
 
 import { generateUUID } from "@/lib/utils";
-import { checkLoginOrRedirect } from "@/lib/utils";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import { getLanguageDirection } from "@/lib/i18n/translations";
 import { PasswordDialog } from "@/components/PasswordDialog";
@@ -85,6 +84,8 @@ import {
   clearAlbumData,
   s3
 } from "@/lib/file-upload-utils";
+
+import { checkLoginWithRefresh } from "@/lib/utils"
 
 // Password Policy Enum matching the GraphQL API schema
 enum PasswordPolicyEnum {
@@ -209,7 +210,7 @@ const SaveAlbum = () => {
     setIsSavingAlbum(false);
     
     try {
-      const token = checkLoginOrRedirect();
+      const token = await checkLoginWithRefresh();
       if (!token) {
         return;
       }
@@ -325,7 +326,7 @@ const SaveAlbum = () => {
 
   const fetchFolderDetails = async (folderId: string) => {
     try {
-      const token = localStorage.getItem("idToken");
+      const token = await checkLoginWithRefresh();
       if (!token) {
         return null;
       }
@@ -508,7 +509,7 @@ const SaveAlbum = () => {
 
     try {
       // Validate required data
-      if (!validateRequiredData()) {
+      if (!await validateRequiredData()) {
         setIsSavingAlbum(false);
         return;
       }
@@ -541,8 +542,8 @@ const SaveAlbum = () => {
     }
   };
   
-  const validateRequiredData = () => {
-    const token = localStorage.getItem("idToken");
+  const validateRequiredData = async () => {
+    const token = await checkLoginWithRefresh();
     
     if (!token) {
       return false;
@@ -651,7 +652,12 @@ const SaveAlbum = () => {
       saveProgressText.innerText = t('Finalizing album...');
     }
 
-    const token = localStorage.getItem("idToken");
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      setIsSavingAlbum(false);
+      return;
+    }
+    
     const mutation = `
       mutation MyMutation(
         $folderPositionInputs: [FolderPositionInput!],
@@ -718,8 +724,11 @@ const SaveAlbum = () => {
     setIsSubmittingUsername(true);
     setUsernameError("");
 
-    const token = localStorage.getItem("idToken");
-    if (!token) return;
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      setIsSubmittingUsername(false);
+      return;
+    }
 
     const mutation = `
       mutation MyMutation($savePublicProfileDisplayNameInput: SavePublicProfileDisplayNameInput) {

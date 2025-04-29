@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation, LanguageSelector } from '@/lib/i18n/react';
 import { getLanguageDirection } from '@/lib/i18n/translations';
-import { checkLoginOrRedirectToTarget } from "@/lib/utils";
+import { checkLoginWithRefreshOrRedirectToTarget } from "@/lib/utils";
 
 // CSS Styles as JavaScript object
 const styles = {
@@ -114,16 +114,14 @@ const IndexPage: React.FC = () => {
   }, [language]);
 
   // Go to albums page
-  const goToAlbums = () => {
-
+  const goToAlbums = async () => {
     let targetPath = `/my-albums.html?lang=${language}`
 
-    const token = checkLoginOrRedirectToTarget(targetPath);
+    const token = await checkLoginWithRefreshOrRedirectToTarget(targetPath);
     
     if (token) {
       window.location.href = targetPath;
     }
-    
   };
 
   // Check if RTL

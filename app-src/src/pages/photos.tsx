@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import JSZip from "jszip";
 import QRCode from "react-qr-code";
-import { checkLoginOrRedirectToTarget } from "@/lib/utils";
+import { checkLoginWithRefreshOrRedirectToTarget } from "@/lib/utils";
 
 // Types
 interface MediaItem {
@@ -12,7 +12,7 @@ interface MediaItem {
   thumbnailUrl?: string;
   duration?: string;
   ownerId?: string;
-  loaded?: boolean; // Track if full resolution is loaded
+  loaded?: boolean;
 }
 
 interface Contact {
@@ -1041,8 +1041,8 @@ const PhotoAlbumContent: React.FC = () => {
     localStorage.setItem('columns', value);
   };
   
-  // Save album function
-  const saveAlbum = () => {
+  // Save album function - UPDATED with await
+  const saveAlbum = async () => {
     
     const folderId = getFolderIdFromUrl();
     const formattedFolderId = formatFolderId(folderId);
@@ -1050,7 +1050,7 @@ const PhotoAlbumContent: React.FC = () => {
     if (formattedFolderId) {
 
       const targetPath = `/save-album.html?folderId=${formattedFolderId}`
-      const token = checkLoginOrRedirectToTarget(targetPath);
+      const token = await checkLoginWithRefreshOrRedirectToTarget(targetPath);
       
       if (token) {
         window.location.href = targetPath;
