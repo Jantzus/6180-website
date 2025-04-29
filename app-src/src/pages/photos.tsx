@@ -12,6 +12,7 @@ interface MediaItem {
   thumbnailUrl?: string;
   duration?: string;
   ownerId?: string;
+  loaded?: boolean; // Track if full resolution is loaded
 }
 
 interface Contact {
@@ -376,6 +377,36 @@ const styles = {
     borderRadius: '4px',
     cursor: 'pointer',
     fontSize: '16px'
+  },
+  // Full Resolution Button
+  fullResButton: {
+    position: 'absolute' as const,
+    bottom: '12px',
+    left: '12px',
+    background: 'rgba(0, 106, 220, 0.85)',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    padding: '6px 12px',
+    fontSize: '12px',
+    fontWeight: 500,
+    cursor: 'pointer',
+    zIndex: 3
+  },
+  // Loading overlay
+  loadingOverlay: {
+    position: 'absolute' as const,
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 4,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'white',
+    fontWeight: 500
   }
 };
 
@@ -426,19 +457,57 @@ const keyframesStyle = `
   }
 `;
 
-// LazyImage component
-const LazyImage: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className = '' }) => {
+// LazyImage component - UPDATED
+const LazyImage: React.FC<{ 
+  src: string; 
+  thumbnailSrc?: string; 
+  alt: string; 
+  className?: string;
+  loadFullResolution?: boolean;
+  onFullResolutionLoaded?: () => void;
+}> = ({ 
+  src, 
+  thumbnailSrc, 
+  alt, 
+  className = '', 
+  loadFullResolution = false,
+  onFullResolutionLoaded
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [fullResLoaded, setFullResLoaded] = useState(false);
+  const [isLoadingFullRes, setIsLoadingFullRes] = useState(false);
   const [imageSrc, setImageSrc] = useState("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E");
+  const { t } = useTranslation();
   
+  // First load the thumbnail if available
   useEffect(() => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => {
-      setImageSrc(src);
-      setIsLoaded(true);
-    };
-  }, [src]);
+    if (thumbnailSrc) {
+      const img = new Image();
+      img.src = thumbnailSrc;
+      img.onload = () => {
+        setImageSrc(thumbnailSrc);
+        setIsLoaded(true);
+      };
+    }
+  }, [thumbnailSrc]);
+  
+  // Load the full resolution image when requested
+  useEffect(() => {
+    if (loadFullResolution && !fullResLoaded) {
+      setIsLoadingFullRes(true);
+      
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        setImageSrc(src);
+        setFullResLoaded(true);
+        setIsLoadingFullRes(false);
+        if (onFullResolutionLoaded) {
+          onFullResolutionLoaded();
+        }
+      };
+    }
+  }, [loadFullResolution, src, fullResLoaded, onFullResolutionLoaded]);
   
   return (
     <div style={styles.lazyImageContainer}>
@@ -452,37 +521,111 @@ const LazyImage: React.FC<{ src: string; alt: string; className?: string }> = ({
         className={className}
       />
       {!isLoaded && <div style={styles.loadingPlaceholder}></div>}
+      {isLoadingFullRes && (
+        <div style={styles.loadingOverlay}>
+          {t('Loading full resolution...')}
+        </div>
+      )}
     </div>
   );
 };
 
-// VideoThumbnail component
+// VideoThumbnail component - UPDATED
 const VideoThumbnail: React.FC<{ 
   thumbnailUrl: string; 
   videoUrl: string; 
   duration: string; 
-  index: number 
-}> = ({ thumbnailUrl, videoUrl, duration, index }) => {
+  index: number;
+  onFullResolutionLoaded?: () => void;
+}> = ({ 
+  thumbnailUrl, 
+  videoUrl, 
+  duration, 
+  index,
+  onFullResolutionLoaded
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [loadFullVideo, setLoadFullVideo] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const { t } = useTranslation();
   
   const handleClick = () => {
-    setIsPlaying(true);
+    if (!isVideoLoaded) {
+      setLoadFullVideo(true);
+    } else {
+      setIsPlaying(true);
+    }
   };
+  
+  // When full video is loaded, mark as ready to play
+  const handleFullVideoLoaded = () => {
+    setIsVideoLoaded(true);
+    setIsPlaying(true);
+    if (onFullResolutionLoaded) {
+      onFullResolutionLoaded();
+    }
+  };
+  
+  // Load video when the video element is available
+  useEffect(() => {
+    if (loadFullVideo && videoRef.current && !isVideoLoaded) {
+      const video = videoRef.current;
+      
+      // Set up event listeners for video loading
+      const handleCanPlayThrough = () => {
+        handleFullVideoLoaded();
+        video.removeEventListener('canplaythrough', handleCanPlayThrough);
+      };
+      
+      video.addEventListener('canplaythrough', handleCanPlayThrough);
+      
+      // Start loading the video
+      video.load();
+      
+      return () => {
+        video.removeEventListener('canplaythrough', handleCanPlayThrough);
+      };
+    }
+  }, [loadFullVideo, isVideoLoaded]);
   
   if (isPlaying) {
     return (
-      <video controls style={{ width: '100%' }}>
+      <video ref={videoRef} controls style={{ width: '100%', height: '100%' }}>
         <source src={videoUrl} type="video/mp4" />
-        Your browser does not support the video tag.
+        {t('Your browser does not support the video tag.')}
       </video>
+    );
+  }
+  
+  if (loadFullVideo && !isVideoLoaded) {
+    return (
+      <div style={styles.thumbnailWrapper}>
+        <LazyImage 
+          src={videoUrl}
+          thumbnailSrc={thumbnailUrl} 
+          alt={`Video thumbnail ${index + 1}`}
+        />
+        <div style={styles.loadingOverlay}>
+          {t('Loading video...')}
+        </div>
+        <video 
+          ref={videoRef} 
+          style={{ display: 'none' }} 
+          preload="auto"
+        >
+          <source src={videoUrl} type="video/mp4" />
+        </video>
+      </div>
     );
   }
   
   return (
     <div style={styles.thumbnailWrapper} onClick={handleClick}>
       <LazyImage 
-        src={thumbnailUrl} 
-        alt={`Video thumbnail ${index + 1}`} 
+        src={videoUrl}
+        thumbnailSrc={thumbnailUrl} 
+        alt={`Video thumbnail ${index + 1}`}
       />
       <div style={styles.playButton}>
         <div style={styles.playButtonBefore}></div>
@@ -718,7 +861,7 @@ const ResponsiveHeader: React.FC<{
   );
 };
 
-// Main Photo Album Component
+// Main Photo Album Component - UPDATED
 const PhotoAlbumContent: React.FC = () => {
   // Hooks for i18n
   const { t, language } = useTranslation();
@@ -733,6 +876,9 @@ const PhotoAlbumContent: React.FC = () => {
   // Interactive state
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   const [showQRModal, setShowQRModal] = useState<boolean>(false);
+  
+  // Added state for tracking which items are loading in full resolution
+  const [loadingFullResolution, setLoadingFullResolution] = useState<Record<number, boolean>>({});
 
   // Format folder ID
   const formatFolderId = (rawId: string | null): string | null => {
@@ -763,7 +909,7 @@ const PhotoAlbumContent: React.FC = () => {
     return null;
   };
 
-  // Process data returned from API
+  // Process data returned from API - UPDATED
   const processData = (json: any): AlbumData => {
     const items = json?.data?.fetchFolders?.items || [];
     const mediaItems: MediaItem[] = [];
@@ -808,26 +954,61 @@ const PhotoAlbumContent: React.FC = () => {
         uniqueDataKeys.add(dataKey);
         
         const url = `${BUCKET_URL}public/${dataKey}`;
+        const thumbnailUrl = thumbnailDataKey ? `${BUCKET_URL}public/${thumbnailDataKey}` : undefined;
 
         if (dataKey.startsWith("Input/Image/")) {
           mediaItems.push({ 
             type: "image", 
             url,
-            ownerId: ownerContactId
+            thumbnailUrl: thumbnailUrl || url, // Use url as fallback if no thumbnail
+            ownerId: ownerContactId,
+            loaded: false
           });
         } else if (dataKey.startsWith("Input/Video/")) {
           mediaItems.push({
             type: "video",
             url,
-            thumbnailUrl: `${BUCKET_URL}public/${thumbnailDataKey}`,
+            thumbnailUrl: thumbnailUrl || url, // Use url as fallback if no thumbnail
             duration: formatTime(durationInSeconds),
-            ownerId: ownerContactId
+            ownerId: ownerContactId,
+            loaded: false
           });
         }
       });
     }
     
     return { mediaItems, folderName, folderDescription, contacts };
+  };
+
+  // Function to handle full resolution loading for an item
+  const handleLoadFullResolution = (index: number) => {
+    setLoadingFullResolution(prev => ({
+      ...prev,
+      [index]: true
+    }));
+  };
+  
+  // Function to mark full resolution as loaded
+  const handleFullResolutionLoaded = (index: number) => {
+    if (albumData) {
+      const updatedMediaItems = [...albumData.mediaItems];
+      updatedMediaItems[index] = {
+        ...updatedMediaItems[index],
+        loaded: true
+      };
+      
+      setAlbumData({
+        ...albumData,
+        mediaItems: updatedMediaItems
+      });
+      
+      // Clear loading state
+      setLoadingFullResolution(prev => {
+        const updated = { ...prev };
+        delete updated[index];
+        return updated;
+      });
+    }
   };
 
   // Fetch folder data
@@ -886,7 +1067,7 @@ const PhotoAlbumContent: React.FC = () => {
     setShowQRModal(true);
   };
 
-  // Download photos function
+  // Download photos function - UPDATED
   const downloadPhotos = () => {
     // Check if we're on a mobile device
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -968,7 +1149,8 @@ const PhotoAlbumContent: React.FC = () => {
           
           // Create thumbnail
           const thumbnail = document.createElement('img');
-          thumbnail.src = item.type === 'image' ? item.url : (item.thumbnailUrl || '');
+          // UPDATED: Use thumbnailUrl instead of url for initial display
+          thumbnail.src = item.type === 'image' ? (item.thumbnailUrl || item.url) : (item.thumbnailUrl || '');
           thumbnail.style.width = '100%';
           thumbnail.style.height = '120px';
           thumbnail.style.objectFit = 'cover';
@@ -984,6 +1166,9 @@ const PhotoAlbumContent: React.FC = () => {
             // For images on iOS, create a custom handler
             downloadLink.addEventListener('click', function(e) {
               e.preventDefault();
+              
+              // Trigger full resolution loading for this item
+              handleLoadFullResolution(index);
               
               // Create a full-screen overlay for the full resolution image
               const overlay = document.createElement('div');
@@ -1026,15 +1211,50 @@ const PhotoAlbumContent: React.FC = () => {
               imageContainer.style.justifyContent = 'center';
               imageContainer.style.overflow = 'auto';
               imageContainer.style.padding = '10px';
+              imageContainer.style.position = 'relative'; // Added for loading indicator
+              
+              // Create loading indicator
+              const loadingIndicator = document.createElement('div');
+              loadingIndicator.textContent = t('Loading full resolution...');
+              loadingIndicator.style.position = 'absolute';
+              loadingIndicator.style.top = '50%';
+              loadingIndicator.style.left = '50%';
+              loadingIndicator.style.transform = 'translate(-50%, -50%)';
+              loadingIndicator.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+              loadingIndicator.style.color = 'white';
+              loadingIndicator.style.padding = '10px 20px';
+              loadingIndicator.style.borderRadius = '4px';
+              loadingIndicator.style.zIndex = '10';
               
               // Create the full resolution image
               const fullImage = document.createElement('img');
-              fullImage.src = item.url;
               fullImage.style.maxWidth = '100%';
               fullImage.style.maxHeight = '100%';
               fullImage.style.objectFit = 'contain';
+              fullImage.style.opacity = '0';
+              fullImage.style.transition = 'opacity 0.3s';
               
-              // Instructions text - Moved from before the image to after it
+              // First show the thumbnail
+              if (item.type === 'image') {
+                fullImage.src = item.thumbnailUrl || item.url;
+                fullImage.style.opacity = '0.5'; // Show thumbnail at half opacity while loading
+              } else {
+                fullImage.src = item.thumbnailUrl || '';
+                fullImage.style.opacity = '0.5';
+              }
+              
+              // Then load the full resolution
+              setTimeout(() => {
+                fullImage.onload = () => {
+                  loadingIndicator.style.display = 'none';
+                  fullImage.style.opacity = '1';
+                  // Mark item as loaded
+                  handleFullResolutionLoaded(index);
+                };
+                fullImage.src = item.url;
+              }, 100);
+              
+              // Instructions text
               const instructions = document.createElement('div');
               instructions.textContent = t('Tap and hold image to save');
               instructions.style.color = 'white';
@@ -1045,9 +1265,10 @@ const PhotoAlbumContent: React.FC = () => {
               
               // Assemble the overlay
               imageContainer.appendChild(fullImage);
+              imageContainer.appendChild(loadingIndicator);
               overlay.appendChild(header);
               overlay.appendChild(imageContainer);
-              overlay.appendChild(instructions); // Moved to the bottom
+              overlay.appendChild(instructions);
               
               // Add to document
               document.body.appendChild(overlay);
@@ -1166,6 +1387,9 @@ const PhotoAlbumContent: React.FC = () => {
           // Function to fetch a file and add it to the zip
           const fetchAndZip = async (item: MediaItem, index: number) => {
             try {
+              // UPDATED: Load full resolution when downloading
+              handleLoadFullResolution(index);
+              
               const response = await fetch(item.url);
               if (!response.ok) throw new Error(`Failed to fetch ${item.url}`);
               
@@ -1174,6 +1398,9 @@ const PhotoAlbumContent: React.FC = () => {
               const fileName = `${folderName}-${index + 1}.${extension}`;
               
               zip.file(fileName, blob);
+              
+              // Mark as loaded
+              handleFullResolutionLoaded(index);
               
               processedFiles++;
               const progress = Math.round((processedFiles / totalFiles) * 100);
@@ -1412,17 +1639,22 @@ const PhotoAlbumContent: React.FC = () => {
                 >
                   {item.type === 'image' ? (
                     <LazyImage 
-                      src={item.url} 
-                      alt={`Album image ${index + 1}`} 
+                      src={item.url}
+                      thumbnailSrc={item.thumbnailUrl}
+                      alt={`Album image ${index + 1}`}
+                      loadFullResolution={loadingFullResolution[index] || false}
+                      onFullResolutionLoaded={() => handleFullResolutionLoaded(index)}
                     />
                   ) : (
                     <VideoThumbnail 
                       thumbnailUrl={item.thumbnailUrl || ''} 
                       videoUrl={item.url} 
                       duration={item.duration || '0:00'} 
-                      index={index} 
+                      index={index}
+                      onFullResolutionLoaded={() => handleFullResolutionLoaded(index)}
                     />
                   )}
+                  
                   {ownerName && <div style={styles.ownerBadge}>{ownerName}</div>}
                 </div>
               );

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client"
 import { useEffect, useState, useRef } from "react"
 import { checkLoginOrRedirect, generateUUID, getOwnerItemId, getTargetItemIdentifier } from "@/lib/utils"
 import { GRAPHQL_ENDPOINT, STORAGE_KEYS } from "@/lib/config"
-import JSZip from 'jszip'
 import { 
   Folder, 
   SelectedPhoto, 
@@ -12,8 +11,6 @@ import {
 } from "@/lib/types"
 import { SupportedLanguage } from "@/lib/i18n/translations"
 import { LogoutButton } from "@/components/LogoutButton"
-import { LazyImage } from "@/components/LazyImage"
-import { UploadProgress } from "@/components/UploadProgress"
 import { FileInput } from "@/components/FileInput"
 import { DebugLog } from "@/components/DebugLog"
 import { S3_BUCKET_URL } from "@/lib/config"
@@ -33,6 +30,73 @@ import {
   processFiles,
   clearAlbumData
 } from "@/lib/file-upload-utils"
+
+// Improved LazyImage Component
+interface LazyImageProps {
+  src?: string;
+  alt: string;
+  style: React.CSSProperties;
+  thumbnailDataKey?: string | null;
+  dataKey?: string | null;
+  bucketUrl?: string;
+  [key: string]: any;
+}
+
+export const LazyImage: React.FC<LazyImageProps> = ({ 
+  src, 
+  alt, 
+  style, 
+  thumbnailDataKey, 
+  dataKey, 
+  bucketUrl = S3_BUCKET_URL,
+  ...props 
+}) => {
+  const [loaded, setLoaded] = useState(false);
+  const [currentSrc, setCurrentSrc] = useState('');
+
+  useEffect(() => {
+    // Reset state when the image source changes
+    setLoaded(false);
+    
+    // Always try to load the thumbnail first if available
+    if (thumbnailDataKey) {
+      setCurrentSrc(`${bucketUrl}${thumbnailDataKey}`);
+    } else if (dataKey) {
+      setCurrentSrc(`${bucketUrl}${dataKey}`);
+    } else if (src) {
+      // Fallback to the src prop if provided directly
+      setCurrentSrc(src);
+    }
+  }, [thumbnailDataKey, dataKey, src, bucketUrl]);
+
+  // Handle successful image load
+  const handleImageLoaded = () => {
+    setLoaded(true);
+    // We successfully loaded the thumbnail, so we won't load the full image
+    // This saves bandwidth and improves performance
+  };
+
+  return (
+    <img
+      src={currentSrc}
+      alt={alt}
+      style={{
+        ...style,
+        opacity: loaded ? 1 : 0.3,
+        transition: 'opacity 0.3s ease-in-out',
+      }}
+      onLoad={handleImageLoaded}
+      onError={(e) => {
+        console.error("Image load error:", e);
+        // If thumbnail fails, try loading the full image as a fallback
+        if (thumbnailDataKey && dataKey && thumbnailDataKey !== dataKey) {
+          setCurrentSrc(`${bucketUrl}${dataKey}`);
+        }
+      }}
+      {...props}
+    />
+  );
+};
 
 // Header Component
 type HeaderProps = {
@@ -408,7 +472,6 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
-  const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
   const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
 
@@ -434,93 +497,6 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
     e.stopPropagation();
     // Add to public profile functionality would go here
     alert(t('Feature coming soon: "Make album accessible on your public profile"'));
-  };
-
-  const handleDownloadAlbumClick = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    if (!folder.files || folder.files.length === 0) {
-      alert(t('No files to download in this album.'));
-      return;
-    }
-    
-    try {
-      // Set downloading state
-      setIsDownloading(true);
-      
-      // Create a new JSZip instance
-      const zip = new JSZip();
-      
-      // Create a folder inside the zip with the album name
-      const folderName = folder.folderName || 'Album';
-      const albumFolder = zip.folder(folderName);
-      
-      if (!albumFolder) {
-        throw new Error('Failed to create folder in zip');
-      }
-      
-      // Add files to the zip
-      const downloadPromises = folder.files.map(async (file, index) => {
-        try {
-          // Determine which S3 key to use - original file, not thumbnail
-          const s3Key = file.dataKey;
-          
-          if (!s3Key) {
-            console.warn('File missing dataKey:', file);
-            return null;
-          }
-          
-          // Get file from S3
-          const response = await fetch(`${S3_BUCKET_URL}${s3Key}`);
-          
-          if (!response.ok) {
-            throw new Error(`Failed to fetch file: ${response.status} ${response.statusText}`);
-          }
-          
-          // Get the blob data
-          const blob = await response.blob();
-          
-          // Generate a filename from the S3 key
-          const filename = s3Key.split('/').pop() || `file_${index + 1}`;
-          
-          // Add file to the zip
-          albumFolder.file(filename, blob);
-          
-          return true;
-        } catch (error) {
-          console.error('Error downloading file:', error);
-          return null;
-        }
-      });
-      
-      // Wait for all downloads to complete
-      await Promise.all(downloadPromises);
-      
-      // Generate the zip file
-      const content = await zip.generateAsync({ type: 'blob' });
-      
-      // Create a download link
-      const downloadUrl = URL.createObjectURL(content);
-      const downloadLink = document.createElement('a');
-      downloadLink.href = downloadUrl;
-      downloadLink.download = `${folderName}.zip`;
-      
-      // Trigger download
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-      
-      // Clean up
-      URL.revokeObjectURL(downloadUrl);
-      
-    } catch (error) {
-      console.error('Error creating ZIP file:', error);
-      alert(t('Failed to create ZIP file. Please try again.'));
-    } finally {
-      // Reset downloading state
-      setIsDownloading(false);
-    }
   };
 
   // Common button style to avoid repetition
@@ -590,19 +566,6 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             </button>
             
             <button
-              onClick={handleDownloadAlbumClick}
-              style={{
-                ...buttonStyle,
-                backgroundColor: "#e0e0e0",
-                opacity: isDownloading ? 0.7 : 1,
-                cursor: isDownloading ? "default" : "pointer",
-              }}
-              disabled={isDownloading}
-            >
-              {isDownloading ? t('Preparing...') : t('Download Album')}
-            </button>
-            
-            <button
               onClick={handleAddToPublicProfileClick}
               style={{
                 ...buttonStyle,
@@ -641,6 +604,77 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
         </style>
       </div>
     </>
+  );
+};
+
+// Import UploadProgress Component
+// This component shows upload progress when uploading files
+type UploadProgressProps = {
+  progressTracker: ProgressTracker;
+  t: (key: string) => string;
+  isRTL: boolean;
+};
+
+export const UploadProgress: React.FC<UploadProgressProps> = ({ 
+  progressTracker, 
+  t,
+  isRTL
+}) => {
+  const { totalFiles, filesComplete, filesWithError, overallProgress } = progressTracker;
+  
+  // Don't render anything if no uploads are in progress
+  if (totalFiles === 0) {
+    return null;
+  }
+  
+  return (
+    <div 
+      style={{ 
+        marginBottom: 24,
+        padding: 16,
+        backgroundColor: "#f5f5f5",
+        borderRadius: 8,
+        width: "100%",
+        boxSizing: "border-box",
+        direction: isRTL ? "rtl" : "ltr",
+      }}
+    >
+      <div 
+        style={{ 
+          marginBottom: 8,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <span style={{ fontSize: 14, color: "#555" }}>
+          {t('Uploading')}: {filesComplete}/{totalFiles} {t('files')}
+          {filesWithError > 0 && ` (${filesWithError} ${t('failed')})`}
+        </span>
+        <span style={{ fontSize: 14, color: "#555" }}>
+          {Math.round(overallProgress)}%
+        </span>
+      </div>
+      
+      <div 
+        style={{ 
+          width: "100%", 
+          height: 8, 
+          backgroundColor: "#e0e0e0", 
+          borderRadius: 4,
+          overflow: "hidden"
+        }}
+      >
+        <div 
+          style={{ 
+            width: `${overallProgress}%`, 
+            height: "100%", 
+            backgroundColor: filesWithError > 0 ? "#ff9800" : "#4caf50",
+            transition: "width 0.3s ease-in-out"
+          }}
+        />
+      </div>
+    </div>
   );
 };
 
@@ -952,6 +986,8 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     {folder.files.map((file, i) => (
                       <LazyImage
                         key={i}
+                        thumbnailDataKey={file.thumbnailDataKey}
+                        dataKey={file.dataKey}
                         src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
                         alt={t('Thumbnail')}
                         style={{
