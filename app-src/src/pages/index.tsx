@@ -146,7 +146,7 @@ const IndexPage: React.FC = () => {
       </div>
 
       <div style={styles.content}>
-        <h1 style={styles.headline}>{t('Create Albums To Share With Others')}</h1>
+        <h1 style={styles.headline}>{t('Create Albums With Your Friends')}</h1>
         
         <div style={styles.buttonGroup}>
           <button 

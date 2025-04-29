@@ -133,13 +133,54 @@ export const Header: React.FC<HeaderProps> = ({
   );
 };
 
+// App Promo Component
+type AppPromoProps = {
+  t: (key: string) => string;
+  isRTL: boolean;
+};
+
+const AppPromo: React.FC<AppPromoProps> = ({ t, isRTL }) => {
+  return (
+    <div 
+      style={{
+        width: "100%", 
+        marginBottom: 24,
+        backgroundColor: "#f0f7ff",
+        padding: "12px 16px",
+        borderRadius: "8px",
+        boxSizing: "border-box",
+        direction: isRTL ? "rtl" : "ltr",
+        border: "1px solid #cce0ff",
+        textAlign: isRTL ? "right" : "left" as const
+      }}
+    >
+      <a 
+        href="https://apps.apple.com/app/6180/id6468679610"
+        style={{
+          color: "#2196f3",
+          textDecoration: "none",
+          fontSize: "14px",
+          display: "block",
+          width: "100%",
+        }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t('Get the iPhone app to be notified when people have added pictures to an album and to filter your albums by tags and contacts.')}
+      </a>
+    </div>
+  );
+};
+
 // Search Bar Component
-const SearchBar: React.FC<{
+type SearchBarProps = {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   t: (key: string) => string;
   isRTL: boolean;
-}> = ({ searchQuery, setSearchQuery, t, isRTL }) => {
+};
+
+const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, setSearchQuery, t, isRTL }) => {
   return (
     <div 
       style={{
@@ -169,21 +210,224 @@ const SearchBar: React.FC<{
   );
 };
 
+// Types for the modal components
+interface CopyLinkModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  inviteLink: string;
+  onCopy: (text: string) => void;
+  t: (key: string) => string;
+  isRTL: boolean;
+}
+
+interface ConfirmationModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  t: (key: string) => string;
+  isRTL: boolean;
+}
+
+// CopyLinkModal Component with proper TypeScript types
+const CopyLinkModal: React.FC<CopyLinkModalProps> = ({ 
+  isOpen, 
+  onClose, 
+  inviteLink, 
+  onCopy,
+  t,
+  isRTL
+}) => {
+  if (!isOpen) return null;
+
+  // Define textAlign value with proper type
+  const textAlignValue: "left" | "right" | "center" = isRTL ? "right" : "left";
+
+  // Common button style with properly typed textAlign
+  const buttonStyle = {
+    width: "100%",
+    padding: "12px",
+    margin: "8px 0",
+    border: "1px solid #ddd",
+    borderRadius: "6px",
+    backgroundColor: "#fff",
+    textAlign: textAlignValue, // Use the typed value
+    cursor: "pointer",
+    fontSize: "14px",
+    transition: "background-color 0.2s"
+  };
+
+  return (
+    <div 
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 1000,
+      }}
+      onClick={onClose}
+    >
+      <div 
+        style={{
+          backgroundColor: "white",
+          borderRadius: "12px",
+          padding: "20px",
+          width: "90%",
+          maxWidth: "400px",
+          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+          direction: isRTL ? "rtl" : "ltr",
+          textAlign: textAlignValue, // Use the typed value
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h3 style={{ marginTop: 0, marginBottom: "16px", fontSize: "18px" }}>
+          {t('Choose a message template')}
+        </h3>
+        
+        <button
+          style={buttonStyle}
+          onClick={() => onCopy(inviteLink)}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
+        >
+          {t('Link Only')}
+        </button>
+        
+        <button
+          style={buttonStyle}
+          onClick={() => onCopy(`${t('Here are photos from our event')}: ${inviteLink}`)}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
+        >
+          {t('View Album Photos')}
+        </button>
+        
+        <button
+          style={buttonStyle}
+          onClick={() => onCopy(`${t('Please add any photos from our event here')}: ${inviteLink}`)}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
+        >
+          {t('Add Photos To Album')}
+        </button>
+        
+        <button
+          style={{
+            ...buttonStyle,
+            backgroundColor: "#f0f0f0",
+            marginTop: "16px"
+          }}
+          onClick={onClose}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#e0e0e0"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#f0f0f0"}
+        >
+          {t('Cancel')}
+        </button>
+      </div>
+    </div>
+  );
+};
+
+// Confirmation Modal Component with proper TypeScript types
+const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ 
+  isOpen, 
+  onClose, 
+  t,
+  isRTL
+}) => {
+  if (!isOpen) return null;
+
+  return (
+    <div 
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 1000,
+      }}
+      onClick={onClose}
+    >
+      <div 
+        style={{
+          backgroundColor: "white",
+          borderRadius: "12px",
+          padding: "20px",
+          width: "90%",
+          maxWidth: "400px",
+          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+          direction: isRTL ? "rtl" : "ltr",
+          textAlign: isRTL ? "right" : "left" as const, // Use as const to fix type issue
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h3 style={{ marginTop: 0, marginBottom: "16px", fontSize: "18px" }}>
+          {t('Link to album website copied.')}
+        </h3>
+        
+        <button
+          style={{
+            width: "100%",
+            padding: "12px",
+            border: "1px solid #ddd",
+            borderRadius: "6px",
+            backgroundColor: "#f0f0f0",
+            textAlign: "center" as const, // Use as const to fix type issue
+            cursor: "pointer",
+            fontSize: "14px"
+          }}
+          onClick={onClose}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#e0e0e0"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#f0f0f0"}
+        >
+          {t('OK')}
+        </button>
+      </div>
+    </div>
+  );
+};
+
 // FooterSection Component
 type FooterSectionProps = {
   folder: FolderType;
-  handleCopy: (e: React.MouseEvent) => void;
   openFilePicker: (folderId: string | null) => void;
 };
 
 export const FooterSection: React.FC<FooterSectionProps> = ({
   folder,
-  handleCopy,
   openFilePicker
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
+  const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
+  const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
+
+  // Generate the invite link
+  const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`;
+  const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`;
+  
+  // Handle copy function
+  const handleCopy = (textToCopy: string) => {
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        setShowingCopyLinkAlert(false);
+        setShowingCopiedLinkAlert(true);
+      })
+      .catch(err => {
+        console.error("Failed to copy link:", err);
+        alert(t('Failed to copy link'));
+      });
+  };
 
   const handleAddToPublicProfileClick = (e: React.MouseEvent) => {
     e.preventDefault(); 
@@ -286,8 +530,8 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
     borderRadius: 6,
     cursor: "pointer",
     fontSize: 14,
-    textAlign: "center" as const,
-    whiteSpace: "nowrap" as const,
+    textAlign: "center" as const, // Use const assertion to fix type issue
+    whiteSpace: "nowrap" as const, // Use const assertion to fix type issue
     flexShrink: 0
   };
 
@@ -330,11 +574,12 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             >
               {t('Add Photos')}
             </button>
+            
             <button
               onClick={(e) => {
                 e.preventDefault(); 
                 e.stopPropagation();
-                handleCopy(e);
+                setShowingCopyLinkAlert(true);
               }}
               style={{
                 ...buttonStyle,
@@ -343,6 +588,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             >
               {t('Copy Link')}
             </button>
+            
             <button
               onClick={handleDownloadAlbumClick}
               style={{
@@ -355,6 +601,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             >
               {isDownloading ? t('Preparing...') : t('Download Album')}
             </button>
+            
             <button
               onClick={handleAddToPublicProfileClick}
               style={{
@@ -366,6 +613,23 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             </button>
           </div>
         </div>
+        
+        {/* Copy Link Modals */}
+        <CopyLinkModal
+          isOpen={showingCopyLinkAlert}
+          onClose={() => setShowingCopyLinkAlert(false)}
+          inviteLink={inviteLink}
+          onCopy={handleCopy}
+          t={t}
+          isRTL={isRTL}
+        />
+        
+        <ConfirmationModal
+          isOpen={showingCopiedLinkAlert}
+          onClose={() => setShowingCopiedLinkAlert(false)}
+          t={t}
+          isRTL={isRTL}
+        />
         
         {/* Hide scrollbar for WebKit browsers */}
         <style>
@@ -380,7 +644,6 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
   );
 };
 
-// AlbumList Component
 // AlbumList Component
 // Import types
 // Note: In a real implementation, this would be imported from the types.ts file
@@ -483,24 +746,8 @@ export const AlbumList: React.FC<AlbumListProps> = ({
         const showCreated = folder.createdAt != null;
         const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt;
 
-        const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`;
-        const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`;
-        
         // Check if user is the creator of the album
         const isCreator = folder.creatorId === `${cognitoUsername}_____${cognitoUsername}____Account`;
-
-        // Simple handleCopy function without watermark dialog
-        const handleCopy = (e: React.MouseEvent) => {
-          e.preventDefault();
-          navigator.clipboard.writeText(inviteLink)
-            .then(() => {
-              alert(t('Link has been copied to your clipboard.'));
-            })
-            .catch(err => {
-              console.error("Failed to copy link:", err);
-              alert(t('Failed to copy link'));
-            });
-        };
 
         // Get password policy from folder data
         const passwordPolicy = folder.folderPassword?.policy || "NoPassword";
@@ -515,7 +762,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
             }}
           >
             <a
-              href={inviteLink}
+              href={`https://6180.io/photos.html?id=${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`}
               style={{
                 textDecoration: "none",
                 color: "inherit",
@@ -565,7 +812,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                       <div style={{ 
                         fontSize: 13, 
                         color: "#777", 
-                        textAlign: isRTL ? "right" : "left",
+                        textAlign: isRTL ? "right" : "left" as const,
                         marginTop: 4
                       }}>
                         {showCreated && <div>{t('Created')}: {formatDate(folder.createdAt)}</div>}
@@ -612,7 +859,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             minWidth: "150px",
                             padding: "8px 0",
                             marginTop: "5px",
-                            textAlign: isRTL ? "right" : "left"
+                            textAlign: isRTL ? "right" : "left" as const
                           }}
                           onClick={(e) => {
                             e.stopPropagation();
@@ -765,7 +1012,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     fontSize: 14,
                     color: "#555",
                     lineHeight: 1.5,
-                    textAlign: isRTL ? "right" : "left"
+                    textAlign: isRTL ? "right" : "left" as const
                   }}
                 >
                   {folder.folderDescription && folder.folderDescription.length > 1 
@@ -776,7 +1023,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                 {/* Pass the folder to the FooterSection */}
                 <FooterSection
                   folder={folder}
-                  handleCopy={handleCopy}
                   openFilePicker={openFilePicker}
                 />
               </div>
@@ -1061,6 +1307,9 @@ const MyAlbums = () => {
             isUploading={isUploading}
             openFilePicker={openFilePicker}
           />
+          
+          {/* Add AppPromo Component here */}
+          <AppPromo t={t} isRTL={isRTL} />
           
           {/* Search Bar Component */}
           <SearchBar 
