@@ -4,6 +4,7 @@ import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import JSZip from "jszip";
 import QRCode from "react-qr-code";
 import { checkLoginWithRefreshOrRedirectToTarget } from "@/lib/utils";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 // Types
 interface MediaItem {
@@ -31,369 +32,396 @@ const GRAPHQL_ENDPOINT = "https://nmu355vgsbdbjcihhtekwdczxi.appsync-api.us-east
 const API_KEY = "da2-45aunjrsbfbdhlaaomrswhsszq";
 const BUCKET_URL = "https://i6180-assets-prod-0.s3.amazonaws.com/";
 
-// CSS styles as a JavaScript object
-const styles = {
-  body: {
-    fontFamily: 'Helvetica, Arial, sans-serif',
-    maxWidth: '1200px',
-    margin: 'auto',
-    background: '#f9fafb',
-    color: '#333',
-    lineHeight: 1.5,
-    padding: '20px'
-  },
-  header: {
-    position: 'sticky' as const,
-    top: 0,
-    background: '#fff',
-    boxShadow: '0 1px 2px rgba(0,0,0,0.06)',
-    zIndex: 10,
-    marginBottom: '10px'
-  },
-  headerContent: {
-    display: 'flex',
-    flexDirection: 'column' as const,
-    padding: '16px 24px'
-  },
-  headerControls: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    marginTop: '10px',
-    marginBottom: '5px', 
-    gap: '10px' 
-  },
-  rowSelectorContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    marginTop: '10px' 
-  },
-  actionButton: {
-    background: 'transparent',
-    color: '#006adc',
-    border: '1px solid #006adc',
-    borderRadius: '4px',
-    padding: '6px 12px',
-    cursor: 'pointer',
-    fontWeight: 500,
-    fontSize: '14px',
-    transition: 'all 0.2s ease'
-  },
-  // Responsive header styles
-  hamburgerButton: {
-    background: 'transparent',
-    color: '#006adc',
-    border: '1px solid #006adc',
-    borderRadius: '4px',
-    padding: '6px 12px',
-    cursor: 'pointer',
-    fontWeight: 500,
-    fontSize: '14px',
-    transition: 'all 0.2s ease',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '6px'
-  },
-  hamburgerIcon: {
-    width: '18px',
-    height: '14px',
-    display: 'flex',
-    flexDirection: 'column' as const,
-    justifyContent: 'space-between'
-  },
-  hamburgerLine: {
-    height: '2px',
-    background: '#006adc',
-    width: '100%'
-  },
-  dropdownMenu: {
-    position: 'absolute' as const,
-    top: '100%',
-    right: 0,
-    zIndex: 100,
-    backgroundColor: 'white',
-    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-    borderRadius: '4px',
-    padding: '8px',
-    display: 'flex',
-    flexDirection: 'column' as const,
-    gap: '8px',
-    minWidth: '180px',
-    marginTop: '4px'
-  },
-  menuButton: {
-    background: 'transparent',
-    color: '#006adc',
-    border: '1px solid #006adc',
-    borderRadius: '4px',
-    padding: '10px',
-    cursor: 'pointer',
-    fontWeight: 500,
-    fontSize: '14px',
-    width: '100%',
-    textAlign: 'left' as const
-  },
-  loginText: {
-    color: '#006adc',
-    padding: '8px 0',
-    fontWeight: 500,
-    cursor: 'pointer',
-    textDecoration: 'underline',
-    display: 'inline-block'
-  },
-  albumTitle: {
-    fontWeight: 400,
-    margin: '0 0 16px 0',
-    fontSize: '24px',
-    padding: '16px 0',
-  },
-  albumTitleStrong: {
-    fontWeight: 700
-  },
-  mediaContainer: {
-    padding: '10px 20px 20px'
-  },
-  descriptionBlock: {
-    background: 'white',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-    borderRadius: '4px',
-    padding: '20px',
-    marginBottom: '20px'
-  },
-  descriptionText: {
-    margin: 0
-  },
-  mediaGrid: {
-    display: 'grid',
-    gridGap: '20px'
-  },
-  onePerRow: {
-    gridTemplateColumns: 'repeat(1, 1fr)'
-  },
-  twoPerRow: {
-    gridTemplateColumns: 'repeat(2, 1fr)'
-  },
-  threePerRow: {
-    gridTemplateColumns: 'repeat(3, 1fr)'
-  },
-  fourPerRow: {
-    gridTemplateColumns: 'repeat(4, 1fr)'
-  },
-  fivePerRow: {
-    gridTemplateColumns: 'repeat(5, 1fr)'
-  },
-  mediaBlock: {
-    background: 'white',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-    transition: 'transform 0.2s',
-    position: 'relative' as const,
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column' as const
-  },
-  mediaBlockHover: {
-    transform: 'translateY(-2px)'
-  },
-  lazyImageContainer: {
-    position: 'relative' as const,
-    overflow: 'hidden',
-    backgroundColor: '#f0f0f0',
-    width: '100%',
-    minHeight: '200px',
-    flexGrow: 1,
-    display: 'flex',
-    flexDirection: 'column' as const
-  },
-  thumbnailWrapper: {
-    position: 'relative' as const,
-    overflow: 'hidden',
-    backgroundColor: '#f0f0f0',
-    width: '100%',
-    minHeight: '200px',
-    flexGrow: 1,
-    display: 'flex',
-    flexDirection: 'column' as const
-  },
-  lazyImage: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover' as const,
-    position: 'relative' as const,
-    zIndex: 1,
-    transition: 'opacity 0.3s',
-    opacity: 0
-  },
-  lazyImageLoaded: {
-    opacity: 1
-  },
-  loadingPlaceholder: {
-    position: 'absolute' as const,
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    background: 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)',
-    backgroundSize: '200% 100%',
-    animation: 'loading-animation 1.5s infinite',
-    zIndex: 0
-  },
-  ownerBadge: {
-    position: 'absolute' as const,
-    bottom: '12px',
-    right: '12px',
-    background: 'rgba(255,255,255,0.85)',
-    padding: '6px 12px',
-    fontSize: '12px',
-    fontWeight: 500,
-    zIndex: 3
-  },
-  videoContainer: {
-    cursor: 'pointer'
-  },
-  playButton: {
-    position: 'absolute' as const,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '60px',
-    height: '60px',
-    backgroundColor: 'rgba(0,0,0,0.7)',
-    borderRadius: '50%',
-    zIndex: 2
-  },
-  playButtonBefore: {
-    content: '""',
-    position: 'absolute' as const,
-    top: '50%',
-    left: '55%',
-    transform: 'translate(-50%, -50%)',
-    borderStyle: 'solid',
-    borderWidth: '15px 0 15px 25px',
-    borderColor: 'transparent transparent transparent white'
-  },
-  durationBadge: {
-    position: 'absolute' as const,
-    bottom: '12px',
-    left: '12px',
-    background: 'rgba(0,0,0,0.7)',
-    color: 'white',
-    padding: '4px 8px',
-    fontSize: '14px',
-    borderRadius: '4px',
-    fontWeight: 500,
-    zIndex: 2
-  },
-  error: {
-    textAlign: 'center' as const,
-    padding: '40px',
-    fontSize: '18px',
-    color: '#d32f2f'
-  },
-  loading: {
-    textAlign: 'center' as const,
-    padding: '40px',
-    fontSize: '18px',
-    color: '#666'
-  },
-  rowSelector: {
-    display: 'flex',
-    alignItems: 'center'
-  },
-  rowSelectorLabel: {
-    marginRight: '8px',
-    fontSize: '14px',
-    color: '#555',
-    fontWeight: 'normal' as const
-  },
-  rowSelectorSelect: {
-    padding: '5px 8px',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    backgroundColor: 'white',
-    cursor: 'pointer',
-    fontSize: '14px',
-    minWidth: '50px'
-  },
-  languageSelectorContainer: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    margin: '0 20px 8px 0'
-  },
-  // QR Code Modal styles
-  modal: {
-    position: 'fixed' as const,
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    zIndex: 1000,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  modalContent: {
-    backgroundColor: 'white',
-    borderRadius: '8px',
-    padding: '24px',
-    maxWidth: '90%',
-    maxHeight: '90%',
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'column' as const,
-    alignItems: 'center'
-  },
-  qrCodeContainer: {
-    marginBottom: '20px',
-    display: 'flex',
-    flexDirection: 'column' as const,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  instructionsContainer: {
-    marginBottom: '20px',
-    width: '100%',
-    maxWidth: '400px'
-  },
-  instructionHeading: {
-    fontSize: '20px',
-    fontWeight: 'bold',
-    marginBottom: '16px',
-    textAlign: 'center' as const
-  },
-  instructionList: {
-    listStyleType: 'decimal',
-    paddingLeft: '20px'
-  },
-  instructionItem: {
-    marginBottom: '12px',
-    fontSize: '16px'
-  },
-  closeButton: {
-    marginTop: '16px',
-    padding: '8px 16px',
-    backgroundColor: '#006adc',
-    color: 'white',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
-    fontSize: '16px'
-  },
-  // Loading overlay
-  loadingOverlay: {
-    position: 'absolute' as const,
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    zIndex: 4,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: 'white',
-    fontWeight: 500
+// Global styles
+const GlobalStyle = createGlobalStyle`
+  @keyframes loading-animation {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
   }
-};
+`;
+
+// Styled components
+const Body = styled.div`
+  font-family: Helvetica, Arial, sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  background: #f9fafb;
+  color: #333;
+  line-height: 1.5;
+  padding: 20px;
+`;
+
+const Header = styled.div`
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  z-index: 10;
+  margin-bottom: 10px;
+`;
+
+const HeaderContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px;
+`;
+
+const HeaderControls = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  gap: 10px;
+`;
+
+const RowSelectorContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+`;
+
+const ActionButton = styled.button`
+  background: transparent;
+  color: #006adc;
+  border: 1px solid #006adc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+`;
+
+const HamburgerButton = styled.button`
+  background: transparent;
+  color: #006adc;
+  border: 1px solid #006adc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`;
+
+const HamburgerIcon = styled.span`
+  width: 18px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const HamburgerLine = styled.span`
+  height: 2px;
+  background: #006adc;
+  width: 100%;
+`;
+
+const DropdownMenu = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 180px;
+  margin-top: 4px;
+`;
+
+const MenuButton = styled.button`
+  background: transparent;
+  color: #006adc;
+  border: 1px solid #006adc;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  width: 100%;
+  text-align: left;
+`;
+
+const AlbumTitle = styled.h2`
+  font-weight: 400;
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  padding: 16px 0;
+`;
+
+const AlbumTitleStrong = styled.strong`
+  font-weight: 700;
+`;
+
+const MediaContainer = styled.div`
+  padding: 10px 20px 20px;
+`;
+
+const DescriptionBlock = styled.div`
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+`;
+
+const DescriptionText = styled.p`
+  margin: 0;
+`;
+
+const MediaGrid = styled.div<{ columns: string }>`
+  display: grid;
+  grid-gap: 20px;
+  
+  ${props => {
+    switch(props.columns) {
+      case '1': return css`grid-template-columns: repeat(1, 1fr);`;
+      case '2': return css`grid-template-columns: repeat(2, 1fr);`;
+      case '3': return css`grid-template-columns: repeat(3, 1fr);`;
+      case '4': return css`grid-template-columns: repeat(4, 1fr);`;
+      case '5': return css`grid-template-columns: repeat(5, 1fr);`;
+      default: return css`grid-template-columns: repeat(1, 1fr);`;
+    }
+  }}
+`;
+
+const MediaBlock = styled.div<{ isHovered?: boolean; isVideo?: boolean }>`
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  ${props => props.isHovered && css`
+    transform: translateY(-2px);
+  `}
+  
+  ${props => props.isVideo && css`
+    cursor: pointer;
+  `}
+`;
+
+const LazyImageContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  width: 100%;
+  min-height: 200px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ThumbnailWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  width: 100%;
+  min-height: 200px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledImage = styled.img<{ isLoaded: boolean }>`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s;
+  opacity: ${props => props.isLoaded ? 1 : 0};
+`;
+
+const LoadingPlaceholder = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-animation 1.5s infinite;
+  z-index: 0;
+`;
+
+const OwnerBadge = styled.div`
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.85);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 3;
+`;
+
+const PlayButton = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 50%;
+  z-index: 2;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 15px 0 15px 25px;
+    border-color: transparent transparent transparent white;
+  }
+`;
+
+const DurationBadge = styled.div`
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: 500;
+  z-index: 2;
+`;
+
+const ErrorMessage = styled.div`
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #d32f2f;
+`;
+
+const LoadingMessage = styled.div`
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+`;
+
+const RowSelectorLabel = styled.label`
+  margin-right: 8px;
+  font-size: 14px;
+  color: #555;
+  font-weight: normal;
+`;
+
+const RowSelectorSelect = styled.select`
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 50px;
+`;
+
+// Modal components
+const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ModalContent = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const QRCodeContainer = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const InstructionsContainer = styled.div`
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+`;
+
+const InstructionHeading = styled.h3`
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+`;
+
+const InstructionList = styled.ol`
+  list-style-type: decimal;
+  padding-left: 20px;
+`;
+
+const InstructionItem = styled.li`
+  margin-bottom: 12px;
+  font-size: 16px;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: #006adc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+`;
+
+const LoadingOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+`;
+
+const ItalicText = styled.p`
+  font-style: italic;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+`;
 
 // GraphQL query
 const FETCH_FOLDERS_QUERY = `
@@ -434,15 +462,7 @@ const FETCH_FOLDERS_QUERY = `
   }
 `;
 
-// Add keyframes for loading animation
-const keyframesStyle = `
-  @keyframes loading-animation {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-`;
-
-// LazyImage component - UPDATED
+// LazyImage component
 const LazyImage: React.FC<{ 
   src: string; 
   thumbnailSrc?: string; 
@@ -495,27 +515,24 @@ const LazyImage: React.FC<{
   }, [loadFullResolution, src, fullResLoaded, onFullResolutionLoaded]);
   
   return (
-    <div style={styles.lazyImageContainer}>
-      <img 
-        style={{
-          ...styles.lazyImage,
-          ...(isLoaded ? styles.lazyImageLoaded : {})
-        }}
+    <LazyImageContainer>
+      <StyledImage 
         src={imageSrc} 
         alt={alt} 
         className={className}
+        isLoaded={isLoaded}
       />
-      {!isLoaded && <div style={styles.loadingPlaceholder}></div>}
+      {!isLoaded && <LoadingPlaceholder />}
       {isLoadingFullRes && (
-        <div style={styles.loadingOverlay}>
+        <LoadingOverlay>
           {t('Loading full resolution...')}
-        </div>
+        </LoadingOverlay>
       )}
-    </div>
+    </LazyImageContainer>
   );
 };
 
-// VideoThumbnail component - UPDATED
+// VideoThumbnail component
 const VideoThumbnail: React.FC<{ 
   thumbnailUrl: string; 
   videoUrl: string; 
@@ -585,15 +602,15 @@ const VideoThumbnail: React.FC<{
   
   if (loadFullVideo && !isVideoLoaded) {
     return (
-      <div style={styles.thumbnailWrapper}>
+      <ThumbnailWrapper>
         <LazyImage 
           src={videoUrl}
           thumbnailSrc={thumbnailUrl} 
           alt={`Video thumbnail ${index + 1}`}
         />
-        <div style={styles.loadingOverlay}>
+        <LoadingOverlay>
           {t('Loading video...')}
-        </div>
+        </LoadingOverlay>
         <video 
           ref={videoRef} 
           style={{ display: 'none' }} 
@@ -601,22 +618,20 @@ const VideoThumbnail: React.FC<{
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
-      </div>
+      </ThumbnailWrapper>
     );
   }
   
   return (
-    <div style={styles.thumbnailWrapper} onClick={handleClick}>
+    <ThumbnailWrapper onClick={handleClick}>
       <LazyImage 
         src={videoUrl}
         thumbnailSrc={thumbnailUrl} 
         alt={`Video thumbnail ${index + 1}`}
       />
-      <div style={styles.playButton}>
-        <div style={styles.playButtonBefore}></div>
-      </div>
-      <div style={styles.durationBadge}>{duration}</div>
-    </div>
+      <PlayButton />
+      <DurationBadge>{duration}</DurationBadge>
+    </ThumbnailWrapper>
   );
 };
 
@@ -625,7 +640,7 @@ const formatTime = (seconds: number = 0): string => {
   return `${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, "0")}`;
 };
 
-// Updated QR Code Modal component with save image functionality and added text
+// QR Code Modal component
 const QRCodeModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
@@ -649,10 +664,9 @@ const QRCodeModal: React.FC<{
   const qrCodeUrl = formattedFolderId ? `https://6180.io/folder/${formattedFolderId}` : '';
   
   return (
-    <div style={styles.modal}>
-      <div style={styles.modalContent}>
-        <div style={styles.qrCodeContainer}>
-          {/* Use QRCode component from react-qr-code with ref */}
+    <Modal>
+      <ModalContent>
+        <QRCodeContainer>
           {folderId && (
             <QRCode 
               value={qrCodeUrl}
@@ -662,35 +676,32 @@ const QRCodeModal: React.FC<{
               level="H"
             />
           )}
-          
-        </div>
+        </QRCodeContainer>
         
-        <div style={styles.instructionsContainer}>
-          <h3 style={styles.instructionHeading}>{t('To load this album on your iPhone:')}</h3>
-          <ol style={styles.instructionList}>
-            <li style={styles.instructionItem}>
+        <InstructionsContainer>
+          <InstructionHeading>{t('To load this album on your iPhone:')}</InstructionHeading>
+          <InstructionList>
+            <InstructionItem>
               {t('Use your phone\'s camera to scan the QR code to get [6180] from the [App Store] and sign up')}
-            </li>
-            <li style={styles.instructionItem}>
+            </InstructionItem>
+            <InstructionItem>
               {t('Tap "Files" at the bottom middle')}
-            </li>
-            <li style={styles.instructionItem}>
+            </InstructionItem>
+            <InstructionItem>
               {t('Tap "Album QR Code" at the top left')}
-            </li>
-          </ol>
+            </InstructionItem>
+          </InstructionList>
           
-          {/* Added italic text as requested */}
-          <p style={{ fontStyle: 'italic', marginTop: '12px', marginBottom: '12px', textAlign: 'center' }}>
+          <ItalicText>
             {t('You can also screen shot this page with your phone and click "Load Saved QR Code" on the iPhone app')}
-          </p>
-          
-        </div>
+          </ItalicText>
+        </InstructionsContainer>
 
-        <button style={styles.closeButton} onClick={onClose}>
+        <CloseButton onClick={onClose}>
           {t('Close')}
-        </button>
-      </div>
-    </div>
+        </CloseButton>
+      </ModalContent>
+    </Modal>
   );
 };
 
@@ -764,50 +775,37 @@ const ResponsiveHeader: React.FC<{
   if (isMobile) {
     return (
       <div ref={menuRef} style={{ position: 'relative' }}>
-        <button 
-          style={styles.hamburgerButton} 
+        <HamburgerButton 
           onClick={toggleMenu}
           aria-label={t('Menu')}
           aria-expanded={menuOpen}
         >
-          <span style={styles.hamburgerIcon}>
-            <span style={styles.hamburgerLine}></span>
-            <span style={styles.hamburgerLine}></span>
-            <span style={styles.hamburgerLine}></span>
-          </span>
+          <HamburgerIcon>
+            <HamburgerLine />
+            <HamburgerLine />
+            <HamburgerLine />
+          </HamburgerIcon>
           {t('Save Photos')}
-        </button>
+        </HamburgerButton>
         
         {menuOpen && (
-          <div style={styles.dropdownMenu}>
-            <button 
-              style={styles.menuButton} 
-              onClick={() => handleAction(saveAlbum)}
-            >
+          <DropdownMenu>
+            <MenuButton onClick={() => handleAction(saveAlbum)}>
               {t('Add Photos To Album')}
-            </button>
+            </MenuButton>
             
-            <button 
-              style={styles.menuButton} 
-              onClick={() => handleAction(saveAlbum)}
-            >
+            <MenuButton onClick={() => handleAction(saveAlbum)}>
               {t('Save To 6180')}
-            </button>
+            </MenuButton>
             
-            <button 
-              style={styles.menuButton} 
-              onClick={() => handleAction(downloadPhotos)}
-            >
+            <MenuButton onClick={() => handleAction(downloadPhotos)}>
               {t('Download Photos')}
-            </button>
+            </MenuButton>
             
-            <button 
-              style={styles.menuButton} 
-              onClick={() => handleAction(getQRCode)}
-            >
+            <MenuButton onClick={() => handleAction(getQRCode)}>
               {t('Open On iPhone App')}
-            </button>
-          </div>
+            </MenuButton>
+          </DropdownMenu>
         )}
       </div>
     );
@@ -816,37 +814,25 @@ const ResponsiveHeader: React.FC<{
   // Desktop view
   return (
     <>
-      <button
-        style={styles.actionButton}
-        onClick={saveAlbum}
-      >
+      <ActionButton onClick={saveAlbum}>
         {t('Add Photos To Album')}
-      </button>            
-      <button
-        style={styles.actionButton}
-        onClick={saveAlbum}
-      >
+      </ActionButton>            
+      <ActionButton onClick={saveAlbum}>
         {t('Save To 6180')}
-      </button>
+      </ActionButton>
       
-      <button
-        style={styles.actionButton}
-        onClick={downloadPhotos}
-      >
+      <ActionButton onClick={downloadPhotos}>
         {t('Download Photos')}
-      </button>
+      </ActionButton>
       
-      <button
-        style={styles.actionButton}
-        onClick={getQRCode}
-      >
+      <ActionButton onClick={getQRCode}>
         {t('Open On iPhone App')}
-      </button>
+      </ActionButton>
     </>
   );
 };
 
-// Main Photo Album Component - UPDATED
+// Main Photo Album Component
 const PhotoAlbumContent: React.FC = () => {
   // Hooks for i18n
   const { t, language } = useTranslation();
@@ -894,7 +880,7 @@ const PhotoAlbumContent: React.FC = () => {
     return null;
   };
 
-  // Process data returned from API - UPDATED
+  // Process data returned from API
   const processData = (json: any): AlbumData => {
     const items = json?.data?.fetchFolders?.items || [];
     const mediaItems: MediaItem[] = [];
@@ -1026,7 +1012,7 @@ const PhotoAlbumContent: React.FC = () => {
     localStorage.setItem('columns', value);
   };
   
-  // Save album function - UPDATED with await
+  // Save album function
   const saveAlbum = async () => {
     
     const folderId = getFolderIdFromUrl();
@@ -1044,7 +1030,6 @@ const PhotoAlbumContent: React.FC = () => {
     } else {
       alert(t('Please try refreshing the page or contact support if the problem persists.'));
     }
-
   };
 
   // Handle Get QR Code function
@@ -1052,7 +1037,7 @@ const PhotoAlbumContent: React.FC = () => {
     setShowQRModal(true);
   };
 
-  // Download photos function - UPDATED
+  // Download photos function
   const downloadPhotos = () => {
     // Check if we're on a mobile device
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -1134,14 +1119,14 @@ const PhotoAlbumContent: React.FC = () => {
           
           // Create thumbnail
           const thumbnail = document.createElement('img');
-          // UPDATED: Use thumbnailUrl instead of url for initial display
+          // Use thumbnailUrl instead of url for initial display
           thumbnail.src = item.type === 'image' ? (item.thumbnailUrl || item.url) : (item.thumbnailUrl || '');
           thumbnail.style.width = '100%';
           thumbnail.style.height = '120px';
           thumbnail.style.objectFit = 'cover';
           thumbnail.style.marginBottom = '10px';
           
-          // Create download link - UPDATED FOR IOS
+          // Create download link
           const downloadLink = document.createElement('a');
           downloadLink.href = item.url;
           
@@ -1332,7 +1317,7 @@ const PhotoAlbumContent: React.FC = () => {
       // Add explanation text at the bottom
       const explanationText = document.createElement('p');
       
-      explanationText.innerHTML = t('Due to technical limitations, bulk downloads on mobile browsers aren’t supported, and some videos may not download.<br><br>To download all photos and videos at once, please:');
+      explanationText.innerHTML = t('Due to technical limitations, bulk downloads on mobile browsers aren\'t supported, and some videos may not download.<br><br>To download all photos and videos at once, please:');
       
       explanationText.style.borderTop = '1px solid #eee';
       explanationText.style.paddingTop = '15px';
@@ -1421,7 +1406,7 @@ const PhotoAlbumContent: React.FC = () => {
           // Function to fetch a file and add it to the zip
           const fetchAndZip = async (item: MediaItem, index: number) => {
             try {
-              // UPDATED: Load full resolution when downloading
+              // Load full resolution when downloading
               handleLoadFullResolution(index);
               
               const response = await fetch(item.url);
@@ -1524,25 +1509,11 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Add keyframes to the document
-  useEffect(() => {
-    const styleElement = document.createElement('style');
-    styleElement.innerHTML = keyframesStyle;
-    document.head.appendChild(styleElement);
-    
-    return () => {
-      document.head.removeChild(styleElement);
-    };
-  }, []);
-
   // Set default columns
   useEffect(() => {
     const savedColumnsValue = localStorage.getItem('columns') || '1';
     setColumns(savedColumnsValue);
   }, []);
-
-  // We're not hiding the columns selector anymore as per request
-  // The previous effect for hiding the columns selector has been removed
 
   // Fetch album data
   useEffect(() => {
@@ -1587,73 +1558,62 @@ const PhotoAlbumContent: React.FC = () => {
     }
   }, [albumData, language]);
 
-  // Get column-specific grid style
-  const getGridStyle = () => {
-    switch(columns) {
-      case '1': return { ...styles.mediaGrid, ...styles.onePerRow };
-      case '2': return { ...styles.mediaGrid, ...styles.twoPerRow };
-      case '3': return { ...styles.mediaGrid, ...styles.threePerRow };
-      case '4': return { ...styles.mediaGrid, ...styles.fourPerRow };
-      case '5': return { ...styles.mediaGrid, ...styles.fivePerRow };
-      default: return { ...styles.mediaGrid, ...styles.onePerRow };
-    }
-  };
-
   // Render
   return (
-    <div style={styles.body}>
-      <div style={styles.header}>
-        <div style={styles.headerContent}>
-          <div style={styles.headerControls}>
+    <Body>
+      <GlobalStyle />
+      
+      <Header>
+        <HeaderContent>
+          <HeaderControls>
             <ResponsiveHeader 
               saveAlbum={saveAlbum} 
               downloadPhotos={downloadPhotos}
               getQRCode={getQRCode}
               t={t} 
             />
-          </div>
-          <div id="columns-container" style={styles.rowSelectorContainer}>
-            <label htmlFor="columns" id="columns-label" style={styles.rowSelectorLabel}>
+          </HeaderControls>
+          <RowSelectorContainer>
+            <RowSelectorLabel htmlFor="columns" id="columns-label">
               <strong>{t('Columns:')}</strong>
-            </label>
-            <select 
+            </RowSelectorLabel>
+            <RowSelectorSelect 
               id="columns" 
               value={columns} 
               onChange={(e) => changeColumns(e.target.value)}
-              style={styles.rowSelectorSelect}
             >
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
-            </select>
-          </div>
-        </div>
-      </div>
+            </RowSelectorSelect>
+          </RowSelectorContainer>
+        </HeaderContent>
+      </Header>
 
-      <div id="media-container" style={styles.mediaContainer}>
+      <MediaContainer id="media-container">
         {albumData?.folderName && albumData.folderName !== t('Photos') && albumData.folderName.trim() !== "" && (
-          <h2 id="album-title" style={styles.albumTitle}>
-            <strong style={styles.albumTitleStrong}>{albumData.folderName}</strong>
-          </h2>
+          <AlbumTitle id="album-title">
+            <AlbumTitleStrong>{albumData.folderName}</AlbumTitleStrong>
+          </AlbumTitle>
         )}
         
         {albumData?.folderDescription && albumData.folderDescription.trim() !== "" ? (
-          <div id="description-container" style={styles.descriptionBlock}>
-            <p style={styles.descriptionText}>{albumData.folderDescription}</p>
-          </div>
+          <DescriptionBlock id="description-container">
+            <DescriptionText>{albumData.folderDescription}</DescriptionText>
+          </DescriptionBlock>
         ) : null}
         
-        <div id="media-grid" style={getGridStyle()}>
+        <MediaGrid id="media-grid" columns={columns}>
           {isLoading ? (
-            <div id="loading-message" style={styles.loading}>
+            <LoadingMessage id="loading-message">
               {t('Loading album content...')}
-            </div>
+            </LoadingMessage>
           ) : error ? (
-            <div style={styles.error}>{error}</div>
+            <ErrorMessage>{error}</ErrorMessage>
           ) : albumData && albumData.mediaItems.length === 0 ? (
-            <div style={styles.error}>{t('No media found in this album')}</div>
+            <ErrorMessage>{t('No media found in this album')}</ErrorMessage>
           ) : (
             albumData?.mediaItems.map((item, index) => {
               const ownerName = item.ownerId && albumData.contacts[item.ownerId] 
@@ -1661,13 +1621,10 @@ const PhotoAlbumContent: React.FC = () => {
                 : '';
               
               return (
-                <div 
+                <MediaBlock 
                   key={index} 
-                  style={{
-                    ...styles.mediaBlock,
-                    ...(item.type === 'video' ? styles.videoContainer : {}),
-                    ...(hoverIdx === index ? styles.mediaBlockHover : {})
-                  }}
+                  isHovered={hoverIdx === index}
+                  isVideo={item.type === 'video'}
                   onMouseEnter={() => setHoverIdx(index)}
                   onMouseLeave={() => setHoverIdx(null)}
                 >
@@ -1689,13 +1646,13 @@ const PhotoAlbumContent: React.FC = () => {
                     />
                   )}
                   
-                  {ownerName && <div style={styles.ownerBadge}>{ownerName}</div>}
-                </div>
+                  {ownerName && <OwnerBadge>{ownerName}</OwnerBadge>}
+                </MediaBlock>
               );
             })
           )}
-        </div>
-      </div>
+        </MediaGrid>
+      </MediaContainer>
       
       {/* QR Code Modal */}
       <QRCodeModal 
@@ -1704,7 +1661,7 @@ const PhotoAlbumContent: React.FC = () => {
         folderId={folderId}
         t={t}
       />
-    </div>
+    </Body>
   );
 };
 
