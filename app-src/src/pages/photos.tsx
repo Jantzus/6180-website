@@ -38,6 +38,25 @@ const GlobalStyle = createGlobalStyle`
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
   }
+  
+  /* Added to ensure proper display on mobile */
+  * {
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
 `;
 
 // Styled components
@@ -49,6 +68,12 @@ const Body = styled.div`
   color: #333;
   line-height: 1.5;
   padding: 20px;
+  width: 100%;
+  overflow-x: hidden;
+  
+  @media (max-width: 767px) {
+    padding: 10px;
+  }
 `;
 
 const Header = styled.div`
@@ -58,12 +83,17 @@ const Header = styled.div`
   box-shadow: 0 1px 2px rgba(0,0,0,0.06);
   z-index: 10;
   margin-bottom: 10px;
+  width: 100%;
 `;
 
 const HeaderContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 16px 24px;
+  
+  @media (max-width: 767px) {
+    padding: 16px 16px;
+  }
 `;
 
 const HeaderControls = styled.div`
@@ -72,6 +102,7 @@ const HeaderControls = styled.div`
   margin-top: 10px;
   margin-bottom: 5px;
   gap: 10px;
+  flex-wrap: wrap;
 `;
 
 const RowSelectorContainer = styled.div`
@@ -163,6 +194,12 @@ const AlbumTitleStrong = styled.strong`
 
 const MediaContainer = styled.div`
   padding: 10px 20px 20px;
+  width: 100%;
+  
+  @media (max-width: 767px) {
+    padding: 5px 5px 15px;
+    width: 100%;
+  }
 `;
 
 const DescriptionBlock = styled.div`
@@ -180,6 +217,7 @@ const DescriptionText = styled.p`
 const MediaGrid = styled.div<{ columns: string }>`
   display: grid;
   grid-gap: 20px;
+  width: 100%;
   
   ${props => {
     switch(props.columns) {
@@ -191,6 +229,17 @@ const MediaGrid = styled.div<{ columns: string }>`
       default: return css`grid-template-columns: repeat(1, 1fr);`;
     }
   }}
+  
+  @media (max-width: 767px) {
+    grid-gap: 8px;
+    ${props => {
+      // For mobile, limit the maximum number of columns and adjust based on selection
+      const col = parseInt(props.columns);
+      if (col > 3) return css`grid-template-columns: repeat(3, minmax(0, 1fr));`;
+      if (col > 1) return css`grid-template-columns: repeat(${col}, minmax(0, 1fr));`;
+      return css`grid-template-columns: repeat(1, minmax(0, 1fr));`;
+    }}
+  }
 `;
 
 const MediaBlock = styled.div<{ isHovered?: boolean; isVideo?: boolean }>`
@@ -201,6 +250,8 @@ const MediaBlock = styled.div<{ isHovered?: boolean; isVideo?: boolean }>`
   height: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow: hidden;
   
   ${props => props.isHovered && css`
     transform: translateY(-2px);
@@ -209,6 +260,10 @@ const MediaBlock = styled.div<{ isHovered?: boolean; isVideo?: boolean }>`
   ${props => props.isVideo && css`
     cursor: pointer;
   `}
+  
+  @media (max-width: 767px) {
+    border-radius: 4px;
+  }
 `;
 
 const LazyImageContainer = styled.div`
@@ -220,6 +275,13 @@ const LazyImageContainer = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  
+  @media (max-width: 767px) {
+    min-height: 120px;
+    aspect-ratio: 1/1;
+    height: 0;
+    padding-bottom: 100%;
+  }
 `;
 
 const ThumbnailWrapper = styled.div`
@@ -231,13 +293,22 @@ const ThumbnailWrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  
+  @media (max-width: 767px) {
+    min-height: 120px;
+    aspect-ratio: 1/1;
+    height: 0;
+    padding-bottom: 100%;
+  }
 `;
 
 const StyledImage = styled.img<{ isLoaded: boolean }>`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
   transition: opacity 0.3s;
   opacity: ${props => props.isLoaded ? 1 : 0};
@@ -264,6 +335,18 @@ const OwnerBadge = styled.div`
   font-size: 12px;
   font-weight: 500;
   z-index: 3;
+  border-radius: 3px;
+  
+  @media (max-width: 767px) {
+    padding: 3px 6px;
+    font-size: 10px;
+    bottom: 8px;
+    right: 8px;
+    max-width: 45%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 const PlayButton = styled.div`
@@ -287,6 +370,15 @@ const PlayButton = styled.div`
     border-width: 15px 0 15px 25px;
     border-color: transparent transparent transparent white;
   }
+  
+  @media (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+    
+    &::before {
+      border-width: 10px 0 10px 16px;
+    }
+  }
 `;
 
 const DurationBadge = styled.div`
@@ -300,6 +392,11 @@ const DurationBadge = styled.div`
   border-radius: 4px;
   font-weight: 500;
   z-index: 2;
+  
+  @media (max-width: 767px) {
+    padding: 2px 6px;
+    font-size: 12px;
+  }
 `;
 
 const ErrorMessage = styled.div`
@@ -357,6 +454,11 @@ const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  @media (max-width: 767px) {
+    padding: 16px;
+    width: 90%;
+  }
 `;
 
 const QRCodeContainer = styled.div`
@@ -378,6 +480,10 @@ const InstructionHeading = styled.h3`
   font-weight: bold;
   margin-bottom: 16px;
   text-align: center;
+  
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
 `;
 
 const InstructionList = styled.ol`
@@ -388,6 +494,10 @@ const InstructionList = styled.ol`
 const InstructionItem = styled.li`
   margin-bottom: 12px;
   font-size: 16px;
+  
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -414,6 +524,8 @@ const LoadingOverlay = styled.div`
   align-items: center;
   color: white;
   font-weight: 500;
+  text-align: center;
+  padding: 0 10px;
 `;
 
 const ItalicText = styled.p`
@@ -421,6 +533,10 @@ const ItalicText = styled.p`
   margin-top: 12px;
   margin-bottom: 12px;
   text-align: center;
+  
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 `;
 
 // GraphQL query
@@ -1097,6 +1213,7 @@ const PhotoAlbumContent: React.FC = () => {
       contentWrapper.style.overflow = 'auto';
       contentWrapper.style.padding = '20px';
       contentWrapper.style.flexGrow = '1';
+      contentWrapper.style.width = '100%'; // Added to ensure full width content
       
       // Items container for individual photo downloads
       const itemsContainer = document.createElement('div');
@@ -1104,6 +1221,7 @@ const PhotoAlbumContent: React.FC = () => {
       itemsContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
       itemsContainer.style.gap = '10px';
       itemsContainer.style.marginBottom = '20px';
+      itemsContainer.style.width = '100%'; // Added to ensure full width grid
       
       // Add individual download items
       if (albumData && albumData.mediaItems.length > 0) {
@@ -1302,6 +1420,7 @@ const PhotoAlbumContent: React.FC = () => {
           downloadLink.style.borderRadius = '4px';
           downloadLink.style.fontSize = '14px';
           downloadLink.style.textAlign = 'center';
+          downloadLink.style.width = '100%'; // Make button fill width
           
           // Add to container
           downloadItem.appendChild(thumbnail);

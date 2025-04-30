@@ -165,7 +165,7 @@ const IndexPage: React.FC = () => {
             onMouseEnter={() => setHoverButtonIndex(0)}
             onMouseLeave={() => setHoverButtonIndex(null)}
           >
-            {t('Create Album')}
+            {t('Start')}
           </button>
         </div>
       </div>
