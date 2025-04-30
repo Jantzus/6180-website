@@ -378,21 +378,6 @@ const styles = {
     cursor: 'pointer',
     fontSize: '16px'
   },
-  // Full Resolution Button
-  fullResButton: {
-    position: 'absolute' as const,
-    bottom: '12px',
-    left: '12px',
-    background: 'rgba(0, 106, 220, 0.85)',
-    color: 'white',
-    border: 'none',
-    borderRadius: '4px',
-    padding: '6px 12px',
-    fontSize: '12px',
-    fontWeight: 500,
-    cursor: 'pointer',
-    zIndex: 3
-  },
   // Loading overlay
   loadingOverlay: {
     position: 'absolute' as const,
@@ -1163,14 +1148,14 @@ const PhotoAlbumContent: React.FC = () => {
           // For iOS, we need special handling
           const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
           if (isIOS) {
-            // For images on iOS, create a custom handler
+            // Use the same handler for both images and videos
             downloadLink.addEventListener('click', function(e) {
               e.preventDefault();
               
               // Trigger full resolution loading for this item
               handleLoadFullResolution(index);
               
-              // Create a full-screen overlay for the full resolution image
+              // Create a full-screen overlay
               const overlay = document.createElement('div');
               overlay.style.position = 'fixed';
               overlay.style.top = '0';
@@ -1186,7 +1171,7 @@ const PhotoAlbumContent: React.FC = () => {
               const header = document.createElement('div');
               header.style.padding = '15px';
               header.style.display = 'flex';
-              header.style.justifyContent = 'flex-start'; // Changed from 'space-between' to 'flex-start'
+              header.style.justifyContent = 'flex-start';
               header.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
               
               const backButton = document.createElement('button');
@@ -1203,15 +1188,15 @@ const PhotoAlbumContent: React.FC = () => {
               
               header.appendChild(backButton);
               
-              // Create image container
-              const imageContainer = document.createElement('div');
-              imageContainer.style.flex = '1';
-              imageContainer.style.display = 'flex';
-              imageContainer.style.alignItems = 'center';
-              imageContainer.style.justifyContent = 'center';
-              imageContainer.style.overflow = 'auto';
-              imageContainer.style.padding = '10px';
-              imageContainer.style.position = 'relative'; // Added for loading indicator
+              // Create media container
+              const mediaContainer = document.createElement('div');
+              mediaContainer.style.flex = '1';
+              mediaContainer.style.display = 'flex';
+              mediaContainer.style.alignItems = 'center';
+              mediaContainer.style.justifyContent = 'center';
+              mediaContainer.style.overflow = 'auto';
+              mediaContainer.style.padding = '10px';
+              mediaContainer.style.position = 'relative';
               
               // Create loading indicator
               const loadingIndicator = document.createElement('div');
@@ -1226,37 +1211,82 @@ const PhotoAlbumContent: React.FC = () => {
               loadingIndicator.style.borderRadius = '4px';
               loadingIndicator.style.zIndex = '10';
               
-              // Create the full resolution image
-              const fullImage = document.createElement('img');
-              fullImage.style.maxWidth = '100%';
-              fullImage.style.maxHeight = '100%';
-              fullImage.style.objectFit = 'contain';
-              fullImage.style.opacity = '0';
-              fullImage.style.transition = 'opacity 0.3s';
-              
-              // First show the thumbnail
+              // Differentiate between image and video
               if (item.type === 'image') {
+                // Handle image display
+                const fullImage = document.createElement('img');
+                fullImage.style.maxWidth = '100%';
+                fullImage.style.maxHeight = '100%';
+                fullImage.style.objectFit = 'contain';
+                fullImage.style.opacity = '0';
+                fullImage.style.transition = 'opacity 0.3s';
+                
+                // First show the thumbnail
                 fullImage.src = item.thumbnailUrl || item.url;
-                fullImage.style.opacity = '0.5'; // Show thumbnail at half opacity while loading
-              } else {
-                fullImage.src = item.thumbnailUrl || '';
                 fullImage.style.opacity = '0.5';
-              }
-              
-              // Then load the full resolution
-              setTimeout(() => {
-                fullImage.onload = () => {
+                
+                // Then load the full resolution
+                setTimeout(() => {
+                  fullImage.onload = () => {
+                    loadingIndicator.style.display = 'none';
+                    fullImage.style.opacity = '1';
+                    // Mark item as loaded
+                    handleFullResolutionLoaded(index);
+                  };
+                  fullImage.src = item.url;
+                }, 100);
+                
+                mediaContainer.appendChild(fullImage);
+              } else {
+                // Handle video display
+                const video = document.createElement('video');
+                video.style.maxWidth = '100%';
+                video.style.maxHeight = '100%';
+                video.style.display = 'none'; // Initially hidden while loading
+                video.controls = true;
+                
+                // Create a temporary thumbnail display
+                const tempThumb = document.createElement('img');
+                tempThumb.src = item.thumbnailUrl || '';
+                tempThumb.style.maxWidth = '100%';
+                tempThumb.style.maxHeight = '100%';
+                tempThumb.style.objectFit = 'contain';
+                tempThumb.style.opacity = '0.5';
+                
+                // Set up event listeners for video loading
+                video.oncanplaythrough = () => {
                   loadingIndicator.style.display = 'none';
-                  fullImage.style.opacity = '1';
+                  tempThumb.style.display = 'none';
+                  video.style.display = 'block';
                   // Mark item as loaded
                   handleFullResolutionLoaded(index);
                 };
-                fullImage.src = item.url;
-              }, 100);
+                
+                // Add error handling
+                video.onerror = () => {
+                  loadingIndicator.textContent = t('Error loading video. Please try again.');
+                  setTimeout(() => {
+                    document.body.removeChild(overlay);
+                  }, 2000);
+                };
+                
+                const source = document.createElement('source');
+                source.src = item.url;
+                source.type = 'video/mp4';
+                
+                video.appendChild(source);
+                mediaContainer.appendChild(tempThumb);
+                mediaContainer.appendChild(video);
+                
+                // Start loading the video
+                video.load();
+              }
               
               // Instructions text
               const instructions = document.createElement('div');
-              instructions.textContent = t('Tap and hold image to save');
+              instructions.textContent = item.type === 'image' 
+                ? t('Tap and hold image to save') 
+                : t('Tap share icon to save video');
               instructions.style.color = 'white';
               instructions.style.fontSize = '14px';
               instructions.style.padding = '10px 15px';
@@ -1264,20 +1294,19 @@ const PhotoAlbumContent: React.FC = () => {
               instructions.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
               
               // Assemble the overlay
-              imageContainer.appendChild(fullImage);
-              imageContainer.appendChild(loadingIndicator);
+              mediaContainer.appendChild(loadingIndicator);
               overlay.appendChild(header);
-              overlay.appendChild(imageContainer);
+              overlay.appendChild(mediaContainer);
               overlay.appendChild(instructions);
               
               // Add to document
               document.body.appendChild(overlay);
             });
             
-            downloadLink.textContent = t('Full Resolution');
+            downloadLink.textContent = item.type === 'image' ? t('Download Photo') : t('Only On Desktop');
           } else {
-            // For Android and other mobile browsers
-            downloadLink.download = `${albumData.folderName || 'photo'}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
+            // For Android and other mobile browsers - no changes needed
+            downloadLink.download = `${albumData.folderName || 'media'}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
             downloadLink.textContent = t('Download');
           }
           
@@ -1303,7 +1332,7 @@ const PhotoAlbumContent: React.FC = () => {
       // Add explanation text at the bottom
       const explanationText = document.createElement('p');
       
-      explanationText.textContent = t('Due to technical limitations, bulk downloads on mobile browsers are not supported. To download all the photos at once, you can:');
+      explanationText.innerHTML = t('Due to technical limitations, bulk downloads on mobile browsers aren’t supported, and some videos may not download.<br><br>To download all photos and videos at once, please:');
       
       explanationText.style.borderTop = '1px solid #eee';
       explanationText.style.paddingTop = '15px';
@@ -1312,15 +1341,20 @@ const PhotoAlbumContent: React.FC = () => {
       const optionsList = document.createElement('ul');
       
       const option1 = document.createElement('li');
-      option1.textContent = t('visit this page on a desktop computer to download all photos at once');
+      option1.textContent = t('visit this page on a desktop computer to download all photos and videos at once');
       option1.style.marginBottom = '10px';
       
       const option2 = document.createElement('li');
       option2.textContent = t('save the photos to your 6180 account and use the 6180 app');
       option2.style.marginBottom = '10px';
+
+      const option3 = document.createElement('li');
+      option3.textContent = t('select the "Open On iPhone App" option');
+      option3.style.marginBottom = '10px';      
       
       optionsList.appendChild(option1);
       optionsList.appendChild(option2);
+      optionsList.appendChild(option3);      
       
       // Assemble modal
       modalContent.appendChild(headerContainer);
