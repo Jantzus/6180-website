@@ -21,14 +21,13 @@ function normalizeEmail(input: string): string {
   return trimmed
 }
 
-// We need to add these translation keys to the translations.ts file
-// but for this example we'll work with what we have
 const LoginContent = () => {
   const [email, setEmail] = useState('')
   const [codeSent, setCodeSent] = useState(false)
   const [otpCode, setOtpCode] = useState('')
   const [session, setSession] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'verifying' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
   
   // Use the i18n hook
   const { t, language } = useTranslation()
@@ -53,11 +52,19 @@ const LoginContent = () => {
   // Get the redirect parameter, defaulting to my-albums.html if not provided
   const redirectParam = new URLSearchParams(location.search).get('redirect') || '/my-albums.html'
   
-  // Ensure the redirect path is properly formatted
-  // If it's already a full URL (starts with http), use it as is
-  // Otherwise ensure it starts with a slash for relative paths
-  const redirectTo = redirectParam.startsWith('http') ? redirectParam : 
-                    (redirectParam.startsWith('/') ? redirectParam : `/${redirectParam}`)
+  // Security enhancement: Validate redirect URL to prevent open redirect vulnerabilities
+  const isValidRedirect = (url: string): boolean => {
+    // Allow relative paths or URLs to your own domain
+    return url.startsWith('/') || 
+           url.startsWith(window.location.origin) || 
+           /^https?:\/\/([\w-]+\.)*6180\.app(\/.*)?$/.test(url)
+  }
+  
+  // Ensure the redirect path is properly formatted and secure
+  const redirectTo = isValidRedirect(redirectParam) ? 
+                     (redirectParam.startsWith('http') ? redirectParam : 
+                     (redirectParam.startsWith('/') ? redirectParam : `/${redirectParam}`)) :
+                     '/my-albums.html' // Fallback to safe default if invalid
 
   // Only allow numeric input for OTP code
   function handleOtpChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -70,7 +77,15 @@ const LoginContent = () => {
 
   async function sendCode() {
     setStatus('sending')
+    setErrorMessage('')
     const normalizedEmail = normalizeEmail(email)
+    
+    // Basic email validation
+    if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setStatus('error')
+      setErrorMessage(t('Please enter a valid email address'))
+      return
+    }
 
     try {
       const signUpCommand = new SignUpCommand({
@@ -106,12 +121,13 @@ const LoginContent = () => {
     } catch (e) {
       console.error(e)
       setStatus('error')
-      alert(t('Failed to send code. Please try again.'))
+      setErrorMessage(t('Unable to send verification code. Please try again later.'))
     }
   }
 
   async function confirmCode() {
     setStatus('verifying')
+    setErrorMessage('')
     const normalizedEmail = normalizeEmail(email)
 
     try {
@@ -175,8 +191,15 @@ const LoginContent = () => {
     } catch (e) {
       console.error(e)
       setStatus('error')
-      alert(t('Invalid or expired code. Please try again. Consider restarting.'))
+      setErrorMessage(t('Invalid or expired verification code. Please try again or request a new code.'))
     }
+  }
+
+  // Function to resend code if needed
+  function handleResendCode() {
+    setCodeSent(false)
+    setOtpCode('')
+    setStatus('idle')
   }
 
   return (
@@ -185,31 +208,20 @@ const LoginContent = () => {
       backgroundColor: '#f8f9fa',
       minHeight: '100vh',
       display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+      flexDirection: 'column',
       position: 'fixed',
       top: 0,
       left: 0,
       right: 0,
       bottom: 0,
     }}>
-      {/* <div style={{ 
-        position: 'absolute',
-        top: '20px',
-        right: '20px',
+      <div style={{
+        flex: 1,
         display: 'flex',
         alignItems: 'center',
-        gap: '8px',
-        fontSize: '14px',
-        zIndex: 100,
-        padding: '6px',
+        justifyContent: 'center',
       }}>
-        <LanguageSelector 
-          className="language-selector-login"
-        />
-      </div> */}
-      
-      <div style={{
+        <div style={{
         maxWidth: 400,
         width: '100%',
         background: '#ffffff',
@@ -218,15 +230,36 @@ const LoginContent = () => {
         boxShadow: '0 6px 20px rgba(0,0,0,0.06)',
         textAlign: 'center',
       }}>
+        <div style={{ marginBottom: '24px' }}>
+          <img 
+            src="images/logo_no_background.png" 
+            alt="6180 Logo" 
+            style={{ 
+              height: '60px', 
+              marginBottom: '16px' 
+            }} 
+          />
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: 600,
+            color: '#333',
+          }}>
+            {t('Sign in to 6180')}
+          </h2>
+        </div>
 
-        <h2 style={{
-          marginBottom: '24px',
-          fontSize: '24px',
-          fontWeight: 600,
-          color: '#333',
-        }}>
-          {t('Sign in to 6180')}
-        </h2>
+        {errorMessage && (
+          <div style={{
+            backgroundColor: '#f8d7da',
+            color: '#721c24',
+            padding: '10px',
+            borderRadius: '6px',
+            marginBottom: '16px',
+            fontSize: '14px'
+          }}>
+            {errorMessage}
+          </div>
+        )}
 
         {!codeSent ? (
           <>
@@ -248,7 +281,7 @@ const LoginContent = () => {
             />
             <button
               onClick={sendCode}
-              disabled={status === 'sending'}
+              disabled={status === 'sending' || !email.trim()}
               style={{
                 width: '100%',
                 padding: '12px',
@@ -257,17 +290,25 @@ const LoginContent = () => {
                 color: '#fff',
                 border: 'none',
                 borderRadius: '6px',
-                cursor: 'pointer',
-                opacity: status === 'sending' ? 0.7 : 1,
+                cursor: status === 'sending' || !email.trim() ? 'not-allowed' : 'pointer',
+                opacity: status === 'sending' || !email.trim() ? 0.7 : 1,
               }}
             >
-              {status === 'sending' ? t('Sending...') : t('Send Login Code')}
+              {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
             </button>
+            <p style={{ 
+              fontSize: '13px', 
+              color: '#666', 
+              marginTop: '16px',
+              textAlign: 'center' 
+            }}>
+              {t('We\'ll send a secure verification code to your email')}
+            </p>
           </>
         ) : (
           <>
             <p style={{ marginBottom: '16px', color: '#555' }}>
-              {t('Check your email for a 6-digit code.')}
+              {t('Check your email for a 6-digit verification code sent to')} <strong>{email}</strong>
             </p>
             <input
               ref={otpInputRef}
@@ -286,6 +327,8 @@ const LoginContent = () => {
                 border: '1px solid #ccc',
                 fontSize: '16px',
                 boxSizing: 'border-box',
+                letterSpacing: '2px',
+                textAlign: 'center',
               }}
             />
             <button
@@ -299,14 +342,58 @@ const LoginContent = () => {
                 color: '#fff',
                 border: 'none',
                 borderRadius: '6px',
-                cursor: 'pointer',
+                cursor: (status === 'verifying' || otpCode.length !== 6) ? 'not-allowed' : 'pointer',
                 opacity: (status === 'verifying' || otpCode.length !== 6) ? 0.7 : 1,
               }}
             >
-              {status === 'verifying' ? t('Verifying...') : t('Confirm Code')}
+              {status === 'verifying' ? t('Verifying...') : t('Verify Code')}
             </button>
+            <div style={{ 
+              marginTop: '16px', 
+              fontSize: '14px', 
+              color: '#666',
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '8px'
+            }}>
+              <span>{t("Didn't receive a code?")}</span>
+              <button 
+                onClick={handleResendCode}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#007bff',
+                  padding: 0,
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  textDecoration: 'underline',
+                }}
+              >
+                {t('Send new code')}
+              </button>
+            </div>
           </>
         )}
+        
+
+      </div>
+      </div>
+      
+      <div style={{ 
+        textAlign: 'center',
+        padding: '20px',
+        fontSize: '0.9em',
+        color: '#555',
+      }}>
+        <a href="terms.html" style={{ margin: '0 10px', color: '#555', textDecoration: 'none' }}>
+          Terms of Service
+        </a>
+        <a href="privacy.html" style={{ margin: '0 10px', color: '#555', textDecoration: 'none' }}>
+          Privacy Policy
+        </a>
+        <a href="support.html" style={{ margin: '0 10px', color: '#555', textDecoration: 'none' }}>
+          Support
+        </a>
       </div>
     </div>
   )
