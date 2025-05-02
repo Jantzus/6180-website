@@ -1,8 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useMemo } from "react"
 import { checkLoginWithRefresh, generateUUID, getOwnerItemId, getTargetItemIdentifier } from "@/lib/utils"
-import { GRAPHQL_ENDPOINT, STORAGE_KEYS } from "@/lib/config"
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config"
 import { 
   Folder, 
   SelectedPhoto, 
@@ -465,22 +465,34 @@ type FooterSectionProps = {
   folder: FolderType;
   openFilePicker: (folderId: string | null) => void;
   cognitoUsername: string | null;
+  updateProfileIds?: (profileIds: string[]) => void; // New prop for updating parent state
 };
 
 export const FooterSection: React.FC<FooterSectionProps> = ({
   folder,
   openFilePicker,
-  cognitoUsername
+  cognitoUsername,
+  updateProfileIds
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
   const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
+  
+  // Compute isOnPublicProfile from the current folder state
+  const [localProfileIds, setLocalProfileIds] = useState<string[]>(folder.profileIds || []);
+  const publicProfileId = cognitoUsername ? `${cognitoUsername}_____Public____Profile` : '';
+  const isOnPublicProfile = localProfileIds.includes(publicProfileId);
 
   // Generate the invite link
   const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`;
   const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`;
   
+  // Update local state when the folder prop changes
+  useEffect(() => {
+    setLocalProfileIds(folder.profileIds || []);
+  }, [folder.profileIds]);
+
   // Handle copy function
   const handleCopy = (textToCopy: string) => {
     navigator.clipboard.writeText(textToCopy)
@@ -494,16 +506,96 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
       });
   };
 
-  // Check if album is on public profile
-  const isOnPublicProfile = folder.profileIds && 
-                            cognitoUsername && 
-                            folder.profileIds.includes(`${cognitoUsername}_____Public____Profile`);
-
-  const handlePublicProfileClick = (e: React.MouseEvent) => {
+  const handlePublicProfileClick = async (e: React.MouseEvent) => {
     e.preventDefault(); 
     e.stopPropagation();
-    // Toggle public profile status (implementation would go here)
-    alert(t('Feature coming soon: "Toggle album visibility on your public profile"'));
+    
+    if (!cognitoUsername) {
+      alert(t('You must be logged in to perform this action'));
+      return;
+    }
+    
+    try {
+      // Get a fresh token
+      const token = await checkLoginWithRefresh();
+      
+      if (!token) {
+        console.error("Authentication failed");
+        return;
+      }
+      
+      // Determine the new profileIds array
+      const newProfileIds = [...localProfileIds];
+      
+      if (isOnPublicProfile) {
+        // Remove from public profile
+        const index = newProfileIds.indexOf(publicProfileId);
+        if (index > -1) {
+          newProfileIds.splice(index, 1);
+        }
+      } else {
+        // Add to public profile
+        newProfileIds.push(publicProfileId);
+      }
+      
+      // Prepare the mutation query
+      const toggleVisibilityQuery = `
+        mutation ChangeAlbumVisibility($folderPositionChangeProfileIdsInput: FolderPositionChangeProfileIdsInput!) {
+          changeFiles(folderPositionChangeProfileIdsInput: $folderPositionChangeProfileIdsInput) {
+            items {
+              ... on FolderPosition {
+                id
+                profileIds
+              }
+            }
+          }
+        }
+      `;
+      
+      // Call the API
+      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ 
+          query: toggleVisibilityQuery, 
+          variables: { 
+            folderPositionChangeProfileIdsInput: {
+              folderId: folder.folderId,
+              profileIds: newProfileIds
+            }
+          } 
+        }),
+      });
+      
+      const json = await res.json();
+      
+      if (json.errors) {
+        throw new Error(json.errors[0]?.message || "Unknown error");
+      }
+      
+      // Update local state instead of reloading the page
+      const updatedItems = json?.data?.changeFiles?.items || [];
+      const updatedItem = updatedItems.find((item: any) => item.id === folder.folderPositionId);
+      
+      if (updatedItem && updatedItem.profileIds) {
+        // First update local state
+        setLocalProfileIds(updatedItem.profileIds);
+        
+        // Then propagate changes to parent component
+        if (updateProfileIds) {
+          updateProfileIds(updatedItem.profileIds);
+        }
+        
+        // You can add a success notification here if desired
+        console.log("Album visibility updated successfully");
+      }
+    } catch (err) {
+      console.error("Failed to toggle album visibility:", err);
+      alert(t('Failed to update album visibility. Please try again.'));
+    }
   };
 
   // Common button style to avoid repetition
@@ -693,6 +785,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
 
 type AlbumListProps = {
   folders: FolderType[];
+  setFolders: React.Dispatch<React.SetStateAction<FolderType[]>>;  // Add this prop
   handleDeleteClick: (folderPositionId: string) => void;
   openFilePicker: (folderId: string | null) => void;
   isUploading: boolean;
@@ -701,6 +794,7 @@ type AlbumListProps = {
 
 export const AlbumList: React.FC<AlbumListProps> = ({ 
   folders, 
+  setFolders,  // Use this prop in the FooterSection
   handleDeleteClick, 
   openFilePicker,
   isUploading,
@@ -761,6 +855,17 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     
     // Update the active dropdown reference
     activeDropdownRef.current = isVisible ? null : dropdownElement;
+  };
+
+  // Helper function to update folder profileIds
+  const updateFolderProfileIds = (folderId: string, profileIds: string[]) => {
+    setFolders(prevFolders => 
+      prevFolders.map(folder => 
+        folder.folderId === folderId 
+          ? { ...folder, profileIds } 
+          : folder
+      )
+    );
   };
 
   // Helper function to get password policy display text
@@ -1064,11 +1169,12 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     : ""}
                 </div>
                 
-                {/* Pass the folder to the FooterSection */}
+                {/* Pass the folder to the FooterSection with additional props */}
                 <FooterSection
                   folder={folder}
                   openFilePicker={openFilePicker}
                   cognitoUsername={cognitoUsername}
+                  updateProfileIds={(profileIds) => updateFolderProfileIds(folder.folderId, profileIds)}
                 />
               </div>
             </a>
@@ -1171,7 +1277,7 @@ const MyAlbums = () => {
     }
 
     try {
-      const res = await fetch(GRAPHQL_ENDPOINT, {
+      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1263,7 +1369,7 @@ const MyAlbums = () => {
       const processedPhotos = await processFiles(files, cognitoUsername, updatePhotoStatus, log);
       
       // Save to localStorage - ONLY the keys and metadata, not the file data
-      localStorage.setItem(STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos))
+      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos))
       log(`📸 Saved ${processedPhotos.length} photos metadata to storage`)
       
       // Redirect to save-album page with folder ID parameter if adding to existing album
@@ -1309,7 +1415,7 @@ const MyAlbums = () => {
         }
       `
       
-      const res = await fetch(GRAPHQL_ENDPOINT, {
+      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1340,6 +1446,17 @@ const MyAlbums = () => {
       alert(t('Failed to delete album. Please try again.'))
     }
   }
+
+  // Filter folders based on search query
+  const filteredFolders = useMemo(() => {
+    if (!searchQuery) return folders;
+    
+    return folders.filter(folder => {
+      const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+      const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+      return nameMatch || descMatch;
+    });
+  }, [folders, searchQuery]);
 
   // Get translation function from the hook for the main component
   const { t, language } = useTranslation();
@@ -1390,7 +1507,8 @@ const MyAlbums = () => {
           />
 
           <AlbumList 
-            folders={folders}
+            folders={filteredFolders}
+            setFolders={setFolders} // Pass setter function
             handleDeleteClick={handleDeleteClick}
             openFilePicker={openFilePicker}
             isUploading={isUploading}
@@ -1417,7 +1535,7 @@ const MyAlbums = () => {
 
 // Initialize the app with I18nProvider
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <I18nProvider initialLanguage={localStorage.getItem(STORAGE_KEYS.LANGUAGE) as SupportedLanguage || 'en'}>
+  <I18nProvider initialLanguage={localStorage.getItem(LOCAL_STORAGE_KEYS.LANGUAGE) as SupportedLanguage || 'en'}>
     <MyAlbums />
   </I18nProvider>
 )

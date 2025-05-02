@@ -6,10 +6,10 @@ import {
   InitiateAuthCommand,
   RespondToAuthChallengeCommand,
 } from '@aws-sdk/client-cognito-identity-provider'
-import { GRAPHQL_ENDPOINT, REGION, CLIENT_ID } from "@/lib/config"
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT, AWS_REGION, COGNITO_CLIENT_ID } from "@/lib/config"
 import { I18nProvider, useTranslation } from '@/lib/i18n/react'
 
-const cognito = new CognitoIdentityProviderClient({ region: REGION })
+const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION })
 
 function normalizeEmail(input: string): string {
   const trimmed = input.trim().toLowerCase()
@@ -89,7 +89,7 @@ const LoginContent = () => {
 
     try {
       const signUpCommand = new SignUpCommand({
-        ClientId: CLIENT_ID,
+        ClientId: COGNITO_CLIENT_ID,
         Username: normalizedEmail,
         Password: crypto.randomUUID(),
         UserAttributes: [{ Name: 'email', Value: normalizedEmail }],
@@ -104,7 +104,7 @@ const LoginContent = () => {
       }
 
       const signInCommand = new InitiateAuthCommand({
-        ClientId: CLIENT_ID,
+        ClientId: COGNITO_CLIENT_ID,
         AuthFlow: 'CUSTOM_AUTH',
         AuthParameters: { USERNAME: normalizedEmail },
       })
@@ -132,7 +132,7 @@ const LoginContent = () => {
 
     try {
       const confirmCommand = new RespondToAuthChallengeCommand({
-        ClientId: CLIENT_ID,
+        ClientId: COGNITO_CLIENT_ID,
         ChallengeName: 'CUSTOM_CHALLENGE',
         ChallengeResponses: {
           USERNAME: normalizedEmail,
@@ -151,7 +151,7 @@ const LoginContent = () => {
       const username = payload['cognito:username']
       const relationId = `${username}_____Public____Profile`
 
-      const gqlResponse = await fetch(GRAPHQL_ENDPOINT, {
+      const gqlResponse = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -64,7 +64,7 @@ import {
   ToggleSlider
 } from "@/styles/styled-components";
 
-import { GRAPHQL_ENDPOINT, STORAGE_KEYS } from "@/lib/config";
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { 
   ProgressTracker,
   UploadStatus,
@@ -203,7 +203,7 @@ const SaveAlbum = () => {
   // Save selected photos to localStorage
   useEffect(() => {
     if (selectedPhotos.length > 0) {
-      localStorage.setItem(STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(selectedPhotos));
+      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(selectedPhotos));
     }
   }, [selectedPhotos]);
 
@@ -342,7 +342,7 @@ const SaveAlbum = () => {
         return null;
       }
       
-      const response = await fetch(GRAPHQL_ENDPOINT, {
+      const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -390,7 +390,7 @@ const SaveAlbum = () => {
 
   const restorePhotosFromStorage = () => {
     try {
-      const storedPhotos = localStorage.getItem(STORAGE_KEYS.SELECTED_PHOTOS);
+      const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
       
       if (storedPhotos) {
         try {
@@ -432,9 +432,9 @@ const SaveAlbum = () => {
     
     // Update localStorage
     if (updated.length > 0) {
-      localStorage.setItem(STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(updated));
+      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(updated));
     } else {
-      localStorage.removeItem(STORAGE_KEYS.SELECTED_PHOTOS);
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
     }
   };
 
@@ -707,7 +707,7 @@ const SaveAlbum = () => {
       updatedFileReferenceInputs,
     };
 
-    const response = await fetch(GRAPHQL_ENDPOINT, {
+    const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -728,7 +728,7 @@ const SaveAlbum = () => {
   
   const handleSuccessfulSave = () => {
     // Clear all album data before redirecting
-    clearAlbumData(setSelectedPhotos, setProgressTracker, [STORAGE_KEYS.SELECTED_PHOTOS], log);
+    clearAlbumData(setSelectedPhotos, setProgressTracker, [LOCAL_STORAGE_KEYS.SELECTED_PHOTOS], log);
     
     const saveSuccessText = document.getElementById('saveProgressText');
     if (saveSuccessText) {
@@ -775,7 +775,7 @@ const SaveAlbum = () => {
     };
 
     try {
-      const res = await fetch(GRAPHQL_ENDPOINT, {
+      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

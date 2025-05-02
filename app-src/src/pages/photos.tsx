@@ -51,6 +51,12 @@ import {
   ItalicText
 } from "@/styles/photos-styled-components";
 
+import { 
+  S3_BUCKET_URL,
+  AWS_PUBLIC_GRAPHQL_ENDPOINT,
+  AWS_PUBLIC_API_KEY
+} from "@/lib/config"
+
 // Define new styled components for selection feature
 const SelectionCheckbox = styled.div<{ isSelected: boolean }>`
   position: absolute;
@@ -111,11 +117,6 @@ interface AlbumData {
   folderDescription: string;
   contacts: Contact;
 }
-
-// Constants
-const GRAPHQL_ENDPOINT = "https://nmu355vgsbdbjcihhtekwdczxi.appsync-api.us-east-1.amazonaws.com/graphql";
-const API_KEY = "da2-45aunjrsbfbdhlaaomrswhsszq";
-const BUCKET_URL = "https://i6180-assets-prod-0.s3.amazonaws.com/";
 
 // Global styles
 const GlobalStyle = createGlobalStyle`
@@ -876,8 +877,8 @@ const PhotoAlbumContent: React.FC = () => {
         // Add to our set of seen dataKeys
         uniqueDataKeys.add(dataKey);
         
-        const url = `${BUCKET_URL}public/${dataKey}`;
-        const thumbnailUrl = thumbnailDataKey ? `${BUCKET_URL}public/${thumbnailDataKey}` : undefined;
+        const url = `${S3_BUCKET_URL}${dataKey}`;
+        const thumbnailUrl = thumbnailDataKey ? `${S3_BUCKET_URL}${thumbnailDataKey}` : undefined;
 
         if (dataKey.startsWith("Input/Image/")) {
           mediaItems.push({ 
@@ -973,11 +974,11 @@ const PhotoAlbumContent: React.FC = () => {
   // Fetch folder data
   const fetchFolder = async (folderId: string): Promise<AlbumData | null> => {
     try {
-      const response = await fetch(GRAPHQL_ENDPOINT, {
+      const response = await fetch(AWS_PUBLIC_GRAPHQL_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': API_KEY
+          'x-api-key': AWS_PUBLIC_API_KEY
         },
         body: JSON.stringify({
           query: FETCH_FOLDERS_QUERY,

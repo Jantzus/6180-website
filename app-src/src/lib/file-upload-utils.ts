@@ -1,6 +1,6 @@
 import { createS3Client } from "@/lib/aws"
 import { PutObjectCommand, CopyObjectCommand } from "@aws-sdk/client-s3"
-import { BUCKET_NAME } from "@/lib/config"
+import { AWS_BUCKET_NAME } from "@/lib/config"
 import { 
   ProgressTracker,
   UploadStatus,
@@ -139,7 +139,7 @@ export const processFiles = async (
         try {
           log(`⬆️ Uploading to ${tempS3Key}...`)
           await s3.send(new PutObjectCommand({
-            Bucket: BUCKET_NAME,
+            Bucket: AWS_BUCKET_NAME,
             Key: tempS3Key,
             Body: new Uint8Array(arrayBuffer),
             ContentType: file.type || "application/octet-stream"
@@ -153,7 +153,7 @@ export const processFiles = async (
         }
         
         // Create S3 preview URL
-        const s3PreviewUrl = `https://${BUCKET_NAME}.s3.amazonaws.com/${tempS3Key}`
+        const s3PreviewUrl = `https://${AWS_BUCKET_NAME}.s3.amazonaws.com/${tempS3Key}`
         log(`🔗 Generated S3 preview URL: ${s3PreviewUrl}`)
         
         let duration: number | null = null
@@ -188,7 +188,7 @@ export const processFiles = async (
             
             log(`⬆️ Uploading thumbnail to ${tempThumbnailKey}...`)
             await s3.send(new PutObjectCommand({
-              Bucket: BUCKET_NAME,
+              Bucket: AWS_BUCKET_NAME,
               Key: tempThumbnailKey,
               Body: new Uint8Array(thumbnailArrayBuffer),
               ContentType: "image/jpeg"
@@ -264,8 +264,8 @@ export const moveFilesToPublic = async (
         log(`⬆️ Copying from ${photo.tempKey} to ${publicKey}...`)
         
         await s3.send(new CopyObjectCommand({
-          Bucket: BUCKET_NAME,
-          CopySource: `${BUCKET_NAME}/${photo.tempKey}`,
+          Bucket: AWS_BUCKET_NAME,
+          CopySource: `${AWS_BUCKET_NAME}/${photo.tempKey}`,
           Key: publicKey
         }))
         log(`✅ Copy successful`)
@@ -279,8 +279,8 @@ export const moveFilesToPublic = async (
           log(`⬆️ Copying thumbnail from ${photo.tempThumbnailKey} to ${publicThumbnailKey}...`)
           
           await s3.send(new CopyObjectCommand({
-            Bucket: BUCKET_NAME,
-            CopySource: `${BUCKET_NAME}/${photo.tempThumbnailKey}`,
+            Bucket: AWS_BUCKET_NAME,
+            CopySource: `${AWS_BUCKET_NAME}/${photo.tempThumbnailKey}`,
             Key: publicThumbnailKey
           }))
           log(`✅ Thumbnail copy successful`)

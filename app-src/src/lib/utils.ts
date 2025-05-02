@@ -1,7 +1,7 @@
-import { STORAGE_KEYS } from "@/lib/config"
+import { LOCAL_STORAGE_KEYS } from "@/lib/config"
 import { LanguageCode } from "@/lib/types"
 import { myAlbumsTranslations } from "@/lib/translations"
-import { API_ENDPOINT_REFRESHTOKEN, CLIENT_ID } from "@/lib/config"
+import { API_ENDPOINT_REFRESHTOKEN, COGNITO_CLIENT_ID } from "@/lib/config"
 
 /**
  * Attempts to refresh the token using the refresh token from localStorage
@@ -42,7 +42,7 @@ export async function refreshTokenIfNeeded(): Promise<boolean> {
       },
       body: JSON.stringify({
         refreshToken: refreshToken,
-        appClientId: CLIENT_ID,
+        appClientId: COGNITO_CLIENT_ID,
       }),
     });
     
@@ -364,7 +364,7 @@ export const getTargetItemIdentifier = (id: string) =>
 
 export const detectBrowserLanguage = (): LanguageCode => {
   // First try to get saved language preference
-  const savedLanguage = localStorage.getItem(STORAGE_KEYS.LANGUAGE) as LanguageCode | null;
+  const savedLanguage = localStorage.getItem(LOCAL_STORAGE_KEYS.LANGUAGE) as LanguageCode | null;
   
   if (savedLanguage && myAlbumsTranslations[savedLanguage]) {
     return savedLanguage;
