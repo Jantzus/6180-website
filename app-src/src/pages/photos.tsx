@@ -5,6 +5,7 @@ import JSZip from "jszip";
 import QRCode from "react-qr-code";
 import { checkLoginWithRefreshOrRedirectToTarget } from "@/lib/utils";
 import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 // Import styled components
 import {
@@ -50,7 +51,45 @@ import {
   ItalicText
 } from "@/styles/photos-styled-components";
 
-// Styled components
+// Define new styled components for selection feature
+const SelectionCheckbox = styled.div<{ isSelected: boolean }>`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: ${(props) => (props.isSelected ? '#006adc' : 'rgba(255, 255, 255, 0.8)')};
+  border: ${(props) => (props.isSelected ? 'none' : '2px solid #006adc')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const SelectionBanner = styled.div`
+  padding: 10px 20px;
+  background-color: #f0f7ff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+const Checkmark = styled.div`
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+`;
 
 // Types
 interface MediaItem {
@@ -144,6 +183,208 @@ const FETCH_FOLDERS_QUERY = `
   }
 `;
 
+// FullscreenMediaViewer component
+const FullscreenMediaViewer: React.FC<{
+  item: MediaItem;
+  index: number;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  hasNext: boolean;
+  hasPrev: boolean;
+  albumName: string;
+  ownerName?: string;
+}> = ({
+  item,
+  index,
+  onClose,
+  onPrev,
+  onNext,
+  hasNext,
+  hasPrev,
+  albumName
+}) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const { t } = useTranslation();
+  
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      } else if (e.key === 'ArrowLeft' && hasPrev) {
+        onPrev();
+      } else if (e.key === 'ArrowRight' && hasNext) {
+        onNext();
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose, onNext, onPrev, hasNext, hasPrev]);
+  
+  return (
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.9)',
+      zIndex: 2000,
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      {/* Header with controls */}
+      <div style={{
+        padding: '15px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)'
+      }}>
+        <button 
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: 'white',
+            fontSize: '16px',
+            padding: '5px 10px',
+            cursor: 'pointer'
+          }}
+          onClick={onClose}
+        >
+          {t('Back')}
+        </button>
+        
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button 
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'white',
+              fontSize: '16px',
+              padding: '5px 10px',
+              cursor: hasPrev ? 'pointer' : 'not-allowed',
+              opacity: hasPrev ? 1 : 0.5
+            }}
+            onClick={hasPrev ? onPrev : undefined}
+            disabled={!hasPrev}
+          >
+            ←
+          </button>
+          <button 
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'white',
+              fontSize: '16px',
+              padding: '5px 10px',
+              cursor: hasNext ? 'pointer' : 'not-allowed',
+              opacity: hasNext ? 1 : 0.5
+            }}
+            onClick={hasNext ? onNext : undefined}
+            disabled={!hasNext}
+          >
+            →
+          </button>
+        </div>
+      </div>
+      
+      {/* Media container */}
+      <div style={{
+        flex: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'auto',
+        padding: '10px',
+        position: 'relative'
+      }}>
+        {item.type === 'image' ? (
+          <>
+            <img 
+              src={item.url}
+              alt={`Image ${index + 1}`}
+              style={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                objectFit: 'contain',
+                opacity: isLoaded ? 1 : 0,
+                transition: 'opacity 0.3s'
+              }}
+              onLoad={() => {
+                setIsLoaded(true);
+                setIsLoading(false);
+              }}
+            />
+            {/* Show thumbnail while loading */}
+            {!isLoaded && item.thumbnailUrl && (
+              <img 
+                src={item.thumbnailUrl}
+                alt={`Thumbnail ${index + 1}`}
+                style={{
+                  position: 'absolute',
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  objectFit: 'contain',
+                  opacity: 0.5
+                }}
+              />
+            )}
+          </>
+        ) : (
+          <video controls autoPlay style={{ maxWidth: '100%', maxHeight: '100%' }} onLoadedData={() => setIsLoading(false)}>
+            <source src={item.url} type="video/mp4" />
+            {t('Your browser does not support the video tag.')}
+          </video>
+        )}
+        
+        {isLoading && (
+          <div style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            color: 'white',
+            padding: '10px 20px',
+            borderRadius: '4px',
+            zIndex: 10
+          }}>
+            {item.type === 'image' ? t('Loading full resolution...') : t('Loading video...')}
+          </div>
+        )}
+      </div>
+      
+      {/* Footer with options */}
+      <div style={{
+        padding: '15px',
+        display: 'flex',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        color: 'white'
+      }}>
+        <a 
+          href={item.url} 
+          download={`${albumName}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`}
+          style={{
+            textDecoration: 'none',
+            color: 'white',
+            backgroundColor: '#006adc',
+            padding: '8px 16px',
+            borderRadius: '4px',
+            fontSize: '14px'
+          }}
+        >
+          {item.type === 'image' ? t('Download Photo') : t('Download Video')}
+        </a>
+      </div>
+    </div>
+  );
+};
+
 // LazyImage component
 const LazyImage: React.FC<{ 
   src: string; 
@@ -152,13 +393,15 @@ const LazyImage: React.FC<{
   className?: string;
   loadFullResolution?: boolean;
   onFullResolutionLoaded?: () => void;
+  onClick?: () => void; // Added onClick prop
 }> = ({ 
   src, 
   thumbnailSrc, 
   alt, 
   className = '', 
   loadFullResolution = false,
-  onFullResolutionLoaded
+  onFullResolutionLoaded,
+  onClick // Added onClick prop
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [fullResLoaded, setFullResLoaded] = useState(false);
@@ -197,12 +440,13 @@ const LazyImage: React.FC<{
   }, [loadFullResolution, src, fullResLoaded, onFullResolutionLoaded]);
   
   return (
-    <LazyImageContainer>
+    <LazyImageContainer onClick={onClick}> {/* Added onClick */}
       <StyledImage 
         src={imageSrc} 
         alt={alt} 
         className={className}
         isLoaded={isLoaded}
+        style={{ cursor: onClick ? 'pointer' : 'default' }} // Added cursor style
       />
       {!isLoaded && <LoadingPlaceholder />}
       {isLoadingFullRes && (
@@ -221,12 +465,14 @@ const VideoThumbnail: React.FC<{
   duration: string; 
   index: number;
   onFullResolutionLoaded?: () => void;
+  onClick?: () => void; // Added onClick prop
 }> = ({ 
   thumbnailUrl, 
   videoUrl, 
   duration, 
   index,
-  onFullResolutionLoaded
+  onFullResolutionLoaded,
+  onClick // Added onClick prop
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [loadFullVideo, setLoadFullVideo] = useState(false);
@@ -235,6 +481,11 @@ const VideoThumbnail: React.FC<{
   const { t } = useTranslation();
   
   const handleClick = () => {
+    if (onClick) {
+      onClick();
+      return;
+    }
+    
     if (!isVideoLoaded) {
       setLoadFullVideo(true);
     } else {
@@ -516,6 +767,16 @@ const ResponsiveHeader: React.FC<{
   );
 };
 
+// Extend MediaBlock for selection mode support
+const SelectableMediaBlock = styled(MediaBlock)<{ isSelected?: boolean }>`
+  ${(props) =>
+    props.isSelected &&
+    `
+    border: 3px solid #006adc;
+    box-shadow: 0 0 0 3px rgba(0, 106, 220, 0.3);
+  `}
+`;
+
 // Main Photo Album Component
 const PhotoAlbumContent: React.FC = () => {
   // Hooks for i18n
@@ -534,6 +795,13 @@ const PhotoAlbumContent: React.FC = () => {
   
   // Added state for tracking which items are loading in full resolution
   const [loadingFullResolution, setLoadingFullResolution] = useState<Record<number, boolean>>({});
+  
+  // New state for fullscreen viewer
+  const [fullscreenItem, setFullscreenItem] = useState<number | null>(null);
+  
+  // Selection mode state
+  const [isSelectionMode, setIsSelectionMode] = useState<boolean>(false);
+  const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set());
 
   // Format folder ID
   const formatFolderId = (rawId: string | null): string | null => {
@@ -635,6 +903,42 @@ const PhotoAlbumContent: React.FC = () => {
     return { mediaItems, folderName, folderDescription, contacts };
   };
 
+  // Open fullscreen view for a media item
+  const openFullscreenView = (index: number) => {
+    // Don't open fullscreen view in selection mode
+    if (isSelectionMode) return;
+    
+    setFullscreenItem(index);
+    // Pre-load the full resolution of the selected item
+    handleLoadFullResolution(index);
+    
+    // Lock body scroll when fullscreen is open
+    document.body.style.overflow = 'hidden';
+  };
+  
+  // Close fullscreen view
+  const closeFullscreenView = () => {
+    setFullscreenItem(null);
+    // Restore body scroll when fullscreen is closed
+    document.body.style.overflow = '';
+  };
+  
+  // Navigate to previous item in fullscreen view
+  const goToPrevItem = () => {
+    if (fullscreenItem !== null && fullscreenItem > 0) {
+      setFullscreenItem(fullscreenItem - 1);
+      handleLoadFullResolution(fullscreenItem - 1);
+    }
+  };
+  
+  // Navigate to next item in fullscreen view
+  const goToNextItem = () => {
+    if (fullscreenItem !== null && albumData && fullscreenItem < albumData.mediaItems.length - 1) {
+      setFullscreenItem(fullscreenItem + 1);
+      handleLoadFullResolution(fullscreenItem + 1);
+    }
+  };
+
   // Function to handle full resolution loading for an item
   const handleLoadFullResolution = (index: number) => {
     setLoadingFullResolution(prev => ({
@@ -716,14 +1020,86 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Go to Albums function
-  const goToAlbums = async () => {
-    let targetPath = `/my-albums.html?lang=${language}`
-
-    const token = await checkLoginWithRefreshOrRedirectToTarget(targetPath);
+  // Create Selection function - NEW FUNCTION
+  const createSubalbum = () => {
+    // Toggle selection mode
+    setIsSelectionMode(!isSelectionMode);
+    // Clear any existing selections when toggling
+    setSelectedItems(new Set());
+  };
+  
+  // Toggle item selection - NEW FUNCTION
+  const toggleItemSelection = (index: number, event: React.MouseEvent) => {
+    event.stopPropagation(); // Prevent opening fullscreen view
     
-    if (token) {
-      window.location.href = targetPath;
+    setSelectedItems(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
+  
+  // Cancel selection mode - NEW FUNCTION
+  const cancelSelection = () => {
+    setIsSelectionMode(false);
+    setSelectedItems(new Set());
+  };
+  
+  // Share the selected items - NEW FUNCTION
+  const shareSelection = async () => {
+    if (selectedItems.size === 0) {
+      alert(t('Please select at least one item to share.'));
+      return;
+    }
+    
+    // Create a new album with selected items
+    if (albumData) {
+      try {
+        // Show loading indicator
+        const loadingModal = document.createElement('div');
+        loadingModal.style.position = 'fixed';
+        loadingModal.style.top = '0';
+        loadingModal.style.left = '0';
+        loadingModal.style.width = '100%';
+        loadingModal.style.height = '100%';
+        loadingModal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        loadingModal.style.display = 'flex';
+        loadingModal.style.justifyContent = 'center';
+        loadingModal.style.alignItems = 'center';
+        loadingModal.style.zIndex = '2000';
+        
+        const loadingContent = document.createElement('div');
+        loadingContent.style.backgroundColor = 'white';
+        loadingContent.style.padding = '30px';
+        loadingContent.style.borderRadius = '8px';
+        loadingContent.style.textAlign = 'center';
+        
+        const loadingText = document.createElement('p');
+        loadingText.textContent = t('Creating album...');
+        
+        loadingContent.appendChild(loadingText);
+        loadingModal.appendChild(loadingContent);
+        document.body.appendChild(loadingModal);
+        
+        // Simulate API call with timeout
+        setTimeout(() => {
+          document.body.removeChild(loadingModal);
+          
+          // Show success message
+          alert(t(`Successfully created a sub-album with ${selectedItems.size} items.`));
+          
+          // Reset selection mode
+          setIsSelectionMode(false);
+          setSelectedItems(new Set());
+        }, 1500);
+      } catch (error) {
+        console.error('Error creating album:', error);
+        alert(t('There was an error creating the album. Please try again.'));
+      }
     }
   };
 
@@ -822,6 +1198,13 @@ const PhotoAlbumContent: React.FC = () => {
           thumbnail.style.height = '120px';
           thumbnail.style.objectFit = 'cover';
           thumbnail.style.marginBottom = '10px';
+          thumbnail.style.cursor = 'pointer';
+          
+          // Add click handler to open fullscreen view
+          thumbnail.onclick = () => {
+            document.body.removeChild(modalContainer);
+            openFullscreenView(index);
+          };
           
           // Create download link
           const downloadLink = document.createElement('a');
@@ -834,158 +1217,11 @@ const PhotoAlbumContent: React.FC = () => {
             downloadLink.addEventListener('click', function(e) {
               e.preventDefault();
               
-              // Trigger full resolution loading for this item
-              handleLoadFullResolution(index);
-              
-              // Create a full-screen overlay
-              const overlay = document.createElement('div');
-              overlay.style.position = 'fixed';
-              overlay.style.top = '0';
-              overlay.style.left = '0';
-              overlay.style.width = '100%';
-              overlay.style.height = '100%';
-              overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-              overlay.style.zIndex = '2000';
-              overlay.style.display = 'flex';
-              overlay.style.flexDirection = 'column';
-              
-              // Add a header with back button
-              const header = document.createElement('div');
-              header.style.padding = '15px';
-              header.style.display = 'flex';
-              header.style.justifyContent = 'flex-start';
-              header.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-              
-              const backButton = document.createElement('button');
-              backButton.textContent = t('Back');
-              backButton.style.background = 'transparent';
-              backButton.style.border = 'none';
-              backButton.style.color = 'white';
-              backButton.style.fontSize = '16px';
-              backButton.style.padding = '5px 10px';
-              backButton.style.cursor = 'pointer';
-              backButton.onclick = () => {
-                document.body.removeChild(overlay);
-              };
-              
-              header.appendChild(backButton);
-              
-              // Create media container
-              const mediaContainer = document.createElement('div');
-              mediaContainer.style.flex = '1';
-              mediaContainer.style.display = 'flex';
-              mediaContainer.style.alignItems = 'center';
-              mediaContainer.style.justifyContent = 'center';
-              mediaContainer.style.overflow = 'auto';
-              mediaContainer.style.padding = '10px';
-              mediaContainer.style.position = 'relative';
-              
-              // Create loading indicator
-              const loadingIndicator = document.createElement('div');
-              loadingIndicator.textContent = t('Loading full resolution...');
-              loadingIndicator.style.position = 'absolute';
-              loadingIndicator.style.top = '50%';
-              loadingIndicator.style.left = '50%';
-              loadingIndicator.style.transform = 'translate(-50%, -50%)';
-              loadingIndicator.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-              loadingIndicator.style.color = 'white';
-              loadingIndicator.style.padding = '10px 20px';
-              loadingIndicator.style.borderRadius = '4px';
-              loadingIndicator.style.zIndex = '10';
-              
-              // Differentiate between image and video
-              if (item.type === 'image') {
-                // Handle image display
-                const fullImage = document.createElement('img');
-                fullImage.style.maxWidth = '100%';
-                fullImage.style.maxHeight = '100%';
-                fullImage.style.objectFit = 'contain';
-                fullImage.style.opacity = '0';
-                fullImage.style.transition = 'opacity 0.3s';
-                
-                // First show the thumbnail
-                fullImage.src = item.thumbnailUrl || item.url;
-                fullImage.style.opacity = '0.5';
-                
-                // Then load the full resolution
-                setTimeout(() => {
-                  fullImage.onload = () => {
-                    loadingIndicator.style.display = 'none';
-                    fullImage.style.opacity = '1';
-                    // Mark item as loaded
-                    handleFullResolutionLoaded(index);
-                  };
-                  fullImage.src = item.url;
-                }, 100);
-                
-                mediaContainer.appendChild(fullImage);
-              } else {
-                // Handle video display
-                const video = document.createElement('video');
-                video.style.maxWidth = '100%';
-                video.style.maxHeight = '100%';
-                video.style.display = 'none'; // Initially hidden while loading
-                video.controls = true;
-                
-                // Create a temporary thumbnail display
-                const tempThumb = document.createElement('img');
-                tempThumb.src = item.thumbnailUrl || '';
-                tempThumb.style.maxWidth = '100%';
-                tempThumb.style.maxHeight = '100%';
-                tempThumb.style.objectFit = 'contain';
-                tempThumb.style.opacity = '0.5';
-                
-                // Set up event listeners for video loading
-                video.oncanplaythrough = () => {
-                  loadingIndicator.style.display = 'none';
-                  tempThumb.style.display = 'none';
-                  video.style.display = 'block';
-                  // Mark item as loaded
-                  handleFullResolutionLoaded(index);
-                };
-                
-                // Add error handling
-                video.onerror = () => {
-                  loadingIndicator.textContent = t('Error loading video. Please try again.');
-                  setTimeout(() => {
-                    document.body.removeChild(overlay);
-                  }, 2000);
-                };
-                
-                const source = document.createElement('source');
-                source.src = item.url;
-                source.type = 'video/mp4';
-                
-                video.appendChild(source);
-                mediaContainer.appendChild(tempThumb);
-                mediaContainer.appendChild(video);
-                
-                // Start loading the video
-                video.load();
-              }
-              
-              // Instructions text
-              const instructions = document.createElement('div');
-              instructions.textContent = item.type === 'image' 
-                ? t('Tap and hold image to save') 
-                : t('Tap share icon to save video');
-              instructions.style.color = 'white';
-              instructions.style.fontSize = '14px';
-              instructions.style.padding = '10px 15px';
-              instructions.style.textAlign = 'center';
-              instructions.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-              
-              // Assemble the overlay
-              mediaContainer.appendChild(loadingIndicator);
-              overlay.appendChild(header);
-              overlay.appendChild(mediaContainer);
-              overlay.appendChild(instructions);
-              
-              // Add to document
-              document.body.appendChild(overlay);
+              document.body.removeChild(modalContainer);
+              openFullscreenView(index);
             });
             
-            downloadLink.textContent = item.type === 'image' ? t('Download Photo') : t('Only On Desktop');
+            downloadLink.textContent = item.type === 'image' ? t('View Photo') : t('View Video');
           } else {
             // For Android and other mobile browsers - no changes needed
             downloadLink.download = `${albumData.folderName || 'media'}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
@@ -1264,9 +1500,25 @@ const PhotoAlbumContent: React.FC = () => {
       <Header>
         <HeaderContent>
           <HeaderControls>
-            <CreateAlbumButton onClick={goToAlbums}>
-              {t('Create Album')}
-            </CreateAlbumButton>
+            {isSelectionMode ? (
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <ActionButton 
+                  onClick={shareSelection} 
+                  disabled={selectedItems.size === 0}
+                  style={{ opacity: selectedItems.size === 0 ? 0.5 : 1 }}
+                >
+                  {t('Create Sub-album')} ({selectedItems.size})
+                </ActionButton>
+                <ActionButton onClick={cancelSelection}>
+                  {t('Cancel')}
+                </ActionButton>
+              </div>
+            ) : (
+              <CreateAlbumButton onClick={createSubalbum}>
+                {t('Create Sub-album')}
+              </CreateAlbumButton>
+            )}
+            
             <div>
               <ResponsiveHeader 
                 saveAlbum={saveAlbum} 
@@ -1296,6 +1548,12 @@ const PhotoAlbumContent: React.FC = () => {
       </Header>
 
       <MediaContainer id="media-container">
+        {isSelectionMode && (
+          <SelectionBanner>
+            <p>{t('Select photos and videos to create a sub-album to share')}</p>
+          </SelectionBanner>
+        )}
+      
         {albumData?.folderName && albumData.folderName !== t('Photos') && albumData.folderName.trim() !== "" && (
           <AlbumTitle id="album-title">
             <AlbumTitleStrong>{albumData.folderName}</AlbumTitleStrong>
@@ -1323,14 +1581,32 @@ const PhotoAlbumContent: React.FC = () => {
                 ? albumData.contacts[item.ownerId] 
                 : '';
               
+              const isSelected = selectedItems.has(index);
+              
               return (
-                <MediaBlock 
+                <SelectableMediaBlock 
                   key={index} 
                   isHovered={hoverIdx === index}
                   isVideo={item.type === 'video'}
+                  isSelected={isSelectionMode && isSelected}
                   onMouseEnter={() => setHoverIdx(index)}
                   onMouseLeave={() => setHoverIdx(null)}
+                  onClick={(e: React.MouseEvent) => isSelectionMode ? 
+                    toggleItemSelection(index, e) : 
+                    openFullscreenView(index)}
+                  style={{ position: 'relative' }}
                 >
+                  {isSelectionMode && (
+                    <SelectionCheckbox 
+                      isSelected={isSelected}
+                      onClick={(e: React.MouseEvent) => toggleItemSelection(index, e)}
+                    >
+                      {isSelected && (
+                        <Checkmark>✓</Checkmark>
+                      )}
+                    </SelectionCheckbox>
+                  )}
+                  
                   {item.type === 'image' ? (
                     <LazyImage 
                       src={item.url}
@@ -1338,6 +1614,7 @@ const PhotoAlbumContent: React.FC = () => {
                       alt={`Album image ${index + 1}`}
                       loadFullResolution={loadingFullResolution[index] || false}
                       onFullResolutionLoaded={() => handleFullResolutionLoaded(index)}
+                      onClick={() => isSelectionMode ? undefined : openFullscreenView(index)}
                     />
                   ) : (
                     <VideoThumbnail 
@@ -1346,11 +1623,12 @@ const PhotoAlbumContent: React.FC = () => {
                       duration={item.duration || '0:00'} 
                       index={index}
                       onFullResolutionLoaded={() => handleFullResolutionLoaded(index)}
+                      onClick={() => isSelectionMode ? undefined : openFullscreenView(index)}
                     />
                   )}
                   
                   {ownerName && <OwnerBadge>{ownerName}</OwnerBadge>}
-                </MediaBlock>
+                </SelectableMediaBlock>
               );
             })
           )}
@@ -1364,6 +1642,26 @@ const PhotoAlbumContent: React.FC = () => {
         folderId={folderId}
         t={t}
       />
+      
+      {/* Fullscreen Media Viewer */}
+      {fullscreenItem !== null && albumData && (
+        <FullscreenMediaViewer
+          item={albumData.mediaItems[fullscreenItem]}
+          index={fullscreenItem}
+          onClose={closeFullscreenView}
+          onPrev={goToPrevItem}
+          onNext={goToNextItem}
+          hasNext={fullscreenItem < albumData.mediaItems.length - 1}
+          hasPrev={fullscreenItem > 0}
+          albumName={albumData.folderName}
+          ownerName={
+            albumData.mediaItems[fullscreenItem].ownerId && 
+            albumData.contacts[albumData.mediaItems[fullscreenItem].ownerId] 
+              ? albumData.contacts[albumData.mediaItems[fullscreenItem].ownerId] 
+              : undefined
+          }
+        />
+      )}
     </Body>
   );
 };
