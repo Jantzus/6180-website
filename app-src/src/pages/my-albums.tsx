@@ -464,11 +464,13 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
 type FooterSectionProps = {
   folder: FolderType;
   openFilePicker: (folderId: string | null) => void;
+  cognitoUsername: string | null;
 };
 
 export const FooterSection: React.FC<FooterSectionProps> = ({
   folder,
-  openFilePicker
+  openFilePicker,
+  cognitoUsername
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
@@ -492,11 +494,16 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
       });
   };
 
-  const handleAddToPublicProfileClick = (e: React.MouseEvent) => {
+  // Check if album is on public profile
+  const isOnPublicProfile = folder.profileIds && 
+                            cognitoUsername && 
+                            folder.profileIds.includes(`${cognitoUsername}_____Public____Profile`);
+
+  const handlePublicProfileClick = (e: React.MouseEvent) => {
     e.preventDefault(); 
     e.stopPropagation();
-    // Add to public profile functionality would go here
-    alert(t('Feature coming soon: "Make album accessible on your public profile"'));
+    // Toggle public profile status (implementation would go here)
+    alert(t('Feature coming soon: "Toggle album visibility on your public profile"'));
   };
 
   // Common button style to avoid repetition
@@ -566,13 +573,14 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             </button>
             
             <button
-              onClick={handleAddToPublicProfileClick}
+              onClick={handlePublicProfileClick}
               style={{
                 ...buttonStyle,
-                backgroundColor: "#e0e0e0",
+                backgroundColor: isOnPublicProfile ? "#4caf50" : "#e0e0e0",
+                color: isOnPublicProfile ? "white" : "inherit",
               }}
             >
-              {t('Add To Public Profile')}
+              {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
             </button>
           </div>
         </div>
@@ -1060,6 +1068,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                 <FooterSection
                   folder={folder}
                   openFilePicker={openFilePicker}
+                  cognitoUsername={cognitoUsername}
                 />
               </div>
             </a>
@@ -1123,6 +1132,7 @@ const MyAlbums = () => {
           items {
             ... on FolderPosition {
               id
+              profileIds
               folder {
                 id
                 folderName
@@ -1187,6 +1197,7 @@ const MyAlbums = () => {
           createdAt: folder.createdAt,
           updatedAt: folder.updatedAt,
           files: files.filter((f: any) => f && f.dataKey),
+          profileIds: item.profileIds || [] // Include profileIds from the item
         }
       })
 

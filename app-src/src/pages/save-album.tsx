@@ -57,7 +57,11 @@ import {
   DebugTitle,
   DebugMessages,
   DebugMessage,
-  HiddenFileInput
+  HiddenFileInput,
+  ToggleContainer,
+  ToggleLabel,
+  ToggleSwitch,
+  ToggleSlider
 } from "@/styles/styled-components";
 
 import { GRAPHQL_ENDPOINT, STORAGE_KEYS } from "@/lib/config";
@@ -129,6 +133,7 @@ const FETCH_FOLDER_QUERY = `
         }
         folderPosition {
           id
+          profileIds
         }          
       }
     }
@@ -177,6 +182,9 @@ const SaveAlbum = () => {
   const [showPasswordDialog, setShowPasswordDialog] = useState(false);
   const [passwordProtectionOption, setPasswordProtectionOption] = useState<ProtectionOption>('noPassword');
   const [albumPassword, setAlbumPassword] = useState("");
+  
+  // Public profile toggle state
+  const [isOnPublicProfile, setIsOnPublicProfile] = useState<boolean>(true);
   
   // New state for checking if user is the creator - initialize as null (undetermined)
   const [isCreator, setIsCreator] = useState<boolean | null>(null);
@@ -271,6 +279,9 @@ const SaveAlbum = () => {
               setFolderName(folderDetails.folderName);
               setFolderDescription(folderDetails.folderDescription);
               
+              // Set the public profile toggle state
+              setIsOnPublicProfile(folderDetails.isOnPublicProfile);
+              
               // Handle password policy with proper enum mapping
               const policy = folderDetails.passwordPolicy;
               
@@ -358,12 +369,18 @@ const SaveAlbum = () => {
       
       const folder = items[0];
       
+      // Check if this folder is on the public profile
+      const isPublic = folder.folderPosition?.profileIds?.some(
+        (profileId: string) => profileId.includes("Public____Profile")
+      ) || false;
+      
       return {
         creatorId: folder.creatorId || '',
         folderName: folder.folderName || '',
         folderDescription: folder.folderDescription || '',
         passwordPolicy: folder.folderPassword?.policy || 'NoPassword',
-        password: folder.folderPassword?.password || ''
+        password: folder.folderPassword?.password || '',
+        isOnPublicProfile: isPublic
       };
     } catch (error) {
       console.error("Error in fetchFolderDetails:", error);
@@ -399,6 +416,12 @@ const SaveAlbum = () => {
     } catch (s3Err) {
       console.error("S3 connection test error:", s3Err);
     }
+  };
+
+  // ---------- PUBLIC PROFILE TOGGLE ----------
+  
+  const handlePublicProfileToggle = () => {
+    setIsOnPublicProfile(!isOnPublicProfile);
   };
 
   // ---------- PHOTO MANAGEMENT ----------
@@ -574,10 +597,15 @@ const SaveAlbum = () => {
     folderTargetItemIdentifier: string, 
     validPhotos: SelectedPhoto[]
   ) => {
+    // Use the correct profileIds based on the toggle state
+    const profileIds = isOnPublicProfile 
+      ? [`${cognitoUsername}_____Public____Profile`] 
+      : ["Only Me_____Only Me____Profile"];
+      
     return {
       currentTime: timestamp,
       folderId,
-      profileIds: ["Only Me_____Only Me____Profile"],
+      profileIds,
       folderPositionSelectedTagInputs: [],
       folderPositionPoints: 1,
       acceptedFileReferenceIds: validPhotos.map(photo =>
@@ -985,6 +1013,22 @@ const SaveAlbum = () => {
                     rows={4}
                   />
                 </FormGroup>
+                
+                {/* Public Profile Toggle */}
+                <ToggleContainer>
+                  <ToggleLabel>
+                    {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
+                  </ToggleLabel>
+                  <ToggleSwitch>
+                    <input 
+                      type="checkbox" 
+                      checked={isOnPublicProfile} 
+                      onChange={handlePublicProfileToggle}
+                      disabled={isSavingAlbum}
+                    />
+                    <ToggleSlider />
+                  </ToggleSwitch>
+                </ToggleContainer>
               </FolderDetails>
             )}
             

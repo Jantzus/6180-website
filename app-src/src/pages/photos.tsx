@@ -1500,24 +1500,28 @@ const PhotoAlbumContent: React.FC = () => {
       <Header>
         <HeaderContent>
           <HeaderControls>
-            {isSelectionMode ? (
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <ActionButton 
-                  onClick={shareSelection} 
-                  disabled={selectedItems.size === 0}
-                  style={{ opacity: selectedItems.size === 0 ? 0.5 : 1 }}
-                >
-                  {t('Create Sub-album')} ({selectedItems.size})
-                </ActionButton>
-                <ActionButton onClick={cancelSelection}>
-                  {t('Cancel')}
-                </ActionButton>
-              </div>
-            ) : (
-              <CreateAlbumButton onClick={createSubalbum}>
-                {t('Create Sub-album')}
-              </CreateAlbumButton>
-            )}
+          {isSelectionMode ? (
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <ActionButton 
+                onClick={shareSelection} 
+                disabled={selectedItems.size === 0}
+                style={{ 
+                  opacity: selectedItems.size === 0 ? 0.5 : 1,
+                  backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
+                  color: selectedItems.size > 0 ? 'white' : undefined,
+                }}
+              >
+                {t('Create Sub-album')} ({selectedItems.size})
+              </ActionButton>
+              <ActionButton onClick={cancelSelection}>
+                {t('Cancel')}
+              </ActionButton>
+            </div>
+          ) : (
+            <CreateAlbumButton onClick={createSubalbum}>
+              {t('Create Sub-album')}
+            </CreateAlbumButton>
+          )}
             
             <div>
               <ResponsiveHeader 

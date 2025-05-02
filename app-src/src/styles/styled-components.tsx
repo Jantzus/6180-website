@@ -459,3 +459,74 @@ export const DebugMessage = styled.div`
 export const HiddenFileInput = styled.input`
   display: none;
 `;
+
+// Toggle Components - Refined elegant design
+export const ToggleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 4px 0;
+  gap: 15px; /* Small gap for consistent spacing */
+`;
+
+export const ToggleLabel = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  line-height: 24px; /* Added line-height to better align with taller toggle */
+`;
+
+export const ToggleSwitch = styled.label`
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px; /* Increased from 20px to 24px */
+  
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+    &:checked + span {
+      background-color: #007bff;
+    }
+    
+    &:focus + span {
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+    
+    &:checked + span:before {
+      transform: translateX(16px); /* Adjusted for new dimensions */
+    }
+    
+    &:disabled + span {
+      background-color: #e6e6e6;
+      cursor: not-allowed;
+    }
+  }
+`;
+
+export const ToggleSlider = styled.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e0e0e0;
+  transition: .2s;
+  border-radius: 24px; /* Updated to match height */
+  
+  &:before {
+    position: absolute;
+    content: "";
+    height: 20px; /* Increased from 16px to 20px */
+    width: 20px; /* Increased from 16px to 20px */
+    left: 2px;
+    top: 2px;
+    background-color: white;
+    transition: .2s;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+`;

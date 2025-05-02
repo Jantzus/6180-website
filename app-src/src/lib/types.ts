@@ -66,6 +66,7 @@ export type FolderType = {
   createdAt: number | null;
   updatedAt: number | null;
   files: FileType[];
+  profileIds?: string[];
 };
 
 export interface File {
