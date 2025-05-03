@@ -9,7 +9,7 @@ import {
   S3_BUCKET_URL,
   LOCAL_STORAGE_KEYS
 } from "@/lib/config";
-import { getOwnerItemId, getTargetItemIdentifier } from "@/lib/utils";
+import { getTargetItemIdentifier } from "@/lib/utils";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
@@ -44,6 +44,7 @@ interface LazyImageProps {
   [key: string]: any;
 }
 
+// Updated LazyImage Component to prevent rendering of the question mark placeholder
 const LazyImage: React.FC<LazyImageProps> = ({ 
   src, 
   alt, 
@@ -55,6 +56,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [currentSrc, setCurrentSrc] = useState('');
+  const [hasValidSource, setHasValidSource] = useState(false);
 
   useEffect(() => {
     // Reset state when the image source changes
@@ -63,16 +65,21 @@ const LazyImage: React.FC<LazyImageProps> = ({
     // Determine the appropriate source for the image
     // Order of priority: thumbnailDataKey -> dataKey -> src
     let imageSrc = '';
+    let isValid = false;
     
-    if (thumbnailDataKey) {
+    if (thumbnailDataKey && thumbnailDataKey.length > 0) {
       imageSrc = `${bucketUrl}${thumbnailDataKey}`;
-    } else if (dataKey) {
+      isValid = true;
+    } else if (dataKey && dataKey.length > 0) {
       imageSrc = `${bucketUrl}${dataKey}`;
-    } else if (src) {
+      isValid = true;
+    } else if (src && src.length > 0) {
       imageSrc = src;
+      isValid = true;
     }
     
     setCurrentSrc(imageSrc);
+    setHasValidSource(isValid);
   }, [thumbnailDataKey, dataKey, src, bucketUrl]);
 
   // Handle successful image load
@@ -90,9 +97,20 @@ const LazyImage: React.FC<LazyImageProps> = ({
       if (currentSrc === `${bucketUrl}${thumbnailDataKey}`) {
         console.log("Falling back to full image");
         setCurrentSrc(`${bucketUrl}${dataKey}`);
+      } else {
+        // If even the fallback fails, mark as invalid
+        setHasValidSource(false);
       }
+    } else {
+      // If there's no fallback option, mark as invalid
+      setHasValidSource(false);
     }
   };
+
+  // Don't render anything if there's no valid source
+  if (!hasValidSource) {
+    return null;
+  }
 
   return (
     <img
@@ -220,14 +238,6 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
         }}>
           {username || t('User Profile')}
         </h1>
-        
-        <div style={{ 
-          fontSize: 16,
-          color: "#666",
-          marginBottom: 16 
-        }}>
-          {t('Public Albums')}
-        </div>
         
         {isCurrentUser && (
           <div style={{
@@ -449,8 +459,8 @@ const AlbumFooter: React.FC<AlbumFooterProps> = ({
   }, [folder.profileIds]);
   
   // Generate the invite link
-  const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`;
-  const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`;
+  let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
+  const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
   
   // Handle copy function
   const handleCopy = (textToCopy: string) => {
@@ -736,6 +746,7 @@ interface AlbumListProps {
   openFilePicker?: (folderId: string) => void;
 }
 
+// Updated AlbumList Component - The key change is in the files.map section to only render non-empty thumbnails
 const AlbumList: React.FC<AlbumListProps> = ({ 
   folders,
   setFolders,
@@ -800,6 +811,15 @@ const AlbumList: React.FC<AlbumListProps> = ({
         // Get password policy from folder data
         const passwordPolicy = folder.folderPassword?.policy || "NoPassword";
 
+        let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
+        const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
+
+        // Filter out files that have valid thumbnails or data keys
+        const validFiles = folder.files.filter(file => 
+          (file.thumbnailDataKey && file.thumbnailDataKey.length > 0) || 
+          (file.dataKey && file.dataKey.length > 0)
+        );
+
         return (
           <div
             key={folder.folderId}
@@ -810,7 +830,7 @@ const AlbumList: React.FC<AlbumListProps> = ({
             }}
           >
             <a
-              href={`https://6180.io/photos.html?id=${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`}
+              href={inviteLink}
               style={{
                 textDecoration: "none",
                 color: "inherit",
@@ -874,60 +894,71 @@ const AlbumList: React.FC<AlbumListProps> = ({
                   </div>
                 </div>
                 
-                <div 
-                  style={{ 
-                    width: "100%",
-                    position: "relative",
-                  }}
-                >
+                {/* Only show the image container if there are valid files */}
+                {validFiles.length > 0 && (
                   <div 
                     style={{ 
-                      display: "flex", 
-                      overflowX: "auto",
-                      gap: 12,
-                      paddingBottom: 8,
-                      msOverflowStyle: "none", 
-                      scrollbarWidth: "thin" as const,
-                      WebkitOverflowScrolling: "touch",
-                      maxWidth: "100%",
-                      flexDirection: isRTL ? "row-reverse" : "row"
+                      width: "100%",
+                      position: "relative",
                     }}
                   >
-                    {folder.files.map((file, i) => (
-                      <LazyImage
-                        key={i}
-                        thumbnailDataKey={file.thumbnailDataKey}
-                        dataKey={file.dataKey}
-                        src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
-                        alt={t('Thumbnail')}
-                        style={{
-                          width: 160,
-                          height: 100,
-                          objectFit: "cover",
-                          borderRadius: 6,
-                          border: "1px solid #ddd",
-                          flexShrink: 0,
+                    {validFiles.length > 0 ? (
+                      <div 
+                        style={{ 
+                          width: "100%",
+                          position: "relative",
                         }}
-                      />
-                    ))}
+                      >
+                        <div 
+                          style={{ 
+                            display: "flex", 
+                            overflowX: "auto",
+                            gap: 12,
+                            paddingBottom: 8,
+                            msOverflowStyle: "none", 
+                            scrollbarWidth: "thin" as const,
+                            WebkitOverflowScrolling: "touch",
+                            maxWidth: "100%",
+                            flexDirection: isRTL ? "row-reverse" : "row"
+                          }}
+                        >
+                          {validFiles.map((file, i) => (
+                            <div key={i} style={{ flexShrink: 0 }}>
+                              <LazyImage
+                                thumbnailDataKey={file.thumbnailDataKey}
+                                dataKey={file.dataKey}
+                                alt={t('Thumbnail')}
+                                style={{
+                                  width: 160,
+                                  height: 100,
+                                  objectFit: "cover",
+                                  borderRadius: 6,
+                                  border: "1px solid #ddd",
+                                }}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {validFiles.length > 3 && (
+                          <div 
+                            style={{
+                              position: "absolute",
+                              [isRTL ? "left" : "right"]: 0,
+                              top: 0,
+                              bottom: 8,
+                              width: 30,
+                              background: isRTL 
+                                ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
+                                : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
+                              pointerEvents: "none",
+                            }}
+                          />
+                        )}
+                      </div>
+                      ) : null}
                   </div>
-                  
-                  {folder.files.length > 3 && (
-                    <div 
-                      style={{
-                        position: "absolute",
-                        [isRTL ? "left" : "right"]: 0,
-                        top: 0,
-                        bottom: 8,
-                        width: 30,
-                        background: isRTL 
-                          ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
-                          : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
-                        pointerEvents: "none",
-                      }}
-                    />
-                  )}
-                </div>
+                )}
                 
                 {/* Password Policy Indicator */}
                 <div
@@ -981,45 +1012,6 @@ const AlbumList: React.FC<AlbumListProps> = ({
         );
       })}
     </>
-  );
-};
-
-// AppPromo Component
-interface AppPromoProps {
-  t: (key: string) => string;
-  isRTL: boolean;
-}
-
-const AppPromo: React.FC<AppPromoProps> = ({ t, isRTL }) => {
-  return (
-    <div 
-      style={{
-        width: "100%", 
-        marginBottom: 24,
-        backgroundColor: "#f0f7ff",
-        padding: "12px 16px",
-        borderRadius: "8px",
-        boxSizing: "border-box",
-        direction: isRTL ? "rtl" : "ltr",
-        border: "1px solid #cce0ff",
-        textAlign: isRTL ? "right" : "left" as const
-      }}
-    >
-      <a 
-        href="https://apps.apple.com/app/6180/id6468679610"
-        style={{
-          color: "#2196f3",
-          textDecoration: "none",
-          fontSize: "14px",
-          display: "block",
-          width: "100%",
-        }}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {t('Get the iPhone app to add contacts, communicate with contacts and see when contacts have added new albums.')}
-      </a>
-    </div>
   );
 };
 
@@ -1084,9 +1076,30 @@ const PersonaViewer: React.FC = () => {
     const getOwnerItemIdFromUrl = (): string | null => {
       // Check in query params
       const urlParams = new URLSearchParams(window.location.search);
-      const id = urlParams.get('id');
+      let id = urlParams.get('id');
       
-      if (id) return id;
+      let formattedId = id?.replace(/-/g, '');
+
+      // Make sure it's exactly 32 characters before formatting
+      if (formattedId?.length === 32) {
+
+        formattedId = [
+          formattedId.slice(0, 8),
+          formattedId.slice(8, 12),
+          formattedId.slice(12, 16),
+          formattedId.slice(16, 20),
+          formattedId.slice(20)
+        ].join('-');
+      
+        console.log(formattedId); // e.g., B89D8BAF-F9A1-484B-A379-FA7FAD081303
+
+      } else {
+
+        console.error('Invalid UUID format: must be 32 characters after removing dashes');
+        
+      }
+
+      if (formattedId) return formattedId;
       
       // Check in path
       const pathMatch = window.location.pathname.match(/\/persona\/([^\/]+)/);
@@ -1335,9 +1348,6 @@ const PersonaViewer: React.FC = () => {
           isCurrentUser={isOwner}
           isRTL={isRTL}
         />
-        
-        {/* App Promo */}
-        <AppPromo t={t} isRTL={isRTL} />
         
         {/* Search Bar */}
         <SearchBar 

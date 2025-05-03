@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { useEffect, useState, useRef, useMemo } from "react"
-import { checkLoginWithRefresh, generateUUID, getOwnerItemId, getTargetItemIdentifier } from "@/lib/utils"
+import { checkLoginWithRefresh, generateUUID, getTargetItemIdentifier } from "@/lib/utils"
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config"
 import { 
   Folder, 
@@ -115,6 +115,8 @@ export const Header: React.FC<HeaderProps> = ({
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
 
+  let formattedCognitoUsername = cognitoUsername?.replace(/-/g, '');
+
   return (
     <>
       <div
@@ -157,7 +159,7 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <button
             onClick={() => {
-              window.location.href = `https://6180.io/bio.html?id=${cognitoUsername}`;
+              window.location.href = `https://6180.io/bio.html?id=${formattedCognitoUsername}`;
             }}
             style={{
               fontSize: "14px",
@@ -487,8 +489,8 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
   const isOnPublicProfile = localProfileIds.includes(publicProfileId);
 
   // Generate the invite link
-  const folderInvite = `${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`;
-  const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`;
+  let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
+  const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
   
   // Update local state when the folder prop changes
   useEffect(() => {
@@ -901,6 +903,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
         // Get password policy from folder data
         const passwordPolicy = folder.folderPassword?.policy || "NoPassword";
 
+        let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
+        const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
+
         return (
           <div
             key={folder.folderId}
@@ -911,7 +916,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
             }}
           >
             <a
-              href={`https://6180.io/photos.html?id=${getOwnerItemId(folder.folderId)}_${getTargetItemIdentifier(folder.folderId)}`}
+              href={inviteLink}
               style={{
                 textDecoration: "none",
                 color: "inherit",

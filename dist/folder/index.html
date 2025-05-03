@@ -992,16 +992,12 @@
 
     const folderId = window.location.pathname.split("/folder/")[1] || "";
 
-    function getOwnerItemId(id) {
-      return id.split("_____")[0];
-    }
-
     function getTargetItemIdentifier(id) {
       return id.split("_____")[1]?.split("____")[0] || "";
     }
 
-    const folderInvite = `${getOwnerItemId(folderId)}_${getTargetItemIdentifier(folderId)}`;
-    const inviteLink = `https://6180.io/photos.html?id=${folderInvite}`;
+    let formattedTargetItemIdentifier = getTargetItemIdentifier(folderId).replace(/-/g, '');
+    const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
 
     const userAgent = navigator.userAgent.toLowerCase();
     const isIOS = /iphone|ipad|ipod/.test(userAgent);

@@ -205,6 +205,7 @@ const FETCH_FOLDERS_QUERY = `
     fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
       items {
         ... on Folder {
+          id
           folderName
           folderDescription
           folderPassword {
@@ -667,24 +668,13 @@ const formatTime = (seconds: number = 0): string => {
 const QRCodeModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
-  id: string | null;
+  folderId: string | null;
   t: (key: string) => string;
-}> = ({ isOpen, onClose, id: folderId, t }) => {
+}> = ({ isOpen, onClose, folderId: folderId, t }) => {
   if (!isOpen) return null;
   
-  // Format folder ID for the QR code URL
-  const formatFolderId = (rawId: string | null): string | null => {
-    if (!rawId || !rawId.includes('_')) {
-      return null;
-    }
-    
-    const [prefix, suffix] = rawId.split('_');
-    return `${prefix}_____${suffix}____Folder`;
-  };
-  
   // Create a QR code URL with the properly formatted folder ID
-  const formattedFolderId = folderId ? formatFolderId(folderId) : null;
-  const qrCodeUrl = formattedFolderId ? `https://6180.io/folder/${formattedFolderId}` : '';
+  const qrCodeUrl = folderId ? `https://6180.io/folder/${folderId}` : '';
   
   return (
     <Modal>
@@ -1022,7 +1012,7 @@ const PhotoAlbumContent: React.FC = () => {
   const [albumData, setAlbumData] = useState<AlbumData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [id, setId] = useState<string | null>(null);
+  const [folderId, setFolderId] = useState<string | null>(null);
   const [showSaveButton, setShowSaveButton] = useState<boolean>(true);
   
   // Password and authorization state
@@ -1045,23 +1035,13 @@ const PhotoAlbumContent: React.FC = () => {
   const [isSelectionMode, setIsSelectionMode] = useState<boolean>(false);
   const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set());
 
-  // Format folder ID
-  const formatFolderId = (rawId: string | null): string | null => {
-    if (!rawId || !rawId.includes('_')) {
-      return null;
-    }
-    
-    const [prefix, suffix] = rawId.split('_');
-    return `${prefix}_____${suffix}____Folder`;
-  };
-
   // Get folder ID from URL
   const getIdFromUrl = (): string | null => {
     // Check in query params
     const urlParams = new URLSearchParams(window.location.search);
-    const folderId = urlParams.get('id');
+    const id = urlParams.get('id');
     
-    if (folderId) return folderId;
+    if (id) return id;
     
     // Check in path
     const pathParts = window.location.pathname.split('/');
@@ -1090,8 +1070,12 @@ const PhotoAlbumContent: React.FC = () => {
     const uniqueDataKeys = new Set<string>();
     
     if (items.length > 0) {
+
       const folder = items[0];
       
+      // Save the raw folder ID for QR code
+      setFolderId(folder?.id);
+
       // Get folder name if available
       if (folder?.folderName && folder.folderName.length > 0) {
         folderName = folder.folderName;
@@ -1402,9 +1386,6 @@ const PhotoAlbumContent: React.FC = () => {
       promptForPassword();
       return;
     }
-    
-    const id = getIdFromUrl();
-    const folderId = formatFolderId(id);
     
     if (folderId) {
       const targetPath = `/save-album.html?folderId=${folderId}`;
@@ -1869,23 +1850,29 @@ const PhotoAlbumContent: React.FC = () => {
         return;
       }
       
-      // Save the raw folder ID for QR code
-      setId(id);
+      const parts = id.split('_');
+      let formattedId = parts[parts.length - 1].replace(/-/g, '');
+
+      // Make sure it's exactly 32 characters before formatting
+      if (formattedId.length === 32) {
+
+        formattedId = [
+          formattedId.slice(0, 8),
+          formattedId.slice(8, 12),
+          formattedId.slice(12, 16),
+          formattedId.slice(16, 20),
+          formattedId.slice(20)
+        ].join('-');
       
-      const folderId = formatFolderId(id);
-      
-      if (!folderId) {
-        setError(t('Please try refreshing the page or contact support if the problem persists.'));
-        setIsLoading(false);
-        return;
-      }
-      
-      const suffix = id.split('_')[1];
-      if (!suffix) {
-        throw new Error('targetItemIdentifier cannot be obtained');
+        console.log(formattedId); // e.g., B89D8BAF-F9A1-484B-A379-FA7FAD081303
+
+      } else {
+
+        console.error('Invalid UUID format: must be 32 characters after removing dashes');
+
       }
 
-      const data = await fetchFolder(suffix);
+      const data = await fetchFolder(formattedId);
       
       if (data) {
         setAlbumData(data);
@@ -2160,7 +2147,7 @@ const PhotoAlbumContent: React.FC = () => {
       <QRCodeModal 
         isOpen={showQRModal} 
         onClose={() => setShowQRModal(false)} 
-        id={id}
+        folderId={folderId}
         t={t}
       />
       
