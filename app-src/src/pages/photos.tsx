@@ -201,39 +201,42 @@ const GlobalStyle = createGlobalStyle`
 
 // Updated GraphQL query to include password policy
 const FETCH_FOLDERS_QUERY = `
-  query FetchFolders($folderIds: [String!]!) {
-    fetchFolders(folderIds: $folderIds) {
+  mutation FetchFolderPositions($fetchRelationsInput: FetchRelationsInput!) {
+    fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
       items {
-        folderName
-        folderDescription
-        folderPassword {
-          password
-          policy
-        }
-        fileReferencesPage {
-          items {
-            file {
-              ownerContactId
-              dataKey
-              thumbnailDataKey
-              durationInSeconds
-            }
+        ... on Folder {
+          folderName
+          folderDescription
+          folderPassword {
+            password
+            policy
           }
-        }
-        contactsUsingInvite {
-          items {
-            id
-            item {
-              ... on Persona {
-                publicDisplayName
+          fileReferencesPage {
+            items {
+              file {
+                ownerContactId
+                dataKey
+                thumbnailDataKey
+                durationInSeconds
               }
             }
           }
-        }
-        folderPosition {
-          id
+          contactsUsingInvite {
+            items {
+              id
+              item {
+                ... on Persona {
+                  publicDisplayName
+                }
+              }
+            }
+          }
+          folderPosition {
+            id
+          }
         }
       }
+      nextToken
     }
   }
 `;
@@ -664,9 +667,9 @@ const formatTime = (seconds: number = 0): string => {
 const QRCodeModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
-  folderId: string | null;
+  id: string | null;
   t: (key: string) => string;
-}> = ({ isOpen, onClose, folderId, t }) => {
+}> = ({ isOpen, onClose, id: folderId, t }) => {
   if (!isOpen) return null;
   
   // Format folder ID for the QR code URL
@@ -1019,7 +1022,7 @@ const PhotoAlbumContent: React.FC = () => {
   const [albumData, setAlbumData] = useState<AlbumData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [folderId, setFolderId] = useState<string | null>(null);
+  const [id, setId] = useState<string | null>(null);
   const [showSaveButton, setShowSaveButton] = useState<boolean>(true);
   
   // Password and authorization state
@@ -1053,7 +1056,7 @@ const PhotoAlbumContent: React.FC = () => {
   };
 
   // Get folder ID from URL
-  const getFolderIdFromUrl = (): string | null => {
+  const getIdFromUrl = (): string | null => {
     // Check in query params
     const urlParams = new URLSearchParams(window.location.search);
     const folderId = urlParams.get('id');
@@ -1073,7 +1076,7 @@ const PhotoAlbumContent: React.FC = () => {
 
   // Process data returned from API
   const processData = (json: any): AlbumData => {
-    const items = json?.data?.fetchFolders?.items || [];
+    const items = json?.data?.fetchRelations?.items || [];
     const mediaItems: MediaItem[] = [];
     const contacts: Contact = {};
     let folderName = t('Photos');
@@ -1087,45 +1090,40 @@ const PhotoAlbumContent: React.FC = () => {
     const uniqueDataKeys = new Set<string>();
     
     if (items.length > 0) {
+      const folder = items[0];
+      
       // Get folder name if available
-      if (items[0]?.folderName && items[0].folderName.length > 0) {
-        folderName = items[0].folderName;
+      if (folder?.folderName && folder.folderName.length > 0) {
+        folderName = folder.folderName;
       }
       
       // Get folder description if available
-      if (items[0]?.folderDescription && items[0].folderDescription.length > 0) {
-        folderDescription = items[0].folderDescription;
+      if (folder?.folderDescription && folder.folderDescription.length > 0) {
+        folderDescription = folder.folderDescription;
       }
       
       // Get password policy and the actual password
-      if (items[0]?.folderPassword) {
-        if (items[0].folderPassword.policy) {
-          passwordPolicy = items[0].folderPassword.policy as PasswordPolicyEnum;
+      if (folder?.folderPassword) {
+        if (folder.folderPassword.policy) {
+          passwordPolicy = folder.folderPassword.policy as PasswordPolicyEnum;
           
           // Check if password is required
           passwordRequired = passwordPolicy !== 'NoPassword';
         }
         
         // Store the actual password if it exists
-        if (items[0].folderPassword.password && passwordPolicy !== 'NoPassword') {
+        if (folder.folderPassword.password && passwordPolicy !== 'NoPassword') {
           hasPassword = true;
-          actualPassword = items[0].folderPassword.password;
+          actualPassword = folder.folderPassword.password;
         }
       }
       
-      // Build contacts map
-      (items[0]?.contactsUsingInvite?.items || []).forEach((contact: any) => {
-        if (contact?.id && contact?.item?.publicDisplayName) {
-          contacts[contact.id] = contact.item.publicDisplayName;
-        }
-      });
-      
       // Get media items and filter duplicates by dataKey
-      (items[0]?.fileReferencesPage?.items || []).forEach((ref: any) => {
+      (folder?.fileReferencesPage?.items || []).forEach((ref: any) => {
         const file = ref?.file;
         if (!file?.dataKey) return;
-
-        const { dataKey, thumbnailDataKey, durationInSeconds, ownerContactId } = file;
+  
+        const { dataKey, thumbnailDataKey, durationInSeconds } = file;
         
         // Skip this item if we've already seen this dataKey
         if (uniqueDataKeys.has(dataKey)) {
@@ -1137,13 +1135,12 @@ const PhotoAlbumContent: React.FC = () => {
         
         const url = `${S3_BUCKET_URL}${dataKey}`;
         const thumbnailUrl = thumbnailDataKey ? `${S3_BUCKET_URL}${thumbnailDataKey}` : undefined;
-
+  
         if (dataKey.startsWith("Input/Image/")) {
           mediaItems.push({ 
             type: "image", 
             url,
             thumbnailUrl: thumbnailUrl || url, // Use url as fallback if no thumbnail
-            ownerId: ownerContactId,
             loaded: false
           });
         } else if (dataKey.startsWith("Input/Video/")) {
@@ -1152,7 +1149,6 @@ const PhotoAlbumContent: React.FC = () => {
             url,
             thumbnailUrl: thumbnailUrl || url, // Use url as fallback if no thumbnail
             duration: formatTime(durationInSeconds),
-            ownerId: ownerContactId,
             loaded: false
           });
         }
@@ -1296,8 +1292,22 @@ const PhotoAlbumContent: React.FC = () => {
   };
 
   // Fetch folder data with dual API approach
-  const fetchFolder = async (folderId: string): Promise<AlbumData | null> => {
+  const fetchFolder = async (suffix: string): Promise<AlbumData | null> => {
     try {
+  
+      // Create the input for the new query format
+      const fetchRelationsInput = {
+        targetItemIdentifier____RelationType: `${suffix}____Folder`,
+        index: "targetItemIdentifier____RelationType",
+        limit: 1,
+        scanIndexForward: false,
+        nextToken: null
+      };
+  
+      const variables = {
+        fetchRelationsInput: fetchRelationsInput
+      };
+      
       // First, use the public API to get a quick response
       const publicApiPromise = fetch(AWS_PUBLIC_GRAPHQL_ENDPOINT, {
         method: 'POST',
@@ -1307,7 +1317,7 @@ const PhotoAlbumContent: React.FC = () => {
         },
         body: JSON.stringify({
           query: FETCH_FOLDERS_QUERY,
-          variables: { folderIds: [folderId] }
+          variables: variables
         })
       }).then(response => response.json());
       
@@ -1327,7 +1337,7 @@ const PhotoAlbumContent: React.FC = () => {
           },
           body: JSON.stringify({
             query: FETCH_FOLDERS_QUERY,
-            variables: { folderIds: [folderId] }
+            variables: variables
           })
         }).then(response => response.json());
       })();
@@ -1393,11 +1403,11 @@ const PhotoAlbumContent: React.FC = () => {
       return;
     }
     
-    const folderId = getFolderIdFromUrl();
-    const formattedFolderId = formatFolderId(folderId);
+    const id = getIdFromUrl();
+    const folderId = formatFolderId(id);
     
-    if (formattedFolderId) {
-      const targetPath = `/save-album.html?folderId=${formattedFolderId}`;
+    if (folderId) {
+      const targetPath = `/save-album.html?folderId=${folderId}`;
       const token = await checkLoginWithRefreshOrRedirectToTarget(targetPath);
       
       if (token) {
@@ -1851,26 +1861,31 @@ const PhotoAlbumContent: React.FC = () => {
   // Fetch album data
   useEffect(() => {
     const initAlbum = async () => {
-      const rawFolderId = getFolderIdFromUrl();
+      const id = getIdFromUrl();
       
-      if (!rawFolderId) {
-        setError(t('Please try refreshing the page or contact support if the problem persists.'));
+      if (!id) {
+        setError(t('Valid ID not obtained from query parameter.'));
         setIsLoading(false);
         return;
       }
       
       // Save the raw folder ID for QR code
-      setFolderId(rawFolderId);
+      setId(id);
       
-      const formattedFolderId = formatFolderId(rawFolderId);
+      const folderId = formatFolderId(id);
       
-      if (!formattedFolderId) {
+      if (!folderId) {
         setError(t('Please try refreshing the page or contact support if the problem persists.'));
         setIsLoading(false);
         return;
       }
       
-      const data = await fetchFolder(formattedFolderId);
+      const suffix = id.split('_')[1];
+      if (!suffix) {
+        throw new Error('targetItemIdentifier cannot be obtained');
+      }
+
+      const data = await fetchFolder(suffix);
       
       if (data) {
         setAlbumData(data);
@@ -2145,7 +2160,7 @@ const PhotoAlbumContent: React.FC = () => {
       <QRCodeModal 
         isOpen={showQRModal} 
         onClose={() => setShowQRModal(false)} 
-        folderId={folderId}
+        id={id}
         t={t}
       />
       

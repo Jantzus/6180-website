@@ -14,7 +14,7 @@ export default defineConfig({
         saveAlbum: "save-album.html",
         myalbums: "my-albums.html",
         photos: "photos.html",
-        persona: "persona.html"
+        bio: "bio.html"
         // add more HTML entry points here
       }
     }

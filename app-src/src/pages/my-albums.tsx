@@ -157,7 +157,7 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <button
             onClick={() => {
-              window.location.href = `https://6180.io/persona.html?id=${cognitoUsername}`;
+              window.location.href = `https://6180.io/bio.html?id=${cognitoUsername}`;
             }}
             style={{
               fontSize: "14px",
