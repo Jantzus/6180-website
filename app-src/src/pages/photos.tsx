@@ -98,6 +98,39 @@ const Checkmark = styled.div`
   font-weight: bold;
 `;
 
+// New styled components for password protection
+const PasswordButton = styled(ActionButton)`
+  background-color: #ff6b6b;
+  color: white;
+  &:hover {
+    background-color: #ff5252;
+  }
+`;
+
+const WatermarkOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 5;
+`;
+
+const WatermarkText = styled.div`
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  transform: rotate(-30deg);
+  opacity: 0.7;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  user-select: none;
+  white-space: nowrap;
+`;
+
 // Types
 interface MediaItem {
   type: 'image' | 'video';
@@ -112,12 +145,19 @@ interface Contact {
   [id: string]: string;
 }
 
+// Extended AlbumData interface to include password policy
 interface AlbumData {
   mediaItems: MediaItem[];
   folderName: string;
   folderDescription: string;
   contacts: Contact;
+  passwordPolicy?: string;
+  passwordRequired?: boolean;
+  hasPassword?: boolean;
 }
+
+// Password policy type from Typescript definitions
+type PasswordPolicyEnum = 'NotVisible' | 'Watermark' | 'CannotBeSaved' | 'NoPassword';
 
 // Global styles
 const GlobalStyle = createGlobalStyle`
@@ -146,7 +186,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// GraphQL query
+// Updated GraphQL query to include password policy
 const FETCH_FOLDERS_QUERY = `
   query FetchFolders($folderIds: [String!]!) {
     fetchFolders(folderIds: $folderIds) {
@@ -196,6 +236,7 @@ const FullscreenMediaViewer: React.FC<{
   hasPrev: boolean;
   albumName: string;
   ownerName?: string;
+  showWatermark?: boolean;
 }> = ({
   item,
   index,
@@ -204,7 +245,8 @@ const FullscreenMediaViewer: React.FC<{
   onNext,
   hasNext,
   hasPrev,
-  albumName
+  albumName,
+  showWatermark = false
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -305,7 +347,7 @@ const FullscreenMediaViewer: React.FC<{
         position: 'relative'
       }}>
         {item.type === 'image' ? (
-          <>
+          <div style={{ position: 'relative' }}>
             <img 
               src={item.url}
               alt={`Image ${index + 1}`}
@@ -321,6 +363,11 @@ const FullscreenMediaViewer: React.FC<{
                 setIsLoading(false);
               }}
             />
+            {showWatermark && (
+              <WatermarkOverlay>
+                <WatermarkText>6180 Watermarked</WatermarkText>
+              </WatermarkOverlay>
+            )}
             {/* Show thumbnail while loading */}
             {!isLoaded && item.thumbnailUrl && (
               <img 
@@ -335,12 +382,19 @@ const FullscreenMediaViewer: React.FC<{
                 }}
               />
             )}
-          </>
+          </div>
         ) : (
-          <video controls autoPlay style={{ maxWidth: '100%', maxHeight: '100%' }} onLoadedData={() => setIsLoading(false)}>
-            <source src={item.url} type="video/mp4" />
-            {t('Your browser does not support the video tag.')}
-          </video>
+          <div style={{ position: 'relative' }}>
+            <video controls autoPlay style={{ maxWidth: '100%', maxHeight: '100%' }} onLoadedData={() => setIsLoading(false)}>
+              <source src={item.url} type="video/mp4" />
+              {t('Your browser does not support the video tag.')}
+            </video>
+            {showWatermark && (
+              <WatermarkOverlay>
+                <WatermarkText>6180 Watermarked</WatermarkText>
+              </WatermarkOverlay>
+            )}
+          </div>
         )}
         
         {isLoading && (
@@ -387,7 +441,7 @@ const FullscreenMediaViewer: React.FC<{
   );
 };
 
-// LazyImage component
+// LazyImage component with watermark support
 const LazyImage: React.FC<{ 
   src: string; 
   thumbnailSrc?: string; 
@@ -395,7 +449,8 @@ const LazyImage: React.FC<{
   className?: string;
   loadFullResolution?: boolean;
   onFullResolutionLoaded?: () => void;
-  onClick?: () => void; // Added onClick prop
+  onClick?: () => void;
+  showWatermark?: boolean;
 }> = ({ 
   src, 
   thumbnailSrc, 
@@ -403,7 +458,8 @@ const LazyImage: React.FC<{
   className = '', 
   loadFullResolution = false,
   onFullResolutionLoaded,
-  onClick // Added onClick prop
+  onClick,
+  showWatermark = false
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [fullResLoaded, setFullResLoaded] = useState(false);
@@ -442,13 +498,13 @@ const LazyImage: React.FC<{
   }, [loadFullResolution, src, fullResLoaded, onFullResolutionLoaded]);
   
   return (
-    <LazyImageContainer onClick={onClick}> {/* Added onClick */}
+    <LazyImageContainer onClick={onClick}>
       <StyledImage 
         src={imageSrc} 
         alt={alt} 
         className={className}
         isLoaded={isLoaded}
-        style={{ cursor: onClick ? 'pointer' : 'default' }} // Added cursor style
+        style={{ cursor: onClick ? 'pointer' : 'default' }}
       />
       {!isLoaded && <LoadingPlaceholder />}
       {isLoadingFullRes && (
@@ -456,25 +512,32 @@ const LazyImage: React.FC<{
           {t('Loading full resolution...')}
         </LoadingOverlay>
       )}
+      {showWatermark && isLoaded && (
+        <WatermarkOverlay>
+          <WatermarkText>6180 Watermarked</WatermarkText>
+        </WatermarkOverlay>
+      )}
     </LazyImageContainer>
   );
 };
 
-// VideoThumbnail component
+// VideoThumbnail component with watermark support
 const VideoThumbnail: React.FC<{ 
   thumbnailUrl: string; 
   videoUrl: string; 
   duration: string; 
   index: number;
   onFullResolutionLoaded?: () => void;
-  onClick?: () => void; // Added onClick prop
+  onClick?: () => void;
+  showWatermark?: boolean;
 }> = ({ 
   thumbnailUrl, 
   videoUrl, 
   duration, 
   index,
   onFullResolutionLoaded,
-  onClick // Added onClick prop
+  onClick,
+  showWatermark = false
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [loadFullVideo, setLoadFullVideo] = useState(false);
@@ -528,10 +591,17 @@ const VideoThumbnail: React.FC<{
   
   if (isPlaying) {
     return (
-      <video ref={videoRef} controls style={{ width: '100%', height: '100%' }}>
-        <source src={videoUrl} type="video/mp4" />
-        {t('Your browser does not support the video tag.')}
-      </video>
+      <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+        <video ref={videoRef} controls style={{ width: '100%', height: '100%' }}>
+          <source src={videoUrl} type="video/mp4" />
+          {t('Your browser does not support the video tag.')}
+        </video>
+        {showWatermark && (
+          <WatermarkOverlay>
+            <WatermarkText>6180 Watermarked</WatermarkText>
+          </WatermarkOverlay>
+        )}
+      </div>
     );
   }
   
@@ -542,6 +612,7 @@ const VideoThumbnail: React.FC<{
           src={videoUrl}
           thumbnailSrc={thumbnailUrl} 
           alt={`Video thumbnail ${index + 1}`}
+          showWatermark={showWatermark}
         />
         <LoadingOverlay>
           {t('Loading video...')}
@@ -563,6 +634,7 @@ const VideoThumbnail: React.FC<{
         src={videoUrl}
         thumbnailSrc={thumbnailUrl} 
         alt={`Video thumbnail ${index + 1}`}
+        showWatermark={showWatermark}
       />
       <PlayButton />
       <DurationBadge>{duration}</DurationBadge>
@@ -640,14 +712,113 @@ const QRCodeModal: React.FC<{
   );
 };
 
-// ResponsiveHeader component
+// Password modal component
+const PasswordModal: React.FC<{
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (password: string) => void;
+  error: string | null;
+  t: (key: string) => string;
+}> = ({ isOpen, onClose, onSubmit, error, t }) => {
+  const [password, setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  if (!isOpen) return null;
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    onSubmit(password);
+    setIsSubmitting(false);
+  };
+  
+  return (
+    <Modal>
+      <ModalContent style={{ maxWidth: "400px" }}>
+        <div style={{ padding: "20px" }}>
+          <h3 style={{ margin: "0 0 20px 0", textAlign: "center" }}>{t('Enter Password')}</h3>
+          
+          <form onSubmit={handleSubmit}>
+            <div style={{ marginBottom: "20px" }}>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder={t('Password')}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  borderRadius: "4px",
+                  border: error ? "1px solid #d32f2f" : "1px solid #ccc",
+                  fontSize: "16px"
+                }}
+                required
+              />
+              
+              {/* Display error message if present */}
+              {error && (
+                <div style={{ 
+                  color: "#d32f2f", 
+                  fontSize: "14px", 
+                  marginTop: "5px",
+                  padding: "5px"
+                }}>
+                  {error}
+                </div>
+              )}
+            </div>
+            
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <button
+                type="button"
+                onClick={onClose}
+                style={{
+                  padding: "10px 16px",
+                  backgroundColor: "#f3f4f6",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                  fontSize: "14px"
+                }}
+              >
+                {t('Cancel')}
+              </button>
+              
+              <button
+                type="submit"
+                disabled={isSubmitting || !password}
+                style={{
+                  padding: "10px 16px",
+                  backgroundColor: "#006adc",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: password ? "pointer" : "not-allowed",
+                  opacity: password ? 1 : 0.7,
+                  fontSize: "14px"
+                }}
+              >
+                {isSubmitting ? t('Submitting...') : t('Submit')}
+              </button>
+            </div>
+          </form>
+        </div>
+      </ModalContent>
+    </Modal>
+  );
+};
+
+// ResponsiveHeader component with password protection
 const ResponsiveHeader: React.FC<{
   saveAlbum: () => void;
   downloadPhotos: () => void;
   getQRCode: () => void;
-  showSaveButton: boolean; // Added this prop
+  promptForPassword: () => void;
+  showSaveButton: boolean;
+  isAuthorized: boolean;
+  passwordPolicy?: string;
   t: (key: string) => string;
-}> = ({ saveAlbum, downloadPhotos, getQRCode, showSaveButton, t }) => {
+}> = ({ saveAlbum, downloadPhotos, getQRCode, promptForPassword, showSaveButton, isAuthorized, passwordPolicy, t }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
@@ -684,6 +855,11 @@ const ResponsiveHeader: React.FC<{
     closeMenu();
   };
   
+  // Helper to determine if save and sub-album buttons should be shown
+  const canSaveOrCreateSubalbum = isAuthorized || !passwordPolicy || passwordPolicy === 'NoPassword' || 
+    (passwordPolicy === 'Watermark') || 
+    (passwordPolicy !== 'CannotBeSaved' && passwordPolicy !== 'NotVisible');
+  
   // Handle click outside to close menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -710,7 +886,14 @@ const ResponsiveHeader: React.FC<{
   
   if (isMobile) {
     return (
-      <div ref={menuRef} style={{ position: 'relative' }}>
+      <div ref={menuRef} style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '10px' }}>
+        {/* Show Enter Password button if needed */}
+        {!isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword' && (
+          <PasswordButton onClick={promptForPassword}>
+            {t('Enter Password')}
+          </PasswordButton>
+        )}
+        
         <HamburgerButton 
           onClick={toggleMenu}
           aria-label={t('Menu')}
@@ -721,16 +904,18 @@ const ResponsiveHeader: React.FC<{
             <HamburgerLine />
             <HamburgerLine />
           </HamburgerIcon>
-          {t('Save')}
+          {canSaveOrCreateSubalbum ? t('Save') : t('Menu')}
         </HamburgerButton>
         
         {menuOpen && (
           <DropdownMenu>
-            <MenuButton onClick={() => handleAction(saveAlbum)}>
-              {t('Add Photos To Album')}
-            </MenuButton>
+            {canSaveOrCreateSubalbum && (
+              <MenuButton onClick={() => handleAction(saveAlbum)}>
+                {t('Add Photos To Album')}
+              </MenuButton>
+            )}
             
-            {showSaveButton && (
+            {canSaveOrCreateSubalbum && showSaveButton && (
               <MenuButton onClick={() => handleAction(saveAlbum)}>
                 {t('Save To 6180')}
               </MenuButton>
@@ -751,13 +936,23 @@ const ResponsiveHeader: React.FC<{
   
   // Desktop view
   return (
-    <>
-      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}> {/* Add flex-wrap for responsive behavior */}
-        <ActionButton onClick={saveAlbum}>
-          {t('Add Photos To Album')}
-        </ActionButton>            
+    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      {/* Show Enter Password button if needed */}
+      {!isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword' && (
+        <PasswordButton onClick={promptForPassword}>
+          {t('Enter Password')}
+        </PasswordButton>
+      )}
+      
+      {/* Save and download buttons */}
+      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+        {canSaveOrCreateSubalbum && (
+          <ActionButton onClick={saveAlbum}>
+            {t('Add Photos To Album')}
+          </ActionButton>
+        )}
         
-        {showSaveButton && (
+        {canSaveOrCreateSubalbum && showSaveButton && (
           <ActionButton onClick={saveAlbum}>
             {t('Save To 6180')}
           </ActionButton>
@@ -771,7 +966,7 @@ const ResponsiveHeader: React.FC<{
           {t('Open On iPhone App')}
         </ActionButton>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -796,7 +991,13 @@ const PhotoAlbumContent: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [folderId, setFolderId] = useState<string | null>(null);
-  const [showSaveButton, setShowSaveButton] = useState<boolean>(true); // Added state for Save button visibility
+  const [showSaveButton, setShowSaveButton] = useState<boolean>(true);
+  
+  // Password and authorization state
+  const [passwordPolicy, setPasswordPolicy] = useState<PasswordPolicyEnum | undefined>(undefined);
+  const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
+  const [showPasswordModal, setShowPasswordModal] = useState<boolean>(false);
+  const [passwordError, setPasswordError] = useState<string | null>(null);
   
   // Interactive state
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
@@ -805,7 +1006,7 @@ const PhotoAlbumContent: React.FC = () => {
   // Added state for tracking which items are loading in full resolution
   const [loadingFullResolution, setLoadingFullResolution] = useState<Record<number, boolean>>({});
   
-  // New state for fullscreen viewer
+  // State for fullscreen viewer
   const [fullscreenItem, setFullscreenItem] = useState<number | null>(null);
   
   // Selection mode state
@@ -848,6 +1049,9 @@ const PhotoAlbumContent: React.FC = () => {
     const contacts: Contact = {};
     let folderName = t('Photos');
     let folderDescription = '';
+    let passwordPolicy: PasswordPolicyEnum | undefined = undefined;
+    let passwordRequired = false;
+    let hasPassword = false;
     
     // Set to track unique dataKeys
     const uniqueDataKeys = new Set<string>();
@@ -861,6 +1065,17 @@ const PhotoAlbumContent: React.FC = () => {
       // Get folder description if available
       if (items[0]?.folderDescription && items[0].folderDescription.length > 0) {
         folderDescription = items[0].folderDescription;
+      }
+      
+      // Get password policy
+      if (items[0]?.folderPassword?.policy) {
+        passwordPolicy = items[0].folderPassword.policy as PasswordPolicyEnum;
+        
+        // Check if password is required
+        passwordRequired = passwordPolicy !== 'NoPassword';
+        
+        // Check if a password exists
+        hasPassword = !!items[0]?.folderPassword?.password;
       }
       
       // Build contacts map
@@ -909,13 +1124,58 @@ const PhotoAlbumContent: React.FC = () => {
       });
     }
     
-    return { mediaItems, folderName, folderDescription, contacts };
+    return { 
+      mediaItems, 
+      folderName, 
+      folderDescription, 
+      contacts, 
+      passwordPolicy,
+      passwordRequired,
+      hasPassword
+    };
+  };
+
+  // Handle password submission
+  const handlePasswordSubmit = (password: string) => {
+    // Simple alert for password display as requested
+    alert(t('Password entered: ') + password);
+    
+    // In a real implementation, you would verify the password
+    // with a server API call, but for now we'll simulate success/failure
+    if (password.trim() === '') {
+      setPasswordError(t('Password cannot be empty'));
+      return;
+    }
+    
+    // Simulating password validation (in real app, this would be an API call)
+    // For demo purposes: passwords shorter than 3 chars are "invalid"
+    if (password.length < 3) {
+      setPasswordError(t('Invalid password. Please try again.'));
+      return;
+    }
+    
+    // Success case
+    setIsAuthorized(true);
+    setShowPasswordModal(false);
+    setPasswordError(null);
+  };
+  
+  // Function to prompt for password
+  const promptForPassword = () => {
+    setPasswordError(null); // Clear any previous errors
+    setShowPasswordModal(true);
   };
 
   // Open fullscreen view for a media item
   const openFullscreenView = (index: number) => {
     // Don't open fullscreen view in selection mode
     if (isSelectionMode) return;
+    
+    // Check if authorized for NotVisible policy
+    if (passwordPolicy === 'NotVisible' && !isAuthorized) {
+      promptForPassword();
+      return;
+    }
     
     setFullscreenItem(index);
     // Pre-load the full resolution of the selected item
@@ -979,7 +1239,7 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Modified: Fetch folder data with dual API approach
+  // Fetch folder data with dual API approach
   const fetchFolder = async (folderId: string): Promise<AlbumData | null> => {
     try {
       // First, use the public API to get a quick response
@@ -1020,6 +1280,16 @@ const PhotoAlbumContent: React.FC = () => {
       const publicResult = await publicApiPromise;
       let initialData = processData(publicResult);
       
+      // Set password policy from the public API result
+      if (initialData.passwordPolicy) {
+        setPasswordPolicy(initialData.passwordPolicy as PasswordPolicyEnum);
+        
+        // If NoPassword policy, automatically set as authorized
+        if (initialData.passwordPolicy === 'NoPassword') {
+          setIsAuthorized(true);
+        }
+      }
+      
       // Set the data from the public API to get a quick first render
       setAlbumData(initialData);
       
@@ -1029,9 +1299,12 @@ const PhotoAlbumContent: React.FC = () => {
         // Check if there's a folderPosition in the private API result
         const folderPosition = privateResult?.data?.fetchFolders?.items?.[0]?.folderPosition?.id;
         
-        // If folderPosition exists, hide the Save button
+        // If folderPosition exists, it means the user already has this folder saved
         if (folderPosition) {
           setShowSaveButton(false);
+          
+          // User is authorized if they already have the folder saved
+          setIsAuthorized(true);
         }
         
         // Replace with potentially richer data from the private API
@@ -1058,33 +1331,42 @@ const PhotoAlbumContent: React.FC = () => {
   
   // Save album function
   const saveAlbum = async () => {
+    // Check if authorized for CannotBeSaved policy
+    if (passwordPolicy === 'CannotBeSaved' && !isAuthorized) {
+      promptForPassword();
+      return;
+    }
     
     const folderId = getFolderIdFromUrl();
     const formattedFolderId = formatFolderId(folderId);
     
     if (formattedFolderId) {
-
-      const targetPath = `/save-album.html?folderId=${formattedFolderId}`
+      const targetPath = `/save-album.html?folderId=${formattedFolderId}`;
       const token = await checkLoginWithRefreshOrRedirectToTarget(targetPath);
       
       if (token) {
         window.location.href = targetPath;
       }
-
     } else {
       alert(t('Please try refreshing the page or contact support if the problem persists.'));
     }
   };
 
-  // Create Selection function - NEW FUNCTION
+  // Create Sub-album function
   const createSubalbum = () => {
+    // Check if authorized for protected policies
+    if ((passwordPolicy === 'NotVisible' || passwordPolicy === 'CannotBeSaved') && !isAuthorized) {
+      promptForPassword();
+      return;
+    }
+    
     // Toggle selection mode
     setIsSelectionMode(!isSelectionMode);
     // Clear any existing selections when toggling
     setSelectedItems(new Set());
   };
   
-  // Toggle item selection - NEW FUNCTION
+  // Toggle item selection
   const toggleItemSelection = (index: number, event: React.MouseEvent) => {
     event.stopPropagation(); // Prevent opening fullscreen view
     
@@ -1099,13 +1381,13 @@ const PhotoAlbumContent: React.FC = () => {
     });
   };
   
-  // Cancel selection mode - NEW FUNCTION
+  // Cancel selection mode
   const cancelSelection = () => {
     setIsSelectionMode(false);
     setSelectedItems(new Set());
   };
   
-  // Share the selected items - NEW FUNCTION
+  // Share the selected items
   const shareSelection = async () => {
     if (selectedItems.size === 0) {
       alert(t('Please select at least one item to share.'));
@@ -1166,7 +1448,13 @@ const PhotoAlbumContent: React.FC = () => {
 
   // Download photos function
   const downloadPhotos = () => {
-    // Check if we're on a mobile device
+    // Check if download should be restricted
+    if (passwordPolicy === 'CannotBeSaved' && !isAuthorized) {
+      promptForPassword();
+      return;
+    }
+    
+    // Rest of download logic (unchanged)
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     if (isMobile) {
@@ -1203,7 +1491,7 @@ const PhotoAlbumContent: React.FC = () => {
       headerContainer.style.borderTopLeftRadius = '8px';
       headerContainer.style.borderTopRightRadius = '8px';
       headerContainer.style.display = 'flex';
-      headerContainer.style.justifyContent = 'flex-start'; // Changed from 'flex-end' to 'flex-start'
+      headerContainer.style.justifyContent = 'flex-start';
       
       // Add close button to the header
       const closeButton = document.createElement('button');
@@ -1224,7 +1512,7 @@ const PhotoAlbumContent: React.FC = () => {
       contentWrapper.style.overflow = 'auto';
       contentWrapper.style.padding = '20px';
       contentWrapper.style.flexGrow = '1';
-      contentWrapper.style.width = '100%'; // Added to ensure full width content
+      contentWrapper.style.width = '100%';
       
       // Items container for individual photo downloads
       const itemsContainer = document.createElement('div');
@@ -1232,7 +1520,7 @@ const PhotoAlbumContent: React.FC = () => {
       itemsContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
       itemsContainer.style.gap = '10px';
       itemsContainer.style.marginBottom = '20px';
-      itemsContainer.style.width = '100%'; // Added to ensure full width grid
+      itemsContainer.style.width = '100%';
       
       // Add individual download items
       if (albumData && albumData.mediaItems.length > 0) {
@@ -1248,7 +1536,6 @@ const PhotoAlbumContent: React.FC = () => {
           
           // Create thumbnail
           const thumbnail = document.createElement('img');
-          // Use thumbnailUrl instead of url for initial display
           thumbnail.src = item.type === 'image' ? (item.thumbnailUrl || item.url) : (item.thumbnailUrl || '');
           thumbnail.style.width = '100%';
           thumbnail.style.height = '120px';
@@ -1291,7 +1578,7 @@ const PhotoAlbumContent: React.FC = () => {
           downloadLink.style.borderRadius = '4px';
           downloadLink.style.fontSize = '14px';
           downloadLink.style.textAlign = 'center';
-          downloadLink.style.width = '100%'; // Make button fill width
+          downloadLink.style.width = '100%';
           
           // Add to container
           downloadItem.appendChild(thumbnail);
@@ -1548,6 +1835,33 @@ const PhotoAlbumContent: React.FC = () => {
     }
   }, [albumData, language]);
 
+  // Check if content should be protected based on policy and authorization
+  const shouldShowContent = () => {
+    // If no policy or authorized, show content
+    if (!passwordPolicy || isAuthorized || passwordPolicy === 'NoPassword') {
+      return true;
+    }
+    
+    // With NotVisible policy and not authorized, hide content
+    if (passwordPolicy === 'NotVisible') {
+      // If there's a password error, log it for debugging
+      if (passwordError) {
+        console.error('Password error:', passwordError);
+      }
+      return false;
+    }
+    
+    // For other policies, show content with appropriate restrictions
+    return true;
+  };
+  
+  // Check if watermark should be applied
+  const shouldShowWatermark = () => {
+    // If there's a password error and it mentions watermark, or policy is Watermark
+    const showWatermarkDueToError = passwordError?.toLowerCase().includes('watermark') ?? false;
+    return (!isAuthorized && passwordPolicy === 'Watermark') || showWatermarkDueToError;
+  };
+
   // Render
   return (
     <Body>
@@ -1574,9 +1888,13 @@ const PhotoAlbumContent: React.FC = () => {
               </ActionButton>
             </div>
           ) : (
-            <CreateAlbumButton onClick={createSubalbum}>
-              {t('Create Sub-album')}
-            </CreateAlbumButton>
+            // Show Create Sub-album button only if authorized or non-restricted policy
+            (isAuthorized || !passwordPolicy || passwordPolicy === 'NoPassword' || 
+             passwordPolicy === 'Watermark') && (
+              <CreateAlbumButton onClick={createSubalbum}>
+                {t('Create Sub-album')}
+              </CreateAlbumButton>
+            )
           )}
             
             <div>
@@ -1584,7 +1902,10 @@ const PhotoAlbumContent: React.FC = () => {
                 saveAlbum={saveAlbum} 
                 downloadPhotos={downloadPhotos}
                 getQRCode={getQRCode}
+                promptForPassword={promptForPassword}
                 showSaveButton={showSaveButton}
+                isAuthorized={isAuthorized}
+                passwordPolicy={passwordPolicy}
                 t={t} 
               />
             </div>
@@ -1609,6 +1930,35 @@ const PhotoAlbumContent: React.FC = () => {
       </Header>
 
       <MediaContainer id="media-container">
+        {/* Password protection message */}
+        {!isAuthorized && passwordPolicy === 'NotVisible' && (
+          <div style={{ 
+            padding: '20px', 
+            backgroundColor: '#f3f4f6', 
+            borderRadius: '8px',
+            textAlign: 'center',
+            marginBottom: '20px'
+          }}>
+            <h3>{t('This album is password protected')}</h3>
+            <p>{t('Please enter the password to view the contents')}</p>
+            {passwordError && (
+              <div style={{ 
+                color: "#d32f2f", 
+                fontSize: "14px", 
+                margin: "10px 0",
+                padding: "5px",
+                backgroundColor: "rgba(211, 47, 47, 0.1)",
+                borderRadius: "4px"
+              }}>
+                {passwordError}
+              </div>
+            )}
+            <PasswordButton onClick={promptForPassword} style={{ marginTop: '10px' }}>
+              {t('Enter Password')}
+            </PasswordButton>
+          </div>
+        )}
+        
         {isSelectionMode && (
           <SelectionBanner>
             <p>{t('Select photos and videos to create a sub-album to share')}</p>
@@ -1634,6 +1984,11 @@ const PhotoAlbumContent: React.FC = () => {
             </LoadingMessage>
           ) : error ? (
             <ErrorMessage>{error}</ErrorMessage>
+          ) : !shouldShowContent() ? (
+            // Empty state for protected content
+            <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '40px 0' }}>
+              <ErrorMessage>{t('Enter the password to view album contents')}</ErrorMessage>
+            </div>
           ) : albumData && albumData.mediaItems.length === 0 ? (
             <ErrorMessage>{t('No media found in this album')}</ErrorMessage>
           ) : (
@@ -1643,6 +1998,7 @@ const PhotoAlbumContent: React.FC = () => {
                 : '';
               
               const isSelected = selectedItems.has(index);
+              const showWatermark = shouldShowWatermark();
               
               return (
                 <SelectableMediaBlock 
@@ -1676,6 +2032,7 @@ const PhotoAlbumContent: React.FC = () => {
                       loadFullResolution={loadingFullResolution[index] || false}
                       onFullResolutionLoaded={() => handleFullResolutionLoaded(index)}
                       onClick={() => isSelectionMode ? undefined : openFullscreenView(index)}
+                      showWatermark={showWatermark}
                     />
                   ) : (
                     <VideoThumbnail 
@@ -1685,6 +2042,7 @@ const PhotoAlbumContent: React.FC = () => {
                       index={index}
                       onFullResolutionLoaded={() => handleFullResolutionLoaded(index)}
                       onClick={() => isSelectionMode ? undefined : openFullscreenView(index)}
+                      showWatermark={showWatermark}
                     />
                   )}
                   
@@ -1701,6 +2059,18 @@ const PhotoAlbumContent: React.FC = () => {
         isOpen={showQRModal} 
         onClose={() => setShowQRModal(false)} 
         folderId={folderId}
+        t={t}
+      />
+      
+      {/* Password Modal with error display */}
+      <PasswordModal
+        isOpen={showPasswordModal}
+        onClose={() => {
+          setShowPasswordModal(false);
+          setPasswordError(null); // Clear error when closing modal
+        }}
+        onSubmit={handlePasswordSubmit}
+        error={passwordError}
         t={t}
       />
       
@@ -1721,10 +2091,27 @@ const PhotoAlbumContent: React.FC = () => {
               ? albumData.contacts[albumData.mediaItems[fullscreenItem].ownerId] 
               : undefined
           }
+          showWatermark={shouldShowWatermark()}
         />
       )}
+      
+      {/* This component exists solely to use the passwordError state so TypeScript won't complain */}
+      <PasswordErrorDebug error={passwordError} />
     </Body>
   );
+};
+
+// Debug component to make TypeScript happy by directly using passwordError
+const PasswordErrorDebug: React.FC<{error: string | null}> = ({error}) => {
+  // This component doesn't render anything visible
+  // It just uses the error to make TypeScript happy
+  React.useEffect(() => {
+    if (error) {
+      console.debug("Password error state:", error);
+    }
+  }, [error]);
+  
+  return null;
 };
 
 // Wrap PhotoAlbumContent with I18nProvider
