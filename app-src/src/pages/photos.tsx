@@ -154,6 +154,7 @@ interface AlbumData {
   passwordPolicy?: string;
   passwordRequired?: boolean;
   hasPassword?: boolean;
+  actualPassword?: string; // Add this to store the actual password
 }
 
 // Password policy type from Typescript definitions
@@ -1052,6 +1053,7 @@ const PhotoAlbumContent: React.FC = () => {
     let passwordPolicy: PasswordPolicyEnum | undefined = undefined;
     let passwordRequired = false;
     let hasPassword = false;
+    let actualPassword: string | undefined = undefined;
     
     // Set to track unique dataKeys
     const uniqueDataKeys = new Set<string>();
@@ -1067,15 +1069,20 @@ const PhotoAlbumContent: React.FC = () => {
         folderDescription = items[0].folderDescription;
       }
       
-      // Get password policy
-      if (items[0]?.folderPassword?.policy) {
-        passwordPolicy = items[0].folderPassword.policy as PasswordPolicyEnum;
+      // Get password policy and the actual password
+      if (items[0]?.folderPassword) {
+        if (items[0].folderPassword.policy) {
+          passwordPolicy = items[0].folderPassword.policy as PasswordPolicyEnum;
+          
+          // Check if password is required
+          passwordRequired = passwordPolicy !== 'NoPassword';
+        }
         
-        // Check if password is required
-        passwordRequired = passwordPolicy !== 'NoPassword';
-        
-        // Check if a password exists
-        hasPassword = !!items[0]?.folderPassword?.password;
+        // Store the actual password if it exists
+        if (items[0].folderPassword.password) {
+          hasPassword = true;
+          actualPassword = items[0].folderPassword.password;
+        }
       }
       
       // Build contacts map
@@ -1131,25 +1138,41 @@ const PhotoAlbumContent: React.FC = () => {
       contacts, 
       passwordPolicy,
       passwordRequired,
-      hasPassword
+      hasPassword,
+      actualPassword
     };
   };
 
   // Handle password submission
   const handlePasswordSubmit = (password: string) => {
-    // Simple alert for password display as requested
-    alert(t('Password entered: ') + password);
+    // Clear any previous errors
+    setPasswordError(null);
     
-    // In a real implementation, you would verify the password
-    // with a server API call, but for now we'll simulate success/failure
+    // First check if password is empty
     if (password.trim() === '') {
       setPasswordError(t('Password cannot be empty'));
       return;
     }
     
-    // Simulating password validation (in real app, this would be an API call)
-    // For demo purposes: passwords shorter than 3 chars are "invalid"
-    if (password.length < 3) {
+    // Get the actual password from the album data
+    const actualPassword = albumData?.actualPassword;
+    
+    // If there's no password to validate against
+    if (!actualPassword) {
+      // If we know there should be a password but we couldn't get it
+      if (albumData?.hasPassword) {
+        setPasswordError(t('Unable to validate password. Please try again later.'));
+        return;
+      } else {
+        // If there's no password, just authorize the user (shouldn't normally happen)
+        setIsAuthorized(true);
+        setShowPasswordModal(false);
+        return;
+      }
+    }
+    
+    // Compare entered password with actual password
+    if (password !== actualPassword) {
       setPasswordError(t('Invalid password. Please try again.'));
       return;
     }
