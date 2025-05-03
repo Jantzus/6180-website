@@ -100,10 +100,10 @@ const Checkmark = styled.div`
 
 // New styled components for password protection
 const PasswordButton = styled(ActionButton)`
-  background-color: #ff6b6b;
+  background-color: #4caf50;
   color: white;
   &:hover {
-    background-color: #ff5252;
+    background-color: #45a049;
   }
 `;
 
@@ -129,6 +129,18 @@ const WatermarkText = styled.div`
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
   user-select: none;
   white-space: nowrap;
+`;
+
+const HeaderControlsWithFullWidth = styled(HeaderControls)`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  
+  > div {
+    width: auto; // Changed from 100% to auto to prevent stretching
+    display: flex;
+    align-items: center;
+  }
 `;
 
 // Types
@@ -809,17 +821,16 @@ const PasswordModal: React.FC<{
   );
 };
 
-// ResponsiveHeader component with password protection
 const ResponsiveHeader: React.FC<{
   saveAlbum: () => void;
   downloadPhotos: () => void;
   getQRCode: () => void;
   promptForPassword: () => void;
   showSaveButton: boolean;
-  isAuthorized: boolean;
+  showSaveButtons: boolean;
   passwordPolicy?: string;
   t: (key: string) => string;
-}> = ({ saveAlbum, downloadPhotos, getQRCode, promptForPassword, showSaveButton, isAuthorized, passwordPolicy, t }) => {
+}> = ({ saveAlbum, downloadPhotos, getQRCode, promptForPassword, showSaveButtons, passwordPolicy, t }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
@@ -856,11 +867,6 @@ const ResponsiveHeader: React.FC<{
     closeMenu();
   };
   
-  // Helper to determine if save and sub-album buttons should be shown
-  const canSaveOrCreateSubalbum = isAuthorized || !passwordPolicy || passwordPolicy === 'NoPassword' || 
-    (passwordPolicy === 'Watermark') || 
-    (passwordPolicy !== 'CannotBeSaved' && passwordPolicy !== 'NotVisible');
-  
   // Handle click outside to close menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -887,86 +893,108 @@ const ResponsiveHeader: React.FC<{
   
   if (isMobile) {
     return (
-      <div ref={menuRef} style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '10px' }}>
-        {/* Show Enter Password button if needed */}
-        {!isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword' && (
-          <PasswordButton onClick={promptForPassword}>
-            {t('Enter Password')}
-          </PasswordButton>
+      <div 
+        ref={menuRef} 
+        style={{ 
+          position: 'relative', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'space-between', 
+          width: '100%',
+          flexWrap: 'nowrap' // Prevent wrapping
+        }}
+      >
+        {/* Only show the hamburger menu if user can save or create sub-album */}
+        {showSaveButtons && (
+          <div style={{ flexShrink: 0 }}>
+            <HamburgerButton 
+              onClick={toggleMenu}
+              aria-label={t('Menu')}
+              aria-expanded={menuOpen}
+            >
+              <HamburgerIcon>
+                <HamburgerLine />
+                <HamburgerLine />
+                <HamburgerLine />
+              </HamburgerIcon>
+              {t('Save')}
+            </HamburgerButton>
+            
+            {menuOpen && (
+              <DropdownMenu>
+                <MenuButton onClick={() => handleAction(saveAlbum)}>
+                  {t('Add Photos To Album')}
+                </MenuButton>
+                
+                <MenuButton onClick={() => handleAction(saveAlbum)}>
+                  {t('Save To 6180')}
+                </MenuButton>
+                
+                <MenuButton onClick={() => handleAction(downloadPhotos)}>
+                  {t('Download Photos')}
+                </MenuButton>
+                
+                <MenuButton onClick={() => handleAction(getQRCode)}>
+                  {t('Open On iPhone App')}
+                </MenuButton>
+              </DropdownMenu>
+            )}
+          </div>
         )}
-        
-        <HamburgerButton 
-          onClick={toggleMenu}
-          aria-label={t('Menu')}
-          aria-expanded={menuOpen}
-        >
-          <HamburgerIcon>
-            <HamburgerLine />
-            <HamburgerLine />
-            <HamburgerLine />
-          </HamburgerIcon>
-          {canSaveOrCreateSubalbum ? t('Save') : t('Menu')}
-        </HamburgerButton>
-        
-        {menuOpen && (
-          <DropdownMenu>
-            {canSaveOrCreateSubalbum && (
-              <MenuButton onClick={() => handleAction(saveAlbum)}>
-                {t('Add Photos To Album')}
-              </MenuButton>
-            )}
-            
-            {canSaveOrCreateSubalbum && showSaveButton && (
-              <MenuButton onClick={() => handleAction(saveAlbum)}>
-                {t('Save To 6180')}
-              </MenuButton>
-            )}
-            
-            <MenuButton onClick={() => handleAction(downloadPhotos)}>
-              {t('Download Photos')}
-            </MenuButton>
-            
-            <MenuButton onClick={() => handleAction(getQRCode)}>
-              {t('Open On iPhone App')}
-            </MenuButton>
-          </DropdownMenu>
+
+        {/* Show Enter Password button if needed - now on the right */}
+        {!showSaveButtons && passwordPolicy && passwordPolicy !== 'NoPassword' && (
+          <div style={{ marginLeft: 'auto', flexShrink: 0 }}> {/* Added flexShrink */}
+            <PasswordButton onClick={promptForPassword}>
+              {t('Enter Password')}
+            </PasswordButton>
+          </div>
         )}
       </div>
     );
   }
   
-  // Desktop view
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-      {/* Show Enter Password button if needed */}
-      {!isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword' && (
-        <PasswordButton onClick={promptForPassword}>
-          {t('Enter Password')}
-        </PasswordButton>
-      )}
-      
-      {/* Save and download buttons */}
-      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-        {canSaveOrCreateSubalbum && (
+    <div style={{ 
+      display: 'flex', 
+      alignItems: 'center', 
+      gap: '20px',
+      justifyContent: 'flex-end',
+      flexWrap: 'nowrap'
+    }}>
+      {/* Only show action buttons if user can save or create sub-album */}
+      {showSaveButtons && (
+        <div style={{ 
+          display: 'flex', 
+          gap: '20px',
+          flexWrap: 'wrap'
+        }}>
           <ActionButton onClick={saveAlbum}>
             {t('Add Photos To Album')}
           </ActionButton>
-        )}
-        
-        {canSaveOrCreateSubalbum && showSaveButton && (
+          
           <ActionButton onClick={saveAlbum}>
             {t('Save To 6180')}
           </ActionButton>
-        )}
-        
-        <ActionButton onClick={downloadPhotos}>
-          {t('Download Photos')}
-        </ActionButton>
-        
-        <ActionButton onClick={getQRCode}>
-          {t('Open On iPhone App')}
-        </ActionButton>
-      </div>
+          
+          <ActionButton onClick={downloadPhotos}>
+            {t('Download Photos')}
+          </ActionButton>
+          
+          <ActionButton onClick={getQRCode}>
+            {t('Open On iPhone App')}
+          </ActionButton>
+        </div>
+      )}
+      
+      {/* Show Enter Password button if needed */}
+      {!showSaveButtons && (
+        <div>
+          <PasswordButton onClick={promptForPassword}>
+            {t('Enter Password')}
+          </PasswordButton>
+        </div>
+      )}
     </div>
   );
 };
@@ -1079,7 +1107,7 @@ const PhotoAlbumContent: React.FC = () => {
         }
         
         // Store the actual password if it exists
-        if (items[0].folderPassword.password) {
+        if (items[0].folderPassword.password && passwordPolicy !== 'NoPassword') {
           hasPassword = true;
           actualPassword = items[0].folderPassword.password;
         }
@@ -1141,6 +1169,11 @@ const PhotoAlbumContent: React.FC = () => {
       hasPassword,
       actualPassword
     };
+  };
+
+  const shouldShowButtons = () => {
+    // Show buttons if user is authorized OR there's no password policy OR policy is NoPassword
+    return isAuthorized || !passwordPolicy || passwordPolicy === 'NoPassword';
   };
 
   // Handle password submission
@@ -1892,7 +1925,7 @@ const PhotoAlbumContent: React.FC = () => {
       
       <Header>
         <HeaderContent>
-          <HeaderControls>
+        <HeaderControlsWithFullWidth>
           {isSelectionMode ? (
             <div style={{ display: 'flex', gap: '16px' }}>
               <ActionButton 
@@ -1911,28 +1944,57 @@ const PhotoAlbumContent: React.FC = () => {
               </ActionButton>
             </div>
           ) : (
-            // Show Create Sub-album button only if authorized or non-restricted policy
-            (isAuthorized || !passwordPolicy || passwordPolicy === 'NoPassword' || 
-             passwordPolicy === 'Watermark') && (
-              <CreateAlbumButton onClick={createSubalbum}>
-                {t('Create Sub-album')}
-              </CreateAlbumButton>
-            )
-          )}
-            
-            <div>
-              <ResponsiveHeader 
-                saveAlbum={saveAlbum} 
-                downloadPhotos={downloadPhotos}
-                getQRCode={getQRCode}
-                promptForPassword={promptForPassword}
-                showSaveButton={showSaveButton}
-                isAuthorized={isAuthorized}
-                passwordPolicy={passwordPolicy}
-                t={t} 
-              />
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'space-between', // This ensures maximum space between left and right groups
+              width: '100%', 
+              flexWrap: 'nowrap', 
+              alignItems: 'center'
+            }}>
+              {/* Left side - Create Sub-album button */}
+              <div style={{ flexShrink: 0 }}> 
+              {shouldShowButtons() && (
+                <CreateAlbumButton onClick={createSubalbum}>
+                  {t('Create Sub-album')}
+                </CreateAlbumButton>
+              )}
+              </div>
+              
+              {/* Right side - actions group */}
+              <div style={{ 
+                marginLeft: 'auto', // Push all the way to the right
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                {/* Show password button */}
+                {!isSelectionMode && 
+                !isAuthorized && 
+                passwordPolicy && 
+                passwordPolicy !== 'NoPassword' && (
+                  <PasswordButton onClick={promptForPassword}>
+                    {t('Enter Password')}
+                  </PasswordButton>
+                )}
+                
+                {/* Show the responsive header for other buttons */}
+                {!isSelectionMode && !(
+                  !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
+                ) && (
+                  <ResponsiveHeader 
+                    saveAlbum={saveAlbum} 
+                    downloadPhotos={downloadPhotos}
+                    getQRCode={getQRCode}
+                    promptForPassword={promptForPassword}
+                    showSaveButton={showSaveButton}
+                    showSaveButtons={shouldShowButtons()}
+                    passwordPolicy={passwordPolicy}
+                    t={t} 
+                  />
+                )}
+              </div>
             </div>
-          </HeaderControls>
+          )}
+        </HeaderControlsWithFullWidth>
           <RowSelectorContainer>
             <RowSelectorLabel htmlFor="columns" id="columns-label">
               <strong>{t('Columns:')}</strong>
@@ -1976,9 +2038,11 @@ const PhotoAlbumContent: React.FC = () => {
                 {passwordError}
               </div>
             )}
-            <PasswordButton onClick={promptForPassword} style={{ marginTop: '10px' }}>
-              {t('Enter Password')}
-            </PasswordButton>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
+              <PasswordButton onClick={promptForPassword}>
+                {t('Enter Password')}
+              </PasswordButton>
+            </div>
           </div>
         )}
         

@@ -103,12 +103,14 @@ type HeaderProps = {
   publicUsername: string | null;
   isUploading: boolean;
   openFilePicker: (folderId: string | null) => void;
+  cognitoUsername: string | null; // Added cognitoUsername prop
 };
 
 export const Header: React.FC<HeaderProps> = ({ 
   publicUsername, 
   isUploading, 
-  openFilePicker
+  openFilePicker,
+  cognitoUsername // Include the new prop
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
@@ -155,7 +157,7 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <button
             onClick={() => {
-              alert(t('Feature coming soon: "Show all public albums with a link to share with other users"'));
+              window.location.href = `https://6180.io/persona.html?id=${cognitoUsername}`;
             }}
             style={{
               fontSize: "14px",
@@ -1487,6 +1489,7 @@ const MyAlbums = () => {
             publicUsername={publicUsername}
             isUploading={isUploading}
             openFilePicker={openFilePicker}
+            cognitoUsername={cognitoUsername}
           />
           
           {/* Add AppPromo Component here */}

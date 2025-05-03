@@ -13,7 +13,8 @@ export default defineConfig({
         login: "login.html",
         saveAlbum: "save-album.html",
         myalbums: "my-albums.html",
-        photos: "photos.html"
+        photos: "photos.html",
+        persona: "persona.html"
         // add more HTML entry points here
       }
     }
