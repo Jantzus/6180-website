@@ -122,6 +122,51 @@ export async function checkLoginWithRefresh(): Promise<string | null> {
   }
 }
 
+export async function checkLoginWithoutRedirect(): Promise<string | null> {
+  const token = localStorage.getItem("idToken");
+  
+  // If no token exists, simply return null without redirecting
+  if (!token) {
+    console.log("No token found, user is not authenticated");
+    return null;
+  }
+
+  try {
+    const parts = token.split(".");
+    if (parts.length !== 3) {
+      throw new Error("Token does not have 3 parts");
+    }
+
+    const payload = JSON.parse(atob(parts[1]));
+    const now = Math.floor(Date.now() / 1000);
+
+    // If token is expired or about to expire (within 5 minutes)
+    if (payload.exp && payload.exp < now + 300) {
+      console.warn("Token expired or expiring soon");
+      
+      // Attempt to refresh the token
+      const refreshSuccessful = await refreshTokenIfNeeded();
+      
+      if (!refreshSuccessful) {
+        // If refresh failed, just remove the token and return null
+        console.warn("Token refresh failed");
+        localStorage.removeItem("idToken");
+        return null;
+      }
+      
+      // Return the new token
+      return localStorage.getItem("idToken");
+    }
+    
+    console.log("Valid idToken. Exp:", new Date(payload.exp * 1000).toISOString());
+    return token;
+  } catch (e) {
+    console.error("Invalid token:", e);
+    localStorage.removeItem("idToken");
+    return null;
+  }
+}
+
 /**
  * Check if the user is logged in, attempt to refresh token if expired,
  * and redirect to login page with a specific target if refresh fails

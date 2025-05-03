@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import JSZip from "jszip";
 import QRCode from "react-qr-code";
-import { checkLoginWithRefreshOrRedirectToTarget } from "@/lib/utils";
+import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect } from "@/lib/utils";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
@@ -54,7 +54,8 @@ import {
 import { 
   S3_BUCKET_URL,
   AWS_PUBLIC_GRAPHQL_ENDPOINT,
-  AWS_PUBLIC_API_KEY
+  AWS_PUBLIC_API_KEY,
+  AWS_PRIVATE_GRAPHQL_ENDPOINT
 } from "@/lib/config"
 
 // Define new styled components for selection feature
@@ -644,8 +645,9 @@ const ResponsiveHeader: React.FC<{
   saveAlbum: () => void;
   downloadPhotos: () => void;
   getQRCode: () => void;
+  showSaveButton: boolean; // Added this prop
   t: (key: string) => string;
-}> = ({ saveAlbum, downloadPhotos, getQRCode, t }) => {
+}> = ({ saveAlbum, downloadPhotos, getQRCode, showSaveButton, t }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
@@ -728,9 +730,11 @@ const ResponsiveHeader: React.FC<{
               {t('Add Photos To Album')}
             </MenuButton>
             
-            <MenuButton onClick={() => handleAction(saveAlbum)}>
-              {t('Save To 6180')}
-            </MenuButton>
+            {showSaveButton && (
+              <MenuButton onClick={() => handleAction(saveAlbum)}>
+                {t('Save To 6180')}
+              </MenuButton>
+            )}
             
             <MenuButton onClick={() => handleAction(downloadPhotos)}>
               {t('Download Photos')}
@@ -752,9 +756,12 @@ const ResponsiveHeader: React.FC<{
         <ActionButton onClick={saveAlbum}>
           {t('Add Photos To Album')}
         </ActionButton>            
-        <ActionButton onClick={saveAlbum}>
-          {t('Save To 6180')}
-        </ActionButton>
+        
+        {showSaveButton && (
+          <ActionButton onClick={saveAlbum}>
+            {t('Save To 6180')}
+          </ActionButton>
+        )}
         
         <ActionButton onClick={downloadPhotos}>
           {t('Download Photos')}
@@ -789,6 +796,7 @@ const PhotoAlbumContent: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [folderId, setFolderId] = useState<string | null>(null);
+  const [showSaveButton, setShowSaveButton] = useState<boolean>(true); // Added state for Save button visibility
   
   // Interactive state
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
@@ -971,10 +979,11 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Fetch folder data
+  // Modified: Fetch folder data with dual API approach
   const fetchFolder = async (folderId: string): Promise<AlbumData | null> => {
     try {
-      const response = await fetch(AWS_PUBLIC_GRAPHQL_ENDPOINT, {
+      // First, use the public API to get a quick response
+      const publicApiPromise = fetch(AWS_PUBLIC_GRAPHQL_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -984,10 +993,56 @@ const PhotoAlbumContent: React.FC = () => {
           query: FETCH_FOLDERS_QUERY,
           variables: { folderIds: [folderId] }
         })
-      });
+      }).then(response => response.json());
       
-      const result = await response.json();
-      return processData(result);
+      // In parallel, try to use the private API if the user is logged in
+      const privateApiPromise = (async () => {
+        const token = await checkLoginWithoutRedirect();
+        if (!token) {
+          return null; // User is not logged in
+        }
+        
+        // User is logged in, use private API for richer data
+        return fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            query: FETCH_FOLDERS_QUERY,
+            variables: { folderIds: [folderId] }
+          })
+        }).then(response => response.json());
+      })();
+      
+      // Wait for the public API to respond first
+      const publicResult = await publicApiPromise;
+      let initialData = processData(publicResult);
+      
+      // Set the data from the public API to get a quick first render
+      setAlbumData(initialData);
+      
+      // Then wait for the private API (if available)
+      const privateResult = await privateApiPromise;
+      if (privateResult) {
+        // Check if there's a folderPosition in the private API result
+        const folderPosition = privateResult?.data?.fetchFolders?.items?.[0]?.folderPosition?.id;
+        
+        // If folderPosition exists, hide the Save button
+        if (folderPosition) {
+          setShowSaveButton(false);
+        }
+        
+        // Replace with potentially richer data from the private API
+        const privateData = processData(privateResult);
+        if (privateData.mediaItems.length >= initialData.mediaItems.length) {
+          initialData = privateData;
+          setAlbumData(privateData);
+        }
+      }
+      
+      return initialData;
     } catch (error) {
       console.error('Error fetching folder data:', error);
       setError(t('Please try refreshing the page or contact support if the problem persists.'));
@@ -1529,6 +1584,7 @@ const PhotoAlbumContent: React.FC = () => {
                 saveAlbum={saveAlbum} 
                 downloadPhotos={downloadPhotos}
                 getQRCode={getQRCode}
+                showSaveButton={showSaveButton}
                 t={t} 
               />
             </div>
