@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import { getLanguageDirection } from "@/lib/i18n";
-import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithRefresh, checkLoginWithoutRedirect } from "@/lib/utils";
+import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect } from "@/lib/utils";
 
 // Import types and utilities
 import { AlbumData, PasswordPolicyEnum, SelectedPhoto, ProgressTracker } from "@/lib/types";
-import { getIdFromUrl, formatUUID } from "@/lib/utils";
+import { getIdFromUrl, formatUUID, generateUUID } from "@/lib/utils";
 import { fetchFolder } from "@/lib/apiService";
 import { downloadPhotos } from "@/lib/fileOperations";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
@@ -54,7 +54,7 @@ import { FileInput } from "@/components/FileInput";
 // Import the existing UploadProgress component
 import { UploadProgress } from "@/components/UploadProgress";
 
-// Login Modal Component - Keep original but updated message
+// Login Modal Component
 interface LoginModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -146,15 +146,6 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, t, redirectToL
         >
           {t('Cancel')}
         </button>
-
-        <p style={{ 
-          fontSize: '13px', 
-          color: '#666', 
-          marginTop: '16px',
-          textAlign: 'center' 
-        }}>
-          {t('After signing in, you\'ll be taken directly to the upload page')}
-        </p>
       </div>
     </div>
   );
@@ -204,14 +195,17 @@ const PhotoAlbumContent: React.FC = () => {
     overallProgress: 0 // Note: This is a decimal (0-1) not a percentage (0-100)
   });
   const [showLoginModal, setShowLoginModal] = useState(false);
-  
-  // Create logger for tracking upload progress
-  const log = createLogger(() => {});
+  // Create logger for tracking upload progress (logs to console only, not stored in state)
+  const log = createLogger(() => {
+    // Using empty function since we don't need to display debug messages in UI
+  });
   
   // Update progress tracker when selectedPhotos changes
   useEffect(() => {
     updateProgressTracker(selectedPhotos, setProgressTracker);
   }, [selectedPhotos]);
+
+  // No need to initialize cognitoUsername separately as we'll extract it directly when needed
 
   // Check if content should be protected based on policy and authorization
   const shouldShowContent = () => {
@@ -378,95 +372,20 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // IMPROVED: Handle file selection with better storage handling
+  // Handle file selection - Directly using the my-albums.tsx approach
   const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (!files || files.length === 0) return;
-    
-    // First check if the user is logged in
-    const token = await checkLoginWithoutRedirect();
-    
-    if (!token) {
-      // User is not logged in, show loading indicator during file storage
-      setIsUploading(true);
-      
-      try {
-        // Store file metadata in sessionStorage
-        const fileArray = Array.from(files);
-        const fileMetadata = fileArray.map((file, index) => ({
-          name: file.name,
-          type: file.type,
-          size: file.size,
-          lastModified: file.lastModified,
-          index
-        }));
-        
-        // Clear any previous stored files
-        for (let i = 0; i < 100; i++) {
-          const key = `pending_file_${i}`;
-          if (sessionStorage.getItem(key)) {
-            sessionStorage.removeItem(key);
-          } else {
-            break;
-          }
-        }
-        
-        // Store metadata and flags
-        sessionStorage.setItem('pending_file_metadata', JSON.stringify(fileMetadata));
-        sessionStorage.setItem('pending_folder_id', folderId || '');
-        sessionStorage.setItem('pending_upload', 'true');
-        sessionStorage.setItem('pending_timestamp', Date.now().toString());
-        
-        // Store each file as a data URL in sessionStorage
-        const promises = fileArray.map(async (file, index) => {
-          return new Promise<void>((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = () => {
-              try {
-                if (reader.result) {
-                  sessionStorage.setItem(`pending_file_${index}`, reader.result as string);
-                }
-                resolve();
-              } catch (err) {
-                reject(err);
-              }
-            };
-            reader.onerror = () => reject(reader.error);
-            reader.readAsDataURL(file);
-          });
-        });
-        
-        // Wait for all files to be stored
-        await Promise.all(promises);
-        
-        // Hide loading indicator
-        setIsUploading(false);
-        
-        // Show login modal
-        setShowLoginModal(true);
-      } catch (error) {
-        console.error('Error storing files:', error);
-        setIsUploading(false);
-        alert(t('There was an error preparing your files. Please try again.'));
-      }
-      
-      return;
-    }
-    
-    // User is logged in, proceed with upload
-    processUpload(Array.from(files));
-  };
-  
-  // Process upload for logged-in user
-  const processUpload = async (files: File[]) => {
+    const files = Array.from(e.target.files || []);
+    if (!files.length) return;
+
     setIsUploading(true);
     
-    // Get a fresh token
-    const token = await checkLoginWithRefresh();
+    // Check if the user is logged in
+    const token = await checkLoginWithoutRedirect();
     
     if (!token) {
       log("❌ Authentication failed");
       setIsUploading(false);
+      setShowLoginModal(true);
       return;
     }
     
@@ -481,52 +400,42 @@ const PhotoAlbumContent: React.FC = () => {
         return;
       }
       
-      // Create photo status updater
+      // Generate a new folder ID or use existing one
+      const newFolderId = folderId || `${cognitoUsername}_____${generateUUID()}____Folder`;
+      log(`📁 Using folder ID: ${newFolderId}`);
+      
+      // Use the createPhotoStatusUpdater function - exactly like in my-albums.tsx
       const updatePhotoStatus = createPhotoStatusUpdater(setSelectedPhotos);
       
-      // Process the files
+      // Use the processFiles function - exactly like in my-albums.tsx
       const processedPhotos = await processFiles(files, cognitoUsername, updatePhotoStatus, log);
       
       // Save to localStorage - ONLY the keys and metadata, not the file data
       localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos));
       log(`📸 Saved ${processedPhotos.length} photos metadata to storage`);
       
-      // Redirect to save-album page with the current folder ID
+      // Redirect to save-album page with folder ID parameter
       if (folderId) {
-        // Clear data before redirecting
-        clearAlbumData(setSelectedPhotos, setProgressTracker, [], log);
         window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
       } else {
-        log("❌ No folder ID available");
-        setIsUploading(false);
+        window.location.href = "/save-album.html";
       }
+      
+      clearAlbumData(setSelectedPhotos, setProgressTracker, [], log);
+      
     } catch (error) {
-      log(`❌ Fatal error in processUpload: ${String(error)}`);
+      log(`❌ Fatal error in handleFileSelection: ${String(error)}`);
       setIsUploading(false);
+    } finally {
+      // Clear the file input to allow selecting the same files again
+      if (e.target) e.target.value = "";
     }
   };
   
-  // IMPROVED: Redirect to login with direct save-album target and clear flags
+  // Simple redirectToLogin function
   const redirectToLogin = () => {
-    // Close the modal
-    setShowLoginModal(false);
-    
-    // Get the base URL of the application
-    const baseUrl = window.location.origin;
-    
-    // Create the target URL for after login
-    let targetUrl = `${baseUrl}/save-album.html?folderId=${encodeURIComponent(folderId || '')}`;
-    
-    // Add a special parameter to indicate there are pending files
-    targetUrl += '&pendingUpload=true';
-    
-    // Set up login parameters
-    const loginParams = new URLSearchParams();
-    loginParams.set('redirect', targetUrl);
-    loginParams.set('fromUpload', 'true');
-    
-    // Redirect to login with the parameters
-    window.location.href = `/login.html?${loginParams.toString()}`;
+    const currentUrl = window.location.href;
+    window.location.href = `/login.html?redirect=${encodeURIComponent(currentUrl)}`;
   };
 
   // Save album function
@@ -974,27 +883,10 @@ const PhotoAlbumContent: React.FC = () => {
         t={t}
       />
       
-      {/* Login Modal - Updated message for direct redirection */}
+      {/* Login Modal */}
       <LoginModal
         isOpen={showLoginModal}
-        onClose={() => {
-          setShowLoginModal(false);
-          // Clear any stored files if user cancels
-          sessionStorage.removeItem('pending_file_metadata');
-          sessionStorage.removeItem('pending_folder_id');
-          sessionStorage.removeItem('pending_upload');
-          sessionStorage.removeItem('pending_timestamp');
-          
-          // Clear all file blobs
-          for (let i = 0; i < 100; i++) { // Arbitrary upper limit
-            const key = `pending_file_${i}`;
-            if (sessionStorage.getItem(key)) {
-              sessionStorage.removeItem(key);
-            } else {
-              break;
-            }
-          }
-        }}
+        onClose={() => setShowLoginModal(false)}
         redirectToLogin={redirectToLogin}
         t={t}
       />
@@ -1019,7 +911,6 @@ const PhotoAlbumContent: React.FC = () => {
           showWatermark={shouldShowWatermark()}
         />
       )}
-      
     </Body>
   );
 };
