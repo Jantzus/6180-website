@@ -88,3 +88,137 @@ export interface Folder {
 }
 
 export type ProtectionOption = 'notVisible' | 'watermark' | 'cannotBeSaved' | 'noPassword';
+
+// Types definition for the application
+
+// Media types
+export interface MediaItem {
+  type: 'image' | 'video';
+  url: string;
+  thumbnailUrl?: string;
+  duration?: string;
+  ownerId?: string;
+  loaded?: boolean;
+}
+
+// Contact mapping
+export interface Contact {
+  [id: string]: string;
+}
+
+
+// Main album data structure
+export interface AlbumData {
+  mediaItems: MediaItem[];
+  folderName: string;
+  folderDescription: string;
+  contacts: Contact;
+  passwordPolicy?: string;
+  passwordRequired?: boolean;
+  hasPassword?: boolean;
+  actualPassword?: string;
+}
+
+// Props for various components
+export interface LazyImageProps {
+  src: string;
+  thumbnailSrc?: string;
+  alt: string;
+  className?: string;
+  loadFullResolution?: boolean;
+  onFullResolutionLoaded?: () => void;
+  onClick?: () => void;
+  showWatermark?: boolean;
+}
+
+export interface VideoThumbnailProps {
+  thumbnailUrl: string;
+  videoUrl: string;
+  duration: string;
+  index: number;
+  onFullResolutionLoaded?: () => void;
+  onClick?: () => void;
+  showWatermark?: boolean;
+}
+
+export interface FullscreenMediaViewerProps {
+  item: MediaItem;
+  index: number;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  hasNext: boolean;
+  hasPrev: boolean;
+  albumName: string;
+  ownerName?: string;
+  showWatermark?: boolean;
+}
+
+export interface QRCodeModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  folderId: string | null;
+  t: (key: string) => string;
+}
+
+export interface PasswordModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (password: string) => void;
+  error: string | null;
+  t: (key: string) => string;
+}
+
+export interface ResponsiveHeaderProps {
+  addPhotosToAlbum: () => void;
+  saveAlbum: () => void;
+  downloadPhotos: () => void;
+  getQRCode: () => void;
+  promptForPassword: () => void;
+  showingEnterPassword: boolean;
+  passwordPolicy?: string;
+  t: (key: string) => string;
+}
+
+// GraphQL query
+export const FETCH_FOLDERS_QUERY = `
+  mutation FetchFolderPositions($fetchRelationsInput: FetchRelationsInput!) {
+    fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
+      items {
+        ... on Folder {
+          id
+          folderName
+          folderDescription
+          folderPassword {
+            password
+            policy
+          }
+          fileReferencesPage {
+            items {
+              file {
+                ownerContactId
+                dataKey
+                thumbnailDataKey
+                durationInSeconds
+              }
+            }
+          }
+          contactsUsingInvite {
+            items {
+              id
+              item {
+                ... on Persona {
+                  publicDisplayName
+                }
+              }
+            }
+          }
+          folderPosition {
+            id
+          }
+        }
+      }
+      nextToken
+    }
+  }
+`;

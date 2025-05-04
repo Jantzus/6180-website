@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 // Styled components
 export const Body = styled.div`
@@ -506,5 +506,126 @@ export const ItalicText = styled.p`
   
   @media (max-width: 767px) {
     font-size: 14px;
+  }
+`;
+
+
+
+export const GlobalStyle = createGlobalStyle`
+  @keyframes loading-animation {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* Added to ensure proper display on mobile */
+  * {
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+`;
+
+export const HeaderControlsWithFullWidth = styled(HeaderControls)`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  
+  > div {
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const SelectableMediaBlock = styled(MediaBlock)<{ isSelected?: boolean }>`
+  ${(props) =>
+    props.isSelected &&
+    `
+    border: 3px solid #006adc;
+    box-shadow: 0 0 0 3px rgba(0, 106, 220, 0.3);
+  `}
+`;
+
+export const SelectionCheckbox = styled.div<{ isSelected: boolean }>`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: ${(props) => (props.isSelected ? '#006adc' : 'rgba(255, 255, 255, 0.8)')};
+  border: ${(props) => (props.isSelected ? 'none' : '2px solid #006adc')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+export const SelectionBanner = styled.div`
+  padding: 10px 20px;
+  background-color: #f0f7ff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+export const Checkmark = styled.div`
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+`;
+
+// Watermark components
+export const WatermarkOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 5;
+`;
+
+export const WatermarkText = styled.div`
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  transform: rotate(-30deg);
+  opacity: 0.7;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  user-select: none;
+  white-space: nowrap;
+`;
+
+export const PasswordButton = styled(ActionButton)`
+  background-color: #4caf50;
+  color: white;
+  &:hover {
+    background-color: #45a049;
   }
 `;

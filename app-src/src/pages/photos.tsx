@@ -1,1006 +1,44 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
-import JSZip from "jszip";
-import QRCode from "react-qr-code";
-import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect } from "@/lib/utils";
-import { createGlobalStyle } from "styled-components";
-import styled from "styled-components";
+import { checkLoginWithRefreshOrRedirectToTarget } from "@/lib/utils";
+
+// Import types and utilities
+import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
+import { getIdFromUrl, formatUUID } from "@/lib/utils";
+import { fetchFolder } from "@/lib/apiService";
+import { downloadPhotos } from "@/lib/fileOperations";
 
 // Import styled components
-import {
-  Body,
-  Header,
+import { 
+  GlobalStyle, 
+  Body, 
+  Header, 
   HeaderContent,
-  HeaderControls,
-  CreateAlbumButton,
-  RowSelectorContainer,
-  ActionButton,
-  HamburgerButton,
-  HamburgerIcon,
-  HamburgerLine,
-  DropdownMenu,
-  MenuButton,
-  AlbumTitle,
-  AlbumTitleStrong,
-  MediaContainer,
-  DescriptionBlock,
-  DescriptionText,
-  MediaGrid,
-  MediaBlock,
-  LazyImageContainer,
-  ThumbnailWrapper,
-  StyledImage,
-  LoadingPlaceholder,
-  OwnerBadge,
-  PlayButton,
-  DurationBadge,
-  ErrorMessage,
-  LoadingMessage,
-  RowSelectorLabel,
+  HeaderControlsWithFullWidth,
+  CreateAlbumButton, 
+  RowSelectorContainer, 
+  RowSelectorLabel, 
   RowSelectorSelect,
-  Modal,
-  ModalContent,
-  QRCodeContainer,
-  InstructionsContainer,
-  InstructionHeading,
-  InstructionList,
-  InstructionItem,
-  CloseButton,
-  LoadingOverlay,
-  ItalicText
+  MediaContainer, 
+  AlbumTitle, 
+  AlbumTitleStrong, 
+  DescriptionBlock, 
+  DescriptionText, 
+  MediaGrid, 
+  ErrorMessage, 
+  LoadingMessage,
+  SelectionBanner,
+  SelectionCheckbox,
+  Checkmark,
+  ActionButton,
+  OwnerBadge
 } from "@/styles/photos-styled-components";
 
-import { 
-  S3_BUCKET_URL,
-  AWS_PUBLIC_GRAPHQL_ENDPOINT,
-  AWS_PUBLIC_API_KEY,
-  AWS_PRIVATE_GRAPHQL_ENDPOINT
-} from "@/lib/config"
-
-// Define new styled components for selection feature
-const SelectionCheckbox = styled.div<{ isSelected: boolean }>`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: ${(props) => (props.isSelected ? '#006adc' : 'rgba(255, 255, 255, 0.8)')};
-  border: ${(props) => (props.isSelected ? 'none' : '2px solid #006adc')};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-  
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-const SelectionBanner = styled.div`
-  padding: 10px 20px;
-  background-color: #f0f7ff;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
-const Checkmark = styled.div`
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-`;
-
-// New styled components for password protection
-const PasswordButton = styled(ActionButton)`
-  background-color: #4caf50;
-  color: white;
-  &:hover {
-    background-color: #45a049;
-  }
-`;
-
-const WatermarkOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 5;
-`;
-
-const WatermarkText = styled.div`
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  transform: rotate(-30deg);
-  opacity: 0.7;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-  user-select: none;
-  white-space: nowrap;
-`;
-
-const HeaderControlsWithFullWidth = styled(HeaderControls)`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  
-  > div {
-    width: auto;
-    display: flex;
-    align-items: center;
-  }
-`;
-
-// Types
-interface MediaItem {
-  type: 'image' | 'video';
-  url: string;
-  thumbnailUrl?: string;
-  duration?: string;
-  ownerId?: string;
-  loaded?: boolean;
-}
-
-interface Contact {
-  [id: string]: string;
-}
-
-// Extended AlbumData interface to include password policy
-interface AlbumData {
-  mediaItems: MediaItem[];
-  folderName: string;
-  folderDescription: string;
-  contacts: Contact;
-  passwordPolicy?: string;
-  passwordRequired?: boolean;
-  hasPassword?: boolean;
-  actualPassword?: string;
-}
-
-// Password policy type from Typescript definitions
-type PasswordPolicyEnum = 'NotVisible' | 'Watermark' | 'CannotBeSaved' | 'NoPassword';
-
-// Global styles
-const GlobalStyle = createGlobalStyle`
-  @keyframes loading-animation {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-  
-  /* Added to ensure proper display on mobile */
-  * {
-    box-sizing: border-box;
-    -webkit-text-size-adjust: 100%;
-  }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-  }
-  
-  #root {
-    width: 100%;
-    overflow-x: hidden;
-  }
-`;
-
-// Updated GraphQL query to include password policy
-const FETCH_FOLDERS_QUERY = `
-  mutation FetchFolderPositions($fetchRelationsInput: FetchRelationsInput!) {
-    fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
-      items {
-        ... on Folder {
-          id
-          folderName
-          folderDescription
-          folderPassword {
-            password
-            policy
-          }
-          fileReferencesPage {
-            items {
-              file {
-                ownerContactId
-                dataKey
-                thumbnailDataKey
-                durationInSeconds
-              }
-            }
-          }
-          contactsUsingInvite {
-            items {
-              id
-              item {
-                ... on Persona {
-                  publicDisplayName
-                }
-              }
-            }
-          }
-          folderPosition {
-            id
-          }
-        }
-      }
-      nextToken
-    }
-  }
-`;
-
-// FullscreenMediaViewer component
-const FullscreenMediaViewer: React.FC<{
-  item: MediaItem;
-  index: number;
-  onClose: () => void;
-  onPrev: () => void;
-  onNext: () => void;
-  hasNext: boolean;
-  hasPrev: boolean;
-  albumName: string;
-  ownerName?: string;
-  showWatermark?: boolean;
-}> = ({
-  item,
-  index,
-  onClose,
-  onPrev,
-  onNext,
-  hasNext,
-  hasPrev,
-  albumName,
-  showWatermark = false
-}) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const { t } = useTranslation();
-  
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      } else if (e.key === 'ArrowLeft' && hasPrev) {
-        onPrev();
-      } else if (e.key === 'ArrowRight' && hasNext) {
-        onNext();
-      }
-    };
-    
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose, onNext, onPrev, hasNext, hasPrev]);
-  
-  return (
-    <div style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      backgroundColor: 'rgba(0, 0, 0, 0.9)',
-      zIndex: 2000,
-      display: 'flex',
-      flexDirection: 'column'
-    }}>
-      {/* Header with controls */}
-      <div style={{
-        padding: '15px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.7)'
-      }}>
-        <button 
-          style={{
-            background: 'transparent',
-            border: 'none',
-            color: 'white',
-            fontSize: '16px',
-            padding: '5px 10px',
-            cursor: 'pointer'
-          }}
-          onClick={onClose}
-        >
-          {t('Back')}
-        </button>
-        
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <button 
-            style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'white',
-              fontSize: '16px',
-              padding: '5px 10px',
-              cursor: hasPrev ? 'pointer' : 'not-allowed',
-              opacity: hasPrev ? 1 : 0.5
-            }}
-            onClick={hasPrev ? onPrev : undefined}
-            disabled={!hasPrev}
-          >
-            ←
-          </button>
-          <button 
-            style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'white',
-              fontSize: '16px',
-              padding: '5px 10px',
-              cursor: hasNext ? 'pointer' : 'not-allowed',
-              opacity: hasNext ? 1 : 0.5
-            }}
-            onClick={hasNext ? onNext : undefined}
-            disabled={!hasNext}
-          >
-            →
-          </button>
-        </div>
-      </div>
-      
-      {/* Media container */}
-      <div style={{
-        flex: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'auto',
-        padding: '10px',
-        position: 'relative'
-      }}>
-        {item.type === 'image' ? (
-          <div style={{ position: 'relative' }}>
-            <img 
-              src={item.url}
-              alt={`Image ${index + 1}`}
-              style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-                objectFit: 'contain',
-                opacity: isLoaded ? 1 : 0,
-                transition: 'opacity 0.3s'
-              }}
-              onLoad={() => {
-                setIsLoaded(true);
-                setIsLoading(false);
-              }}
-            />
-            {showWatermark && (
-              <WatermarkOverlay>
-                <WatermarkText>6180 Watermarked</WatermarkText>
-              </WatermarkOverlay>
-            )}
-            {/* Show thumbnail while loading */}
-            {!isLoaded && item.thumbnailUrl && (
-              <img 
-                src={item.thumbnailUrl}
-                alt={`Thumbnail ${index + 1}`}
-                style={{
-                  position: 'absolute',
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  objectFit: 'contain',
-                  opacity: 0.5
-                }}
-              />
-            )}
-          </div>
-        ) : (
-          <div style={{ position: 'relative' }}>
-            <video controls autoPlay style={{ maxWidth: '100%', maxHeight: '100%' }} onLoadedData={() => setIsLoading(false)}>
-              <source src={item.url} type="video/mp4" />
-              {t('Your browser does not support the video tag.')}
-            </video>
-            {showWatermark && (
-              <WatermarkOverlay>
-                <WatermarkText>6180 Watermarked</WatermarkText>
-              </WatermarkOverlay>
-            )}
-          </div>
-        )}
-        
-        {isLoading && (
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-            color: 'white',
-            padding: '10px 20px',
-            borderRadius: '4px',
-            zIndex: 10
-          }}>
-            {item.type === 'image' ? t('Loading full resolution...') : t('Loading video...')}
-          </div>
-        )}
-      </div>
-      
-      {/* Footer with options */}
-      <div style={{
-        padding: '15px',
-        display: 'flex',
-        justifyContent: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
-        color: 'white'
-      }}>
-        <a 
-          href={item.url} 
-          download={`${albumName}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`}
-          style={{
-            textDecoration: 'none',
-            color: 'white',
-            backgroundColor: '#006adc',
-            padding: '8px 16px',
-            borderRadius: '4px',
-            fontSize: '14px'
-          }}
-        >
-          {item.type === 'image' ? t('Download Photo') : t('Download Video')}
-        </a>
-      </div>
-    </div>
-  );
-};
-
-// LazyImage component with watermark support
-const LazyImage: React.FC<{ 
-  src: string; 
-  thumbnailSrc?: string; 
-  alt: string; 
-  className?: string;
-  loadFullResolution?: boolean;
-  onFullResolutionLoaded?: () => void;
-  onClick?: () => void;
-  showWatermark?: boolean;
-}> = ({ 
-  src, 
-  thumbnailSrc, 
-  alt, 
-  className = '', 
-  loadFullResolution = false,
-  onFullResolutionLoaded,
-  onClick,
-  showWatermark = false
-}) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [fullResLoaded, setFullResLoaded] = useState(false);
-  const [isLoadingFullRes, setIsLoadingFullRes] = useState(false);
-  const [imageSrc, setImageSrc] = useState("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E");
-  const { t } = useTranslation();
-  
-  // First load the thumbnail if available
-  useEffect(() => {
-    if (thumbnailSrc) {
-      const img = new Image();
-      img.src = thumbnailSrc;
-      img.onload = () => {
-        setImageSrc(thumbnailSrc);
-        setIsLoaded(true);
-      };
-    }
-  }, [thumbnailSrc]);
-  
-  // Load the full resolution image when requested
-  useEffect(() => {
-    if (loadFullResolution && !fullResLoaded) {
-      setIsLoadingFullRes(true);
-      
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        setImageSrc(src);
-        setFullResLoaded(true);
-        setIsLoadingFullRes(false);
-        if (onFullResolutionLoaded) {
-          onFullResolutionLoaded();
-        }
-      };
-    }
-  }, [loadFullResolution, src, fullResLoaded, onFullResolutionLoaded]);
-  
-  return (
-    <LazyImageContainer onClick={onClick}>
-      <StyledImage 
-        src={imageSrc} 
-        alt={alt} 
-        className={className}
-        isLoaded={isLoaded}
-        style={{ cursor: onClick ? 'pointer' : 'default' }}
-      />
-      {!isLoaded && <LoadingPlaceholder />}
-      {isLoadingFullRes && (
-        <LoadingOverlay>
-          {t('Loading full resolution...')}
-        </LoadingOverlay>
-      )}
-      {showWatermark && isLoaded && (
-        <WatermarkOverlay>
-          <WatermarkText>6180 Watermarked</WatermarkText>
-        </WatermarkOverlay>
-      )}
-    </LazyImageContainer>
-  );
-};
-
-// VideoThumbnail component with watermark support
-const VideoThumbnail: React.FC<{ 
-  thumbnailUrl: string; 
-  videoUrl: string; 
-  duration: string; 
-  index: number;
-  onFullResolutionLoaded?: () => void;
-  onClick?: () => void;
-  showWatermark?: boolean;
-}> = ({ 
-  thumbnailUrl, 
-  videoUrl, 
-  duration, 
-  index,
-  onFullResolutionLoaded,
-  onClick,
-  showWatermark = false
-}) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [loadFullVideo, setLoadFullVideo] = useState(false);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-  const { t } = useTranslation();
-  
-  const handleClick = () => {
-    if (onClick) {
-      onClick();
-      return;
-    }
-    
-    if (!isVideoLoaded) {
-      setLoadFullVideo(true);
-    } else {
-      setIsPlaying(true);
-    }
-  };
-  
-  // When full video is loaded, mark as ready to play
-  const handleFullVideoLoaded = () => {
-    setIsVideoLoaded(true);
-    setIsPlaying(true);
-    if (onFullResolutionLoaded) {
-      onFullResolutionLoaded();
-    }
-  };
-  
-  // Load video when the video element is available
-  useEffect(() => {
-    if (loadFullVideo && videoRef.current && !isVideoLoaded) {
-      const video = videoRef.current;
-      
-      // Set up event listeners for video loading
-      const handleCanPlayThrough = () => {
-        handleFullVideoLoaded();
-        video.removeEventListener('canplaythrough', handleCanPlayThrough);
-      };
-      
-      video.addEventListener('canplaythrough', handleCanPlayThrough);
-      
-      // Start loading the video
-      video.load();
-      
-      return () => {
-        video.removeEventListener('canplaythrough', handleCanPlayThrough);
-      };
-    }
-  }, [loadFullVideo, isVideoLoaded]);
-  
-  if (isPlaying) {
-    return (
-      <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-        <video ref={videoRef} controls style={{ width: '100%', height: '100%' }}>
-          <source src={videoUrl} type="video/mp4" />
-          {t('Your browser does not support the video tag.')}
-        </video>
-        {showWatermark && (
-          <WatermarkOverlay>
-            <WatermarkText>6180 Watermarked</WatermarkText>
-          </WatermarkOverlay>
-        )}
-      </div>
-    );
-  }
-  
-  if (loadFullVideo && !isVideoLoaded) {
-    return (
-      <ThumbnailWrapper>
-        <LazyImage 
-          src={videoUrl}
-          thumbnailSrc={thumbnailUrl} 
-          alt={`Video thumbnail ${index + 1}`}
-          showWatermark={showWatermark}
-        />
-        <LoadingOverlay>
-          {t('Loading video...')}
-        </LoadingOverlay>
-        <video 
-          ref={videoRef} 
-          style={{ display: 'none' }} 
-          preload="auto"
-        >
-          <source src={videoUrl} type="video/mp4" />
-        </video>
-      </ThumbnailWrapper>
-    );
-  }
-  
-  return (
-    <ThumbnailWrapper onClick={handleClick}>
-      <LazyImage 
-        src={videoUrl}
-        thumbnailSrc={thumbnailUrl} 
-        alt={`Video thumbnail ${index + 1}`}
-        showWatermark={showWatermark}
-      />
-      <PlayButton />
-      <DurationBadge>{duration}</DurationBadge>
-    </ThumbnailWrapper>
-  );
-};
-
-// Format time in MM:SS
-const formatTime = (seconds: number = 0): string => {
-  return `${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, "0")}`;
-};
-
-// QR Code Modal component
-const QRCodeModal: React.FC<{
-  isOpen: boolean;
-  onClose: () => void;
-  folderId: string | null;
-  t: (key: string) => string;
-}> = ({ isOpen, onClose, folderId: folderId, t }) => {
-  if (!isOpen) return null;
-  
-  // Create a QR code URL with the properly formatted folder ID
-  const qrCodeUrl = folderId ? `https://6180.io/folder/${folderId}` : '';
-  
-  return (
-    <Modal>
-      <ModalContent>
-        <QRCodeContainer>
-          {folderId && (
-            <QRCode 
-              value={qrCodeUrl}
-              size={256}
-              style={{ height: "auto", maxWidth: "300px", width: "100%" }}
-              viewBox={`0 0 256 256`}
-              level="H"
-            />
-          )}
-        </QRCodeContainer>
-        
-        <InstructionsContainer>
-          <InstructionHeading>{t('To load this album on your iPhone:')}</InstructionHeading>
-          <InstructionList>
-            <InstructionItem>
-              {t('Use your phone\'s camera to scan the QR code to get [6180] from the [App Store] and sign up')}
-            </InstructionItem>
-            <InstructionItem>
-              {t('Tap "Files" at the bottom middle')}
-            </InstructionItem>
-            <InstructionItem>
-              {t('Tap "Album QR Code" at the top left')}
-            </InstructionItem>
-          </InstructionList>
-          
-          <ItalicText>
-            {t('You can also screen shot this page with your phone and click "Load Saved QR Code" on the iPhone app')}
-          </ItalicText>
-        </InstructionsContainer>
-
-        <CloseButton onClick={onClose}>
-          {t('Close')}
-        </CloseButton>
-      </ModalContent>
-    </Modal>
-  );
-};
-
-// Password modal component
-const PasswordModal: React.FC<{
-  isOpen: boolean;
-  onClose: () => void;
-  onSubmit: (password: string) => void;
-  error: string | null;
-  t: (key: string) => string;
-}> = ({ isOpen, onClose, onSubmit, error, t }) => {
-  const [password, setPassword] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  if (!isOpen) return null;
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    onSubmit(password);
-    setIsSubmitting(false);
-  };
-  
-  return (
-    <Modal>
-      <ModalContent style={{ maxWidth: "400px" }}>
-        <div style={{ padding: "20px" }}>
-          <h3 style={{ margin: "0 0 20px 0", textAlign: "center" }}>{t('Enter Password')}</h3>
-          
-          <form onSubmit={handleSubmit}>
-            <div style={{ marginBottom: "20px" }}>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder={t('Password')}
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  borderRadius: "4px",
-                  border: error ? "1px solid #d32f2f" : "1px solid #ccc",
-                  fontSize: "16px"
-                }}
-                required
-              />
-              
-              {/* Display error message if present */}
-              {error && (
-                <div style={{ 
-                  color: "#d32f2f", 
-                  fontSize: "14px", 
-                  marginTop: "5px",
-                  padding: "5px"
-                }}>
-                  {error}
-                </div>
-              )}
-            </div>
-            
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <button
-                type="button"
-                onClick={onClose}
-                style={{
-                  padding: "10px 16px",
-                  backgroundColor: "#f3f4f6",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: "pointer",
-                  fontSize: "14px"
-                }}
-              >
-                {t('Cancel')}
-              </button>
-              
-              <button
-                type="submit"
-                disabled={isSubmitting || !password}
-                style={{
-                  padding: "10px 16px",
-                  backgroundColor: "#006adc",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: password ? "pointer" : "not-allowed",
-                  opacity: password ? 1 : 0.7,
-                  fontSize: "14px"
-                }}
-              >
-                {isSubmitting ? t('Submitting...') : t('Submit')}
-              </button>
-            </div>
-          </form>
-        </div>
-      </ModalContent>
-    </Modal>
-  );
-};
-
-const ResponsiveHeader: React.FC<{
-  addPhotosToAlbum: () => void;
-  saveAlbum: () => void;
-  downloadPhotos: () => void;
-  getQRCode: () => void;
-  promptForPassword: () => void;
-  showingEnterPassword: boolean;
-  passwordPolicy?: string;
-  t: (key: string) => string;
-}> = ({ addPhotosToAlbum, saveAlbum, downloadPhotos, getQRCode, promptForPassword, showingEnterPassword, passwordPolicy, t }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  
-  // Check window width on mount and when resized
-  useEffect(() => {
-    const checkWidth = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    // Initial check
-    checkWidth();
-    
-    // Add resize listener
-    window.addEventListener('resize', checkWidth);
-    
-    // Cleanup
-    return () => window.removeEventListener('resize', checkWidth);
-  }, []);
-  
-  // Toggle menu
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-  
-  // Close menu
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
-  
-  // Execute action and close menu
-  const handleAction = (action: () => void) => {
-    action();
-    closeMenu();
-  };
-  
-  // Handle click outside to close menu
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setMenuOpen(false);
-      }
-    };
-    
-    // Handle scroll to close menu
-    const handleScroll = () => {
-      setMenuOpen(false);
-    };
-    
-    if (menuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      window.addEventListener('scroll', handleScroll);
-    }
-    
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [menuOpen]);
-  
-  if (isMobile) {
-    return (
-      <div 
-        ref={menuRef} 
-        style={{ 
-          position: 'relative', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between', 
-          width: '100%',
-          flexWrap: 'nowrap' // Prevent wrapping
-        }}
-      >
-        {/* Only show the hamburger menu if user can save or create sub-album */}
-        {!showingEnterPassword && (
-          <div style={{ flexShrink: 0 }}>
-            <HamburgerButton 
-              onClick={toggleMenu}
-              aria-label={t('Menu')}
-              aria-expanded={menuOpen}
-            >
-              <HamburgerIcon>
-                <HamburgerLine />
-                <HamburgerLine />
-                <HamburgerLine />
-              </HamburgerIcon>
-              {t('Add')}
-            </HamburgerButton>
-            
-            {menuOpen && (
-              <DropdownMenu>
-                <MenuButton onClick={() => handleAction(addPhotosToAlbum)}>
-                  {t('Add Photos To Album')}
-                </MenuButton>
-                
-                <MenuButton onClick={() => handleAction(saveAlbum)}>
-                  {t('Save Album To 6180')}
-                </MenuButton>
-                
-                <MenuButton onClick={() => handleAction(downloadPhotos)}>
-                  {t('Download Photos')}
-                </MenuButton>
-                
-                <MenuButton onClick={() => handleAction(getQRCode)}>
-                  {t('Open On iPhone App')}
-                </MenuButton>
-              </DropdownMenu>
-            )}
-          </div>
-        )}
-
-        {/* Show Enter Password button if needed - now on the right */}
-        {showingEnterPassword && passwordPolicy && passwordPolicy !== 'NoPassword' && (
-          <div style={{ marginLeft: 'auto', flexShrink: 0 }}> {/* Added flexShrink */}
-            <PasswordButton onClick={promptForPassword}>
-              {t('Enter Password')}
-            </PasswordButton>
-          </div>
-        )}
-      </div>
-    );
-  }
-  
-  return (
-    <div style={{ 
-      display: 'flex', 
-      alignItems: 'center', 
-      gap: '20px',
-      justifyContent: 'flex-end',
-      flexWrap: 'nowrap'
-    }}>
-      {/* Only show action buttons if user can save or create sub-album */}
-      {!showingEnterPassword && (
-        <div style={{ 
-          display: 'flex', 
-          gap: '20px',
-          flexWrap: 'wrap'
-        }}>
-          <ActionButton onClick={addPhotosToAlbum}>
-            {t('Add Photos To Album')}
-          </ActionButton>
-          
-          <ActionButton onClick={saveAlbum}>
-            {t('Save Album To 6180')}
-          </ActionButton>
-          
-          <ActionButton onClick={downloadPhotos}>
-            {t('Download Photos')}
-          </ActionButton>
-          
-          <ActionButton onClick={getQRCode}>
-            {t('Open On iPhone App')}
-          </ActionButton>
-        </div>
-      )}
-      
-      {/* Show Enter Password button if needed */}
-      {showingEnterPassword && (
-        <div>
-          <PasswordButton onClick={promptForPassword}>
-            {t('Enter Password')}
-          </PasswordButton>
-        </div>
-      )}
-    </div>
-  );
-};
-
-// Extend MediaBlock for selection mode support
-const SelectableMediaBlock = styled(MediaBlock)<{ isSelected?: boolean }>`
-  ${(props) =>
-    props.isSelected &&
-    `
-    border: 3px solid #006adc;
-    box-shadow: 0 0 0 3px rgba(0, 106, 220, 0.3);
-  `}
-`;
+// Import components
+import { LazyImage, VideoThumbnail, FullscreenMediaViewer } from "@/components/MediaComponents";
+import { QRCodeModal, PasswordModal } from "@/components/ModalComponents";
+import ResponsiveHeader from "@/components/HeaderComponents";
 
 // Main Photo Album Component
 const PhotoAlbumContent: React.FC = () => {
@@ -1012,7 +50,7 @@ const PhotoAlbumContent: React.FC = () => {
   const [albumData, setAlbumData] = useState<AlbumData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [folderId, setFolderId] = useState<string | null>(null);
+  const [folderId, setFolderId] = useState<string | null>(null); // Used when processing API data
   
   // Password and authorization state
   const [passwordPolicy, setPasswordPolicy] = useState<PasswordPolicyEnum | undefined>(undefined);
@@ -1021,7 +59,7 @@ const PhotoAlbumContent: React.FC = () => {
   const [passwordError, setPasswordError] = useState<string | null>(null);
   
   // Interactive state
-  const [hoverIdx, setHoverIdx] = useState<number | null>(null);
+  // Removed unused hover state
   const [showQRModal, setShowQRModal] = useState<boolean>(false);
   
   // Added state for tracking which items are loading in full resolution
@@ -1034,131 +72,34 @@ const PhotoAlbumContent: React.FC = () => {
   const [isSelectionMode, setIsSelectionMode] = useState<boolean>(false);
   const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set());
 
-  // Get folder ID from URL
-  const getIdFromUrl = (): string | null => {
-    // Check in query params
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
-    
-    if (id) return id;
-    
-    // Check in path
-    const pathParts = window.location.pathname.split('/');
-    const lastPart = pathParts[pathParts.length - 1];
-    
-    if (lastPart && lastPart.includes('_')) {
-      return lastPart;
+  // Check if content should be protected based on policy and authorization
+  const shouldShowContent = () => {
+    // If no policy or authorized, show content
+    if (!passwordPolicy || isAuthorized || passwordPolicy === 'NoPassword') {
+      return true;
     }
     
-    return null;
-  };
-
-  // Process data returned from API
-  const processData = (json: any): AlbumData => {
-    const items = json?.data?.fetchRelations?.items || [];
-    const mediaItems: MediaItem[] = [];
-    const contacts: Contact = {};
-    let folderName = t('Photos');
-    let folderDescription = '';
-    let passwordPolicy: PasswordPolicyEnum | undefined = undefined;
-    let passwordRequired = false;
-    let hasPassword = false;
-    let actualPassword: string | undefined = undefined;
-    
-    // Set to track unique dataKeys
-    const uniqueDataKeys = new Set<string>();
-    
-    if (items.length > 0) {
-
-      const folder = items[0];
-      
-      // Save the raw folder ID for QR code
-      setFolderId(folder?.id);
-
-      // Get folder name if available
-      if (folder?.folderName && folder.folderName.length > 0) {
-        folderName = folder.folderName;
+    // With NotVisible policy and not authorized, hide content
+    if (passwordPolicy === 'NotVisible') {
+      // If there's a password error, log it for debugging
+      if (passwordError) {
+        console.error('Password error:', passwordError);
       }
-      
-      // Get folder description if available
-      if (folder?.folderDescription && folder.folderDescription.length > 0) {
-        folderDescription = folder.folderDescription;
-      }
-      
-      // Get password policy and the actual password
-      if (folder?.folderPassword) {
-        if (folder.folderPassword.policy) {
-          passwordPolicy = folder.folderPassword.policy as PasswordPolicyEnum;
-          
-          // Check if password is required
-          passwordRequired = passwordPolicy !== 'NoPassword';
-        }
-        
-        // Store the actual password if it exists
-        if (folder.folderPassword.password && passwordPolicy !== 'NoPassword') {
-          hasPassword = true;
-          actualPassword = folder.folderPassword.password;
-        }
-      }
-      
-      // Build contacts map
-      (items[0]?.contactsUsingInvite?.items || []).forEach((contact: any) => {
-        if (contact?.id && contact?.item?.publicDisplayName) {
-          contacts[contact.id] = contact.item.publicDisplayName;
-        }
-      });
-      
-      // Get media items and filter duplicates by dataKey
-      (folder?.fileReferencesPage?.items || []).forEach((ref: any) => {
-        const file = ref?.file;
-        if (!file?.dataKey) return;
-  
-        const { dataKey, thumbnailDataKey, durationInSeconds, ownerContactId } = file;
-        
-        // Skip this item if we've already seen this dataKey
-        if (uniqueDataKeys.has(dataKey)) {
-          return;
-        }
-        
-        // Add to our set of seen dataKeys
-        uniqueDataKeys.add(dataKey);
-        
-        const url = `${S3_BUCKET_URL}${dataKey}`;
-        const thumbnailUrl = thumbnailDataKey ? `${S3_BUCKET_URL}${thumbnailDataKey}` : undefined;
-  
-        if (dataKey.startsWith("Input/Image/")) {
-          mediaItems.push({ 
-            type: "image", 
-            url,
-            thumbnailUrl: thumbnailUrl || url,
-            ownerId: ownerContactId,
-            loaded: false
-          });
-        } else if (dataKey.startsWith("Input/Video/")) {
-          mediaItems.push({
-            type: "video",
-            url,
-            thumbnailUrl: thumbnailUrl || url,
-            duration: formatTime(durationInSeconds),
-            ownerId: ownerContactId,
-            loaded: false
-          });
-        }
-      });
+      return false;
     }
     
-    return { 
-      mediaItems, 
-      folderName, 
-      folderDescription, 
-      contacts, 
-      passwordPolicy,
-      passwordRequired,
-      hasPassword,
-      actualPassword
-    };
+    // For other policies, show content with appropriate restrictions
+    return true;
+  };
+  
+  // Check if watermark should be applied
+  const shouldShowWatermark = () => {
+    // If there's a password error and it mentions watermark, or policy is Watermark
+    const showWatermarkDueToError = passwordError?.toLowerCase().includes('watermark') ?? false;
+    return (!isAuthorized && passwordPolicy === 'Watermark') || showWatermarkDueToError;
   };
 
+  // Detect if password entry should be shown
   const showingEnterPassword = () => {
     // Show buttons if user is authorized OR there's no password policy OR policy is NoPassword
     return !isAuthorized && passwordPolicy !== undefined && passwordPolicy !== 'NoPassword';
@@ -1283,111 +224,16 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Fetch folder data with dual API approach
-  const fetchFolder = async (suffix: string): Promise<AlbumData | null> => {
-    try {
-  
-      // Create the input for the new query format
-      const fetchRelationsInput = {
-        targetItemIdentifier____RelationType: `${suffix}____Folder`,
-        index: "targetItemIdentifier____RelationType",
-        limit: 1,
-        scanIndexForward: false,
-        nextToken: null
-      };
-  
-      const variables = {
-        fetchRelationsInput: fetchRelationsInput
-      };
-      
-      // First, use the public API to get a quick response
-      const publicApiPromise = fetch(AWS_PUBLIC_GRAPHQL_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': AWS_PUBLIC_API_KEY
-        },
-        body: JSON.stringify({
-          query: FETCH_FOLDERS_QUERY,
-          variables: variables
-        })
-      }).then(response => response.json());
-      
-      // In parallel, try to use the private API if the user is logged in
-      const privateApiPromise = (async () => {
-        const token = await checkLoginWithoutRedirect();
-        if (!token) {
-          return null; // User is not logged in
-        }
-        
-        // User is logged in, use private API for richer data
-        return fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify({
-            query: FETCH_FOLDERS_QUERY,
-            variables: variables
-          })
-        }).then(response => response.json());
-      })();
-      
-      // Wait for the public API to respond first
-      const publicResult = await publicApiPromise;
-      let initialData = processData(publicResult);
-      
-      // Set password policy from the public API result
-      if (initialData.passwordPolicy) {
-        setPasswordPolicy(initialData.passwordPolicy as PasswordPolicyEnum);
-        
-        // If NoPassword policy, automatically set as authorized
-        if (initialData.passwordPolicy === 'NoPassword') {
-          setIsAuthorized(true);
-        }
-      }
-      
-      // Set the data from the public API to get a quick first render
-      setAlbumData(initialData);
-      
-      // Then wait for the private API (if available)
-      const privateResult = await privateApiPromise;
-      if (privateResult) {
-        
-        // Check if there's a folderPosition in the private API result
-        const folderPosition = privateResult?.data?.fetchRelations?.items?.[0]?.folderPosition?.id;
-        
-        // If folderPosition exists, it means the user already has this folder saved
-        if (folderPosition) {
-          // User is authorized if they already have the folder saved
-          setIsAuthorized(true);
-        }
-        
-        // Replace with potentially richer data from the private API
-        const privateData = processData(privateResult);
-        if (privateData.mediaItems.length >= initialData.mediaItems.length) {
-          initialData = privateData;
-          setAlbumData(privateData);
-        }
-
-      }
-      
-      return initialData;
-    } catch (error) {
-      console.error('Error fetching folder data:', error);
-      setError(t('Please try refreshing the page or contact support if the problem persists.'));
-      return null;
-    }
-  };
-
   // Change columns
   const changeColumns = (value: string) => {
     setColumns(value);
     localStorage.setItem('columns', value);
   };
   
-  const addPhotosToAlbum = async () => {}
+  // Placeholder for adding photos to album function
+  const addPhotosToAlbum = async () => {
+    alert(t('This feature is not yet implemented.'));
+  };
 
   // Save album function
   const saveAlbum = async () => {
@@ -1503,343 +349,17 @@ const PhotoAlbumContent: React.FC = () => {
     setShowQRModal(true);
   };
 
-  // Download photos function
-  const downloadPhotos = () => {
+  // Handle downloading photos
+  const handleDownloadPhotos = () => {
     // Check if download should be restricted
     if (passwordPolicy === 'CannotBeSaved' && !isAuthorized) {
       promptForPassword();
       return;
     }
     
-    // Rest of download logic (unchanged)
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-      // Create a modal for mobile users with explanation and individual download options
-      const modalContainer = document.createElement('div');
-      modalContainer.style.position = 'fixed';
-      modalContainer.style.top = '0';
-      modalContainer.style.left = '0';
-      modalContainer.style.width = '100%';
-      modalContainer.style.height = '100%';
-      modalContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-      modalContainer.style.zIndex = '1000';
-      modalContainer.style.display = 'flex';
-      modalContainer.style.justifyContent = 'center';
-      modalContainer.style.alignItems = 'center';
-      
-      const modalContent = document.createElement('div');
-      modalContent.style.backgroundColor = 'white';
-      modalContent.style.borderRadius = '8px';
-      modalContent.style.padding = '0';
-      modalContent.style.maxWidth = '90%';
-      modalContent.style.maxHeight = '80%';
-      modalContent.style.display = 'flex';
-      modalContent.style.flexDirection = 'column';
-      modalContent.style.position = 'relative';
-      
-      // Add a sticky header for the close button
-      const headerContainer = document.createElement('div');
-      headerContainer.style.position = 'sticky';
-      headerContainer.style.top = '0';
-      headerContainer.style.backgroundColor = 'white';
-      headerContainer.style.zIndex = '10';
-      headerContainer.style.padding = '15px 20px';
-      headerContainer.style.borderTopLeftRadius = '8px';
-      headerContainer.style.borderTopRightRadius = '8px';
-      headerContainer.style.display = 'flex';
-      headerContainer.style.justifyContent = 'flex-start';
-      
-      // Add close button to the header
-      const closeButton = document.createElement('button');
-      closeButton.textContent = t('Close');
-      closeButton.style.padding = '10px 16px';
-      closeButton.style.backgroundColor = '#f3f4f6';
-      closeButton.style.border = 'none';
-      closeButton.style.borderRadius = '4px';
-      closeButton.style.cursor = 'pointer';
-      closeButton.onclick = () => {
-        document.body.removeChild(modalContainer);
-      };
-      
-      headerContainer.appendChild(closeButton);
-      
-      // Create a content wrapper with scrolling
-      const contentWrapper = document.createElement('div');
-      contentWrapper.style.overflow = 'auto';
-      contentWrapper.style.padding = '20px';
-      contentWrapper.style.flexGrow = '1';
-      contentWrapper.style.width = '100%';
-      
-      // Items container for individual photo downloads
-      const itemsContainer = document.createElement('div');
-      itemsContainer.style.display = 'grid';
-      itemsContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
-      itemsContainer.style.gap = '10px';
-      itemsContainer.style.marginBottom = '20px';
-      itemsContainer.style.width = '100%';
-      
-      // Add individual download items
-      if (albumData && albumData.mediaItems.length > 0) {
-        albumData.mediaItems.forEach((item, index) => {
-          // Create container for each download item
-          const downloadItem = document.createElement('div');
-          downloadItem.style.display = 'flex';
-          downloadItem.style.flexDirection = 'column';
-          downloadItem.style.alignItems = 'center';
-          downloadItem.style.border = '1px solid #eee';
-          downloadItem.style.padding = '10px';
-          downloadItem.style.borderRadius = '4px';
-          
-          // Create thumbnail
-          const thumbnail = document.createElement('img');
-          thumbnail.src = item.type === 'image' ? (item.thumbnailUrl || item.url) : (item.thumbnailUrl || '');
-          thumbnail.style.width = '100%';
-          thumbnail.style.height = '120px';
-          thumbnail.style.objectFit = 'cover';
-          thumbnail.style.marginBottom = '10px';
-          thumbnail.style.cursor = 'pointer';
-          
-          // Add click handler to open fullscreen view
-          thumbnail.onclick = () => {
-            document.body.removeChild(modalContainer);
-            openFullscreenView(index);
-          };
-          
-          // Create download link
-          const downloadLink = document.createElement('a');
-          downloadLink.href = item.url;
-          
-          // For iOS, we need special handling
-          const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
-          if (isIOS) {
-            // Use the same handler for both images and videos
-            downloadLink.addEventListener('click', function(e) {
-              e.preventDefault();
-              
-              document.body.removeChild(modalContainer);
-              openFullscreenView(index);
-            });
-            
-            downloadLink.textContent = item.type === 'image' ? t('View Photo') : t('View Video');
-          } else {
-            // For Android and other mobile browsers - no changes needed
-            downloadLink.download = `${albumData.folderName || 'media'}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
-            downloadLink.textContent = t('Download');
-          }
-          
-          downloadLink.style.textDecoration = 'none';
-          downloadLink.style.color = 'white';
-          downloadLink.style.backgroundColor = '#006adc';
-          downloadLink.style.padding = '8px 12px';
-          downloadLink.style.borderRadius = '4px';
-          downloadLink.style.fontSize = '14px';
-          downloadLink.style.textAlign = 'center';
-          downloadLink.style.width = '100%';
-          
-          // Add to container
-          downloadItem.appendChild(thumbnail);
-          downloadItem.appendChild(downloadLink);
-          itemsContainer.appendChild(downloadItem);
-        });
-      } else {
-        const noItemsMsg = document.createElement('p');
-        noItemsMsg.textContent = t('No items to download');
-        itemsContainer.appendChild(noItemsMsg);
-      }
-      
-      // Add explanation text at the bottom
-      const explanationText = document.createElement('p');
-      
-      explanationText.innerHTML = t('Due to technical limitations, bulk downloads on mobile browsers aren\'t supported, and some videos may not download.<br><br>To download all photos and videos at once, please:');
-      
-      explanationText.style.borderTop = '1px solid #eee';
-      explanationText.style.paddingTop = '15px';
-      
-      // Add options as bullet points
-      const optionsList = document.createElement('ul');
-      
-      const option1 = document.createElement('li');
-      option1.textContent = t('visit this page on a desktop computer to download all photos and videos at once');
-      option1.style.marginBottom = '10px';
-      
-      const option2 = document.createElement('li');
-      option2.textContent = t('save the photos to your 6180 account and use the 6180 app');
-      option2.style.marginBottom = '10px';
-
-      const option3 = document.createElement('li');
-      option3.textContent = t('select the "Open On iPhone App" option');
-      option3.style.marginBottom = '10px';      
-      
-      optionsList.appendChild(option1);
-      optionsList.appendChild(option2);
-      optionsList.appendChild(option3);      
-      
-      // Assemble modal
-      modalContent.appendChild(headerContainer);
-      contentWrapper.appendChild(itemsContainer);
-      contentWrapper.appendChild(explanationText);
-      contentWrapper.appendChild(optionsList);
-      modalContent.appendChild(contentWrapper);
-      modalContainer.appendChild(modalContent);
-      
-      // Add modal to body
-      document.body.appendChild(modalContainer);
-      
-    } else {
-      // Desktop implementation with locally installed JSZip
-      if (albumData && albumData.mediaItems.length > 0) {
-        // Show loading indicator
-        const loadingModal = document.createElement('div');
-        loadingModal.style.position = 'fixed';
-        loadingModal.style.top = '0';
-        loadingModal.style.left = '0';
-        loadingModal.style.width = '100%';
-        loadingModal.style.height = '100%';
-        loadingModal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-        loadingModal.style.display = 'flex';
-        loadingModal.style.justifyContent = 'center';
-        loadingModal.style.alignItems = 'center';
-        loadingModal.style.zIndex = '2000';
-        
-        const loadingContent = document.createElement('div');
-        loadingContent.style.backgroundColor = 'white';
-        loadingContent.style.padding = '30px';
-        loadingContent.style.borderRadius = '8px';
-        loadingContent.style.textAlign = 'center';
-        
-        const loadingText = document.createElement('p');
-        loadingText.textContent = t('Preparing your download...');
-        loadingText.style.marginBottom = '20px';
-        
-        const progressContainer = document.createElement('div');
-        progressContainer.style.width = '100%';
-        progressContainer.style.backgroundColor = '#f0f0f0';
-        progressContainer.style.borderRadius = '4px';
-        progressContainer.style.overflow = 'hidden';
-        
-        const progressBar = document.createElement('div');
-        progressBar.style.width = '0%';
-        progressBar.style.height = '20px';
-        progressBar.style.backgroundColor = '#006adc';
-        progressBar.style.transition = 'width 0.3s';
-        
-        progressContainer.appendChild(progressBar);
-        loadingContent.appendChild(loadingText);
-        loadingContent.appendChild(progressContainer);
-        loadingModal.appendChild(loadingContent);
-        document.body.appendChild(loadingModal);
-        
-        try {
-          // Use the already installed JSZip library
-          const zip = new JSZip();
-          const totalFiles = albumData.mediaItems.length;
-          const folderName = albumData.folderName || 'Photos';
-          let processedFiles = 0;
-          
-          // Function to fetch a file and add it to the zip
-          const fetchAndZip = async (item: MediaItem, index: number) => {
-            try {
-              // Load full resolution when downloading
-              handleLoadFullResolution(index);
-              
-              const response = await fetch(item.url);
-              if (!response.ok) throw new Error(`Failed to fetch ${item.url}`);
-              
-              const blob = await response.blob();
-              const extension = item.type === 'image' ? 'jpg' : 'mp4';
-              const fileName = `${folderName}-${index + 1}.${extension}`;
-              
-              zip.file(fileName, blob);
-              
-              // Mark as loaded
-              handleFullResolutionLoaded(index);
-              
-              processedFiles++;
-              const progress = Math.round((processedFiles / totalFiles) * 100);
-              progressBar.style.width = `${progress}%`;
-              loadingText.textContent = t(`Preparing your download... ${processedFiles}/${totalFiles}`);
-            } catch (error) {
-              console.error(`Error fetching file ${item.url}:`, error);
-            }
-          };
-          
-          // Process files in smaller batches to avoid memory issues
-          const batchSize = 5;
-          
-          (async () => {
-            for (let i = 0; i < totalFiles; i += batchSize) {
-              const batch = albumData.mediaItems.slice(i, i + batchSize);
-              await Promise.all(batch.map((item, idx) => fetchAndZip(item, i + idx)));
-            }
-            
-            // Generate and trigger download
-            loadingText.textContent = t('Generating zip file...');
-            const content = await zip.generateAsync({
-              type: 'blob',
-              compression: 'DEFLATE',
-              compressionOptions: { level: 6 }
-            }, (metadata) => {
-              const progress = Math.round(metadata.percent);
-              progressBar.style.width = `${progress}%`;
-            });
-            
-            const url = URL.createObjectURL(content);
-            const downloadLink = document.createElement('a');
-            downloadLink.href = url;
-            downloadLink.download = `[6180] ${folderName}.zip`;
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
-            
-            // Clean up
-            setTimeout(() => {
-              URL.revokeObjectURL(url);
-              document.body.removeChild(loadingModal);
-            }, 1000);
-          })().catch(error => {
-            console.error('Error creating zip file:', error);
-            loadingText.textContent = t('Error creating zip file. Please try again.');
-            progressBar.style.backgroundColor = '#d32f2f';
-            
-            // Add close button
-            const closeButton = document.createElement('button');
-            closeButton.textContent = t('Close');
-            closeButton.style.marginTop = '20px';
-            closeButton.style.padding = '8px 16px';
-            closeButton.style.backgroundColor = '#f3f4f6';
-            closeButton.style.border = 'none';
-            closeButton.style.borderRadius = '4px';
-            closeButton.style.cursor = 'pointer';
-            closeButton.onclick = () => {
-              document.body.removeChild(loadingModal);
-            };
-            
-            loadingContent.appendChild(closeButton);
-          });
-        } catch (error) {
-          console.error('Error initializing JSZip:', error);
-          loadingText.textContent = t('Error initializing zip functionality. Please try again later.');
-          progressBar.style.backgroundColor = '#d32f2f';
-          
-          // Add close button
-          const closeButton = document.createElement('button');
-          closeButton.textContent = t('Close');
-          closeButton.style.marginTop = '20px';
-          closeButton.style.padding = '8px 16px';
-          closeButton.style.backgroundColor = '#f3f4f6';
-          closeButton.style.border = 'none';
-          closeButton.style.borderRadius = '4px';
-          closeButton.style.cursor = 'pointer';
-          closeButton.onclick = () => {
-            document.body.removeChild(loadingModal);
-          };
-          
-          loadingContent.appendChild(closeButton);
-        }
-      } else {
-        alert(t('No items to download'));
-      }
+    // Call download function from fileOperations
+    if (albumData) {
+      downloadPhotos(albumData, t, openFullscreenView);
     }
   };
 
@@ -1865,27 +385,26 @@ const PhotoAlbumContent: React.FC = () => {
 
       // Make sure it's exactly 32 characters before formatting
       if (formattedId.length === 32) {
-
-        formattedId = [
-          formattedId.slice(0, 8),
-          formattedId.slice(8, 12),
-          formattedId.slice(12, 16),
-          formattedId.slice(16, 20),
-          formattedId.slice(20)
-        ].join('-');
-      
+        formattedId = formatUUID(formattedId);
         console.log(formattedId); // e.g., B89D8BAF-F9A1-484B-A379-FA7FAD081303
-
       } else {
-
         console.error('Invalid UUID format: must be 32 characters after removing dashes');
-
       }
 
-      const data = await fetchFolder(formattedId);
+      const data = await fetchFolder(formattedId, setFolderId);
       
       if (data) {
         setAlbumData(data);
+        
+        // Set password policy from the API result
+        if (data.passwordPolicy) {
+          setPasswordPolicy(data.passwordPolicy as PasswordPolicyEnum);
+          
+          // If NoPassword policy, automatically set as authorized
+          if (data.passwordPolicy === 'NoPassword') {
+            setIsAuthorized(true);
+          }
+        }
       }
       
       setIsLoading(false);
@@ -1903,33 +422,6 @@ const PhotoAlbumContent: React.FC = () => {
     }
   }, [albumData, language]);
 
-  // Check if content should be protected based on policy and authorization
-  const shouldShowContent = () => {
-    // If no policy or authorized, show content
-    if (!passwordPolicy || isAuthorized || passwordPolicy === 'NoPassword') {
-      return true;
-    }
-    
-    // With NotVisible policy and not authorized, hide content
-    if (passwordPolicy === 'NotVisible') {
-      // If there's a password error, log it for debugging
-      if (passwordError) {
-        console.error('Password error:', passwordError);
-      }
-      return false;
-    }
-    
-    // For other policies, show content with appropriate restrictions
-    return true;
-  };
-  
-  // Check if watermark should be applied
-  const shouldShowWatermark = () => {
-    // If there's a password error and it mentions watermark, or policy is Watermark
-    const showWatermarkDueToError = passwordError?.toLowerCase().includes('watermark') ?? false;
-    return (!isAuthorized && passwordPolicy === 'Watermark') || showWatermarkDueToError;
-  };
-
   // Render
   return (
     <Body>
@@ -1937,76 +429,76 @@ const PhotoAlbumContent: React.FC = () => {
       
       <Header>
         <HeaderContent>
-        <HeaderControlsWithFullWidth>
-          {isSelectionMode ? (
-            <div style={{ display: 'flex', gap: '16px' }}>
-              <ActionButton 
-                onClick={shareSelection} 
-                disabled={selectedItems.size === 0}
-                style={{ 
-                  opacity: selectedItems.size === 0 ? 0.5 : 1,
-                  backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
-                  color: selectedItems.size > 0 ? 'white' : undefined,
-                }}
-              >
-                {t('Create Sub-album')} ({selectedItems.size})
-              </ActionButton>
-              <ActionButton onClick={cancelSelection}>
-                {t('Cancel')}
-              </ActionButton>
-            </div>
-          ) : (
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between', // This ensures maximum space between left and right groups
-              width: '100%', 
-              flexWrap: 'nowrap', 
-              alignItems: 'center'
-            }}>
-              {/* Left side - Create Sub-album button */}
-              <div style={{ flexShrink: 0 }}> 
-              {!showingEnterPassword() && (
-                <CreateAlbumButton onClick={createSubalbum}>
-                  {t('Create Sub-album')}
-                </CreateAlbumButton>
-              )}
+          <HeaderControlsWithFullWidth>
+            {isSelectionMode ? (
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <ActionButton 
+                  onClick={shareSelection} 
+                  disabled={selectedItems.size === 0}
+                  style={{ 
+                    opacity: selectedItems.size === 0 ? 0.5 : 1,
+                    backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
+                    color: selectedItems.size > 0 ? 'white' : undefined,
+                  }}
+                >
+                  {t('Create Sub-album')} ({selectedItems.size})
+                </ActionButton>
+                <ActionButton onClick={cancelSelection}>
+                  {t('Cancel')}
+                </ActionButton>
               </div>
-              
-              {/* Right side - actions group */}
+            ) : (
               <div style={{ 
-                marginLeft: 'auto', // Push all the way to the right
-                display: 'flex',
+                display: 'flex', 
+                justifyContent: 'space-between', // This ensures maximum space between left and right groups
+                width: '100%', 
+                flexWrap: 'nowrap', 
                 alignItems: 'center'
               }}>
-                {/* Show password button */}
-                {!isSelectionMode && 
-                !isAuthorized && 
-                passwordPolicy && 
-                passwordPolicy !== 'NoPassword' && (
-                  <PasswordButton onClick={promptForPassword}>
-                    {t('Enter Password')}
-                  </PasswordButton>
+                {/* Left side - Create Sub-album button */}
+                <div style={{ flexShrink: 0 }}> 
+                {!showingEnterPassword() && (
+                  <CreateAlbumButton onClick={createSubalbum}>
+                    {t('Create Sub-album')}
+                  </CreateAlbumButton>
                 )}
+                </div>
                 
-                {/* Show the responsive header for other buttons */}
-                {!isSelectionMode && !(
-                  !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
-                ) && (
-                  <ResponsiveHeader 
-                    addPhotosToAlbum={addPhotosToAlbum}
-                    saveAlbum={saveAlbum} 
-                    downloadPhotos={downloadPhotos}
-                    getQRCode={getQRCode}
-                    promptForPassword={promptForPassword}
-                    showingEnterPassword={showingEnterPassword()}
-                    passwordPolicy={passwordPolicy}
-                    t={t} 
-                  />
-                )}
+                {/* Right side - actions group */}
+                <div style={{ 
+                  marginLeft: 'auto', // Push all the way to the right
+                  display: 'flex',
+                  alignItems: 'center'
+                }}>
+                  {/* Show password button */}
+                  {!isSelectionMode && 
+                  !isAuthorized && 
+                  passwordPolicy && 
+                  passwordPolicy !== 'NoPassword' && (
+                    <ActionButton onClick={promptForPassword}>
+                      {t('Enter Password')}
+                    </ActionButton>
+                  )}
+                  
+                  {/* Show the responsive header for other buttons */}
+                  {!isSelectionMode && !(
+                    !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
+                  ) && (
+                    <ResponsiveHeader 
+                      addPhotosToAlbum={addPhotosToAlbum}
+                      saveAlbum={saveAlbum} 
+                      downloadPhotos={handleDownloadPhotos}
+                      getQRCode={getQRCode}
+                      promptForPassword={promptForPassword}
+                      showingEnterPassword={showingEnterPassword()}
+                      passwordPolicy={passwordPolicy}
+                      t={t} 
+                    />
+                  )}
+                </div>
               </div>
-            </div>
-          )}
-        </HeaderControlsWithFullWidth>
+            )}
+          </HeaderControlsWithFullWidth>
           <RowSelectorContainer>
             <RowSelectorLabel htmlFor="columns" id="columns-label">
               <strong>{t('Columns:')}</strong>
@@ -2051,9 +543,9 @@ const PhotoAlbumContent: React.FC = () => {
               </div>
             )}
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
-              <PasswordButton onClick={promptForPassword}>
+              <ActionButton onClick={promptForPassword}>
                 {t('Enter Password')}
-              </PasswordButton>
+              </ActionButton>
             </div>
           </div>
         )}
@@ -2092,6 +584,7 @@ const PhotoAlbumContent: React.FC = () => {
             <ErrorMessage>{t('No media found in this album')}</ErrorMessage>
           ) : (
             albumData?.mediaItems.map((item, index) => {
+              // Restore the ownerName extraction from the contacts map
               const ownerName = item.ownerId && albumData.contacts[item.ownerId] 
                 ? albumData.contacts[item.ownerId] 
                 : '';
@@ -2100,17 +593,18 @@ const PhotoAlbumContent: React.FC = () => {
               const showWatermark = shouldShowWatermark();
               
               return (
-                <SelectableMediaBlock 
+                <div 
                   key={index} 
-                  isHovered={hoverIdx === index}
-                  isVideo={item.type === 'video'}
-                  isSelected={isSelectionMode && isSelected}
-                  onMouseEnter={() => setHoverIdx(index)}
-                  onMouseLeave={() => setHoverIdx(null)}
+                  style={{ 
+                    position: 'relative',
+                    border: isSelectionMode && isSelected ? '3px solid #006adc' : undefined,
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    boxShadow: isSelectionMode && isSelected ? '0 0 0 3px rgba(0, 106, 220, 0.3)' : undefined
+                  }}
                   onClick={(e: React.MouseEvent) => isSelectionMode ? 
                     toggleItemSelection(index, e) : 
                     openFullscreenView(index)}
-                  style={{ position: 'relative' }}
                 >
                   {isSelectionMode && (
                     <SelectionCheckbox 
@@ -2145,8 +639,11 @@ const PhotoAlbumContent: React.FC = () => {
                     />
                   )}
                   
-                  {ownerName && <OwnerBadge>{ownerName}</OwnerBadge>}
-                </SelectableMediaBlock>
+                  {/* Display owner badge if owner name exists */}
+                  {ownerName && (
+                    <OwnerBadge>{ownerName}</OwnerBadge>
+                  )}
+                </div>
               );
             })
           )}
@@ -2184,33 +681,12 @@ const PhotoAlbumContent: React.FC = () => {
           hasNext={fullscreenItem < albumData.mediaItems.length - 1}
           hasPrev={fullscreenItem > 0}
           albumName={albumData.folderName}
-          ownerName={
-            albumData.mediaItems[fullscreenItem].ownerId && 
-            albumData.contacts[albumData.mediaItems[fullscreenItem].ownerId] 
-              ? albumData.contacts[albumData.mediaItems[fullscreenItem].ownerId] 
-              : undefined
-          }
           showWatermark={shouldShowWatermark()}
         />
       )}
       
-      {/* This component exists solely to use the passwordError state so TypeScript won't complain */}
-      <PasswordErrorDebug error={passwordError} />
     </Body>
   );
-};
-
-// Debug component to make TypeScript happy by directly using passwordError
-const PasswordErrorDebug: React.FC<{error: string | null}> = ({error}) => {
-  // This component doesn't render anything visible
-  // It just uses the error to make TypeScript happy
-  React.useEffect(() => {
-    if (error) {
-      console.debug("Password error state:", error);
-    }
-  }, [error]);
-  
-  return null;
 };
 
 // Wrap PhotoAlbumContent with I18nProvider
