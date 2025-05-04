@@ -452,103 +452,6 @@ const InlineOTPLogin: React.FC<InlineOTPLoginProps> = ({ isOpen, onClose, onLogi
   );
 };
 
-// Login Modal Component (keeping for backward compatibility)
-interface LoginModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  t: (key: string) => string;
-  redirectToLogin: () => void;
-}
-
-const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, t, redirectToLogin }) => {
-  if (!isOpen) return null;
-
-  return (
-    <div style={{
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      zIndex: 1000
-    }}>
-      <div style={{
-        maxWidth: 400,
-        width: '100%',
-        background: '#ffffff',
-        padding: '32px',
-        borderRadius: '12px',
-        boxShadow: '0 6px 20px rgba(0,0,0,0.06)',
-        textAlign: 'center',
-      }}>
-        <div style={{ marginBottom: '24px' }}>
-          <img 
-            src="images/logo_no_background.png" 
-            alt="6180 Logo" 
-            style={{ 
-              height: '60px', 
-              marginBottom: '16px' 
-            }} 
-          />
-          <h2 style={{
-            fontSize: '24px',
-            fontWeight: 600,
-            color: '#333',
-          }}>
-            {t('Sign in to 6180')}
-          </h2>
-        </div>
-
-        <p style={{ 
-          marginBottom: '24px', 
-          color: '#555',
-          fontSize: '16px'
-        }}>
-          {t('You need to be logged in to add photos to this album.')}
-        </p>
-
-        <button
-          onClick={redirectToLogin}
-          style={{
-            width: '100%',
-            padding: '12px',
-            fontSize: '16px',
-            backgroundColor: '#007bff',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            marginBottom: '16px'
-          }}
-        >
-          {t('Sign In')}
-        </button>
-        
-        <button
-          onClick={onClose}
-          style={{
-            width: '100%',
-            padding: '12px',
-            fontSize: '16px',
-            backgroundColor: '#f8f9fa',
-            color: '#555',
-            border: '1px solid #ccc',
-            borderRadius: '6px',
-            cursor: 'pointer',
-          }}
-        >
-          {t('Cancel')}
-        </button>
-      </div>
-    </div>
-  );
-};
-
 // Main Photo Album Component
 const PhotoAlbumContent: React.FC = () => {
   // Hooks for i18n
@@ -595,9 +498,6 @@ const PhotoAlbumContent: React.FC = () => {
   
   // Add new state for inline OTP login
   const [showInlineOTPLogin, setShowInlineOTPLogin] = useState(false);
-  
-  // Legacy state (keeping for backward compatibility)
-  const [showLoginModal, setShowLoginModal] = useState(false);
   
   // Create logger for tracking upload progress (logs to console only, not stored in state)
   const log = createLogger(() => {
@@ -854,12 +754,6 @@ const PhotoAlbumContent: React.FC = () => {
       // Clear the file input to allow selecting the same files again
       if (e.target) e.target.value = "";
     }
-  };
-  
-  // Simple redirectToLogin function (keeping for backward compatibility)
-  const redirectToLogin = () => {
-    const currentUrl = window.location.href;
-    window.location.href = `/login.html?redirect=${encodeURIComponent(currentUrl)}`;
   };
 
   // Save album function
@@ -1334,14 +1228,6 @@ const PhotoAlbumContent: React.FC = () => {
         isOpen={showInlineOTPLogin}
         onClose={() => setShowInlineOTPLogin(false)}
         onLoginSuccess={handleLoginSuccess}
-        t={t}
-      />
-      
-      {/* Login Modal - Keeping for backward compatibility */}
-      <LoginModal
-        isOpen={showLoginModal}
-        onClose={() => setShowLoginModal(false)}
-        redirectToLogin={redirectToLogin}
         t={t}
       />
       
