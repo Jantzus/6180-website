@@ -1149,12 +1149,15 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   }}
                 >
                   {passwordPolicy !== "NoPassword" && (
-                    <div style={{
-                      display: "flex",
-                      alignItems: "center",
-                      fontSize: "12px",
-                      color: "#555"
-                    }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        fontSize: "10px",
+                        color: "#555",
+                        fontStyle: "italic"
+                      }}
+                    >
                       <span>{getPasswordPolicyText(passwordPolicy)}</span>
                     </div>
                   )}

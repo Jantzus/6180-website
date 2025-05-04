@@ -197,63 +197,173 @@ interface ProfileHeaderProps {
   isRTL: boolean;
 }
 
+// Modified ProfileHeader Component
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({ 
   username, 
   isCurrentUser,
   isRTL 
 }) => {
   const { t } = useTranslation();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
+  // Toggle dropdown menu
+  const toggleDropdown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = () => {
+      if (isDropdownOpen) setIsDropdownOpen(false);
+    };
+    
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
   
   return (
     <div style={{ 
-      marginBottom: 40,
+      marginBottom: 24,
       textAlign: "center",
       direction: isRTL ? "rtl" : "ltr"
     }}>
       <div style={{ 
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center" 
+        justifyContent: isRTL ? "flex-start" : "flex-end", // Align to the right side
+        marginBottom: 8,
+        position: "relative"
       }}>
-        <div style={{ 
-          width: 80,
-          height: 80,
-          borderRadius: "50%",
-          backgroundColor: "#e0e0e0",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginBottom: 16,
-          fontSize: 32,
-          color: "#555"
-        }}>
-          {username ? username.charAt(0).toUpperCase() : "?"}
+        <div 
+          style={{ 
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+            position: "relative"
+          }}
+          onClick={toggleDropdown}
+        >
+          <div style={{ 
+            width: 40,
+            height: 40,
+            borderRadius: "50%",
+            backgroundColor: "#e0e0e0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 18,
+            color: "#555",
+            marginRight: 12
+          }}>
+            {username ? username.charAt(0).toUpperCase() : "?"}
+          </div>
+          
+          <h1 style={{ 
+            fontSize: 18,
+            margin: 0,
+            fontWeight: 600
+          }}>
+            {username || t('User Profile')}
+          </h1>
+          
+          {/* Dropdown indicator */}
+          <div style={{
+            width: 0,
+            height: 0,
+            borderLeft: "5px solid transparent",
+            borderRight: "5px solid transparent",
+            borderTop: "5px solid #555",
+            marginLeft: 8
+          }}></div>
         </div>
         
-        <h1 style={{ 
-          fontSize: 24, 
-          marginBottom: 8,
-          fontWeight: 600
-        }}>
-          {username || t('User Profile')}
-        </h1>
-        
-        {isCurrentUser && (
+        {/* Dropdown Menu */}
+        {isDropdownOpen && (
           <div style={{
-            marginTop: 16,
-            padding: "12px 16px",
-            backgroundColor: "#f0f7ff",
+            position: "absolute",
+            top: "100%",
+            right: 0,
+            marginTop: 8,
+            backgroundColor: "#fff",
             borderRadius: 8,
-            border: "1px solid #cce0ff",
-            maxWidth: 500
+            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+            zIndex: 100,
+            minWidth: 180,
+            padding: "8px 0"
           }}>
-            <p style={{ margin: 0, fontSize: 14 }}>
-              {t('This is how others see your public profile')}
-            </p>
+            <div 
+              style={{
+                padding: "10px 16px",
+                fontSize: 14,
+                color: "#333",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                borderBottom: "1px solid #eee"
+              }}
+              onClick={() => {
+                alert(t('Bio feature is coming soon! Stay tuned for updates where you can share more about yourself.'));
+              }}
+            >
+              <span>Bio</span>
+            </div>
+            
+            <div 
+              style={{
+                padding: "10px 16px",
+                fontSize: 14,
+                color: "#333",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                borderBottom: "1px solid #eee"
+              }}
+              onClick={() => {
+                alert(t('Email feature is coming soon! Soon you will be able to share your email with connections.'));
+              }}
+            >
+              <span>E-mail</span>
+            </div>
+            
+            <div 
+              style={{
+                padding: "10px 16px",
+                fontSize: 14,
+                color: "#333",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center"
+              }}
+              onClick={() => {
+                alert(t('Add Contact feature is coming soon! You will be able to add this person as a contact on 6180.'));
+              }}
+            >
+              <span>Contact On 6180</span>
+            </div>
           </div>
         )}
       </div>
+      
+      {isCurrentUser && (
+        <div style={{
+          marginTop: 12,
+          padding: "8px 12px",
+          backgroundColor: "#f0f7ff",
+          borderRadius: 8,
+          border: "1px solid #cce0ff",
+          maxWidth: 500,
+          fontSize: 13,
+          margin: "0 auto" // Center the notification
+        }}>
+          <p style={{ margin: 0 }}>
+            {t('This is how others see your public profile')}
+          </p>
+        </div>
+      )}
     </div>
   );
 };

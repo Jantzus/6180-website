@@ -137,7 +137,7 @@ const HeaderControlsWithFullWidth = styled(HeaderControls)`
   width: 100%;
   
   > div {
-    width: auto; // Changed from 100% to auto to prevent stretching
+    width: auto;
     display: flex;
     align-items: center;
   }
@@ -166,7 +166,7 @@ interface AlbumData {
   passwordPolicy?: string;
   passwordRequired?: boolean;
   hasPassword?: boolean;
-  actualPassword?: string; // Add this to store the actual password
+  actualPassword?: string;
 }
 
 // Password policy type from Typescript definitions
@@ -815,15 +815,15 @@ const PasswordModal: React.FC<{
 };
 
 const ResponsiveHeader: React.FC<{
+  addPhotosToAlbum: () => void;
   saveAlbum: () => void;
   downloadPhotos: () => void;
   getQRCode: () => void;
   promptForPassword: () => void;
-  showSaveButton: boolean;
-  showSaveButtons: boolean;
+  showingEnterPassword: boolean;
   passwordPolicy?: string;
   t: (key: string) => string;
-}> = ({ saveAlbum, downloadPhotos, getQRCode, promptForPassword, showSaveButtons, passwordPolicy, t }) => {
+}> = ({ addPhotosToAlbum, saveAlbum, downloadPhotos, getQRCode, promptForPassword, showingEnterPassword, passwordPolicy, t }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
@@ -898,7 +898,7 @@ const ResponsiveHeader: React.FC<{
         }}
       >
         {/* Only show the hamburger menu if user can save or create sub-album */}
-        {showSaveButtons && (
+        {!showingEnterPassword && (
           <div style={{ flexShrink: 0 }}>
             <HamburgerButton 
               onClick={toggleMenu}
@@ -910,17 +910,17 @@ const ResponsiveHeader: React.FC<{
                 <HamburgerLine />
                 <HamburgerLine />
               </HamburgerIcon>
-              {t('Save')}
+              {t('Add')}
             </HamburgerButton>
             
             {menuOpen && (
               <DropdownMenu>
-                <MenuButton onClick={() => handleAction(saveAlbum)}>
+                <MenuButton onClick={() => handleAction(addPhotosToAlbum)}>
                   {t('Add Photos To Album')}
                 </MenuButton>
                 
                 <MenuButton onClick={() => handleAction(saveAlbum)}>
-                  {t('Save To 6180')}
+                  {t('Save Album To 6180')}
                 </MenuButton>
                 
                 <MenuButton onClick={() => handleAction(downloadPhotos)}>
@@ -936,7 +936,7 @@ const ResponsiveHeader: React.FC<{
         )}
 
         {/* Show Enter Password button if needed - now on the right */}
-        {!showSaveButtons && passwordPolicy && passwordPolicy !== 'NoPassword' && (
+        {showingEnterPassword && passwordPolicy && passwordPolicy !== 'NoPassword' && (
           <div style={{ marginLeft: 'auto', flexShrink: 0 }}> {/* Added flexShrink */}
             <PasswordButton onClick={promptForPassword}>
               {t('Enter Password')}
@@ -956,18 +956,18 @@ const ResponsiveHeader: React.FC<{
       flexWrap: 'nowrap'
     }}>
       {/* Only show action buttons if user can save or create sub-album */}
-      {showSaveButtons && (
+      {!showingEnterPassword && (
         <div style={{ 
           display: 'flex', 
           gap: '20px',
           flexWrap: 'wrap'
         }}>
-          <ActionButton onClick={saveAlbum}>
+          <ActionButton onClick={addPhotosToAlbum}>
             {t('Add Photos To Album')}
           </ActionButton>
           
           <ActionButton onClick={saveAlbum}>
-            {t('Save To 6180')}
+            {t('Save Album To 6180')}
           </ActionButton>
           
           <ActionButton onClick={downloadPhotos}>
@@ -981,7 +981,7 @@ const ResponsiveHeader: React.FC<{
       )}
       
       {/* Show Enter Password button if needed */}
-      {!showSaveButtons && (
+      {showingEnterPassword && (
         <div>
           <PasswordButton onClick={promptForPassword}>
             {t('Enter Password')}
@@ -1013,7 +1013,6 @@ const PhotoAlbumContent: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [folderId, setFolderId] = useState<string | null>(null);
-  const [showSaveButton, setShowSaveButton] = useState<boolean>(true);
   
   // Password and authorization state
   const [passwordPolicy, setPasswordPolicy] = useState<PasswordPolicyEnum | undefined>(undefined);
@@ -1102,12 +1101,19 @@ const PhotoAlbumContent: React.FC = () => {
         }
       }
       
+      // Build contacts map
+      (items[0]?.contactsUsingInvite?.items || []).forEach((contact: any) => {
+        if (contact?.id && contact?.item?.publicDisplayName) {
+          contacts[contact.id] = contact.item.publicDisplayName;
+        }
+      });
+      
       // Get media items and filter duplicates by dataKey
       (folder?.fileReferencesPage?.items || []).forEach((ref: any) => {
         const file = ref?.file;
         if (!file?.dataKey) return;
   
-        const { dataKey, thumbnailDataKey, durationInSeconds } = file;
+        const { dataKey, thumbnailDataKey, durationInSeconds, ownerContactId } = file;
         
         // Skip this item if we've already seen this dataKey
         if (uniqueDataKeys.has(dataKey)) {
@@ -1124,15 +1130,17 @@ const PhotoAlbumContent: React.FC = () => {
           mediaItems.push({ 
             type: "image", 
             url,
-            thumbnailUrl: thumbnailUrl || url, // Use url as fallback if no thumbnail
+            thumbnailUrl: thumbnailUrl || url,
+            ownerId: ownerContactId,
             loaded: false
           });
         } else if (dataKey.startsWith("Input/Video/")) {
           mediaItems.push({
             type: "video",
             url,
-            thumbnailUrl: thumbnailUrl || url, // Use url as fallback if no thumbnail
+            thumbnailUrl: thumbnailUrl || url,
             duration: formatTime(durationInSeconds),
+            ownerId: ownerContactId,
             loaded: false
           });
         }
@@ -1151,9 +1159,9 @@ const PhotoAlbumContent: React.FC = () => {
     };
   };
 
-  const shouldShowButtons = () => {
+  const showingEnterPassword = () => {
     // Show buttons if user is authorized OR there's no password policy OR policy is NoPassword
-    return isAuthorized || !passwordPolicy || passwordPolicy === 'NoPassword';
+    return !isAuthorized && passwordPolicy !== undefined && passwordPolicy !== 'NoPassword';
   };
 
   // Handle password submission
@@ -1346,13 +1354,12 @@ const PhotoAlbumContent: React.FC = () => {
       // Then wait for the private API (if available)
       const privateResult = await privateApiPromise;
       if (privateResult) {
+        
         // Check if there's a folderPosition in the private API result
-        const folderPosition = privateResult?.data?.fetchFolders?.items?.[0]?.folderPosition?.id;
+        const folderPosition = privateResult?.data?.fetchRelations?.items?.[0]?.folderPosition?.id;
         
         // If folderPosition exists, it means the user already has this folder saved
         if (folderPosition) {
-          setShowSaveButton(false);
-          
           // User is authorized if they already have the folder saved
           setIsAuthorized(true);
         }
@@ -1363,6 +1370,7 @@ const PhotoAlbumContent: React.FC = () => {
           initialData = privateData;
           setAlbumData(privateData);
         }
+
       }
       
       return initialData;
@@ -1379,6 +1387,8 @@ const PhotoAlbumContent: React.FC = () => {
     localStorage.setItem('columns', value);
   };
   
+  const addPhotosToAlbum = async () => {}
+
   // Save album function
   const saveAlbum = async () => {
     // Check if authorized for CannotBeSaved policy
@@ -1955,7 +1965,7 @@ const PhotoAlbumContent: React.FC = () => {
             }}>
               {/* Left side - Create Sub-album button */}
               <div style={{ flexShrink: 0 }}> 
-              {shouldShowButtons() && (
+              {!showingEnterPassword() && (
                 <CreateAlbumButton onClick={createSubalbum}>
                   {t('Create Sub-album')}
                 </CreateAlbumButton>
@@ -1983,12 +1993,12 @@ const PhotoAlbumContent: React.FC = () => {
                   !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
                 ) && (
                   <ResponsiveHeader 
+                    addPhotosToAlbum={addPhotosToAlbum}
                     saveAlbum={saveAlbum} 
                     downloadPhotos={downloadPhotos}
                     getQRCode={getQRCode}
                     promptForPassword={promptForPassword}
-                    showSaveButton={showSaveButton}
-                    showSaveButtons={shouldShowButtons()}
+                    showingEnterPassword={showingEnterPassword()}
                     passwordPolicy={passwordPolicy}
                     t={t} 
                   />

@@ -51,9 +51,9 @@ export const HeaderControls = styled.div`
 `;
 
 export const CreateAlbumButton = styled.button`
-  background: #006adc;
-  color: white;
-  border: none;
+  background: transparent;
+  color: #006adc;
+  border: 1px solid #006adc;
   border-radius: 4px;
   padding: 6px 12px;
   cursor: pointer;
