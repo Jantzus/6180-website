@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import { getLanguageDirection } from "@/lib/i18n";
-import { checkLoginWithoutRedirect } from "@/lib/utils";
+import { checkLoginWithoutRedirect, checkLoginWithRefresh } from "@/lib/utils";
 import {
   CognitoIdentityProviderClient,
   SignUpCommand,
@@ -22,8 +22,7 @@ import {
   createLogger, 
   createPhotoStatusUpdater, 
   updateProgressTracker,
-  processFiles,
-  clearAlbumData
+  processFiles
 } from "@/lib/file-upload-utils";
 
 // Import styled components
@@ -500,7 +499,11 @@ const PhotoAlbumContent: React.FC = () => {
   const [showInlineOTPLogin, setShowInlineOTPLogin] = useState(false);
   // Add state to track if login was successful but photos haven't been selected yet
   const [loginSuccessful, setLoginSuccessful] = useState(false);
-  
+  // Add state to track user information
+  const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
+  // Add new state to track file processing completion
+  const [fileProcessingComplete, setFileProcessingComplete] = useState(false);
+
   // Create logger for tracking upload progress (logs to console only, not stored in state)
   const log = createLogger(() => {
     // Using empty function since we don't need to display debug messages in UI
@@ -511,7 +514,23 @@ const PhotoAlbumContent: React.FC = () => {
     updateProgressTracker(selectedPhotos, setProgressTracker);
   }, [selectedPhotos]);
 
-  // No need to initialize cognitoUsername separately as we'll extract it directly when needed
+  // Effect to navigate to save-album page after file processing is complete
+  useEffect(() => {
+    if (fileProcessingComplete && selectedPhotos.length > 0) {
+      // Show a completion message in the UI
+      const successCount = selectedPhotos.filter(photo => photo.status === 'complete').length;
+      const errorCount = selectedPhotos.filter(photo => photo.status === 'error').length;
+      
+      console.log(`Upload complete: ${successCount} successful, ${errorCount} failed`);
+      
+      // Get the necessary data for the redirect
+      if (folderId) {
+        window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
+      } else {
+        window.location.href = "/save-album.html";
+      }
+    }
+  }, [fileProcessingComplete, selectedPhotos.length, folderId]);
 
   // Check if content should be protected based on policy and authorization
   const shouldShowContent = () => {
@@ -689,28 +708,58 @@ const PhotoAlbumContent: React.FC = () => {
       return;
     }
     
+    // If there's a token but we don't have the username, get it
+    if (!cognitoUsername) {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const username = payload["cognito:username"];
+        setCognitoUsername(username);
+      } catch (err) {
+        console.error("Failed to decode token", err);
+      }
+    }
+    
+    // Reset the file processing completion flag before opening file picker
+    setFileProcessingComplete(false);
+    
     // User is logged in, continue with file selection
     openFilePicker();
   };
 
   // Handler for successful login that continues the upload process
-  const handleLoginSuccess = () => {
+  const handleLoginSuccess = async () => {
     // Close the login modal
     setShowInlineOTPLogin(false);
     
-    // Set login successful state
-    setLoginSuccessful(true);
+    // Get the token and extract username
+    const token = await checkLoginWithoutRedirect();
+    if (token) {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const username = payload["cognito:username"];
+        setCognitoUsername(username);
+        
+        // Set login successful state
+        setLoginSuccessful(true);
+      } catch (err) {
+        console.error("Failed to decode token", err);
+      }
+    }
   };
 
-  // Handle file selection - Updated to use inline OTP login
+  // Handle file selection - Updated to show progress and ensure processing completes before navigation
   const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     if (!files.length) return;
 
+    // Only reset the loginSuccessful state if files are actually selected
+    setLoginSuccessful(false);
     setIsUploading(true);
+    // Reset file processing completion flag
+    setFileProcessingComplete(false);
     
-    // Check if the user is logged in
-    const token = await checkLoginWithoutRedirect();
+    // Get a fresh token using the async function
+    const token = await checkLoginWithRefresh();
     
     if (!token) {
       log("❌ Authentication failed");
@@ -724,36 +773,67 @@ const PhotoAlbumContent: React.FC = () => {
     try {
       // Extract username from token
       const payload = JSON.parse(atob(token.split('.')[1]));
-      const cognitoUsername = payload["cognito:username"];
+      const username = payload["cognito:username"];
       
-      if (!cognitoUsername) {
+      if (!username) {
         log("❌ Missing Cognito Username");
         setIsUploading(false);
         return;
       }
       
+      setCognitoUsername(username);
+      
       // Generate a new folder ID or use existing one
-      const newFolderId = folderId || `${cognitoUsername}_____${generateUUID()}____Folder`;
+      const newFolderId = folderId || `${username}_____${generateUUID()}____Folder`;
       log(`📁 Using folder ID: ${newFolderId}`);
       
-      // Use the createPhotoStatusUpdater function - exactly like in my-albums.tsx
+      // Initialize empty array for selected photos in state to show initial progress
+      setSelectedPhotos(files.map((file) => ({
+        fileName: file.name,
+        s3PreviewUrl: URL.createObjectURL(file),
+        type: file.type,
+        size: file.size,
+        status: 'pending',
+        progress: 0
+      })));
+      
+      // Use the createPhotoStatusUpdater function
       const updatePhotoStatus = createPhotoStatusUpdater(setSelectedPhotos);
       
-      // Use the processFiles function - exactly like in my-albums.tsx
-      const processedPhotos = await processFiles(files, cognitoUsername, updatePhotoStatus, log);
+      // Set up an interval to update the UI while processing continues
+      const progressUpdateInterval = setInterval(() => {
+        updateProgressTracker(selectedPhotos, setProgressTracker);
+      }, 500);
+      
+      // Use the processFiles function - this processes the files and uploads them to S3 temp
+      const processedPhotos = await processFiles(files, username, updatePhotoStatus, log);
+      
+      // Clear the interval once processing is complete
+      clearInterval(progressUpdateInterval);
+      
+      // Make sure we have a final progress update
+      updateProgressTracker(processedPhotos, setProgressTracker);
       
       // Save to localStorage - ONLY the keys and metadata, not the file data
       localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos));
       log(`📸 Saved ${processedPhotos.length} photos metadata to storage`);
       
-      // Redirect to save-album page with folder ID parameter
-      if (folderId) {
-        window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
-      } else {
-        window.location.href = "/save-album.html";
+      // If all photos are uploaded successfully, show a completion message
+      const allComplete = processedPhotos.every(photo => photo.status === 'complete');
+      const anyErrors = processedPhotos.some(photo => photo.status === 'error');
+      
+      if (allComplete && !anyErrors) {
+        log(`✅ All ${processedPhotos.length} files successfully uploaded`);
+      } else if (anyErrors) {
+        const errorCount = processedPhotos.filter(photo => photo.status === 'error').length;
+        log(`⚠️ Upload completed with ${errorCount} errors`);
       }
       
-      clearAlbumData(setSelectedPhotos, setProgressTracker, [], log);
+      // Set a slight delay before navigation to show the completed upload status
+      setTimeout(() => {
+        // Set the file processing completion flag to trigger the navigation effect
+        setFileProcessingComplete(true);
+      }, 1000);
       
     } catch (error) {
       log(`❌ Fatal error in handleFileSelection: ${String(error)}`);
@@ -920,24 +1000,6 @@ const PhotoAlbumContent: React.FC = () => {
     setColumns(savedColumnsValue);
   }, []);
 
-  // Reset loginSuccessful state when file input is clicked
-  useEffect(() => {
-    const handleFileInputClick = () => {
-      setLoginSuccessful(false);
-    };
-
-    const fileInput = fileInputRef.current;
-    if (fileInput) {
-      fileInput.addEventListener('click', handleFileInputClick);
-    }
-
-    return () => {
-      if (fileInput) {
-        fileInput.removeEventListener('click', handleFileInputClick);
-      }
-    };
-  }, [fileInputRef.current]);
-
   // Fetch album data
   useEffect(() => {
     const initAlbum = async () => {
@@ -980,6 +1042,24 @@ const PhotoAlbumContent: React.FC = () => {
     };
 
     initAlbum();
+  }, []);
+
+  // Check if user is logged in and get cognito username
+  useEffect(() => {
+    const getUserInfo = async () => {
+      const token = await checkLoginWithoutRedirect();
+      if (token) {
+        try {
+          const payload = JSON.parse(atob(token.split('.')[1]));
+          const username = payload["cognito:username"];
+          setCognitoUsername(username);
+        } catch (err) {
+          console.error("Failed to decode token", err);
+        }
+      }
+    };
+
+    getUserInfo();
   }, []);
 
   // Set page title
@@ -1088,34 +1168,76 @@ const PhotoAlbumContent: React.FC = () => {
       </Header>
 
       <MediaContainer id="media-container">
+        {/* Add a proper container for the "Select Photos" button when login is successful */}
         {loginSuccessful && (
-          <button
-            onClick={openFilePicker}
-            style={{
-              backgroundColor: '#007bff',
-              color: 'white',
-              border: 'none',
-              borderRadius: '6px',
-              padding: '10px 16px',
-              fontWeight: 600,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px'
-            }}
-          >
-            <span>{t('Select Photos To Add To Album')}</span>
-          </button>
+          <div style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: '20px',
+            marginTop: '10px'
+          }}>
+            <button
+              onClick={openFilePicker}
+              style={{
+                backgroundColor: '#007bff',
+                color: 'white',
+                border: 'none',
+                borderRadius: '6px',
+                padding: '12px 20px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '16px',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+              }}
+            >
+              <span>{t('Select Photos To Add To Album')}</span>
+            </button>
+          </div>
         )}
         
-        {/* Upload Progress Component */}
+        {/* Enhanced Upload Progress Component with more detailed status */}
         {isUploading && (
-          <UploadProgress 
-            progressTracker={progressTracker} 
-            t={t} 
-            isRTL={getLanguageDirection(language) === "rtl"}
-            style={{ marginTop: '20px' }}
-          />
+          <div style={{ width: '100%', marginBottom: '20px' }}>
+            <UploadProgress 
+              progressTracker={progressTracker} 
+              t={t} 
+              isRTL={getLanguageDirection(language) === "rtl"}
+              style={{ marginTop: '20px' }}
+            />
+            
+            {/* Additional status messages for better user experience */}
+            {progressTracker.filesComplete > 0 && progressTracker.filesComplete === progressTracker.totalFiles && (
+              <div style={{
+                backgroundColor: '#e8f5e9',
+                color: '#2e7d32',
+                padding: '10px 16px',
+                borderRadius: '6px',
+                fontSize: '14px',
+                marginTop: '10px',
+                textAlign: 'center'
+              }}>
+                {t('Upload complete! Preparing to save your album...')}
+              </div>
+            )}
+            
+            {progressTracker.filesWithError > 0 && (
+              <div style={{
+                backgroundColor: '#ffebee',
+                color: '#c62828',
+                padding: '10px 16px',
+                borderRadius: '6px',
+                fontSize: '14px',
+                marginTop: '10px',
+                textAlign: 'center'
+              }}>
+                {t('Some files could not be uploaded. You can continue with the successfully uploaded files.')}
+              </div>
+            )}
+          </div>
         )}
         
         {/* Password protection message */}
