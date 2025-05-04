@@ -1,13 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
-import { checkLoginWithRefreshOrRedirectToTarget } from "@/lib/utils";
+import { getLanguageDirection } from "@/lib/i18n";
+import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithRefresh, checkLoginWithoutRedirect } from "@/lib/utils";
 
 // Import types and utilities
-import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
+import { AlbumData, PasswordPolicyEnum, SelectedPhoto, ProgressTracker } from "@/lib/types";
 import { getIdFromUrl, formatUUID } from "@/lib/utils";
 import { fetchFolder } from "@/lib/apiService";
 import { downloadPhotos } from "@/lib/fileOperations";
+import { LOCAL_STORAGE_KEYS } from "@/lib/config";
+
+// Import upload utilities
+import { 
+  createLogger, 
+  createPhotoStatusUpdater, 
+  updateProgressTracker,
+  processFiles,
+  clearAlbumData
+} from "@/lib/file-upload-utils";
 
 // Import styled components
 import { 
@@ -39,6 +50,115 @@ import {
 import { LazyImage, VideoThumbnail, FullscreenMediaViewer } from "@/components/MediaComponents";
 import { QRCodeModal, PasswordModal } from "@/components/ModalComponents";
 import ResponsiveHeader from "@/components/HeaderComponents";
+import { FileInput } from "@/components/FileInput";
+// Import the existing UploadProgress component
+import { UploadProgress } from "@/components/UploadProgress";
+
+// Login Modal Component - Keep original but updated message
+interface LoginModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  t: (key: string) => string;
+  redirectToLogin: () => void;
+}
+
+const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, t, redirectToLogin }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div style={{
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 1000
+    }}>
+      <div style={{
+        maxWidth: 400,
+        width: '100%',
+        background: '#ffffff',
+        padding: '32px',
+        borderRadius: '12px',
+        boxShadow: '0 6px 20px rgba(0,0,0,0.06)',
+        textAlign: 'center',
+      }}>
+        <div style={{ marginBottom: '24px' }}>
+          <img 
+            src="images/logo_no_background.png" 
+            alt="6180 Logo" 
+            style={{ 
+              height: '60px', 
+              marginBottom: '16px' 
+            }} 
+          />
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: 600,
+            color: '#333',
+          }}>
+            {t('Sign in to 6180')}
+          </h2>
+        </div>
+
+        <p style={{ 
+          marginBottom: '24px', 
+          color: '#555',
+          fontSize: '16px'
+        }}>
+          {t('You need to be logged in to add photos to this album.')}
+        </p>
+
+        <button
+          onClick={redirectToLogin}
+          style={{
+            width: '100%',
+            padding: '12px',
+            fontSize: '16px',
+            backgroundColor: '#007bff',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            marginBottom: '16px'
+          }}
+        >
+          {t('Sign In')}
+        </button>
+        
+        <button
+          onClick={onClose}
+          style={{
+            width: '100%',
+            padding: '12px',
+            fontSize: '16px',
+            backgroundColor: '#f8f9fa',
+            color: '#555',
+            border: '1px solid #ccc',
+            borderRadius: '6px',
+            cursor: 'pointer',
+          }}
+        >
+          {t('Cancel')}
+        </button>
+
+        <p style={{ 
+          fontSize: '13px', 
+          color: '#666', 
+          marginTop: '16px',
+          textAlign: 'center' 
+        }}>
+          {t('After signing in, you\'ll be taken directly to the upload page')}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 // Main Photo Album Component
 const PhotoAlbumContent: React.FC = () => {
@@ -59,7 +179,6 @@ const PhotoAlbumContent: React.FC = () => {
   const [passwordError, setPasswordError] = useState<string | null>(null);
   
   // Interactive state
-  // Removed unused hover state
   const [showQRModal, setShowQRModal] = useState<boolean>(false);
   
   // Added state for tracking which items are loading in full resolution
@@ -71,6 +190,28 @@ const PhotoAlbumContent: React.FC = () => {
   // Selection mode state
   const [isSelectionMode, setIsSelectionMode] = useState<boolean>(false);
   const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set());
+
+  // State for file upload and tracking
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
+  const [isUploading, setIsUploading] = useState(false);
+  const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
+    totalFiles: 0,
+    filesComplete: 0,
+    filesUploading: 0,
+    filesProcessing: 0,
+    filesWithError: 0,
+    overallProgress: 0 // Note: This is a decimal (0-1) not a percentage (0-100)
+  });
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  
+  // Create logger for tracking upload progress
+  const log = createLogger(() => {});
+  
+  // Update progress tracker when selectedPhotos changes
+  useEffect(() => {
+    updateProgressTracker(selectedPhotos, setProgressTracker);
+  }, [selectedPhotos]);
 
   // Check if content should be protected based on policy and authorization
   const shouldShowContent = () => {
@@ -229,10 +370,163 @@ const PhotoAlbumContent: React.FC = () => {
     setColumns(value);
     localStorage.setItem('columns', value);
   };
-  
-  // Placeholder for adding photos to album function
+
+  // Function to open file picker
   const addPhotosToAlbum = async () => {
-    alert(t('This feature is not yet implemented.'));
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  // IMPROVED: Handle file selection with better storage handling
+  const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    
+    // First check if the user is logged in
+    const token = await checkLoginWithoutRedirect();
+    
+    if (!token) {
+      // User is not logged in, show loading indicator during file storage
+      setIsUploading(true);
+      
+      try {
+        // Store file metadata in sessionStorage
+        const fileArray = Array.from(files);
+        const fileMetadata = fileArray.map((file, index) => ({
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          lastModified: file.lastModified,
+          index
+        }));
+        
+        // Clear any previous stored files
+        for (let i = 0; i < 100; i++) {
+          const key = `pending_file_${i}`;
+          if (sessionStorage.getItem(key)) {
+            sessionStorage.removeItem(key);
+          } else {
+            break;
+          }
+        }
+        
+        // Store metadata and flags
+        sessionStorage.setItem('pending_file_metadata', JSON.stringify(fileMetadata));
+        sessionStorage.setItem('pending_folder_id', folderId || '');
+        sessionStorage.setItem('pending_upload', 'true');
+        sessionStorage.setItem('pending_timestamp', Date.now().toString());
+        
+        // Store each file as a data URL in sessionStorage
+        const promises = fileArray.map(async (file, index) => {
+          return new Promise<void>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              try {
+                if (reader.result) {
+                  sessionStorage.setItem(`pending_file_${index}`, reader.result as string);
+                }
+                resolve();
+              } catch (err) {
+                reject(err);
+              }
+            };
+            reader.onerror = () => reject(reader.error);
+            reader.readAsDataURL(file);
+          });
+        });
+        
+        // Wait for all files to be stored
+        await Promise.all(promises);
+        
+        // Hide loading indicator
+        setIsUploading(false);
+        
+        // Show login modal
+        setShowLoginModal(true);
+      } catch (error) {
+        console.error('Error storing files:', error);
+        setIsUploading(false);
+        alert(t('There was an error preparing your files. Please try again.'));
+      }
+      
+      return;
+    }
+    
+    // User is logged in, proceed with upload
+    processUpload(Array.from(files));
+  };
+  
+  // Process upload for logged-in user
+  const processUpload = async (files: File[]) => {
+    setIsUploading(true);
+    
+    // Get a fresh token
+    const token = await checkLoginWithRefresh();
+    
+    if (!token) {
+      log("❌ Authentication failed");
+      setIsUploading(false);
+      return;
+    }
+    
+    try {
+      // Extract username from token
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const cognitoUsername = payload["cognito:username"];
+      
+      if (!cognitoUsername) {
+        log("❌ Missing Cognito Username");
+        setIsUploading(false);
+        return;
+      }
+      
+      // Create photo status updater
+      const updatePhotoStatus = createPhotoStatusUpdater(setSelectedPhotos);
+      
+      // Process the files
+      const processedPhotos = await processFiles(files, cognitoUsername, updatePhotoStatus, log);
+      
+      // Save to localStorage - ONLY the keys and metadata, not the file data
+      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos));
+      log(`📸 Saved ${processedPhotos.length} photos metadata to storage`);
+      
+      // Redirect to save-album page with the current folder ID
+      if (folderId) {
+        // Clear data before redirecting
+        clearAlbumData(setSelectedPhotos, setProgressTracker, [], log);
+        window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
+      } else {
+        log("❌ No folder ID available");
+        setIsUploading(false);
+      }
+    } catch (error) {
+      log(`❌ Fatal error in processUpload: ${String(error)}`);
+      setIsUploading(false);
+    }
+  };
+  
+  // IMPROVED: Redirect to login with direct save-album target and clear flags
+  const redirectToLogin = () => {
+    // Close the modal
+    setShowLoginModal(false);
+    
+    // Get the base URL of the application
+    const baseUrl = window.location.origin;
+    
+    // Create the target URL for after login
+    let targetUrl = `${baseUrl}/save-album.html?folderId=${encodeURIComponent(folderId || '')}`;
+    
+    // Add a special parameter to indicate there are pending files
+    targetUrl += '&pendingUpload=true';
+    
+    // Set up login parameters
+    const loginParams = new URLSearchParams();
+    loginParams.set('redirect', targetUrl);
+    loginParams.set('fromUpload', 'true');
+    
+    // Redirect to login with the parameters
+    window.location.href = `/login.html?${loginParams.toString()}`;
   };
 
   // Save album function
@@ -519,6 +813,16 @@ const PhotoAlbumContent: React.FC = () => {
       </Header>
 
       <MediaContainer id="media-container">
+        {/* Upload Progress Component */}
+        {isUploading && (
+          <UploadProgress 
+            progressTracker={progressTracker} 
+            t={t} 
+            isRTL={getLanguageDirection(language) === "rtl"}
+            style={{ marginTop: '20px' }}
+          />
+        )}
+        
         {/* Password protection message */}
         {!isAuthorized && passwordPolicy === 'NotVisible' && (
           <div style={{ 
@@ -668,6 +972,37 @@ const PhotoAlbumContent: React.FC = () => {
         onSubmit={handlePasswordSubmit}
         error={passwordError}
         t={t}
+      />
+      
+      {/* Login Modal - Updated message for direct redirection */}
+      <LoginModal
+        isOpen={showLoginModal}
+        onClose={() => {
+          setShowLoginModal(false);
+          // Clear any stored files if user cancels
+          sessionStorage.removeItem('pending_file_metadata');
+          sessionStorage.removeItem('pending_folder_id');
+          sessionStorage.removeItem('pending_upload');
+          sessionStorage.removeItem('pending_timestamp');
+          
+          // Clear all file blobs
+          for (let i = 0; i < 100; i++) { // Arbitrary upper limit
+            const key = `pending_file_${i}`;
+            if (sessionStorage.getItem(key)) {
+              sessionStorage.removeItem(key);
+            } else {
+              break;
+            }
+          }
+        }}
+        redirectToLogin={redirectToLogin}
+        t={t}
+      />
+      
+      {/* FileInput Component */}
+      <FileInput 
+        onFileSelection={handleFileSelection} 
+        ref={fileInputRef}
       />
       
       {/* Fullscreen Media Viewer */}
