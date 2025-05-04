@@ -498,6 +498,8 @@ const PhotoAlbumContent: React.FC = () => {
   
   // Add new state for inline OTP login
   const [showInlineOTPLogin, setShowInlineOTPLogin] = useState(false);
+  // Add state to track if login was successful but photos haven't been selected yet
+  const [loginSuccessful, setLoginSuccessful] = useState(false);
   
   // Create logger for tracking upload progress (logs to console only, not stored in state)
   const log = createLogger(() => {
@@ -669,7 +671,14 @@ const PhotoAlbumContent: React.FC = () => {
     localStorage.setItem('columns', value);
   };
 
-  // Function to open file picker
+  // Function to open file picker directly
+  const openFilePicker = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  // Function to open file picker after checking login
   const addPhotosToAlbum = async () => {
     // Check login first
     const token = await checkLoginWithoutRedirect();
@@ -681,17 +690,16 @@ const PhotoAlbumContent: React.FC = () => {
     }
     
     // User is logged in, continue with file selection
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
-    }
+    openFilePicker();
   };
 
   // Handler for successful login that continues the upload process
   const handleLoginSuccess = () => {
-    // If file input is present, trigger the file selection
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
-    }
+    // Close the login modal
+    setShowInlineOTPLogin(false);
+    
+    // Set login successful state
+    setLoginSuccessful(true);
   };
 
   // Handle file selection - Updated to use inline OTP login
@@ -912,6 +920,24 @@ const PhotoAlbumContent: React.FC = () => {
     setColumns(savedColumnsValue);
   }, []);
 
+  // Reset loginSuccessful state when file input is clicked
+  useEffect(() => {
+    const handleFileInputClick = () => {
+      setLoginSuccessful(false);
+    };
+
+    const fileInput = fileInputRef.current;
+    if (fileInput) {
+      fileInput.addEventListener('click', handleFileInputClick);
+    }
+
+    return () => {
+      if (fileInput) {
+        fileInput.removeEventListener('click', handleFileInputClick);
+      }
+    };
+  }, [fileInputRef.current]);
+
   // Fetch album data
   useEffect(() => {
     const initAlbum = async () => {
@@ -1062,6 +1088,26 @@ const PhotoAlbumContent: React.FC = () => {
       </Header>
 
       <MediaContainer id="media-container">
+        {loginSuccessful && (
+          <button
+            onClick={openFilePicker}
+            style={{
+              backgroundColor: '#007bff',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              padding: '10px 16px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            <span>{t('Select Photos To Add To Album')}</span>
+          </button>
+        )}
+        
         {/* Upload Progress Component */}
         {isUploading && (
           <UploadProgress 
