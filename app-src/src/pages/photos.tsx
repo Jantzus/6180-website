@@ -492,15 +492,6 @@ const PhotoAlbumContent: React.FC = () => {
       return;
     }
     
-    // Check login first
-    const token = await checkLoginWithoutRedirect();
-    
-    if (!token) {
-      // Instead of redirecting, show the inline login
-      setShowInlineOTPLogin(true);
-      return;
-    }
-    
     // Toggle selection mode
     setIsSelectionMode(!isSelectionMode);
     // Clear any existing selections when toggling

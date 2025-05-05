@@ -10,7 +10,7 @@ import {
 } from "@/styles/photos-styled-components";
 import { ResponsiveHeaderProps } from "@/lib/types";
 
-// ResponsiveHeader component
+// ResponsiveHeader component with improved responsive behavior
 const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ 
   addPhotosToAlbum, 
   saveAlbum, 
@@ -25,14 +25,17 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   
+  // Define our breakpoint - set this high enough to accommodate all buttons with comfortable spacing
+  const BREAKPOINT = 840; // px - higher than typical tablet breakpoint to ensure buttons don't wrap
+  
   // Check window width on mount and when resized
   useEffect(() => {
-    const checkWidth = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+    // Set initial state immediately to avoid flicker
+    setIsMobile(window.innerWidth < BREAKPOINT);
     
-    // Initial check
-    checkWidth();
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth < BREAKPOINT);
+    };
     
     // Add resize listener
     window.addEventListener('resize', checkWidth);
@@ -81,6 +84,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
     };
   }, [menuOpen]);
   
+  // Mobile view with hamburger menu
   if (isMobile) {
     return (
       <div 
@@ -89,9 +93,9 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
           position: 'relative', 
           display: 'flex', 
           alignItems: 'center', 
-          justifyContent: 'space-between', 
+          justifyContent: 'flex-end',
           width: '100%',
-          flexWrap: 'nowrap' // Prevent wrapping
+          flexWrap: 'nowrap'
         }}
       >
         {/* Only show the hamburger menu if user can save or create sub-album */}
@@ -132,9 +136,9 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
           </div>
         )}
 
-        {/* Show Enter Password button if needed - now on the right */}
+        {/* Show Enter Password button if needed */}
         {showingEnterPassword && passwordPolicy && passwordPolicy !== 'NoPassword' && (
-          <div style={{ marginLeft: 'auto', flexShrink: 0 }}> {/* Added flexShrink */}
+          <div style={{ flexShrink: 0 }}> 
             <PasswordButton onClick={promptForPassword}>
               {t('Enter Password')}
             </PasswordButton>
@@ -144,6 +148,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
     );
   }
   
+  // Desktop view with all buttons visible
   return (
     <div style={{ 
       display: 'flex', 
@@ -157,7 +162,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
         <div style={{ 
           display: 'flex', 
           gap: '20px',
-          flexWrap: 'wrap'
+          flexWrap: 'nowrap'
         }}>
           <ActionButton onClick={addPhotosToAlbum}>
             {t('Add Photos To Album')}
@@ -183,7 +188,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
           <PasswordButton onClick={promptForPassword}>
             {t('Enter Password')}
           </PasswordButton>
-        </div>
+          </div>
       )}
     </div>
   );
