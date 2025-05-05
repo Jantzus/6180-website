@@ -88,6 +88,7 @@ const PhotoAlbumContent: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
   const [isUploading, setIsUploading] = useState(false);
+  const [addPhotosClicked, setAddPhotosClicked] = useState(false);  
   const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
     totalFiles: 0,
     filesComplete: 0,
@@ -305,7 +306,9 @@ const PhotoAlbumContent: React.FC = () => {
     const token = await checkLoginWithoutRedirect();
     
     if (!token) {
-      // Instead of redirecting, show the inline login
+      // User is not logged in and clicking Add Photos - set the flag
+      setAddPhotosClicked(true);
+      // Show the inline login
       setShowInlineOTPLogin(true);
       return;
     }
@@ -341,8 +344,12 @@ const PhotoAlbumContent: React.FC = () => {
         const username = payload["cognito:username"];
         setCognitoUsername(username);
         
-        // Set a flag in localStorage to indicate successful login
-        localStorage.setItem('showSelectPhotosButton', 'true');
+        // Only set the timestamp if the user clicked Add Photos and needed to log in
+        if (addPhotosClicked) {
+          localStorage.setItem('selectPhotosButtonTimestamp', Date.now().toString());
+          // Reset the flag
+          setAddPhotosClicked(false);
+        }
         
         // Add a slight delay before reloading to ensure state updates are complete
         setTimeout(() => {
@@ -359,9 +366,9 @@ const PhotoAlbumContent: React.FC = () => {
   const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     if (!files.length) return;
-
-    // Remove the localStorage flag once files are selected
-    localStorage.removeItem('showSelectPhotosButton');
+  
+    // Remove the localStorage timestamp once files are selected
+    localStorage.removeItem('selectPhotosButtonTimestamp');
     setShowSelectPhotosButton(false);
     setIsUploading(true);
     // Reset file processing completion flag
@@ -663,15 +670,30 @@ const PhotoAlbumContent: React.FC = () => {
           const username = payload["cognito:username"];
           setCognitoUsername(username);
           
-          // Check if the Select Photos button should be shown
-          const shouldShowButton = localStorage.getItem('showSelectPhotosButton') === 'true';
-          setShowSelectPhotosButton(shouldShowButton);
+          // Check if the Select Photos button should be shown based on timestamp
+          const buttonTimestamp = localStorage.getItem('selectPhotosButtonTimestamp');
+          if (buttonTimestamp) {
+            const timestamp = parseInt(buttonTimestamp, 10);
+            const currentTime = Date.now();
+            // Calculate time difference in minutes
+            const timeDifference = (currentTime - timestamp) / (1000 * 60);
+            
+            // Only show the button if less than 10 minutes have passed
+            setShowSelectPhotosButton(timeDifference < 10);
+            
+            // If more than 10 minutes have passed, remove the timestamp from localStorage
+            if (timeDifference >= 10) {
+              localStorage.removeItem('selectPhotosButtonTimestamp');
+            }
+          } else {
+            setShowSelectPhotosButton(false);
+          }
         } catch (err) {
           console.error("Failed to decode token", err);
         }
       }
     };
-
+  
     getUserInfo();
   }, []);
 
