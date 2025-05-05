@@ -94,6 +94,7 @@ export type ProtectionOption = 'notVisible' | 'watermark' | 'cannotBeSaved' | 'n
 // Media types
 export interface MediaItem {
   type: 'image' | 'video';
+  fileId: string;
   url: string;
   thumbnailUrl?: string;
   duration?: string;

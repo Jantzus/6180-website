@@ -79,7 +79,7 @@ export const processData = (
       const file = ref?.file;
       if (!file?.dataKey) return;
 
-      const { dataKey, thumbnailDataKey, durationInSeconds, ownerContactId } = file;
+      const { id, dataKey, thumbnailDataKey, durationInSeconds, ownerContactId } = file;
       
       // Skip this item if we've already seen this dataKey
       if (uniqueDataKeys.has(dataKey)) {
@@ -95,6 +95,7 @@ export const processData = (
       if (dataKey.startsWith("Input/Image/")) {
         mediaItems.push({ 
           type: "image", 
+          fileId: id,
           url,
           thumbnailUrl: thumbnailUrl || url,
           ownerId: ownerContactId,
@@ -103,6 +104,7 @@ export const processData = (
       } else if (dataKey.startsWith("Input/Video/")) {
         mediaItems.push({
           type: "video",
+          fileId: id,
           url,
           thumbnailUrl: thumbnailUrl || url,
           duration: formatTime(durationInSeconds),
