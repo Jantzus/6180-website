@@ -23,6 +23,7 @@ export const processData = (
   let passwordRequired = false;
   let hasPassword = false;
   let actualPassword = undefined;
+  let usingFolderInviteGrantsRightToAddItems = false;
   
   // Set to track unique dataKeys
   const uniqueDataKeys = new Set<string>();
@@ -59,6 +60,11 @@ export const processData = (
         hasPassword = true;
         actualPassword = folder.folderPassword.password;
       }
+    }
+    
+    // Extract the usingFolderInviteGrantsRightToAddItems property
+    if (folder?.folderInviteParameters) {
+      usingFolderInviteGrantsRightToAddItems = !!folder.folderInviteParameters.usingFolderInviteGrantsRightToAddItems;
     }
     
     // Build contacts map
@@ -115,7 +121,8 @@ export const processData = (
     passwordPolicy,
     passwordRequired,
     hasPassword,
-    actualPassword
+    actualPassword,
+    usingFolderInviteGrantsRightToAddItems
   };
 };
 

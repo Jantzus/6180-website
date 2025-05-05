@@ -18,7 +18,8 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
   getQRCode, 
   promptForPassword, 
   showingEnterPassword, 
-  passwordPolicy, 
+  passwordPolicy,
+  usingFolderInviteGrantsRightToAddItems,
   t 
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -116,9 +117,11 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
             
             {menuOpen && (
               <DropdownMenu>
-                <MenuButton onClick={() => handleAction(addPhotosToAlbum)}>
-                  {t('Add Photos To Album')}
-                </MenuButton>
+                {usingFolderInviteGrantsRightToAddItems && (
+                  <MenuButton onClick={() => handleAction(addPhotosToAlbum)}>
+                    {t('Add Photos To Album')}
+                  </MenuButton>
+                )}
                 
                 <MenuButton onClick={() => handleAction(saveAlbum)}>
                   {t('Save Album To 6180')}
@@ -164,9 +167,11 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
           gap: '20px',
           flexWrap: 'nowrap'
         }}>
-          <ActionButton onClick={addPhotosToAlbum}>
-            {t('Add Photos To Album')}
-          </ActionButton>
+          {usingFolderInviteGrantsRightToAddItems && (
+            <ActionButton onClick={addPhotosToAlbum}>
+              {t('Add Photos')}
+            </ActionButton>
+          )}
           
           <ActionButton onClick={saveAlbum}>
             {t('Save Album To 6180')}

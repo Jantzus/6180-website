@@ -27,7 +27,7 @@ import {
   createLogger, 
   createPhotoStatusUpdater, 
   updateProgressTracker,
-  processFiles,
+  processFilesBeforeUploadingToS3,
   clearAlbumData
 } from "@/lib/file-upload-utils"
 
@@ -1375,8 +1375,8 @@ const MyAlbums = () => {
       const newFolderId = currentFolderId || `${cognitoUsername}_____${generateUUID()}____Folder`
       log(`📁 Using folder ID: ${newFolderId}`)
       
-      // Use the processFiles function from utils instead of implementing it here
-      const processedPhotos = await processFiles(files, cognitoUsername, updatePhotoStatus, log);
+      // Use the processFilesBeforeUploadingToS3 function from utils instead of implementing it here
+      const processedPhotos = await processFilesBeforeUploadingToS3(files, cognitoUsername, updatePhotoStatus, log);
       
       // Save to localStorage - ONLY the keys and metadata, not the file data
       localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos))

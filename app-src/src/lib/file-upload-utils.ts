@@ -75,7 +75,7 @@ export const updateProgressTracker = (
 }
 
 // Process files for upload
-export const processFiles = async (
+export const processFilesBeforeUploadingToS3 = async (
   files: File[],
   cognitoUsername: string,
   updatePhotoStatus: (index: number, status: UploadStatus, progress: number, errorMessage?: string) => void,
@@ -237,7 +237,7 @@ export const processFiles = async (
     
     return processedPhotos
   } catch (error) {
-    log(`❌ Fatal error in processFiles: ${String(error)}`)
+    log(`❌ Fatal error in processFilesBeforeUploadingToS3: ${String(error)}`)
     throw error
   }
 }

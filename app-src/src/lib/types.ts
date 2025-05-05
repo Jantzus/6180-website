@@ -117,6 +117,7 @@ export interface AlbumData {
   passwordRequired?: boolean;
   hasPassword?: boolean;
   actualPassword?: string;
+  usingFolderInviteGrantsRightToAddItems?: boolean;
 }
 
 // Props for various components
@@ -177,6 +178,7 @@ export interface ResponsiveHeaderProps {
   promptForPassword: () => void;
   showingEnterPassword: boolean;
   passwordPolicy?: string;
+  usingFolderInviteGrantsRightToAddItems?: boolean;
   t: (key: string) => string;
 }
 
@@ -212,6 +214,9 @@ export const FETCH_FOLDERS_QUERY = `
                 }
               }
             }
+          }
+          folderInviteParameters {
+            usingFolderInviteGrantsRightToAddItems
           }
           folderPosition {
             id

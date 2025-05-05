@@ -16,7 +16,7 @@ import {
   createLogger, 
   createPhotoStatusUpdater, 
   updateProgressTracker,
-  processFiles
+  processFilesBeforeUploadingToS3
 } from "@/lib/file-upload-utils";
 
 // Import styled components
@@ -421,8 +421,8 @@ const PhotoAlbumContent: React.FC = () => {
         updateProgressTracker(selectedPhotos, setProgressTracker);
       }, 500);
       
-      // Use the processFiles function - this processes the files and uploads them to S3 temp
-      const processedPhotos = await processFiles(files, username, updatePhotoStatus, log);
+      // Use the processFilesBeforeUploadingToS3 function - this processes the files and uploads them to S3 temp
+      const processedPhotos = await processFilesBeforeUploadingToS3(files, username, updatePhotoStatus, log);
       
       // Clear the interval once processing is complete
       clearInterval(progressUpdateInterval);
@@ -767,6 +767,7 @@ const PhotoAlbumContent: React.FC = () => {
                       promptForPassword={promptForPassword}
                       showingEnterPassword={showingEnterPassword()}
                       passwordPolicy={passwordPolicy}
+                      usingFolderInviteGrantsRightToAddItems={albumData?.usingFolderInviteGrantsRightToAddItems}
                       t={t} 
                     />
                   )}
@@ -795,7 +796,7 @@ const PhotoAlbumContent: React.FC = () => {
 
       <MediaContainer id="media-container">
         {/* Add a proper container for the "Select Photos" button when localStorage flag is set */}
-        {showSelectPhotosButton && (
+        {showSelectPhotosButton && albumData?.usingFolderInviteGrantsRightToAddItems && (
           <div style={{
             width: '100%',
             display: 'flex',

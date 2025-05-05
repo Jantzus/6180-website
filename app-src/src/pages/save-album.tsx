@@ -83,7 +83,7 @@ import {
   createLogger,
   createPhotoStatusUpdater,
   updateProgressTracker,
-  processFiles,
+  processFilesBeforeUploadingToS3,
   moveFilesToPublic,
   clearAlbumData,
   s3
@@ -130,6 +130,9 @@ const FETCH_FOLDER_QUERY = `
               }
             }
           }
+        }
+        folderInviteParameters {
+          usingFolderInviteGrantsRightToAddItems
         }
         folderPosition {
           id
@@ -185,6 +188,9 @@ const SaveAlbum = () => {
   
   // Public profile toggle state
   const [isOnPublicProfile, setIsOnPublicProfile] = useState<boolean>(true);
+  
+  // Participants Can Add Items toggle state
+  const [participantsCanAddItems, setParticipantsCanAddItems] = useState<boolean>(true);
   
   // New state for checking if user is the creator - initialize as null (undetermined)
   const [isCreator, setIsCreator] = useState<boolean | null>(null);
@@ -282,6 +288,12 @@ const SaveAlbum = () => {
               // Set the public profile toggle state
               setIsOnPublicProfile(folderDetails.isOnPublicProfile);
               
+              // Set participants can add items toggle state based on folderDetails
+              if (folderDetails.participantsCanAddItems !== undefined) {
+                setParticipantsCanAddItems(folderDetails.participantsCanAddItems);
+                console.log("Setting participants can add items:", folderDetails.participantsCanAddItems);
+              }
+              
               // Handle password policy with proper enum mapping
               const policy = folderDetails.passwordPolicy;
               
@@ -374,13 +386,17 @@ const SaveAlbum = () => {
         (profileId: string) => profileId.includes("Public____Profile")
       ) || false;
       
+      // Extract participants can add items setting
+      const canAddItems = folder.folderInviteParameters?.usingFolderInviteGrantsRightToAddItems;
+      
       return {
         creatorId: folder.creatorId || '',
         folderName: folder.folderName || '',
         folderDescription: folder.folderDescription || '',
         passwordPolicy: folder.folderPassword?.policy || 'NoPassword',
         password: folder.folderPassword?.password || '',
-        isOnPublicProfile: isPublic
+        isOnPublicProfile: isPublic,
+        participantsCanAddItems: canAddItems !== undefined ? canAddItems : true
       };
     } catch (error) {
       console.error("Error in fetchFolderDetails:", error);
@@ -424,6 +440,12 @@ const SaveAlbum = () => {
     setIsOnPublicProfile(!isOnPublicProfile);
   };
 
+  // ---------- PARTICIPANTS CAN ADD ITEMS TOGGLE ----------
+  
+  const handleParticipantsCanAddItemsToggle = () => {
+    setParticipantsCanAddItems(!participantsCanAddItems);
+  };
+
   // ---------- PHOTO MANAGEMENT ----------
 
   const removePhoto = (indexToRemove: number) => {
@@ -454,7 +476,7 @@ const SaveAlbum = () => {
       
       // Process files and update photo status
       const currentIndex = selectedPhotos.length;
-      const processedPhotos = await processFiles(
+      const processedPhotos = await processFilesBeforeUploadingToS3(
         files,
         cognitoUsername,
         (index, status, progress, errorMessage) => {
@@ -626,7 +648,7 @@ const SaveAlbum = () => {
           folderInviteHasBeenDisabled: false,
           usingFolderInviteGrantsRightToRemoveItems: false,
           tagContactIdUsingFolderInviteAsFolderAboutContact: true,
-          usingFolderInviteGrantsRightToAddItems: true,
+          usingFolderInviteGrantsRightToAddItems: participantsCanAddItems,
           addedItemsNeedFolderCreatorApproval: false
         }
       }
@@ -1024,6 +1046,22 @@ const SaveAlbum = () => {
                       type="checkbox" 
                       checked={isOnPublicProfile} 
                       onChange={handlePublicProfileToggle}
+                      disabled={isSavingAlbum}
+                    />
+                    <ToggleSlider />
+                  </ToggleSwitch>
+                </ToggleContainer>
+
+                {/* Participants Can Add Items Toggle */}
+                <ToggleContainer>
+                  <ToggleLabel>
+                    {participantsCanAddItems ? t('Participants Can Add Items') : t('Participants Cannot Add Items')}
+                  </ToggleLabel>
+                  <ToggleSwitch>
+                    <input 
+                      type="checkbox" 
+                      checked={participantsCanAddItems} 
+                      onChange={handleParticipantsCanAddItemsToggle}
                       disabled={isSavingAlbum}
                     />
                     <ToggleSlider />
