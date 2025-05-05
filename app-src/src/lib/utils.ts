@@ -5,14 +5,20 @@ import { API_ENDPOINT_REFRESHTOKEN, COGNITO_CLIENT_ID } from "@/lib/config"
 
 /**
  * Attempts to refresh the token using the refresh token from localStorage
+ * @param {boolean} forceRefresh - If true, will refresh regardless of expiration time
  * @returns {Promise<boolean>} - True if refresh succeeded, false otherwise
  */
-export async function refreshTokenIfNeeded(): Promise<boolean> {
+export async function refreshTokenIfNeeded(forceRefresh = false): Promise<boolean> {
   const refreshToken = localStorage.getItem("refreshToken");
   const idToken = localStorage.getItem("idToken");
   
-  if (!refreshToken || !idToken) {
-    console.warn("No refresh token or ID token available");
+  if (!refreshToken) {
+    console.warn("No refresh token available");
+    return false;
+  }
+
+  if (!idToken) {
+    console.warn("No ID token available");
     return false;
   }
   
@@ -26,44 +32,113 @@ export async function refreshTokenIfNeeded(): Promise<boolean> {
     const payload = JSON.parse(atob(parts[1]));
     const now = Math.floor(Date.now() / 1000);
     
-    // Only refresh if token is expired or about to expire (within 5 minutes)
-    if (!payload.exp || payload.exp > now + 300) {
+    // Only refresh if token is expired, about to expire (within 5 minutes), or force refresh is true
+    if (!forceRefresh && (!payload.exp || payload.exp > now + 300)) {
       console.log("Token not close to expiration, no refresh needed");
       return true;
     }
     
-    console.log("Token expiring soon, attempting to refresh");
+    console.log("Token requires refresh:", forceRefresh ? "Forced refresh" : "Token expiring soon");
+    
+    // First try direct Cognito refresh (client-side) if available
+    try {
+      // This would require the AWS SDK to be available in the browser
+      // You would need to import and initialize the CognitoIdentityProviderClient here
+      // This code is commented out until you add the AWS SDK to your client
+      /*
+      const cognito = new CognitoIdentityProviderClient({ region: YOUR_REGION });
+      const refreshCommand = new InitiateAuthCommand({
+        ClientId: COGNITO_CLIENT_ID,
+        AuthFlow: 'REFRESH_TOKEN_AUTH',
+        AuthParameters: {
+          REFRESH_TOKEN: refreshToken,
+        },
+      });
+      
+      console.log('Sending direct refresh token request to Cognito...');
+      const response = await cognito.send(refreshCommand);
+      
+      if (response.AuthenticationResult?.IdToken) {
+        // Store the new tokens
+        localStorage.setItem("idToken", response.AuthenticationResult.IdToken);
+        
+        if (response.AuthenticationResult.AccessToken) {
+          localStorage.setItem("accessToken", response.AuthenticationResult.AccessToken);
+        }
+        
+        // Store the new refresh token if provided, otherwise keep using the current one
+        if (response.AuthenticationResult.RefreshToken) {
+          localStorage.setItem("refreshToken", response.AuthenticationResult.RefreshToken);
+        }
+        
+        console.log("Token refreshed successfully via direct Cognito refresh");
+        return true;
+      }
+      */
+    } catch (directError) {
+      console.warn("Direct Cognito refresh failed, falling back to API endpoint:", directError);
+      // Fall back to API endpoint
+    }
     
     // Make the refresh token API call
-    const response = await fetch(API_ENDPOINT_REFRESHTOKEN, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        refreshToken: refreshToken,
-        appClientId: COGNITO_CLIENT_ID,
-      }),
-    });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10-second timeout
     
-    if (!response.ok) {
-      throw new Error(`Refresh failed with status: ${response.status}`);
+    try {
+      console.log("Attempting to refresh via API endpoint");
+      
+      const response = await fetch(API_ENDPOINT_REFRESHTOKEN, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          refreshToken: refreshToken,
+          appClientId: COGNITO_CLIENT_ID,
+        }),
+        signal: controller.signal
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        const errorText = await response.text().catch(() => "");
+        throw new Error(`Refresh failed with status: ${response.status}, ${errorText}`);
+      }
+      
+      const data = await response.json();
+      
+      if (!data.idToken) {
+        throw new Error("Refresh response missing ID token");
+      }
+      
+      // Store the new tokens
+      localStorage.setItem("idToken", data.idToken);
+      
+      if (data.accessToken) {
+        localStorage.setItem("accessToken", data.accessToken);
+      }
+      
+      // Store the new refresh token if provided
+      if (data.refreshToken) {
+        localStorage.setItem("refreshToken", data.refreshToken);
+      }
+      
+      console.log("Token refreshed successfully via API endpoint");
+      return true;
+      
+    } catch (error: unknown) {
+      if (error instanceof Error && error.name === 'AbortError') {
+        console.error("Refresh token request timed out after 10 seconds");
+      } else {
+        console.error("Error refreshing token via API endpoint:", error);
+      }
+      clearTimeout(timeoutId);
+      return false;
     }
     
-    const data = await response.json();
-    
-    if (!data.idToken || !data.accessToken) {
-      throw new Error("Refresh response missing tokens");
-    }
-    
-    // Store the new tokens
-    localStorage.setItem("idToken", data.idToken);
-    localStorage.setItem("accessToken", data.accessToken);
-    
-    console.log("Token refreshed successfully");
-    return true;
   } catch (error) {
-    console.error("Error refreshing token:", error);
+    console.error("Error in token refresh process:", error);
     return false;
   }
 }
