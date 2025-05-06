@@ -14,8 +14,6 @@ import { ResponsiveHeaderProps } from "@/lib/types";
 const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ 
   addPhotosToAlbum, 
   saveAlbum, 
-  downloadPhotos, 
-  getQRCode, 
   promptForPassword, 
   showingEnterPassword, 
   passwordPolicy,
@@ -122,17 +120,13 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
                     {t('Add Photos To Album')}
                   </MenuButton>
                 )}
-                
+
                 <MenuButton onClick={() => handleAction(saveAlbum)}>
                   {t('Save Album To 6180')}
-                </MenuButton>
-                
-                <MenuButton onClick={() => handleAction(downloadPhotos)}>
+                </MenuButton> 
+
+                <MenuButton onClick={() => handleAction(saveAlbum)}>
                   {t('Download Photos')}
-                </MenuButton>
-                
-                <MenuButton onClick={() => handleAction(getQRCode)}>
-                  {t('Open On iPhone App')}
                 </MenuButton>
               </DropdownMenu>
             )}
@@ -176,13 +170,9 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
           <ActionButton onClick={saveAlbum}>
             {t('Save Album To 6180')}
           </ActionButton>
-          
-          <ActionButton onClick={downloadPhotos}>
+
+          <ActionButton onClick={saveAlbum}>
             {t('Download Photos')}
-          </ActionButton>
-          
-          <ActionButton onClick={getQRCode}>
-            {t('Open On iPhone App')}
           </ActionButton>
         </div>
       )}

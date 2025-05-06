@@ -47,7 +47,7 @@ import {
 
 // Import components
 import { LazyImage, VideoThumbnail, FullscreenMediaViewer } from "@/components/MediaComponents";
-import { QRCodeModal, PasswordModal } from "@/components/ModalComponents";
+import { PasswordModal } from "@/components/ModalComponents";
 import ResponsiveHeader from "@/components/HeaderComponents";
 import { FileInput } from "@/components/FileInput";
 import { UploadProgress } from "@/components/UploadProgress";
@@ -70,9 +70,6 @@ const PhotoAlbumContent: React.FC = () => {
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
   const [showPasswordModal, setShowPasswordModal] = useState<boolean>(false);
   const [passwordError, setPasswordError] = useState<string | null>(null);
-  
-  // Interactive state
-  const [showQRModal, setShowQRModal] = useState<boolean>(false);
   
   // Added state for tracking which items are loading in full resolution
   const [loadingFullResolution, setLoadingFullResolution] = useState<Record<number, boolean>>({});
@@ -519,14 +516,14 @@ const PhotoAlbumContent: React.FC = () => {
     setSelectedItems(new Set());
   };
   
-  // Share the selected items
+  // Share the selected items - UPDATED to check login first
   const shareSelection = async () => {
     if (selectedItems.size === 0) {
       alert(t('Please select at least one item to share.'));
       return;
     }
     
-    // Create a new album with selected items
+    // Create a new sub-album with selected items
     if (albumData) {
       try {
         // Show loading indicator
@@ -549,33 +546,37 @@ const PhotoAlbumContent: React.FC = () => {
         loadingContent.style.textAlign = 'center';
         
         const loadingText = document.createElement('p');
-        loadingText.textContent = t('Creating album...');
+        loadingText.textContent = t('Creating sub-album...');
         
         loadingContent.appendChild(loadingText);
         loadingModal.appendChild(loadingContent);
         document.body.appendChild(loadingModal);
         
-        // Simulate API call with timeout
-        setTimeout(() => {
-          document.body.removeChild(loadingModal);
-          
-          // Show success message
-          alert(t(`Successfully created a sub-album with ${selectedItems.size} items.`));
-          
-          // Reset selection mode
-          setIsSelectionMode(false);
-          setSelectedItems(new Set());
-        }, 1500);
+        // Extract fileIds of selected items
+        const selectedFileIds = Array.from(selectedItems)
+          .map(index => albumData.mediaItems[index]?.fileId)
+          .filter(fileId => fileId) as string[];
+        
+        // Create data structure for sub-album selected files
+        const subAlbumData = {
+          isSubAlbum: true,
+          selectedFileIds: selectedFileIds
+        };
+        
+        // Save to localStorage
+        localStorage.setItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA, JSON.stringify(subAlbumData));
+        
+        // Remove loading modal
+        document.body.removeChild(loadingModal);
+        
+        // Redirect to save-album page without a folderId parameter
+        window.location.href = '/save-album.html';
+        
       } catch (error) {
-        console.error('Error creating album:', error);
-        alert(t('There was an error creating the album. Please try again.'));
+        console.error('Error creating sub-album:', error);
+        alert(t('There was an error creating the sub-album. Please try again.'));
       }
     }
-  };
-
-  // Handle Get QR Code function
-  const getQRCode = () => {
-    setShowQRModal(true);
   };
 
   // Handle downloading photos
@@ -763,7 +764,6 @@ const PhotoAlbumContent: React.FC = () => {
                       addPhotosToAlbum={addPhotosToAlbum}
                       saveAlbum={saveAlbum} 
                       downloadPhotos={handleDownloadPhotos}
-                      getQRCode={getQRCode}
                       promptForPassword={promptForPassword}
                       showingEnterPassword={showingEnterPassword()}
                       passwordPolicy={passwordPolicy}
@@ -823,6 +823,34 @@ const PhotoAlbumContent: React.FC = () => {
             >
               <span>{t('Select Photos To Add To Album')}</span>
             </button>
+          </div>
+        )}
+        
+        {/* New Contact List Box - showing contacts that user can share memories with */}
+        {albumData && Object.keys(albumData.contacts).length > 0 && (
+          <div style={{
+            width: '100%',
+            backgroundColor: '#f0f7ff',
+            borderRadius: '8px',
+            padding: '16px',
+            marginBottom: '20px',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            border: '1px solid #d0e1f9'
+          }}>
+            <p style={{
+              margin: '0',
+              fontSize: '15px',
+              color: '#333',
+              textAlign: 'left'
+            }}>
+              {t('Click "Add" to create a memory with ')}
+              <strong>
+                {Object.values(albumData.contacts)
+                  .filter(contact => !contact.toString().startsWith('Profile-'))
+                  .join(', ')}
+              </strong>
+              {t(' that you can filter for later')}
+            </p>
           </div>
         )}
         
@@ -997,14 +1025,6 @@ const PhotoAlbumContent: React.FC = () => {
           )}
         </MediaGrid>
       </MediaContainer>
-      
-      {/* QR Code Modal */}
-      <QRCodeModal 
-        isOpen={showQRModal} 
-        onClose={() => setShowQRModal(false)} 
-        folderId={folderId}
-        t={t}
-      />
       
       {/* Password Modal with error display */}
       <PasswordModal

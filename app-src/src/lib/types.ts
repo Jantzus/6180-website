@@ -175,7 +175,6 @@ export interface ResponsiveHeaderProps {
   addPhotosToAlbum: () => void;
   saveAlbum: () => void;
   downloadPhotos: () => void;
-  getQRCode: () => void;
   promptForPassword: () => void;
   showingEnterPassword: boolean;
   passwordPolicy?: string;

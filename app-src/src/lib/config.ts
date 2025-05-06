@@ -9,6 +9,7 @@ export const COGNITO_USER_POOL_ID = "us-east-1_rqcAR61SV"
 export const COGNITO_CLIENT_ID = '1r1gppqh9cat1debtgpghslvgl'
 export const LOCAL_STORAGE_KEYS = {
   SELECTED_PHOTOS: 'album_selectedPhotos',
+  SUB_ALBUM_DATA: 'sub_album_data',
   LANGUAGE: 'user_language'
 }
 export const API_ENDPOINT_REFRESHTOKEN = "https://722k2cxb4l.execute-api.us-east-1.amazonaws.com/prod-0/refresh-token"

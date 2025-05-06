@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { useEffect, useState, useRef, useMemo } from "react"
-import { checkLoginWithRefresh, generateUUID, getTargetItemIdentifier } from "@/lib/utils"
+import { checkLoginWithRefresh, checkLoginWithoutRedirect, generateUUID, getTargetItemIdentifier } from "@/lib/utils"
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config"
 import { 
   Folder, 
@@ -30,6 +30,7 @@ import {
   processFilesBeforeUploadingToS3,
   clearAlbumData
 } from "@/lib/file-upload-utils"
+import { downloadPhotos } from "@/lib/fileOperations";
 
 // Improved LazyImage Component
 interface LazyImageProps {
@@ -98,7 +99,7 @@ export const LazyImage: React.FC<LazyImageProps> = ({
   );
 };
 
-// Header Component
+// Header Component - Create Album button removed
 type HeaderProps = {
   publicUsername: string | null;
   isUploading: boolean;
@@ -107,135 +108,101 @@ type HeaderProps = {
 };
 
 export const Header: React.FC<HeaderProps> = ({ 
-  publicUsername, 
-  isUploading, 
-  openFilePicker,
-  cognitoUsername // Include the new prop
+  publicUsername,
+  cognitoUsername
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
 
-  let formattedCognitoUsername = cognitoUsername?.replace(/-/g, '');
+  // Format the cognito username correctly for the profile redirect
+  const formattedCognitoUsername = cognitoUsername ? encodeURIComponent(cognitoUsername) : '';
 
   return (
     <>
+      {/* First row with profile name and logout button */}
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: 16,
-          width: "100%"
-        }}
-      >
-        <div
-          style={{
-            order: isRTL ? 2 : 1
-          }}
-        >
-          <button
-            onClick={() => openFilePicker(null)}
-            style={{
-              fontSize: "14px",
-              padding: "8px 16px",
-              backgroundColor: "#007bff",
-              color: "white",
-              border: "none",
-              borderRadius: "6px",
-              cursor: "pointer",
-              opacity: isUploading ? 0.6 : 1,
-              pointerEvents: isUploading ? "none" : "auto"
-            }}
-            disabled={isUploading}
-          >
-            {isUploading ? t('Uploading...') : t('Create Album')}
-          </button>
-        </div>
-        
-        <div 
-          style={{
-            order: isRTL ? 1 : 2
-          }}
-        >
-          <button
-            onClick={() => {
-              window.location.href = `https://6180.io/bio.html?id=${formattedCognitoUsername}`;
-            }}
-            style={{
-              fontSize: "14px",
-              padding: "8px 16px",
-              backgroundColor: "#6c757d",
-              color: "white",
-              border: "none",
-              borderRadius: "6px",
-              cursor: "pointer"
-            }}
-          >
-            {t('My Public Profile')}
-          </button>
-        </div>
-      </div>
-      
-      {/* Second row with username and Log Out button */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-between", // This spaces items to far ends
           alignItems: "center",
           marginBottom: 24,
           width: "100%",
-          flexDirection: isRTL ? "row-reverse" : "row"
+          direction: isRTL ? "rtl" : "ltr"
         }}
       >
         {publicUsername && (
-          <div style={{ fontSize: "16px", color: "#666" }}>{publicUsername}</div>
-        )}
-
-        {publicUsername && (
-          <LogoutButton 
-            t={t}
-          />
+          <>
+            {/* Person icon with user's name - on the left (or right in RTL) */}
+            <a
+              href={`profile.html?id=${formattedCognitoUsername}`}
+              style={{
+                fontSize: "14px",
+                color: "#2196f3",
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              <span style={{ 
+                fontSize: "16px", 
+                lineHeight: 1
+              }}>
+                👤
+              </span>
+              {publicUsername || t('Profile')}
+            </a>
+            
+            {/* Logout button - on the right (or left in RTL) */}
+            <LogoutButton 
+              t={t}
+            />
+          </>
         )}
       </div>
     </>
   );
 };
 
-// App Promo Component
-type AppPromoProps = {
+// Create Album Button Component
+type CreateAlbumButtonProps = {
+  isUploading: boolean;
+  openFilePicker: (folderId: string | null) => void;
   t: (key: string) => string;
   isRTL: boolean;
 };
 
-const AppPromo: React.FC<AppPromoProps> = ({ t, isRTL }) => {
+export const CreateAlbumButton: React.FC<CreateAlbumButtonProps> = ({ 
+  isUploading, 
+  openFilePicker,
+  t
+}) => {
   return (
-    <div 
+    <div
       style={{
-        width: "100%", 
+        display: "flex",
+        alignItems: "center",
         marginBottom: 24,
-        backgroundColor: "#f0f7ff",
-        padding: "12px 16px",
-        borderRadius: "8px",
-        boxSizing: "border-box",
-        direction: isRTL ? "rtl" : "ltr",
-        border: "1px solid #cce0ff",
-        textAlign: isRTL ? "right" : "left" as const
+        width: "100%"
       }}
     >
-      <a 
-        href="https://apps.apple.com/app/6180/id6468679610"
+      <button
+        onClick={() => openFilePicker(null)}
         style={{
-          color: "#2196f3",
-          textDecoration: "none",
           fontSize: "14px",
-          display: "block",
-          width: "100%",
+          padding: "8px 16px",
+          backgroundColor: "#007bff",
+          color: "white",
+          border: "none",
+          borderRadius: "6px",
+          cursor: "pointer",
+          opacity: isUploading ? 0.6 : 1,
+          pointerEvents: isUploading ? "none" : "auto"
         }}
-        target="_blank"
-        rel="noopener noreferrer"
+        disabled={isUploading}
       >
-        {t('Get the iPhone app to be notified when people have added pictures to an album and to filter your albums by tags and contacts.')}
-      </a>
+        {isUploading ? t('Uploading...') : t('Create Album')}
+      </button>
     </div>
   );
 };
@@ -469,7 +436,7 @@ type FooterSectionProps = {
   folder: FolderType;
   openFilePicker: (folderId: string | null) => void;
   cognitoUsername: string | null;
-  updateProfileIds?: (profileIds: string[]) => void; // New prop for updating parent state
+  updateProfileIds?: (profileIds: string[]) => void; 
 };
 
 export const FooterSection: React.FC<FooterSectionProps> = ({
@@ -510,6 +477,57 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
       });
   };
 
+  // Handle downloading photos
+  const handleDownloadPhotos = async (e: React.MouseEvent) => {
+    e.preventDefault(); 
+    e.stopPropagation();
+    
+    // Check login first for certain operations
+    const token = await checkLoginWithoutRedirect();
+    
+    if (!token) {
+      alert(t('You must be logged in to download photos'));
+      return;
+    }
+    
+    // Transform the folder data to the format expected by downloadPhotos
+    if (folder && folder.files && folder.files.length > 0) {
+      // Convert the folder files to MediaItem format
+      const mediaItems = folder.files.map((file, index) => {
+        // Explicitly type as "image" or "video" to match MediaItem type
+        const fileType: "image" | "video" = file.dataKey.toLowerCase().endsWith('.mp4') ? 'video' : 'image';
+        
+        return {
+          url: `${S3_BUCKET_URL}${file.dataKey}`,
+          thumbnailUrl: file.thumbnailDataKey ? `${S3_BUCKET_URL}${file.thumbnailDataKey}` : undefined,
+          type: fileType,
+          index: index,
+          // Add other required properties from MediaItem type
+          id: `file-${index}`,
+          fileId: file.dataKey,
+          loaded: false
+        };
+      });
+      
+      // Create the album data structure required by downloadPhotos
+      const albumData = {
+        mediaItems: mediaItems,
+        folderName: folder.folderName || 'Album'
+      };
+      
+      // Create a dummy openFullscreenView function (since we don't have fullscreen view in this component)
+      const openFullscreenView = (index: number) => {
+        window.open(mediaItems[index].url, '_blank');
+      };
+      
+      // Call the downloadPhotos function from fileOperations
+      downloadPhotos(albumData, t, openFullscreenView);
+    } else {
+      alert(t('No items to download'));
+    }
+  };
+
+  // Handle public profile toggle
   const handlePublicProfileClick = async (e: React.MouseEvent) => {
     e.preventDefault(); 
     e.stopPropagation();
@@ -652,6 +670,17 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
               }}
             >
               {t('Add Photos')}
+            </button>
+            
+            {/* New Download Photos button added between Add Photos and Copy Link */}
+            <button
+              onClick={handleDownloadPhotos}
+              style={{
+                ...buttonStyle,
+                backgroundColor: "#e0e0e0",
+              }}
+            >
+              {t('Download')}
             </button>
             
             <button
@@ -1257,17 +1286,28 @@ const MyAlbums = () => {
                   password
                   policy
                 }
-                creatorId
-                createdAt
-                updatedAt
                 fileReferencesPage {
                   items {
                     file {
+                      ownerContactId
                       dataKey
                       thumbnailDataKey
                       durationInSeconds
                     }
                   }
+                }
+                contactsUsingInvite {
+                  items {
+                    id
+                    item {
+                      ... on Persona {
+                        publicDisplayName
+                      }
+                    }
+                  }
+                }
+                folderInviteParameters {
+                  usingFolderInviteGrantsRightToAddItems
                 }
               }
             }
@@ -1499,9 +1539,14 @@ const MyAlbums = () => {
             openFilePicker={openFilePicker}
             cognitoUsername={cognitoUsername}
           />
-          
-          {/* Add AppPromo Component here */}
-          <AppPromo t={t} isRTL={isRTL} />
+
+          {/* Create Album button moved here - before the search bar */}
+          <CreateAlbumButton
+            isUploading={isUploading}
+            openFilePicker={openFilePicker}
+            t={t}
+            isRTL={isRTL}
+          />
           
           {/* Search Bar Component */}
           <SearchBar 

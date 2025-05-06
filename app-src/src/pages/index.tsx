@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation, LanguageSelector } from '@/lib/i18n/react';
 import { getLanguageDirection } from '@/lib/i18n/translations';
-import { checkLoginWithRefreshOrRedirectToTarget } from "@/lib/utils";
+import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect } from "@/lib/utils";
 
 // CSS Styles as JavaScript object
 const styles = {
@@ -90,6 +90,28 @@ const styles = {
     textDecoration: 'underline'
   }
 };
+
+// Check login before rendering
+async function initializeApp() {
+  // Get stored language or default
+  const storedLanguage = localStorage.getItem("user_language") || "en";
+  
+  // Check if user is already logged in
+  const token = await checkLoginWithoutRedirect();
+  
+  if (token) {
+    // User is logged in, redirect to albums page without rendering the homepage
+    window.location.href = `/my-albums.html?lang=${storedLanguage}`;
+    return;
+  }
+  
+  // User is not logged in, render the homepage
+  ReactDOM.createRoot(document.getElementById("root")!).render(
+    <I18nProvider>
+      <IndexPage />
+    </I18nProvider>
+  );
+}
 
 // Main page component using the new i18n system
 const IndexPage: React.FC = () => {
@@ -209,9 +231,5 @@ const IndexPage: React.FC = () => {
   );
 };
 
-// Initialize the app with the I18nProvider wrapper
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <I18nProvider>
-    <IndexPage />
-  </I18nProvider>
-);
+// Start the initialization process
+initializeApp();

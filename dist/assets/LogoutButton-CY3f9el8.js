@@ -1,1 +1,0 @@
-import{j as e}from"./config-Dg6ijVuE.js";const n=({t:o})=>e.jsx("a",{href:"#",onClick:t=>{t.preventDefault(),localStorage.clear(),window.location.href="/index.html"},style:{fontSize:"14px",color:"#666",textDecoration:"underline",cursor:"pointer"},children:o("Log Out")});export{n as L};
