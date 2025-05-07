@@ -183,6 +183,7 @@ const MyAlbums = () => {
                 id
                 folderName
                 folderDescription
+                creatorId                
                 folderPassword {
                   password
                   policy

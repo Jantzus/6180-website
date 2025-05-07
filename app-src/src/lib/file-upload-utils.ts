@@ -6,7 +6,7 @@ import {
   UploadStatus,
   SelectedPhoto
 } from "@/lib/types"
-import { generateUUID, getVideoDuration, getVideoThumbnailBlob } from "@/lib/utils"
+import { generateUUID, getVideoDuration, createResizedThumbnail, getVideoThumbnailBlob } from "@/lib/utils"
 
 // Create S3 client - shared between files
 export const s3 = createS3Client()
@@ -74,7 +74,7 @@ export const updateProgressTracker = (
   })
 }
 
-// Process files for upload
+// Process files for upload - updated to include image resizing
 export const processFilesBeforeUploadingToS3 = async (
   files: File[],
   cognitoUsername: string,
@@ -130,12 +130,43 @@ export const processFilesBeforeUploadingToS3 = async (
         // Generate S3 key locations
         const tempS3Key = `temp/${baseKey}`
         
-        // Convert file to ArrayBuffer for S3 upload
-        const arrayBuffer = await file.arrayBuffer()
-        log(`📦 Converted file to ArrayBuffer`)
-        updatePhotoStatus(i, 'uploading', 0.3)
+        // Extract the base filename without extension
+        const baseFileName = uuidFileName.split('.').slice(0, -1).join('.');
+        // Set the thumbnail key with the proper jpg extension
+        const thumbnailDataKey = `Input/Image/${baseFileName}-thumbnail.jpg`;
+        const tempThumbnailKey = `temp/${thumbnailDataKey}`;
         
-        // Upload to temp folder
+        let arrayBuffer: ArrayBuffer;
+        let thumbnailBlob: Blob | null = null;
+        let thumbnailSize: number | null = null;
+        
+        // For images, create a resized thumbnail version
+        if (type.startsWith("image")) {
+          updatePhotoStatus(i, 'processing', 0.2)
+          log(`🖼️ Creating resized thumbnail for image...`)
+          
+          try {
+            // Create a Blob from the File to ensure type safety
+            const fileBlob = new Blob([file], { type: file.type });
+            const resizedBlob = await createResizedThumbnail(fileBlob, 800, 0.6);
+            thumbnailBlob = resizedBlob;
+            if (thumbnailBlob) {
+              thumbnailSize = thumbnailBlob.size;
+              log(`🖼️ Thumbnail generated: ${thumbnailSize} bytes, path: ${thumbnailDataKey}`)
+            }
+            updatePhotoStatus(i, 'processing', 0.3)
+          } catch (imageErr) {
+            log(`⚠️ Image resize error: ${String(imageErr)}`)
+            // Continue without thumbnail if resize fails
+          }
+        }
+        
+        // Convert original file to ArrayBuffer for S3 upload
+        arrayBuffer = await file.arrayBuffer()
+        log(`📦 Converted file to ArrayBuffer`)
+        updatePhotoStatus(i, 'uploading', 0.4)
+        
+        // Upload original file to temp folder
         try {
           log(`⬆️ Uploading to ${tempS3Key}...`)
           await s3.send(new PutObjectCommand({
@@ -156,11 +187,9 @@ export const processFilesBeforeUploadingToS3 = async (
         const s3PreviewUrl = `https://${AWS_BUCKET_NAME}.s3.amazonaws.com/${tempS3Key}`
         log(`🔗 Generated S3 preview URL: ${s3PreviewUrl}`)
         
-        let duration: number | null = null
-        let thumbnailDataKey: string | null = null
-        let thumbnailSize: number | null = null
-        let tempThumbnailKey: string | null = null
-
+        let duration: number | null = null;
+        
+        // Process video files - extract duration and thumbnail
         if (type.startsWith("video")) {
           updatePhotoStatus(i, 'processing', 0.7)
           try {
@@ -169,20 +198,19 @@ export const processFilesBeforeUploadingToS3 = async (
             log(`⏱️ Video duration: ${duration} seconds`)
             
             log(`🎬 Generating video thumbnail...`)
-            const thumbnailBlob = await getVideoThumbnailBlob(file)
-            
-            // Extract the base filename without extension
-            const baseFileName = uuidFileName.split('.').slice(0, -1).join('.');
-            
-            // Set the thumbnail key with the proper jpg extension
-            thumbnailDataKey = `Input/Image/${baseFileName}-thumbnail.jpg`;
-            tempThumbnailKey = `temp/${thumbnailDataKey}`;
-            
+            thumbnailBlob = await getVideoThumbnailBlob(file)
             thumbnailSize = Math.round(thumbnailBlob.size)
             log(`🎬 Thumbnail generated: ${thumbnailSize} bytes, path: ${thumbnailDataKey}`)
             updatePhotoStatus(i, 'processing', 0.8)
+          } catch (videoErr) {
+            log(`⚠️ Video processing error: ${String(videoErr)}`)
+            // Continue without thumbnail if it fails
+          }
+        }
         
-            // Convert thumbnail blob to ArrayBuffer
+        // Upload thumbnail if we have one (for both images and videos)
+        if (thumbnailBlob) {
+          try {
             const thumbnailArrayBuffer = await thumbnailBlob.arrayBuffer()
             log(`📦 Converted thumbnail to ArrayBuffer`)
             
@@ -195,8 +223,8 @@ export const processFilesBeforeUploadingToS3 = async (
             }))
             log(`✅ Thumbnail upload successful`)
             updatePhotoStatus(i, 'processing', 0.9)
-          } catch (videoErr) {
-            log(`⚠️ Video processing error: ${String(videoErr)}`)
+          } catch (thumbnailErr) {
+            log(`⚠️ Thumbnail upload error: ${String(thumbnailErr)}`)
             // Don't fail the whole upload if just the thumbnail fails
           }
         }

@@ -350,6 +350,7 @@ export const getVideoDuration = (file: File): Promise<number> => {
   })
 }
 
+// Updated function to get video thumbnail with resizing
 export const getVideoThumbnailBlob = (file: File): Promise<Blob> => {
   return new Promise((resolve, reject) => {
     // Create video element
@@ -388,7 +389,7 @@ export const getVideoThumbnailBlob = (file: File): Promise<Blob> => {
     };
     
     // Generate thumbnail when the frame is ready
-    const generateThumbnail = () => {
+    const generateThumbnail = async () => {
       if (thumbnailGenerated) return;
       thumbnailGenerated = true;
       
@@ -420,18 +421,34 @@ export const getVideoThumbnailBlob = (file: File): Promise<Blob> => {
         // Draw video frame to canvas
         ctx.drawImage(video, 0, 0, width, height);
         
-        // Convert to blob and resolve
+        // First create a full-quality blob of the frame
         canvas.toBlob(
           (blob) => {
             if (blob) {
-              resolve(blob);
+              try {
+                // Resize and compress the thumbnail
+                createResizedThumbnail(blob, 800, 0.6)
+                  .then((resizedBlob: Blob) => {
+                    resolve(resizedBlob);
+                    cleanup();
+                  })
+                  .catch(resizeError => {
+                    console.warn("Resize failed, using original frame:", resizeError);
+                    resolve(blob); // Fallback to original if resize fails
+                    cleanup();
+                  });
+              } catch (resizeError) {
+                console.warn("Resize failed, using original frame:", resizeError);
+                resolve(blob); // Fallback to original if resize fails
+                cleanup();
+              }
             } else {
               reject(new Error("Failed to create blob"));
+              cleanup();
             }
-            cleanup();
           },
           "image/jpeg",
-          0.85
+          0.9
         );
       } catch (e) {
         cleanup();
@@ -547,4 +564,74 @@ export const formatUUID = (uuid: string): string => {
   
   console.error('Invalid UUID format: must be 32 characters after removing dashes');
   return uuid;
+};
+
+// Helper function to resize and compress images
+export const createResizedThumbnail = async (
+  imageBlob: Blob, 
+  maxDimension = 800, 
+  compressionQuality = 0.6
+): Promise<Blob> => {
+  return new Promise<Blob>((resolve, reject) => {
+    try {
+      // Create an image element
+      const img = new Image();
+      const imageUrl = URL.createObjectURL(imageBlob);
+      
+      img.onload = () => {
+        // Calculate aspect ratio
+        const aspectRatio = img.width / img.height;
+        let newWidth, newHeight;
+        
+        if (aspectRatio > 1) {
+          // Landscape
+          newWidth = maxDimension;
+          newHeight = maxDimension / aspectRatio;
+        } else {
+          // Portrait
+          newWidth = maxDimension * aspectRatio;
+          newHeight = maxDimension;
+        }
+        
+        // Create canvas at new dimensions
+        const canvas = document.createElement("canvas");
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        
+        // Draw the resized image
+        const ctx = canvas.getContext("2d");
+        if (!ctx) {
+          URL.revokeObjectURL(imageUrl);
+          reject(new Error("Could not get canvas context"));
+          return;
+        }
+        
+        // Draw image to canvas with new dimensions
+        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+        
+        // Convert to blob with compression
+        canvas.toBlob(
+          (blob) => {
+            URL.revokeObjectURL(imageUrl);
+            if (blob) {
+              resolve(blob);
+            } else {
+              reject(new Error("Failed to create blob"));
+            }
+          },
+          "image/jpeg",
+          compressionQuality
+        );
+      };
+      
+      img.onerror = (e) => {
+        URL.revokeObjectURL(imageUrl);
+        reject(new Error(`Image loading error: ${e}`));
+      };
+      
+      img.src = imageUrl;
+    } catch (error) {
+      reject(error);
+    }
+  });
 };

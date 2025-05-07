@@ -190,6 +190,7 @@ const SaveAlbum = () => {
     overallProgress: 0
   });
   const [isSavingAlbum, setIsSavingAlbum] = useState(false);
+  const [savingProgress, setSavingProgress] = useState(0);
   
   // Album details state
   const [folderName, setFolderName] = useState("");
@@ -710,9 +711,21 @@ const SaveAlbum = () => {
     }
   };
 
+  // Helper function to split array into chunks of specified size
+  const splitArrayIntoChunks = <T,>(array: T[], chunkSize: number): T[][] => {
+    enhancedLog(`Splitting array of ${array.length} items into chunks of ${chunkSize}`);
+    const result: T[][] = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize));
+    }
+    enhancedLog(`Created ${result.length} chunks`);
+    return result;
+  };
+
   const saveAlbumDirectly = async () => {
     enhancedLog("Starting direct album save");
     setIsSavingAlbum(true);
+    setSavingProgress(5); // Start progress at 5%
 
     try {
       // Validate required data
@@ -739,7 +752,7 @@ const SaveAlbum = () => {
       const folderPositionInput = createFolderPositionInput(now, accountId, folderTargetItemIdentifier);
       enhancedLog("Folder position input created:", folderPositionInput);
       
-      let updatedFileReferenceInputs: FileReferenceInput[] = [];
+      let fileReferenceInputs: FileReferenceInput[] = [];
       
       // Process new uploads if any exist
       const validPhotos = selectedPhotos.filter(photo => photo.status === 'complete');
@@ -758,7 +771,7 @@ const SaveAlbum = () => {
         enhancedLog("Creating file reference inputs for new uploads");
         const newFileReferenceInputs = createFileReferenceInputs(validPhotos, now, accountId);
         enhancedLog(`Created ${newFileReferenceInputs.length} file reference inputs for new uploads`, newFileReferenceInputs);
-        updatedFileReferenceInputs = updatedFileReferenceInputs.concat(newFileReferenceInputs);
+        fileReferenceInputs = fileReferenceInputs.concat(newFileReferenceInputs);
       }
       
       // Add existing file references for sub-album files
@@ -779,18 +792,284 @@ const SaveAlbum = () => {
         });
         
         enhancedLog(`Created ${existingFileReferenceInputs.length} file reference inputs for existing files`, existingFileReferenceInputs);
-        updatedFileReferenceInputs = updatedFileReferenceInputs.concat(existingFileReferenceInputs);
+        fileReferenceInputs = fileReferenceInputs.concat(existingFileReferenceInputs);
       }
       
-      enhancedLog(`Total file reference inputs: ${updatedFileReferenceInputs.length}`);
+      enhancedLog(`Total file reference inputs: ${fileReferenceInputs.length}`);
       
-      // Send GraphQL mutation with all file references
-      enhancedLog("Sending GraphQL mutation to save album");
-      await sendAlbumSaveMutation(folderPositionInput, updatedFileReferenceInputs);
+      // Send GraphQL mutation with all file references using chunking approach
+      enhancedLog("Sending GraphQL mutations with chunked file references");
+      await saveWithChunking(folderPositionInput, fileReferenceInputs);
     } catch (err) {
       console.error("Error in saveAlbumDirectly:", err);
       enhancedLog(`Error in saveAlbumDirectly: ${err}`);
       setIsSavingAlbum(false);
+    }
+  };
+  
+  // NEW FUNCTION: Save album with chunking large file reference arrays
+  const saveWithChunking = async (folderPositionInput: any, fileReferenceInputs: FileReferenceInput[]) => {
+    enhancedLog("Starting chunked save process");
+    try {
+      updateSaveProgressText("Processing files in chunks...");
+      
+      // Define chunk size - similar to the iOS code
+      const chunkSize = 48;
+      
+      if (fileReferenceInputs.length === 0) {
+        // If no file references, just save the folder position
+        enhancedLog("No file references to process, saving only folder position");
+        await sendFolderOnlyMutation(folderPositionInput);
+      } else {
+        // Split file references into chunks
+        const chunks = splitArrayIntoChunks(fileReferenceInputs, chunkSize);
+        enhancedLog(`Split file references into ${chunks.length} chunks of max size ${chunkSize}`);
+        
+        // Process each chunk
+        for (let i = 0; i < chunks.length; i++) {
+          const chunk = chunks[i];
+          enhancedLog(`Processing chunk ${i + 1} of ${chunks.length} with ${chunk.length} file references`);
+          
+          // Update progress
+          const chunkProgress = (i / chunks.length) * 80; // 80% of progress bar for chunks
+          setSavingProgress(10 + chunkProgress); // Start at 10%, end at 90%
+          updateSaveProgress(10 + chunkProgress);
+          
+          if (i < chunks.length - 1) {
+            // Process all chunks except the last one - just save file references
+            updateSaveProgressText(`Saving files: chunk ${i + 1} of ${chunks.length}...`);
+            await sendFileReferencesOnlyMutation(chunk);
+          } else {
+            // Process the last chunk with the folder position
+            updateSaveProgressText("Finalizing album...");
+            await sendFinalChunkWithFolderMutation(chunk, folderPositionInput);
+          }
+        }
+      }
+      
+      // Complete the save process
+      setSavingProgress(100);
+      updateSaveProgress(100);
+      updateSaveProgressText("Album saved successfully!");
+      handleSuccessfulSave();
+      
+    } catch (error) {
+      console.error("Error in chunked save process:", error);
+      enhancedLog(`Error in chunked save process: ${error}`);
+      updateSaveProgressText(`Error: ${error}`);
+      setIsSavingAlbum(false);
+    }
+  };
+  
+  // Helper to update progress text
+  const updateSaveProgressText = (text: string) => {
+    enhancedLog(`Save progress text: ${text}`);
+    const saveProgressText = document.getElementById('saveProgressText');
+    if (saveProgressText) {
+      saveProgressText.innerText = t(text);
+    }
+  };
+  
+  // NEW: Mutation for saving only folder position (no file references)
+  const sendFolderOnlyMutation = async (folderPositionInput: any) => {
+    enhancedLog("Sending folder-only mutation (no file references)");
+    
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      enhancedLog("No token available for saving album, aborting");
+      throw new Error("Authentication token not available");
+    }
+    
+    const mutation = `
+      mutation MyMutation($folderPositionInputs: [FolderPositionInput!]) {
+        changeFiles(folderPositionInputs: $folderPositionInputs) {
+          items {
+            id
+          }
+        }
+      }
+    `;
+
+    const variables = {
+      folderPositionInputs: [folderPositionInput]
+    };
+
+    enhancedLog("GraphQL folder-only mutation variables:", variables);
+
+    try {
+      enhancedLog("Sending API request to save folder");
+      const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: mutation, variables }),
+      });
+      
+      enhancedLog(`API response status: ${response.status}`);
+      
+      const responseText = await response.text();
+      enhancedLog(`API response raw text: ${responseText}`);
+      
+      const json = JSON.parse(responseText);
+      enhancedLog("API response JSON:", json);
+
+      if (json.errors) {
+        console.error("Folder save failed:", json.errors);
+        enhancedLog(`Folder save failed with errors:`, json.errors);
+        throw new Error("Failed to save folder");
+      }
+      
+      enhancedLog("Folder saved successfully");
+      return json.data?.changeFiles?.items || [];
+    } catch (error) {
+      console.error("Error in sendFolderOnlyMutation:", error);
+      enhancedLog(`Error in sendFolderOnlyMutation: ${error}`);
+      throw error;
+    }
+  };
+  
+  // NEW: Mutation for saving file references only (for all chunks except the last)
+  const sendFileReferencesOnlyMutation = async (fileReferenceInputs: FileReferenceInput[]) => {
+    enhancedLog(`Sending file references-only mutation with ${fileReferenceInputs.length} items`);
+    
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      enhancedLog("No token available for saving file references, aborting");
+      throw new Error("Authentication token not available");
+    }
+    
+    const mutation = `
+      mutation MyMutation($updatedFileReferenceInputs: [UpdatedFileReferenceInput!]) {
+        changeFiles0(updatedFileReferenceInputs: $updatedFileReferenceInputs) {
+          items {
+            ... on FileReference {
+              id
+              createdAt
+              updatedAt
+              fileId
+              file {
+                dataKey
+                thumbnailDataKey
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    const variables = {
+      updatedFileReferenceInputs: fileReferenceInputs
+    };
+
+    enhancedLog("GraphQL file references-only mutation variables (first item):", 
+      fileReferenceInputs.length > 0 ? fileReferenceInputs[0] : "No items");
+
+    try {
+      enhancedLog("Sending API request to save file references");
+      const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: mutation, variables }),
+      });
+      
+      enhancedLog(`API response status: ${response.status}`);
+      
+      const responseText = await response.text();
+      enhancedLog(`API response raw text: ${responseText.substring(0, 500)}...`); // Log first 500 chars to avoid huge logs
+      
+      const json = JSON.parse(responseText);
+      enhancedLog("API response JSON items count:", json.data?.changeFiles0?.items?.length || 0);
+
+      if (json.errors) {
+        console.error("File references save failed:", json.errors);
+        enhancedLog(`File references save failed with errors:`, json.errors);
+        throw new Error("Failed to save file references");
+      }
+      
+      enhancedLog("File references chunk saved successfully");
+      return json.data?.changeFiles0?.items || [];
+    } catch (error) {
+      console.error("Error in sendFileReferencesOnlyMutation:", error);
+      enhancedLog(`Error in sendFileReferencesOnlyMutation: ${error}`);
+      throw error;
+    }
+  };
+  
+  // NEW: Mutation for saving the final chunk with folder position
+  const sendFinalChunkWithFolderMutation = async (fileReferenceInputs: FileReferenceInput[], folderPositionInput: any) => {
+    enhancedLog(`Sending final chunk with folder mutation (${fileReferenceInputs.length} file references)`);
+    
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      enhancedLog("No token available for saving final chunk, aborting");
+      throw new Error("Authentication token not available");
+    }
+    
+    const mutation = `
+      mutation MyMutation(
+        $folderPositionInputs: [FolderPositionInput!],
+        $updatedFileReferenceInputs: [UpdatedFileReferenceInput!]
+      ) {
+        changeFiles0(updatedFileReferenceInputs: $updatedFileReferenceInputs) {
+          items {
+            ... on FileReference { id createdAt updatedAt fileId file { dataKey thumbnailDataKey } }
+          }
+        }
+        changeFiles(folderPositionInputs: $folderPositionInputs) {
+          items { id }
+        }
+      }
+    `;
+
+    const variables = {
+      folderPositionInputs: [folderPositionInput],
+      updatedFileReferenceInputs: fileReferenceInputs,
+    };
+
+    enhancedLog("GraphQL final mutation variables (folder + last chunk)");
+
+    try {
+      enhancedLog("Sending API request for final save with folder");
+      const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: mutation, variables }),
+      });
+      
+      enhancedLog(`API response status: ${response.status}`);
+      
+      const responseText = await response.text();
+      enhancedLog(`API response raw text: ${responseText.substring(0, 500)}...`); // First 500 chars
+      
+      const json = JSON.parse(responseText);
+      enhancedLog("API response JSON:", {
+        fileReferencesCount: json.data?.changeFiles0?.items?.length || 0,
+        folderItems: json.data?.changeFiles?.items || []
+      });
+
+      if (json.errors) {
+        console.error("Final save failed:", json.errors);
+        enhancedLog(`Final save failed with errors:`, json.errors);
+        throw new Error("Failed to complete album save");
+      }
+      
+      enhancedLog("Final chunk and folder saved successfully");
+      return {
+        fileReferences: json.data?.changeFiles0?.items || [],
+        folderPositions: json.data?.changeFiles?.items || []
+      };
+    } catch (error) {
+      console.error("Error in sendFinalChunkWithFolderMutation:", error);
+      enhancedLog(`Error in sendFinalChunkWithFolderMutation: ${error}`);
+      throw error;
     }
   };
   
@@ -818,7 +1097,7 @@ const SaveAlbum = () => {
   };
   
   const updateSaveProgress = (progress: number) => {
-    // Update progress in UI - we'll use a ref for this in the styled component
+    // Update progress in UI
     const progressBar = document.getElementById('saveProgress');
     if (progressBar) {
       progressBar.style.width = `${progress}%`;
@@ -826,6 +1105,7 @@ const SaveAlbum = () => {
     } else {
       enhancedLog("Progress bar element not found");
     }
+    setSavingProgress(progress);
   };
   
   const createFolderPositionInput = (
@@ -964,93 +1244,6 @@ const SaveAlbum = () => {
         }
       };
     });
-  };
-  
-  const sendAlbumSaveMutation = async (folderPositionInput: any, updatedFileReferenceInputs: any[]) => {
-    enhancedLog("Sending album save mutation");
-    enhancedLog(`Folder position input:`, folderPositionInput);
-    enhancedLog(`File reference inputs count: ${updatedFileReferenceInputs.length}`);
-    
-    // Log a sample of the file references (first 2) to avoid excessive logs
-    if (updatedFileReferenceInputs.length > 0) {
-      enhancedLog(`Sample file reference input:`, updatedFileReferenceInputs[0]);
-      if (updatedFileReferenceInputs.length > 1) {
-        enhancedLog(`Second sample file reference input:`, updatedFileReferenceInputs[1]);
-      }
-    }
-    
-    const saveProgressText = document.getElementById('saveProgressText');
-    if (saveProgressText) {
-      saveProgressText.innerText = t('Finalizing album...');
-      enhancedLog("Updated progress text to 'Finalizing album...'");
-    }
-
-    const token = await checkLoginWithRefresh();
-    if (!token) {
-      enhancedLog("No token available for saving album, aborting");
-      setIsSavingAlbum(false);
-      return;
-    }
-    
-    const mutation = `
-      mutation MyMutation(
-        $folderPositionInputs: [FolderPositionInput!],
-        $updatedFileReferenceInputs: [UpdatedFileReferenceInput!]
-      ) {
-        changeFiles0(updatedFileReferenceInputs: $updatedFileReferenceInputs) {
-          items {
-            ... on FileReference { id createdAt updatedAt fileId file { dataKey thumbnailDataKey } }
-          }
-        }
-        changeFiles(folderPositionInputs: $folderPositionInputs) {
-          items { id }
-        }
-      }
-    `;
-
-    const variables = {
-      folderPositionInputs: [folderPositionInput],
-      updatedFileReferenceInputs,
-    };
-
-    enhancedLog("GraphQL mutation variables:", variables);
-
-    try {
-      enhancedLog("Sending API request to save album");
-      const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ query: mutation, variables }),
-      });
-      
-      enhancedLog(`API response status: ${response.status}`);
-      
-      // Log full response for debugging
-      const responseText = await response.text();
-      enhancedLog(`API response raw text: ${responseText}`);
-      
-      // Parse JSON again for further processing
-      const json = JSON.parse(responseText);
-      enhancedLog("API response JSON:", json);
-
-      if (json.errors) {
-        console.error("Upload failed:", json.errors);
-        enhancedLog(`Upload failed with errors:`, json.errors);
-        setIsSavingAlbum(false);
-      } else {
-        enhancedLog("Album saved successfully");
-        enhancedLog("changeFiles0 result:", json.data?.changeFiles0);
-        enhancedLog("changeFiles result:", json.data?.changeFiles);
-        handleSuccessfulSave();
-      }
-    } catch (fetchErr) {
-      console.error("Fetch error in sendAlbumSaveMutation:", fetchErr);
-      enhancedLog(`Fetch error in sendAlbumSaveMutation: ${fetchErr}`);
-      setIsSavingAlbum(false);
-    }
   };
   
   const handleSuccessfulSave = () => {
@@ -1254,7 +1447,7 @@ const SaveAlbum = () => {
               <SavingProgressTitle>{t('Saving Album')}</SavingProgressTitle>
               <SavingProgressText id="saveProgressText">{t('Moving files...')}</SavingProgressText>
               <SavingProgressBarBg>
-                <SavingProgressBar id="saveProgress" style={{ width: "5%" }} />
+                <SavingProgressBar id="saveProgress" style={{ width: `${savingProgress}%` }} />
               </SavingProgressBarBg>
             </SavingProgressContainer>
           )}
