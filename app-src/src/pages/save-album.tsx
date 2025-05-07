@@ -6,11 +6,9 @@ import {
   GlobalStyle,
   AppContainer,
   ContentContainer,
-  HeaderSection,
+  HeaderContainer,
   BackLinkContainer,
   BackLink,
-  UserInfo,
-  Username,
   ProgressContainer,
   ProgressTitle,
   OverallProgress,
@@ -1208,20 +1206,15 @@ const SaveAlbum = () => {
       <AppContainer isRTL={isRTL}>
         <ContentContainer>
           {/* Header Section */}
-          <HeaderSection>
+          <HeaderContainer>
             <BackLinkContainer>
               <BackLink href="/my-albums.html">
                 {t('My Albums')}
               </BackLink>
             </BackLinkContainer>
             
-            {publicUsername && (
-              <UserInfo>
-                <Username>{publicUsername}</Username>
-                <LogoutButton t={t} />
-              </UserInfo>
-            )}
-          </HeaderSection>
+            <LogoutButton t={t} />
+            </HeaderContainer>
           
           {/* Progress Tracking */}
           {progressTracker.totalFiles > 0 && (
