@@ -1,85 +1,75 @@
-import React from "react";
-import { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState } from "react";
+import { S3_BUCKET_URL } from "@/lib/config";
 
-type LazyImageProps = {
-  src: string;
+interface LazyImageProps {
+  src?: string;
   alt: string;
   style: React.CSSProperties;
-};
+  thumbnailDataKey?: string | null;
+  dataKey?: string | null;
+  bucketUrl?: string;
+  [key: string]: any;
+}
 
-export const LazyImage = ({ src, alt, style }: LazyImageProps) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
-  
+export const LazyImage: React.FC<LazyImageProps> = ({ 
+  src, 
+  alt, 
+  style, 
+  thumbnailDataKey, 
+  dataKey, 
+  bucketUrl = S3_BUCKET_URL,
+  ...props 
+}) => {
+  const [loaded, setLoaded] = useState(false);
+  const [currentSrc, setCurrentSrc] = useState('');
+  // const [isError, setIsError] = useState(false);
+
   useEffect(() => {
-    // Create an observer instance
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // If the image is intersecting with the viewport
-        if (entries[0].isIntersecting) {
-          setIsInView(true);
-          // Once we've started loading, we can disconnect the observer
-          if (imgRef.current) {
-            observer.unobserve(imgRef.current);
-          }
-        }
-      },
-      {
-        // Load images when they're 200px before they appear in viewport
-        rootMargin: '200px 0px',
-        threshold: 0.01
-      }
-    );
+    // Reset states when the image source changes
+    setLoaded(false);
+    // setIsError(false);
     
-    // Start observing the image element
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
+    // Always try to load the thumbnail first if available
+    if (thumbnailDataKey) {
+      setCurrentSrc(`${bucketUrl}${thumbnailDataKey}`);
+    } else if (dataKey) {
+      setCurrentSrc(`${bucketUrl}${dataKey}`);
+    } else if (src) {
+      // Fallback to the src prop if provided directly
+      setCurrentSrc(src);
     }
+  }, [thumbnailDataKey, dataKey, src, bucketUrl]);
+
+  // Handle successful image load
+  const handleImageLoaded = () => {
+    setLoaded(true);
+    // setIsError(false);
+  };
+
+  // Handle image loading error
+  const handleImageError = () => {
+    // setIsError(true);
     
-    // Clean up the observer when the component unmounts
-    return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
-      }
-    };
-  }, []);
-  
+    // If thumbnail fails, try loading the full image as a fallback
+    if (thumbnailDataKey && dataKey && thumbnailDataKey !== dataKey) {
+      console.log(`Thumbnail load failed, trying full image: ${dataKey}`);
+      setCurrentSrc(`${bucketUrl}${dataKey}`);
+    }
+  };
+
   return (
-    <div 
-      ref={imgRef}
+    <img
+      src={currentSrc}
+      alt={alt}
       style={{
         ...style,
-        backgroundColor: '#f0f0f0',
-        position: 'relative',
+        opacity: loaded ? 1 : 0.3,
+        transition: 'opacity 0.3s ease-in-out',
+        objectFit: "cover",
       }}
-    >
-      {isInView && (
-        <img
-          src={src}
-          alt={alt}
-          style={{
-            ...style,
-            opacity: isLoaded ? 1 : 0,
-            transition: 'opacity 0.3s ease',
-          }}
-          onLoad={() => setIsLoaded(true)}
-        />
-      )}
-      
-      {/* Optional loading indicator */}
-      {isInView && !isLoaded && (
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          fontSize: '12px',
-          color: '#666'
-        }}>
-          Loading...
-        </div>
-      )}
-    </div>
+      onLoad={handleImageLoaded}
+      onError={handleImageError}
+      {...props}
+    />
   );
 };

@@ -48,6 +48,18 @@ import {
   OwnerBadge
 } from "@/styles/photos-styled-components";
 
+// Import styled components
+import { 
+  ModalOverlay,
+  UsernameModal,
+  UsernameTitle,
+  UsernameDescription,
+  UsernameInput,
+  UsernameError,
+  UsernameButton,
+  UsernameAltButton
+} from "@/styles/styled-components";
+
 // Import components
 import { LazyImage, VideoThumbnail, FullscreenMediaViewer } from "@/components/MediaComponents";
 import { PasswordModal } from "@/components/ModalComponents";
@@ -108,6 +120,13 @@ const PhotoAlbumContent: React.FC = () => {
   const [fileProcessingComplete, setFileProcessingComplete] = useState(false);
   // Add state to track pending save album operation
   const [pendingSaveAlbum, setPendingSaveAlbum] = useState(false);
+  
+  // Add state for username handling
+  const [showUsernamePrompt, setShowUsernamePrompt] = useState<boolean>(false);
+  const [usernameInput, setUsernameInput] = useState<string>("");
+  const [usernameError, setUsernameError] = useState<string>("");
+  const [showAltButton, setShowAltButton] = useState<boolean>(false);
+  const [isSubmittingUsername, setIsSubmittingUsername] = useState<boolean>(false);
 
   // Create logger for tracking upload progress (logs to console only, not stored in state)
   const log = createLogger(() => {
@@ -479,6 +498,87 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
+  // Username validation
+  const validateUsername = (username: string) => {
+    const isValid = /^[a-zA-Z0-9-]+$/.test(username);
+    console.log(`Username validation for '${username}': ${isValid}`);
+    return isValid;
+  };
+
+  // Submit username
+  const submitUsername = async (proposedName: string) => {
+    console.log(`Submitting username: ${proposedName}`);
+    setIsSubmittingUsername(true);
+    setUsernameError("");
+
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      setUsernameError(t('Authentication error. Please try again.'));
+      setIsSubmittingUsername(false);
+      return;
+    }
+
+    const mutation = `
+      mutation MyMutation($savePublicProfileDisplayNameInput: SavePublicProfileDisplayNameInput) {
+        changeMyAccountItem(savePublicProfileDisplayNameInput: $savePublicProfileDisplayNameInput) {
+          ... on Profile {
+            anyDisplayName
+          }
+        }
+      }
+    `;
+
+    const variables = {
+      savePublicProfileDisplayNameInput: {
+        anyDisplayName: proposedName,
+      },
+    };
+
+    try {
+      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: mutation, variables }),
+      });
+
+      const json = await res.json();
+      const newName = json?.data?.changeMyAccountItem?.anyDisplayName;
+
+      if (newName) {
+        handleSuccessfulUsernameUpdate(newName);
+      } else {
+        throw new Error("Username taken");
+      }
+    } catch (e) {
+      console.error(`Error submitting username: ${e}`);
+      setUsernameError(t('Username is already taken. Please try a different one.'));
+      setShowAltButton(true);
+      setIsSubmittingUsername(false);
+    }
+  };
+
+  // Handle successful username update
+  const handleSuccessfulUsernameUpdate = (newName: string) => {
+    console.log(`Username successfully updated to: ${newName}`);
+    localStorage.setItem("publicUsername", newName);
+    setShowUsernamePrompt(false);
+    
+    // Automatically proceed with saving the album
+    executeAlbumSave();
+  };
+
+  // Add random digits to username
+  const appendRandomDigits = () => {
+    const digits = Math.floor(100000 + Math.random() * 900000).toString();
+    const modified = `${usernameInput}${digits}`;
+    console.log(`Appending random digits to username: ${usernameInput} -> ${modified}`);
+    setUsernameInput(modified);
+    submitUsername(modified);
+  };
+
   // Helper function to update save progress
   const updateSaveProgress = (
     progress: number, 
@@ -769,7 +869,7 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // New implementation for saveAlbumDirectly that first checks login and shows OTP if needed
+  // New implementation for saveAlbumDirectly that first checks login, username, and shows OTP if needed
   const saveAlbumDirectly = async () => {
     console.log("Starting direct album save");
     
@@ -804,7 +904,16 @@ const PhotoAlbumContent: React.FC = () => {
       }
     }
     
-    // User is logged in, continue with album save
+    // Check the public username from localStorage
+    const publicUsername = localStorage.getItem("publicUsername");
+    if (publicUsername?.startsWith("Profile-")) {
+      console.log("Public username starts with 'Profile-', showing username prompt");
+      setUsernameInput(publicUsername);
+      setShowUsernamePrompt(true);
+      return;
+    }
+    
+    // User is logged in and has valid username, continue with album save
     executeAlbumSave();
   };
 
@@ -1170,7 +1279,7 @@ const PhotoAlbumContent: React.FC = () => {
               color: '#333',
               textAlign: 'left'
             }}>
-              {t('Click "Add" to create a memory with ')}
+              {t('Click "Save" to create a memory with ')}
               <strong>
                 {Object.values(albumData.contacts)
                   .filter(contact => !contact.toString().startsWith('Profile-'))
@@ -1402,6 +1511,46 @@ const PhotoAlbumContent: React.FC = () => {
           albumName={albumData.folderName}
           showWatermark={shouldShowWatermark()}
         />
+      )}
+      
+      {/* Username Prompt Modal */}
+      {showUsernamePrompt && (
+        <ModalOverlay>
+          <UsernameModal isRTL={getLanguageDirection(language) === "rtl"}>
+            <UsernameTitle>
+              {t('Enter Username')}
+            </UsernameTitle>
+            <UsernameDescription>
+              {t('Username should contain only letters, numbers and hyphens. Example: john-doe2')}
+            </UsernameDescription>
+            <UsernameInput
+              value={usernameInput}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsernameInput(e.target.value)}
+              isRTL={getLanguageDirection(language) === "rtl"}
+            />
+            {usernameError && <UsernameError>{usernameError}</UsernameError>}
+            <UsernameButton
+              disabled={isSubmittingUsername}
+              onClick={() => {
+                if (!validateUsername(usernameInput)) {
+                  setUsernameError(t('Username must contain only letters, numbers, and hyphens.'));
+                  return;
+                }
+                submitUsername(usernameInput);
+              }}
+            >
+              {t('Select Username')}
+            </UsernameButton>
+            {showAltButton && (
+              <UsernameAltButton
+                disabled={isSubmittingUsername}
+                onClick={appendRandomDigits}
+              >
+                {t('Add Random Digits to Username')}
+              </UsernameAltButton>
+            )}
+          </UsernameModal>
+        </ModalOverlay>
       )}
     </Body>
   );

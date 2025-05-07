@@ -1,1499 +1,44 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import { useEffect, useState, useRef } from "react"
-import { checkLoginWithRefresh, checkLoginWithoutRedirect, generateUUID, getTargetItemIdentifier } from "@/lib/utils"
-import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config"
+import React, { useState, useEffect, useRef } from "react";
+import ReactDOM from "react-dom/client";
+import { checkLoginWithRefresh } from "@/lib/utils";
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { 
   Folder, 
   SelectedPhoto, 
-  ProgressTracker,
-  FolderType
-} from "@/lib/types"
-import { SupportedLanguage } from "@/lib/i18n/translations"
-import { LogoutButton } from "@/components/LogoutButton"
-import { FileInput } from "@/components/FileInput"
-import { DebugLog } from "@/components/DebugLog"
-import { S3_BUCKET_URL } from "@/lib/config"
-import { formatDate } from "@/lib/utils"
-import { getLanguageDirection } from "@/lib/i18n"
-import { 
-  I18nProvider, 
-  // LanguageSelector,
-  useTranslation
-} from "@/lib/i18n/react"
+  ProgressTracker
+} from "@/lib/types";
+import { I18nProvider, useTranslation } from "@/lib/i18n/react";
+import { getLanguageDirection } from "@/lib/i18n";
+import { SupportedLanguage } from "@/lib/i18n/translations";
 
-// Import the utilities from file-upload-utils.ts
+// Import components
+import { Header } from "@/components/Header";
+import { CreateAlbumButton } from "@/components/CreateAlbumButton";
+import { SearchBar } from "@/components/SearchBar";
+import { ContactsFilter } from "@/components/ContactsFilter";
+import { UploadProgress } from "@/components/UploadProgress";
+import { AlbumList } from "@/components/AlbumList";
+import { FileInput } from "@/components/FileInput";
+import { DebugLog } from "@/components/DebugLog";
+
+// Import utilities
 import { 
   createLogger, 
   createPhotoStatusUpdater, 
   updateProgressTracker,
   processFilesBeforeUploadingToS3,
   clearAlbumData
-} from "@/lib/file-upload-utils"
-import { downloadPhotos } from "@/lib/fileOperations";
-
-// Improved LazyImage Component
-interface LazyImageProps {
-  src?: string;
-  alt: string;
-  style: React.CSSProperties;
-  thumbnailDataKey?: string | null;
-  dataKey?: string | null;
-  bucketUrl?: string;
-  [key: string]: any;
-}
-
-export const LazyImage: React.FC<LazyImageProps> = ({ 
-  src, 
-  alt, 
-  style, 
-  thumbnailDataKey, 
-  dataKey, 
-  bucketUrl = S3_BUCKET_URL,
-  ...props 
-}) => {
-  const [loaded, setLoaded] = useState(false);
-  const [currentSrc, setCurrentSrc] = useState('');
-
-  useEffect(() => {
-    // Reset state when the image source changes
-    setLoaded(false);
-    
-    // Always try to load the thumbnail first if available
-    if (thumbnailDataKey) {
-      setCurrentSrc(`${bucketUrl}${thumbnailDataKey}`);
-    } else if (dataKey) {
-      setCurrentSrc(`${bucketUrl}${dataKey}`);
-    } else if (src) {
-      // Fallback to the src prop if provided directly
-      setCurrentSrc(src);
-    }
-  }, [thumbnailDataKey, dataKey, src, bucketUrl]);
-
-  // Handle successful image load
-  const handleImageLoaded = () => {
-    setLoaded(true);
-    // We successfully loaded the thumbnail, so we won't load the full image
-    // This saves bandwidth and improves performance
-  };
-
-  return (
-    <img
-      src={currentSrc}
-      alt={alt}
-      style={{
-        ...style,
-        opacity: loaded ? 1 : 0.3,
-        transition: 'opacity 0.3s ease-in-out',
-      }}
-      onLoad={handleImageLoaded}
-      onError={(e) => {
-        console.error("Image load error:", e);
-        // If thumbnail fails, try loading the full image as a fallback
-        if (thumbnailDataKey && dataKey && thumbnailDataKey !== dataKey) {
-          setCurrentSrc(`${bucketUrl}${dataKey}`);
-        }
-      }}
-      {...props}
-    />
-  );
-};
-
-// Header Component - Create Album button removed
-type HeaderProps = {
-  publicUsername: string | null;
-  isUploading: boolean;
-  openFilePicker: (folderId: string | null) => void;
-  cognitoUsername: string | null; // Added cognitoUsername prop
-};
-
-export const Header: React.FC<HeaderProps> = ({ 
-  publicUsername,
-  cognitoUsername
-}) => {
-  const { t, language } = useTranslation();
-  const isRTL = getLanguageDirection(language) === "rtl";
-
-  // Format the cognito username correctly for the profile redirect
-  const formattedCognitoUsername = cognitoUsername ? encodeURIComponent(cognitoUsername) : '';
-
-  return (
-    <>
-      {/* First row with profile name and logout button */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between", // This spaces items to far ends
-          alignItems: "center",
-          marginBottom: 24,
-          width: "100%",
-          direction: isRTL ? "rtl" : "ltr"
-        }}
-      >
-        {publicUsername && (
-          <>
-            {/* Person icon with user's name - on the left (or right in RTL) */}
-            <a
-              href={`profile.html?id=${formattedCognitoUsername}`}
-              style={{
-                fontSize: "14px",
-                color: "#2196f3",
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: "6px"
-              }}
-            >
-              <span style={{ 
-                fontSize: "16px", 
-                lineHeight: 1
-              }}>
-                👤
-              </span>
-              {publicUsername || t('Profile')}
-            </a>
-            
-            {/* Logout button - on the right (or left in RTL) */}
-            <LogoutButton 
-              t={t}
-            />
-          </>
-        )}
-      </div>
-    </>
-  );
-};
-
-// Create Album Button Component
-type CreateAlbumButtonProps = {
-  isUploading: boolean;
-  openFilePicker: (folderId: string | null) => void;
-  t: (key: string) => string;
-  isRTL: boolean;
-};
-
-export const CreateAlbumButton: React.FC<CreateAlbumButtonProps> = ({ 
-  isUploading, 
-  openFilePicker,
-  t
-}) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        marginBottom: 24,
-        width: "100%"
-      }}
-    >
-      <button
-        onClick={() => openFilePicker(null)}
-        style={{
-          fontSize: "14px",
-          padding: "8px 16px",
-          backgroundColor: "#007bff",
-          color: "white",
-          border: "none",
-          borderRadius: "6px",
-          cursor: "pointer",
-          opacity: isUploading ? 0.6 : 1,
-          pointerEvents: isUploading ? "none" : "auto"
-        }}
-        disabled={isUploading}
-      >
-        {isUploading ? t('Uploading...') : t('Create Album')}
-      </button>
-    </div>
-  );
-};
-
-// Search Bar Component
-type SearchBarProps = {
-  searchQuery: string;
-  setSearchQuery: (query: string) => void;
-  t: (key: string) => string;
-  isRTL: boolean;
-};
-
-const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, setSearchQuery, t, isRTL }) => {
-  return (
-    <div 
-      style={{
-        width: "100%", 
-        marginBottom: 24,
-        boxSizing: "border-box", // Include padding in width calculation
-        direction: isRTL ? "rtl" : "ltr"
-      }}
-    >
-      <input
-        type="text"
-        placeholder={t('Search album title or description')}
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "10px 16px",
-          fontSize: "14px",
-          border: "1px solid #ddd",
-          borderRadius: "6px",
-          outline: "none",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
-          boxSizing: "border-box", // Include padding in width calculation
-        }}
-      />
-    </div>
-  );
-};
-
-// NEW ContactsFilter Component - Integrated directly into the file
-type ContactsFilterProps = {
-  folders: FolderType[];
-  onFilterChange: (filteredFolders: FolderType[]) => void;
-  resetFilter: () => void;
-};
-
-// Updated ContactsFilter Component with multi-select filtering
-export const ContactsFilter: React.FC<ContactsFilterProps> = ({
-  folders,
-  onFilterChange,
-  resetFilter,
-}) => {
-  const { t, language } = useTranslation();
-  const isRTL = getLanguageDirection(language) === "rtl";
-  
-  // State to track all unique contacts across albums
-  const [allContacts, setAllContacts] = useState<string[]>([]);
-  
-  // State to track the currently selected contacts (now an array instead of a single string)
-  const [selectedContacts, setSelectedContacts] = useState<string[]>([]);
-  
-  // State to track all contacts from the currently visible albums
-  const [visibleContacts, setVisibleContacts] = useState<string[]>([]);
-  
-  // Extract all unique contacts from folders and sort by most recent appearance
-  useEffect(() => {
-    // Create a map to track the most recent timestamp for each contact
-    const contactsMap = new Map<string, { name: string; timestamp: number }>();
-    
-    folders.forEach(folder => {
-      if (folder.contacts) {
-        // Get the folder's timestamp (use updatedAt if available, otherwise createdAt)
-        const folderTimestamp = folder.updatedAt 
-          ? new Date(folder.updatedAt).getTime() 
-          : folder.createdAt 
-            ? new Date(folder.createdAt).getTime()
-            : 0;
-        
-        Object.values(folder.contacts).forEach(contact => {
-          if (typeof contact === 'string' && !contact.toString().startsWith('Profile-')) {
-            // If this contact isn't in the map yet, or this appearance is more recent
-            const existingEntry = contactsMap.get(contact);
-            if (!existingEntry || folderTimestamp > existingEntry.timestamp) {
-              contactsMap.set(contact, { 
-                name: contact, 
-                timestamp: folderTimestamp 
-              });
-            }
-          }
-        });
-      }
-    });
-    
-    // Convert Map to array and sort by timestamp (most recent first)
-    const contactsArray = Array.from(contactsMap.values())
-      .sort((a, b) => b.timestamp - a.timestamp)
-      .map(entry => entry.name);
-    
-    setAllContacts(contactsArray);
-    setVisibleContacts(contactsArray);
-  }, [folders]);
-  
-  // Filter folders when contact selection changes
-  const handleContactClick = (contact: string) => {
-    let newSelectedContacts: string[];
-    
-    if (selectedContacts.includes(contact)) {
-      // If clicking an already selected contact, remove it from selection
-      newSelectedContacts = selectedContacts.filter(c => c !== contact);
-    } else {
-      // Otherwise add it to the selection
-      newSelectedContacts = [...selectedContacts, contact];
-    }
-    
-    // Update the selected contacts state
-    setSelectedContacts(newSelectedContacts);
-    
-    if (newSelectedContacts.length === 0) {
-      // If no contacts selected, reset the filter
-      resetFilter();
-      setVisibleContacts(allContacts); // Reset to show all contacts
-    } else {
-      // Filter folders to only those containing ALL selected contacts
-      const newFilteredFolders = folders.filter(folder => {
-        if (!folder.contacts) return false;
-        
-        // Get all contact names in this folder
-        const folderContactNames = Object.values(folder.contacts)
-          .filter(c => typeof c === 'string' && !c.toString().startsWith('Profile-'));
-        
-        // Check if ALL selected contacts exist in this folder's contacts
-        return newSelectedContacts.every(selectedContact => 
-          folderContactNames.includes(selectedContact)
-        );
-      });
-      
-      // Update visible contacts based on the filtered folders
-      updateVisibleContacts(newFilteredFolders);
-      
-      onFilterChange(newFilteredFolders);
-    }
-  };
-  
-  // Helper function to update visible contacts based on filtered folders
-  const updateVisibleContacts = (filteredFolders: FolderType[]) => {
-    // Extract all unique contacts from the filtered folders
-    const contactsSet = new Set<string>();
-    
-    filteredFolders.forEach(folder => {
-      if (folder.contacts) {
-        Object.values(folder.contacts).forEach(contact => {
-          if (typeof contact === 'string' && !contact.toString().startsWith('Profile-')) {
-            contactsSet.add(contact);
-          }
-        });
-      }
-    });
-    
-    // Make sure all selected contacts remain visible
-    selectedContacts.forEach(contact => {
-      contactsSet.add(contact);
-    });
-    
-    // Filter and sort the contacts based on the original all contacts order
-    // to maintain the same sorting (most recent first)
-    const newVisibleContacts = allContacts.filter(contact => 
-      contactsSet.has(contact)
-    );
-    
-    setVisibleContacts(newVisibleContacts);
-  };
-  
-  // If no contacts found, don't render the component
-  if (allContacts.length === 0) {
-    return null;
-  }
-  
-  return (
-    <div
-      style={{
-        width: "100%",
-        marginBottom: 24,
-        direction: isRTL ? "rtl" : "ltr",
-      }}
-    >
-      {/* Scrollable container that includes both the label and buttons */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: isRTL ? "row-reverse" : "row",
-          gap: 12,
-          overflowX: "auto",
-          paddingBottom: 8,
-          WebkitOverflowScrolling: "touch",
-          flexWrap: "nowrap", // Prevent wrapping to new lines
-        }}
-      >
-        {/* Filter label - now inside the scrollable area */}
-        <div
-          style={{
-            fontSize: 14,
-            color: "#555",
-            whiteSpace: "nowrap",
-            display: "flex",
-            alignItems: "center",
-            height: "40px",
-            flexShrink: 0,
-            padding: isRTL ? "0 0 0 4px" : "0 4px 0 0",
-          }}
-        >
-          {t('Filter Albums')}:
-        </div>
-        
-        {/* Contact buttons - now allowing multi-selection */}
-        {visibleContacts.map(contact => (
-          <button
-            key={contact}
-            onClick={() => handleContactClick(contact)}
-            style={{
-              padding: "6px 12px",
-              borderRadius: 16,
-              fontSize: 13,
-              cursor: "pointer",
-              border: "1px solid #ddd",
-              backgroundColor: selectedContacts.includes(contact) ? "#2196f3" : "#fff",
-              color: selectedContacts.includes(contact) ? "#fff" : "#333",
-              whiteSpace: "nowrap",
-              transition: "all 0.2s ease",
-              flexShrink: 0, // Prevent buttons from shrinking
-              height: "40px", // Consistent height
-            }}
-          >
-            {contact}
-          </button>
-        ))}
-      </div>
-      
-      {/* Show selection summary if multiple contacts are selected */}
-      {selectedContacts.length > 1 && (
-        <div
-          style={{
-            marginTop: 8,
-            fontSize: 13,
-            color: "#555",
-            fontStyle: "italic",
-            textAlign: isRTL ? "right" : "left",
-          }}
-        >
-          {t('Showing albums with all')} {selectedContacts.length} {t('selected contacts')}
-        </div>
-      )}
-      
-      {/* Hide scrollbar for WebKit browsers */}
-      <style>
-        {`
-          div::-webkit-scrollbar {
-            display: none;
-          }
-        `}
-      </style>
-    </div>
-  );
-};
-
-// Types for the modal components
-interface CopyLinkModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  inviteLink: string;
-  onCopy: (text: string) => void;
-  t: (key: string) => string;
-  isRTL: boolean;
-}
-
-interface ConfirmationModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  t: (key: string) => string;
-  isRTL: boolean;
-}
-
-// CopyLinkModal Component with proper TypeScript types
-const CopyLinkModal: React.FC<CopyLinkModalProps> = ({ 
-  isOpen, 
-  onClose, 
-  inviteLink, 
-  onCopy,
-  t,
-  isRTL
-}) => {
-  if (!isOpen) return null;
-
-  // Define textAlign value with proper type
-  const textAlignValue: "left" | "right" | "center" = isRTL ? "right" : "left";
-
-  // Common button style with properly typed textAlign
-  const buttonStyle = {
-    width: "100%",
-    padding: "12px",
-    margin: "8px 0",
-    border: "1px solid #ddd",
-    borderRadius: "6px",
-    backgroundColor: "#fff",
-    textAlign: textAlignValue, // Use the typed value
-    cursor: "pointer",
-    fontSize: "14px",
-    transition: "background-color 0.2s"
-  };
-
-  return (
-    <div 
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 1000,
-      }}
-      onClick={onClose}
-    >
-      <div 
-        style={{
-          backgroundColor: "white",
-          borderRadius: "12px",
-          padding: "20px",
-          width: "90%",
-          maxWidth: "400px",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-          direction: isRTL ? "rtl" : "ltr",
-          textAlign: textAlignValue, // Use the typed value
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <h3 style={{ marginTop: 0, marginBottom: "16px", fontSize: "18px" }}>
-          {t('Choose a message template')}
-        </h3>
-        
-        <button
-          style={buttonStyle}
-          onClick={() => onCopy(inviteLink)}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
-        >
-          {t('Link Only')}
-        </button>
-        
-        <button
-          style={buttonStyle}
-          onClick={() => onCopy(`${t('Here are photos from our event')}: ${inviteLink}`)}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
-        >
-          {t('View Album Photos')}
-        </button>
-        
-        <button
-          style={buttonStyle}
-          onClick={() => onCopy(`${t('Please add any photos from our event here')}: ${inviteLink}`)}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
-        >
-          {t('Add Photos To Album')}
-        </button>
-        
-        <button
-          style={{
-            ...buttonStyle,
-            backgroundColor: "#f0f0f0",
-            marginTop: "16px"
-          }}
-          onClick={onClose}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#e0e0e0"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#f0f0f0"}
-        >
-          {t('Cancel')}
-        </button>
-      </div>
-    </div>
-  );
-};
-
-// Confirmation Modal Component with proper TypeScript types
-const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ 
-  isOpen, 
-  onClose, 
-  t,
-  isRTL
-}) => {
-  if (!isOpen) return null;
-
-  return (
-    <div 
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 1000,
-      }}
-      onClick={onClose}
-    >
-      <div 
-        style={{
-          backgroundColor: "white",
-          borderRadius: "12px",
-          padding: "20px",
-          width: "90%",
-          maxWidth: "400px",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-          direction: isRTL ? "rtl" : "ltr",
-          textAlign: isRTL ? "right" : "left" as const, // Use as const to fix type issue
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <h3 style={{ marginTop: 0, marginBottom: "16px", fontSize: "18px" }}>
-          {t('Link to album website copied.')}
-        </h3>
-        
-        <button
-          style={{
-            width: "100%",
-            padding: "12px",
-            border: "1px solid #ddd",
-            borderRadius: "6px",
-            backgroundColor: "#f0f0f0",
-            textAlign: "center" as const, // Use as const to fix type issue
-            cursor: "pointer",
-            fontSize: "14px"
-          }}
-          onClick={onClose}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#e0e0e0"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#f0f0f0"}
-        >
-          {t('OK')}
-        </button>
-      </div>
-    </div>
-  );
-};
-
-// FooterSection Component
-type FooterSectionProps = {
-  folder: FolderType;
-  openFilePicker: (folderId: string | null) => void;
-  cognitoUsername: string | null;
-  updateProfileIds?: (profileIds: string[]) => void; 
-};
-
-export const FooterSection: React.FC<FooterSectionProps> = ({
-  folder,
-  openFilePicker,
-  cognitoUsername,
-  updateProfileIds
-}) => {
-  const { t, language } = useTranslation();
-  const isRTL = getLanguageDirection(language) === "rtl";
-  const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
-  const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
-  
-  // Compute isOnPublicProfile from the current folder state
-  const [localProfileIds, setLocalProfileIds] = useState<string[]>(folder.profileIds || []);
-  const publicProfileId = cognitoUsername ? `${cognitoUsername}_____Public____Profile` : '';
-  const isOnPublicProfile = localProfileIds.includes(publicProfileId);
-
-  // Generate the invite link
-  let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
-  const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
-  
-  // Update local state when the folder prop changes
-  useEffect(() => {
-    setLocalProfileIds(folder.profileIds || []);
-  }, [folder.profileIds]);
-
-  // Handle copy function
-  const handleCopy = (textToCopy: string) => {
-    navigator.clipboard.writeText(textToCopy)
-      .then(() => {
-        setShowingCopyLinkAlert(false);
-        setShowingCopiedLinkAlert(true);
-      })
-      .catch(err => {
-        console.error("Failed to copy link:", err);
-        alert(t('Failed to copy link'));
-      });
-  };
-
-  // Handle downloading photos
-  const handleDownloadPhotos = async (e: React.MouseEvent) => {
-    e.preventDefault(); 
-    e.stopPropagation();
-    
-    // Check login first for certain operations
-    const token = await checkLoginWithoutRedirect();
-    
-    if (!token) {
-      alert(t('You must be logged in to download photos'));
-      return;
-    }
-    
-    // Transform the folder data to the format expected by downloadPhotos
-    if (folder && folder.files && folder.files.length > 0) {
-      // Convert the folder files to MediaItem format
-      const mediaItems = folder.files.map((file, index) => {
-        // Explicitly type as "image" or "video" to match MediaItem type
-        const fileType: "image" | "video" = file.dataKey.toLowerCase().endsWith('.mp4') ? 'video' : 'image';
-        
-        return {
-          url: `${S3_BUCKET_URL}${file.dataKey}`,
-          thumbnailUrl: file.thumbnailDataKey ? `${S3_BUCKET_URL}${file.thumbnailDataKey}` : undefined,
-          type: fileType,
-          index: index,
-          // Add other required properties from MediaItem type
-          id: `file-${index}`,
-          fileId: file.dataKey,
-          loaded: false
-        };
-      });
-      
-      // Create the album data structure required by downloadPhotos
-      const albumData = {
-        mediaItems: mediaItems,
-        folderName: folder.folderName || 'Album'
-      };
-      
-      // Create a dummy openFullscreenView function (since we don't have fullscreen view in this component)
-      const openFullscreenView = (index: number) => {
-        window.open(mediaItems[index].url, '_blank');
-      };
-      
-      // Call the downloadPhotos function from fileOperations
-      downloadPhotos(albumData, t, openFullscreenView);
-    } else {
-      alert(t('No items to download'));
-    }
-  };
-
-  // Handle public profile toggle
-  const handlePublicProfileClick = async (e: React.MouseEvent) => {
-    e.preventDefault(); 
-    e.stopPropagation();
-    
-    if (!cognitoUsername) {
-      alert(t('You must be logged in to perform this action'));
-      return;
-    }
-    
-    try {
-      // Get a fresh token
-      const token = await checkLoginWithRefresh();
-      
-      if (!token) {
-        console.error("Authentication failed");
-        return;
-      }
-      
-      // Determine the new profileIds array
-      const newProfileIds = [...localProfileIds];
-      
-      if (isOnPublicProfile) {
-        // Remove from public profile
-        const index = newProfileIds.indexOf(publicProfileId);
-        if (index > -1) {
-          newProfileIds.splice(index, 1);
-        }
-      } else {
-        // Add to public profile
-        newProfileIds.push(publicProfileId);
-      }
-      
-      // Prepare the mutation query
-      const toggleVisibilityQuery = `
-        mutation ChangeAlbumVisibility($folderPositionChangeProfileIdsInput: FolderPositionChangeProfileIdsInput!) {
-          changeFiles(folderPositionChangeProfileIdsInput: $folderPositionChangeProfileIdsInput) {
-            items {
-              ... on FolderPosition {
-                id
-                profileIds
-              }
-            }
-          }
-        }
-      `;
-      
-      // Call the API
-      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ 
-          query: toggleVisibilityQuery, 
-          variables: { 
-            folderPositionChangeProfileIdsInput: {
-              folderId: folder.folderId,
-              profileIds: newProfileIds
-            }
-          } 
-        }),
-      });
-      
-      const json = await res.json();
-      
-      if (json.errors) {
-        throw new Error(json.errors[0]?.message || "Unknown error");
-      }
-      
-      // Update local state instead of reloading the page
-      const updatedItems = json?.data?.changeFiles?.items || [];
-      const updatedItem = updatedItems.find((item: any) => item.id === folder.folderPositionId);
-      
-      if (updatedItem && updatedItem.profileIds) {
-        // First update local state
-        setLocalProfileIds(updatedItem.profileIds);
-        
-        // Then propagate changes to parent component
-        if (updateProfileIds) {
-          updateProfileIds(updatedItem.profileIds);
-        }
-        
-        // You can add a success notification here if desired
-        console.log("Album visibility updated successfully");
-      }
-    } catch (err) {
-      console.error("Failed to toggle album visibility:", err);
-      alert(t('Failed to update album visibility. Please try again.'));
-    }
-  };
-
-  // Common button style to avoid repetition
-  const buttonStyle = {
-    padding: "8px 12px",
-    border: "none",
-    borderRadius: 6,
-    cursor: "pointer",
-    fontSize: 14,
-    textAlign: "center" as const, // Use const assertion to fix type issue
-    whiteSpace: "nowrap" as const, // Use const assertion to fix type issue
-    flexShrink: 0
-  };
-
-  return (
-    <>
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between",
-        marginTop: 16,
-        flexDirection: isRTL ? "row-reverse" : "row"
-      }}>
-        <div style={{ 
-          display: "flex",
-          width: "100%", 
-          overflowX: "auto",
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-          WebkitOverflowScrolling: "touch",
-          flexDirection: isRTL ? "row-reverse" : "row",
-          gap: "10px"
-        }}>
-          <div
-            style={{
-              display: "flex",
-              gap: "10px",
-              flexDirection: isRTL ? "row-reverse" : "row"
-            }}
-          >
-            <button
-              onClick={(e) => {
-                e.preventDefault(); 
-                e.stopPropagation();
-                openFilePicker(folder.folderId);
-              }}
-              style={{
-                ...buttonStyle,
-                backgroundColor: "#4caf50",
-                color: "white",
-              }}
-            >
-              {t('Add Photos')}
-            </button>
-            
-            {/* New Download Photos button added between Add Photos and Copy Link */}
-            <button
-              onClick={handleDownloadPhotos}
-              style={{
-                ...buttonStyle,
-                backgroundColor: "#e0e0e0",
-              }}
-            >
-              {t('Download')}
-            </button>
-            
-            <button
-              onClick={(e) => {
-                e.preventDefault(); 
-                e.stopPropagation();
-                setShowingCopyLinkAlert(true);
-              }}
-              style={{
-                ...buttonStyle,
-                backgroundColor: "#e0e0e0",
-              }}
-            >
-              {t('Copy Link')}
-            </button>
-            
-            <button
-              onClick={handlePublicProfileClick}
-              style={{
-                ...buttonStyle,
-                backgroundColor: isOnPublicProfile ? "#4caf50" : "#e0e0e0",
-                color: isOnPublicProfile ? "white" : "inherit",
-              }}
-            >
-              {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
-            </button>
-          </div>
-        </div>
-        
-        {/* Copy Link Modals */}
-        <CopyLinkModal
-          isOpen={showingCopyLinkAlert}
-          onClose={() => setShowingCopyLinkAlert(false)}
-          inviteLink={inviteLink}
-          onCopy={handleCopy}
-          t={t}
-          isRTL={isRTL}
-        />
-        
-        <ConfirmationModal
-          isOpen={showingCopiedLinkAlert}
-          onClose={() => setShowingCopiedLinkAlert(false)}
-          t={t}
-          isRTL={isRTL}
-        />
-        
-        {/* Hide scrollbar for WebKit browsers */}
-        <style>
-          {`
-            div::-webkit-scrollbar {
-              display: none;
-            }
-          `}
-        </style>
-      </div>
-    </>
-  );
-};
-
-// Import UploadProgress Component
-// This component shows upload progress when uploading files
-type UploadProgressProps = {
-  progressTracker: ProgressTracker;
-  t: (key: string) => string;
-  isRTL: boolean;
-};
-
-export const UploadProgress: React.FC<UploadProgressProps> = ({ 
-  progressTracker, 
-  t,
-  isRTL
-}) => {
-  const { totalFiles, filesComplete, filesWithError, overallProgress } = progressTracker;
-  
-  // Don't render anything if no uploads are in progress
-  if (totalFiles === 0) {
-    return null;
-  }
-  
-  return (
-    <div 
-      style={{ 
-        marginBottom: 24,
-        padding: 16,
-        backgroundColor: "#f5f5f5",
-        borderRadius: 8,
-        width: "100%",
-        boxSizing: "border-box",
-        direction: isRTL ? "rtl" : "ltr",
-      }}
-    >
-      <div 
-        style={{ 
-          marginBottom: 8,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <span style={{ fontSize: 14, color: "#555" }}>
-          {t('Uploading')}: {filesComplete}/{totalFiles} {t('files')}
-          {filesWithError > 0 && ` (${filesWithError} ${t('failed')})`}
-        </span>
-        <span style={{ fontSize: 14, color: "#555" }}>
-          {Math.round(overallProgress)}%
-        </span>
-      </div>
-      
-      <div 
-        style={{ 
-          width: "100%", 
-          height: 8, 
-          backgroundColor: "#e0e0e0", 
-          borderRadius: 4,
-          overflow: "hidden"
-        }}
-      >
-        <div 
-          style={{ 
-            width: `${overallProgress}%`, 
-            height: "100%", 
-            backgroundColor: filesWithError > 0 ? "#ff9800" : "#4caf50",
-            transition: "width 0.3s ease-in-out"
-          }}
-        />
-      </div>
-    </div>
-  );
-};
-
-// AlbumList Component
-// Import types
-// Note: In a real implementation, this would be imported from the types.ts file
-// import { FolderType, PasswordPolicyEnum } from "@/lib/types";
-
-type AlbumListProps = {
-  folders: FolderType[];
-  setFolders: React.Dispatch<React.SetStateAction<FolderType[]>>;  // Add this prop
-  handleDeleteClick: (folderPositionId: string) => void;
-  openFilePicker: (folderId: string | null) => void;
-  isUploading: boolean;
-  cognitoUsername: string | null;
-};
-
-export const AlbumList: React.FC<AlbumListProps> = ({ 
-  folders, 
-  setFolders,  // Use this prop in the FooterSection
-  handleDeleteClick, 
-  openFilePicker,
-  isUploading,
-  cognitoUsername
-}) => {
-  const { t, language } = useTranslation();
-  const isRTL = getLanguageDirection(language) === "rtl";
-
-  // Reference to keep track of active dropdown menu
-  const activeDropdownRef = useRef<HTMLElement | null>(null);
-
-  // Function to handle clicks outside dropdown menu and scrolling
-  useEffect(() => {
-    // Function to close active dropdown
-    function closeActiveDropdown() {
-      if (activeDropdownRef.current) {
-        activeDropdownRef.current.style.display = "none";
-        activeDropdownRef.current = null;
-      }
-    }
-
-    // Handle clicks outside the dropdown
-    function handleClickOutside(event: MouseEvent) {
-      if (activeDropdownRef.current && !activeDropdownRef.current.contains(event.target as Node)) {
-        closeActiveDropdown();
-      }
-    }
-
-    // Handle scroll events
-    function handleScroll() {
-      closeActiveDropdown();
-    }
-
-    // Add event listeners
-    document.addEventListener("mousedown", handleClickOutside);
-    window.addEventListener("scroll", handleScroll, true); // Use capture phase to detect all scrolling
-    
-    // Clean up
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      window.removeEventListener("scroll", handleScroll, true);
-    };
-  }, []);
-
-  // Function to toggle dropdown visibility
-  const toggleDropdown = (e: React.MouseEvent, dropdownElement: HTMLElement) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    // If there's already an open dropdown and it's not this one, close it
-    if (activeDropdownRef.current && activeDropdownRef.current !== dropdownElement) {
-      activeDropdownRef.current.style.display = "none";
-    }
-    
-    // Toggle current dropdown
-    const isVisible = dropdownElement.style.display === "block";
-    dropdownElement.style.display = isVisible ? "none" : "block";
-    
-    // Update the active dropdown reference
-    activeDropdownRef.current = isVisible ? null : dropdownElement;
-  };
-
-  // New function to initiate delete process with system dialog
-  const handleDeleteButtonClick = (folderPositionId: string) => {
-    // Close any open dropdown
-    if (activeDropdownRef.current) {
-      activeDropdownRef.current.style.display = "none";
-      activeDropdownRef.current = null;
-    }
-    
-    // Use the browser's native confirm dialog
-    const confirmDelete = window.confirm(t('Are you sure you want to delete this album? This action cannot be undone.'));
-    
-    if (confirmDelete) {
-      handleDeleteClick(folderPositionId);
-    }
-  };
-
-  // Helper function to update folder profileIds
-  const updateFolderProfileIds = (folderId: string, profileIds: string[]) => {
-    setFolders(prevFolders => 
-      prevFolders.map(folder => 
-        folder.folderId === folderId 
-          ? { ...folder, profileIds } 
-          : folder
-      )
-    );
-  };
-
-  // Helper function to get password policy display text
-  const getPasswordPolicyText = (policy?: string) => {
-    switch(policy) {
-      case "NotVisible":
-        return t('Hidden');
-      case "Watermark":
-        return t('Watermarked');
-      case "CannotBeSaved":
-        return t('Cannot be saved');
-      case "NoPassword":
-      default:
-        return t('No password');
-    }
-  };
-
-  if (folders.length === 0 && !isUploading) {
-    return <p style={{ fontSize: 16, color: "#555", width: "100%" }}>{t('No albums found')}</p>;
-  }
-
-  return (
-    <>
-      {folders.map((folder) => {
-        const showCreated = folder.createdAt != null;
-        const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt;
-
-        // Check if user is the creator of the album
-        const isCreator = folder.creatorId === `${cognitoUsername}_____${cognitoUsername}____Account`;
-
-        // Get password policy from folder data
-        const passwordPolicy = folder.folderPassword?.policy || "NoPassword";
-
-        // Get the contacts from the folder's contactsUsingInvite
-        const contacts = folder.contacts || {};
-        const contactNames = Object.values(contacts).filter(contact => 
-          contact && typeof contact === 'string' && !contact.toString().startsWith('Profile-')
-        );
-
-        let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
-        const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
-
-        return (
-          <div
-            key={folder.folderId}
-            style={{
-              marginBottom: 30,
-              width: "100%",
-              direction: isRTL ? "rtl" : "ltr"
-            }}
-          >
-            <a
-              href={inviteLink}
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "block",
-                width: "100%",
-                overflow: "hidden"
-              }}
-            >
-              <div
-                style={{
-                  background: "#fff",
-                  borderRadius: 12,
-                  padding: 20,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                  transition: "box-shadow 0.2s ease",
-                  width: "100%",
-                  maxWidth: "100%",
-                  position: "relative",
-                  boxSizing: "border-box",
-                  overflow: "hidden"
-                }}
-                onMouseOver={(e) =>
-                  ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
-                }
-                onMouseOut={(e) =>
-                  ((e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"))
-                }
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-end", // Changed from "center" to "flex-end" to bottom-align
-                    marginBottom: 16,
-                    flexDirection: isRTL ? "row-reverse" : "row"
-                  }}
-                >
-                  <div style={{ 
-                    display: "flex", 
-                    flexDirection: "column", 
-                    alignItems: isRTL ? "flex-end" : "flex-start" 
-                  }}>
-                    <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
-                      {folder.folderName || ""}
-                    </h2>
-                    {(showCreated || showUpdated) && (
-                      <div style={{ 
-                        fontSize: 13, 
-                        color: "#777", 
-                        textAlign: isRTL ? "right" : "left" as const,
-                        marginTop: 4
-                      }}>
-                        {showCreated && <div>{t('Created')}: {formatDate(folder.createdAt)}</div>}
-                        {showUpdated && <div>{t('Updated')}: {formatDate(folder.updatedAt)}</div>}
-                      </div>
-                    )}
-                  </div>
-                  <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: isRTL ? "flex-start" : "flex-end",
-                    justifyContent: "flex-end", // Added to ensure vertical alignment at the bottom
-                    gap: "8px"
-                  }}>
-                    {isCreator ? (
-                      <div style={{ position: "relative" }}>
-                        <a
-                          href="#"
-                          onClick={(e) => {
-                            const dropdownMenu = e.currentTarget.nextElementSibling as HTMLElement;
-                            if (dropdownMenu) {
-                              toggleDropdown(e, dropdownMenu);
-                            }
-                          }}
-                          style={{
-                            fontSize: "13px",
-                            color: "#2196f3",
-                            textDecoration: "none",
-                          }}
-                        >
-                          {t('Edit')}
-                        </a>
-                        <div 
-                          style={{
-                            display: "none",
-                            position: "absolute",
-                            top: "100%",
-                            right: isRTL ? "auto" : 0,
-                            left: isRTL ? 0 : "auto",
-                            backgroundColor: "white",
-                            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-                            borderRadius: "4px",
-                            zIndex: 10,
-                            minWidth: "150px",
-                            padding: "8px 0",
-                            marginTop: "5px",
-                            textAlign: isRTL ? "right" : "left" as const
-                          }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                          }}
-                        >
-                          <a
-                            href={`/save-album.html?folderId=${encodeURIComponent(folder.folderId)}`}
-                            style={{
-                              display: "block",
-                              padding: "8px 16px",
-                              color: "#2196f3",
-                              textDecoration: "none",
-                              fontSize: "13px",
-                              whiteSpace: "nowrap"
-                            }}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                            }}
-                          >
-                            {t('Edit Details')}
-                          </a>
-                          <a
-                            href="#"
-                            style={{
-                              display: "block",
-                              padding: "8px 16px",
-                              color: "#d32f2f",
-                              textDecoration: "none",
-                              fontSize: "13px",
-                              whiteSpace: "nowrap"
-                            }}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              handleDeleteButtonClick(folder.folderPositionId);
-                            }}
-                          >
-                            {t('Delete My Copy')}
-                          </a>
-                        </div>
-                      </div>
-                    ) : (
-                      <a
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          handleDeleteButtonClick(folder.folderPositionId);
-                        }}
-                        style={{
-                          fontSize: "13px",
-                          color: "#d32f2f",
-                          textDecoration: "none",
-                        }}
-                      >
-                        {t('Delete')}
-                      </a>
-                    )}
-                  </div>
-                </div>
-                
-                <div 
-                  style={{ 
-                    width: "100%",
-                    position: "relative",
-                  }}
-                >
-                  <div 
-                    style={{ 
-                      display: "flex", 
-                      overflowX: "auto",
-                      gap: 12,
-                      paddingBottom: 8,
-                      msOverflowStyle: "none", 
-                      scrollbarWidth: "thin",
-                      WebkitOverflowScrolling: "touch",
-                      maxWidth: "100%",
-                      flexDirection: isRTL ? "row-reverse" : "row"
-                    }}
-                  >
-                    {folder.files.map((file, i) => (
-                      <LazyImage
-                        key={i}
-                        thumbnailDataKey={file.thumbnailDataKey}
-                        dataKey={file.dataKey}
-                        src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
-                        alt={t('Thumbnail')}
-                        style={{
-                          width: 160,
-                          height: 100,
-                          objectFit: "cover",
-                          borderRadius: 6,
-                          border: "1px solid #ddd",
-                          flexShrink: 0,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  
-                  {folder.files.length > 3 && (
-                    <div 
-                      style={{
-                        position: "absolute",
-                        [isRTL ? "left" : "right"]: 0,
-                        top: 0,
-                        bottom: 8,
-                        width: 30,
-                        background: isRTL 
-                          ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
-                          : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
-                        pointerEvents: "none",
-                      }}
-                    />
-                  )}
-                </div>
-                
-                {/* Password Policy Indicator - moved here under the pictures */}
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: isRTL ? "flex-start" : "flex-end",
-                    marginTop: 8,
-                    marginBottom: 8
-                  }}
-                >
-                  {passwordPolicy !== "NoPassword" && (
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        fontSize: "10px",
-                        color: "#555",
-                        fontStyle: "italic"
-                      }}
-                    >
-                      <span>{getPasswordPolicyText(passwordPolicy)}</span>
-                    </div>
-                  )}
-                </div>
-                
-                {/* Album description section - updated to use folderDescription if available */}
-                <div
-                  style={{
-                    marginTop: 8,
-                    marginBottom: 16,
-                    fontSize: 14,
-                    color: "#555",
-                    lineHeight: 1.5,
-                    textAlign: isRTL ? "right" : "left" as const
-                  }}
-                >
-                  {folder.folderDescription && folder.folderDescription.length > 1 
-                    ? folder.folderDescription 
-                    : ""}
-                </div>
-                
-                {/* Pass the folder to the FooterSection with additional props */}
-                <FooterSection
-                  folder={folder}
-                  openFilePicker={openFilePicker}
-                  cognitoUsername={cognitoUsername}
-                  updateProfileIds={(profileIds) => updateFolderProfileIds(folder.folderId, profileIds)}
-                />
-
-                {/* Display contacts list if available */}
-                {contactNames.length > 0 && (
-                  <div style={{
-                    width: '100%',
-                    backgroundColor: '#f0f7ff',
-                    borderRadius: '8px',
-                    padding: '12px 16px',
-                    marginTop: '16px',
-                    boxSizing: 'border-box',
-                    border: '1px solid #d0e1f9',
-                    direction: isRTL ? "rtl" : "ltr"
-                  }}>
-                    <p style={{
-                      margin: '0',
-                      fontSize: '14px',
-                      color: '#333',
-                      textAlign: isRTL ? "right" : "left" as const
-                    }}>
-                      {t('Shared with')}: {contactNames.join(', ')}
-                    </p>
-                  </div>
-                )}
-              </div>
-
-            </a>
-          </div>
-        );
-      })}
-    </>
-  );
-};
+} from "@/lib/file-upload-utils";
+import { generateUUID } from "@/lib/utils";
 
 const MyAlbums = () => {
-  const [folders, setFolders] = useState<Folder[]>([])
-  const [filteredFolders, setFilteredFolders] = useState<Folder[]>([])
-  const [publicUsername, setPublicUsername] = useState<string | null>(null)
-  const [cognitoUsername, setCognitoUsername] = useState<string | null>(null)
-  const fileInputRef = useRef<HTMLInputElement>(null)
-  const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([])
-  const [isUploading, setIsUploading] = useState(false)
+  const [folders, setFolders] = useState<Folder[]>([]);
+  const [filteredFolders, setFilteredFolders] = useState<Folder[]>([]);
+  const [publicUsername, setPublicUsername] = useState<string | null>(null);
+  const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
+  const [isUploading, setIsUploading] = useState(false);
   const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
     totalFiles: 0,
     filesComplete: 0,
@@ -1501,37 +46,40 @@ const MyAlbums = () => {
     filesProcessing: 0,
     filesWithError: 0,
     overallProgress: 0
-  })
-  const [debugMessages, setDebugMessages] = useState<string[]>([])
-  const [currentFolderId, setCurrentFolderId] = useState<string | null>(null)
-  const [searchQuery, setSearchQuery] = useState<string>("")
-  const [isContactFiltered, setIsContactFiltered] = useState<boolean>(false)
+  });
+  const [debugMessages, setDebugMessages] = useState<string[]>([]);
+  const [currentFolderId, setCurrentFolderId] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isContactFiltered, setIsContactFiltered] = useState<boolean>(false);
+  
+  // Add new state for file processing completion tracking
+  const [fileProcessingComplete, setFileProcessingComplete] = useState(false);
   
   // Use the createLogger function from the utils
   const log = createLogger(setDebugMessages);
   
   // Load user data and fetch folders
   useEffect(() => {
-    setPublicUsername(localStorage.getItem("publicUsername") || null)
+    setPublicUsername(localStorage.getItem("publicUsername") || null);
 
     // Use async/await with the new checkLoginWithRefresh function
     const fetchUserAndFolders = async () => {
-      const token = await checkLoginWithRefresh()
-      if (!token) return
+      const token = await checkLoginWithRefresh();
+      if (!token) return;
 
       try {
-        const payload = JSON.parse(atob(token.split('.')[1]))
-        const username = payload["cognito:username"]
-        setCognitoUsername(username)
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const username = payload["cognito:username"];
+        setCognitoUsername(username);
       } catch (err) {
-        console.error("Failed to decode token", err)
+        console.error("Failed to decode token", err);
       }
 
-      await fetchFolders(token)
-    }
+      await fetchFolders(token);
+    };
 
-    fetchUserAndFolders()
-  }, [])
+    fetchUserAndFolders();
+  }, []);
 
   // Initialize filteredFolders with all folders when folders changes
   useEffect(() => {
@@ -1561,6 +109,30 @@ const MyAlbums = () => {
     
     setFilteredFolders(searchFiltered);
   }, [searchQuery, folders, isContactFiltered]);
+
+  // Add effect to handle navigation after file processing is complete
+  useEffect(() => {
+    if (fileProcessingComplete && selectedPhotos.length > 0) {
+      // Show a completion message in the UI
+      const successCount = selectedPhotos.filter(photo => photo.status === 'complete').length;
+      const errorCount = selectedPhotos.filter(photo => photo.status === 'error').length;
+      
+      log(`✅ Upload complete: ${successCount} successful, ${errorCount} failed`);
+      
+      // Add a slight delay to show the completion state before redirecting
+      setTimeout(() => {
+        // Redirect to save-album page with folder ID parameter if adding to existing album
+        if (currentFolderId) {
+          window.location.href = `/save-album.html?folderId=${encodeURIComponent(currentFolderId)}`;
+        } else {
+          window.location.href = "/save-album.html";
+        }
+        
+        // Clean up
+        handleClearAlbumData();
+      }, 1000);
+    }
+  }, [fileProcessingComplete, selectedPhotos.length, currentFolderId]);
 
   // Handle contact filter change
   const handleContactFilterChange = (contactFilteredFolders: Folder[]) => {
@@ -1716,6 +288,7 @@ const MyAlbums = () => {
   const handleClearAlbumData = () => {
     clearAlbumData(setSelectedPhotos, setProgressTracker, [], log);
     setIsUploading(false);
+    setFileProcessingComplete(false);
   }
 
   // Function to open file picker
@@ -1725,18 +298,25 @@ const MyAlbums = () => {
     
     // Clear current selected photos before opening file picker
     setSelectedPhotos([])
+    
+    // Reset file processing completion flag
+    setFileProcessingComplete(false)
+    
     fileInputRef.current?.click()
   }
 
   // Use the createPhotoStatusUpdater function from the utils
   const updatePhotoStatus = createPhotoStatusUpdater(setSelectedPhotos);
 
-  // Handle file selection
+  // Modified handleFileSelection function to match the pattern in photos.tsx
   const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || [])
     if (!files.length) return
 
     setIsUploading(true)
+    
+    // Reset file processing completion flag
+    setFileProcessingComplete(false)
     
     // Get a fresh token using the async function
     const token = await checkLoginWithRefresh();
@@ -1758,21 +338,47 @@ const MyAlbums = () => {
       const newFolderId = currentFolderId || `${cognitoUsername}_____${generateUUID()}____Folder`
       log(`📁 Using folder ID: ${newFolderId}`)
       
-      // Use the processFilesBeforeUploadingToS3 function from utils instead of implementing it here
+      // Initialize empty array for selected photos in state to show initial progress
+      setSelectedPhotos(files.map((file) => ({
+        fileName: file.name,
+        s3PreviewUrl: URL.createObjectURL(file),
+        type: file.type,
+        size: file.size,
+        status: 'pending',
+        progress: 0
+      })));
+      
+      // Set up an interval to update the UI while processing continues
+      const progressUpdateInterval = setInterval(() => {
+        updateProgressTracker(selectedPhotos, setProgressTracker);
+      }, 500);
+      
+      // Use the processFilesBeforeUploadingToS3 function from utils
       const processedPhotos = await processFilesBeforeUploadingToS3(files, cognitoUsername, updatePhotoStatus, log);
+      
+      // Clear the interval once processing is complete
+      clearInterval(progressUpdateInterval);
+      
+      // Make sure we have a final progress update
+      updateProgressTracker(processedPhotos, setProgressTracker);
       
       // Save to localStorage - ONLY the keys and metadata, not the file data
       localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos))
       log(`📸 Saved ${processedPhotos.length} photos metadata to storage`)
       
-      // Redirect to save-album page with folder ID parameter if adding to existing album
-      if (currentFolderId) {
-        window.location.href = `/save-album.html?folderId=${encodeURIComponent(currentFolderId)}`
-      } else {
-        window.location.href = "/save-album.html"
+      // If all photos are uploaded successfully, show a completion message
+      const allComplete = processedPhotos.every(photo => photo.status === 'complete');
+      const anyErrors = processedPhotos.some(photo => photo.status === 'error');
+      
+      if (allComplete && !anyErrors) {
+        log(`✅ All ${processedPhotos.length} files successfully uploaded`);
+      } else if (anyErrors) {
+        const errorCount = processedPhotos.filter(photo => photo.status === 'error').length;
+        log(`⚠️ Upload completed with ${errorCount} errors`);
       }
-
-      handleClearAlbumData()
+      
+      // Set the file processing completion flag to trigger the navigation effect
+      setFileProcessingComplete(true);
 
     } catch (error) {
       log(`❌ Fatal error in handleFileSelection: ${String(error)}`)
@@ -1886,11 +492,45 @@ const MyAlbums = () => {
             resetFilter={resetContactFilter}
           />
           
-          <UploadProgress 
-            progressTracker={progressTracker}
-            t={t}
-            isRTL={isRTL}
-          />
+          {/* Added conditional rendering for enhanced status messages */}
+          {isUploading && (
+            <div style={{ width: '100%', marginBottom: '20px' }}>
+              <UploadProgress 
+                progressTracker={progressTracker}
+                t={t}
+                isRTL={isRTL}
+              />
+              
+              {/* Additional status messages for better user experience */}
+              {progressTracker.filesComplete > 0 && progressTracker.filesComplete === progressTracker.totalFiles && (
+                <div style={{
+                  backgroundColor: '#e8f5e9',
+                  color: '#2e7d32',
+                  padding: '10px 16px',
+                  borderRadius: '6px',
+                  fontSize: '14px',
+                  marginTop: '10px',
+                  textAlign: 'center'
+                }}>
+                  {t('Upload complete! Preparing to save your album...')}
+                </div>
+              )}
+              
+              {progressTracker.filesWithError > 0 && (
+                <div style={{
+                  backgroundColor: '#ffebee',
+                  color: '#c62828',
+                  padding: '10px 16px',
+                  borderRadius: '6px',
+                  fontSize: '14px',
+                  marginTop: '10px',
+                  textAlign: 'center'
+                }}>
+                  {t('Some files could not be uploaded. You can continue with the successfully uploaded files.')}
+                </div>
+              )}
+            </div>
+          )}
 
           <AlbumList 
             folders={filteredFolders}

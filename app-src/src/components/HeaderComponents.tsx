@@ -110,7 +110,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
                 <HamburgerLine />
                 <HamburgerLine />
               </HamburgerIcon>
-              {t('Add')}
+              {t('Save')}
             </HamburgerButton>
             
             {menuOpen && (
@@ -122,11 +122,11 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
                 )}
 
                 <MenuButton onClick={() => handleAction(saveAlbum)}>
-                  {t('Save Album To 6180')}
+                  {t('Save To My Library')}
                 </MenuButton> 
 
                 <MenuButton onClick={() => handleAction(saveAlbum)}>
-                  {t('Download Photos')}
+                  {t('Download To My Device')}
                 </MenuButton>
               </DropdownMenu>
             )}
@@ -168,11 +168,11 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
           )}
           
           <ActionButton onClick={saveAlbum}>
-            {t('Save Album To 6180')}
+            {t('Save To My Library')}
           </ActionButton>
 
           <ActionButton onClick={saveAlbum}>
-            {t('Download Photos')}
+            {t('Download To My Device')}
           </ActionButton>
         </div>
       )}

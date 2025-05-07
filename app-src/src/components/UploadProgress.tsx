@@ -1,96 +1,155 @@
 import React from "react";
-import type { TranslationKey } from "@/lib/i18n/translations";
-
-type ProgressTrackerType = {
-  totalFiles: number;
-  filesComplete: number;
-  filesUploading: number;
-  filesProcessing: number;
-  filesWithError: number;
-  overallProgress: number;
-};
+import { ProgressTracker } from "@/lib/types";
 
 type UploadProgressProps = {
-  progressTracker: ProgressTrackerType;
-  t: (key: TranslationKey, params?: Record<string, string | number>) => string;
+  progressTracker: ProgressTracker;
+  t: (key: string) => string;
   isRTL: boolean;
-  style?: React.CSSProperties;
+  onCancel?: () => void; // Optional cancel handler
+  style?: React.CSSProperties; // Support for custom styling
+  className?: string; // Support for custom class names
 };
 
 export const UploadProgress: React.FC<UploadProgressProps> = ({ 
-  progressTracker,
+  progressTracker, 
   t,
   isRTL,
-  style
+  onCancel,
+  style,
+  className
 }) => {
-  if (progressTracker.totalFiles === 0) return null;
+  const { 
+    totalFiles, 
+    filesComplete, 
+    filesWithError, 
+    filesUploading,
+    filesProcessing,
+    overallProgress 
+  } = progressTracker;
+  
+  // Don't render anything if no uploads are in progress
+  if (totalFiles === 0) {
+    return null;
+  }
+  
+  // Determine the progress status text and color
+  const getStatusColor = () => {
+    if (filesWithError > 0) return "#ff9800"; // Warning color
+    if (overallProgress === 100) return "#2e7d32"; // Darker green for completion
+    return "#4caf50"; // Default green for in progress
+  };
+
+  const getStatusText = () => {
+    if (overallProgress === 100) return t('Complete');
+    if (filesProcessing > 0) return t('Processing');
+    return t('Uploading');
+  };
   
   return (
-    <div style={{ 
-      marginBottom: "24px", 
-      backgroundColor: "#fff", 
-      padding: "16px", 
-      borderRadius: "8px", 
-      boxShadow: "0 1px 3px rgba(0,0,0,0.1)", 
-      width: "100%",
-      direction: isRTL ? "rtl" : "ltr",
-      boxSizing: "border-box",
-      overflow: "hidden",
-      ...style
-    }}>
-      <h3 style={{ fontSize: "18px", margin: "0 0 12px 0" }}>{t('Upload Progress')}</h3>
-      
-      <div style={{ marginBottom: "12px" }}>
-        <div style={{ 
-          display: "flex", 
-          justifyContent: "space-between", 
-          fontSize: "14px", 
-          marginBottom: "6px" 
-        }}>
-          <span>{t('Overall Progress')}: {Math.round(progressTracker.overallProgress * 100)}%</span>
-          <span>{progressTracker.filesComplete} {t('of')} {progressTracker.totalFiles} {t('complete')}</span>
+    <div 
+      className={className}
+      style={{ 
+        marginBottom: 24,
+        padding: 16,
+        backgroundColor: "#f5f5f5",
+        borderRadius: 8,
+        width: "100%",
+        boxSizing: "border-box",
+        direction: isRTL ? "rtl" : "ltr",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+        animation: "fadeIn 0.3s ease-in-out",
+        ...style // Merge custom styles
+      }}
+    >
+      <div 
+        style={{ 
+          marginBottom: 8,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <span style={{ fontSize: 14, color: "#555" }}>
+          <strong>{getStatusText()}</strong>: {filesComplete}/{totalFiles} {t('files')}
+          {filesWithError > 0 && ` (${filesWithError} ${t('failed')})`}
+          {filesUploading > 0 && ` (${filesUploading} ${t('in progress')})`}
+        </span>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <span style={{ fontSize: 14, color: "#555", fontWeight: "bold" }}>
+            {Math.round(overallProgress)}%
+          </span>
+          {onCancel && overallProgress < 100 && (
+            <button
+              onClick={onCancel}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                color: "#d32f2f",
+                fontSize: 13,
+                padding: "4px 8px",
+                borderRadius: 4,
+              }}
+              aria-label={t('Cancel upload')}
+              title={t('Cancel upload')}
+            >
+              {t('Cancel')}
+            </button>
+          )}
         </div>
-        <div style={{ 
-          height: "8px", 
+      </div>
+      
+      <div 
+        style={{ 
+          width: "100%", 
+          height: 8, 
           backgroundColor: "#e0e0e0", 
-          borderRadius: "4px", 
-          overflow: "hidden" 
-        }}>
+          borderRadius: 4,
+          overflow: "hidden",
+          position: "relative",
+        }}
+      >
+        <div 
+          style={{ 
+            width: `${overallProgress}%`, 
+            height: "100%", 
+            backgroundColor: getStatusColor(),
+            transition: "width 0.3s ease-in-out",
+          }}
+        />
+        
+        {/* Optional loading animation for processing state */}
+        {filesProcessing > 0 && overallProgress < 100 && (
           <div 
-            style={{ 
-              height: "100%", 
-              width: `${progressTracker.overallProgress * 100}%`, 
-              backgroundColor: "#4caf50",
-              borderRadius: "4px",
-              transition: "width 0.3s ease",
-              float: isRTL ? "right" : "left"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)",
+              backgroundSize: "200% 100%",
+              animation: "shimmer 1.5s infinite",
+              pointerEvents: "none",
             }}
           />
-        </div>
+        )}
       </div>
       
-      <div style={{ 
-        display: "flex", 
-        gap: "12px", 
-        fontSize: "14px", 
-        color: "#666",
-        flexDirection: isRTL ? "row-reverse" : "row",
-        flexWrap: "wrap",
-        overflow: "hidden"
-      }}>
-        {progressTracker.filesUploading > 0 && (
-          <div>📤 {t('Uploading')}: {progressTracker.filesUploading}</div>
-        )}
-        {progressTracker.filesProcessing > 0 && (
-          <div>⚙️ {t('Processing')}: {progressTracker.filesProcessing}</div>
-        )}
-        {progressTracker.filesComplete > 0 && (
-          <div>✅ {t('Complete')}: {progressTracker.filesComplete}</div>
-        )}
-        {progressTracker.filesWithError > 0 && (
-          <div style={{ color: "#e53935" }}>❌ {t('Failed')}: {progressTracker.filesWithError}</div>
-        )}
-      </div>
+      {/* Add global styles for animations */}
+      <style>
+        {`
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          
+          @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+          }
+        `}
+      </style>
     </div>
   );
 };
