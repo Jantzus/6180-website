@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import { useEffect, useState, useRef, useMemo } from "react"
+import { useEffect, useState, useRef } from "react"
 import { checkLoginWithRefresh, checkLoginWithoutRedirect, generateUUID, getTargetItemIdentifier } from "@/lib/utils"
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config"
 import { 
@@ -241,6 +241,231 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, setSearchQuery, t, i
           boxSizing: "border-box", // Include padding in width calculation
         }}
       />
+    </div>
+  );
+};
+
+// NEW ContactsFilter Component - Integrated directly into the file
+type ContactsFilterProps = {
+  folders: FolderType[];
+  onFilterChange: (filteredFolders: FolderType[]) => void;
+  resetFilter: () => void;
+};
+
+// Updated ContactsFilter Component with multi-select filtering
+export const ContactsFilter: React.FC<ContactsFilterProps> = ({
+  folders,
+  onFilterChange,
+  resetFilter,
+}) => {
+  const { t, language } = useTranslation();
+  const isRTL = getLanguageDirection(language) === "rtl";
+  
+  // State to track all unique contacts across albums
+  const [allContacts, setAllContacts] = useState<string[]>([]);
+  
+  // State to track the currently selected contacts (now an array instead of a single string)
+  const [selectedContacts, setSelectedContacts] = useState<string[]>([]);
+  
+  // State to track all contacts from the currently visible albums
+  const [visibleContacts, setVisibleContacts] = useState<string[]>([]);
+  
+  // Extract all unique contacts from folders and sort by most recent appearance
+  useEffect(() => {
+    // Create a map to track the most recent timestamp for each contact
+    const contactsMap = new Map<string, { name: string; timestamp: number }>();
+    
+    folders.forEach(folder => {
+      if (folder.contacts) {
+        // Get the folder's timestamp (use updatedAt if available, otherwise createdAt)
+        const folderTimestamp = folder.updatedAt 
+          ? new Date(folder.updatedAt).getTime() 
+          : folder.createdAt 
+            ? new Date(folder.createdAt).getTime()
+            : 0;
+        
+        Object.values(folder.contacts).forEach(contact => {
+          if (typeof contact === 'string' && !contact.toString().startsWith('Profile-')) {
+            // If this contact isn't in the map yet, or this appearance is more recent
+            const existingEntry = contactsMap.get(contact);
+            if (!existingEntry || folderTimestamp > existingEntry.timestamp) {
+              contactsMap.set(contact, { 
+                name: contact, 
+                timestamp: folderTimestamp 
+              });
+            }
+          }
+        });
+      }
+    });
+    
+    // Convert Map to array and sort by timestamp (most recent first)
+    const contactsArray = Array.from(contactsMap.values())
+      .sort((a, b) => b.timestamp - a.timestamp)
+      .map(entry => entry.name);
+    
+    setAllContacts(contactsArray);
+    setVisibleContacts(contactsArray);
+  }, [folders]);
+  
+  // Filter folders when contact selection changes
+  const handleContactClick = (contact: string) => {
+    let newSelectedContacts: string[];
+    
+    if (selectedContacts.includes(contact)) {
+      // If clicking an already selected contact, remove it from selection
+      newSelectedContacts = selectedContacts.filter(c => c !== contact);
+    } else {
+      // Otherwise add it to the selection
+      newSelectedContacts = [...selectedContacts, contact];
+    }
+    
+    // Update the selected contacts state
+    setSelectedContacts(newSelectedContacts);
+    
+    if (newSelectedContacts.length === 0) {
+      // If no contacts selected, reset the filter
+      resetFilter();
+      setVisibleContacts(allContacts); // Reset to show all contacts
+    } else {
+      // Filter folders to only those containing ALL selected contacts
+      const newFilteredFolders = folders.filter(folder => {
+        if (!folder.contacts) return false;
+        
+        // Get all contact names in this folder
+        const folderContactNames = Object.values(folder.contacts)
+          .filter(c => typeof c === 'string' && !c.toString().startsWith('Profile-'));
+        
+        // Check if ALL selected contacts exist in this folder's contacts
+        return newSelectedContacts.every(selectedContact => 
+          folderContactNames.includes(selectedContact)
+        );
+      });
+      
+      // Update visible contacts based on the filtered folders
+      updateVisibleContacts(newFilteredFolders);
+      
+      onFilterChange(newFilteredFolders);
+    }
+  };
+  
+  // Helper function to update visible contacts based on filtered folders
+  const updateVisibleContacts = (filteredFolders: FolderType[]) => {
+    // Extract all unique contacts from the filtered folders
+    const contactsSet = new Set<string>();
+    
+    filteredFolders.forEach(folder => {
+      if (folder.contacts) {
+        Object.values(folder.contacts).forEach(contact => {
+          if (typeof contact === 'string' && !contact.toString().startsWith('Profile-')) {
+            contactsSet.add(contact);
+          }
+        });
+      }
+    });
+    
+    // Make sure all selected contacts remain visible
+    selectedContacts.forEach(contact => {
+      contactsSet.add(contact);
+    });
+    
+    // Filter and sort the contacts based on the original all contacts order
+    // to maintain the same sorting (most recent first)
+    const newVisibleContacts = allContacts.filter(contact => 
+      contactsSet.has(contact)
+    );
+    
+    setVisibleContacts(newVisibleContacts);
+  };
+  
+  // If no contacts found, don't render the component
+  if (allContacts.length === 0) {
+    return null;
+  }
+  
+  return (
+    <div
+      style={{
+        width: "100%",
+        marginBottom: 24,
+        direction: isRTL ? "rtl" : "ltr",
+      }}
+    >
+      {/* Scrollable container that includes both the label and buttons */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: isRTL ? "row-reverse" : "row",
+          gap: 12,
+          overflowX: "auto",
+          paddingBottom: 8,
+          WebkitOverflowScrolling: "touch",
+          flexWrap: "nowrap", // Prevent wrapping to new lines
+        }}
+      >
+        {/* Filter label - now inside the scrollable area */}
+        <div
+          style={{
+            fontSize: 14,
+            color: "#555",
+            whiteSpace: "nowrap",
+            display: "flex",
+            alignItems: "center",
+            height: "40px",
+            flexShrink: 0,
+            padding: isRTL ? "0 0 0 4px" : "0 4px 0 0",
+          }}
+        >
+          {t('Filter Albums')}:
+        </div>
+        
+        {/* Contact buttons - now allowing multi-selection */}
+        {visibleContacts.map(contact => (
+          <button
+            key={contact}
+            onClick={() => handleContactClick(contact)}
+            style={{
+              padding: "6px 12px",
+              borderRadius: 16,
+              fontSize: 13,
+              cursor: "pointer",
+              border: "1px solid #ddd",
+              backgroundColor: selectedContacts.includes(contact) ? "#2196f3" : "#fff",
+              color: selectedContacts.includes(contact) ? "#fff" : "#333",
+              whiteSpace: "nowrap",
+              transition: "all 0.2s ease",
+              flexShrink: 0, // Prevent buttons from shrinking
+              height: "40px", // Consistent height
+            }}
+          >
+            {contact}
+          </button>
+        ))}
+      </div>
+      
+      {/* Show selection summary if multiple contacts are selected */}
+      {selectedContacts.length > 1 && (
+        <div
+          style={{
+            marginTop: 8,
+            fontSize: 13,
+            color: "#555",
+            fontStyle: "italic",
+            textAlign: isRTL ? "right" : "left",
+          }}
+        >
+          {t('Showing albums with all')} {selectedContacts.length} {t('selected contacts')}
+        </div>
+      )}
+      
+      {/* Hide scrollbar for WebKit browsers */}
+      <style>
+        {`
+          div::-webkit-scrollbar {
+            display: none;
+          }
+        `}
+      </style>
     </div>
   );
 };
@@ -890,6 +1115,22 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     activeDropdownRef.current = isVisible ? null : dropdownElement;
   };
 
+  // New function to initiate delete process with system dialog
+  const handleDeleteButtonClick = (folderPositionId: string) => {
+    // Close any open dropdown
+    if (activeDropdownRef.current) {
+      activeDropdownRef.current.style.display = "none";
+      activeDropdownRef.current = null;
+    }
+    
+    // Use the browser's native confirm dialog
+    const confirmDelete = window.confirm(t('Are you sure you want to delete this album? This action cannot be undone.'));
+    
+    if (confirmDelete) {
+      handleDeleteClick(folderPositionId);
+    }
+  };
+
   // Helper function to update folder profileIds
   const updateFolderProfileIds = (folderId: string, profileIds: string[]) => {
     setFolders(prevFolders => 
@@ -931,6 +1172,12 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
         // Get password policy from folder data
         const passwordPolicy = folder.folderPassword?.policy || "NoPassword";
+
+        // Get the contacts from the folder's contactsUsingInvite
+        const contacts = folder.contacts || {};
+        const contactNames = Object.values(contacts).filter(contact => 
+          contact && typeof contact === 'string' && !contact.toString().startsWith('Profile-')
+        );
 
         let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
         const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
@@ -1077,20 +1324,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
-                              
-                              // Close dropdown first
-                              if (activeDropdownRef.current) {
-                                activeDropdownRef.current.style.display = "none";
-                                activeDropdownRef.current = null;
-                              }
-                              
-                              // Use setTimeout to ensure the dropdown has closed
-                              setTimeout(() => {
-                                const confirmDelete = window.confirm(t('Are you sure you want to delete this album?'));
-                                if (confirmDelete) {
-                                  handleDeleteClick(folder.folderPositionId);
-                                }
-                              }, 100);
+                              handleDeleteButtonClick(folder.folderPositionId);
                             }}
                           >
                             {t('Delete My Copy')}
@@ -1100,7 +1334,11 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     ) : (
                       <a
                         href="#"
-                        onClick={() => handleDeleteClick(folder.folderPositionId)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleDeleteButtonClick(folder.folderPositionId);
+                        }}
                         style={{
                           fontSize: "13px",
                           color: "#d32f2f",
@@ -1215,7 +1453,31 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   cognitoUsername={cognitoUsername}
                   updateProfileIds={(profileIds) => updateFolderProfileIds(folder.folderId, profileIds)}
                 />
+
+                {/* Display contacts list if available */}
+                {contactNames.length > 0 && (
+                  <div style={{
+                    width: '100%',
+                    backgroundColor: '#f0f7ff',
+                    borderRadius: '8px',
+                    padding: '12px 16px',
+                    marginTop: '16px',
+                    boxSizing: 'border-box',
+                    border: '1px solid #d0e1f9',
+                    direction: isRTL ? "rtl" : "ltr"
+                  }}>
+                    <p style={{
+                      margin: '0',
+                      fontSize: '14px',
+                      color: '#333',
+                      textAlign: isRTL ? "right" : "left" as const
+                    }}>
+                      {t('Shared with')}: {contactNames.join(', ')}
+                    </p>
+                  </div>
+                )}
               </div>
+
             </a>
           </div>
         );
@@ -1226,6 +1488,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
 const MyAlbums = () => {
   const [folders, setFolders] = useState<Folder[]>([])
+  const [filteredFolders, setFilteredFolders] = useState<Folder[]>([])
   const [publicUsername, setPublicUsername] = useState<string | null>(null)
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -1242,6 +1505,7 @@ const MyAlbums = () => {
   const [debugMessages, setDebugMessages] = useState<string[]>([])
   const [currentFolderId, setCurrentFolderId] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState<string>("")
+  const [isContactFiltered, setIsContactFiltered] = useState<boolean>(false)
   
   // Use the createLogger function from the utils
   const log = createLogger(setDebugMessages);
@@ -1269,6 +1533,71 @@ const MyAlbums = () => {
     fetchUserAndFolders()
   }, [])
 
+  // Initialize filteredFolders with all folders when folders changes
+  useEffect(() => {
+    if (!isContactFiltered) {
+      setFilteredFolders(folders);
+    }
+  }, [folders, isContactFiltered]);
+
+  // Filter folders based on search query
+  useEffect(() => {
+    if (searchQuery === "") {
+      // If no search query but contact filter is active, don't reset
+      if (!isContactFiltered) {
+        setFilteredFolders(folders);
+      }
+      return;
+    }
+    
+    // Apply search filter on top of current folders (either all or contact-filtered)
+    const basefolders = isContactFiltered ? filteredFolders : folders;
+    
+    const searchFiltered = basefolders.filter(folder => {
+      const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+      const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+      return nameMatch || descMatch;
+    });
+    
+    setFilteredFolders(searchFiltered);
+  }, [searchQuery, folders, isContactFiltered]);
+
+  // Handle contact filter change
+  const handleContactFilterChange = (contactFilteredFolders: Folder[]) => {
+    setIsContactFiltered(true);
+    setFilteredFolders(contactFilteredFolders);
+    
+    // If there's also a search query, apply that filter too
+    if (searchQuery) {
+      setFilteredFolders(prevFiltered => 
+        prevFiltered.filter(folder => {
+          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+          return nameMatch || descMatch;
+        })
+      );
+    }
+  };
+
+  // Reset contact filter
+  const resetContactFilter = () => {
+    setIsContactFiltered(false);
+    
+    // If there's a search query, still filter by that
+    if (searchQuery) {
+      setFilteredFolders(
+        folders.filter(folder => {
+          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+          return nameMatch || descMatch;
+        })
+      );
+    } else {
+      // Otherwise show all folders
+      setFilteredFolders(folders);
+    }
+  };
+  
   // Separated fetchFolders function to use with the token
   const fetchFolders = async (token: string) => {
     const query = `
@@ -1343,6 +1672,17 @@ const MyAlbums = () => {
       const parsed: Folder[] = items.map((item: any) => {
         const folder = item.folder
         const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
+        
+        // Extract contacts from contactsUsingInvite
+        const contacts: Record<string, string> = {};
+        if (folder?.contactsUsingInvite?.items) {
+          folder.contactsUsingInvite.items.forEach((contact: any) => {
+            if (contact?.id && contact?.item?.publicDisplayName) {
+              contacts[contact.id] = contact.item.publicDisplayName;
+            }
+          });
+        }
+        
         return {
           folderPositionId: item.id,
           folderId: folder.id,
@@ -1353,7 +1693,10 @@ const MyAlbums = () => {
           createdAt: folder.createdAt,
           updatedAt: folder.updatedAt,
           files: files.filter((f: any) => f && f.dataKey),
-          profileIds: item.profileIds || [] // Include profileIds from the item
+          profileIds: item.profileIds || [], // Include profileIds from the item
+          contacts: contacts, // Include the contacts map
+          usingFolderInviteGrantsRightToAddItems: 
+            folder?.folderInviteParameters?.usingFolderInviteGrantsRightToAddItems || false
         }
       })
 
@@ -1497,17 +1840,6 @@ const MyAlbums = () => {
     }
   }
 
-  // Filter folders based on search query
-  const filteredFolders = useMemo(() => {
-    if (!searchQuery) return folders;
-    
-    return folders.filter(folder => {
-      const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
-      const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
-      return nameMatch || descMatch;
-    });
-  }, [folders, searchQuery]);
-
   // Get translation function from the hook for the main component
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
@@ -1522,15 +1854,6 @@ const MyAlbums = () => {
       }}
     >
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        {/* Language Selector */}
-        {/* <div style={{ 
-          marginBottom: 20, 
-          display: "flex", 
-          justifyContent: "flex-end" 
-        }}>
-          <LanguageSelector className="language-selector" />
-        </div> */}
-
         {/* Container for all content with consistent width */}
         <div style={{ width: "100%" }}>
           <Header 
@@ -1556,6 +1879,13 @@ const MyAlbums = () => {
             isRTL={isRTL}
           />
           
+          {/* Add the new ContactsFilter component here */}
+          <ContactsFilter
+            folders={folders}
+            onFilterChange={handleContactFilterChange}
+            resetFilter={resetContactFilter}
+          />
+          
           <UploadProgress 
             progressTracker={progressTracker}
             t={t}
@@ -1564,7 +1894,7 @@ const MyAlbums = () => {
 
           <AlbumList 
             folders={filteredFolders}
-            setFolders={setFolders} // Pass setter function
+            setFolders={setFolders}
             handleDeleteClick={handleDeleteClick}
             openFilePicker={openFilePicker}
             isUploading={isUploading}

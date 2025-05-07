@@ -19,6 +19,9 @@ import {
   processFilesBeforeUploadingToS3
 } from "@/lib/file-upload-utils";
 
+// Add the AWS_PRIVATE_GRAPHQL_ENDPOINT import
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
+
 // Import styled components
 import { 
   GlobalStyle, 
@@ -103,6 +106,8 @@ const PhotoAlbumContent: React.FC = () => {
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   // Add new state to track file processing completion
   const [fileProcessingComplete, setFileProcessingComplete] = useState(false);
+  // Add state to track pending save album operation
+  const [pendingSaveAlbum, setPendingSaveAlbum] = useState(false);
 
   // Create logger for tracking upload progress (logs to console only, not stored in state)
   const log = createLogger(() => {
@@ -203,6 +208,14 @@ const PhotoAlbumContent: React.FC = () => {
     setIsAuthorized(true);
     setShowPasswordModal(false);
     setPasswordError(null);
+    
+    // Check if there's a pending save album operation
+    if (pendingSaveAlbum) {
+      // Reset the flag
+      setPendingSaveAlbum(false);
+      // Execute the save operation
+      executeAlbumSave();
+    }
   };
   
   // Function to prompt for password
@@ -348,6 +361,15 @@ const PhotoAlbumContent: React.FC = () => {
           setAddPhotosClicked(false);
         }
         
+        // Check if there's a pending save album operation
+        if (pendingSaveAlbum) {
+          // Reset the flag
+          setPendingSaveAlbum(false);
+          // Execute the save operation
+          executeAlbumSave();
+          return;
+        }
+        
         // Add a slight delay before reloading to ensure state updates are complete
         setTimeout(() => {
           // Reload the current page to refresh with the authenticated state
@@ -457,10 +479,304 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Save album function
-  const saveAlbum = async () => {
+  // Helper function to update save progress
+  const updateSaveProgress = (
+    progress: number, 
+    textElement: HTMLElement,
+    progressBar: HTMLElement,
+    message: string,
+    isError: boolean = false
+  ) => {
+    if (progressBar) {
+      progressBar.style.width = `${progress}%`;
+      if (isError) {
+        progressBar.style.backgroundColor = '#f44336';
+      }
+    }
+    
+    if (textElement) {
+      textElement.textContent = message;
+      if (isError) {
+        textElement.style.color = '#f44336';
+      }
+    }
+  };
+
+  // Helper function to show detailed error with retry button
+  const showDetailedError = (
+    errorElement: HTMLElement, 
+    errorMessage: string, 
+    textElement: HTMLElement, 
+    progressBar: HTMLElement
+  ) => {
+    if (progressBar) {
+      progressBar.style.width = '100%';
+      progressBar.style.backgroundColor = '#f44336';
+    }
+    
+    if (textElement) {
+      textElement.textContent = t('Error saving album');
+      textElement.style.color = '#f44336';
+    }
+    
+    // Show detailed error message
+    if (errorElement) {
+      errorElement.textContent = errorMessage;
+      errorElement.style.display = 'block';
+      
+      // Add retry button
+      const retryButton = document.createElement('button');
+      retryButton.textContent = t('Retry');
+      retryButton.style.marginTop = '15px';
+      retryButton.style.padding = '8px 16px';
+      retryButton.style.backgroundColor = '#2196f3';
+      retryButton.style.color = 'white';
+      retryButton.style.border = 'none';
+      retryButton.style.borderRadius = '4px';
+      retryButton.style.cursor = 'pointer';
+      retryButton.onclick = function() {
+        // Remove the modal and try again
+        const modalElement = errorElement.closest('div[style*="position: fixed"]');
+        if (modalElement && modalElement.parentNode) {
+          modalElement.parentNode.removeChild(modalElement);
+        }
+        // Give a slight delay before retrying
+        setTimeout(saveAlbumDirectly, 500);
+      };
+      
+      // Add close button
+      const closeButton = document.createElement('button');
+      closeButton.textContent = t('Close');
+      closeButton.style.marginTop = '15px';
+      closeButton.style.marginLeft = '10px';
+      closeButton.style.padding = '8px 16px';
+      closeButton.style.backgroundColor = '#757575';
+      closeButton.style.color = 'white';
+      closeButton.style.border = 'none';
+      closeButton.style.borderRadius = '4px';
+      closeButton.style.cursor = 'pointer';
+      closeButton.onclick = function() {
+        const modalElement = errorElement.closest('div[style*="position: fixed"]');
+        if (modalElement && modalElement.parentNode) {
+          modalElement.parentNode.removeChild(modalElement);
+        }
+      };
+      
+      // Add buttons container
+      const buttonsContainer = document.createElement('div');
+      buttonsContainer.appendChild(retryButton);
+      buttonsContainer.appendChild(closeButton);
+      
+      errorElement.parentNode?.appendChild(buttonsContainer);
+    }
+  };
+
+  // Implementation for executing album save operation
+  const executeAlbumSave = async () => {
+    console.log("Starting album save execution");
+    
+    // Create a loading indicator for album saving
+    const loadingModal = document.createElement('div');
+    loadingModal.style.position = 'fixed';
+    loadingModal.style.top = '0';
+    loadingModal.style.left = '0';
+    loadingModal.style.width = '100%';
+    loadingModal.style.height = '100%';
+    loadingModal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    loadingModal.style.display = 'flex';
+    loadingModal.style.justifyContent = 'center';
+    loadingModal.style.alignItems = 'center';
+    loadingModal.style.zIndex = '2000';
+    
+    const loadingContent = document.createElement('div');
+    loadingContent.style.backgroundColor = 'white';
+    loadingContent.style.padding = '30px';
+    loadingContent.style.borderRadius = '8px';
+    loadingContent.style.textAlign = 'center';
+    
+    const loadingText = document.createElement('p');
+    loadingText.id = 'saveProgressText';
+    loadingText.textContent = t('Saving album...');
+    
+    const progressBarBg = document.createElement('div');
+    progressBarBg.style.backgroundColor = '#f0f0f0';
+    progressBarBg.style.borderRadius = '4px';
+    progressBarBg.style.overflow = 'hidden';
+    progressBarBg.style.height = '8px';
+    progressBarBg.style.marginTop = '10px';
+    
+    const progressBar = document.createElement('div');
+    progressBar.id = 'saveProgress';
+    progressBar.style.backgroundColor = '#4caf50';
+    progressBar.style.height = '100%';
+    progressBar.style.width = '5%';
+    progressBar.style.transition = 'width 0.3s ease';
+
+    // Add error message element
+    const errorText = document.createElement('p');
+    errorText.id = 'saveErrorText';
+    errorText.style.color = '#f44336';
+    errorText.style.display = 'none';
+    errorText.style.marginTop = '10px';
+    errorText.style.fontSize = '14px';
+    
+    progressBarBg.appendChild(progressBar);
+    loadingContent.appendChild(loadingText);
+    loadingContent.appendChild(progressBarBg);
+    loadingContent.appendChild(errorText);
+    loadingModal.appendChild(loadingContent);
+    document.body.appendChild(loadingModal);
+
+    try {
+      // Get current username from cognito token
+      const token = await checkLoginWithRefresh();
+      if (!token) {
+        console.error("No token available for saving album");
+        document.body.removeChild(loadingModal);
+        return;
+      }
+      
+      // Extract username from token
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const username = payload["cognito:username"];
+      
+      if (!username) {
+        console.error("Missing username in token");
+        showDetailedError(errorText, "Could not retrieve username from token", loadingText, progressBar);
+        return;
+      }
+      
+      // Validate folder ID
+      if (!folderId) {
+        console.error("No folder ID available");
+        showDetailedError(errorText, "Folder ID is missing", loadingText, progressBar);
+        return;
+      }
+      
+      // Validate album data
+      if (!albumData || !albumData.mediaItems) {
+        console.error("No album data available");
+        showDetailedError(errorText, "Album data is missing or incomplete", loadingText, progressBar);
+        return;
+      }
+
+      if (albumData.mediaItems.length === 0) {
+        console.error("No media items to save");
+        showDetailedError(errorText, "No media items in album to save", loadingText, progressBar);
+        return;
+      }
+      
+      // Prepare timestamp and account ID
+      const now = Math.floor(Date.now() / 1000);
+      
+      // Update progress - Step 1
+      updateSaveProgress(30, loadingText, progressBar, t('Preparing album data...'));
+
+      // Simplified folder position input - minimal requirements only
+      const folderPositionInput = {
+        currentTime: now,
+        folderId: folderId,
+        profileIds: [`${username}_____Public____Profile`],
+        folderPositionSelectedTagInputs: [],
+        folderPositionPoints: 1,
+        // No need for acceptedFileReferenceIds or hiddenFileReferenceIds since we're using changeFiles0
+      };
+      
+      console.log("Folder position input:", folderPositionInput);
+      
+      // Update progress - Step 2
+      updateSaveProgress(50, loadingText, progressBar, t('Saving album...'));
+      
+      // Send GraphQL mutation to save album - simplified mutation
+      const mutation = `
+        mutation SaveAlbum(
+          $folderPositionInputs: [FolderPositionInput!]
+        ) {
+          changeFiles(folderPositionInputs: $folderPositionInputs) {
+            items { id }
+          }
+        }
+      `;
+
+      const variables = {
+        folderPositionInputs: [folderPositionInput]
+      };
+
+      console.log("GraphQL mutation variables:", JSON.stringify(variables));
+      
+      // Send API request with robust error handling
+      try {
+        const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ query: mutation, variables }),
+        });
+        
+        // Update progress - Step 3
+        updateSaveProgress(80, loadingText, progressBar, t('Almost there...'));
+        
+        // Check for HTTP errors
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status} ${response.statusText}`);
+        }
+        
+        const responseText = await response.text();
+        
+        // Validate response is JSON
+        let json;
+        try {
+          json = JSON.parse(responseText);
+          console.log("API response:", json);
+        } catch (err) {
+          const parseErrorMessage = err instanceof Error ? err.message : "Unknown JSON parse error";
+          throw new Error(`Invalid JSON response: ${parseErrorMessage}`);
+        }
+        
+        // Check for GraphQL errors
+        if (json.errors && json.errors.length > 0) {
+          const errorMessages = json.errors.map((err: { message?: string }) => {
+            console.error("GraphQL error:", err);
+            return err.message || "Unknown GraphQL error";
+          }).join("; ");
+          
+          throw new Error(`GraphQL errors: ${errorMessages}`);
+        }
+        
+        // Success!
+        console.log("Album saved successfully");
+        updateSaveProgress(100, loadingText, progressBar, t('Album saved successfully!'));
+        
+        // Set a flag in sessionStorage that we just completed an album
+        sessionStorage.setItem('album_just_saved', 'true');
+        
+        // Slight delay before redirect for user to see success message
+        setTimeout(() => {
+          document.body.removeChild(loadingModal);
+          window.location.href = "/my-albums.html";
+        }, 2000);
+      } catch (err) {
+        const fetchErrorMessage = err instanceof Error ? err.message : "Unknown API error";
+        console.error("Error in API request:", err);
+        showDetailedError(errorText, fetchErrorMessage, loadingText, progressBar);
+      }
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Unknown error";
+      console.error("Error saving album:", err);
+      showDetailedError(errorText, errorMessage, loadingText, progressBar);
+    }
+  };
+
+  // New implementation for saveAlbumDirectly that first checks login and shows OTP if needed
+  const saveAlbumDirectly = async () => {
+    console.log("Starting direct album save");
+    
     // Check if authorized for CannotBeSaved policy
     if (passwordPolicy === 'CannotBeSaved' && !isAuthorized) {
+      // Set flag that we want to save after password verification
+      setPendingSaveAlbum(true);
       promptForPassword();
       return;
     }
@@ -469,16 +785,27 @@ const PhotoAlbumContent: React.FC = () => {
     const token = await checkLoginWithoutRedirect();
     
     if (!token) {
-      // Instead of redirecting, show the inline login
+      console.log("User not logged in, showing OTP login");
+      // Set flag that we want to save after login
+      setPendingSaveAlbum(true);
+      // Show the inline login
       setShowInlineOTPLogin(true);
       return;
     }
     
-    if (folderId) {
-      window.location.href = `/save-album.html?folderId=${folderId}`;
-    } else {
-      alert(t('Please try refreshing the page or contact support if the problem persists.'));
+    // If there's a token but we don't have the username, get it
+    if (!cognitoUsername) {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const username = payload["cognito:username"];
+        setCognitoUsername(username);
+      } catch (err) {
+        console.error("Failed to decode token", err);
+      }
     }
+    
+    // User is logged in, continue with album save
+    executeAlbumSave();
   };
 
   // Create Sub-album function
@@ -579,7 +906,7 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Handle downloading photos
+  // Modified handle download photos function to directly save the album
   const handleDownloadPhotos = async () => {
     // Check if download should be restricted
     if (passwordPolicy === 'CannotBeSaved' && !isAuthorized) {
@@ -762,7 +1089,7 @@ const PhotoAlbumContent: React.FC = () => {
                   ) && (
                     <ResponsiveHeader 
                       addPhotosToAlbum={addPhotosToAlbum}
-                      saveAlbum={saveAlbum} 
+                      saveAlbum={saveAlbumDirectly} // Use the direct save method instead
                       downloadPhotos={handleDownloadPhotos}
                       promptForPassword={promptForPassword}
                       showingEnterPassword={showingEnterPassword()}
@@ -1032,6 +1359,10 @@ const PhotoAlbumContent: React.FC = () => {
         onClose={() => {
           setShowPasswordModal(false);
           setPasswordError(null); // Clear error when closing modal
+          // If we were trying to save the album but canceled password entry, clear the flag
+          if (pendingSaveAlbum) {
+            setPendingSaveAlbum(false);
+          }
         }}
         onSubmit={handlePasswordSubmit}
         error={passwordError}
@@ -1041,7 +1372,13 @@ const PhotoAlbumContent: React.FC = () => {
       {/* LoginModal Component */}
       <LoginModal
         isOpen={showInlineOTPLogin}
-        onClose={() => setShowInlineOTPLogin(false)}
+        onClose={() => {
+          setShowInlineOTPLogin(false);
+          // If we were trying to save the album but canceled login, clear the flag
+          if (pendingSaveAlbum) {
+            setPendingSaveAlbum(false);
+          }
+        }}
         onLoginSuccess={handleLoginSuccess}
         t={t}
       />

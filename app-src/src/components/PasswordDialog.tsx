@@ -185,10 +185,6 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
             {t('Enter a password for this album.')}
           </DialogText>
           
-          <DialogText>
-            {t('Select what can be done with photos and videos without a password.')}
-          </DialogText>
-          
           <PasswordInput
             type="text"
             placeholder={t('Enter password')}
@@ -199,7 +195,11 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
             spellCheck="false"
             autoCorrect="off"
           />
-          
+
+          <DialogText>
+            {t('Select password restrictions.')}
+          </DialogText>
+
           <OptionsContainer>
             {/* Not Visible Option */}
             <OptionWrapper disabled={passwordRequired}>
@@ -216,7 +216,7 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 htmlFor="notVisible"
                 disabled={passwordRequired}
               >
-                {t('Not Visible')}
+                {t('Password Required To See Or Save')}
                 {passwordRequired && (
                   <PasswordRequiredText>
                     {t('Password required')}
@@ -240,7 +240,7 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 htmlFor="watermark"
                 disabled={passwordRequired}
               >
-                {t('Watermark')}
+                {t('Password Required To Remove Watermark Or Save')}
                 {passwordRequired && (
                   <PasswordRequiredText>
                     {t('Password required')}
@@ -264,7 +264,7 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 htmlFor="cannotBeSaved"
                 disabled={passwordRequired}
               >
-                {t('Cannot Be Saved')}
+                {t('Password Required To Save')}
                 {passwordRequired && (
                   <PasswordRequiredText>
                     {t('Password required')}

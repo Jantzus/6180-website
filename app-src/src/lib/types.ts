@@ -67,6 +67,8 @@ export type FolderType = {
   updatedAt: number | null;
   files: FileType[];
   profileIds?: string[];
+  contacts?: Record<string, string>;
+  usingFolderInviteGrantsRightToAddItems?: boolean;
 };
 
 export interface File {
@@ -85,6 +87,9 @@ export interface Folder {
   createdAt: number | null
   updatedAt: number | null
   files: File[]
+  profileIds?: string[]
+  contacts?: Record<string, string>
+  usingFolderInviteGrantsRightToAddItems?: boolean
 }
 
 export type ProtectionOption = 'notVisible' | 'watermark' | 'cannotBeSaved' | 'noPassword';
