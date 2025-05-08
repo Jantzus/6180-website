@@ -42,25 +42,16 @@ export const AlbumList: React.FC<AlbumListProps> = ({
       }
     }
 
-    // Handle clicks outside the dropdown
-    function handleClickOutside(event: MouseEvent) {
-      if (activeDropdownRef.current && !activeDropdownRef.current.contains(event.target as Node)) {
-        closeActiveDropdown();
-      }
-    }
-
-    // Handle scroll events
+    // Handle scroll events only - removed document click handler
     function handleScroll() {
       closeActiveDropdown();
     }
 
-    // Add event listeners
-    document.addEventListener("mousedown", handleClickOutside);
+    // Add only scroll event listener
     window.addEventListener("scroll", handleScroll, true); // Use capture phase to detect all scrolling
     
     // Clean up
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("scroll", handleScroll, true);
     };
   }, []);

@@ -189,14 +189,15 @@ export const fetchFolder = async (
     const privateResult = await privateApiPromise;
     if (privateResult) {
       
-      const folderPosition = privateResult?.data?.fetchRelations?.items?.[0]?.folderPosition?.id;
+      const folderPosition = privateResult?.data?.fetchRelations?.items?.[0]?.folderPosition;
       
       if (folderPosition) {
         const privateData = processData(privateResult, setFolderId);
         
         // Set a more flexible flag indicating the presence of a folderPosition
-        privateData.hasFolderPosition = true;
-        
+        privateData.folderPositionId = folderPosition?.id;
+        privateData.profileIds = folderPosition?.profileIds
+
         initialData = privateData;
       }
     }

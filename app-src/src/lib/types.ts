@@ -124,7 +124,8 @@ export interface AlbumData {
   hasPassword?: boolean;
   actualPassword?: string;
   usingFolderInviteGrantsRightToAddItems?: boolean;
-  hasFolderPosition?: boolean;
+  folderPositionId?: string;
+  profileIds?: string[];
 }
 
 // Props for various components
@@ -226,6 +227,7 @@ export const FETCH_FOLDERS_QUERY = `
           }
           folderPosition {
             id
+            profileIds
           }
         }
       }

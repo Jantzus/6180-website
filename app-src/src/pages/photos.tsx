@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import { getLanguageDirection } from "@/lib/i18n";
@@ -6,10 +6,9 @@ import { checkLoginWithoutRedirect, checkLoginWithRefresh } from "@/lib/utils";
 
 // Import types and utilities
 import { AlbumData, PasswordPolicyEnum, SelectedPhoto, ProgressTracker } from "@/lib/types";
-import { getIdFromUrl, formatUUID, generateUUID } from "@/lib/utils";
+import { getIdFromUrl, formatUUID, generateUUID, getTargetItemIdentifier } from "@/lib/utils";
 import { fetchFolder } from "@/lib/apiService";
 import { downloadPhotos } from "@/lib/fileOperations";
-import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
 // Import upload utilities
 import { 
@@ -20,7 +19,7 @@ import {
 } from "@/lib/file-upload-utils";
 
 // Add the AWS_PRIVATE_GRAPHQL_ENDPOINT import
-import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 
 // Import styled components
 import { 
@@ -67,99 +66,362 @@ import ResponsiveHeader from "@/components/HeaderComponents";
 import { FileInput } from "@/components/FileInput";
 import { UploadProgress } from "@/components/UploadProgress";
 import LoginModal from "@/components/LoginModal";
+import { CopyLinkModal, ConfirmationModal } from "@/components/Modals";
 
-// Main Photo Album Component
-const PhotoAlbumContent: React.FC = () => {
-  // Hooks for i18n
-  const { t, language } = useTranslation();
-  
-  // State
-  const [columns, setColumns] = useState<string>('1');
-  const [albumData, setAlbumData] = useState<AlbumData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const [folderId, setFolderId] = useState<string | null>(null); // Used when processing API data
-  
-  // Password and authorization state
-  const [passwordPolicy, setPasswordPolicy] = useState<PasswordPolicyEnum | undefined>(undefined);
-  const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
-  const [showPasswordModal, setShowPasswordModal] = useState<boolean>(false);
-  const [passwordError, setPasswordError] = useState<string | null>(null);
-  // Add state to track password verification
-  const [passwordVerified, setPasswordVerified] = useState<boolean>(false);
-  
-  // Added state for tracking which items are loading in full resolution
-  const [loadingFullResolution, setLoadingFullResolution] = useState<Record<number, boolean>>({});
-  
-  // State for fullscreen viewer
-  const [fullscreenItem, setFullscreenItem] = useState<number | null>(null);
-  
-  // Selection mode state
-  const [isSelectionMode, setIsSelectionMode] = useState<boolean>(false);
-  const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set());
+// ============================
+// Utility functions
+// ============================
 
-  // State for file upload and tracking
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
-  const [isUploading, setIsUploading] = useState(false);
-  const [addPhotosClicked, setAddPhotosClicked] = useState(false);  
-  const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
-    totalFiles: 0,
-    filesComplete: 0,
-    filesUploading: 0,
-    filesProcessing: 0,
-    filesWithError: 0,
-    overallProgress: 0 // Note: This is a decimal (0-1) not a percentage (0-100)
-  });
+const updateSaveProgress = (
+  progress: number, 
+  textElement: HTMLElement,
+  progressBar: HTMLElement,
+  message: string,
+  isError: boolean = false
+) => {
+  if (progressBar) {
+    progressBar.style.width = `${progress}%`;
+    if (isError) {
+      progressBar.style.backgroundColor = '#f44336';
+    }
+  }
   
-  // Add new state for inline OTP login
-  const [showInlineOTPLogin, setShowInlineOTPLogin] = useState(false);
-  // Check localStorage instead of using state for tracking login success
-  const [showSelectPhotosButton, setShowSelectPhotosButton] = useState(false);
-  // Add state to track user information
-  const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
-  // Add new state to track file processing completion
-  const [fileProcessingComplete, setFileProcessingComplete] = useState(false);
-  // Add state to track pending save album operation
-  const [pendingSaveAlbum, setPendingSaveAlbum] = useState(false);
+  if (textElement) {
+    textElement.textContent = message;
+    if (isError) {
+      textElement.style.color = '#f44336';
+    }
+  }
+};
+
+const showDetailedError = (
+  errorElement: HTMLElement, 
+  errorMessage: string, 
+  textElement: HTMLElement, 
+  progressBar: HTMLElement
+) => {
+  if (progressBar) {
+    progressBar.style.width = '100%';
+    progressBar.style.backgroundColor = '#f44336';
+  }
   
-  // Add state for username handling
+  if (textElement) {
+    textElement.textContent = 'Error saving album';
+    textElement.style.color = '#f44336';
+  }
+  
+  // Show detailed error message
+  if (errorElement) {
+    errorElement.textContent = errorMessage;
+    errorElement.style.display = 'block';
+    
+    // Add retry button
+    const retryButton = document.createElement('button');
+    retryButton.textContent = 'Retry';
+    retryButton.style.marginTop = '15px';
+    retryButton.style.padding = '8px 16px';
+    retryButton.style.backgroundColor = '#2196f3';
+    retryButton.style.color = 'white';
+    retryButton.style.border = 'none';
+    retryButton.style.borderRadius = '4px';
+    retryButton.style.cursor = 'pointer';
+    retryButton.onclick = function() {
+      // Remove the modal and try again
+      const modalElement = errorElement.closest('div[style*="position: fixed"]');
+      if (modalElement && modalElement.parentNode) {
+        modalElement.parentNode.removeChild(modalElement);
+      }
+      // Give a slight delay before retrying
+      setTimeout(() => {
+        // This is a hack - the real saveAlbumDirectly will be provided by closure
+        window.location.reload();
+      }, 500);
+    };
+    
+    // Add close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.style.marginTop = '15px';
+    closeButton.style.marginLeft = '10px';
+    closeButton.style.padding = '8px 16px';
+    closeButton.style.backgroundColor = '#757575';
+    closeButton.style.color = 'white';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '4px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.onclick = function() {
+      const modalElement = errorElement.closest('div[style*="position: fixed"]');
+      if (modalElement && modalElement.parentNode) {
+        modalElement.parentNode.removeChild(modalElement);
+      }
+    };
+    
+    // Add buttons container
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.appendChild(retryButton);
+    buttonsContainer.appendChild(closeButton);
+    
+    errorElement.parentNode?.appendChild(buttonsContainer);
+  }
+};
+
+// ============================
+// Custom Hooks
+// ============================
+
+// Hook for username validation and submission
+const useUsernameManagement = (t: (key: string) => string) => {
   const [showUsernamePrompt, setShowUsernamePrompt] = useState<boolean>(false);
   const [usernameInput, setUsernameInput] = useState<string>("");
   const [usernameError, setUsernameError] = useState<string>("");
   const [showAltButton, setShowAltButton] = useState<boolean>(false);
   const [isSubmittingUsername, setIsSubmittingUsername] = useState<boolean>(false);
 
-  // Create logger for tracking upload progress (logs to console only, not stored in state)
-  const log = createLogger(() => {
-    // Using empty function since we don't need to display debug messages in UI
+  const validateUsername = useCallback((username: string) => {
+    const isValid = /^[a-zA-Z0-9-]+$/.test(username);
+    console.log(`Username validation for '${username}': ${isValid}`);
+    return isValid;
+  }, []);
+
+  const submitUsername = useCallback(async (proposedName: string, onSuccess: (newName: string) => void) => {
+    console.log(`Submitting username: ${proposedName}`);
+    setIsSubmittingUsername(true);
+    setUsernameError("");
+
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      setUsernameError(t('Authentication error. Please try again.'));
+      setIsSubmittingUsername(false);
+      return;
+    }
+
+    const mutation = `
+      mutation MyMutation($savePublicProfileDisplayNameInput: SavePublicProfileDisplayNameInput) {
+        changeMyAccountItem(savePublicProfileDisplayNameInput: $savePublicProfileDisplayNameInput) {
+          ... on Profile {
+            anyDisplayName
+          }
+        }
+      }
+    `;
+
+    const variables = {
+      savePublicProfileDisplayNameInput: {
+        anyDisplayName: proposedName,
+      },
+    };
+
+    try {
+      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: mutation, variables }),
+      });
+
+      const json = await res.json();
+      const newName = json?.data?.changeMyAccountItem?.anyDisplayName;
+
+      if (newName) {
+        onSuccess(newName);
+      } else {
+        throw new Error("Username taken");
+      }
+    } catch (e) {
+      console.error(`Error submitting username: ${e}`);
+      setUsernameError(t('Username is already taken. Please try a different one.'));
+      setShowAltButton(true);
+      setIsSubmittingUsername(false);
+    }
+  }, [t]);
+
+  const appendRandomDigits = useCallback((onSuccess: (newName: string) => void) => {
+    const digits = Math.floor(100000 + Math.random() * 900000).toString();
+    const modified = `${usernameInput}${digits}`;
+    console.log(`Appending random digits to username: ${usernameInput} -> ${modified}`);
+    setUsernameInput(modified);
+    submitUsername(modified, onSuccess);
+  }, [usernameInput, submitUsername]);
+
+  return {
+    showUsernamePrompt,
+    setShowUsernamePrompt,
+    usernameInput,
+    setUsernameInput,
+    usernameError,
+    setUsernameError,
+    showAltButton,
+    setShowAltButton,
+    isSubmittingUsername,
+    setIsSubmittingUsername,
+    validateUsername,
+    submitUsername,
+    appendRandomDigits
+  };
+};
+
+// Hook for file upload management
+const useFileUpload = () => {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
+  const [isUploading, setIsUploading] = useState(false);
+  const [fileProcessingComplete, setFileProcessingComplete] = useState(false);
+  const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
+    totalFiles: 0,
+    filesComplete: 0,
+    filesUploading: 0,
+    filesProcessing: 0,
+    filesWithError: 0,
+    overallProgress: 0
   });
-  
+
+  const log = createLogger(() => {
+    // Empty function since we don't need to display debug messages in UI
+  });
+
   // Update progress tracker when selectedPhotos changes
   useEffect(() => {
     updateProgressTracker(selectedPhotos, setProgressTracker);
   }, [selectedPhotos]);
 
-  // Effect to navigate to save-album page after file processing is complete
-  useEffect(() => {
-    if (fileProcessingComplete && selectedPhotos.length > 0) {
-      // Show a completion message in the UI
-      const successCount = selectedPhotos.filter(photo => photo.status === 'complete').length;
-      const errorCount = selectedPhotos.filter(photo => photo.status === 'error').length;
-      
-      console.log(`Upload complete: ${successCount} successful, ${errorCount} failed`);
-      
-      // Get the necessary data for the redirect
-      if (folderId) {
-        window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
-      } else {
-        window.location.href = "/save-album.html";
-      }
-    }
-  }, [fileProcessingComplete, selectedPhotos.length, folderId]);
+  return {
+    fileInputRef,
+    selectedPhotos,
+    setSelectedPhotos,
+    isUploading,
+    setIsUploading,
+    fileProcessingComplete,
+    setFileProcessingComplete,
+    progressTracker,
+    setProgressTracker,
+    log
+  };
+};
 
-  // Check if content should be protected based on policy and authorization
-  const shouldShowContent = () => {
+// Hook for fullscreen view management
+const useFullscreenView = () => {
+  const [fullscreenItem, setFullscreenItem] = useState<number | null>(null);
+  const [loadingFullResolution, setLoadingFullResolution] = useState<Record<number, boolean>>({});
+
+  const openFullscreenView = useCallback((index: number) => {
+    setFullscreenItem(index);
+    // Pre-load the full resolution of the selected item
+    setLoadingFullResolution(prev => ({
+      ...prev,
+      [index]: true
+    }));
+    
+    // Lock body scroll when fullscreen is open
+    document.body.style.overflow = 'hidden';
+  }, []);
+  
+  const closeFullscreenView = useCallback(() => {
+    setFullscreenItem(null);
+    // Restore body scroll when fullscreen is closed
+    document.body.style.overflow = '';
+  }, []);
+  
+  const goToPrevItem = useCallback(() => {
+    if (fullscreenItem !== null && fullscreenItem > 0) {
+      setFullscreenItem(fullscreenItem - 1);
+      setLoadingFullResolution(prev => ({
+        ...prev,
+        [fullscreenItem - 1]: true
+      }));
+    }
+  }, [fullscreenItem]);
+  
+  const goToNextItem = useCallback((totalItems: number) => {
+    if (fullscreenItem !== null && fullscreenItem < totalItems - 1) {
+      setFullscreenItem(fullscreenItem + 1);
+      setLoadingFullResolution(prev => ({
+        ...prev,
+        [fullscreenItem + 1]: true
+      }));
+    }
+  }, [fullscreenItem]);
+
+  const handleFullResolutionLoaded = useCallback((index: number, albumData: AlbumData, setAlbumData: React.Dispatch<React.SetStateAction<AlbumData | null>>) => {
+    if (albumData) {
+      const updatedMediaItems = [...albumData.mediaItems];
+      updatedMediaItems[index] = {
+        ...updatedMediaItems[index],
+        loaded: true
+      };
+      
+      setAlbumData({
+        ...albumData,
+        mediaItems: updatedMediaItems
+      });
+      
+      // Clear loading state
+      setLoadingFullResolution(prev => {
+        const updated = { ...prev };
+        delete updated[index];
+        return updated;
+      });
+    }
+  }, []);
+
+  return {
+    fullscreenItem,
+    setFullscreenItem,
+    loadingFullResolution,
+    setLoadingFullResolution,
+    openFullscreenView,
+    closeFullscreenView,
+    goToPrevItem,
+    goToNextItem,
+    handleFullResolutionLoaded
+  };
+};
+
+// Hook for selection mode management
+const useSelectionMode = () => {
+  const [isSelectionMode, setIsSelectionMode] = useState<boolean>(false);
+  const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set());
+
+  const toggleItemSelection = useCallback((index: number, event: React.MouseEvent) => {
+    event.stopPropagation(); // Prevent opening fullscreen view
+    
+    setSelectedItems(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  }, []);
+  
+  const cancelSelection = useCallback(() => {
+    setIsSelectionMode(false);
+    setSelectedItems(new Set());
+  }, []);
+
+  return {
+    isSelectionMode,
+    setIsSelectionMode,
+    selectedItems,
+    setSelectedItems,
+    toggleItemSelection,
+    cancelSelection
+  };
+};
+
+// Hook for password protection management
+const usePasswordProtection = () => {
+  const [passwordPolicy, setPasswordPolicy] = useState<PasswordPolicyEnum | undefined>(undefined);
+  const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
+  const [showPasswordModal, setShowPasswordModal] = useState<boolean>(false);
+  const [passwordError, setPasswordError] = useState<string | null>(null);
+  const [passwordVerified, setPasswordVerified] = useState<boolean>(false);
+  const [pendingSaveAlbum, setPendingSaveAlbum] = useState(false);
+
+  const shouldShowContent = useCallback(() => {
     // If no policy or authorized, show content
     if (!passwordPolicy || isAuthorized || passwordPolicy === 'NoPassword') {
       return true;
@@ -176,22 +438,793 @@ const PhotoAlbumContent: React.FC = () => {
     
     // For other policies, show content with appropriate restrictions
     return true;
-  };
+  }, [passwordPolicy, isAuthorized, passwordError]);
   
-  // Check if watermark should be applied
-  const shouldShowWatermark = () => {
+  const shouldShowWatermark = useCallback(() => {
     // If there's a password error and it mentions watermark, or policy is Watermark
     const showWatermarkDueToError = passwordError?.toLowerCase().includes('watermark') ?? false;
     return (!isAuthorized && passwordPolicy === 'Watermark') || showWatermarkDueToError;
-  };
+  }, [isAuthorized, passwordPolicy, passwordError]);
 
-  // Detect if password entry should be shown
-  const showingEnterPassword = () => {
+  const showingEnterPassword = useCallback(() => {
     // Show buttons if user is authorized OR there's no password policy OR policy is NoPassword
     return !isAuthorized && passwordPolicy !== undefined && passwordPolicy !== 'NoPassword';
+  }, [isAuthorized, passwordPolicy]);
+
+  const promptForPassword = useCallback(() => {
+    setPasswordError(null); // Clear any previous errors
+    setShowPasswordModal(true);
+  }, []);
+
+  return {
+    passwordPolicy,
+    setPasswordPolicy,
+    isAuthorized,
+    setIsAuthorized,
+    showPasswordModal,
+    setShowPasswordModal,
+    passwordError,
+    setPasswordError,
+    passwordVerified,
+    setPasswordVerified,
+    pendingSaveAlbum,
+    setPendingSaveAlbum,
+    shouldShowContent,
+    shouldShowWatermark,
+    showingEnterPassword,
+    promptForPassword
+  };
+};
+
+// Hook for handling share actions similar to FooterSection
+const useShareActions = (albumData: AlbumData | null, folderId: string | null, cognitoUsername: string | null, t: (key: string) => string) => {
+  const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
+  const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
+  const [isOnPublicProfile, setIsOnPublicProfile] = useState<boolean>(false);
+  const [localProfileIds, setLocalProfileIds] = useState<string[]>([]);
+  
+  // Update when album data changes
+  useEffect(() => {
+    if (albumData && albumData.profileIds && cognitoUsername) {
+      const publicProfileId = `${cognitoUsername}_____Public____Profile`;
+      setLocalProfileIds(albumData.profileIds);
+      setIsOnPublicProfile(albumData.profileIds.includes(publicProfileId));
+    }
+  }, [albumData, cognitoUsername]);
+  
+  // Generate the invite link based on folder id
+  const generateInviteLink = useCallback(() => {
+    if (!folderId) return '';
+    let formattedTargetItemIdentifier = getTargetItemIdentifier(folderId).replace(/-/g, '');
+    return `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
+  }, [folderId]);
+  
+  // Handle copy function
+  const handleCopy = useCallback(() => {
+    const inviteLink = generateInviteLink();
+    navigator.clipboard.writeText(inviteLink)
+      .then(() => {
+        setShowingCopyLinkAlert(false);
+        setShowingCopiedLinkAlert(true);
+      })
+      .catch(err => {
+        console.error("Failed to copy link:", err);
+        alert(t('Failed to copy link'));
+      });
+  }, [generateInviteLink, t]);
+  
+  // Handle public profile toggle
+  const handlePublicProfileToggle = useCallback(async () => {
+    if (!cognitoUsername || !folderId) {
+      alert(t('You must be logged in to perform this action'));
+      return;
+    }
+    
+    try {
+      // Get a fresh token
+      const token = await checkLoginWithRefresh();
+      
+      if (!token) {
+        console.error("Authentication failed");
+        return;
+      }
+      
+      // Determine the new profileIds array
+      const publicProfileId = `${cognitoUsername}_____Public____Profile`;
+      const newProfileIds = [...localProfileIds];
+      
+      if (isOnPublicProfile) {
+        // Remove from public profile
+        const index = newProfileIds.indexOf(publicProfileId);
+        if (index > -1) {
+          newProfileIds.splice(index, 1);
+        }
+      } else {
+        // Add to public profile
+        newProfileIds.push(publicProfileId);
+      }
+      
+      // Prepare the mutation query
+      const toggleVisibilityQuery = `
+        mutation ChangeAlbumVisibility($folderPositionChangeProfileIdsInput: FolderPositionChangeProfileIdsInput!) {
+          changeFiles(folderPositionChangeProfileIdsInput: $folderPositionChangeProfileIdsInput) {
+            items {
+              ... on FolderPosition {
+                id
+                profileIds
+              }
+            }
+          }
+        }
+      `;
+      
+      // Call the API
+      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ 
+          query: toggleVisibilityQuery, 
+          variables: { 
+            folderPositionChangeProfileIdsInput: {
+              folderId: folderId,
+              profileIds: newProfileIds
+            }
+          } 
+        }),
+      });
+      
+      const json = await res.json();
+      
+      if (json.errors) {
+        throw new Error(json.errors[0]?.message || "Unknown error");
+      }
+      
+      // Update local state
+      const updatedItems = json?.data?.changeFiles?.items || [];
+      const updatedItem = updatedItems.find((item: any) => item.folderPositionId === albumData?.folderPositionId);
+      
+      if (updatedItem && updatedItem.profileIds) {
+        setLocalProfileIds(updatedItem.profileIds);
+        setIsOnPublicProfile(updatedItem.profileIds.includes(publicProfileId));
+        console.log("Album visibility updated successfully");
+      }
+    } catch (err) {
+      console.error("Failed to toggle album visibility:", err);
+      alert(t('Failed to update album visibility. Please try again.'));
+    }
+  }, [cognitoUsername, folderId, localProfileIds, isOnPublicProfile, albumData, t]);
+  
+  return {
+    showingCopyLinkAlert,
+    setShowingCopyLinkAlert,
+    showingCopiedLinkAlert,
+    setShowingCopiedLinkAlert,
+    isOnPublicProfile,
+    handleCopy,
+    handlePublicProfileToggle,
+    generateInviteLink
+  };
+};
+
+// ============================
+// Sub-components
+// ============================
+
+// Username Modal Component
+const UsernamePrompt: React.FC<{
+  t: (key: string) => string;
+  language: string;
+  usernameManager: ReturnType<typeof useUsernameManagement>;
+  onSuccess: (newName: string) => void;
+}> = ({ t, language, usernameManager, onSuccess }) => {
+  const {
+    showUsernamePrompt,
+    setShowUsernamePrompt,
+    usernameInput,
+    setUsernameInput,
+    usernameError,
+    validateUsername,
+    submitUsername,
+    showAltButton,
+    appendRandomDigits,
+    isSubmittingUsername
+  } = usernameManager;
+
+  const handleSuccessfulUsernameUpdate = (newName: string) => {
+    console.log(`Username successfully updated to: ${newName}`);
+    localStorage.setItem("publicUsername", newName);
+    setShowUsernamePrompt(false);
+    onSuccess(newName);
   };
 
-  // Handle password submission - UPDATED to check login after password verification
+  if (!showUsernamePrompt) return null;
+
+  return (
+    <ModalOverlay>
+      <UsernameModal isRTL={getLanguageDirection(language as "en") === "rtl"}>
+        <UsernameTitle>
+          {t('Enter Username')}
+        </UsernameTitle>
+        <UsernameDescription>
+          {t('Username should contain only letters, numbers and hyphens. Example: john-doe2')}
+        </UsernameDescription>
+        <UsernameInput
+          value={usernameInput}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsernameInput(e.target.value)}
+          isRTL={getLanguageDirection(language as "en") === "rtl"}
+        />
+        {usernameError && <UsernameError>{usernameError}</UsernameError>}
+        <UsernameButton
+          disabled={isSubmittingUsername}
+          onClick={() => {
+            if (!validateUsername(usernameInput)) {
+              usernameManager.setUsernameError(t('Username must contain only letters, numbers, and hyphens.'));
+              return;
+            }
+            submitUsername(usernameInput, handleSuccessfulUsernameUpdate);
+          }}
+        >
+          {t('Select Username')}
+        </UsernameButton>
+        {showAltButton && (
+          <UsernameAltButton
+            disabled={isSubmittingUsername}
+            onClick={() => appendRandomDigits(handleSuccessfulUsernameUpdate)}
+          >
+            {t('Add Random Digits to Username')}
+          </UsernameAltButton>
+        )}
+      </UsernameModal>
+    </ModalOverlay>
+  );
+};
+
+// Media Item Component
+const MediaItem: React.FC<{
+  item: any;
+  index: number;
+  isSelectionMode: boolean;
+  isSelected: boolean;
+  toggleItemSelection: (index: number, event: React.MouseEvent) => void;
+  openFullscreenView: (index: number) => void;
+  showWatermark: boolean;
+  ownerName: string;
+}> = ({ 
+  item, 
+  index, 
+  isSelectionMode, 
+  isSelected, 
+  toggleItemSelection, 
+  openFullscreenView, 
+  showWatermark,
+  ownerName
+}) => {
+  return (
+    <div 
+      key={index} 
+      style={{ 
+        position: 'relative',
+        border: isSelectionMode && isSelected ? '3px solid #006adc' : undefined,
+        borderRadius: '8px',
+        overflow: 'hidden',
+        boxShadow: isSelectionMode && isSelected ? '0 0 0 3px rgba(0, 106, 220, 0.3)' : undefined
+      }}
+      onClick={(e: React.MouseEvent) => isSelectionMode ? 
+        toggleItemSelection(index, e) : 
+        openFullscreenView(index)}
+    >
+      {isSelectionMode && (
+        <SelectionCheckbox 
+          isSelected={isSelected}
+          onClick={(e: React.MouseEvent) => toggleItemSelection(index, e)}
+        >
+          {isSelected && (
+            <Checkmark>✓</Checkmark>
+          )}
+        </SelectionCheckbox>
+      )}
+      
+      {item.type === 'image' ? (
+        <LazyImage 
+          src={item.url}
+          thumbnailSrc={item.thumbnailUrl}
+          alt={`Album image ${index + 1}`}
+          loadFullResolution={false}
+          onFullResolutionLoaded={() => {}}
+          onClick={() => isSelectionMode ? undefined : openFullscreenView(index)}
+          showWatermark={showWatermark}
+        />
+      ) : (
+        <VideoThumbnail 
+          thumbnailUrl={item.thumbnailUrl || ''} 
+          videoUrl={item.url} 
+          duration={item.duration || '0:00'} 
+          index={index}
+          onFullResolutionLoaded={() => {}}
+          onClick={() => isSelectionMode ? undefined : openFullscreenView(index)}
+          showWatermark={showWatermark}
+        />
+      )}
+      
+      {/* Display owner badge if owner name exists */}
+      {ownerName && (
+        <OwnerBadge>{ownerName}</OwnerBadge>
+      )}
+    </div>
+  );
+};
+
+// Media Grid Component
+const AlbumMediaGrid: React.FC<{
+  isLoading: boolean;
+  error: string | null;
+  albumData: AlbumData | null;
+  columns: string;
+  shouldShowContent: () => boolean;
+  shouldShowWatermark: () => boolean;
+  isSelectionMode: boolean;
+  selectedItems: Set<number>;
+  toggleItemSelection: (index: number, event: React.MouseEvent) => void;
+  openFullscreenView: (index: number) => void;
+  t: (key: string) => string;
+}> = ({
+  isLoading,
+  error,
+  albumData,
+  columns,
+  shouldShowContent,
+  shouldShowWatermark,
+  isSelectionMode,
+  selectedItems,
+  toggleItemSelection,
+  openFullscreenView,
+  t
+}) => {
+  if (isLoading) {
+    return (
+      <LoadingMessage id="loading-message">
+        {t('Loading album content...')}
+      </LoadingMessage>
+    );
+  }
+  
+  if (error) {
+    return <ErrorMessage>{error}</ErrorMessage>;
+  }
+  
+  if (!shouldShowContent()) {
+    return (
+      <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '40px 0' }}>
+        <ErrorMessage>{t('Enter the password to view album contents')}</ErrorMessage>
+      </div>
+    );
+  }
+  
+  if (!albumData || albumData.mediaItems.length === 0) {
+    return <ErrorMessage>{t('No media found in this album')}</ErrorMessage>;
+  }
+  
+  return (
+    <MediaGrid id="media-grid" columns={columns}>
+      {albumData.mediaItems.map((item, index) => {
+        // Restore the ownerName extraction from the contacts map
+        const ownerName = item.ownerId && albumData.contacts[item.ownerId] 
+          ? albumData.contacts[item.ownerId] 
+          : '';
+        
+        const isSelected = selectedItems.has(index);
+        const showWatermark = shouldShowWatermark();
+        
+        return (
+          <MediaItem
+            key={index}
+            item={item}
+            index={index}
+            isSelectionMode={isSelectionMode}
+            isSelected={isSelected}
+            toggleItemSelection={toggleItemSelection}
+            openFullscreenView={openFullscreenView}
+            showWatermark={showWatermark}
+            ownerName={ownerName}
+          />
+        );
+      })}
+    </MediaGrid>
+  );
+};
+
+// Album Header Component
+const AlbumHeader: React.FC<{
+  t: (key: string) => string;
+  isSelectionMode: boolean;
+  selectedItems: Set<number>;
+  shareSelection: () => void;
+  cancelSelection: () => void;
+  createSubalbum: () => void;
+  showingEnterPassword: () => boolean;
+  promptForPassword: () => void;
+  passwordPolicy: PasswordPolicyEnum | undefined;
+  isAuthorized: boolean;
+  addPhotosToAlbum: () => void;
+  saveAlbumDirectly: () => void;
+  handleDownloadPhotos: () => void;
+  handleCopyLink: () => void;
+  handlePublicProfileToggle: () => void;
+  isOnPublicProfile: boolean;
+  albumData: AlbumData | null;
+  columns: string;
+  changeColumns: (value: string) => void;
+}> = ({
+  t,
+  isSelectionMode,
+  selectedItems,
+  shareSelection,
+  cancelSelection,
+  createSubalbum,
+  showingEnterPassword,
+  promptForPassword,
+  passwordPolicy,
+  isAuthorized,
+  addPhotosToAlbum,
+  saveAlbumDirectly,
+  handleDownloadPhotos,
+  handleCopyLink,
+  handlePublicProfileToggle,
+  isOnPublicProfile,
+  albumData,
+  columns,
+  changeColumns
+}) => {
+  return (
+    <Header>
+      <HeaderContent>
+        <HeaderControlsWithFullWidth>
+          {isSelectionMode ? (
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <ActionButton 
+                onClick={shareSelection} 
+                disabled={selectedItems.size === 0}
+                style={{ 
+                  opacity: selectedItems.size === 0 ? 0.5 : 1,
+                  backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
+                  color: selectedItems.size > 0 ? 'white' : undefined,
+                }}
+              >
+                {t('Create Sub-album')} ({selectedItems.size})
+              </ActionButton>
+              <ActionButton onClick={cancelSelection}>
+                {t('Cancel')}
+              </ActionButton>
+            </div>
+          ) : (
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'space-between',
+              width: '100%', 
+              flexWrap: 'nowrap', 
+              alignItems: 'center'
+            }}>
+              {/* Left side - Create Sub-album button */}
+              <div style={{ flexShrink: 0 }}> 
+              {!showingEnterPassword() && (
+                <CreateAlbumButton onClick={createSubalbum}>
+                  {t('Create Sub-album')}
+                </CreateAlbumButton>
+              )}
+              </div>
+              
+              {/* Right side - actions group */}
+              <div style={{ 
+                marginLeft: 'auto',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                {/* Show password button */}
+                {!isSelectionMode && 
+                !isAuthorized && 
+                passwordPolicy && 
+                passwordPolicy !== 'NoPassword' && (
+                  <ActionButton onClick={promptForPassword}>
+                    {t('Enter Password')}
+                  </ActionButton>
+                )}
+                
+                {/* Show the modified header component with action menu for albums with folderPositionId */}
+                {!isSelectionMode && !(
+                  !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
+                ) && (
+                  albumData?.folderPositionId ? (
+                    <div style={{ 
+                      display: 'flex', 
+                      gap: '10px' 
+                    }}>
+                      <ActionButton
+                        onClick={addPhotosToAlbum}
+                        style={{
+                          backgroundColor: "#4caf50",
+                          color: "white",
+                        }}
+                      >
+                        {t('Add Photos')}
+                      </ActionButton>
+                      
+                      <ActionButton
+                        onClick={handleDownloadPhotos}
+                        style={{
+                          backgroundColor: "#e0e0e0",
+                        }}
+                      >
+                        {t('Download')}
+                      </ActionButton>
+                      
+                      <ActionButton
+                        onClick={handleCopyLink}
+                        style={{
+                          backgroundColor: "#e0e0e0",
+                        }}
+                      >
+                        {t('Copy Link')}
+                      </ActionButton>
+                      
+                      <ActionButton
+                        onClick={handlePublicProfileToggle}
+                        style={{
+                          backgroundColor: isOnPublicProfile ? "#4caf50" : "#e0e0e0",
+                          color: isOnPublicProfile ? "white" : "inherit",
+                        }}
+                      >
+                        {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
+                      </ActionButton>
+                    </div>
+                  ) : (
+                    <ResponsiveHeader 
+                      addPhotosToAlbum={addPhotosToAlbum}
+                      saveAlbum={saveAlbumDirectly}
+                      downloadPhotos={handleDownloadPhotos}
+                      promptForPassword={promptForPassword}
+                      showingEnterPassword={showingEnterPassword()}
+                      passwordPolicy={passwordPolicy}
+                      usingFolderInviteGrantsRightToAddItems={albumData?.usingFolderInviteGrantsRightToAddItems}
+                      t={t} 
+                    />
+                  )
+                )}
+              </div>
+            </div>
+          )}
+        </HeaderControlsWithFullWidth>
+        <RowSelectorContainer>
+          <RowSelectorLabel htmlFor="columns" id="columns-label">
+            <strong>{t('Columns:')}</strong>
+          </RowSelectorLabel>
+          <RowSelectorSelect 
+            id="columns" 
+            value={columns} 
+            onChange={(e) => changeColumns(e.target.value)}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </RowSelectorSelect>
+        </RowSelectorContainer>
+      </HeaderContent>
+    </Header>
+  );
+};
+
+// Contact List Component
+const ContactList: React.FC<{
+  albumData: AlbumData | null;
+  t: (key: string) => string;
+}> = ({ albumData, t }) => {
+  if (!albumData || Object.keys(albumData.contacts).length === 0) return null;
+  
+  return (
+    <div style={{
+      width: '100%',
+      backgroundColor: '#f0f7ff',
+      borderRadius: '8px',
+      padding: '16px',
+      marginBottom: '20px',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      border: '1px solid #d0e1f9'
+    }}>
+      <p style={{
+        margin: '0',
+        fontSize: '15px',
+        color: '#333',
+        textAlign: 'left'
+      }}>
+        {t('Click "Save" to create a memory with ')}
+        <strong>
+          {Object.values(albumData.contacts)
+            .filter(contact => !contact.toString().startsWith('Profile-'))
+            .join(', ')}
+        </strong>
+        {t(' that you can filter for later')}
+      </p>
+    </div>
+  );
+};
+
+// Select Photos Button Component
+const SelectPhotosButton: React.FC<{
+  showSelectPhotosButton: boolean;
+  albumData: AlbumData | null;
+  openFilePicker: () => void;
+  t: (key: string) => string;
+}> = ({ showSelectPhotosButton, albumData, openFilePicker, t }) => {
+  if (!showSelectPhotosButton || !albumData?.usingFolderInviteGrantsRightToAddItems) return null;
+  
+  return (
+    <div style={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      marginBottom: '20px',
+      marginTop: '10px'
+    }}>
+      <button
+        onClick={openFilePicker}
+        style={{
+          backgroundColor: '#007bff',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          padding: '12px 20px',
+          fontWeight: 600,
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          fontSize: '16px',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+        }}
+      >
+        <span>{t('Select Photos To Add To Album')}</span>
+      </button>
+    </div>
+  );
+};
+
+// Album Information Component
+const AlbumInfo: React.FC<{
+  albumData: AlbumData | null;
+  t: (key: string) => string;
+}> = ({ albumData, t }) => {
+  if (!albumData) return null;
+  
+  return (
+    <>
+      {albumData.folderName && albumData.folderName !== t('Photos') && albumData.folderName.trim() !== "" && (
+        <AlbumTitle id="album-title">
+          <AlbumTitleStrong>{albumData.folderName}</AlbumTitleStrong>
+        </AlbumTitle>
+      )}
+      
+      {albumData.folderDescription && albumData.folderDescription.trim() !== "" && (
+        <DescriptionBlock id="description-container">
+          <DescriptionText>{albumData.folderDescription}</DescriptionText>
+        </DescriptionBlock>
+      )}
+    </>
+  );
+};
+
+// Password Protection Message Component
+const PasswordProtectionMessage: React.FC<{
+  isAuthorized: boolean;
+  passwordPolicy: PasswordPolicyEnum | undefined;
+  passwordError: string | null;
+  promptForPassword: () => void;
+  t: (key: string) => string;
+}> = ({ isAuthorized, passwordPolicy, passwordError, promptForPassword, t }) => {
+  if (isAuthorized || passwordPolicy !== 'NotVisible') return null;
+  
+  return (
+    <div style={{ 
+      padding: '20px', 
+      backgroundColor: '#f3f4f6', 
+      borderRadius: '8px',
+      textAlign: 'center',
+      marginBottom: '20px'
+    }}>
+      <h3>{t('This album is password protected')}</h3>
+      <p>{t('Please enter the password to view the contents')}</p>
+      {passwordError && (
+        <div style={{ 
+          color: "#d32f2f", 
+          fontSize: "14px", 
+          margin: "10px 0",
+          padding: "5px",
+          backgroundColor: "rgba(211, 47, 47, 0.1)",
+          borderRadius: "4px"
+        }}>
+          {passwordError}
+        </div>
+      )}
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
+        <ActionButton onClick={promptForPassword}>
+          {t('Enter Password')}
+        </ActionButton>
+      </div>
+    </div>
+  );
+};
+
+// Selection Banner Component
+const SelectionModeBanner: React.FC<{
+  isSelectionMode: boolean;
+  t: (key: string) => string;
+}> = ({ isSelectionMode, t }) => {
+  if (!isSelectionMode) return null;
+  
+  return (
+    <SelectionBanner>
+      <p>{t('Select photos and videos to create a sub-album to share')}</p>
+    </SelectionBanner>
+  );
+};
+
+// ============================
+// Main Photo Album Component
+// ============================
+
+const PhotoAlbumContent: React.FC = () => {
+  // Hooks for i18n
+  const { t, language } = useTranslation();
+  
+  // Custom hooks
+  const fileUpload = useFileUpload();
+  const fullscreenView = useFullscreenView();
+  const selectionMode = useSelectionMode();
+  const passwordProtection = usePasswordProtection();
+  const usernameManager = useUsernameManagement(t);
+  
+  // State
+  const [columns, setColumns] = useState<string>('1');
+  const [albumData, setAlbumData] = useState<AlbumData | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const [folderId, setFolderId] = useState<string | null>(null);
+  
+  // Login and user state
+  const [showInlineOTPLogin, setShowInlineOTPLogin] = useState(false);
+  const [showSelectPhotosButton, setShowSelectPhotosButton] = useState(false);
+  const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
+  const [addPhotosClicked, setAddPhotosClicked] = useState(false);
+  
+  // Destruct from hooks
+  const { 
+    passwordPolicy, setPasswordPolicy, isAuthorized, setIsAuthorized,
+    showPasswordModal, setShowPasswordModal, passwordError, setPasswordError,
+    passwordVerified, setPasswordVerified, pendingSaveAlbum, setPendingSaveAlbum,
+    shouldShowContent, shouldShowWatermark, showingEnterPassword, promptForPassword
+  } = passwordProtection;
+  
+  const {
+    fileInputRef, selectedPhotos, setSelectedPhotos, isUploading, setIsUploading,
+    fileProcessingComplete, setFileProcessingComplete, progressTracker, log
+  } = fileUpload;
+  
+  const {
+    fullscreenItem, openFullscreenView, closeFullscreenView,
+    goToPrevItem, goToNextItem
+  } = fullscreenView;
+  
+  const {
+    isSelectionMode, setIsSelectionMode, selectedItems, toggleItemSelection, cancelSelection
+  } = selectionMode;
+  
+  // Initialize share actions hook
+  const shareActions = useShareActions(albumData, folderId, cognitoUsername, t);
+  
+  // Handle password submission
   const handlePasswordSubmit = async (password: string) => {
     // Clear any previous errors
     setPasswordError(null);
@@ -255,85 +1288,6 @@ const PhotoAlbumContent: React.FC = () => {
       executeAlbumSave();
     }
   };
-  
-  // Function to prompt for password
-  const promptForPassword = () => {
-    setPasswordError(null); // Clear any previous errors
-    setShowPasswordModal(true);
-  };
-
-  // Open fullscreen view for a media item
-  const openFullscreenView = (index: number) => {
-    // Don't open fullscreen view in selection mode
-    if (isSelectionMode) return;
-    
-    // Check if authorized for NotVisible policy
-    if (passwordPolicy === 'NotVisible' && !isAuthorized) {
-      promptForPassword();
-      return;
-    }
-    
-    setFullscreenItem(index);
-    // Pre-load the full resolution of the selected item
-    handleLoadFullResolution(index);
-    
-    // Lock body scroll when fullscreen is open
-    document.body.style.overflow = 'hidden';
-  };
-  
-  // Close fullscreen view
-  const closeFullscreenView = () => {
-    setFullscreenItem(null);
-    // Restore body scroll when fullscreen is closed
-    document.body.style.overflow = '';
-  };
-  
-  // Navigate to previous item in fullscreen view
-  const goToPrevItem = () => {
-    if (fullscreenItem !== null && fullscreenItem > 0) {
-      setFullscreenItem(fullscreenItem - 1);
-      handleLoadFullResolution(fullscreenItem - 1);
-    }
-  };
-  
-  // Navigate to next item in fullscreen view
-  const goToNextItem = () => {
-    if (fullscreenItem !== null && albumData && fullscreenItem < albumData.mediaItems.length - 1) {
-      setFullscreenItem(fullscreenItem + 1);
-      handleLoadFullResolution(fullscreenItem + 1);
-    }
-  };
-
-  // Function to handle full resolution loading for an item
-  const handleLoadFullResolution = (index: number) => {
-    setLoadingFullResolution(prev => ({
-      ...prev,
-      [index]: true
-    }));
-  };
-  
-  // Function to mark full resolution as loaded
-  const handleFullResolutionLoaded = (index: number) => {
-    if (albumData) {
-      const updatedMediaItems = [...albumData.mediaItems];
-      updatedMediaItems[index] = {
-        ...updatedMediaItems[index],
-        loaded: true
-      };
-      
-      setAlbumData({
-        ...albumData,
-        mediaItems: updatedMediaItems
-      });
-      
-      // Clear loading state
-      setLoadingFullResolution(prev => {
-        const updated = { ...prev };
-        delete updated[index];
-        return updated;
-      });
-    }
-  };
 
   // Change columns
   const changeColumns = (value: string) => {
@@ -379,7 +1333,7 @@ const PhotoAlbumContent: React.FC = () => {
     openFilePicker();
   };
 
-  // Handler for successful login that reloads the page - UPDATED for password verification
+  // Handler for successful login
   const handleLoginSuccess = async () => {
     // Close the login modal first
     setShowInlineOTPLogin(false);
@@ -420,7 +1374,7 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Handle file selection - Updated to show progress and ensure processing completes before navigation
+  // Handle file selection
   const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     if (!files.length) return;
@@ -476,17 +1430,17 @@ const PhotoAlbumContent: React.FC = () => {
       
       // Set up an interval to update the UI while processing continues
       const progressUpdateInterval = setInterval(() => {
-        updateProgressTracker(selectedPhotos, setProgressTracker);
+        updateProgressTracker(selectedPhotos, fileUpload.setProgressTracker);
       }, 500);
       
-      // Use the processFilesBeforeUploadingToS3 function - this processes the files and uploads them to S3 temp
+      // Use the processFilesBeforeUploadingToS3 function
       const processedPhotos = await processFilesBeforeUploadingToS3(files, username, updatePhotoStatus, log);
       
       // Clear the interval once processing is complete
       clearInterval(progressUpdateInterval);
       
       // Make sure we have a final progress update
-      updateProgressTracker(processedPhotos, setProgressTracker);
+      updateProgressTracker(processedPhotos, fileUpload.setProgressTracker);
       
       // Save to localStorage - ONLY the keys and metadata, not the file data
       localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos));
@@ -515,179 +1469,6 @@ const PhotoAlbumContent: React.FC = () => {
     } finally {
       // Clear the file input to allow selecting the same files again
       if (e.target) e.target.value = "";
-    }
-  };
-
-  // Username validation
-  const validateUsername = (username: string) => {
-    const isValid = /^[a-zA-Z0-9-]+$/.test(username);
-    console.log(`Username validation for '${username}': ${isValid}`);
-    return isValid;
-  };
-
-  // Submit username
-  const submitUsername = async (proposedName: string) => {
-    console.log(`Submitting username: ${proposedName}`);
-    setIsSubmittingUsername(true);
-    setUsernameError("");
-
-    const token = await checkLoginWithRefresh();
-    if (!token) {
-      setUsernameError(t('Authentication error. Please try again.'));
-      setIsSubmittingUsername(false);
-      return;
-    }
-
-    const mutation = `
-      mutation MyMutation($savePublicProfileDisplayNameInput: SavePublicProfileDisplayNameInput) {
-        changeMyAccountItem(savePublicProfileDisplayNameInput: $savePublicProfileDisplayNameInput) {
-          ... on Profile {
-            anyDisplayName
-          }
-        }
-      }
-    `;
-
-    const variables = {
-      savePublicProfileDisplayNameInput: {
-        anyDisplayName: proposedName,
-      },
-    };
-
-    try {
-      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ query: mutation, variables }),
-      });
-
-      const json = await res.json();
-      const newName = json?.data?.changeMyAccountItem?.anyDisplayName;
-
-      if (newName) {
-        handleSuccessfulUsernameUpdate(newName);
-      } else {
-        throw new Error("Username taken");
-      }
-    } catch (e) {
-      console.error(`Error submitting username: ${e}`);
-      setUsernameError(t('Username is already taken. Please try a different one.'));
-      setShowAltButton(true);
-      setIsSubmittingUsername(false);
-    }
-  };
-
-  // Handle successful username update
-  const handleSuccessfulUsernameUpdate = (newName: string) => {
-    console.log(`Username successfully updated to: ${newName}`);
-    localStorage.setItem("publicUsername", newName);
-    setShowUsernamePrompt(false);
-    
-    // Automatically proceed with saving the album
-    executeAlbumSave();
-  };
-
-  // Add random digits to username
-  const appendRandomDigits = () => {
-    const digits = Math.floor(100000 + Math.random() * 900000).toString();
-    const modified = `${usernameInput}${digits}`;
-    console.log(`Appending random digits to username: ${usernameInput} -> ${modified}`);
-    setUsernameInput(modified);
-    submitUsername(modified);
-  };
-
-  // Helper function to update save progress
-  const updateSaveProgress = (
-    progress: number, 
-    textElement: HTMLElement,
-    progressBar: HTMLElement,
-    message: string,
-    isError: boolean = false
-  ) => {
-    if (progressBar) {
-      progressBar.style.width = `${progress}%`;
-      if (isError) {
-        progressBar.style.backgroundColor = '#f44336';
-      }
-    }
-    
-    if (textElement) {
-      textElement.textContent = message;
-      if (isError) {
-        textElement.style.color = '#f44336';
-      }
-    }
-  };
-
-  // Helper function to show detailed error with retry button
-  const showDetailedError = (
-    errorElement: HTMLElement, 
-    errorMessage: string, 
-    textElement: HTMLElement, 
-    progressBar: HTMLElement
-  ) => {
-    if (progressBar) {
-      progressBar.style.width = '100%';
-      progressBar.style.backgroundColor = '#f44336';
-    }
-    
-    if (textElement) {
-      textElement.textContent = t('Error saving album');
-      textElement.style.color = '#f44336';
-    }
-    
-    // Show detailed error message
-    if (errorElement) {
-      errorElement.textContent = errorMessage;
-      errorElement.style.display = 'block';
-      
-      // Add retry button
-      const retryButton = document.createElement('button');
-      retryButton.textContent = t('Retry');
-      retryButton.style.marginTop = '15px';
-      retryButton.style.padding = '8px 16px';
-      retryButton.style.backgroundColor = '#2196f3';
-      retryButton.style.color = 'white';
-      retryButton.style.border = 'none';
-      retryButton.style.borderRadius = '4px';
-      retryButton.style.cursor = 'pointer';
-      retryButton.onclick = function() {
-        // Remove the modal and try again
-        const modalElement = errorElement.closest('div[style*="position: fixed"]');
-        if (modalElement && modalElement.parentNode) {
-          modalElement.parentNode.removeChild(modalElement);
-        }
-        // Give a slight delay before retrying
-        setTimeout(saveAlbumDirectly, 500);
-      };
-      
-      // Add close button
-      const closeButton = document.createElement('button');
-      closeButton.textContent = t('Close');
-      closeButton.style.marginTop = '15px';
-      closeButton.style.marginLeft = '10px';
-      closeButton.style.padding = '8px 16px';
-      closeButton.style.backgroundColor = '#757575';
-      closeButton.style.color = 'white';
-      closeButton.style.border = 'none';
-      closeButton.style.borderRadius = '4px';
-      closeButton.style.cursor = 'pointer';
-      closeButton.onclick = function() {
-        const modalElement = errorElement.closest('div[style*="position: fixed"]');
-        if (modalElement && modalElement.parentNode) {
-          modalElement.parentNode.removeChild(modalElement);
-        }
-      };
-      
-      // Add buttons container
-      const buttonsContainer = document.createElement('div');
-      buttonsContainer.appendChild(retryButton);
-      buttonsContainer.appendChild(closeButton);
-      
-      errorElement.parentNode?.appendChild(buttonsContainer);
     }
   };
 
@@ -799,7 +1580,6 @@ const PhotoAlbumContent: React.FC = () => {
         profileIds: [`${username}_____Public____Profile`],
         folderPositionSelectedTagInputs: [],
         folderPositionPoints: 1,
-        // No need for acceptedFileReferenceIds or hiddenFileReferenceIds since we're using changeFiles0
       };
       
       console.log("Folder position input:", folderPositionInput);
@@ -928,8 +1708,8 @@ const PhotoAlbumContent: React.FC = () => {
     const publicUsername = localStorage.getItem("publicUsername");
     if (publicUsername?.startsWith("Profile-")) {
       console.log("Public username starts with 'Profile-', showing username prompt");
-      setUsernameInput(publicUsername);
-      setShowUsernamePrompt(true);
+      usernameManager.setUsernameInput(publicUsername);
+      usernameManager.setShowUsernamePrompt(true);
       return;
     }
     
@@ -948,31 +1728,10 @@ const PhotoAlbumContent: React.FC = () => {
     // Toggle selection mode
     setIsSelectionMode(!isSelectionMode);
     // Clear any existing selections when toggling
-    setSelectedItems(new Set());
+    selectedItems.clear();
   };
   
-  // Toggle item selection
-  const toggleItemSelection = (index: number, event: React.MouseEvent) => {
-    event.stopPropagation(); // Prevent opening fullscreen view
-    
-    setSelectedItems(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(index)) {
-        newSet.delete(index);
-      } else {
-        newSet.add(index);
-      }
-      return newSet;
-    });
-  };
-  
-  // Cancel selection mode
-  const cancelSelection = () => {
-    setIsSelectionMode(false);
-    setSelectedItems(new Set());
-  };
-  
-  // Share the selected items - UPDATED to check login first
+  // Share the selected items
   const shareSelection = async () => {
     if (selectedItems.size === 0) {
       alert(t('Please select at least one item to share.'));
@@ -1096,7 +1855,7 @@ const PhotoAlbumContent: React.FC = () => {
           setPasswordPolicy(data.passwordPolicy as PasswordPolicyEnum);
           
           // If NoPassword policy or the user has a folderPosition, automatically set as authorized
-          if (data.passwordPolicy === 'NoPassword' || data.hasFolderPosition) {
+          if (data.passwordPolicy === 'NoPassword' || data.folderPositionId) {
             setIsAuthorized(true);
           }
         }
@@ -1145,6 +1904,24 @@ const PhotoAlbumContent: React.FC = () => {
     getUserInfo();
   }, []);
 
+  // Effect to navigate to save-album page after file processing is complete
+  useEffect(() => {
+    if (fileProcessingComplete && selectedPhotos.length > 0) {
+      // Show a completion message in the UI
+      const successCount = selectedPhotos.filter(photo => photo.status === 'complete').length;
+      const errorCount = selectedPhotos.filter(photo => photo.status === 'error').length;
+      
+      console.log(`Upload complete: ${successCount} successful, ${errorCount} failed`);
+      
+      // Get the necessary data for the redirect
+      if (folderId) {
+        window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
+      } else {
+        window.location.href = "/save-album.html";
+      }
+    }
+  }, [fileProcessingComplete, selectedPhotos.length, folderId]);
+
   // Set page title
   useEffect(() => {
     if (albumData?.folderName) {
@@ -1159,156 +1936,42 @@ const PhotoAlbumContent: React.FC = () => {
     <Body>
       <GlobalStyle />
       
-      <Header>
-        <HeaderContent>
-          <HeaderControlsWithFullWidth>
-            {isSelectionMode ? (
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <ActionButton 
-                  onClick={shareSelection} 
-                  disabled={selectedItems.size === 0}
-                  style={{ 
-                    opacity: selectedItems.size === 0 ? 0.5 : 1,
-                    backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
-                    color: selectedItems.size > 0 ? 'white' : undefined,
-                  }}
-                >
-                  {t('Create Sub-album')} ({selectedItems.size})
-                </ActionButton>
-                <ActionButton onClick={cancelSelection}>
-                  {t('Cancel')}
-                </ActionButton>
-              </div>
-            ) : (
-              <div style={{ 
-                display: 'flex', 
-                justifyContent: 'space-between', // This ensures maximum space between left and right groups
-                width: '100%', 
-                flexWrap: 'nowrap', 
-                alignItems: 'center'
-              }}>
-                {/* Left side - Create Sub-album button */}
-                <div style={{ flexShrink: 0 }}> 
-                {!showingEnterPassword() && (
-                  <CreateAlbumButton onClick={createSubalbum}>
-                    {t('Create Sub-album')}
-                  </CreateAlbumButton>
-                )}
-                </div>
-                
-                {/* Right side - actions group */}
-                <div style={{ 
-                  marginLeft: 'auto', // Push all the way to the right
-                  display: 'flex',
-                  alignItems: 'center'
-                }}>
-                  {/* Show password button */}
-                  {!isSelectionMode && 
-                  !isAuthorized && 
-                  passwordPolicy && 
-                  passwordPolicy !== 'NoPassword' && (
-                    <ActionButton onClick={promptForPassword}>
-                      {t('Enter Password')}
-                    </ActionButton>
-                  )}
-                  
-                  {/* Show the responsive header for other buttons */}
-                  {!isSelectionMode && !(
-                    !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
-                  ) && (
-                    <ResponsiveHeader 
-                      addPhotosToAlbum={addPhotosToAlbum}
-                      saveAlbum={saveAlbumDirectly} // Use the direct save method instead
-                      downloadPhotos={handleDownloadPhotos}
-                      promptForPassword={promptForPassword}
-                      showingEnterPassword={showingEnterPassword()}
-                      passwordPolicy={passwordPolicy}
-                      usingFolderInviteGrantsRightToAddItems={albumData?.usingFolderInviteGrantsRightToAddItems}
-                      t={t} 
-                    />
-                  )}
-                </div>
-              </div>
-            )}
-          </HeaderControlsWithFullWidth>
-          <RowSelectorContainer>
-            <RowSelectorLabel htmlFor="columns" id="columns-label">
-              <strong>{t('Columns:')}</strong>
-            </RowSelectorLabel>
-            <RowSelectorSelect 
-              id="columns" 
-              value={columns} 
-              onChange={(e) => changeColumns(e.target.value)}
-            >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </RowSelectorSelect>
-          </RowSelectorContainer>
-        </HeaderContent>
-      </Header>
+      <AlbumHeader
+        t={t}
+        isSelectionMode={isSelectionMode}
+        selectedItems={selectedItems}
+        shareSelection={shareSelection}
+        cancelSelection={cancelSelection}
+        createSubalbum={createSubalbum}
+        showingEnterPassword={showingEnterPassword}
+        promptForPassword={promptForPassword}
+        passwordPolicy={passwordPolicy}
+        isAuthorized={isAuthorized}
+        addPhotosToAlbum={addPhotosToAlbum}
+        saveAlbumDirectly={saveAlbumDirectly}
+        handleDownloadPhotos={handleDownloadPhotos}
+        handleCopyLink={() => shareActions.setShowingCopyLinkAlert(true)}
+        handlePublicProfileToggle={shareActions.handlePublicProfileToggle}
+        isOnPublicProfile={shareActions.isOnPublicProfile}
+        albumData={albumData}
+        columns={columns}
+        changeColumns={changeColumns}
+      />
 
       <MediaContainer id="media-container">
-        {/* Add a proper container for the "Select Photos" button when localStorage flag is set */}
-        {showSelectPhotosButton && albumData?.usingFolderInviteGrantsRightToAddItems && (
-          <div style={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            marginBottom: '20px',
-            marginTop: '10px'
-          }}>
-            <button
-              onClick={openFilePicker}
-              style={{
-                backgroundColor: '#007bff',
-                color: 'white',
-                border: 'none',
-                borderRadius: '6px',
-                padding: '12px 20px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                fontSize: '16px',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-              }}
-            >
-              <span>{t('Select Photos To Add To Album')}</span>
-            </button>
-          </div>
-        )}
+        {/* Select Photos Button */}
+        <SelectPhotosButton 
+          showSelectPhotosButton={showSelectPhotosButton}
+          albumData={albumData}
+          openFilePicker={openFilePicker}
+          t={t}
+        />
         
-        {/* New Contact List Box - showing contacts that user can share memories with */}
-        {albumData && Object.keys(albumData.contacts).length > 0 && (
-          <div style={{
-            width: '100%',
-            backgroundColor: '#f0f7ff',
-            borderRadius: '8px',
-            padding: '16px',
-            marginBottom: '20px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-            border: '1px solid #d0e1f9'
-          }}>
-            <p style={{
-              margin: '0',
-              fontSize: '15px',
-              color: '#333',
-              textAlign: 'left'
-            }}>
-              {t('Click "Save" to create a memory with ')}
-              <strong>
-                {Object.values(albumData.contacts)
-                  .filter(contact => !contact.toString().startsWith('Profile-'))
-                  .join(', ')}
-              </strong>
-              {t(' that you can filter for later')}
-            </p>
-          </div>
-        )}
+        {/* Contact List */}
+        <ContactList 
+          albumData={albumData}
+          t={t}
+        />
         
         {/* Enhanced Upload Progress Component with more detailed status */}
         {isUploading && (
@@ -1352,134 +2015,40 @@ const PhotoAlbumContent: React.FC = () => {
         )}
         
         {/* Password protection message */}
-        {!isAuthorized && passwordPolicy === 'NotVisible' && (
-          <div style={{ 
-            padding: '20px', 
-            backgroundColor: '#f3f4f6', 
-            borderRadius: '8px',
-            textAlign: 'center',
-            marginBottom: '20px'
-          }}>
-            <h3>{t('This album is password protected')}</h3>
-            <p>{t('Please enter the password to view the contents')}</p>
-            {passwordError && (
-              <div style={{ 
-                color: "#d32f2f", 
-                fontSize: "14px", 
-                margin: "10px 0",
-                padding: "5px",
-                backgroundColor: "rgba(211, 47, 47, 0.1)",
-                borderRadius: "4px"
-              }}>
-                {passwordError}
-              </div>
-            )}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
-              <ActionButton onClick={promptForPassword}>
-                {t('Enter Password')}
-              </ActionButton>
-            </div>
-          </div>
-        )}
+        <PasswordProtectionMessage
+          isAuthorized={isAuthorized}
+          passwordPolicy={passwordPolicy}
+          passwordError={passwordError}
+          promptForPassword={promptForPassword}
+          t={t}
+        />
         
-        {isSelectionMode && (
-          <SelectionBanner>
-            <p>{t('Select photos and videos to create a sub-album to share')}</p>
-          </SelectionBanner>
-        )}
+        {/* Selection Mode Banner */}
+        <SelectionModeBanner
+          isSelectionMode={isSelectionMode}
+          t={t}
+        />
       
-        {albumData?.folderName && albumData.folderName !== t('Photos') && albumData.folderName.trim() !== "" && (
-          <AlbumTitle id="album-title">
-            <AlbumTitleStrong>{albumData.folderName}</AlbumTitleStrong>
-          </AlbumTitle>
-        )}
+        {/* Album Title and Description */}
+        <AlbumInfo
+          albumData={albumData}
+          t={t}
+        />
         
-        {albumData?.folderDescription && albumData.folderDescription.trim() !== "" ? (
-          <DescriptionBlock id="description-container">
-            <DescriptionText>{albumData.folderDescription}</DescriptionText>
-          </DescriptionBlock>
-        ) : null}
-        
-        <MediaGrid id="media-grid" columns={columns}>
-          {isLoading ? (
-            <LoadingMessage id="loading-message">
-              {t('Loading album content...')}
-            </LoadingMessage>
-          ) : error ? (
-            <ErrorMessage>{error}</ErrorMessage>
-          ) : !shouldShowContent() ? (
-            // Empty state for protected content
-            <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '40px 0' }}>
-              <ErrorMessage>{t('Enter the password to view album contents')}</ErrorMessage>
-            </div>
-          ) : albumData && albumData.mediaItems.length === 0 ? (
-            <ErrorMessage>{t('No media found in this album')}</ErrorMessage>
-          ) : (
-            albumData?.mediaItems.map((item, index) => {
-              // Restore the ownerName extraction from the contacts map
-              const ownerName = item.ownerId && albumData.contacts[item.ownerId] 
-                ? albumData.contacts[item.ownerId] 
-                : '';
-              
-              const isSelected = selectedItems.has(index);
-              const showWatermark = shouldShowWatermark();
-              
-              return (
-                <div 
-                  key={index} 
-                  style={{ 
-                    position: 'relative',
-                    border: isSelectionMode && isSelected ? '3px solid #006adc' : undefined,
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    boxShadow: isSelectionMode && isSelected ? '0 0 0 3px rgba(0, 106, 220, 0.3)' : undefined
-                  }}
-                  onClick={(e: React.MouseEvent) => isSelectionMode ? 
-                    toggleItemSelection(index, e) : 
-                    openFullscreenView(index)}
-                >
-                  {isSelectionMode && (
-                    <SelectionCheckbox 
-                      isSelected={isSelected}
-                      onClick={(e: React.MouseEvent) => toggleItemSelection(index, e)}
-                    >
-                      {isSelected && (
-                        <Checkmark>✓</Checkmark>
-                      )}
-                    </SelectionCheckbox>
-                  )}
-                  
-                  {item.type === 'image' ? (
-                    <LazyImage 
-                      src={item.url}
-                      thumbnailSrc={item.thumbnailUrl}
-                      alt={`Album image ${index + 1}`}
-                      loadFullResolution={loadingFullResolution[index] || false}
-                      onFullResolutionLoaded={() => handleFullResolutionLoaded(index)}
-                      onClick={() => isSelectionMode ? undefined : openFullscreenView(index)}
-                      showWatermark={showWatermark}
-                    />
-                  ) : (
-                    <VideoThumbnail 
-                      thumbnailUrl={item.thumbnailUrl || ''} 
-                      videoUrl={item.url} 
-                      duration={item.duration || '0:00'} 
-                      index={index}
-                      onFullResolutionLoaded={() => handleFullResolutionLoaded(index)}
-                      onClick={() => isSelectionMode ? undefined : openFullscreenView(index)}
-                      showWatermark={showWatermark}
-                    />
-                  )}
-                  
-                  {/* Display owner badge if owner name exists */}
-                  {ownerName && (
-                    <OwnerBadge>{ownerName}</OwnerBadge>
-                  )}
-                </div>
-              );
-            })
-          )}
-        </MediaGrid>
+        {/* Media Grid */}
+        <AlbumMediaGrid
+          isLoading={isLoading}
+          error={error}
+          albumData={albumData}
+          columns={columns}
+          shouldShowContent={shouldShowContent}
+          shouldShowWatermark={shouldShowWatermark}
+          isSelectionMode={isSelectionMode}
+          selectedItems={selectedItems}
+          toggleItemSelection={toggleItemSelection}
+          openFullscreenView={openFullscreenView}
+          t={t}
+        />
       </MediaContainer>
       
       {/* Password Modal with error display */}
@@ -1525,7 +2094,7 @@ const PhotoAlbumContent: React.FC = () => {
           index={fullscreenItem}
           onClose={closeFullscreenView}
           onPrev={goToPrevItem}
-          onNext={goToNextItem}
+          onNext={() => goToNextItem(albumData.mediaItems.length)}
           hasNext={fullscreenItem < albumData.mediaItems.length - 1}
           hasPrev={fullscreenItem > 0}
           albumName={albumData.folderName}
@@ -1534,44 +2103,32 @@ const PhotoAlbumContent: React.FC = () => {
       )}
       
       {/* Username Prompt Modal */}
-      {showUsernamePrompt && (
-        <ModalOverlay>
-          <UsernameModal isRTL={getLanguageDirection(language) === "rtl"}>
-            <UsernameTitle>
-              {t('Enter Username')}
-            </UsernameTitle>
-            <UsernameDescription>
-              {t('Username should contain only letters, numbers and hyphens. Example: john-doe2')}
-            </UsernameDescription>
-            <UsernameInput
-              value={usernameInput}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsernameInput(e.target.value)}
-              isRTL={getLanguageDirection(language) === "rtl"}
-            />
-            {usernameError && <UsernameError>{usernameError}</UsernameError>}
-            <UsernameButton
-              disabled={isSubmittingUsername}
-              onClick={() => {
-                if (!validateUsername(usernameInput)) {
-                  setUsernameError(t('Username must contain only letters, numbers, and hyphens.'));
-                  return;
-                }
-                submitUsername(usernameInput);
-              }}
-            >
-              {t('Select Username')}
-            </UsernameButton>
-            {showAltButton && (
-              <UsernameAltButton
-                disabled={isSubmittingUsername}
-                onClick={appendRandomDigits}
-              >
-                {t('Add Random Digits to Username')}
-              </UsernameAltButton>
-            )}
-          </UsernameModal>
-        </ModalOverlay>
-      )}
+      <UsernamePrompt
+        t={t}
+        language={language}
+        usernameManager={usernameManager}
+        onSuccess={(_) => {
+          // Automatically proceed with saving the album
+          executeAlbumSave();
+        }}
+      />
+      
+      {/* Copy Link Modals */}
+      <CopyLinkModal
+        isOpen={shareActions.showingCopyLinkAlert}
+        onClose={() => shareActions.setShowingCopyLinkAlert(false)}
+        inviteLink={shareActions.generateInviteLink()}
+        onCopy={shareActions.handleCopy}
+        t={t}
+        isRTL={getLanguageDirection(language) === "rtl"}
+      />
+      
+      <ConfirmationModal
+        isOpen={shareActions.showingCopiedLinkAlert}
+        onClose={() => shareActions.setShowingCopiedLinkAlert(false)}
+        t={t}
+        isRTL={getLanguageDirection(language) === "rtl"}
+      />
     </Body>
   );
 };
