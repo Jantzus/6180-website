@@ -85,6 +85,8 @@ const PhotoAlbumContent: React.FC = () => {
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
   const [showPasswordModal, setShowPasswordModal] = useState<boolean>(false);
   const [passwordError, setPasswordError] = useState<string | null>(null);
+  // Add state to track password verification
+  const [passwordVerified, setPasswordVerified] = useState<boolean>(false);
   
   // Added state for tracking which items are loading in full resolution
   const [loadingFullResolution, setLoadingFullResolution] = useState<Record<number, boolean>>({});
@@ -189,8 +191,8 @@ const PhotoAlbumContent: React.FC = () => {
     return !isAuthorized && passwordPolicy !== undefined && passwordPolicy !== 'NoPassword';
   };
 
-  // Handle password submission
-  const handlePasswordSubmit = (password: string) => {
+  // Handle password submission - UPDATED to check login after password verification
+  const handlePasswordSubmit = async (password: string) => {
     // Clear any previous errors
     setPasswordError(null);
     
@@ -223,7 +225,24 @@ const PhotoAlbumContent: React.FC = () => {
       return;
     }
     
-    // Success case
+    // Password is correct, now check login status
+    const token = await checkLoginWithoutRedirect();
+    
+    if (!token) {
+      // Password is correct but user is not logged in
+      // Close password modal and show login modal
+      setShowPasswordModal(false);
+      
+      // Set a flag to mark that password verification was successful
+      // but login is still needed
+      setPasswordVerified(true);
+      
+      // Show the inline login modal
+      setShowInlineOTPLogin(true);
+      return;
+    }
+    
+    // User has entered correct password and is already logged in
     setIsAuthorized(true);
     setShowPasswordModal(false);
     setPasswordError(null);
@@ -360,7 +379,7 @@ const PhotoAlbumContent: React.FC = () => {
     openFilePicker();
   };
 
-  // Handler for successful login that reloads the page
+  // Handler for successful login that reloads the page - UPDATED for password verification
   const handleLoginSuccess = async () => {
     // Close the login modal first
     setShowInlineOTPLogin(false);
@@ -372,6 +391,12 @@ const PhotoAlbumContent: React.FC = () => {
         const payload = JSON.parse(atob(token.split('.')[1]));
         const username = payload["cognito:username"];
         setCognitoUsername(username);
+        
+        // If password was verified before login, mark as authorized now
+        if (passwordVerified) {
+          setIsAuthorized(true);
+          setPasswordVerified(false); // Reset the flag
+        }
         
         // Only set the timestamp if the user clicked Add Photos and needed to log in
         if (addPhotosClicked) {
@@ -389,11 +414,6 @@ const PhotoAlbumContent: React.FC = () => {
           return;
         }
         
-        // Add a slight delay before reloading to ensure state updates are complete
-        setTimeout(() => {
-          // Reload the current page to refresh with the authenticated state
-          window.location.reload();
-        }, 500);
       } catch (err) {
         console.error("Failed to decode token", err);
       }
@@ -1057,7 +1077,7 @@ const PhotoAlbumContent: React.FC = () => {
       
       const parts = id.split('_');
       let formattedId = parts[parts.length - 1].replace(/-/g, '');
-
+  
       // Make sure it's exactly 32 characters before formatting
       if (formattedId.length === 32) {
         formattedId = formatUUID(formattedId);
@@ -1065,7 +1085,7 @@ const PhotoAlbumContent: React.FC = () => {
       } else {
         console.error('Invalid UUID format: must be 32 characters after removing dashes');
       }
-
+  
       const data = await fetchFolder(formattedId, setFolderId);
       
       if (data) {
@@ -1075,8 +1095,8 @@ const PhotoAlbumContent: React.FC = () => {
         if (data.passwordPolicy) {
           setPasswordPolicy(data.passwordPolicy as PasswordPolicyEnum);
           
-          // If NoPassword policy, automatically set as authorized
-          if (data.passwordPolicy === 'NoPassword') {
+          // If NoPassword policy or the user has a folderPosition, automatically set as authorized
+          if (data.passwordPolicy === 'NoPassword' || data.hasFolderPosition) {
             setIsAuthorized(true);
           }
         }
@@ -1084,7 +1104,7 @@ const PhotoAlbumContent: React.FC = () => {
       
       setIsLoading(false);
     };
-
+  
     initAlbum();
   }, []);
 

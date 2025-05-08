@@ -191,8 +191,12 @@ export const fetchFolder = async (
       
       const folderPosition = privateResult?.data?.fetchRelations?.items?.[0]?.folderPosition?.id;
       
-      const privateData = processData(privateResult, setFolderId);
       if (folderPosition) {
+        const privateData = processData(privateResult, setFolderId);
+        
+        // Set a more flexible flag indicating the presence of a folderPosition
+        privateData.hasFolderPosition = true;
+        
         initialData = privateData;
       }
     }

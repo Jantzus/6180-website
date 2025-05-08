@@ -318,7 +318,23 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     )}
                   </div>
                 </div>
-                
+
+                {/* Album description section - updated to use folderDescription if available */}
+                <div
+                  style={{
+                    marginTop: 8,
+                    marginBottom: 16,
+                    fontSize: 14,
+                    color: "#555",
+                    lineHeight: 1.5,
+                    textAlign: isRTL ? "right" : "left" as const
+                  }}
+                >
+                  {folder.folderDescription && folder.folderDescription.length > 1 
+                    ? folder.folderDescription 
+                    : ""}
+                </div>
+
                 <div 
                   style={{ 
                     width: "100%",
@@ -396,22 +412,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                       <span>{getPasswordPolicyText(passwordPolicy)}</span>
                     </div>
                   )}
-                </div>
-                
-                {/* Album description section - updated to use folderDescription if available */}
-                <div
-                  style={{
-                    marginTop: 8,
-                    marginBottom: 16,
-                    fontSize: 14,
-                    color: "#555",
-                    lineHeight: 1.5,
-                    textAlign: isRTL ? "right" : "left" as const
-                  }}
-                >
-                  {folder.folderDescription && folder.folderDescription.length > 1 
-                    ? folder.folderDescription 
-                    : ""}
                 </div>
                 
                 {/* Pass the folder to the FooterSection with additional props */}

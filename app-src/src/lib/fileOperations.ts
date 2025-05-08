@@ -28,11 +28,13 @@ export const downloadPhotos = (
     modalContent.style.backgroundColor = 'white';
     modalContent.style.borderRadius = '8px';
     modalContent.style.padding = '0';
-    modalContent.style.maxWidth = '90%';
-    modalContent.style.maxHeight = '80%';
+    modalContent.style.width = '95%'; // Increase width to prevent cutting off
+    modalContent.style.maxWidth = '400px'; // Set a maximum width for larger screens
+    modalContent.style.maxHeight = '85%';
     modalContent.style.display = 'flex';
     modalContent.style.flexDirection = 'column';
     modalContent.style.position = 'relative';
+    modalContent.style.boxSizing = 'border-box'; // Ensure padding is included in width
     
     // Add a sticky header for the close button
     const headerContainer = document.createElement('div');
@@ -63,9 +65,10 @@ export const downloadPhotos = (
     // Create a content wrapper with scrolling
     const contentWrapper = document.createElement('div');
     contentWrapper.style.overflow = 'auto';
-    contentWrapper.style.padding = '20px';
+    contentWrapper.style.padding = '16px';
     contentWrapper.style.flexGrow = '1';
     contentWrapper.style.width = '100%';
+    contentWrapper.style.boxSizing = 'border-box'; // Ensure padding is included in width calculation
     
     // Items container for individual photo downloads
     const itemsContainer = document.createElement('div');
@@ -74,6 +77,7 @@ export const downloadPhotos = (
     itemsContainer.style.gap = '10px';
     itemsContainer.style.marginBottom = '20px';
     itemsContainer.style.width = '100%';
+    itemsContainer.style.boxSizing = 'border-box'; // Ensure content fits within parent container
     
     // Add individual download items
     if (albumData && albumData.mediaItems.length > 0) {
@@ -127,11 +131,13 @@ export const downloadPhotos = (
         downloadLink.style.textDecoration = 'none';
         downloadLink.style.color = 'white';
         downloadLink.style.backgroundColor = '#006adc';
-        downloadLink.style.padding = '8px 12px';
+        downloadLink.style.padding = '8px 8px'; // Reduce padding for better fit
         downloadLink.style.borderRadius = '4px';
-        downloadLink.style.fontSize = '14px';
+        downloadLink.style.fontSize = '13px'; // Slightly smaller font size
         downloadLink.style.textAlign = 'center';
         downloadLink.style.width = '100%';
+        downloadLink.style.boxSizing = 'border-box'; // Ensure padding is included in width
+        downloadLink.style.whiteSpace = 'nowrap'; // Prevent text wrapping in button
         
         // Add to container
         downloadItem.appendChild(thumbnail);
@@ -151,9 +157,14 @@ export const downloadPhotos = (
     
     explanationText.style.borderTop = '1px solid #eee';
     explanationText.style.paddingTop = '15px';
+    explanationText.style.paddingRight = '10px';
+    explanationText.style.fontSize = '14px'; // Slightly smaller font for better fit
+    explanationText.style.width = '100%';
+    explanationText.style.boxSizing = 'border-box'; // Ensure padding is included in width
     
     // Add options as bullet points
     const optionsList = document.createElement('ul');
+    optionsList.style.paddingLeft = '20px'; // Add proper indentation for list items
     
     const option1 = document.createElement('li');
     option1.textContent = t('visit this page on a desktop computer to download all photos and videos at once');

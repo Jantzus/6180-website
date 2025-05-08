@@ -124,6 +124,7 @@ export interface AlbumData {
   hasPassword?: boolean;
   actualPassword?: string;
   usingFolderInviteGrantsRightToAddItems?: boolean;
+  hasFolderPosition?: boolean;
 }
 
 // Props for various components

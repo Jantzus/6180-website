@@ -203,7 +203,7 @@ const SaveAlbum = () => {
   const [albumPassword, setAlbumPassword] = useState("");
   
   // Public profile toggle state
-  const [isOnPublicProfile, setIsOnPublicProfile] = useState<boolean>(true);
+  const [isOnPublicProfile, setIsOnPublicProfile] = useState<boolean>(false);
   
   // Participants Can Add Items toggle state
   const [participantsCanAddItems, setParticipantsCanAddItems] = useState<boolean>(true);
