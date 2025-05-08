@@ -80,27 +80,54 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
         
         <button
           style={buttonStyle}
-          onClick={() => onCopy(inviteLink)}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
+          onClick={(e) => {
+            e.stopPropagation(); // Stop event from bubbling up
+            onCopy(inviteLink);
+          }}
+          onMouseOver={(e) => {
+            e.stopPropagation(); // Stop mouseOver event bubbling
+            e.currentTarget.style.backgroundColor = "#f5f5f5";
+          }}
+          onMouseOut={(e) => {
+            e.stopPropagation(); // Stop mouseOut event bubbling
+            e.currentTarget.style.backgroundColor = "#fff";
+          }}
         >
           {t('Link Only')}
         </button>
         
         <button
           style={buttonStyle}
-          onClick={() => onCopy(`${t('Here are photos from our event')}: ${inviteLink}`)}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
+          onClick={(e) => {
+            e.stopPropagation(); // Stop event from bubbling up
+            onCopy(`${t('Here are photos from our event')}: ${inviteLink}`);
+          }}
+          onMouseOver={(e) => {
+            e.stopPropagation(); // Stop mouseOver event bubbling
+            e.currentTarget.style.backgroundColor = "#f5f5f5";
+          }}
+          onMouseOut={(e) => {
+            e.stopPropagation(); // Stop mouseOut event bubbling
+            e.currentTarget.style.backgroundColor = "#fff";
+          }}
         >
           {t('View Album Photos')}
         </button>
         
         <button
           style={buttonStyle}
-          onClick={() => onCopy(`${t('Please add any photos from our event here')}: ${inviteLink}`)}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
+          onClick={(e) => {
+            e.stopPropagation(); // Stop event from bubbling up
+            onCopy(`${t('Please add any photos from our event here')}: ${inviteLink}`);
+          }}
+          onMouseOver={(e) => {
+            e.stopPropagation(); // Stop mouseOver event bubbling
+            e.currentTarget.style.backgroundColor = "#f5f5f5";
+          }}
+          onMouseOut={(e) => {
+            e.stopPropagation(); // Stop mouseOut event bubbling
+            e.currentTarget.style.backgroundColor = "#fff";
+          }}
         >
           {t('Add Photos To Album')}
         </button>
@@ -111,9 +138,18 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
             backgroundColor: "#f0f0f0",
             marginTop: "16px"
           }}
-          onClick={onClose}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#e0e0e0"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#f0f0f0"}
+          onClick={(e) => {
+            e.stopPropagation(); // Stop event from bubbling up
+            onClose();
+          }}
+          onMouseOver={(e) => {
+            e.stopPropagation(); // Stop mouseOver event bubbling
+            e.currentTarget.style.backgroundColor = "#e0e0e0";
+          }}
+          onMouseOut={(e) => {
+            e.stopPropagation(); // Stop mouseOut event bubbling
+            e.currentTarget.style.backgroundColor = "#f0f0f0";
+          }}
         >
           {t('Cancel')}
         </button>
@@ -175,9 +211,18 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
             cursor: "pointer",
             fontSize: "14px"
           }}
-          onClick={onClose}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#e0e0e0"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#f0f0f0"}
+          onClick={(e) => {
+            e.stopPropagation(); // Stop event from bubbling up
+            onClose();
+          }}
+          onMouseOver={(e) => {
+            e.stopPropagation(); // Stop mouseOver event bubbling
+            e.currentTarget.style.backgroundColor = "#e0e0e0";
+          }}
+          onMouseOut={(e) => {
+            e.stopPropagation(); // Stop mouseOut event bubbling
+            e.currentTarget.style.backgroundColor = "#f0f0f0";
+          }}
         >
           {t('OK')}
         </button>
