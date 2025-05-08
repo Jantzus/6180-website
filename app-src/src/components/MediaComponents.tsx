@@ -206,7 +206,7 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
   onNext,
   hasNext,
   hasPrev,
-  albumName,
+  ownerName,
   showWatermark = false
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -228,6 +228,13 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose, onNext, onPrev, hasNext, hasPrev]);
+
+  // Function to format the owner's Cognito username for the profile link
+  const formatCognitoUsername = (ownerId: string) => {
+    // Extract username from ownerId if available
+    const username = ownerId?.split('_____')[0] || '';
+    return username;
+  };
   
   return (
     <div style={{
@@ -375,7 +382,7 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
         )}
       </div>
       
-      {/* Footer with options */}
+      {/* Footer with owner profile link */}
       <div style={{
         padding: '15px',
         display: 'flex',
@@ -383,20 +390,28 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
         color: 'white'
       }}>
-        <a 
-          href={item.url} 
-          download={`${albumName}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`}
-          style={{
-            textDecoration: 'none',
-            color: 'white',
-            backgroundColor: '#006adc',
-            padding: '8px 16px',
-            borderRadius: '4px',
-            fontSize: '14px'
-          }}
-        >
-          {item.type === 'image' ? t('Download Photo') : t('Download Video')}
-        </a>
+        {item.ownerContactId && (
+          <a 
+            href={`/profile.html?id=${formatCognitoUsername(item.ownerContactId)}`}
+            style={{
+              textDecoration: 'none',
+              color: 'white',
+              backgroundColor: '#006adc',
+              padding: '8px 16px',
+              borderRadius: '4px',
+              fontSize: '14px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            {ownerName}
+          </a>
+        )}
       </div>
     </div>
   );

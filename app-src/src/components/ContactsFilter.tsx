@@ -173,7 +173,7 @@ export const ContactsFilter: React.FC<ContactsFilterProps> = ({
             padding: isRTL ? "0 0 0 4px" : "0 4px 0 0",
           }}
         >
-          {t('Filter Albums')}:
+          {t('Filter')}:
         </div>
         
         {/* Contact buttons - now allowing multi-selection */}

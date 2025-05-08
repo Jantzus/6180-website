@@ -141,10 +141,11 @@ const FETCH_FOLDER_QUERY = `
   }
 `;
 
-// Interface for sub-album data
+// Enhanced interface for sub-album data
 interface SubAlbumData {
   isSubAlbum: boolean;
   selectedFileIds: string[];
+  selectedPhotos?: SelectedPhoto[];
 }
 
 // Interface for file reference input
@@ -313,6 +314,13 @@ const SaveAlbum = () => {
                 enhancedLog(`Valid sub-album data found with ${subAlbumData.selectedFileIds.length} files`);
                 setIsSubAlbum(true);
                 setSelectedFileIds(subAlbumData.selectedFileIds);
+                
+                // If we have selectedPhotos in the sub-album data, use them
+                if (subAlbumData.selectedPhotos && subAlbumData.selectedPhotos.length > 0) {
+                  enhancedLog(`Found ${subAlbumData.selectedPhotos.length} selected photos in sub-album data`);
+                  setSelectedPhotos(subAlbumData.selectedPhotos);
+                }
+                
                 // For sub-albums, always show folder details
                 setShowFolderDetails(true);
                 // User is automatically the creator for new sub-albums
@@ -759,18 +767,24 @@ const SaveAlbum = () => {
       enhancedLog(`Found ${validPhotos.length} valid photos with 'complete' status`);
       
       if (validPhotos.length > 0) {
-        // Move files from temp to public folder for any new uploads
-        enhancedLog("Moving files from temp to public folder");
-        await moveFilesToPublic(
-          validPhotos, 
-          updateSaveProgress,
-          log
-        );
+        // Only move files from temp to public folder for new uploads (those without a fileId)
+        const newUploads = validPhotos.filter(photo => !photo.fileId);
+        enhancedLog(`Found ${newUploads.length} new uploads to move from temp to public folder`);
+        
+        if (newUploads.length > 0) {
+          // Move files from temp to public folder for any new uploads
+          enhancedLog("Moving files from temp to public folder");
+          await moveFilesToPublic(
+            newUploads, 
+            updateSaveProgress,
+            log
+          );
+        }
         
         // Create file references for new uploads
-        enhancedLog("Creating file reference inputs for new uploads");
+        enhancedLog("Creating file reference inputs for uploads");
         const newFileReferenceInputs = createFileReferenceInputs(validPhotos, now, accountId);
-        enhancedLog(`Created ${newFileReferenceInputs.length} file reference inputs for new uploads`, newFileReferenceInputs);
+        enhancedLog(`Created ${newFileReferenceInputs.length} file reference inputs for uploads`, newFileReferenceInputs);
         fileReferenceInputs = fileReferenceInputs.concat(newFileReferenceInputs);
       }
       
@@ -807,6 +821,19 @@ const SaveAlbum = () => {
     }
   };
   
+  // Helper function to remove duplicate file references (same fileId)
+  const removeDuplicateFileReferences = (fileReferences: FileReferenceInput[]): FileReferenceInput[] => {
+    const uniqueFileIds = new Set<string>();
+    return fileReferences.filter(ref => {
+      if (uniqueFileIds.has(ref.fileId)) {
+        enhancedLog(`Skipping duplicate file reference with ID: ${ref.fileId}`);
+        return false;
+      }
+      uniqueFileIds.add(ref.fileId);
+      return true;
+    });
+  };
+  
   // NEW FUNCTION: Save album with chunking large file reference arrays
   const saveWithChunking = async (folderPositionInput: any, fileReferenceInputs: FileReferenceInput[]) => {
     enhancedLog("Starting chunked save process");
@@ -821,8 +848,12 @@ const SaveAlbum = () => {
         enhancedLog("No file references to process, saving only folder position");
         await sendFolderOnlyMutation(folderPositionInput);
       } else {
+        // Before chunking, remove any duplicates by fileId
+        const uniqueFileReferences = removeDuplicateFileReferences(fileReferenceInputs);
+        enhancedLog(`After removing duplicates, processing ${uniqueFileReferences.length} unique file references`);
+        
         // Split file references into chunks
-        const chunks = splitArrayIntoChunks(fileReferenceInputs, chunkSize);
+        const chunks = splitArrayIntoChunks(uniqueFileReferences, chunkSize);
         enhancedLog(`Split file references into ${chunks.length} chunks of max size ${chunkSize}`);
         
         // Process each chunk
@@ -1111,8 +1142,7 @@ const SaveAlbum = () => {
   const createFolderPositionInput = (
     timestamp: number, 
     accountId: string, 
-    folderTargetItemIdentifier: string, 
-    validPhotos?: SelectedPhoto[]
+    folderTargetItemIdentifier: string
   ) => {
     enhancedLog("Creating folder position input");
     enhancedLog(`Profile visibility: ${isOnPublicProfile ? 'Public' : 'Only Me'}`);
@@ -1146,14 +1176,6 @@ const SaveAlbum = () => {
         enhancedLog(`Using original fileId as fallback: ${fileId}`);
         return fileId; // Fallback to original fileId if parsing fails
       });
-    } else if (validPhotos && validPhotos.length > 0) {
-      enhancedLog(`Creating file reference IDs for ${validPhotos.length} new photos`);
-      // For new photos, generate file reference IDs
-      acceptedFileReferenceIds = validPhotos.map(photo => {
-        const refId = `${folderTargetItemIdentifier}_____${photo.fileName}____FileReference`;
-        enhancedLog(`Created file reference ID for new photo: ${refId}`);
-        return refId;
-      });
     }
     
     enhancedLog(`Created ${acceptedFileReferenceIds.length} acceptedFileReferenceIds`);
@@ -1173,7 +1195,6 @@ const SaveAlbum = () => {
       folderPositionSelectedTagInputs: [],
       folderPositionPoints: 1,
       acceptedFileReferenceIds,
-      hiddenFileReferenceIds: [],
       folderInput: {
         folderSelectedTagInputs: [],
         folderAboutContactIds: [accountId],
@@ -1194,7 +1215,7 @@ const SaveAlbum = () => {
       }
     };
   };
-  
+    
   const createFileReferenceInputs = (
     validPhotos: SelectedPhoto[], 
     timestamp: number, 
@@ -1203,6 +1224,21 @@ const SaveAlbum = () => {
     enhancedLog(`Creating file reference inputs for ${validPhotos.length} photos`);
     
     return validPhotos.map(photo => {
+      // If the photo already has a fileId (from a sub-album), use that directly
+      if (photo.fileId) {
+        enhancedLog(`Using existing fileId for photo: ${photo.fileId}`);
+        return {
+          fileReferencesHolderId: folderId!,
+          currentTime: timestamp,
+          points: 1,
+          hasBeenDeleted: false,
+          selectedTagInputs: [],
+          fileId: photo.fileId,
+          fileInput: null // No file input needed for existing files
+        };
+      }
+      
+      // Otherwise, create a new file reference for uploaded files
       const dataKey = photo.type === "video" || photo.type?.startsWith("video")
         ? `Input/Video/${photo.fileName}`
         : `Input/Image/${photo.fileName}`;
@@ -1461,8 +1497,8 @@ const SaveAlbum = () => {
             onChange={handleAddPhotos}
           />
           
-          {/* Sub-album message if applicable */}
-          {isSubAlbum && selectedFileIds.length > 0 && (
+          {/* Enhanced Sub-album message with thumbnails */}
+          {isSubAlbum && (selectedPhotos.length > 0 || selectedFileIds.length > 0) && (
             <div style={{ 
               backgroundColor: '#e3f2fd', 
               padding: '15px', 
@@ -1476,6 +1512,67 @@ const SaveAlbum = () => {
               <p style={{ margin: '10px 0 0 0', fontSize: '14px', color: '#0277bd' }}>
                 {t('You can add more photos or videos to this sub-album before saving')}
               </p>
+              
+              {/* Show thumbnails of selected photos if available */}
+              {selectedPhotos.length > 0 && (
+                <div style={{ 
+                  display: 'flex', 
+                  flexWrap: 'wrap', 
+                  gap: '10px', 
+                  marginTop: '15px',
+                  justifyContent: 'flex-start'
+                }}>
+                  {selectedPhotos.slice(0, 5).map((photo, index) => (
+                    <div key={index} style={{ 
+                      width: '80px', 
+                      height: '80px', 
+                      position: 'relative', 
+                      borderRadius: '4px',
+                      overflow: 'hidden',
+                      boxShadow: '0 1px 3px rgba(0,0,0,0.12)'
+                    }}>
+                      <img 
+                        src={photo.s3PreviewUrl} 
+                        alt={photo.fileName} 
+                        style={{ 
+                          width: '100%', 
+                          height: '100%', 
+                          objectFit: 'cover' 
+                        }} 
+                      />
+                      {photo.type === 'video' && (
+                        <div style={{
+                          position: 'absolute',
+                          bottom: '5px',
+                          right: '5px',
+                          backgroundColor: 'rgba(0,0,0,0.7)',
+                          color: 'white',
+                          fontSize: '10px',
+                          padding: '2px 4px',
+                          borderRadius: '2px'
+                        }}>
+                          {photo.duration ? `${Math.floor(photo.duration)}s` : 'Video'}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                  {selectedPhotos.length > 5 && (
+                    <div style={{ 
+                      width: '80px', 
+                      height: '80px', 
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      backgroundColor: '#bbdefb',
+                      borderRadius: '4px',
+                      color: '#0d47a1',
+                      fontWeight: 'bold'
+                    }}>
+                      +{selectedPhotos.length - 5} {t('more')}
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           )}
           

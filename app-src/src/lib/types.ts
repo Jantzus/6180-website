@@ -30,6 +30,7 @@ export type SelectedPhoto = {
   status: UploadStatus
   progress: number
   errorMessage?: string
+  fileId?: string  // Added to support existing files from sub-albums
 }
 
 export type UploadStatus = 'pending' | 'uploading' | 'processing' | 'complete' | 'error';
@@ -103,7 +104,8 @@ export interface MediaItem {
   url: string;
   thumbnailUrl?: string;
   duration?: string;
-  ownerId?: string;
+  ownerName?: string;
+  ownerContactId?: string;
   loaded?: boolean;
 }
 
@@ -158,7 +160,6 @@ export interface FullscreenMediaViewerProps {
   onNext: () => void;
   hasNext: boolean;
   hasPrev: boolean;
-  albumName: string;
   ownerName?: string;
   showWatermark?: boolean;
 }

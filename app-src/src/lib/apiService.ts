@@ -98,7 +98,7 @@ export const processData = (
           fileId: id,
           url,
           thumbnailUrl: thumbnailUrl || url,
-          ownerId: ownerContactId,
+          ownerContactId: ownerContactId,
           loaded: false
         });
       } else if (dataKey.startsWith("Input/Video/")) {
@@ -108,7 +108,7 @@ export const processData = (
           url,
           thumbnailUrl: thumbnailUrl || url,
           duration: formatTime(durationInSeconds),
-          ownerId: ownerContactId,
+          ownerContactId: ownerContactId,
           loaded: false
         });
       }

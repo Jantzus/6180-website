@@ -44,7 +44,12 @@ import {
   SelectionCheckbox,
   Checkmark,
   ActionButton,
-  OwnerBadge
+  OwnerBadge,
+  HamburgerButton, 
+  HamburgerIcon, 
+  HamburgerLine, 
+  DropdownMenu, 
+  MenuButton
 } from "@/styles/photos-styled-components";
 
 // Import styled components
@@ -106,7 +111,7 @@ const showDetailedError = (
   }
   
   if (textElement) {
-    textElement.textContent = 'Error saving album';
+    textElement.textContent = 'Error registering album';
     textElement.style.color = '#f44336';
   }
   
@@ -419,7 +424,7 @@ const usePasswordProtection = () => {
   const [showPasswordModal, setShowPasswordModal] = useState<boolean>(false);
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [passwordVerified, setPasswordVerified] = useState<boolean>(false);
-  const [pendingSaveAlbum, setPendingSaveAlbum] = useState(false);
+  // const [pendingSaveAlbum, setPendingSaveAlbum] = useState(false);
 
   const shouldShowContent = useCallback(() => {
     // If no policy or authorized, show content
@@ -467,8 +472,8 @@ const usePasswordProtection = () => {
     setPasswordError,
     passwordVerified,
     setPasswordVerified,
-    pendingSaveAlbum,
-    setPendingSaveAlbum,
+    // pendingSaveAlbum,
+    // setPendingSaveAlbum,
     shouldShowContent,
     shouldShowWatermark,
     showingEnterPassword,
@@ -811,8 +816,8 @@ const AlbumMediaGrid: React.FC<{
     <MediaGrid id="media-grid" columns={columns}>
       {albumData.mediaItems.map((item, index) => {
         // Restore the ownerName extraction from the contacts map
-        const ownerName = item.ownerId && albumData.contacts[item.ownerId] 
-          ? albumData.contacts[item.ownerId] 
+        const ownerName = item.ownerContactId && albumData.contacts[item.ownerContactId] 
+          ? albumData.contacts[item.ownerContactId] 
           : '';
         
         const isSelected = selectedItems.has(index);
@@ -878,6 +883,70 @@ const AlbumHeader: React.FC<{
   columns,
   changeColumns
 }) => {
+  // State for hamburger menu control
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  
+  // Define our breakpoint for responsive design
+  const BREAKPOINT = 840; // px
+  
+  // Check window width on mount and when resized
+  useEffect(() => {
+    // Set initial state immediately to avoid flicker
+    setIsMobile(window.innerWidth < BREAKPOINT);
+    
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth < BREAKPOINT);
+    };
+    
+    // Add resize listener
+    window.addEventListener('resize', checkWidth);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+  
+  // Toggle menu
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+  
+  // Close menu
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+  
+  // Execute action and close menu
+  const handleAction = (action: () => void) => {
+    action();
+    closeMenu();
+  };
+  
+  // Handle click outside to close menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    
+    // Handle scroll to close menu
+    const handleScroll = () => {
+      setMenuOpen(false);
+    };
+    
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      window.addEventListener('scroll', handleScroll);
+    }
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [menuOpen]);
+
   return (
     <Header>
       <HeaderContent>
@@ -937,47 +1006,87 @@ const AlbumHeader: React.FC<{
                   !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
                 ) && (
                   albumData?.folderPositionId ? (
-                    <div style={{ 
-                      display: 'flex', 
-                      gap: '10px' 
-                    }}>
-                      <ActionButton
-                        onClick={addPhotosToAlbum}
-                        style={{
-                          backgroundColor: "#4caf50",
-                          color: "white",
-                        }}
-                      >
-                        {t('Add Photos')}
-                      </ActionButton>
-                      
-                      <ActionButton
-                        onClick={handleDownloadPhotos}
-                        style={{
-                          backgroundColor: "#e0e0e0",
-                        }}
-                      >
-                        {t('Download')}
-                      </ActionButton>
-                      
-                      <ActionButton
-                        onClick={handleCopyLink}
-                        style={{
-                          backgroundColor: "#e0e0e0",
-                        }}
-                      >
-                        {t('Copy Link')}
-                      </ActionButton>
-                      
-                      <ActionButton
-                        onClick={handlePublicProfileToggle}
-                        style={{
-                          backgroundColor: isOnPublicProfile ? "#4caf50" : "#e0e0e0",
-                          color: isOnPublicProfile ? "white" : "inherit",
-                        }}
-                      >
-                        {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
-                      </ActionButton>
+                    <div 
+                      ref={menuRef} 
+                      style={{ 
+                        position: 'relative', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'flex-end',
+                        flexWrap: 'nowrap'
+                      }}
+                    >
+                      {isMobile ? (
+                        <>
+                          <HamburgerButton 
+                            onClick={toggleMenu}
+                            aria-label={t('Menu')}
+                            aria-expanded={menuOpen}
+                          >
+                            <HamburgerIcon>
+                              <HamburgerLine />
+                              <HamburgerLine />
+                              <HamburgerLine />
+                            </HamburgerIcon>
+                            {t('Actions')}
+                          </HamburgerButton>
+                          
+                          {menuOpen && (
+                            <DropdownMenu>
+                              <MenuButton onClick={() => handleAction(addPhotosToAlbum)}>
+                                {t('Add Photos')}
+                              </MenuButton>
+                              
+                              <MenuButton onClick={() => handleAction(handleDownloadPhotos)}>
+                                {t('Download')}
+                              </MenuButton>
+                              
+                              <MenuButton onClick={() => handleAction(handleCopyLink)}>
+                                {t('Copy Link')}
+                              </MenuButton>
+                              
+                              <MenuButton onClick={() => handleAction(handlePublicProfileToggle)}>
+                                {isOnPublicProfile ? t('Remove from Public Profile') : t('Add to Public Profile')}
+                              </MenuButton>
+                            </DropdownMenu>
+                          )}
+                        </>
+                      ) : (
+                        // Desktop view with all buttons visible
+                        <div style={{ 
+                          display: 'flex', 
+                          gap: '10px',
+                          flexWrap: 'nowrap'
+                        }}>
+                          <ActionButton
+                            onClick={addPhotosToAlbum}
+                          >
+                            {t('Add Photos')}
+                          </ActionButton>
+                          
+                          <ActionButton
+                            onClick={handleDownloadPhotos}
+                          >
+                            {t('Download')}
+                          </ActionButton>
+                          
+                          <ActionButton
+                            onClick={handleCopyLink}
+                          >
+                            {t('Copy Link')}
+                          </ActionButton>
+                          
+                          <ActionButton
+                            onClick={handlePublicProfileToggle}
+                            style={{
+                              backgroundColor: isOnPublicProfile ? "#4caf50" : "#e0e0e0",
+                              color: isOnPublicProfile ? "white" : "inherit",
+                            }}
+                          >
+                            {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
+                          </ActionButton>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <ResponsiveHeader 
@@ -1203,7 +1312,7 @@ const PhotoAlbumContent: React.FC = () => {
   const { 
     passwordPolicy, setPasswordPolicy, isAuthorized, setIsAuthorized,
     showPasswordModal, setShowPasswordModal, passwordError, setPasswordError,
-    passwordVerified, setPasswordVerified, pendingSaveAlbum, setPendingSaveAlbum,
+    passwordVerified, setPasswordVerified,
     shouldShowContent, shouldShowWatermark, showingEnterPassword, promptForPassword
   } = passwordProtection;
   
@@ -1280,13 +1389,8 @@ const PhotoAlbumContent: React.FC = () => {
     setShowPasswordModal(false);
     setPasswordError(null);
     
-    // Check if there's a pending save album operation
-    if (pendingSaveAlbum) {
-      // Reset the flag
-      setPendingSaveAlbum(false);
-      // Execute the save operation
-      executeAlbumSave();
-    }
+    // Execute the save operation
+    executeAlbumSave();
   };
 
   // Change columns
@@ -1360,13 +1464,8 @@ const PhotoAlbumContent: React.FC = () => {
         }
         
         // Check if there's a pending save album operation
-        if (pendingSaveAlbum) {
-          // Reset the flag
-          setPendingSaveAlbum(false);
-          // Execute the save operation
-          executeAlbumSave();
-          return;
-        }
+        executeAlbumSave();
+        return;
         
       } catch (err) {
         console.error("Failed to decode token", err);
@@ -1474,7 +1573,7 @@ const PhotoAlbumContent: React.FC = () => {
 
   // Implementation for executing album save operation
   const executeAlbumSave = async () => {
-    console.log("Starting album save execution");
+    console.log("Starting album registration");
     
     // Create a loading indicator for album saving
     const loadingModal = document.createElement('div');
@@ -1497,7 +1596,7 @@ const PhotoAlbumContent: React.FC = () => {
     
     const loadingText = document.createElement('p');
     loadingText.id = 'saveProgressText';
-    loadingText.textContent = t('Saving album...');
+    loadingText.textContent = t('Registering album...');
     
     const progressBarBg = document.createElement('div');
     progressBarBg.style.backgroundColor = '#f0f0f0';
@@ -1532,7 +1631,7 @@ const PhotoAlbumContent: React.FC = () => {
       // Get current username from cognito token
       const token = await checkLoginWithRefresh();
       if (!token) {
-        console.error("No token available for saving album");
+        console.error("No token available for registering album");
         document.body.removeChild(loadingModal);
         return;
       }
@@ -1577,7 +1676,7 @@ const PhotoAlbumContent: React.FC = () => {
       const folderPositionInput = {
         currentTime: now,
         folderId: folderId,
-        profileIds: [`${username}_____Public____Profile`],
+        profileIds: [`Only Me_____Only Me____Profile`],
         folderPositionSelectedTagInputs: [],
         folderPositionPoints: 1,
       };
@@ -1646,8 +1745,8 @@ const PhotoAlbumContent: React.FC = () => {
         }
         
         // Success!
-        console.log("Album saved successfully");
-        updateSaveProgress(100, loadingText, progressBar, t('Album saved successfully!'));
+        console.log("Album registered successfully");
+        updateSaveProgress(100, loadingText, progressBar, t('Album registered successfully!'));
         
         // Set a flag in sessionStorage that we just completed an album
         sessionStorage.setItem('album_just_saved', 'true');
@@ -1664,19 +1763,19 @@ const PhotoAlbumContent: React.FC = () => {
       }
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "Unknown error";
-      console.error("Error saving album:", err);
+      console.error("Error registering album:", err);
       showDetailedError(errorText, errorMessage, loadingText, progressBar);
     }
   };
 
   // New implementation for saveAlbumDirectly that first checks login, username, and shows OTP if needed
   const saveAlbumDirectly = async () => {
-    console.log("Starting direct album save");
+    console.log("Starting album registration");
     
     // Check if authorized for CannotBeSaved policy
     if (passwordPolicy === 'CannotBeSaved' && !isAuthorized) {
       // Set flag that we want to save after password verification
-      setPendingSaveAlbum(true);
+      // setPendingSaveAlbum(true);
       promptForPassword();
       return;
     }
@@ -1687,7 +1786,7 @@ const PhotoAlbumContent: React.FC = () => {
     if (!token) {
       console.log("User not logged in, showing OTP login");
       // Set flag that we want to save after login
-      setPendingSaveAlbum(true);
+      // setPendingSaveAlbum(true);
       // Show the inline login
       setShowInlineOTPLogin(true);
       return;
@@ -1731,7 +1830,7 @@ const PhotoAlbumContent: React.FC = () => {
     selectedItems.clear();
   };
   
-  // Share the selected items
+  // Share the selected items - modified version to create SelectedPhoto objects
   const shareSelection = async () => {
     if (selectedItems.size === 0) {
       alert(t('Please select at least one item to share.'));
@@ -1767,15 +1866,41 @@ const PhotoAlbumContent: React.FC = () => {
         loadingModal.appendChild(loadingContent);
         document.body.appendChild(loadingModal);
         
-        // Extract fileIds of selected items
-        const selectedFileIds = Array.from(selectedItems)
-          .map(index => albumData.mediaItems[index]?.fileId)
-          .filter(fileId => fileId) as string[];
+        // Extract fileIds and create selected photos array of selected items
+        const selectedFileIds: string[] = [];
+        const selectedPhotosArray: SelectedPhoto[] = [];
+        
+        // Loop through each selected item and create a SelectedPhoto object for each
+        Array.from(selectedItems).forEach(index => {
+          const mediaItem = albumData.mediaItems[index];
+          if (mediaItem && mediaItem.fileId) {
+            // Add to fileIds array
+            selectedFileIds.push(mediaItem.fileId);
+            
+            // Create a SelectedPhoto object
+            const newSelectedPhoto: SelectedPhoto = {
+              fileName: mediaItem.fileId.split('_____')[1]?.split('____')[0] || `file-${index}`,
+              s3PreviewUrl: mediaItem.type === 'video' ? (mediaItem.thumbnailUrl || mediaItem.url) : mediaItem.url,
+              type: mediaItem.type === 'video' ? 'video' : 'image',
+              size: 0, // We don't have this info from the album view
+              status: 'complete', // Mark as complete since these are existing files
+              progress: 100,
+              fileId: mediaItem.fileId, // Store the original fileId
+              // If video, include the duration
+              duration: mediaItem.type === 'video' && mediaItem.duration ? 
+                parseFloat(mediaItem.duration.split(':').reduce((acc, time) => (60 * acc) + parseFloat(time), 0).toString()) : 
+                null
+            };
+            
+            selectedPhotosArray.push(newSelectedPhoto);
+          }
+        });
         
         // Create data structure for sub-album selected files
         const subAlbumData = {
           isSubAlbum: true,
-          selectedFileIds: selectedFileIds
+          selectedFileIds: selectedFileIds,
+          selectedPhotos: selectedPhotosArray
         };
         
         // Save to localStorage
@@ -2057,10 +2182,6 @@ const PhotoAlbumContent: React.FC = () => {
         onClose={() => {
           setShowPasswordModal(false);
           setPasswordError(null); // Clear error when closing modal
-          // If we were trying to save the album but canceled password entry, clear the flag
-          if (pendingSaveAlbum) {
-            setPendingSaveAlbum(false);
-          }
         }}
         onSubmit={handlePasswordSubmit}
         error={passwordError}
@@ -2073,9 +2194,6 @@ const PhotoAlbumContent: React.FC = () => {
         onClose={() => {
           setShowInlineOTPLogin(false);
           // If we were trying to save the album but canceled login, clear the flag
-          if (pendingSaveAlbum) {
-            setPendingSaveAlbum(false);
-          }
         }}
         onLoginSuccess={handleLoginSuccess}
         t={t}
@@ -2097,8 +2215,30 @@ const PhotoAlbumContent: React.FC = () => {
           onNext={() => goToNextItem(albumData.mediaItems.length)}
           hasNext={fullscreenItem < albumData.mediaItems.length - 1}
           hasPrev={fullscreenItem > 0}
-          albumName={albumData.folderName}
           showWatermark={shouldShowWatermark()}
+          ownerName={
+            (() => {
+              // Get the owner contact ID
+              const ownerContactId = albumData.mediaItems[fullscreenItem].ownerContactId;
+              if (!ownerContactId) return "";
+              
+              // Check if contacts exists and has a direct entry
+              if (albumData.contacts && albumData.contacts[ownerContactId]) {
+                return albumData.contacts[ownerContactId];
+              }
+              
+              // Extract the username portion
+              const extractedUsername = ownerContactId.split('_____')[0] || "";
+              
+              // If the extracted username matches the current user's cognito username, display "Me"
+              if (extractedUsername === cognitoUsername) {
+                return t('Me');
+              }
+              
+              // Otherwise use the extracted username
+              return extractedUsername;
+            })()
+          }
         />
       )}
       
