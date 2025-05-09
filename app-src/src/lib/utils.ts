@@ -1,7 +1,17 @@
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config"
 import { LanguageCode } from "@/lib/types"
 import { myAlbumsTranslations } from "@/lib/translations"
 import { API_ENDPOINT_REFRESHTOKEN, COGNITO_CLIENT_ID } from "@/lib/config"
+import { AlbumData, PasswordPolicyEnum, SelectedPhoto, ProgressTracker } from "@/lib/types";
+
+// Import upload utilities
+import { 
+  createLogger, 
+  updateProgressTracker,
+} from "@/lib/file-upload-utils";
+
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 
 /**
  * Attempts to refresh the token using the refresh token from localStorage
@@ -634,4 +644,445 @@ export const createResizedThumbnail = async (
       reject(error);
     }
   });
+};
+
+
+export const updateSaveProgress = (
+  progress: number, 
+  textElement: HTMLElement,
+  progressBar: HTMLElement,
+  message: string,
+  isError: boolean = false
+) => {
+  if (progressBar) {
+    progressBar.style.width = `${progress}%`;
+    if (isError) {
+      progressBar.style.backgroundColor = '#f44336';
+    }
+  }
+  
+  if (textElement) {
+    textElement.textContent = message;
+    if (isError) {
+      textElement.style.color = '#f44336';
+    }
+  }
+};
+
+export const showDetailedError = (
+  errorElement: HTMLElement, 
+  errorMessage: string, 
+  textElement: HTMLElement, 
+  progressBar: HTMLElement
+) => {
+  if (progressBar) {
+    progressBar.style.width = '100%';
+    progressBar.style.backgroundColor = '#f44336';
+  }
+  
+  if (textElement) {
+    textElement.textContent = 'Error registering album';
+    textElement.style.color = '#f44336';
+  }
+  
+  // Show detailed error message
+  if (errorElement) {
+    errorElement.textContent = errorMessage;
+    errorElement.style.display = 'block';
+    
+    // Add retry button
+    const retryButton = document.createElement('button');
+    retryButton.textContent = 'Retry';
+    retryButton.style.marginTop = '15px';
+    retryButton.style.padding = '8px 16px';
+    retryButton.style.backgroundColor = '#2196f3';
+    retryButton.style.color = 'white';
+    retryButton.style.border = 'none';
+    retryButton.style.borderRadius = '4px';
+    retryButton.style.cursor = 'pointer';
+    retryButton.onclick = function() {
+      // Remove the modal and try again
+      const modalElement = errorElement.closest('div[style*="position: fixed"]');
+      if (modalElement && modalElement.parentNode) {
+        modalElement.parentNode.removeChild(modalElement);
+      }
+      // Give a slight delay before retrying
+      setTimeout(() => {
+        // This is a hack - the real saveAlbumDirectly will be provided by closure
+        window.location.reload();
+      }, 500);
+    };
+    
+    // Add close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.style.marginTop = '15px';
+    closeButton.style.marginLeft = '10px';
+    closeButton.style.padding = '8px 16px';
+    closeButton.style.backgroundColor = '#757575';
+    closeButton.style.color = 'white';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '4px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.onclick = function() {
+      const modalElement = errorElement.closest('div[style*="position: fixed"]');
+      if (modalElement && modalElement.parentNode) {
+        modalElement.parentNode.removeChild(modalElement);
+      }
+    };
+    
+    // Add buttons container
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.appendChild(retryButton);
+    buttonsContainer.appendChild(closeButton);
+    
+    errorElement.parentNode?.appendChild(buttonsContainer);
+  }
+};
+
+// Hook for file upload management
+export const useFileUpload = () => {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
+  const [isUploading, setIsUploading] = useState(false);
+  const [fileProcessingComplete, setFileProcessingComplete] = useState(false);
+  const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
+    totalFiles: 0,
+    filesComplete: 0,
+    filesUploading: 0,
+    filesProcessing: 0,
+    filesWithError: 0,
+    overallProgress: 0
+  });
+
+  const log = createLogger(() => {
+    // Empty function since we don't need to display debug messages in UI
+  });
+
+  // Update progress tracker when selectedPhotos changes
+  useEffect(() => {
+    updateProgressTracker(selectedPhotos, setProgressTracker);
+  }, [selectedPhotos]);
+
+  return {
+    fileInputRef,
+    selectedPhotos,
+    setSelectedPhotos,
+    isUploading,
+    setIsUploading,
+    fileProcessingComplete,
+    setFileProcessingComplete,
+    progressTracker,
+    setProgressTracker,
+    log
+  };
+};
+
+// Hook for fullscreen view management
+export const useFullscreenView = () => {
+  const [fullscreenItem, setFullscreenItem] = useState<number | null>(null);
+  const [loadingFullResolution, setLoadingFullResolution] = useState<Record<number, boolean>>({});
+
+  const openFullscreenView = useCallback((index: number) => {
+    setFullscreenItem(index);
+    // Pre-load the full resolution of the selected item
+    setLoadingFullResolution(prev => ({
+      ...prev,
+      [index]: true
+    }));
+    
+    // Lock body scroll when fullscreen is open
+    document.body.style.overflow = 'hidden';
+  }, []);
+  
+  const closeFullscreenView = useCallback(() => {
+    setFullscreenItem(null);
+    // Restore body scroll when fullscreen is closed
+    document.body.style.overflow = '';
+  }, []);
+  
+  const goToPrevItem = useCallback(() => {
+    if (fullscreenItem !== null && fullscreenItem > 0) {
+      setFullscreenItem(fullscreenItem - 1);
+      setLoadingFullResolution(prev => ({
+        ...prev,
+        [fullscreenItem - 1]: true
+      }));
+    }
+  }, [fullscreenItem]);
+  
+  const goToNextItem = useCallback((totalItems: number) => {
+    if (fullscreenItem !== null && fullscreenItem < totalItems - 1) {
+      setFullscreenItem(fullscreenItem + 1);
+      setLoadingFullResolution(prev => ({
+        ...prev,
+        [fullscreenItem + 1]: true
+      }));
+    }
+  }, [fullscreenItem]);
+
+  const handleFullResolutionLoaded = useCallback((index: number, albumData: AlbumData, setAlbumData: React.Dispatch<React.SetStateAction<AlbumData | null>>) => {
+    if (albumData) {
+      const updatedMediaItems = [...albumData.mediaItems];
+      updatedMediaItems[index] = {
+        ...updatedMediaItems[index],
+        loaded: true
+      };
+      
+      setAlbumData({
+        ...albumData,
+        mediaItems: updatedMediaItems
+      });
+      
+      // Clear loading state
+      setLoadingFullResolution(prev => {
+        const updated = { ...prev };
+        delete updated[index];
+        return updated;
+      });
+    }
+  }, []);
+
+  return {
+    fullscreenItem,
+    setFullscreenItem,
+    loadingFullResolution,
+    setLoadingFullResolution,
+    openFullscreenView,
+    closeFullscreenView,
+    goToPrevItem,
+    goToNextItem,
+    handleFullResolutionLoaded
+  };
+};
+
+// Hook for selection mode management
+export const useSelectionMode = () => {
+  const [isSelectionMode, setIsSelectionMode] = useState<boolean>(false);
+  const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set());
+
+  const toggleItemSelection = useCallback((index: number, event: React.MouseEvent) => {
+    event.stopPropagation(); // Prevent opening fullscreen view
+    
+    setSelectedItems(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  }, []);
+  
+  const cancelSelection = useCallback(() => {
+    setIsSelectionMode(false);
+    setSelectedItems(new Set());
+  }, []);
+
+  return {
+    isSelectionMode,
+    setIsSelectionMode,
+    selectedItems,
+    setSelectedItems,
+    toggleItemSelection,
+    cancelSelection
+  };
+};
+
+// Hook for password protection management
+export const usePasswordProtection = () => {
+  const [passwordPolicy, setPasswordPolicy] = useState<PasswordPolicyEnum | undefined>(undefined);
+  const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
+  const [showPasswordModal, setShowPasswordModal] = useState<boolean>(false);
+  const [passwordError, setPasswordError] = useState<string | null>(null);
+  const [passwordVerified, setPasswordVerified] = useState<boolean>(false);
+  // const [pendingSaveAlbum, setPendingSaveAlbum] = useState(false);
+
+  const shouldShowContent = useCallback(() => {
+    // If no policy or authorized, show content
+    if (!passwordPolicy || isAuthorized || passwordPolicy === 'NoPassword') {
+      return true;
+    }
+    
+    // With NotVisible policy and not authorized, hide content
+    if (passwordPolicy === 'NotVisible') {
+      // If there's a password error, log it for debugging
+      if (passwordError) {
+        console.error('Password error:', passwordError);
+      }
+      return false;
+    }
+    
+    // For other policies, show content with appropriate restrictions
+    return true;
+  }, [passwordPolicy, isAuthorized, passwordError]);
+  
+  const shouldShowWatermark = useCallback(() => {
+    // If there's a password error and it mentions watermark, or policy is Watermark
+    const showWatermarkDueToError = passwordError?.toLowerCase().includes('watermark') ?? false;
+    return (!isAuthorized && passwordPolicy === 'Watermark') || showWatermarkDueToError;
+  }, [isAuthorized, passwordPolicy, passwordError]);
+
+  const showingEnterPassword = useCallback(() => {
+    // Show buttons if user is authorized OR there's no password policy OR policy is NoPassword
+    return !isAuthorized && passwordPolicy !== undefined && passwordPolicy !== 'NoPassword';
+  }, [isAuthorized, passwordPolicy]);
+
+  const promptForPassword = useCallback(() => {
+    setPasswordError(null); // Clear any previous errors
+    setShowPasswordModal(true);
+  }, []);
+
+  return {
+    passwordPolicy,
+    setPasswordPolicy,
+    isAuthorized,
+    setIsAuthorized,
+    showPasswordModal,
+    setShowPasswordModal,
+    passwordError,
+    setPasswordError,
+    passwordVerified,
+    setPasswordVerified,
+    // pendingSaveAlbum,
+    // setPendingSaveAlbum,
+    shouldShowContent,
+    shouldShowWatermark,
+    showingEnterPassword,
+    promptForPassword
+  };
+};
+
+// Hook for handling share actions similar to FooterSection
+export const useShareActions = (albumData: AlbumData | null, folderId: string | null, cognitoUsername: string | null, t: (key: string) => string) => {
+  const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
+  const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
+  const [isOnPublicProfile, setIsOnPublicProfile] = useState<boolean>(false);
+  const [localProfileIds, setLocalProfileIds] = useState<string[]>([]);
+  
+  // Update when album data changes
+  useEffect(() => {
+    if (albumData && albumData.profileIds && cognitoUsername) {
+      const publicProfileId = `${cognitoUsername}_____Public____Profile`;
+      setLocalProfileIds(albumData.profileIds);
+      setIsOnPublicProfile(albumData.profileIds.includes(publicProfileId));
+    }
+  }, [albumData, cognitoUsername]);
+  
+  // Generate the invite link based on folder id
+  const generateInviteLink = useCallback(() => {
+    if (!folderId) return '';
+    let formattedTargetItemIdentifier = getTargetItemIdentifier(folderId).replace(/-/g, '');
+    return `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
+  }, [folderId]);
+  
+  // Handle copy function
+  const handleCopy = useCallback(() => {
+    const inviteLink = generateInviteLink();
+    navigator.clipboard.writeText(inviteLink)
+      .then(() => {
+        setShowingCopyLinkAlert(false);
+        setShowingCopiedLinkAlert(true);
+      })
+      .catch(err => {
+        console.error("Failed to copy link:", err);
+        alert(t('Failed to copy link'));
+      });
+  }, [generateInviteLink, t]);
+  
+  // Handle public profile toggle
+  const handlePublicProfileToggle = useCallback(async () => {
+    if (!cognitoUsername || !folderId) {
+      alert(t('You must be logged in to perform this action'));
+      return;
+    }
+    
+    try {
+      // Get a fresh token
+      const token = await checkLoginWithRefresh();
+      
+      if (!token) {
+        console.error("Authentication failed");
+        return;
+      }
+      
+      // Determine the new profileIds array
+      const publicProfileId = `${cognitoUsername}_____Public____Profile`;
+      const newProfileIds = [...localProfileIds];
+      
+      if (isOnPublicProfile) {
+        // Remove from public profile
+        const index = newProfileIds.indexOf(publicProfileId);
+        if (index > -1) {
+          newProfileIds.splice(index, 1);
+        }
+      } else {
+        // Add to public profile
+        newProfileIds.push(publicProfileId);
+      }
+      
+      // Prepare the mutation query
+      const toggleVisibilityQuery = `
+        mutation ChangeAlbumVisibility($folderPositionChangeProfileIdsInput: FolderPositionChangeProfileIdsInput!) {
+          changeFiles(folderPositionChangeProfileIdsInput: $folderPositionChangeProfileIdsInput) {
+            items {
+              ... on FolderPosition {
+                id
+                profileIds
+              }
+            }
+          }
+        }
+      `;
+      
+      // Call the API
+      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ 
+          query: toggleVisibilityQuery, 
+          variables: { 
+            folderPositionChangeProfileIdsInput: {
+              folderId: folderId,
+              profileIds: newProfileIds
+            }
+          } 
+        }),
+      });
+      
+      const json = await res.json();
+      
+      if (json.errors) {
+        throw new Error(json.errors[0]?.message || "Unknown error");
+      }
+      
+      // Update local state
+      const updatedItems = json?.data?.changeFiles?.items || [];
+      const updatedItem = updatedItems.find((item: any) => item.folderPositionId === albumData?.folderPositionId);
+      
+      if (updatedItem && updatedItem.profileIds) {
+        setLocalProfileIds(updatedItem.profileIds);
+        setIsOnPublicProfile(updatedItem.profileIds.includes(publicProfileId));
+        console.log("Album visibility updated successfully");
+      }
+    } catch (err) {
+      console.error("Failed to toggle album visibility:", err);
+      alert(t('Failed to update album visibility. Please try again.'));
+    }
+  }, [cognitoUsername, folderId, localProfileIds, isOnPublicProfile, albumData, t]);
+  
+  return {
+    showingCopyLinkAlert,
+    setShowingCopyLinkAlert,
+    showingCopiedLinkAlert,
+    setShowingCopiedLinkAlert,
+    isOnPublicProfile,
+    handleCopy,
+    handlePublicProfileToggle,
+    generateInviteLink
+  };
 };

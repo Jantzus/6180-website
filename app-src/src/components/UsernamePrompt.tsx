@@ -13,7 +13,6 @@ import {
   UsernameAltButton
 } from "@/styles/styled-components";
 
-
 // Username Modal Component
 export const UsernamePrompt: React.FC<{
   t: (key: string) => string;

@@ -6,13 +6,16 @@ import {
   AWS_PUBLIC_GRAPHQL_ENDPOINT,
   AWS_PUBLIC_API_KEY,
   AWS_PRIVATE_GRAPHQL_ENDPOINT,
-  S3_BUCKET_URL,
   LOCAL_STORAGE_KEYS
 } from "@/lib/config";
 import { getTargetItemIdentifier } from "@/lib/utils";
 import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
+import { SearchBar } from "@/components/SearchBar";
+import { CopyLinkModal, ConfirmationModal } from "@/components/Modals";
+import { formatDate } from "@/lib/utils";
+import { LazyImage } from "@/components/LazyImage";
 
 // Types
 interface FolderPassword {
@@ -27,106 +30,11 @@ interface Folder {
   folderDescription?: string;
   folderPassword?: FolderPassword;
   creatorId: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: number;
+  updatedAt: number;
   files: any[];
   profileIds: string[];
 }
-
-// LazyImage Component - Copied to avoid importing from components
-interface LazyImageProps {
-  src?: string;
-  alt: string;
-  style: React.CSSProperties;
-  thumbnailDataKey?: string | null;
-  dataKey?: string | null;
-  bucketUrl?: string;
-  [key: string]: any;
-}
-
-// Updated LazyImage Component to prevent rendering of the question mark placeholder
-const LazyImage: React.FC<LazyImageProps> = ({ 
-  src, 
-  alt, 
-  style, 
-  thumbnailDataKey, 
-  dataKey, 
-  bucketUrl = S3_BUCKET_URL,
-  ...props 
-}) => {
-  const [loaded, setLoaded] = useState(false);
-  const [currentSrc, setCurrentSrc] = useState('');
-  const [hasValidSource, setHasValidSource] = useState(false);
-
-  useEffect(() => {
-    // Reset state when the image source changes
-    setLoaded(false);
-    
-    // Determine the appropriate source for the image
-    // Order of priority: thumbnailDataKey -> dataKey -> src
-    let imageSrc = '';
-    let isValid = false;
-    
-    if (thumbnailDataKey && thumbnailDataKey.length > 0) {
-      imageSrc = `${bucketUrl}${thumbnailDataKey}`;
-      isValid = true;
-    } else if (dataKey && dataKey.length > 0) {
-      imageSrc = `${bucketUrl}${dataKey}`;
-      isValid = true;
-    } else if (src && src.length > 0) {
-      imageSrc = src;
-      isValid = true;
-    }
-    
-    setCurrentSrc(imageSrc);
-    setHasValidSource(isValid);
-  }, [thumbnailDataKey, dataKey, src, bucketUrl]);
-
-  // Handle successful image load
-  const handleImageLoaded = () => {
-    setLoaded(true);
-  };
-
-  // Handle image loading error
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    console.error("Image load error:", e);
-    
-    // If thumbnail fails, try loading the full image as a fallback
-    if (thumbnailDataKey && dataKey && thumbnailDataKey !== dataKey) {
-      // Only change source if we're currently using the thumbnail
-      if (currentSrc === `${bucketUrl}${thumbnailDataKey}`) {
-        console.log("Falling back to full image");
-        setCurrentSrc(`${bucketUrl}${dataKey}`);
-      } else {
-        // If even the fallback fails, mark as invalid
-        setHasValidSource(false);
-      }
-    } else {
-      // If there's no fallback option, mark as invalid
-      setHasValidSource(false);
-    }
-  };
-
-  // Don't render anything if there's no valid source
-  if (!hasValidSource) {
-    return null;
-  }
-
-  return (
-    <img
-      src={currentSrc}
-      alt={alt}
-      style={{
-        ...style,
-        opacity: loaded ? 1 : 0.3,
-        transition: 'opacity 0.3s ease-in-out',
-      }}
-      onLoad={handleImageLoaded}
-      onError={handleImageError}
-      {...props}
-    />
-  );
-};
 
 // Styled Components via createGlobalStyle
 const GlobalStyle = createGlobalStyle`
@@ -151,44 +59,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 20px;
   }
 `;
-
-// Helper function to format date based on iOS implementation
-const formatDate = (dateString: string | null) => {
-  if (!dateString) return "";
-  
-  try {
-    // Convert string to number if needed
-    const timestamp = typeof dateString === 'string' 
-      ? Number(dateString) 
-      : dateString;
-    
-    // Skip invalid numbers
-    if (isNaN(timestamp)) {
-      console.log("Invalid timestamp:", dateString);
-      return "";
-    }
-    
-    // Create Date from timestamp (assumes seconds since epoch like iOS)
-    const date = new Date(timestamp * 1000); // Convert seconds to milliseconds
-    
-    // Verify we have a reasonable date (not epoch or future)
-    const year = date.getFullYear();
-    if (year <= 1970 || year > 2100) {
-      console.log("Date outside reasonable range:", date.toISOString());
-      return "";
-    }
-    
-    // Format the date using Intl formatter
-    return new Intl.DateTimeFormat('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    }).format(date);
-  } catch (e) {
-    console.error("Error formatting date:", e);
-    return ""; // Return empty string on error
-  }
-};
 
 // ProfileHeader Component
 interface ProfileHeaderProps {
@@ -364,173 +234,6 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
           </p>
         </div>
       )}
-    </div>
-  );
-};
-
-// CopyLinkModal Component
-interface CopyLinkModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  inviteLink: string;
-  onCopy: (text: string) => void;
-  t: (key: string) => string;
-  isRTL: boolean;
-}
-
-const CopyLinkModal: React.FC<CopyLinkModalProps> = ({ 
-  isOpen, 
-  onClose, 
-  inviteLink, 
-  onCopy,
-  t,
-  isRTL
-}) => {
-  if (!isOpen) return null;
-
-  // Define textAlign value with proper type
-  const textAlignValue: "left" | "right" | "center" = isRTL ? "right" : "left";
-
-  // Common button style with properly typed textAlign
-  const buttonStyle = {
-    width: "100%",
-    padding: "12px",
-    margin: "8px 0",
-    border: "1px solid #ddd",
-    borderRadius: "6px",
-    backgroundColor: "#fff",
-    textAlign: textAlignValue,
-    cursor: "pointer",
-    fontSize: "14px",
-    transition: "background-color 0.2s"
-  };
-
-  return (
-    <div 
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 1000,
-      }}
-      onClick={onClose}
-    >
-      <div 
-        style={{
-          backgroundColor: "white",
-          borderRadius: "12px",
-          padding: "20px",
-          width: "90%",
-          maxWidth: "400px",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-          direction: isRTL ? "rtl" : "ltr",
-          textAlign: textAlignValue,
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <h3 style={{ marginTop: 0, marginBottom: "16px", fontSize: "18px" }}>
-          {t('Share Album Link')}
-        </h3>
-        
-        <button
-          style={buttonStyle}
-          onClick={() => onCopy(inviteLink)}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f5f5f5"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fff"}
-        >
-          {t('Copy Link')}
-        </button>
-        
-        <button
-          style={{
-            ...buttonStyle,
-            backgroundColor: "#f0f0f0",
-            marginTop: "16px"
-          }}
-          onClick={onClose}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#e0e0e0"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#f0f0f0"}
-        >
-          {t('Cancel')}
-        </button>
-      </div>
-    </div>
-  );
-};
-
-// ConfirmationModal Component
-interface ConfirmationModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  t: (key: string) => string;
-  isRTL: boolean;
-}
-
-const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ 
-  isOpen, 
-  onClose, 
-  t,
-  isRTL
-}) => {
-  if (!isOpen) return null;
-
-  return (
-    <div 
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 1000,
-      }}
-      onClick={onClose}
-    >
-      <div 
-        style={{
-          backgroundColor: "white",
-          borderRadius: "12px",
-          padding: "20px",
-          width: "90%",
-          maxWidth: "400px",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-          direction: isRTL ? "rtl" : "ltr",
-          textAlign: isRTL ? "right" : "left" as const,
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <h3 style={{ marginTop: 0, marginBottom: "16px", fontSize: "18px" }}>
-          {t('Link to album website copied.')}
-        </h3>
-        
-        <button
-          style={{
-            width: "100%",
-            padding: "12px",
-            border: "1px solid #ddd",
-            borderRadius: "6px",
-            backgroundColor: "#f0f0f0",
-            textAlign: "center" as const,
-            cursor: "pointer",
-            fontSize: "14px"
-          }}
-          onClick={onClose}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#e0e0e0"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#f0f0f0"}
-        >
-          {t('OK')}
-        </button>
-      </div>
     </div>
   );
 };
@@ -805,44 +508,6 @@ const AlbumFooter: React.FC<AlbumFooterProps> = ({
         </style>
       </div>
     </>
-  );
-};
-
-// Search Bar Component
-interface SearchBarProps {
-  searchQuery: string;
-  setSearchQuery: (query: string) => void;
-  t: (key: string) => string;
-  isRTL: boolean;
-}
-
-const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, setSearchQuery, t, isRTL }) => {
-  return (
-    <div 
-      style={{
-        width: "100%", 
-        marginBottom: 24,
-        boxSizing: "border-box",
-        direction: isRTL ? "rtl" : "ltr"
-      }}
-    >
-      <input
-        type="text"
-        placeholder={t('Search album title or description')}
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "10px 16px",
-          fontSize: "14px",
-          border: "1px solid #ddd",
-          borderRadius: "6px",
-          outline: "none",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
-          boxSizing: "border-box",
-        }}
-      />
-    </div>
   );
 };
 

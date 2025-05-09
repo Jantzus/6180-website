@@ -1,28 +1,28 @@
-import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";import{r as e,a as A}from"./config-D7NgO2fe.js";import{b as D}from"./utils-D4k2i4Ex.js";const E=B`
+import{j as n,g as S,r as a,a as j}from"./index-BQCoonNn.js";import{f as A,d as o,l as T}from"./styled-components.browser.esm-CpMl8bPK.js";import{e as C}from"./utils-MSJ8woNW.js";const q=A`
   body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
-`,f=t=>U`
-  direction: ${t?"rtl":"ltr"};
-`,L=o.div`
+`,z=e=>T`
+  direction: ${e?"rtl":"ltr"};
+`,J=o.div`
   padding: 40px 20px;
   background-color: #f9fafb;
   min-height: 100vh;
-  ${t=>f(t.isRTL)}
-`,R=o.div`
+  ${e=>z(e.isRTL)}
+`,W=o.div`
   max-width: 900px;
   margin: 0 auto;
-`,j=o.div`
+`,K=o.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
-`,F=o.div`
+`,Q=o.div`
   margin-bottom: 12px;
-`,O=o.a`
+`,X=o.a`
   font-size: 16px;
   color: #007bff;
   text-decoration: none;
@@ -34,72 +34,72 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
 `;o.div`
   font-size: 16px;
   color: #666;
-`;const G=o.div`
+`;const Z=o.div`
   margin-bottom: 24px;
   background-color: #fff;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-`,H=o.h3`
+`,Y=o.h3`
   font-size: 18px;
   margin: 0 0 12px 0;
-`,V=o.div`
+`,oo=o.div`
   margin-bottom: 12px;
-`,_=o.div`
+`,eo=o.div`
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   margin-bottom: 6px;
-`,W=o.div`
+`,to=o.div`
   height: 8px;
   background-color: #e0e0e0;
   border-radius: 4px;
   overflow: hidden;
-`,q=o.div`
+`,ro=o.div`
   height: 100%;
   background-color: #4caf50;
   border-radius: 4px;
   transition: width 0.3s ease;
-  width: ${t=>t.progress*100}%;
-`,J=o.div`
+  width: ${e=>e.progress*100}%;
+`,so=o.div`
   display: flex;
   gap: 12px;
   font-size: 14px;
   color: #666;
-`,Q=o.div`
-  color: ${t=>t.isError?"#e53935":"inherit"};
-`,X=o.div`
+`,no=o.div`
+  color: ${e=>e.isError?"#e53935":"inherit"};
+`,ao=o.div`
   margin-bottom: 24px;
   background-color: #fff;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-`,Z=o.h3`
+`,io=o.h3`
   font-size: 18px;
   margin: 0 0 12px 0;
-`,K=o.div`
+`,po=o.div`
   font-size: 14px;
   margin-bottom: 8px;
-`,Y=o.div`
+`,co=o.div`
   height: 8px;
   background-color: #e0e0e0;
   border-radius: 4px;
   overflow: hidden;
-`,oo=o.div`
+`,lo=o.div`
   height: 100%;
   background-color: #2196f3;
   border-radius: 4px;
   transition: width 0.3s ease;
-`,to=o.p`
+`,xo=o.p`
   font-size: 16px;
   margin-bottom: 16px;
   color: #333;
-`,eo=o.div`
+`,go=o.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 32px;
-`,ao=o.div`
+`,mo=o.div`
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -109,7 +109,7 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
   box-shadow: 0 2px 6px rgba(0,0,0,0.03);
   width: 160px;
   position: relative;
-`,ro=o.div`
+`,uo=o.div`
   position: absolute;
   top: 8px;
   right: 8px;
@@ -122,23 +122,23 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
   font-size: 12px;
   color: white;
   z-index: 1;
-  background-color: ${t=>{switch(t.status){case"complete":return"#4caf50";case"error":return"#e53935";case"uploading":return"#2196f3";case"processing":return"#ff9800";default:return"#9e9e9e"}}};
-`,so=o.div`
+  background-color: ${e=>{switch(e.status){case"complete":return"#4caf50";case"error":return"#e53935";case"uploading":return"#2196f3";case"processing":return"#ff9800";default:return"#9e9e9e"}}};
+`,bo=o.div`
   position: relative;
   margin-bottom: 8px;
   height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-`,no=o.img`
+`,fo=o.img`
   max-width: 100%;
   max-height: 100%;
   border-radius: 6px;
-`,io=o.video`
+`,ho=o.video`
   max-width: 100%;
   max-height: 100%;
   border-radius: 6px;
-`,po=o.div`
+`,wo=o.div`
   position: absolute;
   bottom: 4px;
   left: 4px;
@@ -147,75 +147,75 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
   background-color: rgba(0,0,0,0.2);
   border-radius: 2px;
   overflow: hidden;
-`,co=o.div`
+`,vo=o.div`
   height: 100%;
-  background-color: ${t=>t.status==="processing"?"#ff9800":"#2196f3"};
+  background-color: ${e=>e.status==="processing"?"#ff9800":"#2196f3"};
   transition: width 0.3s ease;
-  width: ${t=>t.progress*100}%;
-`,lo=o.div`
+  width: ${e=>e.progress*100}%;
+`,yo=o.div`
   font-size: 12px;
   color: #666;
   margin-bottom: 6px;
-`,xo=o.div`
+`,ko=o.div`
   font-size: 12px;
   color: #e53935;
   margin-bottom: 6px;
-`,go=o.button`
+`,Po=o.button`
   background-color: #e53935;
   color: white;
   border: none;
   border-radius: 6px;
   padding: 6px 8px;
   font-size: 12px;
-  cursor: ${t=>t.disabled?"not-allowed":"pointer"};
+  cursor: ${e=>e.disabled?"not-allowed":"pointer"};
   margin-top: auto;
-  opacity: ${t=>t.disabled?.6:1};
-`,bo=o.div`
+  opacity: ${e=>e.disabled?.6:1};
+`,Uo=o.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-bottom: 24px;
-`,h=o.button`
+`,$=o.button`
   padding: 14px 28px;
   font-size: 16px;
   border-radius: 8px;
   border: none;
-  cursor: ${t=>t.disabled?"not-allowed":"pointer"};
-  opacity: ${t=>t.disabled?.6:1};
-`,mo=o(h)`
+  cursor: ${e=>e.disabled?"not-allowed":"pointer"};
+  opacity: ${e=>e.disabled?.6:1};
+`,So=o($)`
   background-color: #007bff;
   color: white;
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
-`,T=o(h)`
+`,D=o($)`
   background-color: #8c8c8c;
   color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-`,uo=o(T)`
-  color: ${t=>t.passwordSet?"#000000":"white"};
-  font-weight: ${t=>t.passwordSet?"bold":"normal"};
-`,fo=o.div`
+`,zo=o(D)`
+  color: ${e=>e.passwordSet?"#000000":"white"};
+  font-weight: ${e=>e.passwordSet?"bold":"normal"};
+`,$o=o.div`
   margin-top: 12px;
   margin-bottom: 12px;
   background-color: #fff;
   padding: 24px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-`,ho=o.div`
+`,Io=o.div`
   margin-bottom: 16px;
-`,wo=o.label`
+`,Bo=o.label`
   display: block;
   margin-bottom: 8px;
   font-size: 14px;
   font-weight: 500;
   color: #333;
-`,vo=o.input`
+`,jo=o.input`
   width: 100%;
   padding: 10px 12px;
   font-size: 16px;
   border-radius: 6px;
   border: 1px solid #ddd;
   box-sizing: border-box;
-`,yo=o.textarea`
+`,Ao=o.textarea`
   width: 100%;
   padding: 10px 12px;
   font-size: 16px;
@@ -223,7 +223,7 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
   border: 1px solid #ddd;
   box-sizing: border-box;
   resize: vertical;
-`,ko=o.div`
+`,E=o.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -234,33 +234,33 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
   align-items: center;
   justify-content: center;
   z-index: 9999;
-`,Po=o.div`
+`,R=o.div`
   background: #fff;
   padding: 30px;
   border-radius: 12px;
   width: 90%;
   max-width: 400px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  ${t=>f(t.isRTL)}
-`,So=o.p`
+  ${e=>z(e.isRTL)}
+`,L=o.p`
   font-size: 16px;
   margin-bottom: 12px;
-`,zo=o.p`
+`,M=o.p`
   font-size: 14px;
   margin-bottom: 16px;
   color: #666;
-`,$o=o.input`
+`,N=o.input`
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 16px;
-  text-align: ${t=>t.isRTL?"right":"left"};
-`,Io=o.div`
+  text-align: ${e=>e.isRTL?"right":"left"};
+`,F=o.div`
   color: #e53935;
   margin-bottom: 12px;
-`,Bo=o.button`
+`,O=o.button`
   width: 100%;
   padding: 12px;
   background-color: #007bff;
@@ -268,10 +268,10 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
   font-size: 16px;
   border: none;
   border-radius: 6px;
-  cursor: ${t=>t.disabled?"not-allowed":"pointer"};
+  cursor: ${e=>e.disabled?"not-allowed":"pointer"};
   margin-bottom: 10px;
-  opacity: ${t=>t.disabled?.6:1};
-`,Uo=o.button`
+  opacity: ${e=>e.disabled?.6:1};
+`,G=o.button`
   width: 100%;
   padding: 12px;
   background-color: #6c757d;
@@ -279,38 +279,38 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
   font-size: 16px;
   border: none;
   border-radius: 6px;
-  cursor: ${t=>t.disabled?"not-allowed":"pointer"};
-  opacity: ${t=>t.disabled?.6:1};
-`,Ao=o.div`
+  cursor: ${e=>e.disabled?"not-allowed":"pointer"};
+  opacity: ${e=>e.disabled?.6:1};
+`;o.div`
   margin-top: 24px;
   padding: 16px;
   background-color: #f0f0f0;
   border-radius: 8px;
-`,Do=o.h3`
+`;o.h3`
   margin: 0 0 12px 0;
   font-size: 16px;
-`,To=o.pre`
+`;o.pre`
   margin: 0;
   font-size: 12px;
   white-space: pre-wrap;
   max-height: 200px;
   overflow-y: auto;
-`,Co=o.div`
+`;o.div`
   margin-bottom: 4px;
-`,Mo=o.input`
+`;const To=o.input`
   display: none;
-`,No=o.div`
+`,Co=o.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   padding: 4px 0;
   gap: 15px; /* Small gap for consistent spacing */
-`,Eo=o.div`
+`,Do=o.div`
   font-size: 14px;
   font-weight: 500;
   color: #333;
   line-height: 24px; /* Added line-height to better align with taller toggle */
-`,Lo=o.label`
+`,Eo=o.label`
   position: relative;
   display: inline-block;
   width: 40px;
@@ -361,7 +361,7 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
-`,jo=t=>{const[w,v]=e.useState(!1),[n,l]=e.useState(""),[y,i]=e.useState(""),[k,x]=e.useState(!1),[P,d]=e.useState(!1),S=e.useCallback(a=>{const r=/^[a-zA-Z0-9-]+$/.test(a);return console.log(`Username validation for '${a}': ${r}`),r},[]),p=e.useCallback(async(a,r)=>{var g,b;console.log(`Submitting username: ${a}`),d(!0),i("");const s=await D();if(!s){i(t("Authentication error. Please try again.")),d(!1);return}const $=`
+`,Lo=({t:e,language:x,usernameManager:g,onSuccess:i})=>{const{showUsernamePrompt:m,setShowUsernamePrompt:b,usernameInput:s,setUsernameInput:f,usernameError:c,validateUsername:h,submitUsername:d,showAltButton:w,appendRandomDigits:l,isSubmittingUsername:u}=g,r=t=>{console.log(`Username successfully updated to: ${t}`),localStorage.setItem("publicUsername",t),b(!1),i(t)};return m?n.jsx(E,{children:n.jsxs(R,{isRTL:S(x)==="rtl",children:[n.jsx(L,{children:e("Enter Username")}),n.jsx(M,{children:e("Username should contain only letters, numbers and hyphens. Example: john-doe2")}),n.jsx(N,{value:s,onChange:t=>f(t.target.value),isRTL:S(x)==="rtl"}),c&&n.jsx(F,{children:c}),n.jsx(O,{disabled:u,onClick:()=>{if(!h(s)){g.setUsernameError(e("Username must contain only letters, numbers, and hyphens."));return}d(s,r)},children:e("Select Username")}),w&&n.jsx(G,{disabled:u,onClick:()=>l(r),children:e("Add Random Digits to Username")})]})}):null},Mo=e=>{const[x,g]=a.useState(!1),[i,m]=a.useState(""),[b,s]=a.useState(""),[f,c]=a.useState(!1),[h,d]=a.useState(!1),w=a.useCallback(r=>{const t=/^[a-zA-Z0-9-]+$/.test(r);return console.log(`Username validation for '${r}': ${t}`),t},[]),l=a.useCallback(async(r,t)=>{var y,k;console.log(`Submitting username: ${r}`),d(!0),s("");const p=await C();if(!p){s(e("Authentication error. Please try again.")),d(!1);return}const I=`
       mutation MyMutation($savePublicProfileDisplayNameInput: SavePublicProfileDisplayNameInput) {
         changeMyAccountItem(savePublicProfileDisplayNameInput: $savePublicProfileDisplayNameInput) {
           ... on Profile {
@@ -369,4 +369,4 @@ import{f as B,d as o,l as U}from"./styled-components.browser.esm-B-nO42Xh.js";im
           }
         }
       }
-    `,I={savePublicProfileDisplayNameInput:{anyDisplayName:a}};try{const c=await(await fetch(A,{method:"POST",headers:{"Content-Type":"application/json",Authorization:`Bearer ${s}`},body:JSON.stringify({query:$,variables:I})})).json(),u=(b=(g=c==null?void 0:c.data)==null?void 0:g.changeMyAccountItem)==null?void 0:b.anyDisplayName;if(u)r(u);else throw new Error("Username taken")}catch(m){console.error(`Error submitting username: ${m}`),i(t("Username is already taken. Please try a different one.")),x(!0),d(!1)}},[t]),z=e.useCallback(a=>{const r=Math.floor(1e5+Math.random()*9e5).toString(),s=`${n}${r}`;console.log(`Appending random digits to username: ${n} -> ${s}`),l(s),p(s,a)},[n,p]);return{showUsernamePrompt:w,setShowUsernamePrompt:v,usernameInput:n,setUsernameInput:l,usernameError:y,setUsernameError:i,showAltButton:k,setShowAltButton:x,isSubmittingUsername:P,setIsSubmittingUsername:d,validateUsername:S,submitUsername:p,appendRandomDigits:z}};export{Uo as $,L as A,F as B,R as C,Lo as D,xo as E,lo as F,E as G,j as H,Ro as I,T as J,uo as K,mo as L,so as M,ko as N,V as O,G as P,Po as Q,go as R,X as S,No as T,po as U,io as V,So as W,zo as X,$o as Y,Io as Z,Bo as _,O as a,Ao as a0,Do as a1,To as a2,Co as a3,H as b,_ as c,W as d,q as e,J as f,Q as g,Z as h,K as i,Y as j,oo as k,Mo as l,to as m,eo as n,ao as o,ro as p,no as q,co as r,bo as s,fo as t,jo as u,ho as v,wo as w,vo as x,yo as y,Eo as z};
+    `,B={savePublicProfileDisplayNameInput:{anyDisplayName:r}};try{const v=await(await fetch(j,{method:"POST",headers:{"Content-Type":"application/json",Authorization:`Bearer ${p}`},body:JSON.stringify({query:I,variables:B})})).json(),U=(k=(y=v==null?void 0:v.data)==null?void 0:y.changeMyAccountItem)==null?void 0:k.anyDisplayName;if(U)t(U);else throw new Error("Username taken")}catch(P){console.error(`Error submitting username: ${P}`),s(e("Username is already taken. Please try a different one.")),c(!0),d(!1)}},[e]),u=a.useCallback(r=>{const t=Math.floor(1e5+Math.random()*9e5).toString(),p=`${i}${t}`;console.log(`Appending random digits to username: ${i} -> ${p}`),m(p),l(p,r)},[i,l]);return{showUsernamePrompt:x,setShowUsernamePrompt:g,usernameInput:i,setUsernameInput:m,usernameError:b,setUsernameError:s,showAltButton:f,setShowAltButton:c,isSubmittingUsername:h,setIsSubmittingUsername:d,validateUsername:w,submitUsername:l,appendRandomDigits:u}};export{J as A,Q as B,W as C,Bo as D,ko as E,yo as F,q as G,K as H,jo as I,Ao as J,Do as K,Eo as L,bo as M,Ro as N,oo as O,zo as P,Po as R,D as S,Co as T,Lo as U,ho as V,X as a,To as b,Uo as c,So as d,Z as e,Y as f,eo as g,to as h,ro as i,so as j,no as k,ao as l,io as m,po as n,co as o,lo as p,xo as q,go as r,mo as s,uo as t,Mo as u,fo as v,wo as w,vo as x,$o as y,Io as z};

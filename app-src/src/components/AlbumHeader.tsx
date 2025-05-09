@@ -18,6 +18,14 @@ import {
 } from "@/styles/photos-styled-components";
 import ResponsiveHeader from "@/components/HeaderComponents";
 
+// Define action types for reuse
+type ActionItem = {
+  label: string;
+  onClick: () => void;
+  style?: React.CSSProperties;
+  disabled?: boolean;
+};
+
 // Album Header Component
 export const AlbumHeader: React.FC<{
   t: (key: string) => string;
@@ -124,163 +132,186 @@ export const AlbumHeader: React.FC<{
     };
   }, [menuOpen]);
 
+  // Define common action items to avoid repetition
+  const getActionItems = (): ActionItem[] => [
+    {
+      label: t('Add Photos'),
+      onClick: addPhotosToAlbum
+    },
+    {
+      label: t('Download'),
+      onClick: handleDownloadPhotos
+    },
+    {
+      label: t('Copy Link'),
+      onClick: handleCopyLink
+    },
+    {
+      label: isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile'),
+      onClick: handlePublicProfileToggle,
+      style: {
+        backgroundColor: isOnPublicProfile ? "#4caf50" : "#e0e0e0",
+        color: isOnPublicProfile ? "white" : "inherit",
+      }
+    }
+  ];
+
+  // Selection mode actions
+  const renderSelectionModeActions = () => (
+    <div style={{ display: 'flex', gap: '16px' }}>
+      <ActionButton 
+        onClick={shareSelection} 
+        disabled={selectedItems.size === 0}
+        style={{ 
+          opacity: selectedItems.size === 0 ? 0.5 : 1,
+          backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
+          color: selectedItems.size > 0 ? 'white' : undefined,
+        }}
+      >
+        {t('Create Sub-album')} ({selectedItems.size})
+      </ActionButton>
+      <ActionButton onClick={cancelSelection}>
+        {t('Cancel')}
+      </ActionButton>
+    </div>
+  );
+
+  // Password button when needed
+  const renderPasswordButton = () => (
+    !isSelectionMode && 
+    !isAuthorized && 
+    passwordPolicy && 
+    passwordPolicy !== 'NoPassword' && (
+      <ActionButton onClick={promptForPassword}>
+        {t('Enter Password')}
+      </ActionButton>
+    )
+  );
+
+  // Actions menu for mobile view
+  const renderMobileMenu = () => (
+    <>
+      <HamburgerButton 
+        onClick={toggleMenu}
+        aria-label={t('Menu')}
+        aria-expanded={menuOpen}
+      >
+        <HamburgerIcon>
+          <HamburgerLine />
+          <HamburgerLine />
+          <HamburgerLine />
+        </HamburgerIcon>
+        {t('Actions')}
+      </HamburgerButton>
+      
+      {menuOpen && (
+        <DropdownMenu>
+          {getActionItems().map((item, index) => (
+            <MenuButton 
+              key={index} 
+              onClick={() => handleAction(item.onClick)}
+              style={item.style}
+              disabled={item.disabled}
+            >
+              {item.label}
+            </MenuButton>
+          ))}
+        </DropdownMenu>
+      )}
+    </>
+  );
+
+  // Actions for desktop view
+  const renderDesktopActions = () => (
+    <div style={{ 
+      display: 'flex', 
+      gap: '10px',
+      flexWrap: 'nowrap'
+    }}>
+      {getActionItems().map((item, index) => (
+        <ActionButton
+          key={index}
+          onClick={item.onClick}
+          style={item.style}
+          disabled={item.disabled}
+        >
+          {item.label}
+        </ActionButton>
+      ))}
+    </div>
+  );
+
+  // Render the main content area based on various conditions
+  const renderMainContent = () => {
+    if (isSelectionMode) {
+      return renderSelectionModeActions();
+    }
+
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'space-between',
+        width: '100%', 
+        flexWrap: 'nowrap', 
+        alignItems: 'center'
+      }}>
+        {/* Left side - Create Sub-album button */}
+        <div style={{ flexShrink: 0 }}> 
+          {!showingEnterPassword() && (
+            <CreateAlbumButton onClick={createSubalbum}>
+              {t('Create Sub-album')}
+            </CreateAlbumButton>
+          )}
+        </div>
+        
+        {/* Right side - actions group */}
+        <div style={{ 
+          marginLeft: 'auto',
+          display: 'flex',
+          alignItems: 'center'
+        }}>
+          {renderPasswordButton()}
+          
+          {/* Show the modified header component with action menu for albums with folderPositionId */}
+          {!isSelectionMode && !(
+            !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
+          ) && (
+            albumData?.folderPositionId ? (
+              <div 
+                ref={menuRef} 
+                style={{ 
+                  position: 'relative', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'flex-end',
+                  flexWrap: 'nowrap'
+                }}
+              >
+                {isMobile ? renderMobileMenu() : renderDesktopActions()}
+              </div>
+            ) : (
+              <ResponsiveHeader 
+                addPhotosToAlbum={addPhotosToAlbum}
+                saveAlbum={saveAlbumDirectly}
+                downloadPhotos={handleDownloadPhotos}
+                promptForPassword={promptForPassword}
+                showingEnterPassword={showingEnterPassword()}
+                passwordPolicy={passwordPolicy}
+                usingFolderInviteGrantsRightToAddItems={albumData?.usingFolderInviteGrantsRightToAddItems}
+                t={t} 
+              />
+            )
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <Header>
       <HeaderContent>
         <HeaderControlsWithFullWidth>
-          {isSelectionMode ? (
-            <div style={{ display: 'flex', gap: '16px' }}>
-              <ActionButton 
-                onClick={shareSelection} 
-                disabled={selectedItems.size === 0}
-                style={{ 
-                  opacity: selectedItems.size === 0 ? 0.5 : 1,
-                  backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
-                  color: selectedItems.size > 0 ? 'white' : undefined,
-                }}
-              >
-                {t('Create Sub-album')} ({selectedItems.size})
-              </ActionButton>
-              <ActionButton onClick={cancelSelection}>
-                {t('Cancel')}
-              </ActionButton>
-            </div>
-          ) : (
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between',
-              width: '100%', 
-              flexWrap: 'nowrap', 
-              alignItems: 'center'
-            }}>
-              {/* Left side - Create Sub-album button */}
-              <div style={{ flexShrink: 0 }}> 
-              {!showingEnterPassword() && (
-                <CreateAlbumButton onClick={createSubalbum}>
-                  {t('Create Sub-album')}
-                </CreateAlbumButton>
-              )}
-              </div>
-              
-              {/* Right side - actions group */}
-              <div style={{ 
-                marginLeft: 'auto',
-                display: 'flex',
-                alignItems: 'center'
-              }}>
-                {/* Show password button */}
-                {!isSelectionMode && 
-                !isAuthorized && 
-                passwordPolicy && 
-                passwordPolicy !== 'NoPassword' && (
-                  <ActionButton onClick={promptForPassword}>
-                    {t('Enter Password')}
-                  </ActionButton>
-                )}
-                
-                {/* Show the modified header component with action menu for albums with folderPositionId */}
-                {!isSelectionMode && !(
-                  !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
-                ) && (
-                  albumData?.folderPositionId ? (
-                    <div 
-                      ref={menuRef} 
-                      style={{ 
-                        position: 'relative', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'flex-end',
-                        flexWrap: 'nowrap'
-                      }}
-                    >
-                      {isMobile ? (
-                        <>
-                          <HamburgerButton 
-                            onClick={toggleMenu}
-                            aria-label={t('Menu')}
-                            aria-expanded={menuOpen}
-                          >
-                            <HamburgerIcon>
-                              <HamburgerLine />
-                              <HamburgerLine />
-                              <HamburgerLine />
-                            </HamburgerIcon>
-                            {t('Actions')}
-                          </HamburgerButton>
-                          
-                          {menuOpen && (
-                            <DropdownMenu>
-                              <MenuButton onClick={() => handleAction(addPhotosToAlbum)}>
-                                {t('Add Photos')}
-                              </MenuButton>
-                              
-                              <MenuButton onClick={() => handleAction(handleDownloadPhotos)}>
-                                {t('Download')}
-                              </MenuButton>
-                              
-                              <MenuButton onClick={() => handleAction(handleCopyLink)}>
-                                {t('Copy Link')}
-                              </MenuButton>
-                              
-                              <MenuButton onClick={() => handleAction(handlePublicProfileToggle)}>
-                                {isOnPublicProfile ? t('Remove from Public Profile') : t('Add to Public Profile')}
-                              </MenuButton>
-                            </DropdownMenu>
-                          )}
-                        </>
-                      ) : (
-                        // Desktop view with all buttons visible
-                        <div style={{ 
-                          display: 'flex', 
-                          gap: '10px',
-                          flexWrap: 'nowrap'
-                        }}>
-                          <ActionButton
-                            onClick={addPhotosToAlbum}
-                          >
-                            {t('Add Photos')}
-                          </ActionButton>
-                          
-                          <ActionButton
-                            onClick={handleDownloadPhotos}
-                          >
-                            {t('Download')}
-                          </ActionButton>
-                          
-                          <ActionButton
-                            onClick={handleCopyLink}
-                          >
-                            {t('Copy Link')}
-                          </ActionButton>
-                          
-                          <ActionButton
-                            onClick={handlePublicProfileToggle}
-                            style={{
-                              backgroundColor: isOnPublicProfile ? "#4caf50" : "#e0e0e0",
-                              color: isOnPublicProfile ? "white" : "inherit",
-                            }}
-                          >
-                            {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
-                          </ActionButton>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <ResponsiveHeader 
-                      addPhotosToAlbum={addPhotosToAlbum}
-                      saveAlbum={saveAlbumDirectly}
-                      downloadPhotos={handleDownloadPhotos}
-                      promptForPassword={promptForPassword}
-                      showingEnterPassword={showingEnterPassword()}
-                      passwordPolicy={passwordPolicy}
-                      usingFolderInviteGrantsRightToAddItems={albumData?.usingFolderInviteGrantsRightToAddItems}
-                      t={t} 
-                    />
-                  )
-                )}
-              </div>
-            </div>
-          )}
+          {renderMainContent()}
         </HeaderControlsWithFullWidth>
         <RowSelectorContainer>
           <RowSelectorLabel htmlFor="columns" id="columns-label">
@@ -291,11 +322,9 @@ export const AlbumHeader: React.FC<{
             value={columns} 
             onChange={(e) => changeColumns(e.target.value)}
           >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            {[1, 2, 3, 4, 5].map(num => (
+              <option key={num} value={num.toString()}>{num}</option>
+            ))}
           </RowSelectorSelect>
         </RowSelectorContainer>
       </HeaderContent>
