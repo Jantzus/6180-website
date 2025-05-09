@@ -1,4 +1,5 @@
-import { LazyImage, VideoThumbnail } from "@/components/MediaComponents";
+import { PhotoPageLazyImage } from "@/components/PhotoPageLazyImage";
+import { PhotoPageVideoThumbnail } from "@/components/PhotoPageVideoThumbnail";
 
 // Import styled components
 import { 
@@ -53,7 +54,7 @@ export const MediaItemDisplayComponent: React.FC<{
       )}
       
       {item.type === 'image' ? (
-        <LazyImage 
+        <PhotoPageLazyImage 
           src={item.url}
           thumbnailSrc={item.thumbnailUrl}
           alt={`Album image ${index + 1}`}
@@ -63,7 +64,7 @@ export const MediaItemDisplayComponent: React.FC<{
           showWatermark={showWatermark}
         />
       ) : (
-        <VideoThumbnail 
+        <PhotoPageVideoThumbnail 
           thumbnailUrl={item.thumbnailUrl || ''} 
           videoUrl={item.url} 
           duration={item.duration || '0:00'} 

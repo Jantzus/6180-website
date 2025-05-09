@@ -32,7 +32,7 @@ import {
 } from "@/styles/photos-styled-components";
 
 // Import components
-import { FullscreenMediaViewer } from "@/components/MediaComponents";
+import { FullscreenMediaViewer } from "@/components/FullscreenMediaViewer";
 import { PasswordModal } from "@/components/ModalComponents";
 import { FileInput } from "@/components/FileInput";
 import { UploadProgress } from "@/components/UploadProgress";

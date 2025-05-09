@@ -629,3 +629,81 @@ export const PasswordButton = styled(ActionButton)`
     background-color: #45a049;
   }
 `;
+
+export const FullscreenContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const NavigationButton = styled.button<{ isDisabled?: boolean }>`
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: ${props => props.isDisabled ? 'not-allowed' : 'pointer'};
+  opacity: ${props => props.isDisabled ? 0.5 : 1};
+`;
+
+export const BackButton = styled(NavigationButton)``;
+
+export const NavButtonsContainer = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export const OwnerProfileLink = styled.a`
+  text-decoration: none;
+  color: white;
+  background-color: #006adc;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`;
+
+export const Image = styled.img<{ isLoaded: boolean }>`
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: ${props => props.isLoaded ? 1 : 0};
+  transition: opacity 0.3s;
+`;
+
+export const ThumbnailImage = styled.img`
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.5;
+`;
+
+export const VideoElement = styled.video`
+  max-width: 100%;
+  max-height: 100%;
+`;
+
+export const LoadingIndicator = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  z-index: 10;
+`;
+
+export const MediaWrapper = styled.div`
+  position: relative;
+`;

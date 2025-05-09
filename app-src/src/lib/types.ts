@@ -131,7 +131,7 @@ export interface AlbumData {
 }
 
 // Props for various components
-export interface LazyImageProps {
+export interface PhotoPageLazyImageProps {
   src: string;
   thumbnailSrc?: string;
   alt: string;
@@ -139,28 +139,6 @@ export interface LazyImageProps {
   loadFullResolution?: boolean;
   onFullResolutionLoaded?: () => void;
   onClick?: () => void;
-  showWatermark?: boolean;
-}
-
-export interface VideoThumbnailProps {
-  thumbnailUrl: string;
-  videoUrl: string;
-  duration: string;
-  index: number;
-  onFullResolutionLoaded?: () => void;
-  onClick?: () => void;
-  showWatermark?: boolean;
-}
-
-export interface FullscreenMediaViewerProps {
-  item: MediaItem;
-  index: number;
-  onClose: () => void;
-  onPrev: () => void;
-  onNext: () => void;
-  hasNext: boolean;
-  hasPrev: boolean;
-  ownerName?: string;
   showWatermark?: boolean;
 }
 
