@@ -75,6 +75,7 @@ import { I18nProvider, useTranslation } from "@/lib/i18n/react";
 import { getLanguageDirection } from "@/lib/i18n/translations";
 import { PasswordDialog } from "@/components/PasswordDialog";
 import { LogoutButton } from "@/components/LogoutButton";
+import { useUsernameManagement } from "@/lib/customHooks";
 
 // Import utility functions from file-upload-utils
 import { 
@@ -165,6 +166,21 @@ const SaveAlbum = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
 
+  // Use the username management hook
+  const {
+    showUsernamePrompt,
+    setShowUsernamePrompt,
+    usernameInput,
+    setUsernameInput,
+    usernameError,
+    setUsernameError,
+    showAltButton,
+    isSubmittingUsername,
+    validateUsername,
+    submitUsername,
+    appendRandomDigits
+  } = useUsernameManagement(t);
+
   // Core state
   const [folderId, setFolderId] = useState<string | null>(null);
   const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
@@ -173,13 +189,6 @@ const SaveAlbum = () => {
   // User state
   const [publicUsername, setPublicUsername] = useState<string | null>(null);
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
-  
-  // Username modal state
-  const [showUsernamePrompt, setShowUsernamePrompt] = useState(false);
-  const [usernameInput, setUsernameInput] = useState("");
-  const [usernameError, setUsernameError] = useState("");
-  const [showAltButton, setShowAltButton] = useState(false);
-  const [isSubmittingUsername, setIsSubmittingUsername] = useState(false);
   
   // Progress tracking state
   const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
@@ -717,6 +726,18 @@ const SaveAlbum = () => {
       enhancedLog(`Error in handleSaveAlbum: ${err}`);
       setIsSavingAlbum(false);
     }
+  };
+
+  // Handle successful username update - callback for the username hook
+  const handleSuccessfulUsernameUpdate = (newName: string) => {
+    enhancedLog(`Handling successful username update to: ${newName}`);
+    localStorage.setItem("publicUsername", newName);
+    setPublicUsername(newName);
+    setShowUsernamePrompt(false);
+    
+    // Automatically proceed with saving the album
+    enhancedLog("Proceeding to save album after username update");
+    saveAlbumDirectly();
   };
 
   // Helper function to split array into chunks of specified size
@@ -1306,94 +1327,6 @@ const SaveAlbum = () => {
     }, 1000);
   };
 
-  // ---------- USERNAME MANAGEMENT ----------
-  
-  const validateUsername = (username: string) => {
-    const isValid = /^[a-zA-Z0-9-]+$/.test(username);
-    enhancedLog(`Username validation for '${username}': ${isValid}`);
-    return isValid;
-  };
-
-  const submitUsername = async (proposedName: string) => {
-    enhancedLog(`Submitting username: ${proposedName}`);
-    setIsSubmittingUsername(true);
-    setUsernameError("");
-
-    const token = await checkLoginWithRefresh();
-    if (!token) {
-      enhancedLog("No token available for username submission");
-      setIsSubmittingUsername(false);
-      return;
-    }
-
-    const mutation = `
-      mutation MyMutation($savePublicProfileDisplayNameInput: SavePublicProfileDisplayNameInput) {
-        changeMyAccountItem(savePublicProfileDisplayNameInput: $savePublicProfileDisplayNameInput) {
-          ... on Profile {
-            anyDisplayName
-          }
-        }
-      }
-    `;
-
-    const variables = {
-      savePublicProfileDisplayNameInput: {
-        anyDisplayName: proposedName,
-      },
-    };
-
-    enhancedLog("Username mutation variables:", variables);
-
-    try {
-      enhancedLog("Sending API request to save username");
-      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ query: mutation, variables }),
-      });
-
-      const json = await res.json();
-      enhancedLog("Username API response:", json);
-      
-      const newName = json?.data?.changeMyAccountItem?.anyDisplayName;
-
-      if (newName) {
-        enhancedLog(`Username successfully changed to: ${newName}`);
-        handleSuccessfulUsernameUpdate(newName);
-      } else {
-        enhancedLog("Username change failed - likely already taken");
-        throw new Error("Username taken");
-      }
-    } catch (e) {
-      enhancedLog(`Error submitting username: ${e}`);
-      setUsernameError(t('Username is already taken. Please try a different one.'));
-      setShowAltButton(true);
-      setIsSubmittingUsername(false);
-    }
-  };
-  
-  const handleSuccessfulUsernameUpdate = (newName: string) => {
-    enhancedLog(`Handling successful username update to: ${newName}`);
-    localStorage.setItem("publicUsername", newName);
-    setPublicUsername(newName);
-    setShowUsernamePrompt(false);
-    
-    // Automatically proceed with saving the album
-    enhancedLog("Proceeding to save album after username update");
-    saveAlbumDirectly();
-  };
-
-  const appendRandomDigits = () => {
-    const digits = Math.floor(100000 + Math.random() * 900000).toString();
-    const modified = `${usernameInput}${digits}`;
-    enhancedLog(`Appending random digits to username: ${usernameInput} -> ${modified}`);
-    setUsernameInput(modified);
-    submitUsername(modified);
-  };
-
   // ---------- PASSWORD MANAGEMENT ----------
 
   const handleClosePasswordDialog = (option?: ProtectionOption, password?: string) => {
@@ -1756,7 +1689,7 @@ const SaveAlbum = () => {
                       setUsernameError(t('Username must contain only letters, numbers, and hyphens.'));
                       return;
                     }
-                    submitUsername(usernameInput);
+                    submitUsername(usernameInput, handleSuccessfulUsernameUpdate);
                   }}
                 >
                   {t('Select Username')}
@@ -1764,7 +1697,7 @@ const SaveAlbum = () => {
                 {showAltButton && (
                   <UsernameAltButton
                     disabled={isSubmittingUsername}
-                    onClick={appendRandomDigits}
+                    onClick={() => appendRandomDigits(handleSuccessfulUsernameUpdate)}
                   >
                     {t('Add Random Digits to Username')}
                   </UsernameAltButton>
