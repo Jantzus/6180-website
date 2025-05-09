@@ -171,15 +171,21 @@ export const MediaContainer = styled.div`
 `;
 
 export const DescriptionBlock = styled.div`
-  background: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  border-radius: 4px;
-  padding: 20px;
   margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  width: 100%;
 `;
 
 export const DescriptionText = styled.p`
+  color: #333;
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  max-width: 100%;
 `;
 
 export const MediaGrid = styled.div<{ columns: string }>`

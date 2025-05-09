@@ -180,13 +180,19 @@ import{c as Vt,d as Kt,a as Qe,S as Xe,r as C,u as Ie,j as o,e as Ct,A as Jt,C a
     width: 100%;
   }
 `,Bo=b.div`
-  background: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  border-radius: 4px;
-  padding: 20px;
   margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  width: 100%;
 `,Mo=b.p`
+  color: #333;
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  max-width: 100%;
 `,Oo=b.div`
   display: grid;
   grid-gap: 20px;
