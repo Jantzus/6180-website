@@ -93,8 +93,6 @@ export interface Folder {
   usingFolderInviteGrantsRightToAddItems?: boolean
 }
 
-export type ProtectionOption = 'notVisible' | 'watermark' | 'cannotBeSaved' | 'noPassword';
-
 // Types definition for the application
 
 // Media types

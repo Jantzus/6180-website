@@ -55,8 +55,7 @@ import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { 
   ProgressTracker,
   UploadStatus,
-  SelectedPhoto,
-  ProtectionOption
+  SelectedPhoto
 } from "@/lib/types";
 
 import { generateUUID } from "@/lib/utils";
@@ -80,34 +79,6 @@ import {
 
 import { checkLoginWithRefresh } from "@/lib/utils";
 import { PasswordPolicyEnum } from "@/lib/types";
-
-const protectionOptionToPasswordPolicy = (option: ProtectionOption): PasswordPolicyEnum => {
-  switch(option) {
-    case 'notVisible':
-      return 'NotVisible';
-    case 'watermark':
-      return 'Watermark';
-    case 'cannotBeSaved':
-      return 'CannotBeSaved';
-    case 'noPassword':
-    default:
-      return 'NoPassword';
-  }
-};
-
-const passwordPolicyToProtectionOption = (policy: string): ProtectionOption => {
-  switch(policy) {
-    case 'NotVisible':
-      return 'notVisible';
-    case 'Watermark':
-      return 'watermark';
-    case 'CannotBeSaved':
-      return 'cannotBeSaved';
-    case 'NoPassword':
-    default:
-      return 'noPassword';
-  }
-};
 
 // GraphQL query for fetching folder details
 const FETCH_FOLDER_QUERY = `
@@ -183,7 +154,7 @@ const useAlbumInitialization = (
   setFolderDescription: React.Dispatch<React.SetStateAction<string>>,
   setIsOnPublicProfile: React.Dispatch<React.SetStateAction<boolean>>,
   setParticipantsCanAddItems: React.Dispatch<React.SetStateAction<boolean>>,
-  setPasswordProtectionOption: React.Dispatch<React.SetStateAction<ProtectionOption>>,
+  setPasswordProtectionOption: React.Dispatch<React.SetStateAction<PasswordPolicyEnum>>,
   setAlbumPassword: React.Dispatch<React.SetStateAction<string>>,
   setIsSubAlbum: React.Dispatch<React.SetStateAction<boolean>>,
   setSelectedFileIds: React.Dispatch<React.SetStateAction<string[]>>,
@@ -242,7 +213,7 @@ const useAlbumInitialization = (
               enhancedLog(`Password policy from folder details: ${policy}`);
               
               // Map the PasswordPolicyEnum values to our local state options
-              setPasswordProtectionOption(passwordPolicyToProtectionOption(policy));
+              setPasswordProtectionOption(policy);
               if (policy !== 'NoPassword' && folderDetails.password) {
                 setAlbumPassword(folderDetails.password);
               }
@@ -503,7 +474,7 @@ const useAlbumSave = (
   folderDescription: string,
   isOnPublicProfile: boolean,
   participantsCanAddItems: boolean,
-  passwordProtectionOption: ProtectionOption,
+  passwordProtectionOption: PasswordPolicyEnum,
   albumPassword: string,
   setIsSavingAlbum: React.Dispatch<React.SetStateAction<boolean>>,
   setSavingProgress: React.Dispatch<React.SetStateAction<number>>,
@@ -599,11 +570,9 @@ const useAlbumSave = (
     
     enhancedLog(`Created ${acceptedFileReferenceIds.length} acceptedFileReferenceIds`);
     
-    const folderPassword = passwordProtectionOption !== 'noPassword' ? albumPassword : null;
-    const passwordPolicy = protectionOptionToPasswordPolicy(passwordProtectionOption);
+    const folderPassword = passwordProtectionOption !== 'NoPassword' ? albumPassword : null;
     
     enhancedLog(`Password protection: ${passwordProtectionOption}`);
-    enhancedLog(`Password policy: ${passwordPolicy}`);
     enhancedLog(`Album password: ${folderPassword ? '******' : 'null'}`);
     enhancedLog(`Participants can add items: ${participantsCanAddItems}`);
     
@@ -621,7 +590,7 @@ const useAlbumSave = (
         folderDescription: folderDescription,
         folderPasswordInput: {
           password: folderPassword,
-          policy: passwordPolicy
+          policy: passwordProtectionOption
         },
         folderInviteParametersInput: {
           folderIsOnlyVisibleThroughCode: true,
@@ -1487,7 +1456,7 @@ const SaveAlbum = () => {
   
   // Password protection state
   const [showPasswordDialog, setShowPasswordDialog] = useState(false);
-  const [passwordProtectionOption, setPasswordProtectionOption] = useState<ProtectionOption>('noPassword');
+  const [passwordProtectionOption, setPasswordProtectionOption] = useState<PasswordPolicyEnum>('NoPassword');
   const [albumPassword, setAlbumPassword] = useState("");
   
   // Public profile toggle state
@@ -1742,7 +1711,7 @@ const SaveAlbum = () => {
 
   // ---------- PASSWORD MANAGEMENT ----------
 
-  const handleClosePasswordDialog = (option?: ProtectionOption, password?: string) => {
+  const handleClosePasswordDialog = (option?: PasswordPolicyEnum, password?: string) => {
     enhancedLog(`Password dialog closed with option: ${option}, password: ${password ? '******' : 'undefined'}`);
     if (option) {
       setPasswordProtectionOption(option);
@@ -1756,13 +1725,13 @@ const SaveAlbum = () => {
   };
   
   const getPasswordPolicyButtonText = () => {
-    if (passwordProtectionOption === 'noPassword') {
+    if (passwordProtectionOption === 'NoPassword') {
       return t('Album Password Policy');
     }
     
     const optionText = 
-      passwordProtectionOption === 'notVisible' ? t('Not Visible') :
-      passwordProtectionOption === 'watermark' ? t('Watermark') :
+      passwordProtectionOption === 'NotVisible' ? t('Not Visible') :
+      passwordProtectionOption === 'Watermark' ? t('Watermark') :
       t('Cannot Be Saved');
     
     return `${optionText} ${albumPassword ? `(${albumPassword})` : ''}`;
@@ -1855,7 +1824,7 @@ const SaveAlbum = () => {
             {/* Only show password button if user is creator */}
             {isCreator === true && (
               <PasswordButton
-                passwordSet={passwordProtectionOption !== 'noPassword'}
+                passwordSet={passwordProtectionOption !== 'NoPassword'}
                 onClick={handleOpenPasswordDialog}
                 disabled={isSavingAlbum}
               >

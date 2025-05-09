@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { 
-  ProtectionOption
+  PasswordPolicyEnum
 } from "@/lib/types"
 import { useTranslation } from "@/lib/i18n/react"
 import { getLanguageDirection } from "@/lib/i18n/translations"
@@ -125,22 +125,22 @@ const Button = styled.button`
 // Component Props
 type PasswordDialogProps = {
   isOpen: boolean;
-  onClose: (option?: ProtectionOption, password?: string) => void;
-  initialOption?: ProtectionOption;
+  onClose: (option?: PasswordPolicyEnum, password?: string) => void;
+  initialOption?: PasswordPolicyEnum;
   initialPassword?: string;
 };
 
 export const PasswordDialog: React.FC<PasswordDialogProps> = ({
   isOpen,
   onClose,
-  initialOption = 'noPassword',
+  initialOption = 'NoPassword',
   initialPassword = ''
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
   // Initialize state with props
-  const [selectedOption, setSelectedOption] = useState<ProtectionOption>(initialOption);
+  const [selectedOption, setSelectedOption] = useState<PasswordPolicyEnum>(initialOption);
   const [password, setPassword] = useState(initialPassword);
 
   // Reset state when dialog opens
@@ -157,9 +157,9 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
   const passwordRequired = password.trim() === '';
 
   // Function to handle option selection
-  const handleOptionSelect = (option: ProtectionOption) => {
+  const handleOptionSelect = (option: PasswordPolicyEnum) => {
     // Only allow password-protected options if password is entered
-    if ((option !== 'noPassword') && passwordRequired) {
+    if ((option !== 'NoPassword') && passwordRequired) {
       return;
     }
     setSelectedOption(option);
@@ -207,10 +207,10 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 type="radio" 
                 name="protection" 
                 id="notVisible" 
-                checked={selectedOption === 'notVisible'}
+                checked={selectedOption === 'NotVisible'}
                 onChange={() => {}} // Empty handler to prevent React warning
                 disabled={passwordRequired}
-                onClick={() => !passwordRequired && handleOptionSelect('notVisible')}
+                onClick={() => !passwordRequired && handleOptionSelect('NotVisible')}
               />
               <OptionLabel 
                 htmlFor="notVisible"
@@ -231,10 +231,10 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 type="radio" 
                 name="protection" 
                 id="watermark" 
-                checked={selectedOption === 'watermark'}
+                checked={selectedOption === 'Watermark'}
                 onChange={() => {}} // Empty handler to prevent React warning
                 disabled={passwordRequired}
-                onClick={() => !passwordRequired && handleOptionSelect('watermark')}
+                onClick={() => !passwordRequired && handleOptionSelect('Watermark')}
               />
               <OptionLabel 
                 htmlFor="watermark"
@@ -255,10 +255,10 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 type="radio" 
                 name="protection" 
                 id="cannotBeSaved" 
-                checked={selectedOption === 'cannotBeSaved'}
+                checked={selectedOption === 'CannotBeSaved'}
                 onChange={() => {}} // Empty handler to prevent React warning
                 disabled={passwordRequired}
-                onClick={() => !passwordRequired && handleOptionSelect('cannotBeSaved')}
+                onClick={() => !passwordRequired && handleOptionSelect('CannotBeSaved')}
               />
               <OptionLabel 
                 htmlFor="cannotBeSaved"
@@ -279,9 +279,9 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 type="radio" 
                 name="protection" 
                 id="noPassword" 
-                checked={selectedOption === 'noPassword'}
+                checked={selectedOption === 'NoPassword'}
                 onChange={() => {}} // Empty handler to prevent React warning
-                onClick={() => handleOptionSelect('noPassword')}
+                onClick={() => handleOptionSelect('NoPassword')}
               />
               <OptionLabel 
                 htmlFor="noPassword"
