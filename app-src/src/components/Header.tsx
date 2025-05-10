@@ -29,6 +29,7 @@ export const Header: React.FC<HeaderProps> = ({
           display: "flex",
           justifyContent: "space-between", // This spaces items to far ends
           alignItems: "center",
+          marginTop: 20,
           marginBottom: 24,
           width: "100%",
           direction: isRTL ? "rtl" : "ltr"

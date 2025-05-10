@@ -20,7 +20,6 @@ import { CopyLinkModal, ConfirmationModal } from "@/components/Modals";
 import { LazyImage } from "@/components/LazyImage";
 // Import styled components
 import {
-  GlobalStyle,
   HeaderContainer,
   ProfileControls,
   ProfileMenu,
@@ -53,6 +52,9 @@ import {
   ErrorState,
   MainContainer
 } from "@/styles/profile-styled-components.tsx";
+import {
+  GlobalStyle
+} from "@/styles/styled-components.tsx";
 
 // Types
 interface FolderPassword {

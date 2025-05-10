@@ -13,6 +13,7 @@ import { SupportedLanguage } from "@/lib/i18n/translations";
 
 // Import components
 import {
+  GlobalStyle,
   AppContainer,
 } from "@/styles/styled-components";
 import { Header } from "@/components/Header";
@@ -455,104 +456,107 @@ const MyAlbums = () => {
   const isRTL = getLanguageDirection(language) === "rtl";
 
   return (
-    <AppContainer isRTL={isRTL}>
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        {/* Container for all content with consistent width */}
-        <div style={{ width: "100%" }}>
-          <Header 
-            publicUsername={publicUsername}
-            isUploading={isUploading}
-            openFilePicker={openFilePicker}
-            cognitoUsername={cognitoUsername}
-          />
+    <>
+      <GlobalStyle />    
+      <AppContainer isRTL={isRTL}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          {/* Container for all content with consistent width */}
+          <div style={{ width: "100%" }}>
+            <Header 
+              publicUsername={publicUsername}
+              isUploading={isUploading}
+              openFilePicker={openFilePicker}
+              cognitoUsername={cognitoUsername}
+            />
 
-          {/* Create Album button moved here - before the search bar */}
-          <CreateAlbumButton
-            isUploading={isUploading}
-            openFilePicker={openFilePicker}
-            t={t}
-            isRTL={isRTL}
-          />
-          
-          {/* Search Bar Component */}
-          <SearchBar 
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            t={t}
-            isRTL={isRTL}
-          />
-          
-          {/* Add the new ContactsFilter component here */}
-          <ContactsFilter
-            folders={folders}
-            onFilterChange={handleContactFilterChange}
-            resetFilter={resetContactFilter}
-          />
-          
-          {/* Added conditional rendering for enhanced status messages */}
-          {isUploading && (
-            <div style={{ width: '100%', marginBottom: '20px' }}>
-              <UploadProgress 
-                progressTracker={progressTracker}
-                t={t}
-                isRTL={isRTL}
-              />
-              
-              {/* Additional status messages for better user experience */}
-              {progressTracker.filesComplete > 0 && progressTracker.filesComplete === progressTracker.totalFiles && (
-                <div style={{
-                  backgroundColor: '#e8f5e9',
-                  color: '#2e7d32',
-                  padding: '10px 16px',
-                  borderRadius: '6px',
-                  fontSize: '14px',
-                  marginTop: '10px',
-                  textAlign: 'center'
-                }}>
-                  {t('Upload complete! Preparing to save your album...')}
-                </div>
-              )}
-              
-              {progressTracker.filesWithError > 0 && (
-                <div style={{
-                  backgroundColor: '#ffebee',
-                  color: '#c62828',
-                  padding: '10px 16px',
-                  borderRadius: '6px',
-                  fontSize: '14px',
-                  marginTop: '10px',
-                  textAlign: 'center'
-                }}>
-                  {t('Some files could not be uploaded. You can continue with the successfully uploaded files.')}
-                </div>
-              )}
-            </div>
-          )}
+            {/* Create Album button moved here - before the search bar */}
+            <CreateAlbumButton
+              isUploading={isUploading}
+              openFilePicker={openFilePicker}
+              t={t}
+              isRTL={isRTL}
+            />
+            
+            {/* Search Bar Component */}
+            <SearchBar 
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              t={t}
+              isRTL={isRTL}
+            />
+            
+            {/* Add the new ContactsFilter component here */}
+            <ContactsFilter
+              folders={folders}
+              onFilterChange={handleContactFilterChange}
+              resetFilter={resetContactFilter}
+            />
+            
+            {/* Added conditional rendering for enhanced status messages */}
+            {isUploading && (
+              <div style={{ width: '100%', marginBottom: '20px' }}>
+                <UploadProgress 
+                  progressTracker={progressTracker}
+                  t={t}
+                  isRTL={isRTL}
+                />
+                
+                {/* Additional status messages for better user experience */}
+                {progressTracker.filesComplete > 0 && progressTracker.filesComplete === progressTracker.totalFiles && (
+                  <div style={{
+                    backgroundColor: '#e8f5e9',
+                    color: '#2e7d32',
+                    padding: '10px 16px',
+                    borderRadius: '6px',
+                    fontSize: '14px',
+                    marginTop: '10px',
+                    textAlign: 'center'
+                  }}>
+                    {t('Upload complete! Preparing to save your album...')}
+                  </div>
+                )}
+                
+                {progressTracker.filesWithError > 0 && (
+                  <div style={{
+                    backgroundColor: '#ffebee',
+                    color: '#c62828',
+                    padding: '10px 16px',
+                    borderRadius: '6px',
+                    fontSize: '14px',
+                    marginTop: '10px',
+                    textAlign: 'center'
+                  }}>
+                    {t('Some files could not be uploaded. You can continue with the successfully uploaded files.')}
+                  </div>
+                )}
+              </div>
+            )}
 
-          <AlbumList 
-            folders={filteredFolders}
-            setFolders={setFolders}
-            handleDeleteClick={handleDeleteClick}
-            openFilePicker={openFilePicker}
-            isUploading={isUploading}
-            cognitoUsername={cognitoUsername}
-          />
-          
-          {/* Use the refactored FileInput component */}
-          <FileInput 
-            onFileSelection={handleFileSelection} 
-            ref={fileInputRef}
-          />
+            <AlbumList 
+              folders={filteredFolders}
+              setFolders={setFolders}
+              handleDeleteClick={handleDeleteClick}
+              openFilePicker={openFilePicker}
+              isUploading={isUploading}
+              cognitoUsername={cognitoUsername}
+            />
+            
+            {/* Use the refactored FileInput component */}
+            <FileInput 
+              onFileSelection={handleFileSelection} 
+              ref={fileInputRef}
+            />
+          </div>
         </div>
-      </div>
 
-      <DebugLog 
-        debugMessages={debugMessages}
-        t={t}
-        isRTL={isRTL}
-        textDirection={isRTL ? "rtl" : "ltr"}
-      />
-    </AppContainer>
+        <DebugLog 
+          debugMessages={debugMessages}
+          t={t}
+          isRTL={isRTL}
+          textDirection={isRTL ? "rtl" : "ltr"}
+        />
+      </AppContainer>
+    </>
   )
 }
 

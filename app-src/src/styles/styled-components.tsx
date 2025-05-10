@@ -4,11 +4,35 @@ import { UploadStatus } from "@/lib/types";
 // ========== Styled Components ==========
 
 export const GlobalStyle = createGlobalStyle`
+  @keyframes loading-animation {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* Added to ensure proper display on mobile */
+  * {
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
   body {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   }
+
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }  
 `;
 
 const directionalStyles = (isRTL: boolean) => css`
@@ -20,8 +44,6 @@ interface DirectionalProps {
 }
 
 export const AppContainer = styled.div<DirectionalProps>`
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  padding: 20px 20px;
   background-color: #f9fafb;
   min-height: 100vh;
   max-width: 100vw;
@@ -48,6 +70,7 @@ export const AppName = styled.div<DirectionalProps>`
 export const ContentContainer = styled.div`
   max-width: 900px;
   margin: 0 auto;
+  margin-top: 20px;
 `;
 
 // Header Components
@@ -59,12 +82,8 @@ export const HeaderContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-export const BackLinkContainer = styled.div`
-  margin-bottom: 12px;
-`;
-
 export const BackLink = styled.a`
-  font-size: 16px;
+  font-size: 14px;
   color: #007bff;
   text-decoration: none;
   font-weight: 500;
@@ -552,4 +571,36 @@ export const ToggleSlider = styled.span`
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
+`;
+
+export const Headline = styled.h1`
+  font-size: 1.8em;
+  margin: 40px 0;
+`;
+
+export const BigButton = styled.button<{ primary?: boolean; isHovered?: boolean }>`
+  padding: 12px 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  background-color: ${props => props.primary ? '#007bff' : '#e9e9e9'};
+  color: ${props => props.primary ? 'white' : '#333'};
+  background-color: ${props => props.primary && props.isHovered ? '#0056b3' : undefined};
+`;
+
+export const LegalLinksFooter = styled.div`
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #555;
+`;
+
+export const LegalLinkFooterButton = styled.a<{ isHovered?: boolean }>`
+  margin: 0 10px;
+  color: #555;
+  text-decoration: ${props => props.isHovered ? 'underline' : 'none'};
 `;

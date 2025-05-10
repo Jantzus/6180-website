@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css } from "styled-components";
+import styled, { css } from "styled-components";
 
 // Styled components
 export const Body = styled.div`
@@ -514,33 +514,6 @@ export const ItalicText = styled.p`
   }
 `;
 
-
-
-export const GlobalStyle = createGlobalStyle`
-  @keyframes loading-animation {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-  
-  /* Added to ensure proper display on mobile */
-  * {
-    box-sizing: border-box;
-    -webkit-text-size-adjust: 100%;
-  }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-  }
-  
-  #root {
-    width: 100%;
-    overflow-x: hidden;
-  }
-`;
 
 export const HeaderControlsWithFullWidth = styled(HeaderControls)`
   display: flex;

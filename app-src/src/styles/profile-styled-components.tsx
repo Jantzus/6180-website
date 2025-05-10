@@ -1,32 +1,4 @@
-import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
-
-// Global Styles
-export const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-    -webkit-text-size-adjust: 100%;
-  }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f8f9fa;
-  }
-  
-  #root {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  div::-webkit-scrollbar {
-    display: none;
-  }
-`;
 
 // Profile Header Styled Components
 export const HeaderContainer = styled.div<{ isRTL: boolean }>`

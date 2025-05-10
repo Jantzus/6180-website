@@ -10,18 +10,12 @@ import {
   HeaderContainer,
   LogoContainer,
   AppName,
-  Logo
-} from "@/styles/styled-components";
-
-// Import styled components
-import {
-  Content,
+  Logo,
+  BigButton,
   Headline,
-  ButtonGroup,
-  Button,
-  Footer,
-  FooterLink
-} from "@/styles/index-styled-components";
+  LegalLinksFooter,
+  LegalLinkFooterButton
+} from "@/styles/styled-components";
 
 // Check login before rendering
 async function initializeApp() {
@@ -85,62 +79,71 @@ const IndexPage: React.FC = () => {
     <>
       <GlobalStyle />
       <AppContainer isRTL={isRTL}>
-        <HeaderContainer>
-          <LogoContainer isRTL={isRTL}>
-            <Logo 
-              src="images/logo_no_background.png" 
-              alt="6180 Logo" 
-            />
-            <AppName isRTL={isRTL}>
-              6180
-            </AppName>
-          </LogoContainer>
-          
-          <LanguageSelector className="language-selector" />
-        </HeaderContainer>
+        <div style={{ 
+          padding: '20px 20px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          minHeight: '100vh' 
+        }}>
+          <HeaderContainer>
+            <LogoContainer isRTL={isRTL}>
+              <Logo 
+                src="images/logo_no_background.png" 
+                alt="6180 Logo" 
+              />
+              <AppName isRTL={isRTL}>
+                6180
+              </AppName>
+            </LogoContainer>
+            
+            <LanguageSelector className="language-selector" />
+          </HeaderContainer>
 
-        <Content>
-          <Headline>{t('Create Albums With Your Friends In The Cloud')}</Headline>
-          
-          <ButtonGroup>
-            <Button 
-              primary
-              isHovered={hoverButtonIndex === 0}
-              onClick={goToAlbums}
-              onMouseEnter={() => setHoverButtonIndex(0)}
-              onMouseLeave={() => setHoverButtonIndex(null)}
+          <div style={{ 
+            textAlign: 'center',
+            gap: '20px'
+          }}>
+            <Headline>{t('Create Albums With Your Friends In The Cloud')}</Headline>
+            
+            <BigButton 
+                primary
+                isHovered={hoverButtonIndex === 0}
+                onClick={goToAlbums}
+                onMouseEnter={() => setHoverButtonIndex(0)}
+                onMouseLeave={() => setHoverButtonIndex(null)}
+              >
+                {t('Start')}
+              </BigButton>
+          </div>
+
+          <LegalLinksFooter>
+            <LegalLinkFooterButton 
+              href="terms.html" 
+              isHovered={hoverLink === 'terms'}
+              onMouseEnter={() => setHoverLink('terms')}
+              onMouseLeave={() => setHoverLink(null)}
             >
-              {t('Start')}
-            </Button>
-          </ButtonGroup>
-        </Content>
-
-        <Footer>
-          <FooterLink 
-            href="terms.html" 
-            isHovered={hoverLink === 'terms'}
-            onMouseEnter={() => setHoverLink('terms')}
-            onMouseLeave={() => setHoverLink(null)}
-          >
-            {t('Terms of Service')}
-          </FooterLink>
-          <FooterLink
-            href="privacy.html" 
-            isHovered={hoverLink === 'privacy'}
-            onMouseEnter={() => setHoverLink('privacy')}
-            onMouseLeave={() => setHoverLink(null)}
-          >
-            {t('Privacy Policy')}
-          </FooterLink>
-          <FooterLink 
-            href="support.html" 
-            isHovered={hoverLink === 'support'}
-            onMouseEnter={() => setHoverLink('support')}
-            onMouseLeave={() => setHoverLink(null)}
-          >
-            {t('Support')}
-          </FooterLink>
-        </Footer>
+              {t('Terms of Service')}
+            </LegalLinkFooterButton>
+            <LegalLinkFooterButton
+              href="privacy.html" 
+              isHovered={hoverLink === 'privacy'}
+              onMouseEnter={() => setHoverLink('privacy')}
+              onMouseLeave={() => setHoverLink(null)}
+            >
+              {t('Privacy Policy')}
+            </LegalLinkFooterButton>
+            <LegalLinkFooterButton 
+              href="support.html" 
+              isHovered={hoverLink === 'support'}
+              onMouseEnter={() => setHoverLink('support')}
+              onMouseLeave={() => setHoverLink(null)}
+            >
+              {t('Support')}
+            </LegalLinkFooterButton>
+          </LegalLinksFooter>
+        </div>
       </AppContainer>
     </>
   );

@@ -10,15 +10,13 @@ import { AWS_PRIVATE_GRAPHQL_ENDPOINT, AWS_REGION, COGNITO_CLIENT_ID } from "@/l
 import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
 import styled from 'styled-components'
 import {
+  GlobalStyle,
   AppContainer,
-  Logo
+  Logo,
+  BigButton,
+  LegalLinksFooter,
+  LegalLinkFooterButton
 } from "@/styles/styled-components";
-import {
-  Content,
-  Button,
-  Footer,
-  FooterLink
-} from '@/styles/index-styled-components'
 
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION })
 
@@ -98,12 +96,29 @@ const ResendButton = styled.button`
   text-decoration: underline;
 `;
 
-const LoginButton = styled(Button)`
+const LoginButton = styled(BigButton)`
   width: 100%;
   padding: 12px;
   font-size: 16px;
   opacity: ${props => props.disabled ? 0.7 : 1};
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+`;
+
+// New styled component for the container
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 20px;
+`;
+
+// New styled component for the centered content
+const CenteredContent = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `;
 
 function normalizeEmail(input: string): string {
@@ -123,6 +138,7 @@ const LoginContent = () => {
   const [session, setSession] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'verifying' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [hoverLink, setHoverLink] = useState<string | null>(null)
   
   // Use the i18n hook
   const { t, language } = useTranslation()
@@ -300,91 +316,111 @@ const LoginContent = () => {
   }
 
   return (
-    <AppContainer isRTL={isRTL}>
-      <Content style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <LoginCard>
-          <LoginHeader>
-            <LogoImage 
-              src="images/logo_no_background.png" 
-              alt="6180 Logo" 
-            />
-            <LoginTitle>
-              {t('Sign in to 6180')}
-            </LoginTitle>
-          </LoginHeader>
+    <>
+      <GlobalStyle />
+      <AppContainer isRTL={isRTL}>
+        <ContentWrapper>
+          <CenteredContent>
+            <LoginCard>
+              <LoginHeader>
+                <LogoImage 
+                  src="images/logo_no_background.png" 
+                  alt="6180 Logo" 
+                />
+                <LoginTitle>
+                  {t('Sign in to 6180')}
+                </LoginTitle>
+              </LoginHeader>
 
-          {errorMessage && (
-            <ErrorMessage>
-              {errorMessage}
-            </ErrorMessage>
-          )}
+              {errorMessage && (
+                <ErrorMessage>
+                  {errorMessage}
+                </ErrorMessage>
+              )}
 
-          {!codeSent ? (
-            <>
-              <Input
-                ref={emailInputRef}
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t('Enter your email')}
-              />
-              <LoginButton
-                primary
-                onClick={sendCode}
-                disabled={status === 'sending' || !email.trim()}
-              >
-                {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
-              </LoginButton>
-              <InfoText>
-                {t('We\'ll send a secure verification code to your email')}
-              </InfoText>
-            </>
-          ) : (
-            <>
-              <InfoText style={{ marginBottom: '16px', color: '#555' }}>
-                {t('Check your email for a 6-digit verification code sent to')} <strong>{email}</strong>
-              </InfoText>
-              <OtpInput
-                ref={otpInputRef}
-                type="tel"
-                inputMode="numeric"
-                pattern="[0-9]*"
-                maxLength={6}
-                value={otpCode}
-                onChange={handleOtpChange}
-                placeholder={t('Enter 6-digit code')}
-              />
-              <LoginButton
-                primary
-                onClick={confirmCode}
-                disabled={status === 'verifying' || otpCode.length !== 6}
-                style={{ backgroundColor: '#28a745' }}
-              >
-                {status === 'verifying' ? t('Verifying...') : t('Verify Code')}
-              </LoginButton>
-              <ResendWrapper>
-                <span>{t("Didn't receive a code?")}</span>
-                <ResendButton onClick={handleResendCode}>
-                  {t('Send new code')}
-                </ResendButton>
-              </ResendWrapper>
-            </>
-          )}
-        </LoginCard>
-      </Content>
-      
-      <Footer>
-        <FooterLink href="terms.html">
-          Terms of Service
-        </FooterLink>
-        <FooterLink href="privacy.html">
-          Privacy Policy
-        </FooterLink>
-        <FooterLink href="support.html">
-          Support
-        </FooterLink>
-      </Footer>
-    </AppContainer>
+              {!codeSent ? (
+                <>
+                  <Input
+                    ref={emailInputRef}
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={t('Enter your email')}
+                  />
+                  <LoginButton
+                    primary
+                    onClick={sendCode}
+                    disabled={status === 'sending' || !email.trim()}
+                  >
+                    {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
+                  </LoginButton>
+                  <InfoText>
+                    {t('We\'ll send a secure verification code to your email')}
+                  </InfoText>
+                </>
+              ) : (
+                <>
+                  <InfoText style={{ marginBottom: '16px', color: '#555' }}>
+                    {t('Check your email for a 6-digit verification code sent to')} <strong>{email}</strong>
+                  </InfoText>
+                  <OtpInput
+                    ref={otpInputRef}
+                    type="tel"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    maxLength={6}
+                    value={otpCode}
+                    onChange={handleOtpChange}
+                    placeholder={t('Enter 6-digit code')}
+                  />
+                  <LoginButton
+                    primary
+                    onClick={confirmCode}
+                    disabled={status === 'verifying' || otpCode.length !== 6}
+                    style={{ backgroundColor: '#28a745' }}
+                  >
+                    {status === 'verifying' ? t('Verifying...') : t('Verify Code')}
+                  </LoginButton>
+                  <ResendWrapper>
+                    <span>{t("Didn't receive a code?")}</span>
+                    <ResendButton onClick={handleResendCode}>
+                      {t('Send new code')}
+                    </ResendButton>
+                  </ResendWrapper>
+                </>
+              )}
+            </LoginCard>
+          </CenteredContent>
+          
+          <LegalLinksFooter>
+            <LegalLinkFooterButton 
+              href="terms.html"
+              isHovered={hoverLink === 'terms'}
+              onMouseEnter={() => setHoverLink('terms')}
+              onMouseLeave={() => setHoverLink(null)}
+            >
+              {t('Terms of Service')}
+            </LegalLinkFooterButton>
+            <LegalLinkFooterButton 
+              href="privacy.html"
+              isHovered={hoverLink === 'privacy'}
+              onMouseEnter={() => setHoverLink('privacy')}
+              onMouseLeave={() => setHoverLink(null)}
+            >
+              {t('Privacy Policy')}
+            </LegalLinkFooterButton>
+            <LegalLinkFooterButton 
+              href="support.html"
+              isHovered={hoverLink === 'support'}
+              onMouseEnter={() => setHoverLink('support')}
+              onMouseLeave={() => setHoverLink(null)}
+            >
+              {t('Support')}
+            </LegalLinkFooterButton>
+          </LegalLinksFooter>
+        </ContentWrapper>
+      </AppContainer>
+    </>
   )
 }
 

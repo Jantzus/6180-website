@@ -28,7 +28,7 @@ h2 {
 .intro {
   text-align: center;
   font-size: 24px;
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* Nice and modern font */
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   padding: 20px;
   margin: 0 auto;
   height: 80vh; /* Vertical height of 80% */

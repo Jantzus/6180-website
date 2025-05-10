@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import styled from "styled-components";
 import { FolderType } from "@/lib/types";
 import { useTranslation } from "@/components/LanguageSelector";
 import { getLanguageDirection } from "@/lib/i18n";
@@ -7,6 +8,199 @@ import { getTargetItemIdentifier } from "@/lib/utils";
 import { LazyImage } from "./LazyImage";
 import { FooterSection } from "./FooterSection";
 import { S3_BUCKET_URL } from "@/lib/config";
+
+// Styled Components
+const Container = styled.div<{ isRTL: boolean }>`
+  margin-bottom: 30px;
+  width: 100%;
+  direction: ${props => props.isRTL ? "rtl" : "ltr"};
+`;
+
+const AlbumLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+`;
+
+const AlbumCard = styled.div`
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+`;
+
+const HeaderSection = styled.div<{ isRTL: boolean }>`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  flex-direction: ${props => props.isRTL ? "row-reverse" : "row"};
+`;
+
+const TitleSection = styled.div<{ isRTL: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: ${props => props.isRTL ? "flex-end" : "flex-start"};
+`;
+
+const AlbumTitle = styled.h2`
+  font-size: 20px;
+  margin: 0;
+  color: #222;
+`;
+
+const DateInfo = styled.div<{ isRTL: boolean }>`
+  font-size: 13px;
+  color: #777;
+  text-align: ${props => props.isRTL ? "right" : "left"};
+  margin-top: 4px;
+`;
+
+const ActionSection = styled.div<{ isRTL: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: ${props => props.isRTL ? "flex-start" : "flex-end"};
+  justify-content: flex-end;
+  gap: 8px;
+`;
+
+const DropdownContainer = styled.div`
+  position: relative;
+`;
+
+const EditLink = styled.a`
+  font-size: 13px;
+  color: #2196f3;
+  text-decoration: none;
+`;
+
+const DeleteLink = styled.a`
+  font-size: 13px;
+  color: #d32f2f;
+  text-decoration: none;
+`;
+
+const DropdownMenu = styled.div<{ isRTL: boolean }>`
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: ${props => props.isRTL ? "auto" : 0};
+  left: ${props => props.isRTL ? 0 : "auto"};
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 10;
+  min-width: 150px;
+  padding: 8px 0;
+  margin-top: 5px;
+  text-align: ${props => props.isRTL ? "right" : "left"};
+`;
+
+const DropdownItem = styled.a<{ isDelete?: boolean }>`
+  display: block;
+  padding: 8px 16px;
+  color: ${props => props.isDelete ? "#d32f2f" : "#2196f3"};
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+`;
+
+const Description = styled.div<{ isRTL: boolean }>`
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+  text-align: ${props => props.isRTL ? "right" : "left"};
+  white-space: pre-wrap;
+`;
+
+const GalleryContainer = styled.div`
+  width: 100%;
+  position: relative;
+`;
+
+const GalleryScroll = styled.div<{ isRTL: boolean }>`
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 8px;
+  ms-overflow-style: none;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  flex-direction: ${props => props.isRTL ? "row-reverse" : "row"};
+`;
+
+const GradientOverlay = styled.div<{ isRTL: boolean }>`
+  position: absolute;
+  ${props => props.isRTL ? "left" : "right"}: 0;
+  top: 0;
+  bottom: 8px;
+  width: 30px;
+  background: ${props => props.isRTL
+    ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
+    : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))"};
+  pointer-events: none;
+`;
+
+const PasswordPolicyContainer = styled.div<{ isRTL: boolean }>`
+  display: flex;
+  justify-content: ${props => props.isRTL ? "flex-start" : "flex-end"};
+  margin-top: 8px;
+  margin-bottom: 8px;
+`;
+
+const PasswordPolicyIndicator = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  color: #555;
+  font-style: italic;
+`;
+
+const ContactsContainer = styled.div<{ isRTL: boolean }>`
+  width: 100%;
+  background-color: #f0f7ff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  box-sizing: border-box;
+  border: 1px solid #d0e1f9;
+  direction: ${props => props.isRTL ? "rtl" : "ltr"};
+`;
+
+const ContactsText = styled.p<{ isRTL: boolean }>`
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  text-align: ${props => props.isRTL ? "right" : "left"};
+`;
+
+const NoAlbumsText = styled.p`
+  font-size: 16px;
+  color: #555;
+  width: 100%;
+`;
+
+// Create a wrapper component instead of directly styling LazyImage
+const ThumbnailWrapper = styled.div`
+  width: 160px;
+  height: 100px;
+  flex-shrink: 0;
+`;
 
 // AlbumList Component
 type AlbumListProps = {
@@ -117,7 +311,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   };
 
   if (folders.length === 0 && !isUploading) {
-    return <p style={{ fontSize: 16, color: "#555", width: "100%" }}>{t('No albums found')}</p>;
+    return <NoAlbumsText>{t('No albums found')}</NoAlbumsText>;
   }
 
   return (
@@ -142,83 +336,24 @@ export const AlbumList: React.FC<AlbumListProps> = ({
         const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
 
         return (
-          <div
-            key={folder.folderId}
-            style={{
-              marginBottom: 30,
-              width: "100%",
-              direction: isRTL ? "rtl" : "ltr"
-            }}
-          >
-            <a
-              href={inviteLink}
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "block",
-                width: "100%",
-                overflow: "hidden"
-              }}
-            >
-              <div
-                style={{
-                  background: "#fff",
-                  borderRadius: 12,
-                  padding: 20,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                  transition: "box-shadow 0.2s ease",
-                  width: "100%",
-                  maxWidth: "100%",
-                  position: "relative",
-                  boxSizing: "border-box",
-                  overflow: "hidden"
-                }}
-                onMouseOver={(e) =>
-                  ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
-                }
-                onMouseOut={(e) =>
-                  ((e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"))
-                }
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-end", // Changed from "center" to "flex-end" to bottom-align
-                    marginBottom: 16,
-                    flexDirection: isRTL ? "row-reverse" : "row"
-                  }}
-                >
-                  <div style={{ 
-                    display: "flex", 
-                    flexDirection: "column", 
-                    alignItems: isRTL ? "flex-end" : "flex-start" 
-                  }}>
-                    <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
-                      {folder.folderName || ""}
-                    </h2>
+          <Container key={folder.folderId} isRTL={isRTL}>
+            <AlbumLink href={inviteLink}>
+              <AlbumCard>
+                <HeaderSection isRTL={isRTL}>
+                  <TitleSection isRTL={isRTL}>
+                    <AlbumTitle>{folder.folderName || ""}</AlbumTitle>
                     {(showCreated || showUpdated) && (
-                      <div style={{ 
-                        fontSize: 13, 
-                        color: "#777", 
-                        textAlign: isRTL ? "right" : "left" as const,
-                        marginTop: 4
-                      }}>
+                      <DateInfo isRTL={isRTL}>
                         {showCreated && <div>{t('Created')}: {formatDate(folder.createdAt)}</div>}
                         {showUpdated && <div>{t('Updated')}: {formatDate(folder.updatedAt)}</div>}
-                      </div>
+                      </DateInfo>
                     )}
-                  </div>
-                  <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: isRTL ? "flex-start" : "flex-end",
-                    justifyContent: "flex-end", // Added to ensure vertical alignment at the bottom
-                    gap: "8px"
-                  }}>
+                  </TitleSection>
+                  
+                  <ActionSection isRTL={isRTL}>
                     {isCreator ? (
-                      <div style={{ position: "relative" }}>
-                        <a
+                      <DropdownContainer>
+                        <EditLink
                           href="#"
                           onClick={(e) => {
                             const dropdownMenu = e.currentTarget.nextElementSibling as HTMLElement;
@@ -226,60 +361,26 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                               toggleDropdown(e, dropdownMenu);
                             }
                           }}
-                          style={{
-                            fontSize: "13px",
-                            color: "#2196f3",
-                            textDecoration: "none",
-                          }}
                         >
                           {t('Edit')}
-                        </a>
-                        <div 
-                          style={{
-                            display: "none",
-                            position: "absolute",
-                            top: "100%",
-                            right: isRTL ? "auto" : 0,
-                            left: isRTL ? 0 : "auto",
-                            backgroundColor: "white",
-                            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-                            borderRadius: "4px",
-                            zIndex: 10,
-                            minWidth: "150px",
-                            padding: "8px 0",
-                            marginTop: "5px",
-                            textAlign: isRTL ? "right" : "left" as const
-                          }}
+                        </EditLink>
+                        <DropdownMenu
+                          isRTL={isRTL}
                           onClick={(e) => {
                             e.stopPropagation();
                           }}
                         >
-                          <a
+                          <DropdownItem
                             href={`/save-album.html?folderId=${encodeURIComponent(folder.folderId)}`}
-                            style={{
-                              display: "block",
-                              padding: "8px 16px",
-                              color: "#2196f3",
-                              textDecoration: "none",
-                              fontSize: "13px",
-                              whiteSpace: "nowrap"
-                            }}
                             onClick={(e) => {
                               e.stopPropagation();
                             }}
                           >
                             {t('Edit Details')}
-                          </a>
-                          <a
+                          </DropdownItem>
+                          <DropdownItem
                             href="#"
-                            style={{
-                              display: "block",
-                              padding: "8px 16px",
-                              color: "#d32f2f",
-                              textDecoration: "none",
-                              fontSize: "13px",
-                              whiteSpace: "nowrap"
-                            }}
+                            isDelete
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
@@ -287,123 +388,65 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             }}
                           >
                             {t('Delete My Copy')}
-                          </a>
-                        </div>
-                      </div>
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </DropdownContainer>
                     ) : (
-                      <a
+                      <DeleteLink
                         href="#"
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
                           handleDeleteButtonClick(folder.folderPositionId);
                         }}
-                        style={{
-                          fontSize: "13px",
-                          color: "#d32f2f",
-                          textDecoration: "none",
-                        }}
                       >
                         {t('Delete')}
-                      </a>
+                      </DeleteLink>
                     )}
-                  </div>
-                </div>
+                  </ActionSection>
+                </HeaderSection>
 
-                {/* Album description section - updated to use folderDescription if available */}
-                <div
-                  style={{
-                    marginTop: 8,
-                    marginBottom: 16,
-                    fontSize: 14,
-                    color: "#555",
-                    lineHeight: 1.5,
-                    textAlign: isRTL ? "right" : "left" as const
-                  }}
-                >
-                  {folder.folderDescription && folder.folderDescription.length > 1 
-                    ? folder.folderDescription 
-                    : ""}
-                </div>
+                {/* Album description section */}
+                {folder.folderDescription && folder.folderDescription.length > 1 && (
+                  <Description isRTL={isRTL}>
+                    {folder.folderDescription}
+                  </Description>
+                )}
 
-                <div 
-                  style={{ 
-                    width: "100%",
-                    position: "relative",
-                  }}
-                >
-                  <div 
-                    style={{ 
-                      display: "flex", 
-                      overflowX: "auto",
-                      gap: 12,
-                      paddingBottom: 8,
-                      msOverflowStyle: "none", 
-                      scrollbarWidth: "thin",
-                      WebkitOverflowScrolling: "touch",
-                      maxWidth: "100%",
-                      flexDirection: isRTL ? "row-reverse" : "row"
-                    }}
-                  >
+                <GalleryContainer>
+                  <GalleryScroll isRTL={isRTL}>
                     {folder.files.map((file, i) => (
-                      <LazyImage
-                        key={i}
-                        thumbnailDataKey={file.thumbnailDataKey}
-                        dataKey={file.dataKey}
-                        src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
-                        alt={t('Thumbnail')}
-                        style={{
-                          width: 160,
-                          height: 100,
-                          objectFit: "cover",
-                          borderRadius: 6,
-                          border: "1px solid #ddd",
-                          flexShrink: 0,
-                        }}
-                      />
+                      <ThumbnailWrapper key={i}>
+                        <LazyImage
+                          thumbnailDataKey={file.thumbnailDataKey}
+                          dataKey={file.dataKey}
+                          src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
+                          alt={t('Thumbnail')}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            borderRadius: 6,
+                            border: '1px solid #ddd'
+                          }}
+                        />
+                      </ThumbnailWrapper>
                     ))}
-                  </div>
+                  </GalleryScroll>
                   
                   {folder.files.length > 3 && (
-                    <div 
-                      style={{
-                        position: "absolute",
-                        [isRTL ? "left" : "right"]: 0,
-                        top: 0,
-                        bottom: 8,
-                        width: 30,
-                        background: isRTL 
-                          ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
-                          : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
-                        pointerEvents: "none",
-                      }}
-                    />
+                    <GradientOverlay isRTL={isRTL} />
                   )}
-                </div>
+                </GalleryContainer>
                 
-                {/* Password Policy Indicator - moved here under the pictures */}
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: isRTL ? "flex-start" : "flex-end",
-                    marginTop: 8,
-                    marginBottom: 8
-                  }}
-                >
+                {/* Password Policy Indicator */}
+                <PasswordPolicyContainer isRTL={isRTL}>
                   {passwordPolicy !== "NoPassword" && (
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        fontSize: "10px",
-                        color: "#555",
-                        fontStyle: "italic"
-                      }}
-                    >
+                    <PasswordPolicyIndicator>
                       <span>{getPasswordPolicyText(passwordPolicy)}</span>
-                    </div>
+                    </PasswordPolicyIndicator>
                   )}
-                </div>
+                </PasswordPolicyContainer>
                 
                 {/* Pass the folder to the FooterSection with additional props */}
                 <FooterSection
@@ -415,29 +458,15 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
                 {/* Display contacts list if available */}
                 {contactNames.length > 0 && (
-                  <div style={{
-                    width: '100%',
-                    backgroundColor: '#f0f7ff',
-                    borderRadius: '8px',
-                    padding: '12px 16px',
-                    marginTop: '16px',
-                    boxSizing: 'border-box',
-                    border: '1px solid #d0e1f9',
-                    direction: isRTL ? "rtl" : "ltr"
-                  }}>
-                    <p style={{
-                      margin: '0',
-                      fontSize: '14px',
-                      color: '#333',
-                      textAlign: isRTL ? "right" : "left" as const
-                    }}>
+                  <ContactsContainer isRTL={isRTL}>
+                    <ContactsText isRTL={isRTL}>
                       {t('Shared with')}: {contactNames.join(', ')}
-                    </p>
-                  </div>
+                    </ContactsText>
+                  </ContactsContainer>
                 )}
-              </div>
-            </a>
-          </div>
+              </AlbumCard>
+            </AlbumLink>
+          </Container>
         );
       })}
     </>

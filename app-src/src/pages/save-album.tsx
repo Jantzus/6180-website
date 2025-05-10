@@ -7,7 +7,6 @@ import {
   AppContainer,
   ContentContainer,
   HeaderContainer,
-  BackLinkContainer,
   BackLink,
   ProgressContainer,
   ProgressTitle,
@@ -1751,11 +1750,10 @@ const SaveAlbum = () => {
         <ContentContainer>
           {/* Header Section */}
           <HeaderContainer>
-            <BackLinkContainer>
-              <BackLink href="/my-albums.html">
-                {t('My Albums')}
-              </BackLink>
-            </BackLinkContainer>
+            <BackLink href="/my-albums.html">
+              {t('My Albums')}
+            </BackLink>
+
             
             <LogoutButton t={t} />
           </HeaderContainer>

@@ -33,12 +33,14 @@ import { useUsernameManagement } from "@/lib/customHooks"
 
 // Import styled components
 import { 
-  GlobalStyle, 
   Body, 
   MediaContainer, 
   SelectionBanner,
   ActionButton
 } from "@/styles/photos-styled-components";
+import { 
+  GlobalStyle
+} from "@/styles/styled-components";
 
 // Import components
 import { FullscreenMediaViewer } from "@/components/FullscreenMediaViewer";
