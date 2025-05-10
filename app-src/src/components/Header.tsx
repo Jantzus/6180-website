@@ -2,6 +2,7 @@ import React from "react";
 import { LogoutButton } from "@/components/LogoutButton";
 import { useTranslation } from "@/components/LanguageSelector";
 import { getLanguageDirection } from "@/lib/i18n";
+import { ProfileLink } from "@/styles/styled-components";
 
 // Header Component
 type HeaderProps = {
@@ -29,7 +30,6 @@ export const Header: React.FC<HeaderProps> = ({
           display: "flex",
           justifyContent: "space-between", // This spaces items to far ends
           alignItems: "center",
-          marginTop: 20,
           marginBottom: 24,
           width: "100%",
           direction: isRTL ? "rtl" : "ltr"
@@ -37,26 +37,18 @@ export const Header: React.FC<HeaderProps> = ({
       >
         {publicUsername && (
           <>
-            {/* Person icon with user's name - on the left (or right in RTL) */}
-            <a
+            <ProfileLink
               href={`profile.html?id=${formattedCognitoUsername}`}
-              style={{
-                fontSize: "14px",
-                color: "#2196f3",
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: "6px"
-              }}
             >
               <span style={{ 
                 fontSize: "16px", 
-                lineHeight: 1
+                lineHeight: 1,
+                marginRight: "6px"
               }}>
                 👤
               </span>
               {publicUsername || t('Profile')}
-            </a>
+            </ProfileLink>
             
             {/* Logout button - on the right (or left in RTL) */}
             <LogoutButton 

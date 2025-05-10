@@ -80,11 +80,10 @@ const IndexPage: React.FC = () => {
       <GlobalStyle />
       <AppContainer isRTL={isRTL}>
         <div style={{ 
-          padding: '20px 20px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          minHeight: '100vh' 
+          minHeight: 'calc(100vh - 60px)'
         }}>
           <HeaderContainer>
             <LogoContainer isRTL={isRTL}>
@@ -100,21 +99,19 @@ const IndexPage: React.FC = () => {
             <LanguageSelector className="language-selector" />
           </HeaderContainer>
 
-          <div style={{ 
-            textAlign: 'center',
-            gap: '20px'
-          }}>
-            <Headline>{t('Create Albums With Your Friends In The Cloud')}</Headline>
+          <div style={{ textAlign: 'center' }}>
+            <Headline>{t('Create Albums Together')}</Headline>
             
             <BigButton 
-                primary
-                isHovered={hoverButtonIndex === 0}
-                onClick={goToAlbums}
-                onMouseEnter={() => setHoverButtonIndex(0)}
-                onMouseLeave={() => setHoverButtonIndex(null)}
-              >
-                {t('Start')}
-              </BigButton>
+              primary
+              isHovered={hoverButtonIndex === 0}
+              onClick={goToAlbums}
+              onMouseEnter={() => setHoverButtonIndex(0)}
+              onMouseLeave={() => setHoverButtonIndex(null)}
+              style={{ marginTop: '20px' }}
+            >
+              {t('Start')}
+            </BigButton>
           </div>
 
           <LegalLinksFooter>

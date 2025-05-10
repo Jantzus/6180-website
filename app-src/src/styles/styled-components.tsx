@@ -44,6 +44,7 @@ interface DirectionalProps {
 }
 
 export const AppContainer = styled.div<DirectionalProps>`
+  padding: 20px 20px;
   background-color: #f9fafb;
   min-height: 100vh;
   max-width: 100vw;
@@ -70,7 +71,6 @@ export const AppName = styled.div<DirectionalProps>`
 export const ContentContainer = styled.div`
   max-width: 900px;
   margin: 0 auto;
-  margin-top: 20px;
 `;
 
 // Header Components
@@ -79,10 +79,9 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
 `;
 
-export const BackLink = styled.a`
+export const ProfileLink = styled.a`
   font-size: 14px;
   color: #007bff;
   text-decoration: none;
@@ -575,7 +574,6 @@ export const ToggleSlider = styled.span`
 
 export const Headline = styled.h1`
   font-size: 1.8em;
-  margin: 40px 0;
 `;
 
 export const BigButton = styled.button<{ primary?: boolean; isHovered?: boolean }>`

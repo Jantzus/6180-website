@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config"
 import { LanguageCode } from "@/lib/types"
-import { myAlbumsTranslations } from "@/lib/translations"
+import { translations } from "@/lib/translations"
 import { API_ENDPOINT_REFRESHTOKEN, COGNITO_CLIENT_ID } from "@/lib/config"
 import { AlbumData, PasswordPolicyEnum, SelectedPhoto, ProgressTracker } from "@/lib/types";
 
@@ -513,7 +513,7 @@ export const detectBrowserLanguage = (): LanguageCode => {
   // First try to get saved language preference
   const savedLanguage = localStorage.getItem(LOCAL_STORAGE_KEYS.LANGUAGE) as LanguageCode | null;
   
-  if (savedLanguage && myAlbumsTranslations[savedLanguage]) {
+  if (savedLanguage && translations[savedLanguage]) {
     return savedLanguage;
   }
   
@@ -521,13 +521,13 @@ export const detectBrowserLanguage = (): LanguageCode => {
   const browserLang = navigator.language;
   
   // Check if we have an exact match
-  if (browserLang && myAlbumsTranslations[browserLang as LanguageCode]) {
+  if (browserLang && translations[browserLang as LanguageCode]) {
     return browserLang as LanguageCode;
   }
   
   // Check if we have a match for just the language part (e.g., 'en' from 'en-GB')
   const langCode = browserLang.split('-')[0];
-  if (langCode && myAlbumsTranslations[langCode as LanguageCode]) {
+  if (langCode && translations[langCode as LanguageCode]) {
     return langCode as LanguageCode;
   }
   

@@ -5,17 +5,15 @@ import { getLanguageDirection } from "@/lib/i18n";
 import { 
   checkLoginWithoutRedirect, 
   checkLoginWithRefresh, 
-  updateSaveProgress, 
   useFileUpload,
   useFullscreenView,
   useSelectionMode, 
   usePasswordProtection,
-  useShareActions,
-  showDetailedError
+  useShareActions
  } from "@/lib/utils";
 
 // Import types and utilities
-import { AlbumData, PasswordPolicyEnum, SelectedPhoto } from "@/lib/types";
+import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
 import { getIdFromUrl, formatUUID, generateUUID } from "@/lib/utils";
 import { fetchFolder } from "@/lib/apiService";
 import { downloadPhotos } from "@/lib/fileOperations";
@@ -28,15 +26,23 @@ import {
 } from "@/lib/file-upload-utils";
 
 // Add the AWS_PRIVATE_GRAPHQL_ENDPOINT import
-import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
-import { useUsernameManagement } from "@/lib/customHooks"
+import { LOCAL_STORAGE_KEYS } from "@/lib/config";
+import { useUsernameManagement } from "@/lib/customHooks";
+
+// Import extracted utility functions
+import { executeAlbumSave, createSubAlbumWithSelectedItems } from "./album-utils";
+
+// Import extracted components
+import { 
+  SelectPhotosButton, 
+  PasswordProtectionMessage, 
+  SelectionModeBanner 
+} from "./album-components";
 
 // Import styled components
 import { 
   Body, 
-  MediaContainer, 
-  SelectionBanner,
-  ActionButton
+  MediaContainer
 } from "@/styles/photos-styled-components";
 import { 
   GlobalStyle
@@ -54,105 +60,6 @@ import { SaveToShareContactListDescription } from "@/components/SaveToShareConta
 import { AlbumMediaGrid } from "@/components/AlbumMediaGrid";
 import { AlbumInfoComponent } from "@/components/AlbumInfoComponent";
 import { AlbumHeader } from "@/components/AlbumHeader";
-
-// ============================
-// Sub-components
-// ============================
-
-// Select Photos Button Component
-const SelectPhotosButton: React.FC<{
-  showSelectPhotosButton: boolean;
-  albumData: AlbumData | null;
-  openFilePicker: () => void;
-  t: (key: string) => string;
-}> = ({ showSelectPhotosButton, albumData, openFilePicker, t }) => {
-  if (!showSelectPhotosButton || !albumData?.usingFolderInviteGrantsRightToAddItems) return null;
-  
-  return (
-    <div style={{
-      width: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      marginBottom: '20px',
-      marginTop: '10px'
-    }}>
-      <button
-        onClick={openFilePicker}
-        style={{
-          backgroundColor: '#007bff',
-          color: 'white',
-          border: 'none',
-          borderRadius: '6px',
-          padding: '12px 20px',
-          fontWeight: 600,
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          fontSize: '16px',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-        }}
-      >
-        <span>{t('Select Photos To Add To Album')}</span>
-      </button>
-    </div>
-  );
-};
-
-// Password Protection Message Component
-const PasswordProtectionMessage: React.FC<{
-  isAuthorized: boolean;
-  passwordPolicy: PasswordPolicyEnum | undefined;
-  passwordError: string | null;
-  promptForPassword: () => void;
-  t: (key: string) => string;
-}> = ({ isAuthorized, passwordPolicy, passwordError, promptForPassword, t }) => {
-  if (isAuthorized || passwordPolicy !== 'NotVisible') return null;
-  
-  return (
-    <div style={{ 
-      padding: '20px', 
-      backgroundColor: '#f3f4f6', 
-      borderRadius: '8px',
-      textAlign: 'center',
-      marginBottom: '20px'
-    }}>
-      <h3>{t('This album is password protected')}</h3>
-      <p>{t('Please enter the password to view the contents')}</p>
-      {passwordError && (
-        <div style={{ 
-          color: "#d32f2f", 
-          fontSize: "14px", 
-          margin: "10px 0",
-          padding: "5px",
-          backgroundColor: "rgba(211, 47, 47, 0.1)",
-          borderRadius: "4px"
-        }}>
-          {passwordError}
-        </div>
-      )}
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
-        <ActionButton onClick={promptForPassword}>
-          {t('Enter Password')}
-        </ActionButton>
-      </div>
-    </div>
-  );
-};
-
-// Selection Banner Component
-const SelectionModeBanner: React.FC<{
-  isSelectionMode: boolean;
-  t: (key: string) => string;
-}> = ({ isSelectionMode, t }) => {
-  if (!isSelectionMode) return null;
-  
-  return (
-    <SelectionBanner>
-      <p>{t('Select photos and videos to create a sub-album to share')}</p>
-    </SelectionBanner>
-  );
-};
 
 // ============================
 // Main Photo Album Component
@@ -264,7 +171,7 @@ const PhotoAlbumContent: React.FC = () => {
     setPasswordError(null);
     
     // Execute the save operation
-    executeAlbumSave();
+    executeAlbumSave(t, folderId, albumData);
   };
 
   // Change columns
@@ -338,7 +245,7 @@ const PhotoAlbumContent: React.FC = () => {
         }
         
         // Check if there's a pending save album operation
-        executeAlbumSave();
+        executeAlbumSave(t, folderId, albumData);
         return;
         
       } catch (err) {
@@ -445,203 +352,6 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Implementation for executing album save operation
-  const executeAlbumSave = async () => {
-    console.log("Starting album registration");
-    
-    // Create a loading indicator for album saving
-    const loadingModal = document.createElement('div');
-    loadingModal.style.position = 'fixed';
-    loadingModal.style.top = '0';
-    loadingModal.style.left = '0';
-    loadingModal.style.width = '100%';
-    loadingModal.style.height = '100%';
-    loadingModal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    loadingModal.style.display = 'flex';
-    loadingModal.style.justifyContent = 'center';
-    loadingModal.style.alignItems = 'center';
-    loadingModal.style.zIndex = '2000';
-    
-    const loadingContent = document.createElement('div');
-    loadingContent.style.backgroundColor = 'white';
-    loadingContent.style.padding = '30px';
-    loadingContent.style.borderRadius = '8px';
-    loadingContent.style.textAlign = 'center';
-    
-    const loadingText = document.createElement('p');
-    loadingText.id = 'saveProgressText';
-    loadingText.textContent = t('Registering album...');
-    
-    const progressBarBg = document.createElement('div');
-    progressBarBg.style.backgroundColor = '#f0f0f0';
-    progressBarBg.style.borderRadius = '4px';
-    progressBarBg.style.overflow = 'hidden';
-    progressBarBg.style.height = '8px';
-    progressBarBg.style.marginTop = '10px';
-    
-    const progressBar = document.createElement('div');
-    progressBar.id = 'saveProgress';
-    progressBar.style.backgroundColor = '#4caf50';
-    progressBar.style.height = '100%';
-    progressBar.style.width = '5%';
-    progressBar.style.transition = 'width 0.3s ease';
-
-    // Add error message element
-    const errorText = document.createElement('p');
-    errorText.id = 'saveErrorText';
-    errorText.style.color = '#f44336';
-    errorText.style.display = 'none';
-    errorText.style.marginTop = '10px';
-    errorText.style.fontSize = '14px';
-    
-    progressBarBg.appendChild(progressBar);
-    loadingContent.appendChild(loadingText);
-    loadingContent.appendChild(progressBarBg);
-    loadingContent.appendChild(errorText);
-    loadingModal.appendChild(loadingContent);
-    document.body.appendChild(loadingModal);
-
-    try {
-      // Get current username from cognito token
-      const token = await checkLoginWithRefresh();
-      if (!token) {
-        console.error("No token available for registering album");
-        document.body.removeChild(loadingModal);
-        return;
-      }
-      
-      // Extract username from token
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      const username = payload["cognito:username"];
-      
-      if (!username) {
-        console.error("Missing username in token");
-        showDetailedError(errorText, "Could not retrieve username from token", loadingText, progressBar);
-        return;
-      }
-      
-      // Validate folder ID
-      if (!folderId) {
-        console.error("No folder ID available");
-        showDetailedError(errorText, "Folder ID is missing", loadingText, progressBar);
-        return;
-      }
-      
-      // Validate album data
-      if (!albumData || !albumData.mediaItems) {
-        console.error("No album data available");
-        showDetailedError(errorText, "Album data is missing or incomplete", loadingText, progressBar);
-        return;
-      }
-
-      if (albumData.mediaItems.length === 0) {
-        console.error("No media items to save");
-        showDetailedError(errorText, "No media items in album to save", loadingText, progressBar);
-        return;
-      }
-      
-      // Prepare timestamp and account ID
-      const now = Math.floor(Date.now() / 1000);
-      
-      // Update progress - Step 1
-      updateSaveProgress(30, loadingText, progressBar, t('Preparing album data...'));
-
-      // Simplified folder position input - minimal requirements only
-      const folderPositionInput = {
-        currentTime: now,
-        folderId: folderId,
-        profileIds: [`Only Me_____Only Me____Profile`],
-        folderPositionSelectedTagInputs: [],
-        folderPositionPoints: 1,
-      };
-      
-      console.log("Folder position input:", folderPositionInput);
-      
-      // Update progress - Step 2
-      updateSaveProgress(50, loadingText, progressBar, t('Saving album...'));
-      
-      // Send GraphQL mutation to save album - simplified mutation
-      const mutation = `
-        mutation SaveAlbum(
-          $folderPositionInputs: [FolderPositionInput!]
-        ) {
-          changeFiles(folderPositionInputs: $folderPositionInputs) {
-            items { id }
-          }
-        }
-      `;
-
-      const variables = {
-        folderPositionInputs: [folderPositionInput]
-      };
-
-      console.log("GraphQL mutation variables:", JSON.stringify(variables));
-      
-      // Send API request with robust error handling
-      try {
-        const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({ query: mutation, variables }),
-        });
-        
-        // Update progress - Step 3
-        updateSaveProgress(80, loadingText, progressBar, t('Almost there...'));
-        
-        // Check for HTTP errors
-        if (!response.ok) {
-          throw new Error(`HTTP error: ${response.status} ${response.statusText}`);
-        }
-        
-        const responseText = await response.text();
-        
-        // Validate response is JSON
-        let json;
-        try {
-          json = JSON.parse(responseText);
-          console.log("API response:", json);
-        } catch (err) {
-          const parseErrorMessage = err instanceof Error ? err.message : "Unknown JSON parse error";
-          throw new Error(`Invalid JSON response: ${parseErrorMessage}`);
-        }
-        
-        // Check for GraphQL errors
-        if (json.errors && json.errors.length > 0) {
-          const errorMessages = json.errors.map((err: { message?: string }) => {
-            console.error("GraphQL error:", err);
-            return err.message || "Unknown GraphQL error";
-          }).join("; ");
-          
-          throw new Error(`GraphQL errors: ${errorMessages}`);
-        }
-        
-        // Success!
-        console.log("Album registered successfully");
-        updateSaveProgress(100, loadingText, progressBar, t('Album registered successfully!'));
-        
-        // Set a flag in sessionStorage that we just completed an album
-        sessionStorage.setItem('album_just_saved', 'true');
-        
-        // Slight delay before redirect for user to see success message
-        setTimeout(() => {
-          document.body.removeChild(loadingModal);
-          window.location.href = "/my-albums.html";
-        }, 2000);
-      } catch (err) {
-        const fetchErrorMessage = err instanceof Error ? err.message : "Unknown API error";
-        console.error("Error in API request:", err);
-        showDetailedError(errorText, fetchErrorMessage, loadingText, progressBar);
-      }
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : "Unknown error";
-      console.error("Error registering album:", err);
-      showDetailedError(errorText, errorMessage, loadingText, progressBar);
-    }
-  };
-
   // New implementation for saveAlbumDirectly that first checks login, username, and shows OTP if needed
   const saveAlbumDirectly = async () => {
     console.log("Starting album registration");
@@ -649,7 +359,6 @@ const PhotoAlbumContent: React.FC = () => {
     // Check if authorized for CannotBeSaved policy
     if (passwordPolicy === 'CannotBeSaved' && !isAuthorized) {
       // Set flag that we want to save after password verification
-      // setPendingSaveAlbum(true);
       promptForPassword();
       return;
     }
@@ -659,8 +368,6 @@ const PhotoAlbumContent: React.FC = () => {
     
     if (!token) {
       console.log("User not logged in, showing OTP login");
-      // Set flag that we want to save after login
-      // setPendingSaveAlbum(true);
       // Show the inline login
       setShowInlineOTPLogin(true);
       return;
@@ -687,7 +394,7 @@ const PhotoAlbumContent: React.FC = () => {
     }
     
     // User is logged in and has valid username, continue with album save
-    executeAlbumSave();
+    executeAlbumSave(t, folderId, albumData);
   };
 
   // Create Sub-album function
@@ -704,93 +411,9 @@ const PhotoAlbumContent: React.FC = () => {
     selectedItems.clear();
   };
   
-  // Share the selected items - modified version to create SelectedPhoto objects
+  // Share the selected items
   const shareSelection = async () => {
-    if (selectedItems.size === 0) {
-      alert(t('Please select at least one item to share.'));
-      return;
-    }
-    
-    // Create a new sub-album with selected items
-    if (albumData) {
-      try {
-        // Show loading indicator
-        const loadingModal = document.createElement('div');
-        loadingModal.style.position = 'fixed';
-        loadingModal.style.top = '0';
-        loadingModal.style.left = '0';
-        loadingModal.style.width = '100%';
-        loadingModal.style.height = '100%';
-        loadingModal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-        loadingModal.style.display = 'flex';
-        loadingModal.style.justifyContent = 'center';
-        loadingModal.style.alignItems = 'center';
-        loadingModal.style.zIndex = '2000';
-        
-        const loadingContent = document.createElement('div');
-        loadingContent.style.backgroundColor = 'white';
-        loadingContent.style.padding = '30px';
-        loadingContent.style.borderRadius = '8px';
-        loadingContent.style.textAlign = 'center';
-        
-        const loadingText = document.createElement('p');
-        loadingText.textContent = t('Creating sub-album...');
-        
-        loadingContent.appendChild(loadingText);
-        loadingModal.appendChild(loadingContent);
-        document.body.appendChild(loadingModal);
-        
-        // Extract fileIds and create selected photos array of selected items
-        const selectedFileIds: string[] = [];
-        const selectedPhotosArray: SelectedPhoto[] = [];
-        
-        // Loop through each selected item and create a SelectedPhoto object for each
-        Array.from(selectedItems).forEach(index => {
-          const mediaItem = albumData.mediaItems[index];
-          if (mediaItem && mediaItem.fileId) {
-            // Add to fileIds array
-            selectedFileIds.push(mediaItem.fileId);
-            
-            // Create a SelectedPhoto object
-            const newSelectedPhoto: SelectedPhoto = {
-              fileName: mediaItem.fileId.split('_____')[1]?.split('____')[0] || `file-${index}`,
-              s3PreviewUrl: mediaItem.type === 'video' ? (mediaItem.thumbnailUrl || mediaItem.url) : mediaItem.url,
-              type: mediaItem.type === 'video' ? 'video' : 'image',
-              size: 0, // We don't have this info from the album view
-              status: 'complete', // Mark as complete since these are existing files
-              progress: 100,
-              fileId: mediaItem.fileId, // Store the original fileId
-              // If video, include the duration
-              duration: mediaItem.type === 'video' && mediaItem.duration ? 
-                parseFloat(mediaItem.duration.split(':').reduce((acc, time) => (60 * acc) + parseFloat(time), 0).toString()) : 
-                null
-            };
-            
-            selectedPhotosArray.push(newSelectedPhoto);
-          }
-        });
-        
-        // Create data structure for sub-album selected files
-        const subAlbumData = {
-          isSubAlbum: true,
-          selectedFileIds: selectedFileIds,
-          selectedPhotos: selectedPhotosArray
-        };
-        
-        // Save to localStorage
-        localStorage.setItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA, JSON.stringify(subAlbumData));
-        
-        // Remove loading modal
-        document.body.removeChild(loadingModal);
-        
-        // Redirect to save-album page without a folderId parameter
-        window.location.href = '/save-album.html';
-        
-      } catch (error) {
-        console.error('Error creating sub-album:', error);
-        alert(t('There was an error creating the sub-album. Please try again.'));
-      }
-    }
+    createSubAlbumWithSelectedItems(t, albumData, selectedItems);
   };
 
   // Modified handle download photos function to directly save the album
@@ -1067,7 +690,6 @@ const PhotoAlbumContent: React.FC = () => {
         isOpen={showInlineOTPLogin}
         onClose={() => {
           setShowInlineOTPLogin(false);
-          // If we were trying to save the album but canceled login, clear the flag
         }}
         onLoginSuccess={handleLoginSuccess}
         t={t}
@@ -1123,7 +745,7 @@ const PhotoAlbumContent: React.FC = () => {
         usernameManager={usernameManager}
         onSuccess={(_) => {
           // Automatically proceed with saving the album
-          executeAlbumSave();
+          executeAlbumSave(t, folderId, albumData);
         }}
       />
       
