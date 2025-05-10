@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { 
   PasswordPolicyEnum
 } from "@/lib/types"
-import { useTranslation } from "@/components/LanguageSelector"
+import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n/translations"
 import styled from "styled-components"
 

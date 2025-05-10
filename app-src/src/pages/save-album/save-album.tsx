@@ -22,7 +22,8 @@ import {
   PasswordPolicyEnum
 } from "@/lib/types";
 
-import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
+import { I18nProvider } from "@/lib/i18n/context";
+import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n/translations";
 import { PasswordDialog } from "@/components/PasswordDialog";
 import { LogoutButton } from "@/components/LogoutButton";

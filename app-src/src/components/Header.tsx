@@ -1,6 +1,6 @@
 import React from "react";
 import { LogoutButton } from "@/components/LogoutButton";
-import { useTranslation } from "@/components/LanguageSelector";
+import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { ProfileLink } from "@/styles/styled-components";
 

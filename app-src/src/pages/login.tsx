@@ -7,7 +7,8 @@ import {
   RespondToAuthChallengeCommand,
 } from '@aws-sdk/client-cognito-identity-provider'
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, AWS_REGION, COGNITO_CLIENT_ID } from "@/lib/config"
-import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
+import { I18nProvider } from "@/lib/i18n/context";
+import { useTranslation } from "@/lib/i18n/hooks";
 import styled from 'styled-components'
 import {
   GlobalStyle,

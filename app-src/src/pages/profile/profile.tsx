@@ -10,7 +10,8 @@ import {
   AWS_PRIVATE_GRAPHQL_ENDPOINT,
   LOCAL_STORAGE_KEYS
 } from "@/lib/config";
-import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
+import { I18nProvider } from "@/lib/i18n/context";
+import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
 import { SearchBar } from "@/components/SearchBar";
