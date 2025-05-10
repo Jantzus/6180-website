@@ -59,7 +59,7 @@ import {
 } from "@/lib/types";
 
 import { generateUUID } from "@/lib/utils";
-import { I18nProvider, useTranslation } from "@/lib/i18n/react";
+import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
 import { getLanguageDirection } from "@/lib/i18n/translations";
 import { PasswordDialog } from "@/components/PasswordDialog";
 import { LogoutButton } from "@/components/LogoutButton";
@@ -1730,9 +1730,9 @@ const SaveAlbum = () => {
     }
     
     const optionText = 
-      passwordProtectionOption === 'NotVisible' ? t('Not Visible') :
-      passwordProtectionOption === 'Watermark' ? t('Watermark') :
-      t('Cannot Be Saved');
+      passwordProtectionOption === 'NotVisible' ? t('Password Required To See Or Save') :
+      passwordProtectionOption === 'Watermark' ? t('Password Required To Remove Watermark Or Save') :
+      t('Password Required To Save');
     
     return `${optionText} ${albumPassword ? `(${albumPassword})` : ''}`;
   };

@@ -197,7 +197,6 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLoginSuccess
 
   return (
     <div style={{
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
       position: 'fixed',
       top: 0,

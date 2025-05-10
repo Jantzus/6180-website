@@ -1,5 +1,6 @@
 // src/lib/i18n/react.tsx
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import styled from 'styled-components';
 import { 
   t,
   setLanguage, 
@@ -7,7 +8,7 @@ import {
   SupportedLanguage,
   TranslationKey,
   init
-} from './index';
+} from '@/lib/i18n/index';
 
 // Create a context for i18n in React
 interface I18nContextType {
@@ -19,34 +20,45 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
-// Custom styles for the language selector component
-const languageSelectorStyles = {
-  container: {
-    position: 'relative' as const,
-    display: 'inline-block'
-  },
-  select: {
-    padding: '5px 10px',
-    backgroundColor: 'transparent',
-    border: '1px solid #ddd',
-    borderRadius: '4px',
-    fontSize: '1em',
-    cursor: 'pointer',
-    minWidth: '150px'
-  }
-};
+// Styled components for the language selector
+const SelectorContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  inline-size: fit-content;
+`;
 
-// CSS for language selector that will be injected globally
-const languageSelectorCss = `
-  .language-selector select {
-    padding: 5px 10px;
-    background-color: transparent;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    min-width: 150px;
+const GlobeIcon = styled.label`
+  font-weight: normal;
+  font-size: 1em;
+  cursor: pointer;
+`;
+
+const SelectBox = styled.select`
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  min-width: 150px;
+  appearance: auto;
+  transition: border-color 0.2s ease;
+  
+  &:hover {
+    border-color: #bbb;
   }
+  
+  &:focus {
+    outline: none;
+    border-color: #999;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+  }
+`;
+
+const Option = styled.option`
+  padding: 5px;
 `;
 
 // Provider component
@@ -87,20 +99,6 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
     languages: getAvailableLanguages(),
   };
 
-  // Inject the language selector CSS styles
-  React.useEffect(() => {
-    if (typeof document !== 'undefined') {
-      // Check if the style already exists
-      const existingStyle = document.getElementById('language-selector-styles');
-      if (!existingStyle) {
-        const style = document.createElement('style');
-        style.id = 'language-selector-styles';
-        style.innerHTML = languageSelectorCss;
-        document.head.appendChild(style);
-      }
-    }
-  }, []);
-
   return (
     <I18nContext.Provider value={value}>
       {children}
@@ -128,38 +126,55 @@ export const Trans: React.FC<TransProps> = ({ k, params }) => {
   return <>{t(k, params)}</>;
 };
 
-// Language selector component
-export const LanguageSelector: React.FC<{
+// Language selector component with styled-components
+interface LanguageSelectorProps {
   className?: string;
   label?: string;
-}> = ({ className }) => {
+  variant?: 'default' | 'minimal' | 'button';
+}
+
+export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ 
+  className,
+  label = '🌐', 
+  variant = 'default'
+}) => {
   const { language, setLanguage, languages } = useTranslation();
   
-  // Updated container styles to support label and selector alignment
-  const containerWithLabelStyle = {
-    ...languageSelectorStyles.container,
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px'
-  };
+  // Create a memoized styled component based on the variant prop
+  const StyledSelect = React.useMemo(() => {
+    return styled(SelectBox)`
+      ${variant === 'minimal' && `
+        border: none;
+        background: transparent;
+        padding: 3px 5px;
+        min-width: 100px;
+      `}
+      
+      ${variant === 'button' && `
+        background-color: #f5f5f5;
+        border-radius: 20px;
+        padding: 6px 12px;
+        font-weight: 500;
+      `}
+    `;
+  }, [variant]);
   
   return (
-    <div className={className || "language-selector"} style={containerWithLabelStyle}>
-      <label style={{ fontWeight: 'normal', fontSize: '1em' }}>
-        🌐
-      </label>
-      <select
+    <SelectorContainer className={className}>
+      <GlobeIcon>
+        {label}
+      </GlobeIcon>
+      <StyledSelect
         value={language}
         onChange={(e) => setLanguage(e.target.value as SupportedLanguage)}
         aria-label="Language"
-        style={languageSelectorStyles.select}
       >
         {languages.map((lang) => (
-          <option key={lang.code} value={lang.code}>
+          <Option key={lang.code} value={lang.code}>
             {lang.name}
-          </option>
+          </Option>
         ))}
-      </select>
-    </div>
+      </StyledSelect>
+    </SelectorContainer>
   );
 };

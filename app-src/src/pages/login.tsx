@@ -7,9 +7,104 @@ import {
   RespondToAuthChallengeCommand,
 } from '@aws-sdk/client-cognito-identity-provider'
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, AWS_REGION, COGNITO_CLIENT_ID } from "@/lib/config"
-import { I18nProvider, useTranslation } from '@/lib/i18n/react'
+import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
+import styled from 'styled-components'
+import {
+  AppContainer,
+  Logo
+} from "@/styles/styled-components";
+import {
+  Content,
+  Button,
+  Footer,
+  FooterLink
+} from '@/styles/index-styled-components'
 
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION })
+
+// Additional styled components specific to login page
+const LoginCard = styled.div`
+  max-width: 400px;
+  width: 100%;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  text-align: center;
+`;
+
+const LoginTitle = styled.h2`
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+`;
+
+const LoginHeader = styled.div`
+  margin-bottom: 24px;
+`;
+
+const LogoImage = styled(Logo)`
+  height: 60px;
+  margin-bottom: 16px;
+`;
+
+const ErrorMessage = styled.div`
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+`;
+
+const OtpInput = styled(Input)`
+  letter-spacing: 2px;
+  text-align: center;
+`;
+
+const InfoText = styled.p`
+  font-size: 13px;
+  color: #666;
+  margin-top: 16px;
+  text-align: center;
+`;
+
+const ResendWrapper = styled.div`
+  margin-top: 16px;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+`;
+
+const ResendButton = styled.button`
+  background: none;
+  border: none;
+  color: #007bff;
+  padding: 0;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+`;
+
+const LoginButton = styled(Button)`
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  opacity: ${props => props.disabled ? 0.7 : 1};
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+`;
 
 function normalizeEmail(input: string): string {
   const trimmed = input.trim().toLowerCase()
@@ -36,11 +131,13 @@ const LoginContent = () => {
   const emailInputRef = useRef<HTMLInputElement>(null)
   const otpInputRef = useRef<HTMLInputElement>(null)
 
+  // Check if current language is RTL
+  const isRTL = ['ar', 'he', 'fa', 'ur', 'ps', 'sd'].includes(language.split('-')[0])
+
   useEffect(() => {
     // Set HTML dir attribute for RTL languages
-    document.documentElement.dir = 
-      ['ar', 'he', 'fa', 'ur', 'ps', 'sd'].includes(language.split('-')[0]) ? 'rtl' : 'ltr'
-  }, [language])
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr'
+  }, [language, isRTL])
 
   // Focus the OTP input when code is sent
   useEffect(() => {
@@ -203,199 +300,91 @@ const LoginContent = () => {
   }
 
   return (
-    <div style={{
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      backgroundColor: '#f8f9fa',
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-    }}>
-      <div style={{
-        flex: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-        <div style={{
-        maxWidth: 400,
-        width: '100%',
-        background: '#ffffff',
-        padding: '32px',
-        borderRadius: '12px',
-        boxShadow: '0 6px 20px rgba(0,0,0,0.06)',
-        textAlign: 'center',
-      }}>
-        <div style={{ marginBottom: '24px' }}>
-          <img 
-            src="images/logo_no_background.png" 
-            alt="6180 Logo" 
-            style={{ 
-              height: '60px', 
-              marginBottom: '16px' 
-            }} 
-          />
-          <h2 style={{
-            fontSize: '24px',
-            fontWeight: 600,
-            color: '#333',
-          }}>
-            {t('Sign in to 6180')}
-          </h2>
-        </div>
-
-        {errorMessage && (
-          <div style={{
-            backgroundColor: '#f8d7da',
-            color: '#721c24',
-            padding: '10px',
-            borderRadius: '6px',
-            marginBottom: '16px',
-            fontSize: '14px'
-          }}>
-            {errorMessage}
-          </div>
-        )}
-
-        {!codeSent ? (
-          <>
-            <input
-              ref={emailInputRef}
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={t('Enter your email')}
-              style={{
-                width: '100%',
-                padding: '12px',
-                marginBottom: '16px',
-                borderRadius: '6px',
-                border: '1px solid #ccc',
-                fontSize: '16px',
-                boxSizing: 'border-box',
-              }}
+    <AppContainer isRTL={isRTL}>
+      <Content style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <LoginCard>
+          <LoginHeader>
+            <LogoImage 
+              src="images/logo_no_background.png" 
+              alt="6180 Logo" 
             />
-            <button
-              onClick={sendCode}
-              disabled={status === 'sending' || !email.trim()}
-              style={{
-                width: '100%',
-                padding: '12px',
-                fontSize: '16px',
-                backgroundColor: '#007bff',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '6px',
-                cursor: status === 'sending' || !email.trim() ? 'not-allowed' : 'pointer',
-                opacity: status === 'sending' || !email.trim() ? 0.7 : 1,
-              }}
-            >
-              {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
-            </button>
-            <p style={{ 
-              fontSize: '13px', 
-              color: '#666', 
-              marginTop: '16px',
-              textAlign: 'center' 
-            }}>
-              {t('We\'ll send a secure verification code to your email')}
-            </p>
-          </>
-        ) : (
-          <>
-            <p style={{ marginBottom: '16px', color: '#555' }}>
-              {t('Check your email for a 6-digit verification code sent to')} <strong>{email}</strong>
-            </p>
-            <input
-              ref={otpInputRef}
-              type="tel"
-              inputMode="numeric"
-              pattern="[0-9]*"
-              maxLength={6}
-              value={otpCode}
-              onChange={handleOtpChange}
-              placeholder={t('Enter 6-digit code')}
-              style={{
-                width: '100%',
-                padding: '12px',
-                marginBottom: '16px',
-                borderRadius: '6px',
-                border: '1px solid #ccc',
-                fontSize: '16px',
-                boxSizing: 'border-box',
-                letterSpacing: '2px',
-                textAlign: 'center',
-              }}
-            />
-            <button
-              onClick={confirmCode}
-              disabled={status === 'verifying' || otpCode.length !== 6}
-              style={{
-                width: '100%',
-                padding: '12px',
-                fontSize: '16px',
-                backgroundColor: '#28a745',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '6px',
-                cursor: (status === 'verifying' || otpCode.length !== 6) ? 'not-allowed' : 'pointer',
-                opacity: (status === 'verifying' || otpCode.length !== 6) ? 0.7 : 1,
-              }}
-            >
-              {status === 'verifying' ? t('Verifying...') : t('Verify Code')}
-            </button>
-            <div style={{ 
-              marginTop: '16px', 
-              fontSize: '14px', 
-              color: '#666',
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '8px'
-            }}>
-              <span>{t("Didn't receive a code?")}</span>
-              <button 
-                onClick={handleResendCode}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: '#007bff',
-                  padding: 0,
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  textDecoration: 'underline',
-                }}
+            <LoginTitle>
+              {t('Sign in to 6180')}
+            </LoginTitle>
+          </LoginHeader>
+
+          {errorMessage && (
+            <ErrorMessage>
+              {errorMessage}
+            </ErrorMessage>
+          )}
+
+          {!codeSent ? (
+            <>
+              <Input
+                ref={emailInputRef}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t('Enter your email')}
+              />
+              <LoginButton
+                primary
+                onClick={sendCode}
+                disabled={status === 'sending' || !email.trim()}
               >
-                {t('Send new code')}
-              </button>
-            </div>
-          </>
-        )}
-        
-
-      </div>
-      </div>
+                {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
+              </LoginButton>
+              <InfoText>
+                {t('We\'ll send a secure verification code to your email')}
+              </InfoText>
+            </>
+          ) : (
+            <>
+              <InfoText style={{ marginBottom: '16px', color: '#555' }}>
+                {t('Check your email for a 6-digit verification code sent to')} <strong>{email}</strong>
+              </InfoText>
+              <OtpInput
+                ref={otpInputRef}
+                type="tel"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                maxLength={6}
+                value={otpCode}
+                onChange={handleOtpChange}
+                placeholder={t('Enter 6-digit code')}
+              />
+              <LoginButton
+                primary
+                onClick={confirmCode}
+                disabled={status === 'verifying' || otpCode.length !== 6}
+                style={{ backgroundColor: '#28a745' }}
+              >
+                {status === 'verifying' ? t('Verifying...') : t('Verify Code')}
+              </LoginButton>
+              <ResendWrapper>
+                <span>{t("Didn't receive a code?")}</span>
+                <ResendButton onClick={handleResendCode}>
+                  {t('Send new code')}
+                </ResendButton>
+              </ResendWrapper>
+            </>
+          )}
+        </LoginCard>
+      </Content>
       
-      <div style={{ 
-        textAlign: 'center',
-        padding: '20px',
-        fontSize: '0.9em',
-        color: '#555',
-      }}>
-        <a href="terms.html" style={{ margin: '0 10px', color: '#555', textDecoration: 'none' }}>
+      <Footer>
+        <FooterLink href="terms.html">
           Terms of Service
-        </a>
-        <a href="privacy.html" style={{ margin: '0 10px', color: '#555', textDecoration: 'none' }}>
+        </FooterLink>
+        <FooterLink href="privacy.html">
           Privacy Policy
-        </a>
-        <a href="support.html" style={{ margin: '0 10px', color: '#555', textDecoration: 'none' }}>
+        </FooterLink>
+        <FooterLink href="support.html">
           Support
-        </a>
-      </div>
-    </div>
+        </FooterLink>
+      </Footer>
+    </AppContainer>
   )
 }
 

@@ -20,10 +20,29 @@ interface DirectionalProps {
 }
 
 export const AppContainer = styled.div<DirectionalProps>`
-  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 20px 20px;
   background-color: #f9fafb;
   min-height: 100vh;
+  max-width: 100vw;
   ${props => directionalStyles(props.isRTL)}
+`;
+
+export const LogoContainer = styled.div<DirectionalProps>`
+  display: flex;
+  align-items: center;
+  flex-direction: ${props => props.isRTL ? 'row-reverse' : 'row'};
+  gap: 10px;  
+`;
+
+export const Logo = styled.img`
+  height: 32px;
+`;
+
+export const AppName = styled.div<DirectionalProps>`
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #222;
 `;
 
 export const ContentContainer = styled.div`

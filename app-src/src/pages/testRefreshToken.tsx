@@ -7,7 +7,7 @@ import {
   RespondToAuthChallengeCommand,
 } from '@aws-sdk/client-cognito-identity-provider'
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, AWS_REGION, COGNITO_CLIENT_ID } from "@/lib/config"
-import { I18nProvider, useTranslation } from '@/lib/i18n/react'
+import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
 
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION })
 

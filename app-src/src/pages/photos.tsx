@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import { I18nProvider, useTranslation } from "@/lib/i18n/react";
+import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
 import { getLanguageDirection } from "@/lib/i18n";
 import { 
   checkLoginWithoutRedirect, 

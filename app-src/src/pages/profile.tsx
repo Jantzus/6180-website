@@ -1,21 +1,58 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import ReactDOM from "react-dom/client";
-import { createGlobalStyle } from "styled-components";
-import { checkLoginWithoutRedirect, checkLoginWithRefresh } from "@/lib/utils";
+import { 
+  checkLoginWithoutRedirect, 
+  getTargetItemIdentifier, 
+  formatDate,
+  formatUUID 
+} from "@/lib/utils";
 import {
   AWS_PUBLIC_GRAPHQL_ENDPOINT,
   AWS_PUBLIC_API_KEY,
   AWS_PRIVATE_GRAPHQL_ENDPOINT,
   LOCAL_STORAGE_KEYS
 } from "@/lib/config";
-import { getTargetItemIdentifier } from "@/lib/utils";
-import { I18nProvider, useTranslation } from "@/lib/i18n/react";
+import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
 import { SearchBar } from "@/components/SearchBar";
 import { CopyLinkModal, ConfirmationModal } from "@/components/Modals";
-import { formatDate } from "@/lib/utils";
 import { LazyImage } from "@/components/LazyImage";
+// Import styled components
+import {
+  GlobalStyle,
+  HeaderContainer,
+  ProfileControls,
+  ProfileMenu,
+  ProfileAvatar,
+  ProfileName,
+  DropdownIndicator,
+  DropdownMenu,
+  DropdownItem,
+  ProfileNotification,
+  FooterContainer,
+  ButtonGroup,
+  ButtonRow,
+  Button,
+  EmptyState,
+  AlbumCard,
+  AlbumLink,
+  AlbumContent,
+  AlbumHeader,
+  AlbumDetails,
+  AlbumTitle,
+  AlbumDates,
+  ImageContainer,
+  ImageScroller,
+  ImageItem,
+  ImageShadow,
+  PasswordPolicy,
+  PolicyIndicator,
+  AlbumDescription,
+  LoadingState,
+  ErrorState,
+  MainContainer
+} from "@/styles/profile-styled-components.tsx";
 
 // Types
 interface FolderPassword {
@@ -36,30 +73,6 @@ interface Folder {
   profileIds: string[];
 }
 
-// Styled Components via createGlobalStyle
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-    -webkit-text-size-adjust: 100%;
-  }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f8f9fa;
-  }
-  
-  #root {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-`;
-
 // ProfileHeader Component
 interface ProfileHeaderProps {
   username: string;
@@ -74,7 +87,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   isRTL 
 }) => {
   const { t } = useTranslation();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   
   // Toggle dropdown menu
   const toggleDropdown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -96,145 +109,58 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   }, [isDropdownOpen]);
   
   return (
-    <div style={{ 
-      marginBottom: 24,
-      textAlign: "center",
-      direction: isRTL ? "rtl" : "ltr"
-    }}>
-      <div style={{ 
-        display: "flex",
-        alignItems: "center",
-        justifyContent: isRTL ? "flex-start" : "flex-end", // Align to the right side
-        marginBottom: 8,
-        position: "relative"
-      }}>
-        <div 
-          style={{ 
-            display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
-            position: "relative"
-          }}
-          onClick={toggleDropdown}
-        >
-          <div style={{ 
-            width: 40,
-            height: 40,
-            borderRadius: "50%",
-            backgroundColor: "#e0e0e0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 18,
-            color: "#555",
-            marginRight: 12
-          }}>
+    <HeaderContainer isRTL={isRTL}>
+      <ProfileControls isRTL={isRTL}>
+        <ProfileMenu onClick={toggleDropdown}>
+          <ProfileAvatar>
             {username ? username.charAt(0).toUpperCase() : "?"}
-          </div>
+          </ProfileAvatar>
           
-          <h1 style={{ 
-            fontSize: 18,
-            margin: 0,
-            fontWeight: 600
-          }}>
+          <ProfileName>
             {username || t('User Profile')}
-          </h1>
+          </ProfileName>
           
-          {/* Dropdown indicator */}
-          <div style={{
-            width: 0,
-            height: 0,
-            borderLeft: "5px solid transparent",
-            borderRight: "5px solid transparent",
-            borderTop: "5px solid #555",
-            marginLeft: 8
-          }}></div>
-        </div>
+          <DropdownIndicator />
+        </ProfileMenu>
         
         {/* Dropdown Menu */}
         {isDropdownOpen && (
-          <div style={{
-            position: "absolute",
-            top: "100%",
-            right: 0,
-            marginTop: 8,
-            backgroundColor: "#fff",
-            borderRadius: 8,
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-            zIndex: 100,
-            minWidth: 180,
-            padding: "8px 0"
-          }}>
-            <div 
-              style={{
-                padding: "10px 16px",
-                fontSize: 14,
-                color: "#333",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                borderBottom: "1px solid #eee"
-              }}
+          <DropdownMenu>
+            <DropdownItem 
+              hasBorder={true}
               onClick={() => {
                 alert(t('Bio feature is coming soon! Stay tuned for updates where you can share more about yourself.'));
               }}
             >
               <span>Bio</span>
-            </div>
+            </DropdownItem>
             
-            <div 
-              style={{
-                padding: "10px 16px",
-                fontSize: 14,
-                color: "#333",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                borderBottom: "1px solid #eee"
-              }}
+            <DropdownItem 
+              hasBorder={true}
               onClick={() => {
                 alert(t('Email feature is coming soon! Soon you will be able to share your email with connections.'));
               }}
             >
               <span>E-mail</span>
-            </div>
+            </DropdownItem>
             
-            <div 
-              style={{
-                padding: "10px 16px",
-                fontSize: 14,
-                color: "#333",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center"
-              }}
+            <DropdownItem 
               onClick={() => {
                 alert(t('Add Contact feature is coming soon! You will be able to add this person as a contact on 6180.'));
               }}
             >
               <span>Contact On 6180</span>
-            </div>
-          </div>
+            </DropdownItem>
+          </DropdownMenu>
         )}
-      </div>
+      </ProfileControls>
       
       {isCurrentUser && (
-        <div style={{
-          marginTop: 12,
-          padding: "8px 12px",
-          backgroundColor: "#f0f7ff",
-          borderRadius: 8,
-          border: "1px solid #cce0ff",
-          maxWidth: 500,
-          fontSize: 13,
-          margin: "0 auto" // Center the notification
-        }}>
-          <p style={{ margin: 0 }}>
-            {t('This is how others see your public profile')}
-          </p>
-        </div>
+        <ProfileNotification>
+          <p>{t('This is how others see your public profile')}</p>
+        </ProfileNotification>
       )}
-    </div>
+    </HeaderContainer>
   );
 };
 
@@ -258,26 +184,21 @@ const AlbumFooter: React.FC<AlbumFooterProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  
+  // Define state for managing alerts and public profile status
+  const [isOnPublicProfile, setIsOnPublicProfile] = useState<boolean>(
+    (folder.profileIds || []).includes(`${cognitoUsername}_____Public____Profile`)
+  );
   const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
   const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
-  
-  // Calculate if album is on public profile
-  const [localProfileIds, setLocalProfileIds] = useState<string[]>(folder.profileIds || []);
-  const publicProfileId = cognitoUsername ? `${cognitoUsername}_____Public____Profile` : '';
-  const isOnPublicProfile = localProfileIds.includes(publicProfileId);
-  
-  // Update local state when folder props change
-  useEffect(() => {
-    setLocalProfileIds(folder.profileIds || []);
-  }, [folder.profileIds]);
   
   // Generate the invite link
   let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
   const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
   
   // Handle copy function
-  const handleCopy = (textToCopy: string) => {
-    navigator.clipboard.writeText(textToCopy)
+  const handleCopy = () => {
+    navigator.clipboard.writeText(inviteLink)
       .then(() => {
         setShowingCopyLinkAlert(false);
         setShowingCopiedLinkAlert(true);
@@ -287,7 +208,7 @@ const AlbumFooter: React.FC<AlbumFooterProps> = ({
         alert(t('Failed to copy link'));
       });
   };
-
+  
   // Handle toggling public profile visibility
   const handlePublicProfileClick = async (e: React.MouseEvent) => {
     e.preventDefault(); 
@@ -300,7 +221,7 @@ const AlbumFooter: React.FC<AlbumFooterProps> = ({
     
     try {
       // Get a fresh token
-      const token = await checkLoginWithRefresh();
+      const token = await checkLoginWithoutRedirect();
       
       if (!token) {
         console.error("Authentication failed");
@@ -308,7 +229,8 @@ const AlbumFooter: React.FC<AlbumFooterProps> = ({
       }
       
       // Determine the new profileIds array
-      const newProfileIds = [...localProfileIds];
+      const publicProfileId = `${cognitoUsername}_____Public____Profile`;
+      const newProfileIds = [...folder.profileIds || []];
       
       if (isOnPublicProfile) {
         // Remove from public profile
@@ -364,8 +286,8 @@ const AlbumFooter: React.FC<AlbumFooterProps> = ({
       const updatedItem = updatedItems.find((item: any) => item.id === folder.folderPositionId);
       
       if (updatedItem && updatedItem.profileIds) {
-        // First update local state
-        setLocalProfileIds(updatedItem.profileIds);
+        // Update local state
+        setIsOnPublicProfile(!isOnPublicProfile);
         
         // Then propagate changes to parent component if needed
         if (updateProfileIds) {
@@ -380,133 +302,76 @@ const AlbumFooter: React.FC<AlbumFooterProps> = ({
     }
   };
 
-  // Common button style
-  const buttonStyle = {
-    padding: "8px 12px",
-    border: "none",
-    borderRadius: 6,
-    cursor: "pointer",
-    fontSize: 14,
-    textAlign: "center" as const,
-    whiteSpace: "nowrap" as const,
-    flexShrink: 0
-  };
-
   return (
     <>
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between",
-        marginTop: 16,
-        flexDirection: isRTL ? "row-reverse" : "row"
-      }}>
-        <div style={{ 
-          display: "flex",
-          width: "100%", 
-          overflowX: "auto",
-          scrollbarWidth: "none" as const,
-          msOverflowStyle: "none",
-          WebkitOverflowScrolling: "touch",
-          flexDirection: isRTL ? "row-reverse" : "row",
-          gap: "10px"
-        }}>
-          <div
-            style={{
-              display: "flex",
-              gap: "10px",
-              flexDirection: isRTL ? "row-reverse" : "row"
-            }}
-          >
+      <FooterContainer isRTL={isRTL}>
+        <ButtonGroup isRTL={isRTL}>
+          <ButtonRow isRTL={isRTL}>
             {hasAddPhotoPermission && openFilePicker && (
-              <button
+              <Button
+                variant="success"
                 onClick={(e) => {
                   e.preventDefault(); 
                   e.stopPropagation();
                   openFilePicker(folder.folderId);
                 }}
-                style={{
-                  ...buttonStyle,
-                  backgroundColor: "#4caf50",
-                  color: "white",
-                }}
               >
                 {t('Add Photos')}
-              </button>
+              </Button>
             )}
             
-            <button
+            <Button
               onClick={(e) => {
                 e.preventDefault(); 
                 e.stopPropagation();
                 setShowingCopyLinkAlert(true);
               }}
-              style={{
-                ...buttonStyle,
-                backgroundColor: "#e0e0e0",
-              }}
             >
               {t('Copy Link')}
-            </button>
+            </Button>
             
             {isOwner && (
               <>
-                <button
+                <Button
+                  variant="primary"
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     window.location.href = `/save-album.html?folderId=${encodeURIComponent(folder.folderId)}`;
                   }}
-                  style={{
-                    ...buttonStyle,
-                    backgroundColor: "#2196f3",
-                    color: "white",
-                  }}
                 >
                   {t('Edit Album')}
-                </button>
+                </Button>
                 
                 {/* Public Profile Toggle Button - Only show for owners */}
-                <button
+                <Button
+                  variant={isOnPublicProfile ? "active" : "default"}
                   onClick={handlePublicProfileClick}
-                  style={{
-                    ...buttonStyle,
-                    backgroundColor: isOnPublicProfile ? "#4caf50" : "#e0e0e0",
-                    color: isOnPublicProfile ? "white" : "inherit",
-                  }}
                 >
                   {isOnPublicProfile ? t('Remove From Public Profile') : t('Add To Public Profile')}
-                </button>
+                </Button>
               </>
             )}
-          </div>
-        </div>
-        
-        {/* Copy Link Modals */}
-        <CopyLinkModal
-          isOpen={showingCopyLinkAlert}
-          onClose={() => setShowingCopyLinkAlert(false)}
-          inviteLink={inviteLink}
-          onCopy={handleCopy}
-          t={t}
-          isRTL={isRTL}
-        />
-        
-        <ConfirmationModal
-          isOpen={showingCopiedLinkAlert}
-          onClose={() => setShowingCopiedLinkAlert(false)}
-          t={t}
-          isRTL={isRTL}
-        />
-        
-        {/* Hide scrollbar for WebKit browsers */}
-        <style>
-          {`
-            div::-webkit-scrollbar {
-              display: none;
-            }
-          `}
-        </style>
-      </div>
+          </ButtonRow>
+        </ButtonGroup>
+      </FooterContainer>
+      
+      {/* Copy Link Modals */}
+      <CopyLinkModal
+        isOpen={showingCopyLinkAlert}
+        onClose={() => setShowingCopyLinkAlert(false)}
+        inviteLink={inviteLink}
+        onCopy={() => handleCopy()}
+        t={t}
+        isRTL={isRTL}
+      />
+      
+      <ConfirmationModal
+        isOpen={showingCopiedLinkAlert}
+        onClose={() => setShowingCopiedLinkAlert(false)}
+        t={t}
+        isRTL={isRTL}
+      />
     </>
   );
 };
@@ -534,17 +399,9 @@ const AlbumList: React.FC<AlbumListProps> = ({
 
   if (folders.length === 0) {
     return (
-      <div style={{ 
-        textAlign: "center", 
-        padding: "40px 20px",
-        backgroundColor: "white",
-        borderRadius: 12,
-        boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
-      }}>
-        <p style={{ fontSize: 16, color: "#666" }}>
-          {t('No public albums found')}
-        </p>
-      </div>
+      <EmptyState>
+        <p>{t('No public albums found')}</p>
+      </EmptyState>
     );
   }
 
@@ -596,181 +453,70 @@ const AlbumList: React.FC<AlbumListProps> = ({
         );
 
         return (
-          <div
-            key={folder.folderId}
-            style={{
-              marginBottom: 30,
-              width: "100%",
-              direction: isRTL ? "rtl" : "ltr"
-            }}
-          >
-            <a
-              href={inviteLink}
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "block",
-                width: "100%",
-                overflow: "hidden"
-              }}
-            >
-              <div
-                style={{
-                  background: "#fff",
-                  borderRadius: 12,
-                  padding: 20,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                  transition: "box-shadow 0.2s ease",
-                  width: "100%",
-                  maxWidth: "100%",
-                  position: "relative",
-                  boxSizing: "border-box",
-                  overflow: "hidden"
-                }}
-                onMouseOver={(e) =>
-                  ((e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.08)"))
-                }
-                onMouseOut={(e) =>
-                  ((e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)"))
-                }
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-end",
-                    marginBottom: 16,
-                    flexDirection: isRTL ? "row-reverse" : "row"
-                  }}
-                >
-                  <div style={{ 
-                    display: "flex", 
-                    flexDirection: "column", 
-                    alignItems: isRTL ? "flex-end" : "flex-start" 
-                  }}>
-                    <h2 style={{ fontSize: 20, margin: 0, color: "#222" }}>
+          <AlbumCard key={folder.folderId} isRTL={isRTL}>
+            <AlbumLink href={inviteLink}>
+              <AlbumContent>
+                <AlbumHeader isRTL={isRTL}>
+                  <AlbumDetails isRTL={isRTL}>
+                    <AlbumTitle>
                       {folder.folderName || ""}
-                    </h2>
+                    </AlbumTitle>
                     {(showCreated || showUpdated) && (
-                      <div style={{ 
-                        fontSize: 13, 
-                        color: "#777", 
-                        textAlign: isRTL ? "right" : "left" as const,
-                        marginTop: 4
-                      }}>
+                      <AlbumDates isRTL={isRTL}>
                         {showCreated && folder.createdAt && formatDate(folder.createdAt) && (
                           <div>{t('Created')}: {formatDate(folder.createdAt)}</div>
                         )}
                         {showUpdated && folder.updatedAt && formatDate(folder.updatedAt) && (
                           <div>{t('Updated')}: {formatDate(folder.updatedAt)}</div>
                         )}
-                      </div>
+                      </AlbumDates>
                     )}
-                  </div>
-                </div>
+                  </AlbumDetails>
+                </AlbumHeader>
                 
                 {/* Only show the image container if there are valid files */}
                 {validFiles.length > 0 && (
-                  <div 
-                    style={{ 
-                      width: "100%",
-                      position: "relative",
-                    }}
-                  >
-                    {validFiles.length > 0 ? (
-                      <div 
-                        style={{ 
-                          width: "100%",
-                          position: "relative",
-                        }}
-                      >
-                        <div 
-                          style={{ 
-                            display: "flex", 
-                            overflowX: "auto",
-                            gap: 12,
-                            paddingBottom: 8,
-                            msOverflowStyle: "none", 
-                            scrollbarWidth: "thin" as const,
-                            WebkitOverflowScrolling: "touch",
-                            maxWidth: "100%",
-                            flexDirection: isRTL ? "row-reverse" : "row"
-                          }}
-                        >
-                          {validFiles.map((file, i) => (
-                            <div key={i} style={{ flexShrink: 0 }}>
-                              <LazyImage
-                                thumbnailDataKey={file.thumbnailDataKey}
-                                dataKey={file.dataKey}
-                                alt={t('Thumbnail')}
-                                style={{
-                                  width: 160,
-                                  height: 100,
-                                  objectFit: "cover",
-                                  borderRadius: 6,
-                                  border: "1px solid #ddd",
-                                }}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                        
-                        {validFiles.length > 3 && (
-                          <div 
+                  <ImageContainer>
+                    <ImageScroller isRTL={isRTL}>
+                      {validFiles.map((file, i) => (
+                        <ImageItem key={i}>
+                          <LazyImage
+                            thumbnailDataKey={file.thumbnailDataKey}
+                            dataKey={file.dataKey}
+                            alt={t('Thumbnail')}
                             style={{
-                              position: "absolute",
-                              [isRTL ? "left" : "right"]: 0,
-                              top: 0,
-                              bottom: 8,
-                              width: 30,
-                              background: isRTL 
-                                ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
-                                : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
-                              pointerEvents: "none",
+                              width: 160,
+                              height: 100,
+                              objectFit: "cover",
+                              borderRadius: 6,
+                              border: "1px solid #ddd",
                             }}
                           />
-                        )}
-                      </div>
-                      ) : null}
-                  </div>
+                        </ImageItem>
+                      ))}
+                    </ImageScroller>
+                    
+                    {validFiles.length > 3 && (
+                      <ImageShadow isRTL={isRTL} />
+                    )}
+                  </ImageContainer>
                 )}
                 
                 {/* Password Policy Indicator */}
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: isRTL ? "flex-start" : "flex-end",
-                    marginTop: 8,
-                    marginBottom: 8
-                  }}
-                >
+                <PasswordPolicy isRTL={isRTL}>
                   {passwordPolicy !== "NoPassword" && (
-                    <div style={{
-                      display: "flex",
-                      alignItems: "center",
-                      fontSize: "12px",
-                      color: "#555"
-                    }}>
+                    <PolicyIndicator>
                       <span>{getPasswordPolicyText(passwordPolicy)}</span>
-                    </div>
+                    </PolicyIndicator>
                   )}
-                </div>
+                </PasswordPolicy>
                 
                 {/* Album description section */}
-                <div
-                  style={{
-                    marginTop: 8,
-                    marginBottom: 16,
-                    fontSize: 14,
-                    color: "#555",
-                    lineHeight: 1.5,
-                    textAlign: isRTL ? "right" : "left" as const
-                  }}
-                >
+                <AlbumDescription isRTL={isRTL}>
                   {folder.folderDescription && folder.folderDescription.length > 1 
                     ? folder.folderDescription 
                     : ""}
-                </div>
+                </AlbumDescription>
                 
                 {/* Updated AlbumFooter with public profile toggle capability */}
                 <AlbumFooter
@@ -781,9 +527,9 @@ const AlbumList: React.FC<AlbumListProps> = ({
                   openFilePicker={openFilePicker}
                   updateProfileIds={updateFolderProfileIds}
                 />
-              </div>
-            </a>
-          </div>
+              </AlbumContent>
+            </AlbumLink>
+          </AlbumCard>
         );
       })}
     </>
@@ -812,6 +558,9 @@ const FileInput = React.forwardRef<HTMLInputElement, FileInputProps>(
 
 // Main PersonaViewer Component
 const PersonaViewer: React.FC = () => {
+  // Use a regular ref instead of the hook for simplicity
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  
   const [ownerItemId, setOwnerItemId] = useState<string>("");
   const [profileUsername, setProfileUsername] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -824,7 +573,6 @@ const PersonaViewer: React.FC = () => {
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   
   // File picker state
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const [currentFolderId, setCurrentFolderId] = useState<string | null>(null);
   
   // Check if the logged-in user is the owner of this profile
@@ -857,21 +605,10 @@ const PersonaViewer: React.FC = () => {
 
       // Make sure it's exactly 32 characters before formatting
       if (formattedId?.length === 32) {
-
-        formattedId = [
-          formattedId.slice(0, 8),
-          formattedId.slice(8, 12),
-          formattedId.slice(12, 16),
-          formattedId.slice(16, 20),
-          formattedId.slice(20)
-        ].join('-');
-      
+        formattedId = formatUUID(formattedId);
         console.log(formattedId); // e.g., B89D8BAF-F9A1-484B-A379-FA7FAD081303
-
       } else {
-
         console.error('Invalid UUID format: must be 32 characters after removing dashes');
-        
       }
 
       if (formattedId) return formattedId;
@@ -1116,7 +853,7 @@ const PersonaViewer: React.FC = () => {
     <>
       <GlobalStyle />
       
-      <div style={{ maxWidth: 900, margin: "0 auto", padding: "40px 20px" }}>
+      <MainContainer>
         {/* Profile Header */}
         <ProfileHeader 
           username={profileUsername || t('User')}
@@ -1134,33 +871,16 @@ const PersonaViewer: React.FC = () => {
         
         {/* Loading State */}
         {isLoading && (
-          <div style={{ 
-            textAlign: "center", 
-            padding: "40px 20px",
-            backgroundColor: "white",
-            borderRadius: 12,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
-          }}>
-            <p style={{ fontSize: 16, color: "#666" }}>
-              {t('Loading albums...')}
-            </p>
-          </div>
+          <LoadingState>
+            <p>{t('Loading albums...')}</p>
+          </LoadingState>
         )}
         
         {/* Error State */}
         {error && (
-          <div style={{ 
-            textAlign: "center", 
-            padding: "40px 20px",
-            backgroundColor: "#fdeded",
-            borderRadius: 12,
-            border: "1px solid #f7d0d0",
-            marginBottom: 20
-          }}>
-            <p style={{ fontSize: 16, color: "#d32f2f" }}>
-              {error}
-            </p>
-          </div>
+          <ErrorState>
+            <p>{error}</p>
+          </ErrorState>
         )}
         
         {/* Album List */}
@@ -1182,7 +902,7 @@ const PersonaViewer: React.FC = () => {
             ref={fileInputRef}
           />
         )}
-      </div>
+      </MainContainer>
     </>
   );
 };

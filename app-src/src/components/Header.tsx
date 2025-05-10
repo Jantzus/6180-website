@@ -1,6 +1,6 @@
 import React from "react";
 import { LogoutButton } from "@/components/LogoutButton";
-import { useTranslation } from "@/lib/i18n/react";
+import { useTranslation } from "@/components/LanguageSelector";
 import { getLanguageDirection } from "@/lib/i18n";
 
 // Header Component

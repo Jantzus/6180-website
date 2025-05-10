@@ -7,11 +7,14 @@ import {
   SelectedPhoto, 
   ProgressTracker
 } from "@/lib/types";
-import { I18nProvider, useTranslation } from "@/lib/i18n/react";
+import { I18nProvider, useTranslation } from "@/components/LanguageSelector";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
 
 // Import components
+import {
+  AppContainer,
+} from "@/styles/styled-components";
 import { Header } from "@/components/Header";
 import { CreateAlbumButton } from "@/components/CreateAlbumButton";
 import { SearchBar } from "@/components/SearchBar";
@@ -452,14 +455,7 @@ const MyAlbums = () => {
   const isRTL = getLanguageDirection(language) === "rtl";
 
   return (
-    <div
-      style={{
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-        backgroundColor: "#f8f9fa",
-        minHeight: "100vh",
-        padding: "40px 20px",
-      }}
-    >
+    <AppContainer isRTL={isRTL}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         {/* Container for all content with consistent width */}
         <div style={{ width: "100%" }}>
@@ -556,7 +552,7 @@ const MyAlbums = () => {
         isRTL={isRTL}
         textDirection={isRTL ? "rtl" : "ltr"}
       />
-    </div>
+    </AppContainer>
   )
 }
 

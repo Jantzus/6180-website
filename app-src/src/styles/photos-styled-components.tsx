@@ -2,7 +2,6 @@ import styled, { createGlobalStyle, css } from "styled-components";
 
 // Styled components
 export const Body = styled.div`
-  font-family: Helvetica, Arial, sans-serif;
   max-width: 1200px;
   margin: auto;
   background: #f9fafb;

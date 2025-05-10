@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FolderType } from "@/lib/types";
-import { useTranslation } from "@/lib/i18n/react";
+import { useTranslation } from "@/components/LanguageSelector";
 import { getLanguageDirection } from "@/lib/i18n";
 
 // ContactsFilter Component with multi-select filtering
