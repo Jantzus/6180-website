@@ -7,8 +7,7 @@ import {
 import {
   AWS_PRIVATE_GRAPHQL_ENDPOINT
 } from "@/lib/config";
-import { useTranslation } from "@/lib/i18n/hooks";
-import { getLanguageDirection } from "@/lib/i18n";
+import { getLanguageDirection, useTranslation } from "@/lib/i18n";
 import { CopyLinkModal, ConfirmationModal } from "@/components/Modals";
 import { LazyImage } from "@/components/LazyImage";
 // Import styled components

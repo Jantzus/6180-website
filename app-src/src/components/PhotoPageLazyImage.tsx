@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "@/lib/i18n/hooks";
+import { useTranslation } from "@/lib/i18n";
 import { 
   LazyImageContainer, 
   StyledImage, 

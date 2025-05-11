@@ -1,14 +1,12 @@
 // src/lib/i18n/components.tsx
 import React from 'react';
-import { useTranslation } from './hooks';
-import { TranslationKey } from '@/lib/i18n/index';
+import { TranslationKey, SupportedLanguage, useTranslation } from '@/lib/i18n/i18n';
 import { 
   SelectorContainer, 
   GlobeIcon, 
   SelectBox, 
   Option 
 } from './styled';
-import { SupportedLanguage } from '@/lib/i18n/index';
 
 // Translation component 
 interface TransProps {

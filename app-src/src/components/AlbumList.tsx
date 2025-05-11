@@ -1,8 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { FolderType } from "@/lib/types";
-import { useTranslation } from "@/lib/i18n/hooks";
-import { getLanguageDirection } from "@/lib/i18n";
+import { getLanguageDirection, useTranslation } from "@/lib/i18n";
 import { formatDate } from "@/lib/utils";
 import { getTargetItemIdentifier } from "@/lib/utils";
 import { LazyImage } from "./LazyImage";

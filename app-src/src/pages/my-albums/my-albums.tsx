@@ -1,8 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
-import { I18nProvider } from "@/lib/i18n/context";
-import { useTranslation } from "@/lib/i18n/hooks";
-import { getLanguageDirection } from "@/lib/i18n";
+import { I18nProvider, useTranslation, getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
 
 // Import components

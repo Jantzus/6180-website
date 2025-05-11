@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useTranslation } from "@/lib/i18n/hooks";
+import { useTranslation } from "@/lib/i18n";
 import styled from "styled-components";
 import { 
   WatermarkOverlay,
