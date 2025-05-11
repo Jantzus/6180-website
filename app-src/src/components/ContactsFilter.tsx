@@ -211,7 +211,7 @@ export const ContactsFilter: React.FC<ContactsFilterProps> = ({
             textAlign: isRTL ? "right" : "left",
           }}
         >
-          {t('Showing albums with all')} {selectedContacts.length} {t('selected contacts')}
+          {t('Showing albums with all selected contacts')}
         </div>
       )}
       

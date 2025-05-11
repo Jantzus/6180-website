@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import styled from "styled-components";
 import { 
@@ -42,6 +42,7 @@ export const MediaContainer = styled.div`
   overflow: auto;
   padding: 10px;
   position: relative;
+  touch-action: pan-y; /* Allow vertical scrolling but capture horizontal swipes */
 `;
 
 export interface FullscreenMediaViewerProps {
@@ -72,6 +73,14 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
   const [isLoading, setIsLoading] = useState(true);
   const { t } = useTranslation();
   
+  // References for touch handling
+  const touchStartXRef = useRef<number | null>(null);
+  const touchEndXRef = useRef<number | null>(null);
+  const mediaContainerRef = useRef<HTMLDivElement>(null);
+  const swipeThreshold = 50; // Minimum distance required for a swipe
+  const [isScrolling, setIsScrolling] = useState(false);
+  const startScrollTopRef = useRef<number>(0);
+  
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -87,6 +96,61 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose, onNext, onPrev, hasNext, hasPrev]);
+
+  // Handle touch events for swipe navigation
+  const handleTouchStart = (e: React.TouchEvent) => {
+    // Store the initial touch position
+    touchStartXRef.current = e.touches[0].clientX;
+    
+    // Track if we're scrolling vertically
+    if (mediaContainerRef.current) {
+      startScrollTopRef.current = mediaContainerRef.current.scrollTop;
+    }
+    setIsScrolling(false);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    // Skip if no start position
+    if (touchStartXRef.current === null) return;
+    
+    // Check if vertical scrolling is happening
+    if (mediaContainerRef.current) {
+      if (Math.abs(mediaContainerRef.current.scrollTop - startScrollTopRef.current) > 10) {
+        setIsScrolling(true);
+      }
+    }
+    
+    // Update the end position
+    touchEndXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    // Skip if no start or end position
+    if (touchStartXRef.current === null || touchEndXRef.current === null || isScrolling) {
+      // Reset touch positions
+      touchStartXRef.current = null;
+      touchEndXRef.current = null;
+      return;
+    }
+
+    // Calculate swipe distance
+    const swipeDistance = touchEndXRef.current - touchStartXRef.current;
+    
+    // Determine if swipe was significant enough
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+      if (swipeDistance > 0 && hasPrev) {
+        // Swipe right -> go to previous
+        onPrev();
+      } else if (swipeDistance < 0 && hasNext) {
+        // Swipe left -> go to next
+        onNext();
+      }
+    }
+    
+    // Reset touch positions
+    touchStartXRef.current = null;
+    touchEndXRef.current = null;
+  };
 
   // Function to format the owner's Cognito username for the profile link
   const formatCognitoUsername = (ownerId: string) => {
@@ -121,8 +185,13 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
         </NavButtonsContainer>
       </Header>
       
-      {/* Media container */}
-      <MediaContainer>
+      {/* Media container with touch handlers */}
+      <MediaContainer
+        ref={mediaContainerRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {item.type === 'image' ? (
           <MediaWrapper>
             <Image 

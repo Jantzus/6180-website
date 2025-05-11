@@ -1,11 +1,12 @@
 // src/lib/i18n/index.ts
 import { 
-  translations, 
   supportedLanguages, 
   rtlLanguages,
   getLanguageDirection
 } from '@/lib/i18n/translations';
-import type { SupportedLanguage, TranslationKey } from '@/lib/i18n/translations';
+import type { SupportedLanguage } from '@/lib/i18n/translations';
+import { translations } from '@/lib/i18n/terms';
+import type { TranslationKey } from '@/lib/i18n/terms';
 
 // Current language state
 let currentLanguage: SupportedLanguage = 'en';

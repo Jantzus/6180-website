@@ -23,13 +23,12 @@ export const SaveToShareContactListDescription: React.FC<{
         color: '#333',
         textAlign: 'left'
       }}>
-        {t('Click "Save" to create a memory with ')}
+        {t('Click "Save" to create memories you can find later with')} ‎
         <strong>
           {Object.values(albumData.contacts)
             .filter(contact => !contact.toString().startsWith('Profile-'))
             .join(', ')}
         </strong>
-        {t(' that you can filter for later')}
       </p>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import type { TranslationKey } from "@/lib/i18n/translations";
+import type { TranslationKey } from "@/lib/i18n/terms";
 
 type DebugLogProps = {
   debugMessages: string[];

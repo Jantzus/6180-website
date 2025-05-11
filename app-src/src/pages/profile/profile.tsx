@@ -26,10 +26,11 @@ import {
 import {
   LoadingState,
   ErrorState,
-  MainContainer
+  // MainContainer
 } from "@/styles/profile-styled-components.tsx";
 import {
-  GlobalStyle
+  GlobalStyle,
+  AppContainer,
 } from "@/styles/styled-components.tsx";
 
 // Main PersonaViewer Component
@@ -329,7 +330,7 @@ const PersonaViewer: React.FC = () => {
     <>
       <GlobalStyle />
       
-      <MainContainer>
+      <AppContainer isRTL={isRTL}>
         {/* Profile Header */}
         <ProfileHeader 
           username={profileUsername || t('User')}
@@ -378,7 +379,7 @@ const PersonaViewer: React.FC = () => {
             ref={fileInputRef}
           />
         )}
-      </MainContainer>
+      </AppContainer>
     </>
   );
 };
