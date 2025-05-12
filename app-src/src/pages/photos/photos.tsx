@@ -15,8 +15,8 @@ import {
 
 // Import types and utilities
 import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
-import { getIdFromUrl, formatUUID, generateUUID } from "@/lib/utils";
-import { fetchFolder } from "@/lib/apiService";
+import { formatUUID, generateUUID } from "@/lib/utils";
+import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/apiService";
 import { downloadPhotos } from "@/lib/fileOperations";
 
 // Import upload utilities
@@ -446,19 +446,71 @@ const PhotoAlbumContent: React.FC = () => {
     setColumns(savedColumnsValue);
   }, []);
 
+  // Get folder ID from URL
+  const getIdQueryParameterFromUrl = (): string | null => {
+    // Check in query params
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    
+    if (id) return id;
+    
+    // Check in path
+    const pathParts = window.location.pathname.split('/');
+    const lastPart = pathParts[pathParts.length - 1];
+    
+    if (lastPart && lastPart.includes('_')) {
+      return lastPart;
+    }
+    
+    return null;
+  };
+
   // Fetch album data
   useEffect(() => {
     const initAlbum = async () => {
-      const id = getIdFromUrl();
+      const idQueryParameter = getIdQueryParameterFromUrl();
       
-      if (!id) {
+      // If no ID parameter is found in the URL, check for albumName-albumNanoId format
+      if (!idQueryParameter) {
+        // Extract albumName and albumNanoId from URL
+        const urlParams = new URL(window.location.href);
+        const pathParts = urlParams.search.substring(1).split('-');
+        
+        // Assume the last part is the albumNanoId
+        const albumNanoId = pathParts[pathParts.length - 1];
+        // Everything before the last dash is the albumName
+        
+        if (albumNanoId) {
+          // Call fetchFolderUsingAlbumNanoId instead
+          const data = await fetchFolderUsingAlbumNanoId(albumNanoId, setFolderId);
+          
+          if (data) {
+            setAlbumData(data);
+            
+            // Set password policy from the API result
+            if (data.passwordPolicy) {
+              setPasswordPolicy(data.passwordPolicy as PasswordPolicyEnum);
+              
+              // If NoPassword policy or the user has a folderPosition, automatically set as authorized
+              if (data.passwordPolicy === 'NoPassword' || data.folderPositionId) {
+                setIsAuthorized(true);
+              }
+            }
+            setIsLoading(false);
+            return;
+          }
+        }
+        
         setError(t('Valid ID not obtained from query parameter.'));
         setIsLoading(false);
         return;
       }
-      
-      const parts = id.split('_');
-      let formattedId = parts[parts.length - 1].replace(/-/g, '');
+  
+      // Original logic for when idQueryParameter exists
+      const idQueryParameterParts = idQueryParameter.split('-');
+      let folderId = idQueryParameterParts[idQueryParameterParts.length - 1].replace(/-/g, '');
+      const folderIdParts = folderId.split('_');
+      let formattedId = folderIdParts[folderIdParts.length - 1].replace(/-/g, '');
   
       // Make sure it's exactly 32 characters before formatting
       if (formattedId.length === 32) {
@@ -468,7 +520,7 @@ const PhotoAlbumContent: React.FC = () => {
         console.error('Invalid UUID format: must be 32 characters after removing dashes');
       }
   
-      const data = await fetchFolder(formattedId, setFolderId);
+      const data = await fetchFolderUsingTargetItemIdentifier(formattedId, setFolderId);
       
       if (data) {
         setAlbumData(data);

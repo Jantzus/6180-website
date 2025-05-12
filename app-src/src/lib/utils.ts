@@ -510,25 +510,6 @@ export const formatTime = (seconds: number = 0): string => {
   return `${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, "0")}`;
 };
 
-// Get folder ID from URL
-export const getIdFromUrl = (): string | null => {
-  // Check in query params
-  const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get('id');
-  
-  if (id) return id;
-  
-  // Check in path
-  const pathParts = window.location.pathname.split('/');
-  const lastPart = pathParts[pathParts.length - 1];
-  
-  if (lastPart && lastPart.includes('_')) {
-    return lastPart;
-  }
-  
-  return null;
-};
-
 // Format a UUID string with dashes
 export const formatUUID = (uuid: string): string => {
   // Make sure it's exactly 32 characters before formatting

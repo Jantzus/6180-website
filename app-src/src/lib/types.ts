@@ -173,6 +173,7 @@ export const FETCH_FOLDERS_QUERY = `
       items {
         ... on Folder {
           id
+          albumNanoId
           folderName
           folderDescription
           folderPassword {

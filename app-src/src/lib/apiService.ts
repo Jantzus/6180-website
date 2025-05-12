@@ -129,15 +129,96 @@ export const processData = (
 };
 
 // Fetch folder data with dual API approach
-export const fetchFolder = async (
-  suffix: string, 
+export const fetchFolderUsingTargetItemIdentifier = async (
+  targetItemIdentifier: string, 
   setFolderId?: (id: string | null) => void
 ): Promise<AlbumData | null> => {
   try {
     // Create the input for the new query format
     const fetchRelationsInput = {
-      targetItemIdentifier____RelationType: `${suffix}____Folder`,
+      targetItemIdentifier____RelationType: `${targetItemIdentifier}____Folder`,
       index: "targetItemIdentifier____RelationType",
+      limit: 1,
+      scanIndexForward: false,
+      nextToken: null
+    };
+
+    const variables = {
+      fetchRelationsInput: fetchRelationsInput
+    };
+    
+    // First, use the public API to get a quick response
+    const publicApiPromise = fetch(AWS_PUBLIC_GRAPHQL_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': AWS_PUBLIC_API_KEY
+      },
+      body: JSON.stringify({
+        query: FETCH_FOLDERS_QUERY,
+        variables: variables
+      })
+    }).then(response => response.json());
+    
+    // In parallel, try to use the private API if the user is logged in
+    const privateApiPromise = (async () => {
+      const token = await checkLoginWithoutRedirect();
+      if (!token) {
+        return null; // User is not logged in
+      }
+      
+      // User is logged in, use private API for richer data
+      return fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          query: FETCH_FOLDERS_QUERY,
+          variables: variables
+        })
+      }).then(response => response.json());
+    })();
+    
+    // Wait for the public API to respond first
+    const publicResult = await publicApiPromise;
+    let initialData = processData(publicResult, setFolderId);
+    
+    // Then wait for the private API (if available)
+    const privateResult = await privateApiPromise;
+    if (privateResult) {
+      
+      const folderPosition = privateResult?.data?.fetchRelations?.items?.[0]?.folderPosition;
+      
+      if (folderPosition) {
+        const privateData = processData(privateResult, setFolderId);
+        
+        // Set a more flexible flag indicating the presence of a folderPosition
+        privateData.folderPositionId = folderPosition?.id;
+        privateData.profileIds = folderPosition?.profileIds
+
+        initialData = privateData;
+      }
+    }
+    
+    return initialData;
+  } catch (error) {
+    console.error('Error fetching folder data:', error);
+    return null;
+  }
+};
+
+// Fetch folder data with dual API approach
+export const fetchFolderUsingAlbumNanoId = async (
+  albumNanoId: string, 
+  setFolderId?: (id: string | null) => void
+): Promise<AlbumData | null> => {
+  try {
+    // Create the input for the new query format
+    const fetchRelationsInput = {
+      albumNanoId: albumNanoId,
+      index: "albumNanoId",
       limit: 1,
       scanIndexForward: false,
       nextToken: null

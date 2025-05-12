@@ -177,6 +177,7 @@ const PersonaViewer: React.FC = () => {
                 profileIds
                 folder {
                   id
+                  albumNanoId
                   folderName
                   folderDescription
                   folderPassword {
