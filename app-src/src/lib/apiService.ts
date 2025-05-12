@@ -18,6 +18,7 @@ export const processData = (
   const mediaItems: MediaItem[] = [];
   const contacts: Contact = {};
   let folderName = 'Photos';
+  let albumNanoId: string | null | undefined = undefined;
   let folderDescription = '';
   let passwordPolicy = undefined;
   let passwordRequired = false;
@@ -34,6 +35,11 @@ export const processData = (
     // Save the folder ID if setter is provided
     if (setFolderId && folder?.id) {
       setFolderId(folder.id);
+    }
+    
+    // Get folder name if available
+    if (folder?.albumNanoId) {
+      albumNanoId = albumNanoId;
     }
     
     // Get folder name if available
@@ -118,6 +124,7 @@ export const processData = (
   return { 
     mediaItems, 
     folderName, 
+    albumNanoId,
     folderDescription, 
     contacts, 
     passwordPolicy,

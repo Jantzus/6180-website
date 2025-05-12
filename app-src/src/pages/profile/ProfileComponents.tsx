@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { 
   checkLoginWithoutRedirect, 
-  getTargetItemIdentifier, 
-  formatDate 
+  generateInviteLink, 
+  formatDate
 } from "@/lib/utils";
 import {
   AWS_PRIVATE_GRAPHQL_ENDPOINT
@@ -52,6 +52,7 @@ interface FolderPassword {
 interface Folder {
   folderPositionId: string;
   folderId: string;
+  albumNanoId: string | null;
   folderName?: string;
   folderDescription?: string;
   folderPassword?: FolderPassword;
@@ -182,9 +183,12 @@ export const AlbumFooter: React.FC<AlbumFooterProps> = ({
   const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
   
   // Generate the invite link
-  let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
-  const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
-  
+  const inviteLink = generateInviteLink(
+    folder.folderId,
+    folder.albumNanoId,
+    folder.folderName
+  )
+
   // Handle copy function
   const handleCopy = () => {
     navigator.clipboard.writeText(inviteLink)
@@ -431,8 +435,11 @@ export const AlbumList: React.FC<AlbumListProps> = ({
         // Get password policy from folder data
         const passwordPolicy = folder.folderPassword?.policy || "NoPassword";
 
-        let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
-        const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
+        const inviteLink = generateInviteLink(
+          folder.folderId,
+          folder.albumNanoId,
+          folder.folderName
+        )
 
         // Filter out files that have valid thumbnails or data keys
         const validFiles = folder.files.filter(file => 

@@ -7,7 +7,7 @@ import {
   UploadStatus
 } from "@/lib/types";
 import { generateUUID } from "@/lib/utils";
-import { checkLoginWithRefresh } from "@/lib/utils";
+import { checkLoginWithRefresh, createNanoIdFromUUID, getTargetItemIdentifier } from "@/lib/utils";
 import { 
   moveFilesToPublic,
   clearAlbumData,
@@ -508,6 +508,15 @@ export const useAlbumSave = (
     enhancedLog(`Album password: ${folderPassword ? '******' : 'null'}`);
     enhancedLog(`Participants can add items: ${participantsCanAddItems}`);
     
+    if (!folderId) {
+      enhancedLog("Error: folderId is null or undefined");
+      throw new Error("folderId is required to create folder position input");
+    }
+    
+    const targetItemIdentifier = getTargetItemIdentifier(folderId)
+
+    const nanoId = createNanoIdFromUUID(targetItemIdentifier)
+
     return {
       currentTime: timestamp,
       folderId,
@@ -518,6 +527,7 @@ export const useAlbumSave = (
       folderInput: {
         folderSelectedTagInputs: [],
         folderAboutContactIds: [accountId],
+        albumNanoId: nanoId,
         folderName: folderName,
         folderDescription: folderDescription,
         folderPasswordInput: {

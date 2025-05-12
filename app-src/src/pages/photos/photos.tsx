@@ -15,7 +15,7 @@ import {
 
 // Import types and utilities
 import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
-import { formatUUID, generateUUID } from "@/lib/utils";
+import { formatUUID, generateUUID, generateInviteLink } from "@/lib/utils";
 import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/apiService";
 import { downloadPhotos } from "@/lib/fileOperations";
 
@@ -806,7 +806,13 @@ const PhotoAlbumContent: React.FC = () => {
       <CopyLinkModal
         isOpen={shareActions.showingCopyLinkAlert}
         onClose={() => shareActions.setShowingCopyLinkAlert(false)}
-        inviteLink={shareActions.generateInviteLink()}
+        inviteLink={
+          generateInviteLink(
+            folderId,
+            albumData?.albumNanoId,
+            albumData?.folderName
+          )
+        }
         onCopy={shareActions.handleCopy}
         t={t}
         isRTL={getLanguageDirection(language) === "rtl"}

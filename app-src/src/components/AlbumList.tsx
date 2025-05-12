@@ -4,7 +4,7 @@ import { FolderType } from "@/lib/types";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { formatDate } from "@/lib/utils";
-import { getTargetItemIdentifier } from "@/lib/utils";
+import { generateInviteLink } from "@/lib/utils";
 import { LazyImage } from "./LazyImage";
 import { FooterSection } from "./FooterSection";
 import { S3_BUCKET_URL } from "@/lib/config";
@@ -332,8 +332,11 @@ export const AlbumList: React.FC<AlbumListProps> = ({
           contact && typeof contact === 'string' && !contact.toString().startsWith('Profile-')
         );
 
-        let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
-        const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
+        const inviteLink = generateInviteLink(
+          folder.folderId,
+          folder.albumNanoId,
+          folder.folderName
+        )
 
         return (
           <Container key={folder.folderId} isRTL={isRTL}>

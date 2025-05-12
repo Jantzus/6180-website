@@ -259,6 +259,7 @@ const PersonaViewer: React.FC = () => {
           return {
             folderPositionId: item.id,
             folderId: folder.id,
+            albumNanoId: folder.albumNanoId,
             folderName: folder.folderName,
             folderDescription: folder.folderDescription,
             folderPassword: folder.folderPassword,

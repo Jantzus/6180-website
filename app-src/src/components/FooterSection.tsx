@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FolderType } from "@/lib/types";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
-import { getTargetItemIdentifier } from "@/lib/utils";
+import { generateInviteLink } from "@/lib/utils";
 import { CopyLinkModal, ConfirmationModal } from "./Modals";
 import { checkLoginWithRefresh, checkLoginWithoutRedirect } from "@/lib/utils";
 import { S3_BUCKET_URL, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
@@ -33,9 +33,12 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
   const isOnPublicProfile = localProfileIds.includes(publicProfileId);
 
   // Generate the invite link
-  let formattedTargetItemIdentifier = getTargetItemIdentifier(folder.folderId).replace(/-/g, '');
-  const inviteLink = `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
-  
+  const inviteLink = generateInviteLink(
+    folder.folderId,
+    folder.albumNanoId,
+    folder.folderName
+  )
+
   // Update local state when the folder prop changes
   useEffect(() => {
     setLocalProfileIds(folder.profileIds || []);

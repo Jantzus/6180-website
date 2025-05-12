@@ -60,6 +60,7 @@ export type FileType = {
 export type FolderType = {
   folderPositionId: string;
   folderId: string;
+  albumNanoId: string | null;
   creatorId: string;
   folderName: string | null;
   folderDescription?: string;
@@ -81,6 +82,7 @@ export interface File {
 export interface Folder {
   folderPositionId: string
   folderId: string
+  albumNanoId: string | null
   creatorId: string
   folderName: string | null
   folderDescription?: string
@@ -116,6 +118,7 @@ export interface Contact {
 // Main album data structure
 export interface AlbumData {
   mediaItems: MediaItem[];
+  albumNanoId: string | null | undefined;  
   folderName: string;
   folderDescription: string;
   contacts: Contact;

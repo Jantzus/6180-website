@@ -505,6 +505,41 @@ export const getOwnerItemId = (id: string) => id.split("_____")[0];
 export const getTargetItemIdentifier = (id: string) =>
   id.split("_____")[1]?.split("____")[0] || "";
 
+/**
+ * Generates a shareable invite link for a folder
+ * @param {string} folderId - The ID of the folder to generate a link for
+ * @returns {string} - The generated invite link
+ */
+export const generateInviteLink = (
+  folderId: string | null,
+  albumNanoId: string | null | undefined,
+  folderName: string | null | undefined
+): string => {
+  if (!folderId) return '';
+
+  const formattedTargetItemIdentifier = getTargetItemIdentifier(folderId).replace(/-/g, '');
+
+  // Clean folder name: only keep alphanumeric characters
+  const cleanFolderName = folderName?.replace(/[^a-zA-Z0-9]/g, '') || '';
+
+  let queryParameter = '';
+
+  if (albumNanoId) {
+    if (cleanFolderName) {
+      queryParameter += `${cleanFolderName}-`;
+    }
+    queryParameter += albumNanoId;
+  } else {
+    queryParameter += 'id=';
+    if (cleanFolderName) {
+      queryParameter += `${cleanFolderName}-`;
+    }
+    queryParameter += formattedTargetItemIdentifier;
+  }
+
+  return `https://6180.io/photos.html?${queryParameter}`;
+};
+
 // Format time in MM:SS
 export const formatTime = (seconds: number = 0): string => {
   return `${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, "0")}`;
@@ -921,16 +956,13 @@ export const useShareActions = (albumData: AlbumData | null, folderId: string | 
     }
   }, [albumData, cognitoUsername]);
   
-  // Generate the invite link based on folder id
-  const generateInviteLink = useCallback(() => {
-    if (!folderId) return '';
-    let formattedTargetItemIdentifier = getTargetItemIdentifier(folderId).replace(/-/g, '');
-    return `https://6180.io/photos.html?id=${formattedTargetItemIdentifier}`;
-  }, [folderId]);
-  
   // Handle copy function
   const handleCopy = useCallback(() => {
-    const inviteLink = generateInviteLink();
+    const inviteLink = generateInviteLink(
+      folderId,
+      albumData?.albumNanoId,
+      albumData?.folderName
+    )
     navigator.clipboard.writeText(inviteLink)
       .then(() => {
         setShowingCopyLinkAlert(false);
@@ -940,7 +972,7 @@ export const useShareActions = (albumData: AlbumData | null, folderId: string | 
         console.error("Failed to copy link:", err);
         alert(t('Failed to copy link'));
       });
-  }, [generateInviteLink, t]);
+  }, [folderId, t]);
   
   // Handle public profile toggle
   const handlePublicProfileToggle = useCallback(async () => {
@@ -1033,7 +1065,34 @@ export const useShareActions = (albumData: AlbumData | null, folderId: string | 
     setShowingCopiedLinkAlert,
     isOnPublicProfile,
     handleCopy,
-    handlePublicProfileToggle,
-    generateInviteLink
+    handlePublicProfileToggle
   };
 };
+
+export function createNanoIdFromUUID(
+  uuid: string
+) {
+  // Step 1: Remove dashes
+  const hex = uuid.replace(/-/g, "");
+  
+  // Step 2: Take first 12 hex characters (48 bits)
+  const hex48 = hex.substring(0, 12);
+  
+  // Step 3: Convert hex to integer
+  // Note: JavaScript can't handle very large integers with standard parseInt
+  // so we use BigInt for reliable conversion of potentially large hex values
+  const decimal = BigInt("0x" + hex48);
+  
+  // Step 4: Convert to base36
+  const digits = "0123456789abcdefghijklmnopqrstuvwxyz";
+  let base36 = "";
+  let num = decimal;
+  
+  do {
+      const remainder = Number(num % 36n);
+      base36 = digits[remainder] + base36;
+      num = num / 36n;
+  } while (num > 0);
+  
+  return base36;
+}

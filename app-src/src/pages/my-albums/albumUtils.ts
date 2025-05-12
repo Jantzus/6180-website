@@ -113,6 +113,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
               profileIds
               folder {
                 id
+                albumNanoId                
                 folderName
                 folderDescription
                 creatorId                
@@ -191,6 +192,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
         return {
           folderPositionId: item.id,
           folderId: folder.id,
+          albumNanoId: folder.albumNanoId,
           folderName: folder.folderName,
           folderDescription: folder.folderDescription,
           folderPassword: folder.folderPassword,
