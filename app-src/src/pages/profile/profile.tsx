@@ -24,8 +24,8 @@ import {
 } from "./ProfileComponents";
 // Import styled components
 import {
-  LoadingState,
   ErrorState,
+  EmptyState,
   // MainContainer
 } from "@/styles/profile-styled-components.tsx";
 import {
@@ -350,9 +350,9 @@ const PersonaViewer: React.FC = () => {
         
         {/* Loading State */}
         {isLoading && (
-          <LoadingState>
+          <EmptyState>
             <p>{t('Loading albums...')}</p>
-          </LoadingState>
+          </EmptyState>
         )}
         
         {/* Error State */}

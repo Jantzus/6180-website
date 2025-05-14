@@ -112,22 +112,6 @@ export const HamburgerLine = styled.span`
   width: 100%;
 `;
 
-export const DropdownMenu = styled.div`
-  position: absolute;
-  top: 100%;
-  right: 0;
-  z-index: 100;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  border-radius: 4px;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 180px;
-  margin-top: 4px;
-`;
-
 export const MenuButton = styled.button`
   background: transparent;
   color: #006adc;

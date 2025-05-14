@@ -13,15 +13,8 @@ import { CopyLinkModal, ConfirmationModal } from "@/components/Modals";
 import { LazyImage } from "@/components/LazyImage";
 // Import styled components
 import {
-  HeaderContainer,
-  ProfileControls,
-  ProfileMenu,
-  ProfileAvatar,
-  ProfileName,
   DropdownIndicator,
-  DropdownMenu,
   DropdownItem,
-  ProfileNotification,
   FooterContainer,
   ButtonGroup,
   ButtonRow,
@@ -38,11 +31,19 @@ import {
   ImageScroller,
   ImageItem,
   ImageShadow,
-  PasswordPolicy,
+  PasswordPolicy
+} from "@/styles/profile-styled-components.tsx";
+import {
+  ProfileAvatar,
+  PublicProfileDisplayName,
+  PublicProfileDisplayNameMenu,
+  ProfileHeaderContainer,
+  PublicProfileExplanation,
+  ProfileControls,
+  DropdownMenu,
   PolicyIndicator,
   AlbumDescription
-} from "@/styles/profile-styled-components.tsx";
-
+} from "@/styles/styled-components.tsx";
 // Types
 interface FolderPassword {
   password?: string;
@@ -99,19 +100,19 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   }, [isDropdownOpen]);
   
   return (
-    <HeaderContainer isRTL={isRTL}>
+    <ProfileHeaderContainer isRTL={isRTL}>
       <ProfileControls isRTL={isRTL}>
-        <ProfileMenu onClick={toggleDropdown}>
+        <PublicProfileDisplayNameMenu onClick={toggleDropdown}>
           <ProfileAvatar>
             {username ? username.charAt(0).toUpperCase() : "?"}
           </ProfileAvatar>
           
-          <ProfileName>
+          <PublicProfileDisplayName>
             {username || t('User Profile')}
-          </ProfileName>
+          </PublicProfileDisplayName>
           
           <DropdownIndicator />
-        </ProfileMenu>
+        </PublicProfileDisplayNameMenu>
         
         {/* Dropdown Menu */}
         {isDropdownOpen && (
@@ -146,11 +147,11 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
       </ProfileControls>
       
       {isCurrentUser && (
-        <ProfileNotification>
+        <PublicProfileExplanation>
           <p>{t('This is how others see your public profile')}</p>
-        </ProfileNotification>
+        </PublicProfileExplanation>
       )}
-    </HeaderContainer>
+    </ProfileHeaderContainer>
   );
 };
 

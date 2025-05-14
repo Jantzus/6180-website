@@ -13,9 +13,10 @@ import {
   HamburgerButton, 
   HamburgerIcon, 
   HamburgerLine, 
-  DropdownMenu, 
   MenuButton
 } from "@/styles/photos-styled-components";
+
+import { DropdownMenu } from "@/styles/styled-components";
 import ResponsiveHeader from "@/components/HeaderComponents";
 
 // Define action types for reuse

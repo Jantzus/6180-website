@@ -4,10 +4,12 @@ import {
   HamburgerButton, 
   HamburgerIcon, 
   HamburgerLine, 
-  DropdownMenu, 
   MenuButton, 
   PasswordButton 
 } from "@/styles/photos-styled-components";
+import { 
+  DropdownMenu
+} from "@/styles/styled-components";
 import { ResponsiveHeaderProps } from "@/lib/types";
 
 // ResponsiveHeader component with improved responsive behavior

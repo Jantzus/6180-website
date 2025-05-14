@@ -1,46 +1,5 @@
 import styled from "styled-components";
 
-// Profile Header Styled Components
-export const HeaderContainer = styled.div<{ isRTL: boolean }>`
-  margin-bottom: 24px;
-  text-align: center;
-  direction: ${props => props.isRTL ? "rtl" : "ltr"};
-`;
-
-export const ProfileControls = styled.div<{ isRTL: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: ${props => props.isRTL ? "flex-start" : "flex-end"};
-  margin-bottom: 8px;
-  position: relative;
-`;
-
-export const ProfileMenu = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-`;
-
-export const ProfileAvatar = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: #555;
-  margin-right: 12px;
-`;
-
-export const ProfileName = styled.h1`
-  font-size: 18px;
-  margin: 0;
-  font-weight: 600;
-`;
-
 export const DropdownIndicator = styled.div`
   width: 0;
   height: 0;
@@ -54,13 +13,16 @@ export const DropdownMenu = styled.div`
   position: absolute;
   top: 100%;
   right: 0;
-  margin-top: 8px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   z-index: 100;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   min-width: 180px;
-  padding: 8px 0;
+  margin-top: 4px;
 `;
 
 export const DropdownItem = styled.div<{ hasBorder?: boolean }>`
@@ -71,21 +33,6 @@ export const DropdownItem = styled.div<{ hasBorder?: boolean }>`
   display: flex;
   align-items: center;
   border-bottom: ${props => props.hasBorder ? "1px solid #eee" : "none"};
-`;
-
-export const ProfileNotification = styled.div`
-  margin-top: 12px;
-  padding: 8px 12px;
-  background-color: #f0f7ff;
-  border-radius: 8px;
-  border: 1px solid #cce0ff;
-  max-width: 500px;
-  font-size: 13px;
-  margin: 0 auto;
-  
-  p {
-    margin: 0;
-  }
 `;
 
 // Album Footer Styled Components
@@ -140,20 +87,6 @@ export const Button = styled.button<{ variant?: "primary" | "success" | "default
       default: return "inherit";
     }
   }};
-`;
-
-// Album List Styled Components
-export const EmptyState = styled.div`
-  text-align: center; 
-  padding: 40px 20px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  
-  p {
-    font-size: 16px;
-    color: #666;
-  }
 `;
 
 export const AlbumCard = styled.div<{ isRTL: boolean }>`
@@ -254,24 +187,19 @@ export const PasswordPolicy = styled.div<{ isRTL: boolean }>`
   margin-bottom: 8px;
 `;
 
-export const PolicyIndicator = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  color: #555;
+// Album List Styled Components
+export const EmptyState = styled.div`
+  text-align: center; 
+  padding: 40px 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  
+  p {
+    font-size: 16px;
+    color: #666;
+  }
 `;
-
-export const AlbumDescription = styled.div<{ isRTL: boolean }>`
-  margin-top: 8px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  color: #555;
-  line-height: 1.5;
-  text-align: ${props => props.isRTL ? "right" : "left"};
-`;
-
-// Loading and Error States
-export const LoadingState = styled(EmptyState)``;
 
 export const ErrorState = styled.div`
   text-align: center;
@@ -285,11 +213,4 @@ export const ErrorState = styled.div`
     font-size: 16px;
     color: #d32f2f;
   }
-`;
-
-// Main Container
-export const MainContainer = styled.div`
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
 `;

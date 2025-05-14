@@ -602,3 +602,93 @@ export const LegalLinkFooterButton = styled.a<{ isHovered?: boolean }>`
   color: #555;
   text-decoration: ${props => props.isHovered ? 'underline' : 'none'};
 `;
+
+// Profile Header Styled Components
+export const ProfileHeaderContainer = styled.div<{ isRTL: boolean }>`
+  margin-bottom: 24px;
+  text-align: center;
+  direction: ${props => props.isRTL ? "rtl" : "ltr"};
+`;
+
+export const ProfileControls = styled.div<{ isRTL: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: ${props => props.isRTL ? "flex-start" : "flex-end"};
+  margin-bottom: 8px;
+  position: relative;
+`;
+
+export const DropdownMenu = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 180px;
+  margin-top: 4px;
+`;
+
+export const PolicyIndicator = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #555;
+`;
+
+export const AlbumDescription = styled.div<{ isRTL: boolean }>`
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+  text-align: ${props => props.isRTL ? "right" : "left"};
+  white-space: pre-wrap;
+`;
+
+export const PublicProfileDisplayNameMenu = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+`;
+
+export const ProfileAvatar = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #555;
+  margin-right: 12px;
+`;
+
+export const PublicProfileExplanation = styled.div`
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: #f0f7ff;
+  border-radius: 8px;
+  border: 1px solid #cce0ff;
+  max-width: 500px;
+  font-size: 13px;
+  margin: 0 auto;
+  
+  p {
+    margin: 0;
+  }
+`;
+
+
+export const PublicProfileDisplayName = styled.h1`
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+`;

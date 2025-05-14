@@ -8,6 +8,7 @@ import { generateInviteLink } from "@/lib/utils";
 import { LazyImage } from "./LazyImage";
 import { FooterSection } from "./FooterSection";
 import { S3_BUCKET_URL } from "@/lib/config";
+import { PolicyIndicator, AlbumDescription } from "@/styles/styled-components.tsx";
 
 // Styled Components
 const Container = styled.div<{ isRTL: boolean }>`
@@ -117,16 +118,6 @@ const DropdownItem = styled.a<{ isDelete?: boolean }>`
   white-space: nowrap;
 `;
 
-const Description = styled.div<{ isRTL: boolean }>`
-  margin-top: 8px;
-  margin-bottom: 16px;
-  font-size: 12px;
-  color: #555;
-  line-height: 1.5;
-  text-align: ${props => props.isRTL ? "right" : "left"};
-  white-space: pre-wrap;
-`;
-
 const GalleryContainer = styled.div`
   width: 100%;
   position: relative;
@@ -161,14 +152,6 @@ const PasswordPolicyContainer = styled.div<{ isRTL: boolean }>`
   justify-content: ${props => props.isRTL ? "flex-start" : "flex-end"};
   margin-top: 8px;
   margin-bottom: 8px;
-`;
-
-const PasswordPolicyIndicator = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 10px;
-  color: #555;
-  font-style: italic;
 `;
 
 const ContactsContainer = styled.div<{ isRTL: boolean }>`
@@ -411,9 +394,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
                 {/* Album description section */}
                 {folder.folderDescription && folder.folderDescription.length > 1 && (
-                  <Description isRTL={isRTL}>
+                  <AlbumDescription isRTL={isRTL}>
                     {folder.folderDescription}
-                  </Description>
+                  </AlbumDescription>
                 )}
 
                 <GalleryContainer>
@@ -445,9 +428,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                 {/* Password Policy Indicator */}
                 <PasswordPolicyContainer isRTL={isRTL}>
                   {passwordPolicy !== "NoPassword" && (
-                    <PasswordPolicyIndicator>
+                    <PolicyIndicator>
                       <span>{getPasswordPolicyText(passwordPolicy)}</span>
-                    </PasswordPolicyIndicator>
+                    </PolicyIndicator>
                   )}
                 </PasswordPolicyContainer>
                 
