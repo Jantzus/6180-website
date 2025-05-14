@@ -186,6 +186,7 @@ export const FETCH_FOLDERS_QUERY = `
           fileReferencesPage {
             items {
               file {
+                id
                 ownerContactId
                 dataKey
                 thumbnailDataKey

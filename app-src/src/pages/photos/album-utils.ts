@@ -209,7 +209,9 @@ export const createSubAlbumWithSelectedItems = async (
   albumData: AlbumData | null,
   selectedItems: Set<number>
 ) => {
+  
   if (selectedItems.size === 0) {
+    console.log("[SubAlbum] Error: No items selected");
     alert(t('Please select at least one item to share.'));
     return;
   }
@@ -217,6 +219,7 @@ export const createSubAlbumWithSelectedItems = async (
   // Create a new sub-album with selected items
   if (albumData) {
     try {
+      console.log("[SubAlbum] Creating loading modal");
       // Show loading indicator
       const loadingModal = document.createElement('div');
       loadingModal.style.position = 'fixed';
@@ -242,21 +245,40 @@ export const createSubAlbumWithSelectedItems = async (
       loadingContent.appendChild(loadingText);
       loadingModal.appendChild(loadingContent);
       document.body.appendChild(loadingModal);
+      console.log("[SubAlbum] Loading modal added to DOM");
       
       // Extract fileIds and create selected photos array of selected items
       const selectedFileIds: string[] = [];
       const selectedPhotosArray: SelectedPhoto[] = [];
       
+      console.log("[SubAlbum] Starting to process selected items");
       // Loop through each selected item and create a SelectedPhoto object for each
-      Array.from(selectedItems).forEach(index => {
+      Array.from(selectedItems).forEach((index, i) => {
+        console.log(`[SubAlbum] Processing item ${i+1}/${selectedItems.size}, index: ${index}`);
+        
         const mediaItem = albumData.mediaItems[index];
+        console.log(`[SubAlbum] Media item found:`, {
+          hasMediaItem: !!mediaItem,
+          fileId: mediaItem?.fileId,
+          type: mediaItem?.type,
+          hasUrl: !!mediaItem?.url
+        });
+        
         if (mediaItem && mediaItem.fileId) {
           // Add to fileIds array
           selectedFileIds.push(mediaItem.fileId);
           
+          // Debug file name extraction
+          const fileIdParts = mediaItem.fileId.split('_____');
+          const fileName = fileIdParts[1]?.split('____')[0] || `file-${index}`;
+          console.log(`[SubAlbum] Extracted fileName:`, {
+            fileIdParts,
+            fileName
+          });
+          
           // Create a SelectedPhoto object
           const newSelectedPhoto: SelectedPhoto = {
-            fileName: mediaItem.fileId.split('_____')[1]?.split('____')[0] || `file-${index}`,
+            fileName: fileName,
             s3PreviewUrl: mediaItem.type === 'video' ? (mediaItem.thumbnailUrl || mediaItem.url) : mediaItem.url,
             type: mediaItem.type === 'video' ? 'video' : 'image',
             size: 0, // We don't have this info from the album view
@@ -269,8 +291,17 @@ export const createSubAlbumWithSelectedItems = async (
               null
           };
           
+          console.log(`[SubAlbum] Created SelectedPhoto object:`, newSelectedPhoto);
           selectedPhotosArray.push(newSelectedPhoto);
+        } else {
+          console.warn(`[SubAlbum] Skipping invalid media item at index ${index}`);
         }
+      });
+      
+      console.log("[SubAlbum] Processing complete. Summary:", {
+        selectedFileIdsCount: selectedFileIds.length,
+        selectedPhotosCount: selectedPhotosArray.length,
+        fileIdsSample: selectedFileIds.slice(0, 2)
       });
       
       // Create data structure for sub-album selected files
@@ -280,19 +311,59 @@ export const createSubAlbumWithSelectedItems = async (
         selectedPhotos: selectedPhotosArray
       };
       
-      // Save to localStorage
-      localStorage.setItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA, JSON.stringify(subAlbumData));
+      console.log("[SubAlbum] Created subAlbumData:", {
+        isSubAlbum: subAlbumData.isSubAlbum,
+        selectedFileIdsCount: subAlbumData.selectedFileIds.length,
+        selectedPhotosCount: subAlbumData.selectedPhotos.length
+      });
       
+      // Save to localStorage
+      try {
+        console.log(`[SubAlbum] Saving to localStorage with key: ${LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA}`);
+        const serializedData = JSON.stringify(subAlbumData);
+        console.log(`[SubAlbum] Serialized data length: ${serializedData.length} characters`);
+        
+        localStorage.setItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA, serializedData);
+        console.log("[SubAlbum] Successfully saved to localStorage");
+      } catch (storageError) {
+        console.error("[SubAlbum] Error saving to localStorage:", storageError);
+        // Check if it's a quota error
+        if (storageError instanceof DOMException && 
+            (storageError.name === 'QuotaExceededError' || 
+             storageError.name === 'NS_ERROR_DOM_QUOTA_REACHED')) {
+          console.error("[SubAlbum] localStorage quota exceeded");
+          alert(t('Storage limit exceeded. The album may be too large to share this way.'));
+          document.body.removeChild(loadingModal);
+          return;
+        }
+        throw storageError; // re-throw to be caught by the outer catch
+      }
+      
+      console.log("[SubAlbum] Removing loading modal");
       // Remove loading modal
       document.body.removeChild(loadingModal);
       
+      console.log("[SubAlbum] Redirecting to save-album.html");
       // Redirect to save-album page without a folderId parameter
       window.location.href = '/save-album.html';
       
     } catch (error) {
-      console.error('Error creating sub-album:', error);
+      console.error('[SubAlbum] Error creating sub-album:', error);
       alert(t('There was an error creating the sub-album. Please try again.'));
+      try {
+        // Try to remove the loading modal if it exists
+        const loadingModal = document.querySelector('div[style*="position: fixed"][style*="backgroundColor: rgba(0, 0, 0, 0.5)"]');
+        if (loadingModal && loadingModal.parentNode) {
+          console.log("[SubAlbum] Cleaning up loading modal after error");
+          loadingModal.parentNode.removeChild(loadingModal);
+        }
+      } catch (cleanupError) {
+        console.error('[SubAlbum] Error cleaning up after main error:', cleanupError);
+      }
     }
+  } else {
+    console.error('[SubAlbum] Error: Album data is null');
+    alert(t('Cannot create sub-album: Album data is missing.'));
   }
 };
 

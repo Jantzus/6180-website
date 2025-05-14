@@ -101,6 +101,7 @@ export const Username = styled.div`
 
 // Progress Tracking Components
 export const ProgressContainer = styled.div`
+  margin-top: 24px;
   margin-bottom: 24px;
   background-color: #fff;
   padding: 16px;

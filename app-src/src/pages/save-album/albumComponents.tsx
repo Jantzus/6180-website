@@ -137,7 +137,7 @@ export const ProgressTrackerComponent: React.FC<ProgressTrackerComponentProps> =
       
       <OverallProgress>
         <ProgressStats>
-          <span>{t('Overall Progress')}: {Math.round(progressTracker.overallProgress * 100)}%</span>
+          <span>{t('Overall Progress')}: {Math.round(progressTracker.overallProgress)}%</span>
           <span>{progressTracker.filesComplete} {t('of')} {progressTracker.totalFiles} {t('complete')}</span>
         </ProgressStats>
         <ProgressBarBg>
@@ -184,99 +184,6 @@ export const SavingProgressComponent: React.FC<SavingProgressComponentProps> = (
         <SavingProgressBar id="saveProgress" style={{ width: `${savingProgress}%` }} />
       </SavingProgressBarBg>
     </SavingProgressContainer>
-  );
-};
-
-// ========== SUB ALBUM INFO COMPONENT ==========
-export interface SubAlbumInfoProps {
-  isSubAlbum: boolean;
-  selectedPhotos: SelectedPhoto[];
-  selectedFileIds: string[];
-}
-
-export const SubAlbumInfo: React.FC<SubAlbumInfoProps> = ({ isSubAlbum, selectedPhotos, selectedFileIds }) => {
-  const { t } = useTranslation();
-
-  if (!isSubAlbum || (selectedPhotos.length === 0 && selectedFileIds.length === 0)) {
-    return null;
-  }
-
-  return (
-    <div style={{ 
-      backgroundColor: '#e3f2fd', 
-      padding: '15px', 
-      borderRadius: '8px', 
-      marginBottom: '20px',
-      fontSize: '16px'
-    }}>
-      <p style={{ margin: 0 }}>
-        {t('Creating a new sub-album with')} <strong>{selectedFileIds.length}</strong> {t('selected items')}
-      </p>
-      <p style={{ margin: '10px 0 0 0', fontSize: '14px', color: '#0277bd' }}>
-        {t('You can add more photos or videos to this sub-album before saving')}
-      </p>
-      
-      {/* Show thumbnails of selected photos if available */}
-      {selectedPhotos.length > 0 && (
-        <div style={{ 
-          display: 'flex', 
-          flexWrap: 'wrap', 
-          gap: '10px', 
-          marginTop: '15px',
-          justifyContent: 'flex-start'
-        }}>
-          {selectedPhotos.slice(0, 5).map((photo, index) => (
-            <div key={index} style={{ 
-              width: '80px', 
-              height: '80px', 
-              position: 'relative', 
-              borderRadius: '4px',
-              overflow: 'hidden',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.12)'
-            }}>
-              <img 
-                src={photo.s3PreviewUrl} 
-                alt={photo.fileName} 
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: 'cover' 
-                }} 
-              />
-              {photo.type === 'video' && (
-                <div style={{
-                  position: 'absolute',
-                  bottom: '5px',
-                  right: '5px',
-                  backgroundColor: 'rgba(0,0,0,0.7)',
-                  color: 'white',
-                  fontSize: '10px',
-                  padding: '2px 4px',
-                  borderRadius: '2px'
-                }}>
-                  {photo.duration ? `${Math.floor(photo.duration)}s` : 'Video'}
-                </div>
-              )}
-            </div>
-          ))}
-          {selectedPhotos.length > 5 && (
-            <div style={{ 
-              width: '80px', 
-              height: '80px', 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: '#bbdefb',
-              borderRadius: '4px',
-              color: '#0d47a1',
-              fontWeight: 'bold'
-            }}>
-              +{selectedPhotos.length - 5} {t('more')}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
   );
 };
 

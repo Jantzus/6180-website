@@ -552,7 +552,9 @@ const PhotoAlbumContent: React.FC = () => {
       }
   
       // Original logic for when idQueryParameter exists
-      const folderIdParts = idQueryParameter.split('_');
+      const idQueryParameterParts = idQueryParameter.split('-');
+      let folderId = idQueryParameterParts[idQueryParameterParts.length - 1].replace(/-/g, '');
+      const folderIdParts = folderId.split('_');
       let formattedId = folderIdParts[folderIdParts.length - 1].replace(/-/g, '');
   
       // Make sure it's exactly 32 characters before formatting

@@ -51,7 +51,6 @@ import {
   PhotoHandler,
   ProgressTrackerComponent,
   SavingProgressComponent,
-  SubAlbumInfo,
   FolderDetailsComponent
 } from "./albumComponents";
 
@@ -61,11 +60,14 @@ const SaveAlbum = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
 
-  // Use the username management hook
+  // Use the username management hook - store the FULL instance
+  const usernameManager = useUsernameManagement(t);
+  
+  // Destructure methods for convenience
   const {
     setShowUsernamePrompt,
     setUsernameInput
-  } = useUsernameManagement(t);
+  } = usernameManager;
 
   // Core state
   const [folderId, setFolderId] = useState<string | null>(null);
@@ -373,13 +375,6 @@ const SaveAlbum = () => {
             onChange={handleAddPhotos}
           />
           
-          {/* Enhanced Sub-album message with thumbnails */}
-          <SubAlbumInfo 
-            isSubAlbum={isSubAlbum} 
-            selectedPhotos={selectedPhotos} 
-            selectedFileIds={selectedFileIds} 
-          />
-          
           {/* Photo Grid */}
           <PhotoHandler 
             selectedPhotos={selectedPhotos}
@@ -439,7 +434,7 @@ const SaveAlbum = () => {
           <UsernamePrompt
             t={t}
             language={language}
-            usernameManager={useUsernameManagement(t)} // Pass the hook return value directly
+            usernameManager={usernameManager}
             onSuccess={handleSuccessfulUsernameUpdate}
           />
           

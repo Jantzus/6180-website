@@ -135,6 +135,7 @@ ${hn(c)}`}getCanonicalPath({path:o}){if(this.uriEscapePath){const r=[];for(const
   font-size: 16px;
   color: #666;
 `;const RA=O.div`
+  margin-top: 24px;
   margin-bottom: 24px;
   background-color: #fff;
   padding: 16px;
