@@ -458,7 +458,7 @@ const PhotoAlbumContent: React.FC = () => {
   };
   
   // Share the selected items
-  const shareSelection = async () => {
+  const shareSelectPhotos = async () => {
     createSubAlbumWithSelectedItems(t, albumData, selectedItems);
   };
 
@@ -658,7 +658,7 @@ const PhotoAlbumContent: React.FC = () => {
         t={t}
         isSelectionMode={isSelectionMode}
         selectedItems={selectedItems}
-        shareSelection={shareSelection}
+        shareSelectPhotos={shareSelectPhotos}
         cancelSelection={cancelSelection}
         createSubalbum={createSubalbum}
         showingEnterPassword={showingEnterPassword}

@@ -34,7 +34,7 @@ export const AlbumHeader: React.FC<{
   t: (key: string) => string;
   isSelectionMode: boolean;
   selectedItems: Set<number>;
-  shareSelection: () => void;
+  shareSelectPhotos: () => void;
   cancelSelection: () => void;
   createSubalbum: () => void;
   showingEnterPassword: () => boolean;
@@ -54,7 +54,7 @@ export const AlbumHeader: React.FC<{
   t,
   isSelectionMode,
   selectedItems,
-  shareSelection,
+  shareSelectPhotos,
   cancelSelection,
   createSubalbum,
   showingEnterPassword,
@@ -163,7 +163,7 @@ export const AlbumHeader: React.FC<{
   const renderSelectionModeActions = () => (
     <div style={{ display: 'flex', gap: '16px' }}>
       <ActionButton 
-        onClick={shareSelection} 
+        onClick={shareSelectPhotos} 
         disabled={selectedItems.size === 0}
         style={{ 
           opacity: selectedItems.size === 0 ? 0.5 : 1,
