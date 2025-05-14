@@ -171,7 +171,7 @@ export const AlbumHeader: React.FC<{
           color: selectedItems.size > 0 ? 'white' : undefined,
         }}
       >
-        {t('Create Sub-album')} ({selectedItems.size})
+        {t('Share Select Photos')} ({selectedItems.size})
       </ActionButton>
       <ActionButton onClick={cancelSelection}>
         {t('Cancel')}
@@ -258,11 +258,10 @@ export const AlbumHeader: React.FC<{
         flexWrap: 'nowrap', 
         alignItems: 'center'
       }}>
-        {/* Left side - Create Sub-album button */}
         <div style={{ flexShrink: 0 }}> 
           {!showingEnterPassword() && (
             <CreateAlbumButton onClick={createSubalbum}>
-              {t('Create Sub-album')}
+              {t('Share Select Photos')}
             </CreateAlbumButton>
           )}
         </div>

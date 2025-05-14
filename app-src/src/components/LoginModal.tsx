@@ -6,6 +6,7 @@ import {
   RespondToAuthChallengeCommand,
 } from '@aws-sdk/client-cognito-identity-provider';
 import { COGNITO_CLIENT_ID, AWS_REGION, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
+import { LOCAL_STORAGE_KEYS } from '@/lib/config';
 
 // Create a new Cognito client for OTP login
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION });
@@ -171,7 +172,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLoginSuccess
       const json = await gqlResponse.json();
       const displayName = json?.data?.batchGetItems?.items?.[0]?.item?.anyDisplayName;
       if (displayName) {
-        localStorage.setItem('publicUsername', displayName);
+        localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, displayName);
       }
 
       // Instead of redirecting, close the modal and notify parent of success

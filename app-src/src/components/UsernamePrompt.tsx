@@ -13,6 +13,8 @@ import {
   UsernameAltButton
 } from "@/styles/styled-components";
 
+import { LOCAL_STORAGE_KEYS } from '@/lib/config';
+
 // Username Modal Component
 export const UsernamePrompt: React.FC<{
   t: (key: string) => string;
@@ -35,7 +37,7 @@ export const UsernamePrompt: React.FC<{
 
   const handleSuccessfulUsernameUpdate = (newName: string) => {
     console.log(`Username successfully updated to: ${newName}`);
-    localStorage.setItem("publicUsername", newName);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, newName);
     setShowUsernamePrompt(false);
     onSuccess(newName);
   };

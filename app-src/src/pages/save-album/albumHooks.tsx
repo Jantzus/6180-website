@@ -311,7 +311,7 @@ export const useAlbumInitialization = (
       // Extract username directly here instead of in a separate function
       try {
         // Get public username
-        const savedUsername = localStorage.getItem("publicUsername");
+        const savedUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
         enhancedLog(`Retrieved public username from localStorage: ${savedUsername || 'null'}`);
         setPublicUsername(savedUsername || null);
         

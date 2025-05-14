@@ -18,6 +18,7 @@ import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
 import { formatUUID, generateUUID, generateInviteLink } from "@/lib/utils";
 import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/apiService";
 import { downloadPhotos } from "@/lib/fileOperations";
+import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
 // Import upload utilities
 import { 
@@ -27,7 +28,6 @@ import {
 } from "@/lib/file-upload-utils";
 
 // Add the AWS_PRIVATE_GRAPHQL_ENDPOINT import
-import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { useUsernameManagement } from "@/lib/customHooks";
 
 // Import extracted utility functions
@@ -171,6 +171,31 @@ const PhotoAlbumContent: React.FC = () => {
     setShowPasswordModal(false);
     setPasswordError(null);
     
+    // If there's a token but we don't have the username, get it
+    if (!cognitoUsername) {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const username = payload["cognito:username"];
+        setCognitoUsername(username);
+      } catch (err) {
+        console.error("Failed to decode token", err);
+      }
+    }
+    
+    // Check the public username from localStorage before executing album save
+    const publicUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
+    if (publicUsername?.startsWith("Profile-")) {
+      console.log("Public username starts with 'Profile-', showing username prompt");
+
+      // If username exists, set it as input value
+      if (publicUsername) {
+        usernameManager.setUsernameInput(publicUsername);
+      }
+
+      usernameManager.setShowUsernamePrompt(true);
+      return;
+    }
+    
     // Execute the save operation
     executeAlbumSave(t, folderId, albumData);
   };
@@ -243,6 +268,20 @@ const PhotoAlbumContent: React.FC = () => {
           localStorage.setItem('selectPhotosButtonTimestamp', Date.now().toString());
           // Reset the flag
           setAddPhotosClicked(false);
+        }
+        
+        // Check the public username from localStorage before proceeding with album save
+        const publicUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
+        if (publicUsername?.startsWith("Profile-")) {
+          console.log("Public username starts with 'Profile-', showing username prompt");
+
+          // If username exists, set it as input value
+          if (publicUsername) {
+            usernameManager.setUsernameInput(publicUsername);
+          }
+
+          usernameManager.setShowUsernamePrompt(true);
+          return;
         }
         
         // Check if there's a pending save album operation
@@ -386,10 +425,16 @@ const PhotoAlbumContent: React.FC = () => {
     }
     
     // Check the public username from localStorage
-    const publicUsername = localStorage.getItem("publicUsername");
+    const publicUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
     if (publicUsername?.startsWith("Profile-")) {
+
       console.log("Public username starts with 'Profile-', showing username prompt");
-      usernameManager.setUsernameInput(publicUsername);
+
+      // If username exists, set it as input value
+      if (publicUsername) {
+        usernameManager.setUsernameInput(publicUsername);
+      }
+
       usernameManager.setShowUsernamePrompt(true);
       return;
     }

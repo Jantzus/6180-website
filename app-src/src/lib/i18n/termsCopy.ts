@@ -11,7 +11,6 @@ export const translations: Record<string, Partial<Record<SupportedLanguage, stri
   'Continue with upload': {},
   'Copy Link': {},
   'Create Albums Together': {},
-  'Create Sub-album': {},
   'Deselect All': {},
   'Didn\'t receive a code?': {},
   'Download': {},
@@ -75,7 +74,8 @@ export const translations: Record<string, Partial<Record<SupportedLanguage, stri
   'Delete My Copy': {},
   'Delete': {},
   'Thumbnail': {},
-  'Shared with': {}
+  'Shared with': {},
+  'Share Select Photos': {}
 };
 
 // Export type for type checking

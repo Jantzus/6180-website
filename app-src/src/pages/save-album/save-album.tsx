@@ -297,7 +297,7 @@ const SaveAlbum = () => {
   // Handle successful username update - callback for the username hook
   const handleSuccessfulUsernameUpdate = (newName: string) => {
     enhancedLog(`Handling successful username update to: ${newName}`);
-    localStorage.setItem("publicUsername", newName);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, newName);
     setPublicUsername(newName);
     setShowUsernamePrompt(false);
     

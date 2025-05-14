@@ -18,6 +18,7 @@ import {
   LegalLinksFooter,
   LegalLinkFooterButton
 } from "@/styles/styled-components";
+import { LOCAL_STORAGE_KEYS } from '@/lib/config';
 
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION })
 
@@ -296,7 +297,7 @@ const LoginContent = () => {
       const json = await gqlResponse.json()
       const displayName = json?.data?.batchGetItems?.items?.[0]?.item?.anyDisplayName
       if (displayName) {
-        localStorage.setItem('publicUsername', displayName)
+        localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, displayName)
       }
 
       // Redirect to the specified page after successful login

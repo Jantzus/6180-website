@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Folder } from "@/lib/types";
-import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { checkLoginWithRefresh } from "@/lib/utils";
 
 /**
@@ -16,7 +16,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
 
   // Load user data and fetch folders
   useEffect(() => {
-    setPublicUsername(localStorage.getItem("publicUsername") || null);
+    setPublicUsername(localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME) || null);
 
     // Use async/await with the new checkLoginWithRefresh function
     const fetchUserAndFolders = async () => {
