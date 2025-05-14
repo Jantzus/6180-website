@@ -3,7 +3,8 @@ import {
   AlbumData, 
   PasswordPolicyEnum,
 } from "@/lib/types";
-import { ActionButton, SelectionBanner } from "@/styles/photos-styled-components";
+import { SelectionBanner } from "@/styles/photos-styled-components";
+import { ActionButton } from "@/styles/styled-components";
 
 // Select Photos Button Component
 export const SelectPhotosButton: React.FC<{

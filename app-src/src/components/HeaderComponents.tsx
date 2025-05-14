@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { 
+  DropdownMenu,
+  HamburgerButton,
+  HamburgerIcon,
+  HamburgerLine,
   ActionButton, 
-  HamburgerButton, 
-  HamburgerIcon, 
-  HamburgerLine, 
-  MenuButton, 
-  PasswordButton 
-} from "@/styles/photos-styled-components";
-import { 
-  DropdownMenu
+  MenuButton,
+  PasswordActionButton
 } from "@/styles/styled-components";
 import { ResponsiveHeaderProps } from "@/lib/types";
 
@@ -138,9 +136,9 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
         {/* Show Enter Password button if needed */}
         {showingEnterPassword && passwordPolicy && passwordPolicy !== 'NoPassword' && (
           <div style={{ flexShrink: 0 }}> 
-            <PasswordButton onClick={promptForPassword}>
+            <PasswordActionButton onClick={promptForPassword}>
               {t('Enter Password')}
-            </PasswordButton>
+            </PasswordActionButton>
           </div>
         )}
       </div>
@@ -182,9 +180,9 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
       {/* Show Enter Password button if needed */}
       {showingEnterPassword && (
         <div>
-          <PasswordButton onClick={promptForPassword}>
+          <PasswordActionButton onClick={promptForPassword}>
             {t('Enter Password')}
-          </PasswordButton>
+          </PasswordActionButton>
           </div>
       )}
     </div>

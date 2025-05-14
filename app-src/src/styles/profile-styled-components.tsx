@@ -187,30 +187,3 @@ export const PasswordPolicy = styled.div<{ isRTL: boolean }>`
   margin-bottom: 8px;
 `;
 
-// Album List Styled Components
-export const EmptyState = styled.div`
-  text-align: center; 
-  padding: 40px 20px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  
-  p {
-    font-size: 16px;
-    color: #666;
-  }
-`;
-
-export const ErrorState = styled.div`
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #fdeded;
-  border-radius: 12px;
-  border: 1px solid #f7d0d0;
-  margin-bottom: 20px;
-  
-  p {
-    font-size: 16px;
-    color: #d32f2f;
-  }
-`;

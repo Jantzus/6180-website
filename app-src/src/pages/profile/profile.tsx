@@ -24,13 +24,10 @@ import {
 } from "./ProfileComponents";
 // Import styled components
 import {
-  ErrorState,
-  EmptyState,
-  // MainContainer
-} from "@/styles/profile-styled-components.tsx";
-import {
   GlobalStyle,
   AppContainer,
+  ErrorState,
+  EmptyState,
 } from "@/styles/styled-components.tsx";
 
 // Main PersonaViewer Component
@@ -164,12 +161,24 @@ const PersonaViewer: React.FC = () => {
       };
       
       const variables = {
+        relationIds: [ `${ownerItemId}_____Public____Profile` ],
         fetchRelationsInput: fetchRelationsInput
       };
       
       // GraphQL query
       const FETCH_FOLDERS_QUERY = `
-        mutation FetchFolderPositions($fetchRelationsInput: FetchRelationsInput!) {
+        mutation FetchFolderPositions($relationIds: [ID!], $fetchRelationsInput: FetchRelationsInput!) {
+          batchGetItems(relationIds: $relationIds) {
+              items {
+                  id
+                  item {
+                      ... on Profile {
+                        anyDisplayName
+                      }
+                  }
+              }
+              nextToken
+          }        
           fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
             items {
               ... on FolderPosition {

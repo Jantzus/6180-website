@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { 
   checkLoginWithoutRedirect, 
   generateInviteLink, 
@@ -13,13 +13,10 @@ import { CopyLinkModal, ConfirmationModal } from "@/components/Modals";
 import { LazyImage } from "@/components/LazyImage";
 // Import styled components
 import {
-  DropdownIndicator,
-  DropdownItem,
   FooterContainer,
   ButtonGroup,
   ButtonRow,
   Button,
-  EmptyState,
   AlbumCard,
   AlbumLink,
   AlbumContent,
@@ -34,16 +31,22 @@ import {
   PasswordPolicy
 } from "@/styles/profile-styled-components.tsx";
 import {
-  ProfileAvatar,
-  PublicProfileDisplayName,
-  PublicProfileDisplayNameMenu,
+  DropdownMenu,
+  // ProfileAvatar,
+  // PublicProfileDisplayName,
   ProfileHeaderContainer,
   PublicProfileExplanation,
   ProfileControls,
-  DropdownMenu,
   PolicyIndicator,
-  AlbumDescription
+  AlbumDescription,
+  HamburgerButton,
+  HamburgerIcon,
+  HamburgerLine,
+  MenuButton,
+  EmptyState,
 } from "@/styles/styled-components.tsx";
+// Import dropdown components from AlbumHeader styling
+
 // Types
 interface FolderPassword {
   password?: string;
@@ -78,72 +81,100 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   isRTL 
 }) => {
   const { t } = useTranslation();
-  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   
   // Toggle dropdown menu
-  const toggleDropdown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const toggleMenu = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsDropdownOpen(!isDropdownOpen);
+    setMenuOpen(!menuOpen);
   };
 
-  // Close dropdown if clicked outside
+  // Close menu when clicked outside
   useEffect(() => {
-    const handleClickOutside = () => {
-      if (isDropdownOpen) setIsDropdownOpen(false);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
     };
     
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
+    // Handle scroll to close menu
+    const handleScroll = () => {
+      setMenuOpen(false);
     };
-  }, [isDropdownOpen]);
+    
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      window.addEventListener('scroll', handleScroll);
+    }
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [menuOpen]);
+  
+  // Execute action and close menu
+  const handleAction = (action: () => void) => {
+    action();
+    setMenuOpen(false);
+  };
   
   return (
     <ProfileHeaderContainer isRTL={isRTL}>
       <ProfileControls isRTL={isRTL}>
-        <PublicProfileDisplayNameMenu onClick={toggleDropdown}>
-          <ProfileAvatar>
-            {username ? username.charAt(0).toUpperCase() : "?"}
-          </ProfileAvatar>
-          
-          <PublicProfileDisplayName>
-            {username || t('User Profile')}
-          </PublicProfileDisplayName>
-          
-          <DropdownIndicator />
-        </PublicProfileDisplayNameMenu>
-        
-        {/* Dropdown Menu */}
-        {isDropdownOpen && (
-          <DropdownMenu>
-            <DropdownItem 
-              hasBorder={true}
-              onClick={() => {
-                alert(t('Bio feature is coming soon! Stay tuned for updates where you can share more about yourself.'));
-              }}
-            >
-              <span>Bio</span>
-            </DropdownItem>
+        <div ref={menuRef} style={{ position: 'relative' }}>
+          <HamburgerButton
+            onClick={toggleMenu}
+            aria-label={t('Menu')}
+            aria-expanded={menuOpen}
+          >
+            <HamburgerIcon>
+              <HamburgerLine />
+              <HamburgerLine />
+              <HamburgerLine />
+            </HamburgerIcon>
+
+            {/* <ProfileAvatar>
+              {username ? username.charAt(0).toUpperCase() : "?"}
+            </ProfileAvatar> */}
+
+            {/* <PublicProfileDisplayName> */}
+              {username || t('User Profile')}
+            {/* </PublicProfileDisplayName> */}
             
-            <DropdownItem 
-              hasBorder={true}
-              onClick={() => {
-                alert(t('Email feature is coming soon! Soon you will be able to share your email with connections.'));
-              }}
-            >
-              <span>E-mail</span>
-            </DropdownItem>
-            
-            <DropdownItem 
-              onClick={() => {
-                alert(t('Add Contact feature is coming soon! You will be able to add this person as a contact on 6180.'));
-              }}
-            >
-              <span>Contact On 6180</span>
-            </DropdownItem>
-          </DropdownMenu>
-        )}
+          </HamburgerButton>
+          
+          {/* Dropdown Menu */}
+          {menuOpen && (
+            <DropdownMenu>
+              <MenuButton
+                onClick={() => handleAction(() => {
+                  alert(t('Bio feature is coming soon! Stay tuned for updates where you can share more about yourself.'));
+                })}
+              >
+                {t('Bio')}
+              </MenuButton>
+              
+              <MenuButton
+                onClick={() => handleAction(() => {
+                  alert(t('Email feature is coming soon! Soon you will be able to share your email with connections.'));
+                })}
+              >
+                {t('E-mail')}
+              </MenuButton>
+              
+              <MenuButton
+                onClick={() => handleAction(() => {
+                  alert(t('Add Contact feature is coming soon! You will be able to add this person as a contact on 6180.'));
+                })}
+              >
+                {t('Contact On 6180')}
+              </MenuButton>
+            </DropdownMenu>
+          )}
+        </div>
       </ProfileControls>
       
       {isCurrentUser && (

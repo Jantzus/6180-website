@@ -9,14 +9,16 @@ import {
   RowSelectorContainer, 
   RowSelectorLabel, 
   RowSelectorSelect,
-  ActionButton,
-  HamburgerButton, 
-  HamburgerIcon, 
-  HamburgerLine, 
-  MenuButton
 } from "@/styles/photos-styled-components";
 
-import { DropdownMenu } from "@/styles/styled-components";
+import { 
+  DropdownMenu,
+  HamburgerButton,
+  HamburgerIcon,
+  HamburgerLine,
+  ActionButton,
+  MenuButton
+} from "@/styles/styled-components";
 import ResponsiveHeader from "@/components/HeaderComponents";
 
 // Define action types for reuse

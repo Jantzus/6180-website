@@ -668,7 +668,6 @@ export const ProfileAvatar = styled.div`
   justify-content: center;
   font-size: 18px;
   color: #555;
-  margin-right: 12px;
 `;
 
 export const PublicProfileExplanation = styled.div`
@@ -691,4 +690,96 @@ export const PublicProfileDisplayName = styled.h1`
   font-size: 18px;
   margin: 0;
   font-weight: 600;
+`;
+
+
+export const HamburgerButton = styled.button`
+  background: transparent;
+  color: #006adc;
+  border: 1px solid #006adc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`;
+
+export const HamburgerIcon = styled.span`
+  width: 18px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const HamburgerLine = styled.span`
+  height: 2px;
+  background: #006adc;
+  width: 100%;
+`;
+
+export const ActionButton = styled.button`
+  background: transparent;
+  color: #006adc;
+  border: 1px solid #006adc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+`;
+
+export const PasswordActionButton = styled(ActionButton)`
+  background-color: #4caf50;
+  color: white;
+  &:hover {
+    background-color: #45a049;
+  }
+`;
+
+export const MenuButton = styled.button`
+  background: transparent;
+  color: #006adc;
+  border: 1px solid #006adc;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  width: 100%;
+  text-align: left;
+`;
+
+
+// Album List Styled Components
+export const EmptyState = styled.div`
+  text-align: center; 
+  padding: 40px 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  
+  p {
+    font-size: 16px;
+    color: #666;
+  }
+`;
+
+export const ErrorState = styled.div`
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fdeded;
+  border-radius: 12px;
+  border: 1px solid #f7d0d0;
+  margin-bottom: 20px;
+  
+  p {
+    font-size: 16px;
+    color: #d32f2f;
+  }
 `;
