@@ -6,7 +6,6 @@ import {
   WatermarkText,
   FullscreenContainer,
   NavigationButton,
-  BackButton,
   NavButtonsContainer,
   OwnerProfileLink,
   Image,
@@ -32,6 +31,21 @@ const Footer = styled.div`
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
+`;
+
+const CloseButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const MediaContainer = styled.div`
@@ -163,9 +177,9 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
     <FullscreenContainer>
       {/* Header with controls */}
       <Header>
-        <BackButton onClick={onClose}>
-          {t('Back')}
-        </BackButton>
+        <CloseButton onClick={onClose}>
+          ✕
+        </CloseButton>
         
         <NavButtonsContainer>
           <NavigationButton 

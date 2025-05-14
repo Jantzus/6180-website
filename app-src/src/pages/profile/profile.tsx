@@ -256,7 +256,15 @@ const PersonaViewer: React.FC = () => {
         result = await publicResult.json();
       }
       
-      // Process results
+      // Extract anyDisplayName from profile data and set it
+      if (result?.data?.batchGetItems?.items && result.data.batchGetItems.items.length > 0) {
+        const profileItem = result.data.batchGetItems.items[0];
+        if (profileItem?.item?.anyDisplayName) {
+          setProfileUsername(profileItem.item.anyDisplayName);
+        }
+      }
+      
+      // Process folders results
       if (result?.data?.fetchRelations?.items) {
         const items = result.data.fetchRelations.items;
         
