@@ -27,8 +27,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    padding: 0;
     font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   }
 
@@ -48,6 +46,14 @@ interface DirectionalProps {
   isRTL: boolean;
 }
 
+// ========== Responsive Mixins ==========
+
+const mobile = (content: any) => css`
+  @media (max-width: 767px) {
+    ${content}
+  }
+`;
+
 // ========== App Layout Components ==========
 
 export const Body = styled.div`
@@ -63,9 +69,9 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     padding: 10px;
-  }
+  `)}
 `;
 
 export const AppContainer = styled.div<DirectionalProps>`
@@ -81,10 +87,10 @@ export const MediaContainer = styled.div`
   width: 100%;
   overflow: visible;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     padding: 0 16px 15px;
     width: 100%;
-  }
+  `)}
 `;
 
 export const ContentContainer = styled.div`
@@ -109,9 +115,9 @@ export const HeaderContent = styled.div`
   flex-direction: column;
   padding: 16px 24px;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     padding: 16px 16px;
-  }
+  `)}
 `;
 
 export const HeaderControls = styled.div`
@@ -125,8 +131,6 @@ export const HeaderControls = styled.div`
 `;
 
 export const HeaderControlsWithFullWidth = styled(HeaderControls)`
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   
   > div {
@@ -191,28 +195,29 @@ export const Headline = styled.h1`
 
 // ========== Button Components ==========
 
-export const ActionButton = styled.button`
-  background: transparent;
-  color: #006adc;
-  border: 1px solid #006adc;
-  border-radius: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 14px;
+// Base button style
+interface ButtonProps {
+  disabled?: boolean;
+}
+
+const buttonBase = css<ButtonProps>`
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  opacity: ${props => props.disabled ? 0.6 : 1};
   transition: all 0.2s ease;
+  border-radius: 4px;
 `;
 
-export const HamburgerButton = styled.button`
+export const ActionButton = styled.button<ButtonProps>`
+  ${buttonBase}
   background: transparent;
   color: #006adc;
   border: 1px solid #006adc;
-  border-radius: 4px;
   padding: 6px 12px;
-  cursor: pointer;
   font-weight: 500;
   font-size: 14px;
-  transition: all 0.2s ease;
+`;
+
+export const HamburgerButton = styled(ActionButton)`
   display: flex;
   align-items: center;
   gap: 6px;
@@ -232,44 +237,25 @@ export const HamburgerLine = styled.span`
   width: 100%;
 `;
 
-export const CreateAlbumButton = styled.button`
-  background: transparent;
-  color: #006adc;
-  border: 1px solid #006adc;
-  border-radius: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 14px;
-  transition: all 0.2s ease;
+export const CreateAlbumButton = styled(ActionButton)`
   margin-right: auto; // This will push it to the left
   height: 36px; // Set a fixed height to match other buttons
   display: flex;
   align-items: center; // Center text vertically
 `;
 
-export const MenuButton = styled.button`
-  background: transparent;
-  color: #006adc;
-  border: 1px solid #006adc;
-  border-radius: 4px;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 14px;
+export const MenuButton = styled(ActionButton)`
   width: 100%;
   text-align: left;
 `;
 
 export const CloseButton = styled.button`
+  ${buttonBase}
   margin-top: 16px;
   padding: 8px 16px;
   background-color: #006adc;
   color: white;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
 `;
 
 export const PasswordActionButton = styled(ActionButton)`
@@ -280,17 +266,13 @@ export const PasswordActionButton = styled(ActionButton)`
   }
 `;
 
-interface ButtonProps {
-  disabled?: boolean;
-}
-
+// Larger button base style
 export const Button = styled.button<ButtonProps>`
+  ${buttonBase}
   padding: 14px 28px;
   font-size: 16px;
   border-radius: 8px;
   border: none;
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.disabled ? 0.6 : 1};
 `;
 
 export const PrimaryButton = styled(Button)`
@@ -315,12 +297,12 @@ export const PasswordButton = styled(SecondaryButton)<PasswordButtonProps>`
 `;
 
 export const BigButton = styled.button<{ primary?: boolean; isHovered?: boolean }>`
+  ${buttonBase}
   padding: 12px 20px;
   text-decoration: none;
   border: none;
   border-radius: 6px;
   font-size: 1em;
-  cursor: pointer;
   text-align: center;
   display: inline-block;
   background-color: ${props => props.primary ? '#007bff' : '#e9e9e9'};
@@ -329,18 +311,18 @@ export const BigButton = styled.button<{ primary?: boolean; isHovered?: boolean 
 `;
 
 export const RemoveButton = styled.button<ButtonProps>`
+  ${buttonBase}
   background-color: #e53935;
   color: white;
   border: none;
   border-radius: 6px;
   padding: 6px 8px;
   font-size: 12px;
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   margin-top: auto;
-  opacity: ${props => props.disabled ? 0.6 : 1};
 `;
 
 export const NavigationButton = styled.button<{ isDisabled?: boolean }>`
+  ${buttonBase}
   background: transparent;
   border: none;
   color: white;
@@ -458,21 +440,26 @@ export const AlbumTitle = styled.h2`
   font-size: 24px;
   padding: 0;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     padding: 0;
-  }
+  `)}
 `;
 
 export const AlbumTitleStrong = styled.strong`
   font-weight: 700;
 `;
 
-export const DescriptionBlock = styled.div`
-  margin-bottom: 20px;
+// Card container base style
+const cardBase = css`
   background-color: #fff;
-  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+`;
+
+export const DescriptionBlock = styled.div`
+  ${cardBase}
+  margin-bottom: 20px;
+  padding: 20px;
   width: 100%;
 `;
 
@@ -485,22 +472,23 @@ export const DescriptionText = styled.p`
   max-width: 100%;
 `;
 
-export const ErrorMessage = styled.div`
+// Message styles
+const messageBase = css`
   text-align: center;
   padding: 40px;
   font-size: 18px;
-  color: #d32f2f;
   grid-column: 1 / -1;
   width: 100%;
 `;
 
+export const ErrorMessage = styled.div`
+  ${messageBase}
+  color: #d32f2f;
+`;
+
 export const LoadingMessage = styled.div`
-  text-align: center;
-  padding: 40px;
-  font-size: 18px;
+  ${messageBase}
   color: #666;
-  grid-column: 1 / -1;
-  width: 100%;
 `;
 
 export const ItalicText = styled.p`
@@ -509,9 +497,9 @@ export const ItalicText = styled.p`
   margin-bottom: 12px;
   text-align: center;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     font-size: 14px;
-  }
+  `)}
 `;
 
 export const AlbumDescription = styled.div<{ isRTL: boolean }>`
@@ -569,9 +557,9 @@ export const MediaGrid = styled.div<{ columns: string }>`
   }
 `;
 
-export const MediaBlock = styled.div<{ isHovered?: boolean; isVideo?: boolean }>`
-  background: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+// Base media block style
+const mediaBlockBase = css<{ isHovered?: boolean }>`
+  ${cardBase}
   transition: transform 0.2s;
   position: relative;
   height: auto; // Allow natural height
@@ -585,14 +573,17 @@ export const MediaBlock = styled.div<{ isHovered?: boolean; isVideo?: boolean }>
     transform: translateY(-2px);
   `}
   
+  ${mobile(`
+    border-radius: 4px;
+    margin-bottom: 10px; // Less margin on mobile
+  `)}
+`;
+
+export const MediaBlock = styled.div<{ isHovered?: boolean; isVideo?: boolean }>`
+  ${mediaBlockBase}
   ${props => props.isVideo && css`
     cursor: pointer;
   `}
-  
-  @media (max-width: 767px) {
-    border-radius: 4px;
-    margin-bottom: 10px; // Less margin on mobile
-  }
 `;
 
 export const SelectableMediaBlock = styled(MediaBlock)<{ isSelected?: boolean }>`
@@ -612,13 +603,10 @@ export const PhotoGrid = styled.div`
 `;
 
 export const PhotoCard = styled.div`
+  ${cardBase}
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
   padding: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
   width: 160px;
   position: relative;
 `;
@@ -633,12 +621,19 @@ export const LazyImageContainer = styled.div`
   padding-bottom: 75%; // Create a consistent aspect ratio (4:3)
   height: 0; // Use padding-bottom for aspect ratio
   
-  @media (max-width: 767px) {
+  ${mobile(`
     padding-bottom: 100%; // Square aspect ratio on mobile
-  }
+  `)}
+`;
+
+// Base image styles
+const imageBase = css<{ isLoaded: boolean }>`
+  opacity: ${props => props.isLoaded ? 1 : 0};
+  transition: opacity 0.3s;
 `;
 
 export const StyledImage = styled.img<{ isLoaded: boolean }>`
+  ${imageBase}
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -646,8 +641,6 @@ export const StyledImage = styled.img<{ isLoaded: boolean }>`
   top: 0;
   left: 0;
   z-index: 1;
-  transition: opacity 0.3s;
-  opacity: ${props => props.isLoaded ? 1 : 0};
 `;
 
 export const ThumbnailImage = styled.img`
@@ -673,12 +666,12 @@ export const ThumbnailWrapper = styled.div`
   display: flex;
   flex-direction: column;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     min-height: 120px;
     aspect-ratio: 1/1;
     height: 0;
     padding-bottom: 100%;
-  }
+  `)}
 `;
 
 export const PlayButton = styled.div`
@@ -703,14 +696,14 @@ export const PlayButton = styled.div`
     border-color: transparent transparent transparent white;
   }
   
-  @media (max-width: 767px) {
+  ${mobile(`
     width: 40px;
     height: 40px;
     
     &::before {
       border-width: 10px 0 10px 16px;
     }
-  }
+  `)}
 `;
 
 export const MediaPreview = styled.div`
@@ -735,11 +728,10 @@ export const VideoItem = styled.video`
 `;
 
 export const Image = styled.img<{ isLoaded: boolean }>`
+  ${imageBase}
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  opacity: ${props => props.isLoaded ? 1 : 0};
-  transition: opacity 0.3s;
 `;
 
 export const MediaWrapper = styled.div`
@@ -760,17 +752,22 @@ export const LoadingPlaceholder = styled.div`
   z-index: 0;
 `;
 
-export const LoadingOverlay = styled.div`
+// Overlay base styles
+const overlayBase = css`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 4;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const LoadingOverlay = styled.div`
+  ${overlayBase}
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
   color: white;
   font-weight: 500;
   text-align: center;
@@ -789,13 +786,16 @@ export const LoadingIndicator = styled.div`
   z-index: 10;
 `;
 
-export const ProgressContainer = styled.div`
-  margin-top: 24px;
+// Progress container base style
+const progressContainerBase = css`
+  ${cardBase}
   margin-bottom: 24px;
-  background-color: #fff;
   padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+`;
+
+export const ProgressContainer = styled.div`
+  ${progressContainerBase}
+  margin-top: 24px;
 `;
 
 export const ProgressTitle = styled.h3`
@@ -872,11 +872,7 @@ export const UploadProgressBar = styled.div<UploadProgressBarProps>`
 `;
 
 export const SavingProgressContainer = styled.div`
-  margin-bottom: 24px;
-  background-color: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  ${progressContainerBase}
 `;
 
 export const SavingProgressTitle = styled.h3`
@@ -889,12 +885,7 @@ export const SavingProgressText = styled.div`
   margin-bottom: 8px;
 `;
 
-export const SavingProgressBarBg = styled.div`
-  height: 8px;
-  background-color: #e0e0e0;
-  border-radius: 4px;
-  overflow: hidden;
-`;
+export const SavingProgressBarBg = styled(ProgressBarBg)``;
 
 export const SavingProgressBar = styled.div`
   height: 100%;
@@ -905,7 +896,8 @@ export const SavingProgressBar = styled.div`
 
 // ========== Modal & Dialog Components ==========
 
-export const Modal = styled.div`
+// Modal base styles
+const modalBase = css`
   position: fixed;
   top: 0;
   left: 0;
@@ -918,9 +910,12 @@ export const Modal = styled.div`
   align-items: center;
 `;
 
+export const Modal = styled.div`
+  ${modalBase}
+`;
+
 export const ModalContent = styled.div`
-  background-color: white;
-  border-radius: 8px;
+  ${cardBase}
   padding: 24px;
   max-width: 90%;
   max-height: 90%;
@@ -929,22 +924,14 @@ export const ModalContent = styled.div`
   flex-direction: column;
   align-items: center;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     padding: 16px;
     width: 90%;
-  }
+  `)}
 `;
 
 export const ModalOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${modalBase}
   z-index: 9999;
 `;
 
@@ -958,6 +945,7 @@ export const UsernameModal = styled.div<DirectionalProps>`
   ${props => directionalStyles(props.isRTL)}
 `;
 
+// Username component styles
 export const UsernameTitle = styled.p`
   font-size: 16px;
   margin-bottom: 12px;
@@ -984,29 +972,28 @@ export const UsernameError = styled.div`
   margin-bottom: 12px;
 `;
 
-export const UsernameButton = styled.button<ButtonProps>`
+// Username button base style
+const usernameButtonBase = css<ButtonProps>`
   width: 100%;
   padding: 12px;
-  background-color: #007bff;
-  color: white;
   font-size: 16px;
   border: none;
   border-radius: 6px;
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  margin-bottom: 10px;
   opacity: ${props => props.disabled ? 0.6 : 1};
 `;
 
+export const UsernameButton = styled.button<ButtonProps>`
+  ${usernameButtonBase}
+  background-color: #007bff;
+  color: white;
+  margin-bottom: 10px;
+`;
+
 export const UsernameAltButton = styled.button<ButtonProps>`
-  width: 100%;
-  padding: 12px;
+  ${usernameButtonBase}
   background-color: #6c757d;
   color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.disabled ? 0.6 : 1};
 `;
 
 export const DropdownMenu = styled.div`
@@ -1059,9 +1046,9 @@ export const InstructionHeading = styled.h3`
   margin-bottom: 16px;
   text-align: center;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     font-size: 18px;
-  }
+  `)}
 `;
 
 export const InstructionList = styled.ol`
@@ -1073,9 +1060,9 @@ export const InstructionItem = styled.li`
   margin-bottom: 12px;
   font-size: 16px;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     font-size: 14px;
-  }
+  `)}
 `;
 
 // ========== Selection & Status Components ==========
@@ -1125,8 +1112,14 @@ export const SelectedCount = styled.p`
   color: #333;
 `;
 
-export const DurationBadge = styled.div`
+// Badge base style
+const badgeBase = css`
   position: absolute;
+  z-index: 2;
+`;
+
+export const DurationBadge = styled.div`
+  ${badgeBase}
   bottom: 12px;
   left: 12px;
   background: rgba(0,0,0,0.7);
@@ -1135,26 +1128,24 @@ export const DurationBadge = styled.div`
   font-size: 14px;
   border-radius: 4px;
   font-weight: 500;
-  z-index: 2;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     padding: 2px 6px;
     font-size: 12px;
-  }
+  `)}
 `;
 
 export const OwnerBadge = styled.div`
-  position: absolute;
+  ${badgeBase}
   bottom: 12px;
   right: 12px;
   background: rgba(255,255,255,0.85);
   padding: 6px 12px;
   font-size: 12px;
   font-weight: 500;
-  z-index: 3;
   border-radius: 3px;
   
-  @media (max-width: 767px) {
+  ${mobile(`
     padding: 3px 6px;
     font-size: 10px;
     bottom: 8px;
@@ -1163,7 +1154,7 @@ export const OwnerBadge = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+  `)}
 `;
 
 interface StatusIndicatorProps {
@@ -1197,12 +1188,10 @@ export const StatusIndicator = styled.div<StatusIndicatorProps>`
 // ========== Form Components ==========
 
 export const FolderDetails = styled.div`
+  ${cardBase}
   margin-top: 12px;
   margin-bottom: 12px;
-  background-color: #fff;
   padding: 24px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 `;
 
 export const FormGroup = styled.div`
@@ -1217,7 +1206,8 @@ export const FormLabel = styled.label`
   color: #333;
 `;
 
-export const FormInput = styled.input`
+// Form input base style
+const formInputBase = css`
   width: 100%;
   padding: 10px 12px;
   font-size: 16px;
@@ -1226,13 +1216,12 @@ export const FormInput = styled.input`
   box-sizing: border-box;
 `;
 
+export const FormInput = styled.input`
+  ${formInputBase}
+`;
+
 export const FormTextarea = styled.textarea`
-  width: 100%;
-  padding: 10px 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
+  ${formInputBase}
   resize: vertical;
 `;
 
@@ -1315,14 +1304,7 @@ export const ToggleSlider = styled.span`
 // ========== Watermark Components ==========
 
 export const WatermarkOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${overlayBase}
   pointer-events: none;
   z-index: 5;
 `;
@@ -1359,29 +1341,34 @@ export const LegalLinkFooterButton = styled.a<{ isHovered?: boolean }>`
   text-decoration: ${props => props.isHovered ? 'underline' : 'none'};
 `;
 
-export const EmptyState = styled.div`
+// State base styles
+const stateBase = css`
   text-align: center; 
   padding: 40px 20px;
-  background-color: white;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   
   p {
     font-size: 16px;
+  }
+`;
+
+export const EmptyState = styled.div`
+  ${stateBase}
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  
+  p {
     color: #666;
   }
 `;
 
 export const ErrorState = styled.div`
-  text-align: center;
-  padding: 40px 20px;
+  ${stateBase}
   background-color: #fdeded;
-  border-radius: 12px;
   border: 1px solid #f7d0d0;
   margin-bottom: 20px;
   
   p {
-    font-size: 16px;
     color: #d32f2f;
   }
 `;
