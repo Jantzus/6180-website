@@ -18,6 +18,7 @@ import { UploadProgress } from "@/components/UploadProgress";
 import { AlbumList } from "@/components/AlbumList";
 import { FileInput } from "@/components/FileInput";
 import { DebugLog } from "@/components/DebugLog";
+import { FooterSection } from "@/components/FooterSection";
 
 // Import custom hooks and utilities
 import { useAlbumUpload } from "./useAlbumUpload";
@@ -135,6 +136,8 @@ const MyAlbums = () => {
             openFilePicker={openFilePicker}
             isUploading={isUploading}
             cognitoUsername={cognitoUsername}
+            isProfileView={false}
+            footerComponent={FooterSection}
           />
           
           {/* Use the refactored FileInput component */}

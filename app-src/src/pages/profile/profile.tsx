@@ -15,13 +15,15 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
 import { SearchBar } from "@/components/SearchBar";
-// Import the components from the new file
+// Import the needed components
 import { 
-  ProfileHeader, 
-  AlbumList,  
-  FileInput,
-  type Folder
+  ProfileHeader,
+  AlbumFooter,
+  FileInput
 } from "./ProfileComponents";
+// Import the unified AlbumList
+import { AlbumList } from "@/components/AlbumList";
+import { FolderType } from "@/lib/types";
 // Import styled components
 import {
   GlobalStyle,
@@ -39,7 +41,7 @@ const PersonaViewer: React.FC = () => {
   const [profileUsername, setProfileUsername] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [folders, setFolders] = useState<Folder[]>([]);
+  const [folders, setFolders] = useState<FolderType[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   
   // Auth state
@@ -269,7 +271,7 @@ const PersonaViewer: React.FC = () => {
         const items = result.data.fetchRelations.items;
         
         // Transform data to match the Folder type
-        const parsedFolders: Folder[] = items.map((item: any) => {
+        const parsedFolders: FolderType[] = items.map((item: any) => {
           const folder = item.folder;
           const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || [];
           
@@ -326,9 +328,15 @@ const PersonaViewer: React.FC = () => {
   };
   
   // Function to open file picker with specific folder
-  const openFilePicker = (folderId: string) => {
-    setCurrentFolderId(folderId);
-    fileInputRef.current?.click();
+  const openFilePicker = (folderId: string | null | undefined) => {
+    
+    if (folderId) {
+
+      setCurrentFolderId(folderId);
+      fileInputRef.current?.click();
+
+    }
+
   };
   
   // Filter folders based on search query
@@ -344,6 +352,17 @@ const PersonaViewer: React.FC = () => {
   
   // Determine if the current user is allowed to add photos
   const hasAddPhotoPermission = isLoggedIn;
+
+  // Update folder profileIds
+  const updateProfileIds = (folderId: string, profileIds: string[]) => {
+    setFolders(prevFolders => 
+      prevFolders.map(folder => 
+        folder.folderId === folderId 
+          ? { ...folder, profileIds } 
+          : folder
+      )
+    );
+  };
 
   return (
     <>
@@ -388,6 +407,9 @@ const PersonaViewer: React.FC = () => {
             hasAddPhotoPermission={hasAddPhotoPermission}
             cognitoUsername={cognitoUsername}
             openFilePicker={openFilePicker}
+            isProfileView={true}
+            updateProfileIds={updateProfileIds}
+            footerComponent={AlbumFooter}
           />
         )}
         

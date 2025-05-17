@@ -11,7 +11,7 @@ import { downloadPhotos } from "@/lib/fileOperations";
 // FooterSection Component
 type FooterSectionProps = {
   folder: FolderType;
-  openFilePicker: (folderId: string | null) => void;
+  openFilePicker?: (folderId: string | null) => void;
   cognitoUsername: string | null;
   updateProfileIds?: (profileIds: string[]) => void; 
 };
@@ -237,7 +237,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
               flexDirection: isRTL ? "row-reverse" : "row"
             }}
           >
-            <button
+            {(openFilePicker && <button
               onClick={(e) => {
                 e.preventDefault(); 
                 e.stopPropagation();
@@ -250,7 +250,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
               }}
             >
               {t('Add Photos')}
-            </button>
+            </button>)}
             
             {/* New Download Photos button added between Add Photos and Copy Link */}
             <button

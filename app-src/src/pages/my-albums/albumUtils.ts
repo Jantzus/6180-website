@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Folder } from "@/lib/types";
+import { FolderType } from "@/lib/types";
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { checkLoginWithRefresh } from "@/lib/utils";
 
@@ -7,8 +7,8 @@ import { checkLoginWithRefresh } from "@/lib/utils";
  * Custom hook for folder management functionality
  */
 export const useFolderManagement = (log: (message: string) => void) => {
-  const [folders, setFolders] = useState<Folder[]>([]);
-  const [filteredFolders, setFilteredFolders] = useState<Folder[]>([]);
+  const [folders, setFolders] = useState<FolderType[]>([]);
+  const [filteredFolders, setFilteredFolders] = useState<FolderType[]>([]);
   const [publicUsername, setPublicUsername] = useState<string | null>(null);
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -67,7 +67,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
   }, [searchQuery, folders, isContactFiltered]);
 
   // Handle contact filter change
-  const handleContactFilterChange = (contactFilteredFolders: Folder[]) => {
+  const handleContactFilterChange = (contactFilteredFolders: FolderType[]) => {
     setIsContactFiltered(true);
     setFilteredFolders(contactFilteredFolders);
     
@@ -177,7 +177,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
 
       const items = json?.data?.fetchRelations?.items || []
 
-      const parsed: Folder[] = items.map((item: any) => {
+      const parsed: FolderType[] = items.map((item: any) => {
         const folder = item.folder
         const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
         

@@ -57,21 +57,27 @@ export type FileType = {
   durationInSeconds: number | null;
 };
 
-export type FolderType = {
+export interface FolderType {
   folderPositionId: string;
   folderId: string;
-  albumNanoId: string | null;
-  creatorId: string;
-  folderName: string | null;
+  albumNanoId?: string | null;
+  folderName?: string;
   folderDescription?: string;
-  folderPassword?: FolderPasswordParameters;
-  createdAt: number | null;
-  updatedAt: number | null;
-  files: FileType[];
+  folderPassword?: {
+    password?: string;
+    policy?: string;
+  };
+  creatorId?: string;
+  createdAt?: number;
+  updatedAt?: number;
+  files: Array<{
+    dataKey: string;
+    thumbnailDataKey?: string;
+    durationInSeconds?: number;
+  }>;
   profileIds?: string[];
   contacts?: Record<string, string>;
-  usingFolderInviteGrantsRightToAddItems?: boolean;
-};
+}
 
 export interface File {
   dataKey: string
