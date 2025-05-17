@@ -6,7 +6,7 @@ import {
   SelectionCheckbox,
   Checkmark,
   OwnerBadge
-} from "@/styles/photos-styled-components";
+} from "@/styles/styled-components";
 
 // Media Item Component
 export const MediaItemDisplayComponent: React.FC<{

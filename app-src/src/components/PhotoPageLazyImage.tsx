@@ -7,7 +7,7 @@ import {
   LoadingOverlay,
   WatermarkOverlay,
   WatermarkText
-} from "@/styles/photos-styled-components";
+} from "@/styles/styled-components";
 import { PhotoPageLazyImageProps } from "@/lib/types";
 
 // LazyImage component with watermark support

@@ -43,9 +43,7 @@ import {
 // Import styled components
 import { 
   Body, 
-  MediaContainer
-} from "@/styles/photos-styled-components";
-import { 
+  MediaContainer,
   GlobalStyle
 } from "@/styles/styled-components";
 

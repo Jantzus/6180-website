@@ -10,7 +10,7 @@ import {
   InstructionItem, 
   CloseButton, 
   ItalicText 
-} from "@/styles/photos-styled-components";
+} from "@/styles/styled-components";
 import { QRCodeModalProps, PasswordModalProps } from "@/lib/types";
 
 // QR Code Modal component

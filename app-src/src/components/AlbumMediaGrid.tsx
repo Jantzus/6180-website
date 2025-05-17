@@ -3,7 +3,7 @@ import {
   MediaGrid, 
   ErrorMessage, 
   LoadingMessage
-} from "@/styles/photos-styled-components";
+} from "@/styles/styled-components";
 import { MediaItemDisplayComponent } from "@/components/MediaItemDisplayComponent";
 
 // Media Grid Component

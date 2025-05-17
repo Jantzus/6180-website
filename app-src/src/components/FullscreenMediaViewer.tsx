@@ -13,7 +13,7 @@ import {
   VideoElement,
   LoadingIndicator,
   MediaWrapper
-} from "@/styles/photos-styled-components";
+} from "@/styles/styled-components";
 import { MediaItem } from "@/lib/types";
 
 

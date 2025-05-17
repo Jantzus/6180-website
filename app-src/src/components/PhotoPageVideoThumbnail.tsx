@@ -8,7 +8,7 @@ import {
   LoadingOverlay,
   WatermarkOverlay,
   WatermarkText
-} from "@/styles/photos-styled-components";
+} from "@/styles/styled-components";
 
 import { PhotoPageLazyImage } from "@/components/PhotoPageLazyImage"
 

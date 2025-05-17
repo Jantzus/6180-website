@@ -9,9 +9,6 @@ import {
   RowSelectorContainer, 
   RowSelectorLabel, 
   RowSelectorSelect,
-} from "@/styles/photos-styled-components";
-
-import { 
   DropdownMenu,
   HamburgerButton,
   HamburgerIcon,

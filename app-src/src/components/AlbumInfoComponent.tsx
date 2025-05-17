@@ -5,7 +5,7 @@ import {
   AlbumTitleStrong, 
   DescriptionBlock, 
   DescriptionText
-} from "@/styles/photos-styled-components";
+} from "@/styles/styled-components";
 
 // Album Information Component
 export const AlbumInfoComponent: React.FC<{
