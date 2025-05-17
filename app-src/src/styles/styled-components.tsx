@@ -120,7 +120,7 @@ export const HeaderContent = styled.div`
   `)}
 `;
 
-export const HeaderControls = styled.div`
+export const HeaderControls = styled.div<{ fullWidth?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -128,16 +128,16 @@ export const HeaderControls = styled.div`
   margin-bottom: 5px;
   gap: 10px;
   flex-wrap: wrap;
-`;
-
-export const HeaderControlsWithFullWidth = styled(HeaderControls)`
-  width: 100%;
   
-  > div {
-    width: auto;
-    display: flex;
-    align-items: center;
-  }
+  ${props => props.fullWidth && css`
+    width: 100%;
+    
+    > div {
+      width: auto;
+      display: flex;
+      align-items: center;
+    }
+  `}
 `;
 
 export const HeaderContainer = styled.div`
@@ -183,12 +183,6 @@ export const Logo = styled.img`
   height: 32px;
 `;
 
-export const AppName = styled.div<DirectionalProps>`
-  font-size: 1.4em;
-  font-weight: bold;
-  color: #222;
-`;
-
 export const Headline = styled.h1`
   font-size: 1.8em;
 `;
@@ -198,29 +192,78 @@ export const Headline = styled.h1`
 // Base button style
 interface ButtonProps {
   disabled?: boolean;
+  primary?: boolean;
+  isHovered?: boolean;
+  passwordSet?: boolean;
+  isDisabled?: boolean;
 }
 
 const buttonBase = css<ButtonProps>`
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.disabled ? 0.6 : 1};
+  cursor: ${props => (props.disabled || props.isDisabled) ? 'not-allowed' : 'pointer'};
+  opacity: ${props => (props.disabled || props.isDisabled) ? 0.6 : 1};
   transition: all 0.2s ease;
   border-radius: 4px;
 `;
 
-export const ActionButton = styled.button<ButtonProps>`
+export const Button = styled.button<ButtonProps>`
   ${buttonBase}
-  background: transparent;
-  color: #006adc;
-  border: 1px solid #006adc;
-  padding: 6px 12px;
-  font-weight: 500;
-  font-size: 14px;
+  background: ${props => props.primary ? '#007bff' : props.passwordSet ? '#000000' : '#8c8c8c'};
+  color: ${props => props.passwordSet ? '#000000' : 'white'};
+  font-weight: ${props => props.passwordSet ? 'bold' : 'normal'};
+  padding: ${props => props.primary === undefined ? '6px 12px' : '14px 28px'};
+  font-size: ${props => props.primary === undefined ? '14px' : '16px'};
+  border: ${props => props.primary === undefined ? '1px solid #006adc' : 'none'};
+  background-color: ${props => {
+    if (props.primary === undefined) return 'transparent';
+    if (props.primary && props.isHovered) return '#0056b3';
+    if (props.primary) return '#007bff';
+    return '#8c8c8c';
+  }};
+  color: ${props => {
+    if (props.primary === undefined) return '#006adc';
+    if (props.passwordSet) return '#000000';
+    return 'white';
+  }};
+  box-shadow: ${props => props.primary !== undefined && (props.primary ? 
+    '0 4px 12px rgba(0, 123, 255, 0.2)' : 
+    '0 4px 10px rgba(0, 0, 0, 0.08)')};
+  border-radius: ${props => props.primary !== undefined ? '8px' : '4px'};
+  width: ${props => props.primary === undefined && props.passwordSet !== undefined ? '100%' : 'auto'};
+  text-align: ${props => props.primary === undefined && props.passwordSet !== undefined ? 'left' : 'center'};
+  margin-right: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? 'auto' : '0'};
+  height: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? '36px' : 'auto'};
+  display: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? 'flex' : 'inline-block'};
+  align-items: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? 'center' : 'normal'};
+  
+  &:hover {
+    background-color: ${props => {
+      if (props.primary === undefined) return 'transparent';
+      if (props.primary) return '#0056b3';
+      if (props.passwordSet) return '#000000';
+      return '#45a049';
+    }};
+  }
 `;
 
-export const HamburgerButton = styled(ActionButton)`
-  display: flex;
-  align-items: center;
-  gap: 6px;
+export const MenuButton = styled(Button)`
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px;
+  background: transparent;
+  color: #006adc;
+  border: none;
+  margin: 2px 0;
+  
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  border-bottom: 1px solid #eaeaea;
+  
+  &:last-of-type {
+    border-bottom: none;
+  }
+      
 `;
 
 export const HamburgerIcon = styled.span`
@@ -229,85 +272,13 @@ export const HamburgerIcon = styled.span`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-right: 8px;
 `;
 
 export const HamburgerLine = styled.span`
   height: 2px;
   background: #006adc;
   width: 100%;
-`;
-
-export const CreateAlbumButton = styled(ActionButton)`
-  margin-right: auto; // This will push it to the left
-  height: 36px; // Set a fixed height to match other buttons
-  display: flex;
-  align-items: center; // Center text vertically
-`;
-
-export const MenuButton = styled(ActionButton)`
-  width: 100%;
-  text-align: left;
-`;
-
-export const CloseButton = styled.button`
-  ${buttonBase}
-  margin-top: 16px;
-  padding: 8px 16px;
-  background-color: #006adc;
-  color: white;
-  border: none;
-`;
-
-export const PasswordActionButton = styled(ActionButton)`
-  background-color: #4caf50;
-  color: white;
-  &:hover {
-    background-color: #45a049;
-  }
-`;
-
-// Larger button base style
-export const Button = styled.button<ButtonProps>`
-  ${buttonBase}
-  padding: 14px 28px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-`;
-
-export const PrimaryButton = styled(Button)`
-  background-color: #007bff;
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
-`;
-
-export const SecondaryButton = styled(Button)`
-  background-color: #8c8c8c;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-`;
-
-interface PasswordButtonProps extends ButtonProps {
-  passwordSet: boolean;
-}
-
-export const PasswordButton = styled(SecondaryButton)<PasswordButtonProps>`
-  color: ${props => props.passwordSet ? '#000000' : 'white'};
-  font-weight: ${props => props.passwordSet ? 'bold' : 'normal'};
-`;
-
-export const BigButton = styled.button<{ primary?: boolean; isHovered?: boolean }>`
-  ${buttonBase}
-  padding: 12px 20px;
-  text-decoration: none;
-  border: none;
-  border-radius: 6px;
-  font-size: 1em;
-  text-align: center;
-  display: inline-block;
-  background-color: ${props => props.primary ? '#007bff' : '#e9e9e9'};
-  color: ${props => props.primary ? 'white' : '#333'};
-  background-color: ${props => props.primary && props.isHovered ? '#0056b3' : undefined};
 `;
 
 export const RemoveButton = styled.button<ButtonProps>`
@@ -320,19 +291,6 @@ export const RemoveButton = styled.button<ButtonProps>`
   font-size: 12px;
   margin-top: auto;
 `;
-
-export const NavigationButton = styled.button<{ isDisabled?: boolean }>`
-  ${buttonBase}
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 16px;
-  padding: 5px 10px;
-  cursor: ${props => props.isDisabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.isDisabled ? 0.5 : 1};
-`;
-
-export const BackButton = styled(NavigationButton)``;
 
 export const NavButtonsContainer = styled.div`
   display: flex;
@@ -456,10 +414,10 @@ const cardBase = css`
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 `;
 
-export const DescriptionBlock = styled.div`
+export const Card = styled.div<{ padding?: string; marginBottom?: string }>`
   ${cardBase}
-  margin-bottom: 20px;
-  padding: 20px;
+  padding: ${props => props.padding || '20px'};
+  margin-bottom: ${props => props.marginBottom || '20px'};
   width: 100%;
 `;
 
@@ -473,22 +431,23 @@ export const DescriptionText = styled.p`
 `;
 
 // Message styles
-const messageBase = css`
+interface MessageProps {
+  type?: 'error' | 'loading' | 'info';
+}
+
+export const Message = styled.div<MessageProps>`
   text-align: center;
   padding: 40px;
   font-size: 18px;
   grid-column: 1 / -1;
   width: 100%;
-`;
-
-export const ErrorMessage = styled.div`
-  ${messageBase}
-  color: #d32f2f;
-`;
-
-export const LoadingMessage = styled.div`
-  ${messageBase}
-  color: #666;
+  color: ${props => {
+    switch(props.type) {
+      case 'error': return '#d32f2f';
+      case 'loading': return '#666';
+      default: return '#333';
+    }
+  }};
 `;
 
 export const ItalicText = styled.p`
@@ -579,17 +538,16 @@ const mediaBlockBase = css<{ isHovered?: boolean }>`
   `)}
 `;
 
-export const MediaBlock = styled.div<{ isHovered?: boolean; isVideo?: boolean }>`
+export const MediaBlock = styled.div<{ 
+  isHovered?: boolean; 
+  isVideo?: boolean; 
+  isSelected?: boolean 
+}>`
   ${mediaBlockBase}
   ${props => props.isVideo && css`
     cursor: pointer;
   `}
-`;
-
-export const SelectableMediaBlock = styled(MediaBlock)<{ isSelected?: boolean }>`
-  ${(props) =>
-    props.isSelected &&
-    `
+  ${props => props.isSelected && css`
     border: 3px solid #006adc;
     box-shadow: 0 0 0 3px rgba(0, 106, 220, 0.3);
   `}
@@ -627,20 +585,25 @@ export const LazyImageContainer = styled.div`
 `;
 
 // Base image styles
-const imageBase = css<{ isLoaded: boolean }>`
+interface ImageProps {
+  isLoaded: boolean;
+  objectFit?: 'cover' | 'contain';
+}
+
+export const Image = styled.img<ImageProps>`
   opacity: ${props => props.isLoaded ? 1 : 0};
   transition: opacity 0.3s;
-`;
-
-export const StyledImage = styled.img<{ isLoaded: boolean }>`
-  ${imageBase}
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: ${props => props.objectFit || 'contain'};
+  ${props => props.objectFit === 'cover' && css`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  `}
 `;
 
 export const ThumbnailImage = styled.img`
@@ -727,13 +690,6 @@ export const VideoItem = styled.video`
   border-radius: 6px;
 `;
 
-export const Image = styled.img<{ isLoaded: boolean }>`
-  ${imageBase}
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-`;
-
 export const MediaWrapper = styled.div`
   position: relative;
 `;
@@ -764,14 +720,15 @@ const overlayBase = css`
   align-items: center;
 `;
 
-export const LoadingOverlay = styled.div`
+export const Overlay = styled.div<{ type?: 'loading' | 'watermark' }>`
   ${overlayBase}
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 4;
-  color: white;
-  font-weight: 500;
-  text-align: center;
-  padding: 0 10px;
+  background-color: ${props => props.type === 'loading' ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
+  z-index: ${props => props.type === 'loading' ? 4 : 5};
+  color: ${props => props.type === 'loading' ? 'white' : 'inherit'};
+  font-weight: ${props => props.type === 'loading' ? 500 : 'inherit'};
+  text-align: ${props => props.type === 'loading' ? 'center' : 'inherit'};
+  padding: ${props => props.type === 'loading' ? '0 10px' : '0'};
+  pointer-events: ${props => props.type === 'watermark' ? 'none' : 'auto'};
 `;
 
 export const LoadingIndicator = styled.div`
@@ -786,25 +743,16 @@ export const LoadingIndicator = styled.div`
   z-index: 10;
 `;
 
-// Progress container base style
-const progressContainerBase = css`
-  ${cardBase}
-  margin-bottom: 24px;
-  padding: 16px;
-`;
-
-export const ProgressContainer = styled.div`
-  ${progressContainerBase}
-  margin-top: 24px;
-`;
+// Progress components
+interface ProgressProps {
+  progress?: number;
+  status?: UploadStatus;
+  isError?: boolean;
+}
 
 export const ProgressTitle = styled.h3`
   font-size: 18px;
   margin: 0 0 12px 0;
-`;
-
-export const OverallProgress = styled.div`
-  margin-bottom: 12px;
 `;
 
 export const ProgressStats = styled.div`
@@ -814,23 +762,28 @@ export const ProgressStats = styled.div`
   margin-bottom: 6px;
 `;
 
-export const ProgressBarBg = styled.div`
-  height: 8px;
+export const ProgressBarBg = styled.div<{ bottom?: string; left?: string; right?: string; height?: string }>`
+  height: ${props => props.height || '8px'};
   background-color: #e0e0e0;
   border-radius: 4px;
   overflow: hidden;
+  ${props => props.bottom && `bottom: ${props.bottom};`}
+  ${props => props.left && `left: ${props.left};`}
+  ${props => props.right && `right: ${props.right};`}
+  ${props => props.bottom && props.left && props.right && 'position: absolute;'}
 `;
 
-interface ProgressBarProps {
-  progress: number;
-}
-
-export const ProgressBar = styled.div<ProgressBarProps>`
+export const ProgressBar = styled.div<ProgressProps>`
   height: 100%;
-  background-color: #4caf50;
+  background-color: ${props => {
+    if (props.status === 'processing') return '#ff9800';
+    if (props.status === 'error') return '#e53935';
+    if (props.status === 'complete') return '#4caf50';
+    return '#2196f3'; // Default or uploading
+  }};
   border-radius: 4px;
   transition: width 0.3s ease;
-  width: ${props => props.progress * 100}%;
+  width: ${props => (props.progress || 0) * 100}%;
 `;
 
 export const ProgressDetails = styled.div`
@@ -840,78 +793,33 @@ export const ProgressDetails = styled.div`
   color: #666;
 `;
 
-interface ProgressItemProps {
-  isError?: boolean;
-}
-
-export const ProgressItem = styled.div<ProgressItemProps>`
+export const ProgressItem = styled.div<ProgressProps>`
   color: ${props => props.isError ? '#e53935' : 'inherit'};
 `;
 
-export const UploadProgressBarBg = styled.div`
-  position: absolute;
-  bottom: 4px;
-  left: 4px;
-  right: 4px;
-  height: 4px;
-  background-color: rgba(0,0,0,0.2);
-  border-radius: 2px;
-  overflow: hidden;
-`;
-
-interface UploadProgressBarProps {
-  progress: number;
-  status: UploadStatus;
-}
-
-export const UploadProgressBar = styled.div<UploadProgressBarProps>`
-  height: 100%;
-  background-color: ${props => props.status === 'processing' ? '#ff9800' : '#2196f3'};
-  transition: width 0.3s ease;
-  width: ${props => props.progress * 100}%;
-`;
-
-export const SavingProgressContainer = styled.div`
-  ${progressContainerBase}
-`;
-
-export const SavingProgressTitle = styled.h3`
-  font-size: 18px;
-  margin: 0 0 12px 0;
-`;
-
-export const SavingProgressText = styled.div`
+export const ProgressText = styled.div`
   font-size: 14px;
   margin-bottom: 8px;
-`;
-
-export const SavingProgressBarBg = styled(ProgressBarBg)``;
-
-export const SavingProgressBar = styled.div`
-  height: 100%;
-  background-color: #2196f3;
-  border-radius: 4px;
-  transition: width 0.3s ease;
 `;
 
 // ========== Modal & Dialog Components ==========
 
 // Modal base styles
-const modalBase = css`
+interface ModalProps {
+  zIndex?: number;
+}
+
+export const Modal = styled.div<ModalProps>`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
+  z-index: ${props => props.zIndex || 1000};
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const Modal = styled.div`
-  ${modalBase}
 `;
 
 export const ModalContent = styled.div`
@@ -930,11 +838,7 @@ export const ModalContent = styled.div`
   `)}
 `;
 
-export const ModalOverlay = styled.div`
-  ${modalBase}
-  z-index: 9999;
-`;
-
+// Username component styles
 export const UsernameModal = styled.div<DirectionalProps>`
   background: #fff;
   padding: 30px;
@@ -945,7 +849,6 @@ export const UsernameModal = styled.div<DirectionalProps>`
   ${props => directionalStyles(props.isRTL)}
 `;
 
-// Username component styles
 export const UsernameTitle = styled.p`
   font-size: 16px;
   margin-bottom: 12px;
@@ -970,30 +873,6 @@ export const UsernameInput = styled.input<DirectionalProps>`
 export const UsernameError = styled.div`
   color: #e53935;
   margin-bottom: 12px;
-`;
-
-// Username button base style
-const usernameButtonBase = css<ButtonProps>`
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.disabled ? 0.6 : 1};
-`;
-
-export const UsernameButton = styled.button<ButtonProps>`
-  ${usernameButtonBase}
-  background-color: #007bff;
-  color: white;
-  margin-bottom: 10px;
-`;
-
-export const UsernameAltButton = styled.button<ButtonProps>`
-  ${usernameButtonBase}
-  background-color: #6c757d;
-  color: white;
 `;
 
 export const DropdownMenu = styled.div`
@@ -1118,50 +997,37 @@ const badgeBase = css`
   z-index: 2;
 `;
 
-export const DurationBadge = styled.div`
-  ${badgeBase}
-  bottom: 12px;
-  left: 12px;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  padding: 4px 8px;
-  font-size: 14px;
-  border-radius: 4px;
-  font-weight: 500;
-  
-  ${mobile(`
-    padding: 2px 6px;
-    font-size: 12px;
-  `)}
-`;
-
-export const OwnerBadge = styled.div`
-  ${badgeBase}
-  bottom: 12px;
-  right: 12px;
-  background: rgba(255,255,255,0.85);
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  border-radius: 3px;
-  
-  ${mobile(`
-    padding: 3px 6px;
-    font-size: 10px;
-    bottom: 8px;
-    right: 8px;
-    max-width: 45%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  `)}
-`;
-
-interface StatusIndicatorProps {
-  status: UploadStatus;
+interface BadgeProps {
+  position: 'bottomLeft' | 'bottomRight';
+  light?: boolean;
 }
 
-export const StatusIndicator = styled.div<StatusIndicatorProps>`
+export const Badge = styled.div<BadgeProps>`
+  ${badgeBase}
+  bottom: 12px;
+  left: ${(props: BadgeProps) => props.position === 'bottomLeft' ? '12px' : 'auto'};
+  right: ${(props: BadgeProps) => props.position === 'bottomRight' ? '12px' : 'auto'};
+  background: ${(props: BadgeProps) => props.light ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.7)'};
+  color: ${(props: BadgeProps) => props.light ? 'inherit' : 'white'};
+  padding: ${(props: BadgeProps) => props.light ? '6px 12px' : '4px 8px'};
+  font-size: ${(props: BadgeProps) => props.light ? '12px' : '14px'};
+  font-weight: 500;
+  border-radius: ${(props: BadgeProps) => props.light ? '3px' : '4px'};
+  
+  ${mobile(`
+    padding: ${(props: BadgeProps) => props.light ? '3px 6px' : '2px 6px'};
+    font-size: ${(props: BadgeProps) => props.light ? '10px' : '12px'};
+    bottom: ${(props: BadgeProps) => props.light ? '8px' : '12px'};
+    ${(props: BadgeProps) => props.position === 'bottomRight' && props.light && `
+      max-width: 45%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    `}
+  `)}
+`;
+
+export const StatusIndicator = styled.div<{ status: UploadStatus }>`
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1186,13 +1052,6 @@ export const StatusIndicator = styled.div<StatusIndicatorProps>`
 `;
 
 // ========== Form Components ==========
-
-export const FolderDetails = styled.div`
-  ${cardBase}
-  margin-top: 12px;
-  margin-bottom: 12px;
-  padding: 24px;
-`;
 
 export const FormGroup = styled.div`
   margin-bottom: 16px;
@@ -1303,12 +1162,6 @@ export const ToggleSlider = styled.span`
 
 // ========== Watermark Components ==========
 
-export const WatermarkOverlay = styled.div`
-  ${overlayBase}
-  pointer-events: none;
-  z-index: 5;
-`;
-
 export const WatermarkText = styled.div`
   color: white;
   font-size: 24px;
@@ -1341,35 +1194,23 @@ export const LegalLinkFooterButton = styled.a<{ isHovered?: boolean }>`
   text-decoration: ${props => props.isHovered ? 'underline' : 'none'};
 `;
 
-// State base styles
-const stateBase = css`
+// State components
+interface StateProps {
+  type?: 'empty' | 'error';
+}
+
+export const State = styled.div<StateProps>`
   text-align: center; 
   padding: 40px 20px;
   border-radius: 12px;
+  background-color: ${props => props.type === 'error' ? '#fdeded' : 'white'};
+  border: ${props => props.type === 'error' ? '1px solid #f7d0d0' : 'none'};
+  box-shadow: ${props => props.type === 'empty' ? '0 2px 8px rgba(0,0,0,0.05)' : 'none'};
+  margin-bottom: ${props => props.type === 'error' ? '20px' : '0'};
   
   p {
     font-size: 16px;
-  }
-`;
-
-export const EmptyState = styled.div`
-  ${stateBase}
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  
-  p {
-    color: #666;
-  }
-`;
-
-export const ErrorState = styled.div`
-  ${stateBase}
-  background-color: #fdeded;
-  border: 1px solid #f7d0d0;
-  margin-bottom: 20px;
-  
-  p {
-    color: #d32f2f;
+    color: ${props => props.type === 'error' ? '#d32f2f' : '#666'};
   }
 `;
 
@@ -1457,7 +1298,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
     <ProfileHeaderContainer isRTL={isRTL}>
       <ProfileControls isRTL={isRTL}>
         <div ref={menuRef} style={{ position: 'relative' }}>
-          <HamburgerButton
+          <Button
             onClick={toggleMenu}
             aria-label={t('Menu')}
             aria-expanded={menuOpen}
@@ -1468,7 +1309,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
               <HamburgerLine />
             </HamburgerIcon>
             {username || t('User Profile')}
-          </HamburgerButton>
+          </Button>
           
           {/* Dropdown Menu */}
           {menuOpen && (

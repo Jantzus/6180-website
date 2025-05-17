@@ -8,7 +8,7 @@ import {
   InstructionHeading, 
   InstructionList, 
   InstructionItem, 
-  CloseButton, 
+  Button, 
   ItalicText 
 } from "@/styles/styled-components";
 import { QRCodeModalProps, PasswordModalProps } from "@/lib/types";
@@ -59,9 +59,9 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({
           </ItalicText>
         </InstructionsContainer>
 
-        <CloseButton onClick={onClose}>
+        <Button primary onClick={onClose}>
           {t('Close')}
-        </CloseButton>
+        </Button>
       </ModalContent>
     </Modal>
   );
@@ -124,37 +124,27 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({
             </div>
             
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <button
+              <Button
                 type="button"
                 onClick={onClose}
                 style={{
-                  padding: "10px 16px",
                   backgroundColor: "#f3f4f6",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: "pointer",
-                  fontSize: "14px"
+                  color: "#333"
                 }}
               >
                 {t('Cancel')}
-              </button>
+              </Button>
               
-              <button
+              <Button
                 type="submit"
+                primary
                 disabled={isSubmitting || !password}
                 style={{
-                  padding: "10px 16px",
-                  backgroundColor: "#006adc",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: password ? "pointer" : "not-allowed",
-                  opacity: password ? 1 : 0.7,
-                  fontSize: "14px"
+                  opacity: password ? 1 : 0.7
                 }}
               >
                 {isSubmitting ? t('Submitting...') : t('Submit')}
-              </button>
+              </Button>
             </div>
           </form>
         </div>

@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import styled from "styled-components";
 import { 
-  WatermarkOverlay,
+  Overlay,
   WatermarkText,
   FullscreenContainer,
-  NavigationButton,
+  Button,
   NavButtonsContainer,
   OwnerProfileLink,
   Image,
@@ -182,20 +182,20 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
         </CloseButton>
         
         <NavButtonsContainer>
-          <NavigationButton 
+          <Button 
             onClick={hasPrev ? onPrev : undefined}
             disabled={!hasPrev}
             isDisabled={!hasPrev}
           >
             ←
-          </NavigationButton>
-          <NavigationButton 
+          </Button>
+          <Button 
             onClick={hasNext ? onNext : undefined}
             disabled={!hasNext}
             isDisabled={!hasNext}
           >
             →
-          </NavigationButton>
+          </Button>
         </NavButtonsContainer>
       </Header>
       
@@ -218,9 +218,9 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
               }}
             />
             {showWatermark && (
-              <WatermarkOverlay>
+              <Overlay type="watermark">
                 <WatermarkText>6180 Watermarked</WatermarkText>
-              </WatermarkOverlay>
+              </Overlay>
             )}
             {/* Show thumbnail while loading */}
             {!isLoaded && item.thumbnailUrl && (
@@ -241,9 +241,9 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
               {t('Your browser does not support the video tag.')}
             </VideoElement>
             {showWatermark && (
-              <WatermarkOverlay>
+              <Overlay type="watermark">
                 <WatermarkText>6180 Watermarked</WatermarkText>
-              </WatermarkOverlay>
+              </Overlay>
             )}
           </MediaWrapper>
         )}

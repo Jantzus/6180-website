@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { 
   DropdownMenu,
-  HamburgerButton,
+  Button,
   HamburgerIcon,
   HamburgerLine,
-  ActionButton, 
-  MenuButton,
-  PasswordActionButton
+  MenuButton
 } from "@/styles/styled-components";
 import { ResponsiveHeaderProps } from "@/lib/types";
 
@@ -100,7 +98,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
         {/* Only show the hamburger menu if user can save or create sub-album */}
         {!showingEnterPassword && (
           <div style={{ flexShrink: 0 }}>
-            <HamburgerButton 
+            <Button 
               onClick={toggleMenu}
               aria-label={t('Menu')}
               aria-expanded={menuOpen}
@@ -111,14 +109,14 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
                 <HamburgerLine />
               </HamburgerIcon>
               {t('Save')}
-            </HamburgerButton>
+            </Button>
             
             {menuOpen && (
               <DropdownMenu>
                 {usingFolderInviteGrantsRightToAddItems && (
-                  <MenuButton onClick={() => handleAction(addPhotosToAlbum)}>
+                  <Button onClick={() => handleAction(addPhotosToAlbum)}>
                     {t('Add Photos To Album')}
-                  </MenuButton>
+                  </Button>
                 )}
 
                 <MenuButton onClick={() => handleAction(saveAlbum)}>
@@ -136,9 +134,9 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
         {/* Show Enter Password button if needed */}
         {showingEnterPassword && passwordPolicy && passwordPolicy !== 'NoPassword' && (
           <div style={{ flexShrink: 0 }}> 
-            <PasswordActionButton onClick={promptForPassword}>
+            <Button onClick={promptForPassword} passwordSet={true}>
               {t('Enter Password')}
-            </PasswordActionButton>
+            </Button>
           </div>
         )}
       </div>
@@ -162,27 +160,27 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
           flexWrap: 'nowrap'
         }}>
           {usingFolderInviteGrantsRightToAddItems && (
-            <ActionButton onClick={addPhotosToAlbum}>
+            <Button onClick={addPhotosToAlbum}>
               {t('Add Photos')}
-            </ActionButton>
+            </Button>
           )}
           
-          <ActionButton onClick={saveAlbum}>
+          <Button onClick={saveAlbum}>
             {t('Save To My Library')}
-          </ActionButton>
+          </Button>
 
-          <ActionButton onClick={saveAlbum}>
+          <Button onClick={saveAlbum}>
             {t('Download To My Device')}
-          </ActionButton>
+          </Button>
         </div>
       )}
       
       {/* Show Enter Password button if needed */}
       {showingEnterPassword && (
         <div>
-          <PasswordActionButton onClick={promptForPassword}>
+          <Button onClick={promptForPassword} passwordSet={true}>
             {t('Enter Password')}
-          </PasswordActionButton>
+          </Button>
           </div>
       )}
     </div>

@@ -13,20 +13,20 @@ import styled from 'styled-components'
 import {
   GlobalStyle,
   AppContainer,
-  Logo,
-  BigButton,
+  Button,
   LegalLinksFooter,
-  LegalLinkFooterButton
+  LegalLinkFooterButton,
+  Card,
+  Message
 } from "@/styles/styled-components";
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
 
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION })
 
 // Additional styled components specific to login page
-const LoginCard = styled.div`
+const LoginCard = styled(Card)`
   max-width: 400px;
   width: 100%;
-  background: #ffffff;
   padding: 32px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
@@ -43,18 +43,9 @@ const LoginHeader = styled.div`
   margin-bottom: 24px;
 `;
 
-const LogoImage = styled(Logo)`
+const LogoImage = styled.img`
   height: 60px;
   margin-bottom: 16px;
-`;
-
-const ErrorMessage = styled.div`
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  font-size: 14px;
 `;
 
 const Input = styled.input`
@@ -96,14 +87,6 @@ const ResendButton = styled.button`
   cursor: pointer;
   font-size: 14px;
   text-decoration: underline;
-`;
-
-const LoginButton = styled(BigButton)`
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  opacity: ${props => props.disabled ? 0.7 : 1};
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
 `;
 
 // New styled component for the container
@@ -335,9 +318,9 @@ const LoginContent = () => {
               </LoginHeader>
 
               {errorMessage && (
-                <ErrorMessage>
+                <Message type="error">
                   {errorMessage}
-                </ErrorMessage>
+                </Message>
               )}
 
               {!codeSent ? (
@@ -349,13 +332,14 @@ const LoginContent = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('Enter your email')}
                   />
-                  <LoginButton
+                  <Button
                     primary
                     onClick={sendCode}
                     disabled={status === 'sending' || !email.trim()}
+                    style={{ width: '100%', padding: '12px', fontSize: '16px' }}
                   >
                     {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
-                  </LoginButton>
+                  </Button>
                   <InfoText>
                     {t('We\'ll send a secure verification code to your email')}
                   </InfoText>
@@ -375,14 +359,14 @@ const LoginContent = () => {
                     onChange={handleOtpChange}
                     placeholder={t('Enter 6-digit code')}
                   />
-                  <LoginButton
+                  <Button
                     primary
                     onClick={confirmCode}
                     disabled={status === 'verifying' || otpCode.length !== 6}
-                    style={{ backgroundColor: '#28a745' }}
+                    style={{ width: '100%', padding: '12px', fontSize: '16px', backgroundColor: '#28a745' }}
                   >
                     {status === 'verifying' ? t('Verifying...') : t('Verify Code')}
-                  </LoginButton>
+                  </Button>
                   <ResendWrapper>
                     <span>{t("Didn't receive a code?")}</span>
                     <ResendButton onClick={handleResendCode}>

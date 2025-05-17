@@ -5,7 +5,7 @@ import { PhotoPageVideoThumbnail } from "@/components/PhotoPageVideoThumbnail";
 import { 
   SelectionCheckbox,
   Checkmark,
-  OwnerBadge
+  Badge
 } from "@/styles/styled-components";
 
 // Media Item Component
@@ -77,7 +77,7 @@ export const MediaItemDisplayComponent: React.FC<{
       
       {/* Display owner badge if owner name exists */}
       {ownerName && (
-        <OwnerBadge>{ownerName}</OwnerBadge>
+        <Badge position="bottomRight" light>{ownerName}</Badge>
       )}
     </div>
   );

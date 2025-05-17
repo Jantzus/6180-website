@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { 
   LazyImageContainer, 
-  StyledImage, 
+  Image as StyledImage, 
   LoadingPlaceholder,
-  LoadingOverlay,
-  WatermarkOverlay,
+  Overlay,
   WatermarkText
 } from "@/styles/styled-components";
 import { PhotoPageLazyImageProps } from "@/lib/types";
@@ -30,7 +29,7 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
   // First load the thumbnail if available
   useEffect(() => {
     if (thumbnailSrc) {
-      const img = new Image();
+      const img = new globalThis.Image();
       img.src = thumbnailSrc;
       img.onload = () => {
         setImageSrc(thumbnailSrc);
@@ -44,7 +43,7 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
     if (loadFullResolution && !fullResLoaded) {
       setIsLoadingFullRes(true);
       
-      const img = new Image();
+      const img = new globalThis.Image();
       img.src = src;
       img.onload = () => {
         setImageSrc(src);
@@ -64,18 +63,19 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
         alt={alt} 
         className={className}
         isLoaded={isLoaded}
+        objectFit="cover"
         style={{ cursor: onClick ? 'pointer' : 'default' }}
       />
       {!isLoaded && <LoadingPlaceholder />}
       {isLoadingFullRes && (
-        <LoadingOverlay>
+        <Overlay type="loading">
           {t('Loading full resolution...')}
-        </LoadingOverlay>
+        </Overlay>
       )}
       {showWatermark && isLoaded && (
-        <WatermarkOverlay>
+        <Overlay type="watermark">
           <WatermarkText>6180 Watermarked</WatermarkText>
-        </WatermarkOverlay>
+        </Overlay>
       )}
     </LazyImageContainer>
   );

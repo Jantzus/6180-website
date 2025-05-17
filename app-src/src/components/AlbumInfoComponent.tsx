@@ -3,7 +3,7 @@ import { AlbumData } from "@/lib/types";
 import {
   AlbumTitle, 
   AlbumTitleStrong, 
-  DescriptionBlock, 
+  Card, 
   DescriptionText
 } from "@/styles/styled-components";
 
@@ -23,9 +23,9 @@ export const AlbumInfoComponent: React.FC<{
       )}
       
       {albumData.folderDescription && albumData.folderDescription.trim() !== "" && (
-        <DescriptionBlock id="description-container">
+        <Card id="description-container">
           <DescriptionText>{albumData.folderDescription}</DescriptionText>
-        </DescriptionBlock>
+        </Card>
       )}
     </>
   );

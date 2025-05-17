@@ -4,19 +4,14 @@ import {
   SelectedPhoto,
 } from "@/lib/types";
 import {
-  ProgressContainer,
+  Card,
   ProgressTitle,
-  OverallProgress,
   ProgressStats,
   ProgressBarBg,
   ProgressBar,
   ProgressDetails,
   ProgressItem,
-  SavingProgressContainer,
-  SavingProgressTitle,
-  SavingProgressText,
-  SavingProgressBarBg,
-  SavingProgressBar,
+  ProgressText,
   SelectedCount,
   PhotoGrid,
   PhotoCard,
@@ -24,12 +19,11 @@ import {
   MediaPreview,
   MediaItem,
   VideoItem,
-  UploadProgressBarBg,
-  UploadProgressBar,
+  ProgressBar as UploadProgressBar,
   FileInfo,
-  ErrorMessage,
+  Message,
   RemoveButton,
-  FolderDetails,
+  Card as FolderDetails,
   FormGroup,
   FormLabel,
   FormInput,
@@ -85,9 +79,9 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
               
               {/* Upload progress bar for in-progress items */}
               {(photo.status === 'uploading' || photo.status === 'processing') && (
-                <UploadProgressBarBg>
+                <ProgressBarBg bottom="4px" left="4px" right="4px" height="4px">
                   <UploadProgressBar progress={photo.progress} status={photo.status} />
-                </UploadProgressBarBg>
+                </ProgressBarBg>
               )}
             </MediaPreview>
             
@@ -100,9 +94,9 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
 
             {/* Error message if any */}
             {photo.status === 'error' && photo.errorMessage && (
-              <ErrorMessage>
+              <Message type="error">
                 {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
-              </ErrorMessage>
+              </Message>
             )}
             
             {/* Remove button */}
@@ -132,10 +126,10 @@ export const ProgressTrackerComponent: React.FC<ProgressTrackerComponentProps> =
   }
 
   return (
-    <ProgressContainer>
+    <Card>
       <ProgressTitle>{t('Upload Progress')}</ProgressTitle>
       
-      <OverallProgress>
+      <div>
         <ProgressStats>
           <span>{t('Overall Progress')}: {Math.round(progressTracker.overallProgress)}%</span>
           <span>{progressTracker.filesComplete} {t('of')} {progressTracker.totalFiles} {t('complete')}</span>
@@ -143,7 +137,7 @@ export const ProgressTrackerComponent: React.FC<ProgressTrackerComponentProps> =
         <ProgressBarBg>
           <ProgressBar progress={progressTracker.overallProgress} />
         </ProgressBarBg>
-      </OverallProgress>
+      </div>
       
       <ProgressDetails>
         {progressTracker.filesUploading > 0 && (
@@ -159,7 +153,7 @@ export const ProgressTrackerComponent: React.FC<ProgressTrackerComponentProps> =
           <ProgressItem isError>{t('Failed')}: {progressTracker.filesWithError}</ProgressItem>
         )}
       </ProgressDetails>
-    </ProgressContainer>
+    </Card>
   );
 };
 
@@ -177,13 +171,13 @@ export const SavingProgressComponent: React.FC<SavingProgressComponentProps> = (
   }
 
   return (
-    <SavingProgressContainer>
-      <SavingProgressTitle>{t('Saving Album')}</SavingProgressTitle>
-      <SavingProgressText id="saveProgressText">{t('Moving files...')}</SavingProgressText>
-      <SavingProgressBarBg>
-        <SavingProgressBar id="saveProgress" style={{ width: `${savingProgress}%` }} />
-      </SavingProgressBarBg>
-    </SavingProgressContainer>
+    <Card>
+      <ProgressTitle>{t('Saving Album')}</ProgressTitle>
+      <ProgressText id="saveProgressText">{t('Moving files...')}</ProgressText>
+      <ProgressBarBg>
+        <ProgressBar id="saveProgress" progress={savingProgress/100} />
+      </ProgressBarBg>
+    </Card>
   );
 };
 

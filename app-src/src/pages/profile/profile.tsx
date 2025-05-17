@@ -22,8 +22,7 @@ import { FolderType } from "@/lib/types";
 import {
   GlobalStyle,
   AppContainer,
-  ErrorState,
-  EmptyState,
+  State,
   ProfileHeader
 } from "@/styles/styled-components.tsx";
 
@@ -323,16 +322,16 @@ const PersonaViewer: React.FC = () => {
         
         {/* Loading State */}
         {isLoading && (
-          <EmptyState>
+          <State type="empty">
             <p>{t('Loading albums...')}</p>
-          </EmptyState>
+          </State>
         )}
         
         {/* Error State */}
         {error && (
-          <ErrorState>
+          <State type="error">
             <p>{error}</p>
-          </ErrorState>
+          </State>
         )}
         
         {/* Album List */}
@@ -344,14 +343,6 @@ const PersonaViewer: React.FC = () => {
             isProfileView={true}
           />
         )}
-        
-        {/* File Input for adding photos when authorized */}
-        {/* {isLoggedIn && (
-          <FileInput 
-            onFileSelection={handleFileSelection} 
-            ref={fileInputRef}
-          />
-        )} */}
       </AppContainer>
     </>
   );

@@ -11,9 +11,8 @@ import {
   AppContainer,
   HeaderContainer,
   LogoContainer,
-  AppName,
+  Button,
   Logo,
-  BigButton,
   Headline,
   LegalLinksFooter,
   LegalLinkFooterButton
@@ -93,9 +92,12 @@ const IndexPage: React.FC = () => {
                 src="images/logo_no_background.png" 
                 alt="6180 Logo" 
               />
-              <AppName isRTL={isRTL}>
-                6180
-              </AppName>
+              <h1 style={{ 
+                fontSize: '1.4em', 
+                fontWeight: 'bold', 
+                color: '#222',
+                margin: 0
+              }}>6180</h1>
             </LogoContainer>
             
             <LanguageSelector className="language-selector" />
@@ -104,16 +106,16 @@ const IndexPage: React.FC = () => {
           <div style={{ textAlign: 'center' }}>
             <Headline>{t('Create Albums Together')}</Headline>
             
-            <BigButton 
+            <Button 
               primary
               isHovered={hoverButtonIndex === 0}
               onClick={goToAlbums}
               onMouseEnter={() => setHoverButtonIndex(0)}
               onMouseLeave={() => setHoverButtonIndex(null)}
-              style={{ marginTop: '20px' }}
+              style={{ marginTop: '20px', padding: '12px 20px' }}
             >
               {t('Start')}
-            </BigButton>
+            </Button>
           </div>
 
           <LegalLinksFooter>

@@ -4,9 +4,8 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import { 
   ThumbnailWrapper,
   PlayButton,
-  DurationBadge,
-  LoadingOverlay,
-  WatermarkOverlay,
+  Badge,
+  Overlay,
   WatermarkText
 } from "@/styles/styled-components";
 
@@ -90,9 +89,9 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
           {t('Your browser does not support the video tag.')}
         </video>
         {showWatermark && (
-          <WatermarkOverlay>
+          <Overlay type="watermark">
             <WatermarkText>6180 Watermarked</WatermarkText>
-          </WatermarkOverlay>
+          </Overlay>
         )}
       </div>
     );
@@ -107,9 +106,9 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
           alt={`Video thumbnail ${index + 1}`}
           showWatermark={showWatermark}
         />
-        <LoadingOverlay>
+        <Overlay type="loading">
           {t('Loading video...')}
-        </LoadingOverlay>
+        </Overlay>
         <video 
           ref={videoRef} 
           style={{ display: 'none' }} 
@@ -130,7 +129,7 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
         showWatermark={showWatermark}
       />
       <PlayButton />
-      <DurationBadge>{duration}</DurationBadge>
+      <Badge position="bottomLeft">{duration}</Badge>
     </ThumbnailWrapper>
   );
 };

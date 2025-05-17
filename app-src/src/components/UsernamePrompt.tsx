@@ -3,14 +3,11 @@ import { getLanguageDirection } from "@/lib/i18n";
 
 // Import styled components
 import { 
-  ModalOverlay,
-  UsernameModal,
-  UsernameTitle,
-  UsernameDescription,
+  Modal,
+  ModalContent,
   UsernameInput,
-  UsernameError,
-  UsernameButton,
-  UsernameAltButton
+  Message,
+  Button
 } from "@/styles/styled-components";
 
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
@@ -42,24 +39,35 @@ export const UsernamePrompt: React.FC<{
     onSuccess(newName);
   };
 
+  const isRTL = getLanguageDirection(language as "en") === "rtl";
+
   if (!showUsernamePrompt) return null;
 
   return (
-    <ModalOverlay>
-      <UsernameModal isRTL={getLanguageDirection(language as "en") === "rtl"}>
-        <UsernameTitle>
+    <Modal zIndex={9999}>
+      <ModalContent style={{ 
+        background: '#fff',
+        padding: '30px',
+        borderRadius: '12px',
+        width: '90%',
+        maxWidth: '400px',
+        boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+        direction: isRTL ? 'rtl' : 'ltr'
+      }}>
+        <h2 style={{ fontSize: '16px', marginBottom: '12px' }}>
           {t('Enter Username')}
-        </UsernameTitle>
-        <UsernameDescription>
+        </h2>
+        <p style={{ fontSize: '14px', marginBottom: '16px', color: '#666' }}>
           {t('Username should contain only letters, numbers and hyphens. Example: john-doe2')}
-        </UsernameDescription>
+        </p>
         <UsernameInput
           value={usernameInput}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsernameInput(e.target.value)}
-          isRTL={getLanguageDirection(language as "en") === "rtl"}
+          isRTL={isRTL}
         />
-        {usernameError && <UsernameError>{usernameError}</UsernameError>}
-        <UsernameButton
+        {usernameError && <Message type="error" style={{ fontSize: '14px', padding: '8px', marginBottom: '12px' }}>{usernameError}</Message>}
+        <Button
+          primary
           disabled={isSubmittingUsername}
           onClick={() => {
             if (!validateUsername(usernameInput)) {
@@ -68,18 +76,20 @@ export const UsernamePrompt: React.FC<{
             }
             submitUsername(usernameInput, handleSuccessfulUsernameUpdate);
           }}
+          style={{ width: '100%', marginBottom: '10px' }}
         >
           {t('Select Username')}
-        </UsernameButton>
+        </Button>
         {showAltButton && (
-          <UsernameAltButton
+          <Button
             disabled={isSubmittingUsername}
             onClick={() => appendRandomDigits(handleSuccessfulUsernameUpdate)}
+            style={{ width: '100%' }}
           >
             {t('Add Random Digits to Username')}
-          </UsernameAltButton>
+          </Button>
         )}
-      </UsernameModal>
-    </ModalOverlay>
+      </ModalContent>
+    </Modal>
   );
 };

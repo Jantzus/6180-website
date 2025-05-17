@@ -5,7 +5,7 @@ import {
 } from "@/lib/types";
 import { 
   SelectionBanner,
-  ActionButton
+  Button
 } from "@/styles/styled-components";
 
 // Select Photos Button Component
@@ -81,9 +81,9 @@ export const PasswordProtectionMessage: React.FC<{
         </div>
       )}
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
-        <ActionButton onClick={promptForPassword}>
+        <Button onClick={promptForPassword}>
           {t('Enter Password')}
-        </ActionButton>
+        </Button>
       </div>
     </div>
   );

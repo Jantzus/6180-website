@@ -10,7 +10,7 @@ import { S3_BUCKET_URL } from "@/lib/config";
 import { 
   PolicyIndicator, 
   AlbumDescription, 
-  EmptyState,
+  State,
   AlbumDates
 } from "@/styles/styled-components.tsx";
 
@@ -169,12 +169,6 @@ const ContactsText = styled.p<{ isRTL: boolean }>`
   text-align: ${props => props.isRTL ? "right" : "left"};
 `;
 
-// const NoAlbumsText = styled.p`
-//   font-size: 16px;
-//   color: #555;
-//   width: 100%;
-// `;
-
 // Create a wrapper component instead of directly styling LazyImage
 const ThumbnailWrapper = styled.div`
   width: 160px;
@@ -297,9 +291,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
   if (folders.length === 0 && !isUploading) {
     return (
-      <EmptyState>
+      <State type="empty">
         <p>{t('No albums found')}</p>
-      </EmptyState>
+      </State>
     );
   }
 

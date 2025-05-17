@@ -1,8 +1,7 @@
 import { AlbumData } from "@/lib/types";
 import { 
   MediaGrid, 
-  ErrorMessage, 
-  LoadingMessage
+  Message
 } from "@/styles/styled-components";
 import { MediaItemDisplayComponent } from "@/components/MediaItemDisplayComponent";
 
@@ -34,26 +33,26 @@ export const AlbumMediaGrid: React.FC<{
 }) => {
   if (isLoading) {
     return (
-      <LoadingMessage id="loading-message">
+      <Message type="loading" id="loading-message">
         {t('Loading album content...')}
-      </LoadingMessage>
+      </Message>
     );
   }
   
   if (error) {
-    return <ErrorMessage>{error}</ErrorMessage>;
+    return <Message type="error">{error}</Message>;
   }
   
   if (!shouldShowContent()) {
     return (
       <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '40px 0' }}>
-        <ErrorMessage>{t('Enter the password to view album contents')}</ErrorMessage>
+        <Message type="error">{t('Enter the password to view album contents')}</Message>
       </div>
     );
   }
   
   if (!albumData || albumData.mediaItems.length === 0) {
-    return <ErrorMessage>{t('No media found in this album')}</ErrorMessage>;
+    return <Message type="error">{t('No media found in this album')}</Message>;
   }
   
   return (

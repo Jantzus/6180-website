@@ -8,9 +8,7 @@ import {
   HeaderContainer,
   ProfileLink,
   ActionButtons,
-  PrimaryButton,
-  SecondaryButton,
-  PasswordButton,
+  Button,
   HiddenFileInput
 } from "@/styles/styled-components";
 import { UsernamePrompt } from "@/components/UsernamePrompt";
@@ -401,7 +399,7 @@ const SaveAlbum = () => {
             />
             
             {/* Add Photos button - Show for both regular albums and sub-albums */}
-            <SecondaryButton
+            <Button
               onClick={() => {
                 const input = document.getElementById("file-input") as HTMLInputElement;
                 input?.click();
@@ -409,25 +407,26 @@ const SaveAlbum = () => {
               disabled={isSavingAlbum}
             >
               {t('Add More Photos')}
-            </SecondaryButton>
+            </Button>
             
             {/* Only show password button if user is creator */}
             {isCreator === true && (
-              <PasswordButton
+              <Button
                 passwordSet={passwordProtectionOption !== 'NoPassword'}
                 onClick={handleOpenPasswordDialog}
                 disabled={isSavingAlbum}
               >
                 {getPasswordPolicyButtonText()}
-              </PasswordButton>
+              </Button>
             )}
 
-            <PrimaryButton
+            <Button
+              primary
               onClick={handleSaveAlbum}
               disabled={isSavingAlbum}
             >
               {isSavingAlbum ? t('Saving Album...') : t('Save Album')}
-            </PrimaryButton>
+            </Button>
           </ActionButtons>
           
           {/* Username Prompt Modal */}

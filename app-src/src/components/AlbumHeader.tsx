@@ -4,16 +4,14 @@ import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
 import { 
   Header, 
   HeaderContent,
-  HeaderControlsWithFullWidth,
-  CreateAlbumButton, 
+  HeaderControls,
+  Button, 
   RowSelectorContainer, 
   RowSelectorLabel, 
   RowSelectorSelect,
   DropdownMenu,
-  HamburgerButton,
   HamburgerIcon,
   HamburgerLine,
-  ActionButton,
   MenuButton
 } from "@/styles/styled-components";
 import ResponsiveHeader from "@/components/HeaderComponents";
@@ -159,7 +157,7 @@ export const AlbumHeader: React.FC<{
   // Selection mode actions
   const renderSelectionModeActions = () => (
     <div style={{ display: 'flex', gap: '16px' }}>
-      <ActionButton 
+      <Button 
         onClick={shareSelectPhotos} 
         disabled={selectedItems.size === 0}
         style={{ 
@@ -169,10 +167,10 @@ export const AlbumHeader: React.FC<{
         }}
       >
         {t('Share Select Photos')} ({selectedItems.size})
-      </ActionButton>
-      <ActionButton onClick={cancelSelection}>
+      </Button>
+      <Button onClick={cancelSelection}>
         {t('Cancel')}
-      </ActionButton>
+      </Button>
     </div>
   );
 
@@ -182,16 +180,16 @@ export const AlbumHeader: React.FC<{
     !isAuthorized && 
     passwordPolicy && 
     passwordPolicy !== 'NoPassword' && (
-      <ActionButton onClick={promptForPassword}>
+      <Button onClick={promptForPassword} passwordSet={true}>
         {t('Enter Password')}
-      </ActionButton>
+      </Button>
     )
   );
 
   // Actions menu for mobile view
   const renderMobileMenu = () => (
     <>
-      <HamburgerButton 
+      <Button 
         onClick={toggleMenu}
         aria-label={t('Menu')}
         aria-expanded={menuOpen}
@@ -202,7 +200,7 @@ export const AlbumHeader: React.FC<{
           <HamburgerLine />
         </HamburgerIcon>
         {t('Actions')}
-      </HamburgerButton>
+      </Button>
       
       {menuOpen && (
         <DropdownMenu>
@@ -229,14 +227,14 @@ export const AlbumHeader: React.FC<{
       flexWrap: 'nowrap'
     }}>
       {getActionItems().map((item, index) => (
-        <ActionButton
+        <Button
           key={index}
           onClick={item.onClick}
           style={item.style}
           disabled={item.disabled}
         >
           {item.label}
-        </ActionButton>
+        </Button>
       ))}
     </div>
   );
@@ -257,9 +255,9 @@ export const AlbumHeader: React.FC<{
       }}>
         <div style={{ flexShrink: 0 }}> 
           {!showingEnterPassword() && (
-            <CreateAlbumButton onClick={createSubalbum}>
+            <Button onClick={createSubalbum}>
               {t('Share Select Photos')}
-            </CreateAlbumButton>
+            </Button>
           )}
         </div>
         
@@ -309,9 +307,9 @@ export const AlbumHeader: React.FC<{
   return (
     <Header>
       <HeaderContent>
-        <HeaderControlsWithFullWidth>
+        <HeaderControls fullWidth>
           {renderMainContent()}
-        </HeaderControlsWithFullWidth>
+        </HeaderControls>
         <RowSelectorContainer>
           <RowSelectorLabel htmlFor="columns" id="columns-label">
             <strong>{t('Columns:')}</strong>
