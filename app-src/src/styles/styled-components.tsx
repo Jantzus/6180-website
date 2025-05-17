@@ -1,5 +1,8 @@
+import React, { useState, useEffect, useRef } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
+
 import { UploadStatus } from "@/lib/types";
+import { useTranslation } from "@/lib/i18n/hooks";
 
 // ========== Styled Components ==========
 
@@ -756,6 +759,12 @@ export const MenuButton = styled.button`
   text-align: left;
 `;
 
+export const AlbumDates = styled.div<{ isRTL: boolean }>`
+  font-size: 13px;
+  color: #777;
+  text-align: ${props => props.isRTL ? "right" : "left"};
+  margin-top: 4px;
+`;
 
 // Album List Styled Components
 export const EmptyState = styled.div`
@@ -784,3 +793,122 @@ export const ErrorState = styled.div`
     color: #d32f2f;
   }
 `;
+
+// ProfileHeader Component
+interface ProfileHeaderProps {
+  username: string;
+  isCurrentUser: boolean;
+  isRTL: boolean;
+}
+
+// ProfileHeader Component
+export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ 
+  username, 
+  isCurrentUser,
+  isRTL 
+}) => {
+  const { t } = useTranslation();
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  
+  // Toggle dropdown menu
+  const toggleMenu = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setMenuOpen(!menuOpen);
+  };
+
+  // Close menu when clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    
+    // Handle scroll to close menu
+    const handleScroll = () => {
+      setMenuOpen(false);
+    };
+    
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      window.addEventListener('scroll', handleScroll);
+    }
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [menuOpen]);
+  
+  // Execute action and close menu
+  const handleAction = (action: () => void) => {
+    action();
+    setMenuOpen(false);
+  };
+  
+  return (
+    <ProfileHeaderContainer isRTL={isRTL}>
+      <ProfileControls isRTL={isRTL}>
+        <div ref={menuRef} style={{ position: 'relative' }}>
+          <HamburgerButton
+            onClick={toggleMenu}
+            aria-label={t('Menu')}
+            aria-expanded={menuOpen}
+          >
+            <HamburgerIcon>
+              <HamburgerLine />
+              <HamburgerLine />
+              <HamburgerLine />
+            </HamburgerIcon>
+
+            {/* <ProfileAvatar>
+              {username ? username.charAt(0).toUpperCase() : "?"}
+            </ProfileAvatar> */}
+
+            {/* <PublicProfileDisplayName> */}
+              {username || t('User Profile')}
+            {/* </PublicProfileDisplayName> */}
+            
+          </HamburgerButton>
+          
+          {/* Dropdown Menu */}
+          {menuOpen && (
+            <DropdownMenu>
+              <MenuButton
+                onClick={() => handleAction(() => {
+                  alert(t('Bio feature is coming soon! Stay tuned for updates where you can share more about yourself.'));
+                })}
+              >
+                {t('Bio')}
+              </MenuButton>
+              
+              <MenuButton
+                onClick={() => handleAction(() => {
+                  alert(t('Email feature is coming soon! Soon you will be able to share your email with connections.'));
+                })}
+              >
+                {t('E-mail')}
+              </MenuButton>
+              
+              <MenuButton
+                onClick={() => handleAction(() => {
+                  alert(t('Add Contact feature is coming soon! You will be able to add this person as a contact on 6180.'));
+                })}
+              >
+                {t('Contact On 6180')}
+              </MenuButton>
+            </DropdownMenu>
+          )}
+        </div>
+      </ProfileControls>
+      
+      {isCurrentUser && (
+        <PublicProfileExplanation>
+          <p>{t('This is how others see your public profile')}</p>
+        </PublicProfileExplanation>
+      )}
+    </ProfileHeaderContainer>
+  );
+};

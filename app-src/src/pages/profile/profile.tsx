@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom/client";
 import { 
   checkLoginWithoutRedirect, 
@@ -15,12 +15,6 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
 import { SearchBar } from "@/components/SearchBar";
-// Import the needed components
-import { 
-  ProfileHeader,
-  AlbumFooter,
-  FileInput
-} from "./ProfileComponents";
 // Import the unified AlbumList
 import { AlbumList } from "@/components/AlbumList";
 import { FolderType } from "@/lib/types";
@@ -30,12 +24,11 @@ import {
   AppContainer,
   ErrorState,
   EmptyState,
+  ProfileHeader
 } from "@/styles/styled-components.tsx";
 
 // Main PersonaViewer Component
 const PersonaViewer: React.FC = () => {
-  // Use a regular ref instead of the hook for simplicity
-  const fileInputRef = useRef<HTMLInputElement>(null);
   
   const [ownerItemId, setOwnerItemId] = useState<string>("");
   const [profileUsername, setProfileUsername] = useState<string | null>(null);
@@ -47,9 +40,6 @@ const PersonaViewer: React.FC = () => {
   // Auth state
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
-  
-  // File picker state
-  const [currentFolderId, setCurrentFolderId] = useState<string | null>(null);
   
   // Check if the logged-in user is the owner of this profile
   const isOwner = useMemo(() => {
@@ -300,45 +290,6 @@ const PersonaViewer: React.FC = () => {
     }
   };
   
-  // File upload logic
-  const handleFileSelection = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
-    if (!files.length) return;
-    
-    // Redirect to album editor with folderId
-    if (e.target.value && e.target.files?.length) {
-      // Store file selection in localStorage temporarily
-      // In a real implementation, you would integrate with your upload process
-      // For now, just redirect to the save-album page
-      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(files.map(f => ({ 
-        name: f.name,
-        size: f.size,
-        type: f.type 
-      }))));
-      
-      if (currentFolderId) {
-        window.location.href = `/save-album.html?folderId=${encodeURIComponent(currentFolderId)}`;
-      } else {
-        window.location.href = "/save-album.html";
-      }
-    }
-    
-    // Clear input value
-    if (e.target) e.target.value = "";
-  };
-  
-  // Function to open file picker with specific folder
-  const openFilePicker = (folderId: string | null | undefined) => {
-    
-    if (folderId) {
-
-      setCurrentFolderId(folderId);
-      fileInputRef.current?.click();
-
-    }
-
-  };
-  
   // Filter folders based on search query
   const filteredFolders = useMemo(() => {
     if (!searchQuery) return folders;
@@ -349,20 +300,6 @@ const PersonaViewer: React.FC = () => {
       return nameMatch || descMatch;
     });
   }, [folders, searchQuery]);
-  
-  // Determine if the current user is allowed to add photos
-  const hasAddPhotoPermission = isLoggedIn;
-
-  // Update folder profileIds
-  const updateProfileIds = (folderId: string, profileIds: string[]) => {
-    setFolders(prevFolders => 
-      prevFolders.map(folder => 
-        folder.folderId === folderId 
-          ? { ...folder, profileIds } 
-          : folder
-      )
-    );
-  };
 
   return (
     <>
@@ -403,23 +340,18 @@ const PersonaViewer: React.FC = () => {
           <AlbumList 
             folders={filteredFolders}
             setFolders={setFolders}
-            isOwner={isOwner}
-            hasAddPhotoPermission={hasAddPhotoPermission}
             cognitoUsername={cognitoUsername}
-            openFilePicker={openFilePicker}
             isProfileView={true}
-            updateProfileIds={updateProfileIds}
-            footerComponent={AlbumFooter}
           />
         )}
         
         {/* File Input for adding photos when authorized */}
-        {isLoggedIn && (
+        {/* {isLoggedIn && (
           <FileInput 
             onFileSelection={handleFileSelection} 
             ref={fileInputRef}
           />
-        )}
+        )} */}
       </AppContainer>
     </>
   );

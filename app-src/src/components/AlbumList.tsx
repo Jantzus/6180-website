@@ -10,24 +10,9 @@ import { S3_BUCKET_URL } from "@/lib/config";
 import { 
   PolicyIndicator, 
   AlbumDescription, 
-  EmptyState 
+  EmptyState,
+  AlbumDates
 } from "@/styles/styled-components.tsx";
-
-// Import components from profile styled components if needed
-import {
-  AlbumDates,
-  AlbumCard as ProfileAlbumCard,
-  AlbumLink as ProfileAlbumLink,
-  AlbumContent,
-  AlbumHeader,
-  AlbumDetails,
-  AlbumTitle as ProfileAlbumTitle,
-  ImageContainer,
-  ImageScroller,
-  ImageItem,
-  ImageShadow,
-  PasswordPolicy
-} from "@/styles/profile-styled-components.tsx";
 
 // Styled Components (from original AlbumList.tsx)
 const Container = styled.div<{ isRTL: boolean }>`
@@ -206,10 +191,6 @@ export interface AlbumListProps {
   isUploading?: boolean;
   cognitoUsername: string | null;
   isProfileView?: boolean;
-  updateProfileIds?: (folderId: string, profileIds: string[]) => void;
-  isOwner?: boolean;
-  hasAddPhotoPermission?: boolean;
-  footerComponent?: React.FC<any>;
 }
 
 // The unified AlbumList component
@@ -221,10 +202,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   isUploading = false,
   cognitoUsername,
   isProfileView = false,
-  footerComponent: FooterComponent,
-  isOwner = false,
-  hasAddPhotoPermission = false,
-  updateProfileIds
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
@@ -321,7 +298,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   if (folders.length === 0 && !isUploading) {
     return (
       <EmptyState>
-        <p>{isProfileView ? t('No public albums found') : t('No albums found')}</p>
+        <p>{t('No albums found')}</p>
       </EmptyState>
     );
   }
@@ -340,82 +317,60 @@ export const AlbumList: React.FC<AlbumListProps> = ({
             folder.folderName
           );
 
-          // Filter out files that have valid thumbnails or data keys
-          const validFiles = folder.files.filter(file => 
-            (file.thumbnailDataKey && file.thumbnailDataKey.length > 0) || 
-            (file.dataKey && file.dataKey.length > 0)
-          );
-
           return (
-            <ProfileAlbumCard key={folder.folderId} isRTL={isRTL}>
-              <ProfileAlbumLink href={inviteLink}>
-                <AlbumContent>
-                  <AlbumHeader isRTL={isRTL}>
-                    <AlbumDetails isRTL={isRTL}>
-                      <ProfileAlbumTitle>
-                        {folder.folderName || ""}
-                      </ProfileAlbumTitle>
-                    </AlbumDetails>
-                  </AlbumHeader>
-                  
-                  {/* Only show the image container if there are valid files */}
-                  {validFiles.length > 0 && (
-                    <ImageContainer>
-                      <ImageScroller isRTL={isRTL}>
-                        {validFiles.map((file, i) => (
-                          <ImageItem key={i}>
-                            <LazyImage
-                              thumbnailDataKey={file.thumbnailDataKey}
-                              dataKey={file.dataKey}
-                              alt={t('Thumbnail')}
-                              style={{
-                                width: 160,
-                                height: 100,
-                                objectFit: "cover",
-                                borderRadius: 6,
-                                border: "1px solid #ddd",
-                              }}
-                            />
-                          </ImageItem>
-                        ))}
-                      </ImageScroller>
-                      
-                      {validFiles.length > 3 && (
-                        <ImageShadow isRTL={isRTL} />
-                      )}
-                    </ImageContainer>
-                  )}
-                  
-                  {/* Password Policy Indicator */}
-                  <PasswordPolicy isRTL={isRTL}>
-                    {passwordPolicy !== "NoPassword" && (
-                      <PolicyIndicator>
-                        <span>{getPasswordPolicyText(passwordPolicy)}</span>
-                      </PolicyIndicator>
-                    )}
-                  </PasswordPolicy>
-                  
+            <Container key={folder.folderId} isRTL={isRTL}>
+              <AlbumLink href={inviteLink}>
+                <AlbumCard>
+                  <HeaderSection isRTL={isRTL}>
+                    <TitleSection isRTL={isRTL}>
+                      <AlbumTitle>{folder.folderName || ""}</AlbumTitle>
+                    </TitleSection>
+                  </HeaderSection>
+
                   {/* Album description section */}
                   {folder.folderDescription && folder.folderDescription.length > 1 && (
                     <AlbumDescription isRTL={isRTL}>
                       {folder.folderDescription}
                     </AlbumDescription>
                   )}
+
+                  <GalleryContainer>
+                    <GalleryScroll isRTL={isRTL}>
+                      {folder.files.map((file, i) => (
+                        <ThumbnailWrapper key={i}>
+                          <LazyImage
+                            thumbnailDataKey={file.thumbnailDataKey}
+                            dataKey={file.dataKey}
+                            src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
+                            alt={t('Thumbnail')}
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover',
+                              borderRadius: 6,
+                              border: '1px solid #ddd'
+                            }}
+                          />
+                        </ThumbnailWrapper>
+                      ))}
+                    </GalleryScroll>
+                    
+                    {folder.files.length > 3 && (
+                      <GradientOverlay isRTL={isRTL} />
+                    )}
+                  </GalleryContainer>
                   
-                  {/* Render footer component if provided */}
-                  {FooterComponent && (
-                    <FooterComponent
-                      folder={folder}
-                      isOwner={isOwner}
-                      hasAddPhotoPermission={hasAddPhotoPermission}
-                      cognitoUsername={cognitoUsername}
-                      openFilePicker={openFilePicker}
-                      updateProfileIds={updateProfileIds}
-                    />
-                  )}
-                </AlbumContent>
-              </ProfileAlbumLink>
-            </ProfileAlbumCard>
+                  {/* Password Policy Indicator */}
+                  <PasswordPolicyContainer isRTL={isRTL}>
+                    {passwordPolicy !== "NoPassword" && (
+                      <PolicyIndicator>
+                        <span>{getPasswordPolicyText(passwordPolicy)}</span>
+                      </PolicyIndicator>
+                    )}
+                  </PasswordPolicyContainer>
+                </AlbumCard>
+              </AlbumLink>
+            </Container>
           );
         })}
       </>
