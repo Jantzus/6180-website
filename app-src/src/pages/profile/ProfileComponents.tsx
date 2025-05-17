@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { 
   checkLoginWithoutRedirect, 
   generateInviteLink, 
-  formatDate
 } from "@/lib/utils";
 import {
   AWS_PRIVATE_GRAPHQL_ENDPOINT
@@ -23,7 +22,7 @@ import {
   AlbumHeader,
   AlbumDetails,
   AlbumTitle,
-  AlbumDates,
+  // AlbumDates,
   ImageContainer,
   ImageScroller,
   ImageItem,
@@ -413,10 +412,10 @@ interface AlbumListProps {
 
 export const AlbumList: React.FC<AlbumListProps> = ({ 
   folders,
-  setFolders,
-  hasAddPhotoPermission,
-  cognitoUsername,
-  openFilePicker
+  // setFolders,
+  // hasAddPhotoPermission,
+  // cognitoUsername,
+  // openFilePicker
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
@@ -445,24 +444,22 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   };
 
   // Helper function to update folder profileIds
-  const updateFolderProfileIds = (folderId: string, profileIds: string[]) => {
-    setFolders(prevFolders => 
-      prevFolders.map(folder => 
-        folder.folderId === folderId 
-          ? { ...folder, profileIds } 
-          : folder
-      )
-    );
-  };
+  // const updateFolderProfileIds = (folderId: string, profileIds: string[]) => {
+  //   setFolders(prevFolders => 
+  //     prevFolders.map(folder => 
+  //       folder.folderId === folderId 
+  //         ? { ...folder, profileIds } 
+  //         : folder
+  //     )
+  //   );
+  // };
 
   return (
     <>
       {folders.map((folder) => {
-        const showCreated = folder.createdAt != null;
-        const showUpdated = folder.updatedAt != null && folder.updatedAt !== folder.createdAt;
 
         // Check if user is the creator of the album
-        const isCreator = folder.creatorId === `${cognitoUsername}_____${cognitoUsername}____Account`;
+        // const isCreator = folder.creatorId === `${cognitoUsername}_____${cognitoUsername}____Account`;
 
         // Get password policy from folder data
         const passwordPolicy = folder.folderPassword?.policy || "NoPassword";
@@ -488,16 +485,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     <AlbumTitle>
                       {folder.folderName || ""}
                     </AlbumTitle>
-                    {(showCreated || showUpdated) && (
-                      <AlbumDates isRTL={isRTL}>
-                        {showCreated && folder.createdAt && formatDate(folder.createdAt) && (
-                          <div>{t('Created')}: {formatDate(folder.createdAt)}</div>
-                        )}
-                        {showUpdated && folder.updatedAt && formatDate(folder.updatedAt) && (
-                          <div>{t('Updated')}: {formatDate(folder.updatedAt)}</div>
-                        )}
-                      </AlbumDates>
-                    )}
                   </AlbumDetails>
                 </AlbumHeader>
                 
@@ -539,21 +526,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                 </PasswordPolicy>
                 
                 {/* Album description section */}
-                <AlbumDescription isRTL={isRTL}>
-                  {folder.folderDescription && folder.folderDescription.length > 1 
-                    ? folder.folderDescription 
-                    : ""}
-                </AlbumDescription>
-                
-                {/* AlbumFooter with public profile toggle capability */}
-                <AlbumFooter
-                  folder={folder}
-                  isOwner={isCreator}
-                  hasAddPhotoPermission={hasAddPhotoPermission}
-                  cognitoUsername={cognitoUsername}
-                  openFilePicker={openFilePicker}
-                  updateProfileIds={updateFolderProfileIds}
-                />
+                {folder.folderDescription && folder.folderDescription.length > 1 && (<AlbumDescription isRTL={isRTL}>
+                  {folder.folderDescription}
+                </AlbumDescription>)}
               </AlbumContent>
             </AlbumLink>
           </AlbumCard>

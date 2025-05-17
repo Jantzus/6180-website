@@ -116,7 +116,9 @@ export const useFolderManagement = (log: (message: string) => void) => {
                 albumNanoId                
                 folderName
                 folderDescription
-                creatorId                
+                creatorId    
+                createdAt
+                updatedAt            
                 folderPassword {
                   password
                   policy

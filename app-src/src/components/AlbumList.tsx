@@ -10,6 +10,10 @@ import { FooterSection } from "./FooterSection";
 import { S3_BUCKET_URL } from "@/lib/config";
 import { PolicyIndicator, AlbumDescription } from "@/styles/styled-components.tsx";
 
+import {
+  AlbumDates,
+} from "@/styles/profile-styled-components.tsx";
+
 // Styled Components
 const Container = styled.div<{ isRTL: boolean }>`
   margin-bottom: 30px;
@@ -60,13 +64,6 @@ const AlbumTitle = styled.h2`
   font-size: 20px;
   margin: 0;
   color: #222;
-`;
-
-const DateInfo = styled.div<{ isRTL: boolean }>`
-  font-size: 13px;
-  color: #777;
-  text-align: ${props => props.isRTL ? "right" : "left"};
-  margin-top: 4px;
 `;
 
 const ActionSection = styled.div<{ isRTL: boolean }>`
@@ -329,10 +326,14 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   <TitleSection isRTL={isRTL}>
                     <AlbumTitle>{folder.folderName || ""}</AlbumTitle>
                     {(showCreated || showUpdated) && (
-                      <DateInfo isRTL={isRTL}>
-                        {showCreated && <div>{t('Created')}: {formatDate(folder.createdAt)}</div>}
-                        {showUpdated && <div>{t('Updated')}: {formatDate(folder.updatedAt)}</div>}
-                      </DateInfo>
+                      <AlbumDates isRTL={isRTL}>
+                        {showCreated && folder.createdAt && formatDate(folder.createdAt) && (
+                          <div>{t('Created')}: {formatDate(folder.createdAt)}</div>
+                        )}
+                        {showUpdated && folder.updatedAt && formatDate(folder.updatedAt) && (
+                          <div>{t('Updated')}: {formatDate(folder.updatedAt)}</div>
+                        )}
+                      </AlbumDates>
                     )}
                   </TitleSection>
                   
