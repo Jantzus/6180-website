@@ -5,29 +5,23 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { 
   checkLoginWithoutRedirect, 
-  checkLoginWithRefresh, 
-  useFileUpload,
   useFullscreenView,
   useSelectionMode, 
   usePasswordProtection,
   useShareActions
- } from "@/lib/utils";
+} from "@/lib/utils";
+
+// Import the new shared hook
+import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 
 // Import types and utilities
 import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
-import { formatUUID, generateUUID, generateInviteLink } from "@/lib/utils";
+import { formatUUID, generateInviteLink } from "@/lib/utils";
 import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/apiService";
 import { downloadPhotos } from "@/lib/fileOperations";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
-// Import upload utilities
-import { 
-  createPhotoStatusUpdater, 
-  updateProgressTracker,
-  processFilesBeforeUploadingToS3
-} from "@/lib/file-upload-utils";
-
-// Add the AWS_PRIVATE_GRAPHQL_ENDPOINT import
+// Import the useUsernameManagement hook from the correct location
 import { useUsernameManagement } from "@/lib/customHooks";
 
 // Import extracted utility functions
@@ -69,7 +63,6 @@ const PhotoAlbumContent: React.FC = () => {
   const { t, language } = useTranslation();
   
   // Custom hooks
-  const fileUpload = useFileUpload();
   const fullscreenView = useFullscreenView();
   const selectionMode = useSelectionMode();
   const passwordProtection = usePasswordProtection();
@@ -88,6 +81,16 @@ const PhotoAlbumContent: React.FC = () => {
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [addPhotosClicked, setAddPhotosClicked] = useState(false);
   
+  // Use the new shared hook for file uploads
+  const fileUpload = useFileUploadProcessor((folderId) => {
+    // Custom navigation callback
+    if (folderId) {
+      window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
+    } else {
+      window.location.href = "/save-album.html";
+    }
+  });
+  
   // Destruct from hooks
   const { 
     passwordPolicy, setPasswordPolicy, isAuthorized, setIsAuthorized,
@@ -96,9 +99,9 @@ const PhotoAlbumContent: React.FC = () => {
     shouldShowContent, shouldShowWatermark, showingEnterPassword, promptForPassword
   } = passwordProtection;
   
+  // Destructure only what we need from file upload hook to avoid unused variable warnings
   const {
-    fileInputRef, selectedPhotos, setSelectedPhotos, isUploading, setIsUploading,
-    fileProcessingComplete, setFileProcessingComplete, progressTracker, log
+    fileInputRef, isUploading, progressTracker
   } = fileUpload;
   
   const {
@@ -206,9 +209,7 @@ const PhotoAlbumContent: React.FC = () => {
 
   // Function to open file picker directly
   const openFilePicker = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
-    }
+    fileUpload.openFilePicker(folderId);
   };
 
   // Function to open file picker after checking login
@@ -234,9 +235,6 @@ const PhotoAlbumContent: React.FC = () => {
         console.error("Failed to decode token", err);
       }
     }
-    
-    // Reset the file processing completion flag before opening file picker
-    setFileProcessingComplete(false);
     
     // User is logged in, continue with file selection
     openFilePicker();
@@ -292,7 +290,7 @@ const PhotoAlbumContent: React.FC = () => {
     }
   };
 
-  // Handle file selection
+  // Handle file selection using the shared hook
   const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     if (!files.length) return;
@@ -300,93 +298,13 @@ const PhotoAlbumContent: React.FC = () => {
     // Remove the localStorage timestamp once files are selected
     localStorage.removeItem('selectPhotosButtonTimestamp');
     setShowSelectPhotosButton(false);
-    setIsUploading(true);
-    // Reset file processing completion flag
-    setFileProcessingComplete(false);
     
-    // Get a fresh token using the async function
-    const token = await checkLoginWithRefresh();
+    // Use the shared file upload processor
+    const success = await fileUpload.handleFileSelection(e, cognitoUsername);
     
-    if (!token) {
-      log("❌ Authentication failed");
-      setIsUploading(false);
+    if (!success) {
       // Instead of showing the LoginModal, show the InlineOTPLogin
       setShowInlineOTPLogin(true);
-      return;
-    }
-    
-    // If we get here, the user is authenticated, so continue with the upload
-    try {
-      // Extract username from token
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      const username = payload["cognito:username"];
-      
-      if (!username) {
-        log("❌ Missing Cognito Username");
-        setIsUploading(false);
-        return;
-      }
-      
-      setCognitoUsername(username);
-      
-      // Generate a new folder ID or use existing one
-      const newFolderId = folderId || `${username}_____${generateUUID()}____Folder`;
-      log(`📁 Using folder ID: ${newFolderId}`);
-      
-      // Initialize empty array for selected photos in state to show initial progress
-      setSelectedPhotos(files.map((file) => ({
-        fileName: file.name,
-        s3PreviewUrl: URL.createObjectURL(file),
-        type: file.type,
-        size: file.size,
-        status: 'pending',
-        progress: 0
-      })));
-      
-      // Use the createPhotoStatusUpdater function
-      const updatePhotoStatus = createPhotoStatusUpdater(setSelectedPhotos);
-      
-      // Set up an interval to update the UI while processing continues
-      const progressUpdateInterval = setInterval(() => {
-        updateProgressTracker(selectedPhotos, fileUpload.setProgressTracker);
-      }, 500);
-      
-      // Use the processFilesBeforeUploadingToS3 function
-      const processedPhotos = await processFilesBeforeUploadingToS3(files, username, updatePhotoStatus, log);
-      
-      // Clear the interval once processing is complete
-      clearInterval(progressUpdateInterval);
-      
-      // Make sure we have a final progress update
-      updateProgressTracker(processedPhotos, fileUpload.setProgressTracker);
-      
-      // Save to localStorage - ONLY the keys and metadata, not the file data
-      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos));
-      log(`📸 Saved ${processedPhotos.length} photos metadata to storage`);
-      
-      // If all photos are uploaded successfully, show a completion message
-      const allComplete = processedPhotos.every(photo => photo.status === 'complete');
-      const anyErrors = processedPhotos.some(photo => photo.status === 'error');
-      
-      if (allComplete && !anyErrors) {
-        log(`✅ All ${processedPhotos.length} files successfully uploaded`);
-      } else if (anyErrors) {
-        const errorCount = processedPhotos.filter(photo => photo.status === 'error').length;
-        log(`⚠️ Upload completed with ${errorCount} errors`);
-      }
-      
-      // Set a slight delay before navigation to show the completed upload status
-      setTimeout(() => {
-        // Set the file processing completion flag to trigger the navigation effect
-        setFileProcessingComplete(true);
-      }, 1000);
-      
-    } catch (error) {
-      log(`❌ Fatal error in handleFileSelection: ${String(error)}`);
-      setIsUploading(false);
-    } finally {
-      // Clear the file input to allow selecting the same files again
-      if (e.target) e.target.value = "";
     }
   };
 
@@ -621,24 +539,6 @@ const PhotoAlbumContent: React.FC = () => {
   
     getUserInfo();
   }, []);
-
-  // Effect to navigate to save-album page after file processing is complete
-  useEffect(() => {
-    if (fileProcessingComplete && selectedPhotos.length > 0) {
-      // Show a completion message in the UI
-      const successCount = selectedPhotos.filter(photo => photo.status === 'complete').length;
-      const errorCount = selectedPhotos.filter(photo => photo.status === 'error').length;
-      
-      console.log(`Upload complete: ${successCount} successful, ${errorCount} failed`);
-      
-      // Get the necessary data for the redirect
-      if (folderId) {
-        window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
-      } else {
-        window.location.href = "/save-album.html";
-      }
-    }
-  }, [fileProcessingComplete, selectedPhotos.length, folderId]);
 
   // Set page title
   useEffect(() => {
