@@ -342,9 +342,9 @@ export const Button = styled.button<ButtonProps>`
 
 export const MenuButton = styled(Button)`
   display: flex;
-  alignItems: center;
-  justifyContent: center;
-  padding: 12px 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
   width: auto;
 `;
 
