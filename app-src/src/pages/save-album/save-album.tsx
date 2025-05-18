@@ -33,14 +33,14 @@ import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 import { 
   useAlbumInitialization, 
   useAlbumSave
-} from "./albumHooks";
+} from "./hooks";
 
 // Import components
 import {
   PhotoHandler,
   SavingProgressComponent,
   FolderDetailsComponent
-} from "./albumComponents";
+} from "./components";
 
 // ========== MAIN COMPONENT ==========
 
@@ -317,12 +317,6 @@ const SaveAlbum = () => {
             variant="detailed"
           />
           
-          {/* Saving Progress */}
-          <SavingProgressComponent 
-            isSavingAlbum={isSavingAlbum} 
-            savingProgress={savingProgress} 
-          />
-          
           {/* Hidden File Input - now using the ref from the hook */}
           <input
             ref={fileInputRef}
@@ -341,6 +335,12 @@ const SaveAlbum = () => {
             onRemovePhoto={removePhoto}
           />
           
+          {/* Saving Progress */}
+          <SavingProgressComponent 
+            isSavingAlbum={isSavingAlbum} 
+            savingProgress={savingProgress} 
+          />
+
           {/* Action Buttons */}
           <ActionButtons>
             

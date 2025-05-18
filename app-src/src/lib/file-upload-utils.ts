@@ -1,4 +1,4 @@
-import { createS3Client } from "@/lib/aws"
+import { createS3Client } from "@/lib/s3"
 import { PutObjectCommand, CopyObjectCommand } from "@aws-sdk/client-s3"
 import { AWS_BUCKET_NAME } from "@/lib/config"
 import { 

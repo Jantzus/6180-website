@@ -156,9 +156,10 @@ export const useAlbumInitialization = (
               setShowFolderDetails(false);
             }
           } else {
-            // If we couldn't fetch folder details, set isCreator to false as a fallback
-            enhancedLog("No folder details retrieved, setting isCreator to false");
-            setIsCreator(false);
+            // If we couldn't fetch folder details, set it is a new folder
+            enhancedLog("No folder details retrieved, setting isCreator to true");
+            setIsCreator(true);
+            setShowFolderDetails(true);
           }
         } catch (fetchErr) {
           console.error("Error fetching folder details:", fetchErr);

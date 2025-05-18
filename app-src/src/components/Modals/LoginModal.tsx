@@ -30,7 +30,7 @@ interface LoginModalProps {
   t: (key: string) => string;
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLoginSuccess, t }) => {
+export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLoginSuccess, t }) => {
   const [email, setEmail] = useState('');
   const [codeSent, setCodeSent] = useState(false);
   const [otpCode, setOtpCode] = useState('');

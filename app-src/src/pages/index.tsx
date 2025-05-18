@@ -84,7 +84,7 @@ const IndexPage: React.FC = () => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          minHeight: 'calc(100vh - 60px)'
+          height: 'calc(100vh - 60px)'
         }}>
           <HeaderContainer>
             <LogoContainer isRTL={isRTL}>

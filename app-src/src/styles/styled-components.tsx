@@ -262,6 +262,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-bottom: ${theme.spacing.md};
 `;
 
 export const RowSelectorContainer = styled.div`
@@ -309,38 +310,30 @@ export const Headline = styled.h1`
 export const Button = styled.button<ButtonProps>`
   ${buttonBaseStyle}
   background-color: ${props => {
-    if (props.primary === undefined) return 'transparent';
     if (props.primary) return props.isHovered ? theme.colors.primaryDark : theme.colors.primary;
     if (props.passwordSet) return theme.colors.black;
-    return theme.colors.gray;
+    return 'transparent';
   }};
   color: ${props => {
-    if (props.primary === undefined) return theme.colors.primary;
-    if (props.passwordSet) return theme.colors.black;
-    return theme.colors.text.white;
+    if (props.primary) return theme.colors.text.white;
+    if (props.passwordSet) return theme.colors.white;
+    return theme.colors.primary;
   }};
-  font-weight: ${props => props.passwordSet ? 'bold' : 'normal'};
-  padding: ${props => props.primary === undefined ? '6px 12px' : '14px 28px'};
-  font-size: ${props => props.primary === undefined ? theme.fontSizes.sm : theme.fontSizes.md};
-  border: ${props => props.primary === undefined ? `1px solid ${theme.colors.primary}` : 'none'};
-  box-shadow: ${props => {
-    if (props.primary === undefined) return 'none';
-    return props.primary ? theme.boxShadow.primaryBtn : theme.boxShadow.lg;
-  }};
-  border-radius: ${props => props.primary !== undefined ? theme.borderRadius.medium : theme.borderRadius.small};
-  width: ${props => props.primary === undefined && props.passwordSet !== undefined ? '100%' : 'auto'};
-  text-align: ${props => props.primary === undefined && props.passwordSet !== undefined ? 'left' : 'center'};
-  margin-right: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? 'auto' : '0'};
-  height: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? '36px' : 'auto'};
-  display: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? 'flex' : 'inline-block'};
-  align-items: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? 'center' : 'normal'};
+  font-weight: ${props => props.primary ? '500' : 'normal'};
+  padding: 12px 20px;
+  font-size: ${theme.fontSizes.md};
+  border: ${props => props.primary ? 'none' : `1px solid ${theme.colors.primary}`};
+  border-radius: ${theme.borderRadius.medium};
+  width: 180px;
+  text-align: center;
+  margin-left: auto; /* Align to trailing side */
+  box-shadow: ${props => props.primary ? theme.boxShadow.primaryBtn : 'none'};
   
   &:hover {
     background-color: ${props => {
-      if (props.primary === undefined) return 'transparent';
       if (props.primary) return theme.colors.primaryDark;
-      if (props.passwordSet) return theme.colors.black;
-      return theme.colors.success;
+      if (props.passwordSet) return '#333333';
+      return theme.colors.grayLighter;
     }};
   }
 `;
@@ -1005,7 +998,7 @@ export const SelectionBanner = styled.div`
 `;
 
 export const SelectedCount = styled.p`
-  font-size: ${theme.fontSizes.md};
+  font-size: ${theme.fontSizes.sm};
   margin-bottom: ${theme.spacing.md};
   color: ${theme.colors.text.primary};
 `;
@@ -1242,4 +1235,17 @@ export const DebugMessages = styled.pre`
 export const DebugMessage = styled.div`
   margin-bottom: ${theme.spacing.xs};
   font-size: ${theme.fontSizes.xs};
+`;
+
+// Styled component for the logout link
+export const StyledLogoutLink = styled.a`
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.text.secondary};
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: ${theme.colors.text.primary};
+  }
 `;

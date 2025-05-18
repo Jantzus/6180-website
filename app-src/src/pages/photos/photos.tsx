@@ -17,7 +17,7 @@ import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 // Import types and utilities
 import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
 import { formatUUID, generateInviteLink } from "@/lib/utils";
-import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/apiService";
+import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/databaseAPIService";
 import { downloadPhotos } from "@/lib/fileOperations";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
@@ -25,14 +25,14 @@ import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { useUsernameManagement } from "@/lib/customHooks";
 
 // Import extracted utility functions
-import { executeAlbumSave, createSubAlbumWithSelectedItems } from "./album-utils";
+import { executeAlbumSave, createSubAlbumWithSelectedItems } from "./utils";
 
 // Import extracted components
 import { 
   SelectPhotosButton, 
   PasswordProtectionMessage, 
   SelectionModeBanner 
-} from "./album-components";
+} from "./components";
 
 // Import styled components
 import { 
@@ -44,10 +44,12 @@ import {
 // Import components
 import { FullscreenMediaViewer } from "@/components/FullscreenMediaViewer";
 import { PasswordModal } from "@/components/Modals/PasswordModal";
+import { LoginModal } from "@/components/Modals/LoginModal";
 import { FileInput } from "@/components/FileInput";
 import { UploadProgress } from "@/components/UploadProgress";
-import LoginModal from "@/components/Modals/LoginModal";
-import { CopyLinkModal, ConfirmationModal } from "@/components/Modals";
+import { CopyLinkModal } from "@/components/Modals/CopyLinkModal";
+import { ConfirmationModal } from "@/components/Modals/ConfirmationModal";
+
 import { UsernamePrompt } from "@/components/UsernamePrompt";
 import { SaveToShareContactListDescription } from "@/components/SaveToShareContactListDescription";
 import { AlbumMediaGrid } from "@/components/AlbumMediaGrid";

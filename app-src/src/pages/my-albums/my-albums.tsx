@@ -21,7 +21,7 @@ import { FileInput } from "@/components/FileInput";
 import { DebugLog } from "@/components/DebugLog";
 
 // Import custom hooks and utilities
-import { useFolderManagement } from "./albumUtils";
+import { useFolderManagement } from "./utils";
 
 const MyAlbums = () => {
   // Get translation function from the hook for the main component
