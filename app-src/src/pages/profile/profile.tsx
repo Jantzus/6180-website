@@ -18,7 +18,7 @@ import { SearchBar } from "@/components/SearchBar";
 // Import the unified AlbumList
 import { AlbumList } from "@/components/AlbumList";
 import { ProfileHeader } from "@/components/ProfileHeader";
-import { FolderType } from "@/lib/types";
+import { FolderType, FOLDERPOSITION_FIELD } from "@/lib/types";
 // Import styled components
 import {
   GlobalStyle,
@@ -173,30 +173,7 @@ const PersonaViewer: React.FC = () => {
           fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
             items {
               ... on FolderPosition {
-                id
-                profileIds
-                folder {
-                  id
-                  albumNanoId
-                  folderName
-                  folderDescription
-                  folderPassword {
-                    password
-                    policy
-                  }
-                  creatorId
-                  createdAt
-                  updatedAt
-                  fileReferencesPage {
-                    items {
-                      file {
-                        dataKey
-                        thumbnailDataKey
-                        durationInSeconds
-                      }
-                    }
-                  }
-                }
+                ${FOLDERPOSITION_FIELD}
               }
             }
             nextToken

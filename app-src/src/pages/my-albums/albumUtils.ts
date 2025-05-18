@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FolderType } from "@/lib/types";
+import { FolderType, FOLDERPOSITION_FIELD } from "@/lib/types";
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { checkLoginWithRefresh } from "@/lib/utils";
 
@@ -109,44 +109,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
         fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
           items {
             ... on FolderPosition {
-              id
-              profileIds
-              folder {
-                id
-                albumNanoId                
-                folderName
-                folderDescription
-                creatorId
-                createdAt
-                updatedAt            
-                folderPassword {
-                  password
-                  policy
-                }
-                fileReferencesPage {
-                  items {
-                    file {
-                      ownerContactId
-                      dataKey
-                      thumbnailDataKey
-                      durationInSeconds
-                    }
-                  }
-                }
-                contactsUsingInvite {
-                  items {
-                    id
-                    item {
-                      ... on Persona {
-                        publicDisplayName
-                      }
-                    }
-                  }
-                }
-                folderInviteParameters {
-                  usingFolderInviteGrantsRightToAddItems
-                }
-              }
+              ${FOLDERPOSITION_FIELD}
             }
           }
         }

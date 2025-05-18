@@ -163,6 +163,46 @@ export interface ResponsiveHeaderProps {
 }
 
 // GraphQL query
+export const FOLDERPOSITION_FIELD = `
+  id
+  profileIds
+  folder {
+    id
+    albumNanoId
+    folderName
+    folderDescription
+    folderPassword {
+      password
+      policy
+    }
+    creatorId
+    createdAt
+    updatedAt
+    fileReferencesPage {
+      items {
+        file {
+          dataKey
+          thumbnailDataKey
+          durationInSeconds
+        }
+      }
+    }
+    contactsUsingInvite {
+      items {
+        id
+        item {
+          ... on Persona {
+            publicDisplayName
+          }
+        }
+      }
+    }
+    folderInviteParameters {
+      usingFolderInviteGrantsRightToAddItems
+    }      
+  }
+`
+
 export const FETCH_FOLDERS_QUERY = `
   mutation FetchFolderPositions($fetchRelationsInput: FetchRelationsInput!) {
     fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
