@@ -1,16 +1,12 @@
 import React from "react";
 import { 
-  ProgressTracker,
   SelectedPhoto,
 } from "@/lib/types";
 import {
   Card,
   ProgressTitle,
-  ProgressStats,
   ProgressBarBg,
   ProgressBar,
-  ProgressDetails,
-  ProgressItem,
   ProgressText,
   SelectedCount,
   PhotoGrid,
@@ -110,50 +106,6 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
         ))}
       </PhotoGrid>
     </>
-  );
-};
-
-// ========== PROGRESS TRACKER COMPONENT ==========
-export interface ProgressTrackerComponentProps {
-  progressTracker: ProgressTracker;
-}
-
-export const ProgressTrackerComponent: React.FC<ProgressTrackerComponentProps> = ({ progressTracker }) => {
-  const { t } = useTranslation();
-
-  if (progressTracker.totalFiles === 0) {
-    return null;
-  }
-
-  return (
-    <Card>
-      <ProgressTitle>{t('Upload Progress')}</ProgressTitle>
-      
-      <div>
-        <ProgressStats>
-          <span>{t('Overall Progress')}: {Math.round(progressTracker.overallProgress)}%</span>
-          <span>{progressTracker.filesComplete} {t('of')} {progressTracker.totalFiles} {t('complete')}</span>
-        </ProgressStats>
-        <ProgressBarBg>
-          <ProgressBar progress={progressTracker.overallProgress} />
-        </ProgressBarBg>
-      </div>
-      
-      <ProgressDetails>
-        {progressTracker.filesUploading > 0 && (
-          <ProgressItem>{t('Uploading')}: {progressTracker.filesUploading}</ProgressItem>
-        )}
-        {progressTracker.filesProcessing > 0 && (
-          <ProgressItem>{t('Processing')}: {progressTracker.filesProcessing}</ProgressItem>
-        )}
-        {progressTracker.filesComplete > 0 && (
-          <ProgressItem>{t('Complete')}: {progressTracker.filesComplete}</ProgressItem>
-        )}
-        {progressTracker.filesWithError > 0 && (
-          <ProgressItem isError>{t('Failed')}: {progressTracker.filesWithError}</ProgressItem>
-        )}
-      </ProgressDetails>
-    </Card>
   );
 };
 

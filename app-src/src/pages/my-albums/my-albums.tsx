@@ -110,39 +110,13 @@ const MyAlbums = () => {
         {isUploading && (
           <div style={{ width: '100%', marginBottom: '20px' }}>
             <UploadProgress 
-              progressTracker={progressTracker}
-              t={t}
-              isRTL={isRTL}
+              progressTracker={progressTracker} 
+              t={t} 
+              isRTL={getLanguageDirection(language) === "rtl"}
+              style={{ marginTop: '20px' }}
+              showSuccessMessage={true}
+              showErrorMessage={true}
             />
-            
-            {/* Additional status messages for better user experience */}
-            {progressTracker.filesComplete > 0 && progressTracker.filesComplete === progressTracker.totalFiles && (
-              <div style={{
-                backgroundColor: '#e8f5e9',
-                color: '#2e7d32',
-                padding: '10px 16px',
-                borderRadius: '6px',
-                fontSize: '14px',
-                marginTop: '10px',
-                textAlign: 'center'
-              }}>
-                {t('Upload complete! Preparing to save your album...')}
-              </div>
-            )}
-            
-            {progressTracker.filesWithError > 0 && (
-              <div style={{
-                backgroundColor: '#ffebee',
-                color: '#c62828',
-                padding: '10px 16px',
-                borderRadius: '6px',
-                fontSize: '14px',
-                marginTop: '10px',
-                textAlign: 'center'
-              }}>
-                {t('Some files could not be uploaded. You can continue with the successfully uploaded files.')}
-              </div>
-            )}
           </div>
         )}
 

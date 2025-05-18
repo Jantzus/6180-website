@@ -544,17 +544,6 @@ export const Message = styled.div<MessageProps>`
   }};
 `;
 
-export const ItalicText = styled.p`
-  font-style: italic;
-  margin-top: ${theme.spacing.sm};
-  margin-bottom: ${theme.spacing.sm};
-  text-align: center;
-  font-size: ${theme.fontSizes.md};
-  
-  ${mobile(`
-    font-size: ${theme.fontSizes.sm};
-  `)}
-`;
 
 export const AlbumDescription = styled.div<{ isRTL: boolean }>`
   margin-top: ${theme.spacing.sm};
@@ -844,13 +833,6 @@ export const ProgressTitle = styled.h3`
   margin: 0 0 ${theme.spacing.sm} 0;
 `;
 
-export const ProgressStats = styled.div`
-  display: flex;
-  justify-content: space-between;
-  font-size: ${theme.fontSizes.sm};
-  margin-bottom: 6px;
-`;
-
 export const ProgressBarBg = styled.div<{ bottom?: string; left?: string; right?: string; height?: string }>`
   height: ${props => props.height || '8px'};
   background-color: ${theme.colors.grayLight};
@@ -873,17 +855,6 @@ export const ProgressBar = styled.div<ProgressProps>`
   border-radius: ${theme.borderRadius.small};
   transition: width 0.3s ease;
   width: ${props => (props.progress || 0) * 100}%;
-`;
-
-export const ProgressDetails = styled.div`
-  display: flex;
-  gap: ${theme.spacing.sm};
-  font-size: ${theme.fontSizes.sm};
-  color: ${theme.colors.text.secondary};
-`;
-
-export const ProgressItem = styled.div<ProgressProps>`
-  color: ${props => props.isError ? theme.colors.danger : 'inherit'};
 `;
 
 export const ProgressText = styled.div`
@@ -990,47 +961,6 @@ export const FullscreenContainer = styled.div`
   z-index: 2000;
   display: flex;
   flex-direction: column;
-`;
-
-// ========== QR Code Components ==========
-
-export const QRCodeContainer = styled.div`
-  margin-bottom: ${theme.spacing.md};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const InstructionsContainer = styled.div`
-  margin-bottom: ${theme.spacing.md};
-  width: 100%;
-  max-width: 400px;
-`;
-
-export const InstructionHeading = styled.h3`
-  font-size: ${theme.fontSizes.xl};
-  font-weight: bold;
-  margin-bottom: ${theme.spacing.md};
-  text-align: center;
-  
-  ${mobile(`
-    font-size: ${theme.fontSizes.lg};
-  `)}
-`;
-
-export const InstructionList = styled.ol`
-  list-style-type: decimal;
-  padding-left: ${theme.spacing.md};
-`;
-
-export const InstructionItem = styled.li`
-  margin-bottom: ${theme.spacing.sm};
-  font-size: ${theme.fontSizes.md};
-  
-  ${mobile(`
-    font-size: ${theme.fontSizes.sm};
-  `)}
 `;
 
 // ========== Selection & Status Components ==========

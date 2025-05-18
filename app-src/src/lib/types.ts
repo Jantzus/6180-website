@@ -149,20 +149,7 @@ export interface PhotoPageLazyImageProps {
   showWatermark?: boolean;
 }
 
-export interface QRCodeModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  folderId: string | null;
-  t: (key: string) => string;
-}
 
-export interface PasswordModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onSubmit: (password: string) => void;
-  error: string | null;
-  t: (key: string) => string;
-}
 
 export interface ResponsiveHeaderProps {
   addPhotosToAlbum: () => void;
@@ -185,6 +172,9 @@ export const FETCH_FOLDERS_QUERY = `
           albumNanoId
           folderName
           folderDescription
+          creatorId
+          createdAt
+          updatedAt
           folderPassword {
             password
             policy

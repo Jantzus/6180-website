@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 
 // Import styled components
@@ -8,15 +8,13 @@ import {
   HeaderContainer,
   ProfileLink,
   ActionButtons,
-  Button,
-  HiddenFileInput
+  Button
 } from "@/styles/styled-components";
 import { UsernamePrompt } from "@/components/UsernamePrompt";
+import { UploadProgress } from "@/components/UploadProgress";
 
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { 
-  ProgressTracker,
-  SelectedPhoto,
   PasswordPolicyEnum
 } from "@/lib/types";
 
@@ -28,26 +26,18 @@ import { LogoutButton } from "@/components/LogoutButton";
 import { DebugLog } from "@/components/DebugLog";
 import { useUsernameManagement } from "@/lib/customHooks";
 
-// Import utility functions from file-upload-utils
-import { 
-  createLogger,
-  createPhotoStatusUpdater,
-  updateProgressTracker,
-  processFilesBeforeUploadingToS3,
-} from "@/lib/file-upload-utils";
+// Import the file upload processor hook
+import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 
 // Import custom hooks
 import { 
   useAlbumInitialization, 
-  useAlbumSave,
-  createInitialPhotoObjects,
-  updatePhotosWithProcessedInfo
+  useAlbumSave
 } from "./albumHooks";
 
 // Import components
 import {
   PhotoHandler,
-  ProgressTrackerComponent,
   SavingProgressComponent,
   FolderDetailsComponent
 } from "./albumComponents";
@@ -67,20 +57,8 @@ const SaveAlbum = () => {
     setUsernameInput
   } = usernameManager;
 
-  // Core state
+  // Core state for album details
   const [folderId, setFolderId] = useState<string | null>(null);
-  const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
-  const [debugMessages, setDebugMessages] = useState<string[]>([]);
-  
-  // Progress tracking state
-  const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
-    totalFiles: 0,
-    filesComplete: 0,
-    filesUploading: 0,
-    filesProcessing: 0,
-    filesWithError: 0,
-    overallProgress: 0
-  });
   const [isSavingAlbum, setIsSavingAlbum] = useState(false);
   const [savingProgress, setSavingProgress] = useState(0);
   
@@ -100,18 +78,37 @@ const SaveAlbum = () => {
   // Participants Can Add Items toggle state
   const [participantsCanAddItems, setParticipantsCanAddItems] = useState<boolean>(true);
   
-  // New state for checking if user is the creator - initialize as null (undetermined)
+  // State for checking if user is the creator - initialize as null (undetermined)
   const [isCreator, setIsCreator] = useState<boolean | null>(null);
 
-  // New state for sub-album data
+  // State for sub-album data
   const [isSubAlbum, setIsSubAlbum] = useState<boolean>(false);
   const [selectedFileIds, setSelectedFileIds] = useState<string[]>([]);
 
-  // Create utility instances
-  const log = createLogger(setDebugMessages);
-  const updatePhotoStatus = createPhotoStatusUpdater(setSelectedPhotos);
+  // Custom navigation function for the useFileUploadProcessor hook
+  const navigateAfterUpload = (uploadedFolderId: string | null) => {
+    // Don't navigate, just set the folder ID if not already set
+    if (!folderId && uploadedFolderId) {
+      setFolderId(uploadedFolderId);
+    }
+  };
 
-  // Enhanced logging function
+  // Use the file upload processor hook
+  const {
+    fileInputRef,
+    selectedPhotos,
+    setSelectedPhotos,
+    isUploading,
+    progressTracker,
+    setProgressTracker,
+    debugMessages,
+    currentFolderId,
+    openFilePicker,
+    handleFileSelection,
+    log
+  } = useFileUploadProcessor(navigateAfterUpload);
+
+  // Enhanced logging function that uses the log from useFileUploadProcessor
   const enhancedLog = (message: string, data?: any) => {
     const timestamp = new Date().toISOString();
     let logMessage = `[${timestamp}] ${message}`;
@@ -137,7 +134,7 @@ const SaveAlbum = () => {
       console.log(logMessage);
     }
     
-    // Add to debug messages for UI
+    // Add to debug messages for UI using the log function from useFileUploadProcessor
     log(logMessage);
   };
 
@@ -158,9 +155,9 @@ const SaveAlbum = () => {
     enhancedLog
   );
 
-  // Use the album save hook
+  // Use the album save hook with all required parameters
   const { saveAlbumDirectly } = useAlbumSave(
-    folderId,
+    folderId || currentFolderId,
     cognitoUsername,
     selectedPhotos,
     isSubAlbum,
@@ -178,18 +175,13 @@ const SaveAlbum = () => {
     enhancedLog
   );
 
-  // Save selected photos to localStorage
+  // Update folderId when currentFolderId changes
   useEffect(() => {
-    if (selectedPhotos.length > 0) {
-      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(selectedPhotos));
-      enhancedLog(`Saved ${selectedPhotos.length} photos to localStorage`);
+    if (currentFolderId && !folderId) {
+      setFolderId(currentFolderId);
+      enhancedLog(`Updated folder ID from upload processor: ${currentFolderId}`);
     }
-  }, [selectedPhotos]);
-
-  // Update progress tracker
-  useEffect(() => {
-    updateProgressTracker(selectedPhotos, setProgressTracker);
-  }, [selectedPhotos]);
+  }, [currentFolderId, folderId]);
 
   // ---------- PHOTO MANAGEMENT ----------
 
@@ -206,50 +198,6 @@ const SaveAlbum = () => {
     } else {
       localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
       enhancedLog("Removed photos from localStorage");
-    }
-  };
-
-  const handleAddPhotos = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    enhancedLog("Add photos triggered from file input");
-    if (!cognitoUsername) {
-      enhancedLog("No Cognito username available, cannot add photos");
-      return;
-    }
-  
-    const files = Array.from(e.target.files || []);
-    enhancedLog(`Selected ${files.length} files`);
-    
-    if (!files.length) return;
-    
-    try {
-      // Add pending photos to state first
-      const initialPhotos = createInitialPhotoObjects(files);
-      enhancedLog(`Created ${initialPhotos.length} initial photo objects`);
-      setSelectedPhotos(prev => [...prev, ...initialPhotos]);
-      
-      // Process files and update photo status
-      const currentIndex = selectedPhotos.length;
-      enhancedLog(`Starting processing at index: ${currentIndex}`);
-      const processedPhotos = await processFilesBeforeUploadingToS3(
-        files,
-        cognitoUsername,
-        (index, status, progress, errorMessage) => {
-          // Adjust index to account for existing photos
-          updatePhotoStatus(currentIndex + index, status, progress, errorMessage);
-          enhancedLog(`Updated status for photo ${currentIndex + index}: ${status}, progress: ${progress}`);
-        },
-        enhancedLog
-      );
-      
-      // Update selected photos with processed info
-      enhancedLog(`Updating ${processedPhotos.length} photos with processed info`);
-      updatePhotosWithProcessedInfo(currentIndex, processedPhotos, setSelectedPhotos, enhancedLog);
-    } catch (error) {
-      console.error("Error in handleAddPhotos:", error);
-      enhancedLog(`Error in handleAddPhotos: ${error}`);
-    } finally {
-      e.target.value = "";
-      enhancedLog("Reset file input value");
     }
   };
 
@@ -339,6 +287,12 @@ const SaveAlbum = () => {
     setShowPasswordDialog(true);
   };
 
+  // Handle add photos by using the openFilePicker function from the hook
+  const handleAddPhotos = () => {
+    enhancedLog("Add photos button clicked");
+    openFilePicker(folderId);
+  };
+
   // ========== RENDER METHODS ==========
 
   return (
@@ -356,7 +310,12 @@ const SaveAlbum = () => {
           </HeaderContainer>
           
           {/* Progress Tracking */}
-          <ProgressTrackerComponent progressTracker={progressTracker} />
+          <UploadProgress 
+            progressTracker={progressTracker}
+            t={t}
+            isRTL={isRTL}
+            variant="detailed"
+          />
           
           {/* Saving Progress */}
           <SavingProgressComponent 
@@ -364,19 +323,21 @@ const SaveAlbum = () => {
             savingProgress={savingProgress} 
           />
           
-          {/* Hidden File Input */}
-          <HiddenFileInput
+          {/* Hidden File Input - now using the ref from the hook */}
+          <input
+            ref={fileInputRef}
             id="file-input"
             type="file"
             accept="image/*,video/*"
             multiple
-            onChange={handleAddPhotos}
+            onChange={(e) => handleFileSelection(e, cognitoUsername)}
+            style={{ display: 'none' }}
           />
           
           {/* Photo Grid */}
           <PhotoHandler 
             selectedPhotos={selectedPhotos}
-            isSavingAlbum={isSavingAlbum}
+            isSavingAlbum={isSavingAlbum || isUploading}
             onRemovePhoto={removePhoto}
           />
           
@@ -395,18 +356,15 @@ const SaveAlbum = () => {
               handlePublicProfileToggle={handlePublicProfileToggle}
               participantsCanAddItems={participantsCanAddItems}
               handleParticipantsCanAddItemsToggle={handleParticipantsCanAddItemsToggle}
-              isSavingAlbum={isSavingAlbum}
+              isSavingAlbum={isSavingAlbum || isUploading}
             />
             
             {/* Add Photos button - Show for both regular albums and sub-albums */}
             <Button
-              onClick={() => {
-                const input = document.getElementById("file-input") as HTMLInputElement;
-                input?.click();
-              }}
-              disabled={isSavingAlbum}
+              onClick={handleAddPhotos}
+              disabled={isSavingAlbum || isUploading}
             >
-              {t('Add More Photos')}
+              {isUploading ? t('Uploading...') : t('Add More Photos')}
             </Button>
             
             {/* Only show password button if user is creator */}
@@ -414,7 +372,7 @@ const SaveAlbum = () => {
               <Button
                 passwordSet={passwordProtectionOption !== 'NoPassword'}
                 onClick={handleOpenPasswordDialog}
-                disabled={isSavingAlbum}
+                disabled={isSavingAlbum || isUploading}
               >
                 {getPasswordPolicyButtonText()}
               </Button>
@@ -423,7 +381,7 @@ const SaveAlbum = () => {
             <Button
               primary
               onClick={handleSaveAlbum}
-              disabled={isSavingAlbum}
+              disabled={isSavingAlbum || isUploading}
             >
               {isSavingAlbum ? t('Saving Album...') : t('Save Album')}
             </Button>

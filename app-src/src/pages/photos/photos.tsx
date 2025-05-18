@@ -43,10 +43,10 @@ import {
 
 // Import components
 import { FullscreenMediaViewer } from "@/components/FullscreenMediaViewer";
-import { PasswordModal } from "@/components/ModalComponents";
+import { PasswordModal } from "@/components/Modals/PasswordModal";
 import { FileInput } from "@/components/FileInput";
 import { UploadProgress } from "@/components/UploadProgress";
-import LoginModal from "@/components/LoginModal";
+import LoginModal from "@/components/Modals/LoginModal";
 import { CopyLinkModal, ConfirmationModal } from "@/components/Modals";
 import { UsernamePrompt } from "@/components/UsernamePrompt";
 import { SaveToShareContactListDescription } from "@/components/SaveToShareContactListDescription";
@@ -599,36 +599,9 @@ const PhotoAlbumContent: React.FC = () => {
               t={t} 
               isRTL={getLanguageDirection(language) === "rtl"}
               style={{ marginTop: '20px' }}
+              showSuccessMessage={true}
+              showErrorMessage={true}
             />
-            
-            {/* Additional status messages for better user experience */}
-            {progressTracker.filesComplete > 0 && progressTracker.filesComplete === progressTracker.totalFiles && (
-              <div style={{
-                backgroundColor: '#e8f5e9',
-                color: '#2e7d32',
-                padding: '10px 16px',
-                borderRadius: '6px',
-                fontSize: '14px',
-                marginTop: '10px',
-                textAlign: 'center'
-              }}>
-                {t('Upload complete! Preparing to save your album...')}
-              </div>
-            )}
-            
-            {progressTracker.filesWithError > 0 && (
-              <div style={{
-                backgroundColor: '#ffebee',
-                color: '#c62828',
-                padding: '10px 16px',
-                borderRadius: '6px',
-                fontSize: '14px',
-                marginTop: '10px',
-                textAlign: 'center'
-              }}>
-                {t('Some files could not be uploaded. You can continue with the successfully uploaded files.')}
-              </div>
-            )}
           </div>
         )}
         
