@@ -57,7 +57,7 @@ const MyAlbums = () => {
     <>
       <GlobalStyle />    
       <AppContainer isRTL={isRTL}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+        {/* <div style={{ maxWidth: 900, margin: "0 auto" }}> */}
           <Header 
             publicUsername={publicUsername}
             isUploading={isUploading}
@@ -143,7 +143,7 @@ const MyAlbums = () => {
             onFileSelection={handleFileSelection} 
             ref={fileInputRef}
           />
-        </div>
+        {/* </div> */}
 
         <DebugLog 
           debugMessages={debugMessages}

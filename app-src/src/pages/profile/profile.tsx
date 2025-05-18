@@ -17,13 +17,13 @@ import { SupportedLanguage } from "@/lib/i18n/translations";
 import { SearchBar } from "@/components/SearchBar";
 // Import the unified AlbumList
 import { AlbumList } from "@/components/AlbumList";
+import { ProfileHeader } from "@/components/ProfileHeader";
 import { FolderType } from "@/lib/types";
 // Import styled components
 import {
   GlobalStyle,
   AppContainer,
-  State,
-  ProfileHeader
+  State
 } from "@/styles/styled-components.tsx";
 
 // Main PersonaViewer Component
@@ -305,44 +305,46 @@ const PersonaViewer: React.FC = () => {
       <GlobalStyle />
       
       <AppContainer isRTL={isRTL}>
-        {/* Profile Header */}
-        <ProfileHeader 
-          username={profileUsername || t('User')}
-          isCurrentUser={isOwner}
-          isRTL={isRTL}
-        />
-        
-        {/* Search Bar */}
-        <SearchBar 
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          t={t}
-          isRTL={isRTL}
-        />
-        
-        {/* Loading State */}
-        {isLoading && (
-          <State type="empty">
-            <p>{t('Loading albums...')}</p>
-          </State>
-        )}
-        
-        {/* Error State */}
-        {error && (
-          <State type="error">
-            <p>{error}</p>
-          </State>
-        )}
-        
-        {/* Album List */}
-        {!isLoading && !error && (
-          <AlbumList 
-            folders={filteredFolders}
-            setFolders={setFolders}
-            cognitoUsername={cognitoUsername}
-            isProfileView={true}
+        {/* <div style={{ maxWidth: 900, margin: "0 auto" }}> */}
+          {/* Profile Header */}
+          <ProfileHeader 
+            username={profileUsername || t('User')}
+            isCurrentUser={isOwner}
+            isRTL={isRTL}
           />
-        )}
+          
+          {/* Search Bar */}
+          <SearchBar 
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            t={t}
+            isRTL={isRTL}
+          />
+          
+          {/* Loading State */}
+          {isLoading && (
+            <State type="empty">
+              <p>{t('Loading albums...')}</p>
+            </State>
+          )}
+          
+          {/* Error State */}
+          {error && (
+            <State type="error">
+              <p>{error}</p>
+            </State>
+          )}
+          
+          {/* Album List */}
+          {!isLoading && !error && (
+            <AlbumList 
+              folders={filteredFolders}
+              setFolders={setFolders}
+              cognitoUsername={cognitoUsername}
+              isProfileView={true}
+            />
+          )}
+        {/* </div> */}
       </AppContainer>
     </>
   );

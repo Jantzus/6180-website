@@ -1,18 +1,92 @@
-import React, { useState, useEffect, useRef } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
 
 import { UploadStatus } from "@/lib/types";
-import { useTranslation } from "@/lib/i18n/hooks";
+
+// ========== Theme Variables ==========
+
+const theme = {
+  colors: {
+    primary: "#007bff",
+    primaryDark: "#0056b3",
+    secondary: "#6c757d",
+    success: "#4caf50",
+    danger: "#e53935",
+    warning: "#ff9800",
+    info: "#2196f3",
+    light: "#f9fafb",
+    dark: "#333",
+    gray: "#8c8c8c",
+    grayLight: "#e0e0e0",
+    grayLighter: "#f0f0f0",
+    white: "#fff",
+    black: "#000",
+    overlay: "rgba(0, 0, 0, 0.7)",
+    overlayLight: "rgba(0, 0, 0, 0.5)",
+    border: "#ddd",
+    borderLight: "#eaeaea",
+    text: {
+      primary: "#333",
+      secondary: "#666",
+      light: "#777",
+      lighter: "#999",
+      white: "#fff"
+    },
+    background: {
+      primary: "#f9fafb",
+      card: "#fff",
+      highlight: "#f0f7ff",
+      error: "#fdeded"
+    },
+    highlight: {
+      border: "#cce0ff",
+      error: "#f7d0d0"
+    }
+  },
+  spacing: {
+    xs: "4px",
+    sm: "8px",
+    md: "16px",
+    lg: "24px",
+    xl: "32px"
+  },
+  borderRadius: {
+    xs: "3px",
+    sm: "4px",
+    md: "6px",
+    lg: "8px",
+    xl: "12px",
+    circle: "50%"
+  },
+  fontSizes: {
+    xs: "12px",
+    sm: "14px",
+    md: "16px",
+    lg: "18px",
+    xl: "20px",
+    xxl: "24px"
+  },
+  boxShadow: {
+    sm: "0 1px 2px rgba(0,0,0,0.06)",
+    md: "0 1px 3px rgba(0,0,0,0.1)",
+    lg: "0 4px 10px rgba(0,0,0,0.08)",
+    xl: "0 8px 24px rgba(0,0,0,0.2)",
+    primaryBtn: "0 4px 12px rgba(0, 123, 255, 0.2)",
+    selection: "0 2px 4px rgba(0, 0, 0, 0.2)",
+    textShadow: "0 0 5px rgba(0, 0, 0, 0.8)"
+  },
+  breakpoints: {
+    mobile: "767px"
+  }
+};
 
 // ========== Global Styles ==========
 
 export const GlobalStyle = createGlobalStyle`
-  @keyframes loading-animation {
+  @keyframes loadingAnimation {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
   }
   
-  /* Added to ensure proper display on mobile */
   * {
     box-sizing: border-box;
     -webkit-text-size-adjust: 100%;
@@ -36,8 +110,9 @@ export const GlobalStyle = createGlobalStyle`
   }  
 `;
 
-// ========== Directional Styles ==========
+// ========== Mixins & Utilities ==========
 
+// Directional styles mixin
 const directionalStyles = (isRTL: boolean) => css`
   direction: ${isRTL ? 'rtl' : 'ltr'};
 `;
@@ -46,23 +121,64 @@ interface DirectionalProps {
   isRTL: boolean;
 }
 
-// ========== Responsive Mixins ==========
-
+// Responsive mixins
 const mobile = (content: any) => css`
-  @media (max-width: 767px) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     ${content}
   }
 `;
 
-// ========== App Layout Components ==========
+// Shared style mixins
+const cardStyle = css`
+  background-color: ${theme.colors.background.card};
+  border-radius: ${theme.borderRadius.lg};
+  box-shadow: ${theme.boxShadow.md};
+`;
+
+const formInputStyle = css`
+  width: 100%;
+  padding: 10px 12px;
+  font-size: ${theme.fontSizes.md};
+  border-radius: ${theme.borderRadius.md};
+  border: 1px solid ${theme.colors.border};
+  box-sizing: border-box;
+`;
+
+interface ButtonProps {
+  disabled?: boolean;
+  primary?: boolean;
+  isHovered?: boolean;
+  passwordSet?: boolean;
+  isDisabled?: boolean;
+}
+
+const buttonBaseStyle = css<ButtonProps>`
+  cursor: ${props => (props.disabled || props.isDisabled) ? 'not-allowed' : 'pointer'};
+  opacity: ${props => (props.disabled || props.isDisabled) ? 0.6 : 1};
+  transition: all 0.2s ease;
+  border-radius: ${theme.borderRadius.md};
+`;
+
+const overlayStyle = css`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+// ========== Layout Components ==========
 
 export const Body = styled.div`
   max-width: 1200px;
   margin: auto;
-  background: #f9fafb;
-  color: #333;
+  background: ${theme.colors.background.primary};
+  color: ${theme.colors.text.primary};
   line-height: 1.5;
-  padding: 20px;
+  padding: ${theme.spacing.md};
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
@@ -70,25 +186,25 @@ export const Body = styled.div`
   flex-direction: column;
   
   ${mobile(`
-    padding: 10px;
+    padding: ${theme.spacing.sm};
   `)}
 `;
 
 export const AppContainer = styled.div<DirectionalProps>`
-  padding: 20px 20px;
-  background-color: #f9fafb;
+  padding: ${theme.spacing.md};
+  background-color: ${theme.colors.background.primary};
   min-height: 100vh;
   max-width: 100vw;
   ${props => directionalStyles(props.isRTL)}
 `;
 
 export const MediaContainer = styled.div`
-  padding: 0 24px 20px;
+  padding: 0 ${theme.spacing.md} ${theme.spacing.md};
   width: 100%;
   overflow: visible;
   
   ${mobile(`
-    padding: 0 16px 15px;
+    padding: 0 ${theme.spacing.md} ${theme.spacing.sm};
     width: 100%;
   `)}
 `;
@@ -103,20 +219,20 @@ export const ContentContainer = styled.div`
 export const Header = styled.div`
   position: sticky;
   top: 0;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  background: ${theme.colors.white};
+  box-shadow: ${theme.boxShadow.sm};
   z-index: 10;
-  margin-bottom: 10px;
+  margin-bottom: ${theme.spacing.sm};
   width: 100%;
 `;
 
 export const HeaderContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 16px 24px;
+  padding: ${theme.spacing.md};
   
   ${mobile(`
-    padding: 16px 16px;
+    padding: ${theme.spacing.md};
   `)}
 `;
 
@@ -124,9 +240,9 @@ export const HeaderControls = styled.div<{ fullWidth?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  gap: 10px;
+  margin-top: ${theme.spacing.sm};
+  margin-bottom: ${theme.spacing.xs};
+  gap: ${theme.spacing.sm};
   flex-wrap: wrap;
   
   ${props => props.fullWidth && css`
@@ -150,23 +266,23 @@ export const HeaderContainer = styled.div`
 export const RowSelectorContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: ${theme.spacing.sm};
 `;
 
 export const RowSelectorLabel = styled.label`
-  margin-right: 8px;
-  font-size: 14px;
-  color: #555;
+  margin-right: ${theme.spacing.sm};
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.text.secondary};
   font-weight: normal;
 `;
 
 export const RowSelectorSelect = styled.select`
-  padding: 5px 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: white;
+  padding: 5px ${theme.spacing.sm};
+  border: 1px solid ${theme.colors.border};
+  border-radius: ${theme.borderRadius.md};
+  background-color: ${theme.colors.white};
   cursor: pointer;
-  font-size: 14px;
+  font-size: ${theme.fontSizes.sm};
   min-width: 50px;
 `;
 
@@ -176,7 +292,7 @@ export const LogoContainer = styled.div<DirectionalProps>`
   display: flex;
   align-items: center;
   flex-direction: ${props => props.isRTL ? 'row-reverse' : 'row'};
-  gap: 10px;  
+  gap: ${theme.spacing.sm};  
 `;
 
 export const Logo = styled.img`
@@ -189,45 +305,28 @@ export const Headline = styled.h1`
 
 // ========== Button Components ==========
 
-// Base button style
-interface ButtonProps {
-  disabled?: boolean;
-  primary?: boolean;
-  isHovered?: boolean;
-  passwordSet?: boolean;
-  isDisabled?: boolean;
-}
-
-const buttonBase = css<ButtonProps>`
-  cursor: ${props => (props.disabled || props.isDisabled) ? 'not-allowed' : 'pointer'};
-  opacity: ${props => (props.disabled || props.isDisabled) ? 0.6 : 1};
-  transition: all 0.2s ease;
-  border-radius: 4px;
-`;
-
 export const Button = styled.button<ButtonProps>`
-  ${buttonBase}
-  background: ${props => props.primary ? '#007bff' : props.passwordSet ? '#000000' : '#8c8c8c'};
-  color: ${props => props.passwordSet ? '#000000' : 'white'};
-  font-weight: ${props => props.passwordSet ? 'bold' : 'normal'};
-  padding: ${props => props.primary === undefined ? '6px 12px' : '14px 28px'};
-  font-size: ${props => props.primary === undefined ? '14px' : '16px'};
-  border: ${props => props.primary === undefined ? '1px solid #006adc' : 'none'};
+  ${buttonBaseStyle}
   background-color: ${props => {
     if (props.primary === undefined) return 'transparent';
-    if (props.primary && props.isHovered) return '#0056b3';
-    if (props.primary) return '#007bff';
-    return '#8c8c8c';
+    if (props.primary) return props.isHovered ? theme.colors.primaryDark : theme.colors.primary;
+    if (props.passwordSet) return theme.colors.black;
+    return theme.colors.gray;
   }};
   color: ${props => {
-    if (props.primary === undefined) return '#006adc';
-    if (props.passwordSet) return '#000000';
-    return 'white';
+    if (props.primary === undefined) return theme.colors.primary;
+    if (props.passwordSet) return theme.colors.black;
+    return theme.colors.text.white;
   }};
-  box-shadow: ${props => props.primary !== undefined && (props.primary ? 
-    '0 4px 12px rgba(0, 123, 255, 0.2)' : 
-    '0 4px 10px rgba(0, 0, 0, 0.08)')};
-  border-radius: ${props => props.primary !== undefined ? '8px' : '4px'};
+  font-weight: ${props => props.passwordSet ? 'bold' : 'normal'};
+  padding: ${props => props.primary === undefined ? '6px 12px' : '14px 28px'};
+  font-size: ${props => props.primary === undefined ? theme.fontSizes.sm : theme.fontSizes.md};
+  border: ${props => props.primary === undefined ? `1px solid ${theme.colors.primary}` : 'none'};
+  box-shadow: ${props => {
+    if (props.primary === undefined) return 'none';
+    return props.primary ? theme.boxShadow.primaryBtn : theme.boxShadow.lg;
+  }};
+  border-radius: ${props => props.primary !== undefined ? theme.borderRadius.lg : theme.borderRadius.md};
   width: ${props => props.primary === undefined && props.passwordSet !== undefined ? '100%' : 'auto'};
   text-align: ${props => props.primary === undefined && props.passwordSet !== undefined ? 'left' : 'center'};
   margin-right: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? 'auto' : '0'};
@@ -238,9 +337,9 @@ export const Button = styled.button<ButtonProps>`
   &:hover {
     background-color: ${props => {
       if (props.primary === undefined) return 'transparent';
-      if (props.primary) return '#0056b3';
-      if (props.passwordSet) return '#000000';
-      return '#45a049';
+      if (props.primary) return theme.colors.primaryDark;
+      if (props.passwordSet) return theme.colors.black;
+      return theme.colors.success;
     }};
   }
 `;
@@ -248,22 +347,21 @@ export const Button = styled.button<ButtonProps>`
 export const MenuButton = styled(Button)`
   width: 100%;
   text-align: left;
-  padding: 8px 16px;
+  padding: ${theme.spacing.sm} ${theme.spacing.md};
   background: transparent;
-  color: #006adc;
+  color: ${theme.colors.primary};
   border: none;
   margin: 2px 0;
   
   &:hover {
-    background-color: #f5f5f5;
+    background-color: ${theme.colors.grayLighter};
   }
 
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid ${theme.colors.borderLight};
   
   &:last-of-type {
     border-bottom: none;
   }
-      
 `;
 
 export const HamburgerIcon = styled.span`
@@ -272,43 +370,43 @@ export const HamburgerIcon = styled.span`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 8px;
+  margin-right: ${theme.spacing.sm};
 `;
 
 export const HamburgerLine = styled.span`
   height: 2px;
-  background: #006adc;
+  background: ${theme.colors.primary};
   width: 100%;
 `;
 
 export const RemoveButton = styled.button<ButtonProps>`
-  ${buttonBase}
-  background-color: #e53935;
-  color: white;
+  ${buttonBaseStyle}
+  background-color: ${theme.colors.danger};
+  color: ${theme.colors.text.white};
   border: none;
-  border-radius: 6px;
-  padding: 6px 8px;
-  font-size: 12px;
+  border-radius: ${theme.borderRadius.md};
+  padding: 6px ${theme.spacing.sm};
+  font-size: ${theme.fontSizes.xs};
   margin-top: auto;
 `;
 
 export const NavButtonsContainer = styled.div`
   display: flex;
-  gap: 10px;
+  gap: ${theme.spacing.sm};
 `;
 
 export const ActionButtons = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: ${theme.spacing.sm};
+  margin-bottom: ${theme.spacing.md};
 `;
 
 // ========== User Profile & Account Components ==========
 
 export const ProfileLink = styled.a`
-  font-size: 14px;
-  color: #007bff;
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.primary};
   text-decoration: none;
   font-weight: 500;
 `;
@@ -320,24 +418,24 @@ export const UserInfo = styled.div`
 `;
 
 export const Username = styled.div`
-  font-size: 16px;
-  color: #666;
+  font-size: ${theme.fontSizes.md};
+  color: ${theme.colors.text.secondary};
 `;
 
 export const OwnerProfileLink = styled.a`
   text-decoration: none;
-  color: white;
-  background-color: #006adc;
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-size: 14px;
+  color: ${theme.colors.text.white};
+  background-color: ${theme.colors.primary};
+  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  border-radius: ${theme.borderRadius.md};
+  font-size: ${theme.fontSizes.sm};
   display: flex;
   align-items: center;
   gap: 6px;
 `;
 
 export const ProfileHeaderContainer = styled.div<{ isRTL: boolean }>`
-  margin-bottom: 24px;
+  margin-bottom: ${theme.spacing.md};
   text-align: center;
   direction: ${props => props.isRTL ? "rtl" : "ltr"};
 `;
@@ -346,20 +444,20 @@ export const ProfileControls = styled.div<{ isRTL: boolean }>`
   display: flex;
   align-items: center;
   justify-content: ${props => props.isRTL ? "flex-start" : "flex-end"};
-  margin-bottom: 8px;
+  margin-bottom: ${theme.spacing.sm};
   position: relative;
 `;
 
 export const ProfileAvatar = styled.div`
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
+  border-radius: ${theme.borderRadius.circle};
+  background-color: ${theme.colors.grayLight};
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  color: #555;
+  font-size: ${theme.fontSizes.lg};
+  color: ${theme.colors.text.secondary};
 `;
 
 export const PublicProfileDisplayNameMenu = styled.div`
@@ -370,19 +468,19 @@ export const PublicProfileDisplayNameMenu = styled.div`
 `;
 
 export const PublicProfileDisplayName = styled.h1`
-  font-size: 18px;
+  font-size: ${theme.fontSizes.lg};
   margin: 0;
   font-weight: 600;
 `;
 
 export const PublicProfileExplanation = styled.div`
-  margin-top: 12px;
-  padding: 8px 12px;
-  background-color: #f0f7ff;
-  border-radius: 8px;
-  border: 1px solid #cce0ff;
+  margin-top: ${theme.spacing.sm};
+  padding: ${theme.spacing.sm};
+  background-color: ${theme.colors.background.highlight};
+  border-radius: ${theme.borderRadius.lg};
+  border: 1px solid ${theme.colors.highlight.border};
   max-width: 500px;
-  font-size: 13px;
+  font-size: ${theme.fontSizes.xs};
   margin: 0 auto;
   
   p {
@@ -394,8 +492,8 @@ export const PublicProfileExplanation = styled.div`
 
 export const AlbumTitle = styled.h2`
   font-weight: 400;
-  margin: 0 0 16px 0;
-  font-size: 24px;
+  margin: 0 0 ${theme.spacing.md} 0;
+  font-size: ${theme.fontSizes.xxl};
   padding: 0;
   
   ${mobile(`
@@ -407,22 +505,15 @@ export const AlbumTitleStrong = styled.strong`
   font-weight: 700;
 `;
 
-// Card container base style
-const cardBase = css`
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-`;
-
 export const Card = styled.div<{ padding?: string; marginBottom?: string }>`
-  ${cardBase}
-  padding: ${props => props.padding || '20px'};
-  margin-bottom: ${props => props.marginBottom || '20px'};
+  ${cardStyle}
+  padding: ${props => props.padding || theme.spacing.md};
+  margin-bottom: ${props => props.marginBottom || theme.spacing.md};
   width: 100%;
 `;
 
 export const DescriptionText = styled.p`
-  color: #333;
+  color: ${theme.colors.text.primary};
   margin: 0;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -438,60 +529,60 @@ interface MessageProps {
 export const Message = styled.div<MessageProps>`
   text-align: center;
   padding: 40px;
-  font-size: 18px;
+  font-size: ${theme.fontSizes.lg};
   grid-column: 1 / -1;
   width: 100%;
   color: ${props => {
     switch(props.type) {
-      case 'error': return '#d32f2f';
-      case 'loading': return '#666';
-      default: return '#333';
+      case 'error': return theme.colors.danger;
+      case 'loading': return theme.colors.text.secondary;
+      default: return theme.colors.text.primary;
     }
   }};
 `;
 
 export const ItalicText = styled.p`
   font-style: italic;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: ${theme.spacing.sm};
+  margin-bottom: ${theme.spacing.sm};
   text-align: center;
   
   ${mobile(`
-    font-size: 14px;
+    font-size: ${theme.fontSizes.sm};
   `)}
 `;
 
 export const AlbumDescription = styled.div<{ isRTL: boolean }>`
-  margin-top: 8px;
-  margin-bottom: 16px;
-  font-size: 12px;
-  color: #555;
+  margin-top: ${theme.spacing.sm};
+  margin-bottom: ${theme.spacing.md};
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.text.secondary};
   line-height: 1.5;
   text-align: ${props => props.isRTL ? "right" : "left"};
   white-space: pre-wrap;
 `;
 
 export const AlbumDates = styled.div<{ isRTL: boolean }>`
-  font-size: 13px;
-  color: #777;
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.text.light};
   text-align: ${props => props.isRTL ? "right" : "left"};
-  margin-top: 4px;
+  margin-top: ${theme.spacing.xs};
 `;
 
 export const PolicyIndicator = styled.div`
   display: flex;
   align-items: center;
-  font-size: 12px;
-  color: #555;
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.text.secondary};
 `;
 
 // ========== Media Grid Components ==========
 
 export const MediaGrid = styled.div<{ columns: string }>`
   display: grid;
-  grid-gap: 20px;
+  grid-gap: ${theme.spacing.md};
   width: 100%;
-  min-height: 0; // Allow proper sizing
+  min-height: 0;
   
   ${props => {
     switch(props.columns) {
@@ -504,10 +595,9 @@ export const MediaGrid = styled.div<{ columns: string }>`
     }
   }}
   
-  @media (max-width: 767px) {
-    grid-gap: 8px;
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    grid-gap: ${theme.spacing.sm};
     ${props => {
-      // For mobile, limit the maximum number of columns and adjust based on selection
       const col = parseInt(props.columns);
       if (col > 3) return css`grid-template-columns: repeat(3, minmax(0, 1fr));`;
       if (col > 1) return css`grid-template-columns: repeat(${col}, minmax(0, 1fr));`;
@@ -516,25 +606,24 @@ export const MediaGrid = styled.div<{ columns: string }>`
   }
 `;
 
-// Base media block style
-const mediaBlockBase = css<{ isHovered?: boolean }>`
-  ${cardBase}
+// Media block style
+const mediaBlockStyle = css<{ isHovered?: boolean }>`
+  ${cardStyle}
   transition: transform 0.2s;
   position: relative;
-  height: auto; // Allow natural height
+  height: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 20px; // Add bottom margin for spacing
+  margin-bottom: ${theme.spacing.md};
   
   ${props => props.isHovered && css`
     transform: translateY(-2px);
   `}
   
   ${mobile(`
-    border-radius: 4px;
-    margin-bottom: 10px; // Less margin on mobile
+    margin-bottom: ${theme.spacing.sm};
   `)}
 `;
 
@@ -543,12 +632,12 @@ export const MediaBlock = styled.div<{
   isVideo?: boolean; 
   isSelected?: boolean 
 }>`
-  ${mediaBlockBase}
+  ${mediaBlockStyle}
   ${props => props.isVideo && css`
     cursor: pointer;
   `}
   ${props => props.isSelected && css`
-    border: 3px solid #006adc;
+    border: 3px solid ${theme.colors.primary};
     box-shadow: 0 0 0 3px rgba(0, 106, 220, 0.3);
   `}
 `;
@@ -556,15 +645,15 @@ export const MediaBlock = styled.div<{
 export const PhotoGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 32px;
+  gap: ${theme.spacing.md};
+  margin-bottom: ${theme.spacing.xl};
 `;
 
 export const PhotoCard = styled.div`
-  ${cardBase}
+  ${cardStyle}
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: ${theme.spacing.sm};
   width: 160px;
   position: relative;
 `;
@@ -574,17 +663,17 @@ export const PhotoCard = styled.div`
 export const LazyImageContainer = styled.div`
   position: relative;
   overflow: hidden;
-  background-color: #f0f0f0;
+  background-color: ${theme.colors.grayLighter};
   width: 100%;
-  padding-bottom: 75%; // Create a consistent aspect ratio (4:3)
-  height: 0; // Use padding-bottom for aspect ratio
+  padding-bottom: 75%;
+  height: 0;
   
   ${mobile(`
-    padding-bottom: 100%; // Square aspect ratio on mobile
+    padding-bottom: 100%;
   `)}
 `;
 
-// Base image styles
+// Image styles
 interface ImageProps {
   isLoaded: boolean;
   objectFit?: 'cover' | 'contain';
@@ -622,7 +711,7 @@ export const VideoElement = styled.video`
 export const ThumbnailWrapper = styled.div`
   position: relative;
   overflow: hidden;
-  background-color: #f0f0f0;
+  background-color: ${theme.colors.grayLighter};
   width: 100%;
   min-height: 200px;
   flex-grow: 1;
@@ -644,8 +733,8 @@ export const PlayButton = styled.div`
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background-color: rgba(0,0,0,0.7);
-  border-radius: 50%;
+  background-color: ${theme.colors.overlayLight};
+  border-radius: ${theme.borderRadius.circle};
   z-index: 2;
   
   &::before {
@@ -656,7 +745,7 @@ export const PlayButton = styled.div`
     transform: translate(-50%, -50%);
     border-style: solid;
     border-width: 15px 0 15px 25px;
-    border-color: transparent transparent transparent white;
+    border-color: transparent transparent transparent ${theme.colors.white};
   }
   
   ${mobile(`
@@ -671,7 +760,7 @@ export const PlayButton = styled.div`
 
 export const MediaPreview = styled.div`
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: ${theme.spacing.sm};
   height: 120px;
   display: flex;
   align-items: center;
@@ -681,13 +770,13 @@ export const MediaPreview = styled.div`
 export const MediaItem = styled.img`
   max-width: 100%;
   max-height: 100%;
-  border-radius: 6px;
+  border-radius: ${theme.borderRadius.md};
 `;
 
 export const VideoItem = styled.video`
   max-width: 100%;
   max-height: 100%;
-  border-radius: 6px;
+  border-radius: ${theme.borderRadius.md};
 `;
 
 export const MediaWrapper = styled.div`
@@ -702,29 +791,17 @@ export const LoadingPlaceholder = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background: linear-gradient(90deg, ${theme.colors.grayLighter} 25%, ${theme.colors.grayLight} 50%, ${theme.colors.grayLighter} 75%);
   background-size: 200% 100%;
-  animation: loading-animation 1.5s infinite;
+  animation: loadingAnimation 1.5s infinite;
   z-index: 0;
 `;
 
-// Overlay base styles
-const overlayBase = css`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const Overlay = styled.div<{ type?: 'loading' | 'watermark' }>`
-  ${overlayBase}
-  background-color: ${props => props.type === 'loading' ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
+  ${overlayStyle}
+  background-color: ${props => props.type === 'loading' ? theme.colors.overlayLight : 'transparent'};
   z-index: ${props => props.type === 'loading' ? 4 : 5};
-  color: ${props => props.type === 'loading' ? 'white' : 'inherit'};
+  color: ${props => props.type === 'loading' ? theme.colors.white : 'inherit'};
   font-weight: ${props => props.type === 'loading' ? 500 : 'inherit'};
   text-align: ${props => props.type === 'loading' ? 'center' : 'inherit'};
   padding: ${props => props.type === 'loading' ? '0 10px' : '0'};
@@ -736,10 +813,10 @@ export const LoadingIndicator = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  background-color: ${theme.colors.overlay};
+  color: ${theme.colors.white};
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: ${theme.borderRadius.md};
   z-index: 10;
 `;
 
@@ -751,21 +828,21 @@ interface ProgressProps {
 }
 
 export const ProgressTitle = styled.h3`
-  font-size: 18px;
-  margin: 0 0 12px 0;
+  font-size: ${theme.fontSizes.lg};
+  margin: 0 0 ${theme.spacing.sm} 0;
 `;
 
 export const ProgressStats = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: ${theme.fontSizes.sm};
   margin-bottom: 6px;
 `;
 
 export const ProgressBarBg = styled.div<{ bottom?: string; left?: string; right?: string; height?: string }>`
   height: ${props => props.height || '8px'};
-  background-color: #e0e0e0;
-  border-radius: 4px;
+  background-color: ${theme.colors.grayLight};
+  border-radius: ${theme.borderRadius.md};
   overflow: hidden;
   ${props => props.bottom && `bottom: ${props.bottom};`}
   ${props => props.left && `left: ${props.left};`}
@@ -776,35 +853,34 @@ export const ProgressBarBg = styled.div<{ bottom?: string; left?: string; right?
 export const ProgressBar = styled.div<ProgressProps>`
   height: 100%;
   background-color: ${props => {
-    if (props.status === 'processing') return '#ff9800';
-    if (props.status === 'error') return '#e53935';
-    if (props.status === 'complete') return '#4caf50';
-    return '#2196f3'; // Default or uploading
+    if (props.status === 'processing') return theme.colors.warning;
+    if (props.status === 'error') return theme.colors.danger;
+    if (props.status === 'complete') return theme.colors.success;
+    return theme.colors.info; // Default or uploading
   }};
-  border-radius: 4px;
+  border-radius: ${theme.borderRadius.md};
   transition: width 0.3s ease;
   width: ${props => (props.progress || 0) * 100}%;
 `;
 
 export const ProgressDetails = styled.div`
   display: flex;
-  gap: 12px;
-  font-size: 14px;
-  color: #666;
+  gap: ${theme.spacing.sm};
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.text.secondary};
 `;
 
 export const ProgressItem = styled.div<ProgressProps>`
-  color: ${props => props.isError ? '#e53935' : 'inherit'};
+  color: ${props => props.isError ? theme.colors.danger : 'inherit'};
 `;
 
 export const ProgressText = styled.div`
-  font-size: 14px;
-  margin-bottom: 8px;
+  font-size: ${theme.fontSizes.sm};
+  margin-bottom: ${theme.spacing.sm};
 `;
 
 // ========== Modal & Dialog Components ==========
 
-// Modal base styles
 interface ModalProps {
   zIndex?: number;
 }
@@ -815,7 +891,7 @@ export const Modal = styled.div<ModalProps>`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: ${theme.colors.overlay};
   z-index: ${props => props.zIndex || 1000};
   display: flex;
   justify-content: center;
@@ -823,8 +899,8 @@ export const Modal = styled.div<ModalProps>`
 `;
 
 export const ModalContent = styled.div`
-  ${cardBase}
-  padding: 24px;
+  ${cardStyle}
+  padding: ${theme.spacing.md};
   max-width: 90%;
   max-height: 90%;
   overflow: auto;
@@ -833,46 +909,46 @@ export const ModalContent = styled.div`
   align-items: center;
   
   ${mobile(`
-    padding: 16px;
+    padding: ${theme.spacing.md};
     width: 90%;
   `)}
 `;
 
 // Username component styles
 export const UsernameModal = styled.div<DirectionalProps>`
-  background: #fff;
+  background: ${theme.colors.white};
   padding: 30px;
-  border-radius: 12px;
+  border-radius: ${theme.borderRadius.lg};
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  box-shadow: ${theme.boxShadow.xl};
   ${props => directionalStyles(props.isRTL)}
 `;
 
 export const UsernameTitle = styled.p`
-  font-size: 16px;
-  margin-bottom: 12px;
+  font-size: ${theme.fontSizes.md};
+  margin-bottom: ${theme.spacing.sm};
 `;
 
 export const UsernameDescription = styled.p`
-  font-size: 14px;
-  margin-bottom: 16px;
-  color: #666;
+  font-size: ${theme.fontSizes.sm};
+  margin-bottom: ${theme.spacing.md};
+  color: ${theme.colors.text.secondary};
 `;
 
 export const UsernameInput = styled.input<DirectionalProps>`
   width: 100%;
   padding: 10px;
-  margin-bottom: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+  margin-bottom: ${theme.spacing.sm};
+  border-radius: ${theme.borderRadius.md};
+  border: 1px solid ${theme.colors.border};
+  font-size: ${theme.fontSizes.md};
   text-align: ${props => props.isRTL ? 'right' : 'left'};
 `;
 
 export const UsernameError = styled.div`
-  color: #e53935;
-  margin-bottom: 12px;
+  color: ${theme.colors.danger};
+  margin-bottom: ${theme.spacing.sm};
 `;
 
 export const DropdownMenu = styled.div`
@@ -880,15 +956,15 @@ export const DropdownMenu = styled.div`
   top: 100%;
   right: 0;
   z-index: 100;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  border-radius: 4px;
-  padding: 8px;
+  background-color: ${theme.colors.white};
+  box-shadow: ${theme.boxShadow.md};
+  border-radius: ${theme.borderRadius.md};
+  padding: ${theme.spacing.sm};
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: ${theme.spacing.sm};
   min-width: 180px;
-  margin-top: 4px;
+  margin-top: ${theme.spacing.xs};
 `;
 
 export const FullscreenContainer = styled.div`
@@ -906,7 +982,7 @@ export const FullscreenContainer = styled.div`
 // ========== QR Code Components ==========
 
 export const QRCodeContainer = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: ${theme.spacing.md};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -914,33 +990,33 @@ export const QRCodeContainer = styled.div`
 `;
 
 export const InstructionsContainer = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: ${theme.spacing.md};
   width: 100%;
   max-width: 400px;
 `;
 
 export const InstructionHeading = styled.h3`
-  font-size: 20px;
+  font-size: ${theme.fontSizes.xl};
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: ${theme.spacing.md};
   text-align: center;
   
   ${mobile(`
-    font-size: 18px;
+    font-size: ${theme.fontSizes.lg};
   `)}
 `;
 
 export const InstructionList = styled.ol`
   list-style-type: decimal;
-  padding-left: 20px;
+  padding-left: ${theme.spacing.md};
 `;
 
 export const InstructionItem = styled.li`
-  margin-bottom: 12px;
-  font-size: 16px;
+  margin-bottom: ${theme.spacing.sm};
+  font-size: ${theme.fontSizes.md};
   
   ${mobile(`
-    font-size: 14px;
+    font-size: ${theme.fontSizes.sm};
   `)}
 `;
 
@@ -948,19 +1024,19 @@ export const InstructionItem = styled.li`
 
 export const SelectionCheckbox = styled.div<{ isSelected: boolean }>`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: ${theme.spacing.sm};
+  right: ${theme.spacing.sm};
   z-index: 10;
   width: 24px;
   height: 24px;
-  border-radius: 50%;
-  background-color: ${(props) => (props.isSelected ? '#006adc' : 'rgba(255, 255, 255, 0.8)')};
-  border: ${(props) => (props.isSelected ? 'none' : '2px solid #006adc')};
+  border-radius: ${theme.borderRadius.circle};
+  background-color: ${(props) => (props.isSelected ? theme.colors.primary : 'rgba(255, 255, 255, 0.8)')};
+  border: ${(props) => (props.isSelected ? 'none' : `2px solid ${theme.colors.primary}`)};
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: ${theme.boxShadow.selection};
   transition: all 0.2s ease;
   
   &:hover {
@@ -969,55 +1045,51 @@ export const SelectionCheckbox = styled.div<{ isSelected: boolean }>`
 `;
 
 export const Checkmark = styled.div`
-  color: white;
-  font-size: 14px;
+  color: ${theme.colors.white};
+  font-size: ${theme.fontSizes.sm};
   font-weight: bold;
 `;
 
 export const SelectionBanner = styled.div`
-  padding: 10px 20px;
-  background-color: #f0f7ff;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  background-color: ${theme.colors.background.highlight};
+  border-radius: ${theme.borderRadius.md};
+  margin-bottom: ${theme.spacing.md};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: ${theme.boxShadow.md};
 `;
 
 export const SelectedCount = styled.p`
-  font-size: 16px;
-  margin-bottom: 16px;
-  color: #333;
+  font-size: ${theme.fontSizes.md};
+  margin-bottom: ${theme.spacing.md};
+  color: ${theme.colors.text.primary};
 `;
 
-// Badge base style
-const badgeBase = css`
-  position: absolute;
-  z-index: 2;
-`;
-
+// Badge styles
 interface BadgeProps {
   position: 'bottomLeft' | 'bottomRight';
   light?: boolean;
 }
 
 export const Badge = styled.div<BadgeProps>`
-  ${badgeBase}
-  bottom: 12px;
-  left: ${(props: BadgeProps) => props.position === 'bottomLeft' ? '12px' : 'auto'};
-  right: ${(props: BadgeProps) => props.position === 'bottomRight' ? '12px' : 'auto'};
-  background: ${(props: BadgeProps) => props.light ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.7)'};
-  color: ${(props: BadgeProps) => props.light ? 'inherit' : 'white'};
+  position: absolute;
+  z-index: 2;
+  bottom: ${theme.spacing.sm};
+  left: ${(props: BadgeProps) => props.position === 'bottomLeft' ? theme.spacing.sm : 'auto'};
+  right: ${(props: BadgeProps) => props.position === 'bottomRight' ? theme.spacing.sm : 'auto'};
+  background: ${(props: BadgeProps) => props.light ? 'rgba(255,255,255,0.85)' : theme.colors.overlay};
+  color: ${(props: BadgeProps) => props.light ? 'inherit' : theme.colors.white};
   padding: ${(props: BadgeProps) => props.light ? '6px 12px' : '4px 8px'};
-  font-size: ${(props: BadgeProps) => props.light ? '12px' : '14px'};
+  font-size: ${(props: BadgeProps) => props.light ? theme.fontSizes.xs : theme.fontSizes.sm};
   font-weight: 500;
-  border-radius: ${(props: BadgeProps) => props.light ? '3px' : '4px'};
+  border-radius: ${(props: BadgeProps) => props.light ? theme.borderRadius.md : theme.borderRadius.md};
   
   ${mobile(`
     padding: ${(props: BadgeProps) => props.light ? '3px 6px' : '2px 6px'};
-    font-size: ${(props: BadgeProps) => props.light ? '10px' : '12px'};
-    bottom: ${(props: BadgeProps) => props.light ? '8px' : '12px'};
+    font-size: ${(props: BadgeProps) => props.light ? '10px' : theme.fontSizes.xs};
+    bottom: ${(props: BadgeProps) => props.light ? '8px' : theme.spacing.sm};
     ${(props: BadgeProps) => props.position === 'bottomRight' && props.light && `
       max-width: 45%;
       white-space: nowrap;
@@ -1029,24 +1101,24 @@ export const Badge = styled.div<BadgeProps>`
 
 export const StatusIndicator = styled.div<{ status: UploadStatus }>`
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: ${theme.spacing.sm};
+  right: ${theme.spacing.sm};
   width: 24px;
   height: 24px;
-  border-radius: 12px;
+  border-radius: ${theme.borderRadius.circle};
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  color: white;
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.white};
   z-index: 1;
   background-color: ${props => {
     switch(props.status) {
-      case 'complete': return '#4caf50';
-      case 'error': return '#e53935';
-      case 'uploading': return '#2196f3';
-      case 'processing': return '#ff9800';
-      default: return '#9e9e9e';
+      case 'complete': return theme.colors.success;
+      case 'error': return theme.colors.danger;
+      case 'uploading': return theme.colors.info;
+      case 'processing': return theme.colors.warning;
+      default: return theme.colors.gray;
     }
   }};
 `;
@@ -1054,33 +1126,23 @@ export const StatusIndicator = styled.div<{ status: UploadStatus }>`
 // ========== Form Components ==========
 
 export const FormGroup = styled.div`
-  margin-bottom: 16px;
+  margin-bottom: ${theme.spacing.md};
 `;
 
 export const FormLabel = styled.label`
   display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
+  margin-bottom: ${theme.spacing.sm};
+  font-size: ${theme.fontSizes.sm};
   font-weight: 500;
-  color: #333;
-`;
-
-// Form input base style
-const formInputBase = css`
-  width: 100%;
-  padding: 10px 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
+  color: ${theme.colors.text.primary};
 `;
 
 export const FormInput = styled.input`
-  ${formInputBase}
+  ${formInputStyle}
 `;
 
 export const FormTextarea = styled.textarea`
-  ${formInputBase}
+  ${formInputStyle}
   resize: vertical;
 `;
 
@@ -1093,23 +1155,23 @@ export const HiddenFileInput = styled.input`
 export const ToggleContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: ${theme.spacing.md};
   padding: 4px 0;
-  gap: 15px; /* Small gap for consistent spacing */
+  gap: 15px;
 `;
 
 export const ToggleLabel = styled.div`
-  font-size: 14px;
+  font-size: ${theme.fontSizes.sm};
   font-weight: 500;
-  color: #333;
-  line-height: 24px; /* Added line-height to better align with taller toggle */
+  color: ${theme.colors.text.primary};
+  line-height: 24px;
 `;
 
 export const ToggleSwitch = styled.label`
   position: relative;
   display: inline-block;
   width: 40px;
-  height: 24px; /* Increased from 20px to 24px */
+  height: 24px;
   
   input {
     opacity: 0;
@@ -1117,7 +1179,7 @@ export const ToggleSwitch = styled.label`
     height: 0;
     
     &:checked + span {
-      background-color: #007bff;
+      background-color: ${theme.colors.primary};
     }
     
     &:focus + span {
@@ -1125,7 +1187,7 @@ export const ToggleSwitch = styled.label`
     }
     
     &:checked + span:before {
-      transform: translateX(16px); /* Adjusted for new dimensions */
+      transform: translateX(16px);
     }
     
     &:disabled + span {
@@ -1142,18 +1204,18 @@ export const ToggleSlider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #e0e0e0;
+  background-color: ${theme.colors.grayLight};
   transition: .2s;
-  border-radius: 24px; /* Updated to match height */
+  border-radius: 24px;
   
   &:before {
     position: absolute;
     content: "";
-    height: 20px; /* Increased from 16px to 20px */
-    width: 20px; /* Increased from 16px to 20px */
+    height: 20px;
+    width: 20px;
     left: 2px;
     top: 2px;
-    background-color: white;
+    background-color: ${theme.colors.white};
     transition: .2s;
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -1163,12 +1225,12 @@ export const ToggleSlider = styled.span`
 // ========== Watermark Components ==========
 
 export const WatermarkText = styled.div`
-  color: white;
-  font-size: 24px;
+  color: ${theme.colors.white};
+  font-size: ${theme.fontSizes.xxl};
   font-weight: bold;
   transform: rotate(-30deg);
   opacity: 0.7;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  text-shadow: ${theme.boxShadow.textShadow};
   user-select: none;
   white-space: nowrap;
 `;
@@ -1176,21 +1238,21 @@ export const WatermarkText = styled.div`
 // ========== Miscellaneous Components ==========
 
 export const FileInfo = styled.div`
-  font-size: 12px;
-  color: #666;
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.text.secondary};
   margin-bottom: 6px;
 `;
 
 export const LegalLinksFooter = styled.div`
   text-align: center;
-  padding: 20px;
+  padding: ${theme.spacing.md};
   font-size: 0.9em;
-  color: #555;
+  color: ${theme.colors.text.secondary};
 `;
 
 export const LegalLinkFooterButton = styled.a<{ isHovered?: boolean }>`
-  margin: 0 10px;
-  color: #555;
+  margin: 0 ${theme.spacing.sm};
+  color: ${theme.colors.text.secondary};
   text-decoration: ${props => props.isHovered ? 'underline' : 'none'};
 `;
 
@@ -1201,152 +1263,39 @@ interface StateProps {
 
 export const State = styled.div<StateProps>`
   text-align: center; 
-  padding: 40px 20px;
-  border-radius: 12px;
-  background-color: ${props => props.type === 'error' ? '#fdeded' : 'white'};
-  border: ${props => props.type === 'error' ? '1px solid #f7d0d0' : 'none'};
-  box-shadow: ${props => props.type === 'empty' ? '0 2px 8px rgba(0,0,0,0.05)' : 'none'};
-  margin-bottom: ${props => props.type === 'error' ? '20px' : '0'};
+  padding: 40px ${theme.spacing.md};
+  border-radius: ${theme.borderRadius.lg};
+  background-color: ${props => props.type === 'error' ? theme.colors.background.error : theme.colors.white};
+  border: ${props => props.type === 'error' ? `1px solid ${theme.colors.highlight.error}` : 'none'};
+  box-shadow: ${props => props.type === 'empty' ? theme.boxShadow.md : 'none'};
+  margin-bottom: ${props => props.type === 'error' ? theme.spacing.md : '0'};
   
   p {
-    font-size: 16px;
-    color: ${props => props.type === 'error' ? '#d32f2f' : '#666'};
+    font-size: ${theme.fontSizes.md};
+    color: ${props => props.type === 'error' ? theme.colors.danger : theme.colors.text.secondary};
   }
 `;
 
 export const DebugContainer = styled.div`
-  margin-top: 24px;
-  padding: 16px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
+  margin-top: ${theme.spacing.md};
+  padding: ${theme.spacing.md};
+  background-color: ${theme.colors.grayLighter};
+  border-radius: ${theme.borderRadius.lg};
 `;
 
 export const DebugTitle = styled.h3`
-  margin: 0 0 12px 0;
-  font-size: 16px;
+  margin: 0 0 ${theme.spacing.sm} 0;
+  font-size: ${theme.fontSizes.md};
 `;
 
 export const DebugMessages = styled.pre`
   margin: 0;
-  font-size: 12px;
+  font-size: ${theme.fontSizes.xs};
   white-space: pre-wrap;
   max-height: 200px;
   overflow-y: auto;
 `;
 
 export const DebugMessage = styled.div`
-  margin-bottom: 4px;
+  margin-bottom: ${theme.spacing.xs};
 `;
-
-// ========== Component with Internal State ==========
-
-// ProfileHeader Component
-interface ProfileHeaderProps {
-  username: string;
-  isCurrentUser: boolean;
-  isRTL: boolean;
-}
-
-// ProfileHeader Component
-export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ 
-  username, 
-  isCurrentUser,
-  isRTL 
-}) => {
-  const { t } = useTranslation();
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  
-  // Toggle dropdown menu
-  const toggleMenu = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setMenuOpen(!menuOpen);
-  };
-
-  // Close menu when clicked outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setMenuOpen(false);
-      }
-    };
-    
-    // Handle scroll to close menu
-    const handleScroll = () => {
-      setMenuOpen(false);
-    };
-    
-    if (menuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      window.addEventListener('scroll', handleScroll);
-    }
-    
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [menuOpen]);
-  
-  // Execute action and close menu
-  const handleAction = (action: () => void) => {
-    action();
-    setMenuOpen(false);
-  };
-  
-  return (
-    <ProfileHeaderContainer isRTL={isRTL}>
-      <ProfileControls isRTL={isRTL}>
-        <div ref={menuRef} style={{ position: 'relative' }}>
-          <Button
-            onClick={toggleMenu}
-            aria-label={t('Menu')}
-            aria-expanded={menuOpen}
-          >
-            <HamburgerIcon>
-              <HamburgerLine />
-              <HamburgerLine />
-              <HamburgerLine />
-            </HamburgerIcon>
-            {username || t('User Profile')}
-          </Button>
-          
-          {/* Dropdown Menu */}
-          {menuOpen && (
-            <DropdownMenu>
-              <MenuButton
-                onClick={() => handleAction(() => {
-                  alert(t('Bio feature is coming soon! Stay tuned for updates where you can share more about yourself.'));
-                })}
-              >
-                {t('Bio')}
-              </MenuButton>
-              
-              <MenuButton
-                onClick={() => handleAction(() => {
-                  alert(t('Email feature is coming soon! Soon you will be able to share your email with connections.'));
-                })}
-              >
-                {t('E-mail')}
-              </MenuButton>
-              
-              <MenuButton
-                onClick={() => handleAction(() => {
-                  alert(t('Add Contact feature is coming soon! You will be able to add this person as a contact on 6180.'));
-                })}
-              >
-                {t('Contact On 6180')}
-              </MenuButton>
-            </DropdownMenu>
-          )}
-        </div>
-      </ProfileControls>
-      
-      {isCurrentUser && (
-        <PublicProfileExplanation>
-          <p>{t('This is how others see your public profile')}</p>
-        </PublicProfileExplanation>
-      )}
-    </ProfileHeaderContainer>
-  );
-};

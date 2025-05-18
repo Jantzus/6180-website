@@ -108,7 +108,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
                 <HamburgerLine />
                 <HamburgerLine />
               </HamburgerIcon>
-              {t('Save')}
+              {t('Add')}
             </Button>
             
             {menuOpen && (
