@@ -49,13 +49,14 @@ const theme = {
     lg: "24px",
     xl: "32px"
   },
+  // Simplified border radius system with fewer options based on component context
   borderRadius: {
-    xs: "3px",
-    sm: "4px",
-    md: "6px",
-    lg: "8px",
-    xl: "12px",
-    circle: "50%"
+    none: "0",
+    small: "4px",      // For small UI elements like tags, badges, chips
+    medium: "8px",     // For most containers, cards, buttons
+    large: "16px",     // For prominent elements, modals, featured cards
+    full: "999px",     // For pills, tags (nearly circular but works with any height)
+    circle: "50%"      // Perfect circles (for avatars, icons)
   },
   fontSizes: {
     xs: "12px",
@@ -131,7 +132,7 @@ const mobile = (content: any) => css`
 // Shared style mixins
 const cardStyle = css`
   background-color: ${theme.colors.background.card};
-  border-radius: ${theme.borderRadius.lg};
+  border-radius: ${theme.borderRadius.medium};
   box-shadow: ${theme.boxShadow.md};
 `;
 
@@ -139,7 +140,7 @@ const formInputStyle = css`
   width: 100%;
   padding: 10px 12px;
   font-size: ${theme.fontSizes.md};
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   border: 1px solid ${theme.colors.border};
   box-sizing: border-box;
 `;
@@ -156,7 +157,7 @@ const buttonBaseStyle = css<ButtonProps>`
   cursor: ${props => (props.disabled || props.isDisabled) ? 'not-allowed' : 'pointer'};
   opacity: ${props => (props.disabled || props.isDisabled) ? 0.6 : 1};
   transition: all 0.2s ease;
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.medium};
 `;
 
 const overlayStyle = css`
@@ -279,7 +280,7 @@ export const RowSelectorLabel = styled.label`
 export const RowSelectorSelect = styled.select`
   padding: 5px ${theme.spacing.sm};
   border: 1px solid ${theme.colors.border};
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   background-color: ${theme.colors.white};
   cursor: pointer;
   font-size: ${theme.fontSizes.sm};
@@ -300,7 +301,7 @@ export const Logo = styled.img`
 `;
 
 export const Headline = styled.h1`
-  font-size: 1.8em;
+  font-size: ${theme.fontSizes.xxl};
 `;
 
 // ========== Button Components ==========
@@ -326,7 +327,7 @@ export const Button = styled.button<ButtonProps>`
     if (props.primary === undefined) return 'none';
     return props.primary ? theme.boxShadow.primaryBtn : theme.boxShadow.lg;
   }};
-  border-radius: ${props => props.primary !== undefined ? theme.borderRadius.lg : theme.borderRadius.md};
+  border-radius: ${props => props.primary !== undefined ? theme.borderRadius.medium : theme.borderRadius.small};
   width: ${props => props.primary === undefined && props.passwordSet !== undefined ? '100%' : 'auto'};
   text-align: ${props => props.primary === undefined && props.passwordSet !== undefined ? 'left' : 'center'};
   margin-right: ${props => props.primary === undefined && !props.passwordSet && !props.isDisabled ? 'auto' : '0'};
@@ -384,7 +385,7 @@ export const RemoveButton = styled.button<ButtonProps>`
   background-color: ${theme.colors.danger};
   color: ${theme.colors.text.white};
   border: none;
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   padding: 6px ${theme.spacing.sm};
   font-size: ${theme.fontSizes.xs};
   margin-top: auto;
@@ -427,7 +428,7 @@ export const OwnerProfileLink = styled.a`
   color: ${theme.colors.text.white};
   background-color: ${theme.colors.primary};
   padding: ${theme.spacing.sm} ${theme.spacing.md};
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   font-size: ${theme.fontSizes.sm};
   display: flex;
   align-items: center;
@@ -477,7 +478,7 @@ export const PublicProfileExplanation = styled.div`
   margin-top: ${theme.spacing.sm};
   padding: ${theme.spacing.sm};
   background-color: ${theme.colors.background.highlight};
-  border-radius: ${theme.borderRadius.lg};
+  border-radius: ${theme.borderRadius.small};
   border: 1px solid ${theme.colors.highlight.border};
   max-width: 500px;
   font-size: ${theme.fontSizes.xs};
@@ -519,6 +520,7 @@ export const DescriptionText = styled.p`
   overflow-wrap: break-word;
   white-space: pre-wrap;
   max-width: 100%;
+  font-size: ${theme.fontSizes.md};
 `;
 
 // Message styles
@@ -532,6 +534,7 @@ export const Message = styled.div<MessageProps>`
   font-size: ${theme.fontSizes.lg};
   grid-column: 1 / -1;
   width: 100%;
+  border-radius: ${theme.borderRadius.medium};
   color: ${props => {
     switch(props.type) {
       case 'error': return theme.colors.danger;
@@ -546,6 +549,7 @@ export const ItalicText = styled.p`
   margin-top: ${theme.spacing.sm};
   margin-bottom: ${theme.spacing.sm};
   text-align: center;
+  font-size: ${theme.fontSizes.md};
   
   ${mobile(`
     font-size: ${theme.fontSizes.sm};
@@ -667,6 +671,7 @@ export const LazyImageContainer = styled.div`
   width: 100%;
   padding-bottom: 75%;
   height: 0;
+  border-radius: ${theme.borderRadius.medium};
   
   ${mobile(`
     padding-bottom: 100%;
@@ -685,6 +690,7 @@ export const Image = styled.img<ImageProps>`
   max-width: 100%;
   max-height: 100%;
   object-fit: ${props => props.objectFit || 'contain'};
+  border-radius: ${theme.borderRadius.medium};
   ${props => props.objectFit === 'cover' && css`
     width: 100%;
     height: 100%;
@@ -701,11 +707,13 @@ export const ThumbnailImage = styled.img`
   max-height: 100%;
   object-fit: contain;
   opacity: 0.5;
+  border-radius: ${theme.borderRadius.medium};
 `;
 
 export const VideoElement = styled.video`
   max-width: 100%;
   max-height: 100%;
+  border-radius: ${theme.borderRadius.medium};
 `;
 
 export const ThumbnailWrapper = styled.div`
@@ -717,6 +725,7 @@ export const ThumbnailWrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  border-radius: ${theme.borderRadius.medium};
   
   ${mobile(`
     min-height: 120px;
@@ -770,13 +779,13 @@ export const MediaPreview = styled.div`
 export const MediaItem = styled.img`
   max-width: 100%;
   max-height: 100%;
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.medium};
 `;
 
 export const VideoItem = styled.video`
   max-width: 100%;
   max-height: 100%;
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.medium};
 `;
 
 export const MediaWrapper = styled.div`
@@ -795,6 +804,7 @@ export const LoadingPlaceholder = styled.div`
   background-size: 200% 100%;
   animation: loadingAnimation 1.5s infinite;
   z-index: 0;
+  border-radius: ${theme.borderRadius.medium};
 `;
 
 export const Overlay = styled.div<{ type?: 'loading' | 'watermark' }>`
@@ -806,6 +816,7 @@ export const Overlay = styled.div<{ type?: 'loading' | 'watermark' }>`
   text-align: ${props => props.type === 'loading' ? 'center' : 'inherit'};
   padding: ${props => props.type === 'loading' ? '0 10px' : '0'};
   pointer-events: ${props => props.type === 'watermark' ? 'none' : 'auto'};
+  border-radius: ${theme.borderRadius.medium}; // For overlays on containers/cards
 `;
 
 export const LoadingIndicator = styled.div`
@@ -816,8 +827,9 @@ export const LoadingIndicator = styled.div`
   background-color: ${theme.colors.overlay};
   color: ${theme.colors.white};
   padding: 10px 20px;
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   z-index: 10;
+  font-size: ${theme.fontSizes.md};
 `;
 
 // Progress components
@@ -842,7 +854,7 @@ export const ProgressStats = styled.div`
 export const ProgressBarBg = styled.div<{ bottom?: string; left?: string; right?: string; height?: string }>`
   height: ${props => props.height || '8px'};
   background-color: ${theme.colors.grayLight};
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   overflow: hidden;
   ${props => props.bottom && `bottom: ${props.bottom};`}
   ${props => props.left && `left: ${props.left};`}
@@ -858,7 +870,7 @@ export const ProgressBar = styled.div<ProgressProps>`
     if (props.status === 'complete') return theme.colors.success;
     return theme.colors.info; // Default or uploading
   }};
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   transition: width 0.3s ease;
   width: ${props => (props.progress || 0) * 100}%;
 `;
@@ -918,7 +930,7 @@ export const ModalContent = styled.div`
 export const UsernameModal = styled.div<DirectionalProps>`
   background: ${theme.colors.white};
   padding: 30px;
-  border-radius: ${theme.borderRadius.lg};
+  border-radius: ${theme.borderRadius.large};
   width: 90%;
   max-width: 400px;
   box-shadow: ${theme.boxShadow.xl};
@@ -940,7 +952,7 @@ export const UsernameInput = styled.input<DirectionalProps>`
   width: 100%;
   padding: 10px;
   margin-bottom: ${theme.spacing.sm};
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   border: 1px solid ${theme.colors.border};
   font-size: ${theme.fontSizes.md};
   text-align: ${props => props.isRTL ? 'right' : 'left'};
@@ -949,6 +961,7 @@ export const UsernameInput = styled.input<DirectionalProps>`
 export const UsernameError = styled.div`
   color: ${theme.colors.danger};
   margin-bottom: ${theme.spacing.sm};
+  font-size: ${theme.fontSizes.sm};
 `;
 
 export const DropdownMenu = styled.div`
@@ -958,7 +971,7 @@ export const DropdownMenu = styled.div`
   z-index: 100;
   background-color: ${theme.colors.white};
   box-shadow: ${theme.boxShadow.md};
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   padding: ${theme.spacing.sm};
   display: flex;
   flex-direction: column;
@@ -1053,7 +1066,7 @@ export const Checkmark = styled.div`
 export const SelectionBanner = styled.div`
   padding: ${theme.spacing.sm} ${theme.spacing.md};
   background-color: ${theme.colors.background.highlight};
-  border-radius: ${theme.borderRadius.md};
+  border-radius: ${theme.borderRadius.small};
   margin-bottom: ${theme.spacing.md};
   display: flex;
   justify-content: space-between;
@@ -1084,7 +1097,7 @@ export const Badge = styled.div<BadgeProps>`
   padding: ${(props: BadgeProps) => props.light ? '6px 12px' : '4px 8px'};
   font-size: ${(props: BadgeProps) => props.light ? theme.fontSizes.xs : theme.fontSizes.sm};
   font-weight: 500;
-  border-radius: ${(props: BadgeProps) => props.light ? theme.borderRadius.md : theme.borderRadius.md};
+  border-radius: ${(props: BadgeProps) => props.light ? theme.borderRadius.small : theme.borderRadius.small};
   
   ${mobile(`
     padding: ${(props: BadgeProps) => props.light ? '3px 6px' : '2px 6px'};
@@ -1264,7 +1277,7 @@ interface StateProps {
 export const State = styled.div<StateProps>`
   text-align: center; 
   padding: 40px ${theme.spacing.md};
-  border-radius: ${theme.borderRadius.lg};
+  border-radius: ${theme.borderRadius.medium};
   background-color: ${props => props.type === 'error' ? theme.colors.background.error : theme.colors.white};
   border: ${props => props.type === 'error' ? `1px solid ${theme.colors.highlight.error}` : 'none'};
   box-shadow: ${props => props.type === 'empty' ? theme.boxShadow.md : 'none'};
@@ -1280,7 +1293,7 @@ export const DebugContainer = styled.div`
   margin-top: ${theme.spacing.md};
   padding: ${theme.spacing.md};
   background-color: ${theme.colors.grayLighter};
-  border-radius: ${theme.borderRadius.lg};
+  border-radius: ${theme.borderRadius.medium};
 `;
 
 export const DebugTitle = styled.h3`
@@ -1298,4 +1311,5 @@ export const DebugMessages = styled.pre`
 
 export const DebugMessage = styled.div`
   margin-bottom: ${theme.spacing.xs};
+  font-size: ${theme.fontSizes.xs};
 `;
