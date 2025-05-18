@@ -22,7 +22,7 @@ import { downloadPhotos } from "@/lib/fileOperations";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
 // Import the useUsernameManagement hook from the correct location
-import { useUsernameManagement } from "@/lib/customHooks";
+import { useUsernameManagement } from "@/lib/useUsernameManagement";
 
 // Import extracted utility functions
 import { executeAlbumSave, createSubAlbumWithSelectedItems } from "./utils";

@@ -24,7 +24,7 @@ import { getLanguageDirection } from "@/lib/i18n/translations";
 import { PasswordDialog } from "@/components/PasswordDialog";
 import { LogoutButton } from "@/components/LogoutButton";
 import { DebugLog } from "@/components/DebugLog";
-import { useUsernameManagement } from "@/lib/customHooks";
+import { useUsernameManagement } from "@/lib/useUsernameManagement";
 
 // Import the file upload processor hook
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";

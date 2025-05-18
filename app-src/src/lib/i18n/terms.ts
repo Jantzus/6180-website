@@ -22941,7 +22941,7 @@ export const translations: Record<string, Partial<Record<SupportedLanguage, stri
     'kha': 'La ïasoh bad',
     'grt': 'Na sannangaha'
   },
-  'Share Select Photos': {}
+  'Share Selection': {}
 };
 
 // Export type for type checking

@@ -1,4 +1,4 @@
-import { useUsernameManagement } from "@/lib/customHooks"
+import { useUsernameManagement } from "@/lib/useUsernameManagement"
 import { getLanguageDirection } from "@/lib/i18n";
 
 // Import styled components

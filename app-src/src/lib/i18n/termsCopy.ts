@@ -75,7 +75,7 @@ export const translations: Record<string, Partial<Record<SupportedLanguage, stri
   'Delete': {},
   'Thumbnail': {},
   'Shared with': {},
-  'Share Select Photos': {}
+  'Share Selection': {}
 };
 
 // Export type for type checking
