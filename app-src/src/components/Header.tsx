@@ -40,14 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
             <ProfileLink
               href={`profile.html?id=${formattedCognitoUsername}`}
             >
-              <span style={{ 
-                fontSize: "16px", 
-                lineHeight: 1,
-                marginRight: "6px"
-              }}>
-                👤
-              </span>
-              {publicUsername || t('Profile')}
+              {t('👤 My Public Profile')}
             </ProfileLink>
             
             {/* Logout button - on the right (or left in RTL) */}

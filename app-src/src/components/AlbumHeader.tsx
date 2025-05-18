@@ -5,14 +5,15 @@ import {
   Header, 
   HeaderContent,
   HeaderControls,
-  Button, 
+  Button,
+  MenuButton, 
   RowSelectorContainer, 
   RowSelectorLabel, 
   RowSelectorSelect,
   DropdownMenu,
   HamburgerIcon,
   HamburgerLine,
-  MenuButton
+  DropdownMenuChoice
 } from "@/styles/styled-components";
 import ResponsiveHeader from "@/components/HeaderComponents";
 
@@ -189,30 +190,30 @@ export const AlbumHeader: React.FC<{
   // Actions menu for mobile view
   const renderMobileMenu = () => (
     <>
-      <Button 
+      <MenuButton 
         onClick={toggleMenu}
         aria-label={t('Menu')}
         aria-expanded={menuOpen}
       >
-        <HamburgerIcon>
+        <HamburgerIcon style={{ marginRight: '8px' }}>
           <HamburgerLine />
           <HamburgerLine />
           <HamburgerLine />
         </HamburgerIcon>
-        {t('Actions')}
-      </Button>
+        <span>{t('Add')}</span>
+      </MenuButton>
       
       {menuOpen && (
         <DropdownMenu>
           {getActionItems().map((item, index) => (
-            <MenuButton 
+            <DropdownMenuChoice 
               key={index} 
               onClick={() => handleAction(item.onClick)}
               style={item.style}
               disabled={item.disabled}
             >
               {item.label}
-            </MenuButton>
+            </DropdownMenuChoice>
           ))}
         </DropdownMenu>
       )}

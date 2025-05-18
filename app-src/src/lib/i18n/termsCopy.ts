@@ -53,8 +53,6 @@ export const translations: Record<string, Partial<Record<SupportedLanguage, stri
   'Menu': {},
   'Save': {},
   'Add Photos To Album': {},
-  'Save To My Library': {},
-  'Download To My Device': {},
   'Enter Password': {},
   'Back': {},
   'Your browser does not support the video tag.': {},
@@ -75,7 +73,8 @@ export const translations: Record<string, Partial<Record<SupportedLanguage, stri
   'Delete': {},
   'Thumbnail': {},
   'Shared with': {},
-  'Share Selection': {}
+  'Share Selection': {},
+  'Save To Library': {},
 };
 
 // Export type for type checking

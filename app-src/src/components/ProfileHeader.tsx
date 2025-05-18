@@ -5,11 +5,11 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import {
   ProfileHeaderContainer,
   ProfileControls,
-  Button,
+  MenuButton,
   HamburgerIcon,
   HamburgerLine,
   DropdownMenu,
-  MenuButton,
+  DropdownMenuChoice,
   PublicProfileExplanation
 } from "@/styles/styled-components";
 
@@ -71,7 +71,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
     <ProfileHeaderContainer isRTL={isRTL}>
       <ProfileControls isRTL={isRTL}>
         <div ref={menuRef} style={{ position: 'relative' }}>
-          <Button
+          <MenuButton 
             onClick={toggleMenu}
             aria-label={t('Menu')}
             aria-expanded={menuOpen}
@@ -82,34 +82,34 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
               <HamburgerLine />
             </HamburgerIcon>
             {username || t('User Profile')}
-          </Button>
+          </MenuButton>
           
           {/* Dropdown Menu */}
           {menuOpen && (
             <DropdownMenu>
-              <MenuButton
+              <DropdownMenuChoice
                 onClick={() => handleAction(() => {
                   alert(t('Bio feature is coming soon! Stay tuned for updates where you can share more about yourself.'));
                 })}
               >
                 {t('Bio')}
-              </MenuButton>
+              </DropdownMenuChoice>
               
-              <MenuButton
+              <DropdownMenuChoice
                 onClick={() => handleAction(() => {
                   alert(t('Email feature is coming soon! Soon you will be able to share your email with connections.'));
                 })}
               >
                 {t('E-mail')}
-              </MenuButton>
+              </DropdownMenuChoice>
               
-              <MenuButton
+              <DropdownMenuChoice
                 onClick={() => handleAction(() => {
                   alert(t('Add Contact feature is coming soon! You will be able to add this person as a contact on 6180.'));
                 })}
               >
                 {t('Contact On 6180')}
-              </MenuButton>
+              </DropdownMenuChoice>
             </DropdownMenu>
           )}
         </div>

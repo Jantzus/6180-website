@@ -324,7 +324,9 @@ export const Button = styled.button<ButtonProps>`
   font-size: ${theme.fontSizes.md};
   border: ${props => props.primary ? 'none' : `1px solid ${theme.colors.primary}`};
   border-radius: ${theme.borderRadius.medium};
-  width: 180px;
+  min-width: 140px; /* Changed from fixed width to min-width */
+  width: auto; /* Allow the button to grow based on content */
+  white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
   margin-left: auto; /* Align to trailing side */
   box-shadow: ${props => props.primary ? theme.boxShadow.primaryBtn : 'none'};
@@ -339,6 +341,29 @@ export const Button = styled.button<ButtonProps>`
 `;
 
 export const MenuButton = styled(Button)`
+  display: flex;
+  alignItems: center;
+  justifyContent: center;
+  padding: 12px 16px;
+  width: auto;
+`;
+
+export const HamburgerIcon = styled.span`
+  width: 18px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: ${theme.spacing.sm};
+`;
+
+export const HamburgerLine = styled.span`
+  height: 2px;
+  background: ${theme.colors.primary};
+  width: 100%;
+`;
+
+export const DropdownMenuChoice = styled(Button)`
   width: 100%;
   text-align: left;
   padding: ${theme.spacing.sm} ${theme.spacing.md};
@@ -356,21 +381,6 @@ export const MenuButton = styled(Button)`
   &:last-of-type {
     border-bottom: none;
   }
-`;
-
-export const HamburgerIcon = styled.span`
-  width: 18px;
-  height: 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: ${theme.spacing.sm};
-`;
-
-export const HamburgerLine = styled.span`
-  height: 2px;
-  background: ${theme.colors.primary};
-  width: 100%;
 `;
 
 export const RemoveButton = styled.button<ButtonProps>`

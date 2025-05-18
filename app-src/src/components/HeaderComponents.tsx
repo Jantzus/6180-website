@@ -2,9 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { 
   DropdownMenu,
   Button,
+  MenuButton,
   HamburgerIcon,
   HamburgerLine,
-  MenuButton
+  DropdownMenuChoice
 } from "@/styles/styled-components";
 import { ResponsiveHeaderProps } from "@/lib/types";
 
@@ -98,7 +99,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
         {/* Only show the hamburger menu if user can save or create sub-album */}
         {!showingEnterPassword && (
           <div style={{ flexShrink: 0 }}>
-            <Button 
+            <MenuButton 
               onClick={toggleMenu}
               aria-label={t('Menu')}
               aria-expanded={menuOpen}
@@ -109,7 +110,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
                 <HamburgerLine />
               </HamburgerIcon>
               {t('Add')}
-            </Button>
+            </MenuButton>
             
             {menuOpen && (
               <DropdownMenu>
@@ -119,13 +120,13 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
                   </Button>
                 )}
 
-                <MenuButton onClick={() => handleAction(saveAlbum)}>
-                  {t('Save To My Library')}
-                </MenuButton> 
+                <DropdownMenuChoice onClick={() => handleAction(saveAlbum)}>
+                  {t('Save To Library')}
+                </DropdownMenuChoice> 
 
-                <MenuButton onClick={() => handleAction(saveAlbum)}>
-                  {t('Download To My Device')}
-                </MenuButton>
+                <DropdownMenuChoice onClick={() => handleAction(saveAlbum)}>
+                  {t('Download')}
+                </DropdownMenuChoice>
               </DropdownMenu>
             )}
           </div>
@@ -166,11 +167,11 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
           )}
           
           <Button onClick={saveAlbum}>
-            {t('Save To My Library')}
+            {t('Save To Library')}
           </Button>
 
           <Button onClick={saveAlbum}>
-            {t('Download To My Device')}
+            {t('Download')}
           </Button>
         </div>
       )}
