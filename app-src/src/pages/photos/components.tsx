@@ -1,11 +1,9 @@
 import React from "react";
 import { 
   AlbumData, 
-  PasswordPolicyEnum,
 } from "@/lib/types";
 import { 
   SelectionBanner,
-  Button
 } from "@/styles/styled-components";
 
 // Select Photos Button Component
@@ -44,47 +42,6 @@ export const SelectPhotosButton: React.FC<{
       >
         <span>{t('Select Photos To Add To Album')}</span>
       </button>
-    </div>
-  );
-};
-
-// Password Protection Message Component
-export const PasswordProtectionMessage: React.FC<{
-  isAuthorized: boolean;
-  passwordPolicy: PasswordPolicyEnum | undefined;
-  passwordError: string | null;
-  promptForPassword: () => void;
-  t: (key: string) => string;
-}> = ({ isAuthorized, passwordPolicy, passwordError, promptForPassword, t }) => {
-  if (isAuthorized || passwordPolicy !== 'NotVisible') return null;
-  
-  return (
-    <div style={{ 
-      padding: '20px', 
-      backgroundColor: '#f3f4f6', 
-      borderRadius: '8px',
-      textAlign: 'center',
-      marginBottom: '20px'
-    }}>
-      <h3>{t('This album is password protected')}</h3>
-      <p>{t('Please enter the password to view the contents')}</p>
-      {passwordError && (
-        <div style={{ 
-          color: "#d32f2f", 
-          fontSize: "14px", 
-          margin: "10px 0",
-          padding: "5px",
-          backgroundColor: "rgba(211, 47, 47, 0.1)",
-          borderRadius: "4px"
-        }}>
-          {passwordError}
-        </div>
-      )}
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
-        <Button onClick={promptForPassword}>
-          {t('Enter Password')}
-        </Button>
-      </div>
     </div>
   );
 };

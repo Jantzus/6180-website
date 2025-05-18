@@ -30,7 +30,6 @@ import { executeAlbumSave, createSubAlbumWithSelectedItems } from "./utils";
 // Import extracted components
 import { 
   SelectPhotosButton, 
-  PasswordProtectionMessage, 
   SelectionModeBanner 
 } from "./components";
 
@@ -606,15 +605,6 @@ const PhotoAlbumContent: React.FC = () => {
             />
           </div>
         )}
-        
-        {/* Password protection message */}
-        <PasswordProtectionMessage
-          isAuthorized={isAuthorized}
-          passwordPolicy={passwordPolicy}
-          passwordError={passwordError}
-          promptForPassword={promptForPassword}
-          t={t}
-        />
         
         {/* Selection Mode Banner */}
         <SelectionModeBanner
