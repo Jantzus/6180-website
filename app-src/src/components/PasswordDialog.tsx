@@ -240,7 +240,7 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
                 htmlFor="watermark"
                 disabled={passwordRequired}
               >
-                {t('Password Required To Remove Watermark Or Save')}
+                {t('Watermarked And No Saving Without Password')}
                 {passwordRequired && (
                   <PasswordRequiredText>
                     {t('Password required')}

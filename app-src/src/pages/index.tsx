@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
-import { LanguageSelector, Trans, TranslatedContent } from "@/lib/i18n/components";
-import { checkTranslationFiles, checkTranslationKey } from "@/lib/i18n/checkTranslations";
+import { LanguageSelector, Trans } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
 import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect } from "@/lib/utils";
 
@@ -19,72 +18,38 @@ import {
   LegalLinkFooterButton
 } from "@/styles/styled-components";
 
-// Check login before rendering
-async function initializeApp() {
-  // Get stored language or default
-  const storedLanguage = localStorage.getItem("user_language") || "en";
-  
-  // Check if user is already logged in
-  const token = await checkLoginWithoutRedirect();
-  
-  if (token) {
-    // User is logged in, redirect to albums page without rendering the homepage
-    window.location.href = `/my-albums.html?lang=${storedLanguage}`;
-    return;
-  }
-  
-  // User is not logged in, render the homepage
-  ReactDOM.createRoot(document.getElementById("root")!).render(
-    <I18nProvider initialLanguage={storedLanguage} preloadLanguages={["en"]}>
-      <TranslatedContent fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>}>
-        <IndexPage />
-      </TranslatedContent>
-    </I18nProvider>
-  );
+// Only run in development
+if (process.env.NODE_ENV !== 'production') {
+  import('@/lib/i18n/checkTranslations').then(({ checkTranslationFiles, checkTranslationKey }) => {
+    checkTranslationFiles();
+    checkTranslationKey('Create Albums Together');
+  });
 }
 
-// Main page component using the new i18n system
+// Main page component
 const IndexPage: React.FC = () => {
   // Get translation hook with all functions
-  const { language, loading } = useTranslation();
+  const { language } = useTranslation();
   
-  // Show loading state if necessary
-  if (loading) {
-    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>;
-  }
-
+  // Check if RTL
+  const isRTL = getLanguageDirection(language) === 'rtl';
+  
   // Update HTML document properties when language changes
   useEffect(() => {
-    // Set language in HTML attributes
+    // Set language and direction in HTML attributes
     document.documentElement.lang = language;
-    
-    // Set direction (RTL/LTR)
-    const dir = getLanguageDirection(language);
-    document.documentElement.dir = dir;
-    
-    // Save to localStorage (already handled by I18nProvider, but keeping for compatibility)
-    localStorage.setItem("user_language", language);
-    
-    // Run translations check in development mode
-    if (process.env.NODE_ENV !== 'production') {
-      checkTranslationFiles();
-      checkTranslationKey('Create Albums Together');
-    }
+    document.documentElement.dir = getLanguageDirection(language);
   }, [language]);
 
   // Go to albums page
   const goToAlbums = async () => {
-    let targetPath = `/my-albums.html?lang=${language}`
-
+    const targetPath = `/my-albums.html?lang=${language}`;
     const token = await checkLoginWithRefreshOrRedirectToTarget(targetPath);
     
     if (token) {
       window.location.href = targetPath;
     }
   };
-
-  // Check if RTL
-  const isRTL = getLanguageDirection(language) === 'rtl';
 
   return (
     <>
@@ -110,7 +75,7 @@ const IndexPage: React.FC = () => {
               }}>6180</h1>
             </LogoContainer>
             
-            <LanguageSelector className="language-selector" />
+            <LanguageSelector />
           </HeaderContainer>
 
           <div style={{ textAlign: 'center' }}>
@@ -129,31 +94,42 @@ const IndexPage: React.FC = () => {
           </div>
 
           <LegalLinksFooter>
-            <LegalLinkFooterButton 
-              href="terms.html" 
-              className="hover-link"
-            >
+            <LegalLinkFooterButton href="terms.html">
               <Trans k="Terms of Service" />
             </LegalLinkFooterButton>
-            <LegalLinkFooterButton
-              href="privacy.html" 
-              className="hover-link"
-            >
+            <LegalLinkFooterButton href="privacy.html">
               <Trans k="Privacy Policy" />
             </LegalLinkFooterButton>
-            <LegalLinkFooterButton 
-              href="support.html" 
-              className="hover-link"
-            >
+            <LegalLinkFooterButton href="support.html">
               <Trans k="Support" />
             </LegalLinkFooterButton>
           </LegalLinksFooter>
-          
         </div>
       </AppContainer>
     </>
   );
 };
 
-// Start the initialization process
-initializeApp();
+// Main initialization function - needed for async operations
+(async function() {
+  const storedLanguage = localStorage.getItem("user_language") || "en";
+  
+  // Check if user is already logged in
+  const token = await checkLoginWithoutRedirect();
+  
+  if (token) {
+    // User is logged in, redirect to albums page
+    window.location.href = `/my-albums.html?lang=${storedLanguage}`;
+    return;
+  }
+  
+  // User is not logged in, render the homepage
+  ReactDOM.createRoot(document.getElementById("root")!).render(
+    <I18nProvider 
+      initialLanguage={storedLanguage} 
+      preloadLanguages={["en"]}
+    >
+      <IndexPage />
+    </I18nProvider>
+  );
+})();

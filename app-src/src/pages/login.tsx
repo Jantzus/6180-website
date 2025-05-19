@@ -8,8 +8,9 @@ import {
 } from '@aws-sdk/client-cognito-identity-provider'
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, AWS_REGION, COGNITO_CLIENT_ID } from "@/lib/config"
 import { I18nProvider } from "@/lib/i18n/context";
-import { useTranslation, useAsyncTranslation } from "@/lib/i18n/hooks";
-import { Trans, AsyncTrans, TranslatedContent } from "@/lib/i18n/components";
+import { useTranslation } from "@/lib/i18n/hooks";
+import { Trans } from "@/lib/i18n/components";
+import { getLanguageDirection } from '@/lib/i18n/translations';
 import styled from 'styled-components'
 import {
   GlobalStyle,
@@ -90,7 +91,7 @@ const ResendButton = styled.button`
   text-decoration: underline;
 `;
 
-// New styled component for the container
+// Container components
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -99,7 +100,6 @@ const ContentWrapper = styled.div`
   padding: 20px;
 `;
 
-// New styled component for the centered content
 const CenteredContent = styled.div`
   display: flex;
   flex: 1;
@@ -117,7 +117,7 @@ function normalizeEmail(input: string): string {
   return trimmed
 }
 
-const LoginContent = () => {
+const LoginPage = () => {
   const [email, setEmail] = useState('')
   const [codeSent, setCodeSent] = useState(false)
   const [otpCode, setOtpCode] = useState('')
@@ -129,18 +129,17 @@ const LoginContent = () => {
   // Use the i18n hook
   const { t, language, loading } = useTranslation()
   
-  // For complex or lengthy translations, use the async hook
-  const { translation: verificationInfoText } = useAsyncTranslation('We\'ll send a secure verification code to your email')
-  
   // Refs for input elements
   const emailInputRef = useRef<HTMLInputElement>(null)
   const otpInputRef = useRef<HTMLInputElement>(null)
 
   // Check if current language is RTL
-  const isRTL = ['ar', 'he', 'fa', 'ur', 'ps', 'sd'].includes(language.split('-')[0])
+  const isRTL = getLanguageDirection(language) === 'rtl'
 
+  // Update HTML document properties when language changes
   useEffect(() => {
-    // Set HTML dir attribute for RTL languages
+    // Set language and direction in HTML attributes
+    document.documentElement.lang = language
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr'
   }, [language, isRTL])
 
@@ -304,6 +303,20 @@ const LoginContent = () => {
     setStatus('idle')
   }
 
+  // Show a minimal loading state before i18n is ready
+  if (loading) {
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh' 
+      }}>
+        Loading...
+      </div>
+    )
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -335,12 +348,11 @@ const LoginContent = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('Enter your email')}
-                    disabled={loading}
                   />
                   <Button
                     primary
                     onClick={sendCode}
-                    disabled={status === 'sending' || !email.trim() || loading}
+                    disabled={status === 'sending' || !email.trim()}
                     style={{ width: '100%', padding: '12px', fontSize: '16px' }}
                   >
                     {status === 'sending' ? 
@@ -349,10 +361,7 @@ const LoginContent = () => {
                     }
                   </Button>
                   <InfoText>
-                    <AsyncTrans 
-                      k="We'll send a secure verification code to your email" 
-                      fallback={verificationInfoText || "We'll send a secure verification code to your email"}
-                    />
+                    <Trans k="We'll send a secure verification code to your email" />
                   </InfoText>
                 </>
               ) : (
@@ -373,7 +382,7 @@ const LoginContent = () => {
                   <Button
                     primary
                     onClick={confirmCode}
-                    disabled={status === 'verifying' || otpCode.length !== 6 || loading}
+                    disabled={status === 'verifying' || otpCode.length !== 6}
                     style={{ width: '100%', padding: '12px', fontSize: '16px', backgroundColor: '#28a745' }}
                   >
                     {status === 'verifying' ? 
@@ -424,25 +433,17 @@ const LoginContent = () => {
   )
 }
 
-const Login = () => {
-  // Get stored language or default
-  const storedLanguage = localStorage.getItem("preferred-language") || 
-                        localStorage.getItem("user_language") || 
-                        "en";
-  
-  return (
-    <I18nProvider initialLanguage={storedLanguage} preloadLanguages={["en"]}>
-      <TranslatedContent 
-        fallback={
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            Loading...
-          </div>
-        }
-      >
-        <LoginContent />
-      </TranslatedContent>
-    </I18nProvider>
-  )
-}
+// Get stored language or default
+const storedLanguage = localStorage.getItem("preferred-language") || 
+                      localStorage.getItem("user_language") || 
+                      "en";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<Login />)
+// Render the app
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <I18nProvider 
+    initialLanguage={storedLanguage} 
+    preloadLanguages={["en"]}
+  >
+    <LoginPage />
+  </I18nProvider>
+);

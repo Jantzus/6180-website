@@ -276,7 +276,7 @@ const SaveAlbum = () => {
     
     const optionText = 
       passwordProtectionOption === 'NotVisible' ? t('Password Required To See Or Save') :
-      passwordProtectionOption === 'Watermark' ? t('Password Required To Remove Watermark Or Save') :
+      passwordProtectionOption === 'Watermark' ? t('Watermarked And No Saving Without Password') :
       t('Password Required To Save');
     
     return `${optionText} ${albumPassword ? `(${albumPassword})` : ''}`;
