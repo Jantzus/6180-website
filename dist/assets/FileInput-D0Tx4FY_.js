@@ -1,0 +1,1 @@
+import{ab as i,j as a}from"./styled-components-CsRi_P85.js";const p=i.forwardRef(({onFileSelection:e},t)=>a.jsx("input",{type:"file",id:"file-input",ref:t,accept:"image/*,video/*",multiple:!0,style:{display:"none"},onChange:e}));export{p as F};

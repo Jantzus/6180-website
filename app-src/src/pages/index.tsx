@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
-import { LanguageSelector } from "@/lib/i18n/components";
+import { LanguageSelector, Trans, TranslatedContent } from "@/lib/i18n/components";
+import { checkTranslationFiles, checkTranslationKey } from "@/lib/i18n/checkTranslations";
 import { getLanguageDirection } from '@/lib/i18n/translations';
 import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect } from "@/lib/utils";
 
@@ -34,20 +35,23 @@ async function initializeApp() {
   
   // User is not logged in, render the homepage
   ReactDOM.createRoot(document.getElementById("root")!).render(
-    <I18nProvider>
-      <IndexPage />
+    <I18nProvider initialLanguage={storedLanguage} preloadLanguages={["en"]}>
+      <TranslatedContent fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>}>
+        <IndexPage />
+      </TranslatedContent>
     </I18nProvider>
   );
 }
 
 // Main page component using the new i18n system
 const IndexPage: React.FC = () => {
-  // Get translation function from the hook
-  const { t, language } = useTranslation();
+  // Get translation hook with all functions
+  const { language, loading } = useTranslation();
   
-  // State for hover effects
-  const [hoverLink, setHoverLink] = useState<string | null>(null);
-  const [hoverButtonIndex, setHoverButtonIndex] = useState<number | null>(null);
+  // Show loading state if necessary
+  if (loading) {
+    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>;
+  }
 
   // Update HTML document properties when language changes
   useEffect(() => {
@@ -60,6 +64,12 @@ const IndexPage: React.FC = () => {
     
     // Save to localStorage (already handled by I18nProvider, but keeping for compatibility)
     localStorage.setItem("user_language", language);
+    
+    // Run translations check in development mode
+    if (process.env.NODE_ENV !== 'production') {
+      checkTranslationFiles();
+      checkTranslationKey('Create Albums Together');
+    }
   }, [language]);
 
   // Go to albums page
@@ -104,46 +114,41 @@ const IndexPage: React.FC = () => {
           </HeaderContainer>
 
           <div style={{ textAlign: 'center' }}>
-            <Headline>{t('Create Albums Together')}</Headline>
+            <Headline>
+              <Trans k="Create Albums Together" />
+            </Headline>
             
             <Button 
               primary
-              isHovered={hoverButtonIndex === 0}
               onClick={goToAlbums}
-              onMouseEnter={() => setHoverButtonIndex(0)}
-              onMouseLeave={() => setHoverButtonIndex(null)}
+              className="hover-button"
               style={{ marginTop: '20px', padding: '12px 20px' }}
             >
-              {t('Start')}
+              <Trans k="Start" />
             </Button>
           </div>
 
           <LegalLinksFooter>
             <LegalLinkFooterButton 
               href="terms.html" 
-              isHovered={hoverLink === 'terms'}
-              onMouseEnter={() => setHoverLink('terms')}
-              onMouseLeave={() => setHoverLink(null)}
+              className="hover-link"
             >
-              {t('Terms of Service')}
+              <Trans k="Terms of Service" />
             </LegalLinkFooterButton>
             <LegalLinkFooterButton
               href="privacy.html" 
-              isHovered={hoverLink === 'privacy'}
-              onMouseEnter={() => setHoverLink('privacy')}
-              onMouseLeave={() => setHoverLink(null)}
+              className="hover-link"
             >
-              {t('Privacy Policy')}
+              <Trans k="Privacy Policy" />
             </LegalLinkFooterButton>
             <LegalLinkFooterButton 
               href="support.html" 
-              isHovered={hoverLink === 'support'}
-              onMouseEnter={() => setHoverLink('support')}
-              onMouseLeave={() => setHoverLink(null)}
+              className="hover-link"
             >
-              {t('Support')}
+              <Trans k="Support" />
             </LegalLinkFooterButton>
           </LegalLinksFooter>
+          
         </div>
       </AppContainer>
     </>

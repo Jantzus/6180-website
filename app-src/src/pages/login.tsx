@@ -8,7 +8,8 @@ import {
 } from '@aws-sdk/client-cognito-identity-provider'
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, AWS_REGION, COGNITO_CLIENT_ID } from "@/lib/config"
 import { I18nProvider } from "@/lib/i18n/context";
-import { useTranslation } from "@/lib/i18n/hooks";
+import { useTranslation, useAsyncTranslation } from "@/lib/i18n/hooks";
+import { Trans, AsyncTrans, TranslatedContent } from "@/lib/i18n/components";
 import styled from 'styled-components'
 import {
   GlobalStyle,
@@ -126,7 +127,10 @@ const LoginContent = () => {
   const [hoverLink, setHoverLink] = useState<string | null>(null)
   
   // Use the i18n hook
-  const { t, language } = useTranslation()
+  const { t, language, loading } = useTranslation()
+  
+  // For complex or lengthy translations, use the async hook
+  const { translation: verificationInfoText } = useAsyncTranslation('We\'ll send a secure verification code to your email')
   
   // Refs for input elements
   const emailInputRef = useRef<HTMLInputElement>(null)
@@ -313,7 +317,7 @@ const LoginContent = () => {
                   alt="6180 Logo" 
                 />
                 <LoginTitle>
-                  {t('Sign in to 6180')}
+                  <Trans k="Sign in to 6180" />
                 </LoginTitle>
               </LoginHeader>
 
@@ -331,23 +335,30 @@ const LoginContent = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('Enter your email')}
+                    disabled={loading}
                   />
                   <Button
                     primary
                     onClick={sendCode}
-                    disabled={status === 'sending' || !email.trim()}
+                    disabled={status === 'sending' || !email.trim() || loading}
                     style={{ width: '100%', padding: '12px', fontSize: '16px' }}
                   >
-                    {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
+                    {status === 'sending' ? 
+                      <Trans k="Sending..." /> : 
+                      <Trans k="Send Verification Code" />
+                    }
                   </Button>
                   <InfoText>
-                    {t('We\'ll send a secure verification code to your email')}
+                    <AsyncTrans 
+                      k="We'll send a secure verification code to your email" 
+                      fallback={verificationInfoText || "We'll send a secure verification code to your email"}
+                    />
                   </InfoText>
                 </>
               ) : (
                 <>
                   <InfoText style={{ marginBottom: '16px', color: '#555' }}>
-                    {t('Check your email for a 6-digit verification code sent to')} <strong>{email}</strong>
+                    <Trans k="Check your email for a 6-digit verification code sent to" /> <strong>{email}</strong>
                   </InfoText>
                   <OtpInput
                     ref={otpInputRef}
@@ -362,15 +373,18 @@ const LoginContent = () => {
                   <Button
                     primary
                     onClick={confirmCode}
-                    disabled={status === 'verifying' || otpCode.length !== 6}
+                    disabled={status === 'verifying' || otpCode.length !== 6 || loading}
                     style={{ width: '100%', padding: '12px', fontSize: '16px', backgroundColor: '#28a745' }}
                   >
-                    {status === 'verifying' ? t('Verifying...') : t('Verify Code')}
+                    {status === 'verifying' ? 
+                      <Trans k="Verifying..." /> : 
+                      <Trans k="Verify Code" />
+                    }
                   </Button>
                   <ResendWrapper>
-                    <span>{t("Didn't receive a code?")}</span>
+                    <span><Trans k="Didn't receive a code?" /></span>
                     <ResendButton onClick={handleResendCode}>
-                      {t('Send new code')}
+                      <Trans k="Send new code" />
                     </ResendButton>
                   </ResendWrapper>
                 </>
@@ -385,7 +399,7 @@ const LoginContent = () => {
               onMouseEnter={() => setHoverLink('terms')}
               onMouseLeave={() => setHoverLink(null)}
             >
-              {t('Terms of Service')}
+              <Trans k="Terms of Service" />
             </LegalLinkFooterButton>
             <LegalLinkFooterButton 
               href="privacy.html"
@@ -393,7 +407,7 @@ const LoginContent = () => {
               onMouseEnter={() => setHoverLink('privacy')}
               onMouseLeave={() => setHoverLink(null)}
             >
-              {t('Privacy Policy')}
+              <Trans k="Privacy Policy" />
             </LegalLinkFooterButton>
             <LegalLinkFooterButton 
               href="support.html"
@@ -401,7 +415,7 @@ const LoginContent = () => {
               onMouseEnter={() => setHoverLink('support')}
               onMouseLeave={() => setHoverLink(null)}
             >
-              {t('Support')}
+              <Trans k="Support" />
             </LegalLinkFooterButton>
           </LegalLinksFooter>
         </ContentWrapper>
@@ -411,9 +425,22 @@ const LoginContent = () => {
 }
 
 const Login = () => {
+  // Get stored language or default
+  const storedLanguage = localStorage.getItem("preferred-language") || 
+                        localStorage.getItem("user_language") || 
+                        "en";
+  
   return (
-    <I18nProvider>
-      <LoginContent />
+    <I18nProvider initialLanguage={storedLanguage} preloadLanguages={["en"]}>
+      <TranslatedContent 
+        fallback={
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+            Loading...
+          </div>
+        }
+      >
+        <LoginContent />
+      </TranslatedContent>
     </I18nProvider>
   )
 }

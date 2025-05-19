@@ -1,24 +1,60 @@
 // src/lib/i18n/components.tsx
-import React from 'react';
-import { useTranslation } from './hooks';
-import { TranslationKey } from '@/lib/i18n/index';
-import { 
-  SelectorContainer, 
-  GlobeIcon, 
-  SelectBox, 
-  Option 
-} from './styled';
-import { SupportedLanguage } from '@/lib/i18n/index';
+import React, { useEffect, useMemo } from 'react';
+import { useTranslation, useAsyncTranslation } from './hooks';
+import styled from 'styled-components';
+import { SupportedLanguage } from '@/lib/i18n/translations';
 
-// Translation component 
+// Styled components for the language selector
+export const SelectorContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const GlobeIcon = styled.span`
+  font-size: 16px;
+`;
+
+export const SelectBox = styled.select`
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  }
+`;
+
+export const Option = styled.option`
+  padding: 8px;
+`;
+
+// Translation component with fallback
 interface TransProps {
-  k: TranslationKey;
+  k: string;
   params?: Record<string, string | number>;
+  fallback?: string;
 }
 
-export const Trans: React.FC<TransProps> = ({ k, params }) => {
+export const Trans: React.FC<TransProps> = ({ k, params, fallback }) => {
   const { t } = useTranslation();
-  return <>{t(k, params)}</>;
+  return <>{t(k, params) || fallback || k}</>;
+};
+
+// Async Translation component with loading state
+export const AsyncTrans: React.FC<TransProps> = ({ k, params, fallback }) => {
+  const { translation, loading } = useAsyncTranslation(k, params);
+  
+  if (loading) {
+    return <>{fallback || k}</>;
+  }
+  
+  return <>{translation}</>;
 };
 
 // Language selector component
@@ -26,17 +62,29 @@ interface LanguageSelectorProps {
   className?: string;
   label?: string;
   variant?: 'default' | 'minimal' | 'button';
+  onChange?: (language: SupportedLanguage) => void;
 }
 
 export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ 
   className,
   label = '🌐', 
-  variant = 'default'
+  variant = 'default',
+  onChange
 }) => {
-  const { language, setLanguage, languages } = useTranslation();
+  const { language, setLanguage, languages, loading } = useTranslation();
+  
+  // Handle language change
+  const handleChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLang = e.target.value as SupportedLanguage;
+    await setLanguage(newLang);
+    
+    if (onChange) {
+      onChange(newLang);
+    }
+  };
   
   // Create a memoized styled component based on the variant prop
-  const StyledSelect = React.useMemo(() => {
+  const StyledSelect = useMemo(() => {
     return styled(SelectBox)`
       ${variant === 'minimal' && `
         border: none;
@@ -61,8 +109,9 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       </GlobeIcon>
       <StyledSelect
         value={language}
-        onChange={(e) => setLanguage(e.target.value as SupportedLanguage)}
+        onChange={handleChange}
         aria-label="Language"
+        disabled={loading}
       >
         {languages.map((lang) => (
           <Option key={lang.code} value={lang.code}>
@@ -70,9 +119,35 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           </Option>
         ))}
       </StyledSelect>
+      {loading && <span style={{ fontSize: '12px', color: '#666' }}>•</span>}
     </SelectorContainer>
   );
 };
 
-// Need to import styled here since it's used in the memoized component
-import styled from 'styled-components';
+// Lazy loaded content component that ensures translations are loaded
+interface TranslatedContentProps {
+  language?: SupportedLanguage;
+  fallback?: React.ReactNode;
+  children: React.ReactNode;
+}
+
+export const TranslatedContent: React.FC<TranslatedContentProps> = ({
+  language,
+  fallback = <div>Loading translations...</div>,
+  children
+}) => {
+  const { loading, setLanguage } = useTranslation();
+  
+  // Change language if specified
+  useEffect(() => {
+    if (language) {
+      setLanguage(language);
+    }
+  }, [language, setLanguage]);
+  
+  if (loading) {
+    return <>{fallback}</>;
+  }
+  
+  return <>{children}</>;
+};

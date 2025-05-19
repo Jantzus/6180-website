@@ -1,6 +1,11 @@
-// Define supported languages
-export const supportedLanguages = {
-"aa": "Afar",
+// src/lib/i18n/translations.ts
+// This file contains metadata about available languages
+
+/**
+ * List of supported languages with their display names
+ */
+export const supportedLanguages: Record<string, string> = {
+  "aa": "Afar",
   "ab": "Аҧсуа",
   "ace": "Acèh",
   "ady": "Адыгабзэ",
@@ -310,9 +315,14 @@ export const supportedLanguages = {
   "zu": "isiZulu"
 };
 
+/**
+ * Type for supported language codes
+ */
 export type SupportedLanguage = keyof typeof supportedLanguages;
 
-// Define RTL languages
+/**
+ * Languages that use Right-to-Left text direction
+ */
 export const rtlLanguages: SupportedLanguage[] = [
   'ar',  // Arabic
   'arc', // Aramaic
@@ -329,7 +339,9 @@ export const rtlLanguages: SupportedLanguage[] = [
   'yi',  // Yiddish
 ];
 
-// Define direction mapping function
-export const getLanguageDirection = (langCode: SupportedLanguage): "ltr" | "rtl" => {
-  return rtlLanguages.includes(langCode) ? "rtl" : "ltr";
+/**
+ * Get text direction for a given language
+ */
+export const getLanguageDirection = (language: string): 'rtl' | 'ltr' => {
+  return rtlLanguages.includes(language as SupportedLanguage) ? 'rtl' : 'ltr';
 };

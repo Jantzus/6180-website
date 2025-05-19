@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "transform-i18n": "node src/lib/i18n/transformTranslations.cjs",
+    "prebuild": "npm run transform-i18n"
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.787.0",
