@@ -142,10 +142,21 @@
   "Submitting...": "Sender...",
   "Password": "Passord",
   "Submit": "Send",
-  "OK": "Greitt",
+  "OK": "OK",
   "Link Only": "Berre Lenkje",
   "View Album Photos": "Sjå Album Bilete",
   "Enter Username": "Skriv Inn Brukarnamn",
   "Select Username": "Vel Brukarnamn",
-  "Add Random Digits to Username": "Legg Til Tilfeldige Siffer Til Brukarnamn"
+  "Add Random Digits to Username": "Legg Til Tilfeldige Siffer Til Brukarnamn",
+  "Enter your email so {ownerName} can see who accessed their album": "Skriv Inn E-postadressa Di Slik At {ownerName} Kan Sjå Kven Som Har Sett På Albumet Deira",
+  "Complete": "Fullstendig",
+  "Processing": "Handsaming",
+  "Uploading": "Lastar opp",
+  "Cancel Upload": "Avbryt Opplasting",
+  "Upload progress": "Opplastingsframdrift",
+  "Overall progress": "Samla Framgang",
+  "Completed": "Fullført",
+  "Failed": "Mislukka",
+  "({count} failed": "({count} mislukka",
+  "({count} in progress)": "({count}) I Prosess"
 }

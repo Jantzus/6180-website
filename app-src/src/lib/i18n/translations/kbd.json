@@ -142,10 +142,21 @@
   "Submitting...": "Егъэхьын...",
   "Password": "Щэхуц",
   "Submit": "ЕгъэхьынУ",
-  "OK": "Хъуэжу",
+  "OK": "Хъуэжь",
   "Link Only": "Къудейщ Зэпхыныгъэр",
   "View Album Photos": "Альбомым И Сурэтхэм Еплъын",
   "Enter Username": "Уи ЦӀэр Итхэ",
   "Select Username": "ЦӀэр Къыхэх",
-  "Add Random Digits to Username": "ЦIэм КъэхуэсыбжыгъэхэмкIэ ХэгъэхъуэнКIэ"
+  "Add Random Digits to Username": "ЦIэм КъэхуэсыбжыгъэхэмкIэ ХэгъэхъуэнКIэ",
+  "Enter your email so {ownerName} can see who accessed their album": "Уи Электрон Пощтэр Итхэ {ownerName} Хуэлъагъуну Хэт Я Альбомым Еплъар",
+  "Complete": "Икомал",
+  "Processing": "Лэжьэн",
+  "Uploading": "Хъагъэхьэн",
+  "Cancel Upload": "Гъэхьэныр Къэгъэувыӏэн",
+  "Upload progress": "Хъугъэхьэныгъэм И КӀуэтэныгъэ",
+  "Overall progress": "Зэхуэдэ ЕфӀэкӀуэныгъэ",
+  "Completed": "Зэфэгъэхъагъэ",
+  "Failed": "Къехъулӏакъым",
+  "({count} failed": "({count} къехъулӏакъым",
+  "({count} in progress)": "({count}) ИокӀуэ"
 }

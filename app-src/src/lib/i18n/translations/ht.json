@@ -147,5 +147,16 @@
   "View Album Photos": "Gade Foto Albòm",
   "Enter Username": "Antre Non Itilizatè",
   "Select Username": "Chwazi Non Itilizatè",
-  "Add Random Digits to Username": "Ajoute Chif Owaza Nan Non Itilizatè"
+  "Add Random Digits to Username": "Ajoute Chif Owaza Nan Non Itilizatè",
+  "Enter your email so {ownerName} can see who accessed their album": "Antre Imèl Ou Pou {ownerName} Ka Wè Ki Moun Ki Te Aksede Albòm Yo A",
+  "Complete": "Konplè",
+  "Processing": "Tretman",
+  "Uploading": "Ap telechaje",
+  "Cancel Upload": "Anile Telechaje",
+  "Upload progress": "Pwogrè Telechajman",
+  "Overall progress": "Pwogrè Jeneral",
+  "Completed": "Konplete",
+  "Failed": "Echwe",
+  "({count} failed": "({count} echwe",
+  "({count} in progress)": "({count}) Nan Pwogrè"
 }

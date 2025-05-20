@@ -147,5 +147,16 @@
   "View Album Photos": "Wo Àwòn Àwòrán Álbọ́mù",
   "Enter Username": "Tẹ Orúkọ Aṣàmúlò Sí",
   "Select Username": "Yàn Orúkọ Oníṣe",
-  "Add Random Digits to Username": "Ṣàfikún Àwọn Dígíìtì Àrìnàkànrìn Sí Orúkọ Aṣàmúlò"
+  "Add Random Digits to Username": "Ṣàfikún Àwọn Dígíìtì Àrìnàkànrìn Sí Orúkọ Aṣàmúlò",
+  "Enter your email so {ownerName} can see who accessed their album": "Tẹ Imeeli Rẹ Ki {ownerName} Le Ri Ẹni Ti O Wọle Si Albọọmu Wọn",
+  "Complete": "Pípé",
+  "Processing": "Ṣíṣẹ́",
+  "Uploading": "Ńgbésókè",
+  "Cancel Upload": "Fagilee Gbígbàsókè",
+  "Upload progress": "Ìlosíwájú Ìgbéga",
+  "Overall progress": "Ìlọsíwájú Gbogbogbòò",
+  "Completed": "Pari",
+  "Failed": "Kùnà",
+  "({count} failed": "({count} kùnà",
+  "({count} in progress)": "({count}) Ni Ilọsiwaju"
 }

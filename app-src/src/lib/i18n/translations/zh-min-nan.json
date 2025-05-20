@@ -142,10 +142,21 @@
   "Submitting...": "送出中...",
   "Password": "Bī-bé",
   "Submit": "Thê-chhut",
-  "OK": "Hó",
+  "OK": "好",
   "Link Only": "Kan-na Liân-kiat",
   "View Album Photos": "Khoàⁿ Album Siòng-phìⁿ",
   "Enter Username": "Sû-jīp Iōng-chiá Miâ",
   "Select Username": "選擇用戶名",
-  "Add Random Digits to Username": "Kā Sūi-ki Sò͘-jī Chham Iōng-chiá Miâ"
+  "Add Random Digits to Username": "Kā Sūi-ki Sò͘-jī Chham Iōng-chiá Miâ",
+  "Enter your email so {ownerName} can see who accessed their album": "請輸入你的電子郵件，予 {ownerName} 通看見是誰存取伊的相簿",
+  "Complete": "Oân-sêng",
+  "Processing": "Chhú-lí",
+  "Uploading": "Teng-chai",
+  "Cancel Upload": "取消上載",
+  "Upload progress": "Íōng-chài Chìn-tō͘",
+  "Overall progress": "Chóng-thé Chìn-tō͘",
+  "Completed": "Oân-sêng",
+  "Failed": "Sit-pāi",
+  "({count} failed": "({count} sit-pāi",
+  "({count} in progress)": "({count}) Chìn-hêng-tiong"
 }

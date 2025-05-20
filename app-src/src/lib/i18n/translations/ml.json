@@ -142,10 +142,21 @@
   "Submitting...": "സമർപ്പിക്കുന്നു...",
   "Password": "പാസ്‌വേഡ്",
   "Submit": "സമർപ്പിക്കുക",
-  "OK": "Shari",
+  "OK": "ശരി",
   "Link Only": "ലിങ്ക് മാത്രം",
   "View Album Photos": "ആൽബം ഫോട്ടോകൾ കാണുക",
   "Enter Username": "ഉപയോക്തൃനാമം നൽകുക",
   "Select Username": "ഉപയോക്തൃനാമം തിരഞ്ഞെടുക്കുക",
-  "Add Random Digits to Username": "ഉപയോക്തൃനാമത്തിലേക്ക് റാൻഡം അക്കങ്ങൾ ചേർക്കുക"
+  "Add Random Digits to Username": "ഉപയോക്തൃനാമത്തിലേക്ക് റാൻഡം അക്കങ്ങൾ ചേർക്കുക",
+  "Enter your email so {ownerName} can see who accessed their album": "നിങ്ങളുടെ ഇമെയിൽ നൽകുക, അങ്ങനെ {ownerName}ന് അവരുടെ ആൽബം ആരൊക്കെ ആക്‌സസ് ചെയ്തു എന്ന് കാണാം",
+  "Complete": "പൂർണ്ണമായ",
+  "Processing": "പ്രോസസ്സിംഗ്",
+  "Uploading": "അപ്‌ലോഡ് ചെയ്യുന്നു",
+  "Cancel Upload": "അപ്‌ലോഡ് റദ്ദാക്കുക",
+  "Upload progress": "അപ്‌ലോഡ് പുരോഗതി",
+  "Overall progress": "മൊത്തം പുരോഗതി",
+  "Completed": "പൂർത്തിയാക്കി",
+  "Failed": "പരാജയപ്പെട്ടു",
+  "({count} failed": "({count} പരാജയപ്പെട്ടു",
+  "({count} in progress)": "({count}) പുരോഗതിയിൽ"
 }

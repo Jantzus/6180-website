@@ -142,10 +142,21 @@
   "Submitting...": "Жөнөтүлүүдө...",
   "Password": "Купуя Сөз",
   "Submit": "Тапшыруу",
-  "OK": "Boluptur",
+  "OK": "Макул",
   "Link Only": "Шилтеме Гана",
   "View Album Photos": "Альбом Сүрөттөрүн Көрүү",
   "Enter Username": "Колдонуучунун Атын Киргизиңиз",
   "Select Username": "Колдонуучунун Атын Тандоо",
-  "Add Random Digits to Username": "Колдонуучунун Атына Кокустан Сандарды Кошуу"
+  "Add Random Digits to Username": "Колдонуучунун Атына Кокустан Сандарды Кошуу",
+  "Enter your email so {ownerName} can see who accessed their album": "Электрондук Почтаңызды Киргизиңиз, Анда {ownerName} Алардын Альбомуна Ким Киргенин Көрө Алат",
+  "Complete": "Толук",
+  "Processing": "Иштетүү",
+  "Uploading": "Жүктөлүүдө",
+  "Cancel Upload": "Жүктөөнү Жокко Чыгаруу",
+  "Upload progress": "Жүктөө Прогресси",
+  "Overall progress": "Жалпы Прогресс",
+  "Completed": "Аяктады",
+  "Failed": "Ийгиликсиз",
+  "({count} failed": "({count} ийгиликсиз болду",
+  "({count} in progress)": "({count}) Жүрүп Жатат"
 }

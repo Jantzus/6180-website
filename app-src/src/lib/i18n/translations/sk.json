@@ -142,10 +142,21 @@
   "Submitting...": "Odosiela sa...",
   "Password": "Heslo",
   "Submit": "Odoslať",
-  "OK": "Dobre",
+  "OK": "OK",
   "Link Only": "Iba Odkaz",
   "View Album Photos": "Zobraziť Fotky Albumu",
   "Enter Username": "Zadajte Používateľské Meno",
   "Select Username": "Vyberte Používateľské Meno",
-  "Add Random Digits to Username": "Pridať Náhodné Číslice K Používateľskému Menu"
+  "Add Random Digits to Username": "Pridať Náhodné Číslice K Používateľskému Menu",
+  "Enter your email so {ownerName} can see who accessed their album": "Zadajte Svoju Emailovú Adresu, Aby {ownerName} Mohol Vidieť, Kto Pristupoval K Ich Albumu",
+  "Complete": "Kompletný",
+  "Processing": "Spracovanie",
+  "Uploading": "Nahrávanie",
+  "Cancel Upload": "Zrušiť Nahrávanie",
+  "Upload progress": "Priebeh Nahrávania",
+  "Overall progress": "Celkový Pokrok",
+  "Completed": "Dokončené",
+  "Failed": "Zlyhalo",
+  "({count} failed": "({count} zlyhalo",
+  "({count} in progress)": "({count}) Prebieha"
 }

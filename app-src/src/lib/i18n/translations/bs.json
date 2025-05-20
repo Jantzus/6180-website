@@ -147,5 +147,16 @@
   "View Album Photos": "Pogledaj Fotografije Albuma",
   "Enter Username": "Unesite Korisničko Ime",
   "Select Username": "Odaberi Korisničko Ime",
-  "Add Random Digits to Username": "Dodaj Nasumične Brojeve Korisničkom Imenu"
+  "Add Random Digits to Username": "Dodaj Nasumične Brojeve Korisničkom Imenu",
+  "Enter your email so {ownerName} can see who accessed their album": "Unesite Vašu Email Adresu Kako Bi {ownerName} Mogao Vidjeti Ko Je Pristupio Njihovom Albumu",
+  "Complete": "Kompletan",
+  "Processing": "Obrada",
+  "Uploading": "Učitavanje",
+  "Cancel Upload": "Otkaži Prijenos",
+  "Upload progress": "Napredak Prijenosa",
+  "Overall progress": "Ukupni Napredak",
+  "Completed": "Završeno",
+  "Failed": "Neuspjeh",
+  "({count} failed": "({count} neuspjelo",
+  "({count} in progress)": "({count}) U Toku"
 }

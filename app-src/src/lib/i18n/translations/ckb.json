@@ -142,10 +142,21 @@
   "Submitting...": "ناردن...",
   "Password": "وشەی نهێنی",
   "Submit": "ناردن",
-  "OK": "Başe",
+  "OK": "باشە",
   "Link Only": "تەنها بەستەر",
   "View Album Photos": "وێنەکانی ئەلبووم ببینە",
   "Enter Username": "ناوی بەکارهێنەر بنووسە",
   "Select Username": "ناوی بەکارهێنەر هەڵبژێرە",
-  "Add Random Digits to Username": "ژمارەی هەڕەمەکی بۆ ناوی بەکارهێنەر زیاد بکە"
+  "Add Random Digits to Username": "ژمارەی هەڕەمەکی بۆ ناوی بەکارهێنەر زیاد بکە",
+  "Enter your email so {ownerName} can see who accessed their album": "ئیمەیڵەکەت بنووسە بۆ ئەوەی {ownerName} بتوانێت ببینێت کێ سەردانی ئەلبوومەکەیانی کردووە",
+  "Complete": "تەواو",
+  "Processing": "پڕۆسێس",
+  "Uploading": "باردەکات",
+  "Cancel Upload": "پاشگەزبوونەوە لە بارکردن",
+  "Upload progress": "پێشکەوتنی بارکردن",
+  "Overall progress": "پێشکەوتنی گشتی",
+  "Completed": "تەواوکراو",
+  "Failed": "سەرکەوتوو نەبوو",
+  "({count} failed": "({count} سەرکەوتوو نەبوو",
+  "({count} in progress)": "({count}) لە پێشکەوتندا"
 }

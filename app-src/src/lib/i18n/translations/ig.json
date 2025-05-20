@@ -142,10 +142,21 @@
   "Submitting...": "Na-eziga...",
   "Password": "Okwuntughe",
   "Submit": "Nyefee",
-  "OK": "Dịkwa Mma",
+  "OK": "Ọ Dị Mma",
   "Link Only": "Njikọ Naanị",
   "View Album Photos": "Lelee Foto Akwụkwọ Onyonyo",
   "Enter Username": "Tinye Aha Onye Ojiji",
   "Select Username": "Họrọ Aha Onye Ọrụ",
-  "Add Random Digits to Username": "Tinye Ọnụọgụ Ngapata Na Aha Ọbanife"
+  "Add Random Digits to Username": "Tinye Ọnụọgụ Ngapata Na Aha Ọbanife",
+  "Enter your email so {ownerName} can see who accessed their album": "Tinye Email Gị Ka {ownerName} Nwee Ike Ịhụ Onye Banye N'ọ́bụ́m Ha",
+  "Complete": "Zuru Ezu",
+  "Processing": "Mmepe",
+  "Uploading": "Na-ebulite",
+  "Cancel Upload": "Kagbụ Mbupụta",
+  "Upload progress": "Ọganihu Nbugo",
+  "Overall progress": "Ọganiru Zuru Oke",
+  "Completed": "Emechara",
+  "Failed": "Daara Adịghị",
+  "({count} failed": "({count} daara adaghị",
+  "({count} in progress)": "({count}) Na-Aga N'ihu"
 }

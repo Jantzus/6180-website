@@ -147,5 +147,16 @@
   "View Album Photos": "Suuraa Albeemii Ilaali",
   "Enter Username": "Maqaa Fayyadamaa Galchi",
   "Select Username": "Maqaa Fayyadamaa Filadhu",
-  "Add Random Digits to Username": "Lakkooyallee Carraa Maqaa Fayyadamaa Irraa Dabaluu"
+  "Add Random Digits to Username": "Lakkooyallee Carraa Maqaa Fayyadamaa Irraa Dabaluu",
+  "Enter your email so {ownerName} can see who accessed their album": "Imeelii Kee Seeni Akka {ownerName} Eenya Albumii Isaanii Ilaalee Arge",
+  "Complete": "Guutuu",
+  "Processing": "Processing",
+  "Uploading": "Olkaaʼa gadi",
+  "Cancel Upload": "Olloowu Haqi",
+  "Upload progress": "Olkaa'u Tarkaanfii",
+  "Overall progress": "Fooyya Waliigala",
+  "Completed": "Xumurame",
+  "Failed": "Milkaa'e",
+  "({count} failed": "({count} dadhabe",
+  "({count} in progress)": "({count}) Gara Deemaa"
 }

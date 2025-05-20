@@ -147,5 +147,16 @@
   "View Album Photos": "Albom Suratlaryna Seret",
   "Enter Username": "Ulanyjy Adyny Giriziň",
   "Select Username": "Ulanyjy Adyny Saýlaň",
-  "Add Random Digits to Username": "Ulanyjy Adyna Tötänleýin Sanlar Goş"
+  "Add Random Digits to Username": "Ulanyjy Adyna Tötänleýin Sanlar Goş",
+  "Enter your email so {ownerName} can see who accessed their album": "E-poçtaňyzy Giriziň, {ownerName} Olaryň Albumyna Kimiň Girendigini Görüp Bilsin",
+  "Complete": "Doly",
+  "Processing": "Işlemek",
+  "Uploading": "Ýüklemek",
+  "Cancel Upload": "Ýüklemäni Ýatyrmak",
+  "Upload progress": "Ýüklemek Öňegidişlik",
+  "Overall progress": "Umumy Öňegidişlik",
+  "Completed": "Tamamlandy",
+  "Failed": "Şowsuz",
+  "({count} failed": "({count} şowsuz",
+  "({count} in progress)": "({count}) Dowam Edýär"
 }

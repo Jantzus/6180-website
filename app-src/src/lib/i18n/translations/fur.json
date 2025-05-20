@@ -142,10 +142,21 @@
   "Submitting...": "Inviant...",
   "Password": "Password",
   "Submit": "Invie",
-  "OK": "Ben",
+  "OK": "Va Ben",
   "Link Only": "Dome Leam",
   "View Album Photos": "Viôt Lis Fotos Dal Album",
   "Enter Username": "Inserìs Non Utent",
   "Select Username": "Selezione Non Utent",
-  "Add Random Digits to Username": "Zonte Cifris Casuâls Al Non Utent"
+  "Add Random Digits to Username": "Zonte Cifris Casuâls Al Non Utent",
+  "Enter your email so {ownerName} can see who accessed their album": "Inserìs La Tô Email Par Che {ownerName} Al Puedi Viodi Cui Al À Acès Al Lôr Album",
+  "Complete": "Complet",
+  "Processing": "Elaborazion",
+  "Uploading": "Cjariânt",
+  "Cancel Upload": "Anulâ Cjariament",
+  "Upload progress": "Progrès Di Cjariâ",
+  "Overall progress": "Progrès Gjenerâl",
+  "Completed": "Completât",
+  "Failed": "Falît",
+  "({count} failed": "({count} falît",
+  "({count} in progress)": "({count}) In Cors"
 }

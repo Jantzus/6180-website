@@ -142,10 +142,21 @@
   "Submitting...": "Aika...",
   "Password": "Ọrọigbaniwọle",
   "Submit": "Fiɖeɖe",
-  "OK": "O Sin",
+  "OK": "Daho",
   "Link Only": "Alikan Nikan",
   "View Album Photos": "E Se Foto Album",
   "Enter Username": "Sinme Orukọ Olulo",
   "Select Username": "Họrọ Ahà",
-  "Add Random Digits to Username": "Zi Nomba Kren Kren De Elo Whenu"
+  "Add Random Digits to Username": "Zi Nomba Kren Kren De Elo Whenu",
+  "Enter your email so {ownerName} can see who accessed their album": "Rubuta Imailinka Don {ownerName} Ya Iya Ganin Wanda Ya Shiga Albumdinsu",
+  "Complete": "Cikakke",
+  "Processing": "Processing",
+  "Uploading": "Suna saka",
+  "Cancel Upload": "Shirin Sabunta Soke",
+  "Upload progress": "Daura Ci Gaba",
+  "Overall progress": "Ci Gaba Duka",
+  "Completed": "An Kare",
+  "Failed": "Ba Ci Nasara Ba",
+  "({count} failed": "({count} ya kasa",
+  "({count} in progress)": "({count}) Yana Ta Kasuwanci"
 }

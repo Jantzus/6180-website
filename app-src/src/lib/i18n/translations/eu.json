@@ -147,5 +147,16 @@
   "View Album Photos": "Ikusi Albumaren Argazkiak",
   "Enter Username": "Sartu Erabiltzaile Izena",
   "Select Username": "Aukeratu Erabiltzaile-izena",
-  "Add Random Digits to Username": "Gehitu Ausazko Digituak Erabiltzaile-izenari"
+  "Add Random Digits to Username": "Gehitu Ausazko Digituak Erabiltzaile-izenari",
+  "Enter your email so {ownerName} can see who accessed their album": "Sartu Zure Emaila {ownerName}k Bere Albuma Nork Atzitu Duen Ikus Dezan",
+  "Complete": "Osoa",
+  "Processing": "Prozesamendua",
+  "Uploading": "Igotzen",
+  "Cancel Upload": "Utzi Igoera",
+  "Upload progress": "Kargatze Aurrerapena",
+  "Overall progress": "Aurrerapen Orokorra",
+  "Completed": "Osatua",
+  "Failed": "Huts Egin Du",
+  "({count} failed": "({count} huts egin du",
+  "({count} in progress)": "({count}) Abian"
 }

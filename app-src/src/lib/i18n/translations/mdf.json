@@ -147,5 +147,16 @@
   "View Album Photos": "Ваномс Альбомонь Няйфкснень",
   "Enter Username": "Сувафтт Тиить Лем",
   "Select Username": "Кочкак Сувсинь Лем",
-  "Add Random Digits to Username": "Поладомс Киге-повсь Лувкст Тиикс Лемс"
+  "Add Random Digits to Username": "Поладомс Киге-повсь Лувкст Тиикс Лемс",
+  "Enter your email so {ownerName} can see who accessed their album": "Сёрматк Тонь Электроннай Почтацень, Штоба {ownerName} Няельхце, Кие Сувась Синь Альбомозост",
+  "Complete": "Пяшксе",
+  "Processing": "Тиема",
+  "Uploading": "Тонгондома",
+  "Cancel Upload": "Сувафтомать Лоткафтомс",
+  "Upload progress": "Шачфтомань Молемась",
+  "Overall progress": "Сембонь Инголи Молема",
+  "Completed": "Аделаф",
+  "Failed": "Афкс",
+  "({count} failed": "({count} изь лисев",
+  "({count} in progress)": "({count}) Молема"
 }

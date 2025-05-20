@@ -106,8 +106,8 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
                 padding: "4px 8px",
                 borderRadius: 4,
               }}
-              aria-label={t('Cancel upload')}
-              title={t('Cancel upload')}
+              aria-label={t('Cancel Upload')}
+              title={t('Cancel Upload')}
             >
               {t('Cancel')}
             </button>
@@ -253,8 +253,9 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
       >
         <span style={{ fontSize: 14, color: "#555" }}>
           <strong>{getStatusText()}</strong>: {filesComplete}/{totalFiles}
-          {filesWithError > 0 && ` (${filesWithError} ${t('failed')})`}
-          {filesUploading > 0 && ` (${filesUploading} ${t('in progress')})`}
+
+          {filesWithError > 0 && t('({count} failed').replace('{count}', filesWithError.toString())}
+          {filesUploading > 0 && t('({count} in progress').replace('{count}', filesUploading.toString())}
         </span>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <span style={{ fontSize: 14, color: "#555", fontWeight: "bold" }}>
@@ -272,8 +273,8 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
                 padding: "4px 8px",
                 borderRadius: 4,
               }}
-              aria-label={t('Cancel upload')}
-              title={t('Cancel upload')}
+              aria-label={t('Cancel Upload')}
+              title={t('Cancel Upload')}
             >
               {t('Cancel')}
             </button>

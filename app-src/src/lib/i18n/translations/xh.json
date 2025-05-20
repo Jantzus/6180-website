@@ -147,5 +147,16 @@
   "View Album Photos": "Bona Iifoto Ze-Album",
   "Enter Username": "Faka Igama Lomsebenzisi",
   "Select Username": "Khetha Igama Lomsebenzisi",
-  "Add Random Digits to Username": "Fakela Amanani Angenalandelelwano Kwigama Lomsebenzisi"
+  "Add Random Digits to Username": "Fakela Amanani Angenalandelelwano Kwigama Lomsebenzisi",
+  "Enter your email so {ownerName} can see who accessed their album": "Fakela I-imeyile Yakho Ukuze U-{ownerName} Abone Ukuba Ngubani Ofikelele Kwi-albham Yabo",
+  "Complete": "Gqibelele",
+  "Processing": "Ukucubungula",
+  "Uploading": "Layishela phezulu",
+  "Cancel Upload": "Rhoxisa Ukunyukela",
+  "Upload progress": "Inkqubela Yokufaka",
+  "Overall progress": "Inkqubela Iyonke",
+  "Completed": "Igqityiwe",
+  "Failed": "Yophukile",
+  "({count} failed": "({count} ayiphumelelanga",
+  "({count} in progress)": "({count}) Iyaqhubeka"
 }

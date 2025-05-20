@@ -147,5 +147,16 @@
   "View Album Photos": "Vaata Albumi Fotosid",
   "Enter Username": "Sisesta Kasutajanimi",
   "Select Username": "Vali Kasutajanimi",
-  "Add Random Digits to Username": "Lisa Juhuslikud Numbrid Kasutajanimele"
+  "Add Random Digits to Username": "Lisa Juhuslikud Numbrid Kasutajanimele",
+  "Enter your email so {ownerName} can see who accessed their album": "Sisesta Oma E-posti Aadress, Et {ownerName} Näeks, Kes Nende Albumit Vaatas",
+  "Complete": "Täielik",
+  "Processing": "Töötlemine",
+  "Uploading": "Üleslaadimine",
+  "Cancel Upload": "Tühista Üleslaadimine",
+  "Upload progress": "Üleslaadimise Edenemine",
+  "Overall progress": "Üldine Edenemine",
+  "Completed": "Lõpetatud",
+  "Failed": "Ebaõnnestus",
+  "({count} failed": "({count} ebaõnnestus",
+  "({count} in progress)": "({count}) Pooleli"
 }

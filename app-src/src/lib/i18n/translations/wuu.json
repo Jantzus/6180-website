@@ -142,10 +142,21 @@
   "Submitting...": "正在提交...",
   "Password": "密码",
   "Submit": "提交",
-  "OK": "Hǎo",
+  "OK": "好",
   "Link Only": "仅链接",
   "View Album Photos": "查看相册照片",
   "Enter Username": "输入用户名",
   "Select Username": "选择用户名",
-  "Add Random Digits to Username": "添加随机数字到用户名"
+  "Add Random Digits to Username": "添加随机数字到用户名",
+  "Enter your email so {ownerName} can see who accessed their album": "输入侬额电子邮件以便 {ownerName} 看见啥人访问了伊拉额相册",
+  "Complete": "完整",
+  "Processing": "處理",
+  "Uploading": "上传中",
+  "Cancel Upload": "取消上传",
+  "Upload progress": "上传进度",
+  "Overall progress": "全体进度",
+  "Completed": "完成了",
+  "Failed": "失败",
+  "({count} failed": "({count} 失败了",
+  "({count} in progress)": "({count}) 进行中"
 }

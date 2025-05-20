@@ -142,10 +142,21 @@
   "Submitting...": "Soumission en cours...",
   "Password": "Mot De Passe",
   "Submit": "Soumettre",
-  "OK": "D'Accord",
+  "OK": "D'accord",
   "Link Only": "Lien Seulement",
   "View Album Photos": "Voir Les Photos De L'Album",
   "Enter Username": "Entrez Nom D'Utilisateur",
   "Select Username": "Sélectionner Nom d'Utilisateur",
-  "Add Random Digits to Username": "Ajouter Des Chiffres Aléatoires Au Nom D'utilisateur"
+  "Add Random Digits to Username": "Ajouter Des Chiffres Aléatoires Au Nom D'utilisateur",
+  "Enter your email so {ownerName} can see who accessed their album": "Entrez Votre Email Afin Que {ownerName} Puisse Voir Qui A Accédé À Leur Album",
+  "Complete": "Complet",
+  "Processing": "Traitement",
+  "Uploading": "Téléchargement",
+  "Cancel Upload": "Annuler Téléchargement",
+  "Upload progress": "Progression Du Téléchargement",
+  "Overall progress": "Progrès Global",
+  "Completed": "Complété",
+  "Failed": "Échoué",
+  "({count} failed": "({count} échoué",
+  "({count} in progress)": "({count}) En Cours"
 }

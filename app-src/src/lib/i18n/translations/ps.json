@@ -142,10 +142,21 @@
   "Submitting...": "لېږل کېږي...",
   "Password": "پټ نوم",
   "Submit": "سپارل",
-  "OK": "Sama Da",
+  "OK": "سمه ده",
   "Link Only": "یوازې تړنه",
   "View Album Photos": "د البوم انځورونه وګورئ",
   "Enter Username": "کارن نوم داخل کړئ",
   "Select Username": "کارن نوم وټاکئ",
-  "Add Random Digits to Username": "کارن نوم ته ګډوډ شمېرې ورزیاتې کړئ"
+  "Add Random Digits to Username": "کارن نوم ته ګډوډ شمېرې ورزیاتې کړئ",
+  "Enter your email so {ownerName} can see who accessed their album": "خپل بریښنالیک دننه کړئ ترڅو {ownerName} وکولای شي وویني چا د هغوی البوم ته لاسرسی درلود",
+  "Complete": "بشپړ",
+  "Processing": "پروسس",
+  "Uploading": "پورته کول",
+  "Cancel Upload": "پورته کول لغوه کړئ",
+  "Upload progress": "د پورته کولو پرمختگ",
+  "Overall progress": "ټوله پرمختګ",
+  "Completed": "بشپړ شوی",
+  "Failed": "ناکام",
+  "({count} failed": "({count} پاتې راغی",
+  "({count} in progress)": "({count}) په پرمختګ کې"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Etepodan...",
   "Password": "Password",
   "Submit": "Ewewo",
-  "OK": "Eok",
+  "OK": "Omo",
   "Link Only": "Link Kor",
   "View Album Photos": "Iyuw Album Gamag",
   "Enter Username": "Enter Itsiet Username",
   "Select Username": "Eow Bum Etagú",
-  "Add Random Digits to Username": "Eow Namba Iyo Iduwen Nega Nying"
+  "Add Random Digits to Username": "Eow Namba Iyo Iduwen Nega Nying",
+  "Enter your email so {ownerName} can see who accessed their album": "Enter Om Email Iyow {ownerName} Ateng Tsiet Ei Engame Album Ouwak",
+  "Complete": "Earak",
+  "Processing": "Processing",
+  "Uploading": "Uploading",
+  "Cancel Upload": "Cancel Et Upload",
+  "Upload progress": "Oaeaeo Ebwaebwa",
+  "Overall progress": "Ewakin Ogoro",
+  "Completed": "Oreit",
+  "Failed": "Itubakon",
+  "({count} failed": "({count} ebak",
+  "({count} in progress)": "({count}) Ogiten Aiquen"
 }

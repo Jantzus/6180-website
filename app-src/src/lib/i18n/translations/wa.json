@@ -142,10 +142,21 @@
   "Submitting...": "Evoyant...",
   "Password": "Sicret",
   "Submit": "Evoyî",
-  "OK": "Bén",
+  "OK": "Èn Orde",
   "Link Only": "Loyén Seulmint",
   "View Album Photos": "Vey Les Fotos Dè L'Albom",
   "Enter Username": "Intrez L'no D'uzeu",
   "Select Username": "Tchoezi l' No d' Uzeu",
-  "Add Random Digits to Username": "Radjouter Des Tclifes Sol Coûtchance Sol No D'uzeu"
+  "Add Random Digits to Username": "Radjouter Des Tclifes Sol Coûtchance Sol No D'uzeu",
+  "Enter your email so {ownerName} can see who accessed their album": "Tapez Vosse Emile Po Ki {ownerName} Poye Vey Kî A-st Avou Accès A Leu Album",
+  "Complete": "Complet",
+  "Processing": "Traitumint",
+  "Uploading": "Eberwetaedje",
+  "Cancel Upload": "Rinoncî A L'eberwetaedje",
+  "Upload progress": "Avançmint Do Eberwetaedje",
+  "Overall progress": "Progrès Djenerål",
+  "Completed": "Fini",
+  "Failed": "Fwait",
+  "({count} failed": "({count} foirt",
+  "({count} in progress)": "({count}) En Cors"
 }

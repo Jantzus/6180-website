@@ -142,10 +142,21 @@
   "Submitting...": "送信中...",
   "Password": "パスワード",
   "Submit": "送信",
-  "OK": "Hai",
+  "OK": "OK",
   "Link Only": "リンクのみ",
   "View Album Photos": "アルバム写真を表示",
   "Enter Username": "ユーザー名を入力",
   "Select Username": "ユーザー名を選択",
-  "Add Random Digits to Username": "ユーザー名にランダムな数字を追加"
+  "Add Random Digits to Username": "ユーザー名にランダムな数字を追加",
+  "Enter your email so {ownerName} can see who accessed their album": "あなたのメールアドレスを入力してください、{ownerName}がアルバムにアクセスした人を確認できるようにするため",
+  "Complete": "完了",
+  "Processing": "処理",
+  "Uploading": "アップロード中",
+  "Cancel Upload": "アップロードをキャンセル",
+  "Upload progress": "アップロード進捗",
+  "Overall progress": "全体的な進捗",
+  "Completed": "完成した",
+  "Failed": "失敗",
+  "({count} failed": "({count} 失敗しました",
+  "({count} in progress)": "({count}) 進行中"
 }

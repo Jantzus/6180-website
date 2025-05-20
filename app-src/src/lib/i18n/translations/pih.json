@@ -142,10 +142,21 @@
   "Submitting...": "Sendin...",
   "Password": "Paswurd",
   "Submit": "Submit",
-  "OK": "Gud",
+  "OK": "Orwait",
   "Link Only": "Link Nomo",
   "View Album Photos": "Luk Album Pikta",
   "Enter Username": "Entra Yuusa Niem",
   "Select Username": "Selekt Yuusa Niem",
-  "Add Random Digits to Username": "Put Random Nambas To Yuus Niem"
+  "Add Random Digits to Username": "Put Random Nambas To Yuus Niem",
+  "Enter your email so {ownerName} can see who accessed their album": "Put Yoas Email In So {ownerName} Kan See Hu Access Dems Album",
+  "Complete": "Kompliit",
+  "Processing": "Praesesing",
+  "Uploading": "Aplodin",
+  "Cancel Upload": "Kansel Uplod",
+  "Upload progress": "Uploed Progres",
+  "Overall progress": "Oweraal Progres",
+  "Completed": "Fuhnisht",
+  "Failed": "Fael",
+  "({count} failed": "({count} failed",
+  "({count} in progress)": "({count}) Gwen On"
 }

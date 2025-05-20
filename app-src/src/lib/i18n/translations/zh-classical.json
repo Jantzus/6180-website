@@ -142,10 +142,21 @@
   "Submitting...": "正在提交...",
   "Password": "密碼",
   "Submit": "呈",
-  "OK": "可",
+  "OK": "好",
   "Link Only": "惟連",
   "View Album Photos": "觀相冊之照",
   "Enter Username": "入汝之名",
   "Select Username": "選用者名",
-  "Add Random Digits to Username": "添隨機數字於用戶名"
+  "Add Random Digits to Username": "添隨機數字於用戶名",
+  "Enter your email so {ownerName} can see who accessed their album": "輸爾電郵，使 {ownerName} 得見孰人觀其相冊",
+  "Complete": "完整",
+  "Processing": "處理",
+  "Uploading": "在上傳",
+  "Cancel Upload": "取消上傳",
+  "Upload progress": "上傳進度",
+  "Overall progress": "總體進程",
+  "Completed": "竣工",
+  "Failed": "失敗",
+  "({count} failed": "({count} 失敗矣",
+  "({count} in progress)": "({count}) 進行中"
 }

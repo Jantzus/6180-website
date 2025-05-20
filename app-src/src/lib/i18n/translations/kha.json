@@ -142,10 +142,21 @@
   "Submitting...": "Pyntip...",
   "Password": "Password",
   "Submit": "Phah",
-  "OK": "Bha",
+  "OK": "Dei",
   "Link Only": "Tang La I Link",
   "View Album Photos": "Peit Ia Ki Dur Jingkynmaw",
   "Enter Username": "Buh Kyrteng U Nongrep",
   "Select Username": "Jied Kyrteng U Nongrep",
-  "Add Random Digits to Username": "Pyntap Ki Digit Ba Kyn-um Ha U Kyrteng Nongjngohsiew"
+  "Add Random Digits to Username": "Pyntap Ki Digit Ba Kyn-um Ha U Kyrteng Nongjngohsiew",
+  "Enter your email so {ownerName} can see who accessed their album": "Pynrung Ka Email Jong Phi Ban {ownerName} Lah Ban Lum Ia Kiba Lah Peit Ia La Album",
+  "Complete": "Pura",
+  "Processing": "Ïajurong",
+  "Uploading": "Pynkiew",
+  "Cancel Upload": "Pynduh Upload",
+  "Upload progress": "Ka Jingkiew Nangam",
+  "Overall progress": "Ka Jingiakylla Baroh",
+  "Completed": "La Dei",
+  "Failed": "Ym lah",
+  "({count} failed": "({count} ka rem shem",
+  "({count} in progress)": "({count}) Nongbha Nangta"
 }

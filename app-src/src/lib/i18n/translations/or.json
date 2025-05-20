@@ -142,10 +142,21 @@
   "Submitting...": "ଦାଖଲ କରୁଛି...",
   "Password": "ପାସୱାର୍ଡ",
   "Submit": "ଦାଖଲ କରନ୍ତୁ",
-  "OK": "Ṭhik Achi",
+  "OK": "ଠିକ୍ ଅଛି",
   "Link Only": "କେବଳ ଲିଙ୍କ",
   "View Album Photos": "ଆଲବମ୍ ଫଟୋ ଦେଖନ୍ତୁ",
   "Enter Username": "ବ୍ୟବହାରକାରୀ ନାମ ପ୍ରବେଶ କରନ୍ତୁ",
   "Select Username": "ବ୍ୟବହାରକାରୀଙ୍କ ନାମ ବାଛନ୍ତୁ",
-  "Add Random Digits to Username": "ବ୍ୟବହାରକାରୀ ନାମରେ ଯାଦୃଚ୍ଛିକ ଅଙ୍କ ଯୋଡନ୍ତୁ"
+  "Add Random Digits to Username": "ବ୍ୟବହାରକାରୀ ନାମରେ ଯାଦୃଚ୍ଛିକ ଅଙ୍କ ଯୋଡନ୍ତୁ",
+  "Enter your email so {ownerName} can see who accessed their album": "ଆପଣଙ୍କ ଇମେଲ୍ ପ୍ରବେଶ କରନ୍ତୁ ଯାହା ଦ୍ଵାରା {ownerName} ଦେଖିପାରିବେ କିଏ ସେମାନଙ୍କ ଆଲବମ୍ ଦେଖିଛନ୍ତି",
+  "Complete": "ସମ୍ପୂର୍ଣ୍ଣ",
+  "Processing": "ପ୍ରକ୍ରିୟାକରଣ",
+  "Uploading": "ଅପଲୋଡ୍ କରୁଛି",
+  "Cancel Upload": "ଅପଲୋଡ୍ ବାତିଲ କରନ୍ତୁ",
+  "Upload progress": "ଅପଲୋଡ୍ ପ୍ରଗତି",
+  "Overall progress": "ସାମଗ୍ରିକ ପ୍ରଗତି",
+  "Completed": "ସମାପ୍ତ",
+  "Failed": "ବିଫଳ",
+  "({count} failed": "({count} ବିଫଳ ହୋଇଛି",
+  "({count} in progress)": "({count}) ଚାଲୁ ଅଛି"
 }

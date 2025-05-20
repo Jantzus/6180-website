@@ -142,10 +142,21 @@
   "Submitting...": "Sádden...",
   "Password": "Beassansátni",
   "Submit": "Sádde",
-  "OK": "Buorre",
+  "OK": "OK",
   "Link Only": "Dušše Liŋka",
   "View Album Photos": "Geahča Albuma Govaid",
   "Enter Username": "Čális Geavaheaddji Nama",
   "Select Username": "Válljet Geavaheaddji-nama",
-  "Add Random Digits to Username": "Lasit Soaittáhagas Nummirat Geavaheaddjinamahusa"
+  "Add Random Digits to Username": "Lasit Soaittáhagas Nummirat Geavaheaddjinamahusa",
+  "Enter your email so {ownerName} can see who accessed their album": "Čále Iežat E-poastačujuhusa Vai {ownerName} Oaidná Gii Lea Geahččan Sin Albuma",
+  "Complete": "Ollislaš",
+  "Processing": "Gieđahallan",
+  "Uploading": "Luodin bajás",
+  "Cancel Upload": "Gohčo Bajásluoitima",
+  "Upload progress": "Bajásluktima Ovdáneapmi",
+  "Overall progress": "Oppalašovdáneapmi",
+  "Completed": "Geargan",
+  "Failed": "Ii Lihkostuvvan",
+  "({count} failed": "({count} ii lihkostuvvan",
+  "({count} in progress)": "({count}) Johttime"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Ana aika...",
   "Password": "Kalmar Sirri",
   "Submit": "Aika",
-  "OK": "Lafiya",
+  "OK": "KO",
   "Link Only": "Kawai Hanya",
   "View Album Photos": "Duba Hotuna Na Albomu",
   "Enter Username": "Shigar Da Sunan Mai Amfani",
   "Select Username": "Zaɓi Sunan Mai Amfani",
-  "Add Random Digits to Username": "Kara Lamba Na Bazata Ga Sunan Mai Amfani"
+  "Add Random Digits to Username": "Kara Lamba Na Bazata Ga Sunan Mai Amfani",
+  "Enter your email so {ownerName} can see who accessed their album": "Shigar Da Imelin Ka Don {ownerName} Ya Iya Ganin Wanda Ya Shiga Albansu",
+  "Complete": "Cika",
+  "Processing": "Sarrafa",
+  "Uploading": "Yana uploading",
+  "Cancel Upload": "Soke Dora",
+  "Upload progress": "Ci Gaba Na Ɗora",
+  "Overall progress": "Ci Gaba Na Gaba Ɗai",
+  "Completed": "Kammala",
+  "Failed": "Ba Ya Yi Ba",
+  "({count} failed": "({count} ya kasa",
+  "({count} in progress)": "({count}) Ana Kai"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Lukluk Long Album Foto",
   "Enter Username": "Putum Nem Blong Yu",
   "Select Username": "Jusum Nem Blong Yu",
-  "Add Random Digits to Username": "Ademap Namba Long Yusanem Blong Yu"
+  "Add Random Digits to Username": "Ademap Namba Long Yusanem Blong Yu",
+  "Enter your email so {ownerName} can see who accessed their album": "Putum Email Blong Yu Blong {ownerName} I Save Luk Huia I Bin Aksesem Album Blong Olgeta",
+  "Complete": "Fulap",
+  "Processing": "Proesesem",
+  "Uploading": "Aplod",
+  "Cancel Upload": "Kansellem Aplod",
+  "Upload progress": "Aplod Progres",
+  "Overall progress": "Fulap Progres",
+  "Completed": "Komplitim",
+  "Failed": "Fel",
+  "({count} failed": "({count} fel",
+  "({count} in progress)": "({count}) Stap Go Yet"
 }

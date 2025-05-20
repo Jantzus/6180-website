@@ -142,10 +142,21 @@
   "Submitting...": "Kachachispa...",
   "Password": "Yaykuna Rima",
   "Submit": "Kachiy",
-  "OK": "Allinmi",
+  "OK": "Allin",
   "Link Only": "Link Llalla",
   "View Album Photos": "Album Rikch'akuna Qhaway",
   "Enter Username": "Ruraqpa Sutinta Qillqay",
   "Select Username": "Ruraqpa Sutinta Akllay",
-  "Add Random Digits to Username": "Llamk'aq Sutiman Mana Qatinchata Yupanakunata Yapay"
+  "Add Random Digits to Username": "Llamk'aq Sutiman Mana Qatinchata Yupanakunata Yapay",
+  "Enter your email so {ownerName} can see who accessed their album": "Qilqay Imayl-masiy {ownerName} Qhawananpaq Pitaq Haykurqa Álbum-ninkuman",
+  "Complete": "Hunt'asqa",
+  "Processing": "Llamk'achiy",
+  "Uploading": "Qarpuchispa",
+  "Cancel Upload": "Chaskichinata Chinkachiy",
+  "Upload progress": "Apachiy Ñawpariy",
+  "Overall progress": "Llapan Ñawpaqman",
+  "Completed": "Hunt'asqa",
+  "Failed": "Mana Atisqa",
+  "({count} failed": "({count} manam atipasqachu",
+  "({count} in progress)": "({count}) Ñawpaqman Richkan"
 }

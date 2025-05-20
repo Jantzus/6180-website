@@ -147,5 +147,16 @@
   "View Album Photos": "Tazama Picha Za Album",
   "Enter Username": "Ingiza Jina La Mtumiaji",
   "Select Username": "Chagua Jina la Mtumiaji",
-  "Add Random Digits to Username": "Ongeza Namba Za Nasibu Kwenye Jina La Mtumiaji"
+  "Add Random Digits to Username": "Ongeza Namba Za Nasibu Kwenye Jina La Mtumiaji",
+  "Enter your email so {ownerName} can see who accessed their album": "Ingiza Barua Pepe Yako Ili {ownerName} Aweze Kuona Nani Alifikia Albamu Yao",
+  "Complete": "Kamili",
+  "Processing": "Usindikaji",
+  "Uploading": "Inapakia",
+  "Cancel Upload": "Ghairi Upakiaji",
+  "Upload progress": "Maendeleo Ya Kupakia",
+  "Overall progress": "Maendeleo Ya Jumla",
+  "Completed": "Imekamilika",
+  "Failed": "Imeshindwa",
+  "({count} failed": "({count} imeshindwa",
+  "({count} in progress)": "({count}) Inaendelea"
 }

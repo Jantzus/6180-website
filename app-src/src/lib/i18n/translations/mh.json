@@ -142,10 +142,21 @@
   "Submitting...": "Jilkintok...",
   "Password": "Password",
   "Submit": "Kadeddel",
-  "OK": "Eṃṃan",
+  "OK": "Eman",
   "Link Only": "Link Wōt",
   "View Album Photos": "Lale Pija In Album Ko",
   "Enter Username": "Kadkad Etam In Kojerbale",
   "Select Username": "Kālet Āt in Kōjerbale",
-  "Add Random Digits to Username": "Kobaiki Ņomba Ilo Kojak Ilo Etam"
+  "Add Random Digits to Username": "Kobaiki Ņomba Ilo Kojak Ilo Etam",
+  "Enter your email so {ownerName} can see who accessed their album": "Likūt Email Eo Am Bwe {ownerName} En Maron Lale Wōn Ear Delone Album Eo Aer",
+  "Complete": "Jejjet",
+  "Processing": "Processing",
+  "Uploading": "Uploading",
+  "Cancel Upload": "Kabbōjrak Upload",
+  "Upload progress": "Kadkad In Wōnmanlok",
+  "Overall progress": "Ejmour Eo",
+  "Completed": "Kadedekļọk",
+  "Failed": "Jorrāān",
+  "({count} failed": "({count} likjab",
+  "({count} in progress)": "({count}) Ej Wōnmanlok"
 }

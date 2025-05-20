@@ -142,10 +142,21 @@
   "Submitting...": "Tumina...",
   "Password": "Ondungetelo",
   "Submit": "Tuma",
-  "OK": "Nawa",
+  "OK": "Xwepo",
   "Link Only": "Nghendife Auke",
   "View Album Photos": "Tala Oufano Ualbuma",
   "Enter Username": "Shaneka Edhina Lyomuningi",
   "Select Username": "Hoolola Etumbalo Lyoye",
-  "Add Random Digits to Username": "Wedako oonombala tadima kouditumbila"
+  "Add Random Digits to Username": "Wedako oonombala tadima kouditumbila",
+  "Enter your email so {ownerName} can see who accessed their album": "Fatulula Email Joye Opo {ownerName} Ta Mono Olye Tala Album Davo",
+  "Complete": "Ayidhe",
+  "Processing": "Processing",
+  "Uploading": "Okupitika",
+  "Cancel Upload": "Ekanitho Upload",
+  "Upload progress": "Shapumako Vipagwa",
+  "Overall progress": "Enjendero Auhe",
+  "Completed": "Ya Mana",
+  "Failed": "Sha Shi Shashinwe",
+  "({count} failed": "({count} ya puka",
+  "({count} in progress)": "({count}) Ku Tendeka"
 }

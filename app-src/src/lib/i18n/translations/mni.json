@@ -142,10 +142,21 @@
   "Submitting...": "ꯊꯥꯗꯣꯛꯂꯤ...",
   "Password": "ৱাখল শিন",
   "Submit": "থाগৎলু",
-  "OK": "Yāre",
+  "OK": "যারে",
   "Link Only": "লিংক তন্তমক",
   "View Album Photos": "ঐলবম ꯃমিঙ ꯱ঙ",
   "Enter Username": "শীজিন্নবা মীং চঙ্শিনবিয়ু",
   "Select Username": "ꯁꯤꯖꯤꯟꯅꯔꯤꯕ ꯃꯥꯡ ꯈꯟꯉꯨ",
-  "Add Random Digits to Username": "ꯁꯤꯖꯤꯟꯅꯔꯤꯕꯥ ꯃꯃꯤꯡꯗ ꯑꯃꯃꯃꯟꯅꯕ ꯃꯁꯤꯡꯁꯤꯡ ꯍꯥꯄꯆꯤꯟꯕꯤꯌꯨ"
+  "Add Random Digits to Username": "ꯁꯤꯖꯤꯟꯅꯔꯤꯕꯥ ꯃꯃꯤꯡꯗ ꯑꯃꯃꯃꯟꯅꯕ ꯃꯁꯤꯡꯁꯤꯡ ꯍꯥꯄꯆꯤꯟꯕꯤꯌꯨ",
+  "Enter your email so {ownerName} can see who accessed their album": "ꯆꯥꯍꯤꯗꯕ ꯏꯃꯦꯜ ꯑꯗꯨ ꯆꯪꯁꯤꯟꯂꯨ ꯃꯗꯨꯗꯤ {ownerName} ꯄꯥꯝꯕꯤꯕꯥ ꯃꯤꯑꯣꯏꯁꯤꯡꯗꯨ ꯃꯍꯥꯛꯀꯤ ꯑꯦꯜꯕꯝ ꯑꯦꯛꯁꯦꯁ ꯇꯧꯔꯦ ꯍꯥꯏꯕꯗꯨ ꯎꯕꯥ ꯐꯪꯒꯗꯕꯥ",
+  "Complete": "ꯃꯄꯨꯡ ꯐꯥꯟꯥ",
+  "Processing": "ꯄꯔꯣꯁꯦꯁꯤꯡ",
+  "Uploading": "ꯑꯄꯂꯣꯗ ꯇꯧꯔꯤ",
+  "Cancel Upload": "ꯑꯄꯂꯣꯗ ꯀꯦꯟꯁꯦꯜ ꯇꯧꯕ",
+  "Upload progress": "ꯑꯄꯂꯣꯗ ꯄ꯭ꯔꯣꯒ꯭ꯔꯦꯁ",
+  "Overall progress": "ꯃꯄꯨꯡ ꯐꯥꯁꯤꯟꯕ ꯏꯋꯥꯏꯖꯤꯟꯕ",
+  "Completed": "ꯁꯣꯢꯁꯤꯟꯆꯔꯦ",
+  "Failed": "ꯃꯥꯌꯄꯥꯛꯂꯦ",
+  "({count} failed": "({count} ꯃꯥꯌꯥꯛꯂꯦ",
+  "({count} in progress)": "({count}) ꯆꯪꯁꯤꯟꯅꯕ"
 }

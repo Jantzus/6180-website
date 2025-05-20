@@ -142,10 +142,21 @@
   "Submitting...": "Ambiando...",
   "Password": "Palavra Passe",
   "Submit": "Ambiar",
-  "OK": "Bien",
+  "OK": "OK",
   "Link Only": "Solo Lhigaçon",
   "View Album Photos": "Ber Fotos Del Álbun",
   "Enter Username": "Antre Nome De Outelizador",
   "Select Username": "Selecionar Nome de Outelizador",
-  "Add Random Digits to Username": "Juntar Díxitos Aleatórios Al Nome De Outelizador"
+  "Add Random Digits to Username": "Juntar Díxitos Aleatórios Al Nome De Outelizador",
+  "Enter your email so {ownerName} can see who accessed their album": "Antre L Tou Correio Eiletrónico Para Que {ownerName} Puoda Ber Quian Acediu Al Sou Álbun",
+  "Complete": "Cumpleto",
+  "Processing": "Processamiento",
+  "Uploading": "Carregando",
+  "Cancel Upload": "Cancelar Carregamiento",
+  "Upload progress": "Porgressu De Carregamiento",
+  "Overall progress": "Porgressu Global",
+  "Completed": "Cumpletado",
+  "Failed": "Falhou",
+  "({count} failed": "({count} falhou",
+  "({count} in progress)": "({count}) An Curs"
 }

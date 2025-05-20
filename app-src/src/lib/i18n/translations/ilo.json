@@ -147,5 +147,16 @@
   "View Album Photos": "Kitaen Dagiti Retrato Ti Album",
   "Enter Username": "Isurat Ti Nagan Ti Agar-aramat",
   "Select Username": "Agpili ti Nagan ti Agar-aramat",
-  "Add Random Digits to Username": "Nayunan Dagiti Di Ammo A Numero Iti Nagan Ti Agar-aramat"
+  "Add Random Digits to Username": "Nayunan Dagiti Di Ammo A Numero Iti Nagan Ti Agar-aramat",
+  "Enter your email so {ownerName} can see who accessed their album": "Ikabil Ti Email Mo Tapno Makita Ni {ownerName} No Siasino Ti Immakses Iti Albumda",
+  "Complete": "Kompleto",
+  "Processing": "Panagproseso",
+  "Uploading": "Agipapan",
+  "Cancel Upload": "Kanselaen Ti Pang-upload",
+  "Upload progress": "Panagdur-as Ti Panag-upload",
+  "Overall progress": "Sapasap A Panagrang-ay",
+  "Completed": "Nakumpleto",
+  "Failed": "Napaay",
+  "({count} failed": "({count} napaay",
+  "({count} in progress)": "({count}) Agdama"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Ver Fotos Del Álbum",
   "Enter Username": "Entra Nombre De Usador",
   "Select Username": "Eskoj Nombre de Usuario",
-  "Add Random Digits to Username": "Adjustar Dijitos Aleatoryos A Nombre De Usador"
+  "Add Random Digits to Username": "Adjustar Dijitos Aleatoryos A Nombre De Usador",
+  "Enter your email so {ownerName} can see who accessed their album": "Entra Tu Adressa Elektronika Para Ke {ownerName} Pueda Ver Ken Aksedio A Su Album",
+  "Complete": "Kompleto",
+  "Processing": "Prosesamiento",
+  "Uploading": "Subiendo",
+  "Cancel Upload": "Anular Kargamiento",
+  "Upload progress": "Progresso De Karga",
+  "Overall progress": "Progreso Total",
+  "Completed": "Kompletado",
+  "Failed": "Fayado",
+  "({count} failed": "({count} fayado",
+  "({count} in progress)": "({count}) En Progreso"
 }

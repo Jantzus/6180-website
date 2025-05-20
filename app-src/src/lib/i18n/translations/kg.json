@@ -147,5 +147,16 @@
   "View Album Photos": "Mona Foto Ya Album",
   "Enter Username": "Kota Nkumbu Ya Musadisi",
   "Select Username": "Solola Nkumbu ya Musadisi",
-  "Add Random Digits to Username": "Kotia Bantangu Ya Lusakasaka Na Nkumbu Ya Musadi"
+  "Add Random Digits to Username": "Kotia Bantangu Ya Lusakasaka Na Nkumbu Ya Musadi",
+  "Enter your email so {ownerName} can see who accessed their album": "Sonika Nkanda Ya Nge Ya Siangu Ya Internet Sambu Na {ownerName} Lenda Kumona Nani Kotala Album Na Bau",
+  "Complete": "Ya Muvimba",
+  "Processing": "Kusungika",
+  "Uploading": "Kutoma",
+  "Cancel Upload": "Sukisa Upload",
+  "Upload progress": "Lutambuisu Ya Kutula",
+  "Overall progress": "Kuenda Na Ntwala Ya Yonso",
+  "Completed": "Manisisa",
+  "Failed": "Kubwa",
+  "({count} failed": "({count} kubwa",
+  "({count} in progress)": "({count}) Ke Tambula"
 }

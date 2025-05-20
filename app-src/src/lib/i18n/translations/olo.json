@@ -147,5 +147,16 @@
   "View Album Photos": "Kačo Albuman Kuvii",
   "Enter Username": "Pane Käyttäinymeä",
   "Select Username": "Valliče Käyttäinymmie",
-  "Add Random Digits to Username": "Liziä Satunnaizet Noumerahukset Käyttäinimeh"
+  "Add Random Digits to Username": "Liziä Satunnaizet Noumerahukset Käyttäinimeh",
+  "Enter your email so {ownerName} can see who accessed their album": "Pane Sinun Email-adressu, Ku {ownerName} Voibi Nähä Ken On Tulluh Heijän Albumuah",
+  "Complete": "Tävelline",
+  "Processing": "Käzittely",
+  "Uploading": "Ladatah ylähpäi",
+  "Cancel Upload": "Peru Lastavu",
+  "Upload progress": "Yleslukemizen Edistyminy",
+  "Overall progress": "Kogonaine Edistyminy",
+  "Completed": "Loppiettu",
+  "Failed": "Epeonnistui",
+  "({count} failed": "({count} epäonnistui",
+  "({count} in progress)": "({count}) Menossa"
 }

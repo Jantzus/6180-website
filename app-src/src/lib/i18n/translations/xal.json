@@ -142,10 +142,21 @@
   "Submitting...": "Йовудна...",
   "Password": "Нууц Үг",
   "Submit": "Йовудх",
-  "OK": "Bolna",
+  "OK": "Гем",
   "Link Only": "Зааг Гинәс",
   "View Album Photos": "Альбомин Зургуд Хәләх",
   "Enter Username": "Бүртклдгчин Нернь Орултн",
   "Select Username": "Орлцачна Нернь Суңһх",
-  "Add Random Digits to Username": "Орлцачна Нерт Зер Бийр Дарата Немх"
+  "Add Random Digits to Username": "Орлцачна Нерт Зер Бийр Дарата Немх",
+  "Enter your email so {ownerName} can see who accessed their album": "Электрон Шуудн Бичтн {ownerName} Хәрү Таньдгин Кен Мел Альбомдас Үздг",
+  "Complete": "Бүрн",
+  "Processing": "Болвсрлт",
+  "Uploading": "Теелһҗәнә",
+  "Cancel Upload": "Чееҗләвр Цэмдх",
+  "Upload progress": "Ачалһна Ахц",
+  "Overall progress": "Ниицәр Уралта",
+  "Completed": "Дуусгсн",
+  "Failed": "Амҗлт уга",
+  "({count} failed": "({count} бүтлго болв",
+  "({count} in progress)": "({count}) Йовудлж Бәәнә"
 }

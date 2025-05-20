@@ -147,5 +147,16 @@
   "View Album Photos": "Bona Dinepe Tša Album",
   "Enter Username": "Tsenya Leina La Mošomiši",
   "Select Username": "Kgetha Leina la Modiriši",
-  "Add Random Digits to Username": "Oketša Dinomoro Tša Go Se Beakanywe Leineng La Modiriši"
+  "Add Random Digits to Username": "Oketša Dinomoro Tša Go Se Beakanywe Leineng La Modiriši",
+  "Enter your email so {ownerName} can see who accessed their album": "Tsenya Email Ya Gago Gore {ownerName} A Kgone Go Bona Yo A Lebeletšego Album Ya Bona",
+  "Complete": "Feletšego",
+  "Processing": "Tshepetšo",
+  "Uploading": "Go laetša godimo",
+  "Cancel Upload": "Khansela Go Laetša",
+  "Upload progress": "Tšwelopele Ya Go Laolla",
+  "Overall progress": "Tšwelopele Ka Moka",
+  "Completed": "Phethilwe",
+  "Failed": "Paletšwe",
+  "({count} failed": "({count} paletše",
+  "({count} in progress)": "({count}) E Tšwela Pele"
 }

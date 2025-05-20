@@ -142,10 +142,21 @@
   "Submitting...": "Diriba...",
   "Password": "Sinam Icfiili",
   "Submit": "Sinam Xabiili",
-  "OK": "Sinam Xabiili",
+  "OK": "Sinam Irirta",
   "Link Only": "Xiriir Qudha",
   "View Album Photos": "Sinam Albuum Miskaxxa Laali",
   "Enter Username": "Sinam Ufaytistii Gali",
   "Select Username": "Sinam Anukeessa",
-  "Add Random Digits to Username": "Sinam Lakkooysa Naasa Maaxansa Buusi"
+  "Add Random Digits to Username": "Sinam Lakkooysa Naasa Maaxansa Buusi",
+  "Enter your email so {ownerName} can see who accessed their album": "Iyaddis Email Geeyay {ownerName} Alboom Yeeli Geeney Yabeley",
+  "Complete": "Dhumi",
+  "Processing": "Suundeynta",
+  "Uploading": "Alboom geysiisa",
+  "Cancel Upload": "Cuyqaada Gali",
+  "Upload progress": "Galka Horudhigta",
+  "Overall progress": "Alboom Gudii Hormarki",
+  "Completed": "Dhaammate",
+  "Failed": "Fashilaanyaan",
+  "({count} failed": "({count} feeyliimte",
+  "({count} in progress)": "({count}) Alboom Hormaa"
 }

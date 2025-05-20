@@ -147,5 +147,16 @@
   "View Album Photos": "Album Jamuqa Uñjaña",
   "Enter Username": "Apnaqiri Suti Uñt'ayaña",
   "Select Username": "Apnaqiri Suti Ajlliña",
-  "Add Random Digits to Username": "Apaqaña Jakhuñanaka Apnaqiri Sutipar Kayshita"
+  "Add Random Digits to Username": "Apaqaña Jakhuñanaka Apnaqiri Sutipar Kayshita",
+  "Enter your email so {ownerName} can see who accessed their album": "Email Churañama {ownerName} Uñjañapataki Khiti Álbumapar Mantatayna",
+  "Complete": "Phuqachata",
+  "Processing": "Lurayaña",
+  "Uploading": "Apthapiri",
+  "Cancel Upload": "Apayaña Jalsuña",
+  "Upload progress": "Apthapi Saranti",
+  "Overall progress": "Taqi Sartawi",
+  "Completed": "Tukuyata",
+  "Failed": "Janiw",
+  "({count} failed": "({count} pantjatawa",
+  "({count} in progress)": "({count}) Sarantaski"
 }

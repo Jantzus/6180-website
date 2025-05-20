@@ -142,10 +142,21 @@
   "Submitting...": "កំពុងដាក់ស្នើ...",
   "Password": "ពាក្យសម្ងាត់",
   "Submit": "ដាក់ស្នើ",
-  "OK": "Toklong",
+  "OK": "យល់ព្រម",
   "Link Only": "តំណភ្ជាប់តែប៉ុណ្ណោះ",
   "View Album Photos": "មើលរូបថតក្នុងអាល់ប៊ុម",
   "Enter Username": "បញ្ចូល​ឈ្មោះ​អ្នក​ប្រើប្រាស់",
   "Select Username": "ជ្រើសរើស​ឈ្មោះ​អ្នក​ប្រើប្រាស់",
-  "Add Random Digits to Username": "បន្ថែមលេខចៃដន្យទៅឈ្មោះអ្នកប្រើប្រាស់"
+  "Add Random Digits to Username": "បន្ថែមលេខចៃដន្យទៅឈ្មោះអ្នកប្រើប្រាស់",
+  "Enter your email so {ownerName} can see who accessed their album": "បញ្ចូលអ៊ីមែលរបស់អ្នកដើម្បីឱ្យ {ownerName} អាចមើលឃើញថាអ្នកណាបានចូលមើលអាល់ប៊ុមរបស់ពួកគេ",
+  "Complete": "ពេញលេញ",
+  "Processing": "ដំណើរការ",
+  "Uploading": "កំពុងផ្ទុកឡើង",
+  "Cancel Upload": "បោះបង់​ការបញ្ចូល",
+  "Upload progress": "ដំណើរការនៃការផ្ទុកឡើង",
+  "Overall progress": "វឌ្ឍនភាពទាំងមូល",
+  "Completed": "បានបញ្ចប់",
+  "Failed": "បរាជ័យ",
+  "({count} failed": "({count} បរាជ័យ",
+  "({count} in progress)": "({count}) កំពុងដំណើរការ"
 }

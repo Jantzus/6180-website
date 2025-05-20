@@ -147,5 +147,16 @@
   "View Album Photos": "Féach Ar Ghrianghraif An Albaim",
   "Enter Username": "Cuir Isteach Ainm Úsáideora",
   "Select Username": "Roghnaigh Ainm Úsáideora",
-  "Add Random Digits to Username": "Cuir Digití Randamacha Le D'ainm Úsáideora"
+  "Add Random Digits to Username": "Cuir Digití Randamacha Le D'ainm Úsáideora",
+  "Enter your email so {ownerName} can see who accessed their album": "Cuir Isteach Do Ríomhphost Ionas Go Bhfeicfidh {ownerName} Cé A Rochtain A nAlbam",
+  "Complete": "Iomlán",
+  "Processing": "Próiseáil",
+  "Uploading": "Uaslódáil",
+  "Cancel Upload": "Cealaigh Uaslódáil",
+  "Upload progress": "Dul Chun Cinn Uaslódála",
+  "Overall progress": "Dul Chun Cinn Foriomlán",
+  "Completed": "Críochnaithe",
+  "Failed": "Teipthe",
+  "({count} failed": "({count} teipthe",
+  "({count} in progress)": "({count}) Ar Siúl"
 }

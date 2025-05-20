@@ -142,10 +142,21 @@
   "Submitting...": "Schicke...",
   "Password": "Paßwatt",
   "Submit": "Schicke",
-  "OK": "Gut",
+  "OK": "OK",
   "Link Only": "Yuscht Link",
   "View Album Photos": "Album Bilder Gucke",
   "Enter Username": "Benutzername Eigewwe",
   "Select Username": "Yuusernaame Auswähle",
-  "Add Random Digits to Username": "Zufellich Zahle Zum Benutzernumme Dezu"
+  "Add Random Digits to Username": "Zufellich Zahle Zum Benutzernumme Dezu",
+  "Enter your email so {ownerName} can see who accessed their album": "Gebb Dei E-Mail Ei So {ownerName} Saene Kann Wer Ihr Album Zugegriffe Hot",
+  "Complete": "Vollständich",
+  "Processing": "Verarbeitung",
+  "Uploading": "Am ufflaade",
+  "Cancel Upload": "Hochlaade Abbreche",
+  "Upload progress": "Ufflaade Fortschritt",
+  "Overall progress": "Gesamt Fortschritt",
+  "Completed": "Ferdig",
+  "Failed": "Fehlgschlage",
+  "({count} failed": "({count} gescheitert",
+  "({count} in progress)": "({count}) Am Laafe"
 }

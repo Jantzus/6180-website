@@ -142,10 +142,21 @@
   "Submitting...": "Ngirimkeun...",
   "Password": "Sandi",
   "Submit": "Kirim",
-  "OK": "Sae",
+  "OK": "Oké",
   "Link Only": "Tumbu Waé",
   "View Album Photos": "Tingali Poto Album",
   "Enter Username": "Asupkeun Ngaran Pamaké",
   "Select Username": "Pilih Ngaran Pamaké",
-  "Add Random Digits to Username": "Tambahkeun Digit Acak Kana Ngaran Pamaké"
+  "Add Random Digits to Username": "Tambahkeun Digit Acak Kana Ngaran Pamaké",
+  "Enter your email so {ownerName} can see who accessed their album": "Asupkeun Surél Anjeun Supados {ownerName} Tiasa Ningali Saha Anu Ngakses Album Aranjeunna",
+  "Complete": "Lengkep",
+  "Processing": "Ngolah",
+  "Uploading": "Keur ngunggah",
+  "Cancel Upload": "Batalkeun Unggah",
+  "Upload progress": "Kamajuan Unggah",
+  "Overall progress": "Kamajuan Sakabéhna",
+  "Completed": "Réngsé",
+  "Failed": "Gagal",
+  "({count} failed": "({count} gagal",
+  "({count} in progress)": "({count}) Nuju Prosés"
 }

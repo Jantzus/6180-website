@@ -142,10 +142,21 @@
   "Submitting...": "Salim...",
   "Password": "Tok Hait",
   "Submit": "Salim",
-  "OK": "Gut",
+  "OK": "Gutpela",
   "Link Only": "Link Tasol",
   "View Album Photos": "Lukim Album Piksa",
   "Enter Username": "Putim Yusa Nem",
   "Select Username": "Makim Nem Bilong Yu",
-  "Add Random Digits to Username": "Putim Ol Namba Nabaut Long Yusa Nem"
+  "Add Random Digits to Username": "Putim Ol Namba Nabaut Long Yusa Nem",
+  "Enter your email so {ownerName} can see who accessed their album": "Input Email Bilong Yu So {ownerName} Ken Lukim Husat I Bin Accessim Album Bilong Ol",
+  "Complete": "Komplet",
+  "Processing": "Processing",
+  "Uploading": "Apload",
+  "Cancel Upload": "Noho Upload",
+  "Upload progress": "Upload Progress",
+  "Overall progress": "Buka Gutpela Sindaun",
+  "Completed": "I Pinisim",
+  "Failed": "Fail",
+  "({count} failed": "({count} i fail",
+  "({count} in progress)": "({count}) Pepe Em"
 }

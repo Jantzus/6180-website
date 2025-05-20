@@ -142,10 +142,21 @@
   "Submitting...": "Ku rhumela...",
   "Password": "Vito Ra Xihundla",
   "Submit": "Rhumela",
-  "OK": "Swinene",
+  "OK": "Swi Lulamile",
   "Link Only": "Ntsena Vuhlanganisi",
   "View Album Photos": "Vona Swifaniso Swa Album",
   "Enter Username": "Nghenisa Vito Ra Mutirhisi",
   "Select Username": "Hlawula Vito ra Mutirhisi",
-  "Add Random Digits to Username": "Nghenisa Tinomboro To Hahlaruteka Eka Vito Ra Mutirhisi"
+  "Add Random Digits to Username": "Nghenisa Tinomboro To Hahlaruteka Eka Vito Ra Mutirhisi",
+  "Enter your email so {ownerName} can see who accessed their album": "Nghenisa Email Ya Wena Leswaku {ownerName} A Nga Vona Loyi A Nga Nghena Eka Albhamu Ya Vona",
+  "Complete": "Hetiseka",
+  "Processing": "Matirhelo",
+  "Uploading": "Ku layicha",
+  "Cancel Upload": "Rharhela Ku Layicha",
+  "Upload progress": "Ndzuriso Wa Ku Tlhavisa",
+  "Overall progress": "Nhluvukiso Hinkwawo",
+  "Completed": "Hetile",
+  "Failed": "Tsandzekile",
+  "({count} failed": "({count} swi tsandzekile",
+  "({count} in progress)": "({count}) Ku Le Ka Ku Humelela"
 }

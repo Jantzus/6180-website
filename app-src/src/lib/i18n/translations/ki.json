@@ -147,5 +147,16 @@
   "View Album Photos": "Rora Mbica Cia Albamu",
   "Enter Username": "Andika Ritwa Ria Mũtumia",
   "Select Username": "Thuura Ritwa ria Murutumia",
-  "Add Random Digits to Username": "Ongera Namba Cia Thayu Kiri Rĩtwa Rĩa Mũtumĩri"
+  "Add Random Digits to Username": "Ongera Namba Cia Thayu Kiri Rĩtwa Rĩa Mũtumĩri",
+  "Enter your email so {ownerName} can see who accessed their album": "Ikira Email Yaku Niguo {ownerName} Ahote Kuona Oro Ukoonyeire Album Yao",
+  "Complete": "Gũtuĩria",
+  "Processing": "Ũthondeki",
+  "Uploading": "Kuambata",
+  "Cancel Upload": "Haũrũkanĩra Upũrodi",
+  "Upload progress": "Kwambatania Gũthiĩ Na Mbere",
+  "Overall progress": "Ũthiĩ Wa Mbere Wothe",
+  "Completed": "Kũrĩkĩrĩka",
+  "Failed": "Kũrega",
+  "({count} failed": "({count} kũrega",
+  "({count} in progress)": "({count}) Thiiagĩra Mbere"
 }

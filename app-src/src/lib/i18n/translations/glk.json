@@ -142,10 +142,21 @@
   "Submitting...": "در حال ارسال...",
   "Password": "کلمه رمز",
   "Submit": "ارسال",
-  "OK": "Xu",
+  "OK": "خوب",
   "Link Only": "فقط پیوند",
   "View Album Photos": "آلبوم عکسؤنˇ ديئن",
   "Enter Username": "نام کاربری را وارد کنید",
   "Select Username": "نام کاربری را انتخاب کنید",
-  "Add Random Digits to Username": "اضافه کردن ارقام تصادفی به نام کاربری"
+  "Add Random Digits to Username": "اضافه کردن ارقام تصادفی به نام کاربری",
+  "Enter your email so {ownerName} can see who accessed their album": "شیمه ایمئله وارد بکونین تا {ownerName} بتانه بیدینه کی اوشانه آلبومه دسترسی داشته",
+  "Complete": "کامل",
+  "Processing": "پردازش",
+  "Uploading": "در حال بارگذاری",
+  "Cancel Upload": "لَغو بارگوذاری",
+  "Upload progress": "پیشرفت بارگذاری",
+  "Overall progress": "پیشرفت کؤلی",
+  "Completed": "تمؤم بؤبؤ",
+  "Failed": "ناموفق",
+  "({count} failed": "({count} شکست بخورده",
+  "({count} in progress)": "({count}) دَر حالِ پیشرفت"
 }

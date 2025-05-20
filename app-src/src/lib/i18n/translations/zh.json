@@ -142,10 +142,21 @@
   "Submitting...": "正在提交...",
   "Password": "密码",
   "Submit": "提交",
-  "OK": "Hǎo De",
+  "OK": "好的",
   "Link Only": "仅链接",
   "View Album Photos": "查看相册照片",
   "Enter Username": "输入用户名",
   "Select Username": "选择用户名",
-  "Add Random Digits to Username": "添加随机数字到用户名"
+  "Add Random Digits to Username": "添加随机数字到用户名",
+  "Enter your email so {ownerName} can see who accessed their album": "输入您的电子邮件，以便 {ownerName} 可以看到谁访问了他们的相册",
+  "Complete": "完整",
+  "Processing": "处理",
+  "Uploading": "正在上传",
+  "Cancel Upload": "取消上传",
+  "Upload progress": "上传进度",
+  "Overall progress": "总体进度",
+  "Completed": "完全的",
+  "Failed": "失败",
+  "({count} failed": "({count} 失败",
+  "({count} in progress)": "({count}) 进行中"
 }

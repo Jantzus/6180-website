@@ -147,5 +147,16 @@
   "View Album Photos": "Tala Oufano Ualbuma",
   "Enter Username": "Nyoreke Omuungane Noa",
   "Select Username": "Hoolitha Oitya Lyoye",
-  "Add Random Digits to Username": "Tjitisa Onombaro tjorandomisa Ku omaṱana waruganisi"
+  "Add Random Digits to Username": "Tjitisa Onombaro tjorandomisa Ku omaṱana waruganisi",
+  "Enter your email so {ownerName} can see who accessed their album": "Nangere Posiyondjenda Yoye {ownerName} Matja Tjitjiukurya Nyamua Una Albuma",
+  "Complete": "Okatukira",
+  "Processing": "Processing",
+  "Uploading": "Kunanangeka",
+  "Cancel Upload": "Cancel Tutwisa",
+  "Upload progress": "Okutjangisa Eyendi",
+  "Overall progress": "Omaludhi Auhe",
+  "Completed": "Mba Pwa",
+  "Failed": "Tjafa",
+  "({count} failed": "({count} ya pukira",
+  "({count} in progress)": "({count}) Ookuza Kombili"
 }

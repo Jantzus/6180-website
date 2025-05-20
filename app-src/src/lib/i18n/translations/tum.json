@@ -142,10 +142,21 @@
   "Submitting...": "Kutuma...",
   "Password": "Password",
   "Submit": "Submit",
-  "OK": "Uli Makora",
+  "OK": "Vyawemi",
   "Link Only": "Link Only",
   "View Album Photos": "View Album Photos",
   "Enter Username": "Lembani Zina La Wogwiritsa",
   "Select Username": "Sankhani Dzina Logwiritsa",
-  "Add Random Digits to Username": "Sazga Manambala Mwachizyolowezi Ku Zina Logwiriska Ntchito"
+  "Add Random Digits to Username": "Sazga Manambala Mwachizyolowezi Ku Zina Logwiriska Ntchito",
+  "Enter your email so {ownerName} can see who accessed their album": "Lemba Email Yako Kuti {ownerName} Waone Wangaluka Pa Album Pawo",
+  "Complete": "Mwakwanira",
+  "Processing": "Kusindika",
+  "Uploading": "Kukwezga",
+  "Cancel Upload": "Khazika Kuyereska",
+  "Upload progress": "Kupitilira Kwakunyorera",
+  "Overall progress": "Nkharo Yose",
+  "Completed": "Yamala",
+  "Failed": "Chindukusoka",
+  "({count} failed": "({count} palije zakutondeka",
+  "({count} in progress)": "({count}) Mu Kufika"
 }

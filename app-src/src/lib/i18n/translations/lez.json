@@ -142,10 +142,21 @@
   "Submitting...": "Ракъурзава...",
   "Password": "Парол",
   "Submit": "Ракъурун",
-  "OK": "Хъсан Я",
+  "OK": "Хъсан",
   "Link Only": "Анжах Алукьун",
   "View Album Photos": "Альбомдин Шикилриз Килиг",
   "Enter Username": "Гьахьай Пайдалучидин ТӀвар",
   "Select Username": "Гадаркьунин Тlвар Хкягъа",
-  "Add Random Digits to Username": "Ишлемишдайдан ТIварциз Дуьшуьшдин Цифраяр Гилигун"
+  "Add Random Digits to Username": "Ишлемишдайдан ТIварциз Дуьшуьшдин Цифраяр Гилигун",
+  "Enter your email so {ownerName} can see who accessed their album": "Жуван Электрон Почта Кхьихь {ownerName}-з Аквазвай Хьиз Нин Абурун Албумдиз Килигнаватlа",
+  "Complete": "Тамамвал",
+  "Processing": "Гьазурун",
+  "Uploading": "Ацазвава",
+  "Cancel Upload": "Ппарун Акъвазарун",
+  "Upload progress": "Ппарунин Вилик Финиф",
+  "Overall progress": "Умуми Вилик Финиф",
+  "Completed": "Куьтягьнава",
+  "Failed": "Агалкьун тахьана",
+  "({count} failed": "({count} агалкьун тахьанач",
+  "({count} in progress)": "({count}) КӀвалахзава"
 }

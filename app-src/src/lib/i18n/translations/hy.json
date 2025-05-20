@@ -142,10 +142,21 @@
   "Submitting...": "Ուղարկվում է...",
   "Password": "Գաղտնաբառ",
   "Submit": "Ուղարկել",
-  "OK": "Lav",
+  "OK": "Լավ",
   "Link Only": "Միայն Հղում",
   "View Album Photos": "Դիտել Ալբոմի Լուսանկարները",
   "Enter Username": "Մուտքագրեք Օգտանունը",
   "Select Username": "Ընտրեք Օգտվողի Անունը",
-  "Add Random Digits to Username": "Ավելացնել Պատահական Թվեր Օգտվողի Անունին"
+  "Add Random Digits to Username": "Ավելացնել Պատահական Թվեր Օգտվողի Անունին",
+  "Enter your email so {ownerName} can see who accessed their album": "Մուտքագրեք Ձեր Էլ-փոստը, Որպեսզի {ownerName}-ը Կարողանա Տեսնել, Թե Ով Է Մուտք Գործել Իրենց Ալբոմ",
+  "Complete": "Ամբողջական",
+  "Processing": "Մշակում",
+  "Uploading": "Վերբեռնում",
+  "Cancel Upload": "Չեղարկել Վերբեռնումը",
+  "Upload progress": "Վերբեռնման Առաջընթաց",
+  "Overall progress": "Ընդհանուր Առաջընթաց",
+  "Completed": "Ավարտված",
+  "Failed": "Ձախողվեց",
+  "({count} failed": "({count} ձախողվեց",
+  "({count} in progress)": "({count}) Ընթացքի Մեջ"
 }

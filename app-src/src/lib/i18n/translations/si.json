@@ -142,10 +142,21 @@
   "Submitting...": "යවමින්...",
   "Password": "මුරපදය",
   "Submit": "ඉදිරිපත් කරන්න",
-  "OK": "Hari",
+  "OK": "හරි",
   "Link Only": "සබැඳිය පමණයි",
   "View Album Photos": "ඇල්බම් ඡායාරූප බලන්න",
   "Enter Username": "පරිශීලක නම ඇතුළත් කරන්න",
   "Select Username": "පරිශීලක නාමය තෝරන්න",
-  "Add Random Digits to Username": "පරිශීලක නාමයට අහඹු අංක එකතු කරන්න"
+  "Add Random Digits to Username": "පරිශීලක නාමයට අහඹු අංක එකතු කරන්න",
+  "Enter your email so {ownerName} can see who accessed their album": "ඔබේ ඊමේල් ලිපිනය ඇතුලත් කරන්න, {ownerName}ට ඔවුන්ගේ ඇල්බමයට කවුරුන් පිවිසුනාදැයි බැලීමට",
+  "Complete": "සම්පූර්ණ",
+  "Processing": "සැකසුම",
+  "Uploading": "උඩුගත කරමින්",
+  "Cancel Upload": "උඩුගත කිරීම අවලංගු කරන්න",
+  "Upload progress": "උඩුගත කිරීමේ ප්‍රගතිය",
+  "Overall progress": "සමස්ත ප්‍රගතිය",
+  "Completed": "සම්පූර්ණ කර ඇත",
+  "Failed": "අසමත් විය",
+  "({count} failed": "({count} අසමත් විය",
+  "({count} in progress)": "({count}) ක්‍රියාත්මක වෙමින්"
 }

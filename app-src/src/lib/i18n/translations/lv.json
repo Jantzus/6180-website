@@ -147,5 +147,16 @@
   "View Album Photos": "Skatīt Albuma Fotogrāfijas",
   "Enter Username": "Ievadiet Lietotājvārdu",
   "Select Username": "Izvēlieties Lietotājvārdu",
-  "Add Random Digits to Username": "Pievienot Nejaušus Ciparus Lietotājvārdam"
+  "Add Random Digits to Username": "Pievienot Nejaušus Ciparus Lietotājvārdam",
+  "Enter your email so {ownerName} can see who accessed their album": "Ievadiet Savu E-pastu, Lai {ownerName} Varētu Redzēt, Kas Piekļuva Viņu Albumam",
+  "Complete": "Pabeigts",
+  "Processing": "Apstrāde",
+  "Uploading": "Augšupielāde",
+  "Cancel Upload": "Atcelt Augšupielādi",
+  "Upload progress": "Augšupielādes Progress",
+  "Overall progress": "Kopējais Progress",
+  "Completed": "Pabeigts",
+  "Failed": "Neizdevās",
+  "({count} failed": "({count} neizdevās",
+  "({count} in progress)": "({count}) Procesā"
 }

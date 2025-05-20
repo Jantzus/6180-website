@@ -147,5 +147,16 @@
   "View Album Photos": "Bekiek Albumfoto's",
   "Enter Username": "Gebrukersnaam Invoeren",
   "Select Username": "Kies Gebrukersnaam",
-  "Add Random Digits to Username": "Willekeurige Siefers Bie Gebrukersnaam Zetten"
+  "Add Random Digits to Username": "Willekeurige Siefers Bie Gebrukersnaam Zetten",
+  "Enter your email so {ownerName} can see who accessed their album": "Voer Joew E-mailadres In Zodat {ownerName} Kan Zien Wie Der Toegang Had Tot Heur Album",
+  "Complete": "Kompleet",
+  "Processing": "Verwarking",
+  "Uploading": "Bezig met het opladen",
+  "Cancel Upload": "Annuleren Oplaojen",
+  "Upload progress": "Oplaodn Vortgäng",
+  "Overall progress": "Algemene Veurtieding",
+  "Completed": "Ofsleuten",
+  "Failed": "Mislokt",
+  "({count} failed": "({count} mislokt",
+  "({count} in progress)": "({count}) Gaonde"
 }

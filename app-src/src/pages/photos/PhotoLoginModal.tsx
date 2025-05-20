@@ -241,7 +241,7 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
           lineHeight: '1.4',
           marginBottom: '30px'
         }}>
-          {t('Sign in so {ownerName} can see who accessed their album').replace('{ownerName}', ownerName)}
+          {t('Enter your email so {ownerName} can see who accessed their album').replace('{ownerName}', ownerName)}
         </h3>
 
         {errorMessage && (

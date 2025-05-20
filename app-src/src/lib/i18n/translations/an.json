@@ -142,10 +142,21 @@
   "Submitting...": "Ninviando...",
   "Password": "Contrasenya",
   "Submit": "Ninviar",
-  "OK": "D'Acuerdo",
+  "OK": "Bien",
   "Link Only": "Nomás Vinclo",
   "View Album Photos": "Veyer As Fotos D'o Álbum",
   "Enter Username": "Introduzca O Nombre D'Usuario",
   "Select Username": "Eslir Usuario",
-  "Add Random Digits to Username": "Adhibir Dígitos Aleatorios A Nombre D'usuario"
+  "Add Random Digits to Username": "Adhibir Dígitos Aleatorios A Nombre D'usuario",
+  "Enter your email so {ownerName} can see who accessed their album": "Introduz O Tuyo Correu Electronico Ta Que {ownerName} Pueda Veyer Qui Ha Accediu A O Suyo Album",
+  "Complete": "Completar",
+  "Processing": "Procesamiento",
+  "Uploading": "Cargando",
+  "Cancel Upload": "Cancelar Carga",
+  "Upload progress": "Progreso De Carga",
+  "Overall progress": "Progreso Cheneral",
+  "Completed": "Completau",
+  "Failed": "Falló",
+  "({count} failed": "({count} fallato",
+  "({count} in progress)": "({count}) En Progreso"
 }

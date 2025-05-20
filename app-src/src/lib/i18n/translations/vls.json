@@ -142,10 +142,21 @@
   "Submitting...": "Verzenden...",
   "Password": "Wachtwoord",
   "Submit": "Verstuur",
-  "OK": "Goed",
+  "OK": "Oké",
   "Link Only": "Alleene Koppelienge",
   "View Album Photos": "Album Foto's Kyken",
   "Enter Username": "Voert Gebrukersnaam In",
   "Select Username": "Selecteer Gebrukersnaam",
-  "Add Random Digits to Username": "Willekeurige Cyffers By Gebrukersnoame Toevoegen"
+  "Add Random Digits to Username": "Willekeurige Cyffers By Gebrukersnoame Toevoegen",
+  "Enter your email so {ownerName} can see who accessed their album": "Geeft Jen E-mailadres In Zodat {ownerName} Kan Zien Wie Der Toegang Ad Tot Un Album",
+  "Complete": "Volledig",
+  "Processing": "Verwerking",
+  "Uploading": "Opladn",
+  "Cancel Upload": "Uploaden Annuleren",
+  "Upload progress": "Uploadvoourtgang",
+  "Overall progress": "Algemene Voorutgank",
+  "Completed": "Vultoid",
+  "Failed": "Mislukt",
+  "({count} failed": "({count} mislukt",
+  "({count} in progress)": "({count}) Bezig"
 }

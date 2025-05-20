@@ -142,10 +142,21 @@
   "Submitting...": "Ke hoʻouna nei...",
   "Password": "Hua Huna",
   "Submit": "Waiho",
-  "OK": "Maikaʻi",
+  "OK": "OK",
   "Link Only": "Loulou Wale",
   "View Album Photos": "Nānā I Nā Kiʻi O Ka ʻAlabuma",
   "Enter Username": "Hoʻokomo Inoa Mea Hoʻohana",
   "Select Username": "Koho Inoa Mea Hoʻohana",
-  "Add Random Digits to Username": "E Hoʻohui I Nā Helu Kaulele I Ka Inoa Mea Hoʻohana"
+  "Add Random Digits to Username": "E Hoʻohui I Nā Helu Kaulele I Ka Inoa Mea Hoʻohana",
+  "Enter your email so {ownerName} can see who accessed their album": "E Hoʻokomo I Kāu Leka Uila I Hiki Ai Iā {ownerName} Ke ʻIke I Ka Mea Nāna I Komo I Kā Lākou ʻĀlapa",
+  "Complete": "Piha",
+  "Processing": "Hana",
+  "Uploading": "Hoʻouka ana",
+  "Cancel Upload": "Hoʻōki i ka Hoʻouka",
+  "Upload progress": "Hoʻomua Hoʻouka",
+  "Overall progress": "Holomua Holoʻokoʻa",
+  "Completed": "Hoʻopau ʻia",
+  "Failed": "Ua Hoka",
+  "({count} failed": "({count} ua hāʻule",
+  "({count} in progress)": "({count}) Ke Holo Nei"
 }

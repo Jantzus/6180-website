@@ -142,10 +142,21 @@
   "Submitting...": "Bichalel...",
   "Password": "Parola",
   "Submit": "Bicha",
-  "OK": "Lashalo",
+  "OK": "Misto",
   "Link Only": "Numa Legatura",
   "View Album Photos": "Dikh Tshipuri Le Albumeske",
   "Enter Username": "Ramosaren O Anav E Jenesko",
   "Select Username": "Alosarav Anav le Jenesko",
-  "Add Random Digits to Username": "Thov Digita Randomisara Ko Anav E Jenesko"
+  "Add Random Digits to Username": "Thov Digita Randomisara Ko Anav E Jenesko",
+  "Enter your email so {ownerName} can see who accessed their album": "Ramosaren Tiri E-mail Ta {ownerName} Dashtil Te Dikhen Kon Gelo André Lengo Album",
+  "Complete": "Kompleto",
+  "Processing": "Prelucrare",
+  "Uploading": "Incărcând",
+  "Cancel Upload": "Anulisarel Uploadarea",
+  "Upload progress": "Progreso Vazdimos",
+  "Overall progress": "Anglal-puchimos Saorro",
+  "Completed": "Pherdo",
+  "Failed": "Nashti",
+  "({count} failed": "({count} ni zhutisardas",
+  "({count} in progress)": "({count}) Ande Progreso"
 }

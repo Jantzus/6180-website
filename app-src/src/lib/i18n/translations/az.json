@@ -147,5 +147,16 @@
   "View Album Photos": "Albom Şəkillərini Göstər",
   "Enter Username": "İstifadəçi Adını Daxil Edin",
   "Select Username": "İstifadəçi Adını Seçin",
-  "Add Random Digits to Username": "İstifadəçi Adına Təsadüfi Rəqəmlər Əlavə Et"
+  "Add Random Digits to Username": "İstifadəçi Adına Təsadüfi Rəqəmlər Əlavə Et",
+  "Enter your email so {ownerName} can see who accessed their album": "Elektron Poçtunuzu Daxil Edin Ki, {ownerName} Onların Albumuna Kimin Daxil Olduğunu Görə Bilsin",
+  "Complete": "Tamamlamaq",
+  "Processing": "Emal",
+  "Uploading": "Yüklənir",
+  "Cancel Upload": "Yükləməni Ləğv Et",
+  "Upload progress": "Yükləmə Irəliləyişi",
+  "Overall progress": "Ümumi İrəliləyiş",
+  "Completed": "Tamamlandı",
+  "Failed": "Uğursuz Oldu",
+  "({count} failed": "({count} uğursuz oldu",
+  "({count} in progress)": "({count}) Davam Edir"
 }

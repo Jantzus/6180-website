@@ -142,10 +142,21 @@
   "Submitting...": "दवरता...",
   "Password": "गुपीत उतर",
   "Submit": "सादर कर",
-  "OK": "Borem",
+  "OK": "बरें",
   "Link Only": "फक्त दुवो",
   "View Album Photos": "अल्बम फोटो पळयात",
   "Enter Username": "वापरपी नांव भरात",
   "Select Username": "वापरपी नांव निवड",
-  "Add Random Digits to Username": "वापरपियाच्या नावाक यादृच्छिक अंक जोड"
+  "Add Random Digits to Username": "वापरपियाच्या नावाक यादृच्छिक अंक जोड",
+  "Enter your email so {ownerName} can see who accessed their album": "तुजो ईमेल भरून दी म्हणजे {ownerName} पळयू शकता कोण तांच्या आल्बमाक प्रवेश केला ते",
+  "Complete": "संपूर्ण",
+  "Processing": "प्रक्रिया",
+  "Uploading": "अपलोड करतना",
+  "Cancel Upload": "अपलोड रद्द कर",
+  "Upload progress": "अपलोड प्रगती",
+  "Overall progress": "सम्पूर्ण प्रगती",
+  "Completed": "पूर्ण केला",
+  "Failed": "अपयशी",
+  "({count} failed": "({count} अपेशी जाले",
+  "({count} in progress)": "({count}) चालू आसा"
 }

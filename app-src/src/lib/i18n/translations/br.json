@@ -147,5 +147,16 @@
   "View Album Photos": "Gwelet Fotoioù An Albom",
   "Enter Username": "Ebarzhit Hoc'h Anv Implijer",
   "Select Username": "Dibab Anv Implijer",
-  "Add Random Digits to Username": "Ouzhpennañ Sifroù Dargouezhek D'an Anv Implijer"
+  "Add Random Digits to Username": "Ouzhpennañ Sifroù Dargouezhek D'an Anv Implijer",
+  "Enter your email so {ownerName} can see who accessed their album": "Enankit Hoc'h Postel Evit Ma C'hello {ownerName} Gwelout Piv En Deus Gwelet O Albom",
+  "Complete": "Klok",
+  "Processing": "Tretiñ",
+  "Uploading": "O kargañ",
+  "Cancel Upload": "Nullañ Pellgargañ",
+  "Upload progress": "Araokadennoù Pellgas",
+  "Overall progress": "Araokadur Hollek",
+  "Completed": "Echuet",
+  "Failed": "C'hwitadenn",
+  "({count} failed": "({count} c'hwitet",
+  "({count} in progress)": "({count}) E Mont War-Raok"
 }

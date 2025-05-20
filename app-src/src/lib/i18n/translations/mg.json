@@ -147,5 +147,16 @@
   "View Album Photos": "Jereo Ny Sary Ao Amin'ny Alboma",
   "Enter Username": "Ampidiro Ny Anaran'ny Mpampiasa",
   "Select Username": "Mifidy Anarana Mpampiasa",
-  "Add Random Digits to Username": "Ampidiro Isa Kisendra Amin'ny Anaran'ny Mpampiasa"
+  "Add Random Digits to Username": "Ampidiro Isa Kisendra Amin'ny Anaran'ny Mpampiasa",
+  "Enter your email so {ownerName} can see who accessed their album": "Ampidiro Ny Mailaka-nao Mba {ownerName} Afaka Mahita Izay Nanokatra Ny Alboma-ny",
+  "Complete": "Feno",
+  "Processing": "Fikarakarana",
+  "Uploading": "Mampakatra",
+  "Cancel Upload": "Tohana Ilay Fandefasana",
+  "Upload progress": "Fivoarana Amin'ny Fandefasana",
+  "Overall progress": "Fandrosoana Ankapobeny",
+  "Completed": "Vita",
+  "Failed": "Tsy Nahomby",
+  "({count} failed": "({count} tsy nahomby",
+  "({count} in progress)": "({count}) Eo An-Dàlana"
 }

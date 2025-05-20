@@ -142,10 +142,21 @@
   "Submitting...": "Ыстӧм...",
   "Password": "Гусяпас",
   "Submit": "Ыстыны",
-  "OK": "Bur",
+  "OK": "Бур",
   "Link Only": "Сӧмын Йитӧд",
   "View Album Photos": "Видзӧдны Альбомлысь Фотояс",
   "Enter Username": "Пыртöй Вöдитчысьлысь Ним",
   "Select Username": "Бöрйы Уджалысьлысь Нимсö",
-  "Add Random Digits to Username": "Содты Вичӧдӧн Лыдпасъяс Вӧдитчысьлӧн Нимӧ"
+  "Add Random Digits to Username": "Содты Вичӧдӧн Лыдпасъяс Вӧдитчысьлӧн Нимӧ",
+  "Enter your email so {ownerName} can see who accessed their album": "Гижӧ Ассьыд Электроннӧй Почтатӧ, Медым {ownerName} Вермис Аддзыны, Коді Пыраліс Налӧн Альбомӧ",
+  "Complete": "Дзонь",
+  "Processing": "Обработка",
+  "Uploading": "Пыртӧны",
+  "Cancel Upload": "Пыртӧм Дугӧдны",
+  "Upload progress": "Пуктӧм Водзӧ мунӧм",
+  "Overall progress": "Ставнас Водзӧ Мунӧм",
+  "Completed": "Помалӧм",
+  "Failed": "Эз артмы",
+  "({count} failed": "({count} эз артмы",
+  "({count} in progress)": "({count}) Водзӧ Мунӧ"
 }

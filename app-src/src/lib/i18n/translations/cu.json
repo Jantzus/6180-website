@@ -147,5 +147,16 @@
   "View Album Photos": "Видѣти Образоꙁбирьника Образъ",
   "Enter Username": "Въведи Польꙃевательско Имѧ",
   "Select Username": "Иꙁбєри Польꙃєватєлꙗ Имѧ",
-  "Add Random Digits to Username": "Придати Слоучаиныѧ Числа Имєни Польꙃєватєлꙗ"
+  "Add Random Digits to Username": "Придати Слоучаиныѧ Числа Имєни Польꙃєватєлꙗ",
+  "Enter your email so {ownerName} can see who accessed their album": "Вънеси Твою Електроньнѫѭ Почьтѫ Да {ownerName} Можетъ Видѣти Къто Къ Ихъ Алъбомоу Пристѫпилъ Ѥстъ",
+  "Complete": "Съврьшєнъ",
+  "Processing": "Обработка",
+  "Uploading": "Възносѧи",
+  "Cancel Upload": "Отмѣнити Възлагати",
+  "Upload progress": "Напрѣдъкъ Загроужєниꙗ",
+  "Overall progress": "Общии Напрѣдъкъ",
+  "Completed": "Съврьшенъ",
+  "Failed": "Неѹдача",
+  "({count} failed": "({count} не оуспѣшьнъ",
+  "({count} in progress)": "({count}) по напрѣдъкъ"
 }

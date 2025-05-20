@@ -147,5 +147,16 @@
   "View Album Photos": "Альбом Фотосем Ончаш",
   "Enter Username": "Кучылтшын Лӱмжым Пуртыза",
   "Select Username": "Кучылтшын Лӱмжым Ойырымаш",
-  "Add Random Digits to Username": "Пайдаланышын Лӱмышкыжӧ Вучыдымо Чотым Ешараш"
+  "Add Random Digits to Username": "Пайдаланышын Лӱмышкыжӧ Вучыдымо Чотым Ешараш",
+  "Enter your email so {ownerName} can see who accessed their album": "Шке Электрон Почтетым Пурто {ownerName} Нунын Альбомым Кӧ Ончен Ужын Манын Верч",
+  "Complete": "Тичмаш",
+  "Processing": "Обработке",
+  "Uploading": "Пурымаш",
+  "Cancel Upload": "Пурымашым Чараш",
+  "Upload progress": "Модмаш Кушталтмаш",
+  "Overall progress": "Чыла Ончыкылык",
+  "Completed": "Мучашлыме",
+  "Failed": "Ышталтын огыл",
+  "({count} failed": "({count} ыш лек",
+  "({count} in progress)": "({count}) Шуйна"
 }

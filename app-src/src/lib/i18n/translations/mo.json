@@ -147,5 +147,16 @@
   "View Album Photos": "Vizualizare Fotografii Album",
   "Enter Username": "Introduceți Numele De Utilizator",
   "Select Username": "Selectați Numele de Utilizator",
-  "Add Random Digits to Username": "Adaugă Cifre Aleatorii La Numele De Utilizator"
+  "Add Random Digits to Username": "Adaugă Cifre Aleatorii La Numele De Utilizator",
+  "Enter your email so {ownerName} can see who accessed their album": "Introduceți Adresa Dvs. De Email Pentru Ca {ownerName} Să Poată Vedea Cine Le-a Accesat Albumul",
+  "Complete": "Complet",
+  "Processing": "Prelucrare",
+  "Uploading": "Încărcare",
+  "Cancel Upload": "Anulează Încărcare",
+  "Upload progress": "Progresul Încărcării",
+  "Overall progress": "Progres General",
+  "Completed": "Efectuat",
+  "Failed": "Eșuat",
+  "({count} failed": "({count} a eșuat",
+  "({count} in progress)": "({count}) În Curs"
 }

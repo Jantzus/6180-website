@@ -142,10 +142,21 @@
   "Submitting...": "Verzènje...",
   "Password": "Wachwaord",
   "Submit": "Sjik",
-  "OK": "Good",
+  "OK": "Oké",
   "Link Only": "Allein Koppeling",
   "View Album Photos": "Album Foto's Bekieke",
   "Enter Username": "Veur Gebrokersnaam In",
   "Select Username": "Gebrokersnaam Keze",
-  "Add Random Digits to Username": "Willekäörige Ciefers Aan Gebrokersnaam Toevoge"
+  "Add Random Digits to Username": "Willekäörige Ciefers Aan Gebrokersnaam Toevoge",
+  "Enter your email so {ownerName} can see who accessed their album": "Veur Dien E-mailadres In Zoedat {ownerName} Kin Zeen Wae Hun Album Haet Bekeke",
+  "Complete": "Kompleet",
+  "Processing": "Verwerking",
+  "Uploading": "Uploade",
+  "Cancel Upload": "Upload Aafbraeke",
+  "Upload progress": "Uploade Veurtgank",
+  "Overall progress": "Algemeine Veurtsjegang",
+  "Completed": "Voltooid",
+  "Failed": "Misluk",
+  "({count} failed": "({count} mislök",
+  "({count} in progress)": "({count}) Gaonde"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Biliðbōc Biliðu Sēon",
   "Enter Username": "Brūcendnaman Onsettan",
   "Select Username": "Brūcendnama Cēosan",
-  "Add Random Digits to Username": "Wīllíce Rīm Tō Brūcendnaman Bétan"
+  "Add Random Digits to Username": "Wīllíce Rīm Tō Brūcendnaman Bétan",
+  "Enter your email so {ownerName} can see who accessed their album": "Þīne Email Āgiefan Þæt {ownerName} Mæġen Sēon Hwā Hiera Album Besāwon",
+  "Complete": "Gefyllan",
+  "Processing": "Ƿorðung",
+  "Uploading": "Uplādende",
+  "Cancel Upload": "Uploades Forsettan",
+  "Upload progress": "Upsendan Framgang",
+  "Overall progress": "Eallaƿē Framþ",
+  "Completed": "Gefylled",
+  "Failed": "Āfēoll",
+  "({count} failed": "({count} fēoll",
+  "({count} in progress)": "({count}) On Forþġange"
 }

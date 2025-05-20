@@ -147,5 +147,16 @@
   "View Album Photos": "Xiquitta Tlaixcopinalli Amoxtli",
   "Enter Username": "Xicalaqui Motocacauh",
   "Select Username": "Xiuhtlapepenicān Tlatequitiltilīlli",
-  "Add Random Digits to Username": "Xictlali Tlatehtelpohualtin Tlatamachiyohuani Tocaneh"
+  "Add Random Digits to Username": "Xictlali Tlatehtelpohualtin Tlatamachiyohuani Tocaneh",
+  "Enter your email so {ownerName} can see who accessed their album": "Xiktlāli Motlacorreo Ic {ownerName} Hueliz Quitaz Aquinque Oquicalakih Ipan Inalbum",
+  "Complete": "Tlamiliztli",
+  "Processing": "Tlapohuallistli",
+  "Uploading": "Tlahcopinalotlaliliztli",
+  "Cancel Upload": "Ahmo Tlamelauhcatlalia",
+  "Upload progress": "Tlaceliztli Auetztinemiliztli",
+  "Overall progress": "Centetl Ixpanhualiztli",
+  "Completed": "Tzonquizqui",
+  "Failed": "Omotlahuelchiuh",
+  "({count} failed": "({count} amo cualli",
+  "({count} in progress)": "({count}) Tlahtolli Yolli"
 }

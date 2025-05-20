@@ -142,10 +142,21 @@
   "Submitting...": "Mangirin...",
   "Password": "Kato Sandi",
   "Submit": "Kirim",
-  "OK": "Lai",
+  "OK": "Rancak",
   "Link Only": "Tautan Sajo",
   "View Album Photos": "Caliak Poto Album",
   "Enter Username": "Masuakan Namo Pangguno",
   "Select Username": "Piliah Namo Pangguno",
-  "Add Random Digits to Username": "Tambahan Angko Acak Ka Namo Pangguno"
+  "Add Random Digits to Username": "Tambahan Angko Acak Ka Namo Pangguno",
+  "Enter your email so {ownerName} can see who accessed their album": "Masuakan Surel Sanak Supayo {ownerName} Dapek Maliek Sia Nan Mangakses Album Mareka",
+  "Complete": "Langkok",
+  "Processing": "Pamrosesan",
+  "Uploading": "Mangunggah",
+  "Cancel Upload": "Batalan Unggah",
+  "Upload progress": "Kamajuan Mamuek",
+  "Overall progress": "Kamajuan Kasadonyo",
+  "Completed": "Salasai",
+  "Failed": "Gagal",
+  "({count} failed": "({count} gagal",
+  "({count} in progress)": "({count}) Sadang Balangsuang"
 }

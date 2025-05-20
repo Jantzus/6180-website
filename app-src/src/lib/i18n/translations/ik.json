@@ -147,5 +147,16 @@
   "View Album Photos": "Piksraat Album Qiñirviŋat",
   "Enter Username": "Atuqtuam Atqa Iḷisaaksiuŋ",
   "Select Username": "Atqa Piksraq",
-  "Add Random Digits to Username": "Illaqtupiaq Kisitchich Ilaliuguk Atqakun"
+  "Add Random Digits to Username": "Illaqtupiaq Kisitchich Ilaliuguk Atqakun",
+  "Enter your email so {ownerName} can see who accessed their album": "Ikiaqtuŋ Email-in {ownerName} Tautuġukługu Kia Album-anun Isiqtuq",
+  "Complete": "Iniqsaq",
+  "Processing": "Processing",
+  "Uploading": "Qakiñarautigaa",
+  "Cancel Upload": "Uvluaġit Ikraqnak",
+  "Upload progress": "Qaqłaliałha Naġuuqtuaq",
+  "Overall progress": "Sivuniksraq Tamaat",
+  "Completed": "Naatchuq",
+  "Failed": "Qauġraaŋaruq",
+  "({count} failed": "({count} piḷḷuaqtuq",
+  "({count} in progress)": "({count}) Qaagruaq"
 }

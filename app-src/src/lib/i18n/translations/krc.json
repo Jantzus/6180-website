@@ -142,10 +142,21 @@
   "Submitting...": "Ийеди...",
   "Password": "Пароль",
   "Submit": "Жибер",
-  "OK": "Igi",
+  "OK": "Иги",
   "Link Only": "Жаланда Байламлыкъ",
   "View Album Photos": "Альбомну Суратларына Къара",
   "Enter Username": "Хайырланыучу Атын Киритигиз",
   "Select Username": "Хайырланыучу Атын Сайла",
-  "Add Random Digits to Username": "Хайырланыучуну Атына Тасадуф Санла Къошаргъа"
+  "Add Random Digits to Username": "Хайырланыучуну Атына Тасадуф Санла Къошаргъа",
+  "Enter your email so {ownerName} can see who accessed their album": "Электрон Почтагъызны Джазыгъыз {ownerName} Аланы Альбомларына Ким Къарагъанын Кёрюрча",
+  "Complete": "Толу",
+  "Processing": "Ишлеу",
+  "Uploading": "Жюклей",
+  "Cancel Upload": "Джюклеуню Тохтат",
+  "Upload progress": "Жюклеу Прогресс",
+  "Overall progress": "Битеу Айныу",
+  "Completed": "Тамамланнган",
+  "Failed": "Хорламсыз",
+  "({count} failed": "({count} джетишимсиз",
+  "({count} in progress)": "({count}) Барады"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Peržiūrėti Albumo Nuotraukas",
   "Enter Username": "Įveskite Vartotojo Vardą",
   "Select Username": "Pasirinkite Vartotojo Vardą",
-  "Add Random Digits to Username": "Pridėti Atsitiktinius Skaitmenis Prie Vartotojo Vardo"
+  "Add Random Digits to Username": "Pridėti Atsitiktinius Skaitmenis Prie Vartotojo Vardo",
+  "Enter your email so {ownerName} can see who accessed their album": "Įveskite Savo El. Paštą, Kad {ownerName} Galėtų Matyti, Kas Peržiūrėjo Jų Albumą",
+  "Complete": "Visiškas",
+  "Processing": "Apdorojimas",
+  "Uploading": "Įkeliama",
+  "Cancel Upload": "Atšaukti Įkėlimą",
+  "Upload progress": "Įkėlimo Eiga",
+  "Overall progress": "Bendra Pažanga",
+  "Completed": "Baigtas",
+  "Failed": "Nepavyko",
+  "({count} failed": "({count} nepavyko",
+  "({count} in progress)": "({count}) Vyksta"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Sćele so...",
   "Password": "Hesło",
   "Submit": "Wotpósłać",
-  "OK": "Derje",
+  "OK": "W Porjadku",
   "Link Only": "Jenož Link",
   "View Album Photos": "Albumowe Fota Wobhladać",
   "Enter Username": "Wužiwarske Mjeno Zapodać",
   "Select Username": "Wužiwarske Mjeno Wubrać",
-  "Add Random Digits to Username": "Připadne Cyfry K Wužiwarskemu Mjenu Přidać"
+  "Add Random Digits to Username": "Připadne Cyfry K Wužiwarskemu Mjenu Přidać",
+  "Enter your email so {ownerName} can see who accessed their album": "Zapodaj Swoju E-mejlowu Adresu, Zo By {ownerName} Widźał, Štó Je Na Jich Album Přistupił",
+  "Complete": "Dospołny",
+  "Processing": "Předźěłanje",
+  "Uploading": "Nahrawanje",
+  "Cancel Upload": "Nahraće Přetorhnyć",
+  "Upload progress": "Postup Nahraća",
+  "Overall progress": "Cyłkowny Postup",
+  "Completed": "Dokónčeny",
+  "Failed": "Njeporadźiło So",
+  "({count} failed": "({count} njeje so poradźiło",
+  "({count} in progress)": "({count}) W Postupje"
 }

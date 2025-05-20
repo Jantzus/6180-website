@@ -142,10 +142,21 @@
   "Submitting...": "Chhòn-chhṳ́t...",
   "Password": "密碼",
   "Submit": "提交",
-  "OK": "Hó",
+  "OK": "好",
   "Link Only": "單純連結",
   "View Album Photos": "查看相簿相片",
   "Enter Username": "Sû-ngi̍p Yung-fu-miàng",
   "Select Username": "選擇用戶名",
-  "Add Random Digits to Username": "分用戶名加入隨機數字"
+  "Add Random Digits to Username": "分用戶名加入隨機數字",
+  "Enter your email so {ownerName} can see who accessed their album": "Chhṳ̍p-ngi̍p Ngi-ke Thien-chṳ́ Yu-phien Lòi {ownerName} Khon-he̍t Mâ-ke Fóng-mun Yi-ke Sióng-chṳk",
+  "Complete": "Vàn-sṳ̀n",
+  "Processing": "Chhú-lî",
+  "Uploading": "Siông-chhòn-chûng",
+  "Cancel Upload": "Chû-siáu Song-chhòn",
+  "Upload progress": "Sóng-chhòn Kîn-tô̍",
+  "Overall progress": "Chúng-thí Chin-phu̍t",
+  "Completed": "做好",
+  "Failed": "Sit-pâi",
+  "({count} failed": "({count} sṳ̂t-phai",
+  "({count} in progress)": "({count}) Chṳn-hòng-chûng"
 }

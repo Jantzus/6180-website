@@ -142,10 +142,21 @@
   "Submitting...": "Enviant...",
   "Password": "Contrasenya",
   "Submit": "Enviar",
-  "OK": "D'Acord",
+  "OK": "D'acord",
   "Link Only": "Només Enllaç",
   "View Album Photos": "Veure Fotos De L'Àlbum",
   "Enter Username": "Introduïu Nom D'Usuari",
   "Select Username": "Seleccionar Nom d'Usuari",
-  "Add Random Digits to Username": "Afegir Dígits Aleatoris Al Nom D'usuari"
+  "Add Random Digits to Username": "Afegir Dígits Aleatoris Al Nom D'usuari",
+  "Enter your email so {ownerName} can see who accessed their album": "Introdueix El Teu Correu Electrònic Perquè {ownerName} Pugui Veure Qui Ha Accedit Al Seu Àlbum",
+  "Complete": "Complet",
+  "Processing": "Processament",
+  "Uploading": "Carregant",
+  "Cancel Upload": "Cancel·lar Càrrega",
+  "Upload progress": "Progrés De Càrrega",
+  "Overall progress": "Progrés General",
+  "Completed": "Completat",
+  "Failed": "Ha Fallat",
+  "({count} failed": "({count} ha fallat",
+  "({count} in progress)": "({count}) En Progrés"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Áłtsʼáʼáyiilaa...",
   "Password": "Bee Naaltsoos",
   "Submit": "Bił Ahodeeshkid",
-  "OK": "Nizhóní",
+  "OK": "Hágoónee'",
   "Link Only": "Tʼáá Atah Nídeiyíníłį́",
   "View Album Photos": "Naʼalbóósí Baa Nééłʼį́į́ʼ",
   "Enter Username": "Choyoołʼįįhí Bizhi' Haalʼą́",
   "Select Username": "Choyoołʼįįhí Yinílá",
-  "Add Random Digits to Username": "Choyoołʼaahii Dahbiʼ Bitsįʼ Ałhidadiiltʼaahgo Tʼáá Oolkił Tʼéí Bikʼéshtʼoodjį'"
+  "Add Random Digits to Username": "Choyoołʼaahii Dahbiʼ Bitsįʼ Ałhidadiiltʼaahgo Tʼáá Oolkił Tʼéí Bikʼéshtʼoodjį'",
+  "Enter your email so {ownerName} can see who accessed their album": "Email Bee Ííníłtsóós {ownerName} Deiyílʼį́ Háálá Album Baa Ákʼe'elchí",
+  "Complete": "Ajįįh",
+  "Processing": "Bí'ílníníí",
+  "Uploading": "Halne'",
+  "Cancel Upload": "Náhásdlį́į́ʼ Haʼdéíjeehígi",
+  "Upload progress": "Hane' Ałtsʼíísíjį'",
+  "Overall progress": "Ahééhwiiʼnídoonííł Nizhónígíí",
+  "Completed": "Ałtsʼáʼázkááʼ",
+  "Failed": "Doo Bíhwiinidzin Da",
+  "({count} failed": "({count} baa doo hózhǫ́ǫ da",
+  "({count} in progress)": "({count}) Naalyéhé"
 }

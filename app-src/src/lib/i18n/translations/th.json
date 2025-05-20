@@ -142,10 +142,21 @@
   "Submitting...": "กำลังส่ง...",
   "Password": "รหัสผ่าน",
   "Submit": "ส่ง",
-  "OK": "Toklong",
+  "OK": "ตกลง",
   "Link Only": "ลิงก์เท่านั้น",
   "View Album Photos": "ดูรูปภาพอัลบั้ม",
   "Enter Username": "ป้อนชื่อผู้ใช้",
   "Select Username": "เลือกชื่อผู้ใช้",
-  "Add Random Digits to Username": "เพิ่มตัวเลขแบบสุ่มในชื่อผู้ใช้"
+  "Add Random Digits to Username": "เพิ่มตัวเลขแบบสุ่มในชื่อผู้ใช้",
+  "Enter your email so {ownerName} can see who accessed their album": "ป้อนอีเมลของคุณเพื่อให้ {ownerName} สามารถดูว่าใครเข้าถึงอัลบั้มของพวกเขา",
+  "Complete": "สมบูรณ์",
+  "Processing": "การประมวลผล",
+  "Uploading": "กำลังอัปโหลด",
+  "Cancel Upload": "ยกเลิกการอัปโหลด",
+  "Upload progress": "ความคืบหน้าการอัปโหลด",
+  "Overall progress": "ความคืบหน้าโดยรวม",
+  "Completed": "สมบูรณ์",
+  "Failed": "ล้มเหลว",
+  "({count} failed": "({count} ล้มเหลว",
+  "({count} in progress)": "({count}) กำลังดำเนินการ"
 }

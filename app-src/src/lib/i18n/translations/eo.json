@@ -147,5 +147,16 @@
   "View Album Photos": "Vidi Albumajn Fotojn",
   "Enter Username": "Enigu Uzantnomon",
   "Select Username": "Elektu Uzantnomon",
-  "Add Random Digits to Username": "Aldoni Hazardajn Ciferojn Al Uzantnomo"
+  "Add Random Digits to Username": "Aldoni Hazardajn Ciferojn Al Uzantnomo",
+  "Enter your email so {ownerName} can see who accessed their album": "Enigu Vian Retpoŝton Por Ke {ownerName} Povu Vidi Kiu Aliris Ilian Albumon",
+  "Complete": "Kompleta",
+  "Processing": "Traktado",
+  "Uploading": "Alŝutante",
+  "Cancel Upload": "Nuligi Alŝuton",
+  "Upload progress": "Alŝuta Progreso",
+  "Overall progress": "Ĝenerala Progreso",
+  "Completed": "Kompletigita",
+  "Failed": "Malsukcesis",
+  "({count} failed": "({count} malsukcesis",
+  "({count} in progress)": "({count}) En Progreso"
 }

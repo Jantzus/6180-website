@@ -142,10 +142,21 @@
   "Submitting...": "Yntsjinje...",
   "Password": "Wachtwurd",
   "Submit": "Yntsjinje",
-  "OK": "Okee",
+  "OK": "OK",
   "Link Only": "Allinne Keppeling",
   "View Album Photos": "Sjoch Album Foto's",
   "Enter Username": "Fier Brûkersnamme Yn",
   "Select Username": "Selektearje Brûkersnamme",
-  "Add Random Digits to Username": "Tafallige Sifers Tafoegje Oan Brûkersnamme"
+  "Add Random Digits to Username": "Tafallige Sifers Tafoegje Oan Brûkersnamme",
+  "Enter your email so {ownerName} can see who accessed their album": "Fier Jo E-mailadres Yn Sadat {ownerName} Sjen Kin Wa't Tagong Hie Ta Harren Album",
+  "Complete": "Kompleet",
+  "Processing": "Ferwurking",
+  "Uploading": "Oplade",
+  "Cancel Upload": "Oplaad Annulearje",
+  "Upload progress": "Oplade Foarútgong",
+  "Overall progress": "Algemiene Foarútgong",
+  "Completed": "Foltôge",
+  "Failed": "Mislearre",
+  "({count} failed": "({count} mislearre",
+  "({count} in progress)": "({count}) Dwaande"
 }

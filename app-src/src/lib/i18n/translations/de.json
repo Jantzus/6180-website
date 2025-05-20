@@ -142,10 +142,21 @@
   "Submitting...": "Wird gesendet...",
   "Password": "Passwort",
   "Submit": "Absenden",
-  "OK": "Okay",
+  "OK": "OK",
   "Link Only": "Nur Link",
   "View Album Photos": "Album Fotos Anzeigen",
   "Enter Username": "Benutzernamen Eingeben",
   "Select Username": "Benutzernamen Auswählen",
-  "Add Random Digits to Username": "Zufällige Ziffern Zum Benutzernamen Hinzufügen"
+  "Add Random Digits to Username": "Zufällige Ziffern Zum Benutzernamen Hinzufügen",
+  "Enter your email so {ownerName} can see who accessed their album": "Gib Deine E-Mail-Adresse Ein, Damit {ownerName} Sehen Kann, Wer Auf Ihr Album Zugegriffen Hat",
+  "Complete": "Vollständig",
+  "Processing": "Verarbeitung",
+  "Uploading": "Hochladen",
+  "Cancel Upload": "Upload Abbrechen",
+  "Upload progress": "Upload Fortschritt",
+  "Overall progress": "Gesamtfortschritt",
+  "Completed": "Vollendet",
+  "Failed": "Fehlgeschlagen",
+  "({count} failed": "({count} fehlgeschlagen",
+  "({count} in progress)": "({count}) Im Gange"
 }

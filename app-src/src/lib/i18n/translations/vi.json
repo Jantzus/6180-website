@@ -147,5 +147,16 @@
   "View Album Photos": "Xem Ảnh Album",
   "Enter Username": "Nhập Tên Người Dùng",
   "Select Username": "Chọn Tên Người Dùng",
-  "Add Random Digits to Username": "Thêm Chữ Số Ngẫu Nhiên Vào Tên Người Dùng"
+  "Add Random Digits to Username": "Thêm Chữ Số Ngẫu Nhiên Vào Tên Người Dùng",
+  "Enter your email so {ownerName} can see who accessed their album": "Nhập Email Của Bạn Để {ownerName} Có Thể Xem Ai Đã Truy Cập Album Của Họ",
+  "Complete": "Hoàn Thành",
+  "Processing": "Xử lý",
+  "Uploading": "Đang tải lên",
+  "Cancel Upload": "Hủy Tải Lên",
+  "Upload progress": "Tiến Trình Tải Lên",
+  "Overall progress": "Tiến Độ Tổng Thể",
+  "Completed": "Hoàn Thành",
+  "Failed": "Thất Bại",
+  "({count} failed": "({count} thất bại",
+  "({count} in progress)": "({count}) Đang Tiến Hành"
 }

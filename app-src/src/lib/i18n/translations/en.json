@@ -147,5 +147,16 @@
   "View Album Photos": "View Album Photos",
   "Enter Username": "Enter Username",
   "Select Username": "Select Username",
-  "Add Random Digits to Username": "Add Random Digits to Username"
+  "Add Random Digits to Username": "Add Random Digits to Username",
+  "Enter your email so {ownerName} can see who accessed their album": "Enter your email so {ownerName} can see who accessed their album",
+  "Complete": "Complete",
+  "Processing": "Processing",
+  "Uploading": "Uploading",
+  "Cancel Upload": "Cancel Upload",
+  "Upload progress": "Upload progress",
+  "Overall progress": "Overall progress",
+  "Completed": "Completed",
+  "Failed": "Failed",
+  "({count} failed": "({count} failed",
+  "({count} in progress)": "({count} in progress)"
 }

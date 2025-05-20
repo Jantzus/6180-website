@@ -142,10 +142,21 @@
   "Submitting...": "Отправка...",
   "Password": "Пароль",
   "Submit": "Отправить",
-  "OK": "Khorosho",
+  "OK": "Хорошо",
   "Link Only": "Только Ссылка",
   "View Album Photos": "Просмотр Фотографий Альбома",
   "Enter Username": "Введите Имя Пользователя",
   "Select Username": "Выберите Имя Пользователя",
-  "Add Random Digits to Username": "Добавить Случайные Цифры К Имени Пользователя"
+  "Add Random Digits to Username": "Добавить Случайные Цифры К Имени Пользователя",
+  "Enter your email so {ownerName} can see who accessed their album": "Введите Вашу Электронную Почту, Чтобы {ownerName} Мог Видеть, Кто Просматривал Их Альбом",
+  "Complete": "Полный",
+  "Processing": "Обработка",
+  "Uploading": "Загрузка",
+  "Cancel Upload": "Отменить Загрузку",
+  "Upload progress": "Прогресс Загрузки",
+  "Overall progress": "Общий Прогресс",
+  "Completed": "Завершенный",
+  "Failed": "Неудача",
+  "({count} failed": "({count} не удалось",
+  "({count} in progress)": "({count}) В Ходе Выполнения"
 }

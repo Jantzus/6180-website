@@ -142,10 +142,21 @@
   "Submitting...": "ಕಡಪುಡುನಾ ಉಂಡು...",
   "Password": "ಗುಪ್ತಪದ",
   "Submit": "ಸಲ್ಲಿಸು",
-  "OK": "Sari",
+  "OK": "ಸರಿ",
   "Link Only": "ಲಿಂಕ್ ಮಾತ್ರ",
   "View Album Photos": "ಆಲ್ಬಂ ಚಿತ್ರಗಳನ್ನು ನೋಡಿ",
   "Enter Username": "ಬಳಕೆದಾರ ಹೆಸರು ನಮೂದಿಸಿ",
   "Select Username": "ಬಳಕೆದಾರ ಹೆಸರು ಆಯ್ಕೆಮಾಡಿ",
-  "Add Random Digits to Username": "ಬಳಕೆದಾರ ಹೆಸ್ರ್‍ಗ್ ಯಾದೃಚ್ಚಿಕ ಅಂಕೆಲೆನ್ ಸೇರಾಲೆ"
+  "Add Random Digits to Username": "ಬಳಕೆದಾರ ಹೆಸ್ರ್‍ಗ್ ಯಾದೃಚ್ಚಿಕ ಅಂಕೆಲೆನ್ ಸೇರಾಲೆ",
+  "Enter your email so {ownerName} can see who accessed their album": "ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ {ownerName} ಅವರ ಆಲ್ಬಂಗೆ ಯಾರು ಪ್ರವೇಶ ಪಡೆದಿದ್ದಾರೆ ಎಂಬುದನ್ನು ನೋಡಬಹುದು",
+  "Complete": "ಪೂರ್ತಿ",
+  "Processing": "ಪ್ರಕ್ರಿಯೆ",
+  "Uploading": "ಕಡಪುಡ್ ಮಲ್ಪುಂಡು",
+  "Cancel Upload": "ಅಪ್‌ಲೋಡ್ ರದ್ದು ಮಲ್ಪುಲೆ",
+  "Upload progress": "ಅಪ್‌ಲೋಡ್ ಪ್ರಗತಿ",
+  "Overall progress": "ಒಟ್ಟಾರೆ ಪ್ರಗತಿ",
+  "Completed": "ಕಂಡಿಯಾಂಡ್",
+  "Failed": "ಸೋಲಾಂಡ್",
+  "({count} failed": "({count} ಪಾಡ್ಪುಂಡು",
+  "({count} in progress)": "({count}) ನಡಪುಡುಂಡು"
 }

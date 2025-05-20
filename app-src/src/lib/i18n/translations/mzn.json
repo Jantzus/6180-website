@@ -142,10 +142,21 @@
   "Submitting...": "در حال ارسال...",
   "Password": "رمز",
   "Submit": "بفرست",
-  "OK": "Xāh",
+  "OK": "خار",
   "Link Only": "فقط لینک",
   "View Album Photos": "عکسون آلبوم بدیتن",
   "Enter Username": "نام کاربری را وارد کنید",
   "Select Username": "نام کاربری را انتخاب کنین",
-  "Add Random Digits to Username": "نوم کاربری‌ئه بی‌نظم عددون اضافه هاکردن"
+  "Add Random Digits to Username": "نوم کاربری‌ئه بی‌نظم عددون اضافه هاکردن",
+  "Enter your email so {ownerName} can see who accessed their album": "شما ایمیل ره وارد هاکنین تا {ownerName} بدونه کی اوشون آلبوم ره دسترسی هدائه",
+  "Complete": "کامل",
+  "Processing": "پردازش",
+  "Uploading": "داره بار هله",
+  "Cancel Upload": "آپلود کنسل هاکردن",
+  "Upload progress": "پیشرفت بارگذاری",
+  "Overall progress": "کلی پیشرفت",
+  "Completed": "تموم بَیی",
+  "Failed": "ناموفق",
+  "({count} failed": "({count} شکست بخارده",
+  "({count} in progress)": "({count}) دَر حال پیشرفت"
 }

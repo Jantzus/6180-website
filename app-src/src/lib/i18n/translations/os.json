@@ -142,10 +142,21 @@
   "Submitting...": "Æрвитын...",
   "Password": "Пароль",
   "Submit": "Арвитын",
-  "OK": "Khорз",
+  "OK": "Хорз",
   "Link Only": "Æрмæст Æрвитæн",
   "View Album Photos": "Альбомы Къамтæ Фенын",
   "Enter Username": "Архайæджы Ном Бафысс",
   "Select Username": "Архайæджы Ном Равзарын",
-  "Add Random Digits to Username": "Архайæджы Ном Баст Нымæцтæ Бафтауын"
+  "Add Random Digits to Username": "Архайæджы Ном Баст Нымæцтæ Бафтауын",
+  "Enter your email so {ownerName} can see who accessed their album": "Бафысс Дæ Электрон Постыты Адрис, Цæмæй {ownerName} Фена, Чи Бацыдис Сæ Альбоммæ",
+  "Complete": "Æххæст",
+  "Processing": "Архайд",
+  "Uploading": "Æвгæнæн",
+  "Cancel Upload": "Ивддёрстæ Урæдын",
+  "Upload progress": "Бафидауы Рæзтдзинад",
+  "Overall progress": "Иумæйаг Размæцыд",
+  "Completed": "Æххæст",
+  "Failed": "Нӕ фӕрӕстис",
+  "({count} failed": "({count} фæстиат",
+  "({count} in progress)": "({count}) Цæуы"
 }

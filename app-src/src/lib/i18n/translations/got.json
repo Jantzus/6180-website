@@ -142,10 +142,21 @@
   "Submitting...": "𐌹𐌽𐍃𐌰𐌽𐌳𐌾𐌰𐌽𐌳𐍃...",
   "Password": "𐌻𐌿𐌺𐌰𐌻𐌴𐌹𐌺𐍉",
   "Submit": "𐌰𐍄𐌱𐌰𐌹𐍂𐌰𐌽",
-  "OK": "Gōþs",
+  "OK": "𐌲𐍉𐌳𐍃",
   "Link Only": "𐌱𐌰𐌽𐌳𐌹 𐌰𐌹𐌽𐌰𐌷𐌰",
   "View Album Photos": "𐍃𐌰𐌹𐍈𐌰𐌽 𐌰𐌻𐌱𐌿𐌼𐌹𐍃 𐍆𐍂𐌹𐍃𐌰𐌷𐍄𐌹𐌽𐍃",
   "Enter Username": "𐌰𐍄𐌻𐌰𐌲𐌴𐌹 𐌽𐌹𐌿𐍄𐌰𐌽𐌳𐌹𐍃 𐌽𐌰𐌼𐍉",
   "Select Username": "𐌺𐌹𐌿𐍃𐌰𐌽 𐌱𐍂𐌿𐌺𐌾𐌰𐌽𐌳𐌹𐍃 𐌽𐌰𐌼𐍉",
-  "Add Random Digits to Username": "𐍆𐌰𐌻𐍃𐌰𐌽𐌳𐍃 𐌽𐌹𐌼𐌰𐌽𐌳𐍃 𐌳𐌿 𐌱𐍂𐌿𐌺𐌾𐌰𐌽𐌳𐌹𐌽 𐌽𐌰𐌼𐌹𐌽"
+  "Add Random Digits to Username": "𐍆𐌰𐌻𐍃𐌰𐌽𐌳𐍃 𐌽𐌹𐌼𐌰𐌽𐌳𐍃 𐌳𐌿 𐌱𐍂𐌿𐌺𐌾𐌰𐌽𐌳𐌹𐌽 𐌽𐌰𐌼𐌹𐌽",
+  "Enter your email so {ownerName} can see who accessed their album": "𐌲𐌰𐌼𐌴𐌻𐌴𐌹 𐌸𐌴𐌹𐌽𐌰𐌽𐌰 𐌴-𐌼𐌰𐌹𐌻 𐌴𐌹 {ownerName} 𐌼𐌰𐌲𐌹 𐌲𐌰𐍃𐌰𐌹𐍈𐌰𐌽 𐍈𐌰𐍃 𐌹𐌽𐌽𐌲𐌰𐌻𐌰𐌹𐌸 𐌹𐌽 𐌹𐌶𐌴 𐌰𐌻𐌱𐌿𐌼",
+  "Complete": "𐌵𐌹𐌼𐍂𐌾𐌰𐌽",
+  "Processing": "𐌲𐌰𐍃𐌺𐌰𐍆𐍄𐍃",
+  "Uploading": "𐌿𐍀𐌻𐍉𐌰𐌳𐌹𐌽𐌲",
+  "Cancel Upload": "𐌷𐌰𐌻𐌳𐌰𐌽 𐌿𐍃𐌷𐌻𐌰𐌸𐌰𐌽",
+  "Upload progress": "𐌿𐍃𐌻𐌰𐌸𐌰𐌹 𐍆𐍂𐌰𐌼𐌲𐌰𐌷𐍄𐍃",
+  "Overall progress": "𐌰𐌻𐌻𐍃 𐍆𐍂𐌰𐌼𐌲𐌰𐌲𐌲𐍃",
+  "Completed": "𐌿𐍃𐍄𐌰𐌿𐌷𐌰𐌽𐍃",
+  "Failed": "𐌽𐌹 𐌲𐌰𐌻𐌰𐌹𐍃𐍄𐌹𐌳𐌰",
+  "({count} failed": "({count} 𐌽𐌹 𐌲𐌰𐌻𐌰𐌹𐍃𐍄𐌰𐌽𐍃",
+  "({count} in progress)": "({count}) 𐌹𐌽 𐍃𐍀𐌴𐌳𐌹𐌶𐌰"
 }

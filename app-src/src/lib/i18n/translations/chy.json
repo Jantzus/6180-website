@@ -142,10 +142,21 @@
   "Submitting...": "Mȧhóénėstse...",
   "Password": "Nitoveto",
   "Submit": "Mėhósėstse",
-  "OK": "Néá'eše",
+  "OK": "Néstó'e",
   "Link Only": "Link-zeno",
   "View Album Photos": "Néhpóhtse-āēnėstse Héne'enóvȯhtse",
   "Enter Username": "Ného Névet Hénėševehe",
   "Select Username": "Nétsėhéstȯtse Móheeséveho",
-  "Add Random Digits to Username": "Hoohtsėhesenesto Mȧheóneváseéstse Ma'háhke'ėstse"
+  "Add Random Digits to Username": "Hoohtsėhesenesto Mȧheóneváseéstse Ma'háhke'ėstse",
+  "Enter your email so {ownerName} can see who accessed their album": "Néhpo'ėstse Tséohkeéva'enevese {ownerName} Mé'tónėsėstse Héva'ėhéhe Éhvé'ho'ėhnėstse Éšeévaʼe",
+  "Complete": "Énėstse",
+  "Processing": "Émaahéstôtse",
+  "Uploading": "Éxhoésta",
+  "Cancel Upload": "Némêstóvâhtsêhéhe Páhoeestse",
+  "Upload progress": "Mȧho'kėha'e Tséhéstoo'e",
+  "Overall progress": "Mȧhéóme Éohke'ėstse",
+  "Completed": "Énanéehóó'oo",
+  "Failed": "Éhe'tónetanóhtōve",
+  "({count} failed": "({count} éohke'háanehe",
+  "({count} in progress)": "({count}) Nėhéónėstse"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "छ्वत...",
   "Password": "पासवर्ड",
   "Submit": "छ्येत",
-  "OK": "Thik Cha",
+  "OK": "बेस",
   "Link Only": "लिंक मत्र",
   "View Album Photos": "अल्बम तःस्वि:त स्वः",
   "Enter Username": "छेँ नां थ्वयादिसँ",
   "Select Username": "छ्येलेमि नां ल्यानादिसँ",
-  "Add Random Digits to Username": "छ्येलेमिया नां य् म्हो म्हो ल्याचां तयेके"
+  "Add Random Digits to Username": "छ्येलेमिया नां य् म्हो म्हो ल्याचां तयेके",
+  "Enter your email so {ownerName} can see who accessed their album": "छिगु इमेल थ्वयादिसँ कि {ownerName} स्वये फइमखु सु छम्ह इमिसं इमिगु अल्बम थकबियागु",
+  "Complete": "सम्पूर्ण",
+  "Processing": "प्रक्रिया",
+  "Uploading": "अपलोड यायेगु",
+  "Cancel Upload": "अपलोड रद्द",
+  "Upload progress": "अपलोड प्रगति",
+  "Overall progress": "सम्पूर्ण प्रगति",
+  "Completed": "सिद्धयात",
+  "Failed": "असफल",
+  "({count} failed": "({count} असफल जुल",
+  "({count} in progress)": "({count}) स्वयाच्वँगु"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "يوللاۋاتىدۇ...",
   "Password": "پارول",
   "Submit": "يوللاش",
-  "OK": "Maqul",
+  "OK": "ماقۇل",
   "Link Only": "ئۇلانما پەقەت",
   "View Album Photos": "ئالبوم سۈرەتلىرىنى كۆرۈش",
   "Enter Username": "ئىشلەتكۈچى ئاتىنى كىرگۈزۈڭ",
   "Select Username": "قوللانغۇچى ئىسمىنى تاللاڭ",
-  "Add Random Digits to Username": "ئىشلەتكۈچى ئىسمىغا ئىختىيارى رەقەم قوشۇش"
+  "Add Random Digits to Username": "ئىشلەتكۈچى ئىسمىغا ئىختىيارى رەقەم قوشۇش",
+  "Enter your email so {ownerName} can see who accessed their album": "ئېلخېتىڭىزنى كىرگۈزۈڭ، شۇنداق قىلىپ {ownerName} ئۇلارنىڭ ئالبومىغا كىملەرنىڭ كىرگەنلىكىنى كۆرەلەيدۇ",
+  "Complete": "تولۇق",
+  "Processing": "بىر تەرەپ قىلىش",
+  "Uploading": "يۈكلەۋاتىدۇ",
+  "Cancel Upload": "يۈكلەشنى بىكار قىلىش",
+  "Upload progress": "يۈكلەش ئىلگىرىلىشى",
+  "Overall progress": "ئومۇمىي ئىلگىرىلەش",
+  "Completed": "تاماملاندى",
+  "Failed": "مەغلۇپ بولدى",
+  "({count} failed": "({count} مەغلۇپ بولدى",
+  "({count} in progress)": "({count}) داۋاملىشىۋاتىدۇ"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Hwɛ Album Mfonyin",
   "Enter Username": "Hyehyɛ Wo Din",
   "Select Username": "Yi Dwumadie Din",
-  "Add Random Digits to Username": "Fa Nɔmba A Ɛyɛ Basabasa Ka Wo Din Ho"
+  "Add Random Digits to Username": "Fa Nɔmba A Ɛyɛ Basabasa Ka Wo Din Ho",
+  "Enter your email so {ownerName} can see who accessed their album": "Hyehyɛ Wo Email Ma {ownerName} Ntumi Nhwɛ Wɔn A Wɔhwɛɛ Wɔn Album",
+  "Complete": "Mu Awie",
+  "Processing": "Ɔprɔses",
+  "Uploading": "Reyi soro",
+  "Cancel Upload": "Twita Atwere",
+  "Upload progress": "Ɔforo Kɔ Anim",
+  "Overall progress": "Nkɔsoɔ Nyinaa",
+  "Completed": "Awie",
+  "Failed": "Adi Nkɔso",
+  "({count} failed": "({count} anhwehwɛ",
+  "({count} in progress)": "({count}) Rekɔ So"
 }

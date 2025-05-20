@@ -147,5 +147,16 @@
   "View Album Photos": "Albom Súwretlerin Kóriw",
   "Enter Username": "Paydalanıwshı Atın Kiritiń",
   "Select Username": "Paydalanıwshı Atın Tañlaw",
-  "Add Random Digits to Username": "Paydalanıwshı Atına Tosattan Sanlar Qosıw"
+  "Add Random Digits to Username": "Paydalanıwshı Atına Tosattan Sanlar Qosıw",
+  "Enter your email so {ownerName} can see who accessed their album": "Emailıñızdı Engizin' {ownerName} Kim Olardıñ Albomına Kirgenin Ko're Alıwı Ushın",
+  "Complete": "Tolıq",
+  "Processing": "Islew",
+  "Uploading": "Júklep atırmaqta",
+  "Cancel Upload": "Júkleniw Saziw",
+  "Upload progress": "Júklew Alǵa Basıwı",
+  "Overall progress": "Ulıwma Rawajlanıw",
+  "Completed": "Tamamlandı",
+  "Failed": "Tabıssız",
+  "({count} failed": "({count} tabıssız boldı",
+  "({count} in progress)": "({count}) Dawam Etpekte"
 }

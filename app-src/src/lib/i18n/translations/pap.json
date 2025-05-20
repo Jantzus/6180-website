@@ -147,5 +147,16 @@
   "View Album Photos": "Mira Fotonan Di Album",
   "Enter Username": "Drenta Nomber Di Usuario",
   "Select Username": "Skohe Nomber di Usuario",
-  "Add Random Digits to Username": "Huntu Numbernan Di Azar Na Nomber Di Usuario"
+  "Add Random Digits to Username": "Huntu Numbernan Di Azar Na Nomber Di Usuario",
+  "Enter your email so {ownerName} can see who accessed their album": "Yena Bo Email Pa {ownerName} Por Mira Ken A Aksedé Na Nan Album",
+  "Complete": "Kompletu",
+  "Processing": "Prosesamentu",
+  "Uploading": "Kargando",
+  "Cancel Upload": "Kanselá Karga",
+  "Upload progress": "Progreso Di Karga",
+  "Overall progress": "Progreso Total",
+  "Completed": "Kompletá",
+  "Failed": "Faya",
+  "({count} failed": "({count} faya",
+  "({count} in progress)": "({count}) Den Progreso"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Lukim Album Piksa",
   "Enter Username": "Putim Nem Bilong Yu",
   "Select Username": "Makim Nem Bilong Yusa",
-  "Add Random Digits to Username": "Putim Namba Nabaut Long Nem Bilong Yusa"
+  "Add Random Digits to Username": "Putim Namba Nabaut Long Nem Bilong Yusa",
+  "Enter your email so {ownerName} can see who accessed their album": "Putim Email Bilong Yu So {ownerName} I Ken Lukim Husat I Bin Lukim Album Bilong Ol",
+  "Complete": "Olgeta",
+  "Processing": "Prosesim",
+  "Uploading": "Salim i go antap",
+  "Cancel Upload": "Katim Salim",
+  "Upload progress": "Salim Go Antap Progres",
+  "Overall progress": "Olgeta Progres",
+  "Completed": "Pinisim",
+  "Failed": "I No Kamap Gut",
+  "({count} failed": "({count} i lus",
+  "({count} in progress)": "({count}) Wok I Go Yet"
 }

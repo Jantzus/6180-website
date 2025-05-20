@@ -142,10 +142,21 @@
   "Submitting...": "Җибәрелә...",
   "Password": "Серсүз",
   "Submit": "Җибәрергә",
-  "OK": "Yaqşı",
+  "OK": "Яхшы",
   "Link Only": "Бары Сылтама",
   "View Album Photos": "Альбом Фотоларын Карау",
   "Enter Username": "Кулланучы Исемен Кертегез",
   "Select Username": "Кулланучы Исемен Сайлагыз",
-  "Add Random Digits to Username": "Кулланучы Исеменә Очраклы Саннар Өстәү"
+  "Add Random Digits to Username": "Кулланучы Исеменә Очраклы Саннар Өстәү",
+  "Enter your email so {ownerName} can see who accessed their album": "Электрон Почтагызны Кертегез, {ownerName} Аларның Альбомына Кем Кергәнен Күрсен Өчен",
+  "Complete": "Тулы",
+  "Processing": "Эшкәртү",
+  "Uploading": "Йөкләү",
+  "Cancel Upload": "Йөкләүне Өзү",
+  "Upload progress": "Йөкләү Прогрессы",
+  "Overall progress": "Гомуми Алгарыш",
+  "Completed": "Тәмамланды",
+  "Failed": "Уңышсыз",
+  "({count} failed": "({count} уңышсыз",
+  "({count} in progress)": "({count}) Барышта"
 }

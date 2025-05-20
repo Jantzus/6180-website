@@ -147,5 +147,16 @@
   "View Album Photos": "Skoða Myndir Í Albúmi",
   "Enter Username": "Sláðu Inn Notandanafn",
   "Select Username": "Veldu Notandanafn",
-  "Add Random Digits to Username": "Bæta Handahófskenndum Tölustöfum Við Notandanafn"
+  "Add Random Digits to Username": "Bæta Handahófskenndum Tölustöfum Við Notandanafn",
+  "Enter your email so {ownerName} can see who accessed their album": "Sláðu Inn Tölvupóstinn Þinn Svo {ownerName} Geti Séð Hver Skoðaði Albúmið Þeirra",
+  "Complete": "Fullur",
+  "Processing": "Vinnsla",
+  "Uploading": "Upphleðsla",
+  "Cancel Upload": "Hætta Við Upphleðslu",
+  "Upload progress": "Framvinda Upphleðslu",
+  "Overall progress": "Heildarframvinda",
+  "Completed": "Lokið",
+  "Failed": "Mistókst",
+  "({count} failed": "({count} mistókst",
+  "({count} in progress)": "({count}) Í Vinnslu"
 }

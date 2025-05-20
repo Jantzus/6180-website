@@ -147,5 +147,16 @@
   "View Album Photos": "Альбом Фотоларын Қарау",
   "Enter Username": "Ҡулланыусы Исемен Керетегеҙ",
   "Select Username": "Ҡулланыусы Исемен Һайлағыҙ",
-  "Add Random Digits to Username": "Ҡулланыусы Исеменә Осраҡлы Һандар Өҫтәргә"
+  "Add Random Digits to Username": "Ҡулланыусы Исеменә Осраҡлы Һандар Өҫтәргә",
+  "Enter your email so {ownerName} can see who accessed their album": "Үҙегеҙҙең Email-ды Керетегеҙ {ownerName} Кем Уларҙың Альбомын Ҡараған Икәнен Күрһен Өсөн",
+  "Complete": "Тамам",
+  "Processing": "Эшкәртеү",
+  "Uploading": "Йөкләү",
+  "Cancel Upload": "Йөкләүҙе Юҡ Итергә",
+  "Upload progress": "Йөкләү Прогресс",
+  "Overall progress": "Дөйөм Алға Барыу",
+  "Completed": "Тамамланған",
+  "Failed": "Уңышһыҙ",
+  "({count} failed": "({count} уңышһыҙ",
+  "({count} in progress)": "({count}) Барышта"
 }

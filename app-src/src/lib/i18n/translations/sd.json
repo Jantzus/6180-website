@@ -142,10 +142,21 @@
   "Submitting...": "موڪليندي...",
   "Password": "پاسورڊ",
   "Submit": "اماڻيو",
-  "OK": "Ṭhīk",
+  "OK": "ٺيڪ",
   "Link Only": "فقط لنڪ",
   "View Album Photos": "البم تصويرون ڏسو",
   "Enter Username": "واپرائيندڙ جو نالو داخل ڪريو",
   "Select Username": "واپرائيندڙ جو نالو چونڊيو",
-  "Add Random Digits to Username": "استعمال ڪندڙ جي نالي ۾ بي ترتيب انگ وجھو"
+  "Add Random Digits to Username": "استعمال ڪندڙ جي نالي ۾ بي ترتيب انگ وجھو",
+  "Enter your email so {ownerName} can see who accessed their album": "پنهنجو اي ميل داخل ڪريو ته جيئن {ownerName} ڏسي سگھي ته ڪنهن سندن البم تائين رسائي ڪئي",
+  "Complete": "مڪمل",
+  "Processing": "پروسيسنگ",
+  "Uploading": "اپلوڊ ڪري رهيو آهي",
+  "Cancel Upload": "اپلوڊ رد ڪريو",
+  "Upload progress": "اپلوڊ ترقي",
+  "Overall progress": "سمورو ترقي",
+  "Completed": "مڪمل",
+  "Failed": "ناڪام",
+  "({count} failed": "({count} ناڪام",
+  "({count} in progress)": "({count}) ترقي ۾"
 }

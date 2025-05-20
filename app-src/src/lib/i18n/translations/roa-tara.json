@@ -142,10 +142,21 @@
   "Submitting...": "Mannanne...",
   "Password": "Password",
   "Submit": "Manne",
-  "OK": "Bbuene",
+  "OK": "Vasce Buene",
   "Link Only": "Juste Collegamende",
   "View Album Photos": "Vide Le Fote De L'Album",
   "Enter Username": "Mitte 'U Nome Utende",
   "Select Username": "Scacchie 'U Nome Utende",
-  "Add Random Digits to Username": "Aggiunge Numere Cavzuale a 'U Nome Utende"
+  "Add Random Digits to Username": "Aggiunge Numere Cavzuale a 'U Nome Utende",
+  "Enter your email so {ownerName} can see who accessed their album": "'Mblicche L'E-mail Tune Pe Ffà 'Ndrucà A {ownerName} Ci Ha Trasute Jndr'a L'Album Lore",
+  "Complete": "Comblete",
+  "Processing": "Elabburazione",
+  "Uploading": "Carecanne",
+  "Cancel Upload": "Annulle Carecamende",
+  "Upload progress": "Avanzamende De Carecamende",
+  "Overall progress": "Pruggresse Totàle",
+  "Completed": "Combletate",
+  "Failed": "Fallite",
+  "({count} failed": "({count} fallite",
+  "({count} in progress)": "({count}) Jndr'à 'U Cors"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Atekatē...",
   "Password": "Password",
   "Submit": "Totkvketv",
-  "OK": "Hērkv",
+  "OK": "Mvt",
   "Link Only": "Tenetkan Tvlken",
   "View Album Photos": "Cuko Vhakv Poyvfekcv",
   "Enter Username": "Cehocefkv Cokkv",
   "Select Username": "Este Hocefket Kerhoyetv",
-  "Add Random Digits to Username": "Este Vnokhome Honne Vhokhvn Vhoyokcv Tohtvlhvye"
+  "Add Random Digits to Username": "Este Vnokhome Honne Vhokhvn Vhoyokcv Tohtvlhvye",
+  "Enter your email so {ownerName} can see who accessed their album": "Ce Email Cokisa {ownerName} Mvto Kerrakv Estoman Hiyomvtist",
+  "Complete": "Lumhē",
+  "Processing": "Processing",
+  "Uploading": "Vwayhtalon",
+  "Cancel Upload": "Vhayopvt Vkvsapv",
+  "Upload progress": "Lvkvftetv Ohvtvlakat",
+  "Overall progress": "Omv Vhokvhikat",
+  "Completed": "Isahayuksut",
+  "Failed": "Kvccayeko",
+  "({count} failed": "({count} akvyēckv",
+  "({count} in progress)": "({count}) Ayoktvs"
 }

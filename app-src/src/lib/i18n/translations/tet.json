@@ -147,5 +147,16 @@
   "View Album Photos": "Haree Album Nia Imajen Sira",
   "Enter Username": "Hatama Naran Utilizadór",
   "Select Username": "Hili Naran Utilizadór",
-  "Add Random Digits to Username": "Aumenta Dixitu Arbiru Ba Naran Uza-na'in"
+  "Add Random Digits to Username": "Aumenta Dixitu Arbiru Ba Naran Uza-na'in",
+  "Enter your email so {ownerName} can see who accessed their album": "Hatama Ita-nia Email Atu {ownerName} Bele Haree Sé Maka Asesu Ba Sira-nia Álbum",
+  "Complete": "Kompletu",
+  "Processing": "Prosesamentu",
+  "Uploading": "Hatama",
+  "Cancel Upload": "Kansela Tau Karrega",
+  "Upload progress": "Progresu Tula",
+  "Overall progress": "Progresu Jerál",
+  "Completed": "Kompletu",
+  "Failed": "La Konsege",
+  "({count} failed": "({count} la susesu",
+  "({count} in progress)": "({count}) Hela Hela"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "ᑐᓂᓯᔪᖅ...",
   "Password": "ᓯᓚᑐᓂᖅ",
   "Submit": "ᑐᓐᓂᖅᑯᑎᒋᔭᖅ",
-  "OK": "Aatai",
+  "OK": "ᐊᖏᖅᐳᖓ",
   "Link Only": "ᐊᑕᖃᑎᒌᒍᑎ ᑭᓯᐊᓂ",
   "View Album Photos": "ᑕᑯᓗᒍ ᐊᔾᔨᙳᐊᑦ ᐊᔾᔨᙳᐊᒃᑯᕕᒻᒥ",
   "Enter Username": "ᐊᑎᖅ ᑎᑎᕋᕐᓗᒍ",
   "Select Username": "ᐊᑎᕐᓂᒃ ᓂᕈᐊᕐᓂᖅ",
-  "Add Random Digits to Username": "ᐊᑎᕐᓄᑦ ᑭᓇᐅᓂᕐᓄᑦ ᓈᓴᐅᑎᓂᒃ ᐃᓚᓯᓗᑎᑦ"
+  "Add Random Digits to Username": "ᐊᑎᕐᓄᑦ ᑭᓇᐅᓂᕐᓄᑦ ᓈᓴᐅᑎᓂᒃ ᐃᓚᓯᓗᑎᑦ",
+  "Enter your email so {ownerName} can see who accessed their album": "ᐃᓕᓯᓗᑎᑦ ᖃᕆᑕᐅᔭᒃᑯᑦ ᑐᕌᕈᑎᒥᒃ ᑕᑯᔪᓐᓇᖁᓪᓗᒍ {ownerName} ᑭᓇ ᑕᑯᓐᓂᕐᒪᖔᑦ ᐊᔾᖁᓯᓂᒃ",
+  "Complete": "ᐱᐊᓂᒃᓯᒪᔪᖅ",
+  "Processing": "ᓴᓇᓂᖅ",
+  "Uploading": "ᐃᓗᐊᓄᐊᖅᑎᑦᑎᔪᖅ",
+  "Cancel Upload": "ᓄᖅᑲᖅᑎᑦᑎᔪᖅ ᑲᔪᓯᑎᑦᑎᔪᖅ",
+  "Upload progress": "ᐃᓕᐅᖅᑲᐃᓂᖅ ᐊᓪᓗᕆᐊᕐᓂᖅ",
+  "Overall progress": "ᐃᓘᓐᓇᖓᑕ ᓯᕗᒧᐊᖕᓂᖓ",
+  "Completed": "ᐱᐊᕆᔭᐅᓯᒪᔪᖅ",
+  "Failed": "ᓴᐳᓐᓂᖅᓴᐅᙱᑦᑐᑦ",
+  "({count} failed": "({count} ᐊᔪᕐᓂᖓ",
+  "({count} in progress)": "({count}) ᐱᕙᓪᓕᐊᔪᖅ"
 }

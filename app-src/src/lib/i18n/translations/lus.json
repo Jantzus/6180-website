@@ -142,10 +142,21 @@
   "Submitting...": "Thawn mek...",
   "Password": "Thuhruk Thu",
   "Submit": "Thehlut",
-  "OK": "A Ṭha",
+  "OK": "A ṭha",
   "Link Only": "Link Chauh",
   "View Album Photos": "Album Thlalak En Rawh",
   "Enter Username": "Hmangtuhming Dah Lut Rawh",
   "Select Username": "Hman Tu Hming Thlan Rawh",
-  "Add Random Digits to Username": "Hmangtute hming ah nambar thlakchham bel rawh"
+  "Add Random Digits to Username": "Hmangtute hming ah nambar thlakchham bel rawh",
+  "Enter your email so {ownerName} can see who accessed their album": "I Email Address dah rawh, chu chuan {ownerName} in an album entu a hmuh theih dawn a ni",
+  "Complete": "Kimchang",
+  "Processing": "Enprochhiahna",
+  "Uploading": "A thun chhuak mek",
+  "Cancel Upload": "Upload sûtna",
+  "Upload progress": "Upload Hmalam Pan",
+  "Overall progress": "Hmasawnna Zawng Zawng",
+  "Completed": "Zawh Tawh",
+  "Failed": "A tlawlh",
+  "({count} failed": "({count} a tlawlh",
+  "({count} in progress)": "({count}) Lai Mek Mek"
 }

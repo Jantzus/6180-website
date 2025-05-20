@@ -142,10 +142,21 @@
   "Submitting...": "Mandadís...",
   "Password": "Senhal",
   "Submit": "Enviar",
-  "OK": "D'Acòrdi",
+  "OK": "D'acòrdi",
   "Link Only": "Sonque Ligam",
   "View Album Photos": "Veire Fòtos De L'Album",
   "Enter Username": "Picatz Nom D'Utilizaire",
   "Select Username": "Seleccionar Nom d'Utilizaire",
-  "Add Random Digits to Username": "Ajustar De Chifras Aleatòris Al Nom D'utilizaire"
+  "Add Random Digits to Username": "Ajustar De Chifras Aleatòris Al Nom D'utilizaire",
+  "Enter your email so {ownerName} can see who accessed their album": "Entratz Vòstre Corrièl Per Que {ownerName} Pòsca Veire Qual A Accedit A Lor Album",
+  "Complete": "Complet",
+  "Processing": "Tractament",
+  "Uploading": "Telecargament",
+  "Cancel Upload": "Anullar Mandadís",
+  "Upload progress": "Progression Del Telecargament",
+  "Overall progress": "Progrès Global",
+  "Completed": "Acabat",
+  "Failed": "Fracassat",
+  "({count} failed": "({count} a fracassat",
+  "({count} in progress)": "({count}) En Cors"
 }

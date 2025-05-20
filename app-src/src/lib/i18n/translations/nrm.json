@@ -142,10 +142,21 @@
   "Submitting...": "Enveie...",
   "Password": "Mot D'pâsse",
   "Submit": "Soumettre",
-  "OK": "Bien",
+  "OK": "D'accord",
   "Link Only": "Lian Seul'ment",
   "View Album Photos": "Vei Lé Photos D'L'Album",
   "Enter Username": "Etchie Nom D'Useu",
   "Select Username": "Chouaîsi l'Nom dé l'Uzeu",
-  "Add Random Digits to Username": "Ajoutaer Des Chiffes Au Hasard Au Nom D'useu"
+  "Add Random Digits to Username": "Ajoutaer Des Chiffes Au Hasard Au Nom D'useu",
+  "Enter your email so {ownerName} can see who accessed their album": "Êtchet Vouot' Couothie Pouor Qu' {ownerName} Peuche Vé Tchi Qu'a Eu Accès à Louos Album",
+  "Complete": "Complet",
+  "Processing": "Traitement",
+  "Uploading": "En traîn d'tchargi",
+  "Cancel Upload": "Arrunchi L'téléquertchement",
+  "Upload progress": "Avanchie D'Enfilyie",
+  "Overall progress": "Progrès Jénéral",
+  "Completed": "Finni",
+  "Failed": "Êrreure",
+  "({count} failed": "({count} manqué",
+  "({count} in progress)": "({count}) En Cours"
 }

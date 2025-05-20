@@ -142,10 +142,21 @@
   "Submitting...": "Ntuma...",
   "Password": "Ekigambo Kyekyama",
   "Submit": "Weereza",
-  "OK": "Kirungi",
+  "OK": "Kale",
   "Link Only": "Nyunga Yokka",
   "View Album Photos": "Laba Ebifaananyi By'Okatabo",
   "Enter Username": "Wandika Erinnya Lyo",
   "Select Username": "Londa Erinnya",
-  "Add Random Digits to Username": "Gatta Ennamba Ez'awamu Ku Linnya Lyo"
+  "Add Random Digits to Username": "Gatta Ennamba Ez'awamu Ku Linnya Lyo",
+  "Enter your email so {ownerName} can see who accessed their album": "Yingiza Email Yo {ownerName} Asobole Okulaba Ani Eyakozesa Albamu Yaabwe",
+  "Complete": "Omulamba",
+  "Processing": "Kukolamu",
+  "Uploading": "Teeka",
+  "Cancel Upload": "Sazaamu Kutambula",
+  "Upload progress": "Entambula Y'okutikka",
+  "Overall progress": "Enkulakulana Yonna",
+  "Completed": "Ewedde",
+  "Failed": "Kiremye",
+  "({count} failed": "({count} kigaanye",
+  "({count} in progress)": "({count}) Mu Nkulunkulizo"
 }

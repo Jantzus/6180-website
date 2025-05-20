@@ -147,5 +147,16 @@
   "View Album Photos": "Kitaa An Mga Litrato Han Album",
   "Enter Username": "Ibutang An Ngaran-hit-Gumaramit",
   "Select Username": "Pagpili han Agnay-gamit",
-  "Add Random Digits to Username": "Dugangan Han Random Nga Mga Ihap Ha Ngaran-hit Gumaramit"
+  "Add Random Digits to Username": "Dugangan Han Random Nga Mga Ihap Ha Ngaran-hit Gumaramit",
+  "Enter your email so {ownerName} can see who accessed their album": "Isulod An Imo Email Basi {ownerName} Makakita Hin-o An Umakses Han Ira Album",
+  "Complete": "Kompleto",
+  "Processing": "Pagproseso",
+  "Uploading": "Ginkarkarga",
+  "Cancel Upload": "Kanselaha An Pagkarga",
+  "Upload progress": "Pag-uswag Han Pagkarga",
+  "Overall progress": "Kadagmitan Nga Pag-uswag",
+  "Completed": "Kumpleto",
+  "Failed": "Napakyas",
+  "({count} failed": "({count} pakyas",
+  "({count} in progress)": "({count}) Nagpapadayon"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "እየላኸ...",
   "Password": "መሕለፊ ቃል",
   "Submit": "ኣእቱ",
-  "OK": "Ṭiru",
+  "OK": "ሕራይ",
   "Link Only": "ጥራይ መራኸቢ",
   "View Album Photos": "ናይ ኣልበም ፎቶታት ርአ",
   "Enter Username": "ናይ ተጠቃሚ ስም ኣእቱ",
   "Select Username": "ናይ ተጠቃሚ ሽም ምረጽ",
-  "Add Random Digits to Username": "ናብ ሽም ተጠቃሚ ዘፈቀዳዊ ኣሃዛት ኣእቱ"
+  "Add Random Digits to Username": "ናብ ሽም ተጠቃሚ ዘፈቀዳዊ ኣሃዛት ኣእቱ",
+  "Enter your email so {ownerName} can see who accessed their album": "ኢመይልካ ኣእቱ {ownerName} ሰባት ኣልበሞም ከመይ ከም ዝኣተዉ ምእንቲ ክርእዩ",
+  "Complete": "ምሉእ",
+  "Processing": "ምቅብባል",
+  "Uploading": "በመጫን ላይ",
+  "Cancel Upload": "ምጽዓን ሰርዝ",
+  "Upload progress": "ምዕራፍ ምስቃል",
+  "Overall progress": "ጠቅላላ ዕብየት",
+  "Completed": "ተፈጺሙ",
+  "Failed": "ተሳናኺሉ",
+  "({count} failed": "({count} ዝወደቐ",
+  "({count} in progress)": "({count}) ኣብ ከይዲ"
 }

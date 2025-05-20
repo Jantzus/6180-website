@@ -142,10 +142,21 @@
   "Submitting...": "Peungirém...",
   "Password": "Katasandi",
   "Submit": "Sampôh",
-  "OK": "Gét",
+  "OK": "Gèt",
   "Link Only": "Sambôt Mantöng",
   "View Album Photos": "Kalön Album Potréët",
   "Enter Username": "Pasoë Nan Ureuëng Ngui",
   "Select Username": "Piléh Nan Ureuëng",
-  "Add Random Digits to Username": "Tamah Angka Acak Keu Nan Ureuëng"
+  "Add Random Digits to Username": "Tamah Angka Acak Keu Nan Ureuëng",
+  "Enter your email so {ownerName} can see who accessed their album": "Peuteubiet Email Droeneuh Mangat {ownerName} Jeuet Jikalon Soé Nyang Ka Peuhah Album Jih",
+  "Complete": "Lengkap",
+  "Processing": "Peuneugatôh",
+  "Uploading": "Peunaik",
+  "Cancel Upload": "Batalkeun Unggah",
+  "Upload progress": "Kemadjuan Peuneugat",
+  "Overall progress": "Keumajuan Meuluweuh",
+  "Completed": "Meuleungkap",
+  "Failed": "Gagal",
+  "({count} failed": "({count} gagal",
+  "({count} in progress)": "({count}) Teungöh Meulakèe"
 }

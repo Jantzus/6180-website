@@ -142,10 +142,21 @@
   "Submitting...": "Жіберілуде...",
   "Password": "Құпия Сөз",
   "Submit": "Жіберу",
-  "OK": "Jaqsı",
+  "OK": "Жарайды",
   "Link Only": "Тек Сілтеме",
   "View Album Photos": "Альбом Фотоларын Қарау",
   "Enter Username": "Пайдаланушы Атын Енгізіңіз",
   "Select Username": "Пайдаланушы Атын Таңдау",
-  "Add Random Digits to Username": "Пайдаланушы Атына Кездейсоқ Сандар Қосу"
+  "Add Random Digits to Username": "Пайдаланушы Атына Кездейсоқ Сандар Қосу",
+  "Enter your email so {ownerName} can see who accessed their album": "Электрондық Поштаңызды Енгізіңіз, Сонда {ownerName} Олардың Альбомына Кімнің Кіргенін Көре Алады",
+  "Complete": "Толық",
+  "Processing": "Өңдеу",
+  "Uploading": "Жүктеу",
+  "Cancel Upload": "Жүктеуді Болдырмау",
+  "Upload progress": "Жүктеу Барысы",
+  "Overall progress": "Жалпы Прогресс",
+  "Completed": "Аяқталды",
+  "Failed": "Сәтсіз",
+  "({count} failed": "({count} сәтсіз аяқталды",
+  "({count} in progress)": "({count}) Жүріп Жатыр"
 }

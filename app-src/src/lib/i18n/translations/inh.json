@@ -142,10 +142,21 @@
   "Submitting...": "ДӀадахийташ...",
   "Password": "Пароль",
   "Submit": "ДӀадахьийта",
-  "OK": "Dika",
+  "OK": "Дика",
   "Link Only": "Хьажорг Мара",
   "View Album Photos": "Альбома Сурташ Хьажа",
   "Enter Username": "Доакъашхочун ЦӀи Язъе",
   "Select Username": "Пайдаланучун Цlи Харжа",
-  "Add Random Digits to Username": "Юзера ЦIера Хаьржа Таьрахьаш Тоха"
+  "Add Random Digits to Username": "Юзера ЦIера Хаьржа Таьрахьаш Тоха",
+  "Enter your email so {ownerName} can see who accessed their album": "Ший Email Йоазаде {ownerName} Шийна Альбома Хьанахьежа Гаргдахьа",
+  "Complete": "Кхоачаш",
+  "Processing": "Кердар",
+  "Uploading": "Чуоттаеш",
+  "Cancel Upload": "Чуяккхар Юхадаккха",
+  "Upload progress": "Чуяккхар Прогресс",
+  "Overall progress": "Ерда Кхиаралдар",
+  "Completed": "Чакхйаьккха",
+  "Failed": "Кхоачамбоацар",
+  "({count} failed": "({count} ца хиннад",
+  "({count} in progress)": "({count}) Дувцаш латт"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "A' cur a-steach...",
   "Password": "Facal-Faire",
   "Submit": "Cuir A-steach",
-  "OK": "Ceart Gu Leor",
+  "OK": "Ceart Gu Leòr",
   "Link Only": "Ceangal A-mhàin",
   "View Album Photos": "Seall Dealbhan An Albanam",
   "Enter Username": "Cuir A-steach Ainm-cleachdaiche",
   "Select Username": "Tagh Ainm-cleachdaiche",
-  "Add Random Digits to Username": "Cuir Àireamhan Thuaireamach Ris An Ainm-cleachdaiche"
+  "Add Random Digits to Username": "Cuir Àireamhan Thuaireamach Ris An Ainm-cleachdaiche",
+  "Enter your email so {ownerName} can see who accessed their album": "Cuir A-steach An T-post-d Agad Gus Am Faic {ownerName} Cò Sheall Air An Albam Aca",
+  "Complete": "Coileanta",
+  "Processing": "Giullachd",
+  "Uploading": "A' luchdadh suas",
+  "Cancel Upload": "Sguir De Luchdadh Suas",
+  "Upload progress": "Adhartas Luchdadh Suas",
+  "Overall progress": "Adhartas Iomlan",
+  "Completed": "Crìochnaichte",
+  "Failed": "Dh'fhàillig",
+  "({count} failed": "({count} dh'fhàillig",
+  "({count} in progress)": "({count}) A' Dèanamh Adhartais"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Στέλκεται...",
   "Password": "Κωδικόν",
   "Submit": "Στείλον",
-  "OK": "Καλόν",
+  "OK": "Καλά",
   "Link Only": "Μόνον Σύνδεσμον",
   "View Album Photos": "Τερέστεν Τη Φωτογραφίας Τη Άλμπουμ",
   "Enter Username": "Βάλον Όνεμαν Χρήστε",
   "Select Username": "Επίλεξον Όνεμαν Χρήστε",
-  "Add Random Digits to Username": "Πρόσθεστε Τυχαίους Αριθμούς Ση Χρήστη Ονέματα"
+  "Add Random Digits to Username": "Πρόσθεστε Τυχαίους Αριθμούς Ση Χρήστη Ονέματα",
+  "Enter your email so {ownerName} can see who accessed their album": "Νιγράψον Το Email Εσούν Για Να {ownerName} Τερεί Ποίος Εμπήκεν Σο Άλμπουμν Ατούν",
+  "Complete": "Πλήρες",
+  "Processing": "Επεξεργασία",
+  "Uploading": "Φορτώνει",
+  "Cancel Upload": "Ακύρωσον Φόρτωμαν",
+  "Upload progress": "Ανέβασμαν Πρόοδον",
+  "Overall progress": "Όλον Ανέβασμαν",
+  "Completed": "Ετελέθεν",
+  "Failed": "Αποτυχία",
+  "({count} failed": "({count} κὶ επέτυχεν",
+  "({count} in progress)": "({count}) Σα Εξέλιξη"
 }

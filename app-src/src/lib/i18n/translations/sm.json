@@ -142,10 +142,21 @@
   "Submitting...": "Fa'aauina...",
   "Password": "Numera E Le Iloa E Sesi",
   "Submit": "Auina",
-  "OK": "Lelei",
+  "OK": "Ua Lelei",
   "Link Only": "Na'o Fesoota'i",
   "View Album Photos": "Va'ai Ata O Le Tusi Fa'amaumau",
   "Enter Username": "Tusi Lou Igoa Fa'aoga",
   "Select Username": "Filifili Igoa Fa'aoga",
-  "Add Random Digits to Username": "Fa'apipii Numera Fa'afuase'i i le Suafa Fa'aoga"
+  "Add Random Digits to Username": "Fa'apipii Numera Fa'afuase'i i le Suafa Fa'aoga",
+  "Enter your email so {ownerName} can see who accessed their album": "Faaulu Lou Imeli Ina Ia Mafai E {ownerName} Ona Vaai Po O Ai Na Maimoa I La Latou Api",
+  "Complete": "Atoa",
+  "Processing": "Fa'agaoioiga",
+  "Uploading": "Fa'aupega",
+  "Cancel Upload": "Faaleaoga Le Uploadina",
+  "Upload progress": "Fa'asologa O Le Fa'aupega",
+  "Overall progress": "Alualu I Luma Atoa",
+  "Completed": "Mae'a",
+  "Failed": "Ua Le Manuia",
+  "({count} failed": "({count} ua le manuia",
+  "({count} in progress)": "({count}) Sologa"
 }

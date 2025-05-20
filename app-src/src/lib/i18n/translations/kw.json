@@ -147,5 +147,16 @@
   "View Album Photos": "Gwel Skeusenys An Albom",
   "Enter Username": "Gorrewgh Hanow Devnydhyer",
   "Select Username": "Dewis Hanow Devnydhyer",
-  "Add Random Digits to Username": "Keworra Dyghtow Random Dhe Hanow Devnydhyer"
+  "Add Random Digits to Username": "Keworra Dyghtow Random Dhe Hanow Devnydhyer",
+  "Enter your email so {ownerName} can see who accessed their album": "Entra Dha Ebost Rag {ownerName} Dhe Allos Gweles Pyv Re Dhevnyhas Aga Album",
+  "Complete": "Kowlwys",
+  "Processing": "Processya",
+  "Uploading": "Ughkarga",
+  "Cancel Upload": "Diles Ughwethas",
+  "Upload progress": "Spedya Avonsyans",
+  "Overall progress": "Avonsyans Ollgemmyn",
+  "Completed": "Gorfennys",
+  "Failed": "Whyrvys",
+  "({count} failed": "({count} fellys",
+  "({count} in progress)": "({count}) Ow Mos"
 }

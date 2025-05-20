@@ -147,5 +147,16 @@
   "View Album Photos": "Assilisat Albumimi Isiginiarit",
   "Enter Username": "Atorfiup Aqqa Allaguk",
   "Select Username": "Atorneqartup Aqqa Toqqaruk",
-  "Add Random Digits to Username": "Atuisuusumut Nalunaartaasat Ilanngullugit"
+  "Add Random Digits to Username": "Atuisuusumut Nalunaartaasat Ilanngullugit",
+  "Enter your email so {ownerName} can see who accessed their album": "Email-it Allaguk Taamaalilluni {ownerName} Takusinnaaniassammat Kina Albumimut Isersimanersoq",
+  "Complete": "Tamakkerlugu",
+  "Processing": "Suliarineqarneq",
+  "Uploading": "Nuisitsineq",
+  "Cancel Upload": "Qaqitsigit Ikisaat",
+  "Upload progress": "Nuisinnera Ingerlavoq",
+  "Overall progress": "Tamakkiisumik Siuariarneq",
+  "Completed": "Naammassineqartoq",
+  "Failed": "Iluitsumik",
+  "({count} failed": "({count} iluatsinngilaq",
+  "({count} in progress)": "({count}) Ingerlariarpoq"
 }

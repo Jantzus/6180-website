@@ -142,10 +142,21 @@
   "Submitting...": "Qed jibgħat...",
   "Password": "Password",
   "Submit": "Ibgħat",
-  "OK": "Sew",
+  "OK": "Kollox Sew",
   "Link Only": "Link Biss",
   "View Album Photos": "Ara Ritratti Tal-Album",
   "Enter Username": "Daħħal Isem L-Utent",
   "Select Username": "Agħżel Isem l-Utent",
-  "Add Random Digits to Username": "Żid Numri Każwali Mal-Isem Tal-Utent"
+  "Add Random Digits to Username": "Żid Numri Każwali Mal-Isem Tal-Utent",
+  "Enter your email so {ownerName} can see who accessed their album": "Daħħal L-Indirizz Elettroniku Tiegħek Sabiex {ownerName} Ikun Jista' Jara Min Aċċessa L-Album Tagħhom",
+  "Complete": "Komplut",
+  "Processing": "Proċessar",
+  "Uploading": "Tniżżil 'il fuq",
+  "Cancel Upload": "Ikkanċella Tniżżil",
+  "Upload progress": "Progress Ta' Tlugħ",
+  "Overall progress": "Progress Ġenerali",
+  "Completed": "Kompletati",
+  "Failed": "Falla",
+  "({count} failed": "({count} falla",
+  "({count} in progress)": "({count}) Fil-Progress"
 }

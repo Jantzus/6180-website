@@ -142,10 +142,21 @@
   "Submitting...": "འབུལ་བཞིན་པ།...",
   "Password": "གསང་ཚིག",
   "Submit": "ཕུལ་བ།",
-  "OK": "Yag Po Red",
+  "OK": "ལགས་སོ།",
   "Link Only": "སྦྲེལ་མཐུད་ཁོ་ན།",
   "View Album Photos": "པར་ཁུག་འདྲ་པར་ལ་གཟིགས།",
   "Enter Username": "སྤྱོད་མཁན་མིང་འཇུག་རོགས།",
   "Select Username": "སྤྱོད་མིའི་མིང་འདེམས་པ།",
-  "Add Random Digits to Username": "སྤྱོད་མཁན་མིང་ལ་གང་བྱུང་ཨང་ཀི་སྣོན།"
+  "Add Random Digits to Username": "སྤྱོད་མཁན་མིང་ལ་གང་བྱུང་ཨང་ཀི་སྣོན།",
+  "Enter your email so {ownerName} can see who accessed their album": "ཁྱེད་ཀྱི་གློག་འཕྲིན་ནང་འཇུག་བྱོས་དེ་ནས་ {ownerName} ཀྱིས་སུས་ཁོང་ཚོའི་གླུ་ཚོམས་ལ་བལྟས་པ་མཐོང་ཐུབ།",
+  "Complete": "ཆ་ཚང་",
+  "Processing": "བཀོལ་སྤྱོད་བྱེད་པ།",
+  "Uploading": "ཡར་འཇོག་བཞིན་པ་",
+  "Cancel Upload": "སྐྱེལ་འཇོག་དོར་བ།",
+  "Upload progress": "ཡར་འཇུག་ཤུགས་སྐྱེད།",
+  "Overall progress": "སྤྱི་ཡོངས་ཡར་རྒྱས།",
+  "Completed": "མཇུག་སྒྲིལ་བ།",
+  "Failed": "ཕམ་པ།",
+  "({count} failed": "({count} ཕམ་པ།",
+  "({count} in progress)": "({count}) བསྒྲུབ་བཞིན་པ།"
 }

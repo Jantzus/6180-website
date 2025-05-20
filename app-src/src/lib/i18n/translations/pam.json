@@ -142,10 +142,21 @@
   "Submitting...": "Magdala...",
   "Password": "Password",
   "Submit": "Ipadala",
-  "OK": "Mayap",
+  "OK": "Okey",
   "Link Only": "Mung Suglung",
   "View Album Photos": "Lawen La Reng Letrato Album",
   "Enter Username": "Ipalub Ya Ing Lagyung Talagamit",
   "Select Username": "Mili Lagyu",
-  "Add Random Digits to Username": "Dagdagan Karinan Larawan Keng Lagyu"
+  "Add Random Digits to Username": "Dagdagan Karinan Larawan Keng Lagyu",
+  "Enter your email so {ownerName} can see who accessed their album": "Ipakit Ye Ing Email Yu Ban {ownerName} Akit Ne Nung Ninu Ing Menakit King Album Da",
+  "Complete": "Kompleto",
+  "Processing": "Pamangaproseso",
+  "Uploading": "Maglulan",
+  "Cancel Upload": "I-kansel Ing Pag-upload",
+  "Upload progress": "Pamagsulung Ning Pamaglulan",
+  "Overall progress": "Kabuuan Ning Pagyabong",
+  "Completed": "Kumpletu",
+  "Failed": "Mengapigul",
+  "({count} failed": "({count} mebigo",
+  "({count} in progress)": "({count}) King Pamaglakad"
 }

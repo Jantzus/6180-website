@@ -142,10 +142,21 @@
   "Submitting...": "正在提交...",
   "Password": "密碼",
   "Submit": "遞交",
-  "OK": "Hō",
+  "OK": "好",
   "Link Only": "單單鏈接",
   "View Album Photos": "看相册照片",
   "Enter Username": "輸儂其用戶名",
   "Select Username": "Gāi Ê̤ṳng-hô Miàng",
-  "Add Random Digits to Username": "Gă Uòng-Miàng Gă-Diòng Sṳ̆k-ê̤ṳ Só-cī"
+  "Add Random Digits to Username": "Gă Uòng-Miàng Gă-Diòng Sṳ̆k-ê̤ṳ Só-cī",
+  "Enter your email so {ownerName} can see who accessed their album": "粘聰汝其Email固磨 {ownerName} 愛會看見誰進紮伊各相册",
+  "Complete": "完成",
+  "Processing": "處理",
+  "Uploading": "上传中",
+  "Cancel Upload": "取消上傳",
+  "Upload progress": "上傳進度",
+  "Overall progress": "總體進度",
+  "Completed": "完成嘞",
+  "Failed": "失敗",
+  "({count} failed": "({count} 失敗囉",
+  "({count} in progress)": "({count}) 進行中"
 }

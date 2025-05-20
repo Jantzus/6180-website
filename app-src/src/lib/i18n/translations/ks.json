@@ -142,10 +142,21 @@
   "Submitting...": "بیجھنٕہ چُھس...",
   "Password": "پاس وَرڈ",
   "Submit": "جَمٲ کَرؠو",
-  "OK": "Ṭhīka Che",
+  "OK": "ٹھیٖک",
   "Link Only": "صِرُف لِنک",
   "View Album Photos": "اَلبَم فوٗٹو وُچھِو",
   "Enter Username": "صارف ناو درٕج کٔرِیو",
   "Select Username": "یوزَر نیٔو چُنُو",
-  "Add Random Digits to Username": "یوزَر نیوُک منٛز رینڈَم ڈِجِٹ شٲمِل کَرؠو"
+  "Add Random Digits to Username": "یوزَر نیوُک منٛز رینڈَم ڈِجِٹ شٲمِل کَرؠو",
+  "Enter your email so {ownerName} can see who accessed their album": "تہٕ ایمیل داخل کٔرِو تاکہ {ownerName} ہٮ۪کَو وُچھنٕہ یێکُو تٔمٕچ آلبم کٕہ ڈِٹھمٕت چھِ",
+  "Complete": "مُکَمَل",
+  "Processing": "پروسیسِنگ",
+  "Uploading": "اپلوڈ كَرٕنؠ",
+  "Cancel Upload": "اَپلوڑ مَنسوٗخ کَرؠو",
+  "Upload progress": "اپلوڈ ترقی",
+  "Overall progress": "مُکَمَل تَرقی",
+  "Completed": "مکمل",
+  "Failed": "ناکام",
+  "({count} failed": "({count} ناکام",
+  "({count} in progress)": "({count}) تَرقی مَنٛز"
 }

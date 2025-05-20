@@ -142,10 +142,21 @@
   "Submitting...": "Ngirimi...",
   "Password": "Sandi",
   "Submit": "Kirim",
-  "OK": "Nggih",
+  "OK": "OK",
   "Link Only": "Pranala Wae",
   "View Album Photos": "Deleng Foto Album",
   "Enter Username": "Lebokna Jeneng Panganggo",
   "Select Username": "Pilih Jeneng Panganggo",
-  "Add Random Digits to Username": "Tambahke Angka Acak Neng Jeneng Panganggo"
+  "Add Random Digits to Username": "Tambahke Angka Acak Neng Jeneng Panganggo",
+  "Enter your email so {ownerName} can see who accessed their album": "Lebokna Email Panjenengan Supaya {ownerName} Bisa Ndeleng Sapa Sing Ngakses Album Dhèwèké",
+  "Complete": "Lengkap",
+  "Processing": "Pangolahan",
+  "Uploading": "Ngunggah",
+  "Cancel Upload": "Batal Unggah",
+  "Upload progress": "Kamajuan Unggah",
+  "Overall progress": "Kamajuan Sakabèhé",
+  "Completed": "Rampung",
+  "Failed": "Gagal",
+  "({count} failed": "({count} gagal",
+  "({count} in progress)": "({count}) Ing Proses"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Vide Imagines Albuminis",
   "Enter Username": "Insere Nomen Utentis",
   "Select Username": "Eligere Nomen Usoris",
-  "Add Random Digits to Username": "Adde Numeros Fortuitos Ad Nomen Usoris"
+  "Add Random Digits to Username": "Adde Numeros Fortuitos Ad Nomen Usoris",
+  "Enter your email so {ownerName} can see who accessed their album": "Inscribe Tuum Cursum Electronicum Ut {ownerName} Videre Possit Quis Eorum Album Adiverit",
+  "Complete": "Perfectum",
+  "Processing": "Tractatio",
+  "Uploading": "Onerans",
+  "Cancel Upload": "Submittere Abrogare",
+  "Upload progress": "Progressio Transmissionis",
+  "Overall progress": "Universus Progressus",
+  "Completed": "Complebitur",
+  "Failed": "Defecit",
+  "({count} failed": "({count} defectum",
+  "({count} in progress)": "({count}) In Profectum"
 }

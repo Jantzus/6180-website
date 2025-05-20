@@ -147,5 +147,16 @@
   "View Album Photos": "Альбом Чуруктарын Көөр",
   "Enter Username": "Ажыглакчының Адын Киирер",
   "Select Username": "Ажыглакчының Адын Шилиңер",
-  "Add Random Digits to Username": "Ажыглакчы Адынга Душкан Саннарны Немээр"
+  "Add Random Digits to Username": "Ажыглакчы Адынга Душкан Саннарны Немээр",
+  "Enter your email so {ownerName} can see who accessed their album": "Силерниң Электроннуг Шуудаңарны Киириңер, {ownerName} Оларның Альбомунче Кым Кирген Деп Көрзүн",
+  "Complete": "Дѳѳзүлген",
+  "Processing": "Ажылдаары",
+  "Uploading": "Чүдүрүп турар",
+  "Cancel Upload": "Чүдүрери Ыжыр",
+  "Upload progress": "Чүдүрүлгениң Депшилгези",
+  "Overall progress": "Ниити Бурунгаарлаашкын",
+  "Completed": "Доозулган",
+  "Failed": "Чедип Албаан",
+  "({count} failed": "({count} чедимче чок",
+  "({count} in progress)": "({count}) Чоруп Турар"
 }

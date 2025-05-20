@@ -147,5 +147,16 @@
   "View Album Photos": "Deleng Foto Album",
   "Enter Username": "Lebokna Jeneng Panganggo",
   "Select Username": "Pilih Jeneng Pengguna",
-  "Add Random Digits to Username": "Nambahna Angka Acak Nang Jeneng Pengguna"
+  "Add Random Digits to Username": "Nambahna Angka Acak Nang Jeneng Pengguna",
+  "Enter your email so {ownerName} can see who accessed their album": "Lebokna Email Rika Ben {ownerName} Bisa Ndeleng Sapa Sing Ngakses Album Dheweke",
+  "Complete": "Lengkap",
+  "Processing": "Pemrosesan",
+  "Uploading": "Ngunggah",
+  "Cancel Upload": "Batal Ngunggah",
+  "Upload progress": "Kemajuan Unggah",
+  "Overall progress": "Kemajuan Total",
+  "Completed": "Rampung",
+  "Failed": "Gagal",
+  "({count} failed": "({count} gagal",
+  "({count} in progress)": "({count}) Lagi Mlaku"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Ipinapadala...",
   "Password": "Password",
   "Submit": "Isumite",
-  "OK": "Sige",
+  "OK": "OK",
   "Link Only": "Link Lamang",
   "View Album Photos": "Tingnan Ang Mga Larawan Ng Album",
   "Enter Username": "Ilagay Ang Pangalan Ng Gumagamit",
   "Select Username": "Pumili ng Pangalan ng Gumagamit",
-  "Add Random Digits to Username": "Magdagdag Ng Mga Random Na Digit Sa Username"
+  "Add Random Digits to Username": "Magdagdag Ng Mga Random Na Digit Sa Username",
+  "Enter your email so {ownerName} can see who accessed their album": "Ilagay Ang Iyong Email Upang Makita Ni {ownerName} Kung Sino Ang Nag-access Sa Kanilang Album",
+  "Complete": "Kumpleto",
+  "Processing": "Pagproseso",
+  "Uploading": "Nag-a-upload",
+  "Cancel Upload": "Kanselahin Ang Pag-upload",
+  "Upload progress": "Progreso Ng Pag-upload",
+  "Overall progress": "Pangkalahatang Pag-unlad",
+  "Completed": "Nakumpleto",
+  "Failed": "Nabigo",
+  "({count} failed": "({count} nabigo",
+  "({count} in progress)": "({count}) Isinasagawa"
 }

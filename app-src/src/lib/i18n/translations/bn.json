@@ -142,10 +142,21 @@
   "Submitting...": "জমা দেওয়া হচ্ছে...",
   "Password": "পাসওয়ার্ড",
   "Submit": "জমা দিন",
-  "OK": "Ṭhika Āchē",
+  "OK": "ঠিক আছে",
   "Link Only": "শুধু লিঙ্ক",
   "View Album Photos": "অ্যালবাম ছবি দেখুন",
   "Enter Username": "ব্যবহারকারীর নাম লিখুন",
   "Select Username": "ব্যবহারকারী নাম নির্বাচন করুন",
-  "Add Random Digits to Username": "ব্যবহারকারীর নামে এলোমেলো সংখ্যা যোগ করুন"
+  "Add Random Digits to Username": "ব্যবহারকারীর নামে এলোমেলো সংখ্যা যোগ করুন",
+  "Enter your email so {ownerName} can see who accessed their album": "আপনার ইমেইল লিখুন যাতে {ownerName} দেখতে পারেন কে তাদের অ্যালবাম অ্যাক্সেস করেছে",
+  "Complete": "সম্পূর্ণ",
+  "Processing": "প্রক্রিয়াকরণ",
+  "Uploading": "আপলোড করা হচ্ছে",
+  "Cancel Upload": "আপলোড বাতিল করুন",
+  "Upload progress": "আপলোড অগ্রগতি",
+  "Overall progress": "সামগ্রিক অগ্রগতি",
+  "Completed": "সম্পন্ন",
+  "Failed": "ব্যর্থ হয়েছে",
+  "({count} failed": "({count} ব্যর্থ হয়েছে",
+  "({count} in progress)": "({count}) চলমান"
 }

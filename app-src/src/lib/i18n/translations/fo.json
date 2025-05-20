@@ -147,5 +147,16 @@
   "View Album Photos": "Hygg Myndasavn Myndir",
   "Enter Username": "Skriva Brúkaranavn",
   "Select Username": "Vel Brúkaranavn",
-  "Add Random Digits to Username": "Legg Tilvildarligar Tøl Afturat Brúkaranavninum"
+  "Add Random Digits to Username": "Legg Tilvildarligar Tøl Afturat Brúkaranavninum",
+  "Enter your email so {ownerName} can see who accessed their album": "Far Inn Telduposti Títt So {ownerName} Kann Síggja Hvør Hevur Tikið Atgongd Til Teirra Album",
+  "Complete": "Fullførur",
+  "Processing": "Viðgerð",
+  "Uploading": "Uppsenda",
+  "Cancel Upload": "Ógilda Upptøku",
+  "Upload progress": "Uppsetan Framgongd",
+  "Overall progress": "Samlaður Framburður",
+  "Completed": "Liðugt",
+  "Failed": "Miseydnaðist",
+  "({count} failed": "({count} miseydnaðist",
+  "({count} in progress)": "({count}) Í Gongd"
 }

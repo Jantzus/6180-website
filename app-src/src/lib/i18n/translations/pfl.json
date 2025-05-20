@@ -147,5 +147,16 @@
   "View Album Photos": "Album Bilder Ogugge",
   "Enter Username": "Benutzername Oigewe",
   "Select Username": "Benutzername Auswähle",
-  "Add Random Digits to Username": "Zufällischi Zahle Zum Benutzername Dezufiesche"
+  "Add Random Digits to Username": "Zufällischi Zahle Zum Benutzername Dezufiesche",
+  "Enter your email so {ownerName} can see who accessed their album": "Gebb Doi E-Mail Oi Domit {ownerName} Sähe Konn, Wer Uff Ihr Album Zugreife Hot",
+  "Complete": "Vollstännisch",
+  "Processing": "Verarbaidung",
+  "Uploading": "Hochlade",
+  "Cancel Upload": "Huchlaade Abbresche",
+  "Upload progress": "Hochlade Fortschritt",
+  "Overall progress": "Gesamt Fortschritt",
+  "Completed": "Abgschloss",
+  "Failed": "Gscheitert",
+  "({count} failed": "({count} gscheitert",
+  "({count} in progress)": "({count}) Em Gange"
 }

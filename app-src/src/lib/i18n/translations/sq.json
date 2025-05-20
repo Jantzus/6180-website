@@ -142,10 +142,21 @@
   "Submitting...": "Duke dërguar...",
   "Password": "Fjalëkalim",
   "Submit": "Dërgo",
-  "OK": "Mirë",
+  "OK": "Ne Rregull",
   "Link Only": "Vetëm Lidhje",
   "View Album Photos": "Shiko Fotot E Albumit",
   "Enter Username": "Vendos Emrin E Përdoruesit",
   "Select Username": "Zgjidh Emrin e Përdoruesit",
-  "Add Random Digits to Username": "Shto Shifra Të Rastësishme Te Emri I Përdoruesit"
+  "Add Random Digits to Username": "Shto Shifra Të Rastësishme Te Emri I Përdoruesit",
+  "Enter your email so {ownerName} can see who accessed their album": "Shkruani Emailin Tuaj Që {ownerName} Të Mund Të Shohë Se Kush Ka Hyrë Në Albumin E Tyre",
+  "Complete": "Plotë",
+  "Processing": "Përpunimi",
+  "Uploading": "Duke ngarkuar",
+  "Cancel Upload": "Anulo Ngarkimin",
+  "Upload progress": "Përparimi I Ngarkimit",
+  "Overall progress": "Përparim I Përgjithshëm",
+  "Completed": "Përfunduar",
+  "Failed": "Dështoi",
+  "({count} failed": "({count} dështoi",
+  "({count} in progress)": "({count}) Në Vazhdim"
 }

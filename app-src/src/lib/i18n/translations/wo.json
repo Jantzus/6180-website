@@ -147,5 +147,16 @@
   "View Album Photos": "Xool Nataal Yi Album",
   "Enter Username": "Dugalal Sa Tur",
   "Select Username": "Tànn Sa Tur Jëfandikukat",
-  "Add Random Digits to Username": "Yokk Lim Yu Sotti Ci Tur Jëfandikukat Bi"
+  "Add Random Digits to Username": "Yokk Lim Yu Sotti Ci Tur Jëfandikukat Bi",
+  "Enter your email so {ownerName} can see who accessed their album": "Dugalal Sa Email Ngir {ownerName} Mën Gis Kan Moo Juboo Ci Seen Album",
+  "Complete": "Mat",
+  "Processing": "Soppi",
+  "Uploading": "Di yeb",
+  "Cancel Upload": "Bayyi Yebi",
+  "Upload progress": "Jëm Ci Kanam Gi Yeb",
+  "Overall progress": "Doxalin Bi Lépp",
+  "Completed": "Jeexna",
+  "Failed": "Jàpp",
+  "({count} failed": "({count} doxul",
+  "({count} in progress)": "({count}) Jëm Ci Kanam"
 }

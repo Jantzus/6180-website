@@ -142,10 +142,21 @@
   "Submitting...": "Lähetetään...",
   "Password": "Salasana",
   "Submit": "Lähetä",
-  "OK": "Okei",
+  "OK": "OK",
   "Link Only": "Vain Linkki",
   "View Album Photos": "Näytä Albumin Kuvat",
   "Enter Username": "Syötä Käyttäjänimi",
   "Select Username": "Valitse Käyttäjätunnus",
-  "Add Random Digits to Username": "Lisää Satunnaisia Numeroita Käyttäjätunnukseen"
+  "Add Random Digits to Username": "Lisää Satunnaisia Numeroita Käyttäjätunnukseen",
+  "Enter your email so {ownerName} can see who accessed their album": "Syötä Sähköpostiosoitteesi, Jotta {ownerName} Voi Nähdä Ketkä Katsoivat Heidän Albuminsa",
+  "Complete": "Täydellinen",
+  "Processing": "Käsittely",
+  "Uploading": "Lataamassa",
+  "Cancel Upload": "Peruuta Lataus",
+  "Upload progress": "Lähetyksen Edistyminen",
+  "Overall progress": "Kokonaisedistyminen",
+  "Completed": "Valmiiksi",
+  "Failed": "Epäonnistui",
+  "({count} failed": "({count} epäonnistui",
+  "({count} in progress)": "({count}) Käynnissä"
 }

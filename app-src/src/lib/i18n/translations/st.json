@@ -147,5 +147,16 @@
   "View Album Photos": "Sheba Difoto Tsa Album",
   "Enter Username": "Kenya Lebitso La Mosebedisi",
   "Select Username": "Kgetha Lebitso la Mosebedisi",
-  "Add Random Digits to Username": "Kenya Dinomoro Tsa Nahanaha Lebitso La Sebelisi"
+  "Add Random Digits to Username": "Kenya Dinomoro Tsa Nahanaha Lebitso La Sebelisi",
+  "Enter your email so {ownerName} can see who accessed their album": "Kenya Imeili Ya Hao E Le Hore {ownerName} A Bone Hore Ke Mang Ya Kena Ho Albamo Ya Bona",
+  "Complete": "Felletseng",
+  "Processing": "Tshebetso",
+  "Uploading": "Ho laisa",
+  "Cancel Upload": "Hlakola Ho Kenyelletsa",
+  "Upload progress": "Tswellisopele Ya Ho Jarisa",
+  "Overall progress": "Katleho E Kaofela",
+  "Completed": "Phethiloe",
+  "Failed": "Hlolehile",
+  "({count} failed": "({count} e hlolehile",
+  "({count} in progress)": "({count}) E Mocheng"
 }

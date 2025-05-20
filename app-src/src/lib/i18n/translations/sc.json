@@ -147,5 +147,16 @@
   "View Album Photos": "Bìere Sas Fotogràfias De S'Album",
   "Enter Username": "Inserta Su Nòmine Utente",
   "Select Username": "Sèbera su Nùmene Utente",
-  "Add Random Digits to Username": "Annanghe Nùmeros A Casu A Su Nùmene Utente"
+  "Add Random Digits to Username": "Annanghe Nùmeros A Casu A Su Nùmene Utente",
+  "Enter your email so {ownerName} can see who accessed their album": "Inserta S'Indiritzu Email Tuo Pro Chi {ownerName} Potzat Bìere Chie At Atzesu A Su Album Issoro",
+  "Complete": "Cumpletau",
+  "Processing": "Protzessamentu",
+  "Uploading": "Carrighende",
+  "Cancel Upload": "Cancellare Carrigamentu",
+  "Upload progress": "Progressu De Carrigamentu",
+  "Overall progress": "Progressu Generale",
+  "Completed": "Cumpletau",
+  "Failed": "Fallidu",
+  "({count} failed": "({count} faddidu",
+  "({count} in progress)": "({count}) In Cursu"
 }

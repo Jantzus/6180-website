@@ -142,10 +142,21 @@
   "Submitting...": "Seni...",
   "Password": "Paswortu",
   "Submit": "Seni",
-  "OK": "Bun",
+  "OK": "A Bun",
   "Link Only": "Soso Link",
   "View Album Photos": "Luku Album Prenki",
   "Enter Username": "Poti Yu Nemre",
   "Select Username": "Teki Gebruikernaam",
-  "Add Random Digits to Username": "Poti Nomru Sondro Pipel Na Yu Nen"
+  "Add Random Digits to Username": "Poti Nomru Sondro Pipel Na Yu Nen",
+  "Enter your email so {ownerName} can see who accessed their album": "Poti Yu Email So {ownerName} Kan Si Suma Ben Luku Den Album",
+  "Complete": "Kompleti",
+  "Processing": "Puwosesi",
+  "Uploading": "Poti",
+  "Cancel Upload": "Kanseri Upload",
+  "Upload progress": "Upload Progressie",
+  "Overall progress": "Algehele Makti",
+  "Completed": "Klari",
+  "Failed": "Fadon",
+  "({count} failed": "({count} fadon",
+  "({count} in progress)": "({count}) E Waka Go"
 }

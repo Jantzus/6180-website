@@ -142,10 +142,21 @@
   "Submitting...": "पेश गर्दै...",
   "Password": "पासवर्ड",
   "Submit": "पेश गर्नुहोस्",
-  "OK": "Ṭhika Cha",
+  "OK": "ठिक छ",
   "Link Only": "लिङ्क मात्र",
   "View Album Photos": "एल्बम फोटोहरू हेर्नुहोस्",
   "Enter Username": "प्रयोगकर्ता नाम प्रविष्ट गर्नुहोस्",
   "Select Username": "प्रयोगकर्ता नाम चयन गर्नुहोस्",
-  "Add Random Digits to Username": "प्रयोगकर्ता नाममा यादृच्छिक अङ्कहरू थप्नुहोस्"
+  "Add Random Digits to Username": "प्रयोगकर्ता नाममा यादृच्छिक अङ्कहरू थप्नुहोस्",
+  "Enter your email so {ownerName} can see who accessed their album": "तपाईंको इमेल प्रविष्ट गर्नुहोस् ताकि {ownerName} ले उनीहरूको एल्बममा कसले पहुँच गरेको छ भनेर हेर्न सकून्",
+  "Complete": "पूर्ण",
+  "Processing": "प्रशोधन",
+  "Uploading": "अपलोड गर्दै",
+  "Cancel Upload": "अपलोड रद्द गर्नुहोस्",
+  "Upload progress": "अपलोड प्रगति",
+  "Overall progress": "समग्र प्रगति",
+  "Completed": "पूरा भयो",
+  "Failed": "असफल",
+  "({count} failed": "({count} असफल भयो",
+  "({count} in progress)": "({count}) प्रगतिमा"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Ыытыы...",
   "Password": "Киирии Тыла",
   "Submit": "Ыыт",
-  "OK": "Үчүгэй",
+  "OK": "Сөп",
   "Link Only": "Эрэ Ситим",
   "View Album Photos": "Альбом Хаартыскаларын Көрүү",
   "Enter Username": "Туһанааччы Аатын Киллэр",
   "Select Username": "Туһанааччы Аатын Талыҥ",
-  "Add Random Digits to Username": "Туһаныааччы Аатыгар Түбэспиччэ Ахсааннары Эбии"
+  "Add Random Digits to Username": "Туһаныааччы Аатыгар Түбэспиччэ Ахсааннары Эбии",
+  "Enter your email so {ownerName} can see who accessed their album": "Электроннай Почтаҕын Киллэр {ownerName} Кимтэн Кинилэр Альбомнарыгар Киирбитин Көрөрүн Туһугар",
+  "Complete": "Толору",
+  "Processing": "Обработка",
+  "Uploading": "Киллэрии",
+  "Cancel Upload": "Киллэрии Тохтот",
+  "Upload progress": "Киллэрии Прогресса",
+  "Overall progress": "Барыта Инники Хардыы",
+  "Completed": "Түмүктэммит",
+  "Failed": "Сатаммата",
+  "({count} failed": "({count} сатаммата",
+  "({count} in progress)": "({count}) Ыытыллан Эрэр"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "ಸಲ್ಲಿಸುತ್ತಿದೆ...",
   "Password": "ಗುಪ್ತಪದ",
   "Submit": "ಸಲ್ಲಿಸು",
-  "OK": "Sari",
+  "OK": "ಸರಿ",
   "Link Only": "ಲಿಂಕ್ ಮಾತ್ರ",
   "View Album Photos": "ಆಲ್ಬಮ್ ಫೋಟೋಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
   "Enter Username": "ಬಳಕೆದಾರ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
   "Select Username": "ಬಳಕೆದಾರ ಹೆಸರನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-  "Add Random Digits to Username": "ಬಳಕೆದಾರ ಹೆಸರಿಗೆ ಯಾದೃಚ್ಛಿಕ ಅಂಕೆಗಳನ್ನು ಸೇರಿಸಿ"
+  "Add Random Digits to Username": "ಬಳಕೆದಾರ ಹೆಸರಿಗೆ ಯಾದೃಚ್ಛಿಕ ಅಂಕೆಗಳನ್ನು ಸೇರಿಸಿ",
+  "Enter your email so {ownerName} can see who accessed their album": "ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ ಇದರಿಂದ {ownerName} ಯಾರು ಅವರ ಆಲ್ಬಮ್ ಅನ್ನು ಪ್ರವೇಶಿಸಿದರು ಎಂಬುದನ್ನು ನೋಡಬಹುದು",
+  "Complete": "ಸಂಪೂರ್ಣ",
+  "Processing": "ಸಂಸ್ಕರಣೆ",
+  "Uploading": "ಅಪ್‌ಲೋಡ್ ಮಾಡುತ್ತಿದೆ",
+  "Cancel Upload": "ಅಪ್‌ಲೋಡ್ ರದ್ದುಮಾಡಿ",
+  "Upload progress": "ಅಪ್‌ಲೋಡ್ ಪ್ರಗತಿ",
+  "Overall progress": "ಒಟ್ಟಾರೆ ಪ್ರಗತಿ",
+  "Completed": "ಪೂರ್ಣಗೊಂಡಿದೆ",
+  "Failed": "ವಿಫಲವಾಗಿದೆ",
+  "({count} failed": "({count} ವಿಫಲವಾಗಿದೆ",
+  "({count} in progress)": "({count}) ಪ್ರಗತಿಯಲ್ಲಿದೆ"
 }

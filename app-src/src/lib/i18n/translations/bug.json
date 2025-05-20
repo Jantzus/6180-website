@@ -147,5 +147,16 @@
   "View Album Photos": "Jokka Gambar Album",
   "Enter Username": "Pattamai Asenna Pattama",
   "Select Username": "Pilei Aseng Pakkui",
-  "Add Random Digits to Username": "Tamahakangï Nomoro Acak Ko Aseng Pakkui"
+  "Add Random Digits to Username": "Tamahakangï Nomoro Acak Ko Aseng Pakkui",
+  "Enter your email so {ownerName} can see who accessed their album": "Timpai Email-mu Kuwammengngi {ownerName} Wedding Mitai Niga Mabbuka Albumna",
+  "Complete": "Lengkap",
+  "Processing": "Pangolahan",
+  "Uploading": "Mangundui",
+  "Cancel Upload": "Batallaki Unggâ",
+  "Upload progress": "Kemajuan Unggah",
+  "Overall progress": "Kamaenrekan Seluruhna",
+  "Completed": "Pura",
+  "Failed": "Gagal",
+  "({count} failed": "({count} gagal",
+  "({count} in progress)": "({count}) Ri Jappa"
 }

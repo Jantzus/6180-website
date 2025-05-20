@@ -142,10 +142,21 @@
   "Submitting...": "Am Sende...",
   "Password": "Passwort",
   "Submit": "Absenden",
-  "OK": "Ok",
+  "OK": "In Ordning",
   "Link Only": "Nur Link",
   "View Album Photos": "Album Fotis Aaluege",
   "Enter Username": "Benutzername Iigee",
   "Select Username": "Benutzername Wähle",
-  "Add Random Digits to Username": "Zuefälligi Zaahle Zum Benutzername Hinzuefüege"
+  "Add Random Digits to Username": "Zuefälligi Zaahle Zum Benutzername Hinzuefüege",
+  "Enter your email so {ownerName} can see who accessed their album": "Gib Di Email I, Damit {ownerName} Gsee Cha, Wer Uf Ieres Album Zuegriffe Het",
+  "Complete": "Vollständig",
+  "Processing": "Verarbeitig",
+  "Uploading": "Am uffelade",
+  "Cancel Upload": "Ufelade Abbräche",
+  "Upload progress": "Uflade Fortschritt",
+  "Overall progress": "Allgemeine Fortschritte",
+  "Completed": "Abgschlosse",
+  "Failed": "Gscheiteret",
+  "({count} failed": "({count} gfehlt",
+  "({count} in progress)": "({count}) Im Gange"
 }

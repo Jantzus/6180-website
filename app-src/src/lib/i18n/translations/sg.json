@@ -142,10 +142,21 @@
   "Submitting...": "Tongana...",
   "Password": "Mbuk Ti Nduru",
   "Submit": "Tö",
-  "OK": "Nzoni",
+  "OK": "Mbï",
   "Link Only": "Ka Tënë Gbä",
   "View Album Photos": "Bâa Foto Ti Album",
   "Enter Username": "Ga Îta Mbëtï Mû-Soro",
   "Select Username": "Soro Iri ti Môlengê",
-  "Add Random Digits to Username": "Töngia Nimero Ti Ngombé Na Iri Ti Lo-sara"
+  "Add Random Digits to Username": "Töngia Nimero Ti Ngombé Na Iri Ti Lo-sara",
+  "Enter your email so {ownerName} can see who accessed their album": "Leke Mbeti Sô Na Internet Ti Mo Si {ownerName} Lingbi Ti Bâ Zo So Gue Na Album Ti Ala",
+  "Complete": "Mbilimbili",
+  "Processing": "Kpengba-ndo",
+  "Uploading": "Mû na ndö",
+  "Cancel Upload": "Gbanzara Hindabe",
+  "Upload progress": "Gbundulî Na Ndö",
+  "Overall progress": "Gango Ti Kozo",
+  "Completed": "Awe",
+  "Failed": "Ayeke Pëpe",
+  "({count} failed": "({count} ayeke ape",
+  "({count} in progress)": "({count}) A-Gue Na Kozo"
 }

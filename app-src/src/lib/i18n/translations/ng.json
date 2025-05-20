@@ -147,5 +147,16 @@
   "View Album Photos": "Tala Oufano Owoshanyangwa",
   "Enter Username": "Tyapa Edhina Lyomukwanishi",
   "Select Username": "Ketilamo Nakulonga",
-  "Add Random Digits to Username": "Gwedha Nomola Dho Yukilwa Komuntu"
+  "Add Random Digits to Username": "Gwedha Nomola Dho Yukilwa Komuntu",
+  "Enter your email so {ownerName} can see who accessed their album": "Tyapula Email Yoye Opo {ownerName} Ta Vulu Ku Mona Olye Tala Album Yawo",
+  "Complete": "Eyapupala",
+  "Processing": "Processing",
+  "Uploading": "Ta tulumba",
+  "Cancel Upload": "Edhima Upload",
+  "Upload progress": "Eyi Ombili Etungo",
+  "Overall progress": "Ongeyo Etango",
+  "Completed": "Sha Mana",
+  "Failed": "Ya kala po",
+  "({count} failed": "({count} hinangula nawa",
+  "({count} in progress)": "({count}) Ta Guduma"
 }

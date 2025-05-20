@@ -142,10 +142,21 @@
   "Submitting...": "Benji...",
   "Password": "javni",
   "Submit": "krasi",
-  "OK": "Zabna",
+  "OK": "xamgu",
   "Link Only": "pagbu po'o",
   "View Album Photos": "viska lo pixra be lo selmapti",
   "Enter Username": "ciska lo plicme",
   "Select Username": "cuxna pilno namcu",
-  "Add Random Digits to Username": "jmina cunki namcu fi lo se pilno cmene"
+  "Add Random Digits to Username": "jmina cunki namcu fi lo se pilno cmene",
+  "Enter your email so {ownerName} can see who accessed their album": "ko tcidu lo do samjudri te zu'e lo {ownerName} ku ka kakne lo ka zgana lo du'u ma kau zvati lo sanga girzu",
+  "Complete": "Mulno",
+  "Processing": "ciste",
+  "Uploading": "calseveikri",
+  "Cancel Upload": "dicra benji",
+  "Upload progress": "Barkle Prugresgo",
+  "Overall progress": "mulno ka jimpe",
+  "Completed": "Mulno",
+  "Failed": "fliba",
+  "({count} failed": "({count} fliba",
+  "({count} in progress)": "({count}) Ca Cadzu"
 }

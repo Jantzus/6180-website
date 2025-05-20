@@ -147,5 +147,16 @@
   "View Album Photos": "Kae Albumi Pilte",
   "Enter Username": "Panõq Pruukjannimi",
   "Select Username": "Valiq Pruukjannimi",
-  "Add Random Digits to Username": "Panõq Johuslikuq Numbri Pruukjanumbrõ Mano"
+  "Add Random Digits to Username": "Panõq Johuslikuq Numbri Pruukjanumbrõ Mano",
+  "Enter your email so {ownerName} can see who accessed their album": "Panõq Umaq E-posti Aadrõs, Et {ownerName} Saasiq Nätäq, Kiä Om Nähnüq Näide Albummit",
+  "Complete": "Täüslik",
+  "Processing": "Tüütlemine",
+  "Uploading": "Üleslaadmine",
+  "Cancel Upload": "Tühüsta Üleslaadiminõ",
+  "Upload progress": "Üleslaadimisõ Edenemine",
+  "Overall progress": "Üldine Edenemisõ",
+  "Completed": "Lõpetõt",
+  "Failed": "Läts' Viltu",
+  "({count} failed": "({count} läts viltu",
+  "({count} in progress)": "({count}) Pooleli"
 }

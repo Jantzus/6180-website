@@ -142,10 +142,21 @@
   "Submitting...": "సమర్పిస్తోంది...",
   "Password": "పాస్వర్డ్",
   "Submit": "సమర్పించు",
-  "OK": "Sarē",
+  "OK": "అలాగే",
   "Link Only": "లింక్ మాత్రమే",
   "View Album Photos": "ఆల్బమ్ ఫోటోలను వీక్షించండి",
   "Enter Username": "వాడుకరి పేరు నమోదు చేయండి",
   "Select Username": "వాడుకరి పేరును ఎంచుకోండి",
-  "Add Random Digits to Username": "వినియోగదారు పేరుకు యాదృచ్ఛిక అంకెలను జోడించండి"
+  "Add Random Digits to Username": "వినియోగదారు పేరుకు యాదృచ్ఛిక అంకెలను జోడించండి",
+  "Enter your email so {ownerName} can see who accessed their album": "మీ ఇమెయిల్‌ని నమోదు చేయండి, తద్వారా {ownerName} వారి ఆల్బమ్‌ను ఎవరు యాక్సెస్ చేశారో చూడవచ్చు",
+  "Complete": "పూర్తి",
+  "Processing": "ప్రాసెసింగ్",
+  "Uploading": "అప్‌లోడ్ చేస్తోంది",
+  "Cancel Upload": "అప్‌లోడ్‌ను రద్దు చేయండి",
+  "Upload progress": "అప్‌లోడ్ పురోగతి",
+  "Overall progress": "మొత్తం పురోగతి",
+  "Completed": "పూర్తయింది",
+  "Failed": "విఫలమైంది",
+  "({count} failed": "({count} విఫలమైంది",
+  "({count} in progress)": "({count}) ప్రగతిలో ఉంది"
 }

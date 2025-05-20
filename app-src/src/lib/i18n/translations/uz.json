@@ -142,10 +142,21 @@
   "Submitting...": "Yuborilmoqda...",
   "Password": "Parol",
   "Submit": "Yuborish",
-  "OK": "Xop",
+  "OK": "Kelishdikmi",
   "Link Only": "Faqat Havola",
   "View Album Photos": "Albom Rasmlarini Ko'rish",
   "Enter Username": "Foydalanuvchi Nomini Kiriting",
   "Select Username": "Foydalanuvchi Nomini Tanlang",
-  "Add Random Digits to Username": "Foydalanuvchi Nomiga Tasodifiy Raqamlar Qo'shish"
+  "Add Random Digits to Username": "Foydalanuvchi Nomiga Tasodifiy Raqamlar Qo'shish",
+  "Enter your email so {ownerName} can see who accessed their album": "Elektron Pochtangizni Kiriting, Shunda {ownerName} Kimlar Ularning Albumiga Kirganini Ko'ra Oladi",
+  "Complete": "To'liq",
+  "Processing": "Ishlash",
+  "Uploading": "Yuklanmoqda",
+  "Cancel Upload": "Yuklab Olishni Bekor Qilish",
+  "Upload progress": "Yuklash Jarayoni",
+  "Overall progress": "Umumiy Rivojlanish",
+  "Completed": "Yakunlandi",
+  "Failed": "Muvaffaqiyatsiz",
+  "({count} failed": "({count} muvaffaqiyatsiz bo'ldi",
+  "({count} in progress)": "({count}) Davom Etmoqda"
 }

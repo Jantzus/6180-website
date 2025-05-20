@@ -147,5 +147,16 @@
   "View Album Photos": "Albom Fotolarını Körüñiz",
   "Enter Username": "Qullanıcı Adını Kiriting",
   "Select Username": "Qullanıcı Adını Sayla",
-  "Add Random Digits to Username": "Qullanıcı Adına Rastgele Raqamlar Qoş"
+  "Add Random Digits to Username": "Qullanıcı Adına Rastgele Raqamlar Qoş",
+  "Enter your email so {ownerName} can see who accessed their album": "E-Mailıñıznı Kirsetiñiz Ki {ownerName} Kimlеrniñ Olarnıñ Albomına Kirgenini Körabilsin",
+  "Complete": "Tamam",
+  "Processing": "İşlev",
+  "Uploading": "Yüklemekte",
+  "Cancel Upload": "Yüklemeni İptal Et",
+  "Upload progress": "Yüklenüv İlerlemesi",
+  "Overall progress": "Umumiy İlerlemek",
+  "Completed": "Tamamlandı",
+  "Failed": "Başarısız",
+  "({count} failed": "({count} muvaffaqiyetsiz",
+  "({count} in progress)": "({count}) İlerlemekte"
 }

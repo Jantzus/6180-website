@@ -142,10 +142,21 @@
   "Submitting...": "Besig om in te dien...",
   "Password": "Wagwoord",
   "Submit": "Indien",
-  "OK": "Oukei",
+  "OK": "Goed",
   "Link Only": "Slegs Skakel",
   "View Album Photos": "Bekyk Album Foto's",
   "Enter Username": "Voer Gebruikersnaam In",
   "Select Username": "Kies Gebruikersnaam",
-  "Add Random Digits to Username": "Voeg Lukraak Syfers By Gebruikersnaam"
+  "Add Random Digits to Username": "Voeg Lukraak Syfers By Gebruikersnaam",
+  "Enter your email so {ownerName} can see who accessed their album": "Verskaf Jou E-pos Sodat {ownerName} Kan Sien Wie Hul Album Bekyk Het",
+  "Complete": "Voltooi",
+  "Processing": "Verwerking",
+  "Uploading": "Besig om op te laai",
+  "Cancel Upload": "Kanselleer Oplaai",
+  "Upload progress": "Oplaai Vordering",
+  "Overall progress": "Algehele Vordering",
+  "Completed": "Voltooi",
+  "Failed": "Misluk",
+  "({count} failed": "({count} misluk",
+  "({count} in progress)": "({count}) Aan Die Gang"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "በማስገባት ላይ...",
   "Password": "የይለፍ ቃል",
   "Submit": "አስገባ",
-  "OK": "Ēšī",
+  "OK": "እሺ",
   "Link Only": "ማገናኛ ብቻ",
   "View Album Photos": "አልበም ፎቶዎችን ይመልከቱ",
   "Enter Username": "የተጠቃሚ ስም ያስገቡ",
   "Select Username": "የተጠቃሚ ስም ይምረጡ",
-  "Add Random Digits to Username": "ዘፈቀዳዊ አሀዞችን ወደ ተጠቃሚ ስም ጨምር"
+  "Add Random Digits to Username": "ዘፈቀዳዊ አሀዞችን ወደ ተጠቃሚ ስም ጨምር",
+  "Enter your email so {ownerName} can see who accessed their album": "የእርስዎን ኢሜይል ያስገቡ {ownerName} ማን ወደ አልበማቸው እንደገባ እንዲያዩ",
+  "Complete": "ተጠናቀቀ",
+  "Processing": "ማቀነባበር",
+  "Uploading": "በማስቀመጥ ላይ",
+  "Cancel Upload": "አስተላለፍ ሰርዝ",
+  "Upload progress": "መስቀል ሂደት",
+  "Overall progress": "አጠቃላይ ሂደት",
+  "Completed": "ተጠናቋል",
+  "Failed": "አልተሳካም",
+  "({count} failed": "({count} አልተሳካም",
+  "({count} in progress)": "({count}) በሂደት ላይ"
 }

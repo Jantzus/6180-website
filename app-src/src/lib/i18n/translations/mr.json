@@ -142,10 +142,21 @@
   "Submitting...": "सबमिट करत आहे...",
   "Password": "पासवर्ड",
   "Submit": "सबमिट करा",
-  "OK": "Ṭhīka Āhē",
+  "OK": "ठीक आहे",
   "Link Only": "फक्त दुवा",
   "View Album Photos": "अल्बम फोटो पहा",
   "Enter Username": "वापरकर्तानाव प्रविष्ट करा",
   "Select Username": "वापरकर्तानाव निवडा",
-  "Add Random Digits to Username": "वापरकर्तानावात यादृच्छिक अंक जोडा"
+  "Add Random Digits to Username": "वापरकर्तानावात यादृच्छिक अंक जोडा",
+  "Enter your email so {ownerName} can see who accessed their album": "तुमचा ईमेल प्रविष्ट करा जेणेकरून {ownerName} पाहू शकेल कोणी त्यांच्या अल्बमला प्रवेश केला",
+  "Complete": "पूर्ण",
+  "Processing": "प्रक्रिया",
+  "Uploading": "अपलोड करत आहे",
+  "Cancel Upload": "अपलोड रद्द करा",
+  "Upload progress": "अपलोड प्रगती",
+  "Overall progress": "एकूण प्रगती",
+  "Completed": "पूर्ण",
+  "Failed": "अयशस्वी",
+  "({count} failed": "({count} अयशस्वी",
+  "({count} in progress)": "({count}) प्रगतीपथावर"
 }

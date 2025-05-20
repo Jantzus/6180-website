@@ -142,10 +142,21 @@
   "Submitting...": "Inviandu...",
   "Password": "Contraseña",
   "Submit": "Enviá",
-  "OK": "Güenu",
+  "OK": "Bien",
   "Link Only": "Solu Enlaci",
   "View Album Photos": "Vel Las Fotus Del Álbun",
   "Enter Username": "Metel Nombri D'Usuariu",
   "Select Username": "Selecionai Nombri d'Usuariu",
-  "Add Random Digits to Username": "Añiil Dígitus Aleatorius Al Nombri D'usuariu"
+  "Add Random Digits to Username": "Añiil Dígitus Aleatorius Al Nombri D'usuariu",
+  "Enter your email so {ownerName} can see who accessed their album": "Introduci Tu Correu Electrónicu Pa Que {ownerName} Puea Vel Quién Accedió Al Su Álbum",
+  "Complete": "Completu",
+  "Processing": "Procesamiento",
+  "Uploading": "Subiendu",
+  "Cancel Upload": "Cancelal Cargui",
+  "Upload progress": "Progresu De Carga",
+  "Overall progress": "Progresu Jeneral",
+  "Completed": "Terminau",
+  "Failed": "Á Fallau",
+  "({count} failed": "({count} fallu",
+  "({count} in progress)": "({count}) En Progresu"
 }

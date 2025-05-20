@@ -147,5 +147,16 @@
   "View Album Photos": "Lihat Foto Album",
   "Enter Username": "Masukkan Nama Pengguna",
   "Select Username": "Pilih Nama Pengguna",
-  "Add Random Digits to Username": "Tambahkan Digit Acak Ke Nama Pengguna"
+  "Add Random Digits to Username": "Tambahkan Digit Acak Ke Nama Pengguna",
+  "Enter your email so {ownerName} can see who accessed their album": "Masukkan Email Anda Agar {ownerName} Dapat Melihat Siapa Yang Mengakses Album Mereka",
+  "Complete": "Lengkap",
+  "Processing": "Pemrosesan",
+  "Uploading": "Mengunggah",
+  "Cancel Upload": "Batal Unggah",
+  "Upload progress": "Kemajuan Unggah",
+  "Overall progress": "Kemajuan Keseluruhan",
+  "Completed": "Lengkap",
+  "Failed": "Gagal",
+  "({count} failed": "({count} gagal",
+  "({count} in progress)": "({count}) Sedang Berlangsung"
 }

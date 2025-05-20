@@ -142,10 +142,21 @@
   "Submitting...": "فرسنیئن...",
   "Password": "رمز",
   "Submit": "فریستادن",
-  "OK": "Xo",
+  "OK": "خوو",
   "Link Only": "تنها لینک",
   "View Album Photos": "دیئن عسگیا آلبوم",
   "Enter Username": "نوم کاربری ڤارد کونین",
   "Select Username": "نوم کاربری انتخاو کو",
-  "Add Random Digits to Username": "اضاف کنونه عددیا شانسی وه نوم کاروری"
+  "Add Random Digits to Username": "اضاف کنونه عددیا شانسی وه نوم کاروری",
+  "Enter your email so {ownerName} can see who accessed their album": "ایمئل خوتونه وارد بکیت تا {ownerName} بتونه بوینه کی آلبوم ونه دسرسی داشته",
+  "Complete": "کامل",
+  "Processing": "پرداشت",
+  "Uploading": "رسالی",
+  "Cancel Upload": "لٱغو ڤارگونی",
+  "Upload progress": "پيشرفت بارکاری",
+  "Overall progress": "پیشاکرد همه گیر",
+  "Completed": "تموم بیه",
+  "Failed": "شکست خورده",
+  "({count} failed": "({count} شکست حرد",
+  "({count} in progress)": "({count}) دأ حالأت پیشرأفت"
 }

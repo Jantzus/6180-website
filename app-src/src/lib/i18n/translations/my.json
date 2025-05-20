@@ -142,10 +142,21 @@
   "Submitting...": "တင်သွင်းနေသည်...",
   "Password": "စကားဝှက်",
   "Submit": "တင်သွင်းပါ",
-  "OK": "Aasainpyay",
+  "OK": "အိုကေ",
   "Link Only": "လင့်ခ်သာ",
   "View Album Photos": "အယ်လ်ဘမ်ဓါတ်ပုံများကြည့်ရန်",
   "Enter Username": "အသုံးပြုသူအမည် ထည့်ပါ",
   "Select Username": "အသုံးပြုသူအမည် ရွေးချယ်ပါ",
-  "Add Random Digits to Username": "အသုံးပြုသူအမည်သို့ ကျပန်းဂဏန်းများ ထည့်ပါ"
+  "Add Random Digits to Username": "အသုံးပြုသူအမည်သို့ ကျပန်းဂဏန်းများ ထည့်ပါ",
+  "Enter your email so {ownerName} can see who accessed their album": "သင့်အီးမေးလ်ကို ထည့်သွင်းပါ၊ {ownerName} က သူတို့၏အယ်လ်ဘမ်ကို မည်သူဝင်ကြည့်သည်ကို ကြည့်နိုင်ရန်အတွက်",
+  "Complete": "ပြီးပြည့်စုံသော",
+  "Processing": "အပြုအမူ",
+  "Uploading": "တင်နေသည်",
+  "Cancel Upload": "တင်ပို့မှု ပယ်ဖျက်ပါ",
+  "Upload progress": "အပ်လုဒ်တိုးတက်မှု",
+  "Overall progress": "အလုံးစုံ တိုးတက်မှု",
+  "Completed": "ပြီးပါပြီ",
+  "Failed": "မအောင်မြင်ပါ",
+  "({count} failed": "({count} မအောင်မြင်ပါ",
+  "({count} in progress)": "({count}) လုပ်ဆောင်နေသည်"
 }

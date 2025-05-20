@@ -147,5 +147,16 @@
   "View Album Photos": "Vëdde Le Fòto Dl'Album",
   "Enter Username": "Anseriss Nòm Utent",
   "Select Username": "Selessioné Nòm Utent",
-  "Add Random Digits to Username": "Gionté Sifre Casual Al Nòm Utent"
+  "Add Random Digits to Username": "Gionté Sifre Casual Al Nòm Utent",
+  "Enter your email so {ownerName} can see who accessed their album": "Buta Sò Adrëssa Email Përchè {ownerName} A Peula Vëdde Chi A L'ha Acedù A Sò Album",
+  "Complete": "Complet",
+  "Processing": "Elaborassion",
+  "Uploading": "Carià",
+  "Cancel Upload": "Anulé Cariament",
+  "Upload progress": "Progression Cariament",
+  "Overall progress": "Progrès General",
+  "Completed": "Completà",
+  "Failed": "Falì",
+  "({count} failed": "({count} falì",
+  "({count} in progress)": "({count}) An Cors"
 }

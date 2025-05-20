@@ -142,10 +142,21 @@
   "Submitting...": "ກຳລັງສົ່ງ...",
   "Password": "ລະຫັດຜ່ານ",
   "Submit": "ສົ່ງ",
-  "OK": "Toklong",
+  "OK": "ຕົກລົງ",
   "Link Only": "ລິ້ງເທົ່ານັ້ນ",
   "View Album Photos": "ເບິ່ງຮູບພາບອະລະບັ້ມ",
   "Enter Username": "ປ້ອນຊື່ຜູ້ໃຊ້",
   "Select Username": "ເລືອກຊື່ຜູ້ໃຊ້",
-  "Add Random Digits to Username": "ເພີ່ມຕົວເລກແບບສຸ່ມໃສ່ຊື່ຜູ້ໃຊ້"
+  "Add Random Digits to Username": "ເພີ່ມຕົວເລກແບບສຸ່ມໃສ່ຊື່ຜູ້ໃຊ້",
+  "Enter your email so {ownerName} can see who accessed their album": "ໃສ່ອີເມວຂອງທ່ານເພື່ອໃຫ້ {ownerName} ສາມາດເຫັນວ່າໃຜເຂົ້າເບິ່ງອັລບັ້ມຂອງພວກເຂົາ",
+  "Complete": "ສົມບູນ",
+  "Processing": "ການປະມວນຜົນ",
+  "Uploading": "ກຳລັງອັບໂຫຼດ",
+  "Cancel Upload": "ຍົກເລີກການອັບໂຫລດ",
+  "Upload progress": "ຄວາມຄືບໜ້າຂອງການອັບໂຫລດ",
+  "Overall progress": "ຄວາມຄືບໜ້າໂດຍລວມ",
+  "Completed": "ສໍາເລັດ",
+  "Failed": "ລົ້ມເຫລວ",
+  "({count} failed": "({count} ລົ້ມເຫລວ",
+  "({count} in progress)": "({count}) ກຳລັງດຳເນີນ"
 }

@@ -127,7 +127,26 @@ export const translations: Record<string, Partial<Record<SupportedLanguage, stri
   "Failed to update album visibility. Please try again.": {},
   "You must be logged in to perform this action": {},
   'Search album title or description': {},
-  'Enter a password for this album.': {}
+  'Enter a password for this album.': {},
+  'Enter password': {},
+  "Select password restrictions.": {},
+  'Password required': {},
+  "Link to album website copied.": {},
+  "Choose a message template": {},
+  "Here are photos from our event": {},
+  "Please add any photos from our event here": {},
+  "Upload complete! Preparing to save your album...": {},
+  'Some files could not be uploaded. You can continue with the successfully uploaded files.': {},
+  "Username should contain only letters, numbers and hyphens. Example: john-doe2": {},
+  "Username must contain only letters, numbers, and hyphens.": {},
+  'Submitting...': {},
+  "Password": {},
+  "Submit": {},
+  "OK": {},
+  "Link Only": {},
+  'View Album Photos': {},
+  "Enter Username": {},
+  "Select Username": {},
 };
 
 // Export type for type checking

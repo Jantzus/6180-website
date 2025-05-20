@@ -142,10 +142,21 @@
   "Submitting...": "שולח...",
   "Password": "סיסמה",
   "Submit": "שלח",
-  "OK": "Beseder",
+  "OK": "בסדר",
   "Link Only": "קישור בלבד",
   "View Album Photos": "צפה בתמונות האלבום",
   "Enter Username": "הזן שם משתמש",
   "Select Username": "בחר שם משתמש",
-  "Add Random Digits to Username": "הוסף ספרות אקראיות לשם המשתמש"
+  "Add Random Digits to Username": "הוסף ספרות אקראיות לשם המשתמש",
+  "Enter your email so {ownerName} can see who accessed their album": "הזן את הדוא\"ל שלך כדי ש{ownerName} יוכל לראות מי ניגש לאלבום שלהם",
+  "Complete": "שָׁלֵם",
+  "Processing": "עיבוד",
+  "Uploading": "מעלה",
+  "Cancel Upload": "ביטול העלאה",
+  "Upload progress": "התקדמות העלאה",
+  "Overall progress": "התקדמות כללית",
+  "Completed": "הושלם",
+  "Failed": "נכשל",
+  "({count} failed": "({count} נכשל",
+  "({count} in progress)": "({count}) בתהליך"
 }

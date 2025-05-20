@@ -147,5 +147,16 @@
   "View Album Photos": "Hi'o I Te Mau Hōho'a Nō Te Puta",
   "Enter Username": "Pāpa'i I Tō Iʻoa",
   "Select Username": "Mā'iti i te i'oa Tāmaʻitʻi",
-  "Add Random Digits to Username": "Tāpūhia Te Mau Nūmera ʻĀueʻue I Niʻa I Te Iʻoa Taiʻo"
+  "Add Random Digits to Username": "Tāpūhia Te Mau Nūmera ʻĀueʻue I Niʻa I Te Iʻoa Taiʻo",
+  "Enter your email so {ownerName} can see who accessed their album": "Pāpa'i I Tō Rata Uira Ia 'Ite 'O {ownerName} 'O Vai Tei Fāri'i I Tā Rātou ʻĀlipamu",
+  "Complete": "Taatoa",
+  "Processing": "Haapiiraa",
+  "Uploading": "Te hōro'a nei i te hōho'a",
+  "Cancel Upload": "Faʻaʻore i te Uta",
+  "Upload progress": "Fa'aurura'a Haere",
+  "Overall progress": "Fa'ahororaa Taato'a",
+  "Completed": "Faaotihia",
+  "Failed": "Ua Hapa",
+  "({count} failed": "({count} ua manuia ʻore",
+  "({count} in progress)": "({count}) Te Haere Nei"
 }

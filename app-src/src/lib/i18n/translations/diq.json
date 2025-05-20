@@ -147,5 +147,16 @@
   "View Album Photos": "Albumê Fotorafi Bıvinê",
   "Enter Username": "Nameyê Karberi Cıkewe",
   "Select Username": "Nameyê Karberi Weçine",
-  "Add Random Digits to Username": "Reqemê Ke Raştameyê Namey Karberi Derb Ke"
+  "Add Random Digits to Username": "Reqemê Ke Raştameyê Namey Karberi Derb Ke",
+  "Enter your email so {ownerName} can see who accessed their album": "E-posteyê Xo Binuse Ke {ownerName} Bıvino Kamci Kesan Albumê İnan Diyê",
+  "Complete": "Temam",
+  "Processing": "Proseskerdış",
+  "Uploading": "Bar beno",
+  "Cancel Upload": "Barkerdışi Bıtexelne",
+  "Upload progress": "Verênayışê Barkerdışi",
+  "Overall progress": "Pêşkewtişê Pêro",
+  "Completed": "Bı Qediya",
+  "Failed": "Ser Nêkewt",
+  "({count} failed": "({count} nêbı",
+  "({count} in progress)": "({count}) Dewam Keno"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "प्रेषयति...",
   "Password": "गूढशब्द",
   "Submit": "प्रेषयतु",
-  "OK": "Śobhanam",
+  "OK": "सुष्ठु",
   "Link Only": "केवलं सम्बन्धः",
   "View Album Photos": "एल्बम चित्राणि पश्यतु",
   "Enter Username": "उपयोक्तृनाम लिखतु",
   "Select Username": "उपयोक्तृनाम चिनोतु",
-  "Add Random Digits to Username": "उपयोक्तृनाम्नि यादृच्छिकाङ्काः योजय"
+  "Add Random Digits to Username": "उपयोक्तृनाम्नि यादृच्छिकाङ्काः योजय",
+  "Enter your email so {ownerName} can see who accessed their album": "स्वकीयं ईमेल्पत्रं लिखतु यथा {ownerName} द्रष्टुं शक्नोति कः तेषां गीतसङ्ग्रहं प्रविष्टः",
+  "Complete": "पूर्ण",
+  "Processing": "प्रक्रिया",
+  "Uploading": "उपारोपयति",
+  "Cancel Upload": "प्रेषणस्य रद्दीकरणम्",
+  "Upload progress": "उपारोपण प्रगतिः",
+  "Overall progress": "सम्पूर्ण प्रगतिः",
+  "Completed": "समाप्त",
+  "Failed": "विफलः",
+  "({count} failed": "({count} विफलम्",
+  "({count} in progress)": "({count}) प्रगतौ"
 }

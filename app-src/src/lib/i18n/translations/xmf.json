@@ -142,10 +142,21 @@
   "Submitting...": "იგზავნება...",
   "Password": "პაროლი",
   "Submit": "გეგზავნა",
-  "OK": "K'argi",
+  "OK": "კაი",
   "Link Only": "ხვალე რსხილი",
   "View Album Photos": "ალბომიშ სურათეფიშ ძირაფა",
   "Enter Username": "შეიყვანეთ მომხმარებლიშ ჯოხო",
   "Select Username": "მახვარებუშ ჯოხო გიშაგორით",
-  "Add Random Digits to Username": "მახვარებუშ ჯოხოშა რანდომული ციფრეფიშ გეძინა"
+  "Add Random Digits to Username": "მახვარებუშ ჯოხოშა რანდომული ციფრეფიშ გეძინა",
+  "Enter your email so {ownerName} can see who accessed their album": "ქორთუმა ელფოსტა ქიმიჭარით, {ownerName}ს ქოძირას ნამუქ გეგნორჩქინუ თენეფიშ ალბომი",
+  "Complete": "სრული",
+  "Processing": "დამუშუება",
+  "Uploading": "გემობარგუა",
+  "Cancel Upload": "ატვირთვაშ გოუქვაფა",
+  "Upload progress": "ეშახუალაშ პროგრესი",
+  "Overall progress": "საერთო პროგრესი",
+  "Completed": "დოსრულებული",
+  "Failed": "ვერ მოხერხდუ",
+  "({count} failed": "({count} ვერ მოხერხდა",
+  "({count} in progress)": "({count}) მიკოროცხუ"
 }

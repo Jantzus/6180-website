@@ -147,5 +147,16 @@
   "View Album Photos": "Vire 'E Fote D' 'O Album",
   "Enter Username": "Mettere 'O Nomme Utente",
   "Select Username": "Scèglie o' Nomme Utente",
-  "Add Random Digits to Username": "Azzecca Cifre Ausuale A O Nomme Utente"
+  "Add Random Digits to Username": "Azzecca Cifre Ausuale A O Nomme Utente",
+  "Enter your email so {ownerName} can see who accessed their album": "'E Mettere 'A Email Toja Pe' Fa' Vedé A {ownerName} Chi Ha Trasuto Dint' 'O Album Lloro",
+  "Complete": "Cumpletá",
+  "Processing": "Elavorazzione",
+  "Uploading": "Carrecamiento",
+  "Cancel Upload": "Abbandona Caricamiento",
+  "Upload progress": "Avanzamento 'E Carecamento",
+  "Overall progress": "Pruggresso Totale",
+  "Completed": "Cumpletato",
+  "Failed": "Fallito",
+  "({count} failed": "({count} fallute",
+  "({count} in progress)": "({count}) 'Ncorzo"
 }

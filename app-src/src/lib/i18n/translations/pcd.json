@@ -142,10 +142,21 @@
   "Submitting...": "Invoéyant...",
   "Password": "Mot D'passe",
   "Submit": "Éskyuer",
-  "OK": "D'Akord",
+  "OK": "D'accord",
   "Link Only": "Lien Seulemint",
   "View Album Photos": "Vir Chés Éfcliché D'Presse D'Chés Album",
   "Enter Username": "Intrer Ch'nom D'Uzeu",
   "Select Username": "Sélecchonner Ch'Nom d'Uzeu",
-  "Add Random Digits to Username": "Acoter Pièches Hasardins Ch'nom D'useu"
+  "Add Random Digits to Username": "Acoter Pièches Hasardins Ch'nom D'useu",
+  "Enter your email so {ownerName} can see who accessed their album": "Intrez Vo Imèl Pour Qu' {ownerName} Peuche Vir Qui Qu'o Eu Achés À Leu Album",
+  "Complete": "Complet",
+  "Processing": "Traitmint",
+  "Uploading": "Ercacher",
+  "Cancel Upload": "Annuler Importache",
+  "Upload progress": "Avéncheu D'Ercherzmint",
+  "Overall progress": "Progrès Jénéral",
+  "Completed": "Achevé",
+  "Failed": "Raté",
+  "({count} failed": "({count} échoué",
+  "({count} in progress)": "({count}) In Progrès"
 }

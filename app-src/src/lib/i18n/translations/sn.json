@@ -147,5 +147,16 @@
   "View Album Photos": "Ona Mifananidzo YeAlbum",
   "Enter Username": "Isa Zita Remushandisi",
   "Select Username": "Sarudza Zita Remushandisi",
-  "Add Random Digits to Username": "Wedzera Nhamba Dzechisarudzo Kuzita Remushandisi"
+  "Add Random Digits to Username": "Wedzera Nhamba Dzechisarudzo Kuzita Remushandisi",
+  "Enter your email so {ownerName} can see who accessed their album": "Isa Email Yako Kuti {ownerName} Akwanise Kuona Kuti Ndiani Akaona Bhuku Ravo",
+  "Complete": "Zvizere",
+  "Processing": "Kugadzira",
+  "Uploading": "Kututsa",
+  "Cancel Upload": "Kanzura Kukwidza",
+  "Upload progress": "Hudzidzo Hwezviri Kutumwa",
+  "Overall progress": "Mufambiro Wese",
+  "Completed": "Kupera",
+  "Failed": "Hatina Kufanira",
+  "({count} failed": "({count} yakundikana",
+  "({count} in progress)": "({count}) Munzira"
 }

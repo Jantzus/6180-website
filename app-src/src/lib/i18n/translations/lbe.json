@@ -142,10 +142,21 @@
   "Submitting...": "Диялаври...",
   "Password": "Пароль",
   "Submit": "Гьан Бува",
-  "OK": "Хъинни",
+  "OK": "ХӀа",
   "Link Only": "Так Ссылка",
   "View Album Photos": "Альбомрал Суратру Ххалбува",
   "Enter Username": "Ишла Бувайманал ЦӀа",
   "Select Username": "Пользовательнал Цlа Язи Ба",
-  "Add Random Digits to Username": "Ишла Бувайманан ЦIанин Цайми СурцIа Ххи Бан"
+  "Add Random Digits to Username": "Ишла Бувайманан ЦIанин Цайми СурцIа Ххи Бан",
+  "Enter your email so {ownerName} can see who accessed their album": "Бишара Вила Электрон Почта {ownerName}-н Ккаккан, Цу Буруглаглай Ванал Альбомрайн",
+  "Complete": "Щаллусса",
+  "Processing": "Даву",
+  "Uploading": "Гьаз буллай",
+  "Cancel Upload": "ДагьайшиншинначӀан Бацӏан",
+  "Upload progress": "ДагьлачӀаврил ХьхьичӀуннайшиву",
+  "Overall progress": "Щалвагу Хьхьичӏуннай Шаву",
+  "Completed": "Бартбивгьусса",
+  "Failed": "Къабул къавхьуссар",
+  "({count} failed": "({count} бартакъавхьуна",
+  "({count} in progress)": "({count}) Буллай Бур"
 }

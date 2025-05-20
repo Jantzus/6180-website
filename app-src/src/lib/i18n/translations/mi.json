@@ -147,5 +147,16 @@
   "View Album Photos": "Tirohia Ngā Whakaahua Pukapuka",
   "Enter Username": "Tāuru Ingoa Kaiwhakamahi",
   "Select Username": "Tīpako Ingoa Kaiwhakamahi",
-  "Add Random Digits to Username": "Tāpiri Tau Matapōkere Ki Te Ingoa Kaiwhakamahi"
+  "Add Random Digits to Username": "Tāpiri Tau Matapōkere Ki Te Ingoa Kaiwhakamahi",
+  "Enter your email so {ownerName} can see who accessed their album": "Whakaurua Tō Īmēra Kia Kite A {ownerName} Ko Wai I Toro Ki Tā Rātou Kōpaki",
+  "Complete": "Tutuki",
+  "Processing": "Tukatuka",
+  "Uploading": "Tukuake",
+  "Cancel Upload": "Whakakore Tukuake",
+  "Upload progress": "Ahunga Tukuake",
+  "Overall progress": "Kauneke Katoa",
+  "Completed": "Oti",
+  "Failed": "Rahua",
+  "({count} failed": "({count} rahua",
+  "({count} in progress)": "({count}) Kei Te Haere Tonu"
 }

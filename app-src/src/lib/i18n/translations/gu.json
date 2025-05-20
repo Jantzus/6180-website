@@ -142,10 +142,21 @@
   "Submitting...": "સબમિટ કરી રહ્યા છીએ...",
   "Password": "પાસવર્ડ",
   "Submit": "સબમિટ કરો",
-  "OK": "Barābara",
+  "OK": "બરાબર",
   "Link Only": "માત્ર લિંક",
   "View Album Photos": "આલ્બમ ફોટા જુઓ",
   "Enter Username": "વપરાશકર્તા નામ દાખલ કરો",
   "Select Username": "વપરાશકર્તા નામ પસંદ કરો",
-  "Add Random Digits to Username": "વપરાશકર્તા નામમાં રેન્ડમ અંકો ઉમેરો"
+  "Add Random Digits to Username": "વપરાશકર્તા નામમાં રેન્ડમ અંકો ઉમેરો",
+  "Enter your email so {ownerName} can see who accessed their album": "તમારું ઇમેઇલ દાખલ કરો જેથી {ownerName} જોઈ શકે કે કોણે તેમના આલ્બમને ઍક્સેસ કર્યું છે",
+  "Complete": "પૂર્ણ",
+  "Processing": "પ્રક્રિયા",
+  "Uploading": "અપલોડ કરી રહ્યું છે",
+  "Cancel Upload": "અપલોડ રદ કરો",
+  "Upload progress": "અપલોડ પ્રગતિ",
+  "Overall progress": "સમગ્ર પ્રગતિ",
+  "Completed": "પૂર્ણ",
+  "Failed": "નિષ્ફળ",
+  "({count} failed": "({count} નિષ્ફળ",
+  "({count} in progress)": "({count}) પ્રગતિમાં"
 }

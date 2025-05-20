@@ -142,10 +142,21 @@
   "Submitting...": "Menghantar...",
   "Password": "Kata Laluan",
   "Submit": "Hantar",
-  "OK": "Baik",
+  "OK": "Okey",
   "Link Only": "Pautan Sahaja",
   "View Album Photos": "Lihat Foto Album",
   "Enter Username": "Masukkan Nama Pengguna",
   "Select Username": "Pilih Nama Pengguna",
-  "Add Random Digits to Username": "Tambah Digit Rawak Ke Nama Pengguna"
+  "Add Random Digits to Username": "Tambah Digit Rawak Ke Nama Pengguna",
+  "Enter your email so {ownerName} can see who accessed their album": "Masukkan E-mel Anda Supaya {ownerName} Dapat Melihat Siapa Yang Mengakses Album Mereka",
+  "Complete": "Lengkap",
+  "Processing": "Pemprosesan",
+  "Uploading": "Memuat naik",
+  "Cancel Upload": "Batal Muat Naik",
+  "Upload progress": "Kemajuan Muat Naik",
+  "Overall progress": "Kemajuan Keseluruhan",
+  "Completed": "Selesai",
+  "Failed": "Gagal",
+  "({count} failed": "({count} gagal",
+  "({count} in progress)": "({count}) Sedang Berjalan"
 }

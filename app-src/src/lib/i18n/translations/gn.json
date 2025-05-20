@@ -147,5 +147,16 @@
   "View Album Photos": "Ehecha Ta'ãnga Atykuéra",
   "Enter Username": "Emoinge Poruhára Réra",
   "Select Username": "Eiporavo Poruhára Réra",
-  "Add Random Digits to Username": "Embojuaju Papapy Poi Poruhára Térape"
+  "Add Random Digits to Username": "Embojuaju Papapy Poi Poruhára Térape",
+  "Enter your email so {ownerName} can see who accessed their album": "Emoinge Ne Ñanduti Veve {ownerName} Ohecha Hag̃ua Mávapa Oike Iálbum-pe",
+  "Complete": "Ñemyatyrõ",
+  "Processing": "Mba'eaporã",
+  "Uploading": "Hupi",
+  "Cancel Upload": "Emboguevíma Jeupi",
+  "Upload progress": "Juhupi Jerovia",
+  "Overall progress": "Ñemopu'ã Opavavegua",
+  "Completed": "Ojejapopa",
+  "Failed": "Ndaikoiva",
+  "({count} failed": "({count} ndoikoi",
+  "({count} in progress)": "({count}) Oñemoĩva"
 }

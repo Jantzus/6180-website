@@ -142,10 +142,21 @@
   "Submitting...": "Sendin...",
   "Password": "Paaswod",
   "Submit": "Sen",
-  "OK": "Aarait",
+  "OK": "Arait",
   "Link Only": "Link Ongl",
   "View Album Photos": "Luk Pahn Albom Pikcha Dem",
   "Enter Username": "Enta Yuuzaniem",
   "Select Username": "Pikop Yuuzaniem",
-  "Add Random Digits to Username": "Ad Random Dijit Tu Yuuzaniem"
+  "Add Random Digits to Username": "Ad Random Dijit Tu Yuuzaniem",
+  "Enter your email so {ownerName} can see who accessed their album": "Enta Yu Email So {ownerName} Kyan Si Uu Access Dem Album",
+  "Complete": "Kompliit",
+  "Processing": "Praasesing",
+  "Uploading": "Apluoadin",
+  "Cancel Upload": "Kyancil Aplod",
+  "Upload progress": "Opluod Pragres",
+  "Overall progress": "Uova Praagres",
+  "Completed": "Finish",
+  "Failed": "Fail",
+  "({count} failed": "({count} fiel",
+  "({count} in progress)": "({count}) A Gwaan"
 }

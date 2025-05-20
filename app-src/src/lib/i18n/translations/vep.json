@@ -147,5 +147,16 @@
   "View Album Photos": "Kacta Alboman Fotokuvid",
   "Enter Username": "Kirjutagat Kävutajan Nimi",
   "Select Username": "Valikat Kävutajan Nimi",
-  "Add Random Digits to Username": "Ližata Randomižid Numeroid Kävutajan Nimhe"
+  "Add Random Digits to Username": "Ližata Randomižid Numeroid Kävutajan Nimhe",
+  "Enter your email so {ownerName} can see who accessed their album": "Pangat Teiden E-počtadres, Miše {ownerName} Voiži Nähta Ken Oli Tullnu Heiden Al'bomha",
+  "Complete": "Täuz'",
+  "Processing": "Käzitelend",
+  "Uploading": "Ülöz sirtand",
+  "Cancel Upload": "Heitta Pält Jügutoitand",
+  "Upload progress": "Jügutoitandan Process",
+  "Overall progress": "Ühthine Edhenemižuz",
+  "Completed": "Loptud",
+  "Failed": "Om Ezmärtnu",
+  "({count} failed": "({count} ei lähnu",
+  "({count} in progress)": "({count}) Process"
 }

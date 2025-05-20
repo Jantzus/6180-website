@@ -142,10 +142,21 @@
   "Submitting...": "Ашьҭра...",
   "Password": "Ажәамаӡа",
   "Submit": "Анашьҭра",
-  "OK": "Иоуп",
+  "OK": "Ибзиоуп",
   "Link Only": "Еиҧшьра Мацара",
   "View Album Photos": "Альбом Афотоқәа Агәаҭара",
   "Enter Username": "Ахархәаҩ Ихьӡ Ататәуп",
   "Select Username": "Ахархәаҩ Иалх",
-  "Add Random Digits to Username": "Ирандом Аҧхьаӡарақәа Ахархәаҩ Ихьӡ Иацҵа"
+  "Add Random Digits to Username": "Ирандом Аҧхьаӡарақәа Ахархәаҩ Ихьӡ Иацҵа",
+  "Enter your email so {ownerName} can see who accessed their album": "Уи Email Иҭагал {ownerName} Рыальбом Изхәаԥшыз Ибартә",
+  "Complete": "Ихаркоу",
+  "Processing": "Аус Аҟаҵара",
+  "Uploading": "Аҭагалара",
+  "Cancel Upload": "Аҭагалара Аҟәыхтәра",
+  "Upload progress": "Аҭагалара Апрогресс",
+  "Overall progress": "Ерыҧшьаны Аҧхьаҿиара",
+  "Completed": "Ихаркоуп",
+  "Failed": "Иқәымҿиеит",
+  "({count} failed": "({count} даҧрахеит",
+  "({count} in progress)": "({count}) Аус Имоуп"
 }

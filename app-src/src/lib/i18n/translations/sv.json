@@ -142,10 +142,21 @@
   "Submitting...": "Skickar...",
   "Password": "Lösenord",
   "Submit": "Skicka",
-  "OK": "Okej",
+  "OK": "OK",
   "Link Only": "Endast Länk",
   "View Album Photos": "Visa Albumfoton",
   "Enter Username": "Ange Användarnamn",
   "Select Username": "Välj Användarnamn",
-  "Add Random Digits to Username": "Lägg Till Slumpmässiga Siffror Till Användarnamn"
+  "Add Random Digits to Username": "Lägg Till Slumpmässiga Siffror Till Användarnamn",
+  "Enter your email so {ownerName} can see who accessed their album": "Ange Din E-postadress Så Att {ownerName} Kan Se Vem Som Har Kommit Åt Deras Album",
+  "Complete": "Fullständig",
+  "Processing": "Bearbetning",
+  "Uploading": "Laddar upp",
+  "Cancel Upload": "Avbryt Uppladdning",
+  "Upload progress": "Uppladdningsförlopp",
+  "Overall progress": "Övergripande Framsteg",
+  "Completed": "Avslutad",
+  "Failed": "Misslyckades",
+  "({count} failed": "({count} misslyckades",
+  "({count} in progress)": "({count}) Pågående"
 }

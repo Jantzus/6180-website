@@ -142,10 +142,21 @@
   "Submitting...": "Submettin...",
   "Password": "Password",
   "Submit": "Submit",
-  "OK": "Guid",
+  "OK": "Okay",
   "Link Only": "Link Juist",
   "View Album Photos": "View Album Photaes",
   "Enter Username": "Enter Username",
   "Select Username": "Select Username",
-  "Add Random Digits to Username": "Add Random Figures Tae Uiser Name"
+  "Add Random Digits to Username": "Add Random Figures Tae Uiser Name",
+  "Enter your email so {ownerName} can see who accessed their album": "Enter Yer Email Sae {ownerName} Can See Wha Accessed Their Album",
+  "Complete": "Complete",
+  "Processing": "Processing",
+  "Uploading": "Uploadin",
+  "Cancel Upload": "Cancel Upload",
+  "Upload progress": "Upload Progress",
+  "Overall progress": "Oweral Progress",
+  "Completed": "Feenisht",
+  "Failed": "Failed",
+  "({count} failed": "({count} failed",
+  "({count} in progress)": "({count}) In Progress"
 }

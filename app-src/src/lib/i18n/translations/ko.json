@@ -142,10 +142,21 @@
   "Submitting...": "제출 중...",
   "Password": "비밀번호",
   "Submit": "제출",
-  "OK": "Joh-Ayo",
+  "OK": "좋아요",
   "Link Only": "링크만",
   "View Album Photos": "앨범 사진 보기",
   "Enter Username": "사용자 이름 입력",
   "Select Username": "사용자 이름 선택",
-  "Add Random Digits to Username": "사용자 이름에 무작위 숫자 추가"
+  "Add Random Digits to Username": "사용자 이름에 무작위 숫자 추가",
+  "Enter your email so {ownerName} can see who accessed their album": "이메일 주소를 입력하시면 {ownerName}님이 누가 앨범에 접근했는지 확인할 수 있습니다",
+  "Complete": "완전한",
+  "Processing": "처리",
+  "Uploading": "업로드 중",
+  "Cancel Upload": "업로드 취소",
+  "Upload progress": "업로드 진행 상황",
+  "Overall progress": "전체 진행 상황",
+  "Completed": "완전한",
+  "Failed": "실패",
+  "({count} failed": "({count} 실패했습니다",
+  "({count} in progress)": "({count}) 진행 중"
 }

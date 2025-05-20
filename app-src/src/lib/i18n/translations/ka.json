@@ -142,10 +142,21 @@
   "Submitting...": "იგზავნება...",
   "Password": "პაროლი",
   "Submit": "გაგზავნა",
-  "OK": "K'argi",
+  "OK": "კარგი",
   "Link Only": "მხოლოდ ბმული",
   "View Album Photos": "ალბომის ფოტოების ნახვა",
   "Enter Username": "შეიყვანეთ მომხმარებლის სახელი",
   "Select Username": "აირჩიეთ მომხმარებლის სახელი",
-  "Add Random Digits to Username": "მომხმარებლის სახელზე შემთხვევითი ციფრების დამატება"
+  "Add Random Digits to Username": "მომხმარებლის სახელზე შემთხვევითი ციფრების დამატება",
+  "Enter your email so {ownerName} can see who accessed their album": "შეიყვანეთ თქვენი ელფოსტა, რათა {ownerName}-მა დაინახოს ვინ წვდება მათ ალბომს",
+  "Complete": "სრული",
+  "Processing": "დამუშავება",
+  "Uploading": "ატვირთვა",
+  "Cancel Upload": "ატვირთვის გაუქმება",
+  "Upload progress": "ატვირთვის პროგრესი",
+  "Overall progress": "საერთო პროგრესი",
+  "Completed": "დასრულდა",
+  "Failed": "ვერ მოხერხდა",
+  "({count} failed": "({count} ვერ მოხერხდა",
+  "({count} in progress)": "({count}) მიმდინარეობს"
 }

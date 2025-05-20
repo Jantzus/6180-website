@@ -142,10 +142,21 @@
   "Submitting...": "Sélô sã...",
   "Password": "Parola",
   "Submit": "Wëslôj",
-  "OK": "Jo",
+  "OK": "Dobrze",
   "Link Only": "Leno Lënk",
   "View Album Photos": "Òbôczë Òdjimczi Albùma",
   "Enter Username": "Wpiszë Miono Brëkòwnika",
   "Select Username": "Wëbierzë Miono",
-  "Add Random Digits to Username": "Dodôj Przëtrëfkòwé Cëfrë Do Miona Brëkòwnika"
+  "Add Random Digits to Username": "Dodôj Przëtrëfkòwé Cëfrë Do Miona Brëkòwnika",
+  "Enter your email so {ownerName} can see who accessed their album": "Wpiszë Swój Email, Żebë {ownerName} Mógł Widzec, Chto Przëstãpił Do Jich Albùmù",
+  "Complete": "Skùńczony",
+  "Processing": "Przetwôrzanié",
+  "Uploading": "Wëladënk",
+  "Cancel Upload": "Anulëjë Wladënk",
+  "Upload progress": "Pòstãp Przesélaniô",
+  "Overall progress": "Òglowi Pòstãp",
+  "Completed": "Skùńczony",
+  "Failed": "Nieùdóné",
+  "({count} failed": "({count} nie darzëło sã",
+  "({count} in progress)": "({count}) W Trakce"
 }

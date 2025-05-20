@@ -147,5 +147,16 @@
   "View Album Photos": "Raica Na Itaba Ni Albamu",
   "Enter Username": "Vakacuruma Na Yacamu Ni Vakayagataki",
   "Select Username": "Digitaka Na Yacamu",
-  "Add Random Digits to Username": "Vakuria Na Naba Vakatakilakila Ki Na Yacamu Ni Vakayagataki"
+  "Add Random Digits to Username": "Vakuria Na Naba Vakatakilakila Ki Na Yacamu Ni Vakayagataki",
+  "Enter your email so {ownerName} can see who accessed their album": "Vakalewena Na Nomu I-meli Me {ownerName} Rawa Ni Raica Se O cei E Tiko Rawa Ki Na Nodra Album",
+  "Complete": "Vakaoti",
+  "Processing": "Vakarautaki",
+  "Uploading": "Vakavodoka",
+  "Cancel Upload": "Bokoca Na Uploadi",
+  "Upload progress": "Toso Ki Liu Vakasinaiti",
+  "Overall progress": "Toso Cake Taucoko",
+  "Completed": "Sa Vakacavari",
+  "Failed": "Sega",
+  "({count} failed": "({count} sega",
+  "({count} in progress)": "({count}) Sa Vakaitavi"
 }

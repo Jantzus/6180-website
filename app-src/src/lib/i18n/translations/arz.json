@@ -142,10 +142,21 @@
   "Submitting...": "بيقدم...",
   "Password": "كلمة السر",
   "Submit": "ارسل",
-  "OK": "Tamam",
+  "OK": "تمام",
   "Link Only": "لينك بس",
   "View Album Photos": "عرض صور الألبوم",
   "Enter Username": "دخل اسم المستخدم",
   "Select Username": "اختار اسم المستخدم",
-  "Add Random Digits to Username": "ضيف ارقام عشوائية لاسم المستخدم"
+  "Add Random Digits to Username": "ضيف ارقام عشوائية لاسم المستخدم",
+  "Enter your email so {ownerName} can see who accessed their album": "اكتب إيميلك عشان {ownerName} يقدر يشوف مين دخل على الألبوم بتاعهم",
+  "Complete": "كامل",
+  "Processing": "معالجة",
+  "Uploading": "بيحمل",
+  "Cancel Upload": "إلغاء التحميل",
+  "Upload progress": "تقدم التحميل",
+  "Overall progress": "التقدم الإجمالي",
+  "Completed": "مكتمل",
+  "Failed": "فشل",
+  "({count} failed": "({count} فشل",
+  "({count} in progress)": "({count}) شغال"
 }

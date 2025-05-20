@@ -142,10 +142,21 @@
   "Submitting...": "Mambulik...",
   "Password": "Katasandi",
   "Submit": "Kirim",
-  "OK": "Kawa Ai",
+  "OK": "Bagus",
   "Link Only": "Tautan Haja",
   "View Album Photos": "Lihat Putu Album",
   "Enter Username": "Masukakan Ngaran Pamuruk",
   "Select Username": "Pilihi Ngaran Pangguna",
-  "Add Random Digits to Username": "Tambahakan Angka Acak Ka Ngaran Pamakai"
+  "Add Random Digits to Username": "Tambahakan Angka Acak Ka Ngaran Pamakai",
+  "Enter your email so {ownerName} can see who accessed their album": "Masukakan Email Pian Supaya {ownerName} Kawa Malihat Siapa Nang Maakses Album Buhannya",
+  "Complete": "Langkap",
+  "Processing": "Pamrusisin",
+  "Uploading": "Mamuat",
+  "Cancel Upload": "Batalan Unggah",
+  "Upload progress": "Kamajuan Unggahan",
+  "Overall progress": "Kamajuan Kautusan",
+  "Completed": "Tuntung",
+  "Failed": "Gagal",
+  "({count} failed": "({count} gagal",
+  "({count} in progress)": "({count}) Lagi Berjalan"
 }

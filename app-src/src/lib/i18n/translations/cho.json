@@ -142,10 +142,21 @@
   "Submitting...": "Pila...",
   "Password": "Hattak Im Anumpa Luma",
   "Submit": "Pila",
-  "OK": "Alhpesa",
+  "OK": "Achukma",
   "Link Only": "Link Bano",
   "View Album Photos": "Pisa Album Holisso Iska",
   "Enter Username": "Chi Hohchifo Chi Ittim",
   "Select Username": "Hotchifo Atokoli",
-  "Add Random Digits to Username": "Hochifo Chokma Hotupa Kanchi Foka"
+  "Add Random Digits to Username": "Hochifo Chokma Hotupa Kanchi Foka",
+  "Enter your email so {ownerName} can see who accessed their album": "Chi Email Ish Fohki Na {ownerName} Yʋt Album Pisa Kʋt Akostininchi",
+  "Complete": "Alhtaha",
+  "Processing": "Atokoli",
+  "Uploading": "Uploading",
+  "Cancel Upload": "Upload Akshochi",
+  "Upload progress": "Upload Achukma",
+  "Overall progress": "Moma Aiithanali",
+  "Completed": "Alhtaha",
+  "Failed": "Ikahno",
+  "({count} failed": "({count} ikshoka",
+  "({count} in progress)": "({count}) Mahli Hosh"
 }

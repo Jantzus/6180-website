@@ -142,10 +142,21 @@
   "Submitting...": "Кучома...",
   "Password": "Салавачи",
   "Submit": "Кучомс",
-  "OK": "Пара",
+  "OK": "Паро",
   "Link Only": "Ансяк Сюлмавкс",
   "View Album Photos": "Альбомонь Фотокартинатнень Ваномс",
   "Enter Username": "Совавтынк Тевс Нолдыцянь Лем",
   "Select Username": "Кочкамс Теицянь Лем",
-  "Add Random Digits to Username": "Топавтыцянь Лемезэнзэ Апак Учонь Цёт Полавтома Поладомс"
+  "Add Random Digits to Username": "Топавтыцянь Лемезэнзэ Апак Учонь Цёт Полавтома Поладомс",
+  "Enter your email so {ownerName} can see who accessed their album": "Сёрмадык Тонь Электронной Сёрмат, Штобу {ownerName} Неевель, Кие Совась Сынст Альбомс",
+  "Complete": "Пешксе",
+  "Processing": "Важодемс",
+  "Uploading": "Туиця",
+  "Cancel Upload": "Панемань Лоткавтомс",
+  "Upload progress": "Ачаалавикс Эскелькс",
+  "Overall progress": "Весе Икелев Молемась",
+  "Completed": "Прядозь",
+  "Failed": "А лисевсь",
+  "({count} failed": "({count} эзь теевть",
+  "({count} in progress)": "({count}) Молиця"
 }

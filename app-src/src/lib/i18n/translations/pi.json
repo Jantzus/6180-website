@@ -142,10 +142,21 @@
   "Submitting...": "पेसेन्ति...",
   "Password": "गुप्तसब्द",
   "Submit": "पेसेथ",
-  "OK": "Sādhu",
+  "OK": "सुट्ठु",
   "Link Only": "केवलं सम्बन्धो",
   "View Album Photos": "एल्बम फोटो पस्सन्तु",
   "Enter Username": "उपयोगकत्तानाम लिखथ",
   "Select Username": "उपयोगकत्त नाम चुनोहि",
-  "Add Random Digits to Username": "पयोगकत्ता नामम्हि यदिच्छोंक जोदेतु"
+  "Add Random Digits to Username": "पयोगकत्ता नामम्हि यदिच्छोंक जोदेतु",
+  "Enter your email so {ownerName} can see who accessed their album": "तुम्हाकं ईमेलं लिखथ जेन {ownerName} पस्सितुं सक्कोति को तेसं सङ्गीतकट्ठतं फुसि",
+  "Complete": "पुण्ण",
+  "Processing": "प्रक्रिया",
+  "Uploading": "उप्पलोद्",
+  "Cancel Upload": "अपलोड रद्दं",
+  "Upload progress": "उपारोपन प्रगती",
+  "Overall progress": "समग्ग पगति",
+  "Completed": "समत्त",
+  "Failed": "असफल",
+  "({count} failed": "({count} विफल",
+  "({count} in progress)": "({count}) वड्ढन्ती"
 }

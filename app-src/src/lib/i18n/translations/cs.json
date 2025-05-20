@@ -142,10 +142,21 @@
   "Submitting...": "Odesílání...",
   "Password": "Heslo",
   "Submit": "Odeslat",
-  "OK": "Dobře",
+  "OK": "OK",
   "Link Only": "Pouze Odkaz",
   "View Album Photos": "Zobrazit Fotky Alba",
   "Enter Username": "Zadejte Uživatelské Jméno",
   "Select Username": "Vybrat Uživatelské Jméno",
-  "Add Random Digits to Username": "Přidat Náhodné Číslice K Uživatelskému Jménu"
+  "Add Random Digits to Username": "Přidat Náhodné Číslice K Uživatelskému Jménu",
+  "Enter your email so {ownerName} can see who accessed their album": "Zadejte Svůj Email, Aby {ownerName} Mohl Vidět, Kdo Přistupoval K Jejich Albu",
+  "Complete": "Kompletní",
+  "Processing": "Zpracování",
+  "Uploading": "Nahrávání",
+  "Cancel Upload": "Zrušit Nahrávání",
+  "Upload progress": "Průběh Nahrávání",
+  "Overall progress": "Celkový Pokrok",
+  "Completed": "Dokončeno",
+  "Failed": "Selhalo",
+  "({count} failed": "({count} selhalo",
+  "({count} in progress)": "({count}) Probíhá"
 }

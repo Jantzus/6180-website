@@ -142,10 +142,21 @@
   "Submitting...": "Kohereza...",
   "Password": "Ijambo Ryibanga",
   "Submit": "Ohereza",
-  "OK": "Neza",
+  "OK": "Ni Vyiza",
   "Link Only": "Ihuza Gusa",
   "View Album Photos": "Raba Amafoto Y'Ububiko",
   "Enter Username": "Andika Izina Ry'Uwukoresha",
   "Select Username": "Hitamwo Izina Ry'Umukoresha",
-  "Add Random Digits to Username": "Ongereza Ibiharuro Bivanye Ku Mwanya Ku Zina Ry'ukoresha"
+  "Add Random Digits to Username": "Ongereza Ibiharuro Bivanye Ku Mwanya Ku Zina Ry'ukoresha",
+  "Enter your email so {ownerName} can see who accessed their album": "Andika Email Yawe Kugira {ownerName} Ashobore Kubona Uwinjiye Mu Ma Albumu Yabo",
+  "Complete": "Rwose",
+  "Processing": "Gutunganya",
+  "Uploading": "Kurungika",
+  "Cancel Upload": "Kureka Kohereza",
+  "Upload progress": "Amahinduka Y'ikiriko",
+  "Overall progress": "Iterambere Rusange",
+  "Completed": "Vyakozwe",
+  "Failed": "Ntibigenze",
+  "({count} failed": "({count} yarananiwe",
+  "({count} in progress)": "({count}) Biri Gukorwa"
 }

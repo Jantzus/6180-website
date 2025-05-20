@@ -142,10 +142,21 @@
   "Submitting...": "Khou rumela...",
   "Password": "Phasiwede",
   "Submit": "Rumela",
-  "OK": "Zwa Vhudi",
+  "OK": "Zwo Luga",
   "Link Only": "Vhukwamani Fhedzi",
   "View Album Photos": "Vhona Zwinepe Zwa Album",
   "Enter Username": "Dzhenisani Dzina La Mushumisi",
   "Select Username": "Khetha Dzina la Mushumisi",
-  "Add Random Digits to Username": "Engedzani Nomboro Dza Randomo Kha Dzina La Mushumisi"
+  "Add Random Digits to Username": "Engedzani Nomboro Dza Randomo Kha Dzina La Mushumisi",
+  "Enter your email so {ownerName} can see who accessed their album": "Dzhenisani Email Yanu Uri {ownerName} A Kone U Vhona Uri Ndi Nnyi O Shumisa Albumbu Yavho",
+  "Complete": "Khethekanya",
+  "Processing": "U shumiswa",
+  "Uploading": "U khou dzhenisa",
+  "Cancel Upload": "Fhelisa U Bvisisa",
+  "Upload progress": "Mvelaphanda Ya U Loda",
+  "Overall progress": "Mvelaphanḓa Yoṱhe",
+  "Completed": "Ho Fhela",
+  "Failed": "Yo Kundelwa",
+  "({count} failed": "({count} yo kundelwa",
+  "({count} in progress)": "({count}) U Khou Bvela"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Inviènd...",
   "Password": "Paröla",
   "Submit": "Invié",
-  "OK": "Va Bän",
+  "OK": "Và Ben",
   "Link Only": "Solo Ligam",
   "View Album Photos": "Vèdder Al Fòt Dl'Album",
   "Enter Username": "Inserisci Nòm Utènt",
   "Select Username": "Sèlta Nóm Utènt",
-  "Add Random Digits to Username": "Zuntèr Nòmer Caśuèl al Nòm Utènt"
+  "Add Random Digits to Username": "Zuntèr Nòmer Caśuèl al Nòm Utènt",
+  "Enter your email so {ownerName} can see who accessed their album": "Métt Al Tô Email Par Chè {ownerName} Al Pôsa Vàdder Chi L'è Andè In Dal Sô Album",
+  "Complete": "Cumpìt",
+  "Processing": "Elaburaziòun",
+  "Uploading": "Caregànd",
+  "Cancel Upload": "Cancella Caricamento",
+  "Upload progress": "Progres Ed Cargament",
+  "Overall progress": "Prugrès Totèl",
+  "Completed": "Finî",
+  "Failed": "Fallé",
+  "({count} failed": "({count} falì",
+  "({count} in progress)": "({count}) In Corso"
 }

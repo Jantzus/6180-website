@@ -142,10 +142,21 @@
   "Submitting...": "שיקט...",
   "Password": "פּאַראָל",
   "Submit": "אריינגעבן",
-  "OK": "Akei",
+  "OK": "אקעי",
   "Link Only": "בלויז לינק",
   "View Album Photos": "באַקוקן אַלבום בילדער",
   "Enter Username": "אַרײַנגעבן באַניצער נאָמען",
   "Select Username": "קלייבט אויס באניצער נאמען",
-  "Add Random Digits to Username": "לייג צו צופֿעליגע ציפֿערן צו באַניצער נאָמען"
+  "Add Random Digits to Username": "לייג צו צופֿעליגע ציפֿערן צו באַניצער נאָמען",
+  "Enter your email so {ownerName} can see who accessed their album": "אַרײַנשרײַבן דײַן אימעיל כּדי {ownerName} קען זען ווער האט צוגעטרעטן צו זייער אַלבום",
+  "Complete": "פֿאַרענדיקן",
+  "Processing": "פּראָצעסירונג",
+  "Uploading": "ארויפלאָדירן",
+  "Cancel Upload": "אַפּלאָדירן אָפּזאָגן",
+  "Upload progress": "ארויפלאָד פּראָגרעס",
+  "Overall progress": "אלגעמיינע פארשריט",
+  "Completed": "געענדיקט",
+  "Failed": "דורכגעפאלן",
+  "({count} failed": "({count} דורכגעפאלן",
+  "({count} in progress)": "({count}) אין פארשריט"
 }

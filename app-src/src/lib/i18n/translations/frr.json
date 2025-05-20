@@ -147,5 +147,16 @@
   "View Album Photos": "Album Bilen Uunluke",
   "Enter Username": "Brükernööm Indu",
   "Select Username": "Brükernööm Ütjsjük",
-  "Add Random Digits to Username": "Taufelig Taal Tu Brükernööm Diartudu"
+  "Add Random Digits to Username": "Taufelig Taal Tu Brükernööm Diartudu",
+  "Enter your email so {ownerName} can see who accessed their album": "Skriiw Din E-Mail Iin, So Dåt {ownerName} Scheende Koon, Weer Heer Album Önjkiiket Hää",
+  "Complete": "Fulstännag",
+  "Processing": "Ferårbeiding",
+  "Uploading": "Uploading",
+  "Cancel Upload": "Huuchsjüür Ufbreeg",
+  "Upload progress": "Huuchschüüren Füürgunng",
+  "Overall progress": "Hial Fertskriden",
+  "Completed": "Fäärdig",
+  "Failed": "Misjongen",
+  "({count} failed": "({count} skidjert",
+  "({count} in progress)": "({count}) Uun Fertsjüüs"
 }

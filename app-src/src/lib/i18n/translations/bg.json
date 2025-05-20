@@ -142,10 +142,21 @@
   "Submitting...": "Изпращане...",
   "Password": "Парола",
   "Submit": "Изпращане",
-  "OK": "Dobre",
+  "OK": "Добре",
   "Link Only": "Само Връзка",
   "View Album Photos": "Преглед На Снимки В Албума",
   "Enter Username": "Въведете Потребителско Име",
   "Select Username": "Избери Потребителско Име",
-  "Add Random Digits to Username": "Добавяне На Случайни Цифри Към Потребителското Име"
+  "Add Random Digits to Username": "Добавяне На Случайни Цифри Към Потребителското Име",
+  "Enter your email so {ownerName} can see who accessed their album": "Въведете Вашия Имейл, За Да Може {ownerName} Да Види Кой Е Достъпил До Техния Албум",
+  "Complete": "Завършен",
+  "Processing": "Обработка",
+  "Uploading": "Качване",
+  "Cancel Upload": "Отмяна На Качването",
+  "Upload progress": "Напредък На Качването",
+  "Overall progress": "Общ Прогрес",
+  "Completed": "Завършен",
+  "Failed": "Неуспешно",
+  "({count} failed": "({count} неуспешно",
+  "({count} in progress)": "({count}) В Ход"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Album Fotos Oschaun",
   "Enter Username": "Nutzernamen Eingeben",
   "Select Username": "Benutzernåmen Auswähln",
-  "Add Random Digits to Username": "Zuafällige Zoin Zum Benutzernåmen Dazuagem"
+  "Add Random Digits to Username": "Zuafällige Zoin Zum Benutzernåmen Dazuagem",
+  "Enter your email so {ownerName} can see who accessed their album": "Gib Dei E-Mail Ei, Damit {ownerName} Segn Ko, Wer Eana Album Ogschaut Hot",
+  "Complete": "Foitich",
+  "Processing": "Veroarbatung",
+  "Uploading": "Auffiladen",
+  "Cancel Upload": "Upload Obbrecha",
+  "Upload progress": "Aufelådn Fortschritt",
+  "Overall progress": "Gesamtfortschritt",
+  "Completed": "Obgschlossn",
+  "Failed": "Gscheitert",
+  "({count} failed": "({count} gscheitert",
+  "({count} in progress)": "({count}) Im Gange"
 }

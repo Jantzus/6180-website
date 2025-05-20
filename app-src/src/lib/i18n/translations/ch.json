@@ -147,5 +147,16 @@
   "View Album Photos": "Atan I Litratu Siha Gi Album",
   "Enter Username": "Na'hålom I Na'ån-mu",
   "Select Username": "Ayek I Na'an-mu",
-  "Add Random Digits to Username": "Na'añadi Numiru Siha Gi Username"
+  "Add Random Digits to Username": "Na'añadi Numiru Siha Gi Username",
+  "Enter your email so {ownerName} can see who accessed their album": "Na'hålom I Email-mu Para Si {ownerName} Sina Li'e' Håyi Humanao Gi Album-ñiha",
+  "Complete": "Kumplidu",
+  "Processing": "Prosesesu",
+  "Uploading": "Mana'hatsaka",
+  "Cancel Upload": "Kansela I Uploading",
+  "Upload progress": "Prugråmman Såtge",
+  "Overall progress": "Adelånto Enteru",
+  "Completed": "Ma Kumple",
+  "Failed": "Mafet",
+  "({count} failed": "({count} ti mafatto",
+  "({count} in progress)": "({count}) Kumekåkåo"
 }

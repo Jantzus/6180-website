@@ -147,5 +147,16 @@
   "View Album Photos": "Logön Magodis Samafota",
   "Enter Username": "Penädolös Gebananaföti",
   "Select Username": "Välön Gebanananem",
-  "Add Random Digits to Username": "Läükön Notidis Mödotik Ad Gebananem"
+  "Add Random Digits to Username": "Läükön Notidis Mödotik Ad Gebananem",
+  "Enter your email so {ownerName} can see who accessed their album": "Penolös Ladetaädi Olik, Dat {ownerName} Kanon Logön, Kin Egegivon Ad Laibüm Onsik",
+  "Complete": "Jönum",
+  "Processing": "Bearbeitön",
+  "Uploading": "Löpladöl",
+  "Cancel Upload": "Stöpedön Löpladami",
+  "Upload progress": "Löpladöp Fuel",
+  "Overall progress": "Valemik Füdaskilof",
+  "Completed": "Pefiedöl",
+  "Failed": "No Sädik",
+  "({count} failed": "({count} no plöpön",
+  "({count} in progress)": "({count}) In Föpedot"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Soumèssion...",
   "Password": "Mot De Pâsa",
   "Submit": "Somètre",
-  "OK": "D'Acôrd",
+  "OK": "D'acôrd",
   "Link Only": "Solament Lyan",
   "View Album Photos": "Vêre Les Fotos De L'Album",
   "Enter Username": "Entrâd Nom D'Usanciér",
   "Select Username": "Chouèsir Nom d'Utilisator",
-  "Add Random Digits to Username": "Apondre Des Chifros Hasardos U Nom D'utilisator"
+  "Add Random Digits to Username": "Apondre Des Chifros Hasardos U Nom D'utilisator",
+  "Enter your email so {ownerName} can see who accessed their album": "Entrâd Voutron Mèl Por Que {ownerName} Pouesse Vêre Qui At Accèdâ A Lor Album",
+  "Complete": "Complèt",
+  "Processing": "Trètament",
+  "Uploading": "Tèlèchargement",
+  "Cancel Upload": "Anular Tèlèchargement",
+  "Upload progress": "Progression Du Tèlèchargement",
+  "Overall progress": "Progrèt Globâl",
+  "Completed": "Achevâ",
+  "Failed": "Falyi",
+  "({count} failed": "({count} falyê",
+  "({count} in progress)": "({count}) En Cours"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "پیش کر رہیا اے...",
   "Password": "پاس ورڈ",
   "Submit": "بھیجو",
-  "OK": "Ṭhīk Hai",
+  "OK": "ٹھیک اے",
   "Link Only": "صرف لنک",
   "View Album Photos": "البم فوٹو ویکھو",
   "Enter Username": "ورتن آلا ناں درج کرو",
   "Select Username": "ورتن آلا ناں چنو",
-  "Add Random Digits to Username": "صارف دے ناں وچ بے ترتیب اعداد پاؤ"
+  "Add Random Digits to Username": "صارف دے ناں وچ بے ترتیب اعداد پاؤ",
+  "Enter your email so {ownerName} can see who accessed their album": "اپنا ای میل درج کرو تاں جے {ownerName} ویکھ سکے کہ کس نے اوناں دی البم تک پہنچ کیتی اے",
+  "Complete": "مکمل",
+  "Processing": "پروسیسنگ",
+  "Uploading": "اپلوڈ کر رہیا اے",
+  "Cancel Upload": "اپلوڈ منسوخ کرو",
+  "Upload progress": "اپلوڈ ترقی",
+  "Overall progress": "کل ترقی",
+  "Completed": "مکمل",
+  "Failed": "ناکام",
+  "({count} failed": "({count} ناکام",
+  "({count} in progress)": "({count}) ترقی وچ"
 }

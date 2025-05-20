@@ -142,10 +142,21 @@
   "Submitting...": "Nagpadala...",
   "Password": "Password",
   "Submit": "Isumite",
-  "OK": "Ok Ra",
+  "OK": "OK Ra",
   "Link Only": "Link Lamang",
   "View Album Photos": "Tan-awa Ang Mga Litrato Sa Album",
   "Enter Username": "Isulod Ang Ngalan Sa Tiggamit",
   "Select Username": "Pagpili sa Ngalan sa Tiggamit",
-  "Add Random Digits to Username": "Idugang Ang Random Nga Mga Numero Sa Ngalan Sa Tiggamit"
+  "Add Random Digits to Username": "Idugang Ang Random Nga Mga Numero Sa Ngalan Sa Tiggamit",
+  "Enter your email so {ownerName} can see who accessed their album": "Isulat Ang Imong Email Aron {ownerName} Makakita Kinsa Ang Naka-access Sa Ilang Album",
+  "Complete": "Kompleto",
+  "Processing": "Pagproseso",
+  "Uploading": "Nagakarga",
+  "Cancel Upload": "Kanselara Ang Pag-upload",
+  "Upload progress": "Pag-asdang Sa Pag-upload",
+  "Overall progress": "Kinatibuk-ang Pag-uswag",
+  "Completed": "Nahuman",
+  "Failed": "Napakyas",
+  "({count} failed": "({count} napakyas",
+  "({count} in progress)": "({count}) Sa Pag-Uswag"
 }

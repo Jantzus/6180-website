@@ -147,5 +147,16 @@
   "View Album Photos": "Onani Zithunzi Za Album",
   "Enter Username": "Lembani Dzina Logwiritsa",
   "Select Username": "Sankhani Dzina Logwiritsa",
-  "Add Random Digits to Username": "Onjezani Manambala Osankhidwa Mwala Pa Dzina La Ogwiritsa"
+  "Add Random Digits to Username": "Onjezani Manambala Osankhidwa Mwala Pa Dzina La Ogwiritsa",
+  "Enter your email so {ownerName} can see who accessed their album": "Lembani Email Yanu Kuti {ownerName} Athe Kuona Amene Anaona Album Yawo",
+  "Complete": "Zonse",
+  "Processing": "Kupanga",
+  "Uploading": "Kutsitsa",
+  "Cancel Upload": "Letsani Kutsitsa",
+  "Upload progress": "Kupita Patsogolo Kwa Kupititsa",
+  "Overall progress": "Kupita Patsogolo Konse",
+  "Completed": "Anamaliza",
+  "Failed": "Zalepera",
+  "({count} failed": "({count} zalephera",
+  "({count} in progress)": "({count}) Zili Mkati"
 }

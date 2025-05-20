@@ -142,10 +142,21 @@
   "Submitting...": "Diraya...",
   "Password": "Erayga Sirta Ah",
   "Submit": "Soo Gudbi",
-  "OK": "Waayahay",
+  "OK": "OK",
   "Link Only": "Kaliya Xiriir",
   "View Album Photos": "Eeg Sawirada Album",
   "Enter Username": "Geli Magaca Isticmaale",
   "Select Username": "Dooro Magaca Isticmaalaha",
-  "Add Random Digits to Username": "Ku Dar Lambarada Aan Kala Sooc Lahayn Magaca Isticmaalaha"
+  "Add Random Digits to Username": "Ku Dar Lambarada Aan Kala Sooc Lahayn Magaca Isticmaalaha",
+  "Enter your email so {ownerName} can see who accessed their album": "Geli Email-kaaga Si {ownerName} U Arki Karo Cidda Galay Albumkooda",
+  "Complete": "Dhameystiran",
+  "Processing": "Soo-saarid",
+  "Uploading": "Soo gelinta",
+  "Cancel Upload": "Jooji Soo Gelinta",
+  "Upload progress": "Horumarka Soo Gelinta",
+  "Overall progress": "Horumar Guud",
+  "Completed": "Dhameystiray",
+  "Failed": "Fashilmay",
+  "({count} failed": "({count} guuldareystay",
+  "({count} in progress)": "({count}) Socda"
 }

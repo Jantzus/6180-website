@@ -142,10 +142,21 @@
   "Submitting...": "Resuma...",
   "Password": "Nsɛm Ahintasɛm",
   "Submit": "Fa Ma",
-  "OK": "Yoo",
+  "OK": "Ɛyɛ",
   "Link Only": "Nkɔsɔ Nkɔ",
   "View Album Photos": "Hwɛ Album Mfonyin",
   "Enter Username": "Hyehyɛ Wo Din",
   "Select Username": "Yi Dwumayenkɔ",
-  "Add Random Digits to Username": "Fa Nɔmba Ntawantawa Ka Wo Din Ho"
+  "Add Random Digits to Username": "Fa Nɔmba Ntawantawa Ka Wo Din Ho",
+  "Enter your email so {ownerName} can see who accessed their album": "Fa Wo Email To Mu Sɛdeɛ {ownerName} Bɛtumi Ahunu Obiara A Ɔhwɛɛ Wɔn Albɔm",
+  "Complete": "Ma Mu Awie",
+  "Processing": "Mprosesin",
+  "Uploading": "Ɔrelɔd",
+  "Cancel Upload": "Twa Upload",
+  "Upload progress": "Nnɔma Nhyɛaseɛ",
+  "Overall progress": "Ɛkɔ So Mu Mpɔtaee",
+  "Completed": "Wɔwie",
+  "Failed": "Adi Nkɔ",
+  "({count} failed": "({count} anhwehwɛ",
+  "({count} in progress)": "({count}) Ɛrekɔ So"
 }

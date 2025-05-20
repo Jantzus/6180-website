@@ -147,5 +147,16 @@
   "View Album Photos": "Gweld Lluniau Album",
   "Enter Username": "Rhowch Enw Defnyddiwr",
   "Select Username": "Dewis Enw Defnyddiwr",
-  "Add Random Digits to Username": "Ychwanegu Digidau Ar Hap At Enw Defnyddiwr"
+  "Add Random Digits to Username": "Ychwanegu Digidau Ar Hap At Enw Defnyddiwr",
+  "Enter your email so {ownerName} can see who accessed their album": "Rhowch Eich E-bost Fel Y Gall {ownerName} Weld Pwy Sydd Wedi Cyrchu Eu Albwm",
+  "Complete": "Cwblhau",
+  "Processing": "Prosesu",
+  "Uploading": "Uwchlwytho",
+  "Cancel Upload": "Canslo Uwchlwytho",
+  "Upload progress": "Cynnydd Uwchlwytho",
+  "Overall progress": "Cynnydd Cyffredinol",
+  "Completed": "Wedi Ei Gwblhau",
+  "Failed": "Wedi Methu",
+  "({count} failed": "({count} wedi methu",
+  "({count} in progress)": "({count}) Ar Y Gweill"
 }

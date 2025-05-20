@@ -142,10 +142,21 @@
   "Submitting...": "Kutfumela...",
   "Password": "Ligama Lelidzindza",
   "Submit": "Tfumela",
-  "OK": "Kuhle",
+  "OK": "Kulungile",
   "Link Only": "Tindzawulo Kuphela",
   "View Album Photos": "Buka Titfombe Tethalifomu",
   "Enter Username": "Faka Ligama Lakho",
   "Select Username": "Khetsa Ligama Lemsebentisi",
-  "Add Random Digits to Username": "Ngetela Tinombolo Tenhlanhla Ebitweni Lokusebentisa"
+  "Add Random Digits to Username": "Ngetela Tinombolo Tenhlanhla Ebitweni Lokusebentisa",
+  "Enter your email so {ownerName} can see who accessed their album": "Faka I-Email Yakho Kute {ownerName} Akhone Kubona Kutsi Ngubani Longene Ku-Album Yabo",
+  "Complete": "Gcwele",
+  "Processing": "Kucubungula",
+  "Uploading": "Kukhweshela phezulu",
+  "Cancel Upload": "Khansela Kulayisha",
+  "Upload progress": "Intfutfuko Yekwetfwala",
+  "Overall progress": "Intfutfuko Yonkhe",
+  "Completed": "Icedzelwe",
+  "Failed": "Yehlulekile",
+  "({count} failed": "({count} yehlulekile",
+  "({count} in progress)": "({count}) Iyachubeka"
 }

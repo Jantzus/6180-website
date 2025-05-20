@@ -142,10 +142,21 @@
   "Submitting...": "Sender...",
   "Password": "Passord",
   "Submit": "Send",
-  "OK": "Greit",
+  "OK": "OK",
   "Link Only": "Kun Lenke",
   "View Album Photos": "Se Album Bilder",
   "Enter Username": "Skriv Inn Brukernavn",
   "Select Username": "Velg Brukernavn",
-  "Add Random Digits to Username": "Legg Til Tilfeldige Sifre Til Brukernavn"
+  "Add Random Digits to Username": "Legg Til Tilfeldige Sifre Til Brukernavn",
+  "Enter your email so {ownerName} can see who accessed their album": "Skriv Inn E-postadressen Din Slik At {ownerName} Kan Se Hvem Som Har Sett På Albumet Deres",
+  "Complete": "Fullstendig",
+  "Processing": "Behandling",
+  "Uploading": "Laster opp",
+  "Cancel Upload": "Avbryt Opplasting",
+  "Upload progress": "Opplastingsfremgang",
+  "Overall progress": "Samlet Fremgang",
+  "Completed": "Fullført",
+  "Failed": "Mislyktes",
+  "({count} failed": "({count} mislyktes",
+  "({count} in progress)": "({count}) I Prosess"
 }

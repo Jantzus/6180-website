@@ -147,5 +147,16 @@
   "View Album Photos": "Védar Łe Foto De L'Album",
   "Enter Username": "Inserisi Nome Utente",
   "Select Username": "Sełesiona Nome Utente",
-  "Add Random Digits to Username": "Zonta Nùmari Caxuałi Al Nome Utente"
+  "Add Random Digits to Username": "Zonta Nùmari Caxuałi Al Nome Utente",
+  "Enter your email so {ownerName} can see who accessed their album": "Inserisi El To Indiriso Email Cusì {ownerName} El Pol Védare Chi Ga Acedùo Al So Album",
+  "Complete": "Conpleto",
+  "Processing": "Elaborasion",
+  "Uploading": "Cargamento",
+  "Cancel Upload": "Canceła Cargamento",
+  "Upload progress": "Vansamento De Caregamento",
+  "Overall progress": "Progreso Totale",
+  "Completed": "Finìo",
+  "Failed": "Fałìo",
+  "({count} failed": "({count} falìo",
+  "({count} in progress)": "({count}) In Corso"
 }

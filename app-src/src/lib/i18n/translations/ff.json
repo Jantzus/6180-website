@@ -142,10 +142,21 @@
   "Submitting...": "Naɓɓude...",
   "Password": "Konngol Suuɗiingol",
   "Submit": "Neldu",
-  "OK": "Moƴƴi",
+  "OK": "Moƴƴii",
   "Link Only": "Jokkondiral Tan",
   "View Album Photos": "Yiy Natal Album",
   "Enter Username": "Winndu Innde Kuutoro",
   "Select Username": "Labo Innde Gollitoowo",
-  "Add Random Digits to Username": "Ɓeydu Limle Pooccitaaɗe E Innde Kuutoro"
+  "Add Random Digits to Username": "Ɓeydu Limle Pooccitaaɗe E Innde Kuutoro",
+  "Enter your email so {ownerName} can see who accessed their album": "Winndu Iimeel Maa Ngam {ownerName} Yiiya Hol Naati E Albomu Mum'en",
+  "Complete": "Timmude",
+  "Processing": "Jokkondirgol",
+  "Uploading": "Jooltugol",
+  "Cancel Upload": "Haaytu Loowgol",
+  "Upload progress": "Dawtol Yottingol",
+  "Overall progress": "Yahrugol Kuuɓngol",
+  "Completed": "Timmii",
+  "Failed": "Woonaani",
+  "({count} failed": "({count} woorii",
+  "({count} in progress)": "({count}) E Yaha Yeeso"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Inviendu...",
   "Password": "Codice",
   "Submit": "Sottumette",
-  "OK": "Va Bè",
+  "OK": "D'accordu",
   "Link Only": "Solu Ligame",
   "View Album Photos": "Vede E Fotò Di L'Albumu",
   "Enter Username": "Inserisci Nome Utente",
   "Select Username": "Selezziunà Nome Utilizatore",
-  "Add Random Digits to Username": "Aghjunghje Cifre Aleatorii À U Nome Di L'utilizatore"
+  "Add Random Digits to Username": "Aghjunghje Cifre Aleatorii À U Nome Di L'utilizatore",
+  "Enter your email so {ownerName} can see who accessed their album": "Inserite U Vostru Email Cusì Chì {ownerName} Pò Vede Quale Hà Accessu À U So Album",
+  "Complete": "Cumpletu",
+  "Processing": "Trattamentu",
+  "Uploading": "Carichendu",
+  "Cancel Upload": "Cancellà Caricà",
+  "Upload progress": "Avanzamentu Di Caricamentu",
+  "Overall progress": "Prugressu Glubale",
+  "Completed": "Compie",
+  "Failed": "Fiascatu",
+  "({count} failed": "({count} fiascatu",
+  "({count} in progress)": "({count}) In Corsu"
 }

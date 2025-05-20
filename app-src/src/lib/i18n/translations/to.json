@@ -142,10 +142,21 @@
   "Submitting...": "ʻOku fakahū...",
   "Password": "Lea Fakapulipuli",
   "Submit": "Fakahū",
-  "OK": "Sai Pe",
+  "OK": "Sai",
   "Link Only": "Fehokotaki Pē",
   "View Album Photos": "Vakai Ki He Ngaahi 'Ata 'O E 'Ālapama",
   "Enter Username": "Hū Ki He Hingoa ʻO E Tokotaha Ngāueʻaki",
   "Select Username": "Fili ha Hingoa Ngāue'aki",
-  "Add Random Digits to Username": "Tanaki Ha Mata Fika Fakahaunga Ki He Hingoa Taha"
+  "Add Random Digits to Username": "Tanaki Ha Mata Fika Fakahaunga Ki He Hingoa Taha",
+  "Enter your email so {ownerName} can see who accessed their album": "Fakahū Ho Fetu'utaki Fakaimelí Ke Lava 'E {ownerName} 'O Vakai Pe Ko Hai Na'e Hū Ki He'enau ʻĀlipamu",
+  "Complete": "Kakato",
+  "Processing": "Ngāue'i",
+  "Uploading": "Fakahū",
+  "Cancel Upload": "Tāmateʻi ʻa e Hū Hake",
+  "Upload progress": "Fakalakalaka 'O Hono Hiki Hake",
+  "Overall progress": "Fakalakalaka Fakalukufua",
+  "Completed": "Kakato",
+  "Failed": "Tōnounou",
+  "({count} failed": "({count} ʻikai lava",
+  "({count} in progress)": "({count}) Lolotonga Fakahoko"
 }

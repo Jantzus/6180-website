@@ -142,10 +142,21 @@
   "Submitting...": "Ярса...",
   "Password": "Вӑрттӑн Сӑмах",
   "Submit": "Ярса Пар",
-  "OK": "Lajăh",
+  "OK": "Юрать",
   "Link Only": "Каçăх Çыхăну",
   "View Album Photos": "Альбом Сӑн Ӳкерчӗкӗсене Пӑх",
   "Enter Username": "Хутшăнакан Ятне Кĕртĕр",
   "Select Username": "Усăнăн Ячĕ Суйла",
-  "Add Random Digits to Username": "Усӑ Ятне Ӑнсӑрт Цифрӑсем Хуш"
+  "Add Random Digits to Username": "Усӑ Ятне Ӑнсӑрт Цифрӑсем Хуш",
+  "Enter your email so {ownerName} can see who accessed their album": "Хӑвӑн Email-а Ҫыр {ownerName} Вӗсен Альбома Кам Пӑхнине Курма Пултартӑр",
+  "Complete": "Тулли",
+  "Processing": "Ӗҫлев",
+  "Uploading": "Тиенĕ",
+  "Cancel Upload": "Тиеве Пăрахăçла",
+  "Upload progress": "Тиенĕ Прогресĕ",
+  "Overall progress": "Пĕтĕмĕшле Аталану",
+  "Completed": "Вӗçленӗ",
+  "Failed": "Ӑнӑҫлӑ мар",
+  "({count} failed": "({count} ăнăçлăх",
+  "({count} in progress)": "({count}) Пулса Пырать"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Ver Semeyes Del Álbum",
   "Enter Username": "Introduz Nome D'Usuariu",
   "Select Username": "Esbillar Nome d'Usuariu",
-  "Add Random Digits to Username": "Amestar Díxitos Al Azar Al Nome D'usuariu"
+  "Add Random Digits to Username": "Amestar Díxitos Al Azar Al Nome D'usuariu",
+  "Enter your email so {ownerName} can see who accessed their album": "Introduz El To Corréu Electrónicu Pa Que {ownerName} Pueda Ver Quién Accedió Al So Álbum",
+  "Complete": "Completar",
+  "Processing": "Procesamientu",
+  "Uploading": "Xubiendo",
+  "Cancel Upload": "Encaboxar Xuba",
+  "Upload progress": "Progresu De Xuba",
+  "Overall progress": "Progresu Xeneral",
+  "Completed": "Completáu",
+  "Failed": "Falló",
+  "({count} failed": "({count} falló",
+  "({count} in progress)": "({count}) En Progresu"
 }

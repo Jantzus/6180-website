@@ -142,10 +142,21 @@
   "Submitting...": "Ыстӥське...",
   "Password": "Пароль",
   "Submit": "Ыстыны",
-  "OK": "Umoy",
+  "OK": "Умой",
   "Link Only": "Гинэ Чӧлскон",
   "View Album Photos": "Альбомысь Фотоосты Учкыны",
   "Enter Username": "Кутӥсьлэсь Нимзэ Гожтэ",
   "Select Username": "Кутӥсьлэсь Нимзэ Быръе",
-  "Add Random Digits to Username": "Кутӥсьлэн Нимаз Шыпыртэм Лыдпусъёс Ватсаны"
+  "Add Random Digits to Username": "Кутӥсьлэн Нимаз Шыпыртэм Лыдпусъёс Ватсаны",
+  "Enter your email so {ownerName} can see who accessed their album": "Электрон Почтадэс Гожтэ, {ownerName} Мед Адӟоз Кин Учкиз Соослэсь Альбомзэс",
+  "Complete": "Быдэс",
+  "Processing": "Ужан",
+  "Uploading": "Поттон",
+  "Cancel Upload": "Поттонэз Дугдытыны",
+  "Upload progress": "Понна Мынон",
+  "Overall progress": "Огъя Азинскон",
+  "Completed": "Быдэстэмын",
+  "Failed": "Öз пöрмы",
+  "({count} failed": "({count} пӧрмымтэ",
+  "({count} in progress)": "({count}) Мынэ"
 }

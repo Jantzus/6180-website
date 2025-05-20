@@ -142,10 +142,21 @@
   "Submitting...": "Nagpapadara...",
   "Password": "Paskod",
   "Submit": "Isumite",
-  "OK": "Marhay",
+  "OK": "Maray",
   "Link Only": "Takod Sana",
   "View Album Photos": "Hilingon An Mga Litrato Kan Album",
   "Enter Username": "Ikaag An Pangaran Nin Paragamit",
   "Select Username": "Pilian an Ngaran nin Paragamit",
-  "Add Random Digits to Username": "Magdugang Nin Random Na Mga Numero Sa Ngaran"
+  "Add Random Digits to Username": "Magdugang Nin Random Na Mga Numero Sa Ngaran",
+  "Enter your email so {ownerName} can see who accessed their album": "Ilaag An Saimong Email Para {ownerName} Makahiling Kun Siisay An Nag-access Kan Saindang Album",
+  "Complete": "Kompleto",
+  "Processing": "Pagproseso",
+  "Uploading": "Pigkakaraga",
+  "Cancel Upload": "Kanselaron an Pagkarga",
+  "Upload progress": "Progreso Kan Pagkarga",
+  "Overall progress": "Pangkabilugan Na Progreso",
+  "Completed": "Nakumpleto",
+  "Failed": "Nagpalya",
+  "({count} failed": "({count} nagpalya",
+  "({count} in progress)": "({count}) Nagpapadagos"
 }

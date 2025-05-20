@@ -147,5 +147,16 @@
   "View Album Photos": "Sam Cabwnj Rongzcoz",
   "Enter Username": "Dahraengz Gyoengqmingh",
   "Select Username": "Gouq Gyoenghoz Mbouj",
-  "Add Random Digits to Username": "Daep sipsij cwyouz bae geiqmingh"
+  "Add Random Digits to Username": "Daep sipsij cwyouz bae geiqmingh",
+  "Enter your email so {ownerName} can see who accessed their album": "Sujsieng meiqyouq e-mail, rox {ownerName} cungj miz gin boux vah roxgvaq vunz gyoengz album",
+  "Complete": "Wancin",
+  "Processing": "Cujli",
+  "Uploading": "Daengqsaet",
+  "Cancel Upload": "Celinz Cienzndaep",
+  "Upload progress": "Hwnzndin Ginqdiuz",
+  "Overall progress": "Cungzhoux Ginzswz",
+  "Completed": "Wanceng",
+  "Failed": "Sit-baij",
+  "({count} failed": "({count} sipsaek",
+  "({count} in progress)": "({count}) Dauqlai Yinghong"
 }

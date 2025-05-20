@@ -142,10 +142,21 @@
   "Submitting...": "भेजा जा रहा है...",
   "Password": "पासवर्ड",
   "Submit": "जमा करीं",
-  "OK": "Ṭhik",
+  "OK": "ठीक",
   "Link Only": "सिरफ लिंक",
   "View Album Photos": "एल्बम फोटो देखीं",
   "Enter Username": "प्रयोगकर्ता नाम दर्ज करें",
   "Select Username": "उपयोगकर्ता नाम चुनें",
-  "Add Random Digits to Username": "यूजरनाम में रैंडम अंक जोड़ें"
+  "Add Random Digits to Username": "यूजरनाम में रैंडम अंक जोड़ें",
+  "Enter your email so {ownerName} can see who accessed their album": "आपन ईमेल डालीं ताकि {ownerName} देख सकें कि के उनकर एल्बम देखलस",
+  "Complete": "पूरा",
+  "Processing": "प्रक्रिया",
+  "Uploading": "अपलोड हो रहल बा",
+  "Cancel Upload": "अपलोड रद्द करें",
+  "Upload progress": "अपलोड प्रगति",
+  "Overall progress": "समग्र प्रगति",
+  "Completed": "पूरा भइल",
+  "Failed": "असफल",
+  "({count} failed": "({count} असफल",
+  "({count} in progress)": "({count}) प्रगति में"
 }

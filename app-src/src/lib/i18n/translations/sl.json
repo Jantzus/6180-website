@@ -147,5 +147,16 @@
   "View Album Photos": "Ogled Fotografij Albuma",
   "Enter Username": "Vnesite Uporabniško Ime",
   "Select Username": "Izberite Uporabniško Ime",
-  "Add Random Digits to Username": "Dodaj Naključne Številke K Uporabniškemu Imenu"
+  "Add Random Digits to Username": "Dodaj Naključne Številke K Uporabniškemu Imenu",
+  "Enter your email so {ownerName} can see who accessed their album": "Vnesite Svoj E-poštni Naslov, Da Bo {ownerName} Lahko Videl, Kdo Je Dostopal Do Njihovega Albuma",
+  "Complete": "Popoln",
+  "Processing": "Obdelava",
+  "Uploading": "Nalaganje",
+  "Cancel Upload": "Prekliči Nalaganje",
+  "Upload progress": "Napredek Nalaganja",
+  "Overall progress": "Splošni Napredek",
+  "Completed": "Dokončana",
+  "Failed": "Neuspelo",
+  "({count} failed": "({count} ni uspelo",
+  "({count} in progress)": "({count}) V Delu"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Submit karat hai...",
   "Password": "Password",
   "Submit": "Submit Karo",
-  "OK": "Theek Hai",
+  "OK": "Theek",
   "Link Only": "Sirf Link",
   "View Album Photos": "Album Photos Dekho",
   "Enter Username": "Username Darj Karo",
   "Select Username": "Username Chuno",
-  "Add Random Digits to Username": "Username me random digits jorro"
+  "Add Random Digits to Username": "Username me random digits jorro",
+  "Enter your email so {ownerName} can see who accessed their album": "Apan Email Dalo Jisse {ownerName} Dekh Sake Ki Kaun Unke Album Ke Access Karis",
+  "Complete": "Pura",
+  "Processing": "Processing",
+  "Uploading": "Upload karat hai",
+  "Cancel Upload": "Upload khatam karo",
+  "Upload progress": "Upload Progress",
+  "Overall progress": "Sampuran Pragati",
+  "Completed": "Puura",
+  "Failed": "Fail Hoe Gais",
+  "({count} failed": "({count} fail hoe gais",
+  "({count} in progress)": "({count}) Chalat Hae"
 }

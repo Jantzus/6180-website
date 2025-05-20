@@ -142,10 +142,21 @@
   "Submitting...": "Ыстӧм...",
   "Password": "Гусяпас",
   "Submit": "Ыстыны",
-  "OK": "Bur",
+  "OK": "Бур",
   "Link Only": "Дзир Йитӧт",
   "View Album Photos": "Видзӧтны Альбомись Фотоэз",
   "Enter Username": "Гижӧ Пырисьлісь Ним",
   "Select Username": "Бöрйы Уджалісьлісь Нимсӧ",
-  "Add Random Digits to Username": "Вӧдитчисьлӧн Нимӧ Содтыны Кытшӧмкӧ Цифраэз"
+  "Add Random Digits to Username": "Вӧдитчисьлӧн Нимӧ Содтыны Кытшӧмкӧ Цифраэз",
+  "Enter your email so {ownerName} can see who accessed their album": "Гижӧ Ассьыт Электроннӧй Почтасӧ, Медбы {ownerName} Вермис Адззыны, Кин Пырис Ныліс Альбомӧ",
+  "Complete": "Тыр",
+  "Processing": "Уджалӧм",
+  "Uploading": "Ректӧм",
+  "Cancel Upload": "Донтны Дугдӧтны",
+  "Upload progress": "Кыскалӧм Туйвӧтӧм",
+  "Overall progress": "Быдсӧн Водзлань Мунӧм",
+  "Completed": "Эштӧм",
+  "Failed": "Öтчыны эз понды",
+  "({count} failed": "({count} абу удайтӧм",
+  "({count} in progress)": "({count}) Вӧрзьӧ"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Колтымаш...",
   "Password": "Йӹлмӹвлӓ",
   "Submit": "Колташ",
-  "OK": "Яжо",
+  "OK": "Яра",
   "Link Only": "Веле Вӓш",
   "View Album Photos": "Альбом Фотовлӓм Анжаш",
   "Enter Username": "Кычылтшын Лӹмжӹм Пыртыза",
   "Select Username": "Кычылтшын Лӹмжӹм Айырымаш",
-  "Add Random Digits to Username": "Пайдаланышын Лӹмжӹш Вычыдымы Шотым Привайаш"
+  "Add Random Digits to Username": "Пайдаланышын Лӹмжӹш Вычыдымы Шотым Привайаш",
+  "Enter your email so {ownerName} can see who accessed their album": "Шке Электрон Почтам Сирӹ {ownerName} Нӹнӹн Альбомыш Кӱ Пырен Ужшы Манын",
+  "Complete": "Цэлык",
+  "Processing": "Ровотайымаш",
+  "Uploading": "Пыртен",
+  "Cancel Upload": "Пурымашым Цӓрӓш",
+  "Upload progress": "Пижӹктӹмӹ Анжыктыш",
+  "Overall progress": "Цилӓ Анзыкылык",
+  "Completed": "Пӹтӓрӹмӹ",
+  "Failed": "Ситӓлтдымы",
+  "({count} failed": "({count} ак йӧрӹ",
+  "({count} in progress)": "({count}) Видӓлтеш"
 }

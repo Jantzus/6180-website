@@ -147,5 +147,16 @@
   "View Album Photos": "Vidar La Fotografuri Dil Albumo",
   "Enter Username": "Skribez Uzantonomo",
   "Select Username": "Selektez Uzantonomo",
-  "Add Random Digits to Username": "Adjuntar Hazarda Cifri Ad Uzanto Nomo"
+  "Add Random Digits to Username": "Adjuntar Hazarda Cifri Ad Uzanto Nomo",
+  "Enter your email so {ownerName} can see who accessed their album": "Skribez Vua E-posto Por Ke {ownerName} Povas Vidar Qua Acesis Lia Albumo",
+  "Complete": "Kompleta",
+  "Processing": "Procedo",
+  "Uploading": "Adsendado",
+  "Cancel Upload": "Anular Adkargar",
+  "Upload progress": "Adkargio Progreso",
+  "Overall progress": "Generala Progreso",
+  "Completed": "Kompletita",
+  "Failed": "Faliis",
+  "({count} failed": "({count} faliis",
+  "({count} in progress)": "({count}) En Progreso"
 }

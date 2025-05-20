@@ -147,5 +147,16 @@
   "View Album Photos": "Vider Photos Del Album",
   "Enter Username": "Entra Nomine De Usator",
   "Select Username": "Selectiona Nomine de Usator",
-  "Add Random Digits to Username": "Adder Cifras Aleatori Al Nomine De Usator"
+  "Add Random Digits to Username": "Adder Cifras Aleatori Al Nomine De Usator",
+  "Enter your email so {ownerName} can see who accessed their album": "Insere Tu Email Pro Que {ownerName} Pote Vider Qui Ha Accedite A Lor Album",
+  "Complete": "Complete",
+  "Processing": "Tractamento",
+  "Uploading": "Incarga",
+  "Cancel Upload": "Cancellar Incargamento",
+  "Upload progress": "Progresso De Cargamento",
+  "Overall progress": "Progresso Global",
+  "Completed": "Completate",
+  "Failed": "Fallite",
+  "({count} failed": "({count} fallite",
+  "({count} in progress)": "({count}) In Progresso"
 }

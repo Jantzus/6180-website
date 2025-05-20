@@ -147,5 +147,16 @@
   "View Album Photos": "Ẓeṛ Tiwlafin N Wedfar",
   "Enter Username": "Sekcem Isem N Useqdac",
   "Select Username": "Fren Isem n Useqdac",
-  "Add Random Digits to Username": "Rnu Izwilen Igdabaren Ɣer Isem N Useqdac"
+  "Add Random Digits to Username": "Rnu Izwilen Igdabaren Ɣer Isem N Useqdac",
+  "Enter your email so {ownerName} can see who accessed their album": "Sekcem Tansa-k Imayl Akken {ownerName} Yezmer Ad Iẓer Anwa I Yuran Adlis-nsen N Tugniwin",
+  "Complete": "Immed",
+  "Processing": "Asesfer",
+  "Uploading": "Azen",
+  "Cancel Upload": "Sefsex Asali",
+  "Upload progress": "Asfari N Usali",
+  "Overall progress": "Asnerni Amatu",
+  "Completed": "Ifuk",
+  "Failed": "Ur Yedda Ara",
+  "({count} failed": "({count} ur yedda ara",
+  "({count} in progress)": "({count}) Di Tazzwara"
 }

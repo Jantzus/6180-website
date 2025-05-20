@@ -147,5 +147,16 @@
   "View Album Photos": "Альбомым ИсурэтхэмкӀэ Еплъын",
   "Enter Username": "Уи ЦӀэр Итхэн",
   "Select Username": "Цlэр Къыхэх",
-  "Add Random Digits to Username": "Хьзэу Бжыгъэ Тэмэрэзэ Хэгъахь"
+  "Add Random Digits to Username": "Хьзэу Бжыгъэ Тэмэрэзэ Хэгъахь",
+  "Enter your email so {ownerName} can see who accessed their album": "Уи Email-р Илъхьэ {ownerName} Альбомым Хэт Еплъагъэр Илъэгъуфынэу",
+  "Complete": "Зэфэдгъэхъун",
+  "Processing": "Зэкӏэлэжьэн",
+  "Uploading": "Хъэгъэуцуэн",
+  "Cancel Upload": "Хъэгъэхьэр Гъэкъэнэн",
+  "Upload progress": "Хьыгъэхьэгъэ Прогресс",
+  "Overall progress": "Зэкӏэм И Зыужьыныгъэр",
+  "Completed": "Зэфэгъэхъагъэ",
+  "Failed": "Къыдэхъугъэп",
+  "({count} failed": "({count} къызэӏахьэкӏагъ",
+  "({count} in progress)": "({count}) Йылэрэкӏо"
 }

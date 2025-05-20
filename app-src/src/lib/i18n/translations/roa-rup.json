@@ -147,5 +147,16 @@
   "View Album Photos": "Vedu Fotografii Ditu Album",
   "Enter Username": "Scriați Numa Di Usuario",
   "Select Username": "Aleadzi Numã di Utilizator",
-  "Add Random Digits to Username": "Adavgu Numir Alicheari Cãtrã Numa Di Ufilizitorlui"
+  "Add Random Digits to Username": "Adavgu Numir Alicheari Cãtrã Numa Di Ufilizitorlui",
+  "Enter your email so {ownerName} can see who accessed their album": "Bagã E-maillu A Tãu Ta {ownerName} S-poatã S-veadã Cari Ari Actsisatã Albumlu A Lor",
+  "Complete": "Kumplit",
+  "Processing": "Prelucrari",
+  "Uploading": "Încarcâ",
+  "Cancel Upload": "Anulari Trimiteari",
+  "Upload progress": "Progresu Di Ngãrcari",
+  "Overall progress": "Progresu Tutãl",
+  "Completed": "Bitisitu",
+  "Failed": "Eșec",
+  "({count} failed": "({count} nu s'aflã",
+  "({count} in progress)": "({count}) Tu Protsesare"
 }

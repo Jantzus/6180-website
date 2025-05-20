@@ -142,10 +142,21 @@
   "Submitting...": "Посыланя...",
   "Password": "Гесло",
   "Submit": "Одослати",
-  "OK": "Dobre",
+  "OK": "Добрі",
   "Link Only": "Лем Посилання",
   "View Album Photos": "Огляд Фотографій Альбому",
   "Enter Username": "Введіть Імʼя Хоснователя",
   "Select Username": "Выберіть Імʼя Хоснователя",
-  "Add Random Digits to Username": "Додати Рандомны Чісла К Імени Хоснователя"
+  "Add Random Digits to Username": "Додати Рандомны Чісла К Імени Хоснователя",
+  "Enter your email so {ownerName} can see who accessed their album": "Уведіть Вашу Електронну Пошту, Щоб {ownerName} Міг Бачити, Хто Переглядав Їх Альбом",
+  "Complete": "Повный",
+  "Processing": "Обробка",
+  "Uploading": "Завантаження",
+  "Cancel Upload": "Перервати Завантаження",
+  "Upload progress": "Прогрес Завантаження",
+  "Overall progress": "Цалковый Поступ",
+  "Completed": "Закінченый",
+  "Failed": "Не yдaло ся",
+  "({count} failed": "({count} не вдало ся",
+  "({count} in progress)": "({count}) У Процесі"
 }

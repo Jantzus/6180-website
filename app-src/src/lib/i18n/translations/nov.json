@@ -142,10 +142,21 @@
   "Submitting...": "Senda...",
   "Password": "Pasvorte",
   "Submit": "Senda",
-  "OK": "Bon",
+  "OK": "Bien",
   "Link Only": "Nur Ligasion",
   "View Album Photos": "Vida Album Fotos",
   "Enter Username": "Entra Usatnome",
   "Select Username": "Selekte Usatonome",
-  "Add Random Digits to Username": "Adi Chifres Randomim A Nome De Usere"
+  "Add Random Digits to Username": "Adi Chifres Randomim A Nome De Usere",
+  "Enter your email so {ownerName} can see who accessed their album": "Skribe Tun E-poste Por Ke {ownerName} Mog Vide Qui Ha Acese Lon Album",
+  "Complete": "Komplete",
+  "Processing": "Prosesamento",
+  "Uploading": "Adkargante",
+  "Cancel Upload": "Nulifi Kargaje",
+  "Upload progress": "Kargad Progrese",
+  "Overall progress": "Totala Progrese",
+  "Completed": "Kompletad",
+  "Failed": "Falisat",
+  "({count} failed": "({count} falisat",
+  "({count} in progress)": "({count}) In Progrese"
 }

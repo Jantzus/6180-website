@@ -147,5 +147,16 @@
   "View Album Photos": "Альбомалъул Суратал Рихьизаризе",
   "Enter Username": "Хlалтlизабурасул ЦӀар Бихье",
   "Select Username": "Пайдаланылучи Исемен Сайлагыз",
-  "Add Random Digits to Username": "ХӀалтӀизабулесул ЦӀаралде Цере БатӀи-батӀиял Номерал Жубазе"
+  "Add Random Digits to Username": "ХӀалтӀизабулесул ЦӀаралде Цере БатӀи-батӀиял Номерал Жубазе",
+  "Enter your email so {ownerName} can see who accessed their album": "Дур Email Бихье {ownerName} Рихьизе Щив Гьезул Альбомалде Балагьарав",
+  "Complete": "Дандеги",
+  "Processing": "ХӀадурлъи",
+  "Uploading": "Загрузка",
+  "Cancel Upload": "ЖубазабиялдасагӀан Гьечl",
+  "Upload progress": "Загрузкаялъул Цебетеи",
+  "Overall progress": "Тӏубанго Цебетӏей",
+  "Completed": "Лъугьун",
+  "Failed": "Кӏвечӏо",
+  "({count} failed": "({count} данде кколичӏо",
+  "({count} in progress)": "({count}) ТӀубазабулеб"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Vērt Albuma Fotografejis",
   "Enter Username": "Īvoda Lītuotuoja Vuordu",
   "Select Username": "Izalaseit Lītuotuoja Vuordu",
-  "Add Random Digits to Username": "Pīlikt Gadejuma Ciparus Pi Lītōtuoja Vuorda"
+  "Add Random Digits to Username": "Pīlikt Gadejuma Ciparus Pi Lītōtuoja Vuorda",
+  "Enter your email so {ownerName} can see who accessed their album": "Īvade Sovu E-postu, Lai {ownerName} Varātu Redzēt, Kas Pīejē Pi Jū Albuma",
+  "Complete": "Pabeigtys",
+  "Processing": "Apstrodošona",
+  "Uploading": "Īleikšona",
+  "Cancel Upload": "Atceļt Augšupielādi",
+  "Upload progress": "Augšupīladis Progress",
+  "Overall progress": "Puorskata Atteisteiba",
+  "Completed": "Pabeigts",
+  "Failed": "Naīsadevēs",
+  "({count} failed": "({count} naizadevās",
+  "({count} in progress)": "({count}) Nūtīk"
 }

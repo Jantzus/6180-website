@@ -142,10 +142,21 @@
   "Submitting...": "Am Avschecke...",
   "Password": "Paßwoot",
   "Submit": "Avjevve",
-  "OK": "Jot",
+  "OK": "Joot",
   "Link Only": "Nur Lengk",
   "View Album Photos": "Album Fotos Beluure",
   "Enter Username": "Metmaacher Name Enjävve",
   "Select Username": "Metmaacher-Name Ußsöke",
-  "Add Random Digits to Username": "Zofälleje Zeffere Zom Metmaacher-Name Derbei Donn"
+  "Add Random Digits to Username": "Zofälleje Zeffere Zom Metmaacher-Name Derbei Donn",
+  "Enter your email so {ownerName} can see who accessed their album": "Jiff Ding E-Mail-Adress En, Do Met Kann {ownerName} Sinn, Wä Op Ier Album Zohjejreffe Hät",
+  "Complete": "Komplett",
+  "Processing": "Beärbeijdong",
+  "Uploading": "Eroplade",
+  "Cancel Upload": "Huuhlade Affbreche",
+  "Upload progress": "Huuhlade Fottschrëtt",
+  "Overall progress": "Jesamtfootschreet",
+  "Completed": "Avjeschloßße",
+  "Failed": "Jescheitert",
+  "({count} failed": "({count} fählschlare",
+  "({count} in progress)": "({count}) Em Jang"
 }

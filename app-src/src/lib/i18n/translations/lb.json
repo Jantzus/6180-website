@@ -142,10 +142,21 @@
   "Submitting...": "Schécken...",
   "Password": "Passwuert",
   "Submit": "Schécken",
-  "OK": "Okay",
+  "OK": "OK",
   "Link Only": "Nëmmen Link",
   "View Album Photos": "Album Fotoe Kucken",
   "Enter Username": "Benotzernumm Aginn",
   "Select Username": "Benotzernumm Wielen",
-  "Add Random Digits to Username": "Zoufälleg Zuelen Zum Benotzernumm Derbäisetzen"
+  "Add Random Digits to Username": "Zoufälleg Zuelen Zum Benotzernumm Derbäisetzen",
+  "Enter your email so {ownerName} can see who accessed their album": "Gëff Deng E-Mail-Adress An, Fir Datt {ownerName} Gesi Kann, Wien Op Hiren Album Zougrëff Hat",
+  "Complete": "Vollstänneg",
+  "Processing": "Veraarbechtung",
+  "Uploading": "Eroplueden",
+  "Cancel Upload": "Eroplueden Ofbriechen",
+  "Upload progress": "Upload Fortschrëtt",
+  "Overall progress": "Gesamtfortschrëtt",
+  "Completed": "Ofgeschloss",
+  "Failed": "Feelgeschloen",
+  "({count} failed": "({count} feelgeschloen",
+  "({count} in progress)": "({count}) A Beaarbechtung"
 }

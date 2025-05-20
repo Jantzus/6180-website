@@ -147,5 +147,16 @@
   "View Album Photos": "Tála Bilílí Ya Albɔ́m",
   "Enter Username": "Kokoma Kombo Ya Mosaleli",
   "Select Username": "Pona Kombo ya Mosaleli",
-  "Add Random Digits to Username": "Kobakisa Motángo Ya Mbɛmbɛ Na Nkómbó Ya Mosáleli"
+  "Add Random Digits to Username": "Kobakisa Motángo Ya Mbɛmbɛ Na Nkómbó Ya Mosáleli",
+  "Enter your email so {ownerName} can see who accessed their album": "Kotísa Adresse Ya Yo Ya Mokandá Ya Lotilíki Po {ownerName} Akoka Komona Nani Akomaki Na Album Na Bango",
+  "Complete": "Mobimba",
+  "Processing": "Bosali",
+  "Uploading": "Kotombisa",
+  "Cancel Upload": "Kozonga Sima Liboso",
+  "Upload progress": "Boyei Liboso Ya Bokomisi",
+  "Overall progress": "Boyei Liboso Mobimba",
+  "Completed": "Esili",
+  "Failed": "Elongi Te",
+  "({count} failed": "({count} elongi tɛ̂",
+  "({count} in progress)": "({count}) Ezali Kokende"
 }

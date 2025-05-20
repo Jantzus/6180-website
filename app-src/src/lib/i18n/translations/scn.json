@@ -142,10 +142,21 @@
   "Submitting...": "Mannànnusi...",
   "Password": "Password",
   "Submit": "Manna",
-  "OK": "Va Beni",
+  "OK": "Va Bonu",
   "Link Only": "Sulu Culligamentu",
   "View Album Photos": "Talìa Li Fotu Di L'Album",
   "Enter Username": "Metti Lu Nomu Utenti",
   "Select Username": "Scègghiri Nomu Utenti",
-  "Add Random Digits to Username": "Agghiunci Nùmmira Caswali A Lu Nomu Utenti"
+  "Add Random Digits to Username": "Agghiunci Nùmmira Caswali A Lu Nomu Utenti",
+  "Enter your email so {ownerName} can see who accessed their album": "Scrivi Lu To Email Pi Fari Vìdiri A {ownerName} Cu Trasìu Ntô So Album",
+  "Complete": "Cumpletu",
+  "Processing": "Elabburazzioni",
+  "Uploading": "Carricamentu",
+  "Cancel Upload": "Annulla Càrricu",
+  "Upload progress": "Avanzamentu Càrricu",
+  "Overall progress": "Prugressu Tutali",
+  "Completed": "Cumplitatu",
+  "Failed": "Fallitu",
+  "({count} failed": "({count} falliu",
+  "({count} in progress)": "({count}) Nta 'U Cursu"
 }

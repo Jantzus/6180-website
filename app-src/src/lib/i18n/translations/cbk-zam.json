@@ -147,5 +147,16 @@
   "View Album Photos": "Mira Fotos Del Album",
   "Enter Username": "Entra Tu Nombre De Usuario",
   "Select Username": "Escoje Nombre de Usuario",
-  "Add Random Digits to Username": "Añadi Números Casual Na Nombre De Usuario"
+  "Add Random Digits to Username": "Añadi Números Casual Na Nombre De Usuario",
+  "Enter your email so {ownerName} can see who accessed their album": "Entra Tu Email Para {ownerName} Puede Mira Quien Ya Accede Con Su Album",
+  "Complete": "Completo",
+  "Processing": "Procesamiento",
+  "Uploading": "Subiendo",
+  "Cancel Upload": "Cancela Subida",
+  "Upload progress": "Progreso De Carga",
+  "Overall progress": "Progreso Total",
+  "Completed": "Completao",
+  "Failed": "Ya Falla",
+  "({count} failed": "({count} fracasó",
+  "({count} in progress)": "({count}) En Progreso"
 }

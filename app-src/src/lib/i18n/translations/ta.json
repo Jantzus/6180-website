@@ -142,10 +142,21 @@
   "Submitting...": "சமர்ப்பிக்கிறது...",
   "Password": "கடவுச்சொல்",
   "Submit": "சமர்ப்பி",
-  "OK": "Sari",
+  "OK": "சரி",
   "Link Only": "இணைப்பு மட்டும்",
   "View Album Photos": "ஆல்பம் புகைப்படங்களைக் காண்க",
   "Enter Username": "பயனர்பெயரை உள்ளிடவும்",
   "Select Username": "பயனர்பெயரைத் தேர்ந்தெடுக்கவும்",
-  "Add Random Digits to Username": "பயனர் பெயருக்கு சீரற்ற எண்களைச் சேர்"
+  "Add Random Digits to Username": "பயனர் பெயருக்கு சீரற்ற எண்களைச் சேர்",
+  "Enter your email so {ownerName} can see who accessed their album": "உங்கள் மின்னஞ்சலை உள்ளிடவும், இதனால் {ownerName} யார் தங்கள் ஆல்பத்தை அணுகியது என்பதைப் பார்க்க முடியும்",
+  "Complete": "முழுமையான",
+  "Processing": "செயலாக்கம்",
+  "Uploading": "பதிவேற்றுகிறது",
+  "Cancel Upload": "பதிவேற்றம் ரத்து செய்",
+  "Upload progress": "பதிவேற்ற முன்னேற்றம்",
+  "Overall progress": "ஒட்டுமொத்த முன்னேற்றம்",
+  "Completed": "நிறைவு",
+  "Failed": "தோல்வி",
+  "({count} failed": "({count} தோல்வியடைந்தது",
+  "({count} in progress)": "({count}) முன்னேற்றத்தில்"
 }

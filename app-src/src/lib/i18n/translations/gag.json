@@ -142,10 +142,21 @@
   "Submitting...": "Yollanêr...",
   "Password": "Parola",
   "Submit": "Yolla",
-  "OK": "İyi",
+  "OK": "İi",
   "Link Only": "Salt Baalantı",
   "View Album Photos": "Albüm Resimlerini Gör",
   "Enter Username": "Kullanıcı Adını Girin",
   "Select Username": "Kullanıcı Adını Seç",
-  "Add Random Digits to Username": "Kullanıcı Adına Rasget Rakamlar Ekle"
+  "Add Random Digits to Username": "Kullanıcı Adına Rasget Rakamlar Ekle",
+  "Enter your email so {ownerName} can see who accessed their album": "Email Adresinizi Girin Ki {ownerName} Görebilsin Kim Onnarın Albomuna Erişti",
+  "Complete": "Tamam",
+  "Processing": "İşlem",
+  "Uploading": "Yükleyerek",
+  "Cancel Upload": "Iptal Et Yükleme",
+  "Upload progress": "Yükleme İlerlemesi",
+  "Overall progress": "Genel İlerleyiş",
+  "Completed": "Bitmış",
+  "Failed": "Başarısız",
+  "({count} failed": "({count} başarısız",
+  "({count} in progress)": "({count}) İlerliyor"
 }

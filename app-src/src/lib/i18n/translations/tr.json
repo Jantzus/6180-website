@@ -147,5 +147,16 @@
   "View Album Photos": "Albüm Fotoğraflarını Görüntüle",
   "Enter Username": "Kullanıcı Adını Girin",
   "Select Username": "Kullanıcı Adı Seçin",
-  "Add Random Digits to Username": "Kullanıcı Adına Rastgele Rakamlar Ekle"
+  "Add Random Digits to Username": "Kullanıcı Adına Rastgele Rakamlar Ekle",
+  "Enter your email so {ownerName} can see who accessed their album": "E-posta Adresinizi Girin, Böylece {ownerName} Albümlerine Kimlerin Eriştiğini Görebilir",
+  "Complete": "Tam",
+  "Processing": "İşleme",
+  "Uploading": "Yükleniyor",
+  "Cancel Upload": "Yüklemeyi İptal Et",
+  "Upload progress": "Yükleme İlerlemesi",
+  "Overall progress": "Genel İlerleme",
+  "Completed": "Tamamlanmış",
+  "Failed": "Başarısız",
+  "({count} failed": "({count} başarısız oldu",
+  "({count} in progress)": "({count}) Devam Ediyor"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Мефиристад...",
   "Password": "Парол",
   "Submit": "Фиристодан",
-  "OK": "Khub",
+  "OK": "Хуб",
   "Link Only": "Танҳо Пайванд",
   "View Album Photos": "Дидани Аксҳои Албом",
   "Enter Username": "Номи Корбарро Ворид Кунед",
   "Select Username": "Интихоби Номи Корбар",
-  "Add Random Digits to Username": "Ба Номи Корбар Рақамҳои Тасодуфӣ Илова Кунед"
+  "Add Random Digits to Username": "Ба Номи Корбар Рақамҳои Тасодуфӣ Илова Кунед",
+  "Enter your email so {ownerName} can see who accessed their album": "Почтаи Электронии Худро Ворид Кунед То {ownerName} Битавонад Бубинад Кӣ Ба Албоми Онҳо Дастрасӣ Пайдо Кардааст",
+  "Complete": "Комил",
+  "Processing": "Коркард",
+  "Uploading": "Бор кардан",
+  "Cancel Upload": "Бор Кардан Бекор Кунед",
+  "Upload progress": "Пешрафти Боркунӣ",
+  "Overall progress": "Пешрафти Умумӣ",
+  "Completed": "Анҷом ёфт",
+  "Failed": "Ноком",
+  "({count} failed": "({count} ноком шуд",
+  "({count} in progress)": "({count}) Дар Ҷараён"
 }

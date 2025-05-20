@@ -147,5 +147,16 @@
   "View Album Photos": "Veizietė Alboma Nuotraukas",
   "Enter Username": "Iveskėt Nauduotuojė Varda",
   "Select Username": "Paserėnktė Nauduotuojė Varda",
-  "Add Random Digits to Username": "Prėdietė Atsėtėktėnius Skaitlios Pri Nauduotuojė Varda"
+  "Add Random Digits to Username": "Prėdietė Atsėtėktėnius Skaitlios Pri Nauduotuojė Varda",
+  "Enter your email so {ownerName} can see who accessed their album": "Īveskėt Sava Elektrōnėni Pašta, Kad {ownerName} Galietom Matītė, Kas Perveiziejė Anū Albūma",
+  "Complete": "Pėlnā",
+  "Processing": "Apdoruojėms",
+  "Uploading": "Ikėlėms",
+  "Cancel Upload": "Atšaukti Įkėlimą",
+  "Upload progress": "Ikėlėma Eiga",
+  "Overall progress": "Bendrė Pažanga",
+  "Completed": "Užbaigta",
+  "Failed": "Nepavīka",
+  "({count} failed": "({count} napavieka",
+  "({count} in progress)": "({count}) Vīkst"
 }

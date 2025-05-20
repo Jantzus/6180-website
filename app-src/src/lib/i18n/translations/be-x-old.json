@@ -142,10 +142,21 @@
   "Submitting...": "Адпраўляецца...",
   "Password": "Пароль",
   "Submit": "Адправіць",
-  "OK": "Dobra",
+  "OK": "Добра",
   "Link Only": "Толькі Спасылка",
   "View Album Photos": "Прагляд Фота Альбома",
   "Enter Username": "Увядзіце Імя Карыстальніка",
   "Select Username": "Выбраць Імя Карыстальніка",
-  "Add Random Digits to Username": "Дадаць Выпадковыя Лічбы Да Імя Карыстальніка"
+  "Add Random Digits to Username": "Дадаць Выпадковыя Лічбы Да Імя Карыстальніка",
+  "Enter your email so {ownerName} can see who accessed their album": "Увядзіце Свой Электронны Адрас, Каб {ownerName} Мог Убачыць, Хто Праглядаў Іх Альбом",
+  "Complete": "Завершаны",
+  "Processing": "Апрацоўка",
+  "Uploading": "Запампоўка",
+  "Cancel Upload": "Скасаваць Загрузку",
+  "Upload progress": "Прагрэс Загрузкі",
+  "Overall progress": "Агульны Прагрэс",
+  "Completed": "Завершаны",
+  "Failed": "Няўдача",
+  "({count} failed": "({count} няўдача",
+  "({count} in progress)": "({count}) У Працэсе"
 }

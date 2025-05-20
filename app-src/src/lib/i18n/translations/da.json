@@ -147,5 +147,16 @@
   "View Album Photos": "Se Album Billeder",
   "Enter Username": "Indtast Brugernavn",
   "Select Username": "Vælg Brugernavn",
-  "Add Random Digits to Username": "Tilføj Tilfældige Cifre Til Brugernavn"
+  "Add Random Digits to Username": "Tilføj Tilfældige Cifre Til Brugernavn",
+  "Enter your email so {ownerName} can see who accessed their album": "Indtast Din Email Så {ownerName} Kan Se Hvem Der Har Tilgået Deres Album",
+  "Complete": "Komplet",
+  "Processing": "Behandling",
+  "Uploading": "Uploader",
+  "Cancel Upload": "Annuller Upload",
+  "Upload progress": "Upload Fremskridt",
+  "Overall progress": "Samlet Fremskridt",
+  "Completed": "Afsluttet",
+  "Failed": "Mislykkedes",
+  "({count} failed": "({count} mislykkedes",
+  "({count} in progress)": "({count}) I Gang"
 }

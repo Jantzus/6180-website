@@ -142,10 +142,21 @@
   "Submitting...": "Ferseenden...",
   "Password": "Paaswoud",
   "Submit": "Fersende",
-  "OK": "Goud",
+  "OK": "Uun Odder",
   "Link Only": "Bloot Ferbiening",
   "View Album Photos": "Album Bielden Bekiekje",
   "Enter Username": "Benutsernoome Ienreeke",
   "Select Username": "Benutsernoome Uutwääle",
-  "Add Random Digits to Username": "Toufallige Siefere Tau Benutsernoome Bietouföigje"
+  "Add Random Digits to Username": "Toufallige Siefere Tau Benutsernoome Bietouföigje",
+  "Enter your email so {ownerName} can see who accessed their album": "Reek Din E-Mail-Adresse in, dät {ownerName} sjo kon, wäl ap hiere Album tougriepen häd",
+  "Complete": "Fulstannich",
+  "Processing": "Ferarbaidenge",
+  "Uploading": "Hoochladenje",
+  "Cancel Upload": "Hoochleeden Oubreeke",
+  "Upload progress": "Upload Fuutgong",
+  "Overall progress": "Gesoamt Foarútgong",
+  "Completed": "Fäärdich",
+  "Failed": "Failsloangen",
+  "({count} failed": "({count} misglukket",
+  "({count} in progress)": "({count}) In Gong"
 }

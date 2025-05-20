@@ -142,10 +142,21 @@
   "Submitting...": "Afsennen...",
   "Password": "Passwoort",
   "Submit": "Afschicken",
-  "OK": "Good",
+  "OK": "OK",
   "Link Only": "Blots Link",
   "View Album Photos": "Album Biller Ankieken",
   "Enter Username": "Brukernaam Ingeven",
   "Select Username": "Brukernaam Utwählen",
-  "Add Random Digits to Username": "Tofällige Tallen To'n Brukernaam Tofögen"
+  "Add Random Digits to Username": "Tofällige Tallen To'n Brukernaam Tofögen",
+  "Enter your email so {ownerName} can see who accessed their album": "Giff Dien E-Mail-Adress In, Dormit {ownerName} Sehn Kann, Wokeen Op Ehr Album Togriepen Hett",
+  "Complete": "Vollständig",
+  "Processing": "Verarbeiden",
+  "Uploading": "Hochladen",
+  "Cancel Upload": "Hoochladen Afbreken",
+  "Upload progress": "Hoochlaad Vörankamen",
+  "Overall progress": "Gesamtfortschritt",
+  "Completed": "Afslaten",
+  "Failed": "Fehlslaan",
+  "({count} failed": "({count} fehlslaan",
+  "({count} in progress)": "({count}) In Gang"
 }

@@ -142,10 +142,21 @@
   "Submitting...": "Wótpósćejo se...",
   "Password": "Gronidłowe Słowo",
   "Submit": "Wótpósłaś",
-  "OK": "Derje",
+  "OK": "W Pórěźe",
   "Link Only": "Jano Link",
   "View Album Photos": "Albumowe Fotografije Pokazaś",
   "Enter Username": "Wužywarske Mě Zapódaś",
   "Select Username": "Wužywarske Mě Wubraś",
-  "Add Random Digits to Username": "Pśidaś Pśipadne Licby K Wužywarskemu Mjenjoju"
+  "Add Random Digits to Username": "Pśidaś Pśipadne Licby K Wužywarskemu Mjenjoju",
+  "Enter your email so {ownerName} can see who accessed their album": "Zapódaj Swóju E-mailowu Adresu, Aby {ownerName} Mógł Wiźeś, Chto Jo Na Jich Album Pśistupił",
+  "Complete": "Dospołny",
+  "Processing": "Pśeźěłanje",
+  "Uploading": "Nagrawa",
+  "Cancel Upload": "Nagraśe Pśetergnuś",
+  "Upload progress": "Postup Nagraśa",
+  "Overall progress": "Cełkowny Póstup",
+  "Completed": "Dokóńcony",
+  "Failed": "Njejo Se Raźiło",
+  "({count} failed": "({count} njejo se raźiło",
+  "({count} in progress)": "({count}) W Běgu"
 }

@@ -147,5 +147,16 @@
   "View Album Photos": "Varda I Fòtu De L'Album",
   "Enter Username": "Inserìss Nom Ütent",
   "Select Username": "Seleziona Nom Ütent",
-  "Add Random Digits to Username": "Zontà Nümar Casual Al Nom Ütent"
+  "Add Random Digits to Username": "Zontà Nümar Casual Al Nom Ütent",
+  "Enter your email so {ownerName} can see who accessed their album": "Mèta Dent La Tua Email Par Chè {ownerName} Al Poda Vedar Chi L'ha Vardaa Al So Album",
+  "Complete": "Cumpìt",
+  "Processing": "Elaboraziun",
+  "Uploading": "Caregament",
+  "Cancel Upload": "Scancelà Caregament",
+  "Upload progress": "Avanzament Del Cargament",
+  "Overall progress": "Prugress Cumplessiv",
+  "Completed": "Finì",
+  "Failed": "Falìit",
+  "({count} failed": "({count} falii",
+  "({count} in progress)": "({count}) In Cors"
 }

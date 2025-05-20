@@ -147,5 +147,16 @@
   "View Album Photos": "Jeeagh Er Jalloonyn Yn Lioar-Cholloo",
   "Enter Username": "Cur Stiagh Ennym Ymmydeyr",
   "Select Username": "Reih Ennym Ymmydeyr",
-  "Add Random Digits to Username": "Cur Earrooyn Gyn Tort Rish Ennym Ymmydeyr"
+  "Add Random Digits to Username": "Cur Earrooyn Gyn Tort Rish Ennym Ymmydeyr",
+  "Enter your email so {ownerName} can see who accessed their album": "Cur Stiagh Dty Post-L Myr Shen {ownerName} Fakin Quoi Ta Er N'gholl Stiagh Ayns Nyn Albym",
+  "Complete": "Slane",
+  "Processing": "Proçessys",
+  "Uploading": "Laadey seose",
+  "Cancel Upload": "Dolloo Laadey Seose",
+  "Upload progress": "Kesmad Laadey Seose",
+  "Overall progress": "Çheet Er-ash Lhean-seagh",
+  "Completed": "Jeant",
+  "Failed": "Er Nyarroo",
+  "({count} failed": "({count} er shaghryn",
+  "({count} in progress)": "({count}) Goll Er Hoshaght"
 }
