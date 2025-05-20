@@ -19,6 +19,7 @@ export const processData = (
   const contacts: Contact = {};
   let folderName = 'Photos';
   let albumNanoId: string | null | undefined = undefined;
+  let creatorId: string | null | undefined = undefined;
   let folderDescription = '';
   let passwordPolicy = undefined;
   let passwordRequired = false;
@@ -47,6 +48,11 @@ export const processData = (
       folderName = folder.folderName;
     }
     
+    // Get folder name if available
+    if (folder?.creatorId && folder.creatorId.length > 0) {
+      creatorId = folder.creatorId;
+    }
+
     // Get folder description if available
     if (folder?.folderDescription && folder.folderDescription.length > 0) {
       folderDescription = folder.folderDescription;
@@ -125,6 +131,7 @@ export const processData = (
     mediaItems, 
     folderName, 
     albumNanoId,
+    creatorId,
     folderDescription, 
     contacts, 
     passwordPolicy,

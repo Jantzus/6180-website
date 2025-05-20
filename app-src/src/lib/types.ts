@@ -127,6 +127,7 @@ export interface AlbumData {
   albumNanoId: string | null | undefined;  
   folderName: string;
   folderDescription: string;
+  creatorId: string | null | undefined;
   contacts: Contact;
   passwordPolicy?: string;
   passwordRequired?: boolean;

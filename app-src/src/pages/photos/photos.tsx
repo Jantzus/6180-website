@@ -550,6 +550,18 @@ const PhotoAlbumContent: React.FC = () => {
     }
   }, [albumData, language]);
 
+  // Extract album owner name function
+  const getAlbumOwnerName = (): string => {
+    if (!albumData) return 'the album owner';
+
+    if (albumData.creatorId && albumData.contacts[albumData.creatorId]) {
+      return albumData.contacts[albumData.creatorId];
+    }
+    
+    // Default fallback
+    return 'the album owner';
+  };
+
   // Render
   return (
     <Body>
@@ -653,6 +665,7 @@ const PhotoAlbumContent: React.FC = () => {
           setShowInlineOTPLogin(false);
         }}
         onLoginSuccess={handleLoginSuccess}
+        ownerName={getAlbumOwnerName()}
         t={t}
       />
       

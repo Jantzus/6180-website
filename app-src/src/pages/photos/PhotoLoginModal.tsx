@@ -27,6 +27,7 @@ interface PhotoLoginModalProps {
   isOpen: boolean;
   onClose: () => void;
   onLoginSuccess: () => void;
+  ownerName?: string;
   t: (key: string) => string;
 }
 
@@ -34,6 +35,7 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
   isOpen, 
   onClose, 
   onLoginSuccess, 
+  ownerName = 'the album owner',
   t,
 }) => {
   const [email, setEmail] = useState('');
@@ -233,13 +235,13 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
           }} 
         />
 
-        {/* Login Explanation Message */}
+        {/* Login Explanation Message - Now using the ownerName prop */}
         <h3 style={{ 
           margin: '0', 
           lineHeight: '1.4',
           marginBottom: '30px'
         }}>
-          {t('Sign in so LeoCologno can see who accessed their album')}
+          {t('Sign in so {ownerName} can see who accessed their album').replace('{ownerName}', ownerName)}
         </h3>
 
         {errorMessage && (
