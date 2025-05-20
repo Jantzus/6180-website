@@ -12,7 +12,7 @@ import {
   AppContainer,
 } from "@/styles/styled-components";
 import { Header } from "@/components/Header";
-import { CreateAlbumButton } from "@/components/CreateAlbumButton";
+import { NewAlbumButton } from "@/components/NewAlbumButton";
 import { SearchBar } from "@/components/SearchBar";
 import { ContactsFilter } from "@/components/ContactsFilter";
 import { UploadProgress } from "@/components/UploadProgress";
@@ -84,7 +84,7 @@ const MyAlbums = () => {
         />
 
         {/* Create Album button moved here - before the search bar */}
-        <CreateAlbumButton
+        <NewAlbumButton
           isUploading={isUploading}
           openFilePicker={openFilePicker}
           t={t}

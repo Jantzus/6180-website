@@ -226,7 +226,7 @@ const SaveAlbum = () => {
     try {
       if (publicUsername?.startsWith("Profile-")) {
         enhancedLog("Public username starts with 'Profile-', showing username prompt");
-        setUsernameInput(publicUsername);
+        setUsernameInput("");
         setShowUsernamePrompt(true);
         setIsSavingAlbum(false);
         return;
@@ -359,7 +359,6 @@ const SaveAlbum = () => {
               isSavingAlbum={isSavingAlbum || isUploading}
             />
             
-            {/* Add Photos button - Show for both regular albums and sub-albums */}
             <Button
               onClick={handleAddPhotos}
               disabled={isSavingAlbum || isUploading}

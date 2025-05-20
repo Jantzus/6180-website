@@ -53,7 +53,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
   };
 
   const getStatusText = () => {
-    if (overallProgress === 100) return t('Complete');
+    if (overallProgress === 100) return t('Completed');
     if (filesProcessing > 0) return t('Processing');
     return t('Uploading');
   };
@@ -149,7 +149,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
             color: "#333",
             marginBottom: 8
           }}>
-            {t('Upload Progress')}
+            {t('Upload progress')}
           </h3>
           
           <div style={{ 
@@ -158,10 +158,10 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
             marginBottom: 6 
           }}>
             <span style={{ fontSize: 14, color: "#555" }}>
-              {t('Overall Progress')}: {Math.round(overallProgress)}%
+              {t('Overall progress')}: {Math.round(overallProgress)}%
             </span>
             <span style={{ fontSize: 14, color: "#555" }}>
-              {filesComplete} {t('of')} {totalFiles} {t('complete')}
+              {t('Complete')}: {filesComplete} / {totalFiles} 
             </span>
           </div>
         </div>
@@ -252,7 +252,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
         }}
       >
         <span style={{ fontSize: 14, color: "#555" }}>
-          <strong>{getStatusText()}</strong>: {filesComplete}/{totalFiles} {t('files')}
+          <strong>{getStatusText()}</strong>: {filesComplete}/{totalFiles}
           {filesWithError > 0 && ` (${filesWithError} ${t('failed')})`}
           {filesUploading > 0 && ` (${filesUploading} ${t('in progress')})`}
         </span>

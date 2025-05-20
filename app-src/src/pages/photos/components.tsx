@@ -55,7 +55,7 @@ export const SelectionModeBanner: React.FC<{
   
   return (
     <SelectionBanner>
-      <p>{t('Select photos and videos to create a sub-album to share')}</p>
+      <p>{t('Select photos and videos to share')}</p>
     </SelectionBanner>
   );
 };

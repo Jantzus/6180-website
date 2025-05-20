@@ -240,7 +240,7 @@ export const createSubAlbumWithSelectedItems = async (
       loadingContent.style.textAlign = 'center';
       
       const loadingText = document.createElement('p');
-      loadingText.textContent = t('Creating sub-album...');
+      loadingText.textContent = t('Selecting files...');
       
       loadingContent.appendChild(loadingText);
       loadingModal.appendChild(loadingContent);
@@ -348,8 +348,8 @@ export const createSubAlbumWithSelectedItems = async (
       window.location.href = '/save-album.html';
       
     } catch (error) {
-      console.error('[SubAlbum] Error creating sub-album:', error);
-      alert(t('There was an error creating the sub-album. Please try again.'));
+      console.error('[SubAlbum] Error creating selection:', error);
+      alert(t('There was an error creating the selection. Please try again.'));
       try {
         // Try to remove the loading modal if it exists
         const loadingModal = document.querySelector('div[style*="position: fixed"][style*="backgroundColor: rgba(0, 0, 0, 0.5)"]');
@@ -363,7 +363,7 @@ export const createSubAlbumWithSelectedItems = async (
     }
   } else {
     console.error('[SubAlbum] Error: Album data is null');
-    alert(t('Cannot create sub-album: Album data is missing.'));
+    alert(t('Cannot create selection: Album data is missing.'));
   }
 };
 

@@ -43,7 +43,7 @@ import {
 // Import components
 import { FullscreenMediaViewer } from "@/components/FullscreenMediaViewer";
 import { PasswordModal } from "@/components/Modals/PasswordModal";
-import { LoginModal } from "@/components/Modals/LoginModal";
+import { PhotoLoginModal } from "@/pages/photos/PhotoLoginModal";
 import { FileInput } from "@/components/FileInput";
 import { UploadProgress } from "@/components/UploadProgress";
 import { CopyLinkModal } from "@/components/Modals/CopyLinkModal";
@@ -191,7 +191,7 @@ const PhotoAlbumContent: React.FC = () => {
 
       // If username exists, set it as input value
       if (publicUsername) {
-        usernameManager.setUsernameInput(publicUsername);
+        usernameManager.setUsernameInput("");
       }
 
       usernameManager.setShowUsernamePrompt(true);
@@ -274,7 +274,7 @@ const PhotoAlbumContent: React.FC = () => {
 
           // If username exists, set it as input value
           if (publicUsername) {
-            usernameManager.setUsernameInput(publicUsername);
+            usernameManager.setUsernameInput("");
           }
 
           usernameManager.setShowUsernamePrompt(true);
@@ -304,7 +304,7 @@ const PhotoAlbumContent: React.FC = () => {
     const success = await fileUpload.handleFileSelection(e, cognitoUsername);
     
     if (!success) {
-      // Instead of showing the LoginModal, show the InlineOTPLogin
+      // Instead of showing the PhotoLoginModal, show the InlineOTPLogin
       setShowInlineOTPLogin(true);
     }
   };
@@ -349,7 +349,7 @@ const PhotoAlbumContent: React.FC = () => {
 
       // If username exists, set it as input value
       if (publicUsername) {
-        usernameManager.setUsernameInput(publicUsername);
+        usernameManager.setUsernameInput("");
       }
 
       usernameManager.setShowUsernamePrompt(true);
@@ -463,7 +463,7 @@ const PhotoAlbumContent: React.FC = () => {
           }
         }
         
-        setError(t('Valid ID not obtained from query parameter.'));
+        setError(t('Valid ID not obtained from query parameter'));
         setIsLoading(false);
         return;
       }
@@ -646,8 +646,8 @@ const PhotoAlbumContent: React.FC = () => {
         t={t}
       />
       
-      {/* LoginModal Component */}
-      <LoginModal
+      {/* PhotoLoginModal Component */}
+      <PhotoLoginModal
         isOpen={showInlineOTPLogin}
         onClose={() => {
           setShowInlineOTPLogin(false);

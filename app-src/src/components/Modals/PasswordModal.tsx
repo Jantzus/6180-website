@@ -69,7 +69,7 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({
               )}
             </div>
             
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", gap: "12px" }}>
               <Button
                 type="button"
                 onClick={onClose}
