@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload maleppu! Mappasadia ri asalenna albummu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Engka file de'gagga ri-unggah. Mulleko makkalanja sibawa file iya mangka ri-unggah.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Aseng pabbalu ri arusui gare hurupu, nomoro nenniya tanda kait bawang. Contona: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Asenna pengguna haruski bettuang huruf, nomoro, sibawa tanda garis"
+  "Username must contain only letters, numbers, and hyphens.": "Asenna pengguna haruski bettuang huruf, nomoro, sibawa tanda garis",
+  "Submitting...": "Mappetto...",
+  "Password": "Katasandi",
+  "Submit": "Kiringngi",
+  "OK": "Makessing",
+  "Link Only": "Sambung Bawang",
+  "View Album Photos": "Jokka Gambar Album",
+  "Enter Username": "Pattamai Asenna Pattama",
+  "Select Username": "Pilei Aseng Pakkui",
+  "Add Random Digits to Username": "Tamahakangï Nomoro Acak Ko Aseng Pakkui"
 }

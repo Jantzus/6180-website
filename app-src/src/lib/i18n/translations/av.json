@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Жаниб тӏамиялъул хӏалтӏи лъугӏана! Дур альбом цӏунизе хӏадурлъулеб буго...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Цо-цо файлал гьоркьоре рехизе кIвечIо. БетIераб хIалтIи тIоцебе рехарал файлазда гьабизе бегьула.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ХӀалтӀизабулесул цӀар гӀуцӀизе ккола хӀарпаздалъун, цифрабаздалъун ва дефисаздалъун гурони. Мисал: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Пайдалъулесул цӀаралда рукӀине бегьула гӀицӀго хӀарпал, цифраби ва дефисал"
+  "Username must contain only letters, numbers, and hyphens.": "Пайдалъулесул цӀаралда рукӀине бегьула гӀицӀго хӀарпал, цифраби ва дефисал",
+  "Submitting...": "Битӏизе...",
+  "Password": "Пароль",
+  "Submit": "ТӀаде Босизе",
+  "OK": "Лъикl",
+  "Link Only": "Ххуллал БицIцIиндаз",
+  "View Album Photos": "Альбомалъул Суратал Рихьизаризе",
+  "Enter Username": "Хlалтlизабурасул ЦӀар Бихье",
+  "Select Username": "Пайдаланылучи Исемен Сайлагыз",
+  "Add Random Digits to Username": "ХӀалтӀизабулесул ЦӀаралде Цере БатӀи-батӀиял Номерал Жубазе"
 }

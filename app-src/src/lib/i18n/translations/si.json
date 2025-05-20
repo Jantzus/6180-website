@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "උඩුගත කිරීම සම්පූර්ණයි! ඔබේ ඇල්බමය සුරැකීමට සූදානම් වෙමින්...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "සමහර ගොනු උඩුගත කිරීමට නොහැකි විය. ඔබට සාර්ථකව උඩුගත කරන ලද ගොනු සමඟ ඉදිරියට යා හැකිය.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "පරිශීලක නාමය අක්ෂර, ඉලක්කම් සහ තිත් සහිත ඉරි පමණක් අඩංගු විය යුතුය. උදාහරණය: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "පරිශීලක නම අක්ෂර, ඉලක්කම් සහ තිත් වලින් පමණක් සමන්විත විය යුතුය"
+  "Username must contain only letters, numbers, and hyphens.": "පරිශීලක නම අක්ෂර, ඉලක්කම් සහ තිත් වලින් පමණක් සමන්විත විය යුතුය",
+  "Submitting...": "යවමින්...",
+  "Password": "මුරපදය",
+  "Submit": "ඉදිරිපත් කරන්න",
+  "OK": "Hari",
+  "Link Only": "සබැඳිය පමණයි",
+  "View Album Photos": "ඇල්බම් ඡායාරූප බලන්න",
+  "Enter Username": "පරිශීලක නම ඇතුළත් කරන්න",
+  "Select Username": "පරිශීලක නාමය තෝරන්න",
+  "Add Random Digits to Username": "පරිශීලක නාමයට අහඹු අංක එකතු කරන්න"
 }

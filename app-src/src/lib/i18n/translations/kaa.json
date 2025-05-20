@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Júklew tamamlandı! Albomıńızdı saqlaw ushın tayarlanıwda...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Bazı fayllar júklenip bolmadı. Tabıslı júklengen fayllar menen dawam etiwiñiz múmkin.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Paydalanıwshı atı tek háripler, sanlar hám sızıqshalardan ibarat bolıwı kerek. Mısal: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Paydalanıwshı atı tek háripler, sanlar hám defiesti ózine alıwı kerek"
+  "Username must contain only letters, numbers, and hyphens.": "Paydalanıwshı atı tek háripler, sanlar hám defiesti ózine alıwı kerek",
+  "Submitting...": "Jiberilmekte...",
+  "Password": "Parol",
+  "Submit": "Jiberiw",
+  "OK": "Jaqsı",
+  "Link Only": "Tek Baylanıs",
+  "View Album Photos": "Albom Súwretlerin Kóriw",
+  "Enter Username": "Paydalanıwshı Atın Kiritiń",
+  "Select Username": "Paydalanıwshı Atın Tañlaw",
+  "Add Random Digits to Username": "Paydalanıwshı Atına Tosattan Sanlar Qosıw"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Tokua a hunzi! A kpe nduru ti bata album ti mo...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ambênî fichîê alingbi ti mungo pépé. Mo lingbi ti gue na kusala ti âmungo nî a wala nzôni.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Iri ti zo alingbi ti duti gi na a-letäa, a-nimëro na a-tiré teti. Tapande: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Iri ti mosûngi ândâ ahundâ wâ gbâ ândâ guï : kalati, nimero, na trè"
+  "Username must contain only letters, numbers, and hyphens.": "Iri ti mosûngi ândâ ahundâ wâ gbâ ândâ guï : kalati, nimero, na trè",
+  "Submitting...": "Tongana...",
+  "Password": "Mbuk Ti Nduru",
+  "Submit": "Tö",
+  "OK": "Nzoni",
+  "Link Only": "Ka Tënë Gbä",
+  "View Album Photos": "Bâa Foto Ti Album",
+  "Enter Username": "Ga Îta Mbëtï Mû-Soro",
+  "Select Username": "Soro Iri ti Môlengê",
+  "Add Random Digits to Username": "Töngia Nimero Ti Ngombé Na Iri Ti Lo-sara"
 }

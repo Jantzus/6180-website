@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Отпремање завршено! Припрема се чување вашег албума...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Неке датотеке није могуће отпремити. Можете наставити са успешно отпремљеним датотекама.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Корисничко име треба да садржи само слова, бројеве и цртице. Пример: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Корисничко име мора да садржи само слова, бројеве и цртице"
+  "Username must contain only letters, numbers, and hyphens.": "Корисничко име мора да садржи само слова, бројеве и цртице",
+  "Submitting...": "Шаље се...",
+  "Password": "Лозинка",
+  "Submit": "Пошаљи",
+  "OK": "Dobro",
+  "Link Only": "Само Веза",
+  "View Album Photos": "Прегледај Фотографије Албума",
+  "Enter Username": "Унесите Корисничко Име",
+  "Select Username": "Изаберите Корисничко Име",
+  "Add Random Digits to Username": "Додај Насумичне Бројеве Корисничком Имену"
 }

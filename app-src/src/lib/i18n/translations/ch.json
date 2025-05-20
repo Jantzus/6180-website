@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Inakakka kumplido! Mamapripåra para hu na'såfu i album-mu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Meggai na files ti siña ma na halom. Siña un kontinua yan i files ni manmana'halom.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "I na'an-ma'usa u fanohge ha' letran, numiru yan raya siha. Ihemplo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "I na'an-mu debi di ha sasahguan letra, numiru, yan raya ha"
+  "Username must contain only letters, numbers, and hyphens.": "I na'an-mu debi di ha sasahguan letra, numiru, yan raya ha",
+  "Submitting...": "Mumo'fo'fo'...",
+  "Password": "Kontraseña",
+  "Submit": "Na'hålom",
+  "OK": "Maolek",
+  "Link Only": "Link Ha",
+  "View Album Photos": "Atan I Litratu Siha Gi Album",
+  "Enter Username": "Na'hålom I Na'ån-mu",
+  "Select Username": "Ayek I Na'an-mu",
+  "Add Random Digits to Username": "Na'añadi Numiru Siha Gi Username"
 }

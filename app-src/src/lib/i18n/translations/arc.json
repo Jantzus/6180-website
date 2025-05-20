@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "ܡܥܠܐ ܫܠܡܐ! ܡܛܝܒܐ ܠܢܛܪ ܐܠܒܘܡܟ...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ܗܝܢܐ ܦܐܝܠܐ ܠܐ ܡܨܝܢ ܗܘܘ ܠܡܫܬܕܪܘ. ܡܨܝܬ ܠܡܫܪܪܘ ܥܡ ܦܐܝܠܐ ܕܐܫܬܕܪܘ ܫܦܝܪܐܝܬ.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ܫܡܐ ܕܡܦܠܚܢܐ ܒܥܐ ܕܐܝܬ ܒܗ ܐܬܘܬܐ ܘܡܢܝܢܐ ܘܫܪܛܘܢܐ ܒܠܚܘܕ. ܬܚܘܝܬܐ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ܫܡܐ ܕܡܦܠܚܢܐ ܠܐ ܡܨܐ ܕܢܗܘܐ ܒܗ ܐܠܐ ܐܬܘܬ̈ܐ ܘܡܢܝܢ̈ܐ ܘܦܣܩ̈ܐ"
+  "Username must contain only letters, numbers, and hyphens.": "ܫܡܐ ܕܡܦܠܚܢܐ ܠܐ ܡܨܐ ܕܢܗܘܐ ܒܗ ܐܠܐ ܐܬܘܬ̈ܐ ܘܡܢܝܢ̈ܐ ܘܦܣܩ̈ܐ",
+  "Submitting...": "ܡܫܕܪܐ...",
+  "Password": "ܡܠܬܐ ܕܥܒܪܐ",
+  "Submit": "ܫܕܪ",
+  "OK": "Špir",
+  "Link Only": "ܐܣܘܪܐ ܒܠܚܘܕ",
+  "View Album Photos": "ܚܙܝ ܨܘܪܬܐ ܕܐܠܒܘܡ",
+  "Enter Username": "ܥܠ ܫܡܐ ܕܡܦܠܚܢܐ",
+  "Select Username": "ܓܒܝ ܫܡܐ ܕܡܦܠܚܢܐ",
+  "Add Random Digits to Username": "ܐܘܣܦ ܡܢܝܢܐ ܫܓܘܫܝܐ ܠܫܡܐ ܕܡܦܠܚܢܐ"
 }

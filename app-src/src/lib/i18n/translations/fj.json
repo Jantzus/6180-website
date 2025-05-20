@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Usana sa donu! Sa vakarautaki me maroroya na nomu ialbamu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Eso na faile eso era sega ni upload. E rawa ni o tomana tiko kei na faile ka a upload.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Na yacamu ni vakayagataki e dodonu me tiko ga kina na matanivola, na naba kei na i cabecabe. Kena ivakaraitaki: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Na yacamu e dodonu me lewena na matanivola, naba, kei na idabidabi ga"
+  "Username must contain only letters, numbers, and hyphens.": "Na yacamu e dodonu me lewena na matanivola, naba, kei na idabidabi ga",
+  "Submitting...": "Vakauta tiko...",
+  "Password": "Vosa Vuni",
+  "Submit": "Vakauta",
+  "OK": "Vinaka",
+  "Link Only": "Link Ga",
+  "View Album Photos": "Raica Na Itaba Ni Albamu",
+  "Enter Username": "Vakacuruma Na Yacamu Ni Vakayagataki",
+  "Select Username": "Digitaka Na Yacamu",
+  "Add Random Digits to Username": "Vakuria Na Naba Vakatakilakila Ki Na Yacamu Ni Vakayagataki"
 }

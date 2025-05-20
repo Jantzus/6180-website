@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Hoochladen afslaten! Dien Album warrt spiekert...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Enige Datein können nich hoochladen warden. Du kannst mit de mit Spood hoochladen Datein wiedermaken.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Brukernaam schull bloots Bookstaven, Tallen un Bindstreken bargen. Bispeel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "De Benutternaam schall blots Bookstaven, Tallen un Bindstreek innehollen"
+  "Username must contain only letters, numbers, and hyphens.": "De Benutternaam schall blots Bookstaven, Tallen un Bindstreek innehollen",
+  "Submitting...": "Afsennen...",
+  "Password": "Passwoort",
+  "Submit": "Afschicken",
+  "OK": "Good",
+  "Link Only": "Blots Link",
+  "View Album Photos": "Album Biller Ankieken",
+  "Enter Username": "Brukernaam Ingeven",
+  "Select Username": "Brukernaam Utwählen",
+  "Add Random Digits to Username": "Tofällige Tallen To'n Brukernaam Tofögen"
 }

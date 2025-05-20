@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Жюклеу бошалды! Сизни альбомугъузну сакъларгъа хазырлайбыз...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Бир къауум файлланы джюклеб болмады. Сиз джюкленнген файлла бла ишлеялырсыз.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Къошулуучуну аты жаланда харифледен, санладан эм дефиследен къуралыргъа керекди. Юлгю: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Къошулуучуну аты жаланда харифлени, санланы эм дефислени тутаргъа керекди"
+  "Username must contain only letters, numbers, and hyphens.": "Къошулуучуну аты жаланда харифлени, санланы эм дефислени тутаргъа керекди",
+  "Submitting...": "Ийеди...",
+  "Password": "Пароль",
+  "Submit": "Жибер",
+  "OK": "Igi",
+  "Link Only": "Жаланда Байламлыкъ",
+  "View Album Photos": "Альбомну Суратларына Къара",
+  "Enter Username": "Хайырланыучу Атын Киритигиз",
+  "Select Username": "Хайырланыучу Атын Сайла",
+  "Add Random Digits to Username": "Хайырланыучуну Атына Тасадуф Санла Къошаргъа"
 }

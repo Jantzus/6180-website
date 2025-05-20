@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Asabi ya angkakarga! Nisasagana la para isalbar so album mo...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Arum agawa na file ya ag naisakbay. Makapatoloy ka ed saray file ya matagumpal ya nisakbay.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Say ngaran na manusay so dapat nin sakey lamang a letra, numero tan gatlip. Alimbawa: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Say ngaran na manuusar so dapat et wala laen iran a sulat, numero, tan gitling lambat"
+  "Username must contain only letters, numbers, and hyphens.": "Say ngaran na manuusar so dapat et wala laen iran a sulat, numero, tan gitling lambat",
+  "Submitting...": "Mampipaw-it...",
+  "Password": "Kontrasenias",
+  "Submit": "Isumite",
+  "OK": "Maabig",
+  "Link Only": "Link Labat",
+  "View Album Photos": "Nengneng So Album Foto",
+  "Enter Username": "Ipastok So Ngaran Na Usuario",
+  "Select Username": "Manpili na Ngaran",
+  "Add Random Digits to Username": "Mangipeket Na Numero Ya Anggapoy Ayos Ed Ngaran Na Managamil"
 }

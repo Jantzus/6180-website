@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "ההעלאה הושלמה! מכין לשמור את האלבום שלך...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "לא ניתן היה להעלות חלק מהקבצים. אתה יכול להמשיך עם הקבצים שהועלו בהצלחה.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "שם המשתמש צריך להכיל רק אותיות, מספרים ומקפים. דוגמה: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "שם המשתמש חייב להכיל רק אותיות, מספרים ומקפים"
+  "Username must contain only letters, numbers, and hyphens.": "שם המשתמש חייב להכיל רק אותיות, מספרים ומקפים",
+  "Submitting...": "שולח...",
+  "Password": "סיסמה",
+  "Submit": "שלח",
+  "OK": "Beseder",
+  "Link Only": "קישור בלבד",
+  "View Album Photos": "צפה בתמונות האלבום",
+  "Enter Username": "הזן שם משתמש",
+  "Select Username": "בחר שם משתמש",
+  "Add Random Digits to Username": "הוסף ספרות אקראיות לשם המשתמש"
 }

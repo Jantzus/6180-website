@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "اپلوڊ مڪمل! توهان جو البم سانڍڻ لاءِ تيار ٿي رهيو آهي...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ڪجهه فائيل اپلوڊ نه ٿي سگهيا. توهان ڪامياب طرح اپلوڊ ٿيل فائيلن سان اڳتي وڌي سگهو ٿا.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "يوزر نالو فقط اکرن، انگن ۽ ڏنڊين تي مشتمل هجڻ گهرجي. مثال: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "استعمال ڪندڙ جو نالو صرف اکشر، انگ ۽ هائيفنز تي مشتمل هجڻ گهرجي"
+  "Username must contain only letters, numbers, and hyphens.": "استعمال ڪندڙ جو نالو صرف اکشر، انگ ۽ هائيفنز تي مشتمل هجڻ گهرجي",
+  "Submitting...": "موڪليندي...",
+  "Password": "پاسورڊ",
+  "Submit": "اماڻيو",
+  "OK": "Ṭhīk",
+  "Link Only": "فقط لنڪ",
+  "View Album Photos": "البم تصويرون ڏسو",
+  "Enter Username": "واپرائيندڙ جو نالو داخل ڪريو",
+  "Select Username": "واپرائيندڙ جو نالو چونڊيو",
+  "Add Random Digits to Username": "استعمال ڪندڙ جي نالي ۾ بي ترتيب انگ وجھو"
 }

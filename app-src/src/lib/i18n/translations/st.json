@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ho jarolla ho phethilwe! Ho lokisetsa ho boloka albamo ya hao...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Difaele tse ding ha di a kgona ho jarwa. O ka tswela pele ka difaele tse jarwang ka katleho.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Lebitso la mosebedisi le lokela ho ba le ditlhaku, dinomoro le matheba feela. Mohlala: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Lebitso la sebedisi le tlameha le be le tlhaku, dinomoro, le meharo feela"
+  "Username must contain only letters, numbers, and hyphens.": "Lebitso la sebedisi le tlameha le be le tlhaku, dinomoro, le meharo feela",
+  "Submitting...": "Ho romela...",
+  "Password": "Password",
+  "Submit": "Romela",
+  "OK": "Ho Lokile",
+  "Link Only": "Khokahano Feela",
+  "View Album Photos": "Sheba Difoto Tsa Album",
+  "Enter Username": "Kenya Lebitso La Mosebedisi",
+  "Select Username": "Kgetha Lebitso la Mosebedisi",
+  "Add Random Digits to Username": "Kenya Dinomoro Tsa Nahanaha Lebitso La Sebelisi"
 }

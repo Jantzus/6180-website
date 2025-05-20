@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Llwytho wedi'i gwblhau! Yn paratoi i gadw eich albwm...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Nid oedd modd lanlwytho rhai ffeiliau. Gallwch barhau gyda'r ffeiliau a lwythwyd yn llwyddiannus.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Dylai'r enw defnyddiwr gynnwys llythrennau, rhifau a chysylltnodau yn unig. Enghraifft: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Rhaid i'r enw defnyddiwr gynnwys llythrennau, rhifau a chysylltnodau yn unig"
+  "Username must contain only letters, numbers, and hyphens.": "Rhaid i'r enw defnyddiwr gynnwys llythrennau, rhifau a chysylltnodau yn unig",
+  "Submitting...": "Cyflwyno...",
+  "Password": "Cyfrinair",
+  "Submit": "Cyflwyno",
+  "OK": "Iawn",
+  "Link Only": "Dolen Yn Unig",
+  "View Album Photos": "Gweld Lluniau Album",
+  "Enter Username": "Rhowch Enw Defnyddiwr",
+  "Select Username": "Dewis Enw Defnyddiwr",
+  "Add Random Digits to Username": "Ychwanegu Digidau Ar Hap At Enw Defnyddiwr"
 }

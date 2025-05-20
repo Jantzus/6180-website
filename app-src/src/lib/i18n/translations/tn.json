@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Go tlhatlhosa go fedile! Go baakanya go boloka albamo ya gago...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Difaele dingwe ga di a kgona go tlhatlhosiwa. O ka tswelela ka difaele tse di atlega go tlhatlosiwa.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Leina la modirisi le tshwanetse go nna le ditlhaka, dipalo le matshwao a kopanyo fela. Sekao: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Leina la modirisi le tshwanetse go nna le ditlhaka, dinomoro le mahuto a gare fela"
+  "Username must contain only letters, numbers, and hyphens.": "Leina la modirisi le tshwanetse go nna le ditlhaka, dinomoro le mahuto a gare fela",
+  "Submitting...": "E a romelwa...",
+  "Password": "Password",
+  "Submit": "Romela",
+  "OK": "Go Siame",
+  "Link Only": "Kgolagano Fela",
+  "View Album Photos": "Leba Ditshwantsho Tsa Album",
+  "Enter Username": "Tsenya Leina La Modirisi",
+  "Select Username": "Tlhopha Leina la Modirisi",
+  "Add Random Digits to Username": "Tsenya Dinomoro Tsa Lotswa Fela Mo Leineng La Modirisi"
 }

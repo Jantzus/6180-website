@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "پورته کول بشپړ شو! ستاسو البوم ساتلو لپاره چمتو کيږي...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ځينې دوتنې پورته کېدای نشي. تاسو د بریالیتوب سره پورته شویو دوتنو سره دوام ورکولی شئ.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "د کارن نوم باید یوازې توري، شمېرې او هایفنونه ولري. بېلګه: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "د کارن نوم باید یوازې توري، شمېرې او هایفنونه ولري"
+  "Username must contain only letters, numbers, and hyphens.": "د کارن نوم باید یوازې توري، شمېرې او هایفنونه ولري",
+  "Submitting...": "لېږل کېږي...",
+  "Password": "پټ نوم",
+  "Submit": "سپارل",
+  "OK": "Sama Da",
+  "Link Only": "یوازې تړنه",
+  "View Album Photos": "د البوم انځورونه وګورئ",
+  "Enter Username": "کارن نوم داخل کړئ",
+  "Select Username": "کارن نوم وټاکئ",
+  "Add Random Digits to Username": "کارن نوم ته ګډوډ شمېرې ورزیاتې کړئ"
 }

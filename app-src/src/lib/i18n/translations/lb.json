@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload fäerdeg! Albumen gëtt elo gespäichert...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "E puer Fichieren konnten net eropgeluede ginn. Dir kënnt mat de Fichieren déi erfollegräich eropgeluede goufen weiderfueren.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "De Benotzernumm sollt nëmme Buschtawen, Zuelen an Bindestrécher enthalen. Beispill: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "De Benotzernumm däerf nëmme Buschtawen, Zuelen an Strécher enthalen"
+  "Username must contain only letters, numbers, and hyphens.": "De Benotzernumm däerf nëmme Buschtawen, Zuelen an Strécher enthalen",
+  "Submitting...": "Schécken...",
+  "Password": "Passwuert",
+  "Submit": "Schécken",
+  "OK": "Okay",
+  "Link Only": "Nëmmen Link",
+  "View Album Photos": "Album Fotoe Kucken",
+  "Enter Username": "Benotzernumm Aginn",
+  "Select Username": "Benotzernumm Wielen",
+  "Add Random Digits to Username": "Zoufälleg Zuelen Zum Benotzernumm Derbäisetzen"
 }

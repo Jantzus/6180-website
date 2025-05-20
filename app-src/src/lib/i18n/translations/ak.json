@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ɔforo awie! Resiesie de wɔbɛsie wo albɔm no...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Yɛntumi amfa faels bi ankɔ. Wobɛtumi atoa w'ako wɔ faels a yɛde kɔɔ no so.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Dwumadi din mu wɔ sɛ ɛyɛ nkyerɛwee, nɔma ne nsensaneɛ nko ara. Nhwɛsoɔ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Wo din a wɔde di dwuma no mu wɔ sɛ ɛyɛ nkyerɛwee, nɔma, ne nsensanee nko ara"
+  "Username must contain only letters, numbers, and hyphens.": "Wo din a wɔde di dwuma no mu wɔ sɛ ɛyɛ nkyerɛwee, nɔma, ne nsensanee nko ara",
+  "Submitting...": "Resuma...",
+  "Password": "Nsɛm Ahintasɛm",
+  "Submit": "Fa Ma",
+  "OK": "Yoo",
+  "Link Only": "Nkɔsɔ Nkɔ",
+  "View Album Photos": "Hwɛ Album Mfonyin",
+  "Enter Username": "Hyehyɛ Wo Din",
+  "Select Username": "Yi Dwumayenkɔ",
+  "Add Random Digits to Username": "Fa Nɔmba Ntawantawa Ka Wo Din Ho"
 }

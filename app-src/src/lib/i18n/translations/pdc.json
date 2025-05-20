@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Uflaade fertig! Dei Album werd grad gspeichert...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "En paar Datei hen net nuff gelaade sei kenne. Du kannscht mit de Datei weiter mache as erfolgreich nuff gelaade wore sin.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Der Yuusername muss yuuscht Buschstaawe, Zahle un Bindestrich hawwe. Beischpiel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "De Yuusernaame muss yuuscht Buschstawe, Nummere un Bindestrich hawwe"
+  "Username must contain only letters, numbers, and hyphens.": "De Yuusernaame muss yuuscht Buschstawe, Nummere un Bindestrich hawwe",
+  "Submitting...": "Schicke...",
+  "Password": "Paßwatt",
+  "Submit": "Schicke",
+  "OK": "Gut",
+  "Link Only": "Yuscht Link",
+  "View Album Photos": "Album Bilder Gucke",
+  "Enter Username": "Benutzername Eigewwe",
+  "Select Username": "Yuusernaame Auswähle",
+  "Add Random Digits to Username": "Zufellich Zahle Zum Benutzernumme Dezu"
 }

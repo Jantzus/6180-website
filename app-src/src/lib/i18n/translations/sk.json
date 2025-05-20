@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Nahrávanie dokončené! Pripravuje sa uloženie vášho albumu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Niektoré súbory sa nepodarilo nahrať. Môžete pokračovať s úspešne nahratými súbormi.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Používateľské meno by malo obsahovať len písmená, číslice a pomlčky. Príklad: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Používateľské meno musí obsahovať iba písmená, číslice a pomlčky"
+  "Username must contain only letters, numbers, and hyphens.": "Používateľské meno musí obsahovať iba písmená, číslice a pomlčky",
+  "Submitting...": "Odosiela sa...",
+  "Password": "Heslo",
+  "Submit": "Odoslať",
+  "OK": "Dobre",
+  "Link Only": "Iba Odkaz",
+  "View Album Photos": "Zobraziť Fotky Albumu",
+  "Enter Username": "Zadajte Používateľské Meno",
+  "Select Username": "Vyberte Používateľské Meno",
+  "Add Random Digits to Username": "Pridať Náhodné Číslice K Používateľskému Menu"
 }

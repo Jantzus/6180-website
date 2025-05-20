@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Karge kompleti! Preparante salva tui album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Kelki arkives non potad bli upladati. Vu pove kontinuer kun li arkives upladati kun suksese.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Li usanome mey kontena nur letres, nombres e tiries. Exemple: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Li usernome mey kontena nur letres, nombres e hifenes"
+  "Username must contain only letters, numbers, and hyphens.": "Li usernome mey kontena nur letres, nombres e hifenes",
+  "Submitting...": "Senda...",
+  "Password": "Pasvorte",
+  "Submit": "Senda",
+  "OK": "Bon",
+  "Link Only": "Nur Ligasion",
+  "View Album Photos": "Vida Album Fotos",
+  "Enter Username": "Entra Usatnome",
+  "Select Username": "Selekte Usatonome",
+  "Add Random Digits to Username": "Adi Chifres Randomim A Nome De Usere"
 }

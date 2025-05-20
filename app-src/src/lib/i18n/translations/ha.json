@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "An gama ɗora! Ana shirya adana albomin ka...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ba za'a iya ɗora wasu fayiloli. Kuna iya ci gaba da ayyuka da fayilolin da aka ɗora.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Sunan mai amfani ya kamata ya ƙunshi haruffa, lambobi da ɗigo kawai. Misali: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Sunan mai amfani ya kamata ya kunshi harufa, lambobi da hyphen kawai"
+  "Username must contain only letters, numbers, and hyphens.": "Sunan mai amfani ya kamata ya kunshi harufa, lambobi da hyphen kawai",
+  "Submitting...": "Ana aika...",
+  "Password": "Kalmar Sirri",
+  "Submit": "Aika",
+  "OK": "Lafiya",
+  "Link Only": "Kawai Hanya",
+  "View Album Photos": "Duba Hotuna Na Albomu",
+  "Enter Username": "Shigar Da Sunan Mai Amfani",
+  "Select Username": "Zaɓi Sunan Mai Amfani",
+  "Add Random Digits to Username": "Kara Lamba Na Bazata Ga Sunan Mai Amfani"
 }

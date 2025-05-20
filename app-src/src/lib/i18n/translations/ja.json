@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "アップロード完了！アルバムを保存する準備をしています...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "一部のファイルをアップロードできませんでした。アップロードに成功したファイルを使用して続行できます。",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ユーザー名には文字、数字、ハイフンのみを含めてください。例: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ユーザー名には文字、数字、ハイフンのみを含める必要があります"
+  "Username must contain only letters, numbers, and hyphens.": "ユーザー名には文字、数字、ハイフンのみを含める必要があります",
+  "Submitting...": "送信中...",
+  "Password": "パスワード",
+  "Submit": "送信",
+  "OK": "Hai",
+  "Link Only": "リンクのみ",
+  "View Album Photos": "アルバム写真を表示",
+  "Enter Username": "ユーザー名を入力",
+  "Select Username": "ユーザー名を選択",
+  "Add Random Digits to Username": "ユーザー名にランダムな数字を追加"
 }

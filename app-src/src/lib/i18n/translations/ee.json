@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload wu vɔ! Le wò album dzraɖoɖo me...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Mete ŋu faɛl aɖewo dɔ o. Àte ŋu ayi edzi kple faɛl siwo nèdɔ dzidzedzekpɔtɔe la.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Zãla ŋkɔ la nɔ nyae, xexleawo, xexledziƒomemewo kple nyaklãkpewo ko nanɔ eme. Kpɔɖeŋu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Zãla ŋkɔ la me kpɔ akpãɖeŋutinyawo, xexlẽmedzesiwo, kple kpakpawo ko"
+  "Username must contain only letters, numbers, and hyphens.": "Zãla ŋkɔ la me kpɔ akpãɖeŋutinyawo, xexlẽmedzesiwo, kple kpakpawo ko",
+  "Submitting...": "Ɖom ɖoɖo...",
+  "Password": "Nya Beble",
+  "Submit": "Ɖo Ɖa",
+  "OK": "Enyo",
+  "Link Only": "Kadodo Ɖeɖeko",
+  "View Album Photos": "Kpɔ Album Fotowo",
+  "Enter Username": "Ŋlɔ Wò Ŋkɔ",
+  "Select Username": "Tia Ŋkɔ",
+  "Add Random Digits to Username": "Tsɔ Dzɔdzɔme Xexlẽwo Kpe Ŋkɔ Ŋuti"
 }

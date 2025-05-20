@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Unggahan selesai! Menyiapkan untuk menyimpan album Anda...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Beberapa file tidak dapat diunggah. Anda dapat melanjutkan dengan file yang berhasil diunggah.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Nama pengguna harus berisi hanya huruf, angka, dan tanda hubung. Contoh: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Nama pengguna harus berisi hanya huruf, angka, dan tanda hubung"
+  "Username must contain only letters, numbers, and hyphens.": "Nama pengguna harus berisi hanya huruf, angka, dan tanda hubung",
+  "Submitting...": "Mengirimkan...",
+  "Password": "Kata Sandi",
+  "Submit": "Kirim",
+  "OK": "Oke",
+  "Link Only": "Tautan Saja",
+  "View Album Photos": "Lihat Foto Album",
+  "Enter Username": "Masukkan Nama Pengguna",
+  "Select Username": "Pilih Nama Pengguna",
+  "Add Random Digits to Username": "Tambahkan Digit Acak Ke Nama Pengguna"
 }

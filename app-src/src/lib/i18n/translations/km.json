@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "បញ្ចូលបានពេញលេញ! កំពុងរៀបចំដើម្បីរក្សាទុកអាល់ប៊ុមរបស់អ្នក...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ឯកសារមួយចំនួនមិនអាចបានផ្ទុកឡើង។ អ្នកអាចបន្តជាមួយឯកសារដែលបានផ្ទុកឡើងដោយជោគជ័យ។",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ឈ្មោះ​អ្នក​ប្រើប្រាស់​គួរ​តែ​មាន​តែ​អក្សរ លេខ និង​សហសញ្ញា​ប៉ុណ្ណោះ។ ឧទាហរណ៍៖ john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ឈ្មោះអ្នកប្រើប្រាស់ត្រូវតែមានតួអក្សរ លេខ និងសញ្ញាដកឃ្លាតែប៉ុណ្ណោះ"
+  "Username must contain only letters, numbers, and hyphens.": "ឈ្មោះអ្នកប្រើប្រាស់ត្រូវតែមានតួអក្សរ លេខ និងសញ្ញាដកឃ្លាតែប៉ុណ្ណោះ",
+  "Submitting...": "កំពុងដាក់ស្នើ...",
+  "Password": "ពាក្យសម្ងាត់",
+  "Submit": "ដាក់ស្នើ",
+  "OK": "Toklong",
+  "Link Only": "តំណភ្ជាប់តែប៉ុណ្ណោះ",
+  "View Album Photos": "មើលរូបថតក្នុងអាល់ប៊ុម",
+  "Enter Username": "បញ្ចូល​ឈ្មោះ​អ្នក​ប្រើប្រាស់",
+  "Select Username": "ជ្រើសរើស​ឈ្មោះ​អ្នក​ប្រើប្រាស់",
+  "Add Random Digits to Username": "បន្ថែមលេខចៃដន្យទៅឈ្មោះអ្នកប្រើប្រាស់"
 }

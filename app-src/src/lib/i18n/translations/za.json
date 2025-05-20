@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Doenghcaiq ok liux! Bingz swnjimq wijndeiq...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ndoiq boux vah cin haeuj mbouj doengh. Mungz ndeic bae rawz ndoiq boux vah cin haeuj doengh bae.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Yunghhoz maenh ndaej miz saw cihyoz, sohnih caeuq sihgaeq hanghoj nix oj. Ndaej: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Cienh mizyouz naj gangj miz saw, so caeuq majbau"
+  "Username must contain only letters, numbers, and hyphens.": "Cienh mizyouz naj gangj miz saw, so caeuq majbau",
+  "Submitting...": "Fahdauq...",
+  "Password": "Mwzma",
+  "Submit": "Gingde",
+  "OK": "Ndei",
+  "Link Only": "Ndaengx Gvangh",
+  "View Album Photos": "Sam Cabwnj Rongzcoz",
+  "Enter Username": "Dahraengz Gyoengqmingh",
+  "Select Username": "Gouq Gyoenghoz Mbouj",
+  "Add Random Digits to Username": "Daep sipsij cwyouz bae geiqmingh"
 }

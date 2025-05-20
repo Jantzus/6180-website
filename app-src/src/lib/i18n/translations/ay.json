@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "¡Apxatawi phuqhachata! Álbumama imaña qalltaski...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Yaqhipa archivonaka janiw apantaykaspati. Ukhamax sumpin apantayata archivunakampi sarantaskakimwa.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Apnaqiri sutix qillqanakampi, jakhunakapmpi, jisk'a rayitampiki utjañapawa. Iwxata: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Apnaqiri sutix qillqanaka, jakhunakapiwa qallunakampi utjaña"
+  "Username must contain only letters, numbers, and hyphens.": "Apnaqiri sutix qillqanaka, jakhunakapiwa qallunakampi utjaña",
+  "Submitting...": "Apayaña...",
+  "Password": "Arxatiri Aru",
+  "Submit": "Apaña",
+  "OK": "Waliki",
+  "Link Only": "Chinu Ukaki",
+  "View Album Photos": "Album Jamuqa Uñjaña",
+  "Enter Username": "Apnaqiri Suti Uñt'ayaña",
+  "Select Username": "Apnaqiri Suti Ajlliña",
+  "Add Random Digits to Username": "Apaqaña Jakhuñanaka Apnaqiri Sutipar Kayshita"
 }

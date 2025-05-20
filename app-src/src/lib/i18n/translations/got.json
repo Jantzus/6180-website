@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "𐌿𐍆𐌰𐍂𐌻𐌰𐌸𐌰𐌽 𐌹𐍃𐍄! 𐌼𐌰𐌽𐍅𐌾𐌰𐌽𐌳𐍃 𐌳𐌿 𐌲𐌰𐍆𐌰𐍃𐍄𐌰𐌽 𐌸𐌴𐌹𐌽 𐌰𐌻𐌱𐌿𐌼...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "𐍃𐌿𐌼𐌰𐌹 𐍆𐌴𐌹𐌻𐍉𐍃 𐌽𐌹 𐌼𐌰𐌷𐍄𐌴𐌳𐌿𐌽 𐌿𐍃𐌷𐌻𐌰𐌸𐌰𐌽𐌰𐌹 𐍅𐌹𐍃𐌰𐌽. 𐌸𐌿 𐌼𐌰𐌲𐍄 𐌰𐍆𐌰𐍂𐌲𐌰𐌲𐌲𐌰𐌽 𐌼𐌹𐌸 𐍆𐌴𐌹𐌻𐍉𐌼 𐌸𐍉𐌶𐌴𐌹 𐌲𐌰𐍄𐌹𐌼𐍂𐌴𐌹𐌳𐌰 𐌿𐍃𐌷𐌻𐌰𐌸𐌰𐌽𐌰𐌹 𐍅𐌴𐍃𐌿𐌽.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "𐌽𐌹𐌾𐌰𐌽𐌳𐌹𐌽𐍃 𐌽𐌰𐌼𐍉 𐍃𐌺𐌰𐌻 𐌷𐌰𐌱𐌰𐌽 𐌱𐍉𐌺𐍉𐍃, 𐌽𐌰𐌿𐌼𐌴𐍂𐌰𐌻𐌾𐌰 𐌾𐌰𐌷 𐌱𐌹𐌽𐌳𐌰𐍂𐌿𐌽𐌹𐌺 𐌰𐌹𐌽𐌰. 𐌳𐌿𐌱𐌰𐌽𐌳𐌹: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "𐌽𐌹𐌰𐌱𐍂𐌿𐌺𐌾𐌰𐌽𐌳𐌹𐌽𐍃 𐌽𐌰𐌼𐍉 𐍃𐌺𐌰𐌻 𐌷𐌰𐌱𐌰𐌽 𐌰𐌹𐌽𐍃 𐌱𐍉𐌺𐍉𐍃, 𐌽𐌰𐌼𐌽𐍉𐍃 𐌾𐌰𐌷 𐌳𐌴𐍆𐌹𐍃𐌰𐌽𐍃"
+  "Username must contain only letters, numbers, and hyphens.": "𐌽𐌹𐌰𐌱𐍂𐌿𐌺𐌾𐌰𐌽𐌳𐌹𐌽𐍃 𐌽𐌰𐌼𐍉 𐍃𐌺𐌰𐌻 𐌷𐌰𐌱𐌰𐌽 𐌰𐌹𐌽𐍃 𐌱𐍉𐌺𐍉𐍃, 𐌽𐌰𐌼𐌽𐍉𐍃 𐌾𐌰𐌷 𐌳𐌴𐍆𐌹𐍃𐌰𐌽𐍃",
+  "Submitting...": "𐌹𐌽𐍃𐌰𐌽𐌳𐌾𐌰𐌽𐌳𐍃...",
+  "Password": "𐌻𐌿𐌺𐌰𐌻𐌴𐌹𐌺𐍉",
+  "Submit": "𐌰𐍄𐌱𐌰𐌹𐍂𐌰𐌽",
+  "OK": "Gōþs",
+  "Link Only": "𐌱𐌰𐌽𐌳𐌹 𐌰𐌹𐌽𐌰𐌷𐌰",
+  "View Album Photos": "𐍃𐌰𐌹𐍈𐌰𐌽 𐌰𐌻𐌱𐌿𐌼𐌹𐍃 𐍆𐍂𐌹𐍃𐌰𐌷𐍄𐌹𐌽𐍃",
+  "Enter Username": "𐌰𐍄𐌻𐌰𐌲𐌴𐌹 𐌽𐌹𐌿𐍄𐌰𐌽𐌳𐌹𐍃 𐌽𐌰𐌼𐍉",
+  "Select Username": "𐌺𐌹𐌿𐍃𐌰𐌽 𐌱𐍂𐌿𐌺𐌾𐌰𐌽𐌳𐌹𐍃 𐌽𐌰𐌼𐍉",
+  "Add Random Digits to Username": "𐍆𐌰𐌻𐍃𐌰𐌽𐌳𐍃 𐌽𐌹𐌼𐌰𐌽𐌳𐍃 𐌳𐌿 𐌱𐍂𐌿𐌺𐌾𐌰𐌽𐌳𐌹𐌽 𐌽𐌰𐌼𐌹𐌽"
 }

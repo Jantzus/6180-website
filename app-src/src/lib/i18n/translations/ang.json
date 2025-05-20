@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Uplād gefylled! Þīnu album hordian gearwian...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sume fīlan ne mihton bēon ūphladenra. Þū canst mid þǣm ūphladene fīlan forðgān.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Brūcendnama sceal habban stafas, rim and bindunȝas āna. Bȳsen: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Brūcendnama sceal habban staefas, getalu, and bindungstricas āna"
+  "Username must contain only letters, numbers, and hyphens.": "Brūcendnama sceal habban staefas, getalu, and bindungstricas āna",
+  "Submitting...": "Ȝesendende...",
+  "Password": "Clǣfersweord",
+  "Submit": "Forsendan",
+  "OK": "Gōd",
+  "Link Only": "Līþen Āna",
+  "View Album Photos": "Biliðbōc Biliðu Sēon",
+  "Enter Username": "Brūcendnaman Onsettan",
+  "Select Username": "Brūcendnama Cēosan",
+  "Add Random Digits to Username": "Wīllíce Rīm Tō Brūcendnaman Bétan"
 }

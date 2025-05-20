@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Kukweza kwatha! Kukonzekera kuti tisunge albamu yanu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Mafayilo ena sanakwanitse kutumizidwa. Mukhoza kupitiliza ndi mafayilo omwe atumizidwa bwino.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Dzina logwiritsira ntchito liyenera kukhala ndi malembo, manambala ndi ma hyphens okha. Chitsanzo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Dzina la ogwiritsa ntchito liyenera kukhala ndi malembo, manambala, ndi matchiritchi okha"
+  "Username must contain only letters, numbers, and hyphens.": "Dzina la ogwiritsa ntchito liyenera kukhala ndi malembo, manambala, ndi matchiritchi okha",
+  "Submitting...": "Kutumiza...",
+  "Password": "Mawu Achinsinsi",
+  "Submit": "Tumiza",
+  "OK": "Chabwino",
+  "Link Only": "Kulumikiza Kokha",
+  "View Album Photos": "Onani Zithunzi Za Album",
+  "Enter Username": "Lembani Dzina Logwiritsa",
+  "Select Username": "Sankhani Dzina Logwiritsa",
+  "Add Random Digits to Username": "Onjezani Manambala Osankhidwa Mwala Pa Dzina La Ogwiritsa"
 }

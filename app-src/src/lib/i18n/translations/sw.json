@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upakiaji umekamilika! Inaandaa kuhifadhi albamu yako...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Baadhi ya faili hazikuweza kupakiwa. Unaweza kuendelea na faili zilizopakiwa kwa mafanikio.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Jina la mtumiaji linapaswa kuwa na herufi, nambari na vistari pekee. Mfano: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Jina la mtumiaji lazima liwe na herufi, namba, na vistari pekee"
+  "Username must contain only letters, numbers, and hyphens.": "Jina la mtumiaji lazima liwe na herufi, namba, na vistari pekee",
+  "Submitting...": "Inatuma...",
+  "Password": "Nenosiri",
+  "Submit": "Wasilisha",
+  "OK": "Sawa",
+  "Link Only": "Kiungo Tu",
+  "View Album Photos": "Tazama Picha Za Album",
+  "Enter Username": "Ingiza Jina La Mtumiaji",
+  "Select Username": "Chagua Jina la Mtumiaji",
+  "Add Random Digits to Username": "Ongeza Namba Za Nasibu Kwenye Jina La Mtumiaji"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Luchdadh suas deiseil! A' deisealachadh gus an t-albam agad a shàbhaladh...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Cha b' urrainn cuid de na faidhlichean a luchdadh suas. Faodaidh tu leantainn air adhart leis na faidhlichean a chaidh a luchdadh suas gu soirbheachail.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Cha bu chòir do dh'ainm-cleachdaiche ach litrichean, àireamhan is tàthanan a bhith ann. Eisimpleir: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Feumaidh ainm-cleachdaidh a bhith ann le litrichean, àireamhan agus tàthanan a-mhàin"
+  "Username must contain only letters, numbers, and hyphens.": "Feumaidh ainm-cleachdaidh a bhith ann le litrichean, àireamhan agus tàthanan a-mhàin",
+  "Submitting...": "A' cur a-steach...",
+  "Password": "Facal-Faire",
+  "Submit": "Cuir A-steach",
+  "OK": "Ceart Gu Leor",
+  "Link Only": "Ceangal A-mhàin",
+  "View Album Photos": "Seall Dealbhan An Albanam",
+  "Enter Username": "Cuir A-steach Ainm-cleachdaiche",
+  "Select Username": "Tagh Ainm-cleachdaiche",
+  "Add Random Digits to Username": "Cuir Àireamhan Thuaireamach Ris An Ainm-cleachdaiche"
 }

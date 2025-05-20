@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ku layicha ku hetile! Ku lulamisela ku hlayisa album ya wena...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Tifayili tin'wana a ti nga humeleriwanga. U nga ya emahlweni hi tifayili leti ti humeleriweke.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Vito ra mutirhisi ri fanele ku va na maletere, tinomboro na swihlanganisi ntsena. Xikombiso: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Vito ra mutirhisi ri fanele ku va na maletere, tinomboro na tihayifeni ntsena"
+  "Username must contain only letters, numbers, and hyphens.": "Vito ra mutirhisi ri fanele ku va na maletere, tinomboro na tihayifeni ntsena",
+  "Submitting...": "Ku rhumela...",
+  "Password": "Vito Ra Xihundla",
+  "Submit": "Rhumela",
+  "OK": "Swinene",
+  "Link Only": "Ntsena Vuhlanganisi",
+  "View Album Photos": "Vona Swifaniso Swa Album",
+  "Enter Username": "Nghenisa Vito Ra Mutirhisi",
+  "Select Username": "Hlawula Vito ra Mutirhisi",
+  "Add Random Digits to Username": "Nghenisa Tinomboro To Hahlaruteka Eka Vito Ra Mutirhisi"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Įkėlimas baigtas! Ruošiamasi išsaugoti jūsų albumą...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Kai kurių failų nepavyko įkelti. Galite tęsti su sėkmingai įkeltais failais.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Vartotojo vardas turėtų būti sudarytas tik iš raidžių, skaičių ir brūkšnelių. Pavyzdys: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Naudotojo vardas turi būti sudarytas tik iš raidžių, skaičių ir brūkšnelių"
+  "Username must contain only letters, numbers, and hyphens.": "Naudotojo vardas turi būti sudarytas tik iš raidžių, skaičių ir brūkšnelių",
+  "Submitting...": "Siunčiama...",
+  "Password": "Slaptažodis",
+  "Submit": "Pateikti",
+  "OK": "Gerai",
+  "Link Only": "Tik Nuoroda",
+  "View Album Photos": "Peržiūrėti Albumo Nuotraukas",
+  "Enter Username": "Įveskite Vartotojo Vardą",
+  "Select Username": "Pasirinkite Vartotojo Vardą",
+  "Add Random Digits to Username": "Pridėti Atsitiktinius Skaitmenis Prie Vartotojo Vardo"
 }

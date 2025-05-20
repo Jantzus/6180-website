@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "ಅಪ್‌ಲೋಡ್ ಪೂರ್ತಿ! ನಿಕ್ಲೆನ ಆಲ್ಬಂ ಒರಿಪಾದ್‌ಲೆಕ್ ತಯಾರಾಪುಂಡು...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ಕೆಲವು ಫೈಲ್‌ಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ನೀವು ಯಶಸ್ವಿಯಾಗಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ಫೈಲ್‌ಗಳೊಂದಿಗೆ ಮುಂದುವರೆಯಬಹುದು.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ಬಳಕೆದಾರ ಹೆಸ್ರ್'ಡ್ ಅಕ್ಷರೊಲು, ಅಂಕೆಲು ಬುಡು ಹೈಫನ್'ಲು ಮಾತ್ರ ಇಪ್ಪುಲೆಕ್ಕ ಇರೊಡು. ಉದಾಹರಣೆ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ಬಳಕೆಯಾಗದ್ ಪುದರ್'ಡ್ ಅಕ್ಷರೊಲು, ಅಂಕೊಲು ಬೊಕ್ಕ ಹಯ್ಫನ್'ಲೆನ್ ಉಂಡು"
+  "Username must contain only letters, numbers, and hyphens.": "ಬಳಕೆಯಾಗದ್ ಪುದರ್'ಡ್ ಅಕ್ಷರೊಲು, ಅಂಕೊಲು ಬೊಕ್ಕ ಹಯ್ಫನ್'ಲೆನ್ ಉಂಡು",
+  "Submitting...": "ಕಡಪುಡುನಾ ಉಂಡು...",
+  "Password": "ಗುಪ್ತಪದ",
+  "Submit": "ಸಲ್ಲಿಸು",
+  "OK": "Sari",
+  "Link Only": "ಲಿಂಕ್ ಮಾತ್ರ",
+  "View Album Photos": "ಆಲ್ಬಂ ಚಿತ್ರಗಳನ್ನು ನೋಡಿ",
+  "Enter Username": "ಬಳಕೆದಾರ ಹೆಸರು ನಮೂದಿಸಿ",
+  "Select Username": "ಬಳಕೆದಾರ ಹೆಸರು ಆಯ್ಕೆಮಾಡಿ",
+  "Add Random Digits to Username": "ಬಳಕೆದಾರ ಹೆಸ್ರ್‍ಗ್ ಯಾದೃಚ್ಚಿಕ ಅಂಕೆಲೆನ್ ಸೇರಾಲೆ"
 }

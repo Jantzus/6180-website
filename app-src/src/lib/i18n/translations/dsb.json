@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Nagraśe dokóńcone! Pśigotujomy se waš album składowaś...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Někotare dataje njejsu se nagrali dali. Móžoš z datajami, kótarež su se wuspěšnje nagrali, pókšacowaś.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Wužywarske mě smějo jano pismiki, licby a wězawki wopśimowaś. Pśikład: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Wužywarske mě smějo jano pismiki, licby a wězawki wopśimowaś"
+  "Username must contain only letters, numbers, and hyphens.": "Wužywarske mě smějo jano pismiki, licby a wězawki wopśimowaś",
+  "Submitting...": "Wótpósćejo se...",
+  "Password": "Gronidłowe Słowo",
+  "Submit": "Wótpósłaś",
+  "OK": "Derje",
+  "Link Only": "Jano Link",
+  "View Album Photos": "Albumowe Fotografije Pokazaś",
+  "Enter Username": "Wužywarske Mě Zapódaś",
+  "Select Username": "Wužywarske Mě Wubraś",
+  "Add Random Digits to Username": "Pśidaś Pśipadne Licby K Wužywarskemu Mjenjoju"
 }

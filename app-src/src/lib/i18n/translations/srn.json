@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload klari! E meki klar fu kibri yu album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Son file no ben man upload. Yu kan go doro nanga den file di ben upload bun.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "A nen fu a masyin musu abi soso letri, nomru nanga strepi. Eksempre: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "A nen fu a masyin musu abi soso brifi, nomru nanga strepi"
+  "Username must contain only letters, numbers, and hyphens.": "A nen fu a masyin musu abi soso brifi, nomru nanga strepi",
+  "Submitting...": "Seni...",
+  "Password": "Paswortu",
+  "Submit": "Seni",
+  "OK": "Bun",
+  "Link Only": "Soso Link",
+  "View Album Photos": "Luku Album Prenki",
+  "Enter Username": "Poti Yu Nemre",
+  "Select Username": "Teki Gebruikernaam",
+  "Add Random Digits to Username": "Poti Nomru Sondro Pipel Na Yu Nen"
 }

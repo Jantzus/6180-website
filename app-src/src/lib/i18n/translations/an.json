@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Carga completa! Preparando ta alzar o tuyo album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Qualques fichers no s'han puesto puyar. Puetz continar con os fichers puyaus con exito.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "O nombre d'usuario nomás debe contener letras, numeros y guions. Exemplo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "O nombre d'usuario nomás puede contener letras, numeros y guions"
+  "Username must contain only letters, numbers, and hyphens.": "O nombre d'usuario nomás puede contener letras, numeros y guions",
+  "Submitting...": "Ninviando...",
+  "Password": "Contrasenya",
+  "Submit": "Ninviar",
+  "OK": "D'Acuerdo",
+  "Link Only": "Nomás Vinclo",
+  "View Album Photos": "Veyer As Fotos D'o Álbum",
+  "Enter Username": "Introduzca O Nombre D'Usuario",
+  "Select Username": "Eslir Usuario",
+  "Add Random Digits to Username": "Adhibir Dígitos Aleatorios A Nombre D'usuario"
 }

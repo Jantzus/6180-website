@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Lo kibycpa cu mulno! Punji lo sanga girzu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "so'i datnyveiste na ka'e se benji. do ka djica lo nu ranji sepi lo datnyvei poi se benji",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "lo cmene be lo pilno cu se zbasu fi lo lerfu .e lo namcu .e lo disjuntu po'o .i mupli: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "le cmene be lo pilno cu sisti lo'e lerfu .e lo'e namcu .e lo'e sirji"
+  "Username must contain only letters, numbers, and hyphens.": "le cmene be lo pilno cu sisti lo'e lerfu .e lo'e namcu .e lo'e sirji",
+  "Submitting...": "Benji...",
+  "Password": "javni",
+  "Submit": "krasi",
+  "OK": "Zabna",
+  "Link Only": "pagbu po'o",
+  "View Album Photos": "viska lo pixra be lo selmapti",
+  "Enter Username": "ciska lo plicme",
+  "Select Username": "cuxna pilno namcu",
+  "Add Random Digits to Username": "jmina cunki namcu fi lo se pilno cmene"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload alhtaiyaha! Chim album chimash taloa...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Faili kaniohmi kia ik achukmo cha uploadla hinla tuk keyu. Faili kaniohmi kia upload cha achukma tuk nan chi uploadla hinla.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Isht hohchifo yut holisso, holhtina, micha taptoli bano ik im asha ke tuk. Nan isht alhpisa: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Chishno hohchifo yut holisso, holhtina, micha bachacha bano kiatokashke"
+  "Username must contain only letters, numbers, and hyphens.": "Chishno hohchifo yut holisso, holhtina, micha bachacha bano kiatokashke",
+  "Submitting...": "Pila...",
+  "Password": "Hattak Im Anumpa Luma",
+  "Submit": "Pila",
+  "OK": "Alhpesa",
+  "Link Only": "Link Bano",
+  "View Album Photos": "Pisa Album Holisso Iska",
+  "Enter Username": "Chi Hohchifo Chi Ittim",
+  "Select Username": "Hotchifo Atokoli",
+  "Add Random Digits to Username": "Hochifo Chokma Hotupa Kanchi Foka"
 }

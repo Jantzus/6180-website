@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Üleslätmine om valmis! Valmistus albumi salvõstamisõs...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Mõnda teedüstüt saa-s üles laaditut. Või edesi minnäq õnnõstunu teedüstükega.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Pruukjanime võisi sisaldä õnnõ tähtit, numbreid ja kriipse. Näüdüs: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Pruukjanime tohe-i olla' õnnõ tähe', numbri' ja kriipsu'"
+  "Username must contain only letters, numbers, and hyphens.": "Pruukjanime tohe-i olla' õnnõ tähe', numbri' ja kriipsu'",
+  "Submitting...": "Saatmisõl...",
+  "Password": "Salasõna",
+  "Submit": "Saada'",
+  "OK": "Hää",
+  "Link Only": "Ainult Link",
+  "View Album Photos": "Kae Albumi Pilte",
+  "Enter Username": "Panõq Pruukjannimi",
+  "Select Username": "Valiq Pruukjannimi",
+  "Add Random Digits to Username": "Panõq Johuslikuq Numbri Pruukjanumbrõ Mano"
 }

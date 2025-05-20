@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Nakumpleto an pagkarga! Naghahanda na para isalbar an saimong album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "An ibang mga file dai maikarga. Makakapadagos ka sa mga file na matriumpo na naikarga.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "An ngaran nin paragamit dapat na sana na mga letra, numero asin mga guhit. Halimbawa: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "An ngaran nin paragamit dapat na sana manuon nin mga letra, numero, asin mga guhit"
+  "Username must contain only letters, numbers, and hyphens.": "An ngaran nin paragamit dapat na sana manuon nin mga letra, numero, asin mga guhit",
+  "Submitting...": "Nagpapadara...",
+  "Password": "Paskod",
+  "Submit": "Isumite",
+  "OK": "Marhay",
+  "Link Only": "Takod Sana",
+  "View Album Photos": "Hilingon An Mga Litrato Kan Album",
+  "Enter Username": "Ikaag An Pangaran Nin Paragamit",
+  "Select Username": "Pilian an Ngaran nin Paragamit",
+  "Add Random Digits to Username": "Magdugang Nin Random Na Mga Numero Sa Ngaran"
 }

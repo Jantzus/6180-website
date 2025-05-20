@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ачааллалта дууһаба! Танай альбомыетнай хадгалхаар бэлдэжэ байна...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Зарим файлнууд ачаалагдаагүй байна. Та амжилттай ачаалагдсан файлнуудтай үргэлжлүүлэн ажиллаж болно.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Хэрэглэгшын нэрэ зүбхэн үзэгүүд, тоонууд ба дефис агуулха ёһотой. Жэшээ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Хэрэглэгшын нэрэндэ зүбхэн үзэгүүд, тоонууд ба дефисүүд байх ёһотой"
+  "Username must contain only letters, numbers, and hyphens.": "Хэрэглэгшын нэрэндэ зүбхэн үзэгүүд, тоонууд ба дефисүүд байх ёһотой",
+  "Submitting...": "Эльгээж байна...",
+  "Password": "Нууц үг",
+  "Submit": "Илгээх",
+  "OK": "Zügeer",
+  "Link Only": "Зөвхөн Холбоос",
+  "View Album Photos": "Альбомой Зурагуудыг Харах",
+  "Enter Username": "Хэрэглэгчийн нэрээ оруулна уу",
+  "Select Username": "Хэрэглэгчийн Нэрийг Сонгоно",
+  "Add Random Digits to Username": "Хэрэглэгчийн Нэрт Санамсаргүй Тооны Дугаар Нэмэх"
 }

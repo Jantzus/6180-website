@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Йөкләү тәмамланды! Альбомыгызны саклауга әзерләнә...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Кайбер файллар йөкләнмәде. Сез уңышлы йөкләнгән файллар белән дәвам итә аласыз.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Кулланучы исеме хәрефләрдән, саннардан һәм сызыкчалардан гына торырга тиеш. Мисал: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Кулланучы исеме хәрефләр, саннар һәм сызыкчалардан гына торырга тиеш"
+  "Username must contain only letters, numbers, and hyphens.": "Кулланучы исеме хәрефләр, саннар һәм сызыкчалардан гына торырга тиеш",
+  "Submitting...": "Җибәрелә...",
+  "Password": "Серсүз",
+  "Submit": "Җибәрергә",
+  "OK": "Yaqşı",
+  "Link Only": "Бары Сылтама",
+  "View Album Photos": "Альбом Фотоларын Карау",
+  "Enter Username": "Кулланучы Исемен Кертегез",
+  "Select Username": "Кулланучы Исемен Сайлагыз",
+  "Add Random Digits to Username": "Кулланучы Исеменә Очраклы Саннар Өстәү"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "אַרויפלאָדן פֿאַרענדיקט! גרייט צו היטן דיין אַלבום...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "טייל טעקעס קען מען נישט ארויפלאָדן. איר קענט פאָרזעצן מיט די טעקעס וואָס זענען געווען דערפאָלגרייך ארויפגעלאָדנט.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "באַניצער־נאָמען זאָל ענטהאַלטן נאָר אותיות, ציפערן און בינדעשטרעכן. ביישפּיל: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "באניצער נאמען טאר נאר אנטהאלטן בוכשטאבן, נומערן און שטרעכלעך"
+  "Username must contain only letters, numbers, and hyphens.": "באניצער נאמען טאר נאר אנטהאלטן בוכשטאבן, נומערן און שטרעכלעך",
+  "Submitting...": "שיקט...",
+  "Password": "פּאַראָל",
+  "Submit": "אריינגעבן",
+  "OK": "Akei",
+  "Link Only": "בלויז לינק",
+  "View Album Photos": "באַקוקן אַלבום בילדער",
+  "Enter Username": "אַרײַנגעבן באַניצער נאָמען",
+  "Select Username": "קלייבט אויס באניצער נאמען",
+  "Add Random Digits to Username": "לייג צו צופֿעליגע ציפֿערן צו באַניצער נאָמען"
 }

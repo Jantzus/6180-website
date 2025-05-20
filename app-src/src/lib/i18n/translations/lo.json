@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "ການອັບໂຫລດສຳເລັດແລ້ວ! ກຳລັງກະກຽມບັນທຶກອັລບ້ຳຂອງທ່ານ...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ບາງໄຟລ​໌​ບໍ່​ສາມາດອັບໂຫລດໄດ້. ທ່ານສາມາດສືບຕໍ່ດໍາເນີນການກັບໄຟລ​໌​ທີ່ອັບໂຫລດສໍາເລັດແລ້ວ.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ຊື່ຜູ້ໃຊ້ຄວນມີພຽງແຕ່ຕົວອັກສອນ, ຕົວເລກ ແລະ ຂີດກາງ. ຕົວຢ່າງ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ຊື່ຜູ້ໃຊ້ຕ້ອງປະກອບດ້ວຍຕົວອັກສອນ, ຕົວເລກ, ແລະຂີດກາງເທົ່ານັ້ນ"
+  "Username must contain only letters, numbers, and hyphens.": "ຊື່ຜູ້ໃຊ້ຕ້ອງປະກອບດ້ວຍຕົວອັກສອນ, ຕົວເລກ, ແລະຂີດກາງເທົ່ານັ້ນ",
+  "Submitting...": "ກຳລັງສົ່ງ...",
+  "Password": "ລະຫັດຜ່ານ",
+  "Submit": "ສົ່ງ",
+  "OK": "Toklong",
+  "Link Only": "ລິ້ງເທົ່ານັ້ນ",
+  "View Album Photos": "ເບິ່ງຮູບພາບອະລະບັ້ມ",
+  "Enter Username": "ປ້ອນຊື່ຜູ້ໃຊ້",
+  "Select Username": "ເລືອກຊື່ຜູ້ໃຊ້",
+  "Add Random Digits to Username": "ເພີ່ມຕົວເລກແບບສຸ່ມໃສ່ຊື່ຜູ້ໃຊ້"
 }

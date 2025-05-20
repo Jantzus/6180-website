@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Chargiada terminada! Preparaziun per arcunar tes album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Insaquants datotecas n'han betg pudì vegnir chargiadas. Ti pos cuntinuar cun las datotecas chargiadas cun success.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Il num d'utilisader duess cuntegnair be bustabs, cifras e stregs. Exempel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Il num d'utilisader po cuntegnair be letters, cifras e stritgs da colliaziun"
+  "Username must contain only letters, numbers, and hyphens.": "Il num d'utilisader po cuntegnair be letters, cifras e stritgs da colliaziun",
+  "Submitting...": "Tramettend...",
+  "Password": "Pled-Clav",
+  "Submit": "Trametter",
+  "OK": "Bun",
+  "Link Only": "Be Colliaziun",
+  "View Album Photos": "Contemplar Fotografias Da L'Album",
+  "Enter Username": "Endatescha Num D'utilisader",
+  "Select Username": "Tscherner Num d'Utilisader",
+  "Add Random Digits to Username": "Agiuntar Cifras Casualas Al Num D'utilisader"
 }

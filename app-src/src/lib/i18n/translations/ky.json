@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Жүктөө аяктады! Сиздин альбомду сактоого даярдоо...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Айрым файлдарды жүктөө мүмкүн эмес. Ийгиликтүү жүктөлгөн файлдар менен улантсаңыз болот.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Колдонуучунун аты тамгалардан, сандардан жана сызыкчалардан гана турушу керек. Мисалы: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Колдонуучунун аты тамгаларды, сандарды жана дефистерди гана камтышы керек"
+  "Username must contain only letters, numbers, and hyphens.": "Колдонуучунун аты тамгаларды, сандарды жана дефистерди гана камтышы керек",
+  "Submitting...": "Жөнөтүлүүдө...",
+  "Password": "Купуя Сөз",
+  "Submit": "Тапшыруу",
+  "OK": "Boluptur",
+  "Link Only": "Шилтеме Гана",
+  "View Album Photos": "Альбом Сүрөттөрүн Көрүү",
+  "Enter Username": "Колдонуучунун Атын Киргизиңиз",
+  "Select Username": "Колдонуучунун Атын Тандоо",
+  "Add Random Digits to Username": "Колдонуучунун Атына Кокустан Сандарды Кошуу"
 }

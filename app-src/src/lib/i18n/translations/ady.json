@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Хьэлъкӏэр иухащ! Уи альбомым гъэтӏылъыныр хьазырщ...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ФайлхэмкIэ жэгъэкIуэтэкIын хъуакъым. КъэбгъэкIуатэ хъуа файлхэм урилэжьэн плъэкIынущ.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Цӏэ гъэфедэр лӏэужыгъоу фежъугъахьырэр хьарыфхэм, бжыгъэхэм, дефисхэм язакъу хъущт. Щапхъэ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ЦӀэр хэтхэр, бжыгъэхэр, дефисхэр закъоу хэтын фае"
+  "Username must contain only letters, numbers, and hyphens.": "ЦӀэр хэтхэр, бжыгъэхэр, дефисхэр закъоу хэтын фае",
+  "Submitting...": "Егъэхьын...",
+  "Password": "Шъэфыгущ",
+  "Submit": "Сэ Егъашӏэ",
+  "OK": "Дэгъу",
+  "Link Only": "Зэпхыныгъэ Закъуэр",
+  "View Album Photos": "Альбомым ИсурэтхэмкӀэ Еплъын",
+  "Enter Username": "Уи ЦӀэр Итхэн",
+  "Select Username": "Цlэр Къыхэх",
+  "Add Random Digits to Username": "Хьзэу Бжыгъэ Тэмэрэзэ Хэгъахь"
 }

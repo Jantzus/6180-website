@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Վերբեռնումն ավարտված է: Պատրաստվում է պահպանել ձեր ալբոմը...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Որոշ ֆայլեր հնարավոր չէր վերբեռնել։ Դուք կարող եք շարունակել հաջողությամբ վերբեռնված ֆայլերով։",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Օգտանունը պետք է պարունակի միայն տառեր, թվեր և գծիկներ։ Օրինակ՝ john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Օգտանունը պետք է պարունակի միայն տառեր, թվեր և գծիկներ"
+  "Username must contain only letters, numbers, and hyphens.": "Օգտանունը պետք է պարունակի միայն տառեր, թվեր և գծիկներ",
+  "Submitting...": "Ուղարկվում է...",
+  "Password": "Գաղտնաբառ",
+  "Submit": "Ուղարկել",
+  "OK": "Lav",
+  "Link Only": "Միայն Հղում",
+  "View Album Photos": "Դիտել Ալբոմի Լուսանկարները",
+  "Enter Username": "Մուտքագրեք Օգտանունը",
+  "Select Username": "Ընտրեք Օգտվողի Անունը",
+  "Add Random Digits to Username": "Ավելացնել Պատահական Թվեր Օգտվողի Անունին"
 }

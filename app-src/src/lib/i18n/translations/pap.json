@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Carga completá! Preparando pa warda bo album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Algun file no a por wòrdu upload. Bo por sigui ku e filenan ku a upload ku éksito.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "E number di usuarionan mester contené solamente letra, number i strepi. Ehèmpel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "E nomber di usuario mester contene solamente letra, number i strepi"
+  "Username must contain only letters, numbers, and hyphens.": "E nomber di usuario mester contene solamente letra, number i strepi",
+  "Submitting...": "Mandando...",
+  "Password": "Password",
+  "Submit": "Manda",
+  "OK": "Bon",
+  "Link Only": "Solamente Link",
+  "View Album Photos": "Mira Fotonan Di Album",
+  "Enter Username": "Drenta Nomber Di Usuario",
+  "Select Username": "Skohe Nomber di Usuario",
+  "Add Random Digits to Username": "Huntu Numbernan Di Azar Na Nomber Di Usuario"
 }

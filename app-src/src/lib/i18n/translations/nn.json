@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Opplasting fullført! Førebur lagring av albumet ditt...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Nokre filer kunne ikkje lastast opp. Du kan halde fram med filene som er lasta opp.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Brukarnamn skal berre innehalde bokstavar, tal og bindestrekar. Døme: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Brukarnamnet kan berre innehalde bokstavar, tal og bindestrekar"
+  "Username must contain only letters, numbers, and hyphens.": "Brukarnamnet kan berre innehalde bokstavar, tal og bindestrekar",
+  "Submitting...": "Sender...",
+  "Password": "Passord",
+  "Submit": "Send",
+  "OK": "Greitt",
+  "Link Only": "Berre Lenkje",
+  "View Album Photos": "Sjå Album Bilete",
+  "Enter Username": "Skriv Inn Brukarnamn",
+  "Select Username": "Vel Brukarnamn",
+  "Add Random Digits to Username": "Legg Til Tilfeldige Siffer Til Brukarnamn"
 }

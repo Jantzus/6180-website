@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Uplohd dun! Miekin ready f'sief yos album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Samfala files ken narawa uplohd. Yu kian kanciniw wuth them files weh uplohd gud.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Yuusa niem shud konten jes leters, nuembas en hiefens. Eksampul: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Yuusa niem mas jes hiae lettas, nambas en hiefens"
+  "Username must contain only letters, numbers, and hyphens.": "Yuusa niem mas jes hiae lettas, nambas en hiefens",
+  "Submitting...": "Sendin...",
+  "Password": "Paswurd",
+  "Submit": "Submit",
+  "OK": "Gud",
+  "Link Only": "Link Nomo",
+  "View Album Photos": "Luk Album Pikta",
+  "Enter Username": "Entra Yuusa Niem",
+  "Select Username": "Selekt Yuusa Niem",
+  "Add Random Digits to Username": "Put Random Nambas To Yuus Niem"
 }

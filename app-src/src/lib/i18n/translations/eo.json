@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Alŝuto kompleta! Preparante konservi vian albumon...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Kelkaj dosieroj ne povis esti alŝutitaj. Vi povas daŭrigi kun la sukcese alŝutitaj dosieroj.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Uzantnomo devus enhavi nur literojn, ciferojn kaj strekojn. Ekzemplo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Uzantonomo devas enhavi nur literojn, numerojn kaj strekojn"
+  "Username must contain only letters, numbers, and hyphens.": "Uzantonomo devas enhavi nur literojn, numerojn kaj strekojn",
+  "Submitting...": "Sendante...",
+  "Password": "Pasvorto",
+  "Submit": "Sendi",
+  "OK": "Bone",
+  "Link Only": "Nur Ligilo",
+  "View Album Photos": "Vidi Albumajn Fotojn",
+  "Enter Username": "Enigu Uzantnomon",
+  "Select Username": "Elektu Uzantnomon",
+  "Add Random Digits to Username": "Aldoni Hazardajn Ciferojn Al Uzantnomo"
 }

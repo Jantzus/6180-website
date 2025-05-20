@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Unggahan réngsé! Nyiapkeun keur nyimpen album anjeun...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sababaraha file teu bisa diunggah. Anjeun bisa nuluykeun nganggo file anu geus diunggah.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ngaran pamaké kudu ngan ukur ngandung aksara, angka jeung tanda sambung. Conto: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ngaran pamaké kudu ngan ukur ngandung aksara, angka, jeung tanda sambung"
+  "Username must contain only letters, numbers, and hyphens.": "Ngaran pamaké kudu ngan ukur ngandung aksara, angka, jeung tanda sambung",
+  "Submitting...": "Ngirimkeun...",
+  "Password": "Sandi",
+  "Submit": "Kirim",
+  "OK": "Sae",
+  "Link Only": "Tumbu Waé",
+  "View Album Photos": "Tingali Poto Album",
+  "Enter Username": "Asupkeun Ngaran Pamaké",
+  "Select Username": "Pilih Ngaran Pamaké",
+  "Add Random Digits to Username": "Tambahkeun Digit Acak Kana Ngaran Pamaké"
 }

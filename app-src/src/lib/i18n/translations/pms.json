@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Cariament completà! Preparand a salvé tò album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Chèich archivi a peulo nen esse carià. A peul continué con j'archivi carià con sucèss.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ël nòm utent a dev conten-e mach létere, nùmer e tratin. Esempi: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ël nòm utent a dev mach conten lìtere, nùmer e tratulin"
+  "Username must contain only letters, numbers, and hyphens.": "Ël nòm utent a dev mach conten lìtere, nùmer e tratulin",
+  "Submitting...": "Spedission...",
+  "Password": "Ciav",
+  "Submit": "Spedì",
+  "OK": "Va Ben",
+  "Link Only": "Mach Anliura",
+  "View Album Photos": "Vëdde Le Fòto Dl'Album",
+  "Enter Username": "Anseriss Nòm Utent",
+  "Select Username": "Selessioné Nòm Utent",
+  "Add Random Digits to Username": "Gionté Sifre Casual Al Nòm Utent"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "上載完成！準備儲存你嘅相簿...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "部分檔案上傳唔成功。你可以繼續使用成功上傳嘅檔案。",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "用戶名淨可以包含英文字母、數字同連字符號。例如：john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "用戶名只可以包含英文字母、數字同連字號"
+  "Username must contain only letters, numbers, and hyphens.": "用戶名只可以包含英文字母、數字同連字號",
+  "Submitting...": "正在提交...",
+  "Password": "密碼",
+  "Submit": "遞交",
+  "OK": "Hou",
+  "Link Only": "淨係連結",
+  "View Album Photos": "睇相簿相片",
+  "Enter Username": "輸入用戶名",
+  "Select Username": "揀用户名",
+  "Add Random Digits to Username": "加隨機數字到用戶名"
 }

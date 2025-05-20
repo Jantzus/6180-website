@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload fuldført! Forbereder at gemme dit album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Nogle filer kunne ikke uploades. Du kan fortsætte med de filer, der blev uploadet.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Brugernavn må kun indeholde bogstaver, tal og bindestreger. Eksempel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Brugernavnet må kun indeholde bogstaver, tal og bindestreger"
+  "Username must contain only letters, numbers, and hyphens.": "Brugernavnet må kun indeholde bogstaver, tal og bindestreger",
+  "Submitting...": "Indsender...",
+  "Password": "Adgangskode",
+  "Submit": "Indsend",
+  "OK": "Okay",
+  "Link Only": "Kun Link",
+  "View Album Photos": "Se Album Billeder",
+  "Enter Username": "Indtast Brugernavn",
+  "Select Username": "Vælg Brugernavn",
+  "Add Random Digits to Username": "Tilføj Tilfældige Cifre Til Brugernavn"
 }

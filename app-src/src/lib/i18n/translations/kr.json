@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload okwe! Ee gume mi faa album yie...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Wasu fayiloci ba za a iya ɗora musu. Za ku iya ci gaba da aiki da fayilocin da aka ɗora cikin nasara.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Sunan mai amfani ya kamata ya ƙunshi haruffa, lambobi da ɗigo kawai. Misali: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Sanaraka suna dole ya ƙunshi haruffa, lambobi da hyphen kawai"
+  "Username must contain only letters, numbers, and hyphens.": "Sanaraka suna dole ya ƙunshi haruffa, lambobi da hyphen kawai",
+  "Submitting...": "Aika...",
+  "Password": "Ọrọigbaniwọle",
+  "Submit": "Fiɖeɖe",
+  "OK": "O Sin",
+  "Link Only": "Alikan Nikan",
+  "View Album Photos": "E Se Foto Album",
+  "Enter Username": "Sinme Orukọ Olulo",
+  "Select Username": "Họrọ Ahà",
+  "Add Random Digits to Username": "Zi Nomba Kren Kren De Elo Whenu"
 }

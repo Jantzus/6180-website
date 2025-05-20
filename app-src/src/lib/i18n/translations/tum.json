@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Wakwera kwamala! Wakupanga kuti asunje album yako...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Mafailo ghanyake ghakundajebeka yayi. Mungajitizga na mafailo agho ghajebeka makora.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Zina la wugwiritsa ntchito lizibenge malembo, manambala na mahayifeni pera. Chitsanzo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Zina la walembeso likwenera kuŵa na malembo, manambala na mahayifeni pera"
+  "Username must contain only letters, numbers, and hyphens.": "Zina la walembeso likwenera kuŵa na malembo, manambala na mahayifeni pera",
+  "Submitting...": "Kutuma...",
+  "Password": "Password",
+  "Submit": "Submit",
+  "OK": "Uli Makora",
+  "Link Only": "Link Only",
+  "View Album Photos": "View Album Photos",
+  "Enter Username": "Lembani Zina La Wogwiritsa",
+  "Select Username": "Sankhani Dzina Logwiritsa",
+  "Add Random Digits to Username": "Sazga Manambala Mwachizyolowezi Ku Zina Logwiriska Ntchito"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ikuzwa ryarangiye! Kwitegura kubika albumu yawe...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Dosiye zimwe ntizishobora gutururwa. Urashobora gukomeza na dosiye zitururwa neza.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Izina ry'uwukoresha ritegerezwa kugira inyuguti, imibare n'udukwego gusa. Akarorero: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Izina ry'umukoresha ritegerezwa kugira inyuguti, ibiharuro n'udutambura gusa"
+  "Username must contain only letters, numbers, and hyphens.": "Izina ry'umukoresha ritegerezwa kugira inyuguti, ibiharuro n'udutambura gusa",
+  "Submitting...": "Kohereza...",
+  "Password": "Ijambo Ryibanga",
+  "Submit": "Ohereza",
+  "OK": "Neza",
+  "Link Only": "Ihuza Gusa",
+  "View Album Photos": "Raba Amafoto Y'Ububiko",
+  "Enter Username": "Andika Izina Ry'Uwukoresha",
+  "Select Username": "Hitamwo Izina Ry'Umukoresha",
+  "Add Random Digits to Username": "Ongereza Ibiharuro Bivanye Ku Mwanya Ku Zina Ry'ukoresha"
 }

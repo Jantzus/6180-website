@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Încărcare completă! Se pregătește salvarea albumului tău...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Unele fișiere nu au putut fi încărcate. Puteți continua cu fișierele încărcate cu succes.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Numele de utilizator trebuie să conțină doar litere, cifre și cratime. Exemplu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Numele de utilizator trebuie să conțină doar litere, cifre și cratime"
+  "Username must contain only letters, numbers, and hyphens.": "Numele de utilizator trebuie să conțină doar litere, cifre și cratime",
+  "Submitting...": "Se trimite...",
+  "Password": "Parolă",
+  "Submit": "Trimite",
+  "OK": "Bine",
+  "Link Only": "Doar Link",
+  "View Album Photos": "Vizualizare Fotografii Album",
+  "Enter Username": "Introduceți Numele De Utilizator",
+  "Select Username": "Selectează Numele de Utilizator",
+  "Add Random Digits to Username": "Adaugă Cifre Aleatorii La Numele De Utilizator"
 }

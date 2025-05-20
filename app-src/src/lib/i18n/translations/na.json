@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload eow! Ekak album anga egame...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Eko fail eko eitsiok upload. Ura pan aea fail eko tekawa upload.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ren iyoran ekak wanga etsimine bita print, namba me hyphen kor. Ewangin: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Username eo ouga kor edogor itsimorere letters, números me hyphens"
+  "Username must contain only letters, numbers, and hyphens.": "Username eo ouga kor edogor itsimorere letters, números me hyphens",
+  "Submitting...": "Etepodan...",
+  "Password": "Password",
+  "Submit": "Ewewo",
+  "OK": "Eok",
+  "Link Only": "Link Kor",
+  "View Album Photos": "Iyuw Album Gamag",
+  "Enter Username": "Enter Itsiet Username",
+  "Select Username": "Eow Bum Etagú",
+  "Add Random Digits to Username": "Eow Namba Iyo Iduwen Nega Nying"
 }

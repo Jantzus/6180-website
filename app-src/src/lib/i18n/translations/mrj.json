@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Пӹртӹмаш пӹтен! Тӹньӹн альбомым перегӓш йӓмдӹлӓлтеш...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Южы файлвлӓм вазаш акли. Тӹнь вазымы файлвлӓдон пӓшӓм видаш кердӓт.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Кычылтшы лӹмӹштӹ буква-влӓ, цифр-влӓ дӓ дефис-влӓ веле лишӓшлык. Шамак толшы: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Кычылтышы лӹмӹштӹ буква-влӓ, цифрӓ-влӓ дӓ дефис-влӓ веле лишӓшлык ылыт"
+  "Username must contain only letters, numbers, and hyphens.": "Кычылтышы лӹмӹштӹ буква-влӓ, цифрӓ-влӓ дӓ дефис-влӓ веле лишӓшлык ылыт",
+  "Submitting...": "Колтымаш...",
+  "Password": "Йӹлмӹвлӓ",
+  "Submit": "Колташ",
+  "OK": "Яжо",
+  "Link Only": "Веле Вӓш",
+  "View Album Photos": "Альбом Фотовлӓм Анжаш",
+  "Enter Username": "Кычылтшын Лӹмжӹм Пыртыза",
+  "Select Username": "Кычылтшын Лӹмжӹм Айырымаш",
+  "Add Random Digits to Username": "Пайдаланышын Лӹмжӹш Вычыдымы Шотым Привайаш"
 }

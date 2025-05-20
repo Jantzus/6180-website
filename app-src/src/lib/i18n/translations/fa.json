@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "بارگذاری کامل شد! در حال آماده‌سازی برای ذخیره آلبوم شما...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "برخی از فایل‌ها نمی‌توانند بارگذاری شوند. می‌توانید با فایل‌هایی که با موفقیت بارگذاری شده‌اند ادامه دهید.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "نام کاربری باید فقط شامل حروف، اعداد و خط تیره باشد. مثال: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "نام کاربری باید فقط شامل حروف، اعداد و خط تیره باشد"
+  "Username must contain only letters, numbers, and hyphens.": "نام کاربری باید فقط شامل حروف، اعداد و خط تیره باشد",
+  "Submitting...": "در حال ارسال...",
+  "Password": "کلمه عبور",
+  "Submit": "ارسال",
+  "OK": "Bashe",
+  "Link Only": "فقط پیوند",
+  "View Album Photos": "مشاهده عکس‌های آلبوم",
+  "Enter Username": "نام کاربری را وارد کنید",
+  "Select Username": "نام کاربری را انتخاب کنید",
+  "Add Random Digits to Username": "افزودن ارقام تصادفی به نام کاربری"
 }

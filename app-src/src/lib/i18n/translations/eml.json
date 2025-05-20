@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Cericamèint finî! Preparànd a salvèr al vòster album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Alcùn file incàr an s'é putù mandèr insù. A psî cuntinuèr cun i file mandè insù cun sucèss.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Al nòm utènt al pòl avér sól létter, nùmer e trattén. Esémpi: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Al nòm utènt al pòl avér sól létter, nómmer e trattén"
+  "Username must contain only letters, numbers, and hyphens.": "Al nòm utènt al pòl avér sól létter, nómmer e trattén",
+  "Submitting...": "Inviènd...",
+  "Password": "Paröla",
+  "Submit": "Invié",
+  "OK": "Va Bän",
+  "Link Only": "Solo Ligam",
+  "View Album Photos": "Vèdder Al Fòt Dl'Album",
+  "Enter Username": "Inserisci Nòm Utènt",
+  "Select Username": "Sèlta Nóm Utènt",
+  "Add Random Digits to Username": "Zuntèr Nòmer Caśuèl al Nòm Utènt"
 }

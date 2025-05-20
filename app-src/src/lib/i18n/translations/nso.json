@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Go laetša go fedile! Go lokiša go boloka albamo ya gago...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Difaele tše dingwe ga se tša kgona go lahlelwa. O ka tšwela pele ka difaele tše di lahletšwego gabotse.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Leina la modiriši le swanetše go ba le ditlhaka, dinomoro le maswao a kopanyo fela. Mohlala: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Leina la modiriši le swanetše go ba le ditlhaka, dinomoro le mahlakoretšo fela"
+  "Username must contain only letters, numbers, and hyphens.": "Leina la modiriši le swanetše go ba le ditlhaka, dinomoro le mahlakoretšo fela",
+  "Submitting...": "E a romelwa...",
+  "Password": "Lentšu La Sephiri",
+  "Submit": "Romela",
+  "OK": "Go Lokile",
+  "Link Only": "Kgokagano Feela",
+  "View Album Photos": "Bona Dinepe Tša Album",
+  "Enter Username": "Tsenya Leina La Mošomiši",
+  "Select Username": "Kgetha Leina la Modiriši",
+  "Add Random Digits to Username": "Oketša Dinomoro Tša Go Se Beakanywe Leineng La Modiriši"
 }

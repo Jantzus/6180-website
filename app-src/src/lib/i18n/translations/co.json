@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Caricamentu cumpletu! Preparendu à salvà u vostru album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Alcuni schedarii ùn puderanu micca esse caricati. Pudete cuntinuà incù i schedarii caricati cun successu.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "U nome d'utilizatore deve cuntene solu littere, numeri è trattini. Esempiu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "U nome d'utilizatore deve cuntenè solu lettere, cifre è trattini"
+  "Username must contain only letters, numbers, and hyphens.": "U nome d'utilizatore deve cuntenè solu lettere, cifre è trattini",
+  "Submitting...": "Inviendu...",
+  "Password": "Codice",
+  "Submit": "Sottumette",
+  "OK": "Va Bè",
+  "Link Only": "Solu Ligame",
+  "View Album Photos": "Vede E Fotò Di L'Albumu",
+  "Enter Username": "Inserisci Nome Utente",
+  "Select Username": "Selezziunà Nome Utilizatore",
+  "Add Random Digits to Username": "Aghjunghje Cifre Aleatorii À U Nome Di L'utilizatore"
 }

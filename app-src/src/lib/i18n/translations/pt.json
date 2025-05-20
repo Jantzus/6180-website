@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload completo! Preparando para salvar seu álbum...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Alguns arquivos não puderam ser carregados. Você pode continuar com os arquivos carregados com sucesso.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Nome de usuário deve conter apenas letras, números e hífens. Exemplo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "O nome de usuário deve conter apenas letras, números e hífens"
+  "Username must contain only letters, numbers, and hyphens.": "O nome de usuário deve conter apenas letras, números e hífens",
+  "Submitting...": "Enviando...",
+  "Password": "Senha",
+  "Submit": "Enviar",
+  "OK": "Ok",
+  "Link Only": "Apenas Link",
+  "View Album Photos": "Ver Fotos Do Álbum",
+  "Enter Username": "Digite Nome De Usuário",
+  "Select Username": "Selecionar Nome de Usuário",
+  "Add Random Digits to Username": "Adicionar Dígitos Aleatórios Ao Nome De Usuário"
 }

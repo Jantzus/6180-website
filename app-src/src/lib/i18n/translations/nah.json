@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "¡Tlacecenmayaliz cualli ōquiz! Mochijchijtoc quimaquixtis moalbummocuexanco...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sequin tlahcuilolmeh ahmo huelitih quinyecoltihqueh. Tihueliti titequitihtiyaz ica tlahcuilolmeh tlen cualli quiyecoltihqueh.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "In tocaitl quitequihuia zan quitlaliz tlahcuilolli, tlapohualtin ihuan pahtli. Machiotl: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Moneki motokayotl kipiya san letra, numero tle tlilkoton"
+  "Username must contain only letters, numbers, and hyphens.": "Moneki motokayotl kipiya san letra, numero tle tlilkoton",
+  "Submitting...": "Motitlania...",
+  "Password": "Ichtacatlahtōlli",
+  "Submit": "Titlaniz",
+  "OK": "Kualli",
+  "Link Only": "Zan Tzahualli",
+  "View Album Photos": "Xiquitta Tlaixcopinalli Amoxtli",
+  "Enter Username": "Xicalaqui Motocacauh",
+  "Select Username": "Xiuhtlapepenicān Tlatequitiltilīlli",
+  "Add Random Digits to Username": "Xictlali Tlatehtelpohualtin Tlatamachiyohuani Tocaneh"
 }

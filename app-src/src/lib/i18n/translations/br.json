@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Pellgargadur echu! O prientiñ da enrollañ ho albom...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "N'haller ket pellgargañ restroù zo. Gallout a rit kenderc'hel gant ar restroù pellgarget gant berzh.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "An anv implijer a zlefe enderc'hel lizherennoù, sifroù ha barrennigoù hepken. Skouer: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "An anv implijer a rank enderc'hel lizherennoù, sifroù, ha barrennigoù hepken"
+  "Username must contain only letters, numbers, and hyphens.": "An anv implijer a rank enderc'hel lizherennoù, sifroù, ha barrennigoù hepken",
+  "Submitting...": "O kas...",
+  "Password": "Ger-tremen",
+  "Submit": "Kas",
+  "OK": "Mat Eo",
+  "Link Only": "Liamm Hepken",
+  "View Album Photos": "Gwelet Fotoioù An Albom",
+  "Enter Username": "Ebarzhit Hoc'h Anv Implijer",
+  "Select Username": "Dibab Anv Implijer",
+  "Add Random Digits to Username": "Ouzhpennañ Sifroù Dargouezhek D'an Anv Implijer"
 }

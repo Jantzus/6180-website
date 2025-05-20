@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Galfiima guudate! Alboomki kaaga keeysan diyaarinaa...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Qabsoome fileelih ma kaah ibile. Kaah ibilte fileelih luk magide xiqta.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Magacta isticmaalaha waa inuu ka koobnaan lahaa oo kaliya xarfaha, lambarrada iyo hiifen. Tusaale: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Fikirik qusba, lakkoofsa, fi miiltowwan qofa qabachuu qaba"
+  "Username must contain only letters, numbers, and hyphens.": "Fikirik qusba, lakkoofsa, fi miiltowwan qofa qabachuu qaba",
+  "Submitting...": "Diriba...",
+  "Password": "Sinam Icfiili",
+  "Submit": "Sinam Xabiili",
+  "OK": "Sinam Xabiili",
+  "Link Only": "Xiriir Qudha",
+  "View Album Photos": "Sinam Albuum Miskaxxa Laali",
+  "Enter Username": "Sinam Ufaytistii Gali",
+  "Select Username": "Sinam Anukeessa",
+  "Add Random Digits to Username": "Sinam Lakkooysa Naasa Maaxansa Buusi"
 }

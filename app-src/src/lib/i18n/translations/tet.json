@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Karregamentu kompletu! Prepara hela atu salva ó-nia álbum...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Dokumentu balun la bele tama. Ita bele kontinua ho dokumentu ne'ebé tama ho di'ak.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Naran uza-na'in tenke iha de'it letra sira, numeru sira no hyfens. Ezemplu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Naran uza-na'in tenke iha de'it letra, numeru no hífen sira"
+  "Username must contain only letters, numbers, and hyphens.": "Naran uza-na'in tenke iha de'it letra, numeru no hífen sira",
+  "Submitting...": "Haruka hela...",
+  "Password": "Liafuan-Pase",
+  "Submit": "Submete",
+  "OK": "Di'ak",
+  "Link Only": "Ligasaun Deit",
+  "View Album Photos": "Haree Album Nia Imajen Sira",
+  "Enter Username": "Hatama Naran Utilizadór",
+  "Select Username": "Hili Naran Utilizadór",
+  "Add Random Digits to Username": "Aumenta Dixitu Arbiru Ba Naran Uza-na'in"
 }

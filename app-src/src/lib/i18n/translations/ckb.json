@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "باركردن تەواو بوو! خەریكە ئەلبوومەكەت خەزن دەكرێت...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "هەندێک فایل ناتوانرێت باربکرێت. دەتوانیت بەردەوام بیت لەگەڵ ئەو فایلانەی کە بە سەرکەوتوویی باکران.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ناوی بەکارهێنەر دەبێت تەنها پیت، ژمارە و هێمای هەڵپەساردن لەخۆبگرێت. نموونە: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ناوی بەکارهێنەر دەبێت تەنها پیت، ژمارە و داش لەخۆبگرێت"
+  "Username must contain only letters, numbers, and hyphens.": "ناوی بەکارهێنەر دەبێت تەنها پیت، ژمارە و داش لەخۆبگرێت",
+  "Submitting...": "ناردن...",
+  "Password": "وشەی نهێنی",
+  "Submit": "ناردن",
+  "OK": "Başe",
+  "Link Only": "تەنها بەستەر",
+  "View Album Photos": "وێنەکانی ئەلبووم ببینە",
+  "Enter Username": "ناوی بەکارهێنەر بنووسە",
+  "Select Username": "ناوی بەکارهێنەر هەڵبژێرە",
+  "Add Random Digits to Username": "ژمارەی هەڕەمەکی بۆ ناوی بەکارهێنەر زیاد بکە"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Przesyłanie skōńczōne! Rychtuje do spamiyntanio twojigo albumu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Niykerych plikōw niy idzie było wciepnōńć. Możesz kōntynuować ze plikami kere się wciepły.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Miano używŏcza powinno zawjyrać ino litry, cyfry i myślniki. Przikłŏd: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Mjano używacza może mjyć ino liwery, cyfry i myślniki"
+  "Username must contain only letters, numbers, and hyphens.": "Mjano używacza może mjyć ino liwery, cyfry i myślniki",
+  "Submitting...": "Wysyłanie...",
+  "Password": "Hasło",
+  "Submit": "Wysłej",
+  "OK": "Dobrze",
+  "Link Only": "Ino Lynk",
+  "View Album Photos": "Pokoż Zdjyńcia Albumu",
+  "Enter Username": "Naszkryflej Mjano Užytkowńika",
+  "Select Username": "Ôbier Miano Używocza",
+  "Add Random Digits to Username": "Przidej Losowe Cyfry Do Miana Używocza"
 }

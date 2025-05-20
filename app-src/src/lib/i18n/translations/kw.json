@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ughkargans kowlwrys! Ow pareusi dhe witha agas album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ny alas nebes a fylys bos ughkargys. Ty a yll pesya gans an fylys ughkargys yn sodhogel.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Hanow usyer a dal omdhasa lytherennow, niverow ha hyphennow yn unnik. Ensampel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Hanow devnydhyer a res ynni lytherennow, niverow ha hyfenyvow yn unnik"
+  "Username must contain only letters, numbers, and hyphens.": "Hanow devnydhyer a res ynni lytherennow, niverow ha hyfenyvow yn unnik",
+  "Submitting...": "Ow danvon...",
+  "Password": "Ger-tremena",
+  "Submit": "Dannvon",
+  "OK": "Da",
+  "Link Only": "Kevren yn Unnik",
+  "View Album Photos": "Gwel Skeusenys An Albom",
+  "Enter Username": "Gorrewgh Hanow Devnydhyer",
+  "Select Username": "Dewis Hanow Devnydhyer",
+  "Add Random Digits to Username": "Keworra Dyghtow Random Dhe Hanow Devnydhyer"
 }

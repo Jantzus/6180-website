@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Оруллһн хаалһҗ! Тана альбом хадһлх белдҗәнә...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Зәрм боомгуд ачалгдж чадсн уга. Та амжлттәһәр ачалгдсн боомгудар үргәлжләҗ чаднат.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Орлцачна нерн зөвәр үзгүдәс, тоолврмудас болн дефисмүдәс бүрдх йоста. Келвр: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Демнәчин нерн зөвәр үзгүд, тоонр болн дефисмүд агулх зөвтә"
+  "Username must contain only letters, numbers, and hyphens.": "Демнәчин нерн зөвәр үзгүд, тоонр болн дефисмүд агулх зөвтә",
+  "Submitting...": "Йовудна...",
+  "Password": "Нууц Үг",
+  "Submit": "Йовудх",
+  "OK": "Bolna",
+  "Link Only": "Зааг Гинәс",
+  "View Album Photos": "Альбомин Зургуд Хәләх",
+  "Enter Username": "Бүртклдгчин Нернь Орултн",
+  "Select Username": "Орлцачна Нернь Суңһх",
+  "Add Random Digits to Username": "Орлцачна Нерт Зер Бийр Дарата Немх"
 }

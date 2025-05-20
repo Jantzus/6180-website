@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Carricamentu cumplitatu! Priparannu pi sarvari lu to album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Arcuni file nun ponu èssiri carricati. Poi cuntinuari cu li file carricati cu successu.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Lu nomu utenti havi a cuntèniri sulu littri, nùmmira e trattini. Esempiu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Lu nomu utenti havi a cuntèniri sulu littri, nùmmira e trattini"
+  "Username must contain only letters, numbers, and hyphens.": "Lu nomu utenti havi a cuntèniri sulu littri, nùmmira e trattini",
+  "Submitting...": "Mannànnusi...",
+  "Password": "Password",
+  "Submit": "Manna",
+  "OK": "Va Beni",
+  "Link Only": "Sulu Culligamentu",
+  "View Album Photos": "Talìa Li Fotu Di L'Album",
+  "Enter Username": "Metti Lu Nomu Utenti",
+  "Select Username": "Scègghiri Nomu Utenti",
+  "Add Random Digits to Username": "Agghiunci Nùmmira Caswali A Lu Nomu Utenti"
 }

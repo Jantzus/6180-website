@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Löpükam pesevik! Bubinön albumi olik...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Feilans anik no eplödons. Kanol-li fövön ko feilans eplödöl gudiko.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Gebananinam muton ladön te tonatis, numis e strikis. Samad: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Nem gebanela mutons labon te tonabs, numis e sträküls"
+  "Username must contain only letters, numbers, and hyphens.": "Nem gebanela mutons labon te tonabs, numis e sträküls",
+  "Submitting...": "Sedöl...",
+  "Password": "Letavöd",
+  "Submit": "Sedam",
+  "OK": "Gudik",
+  "Link Only": "Te Yüm",
+  "View Album Photos": "Logön Magodis Samafota",
+  "Enter Username": "Penädolös Gebananaföti",
+  "Select Username": "Välön Gebanananem",
+  "Add Random Digits to Username": "Läükön Notidis Mödotik Ad Gebananem"
 }

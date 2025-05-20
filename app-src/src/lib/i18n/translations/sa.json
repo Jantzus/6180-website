@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "अपलोडः सम्पूर्णः! भवतः गीतसङ्ग्रहं रक्षितुं सज्जीभवति...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "केचन सञ्चिकाः आरोपयितुं न शक्यन्ते। भवान् सफलतया आरोपितैः सञ्चिकाभिः सह अग्रे गन्तुं शक्नोति।",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "उपयोक्तृनाम केवलं वर्णान्, अङ्कान् च सन्धिचिह्नानि च धारयेत्। उदाहरणम्: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "प्रयोक्तृनाम अक्षराणि, अङ्काः, टिरेव वा केवलं धारयितुं शक्नोति"
+  "Username must contain only letters, numbers, and hyphens.": "प्रयोक्तृनाम अक्षराणि, अङ्काः, टिरेव वा केवलं धारयितुं शक्नोति",
+  "Submitting...": "प्रेषयति...",
+  "Password": "गूढशब्द",
+  "Submit": "प्रेषयतु",
+  "OK": "Śobhanam",
+  "Link Only": "केवलं सम्बन्धः",
+  "View Album Photos": "एल्बम चित्राणि पश्यतु",
+  "Enter Username": "उपयोक्तृनाम लिखतु",
+  "Select Username": "उपयोक्तृनाम चिनोतु",
+  "Add Random Digits to Username": "उपयोक्तृनाम्नि यादृच्छिकाङ्काः योजय"
 }

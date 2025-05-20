@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Siōng-ciók cīng-gáuk! Gă siōng-ciók táik-cióh...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ké sê̤ṳ ùng-dê̤ng sê̤ṳ dó-miēng. Nṳ̄ â̤ séng-gŭng ùng-dê̤ng gì sê̤ṳ câ gă-săng.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "用戶名稱只能含有英文字母、數字及連字符號。例如：john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "用戶名稱必須只包括字母、數字和連字符"
+  "Username must contain only letters, numbers, and hyphens.": "用戶名稱必須只包括字母、數字和連字符",
+  "Submitting...": "正在提交...",
+  "Password": "密碼",
+  "Submit": "遞交",
+  "OK": "Hō",
+  "Link Only": "單單鏈接",
+  "View Album Photos": "看相册照片",
+  "Enter Username": "輸儂其用戶名",
+  "Select Username": "Gāi Ê̤ṳng-hô Miàng",
+  "Add Random Digits to Username": "Gă Uòng-Miàng Gă-Diòng Sṳ̆k-ê̤ṳ Só-cī"
 }

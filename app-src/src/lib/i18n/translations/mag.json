@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "अपलोड पूरा भइल! तोहरे अलबम के बचावे के तैयारी चलि रहल बा...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "कछु फाइल लोड नै हो सकल। अपने सफलतापूर्वक लोड होयल फाइल सभ के संगे जारी रख सकै छी।",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "प्रयोगकर्ता नाम में सिरफ अक्षर, अंक आ हाइफन होख के चाही। उदाहरण: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "प्रयोगकर्ता नाम मे सिरिफ अक्षर, अंक आ हाइफेन होय"
+  "Username must contain only letters, numbers, and hyphens.": "प्रयोगकर्ता नाम मे सिरिफ अक्षर, अंक आ हाइफेन होय",
+  "Submitting...": "भेजै छै...",
+  "Password": "पासवर्ड",
+  "Submit": "जमा करू",
+  "OK": "Ṭhīk Bā",
+  "Link Only": "मात्र लिंक",
+  "View Album Photos": "एल्बम फोटो देखू",
+  "Enter Username": "उपयोगकर्ता नाम भरऽ",
+  "Select Username": "प्रयोगकर्ता नाम चुनू",
+  "Add Random Digits to Username": "प्रयोगकर्ता नाम में हीरफेर अंक योडल जाय"
 }

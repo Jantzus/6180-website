@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "تم التحميل! جارٍ التحضير لحفظ ألبومك...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "تعذر تحميل بعض الملفات. يمكنك المتابعة باستخدام الملفات التي تم تحميلها بنجاح.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "يجب أن يحتوي اسم المستخدم على أحرف وأرقام وشرطات فقط. مثال: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "يجب أن يحتوي اسم المستخدم على أحرف وأرقام وشرطات فقط"
+  "Username must contain only letters, numbers, and hyphens.": "يجب أن يحتوي اسم المستخدم على أحرف وأرقام وشرطات فقط",
+  "Submitting...": "جارِ الإرسال...",
+  "Password": "كلمة المرور",
+  "Submit": "إرسال",
+  "OK": "Tamaam",
+  "Link Only": "رابط فقط",
+  "View Album Photos": "عرض صور الألبوم",
+  "Enter Username": "أدخل اسم المستخدم",
+  "Select Username": "اختر اسم المستخدم",
+  "Add Random Digits to Username": "إضافة أرقام عشوائية إلى اسم المستخدم"
 }

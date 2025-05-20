@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "अपलोड सिधल! छिगु अल्बम बचत यायेत तयार यानाच्वँगु...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "गुलि छगू फाइल अपलोड याये मफु। छगू तः अपलोड जूगू फाइल नाप ज्या यानादिसँ ज्यइ।",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "छ्येलेमि नां पाखे अक्षर, अंक व हाइफन जक दइमा। बाख्यन्ति: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "छ्येलेमि नां पतिं न्हयागु अक्षर, अंक व हाइफेन जक दयेके जुइ"
+  "Username must contain only letters, numbers, and hyphens.": "छ्येलेमि नां पतिं न्हयागु अक्षर, अंक व हाइफेन जक दयेके जुइ",
+  "Submitting...": "छ्वत...",
+  "Password": "पासवर्ड",
+  "Submit": "छ्येत",
+  "OK": "Thik Cha",
+  "Link Only": "लिंक मत्र",
+  "View Album Photos": "अल्बम तःस्वि:त स्वः",
+  "Enter Username": "छेँ नां थ्वयादिसँ",
+  "Select Username": "छ्येलेमि नां ल्यानादिसँ",
+  "Add Random Digits to Username": "छ्येलेमिया नां य् म्हो म्हो ल्याचां तयेके"
 }

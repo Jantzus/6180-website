@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "بِبَرنشت تموم بَیی! شِما آلبوم ذخیره هاکردن وسه حاضر بیمه...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "چنتا از فایل‌ها نِمشه با بیارین. شما بِتونین کارِتونه با فایل‌هایی که خار بیارده ادامه هاکنین.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "نوم کاربری وا فقط حرف، عدد و خط فاصله دشته بونه. مثال: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "نوم کاربری فقط باید شامل حرف، عدد و خط تیره باشه"
+  "Username must contain only letters, numbers, and hyphens.": "نوم کاربری فقط باید شامل حرف، عدد و خط تیره باشه",
+  "Submitting...": "در حال ارسال...",
+  "Password": "رمز",
+  "Submit": "بفرست",
+  "OK": "Xāh",
+  "Link Only": "فقط لینک",
+  "View Album Photos": "عکسون آلبوم بدیتن",
+  "Enter Username": "نام کاربری را وارد کنید",
+  "Select Username": "نام کاربری را انتخاب کنین",
+  "Add Random Digits to Username": "نوم کاربری‌ئه بی‌نظم عددون اضافه هاکردن"
 }

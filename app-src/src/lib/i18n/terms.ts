@@ -46057,7 +46057,7 @@ export const translations: Record<string, Partial<Record<SupportedLanguage, stri
     'na': 'Eow Namba Iyo Iduwen Nega Nying',
     'nah': 'Xictlali Tlatehtelpohualtin Tlatamachiyohuani Tocaneh',
     'nap': 'Azzecca Cifre Ausuale A O Nomme Utente',
-    'nds': 'Tofällige Tallen To'n Brukernaam Tofögen',
+    'nds': 'Tofällige Tallen To\'n Brukernaam Tofögen',
     'nds-nl': 'Willekeurige Siefers Bie Gebrukersnaam Zetten',
     'ne': 'प्रयोगकर्ता नाममा यादृच्छिक अङ्कहरू थप्नुहोस्',
     'new': 'छ्येलेमिया नां य् म्हो म्हो ल्याचां तयेके',

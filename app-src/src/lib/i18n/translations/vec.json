@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Caricamento completà! Se prepara a salvar el to album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Calcuni file no i xe sta caricai. Te poi continuar co i file caricai con sucesso.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "El nome utente el ga da contegner soło łétare, nùmari e tratini. Exenpio: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "El nome utente el deve contegnere solo letere, numeri e tratini"
+  "Username must contain only letters, numbers, and hyphens.": "El nome utente el deve contegnere solo letere, numeri e tratini",
+  "Submitting...": "Inviando...",
+  "Password": "Password",
+  "Submit": "Inviar",
+  "OK": "Va Ben",
+  "Link Only": "Soło Cołegamento",
+  "View Album Photos": "Védar Łe Foto De L'Album",
+  "Enter Username": "Inserisi Nome Utente",
+  "Select Username": "Sełesiona Nome Utente",
+  "Add Random Digits to Username": "Zonta Nùmari Caxuałi Al Nome Utente"
 }

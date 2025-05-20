@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "上传完成了！准备保存侬搭相册...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "有些文件上传弗正。侬可以继续用上传成功个文件。",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "用户名应该仅包含字母、数字和连字符。例如：john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "用户名只能含有字母、数字搭横杠"
+  "Username must contain only letters, numbers, and hyphens.": "用户名只能含有字母、数字搭横杠",
+  "Submitting...": "正在提交...",
+  "Password": "密码",
+  "Submit": "提交",
+  "OK": "Hǎo",
+  "Link Only": "仅链接",
+  "View Album Photos": "查看相册照片",
+  "Enter Username": "输入用户名",
+  "Select Username": "选择用户名",
+  "Add Random Digits to Username": "添加随机数字到用户名"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Пурымаш шукталтын! Тыйын альбомым аралаш ямдылалтеш...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Южо файл-влак огыт пуралт. Пуралтме файл-влак дене умбакыже пашам ышташ лиеш.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Кучылтшын лӱмжӧ буква-влак, цифр-влак да дефис-влак гына лийшаш. Мутлан: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Пайдаланышын лӱмыштӧ буква-влак, цифр-влак да дефис-влак веле лийшаш улыт"
+  "Username must contain only letters, numbers, and hyphens.": "Пайдаланышын лӱмыштӧ буква-влак, цифр-влак да дефис-влак веле лийшаш улыт",
+  "Submitting...": "Колтымаш...",
+  "Password": "Йӱлашомак",
+  "Submit": "Колташ",
+  "OK": "Йӧра",
+  "Link Only": "Коштра Кылдыш",
+  "View Album Photos": "Альбом Фотосем Ончаш",
+  "Enter Username": "Кучылтшын Лӱмжым Пуртыза",
+  "Select Username": "Кучылтшын Лӱмжым Ойырымаш",
+  "Add Random Digits to Username": "Пайдаланышын Лӱмышкыжӧ Вучыдымо Чотым Ешараш"
 }

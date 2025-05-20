@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Байршуулалт дууссан! Таны цомгийг хадгалахаар бэлтгэж байна...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Зарим файлуудыг байршуулах боломжгүй байна. Та амжилттай байршуулсан файлуудаараа үргэлжлүүлэн ажиллах боломжтой.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Хэрэглэгчийн нэр зөвхөн үсэг, тоо болон зураас агуулах ёстой. Жишээ нь: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Хэрэглэгчийн нэр зөвхөн үсэг, тоо болон зураас агуулах ёстой"
+  "Username must contain only letters, numbers, and hyphens.": "Хэрэглэгчийн нэр зөвхөн үсэг, тоо болон зураас агуулах ёстой",
+  "Submitting...": "Илгээж байна...",
+  "Password": "Нууц Үг",
+  "Submit": "Илгээх",
+  "OK": "Zügeer",
+  "Link Only": "Зөвхөн Холбоос",
+  "View Album Photos": "Цомгийн Зургуудыг Харах",
+  "Enter Username": "Хэрэглэгчийн Нэр Оруулна Уу",
+  "Select Username": "Хэрэглэгчийн Нэр Сонгох",
+  "Add Random Digits to Username": "Хэрэглэгчийн Нэрэнд Санамсаргүй Тоо Оруулах"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Przesyłanie zakończone! Przygotowuje się do zapisania twojego albumu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Nie można było przesłać niektórych plików. Możesz kontynuować z pomyślnie przesłanymi plikami.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Nazwa użytkownika powinna zawierać tylko litery, cyfry i myślniki. Przykład: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Nazwa użytkownika musi zawierać tylko litery, cyfry i łączniki"
+  "Username must contain only letters, numbers, and hyphens.": "Nazwa użytkownika musi zawierać tylko litery, cyfry i łączniki",
+  "Submitting...": "Wysyłanie...",
+  "Password": "Hasło",
+  "Submit": "Wyślij",
+  "OK": "Dobra",
+  "Link Only": "Tylko Link",
+  "View Album Photos": "Wyświetl Zdjęcia Albumu",
+  "Enter Username": "Wprowadź Nazwę Użytkownika",
+  "Select Username": "Wybierz Nazwę Użytkownika",
+  "Add Random Digits to Username": "Dodaj Losowe Cyfry Do Nazwy Użytkownika"
 }

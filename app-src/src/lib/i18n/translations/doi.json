@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "अपलोड पूरा होई गेआ! तुआड़ा ऐलबम सांभने गी तियारी करदे पए...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "कुछ फाइलां अपलोड नेईं कीतियां जाई सकदियां। तुस सफलतापूर्वक अपलोड कीतियां गेइयां फाइलां शा जारी रक्खी सकदे ओ।",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "उपभोगतै दा नाँ सिर्फ अक्खर, नंबर ते हाइफन ही थ्होना चाइदा ऐ। मिसाल: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "वरतूणी नां च सिर्फ अक्खर, नंबर ते हाइफन होणे चाइदे"
+  "Username must contain only letters, numbers, and hyphens.": "वरतूणी नां च सिर्फ अक्खर, नंबर ते हाइफन होणे चाइदे",
+  "Submitting...": "भेजदा...",
+  "Password": "पासवर्ड",
+  "Submit": "पेश करो",
+  "OK": "Ṭhīk",
+  "Link Only": "सिरफ लिंक",
+  "View Album Photos": "अल्बम फोटू देक्खो",
+  "Enter Username": "वरतने आला नां दर्ज करो",
+  "Select Username": "वरतूणी नाम चुनो",
+  "Add Random Digits to Username": "वरतन करने आळेऐ दे नां च रलट रकम पाओ"
 }

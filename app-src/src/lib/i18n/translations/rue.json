@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Завантаження завершено! Підготовка до збереження вашого альбому...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Дакотры файлы не годны быти заладованы. Можете продовжыти з файлами, котры были успішно заладованы.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Імня хоснователя повинно обсяговати лем букву, цифры і дефісы. Приклад: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Імня хоснователя мать обсяговати лем букы, чісла і дефісы"
+  "Username must contain only letters, numbers, and hyphens.": "Імня хоснователя мать обсяговати лем букы, чісла і дефісы",
+  "Submitting...": "Посыланя...",
+  "Password": "Гесло",
+  "Submit": "Одослати",
+  "OK": "Dobre",
+  "Link Only": "Лем Посилання",
+  "View Album Photos": "Огляд Фотографій Альбому",
+  "Enter Username": "Введіть Імʼя Хоснователя",
+  "Select Username": "Выберіть Імʼя Хоснователя",
+  "Add Random Digits to Username": "Додати Рандомны Чісла К Імени Хоснователя"
 }

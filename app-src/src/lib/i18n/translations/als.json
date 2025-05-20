@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Uffelade fertig! Di Album wird grad gspeicheret...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Einigi Datei hän nid chönne glade wärde. Du chasch mit de erfolgriich glade Datei wytermache.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Benutzername söt nur Buechstabe, Zahle und Bindestriich enthalte. Bispil: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Dr Benutzername derf nume Buechstabe, Zahle und Bindestriche enthalte"
+  "Username must contain only letters, numbers, and hyphens.": "Dr Benutzername derf nume Buechstabe, Zahle und Bindestriche enthalte",
+  "Submitting...": "Am Sende...",
+  "Password": "Passwort",
+  "Submit": "Absenden",
+  "OK": "Ok",
+  "Link Only": "Nur Link",
+  "View Album Photos": "Album Fotis Aaluege",
+  "Enter Username": "Benutzername Iigee",
+  "Select Username": "Benutzername Wähle",
+  "Add Random Digits to Username": "Zuefälligi Zaahle Zum Benutzername Hinzuefüege"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Peuneuplah lengkap! Kasiapan keu menyimpan album droeneuh...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sabagian beureukaih hana jeut meutamòng. Droeneuh jeuet neulanjut ngön beureukaih nyang ka meutamòng.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Nan ureuëng ngui harôh cuma meuisi huruf, angka ngön tanda pisah. Contoh: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Nan peuna ngui harus cuma meungandong haraih, angka, ngon tanda pisah"
+  "Username must contain only letters, numbers, and hyphens.": "Nan peuna ngui harus cuma meungandong haraih, angka, ngon tanda pisah",
+  "Submitting...": "Peungirém...",
+  "Password": "Katasandi",
+  "Submit": "Sampôh",
+  "OK": "Gét",
+  "Link Only": "Sambôt Mantöng",
+  "View Album Photos": "Kalön Album Potréët",
+  "Enter Username": "Pasoë Nan Ureuëng Ngui",
+  "Select Username": "Piléh Nan Ureuëng",
+  "Add Random Digits to Username": "Tamah Angka Acak Keu Nan Ureuëng"
 }

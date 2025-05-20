@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Salim pinis! Redi long sevim album bilong yu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sampela fail i no inap long kamap. Yu ken skruim wok wantaim ol fail i kamap pinis.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Nem bilong yusa i mas gat ol leta, namba na haifen tasol. Eksampel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Nem bilong yu i mas gat ol leta, namba na haifen tasol"
+  "Username must contain only letters, numbers, and hyphens.": "Nem bilong yu i mas gat ol leta, namba na haifen tasol",
+  "Submitting...": "Salim...",
+  "Password": "Tok Hait",
+  "Submit": "Salim",
+  "OK": "Orait",
+  "Link Only": "Link Tasol",
+  "View Album Photos": "Lukim Album Piksa",
+  "Enter Username": "Putim Nem Bilong Yu",
+  "Select Username": "Makim Nem Bilong Yusa",
+  "Add Random Digits to Username": "Putim Namba Nabaut Long Nem Bilong Yusa"
 }

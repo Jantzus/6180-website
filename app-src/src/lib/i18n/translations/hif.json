@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload poora ho gais hai! Aapke album save kare ke taiyaari ho raha hai...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Kuch files upload nai hoe sakis hai. Aap safal taur pe upload karaa gais files ke saath aage barh sakte hai.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Username me khaali letters, numbers aur hyphens rahe ke chaahi. Example: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Username me khaali letter, number, aur hyphens hoe sake hai"
+  "Username must contain only letters, numbers, and hyphens.": "Username me khaali letter, number, aur hyphens hoe sake hai",
+  "Submitting...": "Submit karat hai...",
+  "Password": "Password",
+  "Submit": "Submit Karo",
+  "OK": "Theek Hai",
+  "Link Only": "Sirf Link",
+  "View Album Photos": "Album Photos Dekho",
+  "Enter Username": "Username Darj Karo",
+  "Select Username": "Username Chuno",
+  "Add Random Digits to Username": "Username me random digits jorro"
 }

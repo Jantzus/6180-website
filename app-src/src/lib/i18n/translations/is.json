@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Hleðslu lokið! Undirbýr að vista albúmið þitt...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ekki var hægt að hlaða upp sumum skrám. Þú getur haldið áfram með skrár sem var hlaðið upp.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Notandanafn ætti aðeins að innihalda bókstafi, tölustafi og bandstrik. Dæmi: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Notandanafn má aðeins innihalda bókstafi, tölustafi og bandstrik"
+  "Username must contain only letters, numbers, and hyphens.": "Notandanafn má aðeins innihalda bókstafi, tölustafi og bandstrik",
+  "Submitting...": "Sendi...",
+  "Password": "Lykilorð",
+  "Submit": "Senda",
+  "OK": "Allt Í Lagi",
+  "Link Only": "Aðeins Tengill",
+  "View Album Photos": "Skoða Myndir Í Albúmi",
+  "Enter Username": "Sláðu Inn Notandanafn",
+  "Select Username": "Veldu Notandanafn",
+  "Add Random Digits to Username": "Bæta Handahófskenndum Tölustöfum Við Notandanafn"
 }

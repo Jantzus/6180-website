@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Nakumpleto ti pag-upload! Agsagana nga agiduldulin ti albummo...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Adda dagiti papeles a saan a maipan. Mabalinmo nga ituloy kadagiti naballigi a naipan a papeles.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ti nagan ti agar-aramat ket nasken a naglaon laeng kadagiti letra, numero ken gitlit. Pagarigan: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ti nagan ti agar-aramat ket masapul a naglaon laeng kadagiti letra, numero, ken gurgura"
+  "Username must contain only letters, numbers, and hyphens.": "Ti nagan ti agar-aramat ket masapul a naglaon laeng kadagiti letra, numero, ken gurgura",
+  "Submitting...": "Agipadalpatulod...",
+  "Password": "Kontrasenias",
+  "Submit": "Isubmitar",
+  "OK": "Nasayaat",
+  "Link Only": "Silpo Laeng",
+  "View Album Photos": "Kitaen Dagiti Retrato Ti Album",
+  "Enter Username": "Isurat Ti Nagan Ti Agar-aramat",
+  "Select Username": "Agpili ti Nagan ti Agar-aramat",
+  "Add Random Digits to Username": "Nayunan Dagiti Di Ammo A Numero Iti Nagan Ti Agar-aramat"
 }

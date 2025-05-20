@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Kulayisha kuphelile! Kulungiselelwa kulondvolotwa kwema-albhamu akho...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ema-fayelil lawa awawelanga kufakwa. Ungachubeka nge ema-fayelil lafakwe ngemphumelelo.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ligama lemsebentisi kufanele libe nemagama, tinombolo netihlanganisi kuphela. Sibonelo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ligama lalosetentisako lifanele libe netinhlamvu, tinombolo, nemadeshi kuphela"
+  "Username must contain only letters, numbers, and hyphens.": "Ligama lalosetentisako lifanele libe netinhlamvu, tinombolo, nemadeshi kuphela",
+  "Submitting...": "Kutfumela...",
+  "Password": "Ligama Lelidzindza",
+  "Submit": "Tfumela",
+  "OK": "Kuhle",
+  "Link Only": "Tindzawulo Kuphela",
+  "View Album Photos": "Buka Titfombe Tethalifomu",
+  "Enter Username": "Faka Ligama Lakho",
+  "Select Username": "Khetsa Ligama Lemsebentisi",
+  "Add Random Digits to Username": "Ngetela Tinombolo Tenhlanhla Ebitweni Lokusebentisa"
 }

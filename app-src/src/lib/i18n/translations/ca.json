@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Càrrega completa! Preparant per desar el teu àlbum...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Alguns fitxers no s'han pogut pujar. Pots continuar amb els fitxers pujats amb èxit.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "El nom d'usuari només ha de contenir lletres, números i guions. Exemple: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "El nom d'usuari només pot contenir lletres, números i guions"
+  "Username must contain only letters, numbers, and hyphens.": "El nom d'usuari només pot contenir lletres, números i guions",
+  "Submitting...": "Enviant...",
+  "Password": "Contrasenya",
+  "Submit": "Enviar",
+  "OK": "D'Acord",
+  "Link Only": "Només Enllaç",
+  "View Album Photos": "Veure Fotos De L'Àlbum",
+  "Enter Username": "Introduïu Nom D'Usuari",
+  "Select Username": "Seleccionar Nom d'Usuari",
+  "Add Random Digits to Username": "Afegir Dígits Aleatoris Al Nom D'usuari"
 }

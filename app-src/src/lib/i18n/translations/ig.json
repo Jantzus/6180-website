@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Nbugo zuru! Na-akwado idebe àlbọm gị...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ụfọdụ faịlụ enweghị ike ibupghachi. Ị nwere ike ịga n'ihu na faịlụ nke bupghachiri nke ọma.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Aha onye ọrụ kwesịrị inwe naanị ụdaolu, nọmba na ụdaasụsụ. Ihe atụ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Aha njirimara ga-agba naanị mkpụrụedemede, ọnụọgụ, na mfịdo"
+  "Username must contain only letters, numbers, and hyphens.": "Aha njirimara ga-agba naanị mkpụrụedemede, ọnụọgụ, na mfịdo",
+  "Submitting...": "Na-eziga...",
+  "Password": "Okwuntughe",
+  "Submit": "Nyefee",
+  "OK": "Dịkwa Mma",
+  "Link Only": "Njikọ Naanị",
+  "View Album Photos": "Lelee Foto Akwụkwọ Onyonyo",
+  "Enter Username": "Tinye Aha Onye Ojiji",
+  "Select Username": "Họrọ Aha Onye Ọrụ",
+  "Add Random Digits to Username": "Tinye Ọnụọgụ Ngapata Na Aha Ọbanife"
 }

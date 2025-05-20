@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ua fa'asaoina le fa'aupega! O lea fa'atulaga le fa'asaoina o lau api...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "E le mafai ona fa'apipiiina nisi faila. E mafai ona e fa'aauau ma faila ua manuia ona fa'apipiina.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "O le igoa fa'aoga e tatau ona na o mata'itusi, numera ma fa'ailoga hyphen. Fa'ata'ita'iga: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "O le igoa e tatau ona iai tau mata'itusi, numera, ma hyphens"
+  "Username must contain only letters, numbers, and hyphens.": "O le igoa e tatau ona iai tau mata'itusi, numera, ma hyphens",
+  "Submitting...": "Fa'aauina...",
+  "Password": "Numera E Le Iloa E Sesi",
+  "Submit": "Auina",
+  "OK": "Lelei",
+  "Link Only": "Na'o Fesoota'i",
+  "View Album Photos": "Va'ai Ata O Le Tusi Fa'amaumau",
+  "Enter Username": "Tusi Lou Igoa Fa'aoga",
+  "Select Username": "Filifili Igoa Fa'aoga",
+  "Add Random Digits to Username": "Fa'apipii Numera Fa'afuase'i i le Suafa Fa'aoga"
 }

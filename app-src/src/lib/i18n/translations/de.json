@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload abgeschlossen! Dein Album wird gespeichert...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Einige Dateien konnten nicht hochgeladen werden. Sie können mit den erfolgreich hochgeladenen Dateien fortfahren.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Benutzername darf nur Buchstaben, Zahlen und Bindestriche enthalten. Beispiel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Benutzername darf nur Buchstaben, Zahlen und Bindestriche enthalten"
+  "Username must contain only letters, numbers, and hyphens.": "Benutzername darf nur Buchstaben, Zahlen und Bindestriche enthalten",
+  "Submitting...": "Wird gesendet...",
+  "Password": "Passwort",
+  "Submit": "Absenden",
+  "OK": "Okay",
+  "Link Only": "Nur Link",
+  "View Album Photos": "Album Fotos Anzeigen",
+  "Enter Username": "Benutzernamen Eingeben",
+  "Select Username": "Benutzernamen Auswählen",
+  "Add Random Digits to Username": "Zufällige Ziffern Zum Benutzernamen Hinzufügen"
 }

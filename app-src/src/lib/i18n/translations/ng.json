@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Tunwa ethanashe! Okuliwapaleka album yoye...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Omahozu gamwe itaga sile kutumbulwa po. Oto tsikile nombinga dhomahozunga ga tumbulapo nawa.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Edhina lyomusileshifongi nali kala owina oitya, oivalula niomakwatathano ashike. Oshiholelwa: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Udhina yokutumitha yo ona nale okaghanda engo ohinomola shi oidafeni alike."
+  "Username must contain only letters, numbers, and hyphens.": "Udhina yokutumitha yo ona nale okaghanda engo ohinomola shi oidafeni alike.",
+  "Submitting...": "Tumina...",
+  "Password": "Oitya",
+  "Submit": "Tuma",
+  "OK": "Nawa",
+  "Link Only": "Ehena Awike",
+  "View Album Photos": "Tala Oufano Owoshanyangwa",
+  "Enter Username": "Tyapa Edhina Lyomukwanishi",
+  "Select Username": "Ketilamo Nakulonga",
+  "Add Random Digits to Username": "Gwedha Nomola Dho Yukilwa Komuntu"
 }

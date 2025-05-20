@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Киллэрии түмүктэннэ! Эн аалбымыҥ харайыллыахтаах...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Сорох билэни киллэрэр табыллыбата. Эн үтүөкэннік киллэриллибит билэлэргын салҕыы туттуоххун сөп.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Туһанааччы аата буукубалартан, ахсаантан уонна дефистартан эрэ турар буолуохтаах. Холобур: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Туһанааччы аата буукубалары, чыыһылалары уонна дефистары эрэ агуулуохтаах"
+  "Username must contain only letters, numbers, and hyphens.": "Туһанааччы аата буукубалары, чыыһылалары уонна дефистары эрэ агуулуохтаах",
+  "Submitting...": "Ыытыы...",
+  "Password": "Киирии Тыла",
+  "Submit": "Ыыт",
+  "OK": "Үчүгэй",
+  "Link Only": "Эрэ Ситим",
+  "View Album Photos": "Альбом Хаартыскаларын Көрүү",
+  "Enter Username": "Туһанааччы Аатын Киллэр",
+  "Select Username": "Туһанааччы Аатын Талыҥ",
+  "Add Random Digits to Username": "Туһаныааччы Аатыгар Түбэспиччэ Ахсааннары Эбии"
 }

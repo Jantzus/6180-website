@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ladavus on valmis! Valmistaudutah sinun al'bouman tallendukseh...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Erähii failoi ei sua lad'attu. Voitto jatkua ladietus failoinke.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Käyttäjien nimis pidäs olla vai kirjaimii, numeroloi da tavuviivoi. Ezimerki: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Käyttäinymel pidäy olla vai kirjaimet, numerot da tavuviivat"
+  "Username must contain only letters, numbers, and hyphens.": "Käyttäinymel pidäy olla vai kirjaimet, numerot da tavuviivat",
+  "Submitting...": "Työnnän...",
+  "Password": "Peittosana",
+  "Submit": "Työndiä",
+  "OK": "Hyvä",
+  "Link Only": "Vaiku Linku",
+  "View Album Photos": "Kačo Albuman Kuvii",
+  "Enter Username": "Pane Käyttäinymeä",
+  "Select Username": "Valliče Käyttäinymmie",
+  "Add Random Digits to Username": "Liziä Satunnaizet Noumerahukset Käyttäinimeh"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Hochlaade feddisch! Doi Album werd jetz gschpeichad...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Oänige Dateie konnde ned hochglade werre. Du kannscht mid de erfolgreich hochgladene Dateie fortfahre.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "De Benutzername derf bloß Buchstabe, Zahle un Binnestrisch enthalde. Beischbiel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "De Benutzername derf nur Buchschdawe, Zahle un Binnestriche hawwe"
+  "Username must contain only letters, numbers, and hyphens.": "De Benutzername derf nur Buchschdawe, Zahle un Binnestriche hawwe",
+  "Submitting...": "Schicke...",
+  "Password": "Passwort",
+  "Submit": "Noischicke",
+  "OK": "Bassd",
+  "Link Only": "Nur Link",
+  "View Album Photos": "Album Bilder Ogugge",
+  "Enter Username": "Benutzername Oigewe",
+  "Select Username": "Benutzername Auswähle",
+  "Add Random Digits to Username": "Zufällischi Zahle Zum Benutzername Dezufiesche"
 }

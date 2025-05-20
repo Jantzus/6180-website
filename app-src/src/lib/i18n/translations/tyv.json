@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Киирери дооступ! Альбомну шыгжаарынга белеткенип тур...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Чамдык файлдарны киир чүдүрүп болбас. Силер чедиишкинниг киир чүдүрген файлдар-биле ажылдап болур силер.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ажыглакчы ады үжүктерден, саннардан болгаш дефистерден тургустунган турар ужурлуг. Чижек: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ажыглакчы ады чүгле үжүктер, саннар болгаш дефистерни агулаар ужурлуг"
+  "Username must contain only letters, numbers, and hyphens.": "Ажыглакчы ады чүгле үжүктер, саннар болгаш дефистерни агулаар ужурлуг",
+  "Submitting...": "Чорудуп тур...",
+  "Password": "Чажыт Сөс",
+  "Submit": "Чорудар",
+  "OK": "Эки",
+  "Link Only": "Чүгле Холбааш",
+  "View Album Photos": "Альбом Чуруктарын Көөр",
+  "Enter Username": "Ажыглакчының Адын Киирер",
+  "Select Username": "Ажыглакчының Адын Шилиңер",
+  "Add Random Digits to Username": "Ажыглакчы Адынга Душкан Саннарны Немээр"
 }

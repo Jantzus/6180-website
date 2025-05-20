@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "يۈكلەش تاماملاندى! ئالبومىڭىزنى ساقلاشقا تەييارلىنىۋاتىدۇ...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "بەزى ھۆججەتلەرنى يۈكلىگىلى بولمىدى. سىز مۇۋەپپەقىيەتلىك يۈكلەنگەن ھۆججەتلەر بىلەن داۋاملاشتۇرالايسىز.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ئىشلەتكۈچى ئىسمى پەقەت ھەرپ، سان ۋە سىزىقچىلاردىن تۈزۈلۈشى كېرەك. مىسال: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ئىشلەتكۈچى ئىسمى پەقەت ھەرپ، سان ۋە سىزىقچىلاردىن تۈزۈلۈشى كېرەك"
+  "Username must contain only letters, numbers, and hyphens.": "ئىشلەتكۈچى ئىسمى پەقەت ھەرپ، سان ۋە سىزىقچىلاردىن تۈزۈلۈشى كېرەك",
+  "Submitting...": "يوللاۋاتىدۇ...",
+  "Password": "پارول",
+  "Submit": "يوللاش",
+  "OK": "Maqul",
+  "Link Only": "ئۇلانما پەقەت",
+  "View Album Photos": "ئالبوم سۈرەتلىرىنى كۆرۈش",
+  "Enter Username": "ئىشلەتكۈچى ئاتىنى كىرگۈزۈڭ",
+  "Select Username": "قوللانغۇچى ئىسمىنى تاللاڭ",
+  "Add Random Digits to Username": "ئىشلەتكۈچى ئىسمىغا ئىختىيارى رەقەم قوشۇش"
 }

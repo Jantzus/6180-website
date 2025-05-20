@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ãncãrcarea s-featsi! S-pregãteashti ta s-tsãnã albumlu a tãu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Unile fisiere nu s-au putut arhiva. Pots sa continui cu fisierle arhivate cu succes.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Numa di utilizator lipseashti s-aibã mash liter, numiri shi traits. Exemplu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Numa di utilizator lipseashti s'aibã mash litiri, numiri sh cheaditsi"
+  "Username must contain only letters, numbers, and hyphens.": "Numa di utilizator lipseashti s'aibã mash litiri, numiri sh cheaditsi",
+  "Submitting...": "Trimiteari...",
+  "Password": "Zborlu Ascumtu",
+  "Submit": "Trimite",
+  "OK": "Ghini",
+  "Link Only": "Mash Legatură",
+  "View Album Photos": "Vedu Fotografii Ditu Album",
+  "Enter Username": "Scriați Numa Di Usuario",
+  "Select Username": "Aleadzi Numã di Utilizator",
+  "Add Random Digits to Username": "Adavgu Numir Alicheari Cãtrã Numa Di Ufilizitorlui"
 }

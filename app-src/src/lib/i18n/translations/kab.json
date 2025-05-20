@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Asali yemmed! Asewjed i usekles n walbum-ik...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Kra n yifuyla ur zemren ara ad d-ttwalin. Tzemreḍ ad tkemmleḍ s yifuyla i d-yettwalin akken iwata.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Isem n useqdac yessefk ad yegber kan isekkilen, izwilen d yijerriḍen. Amedya: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Isem n useqdac ilaq ad yegber kan isekkilen, izwilen d yijerriḍen"
+  "Username must contain only letters, numbers, and hyphens.": "Isem n useqdac ilaq ad yegber kan isekkilen, izwilen d yijerriḍen",
+  "Submitting...": "Tuzzna...",
+  "Password": "Awal Uffir",
+  "Submit": "Azen",
+  "OK": "Ih",
+  "Link Only": "Ala Aseɣwen",
+  "View Album Photos": "Ẓeṛ Tiwlafin N Wedfar",
+  "Enter Username": "Sekcem Isem N Useqdac",
+  "Select Username": "Fren Isem n Useqdac",
+  "Add Random Digits to Username": "Rnu Izwilen Igdabaren Ɣer Isem N Useqdac"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Augšupielāde pabeigta! Gatavo saglabāt jūsu albumu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Dažus failus nevarēja augšupielādēt. Varat turpināt ar veiksmīgi augšupielādētiem failiem.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Lietotājvārdam jāsatur tikai burti, cipari un defises. Piemērs: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Lietotājvārdam jāsatur tikai burti, cipari un defises"
+  "Username must contain only letters, numbers, and hyphens.": "Lietotājvārdam jāsatur tikai burti, cipari un defises",
+  "Submitting...": "Nosūta...",
+  "Password": "Parole",
+  "Submit": "Iesniegt",
+  "OK": "Labi",
+  "Link Only": "Tikai Saite",
+  "View Album Photos": "Skatīt Albuma Fotogrāfijas",
+  "Enter Username": "Ievadiet Lietotājvārdu",
+  "Select Username": "Izvēlieties Lietotājvārdu",
+  "Add Random Digits to Username": "Pievienot Nejaušus Ciparus Lietotājvārdam"
 }

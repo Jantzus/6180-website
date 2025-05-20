@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Prijenos je dovršen! Priprema se spremanje vašeg albuma...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Neke datoteke nisu mogle biti učitane. Možete nastaviti s uspješno učitanim datotekama.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Korisničko ime smije sadržavati samo slova, brojeve i crtice. Primjer: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Korisničko ime mora sadržavati samo slova, brojeve i crtice"
+  "Username must contain only letters, numbers, and hyphens.": "Korisničko ime mora sadržavati samo slova, brojeve i crtice",
+  "Submitting...": "Šaljem...",
+  "Password": "Lozinka",
+  "Submit": "Pošalji",
+  "OK": "U Redu",
+  "Link Only": "Samo Link",
+  "View Album Photos": "Pogledaj Fotografije Albuma",
+  "Enter Username": "Unesite Korisničko Ime",
+  "Select Username": "Odaberi Korisničko Ime",
+  "Add Random Digits to Username": "Dodaj Nasumične Znamenke Korisničkom Imenu"
 }

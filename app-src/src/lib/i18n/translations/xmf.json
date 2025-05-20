@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "ეკოხუალაფა დოსქუაფილი რე! თქვანი ალბომიშ ღოლამაშო ირზანენჯე...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ნამდგარ ფაილეფიშ გინოტამა ვეგმიჩხოლო. გეგნორჩქილო გინოტამირი ფაილეფით.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "მოხმარებუშ ჯოხო უნდა იკათუანდას ხვალე ასოეფს, ციფრეფს დო დეფისეფს. გიშნაჟამი: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "მახვარებუშ ჯოხო უჯგუშო ოფალო ასოეფს, ნომერეფს დო დეფისეფს იკათუასინ"
+  "Username must contain only letters, numbers, and hyphens.": "მახვარებუშ ჯოხო უჯგუშო ოფალო ასოეფს, ნომერეფს დო დეფისეფს იკათუასინ",
+  "Submitting...": "იგზავნება...",
+  "Password": "პაროლი",
+  "Submit": "გეგზავნა",
+  "OK": "K'argi",
+  "Link Only": "ხვალე რსხილი",
+  "View Album Photos": "ალბომიშ სურათეფიშ ძირაფა",
+  "Enter Username": "შეიყვანეთ მომხმარებლიშ ჯოხო",
+  "Select Username": "მახვარებუშ ჯოხო გიშაგორით",
+  "Add Random Digits to Username": "მახვარებუშ ჯოხოშა რანდომული ციფრეფიშ გეძინა"
 }

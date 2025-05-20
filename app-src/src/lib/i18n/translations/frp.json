@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Tèlèchargement tèrminâ ! Prèparacion por sôvar voutron album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Des fichiérs ont pas possu étre tèlèchargiês. Vos pouvéd continuar avouéc los fichiérs tèlèchargiês avouéc reusséta.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Lo nom d'utilisator dêt contegnir solament de lètres, des chiffros et des tirets. Exèmplo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Lo nom d'utilisator dêt contegnir solament de lètres, des chifres et des trets d'union"
+  "Username must contain only letters, numbers, and hyphens.": "Lo nom d'utilisator dêt contegnir solament de lètres, des chifres et des trets d'union",
+  "Submitting...": "Soumèssion...",
+  "Password": "Mot De Pâsa",
+  "Submit": "Somètre",
+  "OK": "D'Acôrd",
+  "Link Only": "Solament Lyan",
+  "View Album Photos": "Vêre Les Fotos De L'Album",
+  "Enter Username": "Entrâd Nom D'Usanciér",
+  "Select Username": "Chouèsir Nom d'Utilisator",
+  "Add Random Digits to Username": "Apondre Des Chifros Hasardos U Nom D'utilisator"
 }

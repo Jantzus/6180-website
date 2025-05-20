@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "اپلوڈ مکمل! تہاڈی البم نوں بچان دی تیاری کر رہے آں...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "کجھ فائلاں اپلوڈ نئیں کیتیاں جاسکدیاں۔ تسیں کامیابی نال اپلوڈ کیتیاں فائلاں نال جاری رکھ سکدے او۔",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ورتن آلا ناں صرف اکھر، ہندسے تے ہائیفن ہی رکھنا چائیدا اے۔ مثال: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ورتنوالا ناں صرف اکھراں، نمبراں تے ہائیفناں اُتے مشتمل ہونا چائیدا اے"
+  "Username must contain only letters, numbers, and hyphens.": "ورتنوالا ناں صرف اکھراں، نمبراں تے ہائیفناں اُتے مشتمل ہونا چائیدا اے",
+  "Submitting...": "پیش کر رہیا اے...",
+  "Password": "پاس ورڈ",
+  "Submit": "بھیجو",
+  "OK": "Ṭhīk Hai",
+  "Link Only": "صرف لنک",
+  "View Album Photos": "البم فوٹو ویکھو",
+  "Enter Username": "ورتن آلا ناں درج کرو",
+  "Select Username": "ورتن آلا ناں چنو",
+  "Add Random Digits to Username": "صارف دے ناں وچ بے ترتیب اعداد پاؤ"
 }

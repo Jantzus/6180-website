@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload nik hiyahan! Album yen tiyagme teneme...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sampela fail i no inap long kamap. Yu ken skruim wok wantaim ol fail i kamap pinis.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Yu nem i mas gat ol leta, namba na haephen tasol. Eksampel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Usnem nau pas mo ol leta, namba, na hyphen tasol"
+  "Username must contain only letters, numbers, and hyphens.": "Usnem nau pas mo ol leta, namba, na hyphen tasol",
+  "Submitting...": "Salim...",
+  "Password": "Tok Hait",
+  "Submit": "Salim",
+  "OK": "Gut",
+  "Link Only": "Link Tasol",
+  "View Album Photos": "Lukim Album Piksa",
+  "Enter Username": "Putim Yusa Nem",
+  "Select Username": "Makim Nem Bilong Yu",
+  "Add Random Digits to Username": "Putim Ol Namba Nabaut Long Yusa Nem"
 }

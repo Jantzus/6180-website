@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "ምድርባብ ተዛዚሙ! ኣልበምካ ንምዕቃብ ምድላው ይካየድ ኣሎ...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ገለ ፋይላት ክጽዓኑ አይተኸአሉን። ብዓወት ምስ ዝተጸዓኑ ፋይላት ክትቅጽል ትኽእል ኢኻ።",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ናይ ተጠቃሚ ሽም ፊደላት፣ ቁጽርታትን ሃይፈናትን ጥራይ ክሕዝ ኣለዎ። ንኣብነት: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ናይ ተጠቃሚ ሽም ፊደላት፣ ቁጽሪታትን ምልክታትን ጥራይ ክህልዎ ኣለዎ"
+  "Username must contain only letters, numbers, and hyphens.": "ናይ ተጠቃሚ ሽም ፊደላት፣ ቁጽሪታትን ምልክታትን ጥራይ ክህልዎ ኣለዎ",
+  "Submitting...": "እየላኸ...",
+  "Password": "መሕለፊ ቃል",
+  "Submit": "ኣእቱ",
+  "OK": "Ṭiru",
+  "Link Only": "ጥራይ መራኸቢ",
+  "View Album Photos": "ናይ ኣልበም ፎቶታት ርአ",
+  "Enter Username": "ናይ ተጠቃሚ ስም ኣእቱ",
+  "Select Username": "ናይ ተጠቃሚ ሽም ምረጽ",
+  "Add Random Digits to Username": "ናብ ሽም ተጠቃሚ ዘፈቀዳዊ ኣሃዛት ኣእቱ"
 }

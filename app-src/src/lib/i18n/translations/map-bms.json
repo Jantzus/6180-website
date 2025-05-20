@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Unggahan rampung! Nyiapna nyimpen album sampean...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ana berkas sing ora bisa diunggah. Rika bisa terus nganggo berkas sing wis kasil diunggah.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Jeneng panganggo kudu ngemot mung huruf, angka lan tanda hubung. Conto: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Jeneng pengguna kudu mung ana huruf, angka, lan tanda hubung"
+  "Username must contain only letters, numbers, and hyphens.": "Jeneng pengguna kudu mung ana huruf, angka, lan tanda hubung",
+  "Submitting...": "Ngirimi...",
+  "Password": "Tembung Sandi",
+  "Submit": "Kirim",
+  "OK": "Apik",
+  "Link Only": "Mung Pranala",
+  "View Album Photos": "Deleng Foto Album",
+  "Enter Username": "Lebokna Jeneng Panganggo",
+  "Select Username": "Pilih Jeneng Pengguna",
+  "Add Random Digits to Username": "Nambahna Angka Acak Nang Jeneng Pengguna"
 }

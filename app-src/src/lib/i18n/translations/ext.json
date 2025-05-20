@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Cargación completá! Preparandu pa guardar tu álbum...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Arcunus archivu nu se puein cargal. Pueis seguil con los archivu cargaus corretamenti.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "El nombri d'usuáriu solu debi contenel letras, númirus i guionis. Assi pol casu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "El nombri d'usuariu solu puei teneli letras, númirus i guionis"
+  "Username must contain only letters, numbers, and hyphens.": "El nombri d'usuariu solu puei teneli letras, númirus i guionis",
+  "Submitting...": "Inviandu...",
+  "Password": "Contraseña",
+  "Submit": "Enviá",
+  "OK": "Güenu",
+  "Link Only": "Solu Enlaci",
+  "View Album Photos": "Vel Las Fotus Del Álbun",
+  "Enter Username": "Metel Nombri D'Usuariu",
+  "Select Username": "Selecionai Nombri d'Usuariu",
+  "Add Random Digits to Username": "Añiil Dígitus Aleatorius Al Nombri D'usuariu"
 }

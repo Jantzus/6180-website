@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Carrigamentu cumpletadu! Preparende a sarvare s'album tuo...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Carchi documentos non si sunt pòtzidos carrigare. Podes sighire cun is documentos carrigados cun èsitu.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Su nùmene utente depet cuntènnere solu lìteras, nùmeros e tratos de unione. Esèmpiu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Su nùmene utente depet cuntènnere solu lìteras, nùmeros e tratos"
+  "Username must contain only letters, numbers, and hyphens.": "Su nùmene utente depet cuntènnere solu lìteras, nùmeros e tratos",
+  "Submitting...": "Imbiende...",
+  "Password": "Password",
+  "Submit": "Imbia",
+  "OK": "Bene",
+  "Link Only": "Solu Cullegamentu",
+  "View Album Photos": "Bìere Sas Fotogràfias De S'Album",
+  "Enter Username": "Inserta Su Nòmine Utente",
+  "Select Username": "Sèbera su Nùmene Utente",
+  "Add Random Digits to Username": "Annanghe Nùmeros A Casu A Su Nùmene Utente"
 }

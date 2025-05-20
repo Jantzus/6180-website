@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "आपलोड जाबाय! नोंथांनि आलबामखौ नारसिन थाखाय तैयार जाबाय...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "गोबां फाइल आपलोड खालामनो हायाखै। नों जेबो फाइल मावनु आपलोड खालामबाय दं फाइलखौ लानानै थांनो हागौ।",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ब्यबहारारि मुं आयो सोदोब, अनजिमा आरो हाइफेन ल'थैनाय जागोन। उदाहरन: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "बेबहारिनिया मुं बिजाब, अनजिमा आरो हाइफेन जायगा थानो हागौ"
+  "Username must contain only letters, numbers, and hyphens.": "बेबहारिनिया मुं बिजाब, अनजिमा आरो हाइफेन जायगा थानो हागौ",
+  "Submitting...": "दाथाय दङ...",
+  "Password": "पासवर्ड",
+  "Submit": "दाखिल खालाम",
+  "OK": "Mōjāṅ",
+  "Link Only": "रिंग सिगांनि",
+  "View Album Photos": "आलबाम फटगिरि नाय",
+  "Enter Username": "बेबहारिनि मुं सोनो",
+  "Select Username": "बेबहारिनि मुं बासिख",
+  "Add Random Digits to Username": "बेबहारिनि मुंखौ अरजाथाव अनजिमाफोर दानाय"
 }

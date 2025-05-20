@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "업로드 완료! 앨범을 저장할 준비 중...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "일부 파일을 업로드할 수 없습니다. 성공적으로 업로드된 파일로 계속할 수 있습니다.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "사용자 이름은 문자, 숫자 및 하이픈만 포함해야 합니다. 예: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "사용자 이름은 문자, 숫자 및 하이픈만 포함해야 합니다"
+  "Username must contain only letters, numbers, and hyphens.": "사용자 이름은 문자, 숫자 및 하이픈만 포함해야 합니다",
+  "Submitting...": "제출 중...",
+  "Password": "비밀번호",
+  "Submit": "제출",
+  "OK": "Joh-Ayo",
+  "Link Only": "링크만",
+  "View Album Photos": "앨범 사진 보기",
+  "Enter Username": "사용자 이름 입력",
+  "Select Username": "사용자 이름 선택",
+  "Add Random Digits to Username": "사용자 이름에 무작위 숫자 추가"
 }

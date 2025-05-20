@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Yükleme tamamlandı! Albomunızı saqlap hazırlanmaqta...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Bazı dosyalar yüklenemedi. Başarıyla yüklenen dosyalarla devam edebilirsiniz.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Qullanıcı adı tek arifler, raqamlar ve tire işaretlerinden ibaret olmalı. Misal: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Qullanıcı adı tek arifler, raqamlar ve çızıqçalar içermek kerek"
+  "Username must contain only letters, numbers, and hyphens.": "Qullanıcı adı tek arifler, raqamlar ve çızıqçalar içermek kerek",
+  "Submitting...": "Yollanmaqta...",
+  "Password": "Parol",
+  "Submit": "Yolla",
+  "OK": "Yahşı",
+  "Link Only": "Tek Bağlantı",
+  "View Album Photos": "Albom Fotolarını Körüñiz",
+  "Enter Username": "Qullanıcı Adını Kiriting",
+  "Select Username": "Qullanıcı Adını Sayla",
+  "Add Random Digits to Username": "Qullanıcı Adına Rastgele Raqamlar Qoş"
 }

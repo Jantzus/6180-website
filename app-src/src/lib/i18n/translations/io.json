@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Adkargio kompleta! Preparante por salvar vua albumo...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Kelka arkivi ne povis esar charjata. Vu povas durar kun la arkivi charjita sucese.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "La uzantonomo devas kontenar nur literi, nombri e streketi. Exemplo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "L'uzantonomo mustas kontenar nur literi, nombri e streketi"
+  "Username must contain only letters, numbers, and hyphens.": "L'uzantonomo mustas kontenar nur literi, nombri e streketi",
+  "Submitting...": "Sendante...",
+  "Password": "Pasovorto",
+  "Submit": "Sendar",
+  "OK": "Bone",
+  "Link Only": "Nur Ligilo",
+  "View Album Photos": "Vidar La Fotografuri Dil Albumo",
+  "Enter Username": "Skribez Uzantonomo",
+  "Select Username": "Selektez Uzantonomo",
+  "Add Random Digits to Username": "Adjuntar Hazarda Cifri Ad Uzanto Nomo"
 }

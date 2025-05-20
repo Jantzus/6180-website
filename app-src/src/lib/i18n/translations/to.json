@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Kuo ʻosi e hilifaki! ʻOku teuteu ke fakahaofi hoʻo ʻālipamu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ko e ngaahi faile 'e ni'ihi na'e 'ikai lava 'o fakahū hake. Te ke lava 'o hoko atu mo e ngaahi faile na'e lava 'o fakahū hake.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ko e hingoa ʻo e tokotaha ngāueʻaki ʻoku totonu ke ʻi ai ʻa e mataʻitohi, mata-fika mo e ngaahi fakaʻilonga-tukuhyphen pē. Fakatātā: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Kuo ngata ʻi he hingoa ʻo e tokotaha ngāueʻaki ʻa e mataʻitohi, fika, mo e fakaʻilongakonga pē"
+  "Username must contain only letters, numbers, and hyphens.": "Kuo ngata ʻi he hingoa ʻo e tokotaha ngāueʻaki ʻa e mataʻitohi, fika, mo e fakaʻilongakonga pē",
+  "Submitting...": "ʻOku fakahū...",
+  "Password": "Lea Fakapulipuli",
+  "Submit": "Fakahū",
+  "OK": "Sai Pe",
+  "Link Only": "Fehokotaki Pē",
+  "View Album Photos": "Vakai Ki He Ngaahi 'Ata 'O E 'Ālapama",
+  "Enter Username": "Hū Ki He Hingoa ʻO E Tokotaha Ngāueʻaki",
+  "Select Username": "Fili ha Hingoa Ngāue'aki",
+  "Add Random Digits to Username": "Tanaki Ha Mata Fika Fakahaunga Ki He Hingoa Taha"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ukhweliso lugqityiwe! Silungiselela ukugcina i-album yakho...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Amanye amafayile akazange akwazi ukulayishwa. Ungaqhubeka ngamafayile alayishwe ngempumelelo.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Igama lomsebenzisi kufuneka liqulathe oonobumba, amanani neehayifeni kuphela. Umzekelo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Igama lomsebenzisi kufuneka liqulathe oonobumba, amanani, neehayifeni kuphela"
+  "Username must contain only letters, numbers, and hyphens.": "Igama lomsebenzisi kufuneka liqulathe oonobumba, amanani, neehayifeni kuphela",
+  "Submitting...": "Iyathumela...",
+  "Password": "Inombolo Yokuvula",
+  "Submit": "Thumela",
+  "OK": "Kulungile",
+  "Link Only": "Ikhonkco Kuphela",
+  "View Album Photos": "Bona Iifoto Ze-Album",
+  "Enter Username": "Faka Igama Lomsebenzisi",
+  "Select Username": "Khetha Igama Lomsebenzisi",
+  "Add Random Digits to Username": "Fakela Amanani Angenalandelelwano Kwigama Lomsebenzisi"
 }

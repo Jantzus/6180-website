@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Soo gelinta waa dhammaatay! Diyaarinta keydinta albumkaaga...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Qaar ka mid ah macluumaadka lama soo rari karo. Waxaad sii wadi kartaa macluumaadka si guul leh loogu soo raray.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Magaca isticmaalaha waa inuu ka kooban yahay oo keliya xarfaha, lambarrada iyo jiimooyinka. Tusaale: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Magaca isticmaalaha waa inuu ka kooban yahay oo keliya xarfaha, lambarrada, iyo jiimooyinka"
+  "Username must contain only letters, numbers, and hyphens.": "Magaca isticmaalaha waa inuu ka kooban yahay oo keliya xarfaha, lambarrada, iyo jiimooyinka",
+  "Submitting...": "Diraya...",
+  "Password": "Erayga Sirta Ah",
+  "Submit": "Soo Gudbi",
+  "OK": "Waayahay",
+  "Link Only": "Kaliya Xiriir",
+  "View Album Photos": "Eeg Sawirada Album",
+  "Enter Username": "Geli Magaca Isticmaale",
+  "Select Username": "Dooro Magaca Isticmaalaha",
+  "Add Random Digits to Username": "Ku Dar Lambarada Aan Kala Sooc Lahayn Magaca Isticmaalaha"
 }

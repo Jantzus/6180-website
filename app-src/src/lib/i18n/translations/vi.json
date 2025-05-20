@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Tải lên hoàn tất! Đang chuẩn bị lưu album của bạn...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Một số tệp không thể được tải lên. Bạn có thể tiếp tục với các tệp đã được tải lên thành công.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Tên người dùng chỉ nên chứa chữ cái, số và dấu gạch ngang. Ví dụ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Tên người dùng chỉ được chứa chữ cái, chữ số và dấu gạch ngang"
+  "Username must contain only letters, numbers, and hyphens.": "Tên người dùng chỉ được chứa chữ cái, chữ số và dấu gạch ngang",
+  "Submitting...": "Đang gửi...",
+  "Password": "Mật Khẩu",
+  "Submit": "Gửi",
+  "OK": "Được Rồi",
+  "Link Only": "Chỉ Liên Kết",
+  "View Album Photos": "Xem Ảnh Album",
+  "Enter Username": "Nhập Tên Người Dùng",
+  "Select Username": "Chọn Tên Người Dùng",
+  "Add Random Digits to Username": "Thêm Chữ Số Ngẫu Nhiên Vào Tên Người Dùng"
 }

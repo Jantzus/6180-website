@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ýüklemek tamamlandy! Albomyňyzy ýatda saklamaga taýýarlanýar...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Käbir faýllary ýükläp bolmady. Üstünlikli ýüklenen faýllar bilen dowam edip bilersiňiz.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ulanyjy ady diňe harplardan, sanlardan we defislerden ybarat bolmaly. Mysal: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ulanyjy ady diňe harplardan, sanlardan we defislerden durmalydyr"
+  "Username must contain only letters, numbers, and hyphens.": "Ulanyjy ady diňe harplardan, sanlardan we defislerden durmalydyr",
+  "Submitting...": "Iberilýär...",
+  "Password": "Parol",
+  "Submit": "Iber",
+  "OK": "Bolýar",
+  "Link Only": "Diňe Baglanyşyk",
+  "View Album Photos": "Albom Suratlaryna Seret",
+  "Enter Username": "Ulanyjy Adyny Giriziň",
+  "Select Username": "Ulanyjy Adyny Saýlaň",
+  "Add Random Digits to Username": "Ulanyjy Adyna Tötänleýin Sanlar Goş"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Loowgol timmii! Nana hebulaade dannaade albomu maa...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Won e piille ngalaa njiitaaki. A waawi yahrude e piille ɗi njiitiima.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Innde kuutoro ina foti e hujja tafon, limo e firto-firtol tan. Yeru: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Innde kuutoro ina jojji harfeere, limoore e fiitirde tan"
+  "Username must contain only letters, numbers, and hyphens.": "Innde kuutoro ina jojji harfeere, limoore e fiitirde tan",
+  "Submitting...": "Naɓɓude...",
+  "Password": "Konngol Suuɗiingol",
+  "Submit": "Neldu",
+  "OK": "Moƴƴi",
+  "Link Only": "Jokkondiral Tan",
+  "View Album Photos": "Yiy Natal Album",
+  "Enter Username": "Winndu Innde Kuutoro",
+  "Select Username": "Labo Innde Gollitoowo",
+  "Add Random Digits to Username": "Ɓeydu Limle Pooccitaaɗe E Innde Kuutoro"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Боркунӣ анҷом ёфт! Омодагӣ барои захира кардани албоми шумо...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Баъзе файлҳо бор карда нашуданд. Шумо метавонед бо файлҳои бо муваффақият боршуда идома диҳед.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Номи корбар бояд танҳо аз ҳарфҳо, рақамҳо ва дефисҳо иборат бошад. Мисол: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Номи корбар бояд танҳо ҳарфҳо, рақамҳо ва дефисҳо дошта бошад"
+  "Username must contain only letters, numbers, and hyphens.": "Номи корбар бояд танҳо ҳарфҳо, рақамҳо ва дефисҳо дошта бошад",
+  "Submitting...": "Мефиристад...",
+  "Password": "Парол",
+  "Submit": "Фиристодан",
+  "OK": "Khub",
+  "Link Only": "Танҳо Пайванд",
+  "View Album Photos": "Дидани Аксҳои Албом",
+  "Enter Username": "Номи Корбарро Ворид Кунед",
+  "Select Username": "Интихоби Номи Корбар",
+  "Add Random Digits to Username": "Ба Номи Корбар Рақамҳои Тасодуфӣ Илова Кунед"
 }

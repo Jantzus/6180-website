@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Karga osoa! Zure albuma gordetzeko prestatzen...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Fitxategi batzuk ezin izan dira kargatu. Ondo kargatutako fitxategiekin jarrai dezakezu.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Erabiltzaile-izenak letrak, zenbakiak eta marratxoak soilik izan behar ditu. Adibidez: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Erabiltzaile-izenak letrak, zenbakiak eta marratxoak soilik izan behar ditu"
+  "Username must contain only letters, numbers, and hyphens.": "Erabiltzaile-izenak letrak, zenbakiak eta marratxoak soilik izan behar ditu",
+  "Submitting...": "Bidaltzen...",
+  "Password": "Pasahitza",
+  "Submit": "Bidali",
+  "OK": "Ados",
+  "Link Only": "Esteka Soilik",
+  "View Album Photos": "Ikusi Albumaren Argazkiak",
+  "Enter Username": "Sartu Erabiltzaile Izena",
+  "Select Username": "Aukeratu Erabiltzaile-izena",
+  "Add Random Digits to Username": "Gehitu Ausazko Digituak Erabiltzaile-izenari"
 }

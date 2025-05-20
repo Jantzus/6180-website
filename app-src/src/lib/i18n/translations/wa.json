@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Eberwetaedje fwait! Dj' aprestêye po schaper vost' album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Des fitchîs n' ont nén polu esse eberwetés. Vos ploz continuwer avou les fitchîs eberwetés avou succès.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Li no d' uzeu doet contni seulmint des letes, des chifes eyet des tirés. Egzimpe: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Li no d' uzeu ni pout contnir ki des letes, des chifes et des traits d' union"
+  "Username must contain only letters, numbers, and hyphens.": "Li no d' uzeu ni pout contnir ki des letes, des chifes et des traits d' union",
+  "Submitting...": "Evoyant...",
+  "Password": "Sicret",
+  "Submit": "Evoyî",
+  "OK": "Bén",
+  "Link Only": "Loyén Seulmint",
+  "View Album Photos": "Vey Les Fotos Dè L'Albom",
+  "Enter Username": "Intrez L'no D'uzeu",
+  "Select Username": "Tchoezi l' No d' Uzeu",
+  "Add Random Digits to Username": "Radjouter Des Tclifes Sol Coûtchance Sol No D'uzeu"
 }

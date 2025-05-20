@@ -30,7 +30,12 @@ interface PhotoLoginModalProps {
   t: (key: string) => string;
 }
 
-export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({ isOpen, onClose, onLoginSuccess, t }) => {
+export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({ 
+  isOpen, 
+  onClose, 
+  onLoginSuccess, 
+  t,
+}) => {
   const [email, setEmail] = useState('');
   const [codeSent, setCodeSent] = useState(false);
   const [otpCode, setOtpCode] = useState('');
@@ -194,6 +199,7 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({ isOpen, onClos
     setStatus('idle');
   }
 
+
   if (!isOpen) return null;
 
   return (
@@ -218,23 +224,23 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({ isOpen, onClos
         boxShadow: '0 6px 20px rgba(0,0,0,0.06)',
         textAlign: 'center',
       }}>
-        <div style={{ marginBottom: '24px' }}>
-          <img 
-            src="images/logo_no_background.png" 
-            alt="6180 Logo" 
-            style={{ 
-              height: '60px', 
-              marginBottom: '16px' 
-            }} 
-          />
-          <h2 style={{
-            fontSize: '24px',
-            fontWeight: 600,
-            color: '#333',
-          }}>
-            {t('Sign in to 6180')}
-          </h2>
-        </div>
+        <img 
+          src="images/logo_no_background.png" 
+          alt="6180 Logo" 
+          style={{ 
+            height: '60px', 
+            marginBottom: '30px' 
+          }} 
+        />
+
+        {/* Login Explanation Message */}
+        <h3 style={{ 
+          margin: '0', 
+          lineHeight: '1.4',
+          marginBottom: '30px'
+        }}>
+          {t('Sign in so LeoCologno can see who accessed their album')}
+        </h3>
 
         {errorMessage && (
           <div style={{

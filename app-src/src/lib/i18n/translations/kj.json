@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Fileta epu kondjifa! Okutunga ombapila joye...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Omambo amwe ina dulu ko kuyaneka. Oto longifa yamekuyanekwa nawa okutwikako.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Edhina lyomusileshifongi nali kala owina oitya, oivalula niomakwatathano ashike. Oshiholelwa: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Edhina lyomukalimo nali kala owala no nofonkalo, onondjambo nolinga"
+  "Username must contain only letters, numbers, and hyphens.": "Edhina lyomukalimo nali kala owala no nofonkalo, onondjambo nolinga",
+  "Submitting...": "Tumina...",
+  "Password": "Ondungetelo",
+  "Submit": "Tuma",
+  "OK": "Nawa",
+  "Link Only": "Nghendife Auke",
+  "View Album Photos": "Tala Oufano Ualbuma",
+  "Enter Username": "Shaneka Edhina Lyomuningi",
+  "Select Username": "Hoolola Etumbalo Lyoye",
+  "Add Random Digits to Username": "Wedako oonombala tadima kouditumbila"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Oplaad foltôge! Dyn album wurdt taret om op te slaan...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Guon triemmen koenen net opladen wurde. Jo kinne trochgean mei de mei súkses opladen triemmen.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Brûkersnamme mei allinnich letters, sifers en keppeltekens befetsje. Foarbyld: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Brûkersnamme mei allinnich letters, sifers en koppeltekens befetsje"
+  "Username must contain only letters, numbers, and hyphens.": "Brûkersnamme mei allinnich letters, sifers en koppeltekens befetsje",
+  "Submitting...": "Yntsjinje...",
+  "Password": "Wachtwurd",
+  "Submit": "Yntsjinje",
+  "OK": "Okee",
+  "Link Only": "Allinne Keppeling",
+  "View Album Photos": "Sjoch Album Foto's",
+  "Enter Username": "Fier Brûkersnamme Yn",
+  "Select Username": "Selektearje Brûkersnamme",
+  "Add Random Digits to Username": "Tafallige Sifers Tafoegje Oan Brûkersnamme"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "آپلود تموم بی! حاضر سی زخیره کردن آلبوم شما...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "چن گل فایلیل نتۊنسن سوار بوٙن. شما تونین وا فایلیلی که سوار بیه ینه کارتونه ادامه بڎین.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "نوم کاریاری وا فقط حرف، عدد و خط فاصله داشته باشه. مثال: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "نوم کاریاری وا فقط حرف، عدد و خط تیره داشته بۊ"
+  "Username must contain only letters, numbers, and hyphens.": "نوم کاریاری وا فقط حرف، عدد و خط تیره داشته بۊ",
+  "Submitting...": "فرسنیئن...",
+  "Password": "رمز",
+  "Submit": "فریستادن",
+  "OK": "Xo",
+  "Link Only": "تنها لینک",
+  "View Album Photos": "دیئن عسگیا آلبوم",
+  "Enter Username": "نوم کاربری ڤارد کونین",
+  "Select Username": "نوم کاربری انتخاو کو",
+  "Add Random Digits to Username": "اضاف کنونه عددیا شانسی وه نوم کاروری"
 }

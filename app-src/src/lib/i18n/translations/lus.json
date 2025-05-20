@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload zawh a ni! I album dahna tur buaipui mek a ni...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "File thenkhat upload theih a ni lo. File upload tawh chung a hna i thawh theih.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Hmangtute hming ah alphabet, number leh hyphen chauh a awm tur a ni. Entirna: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Hmangtute hming chuan hawrawp, nambar leh hyphen chauh a kengtel tur a ni"
+  "Username must contain only letters, numbers, and hyphens.": "Hmangtute hming chuan hawrawp, nambar leh hyphen chauh a kengtel tur a ni",
+  "Submitting...": "Thawn mek...",
+  "Password": "Thuhruk Thu",
+  "Submit": "Thehlut",
+  "OK": "A Ṭha",
+  "Link Only": "Link Chauh",
+  "View Album Photos": "Album Thlalak En Rawh",
+  "Enter Username": "Hmangtuhming Dah Lut Rawh",
+  "Select Username": "Hman Tu Hming Thlan Rawh",
+  "Add Random Digits to Username": "Hmangtute hming ah nambar thlakchham bel rawh"
 }

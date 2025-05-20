@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Caricament cumpletaa! Sgiò dree a preparà de salvà el tò album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Quaj file a puden minga vesser cargaa. Te podet continuer coi file cargaa con succes.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "El nom ütent el pö vigh dumà léter, nümer e tratén. Esémpi: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "El nom utent el po' cuntegn dumà lèter, nümer e tratìn"
+  "Username must contain only letters, numbers, and hyphens.": "El nom utent el po' cuntegn dumà lèter, nümer e tratìn",
+  "Submitting...": "Mandànd...",
+  "Password": "Paròla D'órden",
+  "Submit": "Invia",
+  "OK": "Va Ben",
+  "Link Only": "Dumà Ligam",
+  "View Album Photos": "Varda I Fòtu De L'Album",
+  "Enter Username": "Inserìss Nom Ütent",
+  "Select Username": "Seleziona Nom Ütent",
+  "Add Random Digits to Username": "Zontà Nümar Casual Al Nom Ütent"
 }

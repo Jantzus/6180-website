@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Загрузка завершена! Подготовка к сохранению вашего альбома...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Некоторые файлы не удалось загрузить. Вы можете продолжить работу с успешно загруженными файлами.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Имя пользователя должно содержать только буквы, цифры и дефисы. Пример: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Имя пользователя должно содержать только буквы, цифры и дефисы"
+  "Username must contain only letters, numbers, and hyphens.": "Имя пользователя должно содержать только буквы, цифры и дефисы",
+  "Submitting...": "Отправка...",
+  "Password": "Пароль",
+  "Submit": "Отправить",
+  "OK": "Khorosho",
+  "Link Only": "Только Ссылка",
+  "View Album Photos": "Просмотр Фотографий Альбома",
+  "Enter Username": "Введите Имя Пользователя",
+  "Select Username": "Выберите Имя Пользователя",
+  "Add Random Digits to Username": "Добавить Случайные Цифры К Имени Пользователя"
 }

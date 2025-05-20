@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload fertig! Dei Album werd grod gspeichad...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "A poa Datein hom ned aufglådn wern kinna. Du kånnst mid de aufglådn Datein weitermåcha.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Da Nutzaname deaf nua Buachstom, Zoin und Bindestrich enthoitn. Beispui: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Da Nutzaname deaf nua Buachstom, Zoin und Bindestrich enthoidn"
+  "Username must contain only letters, numbers, and hyphens.": "Da Nutzaname deaf nua Buachstom, Zoin und Bindestrich enthoidn",
+  "Submitting...": "Obschickn...",
+  "Password": "Passwort",
+  "Submit": "Absenden",
+  "OK": "Passt",
+  "Link Only": "Nur Link",
+  "View Album Photos": "Album Fotos Oschaun",
+  "Enter Username": "Nutzernamen Eingeben",
+  "Select Username": "Benutzernåmen Auswähln",
+  "Add Random Digits to Username": "Zuafällige Zoin Zum Benutzernåmen Dazuagem"
 }

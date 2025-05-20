@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Téléquéjonmint fini! In prépération pou waérder vo album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Des fichers n'ont poin pu ète invoués. Os pouvez continuer avuc les fichers invoués avuc succès.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ch'nom d'utilisateur i doét contenir seulemint des lettes, des chiffes et des traits d'union. Egzimpe: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ch'nom d'utilisateur i dôt seul'mint contènir des lettes, des chiffes et pi des tirets"
+  "Username must contain only letters, numbers, and hyphens.": "Ch'nom d'utilisateur i dôt seul'mint contènir des lettes, des chiffes et pi des tirets",
+  "Submitting...": "Invoéyant...",
+  "Password": "Mot D'passe",
+  "Submit": "Éskyuer",
+  "OK": "D'Akord",
+  "Link Only": "Lien Seulemint",
+  "View Album Photos": "Vir Chés Éfcliché D'Presse D'Chés Album",
+  "Enter Username": "Intrer Ch'nom D'Uzeu",
+  "Select Username": "Sélecchonner Ch'Nom d'Uzeu",
+  "Add Random Digits to Username": "Acoter Pièches Hasardins Ch'nom D'useu"
 }

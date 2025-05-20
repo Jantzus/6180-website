@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ikisimaniq iniqtuq! Album-in tugvagiakługu piuqsaŋa...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Fail iḷaŋich iḷisautinġitchut. Iḷisautat fail-aŋich piisugiŋ.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Username-n tuquaqłuni tittaannik, number-nik, nuna hyphens-nik. Atuumanikkun: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Atqa pigiyaqtum iñuk atuqtaksraŋat titiqsimauq maliġutaksranik, atqiḷaanik, iñuuniġmiḷu"
+  "Username must contain only letters, numbers, and hyphens.": "Atqa pigiyaqtum iñuk atuqtaksraŋat titiqsimauq maliġutaksranik, atqiḷaanik, iñuuniġmiḷu",
+  "Submitting...": "Tuyuqtuq...",
+  "Password": "Iqsinaŋa",
+  "Submit": "Tuyuqtuq",
+  "OK": "Nakuuruq",
+  "Link Only": "Tachiq Kisimi",
+  "View Album Photos": "Piksraat Album Qiñirviŋat",
+  "Enter Username": "Atuqtuam Atqa Iḷisaaksiuŋ",
+  "Select Username": "Atqa Piksraq",
+  "Add Random Digits to Username": "Illaqtupiaq Kisitchich Ilaliuguk Atqakun"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "አስገባ ተጠናቋል! አልበምዎን በማስቀመጥ ላይ...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "አንዳንድ ፋይሎችን መጫን አልተቻለም። በተሳካ ሁኔታ በተጫኑት ፋይሎች መቀጠል ይችላሉ።",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "የተጠቃሚ ስም ፊደሎችን፣ ቁጥሮችንና ሃይፍንስ ብቻ መያዝ አለበት። ምሳሌ፦ john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "የተጠቃሚ ስም ፊደሎችን፣ ቁጥሮችን እና ሰረዞችን ብቻ መያዝ አለበት"
+  "Username must contain only letters, numbers, and hyphens.": "የተጠቃሚ ስም ፊደሎችን፣ ቁጥሮችን እና ሰረዞችን ብቻ መያዝ አለበት",
+  "Submitting...": "በማስገባት ላይ...",
+  "Password": "የይለፍ ቃል",
+  "Submit": "አስገባ",
+  "OK": "Ēšī",
+  "Link Only": "ማገናኛ ብቻ",
+  "View Album Photos": "አልበም ፎቶዎችን ይመልከቱ",
+  "Enter Username": "የተጠቃሚ ስም ያስገቡ",
+  "Select Username": "የተጠቃሚ ስም ይምረጡ",
+  "Add Random Digits to Username": "ዘፈቀዳዊ አሀዞችን ወደ ተጠቃሚ ስም ጨምር"
 }

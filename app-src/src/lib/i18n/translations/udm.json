@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Загрузить карон йылпумъямын! Тӥляд альбомдэс утён понна дасяськон мынэ...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Куд-ог файлъёсты загрузить карыны ӧз быгаты. Тӥ азинлыко загрузить карем файлъёсын ужамды азьланьтыны быгатӥськоды.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Кутӥськисьлэн нимаз букваос, лыдпусъёс но дефисъёс гинэ луыны кулэ. Кылсярысь: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Пыртӥсь нимын луыны кулэ букваос, лыдпусъёс но дефисъёс гинэ"
+  "Username must contain only letters, numbers, and hyphens.": "Пыртӥсь нимын луыны кулэ букваос, лыдпусъёс но дефисъёс гинэ",
+  "Submitting...": "Ыстӥське...",
+  "Password": "Пароль",
+  "Submit": "Ыстыны",
+  "OK": "Umoy",
+  "Link Only": "Гинэ Чӧлскон",
+  "View Album Photos": "Альбомысь Фотоосты Учкыны",
+  "Enter Username": "Кутӥсьлэсь Нимзэ Гожтэ",
+  "Select Username": "Кутӥсьлэсь Нимзэ Быръе",
+  "Add Random Digits to Username": "Кутӥсьлэн Нимаз Шыпыртэм Лыдпусъёс Ватсаны"
 }

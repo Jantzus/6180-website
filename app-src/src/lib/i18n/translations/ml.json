@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "അപ്‌ലോഡ് പൂർത്തിയായി! നിങ്ങളുടെ ആൽബം സംരക്ഷിക്കാൻ തയ്യാറെടുക്കുന്നു...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ചില ഫയലുകൾ അപ്‌ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല. വിജയകരമായി അപ്‌ലോഡ് ചെയ്ത ഫയലുകളുമായി നിങ്ങൾക്ക് തുടരാം.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ഉപയോക്തൃനാമത്തിൽ അക്ഷരങ്ങൾ, അക്കങ്ങൾ, ഹൈഫനുകൾ എന്നിവ മാത്രമേ ഉണ്ടാകാവൂ. ഉദാഹരണം: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ഉപയോക്തൃനാമത്തിൽ അക്ഷരങ്ങൾ, അക്കങ്ങൾ, ഹൈഫനുകൾ എന്നിവ മാത്രമേ ഉൾപ്പെടുത്താവൂ"
+  "Username must contain only letters, numbers, and hyphens.": "ഉപയോക്തൃനാമത്തിൽ അക്ഷരങ്ങൾ, അക്കങ്ങൾ, ഹൈഫനുകൾ എന്നിവ മാത്രമേ ഉൾപ്പെടുത്താവൂ",
+  "Submitting...": "സമർപ്പിക്കുന്നു...",
+  "Password": "പാസ്‌വേഡ്",
+  "Submit": "സമർപ്പിക്കുക",
+  "OK": "Shari",
+  "Link Only": "ലിങ്ക് മാത്രം",
+  "View Album Photos": "ആൽബം ഫോട്ടോകൾ കാണുക",
+  "Enter Username": "ഉപയോക്തൃനാമം നൽകുക",
+  "Select Username": "ഉപയോക്തൃനാമം തിരഞ്ഞെടുക്കുക",
+  "Add Random Digits to Username": "ഉപയോക്തൃനാമത്തിലേക്ക് റാൻഡം അക്കങ്ങൾ ചേർക്കുക"
 }

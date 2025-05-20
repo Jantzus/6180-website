@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ua pau ka hoʻouka ʻana! Ke hoʻomākaukau nei e mālama i kāu ʻālapa...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ʻAʻole hiki ke hoʻouka ʻia kekahi o nā faila. Hiki iā ʻoe ke hoʻomau me nā faila i hoʻouka ʻia.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Hiki i ka inoa mea ho'ohana ke loa'a i nā huapalapala, helu a me kahakō wale nō. La'ana: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Pono e loaʻa i ka inoa mea hoʻohana i nā leka, helu, a me nā kahaaʻo wale nō"
+  "Username must contain only letters, numbers, and hyphens.": "Pono e loaʻa i ka inoa mea hoʻohana i nā leka, helu, a me nā kahaaʻo wale nō",
+  "Submitting...": "Ke hoʻouna nei...",
+  "Password": "Hua Huna",
+  "Submit": "Waiho",
+  "OK": "Maikaʻi",
+  "Link Only": "Loulou Wale",
+  "View Album Photos": "Nānā I Nā Kiʻi O Ka ʻAlabuma",
+  "Enter Username": "Hoʻokomo Inoa Mea Hoʻohana",
+  "Select Username": "Koho Inoa Mea Hoʻohana",
+  "Add Random Digits to Username": "E Hoʻohui I Nā Helu Kaulele I Ka Inoa Mea Hoʻohana"
 }

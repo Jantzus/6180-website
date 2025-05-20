@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "¡Ñemyenyhẽ oĩmáma! Oñembosako'i ne álbum ñeñongatu haguã...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ndaikatúi oñemyenyhẽ oimeraẽva marandurenda. Ikatu rekontinua marandurenda oñemyenyhẽva porãvare.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Puruhára réra oguerekova'erã tai, papaha ha voi-voi año. Techapyrã: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Puruhára réra oguerekova'erã letrakuéra, papapykuéra ha voreñe'ẽ añoite"
+  "Username must contain only letters, numbers, and hyphens.": "Puruhára réra oguerekova'erã letrakuéra, papapykuéra ha voreñe'ẽ añoite",
+  "Submitting...": "Ñemondo...",
+  "Password": "Ñe'ẽ Ñemi",
+  "Submit": "Emondo",
+  "OK": "Iporã",
+  "Link Only": "Joajuhaʼeño",
+  "View Album Photos": "Ehecha Ta'ãnga Atykuéra",
+  "Enter Username": "Emoinge Poruhára Réra",
+  "Select Username": "Eiporavo Poruhára Réra",
+  "Add Random Digits to Username": "Embojuaju Papapy Poi Poruhára Térape"
 }

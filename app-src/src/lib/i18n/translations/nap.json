@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "'O carrecamiento è fernuto! Appriparazione pe' sarvà 'o tuo album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Cierti file nun se ponno carrecà. Puoi cuntinuà cu 'e file carrecate cu successo.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "'O nomme utente adda cuntené sulo léttere, nùmmere e trattine. Esembio: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "'O nomme utente adda tenè sulo lettere, nummere e lignelle"
+  "Username must contain only letters, numbers, and hyphens.": "'O nomme utente adda tenè sulo lettere, nummere e lignelle",
+  "Submitting...": "Mannànn...",
+  "Password": "Password",
+  "Submit": "Manna",
+  "OK": "Va Buono",
+  "Link Only": "Surtanto Cullegamiento",
+  "View Album Photos": "Vire 'E Fote D' 'O Album",
+  "Enter Username": "Mettere 'O Nomme Utente",
+  "Select Username": "Scèglie o' Nomme Utente",
+  "Add Random Digits to Username": "Azzecca Cifre Ausuale A O Nomme Utente"
 }

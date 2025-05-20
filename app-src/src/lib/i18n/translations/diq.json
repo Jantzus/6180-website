@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Barbiyayış qediya! Albumê şıma qeyd beno...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Taye dosyayan bar nêbiyê. Şıma şênê dosyayan ke bar biyê dê dewam kerê.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Nameyê karberi teyna herfa, reqema u xetanê gırêdayışi rê icazet esta. Misal: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Nameyê karberi teyna herfi, reqemi u xetdani ihtiva keno"
+  "Username must contain only letters, numbers, and hyphens.": "Nameyê karberi teyna herfi, reqemi u xetdani ihtiva keno",
+  "Submitting...": "Rışeno...",
+  "Password": "Parola",
+  "Submit": "Bırışe",
+  "OK": "Temam",
+  "Link Only": "Teyna Gıre",
+  "View Album Photos": "Albumê Fotorafi Bıvinê",
+  "Enter Username": "Nameyê Karberi Cıkewe",
+  "Select Username": "Nameyê Karberi Weçine",
+  "Add Random Digits to Username": "Reqemê Ke Raştameyê Namey Karberi Derb Ke"
 }

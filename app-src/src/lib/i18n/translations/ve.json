@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "U dzhenisa ho fhela! Hu khou lugiselwa u vhulunga album yanu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Faela dzi ṅwe a dzi ngo dzheniswa. Ni nga isa phanḓa na faela dzo dzheniswa zwavhuḓi.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Dzina la mushumisi li tea u vha na maḽeḓere, nomboro na zwiga zwa u fhandekanya fhedzi. Tsumbo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Dzina la mushumisi livha lifhate maḽeḓere, nomboro, na dzihaifo fhedzi"
+  "Username must contain only letters, numbers, and hyphens.": "Dzina la mushumisi livha lifhate maḽeḓere, nomboro, na dzihaifo fhedzi",
+  "Submitting...": "Khou rumela...",
+  "Password": "Phasiwede",
+  "Submit": "Rumela",
+  "OK": "Zwa Vhudi",
+  "Link Only": "Vhukwamani Fhedzi",
+  "View Album Photos": "Vhona Zwinepe Zwa Album",
+  "Enter Username": "Dzhenisani Dzina La Mushumisi",
+  "Select Username": "Khetha Dzina la Mushumisi",
+  "Add Random Digits to Username": "Engedzani Nomboro Dza Randomo Kha Dzina La Mushumisi"
 }

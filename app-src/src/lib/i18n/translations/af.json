@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Oplaai voltooi! Besig om jou album te stoor...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sommige lêers kon nie opgelaai word nie. Jy kan voortgaan met die suksesvol opgelaaide lêers.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Gebruikernaam moet slegs letters, syfers en koppeltekens bevat. Voorbeeld: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Gebruikersnaam moet slegs letters, syfers en koppeltekens bevat"
+  "Username must contain only letters, numbers, and hyphens.": "Gebruikersnaam moet slegs letters, syfers en koppeltekens bevat",
+  "Submitting...": "Besig om in te dien...",
+  "Password": "Wagwoord",
+  "Submit": "Indien",
+  "OK": "Oukei",
+  "Link Only": "Slegs Skakel",
+  "View Album Photos": "Bekyk Album Foto's",
+  "Enter Username": "Voer Gebruikersnaam In",
+  "Select Username": "Kies Gebruikersnaam",
+  "Add Random Digits to Username": "Voeg Lukraak Syfers By Gebruikersnaam"
 }

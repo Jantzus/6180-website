@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "అప్‌లోడ్ పూర్తయింది! మీ ఆల్బమ్‌ను సేవ్ చేయడానికి సిద్ధమవుతోంది...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "కొన్ని ఫైళ్లను అప్‌లోడ్ చేయడం సాధ్యం కాలేదు. విజయవంతంగా అప్‌లోడ్ చేయబడిన ఫైళ్లతో మీరు కొనసాగించవచ్చు.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "వాడుకరి పేరు అక్షరాలు, సంఖ్యలు మరియు హైఫన్లను మాత్రమే కలిగి ఉండాలి. ఉదాహరణ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "వాడుకరి పేరు కేవలం అక్షరాలు, సంఖ్యలు మరియు హైఫన్‌లను మాత్రమే కలిగి ఉండాలి"
+  "Username must contain only letters, numbers, and hyphens.": "వాడుకరి పేరు కేవలం అక్షరాలు, సంఖ్యలు మరియు హైఫన్‌లను మాత్రమే కలిగి ఉండాలి",
+  "Submitting...": "సమర్పిస్తోంది...",
+  "Password": "పాస్వర్డ్",
+  "Submit": "సమర్పించు",
+  "OK": "Sarē",
+  "Link Only": "లింక్ మాత్రమే",
+  "View Album Photos": "ఆల్బమ్ ఫోటోలను వీక్షించండి",
+  "Enter Username": "వాడుకరి పేరు నమోదు చేయండి",
+  "Select Username": "వాడుకరి పేరును ఎంచుకోండి",
+  "Add Random Digits to Username": "వినియోగదారు పేరుకు యాదృచ్ఛిక అంకెలను జోడించండి"
 }

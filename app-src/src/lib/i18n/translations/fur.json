@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Cjariament completât! Si sta preparant a salvâ il to album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Cualchi file nol è stât cjariât. Tu puedis continuâ cui file cjariâts cun sucès.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Il non utent al à di contignî dome letaris, numars e tratuts. Esempli: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Il non utent al à di contignî dome letaris, numars e tratuts"
+  "Username must contain only letters, numbers, and hyphens.": "Il non utent al à di contignî dome letaris, numars e tratuts",
+  "Submitting...": "Inviant...",
+  "Password": "Password",
+  "Submit": "Invie",
+  "OK": "Ben",
+  "Link Only": "Dome Leam",
+  "View Album Photos": "Viôt Lis Fotos Dal Album",
+  "Enter Username": "Inserìs Non Utent",
+  "Select Username": "Selezione Non Utent",
+  "Add Random Digits to Username": "Zonte Cifris Casuâls Al Non Utent"
 }

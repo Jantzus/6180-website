@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Téléqué fîni! En prépârant à gardaer vot' album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Cheitchieunnes fichis n'peuv'taient pon êt'ye carriyies. Vos peutes continuer ouais les fichis carriyies.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "L'nom d'utilisateu dait contchi seul'ment des lêttres, des chiffres et des traits d'union. Exémpl'ye: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "L'nom d'uteu dait conteni seulement des lettes, des chiffes et des tirets"
+  "Username must contain only letters, numbers, and hyphens.": "L'nom d'uteu dait conteni seulement des lettes, des chiffes et des tirets",
+  "Submitting...": "Enveie...",
+  "Password": "Mot D'pâsse",
+  "Submit": "Soumettre",
+  "OK": "Bien",
+  "Link Only": "Lian Seul'ment",
+  "View Album Photos": "Vei Lé Photos D'L'Album",
+  "Enter Username": "Etchie Nom D'Useu",
+  "Select Username": "Chouaîsi l'Nom dé l'Uzeu",
+  "Add Random Digits to Username": "Ajoutaer Des Chiffes Au Hasard Au Nom D'useu"
 }

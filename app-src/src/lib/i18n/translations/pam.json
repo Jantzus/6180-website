@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Mayari ing pamag-upload! Sasadya nang isimpan ing album mu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ding áliwan file ela ásubir. Malyari kang manúlid kareng file á matagumpeng ásubir.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ing lagiung talagamit dapat mung maki letra, numeru ampong gatlip. Alimbawa: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ing lagyu ning talagamit dapat mung mika letra, numeru, ampong gituktuk"
+  "Username must contain only letters, numbers, and hyphens.": "Ing lagyu ning talagamit dapat mung mika letra, numeru, ampong gituktuk",
+  "Submitting...": "Magdala...",
+  "Password": "Password",
+  "Submit": "Ipadala",
+  "OK": "Mayap",
+  "Link Only": "Mung Suglung",
+  "View Album Photos": "Lawen La Reng Letrato Album",
+  "Enter Username": "Ipalub Ya Ing Lagyung Talagamit",
+  "Select Username": "Mili Lagyu",
+  "Add Random Digits to Username": "Dagdagan Karinan Larawan Keng Lagyu"
 }

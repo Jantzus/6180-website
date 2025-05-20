@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "ཕབ་འཇུག་ལེགས་གྲུབ་བྱུང་། ཁྱེད་ཀྱི་གླུ་ཚོམས་ཉར་ཚགས་བྱེད་པར་གྲ་སྒྲིག་བྱེད་བཞིན་པ།",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ཡིག་ཆ་འགའ་ཞིག་ཡར་འཇུག་བྱེད་ཐུབ་མ་སོང་། ཁྱེད་ཀྱིས་ཡར་འཇུག་ལེགས་གྲུབ་བྱུང་བའི་ཡིག་ཆ་དག་བེད་སྤྱོད་གཏོང་མུར་བྱེད་ཆོག",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "སྤྱོད་མཁན་མིང་ལ་ཡིག་འབྲུ་དང་ཨང་ཀི་དང་མཐུད་རྟགས་མ་གཏོགས་འདུག་མི་ཆོག། དཔེར་ན།: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "སྤྱོད་མིང་དུ་ཡི་གེ་དང་ཨང་ཀི། བར་ཐིག་བཅས་མ་གཏོགས་འཇོག་མི་ཆོག"
+  "Username must contain only letters, numbers, and hyphens.": "སྤྱོད་མིང་དུ་ཡི་གེ་དང་ཨང་ཀི། བར་ཐིག་བཅས་མ་གཏོགས་འཇོག་མི་ཆོག",
+  "Submitting...": "འབུལ་བཞིན་པ།...",
+  "Password": "གསང་ཚིག",
+  "Submit": "ཕུལ་བ།",
+  "OK": "Yag Po Red",
+  "Link Only": "སྦྲེལ་མཐུད་ཁོ་ན།",
+  "View Album Photos": "པར་ཁུག་འདྲ་པར་ལ་གཟིགས།",
+  "Enter Username": "སྤྱོད་མཁན་མིང་འཇུག་རོགས།",
+  "Select Username": "སྤྱོད་མིའི་མིང་འདེམས་པ།",
+  "Add Random Digits to Username": "སྤྱོད་མཁན་མིང་ལ་གང་བྱུང་ཨང་ཀི་སྣོན།"
 }

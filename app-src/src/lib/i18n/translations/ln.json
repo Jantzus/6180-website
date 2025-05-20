@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Botómbisi esílí! Koɓongisa kobómbisa album na yɔ̌...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Mwa mikanda ekokí kotíama té. Okokí kokoba na misálá na mikanda oyo etíamí malamu.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Kombo ya kosalela esengeli kozala kaka na litɛ́, motángo mpé tiré. Ndakisa: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Kombo ya mosaleli ekoki kozala na mikanda, motángo mpe bakitá"
+  "Username must contain only letters, numbers, and hyphens.": "Kombo ya mosaleli ekoki kozala na mikanda, motángo mpe bakitá",
+  "Submitting...": "Kotinda...",
+  "Password": "Liloba Ya Sekele",
+  "Submit": "Tinda",
+  "OK": "Malamu",
+  "Link Only": "Esíká Kaka",
+  "View Album Photos": "Tála Bilílí Ya Albɔ́m",
+  "Enter Username": "Kokoma Kombo Ya Mosaleli",
+  "Select Username": "Pona Kombo ya Mosaleli",
+  "Add Random Digits to Username": "Kobakisa Motángo Ya Mbɛmbɛ Na Nkómbó Ya Mosáleli"
 }

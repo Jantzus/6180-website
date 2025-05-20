@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ikielims pabeigts! Tava alboma įrašėms rengiams...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Keli failā nagaliejė būtė ikeltė. Galėt tenstė darbą su sekmingā ikeltās failās.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Nauduotuojė vards tor talpintė tėk raides, skaitlius ėr brūkšnelius. Pavīzdīs: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Nauduotuojė vards toriė tik raidas, skaitlius ėr brūkšnelius"
+  "Username must contain only letters, numbers, and hyphens.": "Nauduotuojė vards toriė tik raidas, skaitlius ėr brūkšnelius",
+  "Submitting...": "Sėončama...",
+  "Password": "Slaptažuodis",
+  "Submit": "Pateiktė",
+  "OK": "Gerā",
+  "Link Only": "Tėk Nūruoda",
+  "View Album Photos": "Veizietė Alboma Nuotraukas",
+  "Enter Username": "Iveskėt Nauduotuojė Varda",
+  "Select Username": "Paserėnktė Nauduotuojė Varda",
+  "Add Random Digits to Username": "Prėdietė Atsėtėktėnius Skaitlios Pri Nauduotuojė Varda"
 }

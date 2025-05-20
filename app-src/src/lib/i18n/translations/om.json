@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Olguun xumurame! Albumii kee olkaa'uuf qophaa'aa jira...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Faayilotni tokko ol fe'amuu hin dandeenye. Faayilota milkaa'inaan ol fe'aman waliin itti fufuu dandeessa.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Maqaan fayyadamaa qubee, lakkoofsa fi hiifen qofa qabaachuu qaba. Fakkeenyaaf: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Maqaan fayyadamaa qubeewwan, lakkoofsa fi hiifen qofa qabachuu qaba"
+  "Username must contain only letters, numbers, and hyphens.": "Maqaan fayyadamaa qubeewwan, lakkoofsa fi hiifen qofa qabachuu qaba",
+  "Submitting...": "Ergisisaa...",
+  "Password": "Iggitaa",
+  "Submit": "Galchi",
+  "OK": "Tole",
+  "Link Only": "Quunnamtii Qofa",
+  "View Album Photos": "Suuraa Albeemii Ilaali",
+  "Enter Username": "Maqaa Fayyadamaa Galchi",
+  "Select Username": "Maqaa Fayyadamaa Filadhu",
+  "Add Random Digits to Username": "Lakkooyallee Carraa Maqaa Fayyadamaa Irraa Dabaluu"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Estonépka vtekat! Cemalbom entaket ohmerécka...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Cokv svhokkolvt hvlvteko tetayv. Cokv hocefkv hvlvtkvte hopuetaket omēs.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Tvhocefkv hocefkvt tvnahkerv, honvpseko hvnkatkv momen hvnketvt celapvreskv tvlkvs. Esvhopayvt: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Estohoketv hocefo letahoketv, honakv, momet kvlokv tvlkuset oces"
+  "Username must contain only letters, numbers, and hyphens.": "Estohoketv hocefo letahoketv, honakv, momet kvlokv tvlkuset oces",
+  "Submitting...": "Atekatē...",
+  "Password": "Password",
+  "Submit": "Totkvketv",
+  "OK": "Hērkv",
+  "Link Only": "Tenetkan Tvlken",
+  "View Album Photos": "Cuko Vhakv Poyvfekcv",
+  "Enter Username": "Cehocefkv Cokkv",
+  "Select Username": "Este Hocefket Kerhoyetv",
+  "Add Random Digits to Username": "Este Vnokhome Honne Vhokhvn Vhoyokcv Tohtvlhvye"
 }

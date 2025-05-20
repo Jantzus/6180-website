@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Тиемась аделаф! Анокламе тонь альбомцень ванфтомс...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Кой-кона файлхне ашельхть сувафтовсь. Тейть ули кода сувафтф файлхнень мархта поладомс.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Тиендись лемсь улеза аньцек букваста, цифраста и дефисста. Кепотькс: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ломанть лемоц улеза аньцек букваста, цифраста да дефисста"
+  "Username must contain only letters, numbers, and hyphens.": "Ломанть лемоц улеза аньцек букваста, цифраста да дефисста",
+  "Submitting...": "Кучсеви...",
+  "Password": "Пароль",
+  "Submit": "Кучемс",
+  "OK": "Пара",
+  "Link Only": "Аньцек Сюлмафкс",
+  "View Album Photos": "Ваномс Альбомонь Няйфкснень",
+  "Enter Username": "Сувафтт Тиить Лем",
+  "Select Username": "Кочкак Сувсинь Лем",
+  "Add Random Digits to Username": "Поладомс Киге-повсь Лувкст Тиикс Лемс"
 }

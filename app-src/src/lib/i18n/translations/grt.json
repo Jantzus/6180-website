@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Daknanganaba bon'aha! Nangni album donbo ken chak'a nanga",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "File jegipa minga upload ka·a. Naa miksonga upload ka·gimin file baksa re minga nangchimonga re·baanoba.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "User bimung o letter, number aro hyphen-san gita dongna nanggen. Uamandake: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Bewalni bimung rang nama, nomborko aro hyphenko dongja"
+  "Username must contain only letters, numbers, and hyphens.": "Bewalni bimung rang nama, nomborko aro hyphenko dongja",
+  "Submitting...": "Rookalaniŋa",
+  "Password": "Password",
+  "Submit": "On·gipa",
+  "OK": "Name",
+  "Link Only": "Link Asan",
+  "View Album Photos": "Album Chongipa Nikna",
+  "Enter Username": "Bachaona Gamka Bimung",
+  "Select Username": "User bimung bachhibo",
+  "Add Random Digits to Username": "User bimung-o chanchipa number songbo"
 }

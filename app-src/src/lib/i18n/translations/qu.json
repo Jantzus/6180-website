@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "¡Churana hunt'asqa! Álbumnikiqa waqaychasqa kachkan...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Wakin willañiqikunaqa manam wicharichiy atichkunchu. Atisqa wicharichisqa willañiqikunawanqa atikunkim qatipakuyta.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ruraq sutiqa sapallan qillqakunata, yupakunata, yapakunatapas charinman. Qawarichiy: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ruraqpaq sutinqa sut'i qillqakunallata, yupakunallata, t'inkikunallata churakunan tiyan"
+  "Username must contain only letters, numbers, and hyphens.": "Ruraqpaq sutinqa sut'i qillqakunallata, yupakunallata, t'inkikunallata churakunan tiyan",
+  "Submitting...": "Kachachispa...",
+  "Password": "Yaykuna Rima",
+  "Submit": "Kachiy",
+  "OK": "Allinmi",
+  "Link Only": "Link Llalla",
+  "View Album Photos": "Album Rikch'akuna Qhaway",
+  "Enter Username": "Ruraqpa Sutinta Qillqay",
+  "Select Username": "Ruraqpa Sutinta Akllay",
+  "Add Random Digits to Username": "Llamk'aq Sutiman Mana Qatinchata Yupanakunata Yapay"
 }

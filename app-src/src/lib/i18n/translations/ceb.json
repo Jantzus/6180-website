@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Pagkarga kompleto! Naghanda sa pagtipig sa imong album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ang ubang mga file dili ma-upload. Makapadayon ka sa malampusong na-upload nga mga file.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ang username kinahanglan nga adunay mga letra, numero ug mga gituldok-gituldok lamang. Pananglitan: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ang username kinahanglan adunay mga letra, numero, ug mga gituldok-gituldok lamang"
+  "Username must contain only letters, numbers, and hyphens.": "Ang username kinahanglan adunay mga letra, numero, ug mga gituldok-gituldok lamang",
+  "Submitting...": "Nagpadala...",
+  "Password": "Password",
+  "Submit": "Isumite",
+  "OK": "Ok Ra",
+  "Link Only": "Link Lamang",
+  "View Album Photos": "Tan-awa Ang Mga Litrato Sa Album",
+  "Enter Username": "Isulod Ang Ngalan Sa Tiggamit",
+  "Select Username": "Pagpili sa Ngalan sa Tiggamit",
+  "Add Random Digits to Username": "Idugang Ang Random Nga Mga Numero Sa Ngalan Sa Tiggamit"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Huuchlaaden klaar! Din Album woort seekert...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ianang dateien köön ei huuchlaad wurd. Dü könst mä dön huuchlaad dateien widermaage.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Brükernööm mut bluas bukstaawen, taalen an binjstriiken iinhaale. Bispal: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Di brükernööm mut bluas buksteewen, teelen an binstregen inhual"
+  "Username must contain only letters, numbers, and hyphens.": "Di brükernööm mut bluas buksteewen, teelen an binstregen inhual",
+  "Submitting...": "Önjdun...",
+  "Password": "Paaswurd",
+  "Submit": "Iinsenn",
+  "OK": "Gödj",
+  "Link Only": "Bluas Ferbining",
+  "View Album Photos": "Album Bilen Uunluke",
+  "Enter Username": "Brükernööm Indu",
+  "Select Username": "Brükernööm Ütjsjük",
+  "Add Random Digits to Username": "Taufelig Taal Tu Brükernööm Diartudu"
 }

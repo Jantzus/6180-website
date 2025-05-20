@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Üleslaadimine lõpetatud! Valmistub teie albumi salvestamiseks...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Mõnda faili ei saanud üles laadida. Saate jätkata edukalt üles laaditud failidega.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Kasutajanimi peaks sisaldama ainult tähti, numbreid ja sidekriipse. Näide: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Kasutajanimi peab sisaldama ainult tähti, numbreid ja sidekriipse"
+  "Username must contain only letters, numbers, and hyphens.": "Kasutajanimi peab sisaldama ainult tähti, numbreid ja sidekriipse",
+  "Submitting...": "Saatmine...",
+  "Password": "Parool",
+  "Submit": "Saada",
+  "OK": "Okei",
+  "Link Only": "Ainult Link",
+  "View Album Photos": "Vaata Albumi Fotosid",
+  "Enter Username": "Sisesta Kasutajanimi",
+  "Select Username": "Vali Kasutajanimi",
+  "Add Random Digits to Username": "Lisa Juhuslikud Numbrid Kasutajanimele"
 }

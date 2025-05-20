@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Téléchargement terminé ! Préparation de la sauvegarde de votre album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Certains fichiers n'ont pas pu être téléchargés. Vous pouvez continuer avec les fichiers téléchargés avec succès.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres et des traits d'union. Exemple: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres et des traits d'union"
+  "Username must contain only letters, numbers, and hyphens.": "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres et des traits d'union",
+  "Submitting...": "Soumission en cours...",
+  "Password": "Mot De Passe",
+  "Submit": "Soumettre",
+  "OK": "D'Accord",
+  "Link Only": "Lien Seulement",
+  "View Album Photos": "Voir Les Photos De L'Album",
+  "Enter Username": "Entrez Nom D'Utilisateur",
+  "Select Username": "Sélectionner Nom d'Utilisateur",
+  "Add Random Digits to Username": "Ajouter Des Chiffres Aléatoires Au Nom D'utilisateur"
 }

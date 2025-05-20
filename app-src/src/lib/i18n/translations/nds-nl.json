@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Opload klaor! Bezig um joen album op te slaon...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sommige bestanden kunden niet op-elaojen wörden. Je könt deurgaon mit de bestanden die wel op-elaojen bint.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Gebrukersnaam mag allennig letters, ciefers en verbienstreepies bevatten. Veurbeeld: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Gebrukersnaam mag allinnig letters, ciefers en verbindingsstreepies bevatten"
+  "Username must contain only letters, numbers, and hyphens.": "Gebrukersnaam mag allinnig letters, ciefers en verbindingsstreepies bevatten",
+  "Submitting...": "Sturen...",
+  "Password": "Wachtwoord",
+  "Submit": "Indienen",
+  "OK": "Goed",
+  "Link Only": "Allennig Verwiezing",
+  "View Album Photos": "Bekiek Albumfoto's",
+  "Enter Username": "Gebrukersnaam Invoeren",
+  "Select Username": "Kies Gebrukersnaam",
+  "Add Random Digits to Username": "Willekeurige Siefers Bie Gebrukersnaam Zetten"
 }

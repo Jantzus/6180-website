@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Innlegging liðug! Fyrireika at goyma titt album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Summir fílur kundu ikki leggjast upp. Tú kanst halda áfram við teimum fílum sum gingu upp.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Brúkaranavn skal bert innihalda bókstavir, tøl og bindistrik. Dømi: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Brúkaranavn má bert innihalda bókstavir, tøl og bindistrik"
+  "Username must contain only letters, numbers, and hyphens.": "Brúkaranavn má bert innihalda bókstavir, tøl og bindistrik",
+  "Submitting...": "Sendandi...",
+  "Password": "Loyniorð",
+  "Submit": "Send",
+  "OK": "Í Lagi",
+  "Link Only": "Bert Leinkja",
+  "View Album Photos": "Hygg Myndasavn Myndir",
+  "Enter Username": "Skriva Brúkaranavn",
+  "Select Username": "Vel Brúkaranavn",
+  "Add Random Digits to Username": "Legg Tilvildarligar Tøl Afturat Brúkaranavninum"
 }

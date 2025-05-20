@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Laadey seose! Kiartaghey dy hauail dty albym...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Cha dod paart jeh ny feillyn ve laadey seose. Foddee oo goll er obbyr lesh ny feillyn laadey seose dy speeideilagh.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Cha lhisagh ennym ymmydeyr cumsaghey agh lettyryn, earrooyn as çhyndaaghyn. Sampyl: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Shegin da ennym yn ymmydeyr ve jeant jeh lettyryn, earrooyn as çhyndaaghyn ny lomarcan"
+  "Username must contain only letters, numbers, and hyphens.": "Shegin da ennym yn ymmydeyr ve jeant jeh lettyryn, earrooyn as çhyndaaghyn ny lomarcan",
+  "Submitting...": "Cur stiagh...",
+  "Password": "Fockle Arrey",
+  "Submit": "Cur Stiagh",
+  "OK": "Kiart",
+  "Link Only": "Kiangley Ynrican",
+  "View Album Photos": "Jeeagh Er Jalloonyn Yn Lioar-Cholloo",
+  "Enter Username": "Cur Stiagh Ennym Ymmydeyr",
+  "Select Username": "Reih Ennym Ymmydeyr",
+  "Add Random Digits to Username": "Cur Earrooyn Gyn Tort Rish Ennym Ymmydeyr"
 }

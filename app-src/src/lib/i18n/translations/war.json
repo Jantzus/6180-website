@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Pagkarga kompleto! Naghahanda para igtipig an imo album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "An pipira nga mga paypay diri nakaraga. Puydi ka magpadayon han mga paypay nga malinampuson nga nakaraga.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "An ngaran-hit-tiggamit kinahanglan nga mayda la mga letra, mga numero ngan mga gitik-gitik. Pananglitan: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "An ngaran-hit-gumaramit kinahanglan la magkarga hin mga letra, mga numero, ngan mga gituldok"
+  "Username must contain only letters, numbers, and hyphens.": "An ngaran-hit-gumaramit kinahanglan la magkarga hin mga letra, mga numero, ngan mga gituldok",
+  "Submitting...": "Nagpapadara...",
+  "Password": "Password",
+  "Submit": "Igpadara",
+  "OK": "Maupay",
+  "Link Only": "Link La",
+  "View Album Photos": "Kitaa An Mga Litrato Han Album",
+  "Enter Username": "Ibutang An Ngaran-hit-Gumaramit",
+  "Select Username": "Pagpili han Agnay-gamit",
+  "Add Random Digits to Username": "Dugangan Han Random Nga Mga Ihap Ha Ngaran-hit Gumaramit"
 }

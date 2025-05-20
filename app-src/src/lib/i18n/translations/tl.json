@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Pagkarga kumpleto! Naghahanda upang i-save ang iyong album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Hindi ma-upload ang ilang mga file. Maaari kang magpatuloy sa mga file na matagumpay na na-upload.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ang username ay dapat naglalaman lamang ng mga titik, numero at gitling. Halimbawa: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ang username ay dapat naglalaman lamang ng mga titik, numero, at gitling"
+  "Username must contain only letters, numbers, and hyphens.": "Ang username ay dapat naglalaman lamang ng mga titik, numero, at gitling",
+  "Submitting...": "Ipinapadala...",
+  "Password": "Password",
+  "Submit": "Isumite",
+  "OK": "Sige",
+  "Link Only": "Link Lamang",
+  "View Album Photos": "Tingnan Ang Mga Larawan Ng Album",
+  "Enter Username": "Ilagay Ang Pangalan Ng Gumagamit",
+  "Select Username": "Pumili ng Pangalan ng Gumagamit",
+  "Add Random Digits to Username": "Magdagdag Ng Mga Random Na Digit Sa Username"
 }

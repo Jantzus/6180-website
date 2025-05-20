@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Kuongerera kũiguire! Gũthondeka kuhonokia albamu yaku...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Faili imwe itingĩhota kwambatithio. No ũthiĩ na mbere na faili iria ciambatithĩtio.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Rĩĩtwa rĩa mũtumia rĩagĩrĩirwo gũkorwo na njiaro, namba na haifen tu. Kĩonereria: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Rĩtwa rĩa mũtumuiri no muhaka rĩkorwo rĩ na ndemwa, ndũgũ, na haifen tu"
+  "Username must contain only letters, numbers, and hyphens.": "Rĩtwa rĩa mũtumuiri no muhaka rĩkorwo rĩ na ndemwa, ndũgũ, na haifen tu",
+  "Submitting...": "Gũtũma...",
+  "Password": "Kihumo",
+  "Submit": "Tũma",
+  "OK": "Ni Wega",
+  "Link Only": "Link Tu",
+  "View Album Photos": "Rora Mbica Cia Albamu",
+  "Enter Username": "Andika Ritwa Ria Mũtumia",
+  "Select Username": "Thuura Ritwa ria Murutumia",
+  "Add Random Digits to Username": "Ongera Namba Cia Thayu Kiri Rĩtwa Rĩa Mũtumĩri"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Sàng-choan oân-sêng! Teh pī-pān pó-chûn lí ê siòng-pho...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ū chi̍t-kóa tóng-àn bô-hoat-tō͘ kā sàng-chiūⁿ-khì. Lí ē-tàng kā sàng-chiūⁿ-khì ê tóng-àn tīng kè-sio̍k.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "用戶名應該干若包含字母、數字佮連字符。例如：john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Iōng-chiá-miâ pit-su chí pau-koat jī-bó, sò͘-jī kap liân-jī-hû"
+  "Username must contain only letters, numbers, and hyphens.": "Iōng-chiá-miâ pit-su chí pau-koat jī-bó, sò͘-jī kap liân-jī-hû",
+  "Submitting...": "送出中...",
+  "Password": "Bī-bé",
+  "Submit": "Thê-chhut",
+  "OK": "Hó",
+  "Link Only": "Kan-na Liân-kiat",
+  "View Album Photos": "Khoàⁿ Album Siòng-phìⁿ",
+  "Enter Username": "Sû-jīp Iōng-chiá Miâ",
+  "Select Username": "選擇用戶名",
+  "Add Random Digits to Username": "Kā Sūi-ki Sò͘-jī Chham Iōng-chiá Miâ"
 }

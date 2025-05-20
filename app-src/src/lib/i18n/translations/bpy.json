@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "আপলোড হইসে! তোমার অ্যালবাম রাখার জন্য তৈয়ারি হইতাসে...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "কিছু ফাইল আপলোড করা যায়নি। আপনি সফলভাবে আপলোড করা ফাইলগুলি নিয়ে চালিয়ে যেতে পারেন।",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "ব্যবহারকারীর নাম শুধুমাত্র বর্ণ, সংখ্যা আর হাইফেন দিয়া লেখা দরকার। উদাহরণ: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "ব্যবহারকারীর নাম শুধু অক্ষর, সংখ্যা আর হাইফেন দিয়ে গঠিত হতে হবে"
+  "Username must contain only letters, numbers, and hyphens.": "ব্যবহারকারীর নাম শুধু অক্ষর, সংখ্যা আর হাইফেন দিয়ে গঠিত হতে হবে",
+  "Submitting...": "জমা দেওয়া হচ্ছে...",
+  "Password": "পাসওয়ার্ড",
+  "Submit": "জমা দিতে",
+  "OK": "Ṭhik Āche",
+  "Link Only": "শুধু লিঙ্ক",
+  "View Album Photos": "অ্যালবাম ফটো দেখা",
+  "Enter Username": "ব্যবহারকারীর নাম লেখো",
+  "Select Username": "ব্যবহারকারী নাম বাছাই",
+  "Add Random Digits to Username": "ব্যবহারকারীর নামে এলোমেলো সংখ্যা যোগ করুন"
 }

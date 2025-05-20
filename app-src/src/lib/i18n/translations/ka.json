@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "ატვირთვა დასრულებულია! თქვენი ალბომის შენახვისთვის მზადება...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "ზოგიერთი ფაილის ატვირთვა ვერ მოხერხდა. შეგიძლიათ განაგრძოთ წარმატებით ატვირთული ფაილებით.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "მომხმარებლის სახელი უნდა შეიცავდეს მხოლოდ ასოებს, ციფრებს და დეფისებს. მაგალითი: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "მომხმარებლის სახელი უნდა შეიცავდეს მხოლოდ ასოებს, რიცხვებს და დეფისებს"
+  "Username must contain only letters, numbers, and hyphens.": "მომხმარებლის სახელი უნდა შეიცავდეს მხოლოდ ასოებს, რიცხვებს და დეფისებს",
+  "Submitting...": "იგზავნება...",
+  "Password": "პაროლი",
+  "Submit": "გაგზავნა",
+  "OK": "K'argi",
+  "Link Only": "მხოლოდ ბმული",
+  "View Album Photos": "ალბომის ფოტოების ნახვა",
+  "Enter Username": "შეიყვანეთ მომხმარებლის სახელი",
+  "Select Username": "აირჩიეთ მომხმარებლის სახელი",
+  "Add Random Digits to Username": "მომხმარებლის სახელზე შემთხვევითი ციფრების დამატება"
 }

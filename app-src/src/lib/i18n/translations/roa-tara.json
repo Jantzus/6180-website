@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Carecamende combletate! Ste se prepare a salvà l'album tue...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Quacche file non ge se pò carecà. Tu puè condinuà cu le file carecate cu successe.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Nome utende ha tenè sulamende lettere, numere e trattine. Esembie: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "'U nome de l'utende adda tenè sulamende lettere, numere e linette"
+  "Username must contain only letters, numbers, and hyphens.": "'U nome de l'utende adda tenè sulamende lettere, numere e linette",
+  "Submitting...": "Mannanne...",
+  "Password": "Password",
+  "Submit": "Manne",
+  "OK": "Bbuene",
+  "Link Only": "Juste Collegamende",
+  "View Album Photos": "Vide Le Fote De L'Album",
+  "Enter Username": "Mitte 'U Nome Utende",
+  "Select Username": "Scacchie 'U Nome Utende",
+  "Add Random Digits to Username": "Aggiunge Numere Cavzuale a 'U Nome Utende"
 }

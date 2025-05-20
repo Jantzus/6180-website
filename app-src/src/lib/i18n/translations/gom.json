@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "अपलोड पूर्ण जालें! तुजो आल्बम सांबाळपाक तयार करता...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "काय फायली अपलोड करूंक जायनात. तुमी यशस्वीरीत्या अपलोड केल्ल्या फायलीं वांगडा चालू दवरपाक शकतात.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "वापरपी नांव फकत अक्षरां, अंक आनी हायफन आसूंक जाय. देख: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "वापरपी नांव फकत अक्षरां, अंक आनी हायफन घालूंक जाय"
+  "Username must contain only letters, numbers, and hyphens.": "वापरपी नांव फकत अक्षरां, अंक आनी हायफन घालूंक जाय",
+  "Submitting...": "दवरता...",
+  "Password": "गुपीत उतर",
+  "Submit": "सादर कर",
+  "OK": "Borem",
+  "Link Only": "फक्त दुवो",
+  "View Album Photos": "अल्बम फोटो पळयात",
+  "Enter Username": "वापरपी नांव भरात",
+  "Select Username": "वापरपी नांव निवड",
+  "Add Random Digits to Username": "वापरपियाच्या नावाक यादृच्छिक अंक जोड"
 }

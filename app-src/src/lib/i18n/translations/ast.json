@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "¡Xuba completada! Preparando pa guardar l'álbum...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Dellos ficheros nun pudieron xubise. Pues continuar colos ficheros xubíos correutamente.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "El nome d'usuariu namái puede contener lletres, númberos y guiones. Exemplu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "El nome d'usuariu ha contener solo lletres, númberos y guiones"
+  "Username must contain only letters, numbers, and hyphens.": "El nome d'usuariu ha contener solo lletres, númberos y guiones",
+  "Submitting...": "Unviando...",
+  "Password": "Contraseña",
+  "Submit": "Unviar",
+  "OK": "Bien",
+  "Link Only": "Enllaz Solamente",
+  "View Album Photos": "Ver Semeyes Del Álbum",
+  "Enter Username": "Introduz Nome D'Usuariu",
+  "Select Username": "Esbillar Nome d'Usuariu",
+  "Add Random Digits to Username": "Amestar Díxitos Al Azar Al Nome D'usuariu"
 }

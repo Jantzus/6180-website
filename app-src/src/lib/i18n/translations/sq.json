@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ngarkimi përfundoi! Duke përgatitur ruajtjen e albumit tuaj...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Disa skedarë nuk mund të ngarkoheshin. Mund të vazhdoni me skedarët e ngarkuar me sukses.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Emri i përdoruesit duhet të përmbajë vetëm shkronja, numra dhe viza. Shembull: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Emri i përdoruesit duhet të përmbajë vetëm shkronja, numra dhe viza"
+  "Username must contain only letters, numbers, and hyphens.": "Emri i përdoruesit duhet të përmbajë vetëm shkronja, numra dhe viza",
+  "Submitting...": "Duke dërguar...",
+  "Password": "Fjalëkalim",
+  "Submit": "Dërgo",
+  "OK": "Mirë",
+  "Link Only": "Vetëm Lidhje",
+  "View Album Photos": "Shiko Fotot E Albumit",
+  "Enter Username": "Vendos Emrin E Përdoruesit",
+  "Select Username": "Zgjidh Emrin e Përdoruesit",
+  "Add Random Digits to Username": "Shto Shifra Të Rastësishme Te Emri I Përdoruesit"
 }

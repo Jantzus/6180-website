@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Carregamiento cumpletado! Preparando para salbar l tou álbun...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Alguns fexeiros nun puoden ser carregados. Puode cuntinar culs fexeiros carregados cun éxito.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "L nome d'outelizador debe cunter solo letras, númaros i hifenes. Eisemplo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "L nome de outelizador debe tener solo letras, númaros i traços"
+  "Username must contain only letters, numbers, and hyphens.": "L nome de outelizador debe tener solo letras, númaros i traços",
+  "Submitting...": "Ambiando...",
+  "Password": "Palavra Passe",
+  "Submit": "Ambiar",
+  "OK": "Bien",
+  "Link Only": "Solo Lhigaçon",
+  "View Album Photos": "Ber Fotos Del Álbun",
+  "Enter Username": "Antre Nome De Outelizador",
+  "Select Username": "Selecionar Nome de Outelizador",
+  "Add Random Digits to Username": "Juntar Díxitos Aleatórios Al Nome De Outelizador"
 }

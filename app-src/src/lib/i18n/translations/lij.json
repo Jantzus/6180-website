@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Càrego completo! Se prepara a sarvâ o teu album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Quarchedun file no poeivan êse caregæ. Ti peu anâ avanti coi file caregæ con sucesso.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "O nomme ùtente o deve contegnî sôlo létie, nùmeri e trattìn. Exempio: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "O nomme utente o deve contegnî sôlo letere, numeri e lineette"
+  "Username must contain only letters, numbers, and hyphens.": "O nomme utente o deve contegnî sôlo letere, numeri e lineette",
+  "Submitting...": "Inviando...",
+  "Password": "Password",
+  "Submit": "Inviâ",
+  "OK": "Va Ben",
+  "Link Only": "Solo Colegamento",
+  "View Album Photos": "Amia E Föto Do Album",
+  "Enter Username": "Inserisci Nome Utente",
+  "Select Username": "Seleçionn-a O Nomme Utente",
+  "Add Random Digits to Username": "Azónzi Çiffre Cazoâ A-o Nómme Utènte"
 }

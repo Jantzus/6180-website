@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Telechajman konplete! Preparasyon pou sove albòm ou a...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Gen kèk fichye ki pa t kapab telechaje. Ou ka kontinye ak fichye yo ki te telechaje avèk siksè.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Non itilizatè a ta dwe gen lèt, chif ak tirè sèlman. Egzanp: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Non itilizatè a dwe gen sèlman lèt, chif, ak trè inyon"
+  "Username must contain only letters, numbers, and hyphens.": "Non itilizatè a dwe gen sèlman lèt, chif, ak trè inyon",
+  "Submitting...": "Ap soumèt...",
+  "Password": "Mo De Pas",
+  "Submit": "Soumèt",
+  "OK": "Dakò",
+  "Link Only": "Lyen Sèlman",
+  "View Album Photos": "Gade Foto Albòm",
+  "Enter Username": "Antre Non Itilizatè",
+  "Select Username": "Chwazi Non Itilizatè",
+  "Add Random Digits to Username": "Ajoute Chif Owaza Nan Non Itilizatè"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload klaor! Bezig mit 't opsjlaon vaan dien album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sommige besjtande koste neet geüpload waere. Doe kins doorgaon mit de besjtande die waal geüpload zien.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Gebrokersnaam moog allein letterteijes, ciefers en koppelteikes bevatte. Veurbild: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Gebrokersnaam maag allein lettere, ciefers en verbinjingsstrekske bevatte"
+  "Username must contain only letters, numbers, and hyphens.": "Gebrokersnaam maag allein lettere, ciefers en verbinjingsstrekske bevatte",
+  "Submitting...": "Verzènje...",
+  "Password": "Wachwaord",
+  "Submit": "Sjik",
+  "OK": "Good",
+  "Link Only": "Allein Koppeling",
+  "View Album Photos": "Album Foto's Bekieke",
+  "Enter Username": "Veur Gebrokersnaam In",
+  "Select Username": "Gebrokersnaam Keze",
+  "Add Random Digits to Username": "Willekäörige Ciefers Aan Gebrokersnaam Toevoge"
 }

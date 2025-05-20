@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Unggahan tuntung! Manyiapakan gasan manyimpan album pian...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Babarapa barakas kada kawa di-unggah. Pian kawa manarusakan lawan barakas nang tasukses di-unggah.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ngaran pamuruk sabaiknya mangandung hurup, nambur wan tanda hubung haja. Cuntuh: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ngaran pamuruk harus baisi huruf, angka, wan tanda pisah haja"
+  "Username must contain only letters, numbers, and hyphens.": "Ngaran pamuruk harus baisi huruf, angka, wan tanda pisah haja",
+  "Submitting...": "Mambulik...",
+  "Password": "Katasandi",
+  "Submit": "Kirim",
+  "OK": "Kawa Ai",
+  "Link Only": "Tautan Haja",
+  "View Album Photos": "Lihat Putu Album",
+  "Enter Username": "Masukakan Ngaran Pamuruk",
+  "Select Username": "Pilihi Ngaran Pangguna",
+  "Add Random Digits to Username": "Tambahakan Angka Acak Ka Ngaran Pamakai"
 }

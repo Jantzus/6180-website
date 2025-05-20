@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ladowanié skùńczoné! Przërëchtëje sã do zazapisanié twòjégò albùma...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Niechtërne lopki nie dałë sã wstôwic. Mòżesz kòntinuowac robòtã z lopkama chtërne sã wstôwiłë.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Miono brëkòwnika mùszi zamëkac blós lëtrë, cyfre ë bindestrichi. Przëmiôr: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Miono brëkòwnika mòże zamëkac leno bùkwi, cyfri ë binączi"
+  "Username must contain only letters, numbers, and hyphens.": "Miono brëkòwnika mòże zamëkac leno bùkwi, cyfri ë binączi",
+  "Submitting...": "Sélô sã...",
+  "Password": "Parola",
+  "Submit": "Wëslôj",
+  "OK": "Jo",
+  "Link Only": "Leno Lënk",
+  "View Album Photos": "Òbôczë Òdjimczi Albùma",
+  "Enter Username": "Wpiszë Miono Brëkòwnika",
+  "Select Username": "Wëbierzë Miono",
+  "Add Random Digits to Username": "Dodôj Przëtrëfkòwé Cëfrë Do Miona Brëkòwnika"
 }

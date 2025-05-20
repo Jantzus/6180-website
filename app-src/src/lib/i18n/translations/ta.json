@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "பதிவேற்றம் முடிந்தது! உங்கள் ஆல்பத்தை சேமிக்க தயாராகிறது...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "சில கோப்புகளை பதிவேற்ற முடியவில்லை. வெற்றிகரமாக பதிவேற்றப்பட்ட கோப்புகளுடன் நீங்கள் தொடரலாம்.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "பயனர் பெயரில் எழுத்துகள், எண்கள் மற்றும் கோடுகள் மட்டுமே இருக்க வேண்டும். எடுத்துக்காட்டு: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "பயனர்பெயரில் எழுத்துகள், எண்கள் மற்றும் கோடுகள் மட்டுமே இருக்க வேண்டும்"
+  "Username must contain only letters, numbers, and hyphens.": "பயனர்பெயரில் எழுத்துகள், எண்கள் மற்றும் கோடுகள் மட்டுமே இருக்க வேண்டும்",
+  "Submitting...": "சமர்ப்பிக்கிறது...",
+  "Password": "கடவுச்சொல்",
+  "Submit": "சமர்ப்பி",
+  "OK": "Sari",
+  "Link Only": "இணைப்பு மட்டும்",
+  "View Album Photos": "ஆல்பம் புகைப்படங்களைக் காண்க",
+  "Enter Username": "பயனர்பெயரை உள்ளிடவும்",
+  "Select Username": "பயனர்பெயரைத் தேர்ந்தெடுக்கவும்",
+  "Add Random Digits to Username": "பயனர் பெயருக்கு சீரற்ற எண்களைச் சேர்"
 }

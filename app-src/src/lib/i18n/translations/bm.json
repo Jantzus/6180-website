@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Blila dafara! A bɛka i ka ɔrɔmu maralen...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Fichier dɔw ma se k'a layidi. I bɛ se ka taa fichier minnu layidila.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Dɔnkɛbaa tɔgɔ ka kan kɛ sɛbɛnniw, jatew ni nɔnabla dɔrɔn ye. Misali: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Tɔgɔ ka kan kɛ ni sɛbɛnw, jatew, ni trɛw dɔrɔn ye"
+  "Username must contain only letters, numbers, and hyphens.": "Tɔgɔ ka kan kɛ ni sɛbɛnw, jatew, ni trɛw dɔrɔn ye",
+  "Submitting...": "Ka bila...",
+  "Password": "Kulubali",
+  "Submit": "Ka Ci",
+  "OK": "A Ka Nyi",
+  "Link Only": "Sian Dɔrɔn",
+  "View Album Photos": "Filini Album Fotow",
+  "Enter Username": "I Tɔgɔ Dɔn",
+  "Select Username": "Tɔgɔ Sugandi",
+  "Add Random Digits to Username": "Ka Hatarata Hakɛ Fara I Tɔgɔ Fɛ"
 }

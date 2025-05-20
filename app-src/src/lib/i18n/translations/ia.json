@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Cargamento complete! Preparante pro salveguardar tu album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Alicun files non poteva esser cargate. Tu pote continuar con le files cargate con successo.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Le nomine de usator debe continer solmente litteras, numeros e tractos de union. Exemplo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Le nomine de usator debe continer solmente litteras, numeros e tractos de union"
+  "Username must contain only letters, numbers, and hyphens.": "Le nomine de usator debe continer solmente litteras, numeros e tractos de union",
+  "Submitting...": "Submittente...",
+  "Password": "Contrasigno",
+  "Submit": "Submitter",
+  "OK": "Bon",
+  "Link Only": "Solo Ligamine",
+  "View Album Photos": "Vider Photos Del Album",
+  "Enter Username": "Entra Nomine De Usator",
+  "Select Username": "Selectiona Nomine de Usator",
+  "Add Random Digits to Username": "Adder Cifras Aleatori Al Nomine De Usator"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Aploud finish! Prepariin fi siev yu album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Som fail kyaahn upload. Yu kyan kantinyu wid di fail dem we upload soksesful.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Yuuzaniem fi av onli letta, nomba an aifin. Egzampl: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Yuuzanem mos av onli leta, nomba, an aifin"
+  "Username must contain only letters, numbers, and hyphens.": "Yuuzanem mos av onli leta, nomba, an aifin",
+  "Submitting...": "Sendin...",
+  "Password": "Paaswod",
+  "Submit": "Sen",
+  "OK": "Aarait",
+  "Link Only": "Link Ongl",
+  "View Album Photos": "Luk Pahn Albom Pikcha Dem",
+  "Enter Username": "Enta Yuuzaniem",
+  "Select Username": "Pikop Yuuzaniem",
+  "Add Random Digits to Username": "Ad Random Dijit Tu Yuuzaniem"
 }

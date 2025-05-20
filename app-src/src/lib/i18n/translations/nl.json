@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload voltooid! Bezig met je album op te slaan...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Sommige bestanden konden niet worden geüpload. U kunt doorgaan met de bestanden die succesvol zijn geüpload.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Gebruikersnaam mag alleen letters, cijfers en koppeltekens bevatten. Voorbeeld: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Gebruikersnaam mag alleen letters, cijfers en koppeltekens bevatten"
+  "Username must contain only letters, numbers, and hyphens.": "Gebruikersnaam mag alleen letters, cijfers en koppeltekens bevatten",
+  "Submitting...": "Verzenden...",
+  "Password": "Wachtwoord",
+  "Submit": "Verzenden",
+  "OK": "Oké",
+  "Link Only": "Alleen Link",
+  "View Album Photos": "Bekijk Album Foto's",
+  "Enter Username": "Voer Gebruikersnaam In",
+  "Select Username": "Selecteer Gebruikersnaam",
+  "Add Random Digits to Username": "Willekeurige Cijfers Aan Gebruikersnaam Toevoegen"
 }

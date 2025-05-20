@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Чудаккхар чаккхенах дена! Хьа альбом дӏаязъе кийчо еш я...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Цхьадола файлаш чуяккха йиш яц. Шо кхетаме чуяьккха файлашца дIахо болх бе йиш я.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Доакъашхо цӀи меттигаш, номераш а хӀаьрк-хӀаьракаш а мара хила езаш яц. Масала: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Доакъашхочун цIи деза цIера, терахь, дефиса мара чулоацаш хила"
+  "Username must contain only letters, numbers, and hyphens.": "Доакъашхочун цIи деза цIера, терахь, дефиса мара чулоацаш хила",
+  "Submitting...": "ДӀадахийташ...",
+  "Password": "Пароль",
+  "Submit": "ДӀадахьийта",
+  "OK": "Dika",
+  "Link Only": "Хьажорг Мара",
+  "View Album Photos": "Альбома Сурташ Хьажа",
+  "Enter Username": "Доакъашхочун ЦӀи Язъе",
+  "Select Username": "Пайдаланучун Цlи Харжа",
+  "Add Random Digits to Username": "Юзера ЦIера Хаьржа Таьрахьаш Тоха"
 }

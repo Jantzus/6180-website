@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Η μεταφόρτωση ολοκληρώθηκε! Προετοιμασία για αποθήκευση του άλμπουμ σας...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Δεν ήταν δυνατή η μεταφόρτωση ορισμένων αρχείων. Μπορείτε να συνεχίσετε με τα αρχεία που μεταφορτώθηκαν με επιτυχία.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Το όνομα χρήστη πρέπει να περιέχει μόνο γράμματα, αριθμούς και παύλες. Παράδειγμα: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Το όνομα χρήστη πρέπει να περιέχει μόνο γράμματα, αριθμούς και παύλες"
+  "Username must contain only letters, numbers, and hyphens.": "Το όνομα χρήστη πρέπει να περιέχει μόνο γράμματα, αριθμούς και παύλες",
+  "Submitting...": "Υποβολή...",
+  "Password": "Κωδικός Πρόσβασης",
+  "Submit": "Υποβολή",
+  "OK": "Entáxei",
+  "Link Only": "Μόνο Σύνδεσμος",
+  "View Album Photos": "Προβολή Φωτογραφιών Άλμπουμ",
+  "Enter Username": "Εισάγετε Όνομα Χρήστη",
+  "Select Username": "Επιλέξτε Όνομα Χρήστη",
+  "Add Random Digits to Username": "Προσθήκη Τυχαίων Ψηφίων Στο Όνομα Χρήστη"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "A feltöltés befejeződött! Az albumod mentésre készül...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Néhány fájlt nem sikerült feltölteni. Folytathatja a sikeresen feltöltött fájlokkal.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "A felhasználónév csak betűket, számokat és kötőjeleket tartalmazhat. Példa: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "A felhasználónév csak betűket, számokat és kötőjeleket tartalmazhat"
+  "Username must contain only letters, numbers, and hyphens.": "A felhasználónév csak betűket, számokat és kötőjeleket tartalmazhat",
+  "Submitting...": "Küldés...",
+  "Password": "Jelszó",
+  "Submit": "Beküldés",
+  "OK": "Rendben",
+  "Link Only": "Csak Link",
+  "View Album Photos": "Album Fényképek Megtekintése",
+  "Enter Username": "Adja Meg Felhasználónevét",
+  "Select Username": "Válasszon Felhasználónevet",
+  "Add Random Digits to Username": "Véletlenszerű Számjegyek Hozzáadása A Felhasználónévhez"
 }

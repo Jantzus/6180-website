@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Качването е завършено! Подготвя се запазването на албума ви...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Някои файлове не можаха да бъдат качени. Можете да продължите с успешно качените файлове.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Потребителското име трябва да съдържа само букви, цифри и тирета. Пример: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Потребителското име трябва да съдържа само букви, цифри и тирета"
+  "Username must contain only letters, numbers, and hyphens.": "Потребителското име трябва да съдържа само букви, цифри и тирета",
+  "Submitting...": "Изпращане...",
+  "Password": "Парола",
+  "Submit": "Изпращане",
+  "OK": "Dobre",
+  "Link Only": "Само Връзка",
+  "View Album Photos": "Преглед На Снимки В Албума",
+  "Enter Username": "Въведете Потребителско Име",
+  "Select Username": "Избери Потребителско Име",
+  "Add Random Digits to Username": "Добавяне На Случайни Цифри Към Потребителското Име"
 }

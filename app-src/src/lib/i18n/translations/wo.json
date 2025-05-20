@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Yeb gi mat na! Xàjtal ngir denc sa àlbëm...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ay dencukaay mënuñu ko yeb. Mën nga wéy ak dencukaay yi nga yeb ba léegi.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Turu jëfandikukat bi war na ëmb araf yi, limu yi ak redóom yi rekk. Misaal: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Sa tur am na ay araf, ay lim ak ay xarkare rekk"
+  "Username must contain only letters, numbers, and hyphens.": "Sa tur am na ay araf, ay lim ak ay xarkare rekk",
+  "Submitting...": "Di yónnee...",
+  "Password": "Baatu-Jumtukaay",
+  "Submit": "Yónne",
+  "OK": "Baax Na",
+  "Link Only": "Lëkkalekat Rekk",
+  "View Album Photos": "Xool Nataal Yi Album",
+  "Enter Username": "Dugalal Sa Tur",
+  "Select Username": "Tànn Sa Tur Jëfandikukat",
+  "Add Random Digits to Username": "Yokk Lim Yu Sotti Ci Tur Jëfandikukat Bi"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Жүктеу аяқталды! Альбомыңызды сақтауға дайындау...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Кейбір файлдарды жүктеу мүмкін болмады. Сәтті жүктелген файлдармен жалғастыра аласыз.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Пайдаланушы аты тек әріптерден, сандардан және дефистерден тұруы керек. Мысалы: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Пайдаланушы аты тек әріптерден, сандардан және дефистерден тұруы керек"
+  "Username must contain only letters, numbers, and hyphens.": "Пайдаланушы аты тек әріптерден, сандардан және дефистерден тұруы керек",
+  "Submitting...": "Жіберілуде...",
+  "Password": "Құпия Сөз",
+  "Submit": "Жіберу",
+  "OK": "Jaqsı",
+  "Link Only": "Тек Сілтеме",
+  "View Album Photos": "Альбом Фотоларын Қарау",
+  "Enter Username": "Пайдаланушы Атын Енгізіңіз",
+  "Select Username": "Пайдаланушы Атын Таңдау",
+  "Add Random Digits to Username": "Пайдаланушы Атына Кездейсоқ Сандар Қосу"
 }

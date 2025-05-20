@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Karga kompleta! Aparejando para guadrar tu album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Algunos archivos no se pudieron subir. Puede continuar con los archivos subidos con éxito.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "El nombre de usador deve contener solamente letras, numeros i guiones. Eshemplo: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "El nombre de usador deve kontener solamente letras, numeros i guiones"
+  "Username must contain only letters, numbers, and hyphens.": "El nombre de usador deve kontener solamente letras, numeros i guiones",
+  "Submitting...": "Mandando...",
+  "Password": "Kontrasenya",
+  "Submit": "Embiar",
+  "OK": "Bueno",
+  "Link Only": "Solo Atamiento",
+  "View Album Photos": "Ver Fotos Del Álbum",
+  "Enter Username": "Entra Nombre De Usador",
+  "Select Username": "Eskoj Nombre de Usuario",
+  "Add Random Digits to Username": "Adjustar Dijitos Aleatoryos A Nombre De Usador"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "O inkerimós gatisardilós! Kerdyol ready te arakhelos tyiro albúmo...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Nesave fajlura nashtisaile te aven uploadome. Shaj te kontinuis le fajlurenca save sas uploadome mishto.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "O anav e jenesko trobul te avel kerdo numa katar e grafemura, e numerura thaj e crtice. Paramisi: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "O anav le jenesko trebul te avël ferdi grafemurja, ginamurja thaj tire"
+  "Username must contain only letters, numbers, and hyphens.": "O anav le jenesko trebul te avël ferdi grafemurja, ginamurja thaj tire",
+  "Submitting...": "Bichalel...",
+  "Password": "Parola",
+  "Submit": "Bicha",
+  "OK": "Lashalo",
+  "Link Only": "Numa Legatura",
+  "View Album Photos": "Dikh Tshipuri Le Albumeske",
+  "Enter Username": "Ramosaren O Anav E Jenesko",
+  "Select Username": "Alosarav Anav le Jenesko",
+  "Add Random Digits to Username": "Thov Digita Randomisara Ko Anav E Jenesko"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Okutikka kuwedde! Kutegeka okutereka album yo...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Failo ezimu tezisobikedde. Osobola okweyongerayo n'ezo failo ezisobikedde obulungi.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Erinnya ly'akozesa lirina okubaamu nnukuta, enamba n'obukwatu obukiimu byokka. Eky'okulabirako: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Erinnya ry'omukozesa liteekwa okubaamu nnukuta, ennamba n'obukwatu byokka"
+  "Username must contain only letters, numbers, and hyphens.": "Erinnya ry'omukozesa liteekwa okubaamu nnukuta, ennamba n'obukwatu byokka",
+  "Submitting...": "Ntuma...",
+  "Password": "Ekigambo Kyekyama",
+  "Submit": "Weereza",
+  "OK": "Kirungi",
+  "Link Only": "Nyunga Yokka",
+  "View Album Photos": "Laba Ebifaananyi By'Okatabo",
+  "Enter Username": "Wandika Erinnya Lyo",
+  "Select Username": "Londa Erinnya",
+  "Add Random Digits to Username": "Gatta Ennamba Ez'awamu Ku Linnya Lyo"
 }

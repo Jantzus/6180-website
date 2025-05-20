@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Pangunggahan salasai! Manyiapkan untuak manyimpan album angku...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Babarapo file indak dapek diunggah. Sanak dapek malanjuikan jo file nan alah barasil diunggah.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Namo pangguno hanyo buliah mangadung huruf, angko, jo tandoampia. Contoh: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Namo pangguno hanyo buliah baisi huruf, angko, jo tando sambung"
+  "Username must contain only letters, numbers, and hyphens.": "Namo pangguno hanyo buliah baisi huruf, angko, jo tando sambung",
+  "Submitting...": "Mangirin...",
+  "Password": "Kato Sandi",
+  "Submit": "Kirim",
+  "OK": "Lai",
+  "Link Only": "Tautan Sajo",
+  "View Album Photos": "Caliak Poto Album",
+  "Enter Username": "Masuakan Namo Pangguno",
+  "Select Username": "Piliah Namo Pangguno",
+  "Add Random Digits to Username": "Tambahan Angko Acak Ka Namo Pangguno"
 }

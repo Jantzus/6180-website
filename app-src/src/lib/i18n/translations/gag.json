@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Üklemä bitti! Sizin albomunuzu kaydetmeyä hazırlanêr...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Kimi dosyalar yüklenemedi. Başarılı yüklenmiş dosyalarla devam edebilirsiniz.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Kullanıcı adı salt bukvalar, sayılar hem çizgilär içermää lääzım. Örnek: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Kullanıcı adı salt bukvalar, sayılar hem çizgilär lääzım olsun"
+  "Username must contain only letters, numbers, and hyphens.": "Kullanıcı adı salt bukvalar, sayılar hem çizgilär lääzım olsun",
+  "Submitting...": "Yollanêr...",
+  "Password": "Parola",
+  "Submit": "Yolla",
+  "OK": "İyi",
+  "Link Only": "Salt Baalantı",
+  "View Album Photos": "Albüm Resimlerini Gör",
+  "Enter Username": "Kullanıcı Adını Girin",
+  "Select Username": "Kullanıcı Adını Seç",
+  "Add Random Digits to Username": "Kullanıcı Adına Rasget Rakamlar Ekle"
 }

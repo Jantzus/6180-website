@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload complete! Preparing tae save yer album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Some files couldnae be uplaidit. Ye can conteena wi the successfully uplaidit files.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Uiser name should contain anely letters, nummers an hyphens. Example: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Uisername maun contain ainlie letters, nummers, an hyphens"
+  "Username must contain only letters, numbers, and hyphens.": "Uisername maun contain ainlie letters, nummers, an hyphens",
+  "Submitting...": "Submettin...",
+  "Password": "Password",
+  "Submit": "Submit",
+  "OK": "Guid",
+  "Link Only": "Link Juist",
+  "View Album Photos": "View Album Photaes",
+  "Enter Username": "Enter Username",
+  "Select Username": "Select Username",
+  "Add Random Digits to Username": "Add Random Figures Tae Uiser Name"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Telecargament acabat ! Preparacion per enregistrar vòstre album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Certans fichièrs an pas pogut èsser mandats. Podètz contunhar amb los fichièrs mandats amb succès.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Lo nom d'utilizaire deu pas conténer que de letras, de chifras e de tirets. Exemple: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Lo nom d'utilizaire deu conténer solament de letras, de chifras e de tirets"
+  "Username must contain only letters, numbers, and hyphens.": "Lo nom d'utilizaire deu conténer solament de letras, de chifras e de tirets",
+  "Submitting...": "Mandadís...",
+  "Password": "Senhal",
+  "Submit": "Enviar",
+  "OK": "D'Acòrdi",
+  "Link Only": "Sonque Ligam",
+  "View Album Photos": "Veire Fòtos De L'Album",
+  "Enter Username": "Picatz Nom D'Utilizaire",
+  "Select Username": "Seleccionar Nom d'Utilizaire",
+  "Add Random Digits to Username": "Ajustar De Chifras Aleatòris Al Nom D'utilizaire"
 }

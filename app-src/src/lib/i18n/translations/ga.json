@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Uaslódáil críochnaithe! Ag ullmhú chun d'albam a shábháil...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Níorbh fhéidir roinnt comhad a uaslódáil. Is féidir leat leanúint ar aghaidh leis na comhaid a uaslódáladh go rathúil.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Níor cheart go mbeadh ach litreacha, uimhreacha agus fleiscíní in ainm úsáideora. Sampla: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ní mór d'ainm úsáideora litreacha, uimhreacha agus fleiscíní amháin a bheith ann"
+  "Username must contain only letters, numbers, and hyphens.": "Ní mór d'ainm úsáideora litreacha, uimhreacha agus fleiscíní amháin a bheith ann",
+  "Submitting...": "Ag cur isteach...",
+  "Password": "Pasfhocal",
+  "Submit": "Cuir Isteach",
+  "OK": "Ceart Go Leor",
+  "Link Only": "Nasc Amháin",
+  "View Album Photos": "Féach Ar Ghrianghraif An Albaim",
+  "Enter Username": "Cuir Isteach Ainm Úsáideora",
+  "Select Username": "Roghnaigh Ainm Úsáideora",
+  "Add Random Digits to Username": "Cuir Digití Randamacha Le D'ainm Úsáideora"
 }

@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Ka upload la dep! Dang pynlongkam ba ban sumar ia la album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ki kylla pait im lah pat uploading. Phi lah ban ia ktien bad ki kylla im la lah pat pyndep ka jingpynkit.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Ka kyrteng nongbyrniang dei ban don tang ki dak, ki nombar bad ki hyphen. Da kum: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Ka kyrteng nongbynniat kan don tang da ki dak, ki nombar bad ki hyphen"
+  "Username must contain only letters, numbers, and hyphens.": "Ka kyrteng nongbynniat kan don tang da ki dak, ki nombar bad ki hyphen",
+  "Submitting...": "Pyntip...",
+  "Password": "Password",
+  "Submit": "Phah",
+  "OK": "Bha",
+  "Link Only": "Tang La I Link",
+  "View Album Photos": "Peit Ia Ki Dur Jingkynmaw",
+  "Enter Username": "Buh Kyrteng U Nongrep",
+  "Select Username": "Jied Kyrteng U Nongrep",
+  "Add Random Digits to Username": "Pyntap Ki Digit Ba Kyn-um Ha U Kyrteng Nongjngohsiew"
 }

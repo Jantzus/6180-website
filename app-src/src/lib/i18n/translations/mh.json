@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload ejejet! Kebobaik album eo am...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Jet pāāl im rejjab maron kar. Kwomaron wōnmanlok ippān pāāl ko rekar.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Username in aikuj pād tok jeje ko, nomba ko im jabōt ko wōt. Waanjoņok: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Etan rijerbel aikuj wōr jeje, nōmba, im dash wōt"
+  "Username must contain only letters, numbers, and hyphens.": "Etan rijerbel aikuj wōr jeje, nōmba, im dash wōt",
+  "Submitting...": "Jilkintok...",
+  "Password": "Password",
+  "Submit": "Kadeddel",
+  "OK": "Eṃṃan",
+  "Link Only": "Link Wōt",
+  "View Album Photos": "Lale Pija In Album Ko",
+  "Enter Username": "Kadkad Etam In Kojerbale",
+  "Select Username": "Kālet Āt in Kōjerbale",
+  "Add Random Digits to Username": "Kobaiki Ņomba Ilo Kojak Ilo Etam"
 }

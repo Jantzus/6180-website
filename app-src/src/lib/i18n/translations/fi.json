@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Lataus valmis! Valmistellaan albumisi tallentamista...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Joitakin tiedostoja ei voitu ladata. Voit jatkaa onnistuneesti ladattujen tiedostojen kanssa.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Käyttäjänimen tulee sisältää vain kirjaimia, numeroita ja tavuviivoja. Esimerkki: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Käyttäjätunnuksen tulee sisältää vain kirjaimia, numeroita ja tavuviivoja"
+  "Username must contain only letters, numbers, and hyphens.": "Käyttäjätunnuksen tulee sisältää vain kirjaimia, numeroita ja tavuviivoja",
+  "Submitting...": "Lähetetään...",
+  "Password": "Salasana",
+  "Submit": "Lähetä",
+  "OK": "Okei",
+  "Link Only": "Vain Linkki",
+  "View Album Photos": "Näytä Albumin Kuvat",
+  "Enter Username": "Syötä Käyttäjänimi",
+  "Select Username": "Valitse Käyttäjätunnus",
+  "Add Random Digits to Username": "Lisää Satunnaisia Numeroita Käyttäjätunnukseen"
 }

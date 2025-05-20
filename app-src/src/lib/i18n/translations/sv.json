@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Uppladdning klar! Förbereder att spara ditt album...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Vissa filer kunde inte laddas upp. Du kan fortsätta med de filer som laddats upp.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Användarnamn ska endast innehålla bokstäver, siffror och bindestreck. Exempel: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Användarnamnet får endast innehålla bokstäver, siffror och bindestreck"
+  "Username must contain only letters, numbers, and hyphens.": "Användarnamnet får endast innehålla bokstäver, siffror och bindestreck",
+  "Submitting...": "Skickar...",
+  "Password": "Lösenord",
+  "Submit": "Skicka",
+  "OK": "Okej",
+  "Link Only": "Endast Länk",
+  "View Album Photos": "Visa Albumfoton",
+  "Enter Username": "Ange Användarnamn",
+  "Select Username": "Välj Användarnamn",
+  "Add Random Digits to Username": "Lägg Till Slumpmässiga Siffror Till Användarnamn"
 }

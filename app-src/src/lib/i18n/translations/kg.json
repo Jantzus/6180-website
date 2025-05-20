@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Upload me sukisa! Yidika na kubumba album na nge...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Bamosi fichier lenda ve kunatama ve. Nge lenda kulandila na fichier yina me natama mbote.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Nkumbu ya musadisi fweti vanda na ba nkota, ba numelo mpe ba tiré kaka. Mbandu: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Zina ya musadisi fweti kuvwanda kaka na mikanda, bantalu, mpi ba tirets"
+  "Username must contain only letters, numbers, and hyphens.": "Zina ya musadisi fweti kuvwanda kaka na mikanda, bantalu, mpi ba tirets",
+  "Submitting...": "Kutinda...",
+  "Password": "Mpova Ya Kinsweki",
+  "Submit": "Fidi",
+  "OK": "Mbote",
+  "Link Only": "Kaka Singa",
+  "View Album Photos": "Mona Foto Ya Album",
+  "Enter Username": "Kota Nkumbu Ya Musadisi",
+  "Select Username": "Solola Nkumbu ya Musadisi",
+  "Add Random Digits to Username": "Kotia Bantangu Ya Lusakasaka Na Nkumbu Ya Musadi"
 }

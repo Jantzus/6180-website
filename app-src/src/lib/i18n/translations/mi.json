@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Kua oti te tukuake! Kei te whakarite ki te tiaki i tō kōpaki...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Kāore e taea te tuku ētahi kōnae. Ka taea e koe te haere tonu me ngā kōnae kua tukuna pai.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Me whai pū-kupu, tau, tohutohu anake te ingoa kaiwhakamahi. Hei tauira: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Me kapi noa te ingoa kaiwhakamahi i ngā pū, ngā tau, me ngā tohutō"
+  "Username must contain only letters, numbers, and hyphens.": "Me kapi noa te ingoa kaiwhakamahi i ngā pū, ngā tau, me ngā tohutō",
+  "Submitting...": "Kei te tuku...",
+  "Password": "Kupuhipa",
+  "Submit": "Tukua",
+  "OK": "Pai",
+  "Link Only": "Hononga Anake",
+  "View Album Photos": "Tirohia Ngā Whakaahua Pukapuka",
+  "Enter Username": "Tāuru Ingoa Kaiwhakamahi",
+  "Select Username": "Tīpako Ingoa Kaiwhakamahi",
+  "Add Random Digits to Username": "Tāpiri Tau Matapōkere Ki Te Ingoa Kaiwhakamahi"
 }

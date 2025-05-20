@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Tlugħija kompluta! Qed jipprepara biex issejvja l-album tiegħek...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Xi fajls ma setgħux jittellgħu. Tista' tkompli bil-fajls li ttellgħu b'suċċess.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "L-isem tal-utent għandu jkun fih biss ittri, numri u sing tal-inqas. Eżempju: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "L-isem tal-utent għandu jkun fih biss ittri, numri, u sing"
+  "Username must contain only letters, numbers, and hyphens.": "L-isem tal-utent għandu jkun fih biss ittri, numri, u sing",
+  "Submitting...": "Qed jibgħat...",
+  "Password": "Password",
+  "Submit": "Ibgħat",
+  "OK": "Sew",
+  "Link Only": "Link Biss",
+  "View Album Photos": "Ara Ritratti Tal-Album",
+  "Enter Username": "Daħħal Isem L-Utent",
+  "Select Username": "Agħżel Isem l-Utent",
+  "Add Random Digits to Username": "Żid Numri Każwali Mal-Isem Tal-Utent"
 }

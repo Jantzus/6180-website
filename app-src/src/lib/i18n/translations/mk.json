@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Поставувањето е завршено! Подготовка за зачувување на вашиот албум...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Некои датотеки не можеа да се подигнат. Можете да продолжите со успешно подигнатите датотеки.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Корисничкото име треба да содржи само букви, броеви и цртички. Пример: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Корисничкото име мора да содржи само букви, броеви и цртички"
+  "Username must contain only letters, numbers, and hyphens.": "Корисничкото име мора да содржи само букви, броеви и цртички",
+  "Submitting...": "Поднесување...",
+  "Password": "Лозинка",
+  "Submit": "Поднеси",
+  "OK": "Dobro",
+  "Link Only": "Само Врска",
+  "View Album Photos": "Преглед На Фотографии Од Албумот",
+  "Enter Username": "Внесете Корисничко Име",
+  "Select Username": "Избери Корисничко Име",
+  "Add Random Digits to Username": "Додади Случајни Броеви Кон Корисничкото Име"
 }

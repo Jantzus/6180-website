@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Το φόρτωμαν ετελείωσεν! Ετοιμάζ' για να αποθηκεύ' τ' άλμπουμ εσούν...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Κάποια αρχεία κ' εδέβαν να φορτωθούνε. Μπορείτε να συνεχίσετε με τα αρχεία που φορτώθηκαν με επιτυχία.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Τ' όνεμαν τη χρήστε επιτρέπεται να έχ' μαναχόν γράμματα, αριθμούς και παύλες. Παράδειγμαν: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Το όνομα τη χρήστη επιτρέπεται να έχει μόνον γράμματα, αριθμούς και παύλες"
+  "Username must contain only letters, numbers, and hyphens.": "Το όνομα τη χρήστη επιτρέπεται να έχει μόνον γράμματα, αριθμούς και παύλες",
+  "Submitting...": "Στέλκεται...",
+  "Password": "Κωδικόν",
+  "Submit": "Στείλον",
+  "OK": "Καλόν",
+  "Link Only": "Μόνον Σύνδεσμον",
+  "View Album Photos": "Τερέστεν Τη Φωτογραφίας Τη Άλμπουμ",
+  "Enter Username": "Βάλον Όνεμαν Χρήστε",
+  "Select Username": "Επίλεξον Όνεμαν Χρήστε",
+  "Add Random Digits to Username": "Πρόσθεστε Τυχαίους Αριθμούς Ση Χρήστη Ονέματα"
 }

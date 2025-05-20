@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Kaaisa mʉaṱwa yenu! Otji albumbe mbari kuṱuna...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ozomambo ozomwe kaa za kongwa pe. Otjiungura tja zu kongwa nawa otjitilizako.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Omusigwa ye'ero arirunga ozoñete, ozonamba nozorondu nayenye tjiva. Rukwao: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Username must contain only letters, numbers, and hyphens"
+  "Username must contain only letters, numbers, and hyphens.": "Username must contain only letters, numbers, and hyphens",
+  "Submitting...": "Tuma...",
+  "Password": "Oitya Yotjihavero",
+  "Submit": "Tuma",
+  "OK": "Nawa",
+  "Link Only": "Link Owari",
+  "View Album Photos": "Tala Oufano Ualbuma",
+  "Enter Username": "Nyoreke Omuungane Noa",
+  "Select Username": "Hoolitha Oitya Lyoye",
+  "Add Random Digits to Username": "Tjitisa Onombaro tjorandomisa Ku omaṱana waruganisi"
 }

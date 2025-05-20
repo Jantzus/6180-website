@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Nuitsitsineq naammassisimaneqarpoq! Albumit toqqorneqarnera piareersarlugu...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Atuakkiat ilaat qummut ikineqarsinnaanngillat. Atuakkianik qummut ikinilluartunik ingerlaqqissinnaavutit.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Atuisup atiata allattaatinik, kisitsinik stregekanillu imaqartariaqarpoq. Assersuut: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Atuisup aqqa aatsit, kisitsisit attaveqaatillu kisimi imaqartariaqarpoq"
+  "Username must contain only letters, numbers, and hyphens.": "Atuisup aqqa aatsit, kisitsisit attaveqaatillu kisimi imaqartariaqarpoq",
+  "Submitting...": "Nassiunnera...",
+  "Password": "Isissutissaq",
+  "Submit": "Nassiuk",
+  "OK": "Aap",
+  "Link Only": "Innersuut Kisiat",
+  "View Album Photos": "Assilisat Albumimi Isiginiarit",
+  "Enter Username": "Atorfiup Aqqa Allaguk",
+  "Select Username": "Atorneqartup Aqqa Toqqaruk",
+  "Add Random Digits to Username": "Atuisuusumut Nalunaartaasat Ilanngullugit"
 }

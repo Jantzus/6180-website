@@ -138,5 +138,14 @@
   "Upload complete! Preparing to save your album...": "Yuklash yakunlandi! Sizning albomingizni saqlashga tayyorlanmoqda...",
   "Some files could not be uploaded. You can continue with the successfully uploaded files.": "Ba'zi fayllarni yuklab bo'lmadi. Muvaffaqiyatli yuklangan fayllar bilan davom etishingiz mumkin.",
   "Username should contain only letters, numbers and hyphens. Example: john-doe2": "Foydalanuvchi nomi faqat harflar, raqamlar va chiziqchalardan iborat bo'lishi kerak. Misol: john-doe2",
-  "Username must contain only letters, numbers, and hyphens.": "Foydalanuvchi nomi faqat harflar, raqamlar va chiziqchalardan iborat bo'lishi kerak"
+  "Username must contain only letters, numbers, and hyphens.": "Foydalanuvchi nomi faqat harflar, raqamlar va chiziqchalardan iborat bo'lishi kerak",
+  "Submitting...": "Yuborilmoqda...",
+  "Password": "Parol",
+  "Submit": "Yuborish",
+  "OK": "Xop",
+  "Link Only": "Faqat Havola",
+  "View Album Photos": "Albom Rasmlarini Ko'rish",
+  "Enter Username": "Foydalanuvchi Nomini Kiriting",
+  "Select Username": "Foydalanuvchi Nomini Tanlang",
+  "Add Random Digits to Username": "Foydalanuvchi Nomiga Tasodifiy Raqamlar Qo'shish"
 }
