@@ -158,5 +158,7 @@
   "Completed": "完全的",
   "Failed": "失败",
   "({count} failed": "({count} 失败",
-  "({count} in progress)": "({count}) 进行中"
+  "({count} in progress)": "({count}) 进行中",
+  "{count} files": "{count} 个文件",
+  "{count} file": "{count} 文件"
 }

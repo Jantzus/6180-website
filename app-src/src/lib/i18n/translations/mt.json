@@ -158,5 +158,7 @@
   "Completed": "Kompletati",
   "Failed": "Falla",
   "({count} failed": "({count} falla",
-  "({count} in progress)": "({count}) Fil-Progress"
+  "({count} in progress)": "({count}) Fil-Progress",
+  "{count} files": "{count} fajls",
+  "{count} file": "{count} fajl"
 }

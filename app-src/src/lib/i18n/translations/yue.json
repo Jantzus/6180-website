@@ -158,5 +158,7 @@
   "Completed": "完成",
   "Failed": "失敗",
   "({count} failed": "({count} 失敗咗",
-  "({count} in progress)": "({count}) 進行緊"
+  "({count} in progress)": "({count}) 進行緊",
+  "{count} files": "{count} 個檔案",
+  "{count} file": "{count} 檔案"
 }

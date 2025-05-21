@@ -158,5 +158,7 @@
   "Completed": "Dhaammate",
   "Failed": "Fashilaanyaan",
   "({count} failed": "({count} feeyliimte",
-  "({count} in progress)": "({count}) Alboom Hormaa"
+  "({count} in progress)": "({count}) Alboom Hormaa",
+  "{count} files": "{count} faayilaan",
+  "{count} file": "{count} fayla"
 }

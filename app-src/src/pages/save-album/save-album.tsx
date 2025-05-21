@@ -302,7 +302,7 @@ const SaveAlbum = () => {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           {/* Header Section */}
           <HeaderContainer>
-            <ProfileLink href="/my-albums.html">
+            <ProfileLink href="my-albums.html">
               {t('My Albums')}
             </ProfileLink>
 

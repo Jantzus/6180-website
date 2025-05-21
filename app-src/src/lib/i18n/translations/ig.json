@@ -158,5 +158,7 @@
   "Completed": "Emechara",
   "Failed": "Daara Adịghị",
   "({count} failed": "({count} daara adaghị",
-  "({count} in progress)": "({count}) Na-Aga N'ihu"
+  "({count} in progress)": "({count}) Na-Aga N'ihu",
+  "{count} files": "{count} faịlụ",
+  "{count} file": "{count} faịlụ"
 }

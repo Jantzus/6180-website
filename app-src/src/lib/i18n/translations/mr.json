@@ -158,5 +158,7 @@
   "Completed": "पूर्ण",
   "Failed": "अयशस्वी",
   "({count} failed": "({count} अयशस्वी",
-  "({count} in progress)": "({count}) प्रगतीपथावर"
+  "({count} in progress)": "({count}) प्रगतीपथावर",
+  "{count} files": "{count} फाईल्स",
+  "{count} file": "{count} फाईल"
 }

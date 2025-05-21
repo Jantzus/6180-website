@@ -158,5 +158,7 @@
   "Completed": "ܫܡܠܝܐ",
   "Failed": "ܦܫܠ",
   "({count} failed": "({count} ܦܫܠ",
-  "({count} in progress)": "({count}) ܒܦܘܠܚܢܐ"
+  "({count} in progress)": "({count}) ܒܦܘܠܚܢܐ",
+  "{count} files": "{count} ܦܝܠܐ",
+  "{count} file": "{count} ܦܐܝܠܐ"
 }

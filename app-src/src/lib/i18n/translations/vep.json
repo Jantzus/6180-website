@@ -158,5 +158,7 @@
   "Completed": "Loptud",
   "Failed": "Om Ezmärtnu",
   "({count} failed": "({count} ei lähnu",
-  "({count} in progress)": "({count}) Process"
+  "({count} in progress)": "({count}) Process",
+  "{count} files": "{count} failad",
+  "{count} file": "{count} fail"
 }

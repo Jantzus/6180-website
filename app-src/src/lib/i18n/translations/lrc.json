@@ -158,5 +158,7 @@
   "Completed": "تموم بیه",
   "Failed": "شکست خورده",
   "({count} failed": "({count} شکست حرد",
-  "({count} in progress)": "({count}) دأ حالأت پیشرأفت"
+  "({count} in progress)": "({count}) دأ حالأت پیشرأفت",
+  "{count} files": "{count} فایلیا",
+  "{count} file": "{count} فایل"
 }

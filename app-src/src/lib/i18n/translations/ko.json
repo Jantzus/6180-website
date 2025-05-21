@@ -158,5 +158,7 @@
   "Completed": "완전한",
   "Failed": "실패",
   "({count} failed": "({count} 실패했습니다",
-  "({count} in progress)": "({count}) 진행 중"
+  "({count} in progress)": "({count}) 진행 중",
+  "{count} files": "{count} 파일",
+  "{count} file": "{count} 파일"
 }

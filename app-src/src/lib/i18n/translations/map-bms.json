@@ -158,5 +158,7 @@
   "Completed": "Rampung",
   "Failed": "Gagal",
   "({count} failed": "({count} gagal",
-  "({count} in progress)": "({count}) Lagi Mlaku"
+  "({count} in progress)": "({count}) Lagi Mlaku",
+  "{count} files": "{count} berkas",
+  "{count} file": "{count} berkas"
 }

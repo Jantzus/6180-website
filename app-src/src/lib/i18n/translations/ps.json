@@ -158,5 +158,7 @@
   "Completed": "بشپړ شوی",
   "Failed": "ناکام",
   "({count} failed": "({count} پاتې راغی",
-  "({count} in progress)": "({count}) په پرمختګ کې"
+  "({count} in progress)": "({count}) په پرمختګ کې",
+  "{count} files": "{count} دوتنې",
+  "{count} file": "{count} دوتنه"
 }

@@ -158,5 +158,7 @@
   "Completed": "Isahayuksut",
   "Failed": "Kvccayeko",
   "({count} failed": "({count} akvyēckv",
-  "({count} in progress)": "({count}) Ayoktvs"
+  "({count} in progress)": "({count}) Ayoktvs",
+  "{count} files": "{count} cokv",
+  "{count} file": "{count} cokv"
 }

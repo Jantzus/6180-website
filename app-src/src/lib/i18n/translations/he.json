@@ -158,5 +158,7 @@
   "Completed": "הושלם",
   "Failed": "נכשל",
   "({count} failed": "({count} נכשל",
-  "({count} in progress)": "({count}) בתהליך"
+  "({count} in progress)": "({count}) בתהליך",
+  "{count} files": "{count} קבצים",
+  "{count} file": "{count} קובץ"
 }

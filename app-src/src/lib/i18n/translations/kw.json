@@ -158,5 +158,7 @@
   "Completed": "Gorfennys",
   "Failed": "Whyrvys",
   "({count} failed": "({count} fellys",
-  "({count} in progress)": "({count}) Ow Mos"
+  "({count} in progress)": "({count}) Ow Mos",
+  "{count} files": "{count} restrennow",
+  "{count} file": "{count} restren"
 }

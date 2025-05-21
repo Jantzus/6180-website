@@ -158,5 +158,7 @@
   "Completed": "Дууссан",
   "Failed": "Амжилтгүй",
   "({count} failed": "({count} амжилтгүй болсон",
-  "({count} in progress)": "({count}) Явагдаж байна"
+  "({count} in progress)": "({count}) Явагдаж байна",
+  "{count} files": "{count} файл",
+  "{count} file": "{count} файл"
 }

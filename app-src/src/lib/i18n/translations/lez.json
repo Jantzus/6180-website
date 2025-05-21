@@ -158,5 +158,7 @@
   "Completed": "Куьтягьнава",
   "Failed": "Агалкьун тахьана",
   "({count} failed": "({count} агалкьун тахьанач",
-  "({count} in progress)": "({count}) КӀвалахзава"
+  "({count} in progress)": "({count}) КӀвалахзава",
+  "{count} files": "{count} файлар",
+  "{count} file": "{count} файл"
 }

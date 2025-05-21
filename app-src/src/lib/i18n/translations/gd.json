@@ -158,5 +158,7 @@
   "Completed": "Crìochnaichte",
   "Failed": "Dh'fhàillig",
   "({count} failed": "({count} dh'fhàillig",
-  "({count} in progress)": "({count}) A' Dèanamh Adhartais"
+  "({count} in progress)": "({count}) A' Dèanamh Adhartais",
+  "{count} files": "{count} faidhlichean",
+  "{count} file": "{count} faidhle"
 }

@@ -9,7 +9,8 @@ import { FooterSection } from "./FooterSection";
 import { S3_BUCKET_URL } from "@/lib/config";
 import { 
   PolicyIndicator, 
-  AlbumDescription, 
+  AlbumDescription,
+  FileCount,
   State,
   AlbumDates
 } from "@/styles/styled-components.tsx";
@@ -477,6 +478,10 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     {folder.folderDescription}
                   </AlbumDescription>
                 )}
+
+                <FileCount isRTL={isRTL}>
+                  {folder.files.length === 1 ? t('{count} file').replace('{count}', folder.files.length.toString()) : t('{count} files').replace('{count}', folder.files.length.toString())}
+                </FileCount>
 
                 <GalleryContainer>
                   <GalleryScroll isRTL={isRTL}>

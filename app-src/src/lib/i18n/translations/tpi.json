@@ -158,5 +158,7 @@
   "Completed": "Pinisim",
   "Failed": "I No Kamap Gut",
   "({count} failed": "({count} i lus",
-  "({count} in progress)": "({count}) Wok I Go Yet"
+  "({count} in progress)": "({count}) Wok I Go Yet",
+  "{count} files": "{count} fail",
+  "{count} file": "{count} fail"
 }

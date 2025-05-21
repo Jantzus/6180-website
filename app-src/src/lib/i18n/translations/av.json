@@ -158,5 +158,7 @@
   "Completed": "Лъугьун",
   "Failed": "Кӏвечӏо",
   "({count} failed": "({count} данде кколичӏо",
-  "({count} in progress)": "({count}) ТӀубазабулеб"
+  "({count} in progress)": "({count}) ТӀубазабулеб",
+  "{count} files": "{count} файлал",
+  "{count} file": "{count} файл"
 }

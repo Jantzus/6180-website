@@ -158,5 +158,7 @@
   "Completed": "ಪೂರ್ಣಗೊಂಡಿದೆ",
   "Failed": "ವಿಫಲವಾಗಿದೆ",
   "({count} failed": "({count} ವಿಫಲವಾಗಿದೆ",
-  "({count} in progress)": "({count}) ಪ್ರಗತಿಯಲ್ಲಿದೆ"
+  "({count} in progress)": "({count}) ಪ್ರಗತಿಯಲ್ಲಿದೆ",
+  "{count} files": "{count} ಕಡತಗಳು",
+  "{count} file": "{count} ಕಡತ"
 }

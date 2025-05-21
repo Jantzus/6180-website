@@ -158,5 +158,7 @@
   "Completed": "Помалӧм",
   "Failed": "Эз артмы",
   "({count} failed": "({count} эз артмы",
-  "({count} in progress)": "({count}) Водзӧ Мунӧ"
+  "({count} in progress)": "({count}) Водзӧ Мунӧ",
+  "{count} files": "{count} файлъяс",
+  "{count} file": "{count} файл"
 }

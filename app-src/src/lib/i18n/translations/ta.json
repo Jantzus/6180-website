@@ -158,5 +158,7 @@
   "Completed": "நிறைவு",
   "Failed": "தோல்வி",
   "({count} failed": "({count} தோல்வியடைந்தது",
-  "({count} in progress)": "({count}) முன்னேற்றத்தில்"
+  "({count} in progress)": "({count}) முன்னேற்றத்தில்",
+  "{count} files": "{count} கோப்புகள்",
+  "{count} file": "{count} கோப்பு"
 }

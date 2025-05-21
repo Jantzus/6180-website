@@ -158,5 +158,7 @@
   "Completed": "Ofsleuten",
   "Failed": "Mislokt",
   "({count} failed": "({count} mislokt",
-  "({count} in progress)": "({count}) Gaonde"
+  "({count} in progress)": "({count}) Gaonde",
+  "{count} files": "{count} bestanden",
+  "{count} file": "{count} bestaand"
 }

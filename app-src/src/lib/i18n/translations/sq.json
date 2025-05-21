@@ -158,5 +158,7 @@
   "Completed": "Përfunduar",
   "Failed": "Dështoi",
   "({count} failed": "({count} dështoi",
-  "({count} in progress)": "({count}) Në Vazhdim"
+  "({count} in progress)": "({count}) Në Vazhdim",
+  "{count} files": "{count} skedarë",
+  "{count} file": "{count} skedar"
 }

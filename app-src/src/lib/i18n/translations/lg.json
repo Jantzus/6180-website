@@ -158,5 +158,7 @@
   "Completed": "Ewedde",
   "Failed": "Kiremye",
   "({count} failed": "({count} kigaanye",
-  "({count} in progress)": "({count}) Mu Nkulunkulizo"
+  "({count} in progress)": "({count}) Mu Nkulunkulizo",
+  "{count} files": "{count} fayiro",
+  "{count} file": "{count} fayiro"
 }

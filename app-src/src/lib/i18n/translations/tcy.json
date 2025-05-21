@@ -158,5 +158,7 @@
   "Completed": "ಕಂಡಿಯಾಂಡ್",
   "Failed": "ಸೋಲಾಂಡ್",
   "({count} failed": "({count} ಪಾಡ್ಪುಂಡು",
-  "({count} in progress)": "({count}) ನಡಪುಡುಂಡು"
+  "({count} in progress)": "({count}) ನಡಪುಡುಂಡು",
+  "{count} files": "{count} ಕಡತೊಲು",
+  "{count} file": "{count} ಕಡತ"
 }

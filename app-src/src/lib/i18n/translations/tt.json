@@ -158,5 +158,7 @@
   "Completed": "Тәмамланды",
   "Failed": "Уңышсыз",
   "({count} failed": "({count} уңышсыз",
-  "({count} in progress)": "({count}) Барышта"
+  "({count} in progress)": "({count}) Барышта",
+  "{count} files": "{count} файллар",
+  "{count} file": "{count} файл"
 }

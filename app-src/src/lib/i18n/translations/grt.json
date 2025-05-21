@@ -158,5 +158,7 @@
   "Completed": "On•aha",
   "Failed": "Fa'sese",
   "({count} failed": "({count} failure onga",
-  "({count} in progress)": "({count}) Dal·nangoba"
+  "({count} in progress)": "({count}) Dal·nangoba",
+  "{count} files": "{count} filko",
+  "{count} file": "{count} file"
 }

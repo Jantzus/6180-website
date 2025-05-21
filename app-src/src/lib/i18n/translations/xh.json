@@ -158,5 +158,7 @@
   "Completed": "Igqityiwe",
   "Failed": "Yophukile",
   "({count} failed": "({count} ayiphumelelanga",
-  "({count} in progress)": "({count}) Iyaqhubeka"
+  "({count} in progress)": "({count}) Iyaqhubeka",
+  "{count} files": "{count} iifayile",
+  "{count} file": "{count} ifayile"
 }

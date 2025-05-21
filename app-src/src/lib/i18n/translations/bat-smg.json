@@ -158,5 +158,7 @@
   "Completed": "Užbaigta",
   "Failed": "Nepavīka",
   "({count} failed": "({count} napavieka",
-  "({count} in progress)": "({count}) Vīkst"
+  "({count} in progress)": "({count}) Vīkst",
+  "{count} files": "{count} failāi",
+  "{count} file": "{count} failas"
 }

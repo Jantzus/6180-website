@@ -158,5 +158,7 @@
   "Completed": "Cumplitatu",
   "Failed": "Fallitu",
   "({count} failed": "({count} falliu",
-  "({count} in progress)": "({count}) Nta 'U Cursu"
+  "({count} in progress)": "({count}) Nta 'U Cursu",
+  "{count} files": "{count} file",
+  "{count} file": "{count} file"
 }

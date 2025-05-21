@@ -158,5 +158,7 @@
   "Completed": "做好",
   "Failed": "Sit-pâi",
   "({count} failed": "({count} sṳ̂t-phai",
-  "({count} in progress)": "({count}) Chṳn-hòng-chûng"
+  "({count} in progress)": "({count}) Chṳn-hòng-chûng",
+  "{count} files": "{count} vùn-khien",
+  "{count} file": "{count} vùn-kiâ"
 }

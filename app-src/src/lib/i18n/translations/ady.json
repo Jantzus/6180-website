@@ -158,5 +158,7 @@
   "Completed": "Зэфэгъэхъагъэ",
   "Failed": "Къыдэхъугъэп",
   "({count} failed": "({count} къызэӏахьэкӏагъ",
-  "({count} in progress)": "({count}) Йылэрэкӏо"
+  "({count} in progress)": "({count}) Йылэрэкӏо",
+  "{count} files": "{count} файлхэр",
+  "{count} file": "{count} файл"
 }

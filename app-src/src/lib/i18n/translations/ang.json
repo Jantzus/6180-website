@@ -158,5 +158,7 @@
   "Completed": "Gefylled",
   "Failed": "Āfēoll",
   "({count} failed": "({count} fēoll",
-  "({count} in progress)": "({count}) On Forþġange"
+  "({count} in progress)": "({count}) On Forþġange",
+  "{count} files": "{count} fīlas",
+  "{count} file": "{count} fíl"
 }

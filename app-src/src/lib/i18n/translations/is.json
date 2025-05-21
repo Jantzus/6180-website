@@ -158,5 +158,7 @@
   "Completed": "Lokið",
   "Failed": "Mistókst",
   "({count} failed": "({count} mistókst",
-  "({count} in progress)": "({count}) Í Vinnslu"
+  "({count} in progress)": "({count}) Í Vinnslu",
+  "{count} files": "{count} skrár",
+  "{count} file": "{count} skrá"
 }

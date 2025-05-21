@@ -158,5 +158,7 @@
   "Completed": "Baigtas",
   "Failed": "Nepavyko",
   "({count} failed": "({count} nepavyko",
-  "({count} in progress)": "({count}) Vyksta"
+  "({count} in progress)": "({count}) Vyksta",
+  "{count} files": "{count} failai",
+  "{count} file": "{count} failas"
 }

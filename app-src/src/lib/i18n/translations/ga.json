@@ -158,5 +158,7 @@
   "Completed": "Críochnaithe",
   "Failed": "Teipthe",
   "({count} failed": "({count} teipthe",
-  "({count} in progress)": "({count}) Ar Siúl"
+  "({count} in progress)": "({count}) Ar Siúl",
+  "{count} files": "{count} comhaid",
+  "{count} file": "{count} comhad"
 }

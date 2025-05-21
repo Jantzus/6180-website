@@ -158,5 +158,7 @@
   "Completed": "ਪੂਰਾ ਕੀਤਾ",
   "Failed": "ਅਸਫਲ",
   "({count} failed": "({count} ਅਸਫਲ ਰਿਹਾ",
-  "({count} in progress)": "({count}) ਚੱਲ ਰਿਹਾ ਹੈ"
+  "({count} in progress)": "({count}) ਚੱਲ ਰਿਹਾ ਹੈ",
+  "{count} files": "{count} ਫਾਈਲਾਂ",
+  "{count} file": "{count} ਫਾਈਲ"
 }

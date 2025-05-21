@@ -158,5 +158,7 @@
   "Completed": "تمؤم بؤبؤ",
   "Failed": "ناموفق",
   "({count} failed": "({count} شکست بخورده",
-  "({count} in progress)": "({count}) دَر حالِ پیشرفت"
+  "({count} in progress)": "({count}) دَر حالِ پیشرفت",
+  "{count} files": "{count} پرونده‌ئن",
+  "{count} file": "{count} پرونده"
 }

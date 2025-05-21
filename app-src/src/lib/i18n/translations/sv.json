@@ -158,5 +158,7 @@
   "Completed": "Avslutad",
   "Failed": "Misslyckades",
   "({count} failed": "({count} misslyckades",
-  "({count} in progress)": "({count}) Pågående"
+  "({count} in progress)": "({count}) Pågående",
+  "{count} files": "{count} filer",
+  "{count} file": "{count} fil"
 }

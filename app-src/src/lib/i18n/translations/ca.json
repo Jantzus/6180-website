@@ -158,5 +158,7 @@
   "Completed": "Completat",
   "Failed": "Ha Fallat",
   "({count} failed": "({count} ha fallat",
-  "({count} in progress)": "({count}) En Progrés"
+  "({count} in progress)": "({count}) En Progrés",
+  "{count} files": "{count} fitxers",
+  "{count} file": "{count} fitxer"
 }

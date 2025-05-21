@@ -158,5 +158,7 @@
   "Completed": "Wanceng",
   "Failed": "Sit-baij",
   "({count} failed": "({count} sipsaek",
-  "({count} in progress)": "({count}) Dauqlai Yinghong"
+  "({count} in progress)": "({count}) Dauqlai Yinghong",
+  "{count} files": "{count} vwnzgenj",
+  "{count} file": "{count} vwnz-cient"
 }

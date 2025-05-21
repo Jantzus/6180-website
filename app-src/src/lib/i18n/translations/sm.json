@@ -158,5 +158,7 @@
   "Completed": "Mae'a",
   "Failed": "Ua Le Manuia",
   "({count} failed": "({count} ua le manuia",
-  "({count} in progress)": "({count}) Sologa"
+  "({count} in progress)": "({count}) Sologa",
+  "{count} files": "{count} faila",
+  "{count} file": "{count} faila"
 }

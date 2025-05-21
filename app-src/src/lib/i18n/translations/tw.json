@@ -158,5 +158,7 @@
   "Completed": "Awie",
   "Failed": "Adi Nkɔso",
   "({count} failed": "({count} anhwehwɛ",
-  "({count} in progress)": "({count}) Rekɔ So"
+  "({count} in progress)": "({count}) Rekɔ So",
+  "{count} files": "{count} nfaele",
+  "{count} file": "{count} fael"
 }

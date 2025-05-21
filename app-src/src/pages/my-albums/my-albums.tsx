@@ -46,9 +46,9 @@ const MyAlbums = () => {
   const fileUploadProcessor = useFileUploadProcessor((folderId) => {
     // Custom navigation callback for the album upload flow
     if (folderId) {
-      window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
+      window.location.href = `save-album.html?folderId=${encodeURIComponent(folderId)}`;
     } else {
-      window.location.href = "/save-album.html";
+      window.location.href = "save-album.html";
     }
   });
   
@@ -76,11 +76,8 @@ const MyAlbums = () => {
     <>
       <GlobalStyle />    
       <AppContainer isRTL={isRTL}>
-        <Header 
+        <Header
           publicUsername={publicUsername}
-          isUploading={isUploading}
-          openFilePicker={openFilePicker}
-          cognitoUsername={cognitoUsername}
         />
 
         {/* Create Album button moved here - before the search bar */}

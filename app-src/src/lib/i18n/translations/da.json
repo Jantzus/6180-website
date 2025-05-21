@@ -158,5 +158,7 @@
   "Completed": "Afsluttet",
   "Failed": "Mislykkedes",
   "({count} failed": "({count} mislykkedes",
-  "({count} in progress)": "({count}) I Gang"
+  "({count} in progress)": "({count}) I Gang",
+  "{count} files": "{count} filer",
+  "{count} file": "{count} fil"
 }

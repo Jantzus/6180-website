@@ -9,7 +9,7 @@ export const LogoutButton: React.FC<LogoutButtonProps> = ({ t }) => {
   const handleLogout = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     localStorage.clear();
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
   };
 
   return (

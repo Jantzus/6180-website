@@ -158,5 +158,7 @@
   "Completed": "Ho Fhela",
   "Failed": "Yo Kundelwa",
   "({count} failed": "({count} yo kundelwa",
-  "({count} in progress)": "({count}) U Khou Bvela"
+  "({count} in progress)": "({count}) U Khou Bvela",
+  "{count} files": "{count} dzifarila",
+  "{count} file": "{count} faela"
 }

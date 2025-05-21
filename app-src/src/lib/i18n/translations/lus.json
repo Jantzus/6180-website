@@ -158,5 +158,7 @@
   "Completed": "Zawh Tawh",
   "Failed": "A tlawlh",
   "({count} failed": "({count} a tlawlh",
-  "({count} in progress)": "({count}) Lai Mek Mek"
+  "({count} in progress)": "({count}) Lai Mek Mek",
+  "{count} files": "{count} fialin",
+  "{count} file": "{count} file"
 }

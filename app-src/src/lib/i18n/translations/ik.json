@@ -158,5 +158,7 @@
   "Completed": "Naatchuq",
   "Failed": "Qauġraaŋaruq",
   "({count} failed": "({count} piḷḷuaqtuq",
-  "({count} in progress)": "({count}) Qaagruaq"
+  "({count} in progress)": "({count}) Qaagruaq",
+  "{count} files": "{count} failich",
+  "{count} file": "{count} faili"
 }

@@ -158,5 +158,7 @@
   "Completed": "Ałtsʼáʼázkááʼ",
   "Failed": "Doo Bíhwiinidzin Da",
   "({count} failed": "({count} baa doo hózhǫ́ǫ da",
-  "({count} in progress)": "({count}) Naalyéhé"
+  "({count} in progress)": "({count}) Naalyéhé",
+  "{count} files": "{count} naaltsoos",
+  "{count} file": "{count} naaltsoos"
 }

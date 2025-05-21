@@ -158,5 +158,7 @@
   "Completed": "Ихаркоуп",
   "Failed": "Иқәымҿиеит",
   "({count} failed": "({count} даҧрахеит",
-  "({count} in progress)": "({count}) Аус Имоуп"
+  "({count} in progress)": "({count}) Аус Имоуп",
+  "{count} files": "{count} афаилқәа",
+  "{count} file": "{count} афаил"
 }

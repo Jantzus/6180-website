@@ -158,5 +158,7 @@
   "Completed": "Awe",
   "Failed": "Ayeke Pëpe",
   "({count} failed": "({count} ayeke ape",
-  "({count} in progress)": "({count}) A-Gue Na Kozo"
+  "({count} in progress)": "({count}) A-Gue Na Kozo",
+  "{count} files": "{count} dossier",
+  "{count} file": "{count} fichier"
 }

@@ -158,5 +158,7 @@
   "Completed": "जोबथायाव",
   "Failed": "फेल",
   "({count} failed": "({count} फेलें जाबाय",
-  "({count} in progress)": "({count}) आगबारि जाबाय"
+  "({count} in progress)": "({count}) आगबारि जाबाय",
+  "{count} files": "{count} फाइलफोर",
+  "{count} file": "{count} फाइल"
 }

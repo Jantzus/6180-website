@@ -158,5 +158,7 @@
   "Completed": "Imekamilika",
   "Failed": "Imeshindwa",
   "({count} failed": "({count} imeshindwa",
-  "({count} in progress)": "({count}) Inaendelea"
+  "({count} in progress)": "({count}) Inaendelea",
+  "{count} files": "{count} faili",
+  "{count} file": "{count} faili"
 }

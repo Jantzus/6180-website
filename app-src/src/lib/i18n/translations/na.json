@@ -158,5 +158,7 @@
   "Completed": "Oreit",
   "Failed": "Itubakon",
   "({count} failed": "({count} ebak",
-  "({count} in progress)": "({count}) Ogiten Aiquen"
+  "({count} in progress)": "({count}) Ogiten Aiquen",
+  "{count} files": "{count} fail",
+  "{count} file": "{count} peba"
 }

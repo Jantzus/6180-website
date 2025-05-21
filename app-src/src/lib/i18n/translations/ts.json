@@ -158,5 +158,7 @@
   "Completed": "Hetile",
   "Failed": "Tsandzekile",
   "({count} failed": "({count} swi tsandzekile",
-  "({count} in progress)": "({count}) Ku Le Ka Ku Humelela"
+  "({count} in progress)": "({count}) Ku Le Ka Ku Humelela",
+  "{count} files": "{count} tifayela",
+  "{count} file": "{count} fayili"
 }

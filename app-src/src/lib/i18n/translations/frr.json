@@ -158,5 +158,7 @@
   "Completed": "Fäärdig",
   "Failed": "Misjongen",
   "({count} failed": "({count} skidjert",
-  "({count} in progress)": "({count}) Uun Fertsjüüs"
+  "({count} in progress)": "({count}) Uun Fertsjüüs",
+  "{count} files": "{count} datein",
+  "{count} file": "{count} datei"
 }

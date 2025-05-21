@@ -158,5 +158,7 @@
   "Completed": "Esili",
   "Failed": "Elongi Te",
   "({count} failed": "({count} elongi tɛ̂",
-  "({count} in progress)": "({count}) Ezali Kokende"
+  "({count} in progress)": "({count}) Ezali Kokende",
+  "{count} files": "{count} fichier",
+  "{count} file": "{count} fichier"
 }

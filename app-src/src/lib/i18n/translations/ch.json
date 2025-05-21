@@ -158,5 +158,7 @@
   "Completed": "Ma Kumple",
   "Failed": "Mafet",
   "({count} failed": "({count} ti mafatto",
-  "({count} in progress)": "({count}) Kumekåkåo"
+  "({count} in progress)": "({count}) Kumekåkåo",
+  "{count} files": "{count} file siha",
+  "{count} file": "{count} atkibu"
 }

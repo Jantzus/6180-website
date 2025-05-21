@@ -158,5 +158,7 @@
   "Completed": "ᱯᱩᱨᱟᱹᱣ",
   "Failed": "ᱯᱷᱮᱞ",
   "({count} failed": "({count} ᱵᱷᱟᱜᱤ ᱵᱟᱝ ᱦᱩᱭ ᱟᱠᱟᱱᱟ",
-  "({count} in progress)": "({count}) ᱯᱟᱹᱨᱥᱤ ᱨᱮ"
+  "({count} in progress)": "({count}) ᱯᱟᱹᱨᱥᱤ ᱨᱮ",
+  "{count} files": "{count} ᱨᱮᱠᱚᱰᱠᱚ",
+  "{count} file": "{count} ᱨᱮᱠᱚᱰ"
 }

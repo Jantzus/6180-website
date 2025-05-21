@@ -158,5 +158,7 @@
   "Completed": "Hoàn Thành",
   "Failed": "Thất Bại",
   "({count} failed": "({count} thất bại",
-  "({count} in progress)": "({count}) Đang Tiến Hành"
+  "({count} in progress)": "({count}) Đang Tiến Hành",
+  "{count} files": "{count} tệp",
+  "{count} file": "{count} tệp"
 }

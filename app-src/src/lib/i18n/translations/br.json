@@ -158,5 +158,7 @@
   "Completed": "Echuet",
   "Failed": "C'hwitadenn",
   "({count} failed": "({count} c'hwitet",
-  "({count} in progress)": "({count}) E Mont War-Raok"
+  "({count} in progress)": "({count}) E Mont War-Raok",
+  "{count} files": "{count} restr",
+  "{count} file": "{count} restr"
 }

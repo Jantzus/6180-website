@@ -158,5 +158,7 @@
   "Completed": "Go Weditswe",
   "Failed": "E Paletswe",
   "({count} failed": "({count} e paletswe",
-  "({count} in progress)": "({count}) E Tsweletse"
+  "({count} in progress)": "({count}) E Tsweletse",
+  "{count} files": "{count} difaele",
+  "{count} file": "{count} faele"
 }

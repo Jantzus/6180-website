@@ -158,5 +158,7 @@
   "Completed": "Fullført",
   "Failed": "Mislukka",
   "({count} failed": "({count} mislukka",
-  "({count} in progress)": "({count}) I Prosess"
+  "({count} in progress)": "({count}) I Prosess",
+  "{count} files": "{count} filer",
+  "{count} file": "{count} fil"
 }

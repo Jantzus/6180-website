@@ -158,5 +158,7 @@
   "Completed": "Ετελέθεν",
   "Failed": "Αποτυχία",
   "({count} failed": "({count} κὶ επέτυχεν",
-  "({count} in progress)": "({count}) Σα Εξέλιξη"
+  "({count} in progress)": "({count}) Σα Εξέλιξη",
+  "{count} files": "{count} αρχεία",
+  "{count} file": "{count} αρχείον"
 }

@@ -158,5 +158,7 @@
   "Completed": "Pabeigts",
   "Failed": "Neizdevās",
   "({count} failed": "({count} neizdevās",
-  "({count} in progress)": "({count}) Procesā"
+  "({count} in progress)": "({count}) Procesā",
+  "{count} files": "{count} faili",
+  "{count} file": "{count} fails"
 }

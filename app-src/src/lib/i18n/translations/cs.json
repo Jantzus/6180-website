@@ -158,5 +158,7 @@
   "Completed": "Dokončeno",
   "Failed": "Selhalo",
   "({count} failed": "({count} selhalo",
-  "({count} in progress)": "({count}) Probíhá"
+  "({count} in progress)": "({count}) Probíhá",
+  "{count} files": "{count} souborů",
+  "{count} file": "{count} soubor"
 }

@@ -158,5 +158,7 @@
   "Completed": "'t Is Ekloard",
   "Failed": "Mislukt",
   "({count} failed": "({count} mislukt",
-  "({count} in progress)": "({count}) Bezig"
+  "({count} in progress)": "({count}) Bezig",
+  "{count} files": "{count} bestanden",
+  "{count} file": "{count} bestand"
 }

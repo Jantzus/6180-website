@@ -158,5 +158,7 @@
   "Completed": "Phethiloe",
   "Failed": "Hlolehile",
   "({count} failed": "({count} e hlolehile",
-  "({count} in progress)": "({count}) E Mocheng"
+  "({count} in progress)": "({count}) E Mocheng",
+  "{count} files": "{count} difaele",
+  "{count} file": "{count} faele"
 }

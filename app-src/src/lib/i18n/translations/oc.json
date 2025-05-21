@@ -158,5 +158,7 @@
   "Completed": "Acabat",
   "Failed": "Fracassat",
   "({count} failed": "({count} a fracassat",
-  "({count} in progress)": "({count}) En Cors"
+  "({count} in progress)": "({count}) En Cors",
+  "{count} files": "{count} fichièrs",
+  "{count} file": "{count} fichièr"
 }

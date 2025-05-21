@@ -158,5 +158,7 @@
   "Completed": "Hunt'asqa",
   "Failed": "Mana Atisqa",
   "({count} failed": "({count} manam atipasqachu",
-  "({count} in progress)": "({count}) Ñawpaqman Richkan"
+  "({count} in progress)": "({count}) Ñawpaqman Richkan",
+  "{count} files": "{count} willañiqikuna",
+  "{count} file": "{count} willana"
 }

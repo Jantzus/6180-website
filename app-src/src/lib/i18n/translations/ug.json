@@ -158,5 +158,7 @@
   "Completed": "تاماملاندى",
   "Failed": "مەغلۇپ بولدى",
   "({count} failed": "({count} مەغلۇپ بولدى",
-  "({count} in progress)": "({count}) داۋاملىشىۋاتىدۇ"
+  "({count} in progress)": "({count}) داۋاملىشىۋاتىدۇ",
+  "{count} files": "{count} ھۆججەتلەر",
+  "{count} file": "{count} ھۆججەت"
 }

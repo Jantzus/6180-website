@@ -158,5 +158,7 @@
   "Completed": "Kompletu",
   "Failed": "La Konsege",
   "({count} failed": "({count} la susesu",
-  "({count} in progress)": "({count}) Hela Hela"
+  "({count} in progress)": "({count}) Hela Hela",
+  "{count} files": "{count} arquivo",
+  "{count} file": "{count} arkivu"
 }

@@ -158,5 +158,7 @@
   "Completed": "Мучашлыме",
   "Failed": "Ышталтын огыл",
   "({count} failed": "({count} ыш лек",
-  "({count} in progress)": "({count}) Шуйна"
+  "({count} in progress)": "({count}) Шуйна",
+  "{count} files": "{count} файл-влак",
+  "{count} file": "{count} файл"
 }

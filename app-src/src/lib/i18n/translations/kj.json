@@ -158,5 +158,7 @@
   "Completed": "Ya Mana",
   "Failed": "Sha Shi Shashinwe",
   "({count} failed": "({count} ya puka",
-  "({count} in progress)": "({count}) Ku Tendeka"
+  "({count} in progress)": "({count}) Ku Tendeka",
+  "{count} files": "{count} fail",
+  "{count} file": "{count} faili"
 }

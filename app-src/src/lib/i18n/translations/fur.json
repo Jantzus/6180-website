@@ -158,5 +158,7 @@
   "Completed": "Completât",
   "Failed": "Falît",
   "({count} failed": "({count} falît",
-  "({count} in progress)": "({count}) In Cors"
+  "({count} in progress)": "({count}) In Cors",
+  "{count} files": "{count} files",
+  "{count} file": "{count} file"
 }

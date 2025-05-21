@@ -158,5 +158,7 @@
   "Completed": "Compie",
   "Failed": "Fiascatu",
   "({count} failed": "({count} fiascatu",
-  "({count} in progress)": "({count}) In Corsu"
+  "({count} in progress)": "({count}) In Corsu",
+  "{count} files": "{count} schedarii",
+  "{count} file": "{count} schedariu"
 }

@@ -158,5 +158,7 @@
   "Completed": "Kupera",
   "Failed": "Hatina Kufanira",
   "({count} failed": "({count} yakundikana",
-  "({count} in progress)": "({count}) Munzira"
+  "({count} in progress)": "({count}) Munzira",
+  "{count} files": "{count} mafaira",
+  "{count} file": "{count} faira"
 }

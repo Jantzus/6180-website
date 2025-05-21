@@ -158,5 +158,7 @@
   "Completed": "Kumpletu",
   "Failed": "Mengapigul",
   "({count} failed": "({count} mebigo",
-  "({count} in progress)": "({count}) King Pamaglakad"
+  "({count} in progress)": "({count}) King Pamaglakad",
+  "{count} files": "{count} file",
+  "{count} file": "{count} file"
 }

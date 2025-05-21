@@ -158,5 +158,7 @@
   "Completed": "Бартбивгьусса",
   "Failed": "Къабул къавхьуссар",
   "({count} failed": "({count} бартакъавхьуна",
-  "({count} in progress)": "({count}) Буллай Бур"
+  "({count} in progress)": "({count}) Буллай Бур",
+  "{count} files": "{count} файллу",
+  "{count} file": "{count} файл"
 }

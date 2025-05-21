@@ -158,5 +158,7 @@
   "Completed": "Kũrĩkĩrĩka",
   "Failed": "Kũrega",
   "({count} failed": "({count} kũrega",
-  "({count} in progress)": "({count}) Thiiagĩra Mbere"
+  "({count} in progress)": "({count}) Thiiagĩra Mbere",
+  "{count} files": "{count} faili",
+  "{count} file": "{count} faili"
 }

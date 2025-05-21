@@ -158,5 +158,7 @@
   "Completed": "Oân-sêng",
   "Failed": "Sit-pāi",
   "({count} failed": "({count} sit-pāi",
-  "({count} in progress)": "({count}) Chìn-hêng-tiong"
+  "({count} in progress)": "({count}) Chìn-hêng-tiong",
+  "{count} files": "{count} tóng-àn",
+  "{count} file": "{count} tóng-àn"
 }

@@ -158,5 +158,7 @@
   "Completed": "Wowu Nu",
   "Failed": "Medo Dzi O",
   "({count} failed": "({count} mede dzi o",
-  "({count} in progress)": "({count}) Le Edɔ Yi Me"
+  "({count} in progress)": "({count}) Le Edɔ Yi Me",
+  "{count} files": "{count} faɛlwo",
+  "{count} file": "{count} faɛl"
 }

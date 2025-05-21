@@ -158,5 +158,7 @@
   "Completed": "Voltooi",
   "Failed": "Misluk",
   "({count} failed": "({count} misluk",
-  "({count} in progress)": "({count}) Aan Die Gang"
+  "({count} in progress)": "({count}) Aan Die Gang",
+  "{count} files": "{count} lêers",
+  "{count} file": "{count} lêer"
 }

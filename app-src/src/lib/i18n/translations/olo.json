@@ -158,5 +158,7 @@
   "Completed": "Loppiettu",
   "Failed": "Epeonnistui",
   "({count} failed": "({count} epäonnistui",
-  "({count} in progress)": "({count}) Menossa"
+  "({count} in progress)": "({count}) Menossa",
+  "{count} files": "{count} failad",
+  "{count} file": "{count} failu"
 }

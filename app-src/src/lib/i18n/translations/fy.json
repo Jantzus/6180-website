@@ -158,5 +158,7 @@
   "Completed": "Foltôge",
   "Failed": "Mislearre",
   "({count} failed": "({count} mislearre",
-  "({count} in progress)": "({count}) Dwaande"
+  "({count} in progress)": "({count}) Dwaande",
+  "{count} files": "{count} triemmen",
+  "{count} file": "{count} triem"
 }

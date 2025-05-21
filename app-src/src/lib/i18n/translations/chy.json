@@ -158,5 +158,7 @@
   "Completed": "Énanéehóó'oo",
   "Failed": "Éhe'tónetanóhtōve",
   "({count} failed": "({count} éohke'háanehe",
-  "({count} in progress)": "({count}) Nėhéónėstse"
+  "({count} in progress)": "({count}) Nėhéónėstse",
+  "{count} files": "{count} mâhpéhévôtse",
+  "{count} file": "{count} mȧhpe'o"
 }

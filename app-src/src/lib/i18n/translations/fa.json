@@ -158,5 +158,7 @@
   "Completed": "تکمیل شد",
   "Failed": "شکست خورد",
   "({count} failed": "({count} شکست خورد",
-  "({count} in progress)": "({count}) در حال پیشرفت"
+  "({count} in progress)": "({count}) در حال پیشرفت",
+  "{count} files": "{count} پرونده",
+  "{count} file": "{count} پرونده"
 }

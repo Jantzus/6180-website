@@ -158,5 +158,7 @@
   "Completed": "Avjeschloßße",
   "Failed": "Jescheitert",
   "({count} failed": "({count} fählschlare",
-  "({count} in progress)": "({count}) Em Jang"
+  "({count} in progress)": "({count}) Em Jang",
+  "{count} files": "{count} dateie",
+  "{count} file": "{count} datei"
 }

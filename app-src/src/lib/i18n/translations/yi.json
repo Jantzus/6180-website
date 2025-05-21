@@ -158,5 +158,7 @@
   "Completed": "געענדיקט",
   "Failed": "דורכגעפאלן",
   "({count} failed": "({count} דורכגעפאלן",
-  "({count} in progress)": "({count}) אין פארשריט"
+  "({count} in progress)": "({count}) אין פארשריט",
+  "{count} files": "{count} טעקעס",
+  "{count} file": "{count} טעקע"
 }

@@ -158,5 +158,7 @@
   "Completed": "Puura",
   "Failed": "Fail Hoe Gais",
   "({count} failed": "({count} fail hoe gais",
-  "({count} in progress)": "({count}) Chalat Hae"
+  "({count} in progress)": "({count}) Chalat Hae",
+  "{count} files": "{count} files",
+  "{count} file": "{count} file"
 }

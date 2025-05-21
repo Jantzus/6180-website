@@ -158,5 +158,7 @@
   "Completed": "Прядозь",
   "Failed": "А лисевсь",
   "({count} failed": "({count} эзь теевть",
-  "({count} in progress)": "({count}) Молиця"
+  "({count} in progress)": "({count}) Молиця",
+  "{count} files": "{count} файлат",
+  "{count} file": "{count} файл"
 }

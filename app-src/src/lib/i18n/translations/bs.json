@@ -158,5 +158,7 @@
   "Completed": "Završeno",
   "Failed": "Neuspjeh",
   "({count} failed": "({count} neuspjelo",
-  "({count} in progress)": "({count}) U Toku"
+  "({count} in progress)": "({count}) U Toku",
+  "{count} files": "{count} datoteke",
+  "{count} file": "{count} datoteka"
 }

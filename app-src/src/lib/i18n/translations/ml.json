@@ -158,5 +158,7 @@
   "Completed": "പൂർത്തിയാക്കി",
   "Failed": "പരാജയപ്പെട്ടു",
   "({count} failed": "({count} പരാജയപ്പെട്ടു",
-  "({count} in progress)": "({count}) പുരോഗതിയിൽ"
+  "({count} in progress)": "({count}) പുരോഗതിയിൽ",
+  "{count} files": "{count} ഫയലുകൾ",
+  "{count} file": "{count} ഫയൽ"
 }

@@ -158,5 +158,7 @@
   "Completed": "पूरा हो गिस",
   "Failed": "असफल",
   "({count} failed": "({count} असफल होगे",
-  "({count} in progress)": "({count}) चल रहे हे"
+  "({count} in progress)": "({count}) चल रहे हे",
+  "{count} files": "{count} फाइल मन ल",
+  "{count} file": "{count} फाइल"
 }

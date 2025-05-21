@@ -158,5 +158,7 @@
   "Completed": "Тамамланнган",
   "Failed": "Хорламсыз",
   "({count} failed": "({count} джетишимсиз",
-  "({count} in progress)": "({count}) Барады"
+  "({count} in progress)": "({count}) Барады",
+  "{count} files": "{count} файлла",
+  "{count} file": "{count} файл"
 }

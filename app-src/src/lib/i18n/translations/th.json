@@ -158,5 +158,7 @@
   "Completed": "สมบูรณ์",
   "Failed": "ล้มเหลว",
   "({count} failed": "({count} ล้มเหลว",
-  "({count} in progress)": "({count}) กำลังดำเนินการ"
+  "({count} in progress)": "({count}) กำลังดำเนินการ",
+  "{count} files": "{count} ไฟล์",
+  "{count} file": "{count} ไฟล์"
 }

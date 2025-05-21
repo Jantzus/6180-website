@@ -158,5 +158,7 @@
   "Completed": "ተጠናቋል",
   "Failed": "አልተሳካም",
   "({count} failed": "({count} አልተሳካም",
-  "({count} in progress)": "({count}) በሂደት ላይ"
+  "({count} in progress)": "({count}) በሂደት ላይ",
+  "{count} files": "{count} ፋይሎች",
+  "{count} file": "{count} ፋይል"
 }

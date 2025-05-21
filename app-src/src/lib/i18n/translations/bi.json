@@ -158,5 +158,7 @@
   "Completed": "Komplitim",
   "Failed": "Fel",
   "({count} failed": "({count} fel",
-  "({count} in progress)": "({count}) Stap Go Yet"
+  "({count} in progress)": "({count}) Stap Go Yet",
+  "{count} files": "{count} faelem",
+  "{count} file": "{count} faelem"
 }

@@ -158,5 +158,7 @@
   "Completed": "Complebitur",
   "Failed": "Defecit",
   "({count} failed": "({count} defectum",
-  "({count} in progress)": "({count}) In Profectum"
+  "({count} in progress)": "({count}) In Profectum",
+  "{count} files": "{count} plica",
+  "{count} file": "{count} plica"
 }

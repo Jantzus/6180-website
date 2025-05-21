@@ -158,5 +158,7 @@
   "Completed": "Manisisa",
   "Failed": "Kubwa",
   "({count} failed": "({count} kubwa",
-  "({count} in progress)": "({count}) Ke Tambula"
+  "({count} in progress)": "({count}) Ke Tambula",
+  "{count} files": "{count} ba fisye",
+  "{count} file": "{count} fisye"
 }

@@ -158,5 +158,7 @@
   "Completed": "Kadedekļọk",
   "Failed": "Jorrāān",
   "({count} failed": "({count} likjab",
-  "({count} in progress)": "({count}) Ej Wōnmanlok"
+  "({count} in progress)": "({count}) Ej Wōnmanlok",
+  "{count} files": "{count} pāel ko",
+  "{count} file": "{count} fail"
 }

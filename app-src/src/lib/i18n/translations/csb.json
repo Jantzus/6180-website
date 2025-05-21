@@ -158,5 +158,7 @@
   "Completed": "Skùńczony",
   "Failed": "Nieùdóné",
   "({count} failed": "({count} nie darzëło sã",
-  "({count} in progress)": "({count}) W Trakce"
+  "({count} in progress)": "({count}) W Trakce",
+  "{count} files": "{count} lopków",
+  "{count} file": "{count} lopk"
 }

@@ -158,5 +158,7 @@
   "Completed": "সম্পূৰ্ণ কৰা হৈছে",
   "Failed": "বিফল হৈছে",
   "({count} failed": "({count} বিফল হৈছে",
-  "({count} in progress)": "({count}) চলি থকা"
+  "({count} in progress)": "({count}) চলি থকা",
+  "{count} files": "{count} ফাইলসমূহ",
+  "{count} file": "{count} ফাইল"
 }

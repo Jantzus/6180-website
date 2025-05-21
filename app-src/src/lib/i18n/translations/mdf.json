@@ -158,5 +158,7 @@
   "Completed": "Аделаф",
   "Failed": "Афкс",
   "({count} failed": "({count} изь лисев",
-  "({count} in progress)": "({count}) Молема"
+  "({count} in progress)": "({count}) Молема",
+  "{count} files": "{count} файлхт",
+  "{count} file": "{count} файл"
 }

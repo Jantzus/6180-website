@@ -158,5 +158,7 @@
   "Completed": "Kumpleto",
   "Failed": "Napakyas",
   "({count} failed": "({count} pakyas",
-  "({count} in progress)": "({count}) Nagpapadayon"
+  "({count} in progress)": "({count}) Nagpapadayon",
+  "{count} files": "{count} mga file",
+  "{count} file": "{count} paypay"
 }

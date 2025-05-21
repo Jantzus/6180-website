@@ -158,5 +158,7 @@
   "Completed": "𐌿𐍃𐍄𐌰𐌿𐌷𐌰𐌽𐍃",
   "Failed": "𐌽𐌹 𐌲𐌰𐌻𐌰𐌹𐍃𐍄𐌹𐌳𐌰",
   "({count} failed": "({count} 𐌽𐌹 𐌲𐌰𐌻𐌰𐌹𐍃𐍄𐌰𐌽𐍃",
-  "({count} in progress)": "({count}) 𐌹𐌽 𐍃𐍀𐌴𐌳𐌹𐌶𐌰"
+  "({count} in progress)": "({count}) 𐌹𐌽 𐍃𐍀𐌴𐌳𐌹𐌶𐌰",
+  "{count} files": "{count} 𐍆𐌰𐌹𐌻𐍉𐍃",
+  "{count} file": "{count} 𐍆𐌰𐌹𐌻"
 }

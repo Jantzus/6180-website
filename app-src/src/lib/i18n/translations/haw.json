@@ -158,5 +158,7 @@
   "Completed": "Hoʻopau ʻia",
   "Failed": "Ua Hoka",
   "({count} failed": "({count} ua hāʻule",
-  "({count} in progress)": "({count}) Ke Holo Nei"
+  "({count} in progress)": "({count}) Ke Holo Nei",
+  "{count} files": "{count} waihona",
+  "{count} file": "{count} waihona"
 }

@@ -158,5 +158,7 @@
   "Completed": "Terminau",
   "Failed": "Á Fallau",
   "({count} failed": "({count} fallu",
-  "({count} in progress)": "({count}) En Progresu"
+  "({count} in progress)": "({count}) En Progresu",
+  "{count} files": "{count} archivus",
+  "{count} file": "{count} archivu"
 }

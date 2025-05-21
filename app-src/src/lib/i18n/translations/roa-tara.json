@@ -158,5 +158,7 @@
   "Completed": "Combletate",
   "Failed": "Fallite",
   "({count} failed": "({count} fallite",
-  "({count} in progress)": "({count}) Jndr'à 'U Cors"
+  "({count} in progress)": "({count}) Jndr'à 'U Cors",
+  "{count} files": "{count} file",
+  "{count} file": "{count} file"
 }

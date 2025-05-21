@@ -158,5 +158,7 @@
   "Completed": "མཇུག་བསྡུས་ཡོད།",
   "Failed": "འཐུས་ཤོར་བྱུང་ཡོད།",
   "({count} failed": "({count} འཐུས་ཤོར་བྱུང་ཡོད།",
-  "({count} in progress)": "({count}) འབད་བཞིན་ཡོད།"
+  "({count} in progress)": "({count}) འབད་བཞིན་ཡོད།",
+  "{count} files": "{count} ཡིག་སྣོད་ཚུ།",
+  "{count} file": "{count} ཡིག་སྣོད།"
 }

@@ -158,5 +158,7 @@
   "Completed": "Vita",
   "Failed": "Tsy Nahomby",
   "({count} failed": "({count} tsy nahomby",
-  "({count} in progress)": "({count}) Eo An-Dàlana"
+  "({count} in progress)": "({count}) Eo An-Dàlana",
+  "{count} files": "{count} rakitra",
+  "{count} file": "{count} rakitra"
 }

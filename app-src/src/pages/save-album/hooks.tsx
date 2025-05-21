@@ -862,7 +862,7 @@ export const useAlbumSave = (
     enhancedLog("Setting timeout for redirect to my-albums.html");
     setTimeout(() => {
       enhancedLog("Redirecting to my-albums.html");
-      window.location.href = "/my-albums.html";
+      window.location.href = "my-albums.html";
     }, 1000);
   };
 

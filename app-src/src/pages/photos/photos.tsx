@@ -86,9 +86,9 @@ const PhotoAlbumContent: React.FC = () => {
   const fileUpload = useFileUploadProcessor((folderId) => {
     // Custom navigation callback
     if (folderId) {
-      window.location.href = `/save-album.html?folderId=${encodeURIComponent(folderId)}`;
+      window.location.href = `save-album.html?folderId=${encodeURIComponent(folderId)}`;
     } else {
-      window.location.href = "/save-album.html";
+      window.location.href = "save-album.html";
     }
   });
   

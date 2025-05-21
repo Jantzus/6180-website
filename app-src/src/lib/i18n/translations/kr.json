@@ -158,5 +158,7 @@
   "Completed": "An Kare",
   "Failed": "Ba Ci Nasara Ba",
   "({count} failed": "({count} ya kasa",
-  "({count} in progress)": "({count}) Yana Ta Kasuwanci"
+  "({count} in progress)": "({count}) Yana Ta Kasuwanci",
+  "{count} files": "{count} faylai",
+  "{count} file": "{count} faili"
 }

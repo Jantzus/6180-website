@@ -158,5 +158,7 @@
   "Completed": "ပြီးပါပြီ",
   "Failed": "မအောင်မြင်ပါ",
   "({count} failed": "({count} မအောင်မြင်ပါ",
-  "({count} in progress)": "({count}) လုပ်ဆောင်နေသည်"
+  "({count} in progress)": "({count}) လုပ်ဆောင်နေသည်",
+  "{count} files": "{count} ဖိုင်များ",
+  "{count} file": "{count} ဖိုင်"
 }

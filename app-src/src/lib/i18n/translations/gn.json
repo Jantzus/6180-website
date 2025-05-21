@@ -158,5 +158,7 @@
   "Completed": "Ojejapopa",
   "Failed": "Ndaikoiva",
   "({count} failed": "({count} ndoikoi",
-  "({count} in progress)": "({count}) Oñemoĩva"
+  "({count} in progress)": "({count}) Oñemoĩva",
+  "{count} files": "{count} marandurenda",
+  "{count} file": "{count} marandurenda"
 }

@@ -158,5 +158,7 @@
   "Completed": "Jeant",
   "Failed": "Er Nyarroo",
   "({count} failed": "({count} er shaghryn",
-  "({count} in progress)": "({count}) Goll Er Hoshaght"
+  "({count} in progress)": "({count}) Goll Er Hoshaght",
+  "{count} files": "{count} feillyn",
+  "{count} file": "{count} coadan"
 }

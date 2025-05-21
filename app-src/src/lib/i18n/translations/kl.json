@@ -158,5 +158,7 @@
   "Completed": "Naammassineqartoq",
   "Failed": "Iluitsumik",
   "({count} failed": "({count} iluatsinngilaq",
-  "({count} in progress)": "({count}) Ingerlariarpoq"
+  "({count} in progress)": "({count}) Ingerlariarpoq",
+  "{count} files": "{count} fiilit",
+  "{count} file": "{count} toqqorsivik"
 }

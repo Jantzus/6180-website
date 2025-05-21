@@ -158,5 +158,7 @@
   "Completed": "Abgschlosse",
   "Failed": "Gscheiteret",
   "({count} failed": "({count} gfehlt",
-  "({count} in progress)": "({count}) Im Gange"
+  "({count} in progress)": "({count}) Im Gange",
+  "{count} files": "{count} dateie",
+  "{count} file": "{count} datei"
 }

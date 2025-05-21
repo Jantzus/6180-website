@@ -158,5 +158,7 @@
   "Completed": "Temam Kirin",
   "Failed": "Biserneket",
   "({count} failed": "({count} bi ser neket",
-  "({count} in progress)": "({count}) Di Pêşveçûnê De"
+  "({count} in progress)": "({count}) Di Pêşveçûnê De",
+  "{count} files": "{count} pel",
+  "{count} file": "{count} pel"
 }

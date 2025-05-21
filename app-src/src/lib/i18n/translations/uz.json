@@ -158,5 +158,7 @@
   "Completed": "Yakunlandi",
   "Failed": "Muvaffaqiyatsiz",
   "({count} failed": "({count} muvaffaqiyatsiz bo'ldi",
-  "({count} in progress)": "({count}) Davom Etmoqda"
+  "({count} in progress)": "({count}) Davom Etmoqda",
+  "{count} files": "{count} fayllar",
+  "{count} file": "{count} fayl"
 }

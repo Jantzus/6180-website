@@ -158,5 +158,7 @@
   "Completed": "Sa Vakacavari",
   "Failed": "Sega",
   "({count} failed": "({count} sega",
-  "({count} in progress)": "({count}) Sa Vakaitavi"
+  "({count} in progress)": "({count}) Sa Vakaitavi",
+  "{count} files": "{count} faili",
+  "{count} file": "{count} faili"
 }

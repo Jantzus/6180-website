@@ -158,5 +158,7 @@
   "Completed": "Yamala",
   "Failed": "Chindukusoka",
   "({count} failed": "({count} palije zakutondeka",
-  "({count} in progress)": "({count}) Mu Kufika"
+  "({count} in progress)": "({count}) Mu Kufika",
+  "{count} files": "{count} mafayilo",
+  "{count} file": "{count} failo"
 }

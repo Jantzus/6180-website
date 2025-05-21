@@ -158,5 +158,7 @@
   "Completed": "Bı Qediya",
   "Failed": "Ser Nêkewt",
   "({count} failed": "({count} nêbı",
-  "({count} in progress)": "({count}) Dewam Keno"
+  "({count} in progress)": "({count}) Dewam Keno",
+  "{count} files": "{count} dosyay",
+  "{count} file": "{count} dosya"
 }

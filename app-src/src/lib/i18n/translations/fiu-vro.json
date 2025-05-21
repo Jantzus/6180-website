@@ -158,5 +158,7 @@
   "Completed": "Lõpetõt",
   "Failed": "Läts' Viltu",
   "({count} failed": "({count} läts viltu",
-  "({count} in progress)": "({count}) Pooleli"
+  "({count} in progress)": "({count}) Pooleli",
+  "{count} files": "{count} failiq",
+  "{count} file": "{count} fail"
 }

@@ -158,5 +158,7 @@
   "Completed": "सिद्धयात",
   "Failed": "असफल",
   "({count} failed": "({count} असफल जुल",
-  "({count} in progress)": "({count}) स्वयाच्वँगु"
+  "({count} in progress)": "({count}) स्वयाच्वँगु",
+  "{count} files": "{count} फाइल",
+  "{count} file": "{count} फाइल"
 }

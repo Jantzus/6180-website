@@ -158,5 +158,7 @@
   "Completed": "Pefiedöl",
   "Failed": "No Sädik",
   "({count} failed": "({count} no plöpön",
-  "({count} in progress)": "({count}) In Föpedot"
+  "({count} in progress)": "({count}) In Föpedot",
+  "{count} files": "{count} ragives",
+  "{count} file": "{count} ragiv"
 }

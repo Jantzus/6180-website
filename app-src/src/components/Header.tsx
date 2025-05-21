@@ -7,20 +7,13 @@ import { ProfileLink } from "@/styles/styled-components";
 // Header Component
 type HeaderProps = {
   publicUsername: string | null;
-  isUploading: boolean;
-  openFilePicker: (folderId: string | null) => void;
-  cognitoUsername: string | null;
 };
 
 export const Header: React.FC<HeaderProps> = ({ 
   publicUsername,
-  cognitoUsername
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
-
-  // Format the cognito username correctly for the profile redirect
-  const formattedCognitoUsername = cognitoUsername ? encodeURIComponent(cognitoUsername) : '';
 
   return (
     <>
@@ -38,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
         {publicUsername && (
           <>
             <ProfileLink
-              href={`profile.html?id=${formattedCognitoUsername}`}
+              href={`profile.html?id=${publicUsername}`}
             >
               {`👤 ${publicUsername}`}
             </ProfileLink>

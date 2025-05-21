@@ -166,13 +166,6 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
     touchEndXRef.current = null;
   };
 
-  // Function to format the owner's Cognito username for the profile link
-  const formatCognitoUsername = (ownerId: string) => {
-    // Extract username from ownerId if available
-    const username = ownerId?.split('_____')[0] || '';
-    return username;
-  };
-  
   return (
     <FullscreenContainer>
       {/* Header with controls */}
@@ -258,7 +251,7 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
       {/* Footer with owner profile link */}
       <Footer>
         {item.ownerContactId && (
-          <OwnerProfileLink href={`/profile.html?id=${formatCognitoUsername(item.ownerContactId)}`}>
+          <OwnerProfileLink href={`/profile.html?id=${ownerName}`}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>

@@ -158,5 +158,7 @@
   "Completed": "Завершено",
   "Failed": "Невдача",
   "({count} failed": "({count} не вдалося",
-  "({count} in progress)": "({count}) В Процесі"
+  "({count} in progress)": "({count}) В Процесі",
+  "{count} files": "{count} файлів",
+  "{count} file": "{count} файл"
 }

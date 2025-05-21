@@ -158,5 +158,7 @@
   "Completed": "Съврьшенъ",
   "Failed": "Неѹдача",
   "({count} failed": "({count} не оуспѣшьнъ",
-  "({count} in progress)": "({count}) по напрѣдъкъ"
+  "({count} in progress)": "({count}) по напрѣдъкъ",
+  "{count} files": "{count} дѣла",
+  "{count} file": "{count} дѣло"
 }

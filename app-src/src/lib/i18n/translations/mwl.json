@@ -158,5 +158,7 @@
   "Completed": "Cumpletado",
   "Failed": "Falhou",
   "({count} failed": "({count} falhou",
-  "({count} in progress)": "({count}) An Curs"
+  "({count} in progress)": "({count}) An Curs",
+  "{count} files": "{count} fexeiros",
+  "{count} file": "{count} fexeiro"
 }

@@ -158,5 +158,7 @@
   "Completed": "Cumpletau",
   "Failed": "Fallidu",
   "({count} failed": "({count} faddidu",
-  "({count} in progress)": "({count}) In Cursu"
+  "({count} in progress)": "({count}) In Cursu",
+  "{count} files": "{count} files",
+  "{count} file": "{count} archìviu"
 }

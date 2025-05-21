@@ -158,5 +158,7 @@
   "Completed": "مڪمل",
   "Failed": "ناڪام",
   "({count} failed": "({count} ناڪام",
-  "({count} in progress)": "({count}) ترقي ۾"
+  "({count} in progress)": "({count}) ترقي ۾",
+  "{count} files": "{count} فائيل",
+  "{count} file": "{count} فائيل"
 }

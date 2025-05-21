@@ -158,5 +158,7 @@
   "Completed": "Kakato",
   "Failed": "Tōnounou",
   "({count} failed": "({count} ʻikai lava",
-  "({count} in progress)": "({count}) Lolotonga Fakahoko"
+  "({count} in progress)": "({count}) Lolotonga Fakahoko",
+  "{count} files": "{count} ngaahi faile",
+  "{count} file": "{count} faile"
 }

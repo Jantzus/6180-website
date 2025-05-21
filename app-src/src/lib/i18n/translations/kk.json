@@ -158,5 +158,7 @@
   "Completed": "Аяқталды",
   "Failed": "Сәтсіз",
   "({count} failed": "({count} сәтсіз аяқталды",
-  "({count} in progress)": "({count}) Жүріп Жатыр"
+  "({count} in progress)": "({count}) Жүріп Жатыр",
+  "{count} files": "{count} файлдар",
+  "{count} file": "{count} файл"
 }

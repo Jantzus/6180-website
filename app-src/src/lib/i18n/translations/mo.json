@@ -158,5 +158,7 @@
   "Completed": "Efectuat",
   "Failed": "Eșuat",
   "({count} failed": "({count} a eșuat",
-  "({count} in progress)": "({count}) În Curs"
+  "({count} in progress)": "({count}) În Curs",
+  "{count} files": "{count} fișiere",
+  "{count} file": "{count} fișier"
 }

@@ -158,5 +158,7 @@
   "Completed": "Phethilwe",
   "Failed": "Paletšwe",
   "({count} failed": "({count} paletše",
-  "({count} in progress)": "({count}) E Tšwela Pele"
+  "({count} in progress)": "({count}) E Tšwela Pele",
+  "{count} files": "{count} difaele",
+  "{count} file": "{count} faele"
 }

@@ -158,5 +158,7 @@
   "Completed": "Вӗçленӗ",
   "Failed": "Ӑнӑҫлӑ мар",
   "({count} failed": "({count} ăнăçлăх",
-  "({count} in progress)": "({count}) Пулса Пырать"
+  "({count} in progress)": "({count}) Пулса Пырать",
+  "{count} files": "{count} файлсем",
+  "{count} file": "{count} файл"
 }

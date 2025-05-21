@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom/client";
 import { 
   checkLoginWithoutRedirect, 
-  formatUUID 
+  // formatUUID 
 } from "@/lib/utils";
 import {
   AWS_PUBLIC_GRAPHQL_ENDPOINT,
@@ -15,16 +15,23 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
 import { SearchBar } from "@/components/SearchBar";
-// Import the unified AlbumList
 import { AlbumList } from "@/components/AlbumList";
 import { ProfileHeader } from "@/components/ProfileHeader";
 import { FolderType, FOLDERPOSITION_FIELD } from "@/lib/types";
-// Import styled components
 import {
   GlobalStyle,
   AppContainer,
   State
 } from "@/styles/styled-components.tsx";
+
+// Helper function to convert a string to searchable format
+// Similar to Swift's getSearchableString
+const getSearchableString = (originalString: string): string => {
+  return originalString
+    .toLowerCase()
+    .replace(/[^\w\s]/g, '') // Remove punctuation (equivalent to isNotPunctuationMark)
+    .trim(); // Trim whitespace
+};
 
 // Main PersonaViewer Component
 const PersonaViewer: React.FC = () => {
@@ -59,24 +66,14 @@ const PersonaViewer: React.FC = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
-  // Extract ownerItemId from URL on component mount
+  // Extract publicDisplayName from URL on component mount
   useEffect(() => {
-    const getOwnerItemIdFromUrl = (): string | null => {
+    const getPublicDisplayNameFromUrl = (): string | null => {
       // Check in query params
       const urlParams = new URLSearchParams(window.location.search);
-      let id = urlParams.get('id');
+      let publicDisplayName = urlParams.get('id');
       
-      let formattedId = id?.replace(/-/g, '');
-
-      // Make sure it's exactly 32 characters before formatting
-      if (formattedId?.length === 32) {
-        formattedId = formatUUID(formattedId);
-        console.log(formattedId); // e.g., B89D8BAF-F9A1-484B-A379-FA7FAD081303
-      } else {
-        console.error('Invalid UUID format: must be 32 characters after removing dashes');
-      }
-
-      if (formattedId) return formattedId;
+      if (publicDisplayName) return publicDisplayName;
       
       // Check in path
       const pathMatch = window.location.pathname.match(/\/persona\/([^\/]+)/);
@@ -87,18 +84,12 @@ const PersonaViewer: React.FC = () => {
       return null;
     };
 
-    const id = getOwnerItemIdFromUrl();
-    if (id) {
-      setOwnerItemId(id);
-      
-      // Try to extract username from the ownerItemId
-      // Assuming format like username_____Public____Profile
-      const parts = id.split('_____');
-      if (parts.length > 0) {
-        setProfileUsername(parts[0]);
-      }
+    const publicDisplayName = getPublicDisplayNameFromUrl();
+    if (publicDisplayName) {
+      setProfileUsername(publicDisplayName);
+      fetchContactPositionBasedOnPublicDisplayName(publicDisplayName);
     } else {
-      setError(t('No profile ID provided'));
+      setError(t('No profile name provided'));
       setIsLoading(false);
     }
   }, [t]);
@@ -128,55 +119,37 @@ const PersonaViewer: React.FC = () => {
     checkLogin();
   }, []);
 
-  // Fetch folders when ownerItemId is available
-  useEffect(() => {
-    if (ownerItemId) {
-      fetchFolders();
-    }
-  }, [ownerItemId]);
-
-  // Function to fetch folders
-  const fetchFolders = async () => {
+  // Function to fetch contact position based on public display name
+  const fetchContactPositionBasedOnPublicDisplayName = async (publicDisplayName: string) => {
     setIsLoading(true);
     setError(null);
     
     try {
+      const searchableString = getSearchableString(publicDisplayName);
+      
       // Prepare variables for GraphQL query
       const fetchRelationsInput = {
-        ownerItemId: ownerItemId,
-        rangeKeyPrefix: "Folder",
-        index: "ownerItemId_____RelationType____sortParameter",
-        limit: 1000,
-        scanIndexForward: false,
-        nextToken: null
-      };
-      
-      const variables = {
-        relationIds: [ `${ownerItemId}_____Public____Profile` ],
-        fetchRelationsInput: fetchRelationsInput
+        ownerItemId: `PUBLICDISPLAYNAME_${searchableString}`,
+        rangeKeyPrefix: "PUBLICDISPLAYNAME____PublicDisplayName",
+        index: "ownerItemId_____targetItemIdentifier____RelationType",
+        limit: 1,
+        scanIndexForward: false
       };
       
       // GraphQL query
-      const FETCH_FOLDERS_QUERY = `
-        mutation FetchFolderPositions($relationIds: [ID!], $fetchRelationsInput: FetchRelationsInput!) {
-          batchGetItems(relationIds: $relationIds) {
-              items {
-                  id
-                  item {
-                      ... on Profile {
-                        anyDisplayName
-                      }
-                  }
-              }
-              nextToken
-          }        
+      const FETCH_PUBLIC_DISPLAY_NAME_QUERY = `
+        mutation FetchPublicDisplayName($fetchRelationsInput: FetchRelationsInput!) {
           fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
             items {
-              ... on FolderPosition {
-                ${FOLDERPOSITION_FIELD}
+              ... on PublicDisplayName {
+                ownerAccountId
+                folderPositionsPage {
+                  items {        
+                    ${FOLDERPOSITION_FIELD}
+                  }
+                }        
               }
             }
-            nextToken
           }
         }
       `;
@@ -194,8 +167,8 @@ const PersonaViewer: React.FC = () => {
                 'Authorization': `Bearer ${token}`
               },
               body: JSON.stringify({
-                query: FETCH_FOLDERS_QUERY,
-                variables: variables
+                query: FETCH_PUBLIC_DISPLAY_NAME_QUERY,
+                variables: { fetchRelationsInput }
               })
             });
             
@@ -216,50 +189,56 @@ const PersonaViewer: React.FC = () => {
             'x-api-key': AWS_PUBLIC_API_KEY
           },
           body: JSON.stringify({
-            query: FETCH_FOLDERS_QUERY,
-            variables: variables
+            query: FETCH_PUBLIC_DISPLAY_NAME_QUERY,
+            variables: { fetchRelationsInput }
           })
         });
         
         result = await publicResult.json();
       }
       
-      // Extract anyDisplayName from profile data and set it
-      if (result?.data?.batchGetItems?.items && result.data.batchGetItems.items.length > 0) {
-        const profileItem = result.data.batchGetItems.items[0];
-        if (profileItem?.item?.anyDisplayName) {
-          setProfileUsername(profileItem.item.anyDisplayName);
+      // Process results
+      if (result?.data?.fetchRelations?.items && result.data.fetchRelations.items.length > 0) {
+        const publicDisplayNameItem = result.data.fetchRelations.items[0];
+        
+        // Set owner item ID
+        if (publicDisplayNameItem.ownerAccountId) {
+          setOwnerItemId(publicDisplayNameItem.ownerAccountId);
         }
-      }
-      
-      // Process folders results
-      if (result?.data?.fetchRelations?.items) {
-        const items = result.data.fetchRelations.items;
         
-        // Transform data to match the Folder type
-        const parsedFolders: FolderType[] = items.map((item: any) => {
-          const folder = item.folder;
-          const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || [];
+        // Process folders from folderPositionsPage
+        if (publicDisplayNameItem.folderPositionsPage?.items) {
+          const folderPositions = publicDisplayNameItem.folderPositionsPage.items;
           
-          return {
-            folderPositionId: item.id,
-            folderId: folder.id,
-            albumNanoId: folder.albumNanoId,
-            folderName: folder.folderName,
-            folderDescription: folder.folderDescription,
-            folderPassword: folder.folderPassword,
-            creatorId: folder.creatorId,
-            createdAt: folder.createdAt,
-            updatedAt: folder.updatedAt,
-            files: files.filter((f: any) => f && f.dataKey),
-            profileIds: item.profileIds || []
-          };
-        });
-        
-        setFolders(parsedFolders);
+          // Transform data to match the Folder type
+          const parsedFolders: FolderType[] = folderPositions.map((item: any) => {
+            const folder = item.folder;
+            const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || [];
+            
+            return {
+              folderPositionId: item.id,
+              folderId: folder.id,
+              albumNanoId: folder.albumNanoId,
+              folderName: folder.folderName,
+              folderDescription: folder.folderDescription,
+              folderPassword: folder.folderPassword,
+              creatorId: folder.creatorId,
+              createdAt: folder.createdAt,
+              updatedAt: folder.updatedAt,
+              files: files.filter((f: any) => f && f.dataKey),
+              profileIds: item.profileIds || []
+            };
+          });
+          
+          setFolders(parsedFolders);
+        } else {
+          setFolders([]);
+        }
+      } else {
+        setError(t('Profile not found'));
       }
     } catch (error) {
-      console.error('Error fetching folders:', error);
+      console.error('Error fetching profile data:', error);
       setError(t('Failed to fetch profile data'));
     } finally {
       setIsLoading(false);
@@ -282,7 +261,6 @@ const PersonaViewer: React.FC = () => {
       <GlobalStyle />
       
       <AppContainer isRTL={isRTL}>
-        {/* <div style={{ maxWidth: 900, margin: "0 auto" }}> */}
           {/* Profile Header */}
           <ProfileHeader 
             username={profileUsername || t('User')}
@@ -321,7 +299,6 @@ const PersonaViewer: React.FC = () => {
               isProfileView={true}
             />
           )}
-        {/* </div> */}
       </AppContainer>
     </>
   );

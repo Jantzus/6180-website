@@ -158,5 +158,7 @@
   "Completed": "Tukuyata",
   "Failed": "Janiw",
   "({count} failed": "({count} pantjatawa",
-  "({count} in progress)": "({count}) Sarantaski"
+  "({count} in progress)": "({count}) Sarantaski",
+  "{count} files": "{count} archivos",
+  "{count} file": "{count} wayaqa"
 }

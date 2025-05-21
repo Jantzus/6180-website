@@ -158,5 +158,7 @@
   "Completed": "Tamamlandı",
   "Failed": "Tabıssız",
   "({count} failed": "({count} tabıssız boldı",
-  "({count} in progress)": "({count}) Dawam Etpekte"
+  "({count} in progress)": "({count}) Dawam Etpekte",
+  "{count} files": "{count} fayllar",
+  "{count} file": "{count} fayl"
 }

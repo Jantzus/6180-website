@@ -158,5 +158,7 @@
   "Completed": "Pherdo",
   "Failed": "Nashti",
   "({count} failed": "({count} ni zhutisardas",
-  "({count} in progress)": "({count}) Ande Progreso"
+  "({count} in progress)": "({count}) Ande Progreso",
+  "{count} files": "{count} fajluri",
+  "{count} file": "{count} fàjlo"
 }

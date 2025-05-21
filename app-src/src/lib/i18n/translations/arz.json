@@ -158,5 +158,7 @@
   "Completed": "مكتمل",
   "Failed": "فشل",
   "({count} failed": "({count} فشل",
-  "({count} in progress)": "({count}) شغال"
+  "({count} in progress)": "({count}) شغال",
+  "{count} files": "{count} ملفات",
+  "{count} file": "{count} ملف"
 }

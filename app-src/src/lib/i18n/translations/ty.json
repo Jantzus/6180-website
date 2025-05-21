@@ -158,5 +158,7 @@
   "Completed": "Faaotihia",
   "Failed": "Ua Hapa",
   "({count} failed": "({count} ua manuia ʻore",
-  "({count} in progress)": "({count}) Te Haere Nei"
+  "({count} in progress)": "({count}) Te Haere Nei",
+  "{count} files": "{count} mau parau",
+  "{count} file": "{count} api"
 }

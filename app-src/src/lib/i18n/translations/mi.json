@@ -158,5 +158,7 @@
   "Completed": "Oti",
   "Failed": "Rahua",
   "({count} failed": "({count} rahua",
-  "({count} in progress)": "({count}) Kei Te Haere Tonu"
+  "({count} in progress)": "({count}) Kei Te Haere Tonu",
+  "{count} files": "{count} kōnae",
+  "{count} file": "{count} kōnae"
 }

@@ -158,5 +158,7 @@
   "Completed": "Tamamlandy",
   "Failed": "Şowsuz",
   "({count} failed": "({count} şowsuz",
-  "({count} in progress)": "({count}) Dowam Edýär"
+  "({count} in progress)": "({count}) Dowam Edýär",
+  "{count} files": "{count} faýllar",
+  "{count} file": "{count} faýl"
 }

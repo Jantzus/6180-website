@@ -158,5 +158,7 @@
   "Completed": "A Dafara",
   "Failed": "A Mana Ka Kɛ",
   "({count} failed": "({count} dɛsɛra",
-  "({count} in progress)": "({count}) Ka Taa Ka Kuma"
+  "({count} in progress)": "({count}) Ka Taa Ka Kuma",
+  "{count} files": "{count} fichye",
+  "{count} file": "{count} fichye"
 }

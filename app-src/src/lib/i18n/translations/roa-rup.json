@@ -158,5 +158,7 @@
   "Completed": "Bitisitu",
   "Failed": "Eșec",
   "({count} failed": "({count} nu s'aflã",
-  "({count} in progress)": "({count}) Tu Protsesare"
+  "({count} in progress)": "({count}) Tu Protsesare",
+  "{count} files": "{count} fishere",
+  "{count} file": "{count} arhivã"
 }

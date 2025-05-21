@@ -158,5 +158,7 @@
   "Completed": "Icedzelwe",
   "Failed": "Yehlulekile",
   "({count} failed": "({count} yehlulekile",
-  "({count} in progress)": "({count}) Iyachubeka"
+  "({count} in progress)": "({count}) Iyachubeka",
+  "{count} files": "{count} emafayela",
+  "{count} file": "{count} ifayela"
 }

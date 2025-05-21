@@ -158,5 +158,7 @@
   "Completed": "დასრულდა",
   "Failed": "ვერ მოხერხდა",
   "({count} failed": "({count} ვერ მოხერხდა",
-  "({count} in progress)": "({count}) მიმდინარეობს"
+  "({count} in progress)": "({count}) მიმდინარეობს",
+  "{count} files": "{count} ფაილები",
+  "{count} file": "{count} ფაილი"
 }

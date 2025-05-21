@@ -158,5 +158,7 @@
   "Completed": "Mulno",
   "Failed": "fliba",
   "({count} failed": "({count} fliba",
-  "({count} in progress)": "({count}) Ca Cadzu"
+  "({count} in progress)": "({count}) Ca Cadzu",
+  "{count} files": "{count} datni",
+  "{count} file": "{count} datni"
 }

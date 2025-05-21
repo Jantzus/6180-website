@@ -158,5 +158,7 @@
   "Completed": "Pari",
   "Failed": "Kùnà",
   "({count} failed": "({count} kùnà",
-  "({count} in progress)": "({count}) Ni Ilọsiwaju"
+  "({count} in progress)": "({count}) Ni Ilọsiwaju",
+  "{count} files": "{count} fáìlì",
+  "{count} file": "{count} fáìlì"
 }

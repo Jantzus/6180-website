@@ -158,5 +158,7 @@
   "Completed": "Jeexna",
   "Failed": "Jàpp",
   "({count} failed": "({count} doxul",
-  "({count} in progress)": "({count}) Jëm Ci Kanam"
+  "({count} in progress)": "({count}) Jëm Ci Kanam",
+  "{count} files": "{count} dencukaay",
+  "{count} file": "{count} dencukaay"
 }

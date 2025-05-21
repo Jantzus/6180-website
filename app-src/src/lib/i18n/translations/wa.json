@@ -158,5 +158,7 @@
   "Completed": "Fini",
   "Failed": "Fwait",
   "({count} failed": "({count} foirt",
-  "({count} in progress)": "({count}) En Cors"
+  "({count} in progress)": "({count}) En Cors",
+  "{count} files": "{count} fitchîs",
+  "{count} file": "{count} fitchî"
 }

@@ -158,5 +158,7 @@
   "Completed": "पूर्ण केला",
   "Failed": "अपयशी",
   "({count} failed": "({count} अपेशी जाले",
-  "({count} in progress)": "({count}) चालू आसा"
+  "({count} in progress)": "({count}) चालू आसा",
+  "{count} files": "{count} फायली",
+  "{count} file": "{count} फायल"
 }

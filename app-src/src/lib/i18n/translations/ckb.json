@@ -158,5 +158,7 @@
   "Completed": "تەواوکراو",
   "Failed": "سەرکەوتوو نەبوو",
   "({count} failed": "({count} سەرکەوتوو نەبوو",
-  "({count} in progress)": "({count}) لە پێشکەوتندا"
+  "({count} in progress)": "({count}) لە پێشکەوتندا",
+  "{count} files": "{count} پەڕگەکان",
+  "{count} file": "{count} پەڕگە"
 }

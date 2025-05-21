@@ -158,5 +158,7 @@
   "Completed": "Дуусгсн",
   "Failed": "Амҗлт уга",
   "({count} failed": "({count} бүтлго болв",
-  "({count} in progress)": "({count}) Йовудлж Бәәнә"
+  "({count} in progress)": "({count}) Йовудлж Бәәнә",
+  "{count} files": "{count} боомгуд",
+  "{count} file": "{count} боомг"
 }

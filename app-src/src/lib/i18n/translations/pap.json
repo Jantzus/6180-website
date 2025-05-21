@@ -158,5 +158,7 @@
   "Completed": "Kompletá",
   "Failed": "Faya",
   "({count} failed": "({count} faya",
-  "({count} in progress)": "({count}) Den Progreso"
+  "({count} in progress)": "({count}) Den Progreso",
+  "{count} files": "{count} file",
+  "{count} file": "{count} file"
 }

@@ -158,5 +158,7 @@
   "Completed": "Dhameystiray",
   "Failed": "Fashilmay",
   "({count} failed": "({count} guuldareystay",
-  "({count} in progress)": "({count}) Socda"
+  "({count} in progress)": "({count}) Socda",
+  "{count} files": "{count} faylal",
+  "{count} file": "{count} feyl"
 }

@@ -158,5 +158,7 @@
   "Completed": "Xumurame",
   "Failed": "Milkaa'e",
   "({count} failed": "({count} dadhabe",
-  "({count} in progress)": "({count}) Gara Deemaa"
+  "({count} in progress)": "({count}) Gara Deemaa",
+  "{count} files": "{count} faayiloota",
+  "{count} file": "{count} faayilii"
 }

@@ -158,5 +158,7 @@
   "Completed": "Dokóńcony",
   "Failed": "Njejo Se Raźiło",
   "({count} failed": "({count} njejo se raźiło",
-  "({count} in progress)": "({count}) W Běgu"
+  "({count} in progress)": "({count}) W Běgu",
+  "{count} files": "{count} dataje",
+  "{count} file": "{count} dataja"
 }

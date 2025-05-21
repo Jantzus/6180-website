@@ -158,5 +158,7 @@
   "Completed": "Finìo",
   "Failed": "Fałìo",
   "({count} failed": "({count} falìo",
-  "({count} in progress)": "({count}) In Corso"
+  "({count} in progress)": "({count}) In Corso",
+  "{count} files": "{count} file",
+  "{count} file": "{count} file"
 }

@@ -158,5 +158,7 @@
   "Completed": "Konplete",
   "Failed": "Echwe",
   "({count} failed": "({count} echwe",
-  "({count} in progress)": "({count}) Nan Pwogrè"
+  "({count} in progress)": "({count}) Nan Pwogrè",
+  "{count} files": "{count} fichye",
+  "{count} file": "{count} fichye"
 }

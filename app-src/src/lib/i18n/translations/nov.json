@@ -158,5 +158,7 @@
   "Completed": "Kompletad",
   "Failed": "Falisat",
   "({count} failed": "({count} falisat",
-  "({count} in progress)": "({count}) In Progrese"
+  "({count} in progress)": "({count}) In Progrese",
+  "{count} files": "{count} files",
+  "{count} file": "{count} arkive"
 }

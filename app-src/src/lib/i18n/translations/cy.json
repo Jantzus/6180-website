@@ -158,5 +158,7 @@
   "Completed": "Wedi Ei Gwblhau",
   "Failed": "Wedi Methu",
   "({count} failed": "({count} wedi methu",
-  "({count} in progress)": "({count}) Ar Y Gweill"
+  "({count} in progress)": "({count}) Ar Y Gweill",
+  "{count} files": "{count} ffeiliau",
+  "{count} file": "{count} ffeil"
 }

@@ -158,5 +158,7 @@
   "Completed": "完成した",
   "Failed": "失敗",
   "({count} failed": "({count} 失敗しました",
-  "({count} in progress)": "({count}) 進行中"
+  "({count} in progress)": "({count}) 進行中",
+  "{count} files": "{count} ファイル",
+  "{count} file": "{count} ファイル"
 }

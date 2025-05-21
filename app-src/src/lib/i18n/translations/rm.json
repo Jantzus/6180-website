@@ -158,5 +158,7 @@
   "Completed": "Finì",
   "Failed": "Betg Reussì",
   "({count} failed": "({count} betg reussì",
-  "({count} in progress)": "({count}) En Andament"
+  "({count} in progress)": "({count}) En Andament",
+  "{count} files": "{count} datotecas",
+  "{count} file": "{count} datoteca"
 }

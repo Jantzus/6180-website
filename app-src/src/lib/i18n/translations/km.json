@@ -158,5 +158,7 @@
   "Completed": "បានបញ្ចប់",
   "Failed": "បរាជ័យ",
   "({count} failed": "({count} បរាជ័យ",
-  "({count} in progress)": "({count}) កំពុងដំណើរការ"
+  "({count} in progress)": "({count}) កំពុងដំណើរការ",
+  "{count} files": "{count} ឯកសារ",
+  "{count} file": "{count} ឯកសារ"
 }

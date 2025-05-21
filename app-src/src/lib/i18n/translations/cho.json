@@ -158,5 +158,7 @@
   "Completed": "Alhtaha",
   "Failed": "Ikahno",
   "({count} failed": "({count} ikshoka",
-  "({count} in progress)": "({count}) Mahli Hosh"
+  "({count} in progress)": "({count}) Mahli Hosh",
+  "{count} files": "{count} faila",
+  "{count} file": "{count} file"
 }

@@ -158,5 +158,7 @@
   "Completed": "Klari",
   "Failed": "Fadon",
   "({count} failed": "({count} fadon",
-  "({count} in progress)": "({count}) E Waka Go"
+  "({count} in progress)": "({count}) E Waka Go",
+  "{count} files": "{count} file",
+  "{count} file": "{count} file"
 }

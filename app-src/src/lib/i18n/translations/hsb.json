@@ -158,5 +158,7 @@
   "Completed": "Dokónčeny",
   "Failed": "Njeporadźiło So",
   "({count} failed": "({count} njeje so poradźiło",
-  "({count} in progress)": "({count}) W Postupje"
+  "({count} in progress)": "({count}) W Postupje",
+  "{count} files": "{count} dataje",
+  "{count} file": "{count} dataja"
 }

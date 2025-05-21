@@ -158,5 +158,7 @@
   "Completed": "Nakompleto",
   "Failed": "Apaandian",
   "({count} failed": "({count} atalo",
-  "({count} in progress)": "({count}) On-Progreso"
+  "({count} in progress)": "({count}) On-Progreso",
+  "{count} files": "{count} saray file",
+  "{count} file": "{count} file"
 }

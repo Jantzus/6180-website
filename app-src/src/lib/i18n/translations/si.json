@@ -158,5 +158,7 @@
   "Completed": "සම්පූර්ණ කර ඇත",
   "Failed": "අසමත් විය",
   "({count} failed": "({count} අසමත් විය",
-  "({count} in progress)": "({count}) ක්‍රියාත්මක වෙමින්"
+  "({count} in progress)": "({count}) ක්‍රියාත්මක වෙමින්",
+  "{count} files": "{count} ගොනු",
+  "{count} file": "{count} ගොනුව"
 }

@@ -158,5 +158,7 @@
   "Completed": "Liðugt",
   "Failed": "Miseydnaðist",
   "({count} failed": "({count} miseydnaðist",
-  "({count} in progress)": "({count}) Í Gongd"
+  "({count} in progress)": "({count}) Í Gongd",
+  "{count} files": "{count} fílir",
+  "{count} file": "{count} fíla"
 }

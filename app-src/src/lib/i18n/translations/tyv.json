@@ -158,5 +158,7 @@
   "Completed": "Доозулган",
   "Failed": "Чедип Албаан",
   "({count} failed": "({count} чедимче чок",
-  "({count} in progress)": "({count}) Чоруп Турар"
+  "({count} in progress)": "({count}) Чоруп Турар",
+  "{count} files": "{count} файлдар",
+  "{count} file": "{count} файл"
 }

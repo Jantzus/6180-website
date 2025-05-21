@@ -158,5 +158,7 @@
   "Completed": "Ավարտված",
   "Failed": "Ձախողվեց",
   "({count} failed": "({count} ձախողվեց",
-  "({count} in progress)": "({count}) Ընթացքի Մեջ"
+  "({count} in progress)": "({count}) Ընթացքի Մեջ",
+  "{count} files": "{count} ֆայլեր",
+  "{count} file": "{count} ֆայլ"
 }

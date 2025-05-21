@@ -158,5 +158,7 @@
   "Completed": "Skůńczůny",
   "Failed": "Niyudołŏ Śe",
   "({count} failed": "({count} niy poradzone",
-  "({count} in progress)": "({count}) We Průbiegu"
+  "({count} in progress)": "({count}) We Průbiegu",
+  "{count} files": "{count} zbiory",
+  "{count} file": "{count} zbiůr"
 }

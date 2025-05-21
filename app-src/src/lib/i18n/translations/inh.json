@@ -158,5 +158,7 @@
   "Completed": "Чакхйаьккха",
   "Failed": "Кхоачамбоацар",
   "({count} failed": "({count} ца хиннад",
-  "({count} in progress)": "({count}) Дувцаш латт"
+  "({count} in progress)": "({count}) Дувцаш латт",
+  "{count} files": "{count} файлаш",
+  "{count} file": "{count} файл"
 }

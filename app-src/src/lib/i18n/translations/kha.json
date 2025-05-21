@@ -158,5 +158,7 @@
   "Completed": "La Dei",
   "Failed": "Ym lah",
   "({count} failed": "({count} ka rem shem",
-  "({count} in progress)": "({count}) Nongbha Nangta"
+  "({count} in progress)": "({count}) Nongbha Nangta",
+  "{count} files": "{count} ki file",
+  "{count} file": "{count} fail"
 }

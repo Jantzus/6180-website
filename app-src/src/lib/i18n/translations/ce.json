@@ -158,5 +158,7 @@
   "Completed": "Кхочушдина",
   "Failed": "Кхиамбацар",
   "({count} failed": "({count} кхиам боцаш",
-  "({count} in progress)": "({count}) Кхочушъеш"
+  "({count} in progress)": "({count}) Кхочушъеш",
+  "{count} files": "{count} файлаш",
+  "{count} file": "{count} файл"
 }

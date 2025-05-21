@@ -158,5 +158,7 @@
   "Completed": "పూర్తయింది",
   "Failed": "విఫలమైంది",
   "({count} failed": "({count} విఫలమైంది",
-  "({count} in progress)": "({count}) ప్రగతిలో ఉంది"
+  "({count} in progress)": "({count}) ప్రగతిలో ఉంది",
+  "{count} files": "{count} ఫైళ్లు",
+  "{count} file": "{count} దస్త్రం"
 }

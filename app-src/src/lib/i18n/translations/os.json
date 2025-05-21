@@ -158,5 +158,7 @@
   "Completed": "Æххæст",
   "Failed": "Нӕ фӕрӕстис",
   "({count} failed": "({count} фæстиат",
-  "({count} in progress)": "({count}) Цæуы"
+  "({count} in progress)": "({count}) Цæуы",
+  "{count} files": "{count} файлтæ",
+  "{count} file": "{count} файл"
 }

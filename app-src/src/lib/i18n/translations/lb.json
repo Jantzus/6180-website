@@ -158,5 +158,7 @@
   "Completed": "Ofgeschloss",
   "Failed": "Feelgeschloen",
   "({count} failed": "({count} feelgeschloen",
-  "({count} in progress)": "({count}) A Beaarbechtung"
+  "({count} in progress)": "({count}) A Beaarbechtung",
+  "{count} files": "{count} dateien",
+  "{count} file": "{count} fichier"
 }

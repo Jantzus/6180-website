@@ -158,5 +158,7 @@
   "Completed": "ተፈጺሙ",
   "Failed": "ተሳናኺሉ",
   "({count} failed": "({count} ዝወደቐ",
-  "({count} in progress)": "({count}) ኣብ ከይዲ"
+  "({count} in progress)": "({count}) ኣብ ከይዲ",
+  "{count} files": "{count} ፋይሎች",
+  "{count} file": "{count} ፋይል"
 }

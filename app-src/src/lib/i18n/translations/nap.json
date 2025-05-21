@@ -158,5 +158,7 @@
   "Completed": "Cumpletato",
   "Failed": "Fallito",
   "({count} failed": "({count} fallute",
-  "({count} in progress)": "({count}) 'Ncorzo"
+  "({count} in progress)": "({count}) 'Ncorzo",
+  "{count} files": "{count} file",
+  "{count} file": "{count} file"
 }

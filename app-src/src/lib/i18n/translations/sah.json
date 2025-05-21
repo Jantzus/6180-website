@@ -158,5 +158,7 @@
   "Completed": "Түмүктэммит",
   "Failed": "Сатаммата",
   "({count} failed": "({count} сатаммата",
-  "({count} in progress)": "({count}) Ыытыллан Эрэр"
+  "({count} in progress)": "({count}) Ыытыллан Эрэр",
+  "{count} files": "{count} билэ",
+  "{count} file": "{count} билэ"
 }

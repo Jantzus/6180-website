@@ -158,5 +158,7 @@
   "Completed": "Elkészült",
   "Failed": "Sikertelen",
   "({count} failed": "({count} sikertelen",
-  "({count} in progress)": "({count}) Folyamatban"
+  "({count} in progress)": "({count}) Folyamatban",
+  "{count} files": "{count} fájl",
+  "{count} file": "{count} fájl"
 }

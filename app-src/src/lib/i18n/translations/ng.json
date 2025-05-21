@@ -158,5 +158,7 @@
   "Completed": "Sha Mana",
   "Failed": "Ya kala po",
   "({count} failed": "({count} hinangula nawa",
-  "({count} in progress)": "({count}) Ta Guduma"
+  "({count} in progress)": "({count}) Ta Guduma",
+  "{count} files": "{count} fail",
+  "{count} file": "{count} ofolda"
 }

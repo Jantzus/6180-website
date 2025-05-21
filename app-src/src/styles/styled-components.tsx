@@ -1259,3 +1259,12 @@ export const StyledLogoutLink = styled.a`
     color: ${theme.colors.text.primary};
   }
 `;
+
+export const FileCount = styled.div<{ isRTL: boolean }>`
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.text.lighter};
+  text-align: ${props => props.isRTL ? "right" : "right"};
+  margin-bottom: ${theme.spacing.md};
+  display: flex;
+  justify-content: flex-end;
+`;

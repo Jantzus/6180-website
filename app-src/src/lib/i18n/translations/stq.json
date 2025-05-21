@@ -158,5 +158,7 @@
   "Completed": "Fäärdich",
   "Failed": "Failsloangen",
   "({count} failed": "({count} misglukket",
-  "({count} in progress)": "({count}) In Gong"
+  "({count} in progress)": "({count}) In Gong",
+  "{count} files": "{count} doatäie",
+  "{count} file": "{count} doatäi"
 }

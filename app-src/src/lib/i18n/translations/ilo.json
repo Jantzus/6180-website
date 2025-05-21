@@ -158,5 +158,7 @@
   "Completed": "Nakumpleto",
   "Failed": "Napaay",
   "({count} failed": "({count} napaay",
-  "({count} in progress)": "({count}) Agdama"
+  "({count} in progress)": "({count}) Agdama",
+  "{count} files": "{count} dagiti file",
+  "{count} file": "{count} papeles"
 }

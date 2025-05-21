@@ -158,5 +158,7 @@
   "Completed": "Byarangiye",
   "Failed": "Byanze",
   "({count} failed": "({count} byanze",
-  "({count} in progress)": "({count}) Biri Gukorwa"
+  "({count} in progress)": "({count}) Biri Gukorwa",
+  "{count} files": "{count} dosiye",
+  "{count} file": "{count} idosiye"
 }

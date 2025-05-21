@@ -158,5 +158,7 @@
   "Completed": "Timmii",
   "Failed": "Woonaani",
   "({count} failed": "({count} woorii",
-  "({count} in progress)": "({count}) E Yaha Yeeso"
+  "({count} in progress)": "({count}) E Yaha Yeeso",
+  "{count} files": "{count} fiilji",
+  "{count} file": "{count} fiilde"
 }

@@ -158,5 +158,7 @@
   "Completed": "Wɔwie",
   "Failed": "Adi Nkɔ",
   "({count} failed": "({count} anhwehwɛ",
-  "({count} in progress)": "({count}) Ɛrekɔ So"
+  "({count} in progress)": "({count}) Ɛrekɔ So",
+  "{count} files": "{count} nfaele",
+  "{count} file": "{count} fayl"
 }

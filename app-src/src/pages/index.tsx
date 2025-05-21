@@ -119,7 +119,7 @@ const IndexPage: React.FC = () => {
   
   if (token) {
     // User is logged in, redirect to albums page
-    window.location.href = `/my-albums.html?lang=${storedLanguage}`;
+    window.location.href = `my-albums.html?lang=${storedLanguage}`;
     return;
   }
   

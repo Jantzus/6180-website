@@ -158,5 +158,7 @@
   "Completed": "Anamaliza",
   "Failed": "Zalepera",
   "({count} failed": "({count} zalephera",
-  "({count} in progress)": "({count}) Zili Mkati"
+  "({count} in progress)": "({count}) Zili Mkati",
+  "{count} files": "{count} zolemba",
+  "{count} file": "{count} fayilo"
 }

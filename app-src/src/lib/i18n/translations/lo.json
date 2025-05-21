@@ -158,5 +158,7 @@
   "Completed": "ສໍາເລັດ",
   "Failed": "ລົ້ມເຫລວ",
   "({count} failed": "({count} ລົ້ມເຫລວ",
-  "({count} in progress)": "({count}) ກຳລັງດຳເນີນ"
+  "({count} in progress)": "({count}) ກຳລັງດຳເນີນ",
+  "{count} files": "{count} ໄຟລ໌",
+  "{count} file": "{count} ແຟ້ມ"
 }

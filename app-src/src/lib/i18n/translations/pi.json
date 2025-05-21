@@ -158,5 +158,7 @@
   "Completed": "समत्त",
   "Failed": "असफल",
   "({count} failed": "({count} विफल",
-  "({count} in progress)": "({count}) वड्ढन्ती"
+  "({count} in progress)": "({count}) वड्ढन्ती",
+  "{count} files": "{count} फाइल",
+  "{count} file": "{count} फाइल"
 }

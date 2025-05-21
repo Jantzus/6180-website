@@ -189,7 +189,7 @@ export const executeAlbumSave = async (
       // Slight delay before redirect for user to see success message
       setTimeout(() => {
         document.body.removeChild(loadingModal);
-        window.location.href = "/my-albums.html";
+        window.location.href = "my-albums.html";
       }, 2000);
     } catch (err) {
       const fetchErrorMessage = err instanceof Error ? err.message : "Unknown API error";

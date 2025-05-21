@@ -158,5 +158,7 @@
   "Completed": "Анҷом ёфт",
   "Failed": "Ноком",
   "({count} failed": "({count} ноком шуд",
-  "({count} in progress)": "({count}) Дар Ҷараён"
+  "({count} in progress)": "({count}) Дар Ҷараён",
+  "{count} files": "{count} файлҳо",
+  "{count} file": "{count} файл"
 }

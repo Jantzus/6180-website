@@ -158,5 +158,7 @@
   "Completed": "Completau",
   "Failed": "Falló",
   "({count} failed": "({count} fallato",
-  "({count} in progress)": "({count}) En Progreso"
+  "({count} in progress)": "({count}) En Progreso",
+  "{count} files": "{count} fichers",
+  "{count} file": "{count} fichero"
 }

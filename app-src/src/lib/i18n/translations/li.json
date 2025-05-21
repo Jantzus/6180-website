@@ -158,5 +158,7 @@
   "Completed": "Voltooid",
   "Failed": "Misluk",
   "({count} failed": "({count} mislök",
-  "({count} in progress)": "({count}) Gaonde"
+  "({count} in progress)": "({count}) Gaonde",
+  "{count} files": "{count} besjtande",
+  "{count} file": "{count} bestand"
 }

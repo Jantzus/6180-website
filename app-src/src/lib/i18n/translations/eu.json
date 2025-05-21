@@ -158,5 +158,7 @@
   "Completed": "Osatua",
   "Failed": "Huts Egin Du",
   "({count} failed": "({count} huts egin du",
-  "({count} in progress)": "({count}) Abian"
+  "({count} in progress)": "({count}) Abian",
+  "{count} files": "{count} fitxategi",
+  "{count} file": "{count} fitxategi"
 }

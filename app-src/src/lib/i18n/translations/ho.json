@@ -158,5 +158,7 @@
   "Completed": "I Pinisim",
   "Failed": "Fail",
   "({count} failed": "({count} i fail",
-  "({count} in progress)": "({count}) Pepe Em"
+  "({count} in progress)": "({count}) Pepe Em",
+  "{count} files": "{count} fail",
+  "{count} file": "{count} faili"
 }

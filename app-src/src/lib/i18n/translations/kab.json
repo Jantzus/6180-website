@@ -158,5 +158,7 @@
   "Completed": "Ifuk",
   "Failed": "Ur Yedda Ara",
   "({count} failed": "({count} ur yedda ara",
-  "({count} in progress)": "({count}) Di Tazzwara"
+  "({count} in progress)": "({count}) Di Tazzwara",
+  "{count} files": "{count} ifuyla",
+  "{count} file": "{count} afaylu"
 }

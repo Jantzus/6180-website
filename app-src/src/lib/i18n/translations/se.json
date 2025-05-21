@@ -158,5 +158,7 @@
   "Completed": "Geargan",
   "Failed": "Ii Lihkostuvvan",
   "({count} failed": "({count} ii lihkostuvvan",
-  "({count} in progress)": "({count}) Johttime"
+  "({count} in progress)": "({count}) Johttime",
+  "{count} files": "{count} fiillat",
+  "{count} file": "{count} fiila"
 }
