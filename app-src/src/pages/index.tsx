@@ -43,7 +43,7 @@ const IndexPage: React.FC = () => {
 
   // Go to albums page
   const goToAlbums = async () => {
-    const targetPath = `/my-albums.html?lang=${language}`;
+    const targetPath = `my-albums.html?lang=${language}`;
     const token = await checkLoginWithRefreshOrRedirectToTarget(targetPath);
     
     if (token) {

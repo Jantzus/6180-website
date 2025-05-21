@@ -151,7 +151,7 @@ const LoginPage = () => {
   }, [codeSent])
 
   // Get the redirect parameter, defaulting to my-albums.html if not provided
-  const redirectParam = new URLSearchParams(location.search).get('redirect') || '/my-albums.html'
+  const redirectParam = new URLSearchParams(location.search).get('redirect') || 'my-albums.html'
   
   // Security enhancement: Validate redirect URL to prevent open redirect vulnerabilities
   const isValidRedirect = (url: string): boolean => {
@@ -165,7 +165,7 @@ const LoginPage = () => {
   const redirectTo = isValidRedirect(redirectParam) ? 
                      (redirectParam.startsWith('http') ? redirectParam : 
                      (redirectParam.startsWith('/') ? redirectParam : `/${redirectParam}`)) :
-                     '/my-albums.html' // Fallback to safe default if invalid
+                     'my-albums.html' // Fallback to safe default if invalid
 
   // Only allow numeric input for OTP code
   function handleOtpChange(e: React.ChangeEvent<HTMLInputElement>) {
