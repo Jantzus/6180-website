@@ -1,3 +1,4 @@
+// Updated PhotoLoginModal.tsx
 import React, { useState, useEffect, useRef } from "react";
 import {
   CognitoIdentityProviderClient,
@@ -7,7 +8,14 @@ import {
 } from '@aws-sdk/client-cognito-identity-provider';
 import { COGNITO_CLIENT_ID, AWS_REGION, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
-import { TwoFactorAuthLabel } from "@/styles/styled-components";
+import { 
+  Modal,
+  ModalContent,
+  TwoFactorAuthLabel,
+  Button,
+  FormInput,
+  FormGroup,
+} from "@/styles/styled-components";
 
 // Create a new Cognito client for OTP login
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION });
@@ -202,208 +210,163 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
     setStatus('idle');
   }
 
-
   if (!isOpen) return null;
 
   return (
-    <div style={{
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      zIndex: 1000
-    }}>
-      <div style={{
-        maxWidth: 400,
-        width: '100%',
-        background: '#ffffff',
-        padding: '32px',
-        borderRadius: '12px',
-        boxShadow: '0 6px 20px rgba(0,0,0,0.06)',
-        textAlign: 'center',
-      }}>
+    <Modal>
+      <ModalContent style={{ maxWidth: "400px", textAlign: "center", padding: "32px" }}>
         <img 
           src="images/logo_no_background.png" 
           alt="6180 Logo" 
           style={{ 
             height: '60px', 
-            marginBottom: '30px' 
+            marginBottom: '24px' 
           }} 
         />
 
-        {/* Login Explanation Message - Split into two lines with space between */}
-        <div style={{ 
-          margin: '0', 
-          lineHeight: '1.6',
-          marginBottom: '30px'
-        }}>
-          <h3 style={{ margin: '0' }}>
-            {t('{ownerName} only shared this album with friends and family').replace('{ownerName}', ownerName)}
-          </h3>
-        </div>
+        {/* Login Explanation Message */}
+        <h3 style={{ margin: '0 0 24px 0', lineHeight: '1.6' }}>
+          {t('{ownerName} only shared this album with friends and family').replace('{ownerName}', ownerName)}
+        </h3>
 
         {errorMessage && (
           <div style={{
             backgroundColor: '#f8d7da',
             color: '#721c24',
-            padding: '10px',
-            borderRadius: '6px',
+            padding: '12px',
+            borderRadius: '8px',
             marginBottom: '16px',
-            fontSize: '14px'
+            fontSize: '14px',
+            textAlign: 'left'
           }}>
             {errorMessage}
           </div>
         )}
 
         {!codeSent ? (
-          <>
-            <input
-              ref={emailInputRef}
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={t('Email address...')}
-              style={{
-                width: '100%',
-                padding: '12px',
-                marginBottom: '16px',
-                borderRadius: '6px',
-                border: '1px solid #ccc',
-                fontSize: '16px',
-                boxSizing: 'border-box',
-              }}
-            />
-            <button
-              onClick={sendCode}
-              disabled={status === 'sending' || !email.trim()}
-              style={{
-                width: '100%',
-                padding: '12px',
-                fontSize: '16px',
-                backgroundColor: '#007bff',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '6px',
-                cursor: status === 'sending' || !email.trim() ? 'not-allowed' : 'pointer',
-                opacity: status === 'sending' || !email.trim() ? 0.7 : 1,
-              }}
-            >
-              {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
-            </button>
-            <button
-              onClick={onClose}
-              style={{
-                width: '100%',
-                padding: '12px',
-                fontSize: '16px',
-                backgroundColor: '#f8f9fa',
-                color: '#555',
-                border: '1px solid #ccc',
-                borderRadius: '6px',
-                cursor: 'pointer',
-                marginTop: '12px',
-              }}
-            >
-              {t('Cancel')}
-            </button>
-          </>
-        ) : (
-          <>
-            <p style={{ marginBottom: '16px', color: '#555' }}>
-              {t('Check your email for a 6-digit verification code sent to')} <strong>{email}</strong>
-            </p>
-            <input
-              ref={otpInputRef}
-              type="tel"
-              inputMode="numeric"
-              pattern="[0-9]*"
-              maxLength={6}
-              value={otpCode}
-              onChange={handleOtpChange}
-              placeholder={t('Enter 6-digit code')}
-              style={{
-                width: '100%',
-                padding: '12px',
-                marginBottom: '16px',
-                borderRadius: '6px',
-                border: '1px solid #ccc',
-                fontSize: '16px',
-                boxSizing: 'border-box',
-                letterSpacing: '2px',
-                textAlign: 'center',
-              }}
-            />
-            <button
-              onClick={confirmCode}
-              disabled={status === 'verifying' || otpCode.length !== 6}
-              style={{
-                width: '100%',
-                padding: '12px',
-                fontSize: '16px',
-                backgroundColor: '#28a745',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '6px',
-                cursor: (status === 'verifying' || otpCode.length !== 6) ? 'not-allowed' : 'pointer',
-                opacity: (status === 'verifying' || otpCode.length !== 6) ? 0.7 : 1,
-              }}
-            >
-              {status === 'verifying' ? t('Verifying...') : t('Verify Code')}
-            </button>
-            <div style={{ 
-              marginTop: '16px', 
-              fontSize: '14px', 
-              color: '#666',
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '8px'
-            }}>
-              <span>{t("Didn't receive a code?")}</span>
-              <button 
-                onClick={handleResendCode}
+          <form style={{ width: "100%" }}>
+            <FormGroup>
+              <FormInput
+                ref={emailInputRef}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t('Email address...')}
+                style={{ 
+                  padding: "12px",
+                  width: "100%",
+                  boxSizing: "border-box"
+                }}
+              />
+            </FormGroup>
+            
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+              <Button
+                onClick={sendCode}
+                disabled={status === 'sending' || !email.trim()}
+                primary
+                style={{ width: "100%" }}
+              >
+                {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
+              </Button>
+              
+              <Button
+                onClick={onClose}
                 style={{
-                  background: 'none',
-                  border: 'none',
-                  color: '#007bff',
-                  padding: 0,
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  textDecoration: 'underline',
+                  width: "100%",
+                  backgroundColor: "#f8f9fa",
+                  color: "#555",
+                  border: "1px solid #ccc"
                 }}
               >
-                {t('Send new code')}
-              </button>
+                {t('Cancel')}
+              </Button>
             </div>
-            <button
-              onClick={onClose}
-              style={{
-                width: '100%',
-                padding: '12px',
-                fontSize: '16px',
-                backgroundColor: '#f8f9fa',
-                color: '#555',
-                border: '1px solid #ccc',
-                borderRadius: '6px',
-                cursor: 'pointer',
-                marginTop: '12px',
-              }}
-            >
-              {t('Cancel')}
-            </button>
-          </>
+          </form>
+        ) : (
+          <form style={{ width: "100%" }}>
+            <p style={{ marginBottom: '16px', color: '#555', textAlign: 'left' }}>
+              {t('Check your email for a 6-digit verification code sent to')} <strong>{email}</strong>
+            </p>
+            
+            <FormGroup>
+              <FormInput
+                ref={otpInputRef}
+                type="tel"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                maxLength={6}
+                value={otpCode}
+                onChange={handleOtpChange}
+                placeholder={t('Enter 6-digit code')}
+                style={{
+                  letterSpacing: '2px',
+                  textAlign: 'center',
+                  padding: "12px",
+                  width: "100%",
+                  boxSizing: "border-box"
+                }}
+              />
+            </FormGroup>
+            
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+              <Button
+                onClick={confirmCode}
+                disabled={status === 'verifying' || otpCode.length !== 6}
+                primary
+                style={{ 
+                  width: "100%",
+                  backgroundColor: "#28a745"
+                }}
+              >
+                {status === 'verifying' ? t('Verifying...') : t('Verify Code')}
+              </Button>
+              
+              <div style={{ 
+                fontSize: '14px', 
+                color: '#666',
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '8px'
+              }}>
+                <span>{t("Didn't receive a code?")}</span>
+                <button 
+                  onClick={handleResendCode}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#007bff',
+                    padding: 0,
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    textDecoration: 'underline',
+                  }}
+                >
+                  {t('Send new code')}
+                </button>
+              </div>
+              
+              <Button
+                onClick={onClose}
+                style={{
+                  width: "100%",
+                  backgroundColor: "#f8f9fa",
+                  color: "#555",
+                  border: "1px solid #ccc"
+                }}
+              >
+                {t('Cancel')}
+              </Button>
+            </div>
+          </form>
         )}
         
         {/* Two-Factor Authentication label */}
         <TwoFactorAuthLabel>
           {t('Two-Factor Authentication')}
         </TwoFactorAuthLabel>
-      </div>
-    </div>
+      </ModalContent>
+    </Modal>
   );
 };
 

@@ -1,9 +1,12 @@
+// Updated PasswordModal.tsx
 import { useState } from "react";
 import { 
   Modal, 
   ModalContent, 
   Button,
   TwoFactorAuthLabel,
+  FormInput,
+  FormGroup,
 } from "@/styles/styled-components";
 
 export interface PasswordModalProps {
@@ -14,7 +17,7 @@ export interface PasswordModalProps {
   t: (key: string) => string;
 }
 
-// Password modal component
+// Updated Password modal component with consistent styling
 export const PasswordModal: React.FC<PasswordModalProps> = ({
   isOpen,
   onClose,
@@ -36,70 +39,66 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({
   
   return (
     <Modal>
-      <ModalContent style={{ maxWidth: "400px" }}>
-        <div style={{ padding: "20px" }}>
-          <h3 style={{ margin: "0 0 20px 0", textAlign: "center" }}>{t('Enter Password')}</h3>
-          
-          <form onSubmit={handleSubmit}>
-            <div style={{ marginBottom: "20px" }}>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder={t('Password')}
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  borderRadius: "4px",
-                  border: error ? "1px solid #d32f2f" : "1px solid #ccc",
-                  fontSize: "16px"
-                }}
-                required
-              />
-              
-              {/* Display error message if present */}
-              {error && (
-                <div style={{ 
-                  color: "#d32f2f", 
-                  fontSize: "14px", 
-                  marginTop: "5px",
-                  padding: "5px"
-                }}>
-                  {error}
-                </div>
-              )}
-            </div>
+      <ModalContent style={{ maxWidth: "400px", textAlign: "center", padding: "32px" }}>
+        <h3 style={{ margin: "0 0 24px 0" }}>{t('Enter Password')}</h3>
+        
+        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+          <FormGroup>
+            <FormInput
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder={t('Password')}
+              style={{
+                border: error ? "1px solid #d32f2f" : undefined,
+                padding: "12px",
+                width: "100%",
+                boxSizing: "border-box"
+              }}
+              required
+            />
             
-            <div style={{ display: "flex", justifyContent: "space-between", gap: "12px" }}>
-              <Button
-                type="button"
-                onClick={onClose}
-                style={{
-                  backgroundColor: "#f3f4f6",
-                  color: "#333"
-                }}
-              >
-                {t('Cancel')}
-              </Button>
-              
-              <Button
-                type="submit"
-                primary
-                disabled={isSubmitting || !password}
-                style={{
-                  opacity: password ? 1 : 0.7
-                }}
-              >
-                {isSubmitting ? t('Submitting...') : t('Submit')}
-              </Button>
-            </div>
-          </form>
+            {/* Display error message if present */}
+            {error && (
+              <div style={{ 
+                color: "#d32f2f", 
+                fontSize: "14px", 
+                marginTop: "8px",
+                textAlign: "left"
+              }}>
+                {error}
+              </div>
+            )}
+          </FormGroup>
           
-          {/* Two-Factor Authentication label */}
-          <TwoFactorAuthLabel>
-            {t('Two-Factor Authentication')}
-          </TwoFactorAuthLabel>
-        </div>
+          <div style={{ display: "flex", gap: "12px", width: "100%" }}>
+            <Button
+              type="button"
+              onClick={onClose}
+              style={{
+                backgroundColor: "#f3f4f6",
+                color: "#333",
+                flex: 1
+              }}
+            >
+              {t('Cancel')}
+            </Button>
+            
+            <Button
+              type="submit"
+              primary
+              disabled={isSubmitting || !password}
+              style={{ flex: 1 }}
+            >
+              {isSubmitting ? t('Submitting...') : t('Submit')}
+            </Button>
+          </div>
+        </form>
+        
+        {/* Two-Factor Authentication label */}
+        <TwoFactorAuthLabel>
+          {t('Two-Factor Authentication')}
+        </TwoFactorAuthLabel>
       </ModalContent>
     </Modal>
   );
