@@ -45,7 +45,7 @@ import {
 
 // Import components
 import { FullscreenMediaViewer } from "@/components/FullscreenMediaViewer";
-import { PasswordModal } from "@/components/Modals/PasswordModal";
+import { PasswordModal } from "@/pages/photos/PasswordModal";
 import { PhotoLoginModal } from "@/pages/photos/PhotoLoginModal";
 import { FileInput } from "@/components/FileInput";
 import { UploadProgress } from "@/components/UploadProgress";
