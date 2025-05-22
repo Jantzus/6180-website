@@ -148,7 +148,6 @@
   "Enter Username": "Metmaacher Name Enjävve",
   "Select Username": "Metmaacher-Name Ußsöke",
   "Add Random Digits to Username": "Zofälleje Zeffere Zom Metmaacher-Name Derbei Donn",
-  "Enter your email so {ownerName} can see who accessed their album": "Jiff Ding E-Mail-Adress En, Do Met Kann {ownerName} Sinn, Wä Op Ier Album Zohjejreffe Hät",
   "Complete": "Komplett",
   "Processing": "Beärbeijdong",
   "Uploading": "Eroplade",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fählschlare",
   "({count} in progress)": "({count}) Em Jang",
   "{count} files": "{count} dateie",
-  "{count} file": "{count} datei"
+  "{count} file": "{count} datei",
+  "Enter your email address.": "Jif Ding E-Mail-Adress en.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hät dat Album blots met Frende un Familie jeteilt.",
+  "Email address...": "E-Mail-Adress..."
 }

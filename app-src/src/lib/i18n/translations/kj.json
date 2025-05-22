@@ -148,7 +148,6 @@
   "Enter Username": "Shaneka Edhina Lyomuningi",
   "Select Username": "Hoolola Etumbalo Lyoye",
   "Add Random Digits to Username": "Wedako oonombala tadima kouditumbila",
-  "Enter your email so {ownerName} can see who accessed their album": "Fatulula Email Joye Opo {ownerName} Ta Mono Olye Tala Album Davo",
   "Complete": "Ayidhe",
   "Processing": "Processing",
   "Uploading": "Okupitika",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ya puka",
   "({count} in progress)": "({count}) Ku Tendeka",
   "{count} files": "{count} fail",
-  "{count} file": "{count} faili"
+  "{count} file": "{count} faili",
+  "Enter your email address.": "Shaneka po okambo yoye yomeimbo yomuhunga.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} okupanga album otji mena ovapumbu na omikunda hao.",
+  "Email address...": "Email address..."
 }

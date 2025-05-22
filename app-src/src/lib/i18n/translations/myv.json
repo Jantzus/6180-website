@@ -148,7 +148,6 @@
   "Enter Username": "Совавтынк Тевс Нолдыцянь Лем",
   "Select Username": "Кочкамс Теицянь Лем",
   "Add Random Digits to Username": "Топавтыцянь Лемезэнзэ Апак Учонь Цёт Полавтома Поладомс",
-  "Enter your email so {ownerName} can see who accessed their album": "Сёрмадык Тонь Электронной Сёрмат, Штобу {ownerName} Неевель, Кие Совась Сынст Альбомс",
   "Complete": "Пешксе",
   "Processing": "Важодемс",
   "Uploading": "Туиця",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} эзь теевть",
   "({count} in progress)": "({count}) Молиця",
   "{count} files": "{count} файлат",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Сермадынк эсеть электронной сёрмань адресэнть.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} тя альбомть ялгатнень эди кудораськень мархтонза явондафтозь.",
+  "Email address...": "Электрононь сёрма адрес..."
 }

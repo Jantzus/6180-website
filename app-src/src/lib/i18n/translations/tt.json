@@ -148,7 +148,6 @@
   "Enter Username": "Кулланучы Исемен Кертегез",
   "Select Username": "Кулланучы Исемен Сайлагыз",
   "Add Random Digits to Username": "Кулланучы Исеменә Очраклы Саннар Өстәү",
-  "Enter your email so {ownerName} can see who accessed their album": "Электрон Почтагызны Кертегез, {ownerName} Аларның Альбомына Кем Кергәнен Күрсен Өчен",
   "Complete": "Тулы",
   "Processing": "Эшкәртү",
   "Uploading": "Йөкләү",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} уңышсыз",
   "({count} in progress)": "({count}) Барышта",
   "{count} files": "{count} файллар",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Электрон почта адресыгызны кертегез.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} бу альбомны дустыры һәм гаиләсе белән генә уртаклашкан.",
+  "Email address...": "Электрон почта адресы..."
 }

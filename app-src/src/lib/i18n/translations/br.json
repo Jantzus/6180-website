@@ -148,7 +148,6 @@
   "Enter Username": "Ebarzhit Hoc'h Anv Implijer",
   "Select Username": "Dibab Anv Implijer",
   "Add Random Digits to Username": "Ouzhpennañ Sifroù Dargouezhek D'an Anv Implijer",
-  "Enter your email so {ownerName} can see who accessed their album": "Enankit Hoc'h Postel Evit Ma C'hello {ownerName} Gwelout Piv En Deus Gwelet O Albom",
   "Complete": "Klok",
   "Processing": "Tretiñ",
   "Uploading": "O kargañ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} c'hwitet",
   "({count} in progress)": "({count}) E Mont War-Raok",
   "{count} files": "{count} restr",
-  "{count} file": "{count} restr"
+  "{count} file": "{count} restr",
+  "Enter your email address.": "Ebarzhit hoc'h chomlec'h postel.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} en deus rannet an albom-mañ gant mignoned ha tiegezh hepken.",
+  "Email address...": "Chomlec'h postel..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Ахархәаҩ Ихьӡ Ататәуп",
   "Select Username": "Ахархәаҩ Иалх",
   "Add Random Digits to Username": "Ирандом Аҧхьаӡарақәа Ахархәаҩ Ихьӡ Иацҵа",
-  "Enter your email so {ownerName} can see who accessed their album": "Уи Email Иҭагал {ownerName} Рыальбом Изхәаԥшыз Ибартә",
   "Complete": "Ихаркоу",
   "Processing": "Аус Аҟаҵара",
   "Uploading": "Аҭагалара",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} даҧрахеит",
   "({count} in progress)": "({count}) Аус Имоуп",
   "{count} files": "{count} афаилқәа",
-  "{count} file": "{count} афаил"
+  "{count} file": "{count} афаил",
+  "Enter your email address.": "Иҭаҩра уелектронтә ҧошьҭа аҭыӡҭыԥ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ари альбом ашьарҭеи афамилиеи рхылаҿкаа рыла мацара ԥшааит.",
+  "Email address...": "Сахьа Аныхра..."
 }

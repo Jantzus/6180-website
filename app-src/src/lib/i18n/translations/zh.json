@@ -148,7 +148,6 @@
   "Enter Username": "输入用户名",
   "Select Username": "选择用户名",
   "Add Random Digits to Username": "添加随机数字到用户名",
-  "Enter your email so {ownerName} can see who accessed their album": "输入您的电子邮件，以便 {ownerName} 可以看到谁访问了他们的相册",
   "Complete": "完整",
   "Processing": "处理",
   "Uploading": "正在上传",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} 失败",
   "({count} in progress)": "({count}) 进行中",
   "{count} files": "{count} 个文件",
-  "{count} file": "{count} 文件"
+  "{count} file": "{count} 文件",
+  "Enter your email address.": "请输入您的电子邮件地址.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} 仅与朋友和家人分享了这个相册。",
+  "Email address...": "电子邮件地址..."
 }

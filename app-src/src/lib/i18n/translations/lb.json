@@ -148,7 +148,6 @@
   "Enter Username": "Benotzernumm Aginn",
   "Select Username": "Benotzernumm Wielen",
   "Add Random Digits to Username": "Zoufälleg Zuelen Zum Benotzernumm Derbäisetzen",
-  "Enter your email so {ownerName} can see who accessed their album": "Gëff Deng E-Mail-Adress An, Fir Datt {ownerName} Gesi Kann, Wien Op Hiren Album Zougrëff Hat",
   "Complete": "Vollstänneg",
   "Processing": "Veraarbechtung",
   "Uploading": "Eroplueden",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} feelgeschloen",
   "({count} in progress)": "({count}) A Beaarbechtung",
   "{count} files": "{count} dateien",
-  "{count} file": "{count} fichier"
+  "{count} file": "{count} fichier",
+  "Enter your email address.": "Gitt Är E-Mail-Adress an.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} huet dëst Album nëmmen mat Frënn a Famill gedeelt.",
+  "Email address...": "E-Mail-Adress..."
 }

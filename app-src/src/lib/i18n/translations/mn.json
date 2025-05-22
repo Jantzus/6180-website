@@ -148,7 +148,6 @@
   "Enter Username": "Хэрэглэгчийн Нэр Оруулна Уу",
   "Select Username": "Хэрэглэгчийн Нэр Сонгох",
   "Add Random Digits to Username": "Хэрэглэгчийн Нэрэнд Санамсаргүй Тоо Оруулах",
-  "Enter your email so {ownerName} can see who accessed their album": "Имэйлээ Оруулж {ownerName} Тэдний Цомогт Хэн Нэвтэрсэн Болохыг Харах Боломжтой Болгоно Уу",
   "Complete": "Бүрэн",
   "Processing": "Боловсруулалт",
   "Uploading": "Байршуулж байна",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} амжилтгүй болсон",
   "({count} in progress)": "({count}) Явагдаж байна",
   "{count} files": "{count} файл",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Имэйл хаягаа оруулна уу.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} энэ цомгийг зөвхөн найзууд болон гэр бүлийнхэнтэй хуваалцсан.",
+  "Email address...": "Имэйл хаяг..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "შეიყვანეთ მომხმარებლის სახელი",
   "Select Username": "აირჩიეთ მომხმარებლის სახელი",
   "Add Random Digits to Username": "მომხმარებლის სახელზე შემთხვევითი ციფრების დამატება",
-  "Enter your email so {ownerName} can see who accessed their album": "შეიყვანეთ თქვენი ელფოსტა, რათა {ownerName}-მა დაინახოს ვინ წვდება მათ ალბომს",
   "Complete": "სრული",
   "Processing": "დამუშავება",
   "Uploading": "ატვირთვა",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ვერ მოხერხდა",
   "({count} in progress)": "({count}) მიმდინარეობს",
   "{count} files": "{count} ფაილები",
-  "{count} file": "{count} ფაილი"
+  "{count} file": "{count} ფაილი",
+  "Enter your email address.": "შეიყვანეთ თქვენი ელფოსტის მისამართი.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}-მ ეს ალბომი მხოლოდ მეგობრებთან და ოჯახთან გაუზიარა.",
+  "Email address...": "ელფოსტის მისამართი..."
 }

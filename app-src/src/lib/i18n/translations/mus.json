@@ -148,7 +148,6 @@
   "Enter Username": "Cehocefkv Cokkv",
   "Select Username": "Este Hocefket Kerhoyetv",
   "Add Random Digits to Username": "Este Vnokhome Honne Vhokhvn Vhoyokcv Tohtvlhvye",
-  "Enter your email so {ownerName} can see who accessed their album": "Ce Email Cokisa {ownerName} Mvto Kerrakv Estoman Hiyomvtist",
   "Complete": "Lumhē",
   "Processing": "Processing",
   "Uploading": "Vwayhtalon",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} akvyēckv",
   "({count} in progress)": "({count}) Ayoktvs",
   "{count} files": "{count} cokv",
-  "{count} file": "{count} cokv"
+  "{count} file": "{count} cokv",
+  "Enter your email address.": "Email ahonokcheto atonhot.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} album hiyyat enhoputaken ayat cuko-hunanutat.",
+  "Email address...": "Email address..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "صارف ناو درٕج کٔرِیو",
   "Select Username": "یوزَر نیٔو چُنُو",
   "Add Random Digits to Username": "یوزَر نیوُک منٛز رینڈَم ڈِجِٹ شٲمِل کَرؠو",
-  "Enter your email so {ownerName} can see who accessed their album": "تہٕ ایمیل داخل کٔرِو تاکہ {ownerName} ہٮ۪کَو وُچھنٕہ یێکُو تٔمٕچ آلبم کٕہ ڈِٹھمٕت چھِ",
   "Complete": "مُکَمَل",
   "Processing": "پروسیسِنگ",
   "Uploading": "اپلوڈ كَرٕنؠ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ناکام",
   "({count} in progress)": "({count}) تَرقی مَنٛز",
   "{count} files": "{count} فایِل",
-  "{count} file": "{count} فایل"
+  "{count} file": "{count} فایل",
+  "Enter your email address.": "تُہنٛد ای میل ایڈریس درج کرؠو.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} یتھ البم صرف دوستن ۤ خاندان سیتیۍ شیار کریتھ چُھ۔",
+  "Email address...": "برقی ڈاک پتہ..."
 }

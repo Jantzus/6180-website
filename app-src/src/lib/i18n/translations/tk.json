@@ -148,7 +148,6 @@
   "Enter Username": "Ulanyjy Adyny Giriziň",
   "Select Username": "Ulanyjy Adyny Saýlaň",
   "Add Random Digits to Username": "Ulanyjy Adyna Tötänleýin Sanlar Goş",
-  "Enter your email so {ownerName} can see who accessed their album": "E-poçtaňyzy Giriziň, {ownerName} Olaryň Albumyna Kimiň Girendigini Görüp Bilsin",
   "Complete": "Doly",
   "Processing": "Işlemek",
   "Uploading": "Ýüklemek",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} şowsuz",
   "({count} in progress)": "({count}) Dowam Edýär",
   "{count} files": "{count} faýllar",
-  "{count} file": "{count} faýl"
+  "{count} file": "{count} faýl",
+  "Enter your email address.": "E-poçta adresiňizi giriziň.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} bu albomy diňe dostlary we maşgalasy bilen paýlaşdy.",
+  "Email address...": "Elektron poçta adresi..."
 }

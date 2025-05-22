@@ -148,7 +148,6 @@
   "Enter Username": "Sláðu Inn Notandanafn",
   "Select Username": "Veldu Notandanafn",
   "Add Random Digits to Username": "Bæta Handahófskenndum Tölustöfum Við Notandanafn",
-  "Enter your email so {ownerName} can see who accessed their album": "Sláðu Inn Tölvupóstinn Þinn Svo {ownerName} Geti Séð Hver Skoðaði Albúmið Þeirra",
   "Complete": "Fullur",
   "Processing": "Vinnsla",
   "Uploading": "Upphleðsla",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} mistókst",
   "({count} in progress)": "({count}) Í Vinnslu",
   "{count} files": "{count} skrár",
-  "{count} file": "{count} skrá"
+  "{count} file": "{count} skrá",
+  "Enter your email address.": "Sláðu inn netfangið þitt.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hefur aðeins deilt þessu albumi með vinum og fjölskyldu.",
+  "Email address...": "Netfang..."
 }

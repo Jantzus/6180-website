@@ -148,7 +148,6 @@
   "Enter Username": "Enter Itsiet Username",
   "Select Username": "Eow Bum Etagú",
   "Add Random Digits to Username": "Eow Namba Iyo Iduwen Nega Nying",
-  "Enter your email so {ownerName} can see who accessed their album": "Enter Om Email Iyow {ownerName} Ateng Tsiet Ei Engame Album Ouwak",
   "Complete": "Earak",
   "Processing": "Processing",
   "Uploading": "Uploading",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ebak",
   "({count} in progress)": "({count}) Ogiten Aiquen",
   "{count} files": "{count} fail",
-  "{count} file": "{count} peba"
+  "{count} file": "{count} peba",
+  "Enter your email address.": "Enter am email atress.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} e share-a album men ememem me famiri an.",
+  "Email address...": "Email address..."
 }

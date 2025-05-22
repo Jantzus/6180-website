@@ -148,7 +148,6 @@
   "Enter Username": "Бүртклдгчин Нернь Орултн",
   "Select Username": "Орлцачна Нернь Суңһх",
   "Add Random Digits to Username": "Орлцачна Нерт Зер Бийр Дарата Немх",
-  "Enter your email so {ownerName} can see who accessed their album": "Электрон Шуудн Бичтн {ownerName} Хәрү Таньдгин Кен Мел Альбомдас Үздг",
   "Complete": "Бүрн",
   "Processing": "Болвсрлт",
   "Uploading": "Теелһҗәнә",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} бүтлго болв",
   "({count} in progress)": "({count}) Йовудлж Бәәнә",
   "{count} files": "{count} боомгуд",
-  "{count} file": "{count} боомг"
+  "{count} file": "{count} боомг",
+  "Enter your email address.": "Электрон бичг хайгин хаягарн тәвтн.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} энүүн альбомыг нөкд болн өрк-бүлтә хамт хуваһсн.",
+  "Email address...": "Электрон бичгин хайг..."
 }

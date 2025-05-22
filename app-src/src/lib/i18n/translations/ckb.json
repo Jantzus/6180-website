@@ -148,7 +148,6 @@
   "Enter Username": "ناوی بەکارهێنەر بنووسە",
   "Select Username": "ناوی بەکارهێنەر هەڵبژێرە",
   "Add Random Digits to Username": "ژمارەی هەڕەمەکی بۆ ناوی بەکارهێنەر زیاد بکە",
-  "Enter your email so {ownerName} can see who accessed their album": "ئیمەیڵەکەت بنووسە بۆ ئەوەی {ownerName} بتوانێت ببینێت کێ سەردانی ئەلبوومەکەیانی کردووە",
   "Complete": "تەواو",
   "Processing": "پڕۆسێس",
   "Uploading": "باردەکات",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} سەرکەوتوو نەبوو",
   "({count} in progress)": "({count}) لە پێشکەوتندا",
   "{count} files": "{count} پەڕگەکان",
-  "{count} file": "{count} پەڕگە"
+  "{count} file": "{count} پەڕگە",
+  "Enter your email address.": "ناونیشانی ئیمەیلی خۆت بنووسە.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ئەم ئەلبومە تەنها لەگەڵ هاوڕێکان و خێزان هاوبەشی کردووە.",
+  "Email address...": "ناونیشانی ئیمەیل..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Xicalaqui Motocacauh",
   "Select Username": "Xiuhtlapepenicān Tlatequitiltilīlli",
   "Add Random Digits to Username": "Xictlali Tlatehtelpohualtin Tlatamachiyohuani Tocaneh",
-  "Enter your email so {ownerName} can see who accessed their album": "Xiktlāli Motlacorreo Ic {ownerName} Hueliz Quitaz Aquinque Oquicalakih Ipan Inalbum",
   "Complete": "Tlamiliztli",
   "Processing": "Tlapohuallistli",
   "Uploading": "Tlahcopinalotlaliliztli",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} amo cualli",
   "({count} in progress)": "({count}) Tlahtolli Yolli",
   "{count} files": "{count} tlajkuilolmej",
-  "{count} file": "{count} tlajkuilōltechīuhkāyōtl"
+  "{count} file": "{count} tlajkuilōltechīuhkāyōtl",
+  "Enter your email address.": "Xikihkuilo motlahkuiloltitlaniliztlachiyaliz.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} inin mati ic album quilhuique icniwan huan inchanecayotl.",
+  "Email address...": "Correoh electrónicoh tlatitlantli..."
 }

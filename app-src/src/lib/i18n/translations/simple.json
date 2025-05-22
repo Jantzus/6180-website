@@ -148,7 +148,6 @@
   "Enter Username": "Enter Username",
   "Select Username": "Select Username",
   "Add Random Digits to Username": "Add Random Digits To Username",
-  "Enter your email so {ownerName} can see who accessed their album": "Enter Your Email So {ownerName} Can See Who Accessed Their Album",
   "Complete": "Complete",
   "Processing": "Processing",
   "Uploading": "Uploading",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} failed",
   "({count} in progress)": "({count}) In Progress",
   "{count} files": "{count} files",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Enter your email address.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} has only shared this album with friends and family.",
+  "Email address...": "Email address..."
 }

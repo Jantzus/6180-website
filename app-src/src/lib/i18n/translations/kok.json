@@ -148,7 +148,6 @@
   "Enter Username": "वापरपी नांव भरात",
   "Select Username": "वापरपी नांव निवड",
   "Add Random Digits to Username": "वापरपियाच्या नावाक यादृच्छिक अंक जोड",
-  "Enter your email so {ownerName} can see who accessed their album": "तुमचो ईमेल भरात म्हणजे {ownerName} पळोवंक शकता कोण तांच्या आल्बमाक प्रवेश केला",
   "Complete": "पूर्ण",
   "Processing": "प्रक्रिया",
   "Uploading": "अपलोड करता",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} अपयशी",
   "({count} in progress)": "({count}) प्रगतीत आसा",
   "{count} files": "{count} फायली",
-  "{count} file": "{count} फायल"
+  "{count} file": "{count} फायल",
+  "Enter your email address.": "तुमचो ईमेल पत्तो भरात.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}न हो आल्बम फकत इश्टांक आनी कुटुंबाक शेअर केला।",
+  "Email address...": "ईमेल पत्तो..."
 }

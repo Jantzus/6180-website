@@ -148,7 +148,6 @@
   "Enter Username": "Andika Izina Ry'Ukoresha",
   "Select Username": "Hitamo Izina ry'Ukoresha",
   "Add Random Digits to Username": "Ongeramo Imibare Ya Hendo Ku Izina Ry'ukoresha",
-  "Enter your email so {ownerName} can see who accessed their album": "Andika Imeyili Yawe Kugira {ownerName} Abashe Kureba Uwinjiye Mu Ma Albumu Yabo",
   "Complete": "Cyuzuye",
   "Processing": "Gucunga",
   "Uploading": "Kohereza",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} byanze",
   "({count} in progress)": "({count}) Biri Gukorwa",
   "{count} files": "{count} dosiye",
-  "{count} file": "{count} idosiye"
+  "{count} file": "{count} idosiye",
+  "Enter your email address.": "Andika aderesi yawe ya imeyili.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} yaguranye album iyi n'inshuti n'umuryango gusa.",
+  "Email address...": "Aderesi imeli..."
 }

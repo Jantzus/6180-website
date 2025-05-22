@@ -148,7 +148,6 @@
   "Enter Username": "Benutzername Oigewe",
   "Select Username": "Benutzername Auswähle",
   "Add Random Digits to Username": "Zufällischi Zahle Zum Benutzername Dezufiesche",
-  "Enter your email so {ownerName} can see who accessed their album": "Gebb Doi E-Mail Oi Domit {ownerName} Sähe Konn, Wer Uff Ihr Album Zugreife Hot",
   "Complete": "Vollstännisch",
   "Processing": "Verarbaidung",
   "Uploading": "Hochlade",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} gscheitert",
   "({count} in progress)": "({count}) Em Gange",
   "{count} files": "{count} dateie",
-  "{count} file": "{count} datei"
+  "{count} file": "{count} datei",
+  "Enter your email address.": "Schreib doini E-Mail-Adress.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} had des Album nur mit Freind unn Familie gedaalt.",
+  "Email address...": "E-Mail-Adress..."
 }

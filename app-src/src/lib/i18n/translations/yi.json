@@ -148,7 +148,6 @@
   "Enter Username": "אַרײַנגעבן באַניצער נאָמען",
   "Select Username": "קלייבט אויס באניצער נאמען",
   "Add Random Digits to Username": "לייג צו צופֿעליגע ציפֿערן צו באַניצער נאָמען",
-  "Enter your email so {ownerName} can see who accessed their album": "אַרײַנשרײַבן דײַן אימעיל כּדי {ownerName} קען זען ווער האט צוגעטרעטן צו זייער אַלבום",
   "Complete": "פֿאַרענדיקן",
   "Processing": "פּראָצעסירונג",
   "Uploading": "ארויפלאָדירן",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} דורכגעפאלן",
   "({count} in progress)": "({count}) אין פארשריט",
   "{count} files": "{count} טעקעס",
-  "{count} file": "{count} טעקע"
+  "{count} file": "{count} טעקע",
+  "Enter your email address.": "געבט אריין אייער אימעיל אדרעס.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} האט בלויז געטיילט דעם אלבאם מיט פריינט און משפחה.",
+  "Email address...": "בליצפּאָסט אַדרעס..."
 }

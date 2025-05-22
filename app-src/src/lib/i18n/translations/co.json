@@ -148,7 +148,6 @@
   "Enter Username": "Inserisci Nome Utente",
   "Select Username": "Selezziunà Nome Utilizatore",
   "Add Random Digits to Username": "Aghjunghje Cifre Aleatorii À U Nome Di L'utilizatore",
-  "Enter your email so {ownerName} can see who accessed their album": "Inserite U Vostru Email Cusì Chì {ownerName} Pò Vede Quale Hà Accessu À U So Album",
   "Complete": "Cumpletu",
   "Processing": "Trattamentu",
   "Uploading": "Carichendu",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fiascatu",
   "({count} in progress)": "({count}) In Corsu",
   "{count} files": "{count} schedarii",
-  "{count} file": "{count} schedariu"
+  "{count} file": "{count} schedariu",
+  "Enter your email address.": "Scrivite u vostru indirizzu email.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hà spartutu stu album cù l'amichi è a famiglia solu.",
+  "Email address...": "Indirizzu email..."
 }

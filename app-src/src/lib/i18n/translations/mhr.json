@@ -148,7 +148,6 @@
   "Enter Username": "Кучылтшын Лӱмжым Пуртыза",
   "Select Username": "Кучылтшын Лӱмжым Ойырымаш",
   "Add Random Digits to Username": "Пайдаланышын Лӱмышкыжӧ Вучыдымо Чотым Ешараш",
-  "Enter your email so {ownerName} can see who accessed their album": "Шке Электрон Почтетым Пурто {ownerName} Нунын Альбомым Кӧ Ончен Ужын Манын Верч",
   "Complete": "Тичмаш",
   "Processing": "Обработке",
   "Uploading": "Пурымаш",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ыш лек",
   "({count} in progress)": "({count}) Шуйна",
   "{count} files": "{count} файл-влак",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Шке электрон почто адресдам пуртыза.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} тиде альбомым йолташ-влак дене кыдалне пашал кылеш.",
+  "Email address...": "Электрон почто адрес..."
 }

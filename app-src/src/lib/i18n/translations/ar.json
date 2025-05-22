@@ -148,7 +148,6 @@
   "Enter Username": "أدخل اسم المستخدم",
   "Select Username": "اختر اسم المستخدم",
   "Add Random Digits to Username": "إضافة أرقام عشوائية إلى اسم المستخدم",
-  "Enter your email so {ownerName} can see who accessed their album": "أدخل بريدك الإلكتروني حتى يتمكن {ownerName} من رؤية من وصل إلى ألبومهم",
   "Complete": "مُكْتَمِل",
   "Processing": "معالجة",
   "Uploading": "جاري التحميل",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} فشل",
   "({count} in progress)": "({count}) في تَقَدم",
   "{count} files": "{count} ملفات",
-  "{count} file": "{count} ملف"
+  "{count} file": "{count} ملف",
+  "Enter your email address.": "أدخل عنوان بريدك الإلكتروني.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} شارك هذا الألبوم مع الأصدقاء والعائلة فقط.",
+  "Email address...": "عنوان البريد الإلكتروني..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Pasoë Nan Ureuëng Ngui",
   "Select Username": "Piléh Nan Ureuëng",
   "Add Random Digits to Username": "Tamah Angka Acak Keu Nan Ureuëng",
-  "Enter your email so {ownerName} can see who accessed their album": "Peuteubiet Email Droeneuh Mangat {ownerName} Jeuet Jikalon Soé Nyang Ka Peuhah Album Jih",
   "Complete": "Lengkap",
   "Processing": "Peuneugatôh",
   "Uploading": "Peunaik",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} gagal",
   "({count} in progress)": "({count}) Teungöh Meulakèe",
   "{count} files": "{count} beureukaih",
-  "{count} file": "{count} beurkas"
+  "{count} file": "{count} beurkas",
+  "Enter your email address.": "Peuteubiet alamat surat-e droeneuh.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} cuma geu-bagi album nyoe keu rakan dan keluarga.",
+  "Email address...": "Sampôh Salinan Lôn..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Номи Корбарро Ворид Кунед",
   "Select Username": "Интихоби Номи Корбар",
   "Add Random Digits to Username": "Ба Номи Корбар Рақамҳои Тасодуфӣ Илова Кунед",
-  "Enter your email so {ownerName} can see who accessed their album": "Почтаи Электронии Худро Ворид Кунед То {ownerName} Битавонад Бубинад Кӣ Ба Албоми Онҳо Дастрасӣ Пайдо Кардааст",
   "Complete": "Комил",
   "Processing": "Коркард",
   "Uploading": "Бор кардан",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ноком шуд",
   "({count} in progress)": "({count}) Дар Ҷараён",
   "{count} files": "{count} файлҳо",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Суроғаи почтаи электронии худро ворид кунед.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ин албумро танҳо бо дӯстон ва оила мубодила кард.",
+  "Email address...": "Суроғаи почтаи электронӣ..."
 }

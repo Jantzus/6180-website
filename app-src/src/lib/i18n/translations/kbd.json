@@ -148,7 +148,6 @@
   "Enter Username": "Уи ЦӀэр Итхэ",
   "Select Username": "ЦӀэр Къыхэх",
   "Add Random Digits to Username": "ЦIэм КъэхуэсыбжыгъэхэмкIэ ХэгъэхъуэнКIэ",
-  "Enter your email so {ownerName} can see who accessed their album": "Уи Электрон Пощтэр Итхэ {ownerName} Хуэлъагъуну Хэт Я Альбомым Еплъар",
   "Complete": "Икомал",
   "Processing": "Лэжьэн",
   "Uploading": "Хъагъэхьэн",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} къехъулӏакъым",
   "({count} in progress)": "({count}) ИокӀуэ",
   "{count} files": "{count} файлхэр",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Уи электрон пощт хэщIапIэр къратх.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}-р мы альбомыр нэхъыжьхэмрэ унэгъукӀэрэ къэкӀэкӀынщ.",
+  "Email address...": "Электрон пощт адрес..."
 }

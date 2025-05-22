@@ -148,7 +148,6 @@
   "Enter Username": "Kirjutagat Kävutajan Nimi",
   "Select Username": "Valikat Kävutajan Nimi",
   "Add Random Digits to Username": "Ližata Randomižid Numeroid Kävutajan Nimhe",
-  "Enter your email so {ownerName} can see who accessed their album": "Pangat Teiden E-počtadres, Miše {ownerName} Voiži Nähta Ken Oli Tullnu Heiden Al'bomha",
   "Complete": "Täuz'",
   "Processing": "Käzitelend",
   "Uploading": "Ülöz sirtand",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ei lähnu",
   "({count} in progress)": "({count}) Process",
   "{count} files": "{count} failad",
-  "{count} file": "{count} fail"
+  "{count} file": "{count} fail",
+  "Enter your email address.": "Kirjutagat teiden e-počtan adres.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} jagoi necidä al'bomad vaiše mel'het da kanz.",
+  "Email address...": "Elektronižen počtan adres..."
 }

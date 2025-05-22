@@ -148,7 +148,6 @@
   "Enter Username": "輸儂其用戶名",
   "Select Username": "Gāi Ê̤ṳng-hô Miàng",
   "Add Random Digits to Username": "Gă Uòng-Miàng Gă-Diòng Sṳ̆k-ê̤ṳ Só-cī",
-  "Enter your email so {ownerName} can see who accessed their album": "粘聰汝其Email固磨 {ownerName} 愛會看見誰進紮伊各相册",
   "Complete": "完成",
   "Processing": "處理",
   "Uploading": "上传中",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} 失敗囉",
   "({count} in progress)": "({count}) 進行中",
   "{count} files": "{count} 檔案",
-  "{count} file": "{count} 文件"
+  "{count} file": "{count} 文件",
+  "Enter your email address.": "杂入汝其电子邮件地址.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} 乞̤這本相冊共朋友摸眷屬分享而已。",
+  "Email address...": "Diêng-cṳ̄ dê-cī..."
 }

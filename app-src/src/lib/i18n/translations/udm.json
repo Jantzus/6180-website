@@ -148,7 +148,6 @@
   "Enter Username": "Кутӥсьлэсь Нимзэ Гожтэ",
   "Select Username": "Кутӥсьлэсь Нимзэ Быръе",
   "Add Random Digits to Username": "Кутӥсьлэн Нимаз Шыпыртэм Лыдпусъёс Ватсаны",
-  "Enter your email so {ownerName} can see who accessed their album": "Электрон Почтадэс Гожтэ, {ownerName} Мед Адӟоз Кин Учкиз Соослэсь Альбомзэс",
   "Complete": "Быдэс",
   "Processing": "Ужан",
   "Uploading": "Поттон",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} пӧрмымтэ",
   "({count} in progress)": "({count}) Мынэ",
   "{count} files": "{count} файлъёс",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Аслад электрон почта адрестэс гожтэ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} та альбомез эшъёсын но семьяен гинэ юрттыса сётиз.",
+  "Email address...": "Электрон почта адрес..."
 }

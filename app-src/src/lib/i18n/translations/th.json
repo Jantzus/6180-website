@@ -148,7 +148,6 @@
   "Enter Username": "ป้อนชื่อผู้ใช้",
   "Select Username": "เลือกชื่อผู้ใช้",
   "Add Random Digits to Username": "เพิ่มตัวเลขแบบสุ่มในชื่อผู้ใช้",
-  "Enter your email so {ownerName} can see who accessed their album": "ป้อนอีเมลของคุณเพื่อให้ {ownerName} สามารถดูว่าใครเข้าถึงอัลบั้มของพวกเขา",
   "Complete": "สมบูรณ์",
   "Processing": "การประมวลผล",
   "Uploading": "กำลังอัปโหลด",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ล้มเหลว",
   "({count} in progress)": "({count}) กำลังดำเนินการ",
   "{count} files": "{count} ไฟล์",
-  "{count} file": "{count} ไฟล์"
+  "{count} file": "{count} ไฟล์",
+  "Enter your email address.": "ป้อนที่อยู่อีเมลของคุณ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ได้แบ่งปันอัลบั้มนี้กับเพื่อนและครอบครัวเท่านั้น",
+  "Email address...": "ที่อยู่อีเมล..."
 }

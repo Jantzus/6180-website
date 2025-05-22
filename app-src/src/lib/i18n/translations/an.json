@@ -148,7 +148,6 @@
   "Enter Username": "Introduzca O Nombre D'Usuario",
   "Select Username": "Eslir Usuario",
   "Add Random Digits to Username": "Adhibir Dígitos Aleatorios A Nombre D'usuario",
-  "Enter your email so {ownerName} can see who accessed their album": "Introduz O Tuyo Correu Electronico Ta Que {ownerName} Pueda Veyer Qui Ha Accediu A O Suyo Album",
   "Complete": "Completar",
   "Processing": "Procesamiento",
   "Uploading": "Cargando",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fallato",
   "({count} in progress)": "({count}) En Progreso",
   "{count} files": "{count} fichers",
-  "{count} file": "{count} fichero"
+  "{count} file": "{count} fichero",
+  "Enter your email address.": "Introduz a tuya adreza de correu electronico.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} solament ha compartiu este álbum con amigos y familia.",
+  "Email address...": "Adreza de correu electronico..."
 }

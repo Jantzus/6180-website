@@ -148,7 +148,6 @@
   "Enter Username": "Ného Névet Hénėševehe",
   "Select Username": "Nétsėhéstȯtse Móheeséveho",
   "Add Random Digits to Username": "Hoohtsėhesenesto Mȧheóneváseéstse Ma'háhke'ėstse",
-  "Enter your email so {ownerName} can see who accessed their album": "Néhpo'ėstse Tséohkeéva'enevese {ownerName} Mé'tónėsėstse Héva'ėhéhe Éhvé'ho'ėhnėstse Éšeévaʼe",
   "Complete": "Énėstse",
   "Processing": "Émaahéstôtse",
   "Uploading": "Éxhoésta",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} éohke'háanehe",
   "({count} in progress)": "({count}) Nėhéónėstse",
   "{count} files": "{count} mâhpéhévôtse",
-  "{count} file": "{count} mȧhpe'o"
+  "{count} file": "{count} mȧhpe'o",
+  "Enter your email address.": "Némeo'ôhtse nétse'ėstse e'ėšeévasenestôtse.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} nėhéóhe álbum éšeamėhevovėstse netao'o éne hetane.",
+  "Email address...": "Email address..."
 }

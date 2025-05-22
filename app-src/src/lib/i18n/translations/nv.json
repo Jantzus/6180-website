@@ -148,7 +148,6 @@
   "Enter Username": "Choyoołʼįįhí Bizhi' Haalʼą́",
   "Select Username": "Choyoołʼįįhí Yinílá",
   "Add Random Digits to Username": "Choyoołʼaahii Dahbiʼ Bitsįʼ Ałhidadiiltʼaahgo Tʼáá Oolkił Tʼéí Bikʼéshtʼoodjį'",
-  "Enter your email so {ownerName} can see who accessed their album": "Email Bee Ííníłtsóós {ownerName} Deiyílʼį́ Háálá Album Baa Ákʼe'elchí",
   "Complete": "Ajįįh",
   "Processing": "Bí'ílníníí",
   "Uploading": "Halne'",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} baa doo hózhǫ́ǫ da",
   "({count} in progress)": "({count}) Naalyéhé",
   "{count} files": "{count} naaltsoos",
-  "{count} file": "{count} naaltsoos"
+  "{count} file": "{count} naaltsoos",
+  "Enter your email address.": "Naaltsoos bee hane'í bik'i bee adeesdzohígíí bá íńłchįįh.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} naaltsoos beeʼałáhígíí éí aak'eh bijééʼ éí ba naakai.",
+  "Email address...": "Email address..."
 }

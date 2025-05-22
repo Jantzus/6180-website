@@ -148,7 +148,6 @@
   "Enter Username": "बेबहारिनि मुं सोनो",
   "Select Username": "बेबहारिनि मुं बासिख",
   "Add Random Digits to Username": "बेबहारिनि मुंखौ अरजाथाव अनजिमाफोर दानाय",
-  "Enter your email so {ownerName} can see who accessed their album": "नोंथांनि Email हांखो {ownerName} आं नुजानो हागौ सोर बिसोर Album फैखांङो",
   "Complete": "आबुं",
   "Processing": "प्रोसेसिं",
   "Uploading": "आपलोड खालामनाय",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} फेलें जाबाय",
   "({count} in progress)": "({count}) आगबारि जाबाय",
   "{count} files": "{count} फाइलफोर",
-  "{count} file": "{count} फाइल"
+  "{count} file": "{count} फाइल",
+  "Enter your email address.": "नोंथांनि इमेल थाखो फावथाय.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}आ बे एलबामखौ गोलाब आरो बिथाव थासा बांगायो।",
+  "Email address...": "इमेल थालै..."
 }

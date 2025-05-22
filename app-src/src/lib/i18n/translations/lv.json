@@ -148,7 +148,6 @@
   "Enter Username": "Ievadiet Lietotājvārdu",
   "Select Username": "Izvēlieties Lietotājvārdu",
   "Add Random Digits to Username": "Pievienot Nejaušus Ciparus Lietotājvārdam",
-  "Enter your email so {ownerName} can see who accessed their album": "Ievadiet Savu E-pastu, Lai {ownerName} Varētu Redzēt, Kas Piekļuva Viņu Albumam",
   "Complete": "Pabeigts",
   "Processing": "Apstrāde",
   "Uploading": "Augšupielāde",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} neizdevās",
   "({count} in progress)": "({count}) Procesā",
   "{count} files": "{count} faili",
-  "{count} file": "{count} fails"
+  "{count} file": "{count} fails",
+  "Enter your email address.": "Ievadiet savu e-pasta adresi.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ir dalījies ar šo albumu tikai ar draugiem un ģimeni.",
+  "Email address...": "E-pasta adrese..."
 }

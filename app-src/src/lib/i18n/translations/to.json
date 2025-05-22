@@ -148,7 +148,6 @@
   "Enter Username": "Hū Ki He Hingoa ʻO E Tokotaha Ngāueʻaki",
   "Select Username": "Fili ha Hingoa Ngāue'aki",
   "Add Random Digits to Username": "Tanaki Ha Mata Fika Fakahaunga Ki He Hingoa Taha",
-  "Enter your email so {ownerName} can see who accessed their album": "Fakahū Ho Fetu'utaki Fakaimelí Ke Lava 'E {ownerName} 'O Vakai Pe Ko Hai Na'e Hū Ki He'enau ʻĀlipamu",
   "Complete": "Kakato",
   "Processing": "Ngāue'i",
   "Uploading": "Fakahū",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ʻikai lava",
   "({count} in progress)": "({count}) Lolotonga Fakahoko",
   "{count} files": "{count} ngaahi faile",
-  "{count} file": "{count} faile"
+  "{count} file": "{count} faile",
+  "Enter your email address.": "Hū ho tu'asila 'imeili.",
+  "{ownerName} has only shared this album with friends and family.": "Na'e 'ange pe 'e {ownerName} 'a e talanoa ni ki he ngaahi kaume'a mo e famili.",
+  "Email address...": "Tuʻasila ʻīmeili..."
 }

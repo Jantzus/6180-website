@@ -148,7 +148,6 @@
   "Enter Username": "Maqaa Fayyadamaa Galchi",
   "Select Username": "Maqaa Fayyadamaa Filadhu",
   "Add Random Digits to Username": "Lakkooyallee Carraa Maqaa Fayyadamaa Irraa Dabaluu",
-  "Enter your email so {ownerName} can see who accessed their album": "Imeelii Kee Seeni Akka {ownerName} Eenya Albumii Isaanii Ilaalee Arge",
   "Complete": "Guutuu",
   "Processing": "Processing",
   "Uploading": "Olkaaʼa gadi",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} dadhabe",
   "({count} in progress)": "({count}) Gara Deemaa",
   "{count} files": "{count} faayiloota",
-  "{count} file": "{count} faayilii"
+  "{count} file": "{count} faayilii",
+  "Enter your email address.": "Teessoo imeelii keessan galchaa.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} albamii kana hiriyyootaa fi maatii qofa waliin qooddateera.",
+  "Email address...": "Teessoo imeelii..."
 }

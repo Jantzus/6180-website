@@ -148,7 +148,6 @@
   "Enter Username": "उपयोगकर्ता नाम भरव",
   "Select Username": "उपयोगकर्ता नाम चुनव",
   "Add Random Digits to Username": "उपयोगकर्ता नाम मं रेंडम अंक जोड़व",
-  "Enter your email so {ownerName} can see who accessed their album": "अपन ईमेल डालव जेखर से {ownerName} देख सकथे कि के ओमन के एलबम देखे हे",
   "Complete": "पूरा",
   "Processing": "प्रोसेसिंग",
   "Uploading": "अपलोड करत हे",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} असफल होगे",
   "({count} in progress)": "({count}) चल रहे हे",
   "{count} files": "{count} फाइल मन ल",
-  "{count} file": "{count} फाइल"
+  "{count} file": "{count} फाइल",
+  "Enter your email address.": "अपन ईमेल पता भरव.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ए एलबम ल केवल मितान अउर परिवार संग सांझा करे हे।",
+  "Email address...": "ईमेल पता..."
 }

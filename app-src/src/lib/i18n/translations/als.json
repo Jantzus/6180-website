@@ -148,7 +148,6 @@
   "Enter Username": "Benutzername Iigee",
   "Select Username": "Benutzername Wähle",
   "Add Random Digits to Username": "Zuefälligi Zaahle Zum Benutzername Hinzuefüege",
-  "Enter your email so {ownerName} can see who accessed their album": "Gib Di Email I, Damit {ownerName} Gsee Cha, Wer Uf Ieres Album Zuegriffe Het",
   "Complete": "Vollständig",
   "Processing": "Verarbeitig",
   "Uploading": "Am uffelade",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} gfehlt",
   "({count} in progress)": "({count}) Im Gange",
   "{count} files": "{count} dateie",
-  "{count} file": "{count} datei"
+  "{count} file": "{count} datei",
+  "Enter your email address.": "Gib dini E-Mail-Adress i.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} het des Album nur mit Fründe und Familie teilt.",
+  "Email address...": "E-Mail-Adresse..."
 }

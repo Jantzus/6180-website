@@ -148,7 +148,6 @@
   "Enter Username": "Introduceți Numele De Utilizator",
   "Select Username": "Selectează Numele de Utilizator",
   "Add Random Digits to Username": "Adaugă Cifre Aleatorii La Numele De Utilizator",
-  "Enter your email so {ownerName} can see who accessed their album": "Introduceți Adresa Dvs. De Email Pentru Ca {ownerName} Să Poată Vedea Cine Le-a Accesat Albumul",
   "Complete": "Complet",
   "Processing": "Prelucrare",
   "Uploading": "Se încarcă",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} a eșuat",
   "({count} in progress)": "({count}) În Curs",
   "{count} files": "{count} fișiere",
-  "{count} file": "{count} fișier"
+  "{count} file": "{count} fișier",
+  "Enter your email address.": "Introduceți adresa dvs. de email.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} a împărtășit acest album doar cu prietenii și familia.",
+  "Email address...": "Adresă de e-mail..."
 }

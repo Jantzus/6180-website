@@ -148,7 +148,6 @@
   "Enter Username": "Ipastok So Ngaran Na Usuario",
   "Select Username": "Manpili na Ngaran",
   "Add Random Digits to Username": "Mangipeket Na Numero Ya Anggapoy Ayos Ed Ngaran Na Managamil",
-  "Enter your email so {ownerName} can see who accessed their album": "Ipakat So Email Mo Pian {ownerName} Nanengneng No Siopa So Akaloob Ed Album Da",
   "Complete": "Kumpleto",
   "Processing": "Panag-proceso",
   "Uploading": "Mangi-upload",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} atalo",
   "({count} in progress)": "({count}) On-Progreso",
   "{count} files": "{count} saray file",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Ilansang so address na email mo.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} inkasakey na album so ed gayyem to say pamilya.",
+  "Email address...": "Direccion na email..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "I Tɔgɔ Dɔn",
   "Select Username": "Tɔgɔ Sugandi",
   "Add Random Digits to Username": "Ka Hatarata Hakɛ Fara I Tɔgɔ Fɛ",
-  "Enter your email so {ownerName} can see who accessed their album": "I Ka Email Doni Walasa {ownerName} Ka Se Jɔn Min Ye U Ka Ɔrɔmu Lajɛ",
   "Complete": "Dafa",
   "Processing": "Cikali",
   "Uploading": "Ka ladɔ kɔfɛ la",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} dɛsɛra",
   "({count} in progress)": "({count}) Ka Taa Ka Kuma",
   "{count} files": "{count} fichye",
-  "{count} file": "{count} fichye"
+  "{count} file": "{count} fichye",
+  "Enter your email address.": "I ka imeeli adɛrɛsi don.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ye nin album la cogo ni da tɛrɛba ani denbaya ye dɔrɔn.",
+  "Email address...": "Imɛli ɲɛnabɔyɔrɔ..."
 }

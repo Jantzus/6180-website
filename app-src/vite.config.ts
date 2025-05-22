@@ -1,10 +1,42 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
+// import fs from 'fs'
+// import path from 'path'
+
+// function moveFoldersOutOfApp() {
+//   return {
+//     name: 'move-folders-out-of-app',
+//     closeBundle() {
+//       const folders = ['.well-known', 'folder'];
+//       folders.forEach(folder => {
+//         const from = path.resolve(__dirname, `../dist/app/${folder}`);
+//         const to = path.resolve(__dirname, `../dist/${folder}`);
+
+//         if (fs.existsSync(from)) {
+//           fs.mkdirSync(to, { recursive: true });
+//           for (const file of fs.readdirSync(from)) {
+//             fs.renameSync(path.join(from, file), path.join(to, file));
+//           }
+//           fs.rmdirSync(from);
+//         }
+//       });
+
+//       const fromFile = path.resolve(__dirname, '../dist/app/index.html');
+//       const toFile = path.resolve(__dirname, '../dist/index.html');
+
+//       if (fs.existsSync(fromFile)) {
+//         fs.renameSync(fromFile, toFile);
+//       }
+//     }
+//   }
+// }
 
 export default defineConfig({
+  // base: '/app/',
   base: '/',
   build: {
+    // outDir: '../dist/app',
     outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
@@ -21,6 +53,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    tsconfigPaths()
+    tsconfigPaths(),
+    // moveFoldersOutOfApp(),
   ]
 })

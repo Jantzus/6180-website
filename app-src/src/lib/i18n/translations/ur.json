@@ -148,7 +148,6 @@
   "Enter Username": "صارف نام درج کریں",
   "Select Username": "صارف نام منتخب کریں",
   "Add Random Digits to Username": "صارف نام میں بے ترتیب نمبر شامل کریں",
-  "Enter your email so {ownerName} can see who accessed their album": "اپنا ای میل درج کریں تاکہ {ownerName} دیکھ سکے کہ کس نے ان کے البم تک رسائی حاصل کی",
   "Complete": "مکمل",
   "Processing": "پروسیسنگ",
   "Uploading": "اپلوڈ کر رہا ہے",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ناکام ہوا",
   "({count} in progress)": "({count}) ترقی میں",
   "{count} files": "{count} فائلیں",
-  "{count} file": "{count} فائل"
+  "{count} file": "{count} فائل",
+  "Enter your email address.": "اپنا ای میل ایڈریس درج کریں.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} نے یہ البم صرف دوستوں اور خاندان کے ساتھ شیئر کیا ہے۔",
+  "Email address...": "ای میل پتہ..."
 }

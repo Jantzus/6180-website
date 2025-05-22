@@ -148,7 +148,6 @@
   "Enter Username": "ལག་ལེན་པའི་མིང་བཙུགས།",
   "Select Username": "ལག་ལེན་པའི་མིང་གདམ།",
   "Add Random Digits to Username": "ལག་ལེན་པའི་མིང་ལུ་རང་བཞིན་ཨང་ཡིག་ཁ་སྐོང་།",
-  "Enter your email so {ownerName} can see who accessed their album": "ཁྱོད་ཀྱི་གློག་འཕྲིན་བཙུགས་གནང་ {ownerName} གིས་ག་གིས་ཁོང་ཚུ་གི་ཨཱལ་བཱམ་ལུ་བལྟ་ཡོདཔ་ཤེས་ཚུགས་པའི་དོན་ལུ།",
   "Complete": "ཆ་ཚང་།",
   "Processing": "བཀོལ་སྤྱོད།",
   "Uploading": "ཡར་འཇུག་འབད་བཞིན་ཡོད།",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} འཐུས་ཤོར་བྱུང་ཡོད།",
   "({count} in progress)": "({count}) འབད་བཞིན་ཡོད།",
   "{count} files": "{count} ཡིག་སྣོད་ཚུ།",
-  "{count} file": "{count} ཡིག་སྣོད།"
+  "{count} file": "{count} ཡིག་སྣོད།",
+  "Enter your email address.": "ཁྱོད་ཀྱི་གློག་འཕྲིན་ཁ་བྱང་བཙུགས།",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} གིས་ཨལ་བཱམ་འདི་གྲོགས་པོ་དང་ཁྱིམ་མི་ཚུ་ལུ་རྐྱངམ་ཅིག་བགོ་བཀྲམ་འབད་ནུག",
+  "Email address...": "གློག་འཕྲིན་ཁ་བྱང་..."
 }

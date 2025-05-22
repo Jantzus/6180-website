@@ -148,7 +148,6 @@
   "Enter Username": "Wužiwarske Mjeno Zapodać",
   "Select Username": "Wužiwarske Mjeno Wubrać",
   "Add Random Digits to Username": "Připadne Cyfry K Wužiwarskemu Mjenu Přidać",
-  "Enter your email so {ownerName} can see who accessed their album": "Zapodaj Swoju E-mejlowu Adresu, Zo By {ownerName} Widźał, Štó Je Na Jich Album Přistupił",
   "Complete": "Dospołny",
   "Processing": "Předźěłanje",
   "Uploading": "Nahrawanje",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} njeje so poradźiło",
   "({count} in progress)": "({count}) W Postupje",
   "{count} files": "{count} dataje",
-  "{count} file": "{count} dataja"
+  "{count} file": "{count} dataja",
+  "Enter your email address.": "Zapodajće swoju e-mejlowu adresu.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} je ten album jenož z přećelemi a swójbu dźělił.",
+  "Email address...": "E-mejlowa adresa..."
 }

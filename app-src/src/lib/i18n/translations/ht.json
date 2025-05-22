@@ -148,7 +148,6 @@
   "Enter Username": "Antre Non Itilizatè",
   "Select Username": "Chwazi Non Itilizatè",
   "Add Random Digits to Username": "Ajoute Chif Owaza Nan Non Itilizatè",
-  "Enter your email so {ownerName} can see who accessed their album": "Antre Imèl Ou Pou {ownerName} Ka Wè Ki Moun Ki Te Aksede Albòm Yo A",
   "Complete": "Konplè",
   "Processing": "Tretman",
   "Uploading": "Ap telechaje",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} echwe",
   "({count} in progress)": "({count}) Nan Pwogrè",
   "{count} files": "{count} fichye",
-  "{count} file": "{count} fichye"
+  "{count} file": "{count} fichye",
+  "Enter your email address.": "Antre adrès imèl ou.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} sèlman pataje albòm sa a ak zanmi ak fanmi.",
+  "Email address...": "Adrès imèl..."
 }

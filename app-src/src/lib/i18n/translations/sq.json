@@ -148,7 +148,6 @@
   "Enter Username": "Vendos Emrin E Përdoruesit",
   "Select Username": "Zgjidh Emrin e Përdoruesit",
   "Add Random Digits to Username": "Shto Shifra Të Rastësishme Te Emri I Përdoruesit",
-  "Enter your email so {ownerName} can see who accessed their album": "Shkruani Emailin Tuaj Që {ownerName} Të Mund Të Shohë Se Kush Ka Hyrë Në Albumin E Tyre",
   "Complete": "Plotë",
   "Processing": "Përpunimi",
   "Uploading": "Duke ngarkuar",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} dështoi",
   "({count} in progress)": "({count}) Në Vazhdim",
   "{count} files": "{count} skedarë",
-  "{count} file": "{count} skedar"
+  "{count} file": "{count} skedar",
+  "Enter your email address.": "Vendosni adresën tuaj të emailit.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} e ka ndarë këtë album vetëm me miqtë dhe familjen.",
+  "Email address...": "Adresa e emailit..."
 }

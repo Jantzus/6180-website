@@ -148,7 +148,6 @@
   "Enter Username": "Drenta Nomber Di Usuario",
   "Select Username": "Skohe Nomber di Usuario",
   "Add Random Digits to Username": "Huntu Numbernan Di Azar Na Nomber Di Usuario",
-  "Enter your email so {ownerName} can see who accessed their album": "Yena Bo Email Pa {ownerName} Por Mira Ken A Aksedé Na Nan Album",
   "Complete": "Kompletu",
   "Processing": "Prosesamentu",
   "Uploading": "Kargando",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} faya",
   "({count} in progress)": "({count}) Den Progreso",
   "{count} files": "{count} file",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Yena bo direksion di e-mail.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} a comparti e album aki solamente ku amigonan i famia.",
+  "Email address...": "Direccion di e-mail..."
 }

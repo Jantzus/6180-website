@@ -148,7 +148,6 @@
   "Enter Username": "Inserìs Non Utent",
   "Select Username": "Selezione Non Utent",
   "Add Random Digits to Username": "Zonte Cifris Casuâls Al Non Utent",
-  "Enter your email so {ownerName} can see who accessed their album": "Inserìs La Tô Email Par Che {ownerName} Al Puedi Viodi Cui Al À Acès Al Lôr Album",
   "Complete": "Complet",
   "Processing": "Elaborazion",
   "Uploading": "Cjariânt",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} falît",
   "({count} in progress)": "({count}) In Cors",
   "{count} files": "{count} files",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Inserìs la tô direzion e-mail.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} al à spartît chest album dome cui amîs e cun famee.",
+  "Email address...": "Direzion e-mail..."
 }

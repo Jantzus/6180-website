@@ -148,7 +148,6 @@
   "Enter Username": "Nhập Tên Người Dùng",
   "Select Username": "Chọn Tên Người Dùng",
   "Add Random Digits to Username": "Thêm Chữ Số Ngẫu Nhiên Vào Tên Người Dùng",
-  "Enter your email so {ownerName} can see who accessed their album": "Nhập Email Của Bạn Để {ownerName} Có Thể Xem Ai Đã Truy Cập Album Của Họ",
   "Complete": "Hoàn Thành",
   "Processing": "Xử lý",
   "Uploading": "Đang tải lên",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} thất bại",
   "({count} in progress)": "({count}) Đang Tiến Hành",
   "{count} files": "{count} tệp",
-  "{count} file": "{count} tệp"
+  "{count} file": "{count} tệp",
+  "Enter your email address.": "Nhập địa chỉ email của bạn.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} chỉ chia sẻ album này với bạn bè và gia đình.",
+  "Email address...": "Địa chỉ thư điện tử..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Emoinge Poruhára Réra",
   "Select Username": "Eiporavo Poruhára Réra",
   "Add Random Digits to Username": "Embojuaju Papapy Poi Poruhára Térape",
-  "Enter your email so {ownerName} can see who accessed their album": "Emoinge Ne Ñanduti Veve {ownerName} Ohecha Hag̃ua Mávapa Oike Iálbum-pe",
   "Complete": "Ñemyatyrõ",
   "Processing": "Mba'eaporã",
   "Uploading": "Hupi",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ndoikoi",
   "({count} in progress)": "({count}) Oñemoĩva",
   "{count} files": "{count} marandurenda",
-  "{count} file": "{count} marandurenda"
+  "{count} file": "{count} marandurenda",
+  "Enter your email address.": "Emoinge nde ñanduti veve kundaharape.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ko álbum angirũ ha'eñáva ñomongeta angirũnguéra ha óga retãme.",
+  "Email address...": "Ñanduti veve kundaharape..."
 }

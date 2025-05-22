@@ -148,7 +148,6 @@
   "Enter Username": "Dugalal Sa Tur",
   "Select Username": "Tànn Sa Tur Jëfandikukat",
   "Add Random Digits to Username": "Yokk Lim Yu Sotti Ci Tur Jëfandikukat Bi",
-  "Enter your email so {ownerName} can see who accessed their album": "Dugalal Sa Email Ngir {ownerName} Mën Gis Kan Moo Juboo Ci Seen Album",
   "Complete": "Mat",
   "Processing": "Soppi",
   "Uploading": "Di yeb",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} doxul",
   "({count} in progress)": "({count}) Jëm Ci Kanam",
   "{count} files": "{count} dencukaay",
-  "{count} file": "{count} dencukaay"
+  "{count} file": "{count} dencukaay",
+  "Enter your email address.": "Dugalal sa makkaanu e-mel.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} feeñ album bii ak xarit yi ak mbokk mi rekk.",
+  "Email address...": "Màkkaanu email..."
 }

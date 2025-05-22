@@ -148,7 +148,6 @@
   "Enter Username": "Entra Nomine De Usator",
   "Select Username": "Selectiona Nomine de Usator",
   "Add Random Digits to Username": "Adder Cifras Aleatori Al Nomine De Usator",
-  "Enter your email so {ownerName} can see who accessed their album": "Insere Tu Email Pro Que {ownerName} Pote Vider Qui Ha Accedite A Lor Album",
   "Complete": "Complete",
   "Processing": "Tractamento",
   "Uploading": "Incarga",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fallite",
   "({count} in progress)": "({count}) In Progresso",
   "{count} files": "{count} files",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Insere tu adresse de e-posta.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ha compartite iste album solmente con amicos e familia.",
+  "Email address...": "Adresse de e-posta..."
 }

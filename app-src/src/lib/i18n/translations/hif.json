@@ -148,7 +148,6 @@
   "Enter Username": "Username Darj Karo",
   "Select Username": "Username Chuno",
   "Add Random Digits to Username": "Username me random digits jorro",
-  "Enter your email so {ownerName} can see who accessed their album": "Apan Email Dalo Jisse {ownerName} Dekh Sake Ki Kaun Unke Album Ke Access Karis",
   "Complete": "Pura",
   "Processing": "Processing",
   "Uploading": "Upload karat hai",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fail hoe gais",
   "({count} in progress)": "({count}) Chalat Hae",
   "{count} files": "{count} files",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Aapan email address bharo.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ii album sirf dost aur parivaar ke saath share karis hai.",
+  "Email address...": "Email pata..."
 }

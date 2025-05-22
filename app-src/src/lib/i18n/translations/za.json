@@ -148,7 +148,6 @@
   "Enter Username": "Dahraengz Gyoengqmingh",
   "Select Username": "Gouq Gyoenghoz Mbouj",
   "Add Random Digits to Username": "Daep sipsij cwyouz bae geiqmingh",
-  "Enter your email so {ownerName} can see who accessed their album": "Sujsieng meiqyouq e-mail, rox {ownerName} cungj miz gin boux vah roxgvaq vunz gyoengz album",
   "Complete": "Wancin",
   "Processing": "Cujli",
   "Uploading": "Daengqsaet",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} sipsaek",
   "({count} in progress)": "({count}) Dauqlai Yinghong",
   "{count} files": "{count} vwnzgenj",
-  "{count} file": "{count} vwnz-cient"
+  "{count} file": "{count} vwnz-cient",
+  "Enter your email address.": "Cingj boux dienyah e-mail dizdieghauj.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ma hawj album neix geij pengnyou lij gijmeh baenz.",
+  "Email address...": "Di cih dienyoz..."
 }

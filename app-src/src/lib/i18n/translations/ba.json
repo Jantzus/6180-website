@@ -148,7 +148,6 @@
   "Enter Username": "Ҡулланыусы Исемен Керетегеҙ",
   "Select Username": "Ҡулланыусы Исемен Һайлағыҙ",
   "Add Random Digits to Username": "Ҡулланыусы Исеменә Осраҡлы Һандар Өҫтәргә",
-  "Enter your email so {ownerName} can see who accessed their album": "Үҙегеҙҙең Email-ды Керетегеҙ {ownerName} Кем Уларҙың Альбомын Ҡараған Икәнен Күрһен Өсөн",
   "Complete": "Тамам",
   "Processing": "Эшкәртеү",
   "Uploading": "Йөкләү",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} уңышһыҙ",
   "({count} in progress)": "({count}) Барышта",
   "{count} files": "{count} файлдар",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Электрон почта адресыгызды керетегез.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} был альбомды ҡәҙер дуҫтары һәм ғаиләһе менән генә уртаҡлашҡан.",
+  "Email address...": "Электрон почта адресы..."
 }

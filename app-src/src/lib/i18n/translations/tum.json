@@ -148,7 +148,6 @@
   "Enter Username": "Lembani Zina La Wogwiritsa",
   "Select Username": "Sankhani Dzina Logwiritsa",
   "Add Random Digits to Username": "Sazga Manambala Mwachizyolowezi Ku Zina Logwiriska Ntchito",
-  "Enter your email so {ownerName} can see who accessed their album": "Lemba Email Yako Kuti {ownerName} Waone Wangaluka Pa Album Pawo",
   "Complete": "Mwakwanira",
   "Processing": "Kusindika",
   "Uploading": "Kukwezga",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} palije zakutondeka",
   "({count} in progress)": "({count}) Mu Kufika",
   "{count} files": "{count} mafayilo",
-  "{count} file": "{count} failo"
+  "{count} file": "{count} failo",
+  "Enter your email address.": "Lembani adilesi yinu ya imelo.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} anagawana albumuyu ndi abwenzi ndi achibale tokha.",
+  "Email address...": "Adilesi ya imelo..."
 }

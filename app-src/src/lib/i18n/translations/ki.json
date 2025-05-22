@@ -148,7 +148,6 @@
   "Enter Username": "Andika Ritwa Ria Mũtumia",
   "Select Username": "Thuura Ritwa ria Murutumia",
   "Add Random Digits to Username": "Ongera Namba Cia Thayu Kiri Rĩtwa Rĩa Mũtumĩri",
-  "Enter your email so {ownerName} can see who accessed their album": "Ikira Email Yaku Niguo {ownerName} Ahote Kuona Oro Ukoonyeire Album Yao",
   "Complete": "Gũtuĩria",
   "Processing": "Ũthondeki",
   "Uploading": "Kuambata",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} kũrega",
   "({count} in progress)": "({count}) Thiiagĩra Mbere",
   "{count} files": "{count} faili",
-  "{count} file": "{count} faili"
+  "{count} file": "{count} faili",
+  "Enter your email address.": "Ikira imeeri ataresi yaku.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} agayanĩte album ĩno na arata na andũ a nyũmba rwene.",
+  "Email address...": "Email address..."
 }

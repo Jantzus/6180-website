@@ -148,7 +148,6 @@
   "Enter Username": "Syötä Käyttäjänimi",
   "Select Username": "Valitse Käyttäjätunnus",
   "Add Random Digits to Username": "Lisää Satunnaisia Numeroita Käyttäjätunnukseen",
-  "Enter your email so {ownerName} can see who accessed their album": "Syötä Sähköpostiosoitteesi, Jotta {ownerName} Voi Nähdä Ketkä Katsoivat Heidän Albuminsa",
   "Complete": "Täydellinen",
   "Processing": "Käsittely",
   "Uploading": "Lataamassa",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} epäonnistui",
   "({count} in progress)": "({count}) Käynnissä",
   "{count} files": "{count} tiedostoa",
-  "{count} file": "{count} tiedosto"
+  "{count} file": "{count} tiedosto",
+  "Enter your email address.": "Syötä sähköpostiosoitteesi.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} on jakanut tämän albumin vain ystävien ja perheen kanssa.",
+  "Email address...": "Sähköpostiosoite..."
 }

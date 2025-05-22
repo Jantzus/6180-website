@@ -148,7 +148,6 @@
   "Enter Username": "Hmangtuhming Dah Lut Rawh",
   "Select Username": "Hman Tu Hming Thlan Rawh",
   "Add Random Digits to Username": "Hmangtute hming ah nambar thlakchham bel rawh",
-  "Enter your email so {ownerName} can see who accessed their album": "I Email Address dah rawh, chu chuan {ownerName} in an album entu a hmuh theih dawn a ni",
   "Complete": "Kimchang",
   "Processing": "Enprochhiahna",
   "Uploading": "A thun chhuak mek",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} a tlawlh",
   "({count} in progress)": "({count}) Lai Mek Mek",
   "{count} files": "{count} fialin",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "I email address ziak rawh.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} chuan hei album hi thiante leh chhungkua nen chauh an sawi khawm.",
+  "Email address...": "Email address..."
 }

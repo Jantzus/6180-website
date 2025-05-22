@@ -148,7 +148,6 @@
   "Enter Username": "Kokoma Kombo Ya Mosaleli",
   "Select Username": "Pona Kombo ya Mosaleli",
   "Add Random Digits to Username": "Kobakisa Motángo Ya Mbɛmbɛ Na Nkómbó Ya Mosáleli",
-  "Enter your email so {ownerName} can see who accessed their album": "Kotísa Adresse Ya Yo Ya Mokandá Ya Lotilíki Po {ownerName} Akoka Komona Nani Akomaki Na Album Na Bango",
   "Complete": "Mobimba",
   "Processing": "Bosali",
   "Uploading": "Kotombisa",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} elongi tɛ̂",
   "({count} in progress)": "({count}) Ezali Kokende",
   "{count} files": "{count} fichier",
-  "{count} file": "{count} fichier"
+  "{count} file": "{count} fichier",
+  "Enter your email address.": "Kokoma adresse ya yo ya email.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} akabolaki album oyo kaka na baninga mpe na libota.",
+  "Email address...": "Adele ya mokanda ya singa..."
 }

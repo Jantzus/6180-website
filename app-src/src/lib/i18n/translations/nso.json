@@ -148,7 +148,6 @@
   "Enter Username": "Tsenya Leina La Mošomiši",
   "Select Username": "Kgetha Leina la Modiriši",
   "Add Random Digits to Username": "Oketša Dinomoro Tša Go Se Beakanywe Leineng La Modiriši",
-  "Enter your email so {ownerName} can see who accessed their album": "Tsenya Email Ya Gago Gore {ownerName} A Kgone Go Bona Yo A Lebeletšego Album Ya Bona",
   "Complete": "Feletšego",
   "Processing": "Tshepetšo",
   "Uploading": "Go laetša godimo",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} paletše",
   "({count} in progress)": "({count}) E Tšwela Pele",
   "{count} files": "{count} difaele",
-  "{count} file": "{count} faele"
+  "{count} file": "{count} faele",
+  "Enter your email address.": "Tsenya aterese ya gago ya imeile.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} o arogantše albamo ye feela le bagwera le lapa.",
+  "Email address...": "Aterese ya imeili..."
 }

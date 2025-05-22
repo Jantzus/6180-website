@@ -148,7 +148,6 @@
   "Enter Username": "Daħħal Isem L-Utent",
   "Select Username": "Agħżel Isem l-Utent",
   "Add Random Digits to Username": "Żid Numri Każwali Mal-Isem Tal-Utent",
-  "Enter your email so {ownerName} can see who accessed their album": "Daħħal L-Indirizz Elettroniku Tiegħek Sabiex {ownerName} Ikun Jista' Jara Min Aċċessa L-Album Tagħhom",
   "Complete": "Komplut",
   "Processing": "Proċessar",
   "Uploading": "Tniżżil 'il fuq",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} falla",
   "({count} in progress)": "({count}) Fil-Progress",
   "{count} files": "{count} fajls",
-  "{count} file": "{count} fajl"
+  "{count} file": "{count} fajl",
+  "Enter your email address.": "Daħħal l-indirizz tal-email tiegħek.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} qasam dan l-album biss ma' ħbieb u familja.",
+  "Email address...": "Indirizz tal-email..."
 }

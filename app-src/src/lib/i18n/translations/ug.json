@@ -148,7 +148,6 @@
   "Enter Username": "ئىشلەتكۈچى ئاتىنى كىرگۈزۈڭ",
   "Select Username": "قوللانغۇچى ئىسمىنى تاللاڭ",
   "Add Random Digits to Username": "ئىشلەتكۈچى ئىسمىغا ئىختىيارى رەقەم قوشۇش",
-  "Enter your email so {ownerName} can see who accessed their album": "ئېلخېتىڭىزنى كىرگۈزۈڭ، شۇنداق قىلىپ {ownerName} ئۇلارنىڭ ئالبومىغا كىملەرنىڭ كىرگەنلىكىنى كۆرەلەيدۇ",
   "Complete": "تولۇق",
   "Processing": "بىر تەرەپ قىلىش",
   "Uploading": "يۈكلەۋاتىدۇ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} مەغلۇپ بولدى",
   "({count} in progress)": "({count}) داۋاملىشىۋاتىدۇ",
   "{count} files": "{count} ھۆججەتلەر",
-  "{count} file": "{count} ھۆججەت"
+  "{count} file": "{count} ھۆججەت",
+  "Enter your email address.": "ئېلخەت ئادرېسىڭىزنى كىرگۈزۈڭ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} بۇ ئالبۇمنى پەقەت دوستلىرى ۋە ئائىلىسى بىلەن ئورتاقلاشتى.",
+  "Email address...": "ئېلېكترونلۇق خەت ئادرېسى..."
 }

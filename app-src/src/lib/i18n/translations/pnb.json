@@ -148,7 +148,6 @@
   "Enter Username": "ورتن آلا ناں درج کرو",
   "Select Username": "ورتن آلا ناں چنو",
   "Add Random Digits to Username": "صارف دے ناں وچ بے ترتیب اعداد پاؤ",
-  "Enter your email so {ownerName} can see who accessed their album": "اپنا ای میل درج کرو تاں جے {ownerName} ویکھ سکے کہ کس نے اوناں دی البم تک پہنچ کیتی اے",
   "Complete": "مکمل",
   "Processing": "پروسیسنگ",
   "Uploading": "اپلوڈ کر رہیا اے",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ناکام",
   "({count} in progress)": "({count}) ترقی وچ",
   "{count} files": "{count} فائلاں",
-  "{count} file": "{count} فائل"
+  "{count} file": "{count} فائل",
+  "Enter your email address.": "اپنا ای میل پتہ درج کرو.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} نے ایہ البم صرف دوستاں تے خاندان نال شیئر کیتا اے۔",
+  "Email address...": "ای میل پتہ..."
 }

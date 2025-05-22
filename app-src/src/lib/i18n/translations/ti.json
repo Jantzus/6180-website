@@ -148,7 +148,6 @@
   "Enter Username": "ናይ ተጠቃሚ ስም ኣእቱ",
   "Select Username": "ናይ ተጠቃሚ ሽም ምረጽ",
   "Add Random Digits to Username": "ናብ ሽም ተጠቃሚ ዘፈቀዳዊ ኣሃዛት ኣእቱ",
-  "Enter your email so {ownerName} can see who accessed their album": "ኢመይልካ ኣእቱ {ownerName} ሰባት ኣልበሞም ከመይ ከም ዝኣተዉ ምእንቲ ክርእዩ",
   "Complete": "ምሉእ",
   "Processing": "ምቅብባል",
   "Uploading": "በመጫን ላይ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ዝወደቐ",
   "({count} in progress)": "({count}) ኣብ ከይዲ",
   "{count} files": "{count} ፋይሎች",
-  "{count} file": "{count} ፋይል"
+  "{count} file": "{count} ፋይል",
+  "Enter your email address.": "ናይ ኢመይል አድራሻኻ አእቱ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ንዓዮቶምን ቤተሰቦምን ጥራሕ እዩ ነዚ አልበም ኸካፍሎም።",
+  "Email address...": "ኢመይል አድራሻ..."
 }

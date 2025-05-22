@@ -148,7 +148,6 @@
   "Enter Username": "Введіть Імʼя Хоснователя",
   "Select Username": "Выберіть Імʼя Хоснователя",
   "Add Random Digits to Username": "Додати Рандомны Чісла К Імени Хоснователя",
-  "Enter your email so {ownerName} can see who accessed their album": "Уведіть Вашу Електронну Пошту, Щоб {ownerName} Міг Бачити, Хто Переглядав Їх Альбом",
   "Complete": "Повный",
   "Processing": "Обробка",
   "Uploading": "Завантаження",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} не вдало ся",
   "({count} in progress)": "({count}) У Процесі",
   "{count} files": "{count} файлы",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Введіть вашу адресу електронної пошты.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} поділився тым албумом лем із друзями і родиною.",
+  "Email address...": "Адреса електронной пошты..."
 }

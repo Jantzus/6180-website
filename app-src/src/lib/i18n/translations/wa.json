@@ -148,7 +148,6 @@
   "Enter Username": "Intrez L'no D'uzeu",
   "Select Username": "Tchoezi l' No d' Uzeu",
   "Add Random Digits to Username": "Radjouter Des Tclifes Sol Coûtchance Sol No D'uzeu",
-  "Enter your email so {ownerName} can see who accessed their album": "Tapez Vosse Emile Po Ki {ownerName} Poye Vey Kî A-st Avou Accès A Leu Album",
   "Complete": "Complet",
   "Processing": "Traitumint",
   "Uploading": "Eberwetaedje",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} foirt",
   "({count} in progress)": "({count}) En Cors",
   "{count} files": "{count} fitchîs",
-  "{count} file": "{count} fitchî"
+  "{count} file": "{count} fitchî",
+  "Enter your email address.": "Sitchîz vosse adresse emile.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} a rpårti ciste albom la avou ses camarådes et s' famile seulmint.",
+  "Email address...": "Adresse emile..."
 }

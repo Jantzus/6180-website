@@ -148,7 +148,6 @@
   "Enter Username": "শীজিন্নবা মীং চঙ্শিনবিয়ু",
   "Select Username": "ꯁꯤꯖꯤꯟꯅꯔꯤꯕ ꯃꯥꯡ ꯈꯟꯉꯨ",
   "Add Random Digits to Username": "ꯁꯤꯖꯤꯟꯅꯔꯤꯕꯥ ꯃꯃꯤꯡꯗ ꯑꯃꯃꯃꯟꯅꯕ ꯃꯁꯤꯡꯁꯤꯡ ꯍꯥꯄꯆꯤꯟꯕꯤꯌꯨ",
-  "Enter your email so {ownerName} can see who accessed their album": "ꯆꯥꯍꯤꯗꯕ ꯏꯃꯦꯜ ꯑꯗꯨ ꯆꯪꯁꯤꯟꯂꯨ ꯃꯗꯨꯗꯤ {ownerName} ꯄꯥꯝꯕꯤꯕꯥ ꯃꯤꯑꯣꯏꯁꯤꯡꯗꯨ ꯃꯍꯥꯛꯀꯤ ꯑꯦꯜꯕꯝ ꯑꯦꯛꯁꯦꯁ ꯇꯧꯔꯦ ꯍꯥꯏꯕꯗꯨ ꯎꯕꯥ ꯐꯪꯒꯗꯕꯥ",
   "Complete": "ꯃꯄꯨꯡ ꯐꯥꯟꯥ",
   "Processing": "ꯄꯔꯣꯁꯦꯁꯤꯡ",
   "Uploading": "ꯑꯄꯂꯣꯗ ꯇꯧꯔꯤ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ꯃꯥꯌꯥꯛꯂꯦ",
   "({count} in progress)": "({count}) ꯆꯪꯁꯤꯟꯅꯕ",
   "{count} files": "{count} ꯐꯥꯏꯜꯁꯤꯡ",
-  "{count} file": "{count} ꯐꯥꯏꯜ"
+  "{count} file": "{count} ꯐꯥꯏꯜ",
+  "Enter your email address.": "ꯅꯪꯒꯤ ꯏꯃꯦꯜ ꯑꯦꯗ꯭ꯔꯦꯁ ꯑꯇꯨ ꯏꯁꯤꯟꯁꯤ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ꯅ ꯑꯦꯜꯕꯝ ꯑꯁꯤ ꯃꯔꯨꯞ ꯑꯃꯁꯨꯡ ꯏꯃꯨꯡ ꯃꯅꯨꯡꯒꯥ ꯈꯛꯇꯅ ꯁꯔꯨꯛ ꯇꯧꯈꯤ꯫",
+  "Email address...": "ইমেইল ঠিকনা..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Lebokna Jeneng Panganggo",
   "Select Username": "Pilih Jeneng Panganggo",
   "Add Random Digits to Username": "Tambahke Angka Acak Neng Jeneng Panganggo",
-  "Enter your email so {ownerName} can see who accessed their album": "Lebokna Email Panjenengan Supaya {ownerName} Bisa Ndeleng Sapa Sing Ngakses Album Dhèwèké",
   "Complete": "Lengkap",
   "Processing": "Pangolahan",
   "Uploading": "Ngunggah",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} gagal",
   "({count} in progress)": "({count}) Ing Proses",
   "{count} files": "{count} berkas",
-  "{count} file": "{count} berkas"
+  "{count} file": "{count} berkas",
+  "Enter your email address.": "Lebokna alamat email panjenengan.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} mung nuduhake album iki karo kanca lan kulawarga tok.",
+  "Email address...": "Alamat email..."
 }

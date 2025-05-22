@@ -148,7 +148,6 @@
   "Enter Username": "ഉപയോക്തൃനാമം നൽകുക",
   "Select Username": "ഉപയോക്തൃനാമം തിരഞ്ഞെടുക്കുക",
   "Add Random Digits to Username": "ഉപയോക്തൃനാമത്തിലേക്ക് റാൻഡം അക്കങ്ങൾ ചേർക്കുക",
-  "Enter your email so {ownerName} can see who accessed their album": "നിങ്ങളുടെ ഇമെയിൽ നൽകുക, അങ്ങനെ {ownerName}ന് അവരുടെ ആൽബം ആരൊക്കെ ആക്‌സസ് ചെയ്തു എന്ന് കാണാം",
   "Complete": "പൂർണ്ണമായ",
   "Processing": "പ്രോസസ്സിംഗ്",
   "Uploading": "അപ്‌ലോഡ് ചെയ്യുന്നു",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} പരാജയപ്പെട്ടു",
   "({count} in progress)": "({count}) പുരോഗതിയിൽ",
   "{count} files": "{count} ഫയലുകൾ",
-  "{count} file": "{count} ഫയൽ"
+  "{count} file": "{count} ഫയൽ",
+  "Enter your email address.": "നിങ്ങളുടെ ഇമെയിൽ വിലാസം നൽകുക.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ഈ ആൽബം സുഹൃത്തുക്കളോടും കുടുംബത്തോടും മാത്രമാണ് പങ്കിട്ടത്.",
+  "Email address...": "ഇമെയിൽ വിലാസം..."
 }

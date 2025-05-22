@@ -148,7 +148,6 @@
   "Enter Username": "Buh Kyrteng U Nongrep",
   "Select Username": "Jied Kyrteng U Nongrep",
   "Add Random Digits to Username": "Pyntap Ki Digit Ba Kyn-um Ha U Kyrteng Nongjngohsiew",
-  "Enter your email so {ownerName} can see who accessed their album": "Pynrung Ka Email Jong Phi Ban {ownerName} Lah Ban Lum Ia Kiba Lah Peit Ia La Album",
   "Complete": "Pura",
   "Processing": "Ïajurong",
   "Uploading": "Pynkiew",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ka rem shem",
   "({count} in progress)": "({count}) Nongbha Nangta",
   "{count} files": "{count} ki file",
-  "{count} file": "{count} fail"
+  "{count} file": "{count} fail",
+  "Enter your email address.": "Buh jingthoh shi shaphang u.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ai album-ka ym jong da ka bynta bynta mylnong da ka jing thymmai.",
+  "Email address...": "Email address..."
 }

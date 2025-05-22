@@ -148,7 +148,6 @@
   "Enter Username": "Sekcem Isem N Useqdac",
   "Select Username": "Fren Isem n Useqdac",
   "Add Random Digits to Username": "Rnu Izwilen Igdabaren Ɣer Isem N Useqdac",
-  "Enter your email so {ownerName} can see who accessed their album": "Sekcem Tansa-k Imayl Akken {ownerName} Yezmer Ad Iẓer Anwa I Yuran Adlis-nsen N Tugniwin",
   "Complete": "Immed",
   "Processing": "Asesfer",
   "Uploading": "Azen",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ur yedda ara",
   "({count} in progress)": "({count}) Di Tazzwara",
   "{count} files": "{count} ifuyla",
-  "{count} file": "{count} afaylu"
+  "{count} file": "{count} afaylu",
+  "Enter your email address.": "Sekcem tansa-k inek tarektronikt.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ibḍa-d albam-a d imdukal d twacult kan.",
+  "Email address...": "Tansa imayl..."
 }

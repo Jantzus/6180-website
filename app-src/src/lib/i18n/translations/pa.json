@@ -148,7 +148,6 @@
   "Enter Username": "ਵਰਤੋਂਕਾਰ ਨਾਮ ਦਰਜ ਕਰੋ",
   "Select Username": "ਵਰਤੋਂਕਾਰ ਨਾਮ ਚੁਣੋ",
   "Add Random Digits to Username": "ਵਰਤੋਂਕਾਰ ਨਾਮ ਵਿੱਚ ਰੈਂਡਮ ਅੰਕ ਸ਼ਾਮਲ ਕਰੋ",
-  "Enter your email so {ownerName} can see who accessed their album": "ਆਪਣਾ ਈਮੇਲ ਦਰਜ ਕਰੋ ਤਾਂ ਕਿ {ownerName} ਦੇਖ ਸਕੇ ਕਿ ਕਿਸ ਨੇ ਉਨ੍ਹਾਂ ਦੀ ਐਲਬਮ ਨੂੰ ਐਕਸੈਸ ਕੀਤਾ",
   "Complete": "ਪੂਰਾ",
   "Processing": "ਪ੍ਰੋਸੈਸਿੰਗ",
   "Uploading": "ਅੱਪਲੋਡ ਕਰ ਰਿਹਾ ਹੈ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ਅਸਫਲ ਰਿਹਾ",
   "({count} in progress)": "({count}) ਚੱਲ ਰਿਹਾ ਹੈ",
   "{count} files": "{count} ਫਾਈਲਾਂ",
-  "{count} file": "{count} ਫਾਈਲ"
+  "{count} file": "{count} ਫਾਈਲ",
+  "Enter your email address.": "ਆਪਣਾ ਈਮੇਲ ਪਤਾ ਦਰਜ ਕਰੋ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ਨੇ ਇਹ ਐਲਬਮ ਸਿਰਫ਼ ਮਿੱਤਰਾਂ ਅਤੇ ਪਰਿਵਾਰ ਨਾਲ ਸਾਂਝਾ ਕੀਤਾ ਹੈ।",
+  "Email address...": "ਈ-ਮੇਲ ਪਤਾ..."
 }

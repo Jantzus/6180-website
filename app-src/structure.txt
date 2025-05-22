@@ -21,7 +21,6 @@
 │   ├── support.html
 │   └── terms.html
 ├── save-album.html
-├── scripts
 ├── src
 │   ├── components
 │   │   ├── AlbumHeader.tsx
@@ -29,7 +28,6 @@
 │   │   ├── AlbumList.tsx
 │   │   ├── AlbumMediaGrid.tsx
 │   │   ├── ContactsFilter.tsx
-│   │   ├── NewAlbumButton.tsx
 │   │   ├── DebugLog.tsx
 │   │   ├── FileInput.tsx
 │   │   ├── FooterSection.tsx
@@ -40,6 +38,7 @@
 │   │   ├── LogoutButton.tsx
 │   │   ├── MediaItemDisplayComponent.tsx
 │   │   ├── Modals
+│   │   ├── NewAlbumButton.tsx
 │   │   ├── PasswordDialog.tsx
 │   │   ├── PhotoPageLazyImage.tsx
 │   │   ├── PhotoPageVideoThumbnail.tsx
@@ -76,4 +75,4 @@
 ├── tsconfig.node.json
 └── vite.config.ts
 
-18 directories, 59 files
+17 directories, 59 files

@@ -148,7 +148,6 @@
   "Enter Username": "Benutzernamen Eingeben",
   "Select Username": "Benutzernamen Auswählen",
   "Add Random Digits to Username": "Zufällige Ziffern Zum Benutzernamen Hinzufügen",
-  "Enter your email so {ownerName} can see who accessed their album": "Gib Deine E-Mail-Adresse Ein, Damit {ownerName} Sehen Kann, Wer Auf Ihr Album Zugegriffen Hat",
   "Complete": "Vollständig",
   "Processing": "Verarbeitung",
   "Uploading": "Hochladen",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fehlgeschlagen",
   "({count} in progress)": "({count}) Im Gange",
   "{count} files": "{count} dateien",
-  "{count} file": "{count} datei"
+  "{count} file": "{count} datei",
+  "Enter your email address.": "Geben Sie Ihre E-Mail-Adresse ein.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hat dieses Album nur mit Freunden und Familie geteilt.",
+  "Email address...": "E-Mail-Adresse..."
 }

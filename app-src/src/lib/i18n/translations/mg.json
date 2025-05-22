@@ -148,7 +148,6 @@
   "Enter Username": "Ampidiro Ny Anaran'ny Mpampiasa",
   "Select Username": "Mifidy Anarana Mpampiasa",
   "Add Random Digits to Username": "Ampidiro Isa Kisendra Amin'ny Anaran'ny Mpampiasa",
-  "Enter your email so {ownerName} can see who accessed their album": "Ampidiro Ny Mailaka-nao Mba {ownerName} Afaka Mahita Izay Nanokatra Ny Alboma-ny",
   "Complete": "Feno",
   "Processing": "Fikarakarana",
   "Uploading": "Mampakatra",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} tsy nahomby",
   "({count} in progress)": "({count}) Eo An-Dàlana",
   "{count} files": "{count} rakitra",
-  "{count} file": "{count} rakitra"
+  "{count} file": "{count} rakitra",
+  "Enter your email address.": "Ampidiro ny adiresinao mailaka.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} nampandray anjara ity rakikira ity tamin'ny namany sy ny fianakaviany ihany.",
+  "Email address...": "Adiresy mailaka..."
 }

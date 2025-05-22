@@ -148,7 +148,6 @@
   "Enter Username": "Brūcendnaman Onsettan",
   "Select Username": "Brūcendnama Cēosan",
   "Add Random Digits to Username": "Wīllíce Rīm Tō Brūcendnaman Bétan",
-  "Enter your email so {ownerName} can see who accessed their album": "Þīne Email Āgiefan Þæt {ownerName} Mæġen Sēon Hwā Hiera Album Besāwon",
   "Complete": "Gefyllan",
   "Processing": "Ƿorðung",
   "Uploading": "Uplādende",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fēoll",
   "({count} in progress)": "({count}) On Forþġange",
   "{count} files": "{count} fīlas",
-  "{count} file": "{count} fíl"
+  "{count} file": "{count} fíl",
+  "Enter your email address.": "Ȝiefe ðīnne e-ǣrendȝewritādresse.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hæfþ þysne beorhtbōc mid frēondum and hīredum ānum gedǣled.",
+  "Email address...": "Ærendgewrit Stōwgetācnung..."
 }

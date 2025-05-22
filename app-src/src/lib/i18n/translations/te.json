@@ -148,7 +148,6 @@
   "Enter Username": "వాడుకరి పేరు నమోదు చేయండి",
   "Select Username": "వాడుకరి పేరును ఎంచుకోండి",
   "Add Random Digits to Username": "వినియోగదారు పేరుకు యాదృచ్ఛిక అంకెలను జోడించండి",
-  "Enter your email so {ownerName} can see who accessed their album": "మీ ఇమెయిల్‌ని నమోదు చేయండి, తద్వారా {ownerName} వారి ఆల్బమ్‌ను ఎవరు యాక్సెస్ చేశారో చూడవచ్చు",
   "Complete": "పూర్తి",
   "Processing": "ప్రాసెసింగ్",
   "Uploading": "అప్‌లోడ్ చేస్తోంది",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} విఫలమైంది",
   "({count} in progress)": "({count}) ప్రగతిలో ఉంది",
   "{count} files": "{count} ఫైళ్లు",
-  "{count} file": "{count} దస్త్రం"
+  "{count} file": "{count} దస్త్రం",
+  "Enter your email address.": "మీ ఇమెయిల్ చిరునామాను నమోదు చేయండి.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ఈ ఆల్బమ్‌ను స్నేహితులు మరియు కుటుంబ సభ్యులతో మాత్రమే పంచుకున్నారు.",
+  "Email address...": "ఇమెయిల్ చిరునామా..."
 }

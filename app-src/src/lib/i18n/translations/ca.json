@@ -148,7 +148,6 @@
   "Enter Username": "Introduïu Nom D'Usuari",
   "Select Username": "Seleccionar Nom d'Usuari",
   "Add Random Digits to Username": "Afegir Dígits Aleatoris Al Nom D'usuari",
-  "Enter your email so {ownerName} can see who accessed their album": "Introdueix El Teu Correu Electrònic Perquè {ownerName} Pugui Veure Qui Ha Accedit Al Seu Àlbum",
   "Complete": "Complet",
   "Processing": "Processament",
   "Uploading": "Carregant",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ha fallat",
   "({count} in progress)": "({count}) En Progrés",
   "{count} files": "{count} fitxers",
-  "{count} file": "{count} fitxer"
+  "{count} file": "{count} fitxer",
+  "Enter your email address.": "Introdueix la teva adreça de correu electrònic.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} només ha compartit aquest àlbum amb amics i família.",
+  "Email address...": "Adreça de correu electrònic..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Пайдаланушы Атын Енгізіңіз",
   "Select Username": "Пайдаланушы Атын Таңдау",
   "Add Random Digits to Username": "Пайдаланушы Атына Кездейсоқ Сандар Қосу",
-  "Enter your email so {ownerName} can see who accessed their album": "Электрондық Поштаңызды Енгізіңіз, Сонда {ownerName} Олардың Альбомына Кімнің Кіргенін Көре Алады",
   "Complete": "Толық",
   "Processing": "Өңдеу",
   "Uploading": "Жүктеу",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} сәтсіз аяқталды",
   "({count} in progress)": "({count}) Жүріп Жатыр",
   "{count} files": "{count} файлдар",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Электрондық пошта мекенжайыңызды енгізіңіз.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} бұл альбомды тек достары мен отбасымен ортақтасты.",
+  "Email address...": "Электрондық пошта мекенжайы..."
 }

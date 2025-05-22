@@ -6,9 +6,6 @@ import { getLanguageDirection } from "@/lib/i18n";
 import { 
   checkLoginWithoutRedirect, 
   useFullscreenView,
-  useSelectionMode, 
-  usePasswordProtection,
-  useShareActions
 } from "@/lib/utils";
 
 // Import the new shared hook
@@ -25,7 +22,13 @@ import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { useUsernameManagement } from "@/lib/useUsernameManagement";
 
 // Import extracted utility functions
-import { executeAlbumSave, createSubAlbumWithSelectedItems } from "./utils";
+import { 
+  executeAlbumSave, 
+  createSubAlbumWithSelectedItems,
+  useSelectionMode, 
+  usePasswordProtection,
+  useShareActions
+ } from "./utils";
 
 // Import extracted components
 import { 

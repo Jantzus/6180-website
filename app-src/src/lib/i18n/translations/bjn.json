@@ -148,7 +148,6 @@
   "Enter Username": "Masukakan Ngaran Pamuruk",
   "Select Username": "Pilihi Ngaran Pangguna",
   "Add Random Digits to Username": "Tambahakan Angka Acak Ka Ngaran Pamakai",
-  "Enter your email so {ownerName} can see who accessed their album": "Masukakan Email Pian Supaya {ownerName} Kawa Malihat Siapa Nang Maakses Album Buhannya",
   "Complete": "Langkap",
   "Processing": "Pamrusisin",
   "Uploading": "Mamuat",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} gagal",
   "({count} in progress)": "({count}) Lagi Berjalan",
   "{count} files": "{count} barakas",
-  "{count} file": "{count} berkas"
+  "{count} file": "{count} berkas",
+  "Enter your email address.": "Masukakan alamat suril pian.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} handak mamparagi album ini dengan teman wan kaluarga saja.",
+  "Email address...": "Alamat surel..."
 }

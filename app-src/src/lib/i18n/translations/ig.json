@@ -148,7 +148,6 @@
   "Enter Username": "Tinye Aha Onye Ojiji",
   "Select Username": "Họrọ Aha Onye Ọrụ",
   "Add Random Digits to Username": "Tinye Ọnụọgụ Ngapata Na Aha Ọbanife",
-  "Enter your email so {ownerName} can see who accessed their album": "Tinye Email Gị Ka {ownerName} Nwee Ike Ịhụ Onye Banye N'ọ́bụ́m Ha",
   "Complete": "Zuru Ezu",
   "Processing": "Mmepe",
   "Uploading": "Na-ebulite",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} daara adaghị",
   "({count} in progress)": "({count}) Na-Aga N'ihu",
   "{count} files": "{count} faịlụ",
-  "{count} file": "{count} faịlụ"
+  "{count} file": "{count} faịlụ",
+  "Enter your email address.": "Tinye adreesị ozi-elektronik gị.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} kekọrọ album a naanị na ndị enyi na ezinụlọ.",
+  "Email address...": "Adres ozi ígwé..."
 }

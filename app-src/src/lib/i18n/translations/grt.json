@@ -148,7 +148,6 @@
   "Enter Username": "Bachaona Gamka Bimung",
   "Select Username": "User bimung bachhibo",
   "Add Random Digits to Username": "User bimung-o chanchipa number songbo",
-  "Enter your email so {ownerName} can see who accessed their album": "Nangni Email-ko On•bo Jedakku {ownerName} Nikna Amgin Ua Album-ko Niko Ra•aha",
   "Complete": "Puura",
   "Processing": "Prossessing",
   "Uploading": "Dingtangba",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} failure onga",
   "({count} in progress)": "({count}) Dal·nangoba",
   "{count} files": "{count} filko",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Nangni email address ra.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} owa album ni pakchagipa wan jrikmajripani nokchaka.",
+  "Email address...": "Email address..."
 }

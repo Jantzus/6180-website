@@ -148,7 +148,6 @@
   "Enter Username": "Paydalanıwshı Atın Kiritiń",
   "Select Username": "Paydalanıwshı Atın Tañlaw",
   "Add Random Digits to Username": "Paydalanıwshı Atına Tosattan Sanlar Qosıw",
-  "Enter your email so {ownerName} can see who accessed their album": "Emailıñızdı Engizin' {ownerName} Kim Olardıñ Albomına Kirgenin Ko're Alıwı Ushın",
   "Complete": "Tolıq",
   "Processing": "Islew",
   "Uploading": "Júklep atırmaqta",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} tabıssız boldı",
   "({count} in progress)": "({count}) Dawam Etpekte",
   "{count} files": "{count} fayllar",
-  "{count} file": "{count} fayl"
+  "{count} file": "{count} fayl",
+  "Enter your email address.": "Elektron pochta adresińizdi kiriting.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} bul albomdı tek dostları hám áwladı menen úleslesti.",
+  "Email address...": "Email mánzili..."
 }

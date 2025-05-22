@@ -148,7 +148,6 @@
   "Enter Username": "Inserisci Nòm Utènt",
   "Select Username": "Sèlta Nóm Utènt",
   "Add Random Digits to Username": "Zuntèr Nòmer Caśuèl al Nòm Utènt",
-  "Enter your email so {ownerName} can see who accessed their album": "Métt Al Tô Email Par Chè {ownerName} Al Pôsa Vàdder Chi L'è Andè In Dal Sô Album",
   "Complete": "Cumpìt",
   "Processing": "Elaburaziòun",
   "Uploading": "Caregànd",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} falì",
   "({count} in progress)": "({count}) In Corso",
   "{count} files": "{count} file",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Mèt al tò indirìz ed pòsta eletrònica.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} l'à spartî st'album mo cun î amîgh e la famèia.",
+  "Email address...": "Indirìzz ed posta eletrònica..."
 }

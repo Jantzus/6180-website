@@ -148,7 +148,6 @@
   "Enter Username": "Naszkryflej Mjano Užytkowńika",
   "Select Username": "Ôbier Miano Używocza",
   "Add Random Digits to Username": "Przidej Losowe Cyfry Do Miana Używocza",
-  "Enter your email so {ownerName} can see who accessed their album": "Wkludź Swoja E-mailowo Adresa, Coby {ownerName} Mogli Widzieć, Fto Dostowoł Sie Do Jejich Albumu",
   "Complete": "Kůmpletny",
   "Processing": "Przetwŏrzanie",
   "Uploading": "Przesyłanie",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} niy poradzone",
   "({count} in progress)": "({count}) We Průbiegu",
   "{count} files": "{count} zbiory",
-  "{count} file": "{count} zbiůr"
+  "{count} file": "{count} zbiůr",
+  "Enter your email address.": "Wkludź swōj adres e-mailowy.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} szarnoł tyn album ino ze frajndami a familijōm.",
+  "Email address...": "Adres e-mailowy..."
 }

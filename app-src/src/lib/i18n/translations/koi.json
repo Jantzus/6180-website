@@ -148,7 +148,6 @@
   "Enter Username": "Гижӧ Пырисьлісь Ним",
   "Select Username": "Бöрйы Уджалісьлісь Нимсӧ",
   "Add Random Digits to Username": "Вӧдитчисьлӧн Нимӧ Содтыны Кытшӧмкӧ Цифраэз",
-  "Enter your email so {ownerName} can see who accessed their album": "Гижӧ Ассьыт Электроннӧй Почтасӧ, Медбы {ownerName} Вермис Адззыны, Кин Пырис Ныліс Альбомӧ",
   "Complete": "Тыр",
   "Processing": "Уджалӧм",
   "Uploading": "Ректӧм",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} абу удайтӧм",
   "({count} in progress)": "({count}) Вӧрзьӧ",
   "{count} files": "{count} файллэз",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Эмайл адрестӧ пырт.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} тайӧ альбомсӧ эшъяскӧд да семьяыскӧд мукӧд сетӧма.",
+  "Email address...": "Электроннӧй почта адрес..."
 }

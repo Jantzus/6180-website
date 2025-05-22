@@ -148,7 +148,6 @@
   "Enter Username": "Wandika Erinnya Lyo",
   "Select Username": "Londa Erinnya",
   "Add Random Digits to Username": "Gatta Ennamba Ez'awamu Ku Linnya Lyo",
-  "Enter your email so {ownerName} can see who accessed their album": "Yingiza Email Yo {ownerName} Asobole Okulaba Ani Eyakozesa Albamu Yaabwe",
   "Complete": "Omulamba",
   "Processing": "Kukolamu",
   "Uploading": "Teeka",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} kigaanye",
   "({count} in progress)": "({count}) Mu Nkulunkulizo",
   "{count} files": "{count} fayiro",
-  "{count} file": "{count} fayiro"
+  "{count} file": "{count} fayiro",
+  "Enter your email address.": "Wandiika endagiriro yo ey'ebbaluwa egungula.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} yagabana albamu eno na mikwano ne ab'ennyumba bokka.",
+  "Email address...": "Email address..."
 }

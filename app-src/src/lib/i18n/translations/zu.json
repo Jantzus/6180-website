@@ -148,7 +148,6 @@
   "Enter Username": "Faka Igama Lomsebenzisi",
   "Select Username": "Khetha Igama Lomsebenzisi",
   "Add Random Digits to Username": "Engeza Izinombolo Ezingahleliwe Egameni Lomsebenzisi",
-  "Enter your email so {ownerName} can see who accessed their album": "Faka I-imeyili Yakho Ukuze U-{ownerName} Akwazi Ukubona Ukuthi Ngubani Ofinyelele Ku-albhamu Yabo",
   "Complete": "Phelele",
   "Processing": "Ukucubungula",
   "Uploading": "Iyalayisha",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} yehlulekile",
   "({count} in progress)": "({count}) Kuyaqhubeka",
   "{count} files": "{count} amafayela",
-  "{count} file": "{count} ifayela"
+  "{count} file": "{count} ifayela",
+  "Enter your email address.": "Faka ikheli lakho le-imeyili.",
+  "{ownerName} has only shared this album with friends and family.": "U-{ownerName} abelane kuphela nale albhamu nabangane nomndeni.",
+  "Email address...": "Ikheli le-imeyili..."
 }

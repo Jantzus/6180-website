@@ -148,7 +148,6 @@
   "Enter Username": "បញ្ចូល​ឈ្មោះ​អ្នក​ប្រើប្រាស់",
   "Select Username": "ជ្រើសរើស​ឈ្មោះ​អ្នក​ប្រើប្រាស់",
   "Add Random Digits to Username": "បន្ថែមលេខចៃដន្យទៅឈ្មោះអ្នកប្រើប្រាស់",
-  "Enter your email so {ownerName} can see who accessed their album": "បញ្ចូលអ៊ីមែលរបស់អ្នកដើម្បីឱ្យ {ownerName} អាចមើលឃើញថាអ្នកណាបានចូលមើលអាល់ប៊ុមរបស់ពួកគេ",
   "Complete": "ពេញលេញ",
   "Processing": "ដំណើរការ",
   "Uploading": "កំពុងផ្ទុកឡើង",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} បរាជ័យ",
   "({count} in progress)": "({count}) កំពុងដំណើរការ",
   "{count} files": "{count} ឯកសារ",
-  "{count} file": "{count} ឯកសារ"
+  "{count} file": "{count} ឯកសារ",
+  "Enter your email address.": "បញ្ចូលអាសយដ្ឋានអ៊ីមែលរបស់អ្នក.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} បានចែករំលែកអាល់ប៊ុមនេះជាមួយមិត្តភក្តិនិងគ្រួសារតែប៉ុណ្ណោះ។",
+  "Email address...": "អាសយដ្ឋានអ៊ីមែល..."
 }

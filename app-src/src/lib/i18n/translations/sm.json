@@ -148,7 +148,6 @@
   "Enter Username": "Tusi Lou Igoa Fa'aoga",
   "Select Username": "Filifili Igoa Fa'aoga",
   "Add Random Digits to Username": "Fa'apipii Numera Fa'afuase'i i le Suafa Fa'aoga",
-  "Enter your email so {ownerName} can see who accessed their album": "Faaulu Lou Imeli Ina Ia Mafai E {ownerName} Ona Vaai Po O Ai Na Maimoa I La Latou Api",
   "Complete": "Atoa",
   "Processing": "Fa'agaoioiga",
   "Uploading": "Fa'aupega",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ua le manuia",
   "({count} in progress)": "({count}) Sologa",
   "{count} files": "{count} faila",
-  "{count} file": "{count} faila"
+  "{count} file": "{count} faila",
+  "Enter your email address.": "Tusi lou tuatusi imeli.",
+  "{ownerName} has only shared this album with friends and family.": "Ua fa'asoa e {ownerName} le api lenei ma uo ma le aiga na'o.",
+  "Email address...": "Tuātusi imeli..."
 }

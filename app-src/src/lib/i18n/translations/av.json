@@ -148,7 +148,6 @@
   "Enter Username": "Хlалтlизабурасул ЦӀар Бихье",
   "Select Username": "Пайдаланылучи Исемен Сайлагыз",
   "Add Random Digits to Username": "ХӀалтӀизабулесул ЦӀаралде Цере БатӀи-батӀиял Номерал Жубазе",
-  "Enter your email so {ownerName} can see who accessed their album": "Дур Email Бихье {ownerName} Рихьизе Щив Гьезул Альбомалде Балагьарав",
   "Complete": "Дандеги",
   "Processing": "ХӀадурлъи",
   "Uploading": "Загрузка",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} данде кколичӏо",
   "({count} in progress)": "({count}) ТӀубазабулеб",
   "{count} files": "{count} файлал",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Дурго электроннияб почалъул адрес хъвай.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}-ал дун альбом жакъахъе фамилияялъе хъалъул щвана.",
+  "Email address...": "Электронияб кагъатазул адрес..."
 }

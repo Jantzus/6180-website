@@ -148,7 +148,6 @@
   "Enter Username": "Cuir Isteach Ainm Úsáideora",
   "Select Username": "Roghnaigh Ainm Úsáideora",
   "Add Random Digits to Username": "Cuir Digití Randamacha Le D'ainm Úsáideora",
-  "Enter your email so {ownerName} can see who accessed their album": "Cuir Isteach Do Ríomhphost Ionas Go Bhfeicfidh {ownerName} Cé A Rochtain A nAlbam",
   "Complete": "Iomlán",
   "Processing": "Próiseáil",
   "Uploading": "Uaslódáil",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} teipthe",
   "({count} in progress)": "({count}) Ar Siúl",
   "{count} files": "{count} comhaid",
-  "{count} file": "{count} comhad"
+  "{count} file": "{count} comhad",
+  "Enter your email address.": "Cuir do sheoladh ríomhphoist isteach.",
+  "{ownerName} has only shared this album with friends and family.": "Níl {ownerName} ach tar éis an t-albam seo a roinnt le cairde agus teaghlach.",
+  "Email address...": "Seoladh ríomhphoist..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Anseriss Nòm Utent",
   "Select Username": "Selessioné Nòm Utent",
   "Add Random Digits to Username": "Gionté Sifre Casual Al Nòm Utent",
-  "Enter your email so {ownerName} can see who accessed their album": "Buta Sò Adrëssa Email Përchè {ownerName} A Peula Vëdde Chi A L'ha Acedù A Sò Album",
   "Complete": "Complet",
   "Processing": "Elaborassion",
   "Uploading": "Carià",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} falì",
   "({count} in progress)": "({count}) An Cors",
   "{count} files": "{count} file",
-  "{count} file": "{count} archivi"
+  "{count} file": "{count} archivi",
+  "Enter your email address.": "Anseriss tò adrëssa ëd pòsta eletrònica.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} a l'ha spartì sto album mach con amis e famija.",
+  "Email address...": "Adrëssa ëd pòsta eletrònica..."
 }

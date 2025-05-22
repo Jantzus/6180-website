@@ -148,7 +148,6 @@
   "Enter Username": "Кычылтшын Лӹмжӹм Пыртыза",
   "Select Username": "Кычылтшын Лӹмжӹм Айырымаш",
   "Add Random Digits to Username": "Пайдаланышын Лӹмжӹш Вычыдымы Шотым Привайаш",
-  "Enter your email so {ownerName} can see who accessed their album": "Шке Электрон Почтам Сирӹ {ownerName} Нӹнӹн Альбомыш Кӱ Пырен Ужшы Манын",
   "Complete": "Цэлык",
   "Processing": "Ровотайымаш",
   "Uploading": "Пыртен",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ак йӧрӹ",
   "({count} in progress)": "({count}) Видӓлтеш",
   "{count} files": "{count} файлвлӓ",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Тӹньӹн электрон почты адресӹм пыртен.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} тиде альбомым йолташвлӓ дене семьӓ дене гынат пайлальын.",
+  "Email address...": "Электрон почты адрес..."
 }

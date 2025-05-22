@@ -148,7 +148,6 @@
   "Enter Username": "Etchie Nom D'Useu",
   "Select Username": "Chouaîsi l'Nom dé l'Uzeu",
   "Add Random Digits to Username": "Ajoutaer Des Chiffes Au Hasard Au Nom D'useu",
-  "Enter your email so {ownerName} can see who accessed their album": "Êtchet Vouot' Couothie Pouor Qu' {ownerName} Peuche Vé Tchi Qu'a Eu Accès à Louos Album",
   "Complete": "Complet",
   "Processing": "Traitement",
   "Uploading": "En traîn d'tchargi",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} manqué",
   "({count} in progress)": "({count}) En Cours",
   "{count} files": "{count} fichiers",
-  "{count} file": "{count} fichyi"
+  "{count} file": "{count} fichyi",
+  "Enter your email address.": "Êcrivez vot' adr'che d'couothri.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} n'a pârtagi chutte album qu'aouéque ses amis et s'fanmille.",
+  "Email address...": "Adresse de courriel..."
 }

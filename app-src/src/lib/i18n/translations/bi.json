@@ -148,7 +148,6 @@
   "Enter Username": "Putum Nem Blong Yu",
   "Select Username": "Jusum Nem Blong Yu",
   "Add Random Digits to Username": "Ademap Namba Long Yusanem Blong Yu",
-  "Enter your email so {ownerName} can see who accessed their album": "Putum Email Blong Yu Blong {ownerName} I Save Luk Huia I Bin Aksesem Album Blong Olgeta",
   "Complete": "Fulap",
   "Processing": "Proesesem",
   "Uploading": "Aplod",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fel",
   "({count} in progress)": "({count}) Stap Go Yet",
   "{count} files": "{count} faelem",
-  "{count} file": "{count} faelem"
+  "{count} file": "{count} faelem",
+  "Enter your email address.": "Putum adres blong imel blong yu.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} i bin serem nomo dis album wetem ol fren mo famili.",
+  "Email address...": "Email adres..."
 }

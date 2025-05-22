@@ -148,7 +148,6 @@
   "Enter Username": "Putim Yusa Nem",
   "Select Username": "Makim Nem Bilong Yu",
   "Add Random Digits to Username": "Putim Ol Namba Nabaut Long Yusa Nem",
-  "Enter your email so {ownerName} can see who accessed their album": "Input Email Bilong Yu So {ownerName} Ken Lukim Husat I Bin Accessim Album Bilong Ol",
   "Complete": "Komplet",
   "Processing": "Processing",
   "Uploading": "Apload",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} i fail",
   "({count} in progress)": "({count}) Pepe Em",
   "{count} files": "{count} fail",
-  "{count} file": "{count} faili"
+  "{count} file": "{count} faili",
+  "Enter your email address.": "Ipenim pes bilong imel bilong yu.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} i share dis album wetem frens mo famili nomo.",
+  "Email address...": "Email address..."
 }

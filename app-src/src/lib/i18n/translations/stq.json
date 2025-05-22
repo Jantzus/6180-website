@@ -148,7 +148,6 @@
   "Enter Username": "Benutsernoome Ienreeke",
   "Select Username": "Benutsernoome Uutwääle",
   "Add Random Digits to Username": "Toufallige Siefere Tau Benutsernoome Bietouföigje",
-  "Enter your email so {ownerName} can see who accessed their album": "Reek Din E-Mail-Adresse in, dät {ownerName} sjo kon, wäl ap hiere Album tougriepen häd",
   "Complete": "Fulstannich",
   "Processing": "Ferarbaidenge",
   "Uploading": "Hoochladenje",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} misglukket",
   "({count} in progress)": "({count}) In Gong",
   "{count} files": "{count} doatäie",
-  "{count} file": "{count} doatäi"
+  "{count} file": "{count} doatäi",
+  "Enter your email address.": "Reek dien E-Mail-Adresse ien.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hät dit Album blot mäd Frünne un Familie deeld.",
+  "Email address...": "E-Mail-Adresse..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Ikaag An Pangaran Nin Paragamit",
   "Select Username": "Pilian an Ngaran nin Paragamit",
   "Add Random Digits to Username": "Magdugang Nin Random Na Mga Numero Sa Ngaran",
-  "Enter your email so {ownerName} can see who accessed their album": "Ilaag An Saimong Email Para {ownerName} Makahiling Kun Siisay An Nag-access Kan Saindang Album",
   "Complete": "Kompleto",
   "Processing": "Pagproseso",
   "Uploading": "Pigkakaraga",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} nagpalya",
   "({count} in progress)": "({count}) Nagpapadagos",
   "{count} files": "{count} mga file",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Ikaag an saimong email address.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} nakapagbahagi kan album na ini sa mga kaibigan asin pamilya sana.",
+  "Email address...": "Email address..."
 }

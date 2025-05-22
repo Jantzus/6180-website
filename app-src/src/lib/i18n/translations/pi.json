@@ -148,7 +148,6 @@
   "Enter Username": "उपयोगकत्तानाम लिखथ",
   "Select Username": "उपयोगकत्त नाम चुनोहि",
   "Add Random Digits to Username": "पयोगकत्ता नामम्हि यदिच्छोंक जोदेतु",
-  "Enter your email so {ownerName} can see who accessed their album": "तुम्हाकं ईमेलं लिखथ जेन {ownerName} पस्सितुं सक्कोति को तेसं सङ्गीतकट्ठतं फुसि",
   "Complete": "पुण्ण",
   "Processing": "प्रक्रिया",
   "Uploading": "उप्पलोद्",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} विफल",
   "({count} in progress)": "({count}) वड्ढन्ती",
   "{count} files": "{count} फाइल",
-  "{count} file": "{count} फाइल"
+  "{count} file": "{count} फाइल",
+  "Enter your email address.": "तव ईमेल सङ्केत लिख.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} वा एमकं सङ्गीतसञ्ञायं मित्तेहि च कुलेन च सद्धिं अंसि।",
+  "Email address...": "ईमेल पता..."
 }

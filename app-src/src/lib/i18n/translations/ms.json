@@ -148,7 +148,6 @@
   "Enter Username": "Masukkan Nama Pengguna",
   "Select Username": "Pilih Nama Pengguna",
   "Add Random Digits to Username": "Tambah Digit Rawak Ke Nama Pengguna",
-  "Enter your email so {ownerName} can see who accessed their album": "Masukkan E-mel Anda Supaya {ownerName} Dapat Melihat Siapa Yang Mengakses Album Mereka",
   "Complete": "Lengkap",
   "Processing": "Pemprosesan",
   "Uploading": "Memuat naik",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} gagal",
   "({count} in progress)": "({count}) Sedang Berjalan",
   "{count} files": "{count} fail",
-  "{count} file": "{count} fail"
+  "{count} file": "{count} fail",
+  "Enter your email address.": "Masukkan alamat e-mel anda.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hanya berkongsi album ini dengan rakan dan keluarga.",
+  "Email address...": "Alamat e-mel..."
 }

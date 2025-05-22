@@ -148,7 +148,6 @@
   "Enter Username": "ユーザー名を入力",
   "Select Username": "ユーザー名を選択",
   "Add Random Digits to Username": "ユーザー名にランダムな数字を追加",
-  "Enter your email so {ownerName} can see who accessed their album": "あなたのメールアドレスを入力してください、{ownerName}がアルバムにアクセスした人を確認できるようにするため",
   "Complete": "完了",
   "Processing": "処理",
   "Uploading": "アップロード中",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} 失敗しました",
   "({count} in progress)": "({count}) 進行中",
   "{count} files": "{count} ファイル",
-  "{count} file": "{count} ファイル"
+  "{count} file": "{count} ファイル",
+  "Enter your email address.": "メールアドレスを入力してください.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}は友達や家族とのみこのアルバムを共有しています。",
+  "Email address...": "メールアドレス..."
 }

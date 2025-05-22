@@ -148,7 +148,6 @@
   "Enter Username": "Ажыглакчының Адын Киирер",
   "Select Username": "Ажыглакчының Адын Шилиңер",
   "Add Random Digits to Username": "Ажыглакчы Адынга Душкан Саннарны Немээр",
-  "Enter your email so {ownerName} can see who accessed their album": "Силерниң Электроннуг Шуудаңарны Киириңер, {ownerName} Оларның Альбомунче Кым Кирген Деп Көрзүн",
   "Complete": "Дѳѳзүлген",
   "Processing": "Ажылдаары",
   "Uploading": "Чүдүрүп турар",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} чедимче чок",
   "({count} in progress)": "({count}) Чоруп Турар",
   "{count} files": "{count} файлдар",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Электроннуг шуудаңар адрезин киириңер.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} бо альбомну найылары-биле аймак кижилери-биле ажыглажып турар.",
+  "Email address...": "Электроннуг почта адрези..."
 }

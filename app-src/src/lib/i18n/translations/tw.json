@@ -148,7 +148,6 @@
   "Enter Username": "Hyehyɛ Wo Din",
   "Select Username": "Yi Dwumadie Din",
   "Add Random Digits to Username": "Fa Nɔmba A Ɛyɛ Basabasa Ka Wo Din Ho",
-  "Enter your email so {ownerName} can see who accessed their album": "Hyehyɛ Wo Email Ma {ownerName} Ntumi Nhwɛ Wɔn A Wɔhwɛɛ Wɔn Album",
   "Complete": "Mu Awie",
   "Processing": "Ɔprɔses",
   "Uploading": "Reyi soro",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} anhwehwɛ",
   "({count} in progress)": "({count}) Rekɔ So",
   "{count} files": "{count} nfaele",
-  "{count} file": "{count} fael"
+  "{count} file": "{count} fael",
+  "Enter your email address.": "Kyerɛw wo email address.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} de album yi aka adamfo ne abusua nkutoo mu.",
+  "Email address...": "Email address..."
 }

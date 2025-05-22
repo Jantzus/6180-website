@@ -148,7 +148,6 @@
   "Enter Username": "Sartu Erabiltzaile Izena",
   "Select Username": "Aukeratu Erabiltzaile-izena",
   "Add Random Digits to Username": "Gehitu Ausazko Digituak Erabiltzaile-izenari",
-  "Enter your email so {ownerName} can see who accessed their album": "Sartu Zure Emaila {ownerName}k Bere Albuma Nork Atzitu Duen Ikus Dezan",
   "Complete": "Osoa",
   "Processing": "Prozesamendua",
   "Uploading": "Igotzen",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} huts egin du",
   "({count} in progress)": "({count}) Abian",
   "{count} files": "{count} fitxategi",
-  "{count} file": "{count} fitxategi"
+  "{count} file": "{count} fitxategi",
+  "Enter your email address.": "Sartu zure helbide elektronikoa.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}(e)k album hau lagunekin eta familiarekin bakarrik partekatu du.",
+  "Email address...": "Helbide elektronikoa..."
 }

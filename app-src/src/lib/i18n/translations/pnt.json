@@ -148,7 +148,6 @@
   "Enter Username": "Βάλον Όνεμαν Χρήστε",
   "Select Username": "Επίλεξον Όνεμαν Χρήστε",
   "Add Random Digits to Username": "Πρόσθεστε Τυχαίους Αριθμούς Ση Χρήστη Ονέματα",
-  "Enter your email so {ownerName} can see who accessed their album": "Νιγράψον Το Email Εσούν Για Να {ownerName} Τερεί Ποίος Εμπήκεν Σο Άλμπουμν Ατούν",
   "Complete": "Πλήρες",
   "Processing": "Επεξεργασία",
   "Uploading": "Φορτώνει",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} κὶ επέτυχεν",
   "({count} in progress)": "({count}) Σα Εξέλιξη",
   "{count} files": "{count} αρχεία",
-  "{count} file": "{count} αρχείον"
+  "{count} file": "{count} αρχείον",
+  "Enter your email address.": "Γράψον το ηλεκτρονικόν σου διεύθυνσην.",
+  "{ownerName} has only shared this album with friends and family.": "Ο/Ε {ownerName} εμοίρασεν το άλμπουμον ατό μες τα φίλεα και την οικογένειαν.",
+  "Email address...": "Διεύθυνσην ηλεκτρονικού ταχυδρομείου..."
 }

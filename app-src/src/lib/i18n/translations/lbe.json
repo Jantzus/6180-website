@@ -148,7 +148,6 @@
   "Enter Username": "Ишла Бувайманал ЦӀа",
   "Select Username": "Пользовательнал Цlа Язи Ба",
   "Add Random Digits to Username": "Ишла Бувайманан ЦIанин Цайми СурцIа Ххи Бан",
-  "Enter your email so {ownerName} can see who accessed their album": "Бишара Вила Электрон Почта {ownerName}-н Ккаккан, Цу Буруглаглай Ванал Альбомрайн",
   "Complete": "Щаллусса",
   "Processing": "Даву",
   "Uploading": "Гьаз буллай",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} бартакъавхьуна",
   "({count} in progress)": "({count}) Буллай Бур",
   "{count} files": "{count} файллу",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Ина электрон почталул адрес чичара.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} гьа альбом дустругу къуннаругу хъинну лавгунин.",
+  "Email address...": "Email address..."
 }

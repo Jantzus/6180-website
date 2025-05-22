@@ -148,7 +148,6 @@
   "Enter Username": "کارن نوم داخل کړئ",
   "Select Username": "کارن نوم وټاکئ",
   "Add Random Digits to Username": "کارن نوم ته ګډوډ شمېرې ورزیاتې کړئ",
-  "Enter your email so {ownerName} can see who accessed their album": "خپل بریښنالیک دننه کړئ ترڅو {ownerName} وکولای شي وویني چا د هغوی البوم ته لاسرسی درلود",
   "Complete": "بشپړ",
   "Processing": "پروسس",
   "Uploading": "پورته کول",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} پاتې راغی",
   "({count} in progress)": "({count}) په پرمختګ کې",
   "{count} files": "{count} دوتنې",
-  "{count} file": "{count} دوتنه"
+  "{count} file": "{count} دوتنه",
+  "Enter your email address.": "خپل بریښنالیک پته ولیکئ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} دا البوم یوازې د ملګرو او کورنۍ سره شریک کړی.",
+  "Email address...": "بریښنالیک پته..."
 }

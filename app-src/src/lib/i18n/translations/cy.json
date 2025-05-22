@@ -148,7 +148,6 @@
   "Enter Username": "Rhowch Enw Defnyddiwr",
   "Select Username": "Dewis Enw Defnyddiwr",
   "Add Random Digits to Username": "Ychwanegu Digidau Ar Hap At Enw Defnyddiwr",
-  "Enter your email so {ownerName} can see who accessed their album": "Rhowch Eich E-bost Fel Y Gall {ownerName} Weld Pwy Sydd Wedi Cyrchu Eu Albwm",
   "Complete": "Cwblhau",
   "Processing": "Prosesu",
   "Uploading": "Uwchlwytho",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} wedi methu",
   "({count} in progress)": "({count}) Ar Y Gweill",
   "{count} files": "{count} ffeiliau",
-  "{count} file": "{count} ffeil"
+  "{count} file": "{count} ffeil",
+  "Enter your email address.": "Rhowch eich cyfeiriad e-bost.",
+  "{ownerName} has only shared this album with friends and family.": "Mae {ownerName} wedi rhannu'r albwm hwn gyda ffrindiau a theulu yn unig.",
+  "Email address...": "Cyfeiriad e-bost..."
 }

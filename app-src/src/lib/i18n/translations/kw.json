@@ -148,7 +148,6 @@
   "Enter Username": "Gorrewgh Hanow Devnydhyer",
   "Select Username": "Dewis Hanow Devnydhyer",
   "Add Random Digits to Username": "Keworra Dyghtow Random Dhe Hanow Devnydhyer",
-  "Enter your email so {ownerName} can see who accessed their album": "Entra Dha Ebost Rag {ownerName} Dhe Allos Gweles Pyv Re Dhevnyhas Aga Album",
   "Complete": "Kowlwys",
   "Processing": "Processya",
   "Uploading": "Ughkarga",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fellys",
   "({count} in progress)": "({count}) Ow Mos",
   "{count} files": "{count} restrennow",
-  "{count} file": "{count} restren"
+  "{count} file": "{count} restren",
+  "Enter your email address.": "Gorrewgh agas trigva ebost.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} a wrug kevri'n albom ma gans kenedhlow ha teylu hepken.",
+  "Email address...": "Trigva ebost..."
 }

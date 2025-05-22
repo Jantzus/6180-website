@@ -148,7 +148,6 @@
   "Enter Username": "Īvoda Lītuotuoja Vuordu",
   "Select Username": "Izalaseit Lītuotuoja Vuordu",
   "Add Random Digits to Username": "Pīlikt Gadejuma Ciparus Pi Lītōtuoja Vuorda",
-  "Enter your email so {ownerName} can see who accessed their album": "Īvade Sovu E-postu, Lai {ownerName} Varātu Redzēt, Kas Pīejē Pi Jū Albuma",
   "Complete": "Pabeigtys",
   "Processing": "Apstrodošona",
   "Uploading": "Īleikšona",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} naizadevās",
   "({count} in progress)": "({count}) Nūtīk",
   "{count} files": "{count} faili",
-  "{count} file": "{count} fails"
+  "{count} file": "{count} fails",
+  "Enter your email address.": "Īvodi sovu e-pasta adresi.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ir dalinuos ar šituo albumu ci draugim i ģimeni.",
+  "Email address...": "Elektroniskuo pasta adress..."
 }

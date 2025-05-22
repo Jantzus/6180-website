@@ -148,7 +148,6 @@
   "Enter Username": "Qullanıcı Adını Kiriting",
   "Select Username": "Qullanıcı Adını Sayla",
   "Add Random Digits to Username": "Qullanıcı Adına Rastgele Raqamlar Qoş",
-  "Enter your email so {ownerName} can see who accessed their album": "E-Mailıñıznı Kirsetiñiz Ki {ownerName} Kimlеrniñ Olarnıñ Albomına Kirgenini Körabilsin",
   "Complete": "Tamam",
   "Processing": "İşlev",
   "Uploading": "Yüklemekte",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} muvaffaqiyetsiz",
   "({count} in progress)": "({count}) İlerlemekte",
   "{count} files": "{count} fayllar",
-  "{count} file": "{count} dosya"
+  "{count} file": "{count} dosya",
+  "Enter your email address.": "E-mail adresinizni kiriting.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} bu albomni faqat dostları ve ailesi ile paylaştı.",
+  "Email address...": "E-mail adresi..."
 }

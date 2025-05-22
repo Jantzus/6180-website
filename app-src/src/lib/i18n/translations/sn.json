@@ -148,7 +148,6 @@
   "Enter Username": "Isa Zita Remushandisi",
   "Select Username": "Sarudza Zita Remushandisi",
   "Add Random Digits to Username": "Wedzera Nhamba Dzechisarudzo Kuzita Remushandisi",
-  "Enter your email so {ownerName} can see who accessed their album": "Isa Email Yako Kuti {ownerName} Akwanise Kuona Kuti Ndiani Akaona Bhuku Ravo",
   "Complete": "Zvizere",
   "Processing": "Kugadzira",
   "Uploading": "Kututsa",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} yakundikana",
   "({count} in progress)": "({count}) Munzira",
   "{count} files": "{count} mafaira",
-  "{count} file": "{count} faira"
+  "{count} file": "{count} faira",
+  "Enter your email address.": "Nyora kero yako ye imeri.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} akagovana album iyi neshamwari nemhuri chete.",
+  "Email address...": "Kero yetsambambaradzo..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Mitte 'U Nome Utende",
   "Select Username": "Scacchie 'U Nome Utende",
   "Add Random Digits to Username": "Aggiunge Numere Cavzuale a 'U Nome Utende",
-  "Enter your email so {ownerName} can see who accessed their album": "'Mblicche L'E-mail Tune Pe Ffà 'Ndrucà A {ownerName} Ci Ha Trasute Jndr'a L'Album Lore",
   "Complete": "Comblete",
   "Processing": "Elabburazione",
   "Uploading": "Carecanne",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fallite",
   "({count} in progress)": "({count}) Jndr'à 'U Cors",
   "{count} files": "{count} file",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Mitte 'a 'ndirizze email tue.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ave spartute stu album sole cu l'amice e 'a famigghie.",
+  "Email address...": "Nderizze de pòste elettroneche..."
 }

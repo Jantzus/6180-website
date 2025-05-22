@@ -148,7 +148,6 @@
   "Enter Username": "Inserisi Nome Utente",
   "Select Username": "Sełesiona Nome Utente",
   "Add Random Digits to Username": "Zonta Nùmari Caxuałi Al Nome Utente",
-  "Enter your email so {ownerName} can see who accessed their album": "Inserisi El To Indiriso Email Cusì {ownerName} El Pol Védare Chi Ga Acedùo Al So Album",
   "Complete": "Conpleto",
   "Processing": "Elaborasion",
   "Uploading": "Cargamento",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} falìo",
   "({count} in progress)": "({count}) In Corso",
   "{count} files": "{count} file",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Inserissi el to indiriso email.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} el ga spartìo sto album solo co i amici e ła fameja.",
+  "Email address...": "Indiriso de posta eletrònega..."
 }

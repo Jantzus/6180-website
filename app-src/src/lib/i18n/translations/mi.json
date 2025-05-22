@@ -148,7 +148,6 @@
   "Enter Username": "Tāuru Ingoa Kaiwhakamahi",
   "Select Username": "Tīpako Ingoa Kaiwhakamahi",
   "Add Random Digits to Username": "Tāpiri Tau Matapōkere Ki Te Ingoa Kaiwhakamahi",
-  "Enter your email so {ownerName} can see who accessed their album": "Whakaurua Tō Īmēra Kia Kite A {ownerName} Ko Wai I Toro Ki Tā Rātou Kōpaki",
   "Complete": "Tutuki",
   "Processing": "Tukatuka",
   "Uploading": "Tukuake",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} rahua",
   "({count} in progress)": "({count}) Kei Te Haere Tonu",
   "{count} files": "{count} kōnae",
-  "{count} file": "{count} kōnae"
+  "{count} file": "{count} kōnae",
+  "Enter your email address.": "Tāurua tō wāhitau īmēra.",
+  "{ownerName} has only shared this album with friends and family.": "Kua whakapuaki a {ownerName} i tēnei kōpaki ki ngā hoa me te whānau anake.",
+  "Email address...": "Wāhitau īmēra..."
 }

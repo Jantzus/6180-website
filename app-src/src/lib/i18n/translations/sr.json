@@ -148,7 +148,6 @@
   "Enter Username": "Унесите Корисничко Име",
   "Select Username": "Изаберите Корисничко Име",
   "Add Random Digits to Username": "Додај Насумичне Бројеве Корисничком Имену",
-  "Enter your email so {ownerName} can see who accessed their album": "Унесите Вашу Имејл Адресу Како Би {ownerName} Могао Видети Ко Је Приступио Њиховом Албуму",
   "Complete": "Потпун",
   "Processing": "Обрада",
   "Uploading": "Отпремање",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} није успело",
   "({count} in progress)": "({count}) У Току",
   "{count} files": "{count} датотеке",
-  "{count} file": "{count} датотека"
+  "{count} file": "{count} датотека",
+  "Enter your email address.": "Унесите вашу адресу е-поште.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} је поделио овај албум само са пријатељима и породицом.",
+  "Email address...": "Адреса е-поште..."
 }

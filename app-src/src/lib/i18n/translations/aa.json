@@ -148,7 +148,6 @@
   "Enter Username": "Sinam Ufaytistii Gali",
   "Select Username": "Sinam Anukeessa",
   "Add Random Digits to Username": "Sinam Lakkooysa Naasa Maaxansa Buusi",
-  "Enter your email so {ownerName} can see who accessed their album": "Iyaddis Email Geeyay {ownerName} Alboom Yeeli Geeney Yabeley",
   "Complete": "Dhumi",
   "Processing": "Suundeynta",
   "Uploading": "Alboom geysiisa",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} feeyliimte",
   "({count} in progress)": "({count}) Alboom Hormaa",
   "{count} files": "{count} faayilaan",
-  "{count} file": "{count} fayla"
+  "{count} file": "{count} fayla",
+  "Enter your email address.": "Barreessa e-meelii kee galchi.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} alboomtan asbaboota fi familiitakka qofaan qooddateera.",
+  "Email address...": "Sinam Xabiili Baalisa..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Apnaqiri Suti Uñt'ayaña",
   "Select Username": "Apnaqiri Suti Ajlliña",
   "Add Random Digits to Username": "Apaqaña Jakhuñanaka Apnaqiri Sutipar Kayshita",
-  "Enter your email so {ownerName} can see who accessed their album": "Email Churañama {ownerName} Uñjañapataki Khiti Álbumapar Mantatayna",
   "Complete": "Phuqachata",
   "Processing": "Lurayaña",
   "Uploading": "Apthapiri",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} pantjatawa",
   "({count} in progress)": "({count}) Sarantaski",
   "{count} files": "{count} archivos",
-  "{count} file": "{count} wayaqa"
+  "{count} file": "{count} wayaqa",
+  "Enter your email address.": "Aruskipañama utjawima qillqma.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} aka álbum mayjt'aninakarjamanakampi familianakampiw utjatäna.",
+  "Email address...": "Correo electrónico tuquyaña..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Voer Gebruikersnaam In",
   "Select Username": "Kies Gebruikersnaam",
   "Add Random Digits to Username": "Voeg Lukraak Syfers By Gebruikersnaam",
-  "Enter your email so {ownerName} can see who accessed their album": "Verskaf Jou E-pos Sodat {ownerName} Kan Sien Wie Hul Album Bekyk Het",
   "Complete": "Voltooi",
   "Processing": "Verwerking",
   "Uploading": "Besig om op te laai",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} misluk",
   "({count} in progress)": "({count}) Aan Die Gang",
   "{count} files": "{count} lêers",
-  "{count} file": "{count} lêer"
+  "{count} file": "{count} lêer",
+  "Enter your email address.": "Voer jou e-posadres in.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} het hierdie album slegs met vriende en familie gedeel.",
+  "Email address...": "E-posadres..."
 }

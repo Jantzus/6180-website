@@ -148,7 +148,6 @@
   "Enter Username": "Cuir A-steach Ainm-cleachdaiche",
   "Select Username": "Tagh Ainm-cleachdaiche",
   "Add Random Digits to Username": "Cuir Àireamhan Thuaireamach Ris An Ainm-cleachdaiche",
-  "Enter your email so {ownerName} can see who accessed their album": "Cuir A-steach An T-post-d Agad Gus Am Faic {ownerName} Cò Sheall Air An Albam Aca",
   "Complete": "Coileanta",
   "Processing": "Giullachd",
   "Uploading": "A' luchdadh suas",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} dh'fhàillig",
   "({count} in progress)": "({count}) A' Dèanamh Adhartais",
   "{count} files": "{count} faidhlichean",
-  "{count} file": "{count} faidhle"
+  "{count} file": "{count} faidhle",
+  "Enter your email address.": "Cuir a-steach an seòladh puist-d agad.",
+  "{ownerName} has only shared this album with friends and family.": "Cha do roinn {ownerName} a' chlàr seo ach le caraidean is teaghlach.",
+  "Email address...": "Seòladh puist-d..."
 }

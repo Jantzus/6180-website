@@ -148,7 +148,6 @@
   "Enter Username": "Vakacuruma Na Yacamu Ni Vakayagataki",
   "Select Username": "Digitaka Na Yacamu",
   "Add Random Digits to Username": "Vakuria Na Naba Vakatakilakila Ki Na Yacamu Ni Vakayagataki",
-  "Enter your email so {ownerName} can see who accessed their album": "Vakalewena Na Nomu I-meli Me {ownerName} Rawa Ni Raica Se O cei E Tiko Rawa Ki Na Nodra Album",
   "Complete": "Vakaoti",
   "Processing": "Vakarautaki",
   "Uploading": "Vakavodoka",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} sega",
   "({count} in progress)": "({count}) Sa Vakaitavi",
   "{count} files": "{count} faili",
-  "{count} file": "{count} faili"
+  "{count} file": "{count} faili",
+  "Enter your email address.": "Vakacuruma na nomu e-meli tadresi.",
+  "{ownerName} has only shared this album with friends and family.": "Ko {ownerName} beca vakacaucautaki kina na album oqo kei na itokani kei na matavuvale ga.",
+  "Email address...": "Imeli taladrodro..."
 }

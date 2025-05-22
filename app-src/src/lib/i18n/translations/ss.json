@@ -148,7 +148,6 @@
   "Enter Username": "Faka Ligama Lakho",
   "Select Username": "Khetsa Ligama Lemsebentisi",
   "Add Random Digits to Username": "Ngetela Tinombolo Tenhlanhla Ebitweni Lokusebentisa",
-  "Enter your email so {ownerName} can see who accessed their album": "Faka I-Email Yakho Kute {ownerName} Akhone Kubona Kutsi Ngubani Longene Ku-Album Yabo",
   "Complete": "Gcwele",
   "Processing": "Kucubungula",
   "Uploading": "Kukhweshela phezulu",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} yehlulekile",
   "({count} in progress)": "({count}) Iyachubeka",
   "{count} files": "{count} emafayela",
-  "{count} file": "{count} ifayela"
+  "{count} file": "{count} ifayela",
+  "Enter your email address.": "Faka likheli lakho le-imeyili.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} wabelane nalelialbhamu nababangani nemndzeni kuphela.",
+  "Email address...": "Likheli le-imeyili..."
 }

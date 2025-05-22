@@ -148,7 +148,6 @@
   "Enter Username": "Brukernaam Ingeven",
   "Select Username": "Brukernaam Utwählen",
   "Add Random Digits to Username": "Tofällige Tallen To'n Brukernaam Tofögen",
-  "Enter your email so {ownerName} can see who accessed their album": "Giff Dien E-Mail-Adress In, Dormit {ownerName} Sehn Kann, Wokeen Op Ehr Album Togriepen Hett",
   "Complete": "Vollständig",
   "Processing": "Verarbeiden",
   "Uploading": "Hochladen",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fehlslaan",
   "({count} in progress)": "({count}) In Gang",
   "{count} files": "{count} datein",
-  "{count} file": "{count} datei"
+  "{count} file": "{count} datei",
+  "Enter your email address.": "Geev dien E-Mail-Adress in.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hett dit Album blots mit Frünnen un Familie deelt.",
+  "Email address...": "E-Mail-Adress..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Wpiszë Miono Brëkòwnika",
   "Select Username": "Wëbierzë Miono",
   "Add Random Digits to Username": "Dodôj Przëtrëfkòwé Cëfrë Do Miona Brëkòwnika",
-  "Enter your email so {ownerName} can see who accessed their album": "Wpiszë Swój Email, Żebë {ownerName} Mógł Widzec, Chto Przëstãpił Do Jich Albùmù",
   "Complete": "Skùńczony",
   "Processing": "Przetwôrzanié",
   "Uploading": "Wëladënk",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} nie darzëło sã",
   "({count} in progress)": "({count}) W Trakce",
   "{count} files": "{count} lopków",
-  "{count} file": "{count} lopk"
+  "{count} file": "{count} lopk",
+  "Enter your email address.": "Wpiszë swój e-mailowi adres.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} pòdzélôł ten album blós z drëżbami ë rodną.",
+  "Email address...": "Elektroniczné pòcztë adresa..."
 }

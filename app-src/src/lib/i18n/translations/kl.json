@@ -148,7 +148,6 @@
   "Enter Username": "Atorfiup Aqqa Allaguk",
   "Select Username": "Atorneqartup Aqqa Toqqaruk",
   "Add Random Digits to Username": "Atuisuusumut Nalunaartaasat Ilanngullugit",
-  "Enter your email so {ownerName} can see who accessed their album": "Email-it Allaguk Taamaalilluni {ownerName} Takusinnaaniassammat Kina Albumimut Isersimanersoq",
   "Complete": "Tamakkerlugu",
   "Processing": "Suliarineqarneq",
   "Uploading": "Nuisitsineq",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} iluatsinngilaq",
   "({count} in progress)": "({count}) Ingerlariarpoq",
   "{count} files": "{count} fiilit",
-  "{count} file": "{count} toqqorsivik"
+  "{count} file": "{count} toqqorsivik",
+  "Enter your email address.": "Emailip najugaqarfia allaguk.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} albuumi una icaliit ataasiilu illullu piffissaq.",
+  "Email address...": "E-mail adresse..."
 }

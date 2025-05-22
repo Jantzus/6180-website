@@ -148,7 +148,6 @@
   "Enter Username": "उपयोगकर्ता नाम भरो",
   "Select Username": "प्रयोगकर्ता नाम चुणो",
   "Add Random Digits to Username": "यूजरनाम में हीरफेर अंक जोड़ो",
-  "Enter your email so {ownerName} can see who accessed their album": "आपरो ईमेल भरो जिणसू {ownerName} देख सकै कै कुण आंरा आलबम नै एक्सेस कियो",
   "Complete": "पूरो",
   "Processing": "प्रोसेसिंग",
   "Uploading": "अपलोड कर रियो है",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} नाकामियाब रह्यो",
   "({count} in progress)": "({count}) प्रगति मांय",
   "{count} files": "{count} फाइलां",
-  "{count} file": "{count} फाइल"
+  "{count} file": "{count} फाइल",
+  "Enter your email address.": "थांरो ईमेल पतो भरो.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ने यो आलबम बस साथी अर परिवार कै साथै सांझो करियो।",
+  "Email address...": "ईमेल पता..."
 }

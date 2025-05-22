@@ -148,7 +148,6 @@
   "Enter Username": "Pāpa'i I Tō Iʻoa",
   "Select Username": "Mā'iti i te i'oa Tāmaʻitʻi",
   "Add Random Digits to Username": "Tāpūhia Te Mau Nūmera ʻĀueʻue I Niʻa I Te Iʻoa Taiʻo",
-  "Enter your email so {ownerName} can see who accessed their album": "Pāpa'i I Tō Rata Uira Ia 'Ite 'O {ownerName} 'O Vai Tei Fāri'i I Tā Rātou ʻĀlipamu",
   "Complete": "Taatoa",
   "Processing": "Haapiiraa",
   "Uploading": "Te hōro'a nei i te hōho'a",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ua manuia ʻore",
   "({count} in progress)": "({count}) Te Haere Nei",
   "{count} files": "{count} mau parau",
-  "{count} file": "{count} api"
+  "{count} file": "{count} api",
+  "Enter your email address.": "Pāpa'i i tō vāhi rata uira.",
+  "{ownerName} has only shared this album with friends and family.": "Ua fa'anahora'a {ownerName} i teie ʻālipamu i tana mau hoa e te ʻutuʻāfare anae.",
+  "Email address...": "Adresse mēra uira..."
 }

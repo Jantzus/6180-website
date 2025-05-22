@@ -148,7 +148,6 @@
   "Enter Username": "نام کاربری را وارد کنید",
   "Select Username": "نام کاربری را انتخاب کنید",
   "Add Random Digits to Username": "افزودن ارقام تصادفی به نام کاربری",
-  "Enter your email so {ownerName} can see who accessed their album": "ایمیل خود را وارد کنید تا {ownerName} بتواند ببیند چه کسی به آلبوم آنها دسترسی داشته است",
   "Complete": "کامل",
   "Processing": "پردازش",
   "Uploading": "در حال بارگذاری",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} شکست خورد",
   "({count} in progress)": "({count}) در حال پیشرفت",
   "{count} files": "{count} پرونده",
-  "{count} file": "{count} پرونده"
+  "{count} file": "{count} پرونده",
+  "Enter your email address.": "آدرس ایمیل خود را وارد کنید.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} این آلبوم را فقط با دوستان و خانواده به اشتراک گذاشته است.",
+  "Email address...": "آدرس ایمیل..."
 }

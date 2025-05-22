@@ -148,7 +148,6 @@
   "Enter Username": "Gebrukersnaam Invoeren",
   "Select Username": "Kies Gebrukersnaam",
   "Add Random Digits to Username": "Willekeurige Siefers Bie Gebrukersnaam Zetten",
-  "Enter your email so {ownerName} can see who accessed their album": "Voer Joew E-mailadres In Zodat {ownerName} Kan Zien Wie Der Toegang Had Tot Heur Album",
   "Complete": "Kompleet",
   "Processing": "Verwarking",
   "Uploading": "Bezig met het opladen",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} mislokt",
   "({count} in progress)": "({count}) Gaonde",
   "{count} files": "{count} bestanden",
-  "{count} file": "{count} bestaand"
+  "{count} file": "{count} bestaand",
+  "Enter your email address.": "Voer je e-mailadres in.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hef dit album allenig mit vrunden en femilie dield.",
+  "Email address...": "Netpostadres..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Wužywarske Mě Zapódaś",
   "Select Username": "Wužywarske Mě Wubraś",
   "Add Random Digits to Username": "Pśidaś Pśipadne Licby K Wužywarskemu Mjenjoju",
-  "Enter your email so {ownerName} can see who accessed their album": "Zapódaj Swóju E-mailowu Adresu, Aby {ownerName} Mógł Wiźeś, Chto Jo Na Jich Album Pśistupił",
   "Complete": "Dospołny",
   "Processing": "Pśeźěłanje",
   "Uploading": "Nagrawa",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} njejo se raźiło",
   "({count} in progress)": "({count}) W Běgu",
   "{count} files": "{count} dataje",
-  "{count} file": "{count} dataja"
+  "{count} file": "{count} dataja",
+  "Enter your email address.": "Zapódajśo swóju e-mailowu adresu.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} jo toś ten album jano z pśijaśelami a swójbu źělił.",
+  "Email address...": "E-mailowa adresa..."
 }

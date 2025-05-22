@@ -148,7 +148,6 @@
   "Enter Username": "Колдонуучунун Атын Киргизиңиз",
   "Select Username": "Колдонуучунун Атын Тандоо",
   "Add Random Digits to Username": "Колдонуучунун Атына Кокустан Сандарды Кошуу",
-  "Enter your email so {ownerName} can see who accessed their album": "Электрондук Почтаңызды Киргизиңиз, Анда {ownerName} Алардын Альбомуна Ким Киргенин Көрө Алат",
   "Complete": "Толук",
   "Processing": "Иштетүү",
   "Uploading": "Жүктөлүүдө",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ийгиликсиз болду",
   "({count} in progress)": "({count}) Жүрүп Жатат",
   "{count} files": "{count} файлдар",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Электрондук почта дарегиңизди киргизиңиз.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} бул альбомду досторуна жана үй-бүлөсүнө гана бөлүштү.",
+  "Email address...": "Электрондук почта дареги..."
 }

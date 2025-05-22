@@ -148,7 +148,6 @@
   "Enter Username": "Ŋlɔ Wò Ŋkɔ",
   "Select Username": "Tia Ŋkɔ",
   "Add Random Digits to Username": "Tsɔ Dzɔdzɔme Xexlẽwo Kpe Ŋkɔ Ŋuti",
-  "Enter your email so {ownerName} can see who accessed their album": "Ŋlɔ Wò Email Be {ownerName} Ate Ŋu Akpɔ Ame Si Kpɔ Woƒe Album",
   "Complete": "Blibo",
   "Processing": "Nutotro",
   "Uploading": "Etsɔtsɔm ɖe dzi",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} mede dzi o",
   "({count} in progress)": "({count}) Le Edɔ Yi Me",
   "{count} files": "{count} faɛlwo",
-  "{count} file": "{count} faɛl"
+  "{count} file": "{count} faɛl",
+  "Enter your email address.": "Ŋlɔ wò email adrɛs.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ma na albom sia xɔlɔ̃wo kple ƒometɔwo ko.",
+  "Email address...": "Email address..."
 }

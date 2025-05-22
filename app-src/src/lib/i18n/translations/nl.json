@@ -148,7 +148,6 @@
   "Enter Username": "Voer Gebruikersnaam In",
   "Select Username": "Selecteer Gebruikersnaam",
   "Add Random Digits to Username": "Willekeurige Cijfers Aan Gebruikersnaam Toevoegen",
-  "Enter your email so {ownerName} can see who accessed their album": "Voer Je E-mailadres In Zodat {ownerName} Kan Zien Wie Hun Album Heeft Bekeken",
   "Complete": "Compleet",
   "Processing": "Verwerking",
   "Uploading": "Aan het uploaden",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} mislukt",
   "({count} in progress)": "({count}) Bezig",
   "{count} files": "{count} bestanden",
-  "{count} file": "{count} bestand"
+  "{count} file": "{count} bestand",
+  "Enter your email address.": "Voer je e-mailadres in.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} heeft dit album alleen met vrienden en familie gedeeld.",
+  "Email address...": "E-mailadres..."
 }

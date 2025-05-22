@@ -148,7 +148,6 @@
   "Enter Username": "वरतने आला नां दर्ज करो",
   "Select Username": "वरतूणी नाम चुनो",
   "Add Random Digits to Username": "वरतन करने आळेऐ दे नां च रलट रकम पाओ",
-  "Enter your email so {ownerName} can see who accessed their album": "अपनी ईमेल दर्ज करो ताकि {ownerName} बेक्खी सकै कि केह्ने ओनां दे ऐलबम दा इस्तेमाल कीता",
   "Complete": "पूरा",
   "Processing": "प्रोसैसिंग",
   "Uploading": "अपलोड करदे",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} असफल रेहा",
   "({count} in progress)": "({count}) प्रगति विच",
   "{count} files": "{count} फाइलां",
-  "{count} file": "{count} फाइल"
+  "{count} file": "{count} फाइल",
+  "Enter your email address.": "अपनी ईमेल पता दर्ज करो.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ने एह ऐलबम बस दोस्तां ते परिवार दे कन्नै शेयर कित्या ऐ।",
+  "Email address...": "ईमेल पता..."
 }

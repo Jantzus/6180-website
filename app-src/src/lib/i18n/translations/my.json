@@ -148,7 +148,6 @@
   "Enter Username": "အသုံးပြုသူအမည် ထည့်ပါ",
   "Select Username": "အသုံးပြုသူအမည် ရွေးချယ်ပါ",
   "Add Random Digits to Username": "အသုံးပြုသူအမည်သို့ ကျပန်းဂဏန်းများ ထည့်ပါ",
-  "Enter your email so {ownerName} can see who accessed their album": "သင့်အီးမေးလ်ကို ထည့်သွင်းပါ၊ {ownerName} က သူတို့၏အယ်လ်ဘမ်ကို မည်သူဝင်ကြည့်သည်ကို ကြည့်နိုင်ရန်အတွက်",
   "Complete": "ပြီးပြည့်စုံသော",
   "Processing": "အပြုအမူ",
   "Uploading": "တင်နေသည်",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} မအောင်မြင်ပါ",
   "({count} in progress)": "({count}) လုပ်ဆောင်နေသည်",
   "{count} files": "{count} ဖိုင်များ",
-  "{count} file": "{count} ဖိုင်"
+  "{count} file": "{count} ဖိုင်",
+  "Enter your email address.": "သင့်အီးမေးလ်လိပ်စာကို ထည့်သွင်းပါ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} သည် ဤအယ်လ်ဘမ်ကို မိတ်ဆွေများနှင့် မိသားစုများနှင့်သာ ခွဲဝေခဲ့သည်။",
+  "Email address...": "အီးမေးလ်လိပ်စာ..."
 }

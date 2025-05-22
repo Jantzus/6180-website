@@ -148,7 +148,6 @@
   "Enter Username": "Insere Nomen Utentis",
   "Select Username": "Eligere Nomen Usoris",
   "Add Random Digits to Username": "Adde Numeros Fortuitos Ad Nomen Usoris",
-  "Enter your email so {ownerName} can see who accessed their album": "Inscribe Tuum Cursum Electronicum Ut {ownerName} Videre Possit Quis Eorum Album Adiverit",
   "Complete": "Perfectum",
   "Processing": "Tractatio",
   "Uploading": "Onerans",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} defectum",
   "({count} in progress)": "({count}) In Profectum",
   "{count} files": "{count} plica",
-  "{count} file": "{count} plica"
+  "{count} file": "{count} plica",
+  "Enter your email address.": "Inscribe inscriptionem tuam electronicam.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hunc album tantum cum amicis et familia communicavit.",
+  "Email address...": "Inscriptio cursus electronici..."
 }

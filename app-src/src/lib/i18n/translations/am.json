@@ -148,7 +148,6 @@
   "Enter Username": "የተጠቃሚ ስም ያስገቡ",
   "Select Username": "የተጠቃሚ ስም ይምረጡ",
   "Add Random Digits to Username": "ዘፈቀዳዊ አሀዞችን ወደ ተጠቃሚ ስም ጨምር",
-  "Enter your email so {ownerName} can see who accessed their album": "የእርስዎን ኢሜይል ያስገቡ {ownerName} ማን ወደ አልበማቸው እንደገባ እንዲያዩ",
   "Complete": "ተጠናቀቀ",
   "Processing": "ማቀነባበር",
   "Uploading": "በማስቀመጥ ላይ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} አልተሳካም",
   "({count} in progress)": "({count}) በሂደት ላይ",
   "{count} files": "{count} ፋይሎች",
-  "{count} file": "{count} ፋይል"
+  "{count} file": "{count} ፋይል",
+  "Enter your email address.": "የኢሜይል አድራሻዎን ያስገቡ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ይህንን አልበም ከወዳጆች እና ከቤተሰብ ብቻ ጋር አካፍሏል።",
+  "Email address...": "ኢሜይል አድራሻ..."
 }

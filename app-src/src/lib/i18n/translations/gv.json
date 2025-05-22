@@ -148,7 +148,6 @@
   "Enter Username": "Cur Stiagh Ennym Ymmydeyr",
   "Select Username": "Reih Ennym Ymmydeyr",
   "Add Random Digits to Username": "Cur Earrooyn Gyn Tort Rish Ennym Ymmydeyr",
-  "Enter your email so {ownerName} can see who accessed their album": "Cur Stiagh Dty Post-L Myr Shen {ownerName} Fakin Quoi Ta Er N'gholl Stiagh Ayns Nyn Albym",
   "Complete": "Slane",
   "Processing": "Proçessys",
   "Uploading": "Laadey seose",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} er shaghryn",
   "({count} in progress)": "({count}) Goll Er Hoshaght",
   "{count} files": "{count} feillyn",
-  "{count} file": "{count} coadan"
+  "{count} file": "{count} coadan",
+  "Enter your email address.": "Cur stiagh dty enmys post-l.",
+  "{ownerName} has only shared this album with friends and family.": "Cha ren {ownerName} agh rheynn yn albym shoh rish caarjyn as lught-thie.",
+  "Email address...": "Enmys post-l..."
 }

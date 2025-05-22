@@ -148,7 +148,6 @@
   "Enter Username": "Isulod Ang Ngalan Sa Tiggamit",
   "Select Username": "Pagpili sa Ngalan sa Tiggamit",
   "Add Random Digits to Username": "Idugang Ang Random Nga Mga Numero Sa Ngalan Sa Tiggamit",
-  "Enter your email so {ownerName} can see who accessed their album": "Isulat Ang Imong Email Aron {ownerName} Makakita Kinsa Ang Naka-access Sa Ilang Album",
   "Complete": "Kompleto",
   "Processing": "Pagproseso",
   "Uploading": "Nagakarga",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} napakyas",
   "({count} in progress)": "({count}) Sa Pag-Uswag",
   "{count} files": "{count} mga file",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Isulat ang imong email address.",
+  "{ownerName} has only shared this album with friends and family.": "Si {ownerName} nagpaambit niining album sa mga higala ug pamilya lamang.",
+  "Email address...": "Email address..."
 }

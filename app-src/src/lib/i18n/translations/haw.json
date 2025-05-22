@@ -148,7 +148,6 @@
   "Enter Username": "Hoʻokomo Inoa Mea Hoʻohana",
   "Select Username": "Koho Inoa Mea Hoʻohana",
   "Add Random Digits to Username": "E Hoʻohui I Nā Helu Kaulele I Ka Inoa Mea Hoʻohana",
-  "Enter your email so {ownerName} can see who accessed their album": "E Hoʻokomo I Kāu Leka Uila I Hiki Ai Iā {ownerName} Ke ʻIke I Ka Mea Nāna I Komo I Kā Lākou ʻĀlapa",
   "Complete": "Piha",
   "Processing": "Hana",
   "Uploading": "Hoʻouka ana",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ua hāʻule",
   "({count} in progress)": "({count}) Ke Holo Nei",
   "{count} files": "{count} waihona",
-  "{count} file": "{count} waihona"
+  "{count} file": "{count} waihona",
+  "Enter your email address.": "E hoʻokomo i kāu helu leka uila.",
+  "{ownerName} has only shared this album with friends and family.": "Ua māhele wale ʻo {ownerName} i kēia ʻālapa me nā hoa a me ka ʻohana.",
+  "Email address...": "Leka uila kēlā..."
 }

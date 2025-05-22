@@ -148,7 +148,6 @@
   "Enter Username": "Shigar Da Sunan Mai Amfani",
   "Select Username": "Zaɓi Sunan Mai Amfani",
   "Add Random Digits to Username": "Kara Lamba Na Bazata Ga Sunan Mai Amfani",
-  "Enter your email so {ownerName} can see who accessed their album": "Shigar Da Imelin Ka Don {ownerName} Ya Iya Ganin Wanda Ya Shiga Albansu",
   "Complete": "Cika",
   "Processing": "Sarrafa",
   "Uploading": "Yana uploading",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ya kasa",
   "({count} in progress)": "({count}) Ana Kai",
   "{count} files": "{count} fayiloli",
-  "{count} file": "{count} fayil"
+  "{count} file": "{count} fayil",
+  "Enter your email address.": "Shigar da adireshin imel ɗinka.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ya raba wannan albam da abokai da iyali kawai.",
+  "Email address...": "Adireshin imel..."
 }

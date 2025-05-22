@@ -148,7 +148,6 @@
   "Enter Username": "Atuqtuam Atqa Iḷisaaksiuŋ",
   "Select Username": "Atqa Piksraq",
   "Add Random Digits to Username": "Illaqtupiaq Kisitchich Ilaliuguk Atqakun",
-  "Enter your email so {ownerName} can see who accessed their album": "Ikiaqtuŋ Email-in {ownerName} Tautuġukługu Kia Album-anun Isiqtuq",
   "Complete": "Iniqsaq",
   "Processing": "Processing",
   "Uploading": "Qakiñarautigaa",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} piḷḷuaqtuq",
   "({count} in progress)": "({count}) Qaagruaq",
   "{count} files": "{count} failich",
-  "{count} file": "{count} faili"
+  "{count} file": "{count} faili",
+  "Enter your email address.": "Uqaqłusi nalautchiñ iñiksraq taiguqtumiñ itivich.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} album una siñałruq atcharuich atchani atchaniłlu.",
+  "Email address...": "Email address..."
 }

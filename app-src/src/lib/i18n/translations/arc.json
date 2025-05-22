@@ -148,7 +148,6 @@
   "Enter Username": "ܥܠ ܫܡܐ ܕܡܦܠܚܢܐ",
   "Select Username": "ܓܒܝ ܫܡܐ ܕܡܦܠܚܢܐ",
   "Add Random Digits to Username": "ܐܘܣܦ ܡܢܝܢܐ ܫܓܘܫܝܐ ܠܫܡܐ ܕܡܦܠܚܢܐ",
-  "Enter your email so {ownerName} can see who accessed their album": "ܐܕܟܠ ܐܝܡܝܠ ܕܝܠܟ ܗܟܢܐ ܕ{ownerName} ܡܨܝ ܚܙܝ ܡܢܘ ܥܠ ܠܐܠܒܘܡ ܕܝܠܗܘܢ",
   "Complete": "ܡܡܠܝܐ",
   "Processing": "ܡܦܠܚܢܘܬܐ",
   "Uploading": "ܛܥܢܬܐ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ܦܫܠ",
   "({count} in progress)": "({count}) ܒܦܘܠܚܢܐ",
   "{count} files": "{count} ܦܝܠܐ",
-  "{count} file": "{count} ܦܐܝܠܐ"
+  "{count} file": "{count} ܦܐܝܠܐ",
+  "Enter your email address.": "ܐܥܠ ܟܬܘܒܬܐ ܕܒܪܝܕܐ ܐܠܩܜܪܘܢܝܐ ܕܝܠܟ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ܗܢܐ ܐܠܒܘܡܐ ܥܡ ܪܚܡܐ ܘܒܝܬܝܐ ܒܠܚܘܕ ܦܠܓܗ.",
+  "Email address...": "ܟܬܘܒܬܐ ܕܒܝܠܕܪܐ ܐܠܩܛܪܘܢܝܐ..."
 }

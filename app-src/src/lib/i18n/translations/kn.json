@@ -148,7 +148,6 @@
   "Enter Username": "ಬಳಕೆದಾರ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
   "Select Username": "ಬಳಕೆದಾರ ಹೆಸರನ್ನು ಆಯ್ಕೆಮಾಡಿ",
   "Add Random Digits to Username": "ಬಳಕೆದಾರ ಹೆಸರಿಗೆ ಯಾದೃಚ್ಛಿಕ ಅಂಕೆಗಳನ್ನು ಸೇರಿಸಿ",
-  "Enter your email so {ownerName} can see who accessed their album": "ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ ಇದರಿಂದ {ownerName} ಯಾರು ಅವರ ಆಲ್ಬಮ್ ಅನ್ನು ಪ್ರವೇಶಿಸಿದರು ಎಂಬುದನ್ನು ನೋಡಬಹುದು",
   "Complete": "ಸಂಪೂರ್ಣ",
   "Processing": "ಸಂಸ್ಕರಣೆ",
   "Uploading": "ಅಪ್‌ಲೋಡ್ ಮಾಡುತ್ತಿದೆ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ವಿಫಲವಾಗಿದೆ",
   "({count} in progress)": "({count}) ಪ್ರಗತಿಯಲ್ಲಿದೆ",
   "{count} files": "{count} ಕಡತಗಳು",
-  "{count} file": "{count} ಕಡತ"
+  "{count} file": "{count} ಕಡತ",
+  "Enter your email address.": "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ಈ ಆಲ್ಬಮ್ ಅನ್ನು ಕೇವಲ ಸ್ನೇಹಿತರು ಮತ್ತು ಕುಟುಂಬದೊಂದಿಗೆ ಹಂಚಿಕೊಂಡಿದ್ದಾರೆ.",
+  "Email address...": "ಇಮೇಲ್ ವಿಳಾಸ..."
 }

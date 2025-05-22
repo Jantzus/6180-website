@@ -148,7 +148,6 @@
   "Enter Username": "Metel Nombri D'Usuariu",
   "Select Username": "Selecionai Nombri d'Usuariu",
   "Add Random Digits to Username": "Añiil Dígitus Aleatorius Al Nombri D'usuariu",
-  "Enter your email so {ownerName} can see who accessed their album": "Introduci Tu Correu Electrónicu Pa Que {ownerName} Puea Vel Quién Accedió Al Su Álbum",
   "Complete": "Completu",
   "Processing": "Procesamiento",
   "Uploading": "Subiendu",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fallu",
   "({count} in progress)": "({count}) En Progresu",
   "{count} files": "{count} archivus",
-  "{count} file": "{count} archivu"
+  "{count} file": "{count} archivu",
+  "Enter your email address.": "Escrebi la tu direción de correu eleutrónicu.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ah compartiu esti álbumi namás con amigus i família.",
+  "Email address...": "Direición de correu eleutónicu..."
 }

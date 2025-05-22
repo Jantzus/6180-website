@@ -148,7 +148,6 @@
   "Enter Username": "Ruraqpa Sutinta Qillqay",
   "Select Username": "Ruraqpa Sutinta Akllay",
   "Add Random Digits to Username": "Llamk'aq Sutiman Mana Qatinchata Yupanakunata Yapay",
-  "Enter your email so {ownerName} can see who accessed their album": "Qilqay Imayl-masiy {ownerName} Qhawananpaq Pitaq Haykurqa Álbum-ninkuman",
   "Complete": "Hunt'asqa",
   "Processing": "Llamk'achiy",
   "Uploading": "Qarpuchispa",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} manam atipasqachu",
   "({count} in progress)": "({count}) Ñawpaqman Richkan",
   "{count} files": "{count} willañiqikuna",
-  "{count} file": "{count} willana"
+  "{count} file": "{count} willana",
+  "Enter your email address.": "Correo electrónico direccionniykita qillqay.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} kay albumta masinkunawan aylluykunawanpas rakinakun.",
+  "Email address...": "Chaski imayl..."
 }

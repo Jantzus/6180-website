@@ -148,7 +148,6 @@
   "Enter Username": "Intrar Usator-Nomine",
   "Select Username": "Selecter Usator-Nómine",
   "Add Random Digits to Username": "Adjunter Ciffres Aleatori Al Nómine De Usator",
-  "Enter your email so {ownerName} can see who accessed their album": "Mette Tui E-post Por Que {ownerName} Posse Vider Qui Accedet Lor Album",
   "Complete": "Complet",
   "Processing": "Procesament",
   "Uploading": "Uplodant",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fallat",
   "({count} in progress)": "({count}) In Progressu",
   "{count} files": "{count} files",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Mette vor adresse de e-post.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ha compartit ti-ci album solmen con amicos e familie.",
+  "Email address...": "Adresse de e-post..."
 }

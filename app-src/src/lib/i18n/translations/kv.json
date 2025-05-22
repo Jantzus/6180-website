@@ -148,7 +148,6 @@
   "Enter Username": "Пыртöй Вöдитчысьлысь Ним",
   "Select Username": "Бöрйы Уджалысьлысь Нимсö",
   "Add Random Digits to Username": "Содты Вичӧдӧн Лыдпасъяс Вӧдитчысьлӧн Нимӧ",
-  "Enter your email so {ownerName} can see who accessed their album": "Гижӧ Ассьыд Электроннӧй Почтатӧ, Медым {ownerName} Вермис Аддзыны, Коді Пыраліс Налӧн Альбомӧ",
   "Complete": "Дзонь",
   "Processing": "Обработка",
   "Uploading": "Пыртӧны",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} эз артмы",
   "({count} in progress)": "({count}) Водзӧ Мунӧ",
   "{count} files": "{count} файлъяс",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Пыртöй асланыд электроннöй пошта адрес.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} тайӧ альбомсӧ эшъясӧн да семьяӧн мукӧдӧн сетӧма.",
+  "Email address...": "Электроннӧй пошта адрес..."
 }

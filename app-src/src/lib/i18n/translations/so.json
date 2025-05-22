@@ -148,7 +148,6 @@
   "Enter Username": "Geli Magaca Isticmaale",
   "Select Username": "Dooro Magaca Isticmaalaha",
   "Add Random Digits to Username": "Ku Dar Lambarada Aan Kala Sooc Lahayn Magaca Isticmaalaha",
-  "Enter your email so {ownerName} can see who accessed their album": "Geli Email-kaaga Si {ownerName} U Arki Karo Cidda Galay Albumkooda",
   "Complete": "Dhameystiran",
   "Processing": "Soo-saarid",
   "Uploading": "Soo gelinta",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} guuldareystay",
   "({count} in progress)": "({count}) Socda",
   "{count} files": "{count} faylal",
-  "{count} file": "{count} feyl"
+  "{count} file": "{count} feyl",
+  "Enter your email address.": "Gali cinwaankaaga emailka.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} wuxuu album kan la wadaagay asxaabta iyo qoyska oo keliya.",
+  "Email address...": "Cinwaanka emailka..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "הזן שם משתמש",
   "Select Username": "בחר שם משתמש",
   "Add Random Digits to Username": "הוסף ספרות אקראיות לשם המשתמש",
-  "Enter your email so {ownerName} can see who accessed their album": "הזן את הדוא\"ל שלך כדי ש{ownerName} יוכל לראות מי ניגש לאלבום שלהם",
   "Complete": "שָׁלֵם",
   "Processing": "עיבוד",
   "Uploading": "מעלה",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} נכשל",
   "({count} in progress)": "({count}) בתהליך",
   "{count} files": "{count} קבצים",
-  "{count} file": "{count} קובץ"
+  "{count} file": "{count} קובץ",
+  "Enter your email address.": "הזן את כתובת הדואר האלקטרוני שלך.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} שיתף את האלבום הזה רק עם חברים ומשפחה.",
+  "Email address...": "כתובת אימייל..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Ange Användarnamn",
   "Select Username": "Välj Användarnamn",
   "Add Random Digits to Username": "Lägg Till Slumpmässiga Siffror Till Användarnamn",
-  "Enter your email so {ownerName} can see who accessed their album": "Ange Din E-postadress Så Att {ownerName} Kan Se Vem Som Har Kommit Åt Deras Album",
   "Complete": "Fullständig",
   "Processing": "Bearbetning",
   "Uploading": "Laddar upp",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} misslyckades",
   "({count} in progress)": "({count}) Pågående",
   "{count} files": "{count} filer",
-  "{count} file": "{count} fil"
+  "{count} file": "{count} fil",
+  "Enter your email address.": "Ange din e-postadress.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} har bara delat det här albumet med vänner och familj.",
+  "Email address...": "E-postadress..."
 }

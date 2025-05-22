@@ -148,7 +148,6 @@
   "Enter Username": "Introduz Nome D'Usuariu",
   "Select Username": "Esbillar Nome d'Usuariu",
   "Add Random Digits to Username": "Amestar Díxitos Al Azar Al Nome D'usuariu",
-  "Enter your email so {ownerName} can see who accessed their album": "Introduz El To Corréu Electrónicu Pa Que {ownerName} Pueda Ver Quién Accedió Al So Álbum",
   "Complete": "Completar",
   "Processing": "Procesamientu",
   "Uploading": "Xubiendo",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} falló",
   "({count} in progress)": "({count}) En Progresu",
   "{count} files": "{count} ficheros",
-  "{count} file": "{count} ficheru"
+  "{count} file": "{count} ficheru",
+  "Enter your email address.": "Introduz la to direición de corréu electrónicu.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} namái compartió esti álbum con amigos y familia.",
+  "Email address...": "Direición de corréu electrónicu..."
 }

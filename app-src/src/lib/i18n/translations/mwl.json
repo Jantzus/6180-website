@@ -148,7 +148,6 @@
   "Enter Username": "Antre Nome De Outelizador",
   "Select Username": "Selecionar Nome de Outelizador",
   "Add Random Digits to Username": "Juntar Díxitos Aleatórios Al Nome De Outelizador",
-  "Enter your email so {ownerName} can see who accessed their album": "Antre L Tou Correio Eiletrónico Para Que {ownerName} Puoda Ber Quian Acediu Al Sou Álbun",
   "Complete": "Cumpleto",
   "Processing": "Processamiento",
   "Uploading": "Carregando",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} falhou",
   "({count} in progress)": "({count}) An Curs",
   "{count} files": "{count} fexeiros",
-  "{count} file": "{count} fexeiro"
+  "{count} file": "{count} fexeiro",
+  "Enter your email address.": "Antre l sou andereço de correio eiletrónico.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} cumpartilhou este álbun solo cun amigos i família.",
+  "Email address...": "Morada de correio eiletrónico..."
 }

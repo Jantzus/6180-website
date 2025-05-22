@@ -148,7 +148,6 @@
   "Enter Username": "Endatescha Num D'utilisader",
   "Select Username": "Tscherner Num d'Utilisader",
   "Add Random Digits to Username": "Agiuntar Cifras Casualas Al Num D'utilisader",
-  "Enter your email so {ownerName} can see who accessed their album": "Endatescha Tia Adressa Dad E-mail Per Che {ownerName} Possia Vesair Tgi Che Ha Gì Access A Lur Album",
   "Complete": "Cumplet",
   "Processing": "Elavuraziun",
   "Uploading": "Chargiond",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} betg reussì",
   "({count} in progress)": "({count}) En Andament",
   "{count} files": "{count} datotecas",
-  "{count} file": "{count} datoteca"
+  "{count} file": "{count} datoteca",
+  "Enter your email address.": "Endatescha tia adressa dad e-mail.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ha cundividì quest album mo cun amitgs e famiglia.",
+  "Email address...": "Adressa d'e-mail..."
 }

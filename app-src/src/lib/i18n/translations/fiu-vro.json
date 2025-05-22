@@ -148,7 +148,6 @@
   "Enter Username": "Panõq Pruukjannimi",
   "Select Username": "Valiq Pruukjannimi",
   "Add Random Digits to Username": "Panõq Johuslikuq Numbri Pruukjanumbrõ Mano",
-  "Enter your email so {ownerName} can see who accessed their album": "Panõq Umaq E-posti Aadrõs, Et {ownerName} Saasiq Nätäq, Kiä Om Nähnüq Näide Albummit",
   "Complete": "Täüslik",
   "Processing": "Tüütlemine",
   "Uploading": "Üleslaadmine",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} läts viltu",
   "({count} in progress)": "({count}) Pooleli",
   "{count} files": "{count} failiq",
-  "{count} file": "{count} fail"
+  "{count} file": "{count} fail",
+  "Enter your email address.": "Panõq umaq e-posti aadrõs.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} om jaganun taan albummi õnnõ sõpradõga ja pere näkma.",
+  "Email address...": "E-posti aadrõss..."
 }

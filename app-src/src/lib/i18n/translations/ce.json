@@ -148,7 +148,6 @@
   "Enter Username": "Декъашхочун ЦӀе Язъе",
   "Select Username": "Пайдаланучин Цlе Харжар",
   "Add Random Digits to Username": "Пайдакхочун ЦӀарна Хаддам Терахьаш ТӀетоха",
-  "Enter your email so {ownerName} can see who accessed their album": "Хьайн Email Язъе {ownerName} Шен Альбоме Мила Хьаьжна Гойтуш",
   "Complete": "Кхоччуш",
   "Processing": "Кечдар",
   "Uploading": "Чуйолуш",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} кхиам боцаш",
   "({count} in progress)": "({count}) Кхочушъеш",
   "{count} files": "{count} файлаш",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Де электронни почтан адрес язъе.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}-н хӀара альбом доттагӀалхой а, беран а бетталуш дерг.",
+  "Email address...": "Электронан пошт адрес..."
 }

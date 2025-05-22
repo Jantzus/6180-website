@@ -148,7 +148,6 @@
   "Enter Username": "사용자 이름 입력",
   "Select Username": "사용자 이름 선택",
   "Add Random Digits to Username": "사용자 이름에 무작위 숫자 추가",
-  "Enter your email so {ownerName} can see who accessed their album": "이메일 주소를 입력하시면 {ownerName}님이 누가 앨범에 접근했는지 확인할 수 있습니다",
   "Complete": "완전한",
   "Processing": "처리",
   "Uploading": "업로드 중",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} 실패했습니다",
   "({count} in progress)": "({count}) 진행 중",
   "{count} files": "{count} 파일",
-  "{count} file": "{count} 파일"
+  "{count} file": "{count} 파일",
+  "Enter your email address.": "이메일 주소를 입력하세요.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}님이 이 앨범을 친구와 가족에게만 공유했습니다.",
+  "Email address...": "이메일 주소..."
 }

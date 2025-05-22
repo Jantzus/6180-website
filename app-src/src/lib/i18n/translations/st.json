@@ -148,7 +148,6 @@
   "Enter Username": "Kenya Lebitso La Mosebedisi",
   "Select Username": "Kgetha Lebitso la Mosebedisi",
   "Add Random Digits to Username": "Kenya Dinomoro Tsa Nahanaha Lebitso La Sebelisi",
-  "Enter your email so {ownerName} can see who accessed their album": "Kenya Imeili Ya Hao E Le Hore {ownerName} A Bone Hore Ke Mang Ya Kena Ho Albamo Ya Bona",
   "Complete": "Felletseng",
   "Processing": "Tshebetso",
   "Uploading": "Ho laisa",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} e hlolehile",
   "({count} in progress)": "({count}) E Mocheng",
   "{count} files": "{count} difaele",
-  "{count} file": "{count} faele"
+  "{count} file": "{count} faele",
+  "Enter your email address.": "Kenya aterese ya hao ya imeile.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} o arolelane albamo ena le metsoalle le lelapa feela.",
+  "Email address...": "Aterese ya imeili..."
 }

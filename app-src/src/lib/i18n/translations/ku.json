@@ -148,7 +148,6 @@
   "Enter Username": "Navê Bikarhêner Binivîse",
   "Select Username": "Navê Bikarhêner Hilbijêre",
   "Add Random Digits to Username": "Hejmarên Bi Hêla Ketoberê Zêde Bike Navê Bikarhêner",
-  "Enter your email so {ownerName} can see who accessed their album": "Navnîşana Te Ya E-Peyamê Binivîse Da {ownerName} Bikare Bibîne Kî Daxilî Albûma Wan Bûye",
   "Complete": "Temam",
   "Processing": "Raserkirina",
   "Uploading": "Barkirin",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} bi ser neket",
   "({count} in progress)": "({count}) Di Pêşveçûnê De",
   "{count} files": "{count} pel",
-  "{count} file": "{count} pel"
+  "{count} file": "{count} pel",
+  "Enter your email address.": "Navnîşana e-nameya xwe binivîse.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} vî albûmê tenê bi heval û malbatê re parve kir.",
+  "Email address...": "Navnîşana e-peyamê..."
 }

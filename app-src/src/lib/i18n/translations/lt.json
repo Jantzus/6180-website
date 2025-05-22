@@ -148,7 +148,6 @@
   "Enter Username": "Įveskite Vartotojo Vardą",
   "Select Username": "Pasirinkite Vartotojo Vardą",
   "Add Random Digits to Username": "Pridėti Atsitiktinius Skaitmenis Prie Vartotojo Vardo",
-  "Enter your email so {ownerName} can see who accessed their album": "Įveskite Savo El. Paštą, Kad {ownerName} Galėtų Matyti, Kas Peržiūrėjo Jų Albumą",
   "Complete": "Visiškas",
   "Processing": "Apdorojimas",
   "Uploading": "Įkeliama",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} nepavyko",
   "({count} in progress)": "({count}) Vyksta",
   "{count} files": "{count} failai",
-  "{count} file": "{count} failas"
+  "{count} file": "{count} failas",
+  "Enter your email address.": "Įveskite savo el. pašto adresą.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} pasidalino šiuo albumu tik su draugais ir šeima.",
+  "Email address...": "El. pašto adresas..."
 }

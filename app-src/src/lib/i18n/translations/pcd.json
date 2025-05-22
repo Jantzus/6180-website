@@ -148,7 +148,6 @@
   "Enter Username": "Intrer Ch'nom D'Uzeu",
   "Select Username": "Sélecchonner Ch'Nom d'Uzeu",
   "Add Random Digits to Username": "Acoter Pièches Hasardins Ch'nom D'useu",
-  "Enter your email so {ownerName} can see who accessed their album": "Intrez Vo Imèl Pour Qu' {ownerName} Peuche Vir Qui Qu'o Eu Achés À Leu Album",
   "Complete": "Complet",
   "Processing": "Traitmint",
   "Uploading": "Ercacher",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} échoué",
   "({count} in progress)": "({count}) In Progrès",
   "{count} files": "{count} fichiers",
-  "{count} file": "{count} fichié"
+  "{count} file": "{count} fichié",
+  "Enter your email address.": "Intrez vo adérche éd courriel.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} il o pèrtédjî ch'album-lo qu'aveuc chés amis pi l'famille.",
+  "Email address...": "Adresse courriel..."
 }

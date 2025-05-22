@@ -148,7 +148,6 @@
   "Enter Username": "Архайæджы Ном Бафысс",
   "Select Username": "Архайæджы Ном Равзарын",
   "Add Random Digits to Username": "Архайæджы Ном Баст Нымæцтæ Бафтауын",
-  "Enter your email so {ownerName} can see who accessed their album": "Бафысс Дæ Электрон Постыты Адрис, Цæмæй {ownerName} Фена, Чи Бацыдис Сæ Альбоммæ",
   "Complete": "Æххæст",
   "Processing": "Архайд",
   "Uploading": "Æвгæнæн",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} фæстиат",
   "({count} in progress)": "({count}) Цæуы",
   "{count} files": "{count} файлтæ",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Дæ электрон почтæйы адрис бафысс.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ацы альбом æрмæстдæр æхсæртагимæ æмæ мыггагимæ хай кодта.",
+  "Email address...": "Электрон посты адрис..."
 }

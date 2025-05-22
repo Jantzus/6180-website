@@ -74,7 +74,7 @@ const MyAlbums = () => {
 
   return (
     <>
-      <GlobalStyle />    
+      <GlobalStyle />
       <AppContainer isRTL={isRTL}>
         <Header
           publicUsername={publicUsername}

@@ -148,7 +148,6 @@
   "Enter Username": "Nutzernamen Eingeben",
   "Select Username": "Benutzernåmen Auswähln",
   "Add Random Digits to Username": "Zuafällige Zoin Zum Benutzernåmen Dazuagem",
-  "Enter your email so {ownerName} can see who accessed their album": "Gib Dei E-Mail Ei, Damit {ownerName} Segn Ko, Wer Eana Album Ogschaut Hot",
   "Complete": "Foitich",
   "Processing": "Veroarbatung",
   "Uploading": "Auffiladen",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} gscheitert",
   "({count} in progress)": "({count}) Im Gange",
   "{count} files": "{count} datein",
-  "{count} file": "{count} datei"
+  "{count} file": "{count} datei",
+  "Enter your email address.": "Gib dei E-Mail-Adressn ei.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hot des Album nur mit Freind und Familie daalt.",
+  "Email address...": "E-Post-Adressn..."
 }

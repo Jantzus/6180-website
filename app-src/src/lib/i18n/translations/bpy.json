@@ -148,7 +148,6 @@
   "Enter Username": "ব্যবহারকারীর নাম লেখো",
   "Select Username": "ব্যবহারকারী নাম বাছাই",
   "Add Random Digits to Username": "ব্যবহারকারীর নামে এলোমেলো সংখ্যা যোগ করুন",
-  "Enter your email so {ownerName} can see who accessed their album": "আপনার ইমেইল দেও যাতে {ownerName} দেখতে পারে কে তাদের অ্যালবাম অ্যাক্সেস করছে",
   "Complete": "পুরা",
   "Processing": "প্রসেসিং",
   "Uploading": "আপলোড করা হচ্ছে",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ব্যর্থ হইছে",
   "({count} in progress)": "({count}) চলতে আছে",
   "{count} files": "{count} ফাইল",
-  "{count} file": "{count} ফাইল"
+  "{count} file": "{count} ফাইল",
+  "Enter your email address.": "তোমার ইমেইল ঠিকানা দাও.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} এরে অ্যালবাম বন্ধু বারো ফ্যামিলির লগে শেয়ার করেছে।",
+  "Email address...": "ইমেইল ঠিকানা..."
 }

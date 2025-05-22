@@ -148,7 +148,6 @@
   "Enter Username": "Ibutang An Ngaran-hit-Gumaramit",
   "Select Username": "Pagpili han Agnay-gamit",
   "Add Random Digits to Username": "Dugangan Han Random Nga Mga Ihap Ha Ngaran-hit Gumaramit",
-  "Enter your email so {ownerName} can see who accessed their album": "Isulod An Imo Email Basi {ownerName} Makakita Hin-o An Umakses Han Ira Album",
   "Complete": "Kompleto",
   "Processing": "Pagproseso",
   "Uploading": "Ginkarkarga",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} pakyas",
   "({count} in progress)": "({count}) Nagpapadayon",
   "{count} files": "{count} mga file",
-  "{count} file": "{count} paypay"
+  "{count} file": "{count} paypay",
+  "Enter your email address.": "Igbutang an imo email address.",
+  "{ownerName} has only shared this album with friends and family.": "Ginpakadto la ni {ownerName} ini nga album ha mga higala ngan pamilya la.",
+  "Email address...": "Adres han email..."
 }

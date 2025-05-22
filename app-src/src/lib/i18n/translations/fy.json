@@ -148,7 +148,6 @@
   "Enter Username": "Fier Brûkersnamme Yn",
   "Select Username": "Selektearje Brûkersnamme",
   "Add Random Digits to Username": "Tafallige Sifers Tafoegje Oan Brûkersnamme",
-  "Enter your email so {ownerName} can see who accessed their album": "Fier Jo E-mailadres Yn Sadat {ownerName} Sjen Kin Wa't Tagong Hie Ta Harren Album",
   "Complete": "Kompleet",
   "Processing": "Ferwurking",
   "Uploading": "Oplade",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} mislearre",
   "({count} in progress)": "({count}) Dwaande",
   "{count} files": "{count} triemmen",
-  "{count} file": "{count} triem"
+  "{count} file": "{count} triem",
+  "Enter your email address.": "Fier jo e-mailadres yn.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hat dit album allinich mei freonen en famylje dield.",
+  "Email address...": "E-mailadres..."
 }

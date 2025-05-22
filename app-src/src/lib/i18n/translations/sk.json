@@ -148,7 +148,6 @@
   "Enter Username": "Zadajte Používateľské Meno",
   "Select Username": "Vyberte Používateľské Meno",
   "Add Random Digits to Username": "Pridať Náhodné Číslice K Používateľskému Menu",
-  "Enter your email so {ownerName} can see who accessed their album": "Zadajte Svoju Emailovú Adresu, Aby {ownerName} Mohol Vidieť, Kto Pristupoval K Ich Albumu",
   "Complete": "Kompletný",
   "Processing": "Spracovanie",
   "Uploading": "Nahrávanie",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} zlyhalo",
   "({count} in progress)": "({count}) Prebieha",
   "{count} files": "{count} súborov",
-  "{count} file": "{count} súbor"
+  "{count} file": "{count} súbor",
+  "Enter your email address.": "Zadajte svoju e-mailovú adresu.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} zdieľal tento album iba s priateľmi a rodinou.",
+  "Email address...": "E-mailová adresa..."
 }

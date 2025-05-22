@@ -148,7 +148,6 @@
   "Enter Username": "نوم کاربری ڤارد کونین",
   "Select Username": "نوم کاربری انتخاو کو",
   "Add Random Digits to Username": "اضاف کنونه عددیا شانسی وه نوم کاروری",
-  "Enter your email so {ownerName} can see who accessed their album": "ایمئل خوتونه وارد بکیت تا {ownerName} بتونه بوینه کی آلبوم ونه دسرسی داشته",
   "Complete": "کامل",
   "Processing": "پرداشت",
   "Uploading": "رسالی",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} شکست حرد",
   "({count} in progress)": "({count}) دأ حالأت پیشرأفت",
   "{count} files": "{count} فایلیا",
-  "{count} file": "{count} فایل"
+  "{count} file": "{count} فایل",
+  "Enter your email address.": "ئینشونی ئیمئیل خوتونه وارد کنین.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ئة آلبومه بئ دوستؤن ئؤ خانواده گئ شریک کةرده.",
+  "Email address...": "نشونی ایمیل..."
 }

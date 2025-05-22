@@ -148,7 +148,6 @@
   "Enter Username": "Benutzername Eigewwe",
   "Select Username": "Yuusernaame Auswähle",
   "Add Random Digits to Username": "Zufellich Zahle Zum Benutzernumme Dezu",
-  "Enter your email so {ownerName} can see who accessed their album": "Gebb Dei E-Mail Ei So {ownerName} Saene Kann Wer Ihr Album Zugegriffe Hot",
   "Complete": "Vollständich",
   "Processing": "Verarbeitung",
   "Uploading": "Am ufflaade",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} gescheitert",
   "({count} in progress)": "({count}) Am Laafe",
   "{count} files": "{count} datei",
-  "{count} file": "{count} datei"
+  "{count} file": "{count} datei",
+  "Enter your email address.": "Geb dei E-Mail-Adress nei.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} hot sell Album bloss mit Freind un Familie gedaalt.",
+  "Email address...": "E-mail-Adress..."
 }

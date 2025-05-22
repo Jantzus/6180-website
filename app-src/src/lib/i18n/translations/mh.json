@@ -148,7 +148,6 @@
   "Enter Username": "Kadkad Etam In Kojerbale",
   "Select Username": "Kālet Āt in Kōjerbale",
   "Add Random Digits to Username": "Kobaiki Ņomba Ilo Kojak Ilo Etam",
-  "Enter your email so {ownerName} can see who accessed their album": "Likūt Email Eo Am Bwe {ownerName} En Maron Lale Wōn Ear Delone Album Eo Aer",
   "Complete": "Jejjet",
   "Processing": "Processing",
   "Uploading": "Uploading",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} likjab",
   "({count} in progress)": "({count}) Ej Wōnmanlok",
   "{count} files": "{count} pāel ko",
-  "{count} file": "{count} fail"
+  "{count} file": "{count} fail",
+  "Enter your email address.": "Likūt email eo am.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ear kommool album in ñan ro jebwe im ḷōṃaro wōt.",
+  "Email address...": "Email address..."
 }

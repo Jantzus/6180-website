@@ -148,7 +148,6 @@
   "Enter Username": "Chi Hohchifo Chi Ittim",
   "Select Username": "Hotchifo Atokoli",
   "Add Random Digits to Username": "Hochifo Chokma Hotupa Kanchi Foka",
-  "Enter your email so {ownerName} can see who accessed their album": "Chi Email Ish Fohki Na {ownerName} Yʋt Album Pisa Kʋt Akostininchi",
   "Complete": "Alhtaha",
   "Processing": "Atokoli",
   "Uploading": "Uploading",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ikshoka",
   "({count} in progress)": "({count}) Mahli Hosh",
   "{count} files": "{count} faila",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Email address ish chi holissochi.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} olitbishno album ilvska itibapishi aiena ak o bohli.",
+  "Email address...": "Email address..."
 }

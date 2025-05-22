@@ -235,14 +235,16 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
           }} 
         />
 
-        {/* Login Explanation Message - Now using the ownerName prop */}
-        <h3 style={{ 
+        {/* Login Explanation Message - Split into two lines with space between */}
+        <div style={{ 
           margin: '0', 
-          lineHeight: '1.4',
+          lineHeight: '1.6',
           marginBottom: '30px'
         }}>
-          {t('Enter your email so {ownerName} can see who accessed their album').replace('{ownerName}', ownerName)}
-        </h3>
+          <h3 style={{ margin: '0' }}>
+            {t('{ownerName} has only shared this album with friends and family.').replace('{ownerName}', ownerName)}
+          </h3>
+        </div>
 
         {errorMessage && (
           <div style={{
@@ -264,7 +266,7 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder={t('Enter your email')}
+              placeholder={t('Email address...')}
               style={{
                 width: '100%',
                 padding: '12px',

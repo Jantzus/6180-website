@@ -148,7 +148,6 @@
   "Enter Username": "Ramosaren O Anav E Jenesko",
   "Select Username": "Alosarav Anav le Jenesko",
   "Add Random Digits to Username": "Thov Digita Randomisara Ko Anav E Jenesko",
-  "Enter your email so {ownerName} can see who accessed their album": "Ramosaren Tiri E-mail Ta {ownerName} Dashtil Te Dikhen Kon Gelo André Lengo Album",
   "Complete": "Kompleto",
   "Processing": "Prelucrare",
   "Uploading": "Incărcând",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ni zhutisardas",
   "({count} in progress)": "({count}) Ande Progreso",
   "{count} files": "{count} fajluri",
-  "{count} file": "{count} fàjlo"
+  "{count} file": "{count} fàjlo",
+  "Enter your email address.": "Ramosaren tiro e-mail adressa.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} kada album sharelas savo dragan thay familiyasa.",
+  "Email address...": "Adresa de e-mail..."
 }

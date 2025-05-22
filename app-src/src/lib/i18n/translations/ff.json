@@ -148,7 +148,6 @@
   "Enter Username": "Winndu Innde Kuutoro",
   "Select Username": "Labo Innde Gollitoowo",
   "Add Random Digits to Username": "Ɓeydu Limle Pooccitaaɗe E Innde Kuutoro",
-  "Enter your email so {ownerName} can see who accessed their album": "Winndu Iimeel Maa Ngam {ownerName} Yiiya Hol Naati E Albomu Mum'en",
   "Complete": "Timmude",
   "Processing": "Jokkondirgol",
   "Uploading": "Jooltugol",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} woorii",
   "({count} in progress)": "({count}) E Yaha Yeeso",
   "{count} files": "{count} fiilji",
-  "{count} file": "{count} fiilde"
+  "{count} file": "{count} fiilde",
+  "Enter your email address.": "Winndu ñiiɓirde iimeel maa.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} jaɓii ngal alboom e sooɓe e galle tan.",
+  "Email address...": "Ñiiɓirde iimeel..."
 }

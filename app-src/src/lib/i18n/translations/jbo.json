@@ -148,7 +148,6 @@
   "Enter Username": "ciska lo plicme",
   "Select Username": "cuxna pilno namcu",
   "Add Random Digits to Username": "jmina cunki namcu fi lo se pilno cmene",
-  "Enter your email so {ownerName} can see who accessed their album": "ko tcidu lo do samjudri te zu'e lo {ownerName} ku ka kakne lo ka zgana lo du'u ma kau zvati lo sanga girzu",
   "Complete": "Mulno",
   "Processing": "ciste",
   "Uploading": "calseveikri",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fliba",
   "({count} in progress)": "({count}) Ca Cadzu",
   "{count} files": "{count} datni",
-  "{count} file": "{count} datni"
+  "{count} file": "{count} datni",
+  "Enter your email address.": "ko ciska lo do samymri judri.",
+  "{ownerName} has only shared this album with friends and family.": "la {ownerName} cu benji le vi girzu vitke je lanzu pendo jo'u",
+  "Email address...": "selpaste judri..."
 }

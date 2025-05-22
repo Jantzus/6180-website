@@ -148,7 +148,6 @@
   "Enter Username": "Մուտքագրեք Օգտանունը",
   "Select Username": "Ընտրեք Օգտվողի Անունը",
   "Add Random Digits to Username": "Ավելացնել Պատահական Թվեր Օգտվողի Անունին",
-  "Enter your email so {ownerName} can see who accessed their album": "Մուտքագրեք Ձեր Էլ-փոստը, Որպեսզի {ownerName}-ը Կարողանա Տեսնել, Թե Ով Է Մուտք Գործել Իրենց Ալբոմ",
   "Complete": "Ամբողջական",
   "Processing": "Մշակում",
   "Uploading": "Վերբեռնում",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ձախողվեց",
   "({count} in progress)": "({count}) Ընթացքի Մեջ",
   "{count} files": "{count} ֆայլեր",
-  "{count} file": "{count} ֆայլ"
+  "{count} file": "{count} ֆայլ",
+  "Enter your email address.": "Մուտքագրեք ձեր էլփոստի հասցեն.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName}-ը այս ալբոմը կիսել է միայն ընկերների և ընտանիքի հետ:",
+  "Email address...": "Էլ. փոստի հասցե..."
 }

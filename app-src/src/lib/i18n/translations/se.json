@@ -148,7 +148,6 @@
   "Enter Username": "Čális Geavaheaddji Nama",
   "Select Username": "Válljet Geavaheaddji-nama",
   "Add Random Digits to Username": "Lasit Soaittáhagas Nummirat Geavaheaddjinamahusa",
-  "Enter your email so {ownerName} can see who accessed their album": "Čále Iežat E-poastačujuhusa Vai {ownerName} Oaidná Gii Lea Geahččan Sin Albuma",
   "Complete": "Ollislaš",
   "Processing": "Gieđahallan",
   "Uploading": "Luodin bajás",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ii lihkostuvvan",
   "({count} in progress)": "({count}) Johttime",
   "{count} files": "{count} fiillat",
-  "{count} file": "{count} fiila"
+  "{count} file": "{count} fiila",
+  "Enter your email address.": "Čále iežat e-boastačujuhusa.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} lea juogán dán album dušše ustibiin ja bearrašiin.",
+  "Email address...": "E-poastačujuhus..."
 }

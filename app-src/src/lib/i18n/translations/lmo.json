@@ -148,7 +148,6 @@
   "Enter Username": "Inserìss Nom Ütent",
   "Select Username": "Seleziona Nom Ütent",
   "Add Random Digits to Username": "Zontà Nümar Casual Al Nom Ütent",
-  "Enter your email so {ownerName} can see who accessed their album": "Mèta Dent La Tua Email Par Chè {ownerName} Al Poda Vedar Chi L'ha Vardaa Al So Album",
   "Complete": "Cumpìt",
   "Processing": "Elaboraziun",
   "Uploading": "Caregament",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} falii",
   "({count} in progress)": "({count}) In Cors",
   "{count} files": "{count} file",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Mèt dent el tò indirìzz email.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} l'ha spartì chest album domà cun amiis e famiglia.",
+  "Email address...": "Indirizz de posta eletrònica..."
 }

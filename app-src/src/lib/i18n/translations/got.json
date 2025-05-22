@@ -148,7 +148,6 @@
   "Enter Username": "𐌰𐍄𐌻𐌰𐌲𐌴𐌹 𐌽𐌹𐌿𐍄𐌰𐌽𐌳𐌹𐍃 𐌽𐌰𐌼𐍉",
   "Select Username": "𐌺𐌹𐌿𐍃𐌰𐌽 𐌱𐍂𐌿𐌺𐌾𐌰𐌽𐌳𐌹𐍃 𐌽𐌰𐌼𐍉",
   "Add Random Digits to Username": "𐍆𐌰𐌻𐍃𐌰𐌽𐌳𐍃 𐌽𐌹𐌼𐌰𐌽𐌳𐍃 𐌳𐌿 𐌱𐍂𐌿𐌺𐌾𐌰𐌽𐌳𐌹𐌽 𐌽𐌰𐌼𐌹𐌽",
-  "Enter your email so {ownerName} can see who accessed their album": "𐌲𐌰𐌼𐌴𐌻𐌴𐌹 𐌸𐌴𐌹𐌽𐌰𐌽𐌰 𐌴-𐌼𐌰𐌹𐌻 𐌴𐌹 {ownerName} 𐌼𐌰𐌲𐌹 𐌲𐌰𐍃𐌰𐌹𐍈𐌰𐌽 𐍈𐌰𐍃 𐌹𐌽𐌽𐌲𐌰𐌻𐌰𐌹𐌸 𐌹𐌽 𐌹𐌶𐌴 𐌰𐌻𐌱𐌿𐌼",
   "Complete": "𐌵𐌹𐌼𐍂𐌾𐌰𐌽",
   "Processing": "𐌲𐌰𐍃𐌺𐌰𐍆𐍄𐍃",
   "Uploading": "𐌿𐍀𐌻𐍉𐌰𐌳𐌹𐌽𐌲",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} 𐌽𐌹 𐌲𐌰𐌻𐌰𐌹𐍃𐍄𐌰𐌽𐍃",
   "({count} in progress)": "({count}) 𐌹𐌽 𐍃𐍀𐌴𐌳𐌹𐌶𐌰",
   "{count} files": "{count} 𐍆𐌰𐌹𐌻𐍉𐍃",
-  "{count} file": "{count} 𐍆𐌰𐌹𐌻"
+  "{count} file": "{count} 𐍆𐌰𐌹𐌻",
+  "Enter your email address.": "𐌲𐌰𐌼𐌴𐌻𐌴𐌹 𐌸𐌴𐌹𐌽𐌰𐌽𐌰 𐌹-𐌼𐌰𐌹𐌻 𐌷𐌰𐌹𐍄𐌰𐌽𐌰.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} 𐌰𐌹𐌽𐌰𐌽𐌰 𐌸𐌰𐌽𐌰 𐌰𐌻𐌱𐌿𐌼 𐌼𐌹𐌸 𐍆𐍂𐌹𐌾𐍉𐌽𐌳𐌰𐌼 𐌾𐌰𐌷 𐌺𐌿𐌽𐌾𐌰 𐌳𐌰𐌹𐌻𐌹𐌳𐌰.",
+  "Email address...": "𐌰𐌹𐌸𐌰𐌼𐌴𐌻𐌾𐌰𐌽 𐍃𐍄𐌰𐌸𐍃..."
 }

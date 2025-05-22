@@ -148,7 +148,6 @@
   "Enter Username": "Skriv Inn Brukernavn",
   "Select Username": "Velg Brukernavn",
   "Add Random Digits to Username": "Legg Til Tilfeldige Sifre Til Brukernavn",
-  "Enter your email so {ownerName} can see who accessed their album": "Skriv Inn E-postadressen Din Slik At {ownerName} Kan Se Hvem Som Har Sett På Albumet Deres",
   "Complete": "Fullstendig",
   "Processing": "Behandling",
   "Uploading": "Laster opp",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} mislyktes",
   "({count} in progress)": "({count}) I Prosess",
   "{count} files": "{count} filer",
-  "{count} file": "{count} fil"
+  "{count} file": "{count} fil",
+  "Enter your email address.": "Skriv inn e-postadressen din.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} har kun delt dette albumet med venner og familie.",
+  "Email address...": "E-postadresse..."
 }

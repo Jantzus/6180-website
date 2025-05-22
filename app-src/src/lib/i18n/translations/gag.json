@@ -148,7 +148,6 @@
   "Enter Username": "Kullanıcı Adını Girin",
   "Select Username": "Kullanıcı Adını Seç",
   "Add Random Digits to Username": "Kullanıcı Adına Rasget Rakamlar Ekle",
-  "Enter your email so {ownerName} can see who accessed their album": "Email Adresinizi Girin Ki {ownerName} Görebilsin Kim Onnarın Albomuna Erişti",
   "Complete": "Tamam",
   "Processing": "İşlem",
   "Uploading": "Yükleyerek",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} başarısız",
   "({count} in progress)": "({count}) İlerliyor",
   "{count} files": "{count} dosyaları",
-  "{count} file": "{count} dosya"
+  "{count} file": "{count} dosya",
+  "Enter your email address.": "E-mail adresinizi girin.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} bu albomü sadece dostlariylan hem ailesiyle paylaştı.",
+  "Email address...": "Email adresi..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "उपयोगकर्ता नाम दर्ज करें",
   "Select Username": "उपयोगकर्ता नाम चुनें",
   "Add Random Digits to Username": "उपयोगकर्ता नाम में यादृच्छिक अंक जोड़ें",
-  "Enter your email so {ownerName} can see who accessed their album": "अपना ईमेल दर्ज करें ताकि {ownerName} देख सकें कि किसने उनके एल्बम तक पहुँच प्राप्त की",
   "Complete": "पूर्ण",
   "Processing": "प्रसंस्करण",
   "Uploading": "अपलोड हो रहा है",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} विफल रहा",
   "({count} in progress)": "({count}) प्रगति में",
   "{count} files": "{count} फ़ाइलें",
-  "{count} file": "{count} फ़ाइल"
+  "{count} file": "{count} फ़ाइल",
+  "Enter your email address.": "अपना ईमेल पता दर्ज करें.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ने इस एल्बम को केवल मित्रों और परिवार के साथ साझा किया है।",
+  "Email address...": "ईमेल पता..."
 }

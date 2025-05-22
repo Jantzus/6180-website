@@ -148,7 +148,6 @@
   "Enter Username": "ಬಳಕೆದಾರ ಹೆಸರು ನಮೂದಿಸಿ",
   "Select Username": "ಬಳಕೆದಾರ ಹೆಸರು ಆಯ್ಕೆಮಾಡಿ",
   "Add Random Digits to Username": "ಬಳಕೆದಾರ ಹೆಸ್ರ್‍ಗ್ ಯಾದೃಚ್ಚಿಕ ಅಂಕೆಲೆನ್ ಸೇರಾಲೆ",
-  "Enter your email so {ownerName} can see who accessed their album": "ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ {ownerName} ಅವರ ಆಲ್ಬಂಗೆ ಯಾರು ಪ್ರವೇಶ ಪಡೆದಿದ್ದಾರೆ ಎಂಬುದನ್ನು ನೋಡಬಹುದು",
   "Complete": "ಪೂರ್ತಿ",
   "Processing": "ಪ್ರಕ್ರಿಯೆ",
   "Uploading": "ಕಡಪುಡ್ ಮಲ್ಪುಂಡು",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ಪಾಡ್ಪುಂಡು",
   "({count} in progress)": "({count}) ನಡಪುಡುಂಡು",
   "{count} files": "{count} ಕಡತೊಲು",
-  "{count} file": "{count} ಕಡತ"
+  "{count} file": "{count} ಕಡತ",
+  "Enter your email address.": "ನಿಮ್ಮ ಇ-ಅಂಚೆ ವಿಳಾಸೊನು ನಮೂದು ಮಲ್ಪುಲೆ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ಈ ಆಲ್ಬಂನ್ ಬೇತೆ ಅಡ್ಕುಲೆರ್ ಸಂಗ್ ಪಂಚನ್ ಮಲ್ತ್‌ಂಡ್.",
+  "Email address...": "ಇಮೇಲ್ ವಿಳಾಸ..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Entra Nombre De Usador",
   "Select Username": "Eskoj Nombre de Usuario",
   "Add Random Digits to Username": "Adjustar Dijitos Aleatoryos A Nombre De Usador",
-  "Enter your email so {ownerName} can see who accessed their album": "Entra Tu Adressa Elektronika Para Ke {ownerName} Pueda Ver Ken Aksedio A Su Album",
   "Complete": "Kompleto",
   "Processing": "Prosesamiento",
   "Uploading": "Subiendo",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} fayado",
   "({count} in progress)": "({count}) En Progreso",
   "{count} files": "{count} arkivos",
-  "{count} file": "{count} archivo"
+  "{count} file": "{count} archivo",
+  "Enter your email address.": "Entrá tu adresso de correo electrónico.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} solamente kompartió este álbum kon amigos i familya.",
+  "Email address...": "Adreso de koreo elektroniko..."
 }

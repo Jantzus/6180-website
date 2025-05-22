@@ -148,7 +148,6 @@
   "Enter Username": "Entra Yuusa Niem",
   "Select Username": "Selekt Yuusa Niem",
   "Add Random Digits to Username": "Put Random Nambas To Yuus Niem",
-  "Enter your email so {ownerName} can see who accessed their album": "Put Yoas Email In So {ownerName} Kan See Hu Access Dems Album",
   "Complete": "Kompliit",
   "Processing": "Praesesing",
   "Uploading": "Aplodin",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} failed",
   "({count} in progress)": "({count}) Gwen On",
   "{count} files": "{count} fails",
-  "{count} file": "{count} fiel"
+  "{count} file": "{count} fiel",
+  "Enter your email address.": "Inpa yua eemiel edriss.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} shea dis album wis frens en faemli oenli.",
+  "Email address...": "Iimeel aedres..."
 }

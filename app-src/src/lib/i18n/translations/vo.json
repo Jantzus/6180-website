@@ -148,7 +148,6 @@
   "Enter Username": "Penädolös Gebananaföti",
   "Select Username": "Välön Gebanananem",
   "Add Random Digits to Username": "Läükön Notidis Mödotik Ad Gebananem",
-  "Enter your email so {ownerName} can see who accessed their album": "Penolös Ladetaädi Olik, Dat {ownerName} Kanon Logön, Kin Egegivon Ad Laibüm Onsik",
   "Complete": "Jönum",
   "Processing": "Bearbeitön",
   "Uploading": "Löpladöl",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} no plöpön",
   "({count} in progress)": "({count}) In Föpedot",
   "{count} files": "{count} ragives",
-  "{count} file": "{count} ragiv"
+  "{count} file": "{count} ragiv",
+  "Enter your email address.": "Penolös ladetaadati olik.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} edelom albumi at setüpiko kons flenols e famül.",
+  "Email address...": "Ladet leäktronik..."
 }

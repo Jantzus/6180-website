@@ -148,7 +148,6 @@
   "Enter Username": "Picatz Nom D'Utilizaire",
   "Select Username": "Seleccionar Nom d'Utilizaire",
   "Add Random Digits to Username": "Ajustar De Chifras Aleatòris Al Nom D'utilizaire",
-  "Enter your email so {ownerName} can see who accessed their album": "Entratz Vòstre Corrièl Per Que {ownerName} Pòsca Veire Qual A Accedit A Lor Album",
   "Complete": "Complet",
   "Processing": "Tractament",
   "Uploading": "Telecargament",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} a fracassat",
   "({count} in progress)": "({count}) En Cors",
   "{count} files": "{count} fichièrs",
-  "{count} file": "{count} fichièr"
+  "{count} file": "{count} fichièr",
+  "Enter your email address.": "Picatz vòstra adreça de corrièr electronic.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} a partejat aqueste album que amb amics e familha.",
+  "Email address...": "Adreça de corrièr electronic..."
 }

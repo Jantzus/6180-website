@@ -148,7 +148,6 @@
   "Enter Username": "Isurat Ti Nagan Ti Agar-aramat",
   "Select Username": "Agpili ti Nagan ti Agar-aramat",
   "Add Random Digits to Username": "Nayunan Dagiti Di Ammo A Numero Iti Nagan Ti Agar-aramat",
-  "Enter your email so {ownerName} can see who accessed their album": "Ikabil Ti Email Mo Tapno Makita Ni {ownerName} No Siasino Ti Immakses Iti Albumda",
   "Complete": "Kompleto",
   "Processing": "Panagproseso",
   "Uploading": "Agipapan",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} napaay",
   "({count} in progress)": "({count}) Agdama",
   "{count} files": "{count} dagiti file",
-  "{count} file": "{count} papeles"
+  "{count} file": "{count} papeles",
+  "Enter your email address.": "Isurat ti e-surat a pagtaengam.",
+  "{ownerName} has only shared this album with friends and family.": "Ni {ownerName} laeng ti nangibingay iti daytoy nga album kadagiti gagayyem ken pamilia.",
+  "Email address...": "Email address..."
 }

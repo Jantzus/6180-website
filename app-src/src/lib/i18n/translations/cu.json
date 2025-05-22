@@ -148,7 +148,6 @@
   "Enter Username": "Въведи Польꙃевательско Имѧ",
   "Select Username": "Иꙁбєри Польꙃєватєлꙗ Имѧ",
   "Add Random Digits to Username": "Придати Слоучаиныѧ Числа Имєни Польꙃєватєлꙗ",
-  "Enter your email so {ownerName} can see who accessed their album": "Вънеси Твою Електроньнѫѭ Почьтѫ Да {ownerName} Можетъ Видѣти Къто Къ Ихъ Алъбомоу Пристѫпилъ Ѥстъ",
   "Complete": "Съврьшєнъ",
   "Processing": "Обработка",
   "Uploading": "Възносѧи",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} не оуспѣшьнъ",
   "({count} in progress)": "({count}) по напрѣдъкъ",
   "{count} files": "{count} дѣла",
-  "{count} file": "{count} дѣло"
+  "{count} file": "{count} дѣло",
+  "Enter your email address.": "Вънеси твою електрон҄ьнѫѭ почьтѫ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} сь альбомъ съ прїӕтели и родомъ тъкъмо раздѣли.",
+  "Email address...": "Електроньнꙑи почтꙑ ѻбразъ..."
 }

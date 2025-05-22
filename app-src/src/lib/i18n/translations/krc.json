@@ -148,7 +148,6 @@
   "Enter Username": "Хайырланыучу Атын Киритигиз",
   "Select Username": "Хайырланыучу Атын Сайла",
   "Add Random Digits to Username": "Хайырланыучуну Атына Тасадуф Санла Къошаргъа",
-  "Enter your email so {ownerName} can see who accessed their album": "Электрон Почтагъызны Джазыгъыз {ownerName} Аланы Альбомларына Ким Къарагъанын Кёрюрча",
   "Complete": "Толу",
   "Processing": "Ишлеу",
   "Uploading": "Жюклей",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} джетишимсиз",
   "({count} in progress)": "({count}) Барады",
   "{count} files": "{count} файлла",
-  "{count} file": "{count} файл"
+  "{count} file": "{count} файл",
+  "Enter your email address.": "Электрон почта адресигизни киритигиз.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} бу альбомну джууукъларына эм жамиятына эсе бёлюшген.",
+  "Email address...": "Электрон почта адрес..."
 }

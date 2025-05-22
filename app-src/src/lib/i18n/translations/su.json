@@ -148,7 +148,6 @@
   "Enter Username": "Asupkeun Ngaran Pamaké",
   "Select Username": "Pilih Ngaran Pamaké",
   "Add Random Digits to Username": "Tambahkeun Digit Acak Kana Ngaran Pamaké",
-  "Enter your email so {ownerName} can see who accessed their album": "Asupkeun Surél Anjeun Supados {ownerName} Tiasa Ningali Saha Anu Ngakses Album Aranjeunna",
   "Complete": "Lengkep",
   "Processing": "Ngolah",
   "Uploading": "Keur ngunggah",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} gagal",
   "({count} in progress)": "({count}) Nuju Prosés",
   "{count} files": "{count} berkas",
-  "{count} file": "{count} file"
+  "{count} file": "{count} file",
+  "Enter your email address.": "Asupkeun alamat surél anjeun.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ngan babagi album ieu ka babaturan jeung kulawarga wungkul.",
+  "Email address...": "Alamat surél..."
 }

@@ -148,7 +148,6 @@
   "Enter Username": "Entrâd Nom D'Usanciér",
   "Select Username": "Chouèsir Nom d'Utilisator",
   "Add Random Digits to Username": "Apondre Des Chifros Hasardos U Nom D'utilisator",
-  "Enter your email so {ownerName} can see who accessed their album": "Entrâd Voutron Mèl Por Que {ownerName} Pouesse Vêre Qui At Accèdâ A Lor Album",
   "Complete": "Complèt",
   "Processing": "Trètament",
   "Uploading": "Tèlèchargement",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} falyê",
   "({count} in progress)": "({count}) En Cours",
   "{count} files": "{count} fichiérs",
-  "{count} file": "{count} fichiér"
+  "{count} file": "{count} fichiér",
+  "Enter your email address.": "Entrâd voutra adrèce de mèssageria èlèctronica.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} at mas rpartî cél album ren qu'avouéc les amis et la famile.",
+  "Email address...": "Adrèsa de mèssageria..."
 }

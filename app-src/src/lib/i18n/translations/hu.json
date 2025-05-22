@@ -148,7 +148,6 @@
   "Enter Username": "Adja Meg Felhasználónevét",
   "Select Username": "Válasszon Felhasználónevet",
   "Add Random Digits to Username": "Véletlenszerű Számjegyek Hozzáadása A Felhasználónévhez",
-  "Enter your email so {ownerName} can see who accessed their album": "Add Meg Az Email Címed, Hogy {ownerName} Láthassa, Ki Nézte Meg Az Albumukat",
   "Complete": "Teljes",
   "Processing": "Feldolgozás",
   "Uploading": "Feltöltés",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} sikertelen",
   "({count} in progress)": "({count}) Folyamatban",
   "{count} files": "{count} fájl",
-  "{count} file": "{count} fájl"
+  "{count} file": "{count} fájl",
+  "Enter your email address.": "Adja meg az e-mail címét.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} csak barátaival és családjával osztotta meg ezt az albumot.",
+  "Email address...": "E-mail cím..."
 }

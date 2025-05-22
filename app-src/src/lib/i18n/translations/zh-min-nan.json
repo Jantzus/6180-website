@@ -148,7 +148,6 @@
   "Enter Username": "Sû-jīp Iōng-chiá Miâ",
   "Select Username": "選擇用戶名",
   "Add Random Digits to Username": "Kā Sūi-ki Sò͘-jī Chham Iōng-chiá Miâ",
-  "Enter your email so {ownerName} can see who accessed their album": "請輸入你的電子郵件，予 {ownerName} 通看見是誰存取伊的相簿",
   "Complete": "Oân-sêng",
   "Processing": "Chhú-lí",
   "Uploading": "Teng-chai",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} sit-pāi",
   "({count} in progress)": "({count}) Chìn-hêng-tiong",
   "{count} files": "{count} tóng-àn",
-  "{count} file": "{count} tóng-àn"
+  "{count} file": "{count} tóng-àn",
+  "Enter your email address.": "Chhiáⁿ su-ji̍p lí ê tiān-chú-phoe tē-chí.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} tī-tio̍h kap pêng-iú kap ke-tîn hun-hióng chit-ê siòng-chheh.",
+  "Email address...": "Tiān-chú phoe tē-chí..."
 }

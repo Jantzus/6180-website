@@ -148,7 +148,6 @@
   "Enter Username": "Indtast Brugernavn",
   "Select Username": "Vælg Brugernavn",
   "Add Random Digits to Username": "Tilføj Tilfældige Cifre Til Brugernavn",
-  "Enter your email so {ownerName} can see who accessed their album": "Indtast Din Email Så {ownerName} Kan Se Hvem Der Har Tilgået Deres Album",
   "Complete": "Komplet",
   "Processing": "Behandling",
   "Uploading": "Uploader",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} mislykkedes",
   "({count} in progress)": "({count}) I Gang",
   "{count} files": "{count} filer",
-  "{count} file": "{count} fil"
+  "{count} file": "{count} fil",
+  "Enter your email address.": "Indtast din e-mailadresse.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} har kun delt dette album med venner og familie.",
+  "Email address...": "E-mailadresse..."
 }

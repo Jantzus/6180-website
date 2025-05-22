@@ -148,7 +148,6 @@
   "Enter Username": "Skriv Inn Brukarnamn",
   "Select Username": "Vel Brukarnamn",
   "Add Random Digits to Username": "Legg Til Tilfeldige Siffer Til Brukarnamn",
-  "Enter your email so {ownerName} can see who accessed their album": "Skriv Inn E-postadressa Di Slik At {ownerName} Kan Sjå Kven Som Har Sett På Albumet Deira",
   "Complete": "Fullstendig",
   "Processing": "Handsaming",
   "Uploading": "Lastar opp",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} mislukka",
   "({count} in progress)": "({count}) I Prosess",
   "{count} files": "{count} filer",
-  "{count} file": "{count} fil"
+  "{count} file": "{count} fil",
+  "Enter your email address.": "Skriv inn e-postadressa di.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} har berre delt dette albumet med vener og familie.",
+  "Email address...": "E-postadresse..."
 }

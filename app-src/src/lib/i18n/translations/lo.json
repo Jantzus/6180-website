@@ -148,7 +148,6 @@
   "Enter Username": "ປ້ອນຊື່ຜູ້ໃຊ້",
   "Select Username": "ເລືອກຊື່ຜູ້ໃຊ້",
   "Add Random Digits to Username": "ເພີ່ມຕົວເລກແບບສຸ່ມໃສ່ຊື່ຜູ້ໃຊ້",
-  "Enter your email so {ownerName} can see who accessed their album": "ໃສ່ອີເມວຂອງທ່ານເພື່ອໃຫ້ {ownerName} ສາມາດເຫັນວ່າໃຜເຂົ້າເບິ່ງອັລບັ້ມຂອງພວກເຂົາ",
   "Complete": "ສົມບູນ",
   "Processing": "ການປະມວນຜົນ",
   "Uploading": "ກຳລັງອັບໂຫຼດ",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} ລົ້ມເຫລວ",
   "({count} in progress)": "({count}) ກຳລັງດຳເນີນ",
   "{count} files": "{count} ໄຟລ໌",
-  "{count} file": "{count} ແຟ້ມ"
+  "{count} file": "{count} ແຟ້ມ",
+  "Enter your email address.": "ໃສ່ທີ່ຢູ່ອີເມວຂອງທ່ານ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ໄດ້ແບ່ງປັນອາລະບໍ້ານີ້ກັບໝູ່ແລະຄອບຄົວເທົ່ານັ້ນ.",
+  "Email address...": "ທີ່ຢູ່ອີເມວ..."
 }

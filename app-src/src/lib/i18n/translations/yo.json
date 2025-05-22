@@ -148,7 +148,6 @@
   "Enter Username": "Tẹ Orúkọ Aṣàmúlò Sí",
   "Select Username": "Yàn Orúkọ Oníṣe",
   "Add Random Digits to Username": "Ṣàfikún Àwọn Dígíìtì Àrìnàkànrìn Sí Orúkọ Aṣàmúlò",
-  "Enter your email so {ownerName} can see who accessed their album": "Tẹ Imeeli Rẹ Ki {ownerName} Le Ri Ẹni Ti O Wọle Si Albọọmu Wọn",
   "Complete": "Pípé",
   "Processing": "Ṣíṣẹ́",
   "Uploading": "Ńgbésókè",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} kùnà",
   "({count} in progress)": "({count}) Ni Ilọsiwaju",
   "{count} files": "{count} fáìlì",
-  "{count} file": "{count} fáìlì"
+  "{count} file": "{count} fáìlì",
+  "Enter your email address.": "Tẹ àdírẹ́ẹ̀sì ímeèlì rẹ.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} ti pin álbọ́mù yìí pẹ̀lú àwọn ọ̀rẹ́ àti ìdílé nìkan.",
+  "Email address...": "Àdírẹ́ẹ̀sì ímeèlì..."
 }

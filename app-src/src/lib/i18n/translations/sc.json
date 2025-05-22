@@ -148,7 +148,6 @@
   "Enter Username": "Inserta Su Nòmine Utente",
   "Select Username": "Sèbera su Nùmene Utente",
   "Add Random Digits to Username": "Annanghe Nùmeros A Casu A Su Nùmene Utente",
-  "Enter your email so {ownerName} can see who accessed their album": "Inserta S'Indiritzu Email Tuo Pro Chi {ownerName} Potzat Bìere Chie At Atzesu A Su Album Issoro",
   "Complete": "Cumpletau",
   "Processing": "Protzessamentu",
   "Uploading": "Carrighende",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} faddidu",
   "({count} in progress)": "({count}) In Cursu",
   "{count} files": "{count} files",
-  "{count} file": "{count} archìviu"
+  "{count} file": "{count} archìviu",
+  "Enter your email address.": "Inserta s'indiritzu email tuo.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} at cumpartzidu custu album petzi cun amigos e famiglia.",
+  "Email address...": "Indiritzu de posta elettrònica..."
 }

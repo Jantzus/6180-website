@@ -148,7 +148,6 @@
   "Enter Username": "Tyapa Edhina Lyomukwanishi",
   "Select Username": "Ketilamo Nakulonga",
   "Add Random Digits to Username": "Gwedha Nomola Dho Yukilwa Komuntu",
-  "Enter your email so {ownerName} can see who accessed their album": "Tyapula Email Yoye Opo {ownerName} Ta Vulu Ku Mona Olye Tala Album Yawo",
   "Complete": "Eyapupala",
   "Processing": "Processing",
   "Uploading": "Ta tulumba",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} hinangula nawa",
   "({count} in progress)": "({count}) Ta Guduma",
   "{count} files": "{count} fail",
-  "{count} file": "{count} ofolda"
+  "{count} file": "{count} ofolda",
+  "Enter your email address.": "Shanga elandulathano loye lo email.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} oku ka pangwa album otji ku aantu ya ka vondua.",
+  "Email address...": "Email address..."
 }

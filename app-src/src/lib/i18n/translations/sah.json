@@ -148,7 +148,6 @@
   "Enter Username": "Туһанааччы Аатын Киллэр",
   "Select Username": "Туһанааччы Аатын Талыҥ",
   "Add Random Digits to Username": "Туһаныааччы Аатыгар Түбэспиччэ Ахсааннары Эбии",
-  "Enter your email so {ownerName} can see who accessed their album": "Электроннай Почтаҕын Киллэр {ownerName} Кимтэн Кинилэр Альбомнарыгар Киирбитин Көрөрүн Туһугар",
   "Complete": "Толору",
   "Processing": "Обработка",
   "Uploading": "Киллэрии",
@@ -160,5 +159,8 @@
   "({count} failed": "({count} сатаммата",
   "({count} in progress)": "({count}) Ыытыллан Эрэр",
   "{count} files": "{count} билэ",
-  "{count} file": "{count} билэ"
+  "{count} file": "{count} билэ",
+  "Enter your email address.": "Электроннай почта аадырыскын киллэр.",
+  "{ownerName} has only shared this album with friends and family.": "{ownerName} бу альбомы дьонтон уонна дьиэ кэргэнинэн эрэ холбоhуута.",
+  "Email address...": "Электроннай почта аадырыhа..."
 }
