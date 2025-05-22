@@ -161,6 +161,7 @@
   "{count} files": "{count} ھۆججەتلەر",
   "{count} file": "{count} ھۆججەت",
   "Enter your email address.": "ئېلخەت ئادرېسىڭىزنى كىرگۈزۈڭ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} بۇ ئالبۇمنى پەقەت دوستلىرى ۋە ئائىلىسى بىلەن ئورتاقلاشتى.",
-  "Email address...": "ئېلېكترونلۇق خەت ئادرېسى..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} بۇ ئالبومنى پەقەت دوستلىرى ۋە ئائىلىسى بىلەن ئورتاقلاشتى",
+  "Email address...": "ئېلېكترونلۇق خەت ئادرېسى...",
+  "Two-Factor Authentication": "ئىككى-فاكتور دەلىللەش"
 }

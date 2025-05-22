@@ -161,6 +161,7 @@
   "{count} files": "{count} datni",
   "{count} file": "{count} datni",
   "Enter your email address.": "ko ciska lo do samymri judri.",
-  "{ownerName} has only shared this album with friends and family.": "la {ownerName} cu benji le vi girzu vitke je lanzu pendo jo'u",
-  "Email address...": "selpaste judri..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} pu benji lemi sei girzu ve lo pendo e lo lanzu",
+  "Email address...": "selpaste judri...",
+  "Two-Factor Authentication": "remei facki judri"
 }

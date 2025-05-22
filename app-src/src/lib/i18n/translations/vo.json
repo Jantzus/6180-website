@@ -161,6 +161,7 @@
   "{count} files": "{count} ragives",
   "{count} file": "{count} ragiv",
   "Enter your email address.": "Penolös ladetaadati olik.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} edelom albumi at setüpiko kons flenols e famül.",
-  "Email address...": "Ladet leäktronik..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} edivon albumi at të me flens e kin üntel",
+  "Email address...": "Ladet leäktronik...",
+  "Two-Factor Authentication": "Telfaktor Prüfam"
 }

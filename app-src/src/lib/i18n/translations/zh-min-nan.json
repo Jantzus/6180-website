@@ -161,6 +161,7 @@
   "{count} files": "{count} tóng-àn",
   "{count} file": "{count} tóng-àn",
   "Enter your email address.": "Chhiáⁿ su-ji̍p lí ê tiān-chú-phoe tē-chí.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} tī-tio̍h kap pêng-iú kap ke-tîn hun-hióng chit-ê siòng-chheh.",
-  "Email address...": "Tiān-chú phoe tē-chí..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} chiah kap pêng-iú kap ka-tîn hun-hiáng chit-ê siòng-phō͘",
+  "Email address...": "Tiān-chú phoe tē-chí...",
+  "Two-Factor Authentication": "雙因素認證"
 }

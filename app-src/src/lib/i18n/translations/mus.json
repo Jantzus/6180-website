@@ -161,6 +161,7 @@
   "{count} files": "{count} cokv",
   "{count} file": "{count} cokv",
   "Enter your email address.": "Email ahonokcheto atonhot.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} album hiyyat enhoputaken ayat cuko-hunanutat.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} omat album hesayeckv heckvtetteskaten",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Hokkolen-Factor Authentication"
 }

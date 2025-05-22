@@ -161,6 +161,7 @@
   "{count} files": "{count} билэ",
   "{count} file": "{count} билэ",
   "Enter your email address.": "Электроннай почта аадырыскын киллэр.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} бу альбомы дьонтон уонна дьиэ кэргэнинэн эрэ холбоhуута.",
-  "Email address...": "Электроннай почта аадырыhа..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} бу альбомы дьоллоохтор уонна төрөппүт киһилэр көрөрө туһугар көрдөрдө",
+  "Email address...": "Электроннай почта аадырыhа...",
+  "Two-Factor Authentication": "Икки-Фактор Идентификация"
 }

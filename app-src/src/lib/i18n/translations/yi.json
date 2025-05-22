@@ -161,6 +161,7 @@
   "{count} files": "{count} טעקעס",
   "{count} file": "{count} טעקע",
   "Enter your email address.": "געבט אריין אייער אימעיל אדרעס.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} האט בלויז געטיילט דעם אלבאם מיט פריינט און משפחה.",
-  "Email address...": "בליצפּאָסט אַדרעס..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} האט דעם אלבאם געטיילט נאר מיט פריינט און משפחה",
+  "Email address...": "בליצפּאָסט אַדרעס...",
+  "Two-Factor Authentication": "צוויי-פֿאַקטאָר אויטענטיפֿיקאַציע"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} 파일",
   "{count} file": "{count} 파일",
   "Enter your email address.": "이메일 주소를 입력하세요.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}님이 이 앨범을 친구와 가족에게만 공유했습니다.",
-  "Email address...": "이메일 주소..."
+  "{ownerName} only shared this album with friends and family": "{ownerName}님이 이 앨범을 친구와 가족에게만 공유했습니다",
+  "Email address...": "이메일 주소...",
+  "Two-Factor Authentication": "이중 인증"
 }

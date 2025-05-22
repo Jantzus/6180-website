@@ -161,6 +161,7 @@
   "{count} files": "{count} 文件",
   "{count} file": "{count} 文件",
   "Enter your email address.": "输入你个电子邮件地址.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} 只搭朋友搭屋里人分享仔个相册。",
-  "Email address...": "电子邮件地址..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} 搿张相册只分享拨朋友搭屋里人",
+  "Email address...": "电子邮件地址...",
+  "Two-Factor Authentication": "双因素认证"
 }

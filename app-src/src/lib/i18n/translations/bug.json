@@ -161,6 +161,7 @@
   "{count} files": "{count} berkas",
   "{count} file": "{count} berkas",
   "Enter your email address.": "Pattamai alamat surekmu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} angkareso album ié dekna ro temmanginngi ri pammasakaé.",
-  "Email address...": "Alamat surel..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} mabbagi album enni karo temmate siagaga ati rumpun-e",
+  "Email address...": "Alamat surel...",
+  "Two-Factor Authentication": "Autentifikasi Dua Faktor"
 }

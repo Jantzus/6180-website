@@ -161,6 +161,7 @@
   "{count} files": "{count} файлдар",
   "{count} file": "{count} файл",
   "Enter your email address.": "Электрондук почта дарегиңизди киргизиңиз.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} бул альбомду досторуна жана үй-бүлөсүнө гана бөлүштү.",
-  "Email address...": "Электрондук почта дареги..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} бул альбомду досттор жана үй-бүлө менен гана бөлүштү",
+  "Email address...": "Электрондук почта дареги...",
+  "Two-Factor Authentication": "Эки-Фактор Аутентификация"
 }

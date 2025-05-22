@@ -161,6 +161,7 @@
   "{count} files": "{count} فایِل",
   "{count} file": "{count} فایل",
   "Enter your email address.": "تُہنٛد ای میل ایڈریس درج کرؠو.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} یتھ البم صرف دوستن ۤ خاندان سیتیۍ شیار کریتھ چُھ۔",
-  "Email address...": "برقی ڈاک پتہ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} یہِ آلبم چُھے صرف دوستَن تہٕ خاندانَن سیت شیئر کورُو",
+  "Email address...": "برقی ڈاک پتہ...",
+  "Two-Factor Authentication": "دۄ-فیکٹر تصدیق"
 }

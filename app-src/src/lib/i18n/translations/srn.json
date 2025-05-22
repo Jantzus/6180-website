@@ -161,6 +161,7 @@
   "{count} files": "{count} file",
   "{count} file": "{count} file",
   "Enter your email address.": "Poti yu email adres.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ben seri disi album nanga frens nanga famiri so.",
-  "Email address...": "E-mail adresi..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} del a albom dya nanga freynen en famiri nomo",
+  "Email address...": "E-mail adresi...",
+  "Two-Factor Authentication": "Tu-Factor Otentifikasi"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} فایلیا",
   "{count} file": "{count} فایل",
   "Enter your email address.": "ئینشونی ئیمئیل خوتونه وارد کنین.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ئة آلبومه بئ دوستؤن ئؤ خانواده گئ شریک کةرده.",
-  "Email address...": "نشونی ایمیل..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} اي آلبوم رو فقط گو دوستا و خانوادە شریک کردە",
+  "Email address...": "نشونی ایمیل...",
+  "Two-Factor Authentication": "تایید هویت دو مرحله‌ای"
 }

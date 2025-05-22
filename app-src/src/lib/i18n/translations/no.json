@@ -161,6 +161,7 @@
   "{count} files": "{count} filer",
   "{count} file": "{count} fil",
   "Enter your email address.": "Skriv inn e-postadressen din.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} har kun delt dette albumet med venner og familie.",
-  "Email address...": "E-postadresse..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} delte bare dette albumet med venner og familie",
+  "Email address...": "E-postadresse...",
+  "Two-Factor Authentication": "Tofaktor-Autentisering"
 }

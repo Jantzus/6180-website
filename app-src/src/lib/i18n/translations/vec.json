@@ -161,6 +161,7 @@
   "{count} files": "{count} file",
   "{count} file": "{count} file",
   "Enter your email address.": "Inserissi el to indiriso email.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} el ga spartìo sto album solo co i amici e ła fameja.",
-  "Email address...": "Indiriso de posta eletrònega..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ga spartìo sto album solo co i amici e ła fameja",
+  "Email address...": "Indiriso de posta eletrònega...",
+  "Two-Factor Authentication": "Autenticasion A Do Fatori"
 }

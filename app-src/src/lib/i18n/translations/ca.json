@@ -161,6 +161,7 @@
   "{count} files": "{count} fitxers",
   "{count} file": "{count} fitxer",
   "Enter your email address.": "Introdueix la teva adreça de correu electrònic.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} només ha compartit aquest àlbum amb amics i família.",
-  "Email address...": "Adreça de correu electrònic..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} només va compartir aquest àlbum amb amics i família",
+  "Email address...": "Adreça de correu electrònic...",
+  "Two-Factor Authentication": "Autenticació De Dos Factors"
 }

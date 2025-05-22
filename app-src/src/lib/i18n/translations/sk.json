@@ -161,6 +161,7 @@
   "{count} files": "{count} súborov",
   "{count} file": "{count} súbor",
   "Enter your email address.": "Zadajte svoju e-mailovú adresu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} zdieľal tento album iba s priateľmi a rodinou.",
-  "Email address...": "E-mailová adresa..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} zdieľal tento album len s priateľmi a rodinou",
+  "Email address...": "E-mailová adresa...",
+  "Two-Factor Authentication": "Dvojfaktorová Autentifikácia"
 }

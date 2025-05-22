@@ -161,6 +161,7 @@
   "{count} files": "{count} mga file",
   "{count} file": "{count} paypay",
   "Enter your email address.": "Igbutang an imo email address.",
-  "{ownerName} has only shared this album with friends and family.": "Ginpakadto la ni {ownerName} ini nga album ha mga higala ngan pamilya la.",
-  "Email address...": "Adres han email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ginpakigbahin ini nga album ha mga higala ngan pamilya la",
+  "Email address...": "Adres han email...",
+  "Two-Factor Authentication": "Duha-Ka-Factor Nga Pagpamatuod"
 }

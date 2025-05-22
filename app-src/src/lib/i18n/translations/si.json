@@ -161,6 +161,7 @@
   "{count} files": "{count} ගොනු",
   "{count} file": "{count} ගොනුව",
   "Enter your email address.": "ඔබගේ විද්‍යුත් තැපැල් ලිපිනය ඇතුළත් කරන්න.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} මෙම ඇල්බමය මිතුරන් සහ පවුලේ අය සමඟ පමණක් බෙදා ගන්නා ලදී.",
-  "Email address...": "විද්‍යුත් තැපැල් ලිපිනය..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} මෙම ඇල්බමය මිතුරන් සහ පවුලේ අය සමඟ පමණක් බෙදා ගත්තේය",
+  "Email address...": "විද්‍යුත් තැපැල් ලිපිනය...",
+  "Two-Factor Authentication": "ද්වි-සාධක සත්‍යාපනය"
 }

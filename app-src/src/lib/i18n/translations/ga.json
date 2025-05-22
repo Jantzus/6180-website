@@ -161,6 +161,7 @@
   "{count} files": "{count} comhaid",
   "{count} file": "{count} comhad",
   "Enter your email address.": "Cuir do sheoladh ríomhphoist isteach.",
-  "{ownerName} has only shared this album with friends and family.": "Níl {ownerName} ach tar éis an t-albam seo a roinnt le cairde agus teaghlach.",
-  "Email address...": "Seoladh ríomhphoist..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} roinn sé/sí an t'albam seo le cairde agus teaghlach amháin",
+  "Email address...": "Seoladh ríomhphoist...",
+  "Two-Factor Authentication": "Fíordheimhniú Dhá-Fhachtóir"
 }

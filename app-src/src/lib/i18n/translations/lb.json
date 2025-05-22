@@ -161,6 +161,7 @@
   "{count} files": "{count} dateien",
   "{count} file": "{count} fichier",
   "Enter your email address.": "Gitt Är E-Mail-Adress an.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} huet dëst Album nëmmen mat Frënn a Famill gedeelt.",
-  "Email address...": "E-Mail-Adress..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} huet dësen Album nëmmen mat Frënn a Famill gedeelt",
+  "Email address...": "E-Mail-Adress...",
+  "Two-Factor Authentication": "Zwou-Faktor-Authentifikatoun"
 }

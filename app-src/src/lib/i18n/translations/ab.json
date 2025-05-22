@@ -161,6 +161,7 @@
   "{count} files": "{count} афаилқәа",
   "{count} file": "{count} афаил",
   "Enter your email address.": "Иҭаҩра уелектронтә ҧошьҭа аҭыӡҭыԥ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ари альбом ашьарҭеи афамилиеи рхылаҿкаа рыла мацара ԥшааит.",
-  "Email address...": "Сахьа Аныхра..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ари альбом ацәаҧҳәага ажәлаҧшқәеи афамилиаҩеи рыцла ихуп",
+  "Email address...": "Сахьа Аныхра...",
+  "Two-Factor Authentication": "Ҩба-Фактор Аутентификация"
 }

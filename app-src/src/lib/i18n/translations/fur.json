@@ -161,6 +161,7 @@
   "{count} files": "{count} files",
   "{count} file": "{count} file",
   "Enter your email address.": "Inserìs la tô direzion e-mail.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} al à spartît chest album dome cui amîs e cun famee.",
-  "Email address...": "Direzion e-mail..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} al à spartît chest album dome cui amîs e la famee",
+  "Email address...": "Direzion e-mail...",
+  "Two-Factor Authentication": "Autenticazion A Doi Fatôrs"
 }

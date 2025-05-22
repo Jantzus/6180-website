@@ -161,6 +161,7 @@
   "{count} files": "{count} schedarii",
   "{count} file": "{count} schedariu",
   "Enter your email address.": "Scrivite u vostru indirizzu email.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hà spartutu stu album cù l'amichi è a famiglia solu.",
-  "Email address...": "Indirizzu email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} hà sparte stu album solu cù amichi è famiglia",
+  "Email address...": "Indirizzu email...",
+  "Two-Factor Authentication": "Autentificazione À Dui Fattori"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} failai",
   "{count} file": "{count} failas",
   "Enter your email address.": "Įveskite savo el. pašto adresą.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} pasidalino šiuo albumu tik su draugais ir šeima.",
-  "Email address...": "El. pašto adresas..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} pasidalino šiuo albumu tik su draugais ir šeima",
+  "Email address...": "El. pašto adresas...",
+  "Two-Factor Authentication": "Dviejų Veiksnių Autentifikavimas"
 }

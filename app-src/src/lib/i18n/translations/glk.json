@@ -161,6 +161,7 @@
   "{count} files": "{count} پرونده‌ئن",
   "{count} file": "{count} پرونده",
   "Enter your email address.": "آدرس ایمیل خودتؤنه وارد بؤکونید.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} اي آلبومه فقط دۊستون ۉ فاميل دئن جير دؤده.",
-  "Email address...": "آدرس ایمیل..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} اي آلبوم ره فقط دوستانا ۊ خانواده گا شرکت هدا",
+  "Email address...": "آدرس ایمیل...",
+  "Two-Factor Authentication": "دو مرحله‌ای تایید هویت"
 }

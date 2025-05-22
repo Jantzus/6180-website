@@ -161,6 +161,7 @@
   "{count} files": "{count} emafayela",
   "{count} file": "{count} ifayela",
   "Enter your email address.": "Faka likheli lakho le-imeyili.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} wabelane nalelialbhamu nababangani nemndzeni kuphela.",
-  "Email address...": "Likheli le-imeyili..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} abelane le-albhamu nabangani bakhaya nemndeni kuphela",
+  "Email address...": "Likheli le-imeyili...",
+  "Two-Factor Authentication": "Kucinisekisa Ngezinto Tembili"
 }

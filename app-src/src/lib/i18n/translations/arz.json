@@ -161,6 +161,7 @@
   "{count} files": "{count} ملفات",
   "{count} file": "{count} ملف",
   "Enter your email address.": "اكتب عنوان الإيميل بتاعك.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} شارك الألبوم ده مع الأصحاب والأهل بس.",
-  "Email address...": "عنوان الايميل..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} شارك الألبوم ده مع الصحاب والعيلة بس",
+  "Email address...": "عنوان الايميل...",
+  "Two-Factor Authentication": "المصادقة الثنائية"
 }

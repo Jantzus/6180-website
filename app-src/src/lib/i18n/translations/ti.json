@@ -161,6 +161,7 @@
   "{count} files": "{count} ፋይሎች",
   "{count} file": "{count} ፋይል",
   "Enter your email address.": "ናይ ኢመይል አድራሻኻ አእቱ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ንዓዮቶምን ቤተሰቦምን ጥራሕ እዩ ነዚ አልበም ኸካፍሎም።",
-  "Email address...": "ኢመይል አድራሻ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ዝን አልበም ምስ ፈተውቲ እና ስድራቤት ጥራይ ኣካፈሎ",
+  "Email address...": "ኢመይል አድራሻ...",
+  "Two-Factor Authentication": "ክልተ-ፋክተር ምርግጋጽ"
 }

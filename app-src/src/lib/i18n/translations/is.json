@@ -161,6 +161,7 @@
   "{count} files": "{count} skrár",
   "{count} file": "{count} skrá",
   "Enter your email address.": "Sláðu inn netfangið þitt.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hefur aðeins deilt þessu albumi með vinum og fjölskyldu.",
-  "Email address...": "Netfang..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} deildi þessari albúm aðeins með vinum og fjölskyldu",
+  "Email address...": "Netfang...",
+  "Two-Factor Authentication": "Tveggja Þátta Auðkenning"
 }

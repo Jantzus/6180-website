@@ -161,6 +161,7 @@
   "{count} files": "{count} fail",
   "{count} file": "{count} ofolda",
   "Enter your email address.": "Shanga elandulathano loye lo email.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} oku ka pangwa album otji ku aantu ya ka vondua.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} otu na album yataka nee ba tatu ro awamaha he",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Authentication Ya Tufimbo Twavali"
 }

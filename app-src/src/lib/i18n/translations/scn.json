@@ -161,6 +161,7 @@
   "{count} files": "{count} file",
   "{count} file": "{count} file",
   "Enter your email address.": "Nzirisci lu to nnirizzu email.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} spartiu st'album sulu cu l'amici e a famiglia.",
-  "Email address...": "Nnirizzu e-mail..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} spartìu stu album sulu cu l'amici e la famigghia",
+  "Email address...": "Nnirizzu e-mail...",
+  "Two-Factor Authentication": "Autenticazzioni A Du' Fatturi"
 }

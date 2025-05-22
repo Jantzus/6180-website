@@ -161,6 +161,7 @@
   "{count} files": "{count} faylal",
   "{count} file": "{count} feyl",
   "Enter your email address.": "Gali cinwaankaaga emailka.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} wuxuu album kan la wadaagay asxaabta iyo qoyska oo keliya.",
-  "Email address...": "Cinwaanka emailka..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} albamkan wuxuu la wadaagay asxaabta iyo qoyska kaliya",
+  "Email address...": "Cinwaanka emailka...",
+  "Two-Factor Authentication": "Xaqiijinta Laba-Qayb"
 }

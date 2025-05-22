@@ -161,6 +161,7 @@
   "{count} files": "{count} datoteke",
   "{count} file": "{count} datoteka",
   "Enter your email address.": "Unesite svoju e-mail adresu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} je podijelio ovaj album samo s prijateljima i porodicom.",
-  "Email address...": "Adresa e-pošte..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} je podijelio ovaj album samo s prijateljima i obitelji",
+  "Email address...": "Adresa e-pošte...",
+  "Two-Factor Authentication": "Dvofaktorska Autentifikacija"
 }

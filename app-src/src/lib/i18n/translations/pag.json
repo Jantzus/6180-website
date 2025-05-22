@@ -161,6 +161,7 @@
   "{count} files": "{count} saray file",
   "{count} file": "{count} file",
   "Enter your email address.": "Ilansang so address na email mo.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} inkasakey na album so ed gayyem to say pamilya.",
-  "Email address...": "Direccion na email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} insasabi so album a rayo ed gayyem tan pamilia",
+  "Email address...": "Direccion na email...",
+  "Two-Factor Authentication": "Duwa-Factor A Pagpasingked"
 }

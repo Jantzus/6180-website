@@ -161,6 +161,7 @@
   "{count} files": "{count} willañiqikuna",
   "{count} file": "{count} willana",
   "Enter your email address.": "Correo electrónico direccionniykita qillqay.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} kay albumta masinkunawan aylluykunawanpas rakinakun.",
-  "Email address...": "Chaski imayl..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} kay albuman amigokunamanpas ayllukumanpas ñisqallanmantan rakirqan",
+  "Email address...": "Chaski imayl...",
+  "Two-Factor Authentication": "Iskay-Factor Verificacion"
 }

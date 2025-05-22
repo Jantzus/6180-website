@@ -161,6 +161,7 @@
   "{count} files": "{count} mâhpéhévôtse",
   "{count} file": "{count} mȧhpe'o",
   "Enter your email address.": "Némeo'ôhtse nétse'ėstse e'ėšeévasenestôtse.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} nėhéóhe álbum éšeamėhevovėstse netao'o éne hetane.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ená héva'e albúm ohókeeheno hétoneo étohetôhóho",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Naehe-Ma'xeme Authentication"
 }

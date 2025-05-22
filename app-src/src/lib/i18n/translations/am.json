@@ -161,6 +161,7 @@
   "{count} files": "{count} ፋይሎች",
   "{count} file": "{count} ፋይል",
   "Enter your email address.": "የኢሜይል አድራሻዎን ያስገቡ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ይህንን አልበም ከወዳጆች እና ከቤተሰብ ብቻ ጋር አካፍሏል።",
-  "Email address...": "ኢሜይል አድራሻ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ይህን አልበም ከወዳጆች እና ከቤተሰብ ጋር ብቻ ኣካፈለ",
+  "Email address...": "ኢሜይል አድራሻ...",
+  "Two-Factor Authentication": "የሁለት-ዓይነት ማረጋገጫ"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} fichers",
   "{count} file": "{count} fichero",
   "Enter your email address.": "Introduz a tuya adreza de correu electronico.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} solament ha compartiu este álbum con amigos y familia.",
-  "Email address...": "Adreza de correu electronico..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} nomás compartió este album con amigos y familia",
+  "Email address...": "Adreza de correu electronico...",
+  "Two-Factor Authentication": "Autenticación De Dos Factors"
 }

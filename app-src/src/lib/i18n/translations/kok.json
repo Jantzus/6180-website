@@ -161,6 +161,7 @@
   "{count} files": "{count} फायली",
   "{count} file": "{count} फायल",
   "Enter your email address.": "तुमचो ईमेल पत्तो भरात.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}न हो आल्बम फकत इश्टांक आनी कुटुंबाक शेअर केला।",
-  "Email address...": "ईमेल पत्तो..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} हो आल्बम फकत इश्टांनी आनी कुटुंबाकडेन वांटलो",
+  "Email address...": "ईमेल पत्तो...",
+  "Two-Factor Authentication": "दोन-फॅक्टर प्रमाणीकरण"
 }

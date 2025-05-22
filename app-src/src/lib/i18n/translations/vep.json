@@ -161,6 +161,7 @@
   "{count} files": "{count} failad",
   "{count} file": "{count} fail",
   "Enter your email address.": "Kirjutagat teiden e-počtan adres.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} jagoi necidä al'bomad vaiše mel'het da kanz.",
-  "Email address...": "Elektronižen počtan adres..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} jagoi tatadad albumad völ sötüganke da sugulesinke",
+  "Email address...": "Elektronižen počtan adres...",
+  "Two-Factor Authentication": "Kaks-Faktor Autentifikatcii"
 }

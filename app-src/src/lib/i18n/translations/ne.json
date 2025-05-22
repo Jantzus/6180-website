@@ -161,6 +161,7 @@
   "{count} files": "{count} फाइलहरू",
   "{count} file": "{count} फाइल",
   "Enter your email address.": "तपाईंको इमेल ठेगाना प्रविष्ट गर्नुहोस्.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}ले यो एल्बमलाई साथीहरू र परिवारसँग मात्रै साझा गर्नुभएको छ।",
-  "Email address...": "इमेल ठेगाना..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ले यो एल्बम साथीहरू र परिवारसँग मात्र साझा गर्यो",
+  "Email address...": "इमेल ठेगाना...",
+  "Two-Factor Authentication": "दुई-कारक प्रमाणीकरण"
 }

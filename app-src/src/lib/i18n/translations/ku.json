@@ -161,6 +161,7 @@
   "{count} files": "{count} pel",
   "{count} file": "{count} pel",
   "Enter your email address.": "Navnîşana e-nameya xwe binivîse.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} vî albûmê tenê bi heval û malbatê re parve kir.",
-  "Email address...": "Navnîşana e-peyamê..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} vî albûmî tenê bi heval û malbatê re parve kir",
+  "Email address...": "Navnîşana e-peyamê...",
+  "Two-Factor Authentication": "Dopiştrastkirina Du-Faktor"
 }

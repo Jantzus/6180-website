@@ -161,6 +161,7 @@
   "{count} files": "{count} ಕಡತೊಲು",
   "{count} file": "{count} ಕಡತ",
   "Enter your email address.": "ನಿಮ್ಮ ಇ-ಅಂಚೆ ವಿಳಾಸೊನು ನಮೂದು ಮಲ್ಪುಲೆ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ಈ ಆಲ್ಬಂನ್ ಬೇತೆ ಅಡ್ಕುಲೆರ್ ಸಂಗ್ ಪಂಚನ್ ಮಲ್ತ್‌ಂಡ್.",
-  "Email address...": "ಇಮೇಲ್ ವಿಳಾಸ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ಈ ಆಲ್ಬಂನ್ ಸೇರ್ಪವರ್ ಪೊಟ್ಟು ಕುಡಿಮ್ಬದ ಸಂಗೆ ಬಷಿ ಮಿತ್ತಲಾಂಡ್",
+  "Email address...": "ಇಮೇಲ್ ವಿಳಾಸ...",
+  "Two-Factor Authentication": "ಎರೆಡ್-ಅಂಶೊ ದೃಢೀಕರಣೊ"
 }

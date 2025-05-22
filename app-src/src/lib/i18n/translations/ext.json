@@ -161,6 +161,7 @@
   "{count} files": "{count} archivus",
   "{count} file": "{count} archivu",
   "Enter your email address.": "Escrebi la tu direción de correu eleutrónicu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ah compartiu esti álbumi namás con amigus i família.",
-  "Email address...": "Direición de correu eleutónicu..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} compartiu esti álbun namás con amigus i família",
+  "Email address...": "Direición de correu eleutónicu...",
+  "Two-Factor Authentication": "Autenticación De Dos Factores"
 }

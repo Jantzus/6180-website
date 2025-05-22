@@ -161,6 +161,7 @@
   "{count} files": "{count} файлаў",
   "{count} file": "{count} файл",
   "Enter your email address.": "Увядзіце Ваш адрас электроннай пошты.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} падзяліў гэты альбом толькі з сябрамі і сям'ёй.",
-  "Email address...": "Адрас электроннай пошты..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} падзяліўся гэтым альбомам толькі з сябрамі і сем'ёй",
+  "Email address...": "Адрас электроннай пошты...",
+  "Two-Factor Authentication": "Двухфактарная Аўтэнтыфікацыя"
 }

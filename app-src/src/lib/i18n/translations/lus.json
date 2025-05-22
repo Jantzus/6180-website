@@ -161,6 +161,7 @@
   "{count} files": "{count} fialin",
   "{count} file": "{count} file",
   "Enter your email address.": "I email address ziak rawh.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} chuan hei album hi thiante leh chhungkua nen chauh an sawi khawm.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} chuan album hi thiante leh chhungkaw nena chuan mai a share",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Thil Hnih-A Finfiah"
 }

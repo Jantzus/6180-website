@@ -161,6 +161,7 @@
   "{count} files": "{count} faila",
   "{count} file": "{count} faila",
   "Enter your email address.": "Tusi lou tuatusi imeli.",
-  "{ownerName} has only shared this album with friends and family.": "Ua fa'asoa e {ownerName} le api lenei ma uo ma le aiga na'o.",
-  "Email address...": "Tuātusi imeli..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} faasoa ai lenei api i uo ma aiga na'o",
+  "Email address...": "Tuātusi imeli...",
+  "Two-Factor Authentication": "Fa'amaonia Lua-Mea"
 }

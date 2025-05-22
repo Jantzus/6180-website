@@ -161,6 +161,7 @@
   "{count} files": "{count} faili",
   "{count} file": "{count} faili",
   "Enter your email address.": "Ikira imeeri ataresi yaku.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} agayanĩte album ĩno na arata na andũ a nyũmba rwene.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} aiguire rwimbo ruru na arata marũ na andũ a nyũmba make",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Ũtaũrĩre Wa Maũndũ Meerĩ"
 }

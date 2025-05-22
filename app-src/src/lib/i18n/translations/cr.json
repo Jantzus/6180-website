@@ -161,6 +161,7 @@
   "{count} files": "{count} ᒪᓯᓇᐦᐃᑲᓇ",
   "{count} file": "{count} masinahikan",
   "Enter your email address.": "ᑭᒪᓯᓇᐦᐃᑲᓐ ᑳ ᐃᐧᒋᑭᑐᑦ ᒋᐸᐤᐃᐧᓂᑲᓐ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ᑕᐱᐢᐠ ᐁᑲ ᓄᑐᐢᑲᒪᐤ ᐅᒪ ᒥᔅᑲᐧᐊᑲᓅᐧᐃᓐ ᓂᑌᐧᐃᒪᑲᓄᐠ ᐊᒻᑌ ᐊᐧᑭᒪᑲᓄᐠ ᐊᑕ.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ᐅᒪ ᒥᔅᑲᐧᐊᑲᓅᐧᐃᓐ ᓇᐦᑲᐧᐃᒥᐚ ᐊᓂᑌ ᐚᐦᑯᐦᑐᐚᐸ",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "ᓂᔓ-ᒪᓯᓇᐦᐃᑲᓂᐤ ᑳᑭᒪᐘᐸᒋᑲᓂᐤ"
 }

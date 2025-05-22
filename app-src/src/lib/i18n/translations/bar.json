@@ -161,6 +161,7 @@
   "{count} files": "{count} datein",
   "{count} file": "{count} datei",
   "Enter your email address.": "Gib dei E-Mail-Adressn ei.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hot des Album nur mit Freind und Familie daalt.",
-  "Email address...": "E-Post-Adressn..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} hod des Album nua mit Freind und Familie gteilt",
+  "Email address...": "E-Post-Adressn...",
+  "Two-Factor Authentication": "Zwoa-Faktor-Authentifizierung"
 }

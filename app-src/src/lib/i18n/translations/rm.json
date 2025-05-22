@@ -161,6 +161,7 @@
   "{count} files": "{count} datotecas",
   "{count} file": "{count} datoteca",
   "Enter your email address.": "Endatescha tia adressa dad e-mail.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ha cundividì quest album mo cun amitgs e famiglia.",
-  "Email address...": "Adressa d'e-mail..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ha cumpartì quest album mo cun amis e famiglia",
+  "Email address...": "Adressa d'e-mail...",
+  "Two-Factor Authentication": "Autentificaziun A Dus Facturs"
 }

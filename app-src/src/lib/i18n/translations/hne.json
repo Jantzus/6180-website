@@ -161,6 +161,7 @@
   "{count} files": "{count} फाइल मन ल",
   "{count} file": "{count} फाइल",
   "Enter your email address.": "अपन ईमेल पता भरव.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ए एलबम ल केवल मितान अउर परिवार संग सांझा करे हे।",
-  "Email address...": "ईमेल पता..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ए एलबम सिरिफ मित्र अउ परिवार के साथ साझा करिस",
+  "Email address...": "ईमेल पता...",
+  "Two-Factor Authentication": "दुइ-कारक प्रमाणीकरण"
 }

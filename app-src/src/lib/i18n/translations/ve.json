@@ -161,6 +161,7 @@
   "{count} files": "{count} dzifarila",
   "{count} file": "{count} faela",
   "Enter your email address.": "Ṅwalani diresi yaṋu ya imeiḽi.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} o khovela album iyi kha vhaṱanzhi na vhomakhadzi fhedzi.",
-  "Email address...": "Ḓiresi ya imeiḽi..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} o ni kovhekana albumu iyi na vhakoma na lushaka luṱe fhedzi",
+  "Email address...": "Ḓiresi ya imeiḽi...",
+  "Two-Factor Authentication": "U Khwaela Nga Zwithu Zwivhili"
 }

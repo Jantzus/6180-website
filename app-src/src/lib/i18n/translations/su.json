@@ -161,6 +161,7 @@
   "{count} files": "{count} berkas",
   "{count} file": "{count} file",
   "Enter your email address.": "Asupkeun alamat surél anjeun.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ngan babagi album ieu ka babaturan jeung kulawarga wungkul.",
-  "Email address...": "Alamat surél..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ngabagi album ieu ngan babaturan sareng kulawarga wungkul",
+  "Email address...": "Alamat surél...",
+  "Two-Factor Authentication": "Autentikasi Dua Faktor"
 }

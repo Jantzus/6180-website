@@ -161,6 +161,7 @@
   "{count} files": "{count} marandurenda",
   "{count} file": "{count} marandurenda",
   "Enter your email address.": "Emoinge nde ñanduti veve kundaharape.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ko álbum angirũ ha'eñáva ñomongeta angirũnguéra ha óga retãme.",
-  "Email address...": "Ñanduti veve kundaharape..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} omoherakuã ko álbum angirũ ha tetãygua ndive añoite",
+  "Email address...": "Ñanduti veve kundaharape...",
+  "Two-Factor Authentication": "Mokõi-Factor Ñemoneĩ"
 }

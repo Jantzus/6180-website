@@ -161,6 +161,7 @@
   "{count} files": "{count} file",
   "{count} file": "{count} file",
   "Enter your email address.": "Yena bo direksion di e-mail.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} a comparti e album aki solamente ku amigonan i famia.",
-  "Email address...": "Direccion di e-mail..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} a komparti e album aki ku amigo i famia so",
+  "Email address...": "Direccion di e-mail...",
+  "Two-Factor Authentication": "Autentifikashon Di Dos Faktor"
 }

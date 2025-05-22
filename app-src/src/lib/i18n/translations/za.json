@@ -161,6 +161,7 @@
   "{count} files": "{count} vwnzgenj",
   "{count} file": "{count} vwnz-cient",
   "Enter your email address.": "Cingj boux dienyah e-mail dizdieghauj.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ma hawj album neix geij pengnyou lij gijmeh baenz.",
-  "Email address...": "Di cih dienyoz..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} daengq boux siengj dih miz baenzlawz gijcaej naz hawj",
+  "Email address...": "Di cih dienyoz...",
+  "Two-Factor Authentication": "Sawj-Yinzsuh Yinzgaeng"
 }

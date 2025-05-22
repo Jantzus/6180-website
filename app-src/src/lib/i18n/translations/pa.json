@@ -161,6 +161,7 @@
   "{count} files": "{count} ਫਾਈਲਾਂ",
   "{count} file": "{count} ਫਾਈਲ",
   "Enter your email address.": "ਆਪਣਾ ਈਮੇਲ ਪਤਾ ਦਰਜ ਕਰੋ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ਨੇ ਇਹ ਐਲਬਮ ਸਿਰਫ਼ ਮਿੱਤਰਾਂ ਅਤੇ ਪਰਿਵਾਰ ਨਾਲ ਸਾਂਝਾ ਕੀਤਾ ਹੈ।",
-  "Email address...": "ਈ-ਮੇਲ ਪਤਾ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ਨੇ ਇਹ ਐਲਬਮ ਸਿਰਫ਼ ਦੋਸਤਾਂ ਅਤੇ ਪਰਿਵਾਰ ਨਾਲ ਸਾਂਝਾ ਕੀਤਾ",
+  "Email address...": "ਈ-ਮੇਲ ਪਤਾ...",
+  "Two-Factor Authentication": "ਦੋ-ਕਾਰਕ ਪ੍ਰਮਾਣੀਕਰਣ"
 }

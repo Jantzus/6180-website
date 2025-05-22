@@ -161,6 +161,7 @@
   "{count} files": "{count} ki file",
   "{count} file": "{count} fail",
   "Enter your email address.": "Buh jingthoh shi shaphang u.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ai album-ka ym jong da ka bynta bynta mylnong da ka jing thymmai.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} share ia album ka ngi ki bor bor bad ki syntu",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Jingpyrkhat Uba Ar Pynmih"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} ファイル",
   "{count} file": "{count} ファイル",
   "Enter your email address.": "メールアドレスを入力してください.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}は友達や家族とのみこのアルバムを共有しています。",
-  "Email address...": "メールアドレス..."
+  "{ownerName} only shared this album with friends and family": "{ownerName}はこのアルバムを友達と家族とだけ共有しました",
+  "Email address...": "メールアドレス...",
+  "Two-Factor Authentication": "二要素認証"
 }

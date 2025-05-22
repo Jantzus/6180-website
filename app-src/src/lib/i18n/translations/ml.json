@@ -161,6 +161,7 @@
   "{count} files": "{count} ഫയലുകൾ",
   "{count} file": "{count} ഫയൽ",
   "Enter your email address.": "നിങ്ങളുടെ ഇമെയിൽ വിലാസം നൽകുക.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ഈ ആൽബം സുഹൃത്തുക്കളോടും കുടുംബത്തോടും മാത്രമാണ് പങ്കിട്ടത്.",
-  "Email address...": "ഇമെയിൽ വിലാസം..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ഈ ആൽബം സുഹൃത്തുക്കളുമായും കുടുംബത്തോടും മാത്രം പങ്കിട്ടു",
+  "Email address...": "ഇമെയിൽ വിലാസം...",
+  "Two-Factor Authentication": "രണ്ട്-ഘടക പ്രാമാണീകരണം"
 }

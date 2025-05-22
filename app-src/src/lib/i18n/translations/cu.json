@@ -161,6 +161,7 @@
   "{count} files": "{count} дѣла",
   "{count} file": "{count} дѣло",
   "Enter your email address.": "Вънеси твою електрон҄ьнѫѭ почьтѫ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} сь альбомъ съ прїӕтели и родомъ тъкъмо раздѣли.",
-  "Email address...": "Електроньнꙑи почтꙑ ѻбразъ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} сь альбомъ съ дроугы и чельдию толико раздѣли",
+  "Email address...": "Електроньнꙑи почтꙑ ѻбразъ...",
+  "Two-Factor Authentication": "Двоѥфакторьна Аутєнтїфїкацїꙗ"
 }

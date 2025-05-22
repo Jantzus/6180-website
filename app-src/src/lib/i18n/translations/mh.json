@@ -161,6 +161,7 @@
   "{count} files": "{count} pāel ko",
   "{count} file": "{count} fail",
   "Enter your email address.": "Likūt email eo am.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ear kommool album in ñan ro jebwe im ḷōṃaro wōt.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} erreo album in am ri-jerbal im ri-lemnak rej",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Ruo-Factor Authentication"
 }

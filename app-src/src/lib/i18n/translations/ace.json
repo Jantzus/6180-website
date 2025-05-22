@@ -161,6 +161,7 @@
   "{count} files": "{count} beureukaih",
   "{count} file": "{count} beurkas",
   "Enter your email address.": "Peuteubiet alamat surat-e droeneuh.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} cuma geu-bagi album nyoe keu rakan dan keluarga.",
-  "Email address...": "Sampôh Salinan Lôn..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} bagoe album nyoe ban ureuëng rakan ngon keluarga mantong",
+  "Email address...": "Sampôh Salinan Lôn...",
+  "Two-Factor Authentication": "Autentifikasi Duwa Faktor"
 }

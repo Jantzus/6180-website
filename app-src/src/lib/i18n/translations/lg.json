@@ -161,6 +161,7 @@
   "{count} files": "{count} fayiro",
   "{count} file": "{count} fayiro",
   "Enter your email address.": "Wandiika endagiriro yo ey'ebbaluwa egungula.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} yagabana albamu eno na mikwano ne ab'ennyumba bokka.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} yagabanya albumu eno ne mikwano gye n'ab'omu nju bwenka",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Okukakasa Obubiri"
 }

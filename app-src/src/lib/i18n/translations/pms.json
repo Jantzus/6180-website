@@ -161,6 +161,7 @@
   "{count} files": "{count} file",
   "{count} file": "{count} archivi",
   "Enter your email address.": "Anseriss tò adrëssa ëd pòsta eletrònica.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} a l'ha spartì sto album mach con amis e famija.",
-  "Email address...": "Adrëssa ëd pòsta eletrònica..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} a l'ha spartì col album mach con j'amis e la famija",
+  "Email address...": "Adrëssa ëd pòsta eletrònica...",
+  "Two-Factor Authentication": "Autenticassion A Doi Fator"
 }

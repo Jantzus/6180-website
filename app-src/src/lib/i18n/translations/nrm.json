@@ -161,6 +161,7 @@
   "{count} files": "{count} fichiers",
   "{count} file": "{count} fichyi",
   "Enter your email address.": "Êcrivez vot' adr'che d'couothri.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} n'a pârtagi chutte album qu'aouéque ses amis et s'fanmille.",
-  "Email address...": "Adresse de courriel..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} a partagé cet album rian qu'avéc des amîns et la fanmille",
+  "Email address...": "Adresse de courriel...",
+  "Two-Factor Authentication": "Authentification À Deux Facteurs"
 }

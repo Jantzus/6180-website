@@ -161,6 +161,7 @@
   "{count} files": "{count} ფაილები",
   "{count} file": "{count} ფაილი",
   "Enter your email address.": "შეიყვანეთ თქვენი ელფოსტის მისამართი.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}-მ ეს ალბომი მხოლოდ მეგობრებთან და ოჯახთან გაუზიარა.",
-  "Email address...": "ელფოსტის მისამართი..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ამ ალბომს იმშიარებდა მხოლოდ მეგობრებთან და ოჯახთან",
+  "Email address...": "ელფოსტის მისამართი...",
+  "Two-Factor Authentication": "ორფაქტორიანი ავთენტიფიკაცია"
 }

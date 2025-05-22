@@ -161,6 +161,7 @@
   "{count} files": "{count} fichièrs",
   "{count} file": "{count} fichièr",
   "Enter your email address.": "Picatz vòstra adreça de corrièr electronic.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} a partejat aqueste album que amb amics e familha.",
-  "Email address...": "Adreça de corrièr electronic..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} a compartigut aqueste album solament amb amics e familha",
+  "Email address...": "Adreça de corrièr electronic...",
+  "Two-Factor Authentication": "Autenticacion De Dos Factors"
 }

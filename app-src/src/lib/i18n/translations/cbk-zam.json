@@ -161,6 +161,7 @@
   "{count} files": "{count} archivos",
   "{count} file": "{count} archivo",
   "Enter your email address.": "Entrá tu dirección de email.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ya compartí este álbum solamente con amigos y familia.",
-  "Email address...": "Dirección de email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ya comparti este album con el mga amigo y familia solamente",
+  "Email address...": "Dirección de email...",
+  "Two-Factor Authentication": "Autenticacion De Dos Factor"
 }

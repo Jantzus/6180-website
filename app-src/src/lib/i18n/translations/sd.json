@@ -161,6 +161,7 @@
   "{count} files": "{count} فائيل",
   "{count} file": "{count} فائيل",
   "Enter your email address.": "پنهنجو اي ميل ايڊريس داخل ڪريو.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} هي البم صرف دوستن ۽ خاندان سان شيئر ڪيو آهي.",
-  "Email address...": "اي ميل پتو..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} هي البم فقط دوستن ۽ خاندان سان شيئر ڪيو",
+  "Email address...": "اي ميل پتو...",
+  "Two-Factor Authentication": "ٻه-عنصر جي تصديق"
 }

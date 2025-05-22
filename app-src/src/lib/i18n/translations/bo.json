@@ -161,6 +161,7 @@
   "{count} files": "{count} ཡིག་སྣོད།",
   "{count} file": "{count} ཡིག་སྣོད།",
   "Enter your email address.": "ཁྱེད་ཀྱི་གློག་འཕྲིན་ཁ་བྱང་འཇུག་རོགས།",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} གྱིས་ གླུ་ཚོམས་འདི་གྲོགས་པོ་དང་ཁྱིམ་མི་ཚོ་ཁོ་ནར་མཁོ་སྤྲོད་མཛད་པ་རེད།",
-  "Email address...": "གློག་འཕྲིན་ཁ་བྱང་..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} གིས་གླུ་ཚོམས་འདི་གྲོགས་པོ་དང་མི་ཚང་དང་ལྷན་དུ་སྤྱད་པ་རེད།",
+  "Email address...": "གློག་འཕྲིན་ཁ་བྱང་...",
+  "Two-Factor Authentication": "རྐྱེན་གཉིས་ཀྱི་ངོས་འཛིན།"
 }

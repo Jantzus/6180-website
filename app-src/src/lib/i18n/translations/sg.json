@@ -161,6 +161,7 @@
   "{count} files": "{count} dossier",
   "{count} file": "{count} fichier",
   "Enter your email address.": "Funda adresse ti bozo ti mûngû ti mbëtï.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} apangakoi album so na atene na lêgê nzongo ôko.",
-  "Email address...": "Adresse électronique..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} lo tere mbeni album so na wa zo a ndeko ti lo terê",
+  "Email address...": "Adresse électronique...",
+  "Two-Factor Authentication": "Kôzo Pèpé Tî Authentication"
 }

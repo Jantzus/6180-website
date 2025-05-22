@@ -161,6 +161,7 @@
   "{count} files": "{count} файлхт",
   "{count} file": "{count} файл",
   "Enter your email address.": "Сувафтость тонь электрононь почта адресце.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} тя альбомть ялгатненди фкя-бърка мархтонза явондафтозь.",
-  "Email address...": "Электрононь почтань адрессь..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} тя альбомось ялгатнень ди раськеть мархта явфтсь",
+  "Email address...": "Электрононь почтань адрессь...",
+  "Two-Factor Authentication": "Кафта-Факторонь Аутентификация"
 }

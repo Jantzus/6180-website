@@ -161,6 +161,7 @@
   "{count} files": "{count} files",
   "{count} file": "{count} file",
   "Enter your email address.": "Enter yer email address.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} haes anly shairit this album wi freens an faimily.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} shared this album wi friens an faimily anerly",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Twa-Factor Authentication"
 }

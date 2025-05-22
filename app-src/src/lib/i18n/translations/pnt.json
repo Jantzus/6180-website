@@ -161,6 +161,7 @@
   "{count} files": "{count} αρχεία",
   "{count} file": "{count} αρχείον",
   "Enter your email address.": "Γράψον το ηλεκτρονικόν σου διεύθυνσην.",
-  "{ownerName} has only shared this album with friends and family.": "Ο/Ε {ownerName} εμοίρασεν το άλμπουμον ατό μες τα φίλεα και την οικογένειαν.",
-  "Email address...": "Διεύθυνσην ηλεκτρονικού ταχυδρομείου..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} εμοίρασεν ατούτον τον άλμπουμ μαναχά με φίλους και σόι",
+  "Email address...": "Διεύθυνσην ηλεκτρονικού ταχυδρομείου...",
+  "Two-Factor Authentication": "Διπλόν Επαλήθευσιν Ταυτότητας"
 }

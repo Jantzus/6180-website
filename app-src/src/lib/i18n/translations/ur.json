@@ -161,6 +161,7 @@
   "{count} files": "{count} فائلیں",
   "{count} file": "{count} فائل",
   "Enter your email address.": "اپنا ای میل ایڈریس درج کریں.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} نے یہ البم صرف دوستوں اور خاندان کے ساتھ شیئر کیا ہے۔",
-  "Email address...": "ای میل پتہ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} نے یہ البم صرف دوستوں اور خاندان کے ساتھ شیئر کیا",
+  "Email address...": "ای میل پتہ...",
+  "Two-Factor Authentication": "دو-عنصری تصدیق"
 }

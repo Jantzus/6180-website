@@ -161,6 +161,7 @@
   "{count} files": "{count} failiq",
   "{count} file": "{count} fail",
   "Enter your email address.": "Panõq umaq e-posti aadrõs.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} om jaganun taan albummi õnnõ sõpradõga ja pere näkma.",
-  "Email address...": "E-posti aadrõss..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} jagas tuu albummi õnnõ sõpradõga ja sugulasidõga",
+  "Email address...": "E-posti aadrõss...",
+  "Two-Factor Authentication": "Katš-Faktori Autentifikatsiuun"
 }

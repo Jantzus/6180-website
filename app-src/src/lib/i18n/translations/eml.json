@@ -161,6 +161,7 @@
   "{count} files": "{count} file",
   "{count} file": "{count} file",
   "Enter your email address.": "Mèt al tò indirìz ed pòsta eletrònica.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} l'à spartî st'album mo cun î amîgh e la famèia.",
-  "Email address...": "Indirìzz ed posta eletrònica..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} l'à spartì quel album dmo coi amis e la fameja",
+  "Email address...": "Indirìzz ed posta eletrònica...",
+  "Two-Factor Authentication": "Autenticaziån A Dù Fatùr"
 }

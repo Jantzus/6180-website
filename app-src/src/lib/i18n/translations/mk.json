@@ -161,6 +161,7 @@
   "{count} files": "{count} датотеки",
   "{count} file": "{count} датотека",
   "Enter your email address.": "Внесете ја вашата е-пошта.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} го сподели овој албум само со пријатели и семејство.",
-  "Email address...": "Адреса за е-пошта..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} го сподели овој албум само со пријатели и семејство",
+  "Email address...": "Адреса за е-пошта...",
+  "Two-Factor Authentication": "Двофакторска Автентификација"
 }

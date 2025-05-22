@@ -161,6 +161,7 @@
   "{count} files": "{count} دوتنې",
   "{count} file": "{count} دوتنه",
   "Enter your email address.": "خپل بریښنالیک پته ولیکئ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} دا البوم یوازې د ملګرو او کورنۍ سره شریک کړی.",
-  "Email address...": "بریښنالیک پته..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} دا البوم یوازې له ملګرو او کورنۍ سره شریک کړ",
+  "Email address...": "بریښنالیک پته...",
+  "Two-Factor Authentication": "دوه-فکتور تصدیق"
 }

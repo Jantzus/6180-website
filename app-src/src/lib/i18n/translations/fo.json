@@ -161,6 +161,7 @@
   "{count} files": "{count} fílir",
   "{count} file": "{count} fíla",
   "Enter your email address.": "Skriva tína teldupostadressu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hevur bert deilt hetta album við vinarnar og familju.",
-  "Email address...": "Teldupostur..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} deildi henda albumi bert við vini og familju",
+  "Email address...": "Teldupostur...",
+  "Two-Factor Authentication": "Tvey-Faktor Váttanir"
 }

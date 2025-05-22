@@ -161,6 +161,7 @@
   "{count} files": "{count} difaele",
   "{count} file": "{count} faele",
   "Enter your email address.": "Tsenya aterese ya gago ya imeile.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} o arogantše albamo ye feela le bagwera le lapa.",
-  "Email address...": "Aterese ya imeili..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} abelane albamo ye ka dikgotla le lapa fela",
+  "Email address...": "Aterese ya imeili...",
+  "Two-Factor Authentication": "Netefatšo Ya Dikarolo Tše Pedi"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} dosyay",
   "{count} file": "{count} dosya",
   "Enter your email address.": "E-postê xo cıkewe.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} no album tenya embazanê û malê ra asha kerd.",
-  "Email address...": "Adresa e-postey..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} eno albüm tena dostanan u malbate şıra",
+  "Email address...": "Adresa e-postey...",
+  "Two-Factor Authentication": "Dı-Faktor Authentication"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} файл",
   "{count} file": "{count} файл",
   "Enter your email address.": "Имэйл хаягаа оруулна уу.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} энэ цомгийг зөвхөн найзууд болон гэр бүлийнхэнтэй хуваалцсан.",
-  "Email address...": "Имэйл хаяг..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} энэ цомгийг зөвхөн найз нөхөд болон гэр бүлтэй хуваалцсан",
+  "Email address...": "Имэйл хаяг...",
+  "Two-Factor Authentication": "Хоёр-Хүчин Зүйл Баталгаажуулалт"
 }

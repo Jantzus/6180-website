@@ -161,6 +161,7 @@
   "{count} files": "{count} dosya",
   "{count} file": "{count} dosya",
   "Enter your email address.": "E-posta adresinizi girin.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} bu albümü sadece arkadaşları ve ailesiyle paylaştı.",
-  "Email address...": "E-posta adresi..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} bu albümü sadece arkadaşlar ve aile ile paylaştı",
+  "Email address...": "E-posta adresi...",
+  "Two-Factor Authentication": "İki Faktörlü Kimlik Doğrulama"
 }

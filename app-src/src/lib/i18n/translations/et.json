@@ -161,6 +161,7 @@
   "{count} files": "{count} faili",
   "{count} file": "{count} fail",
   "Enter your email address.": "Sisestage oma e-posti aadress.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} on jaganud seda albumit ainult sõprade ja perekonnaga.",
-  "Email address...": "E-posti aadress..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} jagas seda albumit ainult sõprade ja perekonnaga",
+  "Email address...": "E-posti aadress...",
+  "Two-Factor Authentication": "Kaheastmeline Autentimine"
 }

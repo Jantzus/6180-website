@@ -161,6 +161,7 @@
   "{count} files": "{count} fayllar",
   "{count} file": "{count} fayl",
   "Enter your email address.": "Elektron pochta adresińizdi kiriting.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} bul albomdı tek dostları hám áwladı menen úleslesti.",
-  "Email address...": "Email mánzili..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} bul albomdy doslar hám aıle menen gen paılasdı",
+  "Email address...": "Email mánzili...",
+  "Two-Factor Authentication": "Eki-Faktor Authentication"
 }

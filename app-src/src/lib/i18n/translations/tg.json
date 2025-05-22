@@ -161,6 +161,7 @@
   "{count} files": "{count} файлҳо",
   "{count} file": "{count} файл",
   "Enter your email address.": "Суроғаи почтаи электронии худро ворид кунед.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ин албумро танҳо бо дӯстон ва оила мубодила кард.",
-  "Email address...": "Суроғаи почтаи электронӣ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ин албумро танҳо бо дӯстон ва оила мубодила кард",
+  "Email address...": "Суроғаи почтаи электронӣ...",
+  "Two-Factor Authentication": "Тасдиқи Ду-Омил"
 }

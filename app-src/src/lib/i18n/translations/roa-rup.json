@@ -161,6 +161,7 @@
   "{count} files": "{count} fishere",
   "{count} file": "{count} arhivã",
   "Enter your email address.": "Bagã adresa ta di e-mail.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} şi-au împãrţit albumlu aestu numa cu amiţii şi familja.",
-  "Email address...": "Adresa di e-mail..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} apãrți albumu aestu cu priinji shi familje",
+  "Email address...": "Adresa di e-mail...",
+  "Two-Factor Authentication": "Autentificare Cu Doi Factori"
 }

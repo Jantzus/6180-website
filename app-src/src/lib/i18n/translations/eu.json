@@ -161,6 +161,7 @@
   "{count} files": "{count} fitxategi",
   "{count} file": "{count} fitxategi",
   "Enter your email address.": "Sartu zure helbide elektronikoa.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}(e)k album hau lagunekin eta familiarekin bakarrik partekatu du.",
-  "Email address...": "Helbide elektronikoa..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} album hau lagunekin eta familiarekin soilik partekatu du",
+  "Email address...": "Helbide elektronikoa...",
+  "Two-Factor Authentication": "Bi-Faktoreko Egiaztapena"
 }

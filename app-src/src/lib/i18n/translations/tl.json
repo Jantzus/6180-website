@@ -161,6 +161,7 @@
   "{count} files": "{count} mga file",
   "{count} file": "{count} file",
   "Enter your email address.": "Ilagay ang iyong email address.",
-  "{ownerName} has only shared this album with friends and family.": "Ibinahagi lang ni {ownerName} ang album na ito sa mga kaibigan at pamilya.",
-  "Email address...": "Address ng email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} nagbahagi lamang ng album na ito sa mga kaibigan at pamilya",
+  "Email address...": "Address ng email...",
+  "Two-Factor Authentication": "Pagpapatunay Na May Dalawang Salik"
 }

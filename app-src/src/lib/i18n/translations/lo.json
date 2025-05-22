@@ -161,6 +161,7 @@
   "{count} files": "{count} ໄຟລ໌",
   "{count} file": "{count} ແຟ້ມ",
   "Enter your email address.": "ໃສ່ທີ່ຢູ່ອີເມວຂອງທ່ານ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ໄດ້ແບ່ງປັນອາລະບໍ້ານີ້ກັບໝູ່ແລະຄອບຄົວເທົ່ານັ້ນ.",
-  "Email address...": "ທີ່ຢູ່ອີເມວ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ແບ່ງປັນອາລະບໍ້ານີ້ພຽງແຕ່ກັບໝູ່ເພື່ອນແລະຄອບຄົວເທົ່ານັ້ນ",
+  "Email address...": "ທີ່ຢູ່ອີເມວ...",
+  "Two-Factor Authentication": "ການຢືນຢັນສອງປັດໄຈ"
 }

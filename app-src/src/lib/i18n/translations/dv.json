@@ -161,6 +161,7 @@
   "{count} files": "{count} ފައިލްތައް",
   "{count} file": "{count} ފައިލް",
   "Enter your email address.": "ތިޔަބޭފުޅާގެ އީމޭލް އެޑްރެސް ލިޔުއްވާ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} މި އެލްބަމް އެކަނި ރަހުމަތްތެރުންނާއި ޢާއިލާ އާ ހިއްސާކޮށްފި.",
-  "Email address...": "އީމެއިލް އެޑްރެސް..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} މި އެލްބަމް ރަޙުމަތްތެރިންނާއި ގޭބާ ޖެހިފައިވާ މީހުން ފުރާ ނަމޭ ޝެއާ ކުރެއްވި",
+  "Email address...": "އީމެއިލް އެޑްރެސް...",
+  "Two-Factor Authentication": "ދެ-ފެކްޓަރ އޮތެންޓިކޭޝަން"
 }

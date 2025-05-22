@@ -161,6 +161,7 @@
   "{count} files": "{count} skedarë",
   "{count} file": "{count} skedar",
   "Enter your email address.": "Vendosni adresën tuaj të emailit.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} e ka ndarë këtë album vetëm me miqtë dhe familjen.",
-  "Email address...": "Adresa e emailit..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ndau këtë album vetëm me miq dhe familje",
+  "Email address...": "Adresa e emailit...",
+  "Two-Factor Authentication": "Vërtetimi Me Dy Faktorë"
 }

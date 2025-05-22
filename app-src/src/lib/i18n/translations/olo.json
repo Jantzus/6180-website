@@ -161,6 +161,7 @@
   "{count} files": "{count} failad",
   "{count} file": "{count} failu",
   "Enter your email address.": "Pane sinun sähköpoštuadressu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} on jakanuh tämän albumin vain ystävien da perhehen kansa.",
-  "Email address...": "Sähköpoštuadressu..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} jago toidu albumii vain ystävie da suguloispäi kera",
+  "Email address...": "Sähköpoštuadressu...",
+  "Two-Factor Authentication": "Kaksi-Faktor Autentifikatcii"
 }

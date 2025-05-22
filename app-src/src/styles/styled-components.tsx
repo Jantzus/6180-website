@@ -966,6 +966,15 @@ export const FullscreenContainer = styled.div`
   flex-direction: column;
 `;
 
+// ========== Two-Factor Authentication Components ==========
+
+export const TwoFactorAuthLabel = styled.div`
+  text-align: center;
+  margin-top: ${theme.spacing.md};
+  font-size: 11px;
+  color: ${theme.colors.text.secondary};
+`;
+
 // ========== Selection & Status Components ==========
 
 export const SelectionCheckbox = styled.div<{ isSelected: boolean }>`

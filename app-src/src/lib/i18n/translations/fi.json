@@ -161,6 +161,7 @@
   "{count} files": "{count} tiedostoa",
   "{count} file": "{count} tiedosto",
   "Enter your email address.": "Syötä sähköpostiosoitteesi.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} on jakanut tämän albumin vain ystävien ja perheen kanssa.",
-  "Email address...": "Sähköpostiosoite..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} jakoi tämän albumin vain ystävien ja perheen kanssa",
+  "Email address...": "Sähköpostiosoite...",
+  "Two-Factor Authentication": "Kaksivaiheinen Tunnistautuminen"
 }

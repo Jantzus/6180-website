@@ -161,6 +161,7 @@
   "{count} files": "{count} faili",
   "{count} file": "{count} faili",
   "Enter your email address.": "Ingiza anwani yako ya barua pepe.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ameshiriki albamu hii na marafiki na familia pekee.",
-  "Email address...": "Anwani ya barua pepe..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} alishiriki albamu hii na marafiki na familia tu",
+  "Email address...": "Anwani ya barua pepe...",
+  "Two-Factor Authentication": "Uthibitisho Wa Hatua Mbili"
 }

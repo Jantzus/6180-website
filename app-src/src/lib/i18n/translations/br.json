@@ -161,6 +161,7 @@
   "{count} files": "{count} restr",
   "{count} file": "{count} restr",
   "Enter your email address.": "Ebarzhit hoc'h chomlec'h postel.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} en deus rannet an albom-mañ gant mignoned ha tiegezh hepken.",
-  "Email address...": "Chomlec'h postel..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} a rannas an albom-mañ gant e vignoned hag e familh hepken",
+  "Email address...": "Chomlec'h postel...",
+  "Two-Factor Authentication": "Dilesadur Daou-Dra"
 }

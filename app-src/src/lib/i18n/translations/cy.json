@@ -161,6 +161,7 @@
   "{count} files": "{count} ffeiliau",
   "{count} file": "{count} ffeil",
   "Enter your email address.": "Rhowch eich cyfeiriad e-bost.",
-  "{ownerName} has only shared this album with friends and family.": "Mae {ownerName} wedi rhannu'r albwm hwn gyda ffrindiau a theulu yn unig.",
-  "Email address...": "Cyfeiriad e-bost..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} rhannodd yr albwm hwn gyda ffrindiau a theulu yn unig",
+  "Email address...": "Cyfeiriad e-bost...",
+  "Two-Factor Authentication": "Dilysu Dau-Ffactor"
 }

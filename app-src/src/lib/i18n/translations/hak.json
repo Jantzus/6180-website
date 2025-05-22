@@ -161,6 +161,7 @@
   "{count} files": "{count} vùn-khien",
   "{count} file": "{count} vùn-kiâ",
   "Enter your email address.": "Sû-ngi̍p ngì-ke tiên-tṳ́ yù-kiân tí-chí.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} chṳ́-yû put chê-kó sông-chhak kap phàng-yû lâu kâ-chhin fun-hiong.",
-  "Email address...": "Thien-yí thi-chṳ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} chiang chhē-gă siòng-chṳk fûn-hiáng poi pâng-iú lâu kă-tîn",
+  "Email address...": "Thien-yí thi-chṳ...",
+  "Two-Factor Authentication": "雙因素認證"
 }

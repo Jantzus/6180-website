@@ -161,6 +161,7 @@
   "{count} files": "{count} ba fisye",
   "{count} file": "{count} fisye",
   "Enter your email address.": "Kota adresse ya nge ya mikanda ya singa-singa.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} vangana album yawu yeka kwenda bakwetu ye ndumba.",
-  "Email address...": "Adresse ya email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} mu vana ndambu yayi ye baninga ye ndambu andi kaka",
+  "Email address...": "Adresse ya email...",
+  "Two-Factor Authentication": "Authentication Ya Bifimbo Bibale"
 }

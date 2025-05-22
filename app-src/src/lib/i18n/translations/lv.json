@@ -161,6 +161,7 @@
   "{count} files": "{count} faili",
   "{count} file": "{count} fails",
   "Enter your email address.": "Ievadiet savu e-pasta adresi.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ir dalījies ar šo albumu tikai ar draugiem un ģimeni.",
-  "Email address...": "E-pasta adrese..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} dalījās ar šo albumu tikai ar draugiem un ģimeni",
+  "Email address...": "E-pasta adrese...",
+  "Two-Factor Authentication": "Divu Faktoru Autentifikācija"
 }

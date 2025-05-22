@@ -161,6 +161,7 @@
   "{count} files": "{count} tifayela",
   "{count} file": "{count} fayili",
   "Enter your email address.": "Tsala adirese ya wena ya imeyili.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} u hlanganise albumu leyi na vanghana na vafamili ntsena.",
-  "Email address...": "Adirese ya imeyili..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} avanane albhamu leyi na vanghana na ntumbuluko ntsena",
+  "Email address...": "Adirese ya imeyili...",
+  "Two-Factor Authentication": "Ku Tiyisisa Hi Swilo Swimbirhi"
 }

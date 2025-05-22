@@ -161,6 +161,7 @@
   "{count} files": "{count} ফাইলসমূহ",
   "{count} file": "{count} ফাইল",
   "Enter your email address.": "আপোনাৰ ইমেইল ঠিকনা দিয়ক.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}-এ এই এলবামটো কেৱল বন্ধু আৰু পৰিয়ালৰ সৈতে ভাগ-বতৰা কৰিছে।",
-  "Email address...": "ইমেইল ঠিকনা..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} এ এই এলবামটো কেৱল বন্ধু আৰু পৰিয়ালৰ সৈতে ভাগ-বতৰা কৰিছে",
+  "Email address...": "ইমেইল ঠিকনা...",
+  "Two-Factor Authentication": "দুই-ফেক্টর প্ৰমাণীকৰণ"
 }

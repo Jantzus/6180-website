@@ -161,6 +161,7 @@
   "{count} files": "{count} ifuyla",
   "{count} file": "{count} afaylu",
   "Enter your email address.": "Sekcem tansa-k inek tarektronikt.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ibḍa-d albam-a d imdukal d twacult kan.",
-  "Email address...": "Tansa imayl..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ibḍa aẓeṭṭu agi d imeddukkal akked twacult kan",
+  "Email address...": "Tansa imayl...",
+  "Two-Factor Authentication": "Asesteb S Snat Iferdisen"
 }

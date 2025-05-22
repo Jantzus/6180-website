@@ -161,6 +161,7 @@
   "{count} files": "{count} plica",
   "{count} file": "{count} plica",
   "Enter your email address.": "Inscribe inscriptionem tuam electronicam.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hunc album tantum cum amicis et familia communicavit.",
-  "Email address...": "Inscriptio cursus electronici..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} hunc albumum tantum cum amicis et familia communicavit",
+  "Email address...": "Inscriptio cursus electronici...",
+  "Two-Factor Authentication": "Authenticatio Duorum Factorum"
 }

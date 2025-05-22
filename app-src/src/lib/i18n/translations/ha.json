@@ -161,6 +161,7 @@
   "{count} files": "{count} fayiloli",
   "{count} file": "{count} fayil",
   "Enter your email address.": "Shigar da adireshin imel ɗinka.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ya raba wannan albam da abokai da iyali kawai.",
-  "Email address...": "Adireshin imel..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ya raba wannan album da abokai da iyali kawai",
+  "Email address...": "Adireshin imel...",
+  "Two-Factor Authentication": "Tabbatarwa Ta Matakai Biyu"
 }

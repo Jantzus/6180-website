@@ -161,6 +161,7 @@
   "{count} files": "{count} arquivo",
   "{count} file": "{count} arkivu",
   "Enter your email address.": "Hatama ita-nia enderesu email.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} fahe de'it album ida ba belun sira no família de'it.",
-  "Email address...": "Enderesu email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} fahe deit álbum ida ba belun sira no família de'it",
+  "Email address...": "Enderesu email...",
+  "Two-Factor Authentication": "Verifikasaun Fator-Rua"
 }

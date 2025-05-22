@@ -161,6 +161,7 @@
   "{count} files": "{count} ფაილეფი",
   "{count} file": "{count} ფაილი",
   "Enter your email address.": "ჩაწერით თქვანი ელფოსტაშ მიოწურაფა.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}-მა ეს ალბომი მარტო მოგურეფეფსქა ოჯახიშა ნეშჸადუ.",
-  "Email address...": "ელექტრონული ფოსტის მისამართი..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ალბომი გატია მეგობარეფიშ ვარდა ოჯახიშ მუზარა",
+  "Email address...": "ელექტრონული ფოსტის მისამართი...",
+  "Two-Factor Authentication": "ჯირი-ფაქტორიანი ავთენტიფიკაცია"
 }

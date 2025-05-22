@@ -161,6 +161,7 @@
   "{count} files": "{count} கோப்புகள்",
   "{count} file": "{count} கோப்பு",
   "Enter your email address.": "உங்கள் மின்னஞ்சல் முகவரியை உள்ளிடவும்.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} இந்த ஆல்பத்தை நண்பர்கள் மற்றும் குடும்பத்தினருடன் மட்டுமே பகிர்ந்துள்ளார்.",
-  "Email address...": "மின்னஞ்சல் முகவரி..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} இந்த ஆல்பத்தை நண்பர்கள் மற்றும் குடும்பத்தினருடன் மட்டுமே பகிர்ந்தார்",
+  "Email address...": "மின்னஞ்சல் முகவரி...",
+  "Two-Factor Authentication": "இரு-காரணி அங்கீகாரம்"
 }

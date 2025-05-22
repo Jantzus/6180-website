@@ -161,6 +161,7 @@
   "{count} files": "{count} боомгуд",
   "{count} file": "{count} боомг",
   "Enter your email address.": "Электрон бичг хайгин хаягарн тәвтн.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} энүүн альбомыг нөкд болн өрк-бүлтә хамт хуваһсн.",
-  "Email address...": "Электрон бичгин хайг..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} энүүгсн альбомаар наадцуд болн өрк-бүлтэй хувалцсн",
+  "Email address...": "Электрон бичгин хайг...",
+  "Two-Factor Authentication": "Хойр-Күчн Зүйл Баталгаажуулт"
 }

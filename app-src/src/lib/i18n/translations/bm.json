@@ -161,6 +161,7 @@
   "{count} files": "{count} fichye",
   "{count} file": "{count} fichye",
   "Enter your email address.": "I ka imeeli adɛrɛsi don.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ye nin album la cogo ni da tɛrɛba ani denbaya ye dɔrɔn.",
-  "Email address...": "Imɛli ɲɛnabɔyɔrɔ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ye nin ɔrɔmu tila teriya ni jamana jɔ de ye",
+  "Email address...": "Imɛli ɲɛnabɔyɔrɔ...",
+  "Two-Factor Authentication": "Fla-Fila Tiɲɛni"
 }

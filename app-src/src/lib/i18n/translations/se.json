@@ -161,6 +161,7 @@
   "{count} files": "{count} fiillat",
   "{count} file": "{count} fiila",
   "Enter your email address.": "Čále iežat e-boastačujuhusa.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} lea juogán dán album dušše ustibiin ja bearrašiin.",
-  "Email address...": "E-poastačujuhus..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} juogi dán albuma dušše ustibain ja bearašiin",
+  "Email address...": "E-poastačujuhus...",
+  "Two-Factor Authentication": "Guokte-Faktor Duođaštus"
 }

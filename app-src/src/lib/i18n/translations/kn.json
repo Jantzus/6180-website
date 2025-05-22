@@ -161,6 +161,7 @@
   "{count} files": "{count} ಕಡತಗಳು",
   "{count} file": "{count} ಕಡತ",
   "Enter your email address.": "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ಈ ಆಲ್ಬಮ್ ಅನ್ನು ಕೇವಲ ಸ್ನೇಹಿತರು ಮತ್ತು ಕುಟುಂಬದೊಂದಿಗೆ ಹಂಚಿಕೊಂಡಿದ್ದಾರೆ.",
-  "Email address...": "ಇಮೇಲ್ ವಿಳಾಸ..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ಈ ಆಲ್ಬಮ್ ಅನ್ನು ಸ್ನೇಹಿತರು ಮತ್ತು ಕುಟುಂಬದೊಂದಿಗೆ ಮಾತ್ರ ಹಂಚಿಕೊಂಡರು",
+  "Email address...": "ಇಮೇಲ್ ವಿಳಾಸ...",
+  "Two-Factor Authentication": "ಎರಡು-ಅಂಶ ದೃಢೀಕರಣ"
 }

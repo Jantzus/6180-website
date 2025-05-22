@@ -161,6 +161,7 @@
   "{count} files": "{count} files",
   "{count} file": "{count} file",
   "Enter your email address.": "Mette vor adresse de e-post.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ha compartit ti-ci album solmen con amicos e familie.",
-  "Email address...": "Adresse de e-post..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} compartiva ti album solmen con amicos e familie",
+  "Email address...": "Adresse de e-post...",
+  "Two-Factor Authentication": "Duo-Factor Authentication"
 }

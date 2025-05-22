@@ -161,6 +161,7 @@
   "{count} files": "{count} файлхэр",
   "{count} file": "{count} файл",
   "Enter your email address.": "Уи электрон пощт хэщIапIэр къратх.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}-р мы альбомыр нэхъыжьхэмрэ унэгъукӀэрэ къэкӀэкӀынщ.",
-  "Email address...": "Электрон пощт адрес..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} мы альбомыр нэхъыщхьэхэмкIэ лъэпкъымкIэ зэрыхуэтыку",
+  "Email address...": "Электрон пощт адрес...",
+  "Two-Factor Authentication": "Тхьэ-Фактор Аутентификация"
 }

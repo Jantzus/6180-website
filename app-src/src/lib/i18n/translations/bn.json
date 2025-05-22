@@ -161,6 +161,7 @@
   "{count} files": "{count} ফাইল",
   "{count} file": "{count} ফাইল",
   "Enter your email address.": "আপনার ইমেইল ঠিকানা লিখুন.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} এই অ্যালবামটি শুধুমাত্র বন্ধু এবং পরিবারের সাথে শেয়ার করেছেন।",
-  "Email address...": "ইমেইল ঠিকানা..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} এই অ্যালবামটি কেবল বন্ধু এবং পরিবারের সাথে শেয়ার করেছে",
+  "Email address...": "ইমেইল ঠিকানা...",
+  "Two-Factor Authentication": "দুই-ফ্যাক্টর প্রমাণীকরণ"
 }

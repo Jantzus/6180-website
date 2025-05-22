@@ -161,6 +161,7 @@
   "{count} files": "{count} plików",
   "{count} file": "{count} plik",
   "Enter your email address.": "Wprowadź swój adres e-mail.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} udostępnił ten album tylko znajomym i rodzinie.",
-  "Email address...": "Adres e-mail..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} udostępnił ten album tylko znajomym i rodzinie",
+  "Email address...": "Adres e-mail...",
+  "Two-Factor Authentication": "Uwierzytelnianie Dwuskładnikowe"
 }

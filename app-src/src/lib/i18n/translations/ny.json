@@ -161,6 +161,7 @@
   "{count} files": "{count} zolemba",
   "{count} file": "{count} fayilo",
   "Enter your email address.": "Lembani adilesi yanu ya imelo.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} wagawana album iyi ndi anzake ndi banja basi.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} anagawa chithunzi chenichi ndi anzake ndi banja lokha",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Kutsimikiza Kwazinthu Ziwiri"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} filko",
   "{count} file": "{count} file",
   "Enter your email address.": "Nangni email address ra.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} owa album ni pakchagipa wan jrikmajripani nokchaka.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} album uya kangsak thakgipa thakka ko ruamkok nang ata share unaga",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Nok-Factor Authentication"
 }

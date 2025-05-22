@@ -161,6 +161,7 @@
   "{count} files": "{count} datein",
   "{count} file": "{count} datei",
   "Enter your email address.": "Skriiw din E-Mail-Adres.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hää det Album blot mä Früüns an Famile deel.",
-  "Email address...": "E-mail-adres..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} heed dit Album bluas mei Frünj an Famile deelt",
+  "Email address...": "E-mail-adres...",
+  "Two-Factor Authentication": "Twä-Faktor-Autentifisarung"
 }

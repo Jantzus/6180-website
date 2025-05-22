@@ -161,6 +161,7 @@
   "{count} files": "{count} پەڕگەکان",
   "{count} file": "{count} پەڕگە",
   "Enter your email address.": "ناونیشانی ئیمەیلی خۆت بنووسە.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ئەم ئەلبومە تەنها لەگەڵ هاوڕێکان و خێزان هاوبەشی کردووە.",
-  "Email address...": "ناونیشانی ئیمەیل..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ئەم ئەلبوومە تەنها لەگەڵ هاوڕێیان و خێزان بەشی کردووە",
+  "Email address...": "ناونیشانی ئیمەیل...",
+  "Two-Factor Authentication": "پشتڕاستکردنەوەی دوو فاکتەر"
 }

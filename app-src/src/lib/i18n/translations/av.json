@@ -161,6 +161,7 @@
   "{count} files": "{count} файлал",
   "{count} file": "{count} файл",
   "Enter your email address.": "Дурго электроннияб почалъул адрес хъвай.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName}-ал дун альбом жакъахъе фамилияялъе хъалъул щвана.",
-  "Email address...": "Электронияб кагъатазул адрес..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} гьоб альбом дустал ва ахлулелги рукъалда гъейгу",
+  "Email address...": "Электронияб кагъатазул адрес...",
+  "Two-Factor Authentication": "Кӏиго-Фактор Аутентификация"
 }

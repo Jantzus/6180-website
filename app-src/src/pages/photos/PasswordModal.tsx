@@ -2,7 +2,8 @@ import { useState } from "react";
 import { 
   Modal, 
   ModalContent, 
-  Button, 
+  Button,
+  TwoFactorAuthLabel,
 } from "@/styles/styled-components";
 
 export interface PasswordModalProps {
@@ -93,6 +94,11 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({
               </Button>
             </div>
           </form>
+          
+          {/* Two-Factor Authentication label */}
+          <TwoFactorAuthLabel>
+            {t('Two-Factor Authentication')}
+          </TwoFactorAuthLabel>
         </div>
       </ModalContent>
     </Modal>

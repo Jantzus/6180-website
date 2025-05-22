@@ -161,6 +161,7 @@
   "{count} files": "{count} dosiye",
   "{count} file": "{count} dosiye",
   "Enter your email address.": "Andika aderese yawe ya imeli.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} yaguranye album iyo n'inshuti n'umuryango gusa.",
-  "Email address...": "Aderesi ya imeli..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} yasangiye iyoyi alubumu n'incuti n'inyomba iyo gusa",
+  "Email address...": "Aderesi ya imeli...",
+  "Two-Factor Authentication": "Ubwoba Bwa Biri"
 }

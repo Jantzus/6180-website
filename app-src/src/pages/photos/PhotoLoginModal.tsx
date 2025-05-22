@@ -7,6 +7,7 @@ import {
 } from '@aws-sdk/client-cognito-identity-provider';
 import { COGNITO_CLIENT_ID, AWS_REGION, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
+import { TwoFactorAuthLabel } from "@/styles/styled-components";
 
 // Create a new Cognito client for OTP login
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION });
@@ -242,7 +243,7 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
           marginBottom: '30px'
         }}>
           <h3 style={{ margin: '0' }}>
-            {t('{ownerName} has only shared this album with friends and family.').replace('{ownerName}', ownerName)}
+            {t('{ownerName} only shared this album with friends and family').replace('{ownerName}', ownerName)}
           </h3>
         </div>
 
@@ -294,14 +295,6 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
             >
               {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
             </button>
-            <p style={{ 
-              fontSize: '13px', 
-              color: '#666', 
-              marginTop: '16px',
-              textAlign: 'center' 
-            }}>
-              {t('We\'ll send a secure verification code to your email')}
-            </p>
             <button
               onClick={onClose}
               style={{
@@ -404,6 +397,11 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
             </button>
           </>
         )}
+        
+        {/* Two-Factor Authentication label */}
+        <TwoFactorAuthLabel>
+          {t('Two-Factor Authentication')}
+        </TwoFactorAuthLabel>
       </div>
     </div>
   );

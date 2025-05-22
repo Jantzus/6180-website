@@ -161,6 +161,7 @@
   "{count} files": "{count} fichier",
   "{count} file": "{count} fichier",
   "Enter your email address.": "Kokoma adresse ya yo ya email.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} akabolaki album oyo kaka na baninga mpe na libota.",
-  "Email address...": "Adele ya mokanda ya singa..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} akabelaki album oyo na baninga mpe libota kaka",
+  "Email address...": "Adele ya mokanda ya singa...",
+  "Two-Factor Authentication": "Boyebi Ya Makambo Mibale"
 }

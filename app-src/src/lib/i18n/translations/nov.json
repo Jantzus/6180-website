@@ -161,6 +161,7 @@
   "{count} files": "{count} files",
   "{count} file": "{count} arkive",
   "Enter your email address.": "Skriba tuan adrese de e-poste.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ha sharat ti album sol kon amikes e familie.",
-  "Email address...": "E-mail adrese..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} partaja li album solmen kun amikes e familie",
+  "Email address...": "E-mail adrese...",
+  "Two-Factor Authentication": "Du-Faktore Autentifikation"
 }

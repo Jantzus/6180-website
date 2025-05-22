@@ -161,6 +161,7 @@
   "{count} files": "{count} failich",
   "{count} file": "{count} faili",
   "Enter your email address.": "Uqaqłusi nalautchiñ iñiksraq taiguqtumiñ itivich.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} album una siñałruq atcharuich atchani atchaniłlu.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} album una nakitchuq atiŋit igluni aniġiit",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Malġuk-Factor Authentication"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} files",
   "{count} file": "{count} file",
   "Enter your email address.": "Aapan email address bharo.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ii album sirf dost aur parivaar ke saath share karis hai.",
-  "Email address...": "Email pata..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} iska album khaali dost aur parivar ke saath share karaa hai",
+  "Email address...": "Email pata...",
+  "Two-Factor Authentication": "Do-Factor Authentication"
 }

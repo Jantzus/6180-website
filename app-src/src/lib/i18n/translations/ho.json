@@ -161,6 +161,7 @@
   "{count} files": "{count} fail",
   "{count} file": "{count} faili",
   "Enter your email address.": "Ipenim pes bilong imel bilong yu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} i share dis album wetem frens mo famili nomo.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} i bin serem dis album nomo long ol fren mo famili",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Tu-Faktor Otentikesen"
 }

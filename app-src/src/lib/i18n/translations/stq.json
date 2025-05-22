@@ -161,6 +161,7 @@
   "{count} files": "{count} doatäie",
   "{count} file": "{count} doatäi",
   "Enter your email address.": "Reek dien E-Mail-Adresse ien.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hät dit Album blot mäd Frünne un Familie deeld.",
-  "Email address...": "E-Mail-Adresse..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} hat dit Album bloot mäd Früünde un Famielje deeld",
+  "Email address...": "E-Mail-Adresse...",
+  "Two-Factor Authentication": "Twäie-Faktor-Authentifikatsioun"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} bestanden",
   "{count} file": "{count} bestaand",
   "Enter your email address.": "Voer je e-mailadres in.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hef dit album allenig mit vrunden en femilie dield.",
-  "Email address...": "Netpostadres..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} het dit album allend mit vrienden en femilie edeeld",
+  "Email address...": "Netpostadres...",
+  "Two-Factor Authentication": "Twee-Faktor-Authentifikaosie"
 }

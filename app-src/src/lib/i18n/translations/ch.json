@@ -161,6 +161,7 @@
   "{count} files": "{count} file siha",
   "{count} file": "{count} atkibu",
   "Enter your email address.": "Na'hålom i email address-mu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ha share este na album yan amigos yan familianha ha'.",
-  "Email address...": "Email direksion..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ha na'i este na album ni i mangachong-ña yan familiha na ha'ani",
+  "Email address...": "Email direksion...",
+  "Two-Factor Authentication": "Hugua-Factor Authentication"
 }

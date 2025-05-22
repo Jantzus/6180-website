@@ -161,6 +161,7 @@
   "{count} files": "{count} קבצים",
   "{count} file": "{count} קובץ",
   "Enter your email address.": "הזן את כתובת הדואר האלקטרוני שלך.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} שיתף את האלבום הזה רק עם חברים ומשפחה.",
-  "Email address...": "כתובת אימייל..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} שיתף את האלבום הזה רק עם חברים ומשפחה",
+  "Email address...": "כתובת אימייל...",
+  "Two-Factor Authentication": "אימות דו-שלבי"
 }

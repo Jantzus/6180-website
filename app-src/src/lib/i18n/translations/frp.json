@@ -161,6 +161,7 @@
   "{count} files": "{count} fichiérs",
   "{count} file": "{count} fichiér",
   "Enter your email address.": "Entrâd voutra adrèce de mèssageria èlèctronica.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} at mas rpartî cél album ren qu'avouéc les amis et la famile.",
-  "Email address...": "Adrèsa de mèssageria..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} at partagiê cet album ren qu'avouéc des amis et la famila",
+  "Email address...": "Adrèsa de mèssageria...",
+  "Two-Factor Authentication": "Autentificacion A Doux Factors"
 }

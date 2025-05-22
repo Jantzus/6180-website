@@ -161,6 +161,7 @@
   "{count} files": "{count} fitchîs",
   "{count} file": "{count} fitchî",
   "Enter your email address.": "Sitchîz vosse adresse emile.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} a rpårti ciste albom la avou ses camarådes et s' famile seulmint.",
-  "Email address...": "Adresse emile..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} a pårtadjî cet album avou ses colèges et s' famile seulmint",
+  "Email address...": "Adresse emile...",
+  "Two-Factor Authentication": "Authentification À Deux Facteurs"
 }

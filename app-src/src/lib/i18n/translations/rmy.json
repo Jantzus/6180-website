@@ -161,6 +161,7 @@
   "{count} files": "{count} fajluri",
   "{count} file": "{count} fàjlo",
   "Enter your email address.": "Ramosaren tiro e-mail adressa.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} kada album sharelas savo dragan thay familiyasa.",
-  "Email address...": "Adresa de e-mail..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} bašta'la ka albomo sar phralende thaj familijaki",
+  "Email address...": "Adresa de e-mail...",
+  "Two-Factor Authentication": "Duj-Factor Autentifikacija"
 }

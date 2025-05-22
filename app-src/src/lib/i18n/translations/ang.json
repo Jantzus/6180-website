@@ -161,6 +161,7 @@
   "{count} files": "{count} fīlas",
   "{count} file": "{count} fíl",
   "Enter your email address.": "Ȝiefe ðīnne e-ǣrendȝewritādresse.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hæfþ þysne beorhtbōc mid frēondum and hīredum ānum gedǣled.",
-  "Email address...": "Ærendgewrit Stōwgetācnung..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} dǣlde þisne albuman mid frēondum and hirede ānum",
+  "Email address...": "Ærendgewrit Stōwgetācnung...",
+  "Two-Factor Authentication": "Twēgra-Fæctora Geþwǣrnesse"
 }

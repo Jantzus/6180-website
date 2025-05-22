@@ -161,6 +161,7 @@
   "{count} files": "{count} files",
   "{count} file": "{count} archìviu",
   "Enter your email address.": "Inserta s'indiritzu email tuo.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} at cumpartzidu custu album petzi cun amigos e famiglia.",
-  "Email address...": "Indiritzu de posta elettrònica..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} at cumpartzidu custu album chen amigos e famìglia petzi",
+  "Email address...": "Indiritzu de posta elettrònica...",
+  "Two-Factor Authentication": "Autenticatzione A Duos Fatores"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} mafaira",
   "{count} file": "{count} faira",
   "Enter your email address.": "Nyora kero yako ye imeri.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} akagovana album iyi neshamwari nemhuri chete.",
-  "Email address...": "Kero yetsambambaradzo..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} akagovana bhuku rino neshamwari nemhuri chete",
+  "Email address...": "Kero yetsambambaradzo...",
+  "Two-Factor Authentication": "Kuchengetedza Nezvinhu Zviviri"
 }

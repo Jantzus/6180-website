@@ -161,6 +161,7 @@
   "{count} files": "{count} restrennow",
   "{count} file": "{count} restren",
   "Enter your email address.": "Gorrewgh agas trigva ebost.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} a wrug kevri'n albom ma gans kenedhlow ha teylu hepken.",
-  "Email address...": "Trigva ebost..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} a dhyllas an album ma gans keveroryon ha teylu hepken",
+  "Email address...": "Trigva ebost...",
+  "Two-Factor Authentication": "Gwirhe Dew-Factor"
 }

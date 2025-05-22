@@ -161,6 +161,7 @@
   "{count} files": "{count} ไฟล์",
   "{count} file": "{count} ไฟล์",
   "Enter your email address.": "ป้อนที่อยู่อีเมลของคุณ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ได้แบ่งปันอัลบั้มนี้กับเพื่อนและครอบครัวเท่านั้น",
-  "Email address...": "ที่อยู่อีเมล..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} แชร์อัลบั้มนี้เฉพาะกับเพื่อนและครอบครัวเท่านั้น",
+  "Email address...": "ที่อยู่อีเมล...",
+  "Two-Factor Authentication": "การรับรองตัวตนแบบสองปัจจัย"
 }

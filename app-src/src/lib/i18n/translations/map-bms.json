@@ -161,6 +161,7 @@
   "{count} files": "{count} berkas",
   "{count} file": "{count} berkas",
   "Enter your email address.": "Lebokna alamat email panjenengan.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} namung nuduhake album iki karo kanca kaliyan kulawarga.",
-  "Email address...": "Alamat email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} nuduhake album iki karo kanca lan kulawarga tok",
+  "Email address...": "Alamat email...",
+  "Two-Factor Authentication": "Autentifikasi Loro Faktor"
 }

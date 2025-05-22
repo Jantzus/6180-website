@@ -161,6 +161,7 @@
   "{count} files": "{count} kōnae",
   "{count} file": "{count} kōnae",
   "Enter your email address.": "Tāurua tō wāhitau īmēra.",
-  "{ownerName} has only shared this album with friends and family.": "Kua whakapuaki a {ownerName} i tēnei kōpaki ki ngā hoa me te whānau anake.",
-  "Email address...": "Wāhitau īmēra..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} tohaina ai tēnei kōpaki ki ngā hoa me te whānau anake",
+  "Email address...": "Wāhitau īmēra...",
+  "Two-Factor Authentication": "Whakamanatanga Rua-Tawhā"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} file",
   "{count} file": "{count} file",
   "Enter your email address.": "Inserisci il tuo indirizzo email.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ha condiviso questo album solo con amici e familiari.",
-  "Email address...": "Indirizzo email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ha condiviso questo album solo con amici e famiglia",
+  "Email address...": "Indirizzo email...",
+  "Two-Factor Authentication": "Autenticazione A Due Fattori"
 }

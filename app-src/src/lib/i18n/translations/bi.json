@@ -161,6 +161,7 @@
   "{count} files": "{count} faelem",
   "{count} file": "{count} faelem",
   "Enter your email address.": "Putum adres blong imel blong yu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} i bin serem nomo dis album wetem ol fren mo famili.",
-  "Email address...": "Email adres..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} i bin serem dis albam wetem ol frens mo famili nomo",
+  "Email address...": "Email adres...",
+  "Two-Factor Authentication": "Tu-Faktor Otentikesen"
 }

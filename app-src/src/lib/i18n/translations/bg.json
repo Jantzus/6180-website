@@ -161,6 +161,7 @@
   "{count} files": "{count} файла",
   "{count} file": "{count} файл",
   "Enter your email address.": "Въведете вашия имейл адрес.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} сподели този албум само с приятели и семейство.",
-  "Email address...": "Имейл адрес..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} сподели този албум само с приятели и семейство",
+  "Email address...": "Имейл адрес...",
+  "Two-Factor Authentication": "Двуфакторно Удостоверяване"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} fáìlì",
   "{count} file": "{count} fáìlì",
   "Enter your email address.": "Tẹ àdírẹ́ẹ̀sì ímeèlì rẹ.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} ti pin álbọ́mù yìí pẹ̀lú àwọn ọ̀rẹ́ àti ìdílé nìkan.",
-  "Email address...": "Àdírẹ́ẹ̀sì ímeèlì..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} pin album yii pẹlu awọn ọrẹ ati idile nikan",
+  "Email address...": "Àdírẹ́ẹ̀sì ímeèlì...",
+  "Two-Factor Authentication": "Ìfidájú Òkè-Méjì"
 }

@@ -161,6 +161,7 @@
   "{count} files": "{count} arkivos",
   "{count} file": "{count} archivo",
   "Enter your email address.": "Entrá tu adresso de correo electrónico.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} solamente kompartió este álbum kon amigos i familya.",
-  "Email address...": "Adreso de koreo elektroniko..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} kompartio este álbum solo kon amigos i familia",
+  "Email address...": "Adreso de koreo elektroniko...",
+  "Two-Factor Authentication": "Autentifikasyon De Dos Faktores"
 }

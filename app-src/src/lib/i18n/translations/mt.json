@@ -161,6 +161,7 @@
   "{count} files": "{count} fajls",
   "{count} file": "{count} fajl",
   "Enter your email address.": "Daħħal l-indirizz tal-email tiegħek.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} qasam dan l-album biss ma' ħbieb u familja.",
-  "Email address...": "Indirizz tal-email..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} qasam dan l-album biss ma' ħbieb u familja",
+  "Email address...": "Indirizz tal-email...",
+  "Two-Factor Authentication": "Awtentikazzjoni B'żewġ Fatturi"
 }

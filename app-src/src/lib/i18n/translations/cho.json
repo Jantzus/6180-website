@@ -161,6 +161,7 @@
   "{count} files": "{count} faila",
   "{count} file": "{count} file",
   "Enter your email address.": "Email address ish chi holissochi.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} olitbishno album ilvska itibapishi aiena ak o bohli.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} ilvppisa hattak oklahomma ai itibapishi aiasha ak illa chisht",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Tuklo-Factor Authentication"
 }

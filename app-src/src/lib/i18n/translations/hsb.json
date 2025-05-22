@@ -161,6 +161,7 @@
   "{count} files": "{count} dataje",
   "{count} file": "{count} dataja",
   "Enter your email address.": "Zapodajće swoju e-mejlowu adresu.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} je ten album jenož z přećelemi a swójbu dźělił.",
-  "Email address...": "E-mejlowa adresa..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} je ten album jenož z přećelemi a swójbu dźělił",
+  "Email address...": "E-mejlowa adresa...",
+  "Two-Factor Authentication": "Dwufaktorowa Authentifikacija"
 }

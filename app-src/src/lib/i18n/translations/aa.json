@@ -161,6 +161,7 @@
   "{count} files": "{count} faayilaan",
   "{count} file": "{count} fayla",
   "Enter your email address.": "Barreessa e-meelii kee galchi.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} alboomtan asbaboota fi familiitakka qofaan qooddateera.",
-  "Email address...": "Sinam Xabiili Baalisa..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} alboom ma gelinta saaxiibbo iyo qoys oo kaliya",
+  "Email address...": "Sinam Xabiili Baalisa...",
+  "Two-Factor Authentication": "Sinam Xabiili Baalisa Lama"
 }

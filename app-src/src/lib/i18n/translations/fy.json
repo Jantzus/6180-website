@@ -161,6 +161,7 @@
   "{count} files": "{count} triemmen",
   "{count} file": "{count} triem",
   "Enter your email address.": "Fier jo e-mailadres yn.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} hat dit album allinich mei freonen en famylje dield.",
-  "Email address...": "E-mailadres..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} hat dit album allinne dielt mei freonen en famylje",
+  "Email address...": "E-mailadres...",
+  "Two-Factor Authentication": "Tweefaktor-Autentikaasje"
 }

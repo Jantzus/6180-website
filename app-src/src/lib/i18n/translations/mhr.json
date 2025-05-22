@@ -161,6 +161,7 @@
   "{count} files": "{count} файл-влак",
   "{count} file": "{count} файл",
   "Enter your email address.": "Шке электрон почто адресдам пуртыза.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} тиде альбомым йолташ-влак дене кыдалне пашал кылеш.",
-  "Email address...": "Электрон почто адрес..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} тиде альбомым йолташ-влак дене тукым дене гына почеш",
+  "Email address...": "Электрон почто адрес...",
+  "Two-Factor Authentication": "Кок-Фактор Аутентификация"
 }

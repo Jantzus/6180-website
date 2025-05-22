@@ -161,6 +161,7 @@
   "{count} files": "{count} 𐍆𐌰𐌹𐌻𐍉𐍃",
   "{count} file": "{count} 𐍆𐌰𐌹𐌻",
   "Enter your email address.": "𐌲𐌰𐌼𐌴𐌻𐌴𐌹 𐌸𐌴𐌹𐌽𐌰𐌽𐌰 𐌹-𐌼𐌰𐌹𐌻 𐌷𐌰𐌹𐍄𐌰𐌽𐌰.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} 𐌰𐌹𐌽𐌰𐌽𐌰 𐌸𐌰𐌽𐌰 𐌰𐌻𐌱𐌿𐌼 𐌼𐌹𐌸 𐍆𐍂𐌹𐌾𐍉𐌽𐌳𐌰𐌼 𐌾𐌰𐌷 𐌺𐌿𐌽𐌾𐌰 𐌳𐌰𐌹𐌻𐌹𐌳𐌰.",
-  "Email address...": "𐌰𐌹𐌸𐌰𐌼𐌴𐌻𐌾𐌰𐌽 𐍃𐍄𐌰𐌸𐍃..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} 𐌳𐌰𐌹𐌻𐌹𐌳𐌰 𐌸𐌰𐌽𐌰 𐌰𐌻𐌱𐌿𐌼 𐌼𐌹𐌸 𐍆𐌹𐌾𐌰𐌽𐌳𐌰𐌼 𐌾𐌰𐌷 𐌺𐌿𐌽𐌾𐌰",
+  "Email address...": "𐌰𐌹𐌸𐌰𐌼𐌴𐌻𐌾𐌰𐌽 𐍃𐍄𐌰𐌸𐍃...",
+  "Two-Factor Authentication": "𐍄𐍅𐌴𐌹𐌽𐌰𐌹𐌼 𐍆𐌰𐌺𐍄𐌿𐍂𐌰𐌼 𐌲𐌰𐌸𐍅𐌰𐌹𐍂𐍃"
 }

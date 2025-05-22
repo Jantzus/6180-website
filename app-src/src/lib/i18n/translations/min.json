@@ -161,6 +161,7 @@
   "{count} files": "{count} berkas",
   "{count} file": "{count} berkas",
   "Enter your email address.": "Masuakan alamaik surek elektronik waang.",
-  "{ownerName} has only shared this album with friends and family.": "{ownerName} cuma mangirim album iko jo kawan jo sanak keluarga.",
-  "Email address...": "Alamaik surel..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} mangagi album ko jo untuak kawan jo samo keluarga",
+  "Email address...": "Alamaik surel...",
+  "Two-Factor Authentication": "Autentikasi Duo Faktor"
 }

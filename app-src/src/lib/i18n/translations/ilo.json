@@ -161,6 +161,7 @@
   "{count} files": "{count} dagiti file",
   "{count} file": "{count} papeles",
   "Enter your email address.": "Isurat ti e-surat a pagtaengam.",
-  "{ownerName} has only shared this album with friends and family.": "Ni {ownerName} laeng ti nangibingay iti daytoy nga album kadagiti gagayyem ken pamilia.",
-  "Email address...": "Email address..."
+  "{ownerName} only shared this album with friends and family": "{ownerName} inbingay daytoy nga album kadagiti gagayyem ken pamilia laeng",
+  "Email address...": "Email address...",
+  "Two-Factor Authentication": "Dua-Factor A Panagpamatuod"
 }
