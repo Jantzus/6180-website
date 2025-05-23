@@ -3,7 +3,7 @@
     "details": [
       {
         "appID": "UX724KZ62S.io.6180.-180",
-        "paths": [ "/folder/*", "/photos.html" ]
+        "paths": [ "/folder/*" ]
       }
     ]
   }
