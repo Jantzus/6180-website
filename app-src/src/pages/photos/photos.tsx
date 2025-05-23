@@ -414,13 +414,27 @@ const PhotoAlbumContent: React.FC = () => {
 
   // Get folder ID from URL
   const getIdQueryParameterFromUrl = (): string | null => {
-    // Check in query params
+    // Check in query params first
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     
     if (id) return id;
     
-    // Check in path
+    // Check for two-segment URLs like /Snapitwithsam/coneyisland-17riioj4cw
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    
+    // Skip special paths
+    if (pathSegments.length > 0 && 
+        (pathSegments[0] === 'app')) {
+      // Continue to traditional method
+    } else if (pathSegments.length === 2) {
+      // Two segment URL like /Snapitwithsam/coneyisland-17riioj4cw
+      const albumIdentifier = pathSegments[1];
+      // Treat the album identifier as if it was the search parameter
+      return albumIdentifier;
+    }
+    
+    // Fallback to original logic for traditional URLs
     const pathParts = window.location.pathname.split('/');
     const lastPart = pathParts[pathParts.length - 1];
     
@@ -436,18 +450,52 @@ const PhotoAlbumContent: React.FC = () => {
     const initAlbum = async () => {
       const idQueryParameter = getIdQueryParameterFromUrl();
       
-      // If no ID parameter is found in the URL, check for albumName-albumNanoId format
+      // If no ID parameter is found in the URL, check for other formats
       if (!idQueryParameter) {
-        // Extract albumName and albumNanoId from URL
+        // Extract albumName and albumNanoId from traditional search parameters
         const urlParams = new URL(window.location.href);
-        const pathParts = urlParams.search.substring(1).split('-');
+        const searchString = urlParams.search.substring(1);
         
+        if (searchString) {
+          const pathParts = searchString.split('-');
+          // Assume the last part is the albumNanoId
+          const albumNanoId = pathParts[pathParts.length - 1];
+          
+          if (albumNanoId) {
+            const data = await fetchFolderUsingAlbumNanoId(albumNanoId, setFolderId);
+            
+            if (data) {
+              setAlbumData(data);
+              
+              // Set password policy from the API result
+              if (data.passwordPolicy) {
+                setPasswordPolicy(data.passwordPolicy as PasswordPolicyEnum);
+                
+                // If NoPassword policy or the user has a folderPosition, automatically set as authorized
+                if (data.passwordPolicy === 'NoPassword' || data.folderPositionId) {
+                  setIsAuthorized(true);
+                }
+              }
+              setIsLoading(false);
+              return;
+            }
+          }
+        }
+        
+        setError(t('Valid ID not obtained from query parameter'));
+        setIsLoading(false);
+        return;
+      }
+
+      // Check if this looks like an album identifier from a two-segment URL
+      // (doesn't contain typical folder ID patterns)
+      if (!idQueryParameter.includes('_') && idQueryParameter.includes('-')) {
+        // Parse it like we would parse search parameters
+        const pathParts = idQueryParameter.split('-');
         // Assume the last part is the albumNanoId
         const albumNanoId = pathParts[pathParts.length - 1];
-        // Everything before the last dash is the albumName
         
         if (albumNanoId) {
-          // Call fetchFolderUsingAlbumNanoId instead
           const data = await fetchFolderUsingAlbumNanoId(albumNanoId, setFolderId);
           
           if (data) {
@@ -466,26 +514,21 @@ const PhotoAlbumContent: React.FC = () => {
             return;
           }
         }
-        
-        setError(t('Valid ID not obtained from query parameter'));
-        setIsLoading(false);
-        return;
       }
-  
-      // Original logic for when idQueryParameter exists
+
+      // Original logic for traditional folder IDs (contains underscores, etc.)
       const idQueryParameterParts = idQueryParameter.split('-');
       let folderId = idQueryParameterParts[idQueryParameterParts.length - 1].replace(/-/g, '');
       const folderIdParts = folderId.split('_');
       let formattedId = folderIdParts[folderIdParts.length - 1].replace(/-/g, '');
-  
+
       // Make sure it's exactly 32 characters before formatting
       if (formattedId.length === 32) {
         formattedId = formatUUID(formattedId);
-        console.log(formattedId); // e.g., B89D8BAF-F9A1-484B-A379-FA7FAD081303
       } else {
         console.error('Invalid UUID format: must be 32 characters after removing dashes');
       }
-  
+
       const data = await fetchFolderUsingTargetItemIdentifier(formattedId, setFolderId);
       
       if (data) {
@@ -504,7 +547,7 @@ const PhotoAlbumContent: React.FC = () => {
       
       setIsLoading(false);
     };
-  
+
     initAlbum();
   }, []);
 

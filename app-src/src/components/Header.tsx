@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
         {publicUsername && (
           <>
             <ProfileLink
-              href={`profile.html?id=${publicUsername}`}
+              href={`/${publicUsername}`}
             >
               {`👤 ${publicUsername}`}
             </ProfileLink>

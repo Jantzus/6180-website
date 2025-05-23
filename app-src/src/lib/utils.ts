@@ -545,7 +545,7 @@ export const generateInviteLink = (
     queryParameter += formattedTargetItemIdentifier;
   }
 
-  return `https://6180.io/photos.html?${queryParameter}`;
+  return `https://6180.io/app/photos.html?${queryParameter}`;
 };
 
 // Format time in MM:SS

@@ -1,1 +1,0 @@
-import{ao as i,j as a}from"./styled-components-B6oG4J13.js";const o=i.forwardRef(({onFileSelection:e},t)=>a.jsx("input",{type:"file",id:"file-input",ref:t,accept:"image/*,video/*",multiple:!0,style:{display:"none"},onChange:e}));export{o as F};

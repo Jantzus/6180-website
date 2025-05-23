@@ -28,10 +28,8 @@ function moveFoldersOutOfApp() {
 
 export default defineConfig({
   base: '/app/',
-  // base: '/',
   build: {
     outDir: '../dist/app',
-    // outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
