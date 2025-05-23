@@ -80,6 +80,14 @@ const PersonaViewer: React.FC = () => {
       if (pathMatch && pathMatch[1]) {
         return pathMatch[1];
       }
+
+      const pathSegments = window.location.pathname.split('/').filter(Boolean);
+      
+      // Skip if this is an /app/ path or other special paths
+      if (pathSegments.length === 1) {
+        // Single segment URL like /Snapitwithsam
+        return pathSegments[0];
+      }
       
       return null;
     };
