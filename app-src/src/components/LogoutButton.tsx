@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledLogoutLink } from "@/styles/styled-components"
+import { redirectTo } from "@/lib/utils";
 
 type LogoutButtonProps = {
   t: (key: string) => string;
@@ -9,7 +10,7 @@ export const LogoutButton: React.FC<LogoutButtonProps> = ({ t }) => {
   const handleLogout = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     localStorage.clear();
-    window.location.href = "index.html";
+    redirectTo("index.html");
   };
 
   return (

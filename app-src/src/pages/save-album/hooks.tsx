@@ -6,7 +6,7 @@ import {
   PasswordPolicyEnum,
   UploadStatus
 } from "@/lib/types";
-import { generateUUID } from "@/lib/utils";
+import { generateUUID, redirectTo } from "@/lib/utils";
 import { checkLoginWithRefresh, createNanoIdFromUUID, getTargetItemIdentifier } from "@/lib/utils";
 import { 
   moveFilesToPublic,
@@ -862,7 +862,7 @@ export const useAlbumSave = (
     enhancedLog("Setting timeout for redirect to my-albums.html");
     setTimeout(() => {
       enhancedLog("Redirecting to my-albums.html");
-      window.location.href = "my-albums.html";
+      redirectTo("my-albums.html");
     }, 1000);
   };
 

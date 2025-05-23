@@ -5,6 +5,7 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SupportedLanguage } from "@/lib/i18n/translations";
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
+import { redirectTo } from "@/lib/utils";
 
 // Import components
 import {
@@ -46,9 +47,9 @@ const MyAlbums = () => {
   const fileUploadProcessor = useFileUploadProcessor((folderId) => {
     // Custom navigation callback for the album upload flow
     if (folderId) {
-      window.location.href = `save-album.html?folderId=${encodeURIComponent(folderId)}`;
+      redirectTo(`save-album.html?folderId=${encodeURIComponent(folderId)}`);
     } else {
-      window.location.href = "save-album.html";
+      redirectTo("save-album.html");
     }
   });
   

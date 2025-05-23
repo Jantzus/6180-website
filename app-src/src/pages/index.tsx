@@ -4,7 +4,7 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { LanguageSelector, Trans } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
-import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect } from "@/lib/utils";
+import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect, redirectTo } from "@/lib/utils";
 
 import {
   GlobalStyle,
@@ -47,7 +47,7 @@ const IndexPage: React.FC = () => {
     const token = await checkLoginWithRefreshOrRedirectToTarget(targetPath);
     
     if (token) {
-      window.location.href = targetPath;
+      redirectTo(targetPath);
     }
   };
 
@@ -64,7 +64,7 @@ const IndexPage: React.FC = () => {
           <HeaderContainer>
             <LogoContainer isRTL={isRTL}>
               <Logo 
-                src="images/logo_no_background.png" 
+                src="app/images/logo_no_background.png" 
                 alt="6180 Logo" 
               />
               <h1 style={{ 
@@ -119,7 +119,7 @@ const IndexPage: React.FC = () => {
   
   if (token) {
     // User is logged in, redirect to albums page
-    window.location.href = `my-albums.html?lang=${storedLanguage}`;
+    redirectTo(`my-albums.html?lang=${storedLanguage}`);
     return;
   }
   

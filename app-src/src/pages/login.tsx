@@ -11,6 +11,7 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { Trans } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
+import { redirectTo } from "@/lib/utils";
 import styled from 'styled-components'
 import {
   GlobalStyle,
@@ -162,10 +163,10 @@ const LoginPage = () => {
   }
   
   // Ensure the redirect path is properly formatted and secure
-  const redirectTo = isValidRedirect(redirectParam) ? 
-                     (redirectParam.startsWith('http') ? redirectParam : 
-                     (redirectParam.startsWith('/') ? redirectParam : `/${redirectParam}`)) :
-                     'my-albums.html' // Fallback to safe default if invalid
+  const redirectPath = isValidRedirect(redirectParam) ? 
+                       (redirectParam.startsWith('http') ? redirectParam : 
+                       (redirectParam.startsWith('/') ? redirectParam : `/${redirectParam}`)) :
+                       'my-albums.html' // Fallback to safe default if invalid
 
   // Only allow numeric input for OTP code
   function handleOtpChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -287,7 +288,14 @@ const LoginPage = () => {
       }
 
       // Redirect to the specified page after successful login
-      window.location.href = redirectTo
+      // Handle external URLs differently from internal paths
+      if (redirectPath.startsWith('http')) {
+        window.location.href = redirectPath
+      } else {
+        // Remove leading slash for internal paths since redirectTo adds the base URL
+        const cleanPath = redirectPath.startsWith('/') ? redirectPath.slice(1) : redirectPath
+        redirectTo(cleanPath)
+      }
 
     } catch (e) {
       console.error(e)

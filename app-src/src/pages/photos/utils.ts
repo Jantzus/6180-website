@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { AlbumData, PasswordPolicyEnum, SelectedPhoto } from "@/lib/types";
 import { LOCAL_STORAGE_KEYS, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
-import { checkLoginWithRefresh, showDetailedError } from "@/lib/utils";
+import { checkLoginWithRefresh, showDetailedError, redirectTo } from "@/lib/utils";
 import { 
   generateInviteLink
 } from "@/lib/utils";
@@ -194,7 +194,7 @@ export const executeAlbumSave = async (
       // Slight delay before redirect for user to see success message
       setTimeout(() => {
         document.body.removeChild(loadingModal);
-        window.location.href = "my-albums.html";
+        redirectTo("my-albums.html");
       }, 2000);
     } catch (err) {
       const fetchErrorMessage = err instanceof Error ? err.message : "Unknown API error";
@@ -350,7 +350,7 @@ export const createSubAlbumWithSelectedItems = async (
       
       console.log("[SubAlbum] Redirecting to save-album.html");
       // Redirect to save-album page without a folderId parameter
-      window.location.href = '/save-album.html';
+      redirectTo('save-album.html');
       
     } catch (error) {
       console.error('[SubAlbum] Error creating selection:', error);

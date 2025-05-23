@@ -6,6 +6,7 @@ import { getLanguageDirection } from "@/lib/i18n";
 import { 
   checkLoginWithoutRedirect, 
   useFullscreenView,
+  redirectTo,
 } from "@/lib/utils";
 
 // Import the new shared hook
@@ -89,9 +90,9 @@ const PhotoAlbumContent: React.FC = () => {
   const fileUpload = useFileUploadProcessor((folderId) => {
     // Custom navigation callback
     if (folderId) {
-      window.location.href = `save-album.html?folderId=${encodeURIComponent(folderId)}`;
+      redirectTo(`save-album.html?folderId=${encodeURIComponent(folderId)}`);
     } else {
-      window.location.href = "save-album.html";
+      redirectTo("save-album.html");
     }
   });
   

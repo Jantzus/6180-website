@@ -9,6 +9,16 @@ import {
 } from "@/lib/file-upload-utils";
 
 /**
+ * Clean redirect utility that handles base URL prefixing
+ * @param {string} path - The path to redirect to (e.g., 'login.html', 'my-albums.html')
+ */
+export const redirectTo = (path: string): void => {
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const fullPath = baseUrl + path;
+  window.location.href = fullPath;
+};
+
+/**
  * Attempts to refresh the token using the refresh token from localStorage
  * @param {boolean} forceRefresh - If true, will refresh regardless of expiration time
  * @returns {Promise<boolean>} - True if refresh succeeded, false otherwise
@@ -158,7 +168,7 @@ export async function checkLoginWithRefresh(): Promise<string | null> {
 
   if (!token) {
     const redirect = encodeURIComponent(window.location.pathname + window.location.search);
-    window.location.href = `login.html?redirect=${redirect}`;
+    redirectTo(`login.html?redirect=${redirect}`);
     return null;
   }
 
@@ -183,7 +193,7 @@ export async function checkLoginWithRefresh(): Promise<string | null> {
         console.warn("Token refresh failed, redirecting to login");
         localStorage.removeItem("idToken");
         const redirect = encodeURIComponent(window.location.pathname + window.location.search);
-        window.location.href = `login.html?redirect=${redirect}`;
+        redirectTo(`login.html?redirect=${redirect}`);
         return null;
       }
       
@@ -197,7 +207,7 @@ export async function checkLoginWithRefresh(): Promise<string | null> {
     console.error("Invalid token:", e);
     localStorage.removeItem("idToken");
     const redirect = encodeURIComponent(window.location.pathname + window.location.search);
-    window.location.href = `login.html?redirect=${redirect}`;
+    redirectTo(`login.html?redirect=${redirect}`);
     return null;
   }
 }
@@ -258,7 +268,7 @@ export async function checkLoginWithRefreshOrRedirectToTarget(targetPath: string
 
   if (!token) {
     const redirect = encodeURIComponent(targetPath);
-    window.location.href = `login.html?redirect=${redirect}`;
+    redirectTo(`login.html?redirect=${redirect}`);
     return null;
   }
 
@@ -283,7 +293,7 @@ export async function checkLoginWithRefreshOrRedirectToTarget(targetPath: string
         console.warn("Token refresh failed, redirecting to login");
         localStorage.removeItem("idToken");
         const redirect = encodeURIComponent(targetPath);
-        window.location.href = `login.html?redirect=${redirect}`;
+        redirectTo(`login.html?redirect=${redirect}`);
         return null;
       }
       
@@ -297,7 +307,7 @@ export async function checkLoginWithRefreshOrRedirectToTarget(targetPath: string
     console.error("Invalid token:", e);
     localStorage.removeItem("idToken");
     const redirect = encodeURIComponent(targetPath);
-    window.location.href = `login.html?redirect=${redirect}`;
+    redirectTo(`login.html?redirect=${redirect}`);
     return null;
   }
 }
