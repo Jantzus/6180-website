@@ -2,6 +2,7 @@ import React from "react";
 import { LogoutButton } from "@/components/LogoutButton";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
+import { generateUrl } from "@/lib/utils";
 import { ProfileLink } from "@/styles/styled-components";
 
 // Header Component
@@ -31,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
         {publicUsername && (
           <>
             <ProfileLink
-              href={`/${publicUsername}`}
+              href={generateUrl(publicUsername)}
             >
               {`👤 ${publicUsername}`}
             </ProfileLink>

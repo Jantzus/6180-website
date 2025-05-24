@@ -20,6 +20,16 @@ export const redirectTo = (path: string): void => {
 };
 
 /**
+ * Generate a URL with base path prefixing for href attributes
+ * @param {string} path - The path to generate URL for (e.g., 'login.html', 'save-album.html?id=123')
+ * @returns {string} - The generated URL with base path
+ */
+export const generateUrl = (path: string): string => {
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  return baseUrl + path;
+};
+
+/**
  * Attempts to refresh the token using the refresh token from localStorage
  * @param {boolean} forceRefresh - If true, will refresh regardless of expiration time
  * @returns {Promise<boolean>} - True if refresh succeeded, false otherwise

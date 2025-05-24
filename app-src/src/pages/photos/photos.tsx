@@ -14,7 +14,7 @@ import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 
 // Import types and utilities
 import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
-import { generateInviteLink } from "@/lib/utils";
+import { formatUUID, generateInviteLink } from "@/lib/utils";
 import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/databaseAPIService";
 import { downloadPhotos } from "@/lib/fileOperations";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
@@ -507,7 +507,18 @@ const PhotoAlbumContent: React.FC = () => {
       if (useTargetItemIdentifier) {
         console.log('Calling fetchFolderUsingTargetItemIdentifier with identifier:', identifier);
         // Use fetchFolderUsingTargetItemIdentifier logic
-        data = await fetchFolderUsingTargetItemIdentifier(identifier, setFolderId);
+
+        let formattedId = identifier
+    
+        // Make sure it's exactly 32 characters before formatting
+        if (formattedId.length === 32) {
+          formattedId = formatUUID(formattedId);
+          console.log(formattedId); // e.g., B89D8BAF-F9A1-484B-A379-FA7FAD081303
+        } else {
+          console.error('Invalid UUID format: must be 32 characters after removing dashes');
+        }
+  
+        data = await fetchFolderUsingTargetItemIdentifier(formattedId, setFolderId);
       } else {
         console.log('Calling fetchFolderUsingAlbumNanoId with identifier:', identifier);
         // Use fetchFolderUsingAlbumNanoId logic

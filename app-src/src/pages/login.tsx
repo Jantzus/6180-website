@@ -11,7 +11,7 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { Trans } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
-import { redirectTo } from "@/lib/utils";
+import { redirectTo, generateUrl } from "@/lib/utils";  // ← ADD generateUrl import
 import styled from 'styled-components'
 import {
   GlobalStyle,
@@ -411,7 +411,7 @@ const LoginPage = () => {
           
           <LegalLinksFooter>
             <LegalLinkFooterButton 
-              href="terms.html"
+              href={generateUrl("terms.html")}
               isHovered={hoverLink === 'terms'}
               onMouseEnter={() => setHoverLink('terms')}
               onMouseLeave={() => setHoverLink(null)}
@@ -419,7 +419,7 @@ const LoginPage = () => {
               <Trans k="Terms of Service" />
             </LegalLinkFooterButton>
             <LegalLinkFooterButton 
-              href="privacy.html"
+              href={generateUrl("privacy.html")}
               isHovered={hoverLink === 'privacy'}
               onMouseEnter={() => setHoverLink('privacy')}
               onMouseLeave={() => setHoverLink(null)}
@@ -427,7 +427,7 @@ const LoginPage = () => {
               <Trans k="Privacy Policy" />
             </LegalLinkFooterButton>
             <LegalLinkFooterButton 
-              href="support.html"
+              href={generateUrl("support.html")}
               isHovered={hoverLink === 'support'}
               onMouseEnter={() => setHoverLink('support')}
               onMouseLeave={() => setHoverLink(null)}

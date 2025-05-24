@@ -4,7 +4,7 @@ import {
   ProgressTracker
 } from "@/lib/types";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
-import { checkLoginWithRefresh, generateUUID } from "@/lib/utils";
+import { checkLoginWithRefresh, generateUUID, redirectTo } from "@/lib/utils";  // ← ADD redirectTo import
 import { 
   createLogger, 
   createPhotoStatusUpdater, 
@@ -66,9 +66,9 @@ export const useFileUploadProcessor = (
         setTimeout(() => {
           // Redirect to save-album page with folder ID parameter if adding to existing album
           if (currentFolderId) {
-            window.location.href = `save-album.html?folderId=${encodeURIComponent(currentFolderId)}`;
+            redirectTo(`save-album.html?folderId=${encodeURIComponent(currentFolderId)}`);
           } else {
-            window.location.href = "save-album.html";
+            redirectTo("save-album.html");
           }
         }, 1000);
       }

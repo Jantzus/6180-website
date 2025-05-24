@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FolderType } from "@/lib/types";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
-import { formatDate, generateInviteLink } from "@/lib/utils";
+import { formatDate, generateInviteLink, generateUrl } from "@/lib/utils";
 import { LazyImage } from "./LazyImage";
 import { FooterSection } from "./FooterSection";
 import { S3_BUCKET_URL } from "@/lib/config";
@@ -439,7 +439,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                           }}
                         >
                           <DropdownItem
-                            href={`/save-album.html?folderId=${encodeURIComponent(folder.folderId)}`}
+                            href={generateUrl(`save-album.html?folderId=${encodeURIComponent(folder.folderId)}`)}
                             onClick={(e) => {
                               e.stopPropagation();
                             }}

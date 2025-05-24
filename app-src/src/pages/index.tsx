@@ -4,7 +4,7 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { LanguageSelector, Trans } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
-import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect, redirectTo } from "@/lib/utils";
+import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect, redirectTo, generateUrl } from "@/lib/utils";  // ← ADD generateUrl import
 
 import {
   GlobalStyle,
@@ -94,13 +94,13 @@ const IndexPage: React.FC = () => {
           </div>
 
           <LegalLinksFooter>
-            <LegalLinkFooterButton href="terms.html">
+            <LegalLinkFooterButton href={generateUrl("terms.html")}>
               <Trans k="Terms of Service" />
             </LegalLinkFooterButton>
-            <LegalLinkFooterButton href="privacy.html">
+            <LegalLinkFooterButton href={generateUrl("privacy.html")}>
               <Trans k="Privacy Policy" />
             </LegalLinkFooterButton>
-            <LegalLinkFooterButton href="support.html">
+            <LegalLinkFooterButton href={generateUrl("support.html")}>
               <Trans k="Support" />
             </LegalLinkFooterButton>
           </LegalLinksFooter>
