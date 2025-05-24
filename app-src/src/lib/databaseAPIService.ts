@@ -9,12 +9,17 @@ import { AlbumData, MediaItem, Contact } from '@/lib/types';
 import { formatTime } from './utils';
 import { checkLoginWithoutRedirect } from "@/lib/utils";
 
-// Process data returned from API
+// Process data returned from API - DEBUG VERSION
 export const processData = (
   json: any, 
   setFolderId?: (id: string | null) => void
 ): AlbumData => {
+  console.log('🔄 processData called with raw JSON:', JSON.stringify(json, null, 2));
+  
   const items = json?.data?.fetchRelations?.items || [];
+  console.log('📊 Items found:', items.length);
+  console.log('📊 Items details:', JSON.stringify(items, null, 2));
+  
   const mediaItems: MediaItem[] = [];
   const contacts: Contact = {};
   let folderName = 'Photos';
@@ -32,69 +37,96 @@ export const processData = (
   
   if (items.length > 0) {
     const folder = items[0];
+    console.log('📁 Processing folder:', JSON.stringify(folder, null, 2));
     
     // Save the folder ID if setter is provided
     if (setFolderId && folder?.id) {
+      console.log('🆔 Setting folder ID:', folder.id);
       setFolderId(folder.id);
     }
     
-    // Get folder name if available
+    // Get albumNanoId if available
     if (folder?.albumNanoId) {
-      albumNanoId = albumNanoId;
+      albumNanoId = folder.albumNanoId;
+      console.log('🏷️ Album nano ID found:', albumNanoId);
     }
     
     // Get folder name if available
     if (folder?.folderName && folder.folderName.length > 0) {
       folderName = folder.folderName;
+      console.log('📝 Folder name found:', folderName);
     }
     
-    // Get folder name if available
+    // Get creator ID if available
     if (folder?.creatorId && folder.creatorId.length > 0) {
       creatorId = folder.creatorId;
+      console.log('👤 Creator ID found:', creatorId);
     }
 
     // Get folder description if available
     if (folder?.folderDescription && folder.folderDescription.length > 0) {
       folderDescription = folder.folderDescription;
+      console.log('📄 Folder description found:', folderDescription);
     }
     
     // Get password policy and the actual password
     if (folder?.folderPassword) {
+      console.log('🔐 Folder password object found:', JSON.stringify(folder.folderPassword, null, 2));
+      
       if (folder.folderPassword.policy) {
         passwordPolicy = folder.folderPassword.policy;
+        console.log('🔒 Password policy:', passwordPolicy);
         
         // Check if password is required
         passwordRequired = passwordPolicy !== 'NoPassword';
+        console.log('🔑 Password required:', passwordRequired);
       }
       
       // Store the actual password if it exists
       if (folder.folderPassword.password && passwordPolicy !== 'NoPassword') {
         hasPassword = true;
         actualPassword = folder.folderPassword.password;
+        console.log('🗝️ Actual password found (length):', actualPassword.length);
       }
     }
     
     // Extract the usingFolderInviteGrantsRightToAddItems property
     if (folder?.folderInviteParameters) {
+      console.log('📨 Folder invite parameters found:', JSON.stringify(folder.folderInviteParameters, null, 2));
       usingFolderInviteGrantsRightToAddItems = !!folder.folderInviteParameters.usingFolderInviteGrantsRightToAddItems;
+      console.log('➕ Using folder invite grants right to add items:', usingFolderInviteGrantsRightToAddItems);
     }
     
     // Build contacts map
-    (items[0]?.contactsUsingInvite?.items || []).forEach((contact: any) => {
+    const contactItems = items[0]?.contactsUsingInvite?.items || [];
+    console.log('👥 Processing contacts:', contactItems.length);
+    contactItems.forEach((contact: any, index: number) => {
+      console.log(`👤 Contact ${index}:`, JSON.stringify(contact, null, 2));
       if (contact?.id && contact?.item?.publicDisplayName) {
         contacts[contact.id] = contact.item.publicDisplayName;
+        console.log(`✅ Added contact: ${contact.id} -> ${contact.item.publicDisplayName}`);
       }
     });
     
     // Get media items and filter duplicates by dataKey
-    (folder?.fileReferencesPage?.items || []).forEach((ref: any) => {
+    const fileReferences = folder?.fileReferencesPage?.items || [];
+    console.log('📸 Processing file references:', fileReferences.length);
+    
+    fileReferences.forEach((ref: any, index: number) => {
+      console.log(`📄 File reference ${index}:`, JSON.stringify(ref, null, 2));
+      
       const file = ref?.file;
-      if (!file?.dataKey) return;
+      if (!file?.dataKey) {
+        console.log(`❌ Skipping file reference ${index} - no dataKey`);
+        return;
+      }
 
       const { id, dataKey, thumbnailDataKey, durationInSeconds, ownerContactId } = file;
+      console.log(`📂 Processing file: ID=${id}, dataKey=${dataKey}, thumbnailDataKey=${thumbnailDataKey}, duration=${durationInSeconds}, owner=${ownerContactId}`);
       
       // Skip this item if we've already seen this dataKey
       if (uniqueDataKeys.has(dataKey)) {
+        console.log(`⚠️ Duplicate dataKey found, skipping: ${dataKey}`);
         return;
       }
       
@@ -105,29 +137,37 @@ export const processData = (
       const thumbnailUrl = thumbnailDataKey ? `${S3_BUCKET_URL}${thumbnailDataKey}` : undefined;
 
       if (dataKey.startsWith("Input/Image/")) {
-        mediaItems.push({ 
-          type: "image", 
+        const imageItem = { 
+          type: "image" as const, 
           fileId: id,
           url,
           thumbnailUrl: thumbnailUrl || url,
           ownerContactId: ownerContactId,
           loaded: false
-        });
+        };
+        mediaItems.push(imageItem);
+        console.log('🖼️ Added image item:', JSON.stringify(imageItem, null, 2));
       } else if (dataKey.startsWith("Input/Video/")) {
-        mediaItems.push({
-          type: "video",
+        const videoItem = {
+          type: "video" as const,
           fileId: id,
           url,
           thumbnailUrl: thumbnailUrl || url,
           duration: formatTime(durationInSeconds),
           ownerContactId: ownerContactId,
           loaded: false
-        });
+        };
+        mediaItems.push(videoItem);
+        console.log('🎥 Added video item:', JSON.stringify(videoItem, null, 2));
+      } else {
+        console.log(`❓ Unknown file type for dataKey: ${dataKey}`);
       }
     });
+  } else {
+    console.log('❌ No items found in API response');
   }
   
-  return { 
+  const result = { 
     mediaItems, 
     folderName, 
     albumNanoId,
@@ -140,13 +180,18 @@ export const processData = (
     actualPassword,
     usingFolderInviteGrantsRightToAddItems
   };
+  
+  console.log('✅ processData final result:', JSON.stringify(result, null, 2));
+  return result;
 };
 
-// Fetch folder data with dual API approach
+// Fetch folder data with dual API approach - DEBUG VERSION
 export const fetchFolderUsingTargetItemIdentifier = async (
   targetItemIdentifier: string, 
   setFolderId?: (id: string | null) => void
 ): Promise<AlbumData | null> => {
+  console.log('🔍 fetchFolderUsingTargetItemIdentifier called with:', targetItemIdentifier);
+  
   try {
     // Create the input for the new query format
     const fetchRelationsInput = {
@@ -161,7 +206,10 @@ export const fetchFolderUsingTargetItemIdentifier = async (
       fetchRelationsInput: fetchRelationsInput
     };
     
+    console.log('📤 Query variables:', JSON.stringify(variables, null, 2));
+    
     // First, use the public API to get a quick response
+    console.log('🌐 Making public API call...');
     const publicApiPromise = fetch(AWS_PUBLIC_GRAPHQL_ENDPOINT, {
       method: 'POST',
       headers: {
@@ -175,12 +223,17 @@ export const fetchFolderUsingTargetItemIdentifier = async (
     }).then(response => response.json());
     
     // In parallel, try to use the private API if the user is logged in
+    console.log('🔒 Checking private API availability...');
     const privateApiPromise = (async () => {
       const token = await checkLoginWithoutRedirect();
+      console.log('🎫 Token available:', !!token);
+      
       if (!token) {
+        console.log('❌ No token - skipping private API');
         return null; // User is not logged in
       }
       
+      console.log('🌐 Making private API call...');
       // User is logged in, use private API for richer data
       return fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
         method: 'POST',
@@ -196,29 +249,45 @@ export const fetchFolderUsingTargetItemIdentifier = async (
     })();
     
     // Wait for the public API to respond first
+    console.log('⏳ Waiting for public API response...');
     const publicResult = await publicApiPromise;
+    console.log('📥 Public API raw response:', JSON.stringify(publicResult, null, 2));
+    
     let initialData = processData(publicResult, setFolderId);
+    console.log('🔄 Processed public data:', JSON.stringify(initialData, null, 2));
     
     // Then wait for the private API (if available)
+    console.log('⏳ Waiting for private API response...');
     const privateResult = await privateApiPromise;
+    
     if (privateResult) {
+      console.log('📥 Private API raw response:', JSON.stringify(privateResult, null, 2));
       
       const folderPosition = privateResult?.data?.fetchRelations?.items?.[0]?.folderPosition;
+      console.log('📍 Folder position found:', !!folderPosition);
+      console.log('📍 Folder position details:', JSON.stringify(folderPosition, null, 2));
       
       if (folderPosition) {
         const privateData = processData(privateResult, setFolderId);
+        console.log('🔄 Processed private data (before enhancement):', JSON.stringify(privateData, null, 2));
         
         // Set a more flexible flag indicating the presence of a folderPosition
         privateData.folderPositionId = folderPosition?.id;
-        privateData.profileIds = folderPosition?.profileIds
-
+        privateData.profileIds = folderPosition?.profileIds;
+        
+        console.log('🔄 Enhanced private data:', JSON.stringify(privateData, null, 2));
         initialData = privateData;
+      } else {
+        console.log('❌ No folder position in private API response');
       }
+    } else {
+      console.log('❌ No private API response (user not logged in or API failed)');
     }
     
+    console.log('✅ Final return data:', JSON.stringify(initialData, null, 2));
     return initialData;
   } catch (error) {
-    console.error('Error fetching folder data:', error);
+    console.error('💥 Error in fetchFolderUsingTargetItemIdentifier:', error);
     return null;
   }
 };

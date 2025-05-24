@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { API_ENDPOINT_REFRESHTOKEN, COGNITO_CLIENT_ID } from "@/lib/config"
 import { AlbumData, SelectedPhoto, ProgressTracker } from "@/lib/types";
+import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
 // Import upload utilities
 import { 
@@ -521,9 +522,14 @@ export const getTargetItemIdentifier = (id: string) =>
 export const generateInviteLink = (
   folderId: string | null,
   albumNanoId: string | null | undefined,
+  creatorParameter: string | null | undefined,
   folderName: string | null | undefined
 ): string => {
   if (!folderId) return '';
+
+  const creator = creatorParameter?.trim()
+  || localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME)?.trim()
+  || 'album';
 
   const formattedTargetItemIdentifier = getTargetItemIdentifier(folderId).replace(/-/g, '');
 
@@ -545,7 +551,7 @@ export const generateInviteLink = (
     queryParameter += formattedTargetItemIdentifier;
   }
 
-  return `https://6180.io/app/photos.html?${queryParameter}`;
+  return `https://6180.io/${creator}/${queryParameter}`;
 };
 
 // Format time in MM:SS

@@ -309,6 +309,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
           const inviteLink = generateInviteLink(
             folder.folderId,
             folder.albumNanoId || null,
+            folder.creatorId && folder.contacts && folder.contacts[folder.creatorId] ,
             folder.folderName
           );
 
@@ -394,6 +395,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
         const inviteLink = generateInviteLink(
           folder.folderId,
           folder.albumNanoId || null,
+          folder.creatorId && folder.contacts && folder.contacts[folder.creatorId],
           folder.folderName
         );
 

@@ -37,6 +37,9 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
   const inviteLink = generateInviteLink(
     folder.folderId,
     folder.albumNanoId,
+    folder.creatorId && folder.contacts && folder.contacts[folder.creatorId] 
+    ? folder.contacts[folder.creatorId] 
+    : 'album',
     folder.folderName
   )
 

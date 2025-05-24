@@ -504,6 +504,7 @@ export const useShareActions = (albumData: AlbumData | null, folderId: string | 
     const inviteLink = generateInviteLink(
       folderId,
       albumData?.albumNanoId,
+      albumData?.creatorId && albumData?.contacts && albumData?.contacts[albumData?.creatorId],
       albumData?.folderName
     )
     navigator.clipboard.writeText(inviteLink)

@@ -14,7 +14,7 @@ import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 
 // Import types and utilities
 import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
-import { formatUUID, generateInviteLink } from "@/lib/utils";
+import { generateInviteLink } from "@/lib/utils";
 import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/databaseAPIService";
 import { downloadPhotos } from "@/lib/fileOperations";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
@@ -103,6 +103,18 @@ const PhotoAlbumContent: React.FC = () => {
     passwordVerified, setPasswordVerified,
     shouldShowContent, shouldShowWatermark, showingEnterPassword, promptForPassword
   } = passwordProtection;
+  
+  // Add logging for password protection state
+  console.log('Password protection state:', {
+    passwordPolicy,
+    isAuthorized,
+    showPasswordModal,
+    passwordVerified,
+    showingEnterPassword
+  });
+  
+  console.log('shouldShowContent result:', shouldShowContent);
+  console.log('shouldShowWatermark result:', shouldShowWatermark);
   
   // Destructure only what we need from file upload hook to avoid unused variable warnings
   const {
@@ -412,144 +424,131 @@ const PhotoAlbumContent: React.FC = () => {
     setColumns(savedColumnsValue);
   }, []);
 
-  // Get folder ID from URL
-  const getIdQueryParameterFromUrl = (): string | null => {
-    // Check in query params first
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
+  // Updated URL parameter extraction function
+  const getParametersFromUrl = (): string | null => {
+    console.log('getParametersFromUrl called');
+    console.log('window.location.pathname:', window.location.pathname);
     
-    if (id) return id;
-    
-    // Check for two-segment URLs like /Snapitwithsam/coneyisland-17riioj4cw
+    // Handle path-based format: /prefix/parameters
     const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    console.log('pathSegments:', pathSegments);
     
-    // Skip special paths
-    if (pathSegments.length > 0 && 
-        (pathSegments[0] === 'app')) {
-      // Continue to traditional method
-    } else if (pathSegments.length === 2) {
-      // Two segment URL like /Snapitwithsam/coneyisland-17riioj4cw
-      const albumIdentifier = pathSegments[1];
-      // Treat the album identifier as if it was the search parameter
-      return albumIdentifier;
+    // Skip if it's the traditional app path
+    if (pathSegments.length > 0 && pathSegments[0] === 'app') {
+      console.log('Traditional app path detected, returning null');
+      return null;
     }
     
-    // Fallback to original logic for traditional URLs
-    const pathParts = window.location.pathname.split('/');
-    const lastPart = pathParts[pathParts.length - 1];
-    
-    if (lastPart && lastPart.includes('_')) {
-      return lastPart;
+    // For /prefix/parameters format, return the parameters part
+    if (pathSegments.length === 2) {
+      console.log('Found parameters:', pathSegments[1]);
+      return pathSegments[1];
     }
     
+    console.log('No valid path format found, returning null');
     return null;
   };
 
-  // Fetch album data
+  // Updated album initialization logic
   useEffect(() => {
     const initAlbum = async () => {
-      const idQueryParameter = getIdQueryParameterFromUrl();
+      console.log('initAlbum called');
+      const parameters = getParametersFromUrl();
+      console.log('Extracted parameters:', parameters);
       
-      // If no ID parameter is found in the URL, check for other formats
-      if (!idQueryParameter) {
-        // Extract albumName and albumNanoId from traditional search parameters
-        const urlParams = new URL(window.location.href);
-        const searchString = urlParams.search.substring(1);
-        
-        if (searchString) {
-          const pathParts = searchString.split('-');
-          // Assume the last part is the albumNanoId
-          const albumNanoId = pathParts[pathParts.length - 1];
-          
-          if (albumNanoId) {
-            const data = await fetchFolderUsingAlbumNanoId(albumNanoId, setFolderId);
-            
-            if (data) {
-              setAlbumData(data);
-              
-              // Set password policy from the API result
-              if (data.passwordPolicy) {
-                setPasswordPolicy(data.passwordPolicy as PasswordPolicyEnum);
-                
-                // If NoPassword policy or the user has a folderPosition, automatically set as authorized
-                if (data.passwordPolicy === 'NoPassword' || data.folderPositionId) {
-                  setIsAuthorized(true);
-                }
-              }
-              setIsLoading(false);
-              return;
-            }
-          }
-        }
-        
-        setError(t('Valid ID not obtained from query parameter'));
+      if (!parameters) {
+        console.log('No parameters found, setting error');
+        setError(t('Valid parameters not found in URL'));
         setIsLoading(false);
         return;
       }
-
-      // Check if this looks like an album identifier from a two-segment URL
-      // (doesn't contain typical folder ID patterns)
-      if (!idQueryParameter.includes('_') && idQueryParameter.includes('-')) {
-        // Parse it like we would parse search parameters
-        const pathParts = idQueryParameter.split('-');
-        // Assume the last part is the albumNanoId
-        const albumNanoId = pathParts[pathParts.length - 1];
-        
-        if (albumNanoId) {
-          const data = await fetchFolderUsingAlbumNanoId(albumNanoId, setFolderId);
-          
-          if (data) {
-            setAlbumData(data);
-            
-            // Set password policy from the API result
-            if (data.passwordPolicy) {
-              setPasswordPolicy(data.passwordPolicy as PasswordPolicyEnum);
-              
-              // If NoPassword policy or the user has a folderPosition, automatically set as authorized
-              if (data.passwordPolicy === 'NoPassword' || data.folderPositionId) {
-                setIsAuthorized(true);
-              }
-            }
-            setIsLoading(false);
-            return;
-          }
+      
+      let identifier: string;
+      let useTargetItemIdentifier = false;
+      
+      console.log('Checking if parameters contain "id=":', parameters.includes('id='));
+      
+      // Check if parameters contain "id="
+      if (parameters.includes('id=')) {
+        console.log('Parameters contain "id=", extracting identifier');
+        // Extract the value after "id="
+        const idIndex = parameters.indexOf('id=');
+        if (idIndex !== -1) {
+          identifier = parameters.substring(idIndex + 3); // 3 is length of "id="
+          useTargetItemIdentifier = true;
+          console.log('Extracted identifier after "id=":', identifier);
+          console.log('Will use fetchFolderUsingTargetItemIdentifier');
+        } else {
+          console.log('Failed to find "id=" in parameters');
+          setError(t('Invalid id parameter format'));
+          setIsLoading(false);
+          return;
         }
-      }
-
-      // Original logic for traditional folder IDs (contains underscores, etc.)
-      const idQueryParameterParts = idQueryParameter.split('-');
-      let folderId = idQueryParameterParts[idQueryParameterParts.length - 1].replace(/-/g, '');
-      const folderIdParts = folderId.split('_');
-      let formattedId = folderIdParts[folderIdParts.length - 1].replace(/-/g, '');
-
-      // Make sure it's exactly 32 characters before formatting
-      if (formattedId.length === 32) {
-        formattedId = formatUUID(formattedId);
       } else {
-        console.error('Invalid UUID format: must be 32 characters after removing dashes');
+        // Use the entire parameters string
+        identifier = parameters;
+        useTargetItemIdentifier = false;
+        console.log('Using entire parameters as identifier:', identifier);
+        console.log('Will use fetchFolderUsingAlbumNanoId');
       }
-
-      const data = await fetchFolderUsingTargetItemIdentifier(formattedId, setFolderId);
+      
+      // If identifier contains "-", ignore everything before the last "-"
+      if (identifier.includes('-')) {
+        const parts = identifier.split('-');
+        const originalIdentifier = identifier;
+        identifier = parts[parts.length - 1];
+        console.log('Identifier contained "-", stripped from:', originalIdentifier, 'to:', identifier);
+      } else {
+        console.log('Identifier does not contain "-", keeping as is:', identifier);
+      }
+      
+      let data;
+      
+      if (useTargetItemIdentifier) {
+        console.log('Calling fetchFolderUsingTargetItemIdentifier with identifier:', identifier);
+        // Use fetchFolderUsingTargetItemIdentifier logic
+        data = await fetchFolderUsingTargetItemIdentifier(identifier, setFolderId);
+      } else {
+        console.log('Calling fetchFolderUsingAlbumNanoId with identifier:', identifier);
+        // Use fetchFolderUsingAlbumNanoId logic
+        data = await fetchFolderUsingAlbumNanoId(identifier, setFolderId);
+      }
+      
+      console.log('API call result:', data ? 'Success' : 'Failed');
       
       if (data) {
+        console.log('Full album data received:', data);
+        console.log('Media items count:', data.mediaItems ? data.mediaItems.length : 'No mediaItems property');
+        console.log('Password policy:', data.passwordPolicy);
+        console.log('Folder position ID:', data.folderPositionId);
+        
         setAlbumData(data);
         
         // Set password policy from the API result
         if (data.passwordPolicy) {
           setPasswordPolicy(data.passwordPolicy as PasswordPolicyEnum);
+          console.log('Password policy set to:', data.passwordPolicy);
           
           // If NoPassword policy or the user has a folderPosition, automatically set as authorized
           if (data.passwordPolicy === 'NoPassword' || data.folderPositionId) {
             setIsAuthorized(true);
+            console.log('User automatically authorized');
+          } else {
+            console.log('User not automatically authorized, will need to enter password');
           }
         }
+        console.log('Album data set successfully');
+      } else {
+        console.log('No data returned from API, setting error');
+        setError(t('Album not found'));
       }
       
       setIsLoading(false);
+      console.log('initAlbum completed');
     };
 
     initAlbum();
-  }, []);
+  }, [t, setPasswordPolicy, setIsAuthorized]);
 
   // Check if user is logged in and get cognito username
   useEffect(() => {
@@ -596,6 +595,19 @@ const PhotoAlbumContent: React.FC = () => {
       document.title = t('Photos');
     }
   }, [albumData, language]);
+
+  // Debug logging for media grid props
+  useEffect(() => {
+    console.log('AlbumMediaGrid props changed:', {
+      isLoading,
+      error,
+      albumDataExists: !!albumData,
+      mediaItemsCount: albumData?.mediaItems?.length,
+      columns,
+      shouldShowContent,
+      shouldShowWatermark
+    });
+  }, [isLoading, error, albumData, columns, shouldShowContent, shouldShowWatermark]);
 
   // Extract album owner name function
   const getAlbumOwnerName = (): string => {
@@ -778,6 +790,9 @@ const PhotoAlbumContent: React.FC = () => {
           generateInviteLink(
             folderId,
             albumData?.albumNanoId,
+            albumData?.creatorId && albumData?.contacts && albumData?.contacts[albumData?.creatorId] 
+            ? albumData?.contacts[albumData?.creatorId] 
+            : 'album',
             albumData?.folderName
           )
         }
