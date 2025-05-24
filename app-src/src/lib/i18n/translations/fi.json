@@ -163,5 +163,6 @@
   "Enter your email address.": "Syötä sähköpostiosoitteesi.",
   "{ownerName} only shared this album with friends and family": "{ownerName} jakoi tämän albumin vain ystävien ja perheen kanssa",
   "Email address...": "Sähköpostiosoite...",
-  "Two-Factor Authentication": "Kaksivaiheinen Tunnistautuminen"
+  "Two-Factor Authentication": "Kaksivaiheinen Tunnistautuminen",
+  "Select For Download": "Valitse Ladattavaksi"
 }

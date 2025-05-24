@@ -11,7 +11,7 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { Trans } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
-import { redirectTo, generateUrl } from "@/lib/utils";  // ← ADD generateUrl import
+import { redirectTo, generateUrl } from "@/lib/utils";
 import styled from 'styled-components'
 import {
   GlobalStyle,
@@ -289,13 +289,7 @@ const LoginPage = () => {
 
       // Redirect to the specified page after successful login
       // Handle external URLs differently from internal paths
-      if (redirectPath.startsWith('http')) {
-        window.location.href = redirectPath
-      } else {
-        // Remove leading slash for internal paths since redirectTo adds the base URL
-        const cleanPath = redirectPath.startsWith('/') ? redirectPath.slice(1) : redirectPath
-        redirectTo(cleanPath)
-      }
+      redirectTo(redirectPath)
 
     } catch (e) {
       console.error(e)
@@ -334,7 +328,7 @@ const LoginPage = () => {
             <LoginCard>
               <LoginHeader>
                 <LogoImage 
-                  src="images/logo_no_background.png" 
+                  src={generateUrl("images/logo_no_background.png")}
                   alt="6180 Logo" 
                 />
                 <LoginTitle>

@@ -163,5 +163,6 @@
   "Enter your email address.": "ป้อนที่อยู่อีเมลของคุณ.",
   "{ownerName} only shared this album with friends and family": "{ownerName} แชร์อัลบั้มนี้เฉพาะกับเพื่อนและครอบครัวเท่านั้น",
   "Email address...": "ที่อยู่อีเมล...",
-  "Two-Factor Authentication": "การรับรองตัวตนแบบสองปัจจัย"
+  "Two-Factor Authentication": "การรับรองตัวตนแบบสองปัจจัย",
+  "Select For Download": "เลือกสำหรับดาวน์โหลด"
 }

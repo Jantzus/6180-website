@@ -163,5 +163,6 @@
   "Enter your email address.": "ໃສ່ທີ່ຢູ່ອີເມວຂອງທ່ານ.",
   "{ownerName} only shared this album with friends and family": "{ownerName} ແບ່ງປັນອາລະບໍ້ານີ້ພຽງແຕ່ກັບໝູ່ເພື່ອນແລະຄອບຄົວເທົ່ານັ້ນ",
   "Email address...": "ທີ່ຢູ່ອີເມວ...",
-  "Two-Factor Authentication": "ການຢືນຢັນສອງປັດໄຈ"
+  "Two-Factor Authentication": "ການຢືນຢັນສອງປັດໄຈ",
+  "Select For Download": "ເລືອກສໍາລັບດາວໂຫລດ"
 }

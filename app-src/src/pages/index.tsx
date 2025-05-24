@@ -4,7 +4,7 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { LanguageSelector, Trans } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
-import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect, redirectTo, generateUrl } from "@/lib/utils";  // ← ADD generateUrl import
+import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect, redirectTo, generateUrl } from "@/lib/utils";
 
 import {
   GlobalStyle,
@@ -64,7 +64,7 @@ const IndexPage: React.FC = () => {
           <HeaderContainer>
             <LogoContainer isRTL={isRTL}>
               <Logo 
-                src="app/images/logo_no_background.png" 
+                src={generateUrl("images/logo_no_background.png")}
                 alt="6180 Logo" 
               />
               <h1 style={{ 

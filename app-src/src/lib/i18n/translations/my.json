@@ -163,5 +163,6 @@
   "Enter your email address.": "သင့်အီးမေးလ်လိပ်စာကို ထည့်သွင်းပါ.",
   "{ownerName} only shared this album with friends and family": "{ownerName} သည် ဤအယ်လ်ဘမ်ကို သူငယ်ချင်းများနှင့် မိသားစုနှင့်သာ မျှဝေခဲ့သည်",
   "Email address...": "အီးမေးလ်လိပ်စာ...",
-  "Two-Factor Authentication": "နှစ်ဆင့်အတည်ပြုချက်"
+  "Two-Factor Authentication": "နှစ်ဆင့်အတည်ပြုချက်",
+  "Select For Download": "ဒေါင်းလုဒ်အတွက်ရွေးချယ်ပါ"
 }

@@ -125,7 +125,7 @@ export const downloadPhotos = (
         } else {
           // For Android and other mobile browsers - no changes needed
           downloadLink.download = `${albumData.folderName || 'media'}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
-          downloadLink.textContent = t('Download');
+          downloadLink.textContent = t('Select For Download');
         }
         
         downloadLink.style.textDecoration = 'none';

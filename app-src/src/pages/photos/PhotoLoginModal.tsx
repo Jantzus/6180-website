@@ -8,6 +8,7 @@ import {
 } from '@aws-sdk/client-cognito-identity-provider';
 import { COGNITO_CLIENT_ID, AWS_REGION, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
+import { generateUrl } from "@/lib/utils";
 import { 
   Modal,
   ModalContent,
@@ -216,7 +217,7 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
     <Modal>
       <ModalContent style={{ maxWidth: "400px", textAlign: "center", padding: "32px" }}>
         <img 
-          src="images/logo_no_background.png" 
+          src={generateUrl("images/logo_no_background.png")}
           alt="6180 Logo" 
           style={{ 
             height: '60px', 

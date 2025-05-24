@@ -14,6 +14,19 @@ import {
  * @param {string} path - The path to redirect to (e.g., 'login.html', 'my-albums.html')
  */
 export const redirectTo = (path: string): void => {
+  // Handle external URLs - use as-is
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    window.location.href = path;
+    return;
+  }
+  
+  // Handle absolute paths - use as-is
+  if (path.startsWith('/')) {
+    window.location.href = path;
+    return;
+  }
+  
+  // Handle relative paths - prepend baseUrl (original behavior)
   const baseUrl = import.meta.env.BASE_URL || '/';
   const fullPath = baseUrl + path;
   window.location.href = fullPath;
