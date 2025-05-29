@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "သင့်တွင် အယ်လ်ဘမ် ၅ ခုထက် ပိုရှိပါသည်။ သင့်စာရင်းသွင်းမှုကို အဆင့်မြှင့်တင်ခြင်းမရှိလျှင် ဤအယ်လ်ဘမ်များကို အလိုအလျောက် ဖျက်ပစ်နေပါသည်:",
   "Click To Upgrade Subscription": "စာရင်းသွင်းခြင်းကို အဆင့်မြှင့်ရန် နှိပ်ပါ",
   "WILL BE DELETED": "ဖျက်လိုက်မည်",
-  "Create an album in 90 sec": "90 စက္ကန့်အတွင်း အယ်လ်ဘမ်ပြုလုပ်ပါ"
+  "Create an album in 90 sec": "90 စက္ကန့်အတွင်း အယ်လ်ဘမ်ပြုလုပ်ပါ",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "သင့်မှာ အယ်လ်ဘမ် {albumCount} ခု ရှိပါတယ် ဒါပေမယ့် အခမဲ့နဲ့ ၅ ခုပဲ သိမ်းဆည်းနိုင်ပါတယ်။ ဒီ အဟောင်းဆုံး အယ်လ်ဘမ်တွေကို အလိုအလျောက် ဖျက်ပစ်နေပါတယ်:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "သင့်ဖိုင်တွေက {formatGB(usedGB)} နေရာယူထားပါတယ်၊ ဒါပေမယ့် သင့်မှာ {FREE_TIER_STORAGE_LIMIT_GB} GB သိုလှောင်ခန်းပဲ ရှိပါတယ်။ ဒီအယ်လ်ဘမ်တွေကို အလိုအလျောက် ဖျက်ပစ်နေပါတယ်:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "သင့်မှာ အယ်လ်ဘမ် 5 ခုထက်ပိုရှိပြီး သင့်ဖိုင်တွေက {formatGB(usedGB)} နေရာယူထားပါတယ် (ကန့်သတ်ချက်: {FREE_TIER_STORAGE_LIMIT_GB} GB)။ ဒီအယ်လ်ဘမ်တွေကို အလိုအလျောက် ဖျက်ပစ်နေပါတယ်:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "သင့်ဖိုင်တွေက {formatGB(usedGB)} နေရာယူထားပါတယ်၊ ဒါပေမယ့် သင့်မှာ {totalStorageGB} GB သိုလှောင်ခန်းပဲ ရှိပါတယ်။ ဒီအယ်လ်ဘမ်တွေကို အလိုအလျောက် ဖျက်ပစ်နေပါတယ်:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "သင့်ဖိုင်တွေက {totalStorageGB} GB သိုလှောင်ခန်းမှ {formatGB(usedGB)} ယူထားပါတယ်။ မကြာမီ သင့်စာရင်းသွင်းမှုကို အဆင့်မြှင့်ရန် လိုအပ်ကောင်းလိုအပ်နိုင်ပါတယ်။"
 }

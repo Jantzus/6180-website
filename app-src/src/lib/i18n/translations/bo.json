@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "ཁྱེད་ལ་པར་ཚོམས་ལྔ་ལས་མང་བ་ཡོད། འདི་དག་གི་པར་ཚོམས་རང་འགུལ་གྱིས་སུབ་བཞིན་ཡོད། ཁྱེད་ཀྱིས་མི་སྣའི་ཞབས་ཞུ་སྤོར་བ་མ་བྱས་ན:",
   "Click To Upgrade Subscription": "ཞུགས་ཐེབས་གོང་སྤེལ་བྱེད་པར་མནན་རོགས།",
   "WILL BE DELETED": "བསུབ་རྒྱུ་ཡིན།",
-  "Create an album in 90 sec": "སྐར་ཆ་༩༠ནང་གླུ་ཚོམས་བཟོ།"
+  "Create an album in 90 sec": "སྐར་ཆ་༩༠ནང་གླུ་ཚོམས་བཟོ།",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "ཁྱེད་ལ་གླུ་ཚོམས་{albumCount}ཡོད་ཀྱང་རིན་མེད་དུ་༥རེ་མ་གཏོགས་ཉར་ཚགས་མི་ཐུབ། འདི་དག་གླུ་ཚོམས་རྙིང་ཤོས་ཚོ་རང་བཞིན་གྱིས་སུབ་བཞིན་འདུག:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ཁྱེད་ཀྱི་ཡིག་ཆ་ཚོས་{formatGB(usedGB)}བར་སྣང་ལེན་ཡོད་ལ། ཁྱེད་ལ་{FREE_TIER_STORAGE_LIMIT_GB} GB གསོག་འཇོག་ཡོད། འདི་དག་གླུ་ཚོམས་རང་བཞིན་གྱིས་སུབ་བཞིན་འདུག:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "ཁྱེད་ལ་གླུ་ཚོམས་5ལས་མང་པོ་ཡོད་ལ་ཁྱེད་ཀྱི་ཡིག་ཆ་ཚོས་{formatGB(usedGB)}བར་སྣང་ལེན་ཡོད། (ཚད་{FREE_TIER_STORAGE_LIMIT_GB} GB) འདི་དག་གླུ་ཚོམས་རང་བཞིན་གྱིས་སུབ་བཞིན་འདུག:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "ཁྱེད་ཀྱི་ཡིག་ཆ་ཚོས་{formatGB(usedGB)}བར་སྣང་ལེན་ཡོད་ལ། ཁྱེད་ལ་{totalStorageGB} GB གསོག་འཇོག་ཡོད། འདི་དག་གླུ་ཚོམས་རང་བཞིན་གྱིས་སུབ་བཞིན་འདུག:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ཁྱེད་ཀྱི་ཡིག་ཆ་ཚོས་{totalStorageGB} GB གསོག་འཇོག་གི་{formatGB(usedGB)}ལེན་ཡོད། ཁྱེད་ཀྱིས་མ་འོངས་པར་ཞབས་ཞུ་ཡར་རྒྱས་གཏོང་དགོས་པ་ཡིན།"
 }

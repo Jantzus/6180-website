@@ -15,6 +15,24 @@ import {
   AlbumDates
 } from "@/styles/styled-components.tsx";
 
+// Helper function to format bytes into human-readable format
+const formatFileSize = (bytes: number): string => {
+  if (bytes === 0) return '0 B';
+  
+  const k = 1024;
+  const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  
+  return `${Math.round((bytes / Math.pow(k, i)) * 100) / 100} ${sizes[i]}`;
+};
+
+// Helper function to calculate total size of files in a folder
+const calculateTotalSize = (files: Array<{ dataInBytes?: number }>): number => {
+  return files.reduce((total, file) => {
+    return total + (file.dataInBytes || 0);
+  }, 0);
+};
+
 // Styled Components (from original AlbumList.tsx)
 const Container = styled.div<{ isRTL: boolean }>`
   margin-bottom: 30px;
@@ -392,6 +410,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
           contact && typeof contact === 'string' && !contact.toString().startsWith('Profile-')
         );
 
+        // Calculate total size of files in this folder
+        const totalSize = calculateTotalSize(folder.files);
+
         const inviteLink = generateInviteLink(
           folder.folderId,
           folder.albumNanoId || null,
@@ -482,7 +503,10 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                 )}
 
                 <FileCount isRTL={isRTL}>
-                  {folder.files.length === 1 ? t('{count} file').replace('{count}', folder.files.length.toString()) : t('{count} files').replace('{count}', folder.files.length.toString())}
+                  {folder.files.length === 1 
+                    ? `${t('{count} file').replace('{count}', folder.files.length.toString())} • ${formatFileSize(totalSize)}`
+                    : `${t('{count} files').replace('{count}', folder.files.length.toString())} • ${formatFileSize(totalSize)}`
+                  }
                 </FileCount>
 
                 <GalleryContainer>

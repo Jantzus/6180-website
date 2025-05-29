@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "您有超过5个相册。除非您升级订阅，否则这些相册将被自动删除:",
   "Click To Upgrade Subscription": "点击升级订阅",
   "WILL BE DELETED": "将被删除",
-  "Create an album in 90 sec": "90秒内创建相册"
+  "Create an album in 90 sec": "90秒内创建相册",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "您有{albumCount}个相册，但免费只能保存5个。这些最旧的相册正在被自动删除:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "您的文件占用了{formatGB(usedGB)}空间，但您只有{FREE_TIER_STORAGE_LIMIT_GB} GB存储空间。这些相册正在被自动删除:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "您有超过5个相册，并且您的文件占用了{formatGB(usedGB)}空间（限制：{FREE_TIER_STORAGE_LIMIT_GB} GB）。这些相册正在被自动删除:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "您的文件占用了{formatGB(usedGB)}空间，但您只有{totalStorageGB} GB存储空间。这些相册正在被自动删除:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "您的文件占用了{totalStorageGB} GB存储空间中的{formatGB(usedGB)}。您可能需要尽快升级订阅。"
 }

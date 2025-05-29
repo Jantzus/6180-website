@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "உங்களிடம் 5 க்கும் மேற்பட்ட ஆல்பங்கள் உள்ளன. நீங்கள் உங்கள் சந்தாவை மேம்படுத்தவில்லை என்றால் இந்த ஆல்பங்கள் தானாகவே நீக்கப்படுகின்றன:",
   "Click To Upgrade Subscription": "சந்தாவை மேம்படுத்த கிளிக் செய்யுங்கள்",
   "WILL BE DELETED": "நீக்கப்படும்",
-  "Create an album in 90 sec": "90 வினாடிகளில் ஆல்பம் உருவாக்கவும்"
+  "Create an album in 90 sec": "90 வினாடிகளில் ஆல்பம் உருவாக்கவும்",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "உங்களிடம் {albumCount} ஆல்பங்கள் உள்ளன ஆனால் இலவசமாக 5 மட்டுமே சேமிக்க முடியும். இந்த மிகப் பழைய ஆல்பங்கள் தானாக நீக்கப்படுகின்றன:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "உங்கள் கோப்புகள் {formatGB(usedGB)} இடத்தை ஆக்கிரமித்துள்ளன, ஆனால் உங்களிடம் {FREE_TIER_STORAGE_LIMIT_GB} GB சேமிப்பு மட்டுமே உள்ளது। இந்த ஆல்பங்கள் தானாக நீக்கப்படுகின்றன:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "உங்களிடம் 5க்கு மேல் ஆல்பங்கள் உள்ளன மற்றும் உங்கள் கோப்புகள் {formatGB(usedGB)} இடத்தை ஆக்கிரமித்துள்ளன (வரம்பு: {FREE_TIER_STORAGE_LIMIT_GB} GB). இந்த ஆல்பங்கள் தானாக நீக்கப்படுகின்றன:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "உங்கள் கோப்புகள் {formatGB(usedGB)} இடத்தை ஆக்கிரமித்துள்ளன, ஆனால் உங்களிடம் {totalStorageGB} GB சேமிப்பு மட்டுமே உள்ளது। இந்த ஆல்பங்கள் தானாக நீக்கப்படுகின்றன:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "உங்கள் கோப்புகள் {totalStorageGB} GB சேமிப்பில் {formatGB(usedGB)} ஆக்கிரமித்துள்ளன। நீங்கள் விரைவில் உங்கள் சந்தாவை மேம்படுத்த வேண்டியிருக்கலாம்."
 }

@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ũrĩ na ciugo igĩrĩ gũkĩra 5. Ciugo ici nĩcirehagwo na mwene tiga wongere subscription yaku:",
   "Click To Upgrade Subscription": "Gicuutha Kwongera Subscription",
   "WILL BE DELETED": "GŨKEHERERWO",
-  "Create an album in 90 sec": "Thondeka mbuku ya mathambĩ na sekonde 90"
+  "Create an album in 90 sec": "Thondeka mbuku ya mathambĩ na sekonde 90",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ũrĩ na mbuku {albumCount} no ũngĩhota kũiga o 5 cia thĩinĩ. Mbuku ici nene ikũu nĩcirahagwo na muthiũrũ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

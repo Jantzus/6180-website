@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Έχετε περισσότερα από 5 άλμπουμ. Αυτά τα άλμπουμ διαγράφονται αυτόματα εκτός εάν αναβαθμίσετε τη συνδρομή σας:",
   "Click To Upgrade Subscription": "Κάντε Κλικ Για Αναβάθμιση Συνδρομής",
   "WILL BE DELETED": "ΘΑ ΔΙΑΓΡΑΦΕΙ",
-  "Create an album in 90 sec": "Δημιουργήστε άλμπουμ σε 90 δευτερόλεπτα"
+  "Create an album in 90 sec": "Δημιουργήστε άλμπουμ σε 90 δευτερόλεπτα",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Έχετε {albumCount} άλμπουμ αλλά μπορείτε να αποθηκεύσετε μόνο 5 δωρεάν. Αυτά τα παλαιότερα άλμπουμ διαγράφονται αυτόματα:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Τα αρχεία σας καταλαμβάνουν {formatGB(usedGB)} χώρο, αλλά έχετε μόνο {FREE_TIER_STORAGE_LIMIT_GB} GB αποθήκευσης. Αυτά τα άλμπουμ διαγράφονται αυτόματα:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Έχετε πάνω από 5 άλμπουμ ΚΑΙ τα αρχεία σας καταλαμβάνουν {formatGB(usedGB)} χώρο (όριο: {FREE_TIER_STORAGE_LIMIT_GB} GB). Αυτά τα άλμπουμ διαγράφονται αυτόματα:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Τα αρχεία σας καταλαμβάνουν {formatGB(usedGB)} χώρο, αλλά έχετε μόνο {totalStorageGB} GB αποθήκευσης. Αυτά τα άλμπουμ διαγράφονται αυτόματα:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Τα αρχεία σας καταλαμβάνουν {formatGB(usedGB)} από {totalStorageGB} GB αποθήκευσης. Μπορεί να χρειαστεί να αναβαθμίσετε τη συνδρομή σας σύντομα."
 }

@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5 album baino gehiago dituzu. Album hauek automatikoki ezabatu egiten dira zure harpidetza eguneratzen ez baduzu:",
   "Click To Upgrade Subscription": "Klik Egin Harpidetza Eguneratzeko",
   "WILL BE DELETED": "EZABATUKO DA",
-  "Create an album in 90 sec": "Sortu album bat 90 segundotan"
+  "Create an album in 90 sec": "Sortu album bat 90 segundotan",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Zuk {albumCount} album dituzu baina doan 5 bakarrik gorde ditzakezu. Album zahar hauek automatikoki ezabatzen ari dira:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Zure fitxategiak {formatGB(usedGB)} leku hartzen dute, baina {FREE_TIER_STORAGE_LIMIT_GB} GB biltegi bakarrik dituzu. Album hauek automatikoki ezabatzen ari dira:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "5 album baino gehiago dituzu ETA zure fitxategiak {formatGB(usedGB)} leku hartzen dute (muga: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album hauek automatikoki ezabatzen ari dira:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Zure fitxategiak {formatGB(usedGB)} leku hartzen dute, baina {totalStorageGB} GB biltegi bakarrik dituzu. Album hauek automatikoki ezabatzen ari dira:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Zure fitxategiak {totalStorageGB} GB biltegiaren {formatGB(usedGB)} hartzen dute. Laster zure harpidetza eguneratu beharko duzu agian."
 }

@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5개 이상의 앨범이 있습니다. 구독을 업그레이드하지 않으면 이 앨범들이 자동으로 삭제됩니다:",
   "Click To Upgrade Subscription": "구독 업그레이드를 위해 클릭",
   "WILL BE DELETED": "삭제됩니다",
-  "Create an album in 90 sec": "90초 만에 앨범 만들기"
+  "Create an album in 90 sec": "90초 만에 앨범 만들기",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "{albumCount}개의 앨범이 있지만 무료로는 5개만 저장할 수 있습니다. 이 가장 오래된 앨범들이 자동으로 삭제되고 있습니다:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "파일이 {formatGB(usedGB)}의 공간을 차지하고 있지만, {FREE_TIER_STORAGE_LIMIT_GB} GB 저장공간만 있습니다. 이 앨범들이 자동으로 삭제되고 있습니다:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "5개 이상의 앨범이 있고 파일이 {formatGB(usedGB)}의 공간을 차지하고 있습니다 (제한: {FREE_TIER_STORAGE_LIMIT_GB} GB). 이 앨범들이 자동으로 삭제되고 있습니다:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "파일이 {formatGB(usedGB)}의 공간을 차지하고 있지만, {totalStorageGB} GB 저장공간만 있습니다. 이 앨범들이 자동으로 삭제되고 있습니다:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "파일이 {totalStorageGB} GB 저장공간 중 {formatGB(usedGB)}을 차지하고 있습니다. 곧 구독을 업그레이드해야 할 수도 있습니다."
 }

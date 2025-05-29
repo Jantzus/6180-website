@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Àla na bâa albüm 5. Àla albüm so sí tere da nânigü, na ndo ye na kua wali na mbîti na vo mo:",
   "Click To Upgrade Subscription": "Nyen Ti Subscription Kanga",
   "WILL BE DELETED": "ÄKÖ WARA",
-  "Create an album in 90 sec": "Sara album na miniti 90"
+  "Create an album in 90 sec": "Sara album na miniti 90",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Mo yeke na {albumCount} album keda mo so na mbeni 5 ta pasopa tene. A album ayeke tere mingi so a yeke passa na ngui ti lo:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

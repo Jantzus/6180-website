@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Санӑн 5-тен нумай альбом пур. Ку альбомсем автоматла кăларнă çине, эсир абонементна аталантармасан:",
   "Click To Upgrade Subscription": "Абонементна Аталантаракан Пуҫ",
   "WILL BE DELETED": "КĂЛАРСА ПĂРАХĂП",
-  "Create an album in 90 sec": "90 секундра альбом тӑва"
+  "Create an album in 90 sec": "90 секундра альбом тӑва",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Санăн {albumCount} альбом пур, анчах тӳлевсĕр 5-не кăна упраса пулать. Ку чи кивĕ альбомсем вăрттăн сирелет:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

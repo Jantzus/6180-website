@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "คุณมีอัลบั้มมากกว่า 5 อัลบั้ม อัลบั้มเหล่านี้จะถูกลบโดยอัตโนมัติ เว้นแต่คุณจะอัพเกรดการสมัครสมาชิกของคุณ:",
   "Click To Upgrade Subscription": "คลิกเพื่ออัปเกรดการสมัครสมาชิก",
   "WILL BE DELETED": "จะถูกลบ",
-  "Create an album in 90 sec": "สร้างอัลบั้มใน 90 วินาที"
+  "Create an album in 90 sec": "สร้างอัลบั้มใน 90 วินาที",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "คุณมีอัลบั้ม {albumCount} อัลบั้ม แต่สามารถบันทึกได้เพียง 5 อัลบั้มฟรี อัลบั้มเก่าแก่ที่สุดเหล่านี้กำลังถูกลบโดยอัตโนมัติ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} แต่คุณมีพื้นที่จัดเก็บเพียง {FREE_TIER_STORAGE_LIMIT_GB} GB เท่านั้น อัลบั้มเหล่านี้กำลังถูกลบโดยอัตโนมัติ:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "คุณมีอัลบั้มมากกว่า 5 อัลบั้ม และไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} (ขีดจำกัด: {FREE_TIER_STORAGE_LIMIT_GB} GB) อัลบั้มเหล่านี้กำลังถูกลบโดยอัตโนมัติ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} แต่คুณมีพื้นที่จัดเก็บเพียง {totalStorageGB} GB เท่านั้น อัลบั้มเหล่านี้กำลังถูกลบโดยอัตโนมัติ:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} จาก {totalStorageGB} GB ที่จัดเก็บ คุณอาจต้องอัปเกรดการสมัครของคุณในเร็วๆ นี้"
 }

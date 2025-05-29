@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tens més de 5 àlbums. Aquests àlbums s'estan esborrant automàticament llevat que actualitzis la teva subscripció:",
   "Click To Upgrade Subscription": "Feu Clic Per Actualitzar La Subscripció",
   "WILL BE DELETED": "SERÀ ESBORRAT",
-  "Create an album in 90 sec": "Crear un àlbum en 90 segons"
+  "Create an album in 90 sec": "Crear un àlbum en 90 segons",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Tens {albumCount} àlbums però només pots desar 5 de franc. Aquests àlbums més antics s'estan esborrant automàticament:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Els vostres fitxers ocupen {formatGB(usedGB)} d'espai, però només teniu {FREE_TIER_STORAGE_LIMIT_GB} GB d'emmagatzematge. Aquests àlbums s'estan esborrant automàticament:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Tens més de 5 àlbums I els vostres fitxers ocupen {formatGB(usedGB)} d'espai (límit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Aquests àlbums s'estan esborrant automàticament:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Els vostres fitxers ocupen {formatGB(usedGB)} d'espai, però només teniu {totalStorageGB} GB d'emmagatzematge. Aquests àlbums s'estan esborrant automàticament:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Els vostres fitxers ocupen {formatGB(usedGB)} dels {totalStorageGB} GB d'emmagatzematge. Potser haureu d'actualitzar la vostra subscripció aviat."
 }

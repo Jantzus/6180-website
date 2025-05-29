@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Jo hawwe mear as 5 albums. Dizze albums wurde automatysk fuortsmiten, útsein as jo jo abonnemint opwurdearje:",
   "Click To Upgrade Subscription": "Klik Om Abonnement Upgrade Te Meitsjen",
   "WILL BE DELETED": "WURDT WISKE",
-  "Create an album in 90 sec": "Meitsje in album yn 90 sekonden"
+  "Create an album in 90 sec": "Meitsje in album yn 90 sekonden",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Jo hawwe {albumCount} albums mar kinne der mar 5 fergees bewarje. Dizze âldste albums wurde automatysk fuortsmiten:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

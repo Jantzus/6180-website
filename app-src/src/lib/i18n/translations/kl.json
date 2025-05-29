@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5-mit albumit amerlanerit pisit. Taakku albumit piumasumik peerneqarput, subscription-it upgradeninngitit:",
   "Click To Upgrade Subscription": "Pissusillugu Abonnement Inuussutissanut",
   "WILL BE DELETED": "PIQQUSAASSAAQ",
-  "Create an album in 90 sec": "Albumimik senninneq 90-ini"
+  "Create an album in 90 sec": "Albumimik senninneq 90-ini",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Pisiit album {albumCount}-nik kisiannili 5-nik kisiat akisinngilaq. Uku sivullertut albumit piumasumik peerneqarput:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

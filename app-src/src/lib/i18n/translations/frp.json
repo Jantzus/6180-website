@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Vos avéd més de 5 albums. Cetos albums sont dèfacits ôtomaticament, a muens que vos mètâd a nivél voutron abonament:",
   "Click To Upgrade Subscription": "Clicâd Por Mèlyorar L'Abonament",
   "WILL BE DELETED": "SERAT SUPRIMÂ",
-  "Create an album in 90 sec": "Crèar un album en 90 secondes"
+  "Create an album in 90 sec": "Crèar un album en 90 secondes",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Vos avéd {albumCount} albums mas povéd ren que nên gardar 5 gratis. Cetos albums los ples vielys sont suprimâs ôtomaticament :",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

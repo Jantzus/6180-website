@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Yu av muor dan 5 albam. Dem albam ya ago delet automatik if yu no apgreed yu subscripshin:",
   "Click To Upgrade Subscription": "Click Fi Upgrade Subscription",
   "WILL BE DELETED": "AGO DELETE",
-  "Create an album in 90 sec": "Mek album inna 90 second"
+  "Create an album in 90 sec": "Mek album inna 90 second",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Yu av {albumCount} album but yu kyaan siev 5 nomo fi free. Dem ya ooles album ya a get delete automatikali:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

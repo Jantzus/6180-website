@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "ᎯᎶ 5 ᏗᏘᏍᏗ ᏧᏂᎸᏫᏍᏓᏁᏗ ᏗᏘᏍᏗ ᎾᎿ ᏗᏘᏍᏗ ᏧᏂᎸᏫᏍᏓᏁᏗ ᏚᎾᏤᎵᏍᎨᏍᏗ ᏚᏩᏛᎲ ᏎᏍᏗ ᏚᎾᏤᎵᏍᎨᏍᏗ ᏗᏎᏍᏗ:",
   "Click To Upgrade Subscription": "ᎧᏴᏢ ᎠᏖᏗᏃᏗ ᏐᎵᏥᏥᎾ",
   "WILL BE DELETED": "ᎦᏅᏍᏗ ᎾᎿ ᏧᎳᏌᏓ",
-  "Create an album in 90 sec": "90 ᎢᏯᏔᏬᏍᏔᏅ ᎤᏍᏗ ᏗᏘᏍᏗ ᎥᏝ ᎠᏍᏆᏂᎪᏔᏅ"
+  "Create an album in 90 sec": "90 ᎢᏯᏔᏬᏍᏔᏅ ᎤᏍᏗ ᏗᏘᏍᏗ ᎥᏝ ᎠᏍᏆᏂᎪᏔᏅ",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "ᏂᎯ {albumCount} ᏗᏘᏍᏗ ᏗᏣᏍᏙᏗ ᎪᎯ ᎢᏧᎳᎭ ᎨᏒᎢ 5 ᏥᏌ ᏓᏙᎵᏍᏙᏗ. ᎤᏍᏗ ᏗᏂᏂᏗᏗ ᏗᏣᏍᏙᏗ ᎠᏂᎧᎺ ᎠᏙᎴᎰᏍᏗ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

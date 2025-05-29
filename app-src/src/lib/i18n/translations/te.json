@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "మీ వద్ద 5 కంటే ఎక్కువ ఆల్బమ్‌లు ఉన్నాయి. మీరు మీ సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయకపోతే ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
   "Click To Upgrade Subscription": "సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయడానికి క్లిక్ చేయండి",
   "WILL BE DELETED": "తొలగించబడుతుంది",
-  "Create an album in 90 sec": "90 సెకన్లలో ఆల్బమ్ సృష్టించండి"
+  "Create an album in 90 sec": "90 సెకన్లలో ఆల్బమ్ సృష్టించండి",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "మీ దగ్గర {albumCount} ఆల్బమ్‌లు ఉన్నాయి కానీ ఉచితంగా కేవలం 5 మాత్రమే సేవ్ చేయగలరు. ఈ అత్యంత పాత ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "మీ ఫైళ్లు {formatGB(usedGB)} స్థలాన్ని ఆక్రమిస్తున్నాయి, కానీ మీ దగ్గర {FREE_TIER_STORAGE_LIMIT_GB} GB నిల్వ మాత్రమే ఉంది। ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "మీ దగ్గర 5కు మించి ఆల్బమ్‌లు ఉన్నాయి మరియు మీ ఫైళ్లు {formatGB(usedGB)} స్థలాన్ని ఆక్రమిస్తున్నాయి (పరిమితి: {FREE_TIER_STORAGE_LIMIT_GB} GB). ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "మీ ఫైళ్లు {formatGB(usedGB)} స్థలాన్ని ఆక్రమిస్తున్నాయి, కానీ మీ దగ్గర {totalStorageGB} GB నిల్వ మాత్రమే ఉంది। ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "మీ ఫైళ్లు {totalStorageGB} GB నిల్వలో {formatGB(usedGB)} ఆక్రమిస్తున్నాయి. మీరు త్వరలో మీ సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయాల్సి రావచ్చు."
 }

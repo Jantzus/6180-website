@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Manana album mahery noho 5 ianao. Ireo album ireo dia voafafa ho azy raha tsy manatsara ny famandrihan-tena:",
   "Click To Upgrade Subscription": "Tsindrio Hanatsara Ny Subscription",
   "WILL BE DELETED": "HOVONOINA",
-  "Create an album in 90 sec": "Mamorona rakikira ao anatin'ny 90 segondra"
+  "Create an album in 90 sec": "Mamorona rakikira ao anatin'ny 90 segondra",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Manana rakikira {albumCount} ianao saingy afaka mitahiry 5 maimaimpoana ihany. Ireo rakikira tranainy ireo dia fafana ho azy:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

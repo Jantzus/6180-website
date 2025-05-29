@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Маєте веце як 5 альбомів. Тоты альбомы ся автоматічно мажуть, покы не обновите абонемент:",
   "Click To Upgrade Subscription": "Націснїце Жебы Обновити Одбер",
   "WILL BE DELETED": "БУДЗЕ ВЫДАЛЕНЫЙ",
-  "Create an album in 90 sec": "Створити албум за 90 секунд"
+  "Create an album in 90 sec": "Створити албум за 90 секунд",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Мате {albumCount} альбомів, але можете схованити лем 5 задармо. Ці найстаршы альбомы ся автоматічно одстранюють:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

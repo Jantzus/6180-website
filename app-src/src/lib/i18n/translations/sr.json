@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Имате више од 5 албума. Ови албуми се аутоматски бришу осим ако не надоградите своју претплату:",
   "Click To Upgrade Subscription": "Кликните За Надоградњу Претплате",
   "WILL BE DELETED": "БИЋЕ ОБРИСАНО",
-  "Create an album in 90 sec": "Направите албум за 90 секунди"
+  "Create an album in 90 sec": "Направите албум за 90 секунди",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Имате {albumCount} албума али можете сачувати само 5 бесплатно. Ови најстарији албуми се аутоматски бришу:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ваши фајлови заузимају {formatGB(usedGB)} простора, али имате само {FREE_TIER_STORAGE_LIMIT_GB} GB складишта. Ови албуми се аутоматски бришу:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Имате преко 5 албума И ваши фајлови заузимају {formatGB(usedGB)} простора (ограничење: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ови албуми се аутоматски бришу:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Ваши фајлови заузимају {formatGB(usedGB)} простора, али имате само {totalStorageGB} GB складишта. Ови албуми се аутоматски бришу:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Ваши фајлови заузимају {formatGB(usedGB)} од {totalStorageGB} GB складишта. Можда ћете ускоро требати да надоградите претплату."
 }

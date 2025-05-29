@@ -55,6 +55,7 @@ export type FileType = {
   dataKey: string;
   thumbnailDataKey: string | null;
   durationInSeconds: number | null;
+  dataInBytes?: number;
 };
 
 export interface FolderType {
@@ -74,6 +75,7 @@ export interface FolderType {
     dataKey: string;
     thumbnailDataKey?: string;
     durationInSeconds?: number;
+    dataInBytes?: number;
   }>;
   profileIds?: string[];
   contacts?: Record<string, string>;
@@ -83,6 +85,7 @@ export interface File {
   dataKey: string
   thumbnailDataKey: string | null
   durationInSeconds: number | null
+  dataInBytes?: number
 }
 
 export interface Folder {
@@ -113,6 +116,7 @@ export interface MediaItem {
   ownerName?: string;
   ownerContactId?: string;
   loaded?: boolean;
+  dataInBytes?: number;
 }
 
 // Contact mapping
@@ -229,6 +233,7 @@ export const FETCH_FOLDERS_QUERY = `
                 dataKey
                 thumbnailDataKey
                 durationInSeconds
+                dataInBytes
               }
             }
           }

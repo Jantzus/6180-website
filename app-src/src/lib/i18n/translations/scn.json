@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Hai cchiù di 5 album. Sti album vennu cancillati automaticamenti, a menu ca nun aggiurni l'abbunamentu:",
   "Click To Upgrade Subscription": "Fai Clic Pi Aggiurnari L'Abbunamentu",
   "WILL BE DELETED": "VENI CANCILLATU",
-  "Create an album in 90 sec": "Cria n'album nta 90 secunni"
+  "Create an album in 90 sec": "Cria n'album nta 90 secunni",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Hai {albumCount} album ma poi sarvari sulu 5 gratis. Sti album cchiu vecchi si stannu cancillannu automaticamenti:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

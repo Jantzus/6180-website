@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Һеҙҙең 5-тән күп альбомығыҙ бар. Бы альбомдар автоматик юҡ ителә, әгәр һеҙ абонементығыҙҙы яңыртмаһағыҙ:",
   "Click To Upgrade Subscription": "Яҙылыуҙы Яһшыртыу Өсөн Баҫығыҙ",
   "WILL BE DELETED": "БЕТЕРӘЛӘСӘК",
-  "Create an album in 90 sec": "90 секундта альбом төҙөргөҙ"
+  "Create an album in 90 sec": "90 секундта альбом төҙөргөҙ",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Һеҙҙә {albumCount} альбом бар, ләкин түләүһеҙ 5 кенә һаҡлай алаһығыҙ. Был иң ҡарт альбомдар үҙ-үҙенән юҡ ителә:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Һеҙҙең файлдарығыҙ {formatGB(usedGB)} урын ала, ләкин һеҙҙең {FREE_TIER_STORAGE_LIMIT_GB} GB һаҡлау урыныгыҙ бар. Был альбомдар үҙ-үҙенән юҡ ителә:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Һеҙҙә 5 тән күп альбом бар ҺӘМ һеҙҙең файлдарығыҙ {formatGB(usedGB)} урын ала (сикләү: {FREE_TIER_STORAGE_LIMIT_GB} GB). Был альбомдар үҙ-үҙенән юҡ ителә:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Һеҙҙең файлдарығыҙ {formatGB(usedGB)} урын ала, ләкин һеҙҙең {totalStorageGB} GB һаҡлау урыныгыҙ бар. Был альбомдар үҙ-үҙенән юҡ ителә:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Һеҙҙең файлдарығыҙ {totalStorageGB} GB һаҡлау урынының {formatGB(usedGB)} ала. Һеҙгә яҡын арала подпискағыҙҙы яңыртырға кәрәк булыуы мөмкин."
 }

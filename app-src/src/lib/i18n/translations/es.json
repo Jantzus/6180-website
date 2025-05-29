@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tienes más de 5 álbumes. Estos álbumes se están borrando automáticamente a menos que actualices tu suscripción:",
   "Click To Upgrade Subscription": "Hacer Clic Para Actualizar Suscripción",
   "WILL BE DELETED": "SERÁ ELIMINADO",
-  "Create an album in 90 sec": "Crear un álbum en 90 segundos"
+  "Create an album in 90 sec": "Crear un álbum en 90 segundos",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Tienes {albumCount} álbumes pero solo puedes guardar 5 gratis. Estos álbumes más antiguos se están eliminando automáticamente:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tus archivos ocupan {formatGB(usedGB)} de espacio, pero solo tienes {FREE_TIER_STORAGE_LIMIT_GB} GB de almacenamiento. Estos álbumes se están eliminando automáticamente:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Tienes más de 5 álbumes Y tus archivos ocupan {formatGB(usedGB)} de espacio (límite: {FREE_TIER_STORAGE_LIMIT_GB} GB). Estos álbumes se están eliminando automáticamente:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Tus archivos ocupan {formatGB(usedGB)} de espacio, pero solo tienes {totalStorageGB} GB de almacenamiento. Estos álbumes se están eliminando automáticamente:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Tus archivos ocupan {formatGB(usedGB)} de {totalStorageGB} GB de almacenamiento. Es posible que necesites actualizar tu suscripción pronto."
 }

@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Du har fler än 5 album. Dessa album raderas automatiskt om du inte uppgraderar din prenumeration:",
   "Click To Upgrade Subscription": "Klicka För Att Uppgradera Prenumeration",
   "WILL BE DELETED": "KOMMER ATT RADERAS",
-  "Create an album in 90 sec": "Skapa ett album på 90 sekunder"
+  "Create an album in 90 sec": "Skapa ett album på 90 sekunder",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Du har {albumCount} album men kan bara spara 5 gratis. Dessa äldsta album raderas automatiskt:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Dina filer tar {formatGB(usedGB)} utrymme, men du har bara {FREE_TIER_STORAGE_LIMIT_GB} GB lagring. Dessa album raderas automatiskt:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Du har över 5 album OCH dina filer tar {formatGB(usedGB)} utrymme (gräns: {FREE_TIER_STORAGE_LIMIT_GB} GB). Dessa album raderas automatiskt:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Dina filer tar {formatGB(usedGB)} utrymme, men du har bara {totalStorageGB} GB lagring. Dessa album raderas automatiskt:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Dina filer tar {formatGB(usedGB)} av {totalStorageGB} GB lagring. Du kan behöva uppgradera din prenumeration snart."
 }

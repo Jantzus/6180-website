@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "عندك اكتر من 5 البومات. الالبومات دي بتتمسح اوتوماتيك الا لو عملت ابجريد للاشتراك بتاعك:",
   "Click To Upgrade Subscription": "دوس علشان تحسن الاشتراك",
   "WILL BE DELETED": "حيتمسح",
-  "Create an album in 90 sec": "اعمل ألبوم في 90 ثانية"
+  "Create an album in 90 sec": "اعمل ألبوم في 90 ثانية",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "عندك {albumCount} ألبوم بس تقدر تحفظ 5 بس مجاني. الألبومات الأقدم دي بتتمسح تلقائي:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "الملفات بتاعتك بتاخد مساحة {formatGB(usedGB)}، بس عندك {FREE_TIER_STORAGE_LIMIT_GB} جيجا تخزين بس. الألبومات دي بتتمسح تلقائي:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "عندك أكتر من 5 ألبوم والملفات بتاعتك بتاخد مساحة {formatGB(usedGB)} (الحد: {FREE_TIER_STORAGE_LIMIT_GB} جيجا). الألبومات دي بتتمسح تلقائي:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "الملفات بتاعتك بتاخد مساحة {formatGB(usedGB)}، بس عندك {totalStorageGB} جيجا تخزين بس. الألبومات دي بتتمسح تلقائي:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "الملفات بتاعتك بتاخد {formatGB(usedGB)} من {totalStorageGB} جيجا تخزين. ممكن تحتاج تحديث الاشتراك بتاعك قريب."
 }

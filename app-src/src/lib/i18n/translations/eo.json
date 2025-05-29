@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Vi havas pli ol 5 albumoj. Ĉi tiuj albumoj estas aŭtomate forigitaj krom se vi promocias vian abonon:",
   "Click To Upgrade Subscription": "Alklaku Por Plibonigi Abonon",
   "WILL BE DELETED": "ESTOS FORIGITA",
-  "Create an album in 90 sec": "Krei albumon en 90 sekundoj"
+  "Create an album in 90 sec": "Krei albumon en 90 sekundoj",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Vi havas {albumCount} albumojn sed povas konservi nur 5 senpage. Ĉi tiuj plej malnovaj albumoj estas aŭtomate forigataj:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Viaj dosieroj okupas {formatGB(usedGB)} spacon, sed vi havas nur {FREE_TIER_STORAGE_LIMIT_GB} GB memorigon. Ĉi tiuj albumoj estas aŭtomate forigataj:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Vi havas pli ol 5 albumojn KAJ viaj dosieroj okupas {formatGB(usedGB)} spacon (limo: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ĉi tiuj albumoj estas aŭtomate forigataj:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Viaj dosieroj okupas {formatGB(usedGB)} spacon, sed vi havas nur {totalStorageGB} GB memorigon. Ĉi tiuj albumoj estas aŭtomate forigataj:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Viaj dosieroj okupas {formatGB(usedGB)} de {totalStorageGB} GB memorigo. Vi eble devos baldaŭ promocii vian abonon."
 }

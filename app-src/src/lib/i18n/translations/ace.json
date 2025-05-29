@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Droeneuh na leubeh nibak 5 album. Album-album nyoe lagi otomatis hapus kecuali droeneuh upgrade langganan:",
   "Click To Upgrade Subscription": "Teugon Keu Peudong Langganan",
   "WILL BE DELETED": "akan geuhapôih",
-  "Create an album in 90 sec": "Peugöt album bak 90 detik"
+  "Create an album in 90 sec": "Peugöt album bak 90 detik",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Droeneuh na {albumCount} album tapi han jeuet keubah manyang 5 yg geutanyo. Album-album trep nyoe geupajoh otomatis:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Berkas droeneuh meunyoe {formatGB(usedGB)} ruang, tapi droeneuh cuma na {FREE_TIER_STORAGE_LIMIT_GB} GB panyimpenan. Album-album nyoe geupajoh otomatis:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Droeneuh na leubeh dari 5 album DAN berkas droeneuh meunyoe {formatGB(usedGB)} ruang (batas: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album-album nyoe geupajoh otomatis:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Berkas droeneuh meunyoe {formatGB(usedGB)} ruang, tapi droeneuh cuma na {totalStorageGB} GB panyimpenan. Album-album nyoe geupajoh otomatis:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Berkas droeneuh meunyoe {formatGB(usedGB)} dari {totalStorageGB} GB panyimpenan. Droeneuh ka perlu upgrade langganan droeneuh bah."
 }

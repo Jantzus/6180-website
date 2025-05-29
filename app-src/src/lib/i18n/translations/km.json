@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "អ្នកមានអាល់ប៊ុមលើសពី 5។ អាល់ប៊ុមទាំងនេះកំពុងត្រូវបានលុបដោយស្វ័យប្រវត្តិ លុះត្រាតែអ្នកធ្វើការកែលម្អការជាវរបស់អ្នក:",
   "Click To Upgrade Subscription": "ចុចដើម្បីធ្វើបច្ចុប្បន្នភាពការជាវ",
   "WILL BE DELETED": "នឹងត្រូវលុប",
-  "Create an album in 90 sec": "បង្កើតអាល់ប៊ុមក្នុងរយៈពេល 90 វិនាទី"
+  "Create an album in 90 sec": "បង្កើតអាល់ប៊ុមក្នុងរយៈពេល 90 វិនាទី",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "អ្នកមានអាល់ប៊ុម {albumCount} ប៉ុន្តែអាចរក្សាទុកបាន ៥ ប្រភេទដោយឥតគិតថ្លៃ។ អាល់ប៊ុមចាស់ៗទាំងនេះកំពុងតែត្រូវបានលុបដោយស្វ័យគ្រប់គ្រង:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ឯកសាររបស់អ្នកកំពុងប្រើប្រាស់ទំហំ {formatGB(usedGB)} ប៉ុន្តែអ្នកមានតែ {FREE_TIER_STORAGE_LIMIT_GB} GB ប្រអប់ផ្ទុកប៉ុណ្ណោះ។ អាល់ប៊ុមទាំងនេះកំពុងតែត្រូវបានលុបដោយស្វ័យប្រវត្តិ:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "អ្នកមានអាល់ប៊ុមច្រើនជាង 5 ហើយឯកសាររបស់អ្នកកំពុងប្រើប្រាស់ទំហំ {formatGB(usedGB)} (កំណត់: {FREE_TIER_STORAGE_LIMIT_GB} GB)។ អាល់ប៊ុមទាំងនេះកំពុងតែត្រូវបានលុបដោយស្វ័យប្រវត្តិ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "ឯកសាររបស់អ្នកកំពុងប្រើប្រាស់ទំហំ {formatGB(usedGB)} ប៉ុន្តែអ្នកមានតែ {totalStorageGB} GB ប្រអប់ផ្ទុកប៉ុណ្ណោះ។ អាល់ប៊ុមទាំងនេះកំពុងតែត្រូវបានលុបដោយស្វ័យប្រវត្តិ:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ឯកសាររបស់អ្នកកំពុងប្រើប្រាស់ {formatGB(usedGB)} ពី {totalStorageGB} GB ផ្ទុក។ អ្នកប្រហែលជាត្រូវការធ្វើកំណែថ្មីការជាវរបស់អ្នកក្នុងពេលឆាប់ៗនេះ។"
 }

@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "O ni cakava na 5 na album. Oqori na album sa sega tu ka vakayacori kece kevaka sega ni raica na nomu subscription:",
   "Click To Upgrade Subscription": "Kiliki Me Veisautaki Na Subscription",
   "WILL BE DELETED": "NA SOLI CAKE",
-  "Create an album in 90 sec": "Cakava na album ena 90 sekoni"
+  "Create an album in 90 sec": "Cakava na album ena 90 sekoni",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "O soli na album e {albumCount} ia sega talega ni warai na 5 ga vakacacani. Na album qo sa yacova na momori na sega na:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ashdlaʼ dóó neeznádiin sínída bee naʼniłkaadí nihaa. Díí naʼniłkaadí nihee bíighah ałtso íłtą, nti tʼáá nihikéyah doo naat'aanii dahóyáalgo:",
   "Click To Upgrade Subscription": "Ákʼeh Naaltsoos Áłtso Bá Naashá",
   "WILL BE DELETED": "NÁHODÍÍŁKĄ́Ą́'",
-  "Create an album in 90 sec": "Album 90 yoołkááł góne ałhįįh"
+  "Create an album in 90 sec": "Album 90 yoołkááł góne ałhįįh",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Nihí {albumCount} béésh nátsʼósii bee ałhosh nilį́ ndi łahgo 5 bee eł daats'i. Kʼad áłchíní béésh nátsʼósii bee aheełk'eh:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

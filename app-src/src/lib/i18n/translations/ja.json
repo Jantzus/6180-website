@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5つ以上のアルバムをお持ちです。サブスクリプションをアップグレードしない限り、これらのアルバムは自動的に削除されます:",
   "Click To Upgrade Subscription": "クリックしてサブスクリプションをアップグレード",
   "WILL BE DELETED": "削除されます",
-  "Create an album in 90 sec": "90秒でアルバムを作成"
+  "Create an album in 90 sec": "90秒でアルバムを作成",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "{albumCount}枚のアルバムがありますが、無料で保存できるのは5枚だけです。これらの最も古いアルバムは自動的に削除されています:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ファイルが{formatGB(usedGB)}の容量を使用していますが、ストレージは{FREE_TIER_STORAGE_LIMIT_GB} GBしかありません。これらのアルバムは自動的に削除されています:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "5枚を超えるアルバムがあり、ファイルが{formatGB(usedGB)}の容量を使用しています（制限：{FREE_TIER_STORAGE_LIMIT_GB} GB）。これらのアルバムは自動的に削除されています:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "ファイルが{formatGB(usedGB)}の容量を使用していますが、ストレージは{totalStorageGB} GBしかありません。これらのアルバムは自動的に削除されています:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ファイルが{totalStorageGB} GBストレージのうち{formatGB(usedGB)}を使用しています。近いうちにサブスクリプションをアップグレードする必要があるかもしれません。"
 }

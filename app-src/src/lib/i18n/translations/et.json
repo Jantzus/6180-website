@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Teil on üle 5 albumi. Need albumid kustutatakse automaatselt, kui te ei uuenda oma tellimust:",
   "Click To Upgrade Subscription": "Klõpsake Tellimuse Uuendamiseks",
   "WILL BE DELETED": "KUSTUTATAKSE",
-  "Create an album in 90 sec": "Loo album 90 sekundiga"
+  "Create an album in 90 sec": "Loo album 90 sekundiga",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Teil on {albumCount} albumit, kuid saate tasuta salvestada ainult 5. Need vanemad albumid kustutatakse automaatselt:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Teie failid hõivavad {formatGB(usedGB)} ruumi, kuid teil on ainult {FREE_TIER_STORAGE_LIMIT_GB} GB salvestusruumi. Need albumid kustutatakse automaatselt:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Teil on üle 5 albumi JA teie failid hõivavad {formatGB(usedGB)} ruumi (limiit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Need albumid kustutatakse automaatselt:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Teie failid hõivavad {formatGB(usedGB)} ruumi, kuid teil on ainult {totalStorageGB} GB salvestusruumi. Need albumid kustutatakse automaatselt:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Teie failid hõivavad {formatGB(usedGB)} {totalStorageGB} GB salvestusruumist. Võimalik, et peate peagi oma tellimust uuendama."
 }

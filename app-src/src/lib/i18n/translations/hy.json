@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Դուք ունեք 5-ից ավելի ալբոմ: Այս ալբոմները ավտոմատ կերպով ջնջվում են, եթե չարդիականացնեք ձեր բաժանորդագրությունը:",
   "Click To Upgrade Subscription": "Սեղմեք Բաժանորդագրությունը Արդիականացնելու Համար",
   "WILL BE DELETED": "ԿՀՁ ՋՆՋՎԵԼ",
-  "Create an album in 90 sec": "Ստեղծեք ալբոմ 90 վայրկյանում"
+  "Create an album in 90 sec": "Ստեղծեք ալբոմ 90 վայրկյանում",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Դուք ունեք {albumCount} ալբոմ, բայց կարող եք միայն 5-ը անվճար պահպանել։ Այս ամենահին ալբոմները ավտոմատ ջնջվում են:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ձեր ֆայլերը գրավում են {formatGB(usedGB)} տեղ, բայց դուք ունեք միայն {FREE_TIER_STORAGE_LIMIT_GB} GB պահեստ։ Այս ալբոմները ավտոմատ ջնջվում են:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Դուք ունեք 5-ից ավելի ալբոմ և ձեր ֆայլերը գրավում են {formatGB(usedGB)} տեղ (սահմանաչափ՝ {FREE_TIER_STORAGE_LIMIT_GB} GB)։ Այս ալբոմները ավտոմատ ջնջվում են:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Ձեր ֆայլերը գրավում են {formatGB(usedGB)} տեղ, բայց դուք ունեք միայն {totalStorageGB} GB պահեստ։ Այս ալբոմները ավտոմատ ջնջվում են:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Ձեր ֆայլերը գրավում են {formatGB(usedGB)} {totalStorageGB} GB պահեստից։ Կարող է շուտով պետք լինի արտոնագրությունը թարմացնել։"
 }

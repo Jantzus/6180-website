@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5'ten fazla albümünüz var. Bu albümler aboneliğinizi yükseltmediğiniz sürece otomatik olarak siliniyor:",
   "Click To Upgrade Subscription": "Aboneliği Yükseltmek İçin Tıklayın",
   "WILL BE DELETED": "SİLİNECEK",
-  "Create an album in 90 sec": "90 saniyede albüm oluşturun"
+  "Create an album in 90 sec": "90 saniyede albüm oluşturun",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Sizde {albumCount} albüm var ama ücretsiz yalnızca 5 tanesini kaydedebilirsiniz. Bu en eski albümler otomatik olarak siliniyor:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Dosyalarınız {formatGB(usedGB)} yer kaplıyor, ancak sadece {FREE_TIER_STORAGE_LIMIT_GB} GB depolama alanınız var. Bu albümler otomatik olarak siliniyor:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "5'ten fazla albümünüz var VE dosyalarınız {formatGB(usedGB)} yer kaplıyor (sınır: {FREE_TIER_STORAGE_LIMIT_GB} GB). Bu albümler otomatik olarak siliniyor:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Dosyalarınız {formatGB(usedGB)} yer kaplıyor, ancak sadece {totalStorageGB} GB depolama alanınız var. Bu albümler otomatik olarak siliniyor:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Dosyalarınız {totalStorageGB} GB depolama alanının {formatGB(usedGB)} kaplaıyor. Yakında aboneliğinizi yükseltmeniz gerekebilir."
 }

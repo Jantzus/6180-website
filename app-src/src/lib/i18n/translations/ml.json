@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "നിങ്ങളുടെ പക്കൽ 5-ലധികം ആൽബങ്ങൾ ഉണ്ട്. നിങ്ങൾ സബ്‌സ്ക്രിപ്‌ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യുന്നില്ലെങ്കിൽ ഈ ആൽബങ്ങൾ സ്വയം മായ്‌ക്കപ്പെടുന്നു:",
   "Click To Upgrade Subscription": "സബ്‌സ്ക്രിപ്ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക",
   "WILL BE DELETED": "ഇല്ലാതാക്കപ്പെടും",
-  "Create an album in 90 sec": "90 സെക്കൻഡിൽ ആൽബം സൃഷ്ടിക്കുക"
+  "Create an album in 90 sec": "90 സെക്കൻഡിൽ ആൽബം സൃഷ്ടിക്കുക",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "നിങ്ങൾക്ക് {albumCount} ആൽബങ്ങളുണ്ട് എന്നാൽ സൗജന്യമായി 5 എണ്ണം മാത്രമേ സംരക്ഷിക്കാൻ കഴിയൂ. ഈ ഏറ്റവും പഴയ ആൽബങ്ങൾ സ്വയമേവ ഇല്ലാതാക്കപ്പെടുന്നു:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "നിങ്ങളുടെ ഫയലുകൾ {formatGB(usedGB)} സ്ഥലം ഉപയോഗിക്കുന്നു, എന്നാൽ നിങ്ങൾക്ക് {FREE_TIER_STORAGE_LIMIT_GB} GB സംഭരണം മാത്രമേയുള്ളൂ। ഈ ആൽബങ്ങൾ സ്വയമേവ ഇല്ലാതാക്കപ്പെടുന്നു:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "നിങ്ങൾക്ക് 5-ൽ അധികം ആൽബങ്ങളുണ്ട് കൂടാതെ നിങ്ങളുടെ ഫയലുകൾ {formatGB(usedGB)} സ്ഥലം ഉപയോഗിക്കുന്നു (പരിധി: {FREE_TIER_STORAGE_LIMIT_GB} GB). ഈ ആൽബങ്ങൾ സ്വയമേവ ഇല്ലാതാക്കപ്പെടുന്നു:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "നിങ്ങളുടെ ഫയലുകൾ {formatGB(usedGB)} സ്ഥലം ഉപയോഗിക്കുന്നു, എന്നാൽ നിങ്ങൾക്ക് {totalStorageGB} GB സംഭരണം മാത്രമേയുള്ളൂ। ഈ ആൽബങ്ങൾ സ്വയമേവ ഇല്ലാതാക്കപ്പെടുന്നു:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "നിങ്ങളുടെ ഫയലുകൾ {totalStorageGB} GB സംഭരണത്തിൽ {formatGB(usedGB)} ഉപയോഗിക്കുന്നു। നിങ്ങൾക്ക് ഉടൻ സബ്‌സ്‌ക്രിപ്‌ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യേണ്ടി വന്നേക്കാം।"
 }

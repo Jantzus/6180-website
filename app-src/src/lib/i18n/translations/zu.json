@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Unama-albhamu angaphezu kwa-5. Lama-albhamu akususwa ngokwenzakalayo ngaphandle uma uphakamisa ukubhaliselwa kwakho:",
   "Click To Upgrade Subscription": "Chofoza Ukuze Uthuthukise I-Subscription",
   "WILL BE DELETED": "KUZOSUSWA",
-  "Create an album in 90 sec": "Dala i-albhamu ngemizuzwana engu-90"
+  "Create an album in 90 sec": "Dala i-albhamu ngemizuzwana engu-90",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Unama-albhamu angu-{albumCount} kodwa ungakwazi ukugcina nje ama-5 mahhala. Lawa ma-albhamu amadala kakhulu ayasuswa ngokuzenzakalayo:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Amafayela anu athatha indawo engu-{formatGB(usedGB)}, kodwa unendawo yokugcina engu-{FREE_TIER_STORAGE_LIMIT_GB} GB kuphela. Lawa ma-albhamu ayasuswa ngokuzenzakalayo:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Unama-albhamu angaphezu kuka-5 KANYE namafayela anu athatha indawo engu-{formatGB(usedGB)} (umkhawulo: {FREE_TIER_STORAGE_LIMIT_GB} GB). Lawa ma-albhamu ayasuswa ngokuzenzakalayo:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Amafayela anu athatha indawo engu-{formatGB(usedGB)}, kodwa unendawo yokugcina engu-{totalStorageGB} GB kuphela. Lawa ma-albhamu ayasuswa ngokuzenzakalayo:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Amafayela anu athatha {formatGB(usedGB)} kwengu-{totalStorageGB} GB yokugcina. Kungenzeka ukuthi udinga ukuthuthukisa umhlanganisela wakho maduze."
 }

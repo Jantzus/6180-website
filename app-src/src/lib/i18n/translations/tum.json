@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Muli ndi ma albamu opitirira 5. Ma albamu awa akuchotsedwa okha pokhapokha mutasinthira chilolezo chanu:",
   "Click To Upgrade Subscription": "Click To Upgrade Subscription",
   "WILL BE DELETED": "CHAPAFUTSIDWA",
-  "Create an album in 90 sec": "Panga albamu mu masekondi 90"
+  "Create an album in 90 sec": "Panga albamu mu masekondi 90",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Muli ndi ma albamu {albumCount} koma mutha kusunga 5 yokha paulere. Ma albamu akale kwambiri awa akuchotsedwa pa okha:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

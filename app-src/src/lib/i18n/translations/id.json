@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Anda memiliki lebih dari 5 album. Album-album ini sedang dihapus secara otomatis kecuali Anda meningkatkan langganan:",
   "Click To Upgrade Subscription": "Klik Untuk Meningkatkan Langganan",
   "WILL BE DELETED": "AKAN DIHAPUS",
-  "Create an album in 90 sec": "Buat album dalam 90 detik"
+  "Create an album in 90 sec": "Buat album dalam 90 detik",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Anda memiliki {albumCount} album tetapi hanya dapat menyimpan 5 secara gratis. Album tertua ini sedang dihapus secara otomatis:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "File Anda menggunakan ruang {formatGB(usedGB)}, tetapi Anda hanya memiliki {FREE_TIER_STORAGE_LIMIT_GB} GB penyimpanan. Album ini sedang dihapus secara otomatis:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Anda memiliki lebih dari 5 album DAN file Anda menggunakan ruang {formatGB(usedGB)} (batas: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album ini sedang dihapus secara otomatis:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "File Anda menggunakan ruang {formatGB(usedGB)}, tetapi Anda hanya memiliki {totalStorageGB} GB penyimpanan. Album ini sedang dihapus secara otomatis:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "File Anda menggunakan {formatGB(usedGB)} dari {totalStorageGB} GB penyimpanan. Anda mungkin perlu meningkatkan langganan Anda segera."
 }

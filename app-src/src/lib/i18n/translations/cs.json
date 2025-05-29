@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Máte více než 5 alb. Tato alba se automaticky mažou, pokud si neupgradujete předplatné:",
   "Click To Upgrade Subscription": "Klikněte Pro Upgrade Předplatného",
   "WILL BE DELETED": "BUDE SMAZÁNO",
-  "Create an album in 90 sec": "Vytvořte album za 90 sekund"
+  "Create an album in 90 sec": "Vytvořte album za 90 sekund",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Máte {albumCount} alb, ale můžete uložit pouze 5 zdarma. Tato nejstarší alba se automaticky odstraňují:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Vaše soubory zabírají {formatGB(usedGB)} místa, ale máte pouze {FREE_TIER_STORAGE_LIMIT_GB} GB úložiště. Tato alba se automaticky odstraňují:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Máte více než 5 alb A vaše soubory zabírají {formatGB(usedGB)} místa (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Tato alba se automaticky odstraňují:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Vaše soubory zabírají {formatGB(usedGB)} místa, ale máte pouze {totalStorageGB} GB úložiště. Tato alba se automaticky odstraňují:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Vaše soubory zabírají {formatGB(usedGB)} z {totalStorageGB} GB úložiště. Možná brzy budete muset upgradovat své předplatné."
 }

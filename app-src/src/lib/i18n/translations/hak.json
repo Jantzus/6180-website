@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ngì yû chhiá-kwo 5-ke sióng-chṳk. Liá-kî sióng-chṳk chṳn-teu chhṳ-thung thet-tû, chhù-fî ngì sên-kip ngì-ke tên-yok:",
   "Click To Upgrade Subscription": "撳下升級訂閱",
   "WILL BE DELETED": "TSIONG-HOI HI TSHÙ-TIÁU",
-  "Create an album in 90 sec": "90秒鐘內創建相冊"
+  "Create an album in 90 sec": "90秒鐘內創建相冊",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ngì yû {albumCount} sióng-chṳk, tân-he mièn-fî chṳ-nèn pó-chhùn 5-chak. Liá-kiên chui-kí ke sióng-chṳk chiòng-tûng sṳ́-tung sân-thet:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

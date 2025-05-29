@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tìne cchiù de 5 album. St'album se stonne scangellanne automaticamende, a mene ca non aggiuorne l'abbonamente tune:",
   "Click To Upgrade Subscription": "Cazze Pe Aggiornà 'A Sottoscrizione",
   "WILL BE DELETED": "AVÈNE SCANGELLATE",
-  "Create an album in 90 sec": "Crete n'album jndr'à 90 segunne"
+  "Create an album in 90 sec": "Crete n'album jndr'à 90 segunne",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Tine {albumCount} album ma sulamende puè sarvà 5 graite. Quiste album cchie vecchje stonne jende fore automaticamende:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

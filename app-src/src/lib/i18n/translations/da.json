@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Du har mere end 5 albums. Disse albums bliver automatisk slettet, medmindre du opgraderer dit abonnement:",
   "Click To Upgrade Subscription": "Klik For At Opgradere Abonnement",
   "WILL BE DELETED": "VIL BLIVE SLETTET",
-  "Create an album in 90 sec": "Opret et album på 90 sekunder"
+  "Create an album in 90 sec": "Opret et album på 90 sekunder",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Du har {albumCount} albums men kan kun gemme 5 gratis. Disse ældste albums bliver automatisk slettet:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Dine filer fylder {formatGB(usedGB)} plads, men du har kun {FREE_TIER_STORAGE_LIMIT_GB} GB lagerplads. Disse albums bliver automatisk slettet:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Du har over 5 albums OG dine filer fylder {formatGB(usedGB)} plads (grænse: {FREE_TIER_STORAGE_LIMIT_GB} GB). Disse albums bliver automatisk slettet:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Dine filer fylder {formatGB(usedGB)} plads, men du har kun {totalStorageGB} GB lagerplads. Disse albums bliver automatisk slettet:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Dine filer fylder {formatGB(usedGB)} af {totalStorageGB} GB lagerplads. Du skal måske opgradere dit abonnement snart."
 }

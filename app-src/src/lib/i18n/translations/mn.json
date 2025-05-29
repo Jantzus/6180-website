@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Танд 5-аас илүү цомог байна. Та захиалгаа сайжруулахгүй бол эдгээр цомгууд автоматаар устгагдана:",
   "Click To Upgrade Subscription": "Бүртгэлээ Сайжруулахын Тулд Дарна Уу",
   "WILL BE DELETED": "УСТГАГДАНА",
-  "Create an album in 90 sec": "90 секундэд цомог үүсгэх"
+  "Create an album in 90 sec": "90 секундэд цомог үүсгэх",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Танд {albumCount} цомог байгаа боловч үнэгүй 5 хадгалах боломжтой. Эдгээр хамгийн хуучин цомгуудыг автоматаар устгаж байна:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Таны файлууд {formatGB(usedGB)} зай эзэлж байгаа боловч танд зөвхөн {FREE_TIER_STORAGE_LIMIT_GB} GB хадгалах сан байна. Эдгээр цомгууд автоматаар устгагдаж байна:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Танд 5-аас олон цомог байгаа бөгөөд таны файлууд {formatGB(usedGB)} зай эзэлж байна (хязгаар: {FREE_TIER_STORAGE_LIMIT_GB} GB). Эдгээр цомгууд автоматаар устгагдаж байна:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Таны файлууд {formatGB(usedGB)} зай эзэлж байгаа боловч танд зөвхөн {totalStorageGB} GB хадгалах сан байна. Эдгээр цомгууд автоматаар устгагдаж байна:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Таны файлууд {totalStorageGB} GB хадгалах санаас {formatGB(usedGB)} эзэлж байна. Та удахгүй захиалгаа сайжруулах шаардлагатай байж магадгүй."
 }

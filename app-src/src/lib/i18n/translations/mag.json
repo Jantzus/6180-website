@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "तोहर 5 से जादा एल्बम बा। अगर तोहर सब्स्क्रिप्शन अपग्रेड नै करबे त इ एल्बम सब अपने आप मिट जई:",
   "Click To Upgrade Subscription": "सब्सक्रिप्शन अपग्रेड करै लेल क्लिक करू",
   "WILL BE DELETED": "मिटा देल जेतै",
-  "Create an album in 90 sec": "90 सेकंड में एल्बम बनाईं"
+  "Create an album in 90 sec": "90 सेकंड में एल्बम बनाईं",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "अहाँक {albumCount} एल्बम अछि मुदा मुफ्त मे सिर्फ 5 सेव कए सकै छी। ई सभसे पुरान एल्बम अपन आप डिलीट भए रहल अछि:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }

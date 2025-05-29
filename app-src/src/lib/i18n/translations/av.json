@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Дуда 5 альбомалъул рукъел бугеб. Гьаб альбомал автоматикалъул цӏунизабулеб, дуца подписка цӏиккаразе рукъел:",
   "Click To Upgrade Subscription": "Абонемент КъватIизабизе Лъугьи",
   "WILL BE DELETED": "рагӀарай",
-  "Create an album in 90 sec": "Альбом 90 секундалъул къурал"
+  "Create an album in 90 sec": "Альбом 90 секундалъул къурал",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Дуда {albumCount} альбом букIана, амма бечедил 5 гIич къадиризе бокьула. Гьаб къадимаб альбомал автоматияб ракьуда:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Дир файлал {formatGB(usedGB)} ккола гIарула, амма дуда {FREE_TIER_STORAGE_LIMIT_GB} GB къадарун мекан букIана. Гьаб альбомал автоматияб ракьула:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Дуда 5 рзы еччев альбом букIана гІи дир файлал {formatGB(usedGB)} ккола гIарула (хIад: {FREE_TIER_STORAGE_LIMIT_GB} GB). Гьаб альбомал автоматияб ракьула:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Дир файлал {formatGB(usedGB)} ккола гIарула, амма дуда {totalStorageGB} GB къадарун мекан букIана. Гьаб альбомал автоматияб ракьула:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Дир файлал {formatGB(usedGB)} {totalStorageGB} GB къадарун мекан гIарула. Дур подписка ялун лъахьуналъ ккола."
 }

@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Turite daugiau nei 5 albumus. Šie albumai automatiškai trinami, nebent atnaujinsite savo prenumeratą:",
   "Click To Upgrade Subscription": "Spauskite Norėdami Atnaujinti Prenumeratą",
   "WILL BE DELETED": "BUS IŠTRINTA",
-  "Create an album in 90 sec": "Sukurkite albumą per 90 sekundžių"
+  "Create an album in 90 sec": "Sukurkite albumą per 90 sekundžių",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Turite {albumCount} albumų, bet galite išsaugoti tik 5 nemokamai. Šie seniausi albumai automatiškai trinami:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Jūsų failai užima {formatGB(usedGB)} vietos, bet turite tik {FREE_TIER_STORAGE_LIMIT_GB} GB saugyklos. Šie albumai automatiškai trinami:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Turite daugiau nei 5 albumus IR jūsų failai užima {formatGB(usedGB)} vietos (limitas: {FREE_TIER_STORAGE_LIMIT_GB} GB). Šie albumai automatiškai trinami:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Jūsų failai užima {formatGB(usedGB)} vietos, bet turite tik {totalStorageGB} GB saugyklos. Šie albumai automatiškai trinami:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Jūsų failai užima {formatGB(usedGB)} iš {totalStorageGB} GB saugyklos. Gali prireikti netrukus atnaujinti prenumeratą."
 }

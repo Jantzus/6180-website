@@ -194,5 +194,10 @@
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "ທ່ານມີອາລະບໍ້າເກີນ 5 ອັນ. ອາລະບໍ້າເຫຼົ່ານີ້ກຳລັງຖືກລົບອອກໂດຍອັດຕະໂນມັດ ເວັ້ນເສຍແຕ່ທ່ານຍົກລະດັບການສະໝັກຂອງທ່ານ:",
   "Click To Upgrade Subscription": "ຄລິກເພື່ອອັບເກຣດການສະໝັກສະມາຊິກ",
   "WILL BE DELETED": "ຈະຖືກລຶບ",
-  "Create an album in 90 sec": "ສ້າງອາລະບໍ້າໃນ 90 ວິນາທີ"
+  "Create an album in 90 sec": "ສ້າງອາລະບໍ້າໃນ 90 ວິນາທີ",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "ທ່ານມີອາລະບໍ້າ {albumCount} ໂຕ ແຕ່ສາມາດບັນທຶກໄດ້ແຕ່ 5 ໂຕຟຣີ. ອາລະບໍ້າເກົ່າທີ່ສຸດເຫຼົ່ານີ້ກຳລັງຖືກລົບອອກໂດຍອັດຕະໂນມັດ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
+  "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon."
 }
