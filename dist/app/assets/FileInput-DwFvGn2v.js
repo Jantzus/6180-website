@@ -1,1 +1,0 @@
-import{ap as i,j as p}from"./styled-components-BAlEjcON.js";const n=i.forwardRef(({onFileSelection:e},t)=>p.jsx("input",{type:"file",id:"file-input",ref:t,accept:"image/*,video/*",multiple:!0,style:{display:"none"},onChange:e}));export{n as F};

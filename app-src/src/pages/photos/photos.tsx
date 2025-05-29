@@ -7,6 +7,7 @@ import {
   checkLoginWithoutRedirect, 
   useFullscreenView,
   redirectTo,
+  generateUrl,
 } from "@/lib/utils";
 
 // Import the new shared hook
@@ -41,7 +42,14 @@ import {
 import { 
   Body, 
   MediaContainer,
-  GlobalStyle
+  GlobalStyle,
+  // Add the new brand header components:
+  BrandHeader,
+  BrandHeaderContent,
+  BrandLink,
+  BrandLogo,
+  BrandLogoContainer,
+  BrandSlogan
 } from "@/styles/styled-components";
 
 // Import components
@@ -632,10 +640,41 @@ const PhotoAlbumContent: React.FC = () => {
     return 'the album owner';
   };
 
+  // Check if RTL
+  const isRTL = getLanguageDirection(language) === 'rtl';
+
   // Render
   return (
     <Body>
       <GlobalStyle />
+      
+      {/* 6180 Brand Header */}
+      <BrandHeader>
+        <BrandHeaderContent>
+          <BrandLink 
+            href="https://6180.io" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label={t('Visit 6180.io')}
+          >
+            <BrandLogoContainer isRTL={isRTL}>
+              <BrandLogo 
+                src={generateUrl("images/logo_no_background.png")}
+                alt="6180 Logo"
+              />
+            </BrandLogoContainer>
+          </BrandLink>
+          
+          <BrandSlogan 
+            href="https://6180.io" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label={t('Create an album in 90 sec')}
+          >
+            {t('Create an album in 90 sec')}
+          </BrandSlogan>
+        </BrandHeaderContent>
+      </BrandHeader>
       
       <AlbumHeader
         t={t}

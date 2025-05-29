@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import fs from 'fs'
 import path from 'path'
+import type { IncomingMessage, ServerResponse } from 'http'
+import type { ViteDevServer } from 'vite'
 
 function moveFoldersOutOfApp() {
   return {
@@ -21,7 +23,36 @@ function moveFoldersOutOfApp() {
           fs.rmdirSync(from);
         }
       });
+    }
+  }
+}
 
+function handleDirectoryUrls() {
+  return {
+    name: 'handle-directory-urls',
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use((req: IncomingMessage, _res: ServerResponse, next: () => void) => {
+        const url = req.url;
+        
+        // Handle /app/directory patterns (without trailing slash)
+        if (url && url.startsWith('/app/') && !url.includes('.') && !url.endsWith('/')) {
+          const segments = url.split('/').filter(Boolean);
+          
+          // Check if it's a 2-segment path like /app/storage
+          if (segments.length === 2) {
+            // List of known directories that should be handled this way
+            const knownDirectories = ['storage'];
+            const directoryName = segments[1];
+            
+            if (knownDirectories.includes(directoryName)) {
+              console.log(`Rewriting ${url} to ${url}/`);
+              req.url = url + '/';
+            }
+          }
+        }
+        
+        next();
+      });
     }
   }
 }
@@ -38,7 +69,9 @@ export default defineConfig({
         saveAlbum: "save-album.html",
         myalbums: "my-albums.html",
         photos: "photos.html",
-        profile: "profile.html"
+        profile: "profile.html",
+        storage: "storage/index.html",  // Add your storage entry point
+        manage: "storage/manage.html"  // Add your storage entry point
         // add more HTML entry points here
       }
     }
@@ -47,5 +80,6 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
     moveFoldersOutOfApp(),
+    handleDirectoryUrls(),
   ]
 })

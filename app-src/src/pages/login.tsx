@@ -9,7 +9,6 @@ import {
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, AWS_REGION, COGNITO_CLIENT_ID } from "@/lib/config"
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
-import { Trans } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
 import { redirectTo, generateUrl } from "@/lib/utils";
 import styled from 'styled-components'
@@ -332,7 +331,7 @@ const LoginPage = () => {
                   alt="6180 Logo" 
                 />
                 <LoginTitle>
-                  <Trans k="Sign in to 6180" />
+                  {t('Sign in to 6180')}
                 </LoginTitle>
               </LoginHeader>
 
@@ -358,18 +357,18 @@ const LoginPage = () => {
                     style={{ width: '100%', padding: '12px', fontSize: '16px' }}
                   >
                     {status === 'sending' ? 
-                      <Trans k="Sending..." /> : 
-                      <Trans k="Send Verification Code" />
+                      t('Sending...') : 
+                      t('Send Verification Code')
                     }
                   </Button>
                   <InfoText>
-                    <Trans k="We'll send a secure verification code to your email" />
+                    {t("We'll send a secure verification code to your email")}
                   </InfoText>
                 </>
               ) : (
                 <>
                   <InfoText style={{ marginBottom: '16px', color: '#555' }}>
-                    <Trans k="Check your email for a 6-digit verification code sent to" /> <strong>{email}</strong>
+                    {t("Check your email for a 6-digit verification code sent to")} <strong>{email}</strong>
                   </InfoText>
                   <OtpInput
                     ref={otpInputRef}
@@ -388,14 +387,14 @@ const LoginPage = () => {
                     style={{ width: '100%', padding: '12px', fontSize: '16px', backgroundColor: '#28a745' }}
                   >
                     {status === 'verifying' ? 
-                      <Trans k="Verifying..." /> : 
-                      <Trans k="Verify Code" />
+                      t('Verifying...') : 
+                      t('Verify Code')
                     }
                   </Button>
                   <ResendWrapper>
-                    <span><Trans k="Didn't receive a code?" /></span>
+                    <span>{t("Didn't receive a code?")}</span>
                     <ResendButton onClick={handleResendCode}>
-                      <Trans k="Send new code" />
+                      {t("Send new code")}
                     </ResendButton>
                   </ResendWrapper>
                 </>
@@ -410,7 +409,7 @@ const LoginPage = () => {
               onMouseEnter={() => setHoverLink('terms')}
               onMouseLeave={() => setHoverLink(null)}
             >
-              <Trans k="Terms of Service" />
+              {t("Terms of Service")}
             </LegalLinkFooterButton>
             <LegalLinkFooterButton 
               href={generateUrl("privacy.html")}
@@ -418,7 +417,7 @@ const LoginPage = () => {
               onMouseEnter={() => setHoverLink('privacy')}
               onMouseLeave={() => setHoverLink(null)}
             >
-              <Trans k="Privacy Policy" />
+              {t("Privacy Policy")}
             </LegalLinkFooterButton>
             <LegalLinkFooterButton 
               href={generateUrl("support.html")}
@@ -426,7 +425,7 @@ const LoginPage = () => {
               onMouseEnter={() => setHoverLink('support')}
               onMouseLeave={() => setHoverLink(null)}
             >
-              <Trans k="Support" />
+              {t("Support")}
             </LegalLinkFooterButton>
           </LegalLinksFooter>
         </ContentWrapper>

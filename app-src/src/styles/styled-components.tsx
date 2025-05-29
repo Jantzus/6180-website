@@ -215,6 +215,75 @@ export const ContentContainer = styled.div`
   margin: 0 auto;
 `;
 
+// ========== Brand Header Components ==========
+
+export const BrandHeader = styled.div`
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid ${theme.colors.borderLight};
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+`;
+
+export const BrandHeaderContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  
+  ${mobile(`
+    padding: ${theme.spacing.sm};
+  `)}
+`;
+
+export const BrandLink = styled.a`
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing.sm};
+  color: ${theme.colors.text.secondary};
+  font-size: ${theme.fontSizes.sm};
+  transition: all 0.2s ease;
+  padding: ${theme.spacing.xs} ${theme.spacing.sm};
+  border-radius: ${theme.borderRadius.small};
+  
+  &:hover {
+    background-color: ${theme.colors.grayLighter};
+    color: ${theme.colors.text.primary};
+  }
+  
+  &:focus {
+    outline: 2px solid ${theme.colors.primary};
+    outline-offset: 2px;
+  }
+`;
+
+export const BrandSlogan = styled(BrandLink)`
+  font-style: italic;
+  color: ${theme.colors.text.light};
+  font-size: ${theme.fontSizes.xs};
+  
+  &:hover {
+    color: ${theme.colors.text.secondary};
+  }
+`;
+
+export const BrandLogo = styled.img`
+  width: 20px;
+  height: 20px;
+  margin: 0;
+`;
+
+export const BrandLogoContainer = styled.div<DirectionalProps>`
+  display: flex;
+  align-items: center;
+  flex-direction: ${props => props.isRTL ? 'row-reverse' : 'row'};
+  gap: ${theme.spacing.sm};
+  margin: 0;
+`;
+
 // ========== Header Components ==========
 
 export const Header = styled.div`

@@ -18,7 +18,6 @@ export const NewAlbumButton: React.FC<NewAlbumButtonProps> = ({
       style={{
         display: "flex",
         alignItems: "center",
-        marginBottom: 24,
         width: "100%"
       }}
     >

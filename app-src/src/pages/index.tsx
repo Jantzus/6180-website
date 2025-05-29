@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
-import { LanguageSelector, Trans } from "@/lib/i18n/components";
+import { LanguageSelector } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
 import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect, redirectTo, generateUrl } from "@/lib/utils";
 
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
 // Main page component
 const IndexPage: React.FC = () => {
   // Get translation hook with all functions
-  const { language } = useTranslation();
+  const { t, language } = useTranslation();
   
   // Check if RTL
   const isRTL = getLanguageDirection(language) === 'rtl';
@@ -65,11 +65,11 @@ const IndexPage: React.FC = () => {
             <LogoContainer isRTL={isRTL}>
               <Logo 
                 src={generateUrl("images/logo_no_background.png")}
-                alt="6180 Logo" 
+                alt="6180 Logo"
               />
               <h1 style={{ 
-                fontSize: '1.4em', 
-                fontWeight: 'bold', 
+                fontSize: '1.4em',
+                fontWeight: 'bold',
                 color: '#222',
                 margin: 0
               }}>6180</h1>
@@ -80,7 +80,7 @@ const IndexPage: React.FC = () => {
 
           <div style={{ textAlign: 'center' }}>
             <Headline>
-              <Trans k="Create Albums Together" />
+              {t('Create Albums Together')}
             </Headline>
             
             <Button 
@@ -89,19 +89,19 @@ const IndexPage: React.FC = () => {
               className="hover-button"
               style={{ marginTop: '20px', padding: '12px 20px' }}
             >
-              <Trans k="Start" />
+              {t('Start')}
             </Button>
           </div>
 
           <LegalLinksFooter>
             <LegalLinkFooterButton href={generateUrl("terms.html")}>
-              <Trans k="Terms of Service" />
+              {t('Terms of Service')}
             </LegalLinkFooterButton>
             <LegalLinkFooterButton href={generateUrl("privacy.html")}>
-              <Trans k="Privacy Policy" />
+              {t('Privacy Policy')}
             </LegalLinkFooterButton>
             <LegalLinkFooterButton href={generateUrl("support.html")}>
-              <Trans k="Support" />
+              {t('Support')}
             </LegalLinkFooterButton>
           </LegalLinksFooter>
         </div>
@@ -112,7 +112,9 @@ const IndexPage: React.FC = () => {
 
 // Main initialization function - needed for async operations
 (async function() {
-  const storedLanguage = localStorage.getItem("user_language") || "en";
+  const storedLanguage = localStorage.getItem("preferred-language") || 
+  localStorage.getItem("user_language") || 
+  "en";
   
   // Check if user is already logged in
   const token = await checkLoginWithoutRedirect();

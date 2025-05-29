@@ -182,6 +182,7 @@ export const FOLDERPOSITION_FIELD = `
     fileReferencesPage {
       items {
         file {
+          dataInBytes
           dataKey
           thumbnailDataKey
           durationInSeconds

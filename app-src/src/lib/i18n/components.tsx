@@ -1,6 +1,6 @@
 // src/lib/i18n/components.tsx
 import React, { useEffect, useMemo } from 'react';
-import { useTranslation, useAsyncTranslation } from './hooks';
+import { useTranslation } from './hooks';
 import styled from 'styled-components';
 import { SupportedLanguage } from '@/lib/i18n/translations';
 
@@ -33,29 +33,6 @@ export const SelectBox = styled.select`
 export const Option = styled.option`
   padding: 8px;
 `;
-
-// Translation component with fallback
-interface TransProps {
-  k: string;
-  params?: Record<string, string | number>;
-  fallback?: string;
-}
-
-export const Trans: React.FC<TransProps> = ({ k, params, fallback }) => {
-  const { t } = useTranslation();
-  return <>{t(k, params) || fallback || k}</>;
-};
-
-// Async Translation component with loading state
-export const AsyncTrans: React.FC<TransProps> = ({ k, params, fallback }) => {
-  const { translation, loading } = useAsyncTranslation(k, params);
-  
-  if (loading) {
-    return <>{fallback || k}</>;
-  }
-  
-  return <>{translation}</>;
-};
 
 // Language selector component
 interface LanguageSelectorProps {
