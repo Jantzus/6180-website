@@ -3,6 +3,13 @@ import { FolderType, FOLDERPOSITION_FIELD } from "@/lib/types";
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { checkLoginWithRefresh } from "@/lib/utils";
 
+// Add interface for subscription info
+interface SubscriptionInfo {
+  intNumberOfSubscriptions: number;
+  bytesOfDataUsed: number;
+  SubscriptionStatus?: string;
+}
+
 /**
  * Custom hook for folder management functionality
  */
@@ -13,6 +20,10 @@ export const useFolderManagement = (log: (message: string) => void) => {
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isContactFiltered, setIsContactFiltered] = useState<boolean>(false);
+  const [subscriptionInfo, setSubscriptionInfo] = useState<SubscriptionInfo>({
+    intNumberOfSubscriptions: 0,
+    bytesOfDataUsed: 0
+  });
 
   // Load user data and fetch folders
   useEffect(() => {
@@ -105,7 +116,24 @@ export const useFolderManagement = (log: (message: string) => void) => {
   // Separated fetchFolders function to use with the token
   const fetchFolders = async (token: string) => {
     const query = `
-      mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
+      mutation FetchRelations($relationIds: [ID!], $fetchRelationsInput: FetchRelationsInput!) {
+        batchGetItems(relationIds: $relationIds) {
+            items {
+                id
+                item {
+                    ... on SubscriptionInfo {
+                      id
+                      createdAt
+                      updatedAt
+                      stripeCustomerId
+                      SubscriptionStatus
+                      intNumberOfSubscriptions
+                      bytesOfDataUsed
+                    }
+                }
+            }
+            nextToken
+        }      
         fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
           items {
             ... on FolderPosition {
@@ -117,6 +145,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
     `
 
     const variables = {
+      relationIds: [ "myAccountOwnerItemId_____myAccountOwnerItemId____SubscriptionInfo" ],
       fetchRelationsInput: {
         ownerItemId: "myAccountOwnerItemId",
         rangeKeyPrefix: "FolderPosition",
@@ -138,11 +167,34 @@ export const useFolderManagement = (log: (message: string) => void) => {
 
       const json = await res.json()
 
+      // Extract subscription info from batchGetItems
+      const subscriptionItems = json?.data?.batchGetItems?.items || [];
+      if (subscriptionItems.length > 0) {
+        const subscriptionData = subscriptionItems[0]?.item;
+        if (subscriptionData) {
+          setSubscriptionInfo({
+            intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
+            bytesOfDataUsed: subscriptionData.bytesOfDataUsed || 0,
+            SubscriptionStatus: subscriptionData.SubscriptionStatus
+          });
+        }
+      }
+
       const items = json?.data?.fetchRelations?.items || []
 
       const parsed: FolderType[] = items.map((item: any) => {
         const folder = item.folder
-        const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
+        const rawFiles = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
+        
+        // Properly map files with explicit field preservation
+        const files = rawFiles
+          .filter((f: any) => f && f.dataKey)
+          .map((file: any) => ({
+            dataKey: file.dataKey,
+            thumbnailDataKey: file.thumbnailDataKey || null,
+            durationInSeconds: file.durationInSeconds || null,
+            dataInBytes: file.dataInBytes || 0 // Explicitly preserve dataInBytes with fallback to 0
+          }));
         
         // Extract contacts from contactsUsingInvite
         const contacts: Record<string, string> = {};
@@ -164,7 +216,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
           creatorId: folder.creatorId,
           createdAt: folder.createdAt,
           updatedAt: folder.updatedAt,
-          files: files.filter((f: any) => f && f.dataKey),
+          files: files, // Use the properly mapped files array
           profileIds: item.profileIds || [], // Include profileIds from the item
           contacts: contacts, // Include the contacts map
           usingFolderInviteGrantsRightToAddItems: 
@@ -246,6 +298,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
     handleContactFilterChange,
     resetContactFilter,
     handleDeleteClick,
-    setFolders
+    setFolders,
+    subscriptionInfo // Add subscription info to return values
   };
 };
