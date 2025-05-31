@@ -310,10 +310,9 @@ const SaveAlbum = () => {
           </HeaderContainer>
           
           {/* Progress Tracking */}
-          <UploadProgress 
+          <UploadProgress
             progressTracker={progressTracker}
-            t={t}
-            isRTL={isRTL}
+            isRTL={getLanguageDirection(language) === "rtl"}
             variant="detailed"
           />
           

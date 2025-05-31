@@ -718,7 +718,6 @@ const PhotoAlbumContent: React.FC = () => {
           <div style={{ width: '100%', marginBottom: '20px' }}>
             <UploadProgress 
               progressTracker={progressTracker} 
-              t={t} 
               isRTL={getLanguageDirection(language) === "rtl"}
               style={{ marginTop: '20px' }}
               showSuccessMessage={true}
@@ -726,7 +725,7 @@ const PhotoAlbumContent: React.FC = () => {
             />
           </div>
         )}
-        
+                
         {/* Selection Mode Banner */}
         <SelectionModeBanner
           isSelectionMode={isSelectionMode}

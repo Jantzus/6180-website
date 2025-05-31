@@ -1,3 +1,4 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -39,6 +40,11 @@ const formatGB = (gb: number): string => {
 
 // Helper function to get albums that should be marked for deletion
 const getAlbumsToDelete = (folders: any[], subscriptionInfo: any): any[] => {
+  // Return empty array if subscriptionInfo is not loaded yet
+  if (!subscriptionInfo) {
+    return [];
+  }
+
   const { intNumberOfSubscriptions, bytesOfDataUsed } = subscriptionInfo;
   
   let albumsToDelete: any[] = [];
@@ -126,16 +132,19 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any): any[] => {
   return albumsToDelete;
 };
 
+
+
 // Component to display albums marked for deletion with visual preview
 const AlbumDeletionPreview = ({ 
   albumsToDelete, 
-  t, 
   isRTL 
 }: { 
   albumsToDelete: any[]; 
-  t: (key: string) => string; 
   isRTL: boolean; 
 }) => {
+
+  const { t } = useTranslation();
+
   if (albumsToDelete.length === 0) return null;
 
   return (
@@ -202,8 +211,8 @@ const AlbumDeletionPreview = ({
                   )}
                   <div>
                     {folder.files.length === 1 
-                      ? t('{count} file').replace('{count}', folder.files.length.toString()) 
-                      : t('{count} files').replace('{count}', folder.files.length.toString())
+                      ? t('{{count}} file', { count: folder.files.length.toString() })
+                      : t('{{count}} files', { count: folder.files.length.toString() })
                     }
                   </div>
                 </div>
@@ -307,12 +316,17 @@ const StorageMessage = ({
   t, 
   isRTL 
 }: { 
-  subscriptionInfo: { intNumberOfSubscriptions: number; bytesOfDataUsed: number; }; 
+  subscriptionInfo: { intNumberOfSubscriptions: number; bytesOfDataUsed: number; } | null; 
   albumCount: number; 
   folders: any[];
   t: (key: string) => string; 
   isRTL: boolean; 
 }) => {
+  // Don't show anything if subscription info is not loaded yet
+  if (!subscriptionInfo) {
+    return null;
+  }
+
   const { intNumberOfSubscriptions, bytesOfDataUsed } = subscriptionInfo;
   const usedGB = bytesToGB(bytesOfDataUsed);
   
@@ -385,7 +399,6 @@ const StorageMessage = ({
       {showDeletionPreview && albumsToDelete.length > 0 && (
         <AlbumDeletionPreview 
           albumsToDelete={albumsToDelete}
-          t={t}
           isRTL={isRTL}
         />
       )}
@@ -434,8 +447,8 @@ const MyAlbums = () => {
     subscriptionInfo
   } = useFolderManagement((message: string) => log(message));
   
-  // Get albums that should be marked for deletion
-  const albumsToDelete = getAlbumsToDelete(folders, subscriptionInfo);
+  // Get albums that should be marked for deletion (only if subscriptionInfo is loaded)
+  const albumsToDelete = subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo) : [];
   const albumsToDeleteIds = new Set(albumsToDelete.map(album => album.folderId));
   
   // Filter out albums marked for deletion from the main list
@@ -495,32 +508,34 @@ const MyAlbums = () => {
           />
           
           {/* Storage usage indicator as hyperlink */}
-          <a 
-            href={generateUrl("storage/manage.html")}
-            style={{
-              fontSize: "14px", // Match button text size
-              color: "#007bff", // Traditional hyperlink blue
-              fontWeight: "500", // Match button weight
-              whiteSpace: "nowrap",
-              textDecoration: "underline", // Traditional hyperlink underline
-              transition: "color 0.2s ease",
-              lineHeight: "1.5",
-              marginTop: "2px", // Fine-tune vertical alignment
-              cursor: "pointer"
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "#0056b3"; // Darker blue on hover
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "#007bff"; // Back to original blue
-            }}
-          >
-            {formatGB(bytesToGB(subscriptionInfo.bytesOfDataUsed))} / {
-              subscriptionInfo.intNumberOfSubscriptions === 0 
-                ? FREE_TIER_STORAGE_LIMIT_GB // Free tier gets 10GB
-                : subscriptionInfo.intNumberOfSubscriptions * 10 // Paid tier: 10GB per subscription
-            } GB
-          </a>
+          {subscriptionInfo && (
+            <a 
+              href={generateUrl("storage/manage.html")}
+              style={{
+                fontSize: "14px", // Match button text size
+                color: "#007bff", // Traditional hyperlink blue
+                fontWeight: "500", // Match button weight
+                whiteSpace: "nowrap",
+                textDecoration: "underline", // Traditional hyperlink underline
+                transition: "color 0.2s ease",
+                lineHeight: "1.5",
+                marginTop: "2px", // Fine-tune vertical alignment
+                cursor: "pointer"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#0056b3"; // Darker blue on hover
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "#007bff"; // Back to original blue
+              }}
+            >
+              {formatGB(bytesToGB(subscriptionInfo.bytesOfDataUsed))} / {
+                subscriptionInfo.intNumberOfSubscriptions === 0 
+                  ? FREE_TIER_STORAGE_LIMIT_GB // Free tier gets 10GB
+                  : subscriptionInfo.intNumberOfSubscriptions * 10 // Paid tier: 10GB per subscription
+              } GB
+            </a>
+          )}
         </div>
         
         {/* Dynamic storage limit message */}
@@ -552,7 +567,6 @@ const MyAlbums = () => {
           <div style={{ width: '100%', marginBottom: '20px' }}>
             <UploadProgress 
               progressTracker={progressTracker} 
-              t={t} 
               isRTL={getLanguageDirection(language) === "rtl"}
               style={{ marginTop: '20px' }}
               showSuccessMessage={true}
@@ -560,7 +574,7 @@ const MyAlbums = () => {
             />
           </div>
         )}
-
+        
         <AlbumList 
           folders={displayFolders}
           setFolders={setFolders}

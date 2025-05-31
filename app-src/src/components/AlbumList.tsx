@@ -504,8 +504,8 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
                 <FileCount isRTL={isRTL}>
                   {folder.files.length === 1 
-                    ? `${t('{count} file').replace('{count}', folder.files.length.toString())} • ${formatFileSize(totalSize)}`
-                    : `${t('{count} files').replace('{count}', folder.files.length.toString())} • ${formatFileSize(totalSize)}`
+                    ? `${t('{{count}} file', { count: folder.files.length.toString() })} • ${formatFileSize(totalSize)}`
+                    : `${t('{{count}} files', { count: folder.files.length.toString() })} • ${formatFileSize(totalSize)}`
                   }
                 </FileCount>
 

@@ -1,9 +1,9 @@
 import React from "react";
 import { ProgressTracker } from "@/lib/types";
+import { useTranslation } from "@/lib/i18n/hooks";
 
 type UploadProgressProps = {
   progressTracker: ProgressTracker;
-  t: (key: string) => string;
   isRTL?: boolean;
   onCancel?: () => void;
   style?: React.CSSProperties;
@@ -20,7 +20,6 @@ type UploadProgressProps = {
 
 export const UploadProgress: React.FC<UploadProgressProps> = ({ 
   progressTracker, 
-  t,
   isRTL = false,
   onCancel,
   style,
@@ -31,6 +30,8 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
   showErrorMessage = false,
   customMessages = {}
 }) => {
+  const { t } = useTranslation();
+  
   const { 
     totalFiles, 
     filesComplete, 
@@ -254,8 +255,8 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
         <span style={{ fontSize: 14, color: "#555" }}>
           <strong>{getStatusText()}</strong>: {filesComplete}/{totalFiles}
 
-          {filesWithError > 0 && t('({count} failed').replace('{count}', filesWithError.toString())}
-          {filesUploading > 0 && t('({count} in progress').replace('{count}', filesUploading.toString())}
+          {filesWithError > 0 && t('{{count}} failed', { count: filesWithError.toString() })}
+          {filesUploading > 0 && t('{{count}} in progress', { count: filesUploading.toString() })}
         </span>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <span style={{ fontSize: 14, color: "#555", fontWeight: "bold" }}>

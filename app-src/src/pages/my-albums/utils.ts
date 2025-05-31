@@ -20,10 +20,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isContactFiltered, setIsContactFiltered] = useState<boolean>(false);
-  const [subscriptionInfo, setSubscriptionInfo] = useState<SubscriptionInfo>({
-    intNumberOfSubscriptions: 0,
-    bytesOfDataUsed: 0
-  });
+  const [subscriptionInfo, setSubscriptionInfo] = useState<SubscriptionInfo | null>(null);
 
   // Load user data and fetch folders
   useEffect(() => {
@@ -178,6 +175,12 @@ export const useFolderManagement = (log: (message: string) => void) => {
             SubscriptionStatus: subscriptionData.SubscriptionStatus
           });
         }
+      } else {
+        // Set default values if no subscription info found
+        setSubscriptionInfo({
+          intNumberOfSubscriptions: 0,
+          bytesOfDataUsed: 0
+        });
       }
 
       const items = json?.data?.fetchRelations?.items || []
@@ -299,6 +302,6 @@ export const useFolderManagement = (log: (message: string) => void) => {
     resetContactFilter,
     handleDeleteClick,
     setFolders,
-    subscriptionInfo // Add subscription info to return values
+    subscriptionInfo // This can now be null
   };
 };
