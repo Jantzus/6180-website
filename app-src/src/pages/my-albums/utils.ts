@@ -113,24 +113,18 @@ export const useFolderManagement = (log: (message: string) => void) => {
   // Separated fetchFolders function to use with the token
   const fetchFolders = async (token: string) => {
     const query = `
-      mutation FetchRelations($relationIds: [ID!], $fetchRelationsInput: FetchRelationsInput!) {
-        batchGetItems(relationIds: $relationIds) {
-            items {
-                id
-                item {
-                    ... on SubscriptionInfo {
-                      id
-                      createdAt
-                      updatedAt
-                      stripeCustomerId
-                      SubscriptionStatus
-                      intNumberOfSubscriptions
-                      bytesOfDataUsed
-                    }
-                }
-            }
-            nextToken
-        }      
+      mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
+        changeMyAccountItem(getSubscriptionInfoInput: true) {
+          ... on SubscriptionInfo {
+            id
+            createdAt
+            updatedAt
+            stripeCustomerId
+            SubscriptionStatus
+            intNumberOfSubscriptions
+            bytesOfDataUsed
+          }
+        }     
         fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
           items {
             ... on FolderPosition {
@@ -140,7 +134,8 @@ export const useFolderManagement = (log: (message: string) => void) => {
         }
       }
     `
-
+ 
+ 
     const variables = {
       relationIds: [ "myAccountOwnerItemId_____myAccountOwnerItemId____SubscriptionInfo" ],
       fetchRelationsInput: {
@@ -151,7 +146,8 @@ export const useFolderManagement = (log: (message: string) => void) => {
         scanIndexForward: false,
       },
     }
-
+ 
+ 
     try {
       const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
         method: "POST",
@@ -161,34 +157,26 @@ export const useFolderManagement = (log: (message: string) => void) => {
         },
         body: JSON.stringify({ query, variables }),
       })
-
+ 
+ 
       const json = await res.json()
-
-      // Extract subscription info from batchGetItems
-      const subscriptionItems = json?.data?.batchGetItems?.items || [];
-      if (subscriptionItems.length > 0) {
-        const subscriptionData = subscriptionItems[0]?.item;
-        if (subscriptionData) {
-          setSubscriptionInfo({
-            intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
-            bytesOfDataUsed: subscriptionData.bytesOfDataUsed || 0,
-            SubscriptionStatus: subscriptionData.SubscriptionStatus
-          });
-        }
-      } else {
-        // Set default values if no subscription info found
+ 
+      const subscriptionData = json?.data?.changeMyAccountItem
+      if (subscriptionData) {
         setSubscriptionInfo({
-          intNumberOfSubscriptions: 0,
-          bytesOfDataUsed: 0
+          intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
+          bytesOfDataUsed: subscriptionData.bytesOfDataUsed || 0,
+          SubscriptionStatus: subscriptionData.SubscriptionStatus
         });
       }
-
+ 
       const items = json?.data?.fetchRelations?.items || []
-
+ 
+ 
       const parsed: FolderType[] = items.map((item: any) => {
         const folder = item.folder
         const rawFiles = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
-        
+       
         // Properly map files with explicit field preservation
         const files = rawFiles
           .filter((f: any) => f && f.dataKey)
@@ -198,7 +186,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
             durationInSeconds: file.durationInSeconds || null,
             dataInBytes: file.dataInBytes || 0 // Explicitly preserve dataInBytes with fallback to 0
           }));
-        
+       
         // Extract contacts from contactsUsingInvite
         const contacts: Record<string, string> = {};
         if (folder?.contactsUsingInvite?.items) {
@@ -208,7 +196,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
             }
           });
         }
-        
+       
         return {
           folderPositionId: item.id,
           folderId: folder.id,
@@ -222,18 +210,22 @@ export const useFolderManagement = (log: (message: string) => void) => {
           files: files, // Use the properly mapped files array
           profileIds: item.profileIds || [], // Include profileIds from the item
           contacts: contacts, // Include the contacts map
-          usingFolderInviteGrantsRightToAddItems: 
+          usingFolderInviteGrantsRightToAddItems:
             folder?.folderInviteParameters?.usingFolderInviteGrantsRightToAddItems || false
         }
       })
-
+ 
+ 
       setFolders(parsed)
     } catch (err) {
       console.error("Failed to load folders:", err)
       log(`❌ Failed to fetch folders: ${String(err)}`)
     }
   }
-
+ 
+ 
+ 
+ 
   // Handle deletion confirmation dialog
   const handleDeleteClick = async (folderPositionId: string, t: (key: string) => string) => {
     try {
