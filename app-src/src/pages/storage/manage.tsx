@@ -45,7 +45,7 @@ interface Plan {
 
 interface SubscriptionInfo {
   intNumberOfSubscriptions: number;
-  bytesOfDataUsed: number;
+  bytesOfDataUsed: number; // Keep for compatibility but use calculatedBytesUsed instead
 }
 
 // ===== UTILITY FUNCTIONS =====
@@ -346,7 +346,7 @@ const StripeOverlay = styled.div`
 `;
 
 // ===== CUSTOM HOOKS =====
-const useSubscriptionLogic = (subscriptionInfo: SubscriptionInfo | null, albumCount: number, t: any) => {
+const useSubscriptionLogic = (subscriptionInfo: SubscriptionInfo | null, calculatedBytesUsed: number, albumCount: number, t: any) => {
   const canDowngrade = useCallback((targetTier: number) => {
     if (!subscriptionInfo) {
       return { canDowngrade: false, reason: t('Loading subscription information...') };
@@ -354,7 +354,7 @@ const useSubscriptionLogic = (subscriptionInfo: SubscriptionInfo | null, albumCo
 
     const targetStorageGB = getTotalStorage(targetTier);
     const targetStorageBytes = targetStorageGB * 1024 * 1024 * 1024;
-    const hasEnoughStorage = subscriptionInfo.bytesOfDataUsed <= targetStorageBytes;
+    const hasEnoughStorage = calculatedBytesUsed <= targetStorageBytes;
     
     if (targetTier === 0) {
       const hasEnoughAlbumSlots = albumCount <= 5;
@@ -371,7 +371,7 @@ const useSubscriptionLogic = (subscriptionInfo: SubscriptionInfo | null, albumCo
     }
     
     return { canDowngrade: hasEnoughStorage, reason: hasEnoughStorage ? undefined : t('Insufficient storage capacity') };
-  }, [subscriptionInfo, albumCount, t]);
+  }, [subscriptionInfo, calculatedBytesUsed, albumCount, t]);
 
   const generatePlans = useCallback((): Plan[] => {
     if (!subscriptionInfo) return [];
@@ -411,7 +411,7 @@ const useSubscriptionLogic = (subscriptionInfo: SubscriptionInfo | null, albumCo
 };
 
 // ===== COMPONENTS =====
-const StorageUsageCard = ({ subscriptionInfo, t }: { subscriptionInfo: SubscriptionInfo | null; t: any }) => {
+const StorageUsageCard = ({ subscriptionInfo, calculatedBytesUsed, t }: { subscriptionInfo: SubscriptionInfo | null; calculatedBytesUsed: number; t: any }) => {
   if (!subscriptionInfo) {
     return (
       <Card>
@@ -426,7 +426,7 @@ const StorageUsageCard = ({ subscriptionInfo, t }: { subscriptionInfo: Subscript
   }
 
   const totalGB = getTotalStorage(subscriptionInfo.intNumberOfSubscriptions);
-  const usagePercentage = (subscriptionInfo.bytesOfDataUsed / (totalGB * 1024 * 1024 * 1024)) * 100;
+  const usagePercentage = (calculatedBytesUsed / (totalGB * 1024 * 1024 * 1024)) * 100;
   const price = getPrice(subscriptionInfo.intNumberOfSubscriptions);
 
   return (
@@ -436,7 +436,7 @@ const StorageUsageCard = ({ subscriptionInfo, t }: { subscriptionInfo: Subscript
         <span>{t('US${{price}} / month', { price: price.toFixed(2) })}</span>
       </StorageInfo>
       <StorageInfo>
-        <span>{t('Used: {{used}}', { used: formatStorageDisplay(subscriptionInfo.bytesOfDataUsed) })}</span>
+        <span>{t('Used: {{used}}', { used: formatStorageDisplay(calculatedBytesUsed) })}</span>
         <span>{t('Total: {{total}}', { total: formatStorageDisplay(totalGB * 1024 * 1024 * 1024) })}</span>
       </StorageInfo>
       <StorageBar>
@@ -450,12 +450,14 @@ const CustomGBInput = ({
   customGB, 
   onCustomGBChange, 
   subscriptionInfo, 
+  calculatedBytesUsed,
   albumCount,
   t 
 }: { 
   customGB: string; 
   onCustomGBChange: (value: string) => void; 
   subscriptionInfo: SubscriptionInfo | null;
+  calculatedBytesUsed: number;
   albumCount: number;
   t: any;
 }) => {
@@ -479,12 +481,12 @@ const CustomGBInput = ({
       }
     }
     
-    const usedGB = bytesToGB(subscriptionInfo.bytesOfDataUsed);
+    const usedGB = bytesToGB(calculatedBytesUsed);
     
     if (inputGB < usedGB) {
       return (
         <span style={{ color: theme.colors.danger, fontWeight: 'bold' }}>
-          {t('Error: You are using {{used}}', { used: formatStorageDisplay(subscriptionInfo.bytesOfDataUsed) })}
+          {t('Error: You are using {{used}}', { used: formatStorageDisplay(calculatedBytesUsed) })}
         </span>
       );
     }
@@ -510,7 +512,7 @@ const CustomGBInput = ({
   };
 
   const showErrorMessage = customGB && !isNaN(parseFloat(customGB)) && subscriptionInfo && 
-                          parseFloat(customGB) < bytesToGB(subscriptionInfo.bytesOfDataUsed);
+                          parseFloat(customGB) < bytesToGB(calculatedBytesUsed);
 
   return (
     <div style={{ marginTop: theme.spacing.lg }}>
@@ -757,7 +759,7 @@ const StorageManagePageContent = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
-  const { folders, subscriptionInfo } = useFolderManagement((message: string) => console.log(message));
+  const { folders, subscriptionInfo, calculatedBytesUsed } = useFolderManagement((message: string) => console.log(message));
   const albumCount = folders.length;
   const isSubscriptionInfoLoaded = subscriptionInfo !== null;
   
@@ -772,7 +774,7 @@ const StorageManagePageContent = () => {
   });
 
   // Custom hooks
-  const { canDowngrade, generatePlans } = useSubscriptionLogic(subscriptionInfo, albumCount, t);
+  const { canDowngrade, generatePlans } = useSubscriptionLogic(subscriptionInfo, calculatedBytesUsed, albumCount, t);
   const plans = useMemo(() => isSubscriptionInfoLoaded ? generatePlans() : [], [isSubscriptionInfoLoaded, generatePlans]);
 
   // Handlers
@@ -906,7 +908,7 @@ const StorageManagePageContent = () => {
     if (customGB && !isNaN(parseFloat(customGB))) {
       const inputGB = parseFloat(customGB);
       
-      if (inputGB < bytesToGB(subscriptionInfo.bytesOfDataUsed)) {
+      if (inputGB < bytesToGB(calculatedBytesUsed)) {
         return t('Change Plan');
       }
       
@@ -919,7 +921,7 @@ const StorageManagePageContent = () => {
     if (targetTier > currentTier) return t('Upgrade');
     if (targetTier === 0) return t('Downgrade To Free');
     return t('Change Plan');
-  }, [subscriptionInfo, customGB, selectedTier, albumCount, t]);
+  }, [subscriptionInfo, customGB, selectedTier, calculatedBytesUsed, albumCount, t]);
 
   const isButtonDisabled = useMemo(() => {
     if (!subscriptionInfo) return true;
@@ -936,7 +938,7 @@ const StorageManagePageContent = () => {
       if (targetTier === currentTier) return true;
       
       // Check if input is less than currently used storage
-      if (inputGB < bytesToGB(subscriptionInfo.bytesOfDataUsed)) return true;
+      if (inputGB < bytesToGB(calculatedBytesUsed)) return true;
     }
     
     return (
@@ -946,7 +948,7 @@ const StorageManagePageContent = () => {
       Boolean(customGB && (isNaN(parseFloat(customGB)) || parseFloat(customGB) <= 0)) ||
       Boolean(plans.find(p => p.subscriptions === selectedTier)?.isInsufficient)
     );
-  }, [subscriptionInfo, isPlanSelected, customGB, selectedTier, loading, plans, albumCount]);
+  }, [subscriptionInfo, isPlanSelected, customGB, selectedTier, loading, plans, calculatedBytesUsed, albumCount]);
 
   return (
     <PageContainer $isRTL={isRTL}>
@@ -956,7 +958,7 @@ const StorageManagePageContent = () => {
         </BackButton>
       </div>
 
-      <StorageUsageCard subscriptionInfo={subscriptionInfo} t={t} />
+      <StorageUsageCard subscriptionInfo={subscriptionInfo} calculatedBytesUsed={calculatedBytesUsed} t={t} />
 
       <Card>
         <SectionTitle>{t('Select Storage Capacity')}</SectionTitle>
@@ -984,6 +986,7 @@ const StorageManagePageContent = () => {
               customGB={customGB}
               onCustomGBChange={handleCustomGBChange}
               subscriptionInfo={subscriptionInfo}
+              calculatedBytesUsed={calculatedBytesUsed}
               albumCount={albumCount}
               t={t}
             />

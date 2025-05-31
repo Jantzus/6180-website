@@ -10,6 +10,16 @@ interface SubscriptionInfo {
   SubscriptionStatus?: string;
 }
 
+// Helper function to calculate total bytes used from all folders
+const calculateTotalBytesUsed = (folders: FolderType[]): number => {
+  return folders.reduce((total, folder) => {
+    const folderBytes = folder.files.reduce((folderTotal, file) => {
+      return folderTotal + (file.dataInBytes || 0);
+    }, 0);
+    return total + folderBytes;
+  }, 0);
+};
+
 /**
  * Custom hook for folder management functionality
  */
@@ -21,6 +31,13 @@ export const useFolderManagement = (log: (message: string) => void) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isContactFiltered, setIsContactFiltered] = useState<boolean>(false);
   const [subscriptionInfo, setSubscriptionInfo] = useState<SubscriptionInfo | null>(null);
+  const [calculatedBytesUsed, setCalculatedBytesUsed] = useState<number>(0);
+
+  // Calculate total bytes used whenever folders change
+  useEffect(() => {
+    const totalBytes = calculateTotalBytesUsed(folders);
+    setCalculatedBytesUsed(totalBytes);
+  }, [folders]);
 
   // Load user data and fetch folders
   useEffect(() => {
@@ -123,7 +140,6 @@ const fetchFolders = async (token: string) => {
           stripeCustomerId
           SubscriptionStatus
           intNumberOfSubscriptions
-          bytesOfDataUsed
         }
       }     
       fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
@@ -163,7 +179,7 @@ const fetchFolders = async (token: string) => {
     if (subscriptionData) {
       setSubscriptionInfo({
         intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
-        bytesOfDataUsed: subscriptionData.bytesOfDataUsed || 0,
+        bytesOfDataUsed: 0, // We'll use calculatedBytesUsed instead
         SubscriptionStatus: subscriptionData.SubscriptionStatus
       });
     }
@@ -297,6 +313,7 @@ const fetchFolders = async (token: string) => {
     resetContactFilter,
     handleDeleteClick,
     setFolders,
-    subscriptionInfo // This can now be null
+    subscriptionInfo, // This can now be null
+    calculatedBytesUsed // Add the calculated bytes used
   };
 };

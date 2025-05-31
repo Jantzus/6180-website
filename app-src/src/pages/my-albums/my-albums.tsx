@@ -40,13 +40,14 @@ const formatGB = (gb: number): string => {
 
 // Helper function to get albums that should be marked for deletion
 // const getAlbumsToDelete = (folders: any[], subscriptionInfo: any): any[] => {
-  const getAlbumsToDelete = (_folders: any[], subscriptionInfo: any): any[] => {
+  const getAlbumsToDelete = (_folders: any[], subscriptionInfo: any, _calculatedBytesUsed: number): any[] => {
   // Return empty array if subscriptionInfo is not loaded yet
   if (!subscriptionInfo) {
     return [];
   }
 
   // const { intNumberOfSubscriptions, bytesOfDataUsed } = subscriptionInfo;
+  const { intNumberOfSubscriptions: _intNumberOfSubscriptions } = subscriptionInfo;
   
   let albumsToDelete: any[] = [];
   
@@ -69,7 +70,7 @@ const formatGB = (gb: number): string => {
   //   }
     
   //   // Check if over storage limit
-  //   if (bytesOfDataUsed > storageLimit) {
+  //   if (calculatedBytesUsed > storageLimit) {
   //     // Calculate which albums to delete to get under the storage limit
   //     // Sort by oldest first, then calculate cumulative storage to remove
   //     const sortedByOldest = [...folders].sort((a, b) => {
@@ -78,7 +79,7 @@ const formatGB = (gb: number): string => {
   //       return dateA - dateB; // Oldest first
   //     });
       
-  //     let bytesToRemove = bytesOfDataUsed - storageLimit;
+  //     let bytesToRemove = calculatedBytesUsed - storageLimit;
   //     let albumsForStorageDeletion: any[] = [];
       
   //     for (const folder of sortedByOldest) {
@@ -106,7 +107,7 @@ const formatGB = (gb: number): string => {
   //   // Paid tier - only storage limit applies
   //   const totalStorageBytes = intNumberOfSubscriptions * 10 * 1024 * 1024 * 1024; // Convert GB to bytes
     
-  //   if (bytesOfDataUsed > totalStorageBytes) {
+  //   if (calculatedBytesUsed > totalStorageBytes) {
   //     // Calculate which albums to delete to get under the storage limit
   //     const sortedByOldest = [...folders].sort((a, b) => {
   //       const dateA = new Date(a.createdAt || 0).getTime();
@@ -114,7 +115,7 @@ const formatGB = (gb: number): string => {
   //       return dateA - dateB; // Oldest first
   //     });
       
-  //     let bytesToRemove = bytesOfDataUsed - totalStorageBytes;
+  //     let bytesToRemove = calculatedBytesUsed - totalStorageBytes;
       
   //     for (const folder of sortedByOldest) {
   //       if (bytesToRemove <= 0) break;
@@ -299,12 +300,14 @@ const StorageMessage = ({
   subscriptionInfo, 
   albumCount, 
   folders,
+  calculatedBytesUsed,
   t, 
   isRTL 
 }: { 
   subscriptionInfo: { intNumberOfSubscriptions: number; bytesOfDataUsed: number; } | null; 
   albumCount: number; 
   folders: any[];
+  calculatedBytesUsed: number;
   t: (key: string) => string; 
   isRTL: boolean; 
 }) => {
@@ -313,11 +316,11 @@ const StorageMessage = ({
     return null;
   }
 
-  const { intNumberOfSubscriptions, bytesOfDataUsed } = subscriptionInfo;
-  const usedGB = bytesToGB(bytesOfDataUsed);
+  const { intNumberOfSubscriptions } = subscriptionInfo;
+  const usedGB = bytesToGB(calculatedBytesUsed);
   
   // Get albums that should be marked for deletion
-  const albumsToDelete = getAlbumsToDelete(folders, subscriptionInfo);
+  const albumsToDelete = getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed);
   
   // Determine which message to show based on conditions
   let messageType: 'free-space' | 'free-count-exceeded' | 'free-storage-exceeded' | 'free-both-exceeded' | 'paid-warning' | 'paid-exceeded' | 'none' = 'none';
@@ -430,11 +433,12 @@ const MyAlbums = () => {
     resetContactFilter,
     handleDeleteClick,
     setFolders,
-    subscriptionInfo
+    subscriptionInfo,
+    calculatedBytesUsed
   } = useFolderManagement((message: string) => log(message));
   
   // Get albums that should be marked for deletion (only if subscriptionInfo is loaded)
-  const albumsToDelete = subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo) : [];
+  const albumsToDelete = subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed) : [];
   const albumsToDeleteIds = new Set(albumsToDelete.map(album => album.folderId));
   
   // Filter out albums marked for deletion from the main list
@@ -515,7 +519,7 @@ const MyAlbums = () => {
                 e.currentTarget.style.color = "#007bff"; // Back to original blue
               }}
             >
-              {formatGB(bytesToGB(subscriptionInfo.bytesOfDataUsed))} / {
+              {formatGB(bytesToGB(calculatedBytesUsed))} / {
                 subscriptionInfo.intNumberOfSubscriptions === 0 
                   ? FREE_TIER_STORAGE_LIMIT_GB // Free tier gets 10GB
                   : subscriptionInfo.intNumberOfSubscriptions * 10 // Paid tier: 10GB per subscription
@@ -529,6 +533,7 @@ const MyAlbums = () => {
           subscriptionInfo={subscriptionInfo}
           albumCount={folders.length}
           folders={folders}
+          calculatedBytesUsed={calculatedBytesUsed}
           t={t}
           isRTL={isRTL}
         />
