@@ -111,119 +111,122 @@ export const useFolderManagement = (log: (message: string) => void) => {
   };
   
   // Separated fetchFolders function to use with the token
-  const fetchFolders = async (token: string) => {
-    const query = `
-      mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
-        changeMyAccountItem(getSubscriptionInfoInput: true) {
-          ... on SubscriptionInfo {
-            id
-            createdAt
-            updatedAt
-            stripeCustomerId
-            SubscriptionStatus
-            intNumberOfSubscriptions
-            bytesOfDataUsed
-          }
-        }     
-        fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
-          items {
-            ... on FolderPosition {
-              ${FOLDERPOSITION_FIELD}
-            }
+// Separated fetchFolders function to use with the token
+const fetchFolders = async (token: string) => {
+  const query = `
+    mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
+      changeMyAccountItem(getSubscriptionInfoInput: true) {
+        ... on SubscriptionInfo {
+          id
+          createdAt
+          updatedAt
+          stripeCustomerId
+          SubscriptionStatus
+          intNumberOfSubscriptions
+          bytesOfDataUsed
+        }
+      }     
+      fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
+        items {
+          ... on FolderPosition {
+            ${FOLDERPOSITION_FIELD}
           }
         }
       }
-    `
- 
- 
-    const variables = {
-      relationIds: [ "myAccountOwnerItemId_____myAccountOwnerItemId____SubscriptionInfo" ],
-      fetchRelationsInput: {
-        ownerItemId: "myAccountOwnerItemId",
-        rangeKeyPrefix: "FolderPosition",
-        index: "ownerItemId_____RelationType____sortParameter",
-        limit: 50,
-        scanIndexForward: false,
-      },
     }
- 
- 
-    try {
-      const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ query, variables }),
-      })
- 
- 
-      const json = await res.json()
- 
-      const subscriptionData = json?.data?.changeMyAccountItem
-      if (subscriptionData) {
-        setSubscriptionInfo({
-          intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
-          bytesOfDataUsed: subscriptionData.bytesOfDataUsed || 0,
-          SubscriptionStatus: subscriptionData.SubscriptionStatus
+  `
+
+  const variables = {
+    relationIds: [ "myAccountOwnerItemId_____myAccountOwnerItemId____SubscriptionInfo" ],
+    fetchRelationsInput: {
+      ownerItemId: "myAccountOwnerItemId",
+      rangeKeyPrefix: "FolderPosition",
+      index: "ownerItemId_____RelationType____sortParameter",
+      limit: 2000,
+      scanIndexForward: false,
+    },
+  }
+
+  try {
+    const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ query, variables }),
+    })
+
+    const json = await res.json()
+
+    const subscriptionData = json?.data?.changeMyAccountItem
+    if (subscriptionData) {
+      setSubscriptionInfo({
+        intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
+        bytesOfDataUsed: subscriptionData.bytesOfDataUsed || 0,
+        SubscriptionStatus: subscriptionData.SubscriptionStatus
+      });
+    }
+
+    const items = json?.data?.fetchRelations?.items || []
+
+    // Filter out null/undefined items and items without folders
+    const validItems = items.filter((item: any) => 
+      item && 
+      item.id && 
+      item.folder && 
+      item.folder.id
+    );
+
+    const parsed: FolderType[] = validItems.map((item: any) => {
+      const folder = item.folder
+      const rawFiles = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
+     
+      // Properly map files with explicit field preservation
+      const files = rawFiles
+        .filter((f: any) => f && f.dataKey)
+        .map((file: any) => ({
+          dataKey: file.dataKey,
+          thumbnailDataKey: file.thumbnailDataKey || null,
+          durationInSeconds: file.durationInSeconds || null,
+          dataInBytes: file.dataInBytes || 0 // Explicitly preserve dataInBytes with fallback to 0
+        }));
+     
+      // Extract contacts from contactsUsingInvite
+      const contacts: Record<string, string> = {};
+      if (folder?.contactsUsingInvite?.items) {
+        folder.contactsUsingInvite.items.forEach((contact: any) => {
+          // Add null check for contact before accessing id
+          if (contact?.id && contact?.item?.publicDisplayName) {
+            contacts[contact.id] = contact.item.publicDisplayName;
+          }
         });
       }
- 
-      const items = json?.data?.fetchRelations?.items || []
- 
- 
-      const parsed: FolderType[] = items.map((item: any) => {
-        const folder = item.folder
-        const rawFiles = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
-       
-        // Properly map files with explicit field preservation
-        const files = rawFiles
-          .filter((f: any) => f && f.dataKey)
-          .map((file: any) => ({
-            dataKey: file.dataKey,
-            thumbnailDataKey: file.thumbnailDataKey || null,
-            durationInSeconds: file.durationInSeconds || null,
-            dataInBytes: file.dataInBytes || 0 // Explicitly preserve dataInBytes with fallback to 0
-          }));
-       
-        // Extract contacts from contactsUsingInvite
-        const contacts: Record<string, string> = {};
-        if (folder?.contactsUsingInvite?.items) {
-          folder.contactsUsingInvite.items.forEach((contact: any) => {
-            if (contact?.id && contact?.item?.publicDisplayName) {
-              contacts[contact.id] = contact.item.publicDisplayName;
-            }
-          });
-        }
-       
-        return {
-          folderPositionId: item.id,
-          folderId: folder.id,
-          albumNanoId: folder.albumNanoId,
-          folderName: folder.folderName,
-          folderDescription: folder.folderDescription,
-          folderPassword: folder.folderPassword,
-          creatorId: folder.creatorId,
-          createdAt: folder.createdAt,
-          updatedAt: folder.updatedAt,
-          files: files, // Use the properly mapped files array
-          profileIds: item.profileIds || [], // Include profileIds from the item
-          contacts: contacts, // Include the contacts map
-          usingFolderInviteGrantsRightToAddItems:
-            folder?.folderInviteParameters?.usingFolderInviteGrantsRightToAddItems || false
-        }
-      })
- 
- 
-      setFolders(parsed)
-    } catch (err) {
-      console.error("Failed to load folders:", err)
-      log(`❌ Failed to fetch folders: ${String(err)}`)
-    }
+     
+      return {
+        folderPositionId: item.id,
+        folderId: folder.id,
+        albumNanoId: folder.albumNanoId,
+        folderName: folder.folderName,
+        folderDescription: folder.folderDescription,
+        folderPassword: folder.folderPassword,
+        creatorId: folder.creatorId,
+        createdAt: folder.createdAt,
+        updatedAt: folder.updatedAt,
+        files: files, // Use the properly mapped files array
+        profileIds: item.profileIds || [], // Include profileIds from the item
+        contacts: contacts, // Include the contacts map
+        usingFolderInviteGrantsRightToAddItems:
+          folder?.folderInviteParameters?.usingFolderInviteGrantsRightToAddItems || false
+      }
+    })
+
+    setFolders(parsed)
+  } catch (err) {
+    console.error("Failed to load folders:", err)
+    log(`❌ Failed to fetch folders: ${String(err)}`)
   }
- 
- 
+}
  
  
   // Handle deletion confirmation dialog
