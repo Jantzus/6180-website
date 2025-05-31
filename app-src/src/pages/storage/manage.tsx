@@ -9,16 +9,16 @@ import { useFolderManagement } from "../my-albums/utils";
 
 // ===== TYPE DEFINITIONS =====
 interface DirectionalProps {
-  isRTL: boolean;
+  $isRTL: boolean;
 }
 
 interface StorageProgressProps {
-  percentage: number;
+  $percentage: number;
 }
 
 interface PlanCardProps {
-  isSelected: boolean;
-  isInsufficient?: boolean;
+  $isSelected: boolean;
+  $isInsufficient?: boolean;
 }
 
 interface ButtonProps {
@@ -128,7 +128,7 @@ const PageContainer = styled.div<DirectionalProps>`
   min-height: 100vh;
   max-width: 800px;
   margin: 0 auto;
-  direction: ${props => props.isRTL ? 'rtl' : 'ltr'};
+  direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
 `;
 
 const BackButton = styled.button`
@@ -172,11 +172,11 @@ const StorageBar = styled.div`
 const StorageProgress = styled.div<StorageProgressProps>`
   height: 100%;
   background-color: ${props => {
-    if (props.percentage > 90) return theme.colors.danger;
-    if (props.percentage > 75) return theme.colors.warning;
+    if (props.$percentage > 90) return theme.colors.danger;
+    if (props.$percentage > 75) return theme.colors.warning;
     return theme.colors.primary;
   }};
-  width: ${props => Math.min(props.percentage, 100)}%;
+  width: ${props => Math.min(props.$percentage, 100)}%;
   transition: width 0.3s ease;
 `;
 
@@ -197,23 +197,23 @@ const PlanGrid = styled.div`
 
 const PlanCard = styled.div<PlanCardProps>`
   border: 2px solid ${props => {
-    if (props.isInsufficient) return theme.colors.danger;
-    return props.isSelected ? theme.colors.primary : theme.colors.border;
+    if (props.$isInsufficient) return theme.colors.danger;
+    return props.$isSelected ? theme.colors.primary : theme.colors.border;
   }};
   border-radius: ${theme.borderRadius.medium};
   padding: ${theme.spacing.md};
-  cursor: ${props => props.isInsufficient ? 'not-allowed' : 'pointer'};
+  cursor: ${props => props.$isInsufficient ? 'not-allowed' : 'pointer'};
   transition: all 0.2s ease;
   background-color: ${props => {
-    if (props.isInsufficient) return '#ffebee';
-    return props.isSelected ? theme.colors.background.highlight : theme.colors.white;
+    if (props.$isInsufficient) return '#ffebee';
+    return props.$isSelected ? theme.colors.background.highlight : theme.colors.white;
   }};
-  opacity: ${props => props.isInsufficient ? 0.7 : 1};
+  opacity: ${props => props.$isInsufficient ? 0.7 : 1};
   position: relative;
 
   &:hover {
     border-color: ${props => {
-      if (props.isInsufficient) return theme.colors.danger;
+      if (props.$isInsufficient) return theme.colors.danger;
       return theme.colors.primary;
     }};
   }
@@ -440,7 +440,7 @@ const StorageUsageCard = ({ subscriptionInfo, t }: { subscriptionInfo: Subscript
         <span>{t('Total: {{total}}', { total: formatStorageDisplay(totalGB * 1024 * 1024 * 1024) })}</span>
       </StorageInfo>
       <StorageBar>
-        <StorageProgress percentage={usagePercentage} />
+        <StorageProgress $percentage={usagePercentage} />
       </StorageBar>
     </Card>
   );
@@ -574,8 +574,8 @@ const PlanSelectionGrid = ({
       {plans.map((plan) => (
         <PlanCard
           key={plan.id}
-          isSelected={isPlanSelected && selectedTier === plan.subscriptions && !customGB && !plan.isInsufficient}
-          isInsufficient={plan.isInsufficient}
+          $isSelected={isPlanSelected && selectedTier === plan.subscriptions && !customGB && !plan.isInsufficient}
+          $isInsufficient={plan.isInsufficient}
           onClick={() => onPlanSelect(plan)}
         >
           <PlanTitle>
@@ -949,7 +949,7 @@ const StorageManagePageContent = () => {
   }, [subscriptionInfo, isPlanSelected, customGB, selectedTier, loading, plans, albumCount]);
 
   return (
-    <PageContainer isRTL={isRTL}>
+    <PageContainer $isRTL={isRTL}>
       <div style={{ marginBottom: theme.spacing.md, textAlign: 'right' }}>
         <BackButton onClick={() => redirectTo(generateUrl('my-albums.html'))}>
           {t('← Back To Albums')}

@@ -44,7 +44,7 @@ export const UsernamePrompt: React.FC<{
   if (!showUsernamePrompt) return null;
 
   return (
-    <Modal zIndex={9999}>
+    <Modal $zIndex={9999}>
       <ModalContent style={{ 
         background: '#fff',
         padding: '30px',
@@ -63,11 +63,11 @@ export const UsernamePrompt: React.FC<{
         <UsernameInput
           value={usernameInput}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsernameInput(e.target.value)}
-          isRTL={isRTL}
+          $isRTL={isRTL}
         />
-        {usernameError && <Message type="error" style={{ fontSize: '14px', padding: '8px', marginBottom: '12px' }}>{usernameError}</Message>}
+        {usernameError && <Message $type="error" style={{ fontSize: '14px', padding: '8px', marginBottom: '12px' }}>{usernameError}</Message>}
         <Button
-          primary
+          $primary
           disabled={isSubmittingUsername}
           onClick={() => {
             if (!validateUsername(usernameInput)) {

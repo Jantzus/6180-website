@@ -68,8 +68,8 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   };
   
   return (
-    <ProfileHeaderContainer isRTL={isRTL}>
-      <ProfileControls isRTL={isRTL}>
+    <ProfileHeaderContainer $isRTL={isRTL}>
+      <ProfileControls $isRTL={isRTL}>
         <div ref={menuRef} style={{ position: 'relative' }}>
           <MenuButton 
             onClick={toggleMenu}

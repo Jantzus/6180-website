@@ -178,14 +178,14 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
           <Button 
             onClick={hasPrev ? onPrev : undefined}
             disabled={!hasPrev}
-            isDisabled={!hasPrev}
+            $isDisabled={!hasPrev}
           >
             ←
           </Button>
           <Button 
             onClick={hasNext ? onNext : undefined}
             disabled={!hasNext}
-            isDisabled={!hasNext}
+            $isDisabled={!hasNext}
           >
             →
           </Button>
@@ -204,14 +204,14 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
             <Image 
               src={item.url}
               alt={`Image ${index + 1}`}
-              isLoaded={isLoaded}
+              $isLoaded={isLoaded}
               onLoad={() => {
                 setIsLoaded(true);
                 setIsLoading(false);
               }}
             />
             {showWatermark && (
-              <Overlay type="watermark">
+              <Overlay $type="watermark">
                 <WatermarkText>6180 Watermarked</WatermarkText>
               </Overlay>
             )}
@@ -234,7 +234,7 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
               {t('Your browser does not support the video tag.')}
             </VideoElement>
             {showWatermark && (
-              <Overlay type="watermark">
+              <Overlay $type="watermark">
                 <WatermarkText>6180 Watermarked</WatermarkText>
               </Overlay>
             )}

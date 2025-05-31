@@ -1,5 +1,5 @@
 // src/lib/i18n/components.tsx
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from './hooks';
 import styled from 'styled-components';
 import { SupportedLanguage } from '@/lib/i18n/translations';
@@ -15,6 +15,7 @@ export const GlobeIcon = styled.span`
   font-size: 16px;
 `;
 
+// Base select component
 export const SelectBox = styled.select`
   padding: 6px 10px;
   border-radius: 4px;
@@ -28,6 +29,21 @@ export const SelectBox = styled.select`
     border-color: #4a90e2;
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
   }
+`;
+
+// Variant-specific styled components (created outside the component)
+const MinimalSelect = styled(SelectBox)`
+  border: none;
+  background: transparent;
+  padding: 3px 5px;
+  min-width: 100px;
+`;
+
+const ButtonSelect = styled(SelectBox)`
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-weight: 500;
 `;
 
 export const Option = styled.option`
@@ -60,31 +76,19 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     }
   };
   
-  // Create a memoized styled component based on the variant prop
-  const StyledSelect = useMemo(() => {
-    return styled(SelectBox)`
-      ${variant === 'minimal' && `
-        border: none;
-        background: transparent;
-        padding: 3px 5px;
-        min-width: 100px;
-      `}
-      
-      ${variant === 'button' && `
-        background-color: #f5f5f5;
-        border-radius: 20px;
-        padding: 6px 12px;
-        font-weight: 500;
-      `}
-    `;
-  }, [variant]);
+  // Select the appropriate component based on variant
+  const SelectComponent = variant === 'minimal' 
+    ? MinimalSelect 
+    : variant === 'button' 
+    ? ButtonSelect 
+    : SelectBox;
   
   return (
     <SelectorContainer className={className}>
       <GlobeIcon>
         {label}
       </GlobeIcon>
-      <StyledSelect
+      <SelectComponent
         value={language}
         onChange={handleChange}
         aria-label="Language"
@@ -95,7 +99,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
             {lang.name}
           </Option>
         ))}
-      </StyledSelect>
+      </SelectComponent>
       {loading && <span style={{ fontSize: '12px', color: '#666' }}>•</span>}
     </SelectorContainer>
   );

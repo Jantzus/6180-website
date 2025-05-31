@@ -181,7 +181,7 @@ export const AlbumHeader: React.FC<{
     !isAuthorized && 
     passwordPolicy && 
     passwordPolicy !== 'NoPassword' && (
-      <Button onClick={promptForPassword} passwordSet={true}>
+      <Button onClick={promptForPassword} $passwordSet={true}>
         {t('Enter Password')}
       </Button>
     )
@@ -308,7 +308,7 @@ export const AlbumHeader: React.FC<{
   return (
     <Header>
       <HeaderContent>
-        <HeaderControls fullWidth>
+        <HeaderControls $fullWidth>
           {renderMainContent()}
         </HeaderControls>
         <RowSelectorContainer>

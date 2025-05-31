@@ -298,7 +298,7 @@ const SaveAlbum = () => {
   return (
     <>
       <GlobalStyle />
-      <AppContainer isRTL={isRTL}>
+      <AppContainer $isRTL={isRTL}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           {/* Header Section */}
           <HeaderContainer>
@@ -368,7 +368,7 @@ const SaveAlbum = () => {
             {/* Only show password button if user is creator */}
             {isCreator === true && (
               <Button
-                passwordSet={passwordProtectionOption !== 'NoPassword'}
+                $passwordSet={passwordProtectionOption !== 'NoPassword'}
                 onClick={handleOpenPasswordDialog}
                 disabled={isSavingAlbum || isUploading}
               >
@@ -377,7 +377,7 @@ const SaveAlbum = () => {
             )}
 
             <Button
-              primary
+              $primary
               onClick={handleSaveAlbum}
               disabled={isSavingAlbum || isUploading}
             >

@@ -269,7 +269,7 @@ const PersonaViewer: React.FC = () => {
     <>
       <GlobalStyle />
       
-      <AppContainer isRTL={isRTL}>
+      <AppContainer $isRTL={isRTL}>
           {/* Profile Header */}
           <ProfileHeader 
             username={profileUsername || t('User')}
@@ -287,14 +287,14 @@ const PersonaViewer: React.FC = () => {
           
           {/* Loading State */}
           {isLoading && (
-            <State type="empty">
+            <State $type="empty">
               <p>{t('Loading albums...')}</p>
             </State>
           )}
           
           {/* Error State */}
           {error && (
-            <State type="error">
+            <State $type="error">
               <p>{error}</p>
             </State>
           )}

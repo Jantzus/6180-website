@@ -86,7 +86,7 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({
             
             <Button
               type="submit"
-              primary
+              $primary
               disabled={isSubmitting || !password}
               style={{ flex: 1 }}
             >

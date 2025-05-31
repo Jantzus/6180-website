@@ -58,7 +58,7 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
         {selectedPhotos.map((photo, i) => (
           <PhotoCard key={i}>
             {/* Status indicator */}
-            <StatusIndicator status={photo.status}>
+            <StatusIndicator $status={photo.status}>
               {photo.status === 'complete' ? '✓' : 
                photo.status === 'error' ? '✕' :
                photo.status === 'uploading' ? '↑' :
@@ -75,8 +75,8 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
               
               {/* Upload progress bar for in-progress items */}
               {(photo.status === 'uploading' || photo.status === 'processing') && (
-                <ProgressBarBg bottom="4px" left="4px" right="4px" height="4px">
-                  <UploadProgressBar progress={photo.progress} status={photo.status} />
+                <ProgressBarBg $bottom="4px" $left="4px" $right="4px" $height="4px">
+                  <UploadProgressBar $progress={photo.progress} $status={photo.status} />
                 </ProgressBarBg>
               )}
             </MediaPreview>
@@ -90,7 +90,7 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
 
             {/* Error message if any */}
             {photo.status === 'error' && photo.errorMessage && (
-              <Message type="error">
+              <Message $type="error">
                 {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
               </Message>
             )}
@@ -127,7 +127,7 @@ export const SavingProgressComponent: React.FC<SavingProgressComponentProps> = (
       <ProgressTitle>{t('Saving Album')}</ProgressTitle>
       <ProgressText id="saveProgressText">{t('Moving files...')}</ProgressText>
       <ProgressBarBg>
-        <ProgressBar id="saveProgress" progress={savingProgress/100} />
+        <ProgressBar id="saveProgress" $progress={savingProgress/100} />
       </ProgressBarBg>
     </Card>
   );

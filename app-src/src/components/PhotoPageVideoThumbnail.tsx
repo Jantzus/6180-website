@@ -89,7 +89,7 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
           {t('Your browser does not support the video tag.')}
         </video>
         {showWatermark && (
-          <Overlay type="watermark">
+          <Overlay $type="watermark">
             <WatermarkText>6180 Watermarked</WatermarkText>
           </Overlay>
         )}
@@ -106,7 +106,7 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
           alt={`Video thumbnail ${index + 1}`}
           showWatermark={showWatermark}
         />
-        <Overlay type="loading">
+        <Overlay $type="loading">
           {t('Loading video...')}
         </Overlay>
         <video 
@@ -129,7 +129,7 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
         showWatermark={showWatermark}
       />
       <PlayButton />
-      <Badge position="bottomLeft">{duration}</Badge>
+      <Badge $position="bottomLeft">{duration}</Badge>
     </ThumbnailWrapper>
   );
 };

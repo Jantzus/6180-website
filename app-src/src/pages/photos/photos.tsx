@@ -657,7 +657,7 @@ const PhotoAlbumContent: React.FC = () => {
             rel="noopener noreferrer"
             aria-label={t('Visit 6180.io')}
           >
-            <BrandLogoContainer isRTL={isRTL}>
+            <BrandLogoContainer $isRTL={isRTL}>
               <BrandLogo 
                 src={generateUrl("images/logo_no_background.png")}
                 alt="6180 Logo"

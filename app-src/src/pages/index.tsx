@@ -54,7 +54,7 @@ const IndexPage: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <AppContainer isRTL={isRTL}>
+      <AppContainer $isRTL={isRTL}>
         <div style={{ 
           display: 'flex',
           flexDirection: 'column',
@@ -62,7 +62,7 @@ const IndexPage: React.FC = () => {
           height: 'calc(100vh - 60px)'
         }}>
           <HeaderContainer>
-            <LogoContainer isRTL={isRTL}>
+            <LogoContainer $isRTL={isRTL}>
               <Logo 
                 src={generateUrl("images/logo_no_background.png")}
                 alt="6180 Logo"
@@ -84,7 +84,7 @@ const IndexPage: React.FC = () => {
             </Headline>
             
             <Button 
-              primary
+              $primary
               onClick={goToAlbums}
               className="hover-button"
               style={{ marginTop: '20px', padding: '12px 20px' }}

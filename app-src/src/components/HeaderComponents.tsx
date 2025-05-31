@@ -135,7 +135,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
         {/* Show Enter Password button if needed */}
         {showingEnterPassword && passwordPolicy && passwordPolicy !== 'NoPassword' && (
           <div style={{ flexShrink: 0 }}> 
-            <Button onClick={promptForPassword} passwordSet={true}>
+            <Button onClick={promptForPassword} $passwordSet={true}>
               {t('Enter Password')}
             </Button>
           </div>
@@ -179,7 +179,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
       {/* Show Enter Password button if needed */}
       {showingEnterPassword && (
         <div>
-          <Button onClick={promptForPassword} passwordSet={true}>
+          <Button onClick={promptForPassword} $passwordSet={true}>
             {t('Enter Password')}
           </Button>
           </div>

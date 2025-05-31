@@ -119,7 +119,7 @@ const directionalStyles = (isRTL: boolean) => css`
 `;
 
 interface DirectionalProps {
-  isRTL: boolean;
+  $isRTL: boolean;
 }
 
 // Responsive mixins
@@ -147,15 +147,15 @@ const formInputStyle = css`
 
 interface ButtonProps {
   disabled?: boolean;
-  primary?: boolean;
-  isHovered?: boolean;
-  passwordSet?: boolean;
-  isDisabled?: boolean;
+  $primary?: boolean;
+  $isHovered?: boolean;
+  $passwordSet?: boolean;
+  $isDisabled?: boolean;
 }
 
 const buttonBaseStyle = css<ButtonProps>`
-  cursor: ${props => (props.disabled || props.isDisabled) ? 'not-allowed' : 'pointer'};
-  opacity: ${props => (props.disabled || props.isDisabled) ? 0.6 : 1};
+  cursor: ${props => (props.disabled || props.$isDisabled) ? 'not-allowed' : 'pointer'};
+  opacity: ${props => (props.disabled || props.$isDisabled) ? 0.6 : 1};
   transition: all 0.2s ease;
   border-radius: ${theme.borderRadius.medium};
 `;
@@ -196,7 +196,7 @@ export const AppContainer = styled.div<DirectionalProps>`
   background-color: ${theme.colors.background.primary};
   min-height: 100vh;
   max-width: 100vw;
-  ${props => directionalStyles(props.isRTL)}
+  ${props => directionalStyles(props.$isRTL)}
 `;
 
 export const MediaContainer = styled.div`
@@ -279,7 +279,7 @@ export const BrandLogo = styled.img`
 export const BrandLogoContainer = styled.div<DirectionalProps>`
   display: flex;
   align-items: center;
-  flex-direction: ${props => props.isRTL ? 'row-reverse' : 'row'};
+  flex-direction: ${props => props.$isRTL ? 'row-reverse' : 'row'};
   gap: ${theme.spacing.sm};
   margin: 0;
 `;
@@ -306,7 +306,7 @@ export const HeaderContent = styled.div`
   `)}
 `;
 
-export const HeaderControls = styled.div<{ fullWidth?: boolean }>`
+export const HeaderControls = styled.div<{ $fullWidth?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -315,7 +315,7 @@ export const HeaderControls = styled.div<{ fullWidth?: boolean }>`
   gap: ${theme.spacing.sm};
   flex-wrap: wrap;
   
-  ${props => props.fullWidth && css`
+  ${props => props.$fullWidth && css`
     width: 100%;
     
     > div {
@@ -362,7 +362,7 @@ export const RowSelectorSelect = styled.select`
 export const LogoContainer = styled.div<DirectionalProps>`
   display: flex;
   align-items: center;
-  flex-direction: ${props => props.isRTL ? 'row-reverse' : 'row'};
+  flex-direction: ${props => props.$isRTL ? 'row-reverse' : 'row'};
   gap: ${theme.spacing.sm};  
 `;
 
@@ -379,31 +379,31 @@ export const Headline = styled.h1`
 export const Button = styled.button<ButtonProps>`
   ${buttonBaseStyle}
   background-color: ${props => {
-    if (props.primary) return props.isHovered ? theme.colors.primaryDark : theme.colors.primary;
-    if (props.passwordSet) return theme.colors.black;
+    if (props.$primary) return props.$isHovered ? theme.colors.primaryDark : theme.colors.primary;
+    if (props.$passwordSet) return theme.colors.black;
     return 'transparent';
   }};
   color: ${props => {
-    if (props.primary) return theme.colors.text.white;
-    if (props.passwordSet) return theme.colors.white;
+    if (props.$primary) return theme.colors.text.white;
+    if (props.$passwordSet) return theme.colors.white;
     return theme.colors.primary;
   }};
-  font-weight: ${props => props.primary ? '500' : 'normal'};
+  font-weight: ${props => props.$primary ? '500' : 'normal'};
   padding: 12px 20px;
   font-size: ${theme.fontSizes.md};
-  border: ${props => props.primary ? 'none' : `1px solid ${theme.colors.primary}`};
+  border: ${props => props.$primary ? 'none' : `1px solid ${theme.colors.primary}`};
   border-radius: ${theme.borderRadius.medium};
   min-width: 140px; /* Changed from fixed width to min-width */
   width: auto; /* Allow the button to grow based on content */
   white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
   margin-left: auto; /* Align to trailing side */
-  box-shadow: ${props => props.primary ? theme.boxShadow.primaryBtn : 'none'};
+  box-shadow: ${props => props.$primary ? theme.boxShadow.primaryBtn : 'none'};
   
   &:hover {
     background-color: ${props => {
-      if (props.primary) return theme.colors.primaryDark;
-      if (props.passwordSet) return '#333333';
+      if (props.$primary) return theme.colors.primaryDark;
+      if (props.$passwordSet) return '#333333';
       return theme.colors.grayLighter;
     }};
   }
@@ -507,16 +507,16 @@ export const OwnerProfileLink = styled.a`
   gap: 6px;
 `;
 
-export const ProfileHeaderContainer = styled.div<{ isRTL: boolean }>`
+export const ProfileHeaderContainer = styled.div<DirectionalProps>`
   margin-bottom: ${theme.spacing.md};
   text-align: center;
-  direction: ${props => props.isRTL ? "rtl" : "ltr"};
+  direction: ${props => props.$isRTL ? "rtl" : "ltr"};
 `;
 
-export const ProfileControls = styled.div<{ isRTL: boolean }>`
+export const ProfileControls = styled.div<DirectionalProps>`
   display: flex;
   align-items: center;
-  justify-content: ${props => props.isRTL ? "flex-start" : "flex-end"};
+  justify-content: ${props => props.$isRTL ? "flex-start" : "flex-end"};
   margin-bottom: ${theme.spacing.sm};
   position: relative;
 `;
@@ -578,10 +578,10 @@ export const AlbumTitleStrong = styled.strong`
   font-weight: 700;
 `;
 
-export const Card = styled.div<{ padding?: string; marginBottom?: string }>`
+export const Card = styled.div<{ $padding?: string; $marginBottom?: string }>`
   ${cardStyle}
-  padding: ${props => props.padding || theme.spacing.md};
-  margin-bottom: ${props => props.marginBottom || theme.spacing.md};
+  padding: ${props => props.$padding || theme.spacing.md};
+  margin-bottom: ${props => props.$marginBottom || theme.spacing.md};
   width: 100%;
 `;
 
@@ -597,7 +597,7 @@ export const DescriptionText = styled.p`
 
 // Message styles
 interface MessageProps {
-  type?: 'error' | 'loading' | 'info';
+  $type?: 'error' | 'loading' | 'info';
 }
 
 export const Message = styled.div<MessageProps>`
@@ -608,7 +608,7 @@ export const Message = styled.div<MessageProps>`
   width: 100%;
   border-radius: ${theme.borderRadius.medium};
   color: ${props => {
-    switch(props.type) {
+    switch(props.$type) {
       case 'error': return theme.colors.danger;
       case 'loading': return theme.colors.text.secondary;
       default: return theme.colors.text.primary;
@@ -617,20 +617,20 @@ export const Message = styled.div<MessageProps>`
 `;
 
 
-export const AlbumDescription = styled.div<{ isRTL: boolean }>`
+export const AlbumDescription = styled.div<DirectionalProps>`
   margin-top: ${theme.spacing.sm};
   margin-bottom: ${theme.spacing.md};
   font-size: ${theme.fontSizes.xs};
   color: ${theme.colors.text.secondary};
   line-height: 1.5;
-  text-align: ${props => props.isRTL ? "right" : "left"};
+  text-align: ${props => props.$isRTL ? "right" : "left"};
   white-space: pre-wrap;
 `;
 
-export const AlbumDates = styled.div<{ isRTL: boolean }>`
+export const AlbumDates = styled.div<DirectionalProps>`
   font-size: ${theme.fontSizes.xs};
   color: ${theme.colors.text.light};
-  text-align: ${props => props.isRTL ? "right" : "left"};
+  text-align: ${props => props.$isRTL ? "right" : "left"};
   margin-top: ${theme.spacing.xs};
 `;
 
@@ -643,14 +643,14 @@ export const PolicyIndicator = styled.div`
 
 // ========== Media Grid Components ==========
 
-export const MediaGrid = styled.div<{ columns: string }>`
+export const MediaGrid = styled.div<{ $columns: string }>`
   display: grid;
   grid-gap: ${theme.spacing.md};
   width: 100%;
   min-height: 0;
   
   ${props => {
-    switch(props.columns) {
+    switch(props.$columns) {
       case '1': return css`grid-template-columns: repeat(1, 1fr);`;
       case '2': return css`grid-template-columns: repeat(2, 1fr);`;
       case '3': return css`grid-template-columns: repeat(3, 1fr);`;
@@ -663,7 +663,7 @@ export const MediaGrid = styled.div<{ columns: string }>`
   @media (max-width: ${theme.breakpoints.mobile}) {
     grid-gap: ${theme.spacing.sm};
     ${props => {
-      const col = parseInt(props.columns);
+      const col = parseInt(props.$columns);
       if (col > 3) return css`grid-template-columns: repeat(3, minmax(0, 1fr));`;
       if (col > 1) return css`grid-template-columns: repeat(${col}, minmax(0, 1fr));`;
       return css`grid-template-columns: repeat(1, minmax(0, 1fr));`;
@@ -672,7 +672,7 @@ export const MediaGrid = styled.div<{ columns: string }>`
 `;
 
 // Media block style
-const mediaBlockStyle = css<{ isHovered?: boolean }>`
+const mediaBlockStyle = css<{ $isHovered?: boolean }>`
   ${cardStyle}
   transition: transform 0.2s;
   position: relative;
@@ -683,7 +683,7 @@ const mediaBlockStyle = css<{ isHovered?: boolean }>`
   overflow: hidden;
   margin-bottom: ${theme.spacing.md};
   
-  ${props => props.isHovered && css`
+  ${props => props.$isHovered && css`
     transform: translateY(-2px);
   `}
   
@@ -693,15 +693,15 @@ const mediaBlockStyle = css<{ isHovered?: boolean }>`
 `;
 
 export const MediaBlock = styled.div<{ 
-  isHovered?: boolean; 
-  isVideo?: boolean; 
-  isSelected?: boolean 
+  $isHovered?: boolean; 
+  $isVideo?: boolean; 
+  $isSelected?: boolean 
 }>`
   ${mediaBlockStyle}
-  ${props => props.isVideo && css`
+  ${props => props.$isVideo && css`
     cursor: pointer;
   `}
-  ${props => props.isSelected && css`
+  ${props => props.$isSelected && css`
     border: 3px solid ${theme.colors.primary};
     box-shadow: 0 0 0 3px rgba(0, 106, 220, 0.3);
   `}
@@ -741,18 +741,18 @@ export const LazyImageContainer = styled.div`
 
 // Image styles
 interface ImageProps {
-  isLoaded: boolean;
-  objectFit?: 'cover' | 'contain';
+  $isLoaded: boolean;
+  $objectFit?: 'cover' | 'contain';
 }
 
 export const Image = styled.img<ImageProps>`
-  opacity: ${props => props.isLoaded ? 1 : 0};
+  opacity: ${props => props.$isLoaded ? 1 : 0};
   transition: opacity 0.3s;
   max-width: 100%;
   max-height: 100%;
-  object-fit: ${props => props.objectFit || 'contain'};
+  object-fit: ${props => props.$objectFit || 'contain'};
   border-radius: ${theme.borderRadius.medium};
-  ${props => props.objectFit === 'cover' && css`
+  ${props => props.$objectFit === 'cover' && css`
     width: 100%;
     height: 100%;
     position: absolute;
@@ -868,15 +868,15 @@ export const LoadingPlaceholder = styled.div`
   border-radius: ${theme.borderRadius.medium};
 `;
 
-export const Overlay = styled.div<{ type?: 'loading' | 'watermark' }>`
+export const Overlay = styled.div<{ $type?: 'loading' | 'watermark' }>`
   ${overlayStyle}
-  background-color: ${props => props.type === 'loading' ? theme.colors.overlayLight : 'transparent'};
-  z-index: ${props => props.type === 'loading' ? 4 : 5};
-  color: ${props => props.type === 'loading' ? theme.colors.white : 'inherit'};
-  font-weight: ${props => props.type === 'loading' ? 500 : 'inherit'};
-  text-align: ${props => props.type === 'loading' ? 'center' : 'inherit'};
-  padding: ${props => props.type === 'loading' ? '0 10px' : '0'};
-  pointer-events: ${props => props.type === 'watermark' ? 'none' : 'auto'};
+  background-color: ${props => props.$type === 'loading' ? theme.colors.overlayLight : 'transparent'};
+  z-index: ${props => props.$type === 'loading' ? 4 : 5};
+  color: ${props => props.$type === 'loading' ? theme.colors.white : 'inherit'};
+  font-weight: ${props => props.$type === 'loading' ? 500 : 'inherit'};
+  text-align: ${props => props.$type === 'loading' ? 'center' : 'inherit'};
+  padding: ${props => props.$type === 'loading' ? '0 10px' : '0'};
+  pointer-events: ${props => props.$type === 'watermark' ? 'none' : 'auto'};
   border-radius: ${theme.borderRadius.medium}; // For overlays on containers/cards
 `;
 
@@ -895,9 +895,9 @@ export const LoadingIndicator = styled.div`
 
 // Progress components
 interface ProgressProps {
-  progress?: number;
-  status?: UploadStatus;
-  isError?: boolean;
+  $progress?: number;
+  $status?: UploadStatus;
+  $isError?: boolean;
 }
 
 export const ProgressTitle = styled.h3`
@@ -905,28 +905,28 @@ export const ProgressTitle = styled.h3`
   margin: 0 0 ${theme.spacing.sm} 0;
 `;
 
-export const ProgressBarBg = styled.div<{ bottom?: string; left?: string; right?: string; height?: string }>`
-  height: ${props => props.height || '8px'};
+export const ProgressBarBg = styled.div<{ $bottom?: string; $left?: string; $right?: string; $height?: string }>`
+  height: ${props => props.$height || '8px'};
   background-color: ${theme.colors.grayLight};
   border-radius: ${theme.borderRadius.small};
   overflow: hidden;
-  ${props => props.bottom && `bottom: ${props.bottom};`}
-  ${props => props.left && `left: ${props.left};`}
-  ${props => props.right && `right: ${props.right};`}
-  ${props => props.bottom && props.left && props.right && 'position: absolute;'}
+  ${props => props.$bottom && `bottom: ${props.$bottom};`}
+  ${props => props.$left && `left: ${props.$left};`}
+  ${props => props.$right && `right: ${props.$right};`}
+  ${props => props.$bottom && props.$left && props.$right && 'position: absolute;'}
 `;
 
 export const ProgressBar = styled.div<ProgressProps>`
   height: 100%;
   background-color: ${props => {
-    if (props.status === 'processing') return theme.colors.warning;
-    if (props.status === 'error') return theme.colors.danger;
-    if (props.status === 'complete') return theme.colors.success;
+    if (props.$status === 'processing') return theme.colors.warning;
+    if (props.$status === 'error') return theme.colors.danger;
+    if (props.$status === 'complete') return theme.colors.success;
     return theme.colors.info; // Default or uploading
   }};
   border-radius: ${theme.borderRadius.small};
   transition: width 0.3s ease;
-  width: ${props => (props.progress || 0) * 100}%;
+  width: ${props => (props.$progress || 0) * 100}%;
 `;
 
 export const ProgressText = styled.div`
@@ -937,7 +937,7 @@ export const ProgressText = styled.div`
 // ========== Modal & Dialog Components ==========
 
 interface ModalProps {
-  zIndex?: number;
+  $zIndex?: number;
 }
 
 export const Modal = styled.div<ModalProps>`
@@ -947,7 +947,7 @@ export const Modal = styled.div<ModalProps>`
   width: 100%;
   height: 100%;
   background-color: ${theme.colors.overlay};
-  z-index: ${props => props.zIndex || 1000};
+  z-index: ${props => props.$zIndex || 1000};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -977,7 +977,7 @@ export const UsernameModal = styled.div<DirectionalProps>`
   width: 90%;
   max-width: 400px;
   box-shadow: ${theme.boxShadow.xl};
-  ${props => directionalStyles(props.isRTL)}
+  ${props => directionalStyles(props.$isRTL)}
 `;
 
 export const UsernameTitle = styled.p`
@@ -998,7 +998,7 @@ export const UsernameInput = styled.input<DirectionalProps>`
   border-radius: ${theme.borderRadius.small};
   border: 1px solid ${theme.colors.border};
   font-size: ${theme.fontSizes.md};
-  text-align: ${props => props.isRTL ? 'right' : 'left'};
+  text-align: ${props => props.$isRTL ? 'right' : 'left'};
 `;
 
 export const UsernameError = styled.div`
@@ -1046,7 +1046,7 @@ export const TwoFactorAuthLabel = styled.div`
 
 // ========== Selection & Status Components ==========
 
-export const SelectionCheckbox = styled.div<{ isSelected: boolean }>`
+export const SelectionCheckbox = styled.div<{ $isSelected: boolean }>`
   position: absolute;
   top: ${theme.spacing.sm};
   right: ${theme.spacing.sm};
@@ -1054,8 +1054,8 @@ export const SelectionCheckbox = styled.div<{ isSelected: boolean }>`
   width: 24px;
   height: 24px;
   border-radius: ${theme.borderRadius.circle};
-  background-color: ${(props) => (props.isSelected ? theme.colors.primary : 'rgba(255, 255, 255, 0.8)')};
-  border: ${(props) => (props.isSelected ? 'none' : `2px solid ${theme.colors.primary}`)};
+  background-color: ${(props) => (props.$isSelected ? theme.colors.primary : 'rgba(255, 255, 255, 0.8)')};
+  border: ${(props) => (props.$isSelected ? 'none' : `2px solid ${theme.colors.primary}`)};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1093,28 +1093,28 @@ export const SelectedCount = styled.p`
 
 // Badge styles
 interface BadgeProps {
-  position: 'bottomLeft' | 'bottomRight';
-  light?: boolean;
+  $position: 'bottomLeft' | 'bottomRight';
+  $light?: boolean;
 }
 
 export const Badge = styled.div<BadgeProps>`
   position: absolute;
   z-index: 2;
   bottom: ${theme.spacing.sm};
-  left: ${(props: BadgeProps) => props.position === 'bottomLeft' ? theme.spacing.sm : 'auto'};
-  right: ${(props: BadgeProps) => props.position === 'bottomRight' ? theme.spacing.sm : 'auto'};
-  background: ${(props: BadgeProps) => props.light ? 'rgba(255,255,255,0.85)' : theme.colors.overlay};
-  color: ${(props: BadgeProps) => props.light ? 'inherit' : theme.colors.white};
-  padding: ${(props: BadgeProps) => props.light ? '6px 12px' : '4px 8px'};
-  font-size: ${(props: BadgeProps) => props.light ? theme.fontSizes.xs : theme.fontSizes.sm};
+  left: ${(props: BadgeProps) => props.$position === 'bottomLeft' ? theme.spacing.sm : 'auto'};
+  right: ${(props: BadgeProps) => props.$position === 'bottomRight' ? theme.spacing.sm : 'auto'};
+  background: ${(props: BadgeProps) => props.$light ? 'rgba(255,255,255,0.85)' : theme.colors.overlay};
+  color: ${(props: BadgeProps) => props.$light ? 'inherit' : theme.colors.white};
+  padding: ${(props: BadgeProps) => props.$light ? '6px 12px' : '4px 8px'};
+  font-size: ${(props: BadgeProps) => props.$light ? theme.fontSizes.xs : theme.fontSizes.sm};
   font-weight: 500;
-  border-radius: ${(props: BadgeProps) => props.light ? theme.borderRadius.small : theme.borderRadius.small};
+  border-radius: ${(props: BadgeProps) => props.$light ? theme.borderRadius.small : theme.borderRadius.small};
   
   ${mobile(`
-    padding: ${(props: BadgeProps) => props.light ? '3px 6px' : '2px 6px'};
-    font-size: ${(props: BadgeProps) => props.light ? '10px' : theme.fontSizes.xs};
-    bottom: ${(props: BadgeProps) => props.light ? '8px' : theme.spacing.sm};
-    ${(props: BadgeProps) => props.position === 'bottomRight' && props.light && `
+    padding: ${(props: BadgeProps) => props.$light ? '3px 6px' : '2px 6px'};
+    font-size: ${(props: BadgeProps) => props.$light ? '10px' : theme.fontSizes.xs};
+    bottom: ${(props: BadgeProps) => props.$light ? '8px' : theme.spacing.sm};
+    ${(props: BadgeProps) => props.$position === 'bottomRight' && props.$light && `
       max-width: 45%;
       white-space: nowrap;
       overflow: hidden;
@@ -1123,7 +1123,7 @@ export const Badge = styled.div<BadgeProps>`
   `)}
 `;
 
-export const StatusIndicator = styled.div<{ status: UploadStatus }>`
+export const StatusIndicator = styled.div<{ $status: UploadStatus }>`
   position: absolute;
   top: ${theme.spacing.sm};
   right: ${theme.spacing.sm};
@@ -1137,7 +1137,7 @@ export const StatusIndicator = styled.div<{ status: UploadStatus }>`
   color: ${theme.colors.white};
   z-index: 1;
   background-color: ${props => {
-    switch(props.status) {
+    switch(props.$status) {
       case 'complete': return theme.colors.success;
       case 'error': return theme.colors.danger;
       case 'uploading': return theme.colors.info;
@@ -1274,29 +1274,29 @@ export const LegalLinksFooter = styled.div`
   color: ${theme.colors.text.secondary};
 `;
 
-export const LegalLinkFooterButton = styled.a<{ isHovered?: boolean }>`
+export const LegalLinkFooterButton = styled.a<{ $isHovered?: boolean }>`
   margin: 0 ${theme.spacing.sm};
   color: ${theme.colors.text.secondary};
-  text-decoration: ${props => props.isHovered ? 'underline' : 'none'};
+  text-decoration: ${props => props.$isHovered ? 'underline' : 'none'};
 `;
 
 // State components
 interface StateProps {
-  type?: 'empty' | 'error';
+  $type?: 'empty' | 'error';
 }
 
 export const State = styled.div<StateProps>`
   text-align: center; 
   padding: 40px ${theme.spacing.md};
   border-radius: ${theme.borderRadius.medium};
-  background-color: ${props => props.type === 'error' ? theme.colors.background.error : theme.colors.white};
-  border: ${props => props.type === 'error' ? `1px solid ${theme.colors.highlight.error}` : 'none'};
-  box-shadow: ${props => props.type === 'empty' ? theme.boxShadow.md : 'none'};
-  margin-bottom: ${props => props.type === 'error' ? theme.spacing.md : '0'};
+  background-color: ${props => props.$type === 'error' ? theme.colors.background.error : theme.colors.white};
+  border: ${props => props.$type === 'error' ? `1px solid ${theme.colors.highlight.error}` : 'none'};
+  box-shadow: ${props => props.$type === 'empty' ? theme.boxShadow.md : 'none'};
+  margin-bottom: ${props => props.$type === 'error' ? theme.spacing.md : '0'};
   
   p {
     font-size: ${theme.fontSizes.md};
-    color: ${props => props.type === 'error' ? theme.colors.danger : theme.colors.text.secondary};
+    color: ${props => props.$type === 'error' ? theme.colors.danger : theme.colors.text.secondary};
   }
 `;
 
@@ -1338,10 +1338,10 @@ export const StyledLogoutLink = styled.a`
   }
 `;
 
-export const FileCount = styled.div<{ isRTL: boolean }>`
+export const FileCount = styled.div<DirectionalProps>`
   font-size: ${theme.fontSizes.xs};
   color: ${theme.colors.text.lighter};
-  text-align: ${props => props.isRTL ? "right" : "right"};
+  text-align: ${props => props.$isRTL ? "right" : "right"};
   margin-bottom: ${theme.spacing.md};
   display: flex;
   justify-content: flex-end;

@@ -44,7 +44,7 @@ export const MediaItemDisplayComponent: React.FC<{
     >
       {isSelectionMode && (
         <SelectionCheckbox 
-          isSelected={isSelected}
+          $isSelected={isSelected}
           onClick={(e: React.MouseEvent) => toggleItemSelection(index, e)}
         >
           {isSelected && (
@@ -77,7 +77,7 @@ export const MediaItemDisplayComponent: React.FC<{
       
       {/* Display owner badge if owner name exists */}
       {ownerName && (
-        <Badge position="bottomRight" light>{ownerName}</Badge>
+        <Badge $position="bottomRight" $light>{ownerName}</Badge>
       )}
     </div>
   );

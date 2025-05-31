@@ -286,7 +286,7 @@ const StorageLoginPageContent = () => {
   return (
     <>
       <GlobalStyle />
-      <AppContainer isRTL={isRTL}>
+      <AppContainer $isRTL={isRTL}>
         <ContentWrapper>
           <CenteredContent>
             <LoginCard>
@@ -301,7 +301,7 @@ const StorageLoginPageContent = () => {
               </LoginHeader>
 
               {errorMessage && (
-                <Message type="error">
+                <Message $type="error">
                   {errorMessage}
                 </Message>
               )}
@@ -316,7 +316,7 @@ const StorageLoginPageContent = () => {
                     placeholder={t('Enter your email')}
                   />
                   <Button
-                    primary
+                    $primary
                     onClick={sendCode}
                     disabled={status === 'sending' || !email.trim()}
                     style={{ width: '100%', padding: '12px', fontSize: '16px' }}
@@ -346,7 +346,7 @@ const StorageLoginPageContent = () => {
                     placeholder={t('Enter 6-digit code')}
                   />
                   <Button
-                    primary
+                    $primary
                     onClick={confirmCode}
                     disabled={status === 'verifying' || otpCode.length !== 6}
                     style={{ width: '100%', padding: '12px', fontSize: '16px', backgroundColor: '#28a745' }}
@@ -370,7 +370,7 @@ const StorageLoginPageContent = () => {
           <LegalLinksFooter>
             <LegalLinkFooterButton 
               href={generateUrl("terms.html")}
-              isHovered={hoverLink === 'terms'}
+              $isHovered={hoverLink === 'terms'}
               onMouseEnter={() => setHoverLink('terms')}
               onMouseLeave={() => setHoverLink(null)}
             >
@@ -378,7 +378,7 @@ const StorageLoginPageContent = () => {
             </LegalLinkFooterButton>
             <LegalLinkFooterButton 
               href={generateUrl("privacy.html")}
-              isHovered={hoverLink === 'privacy'}
+              $isHovered={hoverLink === 'privacy'}
               onMouseEnter={() => setHoverLink('privacy')}
               onMouseLeave={() => setHoverLink(null)}
             >
@@ -386,7 +386,7 @@ const StorageLoginPageContent = () => {
             </LegalLinkFooterButton>
             <LegalLinkFooterButton 
               href={generateUrl("support.html")}
-              isHovered={hoverLink === 'support'}
+              $isHovered={hoverLink === 'support'}
               onMouseEnter={() => setHoverLink('support')}
               onMouseLeave={() => setHoverLink(null)}
             >

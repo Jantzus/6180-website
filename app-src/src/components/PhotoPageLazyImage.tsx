@@ -62,18 +62,18 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
         src={imageSrc} 
         alt={alt} 
         className={className}
-        isLoaded={isLoaded}
-        objectFit="cover"
+        $isLoaded={isLoaded}
+        $objectFit="cover"
         style={{ cursor: onClick ? 'pointer' : 'default' }}
       />
       {!isLoaded && <LoadingPlaceholder />}
       {isLoadingFullRes && (
-        <Overlay type="loading">
+        <Overlay $type="loading">
           {t('Loading full resolution...')}
         </Overlay>
       )}
       {showWatermark && isLoaded && (
-        <Overlay type="watermark">
+        <Overlay $type="watermark">
           <WatermarkText>6180 Watermarked</WatermarkText>
         </Overlay>
       )}

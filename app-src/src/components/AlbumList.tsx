@@ -34,10 +34,10 @@ const calculateTotalSize = (files: Array<{ dataInBytes?: number }>): number => {
 };
 
 // Styled Components (from original AlbumList.tsx)
-const Container = styled.div<{ isRTL: boolean }>`
+const Container = styled.div<{ $isRTL: boolean }>`
   margin-bottom: 30px;
   width: 100%;
-  direction: ${props => props.isRTL ? "rtl" : "ltr"};
+  direction: ${props => props.$isRTL ? "rtl" : "ltr"};
 `;
 
 const AlbumLink = styled.a`
@@ -65,18 +65,18 @@ const AlbumCard = styled.div`
   }
 `;
 
-const HeaderSection = styled.div<{ isRTL: boolean }>`
+const HeaderSection = styled.div<{ $isRTL: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 16px;
-  flex-direction: ${props => props.isRTL ? "row-reverse" : "row"};
+  flex-direction: ${props => props.$isRTL ? "row-reverse" : "row"};
 `;
 
-const TitleSection = styled.div<{ isRTL: boolean }>`
+const TitleSection = styled.div<{ $isRTL: boolean }>`
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.isRTL ? "flex-end" : "flex-start"};
+  align-items: ${props => props.$isRTL ? "flex-end" : "flex-start"};
 `;
 
 const AlbumTitle = styled.h2`
@@ -85,10 +85,10 @@ const AlbumTitle = styled.h2`
   color: #222;
 `;
 
-const ActionSection = styled.div<{ isRTL: boolean }>`
+const ActionSection = styled.div<{ $isRTL: boolean }>`
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.isRTL ? "flex-start" : "flex-end"};
+  align-items: ${props => props.$isRTL ? "flex-start" : "flex-end"};
   justify-content: flex-end;
   gap: 8px;
 `;
@@ -97,24 +97,42 @@ const DropdownContainer = styled.div`
   position: relative;
 `;
 
-const EditLink = styled.a`
+// Changed from styled.a to styled.button to avoid nested anchor tags
+const EditButton = styled.button`
   font-size: 13px;
   color: #2196f3;
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
-const DeleteLink = styled.a`
+// Changed from styled.a to styled.button to avoid nested anchor tags
+const DeleteButton = styled.button`
   font-size: 13px;
   color: #d32f2f;
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
-const DropdownMenu = styled.div<{ isRTL: boolean }>`
+const DropdownMenu = styled.div<{ $isRTL: boolean }>`
   display: none;
   position: absolute;
   top: 100%;
-  right: ${props => props.isRTL ? "auto" : 0};
-  left: ${props => props.isRTL ? 0 : "auto"};
+  right: ${props => props.$isRTL ? "auto" : 0};
+  left: ${props => props.$isRTL ? 0 : "auto"};
   background-color: white;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   border-radius: 4px;
@@ -122,16 +140,25 @@ const DropdownMenu = styled.div<{ isRTL: boolean }>`
   min-width: 150px;
   padding: 8px 0;
   margin-top: 5px;
-  text-align: ${props => props.isRTL ? "right" : "left"};
+  text-align: ${props => props.$isRTL ? "right" : "left"};
 `;
 
-const DropdownItem = styled.a<{ isDelete?: boolean }>`
+const DropdownItem = styled.button<{ $isDelete?: boolean; $isRTL?: boolean }>`
   display: block;
+  width: 100%;
   padding: 8px 16px;
-  color: ${props => props.isDelete ? "#d32f2f" : "#2196f3"};
+  color: ${props => props.$isDelete ? "#d32f2f" : "#2196f3"};
   text-decoration: none;
   font-size: 13px;
   white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: ${props => props.$isRTL ? "right" : "left"};
+  
+  &:hover {
+    background-color: #f5f5f5;
+  }
 `;
 
 const GalleryContainer = styled.div`
@@ -139,7 +166,7 @@ const GalleryContainer = styled.div`
   position: relative;
 `;
 
-const GalleryScroll = styled.div<{ isRTL: boolean }>`
+const GalleryScroll = styled.div<{ $isRTL: boolean }>`
   display: flex;
   overflow-x: auto;
   gap: 12px;
@@ -148,29 +175,29 @@ const GalleryScroll = styled.div<{ isRTL: boolean }>`
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
   max-width: 100%;
-  flex-direction: ${props => props.isRTL ? "row-reverse" : "row"};
+  flex-direction: ${props => props.$isRTL ? "row-reverse" : "row"};
 `;
 
-const GradientOverlay = styled.div<{ isRTL: boolean }>`
+const GradientOverlay = styled.div<{ $isRTL: boolean }>`
   position: absolute;
-  ${props => props.isRTL ? "left" : "right"}: 0;
+  ${props => props.$isRTL ? "left" : "right"}: 0;
   top: 0;
   bottom: 8px;
   width: 30px;
-  background: ${props => props.isRTL
+  background: ${props => props.$isRTL
     ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
     : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))"};
   pointer-events: none;
 `;
 
-const PasswordPolicyContainer = styled.div<{ isRTL: boolean }>`
+const PasswordPolicyContainer = styled.div<{ $isRTL: boolean }>`
   display: flex;
-  justify-content: ${props => props.isRTL ? "flex-start" : "flex-end"};
+  justify-content: ${props => props.$isRTL ? "flex-start" : "flex-end"};
   margin-top: 8px;
   margin-bottom: 8px;
 `;
 
-const ContactsContainer = styled.div<{ isRTL: boolean }>`
+const ContactsContainer = styled.div<{ $isRTL: boolean }>`
   width: 100%;
   background-color: #f0f7ff;
   border-radius: 8px;
@@ -178,14 +205,14 @@ const ContactsContainer = styled.div<{ isRTL: boolean }>`
   margin-top: 16px;
   box-sizing: border-box;
   border: 1px solid #d0e1f9;
-  direction: ${props => props.isRTL ? "rtl" : "ltr"};
+  direction: ${props => props.$isRTL ? "rtl" : "ltr"};
 `;
 
-const ContactsText = styled.p<{ isRTL: boolean }>`
+const ContactsText = styled.p<{ $isRTL: boolean }>`
   margin: 0;
   font-size: 14px;
   color: #333;
-  text-align: ${props => props.isRTL ? "right" : "left"};
+  text-align: ${props => props.$isRTL ? "right" : "left"};
 `;
 
 // Create a wrapper component instead of directly styling LazyImage
@@ -310,7 +337,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
   if (folders.length === 0 && !isUploading) {
     return (
-      <State type="empty">
+      <State $type="empty">
         <p>{t('No albums found')}</p>
       </State>
     );
@@ -332,24 +359,24 @@ export const AlbumList: React.FC<AlbumListProps> = ({
           );
 
           return (
-            <Container key={folder.folderId} isRTL={isRTL}>
+            <Container key={folder.folderId} $isRTL={isRTL}>
               <AlbumLink href={inviteLink}>
                 <AlbumCard>
-                  <HeaderSection isRTL={isRTL}>
-                    <TitleSection isRTL={isRTL}>
+                  <HeaderSection $isRTL={isRTL}>
+                    <TitleSection $isRTL={isRTL}>
                       <AlbumTitle>{folder.folderName || ""}</AlbumTitle>
                     </TitleSection>
                   </HeaderSection>
 
                   {/* Album description section */}
                   {folder.folderDescription && folder.folderDescription.length > 1 && (
-                    <AlbumDescription isRTL={isRTL}>
+                    <AlbumDescription $isRTL={isRTL}>
                       {folder.folderDescription}
                     </AlbumDescription>
                   )}
 
                   <GalleryContainer>
-                    <GalleryScroll isRTL={isRTL}>
+                    <GalleryScroll $isRTL={isRTL}>
                       {folder.files.map((file, i) => (
                         <ThumbnailWrapper key={i}>
                           <LazyImage
@@ -370,12 +397,12 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     </GalleryScroll>
                     
                     {folder.files.length > 3 && (
-                      <GradientOverlay isRTL={isRTL} />
+                      <GradientOverlay $isRTL={isRTL} />
                     )}
                   </GalleryContainer>
                   
                   {/* Password Policy Indicator */}
-                  <PasswordPolicyContainer isRTL={isRTL}>
+                  <PasswordPolicyContainer $isRTL={isRTL}>
                     {passwordPolicy !== "NoPassword" && (
                       <PolicyIndicator>
                         <span>{getPasswordPolicyText(passwordPolicy)}</span>
@@ -421,14 +448,14 @@ export const AlbumList: React.FC<AlbumListProps> = ({
         );
 
         return (
-          <Container key={folder.folderId} isRTL={isRTL}>
+          <Container key={folder.folderId} $isRTL={isRTL}>
             <AlbumLink href={inviteLink}>
               <AlbumCard>
-                <HeaderSection isRTL={isRTL}>
-                  <TitleSection isRTL={isRTL}>
+                <HeaderSection $isRTL={isRTL}>
+                  <TitleSection $isRTL={isRTL}>
                     <AlbumTitle>{folder.folderName || ""}</AlbumTitle>
                     {(showCreated || showUpdated) && (
-                      <AlbumDates isRTL={isRTL}>
+                      <AlbumDates $isRTL={isRTL}>
                         {showCreated && folder.createdAt && formatDate(folder.createdAt) && (
                           <div>{t('Created')}: {formatDate(folder.createdAt)}</div>
                         )}
@@ -439,11 +466,10 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     )}
                   </TitleSection>
                   
-                  <ActionSection isRTL={isRTL}>
+                  <ActionSection $isRTL={isRTL}>
                     {isCreator ? (
                       <DropdownContainer>
-                        <EditLink
-                          href="#"
+                        <EditButton
                           onClick={(e) => {
                             const dropdownMenu = e.currentTarget.nextElementSibling as HTMLElement;
                             if (dropdownMenu) {
@@ -452,24 +478,25 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                           }}
                         >
                           {t('Edit')}
-                        </EditLink>
+                        </EditButton>
                         <DropdownMenu
-                          isRTL={isRTL}
+                          $isRTL={isRTL}
                           onClick={(e) => {
                             e.stopPropagation();
                           }}
                         >
                           <DropdownItem
-                            href={generateUrl(`save-album.html?folderId=${encodeURIComponent(folder.folderId)}`)}
+                            $isRTL={isRTL}
                             onClick={(e) => {
                               e.stopPropagation();
+                              window.location.href = generateUrl(`save-album.html?folderId=${encodeURIComponent(folder.folderId)}`);
                             }}
                           >
                             {t('Edit Details')}
                           </DropdownItem>
                           <DropdownItem
-                            href="#"
-                            isDelete
+                            $isRTL={isRTL}
+                            $isDelete
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
@@ -481,8 +508,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                         </DropdownMenu>
                       </DropdownContainer>
                     ) : (
-                      <DeleteLink
-                        href="#"
+                      <DeleteButton
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
@@ -490,19 +516,19 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                         }}
                       >
                         {t('Delete')}
-                      </DeleteLink>
+                      </DeleteButton>
                     )}
                   </ActionSection>
                 </HeaderSection>
 
                 {/* Album description section */}
                 {folder.folderDescription && folder.folderDescription.length > 1 && (
-                  <AlbumDescription isRTL={isRTL}>
+                  <AlbumDescription $isRTL={isRTL}>
                     {folder.folderDescription}
                   </AlbumDescription>
                 )}
 
-                <FileCount isRTL={isRTL}>
+                <FileCount $isRTL={isRTL}>
                   {folder.files.length === 1 
                     ? `${t('{{count}} file', { count: folder.files.length.toString() })} • ${formatFileSize(totalSize)}`
                     : `${t('{{count}} files', { count: folder.files.length.toString() })} • ${formatFileSize(totalSize)}`
@@ -510,7 +536,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                 </FileCount>
 
                 <GalleryContainer>
-                  <GalleryScroll isRTL={isRTL}>
+                  <GalleryScroll $isRTL={isRTL}>
                     {folder.files.map((file, i) => (
                       <ThumbnailWrapper key={i}>
                         <LazyImage
@@ -531,12 +557,12 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   </GalleryScroll>
                   
                   {folder.files.length > 3 && (
-                    <GradientOverlay isRTL={isRTL} />
+                    <GradientOverlay $isRTL={isRTL} />
                   )}
                 </GalleryContainer>
                 
                 {/* Password Policy Indicator */}
-                <PasswordPolicyContainer isRTL={isRTL}>
+                <PasswordPolicyContainer $isRTL={isRTL}>
                   {passwordPolicy !== "NoPassword" && (
                     <PolicyIndicator>
                       <span>{getPasswordPolicyText(passwordPolicy)}</span>
@@ -556,8 +582,8 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
                 {/* Display contacts list if available */}
                 {contactNames.length > 0 && (
-                  <ContactsContainer isRTL={isRTL}>
-                    <ContactsText isRTL={isRTL}>
+                  <ContactsContainer $isRTL={isRTL}>
+                    <ContactsText $isRTL={isRTL}>
                       {t('Shared with')}: {contactNames.join(', ')}
                     </ContactsText>
                   </ContactsContainer>

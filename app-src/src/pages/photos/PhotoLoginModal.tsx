@@ -265,7 +265,7 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
               <Button
                 onClick={sendCode}
                 disabled={status === 'sending' || !email.trim()}
-                primary
+                $primary
                 style={{ width: "100%" }}
               >
                 {status === 'sending' ? t('Sending...') : t('Send Verification Code')}
@@ -314,7 +314,7 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
               <Button
                 onClick={confirmCode}
                 disabled={status === 'verifying' || otpCode.length !== 6}
-                primary
+                $primary
                 style={{ 
                   width: "100%",
                   backgroundColor: "#28a745"
