@@ -166,8 +166,6 @@
   "Email address...": "Elektronižen počtan adres...",
   "Two-Factor Authentication": "Kaks-Faktor Autentifikatcii",
   "Select For Download": "Valiče Latamiže",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Tö voitat panda talleh 5 al'bomad vai {FREE_TIER_STORAGE_LIMIT_GB} Gb ozutata. Heitkat abuseadud al'bomid sijan tehtes.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Teidän failad nügüd ottas {formatGB(usedGB)} sijad, no teil om vaiše {FREE_TIER_STORAGE_LIMIT_GB} GB tähthetartust. Nämäd albomad čuttase ičetoimižikš:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Teidän failad nügüd ottas {formatGB(usedGB)} sijad {totalStorageGB} GB kävutadas tähthetartusespäi. Teil voi olla tarbh pikimaidme päivitada subscriptm jatkamha albomiden märitamišt.",
   "Upgrade Your Subscription": "Päivitada Subscriptm",
   "Storage Management": "Tähtoitusen Ohjanduz",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Löugat Abonementan Paraidust",
   "WILL BE DELETED": "HÜKATUD",
   "Create an album in 90 sec": "Tehta al'bom 90 sekundas",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Sinul om {albumCount} al'bomad, no voit panda vaiše 5 joudatah. Nämad vanhimad al'bomad šluičudas avtomatiženke:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Kontan informacijan ladaidamine...",
   "Please enter a positive number": "Palun panze pozitivine lugu",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Abonementan informacijad jouttas...",
   "Insufficient storage and too many albums (max 5 for free)": "Ei voi pitta saigoitada da al'bomid äjan (mokoman 5)",
   "Insufficient storage capacity": "Ei voi pitta saigoitada",
-  "Too many albums (free tier allows max 5 albums)": "Albomid äjan (mokoman askel andab 5 al'bomid eniten)"
+  "Too many albums (free tier allows max 5 albums)": "Albomid äjan (mokoman askel andab 5 al'bomid eniten)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Tei om enamba ku 5 al'bomad JA teiden failad ottas {formatGB(usedGB)} sija (röun: {FREE_TIER_STORAGE_LIMIT_GB} GB). Nämad al'bomad kargotasoiš avtomatižešti, ku tö et päta häta toižid al'bomid:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Teiden om {albumCount} al'bomad, no satat kaitta vaiše 5 maksuta. Nämad surembad al'bomad čudas ičeze avtomatižešti, ku ed märita čuta tošid al'bomid:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Teiden failad otiše {formatGB(usedGB)} sijad, no teil om vaiše {FREE_TIER_STORAGE_LIMIT_GB} GB varatoiand. Nädäd al'bomad poistetaše avtomatišešti, ellei pätkuškoi poitta toižid al'bomid:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Teiden failad otiše {formatGB(usedGB)} sijad, no teil om vaiše {totalStorageGB} GB varatoiand. Nädäd al'bomad poistetaše avtomatišešti, ellei pätkuškoi poitta toižid al'bomid:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Voib säuuta 5 al'bomad, kudambiden ühthine suruz om maksimum {FREE_TIER_STORAGE_LIMIT_GB} GB tasata. Heitkat käutamatomid al'bomid sijad tehtes.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Maksuližed astused oma cheglebamattomai al'bomidke da oma cheglibahtadud vaiše varastusenke"
 }

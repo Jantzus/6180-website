@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Tuklo-Factor Authentication",
   "Select For Download": "Download Ka Pim",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 album keyukmvt {FREE_TIER_STORAGE_LIMIT_GB} GB ant maya chi hilecha chito. Album keyu ik apisacho ka issish chi hopoyakmvt.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Chim fayllkash himak ish {formatGB(usedGB)} ahali impakimmat, amba {FREE_TIER_STORAGE_LIMIT_GB} GB talohowa ak chito. Iluppa album putta ilap bika kopa:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Chim fayllkash himak ish {formatGB(usedGB)} {totalStorageGB} GB talohowa aiasha impakimmat. Albumaik aiokpachi ithanana nittak ikbito subscription chi holisso ka aiimpa.",
   "Upgrade Your Subscription": "Chi Subscription Aiimpa",
   "Storage Management": "Abi Anompoli",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Binili Isht Subscription Achukmali",
   "WILL BE DELETED": "HOLIHTA TUKLO",
   "Create an album in 90 sec": "Album ikbi 90 sekint ish",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ish {albumCount} album ish ima, yohmi kia 5 akscha tuba ish ish hilechi hinla. Iluppa sipokni album vhleha akinli kocha taha:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Akawnt anokfoka im asha...",
   "Please enter a positive number": "Holisso i yimmikma achefa",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Subscription imholi ya ashachi...",
   "Insufficient storage and too many albums (max 5 for free)": "Holisso ai ik itonla ik ishtia puta album (chukka 5)",
   "Insufficient storage capacity": "Holisso ai ik itonla",
-  "Too many albums (free tier allows max 5 albums)": "Album ik ishtia puta (chukka tier ashachi 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "Album ik ishtia puta (chukka tier ashachi 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Tahlapi asha itaak album holhtina cha chi failokma {formatGB(usedGB)} asha ai ishi (aboha: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album ilvppak nahollo aiokpanchi kashapatli chi album inlak kashapatka ish ahobachi keyu hokmak:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Chishshash {albumCount} album ish im ashachi amba tahlapi illa yo ikshish ahayuchi yumma nana ik im ikuno. Ilvppak sipokni album vt ilap akinli fehna hosh tihleli yo ik gayo, album inla tihlelish ish ahni keyu hokmak:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Chin holisso vhleha hvt {formatGB(usedGB)} ahanta hosh, amba {FREE_TIER_STORAGE_LIMIT_GB} GB holisso ai-ishi hosh ish ishi. Album iluppa vt inli fehna hosh hollopi hoke, keyukmvt album inla ya ish kanchi bunna km okla hinla:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Chin holisso vhleha hvt {formatGB(usedGB)} ahanta hosh, amba {totalStorageGB} GB holisso ai-ishi hosh ish ishi. Album iluppa vt inli fehna hosh hollopi hoke, keyukmvt album inla ya ish kanchi bunna km okla hinla:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Chi hattak tahlapi album 5 ish ai ahashwa {FREE_TIER_STORAGE_LIMIT_GB} GB ik aishtaiyucho. Album ik isht ik aponacho ka holisso.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Oshi aiasha achakali album ik hollo kiya mihma ahanchi ai osh ahanli"
 }

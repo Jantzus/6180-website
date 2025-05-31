@@ -166,8 +166,6 @@
   "Email address...": "E-posti aadrõss...",
   "Two-Factor Authentication": "Katš-Faktori Autentifikatsiuun",
   "Select For Download": "Vali Allalaadmisõks",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Sä võit tallõndada 5 albumit vai {FREE_TIER_STORAGE_LIMIT_GB} GB-ni ilma tasu. Kustuta tarvitamataq albumit, et ruumi tettäq.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Suu failiq tämbähe võtagaq {formatGB(usedGB)} iist, a sul om kõigest {FREE_TIER_STORAGE_LIMIT_GB} GB tallõndusruumi. Nääq albumiq kustutasõq automatsõlt:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Suu failiq võtagaq praegu {formatGB(usedGB)} {totalStorageGB} GB kättesaadvas tallõndusruumis. Sul või ollaq vaia peatselt uma tellümüst täitsendada, et albumite tallõndamist jatkada.",
   "Upgrade Your Subscription": "Täitsendä Uma Tellümüst",
   "Storage Management": "Hoidmise Korraldaminõ",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klõpsaq Tellimust Parhendamisõks",
   "WILL BE DELETED": "KÕRVALDADAQ",
   "Create an album in 90 sec": "Tee album 90 sekundiga",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Sinnäl om {albumCount} albummi, a võit araq 5 ilma tazumata hoita. Need kõgõ vanõmbaq albumiq kistütäs automaatsõlt:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Konto andmõid laaditas...",
   "Please enter a positive number": "Palun sisesta positiivne arv",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Tillmüse andmõtõ laaditam...",
   "Insufficient storage and too many albums (max 5 for free)": "Vähä hoitusruum ja pall'o albummit (tiirus 5)",
   "Insufficient storage capacity": "Vähä hoitusruum",
-  "Too many albums (free tier allows max 5 albums)": "Pall'o albummit (tiiru tasand laskja kõgõ rohkõmb 5 albummi)"
+  "Too many albums (free tier allows max 5 albums)": "Pall'o albummit (tiiru tasand laskja kõgõ rohkõmb 5 albummi)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Teile om üle 5 albumi JA teie failiq võtavaq {formatGB(usedGB)} kohta (piir: {FREE_TIER_STORAGE_LIMIT_GB} GB). Nääq albumiq kustuvaq automaatsõlt, kui te ei otsustaq muuq albumiq kustutadaq:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Sull om {albumCount} albummi a või tassõlda ildamata õnnõ 5. Naq vanõmbaq albumiq kustutõdaq automaatsõlt ildamata, kui sa ärq määräq muuq albumiq kustutaq:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Sino failiq võtaq {formatGB(usedGB)} kotust, a sul om õnnõ {FREE_TIER_STORAGE_LIMIT_GB} GB hoitmiskotust. Nääq albumiq kustutasõq automaatsõlt, ku sa ei otsusta muuq albumiq kustutaq:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Sino failiq võtaq {formatGB(usedGB)} kotust, a sul om õnnõ {totalStorageGB} GB hoitmiskotust. Nääq albumiq kustutasõq automaatsõlt, ku sa ei otsusta muuq albumiq kustutaq:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Sa saat hoitaq 5 albummi, miä kokko ommaq kõgõ hulga {FREE_TIER_STORAGE_LIMIT_GB} GB ilma makse. Kistutaq tarvitamalda albumiq, et saaq jaaq.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Maksõliidseq astõq ommaq piiråmatoq albumiq ja ommaq piiret ainoq tallõndusõga"
 }

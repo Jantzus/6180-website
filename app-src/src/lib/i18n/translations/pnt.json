@@ -166,8 +166,6 @@
   "Email address...": "Διεύθυνσην ηλεκτρονικού ταχυδρομείου...",
   "Two-Factor Authentication": "Διπλόν Επαλήθευσιν Ταυτότητας",
   "Select For Download": "Διαλέγτον Για Κατεβάσιμον",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Φκάντε σώσετε 5 άλμπουμ η ως {FREE_TIER_STORAGE_LIMIT_GB} ΓΒ ατσάμ. Σβήστεν τ' άλμπουμ ντο 'κι μή χρησιμοποιούνται πα να γένει ο τόπον.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Τα αρχεία σας παίρνε τώρτς {formatGB(usedGB)} μέρεσ, αλλά έχετε μόνον {FREE_TIER_STORAGE_LIMIT_GB} ΓΒ αποθήκεψη. Αυτά τ' άλμπουμ σβήνουνται αυτόματα:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Τα αρχεία σας παίρνε τώρα τόπον {formatGB(usedGB)} ασό {totalStorageGB} ΓΒ αποθήκεψη που είνι. Ίσως χρειάστεσαι σύντομα ανεβάστε την εγγραφή σας για τ' ακολουθήσετε τ' άλμπουμ να κρατάτε.",
   "Upgrade Your Subscription": "Ανεβάστε Την Εγγραφή Σας",
   "Storage Management": "Διαχείρισις τη Αποθηκεύσεως",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Κάμετε Κλικ Αναβάθμισης Εγγραφής",
   "WILL BE DELETED": "ΘΑ ΣΒΥΣΤΈ'",
   "Create an album in 90 sec": "Φτιάξτε άλμπουμ σε 90 δευτερόλεπτα",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Έχετς {albumCount} άλμπουμ αλλά εις μπορείτε να σώσετε μονάχα 5 τσάμπα. Αυτά τα παλαιότερα άλμπουμ σβήνουνται αφτόματα:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Φορτώνω πληροφορίες λογαριασμού...",
   "Please enter a positive number": "Παρακαλώ εισάγετε έναν θετικό αριθμό",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Φορτώνουν οι πληροφορίεν τη συνδρομήν...",
   "Insufficient storage and too many albums (max 5 for free)": "Ανεπαρκές αποθηκευτικόν και πολλά άλμπουμ (μέγιστον 5 τζάμπα)",
   "Insufficient storage capacity": "Ανεπαρκές αποθηκευτικόν χωρητικότητα",
-  "Too many albums (free tier allows max 5 albums)": "Πολλά άλμπουμ (το τζάμπα επίπεδον επιτρέπ' μέγιστον 5 άλμπουμ)"
+  "Too many albums (free tier allows max 5 albums)": "Πολλά άλμπουμ (το τζάμπα επίπεδον επιτρέπ' μέγιστον 5 άλμπουμ)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Έχετε περσσότερα απ' 5 άλμπουμ ΚΑΙ τα αρχεία σας καταλαμβάνουν {formatGB(usedGB)} χώρον (όριον: {FREE_TIER_STORAGE_LIMIT_GB} GB). Αυτά τα άλμπουμ διαγράφκουντάι αυτόματα εκτός αν αποφασίσετε να διαγράψετε άλλα άλμπουμ:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Έχετε {albumCount} άλμπουμ αλλά μπορείτε να σώσετε μόνον 5 τζάμπα. Αυτά τα παλαιότερα άλμπουμ σβήνουνται αυτόματα παρά μόνον αν αποφασίσετε να σβήσετε άλλα άλμπουμ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Τα αρχεία σας παίρν {formatGB(usedGB)} τόπον, αλλά έχετε μαναχά {FREE_TIER_STORAGE_LIMIT_GB} GB αποθήκεψιν. Ατά τ' άλμπουμ διαγράφκουνται αυτόματα εκτός αν αποφασίσετε να διαγράψετε άλλα άλμπουμ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Τα αρχεία σας παίρν {formatGB(usedGB)} τόπον, αλλά έχετε μαναχά {totalStorageGB} GB αποθήκεψιν. Ατά τ' άλμπουμ διαγράφκουνται αυτόματα εκτός αν αποφασίσετε να διαγράψετε άλλα άλμπουμ:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Μπορείτς να τερούντε 5 άλμπουμ που έχουν συνολικόν μέγιστον {FREE_TIER_STORAGE_LIMIT_GB} GB τσάμπα. Σβήστε ατά άλμπουμ που κι εχρησιμοποιείτε για να κάμετε χώρον.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Τα επίπεδα πληρωμής έχουν απεριόριστα άλμπουμ και περιορίζονται μόνο από την αποθήκευση"
 }

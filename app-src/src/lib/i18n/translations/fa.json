@@ -166,8 +166,6 @@
   "Email address...": "آدرس ایمیل...",
   "Two-Factor Authentication": "تایید هویت دو مرحله‌ای",
   "Select For Download": "انتخاب برای دانلود",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "می‌توانید ۵ آلبوم یا تا {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت را رایگان ذخیره کنید. آلبوم‌های استفاده نشده را برای ایجاد فضا حذف کنید.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "فایل‌های شما در حال حاضر {formatGB(usedGB)} فضا اشغال می‌کنند، اما شما تنها {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت ذخیره‌سازی دارید. این آلبوم‌ها به طور خودکار حذف می‌شوند:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "فایل‌های شما در حال حاضر {formatGB(usedGB)} از {totalStorageGB} گیگابایت فضای ذخیره‌سازی موجود را اشغال می‌کنند. ممکن است به‌زودی نیاز به ارتقای اشتراک خود داشته باشید تا بتوانید به ذخیره آلبوم‌ها ادامه دهید.",
   "Upgrade Your Subscription": "ارتقای اشتراک شما",
   "Storage Management": "مدیریت ذخیره‌سازی",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "برای ارتقاء اشتراک کلیک کنید",
   "WILL BE DELETED": "حذف خواهد شد",
   "Create an album in 90 sec": "آلبوم در 90 ثانیه ایجاد کنید",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "شما {albumCount} آلبوم دارید اما تنها می‌توانید ۵ تا را رایگان ذخیره کنید. این قدیمی‌ترین آلبوم‌ها به طور خودکار حذف می‌شوند:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "فایل‌های شما {formatGB(usedGB)} فضا اشغال می‌کنند، اما شما فقط {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت فضای ذخیره دارید. این آلبوم‌ها به طور خودکار حذف می‌شوند:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "شما بیش از 5 آلبوم دارید و فایل‌هایتان {formatGB(usedGB)} فضا اشغال می‌کنند (حد: {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت). این آلبوم‌ها به طور خودکار حذف می‌شوند:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "فایل‌های شما {formatGB(usedGB)} فضا اشغال می‌کنند، اما شما فقط {totalStorageGB} گیگابایت فضای ذخیره دارید. این آلبوم‌ها به طور خودکار حذف می‌شوند:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "فایل‌های شما {formatGB(usedGB)} از {totalStorageGB} گیگابایت فضای ذخیره را اشغال می‌کنند. ممکن است به زودی نیاز به ارتقای اشتراک داشته باشید.",
   "Loading account information...": "بارگیری اطلاعات حساب...",
   "Please enter a positive number": "لطفاً یک عدد مثبت وارد کنید",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "در حال بارگیری اطلاعات اشتراک...",
   "Insufficient storage and too many albums (max 5 for free)": "فضای ذخیره ناکافی و آلبوم‌های زیاد (حداکثر ۵ رایگان)",
   "Insufficient storage capacity": "ظرفیت ذخیره‌سازی ناکافی",
-  "Too many albums (free tier allows max 5 albums)": "آلبوم‌های زیاد (طبقه رایگان حداکثر ۵ آلبوم مجاز است)"
+  "Too many albums (free tier allows max 5 albums)": "آلبوم‌های زیاد (طبقه رایگان حداکثر ۵ آلبوم مجاز است)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "شما بیش از ۵ آلبوم دارید و فایل‌هایتان {formatGB(usedGB)} فضا اشغال کرده‌اند (محدودیت: {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت). این آلبوم‌ها به‌طور خودکار حذف می‌شوند مگر اینکه تصمیم بگیرید آلبوم‌های دیگر را حذف کنید:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "شما {albumCount} آلبوم دارید اما فقط می‌توانید ۵ تا را رایگان ذخیره کنید. این قدیمی‌ترین آلبوم‌ها به طور خودکار حذف می‌شوند مگر اینکه تصمیم بگیرید آلبوم‌های دیگر را حذف کنید:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "فایل‌های شما {formatGB(usedGB)} فضا اشغال می‌کنند، اما شما تنها {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت فضای ذخیره‌سازی دارید. این آلبوم‌ها به طور خودکار حذف می‌شوند مگر اینکه تصمیم بگیرید آلبوم‌های دیگر را حذف کنید:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "فایل‌های شما {formatGB(usedGB)} فضا اشغال می‌کنند، اما شما تنها {totalStorageGB} گیگابایت فضای ذخیره‌سازی دارید. این آلبوم‌ها به طور خودکار حذف می‌شوند مگر اینکه تصمیم بگیرید آلبوم‌های دیگر را حذف کنید:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "شما می‌توانید ۵ آلبوم با حداکثر {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت رایگان ذخیره کنید. آلبوم‌های استفاده نشده را حذف کنید تا فضا ایجاد شود.",
+  "Paid tiers have unlimited albums and are limited only by storage": "سطوح پولی آلبوم های نامحدود دارند و فقط توسط فضای ذخیره سازی محدود می شوند"
 }

@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Tu-Faktor Otentikesen",
   "Select For Download": "Kambilim Bilong Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Yu save sev 5 album o kasem {FREE_TIER_STORAGE_LIMIT_GB} GB nomo. Delem ol album yu no yuusim blong mekem ples.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ol fayl blong yu nao i stap holem {formatGB(usedGB)} ples, tasol yu gat {FREE_TIER_STORAGE_LIMIT_GB} GB stoa nomo. Ol album ya ol i stap kalabus automatik:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ol fayl blong yu nao i stap holem {formatGB(usedGB)} long {totalStorageGB} GB stoa we i available. Yu mas tingting blong apgredem subscription blong yu kwiktaem blong saveya kontinyum ol album.",
   "Upgrade Your Subscription": "Apgredem Subscription Blong Yu",
   "Storage Management": "Lukautim Stoa",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klik Long Apgred Sabskripsen",
   "WILL BE DELETED": "BAE DELET",
   "Create an album in 90 sec": "Mekim album long 90 sekon",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Yu gat album {albumCount} be yu save nomo 5 nating. Dispela longpela album ol i go long rausim nating:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Akawnt infomesen i stap kamap...",
   "Please enter a positive number": "Plis putim wan namba gud",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Loading subscription infomesen...",
   "Insufficient storage and too many albums (max 5 for free)": "No inap storage mo tumas album (5 nomo long fri)",
   "Insufficient storage capacity": "No inap storage kapasiti",
-  "Too many albums (free tier allows max 5 albums)": "Tumas album (fri level i loa nomo 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "Tumas album (fri level i loa nomo 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Yu gat mo long 5 album mo ol fail blong yu i tekem {formatGB(usedGB)} ples (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ol dispela album i go lus otomatis sapos yu no save mekem desisen long rausim narapela album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "You gat {albumCount} albam be you nomo save faiv long fri. Dis ol album ia ola tumas oli kamap delitim otomatik sapos you no decidim folem delitim narafala album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ol fail bilong yu i stap long {formatGB(usedGB)} ples, tasol yu gat {FREE_TIER_STORAGE_LIMIT_GB} GB stoa nomo. Ol dispela album i stap deletim otomatik sapos yu no desisim fo deletim narafala album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ol fail bilong yu i stap long {formatGB(usedGB)} ples, tasol yu gat {totalStorageGB} GB stoa nomo. Ol dispela album i stap deletim otomatik sapos yu no desisim fo deletim narafala album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Iu save olketa 5 album wea i stap maximum {FREE_TIER_STORAGE_LIMIT_GB} GB nomo fri. Rausim ol album wea iu no usem blong mekem ples.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Pei taer oli gat albam we no en finish nomo storej i stopem"
 }

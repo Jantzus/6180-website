@@ -166,8 +166,6 @@
   "Email address...": "އީމެއިލް އެޑްރެސް...",
   "Two-Factor Authentication": "ދެ-ފެކްޓަރ އޮތެންޓިކޭޝަން",
   "Select For Download": "ޑައުންލޯޑަށް ހޮވާލައި",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "އަހަރެމެންނަށް 5 އެލްބަމް ނުވަތަ {FREE_TIER_STORAGE_LIMIT_GB} GB ވަންދެން ހިމެނޭނެ ހުރިހާ އެއްޗެއް ހޯދެވޭނެއެވެ। ތަން ހޯދުމަށް ނޫން ބޭނުންވާ އެލްބަމްތައް ފުހެލައްވާ।",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "އަހަރެމެންގެ ފައިލްތައް މިހާރު {formatGB(usedGB)} ތަން ބޭނުންކުރަނީ، އެކަމަކު އަހަރެމެންނަށް {FREE_TIER_STORAGE_LIMIT_GB} GB ސްޓޯރޭޖް އެކަނި އެވެ। މި އެލްބަމްތައް އޮޓޮމެޓިކްކޮށް ފުހެވެމުން އެވެ:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "އަހަރެމެންގެ ފައިލްތައް މިހާރު ހިމެނޭ {totalStorageGB} GB ސްޓޯރޭޖުން {formatGB(usedGB)} ބޭނުންކުރަނީ։ އެލްބަމްތައް ސެވްކުރުން ކުރިއަށް ގެންދިއުމަށް އަހަރެމެންނަށް އަވަހަކަށް އަހަރެމެންގެ ސަބްސްކްރިޕްޝަން އަޕްގްރޭޑް ކުރަން ޖެހޭނެ ކަމުގައި ވެދާނެ։",
   "Upgrade Your Subscription": "އަހަރެމެންގެ ސަބްސްކްރިޕްޝަން އަޕްގްރޭޑް ކުރޭ",
   "Storage Management": "ބަހައްޓާ ކަންކަން",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "ސަބްސްކްރިޕްޝަން އަޕްގްރޭޑްކުރަން ކްލިކްކުރައްވާ",
   "WILL BE DELETED": "ޑިލީޓް ކުރެވޭނެ",
   "Create an album in 90 sec": "90 ސެކަންޑުގައި އެލްބަމެއް ހަދާ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "ތިޔަބޭފުޅުންގެ {albumCount} އެލްބަމް އެވެ ނަމަވެސް ޚަރަދެއް ނެތި 5 އެއްޗެއް ސޭވްކުރެވޭނެ. މިއީ ހާލުގެ އެންމެ ކުރީގެ އެލްބަމްތައް އައުޑޮމެޓިކުން ޑިލީޓްވަނީ:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "ބަންދުގެ މަޢުލޫމާތު ލޯޑްކުރަމުން...",
   "Please enter a positive number": "ގެންދާ ޢަދަދެއް ލިޔުއްވާ",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "ސަބްސްކްރިޕްޝަނުގެ މަޢުލޫމާތު ލޯޑުކުރަމުން...",
   "Insufficient storage and too many albums (max 5 for free)": "ނުކުތް ސްޓޯރޭޖް އަދި ވަރަށް ގިނަ އެލްބަމް (ދިނުން ހަމަވެގެން 5)",
   "Insufficient storage capacity": "ނުކުތް ސްޓޯރޭޖް ކެޕޭސިޓީ",
-  "Too many albums (free tier allows max 5 albums)": "ވަރަށް ގިނަ އެލްބަމް (ދިނުމުގެ ދަރަޖާއިން ވަރަށް ގިނައަށް 5 އެލްބަމް ހުއްދަ ދެއެވެ)"
+  "Too many albums (free tier allows max 5 albums)": "ވަރަށް ގިނަ އެލްބަމް (ދިނުމުގެ ދަރަޖާއިން ވަރަށް ގިނައަށް 5 އެލްބަމް ހުއްދަ ދެއެވެ)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "ތިޔައާ ގައި 5 އަލްބަމަށްވުރެ ގިނަ އަލްބަމެއް އަދި ތިޔަބޭފުޅުންގެ ފައިލުތައް {formatGB(usedGB)} ޖާގަ ނަގަނީ (ލިމިޓް: {FREE_TIER_STORAGE_LIMIT_GB} GB)٫ މި އަލްބަމްތައް އޮޓޮމެޓިކް ޑިލީޓް ކުރެވޭނެ ތިޔަބޭފުޅުން އެހެން އަލްބަމްތައް ޑިލީޓް ކުރަން ނިންމަވާހާ ނެތްނަމަ:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "ތިޔަބޭފުޅުންގެ ގައި {albumCount} އެލްބަމް ހުރި ނަމަވެސް އެއީ ހަމައެކަނި 5 ފައިސާ ނުދައްކާ ރައްކާނުޖެހޭ. މި އާދާއި އެލްބަމްތައް އަމިއްލައަށް ފުހޭ އެނގޭ ނަމަވެސް ތިޔަބޭފުޅުން އެހެން އެލްބަމްތައް ފުހުމަށް ނިންމާށެވެ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ތިބާގެ ފައިލްތައް {formatGB(usedGB)} ހިސާބު ނަގާ، އެކަމަކު ތިބާގެ ކޮށެއް {FREE_TIER_STORAGE_LIMIT_GB} ޖީބީ ސްޓޯރޭޖް އެވެ। މި އެލްބަމްތައް އޮޓޮމެޓިކުން ޑިލީޓް ވާނެ ތިބާ އެހެން އެލްބަމްތައް ޑިލީޓް ކުރަން ނިންމަންވީ ނަމަ ފިޔަވައި:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ތިބާގެ ފައިލްތައް {formatGB(usedGB)} ހިސާބު ނަގާ، އެކަމަކު ތިބާގެ ކޮށެއް {totalStorageGB} ޖީބީ ސްޓޯރޭޖް އެވެ។ މި އެލްބަމްތައް އޮޓޮމެޓިކުން ޑިލީޓް ވާނެ ތިބާ އެހެން އެލްބަމްތައް ޑިލީޓް ކުރަން ނިންމަންވީ ނަމަ ފިޔަވައި:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ތިޔަބޭފުޅުންނަށް އެންމެ ފުރިހަމައަށް {FREE_TIER_STORAGE_LIMIT_GB} ޖީބީ ހުރި 5 އެލްބަމް ހިމެނުމަށް ފުރުޞަތު ލިބިގެން ވެއެވެ. ތަނެއް ހަދަން ބޭނުން ނެތް އެލްބަމްތައް ފޮހެލާ.",
+  "Paid tiers have unlimited albums and are limited only by storage": "ފައިސާގެ ޓައިއަރުގައި ހުރަސްތަކެއް ނެތް އެލްބަމްތައް އެބަ ހުރި އަދި ބަލިވަނީ ސްޓޯރޭޖުން އެކަނި"
 }

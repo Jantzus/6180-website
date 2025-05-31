@@ -166,8 +166,6 @@
   "Email address...": "Adresa e emailit...",
   "Two-Factor Authentication": "Vërtetimi Me Dy Faktorë",
   "Select For Download": "Zgjidh Për Shkarkim",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Mund të ruani 5 albume ose deri në {FREE_TIER_STORAGE_LIMIT_GB} GB falas. Fshini albumet e papërdorura për të krijuar hapësirë.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Skedarët tuaj aktualisht zënë hapësirën {formatGB(usedGB)}, por keni vetëm {FREE_TIER_STORAGE_LIMIT_GB} GB ruajtje. Këto albume po fshihen automatikisht:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Skedarët tuaj aktualisht zënë hapësirën {formatGB(usedGB)} nga {totalStorageGB} GB ruajtje e disponueshme. Mund t'ju duhet të përmirësoni abonimin tuaj së shpejti për të vazhduar të ruani albume.",
   "Upgrade Your Subscription": "Përmirësoni Abonimin Tuaj",
   "Storage Management": "Menaxhimi I Ruajtjes",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klikoni Për Të Përmirësuar Abonimin",
   "WILL BE DELETED": "DO TË FSHIHET",
   "Create an album in 90 sec": "Krijo një album në 90 sekonda",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ju keni {albumCount} albume por mund të ruani vetëm 5 falas. Këto albume më të vjetra po fshihen automatikisht:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Skedarët tuaj zënë {formatGB(usedGB)} hapësirë, por keni vetëm {FREE_TIER_STORAGE_LIMIT_GB} GB ruajtje. Këto albume po fshihen automatikisht:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Keni mbi 5 albume DHE skedarët tuaj zënë {formatGB(usedGB)} hapësirë (kufiri: {FREE_TIER_STORAGE_LIMIT_GB} GB). Këto albume po fshihen automatikisht:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Skedarët tuaj zënë {formatGB(usedGB)} hapësirë, por keni vetëm {totalStorageGB} GB ruajtje. Këto albume po fshihen automatikisht:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Skedarët tuaj zënë {formatGB(usedGB)} nga {totalStorageGB} GB ruajtje. Mund t'ju duhet të përmirësoni pajtimin tuaj së shpejti.",
   "Loading account information...": "Po ngarkohen informacionet e llogarisë...",
   "Please enter a positive number": "Ju lutemi futni një numër pozitiv",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Duke ngarkuar informacionin e abonimit...",
   "Insufficient storage and too many albums (max 5 for free)": "Hapësirë ruajtjeje e pamjaftueshme dhe albume të shumta (maksi 5 falas)",
   "Insufficient storage capacity": "Kapacitet ruajtjeje i pamjaftueshëm",
-  "Too many albums (free tier allows max 5 albums)": "Shumë albume (niveli falas lejon maksimum 5 albume)"
+  "Too many albums (free tier allows max 5 albums)": "Shumë albume (niveli falas lejon maksimum 5 albume)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Keni më shumë se 5 albume DHE skedarët tuaj zënë {formatGB(usedGB)} hapësirë (kufiri: {FREE_TIER_STORAGE_LIMIT_GB} GB). Këto albume po fshihen automatikisht nëse nuk vendosni të fshini albume të tjera:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Keni {albumCount} albume por mund të ruani vetëm 5 falas. Këto albume më të vjetra janë duke u fshirë automatikisht përveç nëse vendosni të fshini albume të tjera:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Skedarët tuaj zënë {formatGB(usedGB)} hapësirë, por keni vetëm {FREE_TIER_STORAGE_LIMIT_GB} GB ruajtje. Këto albume po fshihen automatikisht nëse nuk vendosni të fshini albume të tjera:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Skedarët tuaj zënë {formatGB(usedGB)} hapësirë, por keni vetëm {totalStorageGB} GB ruajtje. Këto albume po fshihen automatikisht nëse nuk vendosni të fshini albume të tjera:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Mund të ruani 5 albume që në total janë maksimum {FREE_TIER_STORAGE_LIMIT_GB} GB falas. Fshini albumet e papërdorura për të bërë hapësirë.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Nivellet e paguara kanë albume të pakufizuara dhe janë të kufizuara vetëm nga ruajtja"
 }

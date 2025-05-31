@@ -166,8 +166,6 @@
   "Email address...": "Электрон почто адрес...",
   "Two-Factor Authentication": "Кок-Фактор Аутентификация",
   "Select For Download": "Кондаш Шындымашлан",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Тый 5 альбомым але {FREE_TIER_STORAGE_LIMIT_GB} ГБ марте вара кучедыш кертат. Вер ышташлан кучылт дуден альбом-влакым кораҥде.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Тыйын файл-влак кызыт {formatGB(usedGB)} вер кучедыт, но тый дене {FREE_TIER_STORAGE_LIMIT_GB} ГБ аныклымаш-влак гына улыт. Нине альбом-влак автоматик йӧным кораҥдыт:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Тыйын файл-влак кызыт кучылтмаш {totalStorageGB} ГБ аныклымаш-влак гыч {formatGB(usedGB)} вер кучедыт. Альбом-влакым аныклен кодаш тыланет эре подписка тӧрлатыман лиеш.",
   "Upgrade Your Subscription": "Подписка Тӧрлатыме",
   "Storage Management": "Аралымаш Кылдалтмаш",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Подписке сайыкташ темлаш",
   "WILL BE DELETED": "КОРАҤЕШ",
   "Create an album in 90 sec": "90 секундыште альбом ышташ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Тыйын {albumCount} альбом уло, но уке дене кум гына аралашыжы кертат. Нине иктаж тӱҥалтыш альбом-влак автоматле кораҥыт:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Аккаунт увер-влакым налыныт...",
   "Please enter a positive number": "Келшен годым, сайын цифрым пурто",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Подписка увераҥым кондыктымо...",
   "Insufficient storage and too many albums (max 5 for free)": "Аралыме верысе иктешлык огыл дене альбом шукышт (уке нерген 5)",
   "Insufficient storage capacity": "Аралыме верысе иктешлык огыл",
-  "Too many albums (free tier allows max 5 albums)": "Альбом шукышт (уке нерген класс 5 альбомым ыштен кертеш)"
+  "Too many albums (free tier allows max 5 albums)": "Альбом шукышт (уке нерген класс 5 альбомым ыштен кертеш)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Тыйын 5-шым шуко альбом улыт ДА тыйын файл-влак {formatGB(usedGB)} вер налыт (йӧршык: {FREE_TIER_STORAGE_LIMIT_GB} ГБ). Ни альбом-влак автоматический кораҥалтыт тый мукшум альбом-влакым кораҥаш шонет деч посна:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Тыште {albumCount} альбом уло, но кодынек 5-ым гына аккредитациерак возен кертат. Нине иҥ тошто альбом-влак автоматически кораҥдалыт, тый ыштыме альбом-влакым кораҥдаш кораҥеда огеш ыле:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Тыйын файл-влак {formatGB(usedGB)} вер налыт, но тыйын {FREE_TIER_STORAGE_LIMIT_GB} ГБ арален кодаш вер гына уло. Тиде альбом-влак автоматик шӱкымӧ, тый моло альбом-влакым шӱкаш шона деч посна:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Тыйын файл-влак {formatGB(usedGB)} вер налыт, но тыйын {totalStorageGB} ГБ арален кодаш вер гына уло. Тиде альбом-влак автоматик шӱкымӧ, тый моло альбом-влакым шӱкаш шона деч посна:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 альбомым аралаш кертат, чылажым {FREE_TIER_STORAGE_LIMIT_GB} ГБ-шым тӱнясыде. Вер ышташлан кучылтдыме альбом-влакым кораҥде.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Пуымо кугытшӧ чыла альбом-влак улыт да вашештымаш дене гына кучылталтыт"
 }

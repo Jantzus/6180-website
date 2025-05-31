@@ -166,8 +166,6 @@
   "Email address...": "E-pasta adrese...",
   "Two-Factor Authentication": "Divu Faktoru Autentifikācija",
   "Select For Download": "Atlasīt Lejupielādei",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Varat saglabāt 5 albumus vai līdz {FREE_TIER_STORAGE_LIMIT_GB} GB bez maksas. Izdzēsiet neizmantotus albumus, lai atbrīvotu vietu.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Jūsu faili pašlaik aizņem {formatGB(usedGB)} vietu, bet jums ir tikai {FREE_TIER_STORAGE_LIMIT_GB} GB glabātuves. Šie albumi tiek automātiski dzēsti:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Jūsu faili pašlaik aizņem {formatGB(usedGB)} vietu no {totalStorageGB} GB pieejamās glabātuves. Iespējams, drīz būs jāuzlabo abonements, lai turpinātu saglabāt albumus.",
   "Upgrade Your Subscription": "Uzlabojiet Savu Abonementu",
   "Storage Management": "Krātuves Pārvaldība",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Noklikšķiniet Lai Uzlabotu Abonementu",
   "WILL BE DELETED": "TIKS DZĒSTS",
   "Create an album in 90 sec": "Izveidojiet albumu 90 sekundēs",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Jums ir {albumCount} albumi, bet varat saglabāt tikai 5 bez maksas. Šie senākie albumi tiek automātiski dzēsti:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Jūsu faili aizņem {formatGB(usedGB)} vietu, bet jums ir tikai {FREE_TIER_STORAGE_LIMIT_GB} GB krātuves. Šie albumi tiek automātiski dzēsti:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Jums ir vairāk nekā 5 albumi UN jūsu faili aizņem {formatGB(usedGB)} vietu (limits: {FREE_TIER_STORAGE_LIMIT_GB} GB). Šie albumi tiek automātiski dzēsti:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Jūsu faili aizņem {formatGB(usedGB)} vietu, bet jums ir tikai {totalStorageGB} GB krātuves. Šie albumi tiek automātiski dzēsti:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Jūsu faili aizņem {formatGB(usedGB)} no {totalStorageGB} GB krātuves. Jums, iespējams, drīz būs jāuzlabo abonements.",
   "Loading account information...": "Konta informācijas ielāde...",
   "Please enter a positive number": "Lūdzu, ievadiet pozitīvu skaitli",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Notiek abonēšanas informācijas ielāde...",
   "Insufficient storage and too many albums (max 5 for free)": "Nepietiekama krātuve un pārāk daudz albumu (maksimums 5 bezmaksas)",
   "Insufficient storage capacity": "Nepietiekama krātuves ietilpība",
-  "Too many albums (free tier allows max 5 albums)": "Pārāk daudz albumu (bezmaksas līmenis atļauj maksimums 5 albumus)"
+  "Too many albums (free tier allows max 5 albums)": "Pārāk daudz albumu (bezmaksas līmenis atļauj maksimums 5 albumus)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Jums ir vairāk nekā 5 albumi UN jūsu faili aizņem {formatGB(usedGB)} vietu (limits: {FREE_TIER_STORAGE_LIMIT_GB} GB). Šie albumi tiek automātiski dzēsti, ja vien neizlemjat dzēst citus albumus:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Jums ir {albumCount} albumi, bet varat saglabāt tikai 5 bez maksas. Šie vecākie albumi tiek automātiski dzēsti, ja vien nenolemjat dzēst citus albumus:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Jūsu faili aizņem {formatGB(usedGB)} vietu, bet jums ir tikai {FREE_TIER_STORAGE_LIMIT_GB} GB glabāšanas vietas. Šie albumi tiek automātiski dzēsti, ja vien nenolemjat dzēst citus albumus:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Jūsu faili aizņem {formatGB(usedGB)} vietu, bet jums ir tikai {totalStorageGB} GB glabāšanas vietas. Šie albumi tiek automātiski dzēsti, ja vien nenolemjat dzēst citus albumus:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Jūs varat saglabāt 5 albumus, kas kopumā ir maksimums {FREE_TIER_STORAGE_LIMIT_GB} GB bez maksas. Dzēsiet neizmantotus albumus, lai atbrīvotu vietu.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Maksas līmeņiem ir neierobežoti albumi un tie ir ierobežoti tikai ar glabāšanu"
 }

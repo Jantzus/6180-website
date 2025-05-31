@@ -166,8 +166,6 @@
   "Email address...": "ಇಮೇಲ್ ವಿಳಾಸ...",
   "Two-Factor Authentication": "ಎರೆಡ್-ಅಂಶೊ ದೃಢೀಕರಣೊ",
   "Select For Download": "ಡೌನ್‌ಲೋಡ್‌ಗೆ ಆಯ್ಕೆ ಮಲ್ಪುಲೆ",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ಈರ್ 5 ಆಲ್ಬಂಲು ಅತ್ತಂಡ {FREE_TIER_STORAGE_LIMIT_GB} ಜಿಬೈ ವರ್ಗ ಮುಕ್ತೊ ಸೇವ್ ಮಲ್ಪೊಲಿ। ಜಾಗೊ ಮಲ್ಪೆರೆ ಬೇಡೊ ಆಲ್ಬಂಲೆನ್ ದೆತ್ತೊಲೆ।",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ಈರ್ ಫೈಲ್‌ಲು ಇಪ್ಪಿಲ {formatGB(usedGB)} ಜಾಗೊ ದೆಪ್ಪುಂಡು, ಪಂಡ ಈರ್‌ಗ್ ಮಾತ್ರ {FREE_TIER_STORAGE_LIMIT_GB} ಜಿಬೈ ಸ್ಟೋರೇಜ್ ಉಂಡು। ಈ ಆಲ್ಬಂಲು ತಾವೇ ಡಿಲೀಟ್ ಆವೊಂದು:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "ಈರ್ ಫೈಲ್‌ಲು ಇಪ್ಪಿಲ ಸಿಗ್ಪಿನ {totalStorageGB} ಜಿಬೈ ಸ್ಟೋರೇಜ್‌ಡ್ದ್ ಒತ್ತ್ಯಾಲೆ {formatGB(usedGB)} ಜಾಗೊ ದೆಪ್ಪುಂಡು। ಆಲ್ಬಂಲೆನ್ ಸೇವ್ ಮಲ್ಪೊದ್ ಚಾಲಾಯಿಸೊಡೆ ಈರ್‌ಗ್ ಪೊಕ್ಕ ಈರ್ ಸಬ್‌ಸ್ಕ್ರಿಪ್‌ಶನ್ ಅಪ್‌ಗ್ರೇಡ್ ಮಲ್ಪೊದು ಬಯಕೆ ಪಾಡೊಂದು।",
   "Upgrade Your Subscription": "ಈರ್ ಸಬ್‌ಸ್ಕ್ರಿಪ್‌ಶನ್ ಅಪ್‌ಗ್ರೇಡ್ ಮಲ್ಪಲೆ",
   "Storage Management": "ಸಂಗ್ರಹಣೆ ನಿರ್ವಹಣೆ",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "ಸಬ್‌ಸ್ಕ್ರಿಪ್ಷನ್ ಅಪ್‌ಗ್ರೇಡ್ ಮಲ್ಪೆರೆ ಕ್ಲಿಕ್ ಮಲ್ಪುಲೆ",
   "WILL BE DELETED": "ದೆಪ್ಪುಣೆ",
   "Create an album in 90 sec": "90 ಸೆಕೆಂಡ್‌ಲೆಕ್ಕು ಆಲ್ಬಂ ಮಲ್ಪುಲೆ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "ಇಮ್ಮ್ ಬಲಿ {albumCount} ಆಲ್ಬಂ ಉಂಡು ಆಂದ್ ಫ್ರೀಗ್ 5 ಮಾತ್ರ ಸೇವ್ ಮಲ್ಪೊಲಿ। ಈ ಮುಸ್ತಿ ಪೊಸ ಆಲ್ಬಂ ಆಟೊಮ್ಯಾಟಿಕ್ ಡಿಲೀಟ್ ಆವೊಂದುಂಡು:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "ಖಾತೆಯ ಮಾಹಿತಿ ಲೋಡ್ ಮಲ್ಪುಜಿ...",
   "Please enter a positive number": "ದಯವಿಟ್ಟು ಧನಾತ್ಮಕ ಸಂಖ್ಯೆ ಒಪ್ಪಿ",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Loading subscription information...",
   "Insufficient storage and too many albums (max 5 for free)": "Insufficient storage and too many albums (max 5 for free)",
   "Insufficient storage capacity": "Insufficient storage capacity",
-  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)"
+  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "ಇರೆಗ್ ದ್ 5 ಕ್ಕಿಂತ ಜಾಸ್ತಿ ಆಲ್ಬಂ ಉಂಡು ಬೊಕ್ಕ ಇರೆನ್ ಫೈಲ್‍ಲು {formatGB(usedGB)} ಜಾಗೊ ದುಂಬ್'ದ್ (ಮೇರೆ: {FREE_TIER_STORAGE_LIMIT_GB} GB)ದ್। ಇರ್ ಬೇತೆ ಆಲ್ಬಂ ದೆಲೀಟ್ ಮಲ್ಪೊಲಿ ಅಂಚಿನೆ ಪಾಡ್‍ದೆ ಇ ಆಲ್ಬಂ ತಾನೆ ದೆಲೀಟ್ ಆಪುಂಡು:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "ಇರೆನ್ ಲೆಗ್ {albumCount} ಆಲ್ಬಂ ಆಂಡ್ ಅಂದ ಉಚಿತೊಡು ೫ ಮಾತ್ರ ಸೇವ್ ಮಲ್ಪುವೊಲಿ. ಇರ್ ಬೇತೆ ಆಲ್ಬಂಲೆನ್ ಅಜಾಪುನೆ ನಿರ್ಧಾರೊ ಮಲ್ಪಂದ ಇಜಿ ಪೈದ ಪೈದ ಆಲ್ಬಂಲು ಆಪೊ ಆಪೆರೆ ಅಜಾವುಂಡ್:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ಇಜ್ಜಿ ಫೈಲ್‌ದ್ {formatGB(usedGB)} ಜಾಗೊ ತಗೊಂದು, ಆಂಡ ಇಜ್ಜಿ ಬಸ್ {FREE_TIER_STORAGE_LIMIT_GB} GB ಸ್ಟೋರೇಜ್ ಉಂಡು। ಇಜ್ಜಿ ಬೇತೆ ಆಲ್ಬಂದ್ ಡಿಲೀಟ್ ಮಲ್ಪೆರೆ ನಿರ್ಧಾರೊ ಮಲ್ಪಂದಿನ ಈ ಆಲ್ಬಂ ಆಪೊ-ಆಪೊ ಡಿಲೀಟ್ ಅಪ್ಪುಂಡು:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ಇಜ್ಜಿ ಫೈಲ್‌ದ್ {formatGB(usedGB)} ಜಾಗೊ ತಗೊಂದು, ಆಂಡ ಇಜ್ಜಿ ಬಸ್ {totalStorageGB} GB ಸ್ಟೋರೇಜ್ ಉಂಡು। ಇಜ್ಜಿ ಬೇತೆ ಆಲ್ಬಂದ್ ಡಿಲೀಟ್ ಮಲ್ಪೆರೆ ನಿರ್ಧಾರೊ ಮಲ್ಪಂದಿನ ಈ ಆಲ್ಬಂ ಆಪೊ-ಆಪೊ ಡಿಲೀಟ್ ಅಪ್ಪುಂಡು:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ಈರ್ ಜಾಸ್ತಿದ್ ಜಾಸ್ತಿ {FREE_TIER_STORAGE_LIMIT_GB} ಜಿಬಿದ 5 ಆಲ್ಬಂಲೆನ್ ಫ್ರೀಡ್ ಸೇವ್ ಮಲ್ಪೊಲಿ। ಜಾಗ ಮಲ್ಪೆರೆ ಇಸ್ತೆಮಾಲ್ ಮಲ್ಪಂದಿನ ಆಲ್ಬಂಲೆನ್ ಡಿಲೀಟ್ ಮಲ್ಪುಲೆ।",
+  "Paid tiers have unlimited albums and are limited only by storage": "ದುಡ್ಡು ಕೊಡುನಿ ಪದ್ದತಿಲೆ ಅಡ್ಡವಾಯಿನ ಆಲ್ಬಂ ಉಂಡು ಬೊಕ್ಕ ಸ್ಟೋರೇಜ್‌ಟ್ ಮಾತ್ರ ಮರ್ಯಾದೆ"
 }

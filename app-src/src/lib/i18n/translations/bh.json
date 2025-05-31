@@ -166,8 +166,6 @@
   "Email address...": "ईमेल पता...",
   "Two-Factor Authentication": "दुइ-कारक प्रमाणीकरण",
   "Select For Download": "डाउनलोड खातिर चुनू",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "रउआ 5 एल्बम या {FREE_TIER_STORAGE_LIMIT_GB} जीबी तक मुफ्त में सेव कर सकीलें। जगह बनावे खातिर बिन इस्तेमाल एल्बम मिटा दीं।",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "रउआ फाइल सभ अभी {formatGB(usedGB)} जगह घेर रहल बाटे, बाकी रउआ लगे बस {FREE_TIER_STORAGE_LIMIT_GB} जीबी स्टोरेज बा। ई एल्बम सभ अपने आप डिलीट हो रहल बाटे:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "रउआ फाइल सभ अभी {totalStorageGB} जीबी उपलब्ध स्टोरेज में से {formatGB(usedGB)} जगह घेर रहल बाटे। एल्बम सेव करत रहे खातिर जल्दिए आपन सब्सक्रिप्शन अपग्रेड करे के पड़ सकता।",
   "Upgrade Your Subscription": "आपन सब्सक्रिप्शन अपग्रेड करीं",
   "Storage Management": "भंडारण प्रबंधन",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "सब्सक्रिप्शन अपग्रेड करे खातिर क्लिक करीं",
   "WILL BE DELETED": "मिटा दिहल जाई",
   "Create an album in 90 sec": "90 सेकंड में एल्बम बनावs",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "रउवा करे {albumCount} गो एल्बम बा बाकी फ्री में सिर्फ 5 गो सेव कर सकिले। ई सभसे पुरान एल्बम अपने आप डिलीट हो रहल बा:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "अकाउंट जानकारी लोड हो रहल बा...",
   "Please enter a positive number": "कृपया एगो सकारात्मक संख्या दाल दीं",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "सब्सक्रिप्शन जानकारी लोड कयल जा रहल बा...",
   "Insufficient storage and too many albums (max 5 for free)": "भंडारण कम बा आ बहुत एल्बम बा (फ्री में अधिकतम 5)",
   "Insufficient storage capacity": "भंडारण क्षमता कम बा",
-  "Too many albums (free tier allows max 5 albums)": "बहुत एल्बम बा (फ्री टियर अधिकतम 5 एल्बम के अनुमति देला)"
+  "Too many albums (free tier allows max 5 albums)": "बहुत एल्बम बा (फ्री टियर अधिकतम 5 एल्बम के अनुमति देला)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "राउर लगे 5 से जादा एल्बम बा अउर राउर फाइल सभ {formatGB(usedGB)} जगह लेले बा (सीमा: {FREE_TIER_STORAGE_LIMIT_GB} GB). ई एल्बम सभ अपने आप मिटा दिहल जाई जब तक राउर दोसर एल्बम मिटावे के फैसला ना करब:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "राउर लगे {albumCount} एल्बम बा बाकिर मुफ्त में सिर्फ 5 सेव कर सकीं. ई सबले पुरान एल्बम अपने आप डिलीट हो जाई जब तक राउं दोसर एल्बम डिलीट करे के फैसला ना करीं:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "राउर फाइल सभ {formatGB(usedGB)} जगह लेत बा, लेकिन राउर लगे बस {FREE_TIER_STORAGE_LIMIT_GB} जीबी स्टोरेज बा। ई एल्बम सभ अपने आप मिटावल जात बा जब तक रउआ दोसर एल्बम मिटावे के फैसला ना करीं:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "राउर फाइल सभ {formatGB(usedGB)} जगह लेत बा, लेकिन राउर लगे बस {totalStorageGB} जीबी स्टोरेज बा। ई एल्बम सभ अपने आप मिटावल जात बा जब तक रउआ दोसर एल्बम मिटावे के फैसला ना करीं:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "रउवाँ अधिकतम {FREE_TIER_STORAGE_LIMIT_GB} GB के 5 टा एल्बम मुफ्तमें सेव कर सकत बानी। जगह बनावे खातिर ना इस्तेमालवाला एल्बम हटा दिहल जा।",
+  "Paid tiers have unlimited albums and are limited only by storage": "भुगतान वाला स्तर में असीमित एल्बम बा आ सिर्फ स्टोरेज से सीमित बा"
 }

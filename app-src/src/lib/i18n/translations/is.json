@@ -166,8 +166,6 @@
   "Email address...": "Netfang...",
   "Two-Factor Authentication": "Tveggja Þátta Auðkenning",
   "Select For Download": "Velja Til Niðurhals",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Þú getur vistað 5 albúm eða allt að {FREE_TIER_STORAGE_LIMIT_GB} GB ókeypis. Eyddu ónotuðum albúmum til að búa til pláss.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Skrárnar þínar taka upp {formatGB(usedGB)} pláss núna, en þú ert bara með {FREE_TIER_STORAGE_LIMIT_GB} GB geymslu. Þessi albúm eru sjálfkrafa eytt:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Skrárnar þínar taka upp {formatGB(usedGB)} af {totalStorageGB} GB tiltæku geymsluplássi. Þú gætir þurft að uppfæra áskriftina þína fljótlega til að halda áfram að vista albúm.",
   "Upgrade Your Subscription": "Uppfærðu Áskriftina Þína",
   "Storage Management": "Geymsla Stjórnun",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Smelltu Til Að Uppfæra Áskrift",
   "WILL BE DELETED": "VERÐUR EYTT",
   "Create an album in 90 sec": "Búðu til albúm á 90 sekúndum",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Þú ert með {albumCount} albúm en getur aðeins vistað 5 ókeypis. Þessi elstu albúm eru sjálfkrafa eytt:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Skrárnar þínar taka {formatGB(usedGB)} plass, en þú ert aðeins með {FREE_TIER_STORAGE_LIMIT_GB} GB geymslu. Þessi albúm eru sjálfkrafa eytt:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Þú ert með yfir 5 albúm OG skrárnar þínar taka {formatGB(usedGB)} plass (takmark: {FREE_TIER_STORAGE_LIMIT_GB} GB). Þessi albúm eru sjálfkrafa eytt:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Skrárnar þínar taka {formatGB(usedGB)} plass, en þú ert aðeins með {totalStorageGB} GB geymslu. Þessi albúm eru sjálfkrafa eytt:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Skrárnar þínar taka {formatGB(usedGB)} af {totalStorageGB} GB geymslu. Þú gætir þurft að uppfæra áskriftina þína binnvíti.",
   "Loading account information...": "Hleð upplýsingum um reikning...",
   "Please enter a positive number": "Vinsamlegast sláðu inn jákvæða tölu",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Hleð inn upplýsingar um áskrift...",
   "Insufficient storage and too many albums (max 5 for free)": "Ófullnægjandi geymsla og of mörg albúm (hámark 5 ókeypis)",
   "Insufficient storage capacity": "Ófullnægjandi geymslugeta",
-  "Too many albums (free tier allows max 5 albums)": "Of mörg albúm (ókeypis stig leyfir hámark 5 albúm)"
+  "Too many albums (free tier allows max 5 albums)": "Of mörg albúm (ókeypis stig leyfir hámark 5 albúm)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Þú ert með fleiri en 5 albúm OG skrárnar þínar taka {formatGB(usedGB)} pláss (takmark: {FREE_TIER_STORAGE_LIMIT_GB} GB). Þessi albúm eru sjálfkrafa eytt nema þú ákveðir að eyða öðrum albúmum:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Þú átt {albumCount} albúm en getur aðeins vistað 5 ókeypis. Þessi elstu albúm eru sjálfkrafa eytt nema þú ákveðir að eyða öðrum albúmum:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Skrárnar þínar taka {formatGB(usedGB)} pláss, en þú átt aðeins {FREE_TIER_STORAGE_LIMIT_GB} GB geymslupláss. Þessi albúm eru sjálfkrafa eytt nema þú ákveðir að eyða öðrum albúmum:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Skrárnar þínar taka {formatGB(usedGB)} pláss, en þú átt aðeins {totalStorageGB} GB geymslupláss. Þessi albúm eru sjálfkrafa eytt nema þú ákveðir að eyða öðrum albúmum:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Þú getur vistað 5 albúm sem ná að hámarki {FREE_TIER_STORAGE_LIMIT_GB} GB ókeypis. Eyddu ónotuðum albúmum til að búa til pláss.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Greitt þrep eru með ótakmarkað álbúm og eru aðeins takmörkuð af geymslu"
 }

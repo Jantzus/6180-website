@@ -166,8 +166,6 @@
   "Email address...": "Adireshin imel...",
   "Two-Factor Authentication": "Tabbatarwa Ta Matakai Biyu",
   "Select For Download": "Zabi Don Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Kuna iya ajiye albums 5 ko har zuwa {FREE_TIER_STORAGE_LIMIT_GB} GB kyauta. Share albums da ba a amfani da su ba don samar da wuri.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Fayilolin ku a yanzu suna ɗaukar {formatGB(usedGB)} sararin samaniya, amma kuna da {FREE_TIER_STORAGE_LIMIT_GB} GB ajiya kawai. Ana share waɗannan kundin raye-raye ta atomatik:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Fayilolinku a yanzu suna ɗaukar {formatGB(usedGB)} daga {totalStorageGB} GB ajiya da ke akwai. Kuna iya buƙatar haɓaka subscriben ku nan ba da jimawa ba don ci gaba da adana kundin raye-raye.",
   "Upgrade Your Subscription": "Haɓaka Subscriben Ku",
   "Storage Management": "Sarrafa Ma'ajiya",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Danna Don Ɗaukaka Biyan Kuɗi",
   "WILL BE DELETED": "ZA A SHARE",
   "Create an album in 90 sec": "Kirkiro album a cikin daƙiƙa 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Kuna da kundi {albumCount} amma za ka iya adana 5 kawai kyauta. Wadannan kundin da suka fi tsufa ana share su kai tsaye:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Ana loda bayanan asusun...",
   "Please enter a positive number": "Don Allah shigar da lamba mai kyau",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Ana lodi bayanan biyan kuɗi...",
   "Insufficient storage and too many albums (max 5 for free)": "Ƙarancin ajiyar kaya da yawan album (matsakaici 5 kyauta)",
   "Insufficient storage capacity": "Ƙarancin damar ajiyar kaya",
-  "Too many albums (free tier allows max 5 albums)": "Yawan album (matsayin kyauta yana ba da izinin album 5 ne kawai)"
+  "Too many albums (free tier allows max 5 albums)": "Yawan album (matsayin kyauta yana ba da izinin album 5 ne kawai)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Kuna da album sama da 5 DA fayilolin ku suna daukar {formatGB(usedGB)} wurin (iyaka: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ana goge wadannan album ta atomatik sai kun yanke shawarar goge wasu album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Kuna da {albumCount} album amma za ku iya adana 5 kawai kyauta. Waɗannan tsofaffin album ana goge su kai tsaye sai dai in kun yanke shawarar goge wasu album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fayilolin ku suna daukar {formatGB(usedGB)} sarari, amma kuna da {FREE_TIER_STORAGE_LIMIT_GB} GB ajiya kawai. Ana goge waɗannan kundin hotunan kai tsaye sai kun yanke shawarar goge wasu kundin hotuna:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fayilolin ku suna daukar {formatGB(usedGB)} sarari, amma kuna da {totalStorageGB} GB ajiya kawai. Ana goge waɗannan kundin hotunan kai tsaye sai kun yanke shawarar goge wasu kundin hotuna:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Kuna iya ajiye albam 5 da suka kai mafi girman {FREE_TIER_STORAGE_LIMIT_GB} GB kyauta. Goge albam da ba ku amfani da su ba don yin sarari.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Matakan biya sun da album mara iyaka kuma ana iyakanci su ta ajiya kawai"
 }

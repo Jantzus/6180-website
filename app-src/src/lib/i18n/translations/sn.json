@@ -166,8 +166,6 @@
   "Email address...": "Kero yetsambambaradzo...",
   "Two-Factor Authentication": "Kuchengetedza Nezvinhu Zviviri",
   "Select For Download": "Sarudza Ye Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Unogona kuchengetera 5 albums kana kusvika ku {FREE_TIER_STORAGE_LIMIT_GB} GB mahara. Bvisa albums dzisiri kushandiswa kuti uwane nzvimbo.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Mafaira enyu parizvino anotora nzvimbo ye {formatGB(usedGB)}, asi mune {FREE_TIER_STORAGE_LIMIT_GB} GB yokuchengetera chete. Ma-album aya ari kubviswa otomatiki:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Mafaira enyu parizvino anotora nzvimbo ye {formatGB(usedGB)} kubva ku{totalStorageGB} GB yekuchengetera iripo. Mungangofanira kukwidziridza subscription yenyu nokukurumidza kuti murambe muchengeta ma-album.",
   "Upgrade Your Subscription": "Kukwidziridza Subscription Yenyu",
   "Storage Management": "Kubata Kwe Storage",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Dzvanya Kuti Ukwidze Subscription",
   "WILL BE DELETED": "ICHACHENGETWA",
   "Create an album in 90 sec": "Gadzira dambarefu mu90 masekondi",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Imi mune ma album {albumCount} asi munogona kungochengetedza 5 chete mahara. Aya ma album ekare akanyanya ari kubviswa zvakafanira:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Kufambisa ruzivo rwemubhadharo...",
   "Please enter a positive number": "Ndapota isa nhamba yakanaka",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Iri kutakura ruzivo rwekuteerera...",
   "Insufficient storage and too many albums (max 5 for free)": "Chikuva chisina mukana uye mabhuku akawanda (zvakanyanya 5 mahara)",
   "Insufficient storage capacity": "Chikuva chisina mukana",
-  "Too many albums (free tier allows max 5 albums)": "Mabhuku akawanda (chikamu chisina mari chinobvumira mabhuku 5 chete)"
+  "Too many albums (free tier allows max 5 albums)": "Mabhuku akawanda (chikamu chisina mari chinobvumira mabhuku 5 chete)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Mune mabhuku anopfuura 5 UISE mafaira enyu anotora nzvimbo {formatGB(usedGB)} (muganhu: {FREE_TIER_STORAGE_LIMIT_GB} GB). Mabhuku aya ari kudzimwa otomatiki kusina kana imi mukazosarudza kudzima mamwe mabhuku:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Mune ma albhamu a{albumCount} asi munogona kuchengeta 5 chete nemahara. Aya ma albhamu akare kwazvo ari kubviswa otomatiki kunze kwekunge mafunga kubvisa mamwe ma albhamu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mafaira enyu anotora {formatGB(usedGB)} nzvimbo, asi munongova ne{FREE_TIER_STORAGE_LIMIT_GB} GB yekuchengetera. Maalbumu aya ari kubviswa otometi kunze kwekunge masarudza kubvisa mamwe maalbumu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mafaira enyu anotora {formatGB(usedGB)} nzvimbo, asi munongova ne{totalStorageGB} GB yekuchengetera. Maalbumu aya ari kubviswa otometi kunze kwekunge masarudza kubvisa mamwe maalbumu:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Unogona kuchengetedza mabhuku mashanu anokwana {FREE_TIER_STORAGE_LIMIT_GB} GB mahara. Bvisa mabhuku ausina kushandisa kuti uite nzvimbo.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Matiki anobhadharwa ane ma albamu asingaperi uye anoganhurirwa nestorage chete"
 }

@@ -166,8 +166,6 @@
   "Email address...": "ईमेल पता...",
   "Two-Factor Authentication": "द्वि-कारक प्रमाणीकरणं",
   "Select For Download": "डाउनलोडस्स णिव्वत्तणाय",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ত্বम् পঞ্চ সঙ্গীতকট্ঠম্ ব অথবা {FREE_TIER_STORAGE_LIMIT_GB} গব পরিচ্চেদং মুল্লকং রক্খিতুং শক্কোসি। স্থানং করোতুং অব্যবহৃত সঙ্গীতকট্ঠানি দেলেত কর।",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "তব ফায়েল গুলি এখন {formatGB(usedGB)} জাগা দখল করিছে, কিন্তু তোর {FREE_TIER_STORAGE_LIMIT_GB} জিবি সংরক্ষণ বস আছে। এই আলবাম গুলি অটোমেটিক ডিলিট হচ্ছে:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "তব ফায়েল গুলি এখন উপলব্ধ {totalStorageGB} জিবি স্টোরেজ থেকে {formatGB(usedGB)} জাগা দখল করিছে। এলবাম সেভ করা চালিয়ে যাওয়ার জন্য তোর শীঘ্রই সাবস্ক্রিপশন আপগ্রেড করতে হতে পারে।",
   "Upgrade Your Subscription": "তব সাবস্ক্রিপশন আপগ্রেড কর",
   "Storage Management": "भण्डार प्रबन्धन",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "सब्सक्रिप्शन उप्पादंति करणाय क्लिक्क करोतु",
   "WILL BE DELETED": "भाविस्सति लोपेति",
   "Create an album in 90 sec": "90 खणेसु गीतसङ्गहं करेहि",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "तुह्हं {albumCount} सङ्गीतकट्ठता अत्थि किन्तु केवलं ५ न मुल्लकं रक्खितुं सक्कोसि। एते जेट्ठा सङ्गीतकट्ठता अयं-अयंकरणेन निच्चारीयन्ति:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "लग्गतउं सूचना लोड करइ",
   "Please enter a positive number": "कृपया सकारात्मक संख्या दइं",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "सबस्क्रिप्शन सूचना लोड कइल जा रहल...",
   "Insufficient storage and too many albums (max 5 for free)": "अपर्याप्त भण्डारण च अतिक एल्बम च (निशुल्क अधिकतम ५)",
   "Insufficient storage capacity": "अपर्याप्त भण्डारण क्षमता",
-  "Too many albums (free tier allows max 5 albums)": "अतिक एल्बम (निशुल्क स्तर अधिकतम ५ एल्बम्य अनुमति ददाति)"
+  "Too many albums (free tier allows max 5 albums)": "अतिक एल्बम (निशुल्क स्तर अधिकतम ५ एल्बम्य अनुमति ददाति)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "तुम्हं पञ्च सङ्गीतकट्ठताओ अधिकं धारयसि च तुयं फाइलानं {formatGB(usedGB)} ठानं गच्छन्ति (सीमा: {FREE_TIER_STORAGE_LIMIT_GB} GB)। एते सङ्गीतकट्ठताओ अपेनं चेव नश्यन्ति तुम्हे अञ्ञानं सङ्गीतकट्ठतानं नाशेतुं न निश्चिनोसि चेत्:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "तुम्हाकं {albumCount} संगीतकट्ठता अत्थि किन्तु नि:शुल्कं केवलं पञ्च रक्खितुं शक्नोथ। एते पुराततमा संगीतकट्ठता स्वयमेव निष्कासयन्ते यावत् त्वं न निश्चिनोषि यत् अन्ये संगीतकट्ठता निष्कासयसि:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "तुम्हकाणि पत्रानि {formatGB(usedGB)} ठान गेण्हन्ति, किन्तु तुम्हकं {FREE_TIER_STORAGE_LIMIT_GB} जीबी संग्रहो सेव अत्थि। इमे सङ्गीतकोट्ठा अत्तनो आप नट्ठ होन्ति यावत तुम्हे अञ्ञे सङ्गीतकोट्ठे नट्ठ करणे न निच्छयं करेथ।",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "तुम्हकाणि पत्रानि {formatGB(usedGB)} ठान गेण्हन्ति, किन्तु तुम्हकं {totalStorageGB} जीबी संग्रहो सेव अत्थि। इमे सङ्गीतकोट्ठा अत्तनो आप नट्ठ होन्ति यावत तुम्हे अञ्ञे सङ्गीतकोट्ठे नट्ठ करणे न निच्छयं करेथ।",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "तुम्ह 5 संगीतग्रन्थानि येसं कुल अधिकं {FREE_TIER_STORAGE_LIMIT_GB} गब भवति निःशुल्कं रक्खितुं शक्कोथ। ठानं करेतुं अनुपयोगी संगीतग्रन्थानि निकाल।",
+  "Paid tiers have unlimited albums and are limited only by storage": "मग्गसुल्कमेत्ते भागे असंग्हाते रूपकथे चउन्ति अक्खियकमार्येहिं सिमितगामिनी"
 }

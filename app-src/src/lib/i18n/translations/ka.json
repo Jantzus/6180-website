@@ -166,8 +166,6 @@
   "Email address...": "ელფოსტის მისამართი...",
   "Two-Factor Authentication": "ორფაქტორიანი ავთენტიფიკაცია",
   "Select For Download": "აირჩიეთ ჩამოტვირთვისთვის",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "შეგიძლიათ შეინახოთ 5 ალბომი ან {FREE_TIER_STORAGE_LIMIT_GB} გბ-მდე უფასოდ. წაშალეთ გამოუყენებელი ალბომები ადგილის გასათავისუფლებლად.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "თქვენი ფაილები ამჟამად იკავებს {formatGB(usedGB)} ადგილს, მაგრამ თქვენ მხოლოდ {FREE_TIER_STORAGE_LIMIT_GB} გბ საცავი გაქვთ. ეს ალბომები ავტომატურად იშლება:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "თქვენი ფაილები ამჟამად იკავებს {formatGB(usedGB)} ადგილს ხელმისაწვდომი {totalStorageGB} გბ საცავიდან. შესაძლოა მალე დაგჭირდეთ თქვენი გამოწერის განახლება ალბომების შენახვის გასაგრძელებლად.",
   "Upgrade Your Subscription": "განაახლეთ თქვენი გამოწერა",
   "Storage Management": "საცავის მართვა",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "დააჭირეთ გამოწერის განახლებისთვის",
   "WILL BE DELETED": "წაიშლება",
   "Create an album in 90 sec": "შექმენით ალბომი 90 წამში",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "თქვენ გაქვთ {albumCount} ალბომი, მაგრამ უფასოდ მხოლოდ 5-ის შენახვა შეგიძლიათ. ეს ყველაზე ძველი ალბომები ავტომატურად იშლება:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "თქვენი ფაილები იკავებს {formatGB(usedGB)} ადგილს, მაგრამ თქვენ გაქვთ მხოლოდ {FREE_TIER_STORAGE_LIMIT_GB} GB საცავი. ეს ალბომები ავტომატურად იშლება:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "თქვენ გაქვთ 5-ზე მეტი ალბომი და თქვენი ფაილები იკავებს {formatGB(usedGB)} ადგილს (ლიმიტი: {FREE_TIER_STORAGE_LIMIT_GB} GB). ეს ალბომები ავტომატურად იშლება:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "თქვენი ფაილები იკავებს {formatGB(usedGB)} ადგილს, მაგრამ თქვენ გაქვთ მხოლოდ {totalStorageGB} GB საცავი. ეს ალბომები ავტომატურად იშლება:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "თქვენი ფაილები იკავებს {formatGB(usedGB)} {totalStorageGB} GB საცავიდან. შესაძლოა მალე გჭირდებათ გამოწერის განახლება.",
   "Loading account information...": "ანგარიშის ინფორმაციის ჩატვირთვა...",
   "Please enter a positive number": "გთხოვთ შეიყვანოთ დადებითი რიცხვი",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "გამოწერის ინფორმაციის ჩატვირთვა...",
   "Insufficient storage and too many albums (max 5 for free)": "არასაკმარისი საცავი და ძალიან ბევრი ალბომი (მაქს. 5 უფასო)",
   "Insufficient storage capacity": "არასაკმარისი საცავის მოცულობა",
-  "Too many albums (free tier allows max 5 albums)": "ძალიან ბევრი ალბომი (უფასო დონე შეიძლება მაქსიმუმ 5 ალბომს)"
+  "Too many albums (free tier allows max 5 albums)": "ძალიან ბევრი ალბომი (უფასო დონე შეიძლება მაქსიმუმ 5 ალბომს)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "თქვენ გაქვთ 5-ზე მეტი ალბომი და თქვენი ფაილები იკავებს {formatGB(usedGB)} ადგილს (ლიმიტი: {FREE_TIER_STORAGE_LIMIT_GB} GB). ეს ალბომები ავტომატურად იშლება, თუ არ გადაწყვეტთ სხვა ალბომების წაშლას:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "თქვენ გაქვთ {albumCount} ალბომი, მაგრამ შეგიძლიათ შეინახოთ მხოლოდ 5 უფასოდ. ეს ყველაზე ძველი ალბომები ავტომატურად იშლება, თუ არ გადაწყვეტთ სხვა ალბომების წაშლას:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "თქვენი ფაილები იკავებს {formatGB(usedGB)} ადგილს, მაგრამ თქვენ გაქვთ მხოლოდ {FREE_TIER_STORAGE_LIMIT_GB} გბ საცავი. ეს ალბომები ავტომატურად იშლება, თუ არ გადაწყვეტთ სხვა ალბომების წაშლას:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "თქვენი ფაილები იკავებს {formatGB(usedGB)} ადგილს, მაგრამ თქვენ გაქვთ მხოლოდ {totalStorageGB} გბ საცავი. ეს ალბომები ავტომატურად იშლება, თუ არ გადაწყვეტთ სხვა ალბომების წაშლას:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "შეგიძლიათ შეინახოთ 5 ალბომი რომელთა საერთო მოცულობა მაქსიმუმ {FREE_TIER_STORAGE_LIMIT_GB} გბ-ია უფასოდ. წაშალეთ გამოუყენებელი ალბომები ადგილის გასათავისუფლებლად.",
+  "Paid tiers have unlimited albums and are limited only by storage": "ფასიანი დონეები უზღუდავი ალბომებით არიან და შეზღუდულია მხოლოდ საცავით"
 }

@@ -166,8 +166,6 @@
   "Email address...": "ଇମେଲ୍ ଠିକଣା...",
   "Two-Factor Authentication": "ଦୁଇ-କାରକ ସତ୍ୟାପନ",
   "Select For Download": "ଡାଉନଲୋଡ ପାଇଁ ଚୟନ କରନ୍ତୁ",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ଆପଣ ୫ଟି ଆଲବମ୍ କିମ୍ବା {FREE_TIER_STORAGE_LIMIT_GB} ଗିବି ପର୍ଯ୍ୟନ୍ତ ମାଗଣାରେ ସଞ୍ଚୟ କରିପାରିବେ। ସ୍ଥାନ ତିଆରି କରିବାକୁ ଅବ୍ୟବହୃତ ଆଲବମ୍ ଗୁଡ଼ିକ ମିଟାନ୍ତୁ।",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ଆପଣନ୍କ ଫାଇଲ୍‌ଗୁଡ଼ିକ ବର୍ତ୍ତମାନ {formatGB(usedGB)} ସ୍ଥାନ ଦଖଲ କରିଛନ୍ତି, କିନ୍ତୁ ଆପଣଙ୍କ ପାଖରେ କେବଳ {FREE_TIER_STORAGE_LIMIT_GB} ଗିବି ଭଣ୍ଡାରଣ ଅଛି। ଏହି ଆଲବମ୍‌ଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଭାବେ ଲିଭାଯାଉଛି:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "ଆପଣନ୍କ ଫାଇଲ୍‌ଗୁଡ଼ିକ ବର୍ତ୍ତମାନ ଉପଲବ୍ଧ {totalStorageGB} ଗିବି ଭଣ୍ଡାରଣରୁ {formatGB(usedGB)} ସ୍ଥାନ ଦଖଲ କରିଛନ୍ତି। ଆଲବମ୍‌ ସଂରକ୍ଷଣ ଜାରି ରଖିବା ପାଇଁ ଆପଣଙ୍କୁ ଶୀଘ୍ର ଆପଣଙ୍କର ସବସ୍କ୍ରିପସନ୍‌ ଅପଗ୍ରେଡ୍ କରିବାକୁ ପଡ଼ିପାରେ।",
   "Upgrade Your Subscription": "ଆପଣଙ୍କର ସବସ୍କ୍ରିପସନ୍‌ ଅପଗ୍ରେଡ୍ କରନ୍ତୁ",
   "Storage Management": "ଭଣ୍ଡାର ପରିଚାଳନା",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "ସବସ୍କ୍ରିପସନ୍ ଅପଗ୍ରେଡ୍ କରିବାକୁ କ୍ଲିକ୍ କରନ୍ତୁ",
   "WILL BE DELETED": "ଲିଭାଯିବ",
   "Create an album in 90 sec": "90 ସେକେଣ୍ଡରେ ଆଲବମ୍ ତିଆରି କରନ୍ତୁ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "ଆପଣଙ୍କ ପାଖରେ {albumCount}ଟି ଆଲବମ୍ ଅଛି କିନ୍ତୁ କେବଳ ୫ଟି ମାଗଣାରେ ସେଭ୍ କରିପାରିବେ। ଏହି ସବୁଠାରୁ ପୁରୁଣା ଆଲବମ୍ ଗୁଡ଼ିକ ଆପେଆପେ ଡିଲିଟ୍ ହେଉଛି:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ଆପଣଙ୍କ ଫାଇଲଗୁଡ଼ିକ {formatGB(usedGB)} ସ୍ଥାନ ଦଖଲ କରିଛି, କିନ୍ତୁ ଆପଣଙ୍କର କେବଳ {FREE_TIER_STORAGE_LIMIT_GB} GB ଷ୍ଟୋରେଜ୍ ଅଛି। ଏହି ଆଲବମ୍ ଗୁଡ଼ିକ ଆପେଆପେ ଡିଲିଟ୍ ହେଉଛି:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "ଆପଣଙ୍କର 5ରୁ ଅଧିକ ଆଲବମ୍ ଅଛି ଏବଂ ଆପଣଙ୍କ ଫାଇଲଗୁଡ଼ିକ {formatGB(usedGB)} ସ୍ଥାନ ଦଖଲ କରିଛି (ସୀମା: {FREE_TIER_STORAGE_LIMIT_GB} GB)। ଏହି ଆଲବମ୍ ଗୁଡ଼ିକ ଆପେଆପେ ଡିଲିଟ୍ ହେଉଛି:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "ଆପଣଙ୍କ ଫାଇଲଗୁଡ଼ିକ {formatGB(usedGB)} ସ୍ଥାନ ଦଖଲ କରିଛି, କିନ୍ତୁ ଆପଣଙ୍କର କେବଳ {totalStorageGB} GB ଷ୍ଟୋରେଜ୍ ଅଛି। ଏହି ଆଲବମ୍ ଗୁଡ଼ିକ ଆପେଆପେ ଡିଲିଟ୍ ହେଉଛି:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ଆପଣଙ୍କ ଫାଇଲଗୁଡ଼ିକ {totalStorageGB} GB ଷ୍ଟୋରେଜ୍‌ରୁ {formatGB(usedGB)} ଦଖଲ କରିଛି। ଆପଣଙ୍କୁ ଶୀଘ୍ର ନିଜର ସବସ୍କ୍ରିପସନ୍ ଅପଗ୍ରେଡ୍ କରିବାକୁ ପଡ଼ିପାରେ।",
   "Loading account information...": "ଆକାଉଣ୍ଟ ସୂଚନା ଲୋଡ଼ ହେଉଛି...",
   "Please enter a positive number": "ଦୟାକରି ଏକ ଧନାତ୍ମକ ସଂଖ୍ୟା ପ୍ରବେଶ କରନ୍ତୁ",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "ସବସ୍କ୍ରିପସନ ସୂଚନା ଲୋଡ କରୁଛି...",
   "Insufficient storage and too many albums (max 5 for free)": "ପର୍ଯ୍ୟାପ୍ତ ଭଣ୍ଡାର ନାହିଁ ଏବଂ ଅଧିକ ଆଲବମ (ମୁଗ୍ଧ ସର୍ବାଧିକ ୫)",
   "Insufficient storage capacity": "ପର୍ଯ୍ୟାପ୍ତ ଭଣ୍ଡାର କ୍ଷମତା ନାହିଁ",
-  "Too many albums (free tier allows max 5 albums)": "ଅଧିକ ଆଲବମ (ମୁଗ୍ଧ ସ୍ତର ସର୍ବାଧିକ ୫ ଆଲବମକୁ ଅନୁମତି ଦିଏ)"
+  "Too many albums (free tier allows max 5 albums)": "ଅଧିକ ଆଲବମ (ମୁଗ୍ଧ ସ୍ତର ସର୍ବାଧିକ ୫ ଆଲବମକୁ ଅନୁମତି ଦିଏ)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "ଆପଣଙ୍କ ପାଖରେ 5ରୁ ଅଧିକ ଆଲବମ୍ ଅଛି ଏବଂ ଆପଣଙ୍କ ଫାଇଲଗୁଡ଼ିକ {formatGB(usedGB)} ସ୍ଥାନ ଅଧିକାର କରିଛି (ସୀମା: {FREE_TIER_STORAGE_LIMIT_GB} GB)। ଆପଣ ଅନ୍ୟ ଆଲବମଗୁଡ଼ିକ ଡିଲିଟ୍ ନକରିବା ପର୍ଯ୍ୟନ୍ତ ଏହି ଆଲବମଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଡିଲିଟ୍ ହେଉଛି:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "ଆପଣଙ୍କ ପାଖରେ {albumCount}ଟି ଆଲବମ୍ ଅଛି କିନ୍ତୁ କେବଳ ୫ଟି ମାଗଣାରେ ସେଭ୍ କରିପାରିବେ। ଆପଣ ଅନ୍ୟ ଆଲବମ୍ ଡିଲିଟ୍ କରିବାକୁ ନିଷ୍ପତ୍ତି ନ ନେଲେ ଏହି ସବୁଠାରୁ ପୁରୁଣା ଆଲବମ୍ ଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଡିଲିଟ୍ ହେଉଛି:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ଆପଣଙ୍କ ଫାଇଲଗୁଡ଼ିକ {formatGB(usedGB)} ସ୍ଥାନ ଦଖଲ କରିଛି, କିନ୍ତୁ ଆପଣଙ୍କ ପାଖରେ କେବଳ {FREE_TIER_STORAGE_LIMIT_GB} ଜିବି ଷ୍ଟୋରେଜ୍ ଅଛି। ଆପଣ ଅନ୍ୟ ଆଲବମ୍ ଡିଲିଟ୍ କରିବାକୁ ନିଷ୍ପତ୍ତି ନ ନେଲେ ଏହି ଆଲବମ୍ଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଡିଲିଟ୍ ହେଉଛି:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ଆପଣଙ୍କ ଫାଇଲଗୁଡ଼ିକ {formatGB(usedGB)} ସ୍ଥାନ ଦଖଲ କରିଛି, କିନ୍ତୁ ଆପଣଙ୍କ ପାଖରେ କେବଳ {totalStorageGB} ଜିବି ଷ୍ଟୋରେଜ୍ ଅଛି। ଆପଣ ଅନ୍ୟ ଆଲବମ୍ ଡିଲିଟ୍ କରିବାକୁ ନିଷ୍ପତ୍ତି ନ ନେଲେ ଏହି ଆଲବମ୍ଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଡିଲିଟ୍ ହେଉଛି:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ଆପଣ ସର୍ବାଧିକ {FREE_TIER_STORAGE_LIMIT_GB} ଜିବି ପର୍ଯ୍ୟନ୍ତ ୫ଟି ଆଲବମ୍ ମାଗଣାରେ ସଞ୍ଚୟ କରିପାରିବେ। ସ୍ଥାନ ତିଆରି କରିବା ପାଇଁ ଅବ୍ୟବହୃତ ଆଲବମ୍ଗୁଡ଼ିକ ଡିଲିଟ୍ କରନ୍ତୁ।",
+  "Paid tiers have unlimited albums and are limited only by storage": "ପେଡ୍ ଟାୟାରରେ ଅସୀମିତ ଆଲବମ୍ ଅଛି ଏବଂ କେବଳ ଷ୍ଟୋରେଜ୍ ଦ୍ୱାରା ସୀମିତ"
 }

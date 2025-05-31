@@ -166,8 +166,6 @@
   "Email address...": "E-Mail-Adress...",
   "Two-Factor Authentication": "Twee-Faktor-Authentifikatschoon",
   "Select For Download": "För Download Wählen",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Du kannst 5 Albums oder bet to {FREE_TIER_STORAGE_LIMIT_GB} GB för nüms spiekern. Wegmaken de Albums, de nich bruukt warrt, dat Platz maak warrt.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Dien Datein bruukt nu {formatGB(usedGB)} Platz, aver du hest blot {FREE_TIER_STORAGE_LIMIT_GB} GB Spieker. Disse Albums warrt automaatsch wegmaakt:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Dien Datein bruukt nu {formatGB(usedGB)} vun {totalStorageGB} GB Spieker, de dor is. Du muttst villicht bald dien Abonnement upgradieren, dat du wieter Albums speikern kannst.",
   "Upgrade Your Subscription": "Dien Abonnement Upgradieren",
   "Storage Management": "Spiekermanagement",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klick Um Dat Abonnement To Verbetern",
   "WILL BE DELETED": "WARRT WEGMAAKT",
   "Create an album in 90 sec": "En Album in 90 Sekunnen maken",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Du hest {albumCount} Alben aver kannst blot 5 ümsonst wegspiekern. Disse öllsten Alben warrt automaatsch wegdaan:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Konto-Informatschonen warrt laden...",
   "Please enter a positive number": "Bitte giff en positive Tahl in",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Abonnement-Informatschonen laden...",
   "Insufficient storage and too many albums (max 5 for free)": "To wenig Spiekerplatz un to veel Albums (maximum 5 ümsünst)",
   "Insufficient storage capacity": "To wenig Spiekerkapazität",
-  "Too many albums (free tier allows max 5 albums)": "To veel Albums (umsonst Stuf verlöövt maximum 5 Albums)"
+  "Too many albums (free tier allows max 5 albums)": "To veel Albums (umsonst Stuf verlöövt maximum 5 Albums)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Du hest mehr as 5 Alben UN dien Datein bruukt {formatGB(usedGB)} Platz (Grenz: {FREE_TIER_STORAGE_LIMIT_GB} GB). Disse Alben warrt automaatsch wegdaan, wenn du nich besluutst anner Alben wegtosmiten:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Du hest {albumCount} Alben, man kannst blots 5 ümsüst spiekern. Disse öllsten Alben warrt automaatsch wegsmeten, wat se du di nich beslittest, anner Alben wegtosmeten:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dien Datein bruukt {formatGB(usedGB)} Platz, man du hest blot {FREE_TIER_STORAGE_LIMIT_GB} GB Spieker. Disse Alben warrt automaatsch wegmaakt, wenn du nich annere Alben wegmaken deist:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dien Datein bruukt {formatGB(usedGB)} Platz, man du hest blot {totalStorageGB} GB Spieker. Disse Alben warrt automaatsch wegmaakt, wenn du nich annere Alben wegmaken deist:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Du kannst 5 Alben spiekern, de tosamen maximum {FREE_TIER_STORAGE_LIMIT_GB} GB för lau hebbt. Smiet de Alben weg, de du nich bruukst, dat Platz warrt.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Betahlt Stapen hebbt unlimitert Albums un sünd blot dör Spiekern inschränkt"
 }

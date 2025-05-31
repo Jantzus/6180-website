@@ -166,8 +166,6 @@
   "Email address...": "E-mail-adres...",
   "Two-Factor Authentication": "Twä-Faktor-Autentifisarung",
   "Select For Download": "För Download Utweel",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Dü könst 5 Albem of bet tu {FREE_TIER_STORAGE_LIMIT_GB} GB gratis seekre. Strik di ünbrükten Albem ütj, am Plats tu maagen.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Diin Datein brük nu {formatGB(usedGB)} Plats, ouers dü heest bluas {FREE_TIER_STORAGE_LIMIT_GB} GB Spiekermäd. Jodiar Albem wurd automatisk stregen:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Diin Datein brük nu {formatGB(usedGB)} faan {totalStorageGB} GB föörskäägen Spiekermäd. Dü koost eventuell baal diin Abonnement upgraden mut, am widjer Albem spiekerje tu könen.",
   "Upgrade Your Subscription": "Diin Abonnement Upgraden",
   "Storage Management": "Spekermanagemang",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klik Üm't Abonnement Tö Beterjen",
   "WILL BE DELETED": "WURD STREGEN",
   "Create an album in 90 sec": "En Album uun 90 sekunden maage",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Dü hääst {albumCount} Albume aw kånst man 5 gratis spiekerje. Ja äälst Albume wurd automaatisk stregen:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Konto-Informationen wärden luad...",
   "Please enter a positive number": "Bidde gääw en positiv Taal",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Abonnement-Informatioonen waare läiden...",
   "Insufficient storage and too many albums (max 5 for free)": "Tu weining Spicherplats an tu foole Albume (maksimaal 5 für sonst)",
   "Insufficient storage capacity": "Tu weining Spicherkapaziteet",
-  "Too many albums (free tier allows max 5 albums)": "Tu foole Albume (gratisk Level du tuläät maks. 5 Albume)"
+  "Too many albums (free tier allows max 5 albums)": "Tu foole Albume (gratisk Level du tuläät maks. 5 Albume)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Dü heest muar as 5 Album AN din dateien brük {formatGB(usedGB)} ruumt (graans: {FREE_TIER_STORAGE_LIMIT_GB} GB). Jodiar album wurd automaatisk stregen, oner dü besluutst ööder album tu striken:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Dü heest {albumCount} Albume man koost bluas 5 ünkrepeld spikre. Jodiar äälst Albume wurd automaatisch wächstregen, wan dü ei ütjmaagest, ööder Albume wächtostregen:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Juar datein beläägi {formatGB(usedGB)} plaas, oober jam haa bluas {FREE_TIER_STORAGE_LIMIT_GB} GB spiker. Detheer albums wurd automatisch stregen, auer jam besleet ööder albums streg:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Juar datein beläägi {formatGB(usedGB)} plaas, oober jam haa bluas {totalStorageGB} GB spiker. Detheer albums wurd automatisch stregen, auer jam besleet ööder albums streg:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Du koost 5 Albem spikre, diar tuupen maks {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Skeif uunbrükten Albem for ruim tu makin.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Betaalte niveaus haa unlimited albums än san bluas troch storage begraanst"
 }

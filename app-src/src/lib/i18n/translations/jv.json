@@ -166,8 +166,6 @@
   "Email address...": "Alamat email...",
   "Two-Factor Authentication": "Autentikasi Loro Faktor",
   "Select For Download": "Pilih Kanggo Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Sampéyan bisa nyimpen 5 album utawa nganti {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Busak album sing ora dienggo kanggo nggawé papan.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "File-file sampeyan sakit nggunakake papan {formatGB(usedGB)}, nanging sampeyan mung duwe {FREE_TIER_STORAGE_LIMIT_GB} GB panyimpenan. Album-album iki lagi dibusak kanthi otomatis:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "File-file sampeyan saiki nggunakake papan {formatGB(usedGB)} saka {totalStorageGB} GB panyimpenan sing kasedhiya. Sampeyan bisa uga kudu upgrade langganan sampeyan enggal supaya bisa terus nyimpen album.",
   "Upgrade Your Subscription": "Upgrade Langganan Sampeyan",
   "Storage Management": "Manajemen Panyimpenan",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klik Kanggo Nganyarke Langganan",
   "WILL BE DELETED": "BAKAL DIBUSAK",
   "Create an album in 90 sec": "Gawe album ing 90 detik",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Sampeyan duwe {albumCount} album nanging mung bisa nyimpen 5 gratis. Album-album paling lawas iki dideleng otomatis:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Ngunggahi informasi akun...",
   "Please enter a positive number": "Mangga lebokna angka positif",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Ngunggahake informasi subscription...",
   "Insufficient storage and too many albums (max 5 for free)": "Panyimpenan kurang lan album akeh banget (maksimal 5 gratis)",
   "Insufficient storage capacity": "Kapasitas panyimpenan kurang",
-  "Too many albums (free tier allows max 5 albums)": "Album akeh banget (tingkat gratis ngidini maksimal 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "Album akeh banget (tingkat gratis ngidini maksimal 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Sampeyan duwe luwih saka 5 album LAN berkas sampeyan nggunakake {formatGB(usedGB)} papan (watesan: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album-album iki lagi dibusak kanthi otomatis kajaba sampeyan mutusake mbusak album liyane:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Sampeyan duwe {albumCount} album nanging mung bisa nyimpen 5 kanthi gratis. Album-album lawas iki bakal dibusak otomatis kajaba sampeyan mutusake mbusak album liyane:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "File sampeyan manggoni {formatGB(usedGB)} papan, nanging sampeyan mung duwe {FREE_TIER_STORAGE_LIMIT_GB} GB panyimpenan. Album iki otomatis dibusak kajaba sampeyan mutusake mbusak album liyane:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "File sampeyan manggoni {formatGB(usedGB)} papan, nanging sampeyan mung duwe {totalStorageGB} GB panyimpenan. Album iki otomatis dibusak kajaba sampeyan mutusake mbusak album liyane:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Sampeyan bisa nyimpen 5 album sing gunggunge maksimal {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Busek album sing ora dipakai kanggo nggawe papan.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Tingkat mbayar duwe album tanpa wates lan diwatesi mung dening panyimpenan"
 }

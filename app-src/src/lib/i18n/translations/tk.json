@@ -166,8 +166,6 @@
   "Email address...": "Elektron poçta adresi...",
   "Two-Factor Authentication": "Iki-Faktor Tassyklaýyş",
   "Select For Download": "Ýüklemek Üçin Saýla",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 albom ýa-da {FREE_TIER_STORAGE_LIMIT_GB} GB çenli mugt saklap bilersiňiz. Ýer döretmek üçin ulanylmaýan albomlary poz.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Faýllaryňyz häzir {formatGB(usedGB)} ýer eýeleýär, ýöne siziň diňe {FREE_TIER_STORAGE_LIMIT_GB} GB ammar ýeriňiz bar. Bu albomlar awtomatiki pozulýar:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Faýllaryňyz häzir elýeterli {totalStorageGB} GB ammar ýerinden {formatGB(usedGB)} ýer eýeleýär. Albomlary ýazdyrmaga dowam etmek üçin ýakyn wagtda abonementleriňi täzelemegiň zerur bolup biler.",
   "Upgrade Your Subscription": "Abonementleriňi Täzelemek",
   "Storage Management": "Saklama Dolandyryşy",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Ýazgynyň Derejesini Ýokarlatmak Üçin Tykla",
   "WILL BE DELETED": "ÖÇÜRILER",
   "Create an album in 90 sec": "90 sekundda albom dörediň",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Siziň {albumCount} albomyňyz bar, ýöne mugt diňe 5-sini saklap bilýärsiňiz. Bu iň köne albomlar awtomatiki pozulýar:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Hasap maglumatlary ýüklenýär...",
   "Please enter a positive number": "Pozitif san giriziň",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Abonent maglumatlary ýüklenýär...",
   "Insufficient storage and too many albums (max 5 for free)": "Saklamak üçin ýer ýeterlik däl we albom köp (mugt üçin iň köp 5)",
   "Insufficient storage capacity": "Saklamagyň ukybyny ýeterlik däl",
-  "Too many albums (free tier allows max 5 albums)": "Albom köp (mugt derejesi iň köp 5 alboma rugsat berýär)"
+  "Too many albums (free tier allows max 5 albums)": "Albom köp (mugt derejesi iň köp 5 alboma rugsat berýär)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "5-den köp albomyňyz bar WE faýllaryňyz {formatGB(usedGB)} ýer eýeleýär (çäk: {FREE_TIER_STORAGE_LIMIT_GB} GB). Bu albomlar beýleki albomlary pozmak kararyna gelmedigiňiz ýagdaýynda awtomatik pozulýar:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Siziň {albumCount} albomyňyz bar, ýöne mugt diňe 5-sini ýazdyryp bilersiňiz. Bu iň köne albomlar beýleki albomlary pozmak kararyna gelmseňiz awtomatiki görnüşde pozulýar:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Faýllaryňyz {formatGB(usedGB)} ýer eýeleýär, ýöne {FREE_TIER_STORAGE_LIMIT_GB} GB saklaýjy ýeriňiz bar diňe. Bu albomlar awtomat pozulýar, eger beýleki albomlary pozmaga karar bermesäňiz:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Faýllaryňyz {formatGB(usedGB)} ýer eýeleýär, ýöne {totalStorageGB} GB saklaýjy ýeriňiz bar diňe. Bu albomlar awtomat pozulýar, eger beýleki albomlary pozmaga karar bermesäňiz:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Maksimum {FREE_TIER_STORAGE_LIMIT_GB} GB ululykda 5 sany albom mugt saklap bilersiňiz. Ýer döretmek üçin ulanylmaýan albomlary pozmaly.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Tölegli derejeler çäksiz albomlara eýe we diňe saklamak bilen çäklendirýär"
 }

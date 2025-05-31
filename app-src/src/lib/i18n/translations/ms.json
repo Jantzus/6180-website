@@ -166,8 +166,6 @@
   "Email address...": "Alamat e-mel...",
   "Two-Factor Authentication": "Pengesahan Dua Faktor",
   "Select For Download": "Pilih Untuk Muat Turun",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Anda boleh menyimpan 5 album atau sehingga {FREE_TIER_STORAGE_LIMIT_GB} GB secara percuma. Padamkan album yang tidak digunakan untuk buat ruang.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Fail anda sekarang menduduki ruang {formatGB(usedGB)}, tetapi anda hanya mempunyai {FREE_TIER_STORAGE_LIMIT_GB} GB storan. Album-album ini sedang dipadamkan secara automatik:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Fail anda sekarang menduduki ruang {formatGB(usedGB)} daripada {totalStorageGB} GB storan yang tersedia. Anda mungkin perlu menaik taraf langganan anda tidak lama lagi untuk terus menyimpan album.",
   "Upgrade Your Subscription": "Naik Taraf Langganan Anda",
   "Storage Management": "Pengurusan Penyimpanan",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klik Untuk Menaik Taraf Langganan",
   "WILL BE DELETED": "AKAN DIPADAM",
   "Create an album in 90 sec": "Cipta album dalam 90 saat",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Anda mempunyai {albumCount} album tetapi hanya boleh menyimpan 5 secara percuma. Album tertua ini sedang dipadamkan secara automatik:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Fail anda menggunakan ruang {formatGB(usedGB)}, tetapi anda hanya mempunyai {FREE_TIER_STORAGE_LIMIT_GB} GB storan. Album ini sedang dipadamkan secara automatik:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Anda mempunyai lebih daripada 5 album DAN fail anda menggunakan ruang {formatGB(usedGB)} (had: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album ini sedang dipadamkan secara automatik:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Fail anda menggunakan ruang {formatGB(usedGB)}, tetapi anda hanya mempunyai {totalStorageGB} GB storan. Album ini sedang dipadamkan secara automatik:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Fail anda menggunakan {formatGB(usedGB)} daripada {totalStorageGB} GB storan. Anda mungkin perlu menaik taraf langganan anda tidak lama lagi.",
   "Loading account information...": "Memuatkan maklumat akaun...",
   "Please enter a positive number": "Sila masukkan nombor positif",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Memuatkan maklumat langganan...",
   "Insufficient storage and too many albums (max 5 for free)": "Storan tidak mencukupi dan terlalu banyak album (maks. 5 percuma)",
   "Insufficient storage capacity": "Kapasiti storan tidak mencukupi",
-  "Too many albums (free tier allows max 5 albums)": "Terlalu banyak album (peringkat percuma membenarkan maks. 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "Terlalu banyak album (peringkat percuma membenarkan maks. 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Anda mempunyai lebih daripada 5 album DAN fail anda menggunakan ruang {formatGB(usedGB)} (had: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album ini akan dipadamkan secara automatik melainkan anda memutuskan untuk memadam album lain:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Anda mempunyai {albumCount} album tetapi hanya boleh menyimpan 5 secara percuma. Album terlama ini sedang dipadam secara automatik melainkan anda memutuskan untuk memadam album lain:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fail anda menduduki {formatGB(usedGB)} ruang, tetapi anda hanya mempunyai {FREE_TIER_STORAGE_LIMIT_GB} GB storan. Album ini sedang dipadamkan secara automatik melainkan anda memutuskan untuk memadamkan album lain:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fail anda menduduki {formatGB(usedGB)} ruang, tetapi anda hanya mempunyai {totalStorageGB} GB storan. Album ini sedang dipadamkan secara automatik melainkan anda memutuskan untuk memadamkan album lain:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Anda boleh menyimpan 5 album dengan jumlah maksimum {FREE_TIER_STORAGE_LIMIT_GB} GB secara percuma. Padamkan album yang tidak digunakan untuk membuat ruang.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Peringkat berbayar mempunyai album tanpa had dan dihadkan hanya oleh penyimpanan"
 }

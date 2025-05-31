@@ -166,8 +166,6 @@
   "Email address...": "Chaski imayl...",
   "Two-Factor Authentication": "Iskay-Factor Verificacion",
   "Select For Download": "Uraykuy Akllana",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 albumkunata utaq {FREE_TIER_STORAGE_LIMIT_GB} GB kama mana qullqiwan waqaychayta atiwaq. Mana llamkachisqa albumkunata pichay sitio ruwanapaq.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Kunankama archivokuna {formatGB(usedGB)} chiqanta hap'inku, ichaqa {FREE_TIER_STORAGE_LIMIT_GB} GB waqaychayllam kanki. Kay albumkuna kikillanmanta chinkachisqa kankichik:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Kunankama archivokuna {totalStorageGB} GB kaq waqaychanamanta {formatGB(usedGB)} chiqanta hap'inku. Albumkuna waqaychayta wiñachinaykipaq suscripcionniyki paqarichiy utaq chayamunqa.",
   "Upgrade Your Subscription": "Suscripcionniyki Paqarichiy",
   "Storage Management": "Waqaychay Kamachiy",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Ñit'iy Subscription-ta Allinta Kananpaq",
   "WILL BE DELETED": "CHINKACHISQA KANQA",
   "Create an album in 90 sec": "90 segundokunapiqa albumta ruway",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Qam {albumCount} albumkunata charankiman ichaqa 5-ta qullaqa waqaychay atiwaqmi. Kay aswan ñawpaq albumkuna kikinmanta ch'usaqchakusqaku:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Rakiypa willaynin chargaspa...",
   "Please enter a positive number": "Ama hina sumaq yupaykunata churay",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Qillqakuy willayta chaskinapaq...",
   "Insufficient storage and too many albums (max 5 for free)": "Mana allin waqaychay paqtachi hinaqa album nisqa askha (mana qullqiyuq 5)",
   "Insufficient storage capacity": "Mana allin waqaychay atiy",
-  "Too many albums (free tier allows max 5 albums)": "Album nisqa askha (mana qullqiyuq patapi 5 album nisqalla)"
+  "Too many albums (free tier allows max 5 albums)": "Album nisqa askha (mana qullqiyuq patapi 5 album nisqalla)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "5-manta aswan albumniyki tiyan CHAYMANTA willayukkunayki {formatGB(usedGB)} k'itita hap'in (phuyu: {FREE_TIER_STORAGE_LIMIT_GB} GB). Kay albumkuna kikinmanta chinkachikuchkanku mana huk albumkunata chinkachiy munasqaykiman:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Qamqa {albumCount} albumkuna kanki ichaqa 5-lla mana qullqiyuqta waqaychayta atinki. Kay ñawpaq albumkunaqa kikinmanta chinkachisqa kanku manachus huk albumkunata chinkachiy qamqa tanteankichu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Willanaykikuna {formatGB(usedGB)} takanakuytan hapin, ichaqa {FREE_TIER_STORAGE_LIMIT_GB} GB waqaychanayllatan kanki. Kay álbumkuna kikillanpitan chinkachisqa kanku, mana huk álbumkunata chinkachinankupaq tanteankichu chayqa:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Willanaykikuna {formatGB(usedGB)} takanakuytan hapin, ichaqa {totalStorageGB} GB waqaychanayllatan kanki. Kay álbumkuna kikillanpitan chinkachisqa kanku, mana huk álbumkunata chinkachinankupaq tanteankichu chayqa:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 albumkunata waqaychayta atinki, llapanku {FREE_TIER_STORAGE_LIMIT_GB} GB-ta pisiyachispankama mana qullqiyuq. Mana llamk'achisqa albumkunata qichuy chayaspace kananpaq.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Qulqilliq kaqkunapi mana tukukuq album kaqkun hinaspa waqaychaylla kaqwan sayasqa"
 }

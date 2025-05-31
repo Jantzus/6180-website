@@ -166,8 +166,6 @@
   "Email address...": "Adressa d'e-mail...",
   "Two-Factor Authentication": "Autentificaziun A Dus Facturs",
   "Select For Download": "Tscherner Per Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Vus pudais midar 5 albums u enfin {FREE_TIER_STORAGE_LIMIT_GB} GB senza custs. Stizzai albums betg duvrads per crear plaz.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Vossas datotecas occupeschan actualmain {formatGB(usedGB)} plaz, ma vus avais mo {FREE_TIER_STORAGE_LIMIT_GB} GB d'emmagazinadi. Quests albums vegnan stizzads automaticamain:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Vossas datotecas occupeschan actualmain {formatGB(usedGB)} plaz da {totalStorageGB} GB emmagazinadi che stat a disposiziun. Vus stuess eventualmain prest actualisar voss abonament per pudair cuntinuar a memorizar albums.",
   "Upgrade Your Subscription": "Actualisar Voss Abonament",
   "Storage Management": "Administraziun Da Quest",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Cliccar Per Actualisar L'Abonnament",
   "WILL BE DELETED": "VEGN STIZZÀ VIA",
   "Create an album in 90 sec": "Crear in album en 90 secundas",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Vus avais {albumCount} albums ma pudais mo memorisar 5 senza pajar. Quests albums vegls vegnan stizzads automaticamain:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Chargiond informaziuns dal conto...",
   "Please enter a positive number": "Perfavur introducescha in numer positiv",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Chargiond informatziuns d'abunament...",
   "Insufficient storage and too many albums (max 5 for free)": "Spazi d'emmagasinament insuffizient e memia albums (max. 5 gratuits)",
   "Insufficient storage capacity": "Capacitad d'emmagasinament insuffizienta",
-  "Too many albums (free tier allows max 5 albums)": "Memia albums (il nivel gratuit permettess max. 5 albums)"
+  "Too many albums (free tier allows max 5 albums)": "Memia albums (il nivel gratuit permettess max. 5 albums)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ti has dapli che 5 albums ED las tias datotecas occupeschan {formatGB(usedGB)} plazza (limita: {FREE_TIER_STORAGE_LIMIT_GB} GB). Quests albums vegnan stizzads automaticamain sche ti na decidast betg da stizzar auters albums:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Vus avais {albumCount} albums ma pudais mo preservar 5 gratuitamain. Quels albums ils pli vegls vegnan automaticamain stizzads sch'ins na decidais betg da stizzar auters albums:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ils teus files occupeschan {formatGB(usedGB)} plaz, ma ti has mo {FREE_TIER_STORAGE_LIMIT_GB} GB da capacity. Quest albums vegnan stizzads automaticamain nun che ti decidast da stizzar auters albums:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ils teus files occupeschan {formatGB(usedGB)} plaz, ma ti has mo {totalStorageGB} GB da capacity. Quest albums vegnan stizzads automaticamain nun che ti decidast da stizzar auters albums:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ti pos memorisar 5 albums che han en total maximalmain {FREE_TIER_STORAGE_LIMIT_GB} GB gratuitamain. Stizza ils albums betg duvrads per far plaz.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Ils stadis betgads han albums senza limita e vegnan mo limitads da l'arcunisar"
 }

@@ -166,8 +166,6 @@
   "Email address...": "Cyfeiriad e-bost...",
   "Two-Factor Authentication": "Dilysu Dau-Ffactor",
   "Select For Download": "Dewis I Lawrlwytho",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Gallwch gadw 5 albwm neu hyd at {FREE_TIER_STORAGE_LIMIT_GB} GB am ddim. Dilëwch albymau nas defnyddir i wneud lle.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Mae eich ffeiliau'n cymryd {formatGB(usedGB)} o le ar hyn o bryd, ond dim ond {FREE_TIER_STORAGE_LIMIT_GB} GB o storfa sydd gennych. Mae'r albymau hyn yn cael eu dileu'n awtomatig:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Mae eich ffeiliau'n cymryd {formatGB(usedGB)} o {totalStorageGB} GB o storfa sydd ar gael ar hyn o bryd. Efallai y bydd angen i chi uwchraddio'ch tanysgrifiad yn fuan i barhau i gadw albymau.",
   "Upgrade Your Subscription": "Uwchraddio Eich Tanysgrifiad",
   "Storage Management": "Rheoli Storfa",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Cliciwch I Uwchraddio'r Tanysgrifiad",
   "WILL BE DELETED": "CAIFF EI DDILEU",
   "Create an album in 90 sec": "Creu albwm mewn 90 eiliad",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Mae gennych {albumCount} o albymau ond dim ond 5 y gallwch eu cadw am ddim. Mae'r albymau hynaf hyn yn cael eu dileu yn awtomatig:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Mae eich ffeiliau'n cymeryd {formatGB(usedGB)} o le, ond dim ond {FREE_TIER_STORAGE_LIMIT_GB} GB o storfa sydd gennych. Mae'r albymau hyn yn cael eu dileu yn awtomatig:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Mae gennych dros 5 albwm AC mae eich ffeiliau'n cymeryd {formatGB(usedGB)} o le (terfyn: {FREE_TIER_STORAGE_LIMIT_GB} GB). Mae'r albymau hyn yn cael eu dileu yn awtomatig:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Mae eich ffeiliau'n cymeryd {formatGB(usedGB)} o le, ond dim ond {totalStorageGB} GB o storfa sydd gennych. Mae'r albymau hyn yn cael eu dileu yn awtomatig:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Mae eich ffeiliau'n cymeryd {formatGB(usedGB)} o {totalStorageGB} GB o storfa. Efallai y bydd angen i chi uwchraddio'ch tanysgrifiad yn fuan.",
   "Loading account information...": "Yn llwytho gwybodaeth cyfrif...",
   "Please enter a positive number": "Rhowch rif cadarnhaol",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Yn llwytho gwybodaeth tanysgrifiad...",
   "Insufficient storage and too many albums (max 5 for free)": "Storio annigonol a gormod o albymau (uchafswm 5 am ddim)",
   "Insufficient storage capacity": "Gallu storio annigonol",
-  "Too many albums (free tier allows max 5 albums)": "Gormod o albymau (mae'r haen am ddim yn caniatáu uchafswm o 5 albwm)"
+  "Too many albums (free tier allows max 5 albums)": "Gormod o albymau (mae'r haen am ddim yn caniatáu uchafswm o 5 albwm)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Mae gennych chi fwy na 5 albwm AC mae eich ffeiliau'n cymryd {formatGB(usedGB)} o le (terfyn: {FREE_TIER_STORAGE_LIMIT_GB} GB). Mae'r albymau hyn yn cael eu dileu'n awtomatig oni bai eich bod chi'n penderfynu dileu albymau eraill:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Mae gennych {albumCount} albwm ond gallwch gadw 5 yn unig am ddim. Mae'r albymau hynaf hyn yn cael eu dileu yn awtomatig oni bai eich bod yn penderfynu dileu albymau eraill:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mae eich ffeiliau'n cymryd {formatGB(usedGB)} o le, ond dim ond {FREE_TIER_STORAGE_LIMIT_GB} GB o storfa sydd gennych. Mae'r albymau hyn yn cael eu dileu'n awtomatig oni bai eich bod chi'n penderfynu dileu albymau eraill:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mae eich ffeiliau'n cymryd {formatGB(usedGB)} o le, ond dim ond {totalStorageGB} GB o storfa sydd gennych. Mae'r albymau hyn yn cael eu dileu'n awtomatig oni bai eich bod chi'n penderfynu dileu albymau eraill:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Gallwch gadw 5 albwm sy'n cyfansymio i uchafswm o {FREE_TIER_STORAGE_LIMIT_GB} GB am ddim. Dilëwch albymau nas defnyddir i wneud lle.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Mae haenau talu yn cael albymau diderfyn ac yn gyfyngedig gan storfa yn unig"
 }

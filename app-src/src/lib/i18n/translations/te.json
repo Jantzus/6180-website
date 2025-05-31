@@ -166,8 +166,6 @@
   "Email address...": "ఇమెయిల్ చిరునామా...",
   "Two-Factor Authentication": "రెండు-కారకాల ప్రమాణీకరణ",
   "Select For Download": "డౌన్‌లోడ్ కోసం ఎంచుకోండి",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "మీరు 5 ఆల్బమ్‌లను లేదా {FREE_TIER_STORAGE_LIMIT_GB} జిబి వరకు ఉచితంగా సేవ్ చేయవచ్చు। స్థలం చేయడానికి ఉపయోగించని ఆల్బమ్‌లను తొలగించండి।",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "మీ ఫైల్‌లు ప్రస్తుతం {formatGB(usedGB)} స్థలాన్ని ఆక్రమిస్తున్నాయి, కానీ మీకు {FREE_TIER_STORAGE_LIMIT_GB} జిబి నిల్వ మాత్రమే ఉంది. ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "మీ ఫైల్‌లు ప్రస్తుతం అందుబాటులో ఉన్న {totalStorageGB} జిబి స్టోరేజీలో {formatGB(usedGB)} స్థలాన్ని ఆక్రమిస్తున్నాయి। ఆల్బమ్‌లను సేవ్ చేయడం కొనసాగించడానికి మీరు త్వరలో మీ సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయాల్సి రావచ్చు।",
   "Upgrade Your Subscription": "మీ సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయండి",
   "Storage Management": "నిల్వ నిర్వహణ",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయడానికి క్లిక్ చేయండి",
   "WILL BE DELETED": "తొలగించబడుతుంది",
   "Create an album in 90 sec": "90 సెకన్లలో ఆల్బమ్ సృష్టించండి",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "మీ దగ్గర {albumCount} ఆల్బమ్‌లు ఉన్నాయి కానీ ఉచితంగా కేవలం 5 మాత్రమే సేవ్ చేయగలరు. ఈ అత్యంత పాత ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "మీ ఫైళ్లు {formatGB(usedGB)} స్థలాన్ని ఆక్రమిస్తున్నాయి, కానీ మీ దగ్గర {FREE_TIER_STORAGE_LIMIT_GB} GB నిల్వ మాత్రమే ఉంది। ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "మీ దగ్గర 5కు మించి ఆల్బమ్‌లు ఉన్నాయి మరియు మీ ఫైళ్లు {formatGB(usedGB)} స్థలాన్ని ఆక్రమిస్తున్నాయి (పరిమితి: {FREE_TIER_STORAGE_LIMIT_GB} GB). ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "మీ ఫైళ్లు {formatGB(usedGB)} స్థలాన్ని ఆక్రమిస్తున్నాయి, కానీ మీ దగ్గర {totalStorageGB} GB నిల్వ మాత్రమే ఉంది। ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "మీ ఫైళ్లు {totalStorageGB} GB నిల్వలో {formatGB(usedGB)} ఆక్రమిస్తున్నాయి. మీరు త్వరలో మీ సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయాల్సి రావచ్చు.",
   "Loading account information...": "ఖాతా సమాచారాన్ని లోడ్ చేస్తోంది...",
   "Please enter a positive number": "దయచేసి ధనాత్మక సంఖ్యను ఎంటర్ చేయండి",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "సబ్‌స్క్రిప్షన్ సమాచారాన్ని లోడ్ చేస్తోంది...",
   "Insufficient storage and too many albums (max 5 for free)": "తగినంత నిల్వ లేదు మరియు చాలా ఆల్బమ్‌లు (ఉచితంగా గరిష్టంగా 5)",
   "Insufficient storage capacity": "తగినంత నిల్వ సామర్థ్యం లేదు",
-  "Too many albums (free tier allows max 5 albums)": "చాలా ఆల్బమ్‌లు (ఉచిత శ్రేణి గరిష్టంగా 5 ఆల్బమ్‌లను అనుమతిస్తుంది)"
+  "Too many albums (free tier allows max 5 albums)": "చాలా ఆల్బమ్‌లు (ఉచిత శ్రేణి గరిష్టంగా 5 ఆల్బమ్‌లను అనుమతిస్తుంది)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "మీకు 5 కంటే ఎక్కువ ఆల్బమ్‌లు ఉన్నాయి మరియు మీ ఫైల్‌లు {formatGB(usedGB)} స్థలాన్ని ఆక్రమించాయి (పరిమితి: {FREE_TIER_STORAGE_LIMIT_GB} GB). మీరు ఇతర ఆల్బమ్‌లను తొలగించాలని నిర్ణయించకపోతే ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "మీ వద్ద {albumCount} ఆల్బమ్‌లు ఉన్నాయి కానీ మీరు ఉచితంగా 5 మాత్రమే సేవ్ చేయగలరు. మీరు ఇతర ఆల్బమ్‌లను తొలగించాలని నిర్ణయించుకోకపోతే ఈ పాత ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "మీ ఫైల్‌లు {formatGB(usedGB)} స్థలాన్ని ఆక్రమించాయి, కానీ మీకు {FREE_TIER_STORAGE_LIMIT_GB} జిబి నిల్వ మాత్రమే ఉంది. మీరు ఇతర ఆల్బమ్‌లను తొలగించాలని నిర్ణయించుకోకపోతే ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "మీ ఫైల్‌లు {formatGB(usedGB)} స్థలాన్ని ఆక్రమించాయి, కానీ మీకు {totalStorageGB} జిబి నిల్వ మాత్రమే ఉంది। మీరు ఇతర ఆల్బమ్‌లను తొలగించాలని నిర్ణయించుకోకపోతే ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "మీరు గరిష్టంగా {FREE_TIER_STORAGE_LIMIT_GB} జీబీ వరకు 5 ఆల్బమ్‌లను ఉచితంగా సేవ్ చేయవచ్చు। స్థలం చేయడానికి ఉపయోగించని ఆల్బమ్‌లను తొలగించండి.",
+  "Paid tiers have unlimited albums and are limited only by storage": "చెల్లింపు టైర్‌లలో అపరిమిత ఆల్బమ్‌లు ఉంటాయి మరియు నిల్వ ద్వారా మాత్రమే పరిమితం చేయబడతాయి"
 }

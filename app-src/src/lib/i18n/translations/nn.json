@@ -166,8 +166,6 @@
   "Email address...": "E-postadresse...",
   "Two-Factor Authentication": "Tofaktor-Autentisering",
   "Select For Download": "Vel For Nedlasting",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Du kan lagre 5 album eller opp til {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Slett ubrukte album for å lage plass.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Filene dine tek førebels {formatGB(usedGB)} plass, men du har berre {FREE_TIER_STORAGE_LIMIT_GB} GB lagring. Desse albuma vert automatisk sletta:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Filene dine tek førebels {formatGB(usedGB)} plass av {totalStorageGB} GB tilgjengeleg lagring. Du må kanskje snart oppgradere abonnementet ditt for å halde fram med å lagre album.",
   "Upgrade Your Subscription": "Oppgrader Abonnementet Ditt",
   "Storage Management": "Lagringshandsaming",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klikk For Å Oppgradere Abonnementet",
   "WILL BE DELETED": "VIL VERTE SLETTA",
   "Create an album in 90 sec": "Opprett eit album på 90 sekund",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Du har {albumCount} album men kan berre lagra 5 gratis. Desse eldste albuma vert automatisk sletta:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Lastar kontoinformasjon...",
   "Please enter a positive number": "Skriv inn eit positivt tal",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Lastar abonnementsinformasjon...",
   "Insufficient storage and too many albums (max 5 for free)": "Utilstrekkeleg lagringsplass og for mange album (maks. 5 gratis)",
   "Insufficient storage capacity": "Utilstrekkeleg lagringskapasitet",
-  "Too many albums (free tier allows max 5 albums)": "For mange album (gratis nivå tillèt maks. 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "For mange album (gratis nivå tillèt maks. 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Du har fleire enn 5 album OG filene dine tar {formatGB(usedGB)} plass (grense: {FREE_TIER_STORAGE_LIMIT_GB} GB). Desse albuma blir automatisk sletta med mindre du bestemmer deg for å slette andre album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Du har {albumCount} album men kan berre lagra 5 gratis. Desse eldste albuma vert automatisk sletta med mindre du bestemmer deg for å sletta andre album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Filene dine tek {formatGB(usedGB)} plass, men du har berre {FREE_TIER_STORAGE_LIMIT_GB} GB lagring. Desse albuma vert automatisk sletta med mindre du bestemmer deg for å slette andre album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Filene dine tek {formatGB(usedGB)} plass, men du har berre {totalStorageGB} GB lagring. Desse albuma vert automatisk sletta med mindre du bestemmer deg for å slette andre album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Du kan lagra 5 album som til saman har maksimalt {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Slett ubrukte album for å laga plass.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Betalte nivå har ubegrensa album og er berre avgrensa av lagring"
 }

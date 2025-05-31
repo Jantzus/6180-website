@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Thil Hnih-A Finfiah",
   "Select For Download": "Download atan thlan rawh",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "I save thei ang 5 album emaw {FREE_TIER_STORAGE_LIMIT_GB} GB thleng chu a tawk loh. Hmuna siam nan album hman loh tak tak chu paih rawh.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "I filete pawhin tunah hian {formatGB(usedGB)} hmun a hman mek a, mahse i storage {FREE_TIER_STORAGE_LIMIT_GB} GB chauh i nei. Heng album te hi amah ten an lo paih mek:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "I filete pawhin tunah hian a awm {totalStorageGB} GB storage aṭanga {formatGB(usedGB)} hmun a hman mek. Album dahṭhat chhunzawm zel nan i subscription hi rang takin upgrade i tul thei ang.",
   "Upgrade Your Subscription": "I Subscription Hi Upgrade Rawh",
   "Storage Management": "Dahna Enkawl Dan",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Subscription tihsang nan tur chu men rawh",
   "WILL BE DELETED": "paih a ni ang",
   "Create an album in 90 sec": "90 sekond chhungah album siam rawh",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "I neih album {albumCount} a awm nain mahse, tlem takin 5 chauh i dahtu thei ang. Heng album hlui tak tak te hi amah thu hmangin a paih chhuak thin:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Account thu dawn mek...",
   "Please enter a positive number": "Positive number dah turin",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Loading subscription information...",
   "Insufficient storage and too many albums (max 5 for free)": "Insufficient storage and too many albums (max 5 for free)",
   "Insufficient storage capacity": "Insufficient storage capacity",
-  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)"
+  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "I album 5 aia sang i nei a, chuleh i file-te chuan {formatGB(usedGB)} hmun an la (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). He album-te hi automatic-a nuai ani ang, album dang nuai i tul loh anih chuan:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "I hian {albumCount} album i nei a, mahse a thlawt takin 5 chauh i dahrun thei ang. Album hlui ber te hi atomatik in a paih chhuak ang a, album dangte paih chhuah turte i rel tel loh chuan:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "I file-te hian {formatGB(usedGB)} hmun an la a, mahse {FREE_TIER_STORAGE_LIMIT_GB} GB vawn hmun chauh i nei. Heng album-te hi inmahin an bo ve ang a, album dangte i bo tur chuan i thlan reng loh chuan:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "I file-te hian {formatGB(usedGB)} hmun an la a, mahse {totalStorageGB} GB vawn hmun chauh i nei. Heng album-te hi inmahin an bo ve ang a, album dangte i bo tur chuan i thlan reng loh chuan:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "I thei a, album 5 leh a bîk veivah {FREE_TIER_STORAGE_LIMIT_GB} GB thleng chu a thlawk a save theih ang. Hmun siam nan album hmang lo ho chu nuai vek rawh.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Pek tier-ah chuan album tawp nei lo a awm a, storage-in a tikhain chauh a ni"
 }

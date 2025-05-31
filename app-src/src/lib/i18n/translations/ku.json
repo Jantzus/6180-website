@@ -166,8 +166,6 @@
   "Email address...": "Navnîşana e-peyamê...",
   "Two-Factor Authentication": "Dopiştrastkirina Du-Faktor",
   "Select For Download": "Ji Bo Download Bibijêre",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Hûn dikarin 5 albûm an heta {FREE_TIER_STORAGE_LIMIT_GB} GB belaş hilînin. Albûmên ku nayên bikaranîn jê bibin ji bo cîhê vala bikin.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Pelên we niha {formatGB(usedGB)} cih digirin, lê te tenê {FREE_TIER_STORAGE_LIMIT_GB} GB hilanîn heye. Van albûman bi awayekî otomatîk tên jêbirin:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Pelên we niha ji {totalStorageGB} GB hilanîna berdest {formatGB(usedGB)} cih digirin. Dibe ku hûn hewce bikin ku zû abûneya xwe bilind bikin da ku albuman hilînin bidomînin.",
   "Upgrade Your Subscription": "Abûneya Xwe Bilind Bikin",
   "Storage Management": "Rêveberiya Hilanînê",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Bikere Bo Bilindkirina Subscription",
   "WILL BE DELETED": "ÊDÎ JÊBIRIN",
   "Create an album in 90 sec": "Di 90 çirkeyan de albûmek biafirînin",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Hûn {albumCount} albûm hene lê tenê 5 dikarin belaş tomar bikin. Ev albûmên herî kevn bixweber têne jêbirin:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Zanyariyên ajimêr tên barkirin...",
   "Please enter a positive number": "Ji kerema xwe hejmareke erênî binivîse",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Agahiyên beşdariyê tên barkirin...",
   "Insufficient storage and too many albums (max 5 for free)": "Cihê hilanînê kêm û albûm pir in (herî zêde 5 belaş)",
   "Insufficient storage capacity": "Kapasîteya cihê hilanînê kêm",
-  "Too many albums (free tier allows max 5 albums)": "Albûm pir in (asta belaş herî zêde 5 albûman destûr dide)"
+  "Too many albums (free tier allows max 5 albums)": "Albûm pir in (asta belaş herî zêde 5 albûman destûr dide)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Tu bêtir ji 5 albûman heye Û pelên te {formatGB(usedGB)} cih digirin (sînor: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ev albûm bi awayekî otomatîk tên jêbirin gava ku tu biryara jêbirina albûmên din nede:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Li te {albumCount} albûm hene lê tu tenê dikarî 5an bi xêrî tomar bikî. Ev albûmên kevintirîn bê xweber têne jêbirin heger tu biryar nedî ku albûmên din jê bikî:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Pelên te {formatGB(usedGB)} cih dagirin, lê te tenê {FREE_TIER_STORAGE_LIMIT_GB} GB cihê hilanînê heye. Ev albûm bi awayê otomatîk têne jêbirin heta ku tu biryara jêbirina albûmên din nedî:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Pelên te {formatGB(usedGB)} cih dagirin, lê te tenê {totalStorageGB} GB cihê hilanînê heye. Ev albûm bi awayê otomatîk têne jêbirin heta ku tu biryara jêbirina albûmên din nedî:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Hûn dikarin 5 albûm qeyd bikin ku bi giştî herî zêde {FREE_TIER_STORAGE_LIMIT_GB} GB belaş be. Ji bo çêkirina cihê albûmên ku nayên bikaranîn jê bibin.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Astyên fekirî albûmên bêsînor hene û tenê bi hilanîna wan tên sînordarkirin"
 }

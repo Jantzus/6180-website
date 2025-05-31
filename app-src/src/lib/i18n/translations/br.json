@@ -166,8 +166,6 @@
   "Email address...": "Chomlec'h postel...",
   "Two-Factor Authentication": "Dilesadur Daou-Dra",
   "Select For Download": "Dibab Evit Pellgargañ",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Gallout a rit mirout 5 albom pe betek {FREE_TIER_STORAGE_LIMIT_GB} GB evit netra. Diverkit an albom n'int ket implijet evit ober plas.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ho restroù a gemer bremañ {formatGB(usedGB)} a-blas, met n'ho peus nemet {FREE_TIER_STORAGE_LIMIT_GB} Go kadaviñ. An albom-mañ a vez diverket ent emgefreek:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ho restroù a gemer bremañ {formatGB(usedGB)} eus {totalStorageGB} Go kadaviñ hegerz. Marteze vo ret deoc'h hizivaat ho koumanant a-benn dalc'hmat da enrollañ albom.",
   "Upgrade Your Subscription": "Hizivaat Ho Koumanant",
   "Storage Management": "Merañ Mirout",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klikañ Evit Gwellaat Ar C'houmanant",
   "WILL BE DELETED": "A VO DIVERKET",
   "Create an album in 90 sec": "Krouiñ un albom e 90 eilenn",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ganeoc'h {albumCount} albom met n'hallit marv nemet 5 digor. An albumoù koshañ-mañ a vez diverket ent emgefre:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "O kargañ titouroù ar gont...",
   "Please enter a positive number": "Lakait ur jederenn c'houbi",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "O kargañ titouroù ar c'houmanant...",
   "Insufficient storage and too many albums (max 5 for free)": "Stokadur dieub ha re a albom (5 d'ar muiañ evit an dud digoust)",
   "Insufficient storage capacity": "Gouloaduriezh stokadur dieub",
-  "Too many albums (free tier allows max 5 albums)": "Re a albom (al live digoust a zalc'h 5 albom d'ar muiañ)"
+  "Too many albums (free tier allows max 5 albums)": "Re a albom (al live digoust a zalc'h 5 albom d'ar muiañ)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ganeoc'h muioc'h eget 5 albom HA ho restroù a gemer {formatGB(usedGB)} a-blas (bevenn: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ar c'halbomioù-mañ a vo diverket ent emgefre nemet ma tibabit dilemel albomioù all:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Bez {albumCount} albom ganeoc'h met n'oc'h ket evit enrollañ nemet 5 evit netra. An albomioù henañ-mañ a vo diverket ent emgefreek ma n'eo ket divizet ganeoc'h dilemel albomioù all:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ho restroù a gmer {formatGB(usedGB)} a blas, met n'ho peus nemet {FREE_TIER_STORAGE_LIMIT_GB} Go a vemor. An albomoù-se a vez diverket ent emgefreek ma ne diberit ket albomoù all:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ho restroù a gmer {formatGB(usedGB)} a blas, met n'ho peus nemet {totalStorageGB} Go a vemor. An albomoù-se a vez diverket ent emgefreek ma ne diberit ket albomoù all:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Gallout a rit mirout 5 albom gant {FREE_TIER_STORAGE_LIMIT_GB} GB d'an nebeutañ dizoub. Dilemel an albomioù diezvez evit ober plas.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Ar renkoù paeet o deus albomoù didermen ha zo bevennet gant an ergerzh hepken"
 }

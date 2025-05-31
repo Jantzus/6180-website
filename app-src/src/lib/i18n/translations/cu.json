@@ -166,8 +166,6 @@
   "Email address...": "Електроньнꙑи почтꙑ ѻбразъ...",
   "Two-Factor Authentication": "Двоѥфакторьна Аутєнтїфїкацїꙗ",
   "Select For Download": "Избрати За Сѫзданиѥ",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Можєтє съхранити 5 алъбома или до {FREE_TIER_STORAGE_LIMIT_GB} ГБ бєсплътьно. Ижєнѣтє нєпотрѣбьнꙑ алъбомꙑ да сътворитє мѣсто.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Твоѩ дѣла нинѣ обитають {formatGB(usedGB)} мѣста, нъ имаши единъ {FREE_TIER_STORAGE_LIMIT_GB} ГБ съхранениѩ. Си албоми сѫтъ аѵтоматиць ижениѥми:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Твоѩ дѣла нинѣ обитають {formatGB(usedGB)} мѣста ѿ {totalStorageGB} ГБ съхранениѩ приложнѩ. Можебиши потрѣбоуѥши въскорѣ обновити твоѥ подписаниѥ съхранѥниѩ алъбомъ ради продльжениѩ.",
   "Upgrade Your Subscription": "Обнови Твоѥ Подписаниѥ",
   "Storage Management": "Храненї Строеніє",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Нажати Да Ся Подписанїе Ꙁаисправи",
   "WILL BE DELETED": "ПОТРЄБИТСѦ",
   "Create an album in 90 sec": "Съзьдати алъбомъ въ 90 секѹндъ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Имаши {albumCount} алъбоми нъ тъкъмо 5 можеши безплатно съхранити. Си старѣиши алъбоми сѧ самодѣительно оуничтожаютъ:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Загружають сѧ дѣла о образѣ...",
   "Please enter a positive number": "Молимъ въведете положительно число",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Подписанїа вѣдѣнїа въскладаѭтъ сѧ...",
   "Insufficient storage and too many albums (max 5 for free)": "Недостьнъ съхранѥнїе и прѣвѣлика албоми (наивꙑсочаише 5 безплатно)",
   "Insufficient storage capacity": "Недостьна съхранѥнїѩ силꙑ",
-  "Too many albums (free tier allows max 5 albums)": "Прѣвѣлика албоми (безплатьна степень дозволяѥтъ наивꙑсочаише 5 албоми)"
+  "Too many albums (free tier allows max 5 albums)": "Прѣвѣлика албоми (безплатьна степень дозволяѥтъ наивꙑсочаише 5 албоми)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Имаши вѧще пѧти алъбомъ И ваша дѣла заѥмлѭтъ {formatGB(usedGB)} мѣсто (прѣдѣлъ: {FREE_TIER_STORAGE_LIMIT_GB} GB). Сии алъбоми сѧ самодѣльно ѩзглавлѭтъ ащє нє рѣшиши ѩзгълавити ина алъбома:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Имаши {albumCount} алъбомъ нъ можеши съхранити тъкъмо є҃ бесплатьно. Си наистарѣиши алъбоми сѫтъ самодѣиствьно ѿимаѥми аште не въсхощеши ѿъѩти инъ алъбомъ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Твои дѣла {formatGB(usedGB)} мѣсто заємлѭтъ, нъ имаши тъкъмо {FREE_TIER_STORAGE_LIMIT_GB} ГБ съхранѥниѥ. Си алъбоми самодѣльно ничьжаѭтъ сѧ аще не рѣшиши ничьжити инꙑ алъбомꙑ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Твои дѣла {formatGB(usedGB)} мѣсто заємлѭтъ, нъ имаши тъкъмо {totalStorageGB} ГБ съхранѥниѥ. Си алъбоми самодѣльно ничьжаѭтъ сѧ аще не рѣшиши ничьжити инꙑ алъбомꙑ:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Можеши съхранити 5 алъбома съ обьѥмомь дажде {FREE_TIER_STORAGE_LIMIT_GB} ГБ тоужде. Избриши неѵзимаѥмыѥ алъбомы да мѣсто створиши.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Плаштенѣ чинове имѫтъ безъ предѣла алъбомы и сѫтъ ограничены хранилищемь единѣмь"
 }

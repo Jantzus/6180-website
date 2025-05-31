@@ -166,8 +166,6 @@
   "Email address...": "Adresse courriel...",
   "Two-Factor Authentication": "Eune Authentification À Deux Facteus",
   "Select For Download": "Chuèzi Pou Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Vos pevez mette 5 albeums u tertou {FREE_TIER_STORAGE_LIMIT_GB} Go pour rint. Ôtez chés albeums qu'j'm'inm'é point pour fé d'in plache.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Vos fichiés is prind'nt étou {formatGB(usedGB)} d'in plache, mais vous n'avez qu' {FREE_TIER_STORAGE_LIMIT_GB} Go d'inmagasinage. Chés albums-ché is sont ôtés tout seuls:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Vos fichiés is prind'nt étou {formatGB(usedGB)} d'in plache dsu {totalStorageGB} Go d'inmagasinage qu'il y'o. I s'pout qu'vos alez avoi bsoin d'améliorer vot' abonnémint bétôt pou continuer à inr'gistrer chés albums.",
   "Upgrade Your Subscription": "Améliorer Vot' Abonnémint",
   "Storage Management": "Djestion Eul Storage",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Clictez Por Mieux Foaire L'Abonnémint",
   "WILL BE DELETED": "SARO EFFACÉ",
   "Create an album in 90 sec": "Créer un album in 90 secondes",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Vos avé {albumCount} albums mas n'pouvés sauver qu'5 gratos. Chés albums lé pu vieus i sont efacés otomatikemint:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Chèrge d'l'information du compte...",
   "Please enter a positive number": "Écrivez un nombe positif",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Tchérgant l's informations d'abonnement...",
   "Insufficient storage and too many albums (max 5 for free)": "Stocage qui n'sufit pos pi trop d'albums (5 au pus pou rien)",
   "Insufficient storage capacity": "Manqu'mint d'capacité d'stocage",
-  "Too many albums (free tier allows max 5 albums)": "Trop d'albums (niveau gratis i pèrmêt 5 au pus)"
+  "Too many albums (free tier allows max 5 albums)": "Trop d'albums (niveau gratis i pèrmêt 5 au pus)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Vos avoez pus d'5 alboms ET vos fichiers prinn'nt {formatGB(usedGB)} ed plache (limite: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ces alboms i sont automatiqumint effachés ch'qu'vos édchidoez d'effacher d'aut' alboms:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ch'est qu'vos avez {albumCount} albums mais n'pouvez qu'garder 5 pour rien. Chés albums les pus vieus i sont suprimés d'eux-mémes si vos décidez point d'suprimer d'éutes albums:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Vos fichiers y prindent {formatGB(usedGB)} d'éspace, mais vos n'avez qu' {FREE_TIER_STORAGE_LIMIT_GB} Go d'mémoère. Ches albums is sont otomatiquémint ostés à moins qu'vos décidichez d'oster d'eutes albums:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Vos fichiers y prindent {formatGB(usedGB)} d'éspace, mais vos n'avez qu' {totalStorageGB} Go d'mémoère. Ches albums is sont otomatiquémint ostés à moins qu'vos décidichez d'oster d'eutes albums:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Vous povez inregistrer 5 albums qu'ont un total maksimum éd {FREE_TIER_STORAGE_LIMIT_GB} Go gratos. Éfachez chés albums qu'vous n'utilisez pont po fer del plaiche.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Chés nivo qu'in paye i'ont dés albums sins limite pi i sont limité renmint par l'stockage"
 }

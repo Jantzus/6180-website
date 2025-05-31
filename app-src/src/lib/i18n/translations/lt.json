@@ -166,8 +166,6 @@
   "Email address...": "El. pašto adresas...",
   "Two-Factor Authentication": "Dviejų Veiksnių Autentifikavimas",
   "Select For Download": "Pasirinkti Atsisiųsti",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Galite išsaugoti 5 albumus arba iki {FREE_TIER_STORAGE_LIMIT_GB} GB nemokamai. Ištrinkite nenaudojamus albumus, kad atlaisvintumėte vietos.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Jūsų failai šiuo metu užima {formatGB(usedGB)} vietos, bet turite tik {FREE_TIER_STORAGE_LIMIT_GB} GB saugyklos. Šie albumai automatiškai ištrinami:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Jūsų failai šiuo metu užima {formatGB(usedGB)} vietos iš {totalStorageGB} GB galimos saugyklos. Gali reikėti netrukus atnaujinti prenumeratą, kad galėtumėte toliau išsaugoti albumus.",
   "Upgrade Your Subscription": "Atnaujinti Savo Prenumeratą",
   "Storage Management": "Saugyklos Valdymas",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Spauskite Norėdami Atnaujinti Prenumeratą",
   "WILL BE DELETED": "BUS IŠTRINTA",
   "Create an album in 90 sec": "Sukurkite albumą per 90 sekundžių",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Turite {albumCount} albumų, bet galite išsaugoti tik 5 nemokamai. Šie seniausi albumai automatiškai trinami:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Jūsų failai užima {formatGB(usedGB)} vietos, bet turite tik {FREE_TIER_STORAGE_LIMIT_GB} GB saugyklos. Šie albumai automatiškai trinami:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Turite daugiau nei 5 albumus IR jūsų failai užima {formatGB(usedGB)} vietos (limitas: {FREE_TIER_STORAGE_LIMIT_GB} GB). Šie albumai automatiškai trinami:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Jūsų failai užima {formatGB(usedGB)} vietos, bet turite tik {totalStorageGB} GB saugyklos. Šie albumai automatiškai trinami:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Jūsų failai užima {formatGB(usedGB)} iš {totalStorageGB} GB saugyklos. Gali prireikti netrukus atnaujinti prenumeratą.",
   "Loading account information...": "Kraunama paskyros informacija...",
   "Please enter a positive number": "Prašau įveskite teigiamą skaičių",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Prenumeratos informacijos kraunasi...",
   "Insufficient storage and too many albums (max 5 for free)": "Nepakanka saugojimo vietos ir per daug albumų (maks. 5 nemokamai)",
   "Insufficient storage capacity": "Nepakankama saugojimo talpa",
-  "Too many albums (free tier allows max 5 albums)": "Per daug albumų (nemokamas lygis leidžia maks. 5 albumus)"
+  "Too many albums (free tier allows max 5 albums)": "Per daug albumų (nemokamas lygis leidžia maks. 5 albumus)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Turite daugiau nei 5 albumus IR jūsų failai užima {formatGB(usedGB)} vietos (riba: {FREE_TIER_STORAGE_LIMIT_GB} GB). Šie albumai automatiškai trinami, nebent nuspręsite ištrinti kitus albumus:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Turite {albumCount} albumų, bet galite išsaugoti tik 5 nemokamai. Šie seniausi albumai automatiškai trinami, nebent nuspręsite ištrinti kitus albumus:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Jūsų failai užima {formatGB(usedGB)} vietos, bet turite tik {FREE_TIER_STORAGE_LIMIT_GB} GB saugyklos. Šie albumai yra automatiškai trinami, nebent nuspręsite ištrinti kitus albumus:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Jūsų failai užima {formatGB(usedGB)} vietos, bet turite tik {totalStorageGB} GB saugyklos. Šie albumai yra automatiškai trinami, nebent nuspręsite ištrinti kitus albumus:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Galite išsaugoti 5 albumus, kurių bendras dydis neviršija {FREE_TIER_STORAGE_LIMIT_GB} GB nemokamai. Ištrinkite nenaudojamus albumus, kad atlaisvintumėte vietos.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Mokamose pakopoje yra neriboti albumai ir apribojami tik saugyklos"
 }

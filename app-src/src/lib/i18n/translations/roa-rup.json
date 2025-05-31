@@ -166,8 +166,6 @@
   "Email address...": "Adresa di e-mail...",
   "Two-Factor Authentication": "Autentificare Cu Doi Factori",
   "Select For Download": "Aligd Penti Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Putseti sã tsinets 5 albume icã {FREE_TIER_STORAGE_LIMIT_GB} GB fãrã plãtã. Shteargitsã albure tsi nu adrupirets pisti sã fachets loc.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Fileali tãi ocupã akum {formatGB(usedGB)} loc, ma ai numãi {FREE_TIER_STORAGE_LIMIT_GB} GB di dipunari. Atseli albure shi shterg di soali lor:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Fileali tãi ocupã akum {formatGB(usedGB)} loc di {totalStorageGB} GB dipunari shi esti. S-ar putea sã-nji trebuiascã curãnd sã-nji actualizez subscriptsiunea tã pisti sã continui sã salvez albure.",
   "Upgrade Your Subscription": "Actualizez Subscriptsiunea Tã",
   "Storage Management": "Administrarea A Depozitului",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Apãsã Sh Fai Abonamentu Mai Bun",
   "WILL BE DELETED": "VA FI ȘTEARS",
   "Create an album in 90 sec": "Fac un album tu 90 second",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Avets {albumCount} albumi ma putets sã sãlvats dimã 5 gratis. Atseli albumi tsi mai veacli suntu shjirsi automaticã:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Cargu informatsilje a contului...",
   "Please enter a positive number": "Te rog să introduci un număr pozitiv",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Încarcari informatsiile di abonament...",
   "Insufficient storage and too many albums (max 5 for free)": "Depozitari mica shi multu albume (max. 5 alba)",
   "Insufficient storage capacity": "Capacitati di depozitari mica",
-  "Too many albums (free tier allows max 5 albums)": "Multu albume (nivelu alba permisi max. 5 albume)"
+  "Too many albums (free tier allows max 5 albums)": "Multu albume (nivelu alba permisi max. 5 albume)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Avets ma mult di 5 albume SHI fisherile a dumnivoastra ocupã {formatGB(usedGB)} loc (limitã: {FREE_TIER_STORAGE_LIMIT_GB} GB). Acesti albume suntu shtershi di sini fãrã s-decidets si shtergits alti albume:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Avets {albumCount} albume ma nu putets păstra decă 5 gratis. Atseli albume tsi sh-vechi suntu shtearsă automatic tsi nu vă decidets să shteardets altili albume:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dosarli tăi ocupă {formatGB(usedGB)} locu, ma ai numa {FREE_TIER_STORAGE_LIMIT_GB} GB di strungari. Atseli albumuri suntu ștearși automatic daca nu dizidești s-șteargi altri albumuri:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dosarli tăi ocupă {formatGB(usedGB)} locu, ma ai numa {totalStorageGB} GB di strungari. Atseli albumuri suntu ștearși automatic daca nu dizidești s-șteargi altri albumuri:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Putets apãra 5 albume tsi au unu total dzi {FREE_TIER_STORAGE_LIMIT_GB} GB degeaba. Shtergitsã albumurli nu aduvratsi pru a face loc.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Nivelurli plătiti au albome fără limitǎ şi sǎ limitati numa ti storageul"
 }

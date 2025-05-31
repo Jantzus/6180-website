@@ -166,8 +166,6 @@
   "Email address...": "Elektron pochta manzili...",
   "Two-Factor Authentication": "Ikki-Faktor Autentifikatsiya",
   "Select For Download": "Yuklab Olish Uchun Tanlang",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Siz 5 ta albom yoki {FREE_TIER_STORAGE_LIMIT_GB} GB gacha bepul saqlashingiz mumkin. Joy ochish uchun foydalanilmagan albumlarni o'chiring.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Fayllaringiz hozir {formatGB(usedGB)} joy egallaydi, lekin sizda faqat {FREE_TIER_STORAGE_LIMIT_GB} GB saqlash joyi bor. Bu albumlar avtomatik ravishda o'chirilmoqda:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Fayllaringiz hozir mavjud {totalStorageGB} GB saqlash joyidan {formatGB(usedGB)} joyni egallaydi. Albumlarni saqlashda davom etish uchun tez orada obunangizni yangilashingiz kerak bo'lishi mumkin.",
   "Upgrade Your Subscription": "Obunangizni Yangilang",
   "Storage Management": "Saqlash Boshqaruvi",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Obunani Yaxshilash Uchun Bosing",
   "WILL BE DELETED": "O'CHIRILADI",
   "Create an album in 90 sec": "90 soniyada albom yarating",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Sizda {albumCount} ta albom bor, lekin bepul faqat 5 tasini saqlashingiz mumkin. Bu eng eski albomlar avtomatik o'chirilmoqda:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Hisob ma'lumotlarini yuklash...",
   "Please enter a positive number": "Iltimos, musbat raqam kiriting",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Obuna ma'lumotlari yuklanmoqda...",
   "Insufficient storage and too many albums (max 5 for free)": "Xotira yetarli emas va albomlar juda ko'p (bepul maksimum 5 ta)",
   "Insufficient storage capacity": "Yetarli xotira hajmi yo'q",
-  "Too many albums (free tier allows max 5 albums)": "Juda ko'p albomlar (bepul darajada maksimum 5 ta albomga ruxsat beriladi)"
+  "Too many albums (free tier allows max 5 albums)": "Juda ko'p albomlar (bepul darajada maksimum 5 ta albomga ruxsat beriladi)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Sizda 5 tadan ortiq albom bor VA fayllaringiz {formatGB(usedGB)} joy oladi (chegara: {FREE_TIER_STORAGE_LIMIT_GB} GB). Boshqa albomlarni o'chirishga qaror qilmasangiz, bu albomlar avtomatik ravishda o'chirilyapti:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Sizda {albumCount} albom bor, lekin faqat 5 tasini bepul saqlash mumkin. Agar boshqa albomlarni o'chirishga qaror qilmasangiz, bu eng eski albomlar avtomatik ravishda o'chiriladi:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fayllaringiz {formatGB(usedGB)} joy egallaydi, lekin sizda faqat {FREE_TIER_STORAGE_LIMIT_GB} GB saqlash joyi bor. Agar siz boshqa albomlarni o'chirishni hal qilmasangiz, bu albomlar avtomatik ravishda o'chiriladi:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fayllaringiz {formatGB(usedGB)} joy egallaydi, lekin sizda faqat {totalStorageGB} GB saqlash joyi bor. Agar siz boshqa albomlarni o'chirishni hal qilmasangiz, bu albomlar avtomatik ravishda o'chiriladi:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Siz jami maksimal {FREE_TIER_STORAGE_LIMIT_GB} GB bo'lgan 5 ta albumni bepul saqlashingiz mumkin. Joy ochish uchun foydalanilmayotgan albumlarni o'chiring.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Pullik darajalar cheksiz albomlarga ega va faqat saqlash bilan cheklanadi"
 }

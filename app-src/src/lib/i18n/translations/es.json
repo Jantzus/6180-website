@@ -166,8 +166,6 @@
   "Email address...": "Dirección de correo electrónico...",
   "Two-Factor Authentication": "Autenticación De Dos Factores",
   "Select For Download": "Seleccionar Para Descargar",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Puedes guardar 5 álbumes o hasta {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Elimina álbumes no utilizados para hacer espacio.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tus archivos ocupan actualmente {formatGB(usedGB)} de espacio, pero solo tienes {FREE_TIER_STORAGE_LIMIT_GB} GB de almacenamiento. Estos álbumes se están eliminando automáticamente:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Tus archivos ocupan actualmente {formatGB(usedGB)} de {totalStorageGB} GB de almacenamiento disponible. Es posible que necesites actualizar tu suscripción pronto para continuar guardando álbumes.",
   "Upgrade Your Subscription": "Actualizar Tu Suscripción",
   "Storage Management": "Gestión De Almacenamiento",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Hacer Clic Para Actualizar Suscripción",
   "WILL BE DELETED": "SERÁ ELIMINADO",
   "Create an album in 90 sec": "Crear un álbum en 90 segundos",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Tienes {albumCount} álbumes pero solo puedes guardar 5 gratis. Estos álbumes más antiguos se están eliminando automáticamente:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tus archivos ocupan {formatGB(usedGB)} de espacio, pero solo tienes {FREE_TIER_STORAGE_LIMIT_GB} GB de almacenamiento. Estos álbumes se están eliminando automáticamente:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Tienes más de 5 álbumes Y tus archivos ocupan {formatGB(usedGB)} de espacio (límite: {FREE_TIER_STORAGE_LIMIT_GB} GB). Estos álbumes se están eliminando automáticamente:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Tus archivos ocupan {formatGB(usedGB)} de espacio, pero solo tienes {totalStorageGB} GB de almacenamiento. Estos álbumes se están eliminando automáticamente:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Tus archivos ocupan {formatGB(usedGB)} de {totalStorageGB} GB de almacenamiento. Es posible que necesites actualizar tu suscripción pronto.",
   "Loading account information...": "Cargando información de la cuenta...",
   "Please enter a positive number": "Por favor, introduzca un número positivo",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Cargando información de suscripción...",
   "Insufficient storage and too many albums (max 5 for free)": "Almacenamiento insuficiente y demasiados álbumes (máx. 5 gratis)",
   "Insufficient storage capacity": "Capacidad de almacenamiento insuficiente",
-  "Too many albums (free tier allows max 5 albums)": "Demasiados álbumes (el nivel gratuito permite máx. 5 álbumes)"
+  "Too many albums (free tier allows max 5 albums)": "Demasiados álbumes (el nivel gratuito permite máx. 5 álbumes)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Tienes más de 5 álbumes Y tus archivos ocupan {formatGB(usedGB)} espacio (límite: {FREE_TIER_STORAGE_LIMIT_GB} GB). Estos álbumes se están eliminando automáticamente a menos que decidas eliminar otros álbumes:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Tienes {albumCount} álbumes pero solo puedes guardar 5 gratis. Estos álbumes más antiguos se están eliminando automáticamente a menos que decidas eliminar otros álbumes:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Tus archivos ocupan {formatGB(usedGB)} espacio, pero solo tienes {FREE_TIER_STORAGE_LIMIT_GB} GB de almacenamiento. Estos álbumes se están eliminando automáticamente a menos que decidas eliminar otros álbumes:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Tus archivos ocupan {formatGB(usedGB)} espacio, pero solo tienes {totalStorageGB} GB de almacenamiento. Estos álbumes se están eliminando automáticamente a menos que decidas eliminar otros álbumes:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Puedes guardar 5 álbumes con un total máximo de {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Elimina los álbumes no utilizados para hacer espacio.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Los niveles de pago tienen álbumes ilimitados y están limitados solo por el almacenamiento"
 }

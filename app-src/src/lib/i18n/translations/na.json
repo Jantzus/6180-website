@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Aewe-Factor Authentication",
   "Select For Download": "Atuj Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ea atsin 5 album mo {FREE_TIER_STORAGE_LIMIT_GB} GB nta ataga eo. Ekae album ent unut eko ma ataga ebit.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ea mo file eo ma ataka {formatGB(usedGB)} ebit, a ea atsin {FREE_TIER_STORAGE_LIMIT_GB} GB nta goyuna. Ek album oo ma ekaek aitakai:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ea mo file eo ma ataka {formatGB(usedGB)} ebit imin {totalStorageGB} GB nta goyuna. E ekean ka ea etsikin eonan subscription ma upgrade enim ka eo ma eda album ata.",
   "Upgrade Your Subscription": "Upgrade Ea Mo Subscription",
   "Storage Management": "Eakademik Management",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Dekek Me Kaunga Subscription",
   "WILL BE DELETED": "EBON KAJOOR",
   "Create an album in 90 sec": "Annim album eo 90 sekond",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Omo {albumCount} album omo omo e 5 kidu nomo okama komong iwi. Otean album omo eiy okama komong iwi nomo okama komong iwi:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Akawnt me inagen itareben...",
   "Please enter a positive number": "Eamwij ira me numba jikin",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Subscription ioron irok ekaeao...",
   "Insufficient storage and too many albums (max 5 for free)": "Storage iteiy ikae me album ebweok (eben 5 emej)",
   "Insufficient storage capacity": "Storage iteiy ikae",
-  "Too many albums (free tier allows max 5 albums)": "Album ebweok (free tier eben 5 album an)"
+  "Too many albums (free tier allows max 5 albums)": "Album ebweok (free tier eben 5 album an)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ebok album 5 epe mo file am egobuk {formatGB(usedGB)} bwiema (wonana: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album anno ememadur buguik me ebok ikaman album ebukwon:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Eo {albumCount} album awiyu me omo earobwan ta 5 dorer ama. Enim tsiok album ekae eautomatik ememakaman omo earamimimi me ear ememakan marag album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Files ebwo eangiy {formatGB(usedGB)} eben, ak ebok {FREE_TIER_STORAGE_LIMIT_GB} GB enan aniy. Albums anim eko deleteiy automatik angiy ebok decidiy ko deleteiy album et:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Files ebwo eangiy {formatGB(usedGB)} eben, ak ebok {totalStorageGB} GB enan aniy. Albums anim eko deleteiy automatik angiy ebok decidiy ko deleteiy album et:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ebok ejadake album 5 me eo konom maximum {FREE_TIER_STORAGE_LIMIT_GB} GB nomo. Kobug album eo enan apen nomo kam omo kepodan.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Me padein kainen album etabwa atut em nabaj eo ekama"
 }

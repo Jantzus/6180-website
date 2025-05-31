@@ -166,8 +166,6 @@
   "Email address...": "Wāhitau īmēra...",
   "Two-Factor Authentication": "Whakamanatanga Rua-Tawhā",
   "Select For Download": "Tipako Mo Te Tango",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ka taea e koe te tiaki i 5 kōpaki, rānei rā hoki ki te {FREE_TIER_STORAGE_LIMIT_GB} GB koreutu. Mukua ngā kōpaki kāore i whakamahia hei whakaputa wāhi.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Kā kōpaki nei e pupuri nei i te taiao {formatGB(usedGB)}, engari he {FREE_TIER_STORAGE_LIMIT_GB} GB anake tō rūma penapena. Kā kōpaki nei e mukua nei ki te taiao aunoa:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Kā kōpaki nei e pupuri nei i {formatGB(usedGB)} wāhi i roto i nga {totalStorageGB} GB rūma penapena nei. He aha pea koe me whakapai tō ohaurunga wawe ai kia roa ai te penapena kōpaki.",
   "Upgrade Your Subscription": "Whakapai Tō Ohaurunga",
   "Storage Management": "Whakahaere Rokiroki",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Pawhiri Kia Whakahou Ai I Te Ohaurunga",
   "WILL BE DELETED": "KA MUKUA",
   "Create an album in 90 sec": "Hangaia he kōpaki i roto i nga hēkona 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "He {albumCount} ōu kōpaki engari ka taea e tiaki ai ko te 5 anake hoki. Ko ēnei kōpaki tawhito rawa nei e mukua nei ki a ia anō:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Uta ana ngā kōrero pūkete...",
   "Please enter a positive number": "Tēnā tomo he nama pai",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Uta ana ngā kōrero ohaurunga...",
   "Insufficient storage and too many albums (max 5 for free)": "Kāore he rawa rawa ki te pukapuka me te maha rawa o ngā kōpaki (5 mutunga kore)",
   "Insufficient storage capacity": "Kāore he rawa rawa ki te pukapuka",
-  "Too many albums (free tier allows max 5 albums)": "He maha rawa o ngā kōpaki (ka whakaaetia e te kōwae kore utu he 5 kōpaki rānei)"
+  "Too many albums (free tier allows max 5 albums)": "He maha rawa o ngā kōpaki (ka whakaaetia e te kōwae kore utu he 5 kōpaki rānei)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "He nui ake koe i a koe nga kōpaki 5 Ā ō kōnae he {formatGB(usedGB)} wāhi (aukati: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ka mukua aunoa ai ēnei kōpaki ki te kore koe e whakatau ki te muku i ētahi atu kōpaki:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "He {albumCount} ō kōpaki engari ka taea koe te pupuri i te rima anake hei kore utu. Ka whakakore aunoa ai ēnei kōpaki tawhito rawa nei ki a koe kāore ai koe i whakatau ki te whakakore i ētahi atu kōpaki:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Kā kōpaki koe e whiwhi ana {formatGB(usedGB)} wāhi, engari he {FREE_TIER_STORAGE_LIMIT_GB} GB roro anake tō. Kā mukua nei ēnei kōpaki i a ia anō, ki te kore koe e whakatau ki te muku i ētahi atu kōpaki:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Kā kōpaki koe e whiwhi ana {formatGB(usedGB)} wāhi, engari he {totalStorageGB} GB roro anake tō. Kā mukua nei ēnei kōpaki i a ia anō, ki te kore koe e whakatau ki te muku i ētahi atu kōpaki:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ka āhei koe ki te tiaki 5 pukapuka rauemi ina mutu ai {FREE_TIER_STORAGE_LIMIT_GB} GB kore utu. Mukua ngā pukapuka rauemi kāore i whakamahia hei whakanui i te wāhi.",
+  "Paid tiers have unlimited albums and are limited only by storage": "He raina utu kore he kōpaki mutunga kore ā he rokiroki anake hoki a rātou taupare"
 }

@@ -166,8 +166,6 @@
   "Email address...": "Adele ya mokanda ya singa...",
   "Two-Factor Authentication": "Boyebi Ya Makambo Mibale",
   "Select For Download": "Pona Mpo Na Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Okoki kobomba ba album 5 to kino na {FREE_TIER_STORAGE_LIMIT_GB} GB na ofele te. Longola ba album oyo osaleli te mpo na kosala esika.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ba fichier na yo ebongoli {formatGB(usedGB)} esika sikoyo, kasi ozali na {FREE_TIER_STORAGE_LIMIT_GB} GB kaka ya kobomba. Ba album oyo ezali kolongolama na nzela ya moto te:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ba fichier na yo ebongoli {formatGB(usedGB)} esika ye {totalStorageGB} GB ya kobomba oyo ezali. Okoki kozala na mpósá ya kotombola lisaláni na yo noki mpo na kolandela kobomba ba album.",
   "Upgrade Your Subscription": "Tombola Lisaláni Na Yo",
   "Storage Management": "Boyangeli Ya Bombi",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Fináka Mpo Na Kotombola Mokanda",
   "WILL BE DELETED": "EKOLONGWA",
   "Create an album in 90 sec": "Sala album na ngonga 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ozali na ba-album {albumCount} kasi okoki kobomba bobele 5 ya ofele. Ba-album oyo ya kala mingi ezali kolongolama na boyekeyi:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Kozala makambo ya konte...",
   "Please enter a positive number": "Tía kotísa motángo malámu",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Kozonga makambo ya subscription...",
   "Insufficient storage and too many albums (max 5 for free)": "Bóbongisi tě bókóka tě míngi na ba album (sókí 5 ya libúlú)",
   "Insufficient storage capacity": "Bóbongisi tě bókóka",
-  "Too many albums (free tier allows max 5 albums)": "Ba album mingi (mɔkɔ́ ya libúlú epesi ndingisa na ba album 5 kaka)"
+  "Too many albums (free tier allows max 5 albums)": "Ba album mingi (mɔkɔ́ ya libúlú epesi ndingisa na ba album 5 kaka)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ozali na ba album koleka 5 PE ba file na yo ezali kosala {formatGB(usedGB)} esika (mondelo: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ba album oyo ezali kolongola yango moko soki okati mayele ya kolongola ba album mosusu te:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ozali na {albumCount} ma album kasi okoki kobatela se mitano te na ofele. Ba album oyo ya kala ekozwa kolongwa na ndenge ya otomátik longola soki olingi kolonga ba album misusu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ba fichier na yɔ ekozonza {formatGB(usedGB)} esika, kasi ozali na {FREE_TIER_STORAGE_LIMIT_GB} GB ya kobomba kaka. Ba album oyo ezali kolongua ye moko soki okateli te koboma ba album misusu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ba fichier na yɔ ekozonza {formatGB(usedGB)} esika, kasi ozali na {totalStorageGB} GB ya kobomba kaka. Ba album oyo ezali kolongua ye moko soki okateli te koboma ba album misusu:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Okoki kobomba ba album 5 oyo nyonso ekokoma na {FREE_TIER_STORAGE_LIMIT_GB} GB ya ofele. Longola ba album oyo ozali kosalela te mpo na kosala esika.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Ndenge ya kofuta ezali na album oyo esilaka te mpe ezali na ndelo na esika ya kobomba kaka"
 }

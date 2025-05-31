@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Jingpyrkhat Uba Ar Pynmih",
   "Select For Download": "Download ban thoh",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Phi ban long mynta 5 album bad da {FREE_TIER_STORAGE_LIMIT_GB} GB ia ka nong ki kynthei. Pyllai album ki la ha briew ki ym shem hynrei ong ka kumta.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Phi file ruh tang ban long mynta {formatGB(usedGB)} kumta khyllung, ba phi bad la {FREE_TIER_STORAGE_LIMIT_GB} GB janglang kumta leh kum. Ha album ruh ha ban long pyllai hadien ba ha briew ha:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Phi file ruh tang ban long mynta phi bad la {totalStorageGB} GB storage mynta kumta khyllung thiah ki {formatGB(usedGB)} kumta. Album ruh kloi jingialai hadien ba phi subscription upgrade baroh kam pyrkhat ban long leh.",
   "Upgrade Your Subscription": "Phi Subscription Upgrade Baroh",
   "Storage Management": "Ka Jingrwai Kaba Thaw",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Subscription Pynbiang Kaba Click U",
   "WILL BE DELETED": "ka bud",
   "Create an album in 90 sec": "90 seken ia ka album jingmih",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Phi ban album {albumCount} ki la shong, nanging phi kylla shu album manit la save thei eh ka um ha man. Iei kaba album kloi kloi ki na tang tang automa:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Akawnt jingmut ruh dong...",
   "Please enter a positive number": "Sot u number u da haba",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Loading subscription information...",
   "Insufficient storage and too many albums (max 5 for free)": "Insufficient storage and too many albums (max 5 for free)",
   "Insufficient storage capacity": "Insufficient storage capacity",
-  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)"
+  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Phi jong album 5 ba iaid album ym pi nga, bad pi ban file bad ym phi {formatGB(usedGB)} jagah long kaba (badoh: {FREE_TIER_STORAGE_LIMIT_GB} GB). Kymmane album bad ym ka pynlong automatic ban ka jngai ong shibun phi ban pynlong album yei:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "U kynthei {albumCount} album ba u phi sah da 5 ki don free. Kini album ia ksuid kem sha yung sniat automatic mynkham u ha tat kut u don album dang:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Phi jylla faila don ka jingialang {formatGB(usedGB)} por, nanging {FREE_TIER_STORAGE_LIMIT_GB} GB storage nong phi shem. Kane album kaba ka long jingiat jyrda pynmih hynrei phi ym kam sib khlain kane album asing:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Phi jylla faila don ka jingialang {formatGB(usedGB)} por, nanging {totalStorageGB} GB storage nong phi shem. Kane album kaba ka long jingiat jyrda pynmih hynrei phi ym kam sib khlain kane album asing:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Phi ong sha kti 5 album ba total maximum {FREE_TIER_STORAGE_LIMIT_GB} GB free. Ki album bad ki ym haba phi ki leit ban ai jingkti.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Pyrsa duna tier ka dei ba album snem lada ka lah bad storage dooh na khatre"
 }

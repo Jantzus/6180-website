@@ -166,8 +166,6 @@
   "Email address...": "អាសយដ្ឋានអ៊ីមែល...",
   "Two-Factor Authentication": "ការផ្ទៀងផ្ទាត់ពីរកត្តា",
   "Select For Download": "ជ្រើសរើសសម្រាប់ទាញយក",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "អ្នកអាចរក្សាទុក ៥ អាល់ប៊ុម ឬរហូតដល់ {FREE_TIER_STORAGE_LIMIT_GB} ជីប៊ី ដោយឥតគិតថ្លៃ។ លុបអាល់ប៊ុមដែលមិនបានប្រើ ដើម្បីបង្កើតកន្លែង។",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ឯកសាររបស់អ្នកបច្ចុប្បន្នកំពុងកាន់កាប់ទំហំ {formatGB(usedGB)}ប៉ុន្តែអ្នកមានតែការផ្ទុក {FREE_TIER_STORAGE_LIMIT_GB} ជីប៊ីប៉ុណ្ណោះ។ អាល់ប៊ុមទាំងនេះកំពុងត្រូវបានលុបដោយស្វ័យប្រវត្តិ៖",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "ឯកសាររបស់អ្នកបច្ចុប្បន្នកំពុងកាន់កាប់ទំហំ {formatGB(usedGB)} ចេញពី {totalStorageGB} ជីប៊ីការផ្ទុកដែលមាន។ អ្នកប្រហែលជាត្រូវការធ្វើការកែប្រែការជាវរបស់អ្នកក្នុងពេលឆាប់ៗនេះដើម្បីបន្តរក្សាទុកអាល់ប៊ុម។",
   "Upgrade Your Subscription": "ធ្វើការកែប្រែការជាវរបស់អ្នក",
   "Storage Management": "ការគ្រប់គ្រងការរក្សាទុក",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "ចុចដើម្បីធ្វើបច្ចុប្បន្នភាពការជាវ",
   "WILL BE DELETED": "នឹងត្រូវលុប",
   "Create an album in 90 sec": "បង្កើតអាល់ប៊ុមក្នុងរយៈពេល 90 វិនាទី",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "អ្នកមានអាល់ប៊ុម {albumCount} ប៉ុន្តែអាចរក្សាទុកបាន ៥ ប្រភេទដោយឥតគិតថ្លៃ។ អាល់ប៊ុមចាស់ៗទាំងនេះកំពុងតែត្រូវបានលុបដោយស្វ័យគ្រប់គ្រង:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ឯកសាររបស់អ្នកកំពុងប្រើប្រាស់ទំហំ {formatGB(usedGB)} ប៉ុន្តែអ្នកមានតែ {FREE_TIER_STORAGE_LIMIT_GB} GB ប្រអប់ផ្ទុកប៉ុណ្ណោះ។ អាល់ប៊ុមទាំងនេះកំពុងតែត្រូវបានលុបដោយស្វ័យប្រវត្តិ:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "អ្នកមានអាល់ប៊ុមច្រើនជាង 5 ហើយឯកសាររបស់អ្នកកំពុងប្រើប្រាស់ទំហំ {formatGB(usedGB)} (កំណត់: {FREE_TIER_STORAGE_LIMIT_GB} GB)។ អាល់ប៊ុមទាំងនេះកំពុងតែត្រូវបានលុបដោយស្វ័យប្រវត្តិ:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "ឯកសាររបស់អ្នកកំពុងប្រើប្រាស់ទំហំ {formatGB(usedGB)} ប៉ុន្តែអ្នកមានតែ {totalStorageGB} GB ប្រអប់ផ្ទុកប៉ុណ្ណោះ។ អាល់ប៊ុមទាំងនេះកំពុងតែត្រូវបានលុបដោយស្វ័យប្រវត្តិ:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ឯកសាររបស់អ្នកកំពុងប្រើប្រាស់ {formatGB(usedGB)} ពី {totalStorageGB} GB ផ្ទុក។ អ្នកប្រហែលជាត្រូវការធ្វើកំណែថ្មីការជាវរបស់អ្នកក្នុងពេលឆាប់ៗនេះ។",
   "Loading account information...": "កំពុងផ្ទុកព័ត៌មានគណនី...",
   "Please enter a positive number": "សូមបញ្ចូលលេខវិជ្ជមាន",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "កំពុងផ្ទុកព័ត៌មានការជាវ...",
   "Insufficient storage and too many albums (max 5 for free)": "ទំហំផ្ទុកមិនគ្រប់គ្រាន់ និងមានអាល់ប៊ុមច្រើនពេក (អតិបរមា 5 ដោយឥតគិតថ្លៃ)",
   "Insufficient storage capacity": "សមត្ថភាពផ្ទុកមិនគ្រប់គ្រាន់",
-  "Too many albums (free tier allows max 5 albums)": "មានអាល់ប៊ុមច្រើនពេក (កម្រិតឥតគិតថ្លៃអនុញ្ញាតអតិបរមា ៥ អាល់ប៊ុម)"
+  "Too many albums (free tier allows max 5 albums)": "មានអាល់ប៊ុមច្រើនពេក (កម្រិតឥតគិតថ្លៃអនុញ្ញាតអតិបរមា ៥ អាល់ប៊ុម)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "អ្នកមានអាល់ប៊ុមច្រើនជាង ៥ ហើយឯកសាររបស់អ្នកកាន់កាប់ទំហំ {formatGB(usedGB)} (កំណត់៖ {FREE_TIER_STORAGE_LIMIT_GB} GB)។ អាល់ប៊ុមទាំងនេះកំពុងត្រូវបានលុបចេញដោយស្វ័យប្រវត្តិ លុះត្រាតែអ្នកសម្រេចចិត្តលុបអាល់ប៊ុមផ្សេងទៀត៖",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "អ្នកមាន {albumCount} អាល់ប៊ុម ប៉ុន្តែអាចរក្សាទុកបាន 5 ប៉ុណ្ណោះដោយឥតគិតថ្លៃ។ អាល់ប៊ុមចាស់ជាងគេទាំងនេះនឹងត្រូវបានលុបដោយស្វ័យប្រវត្តិ លុះត្រាតែអ្នកសម្រេចចិត្តលុបអាល់ប៊ុមផ្សេងទៀត៖",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ឯកសាររបស់អ្នកប្រើប្រាស់ទំហំ {formatGB(usedGB)} ប៉ុន្តែអ្នកមានតែ {FREE_TIER_STORAGE_LIMIT_GB} ជីកាបៃនៃការរក្សាទុកប៉ុណ្ណោះ។ អាល់ប៊ុមទាំងនេះកំពុងត្រូវបានលុបដោយស្វ័យប្រវត្តិ លុះត្រាតែអ្នកសម្រេចចិត្តលុបអាល់ប៊ុមផ្សេងទៀត៖",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ឯកសាររបស់អ្នកប្រើប្រាស់ទំហំ {formatGB(usedGB)} ប៉ុន្តែអ្នកមានតែ {totalStorageGB} ជីកាបៃនៃការរក្សាទុកប៉ុណ្ណោះ។ អាល់ប៊ុមទាំងនេះកំពុងត្រូវបានលុបដោយស្វ័យប្រវត្តិ លុះត្រាតែអ្នកសម្រេចចិត្តលុបអាល់ប៊ុមផ្សេងទៀត៖",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "អ្នកអាចរក្សាទុកអាល់ប៊ុម 5 ដែលមានជាអតិបរមា {FREE_TIER_STORAGE_LIMIT_GB} ជីប៊ីដោយឥតគិតថ្លៃ។ លុបអាល់ប៊ុមដែលមិនបានប្រើដើម្បីបង្កើតកន្លែង។",
+  "Paid tiers have unlimited albums and are limited only by storage": "ជាន់កម្រិតដែលបង់ប្រាក់មានអាល់ប៊ុមគ្មានដែនកំណត់ ហើយត្រូវបានកំណត់តែដោយការផ្ទុក"
 }

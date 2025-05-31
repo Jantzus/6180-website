@@ -166,8 +166,6 @@
   "Email address...": "Ladet leäktronik...",
   "Two-Factor Authentication": "Telfaktor Prüfam",
   "Select For Download": "Välön Po Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Dalabom tel laibümi lulöl pö te {FREE_TIER_STORAGE_LIMIT_GB} gebabüt libiko. Moükolöd laibümi no pagebüköli ad jafön spadi.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ragiv olik binons valik in {formatGB(usedGB)} spat, ab labom te {FREE_TIER_STORAGE_LIMIT_GB} gigabütü ela. Laibüms atos pamoükons self:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ragiv olik binons valik in {formatGB(usedGB)} spat de {totalStorageGB} gigabütü ela binöl. Kredob löf dalabön aboni olik tudelo ad cönön ragivi laibümik.",
   "Upgrade Your Subscription": "Dalabön Aboni Olik",
   "Storage Management": "Kipedälam Guvenam",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klikön Ad Jelön Bevüno Subscription",
   "WILL BE DELETED": "MOÜKÖN",
   "Create an album in 90 sec": "Jafön laibümi in sekuns 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Labol laibümi {albumCount}, ab kanol dakipön te laibümi vel libiko. Laibüms ädik obik pemotülons itjäfiko:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Kontoninformis peladon...",
   "Please enter a positive number": "Begö! Penolöd numi pösetik",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Lodom nünodis labünas...",
   "Insufficient storage and too many albums (max 5 for free)": "Kipükam no sufikön e albüms tumölo (lü mülik 5 libiko)",
   "Insufficient storage capacity": "Kipükam no sufikön",
-  "Too many albums (free tier allows max 5 albums)": "Albüms tumölo (libiko stabavol dälon albümi 5 at most)"
+  "Too many albums (free tier allows max 5 albums)": "Albüms tumölo (libiko stabavol dälon albümi 5 at most)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Laibüms mödik tel laibüm e failöfs olik dabinons {formatGB(usedGB)} spadi (boünd: {FREE_TIER_STORAGE_LIMIT_GB} GB). Laibüms atos moükons otomätiko if no kigetol ad moükön votik laibümis:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Labol {albumCount} laibümi, ab kanob dakipön tel lulümi fefik. Laibüms ods at paledalons automatiko, if no pädilol dalabön laibümis votik:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ragivarajöls olik obarjlgons {formatGB(usedGB)} spadi, ab dabinols te {FREE_TIER_STORAGE_LIMIT_GB} gigabüti kep-spada. Albüms at petarons te itjälidó, if no dekidol su petarant albümis votik:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ragivarajöls olik obarjlgons {formatGB(usedGB)} spadi, ab dabinols te {totalStorageGB} gigabüti kep-spada. Albüms at petarons te itjälidó, if no dekidol su petarant albümis votik:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Kanols sekön albums lul, kels topikons lägü mödik {FREE_TIER_STORAGE_LIMIT_GB} gigabaitis li libiko. Moükols albums no gekölis ad jafön spadi.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Monedik stadems labons albümi nen lipenoks e beklekons lä kip malaid anik"
 }

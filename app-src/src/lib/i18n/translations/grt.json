@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Nok-Factor Authentication",
   "Select For Download": "Download anna aro",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Am mãsã 5 album nonga {FREE_TIER_STORAGE_LIMIT_GB} GB dongja kame janãwẽ baja. Enga mãhã album dog janãwã dak thokmo dak kãmã.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Am mãhã fail janãwã kame nit {formatGB(usedGB)} enga kam thon kama, dak am mãsã {FREE_TIER_STORAGE_LIMIT_GB} GB sil thokmo janãwã. Am album kame rang rangalalo kãmã kuthik dogma thok mo:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Am mãhã fail janãwã kame nit {totalStorageGB} GB storage janãwã ãma dogma thiah ki {formatGB(usedGB)} enga kam thon kama. Album kame sil thokmo janãwã hadien ba am subscription upgrade kuthik noa kama.",
   "Upgrade Your Subscription": "Am Subscription Upgrade Kuthik",
   "Storage Management": "Storage Management",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Subscription upgrade-o click kora",
   "WILL BE DELETED": "GANGME",
   "Create an album in 90 sec": "90 segunda uya album mãsãnay",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Anga album {albumCount} song gisak, baksa niamako 5ko ra free me save hoi ra. Inke mikka rangko album ko tomako delete gise:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Akawnt jangka ruh dong...",
   "Please enter a positive number": "Sangat number neng u ke bah...",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Loading subscription information...",
   "Insufficient storage and too many albums (max 5 for free)": "Insufficient storage and too many albums (max 5 for free)",
   "Insufficient storage capacity": "Insufficient storage capacity",
-  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)"
+  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Mõnẽdo 5 mãsã ãrẽ album jẽ ãpẽ ag mẽ kãrẽ {formatGB(usedGB)} jagã ag pa (kõprõm: {FREE_TIER_STORAGE_LIMIT_GB} GB). Mũ album mũ automatic delete hũptũg tõle mẽ õn album delete mõnẽ ũmblod kõ:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Anechi {albumCount} album mẽnana abo ache pãnch diya sãwdarsara yana. Ini sangwang album parana auto bakhon gãtha hasit ane dõsra album gãtha masane hoyono dongben:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Nakhangri faijao {formatGB(usedGB)} chapo tongja, ba nangra {FREE_TIER_STORAGE_LIMIT_GB} GB storage chetken dongja. Uni album dongko automatic delete-na changja, chima rikko album-ko delete-na reba decision khengna bago:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Nakhangri faijao {formatGB(usedGB)} chapo tongja, ba nangra {totalStorageGB} GB storage chetken dongja. Uni album dongko automatic delete-na changja, chima rikko album-ko delete-na reba decision khengna bago:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Nangã 5 album mãsã {FREE_TIER_STORAGE_LIMIT_GB} GB dongram chibini free. Kamãsã album dongja nangã jagah banaulu.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Paisa naykaran tiyer re album sem nanggen aro storage mang jam baren"
 }

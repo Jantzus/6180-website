@@ -166,8 +166,6 @@
   "Email address...": "E-mailová adresa...",
   "Two-Factor Authentication": "Dvojfaktorová Autentifikácia",
   "Select For Download": "Vybrať Na Stiahnutie",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Môžete uložiť 5 albumov alebo až {FREE_TIER_STORAGE_LIMIT_GB} GB zadarmo. Odstráňte nepoužívané albumy a uvoľnite miesto.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Vaše súbory momentálne zaberajú {formatGB(usedGB)} miesta, ale máte len {FREE_TIER_STORAGE_LIMIT_GB} GB úložiska. Tieto albumy sa automaticky mažú:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Vaše súbory momentálne zaberajú {formatGB(usedGB)} miesta z {totalStorageGB} GB dostupného úložiska. Možno budete čoskoro musieť upgradovať svoje predplatné, aby ste mohli pokračovať v ukladaní albumov.",
   "Upgrade Your Subscription": "Upgradovať Vaše Predplatné",
   "Storage Management": "Správa Úložiska",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Kliknite Pre Upgrade Predplatného",
   "WILL BE DELETED": "BUDE VYMAZANÉ",
   "Create an album in 90 sec": "Vytvorte album za 90 sekúnd",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Máte {albumCount} albumov, ale môžete uložiť iba 5 zadarmo. Tieto najstaršie albumy sa automaticky odstraňujú:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Vaše súbory zaberajú {formatGB(usedGB)} miesta, ale máte len {FREE_TIER_STORAGE_LIMIT_GB} GB úložiska. Tieto albumy sa automaticky odstraňujú:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Máte viac ako 5 albumov A vaše súbory zaberajú {formatGB(usedGB)} miesta (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Tieto albumy sa automaticky odstraňujú:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Vaše súbory zaberajú {formatGB(usedGB)} miesta, ale máte len {totalStorageGB} GB úložiska. Tieto albumy sa automaticky odstraňujú:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Vaše súbory zaberajú {formatGB(usedGB)} z {totalStorageGB} GB úložiska. Možno budete čoskoro musieť upgradovať svoje predplatné.",
   "Loading account information...": "Načítava sa informácia o účte...",
   "Please enter a positive number": "Prosím zadajte kladné číslo",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Načítavanie informácií o predplatnom...",
   "Insufficient storage and too many albums (max 5 for free)": "Nedostatočné úložisko a príliš veľa albumov (max. 5 zadarmo)",
   "Insufficient storage capacity": "Nedostatočná kapacita úložiska",
-  "Too many albums (free tier allows max 5 albums)": "Príliš veľa albumov (bezplatná úroveň umožňuje max. 5 albumov)"
+  "Too many albums (free tier allows max 5 albums)": "Príliš veľa albumov (bezplatná úroveň umožňuje max. 5 albumov)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Máte viac ako 5 albumov A vaše súbory zaberajú {formatGB(usedGB)} miesta (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Tieto albumy sa automaticky mažú, pokiaľ sa nerozhodnete zmazať iné albumy:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Máte {albumCount} albumov, ale môžete uložiť iba 5 zdarma. Tieto najstaršie albumy sa automaticky mažú, pokiaľ sa nerozhodnete zmazať iné albumy:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Vaše súbory zaberajú {formatGB(usedGB)} miesta, ale máte len {FREE_TIER_STORAGE_LIMIT_GB} GB úložiska. Tieto albumy sa automaticky mažú, pokiaľ sa nerozhodnete zmazať iné albumy:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Vaše súbory zaberajú {formatGB(usedGB)} miesta, ale máte len {totalStorageGB} GB úložiska. Tieto albumy sa automaticky mažú, pokiaľ sa nerozhodnete zmazať iné albumy:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Môžete uložiť 5 albumov s celkovou veľkosťou maximálne {FREE_TIER_STORAGE_LIMIT_GB} GB zadarmo. Odstráňte nepoužívané albumy a uvoľnite miesto.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Platené úrovne majú neobmedzené albumy a sú obmedzené iba úložiskom"
 }

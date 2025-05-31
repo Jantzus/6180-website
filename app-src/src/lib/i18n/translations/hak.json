@@ -166,8 +166,6 @@
   "Email address...": "Thien-yí thi-chṳ...",
   "Two-Factor Authentication": "雙因素認證",
   "Select For Download": "揀來下載",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ngì thai-vi pó-chhùn 5-tet siòng-phú fe-he to {FREE_TIER_STORAGE_LIMIT_GB} GB mièn-fi. Sṳ̂-thet mò-yung-ko siòng-phú lòi chho ti-fông.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ngì-ke vùn-chien hien-chhai chiam-kí {formatGB(usedGB)} khûng-kiên, tàn-he ngì chṳ-yû {FREE_TIER_STORAGE_LIMIT_GB} GB chún-fòng. Liá-se siòng-phú chṳ-tûng phi sṳ̂-thet:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ngì-ke vùn-chien hien-chhai chiam-liáu {totalStorageGB} GB khó-yung chún-fòng-chûng-ke {formatGB(usedGB)}. Ngì ho-néng su-yeu kín-khi sûng-kip ngì-ke thin-é yî-khí chí-suk pó-chhùn siòng-phú.",
   "Upgrade Your Subscription": "Sûng-kip Ngì-ke Thin-é",
   "Storage Management": "存儲管理",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "撳下升級訂閱",
   "WILL BE DELETED": "TSIONG-HOI HI TSHÙ-TIÁU",
   "Create an album in 90 sec": "90秒鐘內創建相冊",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ngì yû {albumCount} sióng-chṳk, tân-he mièn-fî chṳ-nèn pó-chhùn 5-chak. Liá-kiên chui-kí ke sióng-chṳk chiòng-tûng sṳ́-tung sân-thet:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Tshòng-ho chṳ̂-lin chùng-chak...",
   "Please enter a positive number": "Chhiáng su-ngi̍p chèng-sû",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "載入訂閱信息中...",
   "Insufficient storage and too many albums (max 5 for free)": "儲存空間不足還有相册太多 (免費最多5個)",
   "Insufficient storage capacity": "儲存容量不足",
-  "Too many albums (free tier allows max 5 albums)": "相册太多 (免費級別最多允許5個相册)"
+  "Too many albums (free tier allows max 5 albums)": "相册太多 (免費級別最多允許5個相册)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ngì yû chhiá-kò 5 phún siông-chhṳ lâu ngì-ke vùn-khien chiam-liáu {formatGB(usedGB)} khûng-kiên (han-chṳ: {FREE_TIER_STORAGE_LIMIT_GB} GB). Liá-ke siông-chhṳ chiang-yeu chhṳ-thung thai-thet, chhù-fî ngì koet-thin thai-thet khì-thâ siông-chhṳ:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ngì yû {albumCount} sióng-chṳk, tàn-he miên-fî chṳ-nèn póo-chhùn 5-ke. Chí-têu chui-kiû ke sióng-chṳk chiông-voi chhṳ-tûng-thet mò-tiāu, chhù-fî ngì koet-thin mò-tiāu khì-thâ sióng-chṳk:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ngì-kî vùn-khien chûm-to {formatGB(usedGB)} thi-fông, tàn-he ngì chṳ́-yû {FREE_TIER_STORAGE_LIMIT_GB} GB khî chhûn-fong. Liá-se sióng-chhṳk chiang-voi chṳ-thung-thi pûn-thet, chhù-fî ngì koet-thin pûn-thet khì-thâ sióng-chhṳk:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ngì-kî vùn-khien chûm-to {formatGB(usedGB)} thi-fông, tàn-he ngì chṳ́-yû {totalStorageGB} GB khî chhûn-fong. Liá-se sióng-chhṳk chiang-voi chṳ-thung-thi pûn-thet, chhù-fî ngì koet-thin pûn-thet khì-thâ sióng-chhṳk:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "你可以保存5本相簿，總共最多{FREE_TIER_STORAGE_LIMIT_GB} GB免費。刪除無用个相簿來釋放空間。",
+  "Paid tiers have unlimited albums and are limited only by storage": "Fu-fi téng-khiap yû mò-han siông-chhṳk lâu tui-yî chṳ-liáu chhûn-fong han-chṳ"
 }

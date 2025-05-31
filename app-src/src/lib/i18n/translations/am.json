@@ -166,8 +166,6 @@
   "Email address...": "ኢሜይል አድራሻ...",
   "Two-Factor Authentication": "የሁለት-ዓይነት ማረጋገጫ",
   "Select For Download": "ለማውረድ ምረጥ",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 አልበሞች ወይም እስከ {FREE_TIER_STORAGE_LIMIT_GB} ጂቢ ድረስ በነጻ ማስቀመጥ ይችላሉ። ቦታ ለመፍጠር ያልተጠቀሙባቸውን አልበሞች ይሰርዙ።",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "የእርስዎ ፋይሎች በአሁኑ ጊዜ {formatGB(usedGB)} ቦታ ይይዛሉ፣ ነገር ግን {FREE_TIER_STORAGE_LIMIT_GB} ጂቢ ማከፈያ ብቻ አለዎት። እነዚህ አልበሞች በራስ-ሰር እየተሰረዙ ነው:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "የእርስዎ ፋይሎች በአሁኑ ጊዜ ከ{totalStorageGB} ጂቢ ማከፈያ ውስጥ {formatGB(usedGB)} ቦታ ይይዛሉ። አልበሞችን መቀጠል ለማከማቸት ምዝገባዎን ቶሎ ማሻሻል ሊኖርብዎት ይችላል።",
   "Upgrade Your Subscription": "የእርስዎን ምዝገባ ያሻሽሉ",
   "Storage Management": "የማከማቻ አስተዳደር",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "ምዝገባን ለማሻሻል ጠቅ ያድርጉ",
   "WILL BE DELETED": "ይደመሰሳል",
   "Create an album in 90 sec": "በ90 ሰከንድ አልበም ይፍጠሩ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "እርስዎ {albumCount} አልበሞች አሎት ነገር ግን በነጻ 5 ብቻ ማስቀመጥ ይችላሉ። እነዚህ ብዙ አልበሞች በቀጥታ እየተሰረዙ ነው:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "የእርስዎ ፋይሎች {formatGB(usedGB)} ቦታ ይይዛሉ፣ ነገር ግን {FREE_TIER_STORAGE_LIMIT_GB} GB ማከማቻ ብቻ ይዘውታል። እነዚህ አልበሞች በአውቶማቲክ እየተሰረዙ ነው:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "ከ5 በላይ አልበሞች አሎት እና የእርስዎ ፋይሎች {formatGB(usedGB)} ቦታ ይይዛሉ (ገደብ: {FREE_TIER_STORAGE_LIMIT_GB} GB)። እነዚህ አልበሞች በአውቶማቲክ እየተሰረዙ ነው:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "የእርስዎ ፋይሎች {formatGB(usedGB)} ቦታ ይይዛሉ፣ ነገር ግን {totalStorageGB} GB ማከማቻ ብቻ ይዘውታል። እነዚህ አልበሞች በአውቶማቲክ እየተሰረዙ ነው:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "የእርስዎ ፋይሎች ከ{totalStorageGB} GB ማከማቻ {formatGB(usedGB)} ይይዛሉ። በቅርቡ የእርስዎን ምዝገባ ማሻሻል ሊያስፈልግዎት ይችላል።",
   "Loading account information...": "የመለያ መረጃ በመጫን ላይ...",
   "Please enter a positive number": "እባክዎ አወንታዊ ቁጥር ያስገቡ",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "የደንበኝነት መረጃ በመጫን ላይ...",
   "Insufficient storage and too many albums (max 5 for free)": "በቂ ማከማቻ የለም እና ብዙ አልበሞች (ነፃ ከሆነ ከ5 በላይ)",
   "Insufficient storage capacity": "በቂ ያልሆነ ማከማቻ አቅም",
-  "Too many albums (free tier allows max 5 albums)": "ብዙ አልበሞች (ነፃ ደረጃ ከ5 አልበሞች በላይ አይፈቅድም)"
+  "Too many albums (free tier allows max 5 albums)": "ብዙ አልበሞች (ነፃ ደረጃ ከ5 አልበሞች በላይ አይፈቅድም)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "ከ5 አልበሞች በላይ አለዎት እናም ፋይሎችዎ {formatGB(usedGB)} ቦታ ይይዛሉ (ገደብ: {FREE_TIER_STORAGE_LIMIT_GB} GB)። እነዚህ አልበሞች ሌሎች አልበሞችን ለመሰረዝ ካልወሰኑ በስተቀር በራስ ሰር ይሰረዛሉ:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "እርስዎ {albumCount} አልበሞች አሉዎት ነገር ግን በነጻ 5 ብቻ ማስቀመጥ ይችላሉ። እነዚህ ቆዩ አልበሞች ሌሎች አልበሞችን ለመሰረዝ ካልወሰኑ በቀር በራሳቸው ይሰረዛሉ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "የእርስዎ ፋይሎች {formatGB(usedGB)} ቦታ ይይዛሉ፣ ግን እርስዎ {FREE_TIER_STORAGE_LIMIT_GB} ጊቢ ማከማቻ ብቻ አሉዎት። እነዚህ አልበሞች ሌሎች አልበሞችን ለመሰረዝ ካልወሰኑ በስተቀር በራስ-ሰር ይሰረዛሉ፡",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "የእርስዎ ፋይሎች {formatGB(usedGB)} ቦታ ይይዛሉ፣ ግን እርስዎ {totalStorageGB} ጊቢ ማከማቻ ብቻ አሉዎት። እነዚህ አልበሞች ሌሎች አልበሞችን ለመሰረዝ ካልወሰኑ በስተቀር በራስ-ሰር ይሰረዛሉ፡",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ከፍተኛው {FREE_TIER_STORAGE_LIMIT_GB} ጊጋባይት የሆኑ 5 አልበሞችን በነፃ ማስቀመጥ ይችላሉ። ቦታ ለመስጠት ያልተጠቀሙባቸውን አልበሞች ይሰርዙ።",
+  "Paid tiers have unlimited albums and are limited only by storage": "የተከፈሉ ደረጃዎች ያልተወሰኑ አልበሞች አሏቸው እና በማከማቻ ብቻ የተገደቡ ናቸው"
 }

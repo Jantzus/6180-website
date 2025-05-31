@@ -166,8 +166,6 @@
   "Email address...": "Teessoo imeelii...",
   "Two-Factor Authentication": "Mirkaneessuu Wanta Lama",
   "Select For Download": "Fil Download Filadi",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Albamoota 5 ykn hanga {FREE_TIER_STORAGE_LIMIT_GB} GB bilisaan olkaa'uu dandeessu. Albamoota hin itti fayyadamne haqaatii iddoo uumuu.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Faayiliiwwan keessan amma bakka {formatGB(usedGB)} qabachaa jiru, garuu isin {FREE_TIER_STORAGE_LIMIT_GB} GB kuusaa qofa qabdu. Albamoota kunneen ofumaan haqamaa jiru:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Faayiliiwwan keessan amma bakka {formatGB(usedGB)} kuusaa {totalStorageGB} GB jiru keessaa qabachaa jiru. Albamoota kuusuu itti fufuuf dhiheenyatti suurii keessan fooyyessuu qabuu dandeessa.",
   "Upgrade Your Subscription": "Suurii Keessan Fooyyessuu",
   "Storage Management": "Bulchiinsa Kuusaa",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Maallaqa Subscription Fooyye'uu",
   "WILL BE DELETED": "NI HAQAMA",
   "Create an album in 90 sec": "Album daqiiqaa 90 keessatti uumi",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Albamootni {albumCount} qabdu garuu bilisaan 5 qofa olkaa'uu dandeessa. Albamootni durii kun ofumaan haqamaa jiru:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Odeeffannoo akkaawuntii fe'uu...",
   "Please enter a positive number": "Lakkoofsa gaarii galchi",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Odeeffannoo galmee dabaluu...",
   "Insufficient storage and too many albums (max 5 for free)": "Kuusaa galmee hin gaʼu fi albamoonni baayʼee (bilisaan hamma 5)",
   "Insufficient storage capacity": "Dandeettii kuusaa hin gaʼu",
-  "Too many albums (free tier allows max 5 albums)": "Albamoonni baayʼee (sadarkaan bilisaa bilisaan hamma 5 hayyama)"
+  "Too many albums (free tier allows max 5 albums)": "Albamoonni baayʼee (sadarkaan bilisaa bilisaan hamma 5 hayyama)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Albama 5 ol'oota qabda AKKASUMAS faayilleen kee iddoo {formatGB(usedGB)} qabate (daangaa: {FREE_TIER_STORAGE_LIMIT_GB} GB). Albamoonni kun ofumaan ni haqamu yoo ati albama biroo haquu hin murteessine:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Albamoota {albumCount} qabda garuu bilisa ta'een 5 qofa olkaa'uu dandeessa. Albamoota durii kana ofuma isaaniitiin haqamu ta'a, yoo ati albamoota biroo haquu murteessuu baatte malee:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Faayiloonni keessan {formatGB(usedGB)} iddoo qabatu, garuu isin {FREE_TIER_STORAGE_LIMIT_GB} GB kuusannoo qofaa qabdu. Albamooni kun ofumaan haqamu yoo isin albamoota biroo haquu murteessanii malee:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Faayiloonni keessan {formatGB(usedGB)} iddoo qabatu, garuu isin {totalStorageGB} GB kuusannoo qofaa qabdu. Albamooni kun ofumaan haqamu yoo isin albamoota biroo haquu murteessanii malee:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Album 5 baay'atni dimshaasha {FREE_TIER_STORAGE_LIMIT_GB} GB kaffaltii bilisaan kuusachuu dandeessa. Bakka uumuuf album hin fayyadan haquu.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Sadarkaalee kaffaltii album daangaa hin qabne qabuu fi qabannoodhaan qofa daangeffamu"
 }

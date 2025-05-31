@@ -166,8 +166,6 @@
   "Email address...": "בליצפּאָסט אַדרעס...",
   "Two-Factor Authentication": "צוויי-פֿאַקטאָר אויטענטיפֿיקאַציע",
   "Select For Download": "קלייַבן פֿאַר דאַונלאָוד",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "איר קענט אויפֿהיטן 5 אלבומען אדער ביז {FREE_TIER_STORAGE_LIMIT_GB} גיגאבייט פֿאַר גאָרנישט. לייגט אַוועק ניט־גענוצטע אלבומען כּדי צו מאַכן אָרט.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "אײַערע טעקעס נעמען איצט {formatGB(usedGB)} אָרט, אָבער איר האָט נאָר {FREE_TIER_STORAGE_LIMIT_GB} GB אויפֿבעהאַלטונג. די אלבומען ווערן אויטאָמאַטיש אויסגעמעקט:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "אײַערע טעקעס נעמען איצט {formatGB(usedGB)} אָרט פֿון {totalStorageGB} GB אויפֿבעהאַלטונג וואָס איז בנמצא. איר קענט דאַרפֿן באַלד אויפֿרייסן אײַער אַבאָנעמענט כּדי ווײַטער צו אויפֿהיטן אלבומען.",
   "Upgrade Your Subscription": "אויפֿרייסן אײַער אַבאָנעמענט",
   "Storage Management": "שפייכער פארוואלטונג",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "קליק צו אויפֿטון די סובסקריפּציע",
   "WILL BE DELETED": "וועט ווערן אויסגעמעקט",
   "Create an album in 90 sec": "שאַפֿן אַן אַלבאָם אין 90 סעקונדן",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "איר האט {albumCount} אלבומען אבער קענט בלויז 5 אויפהיטן פֿאַר פֿרײַ. די עלטסטע אלבומען ווערן אויטאָמאַטיש אויסגעמעקט:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "לאָדט קאָנטע אינפֿאָרמאַציע...",
   "Please enter a positive number": "ביטע אַרײַנגעבן אַ פּאָזיטיווע נומער",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "לאָדן אינסקריפּציע אינפֿאָרמאַציע...",
   "Insufficient storage and too many albums (max 5 for free)": "אומגענוג שפּײַכער און צו פֿיל אַלבומען (מאַקס 5 פֿרײַ)",
   "Insufficient storage capacity": "אומגענוג שפּײַכער קאַפּאַציטעט",
-  "Too many albums (free tier allows max 5 albums)": "צו פֿיל אַלבומען (פֿרײַ מדרגה ערלויבט מאַקס 5 אַלבומען)"
+  "Too many albums (free tier allows max 5 albums)": "צו פֿיל אַלבומען (פֿרײַ מדרגה ערלויבט מאַקס 5 אַלבומען)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "איר האט איבער 5 אלבומען און אייערע טעקעס נעמען {formatGB(usedGB)} פלאץ (גרענעץ: {FREE_TIER_STORAGE_LIMIT_GB} GB). די אלבומען ווערן אויטאמאטיש אויסגעמעקט סיידן איר באשליסט אויסצומעקן אנדערע אלבומען:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "איר האט {albumCount} אלבומען אבער קענט בלויז שפארן 5 פֿאר פֿריי. די עלטסטע אלבומען ווערן אויטאמאטיש אויסגעמעקט אחוץ אויב איר באשליסט אויסצומעקן אנדערע אלבומען:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "אייערע טעקעס נעמען {formatGB(usedGB)} פּלאַץ, אָבער איר האָט בלויז {FREE_TIER_STORAGE_LIMIT_GB} גיגאַבייט סטאָרידזש. די אַלבומס ווערן אויטאָמאַטיש אויסגעמעקט סײַדן איר באַשליסט אויסצומעקן אַנדערע אַלבומס:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "אייערע טעקעס נעמען {formatGB(usedGB)} פּלאַץ, אָבער איר האָט בלויז {totalStorageGB} גיגאַבייט סטאָרידזש. די אַלבומס ווערן אויטאָמאַטיש אויסגעמעקט סײַדן איר באַשליסט אויסצומעקן אַנדערע אַלבומס:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "איר קענט אויפֿהיטן 5 אַלבומען וואָס האָבן אין גאַנצן מאַקסימום {FREE_TIER_STORAGE_LIMIT_GB} גיגאַבייט פֿאַר פֿרײַ. מעקט אויס די אונגעברויכטע אַלבומען צו מאַכן אָרט.",
+  "Paid tiers have unlimited albums and are limited only by storage": "באַצאָלטע מדרגות האָבן אומבאַגרענעצטע אַלבומס און זענען לימיטירט בלויז דורך סטאָרידזש"
 }

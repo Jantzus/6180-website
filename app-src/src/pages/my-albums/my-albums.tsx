@@ -164,21 +164,6 @@ const AlbumDeletionPreview = ({
             overflow: 'hidden',
             opacity: '0.85'
           }}>
-            {/* Deletion warning banner */}
-            <div style={{
-              position: 'absolute',
-              top: '0',
-              left: '0',
-              right: '0',
-              background: '#dc3545',
-              color: 'white',
-              padding: '6px 12px',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              textAlign: 'center'
-            }}>
-              ⚠️ {t('WILL BE DELETED')}
-            </div>
 
             {/* Album header */}
             <div style={{ 
@@ -347,19 +332,19 @@ const StorageMessage = ({
     if (!isOverAlbumCount && !isOverStorage) {
       // Within limits - show helpful info
       messageType = 'free-space';
-      message = t(`You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.`).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
+      message = t(`You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.`).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
     } else if (isOverAlbumCount && isOverStorage) {
       // Over both limits
       messageType = 'free-both-exceeded';
-      message = t(`You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
+      message = t(`You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
     } else if (isOverAlbumCount) {
       // Over album count only
       messageType = 'free-count-exceeded';
-      message = t(`You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:`).replace('{albumCount}', albumCount.toString());
+      message = t(`You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:`).replace('{albumCount}', albumCount.toString());
     } else if (isOverStorage) {
       // Over storage only
       messageType = 'free-storage-exceeded';
-      message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
+      message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
     }
   } else {
     // Paid tier logic
@@ -368,7 +353,7 @@ const StorageMessage = ({
     
     if (remainingGB < 0) {
       messageType = 'paid-exceeded';
-      message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{totalStorageGB}', totalStorageGB.toString());
+      message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{totalStorageGB}', totalStorageGB.toString());
     } else if (remainingGB < 1.5) {
       messageType = 'paid-warning';
       message = t(`Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{totalStorageGB}', totalStorageGB.toString());

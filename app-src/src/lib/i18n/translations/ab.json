@@ -166,8 +166,6 @@
   "Email address...": "Сахьа Аныхра...",
   "Two-Factor Authentication": "Ҩба-Фактор Аутентификация",
   "Select For Download": "Аҽыргаҿыу Ахкылара",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Шәара хәыҷ 5 альбом икылархатәуп акнаахо {FREE_TIER_STORAGE_LIMIT_GB} GB акыр. Ахьыгагрозшьа альбомқәа шәаԥхьаӡарызеи анаԥшра ахыԥхызны.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Шәара афаилқәа хыцәажәара {formatGB(usedGB)} ихьаԥшуеит, аха уара {FREE_TIER_STORAGE_LIMIT_GB} ГБ мацара уҩы. Ари альбомқәа автоматикала ԥшаауеит:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Шәара афаилқәа хыцәажәара {formatGB(usedGB)} ихьаԥшуеит {totalStorageGB} ГБ мацара аҟынтә. Иахьа ущтә шәабжьажьра ҭарқәа шәыԥшаалоу алимбамқәа рырбара шәҟашь.",
   "Upgrade Your Subscription": "Шәара Абжьажьра Ҭарқәа Лашәкәыҳуп",
   "Storage Management": "Акьыԥшра Амилкылара",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Асахьа Аныхра Агәра",
   "WILL BE DELETED": "аԥсрыхаратъ еизу",
   "Create an album in 90 sec": "Альбом ра 90 секундк ашьҭаху",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Шәара {albumCount} альбом ишоуп, аха ахҭа бесплатно 5 иаку изқьара ауеит. Абри ишаҟәқәа автоматла ихыхуп:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Шәара файлқәа {formatGB(usedGL)} аҭыԥ алаанаауеит, аха шәара {FREE_TIER_STORAGE_LIMIT_GB} GB акейыҭ ашоуп. Абри альбомқәа автоматла ихыхуп:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Шәара 5 рзы еиҳауа альбом ишоуп ҷи шәара файлқәа {formatGB(usedGL)} аҭыԥ алаанаауеит (ахырхарҭа: {FREE_TIER_STORAGE_LIMIT_GB} GB). Абри альбомқәа автоматла ихыхуп:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Шәара файлқәа {formatGB(usedGL)} аҭыԥ алаанаауеит, аха шәара {totalStorageGB} GB акейыҭ ашоуп. Абри альбомқәа автоматла ихыхуп:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Шәара файлқәа {formatGB(usedGB)} {totalStorageGB} GB акейыҭ аҟынтә алаанаауеит. Шәысҭаз шәара подпискақәа аҽаҵәаашьа ахәылақәа аԥсахуп.",
   "Loading account information...": "Аккаунт ахииҩ ҭакны...",
   "Please enter a positive number": "Ирыхагақәа хыҟоу ҳамҩа шәҭахьоу",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Агылазарбатәи аинформациеи ахчара...",
   "Insufficient storage and too many albums (max 5 for free)": "Аџыдзабжьырԥшра амч ирымоуп рыла альбомқәа рҽыцқәа (амахьынтә 5)",
   "Insufficient storage capacity": "Аџыдзабжьырԥшра амч ирымоуп",
-  "Too many albums (free tier allows max 5 albums)": "Альбомқәа рҽыцқәа (амахьынтә даража 5 рыцла)"
+  "Too many albums (free tier allows max 5 albums)": "Альбомқәа рҽыцқәа (амахьынтә даража 5 рыцла)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Шәара хәыҷак албом ишәоит ашәа afаилқәа {formatGB(usedGB)} адгьыл иқәдыруоит (алхра: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ари албомқәа автоматикала шыԥшаауеит уи албомқәа егьырҭ шыԥшаара угәы мацара шьҭа:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Уара {albumCount} альбом рыҵоит, аха ахархәа 5 мацара ирылшоит. Ари альбомқәа аҳәамҭа рыхьчара аҭакрала аҟынтәуп, шәара альбом урамны шәыгылаҩар шәаҟны:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Шәҟәы {formatGB(usedGB)} адгьыл аԥхьара, аха {FREE_TIER_STORAGE_LIMIT_GB} ГБ аԥыҽаҩра мацара. Ари албомқәа автоматикала аԥыҽаҩыз рыԥсахызаргьы, ҿыц албомқәа уԥыҽаҩызы шәҟанымкәа:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Шәҟәы {formatGB(usedGB)} адгьыл аԥхьара, аха {totalStorageGB} ГБ аԥыҽаҩра мацара. Ари албомқәа автоматикала аԥыҽаҩыз рыԥсахызаргьы, ҿыц албомқәа уԥыҽаҩызы шәҟанымкәа:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Шәара 5 альбом иашәырхәаргылаҵәуа {FREE_TIER_STORAGE_LIMIT_GB} ГБ амаҵәахә аиҭаххарц. Адгьыл ашәаҿыхуаз акәымкәа альбомқәа уыхәыч.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Ахҭаламаҷ ауеит альбомқәа рҭбаам ауаанӡа аилкаа хацәа"
 }

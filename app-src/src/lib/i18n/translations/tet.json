@@ -166,8 +166,6 @@
   "Email address...": "Enderesu email...",
   "Two-Factor Authentication": "Verifikasaun Fator-Rua",
   "Select For Download": "Hili Ba Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ó bele rai álbum 5 ka to {FREE_TIER_STORAGE_LIMIT_GB} GB livre. Hamoos álbum sira ne'ebé la uza atu halo fatin.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ó-nia arkivu sira agora okupa fatin {formatGB(usedGB)}, maibé ó iha {FREE_TIER_STORAGE_LIMIT_GB} GB atu rai deit. Álbum sira-ne'e la'o halo rasik hamoos:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ó-nia arkivu sira agora okupa fatin {formatGB(usedGB)} husi {totalStorageGB} GB atu rai nebe iha. Ó bele presiza upgrade ó-nia subscrição lalais atu kontinua rai álbum sira-ne'e.",
   "Upgrade Your Subscription": "Upgrade Ó-nia Subscrição",
   "Storage Management": "Jestaun Armazenamentu",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klik Atu Hadia Subscription",
   "WILL BE DELETED": "SEI HAMOOS",
   "Create an album in 90 sec": "Halo álbum iha segundo 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ó iha álbum {albumCount} maibé bele salva deit 5 ho livre. Álbum sira ne'ebé tuan liu mak sei hamos automatikamente:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Neon dadus konta nian...",
   "Please enter a positive number": "Favor halo numeru pozitivu",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Halimar informasaun subscrição nian...",
   "Insufficient storage and too many albums (max 5 for free)": "Armazenamentu la to'o no álbun barak tebes (maksimum 5 livre)",
   "Insufficient storage capacity": "Kapasidade armazenamentu la to'o",
-  "Too many albums (free tier allows max 5 albums)": "Álbun barak tebes (nível livre permite maksimum 5 álbun)"
+  "Too many albums (free tier allows max 5 albums)": "Álbun barak tebes (nível livre permite maksimum 5 álbun)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ita-boot iha album lima liu tan ita-nia fail sira okupa {formatGB(usedGB)} fatin (limite: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album sira-ne'e hetan hasai otomatiku se ita la foti desizaun atu hasai album seluk:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ita iha {albumCount} álbum maibé bele rai 5 de'it ho livre. Álbun sira-ne tuan liu sei sai halo automátiku maibé ita la-decide atu sai álbun seluk:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ita-nia arkivu sira halo hela {formatGB(usedGB)} fatin, maibé ita iha de'it {FREE_TIER_STORAGE_LIMIT_GB} GB atu rai sasan. Album sira-ne'e sei sai automátiku bainhira ita la decide atu sai album sira seluk:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ita-nia arkivu sira halo hela {formatGB(usedGB)} fatin, maibé ita iha de'it {totalStorageGB} GB atu rai sasan. Album sira-ne'e sei sai automátiku bainhira ita la decide atu sai album sira seluk:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ita bele rai album 5 ne'ebé tomak máximu {FREE_TIER_STORAGE_LIMIT_GB} GB livre. Hamos album sira ne'ebé la uza hodi halo fatin.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Nivel selu nian iha albun la limitado no limitado de'it husi armazenamentu"
 }

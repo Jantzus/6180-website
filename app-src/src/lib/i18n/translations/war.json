@@ -166,8 +166,6 @@
   "Email address...": "Adres han email...",
   "Two-Factor Authentication": "Duha-Ka-Factor Nga Pagpamatuod",
   "Select For Download": "Pilia Para Han Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Makakasave ka hin 5 nga album o tubtub ha {FREE_TIER_STORAGE_LIMIT_GB} GB nga libre. Papara an mga album nga diri ginagamit para makahimo hin lugar.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "An imo mga file yana nanggagamit hin {formatGB(usedGB)} nga espasyo, pero may {FREE_TIER_STORAGE_LIMIT_GB} GB nga storage la ikaw. Ini nga mga album ginpapara ha automatiko:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "An imo mga file yana nanggagamit hin {formatGB(usedGB)} nga espasyo tikang ha {totalStorageGB} GB nga storage nga makakuha. Basi kinahanglan mo hin pag-upgrade han imo subscription hin dali para makapadayon ha pag-save hin mga album.",
   "Upgrade Your Subscription": "I-upgrade Han Imo Subscription",
   "Storage Management": "Pagdumala Hin Storage",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "I-Click Para Sa Pag-Upgrade Han Subscription",
   "WILL BE DELETED": "MAPAPARA",
   "Create an album in 90 sec": "Himoa album ha 90 segundo",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "May ada ka {albumCount} nga mga album pero 5 la an makakahal mo nga libre. An ining pinakatigulang nga mga album ginb-bura automatically:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Nagka-karga hin impormasyon han account...",
   "Please enter a positive number": "Palihug ibutang an usa ka positibo nga numero",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Nagkakarga hin mga impormasyon han subscription...",
   "Insufficient storage and too many albums (max 5 for free)": "Kulang an storage ngan sobra nga mga album (maximum nga 5 libre)",
   "Insufficient storage capacity": "Kulang an kapasidad han storage",
-  "Too many albums (free tier allows max 5 albums)": "Sobra nga mga album (an libre nga tier nagtutugotan hin maximum nga 5 ka album)"
+  "Too many albums (free tier allows max 5 albums)": "Sobra nga mga album (an libre nga tier nagtutugotan hin maximum nga 5 ka album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Naay himo ka han 5 nga album ngan an imo mga file nakaogpos han {formatGB(usedGB)} nga luna (limitasyon: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ini nga mga album ginlalangkat ngan awtomatik kun diri ka maghunahuna paglankat hin iba nga mga album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "May {albumCount} ka mga album ikaw pero 5 la an maimo nimo nga libre. Ini nga mga kinadaan nga album ginkakarawat nga automatiko sukad han imo pagdesisyon nga kawrahon an iba nga mga album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "An imo mga file nagagamit hin {formatGB(usedGB)} nga lugar, pero {FREE_TIER_STORAGE_LIMIT_GB} GB nga storage la an imo nabatyag. Ini nga mga album gin papara awtomatik haen la hin diri ka nagdesisyon nga magpara hin iba nga mga album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "An imo mga file nagagamit hin {formatGB(usedGB)} nga lugar, pero {totalStorageGB} GB nga storage la an imo nabatyag. Ini nga mga album gin papara awtomatik haen la hin diri ka nagdesisyon nga magpara hin iba nga mga album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Mahimo ka magtipig hin 5 ka album nga nag-total hin maximum {FREE_TIER_STORAGE_LIMIT_GB} GB nga libre. Pahawon an mga album nga diri mo ginagamit para may luna.",
+  "Paid tiers have unlimited albums and are limited only by storage": "An mga tier nga bayad may waray katapusan nga mga album ngan limitado la han storage"
 }

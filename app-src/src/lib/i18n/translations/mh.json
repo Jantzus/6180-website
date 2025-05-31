@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Ruo-Factor Authentication",
   "Select For Download": "Tilik Ñan Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Kwōn kab polok 5 album ak jet {FREE_TIER_STORAGE_LIMIT_GB} GB ejjab kōt. Jokla album ro ej jab itok im kab jerbal kein.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Am fayl rej koba {formatGB(usedGB)} booj men, ak enaaj {FREE_TIER_STORAGE_LIMIT_GB} GB wōt im koba wōt. Ko album rej jokla jen automatik:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Am fayl rej koba {formatGB(usedGB)} jen {totalStorageGB} GB bwe in koba wōt eo an. Kwōj aikuij ke jino ke upgrade am subscription ȩn kwōj aikuij jikdọọn koba ko album.",
   "Upgrade Your Subscription": "Upgrade Am Subscription",
   "Storage Management": "Kōmman In Kape",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Jela Ilo Kajjitōk Subscription",
   "WILL BE DELETED": "ENAAJ KAJOOR",
   "Create an album in 90 sec": "Kajjela album ilo 90 jekad",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Kwoj jerbal album {albumCount} ak kwoj kanne jerbal 5 wot an kwomaroñ. Kein album armej rej mokaj jen automatic:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Akawnt in mour kōtaan...",
   "Please enter a positive number": "Jouj ilo numba jikin",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Subscription ikonono ko kar...",
   "Insufficient storage and too many albums (max 5 for free)": "Ej etal storage ak eo etal album (5 dri in free)",
   "Insufficient storage capacity": "Ej etal storage",
-  "Too many albums (free tier allows max 5 albums)": "Album ro eo etal (free tier ej jerbal 5 album ne)"
+  "Too many albums (free tier allows max 5 albums)": "Album ro eo etal (free tier ej jerbal 5 album ne)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Kwoj armej in album 5 AK im fail ro rejekutkut {formatGB(usedGB)} inaan (enñiñ: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album kein rej jelete eo automatic ejjab wonaan armej in jelete jikka album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ewōr am̧ {albumCount} album ilo ej ak kōn̄aan jab 5 m̧ōn ñan ejāpe. Rei album ko im̧ōn̄ rej jorrāān in automatic aolep̧ ej jab kwōj jikuuḷ in jorrāān album jet:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Am fail kein rej kōmman {formatGB(usedGB)} wāto, ak kwōj {FREE_TIER_STORAGE_LIMIT_GB} GB walōk wōt. Kein album rei rej jukjāākūt ippān ak ejjelọk am dikiōn in jukjāākūt album jetōn:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Am fail kein rej kōmman {formatGB(usedGB)} wāto, ak kwōj {totalStorageGB} GB walōk wōt. Kein album rei rej jukjāākūt ippān ak ejjelọk am dikiōn in jukjāākūt album jetōn:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Kwōn maron save album 5 rej total maximum {FREE_TIER_STORAGE_LIMIT_GB} GB nan jab. Jok album ro ej jab emōn nan jerbal ko rōk.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Buyōt in kōn jerbal kein album ro ejjelọk kōnaan im kōjparok jerbal ilo joij"
 }

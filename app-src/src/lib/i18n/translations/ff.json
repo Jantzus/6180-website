@@ -166,8 +166,6 @@
   "Email address...": "Ñiiɓirde iimeel...",
   "Two-Factor Authentication": "Authentication Ɗiɗo",
   "Select For Download": "Suɓo Ngam Aawteego",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "A waawi mooftude albomuuji 5 walla haa {FREE_TIER_STORAGE_LIMIT_GB} GB alaa no nafoore. Momtu albomuuji huutoraaki ngam waɗde nokku.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Fiilde maa e sahaa ina jeeyoo {formatGB(usedGB)} nokku, kono a jogii {FREE_TIER_STORAGE_LIMIT_GB} GB mooftaare tan. Albomuuji ɗii ina momteede e jaajol:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Fiilde maa e sahaa ina jeeyoo {formatGB(usedGB)} e {totalStorageGB} GB mooftaare yo heɓii. Mbaɗa sokli ma dano ma waɗa nguurndam maggal e yaajugo ngam jokkondir mooftude albomuuji.",
   "Upgrade Your Subscription": "Waɗde Nguurndam Maggal Ma",
   "Storage Management": "Njuɓɓudi Jaɓɓorgo",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Dañ Ngam Waɗ-de Kuutoragol",
   "WILL BE DELETED": "MAA MOMTU",
   "Create an album in 90 sec": "Mah album e sekondi 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "A jogii {albumCount} albomuuji kono a waawi dannditagol 5 tan alaa sariya. Ɗii albomuuji ɓurɗi ɗi nana momtude e jaayɗinde:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Nana loowi humpito laamorde...",
   "Please enter a positive number": "Tiiɗno naatnu limorɗo moƴƴo",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Nana haalirde humpito humpito...",
   "Insufficient storage and too many albums (max 5 for free)": "Mooftol ɓooydi e album keewɗi (adda 5 yoolde)",
   "Insufficient storage capacity": "Mooftol ɓooydi",
-  "Too many albums (free tier allows max 5 albums)": "Album keewɗi (daraj yoolde e 5 fof keewɗe)"
+  "Too many albums (free tier allows max 5 albums)": "Album keewɗi (daraj yoolde e 5 fof keewɗe)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "A jogii albomuuji ɓurndi 5 KADI piile maa foɗɗii {formatGB(usedGB)} nokkuure (daññal: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ɗee albomuuji ina momtoo e jaawto ngoo so a waɗaani suudu momteede albomuuji goɗɗi:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "A jogii {albumCount} albomuuji kono a waawi dannde duuɓi 5 tan alaa sariya. Albomuuji goɗɗi ɗii ko no momtaaki e jaajol ngol so a tawataaki dannde albomuuji goɗɗi:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fiilee maa ena heɓii {formatGB(usedGB)} nokku, kono ada jogii {FREE_TIER_STORAGE_LIMIT_GB} GB daasin tan. Albome ɗee ena momtaaki e jaayɗingol so wonaa mijaartaa momtude albome goɗɗe:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fiilee maa ena heɓii {formatGB(usedGB)} nokku, kono ada jogii {totalStorageGB} GB daasin tan. Albome ɗee ena momtaaki e jaayɗingol so wonaa mijaartaa momtude albome goɗɗe:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "A waawi danndude albomuuji 5 ngi max ndi {FREE_TIER_STORAGE_LIMIT_GB} GB alaa saarandu. Momtu albomuuji wonande yo horiinde.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Njuɓɓite keefe ɗee ena woodi albomuuji nder hakkunde kala e kaɓirgol tan"
 }

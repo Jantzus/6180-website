@@ -166,8 +166,6 @@
   "Email address...": "Enmys post-l...",
   "Two-Factor Authentication": "Feeraghey Jees-Obbyr",
   "Select For Download": "Reih Son Laadey Sheese",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Foddee oo 5 albymyn ny gys {FREE_TIER_STORAGE_LIMIT_GB} GB y hauail son veg. Doll-jee magh albymyn nagh vel jeelt er son boayl y yannoo.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ta ny coardyn eu gaccan {formatGB(usedGB)} boayl nish, agh cha nel eu agh {FREE_TIER_STORAGE_LIMIT_GB} GB stoyrey. Ta ny albymyn shoh goll er scryssey hene-obbragh:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ta ny coardyn eu gaccan {formatGB(usedGB)} boayl ass {totalStorageGB} GB stoyrey t'er dy ve ry-gheddyn nish. Foddee dy bee eh lowit erriu nyn fo-screeuaghey y n-oardaghey dy-leah dy chummail er dy hauail albymyn.",
   "Upgrade Your Subscription": "Yn-oardaigh Nyn Fo-screeuaghey",
   "Storage Management": "Reireydys Stoyrey",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Crig Dy Chur Seose Fo-Scrieu",
   "WILL BE DELETED": "BEE DOLLIT MAGH",
   "Create an album in 90 sec": "Croo albym ayns 90 socarr",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ta {albumCount} albym eu agh cha nod oo sauail agh 5 nastee. Ta ny albymyn shoh s'shinney goll er scryssey dy seyr-obbragh:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Laadey fys coontey...",
   "Please enter a positive number": "Cur stiagh earroo fondagh",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Laadey fys-chymnagh fo-screeuee...",
   "Insufficient storage and too many albums (max 5 for free)": "Tashtey neuvooar as rouyr albymyn (wheesh 5 son neunhee)",
   "Insufficient storage capacity": "Toilleadh tashtey neuvooar",
-  "Too many albums (free tier allows max 5 albums)": "Rouyr albymyn (ta'n eer neunhee lhiggey da 5 albymyn ec y chooid smoo)"
+  "Too many albums (free tier allows max 5 albums)": "Rouyr albymyn (ta'n eer neunhee lhiggey da 5 albymyn ec y chooid smoo)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ta harrish 5 albym ayd AS ta dty choadanyn goaill {formatGB(usedGB)} boayl (cagliagh: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ta ny albymyn shoh goll er scryssey dy seyr-obbragh mannagh vel oo kinjagh scryssey albymyn elley:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ta {albumCount} albymyn ayd agh cha nod oo agh 5 y hauail son veg. Ta ny albymyn s'shinney shoh goll er scryssey hene-obbragh mannagh vel oo kiarail scryssey albymyn elley:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ta dty choadan goaill {formatGB(usedGB)} spoar, agh cha nel ayd agh {FREE_TIER_STORAGE_LIMIT_GB} GB stoyral. Ta ny albymyn shoh goll er scryssey dy seyr-obbragh mannagh vel oo kinjagh scryssey albymyn elley:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ta dty choadan goaill {formatGB(usedGB)} spoar, agh cha nel ayd agh {totalStorageGB} GB stoyral. Ta ny albymyn shoh goll er scryssey dy seyr-obbragh mannagh vel oo kinjagh scryssey albymyn elley:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Foddee oo sauail 5 albymyn ta ec y chooid smoo {FREE_TIER_STORAGE_LIMIT_GB} GB son veg. Doll-magh albymyn nagh vel ymmydit dy yannoo spoar.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Ta keeadyn eeckagh albums gyn jerrey oc as cha vel monney erbee curtailagh orroo agh stoyral"
 }

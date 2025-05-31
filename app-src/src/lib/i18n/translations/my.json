@@ -166,8 +166,6 @@
   "Email address...": "အီးမေးလ်လိပ်စာ...",
   "Two-Factor Authentication": "နှစ်ဆင့်အတည်ပြုချက်",
   "Select For Download": "ဒေါင်းလုဒ်အတွက်ရွေးချယ်ပါ",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "သင်သည် အယ်လ်ဘမ် ၅ ခု သို့မဟုတ် {FREE_TIER_STORAGE_LIMIT_GB} ဂီဂါဘိုက်အထိ အခမဲ့သိမ်းဆည်းနိုင်သည်။ နေရာလွတ်ရရန် အသုံးမပြုသော အယ်လ်ဘမ်များကို ဖျက်ပါ။",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "သင့်ဖိုင်များသည် လက်ရှိတွင် {formatGB(usedGB)} နေရာကို သုံးစွဲနေပြီး သင့်တွင် {FREE_TIER_STORAGE_LIMIT_GB} ဂီဂါဘိုက် သိမ်းဆည်းမှုသာ ရှိပါသည်။ ဤအယ်လ်ဘမ်များကို အလိုအလျောက် ဖျက်နေပါသည်:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "သင့်ဖိုင်များသည် လက်ရှိတွင် ရရှိနိုင်သော {totalStorageGB} ဂီဂါဘိုက် သိမ်းဆည်းမှုမှ {formatGB(usedGB)} နေရာကို သုံးစွဲနေပါသည်။ အယ်လ်ဘမ်များကို ဆက်လက်သိမ်းဆည်းရန်အတွက် သင်၏စာရင်းသွင်းမှုကို မကြာမီ အဆင့်မြှင့်တင်ရန် လိုအပ်ကောင်းလိုအပ်နိုင်ပါသည်။",
   "Upgrade Your Subscription": "သင့်စာရင်းသွင်းမှုကို အဆင့်မြှင့်တင်ပါ",
   "Storage Management": "သိုလှောင်မှုစီမံခန့်ခွဲမှု",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "စာရင်းသွင်းခြင်းကို အဆင့်မြှင့်ရန် နှိပ်ပါ",
   "WILL BE DELETED": "ဖျက်လိုက်မည်",
   "Create an album in 90 sec": "90 စက္ကန့်အတွင်း အယ်လ်ဘမ်ပြုလုပ်ပါ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "သင့်မှာ အယ်လ်ဘမ် {albumCount} ခု ရှိပါတယ် ဒါပေမယ့် အခမဲ့နဲ့ ၅ ခုပဲ သိမ်းဆည်းနိုင်ပါတယ်။ ဒီ အဟောင်းဆုံး အယ်လ်ဘမ်တွေကို အလိုအလျောက် ဖျက်ပစ်နေပါတယ်:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "သင့်ဖိုင်တွေက {formatGB(usedGB)} နေရာယူထားပါတယ်၊ ဒါပေမယ့် သင့်မှာ {FREE_TIER_STORAGE_LIMIT_GB} GB သိုလှောင်ခန်းပဲ ရှိပါတယ်။ ဒီအယ်လ်ဘမ်တွေကို အလိုအလျောက် ဖျက်ပစ်နေပါတယ်:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "သင့်မှာ အယ်လ်ဘမ် 5 ခုထက်ပိုရှိပြီး သင့်ဖိုင်တွေက {formatGB(usedGB)} နေရာယူထားပါတယ် (ကန့်သတ်ချက်: {FREE_TIER_STORAGE_LIMIT_GB} GB)။ ဒီအယ်လ်ဘမ်တွေကို အလိုအလျောက် ဖျက်ပစ်နေပါတယ်:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "သင့်ဖိုင်တွေက {formatGB(usedGB)} နေရာယူထားပါတယ်၊ ဒါပေမယ့် သင့်မှာ {totalStorageGB} GB သိုလှောင်ခန်းပဲ ရှိပါတယ်။ ဒီအယ်လ်ဘမ်တွေကို အလိုအလျောက် ဖျက်ပစ်နေပါတယ်:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "သင့်ဖိုင်တွေက {totalStorageGB} GB သိုလှောင်ခန်းမှ {formatGB(usedGB)} ယူထားပါတယ်။ မကြာမီ သင့်စာရင်းသွင်းမှုကို အဆင့်မြှင့်ရန် လိုအပ်ကောင်းလိုအပ်နိုင်ပါတယ်။",
   "Loading account information...": "အကောင့်အချက်အလက်များ ခေါ်ယူနေသည်...",
   "Please enter a positive number": "ပေါင်းကိန်းဂဏန်းထည့်ပေးပါ",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "စာရင်းသွင်းခြင်း အချက်အလက်များ ဖွင့်နေသည်...",
   "Insufficient storage and too many albums (max 5 for free)": "သိုလှောင်မှုမလုံလောက်သည့်အပြင် အယ်လ်ဘမ်များလည်းများလွန်းသည် (အခမဲ့အများဆုံး ၅ ခု)",
   "Insufficient storage capacity": "သိုလှောင်မှုစွမးရည်မလုံလောက်",
-  "Too many albums (free tier allows max 5 albums)": "အယ်လ်ဘမ်များများလွန်းသည် (အခမဲ့အဆင့်သည် အများဆုံးအယ်လ်ဘမ် ၅ ခုကိုသာ ခွင့်ပြုသည်)"
+  "Too many albums (free tier allows max 5 albums)": "အယ်လ်ဘမ်များများလွန်းသည် (အခမဲ့အဆင့်သည် အများဆုံးအယ်လ်ဘမ် ၅ ခုကိုသာ ခွင့်ပြုသည်)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "သင့်တွင် အယ်လ်ဘမ် ၅ ခုထက်ပိုရှိပြီး သင့်ဖိုင်များသည် {formatGB(usedGB)} နေရာယူထားသည် (ကန့်သတ်ချက်: {FREE_TIER_STORAGE_LIMIT_GB} GB)။ အခြားအယ်လ်ဘမ်များကို ဖျက်ရန် ဆုံးဖြတ်ခြင်းမရှိပါက ဤအယ်လ်ဘမ်များကို အလိုအလျောက် ဖျက်လိုက်ပါမည်:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "သင့်တွင် {albumCount} အယ်လ်ဘမ်များရှိသော်လည်း အခမဲ့ဖြင့် ၅ ခုသာ သိမ်းဆည်းနိုင်ပါသည်။ အခြား အယ်လ်ဘမ်များကို ဖျက်ပစ်ရန် မဆုံးဖြတ်ပါက ဤ အသက်အကြီးဆုံး အယ်လ်ဘမ်များသည် အလိုအလျောက် ဖျက်ပစ်ခံရမည်ဖြစ်သည်:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "သင်၏ဖိုင်များသည် {formatGB(usedGB)} နေရာကိုယူထားသော်လည်း သင့်တွင် {FREE_TIER_STORAGE_LIMIT_GB} GB သိမ်းဆည်းခန်းသာရှိပါသည်။ အခြားအယ်လ်ဘမ်များကိုဖျက်ရန်သင်မဆုံးဖြတ်ပါက ဤအယ်လ်ဘမ်များကိုအလိုအလျောက်ဖျက်ပစ်ပါမည်:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "သင်၏ဖိုင်များသည် {formatGB(usedGB)} နေရာကိုယူထားသော်လည်း သင့်တွင် {totalStorageGB} GB သိမ်းဆည်းခန်းသာရှိပါသည်။ အခြားအယ်လ်ဘမ်များကိုဖျက်ရန်သင်မဆုံးဖြတ်ပါက ဤအယ်လ်ဘမ်များကိုအလိုအလျောက်ဖျက်ပစ်ပါမည်:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "သင်သည် စုစုပေါင်း အများဆုံး {FREE_TIER_STORAGE_LIMIT_GB} ဂစ်ဂါဘိုက် ရှိသော အယ်လ်ဘမ် ၅ ခုကို အခမဲ့ သိမ်းဆည်းနိုင်သည်။ နေရာလွတ်ရန် မသုံးသော အယ်လ်ဘမ်များကို ဖျက်ပါ။",
+  "Paid tiers have unlimited albums and are limited only by storage": "ငွေပေးသည့်အဆင့်များတွင် အကန့်အသတ်မရှိ အယ်လ်ဘမ်များရှိပြီး သိုလှောင်မှုဖြင့်သာ ကန့်သတ်ထားသည်"
 }

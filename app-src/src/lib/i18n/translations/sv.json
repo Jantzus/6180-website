@@ -166,8 +166,6 @@
   "Email address...": "E-postadress...",
   "Two-Factor Authentication": "Tvåfaktorsautentisering",
   "Select For Download": "Välj För Nedladdning",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Du kan spara 5 album eller upp till {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Ta bort oanvända album för att skapa utrymme.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Dina filer tar för närvarande {formatGB(usedGB)} utrymme, men du har bara {FREE_TIER_STORAGE_LIMIT_GB} GB lagring. Dessa album raderas automatiskt:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Dina filer tar för närvarande {formatGB(usedGB)} utrymme av {totalStorageGB} GB tillgänglig lagring. Du kan behöva uppgradera din prenumeration snart för att fortsätta spara album.",
   "Upgrade Your Subscription": "Uppgradera Din Prenumeration",
   "Storage Management": "Lagringshantering",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klicka För Att Uppgradera Prenumeration",
   "WILL BE DELETED": "KOMMER ATT RADERAS",
   "Create an album in 90 sec": "Skapa ett album på 90 sekunder",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Du har {albumCount} album men kan bara spara 5 gratis. Dessa äldsta album raderas automatiskt:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Dina filer tar {formatGB(usedGB)} utrymme, men du har bara {FREE_TIER_STORAGE_LIMIT_GB} GB lagring. Dessa album raderas automatiskt:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Du har över 5 album OCH dina filer tar {formatGB(usedGB)} utrymme (gräns: {FREE_TIER_STORAGE_LIMIT_GB} GB). Dessa album raderas automatiskt:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Dina filer tar {formatGB(usedGB)} utrymme, men du har bara {totalStorageGB} GB lagring. Dessa album raderas automatiskt:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Dina filer tar {formatGB(usedGB)} av {totalStorageGB} GB lagring. Du kan behöva uppgradera din prenumeration snart.",
   "Loading account information...": "Laddar kontoinformation...",
   "Please enter a positive number": "Vänligen ange ett positivt tal",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Laddar prenumerationsinformation...",
   "Insufficient storage and too many albums (max 5 for free)": "Otillräckligt lagringsutrymme och för många album (max. 5 gratis)",
   "Insufficient storage capacity": "Otillräcklig lagringskapacitet",
-  "Too many albums (free tier allows max 5 albums)": "För många album (gratis nivå tillåter max. 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "För många album (gratis nivå tillåter max. 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Du har fler än 5 album OCH dina filer upptar {formatGB(usedGB)} utrymme (gräns: {FREE_TIER_STORAGE_LIMIT_GB} GB). Dessa album raderas automatiskt såvida du inte bestämmer dig för att radera andra album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Du har {albumCount} album men kan bara spara 5 gratis. Dessa äldsta album raderas automatiskt såvida du inte bestämmer dig för att radera andra album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dina filer upptar {formatGB(usedGB)} utrymme, men du har bara {FREE_TIER_STORAGE_LIMIT_GB} GB lagring. Dessa album raderas automatiskt om du inte bestämmer dig för att radera andra album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dina filer upptar {formatGB(usedGB)} utrymme, men du har bara {totalStorageGB} GB lagring. Dessa album raderas automatiskt om du inte bestämmer dig för att radera andra album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Du kan spara 5 album som totalt är maximalt {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Ta bort oanvända album för att skapa utrymme.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Betalade nivåer har obegränsade album och är endast begränsade av lagring"
 }

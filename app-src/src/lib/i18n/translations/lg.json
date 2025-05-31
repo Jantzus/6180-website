@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Okukakasa Obubiri",
   "Select For Download": "Londawo Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Osobola okutereka zindanga 5 oba okutuuka ku {FREE_TIER_STORAGE_LIMIT_GB} GB bwereere. Gyawo zindanga ezitakozesebwa okukolamu ekifo.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Fayiro zo kaakano zikwata ekifo {formatGB(usedGB)}, naye olina {FREE_TIER_STORAGE_LIMIT_GB} GB ya kutereka kyokka. Zindanga zino ziggyibwawo mu ngeri ey'otoma:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Fayiro zo kaakano zikwata ekifo {formatGB(usedGB)} okuva mu {totalStorageGB} GB ya kutereka eriwo. Oyinza okwetaagisa okulinnyisa subscription yo mu biseera ebitono okunywerera okukuuma zindanga.",
   "Upgrade Your Subscription": "Linnyisa Subscription Yo",
   "Storage Management": "Okukulabirira Ebitereka",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Kkoona Okutumbula Subscription",
   "WILL BE DELETED": "BIJJA KUGGYAWO",
   "Create an album in 90 sec": "Kola album mu sekonda 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Olina {albumCount} za lbamu naye osobola okukuuma 5 zokka obwereere. Albamu zino ez'edda ezisinga enkulu zisangulwawo mu ngeri ya bulijjo:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Mukuŋŋaanyizanga ebikwata ku akawnt...",
   "Please enter a positive number": "Nsaba oteeke omuwendo omurungi",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Buli ebyafayo bya subscription...",
   "Insufficient storage and too many albums (max 5 for free)": "Ekifo ekitamala n'ebifolodda bingi (okusingako 5 kyereere)",
   "Insufficient storage capacity": "Ekifo ekitamala",
-  "Too many albums (free tier allows max 5 albums)": "Ebifolodda bingi nnyo (omulembe ogw'ebbeeyi gukkiriza ebifolodda 5 byokka)"
+  "Too many albums (free tier allows max 5 albums)": "Ebifolodda bingi nnyo (omulembe ogw'ebbeeyi gukkiriza ebifolodda 5 byokka)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Olina albums ezisoba 5 ERA fayiro zo zikozesa {formatGB(usedGB)} ekifo (kkomo: {FREE_TIER_STORAGE_LIMIT_GB} GB). Albums zino zisangulwa mu ngeri ey'obwenzi okuggyako bw'osalawo okusangula albums endala:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Olina {albumCount} ebyokunoonyerezebwa naye osobola okukuuma 5 gyokka obwa bwereere. Ebyo ebyokulabirira ebikulu bizikiriza mu ngeri ey'otoma okuggyako nga osazeeko okusalawo okuzikiriza ebirala:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fayiro zo zitwala {formatGB(usedGB)} ekifo, naye olina {FREE_TIER_STORAGE_LIMIT_GB} GB ya kutereka yokka. Album zino zisangulibwa mu ngeri ey'obweyongerwako nga tewasalawo kusangula album endala:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fayiro zo zitwala {formatGB(usedGB)} ekifo, naye olina {totalStorageGB} GB ya kutereka yokka. Album zino zisangulibwa mu ngeri ey'obweyongerwako nga tewasalawo kusangula album endala:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Osobola okutereka album 5 ezigera ku {FREE_TIER_STORAGE_LIMIT_GB} GB obwereere. Sazaamu album z'otokozesa okufuna ekifo.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Emitendera gy'osasulako girina efulayimu ezitakoma era gigabanyiziddwako kka storage"
 }

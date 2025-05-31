@@ -166,8 +166,6 @@
   "Email address...": "Di cih dienyoz...",
   "Two-Factor Authentication": "Sawj-Yinzsuh Yinzgaeng",
   "Select For Download": "Couh laiz download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Mwngz ngaenz baenz hawj 5 album rox daiq {FREE_TIER_STORAGE_LIMIT_GB} GB bouh bae. Cix album mbouj daengz yaek gvaq de namq doengh.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Mwngz fayl aen daengj hwnj {formatGB(usedGB)} doengh, aenwz mwngz yiengz aeu {FREE_TIER_STORAGE_LIMIT_GB} GB guh seizneix. Gou album eix lingh oiq caeuq:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Mwngz fayl aen daengj hwnj {formatGB(usedGB)} doengh, hai {totalStorageGB} GB seizneix aen. Mwngz gou baenz yiengh mbouj daiq dauq upgrade mwngz guh seizneix de fwn boux album.",
   "Upgrade Your Subscription": "Upgrade Mwngz Guh Seizneix",
   "Storage Management": "Baenz Cunj Quanli",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Dingj daih aeu gvaq cingj",
   "WILL BE DELETED": "AEU BOUXLAWX",
   "Create an album in 90 sec": "90 miz gangj laizlawz saj album",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Mwngz miz {albumCount} gou album, daengz youq lij ndaej boux 5 gou fwn. Bouxcouh album lwgnyez neix gij mbouj roq daih caez:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Goenj cingq coenz sawcuengh...",
   "Please enter a positive number": "Cingq liux ciengh haeux",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Doengh mbouj subscription dahlau...",
   "Insufficient storage and too many albums (max 5 for free)": "Haeuj vunz boux doxfaiz fwngz dai mbouj gajhaenx (genj 5 saw)",
   "Insufficient storage capacity": "Haeuj vunz boux doxfaiz",
-  "Too many albums (free tier allows max 5 albums)": "Album dai mbouj gajhaenx (genj saw faex dai album 5 saw)"
+  "Too many albums (free tier allows max 5 albums)": "Album dai mbouj gajhaenx (genj saw faex dai album 5 saw)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Mwngz miz boux album ndaw 5 dwg lai boux faiq mwngz roxnaeuz {formatGB(usedGB)} daeuj (doenghfwn: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album gyoengq neix daeuj caemh aen goj ndei, lwj mwngz gaej fwn suq album gyoengq deng:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Mwngz youq {albumCount} go album, aenvih mwngz cungj aeu cawx 5 go ma boux caeuq soengq. Bouxboux album gaenq laux doxsim ndaw caiq deng youq, doengh mwngz nanz dingq aeu caiq doiq haenx album laeb:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mwngz boux faiz yawj {formatGB(usedGB)} doengh, danraeuz mwngz miz {FREE_TIER_STORAGE_LIMIT_GB} GB cungz boux roxnaeuz. Bouxbwnz sat album ndei gwnz yiengh yietdingh sam, dwg mwngz baez yietdingh sam gyoengz album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mwngz boux faiz yawj {formatGB(usedGB)} doengh, danraeuz mwngz miz {totalStorageGB} GB cungz boux roxnaeuz. Bouxbwnz sat album ndei gwnz yiengh yietdingh sam, dwg mwngz baez yietdingh sam gyoengz album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Mwngz ndaej cawx haeuj bwnh seiq album, rox hawj {FREE_TIER_STORAGE_LIMIT_GB} GB bouxbae. Daeg album ndei mwngz baenz dwg youq heuh seiznaeuz.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Caemj geij dienh haeuj yiengh fwnj daengz boux sinhgangj"
 }

@@ -166,8 +166,6 @@
   "Email address...": "Correoh electrónicoh tlatitlantli...",
   "Two-Factor Authentication": "Ōme-Factor Nehnequiliztli",
   "Select For Download": "Pehua Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Tihueliti tiquitlalilizque 5 cuicaamatl nozo ze {FREE_TIER_STORAGE_LIMIT_GB} GB ixquich itech. Xiccahuacan in cuicaamatl in ahmo mochihuan itech nepantlali.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Amoxtli altepeme axcan quinamiqui {formatGB(usedGB)} nepantlali, auh zan ticpiya {FREE_TIER_STORAGE_LIMIT_GB} GB tlachihualoni. Inon cuicaamatl quinelhuayotinemi:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Amoxtli altepeme axcan quinamiqui {formatGB(usedGB)} nepantlali ipan {totalStorageGB} GB tlachihualoni omopiaya. Yecualiuhqui timonequiltiz tiquixtomahuaz motlaxtlahuilli achto ticchihuaz cuicaamatl nepantlaliz.",
   "Upgrade Your Subscription": "Tiquixtomahuaz Motlaxtlahuilli",
   "Storage Management": "Techkopía Nemiliztli",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Tla Xiquinpatla Yc Tomoa Subscription",
   "WILL BE DELETED": "MOTLAZOS",
   "Create an album in 90 sec": "Chihua album ipan 90 segundo",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ticpiya {albumCount} albums auh zan 5 tictzacuas amatlacahui. Inon huehuentzin albums mopolohua ipan nelli:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Ica tlacuilli nepantla tlatequi...",
   "Please enter a positive number": "Neci pohualeh cualli tlahtol",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Subscription itlahtol nemili...",
   "Insufficient storage and too many albums (max 5 for free)": "Albums oquichtli miec auh tlaquimiloni amo quemach (5 cachi ichtaca)",
   "Insufficient storage capacity": "Tlaquimiloni amo quemach",
-  "Too many albums (free tier allows max 5 albums)": "Albums miec (ichtaca tier quipia 5 albums cachi)"
+  "Too many albums (free tier allows max 5 albums)": "Albums miec (ichtaca tier quipia 5 albums cachi)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ticpia ome album huan mo tlatolme tlatlani {formatGB(usedGB)} caltitlan (nepantla: {FREE_TIER_STORAGE_LIMIT_GB} GB). Inin albume nemohua ica nelli ihqui tlein amo ticnequi tipoloz oc ce albume:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ticpiya {albumCount} albums auh zan quintin 5 tictemaquiliznequi ichtaca. Inon albums huehuentzitzin ipan nepantlah mopohua automatic tla amo ticnenequi tiquinpolos oc cequintin albums:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mo nepantlahtol tlahtolli quipiya {formatGB(usedGB)} tetlahtoa, yece amo zan {FREE_TIER_STORAGE_LIMIT_GB} GB nepilhuia. Ini amatl nepantlahtol polihui ixquichca amo tinenequi ma oc cequi amatl polihui:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mo nepantlahtol tlahtolli quipiya {formatGB(usedGB)} tetlahtoa, yece amo zan {totalStorageGB} GB nepilhuia. Ini amatl nepantlahtol polihui ixquichca amo tinenequi ma oc cequi amatl polihui:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Tihueliti tipiyazqueh matlactin uan nauhtetl amoxcalli quinpiya huel nepantla {FREE_TIER_STORAGE_LIMIT_GB} GB amo tlaxtlahuilli. Xiccahuacan yn amoxcalli amo moquizquia para ticchihuazqueh calli.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Tlaxtlahualo tlatzacuilo moteillia amopohualli albumes auh ic cel ye ixtlahuilli"
 }

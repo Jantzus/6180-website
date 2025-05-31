@@ -166,8 +166,6 @@
   "Email address...": "E-mail cím...",
   "Two-Factor Authentication": "Kétfaktoros Hitelesítés",
   "Select For Download": "Kiválasztás Letöltéshez",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 albumot vagy akár {FREE_TIER_STORAGE_LIMIT_GB} GB-ot menthetsz ingyen. Töröld a nem használt albumokat, hogy helyet csinálj.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "A fájljaid jelenleg {formatGB(usedGB)} helyet foglalnak el, de csak {FREE_TIER_STORAGE_LIMIT_GB} GB tárhelyed van. Ezek az albumok automatikusan törlődnek:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "A fájljaid jelenleg {formatGB(usedGB)} helyet foglalnak el a rendelkezésre álló {totalStorageGB} GB tárhelyből. Lehet, hogy hamarosan frissítened kell az előfizetésed, hogy továbbra is menthesd az albumokat.",
   "Upgrade Your Subscription": "Frissítsd Az Előfizetésed",
   "Storage Management": "Tárolás Kezelés",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Kattintson Az Előfizetés Frissítéséhez",
   "WILL BE DELETED": "TÖRÖLVE LESZ",
   "Create an album in 90 sec": "Készíts albumot 90 másodperc alatt",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Önnek {albumCount} albuma van, de csak 5-öt menthet el ingyen. Ezek a legrégebbi albumok automatikusan törlődnek:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "A fájljai {formatGB(usedGB)} helyet foglalnak el, de csak {FREE_TIER_STORAGE_LIMIT_GB} GB tárhelye van. Ezek az albumok automatikusan törlődnek:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Több mint 5 albumja van ÉS a fájljai {formatGB(usedGB)} helyet foglalnak el (korlát: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ezek az albumok automatikusan törlődnek:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "A fájljai {formatGB(usedGB)} helyet foglalnak el, de csak {totalStorageGB} GB tárhelye van. Ezek az albumok automatikusan törlődnek:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "A fájljai {formatGB(usedGB)}-t foglalnak el a {totalStorageGB} GB tárhelyből. Hamarosan frissítenie kell az előfizetését.",
   "Loading account information...": "Fiók adatok betöltése...",
   "Please enter a positive number": "Kérem adjon meg egy pozitív számot",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Előfizetési információk betöltése...",
   "Insufficient storage and too many albums (max 5 for free)": "Elégtelen tárhely és túl sok album (max. 5 ingyenes)",
   "Insufficient storage capacity": "Elégtelen tárolókapacitás",
-  "Too many albums (free tier allows max 5 albums)": "Túl sok album (az ingyenes szint maximum 5 albumot engedélyez)"
+  "Too many albums (free tier allows max 5 albums)": "Túl sok album (az ingyenes szint maximum 5 albumot engedélyez)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Több mint 5 albumod van ÉS a fájljaid {formatGB(usedGB)} helyet foglalnak el (korlát: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ezek az albumok automatikusan törlődnek, hacsak nem döntesz más albumok törlése mellett:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Önnél {albumCount} album van, de csak 5-öt menthet el ingyen. Ezek a legrégebbi albumok automatikusan törlődnek, hacsak nem dönt úgy, hogy más albumokat töröl:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "A fájljai {formatGB(usedGB)} helyet foglalnak el, de csak {FREE_TIER_STORAGE_LIMIT_GB} GB tárhelye van. Ezek az albumok automatikusan törlődnek, hacsak nem dönt úgy, hogy más albumokat töröl:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "A fájljai {formatGB(usedGB)} helyet foglalnak el, de csak {totalStorageGB} GB tárhelye van. Ezek az albumok automatikusan törlődnek, hacsak nem dönt úgy, hogy más albumokat töröl:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Öt albumot menthetsz el, amelyek összesen maximum {FREE_TIER_STORAGE_LIMIT_GB} GB-ot tesznek ki ingyen. Töröld a nem használt albumokat, hogy helyet szabadíts fel.",
+  "Paid tiers have unlimited albums and are limited only by storage": "A fizetős szintek korlátlan albumokkal rendelkeznek és csak tárolás által korlátozottak"
 }

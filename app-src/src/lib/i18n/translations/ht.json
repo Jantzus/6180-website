@@ -166,8 +166,6 @@
   "Email address...": "Adrès imèl...",
   "Two-Factor Authentication": "Otantifikasyon De Faktè",
   "Select For Download": "Chwazi Pou Telechaje",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ou ka konsèv 5 albòm oswa jis {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Efase albòm ki pa t ap sèvi yo pou fè kote.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Fichye nou yo ap okipe {formatGB(usedGB)} espas kounye a, men nou gen {FREE_TIER_STORAGE_LIMIT_GB} GB depo sèlman. Y ap efase albòm sa yo otomatikman:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Fichye nou yo ap okipe {formatGB(usedGB)} nan {totalStorageGB} GB depo ki gen kounye a. Nou ka gen pou n ap fè upgrade abònman nou an byento pou nou ka kontinye ap sove albòm yo.",
   "Upgrade Your Subscription": "Amelyore Abònman Ou An",
   "Storage Management": "Jesyon Depo",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klike Pou Mete Abònman An Ajou",
   "WILL BE DELETED": "AP EFASE",
   "Create an album in 90 sec": "Kreye yon albòm nan 90 segonn",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ou gen {albumCount} albòm men ou ka sove 5 gratis sèlman. Albòm yo ki pi vye yo ap efase otomatikman:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Ap chaje enfòmasyon kont lan...",
   "Please enter a positive number": "Tanpri antre yon nimewo pozitif",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "K ap chaje enfòmasyon abònman an...",
   "Insufficient storage and too many albums (max 5 for free)": "Pa gen kote pou mete bagay yo ak twòp albòm (maksimòm 5 gratis)",
   "Insufficient storage capacity": "Pa gen kote pou mete bagay yo",
-  "Too many albums (free tier allows max 5 albums)": "Twòp albòm (nivo gratis an otorize maksimòm 5 albòm)"
+  "Too many albums (free tier allows max 5 albums)": "Twòp albòm (nivo gratis an otorize maksimòm 5 albòm)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ou gen plis pase 5 albòm EPI dosye ou yo ap okipe {formatGB(usedGB)} espas (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Albòm sa yo ap efase otomatikman sof si ou deside efase lòt albòm yo:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ou gen {albumCount} albòm men ou ka sèlman sove 5 gratis. Albòm ki pi ansyen yo ap efase otomatikman sof si ou deside efase lòt albòm yo:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fichye ou yo ap pran {formatGB(usedGB)} plas, men ou gen sèlman {FREE_TIER_STORAGE_LIMIT_GB} GB depo. Albòm sa yo ap efase otomatikman sof si ou deside efase lòt albòm yo:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fichye ou yo ap pran {formatGB(usedGB)} plas, men ou gen sèlman {totalStorageGB} GB depo. Albòm sa yo ap efase otomatikman sof si ou deside efase lòt albòm yo:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ou kapab kenbe 5 albòm ki gen yon maksimòm {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Efase albòm yo ki pa itilize pou kreye kote.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Nivo ki peye yo gen albòm san limit epi yo limite sèlman pa depo a"
 }

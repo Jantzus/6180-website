@@ -166,8 +166,6 @@
   "Email address...": "Sampôh Salinan Lôn...",
   "Two-Factor Authentication": "Autentifikasi Duwa Faktor",
   "Select For Download": "Pilih Bak Unduh",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Droëneuh jeuët na simpan 5 album atawa sampoe {FREE_TIER_STORAGE_LIMIT_GB} GB dengan geunangoë. Sampoh album nyang hana geunupeuë keu peugot ruang.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Berkas droëneuh jinoë na tempat {formatGB(usedGB)}, tapi droëneuh cuma na {FREE_TIER_STORAGE_LIMIT_GB} GB penyimpanan. Album nyoë lagi geusampoh otomatis:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Berkas droëneuh jinoë na tempat {formatGB(usedGB)} dari {totalStorageGB} GB penyimpanan nyang na. Droëneuh peurele perle upgrade langganan beu teurusong simpan album.",
   "Upgrade Your Subscription": "Upgrade Langganan Droëneuh",
   "Storage Management": "Peurusan Pinyöt",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Teugon Keu Peudong Langganan",
   "WILL BE DELETED": "akan geuhapôih",
   "Create an album in 90 sec": "Peugöt album bak 90 detik",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Droeneuh na {albumCount} album tapi han jeuet keubah manyang 5 yg geutanyo. Album-album trep nyoe geupajoh otomatis:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Berkas droeneuh meunyoe {formatGB(usedGB)} ruang, tapi droeneuh cuma na {FREE_TIER_STORAGE_LIMIT_GB} GB panyimpenan. Album-album nyoe geupajoh otomatis:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Droeneuh na leubeh dari 5 album DAN berkas droeneuh meunyoe {formatGB(usedGB)} ruang (batas: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album-album nyoe geupajoh otomatis:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Berkas droeneuh meunyoe {formatGB(usedGB)} ruang, tapi droeneuh cuma na {totalStorageGB} GB panyimpenan. Album-album nyoe geupajoh otomatis:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Berkas droeneuh meunyoe {formatGB(usedGB)} dari {totalStorageGB} GB panyimpenan. Droeneuh ka perlu upgrade langganan droeneuh bah.",
   "Loading account information...": "Teungöh mumaca keutraangan akun...",
   "Please enter a positive number": "Neutamong angka positip",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Teungöh jak informasi langganan...",
   "Insufficient storage and too many albums (max 5 for free)": "Penyimpanan cukôp ngön album le nyang (maksimal 5 bak gratis)",
   "Insufficient storage capacity": "Penyimpanan cukôp",
-  "Too many albums (free tier allows max 5 albums)": "Album le nyang (tingkat gratis maksimal 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "Album le nyang (tingkat gratis maksimal 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Droeneuh na leubih nibak 5 album NGON file-file droeneuh guna {formatGB(usedGB)} teumat (batas: {FREE_TIER_STORAGE_LIMIT_GB} GB). Album-album nyoe otomatis ka geu hapuih kecuali droeneuh putuskan ek hapuih album-album laen:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Droeneuh na {albumCount} album tapi han jeuet teuboh lhee 5 cuma-cuma. Album-album che ling trep nyan geu hapot otomatis meunyo hana droeneuh peugah meuhapot album laen:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Beureukaih droëneuh na {formatGB(usedGB)} teumpat, tapi droëneuh cuma na {FREE_TIER_STORAGE_LIMIT_GB} GB teumpat. Album-album nyoe singoh na gupasoe otomatis meunyo droëneuh hana pileh na gupasoe album-album laen:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Beureukaih droëneuh na {formatGB(usedGB)} teumpat, tapi droëneuh cuma na {totalStorageGB} GB teumpat. Album-album nyoe singoh na gupasoe otomatis meunyo droëneuh hana pileh na gupasoe album-album laen:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Droeneuh jeuet keunong 5 album nyang jumlah paleng trep {FREE_TIER_STORAGE_LIMIT_GB} GB awet habeuh. Sampah album nyang han guna keu neubuat teumpat.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Tingkat bayeue na album hana watee dan terbatas mantong keu storage"
 }

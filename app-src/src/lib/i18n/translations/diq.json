@@ -166,8 +166,6 @@
   "Email address...": "Adresa e-postey...",
   "Two-Factor Authentication": "Dı-Faktor Authentication",
   "Select For Download": "Download Rê Weçine",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ti şenay 5 albumi yan heto {FREE_TIER_STORAGE_LIMIT_GB} GB bêpere asteni. Album nêkarbıtey besterni ke ca virazenê.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Dosyayê şımani enewke {formatGB(usedGB)} ca gênê, labelê şıma tenya {FREE_TIER_STORAGE_LIMIT_GB} GB depokerden estê. Nê albumi otomatikmen besteryênê:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Dosyayê şımani enewke {totalStorageGB} GB depokerdenê ke ameyo ra {formatGB(usedGB)} ca gênê. Albuman qeyd kerdışê dewam kerdışi rê şıma geno abonementi şımani bi berz berdê.",
   "Upgrade Your Subscription": "Abonementi Şımani Berz Berdé",
   "Storage Management": "İdareyê Ambarî",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Qey Aboneyi Berzkerdişi Bıtıkne",
   "WILL BE DELETED": "BEŞ BESTERNIYAYO",
   "Create an album in 90 sec": "Album 90 saniye de vırazê",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Şıma de {albumCount} albûm esto, feqet şıma şenê teyna 5 bêpere qeyd bikê. Ney albûmê kehani otomatikmen wedarneyê:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Malumati hesab bar beno...",
   "Please enter a positive number": "Kerem kerê yew nımre pozitif cıkewtış",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Melumati aboneyi bar keno...",
   "Insufficient storage and too many albums (max 5 for free)": "Depot kêm û zaf albumî (bedewa tewr 5)",
   "Insufficient storage capacity": "Kapasiteyê depoî kêm",
-  "Too many albums (free tier allows max 5 albums)": "Zaf albumî (qada bedewa tewr 5 albuman rê destur dano)"
+  "Too many albums (free tier allows max 5 albums)": "Zaf albumî (qada bedewa tewr 5 albuman rê destur dano)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Şıma ra 5 ra zeder albumê estê u dosyayanê şıma {formatGB(usedGB)} ca gênê (sınor: {FREE_TIER_STORAGE_LIMIT_GB} GB). Enê albumi otomatikmen pak benê, şıma qerar nidê ke albumanê binan pak bikerê:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Şıma {albumCount} albuman esto, feqet şıma şenê tenya 5 bêpere qeyd kerê. Enê albumê kehani otomatikmen bêne wedarnayış, eke şıma qerar nedê ke albumê bini wedarnê:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dosyayanê şıma {formatGB(usedGB)} ca gênê, feqet şıma de tenya {FREE_TIER_STORAGE_LIMIT_GB} GB depo esto. Enê albumi otomatik benê hewade kerdış, eke şıma qerar nedeye albumanê binan hewade kerdış:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dosyayanê şıma {formatGB(usedGB)} ca gênê, feqet şıma de tenya {totalStorageGB} GB depo esto. Enê albumi otomatik benê hewade kerdış, eke şıma qerar nedeye albumanê binan hewade kerdış:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Şıma şenê 5 albumê biyo maksimum {FREE_TIER_STORAGE_LIMIT_GB} GB bela pere qeyd kerê. Albumê ke karwaniye ra mekan vrazê.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Perreyê pere dayışi albumen bêhesır estê u teyna depo ra sinor biyenê"
 }

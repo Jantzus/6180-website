@@ -166,8 +166,6 @@
   "Email address...": "Aterese ya imeili...",
   "Two-Factor Authentication": "Netefatso Ya Dintho Tse Pedi",
   "Select For Download": "Khetha Bakeng Sa Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "O ka boloka li-album tse 5 kapa ho fihlela ho {FREE_TIER_STORAGE_LIMIT_GB} GB mahala. Tlosa li-album tse sa sebediswang ho etsa sebaka.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Difaele tsa hao ha bjale di nka sebaka sa {formatGB(usedGB)}, empa o na le {FREE_TIER_STORAGE_LIMIT_GB} GB ya polokelo feela. Dialbamo tsena di a tlosa ka boinotšo:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Difaele tsa hao ha bjale di nka sebaka sa {formatGB(usedGB)} ho tloha ho {totalStorageGB} GB ya polokelo e fumanehang. O ka hloka ho ntlafatsa peeletso ya gago haesale ho tswela pele ho boloka dialbamo.",
   "Upgrade Your Subscription": "Ntlafatsa Peeletso Ya Hao",
   "Storage Management": "Taolo Ya Polokelo",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Tobetsa Ho Ntlafatsa Subscription",
   "WILL BE DELETED": "E TLA HLAKOLWA",
   "Create an album in 90 sec": "Etsa albamo ka metsotswana e 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "O na le {albumCount} tsa dialbamo empa o ka boloka feela 5 mahala. Dialbamo tsena tse kgolokgolo tsa ho feta di ntse di tlosoa ka boyona:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Ho laola lesedi la ak'haonte...",
   "Please enter a positive number": "Ka kopo, kenya nomoro e ntle",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Ho kena boitsebiso ba subscription...",
   "Insufficient storage and too many albums (max 5 for free)": "Ho haya sebaka sa polokelo le dialbama tse ngata (ho feta 5 mahala)",
   "Insufficient storage capacity": "Ho haya sebaka sa polokelo",
-  "Too many albums (free tier allows max 5 albums)": "Dialbamo tse ngata haholo (boemo ba mahala bo lumella dialbamo tse 5 feela)"
+  "Too many albums (free tier allows max 5 albums)": "Dialbamo tse ngata haholo (boemo ba mahala bo lumella dialbamo tse 5 feela)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "U na le dialbamo tse fetang 5 HAPE difaele tsa hao di nka sebaka sa {formatGB(usedGB)} (tekanyo: {FREE_TIER_STORAGE_LIMIT_GB} GB). Dialbamo tsena di hlakuwa ka bo tsona ntle le haeba o ikhetsa ho hlakola dialbamo tse ling:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "U na le di-albamo tse {albumCount} empa u ka boloka tse 5 feela mahala. Di-albamo tsena tse kholo ka ho fetisisa di ya hlakolwa ka boitautoalo ntle le ha u etsa qeto ya ho hlakola di-albamo tse ling:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Difaele tsa hao di nka {formatGB(usedGB)} sebaka, empa o na le {FREE_TIER_STORAGE_LIMIT_GB} GB feela ya polokelo. Dialbame tsena di hlakutswe ka boithaopi ntle le haeba o etsa qeto ya ho hlakola dialbame tse ding:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Difaele tsa hao di nka {formatGB(usedGB)} sebaka, empa o na le {totalStorageGB} GB feela ya polokelo. Dialbame tsena di hlakutswe ka boithaopi ntle le haeba o etsa qeto ya ho hlakola dialbame tse ding:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "O ka boloka di-albame tše 5 tšeo ka moka e lego palo ye kgolo ya {FREE_TIER_STORAGE_LIMIT_GB} GB mahala. Hlakola di-albame tše di sa šomišwego go dira lefelo.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Maemo a lefshwa a na le dialbamo tse sa felleng mme a bakanswe ke polokelo feela"
 }

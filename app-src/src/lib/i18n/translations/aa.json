@@ -166,8 +166,6 @@
   "Email address...": "Sinam Xabiili Baalisa...",
   "Two-Factor Authentication": "Sinam Xabiili Baalisa Lama",
   "Select For Download": "Doorto Gadda Filadhu",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Shan 5 alboom kee haa {FREE_TIER_STORAGE_LIMIT_GB} GB balfan kaydhin danqe. Album ma istimalanin baqan danke meeki geesise.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Kee faylalkeh hadda {formatGB(usedGB)} meeki geysan, laakiin kaliya {FREE_TIER_STORAGE_LIMIT_GB} GB kayd qabta. Kuwan alboom-yada si tooska ah loo baqayaa:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Kee faylalkeh hadda {formatGB(usedGB)} meeki {totalStorageGB} GB kayd la heli kara geysanayaan. Waa inuu noo baahan tahay inaad koritaan kaadhkaga si aad ku sii kaydisan albumyada.",
   "Upgrade Your Subscription": "Koritaan Kaadhkaga",
   "Storage Management": "Kaadi Magantoole",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Gudub Ku Sinam Xabiili Baalisa",
   "WILL BE DELETED": "waa la tiri doonaa",
   "Create an album in 90 sec": "Alboom ku samee 90 sekund",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Waxaad leedahay {albumCount} alboom laakiin kaliya 5 ayaad u keydin kartaa lacag la'aan. Albumaashan ugu da'da weyn ayaa si toos ah loo tirayaa:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Waxaad ka buuxsiisay {formatGB(usedGB)} booskaga laakiin waad leedahay {FREE_TIER_STORAGE_LIMIT_GB} GB oo keydinta ah. Albumaashan ayaa si toos ah loo tirayaa:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Waxaad leedahay ka badan 5 alboom iyo waxaad ka buuxsiisay {formatGB(usedGB)} booskaga (xaddinta: {FREE_TIER_STORAGE_LIMIT_GB} GB). Albumaashan ayaa si toos ah loo tirayaa:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Waxaad ka buuxsiisay {formatGB(usedGB)} booskaga laakiin waad leedahay {totalStorageGB} GB oo keydinta ah. Albumaashan ayaa si toos ah loo tirayaa:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Waxaad ka buuxsiisay {formatGB(usedGB)} oo ka mid ah {totalStorageGB} GB keydinta. Waxaa laga yaaba inaad u baahan tahay inaad dib u cusboonaysiisid macmiilkaaga dhawaan.",
   "Loading account information...": "Akawunta xiinfi qaallaa...",
   "Please enter a positive number": "Wajjira lamin aak",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Alboomtu habariitti fe'iga...",
   "Insufficient storage and too many albums (max 5 for free)": "Baakitu daqsane album geesaani (siminto 5 mahallul)",
   "Insufficient storage capacity": "Baakitu daqsa",
-  "Too many albums (free tier allows max 5 albums)": "Album geesaani (siminto darajatu 5 mahallul)"
+  "Too many albums (free tier allows max 5 albums)": "Album geesaani (siminto darajatu 5 mahallul)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Geey alboom shan dura ku files-kah {formatGB(usedGB)} meel qadanayaan (xadd: {FREE_TIER_STORAGE_LIMIT_GB} GB). Kuwan albumo-gu si toos ah ayaa loo tirtiraa haddii aanad go'aan ka gaaraan in aad tirtirto alboomyo kale:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Adigaa {albumCount} alboom mannaakko, laakiin lacag la'aanta 5 keliya kaydsan kartaa. Albumyadan ugu da'da waxaa si toos ah loo tirtiraa haddii aadan go'aansanin inaad albumyo kale tirtirto:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Faylladaada wuxuu buuxiyaa {formatGB(usedGB)} meel, laakiin waxaad leedahay {FREE_TIER_STORAGE_LIMIT_GB} GB kaydinta oo keliya. Alboomyadan ayaa si toos ah loo tirtiraa haddii aadan go'aanin inaad tirtirto alboomyo kale:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Faylladaada wuxuu buuxiyaa {formatGB(usedGB)} meel, laakiin waxaad leedahay {totalStorageGB} GB kaydinta oo keliya. Alboomyadan ayaa si toos ah loo tirtiraa haddii aadan go'aanin inaad tirtirto alboomyo kale:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 albuumota oolsuu dandaʔatto maxaaksi {FREE_TIER_STORAGE_LIMIT_GB} GB bilisa. Bakka banaasuuf albuumota hin oolanii dhabamsiisi.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Geediyuu biyaa albumaak ma daneeyo ana ma'aami geddi qali"
 }

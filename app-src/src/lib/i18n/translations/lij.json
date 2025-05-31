@@ -166,8 +166,6 @@
   "Email address...": "Indirisso email...",
   "Two-Factor Authentication": "Autenticaçion A Doi Fatori",
   "Select For Download": "Scegli Pe Scaricâ",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ti peu sarvâ 5 album ò finna a {FREE_TIER_STORAGE_LIMIT_GB} GB a gratis. Scassella i album che no ti deuvi pe fâ pòsto.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "I teu file òua occupan {formatGB(usedGB)} de pòsto, ma ti gh'æ solo {FREE_TIER_STORAGE_LIMIT_GB} GB de memoria. Sti album se scanchelan automaticamente:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "I teu file òua occupan {formatGB(usedGB)} de pòsto de {totalStorageGB} GB de memoria disponibile. Ti poeu avéi beseugno de agiornâ o teu abbonamento tra pöco pe continoâ a sarvâ i album.",
   "Upgrade Your Subscription": "Agiornâ O Teu Abbonamento",
   "Storage Management": "Gestión Do Magazzin",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Sciacca Pe Megioâ L'Abbonamento",
   "WILL BE DELETED": "O SAIÂ SCANCELOU",
   "Create an album in 90 sec": "Crea un album in 90 segondi",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "T'æ {albumCount} album ma t'eu sarvâne sulo 5 gròatis. Questi album ciù vegg se stanno scansellando aotomaticamente:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Caricamento informaçioin do conto...",
   "Please enter a positive number": "Pe piaxei, metti 'n nùmero poxitivo",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Caregamento informaçioin abbonamento...",
   "Insufficient storage and too many albums (max 5 for free)": "Archivio insuficiente e tròppi album (mâximo 5 gratis)",
   "Insufficient storage capacity": "Capacità d'archivio insuficiente",
-  "Too many albums (free tier allows max 5 albums)": "Tròppi album (o livel gratis o l'ammiette mâximo 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "Tròppi album (o livel gratis o l'ammiette mâximo 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "T'æ ciù de 5 album E i teu file pigian {formatGB(usedGB)} spaçio (limite: {FREE_TIER_STORAGE_LIMIT_GB} GB). Questi album vegnan scancelæ automaticamente se no te decidi de scancelâ atri album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ti gh'æ {albumCount} album ma ti peu sarvâne sôlo 5 de badêua. Sti album ciù vecci en scancelæ aotomaticamente a meno che ti no decida de scancelâ atri album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "I teu files ocupan {formatGB(usedGB)} spaçio, ma ti gh'æ solo {FREE_TIER_STORAGE_LIMIT_GB} GB de memöia. Questi album en scancelæ aotomaticamente se ti no deciddi de scancelâ atri album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "I teu files ocupan {formatGB(usedGB)} spaçio, ma ti gh'æ solo {totalStorageGB} GB de memöia. Questi album en scancelæ aotomaticamente se ti no deciddi de scancelâ atri album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ti peu sarvâ 5 album ch'an tötâ un mäscimo de {FREE_TIER_STORAGE_LIMIT_GB} GB gràtis. Scancélla i album no doeuviæ pe fâ pòsto.",
+  "Paid tiers have unlimited albums and are limited only by storage": "I livelli a pagamento gh'an album sensa limite e son limitæ solo da-o storage"
 }

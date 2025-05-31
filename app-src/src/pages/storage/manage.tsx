@@ -960,6 +960,14 @@ const StorageManagePageContent = () => {
 
       <Card>
         <SectionTitle>{t('Select Storage Capacity')}</SectionTitle>
+        <div style={{ 
+          fontSize: '14px', 
+          color: theme.colors.text.secondary, 
+          marginBottom: theme.spacing.md,
+          fontStyle: 'italic'
+        }}>
+          {t('Paid tiers have unlimited albums and are limited only by storage')}
+        </div>
 
         {isSubscriptionInfoLoaded ? (
           <>

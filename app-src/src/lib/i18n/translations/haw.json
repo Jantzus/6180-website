@@ -166,8 +166,6 @@
   "Email address...": "Leka uila kēlā...",
   "Two-Factor Authentication": "Hoʻokumu ʻElua-Factor",
   "Select For Download": "Koho No Ka Hoʻiho",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Hiki iā ʻoe ke mālama i 5 ʻālapa a i ʻole a hiki i {FREE_TIER_STORAGE_LIMIT_GB} GB aku hoʻokipa ʻole. E holoi i nā ʻālapa i hoʻohana ʻole ʻia no ka hana ʻana i wahi.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Kāu mau faila nei e hoʻopuni nei i {formatGB(usedGB)} wahi, akā ʻo {FREE_TIER_STORAGE_LIMIT_GB} GB wale nō kāu hoʻopaʻa ʻana. Kēia mau ʻālapa e holoi ʻia nei ma ke ʻano hoʻoponopono ʻole:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Kāu mau faila nei e hoʻopuni nei i {formatGB(usedGB)} mai {totalStorageGB} GB hoʻopaʻa ʻana e loaʻa nei. Paha pono ʻoe e hoʻonui koke i kāu kaupalapala e hōʻoia ai i ka mālama ʻana i nā ʻālapa.",
   "Upgrade Your Subscription": "Hoʻonui I Kāu Kaupalapala",
   "Storage Management": "Hoʻokipa Mālama",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Kaomi E Hoʻokiʻekiʻe I Ka Subscription",
   "WILL BE DELETED": "E HOLOI ʻIA ANA",
   "Create an album in 90 sec": "Hana ʻālapa i 90 kekona",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "He {albumCount} ʻālapa kāu akā hiki ke mālama wale nō ʻelima manuahi. Kēia mau ʻālapa kahiko loa e holoi ʻia nei ma ka ʻano kūhelu:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Emi hōʻemi nei i ka ʻike moʻomoʻo...",
   "Please enter a positive number": "E hōʻokomo i helu maikaʻi",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "E hoʻouka nei i nā ʻike ʻālapa...",
   "Insufficient storage and too many albums (max 5 for free)": "ʻOmi ka hale hoʻopaʻa a he nui nā ʻālapa (5 wale nō ma ke kūʻai ʻole)",
   "Insufficient storage capacity": "ʻOmi ka hale hoʻopaʻa",
-  "Too many albums (free tier allows max 5 albums)": "He nui nā ʻālapa (ʻae ka papa kūʻai ʻole i 5 ʻālapa wale nō)"
+  "Too many albums (free tier allows max 5 albums)": "He nui nā ʻālapa (ʻae ka papa kūʻai ʻole i 5 ʻālapa wale nō)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "He nui kau mau ʻālapa ma mua o ka 5 A ʻo kou mau faila ua hoʻopiha ai i {formatGB(usedGB)} wahi (palena: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ke hoʻopau ʻia nei kēia mau ʻālapa ma ke ʻano automatic ke ʻole oe e hoʻoholo e hoʻopau i nā ʻālapa ʻē aʻe:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "He {albumCount} ʻālapa kāu naʻe hiki ʻole ke mālama wale nō ʻelima no ka makana. Kēia mau ʻālapa kahiko loa e hoʻopau ana ma ka ʻano hana ponoʻī ke hiki ʻole iā ʻoe ke hoʻoholo e hoʻopau i nā ʻālapa ʻē aʻe:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Kau nā faila e lawe nei i {formatGB(usedGB)} kahi, akā he {FREE_TIER_STORAGE_LIMIT_GB} GB wale nō kau mālama ʻana. Ke holoi ʻia nei kēia mau ʻālapa ma ke ʻano hoʻokipa ʻole ʻoe i ka holoi ʻana i nā ʻālapa ʻē aʻe:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Kau nā faila e lawe nei i {formatGB(usedGB)} kahi, akā he {totalStorageGB} GB wale nō kau mālama ʻana. Ke holoi ʻia nei kēia mau ʻālapa ma ke ʻano hoʻokipa ʻole ʻoe i ka holoi ʻana i nā ʻālapa ʻē aʻe:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Hiki iā ʻoe ke mālama i 5 ʻālapa nui loa o {FREE_TIER_STORAGE_LIMIT_GB} GB makemake ʻole. E wehe i nā ʻālapa i hoʻohana ʻia ʻole no ka hana wahi.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Nā pae uku ʻana he mau ʻālapa palena ʻole a ʻo ka waihona wale nō ka mea hoʻopaʻa"
 }

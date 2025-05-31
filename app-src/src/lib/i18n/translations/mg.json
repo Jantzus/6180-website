@@ -166,8 +166,6 @@
   "Email address...": "Adiresy mailaka...",
   "Two-Factor Authentication": "Fanamarinana Andalana Roa",
   "Select For Download": "Hisafidy Ho Alaina",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Afaka mitahiry rakitra 5 na hatramin'ny {FREE_TIER_STORAGE_LIMIT_GB} GB maimaim-poana ianao. Vonoy ny rakitra tsy ampiasaina mba hahazoana toerana.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ny rakitra-nao ankehitriny dia mivelatra amin'ny {formatGB(usedGB)} toerana, fa tsy manana afa-tsy {FREE_TIER_STORAGE_LIMIT_GB} GB fitahirizana ianao. Ireo rakitra ireo dia voafafa ho azy:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ny rakitra-nao ankehitriny dia mivelatra amin'ny {formatGB(usedGB)} amin'ny {totalStorageGB} GB fitahirizana misy. Mety mila manatsara ny famandrihana-nao ianao tsy ho ela mba hanohy ny fitehirizana rakitra.",
   "Upgrade Your Subscription": "Hatsara Ny Famandrihana-nao",
   "Storage Management": "Fitantanana Fitehirizana",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Tsindrio Hanatsara Ny Subscription",
   "WILL BE DELETED": "HOVONOINA",
   "Create an album in 90 sec": "Mamorona rakikira ao anatin'ny 90 segondra",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Manana rakikira {albumCount} ianao saingy afaka mitahiry 5 maimaimpoana ihany. Ireo rakikira tranainy ireo dia fafana ho azy:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Mamaky ny mombamomba ny kaonty...",
   "Please enter a positive number": "Azafady, ampidiro isa tsara",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Mampakatra fampahalalana famandrihana...",
   "Insufficient storage and too many albums (max 5 for free)": "Tsy ampy fitehirizana ary album be loatra (5 fara-fahakeliny maimaim-poana)",
   "Insufficient storage capacity": "Tsy ampy fahafahan-toerana fitehirizana",
-  "Too many albums (free tier allows max 5 albums)": "Album be loatra (ny sehatra maimaim-poana dia mamela album 5 fara-fahakeliny)"
+  "Too many albums (free tier allows max 5 albums)": "Album be loatra (ny sehatra maimaim-poana dia mamela album 5 fara-fahakeliny)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Manana rakipeo mihoatra ny 5 ianao ary ny rakitra-nao dia mandray {formatGB(usedGB)} toerana (fetra: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ireo rakipeo ireo dia voafafa ho azy raha tsy manapa-kevitra hamafa rakipeo hafa ianao:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Manana {albumCount} rakikira ianao saingy afaka mitahiry dimy fotsiny maimaimpoana. Ireo rakikira tranainy ireo dia voafafa ho azy raha tsy mikasa hamafa rakikira hafa ianao:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ny rakitrao dia maka {formatGB(usedGB)} toerana, fa ianao dia manana {FREE_TIER_STORAGE_LIMIT_GB} GB fitahirizana ihany. Ireo rakikira ireo dia voafafa ho azy raha tsy manapa-kevitra hamafa rakikira hafa ianao:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ny rakitrao dia maka {formatGB(usedGB)} toerana, fa ianao dia manana {totalStorageGB} GB fitahirizana ihany. Ireo rakikira ireo dia voafafa ho azy raha tsy manapa-kevitra hamafa rakikira hafa ianao:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Afaka mitahiry rakikira 5 izay mitotaly {FREE_TIER_STORAGE_LIMIT_GB} GB farafaharatsiny maimaim-poana. Fafao ireo rakikira tsy ampiasaina mba hahalalahana toerana.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Ny ambaratonga karama dia manana rakikira tsy misy fetra ary voafetra amin'ny fitahirizana ihany"
 }

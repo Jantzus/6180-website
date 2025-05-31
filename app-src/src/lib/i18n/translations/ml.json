@@ -166,8 +166,6 @@
   "Email address...": "ഇമെയിൽ വിലാസം...",
   "Two-Factor Authentication": "രണ്ട്-ഘടക പ്രാമാണീകരണം",
   "Select For Download": "ഡൗൺലോഡിനായി തിരഞ്ഞെടുക്കുക",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "നിങ്ങൾക്ക് 5 ആൽബങ്ങൾ അല്ലെങ്കിൽ {FREE_TIER_STORAGE_LIMIT_GB} ജിബി വരെ സൗജന്യമായി സംരക്ഷിക്കാം. സ്ഥലം ഉണ്ടാക്കാൻ ഉപയോഗിക്കാത്ത ആൽബങ്ങൾ ഇല്ലാതാക്കുക.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "നിങ്ങളുടെ ഫയലുകൾ നിലവിൽ {formatGB(usedGB)} സ്ഥലം കൈവശപ്പെടുത്തുന്നു, എന്നാൽ നിങ്ങളുടെ പക്കൽ {FREE_TIER_STORAGE_LIMIT_GB} ജിബി സ്റ്റോറേജ് മാത്രമേയുള്ളൂ. ഈ ആൽബങ്ങൾ സ്വയംപ്രവർത്തനമായി ഇല്ലാതാക്കപ്പെടുന്നു:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "നിങ്ങളുടെ ഫയലുകൾ നിലവിൽ ലഭ്യമായ {totalStorageGB} ജിബി സ്റ്റോറേജിൽ നിന്ന് {formatGB(usedGB)} സ്ഥലം കൈവശപ്പെടുത്തുന്നു. ആൽബങ്ങൾ സംരക്ഷിക്കുന്നത് തുടരാൻ നിങ്ങൾ ഉടൻ സബ്‌സ്ക്രിപ്‌ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യേണ്ടതായി വന്നേക്കാം.",
   "Upgrade Your Subscription": "നിങ്ങളുടെ സബ്‌സ്ക്രിപ്‌ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യുക",
   "Storage Management": "സംഭരണ മാനേജ്മെന്റ്",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "സബ്‌സ്ക്രിപ്ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക",
   "WILL BE DELETED": "ഇല്ലാതാക്കപ്പെടും",
   "Create an album in 90 sec": "90 സെക്കൻഡിൽ ആൽബം സൃഷ്ടിക്കുക",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "നിങ്ങൾക്ക് {albumCount} ആൽബങ്ങളുണ്ട് എന്നാൽ സൗജന്യമായി 5 എണ്ണം മാത്രമേ സംരക്ഷിക്കാൻ കഴിയൂ. ഈ ഏറ്റവും പഴയ ആൽബങ്ങൾ സ്വയമേവ ഇല്ലാതാക്കപ്പെടുന്നു:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "നിങ്ങളുടെ ഫയലുകൾ {formatGB(usedGB)} സ്ഥലം ഉപയോഗിക്കുന്നു, എന്നാൽ നിങ്ങൾക്ക് {FREE_TIER_STORAGE_LIMIT_GB} GB സംഭരണം മാത്രമേയുള്ളൂ। ഈ ആൽബങ്ങൾ സ്വയമേവ ഇല്ലാതാക്കപ്പെടുന്നു:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "നിങ്ങൾക്ക് 5-ൽ അധികം ആൽബങ്ങളുണ്ട് കൂടാതെ നിങ്ങളുടെ ഫയലുകൾ {formatGB(usedGB)} സ്ഥലം ഉപയോഗിക്കുന്നു (പരിധി: {FREE_TIER_STORAGE_LIMIT_GB} GB). ഈ ആൽബങ്ങൾ സ്വയമേവ ഇല്ലാതാക്കപ്പെടുന്നു:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "നിങ്ങളുടെ ഫയലുകൾ {formatGB(usedGB)} സ്ഥലം ഉപയോഗിക്കുന്നു, എന്നാൽ നിങ്ങൾക്ക് {totalStorageGB} GB സംഭരണം മാത്രമേയുള്ളൂ। ഈ ആൽബങ്ങൾ സ്വയമേവ ഇല്ലാതാക്കപ്പെടുന്നു:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "നിങ്ങളുടെ ഫയലുകൾ {totalStorageGB} GB സംഭരണത്തിൽ {formatGB(usedGB)} ഉപയോഗിക്കുന്നു। നിങ്ങൾക്ക് ഉടൻ സബ്‌സ്‌ക്രിപ്‌ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യേണ്ടി വന്നേക്കാം।",
   "Loading account information...": "അക്കൗണ്ട് വിവരങ്ങൾ ലോഡ് ചെയ്യുന്നു...",
   "Please enter a positive number": "ദയവായി പോസിറ്റീവ് നമ്പർ നൽകുക",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "സബ്‌സ്ക്രിപ്ഷൻ വിവരങ്ങൾ ലോഡ് ചെയ്യുന്നു...",
   "Insufficient storage and too many albums (max 5 for free)": "അപര്യാപ്തമായ സ്റ്റോറേജും ധാരാളം ആൽബങ്ങളും (സൗജന്യം പരമാവധി 5)",
   "Insufficient storage capacity": "അപര്യാപ്തമായ സംഭരണ ശേഷി",
-  "Too many albums (free tier allows max 5 albums)": "ധാരാളം ആൽബങ്ങൾ (സൗജന്യ ടയർ പരമാവധി 5 ആൽബങ്ങൾ അനുവദിക്കുന്നു)"
+  "Too many albums (free tier allows max 5 albums)": "ധാരാളം ആൽബങ്ങൾ (സൗജന്യ ടയർ പരമാവധി 5 ആൽബങ്ങൾ അനുവദിക്കുന്നു)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "നിങ്ങൾക്ക് 5 ലധികം ആൽബങ്ങളുണ്ട് കൂടാതെ നിങ്ങളുടെ ഫയലുകൾ {formatGB(usedGB)} സ്ഥലം ഉപയോഗിക്കുന്നു (പരിധി: {FREE_TIER_STORAGE_LIMIT_GB} GB). മറ്റ് ആൽബങ്ങൾ ഇല്ലാതാക്കാൻ നിങ്ങൾ തീരുമാനിക്കുന്നില്ലെങ്കിൽ ഈ ആൽബങ്ങൾ സ്വയം ഇല്ലാതാക്കപ്പെടുന്നു:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "നിങ്ങൾക്ക് {albumCount} ആൽബങ്ങളുണ്ട് എന്നാൽ സൗജന്യമായി 5 എണ്ണം മാത്രമേ സേവ് ചെയ്യാൻ കഴിയൂ. മറ്റ് ആൽബങ്ങൾ ഇല്ലാതാക്കാൻ നിങ്ങൾ തീരുമാനിക്കുന്നില്ലെങ്കിൽ ഈ ഏറ്റവും പഴയ ആൽബങ്ങൾ സ്വയം മായ്ക്കപ്പെടുന്നു:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "നിങ്ങളുടെ ഫയലുകൾ {formatGB(usedGB)} സ്ഥലം കൈയ്യേറിയിരിക്കുന്നു, പക്ഷേ നിങ്ങൾക്ക് {FREE_TIER_STORAGE_LIMIT_GB} ജിബി സംഭരണി മാത്രമേയുള്ളൂ. മറ്റ് ആൽബങ്ങൾ ഇല്ലാതാക്കാൻ നിങ്ങൾ തീരുമാനിക്കുന്നില്ലെങ്കിൽ ഈ ആൽബങ്ങൾ സ്വയംക്രിയമായി ഇല്ലാതാക്കപ്പെടുന്നു:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "നിങ്ങളുടെ ഫയലുകൾ {formatGB(usedGB)} സ്ഥലം കൈയ്യേറിയിരിക്കുന്നു, പക്ഷേ നിങ്ങൾക്ക് {totalStorageGB} ജിബി സംഭരണി മാത്രമേയുള്ളൂ. മറ്റ് ആൽബങ്ങൾ ഇല്ലാതാക്കാൻ നിങ്ങൾ തീരുമാനിക്കുന്നില്ലെങ്കിൽ ഈ ആൽബങ്ങൾ സ്വയംക്രിയമായി ഇല്ലാതാക്കപ്പെടുന്നു:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "നിങ്ങൾക്ക് പരമാവധി {FREE_TIER_STORAGE_LIMIT_GB} ജിബി വരെയുള്ള 5 ആൽബങ്ങൾ സൗജന്യമായി സേവ് ചെയ്യാം. സ്ഥലം ഉണ്ടാക്കാൻ ഉപയോഗിക്കാത്ത ആൽബങ്ങൾ ഇല്ലാതാക്കുക.",
+  "Paid tiers have unlimited albums and are limited only by storage": "പെയ്ഡ് ടയറുകളിൽ പരിധിയില്ലാത്ത ആൽബങ്ങൾ ഉണ്ട് കൂടാതെ സ്റ്റോറേജ് മാത്രമാണ് പരിധി"
 }

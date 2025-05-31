@@ -166,8 +166,6 @@
   "Email address...": "Email mánzili...",
   "Two-Factor Authentication": "Eki-Faktor Authentication",
   "Select For Download": "Jüklemek Üşin Saylañız",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 albom yamasa {FREE_TIER_STORAGE_LIMIT_GB} GB shekem pulsız saqlay alasız. Orın jasaw ushın paydalanılmağan albumlardı öshirin.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Siziń fayllarnız házir {formatGB(usedGB)} ornı alıp turıptı, biraq sizde tek {FREE_TIER_STORAGE_LIMIT_GB} GB saqlawshı bar. Usı albumlar avtomatik túrde óshiriledi:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Siziń fayllarnız házir qoljetimli {totalStorageGB} GB saqlawshıdan {formatGB(usedGB)} ornı alıp turıptı. Albumlardı saqlaw üshin siz tez arqılı abonemeńtiñizdi jańɣırtwınız kerek bolıwı múmkin.",
   "Upgrade Your Subscription": "Abonemeńtiñizdi Jańɣırtıń",
   "Storage Management": "Saqlaw Basqarıw",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Podpiska Jaqsılaw Ushın Bas",
   "WILL BE DELETED": "ÖSHIRILEDI",
   "Create an album in 90 sec": "90 sekundda albom jaratıñ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Sizde {albumCount} albom bar, biraq pulysyz tek 5-in saqlap qala alasyz. Buular en' eski albumlar avtomatik o'chirilip baryapti:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Akkount malıwmatların júklew...",
   "Please enter a positive number": "Járdem itip pozitiv sanı jazıñ",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Podpiska ma'lumatları yukleniyor...",
   "Insufficient storage and too many albums (max 5 for free)": "Yetishmeýan saqlawish orni hám köp albom (parasız 5 tane)",
   "Insufficient storage capacity": "Yetishmeýan saqlawish sïğımı",
-  "Too many albums (free tier allows max 5 albums)": "Köp albom (parasız deréje maksimum 5 albomğa ruxsat bere)"
+  "Too many albums (free tier allows max 5 albums)": "Köp albom (parasız deréje maksimum 5 albomğa ruxsat bere)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Sizde 5 ten ko'p albom bar ha'm fayllaryn'yz {formatGB(usedGB)} oryn alady (shek: {FREE_TIER_STORAGE_LIMIT_GB} GB). Bu albomlarda avtomatik o'shiriledi eger siz basqa albomlardi o'shiriwdi shalishmasanz:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Sizde {albumCount} albom bar, biraq pulsızlıq penen tek 5 saqlaw múmkin. Bul eñ eski albomlardı avtomatik túrde óshirip taslaydı, eger siz basqa albomlardı óshiriwdi sheshpeseyiz:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fayllariñiz {formatGB(usedGB)} orın alıp tur, biraq sizde tek {FREE_TIER_STORAGE_LIMIT_GB} GB saqlaw orını bar. Bu albomlar avtomatik tüsinde öşiriladi, eger siz basqa albomları öşiriwdi qárar bermeseniñiz:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Fayllariñiz {formatGB(usedGB)} orın alıp tur, biraq sizde tek {totalStorageGB} GB saqlaw orını bar. Bu albomlar avtomatik tüsinde öşiriladi, eger siz basqa albomları öşiriwdi qárar bermeseniñiz:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 albomdi {FREE_TIER_STORAGE_LIMIT_GB} GB-ǵa shekem tégsin saqlaw múmkin. Orın jaratıw ushın paydalanılmağan albomlardı óshirin.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Pullı derejeler sheksiz albumlarğa iye ham tek saqlawish penen sheklenwе"
 }

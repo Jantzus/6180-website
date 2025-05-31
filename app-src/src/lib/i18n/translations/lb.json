@@ -166,8 +166,6 @@
   "Email address...": "E-Mail-Adress...",
   "Two-Factor Authentication": "Zwou-Faktor-Authentifikatoun",
   "Select For Download": "Fir Download Erauswielen",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Dir kënnt 5 Alben oder bis zu {FREE_TIER_STORAGE_LIMIT_GB} GB gratis späicheren. Läscht ongenotzt Alben fir Plaz ze maachen.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Äer Fichieren huelen elo {formatGB(usedGB)} Plaz an, mä Dir hutt nëmmen {FREE_TIER_STORAGE_LIMIT_GB} GB Späicherplaz. Dës Alben ginn automatesch geläscht:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Äer Fichieren huelen elo {formatGB(usedGB)} vu {totalStorageGB} GB Späicherplaz deen disponibel ass. Dir musst eventuell geschwënn äert Abonnement upgraden fir weider Alben ze späicheren.",
   "Upgrade Your Subscription": "Äert Abonnement Upgraden",
   "Storage Management": "Späicher Verwaltung",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klickt Fir D'Abonnement Ze Upgraden",
   "WILL BE DELETED": "GËTT GELÄSCHT",
   "Create an album in 90 sec": "Erstellt en Album an 90 Sekonnen",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Dir hutt {albumCount} Alben awer kënnt nëmmen 5 gratis späicheren. Dës eelst Alben ginn automatesch geläscht:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Kontoinformatiounen ginn gelueden...",
   "Please enter a positive number": "Gitt w.e.g. eng positiv Zuel an",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Abonnement-Informatiounen lueden...",
   "Insufficient storage and too many albums (max 5 for free)": "Net genug Späicherplaz an ze vill Alben (maximal 5 gratis)",
   "Insufficient storage capacity": "Net genug Späicherkapazität",
-  "Too many albums (free tier allows max 5 albums)": "Ze vill Alben (gratis Niveau erlaabt maximal 5 Alben)"
+  "Too many albums (free tier allows max 5 albums)": "Ze vill Alben (gratis Niveau erlaabt maximal 5 Alben)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Dir hutt méi wéi 5 Alben AN Är Fichieren huelen {formatGB(usedGB)} Plaz (Limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Dës Alben ginn automatesch geläscht ausser Dir decidéiert aner Alben ze läschen:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Dir hutt {albumCount} Alben awer kënnt nëmmen 5 gratis späicheren. Dës eelst Alben ginn automatesch geläscht ausser Dir decidéiert aner Alben ze läschen:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Är Fichieren huelen {formatGB(usedGB)} Plaz, awer Dir hutt nëmmen {FREE_TIER_STORAGE_LIMIT_GB} GB Späicher. Dës Alben ginn automatesch geläscht, ausser Dir decidéiert aner Alben ze läschen:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Är Fichieren huelen {formatGB(usedGB)} Plaz, awer Dir hutt nëmmen {totalStorageGB} GB Späicher. Dës Alben ginn automatesch geläscht, ausser Dir decidéiert aner Alben ze läschen:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Dir kënnt 5 Alben späicheren, déi zesummen maximal {FREE_TIER_STORAGE_LIMIT_GB} GB gratis hunn. Läscht onbenotzt Alben fir Plaz ze maachen.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Bezuelten Niveauen hun onlimitéiert Alben a sinn nëmmen duerch Stockage limitéiert"
 }

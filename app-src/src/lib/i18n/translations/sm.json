@@ -166,8 +166,6 @@
   "Email address...": "Tuātusi imeli...",
   "Two-Factor Authentication": "Fa'amaonia Lua-Mea",
   "Select For Download": "Filifili Mo Le Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "E mafai ona e teuina le 5 tala po e oo atu le {FREE_TIER_STORAGE_LIMIT_GB} GB leai se totogi. Tape'a tala e le fa'aogaina mo le faia o se avanoa.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "O au faila o loʻo faaogaina nei {formatGB(usedGB)} avanoa, ae e na o le {FREE_TIER_STORAGE_LIMIT_GB} GB lou teuina. O nei ata o loʻo soloia otometi:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "O au faila o loʻo faaogaina nei {formatGB(usedGB)} avanoa mai le {totalStorageGB} GB teuina o loʻo maua. Atonu e manaʻomia e te faʻalelei loa lau lesitala ina ia faʻaauau ai le teu o ata.",
   "Upgrade Your Subscription": "Faʻalelei Lau Lesitala",
   "Storage Management": "Pulega O Mea Teu",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Kiliki E Faʻaleleia Ai Subscription",
   "WILL BE DELETED": "O LE A SOLOIA",
   "Create an album in 90 sec": "Fai se api i le 90 sekone",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "E i ai au album e {albumCount} ae naʻo le 5 e mafai ona e teu saoloto. O nei album tuai tele ua soloia faaletino:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Uta ana faʻamatalaga o le teugatupe...",
   "Please enter a positive number": "Fa'amolemole tu'u se numera lelei",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Utu faalauiloa ta'ito'oga...",
   "Insufficient storage and too many albums (max 5 for free)": "Le mafai fa'atauvalea ma le tele o ta'ito'oga (lona maualuga 5 saoloto)",
   "Insufficient storage capacity": "Le mafai fa'atauvalea",
-  "Too many albums (free tier allows max 5 albums)": "Tele o ta'ito'oga (tulaga saoloto e fa'atagaina le 5 ta'ito'oga)"
+  "Too many albums (free tier allows max 5 albums)": "Tele o ta'ito'oga (tulaga saoloto e fa'atagaina le 5 ta'ito'oga)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "E silia lou album e 5 MA lou faila e fa'aaoga ai le avanoa {formatGB(usedGB)} (tapula'a: {FREE_TIER_STORAGE_LIMIT_GB} GB). O nei album o lo'o aveese saofai pe afai e te le filifili e aveese isi album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "E iai au {albumCount} api ae ua na o le lima le mafai ona e teu fua. O nei api tuai o lo o tape faaletonu pe a le oe filifili e tape isi api:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "O ou faila ua faʻaaogāina ai le {formatGB(usedGB)} avanoa, ae e na o le {FREE_TIER_STORAGE_LIMIT_GB} GB teu lau mea. O nei ata tusitala ua tape otometi pe a leai lau filifilia e tape isi ata tusitala:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "O ou faila ua faʻaaogāina ai le {formatGB(usedGB)} avanoa, ae e na o le {totalStorageGB} GB teu lau mea. O nei ata tusitala ua tape otometi pe a leai lau filifilia e tape isi ata tusitala:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "E mafai ona e teu ni api e 5 e aofia ai le aofaʻi e sili atu i le {FREE_TIER_STORAGE_LIMIT_GB} GB e leai se totogi. Tape api e le faʻaaogaina e fai ai se avanoa.",
+  "Paid tiers have unlimited albums and are limited only by storage": "O tulaga totogi o lo'o ai e le gata ai le ata ma na'o le mea teu e fa'atapula'aina ai"
 }

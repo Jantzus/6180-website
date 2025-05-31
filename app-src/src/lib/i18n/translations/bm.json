@@ -166,8 +166,6 @@
   "Email address...": "Imɛli ɲɛnabɔyɔrɔ...",
   "Two-Factor Authentication": "Fla-Fila Tiɲɛni",
   "Select For Download": "Sugandi Ka Telesigali",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "I bɛ se ka albumu 5 walima ka se {FREE_TIER_STORAGE_LIMIT_GB} GB ma tilannen ye. Ka albumu minnu tɛ kɛ ka baara ye, o bɔ walasa yɔrɔ ka sɔrɔ.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "I ka filew bεε sisan bε ka {formatGB(usedGB)} yɔrɔ ta, nka i bε ni {FREE_TIER_STORAGE_LIMIT_GB} GB marayɔrɔ dɔrɔn. O albumu ninnu bε ka bɔ tuma bεε la:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "I ka filew bεε sisan bε ka {formatGB(usedGB)} ta {totalStorageGB} GB marayɔrɔ la min bε yen. I bε se ka marayɔgɔ ka i ka jigin santirayi ye walasa ka taa ka albumu marali la.",
   "Upgrade Your Subscription": "Ka I Ka Jigin Santirayi Ye",
   "Storage Management": "Ka Dilan Mara",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klik Walasa Ka Subscription Sababuw",
   "WILL BE DELETED": "BE TUN YE",
   "Create an album in 90 sec": "Dilan album kɔnɔ tilancɛ 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "I bɛ {albumCount} ɔrɔmu ye nka i bɛ se ka 5 dɔrɔn marayɔ. O ɔrɔmu korɔlenw bɛ ka bɔ u yɛrɛma:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Jatebɔ kunnafoni kalan...",
   "Please enter a positive number": "Aw ye, aw bɛ jateden ɲuman dɔ",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Sususcriben kunnafoni doni ka...",
   "Insufficient storage and too many albums (max 5 for free)": "Marayaw ɔrɔmu te wa wa album caman (hɔrɔnya 5)",
   "Insufficient storage capacity": "Marayaw ɔrɔmu te",
-  "Too many albums (free tier allows max 5 albums)": "Album caman (hɔrɔnya dara ye album 5 fɔlɔ)"
+  "Too many albums (free tier allows max 5 albums)": "Album caman (hɔrɔnya dara ye album 5 fɔlɔ)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "I bɛ albɔmu 5 kan na YAN i ka fayiliw bɛ yɔrɔ {formatGB(usedGB)} ta (dannayakulu: {FREE_TIER_STORAGE_LIMIT_GB} GB). O albɔmuliw bɛna bɔ u yɛrɛma ni i ma albɔmu wɛrɛw bɔli latigɛ:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "I bɛ {albumCount} albumu ye nka i bɛ se ka 5 dɔrɔn mara fu. O albumu koromatɔw bɛna bɔ u yɛrɛ ma tuma min na i ma latigɛ ka albumu wɛrɛw bɔ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "I ka fɛnw bɛ {formatGB(usedGB)} yɔrɔ ta, nka i bɛ ni {FREE_TIER_STORAGE_LIMIT_GB} GB marayɔrɔ dɔrɔn de. O albɔmu ninnu bɛ sebenni otomatiki fɛ n'i ma latigɛ ka albɔmu wɛrɛw sebenni:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "I ka fɛnw bɛ {formatGB(usedGB)} yɔrɔ ta, nka i bɛ ni {totalStorageGB} GB marayɔrɔ dɔrɔn de. O albɔmu ninnu bɛ sebenni otomatiki fɛ n'i ma latigɛ ka albɔmu wɛrɛw sebenni:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Aw bε sε ka albom 5 mara a bε kε {FREE_TIER_STORAGE_LIMIT_GB} GB ye fere. Aw k'i kε albom minnu tε baara la aw ka yɔrɔ sɔrɔ.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Jateminɛ sariyalen bɛ ni albumu tɛmɛlen ye ani a jɔlen bɛ marali dɔrɔn fɛ"
 }

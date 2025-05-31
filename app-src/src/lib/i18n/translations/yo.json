@@ -166,8 +166,6 @@
   "Email address...": "Àdírẹ́ẹ̀sì ímeèlì...",
   "Two-Factor Authentication": "Ìfidájú Òkè-Méjì",
   "Select For Download": "Yan Fun Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "O lè fi pamọ́ àwọn àlbọ́mù márùn-ún tàbí tó {FREE_TIER_STORAGE_LIMIT_GB} GB lọ́fẹ̀ẹ́. Pa àwọn àlbọ́mù tí a kò lò rẹ́ láti ṣe àyè.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Àwọn fáìlì yín lọ́wọ́lọ́wọ́ ń gba àyè {formatGB(usedGB)}, ṣùgbọ́n ẹ ní {FREE_TIER_STORAGE_LIMIT_GB} GB ìfipamọ́ nikan. A ń pa àwọn àlbọ́mù wọ̀nyí rẹ́ ní àìfàrasí:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Àwọn fáìlì yín lọ́wọ́lọ́wọ́ ń gba àyè {formatGB(usedGB)} kúrò nínú {totalStorageGB} GB ìfipamọ́ tí ó wà. Ó ṣe é ṣe kí ẹ nílò láti mú kaupalapala yín ga ní àìpẹ́ láti tẹ̀síwájú láti fi àwọn àlbọ́mù pamọ́.",
   "Upgrade Your Subscription": "Mú Kaupalapala Yín Ga",
   "Storage Management": "Iṣakoso Ifipamọ",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Tẹ Láti Mú Subscription Pọ̀",
   "WILL BE DELETED": "YOO PAARẸ",
   "Create an album in 90 sec": "Ṣe àlbọ́mù nínú ìṣẹ́jú 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "O ní àlbọ́mù {albumCount} ṣùgbọ́n o lè tọ́jú 5 nìkan lọ́fẹ̀ẹ́. Àwọn àlbọ́mù ti ó ti pẹ́ jù wọ̀nyí ni a ń pa rẹ̀ tààràtà:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Ń gbé ìwífún àkójọpọ̀...",
   "Please enter a positive number": "Jọ́wọ́ tẹ ọ̀rọ̀ nọ́mbà tó dára",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Ń gbé àlàyé ìforúkọsílẹ̀...",
   "Insufficient storage and too many albums (max 5 for free)": "Ibi ìtọ́jú tí kò tó àti àlbọ́mù púpọ̀ jù (tó ga jù 5 lófèé)",
   "Insufficient storage capacity": "Ìwọ̀n ibi ìtọ́jú tí kò tó",
-  "Too many albums (free tier allows max 5 albums)": "Àlbọ́mù púpọ̀ jù (ipele lófèé ń gba àlbọ́mù márùn-ún lọ́pọ̀lọ́pọ̀)"
+  "Too many albums (free tier allows max 5 albums)": "Àlbọ́mù púpọ̀ jù (ipele lófèé ń gba àlbọ́mù márùn-ún lọ́pọ̀lọ́pọ̀)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "O ní àlbọ́mù tó ju márùn-ún lọ PẸLÚ àwọn fáìlì rẹ tó ń gba àyè {formatGB(usedGB)} (òpin: {FREE_TIER_STORAGE_LIMIT_GB} GB). Àwọn àlbọ́mù wọ̀nyí ń parẹ́ fún rara rẹ̀ àyàfi tí o bá pinnu láti pa àwọn àlbọ́mù míràn rẹ́:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "O ní àlbọ́mù {albumCount} ṣùgbọ́n o lè fi àlbọ́mù márùn-ún pamọ́ lọ́fẹ̀ẹ́. Àwọn àlbọ́mù àgbàlagbà wọ̀nyí ń parẹ́ fúnra wọn àyàfi tí o bá pinnu láti pa àwọn àlbọ́mù míìn rẹ́:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Àwọn fáìlì yín gba {formatGB(usedGB)} àyè, ṣùgbọ́n {FREE_TIER_STORAGE_LIMIT_GB} GB ìpamọ́ ni ẹ ní lásán. A ń pa àwọn álbọ́mù wọ̀nyí rẹ́ láìfibọwọ́ àyàfi tí ẹ bá pinnu láti pa àwọn álbọ́mù mìíràn rẹ́:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Àwọn fáìlì yín gba {formatGB(usedGB)} àyè, ṣùgbọ́n {totalStorageGB} GB ìpamọ́ ni ẹ ní lásán. A ń pa àwọn álbọ́mù wọ̀nyí rẹ́ láìfibọwọ́ àyàfi tí ẹ bá pinnu láti pa àwọn álbọ́mù mìíràn rẹ́:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "O lè fi àlbọ́mù márùn-ún tó gba {FREE_TIER_STORAGE_LIMIT_GB} GB lápapọ̀ pamọ́ l'ọ́fẹ́. Pa àlbọ́mù tí o kò lò jẹ láti ṣe àyè.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Awọn ipele ti sisanwo ni awọn awo-orin ailópin ati pe awọn ni iyoku nipasẹ ibi ipamọ nikan"
 }

@@ -166,8 +166,6 @@
   "Email address...": "selpaste judri...",
   "Two-Factor Authentication": "remei facki judri",
   "Select For Download": "cuxna lo kibni",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "do kakne le nu co'e ci'u mu dunda girzu pe ki'o {FREE_TIER_STORAGE_LIMIT_GB} te bangu. ko vimcu le girzu poi na pu se pilno kei mu'i le nu zbasu le klama",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "do girzu pu'e ca gau cmalu {formatGB(usedGB)} canlu ku'o .i ku'i do se ponse {FREE_TIER_STORAGE_LIMIT_GB} gerku bangu semai .i lei dunda girzu ca mulno vimcu",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "do girzu pu'e ca gau cmalu {formatGB(usedGB)} fi'o {totalStorageGB} gerku bangu semai ku'o .i ko'a ka'e nitcu le nu do galfi le jdini plefi ji'a sekai kei kei .i ba ku do ka'e co'e rirni le dunda girzu",
   "Upgrade Your Subscription": "galfi le jdini plefi sekai",
   "Storage Management": "selfu'e jikca",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "ganzu fi lo jmina be lo subscription",
   "WILL BE DELETED": "mo'u vimcu",
   "Create an album in 90 sec": "zbasu lo sanga girzu ca lo 90 snidu",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "do se sanga {albumCount} .i ku'i do ka'e vimcu 5 zi'e to'u noi benji cu se mipri. lo cabna be lo se sanga cu se vimcu fi lo se tcimi'e:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "kibro tcana vasru",
   "Please enter a positive number": "ko'a curmi lo zabna namcu",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "samci'e datni co'a kibdu...",
   "Insufficient storage and too many albums (max 5 for free)": "cmavo vreji naku ije masu sanga girzu (xabju 5 jdima)",
   "Insufficient storage capacity": "cmavo vreji naku",
-  "Too many albums (free tier allows max 5 albums)": "masu sanga girzu (tolyloi jdima cu curmi xabju 5 sanga girzu)"
+  "Too many albums (free tier allows max 5 albums)": "masu sanga girzu (tolyloi jdima cu curmi xabju 5 sanga girzu)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "do ponse xi fi'u mu sanga girzu .i do datnyvei cu gapru {formatGB(usedGB)} cmavo'e (traji: {FREE_TIER_STORAGE_LIMIT_GB} GB). ti poi sanga girzu cu se vimcu fi'o zenba kei nagi'ido jdice lodu'u vimcu drata sanga girzu:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "do ponse lo {albumCount} sanga girzu gi'e kakne lo nu co'e mu da poi to'e jdima. le vi tolcni sanga girzu cu se vimcu fi'o zmiku kei ja'a do e nai co'a jdice lo nu vimcu drata sanga girzu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "do datni zbasu cu gapru {formatGB(usedGB)} canlu .i ku'i do se ponse {FREE_TIER_STORAGE_LIMIT_GB} gigabaite vreji .i dei drata drata zukte vimcu na'e go'i ko'a datni zbasu vimcu danfu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "do datni zbasu cu gapru {formatGB(usedGB)} canlu .i ku'i do se ponse {totalStorageGB} gigabaite vreji .i dei drata drata zukte vimcu na'e go'i ko'a datni zbasu vimcu danfu:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "do ka'e rejgau mu zgana girzu poi katni {FREE_TIER_STORAGE_LIMIT_GB} gigabait tolcri. ko vimcu loi na pu'i zgana girzu tezu'e loi sruri",
+  "Paid tiers have unlimited albums and are limited only by storage": "lo pleji klesi cu se steci lo noi cnino sanga girzu gi'e se gusni fi lo vreji po'o"
 }

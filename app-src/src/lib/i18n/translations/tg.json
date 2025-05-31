@@ -166,8 +166,6 @@
   "Email address...": "Суроғаи почтаи электронӣ...",
   "Two-Factor Authentication": "Тасдиқи Ду-Омил",
   "Select For Download": "Интихоб Барои Зеркашӣ",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Шумо метавонед 5 албом ё то {FREE_TIER_STORAGE_LIMIT_GB} ГБ-ро ройгон захира кунед. Албомҳои истифада нашударо нест кунед то ҷой созед.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Файлҳои шумо ҳоло {formatGB(usedGB)} ҷой ишғол мекунанд, аммо шумо танҳо {FREE_TIER_STORAGE_LIMIT_GB} ГБ захирагоҳ доред. Ин албомҳо худкор нест карда мешаванд:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Файлҳои шумо ҳоло аз {totalStorageGB} ГБ захирагоҳи дастрас {formatGB(usedGB)} ҷой ишғол мекунанд. Барои идома додани захиракунии албомҳо шумо бояд зуд обунаи худро навсозӣ кунед.",
   "Upgrade Your Subscription": "Обунаи Худро Навсозӣ Кунед",
   "Storage Management": "Идоракунии Захира",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Барои беҳтар кардани обуна клик кунед",
   "WILL BE DELETED": "ҲАЗФ ХОҲАД ШУД",
   "Create an album in 90 sec": "Албом дар 90 сония эҷод кунед",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Шумо {albumCount} албом доред, аммо танҳо 5-тoро бепул нигоҳ доштан мумкин аст. Ин кӯҳнатарин албомҳо худкор ҳазф мешаванд:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Бор кардани маълумоти ҳисоб...",
   "Please enter a positive number": "Лутфан рақами мусбат ворид кунед",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Бор кардани маълумоти обуна...",
   "Insufficient storage and too many albums (max 5 for free)": "Захирагоҳи нокифоя ва альбомҳои зиёд (ҳадди аксар 5 ройгон)",
   "Insufficient storage capacity": "Захирагоҳи нокифоя",
-  "Too many albums (free tier allows max 5 albums)": "Альбомҳои зиёд (сатҳи ройгон ҳадди аксар 5 альбомро иҷозат медиҳад)"
+  "Too many albums (free tier allows max 5 albums)": "Альбомҳои зиёд (сатҳи ройгон ҳадди аксар 5 альбомро иҷозат медиҳад)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Шумо зиёда аз 5 албом доред ВА файлҳоитон {formatGB(usedGB)} ҷой ишғол мекунанд (ҳадди аксар: {FREE_TIER_STORAGE_LIMIT_GB} ГБ). Ин албомҳо ба таври худкор нест мешаванд, агар шумо албомҳои дигарро нест кардан қарор надиҳед:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Шумо {albumCount} албом доред, вале танҳо 5-ро ройгон нигоҳ доштан мумкин аст. Ин албомҳои кӯҳна ба таври худкор ҳазф мешаванд, агар шумо ҳазфи албомҳои дигарро ҳал накунед:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Файлҳои шумо {formatGB(usedGB)} ҷой ишғол мекунанд, аммо шумо танҳо {FREE_TIER_STORAGE_LIMIT_GB} ГБ захиракунӣ доред. Ин албумҳо ба таври автоматӣ нест карда мешаванд, магар шумо албумҳои дигарро нест кардан қарор кунед:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Файлҳои шумо {formatGB(usedGB)} ҷой ишғол мекунанд, аммо шумо танҳо {totalStorageGB} ГБ захиракунӣ доред. Ин албумҳо ба таври автоматӣ нест карда мешаванд, магар шумо албумҳои дигарро нест кардан қарор кунед:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Шумо метавонед 5 альбомро нигоҳ доред, ки дар маҷмӯъ максимум {FREE_TIER_STORAGE_LIMIT_GB} ГБ ройгон мешавад. Альбомҳои истифаданашударо ҳазф кунед то ҷой созед.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Сатҳҳои пулӣ альбомҳои беҳад доранд ва танҳо бо захирасозӣ маҳдуд мешаванд"
 }

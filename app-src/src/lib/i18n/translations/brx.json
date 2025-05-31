@@ -166,8 +166,6 @@
   "Email address...": "इमेल थालै...",
   "Two-Factor Authentication": "नैफोर-फेक्टर प्रमाणीकरण",
   "Select For Download": "डाउनलोड नाखानि सायखो",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "नोंथांए 5 आलबाम एबा {FREE_TIER_STORAGE_LIMIT_GB} जीबी सावसे दावगा फोरा सेभ हायो खालाम। जायगा सोलानि थागौ सिजिन्नै आलबाम दानाव ।",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "नोंथांए फाइलफोर एबेळा {formatGB(usedGB)} जागा लैयो, बे नोंथांए खालि {FREE_TIER_STORAGE_LIMIT_GB} जीबी स्टोरेज माना। बे आलबामफोर गोनां गावनो हादि डिलिट होयो ।",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "नोंथांए फाइलफोर एबेळा उपलब्ध {totalStorageGB} जीबी स्टोरेज सां {formatGB(usedGB)} जागा लैयो। आलबामफोर सेभ होनो थाखो थासिनो गेदेर नोंथांए लाबो सबस्क्रिप्शन अपग्रेड होनो लागों।",
   "Upgrade Your Subscription": "नोंथांए सबस्क्रिप्शन अपग्रेड होनो",
   "Storage Management": "भाण्डार प्रबन्धन",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "सब्सक्रिप्शन अपग्रेड हरनाय क्लिक हरा",
   "WILL BE DELETED": "गावनांदाई",
   "Create an album in 90 sec": "90 सेकेन्दनि आलबाम हाजाब",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "नों {albumCount} आलबाम मोन, नाथाय नुसुबो ५ आलबाम मा फोरजावै रॉखो हागौ। बे सोरजों नायै आलबामफोर गावसे नासे दा:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "आखाउन्त जानकारी लोड होरां...",
   "Please enter a positive number": "अनुरोध दा सकारात्मक संख्या दाऊ",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Loading subscription information...",
   "Insufficient storage and too many albums (max 5 for free)": "Insufficient storage and too many albums (max 5 for free)",
   "Insufficient storage capacity": "Insufficient storage capacity",
-  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)"
+  "Too many albums (free tier allows max 5 albums)": "Too many albums (free tier allows max 5 albums)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "नोंथांगा 5 निफ्राया गेदेर आलबाम मेनाखै आरो नोंथांगा फायलखौ {formatGB(usedGB)} जागा लांगै (सोरनाय: {FREE_TIER_STORAGE_LIMIT_GB} GB)। बे आलबामखौ गोजायै गों मोखनायो नोंथां गुबुन आलबाम मोखोन्या निर्णै नङा बादि हाबनो:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "नुनुं {albumCount} आलबाम मोन्नो नाथाय मुफत आलबाम ५ सानजों मोनानो दाजाब्रै। गुबुन आलबामनि सेब्रै बावजायो नोज आदर आलबाम दान्थादों आंखा नाथानो बेसेन्नि गुजि गुजि दान्थाफुल:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "नाङा फाइलफोर {formatGB(usedGB)} जागा लाव, आदि नाङा ङा {FREE_TIER_STORAGE_LIMIT_GB} GB स्टोरेज मानै। बे आलबामफोर निजिया निजियै बायदि होन्दोङ आदि नाङा गुबुन आलबामफोर बायदि होन्दोङा निर्णय लावै:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "नाङा फाइलफोर {formatGB(usedGB)} जागा लाव, आदि नाङा ङा {totalStorageGB} GB स्टोरेज मानै। बे आलबामफोर निजिया निजियै बायदि होन्दोङ आदि नाङा गुबुन आलबामफोर बायदि होन्दोङा निर्णय लावै:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "नोंथांनि जादा निफ्राय जादा {FREE_TIER_STORAGE_LIMIT_GB} जीबी फोरा 5 आलबाम मुफत सेव खालांनो हाया। जागा उन्दिनाय सावगारी आलबामहा बादाय।",
+  "Paid tiers have unlimited albums and are limited only by storage": "हां नायखानाय बाहागोर बादि गोरोब आलबाम मोनाखै आरो खालि स्टोरेजनि दाजाबै सिमा मोनाखै"
 }

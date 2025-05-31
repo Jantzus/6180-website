@@ -166,8 +166,6 @@
   "Email address...": "ಇಮೇಲ್ ವಿಳಾಸ...",
   "Two-Factor Authentication": "ಎರಡು-ಅಂಶ ದೃಢೀಕರಣ",
   "Select For Download": "ಡೌನ್‌ಲೋಡ್‌ಗಾಗಿ ಆಯ್ಕೆ ಮಾಡಿ",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ನೀವು 5 ಆಲ್ಬಮ್‌ಗಳು ಅಥವಾ {FREE_TIER_STORAGE_LIMIT_GB} ಜಿಬಿಯವರೆಗೆ ಉಚಿತವಾಗಿ ಉಳಿಸಬಹುದು। ಸ್ಥಳವನ್ನು ಮಾಡಲು ಬಳಸದ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಅಳಿಸಿ।",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ನಿಮ್ಮ ಫೈಲ್‌ಗಳು ಪ್ರಸ್ತುತ {formatGB(usedGB)} ಸ್ಥಳವನ್ನು ಆಕ್ರಮಿಸಿಕೊಂಡಿವೆ, ಆದರೆ ನೀವು ಕೇವಲ {FREE_TIER_STORAGE_LIMIT_GB} ಜಿಬಿ ಸಂಗ್ರಹಣೆಯನ್ನು ಹೊಂದಿದ್ದೀರಿ. ಈ ಆಲ್ಬಮ್‌ಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸಲ್ಪಡುತ್ತಿವೆ:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "ನಿಮ್ಮ ಫೈಲ್‌ಗಳು ಪ್ರಸ್ತುತ ಲಭ್ಯವಿರುವ {totalStorageGB} ಜಿಬಿ ಸಂಗ್ರಹಣೆಯಿಂದ {formatGB(usedGB)} ಸ್ಥಳವನ್ನು ಆಕ್ರಮಿಸಿಕೊಂಡಿವೆ. ಆಲ್ಬಮ್‌ಗಳನ್ನು ಉಳಿಸುವುದನ್ನು ಮುಂದುವರಿಸಲು ನೀವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಬೇಕಾಗಬಹುದು.",
   "Upgrade Your Subscription": "ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ",
   "Storage Management": "ಸಂಗ್ರಹಣೆ ನಿರ್ವಹಣೆ",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "ಚಂದಾದಾರಿಕೆಯನ್ನು ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ",
   "WILL BE DELETED": "ಅಳಿಸಲಾಗುವುದು",
   "Create an album in 90 sec": "90 ಸೆಕೆಂಡ್‌ಗಳಲ್ಲಿ ಆಲ್ಬಂ ರಚಿಸಿ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "ನಿಮ್ಮ ಬಳಿ {albumCount} ಆಲ್ಬಮ್‌ಗಳಿವೆ ಆದರೆ ಉಚಿತವಾಗಿ ಕೇವಲ 5 ಅನ್ನು ಮಾತ್ರ ಉಳಿಸಬಹುದು. ಈ ಅತ್ಯಂತ ಹಳೆಯ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸಲಾಗುತ್ತಿದೆ:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ನಿಮ್ಮ ಫೈಲ್‌ಗಳು {formatGB(usedGB)} ಸ್ಥಳವನ್ನು ಆಕ್ರಮಿಸುತ್ತವೆ, ಆದರೆ ನಿಮ್ಮ ಬಳಿ ಕೇವಲ {FREE_TIER_STORAGE_LIMIT_GB} GB ಸಂಗ್ರಹಣೆ ಇದೆ। ಈ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸಲಾಗುತ್ತಿದೆ:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "ನಿಮ್ಮ ಬಳಿ 5ಕ್ಕಿಂತ ಹೆಚ್ಚು ಆಲ್ಬಮ್‌ಗಳಿವೆ ಮತ್ತು ನಿಮ್ಮ ಫೈಲ್‌ಗಳು {formatGB(usedGB)} ಸ್ಥಳವನ್ನು ಆಕ್ರಮಿಸುತ್ತವೆ (ಮಿತಿ: {FREE_TIER_STORAGE_LIMIT_GB} GB). ಈ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸಲಾಗುತ್ತಿದೆ:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "ನಿಮ್ಮ ಫೈಲ್‌ಗಳು {formatGB(usedGB)} ಸ್ಥಳವನ್ನು ಆಕ್ರಮಿಸುತ್ತವೆ, ಆದರೆ ನಿಮ್ಮ ಬಳಿ ಕೇವಲ {totalStorageGB} GB ಸಂಗ್ರಹಣೆ ಇದೆ। ಈ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸಲಾಗುತ್ತಿದೆ:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ನಿಮ್ಮ ಫೈಲ್‌ಗಳು {totalStorageGB} GB ಸಂಗ್ರಹಣೆಯಲ್ಲಿ {formatGB(usedGB)} ಆಕ್ರಮಿಸುತ್ತವೆ। ನೀವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಬೇಕಾಗಬಹುದು।",
   "Loading account information...": "ಖಾತೆಯ ಮಾಹಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
   "Please enter a positive number": "ದಯವಿಟ್ಟು ಧನಾತ್ಮಕ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "ಚಂದಾದಾರಿಕೆಯ ಮಾಹಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡುತ್ತಿದೆ...",
   "Insufficient storage and too many albums (max 5 for free)": "ಸಾಕಾಗದ ಸಂಗ್ರಹಣೆ ಮತ್ತು ಹೆಚ್ಚು ಆಲ್ಬಮ್‌ಗಳು (ಉಚಿತಕ್ಕೆ ಗರಿಷ್ಠ 5)",
   "Insufficient storage capacity": "ಸಾಕಾಗದ ಸಂಗ್ರಹಣೆ ಸಾಮರ್ಥ್ಯ",
-  "Too many albums (free tier allows max 5 albums)": "ಹೆಚ್ಚು ಆಲ್ಬಮ್‌ಗಳು (ಉಚಿತ ಶ್ರೇಣಿಯು ಗರಿಷ್ಠ 5 ಆಲ್ಬಮ್‌ಗಳನ್ನು ಅನುಮತಿಸುತ್ತದೆ)"
+  "Too many albums (free tier allows max 5 albums)": "ಹೆಚ್ಚು ಆಲ್ಬಮ್‌ಗಳು (ಉಚಿತ ಶ್ರೇಣಿಯು ಗರಿಷ್ಠ 5 ಆಲ್ಬಮ್‌ಗಳನ್ನು ಅನುಮತಿಸುತ್ತದೆ)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "ನೀವು 5 ಕ್ಕಿಂತ ಹೆಚ್ಚು ಆಲ್ಬಮ್‌ಗಳನ್ನು ಹೊಂದಿದ್ದೀರಿ ಮತ್ತು ನಿಮ್ಮ ಫೈಲ್‌ಗಳು {formatGB(usedGB)} ಸ್ಥಳವನ್ನು ಆಕ್ರಮಿಸಿಕೊಂಡಿವೆ (ಮಿತಿ: {FREE_TIER_STORAGE_LIMIT_GB} GB). ನೀವು ಇತರ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಅಳಿಸಲು ನಿರ್ಧರಿಸದ ಹೊರತು ಈ ಆಲ್ಬಮ್‌ಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸಲ್ಪಡುತ್ತಿವೆ:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "ನಿಮ್ಮ ಬಳಿ {albumCount} ಆಲ್ಬಮ್‌ಗಳಿವೆ ಆದರೆ ನೀವು ಕೇವಲ 5 ಆಲ್ಬಮ್‌ಗಳನ್ನು ಉಚಿತವಾಗಿ ಉಳಿಸಬಹುದು. ನೀವು ಇತರ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಅಳಿಸಲು ನಿರ್ಧರಿಸದ ಹೊರತು ಈ ಹಳೆಯ ಆಲ್ಬಮ್‌ಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸಲ್ಪಡುತ್ತಿವೆ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ನಿಮ್ಮ ಫೈಲ್‌ಗಳು {formatGB(usedGB)} ಸ್ಥಳವನ್ನು ಆಕ್ರಮಿಸುತ್ತವೆ, ಆದರೆ ನೀವು ಕೇವಲ {FREE_TIER_STORAGE_LIMIT_GB} ಜಿಬಿ ಸಂಗ್ರಹಣೆ ಹೊಂದಿದ್ದೀರಿ. ನೀವು ಇತರ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಅಳಿಸಲು ನಿರ್ಧರಿಸದ ಹೊರತು ಈ ಆಲ್ಬಮ್‌ಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸಲ್ಪಡುತ್ತಿವೆ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ನಿಮ್ಮ ಫೈಲ್‌ಗಳು {formatGB(usedGB)} ಸ್ಥಳವನ್ನು ಆಕ್ರಮಿಸುತ್ತವೆ, ಆದರೆ ನೀವು ಕೇವಲ {totalStorageGB} ಜಿಬಿ ಸಂಗ್ರಹಣೆ ಹೊಂದಿದ್ದೀರಿ. ನೀವು ಇತರ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಅಳಿಸಲು ನಿರ್ಧರಿಸದ ಹೊರತು ಈ ಆಲ್ಬಮ್‌ಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸಲ್ಪಡುತ್ತಿವೆ:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ನೀವು ಗರಿಷ್ಠ {FREE_TIER_STORAGE_LIMIT_GB} ಜಿಬಿ ಗಳ 5 ಆಲ್ಬಂಗಳನ್ನು ಉಚಿತವಾಗಿ ಉಳಿಸಬಹುದು। ಸ್ಥಳ ಮಾಡಲು ಬಳಸದಿರುವ ಆಲ್ಬಂಗಳನ್ನು ಅಳಿಸಿ.",
+  "Paid tiers have unlimited albums and are limited only by storage": "ಪಾವತಿಸಿದ ಹಂತಗಳು ಅನಿಯಮಿತ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಹೊಂದಿವೆ ಮತ್ತು ಸಂಗ್ರಹಣೆಯಿಂದ ಮಾತ್ರ ಸೀಮಿತವಾಗಿವೆ"
 }

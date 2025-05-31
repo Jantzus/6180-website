@@ -166,8 +166,6 @@
   "Email address...": "Seoladh ríomhphoist...",
   "Two-Factor Authentication": "Fíordheimhniú Dhá-Fhachtóir",
   "Select For Download": "Roghnaigh Le hÍoslódáil",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Is féidir leat 5 albam nó suas le {FREE_TIER_STORAGE_LIMIT_GB} GB a shábháil saor in aisce. Scrios albaim neamhúsáidte chun spás a dhéanamh.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tá d'chomhaid ag glacadh {formatGB(usedGB)} spáis faoi láthair, ach níl agat ach {FREE_TIER_STORAGE_LIMIT_GB} GB stórála. Tá na halbaim seo á scriosadh go huathoibríoch:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Tá d'chomhaid ag glacadh {formatGB(usedGB)} spáis as {totalStorageGB} GB stórála atá ar fáil faoi láthair. B'fhéidir go mbeidh ort d'fhoshuíomh a uasghrádú go luath chun leanúint ar aghaidh ag sábháil albaim.",
   "Upgrade Your Subscription": "Uasghrádaigh D'fhoshuíomh",
   "Storage Management": "Bainistíocht Stórála",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Cliceáil Chun Síntiús A Uasghrádú",
   "WILL BE DELETED": "A SCRIOSFAR",
   "Create an album in 90 sec": "Cruthaigh albam i 90 soicind",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Tá {albumCount} albam agat ach ní féidir leat ach 5 a shábháil saor in aisce. Tá na halbaimí is sine á scriosadh go huathoibríoch:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tógann do chomhaid {formatGB(usedGB)} spás, ach níl agat ach {FREE_TIER_STORAGE_LIMIT_GB} GB stórála. Tá na halbaimí seo á scriosadh go huathoibríoch:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Tá níos mó ná 5 albam agat AGUS tógann do chomhaid {formatGB(usedGB)} spás (teorainn: {FREE_TIER_STORAGE_LIMIT_GB} GB). Tá na halbaimí seo á scriosadh go huathoibríoch:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Tógann do chomhaid {formatGB(usedGB)} spás, ach níl agat ach {totalStorageGB} GB stórála. Tá na halbaimí seo á scriosadh go huathoibríoch:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Tógann do chomhaid {formatGB(usedGB)} de {totalStorageGB} GB stórála. B'fhéidir go mbeidh ort do shíntiús a uasghrádú go luath.",
   "Loading account information...": "Ag lódáil faisnéis an chuntais...",
   "Please enter a positive number": "Cuir isteach uimhir dheimhneach le do thoil",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Ag lódáil faisnéise faoin síntiús...",
   "Insufficient storage and too many albums (max 5 for free)": "Stóráil neamhleor agus an iomarca albam (uasmhéid 5 saor in aisce)",
   "Insufficient storage capacity": "Toilleadh stórála neamhleor",
-  "Too many albums (free tier allows max 5 albums)": "An iomarca albam (ceadaíonn an leibhéal saor in aisce uasmhéid 5 albam)"
+  "Too many albums (free tier allows max 5 albums)": "An iomarca albam (ceadaíonn an leibhéal saor in aisce uasmhéid 5 albam)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Tá níos mó ná 5 albam agat AGUS tá {formatGB(usedGB)} spáis á ghabháil ag do chomhaid (teorainn: {FREE_TIER_STORAGE_LIMIT_GB} GB). Tá na halbam seo á scriosadh go huathoibríoch mura gcinneann tú albam eile a scriosadh:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Tá {albumCount} albam agat ach ní féidir leat ach 5 a shábháil saor in aisce. Tá na halbiam is sine seo á scriosadh go huathoibríoch mura socraíonn tú albiam eile a scriosadh:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Tógann do chomhaid {formatGB(usedGB)} spás, ach níl agat ach {FREE_TIER_STORAGE_LIMIT_GB} GB stórála. Tá na halbaim seo á scriosadh go huathoibríoch mura gcinnfidh tú albaim eile a scriosadh:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Tógann do chomhaid {formatGB(usedGB)} spás, ach níl agat ach {totalStorageGB} GB stórála. Tá na halbaim seo á scriosadh go huathoibríoch mura gcinnfidh tú albaim eile a scriosadh:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Is féidir leat 5 albam a shábháil a bhfuil uas-mhéid {FREE_TIER_STORAGE_LIMIT_GB} GB acu saor in aisce. Scrios albam nach n-úsáidtear chun spás a dhéanamh.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Tá albaim gan teorainn ag na leibhéil íoctha agus ní theorainn leo ach stóráil"
 }

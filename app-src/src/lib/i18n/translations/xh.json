@@ -166,8 +166,6 @@
   "Email address...": "Idilesi ye-imeyile...",
   "Two-Factor Authentication": "Ukuqinisekisa Ngezinto Ezimbini",
   "Select For Download": "Khetha Ukuze Ukhuphele",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ungagcina ii-albhamu ezi-5 okanye ukuya ku-{FREE_TIER_STORAGE_LIMIT_GB} GB simahla. Cima ii-albhamu ezingasetyenziswayo ukuze wenze indawo.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Iifayile zakho ngoku zithatha indawo ye-{formatGB(usedGB)}, kodwa unayo i-{FREE_TIER_STORAGE_LIMIT_GB} GB yokugcina kuphela. Ii-albhamu zisuswa ngokuzenzekelayo:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Iifayili zakho ngoku zithatha indawo ye-{formatGB(usedGB)} kwi-{totalStorageGB} GB yokugcina ekhoyo. Kusenokwenzeka ukuba uya kufuna ukuphucula umrhumo wakho ngokukhawuleza ukuze uqhubeke ugcina ii-albhamu.",
   "Upgrade Your Subscription": "Phucula Umrhumo Wakho",
   "Storage Management": "Ulawulo Lwendawo Yokugcina",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Cofa Ukuze Uphucule I-Subscription",
   "WILL BE DELETED": "IYA KUCINYWA",
   "Create an album in 90 sec": "Yenza i-album kwimizuzwana ye-90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Uneziifoto-albhamu ezi-{albumCount} kodwa ungakwazi ukugcina nje ezi-5 simahla. Ezi zifoto-albhamu zidala kakhulu ziyasuswa ngokuzenzekelayo:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Kulayisha ulwazi lwe-akhawunti...",
   "Please enter a positive number": "Nceda ufake inani elifanelekileyo",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Kufakwa ulwazi lwe-subscription...",
   "Insufficient storage and too many albums (max 5 for free)": "Indawo yokugcina ayonelanga nezikhululo ezininzi (ezingadlulanga kwe-5 zisimahla)",
   "Insufficient storage capacity": "Ubungakanani bendawo yokugcina obungenelanga",
-  "Too many albums (free tier allows max 5 albums)": "Iialbham ezininzi kakhulu (izinga lasimahla livumela ubuninzi bezikhululo ezi-5)"
+  "Too many albums (free tier allows max 5 albums)": "Iialbham ezininzi kakhulu (izinga lasimahla livumela ubuninzi bezikhululo ezi-5)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Unama-albhamu angaphezulu kwe-5 YAYE iifayile zakho zithatha indawo ye-{formatGB(usedGB)} (umda: {FREE_TIER_STORAGE_LIMIT_GB} GB). La ma-albhamu acinywa ngokuzenzekelayo ngaphandle kokuba ugqibe ukucima amanye ama-albhamu:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Unee-albhamu ze-{albumCount} kodwa unokugcina nje ezi-5 simahla. Ezi albhamu zindala kakhulu ziya kucinywa ngokuzenzekelayo ngaphandle kokuba ugqibe ukuba ucime ezinye ii-albhamu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Iifayile zakho zithatha {formatGB(usedGB)} indawo, kodwa unayo kuphela i-{FREE_TIER_STORAGE_LIMIT_GB} GB yesitoreji. Ezi albhamu zicinywa ngokuzenzekelayo ngaphandle kokuba ugqibe ukucima ezinye ialbhamu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Iifayile zakho zithatha {formatGB(usedGB)} indawo, kodwa unayo kuphela i-{totalStorageGB} GB yesitoreji. Ezi albhamu zicinywa ngokuzenzekelayo ngaphandle kokuba ugqibe ukucima ezinye ialbhamu:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ungagcina ii-albam ezi-5 ezingaphaya kwe-{FREE_TIER_STORAGE_LIMIT_GB} GB simahla. Cima ii-albam ongakazisebenzisi ukwenza indawo.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Iqondo elithotyenziselwa ukuhlawula linamacwecwe angaphantsi kangangoko kwaye linqandwe kuphela kukugcinwa"
 }

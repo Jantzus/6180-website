@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Two-Factor Authentication",
   "Select For Download": "Chups Fi Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Yuh can save 5 album or up to {FREE_TIER_STORAGE_LIMIT_GB} GB fi free. Delete album weh yuh nuh use fi mek space.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Yuh file dem right now tek up {formatGB(usedGB)} space, but yuh only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. Dem album ya a get delete automatically:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Yuh file dem right now tek up {formatGB(usedGB)} outta {totalStorageGB} GB storage weh available. Yuh might haffi upgrade yuh subscription soon fi continue save album dem.",
   "Upgrade Your Subscription": "Upgrade Yuh Subscription",
   "Storage Management": "Storage Management",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Click Fi Upgrade Subscription",
   "WILL BE DELETED": "AGO DELETE",
   "Create an album in 90 sec": "Mek album inna 90 second",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Yu av {albumCount} album but yu kyaan siev 5 nomo fi free. Dem ya ooles album ya a get delete automatikali:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Luoding akawnt info...",
   "Please enter a positive number": "Pliiz put in a gud numba",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "A load subscription info...",
   "Insufficient storage and too many albums (max 5 for free)": "Noh enof storage an too much album (max 5 fi free)",
   "Insufficient storage capacity": "Noh enof storage capacity",
-  "Too many albums (free tier allows max 5 albums)": "Too much album (free tier allow max 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "Too much album (free tier allow max 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Yu av ova 5 album AN yu fail dem tek op {formatGB(usedGB)} spies (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Dis album ya a go daelet automatik onles yu disaid fi daelet ada album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Yu av {albumCount} album dem but yu can onli seiv 5 fi free. Dis ya ooles album dem a go delit automatically unless yu decide fi delit ada album dem:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Yu fail dem tek up {formatGB(usedGB)} space, but yu only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. Dem album ya a delete automatically unless yu decide fi delete other album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Yu fail dem tek up {formatGB(usedGB)} space, but yu only have {totalStorageGB} GB storage. Dem album ya a delete automatically unless yu decide fi delete other album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Yu can save 5 album dem weh add up to maximum {FREE_TIER_STORAGE_LIMIT_GB} GB fi free. Delete di album dem weh yu nuh use fi mek space.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Payad tier dem av unlimited album an limitad onli bai storage"
 }

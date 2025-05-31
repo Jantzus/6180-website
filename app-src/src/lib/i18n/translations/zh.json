@@ -166,8 +166,6 @@
   "Email address...": "电子邮件地址...",
   "Two-Factor Authentication": "双因素认证",
   "Select For Download": "选择下载",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "您可以免费保存5个相册或多达{FREE_TIER_STORAGE_LIMIT_GB} GB。删除未使用的相册以腾出空间。",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "您的文件目前占用{formatGB(usedGB)}空间，但您只有{FREE_TIER_STORAGE_LIMIT_GB} GB存储空间。这些相册正在自动删除：",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "您的文件目前占用可用的{totalStorageGB} GB存储空间中的{formatGB(usedGB)}。您可能需要尽快升级订阅以继续保存相册。",
   "Upgrade Your Subscription": "升级您的订阅",
   "Storage Management": "存储管理",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "点击升级订阅",
   "WILL BE DELETED": "将被删除",
   "Create an album in 90 sec": "90秒内创建相册",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "您有{albumCount}个相册，但免费只能保存5个。这些最旧的相册正在被自动删除:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "您的文件占用了{formatGB(usedGB)}空间，但您只有{FREE_TIER_STORAGE_LIMIT_GB} GB存储空间。这些相册正在被自动删除:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "您有超过5个相册，并且您的文件占用了{formatGB(usedGB)}空间（限制：{FREE_TIER_STORAGE_LIMIT_GB} GB）。这些相册正在被自动删除:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "您的文件占用了{formatGB(usedGB)}空间，但您只有{totalStorageGB} GB存储空间。这些相册正在被自动删除:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "您的文件占用了{totalStorageGB} GB存储空间中的{formatGB(usedGB)}。您可能需要尽快升级订阅。",
   "Loading account information...": "正在加载账户信息...",
   "Please enter a positive number": "请输入正数",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "正在加载订阅信息...",
   "Insufficient storage and too many albums (max 5 for free)": "存储空间不足且相册过多（免费最多5个）",
   "Insufficient storage capacity": "存储容量不足",
-  "Too many albums (free tier allows max 5 albums)": "相册过多（免费版本最多允许5个相册）"
+  "Too many albums (free tier allows max 5 albums)": "相册过多（免费版本最多允许5个相册）",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "您有超过5个相册，您的文件占用了{formatGB(usedGB)}空间（限制：{FREE_TIER_STORAGE_LIMIT_GB} GB）。除非您决定删除其他相册，否则这些相册将被自动删除：",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "您有 {albumCount} 个相册，但只能免费保存 5 个。除非您决定删除其他相册，否则这些最旧的相册将被自动删除：",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "您的文件占用 {formatGB(usedGB)} 空间，但您只有 {FREE_TIER_STORAGE_LIMIT_GB} GB 存储空间。除非您决定删除其他相册，否则这些相册将被自动删除：",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "您的文件占用 {formatGB(usedGB)} 空间，但您只有 {totalStorageGB} GB 存储空间。除非您决定删除其他相册，否则这些相册将被自动删除：",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "您可以保存5张专辑，总计最多{FREE_TIER_STORAGE_LIMIT_GB} GB免费。删除未使用的专辑以腾出空间。",
+  "Paid tiers have unlimited albums and are limited only by storage": "付费套餐拥有无限相册，仅受存储空间限制"
 }

@@ -166,8 +166,6 @@
   "Email address...": "Địa chỉ thư điện tử...",
   "Two-Factor Authentication": "Xác Thực Hai Yếu Tố",
   "Select For Download": "Chọn Để Tải Xuống",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Bạn có thể lưu 5 album hoặc tối đa {FREE_TIER_STORAGE_LIMIT_GB} GB miễn phí. Xóa các album không sử dụng để tạo không gian.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Các tệp của bạn hiện đang chiếm {formatGB(usedGB)} dung lượng, nhưng bạn chỉ có {FREE_TIER_STORAGE_LIMIT_GB} GB lưu trữ. Những album này đang được xóa tự động:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Các tệp của bạn hiện đang chiếm {formatGB(usedGB)} dung lượng từ {totalStorageGB} GB lưu trữ có sẵn. Bạn có thể cần nâng cấp gói đăng ký sớm để tiếp tục lưu album.",
   "Upgrade Your Subscription": "Nâng Cấp Gói Đăng Ký",
   "Storage Management": "Quản Lý Lưu Trữ",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Nhấp Để Nâng Cấp Gói Đăng Ký",
   "WILL BE DELETED": "SẼ BỊ XÓA",
   "Create an album in 90 sec": "Tạo album trong 90 giây",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Bạn có {albumCount} album nhưng chỉ có thể lưu 5 album miễn phí. Những album cũ nhất này đang được tự động xóa:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Các tập tin của bạn chiếm {formatGB(usedGB)} không gian, nhưng bạn chỉ có {FREE_TIER_STORAGE_LIMIT_GB} GB lưu trữ. Những album này đang được tự động xóa:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Bạn có hơn 5 album VÀ các tập tin của bạn chiếm {formatGB(usedGB)} không gian (giới hạn: {FREE_TIER_STORAGE_LIMIT_GB} GB). Những album này đang được tự động xóa:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Các tập tin của bạn chiếm {formatGB(usedGB)} không gian, nhưng bạn chỉ có {totalStorageGB} GB lưu trữ. Những album này đang được tự động xóa:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Các tập tin của bạn chiếm {formatGB(usedGB)} trong tổng số {totalStorageGB} GB lưu trữ. Bạn có thể cần nâng cấp gói đăng ký của mình sớm.",
   "Loading account information...": "Đang tải thông tin tài khoản...",
   "Please enter a positive number": "Vui lòng nhập một số dương",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Đang tải thông tin đăng ký...",
   "Insufficient storage and too many albums (max 5 for free)": "Bộ nhớ không đủ và quá nhiều album (tối đa 5 miễn phí)",
   "Insufficient storage capacity": "Dung lượng lưu trữ không đủ",
-  "Too many albums (free tier allows max 5 albums)": "Quá nhiều album (cấp miễn phí cho phép tối đa 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "Quá nhiều album (cấp miễn phí cho phép tối đa 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Bạn có hơn 5 album VÀ các tệp của bạn chiếm {formatGB(usedGB)} không gian (giới hạn: {FREE_TIER_STORAGE_LIMIT_GB} GB). Những album này đang được tự động xóa trừ khi bạn quyết định xóa các album khác:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Bạn có {albumCount} album nhưng chỉ có thể lưu 5 album miễn phí. Những album cũ nhất này đang được xóa tự động trừ khi bạn quyết định xóa các album khác:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Các tệp của bạn chiếm {formatGB(usedGB)} dung lượng, nhưng bạn chỉ có {FREE_TIER_STORAGE_LIMIT_GB} GB lưu trữ. Những album này đang được xóa tự động trừ khi bạn quyết định xóa các album khác:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Các tệp của bạn chiếm {formatGB(usedGB)} dung lượng, nhưng bạn chỉ có {totalStorageGB} GB lưu trữ. Những album này đang được xóa tự động trừ khi bạn quyết định xóa các album khác:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Bạn có thể lưu 5 album tổng cộng tối đa {FREE_TIER_STORAGE_LIMIT_GB} GB miễn phí. Xóa các album không sử dụng để tạo không gian.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Các gói trả phí có album không giới hạn và chỉ bị giới hạn bởi dung lượng lưu trữ"
 }

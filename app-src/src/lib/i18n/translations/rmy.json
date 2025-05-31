@@ -166,8 +166,6 @@
   "Email address...": "Adresa de e-mail...",
   "Two-Factor Authentication": "Duj-Factor Autentifikacija",
   "Select For Download": "Vasar Kaj Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Tu šaj arakhes 5 albume vaj te {FREE_TIER_STORAGE_LIMIT_GB} GB bi love. Mudarde albumenge so ni bavalol te kerel than.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tumaro fayla akana len {formatGB(usedGB)} than, ama tumenge si kodal {FREE_TIER_STORAGE_LIMIT_GB} GB sastimos. Kado albuma mudaren pes:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Tumaro fayla akana len {formatGB(usedGB)} than tari {totalStorageGB} GB sastimos so si. Shaj si tuke trebuj te keres zuralo tiro suskripsi te aves te racaves albumenge.",
   "Upgrade Your Subscription": "Keres Zuralo Tiro Suskripsi",
   "Storage Management": "Rakhiben Kheriben",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klikis Te Baro Keresi O Subscription",
   "WILL BE DELETED": "KA OV ŠTRAVNO",
   "Create an album in 90 sec": "Keren album ando 90 sekunde",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Tuke si {albumCount} albumura ama šaj te arakhes khonik 5 bešukar. Akala purāne albumura kerdžuvena automatikanes:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Kontosko dža te arakhel...",
   "Please enter a positive number": "Kames te bistares ek lačho šukar",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Nakhadol subscription informacija...",
   "Insufficient storage and too many albums (max 5 for free)": "Nakado skladovanje thaj but album (naj majbut 5 bešoro)",
   "Insufficient storage capacity": "Nakado skladovacko kapaciteta",
-  "Too many albums (free tier allows max 5 albums)": "But album (bešoro nivel šaj 5 albumenge)"
+  "Too many albums (free tier allows max 5 albums)": "But album (bešoro nivel šaj 5 albumenge)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Tu sas but maj katar 5 albumura thaj tere fajlura len {formatGB(usedGB)} than (had: {FREE_TIER_STORAGE_LIMIT_GB} GB). Kado albumura tradel pe avtomatik kana tu nai hoxanes te tradel aver albumura:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Tuke si {albumCount} albume thaj te ašaves šukar phanć bešutne. Kale purane albume kerdžuvena avtomat šukar te na ginjares te ašaves aver albume:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Tumere faile len {formatGB(usedGB)} than, ama tumen si {FREE_TIER_STORAGE_LIMIT_GB} GB thaneskero thanesko. Kola albums sian automatikanes naśado te tumen na keren te naśaven aver albums:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Tumere faile len {formatGB(usedGB)} than, ama tumen si {totalStorageGB} GB thaneskero thanesko. Kola albums sian automatikanes naśado te tumen na keren te naśaven aver albums:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Tu šaj arakhes 5 albuma save hin palpale {FREE_TIER_STORAGE_LIMIT_GB} GB bašaća. Mudarde e albuma so na ginas te keres than.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Le paraske zoraki nivel ande limitosko albumuri hem limitimasle khaj storagester"
 }

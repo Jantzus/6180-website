@@ -166,8 +166,6 @@
   "Email address...": "Ñanduti veve kundaharape...",
   "Two-Factor Authentication": "Mokõi-Factor Ñemoneĩ",
   "Select For Download": "Poravo Download Jave",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ikatu reñongatu 5 albúm térã {FREE_TIER_STORAGE_LIMIT_GB} GB peve reigua'ỹre. Embogue umi albúm ojeporu'ỹva tenda raguapy hag̃ua.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Nde techiaukaha ko'ãga ogueraha {formatGB(usedGB)} tenda, hákatu nde reguereko {FREE_TIER_STORAGE_LIMIT_GB} GB ñongatu añónte. Ko'ã álbum ojepururu ijeheguiete:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Nde techiaukaha ko'ãga ogueraha {formatGB(usedGB)} {totalStorageGB} GB ñongatu ojepurukuaáva pegua. Ikatu reikotevẽ rembopyahu nde suscripción pya'e rehe reguardar hag̃ua álbum.",
   "Upgrade Your Subscription": "Rembopyahu Nde Suscripción",
   "Storage Management": "Ñongatu Ñangareko",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Ejopy Subscription Joporãve Hag̃ua",
   "WILL BE DELETED": "OJEIPE TA",
   "Create an album in 90 sec": "Japo álbum 90 aravo'ípe",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Reguereko {albumCount} álbum ha katu ikatu 5-nte reñongatu rei. Ko álbum ymaguare rehe ojeipe'a ijeheguiete:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Henohẽ cuenta marandu...",
   "Please enter a positive number": "Eñamindu'u peteĩ papapy porãva",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Henyhẽhína subscription marandu...",
   "Insufficient storage and too many albums (max 5 for free)": "Mba'eguereko naĩhína ha hetaiterei álbum (mba'eguasu 5 reigua)",
   "Insufficient storage capacity": "Mba'eguereko naĩhína",
-  "Too many albums (free tier allows max 5 albums)": "Hetaiterei álbum (nivel reigua omoneĩ hetave 5 álbum)"
+  "Too many albums (free tier allows max 5 albums)": "Hetaiterei álbum (nivel reigua omoneĩ hetave 5 álbum)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Reguereko hetave 5 álbum ha nde vore marandurenda oguereko {formatGB(usedGB)} tenda (jejoko: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ko'ã álbum oñembogue ijehegui ndereipotáramo rembogue ambue álbum:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Reguereko {albumCount} álbum hákatu ikatu reñongatu 5-nte reíre. Ko álbum itujáva omboguetepaite ijehegui nderesaráiramo ambue álbum mboguete:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Nde marandurenda ogueraha {formatGB(usedGB)} tenda, hákatu ndereguereko {FREE_TIER_STORAGE_LIMIT_GB} GB ñongatu añoite. Ko'ã álbum oñemboguete ijeheguiete norembogueteséirõ ambue álbum:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Nde marandurenda ogueraha {formatGB(usedGB)} tenda, hákatu ndereguereko {totalStorageGB} GB ñongatu añoite. Ko'ã álbum oñemboguete ijeheguiete norembogueteséirõ ambue álbum:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Ikatu reguereko 5 álbum oĩva opavave {FREE_TIER_STORAGE_LIMIT_GB} GB reigua. Embogue umi álbum ndojepurúiva ikatu hag̃ua pa'ũ.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Tepyme peteĩ álbum opa'ỹva oguereko ha oñembohareko ñeñongatuhágui añoite"
 }

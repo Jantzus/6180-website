@@ -166,8 +166,6 @@
   "Email address...": "電郵地址...",
   "Two-Factor Authentication": "雙因素認證",
   "Select For Download": "揀起下載",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "俚可以存5隻相簿或者到{FREE_TIER_STORAGE_LIMIT_GB} GB免費。刪掉無用過嗰相簿來做地方。",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "爾嗰文件而今占緊{formatGB(usedGB)}空間，但係爾只有{FREE_TIER_STORAGE_LIMIT_GB} GB存儲。箇滴相簿在自動刪除：",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "爾嗰文件而今占緊{totalStorageGB} GB可用存儲中嗰{formatGB(usedGB)}。爾可能需要儘快升級爾嗰訂閱以便繼續保存相簿。",
   "Upgrade Your Subscription": "升級爾嗰訂閱",
   "Storage Management": "儲存管理",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "撳下升級訂閱",
   "WILL BE DELETED": "會刪掉",
   "Create an album in 90 sec": "90秒內創建相册",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "你有{albumCount}張相册，但是免費只能保存5張。哩些最舊嗰相册會自動刪掉:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "正係載入賬戶資料...",
   "Please enter a positive number": "請輸入正數",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "載入訂閱信息中...",
   "Insufficient storage and too many albums (max 5 for free)": "儲存空間不足還有太多相册 (免費最多5)",
   "Insufficient storage capacity": "儲存容量不足",
-  "Too many albums (free tier allows max 5 albums)": "相册太多 (免費級別最多允許5個相册)"
+  "Too many albums (free tier allows max 5 albums)": "相册太多 (免費級別最多允許5個相册)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "汝有超過5本相冊，汝嗰文件佔咗{formatGB(usedGB)}空間（限制：{FREE_TIER_STORAGE_LIMIT_GB} GB）。呢滴相冊會自動刪除，除非汝決定刪除其他相冊：",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "您有 {albumCount} 隻相册，毅過免費只係搞得5隻。箇滴頂老嗰相册會自動刪嘍，除非您決定要刪其他相册：",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "汝嗰文件佔 {formatGB(usedGB)} 個空間，但係汝淨係有 {FREE_TIER_STORAGE_LIMIT_GB} GB 嗰存儲空間。呢滴相冊會自動刪除，除非汝決定刪其他相冊：",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "汝嗰文件佔 {formatGB(usedGB)} 個空間，但係汝淨係有 {totalStorageGB} GB 嗰存儲空間。呢滴相冊會自動刪除，除非汝決定刪其他相冊：",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "您可以保存5本相册，總計最多{FREE_TIER_STORAGE_LIMIT_GB} GB免費。刪除未使用个相册以騰出空間。",
+  "Paid tiers have unlimited albums and are limited only by storage": "付費等級有無限相簿並且只按儲存限制"
 }

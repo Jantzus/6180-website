@@ -166,8 +166,6 @@
   "Email address...": "E-Mail-Adresse...",
   "Two-Factor Authentication": "Zwöi-Faktor-Authentifizierig",
   "Select For Download": "Für Download Wähle",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Du chasch 5 Albe oder bis zue {FREE_TIER_STORAGE_LIMIT_GB} GB gratis speichere. Lösch unbruuchti Albe für meh Platz.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Dini Dateie bruuched momentan {formatGB(usedGB)} Platz, aber du hesch nur {FREE_TIER_STORAGE_LIMIT_GB} GB Speicher. Die Albe wärded automatisch glöscht:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Dini Dateie bruuched momentan {formatGB(usedGB)} vo {totalStorageGB} GB Speicher wo verfügbar isch. Du muesch vilicht bal dis Abonnement upgradiere zum wiiterhi Albe speichere.",
   "Upgrade Your Subscription": "Dis Abonnement Upgradiere",
   "Storage Management": "Speicher Verwaltung",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klicke Zum Abo Upgraden",
   "WILL BE DELETED": "WIRD GLÄSCHT",
   "Create an album in 90 sec": "En Album in 90 Sekunde erstelle",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Du hesch {albumCount} Albe aber chasch nume 5 gratis sichere. Die ältiste Albe werde automatisch glöscht:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Dini Dateie nömme {formatGB(usedGB)} Platz aber du hesch nume {FREE_TIER_STORAGE_LIMIT_GB} GB Spicher. Die Albe werde automatisch glöscht:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Du hesch meh als 5 Albe UND dini Dateie nömme {formatGB(usedGB)} Platz (Grenze: {FREE_TIER_STORAGE_LIMIT_GB} GB). Die Albe werde automatisch glöscht:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Dini Dateie nömme {formatGB(usedGB)} Platz aber du hesch nume {totalStorageGB} GB Spicher. Die Albe werde automatisch glöscht:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Dini Dateie nömme {formatGB(usedGB)} vo {totalStorageGB} GB Spicher. Du muesch villech bald dis Abonnement aktualisiere.",
   "Loading account information...": "Konto-Informatione werdät glade...",
   "Please enter a positive number": "Bitte gäb e positivi Zahl ii",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Abonnement-Informatione lade...",
   "Insufficient storage and too many albums (max 5 for free)": "Z'wänig Speicherplatz und z'vil Albe (max. 5 gratis)",
   "Insufficient storage capacity": "Z'wänig Speicherkapazität",
-  "Too many albums (free tier allows max 5 albums)": "Z'vil Albe (gratis Stufe erlaubt max. 5 Albe)"
+  "Too many albums (free tier allows max 5 albums)": "Z'vil Albe (gratis Stufe erlaubt max. 5 Albe)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Du hesch meh als 5 Albe UND dini Dateie bruche {formatGB(usedGB)} Blatz (Limite: {FREE_TIER_STORAGE_LIMIT_GB} GB). Die Albe werde automatisch glöscht usser du entscheidisch anderi Albe z'lösche:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Du hesch {albumCount} Albe aber chasch nur 5 gratis speichere. Die ältischte Albe werde automatisch glösche usser du entscheidisch anderi Albe z lösche:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dyni Dateie bruched {formatGB(usedGB)} Platz, aber du hesch nume {FREE_TIER_STORAGE_LIMIT_GB} GB Speicher. Die Albe werde automatisch glöscht usser du löschisch anderi Albe:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Dyni Dateie bruched {formatGB(usedGB)} Platz, aber du hesch nume {totalStorageGB} GB Speicher. Die Albe werde automatisch glöscht usser du löschisch anderi Albe:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Du chasch 5 Albe spychere wo maximal {FREE_TIER_STORAGE_LIMIT_GB} GB gratis bruched. Lösch ungnutzti Albe zum Platz mache.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Bezahlti Stuefe händ unlimitierti Albe und sind nume dur Speicher begränzt"
 }

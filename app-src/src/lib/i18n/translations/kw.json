@@ -166,8 +166,6 @@
   "Email address...": "Trigva ebost...",
   "Two-Factor Authentication": "Gwirhe Dew-Factor",
   "Select For Download": "Dewis Rag Iskarga",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Hwi a yll gwitha 5 albom po bys dhe {FREE_TIER_STORAGE_LIMIT_GB} GB reb kost. Dilea albumow nag usys rag gul le.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Agas fylys a-lemmyn a gymmer {formatGB(usedGB)} tyller, mes ny'gan bos dhywgh marnas {FREE_TIER_STORAGE_LIMIT_GB} GB steurans. An albumow ma a veu dylys yn awtonatek:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Agas fylys a-lemmyn a gymmer {formatGB(usedGB)} a-ji {totalStorageGB} GB steurans hegerz. Hwi a yll bos res dhywgh honan agas ragbrestans yn tien rag pesya dhe witha albumow.",
   "Upgrade Your Subscription": "Honan Agas Ragbrestans",
   "Storage Management": "Governans Storva",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klyckya Rag Gwellhe An Subscription",
   "WILL BE DELETED": "A VY DILES",
   "Create an album in 90 sec": "Gwruthyl album yn 90 kenyver",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Yma genowgh {albumCount} albym mes ny allowgh gwitha marnas 5 raggow. An albumow ma koth ow kul diles yn awtobryjek:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Ow karga kedhlow akont...",
   "Please enter a positive number": "Res yu entri niver positif",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Ow karga kedhlow omrollyans...",
   "Insufficient storage and too many albums (max 5 for free)": "Steurel anowel ha re a albomow (ughella 5 heb kost)",
   "Insufficient storage capacity": "Gallos steurel anowel",
-  "Too many albums (free tier allows max 5 albums)": "Re a albomow (an nivel heb kost a'n lhe 5 albom dhe'n moyha)"
+  "Too many albums (free tier allows max 5 albums)": "Re a albomow (an nivel heb kost a'n lhe 5 albom dhe'n moyha)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Yma dhywgh moy es 5 albom HA agas restrennow a dhegemer {formatGB(usedGB)} spas (fin: {FREE_TIER_STORAGE_LIMIT_GB} GB). An albomow ma a vydh diles yn otomatek marnas dhywgh a wra dewis dilea albomow erel:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Yma genowgh {albumCount} album mes ny allowgh gwitha marnas pymp rag res. An albumow moy koth ma a vydh diles yn otomatek marnas an pewgh devri dilea albumow erel:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Agas restrow a gevys {formatGB(usedGB)} spas, mes {FREE_TIER_STORAGE_LIMIT_GB} GB stowjyans yn unnik a'gas beus. An albumow ma a vydh diles yn awtomatek marnas hwi a wra devysi dilea albumow erel:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Agas restrow a gevys {formatGB(usedGB)} spas, mes {totalStorageGB} GB stowjyans yn unnik a'gas beus. An albumow ma a vydh diles yn awtomatek marnas hwi a wra devysi dilea albumow erel:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Hwi a yll gwitha 5 albm ow talleth dhe {FREE_TIER_STORAGE_LIMIT_GB} GB yn fre. Dilea an albmys ny wres usya rag gwul le.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Lyvellyow res a'gas albymow heb diweth ha limited gans gwithva hepken"
 }

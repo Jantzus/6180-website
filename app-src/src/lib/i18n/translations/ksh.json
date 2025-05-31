@@ -166,8 +166,6 @@
   "Email address...": "E-Mail-Adress...",
   "Two-Factor Authentication": "Zwäi-Faktor-Authentifikatschon",
   "Select For Download": "För Download Uswähle",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Do kanns 5 Albome udder bes zo {FREE_TIER_STORAGE_LIMIT_GB} GB ömesöns faßhalde. Donn de Albome fottschmieße, di mer nit bruch, öm Plaz ze kreje.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ding Dateie nämme derzigg {formatGB(usedGB)} Plaz en, ävver do häs nur {FREE_TIER_STORAGE_LIMIT_GB} GB Spelz. Hee die Albome wääde automatesch fottjeschmeße:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ding Dateie nämme derzigg {formatGB(usedGB)} fon {totalStorageGB} GB Spelz, dä do häs. Velleisch mööß de bal ding Abonnemang hühstufe, öm wigger Albome faßhalde ze künne.",
   "Upgrade Your Subscription": "Ding Abonnemang Hühstufe",
   "Storage Management": "Shpeisher Verwaltung",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Donn Klicke För Et Abonnement Ze Verbeßere",
   "WILL BE DELETED": "WEED FOTTJEMAAT",
   "Create an album in 90 sec": "En Album en 90 Sekonde maache",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Dir häs {albumCount} Albume ävver kanns nur 5 ömsonss faßhalde. Heh äldste Albume wääde automattesch fottjeschmeße:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Lade Konto-Informazioune...",
   "Please enter a positive number": "Donn ene positive Zahl rienschrieve",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Abonnement-Informatione lade...",
   "Insufficient storage and too many albums (max 5 for free)": "Nit jenoch Speicherplatz un z'vill Albume (höchstens 5 ömesönß)",
   "Insufficient storage capacity": "Nit jenoch Speicherkapazität",
-  "Too many albums (free tier allows max 5 albums)": "Z'vill Albume (de ömesönß Stuf erlööv höchstens 5 Albume)"
+  "Too many albums (free tier allows max 5 albums)": "Z'vill Albume (de ömesönß Stuf erlööv höchstens 5 Albume)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Do häs mih wie 5 Album UN dinge Dateie bruche {formatGB(usedGB)} Platz (Jränz: {FREE_TIER_STORAGE_LIMIT_GB} GB). Heh Album weede automatisch fottjeschmesse beß do desch entschieds ander Album ze schmieße:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Do häß {albumCount} Albe, ävver kann nuur 5 ömmesonß faßhalde. Di äldßte Albe hee wääde automattesch fottjeschmeße, ußer Do entscheidß Desch derför, ander Albe fottzeschmeße:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ding Dateie bruche {formatGB(usedGB)} Platz, ävver do häs nor {FREE_TIER_STORAGE_LIMIT_GB} GB Speicher. Di Album wäde automatisch fottjemaat, oßer do määs ander Album fott:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ding Dateie bruche {formatGB(usedGB)} Platz, ävver do häs nor {totalStorageGB} GB Speicher. Di Album wäde automatisch fottjemaat, oßer do määs ander Album fott:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Do kanns 5 Albomme faßhalde met höögßdens {FREE_TIER_STORAGE_LIMIT_GB} GB för lau. Donn de Albomme fottschmiiße, di Do nit bruchs, öm Plaz ze maache.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Bezahlte Shtoofe han unbejränzte Albome un sin nur durch Shpeishere bejränz"
 }

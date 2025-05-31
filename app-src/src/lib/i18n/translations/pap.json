@@ -166,8 +166,6 @@
   "Email address...": "Direccion di e-mail...",
   "Two-Factor Authentication": "Autentifikashon Di Dos Faktor",
   "Select For Download": "Skohe Pa Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Bo por spaar 5 album òf te {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Kita e albumnan ku no ta wordo usa pa hasi espasio.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Bo failnan ta ocupa {formatGB(usedGB)} espacio awor, pero bo tin so {FREE_TIER_STORAGE_LIMIT_GB} GB storage. E albumnan akí ta wòrdu kita automatikamente:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Bo failnan ta ocupa {formatGB(usedGB)} espacio for di {totalStorageGB} GB storage disponibel. Bo por mester upgrade bo subscription pronto pa sigui salba album.",
   "Upgrade Your Subscription": "Upgrade Bo Subscription",
   "Storage Management": "Manehamentu Di Storage",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klek Pa Mehora E Subscription",
   "WILL BE DELETED": "LO WORDO KITA",
   "Create an album in 90 sec": "Krea un album den 90 segundo",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Bo tin {albumCount} album pero por sosega 5 so na liber. E albumnan mas bieu aki ta wordo kita otomatiko:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Kargando informashon di kuenta...",
   "Please enter a positive number": "Por fabor, scirbi un número positivo",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Kargando informashon di suskripshon...",
   "Insufficient storage and too many albums (max 5 for free)": "Hopi ku tin storage i album demashá (máksimo 5 grátis)",
   "Insufficient storage capacity": "Hopi ku tin storage",
-  "Too many albums (free tier allows max 5 albums)": "Album demashá (tier grátis ta permití máksimo 5 album)"
+  "Too many albums (free tier allows max 5 albums)": "Album demashá (tier grátis ta permití máksimo 5 album)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Bo tin mas ku 5 album I bo nan archivunan ta okupa {formatGB(usedGB)} espasio (limite: {FREE_TIER_STORAGE_LIMIT_GB} GB). E albumnan aki ta wordo kita otomatikamente menoske bo desidí di kita otro albumnan:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Bo tin {albumCount} album pero bo por spaar solamente 5 gratis. E albumnan aki mas biou ta wordo sker automatikamente si bo no desidi pa sker otro albumnan:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Bo faynan ta okupa {formatGB(usedGB)} spasio, pero bo tin solamente {FREE_TIER_STORAGE_LIMIT_GB} GB di almacenamientu. E albumnan aki ta wòrdu eliminá otomátikamente, si bo no desidí eliminá otro albumnan:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Bo faynan ta okupa {formatGB(usedGB)} spasio, pero bo tin solamente {totalStorageGB} GB di almacenamientu. E albumnan aki ta wòrdu eliminá otomátikamente, si bo no desidí eliminá otro albumnan:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Bo por warda 5 album cu un maximo di {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Lag un album cu bo no ta usa pa haci lugá.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Nivelnan ku ta paga tin album sin limite i ta wordo limita solamente pa storage"
 }

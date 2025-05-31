@@ -166,8 +166,6 @@
   "Email address...": "Teldupostur...",
   "Two-Factor Authentication": "Tvey-Faktor Váttanir",
   "Select For Download": "Vel Til Niðurtak",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Tú kanst goyma 5 album ella upp til {FREE_TIER_STORAGE_LIMIT_GB} GB ókeypis. Strika óbrúkt album fyri at gera pláss.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tínar fílur taka í løtuni {formatGB(usedGB)} pláss, men tú hevur bert {FREE_TIER_STORAGE_LIMIT_GB} GB goymslu. Hesi album verða sjálvvirkandi strikað:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Tínar fílur taka í løtuni {formatGB(usedGB)} úr {totalStorageGB} GB tøku goymslu. Tú kanst møguliga skjótt hava tørv á at uppgradera titt áskrift fyri at halda áfram við at goyma album.",
   "Upgrade Your Subscription": "Uppgradera Titt Áskrift",
   "Storage Management": "Goymslustjórn",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Trýst Fyri At Uppgraddera Abonnement",
   "WILL BE DELETED": "VERÐUR STRIKAÐ",
   "Create an album in 90 sec": "Stovna album í 90 sekundum",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Tú hevur {albumCount} album, men kanst bert goyma 5 ókeypis. Hesi elstu album verða avtomatiskt strikaði burtur:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Lesur kontooplýsingar...",
   "Please enter a positive number": "Vinarliga skriva eitt positivt tal",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Hleður áskriftarupplýsingar...",
   "Insufficient storage and too many albums (max 5 for free)": "Ónógv goymsla og alt ov nógv albúm (mest 5 ókeypis)",
   "Insufficient storage capacity": "Ónógv goymslumøguleiki",
-  "Too many albums (free tier allows max 5 albums)": "Alt ov nógv albúm (ókeypis stigið loyvir mest 5 albúm)"
+  "Too many albums (free tier allows max 5 albums)": "Alt ov nógv albúm (ókeypis stigið loyvir mest 5 albúm)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Tú hevur meir enn 5 album OG tínar fílur taka {formatGB(usedGB)} pláss (mark: {FREE_TIER_STORAGE_LIMIT_GB} GB). Hesi album verða sjálvvirkandi strikað, uttan tú ásetur at strika onnur album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Tú hevur {albumCount} album, men kanst bert goyma 5 ókeypis. Hesir elstu album verða sjálvvirkandi strikaði uttan tú ákveður at strika onnur album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Títar fílur taka {formatGB(usedGB)} plass, men tú hevur bert {FREE_TIER_STORAGE_LIMIT_GB} GB goymsluplass. Hesi albumini verða avtomatiskt strikaði uttan tú ákveður at strika onnur album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Títar fílur taka {formatGB(usedGB)} plass, men tú hevur bert {totalStorageGB} GB goymsluplass. Hesi albumini verða avtomatiskt strikaði uttan tú ákveður at strika onnur album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Tú kanst goyma 5 albúm, sum samla eru í mesta lagi {FREE_TIER_STORAGE_LIMIT_GB} GB ókeypis. Strika óbrúkt albúm fyri at skapa pláss.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Goldnar flokkur hava óavmarkaðar album og eru bert avmarkaðir av goymslu"
 }

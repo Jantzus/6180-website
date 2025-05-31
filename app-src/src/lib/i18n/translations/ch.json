@@ -166,8 +166,6 @@
   "Email address...": "Email direksion...",
   "Two-Factor Authentication": "Hugua-Factor Authentication",
   "Select For Download": "Ayek Para Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Siña hao na fannaga' 5 album pat asta {FREE_TIER_STORAGE_LIMIT_GB} GB ni libre. Na'suha i album ni ti ma usa para u fanmanhalom lugat.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "I fitchen-mu gi uttimo' {formatGB(usedGB)} lugat, lao un nai {FREE_TIER_STORAGE_LIMIT_GB} GB na tinago' ha'. Siha na album ma na'suha automatikamente:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "I fitchen-mu gi uttimo' {formatGB(usedGB)} ginen {totalStorageGB} GB na tinago' ni gitu. Siña manhongge bumira na un nesesita chumule' i subskripšion-mu yanggen un malago' na un adda na'aguaiya i album-mu.",
   "Upgrade Your Subscription": "Chumule' I Subskripšion-mu",
   "Storage Management": "Manatantiyi Guahu",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Chagi Para Mejorar I Subscription",
   "WILL BE DELETED": "PARA U DILI",
   "Create an album in 90 sec": "Fatinas album gi 90 segundo",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Guaha {albumCount} album-mu lao 5 ha' un siña na'taguë yan ti magåhet. Esti i mas amko na sija na album ma na'suha awtomatikameti:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Chhunge informasion akawnt...",
   "Please enter a positive number": "Katok taisetbe na nai numero",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Chinachalok subscription infotmasion...",
   "Insufficient storage and too many albums (max 5 for free)": "Ti meggai na album yan ti siña na storage (máximu 5 gratis)",
   "Insufficient storage capacity": "Ti siña na storage kapasidåt",
-  "Too many albums (free tier allows max 5 albums)": "Megai na album (free tier umapproba 5 album na máximu)"
+  "Too many albums (free tier allows max 5 albums)": "Megai na album (free tier umapproba 5 album na máximu)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Gaige hao mas ki 5 na album YAN i fåt-mu siha manokkok {formatGB(usedGB)} na lugåt (limite: {FREE_TIER_STORAGE_LIMIT_GB} GB). Esti siha na album siempre ma na'fanmåleffa yanggen ti un disidí para un na'fanmåleffa ayo siha na album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Guaha {albumCount} na album-mu lao un-sague siha 5 na libre ha'. Esti na mas amko' na album ma na'suha otomatikamente yanggen ti un-deside na un-na'suha otro na album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "I dokumentosmu siña umokupa {formatGB(usedGB)} lugat, lao guaha hao {FREE_TIER_STORAGE_LIMIT_GB} GB na deposito ha'. Esti na album masusuja otomatiku yaguin ti unnafanparehu pumacha' otros album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "I dokumentosmu siña umokupa {formatGB(usedGB)} lugat, lao guaha hao {totalStorageGB} GB na deposito ha'. Esti na album masusuja otomatiku yaguin ti unnafanparehu pumacha' otros album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Siña hao ugguardia 5 na albam na maksimo {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Na'suha i albam na ti hu usa para chumule' lugat.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Pago na tier gai-na unlimited na album yan limitao gui storage ha'"
 }

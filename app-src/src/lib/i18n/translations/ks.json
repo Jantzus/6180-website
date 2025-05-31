@@ -166,8 +166,6 @@
   "Email address...": "برقی ڈاک پتہ...",
   "Two-Factor Authentication": "دۄ-فیکٹر تصدیق",
   "Select For Download": "ڈاؤن لوڈ خاطرہ انتخاب کریو",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "توہہ 5 البم یا {FREE_TIER_STORAGE_LIMIT_GB} جی بی تام مُفت محفوظ کٔرتھ ہیکہو۔ جاے بناونہ خٲطرہ اسٲتعمال نہ گٔژھن وٲلؠ البم ہٹأیو۔",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "تہنز فایل ہیندی وختہ {formatGB(usedGB)} جاے توتھ چھے، مگر تۄہہ کھوتہ {FREE_TIER_STORAGE_LIMIT_GB} جی بی اسٹوریج چھ رۄی۔ یمہ آلبم خودکار طریقہ سیتۍ مٹینہ یوان چھے:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "تہنز فایل ہیندی وختہ دستیاب {totalStorageGB} جی بی سٹوریج منز {formatGB(usedGB)} جاے توتھ چھ۔ البم محفوظ کرنہ جاری ساتنہ باپت تۄہہ ممکن چھ ضرورت آسہ زولدی پننہ سبسکرپشن اپگریڈ کرنچ۔",
   "Upgrade Your Subscription": "پننہ سبسکرپشن اپگریڈ کریو",
   "Storage Management": "ذَخیٖرہٕ انتِظام",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "سبسکرپشن اپگریڈ کرنہ باپت کلک کریو",
   "WILL BE DELETED": "کڈ ویجھ",
   "Create an album in 90 sec": "90 سیکنڈن منز آلبم بناؤ",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "توہنز پاس {albumCount} آلبم چھے مگر تُسہ صرف 5 مُفت محفوظ کٔرتھ ہیکو۔ یہ سارین کھاں پرون آلبم آپہ کار ڈلیٹ بونہ وول چھے:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "اکاونٹ معلومات لوڈ گژھان...",
   "Please enter a positive number": "مہربانی کٔرتھ مثبت نمبر داخل کٔرو",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "سبسکرپشن انفارمیشن لوڈ کران...",
   "Insufficient storage and too many albums (max 5 for free)": "کم اسٹوریج تہ ضرورت شہ زیٛادٕ ایلبم (فریہس منز زیٛادٕ 5)",
   "Insufficient storage capacity": "کم اسٹوریج ظرفیت",
-  "Too many albums (free tier allows max 5 albums)": "ضرورت شہ زیٛادٕ ایلبم (فریہ ٹیئر زیٛادٕ شہ زیٛادٕ 5 ایلبماں پیٹھ اجازت دِوان)"
+  "Too many albums (free tier allows max 5 albums)": "ضرورت شہ زیٛادٕ ایلبم (فریہ ٹیئر زیٛادٕ شہ زیٛادٕ 5 ایلبماں پیٹھ اجازت دِوان)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "چھُو پانژ البمو پیٹھ ذیاده البم چھِ أکِس کأم پھائلہِ {formatGB(usedGB)} جاے نِتھ (حد: {FREE_TIER_STORAGE_LIMIT_GB} GB)۔ یم البم خودکار طور محو سپدان چھِ اگر تہِ باقی البم محو کرنچ فیصلہ کریو نہِ:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "تُہند کُن {albumCount} آلبم چھُ اَمہِ مگر تُہیہ صرف ۵ مُفت منز محفوظ کرتھ ہیکیو۔ یِم زیادٕ پرون آلبم خودکار طور زار یِمان حذف سپدان چھِ گر تُہیہ بییِ آلبم حذف کرنہٕ کا فیصلہ نہ کریو:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "تُہؠ فایِل {formatGB(usedGB)} جاے نِتِھ چھُ، مگر تُہؠ کُن {FREE_TIER_STORAGE_LIMIT_GB} جی بی اسٹوریج چھُ صِرف۔ یِم ایلبم آٹومیٹِک ڈِلیٹ سان چھُ ییٚل تُہؠ بؠیؠ ایلبم ڈِلیٹ کرنُک فیصلہ نہ کران:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "تُہؠ فایِل {formatGB(usedGB)} جاے نِتِھ چھُ، مگر تُہؠ کُن {totalStorageGB} جی بی اسٹوریج چھُ صِرف۔ یِم ایلبم آٹومیٹِک ڈِلیٹ سان چھُ ییٚل تُہؠ بؠیؠ ایلبم ڈِلیٹ کرنُک فیصلہ نہ کران:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "تۄہؠ زیادٕ کھۮت زیادٕ {FREE_TIER_STORAGE_LIMIT_GB} جی بی یُک ۵ ایلبم محفوظ کٔرتھ ہیکو۔ جاے بناونہٕ خٲطرٕ استعمال نہ کرنہٕ آمتؠ ایلبم حذف کرو۔",
+  "Paid tiers have unlimited albums and are limited only by storage": "ادایگی شُدٕ لِوَلِن منٛز لامحدود البمز چھِ تہٕ صرف سٹوریج سٲتۍ محدود چھِ"
 }

@@ -166,8 +166,6 @@
   "Email address...": "Màkkaanu email...",
   "Two-Factor Authentication": "Jëfandikoo Bu Ñeenti Weer",
   "Select For Download": "Tann Ngir Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Mën nga dugg 5 albam walla ba ñu def {FREE_TIER_STORAGE_LIMIT_GB} GB bu amul kharit. Feyku ñu albam ñu amul kharit ngir defar een.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tey seen fiise yu ñu fi ko jëfandoo {formatGB(usedGB)} bees, waaye am nga {FREE_TIER_STORAGE_LIMIT_GB} GB mbaññu rekk. Yii albam yi dañuy digg ba kàtt bu bees:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Seen fiise yu ñu fi tëgg na {formatGB(usedGB)} bees ci {totalStorageGB} GB mbaññu bu nekk. Gën nga war a bëgg a yeegal sa abonnement ba teg ngir ma ñu ko jaar denc albam yi.",
   "Upgrade Your Subscription": "Yeegal Sa Abonnement",
   "Storage Management": "Yoonu Défar",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Bëgg Ca Yeesal Subscription Bi",
   "WILL BE DELETED": "DINA KO FEY",
   "Create an album in 90 sec": "Defar album ci 90 segonn",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Am nañu {albumCount} album waaye doo mën a tëj ci yoon 5 rekk buy djolof. Yii album yi mag ay yagg na léén ci seen bopp:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Daju loolat jëfandikukat bi...",
   "Please enter a positive number": "Damay solo benn limu ñuy weex",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Yesal xibaar yi subscription...",
   "Insufficient storage and too many albums (max 5 for free)": "Tàngal mooy dëggoo ak album yu bari (ci lu dul jëf 5)",
   "Insufficient storage capacity": "Tàngal mooy dëggoo",
-  "Too many albums (free tier allows max 5 albums)": "Album yu bari lool (tegtal bu dul jëf daf ko waral album 5 rekk)"
+  "Too many albums (free tier allows max 5 albums)": "Album yu bari lool (tegtal bu dul jëf daf ko waral album 5 rekk)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Am nga album yu gëna 5 ak sa yépp yi nekk ci {formatGB(usedGB)} baraam (nguur: {FREE_TIER_STORAGE_LIMIT_GB} GB). Yii album yi dañu koy far ak sa bopp bu ñu koo leen nekk si sa wut nga far yeneen album:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Am nga {albumCount} album waaye fekk ma ngi def 5 rekk ngir lu doy. Yii album yi gën ko tollu dañuy far ci solo solo bu bëpp si fekkul ma nga doxle far yi ñu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ñiñu njii ak {formatGB(usedGB)} bere ci kawol, waaye am na {FREE_TIER_STORAGE_LIMIT_GB} Go moroom rekk. Album yii da ñu boy di koy jaar otomatik ba tey ni nga xam ni day jar yi ñeneen album:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ñiñu njii ak {formatGB(usedGB)} bere ci kawol, waaye am na {totalStorageGB} Go moroom rekk. Album yii da ñu boy di koy jaar otomatik ba tey ni nga xam ni day jar yi ñeneen album:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Mën nga bind album 5 yu am ci total {FREE_TIER_STORAGE_LIMIT_GB} GB bu di moom seen. Feesal album yi ñu xamul feesal ñoom ngir am boppaam.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Yoonu yàgg yi am album yu bari daray te dalal na ko ci mbir rekk"
 }

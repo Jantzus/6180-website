@@ -166,8 +166,6 @@
   "Email address...": "Адреса за е-пошта...",
   "Two-Factor Authentication": "Двофакторска Автентификација",
   "Select For Download": "Избери За Симнување",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Можете да зачувате 5 албуми или до {FREE_TIER_STORAGE_LIMIT_GB} ГБ бесплатно. Избришете ги неискористените албуми за да ослободите простор.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Вашите датотеки моментално зафаќаат {formatGB(usedGB)} простор, но имате само {FREE_TIER_STORAGE_LIMIT_GB} ГБ складирање. Овие албуми се автоматски бришат:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Вашите датотеки моментално зафаќаат {formatGB(usedGB)} простор од {totalStorageGB} ГБ достапно складирање. Можеби ќе треба наскоро да ја надградите вашата претплата за да продолжите да зачувувате албуми.",
   "Upgrade Your Subscription": "Надградете Ја Вашата Претплата",
   "Storage Management": "Управување Со Складирање",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Кликнете За Надградба На Претплатата",
   "WILL BE DELETED": "ЌE СE ИЗБРИШЕ",
   "Create an album in 90 sec": "Создајте албум за 90 секунди",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Имате {albumCount} албуми, но можете да зачувате само 5 бесплатно. Овие најстари албуми автоматски се бришат:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Вашите датотеки заземаат {formatGB(usedGB)} простор, но имате само {FREE_TIER_STORAGE_LIMIT_GB} GB складиште. Овие албуми автоматски се бришат:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Имате над 5 албуми И вашите датотеки заземаат {formatGB(usedGB)} простор (граница: {FREE_TIER_STORAGE_LIMIT_GB} GB). Овие албуми автоматски се бришат:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Вашите датотеки заземаат {formatGB(usedGB)} простор, но имате само {totalStorageGB} GB складиште. Овие албуми автоматски се бришат:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Вашите датотеки заземаат {formatGB(usedGB)} од {totalStorageGB} GB складиште. Можеби ќе треба скоро да ја надградите претплатата.",
   "Loading account information...": "Се вчитуваат информации за сметката...",
   "Please enter a positive number": "Ве молиме внесете позитивен број",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Се вчитуваат информации за претплата...",
   "Insufficient storage and too many albums (max 5 for free)": "Недоволно место за зачувување и премногу албуми (макс. 5 бесплатно)",
   "Insufficient storage capacity": "Недоволен капацитет за зачувување",
-  "Too many albums (free tier allows max 5 albums)": "Премногу албуми (бесплатното ниво дозволува макс. 5 албуми)"
+  "Too many albums (free tier allows max 5 albums)": "Премногу албуми (бесплатното ниво дозволува макс. 5 албуми)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Имате повеќе од 5 албуми И вашите датотеки зафаќаат {formatGB(usedGB)} простор (граница: {FREE_TIER_STORAGE_LIMIT_GB} GB). Овие албуми се автоматски бришат освен ако не одлучите да избришете други албуми:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Имате {albumCount} албуми, но можете да зачувате само 5 бесплатно. Овие најстари албуми се автоматски бришат освен ако не одлучите да избришете други албуми:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Вашите датотеки зафаќаат {formatGB(usedGB)} простор, но имате само {FREE_TIER_STORAGE_LIMIT_GB} ГБ складиште. Овие албуми се автоматски бришат освен ако не одлучите да избришете други албуми:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Вашите датотеки зафаќаат {formatGB(usedGB)} простор, но имате само {totalStorageGB} ГБ складиште. Овие албуми се автоматски бришат освен ако не одлучите да избришете други албуми:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Можете да зачувате 5 албуми кои вкупно имаат максимум од {FREE_TIER_STORAGE_LIMIT_GB} ГБ бесплатно. Избришете ги неискористените албуми за да направите простор.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Платените нивоа имаат неограничени албуми и се ограничени само со складирањето"
 }

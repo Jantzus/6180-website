@@ -166,8 +166,6 @@
   "Email address...": "כתובת אימייל...",
   "Two-Factor Authentication": "אימות דו-שלבי",
   "Select For Download": "בחר להורדה",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "אתם יכולים לשמור 5 אלבומים או עד {FREE_TIER_STORAGE_LIMIT_GB} ג'יגהבייט בחינם. מחקו אלבומים שלא בשימוש כדי לפנות מקום.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "הקבצים שלכם תופסים כרגע {formatGB(usedGB)} מקום, אבל יש לכם רק {FREE_TIER_STORAGE_LIMIT_GB} ג'יגהבייט אחסון. האלבומים האלה נמחקים אוטומטית:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "הקבצים שלכם תופסים כרגע {formatGB(usedGB)} מתוך {totalStorageGB} ג'יגהבייט אחסון זמין. ייתכן שתצטרכו לשדרג את המנוי שלכם בקרוב כדי להמשיך לשמור אלבומים.",
   "Upgrade Your Subscription": "שדרג את המנוי שלך",
   "Storage Management": "ניהול אחסון",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "לחץ כדי לשדרג את המנוי",
   "WILL BE DELETED": "יימחק",
   "Create an album in 90 sec": "צור אלבום תוך 90 שניות",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "יש לך {albumCount} אלבומים אבל ניתן לשמור רק 5 בחינם. האלבומים הישנים ביותר הללו נמחקים אוטומטית:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "הקבצים שלך תופסים {formatGB(usedGB)} מקום, אבל יש לך רק {FREE_TIER_STORAGE_LIMIT_GB} GB אחסון. האלבומים הללו נמחקים אוטומטית:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "יש לך יותר מ-5 אלבומים והקבצים שלך תופסים {formatGB(usedGB)} מקום (מגבלה: {FREE_TIER_STORAGE_LIMIT_GB} GB). האלבומים הללו נמחקים אוטומטית:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "הקבצים שלך תופסים {formatGB(usedGB)} מקום, אבל יש לך רק {totalStorageGB} GB אחסון. האלבומים הללו נמחקים אוטומטית:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "הקבצים שלך תופסים {formatGB(usedGB)} מתוך {totalStorageGB} GB אחסון. ייתכן שתצטרך לשדרג את המנוי שלך בקרוב.",
   "Loading account information...": "טוען מידע על החשבון...",
   "Please enter a positive number": "אנא הכנס מספר חיובי",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "טוען מידע מנוי...",
   "Insufficient storage and too many albums (max 5 for free)": "אחסון לא מספיק ויותר מדי אלבומים (מקסימום 5 חינם)",
   "Insufficient storage capacity": "קיבולת אחסון לא מספקת",
-  "Too many albums (free tier allows max 5 albums)": "יותר מדי אלבומים (רמה חינמית מאפשרת מקסימום 5 אלבומים)"
+  "Too many albums (free tier allows max 5 albums)": "יותר מדי אלבומים (רמה חינמית מאפשרת מקסימום 5 אלבומים)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "יש לך יותר מ-5 אלבומים והקבצים שלך תופסים {formatGB(usedGB)} מקום (מגבלה: {FREE_TIER_STORAGE_LIMIT_GB} GB). האלבומים האלה נמחקים אוטומטית אלא אם כן תחליט למחוק אלבומים אחרים:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "יש לך {albumCount} אלבומים אבל ניתן לשמור רק 5 בחינם. האלבומים הישנים ביותר הללו נמחקים אוטומטית אלא אם תחליט למחוק אלבומים אחרים:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "הקבצים שלך תופסים {formatGB(usedGB)} מקום, אבל יש לך רק {FREE_TIER_STORAGE_LIMIT_GB} ג'יגה-בייט אחסון. האלבומים האלה נמחקים אוטומטית אלא אם תחליט למחוק אלבומים אחרים:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "הקבצים שלך תופסים {formatGB(usedGB)} מקום, אבל יש לך רק {totalStorageGB} ג'יגה-בייט אחסון. האלבומים האלה נמחקים אוטומטית אלא אם תחליט למחוק אלבומים אחרים:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ניתן לשמור 5 אלבומים בסך הכל של עד {FREE_TIER_STORAGE_LIMIT_GB} ג'יגה-בייט בחינם. מחקו אלבומים לא בשימוש כדי לפנות מקום.",
+  "Paid tiers have unlimited albums and are limited only by storage": "לרמות בתשלום יש אלבומים ללא הגבלה והם מוגבלים רק על ידי אחסון"
 }

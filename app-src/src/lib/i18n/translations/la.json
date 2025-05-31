@@ -166,8 +166,6 @@
   "Email address...": "Inscriptio cursus electronici...",
   "Two-Factor Authentication": "Authenticatio Duorum Factorum",
   "Select For Download": "Eligere Ad Deponendum",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Potes servare 5 album vel ad {FREE_TIER_STORAGE_LIMIT_GB} GB gratis. Dele album inutilia ut spatium facias.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "File tuae nunc occupant {formatGB(usedGB)} spatium, sed tu habes tantum {FREE_TIER_STORAGE_LIMIT_GB} GB repositorium. Haec album automatice delenda sunt:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "File tuae nunc occupant {formatGB(usedGB)} spatii ex {totalStorageGB} GB repositorii disponibilis. Fortasse mox subscriptionem tuam promovere debes ut album servare pergere possis.",
   "Upgrade Your Subscription": "Subscriptionem Tuam Promove",
   "Storage Management": "Administratio Repositorii",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Preme Ad Renovandam Subscriptionem",
   "WILL BE DELETED": "DELEBITUR",
   "Create an album in 90 sec": "Crea album in 90 momentis",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Vos habetis {albumCount} alba sed tantum 5 gratis servare potestis. Haec antiquissima alba automatice deletentur:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tabulae vestrae {formatGB(usedGB)} spatium occupant, sed tantum {FREE_TIER_STORAGE_LIMIT_GB} GB repositorium habetis. Haec alba automatice deletentur:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Vos habetis supra 5 alba ET tabulae vestrae {formatGB(usedGB)} spatium occupant (finis: {FREE_TIER_STORAGE_LIMIT_GB} GB). Haec alba automatice deletentur:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Tabulae vestrae {formatGB(usedGB)} spatium occupant, sed tantum {totalStorageGB} GB repositorium habetis. Haec alba automatice deletentur:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Tabulae vestrae {formatGB(usedGB)} ex {totalStorageGB} GB repositorio occupant. Subscriptionem vestram mox promovere necesse erit.",
   "Loading account information...": "Computationes informationes onerantur...",
   "Please enter a positive number": "Quaeso numerum positivum insere",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Subscriptione informationes onerans...",
   "Insufficient storage and too many albums (max 5 for free)": "Insufficiens repositorium et nimis multi album (maximum 5 gratis)",
   "Insufficient storage capacity": "Insufficiens repositorii capacitas",
-  "Too many albums (free tier allows max 5 albums)": "Nimis multi album (gratis gradus maximum 5 album permittit)"
+  "Too many albums (free tier allows max 5 albums)": "Nimis multi album (gratis gradus maximum 5 album permittit)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Habes plus quam 5 alba ET tua documenta occupant {formatGB(usedGB)} spatium (finis: {FREE_TIER_STORAGE_LIMIT_GB} GB). Haec alba automatice delentur nisi decidas alia alba delere:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Habes {albumCount} albuma sed tantum 5 gratis servare potes. Haec vetustissima albuma automatice delentur nisi constituas alia albuma delere:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Scapulae tuae {formatGB(usedGB)} spatium occupant, sed tantum {FREE_TIER_STORAGE_LIMIT_GB} GB repositorii habes. Haec alba automatice delentur nisi placeat alia alba delere:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Scapulae tuae {formatGB(usedGB)} spatium occupant, sed tantum {totalStorageGB} GB repositorii habes. Haec alba automatice delentur nisi placeat alia alba delere:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Quinque alba servare potes quae summam {FREE_TIER_STORAGE_LIMIT_GB} GB gratis habent. Dele alba non adhibita ut spatium facias.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Soluti gradus habent albums infinitos et limitantur tantum repositione"
 }

@@ -166,8 +166,6 @@
   "Email address...": "විද්‍යුත් තැපැල් ලිපිනය...",
   "Two-Factor Authentication": "ද්වි-සාධක සත්‍යාපනය",
   "Select For Download": "බාගැනීම සඳහා තෝරන්න",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ඔබට ඇල්බම 5 ක් හෝ {FREE_TIER_STORAGE_LIMIT_GB} ජීබී දක්වා නොමිලේ සුරැකිය හැකිය. ඉඩ සෑදීම සඳහා භාවිතා නොකරන ඇල්බම මකන්න.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ඔබගේ ගොනු දැන් {formatGB(usedGB)} ඉඩ පාවිච්චි කරයි, නමුත් ඔබට {FREE_TIER_STORAGE_LIMIT_GB} ජීබී ගබඩාවක් පමණක් ඇත. මෙම ඇල්බම ස්වයංක්‍රීයව මකා දමනු ලැබේ:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "ඔබගේ ගොනු දැන් ලබා ගත හැකි {totalStorageGB} ජීබී ගබඩාවෙන් {formatGB(usedGB)} ඉඩ පාවිච්චි කරයි. ඇල්බම සුරැකීම දිගටම කරගෙන යාමට ඔබට ඉක්මනින් ඔබගේ දායකත්වය වැඩිදියුණු කිරීමට සිදු වනු ඇත.",
   "Upgrade Your Subscription": "ඔබගේ දායකත්වය වැඩිදියුණු කරන්න",
   "Storage Management": "ගබඩා කළමනාකරණය",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "ග්‍රාහක සේවය වැඩිදියුණු කිරීමට ක්ලික් කරන්න",
   "WILL BE DELETED": "ඉවත් කරනු ලැබේ",
   "Create an album in 90 sec": "තත්පර 90 කින් ඇල්බමයක් සාදන්න",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "ඔබ සතුව ඇල්බම {albumCount} ක් ඇත නමුත් නොමිලේ 5 ක් පමණක් සුරකින්න හැකිය. මෙම අති පැරණි ඇල්බම ස්වයංක්‍රීයව මකා දැමෙමින් පවතී:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ඔබගේ ගොනු {formatGB(usedGB)} ඉඩක් ගනී, නමුත් ඔබ සතුව {FREE_TIER_STORAGE_LIMIT_GB} GB ගබඩාවක් පමණි. මෙම ඇල්බම ස්වයංක්‍රීයව මකා දැමෙමින් පවතී:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "ඔබ සතුව 5කට වැඩි ඇල්බම ඇත සහ ඔබගේ ගොනු {formatGB(usedGB)} ඉඩක් ගනී (සීමාව: {FREE_TIER_STORAGE_LIMIT_GB} GB). මෙම ඇල්බම ස්වයංක්‍රීයව මකා දැමෙමින් පවතී:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "ඔබගේ ගොනු {formatGB(usedGB)} ඉඩක් ගනී, නමුත් ඔබ සතුව {totalStorageGB} GB ගබඩාවක් පමණි. මෙම ඇල්බම ස්වයංක්‍රීයව මකා දැමෙමින් පවතී:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ඔබගේ ගොනු {totalStorageGB} GB ගබඩාවෙන් {formatGB(usedGB)} ක් ගනී. ඔබට ඉක්මනින් ඔබගේ දායකත්වය උත්ශ්‍රේණි කිරීමට අවශ්‍ය විය හැක.",
   "Loading account information...": "ගිණුම් තොරතුරු පූරණය වෙමින්...",
   "Please enter a positive number": "කරුණාකර ධනාත්මක අංකයක් ඇතුළත් කරන්න",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "ගිණුම් සාමාජිකත්ව තොරතුරු පූරණය වේ...",
   "Insufficient storage and too many albums (max 5 for free)": "ප්‍රමාණවත් ගබඩා නොමැති සහ ඇල්බම් බොහෝ (නොමිලේ උපරිම 5)",
   "Insufficient storage capacity": "ප්‍රමාණවත් ගබඩා ධාරිතාව නැත",
-  "Too many albums (free tier allows max 5 albums)": "ඇල්බම් බොහෝ (නොමිලේ මට්ටම උපරිම 5 ඇල්බමයට අවසර දෙයි)"
+  "Too many albums (free tier allows max 5 albums)": "ඇල්බම් බොහෝ (නොමිලේ මට්ටම උපරිම 5 ඇල්බමයට අවසර දෙයි)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "ඔබ සතුව ඇල්බම 5කට වඩා ඇති අතර ඔබේ ගොනු {formatGB(usedGB)} ඉඩක් ගනී (සීමාව: {FREE_TIER_STORAGE_LIMIT_GB} GB)ේ ඔබ වෙනත් ඇල්බම මකාදැමීමට තීරණය නොකරන්නේ නම් මෙම ඇල්බම ස්වයංක්‍රීයව මකාදැමේ:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "ඔබ සතුව {albumCount} ඇල්බම ඇත නමුත් නොමිලේ 5ක් පමණක් සුරැකිය හැක. ඔබ වෙනත් ඇල්බම මකා දැමීමට තීරණය නොකරන්නේ නම් මෙම පැරණිතම ඇල්බම ස්වයංක්‍රීයව මකා දමනු ලැබේ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ඔබගේ ගොනු {formatGB(usedGB)} ඉඩ ගනී, නමුත් ඔබට {FREE_TIER_STORAGE_LIMIT_GB} ජීබී ගබඩාව පමණි. ඔබ වෙනත් ඇල්බම මකා දැමීමට තීරණය නොකරන්නේ නම් මෙම ඇල්බම ස්වයංක්‍රීයව මකා දමනු ලැබේ:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ඔබගේ ගොනු {formatGB(usedGB)} ඉඩ ගනී, නමුත් ඔබට {totalStorageGB} ජීබී ගබඩාව පමණි. ඔබ වෙනත් ඇල්බම මකා දැමීමට තීරණය නොකරන්නේ නම් මෙම ඇල්බම ස්වයංක්‍රීයව මකා දමනු ලැබේ:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "ඔබට උපරිම {FREE_TIER_STORAGE_LIMIT_GB} GB ප්‍රමාණයක් වන ඇල්බම 5ක් නොමිලයේ සුරකින්න පුළුවන්. ඉඩකඩ සෑදීමට නොපාවිච්චි කරන ඇල්බම මකන්න.",
+  "Paid tiers have unlimited albums and are limited only by storage": "ගෙවන ස්ථරවල අසීමිත ඇල්බමයන් ඇති අතර ගබඩා කිරීමෙන් පමණක් සීමා වේ"
 }

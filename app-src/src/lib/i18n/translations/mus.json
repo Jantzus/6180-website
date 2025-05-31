@@ -166,8 +166,6 @@
   "Email address...": "Email address...",
   "Two-Factor Authentication": "Hokkolen-Factor Authentication",
   "Select For Download": "Download Erhuyetv",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 pvlvcecat monkat {FREE_TIER_STORAGE_LIMIT_GB} GB yicvt hvsossēn kērrēpeta tayes. Cvpvkketv sekot omvlkv pvlvcecat resvklicvs.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Cem faylkat mucv-omof {formatGB(usedGB)} oh etvlka hoktotat, atvs {FREE_TIER_STORAGE_LIMIT_GB} GB ekorretv vntvlket ocet omvtok. Hv pvlvcecat vntvlket ehiwatokv:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Cem faylkat mucv-omof {formatGB(usedGB)} oh ocakat {totalStorageGB} GB ekorretv estomahat oh. Pvlvcecat herkv etvlka omvl momecetskis ce subscription-t em vlkoye tayen omes.",
   "Upgrade Your Subscription": "Ce Subscription-t Em Vlkoye",
   "Storage Management": "Vm Honvntaket Kerret",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Nokkelen Subscription Enhvteceskv",
   "WILL BE DELETED": "OKEHÓSKAMI",
   "Create an album in 90 sec": "Album iski 90 hokkolen",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Cesekos album {albumCount} ceyaces, mohmen cahkepvt 5t omakes em pohketos. Heyv album ayokpvlke-omvlkakes emunkv sekon kockekvs:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Akawnt ohonayvken ahrices...",
   "Please enter a positive number": "Holisso i yimmikma achefa",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Subscription omhóyetv vtecéskv...",
   "Insufficient storage and too many albums (max 5 for free)": "Honayetv sekon sekot itakvlke sarvkē (cahkēpē 5 sekon)",
   "Insufficient storage capacity": "Honayetv sekon sekot",
-  "Too many albums (free tier allows max 5 albums)": "Itakvlke sarvkē (sekon honayetv cahkēpē 5-at omvlkvt)"
+  "Too many albums (free tier allows max 5 albums)": "Itakvlke sarvkē (sekon honayetv cahkēpē 5-at omvlkvt)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Chiskvlke tahlapi ashachi albumvlke ocetskvs momet em fayilvlke {formatGB(usedGB)} ekvnv evhiket os (vhauken: {FREE_TIER_STORAGE_LIMIT_GB} GB). Heyv albumvlke emunkv vteloket os este albumvlke etehket em vtelokvks kometskvs:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Ece {albumCount} estemopvranan etemisket ēcose cahkepē tuccenakat vnokēckot okarat. Hiyayvten estemopvranan enhaksket vnakv ēcicvkot ēlakat estemopvranan etehaksēckot ohlikvrēs:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Cen holhpokonaha hokte {formatGB(usedGB)} ahanta hosh, momis {FREE_TIER_STORAGE_LIMIT_GB} GB holhpokonaha oce hosh ish ocet os. Heyv album vlhpisa hvt ilap fehna hosh holopi hoke, keyukmvt album inla ya ish kanchi bunna km okla hinla:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Cen holhpokonaha hokte {formatGB(usedGB)} ahanta hosh, momis {totalStorageGB} GB holhpokonaha oce hosh ish ocet os. Heyv album vlhpisa hvt ilap fehna hosh holopi hoke, keyukmvt album inla ya ish kanchi bunna km okla hinla:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Hosvnks tahlapi album 5 estvmahetskvs mahe {FREE_TIER_STORAGE_LIMIT_GB} GB feknokv. Album estomusat okat vpokof omvteken hvyayvs.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Apisoykvlke hvlwe album haks tokot omat storej eto ahamekusēs"
 }

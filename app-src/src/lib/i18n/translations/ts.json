@@ -166,8 +166,6 @@
   "Email address...": "Adirese ya imeyili...",
   "Two-Factor Authentication": "Ku Tiyisisa Hi Swilo Swimbirhi",
   "Select For Download": "Hlawula Eka Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "U nga hlayisa ti-albhamu ta-5 kumbe ku fika eka {FREE_TIER_STORAGE_LIMIT_GB} GB hi mahala. Susa ti-albhamu leti nga tirhisiwangiki u endla ndhawu.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Tifayila ta wena sweswi ti teka ndhawu ya {formatGB(usedGB)}, kambe u na {FREE_TIER_STORAGE_LIMIT_GB} GB ya polokelo ntsena. Ti-albhamu leti ti susiwa hi ku tirhela:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Tifayila ta wena sweswi ti teka ndhawu ya {formatGB(usedGB)} ku suka eka {totalStorageGB} GB ya polokelo leyi nga kona. Ku nga va ku laveka leswaku u engetela subscription ya wena ka ku hatlisa ku ya emahlweni ni ku hlayisa ti-albhamu.",
   "Upgrade Your Subscription": "Engetela Subscription Ya Wena",
   "Storage Management": "Vulawuri Bya Storage",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Tikhoma Ku Antswisa Subscription",
   "WILL BE DELETED": "KU TA SUSA",
   "Create an album in 90 sec": "Endla albhamu eka 90 wa tisekondo",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ina ti-album ta {albumCount} kambe u nga hlayisa ntsena 5 hi mahala. Ti-album leti ti kulukumba swinene ti ya tirisiwa hi ku tirhela:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Ku rhendzka mahungu ya khonti...",
   "Please enter a positive number": "Xana, nghenisa ntimu lowu hetisekeke",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Ku layicha riwisiso ra subscription...",
   "Insufficient storage and too many albums (max 5 for free)": "Vuhlayiselo bya tlhelo na ti-albhamu to tala (ku tlula 5 mahala)",
   "Insufficient storage capacity": "Vuswikoti bya vuhlayiselo bya tlhelo",
-  "Too many albums (free tier allows max 5 albums)": "Ti-albhamu to tala swinene (xiyimo xa mahala xi pfumelela ku tlula 5 ti-albhamu)"
+  "Too many albums (free tier allows max 5 albums)": "Ti-albhamu to tala swinene (xiyimo xa mahala xi pfumelela ku tlula 5 ti-albhamu)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "U na ti-albhamu to tlula 5 NASWONA tifayili ta wena ti tirhisa ndhawu ya {formatGB(usedGB)} (mpimo: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ti-albhamu leti ti tisuriwa hi ku tirhela loko u nga engeteli ku suriwa ka ti-albhamu tin'wana:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Un'wana {albumCount} wa ti-albamu kambe un'wana ku hlayisa ntlhanu ntsena ku nga riki na mali. Leti ti-albamu ta le kule swinene ti ta susiwa hi ku tirhela ti le kule kambe loko un'wana ku nga hluleki ku susa tin'wana ti-albamu:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mafayela ya wena ma ri tshama {formatGB(usedGB)} ndhawu, kambe u ni {FREE_TIER_STORAGE_LIMIT_GB} GB ya vutshembhi ntsena. Tialbhamu leti ti ri ku susiwa hi ku tirhisiwa loku nga xi rhangerihi ku nga u nga tshami ku susa tialbhamu tin'wana:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Mafayela ya wena ma ri tshama {formatGB(usedGB)} ndhawu, kambe u ni {totalStorageGB} GB ya vutshembhi ntsena. Tialbhamu leti ti ri ku susiwa hi ku tirhisiwa loku nga xi rhangerihi ku nga u nga tshami ku susa tialbhamu tin'wana:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "U nga hlayisa ti-albamu ta-5 leti nga ti le kambe hi vunyingi bya {FREE_TIER_STORAGE_LIMIT_GB} GB hi ku hava ku hakela. Susa ti-albamu leti nga ti suku tirhisa ku endla ndhawu.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Matintshwa ya ku hakela ya ni ti-albhamu leti nga ri le sikhombyetele na yi kandziyisiwa hi vuhlayiselo ntsena"
 }

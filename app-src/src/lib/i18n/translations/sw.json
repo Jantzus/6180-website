@@ -166,8 +166,6 @@
   "Email address...": "Anwani ya barua pepe...",
   "Two-Factor Authentication": "Uthibitisho Wa Hatua Mbili",
   "Select For Download": "Chagua Kwa Kupakua",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Waweza kuhifadhi albamu 5 au hadi {FREE_TIER_STORAGE_LIMIT_GB} GB bila malipo. Futa albamu zisizotumika ili kutengeneza nafasi.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Faili zako kwa sasa zinachukua nafasi ya {formatGB(usedGB)}, lakini una {FREE_TIER_STORAGE_LIMIT_GB} GB ya uhifadhi tu. Albamu hizi zinafutwa kiotomatiki:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Faili zako kwa sasa zinachukua nafasi ya {formatGB(usedGB)} kutoka {totalStorageGB} GB ya uhifadhi uliopo. Unaweza kuhitaji kuboresha malipo yako hivi karibuni ili kuendelea kuhifadhi albamu.",
   "Upgrade Your Subscription": "Boresha Malipo Yako",
   "Storage Management": "Uongozi Wa Hifadhi",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Bonyeza Kuboresha Uuzaji",
   "WILL BE DELETED": "ITAFUTWA",
   "Create an album in 90 sec": "Unda albamu katika sekunde 90",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Una albamu {albumCount} lakini unaweza kuhifadhi 5 tu bure. Albamu hizi za zamani zaidi zinafutwa kiotomatiki:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Faili zako zinachukua nafasi ya {formatGB(usedGB)}, lakini una {FREE_TIER_STORAGE_LIMIT_GB} GB ya hifadhi tu. Albamu hizi zinafutwa kiotomatiki:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Una zaidi ya albamu 5 NA faili zako zinachukua nafasi ya {formatGB(usedGB)} (kikomo: {FREE_TIER_STORAGE_LIMIT_GB} GB). Albamu hizi zinafutwa kiotomatiki:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Faili zako zinachukua nafasi ya {formatGB(usedGB)}, lakini una {totalStorageGB} GB ya hifadhi tu. Albamu hizi zinafutwa kiotomatiki:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Faili zako zinachukua {formatGB(usedGB)} ya {totalStorageGB} GB hifadhi. Unaweza uhitaji kupandisha michango yako hivi karibuni.",
   "Loading account information...": "Inapakia taarifa za akaunti...",
   "Please enter a positive number": "Tafadhali ingiza nambari chanya",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Inapakia habari za uandikishaji...",
   "Insufficient storage and too many albums (max 5 for free)": "Hifadhi haitoshi na albamu nyingi mno (juu zaidi 5 bure)",
   "Insufficient storage capacity": "Uwezo wa hifadhi haitoshi",
-  "Too many albums (free tier allows max 5 albums)": "Albamu nyingi mno (kiwango cha bure kinawaruhusu juu zaidi albamu 5)"
+  "Too many albums (free tier allows max 5 albums)": "Albamu nyingi mno (kiwango cha bure kinawaruhusu juu zaidi albamu 5)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Una zaidi ya albamu 5 NA faili zako zinachukua nafasi ya {formatGB(usedGB)} (kikomo: {FREE_TIER_STORAGE_LIMIT_GB} GB). Albamu hizi zinafutwa kiotomatiki isipokuwa uamue kufuta albamu nyingine:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Una {albumCount} albamu lakini unaweza kuhifadhi 5 tu bure. Albamu hizi za zamani zaidi zinafutwa kiotomatiki isipokuwa uamue kufuta albamu nyingine:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Faili zako zinachukua nafasi ya {formatGB(usedGB)}, lakini una {FREE_TIER_STORAGE_LIMIT_GB} GB tu ya hifadhi. Albamu hizi zinafutwa kiotomatiki usipokuwa utaamua kufuta albamu nyingine:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Faili zako zinachukua nafasi ya {formatGB(usedGB)}, lakini una {totalStorageGB} GB tu ya hifadhi. Albamu hizi zinafutwa kiotomatiki usipokuwa utaamua kufuta albamu nyingine:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Unaweza kuhifadhi albamu 5 ambazo kwa jumla ni juu ya {FREE_TIER_STORAGE_LIMIT_GB} GB bure. Futa albamu ambazo hazitumiki ili kutengeneza nafasi.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Ngazi za kulipa zina albamu zisizo na kikomo na zimepunguzwa na hifadhi tu"
 }

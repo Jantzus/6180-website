@@ -166,8 +166,6 @@
   "Email address...": "Adresse emile...",
   "Two-Factor Authentication": "Authentification À Deux Facteurs",
   "Select For Download": "Tchoezi Po Download",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Vos ploz schaper 5 alboms ou disk' a {FREE_TIER_STORAGE_LIMIT_GB} Go po rin. Oister les alboms nén eployis po fé del plaece.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Vos fitchîs prind'nt pol moumint {formatGB(usedGB)} d'plaece, mins vos n'avez qu' {FREE_TIER_STORAGE_LIMIT_GB} Go d'wårdaedje. Ces albums chal sont disfacés tot seus:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Vos fitchîs prind'nt pol moumint {formatGB(usedGB)} d'plaece so {totalStorageGB} Go d'wårdaedje qui ont a. Vos dvoz motoit amiyo vosse abonémint todi po d'aler sin håyî ces albums.",
   "Upgrade Your Subscription": "Amiyo Vosse Abonémint",
   "Storage Management": "Manaedjmint Do Wårdaedje",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Cliker Po Apriyî L'Abonmint",
   "WILL BE DELETED": "SÅRÈ DISFACÉ",
   "Create an album in 90 sec": "Ahiver on album e 90 segondes",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Vos avez {albumCount} albums mins n' poloz wårder ki 5 po rin. Ces albums ci ki sont les pus vîs sont disfacés tot seu:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Tchèrdjant li informåcion do comto...",
   "Please enter a positive number": "Tapez s' vos plait on nombe positif",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Tcherdjant informåcions d'abonmint...",
   "Insufficient storage and too many albums (max 5 for free)": "Simagaedje nén assez et trop d'alboms (5 pol pus po rin)",
   "Insufficient storage capacity": "Capacité d'simagaedje nén assez",
-  "Too many albums (free tier allows max 5 albums)": "Trop d'alboms (livea po rin permettrè 5 pol pus)"
+  "Too many albums (free tier allows max 5 albums)": "Trop d'alboms (livea po rin permettrè 5 pol pus)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Vos avez pus d' 5 alboms ET vos fitchîs purdèt {formatGB(usedGB)} d' place (limite: {FREE_TIER_STORAGE_LIMIT_GB} GB). Ces alboms sont spotchîs otomaticmint sauf si vos decidez d' spotchî d' ôtes alboms:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Vos avez {albumCount} albums mins n' poloz wårder ki 5 po rén. Ces albums chal li pus vîs sont disfacés otomaticmint a moens ki vos decidoz di disfacer des ôtes albums:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Vos fitchîs prindèt {formatGB(usedGB)} del plaece, mins vos n' avez ki {FREE_TIER_STORAGE_LIMIT_GB} Go di metaedje. Ces albums chal sont disfacés åtomaticmint a meyns ki vos n' tchwezixhe di disfacer des ôtes albums:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Vos fitchîs prindèt {formatGB(usedGB)} del plaece, mins vos n' avez ki {totalStorageGB} Go di metaedje. Ces albums chal sont disfacés åtomaticmint a meyns ki vos n' tchwezixhe di disfacer des ôtes albums:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Vos ploz schaper 5 alboms ki ont on total a pus {FREE_TIER_STORAGE_LIMIT_GB} Go pou rin. Oister les alboms ki vos n' eployî nén po fé del plaece.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Les liveas payeus ont des albums sins limite eyet sont limités k' åvec l' randje"
 }

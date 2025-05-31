@@ -166,8 +166,6 @@
   "Email address...": "E-mail adresse...",
   "Two-Factor Authentication": "Arferit-Marluk Isumannaasut",
   "Select For Download": "Toqqoruk Isumavoq",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "5 album-inik imaluunniit {FREE_TIER_STORAGE_LIMIT_GB} GB tikillugu akilissusilersinnaavutit. Atuanngitsunik albumink peeruk inissiarlugu.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Filenit massakkut {formatGB(usedGB)} killilerput, kisianni {FREE_TIER_STORAGE_LIMIT_GB} GB-t kisiat piqqusivutit. Danna albumit aamma itsisimasut peerussavut:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Filenit massakkut {formatGB(usedGB)} atuarpaat {totalStorageGB} GB-t atuarnerit atuerineqarput. Album uunarsimavakkit ataatsimik subscription upgraderivassiuk sivitsorpassuarpit.",
   "Upgrade Your Subscription": "Subscription Upgraderiuk",
   "Storage Management": "Killilirijit Ataatsimoorneq",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Pissusillugu Abonnement Inuussutissanut",
   "WILL BE DELETED": "PIQQUSAASSAAQ",
   "Create an album in 90 sec": "Albumimik senninneq 90-ini",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Pisiit album {albumCount}-nik kisiannili 5-nik kisiat akisinngilaq. Uku sivullertut albumit piumasumik peerneqarput:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Brugeroplysninger indlæses...",
   "Please enter a positive number": "Ataatsimoorlugu positiivi ataasinngortoq",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Subscription paasissutissat ataatsimut...",
   "Insufficient storage and too many albums (max 5 for free)": "Toqqanngisaaq sisinnerini albumilu amerlanerit (5-it kingorna kassanngiffiusut)",
   "Insufficient storage capacity": "Toqqanngisaaq sisivik",
-  "Too many albums (free tier allows max 5 albums)": "Albumit amerlanerit (kassanngiffiusut stigit 5-it kingorna siunertitsivaat)"
+  "Too many albums (free tier allows max 5 albums)": "Albumit amerlanerit (kassanngiffiusut stigit 5-it kingorna siunertitsivaat)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "5-it eqqarsaatigalugu albumit piqqusivutit TASSALU filit {formatGB(usedGB)} inissaq atuuttut (killilirisaq: {FREE_TIER_STORAGE_LIMIT_GB} GB). Una albumit automatisk peerneqarsinnaapput assiit albumit peerneqassagit silatittaanngikka:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Pisinnaavit {albumCount} albumimik kisianni 5-inik kisimi aningaasarsinnaasaavit. Albumit siutit tamakkerlutik nammineq piunngillugit kisitsillutik atuarnikutit albumit asingit kisiginnagit:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Filit tamakkiit {formatGB(usedGB)} inissaq atorput, kisianni {FREE_TIER_STORAGE_LIMIT_GB} GB killiliriniarneq kisitsisit piarsinnaavat. Manna album taakku piqqusilerput tapiliuppat album allat piqqusilerparpit:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Filit tamakkiit {formatGB(usedGB)} inissaq atorput, kisianni {totalStorageGB} GB killiliriniarneq kisitsisit piarsinnaavat. Manna album taakku piqqusilerput tapiliuppat album allat piqqusilerparpit:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Pinniarsinnaavutit albumit 5-t katillugit pinnguarnerit {FREE_TIER_STORAGE_LIMIT_GB} GB akilliit. Peeruk albumit atorlugit inersimalerput.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Aningaasimasut attaveqatit piitsutaavoq piqqusimayuq album storageumillu peqartussavaat"
 }

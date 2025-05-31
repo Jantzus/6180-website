@@ -166,8 +166,6 @@
   "Email address...": "E-posadres...",
   "Two-Factor Authentication": "Twee-Faktor-Verifikasie",
   "Select For Download": "Kies Vir Aflaai",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Jy kan 5 albums of tot {FREE_TIER_STORAGE_LIMIT_GB} GB gratis stoor. Verwyder ongebruikte albums om spasie te maak.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Jou lêers beslaan tans {formatGB(usedGB)} spasie, maar jy het net {FREE_TIER_STORAGE_LIMIT_GB} GB berging. Hierdie albums word outomaties uitgevee:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Jou lêers beslaan tans {formatGB(usedGB)} spasie uit {totalStorageGB} GB berging beskikbaar. Jy sal dalk binnekort jou subskripsie moet opgradeer om albums te bly stoor.",
   "Upgrade Your Subscription": "Gradeer Jou Subskripsie Op",
   "Storage Management": "Berging Bestuur",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klik Om Intekening Te Opgradeer",
   "WILL BE DELETED": "SAL GESKRAP WORD",
   "Create an album in 90 sec": "Skep 'n album in 90 sek",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Jy het {albumCount} albums maar kan slegs 5 gratis bewaar. Hierdie oudste albums word outomaties verwyder:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Jou lêers beslaan {formatGB(usedGB)} spasie, maar jy het net {FREE_TIER_STORAGE_LIMIT_GB} GB berging. Hierdie albums word outomaties verwyder:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "Jy het meer as 5 albums EN jou lêers beslaan {formatGB(usedGB)} spasie (limiet: {FREE_TIER_STORAGE_LIMIT_GB} GB). Hierdie albums word outomaties verwyder:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Jou lêers beslaan {formatGB(usedGB)} spasie, maar jy het net {totalStorageGB} GB berging. Hierdie albums word outomaties verwyder:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Jou lêers beslaan {formatGB(usedGB)} van {totalStorageGB} GB berging. Jy sal dalk binnekort jou inskrywing moet opgradeer.",
   "Loading account information...": "Laai rekeninginligting...",
   "Please enter a positive number": "Voer asseblief 'n positiewe getal in",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Laai intekenbasingligting...",
   "Insufficient storage and too many albums (max 5 for free)": "Onvoldoende berging en te veel albums (maks 5 vir gratis)",
   "Insufficient storage capacity": "Onvoldoende bergingkapasiteit",
-  "Too many albums (free tier allows max 5 albums)": "Te veel albums (gratis vlak laat maks 5 albums toe)"
+  "Too many albums (free tier allows max 5 albums)": "Te veel albums (gratis vlak laat maks 5 albums toe)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Jy het meer as 5 albums EN jou lêers neem {formatGB(usedGB)} ruimte in beslag (limiet: {FREE_TIER_STORAGE_LIMIT_GB} GB). Hierdie albums word outomaties uitgevee tensy jy besluit om ander albums uit te vee:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Jy het {albumCount} albums maar kan slegs 5 gratis stoor. Hierdie oudste albums word outomaties uitgevee tensy jy besluit om ander albums uit te vee:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Jou lêers neem {formatGB(usedGB)} spasie in, maar jy het net {FREE_TIER_STORAGE_LIMIT_GB} GB berging. Hierdie albums word outomaties uitgevee tensy jy besluit om ander albums uit te vee:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Jou lêers neem {formatGB(usedGB)} spasie in, maar jy het net {totalStorageGB} GB berging. Hierdie albums word outomaties uitgevee tensy jy besluit om ander albums uit te vee:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Jy kan 5 albums stoor wat maksimaal {FREE_TIER_STORAGE_LIMIT_GB} GB gratis beslaan. Verwyder ongebruikte albums om spasie te maak.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Betaalde vlakke het onbeperkte albums en word slegs deur berging beperk"
 }

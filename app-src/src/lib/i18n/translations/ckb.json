@@ -166,8 +166,6 @@
   "Email address...": "ناونیشانی ئیمەیل...",
   "Two-Factor Authentication": "پشتڕاستکردنەوەی دوو فاکتەر",
   "Select For Download": "بۆ داگرتن هەڵبژێرە",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "دەتوانیت ٥ ئەلبوم یان تا {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت بەخۆڕایی هەڵبگریت. ئەلبومە بەکارنەهاتووەکان بسڕەوە بۆ دروستکردنی شوێن.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "پەڕگەکانت ئێستا {formatGB(usedGB)} شوێن داگیر دەکەن، بەڵام تەنها {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت هەڵگرت. ئەم ئەلبومانە بە شێوەیەکی خۆگەڕ دەسڕێنەوە:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "پەڕگەکانت ئێستا {formatGB(usedGB)} لە {totalStorageGB} گیگابایت هەڵگری بەردەست داگیر دەکەن. لەوانەیە پێویستت بە نوێکردنەوەی بەشداریت بێت بۆ بەردەوامبوون لە پاشەکەوتکردنی ئەلبومەکان.",
   "Upgrade Your Subscription": "بەرزکردنەوەی بەشداریت",
   "Storage Management": "بەڕێوەبردنی کۆگا",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "کرتە بکە بۆ باشتەرکردنی بەشداری",
   "WILL BE DELETED": "دەسڕێتەوە",
   "Create an album in 90 sec": "ئەلبوومێک بە 90 چرکە دروست بکە",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "تۆ {albumCount} ئەلبوومت هەیە بەڵام تەنها ٥ی بەخۆڕایی پاشەکەوت بکەیت. ئەم کۆنترین ئەلبوومانە بە خۆکارانه سڕاونەتەوە:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "زانیاریەکانی ئەکاونت بارگیر دەکرێت...",
   "Please enter a positive number": "تکایە ژمارەیەکی مۆزەڤ داخڵ بکە",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "زانیاری بەشداریی باردەکرێت...",
   "Insufficient storage and too many albums (max 5 for free)": "هێڵەی کەم و ئەلبوومی زۆر (زۆرینە 5 بەخۆڕایی)",
   "Insufficient storage capacity": "توانای هێڵەی کەم",
-  "Too many albums (free tier allows max 5 albums)": "ئەلبوومی زۆر (ئاستی بەخۆڕایی زۆرینە 5 ئەلبوومی ڕێگا دەدات)"
+  "Too many albums (free tier allows max 5 albums)": "ئەلبوومی زۆر (ئاستی بەخۆڕایی زۆرینە 5 ئەلبوومی ڕێگا دەدات)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "زیاتر لە ٥ ئەلبوومت هەیە و فایلەکانت {formatGB(usedGB)} بۆشایی دادەگرن (سنوور: {FREE_TIER_STORAGE_LIMIT_GB} GB)। ئەم ئەلبوومانە بە شێوەی خۆکار دەسڕێنەوە مەگەر بڕیار بدەیت کە ئەلبوومی تر بسڕیتەوە:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "تۆ {albumCount} ئەلبوومت هەیە بەڵام تەنها دەتوانیت ٥ بە خۆڕایی هەڵبگریت. ئەم کۆنترین ئەلبوومانە بە شێوەیەکی خۆگەڕ دەسڕێنەوە مەگەر بڕیار بدەیت ئەلبوومەکانی تر بسڕیتەوە:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "فایلەکانتان {formatGB(usedGB)} شوێن داگیر دەکەن، بەڵام تەنها {FREE_TIER_STORAGE_LIMIT_GB} GB کۆگات هەیە. ئەم ئەلبومانە بە شێوەیەکی خۆکارانە دەسڕێنەوە مەگەر بڕیار بدەیت ئەلبومەکانی تر بسڕیتەوە:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "فایلەکانتان {formatGB(usedGB)} شوێن داگیر دەکەن، بەڵام تەنها {totalStorageGB} GB کۆگات هەیە. ئەم ئەلبومانە بە شێوەیەکی خۆکارانە دەسڕێنەوە مەگەر بڕیار بدەیت ئەلبومەکانی تر بسڕیتەوە:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "دەتوانی ٥ ئەلبوومت هەبێت کە زۆرترین {FREE_TIER_STORAGE_LIMIT_GB} گیگابایت بەخۆڕایی. ئەلبوومە بەکارنەهاتووەکان بسڕەوە بۆ دروستکردنی شوێن.",
+  "Paid tiers have unlimited albums and are limited only by storage": "ئاستەکانی پارەدان ئەلبوومی بێسنووریان هەیە تەنها بە هەڵگرتن سنووردار دەبن"
 }

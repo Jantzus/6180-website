@@ -166,8 +166,6 @@
   "Email address...": "ที่อยู่อีเมล...",
   "Two-Factor Authentication": "การรับรองตัวตนแบบสองปัจจัย",
   "Select For Download": "เลือกสำหรับดาวน์โหลด",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "คุณสามารถบันทึก 5 อัลบั้มหรือสูงสุด {FREE_TIER_STORAGE_LIMIT_GB} จีบีฟรี ลบอัลบั้มที่ไม่ได้ใช้เพื่อสร้างพื้นที่",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} ในขณะนี้ แต่คุณมีพื้นที่เก็บข้อมูลเพียง {FREE_TIER_STORAGE_LIMIT_GB} จีบี อัลบั้มเหล่านี้กำลังถูกลบโดยอัตโนมัติ:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} จาก {totalStorageGB} จีบีที่เก็บข้อมูลที่มีอยู่ในขณะนี้ คุณอาจจำเป็นต้องอัปเกรดการสมัครสมาชิกของคุณเร็วๆ นี้เพื่อทำการบันทึกอัลบั้มต่อไป",
   "Upgrade Your Subscription": "อัปเกรดการสมัครสมาชิกของคุณ",
   "Storage Management": "การจัดการที่เก็บข้อมูล",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "คลิกเพื่ออัปเกรดการสมัครสมาชิก",
   "WILL BE DELETED": "จะถูกลบ",
   "Create an album in 90 sec": "สร้างอัลบั้มใน 90 วินาที",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "คุณมีอัลบั้ม {albumCount} อัลบั้ม แต่สามารถบันทึกได้เพียง 5 อัลบั้มฟรี อัลบั้มเก่าแก่ที่สุดเหล่านี้กำลังถูกลบโดยอัตโนมัติ:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} แต่คุณมีพื้นที่จัดเก็บเพียง {FREE_TIER_STORAGE_LIMIT_GB} GB เท่านั้น อัลบั้มเหล่านี้กำลังถูกลบโดยอัตโนมัติ:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "คุณมีอัลบั้มมากกว่า 5 อัลบั้ม และไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} (ขีดจำกัด: {FREE_TIER_STORAGE_LIMIT_GB} GB) อัลบั้มเหล่านี้กำลังถูกลบโดยอัตโนมัติ:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} แต่คুณมีพื้นที่จัดเก็บเพียง {totalStorageGB} GB เท่านั้น อัลบั้มเหล่านี้กำลังถูกลบโดยอัตโนมัติ:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} จาก {totalStorageGB} GB ที่จัดเก็บ คุณอาจต้องอัปเกรดการสมัครของคุณในเร็วๆ นี้",
   "Loading account information...": "กำลังโหลดข้อมูลบัญชี...",
   "Please enter a positive number": "กรุณาป้อนตัวเลขที่เป็นบวก",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "กำลังโหลดข้อมูลการสมัครสมาชิก...",
   "Insufficient storage and too many albums (max 5 for free)": "พื้นที่เก็บข้อมูลไม่เพียงพอและมีอัลบั้มมากเกินไป (สูงสุด 5 ฟรี)",
   "Insufficient storage capacity": "ความจุพื้นที่เก็บข้อมูลไม่เพียงพอ",
-  "Too many albums (free tier allows max 5 albums)": "อัลบั้มมากเกินไป (ระดับฟรีอนุญาตสูงสุด 5 อัลบั้ม)"
+  "Too many albums (free tier allows max 5 albums)": "อัลบั้มมากเกินไป (ระดับฟรีอนุญาตสูงสุด 5 อัลบั้ม)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "คุณมีอัลบั้มมากกว่า 5 อัลบั้ม และไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} (ขีดจำกัด: {FREE_TIER_STORAGE_LIMIT_GB} GB) อัลบั้มเหล่านี้จะถูกลบโดยอัตโนมัติ เว้นแต่คุณจะตัดสินใจลบอัลบั้มอื่น:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "คุณมี {albumCount} อัลบั้มแต่สามารถบันทึกได้เพียง 5 อัลบั้มฟรี อัลบั้มเก่าที่สุดเหล่านี้จะถูกลบโดยอัตโนมัติ เว้นแต่คุณจะตัดสินใจลบอัลบั้มอื่น:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} แต่คุณมีที่เก็บข้อมูลเพียง {FREE_TIER_STORAGE_LIMIT_GB} GB เท่านั้น อัลบั้มเหล่านี้กำลังถูกลบโดยอัตโนมัติ เว้นแต่คุณตัดสินใจลบอัลบั้มอื่น:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "ไฟล์ของคุณใช้พื้นที่ {formatGB(usedGB)} แต่คุณมีที่เก็บข้อมูลเพียง {totalStorageGB} GB เท่านั้น อัลบั้มเหล่านี้กำลังถูกลบโดยอัตโนมัติ เว้นแต่คุณตัดสินใจลบอัลบั้มอื่น:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "คุณสามารถบันทึกอัลบั้ม 5 รายการที่รวมกันแล้วไม่เกิน {FREE_TIER_STORAGE_LIMIT_GB} จิกะไบต์ได้ฟรี ลบอัลบั้มที่ไม่ได้ใช้เพื่อเพิ่มพื้นที่",
+  "Paid tiers have unlimited albums and are limited only by storage": "ระดับที่เสียค่าใช้จ่ายมีอัลบั้มไม่จำกัด และถูกจำกัดเฉพาะการจัดเก็บเท่านั้น"
 }

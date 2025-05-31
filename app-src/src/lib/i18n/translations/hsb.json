@@ -166,8 +166,6 @@
   "Email address...": "E-mejlowa adresa...",
   "Two-Factor Authentication": "Dwufaktorowa Authentifikacija",
   "Select For Download": "Za Sćehnjenje Wubrać",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Móžeće 5 albumow abo hač do {FREE_TIER_STORAGE_LIMIT_GB} GB darmotnje składować. Zhašeće njewužiwane albumy, zo byšće městno wutworił.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Waše dataje tuchwilu zaběraju {formatGB(usedGB)} městna, ale maće jenož {FREE_TIER_STORAGE_LIMIT_GB} GB składowanja. Tute albumy so awtomatiski wotstrinjuja:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Waše dataje tuchwilu zaběraju {formatGB(usedGB)} z {totalStorageGB} GB k dispoziciji steceho składowanja. Snaź budźće muse skóro waš abonement aktualizować, zo byšće albumy dale składować móhli.",
   "Upgrade Your Subscription": "Aktualizujće Waš Abonement",
   "Storage Management": "Wobhospodarjenje Składow",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Kliknyć Za Polěpšenje Abonnementa",
   "WILL BE DELETED": "BUDŹE SO ZNIČENY",
   "Create an album in 90 sec": "Wutwor album za 90 sekundow",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Maće {albumCount} albumow, ale móžeće jenož 5 darmo składować. Tute najstarše albumy so awtomatisce lašuja:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Kontowe informacije so začitaja...",
   "Please enter a positive number": "Prošu zapodajće pozitiwnu ličbu",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Abonentowe informacije so začituja...",
   "Insufficient storage and too many albums (max 5 for free)": "Njedosahacy składowanski rum a přewjele albumow (maks. 5 darmo)",
   "Insufficient storage capacity": "Njedosahaca składowanska kapacita",
-  "Too many albums (free tier allows max 5 albums)": "Přewjele albumow (darmo stopjeń dowola maks. 5 albumow)"
+  "Too many albums (free tier allows max 5 albums)": "Přewjele albumow (darmo stopjeń dowola maks. 5 albumow)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Maće wjace hač 5 albumow A waše dataje zaběraja {formatGB(usedGB)} městna (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Tute albumy so awtomatisce zhašeja, chibazo njerozhodźeće druhe albumy zhašeć:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Maće {albumCount} albume, ale móžeće jenož 5 darmo składować. Te najstarše albume so awtomatisce hašeja, chibaće rozsuźiće druhe albume hašeć:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Waše dataje zaběraja {formatGB(usedGB)} městna, ale maće jenož {FREE_TIER_STORAGE_LIMIT_GB} GB składowančka. Tute albumy so awtomatisce zhašeja, jeli njerozsuźiće druhe albumy zhašeć:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Waše dataje zaběraja {formatGB(usedGB)} městna, ale maće jenož {totalStorageGB} GB składowančka. Tute albumy so awtomatisce zhašeja, jeli njerozsuźiće druhe albumy zhašeć:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Móžeš 5 albumow z maksimalnym wobsahom {FREE_TIER_STORAGE_LIMIT_GB} GB darmo składować. Zniž njewužiwane albumy, zo by městno wutworił.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Płaćene stopnje maja njewobmjezowane albumy a su jenož přez składowanje wobmjezowane"
 }

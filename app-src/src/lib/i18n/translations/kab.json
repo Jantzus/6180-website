@@ -166,8 +166,6 @@
   "Email address...": "Tansa imayl...",
   "Two-Factor Authentication": "Asesteb S Snat Iferdisen",
   "Select For Download": "Fren I Usader",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Tzemreḍ ad teǧǧeḍ 5 n yidlisen neγ armi d {FREE_TIER_STORAGE_LIMIT_GB} GB baṭel. Kkes idlisen ur nţuseqdacen ara akken ad txelqeḍ amkan.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Ifuyla-inek tura ttawin {formatGB(usedGB)} n umḍiq, meɛna ɣur-ek {FREE_TIER_STORAGE_LIMIT_GB} GB n uḥraz kan. Idlisen-a ttumḥan s wudem awurman:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Ifuyla-inek tura ttawin {formatGB(usedGB)} n umḍiq seg {totalStorageGB} GB n uḥraz yellan. Yezmer ad tesriḍ ad tesnernid ajerred-ik deg wakud aqrib akken ad tkemmleḍ asekles n yidlisen.",
   "Upgrade Your Subscription": "Snerni Ajerred-ik",
   "Storage Management": "Asefrek N Ussekles",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Sit I Yileqqem N Ujerred",
   "WILL BE DELETED": "AD YETTWAKKES",
   "Create an album in 90 sec": "Rnu albumat deg 90 tasint",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Ɣur-k {albumCount} n yiɣbula meɛna ur tzemreḍ ara ad teḥduzeḍ kan 5 s tlelli. Iɣbula-a qbel kulshi ttumḥunt s wudem awurman:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Asali n telɣut n umiḍan...",
   "Please enter a positive number": "Ttxil-k sekcem uṭṭun amellal",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Asali n telɣa n ujerred...",
   "Insufficient storage and too many albums (max 5 for free)": "Ahraz ur d-yesɛa ara ddeqs d waṭas n yidlisen (5 n wakal baṭel)",
   "Insufficient storage capacity": "Tiɣardiwin n uhraz ur d-yesɛa ara",
-  "Too many albums (free tier allows max 5 albums)": "Waṭas n yidlisen (aswir baṭel isireg alamma 5 n yidlisen)"
+  "Too many albums (free tier allows max 5 albums)": "Waṭas n yidlisen (aswir baṭel isireg alamma 5 n yidlisen)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Ɣur-k ugar n 5 n yalbumten DAƔEN ifuyla-k ttawin {formatGB(usedGB)} n wadeg (talast: {FREE_TIER_STORAGE_LIMIT_GB} GB). Albumen-agi ad ttwakksen s wudem awurman ma yella ur tferneḍ ara ad tekkseḍ albumen-nniḍen:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Tesɛiḍ {albumCount} albumat meɛna tzemreḍ kan aţ teskelseḍ 5 s tilelli. Albumat-agi iqdimen ttwaḥḥuyen s wudem awurman skud ur tḥelfiḍ ara ad teḥḥuḍ albumat nniḍen:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ifuyla-inek ttawin {formatGB(usedGB)} n umkan, meɛna ur tesɛiḍ ara ala {FREE_TIER_STORAGE_LIMIT_GB} GB n uḥraz. Albums-agi ttumḥan s wudem awurman anagar tferneḍ ad temḥuḍ albums-nniḍen:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Ifuyla-inek ttawin {formatGB(usedGB)} n umkan, meɛna ur tesɛiḍ ara ala {totalStorageGB} GB n uḥraz. Albums-agi ttumḥan s wudem awurman anagar tferneḍ ad temḥuḍ albums-nniḍen:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Tzemreḍ ad tḥerzeḍ 5 n yilbumat yesɛan s wayen meqqren {FREE_TIER_STORAGE_LIMIT_GB} GB baṭel. Kkes tilbumat ur nettusaɛ ara akken ad txelqeḍ tallunt.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Iswiren yețtugen ɣur-sen idlisen war tilisa akked iḥedden s usekcam kan"
 }

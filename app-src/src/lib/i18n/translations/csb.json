@@ -166,8 +166,6 @@
   "Email address...": "Elektroniczné pòcztë adresa...",
   "Two-Factor Authentication": "Dwùfaktoròwô Ùwiérzëtelnienié",
   "Select For Download": "Wëbierzë Do Pòbranégò",
-  "You can save 5 albums or up to {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Mòżesz zapisac 5 albumów abò do {FREE_TIER_STORAGE_LIMIT_GB} GB za darmo. Rëmôj nieùżëwóné albumë, żebë zrobic plaù.",
-  "Your files currently occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Twòje lopë pòczewù zajimają {formatGB(usedGB)} placu, ale mosz jano {FREE_TIER_STORAGE_LIMIT_GB} GB przechòwaniô. Te albumë są aùtomatno rëmóné:",
   "Your files currently occupy {formatGB(usedGB)} of space out of {totalStorageGB} GB storage available. You may need to upgrade your subscription soon to continue to save albums.": "Twòje lopë pòczewù zajimają {formatGB(usedGB)} z {totalStorageGB} GB przystãpnégò przechòwaniô. Mòżesz mùszeć lińczej aktualizowac twòje abonament, żebë môc dali zapisywac albumë.",
   "Upgrade Your Subscription": "Aktualizëjë Twój Abonament",
   "Storage Management": "Zrządzanié Repòzytóriów",
@@ -195,10 +193,6 @@
   "Click To Upgrade Subscription": "Klëkni Żebë Ùpsôbic Abònamént",
   "WILL BE DELETED": "ÒSTANIE SKAZÓNÉ",
   "Create an album in 90 sec": "Ùstwórz albùm za 90 sekùndów",
-  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted:": "Môsz {albumCount} albumów ale leno 5 mòżesz darmo ùchòwac. Te najstarsze albumë sã aùtomatno rëmôjë:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted:",
-  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:": "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted:",
-  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:": "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted:",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
   "Loading account information...": "Wczëtëwóné sÄ™ informacjë ò kònce...",
   "Please enter a positive number": "Proszã wpisac dodôtnô cyfrã",
@@ -229,5 +223,11 @@
   "Loading subscription information...": "Ladowónie wëdowiédzë ò abonamentu...",
   "Insufficient storage and too many albums (max 5 for free)": "Za mało placu ë za dëkk albùmów (maksimalno 5 darmo)",
   "Insufficient storage capacity": "Za mało placu pò przechoweńi",
-  "Too many albums (free tier allows max 5 albums)": "Za dëkk albùmów (darmo stopień dôwô maksimalno 5 albùmów)"
+  "Too many albums (free tier allows max 5 albums)": "Za dëkk albùmów (darmo stopień dôwô maksimalno 5 albùmów)",
+  "You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:": "Mëjesz wicy jak 5 albùmów A twòje lopki zajimają {formatGB(usedGB)} placu (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). Te albùmë òstanų aùtomatno rëmniãté, jezlë nié òstaniesz rëmac jinsczi albùmë:",
+  "You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:": "Mòsz {albumCount} albùmów ale mòżesz zôchòwac blós 5 za darmo. Te nôstarsze albùmy sã samòcënnò rëmają jak ùczënisz rëmac jiné albùmy:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Twòje lopki zajmają {formatGB(usedGB)} placu, ale môsz blós {FREE_TIER_STORAGE_LIMIT_GB} GB przechòwóncë. Të albumë są aùtomatno wëmôzowóné, leno jeżlë nie ùsądowisz ùsądzi wëmôzac jinszé albumë:",
+  "Your files occupy {formatGB(usedGB)} space, but you only have {totalStorageGB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:": "Twòje lopki zajmają {formatGB(usedGB)} placu, ale môsz blós {totalStorageGB} GB przechòwóncë. Të albumë są aùtomatno wëmôzowóné, leno jeżlë nie ùsądowisz ùsądzi wëmôzac jinszé albumë:",
+  "You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.": "Mòżesz zapòmniec 5 albùmów ò pòczãtkòwëm ṙozmiarze {FREE_TIER_STORAGE_LIMIT_GB} GB darmo. Rëmôj niebrëkòwóne albùmë abë zwòlnic plasc.",
+  "Paid tiers have unlimited albums and are limited only by storage": "Płatné ùrownë mają nieógranniczoné albumë ë są ógraniconé blós przez przechowywarznié"
 }
