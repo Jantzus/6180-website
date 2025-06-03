@@ -9,21 +9,52 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
     -webkit-text-size-adjust: 100%;
   }
   
-  html, body {
+  html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    /* Ensure viewport is properly handled */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
-
+  
   body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
     font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    /* Prevent content from being hidden behind notches/status bars */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    /* Fallback for older browsers */
+    padding-top: constant(safe-area-inset-top);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-left: constant(safe-area-inset-left);
+    padding-right: constant(safe-area-inset-right);
+    /* Prevent zooming issues */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   #root {
     width: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+    /* Ensure proper stacking context */
+    z-index: 0;
   }  
 `,n=i=>e`
   direction: ${i?"rtl":"ltr"};
@@ -56,7 +87,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   display: flex;
   justify-content: center;
   align-items: center;
-`,b=t.div`
+`,f=t.div`
   max-width: 1200px;
   margin: auto;
   background: ${o.colors.background.primary};
@@ -72,12 +103,23 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   ${r(`
     padding: ${o.spacing.sm};
   `)}
-`,f=t.div`
+`,b=t.div`
   padding: ${o.spacing.md};
   background-color: ${o.colors.background.primary};
   min-height: 100vh;
   max-width: 100vw;
+  position: relative;
+  /* Ensure proper spacing from top, accounting for safe areas */
+  padding-top: max(${o.spacing.md}, env(safe-area-inset-top));
+  padding-top: max(${o.spacing.md}, constant(safe-area-inset-top));
+  /* Handle RTL direction */
   ${i=>n(i.$isRTL)}
+  
+  ${r(`
+    padding: ${o.spacing.sm};
+    padding-top: max(${o.spacing.sm}, env(safe-area-inset-top));
+    padding-top: max(${o.spacing.sm}, constant(safe-area-inset-top));
+  `)}
 `,u=t.div`
   padding: 0 ${o.spacing.md} ${o.spacing.md};
   width: 100%;
@@ -90,14 +132,17 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
 `;t.div`
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
+  position: relative;
 `;const w=t.div`
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid ${o.colors.borderLight};
-  position: sticky;
-  top: 0;
+  /* Remove sticky positioning to prevent conflicts */
+  position: relative;
   z-index: 100;
   backdrop-filter: blur(8px);
+  margin-bottom: ${o.spacing.sm};
 `,y=t.div`
   display: flex;
   justify-content: space-between;
@@ -139,21 +184,22 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   width: 20px;
   height: 20px;
   margin: 0;
-`,S=t.div`
+`,k=t.div`
   display: flex;
   align-items: center;
   flex-direction: ${i=>i.$isRTL?"row-reverse":"row"};
   gap: ${o.spacing.sm};
   margin: 0;
-`,k=t.div`
-  position: sticky;
-  top: 0;
+`,S=t.div`
+  /* Remove sticky positioning to prevent cutoff issues */
+  position: relative;
   background: ${o.colors.white};
   box-shadow: ${o.boxShadow.sm};
   z-index: 10;
   margin-bottom: ${o.spacing.sm};
   width: 100%;
-`,L=t.div`
+  border-radius: ${o.borderRadius.medium};
+`,R=t.div`
   display: flex;
   flex-direction: column;
   padding: ${o.spacing.md};
@@ -161,7 +207,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   ${r(`
     padding: ${o.spacing.md};
   `)}
-`,R=t.div`
+`,L=t.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -179,17 +225,28 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
       align-items: center;
     }
   `}
-`,B=t.div`
+`,T=t.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-bottom: ${o.spacing.md};
-`,C=t.div`
+  /* Ensure no positioning conflicts */
+  position: relative;
+  z-index: 1;
+  /* Add some top margin to prevent cutoff */
+  margin-top: ${o.spacing.sm};
+  
+  ${r(`
+    margin-top: ${o.spacing.xs};
+    flex-wrap: wrap;
+    gap: ${o.spacing.sm};
+  `)}
+`,B=t.div`
   display: flex;
   align-items: center;
   margin-top: ${o.spacing.sm};
-`,T=t.label`
+`,C=t.label`
   margin-right: ${o.spacing.sm};
   font-size: ${o.fontSizes.sm};
   color: ${o.colors.text.secondary};
@@ -202,15 +259,16 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   cursor: pointer;
   font-size: ${o.fontSizes.sm};
   min-width: 50px;
-`,I=t.div`
+`,P=t.div`
   display: flex;
   align-items: center;
   flex-direction: ${i=>i.$isRTL?"row-reverse":"row"};
   gap: ${o.spacing.sm};  
-`,P=t.img`
+`,I=t.img`
   height: 32px;
 `,H=t.h1`
   font-size: ${o.fontSizes.xxl};
+  margin: ${o.spacing.sm} 0;
 `,l=t.button`
   ${c}
   background-color: ${i=>i.$primary?i.$isHovered?o.colors.primaryDark:o.colors.primary:i.$passwordSet?o.colors.black:"transparent"};
@@ -265,7 +323,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   &:last-of-type {
     border-bottom: none;
   }
-`,G=t.button`
+`,E=t.button`
   ${c}
   background-color: ${o.colors.danger};
   color: ${o.colors.text.white};
@@ -274,19 +332,22 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   padding: 6px ${o.spacing.sm};
   font-size: ${o.fontSizes.xs};
   margin-top: auto;
-`,W=t.div`
+`,G=t.div`
   display: flex;
   gap: ${o.spacing.sm};
-`,E=t.div`
+`,W=t.div`
   display: flex;
   flex-direction: column;
   gap: ${o.spacing.sm};
   margin-bottom: ${o.spacing.md};
+  width: 100%;
 `,V=t.a`
   font-size: ${o.fontSizes.sm};
   color: ${o.colors.primary};
   text-decoration: none;
   font-weight: 500;
+  display: inline-block;
+  padding: ${o.spacing.xs} 0;
 `;t.div`
   display: flex;
   justify-content: space-between;
@@ -440,6 +501,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   flex-wrap: wrap;
   gap: ${o.spacing.md};
   margin-bottom: ${o.spacing.xl};
+  width: 100%;
 `,eo=t.div`
   ${a}
   display: flex;
@@ -570,7 +632,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   padding: ${i=>i.$type==="loading"?"0 10px":"0"};
   pointer-events: ${i=>i.$type==="watermark"?"none":"auto"};
   border-radius: ${o.borderRadius.medium}; // For overlays on containers/cards
-`,bo=t.div`
+`,fo=t.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -581,7 +643,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   border-radius: ${o.borderRadius.small};
   z-index: 10;
   font-size: ${o.fontSizes.md};
-`,fo=t.h3`
+`,bo=t.h3`
   font-size: ${o.fontSizes.lg};
   margin: 0 0 ${o.spacing.sm} 0;
 `,uo=t.div`
@@ -642,7 +704,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   font-size: ${o.fontSizes.sm};
   margin-bottom: ${o.spacing.md};
   color: ${o.colors.text.secondary};
-`;const So=t.input`
+`;const ko=t.input`
   width: 100%;
   padding: 10px;
   margin-bottom: ${o.spacing.sm};
@@ -654,7 +716,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   color: ${o.colors.danger};
   margin-bottom: ${o.spacing.sm};
   font-size: ${o.fontSizes.sm};
-`;const ko=t.div`
+`;const So=t.div`
   position: absolute;
   top: 100%;
   right: 0;
@@ -668,7 +730,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   gap: ${o.spacing.sm};
   min-width: 180px;
   margin-top: ${o.spacing.xs};
-`,Lo=t.div`
+`,Ro=t.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -678,12 +740,12 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   z-index: 2000;
   display: flex;
   flex-direction: column;
-`,Ro=t.div`
+`,Lo=t.div`
   text-align: center;
   margin-top: ${o.spacing.md};
   font-size: 11px;
   color: ${o.colors.text.secondary};
-`,Bo=t.div`
+`,To=t.div`
   position: absolute;
   top: ${o.spacing.sm};
   right: ${o.spacing.sm};
@@ -703,11 +765,11 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   &:hover {
     transform: scale(1.1);
   }
-`,Co=t.div`
+`,Bo=t.div`
   color: ${o.colors.white};
   font-size: ${o.fontSizes.sm};
   font-weight: bold;
-`,To=t.div`
+`,Co=t.div`
   padding: ${o.spacing.sm} ${o.spacing.md};
   background-color: ${o.colors.background.highlight};
   border-radius: ${o.borderRadius.small};
@@ -720,7 +782,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   font-size: ${o.fontSizes.sm};
   margin-bottom: ${o.spacing.md};
   color: ${o.colors.text.primary};
-`,Io=t.div`
+`,Po=t.div`
   position: absolute;
   z-index: 2;
   bottom: ${o.spacing.sm};
@@ -744,7 +806,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
       text-overflow: ellipsis;
     `}
   `)}
-`,Po=t.div`
+`,Io=t.div`
   position: absolute;
   top: ${o.spacing.sm};
   right: ${o.spacing.sm};
@@ -779,12 +841,12 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   margin-bottom: ${o.spacing.md};
   padding: 4px 0;
   gap: 15px;
-`,Go=t.div`
+`,Eo=t.div`
   font-size: ${o.fontSizes.sm};
   font-weight: 500;
   color: ${o.colors.text.primary};
   line-height: 24px;
-`,Wo=t.label`
+`,Go=t.label`
   position: relative;
   display: inline-block;
   width: 40px;
@@ -812,7 +874,7 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
       cursor: not-allowed;
     }
   }
-`,Eo=t.span`
+`,Wo=t.span`
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -904,4 +966,4 @@ import{aD as g,aE as e,d as t}from"./utils-BzOvwzP3.js";const o={colors:{primary
   margin-bottom: ${o.spacing.md};
   display: flex;
   justify-content: flex-end;
-`;export{Io as $,f as A,l as B,J as C,no as D,bo as E,No as F,h as G,B as H,ao as I,N as J,vo as K,I as L,Q as M,W as N,ho as O,to as P,zo as Q,G as R,jo as S,Mo as T,Ro as U,mo as V,Vo as W,ro as X,xo as Y,co as Z,lo as _,P as a,Bo as a0,Co as a1,io as a2,X as a3,Y as a4,K as a5,F as a6,A as a7,D as a8,ko as a9,M as aa,k as ab,L as ac,R as ad,C as ae,T as af,j as ag,b as ah,w as ai,y as aj,m as ak,S as al,z as am,v as an,u as ao,So as ap,O as aq,U as ar,q as as,qo as at,Z as au,oo as av,_ as aw,Yo as ax,H as b,Oo as c,Uo as d,eo as e,Po as f,go as g,po as h,uo as i,wo as j,fo as k,yo as l,Ho as m,Fo as n,Ao as o,Do as p,Go as q,Wo as r,Eo as s,V as t,E as u,Xo as v,To as w,Lo as x,$o as y,so as z};
+`;export{Po as $,b as A,l as B,J as C,no as D,fo as E,No as F,h as G,T as H,ao as I,N as J,vo as K,P as L,Q as M,G as N,ho as O,to as P,zo as Q,E as R,jo as S,Mo as T,Lo as U,mo as V,Vo as W,ro as X,xo as Y,co as Z,lo as _,I as a,To as a0,Bo as a1,io as a2,X as a3,Y as a4,K as a5,F as a6,A as a7,D as a8,So as a9,M as aa,S as ab,R as ac,L as ad,B as ae,C as af,j as ag,f as ah,w as ai,y as aj,m as ak,k as al,z as am,v as an,u as ao,ko as ap,O as aq,U as ar,q as as,qo as at,Z as au,oo as av,_ as aw,Yo as ax,H as b,Oo as c,Uo as d,eo as e,Io as f,go as g,po as h,uo as i,wo as j,bo as k,yo as l,Ho as m,Fo as n,Ao as o,Do as p,Eo as q,Go as r,Wo as s,V as t,W as u,Xo as v,Co as w,Ro as x,$o as y,so as z};

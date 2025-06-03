@@ -93,21 +93,52 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
   }
   
-  html, body {
+  html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    /* Ensure viewport is properly handled */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
-
+  
   body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
     font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    /* Prevent content from being hidden behind notches/status bars */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    /* Fallback for older browsers */
+    padding-top: constant(safe-area-inset-top);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-left: constant(safe-area-inset-left);
+    padding-right: constant(safe-area-inset-right);
+    /* Prevent zooming issues */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   #root {
     width: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+    /* Ensure proper stacking context */
+    z-index: 0;
   }  
 `;
 
@@ -196,7 +227,18 @@ export const AppContainer = styled.div<DirectionalProps>`
   background-color: ${theme.colors.background.primary};
   min-height: 100vh;
   max-width: 100vw;
+  position: relative;
+  /* Ensure proper spacing from top, accounting for safe areas */
+  padding-top: max(${theme.spacing.md}, env(safe-area-inset-top));
+  padding-top: max(${theme.spacing.md}, constant(safe-area-inset-top));
+  /* Handle RTL direction */
   ${props => directionalStyles(props.$isRTL)}
+  
+  ${mobile(`
+    padding: ${theme.spacing.sm};
+    padding-top: max(${theme.spacing.sm}, env(safe-area-inset-top));
+    padding-top: max(${theme.spacing.sm}, constant(safe-area-inset-top));
+  `)}
 `;
 
 export const MediaContainer = styled.div`
@@ -213,6 +255,8 @@ export const MediaContainer = styled.div`
 export const ContentContainer = styled.div`
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
+  position: relative;
 `;
 
 // ========== Brand Header Components ==========
@@ -221,10 +265,11 @@ export const BrandHeader = styled.div`
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid ${theme.colors.borderLight};
-  position: sticky;
-  top: 0;
+  /* Remove sticky positioning to prevent conflicts */
+  position: relative;
   z-index: 100;
   backdrop-filter: blur(8px);
+  margin-bottom: ${theme.spacing.sm};
 `;
 
 export const BrandHeaderContent = styled.div`
@@ -287,13 +332,14 @@ export const BrandLogoContainer = styled.div<DirectionalProps>`
 // ========== Header Components ==========
 
 export const Header = styled.div`
-  position: sticky;
-  top: 0;
+  /* Remove sticky positioning to prevent cutoff issues */
+  position: relative;
   background: ${theme.colors.white};
   box-shadow: ${theme.boxShadow.sm};
   z-index: 10;
   margin-bottom: ${theme.spacing.sm};
   width: 100%;
+  border-radius: ${theme.borderRadius.medium};
 `;
 
 export const HeaderContent = styled.div`
@@ -332,6 +378,17 @@ export const HeaderContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: ${theme.spacing.md};
+  /* Ensure no positioning conflicts */
+  position: relative;
+  z-index: 1;
+  /* Add some top margin to prevent cutoff */
+  margin-top: ${theme.spacing.sm};
+  
+  ${mobile(`
+    margin-top: ${theme.spacing.xs};
+    flex-wrap: wrap;
+    gap: ${theme.spacing.sm};
+  `)}
 `;
 
 export const RowSelectorContainer = styled.div`
@@ -372,6 +429,7 @@ export const Logo = styled.img`
 
 export const Headline = styled.h1`
   font-size: ${theme.fontSizes.xxl};
+  margin: ${theme.spacing.sm} 0;
 `;
 
 // ========== Button Components ==========
@@ -473,6 +531,7 @@ export const ActionButtons = styled.div`
   flex-direction: column;
   gap: ${theme.spacing.sm};
   margin-bottom: ${theme.spacing.md};
+  width: 100%;
 `;
 
 // ========== User Profile & Account Components ==========
@@ -482,6 +541,8 @@ export const ProfileLink = styled.a`
   color: ${theme.colors.primary};
   text-decoration: none;
   font-weight: 500;
+  display: inline-block;
+  padding: ${theme.spacing.xs} 0;
 `;
 
 export const UserInfo = styled.div`
@@ -712,6 +773,7 @@ export const PhotoGrid = styled.div`
   flex-wrap: wrap;
   gap: ${theme.spacing.md};
   margin-bottom: ${theme.spacing.xl};
+  width: 100%;
 `;
 
 export const PhotoCard = styled.div`

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import { FolderType } from "@/lib/types";
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -40,12 +40,14 @@ const Container = styled.div<{ $isRTL: boolean }>`
   direction: ${props => props.$isRTL ? "rtl" : "ltr"};
 `;
 
-const AlbumLink = styled.a`
+// Changed from styled.a to styled.div to handle navigation manually
+const AlbumLink = styled.div`
   text-decoration: none;
   color: inherit;
   display: block;
   width: 100%;
   overflow: hidden;
+  cursor: pointer;
 `;
 
 const AlbumCard = styled.div`
@@ -248,6 +250,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
   // Reference to keep track of active dropdown menu
   const activeDropdownRef = useRef<HTMLElement | null>(null);
+  
+  // Track modal states for each folder
+  const [folderModalStates, setFolderModalStates] = useState<Record<string, boolean>>({});
 
   // Function to handle clicks outside dropdown menu and scrolling
   useEffect(() => {
@@ -335,6 +340,28 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     }
   };
 
+  // Helper function to handle album link click
+  const handleAlbumClick = (inviteLink: string, folderId: string) => {
+    // Check if dropdown is open
+    const isDropdownOpen = activeDropdownRef.current && activeDropdownRef.current.style.display === "block";
+    
+    // Check if any modal is open for this folder
+    const isModalOpen = folderModalStates[folderId] || false;
+    
+    // Only navigate if no dropdown or modal is open
+    if (!isDropdownOpen && !isModalOpen) {
+      window.location.href = inviteLink;
+    }
+  };
+
+  // Helper function to update modal state for a specific folder
+  const updateModalState = (folderId: string, isOpen: boolean) => {
+    setFolderModalStates(prev => ({
+      ...prev,
+      [folderId]: isOpen
+    }));
+  };
+
   if (folders.length === 0 && !isUploading) {
     return (
       <State $type="empty">
@@ -360,7 +387,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
           return (
             <Container key={folder.folderId} $isRTL={isRTL}>
-              <AlbumLink href={inviteLink}>
+              <AlbumLink onClick={() => handleAlbumClick(inviteLink, folder.folderId)}>
                 <AlbumCard>
                   <HeaderSection $isRTL={isRTL}>
                     <TitleSection $isRTL={isRTL}>
@@ -449,7 +476,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
         return (
           <Container key={folder.folderId} $isRTL={isRTL}>
-            <AlbumLink href={inviteLink}>
+            <AlbumLink onClick={() => handleAlbumClick(inviteLink, folder.folderId)}>
               <AlbumCard>
                 <HeaderSection $isRTL={isRTL}>
                   <TitleSection $isRTL={isRTL}>
@@ -577,6 +604,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                     openFilePicker={openFilePicker}
                     cognitoUsername={cognitoUsername}
                     updateProfileIds={(profileIds) => updateFolderProfileIds(folder.folderId, profileIds)}
+                    onModalStateChange={(isOpen) => updateModalState(folder.folderId, isOpen)}
                   />
                 )}
 

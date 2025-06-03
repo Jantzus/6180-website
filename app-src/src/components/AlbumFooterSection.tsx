@@ -15,13 +15,15 @@ type AlbumFooterSectionProps = {
   openFilePicker?: (folderId: string | null) => void;
   cognitoUsername: string | null;
   updateProfileIds?: (profileIds: string[]) => void; 
+  onModalStateChange?: (isOpen: boolean) => void; // New prop to communicate modal state
 };
 
 export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
   folder,
   openFilePicker,
   cognitoUsername,
-  updateProfileIds
+  updateProfileIds,
+  onModalStateChange
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
@@ -47,6 +49,14 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
   useEffect(() => {
     setLocalProfileIds(folder.profileIds || []);
   }, [folder.profileIds]);
+
+  // Notify parent component when any modal state changes
+  useEffect(() => {
+    const isAnyModalOpen = showingCopyLinkAlert || showingCopiedLinkAlert;
+    if (onModalStateChange) {
+      onModalStateChange(isAnyModalOpen);
+    }
+  }, [showingCopyLinkAlert, showingCopiedLinkAlert, onModalStateChange]);
 
   // Handle copy function
   const handleCopy = (textToCopy: string) => {
