@@ -39,97 +39,95 @@ const formatGB = (gb: number): string => {
 };
 
 // Helper function to get albums that should be marked for deletion
-// const getAlbumsToDelete = (folders: any[], subscriptionInfo: any): any[] => {
-  const getAlbumsToDelete = (_folders: any[], subscriptionInfo: any, _calculatedBytesUsed: number): any[] => {
+  const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedBytesUsed: number): any[] => {
   // Return empty array if subscriptionInfo is not loaded yet
   if (!subscriptionInfo) {
     return [];
   }
 
-  // const { intNumberOfSubscriptions, bytesOfDataUsed } = subscriptionInfo;
-  const { intNumberOfSubscriptions: _intNumberOfSubscriptions } = subscriptionInfo;
+  const { intNumberOfSubscriptions } = subscriptionInfo;
   
   let albumsToDelete: any[] = [];
   
-  // if (intNumberOfSubscriptions === 0) {
-  //   // Free tier
-  //   const storageLimit = FREE_TIER_STORAGE_LIMIT_GB * 1024 * 1024 * 1024; // Convert to bytes
+  if (intNumberOfSubscriptions === 0) {
+    // Free tier
+    const storageLimit = FREE_TIER_STORAGE_LIMIT_GB * 1024 * 1024 * 1024; // Convert to bytes
     
-  //   // Check if over album count limit (5 albums)
-  //   if (folders.length > 5) {
-  //     // Sort by creation date (oldest first) and take the excess albums
-  //     const sortedByOldest = [...folders].sort((a, b) => {
-  //       const dateA = new Date(a.createdAt || 0).getTime();
-  //       const dateB = new Date(b.createdAt || 0).getTime();
-  //       return dateA - dateB; // Oldest first
-  //     });
+    // Check if over album count limit (5 albums)
+    if (folders.length > 5) {
+      // Sort by creation date (oldest first) and take the excess albums
+      const sortedByOldest = [...folders].sort((a, b) => {
+        const dateA = new Date(a.createdAt || 0).getTime();
+        const dateB = new Date(b.createdAt || 0).getTime();
+        return dateA - dateB; // Oldest first
+      });
       
-  //     const excessAlbums = folders.length - 5;
-  //     const albumsForCountDeletion = sortedByOldest.slice(0, excessAlbums);
-  //     albumsToDelete = [...albumsForCountDeletion];
-  //   }
+      const excessAlbums = folders.length - 5;
+      const albumsForCountDeletion = sortedByOldest.slice(0, excessAlbums);
+      albumsToDelete = [...albumsForCountDeletion];
+    }
     
-  //   // Check if over storage limit
-  //   if (calculatedBytesUsed > storageLimit) {
-  //     // Calculate which albums to delete to get under the storage limit
-  //     // Sort by oldest first, then calculate cumulative storage to remove
-  //     const sortedByOldest = [...folders].sort((a, b) => {
-  //       const dateA = new Date(a.createdAt || 0).getTime();
-  //       const dateB = new Date(b.createdAt || 0).getTime();
-  //       return dateA - dateB; // Oldest first
-  //     });
+    // Check if over storage limit
+    if (calculatedBytesUsed > storageLimit) {
+      // Calculate which albums to delete to get under the storage limit
+      // Sort by oldest first, then calculate cumulative storage to remove
+      const sortedByOldest = [...folders].sort((a, b) => {
+        const dateA = new Date(a.createdAt || 0).getTime();
+        const dateB = new Date(b.createdAt || 0).getTime();
+        return dateA - dateB; // Oldest first
+      });
       
-  //     let bytesToRemove = calculatedBytesUsed - storageLimit;
-  //     let albumsForStorageDeletion: any[] = [];
+      let bytesToRemove = calculatedBytesUsed - storageLimit;
+      let albumsForStorageDeletion: any[] = [];
       
-  //     for (const folder of sortedByOldest) {
-  //       if (bytesToRemove <= 0) break;
+      for (const folder of sortedByOldest) {
+        if (bytesToRemove <= 0) break;
         
-  //       // Calculate total bytes for this album
-  //       const albumBytes = folder.files.reduce((total: number, file: any) => {
-  //         return total + (file.dataInBytes || 0);
-  //       }, 0);
+        // Calculate total bytes for this album
+        const albumBytes = folder.files.reduce((total: number, file: any) => {
+          return total + (file.dataInBytes || 0);
+        }, 0);
         
-  //       albumsForStorageDeletion.push(folder);
-  //       bytesToRemove -= albumBytes;
-  //     }
+        albumsForStorageDeletion.push(folder);
+        bytesToRemove -= albumBytes;
+      }
       
-  //     // Merge with albums already marked for deletion due to count limit
-  //     // Use a Set to avoid duplicates
-  //     const markedIds = new Set(albumsToDelete.map(album => album.folderId));
-  //     for (const album of albumsForStorageDeletion) {
-  //       if (!markedIds.has(album.folderId)) {
-  //         albumsToDelete.push(album);
-  //       }
-  //     }
-  //   }
-  // } else {
-  //   // Paid tier - only storage limit applies
-  //   const totalStorageBytes = intNumberOfSubscriptions * 10 * 1024 * 1024 * 1024; // Convert GB to bytes
+      // Merge with albums already marked for deletion due to count limit
+      // Use a Set to avoid duplicates
+      const markedIds = new Set(albumsToDelete.map(album => album.folderId));
+      for (const album of albumsForStorageDeletion) {
+        if (!markedIds.has(album.folderId)) {
+          albumsToDelete.push(album);
+        }
+      }
+    }
+  } else {
+    // Paid tier - only storage limit applies
+    const totalStorageBytes = intNumberOfSubscriptions * 10 * 1024 * 1024 * 1024; // Convert GB to bytes
     
-  //   if (calculatedBytesUsed > totalStorageBytes) {
-  //     // Calculate which albums to delete to get under the storage limit
-  //     const sortedByOldest = [...folders].sort((a, b) => {
-  //       const dateA = new Date(a.createdAt || 0).getTime();
-  //       const dateB = new Date(b.createdAt || 0).getTime();
-  //       return dateA - dateB; // Oldest first
-  //     });
+    if (calculatedBytesUsed > totalStorageBytes) {
+      // Calculate which albums to delete to get under the storage limit
+      const sortedByOldest = [...folders].sort((a, b) => {
+        const dateA = new Date(a.createdAt || 0).getTime();
+        const dateB = new Date(b.createdAt || 0).getTime();
+        return dateA - dateB; // Oldest first
+      });
       
-  //     let bytesToRemove = calculatedBytesUsed - totalStorageBytes;
+      let bytesToRemove = calculatedBytesUsed - totalStorageBytes;
       
-  //     for (const folder of sortedByOldest) {
-  //       if (bytesToRemove <= 0) break;
+      for (const folder of sortedByOldest) {
+        if (bytesToRemove <= 0) break;
         
-  //       // Calculate total bytes for this album
-  //       const albumBytes = folder.files.reduce((total: number, file: any) => {
-  //         return total + (file.dataInBytes || 0);
-  //       }, 0);
+        // Calculate total bytes for this album
+        const albumBytes = folder.files.reduce((total: number, file: any) => {
+          return total + (file.dataInBytes || 0);
+        }, 0);
         
-  //       albumsToDelete.push(folder);
-  //       bytesToRemove -= albumBytes;
-  //     }
-  //   }
-  // }
+        albumsToDelete.push(folder);
+        bytesToRemove -= albumBytes;
+      }
+    }
+  }
   
   return albumsToDelete;
 };
