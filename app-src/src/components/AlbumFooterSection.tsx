@@ -10,14 +10,14 @@ import { S3_BUCKET_URL, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 import { downloadPhotos } from "@/lib/fileOperations";
 
 // FooterSection Component
-type FooterSectionProps = {
+type AlbumFooterSectionProps = {
   folder: FolderType;
   openFilePicker?: (folderId: string | null) => void;
   cognitoUsername: string | null;
   updateProfileIds?: (profileIds: string[]) => void; 
 };
 
-export const FooterSection: React.FC<FooterSectionProps> = ({
+export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
   folder,
   openFilePicker,
   cognitoUsername,

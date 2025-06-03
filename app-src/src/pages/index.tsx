@@ -19,7 +19,7 @@ import {
 } from "@/styles/styled-components";
 
 // Only run in development
-if (process.env.NODE_ENV !== 'production') {
+if (import.meta.env.MODE !== 'production') {
   import('@/lib/i18n/checkTranslations').then(({ checkTranslationFiles, checkTranslationKey }) => {
     checkTranslationFiles();
     checkTranslationKey('Create Albums Together');

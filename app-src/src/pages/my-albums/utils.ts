@@ -127,123 +127,162 @@ export const useFolderManagement = (log: (message: string) => void) => {
     }
   };
   
-  // Separated fetchFolders function to use with the token
-// Separated fetchFolders function to use with the token
-const fetchFolders = async (token: string) => {
-  const query = `
-    mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
-      changeMyAccountItem(getSubscriptionInfoInput: true) {
-        ... on SubscriptionInfo {
-          id
-          createdAt
-          updatedAt
-          stripeCustomerId
-          SubscriptionStatus
-          intNumberOfSubscriptions
-        }
-      }     
-      fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
-        items {
-          ... on FolderPosition {
-            ${FOLDERPOSITION_FIELD}
+  // Separated fetchFolders function with two distinct GraphQL calls
+  const fetchFolders = async (token: string) => {
+    try {
+      // FIRST: Fetch folders data only
+      const foldersQuery = `
+        mutation FetchRelations($fetchRelationsInput: FetchRelationsInput!) {
+          fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
+            items {
+              ... on FolderPosition {
+                ${FOLDERPOSITION_FIELD}
+              }
+            }
           }
         }
-      }
-    }
-  `
+      `;
 
-  const variables = {
-    relationIds: [ "myAccountOwnerItemId_____myAccountOwnerItemId____SubscriptionInfo" ],
-    fetchRelationsInput: {
-      ownerItemId: "myAccountOwnerItemId",
-      rangeKeyPrefix: "FolderPosition",
-      index: "ownerItemId_____RelationType____sortParameter",
-      limit: 2000,
-      scanIndexForward: false,
-    },
-  }
+      const variables = {
+        fetchRelationsInput: {
+          ownerItemId: "myAccountOwnerItemId",
+          rangeKeyPrefix: "FolderPosition",
+          index: "ownerItemId_____RelationType____sortParameter",
+          limit: 2000,
+          scanIndexForward: false,
+        },
+      };
 
-  try {
-    const res = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ query, variables }),
-    })
-
-    const json = await res.json()
-
-    const subscriptionData = json?.data?.changeMyAccountItem
-    if (subscriptionData) {
-      setSubscriptionInfo({
-        intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
-        bytesOfDataUsed: 0, // We'll use calculatedBytesUsed instead
-        SubscriptionStatus: subscriptionData.SubscriptionStatus
+      const foldersRes = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: foldersQuery, variables }),
       });
+
+      const foldersJson = await foldersRes.json();
+
+      if (foldersJson.errors) {
+        console.error("Folders GraphQL errors:", foldersJson.errors);
+        log(`❌ Failed to fetch folders: ${JSON.stringify(foldersJson.errors)}`);
+        return;
+      }
+
+      // Process folders data
+      const items = foldersJson?.data?.fetchRelations?.items || [];
+      const validItems = items.filter((item: any) => 
+        item && 
+        item.id && 
+        item.folder && 
+        item.folder.id
+      );
+
+      const parsed: FolderType[] = validItems.map((item: any) => {
+        const folder = item.folder;
+        const rawFiles = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || [];
+      
+        const files = rawFiles
+          .filter((f: any) => f && f.dataKey)
+          .map((file: any) => ({
+            dataKey: file.dataKey,
+            thumbnailDataKey: file.thumbnailDataKey || null,
+            durationInSeconds: file.durationInSeconds || null,
+            dataInBytes: file.dataInBytes || 0
+          }));
+      
+        const contacts: Record<string, string> = {};
+        if (folder?.contactsUsingInvite?.items) {
+          folder.contactsUsingInvite.items.forEach((contact: any) => {
+            if (contact?.id && contact?.item?.publicDisplayName) {
+              contacts[contact.id] = contact.item.publicDisplayName;
+            }
+          });
+        }
+      
+        return {
+          folderPositionId: item.id,
+          folderId: folder.id,
+          albumNanoId: folder.albumNanoId,
+          folderName: folder.folderName,
+          folderDescription: folder.folderDescription,
+          folderPassword: folder.folderPassword,
+          creatorId: folder.creatorId,
+          createdAt: folder.createdAt,
+          updatedAt: folder.updatedAt,
+          files: files,
+          profileIds: item.profileIds || [],
+          contacts: contacts,
+          usingFolderInviteGrantsRightToAddItems:
+            folder?.folderInviteParameters?.usingFolderInviteGrantsRightToAddItems || false
+        };
+      });
+
+      setFolders(parsed);
+      log(`✅ Successfully fetched ${parsed.length} folders`);
+
+      // SECOND: Fetch subscription info separately (if needed)
+      await fetchSubscriptionInfo(token);
+
+    } catch (err) {
+      console.error("Failed to load folders:", err);
+      log(`❌ Failed to fetch folders: ${String(err)}`);
     }
+  };
 
-    const items = json?.data?.fetchRelations?.items || []
-
-    // Filter out null/undefined items and items without folders
-    const validItems = items.filter((item: any) => 
-      item && 
-      item.id && 
-      item.folder && 
-      item.folder.id
-    );
-
-    const parsed: FolderType[] = validItems.map((item: any) => {
-      const folder = item.folder
-      const rawFiles = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || []
-     
-      // Properly map files with explicit field preservation
-      const files = rawFiles
-        .filter((f: any) => f && f.dataKey)
-        .map((file: any) => ({
-          dataKey: file.dataKey,
-          thumbnailDataKey: file.thumbnailDataKey || null,
-          durationInSeconds: file.durationInSeconds || null,
-          dataInBytes: file.dataInBytes || 0 // Explicitly preserve dataInBytes with fallback to 0
-        }));
-     
-      // Extract contacts from contactsUsingInvite
-      const contacts: Record<string, string> = {};
-      if (folder?.contactsUsingInvite?.items) {
-        folder.contactsUsingInvite.items.forEach((contact: any) => {
-          // Add null check for contact before accessing id
-          if (contact?.id && contact?.item?.publicDisplayName) {
-            contacts[contact.id] = contact.item.publicDisplayName;
+  // Separate function for subscription info
+  const fetchSubscriptionInfo = async (token: string) => {
+    try {
+      const subscriptionQuery = `
+        mutation GetSubscriptionInfo {
+          changeMySubscription(getSubscriptionInfoInput: true) {
+            ... on SubscriptionInfo {
+              id
+              createdAt
+              updatedAt
+              stripeCustomerId
+              SubscriptionStatus
+              intNumberOfSubscriptions
+            }
           }
-        });
-      }
-     
-      return {
-        folderPositionId: item.id,
-        folderId: folder.id,
-        albumNanoId: folder.albumNanoId,
-        folderName: folder.folderName,
-        folderDescription: folder.folderDescription,
-        folderPassword: folder.folderPassword,
-        creatorId: folder.creatorId,
-        createdAt: folder.createdAt,
-        updatedAt: folder.updatedAt,
-        files: files, // Use the properly mapped files array
-        profileIds: item.profileIds || [], // Include profileIds from the item
-        contacts: contacts, // Include the contacts map
-        usingFolderInviteGrantsRightToAddItems:
-          folder?.folderInviteParameters?.usingFolderInviteGrantsRightToAddItems || false
-      }
-    })
+        }
+      `;
 
-    setFolders(parsed)
-  } catch (err) {
-    console.error("Failed to load folders:", err)
-    log(`❌ Failed to fetch folders: ${String(err)}`)
-  }
-}
- 
+      const subscriptionRes = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: subscriptionQuery }),
+      });
+
+      const subscriptionJson = await subscriptionRes.json();
+
+      if (subscriptionJson.errors) {
+        console.error("Subscription GraphQL errors:", subscriptionJson.errors);
+        // Don't fail the entire operation if subscription fetch fails
+        log(`⚠️ Warning: Failed to fetch subscription info: ${JSON.stringify(subscriptionJson.errors)}`);
+        return;
+      }
+
+      const subscriptionData = subscriptionJson?.data?.changeMySubscription;
+      if (subscriptionData) {
+        setSubscriptionInfo({
+          intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
+          bytesOfDataUsed: 0, // We'll use calculatedBytesUsed instead
+          SubscriptionStatus: subscriptionData.SubscriptionStatus
+        });
+        log(`✅ Successfully fetched subscription info`);
+      }
+
+    } catch (err) {
+      console.error("Failed to load subscription info:", err);
+      log(`⚠️ Warning: Failed to fetch subscription info: ${String(err)}`);
+      // Don't fail the entire operation
+    }
+  };
  
   // Handle deletion confirmation dialog
   const handleDeleteClick = async (folderPositionId: string, t: (key: string) => string) => {

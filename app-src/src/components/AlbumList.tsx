@@ -5,7 +5,7 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { formatDate, generateInviteLink, generateUrl } from "@/lib/utils";
 import { LazyImage } from "./LazyImage";
-import { FooterSection } from "./FooterSection";
+import { AlbumFooterSection } from "./AlbumFooterSection";
 import { S3_BUCKET_URL } from "@/lib/config";
 import { 
   PolicyIndicator, 
@@ -571,8 +571,8 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                 </PasswordPolicyContainer>
                 
                 {/* Pass the folder to the FooterSection with additional props */}
-                {isProfileView == false && FooterSection && (
-                  <FooterSection
+                {isProfileView == false && (
+                  <AlbumFooterSection
                     folder={folder}
                     openFilePicker={openFilePicker}
                     cognitoUsername={cognitoUsername}

@@ -4,10 +4,19 @@ import styled from 'styled-components';
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
-import { redirectTo, generateUrl } from "@/lib/utils";
+import { redirectTo, generateUrl, checkLoginWithRefresh } from "@/lib/utils";
 import { useFolderManagement } from "../my-albums/utils";
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 
 // ===== TYPE DEFINITIONS =====
+
+// Extend Window interface to include Stripe
+declare global {
+  interface Window {
+    Stripe: (publishableKey: string) => any;
+  }
+}
+
 interface DirectionalProps {
   $isRTL: boolean;
 }
@@ -22,16 +31,9 @@ interface PlanCardProps {
 }
 
 interface ButtonProps {
-  variant?: 'danger' | 'secondary' | 'success';
+  $variant?: 'danger' | 'secondary' | 'success';
   disabled?: boolean;
-  size?: 'small' | 'medium' | 'large';
-}
-
-interface PaymentData {
-  cardNumber: string;
-  expiryDate: string;
-  cvc: string;
-  name: string;
+  $size?: 'small' | 'medium' | 'large';
 }
 
 interface Plan {
@@ -59,147 +61,231 @@ interface ProRataInfo {
   netAmount: number;
 }
 
+interface PaymentIntentResponse {
+  id: string;
+  clientSecret: string;
+  proration: ProRataInfo;
+}
+
 type PaymentMethod = 'card' | 'alipay' | 'wechat_pay' | 'klarna' | 'ideal' | 'sofort' | 'bancontact' | 'giropay' | 'eps' | 'p24';
 
-// ===== STRIPE PLACEHOLDER FUNCTIONS =====
+interface PaymentMethodConfig {
+  requiresElement: boolean;
+  redirects: boolean;
+  description: string;
+  minimumAmount?: number;
+  supportedCountries?: string[];
+  supportedCurrencies?: string[];
+}
+
+// ===== GRAPHQL MUTATIONS =====
+const CREATE_PAYMENT_INTENT_MUTATION = `
+  mutation CreatePaymentIntentWithProration($input: CreatePaymentIntentWithProrationInput!) {
+    changeMySubscription(createPaymentIntentWithProration: $input) {
+      ... on PaymentIntentResponse {
+        id
+        clientSecret
+        proration {
+          currentMonthlyPrice
+          newMonthlyPrice
+          daysRemainingInCycle
+          totalDaysInCycle
+          proRataCredit
+          proRataCharge
+          netAmount
+        }
+      }
+    }
+  }
+`;
+
+const UPDATE_SUBSCRIPTION_MUTATION = `
+  mutation UpdateSubscription($input: UpdateSubscriptionInput!) {
+    changeMySubscription(updateSubscription: $input) {
+      ... on SubscriptionInfo {
+        id
+        intNumberOfSubscriptions
+        currentPeriodEndEpochTime
+      }
+    }
+  }
+`;
+
+// ===== STRIPE SERVICE =====
 class StripeService {
   // Initialize Stripe with publishable key
-  static initializeStripe(publishableKey: string): Promise<any> {
-    console.log('Initializing Stripe with key:', publishableKey);
-    // Placeholder: return Promise.resolve(stripe instance)
-    return Promise.resolve({
-      elements: () => ({
-        create: (type: string, _options?: any) => ({
-          mount: (selector: string) => console.log(`Mounting ${type} to ${selector}`),
-          unmount: () => console.log(`Unmounting element`),
-          on: (event: string, _callback: Function) => console.log(`Event listener added for ${event}`),
-          clear: () => console.log('Element cleared')
-        })
+  static async initializeStripe(publishableKey: string): Promise<any> {
+    // Load Stripe.js dynamically
+    if (!window.Stripe) {
+      const script = document.createElement('script');
+      script.src = 'https://js.stripe.com/v3/';
+      document.head.appendChild(script);
+      
+      await new Promise((resolve) => {
+        script.onload = resolve;
+      });
+    }
+    
+    return window.Stripe(publishableKey);
+  }
+
+  // Create payment intent with proration through GraphQL
+  static async createPaymentIntentWithProration(targetTier: number, paymentMethodTypes: string[] = ['card']): Promise<PaymentIntentResponse> {
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      throw new Error('Authentication failed');
+    }
+
+    const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        query: CREATE_PAYMENT_INTENT_MUTATION,
+        variables: {
+          input: {
+            targetTier,
+            currency: 'usd',
+            paymentMethodTypes
+          }
+        }
       }),
-      confirmPayment: (_options: any) => Promise.resolve({ error: null, paymentIntent: { status: 'succeeded' } }),
-      confirmAlipayPayment: (_clientSecret: string, _data?: any) => Promise.resolve({ error: null }),
-      confirmWechatPayPayment: (_clientSecret: string, _data?: any) => Promise.resolve({ error: null })
     });
+
+    const json = await response.json();
+    
+    if (json.errors) {
+      console.error("GraphQL errors:", json.errors);
+      throw new Error(json.errors[0]?.message || "Failed to create payment intent");
+    }
+
+    return json.data?.changeMySubscription;
   }
 
-  // Create payment intent on backend
-  static async createPaymentIntent(amount: number, currency: string = 'usd', paymentMethodTypes: PaymentMethod[] = ['card']): Promise<{clientSecret: string, id: string}> {
-    console.log('Creating payment intent:', { amount, currency, paymentMethodTypes });
-    
-    // Placeholder API call to backend
-    // const response = await fetch('/api/create-payment-intent', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ amount, currency, payment_method_types: paymentMethodTypes })
-    // });
-    // return response.json();
-    
-    return Promise.resolve({
-      clientSecret: `pi_mock_${Date.now()}_secret_mock`,
-      id: `pi_mock_${Date.now()}`
+  // Update subscription through GraphQL
+  static async updateSubscription(newTier: number, prorationBehavior: string = 'create_prorations'): Promise<any> {
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      throw new Error('Authentication failed');
+    }
+
+    const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        query: UPDATE_SUBSCRIPTION_MUTATION,
+        variables: {
+          input: {
+            newTier,
+            prorationBehavior
+          }
+        }
+      }),
     });
+
+    const json = await response.json();
+    
+    if (json.errors) {
+      console.error("GraphQL errors:", json.errors);
+      throw new Error(json.errors[0]?.message || "Failed to update subscription");
+    }
+
+    return json.data?.changeMySubscription;
   }
 
-  // Create setup intent for saving payment methods
-  static async createSetupIntent(customerId: string): Promise<{clientSecret: string}> {
-    console.log('Creating setup intent for customer:', customerId);
-    
-    // Placeholder API call
-    // const response = await fetch('/api/create-setup-intent', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ customer_id: customerId })
-    // });
-    // return response.json();
-    
-    return Promise.resolve({
-      clientSecret: `seti_mock_${Date.now()}_secret_mock`
-    });
-  }
+  // Confirm payment based on payment method type
+  static async confirmPayment(stripe: any, paymentMethod: PaymentMethod, clientSecret: string, cardElement?: any): Promise<any> {
+    const returnUrl = `${window.location.origin}${window.location.pathname}?payment_return=true`;
 
-  // Update subscription with new price
-  static async updateSubscription(subscriptionId: string, newPriceId: string, prorationBehavior: 'create_prorations' | 'none' = 'create_prorations'): Promise<any> {
-    console.log('Updating subscription:', { subscriptionId, newPriceId, prorationBehavior });
-    
-    // Placeholder API call
-    // const response = await fetch('/api/update-subscription', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ 
-    //     subscription_id: subscriptionId, 
-    //     price_id: newPriceId,
-    //     proration_behavior: prorationBehavior
-    //   })
-    // });
-    // return response.json();
-    
-    return Promise.resolve({
-      id: subscriptionId,
-      status: 'active',
-      current_period_end: Math.floor(Date.now() / 1000) + (30 * 24 * 60 * 60)
-    });
-  }
+    switch (paymentMethod) {
+      case 'card':
+        if (!cardElement) {
+          throw new Error('Card element not initialized');
+        }
+        return await stripe.confirmCardPayment(clientSecret, {
+          payment_method: { card: cardElement }
+        });
 
-  // Cancel subscription
-  static async cancelSubscription(subscriptionId: string, at_period_end: boolean = true): Promise<any> {
-    console.log('Canceling subscription:', { subscriptionId, at_period_end });
-    
-    // Placeholder API call
-    // const response = await fetch('/api/cancel-subscription', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ subscription_id: subscriptionId, at_period_end })
-    // });
-    // return response.json();
-    
-    return Promise.resolve({
-      id: subscriptionId,
-      status: at_period_end ? 'active' : 'canceled',
-      cancel_at_period_end: at_period_end
-    });
-  }
+      case 'alipay':
+        return await stripe.confirmAlipayPayment(clientSecret, {
+          return_url: returnUrl
+        });
 
-  // Get customer's payment methods
-  static async getPaymentMethods(customerId: string): Promise<any[]> {
-    console.log('Getting payment methods for customer:', customerId);
-    
-    // Placeholder API call
-    // const response = await fetch(`/api/payment-methods/${customerId}`);
-    // return response.json();
-    
-    return Promise.resolve([]);
-  }
+      case 'wechat_pay':
+        return await stripe.confirmWechatPayPayment(clientSecret, {
+          payment_method_options: {
+            wechat_pay: { client: 'web' }
+          }
+        });
 
-  // Calculate pro-rata for subscription changes
-  static async calculateProRata(currentPriceId: string, newPriceId: string, subscriptionId: string): Promise<ProRataInfo> {
-    console.log('Calculating pro-rata:', { currentPriceId, newPriceId, subscriptionId });
-    
-    // Placeholder calculation - in real implementation, this would call Stripe API
-    // const response = await fetch('/api/calculate-proration', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ current_price_id: currentPriceId, new_price_id: newPriceId, subscription_id: subscriptionId })
-    // });
-    // return response.json();
-    
-    const currentPrice = parseFloat(currentPriceId) || 1.75; // Mock current price
-    const newPrice = parseFloat(newPriceId) || 2.50; // Mock new price
-    const daysRemaining = 15; // Mock days remaining in cycle
-    const totalDays = 30;
-    
-    const proRataCredit = (currentPrice / totalDays) * daysRemaining;
-    const proRataCharge = (newPrice / totalDays) * daysRemaining;
-    const netAmount = proRataCharge - proRataCredit;
-    
-    return Promise.resolve({
-      currentMonthlyPrice: currentPrice,
-      newMonthlyPrice: newPrice,
-      daysRemainingInCycle: daysRemaining,
-      totalDaysInCycle: totalDays,
-      proRataCredit,
-      proRataCharge,
-      netAmount: Math.max(0, netAmount) // Never charge negative amounts
-    });
+      case 'klarna':
+        return await stripe.confirmKlarnaPayment(clientSecret, {
+          payment_method: {
+            billing_details: {
+              email: 'customer@example.com' // You should collect this from user
+            }
+          },
+          return_url: returnUrl
+        });
+
+      case 'ideal':
+        return await stripe.confirmIdealPayment(clientSecret, {
+          payment_method: {
+            ideal: { bank: 'abn_amro' } // You could let user select bank
+          },
+          return_url: returnUrl
+        });
+
+      case 'sofort':
+        return await stripe.confirmSofortPayment(clientSecret, {
+          payment_method: {
+            sofort: { country: 'DE' } // Should be determined by user location
+          },
+          return_url: returnUrl
+        });
+
+      case 'bancontact':
+        return await stripe.confirmBancontactPayment(clientSecret, {
+          payment_method: {
+            billing_details: { name: 'Customer Name' } // Collect from user
+          },
+          return_url: returnUrl
+        });
+
+      case 'giropay':
+        return await stripe.confirmGiropayPayment(clientSecret, {
+          payment_method: {
+            billing_details: { name: 'Customer Name' } // Collect from user
+          },
+          return_url: returnUrl
+        });
+
+      case 'eps':
+        return await stripe.confirmEpsPayment(clientSecret, {
+          payment_method: {
+            eps: { bank: 'arzte_und_apotheker_bank' } // Let user select bank
+          },
+          return_url: returnUrl
+        });
+
+      case 'p24':
+        return await stripe.confirmP24Payment(clientSecret, {
+          payment_method: {
+            billing_details: {
+              email: 'customer@example.com' // Collect from user
+            }
+          },
+          return_url: returnUrl
+        });
+
+      default:
+        throw new Error(`Unsupported payment method: ${paymentMethod}`);
+    }
   }
 }
 
@@ -238,6 +324,93 @@ const formatCurrency = (amount: number, currency: string = 'USD'): string => {
     style: 'currency',
     currency: currency,
   }).format(amount);
+};
+
+const getPaymentMethodConfig = (method: PaymentMethod): PaymentMethodConfig => {
+  const configs: Record<PaymentMethod, PaymentMethodConfig> = {
+    card: {
+      requiresElement: true,
+      redirects: false,
+      description: 'Credit or debit card',
+    },
+    alipay: {
+      requiresElement: false,
+      redirects: true,
+      description: 'Popular in China',
+      minimumAmount: 0.50,
+      supportedCurrencies: ['usd', 'eur', 'gbp', 'cad', 'aud', 'sgd'],
+    },
+    wechat_pay: {
+      requiresElement: false,
+      redirects: false,
+      description: 'Popular in China',
+      minimumAmount: 0.50,
+      supportedCurrencies: ['usd', 'cny'],
+    },
+    klarna: {
+      requiresElement: false,
+      redirects: true,
+      description: 'Buy now, pay later',
+      minimumAmount: 1.00,
+      supportedCountries: ['AT', 'BE', 'DK', 'FI', 'FR', 'DE', 'IT', 'NL', 'NO', 'ES', 'SE', 'GB', 'US'],
+    },
+    ideal: {
+      requiresElement: false,
+      redirects: true,
+      description: 'Dutch bank transfer',
+      supportedCountries: ['NL'],
+      minimumAmount: 0.50,
+    },
+    sofort: {
+      requiresElement: false,
+      redirects: true,
+      description: 'German bank transfer',
+      supportedCountries: ['DE', 'AT'],
+      minimumAmount: 0.50,
+    },
+    bancontact: {
+      requiresElement: false,
+      redirects: true,
+      description: 'Belgian bank transfer',
+      supportedCountries: ['BE'],
+      minimumAmount: 0.50,
+    },
+    giropay: {
+      requiresElement: false,
+      redirects: true,
+      description: 'German bank transfer',
+      supportedCountries: ['DE'],
+      minimumAmount: 0.50,
+    },
+    eps: {
+      requiresElement: false,
+      redirects: true,
+      description: 'Austrian bank transfer',
+      supportedCountries: ['AT'],
+      minimumAmount: 0.50,
+    },
+    p24: {
+      requiresElement: false,
+      redirects: true,
+      description: 'Polish bank transfer',
+      supportedCountries: ['PL'],
+      minimumAmount: 0.50,
+    },
+  };
+  
+  return configs[method];
+};
+
+// Detect user's country (you might want to use a more sophisticated method)
+const getUserCountry = (): string => {
+  // This is a simple fallback - you might want to use IP geolocation or user profile
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  if (timezone.includes('Europe/Amsterdam')) return 'NL';
+  if (timezone.includes('Europe/Berlin')) return 'DE';
+  if (timezone.includes('Europe/Vienna')) return 'AT';
+  if (timezone.includes('Europe/Brussels')) return 'BE';
+  if (timezone.includes('Europe/Warsaw')) return 'PL';
+  return 'US'; // Default to US
 };
 
 // ===== THEME =====
@@ -404,29 +577,29 @@ const InsufficientBadge = styled.div`
 
 const Button = styled.button<ButtonProps>`
   background-color: ${props => {
-    if (props.variant === 'danger') return theme.colors.danger;
-    if (props.variant === 'secondary') return 'transparent';
-    if (props.variant === 'success') return theme.colors.success;
+    if (props.$variant === 'danger') return theme.colors.danger;
+    if (props.$variant === 'secondary') return 'transparent';
+    if (props.$variant === 'success') return theme.colors.success;
     return theme.colors.primary;
   }};
   color: ${props => {
-    if (props.variant === 'secondary') return theme.colors.primary;
+    if (props.$variant === 'secondary') return theme.colors.primary;
     return theme.colors.white;
   }};
   border: ${props => {
-    if (props.variant === 'secondary') return `1px solid ${theme.colors.primary}`;
+    if (props.$variant === 'secondary') return `1px solid ${theme.colors.primary}`;
     return 'none';
   }};
   padding: ${props => {
-    if (props.size === 'small') return '8px 16px';
-    if (props.size === 'large') return '16px 32px';
+    if (props.$size === 'small') return '8px 16px';
+    if (props.$size === 'large') return '16px 32px';
     return '12px 24px';
   }};
   border-radius: ${theme.borderRadius.medium};
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   font-size: ${props => {
-    if (props.size === 'small') return '14px';
-    if (props.size === 'large') return '18px';
+    if (props.$size === 'small') return '14px';
+    if (props.$size === 'large') return '18px';
     return '16px';
   }};
   font-weight: 500;
@@ -436,9 +609,9 @@ const Button = styled.button<ButtonProps>`
 
   &:hover:not(:disabled) {
     background-color: ${props => {
-      if (props.variant === 'danger') return '#c62828';
-      if (props.variant === 'secondary') return theme.colors.background.highlight;
-      if (props.variant === 'success') return '#388e3c';
+      if (props.$variant === 'danger') return '#c62828';
+      if (props.$variant === 'secondary') return theme.colors.background.highlight;
+      if (props.$variant === 'success') return '#388e3c';
       return theme.colors.primaryDark;
     }};
   }
@@ -541,6 +714,23 @@ const ProRataInfo = styled.div`
   padding: ${theme.spacing.md};
   margin: ${theme.spacing.md} 0;
   border-left: 4px solid ${theme.colors.success};
+`;
+
+const StripeElementContainer = styled.div`
+  border: 1px solid ${theme.colors.border};
+  border-radius: ${theme.borderRadius.small};
+  padding: 10px 12px;
+  margin-bottom: ${theme.spacing.md};
+  background-color: ${theme.colors.white};
+
+  .StripeElement {
+    width: 100%;
+  }
+
+  .StripeElement--focus {
+    border-color: ${theme.colors.primary};
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
 `;
 
 // ===== CUSTOM HOOKS =====
@@ -824,10 +1014,16 @@ const PlanSelectionGrid = ({
 const PaymentMethodSelector = ({ 
   selectedMethod, 
   onMethodSelect,
+  amount,
+  currency = 'usd',
+  userCountry = 'US',
   t 
 }: { 
   selectedMethod: PaymentMethod; 
   onMethodSelect: (method: PaymentMethod) => void;
+  amount: number;
+  currency?: string;
+  userCountry?: string;
   t: any;
 }) => {
   const paymentMethods: { id: PaymentMethod; name: string; icon: string }[] = [
@@ -843,25 +1039,72 @@ const PaymentMethodSelector = ({
     { id: 'p24', name: t('Przelewy24'), icon: '🇵🇱' }
   ];
 
+  // Filter payment methods based on availability
+  const availablePaymentMethods = paymentMethods.filter(method => {
+    const config = getPaymentMethodConfig(method.id);
+    
+    // Check minimum amount
+    if (config.minimumAmount && amount < config.minimumAmount) {
+      return false;
+    }
+    
+    // Check supported countries
+    if (config.supportedCountries && !config.supportedCountries.includes(userCountry)) {
+      return false;
+    }
+    
+    // Check supported currencies
+    if (config.supportedCurrencies && !config.supportedCurrencies.includes(currency.toLowerCase())) {
+      return false;
+    }
+    
+    return true;
+  });
+
   return (
     <FormGroup>
       <Label>{t('Payment Method')}</Label>
       <PaymentMethodGrid>
-        {paymentMethods.map((method) => (
-          <PaymentMethodCard
-            key={method.id}
-            $isSelected={selectedMethod === method.id}
-            onClick={() => onMethodSelect(method.id)}
-          >
-            <div style={{ fontSize: '24px', marginBottom: theme.spacing.xs }}>
-              {method.icon}
-            </div>
-            <div style={{ fontSize: '12px', fontWeight: '500' }}>
-              {method.name}
-            </div>
-          </PaymentMethodCard>
-        ))}
+        {availablePaymentMethods.map((method) => {
+          const config = getPaymentMethodConfig(method.id);
+          
+          return (
+            <PaymentMethodCard
+              key={method.id}
+              $isSelected={selectedMethod === method.id}
+              onClick={() => onMethodSelect(method.id)}
+            >
+              <div style={{ fontSize: '24px', marginBottom: theme.spacing.xs }}>
+                {method.icon}
+              </div>
+              <div style={{ fontSize: '12px', fontWeight: '500' }}>
+                {method.name}
+              </div>
+              {config.description && (
+                <div style={{ 
+                  fontSize: '10px', 
+                  color: theme.colors.text.secondary,
+                  marginTop: '4px'
+                }}>
+                  {t(config.description)}
+                </div>
+              )}
+            </PaymentMethodCard>
+          );
+        })}
       </PaymentMethodGrid>
+      
+      {getPaymentMethodConfig(selectedMethod)?.redirects && (
+        <div style={{
+          fontSize: '12px',
+          color: theme.colors.text.secondary,
+          textAlign: 'center',
+          marginTop: theme.spacing.sm,
+          fontStyle: 'italic'
+        }}>
+          {t('You will be redirected to complete this payment')}
+        </div>
+      )}
     </FormGroup>
   );
 };
@@ -901,31 +1144,31 @@ const ProRataDisplay = ({
 
 const PaymentModal = ({ 
   showStripe, 
-  paymentData, 
   loading, 
   selectedTier, 
   customGB, 
   albumCount,
   subscriptionInfo,
   onClose, 
-  onSubmit, 
-  onInputChange,
+  onPaymentSuccess,
+  setLoading,
   t 
 }: {
   showStripe: boolean;
-  paymentData: PaymentData;
   loading: boolean;
   selectedTier: number;
   customGB: string;
   albumCount: number;
   subscriptionInfo: SubscriptionInfo | null;
   onClose: () => void;
-  onSubmit: () => void;
-  onInputChange: (field: string, value: string) => void;
+  onPaymentSuccess: () => void;
+  setLoading: (loading: boolean) => void;
   t: any;
 }) => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethod>('card');
   const [proRataInfo, setProRataInfo] = useState<ProRataInfo | null>(null);
+  const [stripe, setStripe] = useState<any>(null);
+  const [cardElement, setCardElement] = useState<any>(null);
 
   const targetTier = customGB && !isNaN(parseFloat(customGB)) 
     ? selectTierForGB(parseFloat(customGB), albumCount) 
@@ -935,19 +1178,226 @@ const PaymentModal = ({
   const price = getPrice(targetTier);
   const currentTier = subscriptionInfo?.intNumberOfSubscriptions || 0;
   const isUpgrade = targetTier > currentTier;
+  const userCountry = getUserCountry();
 
-  // Calculate pro-rata when modal opens for upgrades
+  // Initialize Stripe when modal opens
+  React.useEffect(() => {
+    if (showStripe && !stripe) {
+      const initStripe = async () => {
+        try {
+          const stripeInstance = await StripeService.initializeStripe(
+            import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_live_51O77MNA5szNEcsv6LqXfWX0BY2V8mBwAXnaBHcmdwsBHUaeXlQjlqRq3ELWFaycPzQvCRYOyz3sg3x2EkZ7ifRnR00QewJDIRL'
+          );
+          setStripe(stripeInstance);
+          
+          if (selectedPaymentMethod === 'card') {
+            const elementsInstance = stripeInstance.elements();
+            const cardElementInstance = elementsInstance.create('card', {
+              style: {
+                base: {
+                  fontSize: '16px',
+                  color: '#333',
+                  '::placeholder': {
+                    color: '#aab7c4',
+                  },
+                },
+              },
+            });
+            setCardElement(cardElementInstance);
+            
+            setTimeout(() => {
+              if (document.getElementById('card-element')) {
+                cardElementInstance.mount('#card-element');
+              }
+            }, 100);
+          }
+        } catch (error) {
+          console.error('Failed to initialize Stripe:', error);
+        }
+      };
+      
+      initStripe();
+    }
+  }, [showStripe, stripe, selectedPaymentMethod]);
+
+  // Handle payment method changes
+  React.useEffect(() => {
+    if (stripe && selectedPaymentMethod === 'card' && !cardElement) {
+      const elementsInstance = stripe.elements();
+      const cardElementInstance = elementsInstance.create('card', {
+        style: {
+          base: {
+            fontSize: '16px',
+            color: '#333',
+            '::placeholder': {
+              color: '#aab7c4',
+            },
+          },
+        },
+      });
+      setCardElement(cardElementInstance);
+      
+      setTimeout(() => {
+        if (document.getElementById('card-element')) {
+          cardElementInstance.mount('#card-element');
+        }
+      }, 100);
+    } else if (selectedPaymentMethod !== 'card' && cardElement) {
+      cardElement.unmount();
+      setCardElement(null);
+    }
+  }, [selectedPaymentMethod, stripe, cardElement]);
+
+  // Get proration info when modal opens for upgrades
   React.useEffect(() => {
     if (showStripe && isUpgrade && subscriptionInfo) {
-      StripeService.calculateProRata(
-        currentTier.toString(), 
-        targetTier.toString(), 
-        'sub_mock_subscription_id'
-      ).then(setProRataInfo);
+      const fetchProRata = async () => {
+        try {
+          if (subscriptionInfo.intNumberOfSubscriptions > 0) {
+            const paymentIntent = await StripeService.createPaymentIntentWithProration(targetTier, [selectedPaymentMethod]);
+            setProRataInfo(paymentIntent.proration);
+          } else {
+            setProRataInfo(null);
+          }
+        } catch (error) {
+          console.error('Failed to get proration info:', error);
+          setProRataInfo(null);
+        }
+      };
+      
+      fetchProRata();
     } else {
       setProRataInfo(null);
     }
-  }, [showStripe, isUpgrade, currentTier, targetTier, subscriptionInfo]);
+  }, [showStripe, isUpgrade, currentTier, targetTier, subscriptionInfo, selectedPaymentMethod]);
+
+  // Cleanup Stripe elements when modal closes
+  React.useEffect(() => {
+    return () => {
+      if (cardElement) {
+        cardElement.unmount();
+      }
+    };
+  }, [cardElement]);
+
+  // Handle payment completion from redirects
+  React.useEffect(() => {
+    const handlePaymentCompletion = async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const paymentReturn = urlParams.get('payment_return');
+      const paymentIntentClientSecret = urlParams.get('payment_intent_client_secret');
+      
+      if (paymentReturn === 'true' && paymentIntentClientSecret && stripe) {
+        try {
+          setLoading(true);
+          const { paymentIntent } = await stripe.retrievePaymentIntent(paymentIntentClientSecret);
+          
+          if (paymentIntent.status === 'succeeded') {
+            // Get stored target tier
+            const storedTargetTier = localStorage.getItem('pendingSubscriptionTier');
+            if (storedTargetTier) {
+              const prorationBehavior = (currentTier > 0 && parseInt(storedTargetTier) > currentTier) ? 'create_prorations' : 'none';
+              await StripeService.updateSubscription(parseInt(storedTargetTier), prorationBehavior);
+              localStorage.removeItem('pendingSubscriptionTier');
+              
+              // Clean up URL parameters
+              const cleanUrl = window.location.href.split('?')[0];
+              window.history.replaceState({}, document.title, cleanUrl);
+              
+              onPaymentSuccess();
+            }
+          } else if (paymentIntent.status === 'requires_payment_method') {
+            alert(t('Payment failed. Please try again with a different payment method.'));
+          }
+        } catch (error) {
+          console.error('Error handling payment completion:', error);
+          alert(t('There was an issue processing your payment. Please contact support.'));
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    if (showStripe) {
+      handlePaymentCompletion();
+    }
+  }, [showStripe, stripe, currentTier, onPaymentSuccess, setLoading, t]);
+
+  const handleStripeSubmit = async () => {
+    setLoading(true);
+    
+    try {
+      let finalTargetTier: number;
+      if (customGB && !isNaN(parseFloat(customGB))) {
+        const inputGB = parseFloat(customGB);
+        if (inputGB < 10) {
+          alert(t('Minimum storage capacity is 10 GB'));
+          setLoading(false);
+          return;
+        }
+        finalTargetTier = selectTierForGB(inputGB, albumCount);
+      } else {
+        finalTargetTier = selectedTier;
+      }
+
+      const currentTier = subscriptionInfo?.intNumberOfSubscriptions || 0;
+      const isUpgrade = finalTargetTier > currentTier;
+
+      // Store target tier for redirect-based payments
+      if (getPaymentMethodConfig(selectedPaymentMethod)?.redirects) {
+        localStorage.setItem('pendingSubscriptionTier', finalTargetTier.toString());
+      }
+
+      // Create payment intent with selected payment method
+      const paymentIntent = await StripeService.createPaymentIntentWithProration(
+        finalTargetTier, 
+        [selectedPaymentMethod]
+      );
+
+      if (!stripe) {
+        throw new Error('Stripe not properly initialized');
+      }
+
+      // Confirm payment using the appropriate method
+      const result = await StripeService.confirmPayment(
+        stripe, 
+        selectedPaymentMethod, 
+        paymentIntent.clientSecret, 
+        cardElement
+      );
+
+      const { error, paymentIntent: confirmedPayment } = result;
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      // Handle different payment statuses
+      if (confirmedPayment?.status === 'succeeded') {
+        // Payment completed immediately
+        const prorationBehavior = (currentTier > 0 && isUpgrade) ? 'create_prorations' : 'none';
+        await StripeService.updateSubscription(finalTargetTier, prorationBehavior);
+        setLoading(false);
+        onPaymentSuccess();
+      } else if (confirmedPayment?.status === 'requires_action' || confirmedPayment?.status === 'requires_source_action') {
+        // For redirect-based payments, user will be redirected
+        // Payment completion will be handled when they return
+        setLoading(false);
+      } else if (confirmedPayment?.status === 'processing') {
+        // Payment is being processed (common for bank transfers)
+        setLoading(false);
+        alert(t('Payment is being processed. You will receive confirmation once completed.'));
+        onClose();
+      } else {
+        throw new Error('Payment was not successful');
+      }
+
+    } catch (error) {
+      setLoading(false);
+      console.error('Payment error:', error);
+      alert(t('Payment failed. Please try again.'));
+    }
+  };
 
   if (!showStripe) return null;
 
@@ -962,7 +1412,7 @@ const PaymentModal = ({
           <div style={{ fontSize: '24px', fontWeight: 'bold', color: theme.colors.primary }}>
             {formatCurrency(price)} {t('/ month')}
           </div>
-          {isUpgrade && proRataInfo && proRataInfo.netAmount > 0 && (
+          {isUpgrade && proRataInfo && subscriptionInfo && subscriptionInfo.intNumberOfSubscriptions > 0 && proRataInfo.netAmount > 0 && (
             <div style={{ 
               fontSize: '14px', 
               color: theme.colors.text.secondary, 
@@ -981,7 +1431,7 @@ const PaymentModal = ({
             borderRadius: theme.borderRadius.small,
             border: `1px solid ${theme.colors.border}`
           }}>
-            {t('You will be automatically billed {{amount}} monthly on this card unless you change your payment method.', { amount: formatCurrency(price) })}
+            {t('You will be automatically billed {{amount}} monthly on this payment method unless you change it.', { amount: formatCurrency(price) })}
           </div>
         </div>
 
@@ -990,61 +1440,19 @@ const PaymentModal = ({
         <PaymentMethodSelector 
           selectedMethod={selectedPaymentMethod}
           onMethodSelect={setSelectedPaymentMethod}
+          amount={price}
+          currency="usd"
+          userCountry={userCountry}
           t={t}
         />
 
         {selectedPaymentMethod === 'card' && (
-          <div>
-            <FormGroup>
-              <Label>{t('Card Number')}</Label>
-              <Input
-                type="text"
-                placeholder={t('1234 5678 9012 3456')}
-                value={paymentData.cardNumber}
-                onChange={(e) => onInputChange('cardNumber', e.target.value)}
-                required
-                disabled={loading}
-              />
-            </FormGroup>
-
-            <div style={{ display: 'flex', gap: theme.spacing.md }}>
-              <FormGroup style={{ flex: 1 }}>
-                <Label>{t('Expiry Date')}</Label>
-                <Input
-                  type="text"
-                  placeholder={t('MM/YY')}
-                  value={paymentData.expiryDate}
-                  onChange={(e) => onInputChange('expiryDate', e.target.value)}
-                  required
-                  disabled={loading}
-                />
-              </FormGroup>
-
-              <FormGroup style={{ flex: 1 }}>
-                <Label>{t('CVC')}</Label>
-                <Input
-                  type="text"
-                  placeholder={t('123')}
-                  value={paymentData.cvc}
-                  onChange={(e) => onInputChange('cvc', e.target.value)}
-                  required
-                  disabled={loading}
-                />
-              </FormGroup>
-            </div>
-
-            <FormGroup>
-              <Label>{t('Cardholder Name')}</Label>
-              <Input
-                type="text"
-                placeholder={t('John Doe')}
-                value={paymentData.name}
-                onChange={(e) => onInputChange('name', e.target.value)}
-                required
-                disabled={loading}
-              />
-            </FormGroup>
-          </div>
+          <FormGroup>
+            <Label>{t('Card Information')}</Label>
+            <StripeElementContainer>
+              <div id="card-element" />
+            </StripeElementContainer>
+          </FormGroup>
         )}
 
         {(selectedPaymentMethod === 'alipay' || selectedPaymentMethod === 'wechat_pay') && (
@@ -1062,23 +1470,26 @@ const PaymentModal = ({
               {selectedPaymentMethod === 'alipay' ? t('Alipay Payment') : t('WeChat Pay')}
             </div>
             <div style={{ fontSize: '14px', color: theme.colors.text.secondary }}>
-              {t('You will be redirected to complete payment')}
+              {selectedPaymentMethod === 'alipay' 
+                ? t('You will be redirected to complete payment')
+                : t('Scan QR code with WeChat to complete payment')
+              }
             </div>
           </div>
         )}
 
         <div style={{ textAlign: 'center', marginTop: theme.spacing.lg }}>
           <Button 
-            onClick={onSubmit} 
-            disabled={loading || (selectedPaymentMethod === 'card' && (!paymentData.cardNumber || !paymentData.expiryDate || !paymentData.cvc || !paymentData.name))}
-            size="large"
+            onClick={handleStripeSubmit} 
+            disabled={loading || (selectedPaymentMethod === 'card' && !cardElement)}
+            $size="large"
           >
             {loading && <LoadingSpinner />}
             {loading 
               ? t('Processing...') 
-              : isUpgrade && proRataInfo && proRataInfo.netAmount > 0
+              : isUpgrade && proRataInfo && subscriptionInfo && subscriptionInfo.intNumberOfSubscriptions > 0 && proRataInfo.netAmount > 0
                 ? t('Pay {{amount}} Today', { amount: formatCurrency(proRataInfo.netAmount) })
-                : isUpgrade && proRataInfo && proRataInfo.netAmount === 0
+                : isUpgrade && proRataInfo && subscriptionInfo && subscriptionInfo.intNumberOfSubscriptions > 0 && proRataInfo.netAmount === 0
                   ? t('Start Subscription (No charge today)')
                   : isUpgrade
                     ? t('Start {{amount}}/month Subscription', { amount: formatCurrency(price) })
@@ -1086,7 +1497,7 @@ const PaymentModal = ({
             }
           </Button>
           <Button 
-            variant="secondary" 
+            $variant="secondary" 
             onClick={onClose}
             disabled={loading}
           >
@@ -1125,9 +1536,6 @@ const StorageManagePageContent = () => {
   const [showStripe, setShowStripe] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [customGB, setCustomGB] = useState<string>('');
-  const [paymentData, setPaymentData] = useState<PaymentData>({
-    cardNumber: '', expiryDate: '', cvc: '', name: ''
-  });
 
   // Custom hooks
   const { canDowngrade, generatePlans } = useSubscriptionLogic(subscriptionInfo, calculatedBytesUsed, albumCount, t);
@@ -1172,8 +1580,7 @@ const StorageManagePageContent = () => {
   const handleCancelSubscription = useCallback(async () => {
     setLoading(true);
     try {
-      // Call Stripe to cancel subscription without pro-rata refund
-      await StripeService.cancelSubscription('sub_mock_subscription_id', true);
+      await StripeService.updateSubscription(0, 'none');
       
       setTimeout(() => {
         setSelectedTier(0);
@@ -1225,89 +1632,16 @@ const StorageManagePageContent = () => {
     }
   }, [subscriptionInfo, customGB, selectedTier, albumCount, canDowngrade, handleCancelSubscription, t]);
 
-  const handleStripeSubmit = useCallback(async () => {
-    if (!paymentData.cardNumber || !paymentData.expiryDate || !paymentData.cvc || !paymentData.name) {
-      alert(t('Please fill in all payment fields.'));
-      return;
-    }
+  const handlePaymentSuccess = useCallback(() => {
+    setShowStripe(false);
+    setCustomGB('');
+    setIsPlanSelected(false);
     
-    setLoading(true);
+    alert(t('Payment successful! Your subscription has been updated.'));
     
-    try {
-      let targetTier: number;
-      if (customGB && !isNaN(parseFloat(customGB))) {
-        const inputGB = parseFloat(customGB);
-        if (inputGB < 10) {
-          alert(t('Minimum storage capacity is 10 GB'));
-          setLoading(false);
-          return;
-        }
-        targetTier = selectTierForGB(inputGB, albumCount);
-      } else {
-        targetTier = selectedTier;
-      }
-
-      const currentTier = subscriptionInfo?.intNumberOfSubscriptions || 0;
-      const isUpgrade = targetTier > currentTier;
-      const finalPrice = getPrice(targetTier);
-
-      // Create payment intent
-      const paymentIntent = await StripeService.createPaymentIntent(
-        Math.round(finalPrice * 100), // Convert to cents
-        'usd',
-        ['card', 'alipay', 'wechat_pay']
-      );
-
-      console.log('Payment intent created:', paymentIntent.clientSecret);
-
-      // Update subscription with pro-rata for upgrades, none for downgrades
-      const prorationBehavior = isUpgrade ? 'create_prorations' : 'none';
-      await StripeService.updateSubscription(
-        'sub_mock_subscription_id',
-        `price_${targetTier}`,
-        prorationBehavior
-      );
-
-      setTimeout(() => {
-        console.log('Subscription updated to tier:', targetTier);
-        setLoading(false);
-        setShowStripe(false);
-        setCustomGB('');
-        setIsPlanSelected(false);
-        
-        if (isUpgrade) {
-          alert(t('Payment successful! Your subscription has been upgraded with pro-rata credit applied.'));
-        } else {
-          alert(t('Subscription updated successfully! Changes take effect immediately.'));
-        }
-        
-        setTimeout(() => {
-          redirectTo(generateUrl('my-albums.html'));
-        }, 1500);
-      }, 3000);
-    } catch (error) {
-      setLoading(false);
-      alert(t('Payment failed. Please try again.'));
-    }
-  }, [paymentData, customGB, selectedTier, albumCount, subscriptionInfo, t]);
-
-  const handleInputChange = useCallback((field: string, value: string): void => {
-    let formattedValue = value;
-    
-    if (field === 'cardNumber') {
-      formattedValue = value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim().substring(0, 19);
-    }
-    
-    if (field === 'expiryDate') {
-      formattedValue = value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '$1/$2').substring(0, 5);
-    }
-    
-    if (field === 'cvc') {
-      formattedValue = value.replace(/\D/g, '').substring(0, 4);
-    }
-    
-    setPaymentData(prev => ({ ...prev, [field]: formattedValue }));
-  }, []);
+    // Redirect immediately to my-albums
+    redirectTo(generateUrl('my-albums.html'));
+  }, [t]);
 
   const getButtonText = useCallback(() => {
     if (!subscriptionInfo) return t('Change Plan');
@@ -1416,15 +1750,14 @@ const StorageManagePageContent = () => {
 
       <PaymentModal
         showStripe={showStripe}
-        paymentData={paymentData}
         loading={loading}
         selectedTier={selectedTier}
         customGB={customGB}
         albumCount={albumCount}
         subscriptionInfo={subscriptionInfo}
         onClose={() => setShowStripe(false)}
-        onSubmit={handleStripeSubmit}
-        onInputChange={handleInputChange}
+        onPaymentSuccess={handlePaymentSuccess}
+        setLoading={setLoading}
         t={t}
       />
     </PageContainer>
