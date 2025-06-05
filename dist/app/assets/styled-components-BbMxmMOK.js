@@ -308,7 +308,7 @@ import{aD as g,aE as e,d as t}from"./utils-D-8Cmpza.js";const o={colors:{primary
 `,M=t(l)`
   width: 100%;
   text-align: left;
-  padding: ${o.spacing.md} ${o.spacing.md};
+  padding: ${o.spacing.md};
   background: transparent;
   color: ${o.colors.primary};
   border: none;

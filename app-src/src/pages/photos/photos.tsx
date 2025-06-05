@@ -548,7 +548,7 @@ const PhotoAlbumContent: React.FC = () => {
     };
 
     initAlbum();
-  }, [t, setPasswordPolicy, setIsAuthorized]);
+  }, []);
 
   // Check if user is logged in and get cognito username
   useEffect(() => {
