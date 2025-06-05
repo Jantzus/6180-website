@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Платёж не удался. Пожалуйста, попробуйте ещё раз.",
   "Pay {{amount}} Today": "Оплатить {{amount}} Сегодня",
   "Confirm Change": "Подтвердить Изменение",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Платные уровни имеют неограниченные альбомы и ограничены только хранилищем. Обновления включают пропорциональный кредит за неиспользованное время."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Платные уровни имеют неограниченные альбомы и ограничены только хранилищем. Обновления включают пропорциональный кредит за неиспользованное время.",
+  "Save To 6180": "Сохранить В 6180",
+  "Open On Phone": "Открыть На Телефоне"
 }

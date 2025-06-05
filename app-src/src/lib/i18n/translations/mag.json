@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "पेमेंट फेल भेलै। कृपया फेर कोशिश करू।",
   "Pay {{amount}} Today": "आइ {{amount}} देबै",
   "Confirm Change": "बदलाव पुष्टि करबै",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "पेड टियर में असीमित एल्बम होइत छै आ स्टोरेज सैं ही सीमित छै। अपग्रेड में बिना इस्तेमाल केलौ समयरै लैल प्रो-रेटा क्रेडिट छै।"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "पेड टियर में असीमित एल्बम होइत छै आ स्टोरेज सैं ही सीमित छै। अपग्रेड में बिना इस्तेमाल केलौ समयरै लैल प्रो-रेटा क्रेडिट छै।",
+  "Save To 6180": "6180 में सहेजी",
+  "Open On Phone": "फोन में खोली"
 }

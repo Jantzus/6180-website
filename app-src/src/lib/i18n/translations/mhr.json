@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Сетымаш огеш лий. Пале, угыч ыштен онча.",
   "Pay {{amount}} Today": "Кечывал {{amount}} Пурымаш",
   "Confirm Change": "Вашталтымаш Пеҥгыдемаш",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Акша налеш лиймекат чыландыме албом-влак тувакыт да нуным игече кодаш лийын гын аршашыж гына тудыланат. Сайлаш колтыматыш ок кучылталт кок код ден пропорциональне кредит пура."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Акша налеш лиймекат чыландыме албом-влак тувакыт да нуным игече кодаш лийын гын аршашыж гына тудыланат. Сайлаш колтыматыш ок кучылталт кок код ден пропорциональне кредит пура.",
+  "Save To 6180": "6180-ш Аралаш",
+  "Open On Phone": "Телефон дене Почаш"
 }

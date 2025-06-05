@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "ການຈ່າຍເງິນລົ້ມເຫລວ. ກະລຸນາລອງໃໝ່.",
   "Pay {{amount}} Today": "ຈ່າຍ {{amount}} ມື້ນີ້",
   "Confirm Change": "ຢືນຢັນການປ່ຽນແປງ",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ລະດັບທີ່ຈ່າຍເງິນມີອາລະບໍ້າບໍ່ຈຳກັດ ແລະຖືກຈຳກັດໂດຍການເກັບຮັກສາເທົ່ານັ້ນ. ການປັບປຸງລວມມີເຄຣດິດສັດສ່ວນສໍາລັບເວລາທີ່ບໍ່ໄດ້ໃຊ້."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ລະດັບທີ່ຈ່າຍເງິນມີອາລະບໍ້າບໍ່ຈຳກັດ ແລະຖືກຈຳກັດໂດຍການເກັບຮັກສາເທົ່ານັ້ນ. ການປັບປຸງລວມມີເຄຣດິດສັດສ່ວນສໍາລັບເວລາທີ່ບໍ່ໄດ້ໃຊ້.",
+  "Save To 6180": "ບັນທຶກໃສ່ 6180",
+  "Open On Phone": "ເປີດໃນໂທລະສັບ"
 }

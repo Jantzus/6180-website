@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Ordainketa huts egin du. Mesedez, saiatu berriz.",
   "Pay {{amount}} Today": "{{amount}} Gaur Ordaindu",
   "Confirm Change": "Aldaketa Berretsi",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ordainketa mailak album mugagabeak dituzte eta biltegiratzeagatik soilik mugatzen dira. Eguneraketak erabili gabeko denborarentzako pro-rata kreditu bat daukate."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ordainketa mailak album mugagabeak dituzte eta biltegiratzeagatik soilik mugatzen dira. Eguneraketak erabili gabeko denborarentzako pro-rata kreditu bat daukate.",
+  "Save To 6180": "Gorde 6180-n",
+  "Open On Phone": "Ireki Telefonoan"
 }

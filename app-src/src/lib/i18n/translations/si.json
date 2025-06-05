@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "ගෙවීම අසාර්ථකයි. කරුණාකර නැවත උත්සාහ කරන්න.",
   "Pay {{amount}} Today": "අද {{amount}} ගෙවන්න",
   "Confirm Change": "වෙනස්කම තහවුරු කරන්න",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ගෙවන ස්ථර වල අසීමිත ඇල්බම ඇති අතර ගබඩා කිරීමෙන් පමණක් සීමා වේ. උත්කර්ෂණ වලට භාවිතා නොකළ කාලය සඳහා සමානුපාතික ණය ඇතුළත් වේ."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ගෙවන ස්ථර වල අසීමිත ඇල්බම ඇති අතර ගබඩා කිරීමෙන් පමණක් සීමා වේ. උත්කර්ෂණ වලට භාවිතා නොකළ කාලය සඳහා සමානුපාතික ණය ඇතුළත් වේ.",
+  "Save To 6180": "6180 හි සුරකින්න",
+  "Open On Phone": "දුරකථනයේ විවෘත කරන්න"
 }

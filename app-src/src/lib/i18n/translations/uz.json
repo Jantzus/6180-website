@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "To'lov amalga oshmadi. Iltimos, yana urinib ko'ring.",
   "Pay {{amount}} Today": "Bugun {{amount}} To'lang",
   "Confirm Change": "O'zgarishni Tasdiqlang",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Toʻlovli darajalar cheksiz albumlarga ega va faqat saqlash bilan cheklangan. Yangilanishlar foydalanilmagan vaqt uchun proporsional kredit oʻz ichiga oladi."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Toʻlovli darajalar cheksiz albumlarga ega va faqat saqlash bilan cheklangan. Yangilanishlar foydalanilmagan vaqt uchun proporsional kredit oʻz ichiga oladi.",
+  "Save To 6180": "6180-ga Saqlash",
+  "Open On Phone": "Telefonda Ochish"
 }

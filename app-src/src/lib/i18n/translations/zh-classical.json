@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "付款失敗。請再試之。",
   "Pay {{amount}} Today": "今日付 {{amount}}",
   "Confirm Change": "確認變更",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "付費層級擁有無限專輯，僅受儲存空間限制。升級包含未使用時間之按比例積分。"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "付費層級擁有無限專輯，僅受儲存空間限制。升級包含未使用時間之按比例積分。",
+  "Save To 6180": "存於6180",
+  "Open On Phone": "於機開"
 }

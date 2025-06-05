@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Түләү хата китте. Зинһар, яңынан тырышығыҙ.",
   "Pay {{amount}} Today": "Бөгөн {{amount}} Түләгеҙ",
   "Confirm Change": "Үҙгәрештең Раҫлағыҙ",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Түләүле дәрәжәләрҙә сикһеҙ альбомдар бар һәм бары тик һаҡлағыс менән сикләнгән. Яңыртыуҙарҙа ҡулланылмаған ваҡыт өсөн пропорциональ кредит бар."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Түләүле дәрәжәләрҙә сикһеҙ альбомдар бар һәм бары тик һаҡлағыс менән сикләнгән. Яңыртыуҙарҙа ҡулланылмаған ваҡыт өсөн пропорциональ кредит бар.",
+  "Save To 6180": "6180-ға Һаҡлау",
+  "Open On Phone": "Телефонда Асыу"
 }

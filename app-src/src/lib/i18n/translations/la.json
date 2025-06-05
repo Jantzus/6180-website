@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Solutio defecit. Quaeso denuo temptes.",
   "Pay {{amount}} Today": "Hodie {{amount}} Solve",
   "Confirm Change": "Mutationem Confirma",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Gradi pensilis habent alba illimitata et limitantur solum memoria. Promotiones includunt creditum pro-rata tempori non utenti."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Gradi pensilis habent alba illimitata et limitantur solum memoria. Promotiones includunt creditum pro-rata tempori non utenti.",
+  "Save To 6180": "Serva Ad 6180",
+  "Open On Phone": "Aperi In Telephono"
 }

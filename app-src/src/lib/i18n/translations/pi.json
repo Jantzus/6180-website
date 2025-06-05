@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "निधिदानं न सफलं। कृपया पुनरपि यतनं करोहि।",
   "Pay {{amount}} Today": "अज्ज {{amount}} देहि",
   "Confirm Change": "विपरिणामं निस्सयं करोहि",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "मच्छुलक सोपान अपरिमित सङ्गीतग्रन्थानि धारयन्ति च केवलं भण्डारेण परिच्छिन्नानि भवन्ति। उन्नतयः अप्रयुक्तकालस्य कृते समानुपातिकं ऋणं सम्मिलयन्ति।"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "मच्छुलक सोपान अपरिमित सङ्गीतग्रन्थानि धारयन्ति च केवलं भण्डारेण परिच्छिन्नानि भवन्ति। उन्नतयः अप्रयुक्तकालस्य कृते समानुपातिकं ऋणं सम्मिलयन्ति।",
+  "Save To 6180": "6180 मा रक्खतु",
+  "Open On Phone": "फोने विवरतु"
 }

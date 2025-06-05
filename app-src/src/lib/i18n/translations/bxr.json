@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Төлбөр алдаа болобо. Дахин оролдоно уу.",
   "Pay {{amount}} Today": "Мүнөө {{amount}} түлхэ",
   "Confirm Change": "Солилго Баталха",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Түлэбэритэ түшэгүүд хязгааргүй альбомуудтай байха ба зүбхэн хадгалгаар хязгаарлагдана. Сайжруулалт хэрэглээгүй хугацаанай пропорциональна кредит оруулна."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Түлэбэритэ түшэгүүд хязгааргүй альбомуудтай байха ба зүбхэн хадгалгаар хязгаарлагдана. Сайжруулалт хэрэглээгүй хугацаанай пропорциональна кредит оруулна.",
+  "Save To 6180": "6180-дэ хадагалжа",
+  "Open On Phone": "Утаһан дээрэ нээхэ"
 }

@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "پرداخت شکست خورده. لطفا دگه یته جهد بکونین.",
   "Pay {{amount}} Today": "امروز {{amount}} بدهید",
   "Confirm Change": "تغییر تایید کنید",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "پولی سطحون نامحدود آلبوم دارن و فقط ذخیره‌سازی جی محدود بیه. ارتقائون شامل استفاده نکرده وخت واسه تناسبی اعتبار."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "پولی سطحون نامحدود آلبوم دارن و فقط ذخیره‌سازی جی محدود بیه. ارتقائون شامل استفاده نکرده وخت واسه تناسبی اعتبار.",
+  "Save To 6180": "ذخیره در 6180",
+  "Open On Phone": "تلفن دله واکردن"
 }

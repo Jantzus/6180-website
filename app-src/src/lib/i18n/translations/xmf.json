@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "გადახდა ვერ დაფისირდა. თქვა ვაჟი, მიჭარი ართი.",
   "Pay {{amount}} Today": "დღეს {{amount}} გადააქვთ",
   "Confirm Change": "ცვლილება დოწმუნებაფა",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ღირაფუნ კურდღებაზ უსაკუთრო ალბომეფი რენ დო მარტო მიწოდაფით დოფირუ რენ. განახალებაფი იჩქონთ პრო-რატა კრედიტი ნახარაფუ ქანაშენშა."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ღირაფუნ კურდღებაზ უსაკუთრო ალბომეფი რენ დო მარტო მიწოდაფით დოფირუ რენ. განახალებაფი იჩქონთ პრო-რატა კრედიტი ნახარაფუ ქანაშენშა.",
+  "Save To 6180": "6180-შა დოჭარი",
+  "Open On Phone": "ტელეფონშა გაღაბა"
 }

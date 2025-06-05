@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Пулар гузвай заг. Лутӏа, адкъваз жигьат хьане.",
   "Pay {{amount}} Today": "Гьадан {{amount}} Гун",
   "Confirm Change": "Везни Къуьзуьн",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Акъвазвай дараждин чинвай альбомар ава ва абурун арчивдин зурбалди жедани къидач. Кьулухъандайдин девлетни заманик про-рата кредит аквазни."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Акъвазвай дараждин чинвай альбомар ава ва абурун арчивдин зурбалди жедани къидач. Кьулухъандайдин девлетни заманик про-рата кредит аквазни.",
+  "Save To 6180": "6180-диз Къачун",
+  "Open On Phone": "Телефондиз Авун"
 }

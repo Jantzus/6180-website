@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "El pago falló. Por favor, inténtelo de nuevo.",
   "Pay {{amount}} Today": "Pagar {{amount}} Hoy",
   "Confirm Change": "Confirmar Cambio",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Los niveles de pago tienen álbumes ilimitados y están limitados solo por el almacenamiento. Las actualizaciones incluyen crédito prorrateado por tiempo no utilizado."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Los niveles de pago tienen álbumes ilimitados y están limitados solo por el almacenamiento. Las actualizaciones incluyen crédito prorrateado por tiempo no utilizado.",
+  "Save To 6180": "Guardar En 6180",
+  "Open On Phone": "Abrir En Teléfono"
 }

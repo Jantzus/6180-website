@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Το πληρωμάτον επέτυχεν κι. Παρακαλώ δοκιμάστεν πάλε.",
   "Pay {{amount}} Today": "Πλήρωσον {{amount}} Σήμερον",
   "Confirm Change": "Έπαβέβαιωσον τον Αλλαγήν",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Τα επίπεδα πληρωμής έχν άπειρα άλμπουμ και εν περιοριζόμενα μόνον απ' την αποθήκευσην. Ταν ενημερώσεις έχ'ν αναλογικόν πίστωμαν για χρόνον οπού δεν έφτ χρησιμοποιημένον."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Τα επίπεδα πληρωμής έχν άπειρα άλμπουμ και εν περιοριζόμενα μόνον απ' την αποθήκευσην. Ταν ενημερώσεις έχ'ν αναλογικόν πίστωμαν για χρόνον οπού δεν έφτ χρησιμοποιημένον.",
+  "Save To 6180": "Σώσον Εις 6180",
+  "Open On Phone": "Άνοιξον Εις Τηλέφωνον"
 }

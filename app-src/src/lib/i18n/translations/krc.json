@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Төлеш болмагъанды. Суранам, кене тырышыгъыз.",
   "Pay {{amount}} Today": "Бюгюн {{amount}} Берирге",
   "Confirm Change": "Тутуша Бериу",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Табылгъан тизгинлени чексиз альбомлары барды эм сакълауну кёрюп бек тохтатылгъандыла. Джангыртыула ишлетилмеген заманы учун про-рата кредит къошадыла."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Табылгъан тизгинлени чексиз альбомлары барды эм сакълауну кёрюп бек тохтатылгъандыла. Джангыртыула ишлетилмеген заманы учун про-рата кредит къошадыла.",
+  "Save To 6180": "6180-гъа Сакълау",
+  "Open On Phone": "Телефонда Ач"
 }

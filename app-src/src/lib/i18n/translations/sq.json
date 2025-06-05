@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Pagimi dështoi. Ju lutemi, provoni përsëri.",
   "Pay {{amount}} Today": "Paguani {{amount}} Sot",
   "Confirm Change": "Konfirmo Ndryshimin",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivelet e paguara kanë albume të pakufizuara dhe janë të kufizuara vetëm nga ruajtja. Përditësimet përfshijnë kredi pro-rata për kohën e papërdorur."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivelet e paguara kanë albume të pakufizuara dhe janë të kufizuara vetëm nga ruajtja. Përditësimet përfshijnë kredi pro-rata për kohën e papërdorur.",
+  "Save To 6180": "Ruaj Në 6180",
+  "Open On Phone": "Hap Në Telefon"
 }

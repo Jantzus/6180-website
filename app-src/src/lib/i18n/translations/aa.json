@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Lacagtu way ku guuldaraysatay. Fadlan isku day mar kale.",
   "Pay {{amount}} Today": "Maaluma {{amount}} Manta",
   "Confirm Change": "Beddelka Xaqiiji",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Baaxo guurto alboomka xaddidla'aan qabaan waxaana keliya bakhaarka ku xaddidan. Kordhinta waxaa ku jira qiimaha qayb ahaan ee waqtiga aan la isticmaalin."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Baaxo guurto alboomka xaddidla'aan qabaan waxaana keliya bakhaarka ku xaddidan. Kordhinta waxaa ku jira qiimaha qayb ahaan ee waqtiga aan la isticmaalin.",
+  "Save To 6180": "Sinam 6180-te Kayso",
+  "Open On Phone": "Telefon Kak Silete"
 }

@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Na le manuia le totogi. Fa'amolemole toe fa'afosia.",
   "Pay {{amount}} Today": "Totogi {{amount}} Aso Nei",
   "Confirm Change": "Faʻamaoni le Suiga",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Laasaga totogi e i ai ni api e le gata ma ua fa'atapula'aina na o le fa'aputuga. O fa'aleleia atoa ai le aitalafu pro-rata mo le taimi e le'i fa'aaogaina."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Laasaga totogi e i ai ni api e le gata ma ua fa'atapula'aina na o le fa'aputuga. O fa'aleleia atoa ai le aitalafu pro-rata mo le taimi e le'i fa'aaogaina.",
+  "Save To 6180": "Fa'asao I 6180",
+  "Open On Phone": "Tatala I Le Telefoni"
 }

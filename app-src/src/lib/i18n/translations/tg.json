@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Пардохт нагузашт. Илтимос дубора кӯшиш кунед.",
   "Pay {{amount}} Today": "Имрӯз {{amount}} Пардохт",
   "Confirm Change": "Тағйиротро Тасдиқ Кунед",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Сатҳҳои пулакии альбомҳои номаҳдуд доранд ва танҳо бо захирагоҳ маҳдуданд. Навсозиҳо кредити мутаносиб барои вақти истифаданашударо дар бар мегиранд."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Сатҳҳои пулакии альбомҳои номаҳдуд доранд ва танҳо бо захирагоҳ маҳдуданд. Навсозиҳо кредити мутаносиб барои вақти истифаданашударо дар бар мегиранд.",
+  "Save To 6180": "Дар 6180 Нигоҳ Доред",
+  "Open On Phone": "Дар Телефон Кушодан"
 }

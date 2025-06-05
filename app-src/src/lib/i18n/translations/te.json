@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "చెల్లింపు విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి।",
   "Pay {{amount}} Today": "ఈరోజు {{amount}} చెల్లించండి",
   "Confirm Change": "మార్పును నిర్ధారించండి",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "చెల్లింపు స్థాయిలలో అపరిమిత ఆల్బమ్‌లు ఉన్నాయి మరియు నిల్వ ద్వారా మాత్రమే పరిమితం చేయబడతాయి. అప్‌గ్రేడ్‌లలో ఉపయోగించని సమయం కోసం ప్రో-రేటా క్రెడిట్ ఉంటుంది."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "చెల్లింపు స్థాయిలలో అపరిమిత ఆల్బమ్‌లు ఉన్నాయి మరియు నిల్వ ద్వారా మాత్రమే పరిమితం చేయబడతాయి. అప్‌గ్రేడ్‌లలో ఉపయోగించని సమయం కోసం ప్రో-రేటా క్రెడిట్ ఉంటుంది.",
+  "Save To 6180": "6180 లో సేవ్ చేయండి",
+  "Open On Phone": "ఫోన్‌లో తెరవండి"
 }

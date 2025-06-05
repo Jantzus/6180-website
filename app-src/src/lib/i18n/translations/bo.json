@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "སྤྲོད་པ་ཕམ་པ། ཡང་བསྐྱར་རྩོལ་བ་གནང་།",
   "Pay {{amount}} Today": "དེ་རིང་{{amount}}སྤྲོད་རོགས།",
   "Confirm Change": "འགྱུར་བ་ངེས་པར་བྱེད།",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "དངུལ་སྤྲད་རིམ་པ་ལ་མཚམས་མེད་གླུ་ཚོམས་ཡོད་ལ་གསོག་ཉར་གྱིས་རྐྱང་པས་ཚད་བཅད། ཡར་རྒྱས་ལ་མི་སྤྱོད་དུས་ཚོད་ཀྱི་ཆ་སྙོམས་ཚབ་གླ་ཚུད།"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "དངུལ་སྤྲད་རིམ་པ་ལ་མཚམས་མེད་གླུ་ཚོམས་ཡོད་ལ་གསོག་ཉར་གྱིས་རྐྱང་པས་ཚད་བཅད། ཡར་རྒྱས་ལ་མི་སྤྱོད་དུས་ཚོད་ཀྱི་ཆ་སྙོམས་ཚབ་གླ་ཚུད།",
+  "Save To 6180": "6180་ལ་ཉར་ཚགས།",
+  "Open On Phone": "ཁ་པར་ནང་དུ་ཕྱེ།"
 }

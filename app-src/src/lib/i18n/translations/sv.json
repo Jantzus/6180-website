@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Betalning misslyckades. Vänligen försök igen.",
   "Pay {{amount}} Today": "Betala {{amount}} Idag",
   "Confirm Change": "Bekräfta Ändring",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betalda nivåer har obegränsade album och begränsas endast av lagring. Uppgraderingar inkluderar proportionell kredit för oanvänd tid."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betalda nivåer har obegränsade album och begränsas endast av lagring. Uppgraderingar inkluderar proportionell kredit för oanvänd tid.",
+  "Save To 6180": "Spara I 6180",
+  "Open On Phone": "Öppna På Telefon"
 }

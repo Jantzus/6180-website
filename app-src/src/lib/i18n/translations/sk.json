@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Platba sa nepodarila. Prosím skúste to znovu.",
   "Pay {{amount}} Today": "Zaplatiť {{amount}} Dnes",
   "Confirm Change": "Potvrdiť Zmenu",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Platené úrovne majú neobmedzené albumy a sú obmedzené len úložiskom. Aktualizácie zahŕňajú pomerný kredit za nevyužitý čas."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Platené úrovne majú neobmedzené albumy a sú obmedzené len úložiskom. Aktualizácie zahŕňajú pomerný kredit za nevyužitý čas.",
+  "Save To 6180": "Uložiť Do 6180",
+  "Open On Phone": "Otvoriť V Telefóne"
 }

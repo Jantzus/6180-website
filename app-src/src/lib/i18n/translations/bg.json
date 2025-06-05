@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Плащането се провали. Моля, опитайте отново.",
   "Pay {{amount}} Today": "Платете {{amount}} Днес",
   "Confirm Change": "Потвърдете Промяната",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Платените нива имат неограничени албуми и са ограничени само от хранилището. Надстройките включват пропорционален кредит за неизползвано време."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Платените нива имат неограничени албуми и са ограничени само от хранилището. Надстройките включват пропорционален кредит за неизползвано време.",
+  "Save To 6180": "Запази В 6180",
+  "Open On Phone": "Отвори На Телефона"
 }

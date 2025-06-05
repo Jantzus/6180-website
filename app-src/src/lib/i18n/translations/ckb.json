@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "پارەدان شکستی هێنا. تکایە دووبارە هەوڵبدەرەوە.",
   "Pay {{amount}} Today": "ئەمڕۆ {{amount}} بدە",
   "Confirm Change": "گۆڕانکاری پشتڕاست بکەوە",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ئاستەکانی پارەدان ئەلبوومی سنوورسیان هەیە و تەنها بە هەڵگر سنوردارن. بەرزکردنەوەکان کرێدیتی پرۆ-ڕاتا بۆ کاتی بەکارنەهاتوو دەگرنەوە."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ئاستەکانی پارەدان ئەلبوومی سنوورسیان هەیە و تەنها بە هەڵگر سنوردارن. بەرزکردنەوەکان کرێدیتی پرۆ-ڕاتا بۆ کاتی بەکارنەهاتوو دەگرنەوە.",
+  "Save To 6180": "پاشەکەوت بکە لە 6180",
+  "Open On Phone": "لە مۆبایلدا بکەوە"
 }

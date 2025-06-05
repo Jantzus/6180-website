@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "A fizetés sikertelen. Kérjük, próbálja újra.",
   "Pay {{amount}} Today": "Fizesse Ki {{amount}} Ma",
   "Confirm Change": "Változtatás Megerősítése",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "A fizetős szintek korlátlan albumokkal rendelkeznek és csak a tárhellyel vannak korlátozva. A frissítések tartalmazzák a fel nem használt időre vonatkozó arányos jóváírást."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "A fizetős szintek korlátlan albumokkal rendelkeznek és csak a tárhellyel vannak korlátozva. A frissítések tartalmazzák a fel nem használt időre vonatkozó arányos jóváírást.",
+  "Save To 6180": "Mentés A 6180-ba",
+  "Open On Phone": "Megnyitás A Telefonon"
 }

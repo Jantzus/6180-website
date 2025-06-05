@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Maksu epäonnistui. Yritä uudelleen.",
   "Pay {{amount}} Today": "Maksa {{amount}} Tänään",
   "Confirm Change": "Vahvista Muutos",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maksullisilla tasoilla on rajattomat albumit ja ne rajoittuvat vain tallennustilaan. Päivitykset sisältävät suhteellisen hyvityksen käyttämättömästä ajasta."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maksullisilla tasoilla on rajattomat albumit ja ne rajoittuvat vain tallennustilaan. Päivitykset sisältävät suhteellisen hyvityksen käyttämättömästä ajasta.",
+  "Save To 6180": "Tallenna Kansioon 6180",
+  "Open On Phone": "Avaa Puhelimessa"
 }

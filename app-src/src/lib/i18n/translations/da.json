@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Betaling mislykkedes. Prøv venligst igen.",
   "Pay {{amount}} Today": "Betal {{amount}} I Dag",
   "Confirm Change": "Bekræft Ændring",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betalte niveauer har ubegrænsede albums og er kun begrænset af lagerplads. Opgraderinger inkluderer pro-rata kredit for ubrugt tid."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betalte niveauer har ubegrænsede albums og er kun begrænset af lagerplads. Opgraderinger inkluderer pro-rata kredit for ubrugt tid.",
+  "Save To 6180": "Gem I 6180",
+  "Open On Phone": "Åbn På Telefon"
 }

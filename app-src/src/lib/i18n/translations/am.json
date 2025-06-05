@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "ክፍያ አልተሳካም። እባክዎ እንደገና ይሞክሩ።",
   "Pay {{amount}} Today": "ዛሬ {{amount}} ይክፈሉ",
   "Confirm Change": "ለውጡን ያረጋግጡ",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "የተከፈሉ ደረጃዎች ያልተገደቡ አልበሞች አላቸው እና በማከማቻ ብቻ የተገደቡ ናቸው። ማሻሻያዎች ያልተጠቀመበት ጊዜ የሚመጣጠን ክሬዲት ያካትታሉ።"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "የተከፈሉ ደረጃዎች ያልተገደቡ አልበሞች አላቸው እና በማከማቻ ብቻ የተገደቡ ናቸው። ማሻሻያዎች ያልተጠቀመበት ጊዜ የሚመጣጠን ክሬዲት ያካትታሉ።",
+  "Save To 6180": "ወደ 6180 አስቀምጥ",
+  "Open On Phone": "በስልክ ላይ ክፈት"
 }

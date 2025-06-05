@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "பணம் செலுத்துதல் தோல்வியடைந்தது। தயவுசெய்து மீண்டும் முயற்சிக்கவும்.",
   "Pay {{amount}} Today": "இன்று {{amount}} செலுத்துங்கள்",
   "Confirm Change": "மாற்றத்தை உறுதிப்படுத்துங்கள்",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "கட்டண நிலைகளில் வரம்பற்ற ஆல்பங்கள் உள்ளன மற்றும் சேமிப்பகத்தால் மட்டுமே வரையறுக்கப்படுகின்றன. மேம்படுத்தல்களில் பயன்படுத்தப்படாத நேரத்திற்கான விகிதாச்சார கடன் அடங்கும்."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "கட்டண நிலைகளில் வரம்பற்ற ஆல்பங்கள் உள்ளன மற்றும் சேமிப்பகத்தால் மட்டுமே வரையறுக்கப்படுகின்றன. மேம்படுத்தல்களில் பயன்படுத்தப்படாத நேரத்திற்கான விகிதாச்சார கடன் அடங்கும்.",
+  "Save To 6180": "6180 இல் சேமிக்கவும்",
+  "Open On Phone": "ஃபோனில் திறக்கவும்"
 }

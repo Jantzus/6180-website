@@ -493,7 +493,7 @@ export const HamburgerLine = styled.span`
 export const DropdownMenuChoice = styled(Button)`
   width: 100%;
   text-align: left;
-  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  padding: ${theme.spacing.md};
   background: transparent;
   color: ${theme.colors.primary};
   border: none;
@@ -1080,7 +1080,6 @@ export const DropdownMenu = styled.div`
   padding: ${theme.spacing.sm};
   display: flex;
   flex-direction: column;
-  gap: ${theme.spacing.sm};
   min-width: 180px;
   margin-top: ${theme.spacing.xs};
 `;

@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "پرداخت ناکام بی. تکایه دگه یته وار ازمایش کو.",
   "Pay {{amount}} Today": "امروز {{amount}} بدهید",
   "Confirm Change": "تغییرات تایید کنید",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "مرحلؤنی کئ پول می دئن آلبوم سی بی انتها هأن و فقط وا ذخیره محدود بیئن. ارتقائون شامل اعتبار تناسبی واسه وختایی کئ استفاده نکردین."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "مرحلؤنی کئ پول می دئن آلبوم سی بی انتها هأن و فقط وا ذخیره محدود بیئن. ارتقائون شامل اعتبار تناسبی واسه وختایی کئ استفاده نکردین.",
+  "Save To 6180": "نهاداشتن ته 6180",
+  "Open On Phone": "واکردن ته تلفن"
 }

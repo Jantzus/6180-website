@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "התשלום נכשל. אנא נסו שוב.",
   "Pay {{amount}} Today": "שלם {{amount}} היום",
   "Confirm Change": "אשר שינוי",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "לדרגות התשלום יש אלבומים ללא הגבלה והם מוגבלים רק על ידי אחסון. שדרוגים כוללים זיכוי יחסי לזמן שלא נוצל."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "לדרגות התשלום יש אלבומים ללא הגבלה והם מוגבלים רק על ידי אחסון. שדרוגים כוללים זיכוי יחסי לזמן שלא נוצל.",
+  "Save To 6180": "שמור ב-6180",
+  "Open On Phone": "פתח בטלפון"
 }

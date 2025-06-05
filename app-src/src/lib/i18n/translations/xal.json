@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Төлвр бичгдәнч. Күүкд дахин бодхой.",
   "Pay {{amount}} Today": "Өнөдер {{amount}} Төлх",
   "Confirm Change": "Өөрчлгиг Батлх",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Төлврт дәәҗ үнрәсн цомгудтә бәәнә болн зөв арһлһнар үнрлдҗәнә. Сәәхн болвн зогсч түүхә гиһәд про-рата кредит дотрна."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Төлврт дәәҗ үнрәсн цомгудтә бәәнә болн зөв арһлһнар үнрлдҗәнә. Сәәхн болвн зогсч түүхә гиһәд про-рата кредит дотрна.",
+  "Save To 6180": "6180-д Авхлх",
+  "Open On Phone": "Утснд Нээх"
 }

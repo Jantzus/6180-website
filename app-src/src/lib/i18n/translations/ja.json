@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "支払いに失敗しました。もう一度お試しください。",
   "Pay {{amount}} Today": "今日{{amount}}を支払う",
   "Confirm Change": "変更を確認",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "有料ティアは無制限のアルバムを持ち、ストレージによってのみ制限されます。アップグレードには、未使用時間の按分クレジットが含まれます。"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "有料ティアは無制限のアルバムを持ち、ストレージによってのみ制限されます。アップグレードには、未使用時間の按分クレジットが含まれます。",
+  "Save To 6180": "6180に保存",
+  "Open On Phone": "電話で開く"
 }

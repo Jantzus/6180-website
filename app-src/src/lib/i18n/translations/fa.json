@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "پرداخت ناموفق بود. لطفا دوباره تلاش کنید.",
   "Pay {{amount}} Today": "امروز {{amount}} پرداخت کنید",
   "Confirm Change": "تایید تغییر",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "سطوح پولی آلبوم‌های نامحدود دارند و فقط توسط فضای ذخیره‌سازی محدود می‌شوند. ارتقاها شامل اعتبار تناسبی برای زمان استفاده نشده است."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "سطوح پولی آلبوم‌های نامحدود دارند و فقط توسط فضای ذخیره‌سازی محدود می‌شوند. ارتقاها شامل اعتبار تناسبی برای زمان استفاده نشده است.",
+  "Save To 6180": "ذخیره در 6180",
+  "Open On Phone": "باز کردن روی تلفن"
 }

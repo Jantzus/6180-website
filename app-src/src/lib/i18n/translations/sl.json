@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Plačilo ni uspelo. Prosim, poskusite znova.",
   "Pay {{amount}} Today": "Plačajte {{amount}} Danes",
   "Confirm Change": "Potrdite Spremembo",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Plačljivi nivoji imajo neomejene albume in so omejeni le s shranjevanjem. Nadgradnje vključujejo sorazmerni kredit za neuporabljen čas."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Plačljivi nivoji imajo neomejene albume in so omejeni le s shranjevanjem. Nadgradnje vključujejo sorazmerni kredit za neuporabljen čas.",
+  "Save To 6180": "Shrani V 6180",
+  "Open On Phone": "Odpri Na Telefonu"
 }

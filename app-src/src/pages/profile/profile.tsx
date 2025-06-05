@@ -128,6 +128,20 @@ const PersonaViewer: React.FC = () => {
     checkLogin();
   }, []);
 
+  // Update page title when profile username changes
+  useEffect(() => {
+    if (profileUsername) {
+      document.title = profileUsername;
+    } else {
+      document.title = '6180 bio'; // Fallback to original title
+    }
+    
+    // Optional: Clean up on unmount by restoring original title
+    return () => {
+      document.title = '6180 bio';
+    };
+  }, [profileUsername]);
+
   // Function to fetch contact position based on public display name
   const fetchContactPositionBasedOnPublicDisplayName = async (publicDisplayName: string) => {
     setIsLoading(true);

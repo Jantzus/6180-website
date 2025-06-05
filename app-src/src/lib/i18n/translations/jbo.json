@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "lo jdini pleji cu fliba .i ko troci",
   "Pay {{amount}} Today": "cabna {{amount}} pleji",
   "Confirm Change": "galfi kampu",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "lo te jdima pagbu cu ponse lo cnano cukta girzu .i cu sepli po'o lo vreji .i lo zenba cu cmima lo frica feikamni ki'u lo na pilno temci"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "lo te jdima pagbu cu ponse lo cnano cukta girzu .i cu sepli po'o lo vreji .i lo zenba cu cmima lo frica feikamni ki'u lo na pilno temci",
+  "Save To 6180": "vreji fi 6180",
+  "Open On Phone": "gasnu fi lo fonxa"
 }

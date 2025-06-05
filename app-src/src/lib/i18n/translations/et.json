@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Makse ebaõnnestus. Palun proovige uuesti.",
   "Pay {{amount}} Today": "Maksa {{amount}} Täna",
   "Confirm Change": "Kinnita Muudatus",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tasulistel tasemetel on piiramatud albumid ja neid piirab ainult salvestusruum. Täiendused sisaldavad proportsionaalset krediiti kasutamata aja eest."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tasulistel tasemetel on piiramatud albumid ja neid piirab ainult salvestusruum. Täiendused sisaldavad proportsionaalset krediiti kasutamata aja eest.",
+  "Save To 6180": "Salvesta Kausta 6180",
+  "Open On Phone": "Ava Telefonis"
 }

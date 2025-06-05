@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Maksājums neizdevās. Lūdzu, mēģiniet vēlreiz.",
   "Pay {{amount}} Today": "Maksājiet {{amount}} Šodien",
   "Confirm Change": "Apstiprināt Izmaiņas",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maksas līmeņiem ir neierobežoti albumi un tos ierobežo tikai glabāšana. Uzlabojumi ietver proporcionālu kredītu neizmantotajam laikam."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maksas līmeņiem ir neierobežoti albumi un tos ierobežo tikai glabāšana. Uzlabojumi ietver proporcionālu kredītu neizmantotajam laikam.",
+  "Save To 6180": "Saglabāt Uz 6180",
+  "Open On Phone": "Atvērt Telefonā"
 }

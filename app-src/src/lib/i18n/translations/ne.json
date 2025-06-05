@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "भुक्तानी असफल भयो। कृपया फेरि प्रयास गर्नुहोस्।",
   "Pay {{amount}} Today": "आज {{amount}} तिर्नुहोस्",
   "Confirm Change": "परिवर्तन पुष्टि गर्नुहोस्",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "सशुल्क तहहरूमा असीमित एल्बमहरू छन् र भण्डारणद्वारा मात्र सीमित छन्। अपग्रेडहरूमा अप्रयुक्त समयको लागि समानुपातिक क्रेडिट समावेश छ।"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "सशुल्क तहहरूमा असीमित एल्बमहरू छन् र भण्डारणद्वारा मात्र सीमित छन्। अपग्रेडहरूमा अप्रयुक्त समयको लागि समानुपातिक क्रेडिट समावेश छ।",
+  "Save To 6180": "6180 मा सेभ गर्नुहोस्",
+  "Open On Phone": "फोनमा खोल्नुहोस्"
 }

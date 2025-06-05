@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "გადახდა ვერ მოხერხდა. გთხოვთ კვლავ სცადოთ.",
   "Pay {{amount}} Today": "დღეს {{amount}} გადაიხადეთ",
   "Confirm Change": "ცვლილების დადასტურება",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "გადახდილ დონეებს აქვთ შეუზღუდავი ალბომები და შეზღუდულია მხოლოდ მეხსიერებით. განახლებები მოიცავს პროპორციულ კრედიტს გამოუყენებელი დროისთვის."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "გადახდილ დონეებს აქვთ შეუზღუდავი ალბომები და შეზღუდულია მხოლოდ მეხსიერებით. განახლებები მოიცავს პროპორციულ კრედიტს გამოუყენებელი დროისთვის.",
+  "Save To 6180": "შენახვა 6180-ში",
+  "Open On Phone": "გახსნა ტელეფონზე"
 }

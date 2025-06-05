@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "ورکړه ناکامه شوه. مهرباني وکړئ بیا هڅه وکړئ.",
   "Pay {{amount}} Today": "نن {{amount}} ورکړئ",
   "Confirm Change": "بدلون تصدیق کړئ",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "د پیسو ورکولو کچو کې بې شمیره البومونه شته او یوازې د ذخیره کولو څخه محدود دي. پرمختګونو کې د نه کارول شوي وخت لپاره د نسبي کریډیټ شامل دي."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "د پیسو ورکولو کچو کې بې شمیره البومونه شته او یوازې د ذخیره کولو څخه محدود دي. پرمختګونو کې د نه کارول شوي وخت لپاره د نسبي کریډیټ شامل دي.",
+  "Save To 6180": "په 6180 کې وساتئ",
+  "Open On Phone": "په تلیفون کې پرانیزئ"
 }

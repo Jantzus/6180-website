@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Mokėjimas nepavyko. Bandykite dar kartą.",
   "Pay {{amount}} Today": "Mokėkite {{amount}} Šiandien",
   "Confirm Change": "Patvirtinti Pakeitimą",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Mokamų lygių albumai yra neriboti ir ribojami tik saugyklos. Atnaujinimams priklauso proporcinis kreditas nepanaudotam laikui."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Mokamų lygių albumai yra neriboti ir ribojami tik saugyklos. Atnaujinimams priklauso proporcinis kreditas nepanaudotam laikui.",
+  "Save To 6180": "Išsaugoti Į 6180",
+  "Open On Phone": "Atidaryti Telefone"
 }

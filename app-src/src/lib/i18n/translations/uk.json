@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Платіж не вдався. Будь ласка, спробуйте ще раз.",
   "Pay {{amount}} Today": "Сплатити {{amount}} Сьогодні",
   "Confirm Change": "Підтвердити Зміну",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Платні рівні мають необмежені альбоми і обмежені лише сховищем. Оновлення включають пропорційний кредит за невикористаний час."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Платні рівні мають необмежені альбоми і обмежені лише сховищем. Оновлення включають пропорційний кредит за невикористаний час.",
+  "Save To 6180": "Зберегти До 6180",
+  "Open On Phone": "Відкрити На Телефоні"
 }

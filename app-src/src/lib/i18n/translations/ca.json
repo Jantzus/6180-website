@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "El pagament ha fallat. Si us plau, torneu-ho a provar.",
   "Pay {{amount}} Today": "Pagar {{amount}} Avui",
   "Confirm Change": "Confirmar Canvi",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Els nivells de pagament tenen àlbums il·limitats i només estan limitats per l'emmagatzematge. Les actualitzacions inclouen crèdit prorrateig per temps no utilitzat."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Els nivells de pagament tenen àlbums il·limitats i només estan limitats per l'emmagatzematge. Les actualitzacions inclouen crèdit prorrateig per temps no utilitzat.",
+  "Save To 6180": "Desar A 6180",
+  "Open On Phone": "Obrir Al Telèfon"
 }

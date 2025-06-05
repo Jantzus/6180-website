@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "പേയ്‌മെന്റ് പരാജയപ്പെട്ടു. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
   "Pay {{amount}} Today": "ഇന്ന് {{amount}} നൽകുക",
   "Confirm Change": "മാറ്റം സ്ഥിരീകരിക്കുക",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "പണമടച്ചുള്ള ടയറുകൾക്ക് പരിധിയില്ലാത്ത ആൽബങ്ങളുണ്ട്, സ്റ്റോറേജ് മാത്രമാണ് പരിധി. അപ്‌ഗ്രേഡുകളിൽ ഉപയോഗിക്കാത്ത സമയത്തിന് പ്രോ-റാറ്റാ ക്രെഡിറ്റ് ഉൾപ്പെടുന്നു."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "പണമടച്ചുള്ള ടയറുകൾക്ക് പരിധിയില്ലാത്ത ആൽബങ്ങളുണ്ട്, സ്റ്റോറേജ് മാത്രമാണ് പരിധി. അപ്‌ഗ്രേഡുകളിൽ ഉപയോഗിക്കാത്ത സമയത്തിന് പ്രോ-റാറ്റാ ക്രെഡിറ്റ് ഉൾപ്പെടുന്നു.",
+  "Save To 6180": "6180-ൽ സേവ് ചെയ്യുക",
+  "Open On Phone": "ഫോണിൽ തുറക്കുക"
 }

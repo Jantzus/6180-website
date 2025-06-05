@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Төлем сәтсіз аяқталды. Қайта көріңіз.",
   "Pay {{amount}} Today": "Бүгін {{amount}} Төлеңіз",
   "Confirm Change": "Өзгерісті Растаңыз",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ақылы деңгейлерде шексіз альбомдар бар және тек сақтаумен шектеледі. Жаңартулар пайдаланылмаған уақыт үшін пропорционалды несие қамтиды."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ақылы деңгейлерде шексіз альбомдар бар және тек сақтаумен шектеледі. Жаңартулар пайдаланылмаған уақыт үшін пропорционалды несие қамтиды.",
+  "Save To 6180": "6180-ге Сақтау",
+  "Open On Phone": "Телефонда Ашу"
 }

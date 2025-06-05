@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "ငွေပေးချေမှု မအောင်မြင်ပါ။ ကျေးဇူးပြု၍ ထပ်မံကြိုးစားပါ။",
   "Pay {{amount}} Today": "ယနေ့ {{amount}} ပေးပါ",
   "Confirm Change": "ပြောင်းလဲမှုကို အတည်ပြုပါ",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ငွေပေးအဆင့်များတွင် ကန့်သတ်ချက်မရှိသော အယ်လ်ဘမ်များရှိပြီး သိုလှောင်မှုတစ်ခုတည်းကသာ ကန့်သတ်ထားသည်။ အဆင့်မြှင့်တင်မှုများတွင် အသုံးမပြုသောအချိန်အတွက် အချိုးကျခရက်ဒစ်ပါဝင်သည်။"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ငွေပေးအဆင့်များတွင် ကန့်သတ်ချက်မရှိသော အယ်လ်ဘမ်များရှိပြီး သိုလှောင်မှုတစ်ခုတည်းကသာ ကန့်သတ်ထားသည်။ အဆင့်မြှင့်တင်မှုများတွင် အသုံးမပြုသောအချိန်အတွက် အချိုးကျခရက်ဒစ်ပါဝင်သည်။",
+  "Save To 6180": "6180 တွင်သိမ်းဆည်းပါ",
+  "Open On Phone": "ဖုန်းတွင်ဖွင့်ပါ"
 }

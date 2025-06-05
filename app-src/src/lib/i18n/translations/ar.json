@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "فشل الدفع. يرجى المحاولة مرة أخرى.",
   "Pay {{amount}} Today": "ادفع {{amount}} اليوم",
   "Confirm Change": "تأكيد التغيير",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "المستويات المدفوعة لديها ألبومات غير محدودة ومحدودة فقط بالتخزين. التحديثات تشمل ائتمان تناسبي للوقت غير المستخدم."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "المستويات المدفوعة لديها ألبومات غير محدودة ومحدودة فقط بالتخزين. التحديثات تشمل ائتمان تناسبي للوقت غير المستخدم.",
+  "Save To 6180": "حفظ في 6180",
+  "Open On Phone": "افتح على الهاتف"
 }

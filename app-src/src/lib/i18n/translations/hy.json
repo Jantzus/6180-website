@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Վճարումը ձախողվեց: Խնդրում ենք փորձել կրկին:",
   "Pay {{amount}} Today": "Այսօր {{amount}} Վճարեք",
   "Confirm Change": "Հաստատել Փոփոխությունը",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Վճարովի մակարդակները ունեն անսահմանափակ ալբոմներ և սահմանափակվում են միայն պահեստով: Թարմացումները ներառում են չօգտագործված ժամանակի համար համաչափ կրեդիտ:"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Վճարովի մակարդակները ունեն անսահմանափակ ալբոմներ և սահմանափակվում են միայն պահեստով: Թարմացումները ներառում են չօգտագործված ժամանակի համար համաչափ կրեդիտ:",
+  "Save To 6180": "Պահել 6180-ում",
+  "Open On Phone": "Բացել Հեռախոսով"
 }

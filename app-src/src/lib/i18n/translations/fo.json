@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Skuldargjalding miseydnaðist. Vinarliga royn aftur.",
   "Pay {{amount}} Today": "Rinda {{amount}} Í Dag",
   "Confirm Change": "Vátta Broytingina",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Gjaldandi stig hava ójavnaðar album og eru avmarkaðar bara av goymslu. Uppgráðingar innihalda pro-rata virðisávísing fyri óbrúkta tíð."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Gjaldandi stig hava ójavnaðar album og eru avmarkaðar bara av goymslu. Uppgráðingar innihalda pro-rata virðisávísing fyri óbrúkta tíð.",
+  "Save To 6180": "Goym Í 6180",
+  "Open On Phone": "Lat Upp Í Telefon"
 }

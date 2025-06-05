@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Ödəniş uğursuz oldu. Zəhmət olmasa, yenidən cəhd edin.",
   "Pay {{amount}} Today": "Bu Gün {{amount}} Ödəyin",
   "Confirm Change": "Dəyişikliyi Təsdiq Et",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ödənişli səviyyələrin limitsiz albumları var və yalnız yaddaşla məhdudlaşır. Yenilənmələr istifadə olunmamış vaxt üçün mütənasib kredit daxildir."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ödənişli səviyyələrin limitsiz albumları var və yalnız yaddaşla məhdudlaşır. Yenilənmələr istifadə olunmamış vaxt üçün mütənasib kredit daxildir.",
+  "Save To 6180": "6180-ə Saxlayın",
+  "Open On Phone": "Telefonda Açın"
 }

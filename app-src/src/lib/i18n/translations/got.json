@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "𐌿𐍃𐌲𐌹𐌻𐌳𐌰 𐌽𐌹 𐌲𐌰𐌸𐌹𐍅𐌰. 𐍆𐌰𐌹𐍂𐌰𐌹𐌷 𐍃𐍉𐌺𐌴𐌹𐌸 𐌰𐍆𐍄𐍂𐌰.",
   "Pay {{amount}} Today": "𐌷𐌹𐌼𐌼𐌰 𐌳𐌰𐌲𐌰 {{amount}} 𐌲𐌹𐌱𐌰𐌽",
   "Confirm Change": "𐌲𐌰𐍃𐌺𐌰𐍆𐍄 𐌲𐌰𐍄𐌿𐌻𐌾𐌰𐌽",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "𐍃𐌺𐌰𐍄𐍄𐌰𐌼 𐌲𐌰𐌳𐌰𐌻𐌰 𐌷𐌰𐌱𐌰𐌽𐌳 𐌿𐌽𐌹𐌽𐌰𐌽𐌳𐌰𐌽𐍃 𐌰𐌻𐌱𐌿𐌼𐍃 𐌾𐌰𐌷 𐌸𐌰𐌹𐍂𐌷 𐍆𐌰𐌿𐍂𐌰𐌳𐌰𐌷𐍃 𐌰𐌹𐌽𐌰 𐌲𐌰𐌼𐌰𐌻𐌴𐌹𐌽 𐍃𐌹𐌽𐌳. 𐌿𐍃𐍅𐌰𐌿𐍂𐌷𐍄𐌴𐌹𐌽𐍃 𐌹𐌽𐌽𐌹𐌸𐌰𐌷𐌰𐌱𐌰𐌽𐌳 𐍀𐍂𐍉-𐍂𐌰𐍄𐌰 𐍃𐌺𐌿𐌻𐌳 𐍆𐍂𐌰𐌼 𐌿𐌽𐌽𐌿𐍄𐌰 𐌼𐌴𐌻𐌰."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "𐍃𐌺𐌰𐍄𐍄𐌰𐌼 𐌲𐌰𐌳𐌰𐌻𐌰 𐌷𐌰𐌱𐌰𐌽𐌳 𐌿𐌽𐌹𐌽𐌰𐌽𐌳𐌰𐌽𐍃 𐌰𐌻𐌱𐌿𐌼𐍃 𐌾𐌰𐌷 𐌸𐌰𐌹𐍂𐌷 𐍆𐌰𐌿𐍂𐌰𐌳𐌰𐌷𐍃 𐌰𐌹𐌽𐌰 𐌲𐌰𐌼𐌰𐌻𐌴𐌹𐌽 𐍃𐌹𐌽𐌳. 𐌿𐍃𐍅𐌰𐌿𐍂𐌷𐍄𐌴𐌹𐌽𐍃 𐌹𐌽𐌽𐌹𐌸𐌰𐌷𐌰𐌱𐌰𐌽𐌳 𐍀𐍂𐍉-𐍂𐌰𐍄𐌰 𐍃𐌺𐌿𐌻𐌳 𐍆𐍂𐌰𐌼 𐌿𐌽𐌽𐌿𐍄𐌰 𐌼𐌴𐌻𐌰.",
+  "Save To 6180": "𐌳𐌿 6180 𐌲𐌰𐍆𐌰𐍃𐍄𐌾𐌰𐌽",
+  "Open On Phone": "𐌰𐌽𐌰 𐍄𐌰𐌹𐌷𐌿𐌽 𐌿𐍃𐌻𐌿𐌺𐌰𐌽"
 }

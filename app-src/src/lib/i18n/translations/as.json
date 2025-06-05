@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "পেমেণ্ট ব্যৰ্থ হৈছে। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
   "Pay {{amount}} Today": "আজি {{amount}} দিয়ক",
   "Confirm Change": "পৰিৱর্তন নিশ্চিত কৰক",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "পৰিশোধিত স্তৰসমূহৰ অসীমিত এলবাম আছে আৰু কেৱল সঞ্চয়াগাৰৰ দ্বাৰা সীমিত। উন্নতিত অব্যৱহৃত সময়ৰ বাবে অনুপাতিক ক্ৰেডিট অন্তৰ্ভুক্ত।"
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "পৰিশোধিত স্তৰসমূহৰ অসীমিত এলবাম আছে আৰু কেৱল সঞ্চয়াগাৰৰ দ্বাৰা সীমিত। উন্নতিত অব্যৱহৃত সময়ৰ বাবে অনুপাতিক ক্ৰেডিট অন্তৰ্ভুক্ত।",
+  "Save To 6180": "6180-ত সংৰক্ষণ কৰক",
+  "Open On Phone": "ফোনত খোলক"
 }

@@ -65,7 +65,7 @@ export const downloadPhotos = (
     // Create a content wrapper with scrolling
     const contentWrapper = document.createElement('div');
     contentWrapper.style.overflow = 'auto';
-    contentWrapper.style.padding = '16px';
+    contentWrapper.style.padding = '0px 16px';
     contentWrapper.style.flexGrow = '1';
     contentWrapper.style.width = '100%';
     contentWrapper.style.boxSizing = 'border-box'; // Ensure padding is included in width calculation
@@ -155,8 +155,6 @@ export const downloadPhotos = (
     
     explanationText.innerHTML = t('Due to technical limitations, bulk downloads on mobile browsers aren\'t supported, and some videos may not download.<br><br>To download all photos and videos at once, please:');
     
-    explanationText.style.borderTop = '1px solid #eee';
-    explanationText.style.paddingTop = '15px';
     explanationText.style.paddingRight = '10px';
     explanationText.style.fontSize = '14px'; // Slightly smaller font for better fit
     explanationText.style.width = '100%';
@@ -169,14 +167,17 @@ export const downloadPhotos = (
     const option1 = document.createElement('li');
     option1.textContent = t('visit this page on a desktop computer to download all photos and videos at once');
     option1.style.marginBottom = '10px';
+    option1.style.fontSize = '14px';
     
     const option2 = document.createElement('li');
     option2.textContent = t('save the photos to your 6180 account and use the 6180 app');
     option2.style.marginBottom = '10px';
+    option2.style.fontSize = '14px';
 
     const option3 = document.createElement('li');
     option3.textContent = t('select the "Open On iPhone App" option');
-    option3.style.marginBottom = '10px';      
+    option3.style.marginBottom = '10px';    
+    option3.style.fontSize = '14px';      
     
     optionsList.appendChild(option1);
     optionsList.appendChild(option2);
@@ -184,9 +185,9 @@ export const downloadPhotos = (
     
     // Assemble modal
     modalContent.appendChild(headerContainer);
-    contentWrapper.appendChild(itemsContainer);
     contentWrapper.appendChild(explanationText);
     contentWrapper.appendChild(optionsList);
+    contentWrapper.appendChild(itemsContainer);
     modalContent.appendChild(contentWrapper);
     modalContainer.appendChild(modalContent);
     

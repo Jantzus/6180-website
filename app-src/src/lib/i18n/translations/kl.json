@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Akilersugassaaq piqqunngila. Allaanerit uterunnaaruk.",
   "Pay {{amount}} Today": "Ullumi {{amount}} Akilirivit",
   "Confirm Change": "Allannguutit Uppernarsigit",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Akilirniqartut nivaat perorsaanngitsumik album pisinnaapput uunartumallu kissiat killeqarsinnaasut. Paasinneqartitsinerit immikkoortumik krediit atorunnaarmat nalunaaqutit ilaasortaapput."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Akilirniqartut nivaat perorsaanngitsumik album pisinnaapput uunartumallu kissiat killeqarsinnaasut. Paasinneqartitsinerit immikkoortumik krediit atorunnaarmat nalunaaqutit ilaasortaapput.",
+  "Save To 6180": "6180-mut Piqqusivut",
+  "Open On Phone": "Aasivik Oqaluttuassami"
 }

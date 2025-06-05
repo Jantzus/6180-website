@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Qullqi quy pantasqa. Ama hina, musuqmanta ruraychik.",
   "Pay {{amount}} Today": "Kunan {{amount}} Quy",
   "Confirm Change": "Hukchasqata Takyachiy",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Qullqisqa kaqkuna mana tukusqa albumkunayuq kanku chaymanta waqaychanallawanmi saywasqa kanku. Musuqyachiykunaqa mana llamk'achisqa pachapaq huklla pro-rata qullqita churan."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Qullqisqa kaqkuna mana tukusqa albumkunayuq kanku chaymanta waqaychanallawanmi saywasqa kanku. Musuqyachiykunaqa mana llamk'achisqa pachapaq huklla pro-rata qullqita churan.",
+  "Save To 6180": "6180-man Waqaychay",
+  "Open On Phone": "Telefonopi Kichay"
 }

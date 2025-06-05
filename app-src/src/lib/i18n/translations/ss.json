@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Kukhokha akuphumelelanga. Sicela uzame futsi.",
   "Pay {{amount}} Today": "Khokhela {{amount}} Namuhla",
   "Confirm Change": "Qinisekisa Kucina",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ema-tier latikhokhelwa anema-albhamu langangenasiphelo futsi acutselwa kuphela yindlela yokugcina. Kuchutjiswa kufaka nekudla kwa pro-rata kwesikhashana lesingasetjentisisiwanga."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ema-tier latikhokhelwa anema-albhamu langangenasiphelo futsi acutselwa kuphela yindlela yokugcina. Kuchutjiswa kufaka nekudla kwa pro-rata kwesikhashana lesingasetjentisisiwanga.",
+  "Save To 6180": "Gcina Ku 6180",
+  "Open On Phone": "Vula Ku-Phone"
 }

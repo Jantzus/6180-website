@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Methodd y taliad. Rhowch gynnig arall arni.",
   "Pay {{amount}} Today": "Talu {{amount}} Heddiw",
   "Confirm Change": "Cadarnhau'r Newid",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Mae lefelau tâl yn cael albymau diderfyn ac yn gyfyngedig gan storfa yn unig. Mae diweddariadau'n cynnwys credyd cyfrannol ar gyfer amser heb ei ddefnyddio."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Mae lefelau tâl yn cael albymau diderfyn ac yn gyfyngedig gan storfa yn unig. Mae diweddariadau'n cynnwys credyd cyfrannol ar gyfer amser heb ei ddefnyddio.",
+  "Save To 6180": "Cadw I 6180",
+  "Open On Phone": "Agor Ar Y Ffôn"
 }

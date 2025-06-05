@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Төлеп берер албанча. Оон кылып көрүңер.",
   "Pay {{amount}} Today": "Бо хүн {{amount}} төлээри",
   "Confirm Change": "Ӧскерилгени Бадыткаары",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Төлеттирген деңнелдер эки албом чок-ла ужуралыг болгаш база саглыыл-биле ажык болур. Шиитпирлердеи эки эглешпес үе чүүл пропорциональ кредит кирип турар."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Төлеттирген деңнелдер эки албом чок-ла ужуралыг болгаш база саглыыл-биле ажык болур. Шиитпирлердеи эки эглешпес үе чүүл пропорциональ кредит кирип турар.",
+  "Save To 6180": "6180-же Камгалаар",
+  "Open On Phone": "Телефонга Ажыыр"
 }

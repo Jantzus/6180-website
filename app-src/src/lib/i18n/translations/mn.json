@@ -265,5 +265,7 @@
   "Payment failed. Please try again.": "Төлбөр амжилтгүй болсон. Дахин оролдоно уу.",
   "Pay {{amount}} Today": "Өнөөдөр {{amount}} Төлнө Үү",
   "Confirm Change": "Өөрчлөлтийг Баталгаажуулах",
-  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Төлбөртэй түвшинд хязгааргүй цомог байдаг бөгөөд зөвхөн хадгалалтаар хязгаарлагддаг. Шинэчлэлт нь ашиглаагүй цагийн пропорциональ зээл агуулдаг."
+  "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Төлбөртэй түвшинд хязгааргүй цомог байдаг бөгөөд зөвхөн хадгалалтаар хязгаарлагддаг. Шинэчлэлт нь ашиглаагүй цагийн пропорциональ зээл агуулдаг.",
+  "Save To 6180": "6180-д Хадгалах",
+  "Open On Phone": "Утасанд Нээх"
 }

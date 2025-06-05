@@ -26,7 +26,6 @@ import { useUsernameManagement } from "@/lib/useUsernameManagement";
 // Import extracted utility functions
 import { 
   executeAlbumSave, 
-  createSubAlbumWithSelectedItems,
   useSelectionMode, 
   usePasswordProtection,
   useShareActions
@@ -62,7 +61,6 @@ import { CopyLinkModal } from "@/components/Modals/CopyLinkModal";
 import { ConfirmationModal } from "@/components/Modals/ConfirmationModal";
 
 import { UsernamePrompt } from "@/components/UsernamePrompt";
-import { SaveToShareContactListDescription } from "@/components/SaveToShareContactListDescription";
 import { AlbumMediaGrid } from "@/components/AlbumMediaGrid";
 import { AlbumInfoComponent } from "@/components/AlbumInfoComponent";
 import { AlbumHeader } from "@/components/AlbumHeader";
@@ -135,7 +133,7 @@ const PhotoAlbumContent: React.FC = () => {
   } = fullscreenView;
   
   const {
-    isSelectionMode, setIsSelectionMode, selectedItems, toggleItemSelection, cancelSelection
+    isSelectionMode, selectedItems, toggleItemSelection, cancelSelection
   } = selectionMode;
   
   // Initialize share actions hook
@@ -384,24 +382,7 @@ const PhotoAlbumContent: React.FC = () => {
     executeAlbumSave(t, folderId, albumData);
   };
 
-  // Create Sub-album function
-  const createSubalbum = async () => {
-    // Check if authorized for protected policies
-    if ((passwordPolicy === 'NotVisible' || passwordPolicy === 'CannotBeSaved') && !isAuthorized) {
-      promptForPassword();
-      return;
-    }
-    
-    // Toggle selection mode
-    setIsSelectionMode(!isSelectionMode);
-    // Clear any existing selections when toggling
-    selectedItems.clear();
-  };
-  
-  // Share the selected items
-  const shareSelectPhotos = async () => {
-    createSubAlbumWithSelectedItems(t, albumData, selectedItems);
-  };
+  // Create Sub-album function - REMOVED
 
   // Modified handle download photos function to directly save the album
   const handleDownloadPhotos = async () => {
@@ -662,6 +643,9 @@ const PhotoAlbumContent: React.FC = () => {
                 src={generateUrl("images/logo_no_background.png")}
                 alt="6180 Logo"
               />
+              <span style={{ marginLeft: '8px', fontSize: '18px', fontWeight: 'bold' }}>
+                {t('Home')}
+              </span>
             </BrandLogoContainer>
           </BrandLink>
           
@@ -679,10 +663,7 @@ const PhotoAlbumContent: React.FC = () => {
       <AlbumHeader
         t={t}
         isSelectionMode={isSelectionMode}
-        selectedItems={selectedItems}
-        shareSelectPhotos={shareSelectPhotos}
         cancelSelection={cancelSelection}
-        createSubalbum={createSubalbum}
         showingEnterPassword={showingEnterPassword}
         promptForPassword={promptForPassword}
         passwordPolicy={passwordPolicy}
@@ -691,8 +672,6 @@ const PhotoAlbumContent: React.FC = () => {
         saveAlbumDirectly={saveAlbumDirectly}
         handleDownloadPhotos={handleDownloadPhotos}
         handleCopyLink={() => shareActions.setShowingCopyLinkAlert(true)}
-        handlePublicProfileToggle={shareActions.handlePublicProfileToggle}
-        isOnPublicProfile={shareActions.isOnPublicProfile}
         albumData={albumData}
         columns={columns}
         changeColumns={changeColumns}
@@ -704,12 +683,6 @@ const PhotoAlbumContent: React.FC = () => {
           showSelectPhotosButton={showSelectPhotosButton}
           albumData={albumData}
           openFilePicker={openFilePicker}
-          t={t}
-        />
-        
-        {/* Contact List */}
-        <SaveToShareContactListDescription 
-          albumData={albumData}
           t={t}
         />
         
