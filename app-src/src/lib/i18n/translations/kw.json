@@ -61,7 +61,6 @@
   "Hidden": "Kudhys",
   "Watermarked": "Merkys Dowr",
   "Cannot be saved": "Ny yll bos gwithys",
-  "No password": "Heb ger-tremena",
   "No albums found": "Ny'gafas album veth",
   "Created": "Gwruthys",
   "Updated": "Nowedhys",
@@ -267,5 +266,17 @@
   "Confirm Change": "Kompya an Janjyans",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Gwerthansow talys a'gas albumow heb fin ha yma ow tos ynwedh gans studhyans hepken. Gwellansow a'gas kredit pro-rata rag termyn na veu usys.",
   "Save To 6180": "Gwitha Yn 6180",
-  "Open On Phone": "Ygeri War Klapkorn"
+  "Open On Phone": "Ygeri War Klapkorn",
+  "Will use \"password\" as default": "A wra devnydhya \"password\" avel defowt",
+  "No Password": "Nyns Eus Ger Killi",
+  "Preparing": "Pareusi",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Kevrenna gwiryas ger tremenn rag agas albom. Dewisewgh fatel a vynnowgh lettya an entreans dhe'gas skeusenow.",
+  "Enter password (optional)": "Keworrewgh ger tremenn (dewisadow)",
+  "Album will be completely hidden until correct password is entered": "An albom a vydh kelmys yn ollgul bys yn termyn pan vydh an ger-tremena ewn res",
+  "Photos will be visible with watermarks, password required to save": "Skeusennoù a vydh gweladow gans merkoù dowr, ger-tremena res rag gwitha",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Devnydhya \"password\" avel defowt mars yw gesys gwag",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Mars yu gesys y vel geryow tremena gwag, \"password\" a vydh devnydhys avel an ger tremena defowt. Y hallowgh chanjya hemma pub prys yn sodhogyon an albom.",
+  "💡 Password Protection Info:": "💡 Kedhlow Diogeleth Ger Tremena:",
+  "Select Protection Level": "Dewis Nivel Diogeleth",
+  "Save Settings": "Gwitha Dewisow"
 }

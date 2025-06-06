@@ -61,7 +61,6 @@
   "Hidden": "Follit",
   "Watermarked": "Cowrey Ushtey",
   "Cannot be saved": "Cha vod y hashtaghey",
-  "No password": "Gyn fockle yn follit",
   "No albums found": "Cha row albymyn ry-gheddyn",
   "Created": "Crootit",
   "Updated": "Aa-nooghit",
@@ -267,5 +266,17 @@
   "Confirm Change": "Shickyr y Caghlaa",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ta coyrleyn gollrish speeideilagh albums gyn jerrey as cha nel ad cuingit agh liorish stoyral. Ta ard-ghleashaghey goaill stiagh creddal corrym son traa nagh row ymmydit.",
   "Save To 6180": "Sauail Ayns 6180",
-  "Open On Phone": "Foshil Er Fown"
+  "Open On Phone": "Foshil Er Fown",
+  "Will use \"password\" as default": "Ymmydee \"password\" myr bun-reihys",
+  "No Password": "Cha Nel Fockle Follit",
+  "Preparing": "Aarlaghey",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Reihys kiarail fockle folliaghtagh son dty albym. Gow reih kys t'ou geearree cur jerrey er roayl gys ny jallooyn ayd.",
+  "Enter password (optional)": "Cur stiagh fockle folliaghtagh (reihyssagh)",
+  "Album will be completely hidden until correct password is entered": "Bee yn albym follit yn slane derrey vees yn fockle-follee kiart currit stiagh",
+  "Photos will be visible with watermarks, password required to save": "Bee jallooyn ry-akin lesh cowraghyn ushtey, fockle-follee ymmyrchagh dy hauail",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Bee ymmyd jeh \"password\" myr bun-reih my vees faagit follym",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "My t'ou faagail y magher fockle-folliagh follym, bee \"password\" ymmydit myr y fockle-folliagh cadjin. Foddee oo shoh y cheaghley ec traa erbee ayns reihghyn yn albym.",
+  "💡 Password Protection Info:": "💡 Oayllys Coadey Fockle Arrey:",
+  "Select Protection Level": "Reih Keim Coadey",
+  "Save Settings": "Sauail Reayrtyssyn"
 }

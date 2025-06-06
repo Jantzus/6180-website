@@ -61,7 +61,6 @@
   "Hidden": "Slēpts",
   "Watermarked": "Ar Iudiņa Zīmi",
   "Cannot be saved": "Navar izglobuot",
-  "No password": "Nav paruļis",
   "No albums found": "Nav atrasti albumi",
   "Created": "Radeitys",
   "Updated": "Atjauninōts",
@@ -267,5 +266,17 @@
   "Confirm Change": "Izmaiņu Apstyprynuot",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maksys līmeņi tur naīrobuožūtus albumus i ir īrobuožūti tikai ar globuošonu. Atjaunuošonys ītvar proporcionalū kredītu naizmontūtam laikam.",
   "Save To 6180": "Saglabāt Uz 6180",
-  "Open On Phone": "Atslēgt Telefonā"
+  "Open On Phone": "Atslēgt Telefonā",
+  "Will use \"password\" as default": "Lītōs \"password\" kai nūstateitū",
+  "No Password": "Nav Paroles",
+  "Preparing": "Gateivoj",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Nūstatit paroļa aizsardzeibas savam albumam. Izlasit, kai gribit īrūbežuot pīkļuvi sovim foto.",
+  "Enter password (optional)": "Īvadīt paroļa (izvāles)",
+  "Album will be completely hidden until correct password is entered": "Albums byus pilneibā paklapts, kamer nav īvests pareizais parole",
+  "Photos will be visible with watermarks, password required to save": "Atti būs radzami ar iudiņa zeimim, parole vaj saglobuošonai",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Izmantuos \"password\" kai nūstateitū, ka paliks tukšu",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ka paliksi slaptavuorda lauku tukšu, \"password\" liks izmantuots kai nūstateitais slaptavuords. Vari šū maineit jeb kurā laikā albuma uzstatiejumos.",
+  "💡 Password Protection Info:": "💡 Paroles Aizsardzeibas Informaceja:",
+  "Select Protection Level": "Izlaseit Aizsardzeibas Leimini",
+  "Save Settings": "Saglabōt Īstatējumus"
 }

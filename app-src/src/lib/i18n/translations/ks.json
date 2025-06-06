@@ -61,7 +61,6 @@
   "Hidden": "لُکِت",
   "Watermarked": "آب نِشان دار",
   "Cannot be saved": "چھَانہٕ بَچاوِتھ سَپَنہٕ",
-  "No password": "کینہٕ پاسورڈ نہٕ",
   "No albums found": "کہٕ آلبم نِہ مِلے",
   "Created": "تَخلیٖق کَرنہٕ آو",
   "Updated": "اَپڈیٹ کَرمُت",
@@ -267,5 +266,17 @@
   "Confirm Change": "تبدیلی تصدیق کٔریو",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ترساں ٹیر أسلیں بے شومار البم چھہ تہ صرف سیوروج کی محدود چھہ۔ اپگریڈ کأس کن بے استعمال ویلہ کس لے پرو-ریٹا کریڈٹ ییہ۔",
   "Save To 6180": "6180 منز محفوظ کریو",
-  "Open On Phone": "فون منز کولؠو"
+  "Open On Phone": "فون منز کولؠو",
+  "Will use \"password\" as default": "ڈِفالٹ طور \"password\" استعمال کرِ",
+  "No Password": "کوئی پاس ورڈ نہیں",
+  "Preparing": "تیاری",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "پؤنہِ آلبم یَس پاسوٲرڈ محافظت کریو کنفِگَر۔ ژھأریو زِ تُہہ پؤنہِ فوٹو کُن رَسایِ کِتھ کَتھہ پابَندی لگانہِ چھُو۔",
+  "Enter password (optional)": "پاسوٲرڈ داخل کریو (اختیٲری)",
+  "Album will be completely hidden until correct password is entered": "البم مُکمل طور پٔر چھپ رٔژتُھ ییتھ پاس ورڈ صَحیح داخِل گَژھہ",
+  "Photos will be visible with watermarks, password required to save": "فوٹو واٹر مارکَس سؤن نَظَر یِیہِ، سیو کرنہٕ باپتہِ پاس ورڈ ضروٗری",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ خالی ژھوڑنہٕ سان \"password\" ڈیفالٹس منٛز استعمال گژھان",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "اگر تۄہہ پاس ورڈ فیلڈ خالی ژھوڑان، \"password\" ڈیفالٹ پاس ورڈ منٛز استعمال گژھان. تۄہہ یہ البم سیٹنگنہٕ منٛز کانہہ وقتس تبدیل کٔرِتھ ہیکو۔",
+  "💡 Password Protection Info:": "💡 پاس ورڈ تحفُظ معلومات:",
+  "Select Protection Level": "تحفُظ سطح ژأرو",
+  "Save Settings": "سیٹِنگَن محفوظ کَرؠو"
 }

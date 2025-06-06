@@ -61,7 +61,6 @@
   "Hidden": "Дзебӧм",
   "Watermarked": "Ваквуситӧм",
   "Cannot be saved": "Оз туй видзны",
-  "No password": "Пароль абу",
   "No albums found": "Альбоммез абу аддзӧм",
   "Created": "Керӧма",
   "Updated": "Виль керӧм",
@@ -267,5 +266,17 @@
   "Confirm Change": "Воштысьӧмсӧ Тӧдмавны",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Сьӧмъя быдтӧдъясыслӧн эм дас кыза альбомъяс да найӧ сӧмын видзӧданінӧн дасьтӧма. Бурмӧдъясыс пыртӧны про-рата кредит кутшӧм кадӧ эз адзыв.",
   "Save To 6180": "6180-ӧ Видзны",
-  "Open On Phone": "Телефонын Восьтны"
+  "Open On Phone": "Телефонын Восьтны",
+  "Will use \"password\" as default": "\"Password\" пондӧтчӧм серти вӧдитчас",
+  "No Password": "Парол Абу",
+  "Preparing": "Лӧсьӧдӧм",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Альбомыс ӧддьӧн вежӧртана кывйӧн дорйӧм лӧсьӧдны. Бӧрйы кыдзи тэ кӧсъян картинаясыд дорӧ пырӧм дугдыны.",
+  "Enter password (optional)": "Пароль пуктыны (кӧсйысь)",
+  "Album will be completely hidden until correct password is entered": "Альбом тырмымӧн дзебӧма лоас, медъяс абу серти паролсӧ пуктыны",
+  "Photos will be visible with watermarks, password required to save": "Суретъес вулӧмаӧсь ва пасйӧдӧн, пароль колӧ видзӧм вылӧ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" пыр керан кӧр дырйыс коймас вӧчны",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Кӧр паролъ пытшкӧсӧс дырйыс колямӧз, \"password\" туп паролькӧт пыраласа. Ті альбом асшӧръясын кыдз ковмӧз воштыны позан.",
+  "💡 Password Protection Info:": "💡 Парольлöн Дзоньсьöм Тöдмалун:",
+  "Select Protection Level": "Дзоньсьöм Уровень Быдмöдны",
+  "Save Settings": "Ладӧмъяссӧ Видзöдлыны"
 }

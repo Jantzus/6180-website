@@ -61,7 +61,6 @@
   "Hidden": "Eskondido",
   "Watermarked": "Con Marka de Agua",
   "Cannot be saved": "No puede ser guardado",
-  "No password": "Sin kontrasenya",
   "No albums found": "No se toparon albumes",
   "Created": "Kreado",
   "Updated": "Aktualizadu",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfirmar Trokamiento",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Los niveles de pago tinen álbumes sin límite i están limitados solo por el almacenamiento. Las actualizaciones incluyen crédito pro-rata por tiempo no uzado.",
   "Save To 6180": "Mete En 6180",
-  "Open On Phone": "Avri En Telefono"
+  "Open On Phone": "Avri En Telefono",
+  "Will use \"password\" as default": "Uzara \"password\" komo predeterminado",
+  "No Password": "Sin Klave",
+  "Preparing": "Preparando",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurar la proteksion kon kod sekret para el album vuestro. Eskojer komo kereche limitar el akseso a las fotos vuestras.",
+  "Enter password (optional)": "Eskriver kod sekret (a voluntad)",
+  "Album will be completely hidden until correct password is entered": "El album va estar eskondido kompletamente asta ke se eskriva la kontrasenya korekta",
+  "Photos will be visible with watermarks, password required to save": "Las fotos van a star visibles kon markas de agua, kontrasenya nesesaria para salvar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Va usar \"password\" komo predeterminado si se desha vazío",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si dexas el kampo de kontrasenya vazío, \"password\" se va usar komo kontrasenya predeterminada. Puedes trokar esto en kualsiquier momento en la konfigurasyon del álbum.",
+  "💡 Password Protection Info:": "💡 Enformasyon de Proteksyon de Kontrasenya:",
+  "Select Protection Level": "Eskoje Nivel de Proteksyon",
+  "Save Settings": "Gwardar Ajustamientos"
 }

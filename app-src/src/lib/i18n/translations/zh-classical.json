@@ -61,7 +61,6 @@
   "Hidden": "隱",
   "Watermarked": "有水印",
   "Cannot be saved": "弗克存",
-  "No password": "無密碼",
   "No albums found": "無尋得相冊",
   "Created": "創",
   "Updated": "已更新",
@@ -267,5 +266,17 @@
   "Confirm Change": "確認變更",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "付費層級擁有無限專輯，僅受儲存空間限制。升級包含未使用時間之按比例積分。",
   "Save To 6180": "存於6180",
-  "Open On Phone": "於機開"
+  "Open On Phone": "於機開",
+  "Will use \"password\" as default": "將用\"password\"為預設",
+  "No Password": "無密",
+  "Preparing": "備中",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "設相冊密碼護衛。擇汝欲限制人觀汝相片之法。",
+  "Enter password (optional)": "入密碼（可選）",
+  "Album will be completely hidden until correct password is entered": "相册尽隐直至正确密码入",
+  "Photos will be visible with watermarks, password required to save": "像片有水印示，存需密码",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ 若留空則以「password」為預設",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "若留空密碼欄，則以「password」為預設密碼。此可於相册設定中隨時變更。",
+  "💡 Password Protection Info:": "💡 密碼護衛之資:",
+  "Select Protection Level": "擇護衛之品",
+  "Save Settings": "存設定"
 }

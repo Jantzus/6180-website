@@ -61,7 +61,6 @@
   "Hidden": "Nescuèste",
   "Watermarked": "Filigranate",
   "Cannot be saved": "Non ge se pò salvà",
-  "No password": "Nisciune password",
   "No albums found": "Non ge stonne album acchiate",
   "Created": "Criàte",
   "Updated": "Aggirnate",
@@ -267,5 +266,17 @@
   "Confirm Change": "Conforme 'u Cangiamende",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Le levelle a pagamende tènene álbum senza lemete e sò' lemetate sulamende da 'u stoccagge. L'aggiornamente 'nglùdene credìte pro-rata pe 'u tiembe ca non g'è ausate.",
   "Save To 6180": "Reggìstre Sus 6180",
-  "Open On Phone": "Iapre Sus a Telefone"
+  "Open On Phone": "Iapre Sus a Telefone",
+  "Will use \"password\" as default": "Ausarà \"password\" cumme default",
+  "No Password": "Nisciuna Password",
+  "Preparing": "Apparicchie",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configure 'a protezzione cu passord p''u album tune. Scacchie cumme vu' limita l'accesse a le foto tune.",
+  "Enter password (optional)": "Scrive 'a password (facultative)",
+  "Album will be completely hidden until correct password is entered": "L'album avène a stà scunnute cumbleto 'nzine a quanne non ge mitte 'a password corrette",
+  "Photos will be visible with watermarks, password required to save": "Le fote avènene a stà visìbbele cu le filigrane, 'a password cerche pe salvà",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ausarà \"password\" cumme defolt ce se lasse vacande",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ce lasse vacande 'u cambe d' 'a password, \"password\" ausarà cumme password defolt. Putite cagnà chiste quanno vulite jndr' 'e 'mbostaziune de l'album.",
+  "💡 Password Protection Info:": "💡 Notizie d'a Protezzione d'a Password:",
+  "Select Protection Level": "Scacchie 'u Levèlle de Protezzione",
+  "Save Settings": "Reggìstre le 'mbostaziun"
 }

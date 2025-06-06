@@ -61,7 +61,6 @@
   "Hidden": "פאַרבאָרגן",
   "Watermarked": "וואַסערשטעמפּלט",
   "Cannot be saved": "קען נישט געהיטן ווערן",
-  "No password": "קיין פאסווארט",
   "No albums found": "קיין אלבומען נישט געפֿונען",
   "Created": "געשאפן",
   "Updated": "דערהײַנטיקט",
@@ -267,5 +266,17 @@
   "Confirm Change": "באַשטעטיק ענדערונג",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "באַצאָלטע שטאַפּלען האָבן אומבאַגרענעצטע אַלבאָמס און זײַנען באַגרענעצט בלויז דורך שפּײַכער. אַפּגרײַדס שליסן אַרײַן פּראָ-ראַטאַ קרעדיט פֿאַר אומגענוצט צײַט.",
   "Save To 6180": "אויפֿהיטן אין 6180",
-  "Open On Phone": "עפֿענען אויף טעלעפֿאָן"
+  "Open On Phone": "עפֿענען אויף טעלעפֿאָן",
+  "Will use \"password\" as default": "וועט נוצן \"password\" ווי געווענלעך",
+  "No Password": "קיין פּאַסווערטל",
+  "Preparing": "גרייטן",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "קאָנפֿיגורירט פּאַראָל־באַשיצונג פֿאַר אײַער אַלבאָם. קלײַבט ווי איר ווילט באַגרענעצן צוטריט צו אײַערע פֿאָטאָס.",
+  "Enter password (optional)": "אַרײַנלייג פּאַראָל (ברירהדיק)",
+  "Album will be completely hidden until correct password is entered": "דער אלבאָם וועט זײן קאָמפּלעט באַהאַלטן ביז דאָס ריכטיקע פּאַראָל ווערט אַרײַנגעגעבן",
+  "Photos will be visible with watermarks, password required to save": "בילדער וועלן זײַן זעבאַר מיט וואַסער־צייכענען, פּאַראָל נויטיק צו היטן",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ וועט נוצן \"password\" אלס גרונטלעך אויב איבערגעלאזט ליידיק",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "אויב איר לאזט דאס פאסווארט פעלד ליידיק, וועט \"password\" גענוצט ווערן אלס די גרונטלעכע פאסווארט. איר קענט דאס ענדערן יעדער צייט אין אלבאם אייגנשאפטן.",
+  "💡 Password Protection Info:": "💡 פּאַראָל שוץ אינפֿאָרמאַציע:",
+  "Select Protection Level": "אויסקלײַבן שוץ ניוואָ",
+  "Save Settings": "אויפֿהיטן באַשטעלונגען"
 }

@@ -61,7 +61,6 @@
   "Hidden": "සැඟවී ඇත",
   "Watermarked": "ජල ලකුණු සහිත",
   "Cannot be saved": "සුරැකිය නොහැක",
-  "No password": "මුරපදයක් නැත",
   "No albums found": "කිසිදු ඇල්බමයක් හමු නොවීය",
   "Created": "නිර්මාණය කරන ලදී",
   "Updated": "යාවත්කාල කරන ලදී",
@@ -267,5 +266,17 @@
   "Confirm Change": "වෙනස්කම තහවුරු කරන්න",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ගෙවන ස්ථර වල අසීමිත ඇල්බම ඇති අතර ගබඩා කිරීමෙන් පමණක් සීමා වේ. උත්කර්ෂණ වලට භාවිතා නොකළ කාලය සඳහා සමානුපාතික ණය ඇතුළත් වේ.",
   "Save To 6180": "6180 හි සුරකින්න",
-  "Open On Phone": "දුරකථනයේ විවෘත කරන්න"
+  "Open On Phone": "දුරකථනයේ විවෘත කරන්න",
+  "Will use \"password\" as default": "සුපුරුදු ලෙස \"password\" භාවිතා කරනු ඇත",
+  "No Password": "මුරපදයක් නැත",
+  "Preparing": "සූදානම් කරමින්",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ඔබේ ඇල්බමය සඳහා මුරපද ආරක්ෂාව මානකරණය කරන්න. ඔබේ ඡායාරූප වෙත ප්‍රවේශය සීමා කරන ආකාරය තෝරන්න.",
+  "Enter password (optional)": "මුරපදය ඇතුළත් කරන්න (විකල්ප)",
+  "Album will be completely hidden until correct password is entered": "නිවරදි මුරපදය ඇතුළත් නොකරන තුරු ඇල්බමය සම්පූර්ණයෙන් සඟවා ඇත",
+  "Photos will be visible with watermarks, password required to save": "ජල කේතන සමඟ පින්තූර දැකගත හැකිය, සුරැකීමට මුරපදය අවශ්‍යයි",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ හිස් කළහොත් \"password\" ප්‍රධාන ලෙස භාවිතා කරනු ඇත",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ඔබ මුරපද ක්‍ෂේත්‍රය හිස් කළහොත්, \"password\" පෙරනිමි මුරපදය ලෙස භාවිතා කරනු ඇත. ඔබට මෙය ඇල්බමයේ සැකසීම්වල ඕනෑම වේලාවක වෙනස් කළ හැක.",
+  "💡 Password Protection Info:": "💡 මුරපද ආරක්ෂණ තොරතුරු:",
+  "Select Protection Level": "ආරක්ෂණ මට්ටම තෝරන්න",
+  "Save Settings": "සැකසුම් සුරකින්න"
 }

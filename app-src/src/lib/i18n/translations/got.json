@@ -61,7 +61,6 @@
   "Hidden": "𐍆𐌿𐌻𐌲𐌹𐌽𐍃",
   "Watermarked": "𐍅𐌰𐍄𐍉𐌼𐌰𐍂𐌺𐌰𐌹𐌳𐍃",
   "Cannot be saved": "𐌽𐌹 𐌼𐌰𐌲 𐌲𐌰𐍆𐌰𐍃𐍄𐌰𐌽",
-  "No password": "𐌽𐌹 𐌰𐌽𐌰𐌻𐌿𐌺𐌰𐌽𐌰𐍅𐌰𐌿𐍂𐌳",
   "No albums found": "𐌽𐌹 𐌷𐌰𐌿𐍃𐌾𐌰𐌽𐌳𐍃 𐌰𐌻𐌱𐌿𐌼𐍃",
   "Created": "𐌲𐌰𐍃𐌺𐌰𐍀𐌰𐌽𐍃",
   "Updated": "𐌽𐌹𐌿𐌾𐌹𐌸𐍃",
@@ -267,5 +266,17 @@
   "Confirm Change": "𐌲𐌰𐍃𐌺𐌰𐍆𐍄 𐌲𐌰𐍄𐌿𐌻𐌾𐌰𐌽",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "𐍃𐌺𐌰𐍄𐍄𐌰𐌼 𐌲𐌰𐌳𐌰𐌻𐌰 𐌷𐌰𐌱𐌰𐌽𐌳 𐌿𐌽𐌹𐌽𐌰𐌽𐌳𐌰𐌽𐍃 𐌰𐌻𐌱𐌿𐌼𐍃 𐌾𐌰𐌷 𐌸𐌰𐌹𐍂𐌷 𐍆𐌰𐌿𐍂𐌰𐌳𐌰𐌷𐍃 𐌰𐌹𐌽𐌰 𐌲𐌰𐌼𐌰𐌻𐌴𐌹𐌽 𐍃𐌹𐌽𐌳. 𐌿𐍃𐍅𐌰𐌿𐍂𐌷𐍄𐌴𐌹𐌽𐍃 𐌹𐌽𐌽𐌹𐌸𐌰𐌷𐌰𐌱𐌰𐌽𐌳 𐍀𐍂𐍉-𐍂𐌰𐍄𐌰 𐍃𐌺𐌿𐌻𐌳 𐍆𐍂𐌰𐌼 𐌿𐌽𐌽𐌿𐍄𐌰 𐌼𐌴𐌻𐌰.",
   "Save To 6180": "𐌳𐌿 6180 𐌲𐌰𐍆𐌰𐍃𐍄𐌾𐌰𐌽",
-  "Open On Phone": "𐌰𐌽𐌰 𐍄𐌰𐌹𐌷𐌿𐌽 𐌿𐍃𐌻𐌿𐌺𐌰𐌽"
+  "Open On Phone": "𐌰𐌽𐌰 𐍄𐌰𐌹𐌷𐌿𐌽 𐌿𐍃𐌻𐌿𐌺𐌰𐌽",
+  "Will use \"password\" as default": "𐌱𐍂𐌿𐌺𐌾𐌰𐌽 \"password\" 𐍃𐍅𐌴 𐌲𐌰𐍃𐍄𐌰𐌻𐌳𐌰𐌽",
+  "No Password": "𐌽𐌹 𐌻𐌰𐌿𐌽 𐌱𐌰𐌿𐍂𐌳",
+  "Preparing": "𐌼𐌰𐌽𐍅𐌾𐌰𐌽",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "𐌰𐍄𐌰𐌿𐌷𐌾𐌰 𐌰𐌻𐌰𐌺𐌰 𐌱𐌰𐌿𐍂𐌳𐍃 𐌿𐌽𐌳 𐌰𐌻𐌱𐌿𐌼 𐌸𐌴𐌹𐌽. 𐌺𐌰𐌿𐍃𐌴𐌹 𐍈𐌰𐌹𐍅𐌰 𐌸𐌿 𐍅𐌹𐌻𐌴𐌹𐍃 𐌷𐌰𐌼𐌼𐌰𐌽 𐌰𐍄𐌲𐌰𐌲𐌲 𐌳𐌿 𐌸𐌰𐌹𐌼 𐌼𐌴𐌻𐌰𐌼.",
+  "Enter password (optional)": "𐌻𐌰𐌲𐌾𐌰 𐌱𐌰𐌿𐍂𐌳 (𐌺𐌹𐌿𐍃)",
+  "Album will be completely hidden until correct password is entered": "𐌰𐌻𐌱𐌿𐌼 𐌰𐌻𐌻𐌴 𐌰𐍄𐌰𐌿𐌲𐌾𐌰𐌳 𐍃𐌹𐌾𐌰𐌹 𐌿𐌽𐍄𐌴 𐍂𐌰𐌹𐌷𐍄 𐌲𐌰𐌼𐌿𐌽𐌳𐌹𐍅𐌰𐌿𐍂𐌳 𐌹𐌽𐌽𐌰𐍄𐌾𐌰𐌳",
+  "Photos will be visible with watermarks, password required to save": "𐍆𐍉𐍄𐍉𐍃 𐍃𐌹𐌿𐌽𐌳 𐌲𐌰𐍃𐌰𐌹𐍈𐌰𐌽𐌰 𐌼𐌹𐌸 𐍅𐌰𐍄𐌰𐍂𐌼𐌰𐍂𐌺𐍉𐌼, 𐌲𐌰𐌼𐌿𐌽𐌳𐌹𐍅𐌰𐌿𐍂𐌳 𐌸𐌰𐌿𐍂𐌱 𐌷𐌰𐌻𐌳𐌰𐌽",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" 𐌱𐍂𐌿𐌺𐌾𐌰𐌳 𐌰𐌻𐍃 𐌰𐌽𐌰𐍃𐍄𐍉𐌳𐌴𐌹𐌽𐍃 𐌾𐌰𐌱𐌰𐌹 𐌻𐌰𐌿𐍃 𐌱𐌹𐌻𐌴𐌹𐌸𐌹𐌸",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "𐌾𐌰𐌱𐌰𐌹 𐌻𐌰𐌿𐍃 𐌱𐌹𐌻𐌴𐌹𐌸𐍃 𐌿𐌽𐌳𐌹𐍂𐌽𐌹𐌼𐌰𐌽𐌳𐍃 𐌰𐌺𐍂𐌰𐌽 \"password\" 𐌱𐍂𐌿𐌺𐌾𐌰𐌳𐌰 𐍃𐍅𐌴 𐌿𐌽𐌳𐌹𐍂𐌽𐌹𐌼𐌰𐌽𐌳𐍃 𐌰𐌽𐌰𐍃𐍄𐍉𐌳𐌴𐌹𐌽𐍃. 𐌼𐌰𐌲𐍄 𐌹𐌽𐌼𐌰𐌹𐌳𐌾𐌰𐌽 𐌸𐌰𐍄𐌰 𐌹𐌽 𐌰𐌻𐌻𐌰𐌹𐌼 𐌼𐌴𐌻𐌰 𐌹𐌽 𐌰𐌻𐌱𐌿𐌼𐌹𐍃 𐌲𐌰𐍃𐌰𐍄𐌴𐌹𐌽𐌰𐌹𐌼.",
+  "💡 Password Protection Info:": "💡 𐌱𐌰𐌽𐌳𐍅𐌰 𐌱𐌰𐍂𐌲𐌴𐌹𐌽ôs 𐌺𐌿𐌽𐌸𐌾ôs:",
+  "Select Protection Level": "𐌲𐌰𐍅𐌰𐌻𐌾𐌰𐌽 𐌱𐌰𐍂𐌲𐌴𐌹𐌽ôs 𐌷𐌰𐌿𐌷𐌴𐌹𐌽",
+  "Save Settings": "𐌱𐌰𐌹𐍂𐌲 𐌲𐌰𐍃𐌰𐍄𐌴𐌹𐌽𐍃"
 }

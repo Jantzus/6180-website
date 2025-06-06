@@ -61,7 +61,6 @@
   "Hidden": "Hunaia",
   "Watermarked": "Kaha Wai ʻia",
   "Cannot be saved": "ʻAʻole hiki ke mālama",
-  "No password": "ʻAʻohe hua huna",
   "No albums found": "ʻAʻohe ʻālapa i loaʻa",
   "Created": "Ua hana ʻia",
   "Updated": "Ua hoʻohou",
@@ -267,5 +266,17 @@
   "Confirm Change": "Hōʻoia i ka Loli",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "He mau papa uku ʻole palena ʻālapa a ua hoʻopaʻa wale nō i ka mālama ʻana. ʻO nā hoʻolako ʻana he hāpā ʻole aihi no ka manawa i ʻole ai i hoʻohana ʻia.",
   "Save To 6180": "Hoʻopaa I 6180",
-  "Open On Phone": "Wehe Ma Ka Kelepona"
+  "Open On Phone": "Wehe Ma Ka Kelepona",
+  "Will use \"password\" as default": "E hoʻohana ai \"password\" ma ke ʻano paʻa",
+  "No Password": "ʻAʻole Hua Huna",
+  "Preparing": "Hoʻomākaukau",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Hoʻonohonoho i ka palekanaka ʻōlelo hūnā no kou ʻālapa. Koho i ke ʻano aʻe o ka paʻa ʻana i ke komo ʻana i kou mau kiʻi.",
+  "Enter password (optional)": "E komo i ka ʻōlelo hūnā (koho wale)",
+  "Album will be completely hidden until correct password is entered": "E hunā loa ʻia ka ʻālapa a hōkū ka ʻōlelo hūnā pololei",
+  "Photos will be visible with watermarks, password required to save": "ʻO nā kiʻi e ʻike ʻia ai me nā hōʻailona wai, pono ka ʻōlelo hūnā no ka hoʻopaʻa",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ E hoʻohana i \"password\" ma ke ʻano default inā wehe ʻole ʻia",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Inā hāpā 'oe i ke kahua hua hūnā 'ole, ua ho'ohana 'ia ka \"password\" ma ke 'ano hua hūnā default. Hiki iā 'oe ke loli i kēia i kēlā manawa kēia manawa ma nā ho'onoho ʻālapa.",
+  "💡 Password Protection Info:": "💡 ʻIke Pale Huaʻōlelo Hūnā:",
+  "Select Protection Level": "Wae i ka Pae Pale",
+  "Save Settings": "Hoʻopakele i nā Hoʻonohonoho"
 }

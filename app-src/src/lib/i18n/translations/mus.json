@@ -61,7 +61,6 @@
   "Hidden": "Ehkvkē",
   "Watermarked": "Uewv Sasvhoyuece",
   "Cannot be saved": "Evketskos",
-  "No password": "Password sekos",
   "No albums found": "Album isknot aksárričkos",
   "Created": "Haketv",
   "Updated": "Mucvhayv",
@@ -267,5 +266,17 @@
   "Confirm Change": "Etvheckv Etohkvlke",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Fekkakes tier-yat album hoporrenet omēksuksēkat omis hēlwupkē-meskot yekcetvs. Encakhēcat pro-rata kredit ēmomvrēsēko sekēton akerrvyēs.",
   "Save To 6180": "6180-a Vhecetv",
-  "Open On Phone": "Hoktuce Telefon"
+  "Open On Phone": "Hoktuce Telefon",
+  "Will use \"password\" as default": "\"Password\" omvlkvt acreyy ohlikvrēs",
+  "No Password": "Mahaks Vsofvn",
+  "Preparing": "Etetakuecetv",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Yvhiketv opunvkv ehke album omecicen. Omvlkvt a nakcokv vlket omen penkalet okat onkaten omvlkvn fvcken em wiket.",
+  "Enter password (optional)": "Opunvkv ehken en eskasetskvs (enherteckaken)",
+  "Album will be completely hidden until correct password is entered": "Album momɨt estomahvrēcoko vtekatēt vpokatē sofkv momēt ayēt os",
+  "Photos will be visible with watermarks, password required to save": "Nakcokv vlkv uewv eskerkv ocaket omes, opunvkv ehkakv sekon omvlkvt aosset os",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" hoporenkv aossicēt omekv hoyahneko vlkes",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Honahesketv opvnkv yerv etvhiken wiketsken \"password\" honahesketv opvnkv omētskē kares. Heyvn album ohfvtceckv ofvn estimvt naken omētskat em mvhayes.",
+  "💡 Password Protection Info:": "💡 Password Protection Nakcokv:",
+  "Select Protection Level": "Alvhiketv Level Ahayetos",
+  "Save Settings": "Settings em Vhesaketvs"
 }

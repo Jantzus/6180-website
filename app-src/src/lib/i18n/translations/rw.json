@@ -61,7 +61,6 @@
   "Hidden": "Byihishe",
   "Watermarked": "Ikimenyetso cy'Amazi",
   "Cannot be saved": "Ntibikunda kubikwa",
-  "No password": "Nta Ijambo banga",
   "No albums found": "Nta ma albumu yabonetse",
   "Created": "Byaremye",
   "Updated": "Byavuguruwe",
@@ -267,5 +266,17 @@
   "Confirm Change": "Kwemeza Impinduka",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ibipimo byishyurwa bifite alubumu zidafite imipaka kandi zihagararirwa gusa na kubika. Kuzamura birimo ikizere cya pro-rata ku gihe kitakoreshejwe.",
   "Save To 6180": "Bika Muri 6180",
-  "Open On Phone": "Gufungura Kuri Telefoni"
+  "Open On Phone": "Gufungura Kuri Telefoni",
+  "Will use \"password\" as default": "Izakoresha \"password\" nk'ibisanzwe",
+  "No Password": "Nta Ijambo Ryibanga",
+  "Preparing": "Gutegura",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Shiraho umutekano w'ijambo banga ku alubumu yawe. Hitamo uko ushaka kugabanya ubushobozi bwo kugera ku mafoto yawe.",
+  "Enter password (optional)": "Andika ijambo ribanga (ukunda)",
+  "Album will be completely hidden until correct password is entered": "Alubumu izahishwa byimazeyo kugeza ijambo ry'ibanga nyaryo ryinjizwa",
+  "Photos will be visible with watermarks, password required to save": "Amafoto azigaragara afite ibimenyetso by'amazi, ijambo banga rigomba kubikwa",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Izakoresha \"password\" nka mburabuzi iyo utabitse ubusa",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Niba uzaze ahantu h'ijambo ry'ibanga ubusa, \"password\" rizakoreshwa nk'ijambo ry'ibanga mburabuzi. Urashobora guhindura ibi icyo ari cyo cyose mu byerekeye album.",
+  "💡 Password Protection Info:": "💡 Amakuru y'Umutekano w'Ijambo Ryibanga:",
+  "Select Protection Level": "Hitamo Urwego rw'Umutekano",
+  "Save Settings": "Bika Amagenamico"
 }

@@ -61,7 +61,6 @@
   "Hidden": "ಮರೆಯಾದ್",
   "Watermarked": "ನೀರ್‌ಚಿನ್ನೆ ಉಳ್ಳ",
   "Cannot be saved": "ಒರಿಪಾಡೆರೆ ಆಪುಂಡು",
-  "No password": "ಪಾಸ್‍ವರ್ಡ್ ಇಜ್ಜಿ",
   "No albums found": "ಯಾವುದೆ ಆಲ್ಬಂ ತಿಕ್ಕಂದಿಜ್ಜಿ",
   "Created": "ಸೃಷ್ಟಿಸಲಾಂಡ್",
   "Updated": "ಅಪ್‌ಡೇಟ್ ಆದ್‌ಂಡ್",
@@ -267,5 +266,17 @@
   "Confirm Change": "ಬದಲಾವಣೆ ದೃಢಪಡಿಸಿ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ದುಪ್ಪೆದಾಯಿ ಮಟ್ಟಲೆರ್ದ ಅಮರ್ಯಾದ ಆಲ್ಬಂ ಇಜ್ಜಿ ಬೊಕ್ಕ ಸ್ಟೋರೇಜ್ದ್ ಮಟ್ಟಿ ಮರ್ಯಾದ ಇತ್ತಿನೆ। ಅಪ್‌ಗ್ರೇಡ್‌ಲೆರ್ದ ಇಜಿಜಾಯಿನ ಬೇಲೆಗ್ ಪ್ರೋ-ರೇಟಾ ಕ್ರೆಡಿಟ್ ಮಲ್ಪುಂಡ್.",
   "Save To 6180": "6180 ಇಲ್ಲಿ ಸೇವ್ ಮಲ್ಪು",
-  "Open On Phone": "ಫೋನ್‌ದಲ್ಲಿ ತೆರೆಪು"
+  "Open On Phone": "ಫೋನ್‌ದಲ್ಲಿ ತೆರೆಪು",
+  "Will use \"password\" as default": "ಮೊದಲ್ಪಡ್ ಆದ್ \"password\" ಬಳಸುಂಡು",
+  "No Password": "ಯಾವುದೇ ಪಾಸ್‌ವರ್ಡ್ ಇಲ್ಲ",
+  "Preparing": "ತಯಾರಿ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ಎರ್ ಆಲ್ಬಮ್‌ಗ್ ಪಾಸ್ ವರ್ಡ್ ಸಂರಕ್ಷಣೆ ಕಾನ್ಫಿಗರ್ ಮಲ್ಪುಲೆ। ಎರ್ ಫೋಟೋಲೆಗ್ ಪ್ರವೇಶ ಎಂಚ ನಿರ್ಬಂಧಿಸೊಂದು ಪಾಡ್‌ದ್ ಆಯ್ಕೆ ಮಲ್ಪುಲೆ।",
+  "Enter password (optional)": "ಪಾಸ್ ವರ್ಡ್ ಪಾಡ್‌ಲೆ (ಐಚ್ಛಿಕ)",
+  "Album will be completely hidden until correct password is entered": "ಸರಿಯಾದ್ ಪಾಸ್‌ವರ್ಡ್ ಪ್ರವೇಶ ಮಲ್ಪೆರ್ ವರೆಗೆ ಆಲ್ಬಂ ಸಂಪೂರ್ಣವಾಯಿನ್ ಅಡಪೆರ್",
+  "Photos will be visible with watermarks, password required to save": "ಫೋಟೋಲು ವಾಟರ್‌ಮಾರ್ಕ್‌ದ್ ಸೇತ್ ದೆತ್ತುಂಡ್, ಸೇವ್ ಮಲ್ಪೆರ್ ಪಾಸ್‌ವರ್ಡ್ ಬೇಕ್",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ಕಾಲಿ ಬಿಟ್ಟಿದ್ದಿಂತ \"password\" ಮೂಲಾಧಾರ ಆದುಂಡು",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ಇರ್ ಪಾಸ್‌ವರ್ಡ್ ಫೀಲ್ಡ್ ಅನ್ನು ಕಾಲಿ ಬಿಟ್ಟಿದ್ದಿಂತ, \"password\" ಮೂಲಾಧಾರ ಪಾಸ್‌ವರ್ಡ್ ಆದುಂಡು. ಇರ್ ಇಂದೆನ್ ಆಲ್ಬಮ್ ಸೆಟ್ಟಿಂಗ್‌ಲೆಡ್ ಏರ್ ಸಮಯೊಲಾ ಬದಲಾವಣೆ ಮಲ್ಪೊಲಿ।",
+  "💡 Password Protection Info:": "💡 ಗುಪ್ತಪದ ಸಂರಕ್ಷಣೆ ಮಾಹಿತಿ:",
+  "Select Protection Level": "ಸಂರಕ್ಷಣೆ ಮಟ್ಟವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "Save Settings": "ಸೆಟ್ಟಿಂಗ್ಸ್ ಸೇವ್ ಮಲ್ಪುಲೆ"
 }

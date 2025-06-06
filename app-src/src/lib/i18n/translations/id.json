@@ -61,7 +61,6 @@
   "Hidden": "Tersembunyi",
   "Watermarked": "Ber-Tanda Air",
   "Cannot be saved": "Tidak dapat disimpan",
-  "No password": "Tidak ada kata sandi",
   "No albums found": "Tidak ada album ditemukan",
   "Created": "Dibuat",
   "Updated": "Diperbarui",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfirmasi Perubahan",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tingkat berbayar memiliki album tanpa batas dan hanya dibatasi oleh penyimpanan. Peningkatan mencakup kredit pro-rata untuk waktu yang tidak digunakan.",
   "Save To 6180": "Simpan Ke 6180",
-  "Open On Phone": "Buka Di Telepon"
+  "Open On Phone": "Buka Di Telepon",
+  "Will use \"password\" as default": "Akan menggunakan \"password\" sebagai default",
+  "No Password": "Tidak Ada Kata Sandi",
+  "Preparing": "Menyiapkan",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurasi perlindungan kata sandi untuk album Anda. Pilih bagaimana Anda ingin membatasi akses ke foto Anda.",
+  "Enter password (optional)": "Masukkan kata sandi (opsional)",
+  "Album will be completely hidden until correct password is entered": "Album akan sepenuhnya tersembunyi sampai kata sandi yang benar dimasukkan",
+  "Photos will be visible with watermarks, password required to save": "Foto akan terlihat dengan tanda air, kata sandi diperlukan untuk menyimpan",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Akan menggunakan \"password\" sebagai bawaan jika dibiarkan kosong",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jika Anda membiarkan bidang kata sandi kosong, \"password\" akan digunakan sebagai kata sandi bawaan. Anda dapat mengubah ini kapan saja di pengaturan album.",
+  "💡 Password Protection Info:": "💡 Info Perlindungan Kata Sandi:",
+  "Select Protection Level": "Pilih Tingkat Perlindungan",
+  "Save Settings": "Simpan Pengaturan"
 }

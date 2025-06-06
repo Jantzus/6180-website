@@ -61,7 +61,6 @@
   "Hidden": "Voohpe",
   "Watermarked": "Néške'ohe Vé'hohtséstse",
   "Cannot be saved": "Éehneséheévȯse",
-  "No password": "Mona heneetoestôtse",
   "No albums found": "Hóháʼo éšeévaʼe éno'sétȯxe'ohe",
   "Created": "Éestse",
   "Updated": "Éto'sėhóvé",
@@ -267,5 +266,17 @@
   "Confirm Change": "Véhotoévéhonáhe",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Hoháʼo é-hetanėhaéhestôtse album mato-náhkėhešė héne-móxe-vóóma tȧhéše. Ho'eehe-tséhaéhešė hokėhánótȧhé pro-rata crédit sáa-tsé-hešeséohé-ševe.",
   "Save To 6180": "6180-éve Ho'e",
-  "Open On Phone": "Telefon-éšé Ma'xe"
+  "Open On Phone": "Telefon-éšé Ma'xe",
+  "Will use \"password\" as default": "\"Password\" éhvóomahtáno",
+  "No Password": "Esaane Nahkooma",
+  "Preparing": "Hó'nehe",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Your album ho'e ma'xeme-véhestotse éšeestȯtse. Hotova'e néto'sėse ma'xemeo'o hóxeame náto'se ééva.",
+  "Enter password (optional)": "Hohtova'e éšeestotse (naévahóhtoháne)",
+  "Album will be completely hidden until correct password is entered": "É'sóváme éšeévaʼe étáohtomése tsé'tȯhke éno'xėhetséstse ma'eno mȧhoo'e",
+  "Photos will be visible with watermarks, password required to save": "Hóxovôxá'e évešétȧhéneehe tsé'tȯhke ma'eóme, ána'e tséhové'nésesto",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" héva'e vé'ho'e mȧhpe hevéstove",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Hóháʼo éšeévaʼenȯhévo password field vé'ho'e éno'sétȯxe'ohe, \"password\" héva'e náhe'ȯhévo password tohketovahe. Éne'enosȧhévo taa'éše album settings tóhpe.",
+  "💡 Password Protection Info:": "💡 Password Protection Information:",
+  "Select Protection Level": "Select Protection Level",
+  "Save Settings": "Save Settings"
 }

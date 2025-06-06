@@ -61,7 +61,6 @@
   "Hidden": "Dold",
   "Watermarked": "Vattenstämplad",
   "Cannot be saved": "Kan inte sparas",
-  "No password": "Inget lösenord",
   "No albums found": "Inga album hittades",
   "Created": "Skapad",
   "Updated": "Uppdaterad",
@@ -267,5 +266,17 @@
   "Confirm Change": "Bekräfta Ändring",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betalda nivåer har obegränsade album och begränsas endast av lagring. Uppgraderingar inkluderar proportionell kredit för oanvänd tid.",
   "Save To 6180": "Spara I 6180",
-  "Open On Phone": "Öppna På Telefon"
+  "Open On Phone": "Öppna På Telefon",
+  "Will use \"password\" as default": "Kommer att använda \"password\" som standard",
+  "No Password": "Inget Lösenord",
+  "Preparing": "Förbereder",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurera lösenordsskydd för ditt album. Välj hur du vill begränsa åtkomsten till dina foton.",
+  "Enter password (optional)": "Ange lösenord (valfritt)",
+  "Album will be completely hidden until correct password is entered": "Albumet kommer att döljas helt tills rätt lösenord anges",
+  "Photos will be visible with watermarks, password required to save": "Foton kommer att synas med vattenstämplar, lösenord krävs för att spara",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Kommer använda \"password\" som standard om lämnas tom",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Om du lämnar lösenordsfältet tomt kommer \"password\" att användas som standardlösenord. Du kan ändra detta när som helst i albuminställningar.",
+  "💡 Password Protection Info:": "💡 Lösenord Skydd Information:",
+  "Select Protection Level": "Välj Skyddsnivå",
+  "Save Settings": "Spara Inställningar"
 }

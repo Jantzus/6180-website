@@ -61,7 +61,6 @@
   "Hidden": "Dogolen",
   "Watermarked": "Ji Nɔ Ka Ye",
   "Cannot be saved": "A tɛ se ka mara",
-  "No password": "Tɛnɛkalan tɛ",
   "No albums found": "Ɔrɔmu si sɔrɔ",
   "Created": "Dilan",
   "Updated": "A kɛra kurayelen",
@@ -267,5 +266,17 @@
   "Confirm Change": "Yafa Yɛlɛma",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Degeda minnu b'a sara ka album caman ye ani hali ye mara dalen dɔrɔn. Yiriwalen bɛ kredit pro-rata di waati min ma baara kɛ na.",
   "Save To 6180": "Mara Ka 6180",
-  "Open On Phone": "Da Ka Telefoni"
+  "Open On Phone": "Da Ka Telefoni",
+  "Will use \"password\" as default": "Ka baara kɛ ni \"password\" ye min bɛ kɛ ni cogo la",
+  "No Password": "Tugu Tɛ",
+  "Preparing": "Ka Labɛn",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Sigi nikanlamali siri ye ka i albumi la. Sugandi i ka ladogo i ka ja i bilakun kan.",
+  "Enter password (optional)": "A siri fili (a ka kan)",
+  "Album will be completely hidden until correct password is entered": "Albumu bɛna dogolnya hiran fo ka ñɛmɲɛnw tɛmɛlenw dont",
+  "Photos will be visible with watermarks, password required to save": "Ja dɔnkili bɛna ye ji taamasiyɛnw ye, ñɛmɲɛnw wajib ka mara",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" bɛna kɛ kɛnɛya la ni fantan ye",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ni i ye passwordi yɔrɔ to fantan na, \"password\" bɛna kɛ passwordi kɛnɛya ye. I bɛ se ka o changer waati o waati albumu labɛnni kɔnɔ.",
+  "💡 Password Protection Info:": "💡 Ka Baara Kunnafoni Lakana:",
+  "Select Protection Level": "Ka Baara Hakɛ Sugandi",
+  "Save Settings": "Ka Setting Mara"
 }

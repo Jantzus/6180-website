@@ -61,7 +61,6 @@
   "Hidden": "Skjult",
   "Watermarked": "Vassmerkja",
   "Cannot be saved": "Kan ikkje lagrast",
-  "No password": "Ikkje passord",
   "No albums found": "Ingen album funne",
   "Created": "Oppretta",
   "Updated": "Oppdatert",
@@ -267,5 +266,17 @@
   "Confirm Change": "Stadfest Endring",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betalte nivå har ubegrensa album og er berre avgrensa av lagring. Oppgraderingar inkluderer pro-rata kreditt for ubrukt tid.",
   "Save To 6180": "Lagre I 6180",
-  "Open On Phone": "Opne På Telefon"
+  "Open On Phone": "Opne På Telefon",
+  "Will use \"password\" as default": "Vil bruke \"password\" som standard",
+  "No Password": "Ikkje Passord",
+  "Preparing": "Førebur",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurer passordvern for albumet ditt. Vel korleis du vil avgrense tilgangen til bileta dine.",
+  "Enter password (optional)": "Skriv inn passord (valfritt)",
+  "Album will be completely hidden until correct password is entered": "Albumet vert fullstendig gøymt til rett passord vert skrive inn",
+  "Photos will be visible with watermarks, password required to save": "Bilete vil vere synlege med vassmerke, passord krevjast for å lagre",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Vil bruke \"password\" som standard viss det vert left tomt",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Dersom du lèt passordfeltet stå tomt, vil \"password\" brukast som standardpassord. Du kan endre dette når som helst i albuminnstillingane.",
+  "💡 Password Protection Info:": "💡 Passord Vern Informasjon:",
+  "Select Protection Level": "Vel Vernnivå",
+  "Save Settings": "Lagre Innstillingar"
 }

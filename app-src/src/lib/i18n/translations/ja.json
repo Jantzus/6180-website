@@ -61,7 +61,6 @@
   "Hidden": "隠れた",
   "Watermarked": "透かし入り",
   "Cannot be saved": "保存できません",
-  "No password": "パスワードなし",
   "No albums found": "アルバムが見つかりません",
   "Created": "作成済み",
   "Updated": "更新しました",
@@ -267,5 +266,17 @@
   "Confirm Change": "変更を確認",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "有料ティアは無制限のアルバムを持ち、ストレージによってのみ制限されます。アップグレードには、未使用時間の按分クレジットが含まれます。",
   "Save To 6180": "6180に保存",
-  "Open On Phone": "電話で開く"
+  "Open On Phone": "電話で開く",
+  "Will use \"password\" as default": "デフォルトとして\"password\"を使用します",
+  "No Password": "パスワードなし",
+  "Preparing": "準備中",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "アルバムのパスワード保護を設定します。写真へのアクセスをどのように制限するかを選択してください。",
+  "Enter password (optional)": "パスワードを入力（任意）",
+  "Album will be completely hidden until correct password is entered": "正しいパスワードが入力されるまでアルバムは完全に非表示になります",
+  "Photos will be visible with watermarks, password required to save": "写真は透かし入りで表示され、保存にはパスワードが必要です",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ 空の場合、デフォルトで\"password\"が使用されます",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "パスワードフィールドを空のままにすると、\"password\"がデフォルトパスワードとして使用されます。これはアルバム設定でいつでも変更できます。",
+  "💡 Password Protection Info:": "💡 パスワード保護情報:",
+  "Select Protection Level": "保護レベルを選択",
+  "Save Settings": "設定を保存"
 }

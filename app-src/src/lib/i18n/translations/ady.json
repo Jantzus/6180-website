@@ -61,7 +61,6 @@
   "Hidden": "Шъэф",
   "Watermarked": "ПсыӀэпкъ ГъэтӀысыгъэ",
   "Cannot be saved": "Хъумэн ылъэкӏыщтэп",
-  "No password": "ПаролыншIэп",
   "No albums found": "Альбомхэр къэгъуэтакъым",
   "Created": "КъэгъэхъагъэщI",
   "Updated": "ЩӀэуэ хъуащ",
@@ -267,5 +266,17 @@
   "Confirm Change": "ЗэгъэзэхъукӀэр ТешӀу",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Къэплъэн тхьапӏэхэр альбомхэр къэгъуэтакъымрэ къарукъым, архывыр кӏэрэ къызэфӏэкӏыр. Къэунэшӏыныгъэхэм исэкъэнэ про-рата кредитыр щыӏэ.",
   "Save To 6180": "6180-м Исхьэгъэлъэ",
-  "Open On Phone": "ТелефонкӀэ ЕукӀыр"
+  "Open On Phone": "ТелефонкӀэ ЕукӀыр",
+  "Will use \"password\" as default": "«Пароль» ышъо щыгъэцIэкIу ышъитэрэ",
+  "No Password": "Ыджы Сыфэр",
+  "Preparing": "Зэихьыгъэ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Уи альбомым паролэ хьэнахэм ящхьэзыгъэ. Уи сурэтхэм зы щыхьэт къэгъуэтынчъэ хэхьым ухэхьэ.",
+  "Enter password (optional)": "Пароль тхэн (хэмыкIагъ)",
+  "Album will be completely hidden until correct password is entered": "Альбомыр зэрыфэщы пароль итхьэуэу гъэгупэнукъым",
+  "Photos will be visible with watermarks, password required to save": "Фотохэр къэгъуэшхуэ сурэтхэмкIэ итхьэкIэ, пароль хуейшъэзыхын лъэкIыгъэ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Пшӏаныгъэр пӏэрэ щыӏахэм \"password\" хъунэу екӏагъуэт",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Сыфэ-пщэныгъэ унэм щыпкъэ къакӏуэхэм \"password\" анаҫын ӏейкӏэ лэжьэгъуэтэжьыт. Ар альбом зыгъуэзэжыкӏэ цӏыкӏухэм къапщтэу зэхъуэкӏыж фэдэ.",
+  "💡 Password Protection Info:": "💡 ПасуордкIэ Щытыкъэ Тхылъ:",
+  "Select Protection Level": "ЩытыкIэ Уровень Къыхэхыр",
+  "Save Settings": "НэгъуэщӀ Зэхэгъэхьын"
 }

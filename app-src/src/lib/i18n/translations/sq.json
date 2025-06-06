@@ -61,7 +61,6 @@
   "Hidden": "I fshehur",
   "Watermarked": "Me Filigran",
   "Cannot be saved": "Nuk mund të ruhet",
-  "No password": "Pa fjalëkalim",
   "No albums found": "Asnjë album i gjetur",
   "Created": "Krijuar",
   "Updated": "Përditësuar",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfirmo Ndryshimin",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivelet e paguara kanë albume të pakufizuara dhe janë të kufizuara vetëm nga ruajtja. Përditësimet përfshijnë kredi pro-rata për kohën e papërdorur.",
   "Save To 6180": "Ruaj Në 6180",
-  "Open On Phone": "Hap Në Telefon"
+  "Open On Phone": "Hap Në Telefon",
+  "Will use \"password\" as default": "Do të përdorë \"password\" si parazgjedhje",
+  "No Password": "Asnjë Fjalëkalim",
+  "Preparing": "Duke Përgatitur",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfiguroni mbrojtjen me fjalëkalim për albumin tuaj. Zgjidhni se si dëshironi të kufizoni qasjen në fotografitë tuaja.",
+  "Enter password (optional)": "Vendosni fjalëkalimin (opsionale)",
+  "Album will be completely hidden until correct password is entered": "Albumi do të jetë kompletisht i fshehur derisa të futet fjalëkalimi i saktë",
+  "Photos will be visible with watermarks, password required to save": "Fotot do të jenë të dukshme me shenja uji, fjalëkalimi i nevojshëm për të ruajtur",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Do të përdorë \"password\" si parazgjedhje nëse lihet bosh",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Nëse e lini fushën e fjalëkalimit bosh, \"password\" do të përdoret si fjalëkalimi parazgjedhje. Mund ta ndryshoni këtë në çdo kohë tek cilësimet e albumit.",
+  "💡 Password Protection Info:": "💡 Informacion për Mbrojtjen e Fjalëkalimit:",
+  "Select Protection Level": "Zgjidhni Nivelin e Mbrojtjes",
+  "Save Settings": "Ruaj Cilësimet"
 }

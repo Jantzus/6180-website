@@ -61,7 +61,6 @@
   "Hidden": "Zuppà",
   "Watermarked": "Filigranà",
   "Cannot be saved": "Na po betg vegnir memorisà",
-  "No password": "Nagin pled-clav",
   "No albums found": "Nagins albums chattads",
   "Created": "Creà",
   "Updated": "Actualisà",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confermà Midada",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivels pajads han albums illimitads e vegnan limitads mo tras deposit. Actualisaziuns includudan credit pro-rata per temp betg duvra.",
   "Save To 6180": "Memorisar En 6180",
-  "Open On Phone": "Avrir Sin Telefon"
+  "Open On Phone": "Avrir Sin Telefon",
+  "Will use \"password\" as default": "Vegn a druvar \"password\" sco standard",
+  "No Password": "Nagina Pled-Clav",
+  "Preparing": "Preparaziun",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configurar la protecziun cun pled-clav per tes album. Tscherner co che ti vuls restrictar l'access a tias fotografias.",
+  "Enter password (optional)": "Endatescha il pled-clav (optional)",
+  "Album will be completely hidden until correct password is entered": "L'album vegn zuppentà cumplettamain fin che la clav correcta vegn endatada",
+  "Photos will be visible with watermarks, password required to save": "Las fotografias vegnan a vegnir visiblas cun marcas d'aua, clav necessaria per memorisar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Vegn ad utilisar \"password\" sco standard sche laschjà vid",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Schebain ti laschar vid il champ da la cifra, vegn \"password\" utilisà sco cifra da standard. Ti pos midar quai da tut temp en las configuraziuns da l'album.",
+  "💡 Password Protection Info:": "💡 Infurmaziuns davart Protecziun da Plav:",
+  "Select Protection Level": "Tscherna Nivel da Protecziun",
+  "Save Settings": "Memorisar Configuraziuns"
 }

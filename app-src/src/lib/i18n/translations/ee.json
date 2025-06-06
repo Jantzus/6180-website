@@ -61,7 +61,6 @@
   "Hidden": "Ɣaɖaɖa",
   "Watermarked": "Tsitsixɔŋkɔ",
   "Cannot be saved": "Womateŋu adzra o",
-  "No password": "Nyagbeteti mele o",
   "No albums found": "Womekpɔ album aɖeke o",
   "Created": "Wowɔ",
   "Updated": "Wodzii ɖe edzi",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ɖo Tɔtrɔ La Dzi",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Fetu siwo me wofiaa ga na la woanyi album sɔ̃hɛ aɖeke o eye dzidzeme ko toa wo. Nyonuteƒe dzidzemewo na kredit pro-rata na ɣeyiɣi si womeŋu o.",
   "Save To 6180": "Dzra Le 6180",
-  "Open On Phone": "Ʋu Le Telefon Dzi"
+  "Open On Phone": "Ʋu Le Telefon Dzi",
+  "Will use \"password\" as default": "Azã \"password\" abe wòadzoe",
+  "No Password": "Dzedze Manɔmee O",
+  "Preparing": "Dzɔdzɔm",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Dzra password nuxoxo na wo album. Tia alesi nedi be yeaxe mɔ wo fotoawo dzi.",
+  "Enter password (optional)": "De password (tiatia menye o)",
+  "Album will be completely hidden until correct password is entered": "Album la be ɣaɣla keŋkeŋ va se dzidzɔgbe nyuitɔ la made eme",
+  "Photos will be visible with watermarks, password required to save": "Nɔnɔmetatawo ado go kple tsi dzesi, dzidzɔgbe le bla be woadzra ɖo",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Woazu \"password\" abe default ne womegblẽe ɖi o",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ne èblé password godzi la ɖi la, woazã \"password\" abe password gbãtɔ ene. Àte ŋu atrɔe ɣesiaɣi le album ɖoɖowo me.",
+  "💡 Password Protection Info:": "💡 Password Dzɔdzɔme Nyagblɔɖi:",
+  "Select Protection Level": "Tia Dzɔdzɔme Dzidzenu",
+  "Save Settings": "Dzra Ɖoɖowo"
 }

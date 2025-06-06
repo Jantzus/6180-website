@@ -61,7 +61,6 @@
   "Hidden": "Ñemi",
   "Watermarked": "Ysyrypy",
   "Cannot be saved": "Ndaikatúi oñongatu",
-  "No password": "Ñe'ẽñemi'ỹre",
   "No albums found": "Ndaipóri álbum ojejuhúva",
   "Created": "Moheñói",
   "Updated": "Hekopyahúva",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ñemyengohe Ñemoneĩ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Amo mbohapy jeporu oguerekóva álbum jepuruve'ỹre ha oñembojerure mante ñongatu rupive. Umi moambue oike crédito pro-rata aravo jeporu'ỹ guarã.",
   "Save To 6180": "Ñongatu 6180-pe",
-  "Open On Phone": "Jeike Teléfono-pe"
+  "Open On Phone": "Jeike Teléfono-pe",
+  "Will use \"password\" as default": "Oipurútane \"password\" ijypykue ramo",
+  "No Password": "Ndaipóri Ñe'ẽñemi",
+  "Preparing": "Ñembosako'i",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Emoĩ ñe'ẽñemi ñangareko nde albúmpe. Eiporavo mba'éicha reipytyvõta ñemba'eguasu nde ta'angápe.",
+  "Enter password (optional)": "Emoinge ñe'ẽñemi (jeporavokuaa)",
+  "Album will be completely hidden until correct password is entered": "Álbum oñemiguepa porã osē peve ñe'ẽñemi heko ha'eñóva",
+  "Photos will be visible with watermarks, password required to save": "Ta'anga ojehecháta y remimohu reheve, ñe'ẽñemi tekotevẽ oñongatu hag̃ua",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Oipurúta \"password\" ijypykue ramo ojeheja rei",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ñe'ẽñemi renda rejesárõ rei, \"password\" ojepurúta ñe'ẽñemi ypykuéva ramo. Ikatu remoambue kóva mba'eichagua peve álbum ñemboheko-pe.",
+  "💡 Password Protection Info:": "💡 Marandu Ñemo'ã Ñe'ẽñemi:",
+  "Select Protection Level": "Jeporavo Ñemo'ã Nivel",
+  "Save Settings": "Moñongatu Ñemboheko"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Iiqaġnaq",
   "Watermarked": "Imiqsiutilik",
   "Cannot be saved": "Tutqiġnaitchuq",
-  "No password": "Password-aitchuq",
   "No albums found": "Album iniqisiñaitchut",
   "Created": "Sanaktauq",
   "Updated": "Nutaat",
@@ -267,5 +266,17 @@
   "Confirm Change": "Aaġialiqtuq Nalunaqtuq",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Aqliuyuriit tier-it qimmiq album-nik piliartut aamma niuqhivak-kiglu angijuq kiñugaaqtut. Upgrade-it ilagivagut pro-rata credit atorunnairuvluni taimi.",
   "Save To 6180": "Piqqusivut 6180-mut",
-  "Open On Phone": "Anigusukługu Uiññaq"
+  "Open On Phone": "Anigusukługu Uiññaq",
+  "Will use \"password\" as default": "\"Password\" atausiq iñuuniaqtuq",
+  "No Password": "Itijuq Aullarniq",
+  "Preparing": "Aaniqsaillu",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Atausrikagun password nasugiaq qanun album-gnik. Atausrit kimmiqsi naapiniq photos-nik iniqsivakun.",
+  "Enter password (optional)": "Itijuangun password (itijuasirjuk kimmiq)",
+  "Album will be completely hidden until correct password is entered": "Album sivulluk inisruami aglaglugich piqqusiat itchuak atchit",
+  "Photos will be visible with watermarks, password required to save": "Sikullurit inu qimmikpaktit, sivulluk qayu aglaaksrat agiu",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" aullartuksrauq aturaksrauq akuni kingunani",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Kingunatchiqpat password-mik, \"password\" aullartuksrauq atuniqsrauq password-mun. Tainna alakkarguitchutin album settings-mi.",
+  "💡 Password Protection Info:": "💡 Atausiq Anguniq Nihuksiraq:",
+  "Select Protection Level": "Anguniq Aullartiq Piiqqusiq",
+  "Save Settings": "Niḷiqsaiyat Piqqusijit"
 }

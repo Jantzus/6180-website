@@ -61,7 +61,6 @@
   "Hidden": "Aná'át'į́",
   "Watermarked": "Tó Bééshígíí",
   "Cannot be saved": "Doo bik'i' hadilyaa da",
-  "No password": "Bee nídahwiilʼaahii ádingo",
   "No albums found": "Album doo bééhoozįįd da",
   "Created": "Áltsé",
   "Updated": "Ałdó'ólta'",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ánáhoot'íinii Áhóót'é",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Naanish bee ákóóhai bił álbą́ą́ bighah doo ałhidadoołtéél da áádóó bee adildįįh bęęsh bidahooskání nidi. Ałhidadoołtéél éí bee ákóóhai nidaahooskánígíí ałhidadoogááł.",
   "Save To 6180": "6180-góó Áłah",
-  "Open On Phone": "Béésh Bee Hane'é Yiih"
+  "Open On Phone": "Béésh Bee Hane'é Yiih",
+  "Will use \"password\" as default": "\"Password\" hodóó beenahaaztʼį́į́ doo",
+  "No Password": "Doo Ałtsoos Da",
+  "Preparing": "Bee Ákót'éego",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Naaldlooshii bee iiná bináhásdzo álbam bá ninádáahii. Eii bee eeʼ neezhnáají keedahatʼéeʼgo biihílníił éí niidloh.",
+  "Enter password (optional)": "Naaldlooshii bee iiná bináhásdzo (ákót'éego)",
+  "Album will be completely hidden until correct password is entered": "Kéyah eʼelyaaígíí doo bééhoozįįd da daazlįįʼ ánt'įįhii nidiniih hólǫ́ǫgo",
+  "Photos will be visible with watermarks, password required to save": "Eʼelyaaígíí eedééshhįįh tó bee bééhólzingóó, nizhóní bee nidahooʼaah",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" bitsįį doo dahojoobaałígíí bitsįįgo ałk'idáá dooleel",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Áko bee hózhó bąąh nanitįįh bąąh dahojoobaałígíí ąąh lá, \"password\" bitsįį doo dahojoobaałígíí bee ałk'idáá dooleel. Kó bąąh álbam ádaalyaa yee índa nanitįįh.",
+  "💡 Password Protection Info:": "💡 Atsʼíísh Bee Anáʼádaohii Bee Bééhózin:",
+  "Select Protection Level": "Chʼééh Anáʼádaohii Bee Ózhį́į́ł",
+  "Save Settings": "Tʼáá Bee Anáʼídaohii Bee Anáʼínahodlit"
 }

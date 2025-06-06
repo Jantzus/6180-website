@@ -61,7 +61,6 @@
   "Hidden": "Далд",
   "Watermarked": "Усан Тэмдэгтэй",
   "Cannot be saved": "Хадгалах боломжгүй",
-  "No password": "Нууц үг байхгүй",
   "No albums found": "Цомог олдсонгүй",
   "Created": "Үүсгэсэн",
   "Updated": "Шинэчлэгдсэн",
@@ -267,5 +266,17 @@
   "Confirm Change": "Өөрчлөлтийг Баталгаажуулах",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Төлбөртэй түвшинд хязгааргүй цомог байдаг бөгөөд зөвхөн хадгалалтаар хязгаарлагддаг. Шинэчлэлт нь ашиглаагүй цагийн пропорциональ зээл агуулдаг.",
   "Save To 6180": "6180-д Хадгалах",
-  "Open On Phone": "Утасанд Нээх"
+  "Open On Phone": "Утасанд Нээх",
+  "Will use \"password\" as default": "\"Password\" үндсэн болгон ашиглана",
+  "No Password": "Нууц Үг Байхгүй",
+  "Preparing": "Бэлтгэж Байна",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Цомгийнхоо нууц үгээр хамгаалалтыг тохируулна уу. Зургуудынхаа хандалтыг хэрхэн хязгаарлахыг сонгоно уу.",
+  "Enter password (optional)": "Нууц үг оруулах (сонголттой)",
+  "Album will be completely hidden until correct password is entered": "Зөв нууц үг оруулах хүртэл цомог бүрэн нуугдах болно",
+  "Photos will be visible with watermarks, password required to save": "Зургууд усан тэмдэгтэйгээр харагдана, хадгалахад нууц үг шаардлагатай",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Хоосон үлдээвэл \"password\" анхдагч болгоно",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Хэрэв та нууц үгийн талбарыг хоосон үлдээвэл \"password\" анхдагч нууц үг болгон ашиглана. Та үүнийг цомгийн тохиргоонд хүссэн үедээ өөрчилж болно.",
+  "💡 Password Protection Info:": "💡 Нууц Үг Хамгаалах Мэдээлэл:",
+  "Select Protection Level": "Хамгаалах Түвшинг Сонгох",
+  "Save Settings": "Тохиргоог Хадгалах"
 }

@@ -61,7 +61,6 @@
   "Hidden": "מוּסתָר",
   "Watermarked": "מוטבע בסימן מים",
   "Cannot be saved": "לא ניתן לשמור",
-  "No password": "אין סיסמה",
   "No albums found": "לא נמצאו אלבומים",
   "Created": "נוצר",
   "Updated": "עודכן",
@@ -267,5 +266,17 @@
   "Confirm Change": "אשר שינוי",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "לדרגות התשלום יש אלבומים ללא הגבלה והם מוגבלים רק על ידי אחסון. שדרוגים כוללים זיכוי יחסי לזמן שלא נוצל.",
   "Save To 6180": "שמור ב-6180",
-  "Open On Phone": "פתח בטלפון"
+  "Open On Phone": "פתח בטלפון",
+  "Will use \"password\" as default": "ישתמש ב-\"password\" כברירת מחדל",
+  "No Password": "אין סיסמה",
+  "Preparing": "מכין",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "הגדר הגנת סיסמה לאלבום שלך. בחר כיצד ברצונך להגביל גישה לתמונות שלך.",
+  "Enter password (optional)": "הכנס סיסמה (אופציונלי)",
+  "Album will be completely hidden until correct password is entered": "האלבום יהיה מוסתר לחלוטין עד שתוזן הסיסמה הנכונה",
+  "Photos will be visible with watermarks, password required to save": "תמונות יהיו גלויות עם סימני מים, נדרשת סיסמה לשמירה",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ישתמש ב\"password\" כברירת מחדל אם יישאר ריק",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "אם תשאיר את שדה הסיסמה ריק, ייעשה שימוש ב\"password\" כסיסמת ברירת המחדל. תוכל לשנות זאת בכל עת בהגדרות האלבום.",
+  "💡 Password Protection Info:": "💡 מידע על הגנת סיסמה:",
+  "Select Protection Level": "בחר רמת הגנה",
+  "Save Settings": "שמור הגדרות"
 }

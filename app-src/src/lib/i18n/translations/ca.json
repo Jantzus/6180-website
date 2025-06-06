@@ -61,7 +61,6 @@
   "Hidden": "Amagat",
   "Watermarked": "Amb Marca d'Aigua",
   "Cannot be saved": "No es pot desar",
-  "No password": "Sense contrasenya",
   "No albums found": "No s'han trobat àlbums",
   "Created": "Creat",
   "Updated": "Actualitzat",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmar Canvi",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Els nivells de pagament tenen àlbums il·limitats i només estan limitats per l'emmagatzematge. Les actualitzacions inclouen crèdit prorrateig per temps no utilitzat.",
   "Save To 6180": "Desar A 6180",
-  "Open On Phone": "Obrir Al Telèfon"
+  "Open On Phone": "Obrir Al Telèfon",
+  "Will use \"password\" as default": "S'utilitzarà \"password\" com a predeterminat",
+  "No Password": "Sense Contrasenya",
+  "Preparing": "Preparant",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configureu la protecció per contrasenya del vostre àlbum. Trieu com voleu restringir l'accés a les vostres fotografies.",
+  "Enter password (optional)": "Introduïu la contrasenya (opcional)",
+  "Album will be completely hidden until correct password is entered": "L'àlbum estarà completament amagat fins que s'introdueixi la contrasenya correcta",
+  "Photos will be visible with watermarks, password required to save": "Les fotos seran visibles amb marques d'aigua, es requereix contrasenya per desar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ S'utilitzarà \"password\" per defecte si es deixa buit",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si deixeu buit el camp de contrasenya, s'utilitzarà \"password\" com a contrasenya per defecte. Podeu canviar-ho en qualsevol moment a la configuració de l'àlbum.",
+  "💡 Password Protection Info:": "💡 Informació de Protecció de Contrasenya:",
+  "Select Protection Level": "Selecciona el Nivell de Protecció",
+  "Save Settings": "Desar Configuració"
 }

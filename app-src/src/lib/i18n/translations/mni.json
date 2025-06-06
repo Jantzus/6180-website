@@ -61,7 +61,6 @@
   "Hidden": "লোতপা",
   "Watermarked": "ঈশিং মমৈ থাবা",
   "Cannot be saved": "ꯁꯦꯝꯕ ꯌꯥꯔꯣꯢ",
-  "No password": "ꯄꯥꯁꯋꯥꯔꯗ ꯅꯠꯇꯕ",
   "No albums found": "ꯑꯦꯜꯕꯝ ꯑꯃꯠꯇꯥ ꯐꯪꯗꯔꯦ",
   "Created": "ꯁꯦꯝꯕ ꯂꯣꯏꯔꯦ",
   "Updated": "ꯑꯄꯗꯦꯠ ꯇꯧꯕ ꯂꯣꯏꯔꯦ",
@@ -267,5 +266,17 @@
   "Confirm Change": "অহোঙবা পুথক্তুনা",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ꯄꯦ ꯇꯤꯌꯔ ꯑꯁꯤꯅꯥ ꯂꯤꯃꯤꯠ ꯅꯥꯏꯗꯕ ꯑꯦꯜꯕꯝ ꯂꯩ ꯑꯃꯁꯨꯡ ꯁ꯭ꯇꯣꯔꯦꯖ ꯈꯛꯇꯅꯥ ꯂꯤꯃꯤꯠ ꯇꯧꯏ꯫ ꯑꯄꯒ꯭ꯔꯦꯗꯁꯤꯡꯗ ꯁꯤꯖꯤꯟꯅꯗꯕ ꯃꯇꯃꯒꯤ ꯄ꯭ꯔꯣ-ꯔꯦꯇ ꯀ꯭ꯔꯦꯗꯤꯠ ꯌꯥꯑꯣꯏ꯫",
   "Save To 6180": "6180-দা সেভ তউবা",
-  "Open On Phone": "ফোনদা হাংদোক্কো"
+  "Open On Phone": "ফোনদা হাংদোক্কো",
+  "Will use \"password\" as default": "\"password\" ꯑꯁꯤ ꯃꯔꯨꯑꯣꯏꯕꯒꯤ ꯐꯣꯡꯗꯣꯛꯅꯥ ꯁꯤꯖꯤꯟꯅꯒꯅꯤ",
+  "No Password": "পাসৱৰ্ড অমত্তা নত্তে",
+  "Preparing": "ꯁꯦꯝ ꯁꯥꯔꯤꯕꯥ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ꯅꯍꯥꯛꯀꯤ ꯑꯦꯜꯕꯝ ꯑꯁꯤꯒꯤꯗꯃꯛ ꯄꯥꯁꯋꯔꯗ ꯉꯥꯀꯊꯣꯀꯄꯥ ꯀꯅꯐꯤꯒꯔ ꯇꯧꯕꯤꯌꯨ꯫ ꯅꯍꯥꯛꯀꯤ ꯐꯣꯇꯣꯁꯤꯡꯗꯥ ꯆꯠꯄꯥ ꯑꯁꯤ ꯀꯔꯝꯅꯥ ꯉꯊꯍꯅꯕꯥ ꯄꯥꯝꯕꯒꯦ ꯍꯥꯌꯕꯗꯨ ꯈꯅꯕꯤꯌꯨ꯫",
+  "Enter password (optional)": "ꯄꯥꯁꯋꯔꯗ ꯍꯥꯄꯆꯤꯜꯂꯨ (ꯐꯪꯒꯅꯤ)",
+  "Album will be completely hidden until correct password is entered": "ꯑꯆꯨꯝꯕ ꯄꯥꯁꯋꯥꯔꯗ ꯍꯥꯄꯆꯤꯟꯅꯗ꯭ꯔꯤꯡꯉꯥꯏ ꯑꯦꯜꯕꯝ ꯑꯁꯤ ꯃꯄꯨꯡ ꯐꯥꯅ ꯂꯣꯇꯒꯅꯤ",
+  "Photos will be visible with watermarks, password required to save": "ꯐꯣꯇꯣꯁꯤꯡ ꯋꯥꯇꯔꯃꯥꯔꯛꯀꯥ ꯂꯣꯌꯅꯅ ꯎꯕ ꯐꯪꯒꯅꯤ, ꯁꯦꯚ ꯇꯧꯕꯒꯤꯗꯃꯛ ꯄꯥꯁꯋꯥꯔꯗ ꯃꯊꯧ ꯇꯥꯏ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ꯈꯣꯡꯖꯤꯅꯗꯦ \"password\" ꯍꯥꯌꯕꯁꯤ ꯗꯤꯐꯣꯜꯇ ꯑꯣꯏꯅꯥ ꯁꯤꯖꯤꯟꯅꯒꯅꯤ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ꯀꯔꯤꯒꯨꯝꯕꯥ ꯅꯍꯥꯛꯅꯥ ꯄꯥꯁꯋꯥꯔꯗ ꯐꯤꯜꯗ ꯑꯁꯤ ꯈꯣꯡꯖꯤꯟ ꯇꯥꯀꯄꯗꯤ, \"password\" ꯑꯁꯤ ꯗꯤꯐꯣꯜꯇ ꯄꯥꯁꯋꯥꯔꯗ ꯑꯣꯏꯅꯥ ꯁꯤꯖꯤꯟꯅꯒꯅꯤ꯫ ꯃꯁꯤ ꯑꯦꯜꯕꯝ ꯁꯦꯇꯤꯡꯁꯇꯥ ꯃꯇꯝ ꯈꯨꯗꯤꯡꯃꯛꯇꯥ ꯍꯣꯡꯒꯗꯕꯥ ꯌꯥꯏ꯫",
+  "💡 Password Protection Info:": "💡 পাসৱার্ড প্রোতেক্সন ইনফোর্মেসন:",
+  "Select Protection Level": "প্রোতেক্সন লেভেল সেলেক্ত তৌরো",
+  "Save Settings": "সেতিং সেভ তৌরো"
 }

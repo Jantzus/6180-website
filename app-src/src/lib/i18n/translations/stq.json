@@ -61,7 +61,6 @@
   "Hidden": "Ferbierged",
   "Watermarked": "Woatertieken",
   "Cannot be saved": "Kon nit spiekerd wäide",
-  "No password": "Naan Paaswoud",
   "No albums found": "Neen Albums fuunen",
   "Created": "Moaked",
   "Updated": "Aktualisiert",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ännernge Bestättigje",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betoalde Stieuwjen hääbe unbegrensede Albums un sunt bloot truch Speekerenenge begrenset. Upgrades heelden pro-rata Krediet foar nit-nutsede Tied.",
   "Save To 6180": "Tou 6180 Spiekerje",
-  "Open On Phone": "Ap't Telefon Apenmakje"
+  "Open On Phone": "Ap't Telefon Apenmakje",
+  "Will use \"password\" as default": "Schäl \"password\" as Standard bruuke",
+  "No Password": "Geen Passwuurd",
+  "Preparing": "Föärberedung",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurierje Passwoud-Skuts foar dien Album. Kees, wo du dän Tougoang tou diene Bielde beskränkje wolt.",
+  "Enter password (optional)": "Jou dät Passwoud ien (nit nöadich)",
+  "Album will be completely hidden until correct password is entered": "Dät Album wäd fulständich ferstääken, bit dät rjuchte Paaswoord ienroart wäd",
+  "Photos will be visible with watermarks, password required to save": "Bielden wäide sichtboor wees mäd Wäätermäärken, Paaswoord nöödich foar Spiekerengen",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Woarst \"password\" as Standard näime, wan't lääch blaft",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Wan du't Passwoard-Fäild lääch blafst, woarst \"password\" as Standard-Passwoard näimen. Du koast dät altermaal annere in do Album-Ienstälenge.",
+  "💡 Password Protection Info:": "💡 Passwuurd Skuts Information:",
+  "Select Protection Level": "Skuts Level Utwäälie",
+  "Save Settings": "Ienställuungen Boargje"
 }

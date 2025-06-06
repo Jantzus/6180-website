@@ -61,7 +61,6 @@
   "Hidden": "Hidden",
   "Watermarked": "Watermarked",
   "Cannot be saved": "Eab tsimine",
-  "No password": "Password eo ikieo",
   "No albums found": "Eo album eo ikorena",
   "Created": "Ekamwamwa",
   "Updated": "Eko update",
@@ -267,5 +266,17 @@
   "Confirm Change": "Kōnfirm Jenja",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tier menan eken album ik akkab eimit me emeg storage dorer denitsirib. Akepaide kredit pro-rata eban mo eime baweran.",
   "Save To 6180": "Anim Eo 6180",
-  "Open On Phone": "Katak Ñan Telefon"
+  "Open On Phone": "Katak Ñan Telefon",
+  "Will use \"password\" as default": "Omo kebok \"password\" omo dapij",
+  "No Password": "Eab Password",
+  "Preparing": "Aiworerin",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigure password protection me iya album. Juge eb kami re ituga in mokwe i tekawa mo an.",
+  "Enter password (optional)": "Type password eo (dabegen)",
+  "Album will be completely hidden until correct password is entered": "Album eab etabuon nana bwaroa ma password dogor eouwa",
+  "Photos will be visible with watermarks, password required to save": "Ama moko eab kōmman ek jerbal in jān, passwōd in kar topar enana",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ E ipwen \"password\" default me nea eo an kein",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Inagijen an password field ke itok ino, \"password\" e defolt password me mana. Ekwe omo aengin nana eaetok album settings-ine.",
+  "💡 Password Protection Info:": "💡 Melele me Password Protection:",
+  "Select Protection Level": "Kōjparok Level me Protection",
+  "Save Settings": "Jerbal Settings"
 }

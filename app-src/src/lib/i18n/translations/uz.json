@@ -61,7 +61,6 @@
   "Hidden": "Yashirin",
   "Watermarked": "Suv Belgilik",
   "Cannot be saved": "Saqlab bo'lmaydi",
-  "No password": "Parol yo'q",
   "No albums found": "Hech qanday albom topilmadi",
   "Created": "Yaratildi",
   "Updated": "Yangilandi",
@@ -267,5 +266,17 @@
   "Confirm Change": "O'zgarishni Tasdiqlang",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Toʻlovli darajalar cheksiz albumlarga ega va faqat saqlash bilan cheklangan. Yangilanishlar foydalanilmagan vaqt uchun proporsional kredit oʻz ichiga oladi.",
   "Save To 6180": "6180-ga Saqlash",
-  "Open On Phone": "Telefonda Ochish"
+  "Open On Phone": "Telefonda Ochish",
+  "Will use \"password\" as default": "\"Password\" ni standart sifatida ishlatadi",
+  "No Password": "Parol Yo'q",
+  "Preparing": "Tayyorlash",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Albomingiz uchun parol himoyasini sozlang. Rasmlaringizga kirishni qanday cheklashni xohlashingizni tanlang.",
+  "Enter password (optional)": "Parolni kiriting (ixtiyoriy)",
+  "Album will be completely hidden until correct password is entered": "To'g'ri parol kiritilmaguncha albom butunlay berkitilgan bo'ladi",
+  "Photos will be visible with watermarks, password required to save": "Rasmlar suv belgilari bilan ko'rinadi, saqlash uchun parol kerak",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Bo'sh qoldirilsa \"password\" standart sifatida ishlatiladi",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Agar parol maydonini bo'sh qoldirsangiz, \"password\" standart parol sifatida ishlatiladi. Buni albom sozlamalarida istalgan vaqtda o'zgartirishingiz mumkin.",
+  "💡 Password Protection Info:": "💡 Parol Himoya Ma'lumoti:",
+  "Select Protection Level": "Himoya Darajasini Tanlang",
+  "Save Settings": "Sozlamalarni Saqlash"
 }

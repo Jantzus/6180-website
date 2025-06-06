@@ -61,7 +61,6 @@
   "Hidden": "Jasırın",
   "Watermarked": "Suv Tamg'alı",
   "Cannot be saved": "Saqlanıwı múmkin emes",
-  "No password": "Parol joq",
   "No albums found": "Albomlar tabılmadı",
   "Created": "Jaratılǵan",
   "Updated": "Jańalandı",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ózgerdi Tastıqla",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Aqıtoyın darajalar sheksiz albomlar bar hám tek saqlaw menen sheklengen. Janǵırtıwlar qollanılmag'an waqıt ushin pro-rata kredit qosadı.",
   "Save To 6180": "6180-ge Saqlaw",
-  "Open On Phone": "Telefonda Ash"
+  "Open On Phone": "Telefonda Ash",
+  "Will use \"password\" as default": "\"Password\" dáslep retinde qollanar",
+  "No Password": "Parol Joq",
+  "Preparing": "Tayarlıq",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Albumınız ushın parol qorğaw sazlaw. Fotoğraflarıñızga kiris qanday sheklew istegeniñizni saylan.",
+  "Enter password (optional)": "Paroldi kiritiñ (islegińe qoyıp)",
+  "Album will be completely hidden until correct password is entered": "Albom durıs parol jazılğansha tolığınan jasırın boladı",
+  "Photos will be visible with watermarks, password required to save": "Suratlar suw belgileri menen körünedi, saqlaw üşin parol kerek",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Bos qalsá \"password\" túp ornında paydalanıladı",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Eger parol maydanın bos qoyıp tashlasañız, \"password\" túp parol retinde paydalanıladı. Bunı album sazlamalarında qaysı waqıtta bolsa da ózgertip boladi.",
+  "💡 Password Protection Info:": "💡 Parol Qorğaması Aqparatı:",
+  "Select Protection Level": "Qorğama Seviyesin Tanlaw",
+  "Save Settings": "Sozlawları Saqlaw"
 }

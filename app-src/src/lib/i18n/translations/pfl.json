@@ -61,7 +61,6 @@
   "Hidden": "Verborje",
   "Watermarked": "Wassazeichnet",
   "Cannot be saved": "Konn net gschbeischad werre",
-  "No password": "Ken Passwort",
   "No albums found": "Kä Album gfunne",
   "Created": "Gschtellt",
   "Updated": "Aktualisiert",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ännerung Beschtätigen",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Bezahlte Stufe hun unbegrenzte Albe un sin nur vum Speicher begrenzt. Upgrades enthalte pro-rata Kredit fer ungenutzte Zeit.",
   "Save To 6180": "In 6180 Speichere",
-  "Open On Phone": "Ufmache Uf Telefon"
+  "Open On Phone": "Ufmache Uf Telefon",
+  "Will use \"password\" as default": "Werd \"password\" als Standard verwende",
+  "No Password": "Koi Password",
+  "Preparing": "Vorbereitung",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurier Passwort-Schutz fer dei Album. Wähl aus, wie du de Zugang zu deine Fotos beschränke willst.",
+  "Enter password (optional)": "Gib des Passwort ei (optional)",
+  "Album will be completely hidden until correct password is entered": "S Album werd vollständig versteckt bis s richtige Kennwort neigebb werd",
+  "Photos will be visible with watermarks, password required to save": "Bilder werre sichtbaar sei mit Wasserzeiche, Kennwort isch nedig zum speichere",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Werd \"password\" als Standard nemme, wann's ledisch gelasse werd",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Wann Du des Passwort-Feld ledisch losst, werd \"password\" als Standard-Passwort genumme. Du kannscht des immer ennern in de Album-Einstellunge.",
+  "💡 Password Protection Info:": "💡 Passwort Schutz Information:",
+  "Select Protection Level": "Schutz Level Auswaehle",
+  "Save Settings": "Einstellunge Speichere"
 }

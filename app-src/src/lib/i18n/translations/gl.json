@@ -61,7 +61,6 @@
   "Hidden": "Agochado",
   "Watermarked": "Con Marca de Auga",
   "Cannot be saved": "Non se pode gardar",
-  "No password": "Sen contrasinal",
   "No albums found": "Non se atoparon álbums",
   "Created": "Creado",
   "Updated": "Actualizado",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmar Cambio",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Os niveis de pagamento teñen álbums ilimitados e están limitados só polo almacenamento. As actualizacións inclúen crédito proporcional polo tempo non utilizado.",
   "Save To 6180": "Gardar En 6180",
-  "Open On Phone": "Abrir No Teléfono"
+  "Open On Phone": "Abrir No Teléfono",
+  "Will use \"password\" as default": "Usará \"password\" como predeterminado",
+  "No Password": "Sen Contrasinal",
+  "Preparing": "Preparando",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configura a protección por contrasinal para o teu álbum. Escolle como queres restrinxir o acceso ás túas fotos.",
+  "Enter password (optional)": "Introducir contrasinal (opcional)",
+  "Album will be completely hidden until correct password is entered": "O álbum estará completamente agochado ata que se introduza o contrasinal correcto",
+  "Photos will be visible with watermarks, password required to save": "As fotos estarán visibles con marcas de auga, contrasinal necesario para gardar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Usará \"password\" como predeterminado se se deixa baleiro",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se deixas o campo de contrasinal baleiro, \"password\" usarase como contrasinal predeterminado. Podes cambiar isto en calquera momento na configuración do álbum.",
+  "💡 Password Protection Info:": "💡 Información de Protección de Contrasinal:",
+  "Select Protection Level": "Seleccionar Nivel de Protección",
+  "Save Settings": "Gardar Configuración"
 }

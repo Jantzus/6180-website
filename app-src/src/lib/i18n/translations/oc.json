@@ -61,7 +61,6 @@
   "Hidden": "Amagat",
   "Watermarked": "Filigranada",
   "Cannot be saved": "Pòt pas èsser enregistrat",
-  "No password": "Cap de senhal",
   "No albums found": "Cap d'album pas trobat",
   "Created": "Creat",
   "Updated": "Mes a jorn",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmar Cambiament",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Los nivèls pagants an d'albums illimitats e son limitats que pel stockatge. Las actualizacions includon un crèdit pro-rata pel temps pas utilizat.",
   "Save To 6180": "Enregistrar En 6180",
-  "Open On Phone": "Dobrir Sul Telefòn"
+  "Open On Phone": "Dobrir Sul Telefòn",
+  "Will use \"password\" as default": "Utilizarà \"password\" per defaut",
+  "No Password": "Pas Cap De Senhal",
+  "Preparing": "Preparacion",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configuratz la proteccion per mot de passa per vòstre album. Causissètz cossí volètz restrénher l'accès a vòstras fòtos.",
+  "Enter password (optional)": "Picatz lo senhal (opcional)",
+  "Album will be completely hidden until correct password is entered": "L'album serà completament amagat fins que lo bon senhal siá picat",
+  "Photos will be visible with watermarks, password required to save": "Las fòtos seràn visiblas amb marcas d'aiga, senhal necessari per salvar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Utilizarà \"password\" coma per defaut se laissat voide",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se laissatz lo camp de senhal voide, \"password\" serà utilizat coma senhal per defaut. Podètz cambiar aquò a tot moment dins los paramètres de l'album.",
+  "💡 Password Protection Info:": "💡 Informacions de Proteccion per Senhal:",
+  "Select Protection Level": "Seleccionar lo Nivèl de Proteccion",
+  "Save Settings": "Enregistrar los Paramètres"
 }

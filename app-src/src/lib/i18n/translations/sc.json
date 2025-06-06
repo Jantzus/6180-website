@@ -61,7 +61,6 @@
   "Hidden": "Cuau",
   "Watermarked": "Filigranadu",
   "Cannot be saved": "Non podet èssere sarvadu",
-  "No password": "Peruna password",
   "No albums found": "Perunu album attu agatadu",
   "Created": "Creadu",
   "Updated": "Agiornadu",
@@ -267,5 +266,17 @@
   "Confirm Change": "Cunfirmare su Cambiamentu",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Sos livellos pagados tenent àlbumens sena lìmites e sunt limitados isceti dae sa memòria. Sos atualizos includent crèditu pro-rata pro su tempus no impreadu.",
   "Save To 6180": "Sarva In 6180",
-  "Open On Phone": "Aberi In Su Telefonu"
+  "Open On Phone": "Aberi In Su Telefonu",
+  "Will use \"password\" as default": "At a impreare \"password\" comente predefinidu",
+  "No Password": "Peruna Password",
+  "Preparing": "Preparende",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configura sa protetzion cun password pro s'àlbumu tou. Scegli comente cheres limitare s'atzessu a sas fotografias tuas.",
+  "Enter password (optional)": "Inserta sa password (optzionale)",
+  "Album will be completely hidden until correct password is entered": "S'àlbumu at a èssere cuau completamente finas a cando sa crai giai no at a èssere posta",
+  "Photos will be visible with watermarks, password required to save": "Sas fotografias ant a bìdere visìbiles cun is filigrànas, craghèdda necessària pro sarvare",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ At a impreare \"password\" comente predefinidu si lassadu bòidu",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si lassas bòidu su campu de sa password, \"password\" at a èssere impreadu comente password predefinida. Podes cambiare custu in cale si siat momentu in sas impostatziones de s'album.",
+  "💡 Password Protection Info:": "💡 Informatziones de Protessione de Sa Password:",
+  "Select Protection Level": "Sèbera su Livellu de Protessione",
+  "Save Settings": "Sarva sas Impostatziones"
 }

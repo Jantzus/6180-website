@@ -61,7 +61,6 @@
   "Hidden": "Natia",
   "Watermarked": "Fa'ailoga Vai",
   "Cannot be saved": "E le mafai ona sefe",
-  "No password": "Leai se uputatusi",
   "No albums found": "Leai ni api e maua",
   "Created": "Na faia",
   "Updated": "Ua fa'afouina",
@@ -267,5 +266,17 @@
   "Confirm Change": "Faʻamaoni le Suiga",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Laasaga totogi e i ai ni api e le gata ma ua fa'atapula'aina na o le fa'aputuga. O fa'aleleia atoa ai le aitalafu pro-rata mo le taimi e le'i fa'aaogaina.",
   "Save To 6180": "Fa'asao I 6180",
-  "Open On Phone": "Tatala I Le Telefoni"
+  "Open On Phone": "Tatala I Le Telefoni",
+  "Will use \"password\" as default": "O le a faaaoga \"password\" e fai ma masani",
+  "No Password": "Leai Se Fa'ailo",
+  "Preparing": "Saunia",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Fa'atulaga le puipuiga o upu lilo mo lau pepa ata. Filifili pe fa'afefea ona e fia fa'atapula'aina le avanoa i au ata.",
+  "Enter password (optional)": "Tusi le upu lilo (filifiliga)",
+  "Album will be completely hidden until correct password is entered": "O le api o le a natia atoa seia oo ina tuu lelei le leo faitaga",
+  "Photos will be visible with watermarks, password required to save": "O ata o le a vaaia i luga o faailoga vai, manaomia le leo faitaga e teu ai",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ O le'i faaaoga \"password\" e pei o le masani pe a tu'ua gaogao",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Afai e te tu'ua le password field e gaogao, o le a fa'aaogaina \"password\" e pei o le password masani. E mafai ona e suia lenei i so'o se taimi i totonu o album settings.",
+  "💡 Password Protection Info:": "💡 Faʻamatalaga e Uiga i le Puipuiga o le Password:",
+  "Select Protection Level": "Filifili le Tulaga Puipui",
+  "Save Settings": "Teu Sauniga"
 }

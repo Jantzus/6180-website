@@ -61,7 +61,6 @@
   "Hidden": "ተደብቋል",
   "Watermarked": "በውሃ ምልክት የተደረገ",
   "Cannot be saved": "ማስቀመጥ አይቻልም",
-  "No password": "የይለፍ ቃል የለም",
   "No albums found": "አልበሞች አልተገኙም",
   "Created": "ተፈጥሯል",
   "Updated": "ተዘምኗል",
@@ -267,5 +266,17 @@
   "Confirm Change": "ለውጡን ያረጋግጡ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "የተከፈሉ ደረጃዎች ያልተገደቡ አልበሞች አላቸው እና በማከማቻ ብቻ የተገደቡ ናቸው። ማሻሻያዎች ያልተጠቀመበት ጊዜ የሚመጣጠን ክሬዲት ያካትታሉ።",
   "Save To 6180": "ወደ 6180 አስቀምጥ",
-  "Open On Phone": "በስልክ ላይ ክፈት"
+  "Open On Phone": "በስልክ ላይ ክፈት",
+  "Will use \"password\" as default": "\"password\" እንደ ቀዳሚ ይጠቀማል",
+  "No Password": "የለም ይለፍ ቃል",
+  "Preparing": "ዝግጁ እናደርጋለን",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "የአልበምዎን የይለፍ ቃል ጥበቃ ያዋቅሩ። ወደ ፎቶዎችዎ መድረስን እንዴት መገደብ እንደፈለጉ ይምረጡ።",
+  "Enter password (optional)": "የይለፍ ቃል ያስገቡ (አማራጭ)",
+  "Album will be completely hidden until correct password is entered": "መጽሐፉ ትክክለኛ የይለፍ ቃል እስኪገባ ድረስ ሙሉ በሙሉ ይደበቃል",
+  "Photos will be visible with watermarks, password required to save": "ምስሎች የውሃ ማርክዎች ታያሉ፣ ለማስቀመጥ የይለፍ ቃል ያስፈልጋል",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ባዶ ቢቀር \"password\" እንደ ዋና ተጠቃሚ ይገለጻል",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "የይለፍ ቃል መስኩን ባዶ ካስቀመጡ ፣ \"password\" እንደ ነባሪ የይለፍ ቃል ይጠቀማል። ይህንን በአልበም ቅንብር ውስጥ በማንኛውም ጊዜ መቀየር ይችላሉ።",
+  "💡 Password Protection Info:": "💡 የይለፍ ቃል ጥበቃ መረጃ:",
+  "Select Protection Level": "የጥበቃ ደረጃ ምርጫ",
+  "Save Settings": "ቅንብሮች አስቀምጥ"
 }

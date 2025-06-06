@@ -61,7 +61,6 @@
   "Hidden": "Tumbelerile",
   "Watermarked": "Mfungho wa Mati",
   "Cannot be saved": "A swi nge hlayisiwi",
-  "No password": "Ku hava phaswedi",
   "No albums found": "Ku hava ti-albhamu leti ti kumiweke",
   "Created": "Endliwe",
   "Updated": "Pfuxetiwile",
@@ -267,5 +266,17 @@
   "Confirm Change": "Tiyisisa Ku Cinca",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tintshava leti hakwelwako ti na ti-album ti nga heriki ti nga heriki hikuva hi vuhlayisi ntsena. Ku antswisiwa ku katsa krediti ya pro-rata ya nkarhi lowu nga tirhisiwangiki.",
   "Save To 6180": "Hlayisa Eka 6180",
-  "Open On Phone": "Pfula Eka Rifoni"
+  "Open On Phone": "Pfula Eka Rifoni",
+  "Will use \"password\" as default": "Ku ta tirhisa \"password\" tanihi leswi tolovelekeke",
+  "No Password": "Ku Hava Password",
+  "Preparing": "Ku Lungisa",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Lulamisa vuhlayiseki bya password eka albamu ya wena. Hlawula hilaha u lavaka ku limitana ku nghena eka swifaniso swa wena.",
+  "Enter password (optional)": "Nghenisa password (ku hlawula)",
+  "Album will be completely hidden until correct password is entered": "Albhamu ya ta va yi ficekaka hinkwako ku nga fikelela rito ro tshama ritirhisiweke",
+  "Photos will be visible with watermarks, password required to save": "Swifaniso swi ta vonakala hi swikombiso swa mati, password yi laveka ku hlayisa",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Yi ta tirhisa \"password\" tanihi leyi faneleke loko yi siveleka yi nga riki nchumu",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Loko u tshika password field yi nga riki nchumu, \"password\" yi ta tirhisiwa tanihi password leyi faneleke. U nga yi cinca nkarhi lowun na lowun eka ti setting ta album.",
+  "💡 Password Protection Info:": "💡 Mahungu ya Vuhlayiseki bya Password:",
+  "Select Protection Level": "Hlawula Mpimo wa Vuhlayiseki",
+  "Save Settings": "Hlayisa Swihangiseleri"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Ẩn giấu",
   "Watermarked": "Có Hình Mờ",
   "Cannot be saved": "Không thể lưu",
-  "No password": "Không có mật khẩu",
   "No albums found": "Không tìm thấy album nào",
   "Created": "Đã tạo",
   "Updated": "Đã cập nhật",
@@ -267,5 +266,17 @@
   "Confirm Change": "Xác Nhận Thay Đổi",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Các gói trả phí có album không giới hạn và chỉ bị giới hạn bởi dung lượng lưu trữ. Các nâng cấp bao gồm tín dụng tỷ lệ cho thời gian không sử dụng.",
   "Save To 6180": "Lưu Vào 6180",
-  "Open On Phone": "Mở Trên Điện Thoại"
+  "Open On Phone": "Mở Trên Điện Thoại",
+  "Will use \"password\" as default": "Sẽ sử dụng \"password\" làm mặc định",
+  "No Password": "Không Có Mật Khẩu",
+  "Preparing": "Chuẩn Bị",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Cấu hình bảo vệ mật khẩu cho album của bạn. Chọn cách bạn muốn hạn chế quyền truy cập vào các bức ảnh của mình.",
+  "Enter password (optional)": "Nhập mật khẩu (tùy chọn)",
+  "Album will be completely hidden until correct password is entered": "Album sẽ bị ẩn hoàn toàn cho đến khi nhập đúng mật khẩu",
+  "Photos will be visible with watermarks, password required to save": "Ảnh sẽ hiện thị với hình mờ, cần mật khẩu để lưu",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Sẽ sử dụng \"password\" làm mặc định nếu để trống",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Nếu bạn để trống trường mật khẩu, \"password\" sẽ được sử dụng làm mật khẩu mặc định. Bạn có thể thay đổi điều này bất kỳ lúc nào trong cài đặt album.",
+  "💡 Password Protection Info:": "💡 Thông Tin Bảo Vệ Mật Khẩu:",
+  "Select Protection Level": "Chọn Mức Độ Bảo Vệ",
+  "Save Settings": "Lưu Cài Đặt"
 }

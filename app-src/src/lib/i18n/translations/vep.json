@@ -61,7 +61,6 @@
   "Hidden": "Peitnu",
   "Watermarked": "Vezimärgutadud",
   "Cannot be saved": "Ei voi kaita",
-  "No password": "Ei ole peitsanoid",
   "No albums found": "Ei ole löutud al'bomid",
   "Created": "Lodul",
   "Updated": "Udištadud",
@@ -267,5 +266,17 @@
   "Confirm Change": "Vajehtuz Tazavo",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maksajiden tahoid oma loppmatoi al'bomid da oma rajoitadud vaiktahe saigtamižen. Ažurirovanijad sigoitese proporcional'ne kredit käbaidamatomha aigaha.",
   "Save To 6180": "Panta 6180-he",
-  "Open On Phone": "Avata Telefonas"
+  "Open On Phone": "Avata Telefonas",
+  "Will use \"password\" as default": "Kävutab \"password\" augotižlibundaks",
+  "No Password": "Ei Ole Koodisana",
+  "Preparing": "Vaumistauz",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Sädagas parolin kaičend tedan albumale. Valiče, kut tahtotet vägestada satused tedan kuviden luo.",
+  "Enter password (optional)": "Kirjutagat parol (valičendaigad)",
+  "Album will be completely hidden until correct password is entered": "Al'bom om täuzin kaihatud, kuni oiktad salasanan ei kirjutada",
+  "Photos will be visible with watermarks, password required to save": "Fotokuvad oletas nähtavas vezimerkoiden kera, salamana vajehes säilötuzes",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Kävutab \"password\" pälävariandaks, ku jätab tühjäks",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ku jätad paroliväl'jan tühjäks, \"password\" kävutadas pälävariandaks. Voidad sidä vajehtada album-järgendusiš mitte-se taht.",
+  "💡 Password Protection Info:": "💡 Parolan Kaičendan Tedod:",
+  "Select Protection Level": "Valiče Kaičendan Aste",
+  "Save Settings": "Sädhä Sädused"
 }

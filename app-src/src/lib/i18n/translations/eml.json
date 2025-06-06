@@ -61,7 +61,6 @@
   "Hidden": "Nascost",
   "Watermarked": "Filigranè",
   "Cannot be saved": "An s'pòl salvèr",
-  "No password": "Nissun passwòrd",
   "No albums found": "Nissón album truvà",
   "Created": "Creè",
   "Updated": "Agiurnê",
@@ -267,5 +266,17 @@
   "Confirm Change": "Cunfermêr al Cambiamont",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "I livèl pagâ i à àlbum senza lìmit e i ìn limità sólo da la memorî. I agiurnament i incalùden crèdit pro-rata par al tànp mìa dopràt.",
   "Save To 6180": "Salva In 6180",
-  "Open On Phone": "Vérzi Int'al Telefon"
+  "Open On Phone": "Vérzi Int'al Telefon",
+  "Will use \"password\" as default": "L'adōprarà \"password\" cme predefinì",
+  "No Password": "Gninta Parola",
+  "Preparing": "Preparaziån",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Cunfigùra la protesiòn cun pas-vōrd par al tò album. Ŝêgli cmè a vù limitêr l'acès a al tō fôt.",
+  "Enter password (optional)": "Mèt la pas-vōrd (opţional)",
+  "Album will be completely hidden until correct password is entered": "L'album al sarà pròppi tót nascòst fina che a n s'insirìss la password giòsta",
+  "Photos will be visible with watermarks, password required to save": "Al fòt al sarân visìbil con al marc ad aqua, password l'è nessària par salvè",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Duvré \"password\" cme predefinî se al lasa vöd",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se a làssa vöd al camp ad la password, \"password\" al vgnirà duvràt cme password predefinîda. L'è pussibil cambièr sòta in qué manera al völt in la configurazión dl'album.",
+  "💡 Password Protection Info:": "💡 Infurmaziån dla Protèziån dla Password:",
+  "Select Protection Level": "Ścegli al Livèl ad Protèziån",
+  "Save Settings": "Salva al Ampostassiån"
 }

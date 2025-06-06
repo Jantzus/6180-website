@@ -61,7 +61,6 @@
   "Hidden": "Hunahuna",
   "Watermarked": "Tāpa'o Pape",
   "Cannot be saved": "E ore e nehenehe e vai",
-  "No password": "Aita e parau huna",
   "No albums found": "Aita e ʻālipamu i ʻiteahia",
   "Created": "Hamanihia",
   "Updated": "Fa'ahoura'ahia",
@@ -267,5 +266,17 @@
   "Confirm Change": "Fa'a'ite i te Taui",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Te mau âmui 'aufaura'a e ite ai te mau 'ālipamu 'ore roa'a e na te fa'a'ea'a râ e te fa'a'ea'aro'o. Te mau fa'aho'e râ e 'ite ai te moni 'aurere pro-rata no te taime 'ore i fa'a'ohipa 'ia.",
   "Save To 6180": "Fa'aora I 6180",
-  "Open On Phone": "Hāmani I Te Telefoni"
+  "Open On Phone": "Hāmani I Te Telefoni",
+  "Will use \"password\" as default": "E tā ra \"password\" e parau mau",
+  "No Password": "ʻAita Parau Hiro",
+  "Preparing": "Haapaoraa",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Faʻaanahia te faaroohia parau hūnā no to ʻoe ʻālipamu. Hīroa i te taime e hīnaaro nei ʻoe e faaraara ai i te ʻomo ʻana i to ʻoe mau ata.",
+  "Enter password (optional)": "Hoʻouru i te parau hūnā (hīroa)",
+  "Album will be completely hidden until correct password is entered": "Te 'ālipamu ra ā hūnā roa ai i muri iho i te fa'aroo ra'a o te 'upa hūnā mau",
+  "Photos will be visible with watermarks, password required to save": "Te hōʻata ra ia ā hōʻike ʻia ai i ruga i te mau hōʻailona vai, e hinaʻaro ai te 'upa hūnā no te fa'ahanahana ra'a",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ E fa'aohipa i \"password\" ei huru fa'atau'e ina hapohe ore",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "I hapohe 'oe i te 'ava'e'ava'e, \"password\" te fa'aohipahia ra ei huru fa'atau'e. Nehenehe te hurihuri ia i te taime atoa i roto i te fa'atura'a album.",
+  "💡 Password Protection Info:": "💡 Faʻaaùhinihia no te Haamaitaira'a i te Parau Huna:",
+  "Select Protection Level": "Hīroa i te 'Āvaeira'a Haamaitaira'a",
+  "Save Settings": "Haamaite i te mau Hoho'a"
 }

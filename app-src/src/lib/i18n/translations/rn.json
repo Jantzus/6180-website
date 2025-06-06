@@ -61,7 +61,6 @@
   "Hidden": "Gihishwe",
   "Watermarked": "Kirango c'Amazi",
   "Cannot be saved": "Ntishobora kubikwa",
-  "No password": "Nta Ijambo ryibanga",
   "No albums found": "Nta ma albumu abonetse",
   "Created": "Yaremwe",
   "Updated": "Yavuguruwe",
@@ -267,5 +266,17 @@
   "Confirm Change": "Kwemeza Impinduka",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Inama zo kwishura ziragira ama album adashira n'ikigero gishingiye ku bubiko bwonyine. Inyongera ziri mo ikizere cya pro-rata ku gihe kitakoreshejwe.",
   "Save To 6180": "Bika Muri 6180",
-  "Open On Phone": "Gufungura Kuri Telefoni"
+  "Open On Phone": "Gufungura Kuri Telefoni",
+  "Will use \"password\" as default": "Rizokoresha \"password\" nk'igipimo",
+  "No Password": "Nta Ijambo Ryibanga",
+  "Preparing": "Gutegura",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Shiraho umutekano w'ijambo ribanga ku alubumu yawe. Hitamo uko ushaka kubuza abantu kugera ku bifoto byawe.",
+  "Enter password (optional)": "Injiza ijambo ribanga (ukunda)",
+  "Album will be completely hidden until correct password is entered": "Albumba izobera buhikeye vyose kugeza ijambo ry'urupfu ryarikoze ryinjizwa",
+  "Photos will be visible with watermarks, password required to save": "Amafoto azoba agenda n'utwo twamanzi, ijambo ry'ubwiherero rigomba kugeneka",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Rizokoresha \"password\" nka ntangarugero iyo utarenze ubusa",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Uramenya ukiyaza ijambo ryibanga ubusa, \"password\" rizokoresha nka password ntangarugero. Urashobora kuhindura iki icanziko icose mu byerekeye album.",
+  "💡 Password Protection Info:": "💡 Amakuru y'Ukugira neza Ijambo Ryihishe:",
+  "Select Protection Level": "Hitamo Urwego rw'Ukugira neza",
+  "Save Settings": "Bika Igenamico"
 }

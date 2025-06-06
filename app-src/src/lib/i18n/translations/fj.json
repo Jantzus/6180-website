@@ -61,7 +61,6 @@
   "Hidden": "Vunitaki",
   "Watermarked": "Vakatakilakilataki",
   "Cannot be saved": "E sega ni rawa ni maroroi",
-  "No password": "Sega na password",
   "No albums found": "Sega na album e kunei",
   "Created": "Buli",
   "Updated": "Sa vakavoui",
@@ -267,5 +266,17 @@
   "Confirm Change": "Vakadeitaka na Veisau",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Na iyaragi ni sotani sa dau kila na albums sega ni dau oti ka sa vakarawarawi kina na soli yani. Na veisau ni cake sa kavu kina na kreti pro-rata ena gauna sega ni vakayagataki.",
   "Save To 6180": "Vakanuya Ki 6180",
-  "Open On Phone": "Dolava Ena Telefoni"
+  "Open On Phone": "Dolava Ena Telefoni",
+  "Will use \"password\" as default": "Na cakava kina \"password\" me vuki",
+  "No Password": "Sega Vosa Ni Sucu",
+  "Preparing": "Vakacuruma",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Digitaki na password veiqaravi me baleta nomu album. Digitaka me vaka cava ko vinakata me dede kina na lako ki nomu iTaba.",
+  "Enter password (optional)": "Vakarurugi na password (me baleta)",
+  "Album will be completely hidden until correct password is entered": "Na album ena tiko yawa mo mai kerei ni password dodonu toka",
+  "Photos will be visible with watermarks, password required to save": "Na icoqo ena mai raica kei na ivola veidrodro, na lewa talega na password me ra nanumi",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Na caka \"password\" me vua na ka levu kevaka sega ga ni vola",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Kevaka o biuta tani na password field, \"password\" na caka me vua na password levu. O rawa ni vakacaca oqo ena gauna kece ena album settings.",
+  "💡 Password Protection Info:": "💡 I Tukutuku ni Bose ni Bose Malumu:",
+  "Select Protection Level": "Digitaka na Level ni Bose",
+  "Save Settings": "Taqomaki na I Tavi"
 }

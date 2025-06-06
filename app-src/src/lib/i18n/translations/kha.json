@@ -61,7 +61,6 @@
   "Hidden": "Bynthup",
   "Watermarked": "Ki Dak Jingthoh",
   "Cannot be saved": "Ym lah ban buh",
-  "No password": "Ym don password",
   "No albums found": "Ym shem da album eiei",
   "Created": "La thaw",
   "Updated": "La pynbha",
@@ -267,5 +266,17 @@
   "Confirm Change": "Jong ka jingialei",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "U paid tier u wan da album ka ym shem limit bad kan limit ha storage kaba. U upgrade u wan da pro-rata credit bad ka por ka ym khynnaw.",
   "Save To 6180": "Khie Ha 6180",
-  "Open On Phone": "Pynmih Ha Phone"
+  "Open On Phone": "Pynmih Ha Phone",
+  "Will use \"password\" as default": "\"password\" ki default ban pynshai",
+  "No Password": "Um Password Iai",
+  "Preparing": "Jingkynmaw",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Ia ki album ia ka password protection configure. Pyrkai ba kumno ka ban tip pyrthei ka jingkyrsha ki image jingim.",
+  "Enter password (optional)": "Ha ka password (haba ka khun)",
+  "Album will be completely hidden until correct password is entered": "Password shaphang ma paei haba leh album ym shem kata shynrang",
+  "Photos will be visible with watermarks, password required to save": "Photography shu watermark ynda ieit thuh, save kham ba password iakren",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Haduh kaba ym thaw namar \"password\" default ban ia",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ym ia khaw password field kaba ym thaw namar, \"password\" ban khein default password ban ia. U ban shanji dei kaba noh i album settings.",
+  "💡 Password Protection Info:": "💡 Password Bynta Jingpyrkhat:",
+  "Select Protection Level": "Protection Level ïatrei",
+  "Save Settings": "Setting ruh"
 }

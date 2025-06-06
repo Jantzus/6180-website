@@ -61,7 +61,6 @@
   "Hidden": "ที่ซ่อนอยู่",
   "Watermarked": "มีลายน้ำ",
   "Cannot be saved": "ไม่สามารถบันทึกได้",
-  "No password": "ไม่มีรหัสผ่าน",
   "No albums found": "ไม่พบอัลบั้ม",
   "Created": "สร้างแล้ว",
   "Updated": "อัปเดตแล้ว",
@@ -267,5 +266,17 @@
   "Confirm Change": "ยืนยันการเปลี่ยนแปลง",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ระดับที่ต้องจ่ายเงินมีอัลบั้มไม่จำกัดและถูกจำกัดเฉพาะพื้นที่จัดเก็บ การอัปเกรดรวมเครดิตตามสัดส่วนสำหรับเวลาที่ไม่ได้ใช้",
   "Save To 6180": "บันทึกใน 6180",
-  "Open On Phone": "เปิดบนโทรศัพท์"
+  "Open On Phone": "เปิดบนโทรศัพท์",
+  "Will use \"password\" as default": "จะใช้ \"password\" เป็นค่าเริ่มต้น",
+  "No Password": "ไม่มีรหัสผ่าน",
+  "Preparing": "กำลังเตรียม",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "กำหนดค่าการป้องกันรหัสผ่านสำหรับอัลบั้มของคุณ เลือกวิธีที่คุณต้องการจำกัดการเข้าถึงรูปภาพของคุณ",
+  "Enter password (optional)": "ป้อนรหัสผ่าน (ไม่บังคับ)",
+  "Album will be completely hidden until correct password is entered": "อัลบั้มจะถูกซ่อนอย่างสมบูรณ์จนกว่าจะป้อนรหัสผ่านที่ถูกต้อง",
+  "Photos will be visible with watermarks, password required to save": "รูปภาพจะแสดงพร้อมลายน้ำ จำเป็นต้องใช้รหัสผ่านในการบันทึก",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ จะใช้ \"password\" เป็นค่าเริ่มต้นหากเว้นว่างไว้",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "หากคุณปล่อยให้ช่องรหัสผ่านว่างเปล่า \"password\" จะถูกใช้เป็นรหัสผ่านเริ่มต้น คุณสามารถเปลี่ยนแปลงได้ตลอดเวลาในการตั้งค่าอัลบั้ม",
+  "💡 Password Protection Info:": "💡 ข้อมูลการป้องกันรหัสผ่าน:",
+  "Select Protection Level": "เลือกระดับการป้องกัน",
+  "Save Settings": "บันทึกการตั้งค่า"
 }

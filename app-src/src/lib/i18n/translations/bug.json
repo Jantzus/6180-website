@@ -61,7 +61,6 @@
   "Hidden": "Tassubbu",
   "Watermarked": "Mattanra Uwae",
   "Cannot be saved": "Dé nawéding risimang",
-  "No password": "Degaga sandi",
   "No albums found": "Dek album riaseng",
   "Created": "Ripatettoq",
   "Updated": "Mappabaru",
@@ -267,5 +266,17 @@
   "Confirm Change": "Yakinki Pagantiangngi",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tingkat bayaré naiyya albumé tanra batasa siagang namung engka limi' ri simpana. Pangawassingé naiyya kredit pro-rata ri wattué tanra gaé.",
   "Save To 6180": "Simpa Ri 6180",
-  "Open On Phone": "Buka Di Telepon"
+  "Open On Phone": "Buka Di Telepon",
+  "Will use \"password\" as default": "La paké \"password\" mappada baku",
+  "No Password": "Tena Sandi",
+  "Preparing": "Massiagang",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Sette perlindungan kata sandi sibawa albume. Pilihi cara dekcena na batasi akses ri foto-fotoe.",
+  "Enter password (optional)": "Masukki kata sandi (pilihan)",
+  "Album will be completely hidden until correct password is entered": "Album napasikompu semua pole naeneng password benni nataro",
+  "Photos will be visible with watermarks, password required to save": "Gambar-gambar naita pole ri tanda air, password nadileru nai simpan",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Naengka \"password\" narekko dekto aga nasui",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Naia komusi iko field password narekko dekto aga nasui, \"password\" ri pakaiangge narekko default password. Bisa naalle ubah pale setting album ri waktu apaeng.",
+  "💡 Password Protection Info:": "💡 Infoe Perlindungan Katasandi:",
+  "Select Protection Level": "Pilihi Tingkatan Perlindungan",
+  "Save Settings": "Simpen Pengaturan"
 }

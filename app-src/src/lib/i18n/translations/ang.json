@@ -61,7 +61,6 @@
   "Hidden": "Behȳded",
   "Watermarked": "Wætermearcod",
   "Cannot be saved": "Ne mæg wesan ġehealden",
-  "No password": "Nān ingang-word",
   "No albums found": "Nā albuma ġefundenne",
   "Created": "Ȝescapen",
   "Updated": "Edneƿed",
@@ -267,5 +266,17 @@
   "Confirm Change": "Wendunga Gestaðolfæstan",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ġefandlīc grādu habbaþ unġeendodlīce albumas and syndon ānlīce þurh stōwe gebundene. Fōreġengas begripaþ efenwihtlīc ġetæl for unġenotodre tīde.",
   "Save To 6180": "Tō 6180 Beorgan",
-  "Open On Phone": "On Spreceboxe Openian"
+  "Open On Phone": "On Spreceboxe Openian",
+  "Will use \"password\" as default": "\"Password\" swā gewunelīce brūcan",
+  "No Password": "Nān Efenlīcnesse",
+  "Preparing": "Gearwian",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Settaþ passworde beorh for eowrum albume. Ceosaþ hū gē willað edwendan gān tō eowrum bismǣrum.",
+  "Enter password (optional)": "Inlǣd passworde (cyre)",
+  "Album will be completely hidden until correct password is entered": "Sēo ālbum bið fullīce hȳdd oð rihte lytel word sī inborene",
+  "Photos will be visible with watermarks, password required to save": "Lēohtas bēoð gesēowene mid wætermearcum, lytel word nēode for healdan",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" gewyrce gif īdel lǣfed sīe",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Gif þū lætest þone gesceadwīsnessetūn īdel, \"password\" bið gebrȳced swā se gewunelica gesceadwīsnes. Þū miht þis wendan on ǣlcum tīman on albumes getimbungum.",
+  "💡 Password Protection Info:": "💡 Passweordes Beorgmǣl:",
+  "Select Protection Level": "Céose Beorgcynn",
+  "Save Settings": "Heald Gescielda"
 }

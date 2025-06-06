@@ -61,7 +61,6 @@
   "Hidden": "Skriveno",
   "Watermarked": "Sa Vodenim Žigom",
   "Cannot be saved": "Ne može biti sačuvano",
-  "No password": "Bez lozinke",
   "No albums found": "Nije pronađen nijedan album",
   "Created": "Kreirano",
   "Updated": "Ažurirano",
@@ -267,5 +266,17 @@
   "Confirm Change": "Potvrdite Promjenu",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Plaćeni nivoi imaju neograničene albume i ograničeni su samo pohranom. Nadogradnje uključuju pro-rata kredit za neiskorišćeno vrijeme.",
   "Save To 6180": "Sačuvaj U 6180",
-  "Open On Phone": "Otvori Na Telefonu"
+  "Open On Phone": "Otvori Na Telefonu",
+  "Will use \"password\" as default": "Koristiće se \"password\" kao zadano",
+  "No Password": "Nema Lozinke",
+  "Preparing": "Priprema",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurirajte zaštitu lozinkom za vaš album. Odaberite kako želite ograničiti pristup vašim fotografijama.",
+  "Enter password (optional)": "Unesite lozinku (opcionalno)",
+  "Album will be completely hidden until correct password is entered": "Album će biti potpuno sakriven dok se ne unese tačna lozinka",
+  "Photos will be visible with watermarks, password required to save": "Slike će biti vidljive sa vodnim žigovima, potrebna je lozinka za snimanje",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Koristit će se \"password\" kao zadana vrijednost ako se ostavi prazno",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ako ostavite polje za lozinku prazno, \"password\" će se koristiti kao zadana lozinka. Možete to promijeniti u bilo koje vrijeme u postavkama albuma.",
+  "💡 Password Protection Info:": "💡 Informacije o Zaštiti Lozinke:",
+  "Select Protection Level": "Odaberite Nivo Zaštite",
+  "Save Settings": "Sačuvaj Podešavanja"
 }

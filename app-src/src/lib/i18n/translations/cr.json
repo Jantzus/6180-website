@@ -61,7 +61,6 @@
   "Hidden": "ᑲᑐᐸᑕᐦᐊᑭᐣ",
   "Watermarked": "ᓂᐱᔾ ᐊᑯᓇᒧᐧᐃᐧᐣ",
   "Cannot be saved": "ᓇᒪ ᐊᐧᐦᑯᐊᐧᒪ",
-  "No password": "ᓇᒧᔭ ᑲᓇᐁᐧᔨᒋᑲᓂᐤ",
   "No albums found": "ᓂᑲᒧᐧᐃᓐ ᓇᒪᐤ ᒥᔅᑲᐧᐊᑲᓅᐧᐃᓐ",
   "Created": "ᐅᓯᑕᐃᑲᓂᐎᐃᐧᐣ",
   "Updated": "ᐅᐡᑭᐦᑖᐠᐤ",
@@ -267,5 +266,17 @@
   "Confirm Change": "ᐊᐧᐸᐦᐊᐧᓇᐣ ᒪᐦᐃᑲᓇᐤ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ᑎᐯᓯᑲᓂᑖᐦᑕᒃ ᑖᓐᑎᑦ ᓇᒪᐤᐁᐃᓯᑯᐎᒫᐨᓯᑫᓐ ᐸᐦᐸᒫᐦᑖᐎᓐ ᐊᐧᐃᐣ ᐃᑌᐃᓯᓃᑲᓄ ᑎᐸᑲᐦᐃᑲᐣᐃᐧᐣ ᑎᐸᑲᐦᐃᑲᐣ. ᒥᓇᐦᐊᑯᓯᐎᓐ ᑲᐧᐃᐧᓀᐎᒪᑭᓄᐎᓐ ᐊᐧᓭᒪᒃ ᑭᔭᐱᒋ ᐯᑌᑕᒪᐤ ᑲᔭᐱᒋ ᐊᑎᑐᑲᑌᐦᐅᓐ.",
   "Save To 6180": "6180-ᐃᑕᐦᑌ ᓇᑖᐧᐹ",
-  "Open On Phone": "ᒪᐦᑿᓈᐦᑌᐤ ᐃᑕᑭᑌ ᐸᑭᑎᓇᒻ"
+  "Open On Phone": "ᒪᐦᑿᓈᐦᑌᐤ ᐃᑕᑭᑌ ᐸᑭᑎᓇᒻ",
+  "Will use \"password\" as default": "\"Password\" ᐊᔪᐸᑐᐃᐧᐣ ᐊᔭᒥᒃ ᑭᓐᓇᓯᐦᐃᐯᐊᒃ",
+  "No Password": "ᓄᒪᐃᐧᐣ ᐊᓇᑲᐤ",
+  "Preparing": "ᐅᒋᓀᑐᒪᑫᐧᐃᓐ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ᑭᔦ ᐊᓚᐸᒻ ᒥᓯᔮᐧᐃᓐ ᐊᓐᓂᓇᑳᐤ ᒥᐦᑯᑯᓈᐦᒡ. ᐅᐦᒋ ᐊᔾᑯᓇᐦᑯᐧᐃᐧᓐ ᑭᒋᔭᑯᐧᐃᓐ ᐃᔨᓯᓇᓯᓇᒡ.",
+  "Enter password (optional)": "ᐊᓐᓂᓇᑳᐤ ᒥᐦᑯᑯᓈᐦᒡ ᐅᒋᔦᐧᐃᓐ (ᐊᔾᑯᓇᐦᑯᐧᐃᐧᓐ)",
+  "Album will be completely hidden until correct password is entered": "ᒥᔅᑲᐧᐊᑲᓅᐧᐃᓐ ᐊᒻᒪ ᑲᒍᓴᐧᐊᐊᐊᐧᐊᑭᐧᐊᓐ ᑲᓄᓐ ᐯᔅᑲᐧᐊᑲᐣ ᑮᐳᓈᐤ",
+  "Photos will be visible with watermarks, password required to save": "ᒥᔅᑲᐧᐊᑲᓅᐧᐃᓐ ᑯᐯᔨᓯᒧᐧᐃᓐ ᓃᐱᐤ ᑲᒍᐃᓐ ᐳᔅᑲᐧᐊᐳᓐ ᑐᐹᓯᓯᑳᓇᐤ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" ᑕ ᐊᐸᒋᐦᐃᑯᓇᓯᓇᐦᐃᑯᐣ ᑕᓄᑕᐦ ᒧᐦᑳᒋ ᑲ ᐅᔭᓯᐣ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ᑲᐦᑭᓇ ᐯᔫᐟ password field ᒧᐦᑳᒋ ᑲ ᐅᔭᓯᐣ, \"password\" password ᑭᑲ ᐊᐸᒋᓯᓇᐦᐃᑯᐣ. ᑭᒉ ᓀᐢᑕ ᐊᓄᑕᐦ ᐊᓂᑌ ᐊᓂᑌ album settings ᐅᐦᒋ.",
+  "💡 Password Protection Info:": "💡 ᑭᓱᑐᑦ ᐊᒃᑐᖅᑕᐅᓂᑯᑦ ᑐᑭᓯᐅᒪᔾᔪᑎᑦ:",
+  "Select Protection Level": "ᐊᑦᑐᖅᑕᐅᓂᑯᑦ ᐊᖏᕐᕋᖅ ᓄᐊᓲᖅ",
+  "Save Settings": "ᐋᓯᐧᑭᐧᓂᐦᐄᑲᓐ ᓅᑯᒋᑲᓐ"
 }

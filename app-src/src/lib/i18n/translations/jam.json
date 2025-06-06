@@ -61,7 +61,6 @@
   "Hidden": "Aidwe",
   "Watermarked": "Waata Maak",
   "Cannot be saved": "Kyaahn siev",
-  "No password": "No paaswod",
   "No albums found": "No album fain",
   "Created": "Krietid",
   "Updated": "Opdietid",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirm di Chienj",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Paid tier dem have unlimited album and dem only limit by storage. Upgrade include pro-rata credit fi unused time.",
   "Save To 6180": "Siev Ina 6180",
-  "Open On Phone": "Open Pan Fone"
+  "Open On Phone": "Open Pan Fone",
+  "Will use \"password\" as default": "Wi yuuz \"password\" az difalt",
+  "No Password": "No Password",
+  "Preparing": "A Redi",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Set up password protection fi yuh album. Choose how yuh waan limit access to yuh pictures.",
+  "Enter password (optional)": "Put in password (optional)",
+  "Album will be completely hidden until correct password is entered": "Album aguh hide kompletely till di rayt password put in",
+  "Photos will be visible with watermarks, password required to save": "Picture dem aguh show wid watamak, password need fi save",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Wi yuuz \"password\" az default if lef empty",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "If yu lef di password field empty, \"password\" wi yuz as di default password. Yu kan chenj dis eni taim ina album settings.",
+  "💡 Password Protection Info:": "💡 Password Protection Info:",
+  "Select Protection Level": "Select Protection Level",
+  "Save Settings": "Save Settings"
 }

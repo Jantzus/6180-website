@@ -61,7 +61,6 @@
   "Hidden": "Versteckt",
   "Watermarked": "Wasserzeichnet",
   "Cannot be saved": "Kann nicht gespeichert werden",
-  "No password": "Kein Passwort",
   "No albums found": "Keine Alben gefunden",
   "Created": "Erstellt",
   "Updated": "Aktualisiert",
@@ -267,5 +266,17 @@
   "Confirm Change": "Änderung Bestätigen",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Bezahlte Stufen haben unbegrenzte Alben und sind nur durch Speicher begrenzt. Upgrades beinhalten anteilige Gutschrift für ungenutzte Zeit.",
   "Save To 6180": "In 6180 Speichern",
-  "Open On Phone": "Am Telefon Öffnen"
+  "Open On Phone": "Am Telefon Öffnen",
+  "Will use \"password\" as default": "Wird \"password\" als Standard verwenden",
+  "No Password": "Kein Passwort",
+  "Preparing": "Vorbereitung",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurieren Sie den Passwortschutz für Ihr Album. Wählen Sie aus, wie Sie den Zugriff auf Ihre Fotos einschränken möchten.",
+  "Enter password (optional)": "Passwort eingeben (optional)",
+  "Album will be completely hidden until correct password is entered": "Das Album wird vollständig verborgen bis das korrekte Passwort eingegeben wird",
+  "Photos will be visible with watermarks, password required to save": "Fotos werden mit Wasserzeichen sichtbar sein, Passwort zum Speichern erforderlich",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Verwendet \"password\" als Standard, wenn leer gelassen",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Wenn Sie das Passwort-Feld leer lassen, wird \"password\" als Standard-Passwort verwendet. Sie können dies jederzeit in den Album-Einstellungen ändern.",
+  "💡 Password Protection Info:": "💡 Passwort-Schutz Informationen:",
+  "Select Protection Level": "Schutzlevel Wählen",
+  "Save Settings": "Einstellungen Speichern"
 }

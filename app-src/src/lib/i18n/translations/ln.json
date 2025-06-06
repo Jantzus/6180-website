@@ -61,7 +61,6 @@
   "Hidden": "Ebombama",
   "Watermarked": "Na Elembo ya Mayi",
   "Cannot be saved": "Ekoki kobombama te",
-  "No password": "Password ezalí té",
   "No albums found": "Ata album moko té",
   "Created": "Ekelami",
   "Updated": "Ebongísámí",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ndima Mbongwana",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ba niveau ya kofuta ezali na ba album oyo ezali na ndelo te mpe ekangami na bobateli kaka. Ba upgrade esangisama na credit pro-rata mpo na ntango oyo esalelamaki te.",
   "Save To 6180": "Bomba Na 6180",
-  "Open On Phone": "Fungola Na Telefone"
+  "Open On Phone": "Fungola Na Telefone",
+  "Will use \"password\" as default": "Ekosalela \"password\" lokola ya liboso",
+  "No Password": "Ezalí Mot De Passe Te",
+  "Preparing": "Kosálisa",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Bongisa bobateli ya maloba ya sekele mpo na album na yo. Pona ndenge olingi kozipa nzela ya komona bililingi na yo.",
+  "Enter password (optional)": "Kótá liloba ya nkuku (olingaki)",
+  "Album will be completely hidden until correct password is entered": "Album ekozala kobomba mobimba tii soki liloba ya mpamba ya malamu ekokotama",
+  "Photos will be visible with watermarks, password required to save": "Bililingi ekosomaka na bilembo ya mai, liloba ya mpamba esengeli mpo na kobomba",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ekosalela \"password\" lokola ya liboso soki etikali pamba",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Soki otiki esika ya password ezanga eloko, \"password\" ekozala password ya liboso. Okoki kobongola yango ntango nyonso na bisaleli ya album.",
+  "💡 Password Protection Info:": "💡 Sango ya Bobateli ya Liloba ya Soki:",
+  "Select Protection Level": "Pona Nkita ya Bobateli",
+  "Save Settings": "Bomba Mipango"
 }

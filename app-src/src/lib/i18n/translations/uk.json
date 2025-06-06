@@ -61,7 +61,6 @@
   "Hidden": "Прихований",
   "Watermarked": "З Водяним Знаком",
   "Cannot be saved": "Не може бути збережено",
-  "No password": "Немає пароля",
   "No albums found": "Альбоми не знайдено",
   "Created": "Створено",
   "Updated": "Оновлено",
@@ -267,5 +266,17 @@
   "Confirm Change": "Підтвердити Зміну",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Платні рівні мають необмежені альбоми і обмежені лише сховищем. Оновлення включають пропорційний кредит за невикористаний час.",
   "Save To 6180": "Зберегти До 6180",
-  "Open On Phone": "Відкрити На Телефоні"
+  "Open On Phone": "Відкрити На Телефоні",
+  "Will use \"password\" as default": "Використає \"password\" за замовчуванням",
+  "No Password": "Немає Паролю",
+  "Preparing": "Підготовка",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Налаштуйте захист паролем для вашого альбому. Оберіть, як ви хочете обмежити доступ до ваших фотографій.",
+  "Enter password (optional)": "Введіть пароль (необов'язково)",
+  "Album will be completely hidden until correct password is entered": "Альбом буде повністю прихований доки не буде введений правильний пароль",
+  "Photos will be visible with watermarks, password required to save": "Фотографії будуть видимі з водяними знаками, пароль потрібен для збереження",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Використає \"password\" за замовчуванням, якщо залишити порожнім",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Якщо ви залишите поле пароля порожнім, \"password\" буде використовуватися як пароль за замовчуванням. Ви можете змінити це будь-коли в налаштуваннях альбому.",
+  "💡 Password Protection Info:": "💡 Інформація про Захист Пароля:",
+  "Select Protection Level": "Виберіть Рівень Захисту",
+  "Save Settings": "Зберегти Налаштування"
 }

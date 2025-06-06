@@ -61,7 +61,6 @@
   "Hidden": "Escondido",
   "Watermarked": "Com Marca d'Água",
   "Cannot be saved": "Não pode ser salvo",
-  "No password": "Sem senha",
   "No albums found": "Nenhum álbum encontrado",
   "Created": "Criado",
   "Updated": "Atualizado",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmar Alteração",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Os níveis pagos têm álbuns ilimitados e são limitados apenas pelo armazenamento. As atualizações incluem crédito proporcional pelo tempo não utilizado.",
   "Save To 6180": "Salvar Em 6180",
-  "Open On Phone": "Abrir No Telefone"
+  "Open On Phone": "Abrir No Telefone",
+  "Will use \"password\" as default": "Usará \"password\" como padrão",
+  "No Password": "Sem Senha",
+  "Preparing": "Preparando",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configure a proteção por senha para seu álbum. Escolha como você quer restringir o acesso às suas fotos.",
+  "Enter password (optional)": "Digite a senha (opcional)",
+  "Album will be completely hidden until correct password is entered": "O álbum ficará completamente oculto até que a senha correta seja inserida",
+  "Photos will be visible with watermarks, password required to save": "As fotos ficarão visíveis com marcas d'água, senha necessária para salvar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Usará \"password\" como padrão se deixado vazio",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se deixar o campo de senha vazio, \"password\" será usado como senha padrão. Você pode alterar isso a qualquer momento nas configurações do álbum.",
+  "💡 Password Protection Info:": "💡 Informações de Proteção de Senha:",
+  "Select Protection Level": "Selecionar Nível de Proteção",
+  "Save Settings": "Salvar Configurações"
 }

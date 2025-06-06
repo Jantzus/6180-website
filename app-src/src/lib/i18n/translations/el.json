@@ -61,7 +61,6 @@
   "Hidden": "Κρυμμένος",
   "Watermarked": "Με Υδατογράφημα",
   "Cannot be saved": "Δεν μπορεί να αποθηκευτεί",
-  "No password": "Χωρίς κωδικό",
   "No albums found": "Δεν βρέθηκαν άλμπουμ",
   "Created": "Δημιουργήθηκε",
   "Updated": "Ενημερώθηκε",
@@ -267,5 +266,17 @@
   "Confirm Change": "Επιβεβαίωση Αλλαγής",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Τα επίπεδα συνδρομής έχουν απεριόριστα άλμπουμ και περιορίζονται μόνο από την αποθήκευση. Οι αναβαθμίσεις περιλαμβάνουν αναλογική πίστωση για αχρησιμοποίητο χρόνο.",
   "Save To 6180": "Αποθήκευση Στο 6180",
-  "Open On Phone": "Άνοιγμα Στο Τηλέφωνο"
+  "Open On Phone": "Άνοιγμα Στο Τηλέφωνο",
+  "Will use \"password\" as default": "Θα χρησιμοποιήσει \"password\" ως προεπιλογή",
+  "No Password": "Χωρίς Κωδικό",
+  "Preparing": "Προετοιμασία",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Διαμορφώστε την προστασία κωδικού πρόσβασης για το άλμπουμ σας. Επιλέξτε πώς θέλετε να περιορίσετε την πρόσβαση στις φωτογραφίες σας.",
+  "Enter password (optional)": "Εισάγετε κωδικό πρόσβασης (προαιρετικό)",
+  "Album will be completely hidden until correct password is entered": "Το άλμπουμ θα είναι εντελώς κρυμμένο μέχρι να εισαχθεί ο σωστός κωδικός πρόσβασης",
+  "Photos will be visible with watermarks, password required to save": "Οι φωτογραφίες θα είναι ορατές με υδατογραφήματα, απαιτείται κωδικός για αποθήκευση",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Θα χρησιμοποιήσει \"password\" ως προεπιλογή αν αφεθεί κενό",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Εάν αφήσετε το πεδίο κωδικού κενό, το \"password\" θα χρησιμοποιηθεί ως προεπιλεγμένος κωδικός. Μπορείτε να το αλλάξετε ανά πάσα στιγμή στις ρυθμίσεις του άλμπουμ.",
+  "💡 Password Protection Info:": "💡 Πληροφορίες Προστασίας Κωδικού:",
+  "Select Protection Level": "Επιλέξτε Επίπεδο Προστασίας",
+  "Save Settings": "Αποθήκευση Ρυθμίσεων"
 }

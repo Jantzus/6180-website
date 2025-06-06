@@ -61,7 +61,6 @@
   "Hidden": "Lukail",
   "Watermarked": "Paani ke nisaan se",
   "Cannot be saved": "Bachae nai jaae sake hai",
-  "No password": "Koi password nai hai",
   "No albums found": "Koi album nai mila",
   "Created": "Banaya gais",
   "Updated": "Update karaa gais",
@@ -267,5 +266,17 @@
   "Confirm Change": "Badlav confirm kar",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Paid tiers me unlimited albums hae aur sirf storage se limited hae. Upgrades me unused time ke liye pro-rata credit hae.",
   "Save To 6180": "6180 me bachao",
-  "Open On Phone": "Phone me kholo"
+  "Open On Phone": "Phone me kholo",
+  "Will use \"password\" as default": "\"Password\" ke default ke roop me use karega",
+  "No Password": "Koi Password Nahi",
+  "Preparing": "Taiyaar kar rahe hain",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Aapan album ke liye password protection configure karo. Choose karo ki aap aapan photos ke access kaise restrict karna chaahte hain.",
+  "Enter password (optional)": "Password dalo (choice hai)",
+  "Album will be completely hidden until correct password is entered": "Jab talak sahi password nii daala jaae album pura chhup kar rahega",
+  "Photos will be visible with watermarks, password required to save": "Tasveer watermark ke saath dikhenge, save karne ke liye password jaruri",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Khaali chhod diya jaae to \"password\" default ke roop me use karega",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Agar aap password field khali chhod dete hain, to \"password\" default password ke roop mein use hoga. Aap ise album setting mein kabhi bhi badal sakte hain.",
+  "💡 Password Protection Info:": "💡 Password suraksha jaankari:",
+  "Select Protection Level": "Suraksha level chuniye",
+  "Save Settings": "Settings bachao"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Celita",
   "Watermarked": "Aquomarkizita",
   "Cannot be saved": "Ne povas esar salvita",
-  "No password": "Nula pasovorto",
   "No albums found": "Nula albumi trovita",
   "Created": "Kreita",
   "Updated": "Aktualigita",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfirmar Chanjo",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Pagan graduri havas senlima albumi e limitas nur per stokajo. Avalcizi inkluzas pro-rata kredito por ne uzita tempo.",
   "Save To 6180": "Konservez En 6180",
-  "Open On Phone": "Apertez En Telefono"
+  "Open On Phone": "Apertez En Telefono",
+  "Will use \"password\" as default": "Uzos \"password\" quale standarda",
+  "No Password": "Nula Pasvorto",
+  "Preparing": "Preparar",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Aranjar parol-protektado por vua albumo. Selektar quale vu volas restringar la aceso a vua fotaji.",
+  "Enter password (optional)": "Entrar parolon (selektiva)",
+  "Album will be completely hidden until correct password is entered": "L'albumo esos tote celita til la korekta paroloklefo esas enigata",
+  "Photos will be visible with watermarks, password required to save": "Fotos esos videbla kun aquomarki, paroloklefo bezonesas por konsrvar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Uzos \"password\" kom defalta se restar vakua",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se vu restar vakua la passwordo-chambro, \"password\" uzesos kom la passwordo defalta. Vu povas chanjar to irga tempo en la albuma konfigururi.",
+  "💡 Password Protection Info:": "💡 Informo pri Parolala Protektado:",
+  "Select Protection Level": "Selektez Nivelo dil Protektado",
+  "Save Settings": "Konservez Ajustifiki"
 }

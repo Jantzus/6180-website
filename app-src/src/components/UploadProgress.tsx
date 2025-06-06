@@ -16,6 +16,9 @@ type UploadProgressProps = {
     success?: string;
     error?: string;
   };
+  // NEW: Allow parent to explicitly control visibility
+  isUploading?: boolean;
+  isProcessingFiles?: boolean;
 };
 
 export const UploadProgress: React.FC<UploadProgressProps> = ({ 
@@ -28,7 +31,9 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
   showDetailsLabels = true,
   showSuccessMessage = false,
   showErrorMessage = false,
-  customMessages = {}
+  customMessages = {},
+  isUploading = false,
+  isProcessingFiles = false
 }) => {
   const { t } = useTranslation();
   
@@ -41,8 +46,11 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
     overallProgress 
   } = progressTracker;
   
-  // Don't render anything if no uploads are in progress
-  if (totalFiles === 0) {
+  // Improved visibility logic: Show if explicitly uploading OR if we have files being tracked
+  const shouldShow = isUploading || isProcessingFiles || totalFiles > 0;
+  
+  // Don't render anything if we shouldn't show the progress
+  if (!shouldShow) {
     return null;
   }
   
@@ -55,7 +63,9 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
 
   const getStatusText = () => {
     if (overallProgress === 100) return t('Completed');
-    if (filesProcessing > 0) return t('Processing');
+    if (filesProcessing > 0 || isProcessingFiles) return t('Processing');
+    if (filesUploading > 0) return t('Uploading');
+    if (isUploading && totalFiles === 0) return t('Preparing'); // NEW: Handle initial state
     return t('Uploading');
   };
 
@@ -80,6 +90,11 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
     ...style
   };
   
+  // Handle the case where we're initializing (files selected but not yet processed)
+  const displayProgress = totalFiles > 0 ? overallProgress : 0;
+  const displayTotal = totalFiles > 0 ? totalFiles : (isUploading ? '...' : 0);
+  const displayComplete = totalFiles > 0 ? filesComplete : 0;
+  
   // Render compact variant
   if (variant === 'compact') {
     return (
@@ -93,7 +108,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
           }}
         >
           <span style={{ fontSize: 14, color: "#555" }}>
-            <strong>{getStatusText()}</strong>: {Math.round(overallProgress)}%
+            <strong>{getStatusText()}</strong>: {Math.round(displayProgress)}%
           </span>
           {onCancel && overallProgress < 100 && (
             <button
@@ -127,12 +142,29 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
         >
           <div 
             style={{ 
-              width: `${overallProgress}%`, 
+              width: `${displayProgress}%`, 
               height: "100%", 
               backgroundColor: getStatusColor(),
               transition: "width 0.3s ease-in-out",
             }}
           />
+          
+          {/* Show loading animation when preparing */}
+          {(isProcessingFiles || (isUploading && totalFiles === 0)) && displayProgress === 0 && (
+            <div 
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: "linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.3), transparent)",
+                backgroundSize: "200% 100%",
+                animation: "shimmer 1.5s infinite",
+                pointerEvents: "none",
+              }}
+            />
+          )}
         </div>
       </div>
     );
@@ -159,10 +191,10 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
             marginBottom: 6 
           }}>
             <span style={{ fontSize: 14, color: "#555" }}>
-              {t('Overall progress')}: {Math.round(overallProgress)}%
+              {t('Overall progress')}: {Math.round(displayProgress)}%
             </span>
             <span style={{ fontSize: 14, color: "#555" }}>
-              {t('Complete')}: {filesComplete} / {totalFiles} 
+              {t('Complete')}: {displayComplete} / {displayTotal} 
             </span>
           </div>
         </div>
@@ -180,12 +212,29 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
         >
           <div 
             style={{ 
-              width: `${overallProgress}%`, 
+              width: `${displayProgress}%`, 
               height: "100%", 
               backgroundColor: getStatusColor(),
               transition: "width 0.3s ease-in-out",
             }}
           />
+          
+          {/* Show loading animation when preparing */}
+          {(isProcessingFiles || (isUploading && totalFiles === 0)) && displayProgress === 0 && (
+            <div 
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: "linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.3), transparent)",
+                backgroundSize: "200% 100%",
+                animation: "shimmer 1.5s infinite",
+                pointerEvents: "none",
+              }}
+            />
+          )}
         </div>
         
         <div style={{ 
@@ -200,9 +249,9 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
               {showDetailsLabels ? `${t('Uploading')}: ` : ""}{filesUploading}
             </div>
           )}
-          {filesProcessing > 0 && (
+          {(filesProcessing > 0 || isProcessingFiles) && (
             <div>
-              {showDetailsLabels ? `${t('Processing')}: ` : ""}{filesProcessing}
+              {showDetailsLabels ? `${t('Processing')}: ` : ""}{filesProcessing || '...'}
             </div>
           )}
           {filesComplete > 0 && (
@@ -253,14 +302,14 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
         }}
       >
         <span style={{ fontSize: 14, color: "#555" }}>
-          <strong>{getStatusText()}</strong>: {filesComplete}/{totalFiles}
+          <strong>{getStatusText()}</strong>: {displayComplete}/{displayTotal}
 
-          {filesWithError > 0 && t('{{count}} failed', { count: filesWithError.toString() })}
-          {filesUploading > 0 && t('{{count}} in progress', { count: filesUploading.toString() })}
+          {filesWithError > 0 && ` (${t('{{count}} failed', { count: filesWithError.toString() })})`}
+          {filesUploading > 0 && ` (${t('{{count}} in progress', { count: filesUploading.toString() })})`}
         </span>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <span style={{ fontSize: 14, color: "#555", fontWeight: "bold" }}>
-            {Math.round(overallProgress)}%
+            {Math.round(displayProgress)}%
           </span>
           {onCancel && overallProgress < 100 && (
             <button
@@ -295,15 +344,15 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
       >
         <div 
           style={{ 
-            width: `${overallProgress}%`, 
+            width: `${displayProgress}%`, 
             height: "100%", 
             backgroundColor: getStatusColor(),
             transition: "width 0.3s ease-in-out",
           }}
         />
         
-        {/* Optional loading animation for processing state */}
-        {filesProcessing > 0 && overallProgress < 100 && (
+        {/* Loading animation for processing state */}
+        {(isProcessingFiles || (isUploading && totalFiles === 0) || filesProcessing > 0) && displayProgress < 100 && (
           <div 
             style={{
               position: "absolute",

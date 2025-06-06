@@ -61,7 +61,6 @@
   "Hidden": "Pasiko",
   "Watermarked": "Chi Mingsani gita",
   "Cannot be saved": "Nanggennichina dona",
-  "No password": "Password dongja",
   "No albums found": "Album mãsãna dongja",
   "Created": "Dakchakaha",
   "Updated": "Gimasin dianga",
@@ -267,5 +266,17 @@
   "Confirm Change": "Bodolonta pushtikora",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Paid tier mãsã album sõ gõ hũ nõgõn ar storage re nõgõn jhijhel hũ. Upgrade mãsã ym latarna po re pro-rata credit hũ.",
   "Save To 6180": "6180-a Save mana",
-  "Open On Phone": "Phone-a Open mana"
+  "Open On Phone": "Phone-a Open mana",
+  "Will use \"password\" as default": "\"password\" gidang jaha chõligba",
+  "No Password": "Password dak anga",
+  "Preparing": "Gochok machaka",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Album tẽ'ã re password protection configure dãrẽ. Cu'u re tẽ'ã ag photos oiyrã yrã te tãrã oirã si'ã zugmã si'ã.",
+  "Enter password (optional)": "Password pẽtẽ (si'ã zugmã )",
+  "Album will be completely hidden until correct password is entered": "Senha thik si goeya laubo haram album yak laka dongatoba",
+  "Photos will be visible with watermarks, password required to save": "Photo wal watermark sinani nangokana, save janaro password dorkar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Mãgra boye \"password\" nondaba lagaijan salgakana",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Mãsãna password field khali khaije rawe \"password\" default password hisab mãsãna lagatoi. Aken album settings nondo gatse jiriska badolna gatjou ama.",
+  "💡 Password Protection Info:": "💡 Password Protection Achi:",
+  "Select Protection Level": "Protection Level thangka",
+  "Save Settings": "Settings thengka"
 }

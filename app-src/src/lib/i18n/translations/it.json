@@ -61,7 +61,6 @@
   "Hidden": "Nascosto",
   "Watermarked": "Filigranato",
   "Cannot be saved": "Non può essere salvato",
-  "No password": "Nessuna password",
   "No albums found": "Nessun album trovato",
   "Created": "Creato",
   "Updated": "Aggiornato",
@@ -267,5 +266,17 @@
   "Confirm Change": "Conferma Modifica",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "I livelli a pagamento hanno album illimitati e sono limitati solo dalla memoria. Gli aggiornamenti includono credito pro-rata per il tempo non utilizzato.",
   "Save To 6180": "Salva In 6180",
-  "Open On Phone": "Apri Sul Telefono"
+  "Open On Phone": "Apri Sul Telefono",
+  "Will use \"password\" as default": "Userà \"password\" come predefinito",
+  "No Password": "Nessuna Password",
+  "Preparing": "Preparazione",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configura la protezione con password per il tuo album. Scegli come vuoi limitare l'accesso alle tue foto.",
+  "Enter password (optional)": "Inserisci password (opzionale)",
+  "Album will be completely hidden until correct password is entered": "L'album sarà completamente nascosto finché non viene inserita la password corretta",
+  "Photos will be visible with watermarks, password required to save": "Le foto saranno visibili con filigrane, password necessaria per salvare",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Userà \"password\" come predefinito se lasciato vuoto",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se lasci vuoto il campo password, \"password\" verrà utilizzato come password predefinita. Puoi cambiarlo in qualsiasi momento nelle impostazioni dell'album.",
+  "💡 Password Protection Info:": "💡 Informazioni Protezione Password:",
+  "Select Protection Level": "Seleziona Livello di Protezione",
+  "Save Settings": "Salva Impostazioni"
 }

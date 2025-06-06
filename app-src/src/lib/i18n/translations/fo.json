@@ -61,7 +61,6 @@
   "Hidden": "Fjaldur",
   "Watermarked": "Vatnmerktur",
   "Cannot be saved": "Kann ikki goymast",
-  "No password": "Einki loyniorð",
   "No albums found": "Onki album funnin",
   "Created": "Stovnað",
   "Updated": "Dagført",
@@ -267,5 +266,17 @@
   "Confirm Change": "Vátta Broytingina",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Gjaldandi stig hava ójavnaðar album og eru avmarkaðar bara av goymslu. Uppgráðingar innihalda pro-rata virðisávísing fyri óbrúkta tíð.",
   "Save To 6180": "Goym Í 6180",
-  "Open On Phone": "Lat Upp Í Telefon"
+  "Open On Phone": "Lat Upp Í Telefon",
+  "Will use \"password\" as default": "Fer at brúka \"password\" sum standard",
+  "No Password": "Einki Loyniorð",
+  "Preparing": "Ger Til Reiðu",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Set upp loyniorðsvernd fyri títt album. Vel hvussu tú vilt avmarka atgongd til títar myndir.",
+  "Enter password (optional)": "Skriva loyniorð (valfrælst)",
+  "Album will be completely hidden until correct password is entered": "Albumið verður fullkomuliga dulið til tann rætta lyklurorðið verður skrivað",
+  "Photos will be visible with watermarks, password required to save": "Myndirnar síggjast við vatnsmerkjum, lyklurorð kravt fyri at goyma",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Verður \"password\" brúkt sum vanligt, um tað verður tømt",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Um tú latir passwordreitin tóma, verður \"password\" brúkt sum vanligt password. Tú kanst broyta hetta hvønn tíð sum er í albumsetingum.",
+  "💡 Password Protection Info:": "💡 Loyniorð Verjing Frágreiðing:",
+  "Select Protection Level": "Vel Verjingarstig",
+  "Save Settings": "Goyma Stillingar"
 }

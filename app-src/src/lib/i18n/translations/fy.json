@@ -61,7 +61,6 @@
   "Hidden": "Ferburgen",
   "Watermarked": "Wettermarke",
   "Cannot be saved": "Kin net bewarre wurde",
-  "No password": "Gjin wachtwurd",
   "No albums found": "Gjin albums fûn",
   "Created": "Makke",
   "Updated": "Bywurke",
@@ -267,5 +266,17 @@
   "Confirm Change": "Feroaring Befêstigje",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betelle nivo's hawwe ûnbeheinde albums en binne allinne beheind troch opslach. Upgrades omfetsje pro-rata kredyt foar net-brûkte tiid.",
   "Save To 6180": "Bewarje Yn 6180",
-  "Open On Phone": "Iepenje Op Telefoan"
+  "Open On Phone": "Iepenje Op Telefoan",
+  "Will use \"password\" as default": "Sil \"password\" as standert brûke",
+  "No Password": "Gjin Wachtwurd",
+  "Preparing": "Tariede",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurearje wachtwurdbeskerming foar jo album. Kies hoe't jo tagong ta jo foto's beperkje wolle.",
+  "Enter password (optional)": "Fier wachtwurd yn (opsjoneel)",
+  "Album will be completely hidden until correct password is entered": "It album sil folslein ferburgen wêze oant it juste wachtwurd ynfoerd wurdt",
+  "Photos will be visible with watermarks, password required to save": "Foto's sille te sjen wêze mei wettermerk, wachtwurd nedich om te bewarjen",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Sil \"password\" as standert brûke as it leech bliuwt",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "As jo it wachtwurdfjild leech litte, wurdt \"password\" brûkt as standert wachtwurd. Jo kinne dit elk momint wizigje yn albumynstellings.",
+  "💡 Password Protection Info:": "💡 Wachtwurd Beskerming Ynfo:",
+  "Select Protection Level": "Selektearje Beskermingsnivo",
+  "Save Settings": "Ynstellings Bewarje"
 }

@@ -61,7 +61,6 @@
   "Hidden": "सुगु",
   "Watermarked": "ल्हः छाप दयेकः",
   "Cannot be saved": "बचत याये मफु",
-  "No password": "पासवर्ड मदु",
   "No albums found": "अल्बम छुं मदु",
   "Created": "दयेकल",
   "Updated": "अपडेट यानाः",
@@ -267,5 +266,17 @@
   "Confirm Change": "परिवर्तन पुष्टि यानादिसँ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "भुक्तानी तहयात असीमित एल्बम दु व भण्डारणं मात्र सीमित दु। अपग्रेडयात अप्रयुक्त न्हापाया लागि समानुपातिक क्रेडिट दु।",
   "Save To 6180": "6180-य् छु",
-  "Open On Phone": "फोन-य् छु"
+  "Open On Phone": "फोन-य् छु",
+  "Will use \"password\" as default": "डिफल्ट रूपं \"password\" छ्यनादिइ",
+  "No Password": "छिं पासवर्ड मदु",
+  "Preparing": "तयारी",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "छिगु एल्बम या लागि पासवर्ड सुरक्षा कन्फिगर यानादिसँ। छिगु फोटोयात पहुंच कथं बन्धन यायेत हना नं छनोट यानादिसँ।",
+  "Enter password (optional)": "पासवर्ड दल (वैकल्पिक)",
+  "Album will be completely hidden until correct password is entered": "सहि पासवर्ड नालागतिले पूराक्कन एल्बम लुकिजुया",
+  "Photos will be visible with watermarks, password required to save": "फोटो वाटरमार्क दुगु देखिनेछ, सेभ् जुपिं पासवर्ड म्हसिकाव",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ खाली थासं \"password\" मतलब रुपय् ब्वनेगु",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "छि पासवर्ड फिल्ड खाली थासं, \"password\" मतलब पासवर्ड दक्ला ब्वनेगु। छिं यात एल्बम सेटिंग्स याम् गुलि दुइगु यात बदलूं येकाय्।",
+  "💡 Password Protection Info:": "💡 ग्वाःछेँ सुरक्षा सूचना:",
+  "Select Protection Level": "सुरक्षा तह खः",
+  "Save Settings": "सेटिं यक्व"
 }

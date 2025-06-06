@@ -61,7 +61,6 @@
   "Hidden": "Catchie",
   "Watermarked": "Filigranné",
   "Cannot be saved": "N'peut pon êt'e égardé",
-  "No password": "Pâ d'motdépâsse",
   "No albums found": "Pon d'album tréthé",
   "Created": "Créée",
   "Updated": "Achornément",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confitchi l'Changement",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Lès n'veaux qu'i payent ont d's albums san lînmite et n'sont lînmités qu'par l'stockage. Lès amélyoratiouns întchilent du crédit pro-rata pouor l'temps point ûsé.",
   "Save To 6180": "Saver En 6180",
-  "Open On Phone": "Ouvri Ch'Téléphone"
+  "Open On Phone": "Ouvri Ch'Téléphone",
+  "Will use \"password\" as default": "Vaûdra \"password\" coume par défaut",
+  "No Password": "Pon D'mot D'passe",
+  "Preparing": "Préparation",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configurez la protectioun d'passworde tou votre album. Chouaîsissez comment qu'vous voulez restreindre l'accès à vos photos.",
+  "Enter password (optional)": "Mettez l'mot d'passe (à vouaisinne)",
+  "Album will be completely hidden until correct password is entered": "L'albùm s'sa d'achtée coumplètement jusqu'à tant qu'nou mette l'rouoge mot d'pâsse",
+  "Photos will be visible with watermarks, password required to save": "Les portraits s'ront visibl'yes avaec des mèrtches d'ieau, mot d'pâsse nêcessaithe pou sauver",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ S'en s'servi du \"password\" par défaut si laissé vouide",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si vos laissez le champ dé mot d'pâsse vouide, \"password\" s'ra ûsé comme mot d'pâsse par défaut. Vos pouvez changi chutt-chî n'înporte tchi temps ès paraméthes dé l'album.",
+  "💡 Password Protection Info:": "💡 Renseignements d'Protèction d'Mot d'Passe:",
+  "Select Protection Level": "Chouaîsi Niveau d'Protèction",
+  "Save Settings": "Sauver les Réglages"
 }

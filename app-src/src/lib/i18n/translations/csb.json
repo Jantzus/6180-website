@@ -61,7 +61,6 @@
   "Hidden": "Skrëti",
   "Watermarked": "Wòdnoznakòwóné",
   "Cannot be saved": "Ni mòże bëc zachòwóné",
-  "No password": "Bez parola",
   "No albums found": "Ni nalazłé żódnëch albùmów",
   "Created": "Ùsôdzoné",
   "Updated": "Zaktualnioné",
@@ -267,5 +266,17 @@
   "Confirm Change": "Zmianã Pòcwierdzë",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Płatné ërownie mają nieògraniczoné albumë ë są ògraniczoné blós przez ùchòwanié. Aktualizacëje mają w se pro-rata kredit za niebrëkòwóné czass.",
   "Save To 6180": "Zapiszë Do 6180",
-  "Open On Phone": "Òtemkni Na Telefónie"
+  "Open On Phone": "Òtemkni Na Telefónie",
+  "Will use \"password\" as default": "Bãdze ùżëwôné \"password\" jakno domëslne",
+  "No Password": "Nie Ma Parola",
+  "Preparing": "Przigòtowanié",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Kònfigùrëjë zabezpieczenié parolą dla twòjégò albùmu. Òbierzë, jak chcesz ògraniczëc przistãp do twòjich fòtków.",
+  "Enter password (optional)": "Wpiszë parolą (niewimazné)",
+  "Album will be completely hidden until correct password is entered": "Album òstanie całkòm zatacony, dopòkąd nié òstanie wprogramòwóné rëchtige parol",
+  "Photos will be visible with watermarks, password required to save": "Òbrôzki òstanã widoczné z wodnima znaczkami, parol je nôlëżny do zapisu",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ùżëje sã \"password\" jakno sztandardowé, jeżlë òstanié prózny",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jeżlë òstaniesz pole parolë prózny, \"password\" bãdze brëkòwóné jakno sztandardowé parolë. Mòżesz to zmienić kòżdy czas w ùstôwieniach albùmu.",
+  "💡 Password Protection Info:": "💡 Wëdowiédzô ò Òkrywaniu Parolë:",
+  "Select Protection Level": "Wëbierzë Rebész Òkrywaniô",
+  "Save Settings": "Zapiszë Ùstôwë"
 }

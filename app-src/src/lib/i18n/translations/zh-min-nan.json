@@ -61,7 +61,6 @@
   "Hidden": "隱藏",
   "Watermarked": "有水印",
   "Cannot be saved": "無法保存",
-  "No password": "無密碼",
   "No albums found": "揣無相簿",
   "Created": "已建立",
   "Updated": "已更新",
@@ -267,5 +266,17 @@
   "Confirm Change": "確認改變",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Hòo-chîⁿ ê chân-kip ū bô-hān ê siòng-phōaⁿ, kan-ta hō͘ chûn-chòaⁿ khong-kan hạn-chè. Seng-kip pau-kok bô sái-iōng ê sî-kan ê chiah-pî-lē ê chek-hun.",
   "Save To 6180": "Chhun tī 6180",
-  "Open On Phone": "Tī tiān-ōe khui"
+  "Open On Phone": "Tī tiān-ōe khui",
+  "Will use \"password\" as default": "ē-tàng kā \"password\" chò tē-siat",
+  "No Password": "無密碼",
+  "Preparing": "準備中",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Siat-tēng siòng-pho͘ ê bi̍t-bé pó-hō͘. Kéng-té lí beh án-chóaⁿ hián-chè lâng chhiau lí ê siòng-phìⁿ.",
+  "Enter password (optional)": "Su-ji̍p bi̍t-bé (ē-sái kéng-chhoā)",
+  "Album will be completely hidden until correct password is entered": "相簿會hòo完全phàng-sàng到tio̍h正確密碼輸入",
+  "Photos will be visible with watermarks, password required to save": "相片會hòo帶水印顯示，保存需要密碼",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ 如果留空會使用「password」做預設",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "如果恁共密碼欄留空，會用「password」做預設密碼。恁做得佇相册設定肚隨時改變伊。",
+  "💡 Password Protection Info:": "💡 Bí-má pó-hō͘ chū-sìn:",
+  "Select Protection Level": "Kéng-tek pó-hō͘ téng-kip",
+  "Save Settings": "Pó-chûn siat-tēng"
 }

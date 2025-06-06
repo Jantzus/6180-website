@@ -61,7 +61,6 @@
   "Hidden": "Moħbija",
   "Watermarked": "Bil-Filigrana",
   "Cannot be saved": "Ma tistax tiġi ssejvjata",
-  "No password": "L-ebda password",
   "No albums found": "Ma nstabu l-ebda album",
   "Created": "Maħluq",
   "Updated": "Aġġornat",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ikkonferma l-Bidla",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Il-livelli mħallsa għandhom albums bla limitu u huma limitati biss mill-ħażna. Il-aġġornamenti jinkludu kreditu pro-rata għal ħin mhux użat.",
   "Save To 6180": "Issejvja Fi 6180",
-  "Open On Phone": "Iftaħ Fuq Telefown"
+  "Open On Phone": "Iftaħ Fuq Telefown",
+  "Will use \"password\" as default": "Se juża \"password\" bħala default",
+  "No Password": "Ebda Password",
+  "Preparing": "Tħejjija",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Ikkonfigura l-protezzjoni bil-password għall-album tiegħek. Agħżel kif trid tillimita l-aċċess għar-ritratti tiegħek.",
+  "Enter password (optional)": "Daħħal il-password (għażla)",
+  "Album will be completely hidden until correct password is entered": "L-album se jkun moħbi kompletament sakemm ma jiddaħħalx il-password it-tajjeb",
+  "Photos will be visible with watermarks, password required to save": "Ritratti se jkunu viżibbli b'watermarks, password meħtieġ biex tissejvja",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Se juża \"password\" bħala default jekk jitħalla vojt",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jekk tħalli l-qasam tal-password vojt, \"password\" se jintuża bħala password default. Tista' tibdel dan fi kwalunkwe ħin fil-parametri tal-album.",
+  "💡 Password Protection Info:": "💡 Informazzjoni dwar Protezzjoni tal-Password:",
+  "Select Protection Level": "Agħżel Livell ta' Protezzjoni",
+  "Save Settings": "Ħares Settings"
 }

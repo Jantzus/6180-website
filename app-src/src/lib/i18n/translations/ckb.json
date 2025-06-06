@@ -61,7 +61,6 @@
   "Hidden": "شاردراوە",
   "Watermarked": "مۆرکراو بە ئاو",
   "Cannot be saved": "ناتوانرێت پاشەکەوت بکرێت",
-  "No password": "وشەی نهێنی نییە",
   "No albums found": "هیچ ئەلبوومێک نەدۆزرایەوە",
   "Created": "دروستکرا",
   "Updated": "نوێکرایەوە",
@@ -267,5 +266,17 @@
   "Confirm Change": "گۆڕانکاری پشتڕاست بکەوە",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ئاستەکانی پارەدان ئەلبوومی سنوورسیان هەیە و تەنها بە هەڵگر سنوردارن. بەرزکردنەوەکان کرێدیتی پرۆ-ڕاتا بۆ کاتی بەکارنەهاتوو دەگرنەوە.",
   "Save To 6180": "پاشەکەوت بکە لە 6180",
-  "Open On Phone": "لە مۆبایلدا بکەوە"
+  "Open On Phone": "لە مۆبایلدا بکەوە",
+  "Will use \"password\" as default": "\"password\" وەکو بنەڕەت بەکار دەهێنرێت",
+  "No Password": "کۆپی نییە",
+  "Preparing": "ئامادەکردن",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "پارێزگاری وشەی نهێنی بۆ ئەلبومەکەت ڕێکبخە. هەڵبژێرە چۆن دەتەوێت دەستپێگەیشتن بۆ وێنەکانت سنوورداربکەیت.",
+  "Enter password (optional)": "وشەی نهێنی بنووسە (ڕەزامەندی)",
+  "Album will be completely hidden until correct password is entered": "ئەلبوومەکە بە تەواوی شاردەوە تا تێپەڕەوشەی دروست بنووسرێت",
+  "Photos will be visible with watermarks, password required to save": "وێنەکان بە نیشانەی ئاو دەبینرێن، تێپەڕەوشە پێویستە بۆ پاشەکەوتکردن",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" وەک بنەڕەت بەکاردێت ئەگەر بەتاڵ جێبهێڵرێت",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ئەگەر بواری پاسوۆردەکە بەتاڵ جێبهێڵیت، \"password\" وەک پاسوۆردی بنەڕەت بەکاردێت. دەتوانیت لە هەر کاتێکدا لە ڕێکخستنەکانی ئەلبومدا بیگۆڕیت.",
+  "💡 Password Protection Info:": "💡 زانیاری پاراستنی وشەی نهێنی:",
+  "Select Protection Level": "ئاستی پاراستن هەڵبژێرە",
+  "Save Settings": "ڕێکخستنەکان هەڵگرە"
 }

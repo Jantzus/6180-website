@@ -61,7 +61,6 @@
   "Hidden": "ಮರೆಮಾಡಲಾಗಿದೆ",
   "Watermarked": "ಜಲಮುದ್ರಿತ",
   "Cannot be saved": "ಉಳಿಸಲಾಗುವುದಿಲ್ಲ",
-  "No password": "ಪಾಸ್‌ವರ್ಡ್ ಇಲ್ಲ",
   "No albums found": "ಯಾವುದೇ ಆಲ್ಬಮ್‌ಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
   "Created": "ರಚಿಸಲಾಗಿದೆ",
   "Updated": "ನವೀಕರಿಸಲಾಗಿದೆ",
@@ -267,5 +266,17 @@
   "Confirm Change": "ಬದಲಾವಣೆಯನ್ನು ದೃಢೀಕರಿಸಿ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ಪಾವತಿ ಹಂತಗಳು ಅನಿಯಮಿತ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಹೊಂದಿವೆ ಮತ್ತು ಸಂಗ್ರಹಣೆಯಿಂದ ಮಾತ್ರ ಸೀಮಿತವಾಗಿವೆ. ಅಪ್‌ಗ್ರೇಡ್‌ಗಳು ಬಳಸದ ಸಮಯಕ್ಕೆ ಪ್ರೋ-ರೇಟಾ ಕ್ರೆಡಿಟ್ ಒಳಗೊಂಡಿವೆ.",
   "Save To 6180": "6180 ರಲ್ಲಿ ಉಳಿಸಿ",
-  "Open On Phone": "ಫೋನ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ"
+  "Open On Phone": "ಫೋನ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ",
+  "Will use \"password\" as default": "ಡಿಫಾಲ್ಟ್ ಆಗಿ \"password\" ಬಳಸುತ್ತದೆ",
+  "No Password": "ಯಾವುದೇ ಪಾಸ್‌ವರ್ಡ್ ಇಲ್ಲ",
+  "Preparing": "ಸಿದ್ಧಪಡಿಸುವುದು",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ನಿಮ್ಮ ಆಲ್ಬಮ್‌ಗೆ ಪಾಸ್‌ವರ್ಡ್ ಸಂರಕ್ಷಣೆಯನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಿ। ನಿಮ್ಮ ಫೋಟೋಗಳಿಗೆ ಪ್ರವೇಶವನ್ನು ಹೇಗೆ ನಿರ್ಬಂಧಿಸಬೇಕೆಂದು ಆಯ್ಕೆಮಾಡಿ।",
+  "Enter password (optional)": "ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ (ಐಚ್ಛಿಕ)",
+  "Album will be completely hidden until correct password is entered": "ಸರಿಯಾದ ಪಾಸ್‌ವರ್ಡ್ ಪ್ರವೇಶಿಸುವವರೆಗೆ ಆಲ್ಬಮ್ ಸಂಪೂರ್ಣವಾಗಿ ಮರೆಯಾಗಿರುತ್ತದೆ",
+  "Photos will be visible with watermarks, password required to save": "ಫೋಟೋಗಳು ವಾಟರ್‌ಮಾರ್ಕ್‌ಗಳೊಂದಿಗೆ ಗೋಚರವಾಗುತ್ತವೆ, ಉಳಿಸಲು ಪಾಸ್‌ವರ್ಡ್ ಅಗತ್ಯ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ಖಾಲಿ ಬಿಟ್ಟರೆ \"password\" ಅನ್ನು ಡಿಫಾಲ್ಟ್ ಆಗಿ ಬಳಸಲಾಗುವುದು",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ನೀವು ಪಾಸ್‌ವರ್ಡ್ ಕ್ಷೇತ್ರವನ್ನು ಖಾಲಿ ಇಟ್ಟರೆ, \"password\" ಅನ್ನು ಡಿಫಾಲ್ಟ್ ಪಾಸ್‌ವರ್ಡ್ ಆಗಿ ಬಳಸಲಾಗುವುದು. ನೀವು ಇದನ್ನು ಆಲ್ಬಮ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಬದಲಾಯಿಸಬಹುದು.",
+  "💡 Password Protection Info:": "💡 ಗುಪ್ತಪದ ಸಂರಕ್ಷಣೆ ಮಾಹಿತಿ:",
+  "Select Protection Level": "ಸಂರಕ್ಷಣೆ ಮಟ್ಟವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "Save Settings": "ಸಂಯೋಜನೆಗಳನ್ನು ಉಳಿಸಿ"
 }

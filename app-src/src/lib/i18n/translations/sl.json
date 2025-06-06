@@ -61,7 +61,6 @@
   "Hidden": "Skrit",
   "Watermarked": "Z Vodnim Žigom",
   "Cannot be saved": "Ni mogoče shraniti",
-  "No password": "Brez gesla",
   "No albums found": "Ni najdenih albumov",
   "Created": "Ustvarjeno",
   "Updated": "Posodobljeno",
@@ -267,5 +266,17 @@
   "Confirm Change": "Potrdite Spremembo",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Plačljivi nivoji imajo neomejene albume in so omejeni le s shranjevanjem. Nadgradnje vključujejo sorazmerni kredit za neuporabljen čas.",
   "Save To 6180": "Shrani V 6180",
-  "Open On Phone": "Odpri Na Telefonu"
+  "Open On Phone": "Odpri Na Telefonu",
+  "Will use \"password\" as default": "Uporabil bo \"password\" kot privzeto",
+  "No Password": "Ni Gesla",
+  "Preparing": "Priprava",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurirajte zaščito z geslom za vaš album. Izberite, kako želite omejiti dostop do svojih fotografij.",
+  "Enter password (optional)": "Vnesite geslo (izbirno)",
+  "Album will be completely hidden until correct password is entered": "Album bo popolnoma skrit, dokler se ne vnese pravilno geslo",
+  "Photos will be visible with watermarks, password required to save": "Fotografije bodo vidne z vodenimi znaki, geslo potrebno za shranjevanje",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Uporabil bo \"password\" kot privzeto, če ostane prazno",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Če pustite polje za geslo prazno, bo \"password\" uporabljeno kot privzeto geslo. To lahko spremenite kadarkoli v nastavitvah albuma.",
+  "💡 Password Protection Info:": "💡 Informacije o Zaščiti Gesla:",
+  "Select Protection Level": "Izberite Raven Zaščite",
+  "Save Settings": "Shrani Nastavitve"
 }

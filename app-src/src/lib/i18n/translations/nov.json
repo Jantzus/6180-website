@@ -61,7 +61,6 @@
   "Hidden": "KaShid",
   "Watermarked": "Aquamarkatum",
   "Cannot be saved": "Non pote bli salvad",
-  "No password": "Nule pasvorte",
   "No albums found": "Nul albums trovad",
   "Created": "Kreated",
   "Updated": "Aktualsat",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfirma Chambie",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Pagan grades have non-limitad albums e es limitad sole per stokaje. Aktualisationes include pro-rata kredite por non-usad tempe.",
   "Save To 6180": "Konserva In 6180",
-  "Open On Phone": "Aperte In Telefone"
+  "Open On Phone": "Aperte In Telefone",
+  "Will use \"password\" as default": "Va use \"password\" kom defoale",
+  "No Password": "Null Parole",
+  "Preparing": "Preparante",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigure parolprotektione por vor albume. Elekter qualmen vos vole restrikte li aksese a vor fotis.",
+  "Enter password (optional)": "Intrar pasworde (elektive)",
+  "Album will be completely hidden until correct password is entered": "Li album va esser totmen celat til li koret parol-clave es intrat",
+  "Photos will be visible with watermarks, password required to save": "Li fotografes va esser vizibl kun akuomarkes, parol-clave necesari por gardar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Va usa \"password\" kom prevala si lased vakue",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si vu lasa vakue li password-kampo, \"password\" va usa kom li password prevala. Vu posse chanjar to sempre in li album-konstitutes.",
+  "💡 Password Protection Info:": "💡 Informatione de Protektione de Parole:",
+  "Select Protection Level": "Selekte Nivele de Protektione",
+  "Save Settings": "Garde Settingus"
 }

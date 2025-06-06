@@ -61,7 +61,6 @@
   "Hidden": "Nailemmeng",
   "Watermarked": "Napagmarcaan iti Danum",
   "Cannot be saved": "Saan a mabalin nga maidulin",
-  "No password": "Awan ti password",
   "No albums found": "Awan ti nasarakan nga album",
   "Created": "Naaramid",
   "Updated": "Napabaro",
@@ -267,5 +266,17 @@
   "Confirm Change": "Pasingkedan ti Panagbalbaliw",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Dagiti bayad a tier ket addaan iti awan patinggana nga mga album ken nalimitda laeng iti storage. Dagiti upgrade ket karaman ti pro-rata a credit para iti saan a nausar nga oras.",
   "Save To 6180": "Idulin Iti 6180",
-  "Open On Phone": "Lukatan Iti Telefono"
+  "Open On Phone": "Lukatan Iti Telefono",
+  "Will use \"password\" as default": "Agusar ti \"password\" kas default",
+  "No Password": "Awan Ti Password",
+  "Preparing": "Agisagsagana",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "I-configure ti password protection para iti album mo. Pilien no kasano nga kayatmo a limitaren ti access kadagiti retrato mo.",
+  "Enter password (optional)": "Ikabil ti password (pagpilian)",
+  "Album will be completely hidden until correct password is entered": "Ti album ket mailemnag a kompletuan aginggana ti umno a password ket maiserrek",
+  "Photos will be visible with watermarks, password required to save": "Dagiti ladawan ket makitkitanto nga addaan kadagiti marka ti danum, kasapulan ti password tapno maited",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Usaren ti \"password\" a kas default no nabati a blanko",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "No awan ti nakaikabilmo iti password field, mausar ti \"password\" a kas default a password. Mabalinmo a baliwan daytoy iti aniaman a tiempo iti album settings.",
+  "💡 Password Protection Info:": "💡 Pakaammo ti Salaknib ti Password:",
+  "Select Protection Level": "Pilien ti Lebel ti Salaknib",
+  "Save Settings": "Idulin dagiti Setting"
 }

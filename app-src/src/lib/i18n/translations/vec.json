@@ -61,7 +61,6 @@
   "Hidden": "Sconto",
   "Watermarked": "Filigranà",
   "Cannot be saved": "No ła se pol salvar",
-  "No password": "Nesuna password",
   "No albums found": "Nisun album catà",
   "Created": "Creà",
   "Updated": "Agiornà",
@@ -267,5 +266,17 @@
   "Confirm Change": "Conferma el Canbiamento",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "I livei pagà i gà àlbum sensa lìmiti e i xe limitài soło da ła memòria. I axornamenti i include crédiito pro-rata par ił tenpo mìa doparà.",
   "Save To 6180": "Salva Inte 6180",
-  "Open On Phone": "Vierzi So'l Telefono"
+  "Open On Phone": "Vierzi So'l Telefono",
+  "Will use \"password\" as default": "El doparà \"password\" come predefinìo",
+  "No Password": "Nissun Password",
+  "Preparing": "Preparasion",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configura ła protezion con password par el to album. Sernisi come che te voli limitar l'acesso a łe to foto.",
+  "Enter password (optional)": "Meti ła password (opzionałe)",
+  "Album will be completely hidden until correct password is entered": "L'album el sarà nscont conpletamente fin che la password giusta la nol vegna messa",
+  "Photos will be visible with watermarks, password required to save": "Le fòto le sarà visibili con łe filigrane, parola ciave necessaria par salvar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ El doparerà \"password\" come predefinio se el vien lassà vodo",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se te lassi vodo el canpo de la password, \"password\" el sarà doparà come password predefinia. Te poli canbiarlo quando che te vol inte le inpostasion de l'album.",
+  "💡 Password Protection Info:": "💡 Informasion su ła Protesion de ła Password:",
+  "Select Protection Level": "Sełesiona el Łiveło de Protesion",
+  "Save Settings": "Salva Inpostasion"
 }

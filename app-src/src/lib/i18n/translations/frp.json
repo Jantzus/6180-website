@@ -61,7 +61,6 @@
   "Hidden": "Cachiê",
   "Watermarked": "Filigranâ",
   "Cannot be saved": "Pôt pas étre encarchiê",
-  "No password": "Pas de mot de pâssa",
   "No albums found": "Nion album trovâ",
   "Created": "Crèâ",
   "Updated": "Betâ a jorn",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmâr lo Changement",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Los nivôls payents ont des albums sen limita et sont limitâs que per lo stockâjo. Les mêses a jorn encllont un crèdit pro-rata por lo temps pas utilisâ.",
   "Save To 6180": "Enregistrâ Dens 6180",
-  "Open On Phone": "Uvrir Sur Telefono"
+  "Open On Phone": "Uvrir Sur Telefono",
+  "Will use \"password\" as default": "Utiliserat \"password\" per dèfôt",
+  "No Password": "Pas De Môt De Passa",
+  "Preparing": "Preparacion",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configurâd la protèccion per mot de pâssa por voutron album. Choesésséd coment vos voléd restrendre l'accès a vos fôtos.",
+  "Enter password (optional)": "Entrâd lo mot de pâssa (opcionâl)",
+  "Album will be completely hidden until correct password is entered": "L'album serat complètament cachiê tant que lo bon mot de pâssa sèt pas buchiê",
+  "Photos will be visible with watermarks, password required to save": "Les fôtos seront visibles avouéc des filigranâs, mot de pâssa nècéssèro por sôvar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Empleyerat \"password\" per dèfôt se lèssâ vouedo",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se vos lèssâd vouedo lo champ du mot de pâssa, \"password\" serat empleyê coment mot de pâssa per dèfôt. Vos pouede changiér cen a tot moment dens los paramètros de l'album.",
+  "💡 Password Protection Info:": "💡 Enfôrmacions de Protèccion per Mot de Passa:",
+  "Select Protection Level": "Chouèsir lo Nivél de Protèccion",
+  "Save Settings": "Enregisstrar los Paramètros"
 }

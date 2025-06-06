@@ -61,7 +61,6 @@
   "Hidden": "Кистэммит",
   "Watermarked": "Уу Бэлиэтин",
   "Cannot be saved": "Харайдыллыбат",
-  "No password": "Киирии тыла суох",
   "No albums found": "Альбом көстүбэтэ",
   "Created": "Айыллыбыт",
   "Updated": "Саҥардылынна",
@@ -267,5 +266,17 @@
   "Confirm Change": "Уларытыыны Бигэргэт",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Акы түлүүр таһымнар хааһыллыбат альбомнар баар уонна эбэтэр хааһыллыбат. Саайыннарыы туттуллубатах кэмэ иһин пропорциональнай кредит киирэр.",
   "Save To 6180": "6180-га Бигэргэт",
-  "Open On Phone": "Телефонга Арый"
+  "Open On Phone": "Телефонга Арый",
+  "Will use \"password\" as default": "\"Password\" сүрүн диэн туттуллуо",
+  "No Password": "Пароль Суох",
+  "Preparing": "Бэлэмнээх",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Эн альбомугар парол көмүскэлин туруорунаргын. Эн ойуулаахха иирии хайдах хааччыйыын баҕараргын тал.",
+  "Enter password (optional)": "Парол киллэр (көстүү буоллаххына)",
+  "Album will be completely hidden until correct password is entered": "Альбом бүтүнтүүн кистэлиннэ турара дьулусса киирэн көстүнэ",
+  "Photos will be visible with watermarks, password required to save": "Ойуулар уу бэлиэтинэн көстүөллэр, бигэргэтии пароль эрэллээх",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Куруук хаалларыахтаах \"password\" сүрүн диэн туттуллуо",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Пароль талбарын куруук хаалларыгар, \"password\" сүрүн пароль туттуллуо. Маны альбом туруоруулларыттан хайдах да кэмҥэ уларытыахха сөп.",
+  "💡 Password Protection Info:": "💡 Пароль Харыстааһына Туһунан:",
+  "Select Protection Level": "Харыстаһын Сыаналаах Тал",
+  "Save Settings": "Туруоруулары Хааллар"
 }

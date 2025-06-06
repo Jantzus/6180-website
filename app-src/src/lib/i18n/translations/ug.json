@@ -61,7 +61,6 @@
   "Hidden": "يوشۇرۇنغان",
   "Watermarked": "سۇ بەلگىسى بار",
   "Cannot be saved": "ساقلىغىلى بولمايدۇ",
-  "No password": "پارول يوق",
   "No albums found": "ھېچقانداق ئالبوم تېپىلمىدى",
   "Created": "قۇرۇلدى",
   "Updated": "يېڭىلاندى",
@@ -267,5 +266,17 @@
   "Confirm Change": "ئۆزگەرتىشنى جەزملەشتۈرۈڭ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "پۇل تۆلىگەن دەرىجىلەردە چەكسىز ئالبوم بار ھەمدە پەقەت ساقلاش بىلەنلا چەكلەنگەن. يۇقىرىلىتىش ئىشلەتمىگەن ۋاقىت ئۈچۈن تەڭپۇڭ كرېدىت ئۆز ئىچىگە ئالىدۇ.",
   "Save To 6180": "6180 گە ساقلاڭ",
-  "Open On Phone": "تېلېفوندا ئېچىڭ"
+  "Open On Phone": "تېلېفوندا ئېچىڭ",
+  "Will use \"password\" as default": "كۆڭۈلدىكى ھالەتتە \"password\" ئىشلىتىدۇ",
+  "No Password": "پارول يوق",
+  "Preparing": "تەييارلاۋاتىدۇ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ئالبومىڭىز ئۈچۈن پارول قوغدىشىنى سەپلەڭ. رەسىملىرىڭىزگە زىيارەت قىلىشنى قانداق چەكلەشنى خالايدىغانلىقىڭىزنى تاللاڭ.",
+  "Enter password (optional)": "پارولنى كىرگۈزۈڭ (ئىختىيارى)",
+  "Album will be completely hidden until correct password is entered": "توغرا مخپىي نومۇر كىرگۈزۈلگۈچە ئالبوم پۈتۈنلەي يوشۇرۇن بولىدۇ",
+  "Photos will be visible with watermarks, password required to save": "رەسىملەر سۇ بەلگىسى بىلەن كۆرۈنىدۇ، ساقلاش ئۈچۈن مخپىي نومۇر كېرەك",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ بوش قالدۇرۇلسا \"password\" كۆڭۈلدىكى قىممەت سۈپىتىدە ئىشلىتىلىدۇ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ئەگەر سىر سۆز بۆشلۈكىنى بوش قالدۇرسىڭىز، \"password\" سۈپىتىدە كۆڭۈلدىكى سىر سۆز ئىشلىتىلىدۇ. بۇنى ئالبوم تەڭشەكلىرىدە ھەر قاچان ئۆزگەرتەلەيسىز.",
+  "💡 Password Protection Info:": "💡 پارول قوغداش ئۇچۇرى:",
+  "Select Protection Level": "قوغداش دەرىجىسىنى تاللاڭ",
+  "Save Settings": "تەڭشەكلەرنى ساقلاڭ"
 }

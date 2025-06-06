@@ -4,7 +4,7 @@ import {
   ProgressTracker
 } from "@/lib/types";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
-import { checkLoginWithRefresh, generateUUID, redirectTo } from "@/lib/utils";  // ← ADD redirectTo import
+import { checkLoginWithRefresh, generateUUID, redirectTo } from "@/lib/utils";
 import { 
   createLogger, 
   createPhotoStatusUpdater, 
@@ -23,6 +23,7 @@ export const useFileUploadProcessor = (
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
   const [isUploading, setIsUploading] = useState(false);
+  const [isProcessingFiles, setIsProcessingFiles] = useState(false); // NEW: Track if we're actually processing
   const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
     totalFiles: 0,
     filesComplete: 0,
@@ -55,22 +56,30 @@ export const useFileUploadProcessor = (
       
       log(`✅ Upload complete: ${successCount} successful, ${errorCount} failed`);
       
+      // Set uploading to false immediately to clean up UI
+      setIsUploading(false);
+      setIsProcessingFiles(false);
+      
       // If a navigation callback was provided, use it
       if (navigateAfterUpload) {
-        // Add a slight delay to show the completion state before redirecting
-        setTimeout(() => {
-          navigateAfterUpload(currentFolderId);
-        }, 1000);
+        // Use requestAnimationFrame to ensure UI updates are complete before navigation
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            navigateAfterUpload(currentFolderId);
+          }, 800); // Reduced delay
+        });
       } else {
         // Default navigation behavior if no callback provided
-        setTimeout(() => {
-          // Redirect to save-album page with folder ID parameter if adding to existing album
-          if (currentFolderId) {
-            redirectTo(`save-album.html?folderId=${encodeURIComponent(currentFolderId)}`);
-          } else {
-            redirectTo("save-album.html");
-          }
-        }, 1000);
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            // Redirect to save-album page with folder ID parameter if adding to existing album
+            if (currentFolderId) {
+              redirectTo(`save-album.html?folderId=${encodeURIComponent(currentFolderId)}`);
+            } else {
+              redirectTo("save-album.html");
+            }
+          }, 800); // Reduced delay
+        });
       }
     }
   }, [fileProcessingComplete, selectedPhotos.length, currentFolderId, navigateAfterUpload]);
@@ -88,6 +97,7 @@ export const useFileUploadProcessor = (
     });
     setDebugMessages([]);
     setIsUploading(false);
+    setIsProcessingFiles(false);
     setFileProcessingComplete(false);
   };
 
@@ -101,6 +111,7 @@ export const useFileUploadProcessor = (
     
     // Reset file processing completion flag
     setFileProcessingComplete(false);
+    setIsProcessingFiles(false);
     
     fileInputRef.current?.click();
   };
@@ -110,10 +121,22 @@ export const useFileUploadProcessor = (
     const files = Array.from(e.target.files || []);
     if (!files.length) return;
 
+    // Set states immediately for better UX
     setIsUploading(true);
+    setIsProcessingFiles(true);
     
     // Reset file processing completion flag
     setFileProcessingComplete(false);
+    
+    // Initialize progress tracker immediately
+    setProgressTracker({
+      totalFiles: files.length,
+      filesComplete: 0,
+      filesUploading: 0,
+      filesProcessing: files.length,
+      filesWithError: 0,
+      overallProgress: 0
+    });
     
     // Get a fresh token using the async function
     const token = await checkLoginWithRefresh();
@@ -121,12 +144,14 @@ export const useFileUploadProcessor = (
     if (!token) {
       log("❌ Authentication failed");
       setIsUploading(false);
+      setIsProcessingFiles(false);
       return false;
     }
     
     if (!cognitoUsername) {
       log("❌ Missing Cognito Username");
       setIsUploading(false);
+      setIsProcessingFiles(false);
       return false;
     }
   
@@ -136,26 +161,22 @@ export const useFileUploadProcessor = (
       log(`📁 Using folder ID: ${newFolderId}`);
       setCurrentFolderId(newFolderId);
       
-      // Initialize empty array for selected photos in state to show initial progress
-      setSelectedPhotos(files.map((file) => ({
+      // Initialize selected photos with proper initial state
+      const initialPhotos = files.map((file) => ({
         fileName: file.name,
         s3PreviewUrl: URL.createObjectURL(file),
         type: file.type,
         size: file.size,
-        status: 'pending',
+        status: 'pending' as const,
         progress: 0
-      })));
+      }));
       
-      // Set up an interval to update the UI while processing continues
-      const progressUpdateInterval = setInterval(() => {
-        updateProgressTracker(selectedPhotos, setProgressTracker);
-      }, 500);
+      setSelectedPhotos(initialPhotos);
+      
+      // REMOVED: The problematic interval that was updating with stale closure values
       
       // Use the processFilesBeforeUploadingToS3 function from utils
       const processedPhotos = await processFilesBeforeUploadingToS3(files, cognitoUsername, updatePhotoStatus, log);
-      
-      // Clear the interval once processing is complete
-      clearInterval(progressUpdateInterval);
       
       // Make sure we have a final progress update
       updateProgressTracker(processedPhotos, setProgressTracker);
@@ -182,6 +203,7 @@ export const useFileUploadProcessor = (
     } catch (error) {
       log(`❌ Fatal error in handleFileSelection: ${String(error)}`);
       setIsUploading(false);
+      setIsProcessingFiles(false);
       return false;
     } finally {
       // Clear the file input to allow selecting the same files again
@@ -195,6 +217,7 @@ export const useFileUploadProcessor = (
     setSelectedPhotos,
     isUploading,
     setIsUploading,
+    isProcessingFiles, // NEW: Expose this for better UI control
     progressTracker,
     setProgressTracker,
     debugMessages,

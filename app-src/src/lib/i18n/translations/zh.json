@@ -61,7 +61,6 @@
   "Hidden": "隐藏",
   "Watermarked": "带水印",
   "Cannot be saved": "无法保存",
-  "No password": "无密码",
   "No albums found": "未找到相册",
   "Created": "已创建",
   "Updated": "已更新",
@@ -267,5 +266,17 @@
   "Confirm Change": "确认更改",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "付费层级拥有无限专辑，仅受存储空间限制。升级包含未使用时间的按比例积分。",
   "Save To 6180": "保存到6180",
-  "Open On Phone": "在手机上打开"
+  "Open On Phone": "在手机上打开",
+  "Will use \"password\" as default": "将使用\"password\"作为默认",
+  "No Password": "无密码",
+  "Preparing": "准备中",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "配置相册的密码保护。选择您希望如何限制对照片的访问。",
+  "Enter password (optional)": "输入密码（可选）",
+  "Album will be completely hidden until correct password is entered": "相册将完全隐藏直到输入正确密码",
+  "Photos will be visible with watermarks, password required to save": "照片将带有水印显示，保存需要密码",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ 如果留空将使用\"password\"作为默认值",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "如果您将密码字段留空，\"password\"将被用作默认密码。您可以在专辑设置中随时更改此设置。",
+  "💡 Password Protection Info:": "💡 密码保护信息:",
+  "Select Protection Level": "选择保护级别",
+  "Save Settings": "保存设置"
 }

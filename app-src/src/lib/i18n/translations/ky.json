@@ -61,7 +61,6 @@
   "Hidden": "Жашырылган",
   "Watermarked": "Суу Белгиси Менен",
   "Cannot be saved": "Сакталбайт",
-  "No password": "Сырсөз жок",
   "No albums found": "Эч бир альбом табылган жок",
   "Created": "Түзүлдү",
   "Updated": "Жаңыртылды",
@@ -267,5 +266,17 @@
   "Confirm Change": "Өзгөрүүнү Ырастаңыз",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Акы төлөө деңгээлдеринде чексиз альбомдор бар жана алар сактагычпын гана чектелет. Жаңыртууларга колдонулбаган убакыт үчүн пропорционалдуу кредит кирет.",
   "Save To 6180": "6180-гө Сактоо",
-  "Open On Phone": "Телефондо Ачуу"
+  "Open On Phone": "Телефондо Ачуу",
+  "Will use \"password\" as default": "\"Password\" демейки катары колдоноору",
+  "No Password": "Сырсөз Жок",
+  "Preparing": "Даярдоо",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Альбомуңуз үчүн сырсөз коргоосун конфигурациялаңыз. Сүрөттөрүңүзгө кирүүнү кантип чектегиңиз келерин тандаңыз.",
+  "Enter password (optional)": "Сырсөздү киргизиңиз (каалаганча)",
+  "Album will be completely hidden until correct password is entered": "Туура сыр сөз киргизилгенге чейин альбом толугу менен жашыруун болот",
+  "Photos will be visible with watermarks, password required to save": "Сүрөттөр суу белгилери менен көрүнөт, сактоо үчүн сыр сөз керек",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Бош калтырылса \"password\" негизги катары колдонулат",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Эгер сиз сыр сөз талаасын бош калтырсаңыз, \"password\" негизги сыр сөз катары колдонулат. Сиз муну альбом жөндөөлөрүндө каалаган убакта өзгөртө аласыз.",
+  "💡 Password Protection Info:": "💡 Сыр Сөз Коргоо Маалыматы:",
+  "Select Protection Level": "Коргоо Деңгээлин Тандаңыз",
+  "Save Settings": "Жөндөөлөрдү Сактоо"
 }

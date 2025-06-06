@@ -61,7 +61,6 @@
   "Hidden": "پنهان شده است",
   "Watermarked": "آب‌نشان شده",
   "Cannot be saved": "نمی‌تواند ذخیره شود",
-  "No password": "بدون رمز عبور",
   "No albums found": "آلبومی یافت نشد",
   "Created": "ایجاد شد",
   "Updated": "به‌روز شد",
@@ -267,5 +266,17 @@
   "Confirm Change": "تایید تغییر",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "سطوح پولی آلبوم‌های نامحدود دارند و فقط توسط فضای ذخیره‌سازی محدود می‌شوند. ارتقاها شامل اعتبار تناسبی برای زمان استفاده نشده است.",
   "Save To 6180": "ذخیره در 6180",
-  "Open On Phone": "باز کردن روی تلفن"
+  "Open On Phone": "باز کردن روی تلفن",
+  "Will use \"password\" as default": "از \"password\" به عنوان پیشفرض استفاده خواهد کرد",
+  "No Password": "بدون رمز عبور",
+  "Preparing": "آماده‌سازی",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "حفاظت با رمز عبور را برای آلبوم خود پیکربندی کنید. نحوه محدود کردن دسترسی به عکس‌هایتان را انتخاب کنید.",
+  "Enter password (optional)": "رمز عبور را وارد کنید (اختیاری)",
+  "Album will be completely hidden until correct password is entered": "آلبوم تا زمان وارد کردن رمز عبور صحیح کاملاً مخفی خواهد بود",
+  "Photos will be visible with watermarks, password required to save": "عکس‌ها با واترمارک قابل مشاهده خواهند بود، برای ذخیره رمز عبور نیاز است",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ در صورت خالی گذاشتن، \"password\" به عنوان پیش‌فرض استفاده خواهد شد",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "اگر فیلد رمز عبور را خالی بگذارید، \"password\" به عنوان رمز عبور پیش‌فرض استفاده خواهد شد. شما می‌توانید این را در هر زمان در تنظیمات آلبوم تغییر دهید.",
+  "💡 Password Protection Info:": "💡 اطلاعات محافظت رمز عبور:",
+  "Select Protection Level": "سطح محافظت را انتخاب کنید",
+  "Save Settings": "ذخیره تنظیمات"
 }

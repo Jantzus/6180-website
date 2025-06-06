@@ -61,7 +61,6 @@
   "Hidden": "숨겨진",
   "Watermarked": "워터마크된",
   "Cannot be saved": "저장할 수 없습니다",
-  "No password": "비밀번호 없음",
   "No albums found": "앨범을 찾을 수 없습니다",
   "Created": "생성됨",
   "Updated": "업데이트됨",
@@ -267,5 +266,17 @@
   "Confirm Change": "변경 확인",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "유료 계층은 무제한 앨범을 보유하며 저장 공간에 의해서만 제한됩니다. 업그레이드에는 사용하지 않은 시간에 대한 비례 크레딧이 포함됩니다.",
   "Save To 6180": "6180에 저장",
-  "Open On Phone": "휴대폰에서 열기"
+  "Open On Phone": "휴대폰에서 열기",
+  "Will use \"password\" as default": "기본값으로 \"password\"를 사용합니다",
+  "No Password": "비밀번호 없음",
+  "Preparing": "준비 중",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "앨범의 비밀번호 보호를 구성하세요. 사진에 대한 접근을 어떻게 제한할지 선택하세요.",
+  "Enter password (optional)": "비밀번호 입력 (선택사항)",
+  "Album will be completely hidden until correct password is entered": "올바른 비밀번호를 입력할 때까지 앨범이 완전히 숨겨집니다",
+  "Photos will be visible with watermarks, password required to save": "사진은 워터마크와 함께 표시되며 저장하려면 비밀번호가 필요합니다",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ 비어있으면 \"password\"가 기본값으로 사용됩니다",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "비밀번호 필드를 비워두면 \"password\"가 기본 비밀번호로 사용됩니다. 앨범 설정에서 언제든지 이를 변경할 수 있습니다.",
+  "💡 Password Protection Info:": "💡 비밀번호 보호 정보:",
+  "Select Protection Level": "보호 수준 선택",
+  "Save Settings": "설정 저장"
 }

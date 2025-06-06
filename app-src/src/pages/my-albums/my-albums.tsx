@@ -39,7 +39,7 @@ const formatGB = (gb: number): string => {
 };
 
 // Helper function to get albums that should be marked for deletion
-  const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedBytesUsed: number): any[] => {
+const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedBytesUsed: number): any[] => {
   // Return empty array if subscriptionInfo is not loaded yet
   if (!subscriptionInfo) {
     return [];
@@ -131,8 +131,6 @@ const formatGB = (gb: number): string => {
   
   return albumsToDelete;
 };
-
-
 
 // Component to display albums marked for deletion with visual preview
 const AlbumDeletionPreview = ({ 
@@ -456,6 +454,7 @@ const MyAlbums = () => {
   const {
     fileInputRef,
     isUploading,
+    isProcessingFiles, // NEW: Get the processing state
     progressTracker,
     debugMessages,
     log
@@ -490,6 +489,7 @@ const MyAlbums = () => {
         }}>
           <NewAlbumButton
             isUploading={isUploading}
+            isProcessingFiles={isProcessingFiles} // NEW: Pass the processing state
             openFilePicker={openFilePicker}
             t={t}
             isRTL={isRTL}
@@ -551,11 +551,13 @@ const MyAlbums = () => {
           resetFilter={resetContactFilter}
         />
         
-        {/* Added conditional rendering for enhanced status messages */}
-        {isUploading && (
+        {/* Updated conditional rendering for enhanced status messages */}
+        {(isUploading || isProcessingFiles) && (
           <div style={{ width: '100%', marginBottom: '20px' }}>
             <UploadProgress 
-              progressTracker={progressTracker} 
+              progressTracker={progressTracker}
+              isUploading={isUploading}
+              isProcessingFiles={isProcessingFiles} // NEW: Pass the processing state
               isRTL={getLanguageDirection(language) === "rtl"}
               style={{ marginTop: '20px' }}
               showSuccessMessage={true}

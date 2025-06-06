@@ -61,7 +61,6 @@
   "Hidden": "Nëbbu",
   "Watermarked": "Ak Màndarga Ndox",
   "Cannot be saved": "Manul man a dencu",
-  "No password": "Amul baat-uñuy",
   "No albums found": "Amul benn album bu gis",
   "Created": "Sose",
   "Updated": "Yeesalaat",
@@ -267,5 +266,17 @@
   "Confirm Change": "Jublu Coppite",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ay tenu yu wax seen xaalis ñepp yi nekk album yu amul wàkku te jàpp ci ay bërëb ci ñëpp. Ay yub naka ak xaalis yu mel ni jub gi ci mbir mi ñu wax waaye.",
   "Save To 6180": "Jëf Ca 6180",
-  "Open On Phone": "Ubbi Ci Telefon"
+  "Open On Phone": "Ubbi Ci Telefon",
+  "Will use \"password\" as default": "Dinga jëfandikoo \"password\" ci njàmm bi",
+  "No Password": "Amul Mot De Passe",
+  "Preparing": "Caayam",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Samp njariñ ak baatu yu gëm ci albumu bi. Taan ni nga bëgg dëppoo jëfandikoo nataal yi.",
+  "Enter password (optional)": "Duggal baatu bu gëm (boo bëggee)",
+  "Album will be completely hidden until correct password is entered": "Album bi dina neelaw dëgdëgg ba ñu dugal mët mi am solo",
+  "Photos will be visible with watermarks, password required to save": "Natal yi dina gëm ak màndarga yu ndaw, baatu lokko la war a def ngir sàq",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Dinaa jëfandikoo \"password\" ni duqqal bu njëkk su dee am fi-kenn",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Su dee am fi-kenn password field gi, \"password\" dinañu ko jëfandikoo ni password bi njëkk. Mën nga ko soppi kenn ci li mu nekk ci paramètres album yi.",
+  "💡 Password Protection Info:": "💡 Xibaar ci Jambaar Baatu Wucc:",
+  "Select Protection Level": "Tann Nguur u Jambaar",
+  "Save Settings": "Taxaw Koog yi"
 }

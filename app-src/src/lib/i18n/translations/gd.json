@@ -61,7 +61,6 @@
   "Hidden": "Falaichte",
   "Watermarked": "Comharraichte-uisge",
   "Cannot be saved": "Chan urrainn a shàbhaladh",
-  "No password": "Gun fhacal-faire",
   "No albums found": "Cha deach albam a lorg",
   "Created": "Cruthaichte",
   "Updated": "Air ùrachadh",
@@ -267,5 +266,17 @@
   "Confirm Change": "Dearbhaich an t-Atharrachadh",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tha clàran gun chrìoch aig ìrean pàighte agus chan eil iad cuingichte ach le stòradh. Tha ùrachadh a' toirt a-steach creideas co-roinneil airson ùine gun chleachdadh.",
   "Save To 6180": "Sàbhail Ann An 6180",
-  "Open On Phone": "Fosgail Air Fòn"
+  "Open On Phone": "Fosgail Air Fòn",
+  "Will use \"password\" as default": "Cleachdaidh \"password\" mar roghainn bunaiteach",
+  "No Password": "Gun Facal-faire",
+  "Preparing": "Ag Ullachadh",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Suidhich dìon facail-faire airson an clàr-phictair agad. Tagh mar a tha thu airson casg a chur air faighinn a-steach dha na dealbhan agad.",
+  "Enter password (optional)": "Cuir a-steach facal-faire (roghainneil)",
+  "Album will be completely hidden until correct password is entered": "Bidh an clàr-ciùil air a fhalach gu tur gus an tèid am facal-faire ceart a chur a-steach",
+  "Photos will be visible with watermarks, password required to save": "Bidh dealbhan ri fhaicinn le comharran-uisge, facal-faire a dhìth airson sàbhaladh",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Cleachdaidh \"password\" mar roghainn bunaiteach ma dh'fhàgas falamh",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ma dh'fhàgas tu an raon facail-fhaire falamh, thèid \"password\" a chleachdadh mar am facal-faire bunaiteach. Faodaidh tu seo atharrachadh uair sam bith ann an roghainnean na clàir-chiùil.",
+  "💡 Password Protection Info:": "💡 Fiosrachadh Dìon Facal-faire:",
+  "Select Protection Level": "Tagh Ìre Dìon",
+  "Save Settings": "Sàbhail Roghainnean"
 }

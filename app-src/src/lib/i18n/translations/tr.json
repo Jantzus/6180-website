@@ -61,7 +61,6 @@
   "Hidden": "Gizlenmiş",
   "Watermarked": "Filigranli",
   "Cannot be saved": "Kaydedilemez",
-  "No password": "Şifre yok",
   "No albums found": "Albüm bulunamadı",
   "Created": "Oluşturuldu",
   "Updated": "Güncellendi",
@@ -267,5 +266,17 @@
   "Confirm Change": "Değişikliği Onayla",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ücretli katmanlarda sınırsız albüm bulunur ve yalnızca depolama ile sınırlıdır. Yükseltmeler, kullanılmamış süre için orantılı kredi içerir.",
   "Save To 6180": "6180'e Kaydet",
-  "Open On Phone": "Telefonda Aç"
+  "Open On Phone": "Telefonda Aç",
+  "Will use \"password\" as default": "Varsayılan olarak \"password\" kullanacak",
+  "No Password": "Şifre Yok",
+  "Preparing": "Hazırlanıyor",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Albümünüz için parola korumasını yapılandırın. Fotoğraflarınıza erişimi nasıl kısıtlamak istediğinizi seçin.",
+  "Enter password (optional)": "Şifre girin (isteğe bağlı)",
+  "Album will be completely hidden until correct password is entered": "Doğru parola girilene kadar albüm tamamen gizli olacak",
+  "Photos will be visible with watermarks, password required to save": "Fotoğraflar filigranlarla görülecek, kaydetmek için şifre gerekli",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Boş bırakılırsa \"password\" varsayılan olarak kullanılacak",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Şifre alanını boş bırakırsanız, \"password\" varsayılan şifre olarak kullanılacaktır. Bunu albüm ayarlarında istediğiniz zaman değiştirebilirsiniz.",
+  "💡 Password Protection Info:": "💡 Şifre Koruma Bilgisi:",
+  "Select Protection Level": "Koruma Seviyesini Seçin",
+  "Save Settings": "Ayarları Kaydet"
 }

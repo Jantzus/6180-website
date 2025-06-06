@@ -61,7 +61,6 @@
   "Hidden": "Luma",
   "Watermarked": "Oka Isht Atokowa",
   "Cannot be saved": "Ik achukmo",
-  "No password": "Password ikshoh",
   "No albums found": "Album ik ahayucho",
   "Created": "Ikbi",
   "Updated": "Himona taha",
@@ -267,5 +266,17 @@
   "Confirm Change": "Tahli Anonti",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Poshtol aya tiyah album yammat nan ik abaniyo, atok aya i hashi aya abanit iya. Chipintakachi yak ahayucho oklah bilika aya pro-rata nan hokmaklo.",
   "Save To 6180": "6180-a Bohli",
-  "Open On Phone": "Telefon Ai Tiwli"
+  "Open On Phone": "Telefon Ai Tiwli",
+  "Will use \"password\" as default": "\"Password\" achi default",
+  "No Password": "Password Ikshko",
+  "Preparing": "Anumpeshi",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Chi album a aiushpatok poshowat apila chi. Holhtina nana chi isht pim holitoblichi ka aiokpanka ish ahnit.",
+  "Enter password (optional)": "Password isht takalichi (ahninchit osh)",
+  "Album will be completely hidden until correct password is entered": "Album ik lumbo taha ahni chia kanimma nanna password ulhpiesa ahayuchakma",
+  "Photos will be visible with watermarks, password required to save": "Tvshka yvt oka holisso isht maya ik bano, holisso ik afama chi ish aiasha",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" ak o fohka chito keyuk okla ho",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Holissa password field ash ik ishi beka, \"password\" ak o fohka chito ak o fohka keyuk a hi. Ilvppa chohmachi ma ish falama hiloha ma album settings a isht ish taklashke.",
+  "💡 Password Protection Info:": "💡 Password Protection Anoli:",
+  "Select Protection Level": "Protection Level Atoka",
+  "Save Settings": "Settings Hilecha"
 }

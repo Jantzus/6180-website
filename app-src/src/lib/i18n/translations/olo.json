@@ -61,7 +61,6 @@
   "Hidden": "Peitetty",
   "Watermarked": "Vezimerkattu",
   "Cannot be saved": "Ei sua tallendua",
-  "No password": "Ei salasanua",
   "No albums found": "Albumii ei löydynyh",
   "Created": "Luajittu",
   "Updated": "Päivitetty",
@@ -267,5 +266,17 @@
   "Confirm Change": "Vaihetus Vahvisto",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maksulliseh asteh ommoo loputomattomah albumih da niijä ommoo rajoitettu vaih säilölyksellä. Päivitykseh sisäldäy pro-rata krediittii käyttämättömäh aigah.",
   "Save To 6180": "Tallenda 6180-h",
-  "Open On Phone": "Avua Telefonīs"
+  "Open On Phone": "Avua Telefonīs",
+  "Will use \"password\" as default": "Käytän \"password\" perusarvozena",
+  "No Password": "Ei Oļe Salasana",
+  "Preparing": "Valmistelou",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Kostitah parolinke varjelemini sinun albumilu. Valitte, kuibo tahtot rajoittua sinun kuvie lähtiemistä.",
+  "Enter password (optional)": "Kirjuah parolli (valiččemizi)",
+  "Album will be completely hidden until correct password is entered": "Album piilossa ollou täyvin, ku oikei salamua ei kirjutetu",
+  "Photos will be visible with watermarks, password required to save": "Kuvi nägütäh vezimelkoijen kera, salamua tarvittah tallentamizeh",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Käytöy \"password\" perustoina jos jätöy tyhjäksi",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ku jätät salasanu kentän tyhjäksi, \"password\" käytetty perustoini salasanuon. Tämän voit muttua milloin hyvänsä albumin asetuksissa.",
+  "💡 Password Protection Info:": "💡 Parolan Suojan Tiedot:",
+  "Select Protection Level": "Valiče Suojan Aste",
+  "Save Settings": "Tallendua Azetukset"
 }

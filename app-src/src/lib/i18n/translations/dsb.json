@@ -61,7 +61,6 @@
   "Hidden": "Schowany",
   "Watermarked": "Z Wódnym Znamjenim",
   "Cannot be saved": "Njedajo se składowaś",
-  "No password": "Žedno gronidło",
   "No albums found": "Žedne albumy se namakali",
   "Created": "Napórany",
   "Updated": "Zaktualizěrowane",
@@ -267,5 +266,17 @@
   "Confirm Change": "Změnu Wobkšuśiś",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Płaćone schódźenki maju njewógranicone albumy a su jano pśez składowańk wógranicone. Aktualizacije wopśimuju pro-rata kredit za njewužywany cas.",
   "Save To 6180": "Do 6180 Składowaś",
-  "Open On Phone": "Na Telefonje Wócyniś"
+  "Open On Phone": "Na Telefonje Wócyniś",
+  "Will use \"password\" as default": "Buźo se \"password\" ako standard wužywaś",
+  "No Password": "Žedno Gronko",
+  "Preparing": "Pśigótowanje",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurěrujśo šćitanje z gronidłom za waš album. Wubjeŕśo, kak cośo pśistup k wašym fotam wobgranicowaś.",
+  "Enter password (optional)": "Gronidło zapódaś (opcionalny)",
+  "Album will be completely hidden until correct password is entered": "Album buźo dopołnje schowany, doniž se prawy password njezałožy",
+  "Photos will be visible with watermarks, password required to save": "Wobraze budu widobne z wodonymi znamjenjami, password jo trěbny za składowanje",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Buźo se \"password\" ako standard wužywaś, jolic se prozny wóstajo",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jolic polo hesła prozny wóstajiś, \"password\" se ako standardne hesło buźo wužywaś. Móžoš to kuždy cas w nastajenjach albuma změniś.",
+  "💡 Password Protection Info:": "💡 Informacije wó Šćicie Gronidła:",
+  "Select Protection Level": "Wubjerśo Rownina Šćita",
+  "Save Settings": "Wašnje Nastajenja"
 }

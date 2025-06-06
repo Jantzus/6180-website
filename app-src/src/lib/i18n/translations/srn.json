@@ -61,7 +61,6 @@
   "Hidden": "Kibri",
   "Watermarked": "Watra Marki",
   "Cannot be saved": "A no kan kibri",
-  "No password": "No psa wortoe",
   "No albums found": "No album feni",
   "Created": "Meki",
   "Updated": "Update",
@@ -267,5 +266,17 @@
   "Confirm Change": "Turu Foeroe",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betaalde nivo abi unlimited album en dem limitit nomo nanga storage. Upgrade abi pro-rata credit fo no yusede tem.",
   "Save To 6180": "Seyfi Na 6180",
-  "Open On Phone": "Opo Na Telefon"
+  "Open On Phone": "Opo Na Telefon",
+  "Will use \"password\" as default": "Sa yu \"password\" opo leki normali",
+  "No Password": "No Wantowoso",
+  "Preparing": "Kaba Kiri",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Seti wachtwoord proteksi fu yu album. Kisi fa yu wani limiteri zugangri na yu foto.",
+  "Enter password (optional)": "Tyap yu wachtwoord (yu kan)",
+  "Album will be completely hidden until correct password is entered": "A album o de fuku ondrofesi te a goeoe pasiwortoe kom ini",
+  "Photos will be visible with watermarks, password required to save": "Foto o de si fu watermark, pasiwortoe nidi fu sev",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ O sa yu \"password\" leki fesi wan effu yu libi en legi",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Effu yu libi di password field legi, \"password\" o sa yu leki wan nanga da fesi. Yu kan chenj disi ala ten na album settings.",
+  "💡 Password Protection Info:": "💡 Infomasi fu Password Proteksi:",
+  "Select Protection Level": "Kisi Protection Level",
+  "Save Settings": "Sev Settings"
 }

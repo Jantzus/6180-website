@@ -61,7 +61,6 @@
   "Hidden": "Verborgen",
   "Watermarked": "Watermerk",
   "Cannot be saved": "Kan niet worden opgeslagen",
-  "No password": "Geen wachtwoord",
   "No albums found": "Geen albums gevonden",
   "Created": "Gemaakt",
   "Updated": "Bijgewerkt",
@@ -267,5 +266,17 @@
   "Confirm Change": "Wijziging Bevestigen",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betaalde niveaus hebben onbeperkte albums en zijn alleen beperkt door opslag. Upgrades bevatten pro-rata krediet voor ongebruikte tijd.",
   "Save To 6180": "Opslaan In 6180",
-  "Open On Phone": "Openen Op Telefoon"
+  "Open On Phone": "Openen Op Telefoon",
+  "Will use \"password\" as default": "Zal \"password\" als standaard gebruiken",
+  "No Password": "Geen Wachtwoord",
+  "Preparing": "Voorbereiden",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configureer wachtwoordbeveiliging voor je album. Kies hoe je de toegang tot je foto's wilt beperken.",
+  "Enter password (optional)": "Voer wachtwoord in (optioneel)",
+  "Album will be completely hidden until correct password is entered": "Het album wordt volledig verborgen totdat het juiste wachtwoord wordt ingevoerd",
+  "Photos will be visible with watermarks, password required to save": "Foto's zullen zichtbaar zijn met watermerken, wachtwoord vereist om op te slaan",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Zal \"password\" als standaard gebruiken als het leeg wordt gelaten",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Als u het wachtwoordveld leeg laat, wordt \"password\" gebruikt als standaardwachtwoord. U kunt dit op elk moment wijzigen in de album-instellingen.",
+  "💡 Password Protection Info:": "💡 Wachtwoord Beveiliging Informatie:",
+  "Select Protection Level": "Selecteer Beveiligingsniveau",
+  "Save Settings": "Instellingen Opslaan"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Tasupan",
   "Watermarked": "Batanda Banyu",
   "Cannot be saved": "Kada kawa disimpan",
-  "No password": "Kadada katasandi",
   "No albums found": "Kadada album nang ditemukan",
   "Created": "Diulah",
   "Updated": "Diupdate",
@@ -267,5 +266,17 @@
   "Confirm Change": "Mastikan Parubahan",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tingkat barbayar handak album tanpa had wan cuma dibatas ulih panyimpanan. Pamutakhiran barisi kredit pro-rata gasan waktu nang kada dipake.",
   "Save To 6180": "Simpan Ka 6180",
-  "Open On Phone": "Buka Di Telepon"
+  "Open On Phone": "Buka Di Telepon",
+  "Will use \"password\" as default": "Bakal pakai \"password\" nang baku",
+  "No Password": "Kada Sandi",
+  "Preparing": "Manyiapakan",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Atur perlindungan kata sandi untuk album Pian. Pilih cara Pian handak batasi akses ka foto-foto Pian.",
+  "Enter password (optional)": "Masukakan kata sandi (opsional)",
+  "Album will be completely hidden until correct password is entered": "Album akan batutul tapasumbunyian sampai password nang banar dimasukakan",
+  "Photos will be visible with watermarks, password required to save": "Gambar-gambar akan kelihatan dengan tanda air, password diperlukan untuk menyimpan",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Akan makai \"password\" sabagai default umpama dikosongakan",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Umpama field password dikosongakan, \"password\" akan digunakan sabagai password default. Hal ini dapat diubah kapan aja dalam pengaturan album.",
+  "💡 Password Protection Info:": "💡 Parihal Palindungan Katasandi:",
+  "Select Protection Level": "Pilih Tingkat Palindungan",
+  "Save Settings": "Simpan Pengaturan"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Skryty",
   "Watermarked": "Z Wodnym Znakyma",
   "Cannot be saved": "Niy idźe naszkryflać",
-  "No password": "Brak hasła",
   "No albums found": "Niy znaleźůno żodnych albumůw",
   "Created": "Utworzōno",
   "Updated": "Zaktualizowane",
@@ -267,5 +266,17 @@
   "Confirm Change": "Potwiyrdź Zmiyna",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Płatne poziomy majōm niyuograniczōne albumy i sōm uograniczōne ino prze pamiyńć. Aktualizacyje ôbejmujōm proporcjonalny kredit za niyużyty czas.",
   "Save To 6180": "Zapiszij do 6180",
-  "Open On Phone": "Ôtworzij na telefůnie"
+  "Open On Phone": "Ôtworzij na telefůnie",
+  "Will use \"password\" as default": "Bydzie używoł \"password\" za domyślne",
+  "No Password": "Niy Ma Hasła",
+  "Preparing": "Przigotowyniy",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Ńasztej zabejpjyčyńy parolům dlŏ swojigo albůmu. Ôbjer jak chcesz ôgraničyć przistōmp do swojich fōtkōw.",
+  "Enter password (optional)": "Wpiszij hasło (niyniprzimuszůno)",
+  "Album will be completely hidden until correct password is entered": "Album bydzie całkiem spamiyntany až do tego, kej bydzie wpisany prawidłowy hasło",
+  "Photos will be visible with watermarks, password required to save": "Obrazki bydõ widoczne ze znakami wodnymi, hasło je potrzebne do zapisania",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Użyje \"password\" jako sztandardowe, jeźli zostanie pusto",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jeźli żostawisz pole hasła pusto, \"password\" bydzie używane jako sztandardowe hasło. Możesz to zmiyniś kedy chcesz we sztalowaniach albumu.",
+  "💡 Password Protection Info:": "💡 Wiadomośći uo Sztucu Hasła:",
+  "Select Protection Level": "Ôbier Poziōm Sztycu",
+  "Save Settings": "Spamiyntej Sztalōnki"
 }

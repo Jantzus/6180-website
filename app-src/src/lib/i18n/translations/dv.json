@@ -61,7 +61,6 @@
   "Hidden": "ފޮރުވިފައިވާ",
   "Watermarked": "ފެން ފާހަގަ ޖަހާފައިވާ",
   "Cannot be saved": "ރައްކާނުކުރެވޭނެ",
-  "No password": "ސިއްރުބަސް ނެތް",
   "No albums found": "އެލްބަމެއް ނުފެނުނު",
   "Created": "އުފެއްދި",
   "Updated": "އަޕްޑޭޓްކުރެވިފަ",
@@ -267,5 +266,17 @@
   "Confirm Change": "ބަދަލު ކަށަވަރު ކުރޭ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ފައިސާ ދޭ ލެވެލުގައި ހައްދެއް ނެތް އެލްބަމެއް އެބައިވެ، އަދި އެމީހުން މަހުދޫދުވަނީ މަހުފޫުޒެއް ހުރުމަށެވެ. އަޕްގްރޭޑުގައި ނޭނގި ވަގުތަށް ޕްރޯ-ރޭޓާ ކްރެޑިޓް ހިމެނެއެވެ.",
   "Save To 6180": "6180 ގައި ސޭވްކުރޭ",
-  "Open On Phone": "ފޯނުގައި ހުޅުވާ"
+  "Open On Phone": "ފޯނުގައި ހުޅުވާ",
+  "Will use \"password\" as default": "\"password\" ޑިފޯލްޓް އެކަމަށް ބޭނުންކުރަން",
+  "No Password": "ޕާސްވާޑް ނެތް",
+  "Preparing": "ތައްޔާރުކުރަނީ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ތިބާގެ އެލްބަމަށް ޕާސްވޯޑް ޕޮޓެކްޝަން ކޮންފިގަރ ކުރައްވާ. ތިބާގެ ފޮޓޯތަކަށް އެކްސެސް ކިހިނެއް ރިސްޓްރިކްޓް ކުރަން ބޭނުންވޭތޯ ސެލެކްޓް ކުރައްވާ.",
+  "Enter password (optional)": "ޕާސްވޯޑް ތަކުރައްވާ (އިހްތިޔާރީ)",
+  "Album will be completely hidden until correct password is entered": "ޞަހީހު ޕާސްވޯޑް ނޫލެވޭ ހަމަ ކަމަށް އެލްބަމް ފުރިހަމައަކަށް ފޮރުވި ދެމޭ",
+  "Photos will be visible with watermarks, password required to save": "ފޮޓޯތައް ވޯޓަރ މާކަކާއެކު ފެންނާނެ، ސޭވް ކުރުމަށް ޕާސްވޯޑަކާ ޙާޖަ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ހުސްކޮށް ދެއްވާނަމަ \"password\" ޑިފޯލްޓް އަށް ބޭނުންކުރަން",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ފާސްވާޑް ފީލްޑް ހުސްކޮށް ދަނީ ނަމަ، \"password\" ޑިފޯލްޓް ފާސްވާޑް އަށް ބޭނުންކުރަން ޖެހޭ। މި ކަމެއް އެލްބަމް ސެޓިންގްސްގައި ކޮންމެ ވަގުތެއްގަ ބަދަލުކުރެވޭނެ।",
+  "💡 Password Protection Info:": "💡 ސީދާ ޙިމާޔަތް މަޢުލޫމާތް:",
+  "Select Protection Level": "ރައްކާތެރިކަމުގެ ދަރަޖަ ހޮވާލައްވާ",
+  "Save Settings": "ސެޓިންގް ސޭވްކުރޭ"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Թաքնված",
   "Watermarked": "Ջրանշանով",
   "Cannot be saved": "Չի կարող պահպանվել",
-  "No password": "Գաղտնաբառ չկա",
   "No albums found": "Ալբոմներ չեն գտնվել",
   "Created": "Ստեղծվեց",
   "Updated": "Թարմացվել է",
@@ -267,5 +266,17 @@
   "Confirm Change": "Հաստատել Փոփոխությունը",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Վճարովի մակարդակները ունեն անսահմանափակ ալբոմներ և սահմանափակվում են միայն պահեստով: Թարմացումները ներառում են չօգտագործված ժամանակի համար համաչափ կրեդիտ:",
   "Save To 6180": "Պահել 6180-ում",
-  "Open On Phone": "Բացել Հեռախոսով"
+  "Open On Phone": "Բացել Հեռախոսով",
+  "Will use \"password\" as default": "Կօգտագործի \"password\" որպես լռությամբ",
+  "No Password": "Գաղտնաբառ Չկա",
+  "Preparing": "Նախապատրաստում",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Կարգավորեք գաղտնաբառային պաշտպանությունը ձեր ալբոմի համար: Ընտրեք, թե ինչպես եք ուզում սահմանափակել մուտքը ձեր լուսանկարներին:",
+  "Enter password (optional)": "Մուտքագրեք գաղտնաբառը (ցանկության դեպքում)",
+  "Album will be completely hidden until correct password is entered": "Ալբոմը ամբողջությամբ թաքցված կլինի մինչև ճիշտ գաղտնաբառը մուտքագրելը",
+  "Photos will be visible with watermarks, password required to save": "Լուսանկարները կերևան ջրանիշերով, գաղտնաբառ է պահանջվում պահպանելու համար",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Կօգտագործի \"password\" որպես կանխադրված, եթե թողնվի դատարկ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Եթե գաղտնաբառի դաշտը թողնեք դատարկ, \"password\"-ը կօգտագործվի որպես կանխադրված գաղտնաբառ: Կարող եք այն փոխել ցանկացած ժամանակ ալբոմի կարգավորումներում:",
+  "💡 Password Protection Info:": "💡 Գաղտնաբառի Պաշտպանության Տեղեկություն:",
+  "Select Protection Level": "Ընտրեք Պաշտպանության Մակարդակը",
+  "Save Settings": "Պահպանել Կարգավորումները"
 }

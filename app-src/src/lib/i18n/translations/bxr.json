@@ -61,7 +61,6 @@
   "Hidden": "Нюуса",
   "Watermarked": "Уһан Тэмдэгтэй",
   "Cannot be saved": "Хадгалагдаж чадахгүй",
-  "No password": "Нюуса үгэ үгы",
   "No albums found": "Альбом олдоогүй",
   "Created": "Бүтээгдэhэн",
   "Updated": "Шэнэлэгдэбэ",
@@ -267,5 +266,17 @@
   "Confirm Change": "Солилго Баталха",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Түлэбэритэ түшэгүүд хязгааргүй альбомуудтай байха ба зүбхэн хадгалгаар хязгаарлагдана. Сайжруулалт хэрэглээгүй хугацаанай пропорциональна кредит оруулна.",
   "Save To 6180": "6180-дэ хадагалжа",
-  "Open On Phone": "Утаһан дээрэ нээхэ"
+  "Open On Phone": "Утаһан дээрэ нээхэ",
+  "Will use \"password\" as default": "\"Password\" хэрэглэхэ гэжэ үндэhэн болоно",
+  "No Password": "Нууса үгэ үгы",
+  "Preparing": "Бэлтгэнэ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Альбомдаа нууса үгын хамгаалга тохируулаарай. Зурагуудтаа хэрхэн нэвтрэлтэ хязгаарлаха гэжэ һанаа байгаа һонгогты.",
+  "Enter password (optional)": "Нууса үгээ оруулна уу (хүсэбэл)",
+  "Album will be completely hidden until correct password is entered": "Цомог бүхыдэнь бүү үзэгдэхэ зүбхэн нууса үгэ оруулахагүй",
+  "Photos will be visible with watermarks, password required to save": "Зурагууд усан тэмдэгтэйгээр харагдаха, хадгалахада нууса үгэ хэрэгтэй",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Хоосон үлдээбэл \"password\" үндэсэн болоно",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Хэрэгбэ та нүүсэ үгэ талбариие хоосон үлдээхэ болобол, \"password\" үндэсэн нүүсэ үгэ болохо. Та энэе альбомой тохиргоондо хэдыгээш дураараа өөршэлхэ боложо.",
+  "💡 Password Protection Info:": "💡 Нүүсэ үгын хамгаалалтын мэдээсэл:",
+  "Select Protection Level": "Хамгаалалтын түвшэниие хубаарагты",
+  "Save Settings": "Тохиргоог хадгална уу"
 }

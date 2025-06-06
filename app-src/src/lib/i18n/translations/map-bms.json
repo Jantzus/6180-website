@@ -61,7 +61,6 @@
   "Hidden": "Didelikna",
   "Watermarked": "Tandha Banyu",
   "Cannot be saved": "Ora bisa disimpen",
-  "No password": "Ora ana tembung sandi",
   "No albums found": "Ora ana album ketemu",
   "Created": "Digawe",
   "Updated": "Dianyari",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfirmasi Owahan",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tingkat bayar duweni album tanpa wates lan mung diwatesi dening panyimpenan. Upgrade kalebu kredit pro-rata kanggo wektu sing ora digunakake.",
   "Save To 6180": "Simpen Nang 6180",
-  "Open On Phone": "Bukak Nang Telefon"
+  "Open On Phone": "Bukak Nang Telefon",
+  "Will use \"password\" as default": "Bakal nggunakake \"password\" minangka baku",
+  "No Password": "Ora Ana Sandi",
+  "Preparing": "Nyiyapake",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Seting proteksi sandhi kanggo album panjenengan. Pilih cara mbatesi akses menyang foto panjenengan.",
+  "Enter password (optional)": "Lebokna sandhi (opsional)",
+  "Album will be completely hidden until correct password is entered": "Album bakal didhelikake sakabehe nganti tembung sandi kang bener dilebokake",
+  "Photos will be visible with watermarks, password required to save": "Gambar-gambar bakal katon karo tandha banyu, password dibutuhake kanggo nyimpen",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Bakal nganggo \"password\" dadi standar yen dikosongke",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Yen sampeyan ngosongke kolom password, \"password\" arep dipake dadi password standar. Sampeyan bisa ngganti iki kapan bae ing setelan album.",
+  "💡 Password Protection Info:": "💡 Informasi Pangayoman Tembung Sandi:",
+  "Select Protection Level": "Milih Tingkat Pangayoman",
+  "Save Settings": "Simpen Pengaturan"
 }

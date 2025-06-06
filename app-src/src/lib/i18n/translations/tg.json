@@ -61,7 +61,6 @@
   "Hidden": "Пинҳон",
   "Watermarked": "Бо Нишонаи Обӣ",
   "Cannot be saved": "Наметавонад захира шавад",
-  "No password": "Рамз надорад",
   "No albums found": "Ягон албом ёфт нашуд",
   "Created": "Эҷод шуд",
   "Updated": "Навсозӣ шуд",
@@ -267,5 +266,17 @@
   "Confirm Change": "Тағйиротро Тасдиқ Кунед",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Сатҳҳои пулакии альбомҳои номаҳдуд доранд ва танҳо бо захирагоҳ маҳдуданд. Навсозиҳо кредити мутаносиб барои вақти истифаданашударо дар бар мегиранд.",
   "Save To 6180": "Дар 6180 Нигоҳ Доред",
-  "Open On Phone": "Дар Телефон Кушодан"
+  "Open On Phone": "Дар Телефон Кушодан",
+  "Will use \"password\" as default": "\"Password\" ро ҳамчун пешфарз истифода мебарад",
+  "No Password": "Рамз Нест",
+  "Preparing": "Тайёркунӣ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Ҳимояи рамзии альбоми худро танзим кунед. Интихоб кунед, ки чӣ тавр мехоҳед ба суратҳоятон дастрасиро маҳдуд кунед.",
+  "Enter password (optional)": "Рамзро ворид кунед (ихтиёрӣ)",
+  "Album will be completely hidden until correct password is entered": "Албом то даромадани рамзи дуруст пурра пинҳон хоҳад буд",
+  "Photos will be visible with watermarks, password required to save": "Аксҳо бо нишонаҳои об намоён мешаванд, барои захира рамз лозим",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Агар холӣ гузошта шавад \"password\" ҳамчун пешфарз истифода мешавад",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Агар майдони парол холӣ гузоред, \"password\" ҳамчун пароли пешфарз истифода мешавад. Шумо инро дар танзимоти альбом дар ҳар вақт тағйир дода метавонед.",
+  "💡 Password Protection Info:": "💡 Маълумот дар бораи Ҳифзи Рамз:",
+  "Select Protection Level": "Сатҳи Ҳифзро Интихоб Кунед",
+  "Save Settings": "Танзимотро Захира Кунед"
 }

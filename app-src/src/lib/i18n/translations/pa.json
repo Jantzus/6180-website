@@ -61,7 +61,6 @@
   "Hidden": "ਲੁਕਿਆ ਹੋਇਆ",
   "Watermarked": "ਜਲ-ਛਾਪ ਵਾਲਾ",
   "Cannot be saved": "ਸੰਭਾਲਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ",
-  "No password": "ਕੋਈ ਪਾਸਵਰਡ ਨਹੀਂ",
   "No albums found": "ਕੋਈ ਐਲਬਮ ਨਹੀਂ ਮਿਲੀ",
   "Created": "ਬਣਾਇਆ ਗਿਆ",
   "Updated": "ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ",
@@ -267,5 +266,17 @@
   "Confirm Change": "ਤਬਦੀਲੀ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ਪੇਡ ਟਿਅਰਸ ਵਿੱਚ ਬੇਅੰਤ ਐਲਬਮ ਹਨ ਅਤੇ ਸਿਰਫ਼ ਸਟੋਰੇਜ਼ ਦੁਆਰਾ ਸੀਮਿਤ ਹਨ। ਅਪਗ੍ਰੇਡਾਂ ਵਿੱਚ ਅਣਵਰਤੇ ਸਮੇਂ ਲਈ ਪ੍ਰੋ-ਰੇਟਾ ਕ੍ਰੈਡਿਟ ਸ਼ਾਮਲ ਹੈ।",
   "Save To 6180": "6180 ਵਿੱਚ ਸੇਵ ਕਰੋ",
-  "Open On Phone": "ਫੋਨ ਤੇ ਖੋਲ੍ਹੋ"
+  "Open On Phone": "ਫੋਨ ਤੇ ਖੋਲ੍ਹੋ",
+  "Will use \"password\" as default": "ਮੂਲ ਰੂਪ ਵਿੱਚ \"password\" ਵਰਤੇਗਾ",
+  "No Password": "ਕੋਈ ਪਾਸਵਰਡ ਨਹੀਂ",
+  "Preparing": "ਤਿਆਰੀ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ਆਪਣੀ ਐਲਬਮ ਲਈ ਪਾਸਵਰਡ ਸੁਰੱਖਿਆ ਸੰਰਚਨਾ ਕਰੋ। ਚੁਣੋ ਕਿ ਤੁਸੀਂ ਆਪਣੀਆਂ ਫੋਟੋਆਂ ਤੱਕ ਪਹੁੰਚ ਨੂੰ ਕਿਵੇਂ ਸੀਮਿਤ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ।",
+  "Enter password (optional)": "ਪਾਸਵਰਡ ਦਾਖਲ ਕਰੋ (ਵਿਕਲਪਿਕ)",
+  "Album will be completely hidden until correct password is entered": "ਸਹੀ ਪਾਸਵਰਡ ਦਾਖਲ ਕਰਨ ਤੱਕ ਐਲਬਮ ਪੂਰੀ ਤਰ੍ਹਾਂ ਲੁਕਿਆ ਰਹੇਗਾ",
+  "Photos will be visible with watermarks, password required to save": "ਫੋਟੋਆਂ ਵਾਟਰਮਾਰਕ ਨਾਲ ਦਿਖਾਈ ਜਾਣਗੀਆਂ, ਸੇਵ ਕਰਨ ਲਈ ਪਾਸਵਰਡ ਦੀ ਲੋੜ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ਖਾਲੀ ਛੱਡਣ 'ਤੇ \"password\" ਨੂੰ ਮੂਲ ਵਜੋਂ ਵਰਤੇਗਾ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ਜੇ ਤੁਸੀਂ ਪਾਸਵਰਡ ਫੀਲਡ ਨੂੰ ਖਾਲੀ ਛੱਡ ਦਿੰਦੇ ਹੋ, ਤਾਂ \"password\" ਨੂੰ ਮੂਲ ਪਾਸਵਰਡ ਵਜੋਂ ਵਰਤਿਆ ਜਾਵੇਗਾ। ਤੁਸੀਂ ਇਸਨੂੰ ਐਲਬਮ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਕਿਸੇ ਵੀ ਸਮੇਂ ਬਦਲ ਸਕਦੇ ਹੋ।",
+  "💡 Password Protection Info:": "💡 ਪਾਸਵਰਡ ਸੁਰੱਖਿਆ ਜਾਣਕਾਰੀ:",
+  "Select Protection Level": "ਸੁਰੱਖਿਆ ਪੱਧਰ ਚੁਣੋ",
+  "Save Settings": "ਸੈਟਿੰਗਸ ਸੇਵ ਕਰੋ"
 }

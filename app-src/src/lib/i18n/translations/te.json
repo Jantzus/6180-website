@@ -61,7 +61,6 @@
   "Hidden": "దాచబడింది",
   "Watermarked": "జలముద్రితం",
   "Cannot be saved": "భద్రపరచలేము",
-  "No password": "పాస్‌వర్డ్ లేదు",
   "No albums found": "ఆల్బమ్‌లు ఏవీ కనుగొనబడలేదు",
   "Created": "సృష్టించబడింది",
   "Updated": "నవీకరించబడింది",
@@ -267,5 +266,17 @@
   "Confirm Change": "మార్పును నిర్ధారించండి",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "చెల్లింపు స్థాయిలలో అపరిమిత ఆల్బమ్‌లు ఉన్నాయి మరియు నిల్వ ద్వారా మాత్రమే పరిమితం చేయబడతాయి. అప్‌గ్రేడ్‌లలో ఉపయోగించని సమయం కోసం ప్రో-రేటా క్రెడిట్ ఉంటుంది.",
   "Save To 6180": "6180 లో సేవ్ చేయండి",
-  "Open On Phone": "ఫోన్‌లో తెరవండి"
+  "Open On Phone": "ఫోన్‌లో తెరవండి",
+  "Will use \"password\" as default": "డిఫాల్ట్ గా \"password\" ని ఉపయోగిస్తుంది",
+  "No Password": "పాస్‌వర్డ్ లేదు",
+  "Preparing": "సిద్ధం చేస్తున్నాం",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "మీ ఆల్బమ్‌కు పాస్‌వర్డ్ రక్షణను కాన్ఫిగర్ చేయండి. మీ ఫోటోలకు యాక్సెస్‌ను ఎలా పరిమితం చేయాలనుకుంటున్నారో ఎంచుకోండి.",
+  "Enter password (optional)": "పాస్‌వర్డ్ నమోదు చేయండి (ఐచ్ఛికం)",
+  "Album will be completely hidden until correct password is entered": "సరైన పాస్‌వర్డ్ ఎంటర్ చేయబడే వరకు ఆల్బమ్ పూర్తిగా దాచబడుతుంది",
+  "Photos will be visible with watermarks, password required to save": "ఫోటోలు వాటర్‌మార్క్‌లతో కనిపిస్తాయి, సేవ్ చేయడానికి పాస్‌వర్డ్ అవసరం",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ఖాళీగా వదిలితే \"password\" ను డిఫాల్ట్‌గా ఉపయోగిస్తుంది",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "మీరు పాస్‌వర్డ్ ఫీల్డ్‌ను ఖాళీగా వదిలితే, \"password\" డిఫాల్ట్ పాస్‌వర్డ్‌గా ఉపయోగించబడుతుంది. మీరు దీన్ని ఆల్బమ్ సెట్టింగ్‌లలో ఎప్పుడైనా మార్చవచ్చు.",
+  "💡 Password Protection Info:": "💡 పాస్‌వర్డ్ రక్షణ సమాచారం:",
+  "Select Protection Level": "రక్షణ స్థాయిని ఎంచుకోండి",
+  "Save Settings": "సెట్టింగులను సేవ్ చేయండి"
 }

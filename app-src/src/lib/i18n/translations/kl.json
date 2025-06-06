@@ -61,7 +61,6 @@
   "Hidden": "Toqqortaq",
   "Watermarked": "Imermik Nalunaaqutserneqarsimasoq",
   "Cannot be saved": "Toqqorneqarsinnaanngilaq",
-  "No password": "Isissutissaqanngilaq",
   "No albums found": "Albumit nanittagaanngillat",
   "Created": "Pilerneqarpoq",
   "Updated": "Nutarterneqarpoq",
@@ -267,5 +266,17 @@
   "Confirm Change": "Allannguutit Uppernarsigit",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Akilirniqartut nivaat perorsaanngitsumik album pisinnaapput uunartumallu kissiat killeqarsinnaasut. Paasinneqartitsinerit immikkoortumik krediit atorunnaarmat nalunaaqutit ilaasortaapput.",
   "Save To 6180": "6180-mut Piqqusivut",
-  "Open On Phone": "Aasivik Oqaluttuassami"
+  "Open On Phone": "Aasivik Oqaluttuassami",
+  "Will use \"password\" as default": "\"Password\" atorsinnaavaa isumanngortinneqassaq",
+  "No Password": "Isiginngoriarlungu",
+  "Preparing": "Atorsinartut",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Kodeordi angijuinermik pisarineq album-inut. Assigiinngitsunik angerlarsimaffimmi inuusimajut takussaarisaannik toqqarneq.",
+  "Enter password (optional)": "Allaaseruk kodeordi (toqunarneqannginnaq)",
+  "Album will be completely hidden until correct password is entered": "Albumit aamma ijerneqarpoq passissuit anernit aallarineq tikillugu",
+  "Photos will be visible with watermarks, password required to save": "Assilirijit takusimaneqassapput imarliit assigiinngitsumik, passissuit pineqarput toqqartitsinissap",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" atorneqarput killilersoq toqunnginnerani",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Assigisassat password-mi killilersorput, \"password\" atorneqarput password killilersoq. Taanna allannguuaa album-mi naapertorlugit nalinginnaatit.",
+  "💡 Password Protection Info:": "💡 Password-mut Siunnersorneq Paasissutissat:",
+  "Select Protection Level": "Siunnersorneq Ataatsimi Toqqarneq",
+  "Save Settings": "Najugassanik Najunneqarput"
 }

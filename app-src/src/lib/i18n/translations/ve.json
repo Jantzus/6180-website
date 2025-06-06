@@ -61,7 +61,6 @@
   "Hidden": "Ho dzumbama",
   "Watermarked": "Na Luswayo lwa Madi",
   "Cannot be saved": "I nga si tsha vhulungwa",
-  "No password": "A hu na phasiwede",
   "No albums found": "A hu na albumbu dzo wanalaho",
   "Created": "Yo sikwa",
   "Updated": "Yo shandukiswa",
@@ -267,5 +266,17 @@
   "Confirm Change": "Bvisela Tshanduko",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Zwitatikelo zwo reṅgwa zwi na albumbu dzi sa athu na u vheiwa nga nḓowetshelano fhedzi. Vhuvhulwano vhu katela khireḓiti ya pro-rata ya tshifhinga tshisina vhuḓifhindulwa.",
   "Save To 6180": "Tshenzhela Kha 6180",
-  "Open On Phone": "Vhula Kha Telefoni"
+  "Open On Phone": "Vhula Kha Telefoni",
+  "Will use \"password\" as default": "I do shumisa \"password\" sa zwino zwa u khwinisa",
+  "No Password": "A Huna Password",
+  "Preparing": "U Lugisa",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Dzudzanyani vhutsireledzi ha password ha album yanu. Nangani uri ni khou toda u khagmisa hani u tangana na zwifanyiso zwanu.",
+  "Enter password (optional)": "Dzhenani password (zwikhethwa)",
+  "Album will be completely hidden until correct password is entered": "Albamu i ḓo vhifhwa zwone hu sa fheli vhupo ha password ya vhukuma",
+  "Photos will be visible with watermarks, password required to save": "Zwifanyiso zwi ḓo vhonala nga zwitaelo zwa maḓi, phasiwede i a ṱoḓea u vhulungesa",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Zwi do shumisa \"password\" sa zwa ndeme arali zwi tshiwa zwi sa na tshithu",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Arali ni tshiya nomboro ya password i sa na tshithu, \"password\" zwi do shumiswa sa password ya mutheo. Ni nga zwi shandukisa ngoho ipi na ipi kha maitele a album.",
+  "💡 Password Protection Info:": "💡 Mafhungo a u Dzudzanya Password:",
+  "Select Protection Level": "Nangani Dzulela la u Dzudzanya",
+  "Save Settings": "Chengedzani Zwiedziso"
 }

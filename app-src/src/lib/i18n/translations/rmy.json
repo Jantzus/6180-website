@@ -61,7 +61,6 @@
   "Hidden": "Garado",
   "Watermarked": "Markime Panesko",
   "Cannot be saved": "Našti te avel lošardo",
-  "No password": "Bi parolake",
   "No albums found": "Ni jek album arakhlo",
   "Created": "Kerdo",
   "Updated": "Aktualizisardo",
@@ -267,5 +266,17 @@
   "Confirm Change": "Kofirm o Beripe",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "E platindže uzvura isi unlimited albumuri taj si limitinde numa khatar o thuvipe. E uzhutnipe sikavna pro-rata kredito karing o čhaso savo našti užilo.",
   "Save To 6180": "Rakhav Ando 6180",
-  "Open On Phone": "Putrav Pe Telefono"
+  "Open On Phone": "Putrav Pe Telefono",
+  "Will use \"password\" as default": "Kamela te kerel \"password\" sar zhudikano",
+  "No Password": "Nikhani Khrip",
+  "Preparing": "Kerdyben",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigure e paroloski barikavipe katar tumare albumoske. Uzharav sar kames te bribadinav o jakipe katar ture fotografii.",
+  "Enter password (optional)": "Bakh o parol (nashti)",
+  "Album will be completely hidden until correct password is entered": "O albomo ka avel savo jekh drom dok šukar parola na kerini",
+  "Photos will be visible with watermarks, password required to save": "E fotografengi ka oven dikhalde panese nisencar, parola sasto save trubil",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Kerel \"password\" sar o zhutimatos te mukhlol khokhavno",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Te mukhesan khokhavno o password-kano than, \"password\" kerelape sar o zhutimatos password. Shukares te aldares aver drom e album-kere konfiguracijendar.",
+  "💡 Password Protection Info:": "💡 Džaniben pal Rakhaven ka Lav:",
+  "Select Protection Level": "Zuravel o Zuralo ko Rakhaven",
+  "Save Settings": "Rakhav o Ladzharipen"
 }

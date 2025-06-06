@@ -61,7 +61,6 @@
   "Hidden": "I bhfolach",
   "Watermarked": "Uiscimharcáilte",
   "Cannot be saved": "Ní féidir a shábháil",
-  "No password": "Gan pasfhocal",
   "No albums found": "Níor aimsíodh aon albam",
   "Created": "Cruthaithe",
   "Updated": "Nuashonraithe",
@@ -267,5 +266,17 @@
   "Confirm Change": "Deimhnigh Athrú",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tá ceadanna gan teorainn ag leibhéil íoctha agus ní théann siad thar stóráil. Áirítear le huasghrádú creidmheas comhréireach don am neamhúsáidte.",
   "Save To 6180": "Sábháil Go 6180",
-  "Open On Phone": "Oscail Ar Fón"
+  "Open On Phone": "Oscail Ar Fón",
+  "Will use \"password\" as default": "Úsáidfidh \"password\" mar réamhshocrú",
+  "No Password": "Gan Pasfhocal",
+  "Preparing": "Ullmhú",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Cumraigh cosaint focal faire do d'albam. Roghnaigh conas is mian leat rochtain ar do ghrianghraif a theorannú.",
+  "Enter password (optional)": "Cuir isteach focal faire (roghnach)",
+  "Album will be completely hidden until correct password is entered": "Beidh an t-albam i bhfolach go hiomlán go dtí go n-iontráiltear an pasfhocal ceart",
+  "Photos will be visible with watermarks, password required to save": "Beidh grianghraif le feiceáil le comharthaí uisce, pasfhocal riachtanach chun sábháil",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Úsáidfidh \"password\" mar réamhshocrú má fhágtar folamh é",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Má fhágann tú an réimse pasfhocal folamh, úsáidfear \"password\" mar an pasfhocal réamhshocraithe. Is féidir leat é seo a athrú ag am ar bith i socruithe an albaim.",
+  "💡 Password Protection Info:": "💡 Eolas faoi Chosaint Focal Faire:",
+  "Select Protection Level": "Roghnaigh Leibhéal Cosanta",
+  "Save Settings": "Sábháil Socruithe"
 }

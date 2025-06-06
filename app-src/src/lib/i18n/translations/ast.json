@@ -61,7 +61,6 @@
   "Hidden": "Escondíu",
   "Watermarked": "Con Marca d'Agua",
   "Cannot be saved": "Nun puede guardase",
-  "No password": "Ensin contraseña",
   "No albums found": "Nun s'atoparon álbumes",
   "Created": "Creáu",
   "Updated": "Actualizáu",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmar Cambéu",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Los niveles de pagu tienen álbumes ensin llímite y tán llimitaos namái pol almacenamientu. Les actualizaciones inclúin créditu pro-rata pal tiempu nun utilizáu.",
   "Save To 6180": "Guardar en 6180",
-  "Open On Phone": "Abrir nel Teléfonu"
+  "Open On Phone": "Abrir nel Teléfonu",
+  "Will use \"password\" as default": "Usaráse \"password\" como predetermináu",
+  "No Password": "Ensin Contraseña",
+  "Preparing": "Preparando",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configura la proteición con contraseña pal to álbum. Escueyi cómo quies restrinxir l'accesu a les tos semeyes.",
+  "Enter password (optional)": "Escribir contraseña (opcional)",
+  "Album will be completely hidden until correct password is entered": "L'álbum va tar completamente anubríu hasta qu'escriba la contraseña correuta",
+  "Photos will be visible with watermarks, password required to save": "Les semeyes van vese con marques d'agua, precísase contraseña pa guardar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Usaráse \"password\" como predetermináu si se dexa baleru",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si dexes baleru'l campu de contraseña, \"password\" va usase como contraseña predeterminada. Pues cambialo en cualquier momentu na configuración d'álbum.",
+  "💡 Password Protection Info:": "💡 Información de Proteición de Contraseña:",
+  "Select Protection Level": "Escoyer Nivel de Proteición",
+  "Save Settings": "Guardar Configuración"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Ezkutuan",
   "Watermarked": "Ur-Markatua",
   "Cannot be saved": "Ezin da gorde",
-  "No password": "Pasahitzik ez",
   "No albums found": "Ez da albumik aurkitu",
   "Created": "Sortua",
   "Updated": "Eguneratuta",
@@ -267,5 +266,17 @@
   "Confirm Change": "Aldaketa Berretsi",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ordainketa mailak album mugagabeak dituzte eta biltegiratzeagatik soilik mugatzen dira. Eguneraketak erabili gabeko denborarentzako pro-rata kreditu bat daukate.",
   "Save To 6180": "Gorde 6180-n",
-  "Open On Phone": "Ireki Telefonoan"
+  "Open On Phone": "Ireki Telefonoan",
+  "Will use \"password\" as default": "\"Password\" erabiliko du lehenetsitzat",
+  "No Password": "Pasahitzik Ez",
+  "Preparing": "Prestatzen",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfiguratu pasahitz-babesa zure albumarentzat. Aukeratu nola murriztu nahi duzun zure argazkietarako sarbidea.",
+  "Enter password (optional)": "Sartu pasahitza (aukerakoa)",
+  "Album will be completely hidden until correct password is entered": "Albuma guztiz ezkutatuta egongo da pasahitz zuzena sartu arte",
+  "Photos will be visible with watermarks, password required to save": "Argazkiak ur-markez ikusgai egongo dira, pasahitza behar da gordetzeko",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" lehenetsitako gisa erabiliko da hutsik uzten bada",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Pasahitz-eremua hutsik uzten baduzu, \"password\" lehenetsitako pasahitz gisa erabiliko da. Hau edozein unetan aldatu dezakezu albumaren ezarpenetan.",
+  "💡 Password Protection Info:": "💡 Pasahitz Babesaren Informazioa:",
+  "Select Protection Level": "Hautatu Babes Maila",
+  "Save Settings": "Gorde Ezarpenak"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Бахчараб",
   "Watermarked": "ЛъадалъалдагӀан",
   "Cannot be saved": "Цӏунизе кӏоларо",
-  "No password": "ПаролгьечӀо",
   "No albums found": "Альбомал ратIичIо",
   "Created": "ГIуцIцIун",
   "Updated": "ЦӀияб гьабуна",
@@ -267,5 +266,17 @@
   "Confirm Change": "ЗачӀ Хуrul",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "БечIед баялъул этIал альбомазул кIиго арав ва гьудул рукIинаб хIаракат абурав. Ургъел къвез багьаразул рагIаваз про-рата кредит лъугьарав.",
   "Save To 6180": "6180-ялда Тӏасе",
-  "Open On Phone": "ТелефонихӀ КъиккаракӀе"
+  "Open On Phone": "ТелефонихӀ КъиккаракӀе",
+  "Will use \"password\" as default": "\"Password\" хIисаблъи хъвайиларо",
+  "No Password": "ГьакӀа Парол",
+  "Preparing": "Хlазирун",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ДуцӀ альбомлъе паролалъе рекъон гӀуцӀине. ДуцӀ суратал рукӀине дир хӀинц гӀуцӀула гӀуцӀине.",
+  "Enter password (optional)": "Пароль язе (мугӀрул)",
+  "Album will be completely hidden until correct password is entered": "Альбом къватI гьабуна рокьелъи хIалал къолелъул тIехьра",
+  "Photos will be visible with watermarks, password required to save": "Суратал чIвараб нуцIалдаса лъугьурав, къуллугъас пароль лъикI",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ЦӀарав рукъанахъи \"password\" базда жанаколеб",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Паролалъул цӏар цӏарав рукъанахъе болезабазги, \"password\" базда пароль кколеб. Дир альбомалъул хӏукуматаб гьабсагьатги гьеб хъвай вахтазе хъвахъине бокьизе лъикӏаб.",
+  "💡 Password Protection Info:": "💡 Паролалъул Муркъалъи Хабар:",
+  "Select Protection Level": "Муркъалъи Уровень Хасаб",
+  "Save Settings": "ЧIарухъа КIогІиял"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Vasteckt",
   "Watermarked": "Mit'n Wasserzeichen",
   "Cannot be saved": "Kaunt ned gspeichert wern",
-  "No password": "Koa Posswort",
   "No albums found": "Koane Alben gfundn",
   "Created": "Erstöt",
   "Updated": "Aktualisiert",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ändarung Bestätign",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Zahlende Stufen ham unbegrenzte Alben und san nur durch Speicher begrenzt. Upgrades beinhalten pro-rata Kredit fia ungenutzte Zeit.",
   "Save To 6180": "In 6180 Speichern",
-  "Open On Phone": "Am Telefon Aufmachen"
+  "Open On Phone": "Am Telefon Aufmachen",
+  "Will use \"password\" as default": "\"Passwort\" ois Standard vawenden",
+  "No Password": "Koa Passwort",
+  "Preparing": "Vorbereitung",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigurier Passwort-Schutz für dein Album. Wähl aus, wia du an Zuagriff zu deine Fotos beschränka mogst.",
+  "Enter password (optional)": "Passwort eingem (optional)",
+  "Album will be completely hidden until correct password is entered": "S Album werd komplett vesteckt bis s richtige Passwort eigem werd",
+  "Photos will be visible with watermarks, password required to save": "Fotos san sichtbar mit Wasserzeichen, Passwort brauchts zum speichern",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" werd ois Standard gnumma wann's laar bleibt",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Wann Du des Passwort-Feld laar lasst, werd \"password\" als Standard-Passwort gnumma. Du kaunst des jederzeid in de Album-Einstellunga ändern.",
+  "💡 Password Protection Info:": "💡 Passwort Schutz Info:",
+  "Select Protection Level": "Schutz Level Auswähle",
+  "Save Settings": "Einstellungen Speichern"
 }

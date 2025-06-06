@@ -61,7 +61,6 @@
   "Hidden": "Thuhrûk",
   "Watermarked": "Tui chhinchhiah nei",
   "Cannot be saved": "Save theih a ni lo",
-  "No password": "Password a awm lo",
   "No albums found": "Album hmuh tur a awm lo",
   "Created": "Siam a ni tawh",
   "Updated": "Tihthata a ni tawh",
@@ -267,5 +266,17 @@
   "Confirm Change": "Tihdanglam ding rawh",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Man mumal tier-te hian album lim ngai lo an nei a, storage in chauh a kham. Upgrade-te hian pro-rata credit hmang loh hun atan a huam.",
   "Save To 6180": "6180-ah dah rawh",
-  "Open On Phone": "Phone-ah hawng rawh"
+  "Open On Phone": "Phone-ah hawng rawh",
+  "Will use \"password\" as default": "\"password\" hi default-ah hman ang",
+  "No Password": "Password a awm lo",
+  "Preparing": "Buatsaih mek",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "I album atan password venna siamna siam rawh. I thlalak te hmuh theihna engte tih i duh dan thlang rawh.",
+  "Enter password (optional)": "Password lutuk rawh (duh chiah)",
+  "Album will be completely hidden until correct password is entered": "A thlalak album chu a dik zawng password chhuah thleng chu a in thup vek ang",
+  "Photos will be visible with watermarks, password required to save": "Thlalak te watermark nen hmuh theih ang, dahkhum nan password a ngai",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Rual a awm loh chuan \"password\" default atan hman a ni ang",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Password field chu rual i awm loh chuan, \"password\" hi default password atan hman a ni ang. Hei hi album settings-ah hun tin i thlak danglam thei ang.",
+  "💡 Password Protection Info:": "💡 Password Humhalh Dan Chanchin:",
+  "Select Protection Level": "Humhalh Level thlan rawh",
+  "Save Settings": "Setting dahtha rawh"
 }

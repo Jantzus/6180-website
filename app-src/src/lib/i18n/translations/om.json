@@ -61,7 +61,6 @@
   "Hidden": "Dhokate",
   "Watermarked": "Mallattoo Bishaan",
   "Cannot be saved": "Kuusaa hin danda'amu",
-  "No password": "Jecha-gubaa tokko hin jiru",
   "No albums found": "Albamoota hin argamne",
   "Created": "Uumameera",
   "Updated": "Haaromfame",
@@ -267,5 +266,17 @@
   "Confirm Change": "Jijjiirama Mirkaneessi",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Sadiiwwan kaffaltii albumoota daangaa hin qabne qabuu fi kuusaa qofaan daangeffamu. Fooyya'iinsi yeroo hin itti hin fayyadamnef kreediitii pro-rata of keessaa qaba.",
   "Save To 6180": "6180-tti Olkaa'i",
-  "Open On Phone": "Bilbila Irratti Banī"
+  "Open On Phone": "Bilbila Irratti Banī",
+  "Will use \"password\" as default": "\"Password\" akka durtii fayyadama",
+  "No Password": "Jecha Icciitii Hinqabne",
+  "Preparing": "Qophessu",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Hawwata eeyyama iccitii albumii keetii keessaaf qindeessi. Akkaataa itti fakkiiwwan kee seensuu murteessuu barbaadda filadhu.",
+  "Enter password (optional)": "Eebba icciitii galchi (filatamaa)",
+  "Album will be completely hidden until correct password is entered": "Albamuun guutumaan dhokatee jiraata hanga jechiiwwan dabruu sirrii galchamu",
+  "Photos will be visible with watermarks, password required to save": "Suuraaleen mallattoo bishaanii waliin mul'achuu danda'u, jechichi dhokataa kadhachuuf barbaachisa",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Yoo duwwaa hambifame \"password\" akka durtiidhaan fayyadama",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Yoo lafa password duwwaa hambifte, \"password\" akka password durtiidhaan ni fayyadama. Kana yeroo kamirratti illee qindaa'ina album keessatti jijjiiruu dandeessa.",
+  "💡 Password Protection Info:": "💡 Odeeffannoo Eegumsa Jecha Dhokataa:",
+  "Select Protection Level": "Sadarkaa Eegumsa Filachuu",
+  "Save Settings": "Qindaa'inoota Kuusuu"
 }

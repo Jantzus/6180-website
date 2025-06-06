@@ -61,7 +61,6 @@
   "Hidden": "Kache",
   "Watermarked": "Make ak Dlo",
   "Cannot be saved": "Pa kapab sove",
-  "No password": "Pa gen modpas",
   "No albums found": "Pa gen albòm ki jwenn",
   "Created": "Kreye",
   "Updated": "Mizajou",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfime Chanjman An",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivo ki peye yo gen albòm san limit e yo limite sèlman nan depo a. Amelyorasyon yo gen ladann kredi pro-rata pou tan ki pa itilize yo.",
   "Save To 6180": "Sove Nan 6180",
-  "Open On Phone": "Ouvè Nan Telefòn"
+  "Open On Phone": "Ouvè Nan Telefòn",
+  "Will use \"password\" as default": "Va itilize \"password\" kòm depo",
+  "No Password": "Pa Gen Mo Pase",
+  "Preparing": "Prepare",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigire pwoteksyon modpas la pou albòm ou an. Chwazi kijan ou vle limite aksè nan foto yo.",
+  "Enter password (optional)": "Antre modpas la (si ou vle)",
+  "Album will be completely hidden until correct password is entered": "Albòm lan ap kache nèt ale jouk yo mete bon mo kòd la",
+  "Photos will be visible with watermarks, password required to save": "Foto yo ap vizib ak make dlo, mo kòd yo bezwen yo pou yo ka konsève",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Va itilize \"password\" kòm defo a si ou kite l vid",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si ou kite chan mo kòd la vid, yo va itilize \"password\" kòm mo kòd defo a. Ou ka chanje sa a nenpòt lè nan konfigirasyon album lan.",
+  "💡 Password Protection Info:": "💡 Enfòmasyon Pwoteksyon Modpas:",
+  "Select Protection Level": "Chwazi Nivo Pwoteksyon",
+  "Save Settings": "Sove Paramèt yo"
 }

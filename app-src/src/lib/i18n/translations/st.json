@@ -61,7 +61,6 @@
   "Hidden": "Patiloeng",
   "Watermarked": "Letshwao la Metsi",
   "Cannot be saved": "E ke ke ya bolokeha",
-  "No password": "Ha ho na phasewete",
   "No albums found": "Ha ho dialbamo tse fumanehileng",
   "Created": "Hlahisitswe",
   "Updated": "Ho lokisitswe",
@@ -267,5 +266,17 @@
   "Confirm Change": "Netefatsa Phetoho",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maemo a lefuoa a na le dialbamo tse sa feleng mme a feleletsoa ke polokelo feela. Dikarabelo di kenyelletsa krediti ya pro-rata bakeng sa nako e sa sebediswang.",
   "Save To 6180": "Boloka Ho 6180",
-  "Open On Phone": "Bula Ho Telefone"
+  "Open On Phone": "Bula Ho Telefone",
+  "Will use \"password\" as default": "E tla sebedisa \"password\" e le tloaelo",
+  "No Password": "Ha Ho Password",
+  "Preparing": "Ho Lokisetsa",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Beha tshireletso ya phasewoto bakeng sa albamo ya hao. Khetha hore na o batla ho thibela jwang phihlello ho ditshwantsho tsa hao.",
+  "Enter password (optional)": "Tlatsa phasewoto (ha e batle)",
+  "Album will be completely hidden until correct password is entered": "Albamo e tla fihlwa ka botlalo ho fihlela e nne le password e nepahetseng",
+  "Photos will be visible with watermarks, password required to save": "Ditshwantsho di tla bonagala ka matshwao a metsi, password e a hlokahala ho boloka",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ E tla sebedisa \"password\" e le mokhoa wa mantlha ha e siyeletswa e se letho",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ha o siee sebaka sa password se se letho, \"password\" e tla sebediswa e le password ea mantlha. O ka e fetola nako efe kapa efe litekong tsa album.",
+  "💡 Password Protection Info:": "💡 Tlhahisoleseding tsa Tshireletso ya Password:",
+  "Select Protection Level": "Khetha Boemo ba Tshireletso",
+  "Save Settings": "Boloka Litlhophiso"
 }

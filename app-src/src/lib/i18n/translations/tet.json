@@ -61,7 +61,6 @@
   "Hidden": "Subar",
   "Watermarked": "Marka Bee Nian",
   "Cannot be saved": "Labele rai",
-  "No password": "La iha seña",
   "No albums found": "La hetan álbum ida",
   "Created": "Kriadu",
   "Updated": "Atualizada",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfirma Mudansa",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivel sira ne'ebé selu iha álbum sira la iha limitasaun no limitadu de'it ho armazenamentu. Upgrade sira inklui kréditu pro-rata ba tempu ne'ebé la uza.",
   "Save To 6180": "Rai Ba 6180",
-  "Open On Phone": "Loke Iha Telefone"
+  "Open On Phone": "Loke Iha Telefone",
+  "Will use \"password\" as default": "Sei uza \"password\" hanesan padrãun",
+  "No Password": "Laiha Liafuan-pase",
+  "Preparing": "Prepara",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigura protesaun ho liafuan husik ba ita-nia album. Hili oinsá ita hakarak limita asesu ba ita-nia foto sira.",
+  "Enter password (optional)": "Hatama liafuan husik (hili deit)",
+  "Album will be completely hidden until correct password is entered": "Álbum sei subar tomak to'o husia liafuan-pasu loos",
+  "Photos will be visible with watermarks, password required to save": "Foto sira sei haree ho watermark, liafuan-pasu presiza atu save",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Sei uza \"password\" hanesan predefinidu se husik mamuk",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se husik password field mamuk, \"password\" sei uza hanesan password predefinidu. Bele muda ne'e iha tempu ruma iha album settings.",
+  "💡 Password Protection Info:": "💡 Informasaun Protesaun Liafuan-pase:",
+  "Select Protection Level": "Hili Level Protesaun",
+  "Save Settings": "Rai Konfigurasaun"
 }

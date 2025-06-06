@@ -61,7 +61,6 @@
   "Hidden": "mipri",
   "Watermarked": "draci-sinxa",
   "Cannot be saved": "na ka'e se cpana",
-  "No password": "no se jaspu",
   "No albums found": "no da sanga girzu zvati",
   "Created": "zbasu",
   "Updated": "nuncfu",
@@ -267,5 +266,17 @@
   "Confirm Change": "galfi kampu",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "lo te jdima pagbu cu ponse lo cnano cukta girzu .i cu sepli po'o lo vreji .i lo zenba cu cmima lo frica feikamni ki'u lo na pilno temci",
   "Save To 6180": "vreji fi 6180",
-  "Open On Phone": "gasnu fi lo fonxa"
+  "Open On Phone": "gasnu fi lo fonxa",
+  "Will use \"password\" as default": "pilno zo password poi rawi",
+  "No Password": "na fukpi",
+  "Preparing": "jukpa",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "jucri lo se tcana fi lo sanga girzu pe do .i cuxna lo nu do djica lo nu stali fi lo se viska be lo pixra pe do",
+  "Enter password (optional)": "punji lo lerfu girzu pe lo tcana (cu facri)",
+  "Album will be completely hidden until correct password is entered": "ro selci cukta cu mipri co'u lo ka tugni je jaspu binxo",
+  "Photos will be visible with watermarks, password required to save": "pixra cu sinxa pe lo djacu je ka cabri co'e tavla lo jaspu",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ pilno fi lu password li'u co'e nagi'a kunti",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ganai do vacri le lerfu tcita ku gi'o \"password\" pilno fi lo lerfu tcita binxo .i do ka'e basti fi le pei se tcini jdini",
+  "💡 Password Protection Info:": "💡 jaspu steci tcila:",
+  "Select Protection Level": "cuxna lo steci girzu",
+  "Save Settings": "rejgau le tcimi'e"
 }

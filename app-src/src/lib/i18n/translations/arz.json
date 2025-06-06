@@ -61,7 +61,6 @@
   "Hidden": "مخبي",
   "Watermarked": "معلم بالميه",
   "Cannot be saved": "مش هينفع يتحفظ",
-  "No password": "مفيش باسورد",
   "No albums found": "مفيش ألبومات اتلاقت",
   "Created": "اتعمل",
   "Updated": "اتحدث",
@@ -267,5 +266,17 @@
   "Confirm Change": "تأكيد التغيير",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "المستويات المدفوعة عندها البومات مالهاش حدود وبتتحدد بس بالتخزين. التطويرات فيها ائتمان متناسب للوقت اللي مااتستعملش.",
   "Save To 6180": "احفظ فى 6180",
-  "Open On Phone": "افتح على التليفون"
+  "Open On Phone": "افتح على التليفون",
+  "Will use \"password\" as default": "حايستخدم \"password\" كإفتراضي",
+  "No Password": "مفيش باسورد",
+  "Preparing": "بحضر",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "كون حماية باسورد للالبوم بتاعك. اختار ازاي عايز تحدد الدخول للصور بتاعتك.",
+  "Enter password (optional)": "ادخل الباسورد (اختياري)",
+  "Album will be completely hidden until correct password is entered": "الألبوم هيتخبى خالص لحد ما الباسوورد الصح يتدخل",
+  "Photos will be visible with watermarks, password required to save": "الصور هتبان بالووتر مارك، الباسوورد مطلوب عشان التحفيظ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ هيستخدم \"password\" كافتراضي لو اتساب فاضي",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "لو سيبت خانة الپاسوورد فاضية، هيتستخدم \"password\" كپاسوورد افتراضي. ممكن تغيره في أي وقت في اعدادات الألبوم.",
+  "💡 Password Protection Info:": "💡 معلومات حماية الباسوورد:",
+  "Select Protection Level": "اختار مستوى الحماية",
+  "Save Settings": "احفظ الإعدادات"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Nakatago",
   "Watermarked": "May Tatak-tubig",
   "Cannot be saved": "Hindi maaaring i-save",
-  "No password": "Walang password",
   "No albums found": "Walang nahanap na mga album",
   "Created": "Nalikha",
   "Updated": "Na-update",
@@ -267,5 +266,17 @@
   "Confirm Change": "Kumpirmahin ang Pagbabago",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ang mga bayad na tier ay may walang hanggang mga album at limitado lamang ng storage. Kasama sa mga upgrade ang pro-rata credit para sa hindi nagamit na oras.",
   "Save To 6180": "I-Save Sa 6180",
-  "Open On Phone": "Buksan Sa Telepono"
+  "Open On Phone": "Buksan Sa Telepono",
+  "Will use \"password\" as default": "Gagamitin ang \"password\" bilang default",
+  "No Password": "Walang Password",
+  "Preparing": "Inihahanda",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "I-configure ang password protection para sa inyong album. Piliin kung paano ninyo gustong limitahan ang access sa inyong mga larawan.",
+  "Enter password (optional)": "Ilagay ang password (opsyonal)",
+  "Album will be completely hidden until correct password is entered": "Ang album ay lubos na matatago hanggang sa maipasok ang tamang password",
+  "Photos will be visible with watermarks, password required to save": "Ang mga larawan ay makikita na may mga watermark, password na kailangan upang i-save",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Gagamitin ang \"password\" bilang default kung naiwan na walang laman",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Kung iwanan mo nang walang laman ang password field, gagamitin ang \"password\" bilang default na password. Maaari mo itong baguhin anumang oras sa mga setting ng album.",
+  "💡 Password Protection Info:": "💡 Impormasyon ng Proteksyon sa Password:",
+  "Select Protection Level": "Piliin ang Antas ng Proteksyon",
+  "Save Settings": "I-save ang mga Setting"
 }

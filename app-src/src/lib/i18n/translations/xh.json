@@ -61,7 +61,6 @@
   "Hidden": "Ifihliwe",
   "Watermarked": "Uphawu Lwamanzi",
   "Cannot be saved": "Ayinokugcinwa",
-  "No password": "Akukho igama lokugqithisa",
   "No albums found": "Akukho i-album ifunyenweyo",
   "Created": "Yenziwe",
   "Updated": "Ihlaziyelwe",
@@ -267,5 +266,17 @@
   "Confirm Change": "Qinisekisa Utshintsho",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Amanqanaba ahlawulwayo ane-albhamu ezingaphakamiswanga kwaye zimiselwe kuphela ukuze kugcinwe. Uhlaziyo lubandakanya ikhredithi ye-pro-rata yexesha elingasetyenziswanga.",
   "Save To 6180": "Gcina Ku-6180",
-  "Open On Phone": "Vula Ku-Foni"
+  "Open On Phone": "Vula Ku-Foni",
+  "Will use \"password\" as default": "Uya kusebenzisa \"password\" njengokungagqibekanga",
+  "No Password": "Akukho Igama Lokugqitha",
+  "Preparing": "Ukulungiselela",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Qwalasela ukhuseleko lwegama eligfihlakeleyo lwealbham yakho. Khetha indlela ofuna ukuthintela ngayo ukufikelela kwimifanekiso yakho.",
+  "Enter password (optional)": "Ngenisa igama eligfihlakeleyo (ekunokukhethwa)",
+  "Album will be completely hidden until correct password is entered": "I-album iya kufihla ngokupheleleyo de ifakwe i-password echanekileyo",
+  "Photos will be visible with watermarks, password required to save": "Imifanekiso iya kubonakala inemiqondiso yamanzi, i-password iya kufuneka ukugcina",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Iya kusebenzisa i-\"password\" njengomgangatho xa ishiywa ingenanto",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ukuba ushiya intsimi ye-password ingenanto, i-\"password\" iya kusetyenziswa njengomgangatho we-password. Ungakutshintsha oku nanini na kwizicwangciso ze-albhamu.",
+  "💡 Password Protection Info:": "💡 Ulwazi lweKhuseleko lePassword:",
+  "Select Protection Level": "Khetha Izinga leKhuseleko",
+  "Save Settings": "Gcina Iisethingi"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Къайлаха",
   "Watermarked": "Хин Билгалонца",
   "Cannot be saved": "Ӏалашъян йиш яц",
-  "No password": "Пароль яц",
   "No albums found": "Альбомаш цакарийна",
   "Created": "Кхоьллина",
   "Updated": "Карлаяьккхина",
@@ -267,5 +266,17 @@
   "Confirm Change": "Хийцамца Хилла",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Плата делахь дарна даржаш йоцу альбомаш ю, хIара цхьаболу хьокку боцуш долу. Карлайоккхуш йоцу хана хьаьжна про-рата кредит ду.",
   "Save To 6180": "6180-га Lаккхе",
-  "Open On Phone": "Телефонехь Еракха"
+  "Open On Phone": "Телефонехь Еракха",
+  "Will use \"password\" as default": "\"Password\" хIоьттинчу дlаяздаран лелаш ду",
+  "No Password": "Парол Яц",
+  "Preparing": "Дlайуллалур",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Хьан альбоман башха доцуш дош долуш лаьра. Хьан суьртал хьажа мегийтарг дезаш кхеташ.",
+  "Enter password (optional)": "Пароль язъян (хьаьжна даъ)",
+  "Album will be completely hidden until correct password is entered": "Альбом дIадаьккхина долу шу зIамига пароль язъе цакхоьдуш",
+  "Photos will be visible with watermarks, password required to save": "Суьрташ ден тIейолу хьаьжнарш хир ду, пароль лаьцна дIаязъе",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Еригӏа боцу дуьйна \"password\" матлахь лело",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Хьо пароль лахарчу меттиге юхь деригӏа дацахь, \"password\" йолу пароль лело. Хьо иза хийца мега альбомах параметрашкахь дукха хана хилларг.",
+  "💡 Password Protection Info:": "💡 Пароль Лорам Хаам:",
+  "Select Protection Level": "Лорам Уровень Харжа",
+  "Save Settings": "ЧIарухъе НастройкӀ"
 }

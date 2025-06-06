@@ -61,7 +61,6 @@
   "Hidden": "Κρυφτόν",
   "Watermarked": "Νεροσημειωμένον",
   "Cannot be saved": "Κι άεται να αποθηκευτεί",
-  "No password": "Κωδικόν κ' έεχ",
   "No albums found": "Κανέναν άλμπουμ κι ευρέθεν",
   "Created": "Εποίθεν",
   "Updated": "Ενημερώθηκε",
@@ -267,5 +266,17 @@
   "Confirm Change": "Έπαβέβαιωσον τον Αλλαγήν",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Τα επίπεδα πληρωμής έχν άπειρα άλμπουμ και εν περιοριζόμενα μόνον απ' την αποθήκευσην. Ταν ενημερώσεις έχ'ν αναλογικόν πίστωμαν για χρόνον οπού δεν έφτ χρησιμοποιημένον.",
   "Save To 6180": "Σώσον Εις 6180",
-  "Open On Phone": "Άνοιξον Εις Τηλέφωνον"
+  "Open On Phone": "Άνοιξον Εις Τηλέφωνον",
+  "Will use \"password\" as default": "Θα χρησιμοποιήσ' \"password\" ως προεπιλογήν",
+  "No Password": "Ουδέν Κωδικόν",
+  "Preparing": "Ετοιμασίαν",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Ρυθμίστεν την προστασίαν κωδικού για τ' άλμπουμ σας. Επιλέξτεν πώς θέλετεν ν' απεριορίστεν την πρόσβαση στα φωτογραφίας σας.",
+  "Enter password (optional)": "Βάλτεν τον κωδικόν (αν θέλετεν)",
+  "Album will be completely hidden until correct password is entered": "Τ' άλμπουμ θα 'ναι κρυμμένον ολότελα ωσάν να βάλουν τον σωστόν κωδικόν",
+  "Photos will be visible with watermarks, password required to save": "Τα φωτογραφίας θα 'ναι ορατάν με νερά σημάδια, κωδικόν χρειάζ'ται τ' σωζέμεν",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Θα χρησιμοποίσ' \"password\" σαν προκαθωρισμένον αν ασήκ' άδειον",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Αν ασήκ' άδειον τ' χωρίον τη κωδικού, \"password\" θα χρησιμοποίσ' σαν τον προκαθωρισμένον κωδικόν. Μπορείς να το αλλάξ' πότε θες στη ρυθμίσεις τ' άλμπουμ.",
+  "💡 Password Protection Info:": "💡 Πληρωφορίες Άσφαλειας Κωδικού:",
+  "Select Protection Level": "Διάλεξον το Επίπεδον Άσφαλειας",
+  "Save Settings": "Άσωσον τας Ρυθμίσεις"
 }

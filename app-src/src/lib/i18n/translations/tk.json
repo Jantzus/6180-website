@@ -61,7 +61,6 @@
   "Hidden": "Gizlenen",
   "Watermarked": "Suw Bellenen",
   "Cannot be saved": "Saklanýp bilinmez",
-  "No password": "Parol ýok",
   "No albums found": "Hiç albom tapylmady",
   "Created": "Döredildi",
   "Updated": "Täzelenen",
@@ -267,5 +266,17 @@
   "Confirm Change": "Üýtgeşmäni Tassykla",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tölegli derejeler çäksiz albumlara eýe we diňe saklamak bilen çäklendirilýär. Täzelenmeler ulanylmadyk wagt üçin proporsional kredit öz içine alýar.",
   "Save To 6180": "6180-a Ýazdyr",
-  "Open On Phone": "Telefonda Aç"
+  "Open On Phone": "Telefonda Aç",
+  "Will use \"password\" as default": "\"Password\" deslapky hökmünde ulanyp",
+  "No Password": "Parol Ýok",
+  "Preparing": "Taýýarlyk",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Albomyňyz üçin parol goragyny düzüň. Suratlaryna girişi nädip çäklendirmek isleýändigiňizi saýlaň.",
+  "Enter password (optional)": "Parol giriziň (meýletin)",
+  "Album will be completely hidden until correct password is entered": "Albom dogry açar sözi girizilýänçä doly gizlin bolar",
+  "Photos will be visible with watermarks, password required to save": "Suratlar suw bellikleri bilen görüner, ýatlamak üçin açar sözi gerek",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Boş goýulsa \"password\" esasy hökmünde ulanyljakdyr",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Parol meýdanyny boş goýsaňyz, \"password\" esasy parol hökmünde ulanyljakdyr. Muny albom sazlamalarynda islendik wagtda üýtgedip bilersiňiz.",
+  "💡 Password Protection Info:": "💡 Açar Sözi Gorag Maglumaty:",
+  "Select Protection Level": "Gorag Derejesini Saýlaň",
+  "Save Settings": "Sazlamalary Ýazdyr"
 }

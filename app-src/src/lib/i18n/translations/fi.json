@@ -61,7 +61,6 @@
   "Hidden": "Piilotettu",
   "Watermarked": "Vesileimalla Varustettu",
   "Cannot be saved": "Ei voida tallentaa",
-  "No password": "Ei salasanaa",
   "No albums found": "Albumeja ei löydetty",
   "Created": "Luotu",
   "Updated": "Päivitetty",
@@ -267,5 +266,17 @@
   "Confirm Change": "Vahvista Muutos",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maksullisilla tasoilla on rajattomat albumit ja ne rajoittuvat vain tallennustilaan. Päivitykset sisältävät suhteellisen hyvityksen käyttämättömästä ajasta.",
   "Save To 6180": "Tallenna Kansioon 6180",
-  "Open On Phone": "Avaa Puhelimessa"
+  "Open On Phone": "Avaa Puhelimessa",
+  "Will use \"password\" as default": "Käyttää \"password\" oletuksena",
+  "No Password": "Ei Salasanaa",
+  "Preparing": "Valmistelua",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Määritä salasanasuojaus albumillesi. Valitse miten haluat rajoittaa pääsyä kuviisi.",
+  "Enter password (optional)": "Syötä salasana (valinnainen)",
+  "Album will be completely hidden until correct password is entered": "Albumi on täysin piilossa kunnes oikea salasana syötetään",
+  "Photos will be visible with watermarks, password required to save": "Kuvat näkyvät vesileimoin, salasana vaaditaan tallentamiseen",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Käyttää \"password\" oletuksena jos jätetään tyhjäksi",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jos jätät salasanakentän tyhjäksi, \"password\" käytetään oletussalasanana. Voit muuttaa tämän milloin tahansa albumin asetuksissa.",
+  "💡 Password Protection Info:": "💡 Salasanasuojauksen Tiedot:",
+  "Select Protection Level": "Valitse Suojaustaso",
+  "Save Settings": "Tallenna Asetukset"
 }

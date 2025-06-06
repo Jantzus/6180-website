@@ -61,7 +61,6 @@
   "Hidden": "Muché",
   "Watermarked": "Filigranné",
   "Cannot be saved": "I' n'put poin ète égardè",
-  "No password": "Poin d'mot d'passe",
   "No albums found": "Pont d'album éd trouvé",
   "Created": "Créé",
   "Updated": "Mis à jor",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmer ch'Cangémint",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Chés nivieux qu'i l'payent i ont des albums point ésn lînmites pi i sont lînmités rien qu'pal stockage. Chés amélyorations i incleutte du crédit pro-rata pour ch'temps point utilisé.",
   "Save To 6180": "Sauver Dins 6180",
-  "Open On Phone": "Ouvrir Sur Téléphoune"
+  "Open On Phone": "Ouvrir Sur Téléphoune",
+  "Will use \"password\" as default": "Va s'sèrvir éd \"password\" pèr défaut",
+  "No Password": "Point D'mot D'passe",
+  "Preparing": "Préparation",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configurez eul protection éd mot d'passe pour vote album. Chouîssisez comint qu'vos voulez borner l'accès à vos photos.",
+  "Enter password (optional)": "Mettez l'mot d'passe (au choi)",
+  "Album will be completely hidden until correct password is entered": "L'album il sro caché complètmint jusqu'à tant qu'nou mette l'bon mot d'pâsse",
+  "Photos will be visible with watermarks, password required to save": "Les ímages il sront visibl'yes avaec des mèrtches d'ieau, mot d'pâsse nêcessaithe pou sauver",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ch'emploéra \"password\" conme défaut si ch'est lèssè vouide",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si vos lèssez vouide ech champ del mot d'passe, \"password\" ch'sro ûsé conme mot d'passe défaut. Vos pouvez changi cho à n'înporte qué momint ès paramètes del album.",
+  "💡 Password Protection Info:": "💡 Rinsègnmints d'Protèkchon d'Mot d'passe:",
+  "Select Protection Level": "Chouèsir ch'Niviau d'Protèkchon",
+  "Save Settings": "Sauvér chès Réglages"
 }

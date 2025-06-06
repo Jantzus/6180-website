@@ -61,7 +61,6 @@
   "Hidden": "Boye",
   "Watermarked": "Da Alamar Ruwa",
   "Cannot be saved": "Ba za a iya ajiye ba",
-  "No password": "Babu kalmar sirri",
   "No albums found": "Ba a sami album ba",
   "Created": "An ƙirƙira",
   "Updated": "An sabunta",
@@ -267,5 +266,17 @@
   "Confirm Change": "Tabbatar da Canji",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Matakan biya suna da kundi albums marasa iyaka kuma suna da iyaka ta hanyar ajiya kawai. Haɓakawa sun haɗa da lamuni pro-rata don lokacin da ba a yi amfani da shi ba.",
   "Save To 6180": "Adana A 6180",
-  "Open On Phone": "Buɗe A Wayar"
+  "Open On Phone": "Buɗe A Wayar",
+  "Will use \"password\" as default": "Za a yi amfani da \"password\" a matsayin asali",
+  "No Password": "Babu Kalmar Sirri",
+  "Preparing": "Shirye-shirye",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Saita kariyar kalmar shiga don kundin hotunanku. Ka zaɓi yadda kake son taƙaita samun dama ga hotunanku.",
+  "Enter password (optional)": "Shigar da kalmar shiga (na zaɓi)",
+  "Album will be completely hidden until correct password is entered": "Album zai kasance a boye gaba ɗaya har ana shigar da kalmar shiga mai kyau",
+  "Photos will be visible with watermarks, password required to save": "Hotuna za su yi ganuwa da alamun ruwa, kalmar shiga ana bukata don adanawa",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Za a yi amfani da \"password\" a matsayin tushe idan an bar shi wofi",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Idan ka bar filin kalmar shiga babu komai, \"password\" za a yi amfani da shi a matsayin kalmar shigar tushe. Kana iya canza wannan a kowane lokaci a cikin saitunan kundi.",
+  "💡 Password Protection Info:": "💡 Bayani Kariyar Kalmar Sirri:",
+  "Select Protection Level": "Zaɓi Matsayin Kariya",
+  "Save Settings": "Adana Saiti"
 }

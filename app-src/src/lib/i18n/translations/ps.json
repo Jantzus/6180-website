@@ -61,7 +61,6 @@
   "Hidden": "پټ",
   "Watermarked": "اوبلن نښه لري",
   "Cannot be saved": "نه شي ساتل کیدای",
-  "No password": "پټنوم نشته",
   "No albums found": "هيڅ البوم ونه موندل شو",
   "Created": "جوړ شو",
   "Updated": "تازه شو",
@@ -267,5 +266,17 @@
   "Confirm Change": "بدلون تصدیق کړئ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "د پیسو ورکولو کچو کې بې شمیره البومونه شته او یوازې د ذخیره کولو څخه محدود دي. پرمختګونو کې د نه کارول شوي وخت لپاره د نسبي کریډیټ شامل دي.",
   "Save To 6180": "په 6180 کې وساتئ",
-  "Open On Phone": "په تلیفون کې پرانیزئ"
+  "Open On Phone": "په تلیفون کې پرانیزئ",
+  "Will use \"password\" as default": "به د ډیفالټ په توګه \"password\" وکاروي",
+  "No Password": "هیڅ پاسورډ نشته",
+  "Preparing": "چمتو والی",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "د خپل البم لپاره د تېرېدونکي ټکي ساتنه تنظیم کړئ. وټاکئ چې تاسو نور خپلو انځورونو ته د لاسرسي محدودیت غواړئ.",
+  "Enter password (optional)": "تېرېدونکي ټکي ولیکئ (اختیاري)",
+  "Album will be completely hidden until correct password is entered": "البوم به بشپړ ډول پټ وي تر دې چې سمه تېرېدنکې ټکۍ ولیکل شي",
+  "Photos will be visible with watermarks, password required to save": "انځورونه د اوبو نښو سره ليدل کيږي، د ساتلو لپاره تېرېدنکې ټکۍ ته اړتيا ده",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ که تش پاتې شي \"password\" د ډیفالټ په توګه کارول کیږي",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "که تاسو د پاسورډ ساحه تشه پریږدئ، \"password\" د ډیفالټ پاسورډ په توګه وکارول شي. تاسو کولی شئ دا د البم ترتیباتو کې ګر وخت بدل کړئ।",
+  "💡 Password Protection Info:": "💡 د پټنوم د ساتنې معلومات:",
+  "Select Protection Level": "د ساتنې کچه وټاکئ",
+  "Save Settings": "تنظیمات وساتئ"
 }

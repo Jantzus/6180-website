@@ -61,7 +61,6 @@
   "Hidden": "لڪيل",
   "Watermarked": "واٽر مارڪ سان",
   "Cannot be saved": "بچائي نٿو ڪري سگھجي",
-  "No password": "ڪو پاسورڊ ناهي",
   "No albums found": "ڪي به البم نه مليا",
   "Created": "تخليق ڪيو ويو",
   "Updated": "اپڊيٽ ٿي ويو",
@@ -267,5 +266,17 @@
   "Confirm Change": "تبديلي جي تصديق ڪريو",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ادائگي جي درجن ۾ لامحدود البم آهن ۽ صرف اسٽوريج جي ڪري محدود آهن. اپڊيٽس ۾ غير استعمال ٿيل وقت لاءِ پرو-ريٽا ڪريڊٽ شامل آهي.",
   "Save To 6180": "6180 ۾ محفوظ ڪريو",
-  "Open On Phone": "فون تي کوليو"
+  "Open On Phone": "فون تي کوليو",
+  "Will use \"password\" as default": "ڊفالٽ طور \"password\" استعمال ڪندو",
+  "No Password": "ڪو پاس ورڊ ناهي",
+  "Preparing": "تيارڪرڻ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "پنهنجي البم لاءِ پاس ورڊ سيڪيورٽي ڪانفيگر ڪريو. چونڊيو ته توهان پنهنجن تصويرن تائين رسائي ڪيئن محدود ڪرڻ چاهيو ٿا.",
+  "Enter password (optional)": "پاس ورڊ ڏيو (اختياري)",
+  "Album will be completely hidden until correct password is entered": "البم مڪمل طور تي لڪايو ويندو جيستائين صحيح پاس ورڊ داخل نه ڪيو وڃي",
+  "Photos will be visible with watermarks, password required to save": "تصويرون پاڻي جي نشانن سان نظر اينديون، محفوظ ڪرڻ لاءِ پاس ورڊ گهربل",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ خالي ڇڏڻ تي \"password\" ڊفالٽ طور استعمال ٿيندو",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "جيڪڏهن توهان پاسورڊ فيلڊ کي خالي ڇڏيو ته \"password\" ڊفالٽ پاسورڊ طور استعمال ٿيندو. توهان هن کي البم سيٽنگز ۾ ڪنهن به وقت تبديل ڪري سگهو ٿا۔",
+  "💡 Password Protection Info:": "💡 پاس ورڊ تحفظ جي معلومات:",
+  "Select Protection Level": "تحفظ جي سطح چونڊيو",
+  "Save Settings": "سيٽنگز محفوظ ڪريو"
 }

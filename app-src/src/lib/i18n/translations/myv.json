@@ -61,7 +61,6 @@
   "Hidden": "Кекшезь",
   "Watermarked": "Ведень Тешкскеть",
   "Cannot be saved": "А ванстови",
-  "No password": "Салавачи арась",
   "No albums found": "Альбомт апак муе",
   "Created": "Теезь",
   "Updated": "Одкстомтозь",
@@ -267,5 +266,17 @@
   "Confirm Change": "Полафтомать Кемекстамс",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Мезде максозь таркатнева апак лововт альбомт улить ванстомс-ванстомс марто. Вадрякстомтнэсэ ламокай иля арсить про-рата кредиттнэ аволь нолдазь шканень.",
   "Save To 6180": "Ванфтомс 6180-с",
-  "Open On Phone": "Телефонса Панчфтомс"
+  "Open On Phone": "Телефонса Панчфтомс",
+  "Will use \"password\" as default": "\"Password\" ушодыкст кодамо лисьмапря",
+  "No Password": "Парольсэ Арась",
+  "Preparing": "Анокстамо",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Альбомдонть пароль ванстовкс путовт. Кармат мезе сюлмавомс серейцятненень совамо.",
+  "Enter password (optional)": "Пароль сёрмадовк (мелявтовкс)",
+  "Album will be completely hidden until correct password is entered": "Альбомось весемест кекшезь, умок оляжиця паролясь апак совафт",
+  "Photos will be visible with watermarks, password required to save": "Артовксонь неятненк ведьсэ тешкс марто, ванфтомс пароль эряви",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" пурнавсы лувови чаво кевкстемезь",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Салавань валонь таркась чаво кевкстеметь, \"password\" лувови пурнавкс салавань валокс. Те тевесь альбомонь витнемасонзо кой-кона шкасто полавтомс.",
+  "💡 Password Protection Info:": "💡 Сёрмадомавалонть Вансема Содамкс:",
+  "Select Protection Level": "Кочказь Вансеман Кувалт",
+  "Save Settings": "Панжомс Максовкст"
 }

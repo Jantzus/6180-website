@@ -61,7 +61,6 @@
   "Hidden": "Farasin",
   "Watermarked": "Àmì Omi",
   "Cannot be saved": "Kò le ṣe ìpamọ́",
-  "No password": "Kò sí ọ̀rọ̀ àṣínà",
   "No albums found": "Kò sí àlbọ́mù tí a rí",
   "Created": "Dá",
   "Updated": "Sọjọ",
@@ -267,5 +266,17 @@
   "Confirm Change": "Jẹ́rìí Àyípadà",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Àwọn ipele tí a san fún ní àwọn àlbọ́mù aláìnídí ó sì ní ìdíwọ́n nípasẹ̀ ìtòjú nìkan. Àwọn ìgbésókè náà ní kírẹ́dìtì pro-rata fún àkókò tí a kò lò.",
   "Save To 6180": "Fi Pamọ́ Sí 6180",
-  "Open On Phone": "Ṣii Ni Tẹlifọọnu"
+  "Open On Phone": "Ṣii Ni Tẹlifọọnu",
+  "Will use \"password\" as default": "Yóò lo \"password\" gẹ́gẹ́ bí ìpilẹ̀",
+  "No Password": "Ko Si Ọrọ Igbaniwọle",
+  "Preparing": "Gbigbé Sílẹ̀",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Ṣeto abo itọjuọka oro aṣiri fun album ẹ. Yan bi o ṣe fẹ din iwọle si awọn fọto rẹ ku.",
+  "Enter password (optional)": "Tẹ ọrọ aṣiri sinu (aṣayan)",
+  "Album will be completely hidden until correct password is entered": "Albọ́mù yóò pamọ́ pátápátá títí tí ọ̀rọ̀ àmì tó tọ́ fi má wọlé",
+  "Photos will be visible with watermarks, password required to save": "Àwọn fọ́tò yóò hàn pẹ̀lú àwọn àmì omi, ọ̀rọ̀ àmì nílò láti fipamọ́",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Yóò lo \"password\" gẹ́gẹ́ bí ìpìlẹ̀ tí a bá fi sílẹ̀ lófo",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Tí o bá fi àyè ọ̀rọ̀ aṣínà sílẹ̀ lófo, \"password\" ni a ó lò gẹ́gẹ́ bí ọ̀rọ̀ aṣínà ìpìlẹ̀. O lè yí èyí padà nígbà kúgbà ní àwọn ìpànpé àkójọ-orin.",
+  "💡 Password Protection Info:": "💡 Ìfitónilénu Ààbò Ọ̀rọ̀ Aṣínà:",
+  "Select Protection Level": "Yan Ipele Ààbò",
+  "Save Settings": "Fi Ètò Pamọ́"
 }

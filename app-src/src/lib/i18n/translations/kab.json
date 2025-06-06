@@ -61,7 +61,6 @@
   "Hidden": "Uffiren",
   "Watermarked": "S Ala n Waman",
   "Cannot be saved": "Ur yezmir ara ad yettwasekles",
-  "No password": "Ulac awal uffir",
   "No albums found": "Ulac albumat yettwafen",
   "Created": "Yettwarna",
   "Updated": "Yettwalqem",
@@ -267,5 +266,17 @@
   "Confirm Change": "Sentem Asnifel",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Iswiren ifelsisen sɛan idebbuzen war talast acku ad ttwaqqnen s tkatut kan. Aleqqem yegber akredi pro-rata i wakud ur yettuseqdac.",
   "Save To 6180": "Sekles Deg 6180",
-  "Open On Phone": "Ldi Deg Telefon"
+  "Open On Phone": "Ldi Deg Telefon",
+  "Will use \"password\" as default": "Ad isseqdec \"password\" d amezwaru",
+  "No Password": "Ulac Awal Uffir",
+  "Preparing": "Asbadu",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Swel ammesten s wawal uffir i udlis-ik. Fren amek i tebɣiḍ ad tesdeḍ anekcum ɣer tugniwin-ik.",
+  "Enter password (optional)": "Kcem awal uffir (afrayan)",
+  "Album will be completely hidden until correct password is entered": "Albam ad yeffer meṛṛa armi d asekcem n wawal uffir d ameɣtu",
+  "Photos will be visible with watermarks, password required to save": "Tugniwin ad banen-t s tmatarin n waman, awal uffir ilaq i usekles",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ad isexdem \"password\" d amezwer ma yettwaf d ilem",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ma teǧǧiḍ urti n tbaḍnit d ilem, \"password\" ad yettwaseqdec d tbaḍnit tamezwarut. Tzemreḍ ad tbeddleḍ aya melmi i tebɣiḍ deg iɣewwaren n udlis.",
+  "💡 Password Protection Info:": "💡 Talɣut n Ummesten n Wawal Uffir:",
+  "Select Protection Level": "Fren Aswir n Ummesten",
+  "Save Settings": "Sekles Iɣewwaren"
 }

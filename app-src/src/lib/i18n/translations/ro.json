@@ -61,7 +61,6 @@
   "Hidden": "Ascuns",
   "Watermarked": "Filigranate",
   "Cannot be saved": "Nu poate fi salvat",
-  "No password": "Fără parolă",
   "No albums found": "Nu au fost găsite albume",
   "Created": "Creat",
   "Updated": "Actualizat",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmă Schimbarea",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivelurile plătite au albume nelimitate și sunt limitate doar de stocare. Actualizările includ credit pro-rata pentru timpul nefolosit.",
   "Save To 6180": "Salvează În 6180",
-  "Open On Phone": "Deschide Pe Telefon"
+  "Open On Phone": "Deschide Pe Telefon",
+  "Will use \"password\" as default": "Va folosi \"password\" ca implicit",
+  "No Password": "Fără Parolă",
+  "Preparing": "Pregătire",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configurează protecția cu parolă pentru albumul tău. Alege cum vrei să restricționezi accesul la fotografiile tale.",
+  "Enter password (optional)": "Introduceți parola (opțional)",
+  "Album will be completely hidden until correct password is entered": "Albumul va fi complet ascuns până când parola corectă va fi introdusă",
+  "Photos will be visible with watermarks, password required to save": "Fotografiile vor fi vizibile cu filigrane, parolă necesară pentru salvare",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Va folosi \"password\" ca implicit dacă este lăsat gol",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Dacă lăsați câmpul parolei gol, \"password\" va fi folosit ca parolă implicită. Puteți schimba aceasta oricând în setările albumului.",
+  "💡 Password Protection Info:": "💡 Informații despre Protecția Parolei:",
+  "Select Protection Level": "Selectați Nivelul de Protecție",
+  "Save Settings": "Salvează Setările"
 }

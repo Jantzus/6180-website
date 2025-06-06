@@ -61,7 +61,6 @@
   "Hidden": "Ahintaw",
   "Watermarked": "Nsuo Agyirae",
   "Cannot be saved": "Wontumi nsie no",
-  "No password": "Password biara nni hɔ",
   "No albums found": "Wɔanhu album biara",
   "Created": "Wɔayɛ",
   "Updated": "Wɔayɛ no foforɔ",
@@ -267,5 +266,17 @@
   "Confirm Change": "Si Nsakrae",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nea wɔtua ka no tier wɔ album a enni awiei na ɛno nkutoo a storage na ɛto hɔ. Nkɔsoɔ no bi ka ho mmeretuo kredit ma berɛ a wɔmfae.",
   "Save To 6180": "Sie Wɔ 6180",
-  "Open On Phone": "Bue Wɔ Telefon So"
+  "Open On Phone": "Bue Wɔ Telefon So",
+  "Will use \"password\" as default": "Ɔde \"password\" bedi kan a ɛyɛ amanne",
+  "No Password": "Biara Password",
+  "Preparing": "Resiesie",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Siesie password bammɔ ma wo album. Paw sɛnea wobɛto ban ama wo mfonini.",
+  "Enter password (optional)": "Hyɛ kasasin (nhyia)",
+  "Album will be completely hidden until correct password is entered": "Album no bɛyɛ nsumsum kosi sɛ wɔde password a ɛyɛ no bɛhyɛ",
+  "Photos will be visible with watermarks, password required to save": "Mfoni no bɛyɛ aniwa ne nsuo nkyerɛwde ho, nsɛmfua hia na woakyerɛw",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ɛbɛfa \"password\" adi default sɛ wɔgya no hunu",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Sɛ wogya password field no hunu a, \"password\" na wɔde bɛyɛ default password no. Wobɛtumi asesa wɔ album settings mu bere biara.",
+  "💡 Password Protection Info:": "💡 Password Bammɔ ho Nsɛm:",
+  "Select Protection Level": "Paw Bammɔ Kɔkɔ",
+  "Save Settings": "Kora Nhyehyɛe"
 }

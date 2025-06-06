@@ -61,7 +61,6 @@
   "Hidden": "لکیا ہویا",
   "Watermarked": "واٹر مارک والا",
   "Cannot be saved": "بچایا نئیں جا سکدا",
-  "No password": "کوئی پاس ورڈ نہیں",
   "No albums found": "کوئی البم نہیں لبھا",
   "Created": "بنایا گیا",
   "Updated": "اپڈیٹ ہو گیا",
@@ -267,5 +266,17 @@
   "Confirm Change": "تبدیلی تصدیق کرو",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "پیسے دیون والے ٹیئرز وچ بے حد البم نیں تے صرف سٹوریج نال محدود نیں۔ اپگریڈز وچ نہ ورتے ویلے لئی پرو-ریٹا کریڈٹ شامل اے۔",
   "Save To 6180": "6180 وچ محفوظ کرو",
-  "Open On Phone": "فون تے کھولو"
+  "Open On Phone": "فون تے کھولو",
+  "Will use \"password\" as default": "\"password\" نوں ڈیفالٹ ورتویگا",
+  "No Password": "کوئی پاس ورڈ نہیں",
+  "Preparing": "تیاری",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "اپنے البم لئی پاس ورڈ بچاؤ سیٹ اپ کرو۔ چنو جے تسیں اپنیاں تصویراں تیکر رسائی کویں پابند کرنا چاؤندے او۔",
+  "Enter password (optional)": "پاس ورڈ لکھو (اختیاری)",
+  "Album will be completely hidden until correct password is entered": "البم بالکل لکیا رہوے گا جدوں تک صحیح پاس ورڈ نہیں پایا",
+  "Photos will be visible with watermarks, password required to save": "تصویراں پانی دے نشان نال نظر آؤن گیاں، محفوظ کرن لئی پاس ورڈ چاہیدا",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ خالی چھڈن تے \"password\" ڈیفالٹ ورتیا جاویگا",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "جے تسیں پاسورڈ فیلڈ خالی چھڈو تے \"password\" ڈیفالٹ پاسورڈ دے طور تے ورتیا جاویگا۔ تسیں ایدے کو البم سیٹنگز دے وچ کدے وی تبدیل کر سکدے او۔",
+  "💡 Password Protection Info:": "💡 پاس ورڈ تحفظ دی معلومات:",
+  "Select Protection Level": "حفاظت دا درجہ چنو",
+  "Save Settings": "سیٹنگز محفوظ کرو"
 }

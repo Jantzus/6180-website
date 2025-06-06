@@ -61,7 +61,6 @@
   "Hidden": "Cudd",
   "Watermarked": "Gwaterarcedig",
   "Cannot be saved": "Ni ellir ei gadw",
-  "No password": "Dim cyfrinair",
   "No albums found": "Heb ddod o hyd i albymau",
   "Created": "Crëwyd",
   "Updated": "Diweddarwyd",
@@ -267,5 +266,17 @@
   "Confirm Change": "Cadarnhau'r Newid",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Mae lefelau tâl yn cael albymau diderfyn ac yn gyfyngedig gan storfa yn unig. Mae diweddariadau'n cynnwys credyd cyfrannol ar gyfer amser heb ei ddefnyddio.",
   "Save To 6180": "Cadw I 6180",
-  "Open On Phone": "Agor Ar Y Ffôn"
+  "Open On Phone": "Agor Ar Y Ffôn",
+  "Will use \"password\" as default": "Bydd yn defnyddio \"password\" fel rhagosodiad",
+  "No Password": "Dim Cyfrinair",
+  "Preparing": "Paratoi",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Ffurfweddwch amddiffyniad cyfrinair ar gyfer eich albwm. Dewiswch sut rydych am gyfyngu mynediad at eich lluniau.",
+  "Enter password (optional)": "Rhowch y cyfrinair (dewisol)",
+  "Album will be completely hidden until correct password is entered": "Bydd yr albwm yn cael ei guddio'n llwyr nes bod y cyfrinair cywir yn cael ei roi",
+  "Photos will be visible with watermarks, password required to save": "Bydd y lluniau'n weladwy gyda marciau dŵr, mae angen cyfrinair i gadw",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Bydd yn defnyddio \"password\" fel rhagosodiad os gadael yn wag",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Os gadewch y maes cyfrinair yn wag, defnyddir \"password\" fel y cyfrinair rhagosodedig. Gallwch newid hyn unrhyw bryd yng ngosodiadau'r albwm.",
+  "💡 Password Protection Info:": "💡 Gwybodaeth Diogelu Cyfrinair:",
+  "Select Protection Level": "Dewis Lefel Diogelu",
+  "Save Settings": "Cadw Gosodiadau"
 }

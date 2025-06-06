@@ -61,7 +61,6 @@
   "Hidden": "Чажыт",
   "Watermarked": "Суг Демдектиг",
   "Cannot be saved": "Шыгжап шыдавас",
-  "No password": "Ажилдар сөс чок",
   "No albums found": "Альбом тывылбаан",
   "Created": "Чогааткан",
   "Updated": "Чаартынган",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ӧскерилгени Бадыткаары",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Төлеттирген деңнелдер эки албом чок-ла ужуралыг болгаш база саглыыл-биле ажык болур. Шиитпирлердеи эки эглешпес үе чүүл пропорциональ кредит кирип турар.",
   "Save To 6180": "6180-же Камгалаар",
-  "Open On Phone": "Телефонга Ажыыр"
+  "Open On Phone": "Телефонга Ажыыр",
+  "Will use \"password\" as default": "\"Password\" үндезини бижээрелдиг",
+  "No Password": "Нууш Сөс Чок",
+  "Preparing": "Бэлиглээн",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Альбомуңарга нуу үжүк камгалал тургузуңар. Чурууларыңарже кирери кандыг хүлээлгелиг болурун сонгуңар.",
+  "Enter password (optional)": "Нуу үжүктү киирер (боттары)",
+  "Album will be completely hidden until correct password is entered": "Альбом бүгү чажыт болгаш дыш удур уруг кирген чадар",
+  "Photos will be visible with watermarks, password required to save": "Чуруктар суг демдектери-биле көзүлер, дээр иштинде пароль херек",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Хоосон үлдүрер болзун \"password\" кол ужурлуг",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Хэрэг чок үгениң талбарын хоосон үлдүрер болзуңар, \"password\" кол нүүр үге кылдыр ажыглаттынар. Ындыг дир альбомнуң тургузулгаларында хайында-даа үе өскертип болур.",
+  "💡 Password Protection Info:": "💡 Пароль Камгалал дугайында:",
+  "Select Protection Level": "Камгалал Түвүгү Соңгуур",
+  "Save Settings": "Ажыглалдарны Чаа"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Verborgen",
   "Watermarked": "Waetergemirkt",
   "Cannot be saved": "Kan nie worden opgeslagen",
-  "No password": "Gêên wachtwoord",
   "No albums found": "Geen albums 'evonden",
   "Created": "Emaakt",
   "Updated": "Bie-ewerkt",
@@ -267,5 +266,17 @@
   "Confirm Change": "Verangering Bevestige",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betaelde niveaus 'ebben onbeperkte albums en bin allinnig beperkt door opslag. Upgrades bevatten pro-rata krediet voor ongebruukte tied.",
   "Save To 6180": "Bewoare In 6180",
-  "Open On Phone": "Oopene Op Telefoon"
+  "Open On Phone": "Oopene Op Telefoon",
+  "Will use \"password\" as default": "Goa \"password\" as standaard gebruke",
+  "No Password": "Gheen Paswoord",
+  "Preparing": "Klaormakn",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configureer wachtwoordbeveilligieng vo je album. Kiest oe da je de toegank tout je foto's wilt beperken.",
+  "Enter password (optional)": "Voer 't wachtwoord in (nie verplicht)",
+  "Album will be completely hidden until correct password is entered": "T album wor helegoare versteeken tout da 't juste wagtwoordt ingetikt wort",
+  "Photos will be visible with watermarks, password required to save": "Foto's zyn zichtboar me watermerken, wagtwoord nodig om op te sloan",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Zal \"password\" as standerd gebruke as 't leêh blyft",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "As ie 't wachtwoord-veld leêh laot, wort \"password\" as standerd wachtwoord gebruukt. Ie kunnen dit altied verandere in d'album-instellingen.",
+  "💡 Password Protection Info:": "💡 Wachtwôord Beveiliginge Info:",
+  "Select Protection Level": "Sellesteert Beveiligings Niveau",
+  "Save Settings": "Instelliengn Bewarn"
 }

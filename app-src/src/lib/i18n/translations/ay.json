@@ -61,7 +61,6 @@
   "Hidden": "Imantata",
   "Watermarked": "Uma Chimputata",
   "Cannot be saved": "Janiwa imatañ jarakiti",
-  "No password": "Jani jamasata",
   "No albums found": "Janiw álbumes jakiskiti",
   "Created": "Uñstayata",
   "Updated": "Machaqachatawa",
@@ -267,5 +266,17 @@
   "Confirm Change": "Mayjaña Uñakipaña",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Paqanaka aynaka janiw phuqaw álbumes utjipxi ukhamarak ñanqhaña ukataki tʼaqasiñaki. Nayraqat churaña jan apnaqat pachankiri pro-rata jikxataña katjam.",
   "Save To 6180": "6180-an Imañaña",
-  "Open On Phone": "Teléfono Ukhan Jist'aña"
+  "Open On Phone": "Teléfono Ukhan Jist'aña",
+  "Will use \"password\" as default": "\"Password\" uka niya apnaqañani",
+  "No Password": "Janiw Lurawi",
+  "Preparing": "Wakichtʼaña",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Album satanakamaru contraseña jakañani wakicht'aña. Jiwasan ist'anakamaru kunjamasa ch'ama saraña munasta ajlliña.",
+  "Enter password (optional)": "Contraseña scribta (amuyasiña)",
+  "Album will be completely hidden until correct password is entered": "Álbum mayisiñawa sarawichi janiru pasawuruni mantañkama",
+  "Photos will be visible with watermarks, password required to save": "Fotografías uñjasispawa marcas de agua ukampi, imañataki pasawuruni wakisi",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ch'usax jaytañanaxa \"password\" qallta pachanakatax apnaqasiniwa",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jisk'a puriña k'uchimp ch'usax jaytañäni ukat, \"password\" qallta puriña thakhiw utjaraki. Ukat albun mayjt'anakanakapar kuna pachanakatix mayjt'ayañawa.",
+  "💡 Password Protection Info:": "💡 Aruskipawi Arkañatawa Yatiyawi:",
+  "Select Protection Level": "Arkañatawa Nivel Ajlliña",
+  "Save Settings": "Wakichawi Imañt'aña"
 }

@@ -61,7 +61,6 @@
   "Hidden": "गुत्त",
   "Watermarked": "जलचिह्नितं",
   "Cannot be saved": "संचयो न सक्कुणाति",
-  "No password": "न गुह्यशब्दम्",
   "No albums found": "न कोचि सङ्गीतकट्ठता मिलइ",
   "Created": "निम्मितं",
   "Updated": "अद्यतनं",
@@ -267,5 +266,17 @@
   "Confirm Change": "विपरिणामं निस्सयं करोहि",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "मच्छुलक सोपान अपरिमित सङ्गीतग्रन्थानि धारयन्ति च केवलं भण्डारेण परिच्छिन्नानि भवन्ति। उन्नतयः अप्रयुक्तकालस्य कृते समानुपातिकं ऋणं सम्मिलयन्ति।",
   "Save To 6180": "6180 मा रक्खतु",
-  "Open On Phone": "फोने विवरतु"
+  "Open On Phone": "फोने विवरतु",
+  "Will use \"password\" as default": "\"Password\" मूलसङ्केत रूप ञेवितब्ब",
+  "No Password": "न पासवर्दम्",
+  "Preparing": "तयारी",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "सम्मन्तकूटपदं तुमhस्स चित्तसङ्घातस्स। कथं तुमhं सकनि चित्तं पवेसं निग्गहेतुं इच्छसि तं वरणीयं।",
+  "Enter password (optional)": "गुप्तपदं पविसतु (इच्छाधीनं)",
+  "Album will be completely hidden until correct password is entered": "गीतसङ्ग्रहः तावत् सम्पूर्णतः निगूहितो भविष्यति यावत् यथार्थगुप्तपदं न प्रविश्यते",
+  "Photos will be visible with watermarks, password required to save": "चित्राणि जलचिह्नैः सह दृश्यानि भविष्यन्ति, रक्षणाय गुप्तपदं आवश्यकम्",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ सुञ्ञं छडितेपि \"password\" मूलकं योजयिस्सति",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "यदि भवं गुह्यपदस्स क्खेत्तं सुञ्ञं छडेति, \"password\" मूलकं गुह्यपदं होति। एतं भवं अल्बमविकल्पेसु कदाचि परिवत्तेतुं सक्कोति।",
+  "💡 Password Protection Info:": "💡 गुप्तपदस्स रक्खणानिदेसो:",
+  "Select Protection Level": "रक्खणा-गुणं वरे",
+  "Save Settings": "निदानानि रक्खतु"
 }

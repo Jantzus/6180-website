@@ -61,7 +61,6 @@
   "Hidden": "Шылтыме",
   "Watermarked": "Вӱд Палдартыш",
   "Cannot be saved": "Аралаш огеш лий",
-  "No password": "Пароль уке",
   "No albums found": "Альбом-влак огыт му",
   "Created": "Ыштыме",
   "Updated": "Уэмдыме",
@@ -267,5 +266,17 @@
   "Confirm Change": "Вашталтымаш Пеҥгыдемаш",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Акша налеш лиймекат чыландыме албом-влак тувакыт да нуным игече кодаш лийын гын аршашыж гына тудыланат. Сайлаш колтыматыш ок кучылталт кок код ден пропорциональне кредит пура.",
   "Save To 6180": "6180-ш Аралаш",
-  "Open On Phone": "Телефон дене Почаш"
+  "Open On Phone": "Телефон дене Почаш",
+  "Will use \"password\" as default": "\"Password\" тӱҥалтыш семын кучылтеш",
+  "No Password": "Парол Уке",
+  "Preparing": "Ямдылымаш",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Альбомлан пароль аралымашым ыштыза. Тыйын сӱретвлак дене мутланымашым кузе чареналташ тый шонет ул ыле.",
+  "Enter password (optional)": "Пароль шындаш (йӧршыдымӧ)",
+  "Album will be completely hidden until correct password is entered": "Альбом чыла шылтымыныт кёрты парольым ыштен дечат",
+  "Photos will be visible with watermarks, password required to save": "Фото-влак вӱдмыжер дене ужалт кодыт, аралаш паролъ шӱлӹш",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Яра тушка коден \"password\" тӱҥалтыш семын кучылташ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Пароль талкышым яра рашаш коштат гын, \"password\" тӱҥалтыш пароль семын кучылтеш. Тиде альбом келыштарымаштыже кудо вуйлаште тӧрлашкыжо лиеш.",
+  "💡 Password Protection Info:": "💡 Пароль Аралымаш Увер:",
+  "Select Protection Level": "Аралымаш Пачашым Ойыро",
+  "Save Settings": "Келыштарымашлан Аралаш"
 }

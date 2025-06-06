@@ -61,7 +61,6 @@
   "Hidden": "Ascoso",
   "Watermarked": "Filigranòu",
   "Cannot be saved": "No peu êse sarvou",
-  "No password": "Nisciûnn-a password",
   "No albums found": "Nisciun album trovòu",
   "Created": "Creòu",
   "Updated": "Agiornou",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confermâ o Cangiamento",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "I livellli paganti han album sensa limite e son limitæ solo da-o storage. I aggiornamenti incleudan credito pro-rata pe-o tempo no doeuviou.",
   "Save To 6180": "Sarva Into 6180",
-  "Open On Phone": "Àrvi Into Telefono"
+  "Open On Phone": "Àrvi Into Telefono",
+  "Will use \"password\" as default": "Deuviâ \"password\" comme predefinío",
+  "No Password": "Nisciun-a Paròlla",
+  "Preparing": "Preparaçion",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configura a protession con password pe-o teu album. Scegli comme ti veu limitâ l'accesso a-e teu föto.",
+  "Enter password (optional)": "Scrivi a password (opçionâ)",
+  "Album will be completely hidden until correct password is entered": "L'album o l'averà da vese nascostu conpletamente fin a cando a password giusta a no l'é drenta",
+  "Photos will be visible with watermarks, password required to save": "E föto saian visibili con e marche d'aegua, a password a l'é necessaia pe savè",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ O deuverà \"password\" comme predefinîo se o l'è lasciòu veuo",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se ti lasci veuvo o campo da password, \"password\" o saiâ deuviòu comme password predefinîa. Ti peu cambiâ sto cösa quand che ti veu inte impostaçioin de l'album.",
+  "💡 Password Protection Info:": "💡 Informaçioin de Proteçion Password:",
+  "Select Protection Level": "Scegli o Livello de Proteçion",
+  "Save Settings": "Sarva Inpostaçioin"
 }

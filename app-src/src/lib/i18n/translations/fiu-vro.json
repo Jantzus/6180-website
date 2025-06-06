@@ -61,7 +61,6 @@
   "Hidden": "Käkit",
   "Watermarked": "Vesimärgiga",
   "Cannot be saved": "Ei saa salvõstaq",
-  "No password": "Salasõnna olõ-õi",
   "No albums found": "Albummit ei lövvüq",
   "Created": "Luudu",
   "Updated": "Värskendedüq",
@@ -267,5 +266,17 @@
   "Confirm Change": "Muutus Kinnita",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maksmisõ tasõmõq ommaq piiramattõq albumiq ja nä ommaq piirätüq üksändi hoitmisõ väärega. Suurõmbas luuminõ sisaldas pro-rata krediiti pruukmata ao iist.",
   "Save To 6180": "Pand 6180-he",
-  "Open On Phone": "Ava Telefonin"
+  "Open On Phone": "Ava Telefonin",
+  "Will use \"password\" as default": "Kasus \"password\" et tulõmõistminõ",
+  "No Password": "Ilma Parolidõ",
+  "Preparing": "Valmistaminõ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Seo uma albumi jaoks salasõnakaitsõ. Vali, kuimuudu tahat uma pilte pääsemist piirata.",
+  "Enter password (optional)": "Sissekirotõ salasõna (tahtmisõq)",
+  "Album will be completely hidden until correct password is entered": "Album om täiega varjatu, ku õigõ salasõna sisse pandus",
+  "Photos will be visible with watermarks, password required to save": "Pildiq olõ-iq nägemäq viimaargõga, salasõna om vaia hoitusõs",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Pruugiq \"password\" peräle, ku tühjäs jätäq",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ku salasõna väläke tühjäs jätäq, \"password\" pruugitasõq peräliidsõ salasõnaq. Seo või kõgõ aigo albumi sätetes muutaq.",
+  "💡 Password Protection Info:": "💡 Paroolkaitsõ Tieto:",
+  "Select Protection Level": "Vali Kaitsõ Aste",
+  "Save Settings": "Talsita Säädmine"
 }

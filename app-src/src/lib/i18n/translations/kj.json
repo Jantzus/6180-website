@@ -61,7 +61,6 @@
   "Hidden": "Holekwa",
   "Watermarked": "Omeya Ofindikiwa",
   "Cannot be saved": "Itali vulu okusikuliwa",
-  "No password": "Ka pena password",
   "No albums found": "Kaku album meke mona",
   "Created": "Shangwa",
   "Updated": "Onawapitika",
@@ -267,5 +266,17 @@
   "Confirm Change": "Hupulula Ekulo",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tiers ye djamba ku ngwanda albums mu kaku na yilonga nwenu yina ku storage. Ouvulu ya kuvula pro-rata credit oku nu nawa muhingi ku time.",
   "Save To 6180": "Sekela Ku 6180",
-  "Open On Phone": "Vula Ku Telefone"
+  "Open On Phone": "Vula Ku Telefone",
+  "Will use \"password\" as default": "Uza \"password\" ndje tjimwe",
+  "No Password": "Kave Password Ike",
+  "Preparing": "Okukongolose",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Tenga omolwashike gwa password me kwa album djove. Haga ongandjo yokukambadhura ombito djo manga.",
+  "Enter password (optional)": "Haga omolwashike (odila)",
+  "Album will be completely hidden until correct password is entered": "Albumu li tya fiwa kwashoka ongando yoshilongo yolyelunga yeli ndjokwa",
+  "Photos will be visible with watermarks, password required to save": "Ofoto ozeli kuvala ni omakondeka gomeva, ongando yeli ndjokwa waupanga",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Mu ka pita \"password\" po nawa ombura wina omu kehe",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ngehi komakwame password kandji ye kehe ki, \"password\" oku ka tulwa ka password yondara. Oku ka ka vurura nawa omunenjero mu album omatjangwa.",
+  "💡 Password Protection Info:": "💡 Ondjoha yoPassword Protection:",
+  "Select Protection Level": "Panda Level yokulinda",
+  "Save Settings": "Longeka Ekasalelo"
 }

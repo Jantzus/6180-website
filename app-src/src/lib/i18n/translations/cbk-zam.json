@@ -61,7 +61,6 @@
   "Hidden": "Escondido",
   "Watermarked": "Con Marca de Agua",
   "Cannot be saved": "No puede ser guardao",
-  "No password": "Nuay contraseña",
   "No albums found": "Nuay albums ya encontra",
   "Created": "Creao",
   "Updated": "Actualizado",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirma el Cambio",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Los tier na paga tiene unlimited albums y ta limita solo por el storage. Los upgrades incluye pro-rata credit para el tiempo no usa.",
   "Save To 6180": "Guarda Na 6180",
-  "Open On Phone": "Abre Na Telefono"
+  "Open On Phone": "Abre Na Telefono",
+  "Will use \"password\" as default": "Ta usa \"password\" como default",
+  "No Password": "No Tiene Clave",
+  "Preparing": "Preparando",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configura el protecion de contraseña para tu album. Escoge como quiere limita el acceso na tu mga pictures.",
+  "Enter password (optional)": "Entra el password (opcional)",
+  "Album will be completely hidden until correct password is entered": "El album ta queda escondido completo hasta que el password correcto ta entra",
+  "Photos will be visible with watermarks, password required to save": "Los photos ta aparece con marcas de agua, password necesario para save",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ya usa \"password\" como default si deja vacio",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si deja vacio el campo de password, \"password\" ya usa como default password. Puede cambiar este anytime na configuracion del album.",
+  "💡 Password Protection Info:": "💡 Información de Protección de Contraseña:",
+  "Select Protection Level": "Escoge Nivel de Protección",
+  "Save Settings": "Guarda Configuración"
 }

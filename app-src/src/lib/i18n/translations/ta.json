@@ -61,7 +61,6 @@
   "Hidden": "மறைக்கப்பட்டுள்ளது",
   "Watermarked": "நீர்முத்திரையிடப்பட்ட",
   "Cannot be saved": "சேமிக்க முடியாது",
-  "No password": "கடவுச்சொல் இல்லை",
   "No albums found": "ஆல்பங்கள் எதுவும் கிடைக்கவில்லை",
   "Created": "உருவாக்கப்பட்டது",
   "Updated": "புதுப்பிக்கப்பட்டது",
@@ -267,5 +266,17 @@
   "Confirm Change": "மாற்றத்தை உறுதிப்படுத்துங்கள்",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "கட்டண நிலைகளில் வரம்பற்ற ஆல்பங்கள் உள்ளன மற்றும் சேமிப்பகத்தால் மட்டுமே வரையறுக்கப்படுகின்றன. மேம்படுத்தல்களில் பயன்படுத்தப்படாத நேரத்திற்கான விகிதாச்சார கடன் அடங்கும்.",
   "Save To 6180": "6180 இல் சேமிக்கவும்",
-  "Open On Phone": "ஃபோனில் திறக்கவும்"
+  "Open On Phone": "ஃபோனில் திறக்கவும்",
+  "Will use \"password\" as default": "இயல்புநிலையாக \"password\" ஐப் பயன்படுத்தும்",
+  "No Password": "கடவுச்சொல் இல்லை",
+  "Preparing": "தயாரிப்பு",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "உங்கள் ஆல்பத்திற்கு கடவுச்சொல் பாதுகாப்பை கட்டமைக்கவும். உங்கள் புகைப்படங்களுக்கான அணுகலை எவ்வாறு கட்டுப்படுத்த வேண்டும் என்பதைத் தேர்வு செய்யவும்.",
+  "Enter password (optional)": "கடவுச்சொல்லை உள்ளிடவும் (விருப்பத்திற்கு)",
+  "Album will be completely hidden until correct password is entered": "சரியான கடவுச்சொல் உள்ளிடப்படும் வரை ஆல்பம் முழுமையாக மறைக்கப்படும்",
+  "Photos will be visible with watermarks, password required to save": "புகைப்படங்கள் நீர்முத்திரையுடன் தெரியும், சேமிக்க கடவுச்சொல் தேவை",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ வெறுமையாக விட்டால் \"password\" முன்னிருப்பாக பயன்படுத்தும்",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "நீங்கள் கடவுச்சொல் புலத்தை வெறுமையாக விட்டால், \"password\" முன்னிருப்பு கடவுச்சொலாகப் பயன்படுத்தப்படும். நீங்கள் இதை ஆல்பம் அமைப்புகளில் எந்த நேரத்திலும் மாற்றலாம்.",
+  "💡 Password Protection Info:": "💡 கடவுச்சொல் பாதுகாப்பு தகவல்:",
+  "Select Protection Level": "பாதுகாப்பு நிலையைத் தேர்ந்தெடுக்கவும்",
+  "Save Settings": "அமைப்புகளைச் சேமிக்கவும்"
 }

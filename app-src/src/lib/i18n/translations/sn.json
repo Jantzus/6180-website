@@ -61,7 +61,6 @@
   "Hidden": "Zvakavanzika",
   "Watermarked": "Nemhesva yeMvura",
   "Cannot be saved": "Hazvikwanisi kuponesa",
-  "No password": "Hapana password",
   "No albums found": "Hapana mabhuku akawanikwa",
   "Created": "Yakagadzirwa",
   "Updated": "Zvagadziriswa",
@@ -267,5 +266,17 @@
   "Confirm Change": "Simbisa Shanduko",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Matayara anobviswa ane mabhuku asingaperi uye anoganhurirwa nechengeti chete. Zvinowedzera zvinosanganisira chikwereti che pro-rata chenguva isina kushandiswa.",
   "Save To 6180": "Chengetedza Mu 6180",
-  "Open On Phone": "Vhura Pa Foni"
+  "Open On Phone": "Vhura Pa Foni",
+  "Will use \"password\" as default": "Ichashandisa \"password\" sechimiro",
+  "No Password": "Hapana Kiiyi",
+  "Preparing": "Kugadzirira",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Gadzira dziviriro yeshoko rekupinda pamusoro pedhipiki rako. Sarudza maitiro amunoda kudzivisa vanhu kuwana mifananidzo yako.",
+  "Enter password (optional)": "Isa shoko rekupinda (zvakakuda)",
+  "Album will be completely hidden until correct password is entered": "Albumu ichavanzwa zvachose kusvika password chaiyo yaiswa",
+  "Photos will be visible with watermarks, password required to save": "Mapikicha achaonekwa ane mavara emvura, password inodiwa kuchengetedza",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ichashandisa \"password\" semagumo kana ukasiya isina chinhu",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Kana ukasiya password field isina chinhu, \"password\" ichashandiswa sepassword yekutanga. Unogona kushandura izvi chero nguva mualbum settings.",
+  "💡 Password Protection Info:": "💡 Ruzivo Rwekuchengetedza Password:",
+  "Select Protection Level": "Sarudza Danho rekuchengetedza",
+  "Save Settings": "Chengetedza Madhokumende"
 }

@@ -394,14 +394,12 @@ const SaveAlbum = () => {
           />
           
           {/* Password Dialog */}
-          {showPasswordDialog && (
-            <PasswordDialog 
-              isOpen={showPasswordDialog} 
-              onClose={handleClosePasswordDialog}
-              initialOption={passwordProtectionOption}
-              initialPassword={albumPassword} 
-            />
-          )}
+          <PasswordDialog 
+            isOpen={showPasswordDialog} 
+            onClose={handleClosePasswordDialog}
+            initialOption={passwordProtectionOption}
+            initialPassword={albumPassword} 
+          />
         </div>
 
         {/* Debug Log */}

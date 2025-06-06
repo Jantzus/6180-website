@@ -61,7 +61,6 @@
   "Hidden": "लपलेले",
   "Watermarked": "जलप्रतिमुद्रित",
   "Cannot be saved": "जतन केले जाऊ शकत नाही",
-  "No password": "कोणताही पासवर्ड नाही",
   "No albums found": "कोणतेही अल्बम सापडले नाहीत",
   "Created": "तयार केले",
   "Updated": "अपडेट केले",
@@ -267,5 +266,17 @@
   "Confirm Change": "बदल पुष्टी करा",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "पेड टियरमध्ये अमर्यादित अल्बम असतात आणि फक्त स्टोरेजद्वारे मर्यादित असतात. अपग्रेडमध्ये न वापरलेल्या वेळेसाठी प्रो-रेटा क्रेडिट समाविष्ट आहे.",
   "Save To 6180": "6180 मध्ये सेव्ह करा",
-  "Open On Phone": "फोनमध्ये उघडा"
+  "Open On Phone": "फोनमध्ये उघडा",
+  "Will use \"password\" as default": "डीफॉल्ट म्हणून \"password\" वापरेल",
+  "No Password": "कोणताही पासवर्ड नाही",
+  "Preparing": "तयारी",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "तुमच्या अल्बमसाठी पासवर्ड संरक्षण कॉन्फिगर करा। तुमच्या फोटींवर प्रवेश कसा मर्यादित करायचा ते निवडा।",
+  "Enter password (optional)": "पासवर्ड टाका (पर्यायी)",
+  "Album will be completely hidden until correct password is entered": "योग्य पासवर्ड टाकल्यानंतरच अल्बम पूर्णपणे लपवला जाईल",
+  "Photos will be visible with watermarks, password required to save": "फोटो वॉटरमार्कसह दिसतील, सेव्ह करण्यासाठी पासवर्ड आवश्यक",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ रिकामे ठेवल्यास \"password\" डीफॉल्ट म्हणून वापरेल",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "जर तुम्ही पासवर्ड फील्ड रिकामे ठेवले तर \"password\" डीफॉल्ट पासवर्ड म्हणून वापरले जाईल. तुम्ही हे अल्बम सेटिंग्जमध्ये कधीही बदलू शकता.",
+  "💡 Password Protection Info:": "💡 संकेतशब्द संरक्षण माहिती:",
+  "Select Protection Level": "संरक्षण पातळी निवडा",
+  "Save Settings": "सेटिंग्स जतन करा"
 }

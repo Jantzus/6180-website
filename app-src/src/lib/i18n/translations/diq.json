@@ -61,7 +61,6 @@
   "Hidden": "Nımıtey",
   "Watermarked": "Nişana Aweyo",
   "Cannot be saved": "Nêşeno qeyd bıbo",
-  "No password": "Parola çıniya",
   "No albums found": "Albums nêvêniyay",
   "Created": "Vıraşt",
   "Updated": "Newekerde",
@@ -267,5 +266,17 @@
   "Confirm Change": "Vurnayişi Tesdiq Ke",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Peleyê werênayışi albûmê bêhesırê estê û teyna depo ra hesırkerdışê. Berzkerdışi vacê nêkarênayışi rê pro-rata krediti şamil keno.",
   "Save To 6180": "6180 De Qeyd Ke",
-  "Open On Phone": "Telefon De Ake"
+  "Open On Phone": "Telefon De Ake",
+  "Will use \"password\" as default": "\"Password\" welete hesıbi xo ke",
+  "No Password": "Parola Çınyawe",
+  "Preparing": "Amadekerden",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Passwort muhafazat serra albume xo configure bike. Weçinê çıtore şıma erşayışê fotoyê xo sinordar bıkerê.",
+  "Enter password (optional)": "Parola binuse (weçinaye)",
+  "Album will be completely hidden until correct password is entered": "Album tama bewêniyeno gınd ke parola raşte keyd bıbo",
+  "Photos will be visible with watermarks, password required to save": "Resimi be nışanê awe asene, qeyden kerdene ra parola hewce ya",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Veng bımanêno \"password\" be default kar kerdışêno",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Eke şıma zerre parola veng bımaniş, \"password\" parola standart de bıgoreniye. Şıma eşkenê wexto her de ayaranê albumê de bıvurniş.",
+  "💡 Password Protection Info:": "💡 Melumata Pawıtışê Parola:",
+  "Select Protection Level": "Sewiya Pawıtışi Weçinê",
+  "Save Settings": "Ayaran Qeyd Ke"
 }

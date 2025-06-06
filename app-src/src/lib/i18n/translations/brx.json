@@ -61,7 +61,6 @@
   "Hidden": "सानजाय",
   "Watermarked": "दैमा सानजाथाव",
   "Cannot be saved": "रैखा खालामना हायै",
-  "No password": "पासवार्ड गैया",
   "No albums found": "आलबाम मोनसे मोनाखै",
   "Created": "दानखाय जाबाय",
   "Updated": "सुदार जाबाय",
@@ -267,5 +266,17 @@
   "Confirm Change": "सालायनाय थिजा",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "सेन्दैयो टियारखौ अनलिमिटेड एल्बाम मेनाङा आरो स्टोरेजनि जरायनो मादो सिमाङाया। अपग्रेडखौ बाहायनायथाव आयदाखौ प्रो-रेटा क्रेडिट मेनाङ आया।",
   "Save To 6180": "6180-आव सेभ खालाम",
-  "Open On Phone": "फोन-आव खुलाम"
+  "Open On Phone": "फोन-आव खुलाम",
+  "Will use \"password\" as default": "\"password\" डिफ'ल्ट सिमाङाव बाहाय",
+  "No Password": "पासवर्ड दङ",
+  "Preparing": "जावगार",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "नोंथांनि एल्बामनि दिनाय पासवर्ड जोगाबिनि हाबा ठाखाय। नोंथांनि फोटो सावदि बाहागो कैसे सिमा खालाम उनाव से बासिनो।",
+  "Enter password (optional)": "पासवर्ड हाबा दिनो (बासिनो)",
+  "Album will be completely hidden until correct password is entered": "सारि पासवार्ड हाबा दावमान एलबाम मोजोंथि फेजेत रावैया",
+  "Photos will be visible with watermarks, password required to save": "फोटोस वाटरमार्क गोसोन दिस्यो रैया, सेभ गारै पासवार्ड लागयो",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ सावसे दावहारनि \"password\" खालि डिफल्ट रुपआव बाहाय होनो",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "नुआंनि पासवार्ड फील्ड खाली थाखो नाथाय, \"password\" डिफल्ट पासवार्ड रुप आव बाहाय होनो। नुआंआ एल्बम सेटिंग आव जाब्रा बेला दावबादि मोनबो हागू।",
+  "💡 Password Protection Info:": "💡 पासवर्ड सुरक्षा सुचना:",
+  "Select Protection Level": "सुरक्षा मुकाम सायखो",
+  "Save Settings": "सेटिंग थिरना"
 }

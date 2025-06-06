@@ -61,7 +61,6 @@
   "Hidden": "Filike",
   "Watermarked": "Omeya Shithikilo",
   "Cannot be saved": "Itashi vulu okushimpeka",
-  "No password": "Kape na password",
   "No albums found": "Ko ku na albums ya adhika po",
   "Created": "Shitwa",
   "Updated": "Yaputa",
@@ -267,5 +266,17 @@
   "Confirm Change": "Hupulula Ekulo",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ti tier ya mu ka dhongola albums onya dhoka omoya mi ya ku na uuapi vuu kudhonga olukwao. Ti upgrade va ningi ti pro-rata credit vuu ngaashi ya ku na uuapi vyapi.",
   "Save To 6180": "Sekela Ku 6180",
-  "Open On Phone": "Vula Ku Telefone"
+  "Open On Phone": "Vula Ku Telefone",
+  "Will use \"password\" as default": "Ka dunguluka \"password\" nenge yi omuveze",
+  "No Password": "Omukati Ngaha",
+  "Preparing": "Okukongolose",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Uhinga kondunga password yi okukanhilikwa album yoye. Ulonde uukaulenge omunyandimi gwindila ne fotografi yoye.",
+  "Enter password (optional)": "Type password yawo (oo yi ko na shi omukumo)",
+  "Album will be completely hidden until correct password is entered": "Album gha yagha vashakela tupu password to nawa nataha",
+  "Photos will be visible with watermarks, password required to save": "Foto kohe gha yagha vashakela netu kwa owamara, password gha inanawa",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Okara hohonga \"password\" ombura okatjinene okahongera nawa",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ngehi ma komavete password field ye kehe kina, \"password\" okwa ka tulwa ko password yaondara. Okwa ka ka hou vura ko nounino mwa okwa ningua album settings.",
+  "💡 Password Protection Info:": "💡 Ondjoha yoPassword Protection:",
+  "Select Protection Level": "Panda Level yokulinda",
+  "Save Settings": "Longeka Ekasalelo"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Falið",
   "Watermarked": "Vatnsmerkt",
   "Cannot be saved": "Ekki hægt að vista",
-  "No password": "Ekkert lykilorð",
   "No albums found": "Engin albúm fundust",
   "Created": "Búið til",
   "Updated": "Uppfært",
@@ -267,5 +266,17 @@
   "Confirm Change": "Staðfesta Breytingu",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Greidd stig hafa ótakmarkað albúm og eru aðeins takmörkuð af geymslu. Uppfærslur fela í sér hlutfallslega inneign fyrir ónotaðan tíma.",
   "Save To 6180": "Vista Í 6180",
-  "Open On Phone": "Opna Í Síma"
+  "Open On Phone": "Opna Í Síma",
+  "Will use \"password\" as default": "Mun nota \"password\" sem sjálfgefið",
+  "No Password": "Ekkert Lykilorð",
+  "Preparing": "Undirbýr",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Stilltu upp lykilorðsvörn fyrir albúmið þitt. Veldu hvernig þú vilt takmarka aðgang að myndunum þínum.",
+  "Enter password (optional)": "Sláðu inn lykilorð (valfrjálst)",
+  "Album will be completely hidden until correct password is entered": "Albúmið verður alveg falið þar til rétta lykilorðið er slegið inn",
+  "Photos will be visible with watermarks, password required to save": "Myndir verða sýnilegar með vatnsmerki, lykilorð þarf til að vista",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Mun nota \"password\" sem sjálfgefið ef skilið eftir tómt",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ef þú skilur lykilorðareitinn eftir tóman verður \"password\" notað sem sjálfgefið lykilorð. Þú getur breytt þessu hvenær sem er í stillingum albúmsins.",
+  "💡 Password Protection Info:": "💡 Upplýsingar um Lykilorð Vörn:",
+  "Select Protection Level": "Veldu Vörn Stig",
+  "Save Settings": "Vista Stillingar"
 }

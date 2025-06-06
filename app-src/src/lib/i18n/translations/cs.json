@@ -61,7 +61,6 @@
   "Hidden": "Skrytý",
   "Watermarked": "S Vodoznakem",
   "Cannot be saved": "Nelze uložit",
-  "No password": "Žádné heslo",
   "No albums found": "Nebyla nalezena žádná alba",
   "Created": "Vytvořeno",
   "Updated": "Aktualizováno",
@@ -267,5 +266,17 @@
   "Confirm Change": "Potvrdit Změnu",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Placené úrovně mají neomezená alba a jsou omezeny pouze úložištěm. Upgrady zahrnují poměrný kredit za nevyužitý čas.",
   "Save To 6180": "Uložit Do 6180",
-  "Open On Phone": "Otevřít V Telefonu"
+  "Open On Phone": "Otevřít V Telefonu",
+  "Will use \"password\" as default": "Bude použito \"password\" jako výchozí",
+  "No Password": "Žádné Heslo",
+  "Preparing": "Příprava",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Nakonfigurujte ochranu heslem pro vaše album. Vyberte, jak chcete omezit přístup ke svým fotografiím.",
+  "Enter password (optional)": "Zadejte heslo (volitelné)",
+  "Album will be completely hidden until correct password is entered": "Album bude zcela skrytý, dokud nebude zadáno správné heslo",
+  "Photos will be visible with watermarks, password required to save": "Fotografie budou viditelné s vodními znaky, pro uložení je třeba heslo",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Použije se \"password\" jako výchozí, pokud se ponechá prázdné",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Pokud necháte pole hesla prázdné, \"password\" bude použito jako výchozí heslo. Můžete to kdykoli změnit v nastavení alba.",
+  "💡 Password Protection Info:": "💡 Informace o Ochraně Hesla:",
+  "Select Protection Level": "Vyberte Úroveň Ochrany",
+  "Save Settings": "Uložit Nastavení"
 }

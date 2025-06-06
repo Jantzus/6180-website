@@ -61,7 +61,6 @@
   "Hidden": "Ammucciatu",
   "Watermarked": "Filigranatu",
   "Cannot be saved": "Nun pò èssiri sarvatu",
-  "No password": "Nudda password",
   "No albums found": "Nuddu album attruvatu",
   "Created": "Criatu",
   "Updated": "Aggiurnatu",
@@ -267,5 +266,17 @@
   "Confirm Change": "Cunferma u Canciamentu",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Li liveddi pagati hannu album senza lìmiti e su limitati sulu dâ memoria. L'aggiurnamenti includinu crèditu pro-rata pû tempu nun usatu.",
   "Save To 6180": "Sarva 'Nta 6180",
-  "Open On Phone": "Rapri Nô Telefunu"
+  "Open On Phone": "Rapri Nô Telefunu",
+  "Will use \"password\" as default": "Usarrà \"password\" comu predeterminatu",
+  "No Password": "Nudda Password",
+  "Preparing": "Priparannu",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Cunfìgura la prutizzioni cu password pû tò album. Scegghî comu vói limitari l'accessu a li to fotu.",
+  "Enter password (optional)": "Metti a password (opziunali)",
+  "Album will be completely hidden until correct password is entered": "L'album vinni stari ammuccatu tuttu quannu la password giusta nun si metti",
+  "Photos will be visible with watermarks, password required to save": "Li fotu si vènnu vistu cu li filigrani, password nicissaria pi sarvari",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ausarà \"password\" comu pridifinitu si lassatu vacanti",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si lassi vacanti lu campu dâ password, \"password\" veni usatu comu password pridifinuta. Poi canciari stu cosa quannu voi nnâ cunfigurazzioni di l'album.",
+  "💡 Password Protection Info:": "💡 Nfurmaziuni di Prutezzioni dâ Password:",
+  "Select Protection Level": "Scegghì u Liveddu di Prutezzioni",
+  "Save Settings": "Sarva Mmostazioni"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Miafina",
   "Watermarked": "Voamarika Rano",
   "Cannot be saved": "Tsy azo tehirizina",
-  "No password": "Tsy misy teny miafina",
   "No albums found": "Tsy nahita alboma",
   "Created": "Noforonina",
   "Updated": "Nohavaozina",
@@ -267,5 +266,17 @@
   "Confirm Change": "Hamarino ny Fiovana",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ny ambaratonga fandoavam-bola dia manana rakikira tsy voafetra ary voaferana amin'ny fitahirizana ihany. Ny fanatsarana dia misy crédit pro-rata ho an'ny fotoana tsy nampiasaina.",
   "Save To 6180": "Tehirizo Ao 6180",
-  "Open On Phone": "Sokafy Amin'ny Telefaona"
+  "Open On Phone": "Sokafy Amin'ny Telefaona",
+  "Will use \"password\" as default": "Hampiasa \"password\" ho toetra",
+  "No Password": "Tsy Misy Tenimiafina",
+  "Preparing": "Fanomanana",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Amboary ny fiarovana tenimiafina ho an'ny rakikary. Mifidiana ny fomba tianao hamerana ny fidirana amin'ny sarinao.",
+  "Enter password (optional)": "Ampidiro ny tenimiafina (azo atao)",
+  "Album will be completely hidden until correct password is entered": "Ny rakikira ho afenina tanteraka mandra-pidiran'ny teny miafina marina",
+  "Photos will be visible with watermarks, password required to save": "Ny sary dia ho hita miaraka amin'ny marika rano, teny miafina takiana raha tehirizina",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Hampiasa \"password\" ho toerana raha avela ho foana",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Raha avelanao tsy misy dikany ny saha teny miafina, dia hampiasaina ho teny miafina voalohany ny \"password\". Azonao ovaina izany na oviana na oviana amin'ny fandrindrana ny rakikira.",
+  "💡 Password Protection Info:": "💡 Fampahalalana momba ny Fiarovana Teny Miafina:",
+  "Select Protection Level": "Fidio ny Ambaratonga Fiarovana",
+  "Save Settings": "Tehirizo ny Kirakira"
 }

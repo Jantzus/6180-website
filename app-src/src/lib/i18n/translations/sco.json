@@ -61,7 +61,6 @@
   "Hidden": "Hidden",
   "Watermarked": "Watermerkit",
   "Cannot be saved": "Cannae be saved",
-  "No password": "Nae password",
   "No albums found": "Nae albums foond",
   "Created": "Cræftit",
   "Updated": "Updated",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirm the Cheenge",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Peyed tiers hae unlimited albums an are limitit ainly bi storage. Upgrades include pro-rata credit for unused time.",
   "Save To 6180": "Save Tae 6180",
-  "Open On Phone": "Open On Phone"
+  "Open On Phone": "Open On Phone",
+  "Will use \"password\" as default": "Will uise \"password\" as defaut",
+  "No Password": "Nae Password",
+  "Preparing": "Preparin",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Set up passwird pertection fir yer album. Chuise hou ye want tae restreeck access tae yer photaes.",
+  "Enter password (optional)": "Enter passwird (optional)",
+  "Album will be completely hidden until correct password is entered": "The album will be completely hidden until the correct password is entered",
+  "Photos will be visible with watermarks, password required to save": "Photos will be seen wi watermerks, password needit tae save",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Will uise \"password\" as defaut gin left tuim",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Gin ye lea the passwird field tuim, \"password\" will be uised as the defaut passwird. Ye can chynge this onytime in album settins.",
+  "💡 Password Protection Info:": "💡 Password Protection Info:",
+  "Select Protection Level": "Select Protection Level",
+  "Save Settings": "Save Settings"
 }

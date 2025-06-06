@@ -61,7 +61,6 @@
   "Hidden": "Skondí",
   "Watermarked": "Ku Marka di Awa",
   "Cannot be saved": "No por wordu wardá",
-  "No password": "Sin password",
   "No albums found": "No a haña ningun album",
   "Created": "Krea",
   "Updated": "Aktualisá",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfirma Kambia",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivel ku ta paga tin album sin limite y ta limita solamente pa storage. Upgrade ta inclui credito pro-rata pa tempo ku no a uza.",
   "Save To 6180": "Warda Na 6180",
-  "Open On Phone": "Habri Na Telefon"
+  "Open On Phone": "Habri Na Telefon",
+  "Will use \"password\" as default": "Lo usa \"password\" como default",
+  "No Password": "No Tin Password",
+  "Preparing": "Preparando",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konfigura protekshon di password pa bo album. Skoge kon bo kier limita akeso na bo fotonan.",
+  "Enter password (optional)": "Skibi e password (opcional)",
+  "Album will be completely hidden until correct password is entered": "E album lo keda skondi kompletamente te ora e password korekto keda entra",
+  "Photos will be visible with watermarks, password required to save": "Fotohanan lo ta mira ku watermarknan, password ta nesesario pa sav",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Lo usa \"password\" komo predeterminá si laga bashi",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si bo laga password field bashi, \"password\" lo wordo usa komo password predeterminá. Bo por kambia esaki na kualke momento den album settings.",
+  "💡 Password Protection Info:": "💡 Informashon di Protekshon di Password:",
+  "Select Protection Level": "Skohe Nivel di Protekshon",
+  "Save Settings": "Warda Settings"
 }

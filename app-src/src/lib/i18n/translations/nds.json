@@ -61,7 +61,6 @@
   "Hidden": "Versteken",
   "Watermarked": "Watermarkt",
   "Cannot be saved": "Kann nich spiekert warrn",
-  "No password": "Keen Passwoort",
   "No albums found": "Keen Alben funnen",
   "Created": "Opstellt",
   "Updated": "Aktualisiert",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ännerung Bestäten",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Betahlt Stufn hebbt unbegrenzt Albums un sünd blots dör Spiekern begrenzt. Upgrades hebt pro-rata Kredit för nich bruukte Tiet.",
   "Save To 6180": "Na 6180 Spieken",
-  "Open On Phone": "Op Telefon Opmaken"
+  "Open On Phone": "Op Telefon Opmaken",
+  "Will use \"password\" as default": "Warrt \"password\" as Vörinstellen bruken",
+  "No Password": "Keen Passwort",
+  "Preparing": "Vörbereiden",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Stell Passwoort-Schuul för dien Album in. Kies, wo du den Togaang to dien Biller begrenzen willst.",
+  "Enter password (optional)": "Geev dat Passwoort in (nich nödig)",
+  "Album will be completely hidden until correct password is entered": "Dat Album warrt ganz versteken bet dat richtige Passwort indragen warrt",
+  "Photos will be visible with watermarks, password required to save": "Biller warrt mit Waterteken to sehn ween, Passwort deit för't Spieckern noot",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Warrt \"password\" as Standard nehmen, wenn dat leddig blifft",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Wenn Du dat Passwort-Feld leddig lätst, warrt \"password\" as Standard-Passwort bruukt. Du kannst dat jümmer ännern in de Album-Instellen.",
+  "💡 Password Protection Info:": "💡 Passwort Schutz Informatschoon:",
+  "Select Protection Level": "Schutz Level Utwählen",
+  "Save Settings": "Instellungen Siekern"
 }

@@ -61,7 +61,6 @@
   "Hidden": "छिपायोड़ो",
   "Watermarked": "जळ-निशाणियो",
   "Cannot be saved": "बचा नीं सकै",
-  "No password": "कोई पासवर्ड कोनी",
   "No albums found": "कोई आलबम नीं मिल्यो",
   "Created": "बणायो गयो",
   "Updated": "अपडेट करियो",
@@ -267,5 +266,17 @@
   "Confirm Change": "बदलाव पक्को करो",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "पेड टियरां में असीमित एल्बम हैगा अर केई स्टोरेज तैं ही सीमित हैगा। अपग्रेड में बिना इस्तेमाल रै समयरै बास्तै प्रो-रेटा क्रेडिट हैगो।",
   "Save To 6180": "6180 मैं सेव करो",
-  "Open On Phone": "फोन मैं खोलो"
+  "Open On Phone": "फोन मैं खोलो",
+  "Will use \"password\" as default": "\"password\" नै डिफॉल्ट के रूप में लगावणो",
+  "No Password": "कोनो पासवर्ड नी",
+  "Preparing": "तैयारी",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "आपणो आलबम खातर पासवर्ड सुरक्षा करो। चुणो के आप आपणी फोटावां री पहुंच कैसी सीमित करणी चावो।",
+  "Enter password (optional)": "पासवर्ड घालो (इच्छा अनुसार)",
+  "Album will be completely hidden until correct password is entered": "सही पासवर्ड घाल्या पैली एल्बम पूरी तरै छुप्यो रैसी",
+  "Photos will be visible with watermarks, password required to save": "तसवीरां वाटरमार्क सागै दिसैली, सेव करणै री पासवर्ड चइजैली",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ खाली छोड्या \"password\" डिफॉल्ट रूप री इस्तेमाल करसी",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "जे थे पासवर्ड फील्ड खाली छोड्या \"password\" डिफॉल्ट पासवर्ड रो इस्तेमाल करसी। थे इने एल्बम सेटिंग में कदे भी बदल सको हो।",
+  "💡 Password Protection Info:": "💡 पासवर्ड सुरक्षा री जाणकारी:",
+  "Select Protection Level": "सुरक्षा स्तर चुणो",
+  "Save Settings": "सेटिंग सेव करो"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Annascuso",
   "Watermarked": "Filigranato",
   "Cannot be saved": "Nun se pò sarbà",
-  "No password": "'E password nun c'è",
   "No albums found": "'E album nun s'attrovano",
   "Created": "Criato",
   "Updated": "Aggiurnato",
@@ -267,5 +266,17 @@
   "Confirm Change": "Cunferma o Cagnamiento",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "E livelle a pagamiento teneno album senza limiti e só' limitati sulo d'a memoria. L'aggiornamenti nc'hanno credito pro-rata pe' 'o tiempo nun ausato.",
   "Save To 6180": "Sarva Int'a 6180",
-  "Open On Phone": "Rapre 'Ncopp'o Telefono"
+  "Open On Phone": "Rapre 'Ncopp'o Telefono",
+  "Will use \"password\" as default": "Ausarrà \"password\" comme 'e default",
+  "No Password": "Nisciuna Password",
+  "Preparing": "Preparazione",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configura 'a protezzione cu password p''o tuio album. Sciglie comme vuò limità ll'accesso 'e ffoto toje.",
+  "Enter password (optional)": "Scrive 'a password (opziunale)",
+  "Album will be completely hidden until correct password is entered": "L'album sarà completamente annascuso fino a quanno 'a password giusta nun se mette",
+  "Photos will be visible with watermarks, password required to save": "'E foto se vedono cu 'e filigrane, 'a password ce vo pe sarvà",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ausarrà \"password\" comme predefinito si lassato vacante",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si lasse vacante 'o campo d' 'a password, \"password\" sarrà ausata comm'a password predefinita. Putite cagnà chesto quanno vulite dint' 'e impostaziune d' 'o album.",
+  "💡 Password Protection Info:": "💡 'Nformazione 'e Protezione Password:",
+  "Select Protection Level": "Sceglie 'o Livello 'e Protezione",
+  "Save Settings": "Sarva 'e Npostaziun"
 }

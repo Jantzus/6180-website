@@ -61,7 +61,6 @@
   "Hidden": "Qarsoonni",
   "Watermarked": "Bishaara Calaamadsan",
   "Cannot be saved": "Maaleeka dooʼwaa maaleeka",
-  "No password": "Qayxad maleey",
   "No albums found": "Alboom ma geeysan",
   "Created": "Liqsiyame",
   "Updated": "Cusibay",
@@ -267,5 +266,17 @@
   "Confirm Change": "Beddelka Xaqiiji",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Baaxo guurto alboomka xaddidla'aan qabaan waxaana keliya bakhaarka ku xaddidan. Kordhinta waxaa ku jira qiimaha qayb ahaan ee waqtiga aan la isticmaalin.",
   "Save To 6180": "Sinam 6180-te Kayso",
-  "Open On Phone": "Telefon Kak Silete"
+  "Open On Phone": "Telefon Kak Silete",
+  "Will use \"password\" as default": "Furmaata akka \"password\" fayyadama",
+  "No Password": "Mak Sinam Xabiili",
+  "Preparing": "Sinameyya",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Alboom ma geeysan ku dhawrso ereyo sireed. Yaa sawirradaada gali kara doorso.",
+  "Enter password (optional)": "Ereyo sireed geli (ikhtiyaari)",
+  "Album will be completely hidden until correct password is entered": "Alboom gaadow itti dhaami sirrii galchamu hanga",
+  "Photos will be visible with watermarks, password required to save": "Sawiradu waan arkamani suruura gadootti, kaysataku ginni kuluuli",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ \"password\" ku isticmaali doona haddii cidla ah",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Hadii aad goobta sirta cidla ku daysid, \"password\" ayaa loo adeegsanayaa sirta asaasiga ah. Waxaad ka baddali kartaa waqti kasta oo gudaha hab-gelinta albamka.",
+  "💡 Password Protection Info:": "💡 Sinam Muudullu Baalisa:",
+  "Select Protection Level": "Liyya Muudullu Doorso",
+  "Save Settings": "Sittingga Kayida"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Scundido",
   "Watermarked": "Cun Marca d'Auga",
   "Cannot be saved": "Nun puode ser guardado",
-  "No password": "Nanhue palabra-passe",
   "No albums found": "Nanhun álbun ancontrado",
   "Created": "Criado",
   "Updated": "Atualizador",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmar Cambio",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ls nibles de pagamiente ténen álbuns eilimitados i stan lhemitados solo pul armazenamiento. Las atualizaçones ancluíren crédito pro-rata pal tiempo nun ousado.",
   "Save To 6180": "Salbar An 6180",
-  "Open On Phone": "Abrir Ne Telefone"
+  "Open On Phone": "Abrir Ne Telefone",
+  "Will use \"password\" as default": "Bai ousar \"password\" cumo predefenido",
+  "No Password": "Nanhũa Senhal",
+  "Preparing": "Porduzindo",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configura la proteçon cun palabra-chabe pa l tou álbun. Scolhe cumo quies limitar l acesso a las tuas fotos.",
+  "Enter password (optional)": "Ansertar palabra-chabe (oupecional)",
+  "Album will be completely hidden until correct password is entered": "L album stará cumplietamente scundido até que seia screbida la palabra-chabe cuorreta",
+  "Photos will be visible with watermarks, password required to save": "Las fotos staran besibles cun marcas d'auga, palabra-chabe necessaira pa salbar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Usará \"password\" cumo padrão se deixado balho",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se deixares l campo de palavra-passe balho, \"password\" será ousado cumo palavra-passe padrão. Puodes trocar esso an qualquiera altura nas defeniçones de l álbun.",
+  "💡 Password Protection Info:": "💡 Anformaçon de Proteçon de Palabra-chabe:",
+  "Select Protection Level": "Selecionar Nible de Proteçon",
+  "Save Settings": "Salbar Cumfiguraçones"
 }

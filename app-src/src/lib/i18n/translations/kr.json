@@ -61,7 +61,6 @@
   "Hidden": "Ti o farapamo",
   "Watermarked": "Ami Mark",
   "Cannot be saved": "Ba za a iya adana ba",
-  "No password": "Babu kalmar sirri",
   "No albums found": "Ba albumbom ba samu ba",
   "Created": "An yi",
   "Updated": "An sabunta",
@@ -267,5 +266,17 @@
   "Confirm Change": "Sara Gongdi",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ka tier kam ne fiyah ban album lah ba mo ni storage ren ne kan ter. Upgrades ne ba ni pro-rata credit hawan ter tan kan ba se ma.",
   "Save To 6180": "Ye 6180 Lẹ",
-  "Open On Phone": "Nye Telephone Lẹ"
+  "Open On Phone": "Nye Telephone Lẹ",
+  "Will use \"password\" as default": "Ma yi \"password\" to gumsa",
+  "No Password": "Kana Password",
+  "Preparing": "Ndar Miji",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Sak nyo yer album ba password ba sik za. Ka bar nyo yar album sak bassa naba bar.",
+  "Enter password (optional)": "Gar nyo password ka (suwo ka nan ke naba naba)",
+  "Album will be completely hidden until correct password is entered": "Album ba choa gbue ba ndu password to ba sowa",
+  "Photos will be visible with watermarks, password required to save": "Foto ba la gba to eba de mam nara, password ba ndu to sowa",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ba kara \"password\" za base nda kau ni yau baka",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Kau ka zana password biri yi baka, \"password\" base password ka zakai. Nna gani tun ka ruga nawa ri album settings.",
+  "💡 Password Protection Info:": "💡 Kẹrin Gbe Ni Password Protection:",
+  "Select Protection Level": "Korun Gbe Nì Yie Level",
+  "Save Settings": "Gbe Ni Settings Lẹ"
 }

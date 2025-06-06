@@ -61,7 +61,6 @@
   "Hidden": "Ņojak",
   "Watermarked": "Kakōļļe in Dān",
   "Cannot be saved": "Ejjab maroñ in kōjparok",
-  "No password": "Ejjelok password",
   "No albums found": "Ejjelọk album rekar",
   "Created": "Ejaak",
   "Updated": "Bok apdeit",
@@ -267,5 +266,17 @@
   "Confirm Change": "Kōnono Kōjeblañ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Tier ko rej tōñal ej kab album ko ejjelọk kōnnaan im ej kab kōnnaan iban storage. Upgrade ko ej kab kredit pro-rata ñan kien ilo eo ejjelọk kōjerbal.",
   "Save To 6180": "Kenono Ņan 6180",
-  "Open On Phone": "Katak Ñan Jila"
+  "Open On Phone": "Katak Ñan Jila",
+  "Will use \"password\" as default": "Enaj kōjerbale \"password\" jet dapij",
+  "No Password": "Ejjelọk Password",
+  "Preparing": "Kõmõtata",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Jipañ password bwe en jerbal ñan albumen. Kwojela jinoin ke kwoj aikuj in jepilok an kakkoba im piküt ko.",
+  "Enter password (optional)": "Jereko an password (nañinmej)",
+  "Album will be completely hidden until correct password is entered": "Album ej juon etal wōt ar jen passwōd in kar kōmman",
+  "Photos will be visible with watermarks, password required to save": "Pikja rej kōmman kōn jerbal in jān, passwōd in kar save enana",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Enaaj elon \"password\" in default jekaro ejjelok an kōttōprak",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jekaro ejjelok am kōttōprak password field eo, \"password\" enaaj elon in default password. Kwōnāj jikuuḷ aer kiiō an armej ilo album settings ko.",
+  "💡 Password Protection Info:": "💡 Melele in Password Protection:",
+  "Select Protection Level": "Kōjparok in Level in Protection",
+  "Save Settings": "Jerbal Melele ko Setting"
 }

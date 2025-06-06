@@ -61,7 +61,6 @@
   "Hidden": "लुकेको",
   "Watermarked": "जलचिन्ह भएको",
   "Cannot be saved": "बचत गर्न सकिँदैन",
-  "No password": "पासवर्ड छैन",
   "No albums found": "कुनै एल्बम फेला परेन",
   "Created": "सिर्जना गरियो",
   "Updated": "अपडेट गरियो",
@@ -267,5 +266,17 @@
   "Confirm Change": "परिवर्तन पुष्टि गर्नुहोस्",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "सशुल्क तहहरूमा असीमित एल्बमहरू छन् र भण्डारणद्वारा मात्र सीमित छन्। अपग्रेडहरूमा अप्रयुक्त समयको लागि समानुपातिक क्रेडिट समावेश छ।",
   "Save To 6180": "6180 मा सेभ गर्नुहोस्",
-  "Open On Phone": "फोनमा खोल्नुहोस्"
+  "Open On Phone": "फोनमा खोल्नुहोस्",
+  "Will use \"password\" as default": "पूर्वनिर्धारित रूपमा \"password\" प्रयोग गर्नेछ",
+  "No Password": "कुनै पासवर्ड छैन",
+  "Preparing": "तयारी",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "तपाईंको एल्बमको लागि पासवर्ड सुरक्षा कन्फिगर गर्नुहोस्। तपाईंका तस्बिरहरूमा पहुँच कसरी प्रतिबन्धित गर्न चाहनुहुन्छ छनोट गर्नुहोस्।",
+  "Enter password (optional)": "पासवर्ड प्रविष्ट गर्नुहोस् (वैकल्पिक)",
+  "Album will be completely hidden until correct password is entered": "सही पासवर्ड नहालेसम्म एल्बम पूर्ण रूपमा लुकाइनेछ",
+  "Photos will be visible with watermarks, password required to save": "तस्बिरहरू वाटरमार्कका साथ देखिनेछन्, सेभ गर्न पासवर्ड चाहिन्छ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ खाली छोडियो भने \"password\" पूर्वनिर्धारित रूपमा प्रयोग गर्नेछ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "यदि तपाईंले पासवर्ड फिल्ड खाली छोड्नुभयो भने, \"password\" पूर्वनिर्धारित पासवर्डको रूपमा प्रयोग हुनेछ। तपाईंले यसलाई एल्बम सेटिङहरूमा जुनसुकै बेला परिवर्तन गर्न सक्नुहुन्छ।",
+  "💡 Password Protection Info:": "💡 पासवर्ड सुरक्षा जानकारी:",
+  "Select Protection Level": "सुरक्षा स्तर छान्नुहोस्",
+  "Save Settings": "सेटिङ संग्रह गर्नुहोस्"
 }

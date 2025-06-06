@@ -61,7 +61,6 @@
   "Hidden": "Hithitwo",
   "Watermarked": "Kirũri kia Mai",
   "Cannot be saved": "Ndingĩhota kũhonokia",
-  "No password": "Hatirĩ Password",
   "No albums found": "Hatirĩ mbuku ciothe cionekire",
   "Created": "Ombika",
   "Updated": "Nĩwahũũhũrio",
@@ -267,5 +266,17 @@
   "Confirm Change": "Tĩkĩria Kũgarũra",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ngazi cia kurutwo nijirigwo albumbu itarĩ na mũhaka na nĩ ithimirio nĩ kũiga tu. Mbataro nĩikoragwo na mbeeca cia pro-rata cia ihinda rĩria rĩtaahũthĩrĩirwo.",
   "Save To 6180": "Iga Thĩinĩ Wa 6180",
-  "Open On Phone": "Hingũra Thogora"
+  "Open On Phone": "Hingũra Thogora",
+  "Will use \"password\" as default": "Gũtũmĩra \"password\" ta wa mbere",
+  "No Password": "Gũtirĩ Kiugo",
+  "Preparing": "Kũhaarĩria",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Andika kĩgitĩri kĩa ũgitĩri wa ibuku rĩaku. Thuura ũrĩa wendete kwĩhinga gũthiĩ harĩa macuuria maku mahaandĩtwo.",
+  "Enter password (optional)": "Andika kĩgitĩro kĩa ũgitĩri (kĩa gũthuura)",
+  "Album will be completely hidden until correct password is entered": "Mbuku ĩyo nĩĩkahithwo biũ o nginya kiugo kĩa ũhoro kĩrĩa gĩĩkĩrĩire kĩandĩkwo",
+  "Photos will be visible with watermarks, password required to save": "Macoro nĩmekuoneka na makara ma maaĩ, kiugo kĩa ũhoro gĩkwagĩrĩrwo nĩguo kũige",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Nĩgũtũmĩra \"password\" ta ũrĩa ũtuĩkaga angĩtigio kĩhũ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Rĩngĩkorwo nĩũkũatiga kĩhũhu kĩa password gĩtheri, \"password\" nĩgũgatũmĩrwo ta password ya gĩthondeke. Nĩũkũhoteka kũgarũra ũndũ ũyũ ihinda rĩrĩa rĩrĩa rĩo harĩa hatũrwo ma nyimbo.",
+  "💡 Password Protection Info:": "💡 Ũhoro wa Kũgitĩra Kiugo kia Hitho:",
+  "Select Protection Level": "Thuura Kĩigana kĩa Kũgitĩra",
+  "Save Settings": "Ĩga Mĩthiũrũko"
 }

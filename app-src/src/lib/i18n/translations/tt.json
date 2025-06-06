@@ -61,7 +61,6 @@
   "Hidden": "Яшерелгән",
   "Watermarked": "Су Билгеле",
   "Cannot be saved": "Саклап булмый",
-  "No password": "Серсүз юк",
   "No albums found": "Альбомнар табылмады",
   "Created": "Төзелгән",
   "Updated": "Яңартылды",
@@ -267,5 +266,17 @@
   "Confirm Change": "Үзгәрешне Раслагыз",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Түләүле дәрәҗәләрнең чиксез альбомнары бар һәм алар бары тик саклагычлар белән генә чикләнгән. Яңартулар кулланылмаган вакыт өчен пропорциональ кредит үз эченә ала.",
   "Save To 6180": "6180-га Саклау",
-  "Open On Phone": "Телефонда Ачу"
+  "Open On Phone": "Телефонда Ачу",
+  "Will use \"password\" as default": "\"Password\" төп итеп кулланачак",
+  "No Password": "Серсүз Юк",
+  "Preparing": "Әзерләү",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Альбомыгыз өчен парол яклавын көйләгез. Сүрәтләрегезгә керү мөмкинлекләрен ничек чикләргә теләгәнегезне сайлагыз.",
+  "Enter password (optional)": "Парольне керегез (телгәнчә)",
+  "Album will be completely hidden until correct password is entered": "Дөрес серсүз кертелгәнче альбом тулысынча яшерен була",
+  "Photos will be visible with watermarks, password required to save": "Фоторәсемнәр су билгеләре белән күренерләр, саклау өчен пароль кирәк",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Буш калдырылса \"password\" төп буларак кулланылачак",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Әгәр серсүз кыры буш калдырсагыз, \"password\" төп серсүз буларак кулланылачак. Моны альбом көйләүләрендә теләсә кайсы вакытта үзгәртә аласыз.",
+  "💡 Password Protection Info:": "💡 Серсүз Сакланышы Мәгълүматы:",
+  "Select Protection Level": "Саклау Дәрәҗәсен Сайла",
+  "Save Settings": "Көйләүләрне Саклау"
 }

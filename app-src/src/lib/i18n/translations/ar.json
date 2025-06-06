@@ -61,7 +61,6 @@
   "Hidden": "مختفي",
   "Watermarked": "بعلامة مائية",
   "Cannot be saved": "لا يمكن حفظه",
-  "No password": "لا توجد كلمة مرور",
   "No albums found": "لم يتم العثور على ألبومات",
   "Created": "تم الإنشاء",
   "Updated": "تم التحديث",
@@ -267,5 +266,17 @@
   "Confirm Change": "تأكيد التغيير",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "المستويات المدفوعة لديها ألبومات غير محدودة ومحدودة فقط بالتخزين. التحديثات تشمل ائتمان تناسبي للوقت غير المستخدم.",
   "Save To 6180": "حفظ في 6180",
-  "Open On Phone": "افتح على الهاتف"
+  "Open On Phone": "افتح على الهاتف",
+  "Will use \"password\" as default": "سيتم استخدام \"password\" كافتراضي",
+  "No Password": "لا كلمة مرور",
+  "Preparing": "تحضير",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "قم بتكوين حماية كلمة المرور لألبومك. اختر كيف تريد تقييد الوصول إلى صورك.",
+  "Enter password (optional)": "أدخل كلمة المرور (اختياري)",
+  "Album will be completely hidden until correct password is entered": "سيتم إخفاء الألبوم تماماً حتى إدخال كلمة المرور الصحيحة",
+  "Photos will be visible with watermarks, password required to save": "ستكون الصور مرئية مع العلامات المائية، كلمة مرور مطلوبة للحفظ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ سيتم استخدام \"password\" كقيمة افتراضية إذا تُرك فارغاً",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "إذا تركت حقل كلمة المرور فارغاً، سيتم استخدام \"password\" ككلمة مرور افتراضية. يمكنك تغيير هذا في أي وقت في إعدادات الألبوم.",
+  "💡 Password Protection Info:": "💡 معلومات حماية كلمة المرور:",
+  "Select Protection Level": "اختر مستوى الحماية",
+  "Save Settings": "حفظ الإعدادات"
 }

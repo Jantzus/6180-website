@@ -61,7 +61,6 @@
   "Hidden": "Zobisika",
   "Watermarked": "Chizindikiro cha Madzi",
   "Cannot be saved": "Sizingasungidwe",
-  "No password": "Palibe mawu achinsinsi",
   "No albums found": "Palibe ma albamu apezeka",
   "Created": "Kupanga",
   "Updated": "Zapano",
@@ -267,5 +266,17 @@
   "Confirm Change": "Tsimikizani Kusintha",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Magawo olipira ali ndi ma albamu osamaliza ndipo ndi okhawo omangidwa ndi kusungira. Zokweza zimaphatikiza ngongole ya pro-rata ya nthawi yosagwiritsidwa ntchito.",
   "Save To 6180": "Sunga Mu 6180",
-  "Open On Phone": "Tsegula Pa Foni"
+  "Open On Phone": "Tsegula Pa Foni",
+  "Will use \"password\" as default": "Igwiritsa ntchito \"password\" ngati chibadwa",
+  "No Password": "Palibe Chinsinsi",
+  "Preparing": "Kukonzekera",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Konzani chitetezo cha achinsinsi pa chikwatu chanu. Sankhani momwe mungafunire kuletsa kulowa ku zithunzi zanu.",
+  "Enter password (optional)": "Lemberani chinsinsi (chosankha)",
+  "Album will be completely hidden until correct password is entered": "Chithunzi chidzabisala kwathunthu mpaka mwanjira yolondola itayikidwa",
+  "Photos will be visible with watermarks, password required to save": "Zithunzi zidzaoneka ndi zizindikiro za madzi, chinsinsi chofunikira kusunga",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Idzagwiritsa \"password\" ngati chisasinthiko mukaasiya chopanda kanthu",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ngati mungasiye gawo la password lopanda kanthu, \"password\" idzagwiritsidwa ntchito ngati password yoyambilira. Mutha kusintha izi nthawi iliyonse mu mauonekedwe a chikwatu.",
+  "💡 Password Protection Info:": "💡 Chidziwitso cha Chitetezo cha Password:",
+  "Select Protection Level": "Sankhani Mlingo wa Chitetezo",
+  "Save Settings": "Sungani Zosintha"
 }

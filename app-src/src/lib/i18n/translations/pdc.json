@@ -61,7 +61,6 @@
   "Hidden": "Fashteckelt",
   "Watermarked": "Wassergemarikt",
   "Cannot be saved": "Kann net gschtorrt warre",
-  "No password": "Ken Passwatt",
   "No albums found": "Ken Album gfunne",
   "Created": "Gschtellt",
   "Updated": "Geupdadet",
@@ -267,5 +266,17 @@
   "Confirm Change": "Ennering Baschtetege",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Bezahlte Level hun unlimited Alben un sin bloss vum Storage limited. Upgrades hun pro-rata Credit fer ungenutzte Zeit.",
   "Save To 6180": "Nei 6180 Speichere",
-  "Open On Phone": "Ufmache Uf Telefon"
+  "Open On Phone": "Ufmache Uf Telefon",
+  "Will use \"password\" as default": "Waerd \"password\" als Standard gebrauche",
+  "No Password": "Kee Password",
+  "Preparing": "Vorbereitung",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Kanfickyier Baswatt-Schutz fer dei Album. Wehle wie du de Zukank zu dei Pikders beschrenke witt.",
+  "Enter password (optional)": "Geb dei Passwatt ei (net nemme)",
+  "Album will be completely hidden until correct password is entered": "Sell Album watt gans versteckt bis sell recht Baassword nei geduh watt",
+  "Photos will be visible with watermarks, password required to save": "Bilder denne sichtbaar seie mit Waasserzeicha, Baassword brauch mer fer spare",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Watt \"password\" als Standard nemme wann's leddisch gelosse watt",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Wann Du es Passwort-Feld leddisch loss, watt \"password\" als Standard-Passwort genumme. Du kannscht sell immer ennere in de Album-Einstellunge.",
+  "💡 Password Protection Info:": "💡 Passwuert Schatz Information:",
+  "Select Protection Level": "Schutz Level Waehle",
+  "Save Settings": "Aestellunge Bahalte"
 }

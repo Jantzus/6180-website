@@ -61,7 +61,6 @@
   "Hidden": "Verschtoche",
   "Watermarked": "Met Wasserzëĳshe",
   "Cannot be saved": "Kam_mer nit afseschrieve",
-  "No password": "Kei Passwoot",
   "No albums found": "Kein Album jefonge",
   "Created": "Erjohß",
   "Updated": "Aktualiseet",
@@ -267,5 +266,17 @@
   "Confirm Change": "Änderung Bestätigen",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Bezahlte Stufe han unbegränzte Alben un sin nur durch Speicher begränz. Upgrades han pro-rata Kredit för ungebruch Zigg.",
   "Save To 6180": "En 6180 Faßhalde",
-  "Open On Phone": "Op Dämm Telefon Opmaache"
+  "Open On Phone": "Op Dämm Telefon Opmaache",
+  "Will use \"password\" as default": "Deit \"password\" als Standard bruche",
+  "No Password": "Kei Passwoot",
+  "Preparing": "Am Vörberëijde",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Don Password-Schotz för Ding Album ennställe. Donn ußsöhke, wi De der Zojang noh Dinge Felder beschränke wells.",
+  "Enter password (optional)": "Jiff dat Passwoot en (nit nüüdesch)",
+  "Album will be completely hidden until correct password is entered": "Dat Album bliev komplett verstoche bes dat reschtige Passwoot enjejovve weed",
+  "Photos will be visible with watermarks, password required to save": "Belder wääde seeschbaa met Wasser-Zeiche, Passwoot es nüdesch fö et Faßhalde",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Deit \"password\" als Standard bruche, wann et leddich jlosse weed",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Wann De dat Passwoot-Feld leddich löss, dann weed \"password\" als et Standard-Passwoot jenomme. Dat kanns De ömmer ändere en de Album-Enstellunge.",
+  "💡 Password Protection Info:": "💡 Passwoot Schotz Enfommazjohn:",
+  "Select Protection Level": "Schotz Level Ußsöke",
+  "Save Settings": "Enstellunge Faßhalde"
 }

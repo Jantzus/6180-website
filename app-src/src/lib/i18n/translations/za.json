@@ -61,7 +61,6 @@
   "Hidden": "Coemj",
   "Watermarked": "Miz meiz zingh",
   "Cannot be saved": "Mbouj ndaej cungj",
-  "No password": "Mbouj miz maxma",
   "No albums found": "Mbouj miz yetyauq saj album",
   "Created": "Cungj gen lai",
   "Updated": "Doengznip dwghoih",
@@ -267,5 +266,17 @@
   "Confirm Change": "Fwngz boux gyo",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Goufuq daej miz album mbouj miz ciujsw caiq biengz heuh couh naxx caixnaengz haenx. Gaenqdoj ya couh miz pro-rata dwg louz dauqfan mbouj miz gaej daengz boux.",
   "Save To 6180": "Cun daeuj 6180",
-  "Open On Phone": "Baeij daeuj dienhva"
+  "Open On Phone": "Baeij daeuj dienhva",
+  "Will use \"password\" as default": "Gwnz yungz \"password\" ndaej buengz",
+  "No Password": "Maj youq boux",
+  "Preparing": "Dwk Cingz",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Gij naj soem boux sawj bwn guek faek youj rox cingj. Youj meq nazdaq baez naj nazcai aeu lij yuh yiengh.",
+  "Enter password (optional)": "Daeuj cungj boux sawj bwn (youz caeuq maj youz)",
+  "Album will be completely hidden until correct password is entered": "Buengh lis doxgaiq cungj ae seijndei doxsim cix gik gaej gaenj sawraeb",
+  "Photos will be visible with watermarks, password required to save": "Buengh lis doxgaiq youq lai swix, sawraeb doek boux ndei miz aen",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Gaiq mbouj aeu youh \"password\" lwgfangz",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Doenghgaiq danghnaeuz password gaiq mbouj aeu youh, \"password\" lwgfangz aeu gouj. Ndei hawj gaenj geiq daj bi boux caej.",
+  "💡 Password Protection Info:": "💡 Sawloih bauhgoz singseiq:",
+  "Select Protection Level": "gou boux bauhgoz daengj",
+  "Save Settings": "baenj goj naj caez"
 }

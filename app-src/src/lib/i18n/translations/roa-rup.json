@@ -61,7 +61,6 @@
   "Hidden": "Ascumtu",
   "Watermarked": "Cu Filigranâ",
   "Cannot be saved": "Nu poati s'hibă tsânutu",
-  "No password": "Fără parolă",
   "No albums found": "Nu s'aflã albume",
   "Created": "Creatu",
   "Updated": "Actualizată",
@@ -267,5 +266,17 @@
   "Confirm Change": "Adivirã Mutarea",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivelili plãcuti au albume fãrã limitã shi sunt limitati numa tu vistisiri. Actualizãrili includ credit pro-rata tu caslu nu aduratu.",
   "Save To 6180": "Păstrează Tu 6180",
-  "Open On Phone": "Dishclje Tu Telefon"
+  "Open On Phone": "Dishclje Tu Telefon",
+  "Will use \"password\" as default": "Va adhibi \"password\" cum di failit",
+  "No Password": "Fără Parolă",
+  "Preparing": "Gãteashti",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configurare apãrãrie cu cuventul parã albumlu tou. Alege cum vrei s'ngãleashti trãnsul la fotãlji tali.",
+  "Enter password (optional)": "Bagai parola (opsional)",
+  "Album will be completely hidden until correct password is entered": "Albumul va fi ascunsu cu totul pânã cându parola adevãratã va fi bãgatã",
+  "Photos will be visible with watermarks, password required to save": "Fotografiile va fi vizibile cu marcuri di apã, parola neceasarã ta sã s-salveze",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Va adupirã \"password\" ca-mprosãt daca s-lase goal",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Daca lãsati goalã câmpul tã parola, \"password\" va fi adupirã ca-mparola di ba. Apuceti s-u shkimbati ayista cãnd vreati ti paramitrii ali albumului.",
+  "💡 Password Protection Info:": "💡 Sţiri pri Apărarea di Zbor:",
+  "Select Protection Level": "Alege Nivelul di Apărare",
+  "Save Settings": "Ţin Aşedzărli"
 }

@@ -61,7 +61,6 @@
   "Hidden": "മറഞ്ഞിരിക്കുന്നു",
   "Watermarked": "ജല മുദ്രയുള്ള",
   "Cannot be saved": "സംരക്ഷിക്കാൻ കഴിയില്ല",
-  "No password": "പാസ്‌വേഡ് ഇല്ല",
   "No albums found": "ആൽബങ്ങളൊന്നും കണ്ടെത്തിയില്ല",
   "Created": "സൃഷ്ടിച്ചു",
   "Updated": "പുതുക്കിയത്",
@@ -267,5 +266,17 @@
   "Confirm Change": "മാറ്റം സ്ഥിരീകരിക്കുക",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "പണമടച്ചുള്ള ടയറുകൾക്ക് പരിധിയില്ലാത്ത ആൽബങ്ങളുണ്ട്, സ്റ്റോറേജ് മാത്രമാണ് പരിധി. അപ്‌ഗ്രേഡുകളിൽ ഉപയോഗിക്കാത്ത സമയത്തിന് പ്രോ-റാറ്റാ ക്രെഡിറ്റ് ഉൾപ്പെടുന്നു.",
   "Save To 6180": "6180-ൽ സേവ് ചെയ്യുക",
-  "Open On Phone": "ഫോണിൽ തുറക്കുക"
+  "Open On Phone": "ഫോണിൽ തുറക്കുക",
+  "Will use \"password\" as default": "ഡിഫോൾട്ടായി \"password\" ഉപയോഗിക്കും",
+  "No Password": "പാസ്‌വേഡ് ഇല്ല",
+  "Preparing": "തയ്യാറാക്കുന്നു",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "നിങ്ങളുടെ ആൽബത്തിനായി പാസ്‌വേഡ് സുരക്ഷ കോൺഫിഗർ ചെയ്യുക. നിങ്ങളുടെ ഫോട്ടോകളിലേക്കുള്ള ആക്‌സസ് എങ്ങനെ നിയന്ത്രിക്കണമെന്ന് തിരഞ്ഞെടുക്കുക.",
+  "Enter password (optional)": "പാസ്‌വേഡ് നൽകുക (ഓപ്ഷണൽ)",
+  "Album will be completely hidden until correct password is entered": "ശരിയായ പാസ്‌വേഡ് നൽകുന്നത് വരെ ആൽബം പൂർണ്ണമായും മറഞ്ഞിരിക്കും",
+  "Photos will be visible with watermarks, password required to save": "ഫോട്ടോകൾ വാട്ടർമാർക്കുകളോടെ ദൃശ്യമാകും, സേവ് ചെയ്യാൻ പാസ്‌വേഡ് ആവശ്യം",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ശൂന്യമായി വിട്ടാൽ \"password\" ഡിഫോൾട്ടായി ഉപയോഗിക്കും",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "നിങ്ങൾ പാസ്‌വേഡ് ഫീൽഡ് ശൂന്യമായി വിട്ടാൽ, \"password\" ഡിഫോൾട്ട് പാസ്‌വേഡായി ഉപയോഗിക്കും. ആൽബം സെറ്റിംഗുകളിൽ നിങ്ങൾക്ക് ഇത് എപ്പോൾ വേണമെങ്കിലും മാറ്റാം.",
+  "💡 Password Protection Info:": "💡 പാസ്‌വേഡ് സംരക്ഷണ വിവരങ്ങൾ:",
+  "Select Protection Level": "സംരക്ഷണ തലം തിരഞ്ഞെടുക്കുക",
+  "Save Settings": "ക്രമീകരണങ്ങൾ സംരക്ഷിക്കുക"
 }

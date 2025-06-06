@@ -61,7 +61,6 @@
   "Hidden": "ტყობილი",
   "Watermarked": "წყარიშ ნიშანით",
   "Cannot be saved": "ვეგიოხასჷ ჭყვიდუა",
-  "No password": "პაროლი ვარე",
   "No albums found": "ალბომეფი ვერ ძირუ",
   "Created": "ჩუანაფილი",
   "Updated": "გოახალაფილი",
@@ -267,5 +266,17 @@
   "Confirm Change": "ცვლილება დოწმუნებაფა",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ღირაფუნ კურდღებაზ უსაკუთრო ალბომეფი რენ დო მარტო მიწოდაფით დოფირუ რენ. განახალებაფი იჩქონთ პრო-რატა კრედიტი ნახარაფუ ქანაშენშა.",
   "Save To 6180": "6180-შა დოჭარი",
-  "Open On Phone": "ტელეფონშა გაღაბა"
+  "Open On Phone": "ტელეფონშა გაღაბა",
+  "Will use \"password\" as default": "\"password\" ნაგულისხმევი ქვამუ იშნღალუნს",
+  "No Password": "პაროლი არე",
+  "Preparing": "წყობა",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "კონფიგურაცია გიკეთანკუნ კუპია სიტყვაშ დოზაშ თქვან ალბომიშო. გირჩიანკუნ, მუშა გეჯინუთ შიზღუდანთ პირშქა თქვან ფოტოეფიშა.",
+  "Enter password (optional)": "ჩიაკ კუპია სიტყვა (არჩევითი)",
+  "Album will be completely hidden until correct password is entered": "ალბომი მთლიანად გიმალაფუ, მართალი პაროლი ვარ გაყანაფუ მუჟამადი",
+  "Photos will be visible with watermarks, password required to save": "ფოტოეფი ნახუმინჷმუნი წყალიშ ღირსშა, მართალი პაროლი მოუნდება თუნდარა",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ იხეთუ \"password\" ხვარძუნე ღუნაფაშუ ღოკუათუ ცარიელი კომუ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "მუჭოჲ პაროლიშ ვალი ცარიელი კომუთ, \"password\" ღუნოფენ ღუ ბუნერიღ პაროლო. ათე ალბომიშ პარამეტრეფშა შილებაშ ვალიუ ბოლებირინ ჩქინ ათე.",
+  "💡 Password Protection Info:": "💡 პაროლიშ დოჩამალი ინფორმაცია:",
+  "Select Protection Level": "აირჩე დოჩამალი რინგი",
+  "Save Settings": "ნაცუნები შენახე"
 }

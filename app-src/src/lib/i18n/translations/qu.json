@@ -61,7 +61,6 @@
   "Hidden": "Pakasqa",
   "Watermarked": "Yaku Unancha",
   "Cannot be saved": "Manam waqaychayta atinchu",
-  "No password": "Mana yaykuna rimayuq",
   "No albums found": "Mana ima albumkunapas tarisqachu",
   "Created": "Kamachisqa",
   "Updated": "Musuqchasqa",
@@ -267,5 +266,17 @@
   "Confirm Change": "Hukchasqata Takyachiy",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Qullqisqa kaqkuna mana tukusqa albumkunayuq kanku chaymanta waqaychanallawanmi saywasqa kanku. Musuqyachiykunaqa mana llamk'achisqa pachapaq huklla pro-rata qullqita churan.",
   "Save To 6180": "6180-man Waqaychay",
-  "Open On Phone": "Telefonopi Kichay"
+  "Open On Phone": "Telefonopi Kichay",
+  "Will use \"password\" as default": "\"Password\" nisqatam ñawpaq kaqman llamk'achisqa",
+  "No Password": "Mana Yaykuna Rimay",
+  "Preparing": "Wakichispa",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Album kaqniykipaq rimana hark'ay ruway. Imaynatas siq'ikuna kanalla kay munankita akllakuy.",
+  "Enter password (optional)": "Rimana ñitin haykuy (akllanalla)",
+  "Album will be completely hidden until correct password is entered": "Álbum ñawray pakakusqa kanqa allin rimay pasanankama churasqa",
+  "Photos will be visible with watermarks, password required to save": "Siq'ikuna yaku chimpaykunawan rikurikun kanqa, waqaychay paq rimay ñan kuchuna",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Ch'usaqta saqispaqa \"password\" ñawpaq hina llamk'achisqa kanqa",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Yaykuna rimay k'itita ch'usaq saqispayki, \"password\" ñawpaq yaykuna rimayhina llamk'achisqa kanqa. Kayqa albumpa churanakuyninpi ima pachapiñaykama t'ikrayta atinkiman.",
+  "💡 Password Protection Info:": "💡 Yaykanamanta Amachaymanta Willakuy:",
+  "Select Protection Level": "Amachaymanta Kaskayta Akllay",
+  "Save Settings": "Wakichana Kaqninta Waqaychay"
 }

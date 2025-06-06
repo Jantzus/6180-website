@@ -61,7 +61,6 @@
   "Hidden": "ዝተሓብአ",
   "Watermarked": "ማይ ምልክት ዘለዎ",
   "Cannot be saved": "ክዕቀብ ኣይክእልን",
-  "No password": "ምልክት ቃል የለን",
   "No albums found": "ምንም አልበም አልተገኘም",
   "Created": "ተፈጢሩ",
   "Updated": "ተሐዲሱ",
@@ -267,5 +266,17 @@
   "Confirm Change": "ለውጢ ኣረጋግጽ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "ክፍሊት ዝኽፈሎም ደረጃታት ዘይተወሰነ ኣልበማት ኣለዎም ብዕቃቦት ጥራይ ተወሲኖም። መሸማቐቑ ዘይተጠቐመሉ ግዜ ሚዛናዊ ክሬዲት የጠቓልል።",
   "Save To 6180": "ኣብ 6180 ሕሉፍ",
-  "Open On Phone": "ኣብ ተለፎን ክፈት"
+  "Open On Phone": "ኣብ ተለፎን ክፈት",
+  "Will use \"password\" as default": "ቀዳሚ ኮይኑ \"password\" ክጥቀም እዩ",
+  "No Password": "ክርምዝ የለን",
+  "Preparing": "ምድላው",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "ናይ መዝገብ ሰነዳትኩም ናይ ቁልፊ ቃል ሓለዋ ኣዋህሉ። ናይ ስእሊታትኩም ምእታው ከመይ ጌርኩም ክትድልዱ ከም እትደልዩ ምረጹ።",
+  "Enter password (optional)": "ቁልፊ ቃል ኣእቱ (ናይ ምርጫ)",
+  "Album will be completely hidden until correct password is entered": "ትክክለኛ መሕለፊ ቃል እስኪኣቱ ድረስ ዓይነተ መዝገብ ምሉእ ምሉእ ይሓብእ",
+  "Photos will be visible with watermarks, password required to save": "ስእልታት ብመለለዪ ማይ ክረኣያ እየን፣ ንምዕቃብ መሕለፊ ቃል የድሊ",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ ባዶ እንተ ተገዲፉ \"password\" ከም ነባሪ ክጥቀመሉ እዩ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "የይለፍ ቃል ሜዳ ባዶ እንተ ገዲፍካዮ \"password\" ከም ነባሪ ይለፍ ቃል ክጥቀመሉ እዩ። ንዚ ኣብ ኣልበም ምምሕዳር ኣብ ዝኾነ እዋን ክትቅይሮ ትኽእል ኢኻ።",
+  "💡 Password Protection Info:": "💡 ናይ መሕለፊ ቃል ምክልኻል ሓበሬታ:",
+  "Select Protection Level": "ደረጃ ምክልኻል ምረጽ",
+  "Save Settings": "ምግላጻት ኣቀምጥ"
 }

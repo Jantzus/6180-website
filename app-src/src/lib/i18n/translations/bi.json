@@ -61,7 +61,6 @@
   "Hidden": "Haed",
   "Watermarked": "Wota Makem",
   "Cannot be saved": "No save sevem",
-  "No password": "No gat password",
   "No albums found": "No albam i bin faenem",
   "Created": "Krietem",
   "Updated": "Apdeit",
@@ -267,5 +266,17 @@
   "Confirm Change": "Konfem Jenis",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Peid tia i gat planti albam we nomo storej i stopem. Apgred i gat pro-rata kredit long taem we i no bin yusim.",
   "Save To 6180": "Seivim Long 6180",
-  "Open On Phone": "Openem Long Fon"
+  "Open On Phone": "Openem Long Fon",
+  "Will use \"password\" as default": "Bae yusum \"password\" olsem difol",
+  "No Password": "No Gat Kopi",
+  "Preparing": "Redim",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Setemap passwod proteksen blong album blong yu. Jusum olsem wanem yu laik limidem akses long ol piksa blong yu.",
+  "Enter password (optional)": "Putim passwod (no olsem)",
+  "Album will be completely hidden until correct password is entered": "Album bae i stap haed gud gud kasem raet paswod i go insaed",
+  "Photos will be visible with watermarks, password required to save": "Foto ol i luk gud wetem wata mak, paswod i nid blong sev",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Bae yusum \"password\" olsem default sapos yu lef em nating",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Sapos yu lef password field i nating, \"password\" bae stap olsem namba wan password. Yu save jenis long eni taim long album settings.",
+  "💡 Password Protection Info:": "💡 Infomesen Blong Password Protection:",
+  "Select Protection Level": "Piki Protection Level",
+  "Save Settings": "Sev Settings"
 }

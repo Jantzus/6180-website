@@ -61,7 +61,6 @@
   "Hidden": "លាក់",
   "Watermarked": "មានក្បាច់ផ្ទៃទឹក",
   "Cannot be saved": "មិនអាចរក្សាទុកបានទេ",
-  "No password": "គ្មានពាក្យសម្ងាត់",
   "No albums found": "រកមិនឃើញអាល់ប៊ុមទេ",
   "Created": "បានបង្កើត",
   "Updated": "បានធ្វើបច្ចុប្បន្នភាព",
@@ -267,5 +266,17 @@
   "Confirm Change": "បញ្ជាក់ការផ្លាស់ប្តូរ",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "កម្រិតទូទាត់មានអាល់ប៊ុមគ្មានកំណត់ ហើយត្រូវបានកំណត់តែដោយការផ្ទុក។ ការធ្វើបច្ចុប្បន្នភាពរួមបញ្ចូលការទទួលស្គាល់តាមលក្ខណៈសម្រាប់ពេលវេលាមិនប្រើ។",
   "Save To 6180": "រក្សាទុកក្នុង 6180",
-  "Open On Phone": "បើកនៅលើទូរសព្ទ"
+  "Open On Phone": "បើកនៅលើទូរសព្ទ",
+  "Will use \"password\" as default": "នឹងប្រើ \"password\" ជាលំនាំដើម",
+  "No Password": "គ្មានពាក្យសម្ងាត់",
+  "Preparing": "កំពុងរៀបចំ",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "កំណត់ការការពារពាក្យសម្ងាត់សម្រាប់អាល់ប៊ុមរបស់អ្នក។ ជ្រើសរើសរបៀបដែលអ្នកចង់កំណត់ការចូលដំណើរការនៅក្នុងរូបថតរបស់អ្នក។",
+  "Enter password (optional)": "បញ្ចូលពាក្យសម្ងាត់ (ជម្រើស)",
+  "Album will be completely hidden until correct password is entered": "ប្រអប់រូបភាពនឹងត្រូវលាក់ទាំងស្រុងរហូតដល់បានបញ្ចូលពាក្យសម្ងាត់ដែលត្រឹមត្រូវ",
+  "Photos will be visible with watermarks, password required to save": "រូបភាពនឹងត្រូវបានមើលឃើញជាមួយនឹងសន្លាក់ទឹក ពាក្យសម្ងាត់ត្រូវការសម្រាប់រក្សាទុក",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ នឹងប្រើ \"password\" ជាលំនាំដើម ប្រសិនបើទុកទទេ",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ប្រសិនបើអ្នកទុកឱ្យគម្រោងពាក្យសម្ងាត់ទទេ \"password\" នឹងត្រូវបានប្រើជាពាក្យសម្ងាត់លំនាំដើម។ អ្នកអាចផ្លាស់ប្តូរវានៅពេលណាក៏បាននៅក្នុងការកំណត់អាល់ប៊ុម។",
+  "💡 Password Protection Info:": "💡 ព័ត៌មានការពារពាក្យសម្ងាត់:",
+  "Select Protection Level": "ជ្រើសរើសកម្រិតការពារ",
+  "Save Settings": "រក្សាទុកការកំណត់"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Celate",
   "Watermarked": "Filigranate",
   "Cannot be saved": "Non pote esser salveguardate",
-  "No password": "Nulle contrasigno",
   "No albums found": "Nulle albums trovate",
   "Created": "Create",
   "Updated": "Actualisate",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmar Cambio",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nivellos pagabile ha albumines illimitate e es limitate solmente per immagazinage. Actualisationes include credito pro-rata pro tempore non usate.",
   "Save To 6180": "Salveguardar A 6180",
-  "Open On Phone": "Aperir In Telephono"
+  "Open On Phone": "Aperir In Telephono",
+  "Will use \"password\" as default": "Usara \"password\" como predefinite",
+  "No Password": "Nulle Contrasigno",
+  "Preparing": "Preparation",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Configurar protection per contrasigno pro vostre album. Seliger como vos vole restringer le accesso a vostre photos.",
+  "Enter password (optional)": "Inserer contrasigno (optional)",
+  "Album will be completely hidden until correct password is entered": "Le album essera completemente celate usque le insertion del contrasigno correcte",
+  "Photos will be visible with watermarks, password required to save": "Le photos essera visibile con marcas de aqua, contrasigno necessari pro salvar",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Usara \"password\" como predefinite si lassate vacue",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si tu lassa le campo de contrasigno vacue, \"password\" essera usate como contrasigno predefinite. Tu pote cambiar isto in qualcunque momento in le parametros del album.",
+  "💡 Password Protection Info:": "💡 Information de Protection del Contrasigno:",
+  "Select Protection Level": "Selige le Nivello de Protection",
+  "Save Settings": "Salvar Configurationes"
 }

@@ -61,7 +61,6 @@
   "Hidden": "Catchî",
   "Watermarked": "Filigranêye",
   "Cannot be saved": "N' pout nén esse schapé",
-  "No password": "Nol sicret",
   "No albums found": "Nou album di trové",
   "Created": "Ahivé",
   "Updated": "Metou a djoû",
@@ -267,5 +266,17 @@
   "Confirm Change": "Confirmer l'Candjmint",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Les niveas ki payet ont des albums sins limite eyet n' sont limité ki pa l' wårdaedje. Les ramîdnaedjes inclut on crédit pro-rata pol tins nén eployî.",
   "Save To 6180": "Schaper Dins 6180",
-  "Open On Phone": "Drovî Sol Telefone"
+  "Open On Phone": "Drovî Sol Telefone",
+  "Will use \"password\" as default": "Va eployî \"password\" come premetou",
+  "No Password": "Nole Sicret Mot",
+  "Preparing": "Apareyaedje",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Apontyîz li protecsion avou scret-mot po vosse album. Tchoezixhoz ki manere ki vos vloz rastrinde l'accès a vos fotografies.",
+  "Enter password (optional)": "Tapez vosse scret-mot (a vosse tchoi)",
+  "Album will be completely hidden until correct password is entered": "Li albom srè catchî totafwait disk' li consecant scret",
+  "Photos will be visible with watermarks, password required to save": "Les imådjes sront veyåves avou des markes d'iawe, motscret divins po betchî",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Si siervrè di \"password\" come prémetou si on l'lèsse vude",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si vos lèssez vude li tchamp do scret, \"password\" sèrè eployî come scret prémetou. Vos l' ploz candjî tolminme dins l' apontiaedje di l' albom.",
+  "💡 Password Protection Info:": "💡 Informåcion di Waeryaedje di Mot di Passe:",
+  "Select Protection Level": "Tchoezi Livea d'Waeryaedje",
+  "Save Settings": "Schaper les Apontiaedjes"
 }

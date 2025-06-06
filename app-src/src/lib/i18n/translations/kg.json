@@ -61,7 +61,6 @@
   "Hidden": "Ya kubumbama",
   "Watermarked": "Na Kidimbu ya Maza",
   "Cannot be saved": "Lenda ve kubumba",
-  "No password": "Mpasi ya kinsakuba ve",
   "No albums found": "Album mosi ve kumoneka",
   "Created": "Salama",
   "Updated": "Me yidika",
@@ -267,5 +266,17 @@
   "Confirm Change": "Telisa Mbongolo",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Nsi ya difuta ikele zimbu zikulu za album ye zimbakana kaka ni kukumba. Mifulama ya minda kredit pro-rata mpo na nta yamana kosalelanga.",
   "Save To 6180": "Bika Na 6180",
-  "Open On Phone": "Fungula Na Telefone"
+  "Open On Phone": "Fungula Na Telefone",
+  "Will use \"password\" as default": "Kutumikisa \"password\" banga ya liboso",
+  "No Password": "Kua Mukanda Mpe",
+  "Preparing": "Kuvanduluka",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Bongisa nsadisi ya kialakala mu album ya yo. Sola ndenge olingi kozongisa bozui ya bilili bya yo.",
+  "Enter password (optional)": "Kota kialakala ya nsadisi (ku sosola)",
+  "Album will be completely hidden until correct password is entered": "Album kiela fioti ye mbazi ya kima tuka nkamba ya solo kiatula",
+  "Photos will be visible with watermarks, password required to save": "Foto zidi mona ye makambu ya maza, nkamba ya nsolo luzolo mu kenzeka",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Kela salela \"password\" bonso ya makambo ka vo tuka ki",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Kansi kau bika tuku kienga mpe mayutu nkanda, \"password\" kekala wonga ko ntambua ya makambo. Kau mpe kila ndakisa yai mu bitubu ya album.",
+  "💡 Password Protection Info:": "💡 Makambo ma Kobatela Nkombo ya Nseka:",
+  "Select Protection Level": "Pona Ndelo ya Kobatela",
+  "Save Settings": "Baka Mikanda mia Botyoli"
 }

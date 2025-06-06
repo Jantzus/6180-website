@@ -61,7 +61,6 @@
   "Hidden": "Gitago",
   "Watermarked": "Giulohan sa Tubig",
   "Cannot be saved": "Dili mahimong matipigan",
-  "No password": "Walay password",
   "No albums found": "Walay mga album nga nakit-an",
   "Created": "Gimugna",
   "Updated": "Gi-update",
@@ -267,5 +266,17 @@
   "Confirm Change": "Kompirma ang Kausaban",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ang bayad nga mga tier adunay walay kinutuban nga mga album ug limitado ra sa storage. Ang mga upgrade naglakip ug pro-rata credit para sa wala gigamit nga oras.",
   "Save To 6180": "Luwas Sa 6180",
-  "Open On Phone": "Abriha Sa Telepono"
+  "Open On Phone": "Abriha Sa Telepono",
+  "Will use \"password\" as default": "Gamiton ang \"password\" isip default",
+  "No Password": "Walay Password",
+  "Preparing": "Nag-andam",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "I-configure ang password protection para sa imong album. Pilia kung unsaon nimo paglimite ang access sa imong mga litrato.",
+  "Enter password (optional)": "Isulod ang password (opsyonal)",
+  "Album will be completely hidden until correct password is entered": "Ang album motago sa hingpit hangtod ang hustong password ang masulod",
+  "Photos will be visible with watermarks, password required to save": "Ang mga litrato makita nga adunay watermark, password gikinahanglan aron ma-save",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Gamiton ang \"password\" isip default kon walay gi-input",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Kon biyaan mo nga walay sulod ang password field, gamiton ang \"password\" isip default nga password. Pwede nimo kini usbon bisan anus-a sa album settings.",
+  "💡 Password Protection Info:": "💡 Impormasyon sa Proteksyon sa Password:",
+  "Select Protection Level": "Pilia ang Protection Level",
+  "Save Settings": "I-save ang mga Setting"
 }

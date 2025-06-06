@@ -61,7 +61,6 @@
   "Hidden": "Kufihliwe",
   "Watermarked": "Okuphawulwe Ngamanzi",
   "Cannot be saved": "Ngeke kulondolozwe",
-  "No password": "Ayikho iphasiwedi",
   "No albums found": "Ama-albhamu awafikanga",
   "Created": "Kwenziwe",
   "Updated": "Isibuyekeziwe",
@@ -267,5 +266,17 @@
   "Confirm Change": "Qinisekisa Ukushintsha",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Amanqanaba akhokhelwayo ane-albhamu ezingapheli futhi avimelwe ukugcinwa kuphela. Ukuthuthukiswa kufaka ikhredithi ye-pro-rata yesikhathi esingasebenziswanga.",
   "Save To 6180": "Londoloza Ku-6180",
-  "Open On Phone": "Vula Ku-Foni"
+  "Open On Phone": "Vula Ku-Foni",
+  "Will use \"password\" as default": "Izosetshenziswa \"password\" njengesivamile",
+  "No Password": "Ayikho Iphasiwedi",
+  "Preparing": "Ukulungiselela",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Hlela ukuvikelwa kwephasiwedi lwealbhamu lakho. Khetha ukuthi ufuna kanjani ukunqanda ukufinyelela kuzithombe zakho.",
+  "Enter password (optional)": "Faka iphasiwedi (ongakhetha)",
+  "Album will be completely hidden until correct password is entered": "I-albhamu izofihla ngokuphelele kuze kufakwe i-password efanele",
+  "Photos will be visible with watermarks, password required to save": "Izithombe zizobonakala nezimpawu zamanzi, i-password idingeka ukuze kugcinwe",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Kuyosebenzisa \"password\" njengokumisiwe uma kushiywa kungenalutho",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Uma ushiya inkambu ye-password ingenalutho, \"password\" izosetshenziswa njenge-password emisiwe. Ungayiguqula nganoma nini kuzilungiselelo ze-albhamu.",
+  "💡 Password Protection Info:": "💡 Ulwazi lokuVikela iPhasiwedi:",
+  "Select Protection Level": "Khetha Izinga lokuVikela",
+  "Save Settings": "Londoloza Amasethingi"
 }

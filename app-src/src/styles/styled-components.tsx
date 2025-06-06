@@ -1331,8 +1331,18 @@ export const FileInfo = styled.div`
 export const LegalLinksFooter = styled.div`
   text-align: center;
   padding: ${theme.spacing.md};
+  /* Add safe area padding for mobile devices */
+  padding-bottom: max(${theme.spacing.md}, env(safe-area-inset-bottom));
+  padding-bottom: max(${theme.spacing.md}, constant(safe-area-inset-bottom));
   font-size: 0.9em;
   color: ${theme.colors.text.secondary};
+  
+  /* Ensure the footer doesn't get cut off on very short screens */
+  ${mobile(`
+    padding: ${theme.spacing.sm};
+    padding-bottom: max(${theme.spacing.sm}, env(safe-area-inset-bottom));
+    padding-bottom: max(${theme.spacing.sm}, constant(safe-area-inset-bottom));
+  `)}
 `;
 
 export const LegalLinkFooterButton = styled.a<{ $isHovered?: boolean }>`

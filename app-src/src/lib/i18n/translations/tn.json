@@ -61,7 +61,6 @@
   "Hidden": "E fitlhilwe",
   "Watermarked": "Ka Letshwao la Metsi",
   "Cannot be saved": "Ga e kitla e bewa",
-  "No password": "Ga go na khunololamoraba",
   "No albums found": "Ga go na di-album tse di bonweng",
   "Created": "E tlhodilwe",
   "Updated": "E ntšhwafaditswe",
@@ -267,5 +266,17 @@
   "Confirm Change": "Netefatsa Diphetogo",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maemo a a lefelaago a na le dialbamo tse di sa fele mme a feleletswe ke polokelo fela. Ditokafatso di akaretsa kreiti ya pro-rata ya nako e e sa dirisiwang.",
   "Save To 6180": "Boloka Go 6180",
-  "Open On Phone": "Bula Go Telefone"
+  "Open On Phone": "Bula Go Telefone",
+  "Will use \"password\" as default": "E tla dirisa \"password\" jaaka tlwaelo",
+  "No Password": "Ga Go Na Password",
+  "Preparing": "Go Baakanya",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Beakanya tshireletso ya phasewoto ya albamo ya gago. Tlhopha gore o batla go thibela jang phitlhelelo go ditshwantsho tsa gago.",
+  "Enter password (optional)": "Tsenya phasewoto (kgetho)",
+  "Album will be completely hidden until correct password is entered": "Albamo e tla fihlwa ka botlalo go fitlha go tsenngwa password e nepahetseng",
+  "Photos will be visible with watermarks, password required to save": "Ditshwantsho di tla bonagala ka matshwao a metsi, password e a tlhokafala go boloka",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ E tla dirisa \"password\" jaaka tlwaelo fa e sietswe e se na sepe",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Fa o siee lefelo la password le se na sepe, \"password\" e tla dirisiwa jaaka password ya tlwaelo. O ka e fetola mo nakong efe kapa efe mo ditheong tsa album.",
+  "💡 Password Protection Info:": "💡 Tshedimosetso ya Sireletso ya Password:",
+  "Select Protection Level": "Tlhopha Seelo sa Sireletso",
+  "Save Settings": "Boloka Ditirelo"
 }

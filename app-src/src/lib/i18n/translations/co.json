@@ -61,7 +61,6 @@
   "Hidden": "Ammucciatu",
   "Watermarked": "Marcatu d'Acqua",
   "Cannot be saved": "Ùn pò micca esse arregistratu",
-  "No password": "Nisunu password",
   "No albums found": "Nisunu album trovu",
   "Created": "Creatu",
   "Updated": "Aghjurnatu",
@@ -267,5 +266,17 @@
   "Confirm Change": "Cunfirmà u Cambiamentu",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "I livelli pagati anu album illimitati è sò limitati solu da u magazinu. L'aghjurnamenti includenu creditu pro-rata per u tempu micca utilizatu.",
   "Save To 6180": "Salvà In 6180",
-  "Open On Phone": "Apri In U Telefonu"
+  "Open On Phone": "Apri In U Telefonu",
+  "Will use \"password\" as default": "Aduprà \"password\" cum'è predefinitu",
+  "No Password": "Micca Parolle",
+  "Preparing": "Priparazione",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Cunfigurate a prutezione di a parolla d'accessu per u vostru album. Scegliete cumu vulite limità l'accessu à e vostre foto.",
+  "Enter password (optional)": "Scrivite a parolla d'accessu (ozionale)",
+  "Album will be completely hidden until correct password is entered": "L'album serà nascotu cumpletamente finu à chì a password curretta ùn hè micca intrata",
+  "Photos will be visible with watermarks, password required to save": "E foto seranu visibili cù e marche d'acqua, un password hè necessariu per salvà",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Aduprà \"password\" cum'è predefinitu s'ellu hè lasciatu viotu",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "S'è lasciate viotu u campu di password, \"password\" sarà adupratu cum'è password predefinita. Pudete cambià questu in ogni mumentu in i parametri di l'album.",
+  "💡 Password Protection Info:": "💡 Infurmazione di Prutezzione Password:",
+  "Select Protection Level": "Sceglie u Livellu di Prutezzione",
+  "Save Settings": "Salvà e Preferenze"
 }

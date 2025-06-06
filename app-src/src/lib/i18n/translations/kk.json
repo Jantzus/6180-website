@@ -61,7 +61,6 @@
   "Hidden": "Жасырын",
   "Watermarked": "Су Таңбаланған",
   "Cannot be saved": "Сақтау мүмкін емес",
-  "No password": "Құпия сөз жоқ",
   "No albums found": "Альбомдар табылмады",
   "Created": "Жасалған",
   "Updated": "Жаңартылды",
@@ -267,5 +266,17 @@
   "Confirm Change": "Өзгерісті Растаңыз",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Ақылы деңгейлерде шексіз альбомдар бар және тек сақтаумен шектеледі. Жаңартулар пайдаланылмаған уақыт үшін пропорционалды несие қамтиды.",
   "Save To 6180": "6180-ге Сақтау",
-  "Open On Phone": "Телефонда Ашу"
+  "Open On Phone": "Телефонда Ашу",
+  "Will use \"password\" as default": "\"Password\" негізгі ретінде қолданады",
+  "No Password": "Пароль Жоқ",
+  "Preparing": "Дайындау",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Альбомыңыз үшін құпия сөз қорғанысын конфигурациялаңыз. Суреттеріңізге қатынауды қалай шектегіңіз келетінін таңдаңыз.",
+  "Enter password (optional)": "Құпия сөзді енгізіңіз (міндетті емес)",
+  "Album will be completely hidden until correct password is entered": "Дұрыс пароль енгізілгенше альбом толықтай жасырын болады",
+  "Photos will be visible with watermarks, password required to save": "Фотосуреттер су белгілерімен көрінеді, сақтау үшін пароль керек",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ Бос қалдырылса \"password\" негізгі ретінде қолданылады",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Егер сіз құпия сөз өрісін бос қалдырсаңыз, \"password\" негізгі құпия сөз ретінде қолданылады. Мұны альбом баптауларында кез келген уақытта өзгерте аласыз.",
+  "💡 Password Protection Info:": "💡 Құпия Сөз Қорғау Ақпараты:",
+  "Select Protection Level": "Қорғау Деңгейін Таңдаңыз",
+  "Save Settings": "Баптауларды Сақтау"
 }

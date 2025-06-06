@@ -61,7 +61,6 @@
   "Hidden": "Khutilwe",
   "Watermarked": "Ka Leswao la Meetse",
   "Cannot be saved": "Ga e kgone go bolokwa",
-  "No password": "Ga go na phasewete",
   "No albums found": "Ga go na di-album tše di hweditšwego",
   "Created": "Hlamilwe",
   "Updated": "E mpshafaditšwe",
@@ -267,5 +266,17 @@
   "Confirm Change": "Netefatša Phetogo",
   "Paid tiers have unlimited albums and are limited only by storage. Upgrades include pro-rata credit for unused time.": "Maemo a go lefšwa a na le di-album tše di se nago moedi gomme a fetolwa fela ke polokelo. Dikatlego di akaretša sekoloto sa pro-rata sa nako ye e se dirišwago.",
   "Save To 6180": "Boloka Go 6180",
-  "Open On Phone": "Bula Go Telefone"
+  "Open On Phone": "Bula Go Telefone",
+  "Will use \"password\" as default": "E tla šomiša \"password\" bjalo ka tlwaelo",
+  "No Password": "Ga Go Na Password",
+  "Preparing": "Go Baakanya",
+  "Configure password protection for your album. Choose how you want to restrict access to your photos.": "Beakanya tšhireletšo ya phasewoto ya albamo ya gago. Kgetha ka moo o nyakago go lekanya phihlelelo go diswantšho tša gago.",
+  "Enter password (optional)": "Tsenya phasewoto (yo e kgethilwego)",
+  "Album will be completely hidden until correct password is entered": "Albamo e tla fifatšwa ka botlalo go fihlela o kwala password ya maleba",
+  "Photos will be visible with watermarks, password required to save": "Dinepe di tla bonagala ka disemane tša meetse, password e a nyakwa go boloka",
+  "⚠️ Will use \"password\" as default if left empty": "⚠️ E tla šomiša \"password\" bjalo ka sehlongwa ge e tswalela lefela",
+  "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ge e ba o tswalela le password field e se na selo, \"password\" e tla šomišwa bjalo ka sehlongwa sa password. O ka fetola se neng le neng mo ditekong tša album.",
+  "💡 Password Protection Info:": "💡 Tshedimošo ya Tšhireletšo ya Password:",
+  "Select Protection Level": "Kgetha Tekanyo ya Tšhireletšo",
+  "Save Settings": "Boloka Dipeakanyo"
 }
