@@ -1331,18 +1331,25 @@ export const FileInfo = styled.div`
 export const LegalLinksFooter = styled.div`
   text-align: center;
   padding: ${theme.spacing.md};
-  /* Add safe area padding for mobile devices */
-  padding-bottom: max(${theme.spacing.md}, env(safe-area-inset-bottom));
-  padding-bottom: max(${theme.spacing.md}, constant(safe-area-inset-bottom));
   font-size: 0.9em;
   color: ${theme.colors.text.secondary};
   
-  /* Ensure the footer doesn't get cut off on very short screens */
-  ${mobile(`
+  /* Progressive enhancement - start with safe-area, add mobile offset */
+  padding-bottom: env(safe-area-inset-bottom, ${theme.spacing.md});
+  padding-bottom: constant(safe-area-inset-bottom, ${theme.spacing.md});
+  
+  @media (max-width: 768px) {
+    /* Add extra padding for mobile browser controls */
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 30px);
+    padding-bottom: calc(constant(safe-area-inset-bottom, 0px) + 30px);
+  }
+  
+  @media (max-width: 480px) {
     padding: ${theme.spacing.sm};
-    padding-bottom: max(${theme.spacing.sm}, env(safe-area-inset-bottom));
-    padding-bottom: max(${theme.spacing.sm}, constant(safe-area-inset-bottom));
-  `)}
+    /* More conservative for small screens */
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 40px);
+    padding-bottom: calc(constant(safe-area-inset-bottom, 0px) + 40px);
+  }
 `;
 
 export const LegalLinkFooterButton = styled.a<{ $isHovered?: boolean }>`

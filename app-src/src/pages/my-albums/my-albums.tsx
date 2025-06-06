@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useCallback } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -23,10 +23,10 @@ import { LazyImage } from "@/components/LazyImage";
 
 // Import custom hooks and utilities
 import { useFolderManagement } from "./utils";
-import { S3_BUCKET_URL } from "@/lib/config";
 
 // Constants
 const FREE_TIER_STORAGE_LIMIT_GB = 10;
+const MAX_PREVIEW_IMAGES = 3; // Limit preview images to reduce bandwidth
 
 // Helper function to convert bytes to GB
 const bytesToGB = (bytes: number): number => {
@@ -38,7 +38,7 @@ const formatGB = (gb: number): string => {
   return gb < 1 ? `${Math.round(gb * 1000)} MB` : `${gb.toFixed(1)} GB`;
 };
 
-// Helper function to get albums that should be marked for deletion
+// Memoized helper function to get albums that should be marked for deletion
 const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedBytesUsed: number): any[] => {
   // Return empty array if subscriptionInfo is not loaded yet
   if (!subscriptionInfo) {
@@ -132,8 +132,8 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
   return albumsToDelete;
 };
 
-// Component to display albums marked for deletion with visual preview
-const AlbumDeletionPreview = ({ 
+// Optimized component to display albums marked for deletion with LIMITED image previews
+const AlbumDeletionPreview = React.memo(({ 
   albumsToDelete, 
   isRTL 
 }: { 
@@ -215,7 +215,7 @@ const AlbumDeletionPreview = ({
               </div>
             )}
 
-            {/* Photo gallery preview */}
+            {/* LIMITED Photo gallery preview - ONLY show first few images */}
             <div style={{ width: '100%', position: 'relative' }}>
               <div style={{
                 display: 'flex',
@@ -228,7 +228,8 @@ const AlbumDeletionPreview = ({
                 maxWidth: '100%',
                 flexDirection: isRTL ? "row-reverse" : "row"
               }}>
-                {folder.files.map((file: any, i: number) => (
+                {/* BANDWIDTH FIX: Only show first MAX_PREVIEW_IMAGES files */}
+                {folder.files.slice(0, MAX_PREVIEW_IMAGES).map((file: any, i: number) => (
                   <div key={i} style={{
                     width: '160px',
                     height: '100px',
@@ -239,9 +240,9 @@ const AlbumDeletionPreview = ({
                     border: '2px solid #dc3545'
                   }}>
                     <LazyImage
+                      // BANDWIDTH FIX: Only pass necessary props, avoid redundant src
                       thumbnailDataKey={file.thumbnailDataKey}
                       dataKey={file.dataKey}
-                      src={`${S3_BUCKET_URL}${file.thumbnailDataKey || file.dataKey}`}
                       alt={t('Thumbnail')}
                       style={{
                         width: '100%',
@@ -267,10 +268,31 @@ const AlbumDeletionPreview = ({
                     </div>
                   </div>
                 ))}
+                
+                {/* Show indicator if there are more files */}
+                {folder.files.length > MAX_PREVIEW_IMAGES && (
+                  <div style={{
+                    width: '160px',
+                    height: '100px',
+                    flexShrink: 0,
+                    position: 'relative',
+                    borderRadius: '6px',
+                    border: '2px dashed #dc3545',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: '#f8f9fa',
+                    color: '#dc3545',
+                    fontSize: '14px',
+                    fontWeight: 'bold'
+                  }}>
+                    +{folder.files.length - MAX_PREVIEW_IMAGES} more
+                  </div>
+                )}
               </div>
               
               {/* Gradient overlay for scrolling indication */}
-              {folder.files.length > 3 && (
+              {folder.files.length > 2 && (
                 <div style={{
                   position: 'absolute',
                   [isRTL ? "left" : "right"]: 0,
@@ -289,10 +311,10 @@ const AlbumDeletionPreview = ({
       ))}
     </div>
   );
-};
+});
 
-// Storage message component
-const StorageMessage = ({ 
+// MEMOIZED Storage message component
+const StorageMessage = React.memo(({ 
   subscriptionInfo, 
   albumCount, 
   folders,
@@ -315,8 +337,11 @@ const StorageMessage = ({
   const { intNumberOfSubscriptions } = subscriptionInfo;
   const usedGB = bytesToGB(calculatedBytesUsed);
   
-  // Get albums that should be marked for deletion
-  const albumsToDelete = getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed);
+  // MEMOIZED: Get albums that should be marked for deletion
+  const albumsToDelete = useMemo(() => 
+    getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed),
+    [folders, subscriptionInfo, calculatedBytesUsed]
+  );
   
   // Determine which message to show based on conditions
   let messageType: 'free-space' | 'free-count-exceeded' | 'free-storage-exceeded' | 'free-both-exceeded' | 'paid-warning' | 'paid-exceeded' | 'none' = 'none';
@@ -410,7 +435,7 @@ const StorageMessage = ({
       </div>
     </div>
   );
-};
+});
 
 const MyAlbums = () => {
   // Get translation function from the hook for the main component
@@ -433,12 +458,22 @@ const MyAlbums = () => {
     calculatedBytesUsed
   } = useFolderManagement((message: string) => log(message));
   
-  // Get albums that should be marked for deletion (only if subscriptionInfo is loaded)
-  const albumsToDelete = subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed) : [];
-  const albumsToDeleteIds = new Set(albumsToDelete.map(album => album.folderId));
+  // MEMOIZED: Get albums that should be marked for deletion (only if subscriptionInfo is loaded)
+  const albumsToDelete = useMemo(() => 
+    subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed) : [],
+    [folders, subscriptionInfo, calculatedBytesUsed]
+  );
   
-  // Filter out albums marked for deletion from the main list
-  const displayFolders = filteredFolders.filter(folder => !albumsToDeleteIds.has(folder.folderId));
+  const albumsToDeleteIds = useMemo(() => 
+    new Set(albumsToDelete.map(album => album.folderId)),
+    [albumsToDelete]
+  );
+  
+  // MEMOIZED: Filter out albums marked for deletion from the main list
+  const displayFolders = useMemo(() =>
+    filteredFolders.filter(folder => !albumsToDeleteIds.has(folder.folderId)),
+    [filteredFolders, albumsToDeleteIds]
+  );
   
   // Directly integrate the file upload processor hook
   const fileUploadProcessor = useFileUploadProcessor((folderId) => {
@@ -454,22 +489,22 @@ const MyAlbums = () => {
   const {
     fileInputRef,
     isUploading,
-    isProcessingFiles, // NEW: Get the processing state
+    isProcessingFiles,
     progressTracker,
     debugMessages,
     log
   } = fileUploadProcessor;
 
-  // Specialized open file picker for album upload
-  const openFilePicker = (folderId: string | null = null) => {
+  // MEMOIZED: Specialized open file picker for album upload
+  const openFilePicker = useCallback((folderId: string | null = null) => {
     // Use the shared file picker
     fileUploadProcessor.openFilePicker(folderId);
-  };
+  }, [fileUploadProcessor]);
 
-  // Specialized file selection handler that passes the cognitoUsername
-  const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  // MEMOIZED: Specialized file selection handler that passes the cognitoUsername
+  const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
     return await fileUploadProcessor.handleFileSelection(e, cognitoUsername);
-  };
+  }, [fileUploadProcessor, cognitoUsername]);
 
   return (
     <>
@@ -489,7 +524,7 @@ const MyAlbums = () => {
         }}>
           <NewAlbumButton
             isUploading={isUploading}
-            isProcessingFiles={isProcessingFiles} // NEW: Pass the processing state
+            isProcessingFiles={isProcessingFiles}
             openFilePicker={openFilePicker}
             t={t}
             isRTL={isRTL}
@@ -500,27 +535,27 @@ const MyAlbums = () => {
             <a 
               href={generateUrl("storage/manage.html")}
               style={{
-                fontSize: "14px", // Match button text size
-                color: "#007bff", // Traditional hyperlink blue
-                fontWeight: "500", // Match button weight
+                fontSize: "14px",
+                color: "#007bff",
+                fontWeight: "500",
                 whiteSpace: "nowrap",
-                textDecoration: "underline", // Traditional hyperlink underline
+                textDecoration: "underline",
                 transition: "color 0.2s ease",
                 lineHeight: "1.5",
-                marginTop: "2px", // Fine-tune vertical alignment
+                marginTop: "2px",
                 cursor: "pointer"
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#0056b3"; // Darker blue on hover
+                e.currentTarget.style.color = "#0056b3";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#007bff"; // Back to original blue
+                e.currentTarget.style.color = "#007bff";
               }}
             >
               {formatGB(bytesToGB(calculatedBytesUsed))} / {
                 subscriptionInfo.intNumberOfSubscriptions === 0 
-                  ? FREE_TIER_STORAGE_LIMIT_GB // Free tier gets 10GB
-                  : subscriptionInfo.intNumberOfSubscriptions * 10 // Paid tier: 10GB per subscription
+                  ? FREE_TIER_STORAGE_LIMIT_GB
+                  : subscriptionInfo.intNumberOfSubscriptions * 10
               } GB
             </a>
           )}
@@ -557,7 +592,7 @@ const MyAlbums = () => {
             <UploadProgress 
               progressTracker={progressTracker}
               isUploading={isUploading}
-              isProcessingFiles={isProcessingFiles} // NEW: Pass the processing state
+              isProcessingFiles={isProcessingFiles}
               isRTL={getLanguageDirection(language) === "rtl"}
               style={{ marginTop: '20px' }}
               showSuccessMessage={true}

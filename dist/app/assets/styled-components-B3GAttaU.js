@@ -1,4 +1,4 @@
-import{aD as g,aE as e,d as i}from"./utils-BWKm1BUC.js";const o={colors:{primary:"#007bff",primaryDark:"#0056b3",success:"#4caf50",danger:"#e53935",warning:"#ff9800",info:"#2196f3",gray:"#8c8c8c",grayLight:"#e0e0e0",grayLighter:"#f0f0f0",white:"#fff",black:"#000",overlay:"rgba(0, 0, 0, 0.7)",overlayLight:"rgba(0, 0, 0, 0.5)",border:"#ddd",borderLight:"#eaeaea",text:{primary:"#333",secondary:"#666",light:"#777",lighter:"#999",white:"#fff"},background:{primary:"#f9fafb",card:"#fff",highlight:"#f0f7ff",error:"#fdeded"},highlight:{border:"#cce0ff",error:"#f7d0d0"}},spacing:{xs:"4px",sm:"8px",md:"16px",xl:"32px"},borderRadius:{small:"4px",medium:"8px",large:"16px",circle:"50%"},fontSizes:{xs:"12px",sm:"14px",md:"16px",lg:"18px",xxl:"24px"},boxShadow:{sm:"0 1px 2px rgba(0,0,0,0.06)",md:"0 1px 3px rgba(0,0,0,0.1)",xl:"0 8px 24px rgba(0,0,0,0.2)",primaryBtn:"0 4px 12px rgba(0, 123, 255, 0.2)",selection:"0 2px 4px rgba(0, 0, 0, 0.2)",textShadow:"0 0 5px rgba(0, 0, 0, 0.8)"},breakpoints:{mobile:"767px"}},h=g`
+import{aD as p,aE as e,d as i}from"./utils-CF8TLIZ8.js";const o={colors:{primary:"#007bff",primaryDark:"#0056b3",success:"#4caf50",danger:"#e53935",warning:"#ff9800",info:"#2196f3",gray:"#8c8c8c",grayLight:"#e0e0e0",grayLighter:"#f0f0f0",white:"#fff",black:"#000",overlay:"rgba(0, 0, 0, 0.7)",overlayLight:"rgba(0, 0, 0, 0.5)",border:"#ddd",borderLight:"#eaeaea",text:{primary:"#333",secondary:"#666",light:"#777",lighter:"#999",white:"#fff"},background:{primary:"#f9fafb",card:"#fff",highlight:"#f0f7ff",error:"#fdeded"},highlight:{border:"#cce0ff",error:"#f7d0d0"}},spacing:{xs:"4px",sm:"8px",md:"16px",xl:"32px"},borderRadius:{small:"4px",medium:"8px",large:"16px",circle:"50%"},fontSizes:{xs:"12px",sm:"14px",md:"16px",lg:"18px",xxl:"24px"},boxShadow:{sm:"0 1px 2px rgba(0,0,0,0.06)",md:"0 1px 3px rgba(0,0,0,0.1)",xl:"0 8px 24px rgba(0,0,0,0.2)",primaryBtn:"0 4px 12px rgba(0, 123, 255, 0.2)",selection:"0 2px 4px rgba(0, 0, 0, 0.2)",textShadow:"0 0 5px rgba(0, 0, 0, 0.8)"},breakpoints:{mobile:"767px"}},h=p`
   @keyframes loadingAnimation {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
@@ -78,7 +78,7 @@ import{aD as g,aE as e,d as i}from"./utils-BWKm1BUC.js";const o={colors:{primary
   opacity: ${t=>t.disabled||t.$isDisabled?.6:1};
   transition: all 0.2s ease;
   border-radius: ${o.borderRadius.medium};
-`,p=e`
+`,g=e`
   position: absolute;
   top: 0;
   left: 0;
@@ -87,7 +87,7 @@ import{aD as g,aE as e,d as i}from"./utils-BWKm1BUC.js";const o={colors:{primary
   display: flex;
   justify-content: center;
   align-items: center;
-`,f=i.div`
+`,b=i.div`
   max-width: 1200px;
   margin: auto;
   background: ${o.colors.background.primary};
@@ -103,7 +103,7 @@ import{aD as g,aE as e,d as i}from"./utils-BWKm1BUC.js";const o={colors:{primary
   ${r(`
     padding: ${o.spacing.sm};
   `)}
-`,b=i.div`
+`,f=i.div`
   padding: ${o.spacing.md};
   background-color: ${o.colors.background.primary};
   min-height: 100vh;
@@ -605,13 +605,13 @@ import{aD as g,aE as e,d as i}from"./utils-BWKm1BUC.js";const o={colors:{primary
   max-width: 100%;
   max-height: 100%;
   border-radius: ${o.borderRadius.medium};
-`,go=i.video`
+`,po=i.video`
   max-width: 100%;
   max-height: 100%;
   border-radius: ${o.borderRadius.medium};
 `;i.div`
   position: relative;
-`;const po=i.div`
+`;const go=i.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -623,7 +623,7 @@ import{aD as g,aE as e,d as i}from"./utils-BWKm1BUC.js";const o={colors:{primary
   z-index: 0;
   border-radius: ${o.borderRadius.medium};
 `,mo=i.div`
-  ${p}
+  ${g}
   background-color: ${t=>t.$type==="loading"?o.colors.overlayLight:"transparent"};
   z-index: ${t=>t.$type==="loading"?4:5};
   color: ${t=>t.$type==="loading"?o.colors.white:"inherit"};
@@ -655,13 +655,13 @@ import{aD as g,aE as e,d as i}from"./utils-BWKm1BUC.js";const o={colors:{primary
   ${t=>t.$left&&`left: ${t.$left};`}
   ${t=>t.$right&&`right: ${t.$right};`}
   ${t=>t.$bottom&&t.$left&&t.$right&&"position: absolute;"}
-`,fo=i.div`
+`,bo=i.div`
   height: 100%;
   background-color: ${t=>t.$status==="processing"?o.colors.warning:t.$status==="error"?o.colors.danger:t.$status==="complete"?o.colors.success:o.colors.info};
   border-radius: ${o.borderRadius.small};
   transition: width 0.3s ease;
   width: ${t=>(t.$progress||0)*100}%;
-`,bo=i.div`
+`,fo=i.div`
   font-size: ${o.fontSizes.sm};
   margin-bottom: ${o.spacing.sm};
 `,uo=i.div`
@@ -912,18 +912,25 @@ import{aD as g,aE as e,d as i}from"./utils-BWKm1BUC.js";const o={colors:{primary
 `,Wo=i.div`
   text-align: center;
   padding: ${o.spacing.md};
-  /* Add safe area padding for mobile devices */
-  padding-bottom: max(${o.spacing.md}, env(safe-area-inset-bottom));
-  padding-bottom: max(${o.spacing.md}, constant(safe-area-inset-bottom));
   font-size: 0.9em;
   color: ${o.colors.text.secondary};
   
-  /* Ensure the footer doesn't get cut off on very short screens */
-  ${r(`
+  /* Progressive enhancement - start with safe-area, add mobile offset */
+  padding-bottom: env(safe-area-inset-bottom, ${o.spacing.md});
+  padding-bottom: constant(safe-area-inset-bottom, ${o.spacing.md});
+  
+  @media (max-width: 768px) {
+    /* Add extra padding for mobile browser controls */
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 30px);
+    padding-bottom: calc(constant(safe-area-inset-bottom, 0px) + 30px);
+  }
+  
+  @media (max-width: 480px) {
     padding: ${o.spacing.sm};
-    padding-bottom: max(${o.spacing.sm}, env(safe-area-inset-bottom));
-    padding-bottom: max(${o.spacing.sm}, constant(safe-area-inset-bottom));
-  `)}
+    /* More conservative for small screens */
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 40px);
+    padding-bottom: calc(constant(safe-area-inset-bottom, 0px) + 40px);
+  }
 `,No=i.a`
   margin: 0 ${o.spacing.sm};
   color: ${o.colors.text.secondary};
@@ -975,4 +982,4 @@ import{aD as g,aE as e,d as i}from"./utils-BWKm1BUC.js";const o={colors:{primary
   margin-bottom: ${o.spacing.md};
   display: flex;
   justify-content: flex-end;
-`;export{to as $,b as A,l as B,J as C,uo as D,wo as E,Go as F,h as G,B as H,ko as I,ro as J,ao as K,P as L,Q as M,G as N,mo as O,io as P,po as Q,E as R,Bo as S,Ao as T,so as U,go as V,Eo as W,no as X,Co as Y,So as Z,Ro as _,I as a,X as a0,Y as a1,K as a2,A as a3,F as a4,D as a5,vo as a6,M as a7,S as a8,R as a9,L as aa,C as ab,T as ac,j as ad,f as ae,w as af,y as ag,m as ah,k as ai,z as aj,v as ak,u as al,yo as am,U as an,V as ao,q as ap,Oo as aq,Z as ar,oo as as,_ as at,Vo as au,H as b,Wo as c,No as d,eo as e,To as f,co as g,lo as h,ho as i,fo as j,xo as k,bo as l,jo as m,Po as n,Io as o,Ho as p,Fo as q,Do as r,Mo as s,N as t,W as u,Uo as v,Lo as w,zo as x,$o as y,O as z};
+`;export{to as $,f as A,l as B,J as C,uo as D,wo as E,Go as F,h as G,B as H,ko as I,ro as J,ao as K,P as L,Q as M,G as N,mo as O,io as P,go as Q,E as R,Bo as S,Ao as T,so as U,po as V,Eo as W,no as X,Co as Y,So as Z,Ro as _,I as a,X as a0,Y as a1,K as a2,A as a3,F as a4,D as a5,vo as a6,M as a7,S as a8,R as a9,L as aa,C as ab,T as ac,j as ad,b as ae,w as af,y as ag,m as ah,k as ai,z as aj,v as ak,u as al,yo as am,U as an,V as ao,q as ap,Oo as aq,Z as ar,oo as as,_ as at,Vo as au,H as b,Wo as c,No as d,eo as e,To as f,co as g,lo as h,ho as i,bo as j,xo as k,fo as l,jo as m,Po as n,Io as o,Ho as p,Fo as q,Do as r,Mo as s,N as t,W as u,Uo as v,Lo as w,zo as x,$o as y,O as z};

@@ -75,7 +75,7 @@ const IndexPage: React.FC = () => {
               }}>6180</h1>
             </LogoContainer>
             
-            <LanguageSelector />
+            {/* Language selector removed from header */}
           </HeaderContainer>
 
           <div style={{ textAlign: 'center' }}>
@@ -89,20 +89,32 @@ const IndexPage: React.FC = () => {
               className="hover-button"
               style={{ marginTop: '20px', padding: '12px 20px' }}
             >
-              {t('Start')}
+              {t('Create Album')}
             </Button>
           </div>
 
           <LegalLinksFooter>
-            <LegalLinkFooterButton href={generateUrl("terms.html")}>
-              {t('Terms of Service')}
-            </LegalLinkFooterButton>
-            <LegalLinkFooterButton href={generateUrl("privacy.html")}>
-              {t('Privacy Policy')}
-            </LegalLinkFooterButton>
-            <LegalLinkFooterButton href={generateUrl("support.html")}>
-              {t('Support')}
-            </LegalLinkFooterButton>
+            <div style={{ marginBottom: '12px' }}>
+              <LegalLinkFooterButton href={generateUrl("terms.html")}>
+                {t('Terms of Service')}
+              </LegalLinkFooterButton>
+              <LegalLinkFooterButton href={generateUrl("privacy.html")}>
+                {t('Privacy Policy')}
+              </LegalLinkFooterButton>
+              <LegalLinkFooterButton href={generateUrl("support.html")}>
+                {t('Support')}
+              </LegalLinkFooterButton>
+            </div>
+            
+            {/* Language selector moved to footer - less conspicuous */}
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'center',
+              opacity: 0.7,
+              fontSize: '0.85em'
+            }}>
+              <LanguageSelector />
+            </div>
           </LegalLinksFooter>
         </div>
       </AppContainer>

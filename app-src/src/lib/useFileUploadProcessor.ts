@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { 
   SelectedPhoto, 
   ProgressTracker
@@ -13,8 +13,9 @@ import {
 } from "@/lib/file-upload-utils";
 
 /**
- * Custom hook for handling file upload functionality
+ * Optimized custom hook for handling file upload functionality
  * This hook consolidates common file upload logic used across the application
+ * with performance optimizations to prevent unnecessary re-renders and bandwidth usage
  */
 export const useFileUploadProcessor = (
   navigateAfterUpload?: (folderId: string | null) => void
@@ -23,7 +24,7 @@ export const useFileUploadProcessor = (
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
   const [isUploading, setIsUploading] = useState(false);
-  const [isProcessingFiles, setIsProcessingFiles] = useState(false); // NEW: Track if we're actually processing
+  const [isProcessingFiles, setIsProcessingFiles] = useState(false);
   const [progressTracker, setProgressTracker] = useState<ProgressTracker>({
     totalFiles: 0,
     filesComplete: 0,
@@ -36,20 +37,39 @@ export const useFileUploadProcessor = (
   const [fileProcessingComplete, setFileProcessingComplete] = useState(false);
   const [currentFolderId, setCurrentFolderId] = useState<string | null>(null);
   
-  // Use the createLogger function from the utils
-  const log = createLogger(setDebugMessages);
+  // MEMOIZED: Create logger function to prevent recreation on every render
+  const log = useMemo(() => createLogger(setDebugMessages), []);
   
-  // Create photo status updater for tracking upload progress
-  const updatePhotoStatus = createPhotoStatusUpdater(setSelectedPhotos);
+  // MEMOIZED: Create photo status updater to prevent recreation on every render
+  const updatePhotoStatus = useMemo(() => createPhotoStatusUpdater(setSelectedPhotos), []);
   
-  // Update progress tracker when selected photos change
+  // THROTTLED: Update progress tracker when selected photos change
+  // Use a ref to track if an update is already scheduled to prevent excessive updates
+  const updateScheduledRef = useRef(false);
+  
   useEffect(() => {
-    updateProgressTracker(selectedPhotos, setProgressTracker);
+    if (!updateScheduledRef.current) {
+      updateScheduledRef.current = true;
+      
+      // Use requestAnimationFrame to batch progress updates
+      requestAnimationFrame(() => {
+        updateProgressTracker(selectedPhotos, setProgressTracker);
+        updateScheduledRef.current = false;
+      });
+    }
   }, [selectedPhotos]);
 
-  // Handle navigation after file processing is complete
+  // OPTIMIZED: Handle navigation after file processing is complete
+  // Use refs to avoid stale closure issues and reduce re-renders
+  const navigationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  
   useEffect(() => {
     if (fileProcessingComplete && selectedPhotos.length > 0) {
+      // Clear any existing timeout to prevent duplicate navigation
+      if (navigationTimeoutRef.current) {
+        clearTimeout(navigationTimeoutRef.current);
+      }
+      
       // Show a completion message in the UI
       const successCount = selectedPhotos.filter(photo => photo.status === 'complete').length;
       const errorCount = selectedPhotos.filter(photo => photo.status === 'error').length;
@@ -60,32 +80,31 @@ export const useFileUploadProcessor = (
       setIsUploading(false);
       setIsProcessingFiles(false);
       
-      // If a navigation callback was provided, use it
-      if (navigateAfterUpload) {
-        // Use requestAnimationFrame to ensure UI updates are complete before navigation
-        requestAnimationFrame(() => {
-          setTimeout(() => {
-            navigateAfterUpload(currentFolderId);
-          }, 800); // Reduced delay
-        });
-      } else {
-        // Default navigation behavior if no callback provided
-        requestAnimationFrame(() => {
-          setTimeout(() => {
-            // Redirect to save-album page with folder ID parameter if adding to existing album
-            if (currentFolderId) {
-              redirectTo(`save-album.html?folderId=${encodeURIComponent(currentFolderId)}`);
-            } else {
-              redirectTo("save-album.html");
-            }
-          }, 800); // Reduced delay
-        });
-      }
+      // Schedule navigation with cleanup
+      navigationTimeoutRef.current = setTimeout(() => {
+        if (navigateAfterUpload) {
+          navigateAfterUpload(currentFolderId);
+        } else {
+          // Default navigation behavior if no callback provided
+          if (currentFolderId) {
+            redirectTo(`save-album.html?folderId=${encodeURIComponent(currentFolderId)}`);
+          } else {
+            redirectTo("save-album.html");
+          }
+        }
+      }, 800);
     }
-  }, [fileProcessingComplete, selectedPhotos.length, currentFolderId, navigateAfterUpload]);
+    
+    // Cleanup function to clear timeout if component unmounts
+    return () => {
+      if (navigationTimeoutRef.current) {
+        clearTimeout(navigationTimeoutRef.current);
+      }
+    };
+  }, [fileProcessingComplete, selectedPhotos.length, currentFolderId, navigateAfterUpload, log]);
 
-  // Function to clear album data
-  const clearUploadData = () => {
+  // MEMOIZED: Function to clear upload data
+  const clearUploadData = useCallback(() => {
     setSelectedPhotos([]);
     setProgressTracker({
       totalFiles: 0,
@@ -99,10 +118,16 @@ export const useFileUploadProcessor = (
     setIsUploading(false);
     setIsProcessingFiles(false);
     setFileProcessingComplete(false);
-  };
+    
+    // Clear any pending navigation
+    if (navigationTimeoutRef.current) {
+      clearTimeout(navigationTimeoutRef.current);
+      navigationTimeoutRef.current = null;
+    }
+  }, []);
 
-  // Function to open file picker
-  const openFilePicker = (folderId: string | null = null) => {
+  // MEMOIZED: Function to open file picker
+  const openFilePicker = useCallback((folderId: string | null = null) => {
     // Set current folder ID if adding to existing folder
     setCurrentFolderId(folderId);
     
@@ -113,13 +138,19 @@ export const useFileUploadProcessor = (
     setFileProcessingComplete(false);
     setIsProcessingFiles(false);
     
+    // Clear any pending navigation
+    if (navigationTimeoutRef.current) {
+      clearTimeout(navigationTimeoutRef.current);
+      navigationTimeoutRef.current = null;
+    }
+    
     fileInputRef.current?.click();
-  };
+  }, []);
 
-  // Handle file selection
-  const handleFileSelection = async (e: React.ChangeEvent<HTMLInputElement>, cognitoUsername: string | null) => {
+  // MEMOIZED: Handle file selection with optimized state management
+  const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>, cognitoUsername: string | null) => {
     const files = Array.from(e.target.files || []);
-    if (!files.length) return;
+    if (!files.length) return false;
 
     // Set states immediately for better UX
     setIsUploading(true);
@@ -173,8 +204,6 @@ export const useFileUploadProcessor = (
       
       setSelectedPhotos(initialPhotos);
       
-      // REMOVED: The problematic interval that was updating with stale closure values
-      
       // Use the processFilesBeforeUploadingToS3 function from utils
       const processedPhotos = await processFilesBeforeUploadingToS3(files, cognitoUsername, updatePhotoStatus, log);
       
@@ -209,7 +238,24 @@ export const useFileUploadProcessor = (
       // Clear the file input to allow selecting the same files again
       if (e.target) e.target.value = "";
     }
-  };
+  }, [currentFolderId, updatePhotoStatus, log]);
+
+  // Cleanup function to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      // Cleanup any pending navigation timeout
+      if (navigationTimeoutRef.current) {
+        clearTimeout(navigationTimeoutRef.current);
+      }
+      
+      // Revoke any object URLs to prevent memory leaks
+      selectedPhotos.forEach(photo => {
+        if (photo.s3PreviewUrl && photo.s3PreviewUrl.startsWith('blob:')) {
+          URL.revokeObjectURL(photo.s3PreviewUrl);
+        }
+      });
+    };
+  }, [selectedPhotos]);
 
   return {
     fileInputRef,
@@ -217,7 +263,7 @@ export const useFileUploadProcessor = (
     setSelectedPhotos,
     isUploading,
     setIsUploading,
-    isProcessingFiles, // NEW: Expose this for better UI control
+    isProcessingFiles,
     progressTracker,
     setProgressTracker,
     debugMessages,
