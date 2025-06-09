@@ -70,8 +70,9 @@ export default defineConfig({
         myalbums: "my-albums.html",
         photos: "photos.html",
         profile: "profile.html",
-        storage: "storage/index.html",  // Add your storage entry point
-        manage: "storage/manage.html"  // Add your storage entry point
+        tokenLogin: "token-login.html",
+        storage: "storage/index.html",
+        manage: "storage/manage.html"
         // add more HTML entry points here
       }
     }

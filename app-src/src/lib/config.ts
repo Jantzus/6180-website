@@ -13,5 +13,8 @@ export const LOCAL_STORAGE_KEYS = {
   LANGUAGE: 'user_language',
   PUBLIC_USERNAME: 'publicUsername'
 }
-export const API_ENDPOINT_REFRESHTOKEN = "https://722k2cxb4l.execute-api.us-east-1.amazonaws.com/prod-0/refresh-token"
 
+// API Endpoints
+export const API_ENDPOINT_REFRESHTOKEN = "https://722k2cxb4l.execute-api.us-east-1.amazonaws.com/prod-0/refresh-token"
+export const API_ENDPOINT_ISSUE_TOKEN = "https://722k2cxb4l.execute-api.us-east-1.amazonaws.com/prod-0/issue-web-login-token"
+export const API_ENDPOINT_REDEEM_TOKEN = "https://722k2cxb4l.execute-api.us-east-1.amazonaws.com/prod-0/redeem-web-login-token"
