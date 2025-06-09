@@ -189,7 +189,7 @@
   "Downgrade To Free": "Понижаване До Безплатно",
   "Change Plan": "Промени План",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Имате повече от 5 албума. Тези албуми се изтриват автоматично, освен ако не надградите абонамента си:",
-  "Click To Upgrade Subscription": "Кликнете За Обновяване На Абонамента",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Кликнете За Обновяване На Абонамент (1 щатски долар месечно за 10 ГБ)",
   "WILL BE DELETED": "ЩЕ БЪДЕ ИЗТРИТ",
   "Create an album in 90 sec": "Създайте албум за 90 секунди",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Файловете ви заемат {formatGB(usedGB)} от {totalStorageGB} GB хранилище. Може да се наложи скоро да надстроите абонамента си.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ако оставите полето за парола празно, \"password\" ще се използва като парола по подразбиране. Можете да я промените по всяко време в настройките на албума.",
   "💡 Password Protection Info:": "💡 Информация за Защита на Парола:",
   "Select Protection Level": "Изберете Ниво на Защита",
-  "Save Settings": "Запазване на Настройки"
+  "Save Settings": "Запазване на Настройки",
+  "No Public Albums Found": "Няма Намерени Публични Албуми"
 }

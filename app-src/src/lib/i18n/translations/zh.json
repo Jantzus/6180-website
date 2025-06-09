@@ -189,7 +189,7 @@
   "Downgrade To Free": "降级到免费",
   "Change Plan": "更改计划",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "您有超过5个相册。除非您升级订阅，否则这些相册将被自动删除:",
-  "Click To Upgrade Subscription": "点击升级订阅",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "点击升级订阅 (每月1美元10GB)",
   "WILL BE DELETED": "将被删除",
   "Create an album in 90 sec": "90秒内创建相册",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "您的文件占用了{totalStorageGB} GB存储空间中的{formatGB(usedGB)}。您可能需要尽快升级订阅。",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "如果您将密码字段留空，\"password\"将被用作默认密码。您可以在专辑设置中随时更改此设置。",
   "💡 Password Protection Info:": "💡 密码保护信息:",
   "Select Protection Level": "选择保护级别",
-  "Save Settings": "保存设置"
+  "Save Settings": "保存设置",
+  "No Public Albums Found": "未找到公共相册"
 }

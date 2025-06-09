@@ -189,7 +189,7 @@
   "Downgrade To Free": "Shuka Hadi Bure",
   "Change Plan": "Badilisha Mpango",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Una zaidi ya albamu 5. Albamu hizi zinafutwa kiotomatiki isipokuwa ukiongeza kiwango cha uandikishaji wako:",
-  "Click To Upgrade Subscription": "Bonyeza Kuboresha Uuzaji",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Bonyeza Kuboresha Uanzishaji (US$1 kila mwezi kwa 10 GB)",
   "WILL BE DELETED": "ITAFUTWA",
   "Create an album in 90 sec": "Unda albamu katika sekunde 90",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Faili zako zinachukua {formatGB(usedGB)} ya {totalStorageGB} GB hifadhi. Unaweza uhitaji kupandisha michango yako hivi karibuni.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ikiwa utaacha uwanda wa nenosiri tupu, \"password\" itatumika kama nenosiri chaguo-msingi. Unaweza kubadilisha hii wakati wowote katika mipangilio ya albamu.",
   "💡 Password Protection Info:": "💡 Taarifa za Ulinzi wa Nenosiri:",
   "Select Protection Level": "Chagua Kiwango cha Ulinzi",
-  "Save Settings": "Hifadhi Mipangilio"
+  "Save Settings": "Hifadhi Mipangilio",
+  "No Public Albums Found": "Hakuna Albums za Umma Zilizokutwa"
 }

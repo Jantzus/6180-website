@@ -189,7 +189,7 @@
   "Downgrade To Free": "Alõndaq Tasuta Peale",
   "Change Plan": "Plaani Muutminõ",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tedäl om üle 5 albummi. Need albumiq kustutõdas automaatsõlt, kui tiä ei ülesandlust täienda:",
-  "Click To Upgrade Subscription": "Klõpsaq Tellimust Parhendamisõks",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klõpsi Tellimusõ Parandamisõs (Kuu 1 USA dollarit 10 GB jaos)",
   "WILL BE DELETED": "KÕRVALDADAQ",
   "Create an album in 90 sec": "Tee album 90 sekundiga",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ku salasõna väläke tühjäs jätäq, \"password\" pruugitasõq peräliidsõ salasõnaq. Seo või kõgõ aigo albumi sätetes muutaq.",
   "💡 Password Protection Info:": "💡 Paroolkaitsõ Tieto:",
   "Select Protection Level": "Vali Kaitsõ Aste",
-  "Save Settings": "Talsita Säädmine"
+  "Save Settings": "Talsita Säädmine",
+  "No Public Albums Found": "Avalikõ Albomõ Olõ-õi"
 }

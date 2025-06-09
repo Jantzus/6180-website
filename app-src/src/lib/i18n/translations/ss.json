@@ -189,7 +189,7 @@
   "Downgrade To Free": "Tehlisa Ku Mahhala",
   "Change Plan": "Tjintja Licebo",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Unema-albhamu langaphezu kwalaku-5. Lama-albhamu akususwako ngokuzentiwa ngaphandle kwekutsi wente upgrade subscription yakho:",
-  "Click To Upgrade Subscription": "Chofoza Kuze Kuphakanyiswe Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Chofoza Kutsi Wentse Subscription (US$1 ngenyanga nganye nge 10 GB)",
   "WILL BE DELETED": "KUZOFAKWA",
   "Create an album in 90 sec": "Yakha i-albhamu ku-90 emasekhondeni",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Uma utisiya insimu yepassword ingenalutfo, \"password\" itakusetjentiswa njengepassword leyindzalo. Ungakushintja loku nganoma ngasiphi sikhatsi kumasetingi wealbum.",
   "💡 Password Protection Info:": "💡 Lwati Lwekuvikela Liphasiwedi:",
   "Select Protection Level": "Khetsa Lizinga Lekuvikela",
-  "Save Settings": "Gcina Ema-settings"
+  "Save Settings": "Gcina Ema-settings",
+  "No Public Albums Found": "Kute ma-albums labantfu bonkhe latfolakala"
 }

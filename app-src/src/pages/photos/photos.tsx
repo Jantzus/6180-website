@@ -9,6 +9,7 @@ import {
   redirectTo,
   generateUrl,
 } from "@/lib/utils";
+import { prewarmCredentials } from "@/lib/s3";
 
 // Import the new shared hook
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
@@ -124,7 +125,7 @@ const PhotoAlbumContent: React.FC = () => {
   
   // Destructure only what we need from file upload hook to avoid unused variable warnings
   const {
-    fileInputRef, isUploading, progressTracker
+    fileInputRef, isUploading, progressTracker, log
   } = fileUpload;
   
   const {
@@ -138,6 +139,20 @@ const PhotoAlbumContent: React.FC = () => {
   
   // Initialize share actions hook
   const shareActions = useShareActions(albumData, folderId, cognitoUsername, t);
+
+  // NEW: Prewarm S3 credentials when the page loads for extra reliability
+  useEffect(() => {
+    const warmUpPageCredentials = async () => {
+      try {
+        await prewarmCredentials();
+        log("🔥 Photos page S3 credentials prewarmed successfully");
+      } catch (error) {
+        log(`⚠️ Photos page credential prewarming failed: ${String(error)}`);
+      }
+    };
+    
+    warmUpPageCredentials();
+  }, []); // Empty dependency array - run once when page loads
   
   // Handle password submission
   const handlePasswordSubmit = async (password: string) => {

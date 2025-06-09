@@ -189,7 +189,7 @@
   "Downgrade To Free": "Pazemināt Uz Bezmaksas",
   "Change Plan": "Mainīt Plānu",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Jums ir vairāk nekā 5 albumi. Šie albumi tiek automātiski dzēsti, ja neuzlabojat savu abonementu:",
-  "Click To Upgrade Subscription": "Noklikšķiniet Lai Uzlabotu Abonementu",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Noklikšķiniet Lai Uzlabotu Abonementu (1 USD mēnesī par 10 GB)",
   "WILL BE DELETED": "TIKS DZĒSTS",
   "Create an album in 90 sec": "Izveidojiet albumu 90 sekundēs",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Jūsu faili aizņem {formatGB(usedGB)} no {totalStorageGB} GB krātuves. Jums, iespējams, drīz būs jāuzlabo abonements.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ja atstāsiet paroles lauku tukšu, \"password\" tiks izmantota kā noklusējuma parole. Jūs varat to mainīt jebkurā laikā albuma iestatījumos.",
   "💡 Password Protection Info:": "💡 Paroles Aizsardzības Informācija:",
   "Select Protection Level": "Izvēlieties Aizsardzības Līmeni",
-  "Save Settings": "Saglabāt Iestatījumus"
+  "Save Settings": "Saglabāt Iestatījumus",
+  "No Public Albums Found": "Nav Atrasti Publiski Albumi"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "Дармада Лангс Аливтемс",
   "Change Plan": "План Полафтомс",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Тень 5-ти ламу альбомот улихть. Нят альбомт автоматикса нардаф, аф тят абонементонт одов:",
-  "Click To Upgrade Subscription": "Подписанть сембедемс личкодемс",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Лепштямс Подпискать Лемфтк (Ковонь 1 АВШ доллар 10 ГБ туртов)",
   "WILL BE DELETED": "НАРДАВИ",
   "Create an album in 90 sec": "90 секундста альбом тиемс",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Паролень талмундеть пушкя карматадонза, \"password\" кучови пяк пря семын. Тяфтама ули альбомонь параметранкса ётай мезьцень полады.",
   "💡 Password Protection Info:": "💡 Пароланть Аф Кевери Содамкс:",
   "Select Protection Level": "Аф Кеферьсть Кевкст",
-  "Save Settings": "НастройкатӀне Ванфтомс"
+  "Save Settings": "НастройкатӀне Ванфтомс",
+  "No Public Albums Found": "Аф Васенце Ломанень Альбомт"
 }

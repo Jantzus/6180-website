@@ -189,7 +189,7 @@
   "Downgrade To Free": "Downgrade To Free",
   "Change Plan": "Change Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Muli ndi ma albamu opitirira 5. Ma albamu awa akuchotsedwa okha pokhapokha mutasinthira chilolezo chanu:",
-  "Click To Upgrade Subscription": "Click To Upgrade Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Click To Upgrade Subscription (US$1 monthly per 10 GB)",
   "WILL BE DELETED": "CHAPAFUTSIDWA",
   "Create an album in 90 sec": "Panga albamu mu masekondi 90",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ngati musinthe malo a password chopanda kanthu, \"password\" chidzagwiritsidwa ntchito ngati password yoyambilira. Mutha kusintha izi nthawi iliyonse mu mauonekedwe a chikwatu.",
   "💡 Password Protection Info:": "💡 Password Protection Info:",
   "Select Protection Level": "Select Protection Level",
-  "Save Settings": "Save Settings"
+  "Save Settings": "Save Settings",
+  "No Public Albums Found": "No Public Albums Found"
 }

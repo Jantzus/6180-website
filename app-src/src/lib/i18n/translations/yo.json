@@ -189,7 +189,7 @@
   "Downgrade To Free": "Dín Sílẹ̀ Sí Ọfẹ",
   "Change Plan": "Yí Ètò Padà",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "O ní àwọn álbọ́mù tí ó ju 5 lọ. Àwọn álbọ́mù wọ̀nyí ni a ń parẹ́ ní adáadáa bí o bá kò gbé àforókọ rẹ sókè:",
-  "Click To Upgrade Subscription": "Tẹ Láti Mú Subscription Pọ̀",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Tẹ Lati Mu Ifiweranṣẹ Soke (US$1 loṣu fun 10 GB)",
   "WILL BE DELETED": "YOO PAARẸ",
   "Create an album in 90 sec": "Ṣe àlbọ́mù nínú ìṣẹ́jú 90",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Tí o bá fi àyè ọ̀rọ̀ aṣínà sílẹ̀ lófo, \"password\" ni a ó lò gẹ́gẹ́ bí ọ̀rọ̀ aṣínà ìpìlẹ̀. O lè yí èyí padà nígbà kúgbà ní àwọn ìpànpé àkójọ-orin.",
   "💡 Password Protection Info:": "💡 Ìfitónilénu Ààbò Ọ̀rọ̀ Aṣínà:",
   "Select Protection Level": "Yan Ipele Ààbò",
-  "Save Settings": "Fi Ètò Pamọ́"
+  "Save Settings": "Fi Ètò Pamọ́",
+  "No Public Albums Found": "Ko Si Albums Ti Gbogbo Eniyan Ti A Ri"
 }

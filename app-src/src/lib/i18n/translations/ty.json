@@ -189,7 +189,7 @@
   "Downgrade To Free": "Ha'apa'o I Pohe",
   "Change Plan": "Taui I Te Horo'a",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ua roa ai tā 'oe mau 'ālipamu i te 5. Ua 'ape'ape'ahia to'na nei 'ālipamu, 'aita rā 'oe e ha'aapi'i ai tā 'oe ho'o'oa'a:",
-  "Click To Upgrade Subscription": "Tāmā'i E Fa'aara'a I Te Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Tā'iri Nā Te Fa'aara I Te Subscription (US$1 'āvae māite nō te 10 GB)",
   "WILL BE DELETED": "E TAPA'OHIA",
   "Create an album in 90 sec": "Haapaora'a i te 'ālipamu i roto i te 90 tereniti",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "I hapohe 'oe i te 'ava'e'ava'e, \"password\" te fa'aohipahia ra ei huru fa'atau'e. Nehenehe te hurihuri ia i te taime atoa i roto i te fa'atura'a album.",
   "💡 Password Protection Info:": "💡 Faʻaaùhinihia no te Haamaitaira'a i te Parau Huna:",
   "Select Protection Level": "Hīroa i te 'Āvaeira'a Haamaitaira'a",
-  "Save Settings": "Haamaite i te mau Hoho'a"
+  "Save Settings": "Haamaite i te mau Hoho'a",
+  "No Public Albums Found": "Aita Albums Taata'i I Íte'ahia"
 }

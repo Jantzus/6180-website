@@ -189,7 +189,7 @@
   "Downgrade To Free": "Ôfgradearje Nei Fergees",
   "Change Plan": "Plan Feroarje",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Jo hawwe mear as 5 albums. Dizze albums wurde automatysk fuortsmiten, útsein as jo jo abonnemint opwurdearje:",
-  "Click To Upgrade Subscription": "Klik Om Abonnement Upgrade Te Meitsjen",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klik Om Abonnement Te Ferheegjen (1 USD per moanne foar 10 GB)",
   "WILL BE DELETED": "WURDT WISKE",
   "Create an album in 90 sec": "Meitsje in album yn 90 sekonden",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "As jo it wachtwurdfjild leech litte, wurdt \"password\" brûkt as standert wachtwurd. Jo kinne dit elk momint wizigje yn albumynstellings.",
   "💡 Password Protection Info:": "💡 Wachtwurd Beskerming Ynfo:",
   "Select Protection Level": "Selektearje Beskermingsnivo",
-  "Save Settings": "Ynstellings Bewarje"
+  "Save Settings": "Ynstellings Bewarje",
+  "No Public Albums Found": "Gjin Iepenbiere Albums Fûn"
 }

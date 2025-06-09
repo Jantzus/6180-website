@@ -189,7 +189,7 @@
   "Downgrade To Free": "Guejy Rei'ỹre-pe",
   "Change Plan": "Tembiaporã Moambue",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Reguereko 5 álbum-gui hetáva. Ko'ã álbum oñembogue ijeheguiete ndereikuaaporãséramo nde ñemboheraguapy:",
-  "Click To Upgrade Subscription": "Ejopy Subscription Joporãve Hag̃ua",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Ejopy Subscription Moporãve Hag̃ua (Jasy US$1 10 GB-pe g̃uarã)",
   "WILL BE DELETED": "OJEIPE TA",
   "Create an album in 90 sec": "Japo álbum 90 aravo'ípe",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ñe'ẽñemi renda rejesárõ rei, \"password\" ojepurúta ñe'ẽñemi ypykuéva ramo. Ikatu remoambue kóva mba'eichagua peve álbum ñemboheko-pe.",
   "💡 Password Protection Info:": "💡 Marandu Ñemo'ã Ñe'ẽñemi:",
   "Select Protection Level": "Jeporavo Ñemo'ã Nivel",
-  "Save Settings": "Moñongatu Ñemboheko"
+  "Save Settings": "Moñongatu Ñemboheko",
+  "No Public Albums Found": "Naipóri Album Opavavete"
 }

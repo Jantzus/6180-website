@@ -189,7 +189,7 @@
   "Downgrade To Free": "אַראָפּגרייד צו פֿרײַ",
   "Change Plan": "ענדערן פּלאַן",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "איר האט מער ווי 5 אלבומס. די אלבומס ווערן אויטאמאטיש געמעקט, אויסער איר פארבעסערט אייער אבאנעמאנט:",
-  "Click To Upgrade Subscription": "קליק צו אויפֿטון די סובסקריפּציע",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "קליק צו פֿאַרבעסערן אָפּצאָל (US$1 חודשלעך פֿאַר 10 GB)",
   "WILL BE DELETED": "וועט ווערן אויסגעמעקט",
   "Create an album in 90 sec": "שאַפֿן אַן אַלבאָם אין 90 סעקונדן",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "אויב איר לאזט דאס פאסווארט פעלד ליידיק, וועט \"password\" גענוצט ווערן אלס די גרונטלעכע פאסווארט. איר קענט דאס ענדערן יעדער צייט אין אלבאם אייגנשאפטן.",
   "💡 Password Protection Info:": "💡 פּאַראָל שוץ אינפֿאָרמאַציע:",
   "Select Protection Level": "אויסקלײַבן שוץ ניוואָ",
-  "Save Settings": "אויפֿהיטן באַשטעלונגען"
+  "Save Settings": "אויפֿהיטן באַשטעלונגען",
+  "No Public Albums Found": "קיין עפנטלעכע אלבומס נישט געפונען"
 }

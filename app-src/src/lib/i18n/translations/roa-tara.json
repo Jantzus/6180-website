@@ -189,7 +189,7 @@
   "Downgrade To Free": "Abbasce A Gratuito",
   "Change Plan": "Cange Piane",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tìne cchiù de 5 album. St'album se stonne scangellanne automaticamende, a mene ca non aggiuorne l'abbonamente tune:",
-  "Click To Upgrade Subscription": "Cazze Pe Aggiornà 'A Sottoscrizione",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Cazze Pe Megghiuorà 'A Sottoscrizione (1 dollare USA 'u mise pe 10 GB)",
   "WILL BE DELETED": "AVÈNE SCANGELLATE",
   "Create an album in 90 sec": "Crete n'album jndr'à 90 segunne",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ce lasse vacande 'u cambe d' 'a password, \"password\" ausarà cumme password defolt. Putite cagnà chiste quanno vulite jndr' 'e 'mbostaziune de l'album.",
   "💡 Password Protection Info:": "💡 Notizie d'a Protezzione d'a Password:",
   "Select Protection Level": "Scacchie 'u Levèlle de Protezzione",
-  "Save Settings": "Reggìstre le 'mbostaziun"
+  "Save Settings": "Reggìstre le 'mbostaziun",
+  "No Public Albums Found": "Nisciune Album Pubbleche Acchiate"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "Jidik In Eab",
   "Change Plan": "Ekae Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Eko gab 5 album ngea. Dorer album oko ehoa an automatically nanga eko upgrade-e subscription eom:",
-  "Click To Upgrade Subscription": "Dekek Me Kaunga Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Demuwin Subscription Upgrade (Eban US$1 me 10 GB)",
   "WILL BE DELETED": "EBON KAJOOR",
   "Create an album in 90 sec": "Annim album eo 90 sekond",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Inagijen an password field ke itok ino, \"password\" e defolt password me mana. Ekwe omo aengin nana eaetok album settings-ine.",
   "💡 Password Protection Info:": "💡 Melele me Password Protection:",
   "Select Protection Level": "Kōjparok Level me Protection",
-  "Save Settings": "Jerbal Settings"
+  "Save Settings": "Jerbal Settings",
+  "No Public Albums Found": "Eyac Albums E Amen Dorer"
 }

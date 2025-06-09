@@ -189,7 +189,7 @@
   "Downgrade To Free": "Alemba Maksutas",
   "Change Plan": "Vajehtada Plaan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Teile om enamb 5 al'bomad. Nämad al'bomad kustudas avtomatikäs, ku tö ei kodvdaigkat tilastan:",
-  "Click To Upgrade Subscription": "Löugat Abonementan Paraidust",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Kodvkat Subscriptional Parembuks (1 USD kus 10 GB tarbhaks)",
   "WILL BE DELETED": "HÜKATUD",
   "Create an album in 90 sec": "Tehta al'bom 90 sekundas",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ku jätad paroliväl'jan tühjäks, \"password\" kävutadas pälävariandaks. Voidad sidä vajehtada album-järgendusiš mitte-se taht.",
   "💡 Password Protection Info:": "💡 Parolan Kaičendan Tedod:",
   "Select Protection Level": "Valiče Kaičendan Aste",
-  "Save Settings": "Sädhä Sädused"
+  "Save Settings": "Sädhä Sädused",
+  "No Public Albums Found": "Enamb Kaikiden Albumad Ei Löüt"
 }

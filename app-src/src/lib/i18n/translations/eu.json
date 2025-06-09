@@ -189,7 +189,7 @@
   "Downgrade To Free": "Jaitsi Doan-era",
   "Change Plan": "Plana Aldatu",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5 album baino gehiago dituzu. Album hauek automatikoki ezabatu egiten dira zure harpidetza eguneratzen ez baduzu:",
-  "Click To Upgrade Subscription": "Klik Egin Harpidetza Eguneratzeko",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Egin Klik Harpidetza Eguneratzeko (Hilean 1 AEB dolar 10 GB-rako)",
   "WILL BE DELETED": "EZABATUKO DA",
   "Create an album in 90 sec": "Sortu album bat 90 segundotan",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Zure fitxategiak {totalStorageGB} GB biltegiaren {formatGB(usedGB)} hartzen dute. Laster zure harpidetza eguneratu beharko duzu agian.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Pasahitz-eremua hutsik uzten baduzu, \"password\" lehenetsitako pasahitz gisa erabiliko da. Hau edozein unetan aldatu dezakezu albumaren ezarpenetan.",
   "💡 Password Protection Info:": "💡 Pasahitz Babesaren Informazioa:",
   "Select Protection Level": "Hautatu Babes Maila",
-  "Save Settings": "Gorde Ezarpenak"
+  "Save Settings": "Gorde Ezarpenak",
+  "No Public Albums Found": "Ez Da Irudi Album Publikorik Aurkitu"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "ఉచితంకు తగ్గించండి",
   "Change Plan": "ప్రణాళికను మార్చండి",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "మీ వద్ద 5 కంటే ఎక్కువ ఆల్బమ్‌లు ఉన్నాయి. మీరు మీ సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయకపోతే ఈ ఆల్బమ్‌లు స్వయంచాలకంగా తొలగించబడుతున్నాయి:",
-  "Click To Upgrade Subscription": "సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయడానికి క్లిక్ చేయండి",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయడానికి క్లిక్ చేయండి (నెలకు US$1 10 GB కోసం)",
   "WILL BE DELETED": "తొలగించబడుతుంది",
   "Create an album in 90 sec": "90 సెకన్లలో ఆల్బమ్ సృష్టించండి",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "మీ ఫైళ్లు {totalStorageGB} GB నిల్వలో {formatGB(usedGB)} ఆక్రమిస్తున్నాయి. మీరు త్వరలో మీ సబ్‌స్క్రిప్షన్‌ను అప్‌గ్రేడ్ చేయాల్సి రావచ్చు.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "మీరు పాస్‌వర్డ్ ఫీల్డ్‌ను ఖాళీగా వదిలితే, \"password\" డిఫాల్ట్ పాస్‌వర్డ్‌గా ఉపయోగించబడుతుంది. మీరు దీన్ని ఆల్బమ్ సెట్టింగ్‌లలో ఎప్పుడైనా మార్చవచ్చు.",
   "💡 Password Protection Info:": "💡 పాస్‌వర్డ్ రక్షణ సమాచారం:",
   "Select Protection Level": "రక్షణ స్థాయిని ఎంచుకోండి",
-  "Save Settings": "సెట్టింగులను సేవ్ చేయండి"
+  "Save Settings": "సెట్టింగులను సేవ్ చేయండి",
+  "No Public Albums Found": "పబ్లిక్ ఆల్బమ్‌లు ఏవీ కనుగొనబడలేదు"
 }

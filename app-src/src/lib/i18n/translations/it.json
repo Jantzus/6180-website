@@ -189,7 +189,7 @@
   "Downgrade To Free": "Declassare A Gratuito",
   "Change Plan": "Cambia Piano",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Hai più di 5 album. Questi album vengono eliminati automaticamente a meno che non aggiorni il tuo abbonamento:",
-  "Click To Upgrade Subscription": "Clicca Per Aggiornare L'Abbonamento",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Clicca Per Aggiornare L'Abbonamento (1 USD al mese per 10 GB)",
   "WILL BE DELETED": "VERRÀ ELIMINATO",
   "Create an album in 90 sec": "Crea un album in 90 secondi",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "I tuoi file occupano {formatGB(usedGB)} di {totalStorageGB} GB di archiviazione. Potresti dover aggiornare il tuo abbonamento presto.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se lasci vuoto il campo password, \"password\" verrà utilizzato come password predefinita. Puoi cambiarlo in qualsiasi momento nelle impostazioni dell'album.",
   "💡 Password Protection Info:": "💡 Informazioni Protezione Password:",
   "Select Protection Level": "Seleziona Livello di Protezione",
-  "Save Settings": "Salva Impostazioni"
+  "Save Settings": "Salva Impostazioni",
+  "No Public Albums Found": "Nessun Album Pubblico Trovato"
 }

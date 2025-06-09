@@ -189,7 +189,7 @@
   "Downgrade To Free": "Ìslich Gu An-asgaidh",
   "Change Plan": "Atharraich Plana",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tha còrr air 5 albam agad. Tha na h-albaman sin gan sguabadh às gu fèin-ghluasadach mur àrdaich thu do fo-sgrìobhadh:",
-  "Click To Upgrade Subscription": "Briog Airson Ballrachd Àrdachadh",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Briog Gus Ballrachd Àrdachadh (US$1 gach mìos airson 10 GB)",
   "WILL BE DELETED": "THÈID A SGUABADH ÀS",
   "Create an album in 90 sec": "Cruthaich clàr-ciùil ann an 90 diog",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ma dh'fhàgas tu an raon facail-fhaire falamh, thèid \"password\" a chleachdadh mar am facal-faire bunaiteach. Faodaidh tu seo atharrachadh uair sam bith ann an roghainnean na clàir-chiùil.",
   "💡 Password Protection Info:": "💡 Fiosrachadh Dìon Facal-faire:",
   "Select Protection Level": "Tagh Ìre Dìon",
-  "Save Settings": "Sàbhail Roghainnean"
+  "Save Settings": "Sàbhail Roghainnean",
+  "No Public Albums Found": "Cha Do Fhuaradh Clàran Poblach"
 }

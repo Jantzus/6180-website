@@ -189,7 +189,7 @@
   "Downgrade To Free": "സൗജന്യത്തിലേക്ക് കുറയ്ക്കുക",
   "Change Plan": "പദ്ധതി മാറ്റുക",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "നിങ്ങളുടെ പക്കൽ 5-ലധികം ആൽബങ്ങൾ ഉണ്ട്. നിങ്ങൾ സബ്‌സ്ക്രിപ്‌ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യുന്നില്ലെങ്കിൽ ഈ ആൽബങ്ങൾ സ്വയം മായ്‌ക്കപ്പെടുന്നു:",
-  "Click To Upgrade Subscription": "സബ്‌സ്ക്രിപ്ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "സബ്‌സ്ക്രിപ്‌ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക (മാസം US$1 10 GB-യ്ക്ക്)",
   "WILL BE DELETED": "ഇല്ലാതാക്കപ്പെടും",
   "Create an album in 90 sec": "90 സെക്കൻഡിൽ ആൽബം സൃഷ്ടിക്കുക",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "നിങ്ങളുടെ ഫയലുകൾ {totalStorageGB} GB സംഭരണത്തിൽ {formatGB(usedGB)} ഉപയോഗിക്കുന്നു। നിങ്ങൾക്ക് ഉടൻ സബ്‌സ്‌ക്രിപ്‌ഷൻ അപ്‌ഗ്രേഡ് ചെയ്യേണ്ടി വന്നേക്കാം।",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "നിങ്ങൾ പാസ്‌വേഡ് ഫീൽഡ് ശൂന്യമായി വിട്ടാൽ, \"password\" ഡിഫോൾട്ട് പാസ്‌വേഡായി ഉപയോഗിക്കും. ആൽബം സെറ്റിംഗുകളിൽ നിങ്ങൾക്ക് ഇത് എപ്പോൾ വേണമെങ്കിലും മാറ്റാം.",
   "💡 Password Protection Info:": "💡 പാസ്‌വേഡ് സംരക്ഷണ വിവരങ്ങൾ:",
   "Select Protection Level": "സംരക്ഷണ തലം തിരഞ്ഞെടുക്കുക",
-  "Save Settings": "ക്രമീകരണങ്ങൾ സംരക്ഷിക്കുക"
+  "Save Settings": "ക്രമീകരണങ്ങൾ സംരക്ഷിക്കുക",
+  "No Public Albums Found": "പൊതു ആൽബങ്ങൾ കണ്ടെത്തിയില്ല"
 }

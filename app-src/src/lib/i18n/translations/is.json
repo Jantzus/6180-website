@@ -189,7 +189,7 @@
   "Downgrade To Free": "Lækka Í Ókeypis",
   "Change Plan": "Breyta Áætlun",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Þú átt fleiri en 5 albúm. Þessi albúm eru sjálfkrafa eytt nema þú uppfærir áskriftina þína:",
-  "Click To Upgrade Subscription": "Smelltu Til Að Uppfæra Áskrift",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Smelltu Til Að Uppfæra Áskrift (1 USD á mánuði fyrir 10 GB)",
   "WILL BE DELETED": "VERÐUR EYTT",
   "Create an album in 90 sec": "Búðu til albúm á 90 sekúndum",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Skrárnar þínar taka {formatGB(usedGB)} af {totalStorageGB} GB geymslu. Þú gætir þurft að uppfæra áskriftina þína binnvíti.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ef þú skilur lykilorðareitinn eftir tóman verður \"password\" notað sem sjálfgefið lykilorð. Þú getur breytt þessu hvenær sem er í stillingum albúmsins.",
   "💡 Password Protection Info:": "💡 Upplýsingar um Lykilorð Vörn:",
   "Select Protection Level": "Veldu Vörn Stig",
-  "Save Settings": "Vista Stillingar"
+  "Save Settings": "Vista Stillingar",
+  "No Public Albums Found": "Engin Opinber Albúm Fundust"
 }

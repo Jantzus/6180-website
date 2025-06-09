@@ -189,7 +189,7 @@
   "Downgrade To Free": "Хӏинца Дӏаваха ДӀаяхана",
   "Change Plan": "План Хувца",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Хьона йуй 5 альбомале дукха. Ахь альбомаш автоматически дӀаъякхар ду, хьона абонемент кхета хила йоцахь:",
-  "Click To Upgrade Subscription": "Подписка хийца дIа еча",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Даккха Подписка Хьажорийна (Бетт 1 доллар США 10 ГБ)",
   "WILL BE DELETED": "ДӀАЯККХА ЙОЛУ",
   "Create an album in 90 sec": "90 секундий альбом кхоллар",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Хьо пароль луьрчу меттигчу юхь дацахь, \"password\" йолу пароль лело. Хьона иза хийца мега альбомах параметрашкахь могха хана хилларг.",
   "💡 Password Protection Info:": "💡 Пароль ЛоӀам Хаам:",
   "Select Protection Level": "ЛоӀам Дарж Харжа",
-  "Save Settings": "ЧIарухье НастройкӀ"
+  "Save Settings": "ЧIарухье НастройкӀ",
+  "No Public Albums Found": "Ца Албом Хьахьокхаш"
 }

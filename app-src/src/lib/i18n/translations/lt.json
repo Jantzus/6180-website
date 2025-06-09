@@ -189,7 +189,7 @@
   "Downgrade To Free": "Sumažinti Iki Nemokamai",
   "Change Plan": "Keisti Planą",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Turite daugiau nei 5 albumus. Šie albumai automatiškai trinami, nebent atnaujinsite savo prenumeratą:",
-  "Click To Upgrade Subscription": "Spauskite Norėdami Atnaujinti Prenumeratą",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Spustelėkite Prenumeratos Patobulinimui (1 USD per mėnesį už 10 GB)",
   "WILL BE DELETED": "BUS IŠTRINTA",
   "Create an album in 90 sec": "Sukurkite albumą per 90 sekundžių",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Jūsų failai užima {formatGB(usedGB)} iš {totalStorageGB} GB saugyklos. Gali prireikti netrukus atnaujinti prenumeratą.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jei paliksite slaptažodžio lauką tuščią, \"password\" bus naudojamas kaip numatytasis slaptažodis. Galite tai pakeisti bet kada albumo nustatymuose.",
   "💡 Password Protection Info:": "💡 Slaptažodžio Apsaugos Informacija:",
   "Select Protection Level": "Pasirinkite Apsaugos Lygį",
-  "Save Settings": "Išsaugoti Nustatymus"
+  "Save Settings": "Išsaugoti Nustatymus",
+  "No Public Albums Found": "Nerasta Jokių Viešų Albumų"
 }

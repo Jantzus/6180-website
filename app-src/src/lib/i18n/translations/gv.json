@@ -189,7 +189,7 @@
   "Downgrade To Free": "Injil Gys Seyr",
   "Change Plan": "Caghlaa Coyrle",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ta harrish 5 albymyn ayd. Ta ny albymyn shoh goll er scryssey dy seyr-obbragh mannagh nee oo dty fo-screeuyn y ymmyrkey seose:",
-  "Click To Upgrade Subscription": "Crig Dy Chur Seose Fo-Scrieu",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Crig Son Cosoyrt Y Yannoo Ny Share (US$1 dagh mee son 10 GB)",
   "WILL BE DELETED": "BEE DOLLIT MAGH",
   "Create an album in 90 sec": "Croo albym ayns 90 socarr",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "My t'ou faagail y magher fockle-folliagh follym, bee \"password\" ymmydit myr y fockle-folliagh cadjin. Foddee oo shoh y cheaghley ec traa erbee ayns reihghyn yn albym.",
   "💡 Password Protection Info:": "💡 Oayllys Coadey Fockle Arrey:",
   "Select Protection Level": "Reih Keim Coadey",
-  "Save Settings": "Sauail Reayrtyssyn"
+  "Save Settings": "Sauail Reayrtyssyn",
+  "No Public Albums Found": "Cha Row Albymyn Theayagh Ry Gheddyn"
 }

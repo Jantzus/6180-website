@@ -189,7 +189,7 @@
   "Downgrade To Free": "Zbrit Në Falas",
   "Change Plan": "Ndrysho Planin",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Keni më shumë se 5 albume. Këto albume po fshihen automatikisht përveç nëse nuk e përditësoni abonimin tuaj:",
-  "Click To Upgrade Subscription": "Klikoni Për Të Përmirësuar Abonimin",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Kliko Për Të Përmirësuar Abonimin (1 USD mujore për 10 GB)",
   "WILL BE DELETED": "DO TË FSHIHET",
   "Create an album in 90 sec": "Krijo një album në 90 sekonda",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Skedarët tuaj zënë {formatGB(usedGB)} nga {totalStorageGB} GB ruajtje. Mund t'ju duhet të përmirësoni pajtimin tuaj së shpejti.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Nëse e lini fushën e fjalëkalimit bosh, \"password\" do të përdoret si fjalëkalimi parazgjedhje. Mund ta ndryshoni këtë në çdo kohë tek cilësimet e albumit.",
   "💡 Password Protection Info:": "💡 Informacion për Mbrojtjen e Fjalëkalimit:",
   "Select Protection Level": "Zgjidhni Nivelin e Mbrojtjes",
-  "Save Settings": "Ruaj Cilësimet"
+  "Save Settings": "Ruaj Cilësimet",
+  "No Public Albums Found": "Nuk U Gjetën Albume Publike"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "Turun Ka Bebas",
   "Change Plan": "Ganti Rencana",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Droeneuh na leubeh nibak 5 album. Album-album nyoe lagi otomatis hapus kecuali droeneuh upgrade langganan:",
-  "Click To Upgrade Subscription": "Teugon Keu Peudong Langganan",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klik Keu Tingkat Langganan (US$1 buleun tiëp 10 GB)",
   "WILL BE DELETED": "akan geuhapôih",
   "Create an album in 90 sec": "Peugöt album bak 90 detik",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Berkas droeneuh meunyoe {formatGB(usedGB)} dari {totalStorageGB} GB panyimpenan. Droeneuh ka perlu upgrade langganan droeneuh bah.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Meunyo droeneuh hana neupeutamong lapangan password, \"password\" ka na meupakai jeuet password asal na. Droeneuh jeuet neuubah nyan kareuna ban waktu dalam peunyata album.",
   "💡 Password Protection Info:": "💡 Lagèë Lindông Kata Sandeë:",
   "Select Protection Level": "Pileuh Tingkat Lindông",
-  "Save Settings": "Simpan Aturan"
+  "Save Settings": "Simpan Aturan",
+  "No Public Albums Found": "Hana Jumpôh Album Umôm"
 }

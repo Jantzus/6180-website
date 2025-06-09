@@ -189,7 +189,7 @@
   "Downgrade To Free": "Rabaisser A Po Rén",
   "Change Plan": "Candjî Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Vos avoz pus di 5 albums. Ces albums la sont disfacés otomaticmint, a moen qu'vos metoxhe a djoû vosse abounmint:",
-  "Click To Upgrade Subscription": "Cliker Po Apriyî L'Abonmint",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Clitchîz Po Meyori L'Abonmint (1 dolar USA pal moes po 10 Go)",
   "WILL BE DELETED": "SÅRÈ DISFACÉ",
   "Create an album in 90 sec": "Ahiver on album e 90 segondes",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si vos lèssez vude li tchamp do scret, \"password\" sèrè eployî come scret prémetou. Vos l' ploz candjî tolminme dins l' apontiaedje di l' albom.",
   "💡 Password Protection Info:": "💡 Informåcion di Waeryaedje di Mot di Passe:",
   "Select Protection Level": "Tchoezi Livea d'Waeryaedje",
-  "Save Settings": "Schaper les Apontiaedjes"
+  "Save Settings": "Schaper les Apontiaedjes",
+  "No Public Albums Found": "Nole Album Public Trové"
 }

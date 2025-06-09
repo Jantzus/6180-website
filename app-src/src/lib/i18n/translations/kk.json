@@ -189,7 +189,7 @@
   "Downgrade To Free": "Тегінге Төмендету",
   "Change Plan": "Жоспарды Өзгерту",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Сізде 5-тен артық альбом бар. Бұл альбомдар автоматты түрде өшіріледі, егер сіз жазылымыңызды жаңартпасаңыз:",
-  "Click To Upgrade Subscription": "Жазылымды Жаңарту Үшін Басыңыз",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Жазылымды Жаңарту Үшін Басыңыз (Айына 1 АҚШ доллары 10 ГБ үшін)",
   "WILL BE DELETED": "ЖОЙЫЛАДЫ",
   "Create an album in 90 sec": "90 секундта альбом жасаңыз",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Сіздің файлдарыңыз {totalStorageGB} GB сақтау орнының {formatGB(usedGB)} алады. Жақын арада жазылымыңызды жаңартуыңыз керек болуы мүмкін.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Егер сіз құпия сөз өрісін бос қалдырсаңыз, \"password\" негізгі құпия сөз ретінде қолданылады. Мұны альбом баптауларында кез келген уақытта өзгерте аласыз.",
   "💡 Password Protection Info:": "💡 Құпия Сөз Қорғау Ақпараты:",
   "Select Protection Level": "Қорғау Деңгейін Таңдаңыз",
-  "Save Settings": "Баптауларды Сақтау"
+  "Save Settings": "Баптауларды Сақтау",
+  "No Public Albums Found": "Ешқандай Қоғамдық Альбом Табылмады"
 }

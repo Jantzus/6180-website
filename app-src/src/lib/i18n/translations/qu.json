@@ -189,7 +189,7 @@
   "Downgrade To Free": "Urkhuman Mana Chaniyuq Kaman",
   "Change Plan": "Planota Hukchay",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5 albumkunamanta aswanta kanki. Kay albumkuna kikinmanta chinkachisqa kanku, mana subscripcionniykita allinchaspayki:",
-  "Click To Upgrade Subscription": "Ñit'iy Subscription-ta Allinta Kananpaq",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Suscripción Allinchanapaq Ñit'iy (Killa US$1 chunka GB kaq)",
   "WILL BE DELETED": "CHINKACHISQA KANQA",
   "Create an album in 90 sec": "90 segundokunapiqa albumta ruway",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Yaykuna rimay k'itita ch'usaq saqispayki, \"password\" ñawpaq yaykuna rimayhina llamk'achisqa kanqa. Kayqa albumpa churanakuyninpi ima pachapiñaykama t'ikrayta atinkiman.",
   "💡 Password Protection Info:": "💡 Yaykanamanta Amachaymanta Willakuy:",
   "Select Protection Level": "Amachaymanta Kaskayta Akllay",
-  "Save Settings": "Wakichana Kaqninta Waqaychay"
+  "Save Settings": "Wakichana Kaqninta Waqaychay",
+  "No Public Albums Found": "Mana Tukuyninkuna Album Tarisqachu"
 }

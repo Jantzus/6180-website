@@ -189,7 +189,7 @@
   "Downgrade To Free": "უფასოზე დაქვეითება",
   "Change Plan": "გეგმის შეცვლა",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "თქვენ გაქვთ 5-ზე მეტი ალბომი. ეს ალბომები ავტომატურად იშლება, თუ არ გააუმჯობესებთ თქვენს გამოწერას:",
-  "Click To Upgrade Subscription": "დააჭირეთ გამოწერის განახლებისთვის",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "დააწკაპუნეთ გამოწერის განახლებისთვის (ყოველთვიურად 1 აშშ დოლარი 10 გბ-ისთვის)",
   "WILL BE DELETED": "წაიშლება",
   "Create an album in 90 sec": "შექმენით ალბომი 90 წამში",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "თქვენი ფაილები იკავებს {formatGB(usedGB)} {totalStorageGB} GB საცავიდან. შესაძლოა მალე გჭირდებათ გამოწერის განახლება.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "თუ პაროლის ველს ცარიელს დატოვებთ, \"password\" გამოიყენება ნაგულისხმები პაროლისთვის. შეგიძლიათ ეს შეცვალოთ ნებისმიერ დროს ალბომის პარამეტრებში.",
   "💡 Password Protection Info:": "💡 პაროლის დაცვის ინფორმაცია:",
   "Select Protection Level": "აირჩიეთ დაცვის დონე",
-  "Save Settings": "პარამეტრების შენახვა"
+  "Save Settings": "პარამეტრების შენახვა",
+  "No Public Albums Found": "საზოგადოებრივი ალბომები ვერ მოიძებნა"
 }

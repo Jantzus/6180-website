@@ -189,7 +189,7 @@
   "Downgrade To Free": "Demittere Ad Gratuitus",
   "Change Plan": "Consilium Mutare",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Habes plus quam 5 album. Haec album automatice delentur nisi subscriptionem tuam promoves:",
-  "Click To Upgrade Subscription": "Preme Ad Renovandam Subscriptionem",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Preme Ad Subscriptionem Meliorem (1 dollarum USA per mensem pro 10 GB)",
   "WILL BE DELETED": "DELEBITUR",
   "Create an album in 90 sec": "Crea album in 90 momentis",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Tabulae vestrae {formatGB(usedGB)} ex {totalStorageGB} GB repositorio occupant. Subscriptionem vestram mox promovere necesse erit.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si campus signi secreti vacuum relinquis, \"password\" tamquam signum secretum praedefinitum utetur. Hoc mutare potes quolibet tempore in albumis configurationibus.",
   "💡 Password Protection Info:": "💡 Informatio de Tutela Tesserae:",
   "Select Protection Level": "Elige Gradum Tutelae",
-  "Save Settings": "Serva Ordinationes"
+  "Save Settings": "Serva Ordinationes",
+  "No Public Albums Found": "Nulla Album Publicum Inventum"
 }

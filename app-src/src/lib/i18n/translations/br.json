@@ -189,7 +189,7 @@
   "Downgrade To Free": "Diskennañ Da Digoust",
   "Change Plan": "Kemmañ Ar Raktre",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Muioc'h eget 5 albom zo ganeoc'h. Ar albomioù-se a vez diverket emgefre ma ne vez ket kemmet ho koumanantiz:",
-  "Click To Upgrade Subscription": "Klikañ Evit Gwellaat Ar C'houmanant",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klikit Evit Gwellaat Ar Voutin (1 dollar SUA dre viz evit 10 Go)",
   "WILL BE DELETED": "A VO DIVERKET",
   "Create an album in 90 sec": "Krouiñ un albom e 90 eilenn",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ma lezit voullo al lann tremenger, \"password\" a vo implijet evel tremenger dre ziouer. Gallout a rit cheñch se pa fell deoc'h e arventennoù an albom.",
   "💡 Password Protection Info:": "💡 Titouroù Diwall Ger-tremen:",
   "Select Protection Level": "Dibab Live Diwall",
-  "Save Settings": "Enrollañ Arventennoù"
+  "Save Settings": "Enrollañ Arventennoù",
+  "No Public Albums Found": "Album Foran Kavet Ebet"
 }

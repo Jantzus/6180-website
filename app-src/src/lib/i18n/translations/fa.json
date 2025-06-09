@@ -189,7 +189,7 @@
   "Downgrade To Free": "کاهش به رایگان",
   "Change Plan": "تغییر طرح",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "شما بیش از ۵ آلبوم دارید. این آلبوم‌ها به طور خودکار حذف می‌شوند مگر اینکه اشتراک خود را ارتقا دهید:",
-  "Click To Upgrade Subscription": "برای ارتقاء اشتراک کلیک کنید",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "برای ارتقای اشتراک کلیک کنید (ماهانه 1 دلار آمریکا برای 10 گیگابایت)",
   "WILL BE DELETED": "حذف خواهد شد",
   "Create an album in 90 sec": "آلبوم در 90 ثانیه ایجاد کنید",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "فایل‌های شما {formatGB(usedGB)} از {totalStorageGB} گیگابایت فضای ذخیره را اشغال می‌کنند. ممکن است به زودی نیاز به ارتقای اشتراک داشته باشید.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "اگر فیلد رمز عبور را خالی بگذارید، \"password\" به عنوان رمز عبور پیش‌فرض استفاده خواهد شد. شما می‌توانید این را در هر زمان در تنظیمات آلبوم تغییر دهید.",
   "💡 Password Protection Info:": "💡 اطلاعات محافظت رمز عبور:",
   "Select Protection Level": "سطح محافظت را انتخاب کنید",
-  "Save Settings": "ذخیره تنظیمات"
+  "Save Settings": "ذخیره تنظیمات",
+  "No Public Albums Found": "هیچ آلبوم عمومی یافت نشد"
 }

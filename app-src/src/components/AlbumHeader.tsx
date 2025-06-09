@@ -69,7 +69,7 @@ export const AlbumHeader: React.FC<{
   // Simple "Open On Phone" button
   const renderOpenOnPhoneButton = () => (
     <Button onClick={handleDownloadPhotos}>
-      {t('Open On Phone')}
+      {t('Download')}
     </Button>
   );
 

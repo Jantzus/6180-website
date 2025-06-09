@@ -189,7 +189,7 @@
   "Downgrade To Free": "Bepulga Pasaytirish",
   "Change Plan": "Rejani O'zgartirish",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Sizda 5 tadan ortiq albom bor. Bu albomlar avtomatik ravishda o'chiriladi, agar obunangizni yangilamasangiz:",
-  "Click To Upgrade Subscription": "Obunani Yaxshilash Uchun Bosing",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Obunani Yangilash Uchun Bosing (Oyiga 1 AQSh dollari 10 GB uchun)",
   "WILL BE DELETED": "O'CHIRILADI",
   "Create an album in 90 sec": "90 soniyada albom yarating",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Agar parol maydonini bo'sh qoldirsangiz, \"password\" standart parol sifatida ishlatiladi. Buni albom sozlamalarida istalgan vaqtda o'zgartirishingiz mumkin.",
   "💡 Password Protection Info:": "💡 Parol Himoya Ma'lumoti:",
   "Select Protection Level": "Himoya Darajasini Tanlang",
-  "Save Settings": "Sozlamalarni Saqlash"
+  "Save Settings": "Sozlamalarni Saqlash",
+  "No Public Albums Found": "Hech Qanday Ommaviy Album Topilmadi"
 }

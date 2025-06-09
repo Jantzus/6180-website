@@ -189,7 +189,7 @@
   "Downgrade To Free": "무료로 다운그레이드",
   "Change Plan": "플랜 변경",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5개 이상의 앨범이 있습니다. 구독을 업그레이드하지 않으면 이 앨범들이 자동으로 삭제됩니다:",
-  "Click To Upgrade Subscription": "구독 업그레이드를 위해 클릭",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "구독 업그레이드를 위해 클릭 (월 1달러로 10GB)",
   "WILL BE DELETED": "삭제됩니다",
   "Create an album in 90 sec": "90초 만에 앨범 만들기",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "파일이 {totalStorageGB} GB 저장공간 중 {formatGB(usedGB)}을 차지하고 있습니다. 곧 구독을 업그레이드해야 할 수도 있습니다.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "비밀번호 필드를 비워두면 \"password\"가 기본 비밀번호로 사용됩니다. 앨범 설정에서 언제든지 이를 변경할 수 있습니다.",
   "💡 Password Protection Info:": "💡 비밀번호 보호 정보:",
   "Select Protection Level": "보호 수준 선택",
-  "Save Settings": "설정 저장"
+  "Save Settings": "설정 저장",
+  "No Public Albums Found": "공개 앨범을 찾을 수 없습니다"
 }

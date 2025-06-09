@@ -189,7 +189,7 @@
   "Downgrade To Free": "Reduir A Gratuït",
   "Change Plan": "Canviar Pla",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tens més de 5 àlbums. Aquests àlbums s'estan esborrant automàticament llevat que actualitzis la teva subscripció:",
-  "Click To Upgrade Subscription": "Feu Clic Per Actualitzar La Subscripció",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Feu Clic Per Actualitzar La Subscripció (1 USD mensual per 10 GB)",
   "WILL BE DELETED": "SERÀ ESBORRAT",
   "Create an album in 90 sec": "Crear un àlbum en 90 segons",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Els vostres fitxers ocupen {formatGB(usedGB)} dels {totalStorageGB} GB d'emmagatzematge. Potser haureu d'actualitzar la vostra subscripció aviat.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si deixeu buit el camp de contrasenya, s'utilitzarà \"password\" com a contrasenya per defecte. Podeu canviar-ho en qualsevol moment a la configuració de l'àlbum.",
   "💡 Password Protection Info:": "💡 Informació de Protecció de Contrasenya:",
   "Select Protection Level": "Selecciona el Nivell de Protecció",
-  "Save Settings": "Desar Configuració"
+  "Save Settings": "Desar Configuració",
+  "No Public Albums Found": "No S'han Trobat Àlbums Públics"
 }

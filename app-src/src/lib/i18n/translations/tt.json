@@ -189,7 +189,7 @@
   "Downgrade To Free": "Түләүсезгә Төшерү",
   "Change Plan": "Планны Үзгәртү",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Сездә 5тән күп альбом бар. Әгәр сез абонементыгызны яңартмасагыз, бу альбомнар автоматик рәвештә юкка чыгарыла:",
-  "Click To Upgrade Subscription": "Язылышны Яхшырту Өчен Басыгыз",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Язылуны Яхшыртыу Өчен Басыгыз (Айга 1 АКШ доллары 10 ГБ өчен)",
   "WILL BE DELETED": "БЕТЕРӘЛӘЧӘК",
   "Create an album in 90 sec": "90 секундта альбом ясагыз",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Әгәр серсүз кыры буш калдырсагыз, \"password\" төп серсүз буларак кулланылачак. Моны альбом көйләүләрендә теләсә кайсы вакытта үзгәртә аласыз.",
   "💡 Password Protection Info:": "💡 Серсүз Сакланышы Мәгълүматы:",
   "Select Protection Level": "Саклау Дәрәҗәсен Сайла",
-  "Save Settings": "Көйләүләрне Саклау"
+  "Save Settings": "Көйләүләрне Саклау",
+  "No Public Albums Found": "Берни Дә Халыкка Тиешле Альбом Табылмады"
 }

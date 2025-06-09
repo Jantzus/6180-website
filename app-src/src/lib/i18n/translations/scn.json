@@ -189,7 +189,7 @@
   "Downgrade To Free": "Calari A Gratuitu",
   "Change Plan": "Canciare Chianu",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Hai cchiù di 5 album. Sti album vennu cancillati automaticamenti, a menu ca nun aggiurni l'abbunamentu:",
-  "Click To Upgrade Subscription": "Fai Clic Pi Aggiurnari L'Abbunamentu",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Carca Pi Megghiurari Lu Abbunamentu (1 dollaru USA ô misi pi 10 GB)",
   "WILL BE DELETED": "VENI CANCILLATU",
   "Create an album in 90 sec": "Cria n'album nta 90 secunni",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si lassi vacanti lu campu dâ password, \"password\" veni usatu comu password pridifinuta. Poi canciari stu cosa quannu voi nnâ cunfigurazzioni di l'album.",
   "💡 Password Protection Info:": "💡 Nfurmaziuni di Prutezzioni dâ Password:",
   "Select Protection Level": "Scegghì u Liveddu di Prutezzioni",
-  "Save Settings": "Sarva Mmostazioni"
+  "Save Settings": "Sarva Mmostazioni",
+  "No Public Albums Found": "Nuddu Album Pùbblicu Attruvatu"
 }

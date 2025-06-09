@@ -189,7 +189,7 @@
   "Downgrade To Free": "Дармӧ Вылӧ Лэдзны",
   "Change Plan": "План Воштыны",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Тіян 5-сянь унджык альбом эм. Кыдзи альбомъяс автоматически чышкисьӧны, кӧ тэ эн содты абонементсӧ:",
-  "Click To Upgrade Subscription": "Подписка бурдӧдны кепысь",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Подписка Бурмӧдны Кепӧдчы (Тӧлысь 1 АӦШ доллар 10 ГБ вылӧ)",
   "WILL BE DELETED": "ЧЫШКАС",
   "Create an album in 90 sec": "90 секундын альбом лöсьöдны",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Кӧр ті пароль улӧскӧс коймытӧмӧн кольӧдан, \"password\" джынйысь пароль пыр лӧсьӧдӧм. Тіян позьӧ тайӧс воштыны кӧр кад кольӧм альбом видлалӧмъясын.",
   "💡 Password Protection Info:": "💡 Шыпас кыв дзоньсӧм йылысь:",
   "Select Protection Level": "Дзоньсьӧм рыт бӧрйы",
-  "Save Settings": "Лӧсьӧдӧмъяс видзны"
+  "Save Settings": "Лӧсьӧдӧмъяс видзны",
+  "No Public Albums Found": "Öтi Войтыр Альбом Эз Аддзы"
 }

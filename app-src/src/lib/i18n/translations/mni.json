@@ -189,7 +189,7 @@
   "Downgrade To Free": "ঐদাঙদা মরোল লৈহন্নবা",
   "Change Plan": "প্ল্যান অহংবা",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "ꯅꯍꯥꯛꯇ ꯵ꯒꯤ ꯄꯥꯟꯗꯥ ꯍꯦꯟꯅꯥ ꯑꯦꯜꯕꯝ ꯂꯩ꯫ ꯅꯍꯥꯛꯅ ꯅꯍꯥꯛꯒꯤ ꯁꯕꯁ꯭ꯛꯔꯤꯞꯁꯟ ꯑꯄꯒ꯭ꯔꯦꯗ ꯇꯧꯗꯅꯥ ꯃꯇꯝ ꯑꯦꯜꯕꯝ ꯑꯁꯤ ꯃꯁꯥꯒꯤ ꯊꯥꯁꯤꯖꯔꯤ:",
-  "Click To Upgrade Subscription": "সাবস্ক্রিপশন আপগ্রেড তৌবা পামজিন্নবা",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "সাবস্ক্রিপশন আপগ্রেড তৌবা পাম্মী (তা ওইরি US$1 10 GB গীদমক)",
   "WILL BE DELETED": "ꯃꯨꯠꯄꯥ ꯏꯔꯒꯅꯤ",
   "Create an album in 90 sec": "90 ꯁꯦꯀꯦꯟꯗꯇꯥ ꯑꯦꯜꯕꯝ ꯁꯦꯝꯃꯨ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ꯀꯔꯤꯒꯨꯝꯕꯥ ꯅꯍꯥꯛꯅꯥ ꯄꯥꯁꯋꯥꯔꯗ ꯐꯤꯜꯗ ꯑꯁꯤ ꯈꯣꯡꯖꯤꯟ ꯇꯥꯀꯄꯗꯤ, \"password\" ꯑꯁꯤ ꯗꯤꯐꯣꯜꯇ ꯄꯥꯁꯋꯥꯔꯗ ꯑꯣꯏꯅꯥ ꯁꯤꯖꯤꯟꯅꯒꯅꯤ꯫ ꯃꯁꯤ ꯑꯦꯜꯕꯝ ꯁꯦꯇꯤꯡꯁꯇꯥ ꯃꯇꯝ ꯈꯨꯗꯤꯡꯃꯛꯇꯥ ꯍꯣꯡꯒꯗꯕꯥ ꯌꯥꯏ꯫",
   "💡 Password Protection Info:": "💡 পাসৱার্ড প্রোতেক্সন ইনফোর্মেসন:",
   "Select Protection Level": "প্রোতেক্সন লেভেল সেলেক্ত তৌরো",
-  "Save Settings": "সেতিং সেভ তৌরো"
+  "Save Settings": "সেতিং সেভ তৌরো",
+  "No Public Albums Found": "অমুক পাব্লিক এলবাম ফাওবা নত্তে"
 }

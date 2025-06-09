@@ -189,7 +189,7 @@
   "Downgrade To Free": "Vuollehahttit Nuvttá",
   "Change Plan": "Rievdat Plána",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Dus leat badjel 5 albuma. Dát albumat sihkkojuvvojit automatihkalaččat jus it ođasmahte dihte preannumirenttaid:",
-  "Click To Upgrade Subscription": "Deaddil Subscription Buoridit",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Báhcat Mii Buoridit Subscription (Mánotbadji US$1 10 GB várás)",
   "WILL BE DELETED": "ŠADDO",
   "Create an album in 90 sec": "Ráhkat albuma 90 sekundas",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jos jätát passworda-suorggi guorus, de \"password\" geavahuvvo vuođđupasswordan. Don sáhtát rievdadit dán goabbat áiggis album-heivehusain.",
   "💡 Password Protection Info:": "💡 Beassansáni Suodján Dieđut:",
   "Select Protection Level": "Vállje Suodján Dási",
-  "Save Settings": "Vurke Heivehusat"
+  "Save Settings": "Vurke Heivehusat",
+  "No Public Albums Found": "Ii Gávdnálaš Albumat Gávnnahuvvo"
 }

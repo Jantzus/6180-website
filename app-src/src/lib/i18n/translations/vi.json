@@ -189,7 +189,7 @@
   "Downgrade To Free": "Hạ Cấp Xuống Miễn Phí",
   "Change Plan": "Thay Đổi Gói",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Bạn có hơn 5 album. Những album này đang được xóa tự động trừ khi bạn nâng cấp gói đăng ký:",
-  "Click To Upgrade Subscription": "Nhấp Để Nâng Cấp Gói Đăng Ký",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Nhấp Để Nâng Cấp Thuê Bao (US$1 hàng tháng cho 10 GB)",
   "WILL BE DELETED": "SẼ BỊ XÓA",
   "Create an album in 90 sec": "Tạo album trong 90 giây",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Các tập tin của bạn chiếm {formatGB(usedGB)} trong tổng số {totalStorageGB} GB lưu trữ. Bạn có thể cần nâng cấp gói đăng ký của mình sớm.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Nếu bạn để trống trường mật khẩu, \"password\" sẽ được sử dụng làm mật khẩu mặc định. Bạn có thể thay đổi điều này bất kỳ lúc nào trong cài đặt album.",
   "💡 Password Protection Info:": "💡 Thông Tin Bảo Vệ Mật Khẩu:",
   "Select Protection Level": "Chọn Mức Độ Bảo Vệ",
-  "Save Settings": "Lưu Cài Đặt"
+  "Save Settings": "Lưu Cài Đặt",
+  "No Public Albums Found": "Không Tìm Thấy Album Công Khai"
 }

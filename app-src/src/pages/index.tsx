@@ -89,7 +89,7 @@ const IndexPage: React.FC = () => {
               className="hover-button"
               style={{ marginTop: '20px', padding: '12px 20px' }}
             >
-              {t('Create Album')}
+              {t('Start')}
             </Button>
           </div>
 

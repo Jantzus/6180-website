@@ -25,6 +25,7 @@ import { PasswordDialog } from "@/components/PasswordDialog";
 import { LogoutButton } from "@/components/LogoutButton";
 import { DebugLog } from "@/components/DebugLog";
 import { useUsernameManagement } from "@/lib/useUsernameManagement";
+import { prewarmCredentials } from "@/lib/s3";
 
 // Import the file upload processor hook
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
@@ -107,6 +108,20 @@ const SaveAlbum = () => {
     handleFileSelection,
     log
   } = useFileUploadProcessor(navigateAfterUpload);
+
+  // NEW: Prewarm S3 credentials when the page loads for extra reliability
+  useEffect(() => {
+    const warmUpPageCredentials = async () => {
+      try {
+        await prewarmCredentials();
+        log("🔥 Save-album page S3 credentials prewarmed successfully");
+      } catch (error) {
+        log(`⚠️ Save-album page credential prewarming failed: ${String(error)}`);
+      }
+    };
+    
+    warmUpPageCredentials();
+  }, []); // Empty dependency array - run once when page loads
 
   // Enhanced logging function that uses the log from useFileUploadProcessor
   const enhancedLog = (message: string, data?: any) => {
@@ -309,12 +324,24 @@ const SaveAlbum = () => {
             <LogoutButton t={t} />
           </HeaderContainer>
           
-          {/* Progress Tracking */}
-          <UploadProgress
-            progressTracker={progressTracker}
-            isRTL={getLanguageDirection(language) === "rtl"}
-            variant="detailed"
-          />
+          {/* Progress Tracking - Only show when files are actually being processed */}
+          {(isUploading || 
+            (progressTracker.totalFiles > 0 && 
+             (progressTracker.filesUploading > 0 || progressTracker.filesProcessing > 0 || 
+              progressTracker.filesComplete < progressTracker.totalFiles))) && (
+            <UploadProgress
+              progressTracker={progressTracker}
+              isRTL={getLanguageDirection(language) === "rtl"}
+              variant="detailed"
+              context="saving"
+              isUploading={isUploading}
+              showSuccessMessage={false}
+              showErrorMessage={true}
+              customMessages={{
+                error: t('Some photos could not be processed. You can continue with the successfully processed photos.')
+              }}
+            />
+          )}
           
           {/* Hidden File Input - now using the ref from the hook */}
           <input

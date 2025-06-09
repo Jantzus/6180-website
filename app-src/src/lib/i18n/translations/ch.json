@@ -189,7 +189,7 @@
   "Downgrade To Free": "Tumunog Para Libre",
   "Change Plan": "Tulaika I Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Guaha mas ki 5 album nu hago. Esti na album siha manborra automatiku yanggen ti un upgrade i subscription-mu:",
-  "Click To Upgrade Subscription": "Chagi Para Mejorar I Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Pindikke Para Um-upgrade I Subscription (US$1 kada mes para 10 GB)",
   "WILL BE DELETED": "PARA U DILI",
   "Create an album in 90 sec": "Fatinas album gi 90 segundo",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Yanggen un dingo i password field na mappot, \"password\" para u ma usa na default password. Siña un taira' este gi todu na tiempo gi album settings.",
   "💡 Password Protection Info:": "💡 Infotmasion Password Protection:",
   "Select Protection Level": "Ayek i Protection Level",
-  "Save Settings": "Satba i Settings"
+  "Save Settings": "Satba i Settings",
+  "No Public Albums Found": "Tåya Album Publiko Ma Sigi"
 }

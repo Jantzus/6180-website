@@ -189,7 +189,7 @@
   "Downgrade To Free": "𐌳𐌰𐌻𐌰𐌸 𐌳𐌿 𐍆𐍂𐌴𐌹𐍃",
   "Change Plan": "𐌰𐌽𐌳𐌰𐌿𐍂𐌰𐌽 𐌻𐌹𐍃𐍄",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "𐌷𐌰𐌱𐌰𐌹𐍃 𐌼𐌰𐌹𐍃 𐌸𐌰𐌿 5 𐌰𐌻𐌱𐌿𐌼𐍃. 𐌸𐌰𐌹 𐌰𐌻𐌱𐌿𐌼𐍃 𐍃𐌹𐌽𐌳 𐍃𐌹𐌻𐌱𐌰𐌻𐌴𐌹𐌺𐍉 𐍆𐍂𐌰𐌵𐌹𐍃𐍄𐌹𐌳𐌰𐌹, 𐌽𐌹𐌱𐌰 𐌸𐌿 𐌿𐍆𐍀𐌰𐌷𐌰𐌿𐌷𐌴𐌹𐍃 𐌸𐌴𐌹𐌽𐌰 𐌿𐌽𐌳𐌰𐌽𐌹𐌼𐌰:",
-  "Click To Upgrade Subscription": "𐌺𐌻𐌰𐌺𐌾𐌰𐌽 𐌳𐌿 𐌿𐍆𐌰𐍂𐌷𐌰𐌿𐌷𐌾𐌰𐌽 𐌰𐍆𐌰𐌹𐌱𐌰𐌿𐌺",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "𐌷𐌰𐌹𐍄 𐌳𐌿 𐌱𐌰𐍄𐌹𐌶𐌰𐌽 𐌿𐍆𐌰𐍂𐌼𐌴𐌻𐌾𐌰𐌽 (𐌼𐌴𐌽𐍉𐌸𐍃 1 𐌳𐌿𐌻𐌰𐍂 𐌰𐌼𐌴𐍂𐌹𐌺𐌰 10 GB)",
   "WILL BE DELETED": "𐍅𐌰𐌹𐍂𐌸𐌹𐌸 𐍆𐍂𐌰𐌵𐌿𐌹𐍃𐍄𐍃",
   "Create an album in 90 sec": "𐌲𐌰𐍃𐌺𐌰𐍀𐌾𐌰𐌽 𐌰𐌻𐌱𐌿𐌼 𐌹𐌽 90 𐌰𐌹𐍅𐍃",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "𐌾𐌰𐌱𐌰𐌹 𐌻𐌰𐌿𐍃 𐌱𐌹𐌻𐌴𐌹𐌸𐍃 𐌿𐌽𐌳𐌹𐍂𐌽𐌹𐌼𐌰𐌽𐌳𐍃 𐌰𐌺𐍂𐌰𐌽 \"password\" 𐌱𐍂𐌿𐌺𐌾𐌰𐌳𐌰 𐍃𐍅𐌴 𐌿𐌽𐌳𐌹𐍂𐌽𐌹𐌼𐌰𐌽𐌳𐍃 𐌰𐌽𐌰𐍃𐍄𐍉𐌳𐌴𐌹𐌽𐍃. 𐌼𐌰𐌲𐍄 𐌹𐌽𐌼𐌰𐌹𐌳𐌾𐌰𐌽 𐌸𐌰𐍄𐌰 𐌹𐌽 𐌰𐌻𐌻𐌰𐌹𐌼 𐌼𐌴𐌻𐌰 𐌹𐌽 𐌰𐌻𐌱𐌿𐌼𐌹𐍃 𐌲𐌰𐍃𐌰𐍄𐌴𐌹𐌽𐌰𐌹𐌼.",
   "💡 Password Protection Info:": "💡 𐌱𐌰𐌽𐌳𐍅𐌰 𐌱𐌰𐍂𐌲𐌴𐌹𐌽ôs 𐌺𐌿𐌽𐌸𐌾ôs:",
   "Select Protection Level": "𐌲𐌰𐍅𐌰𐌻𐌾𐌰𐌽 𐌱𐌰𐍂𐌲𐌴𐌹𐌽ôs 𐌷𐌰𐌿𐌷𐌴𐌹𐌽",
-  "Save Settings": "𐌱𐌰𐌹𐍂𐌲 𐌲𐌰𐍃𐌰𐍄𐌴𐌹𐌽𐍃"
+  "Save Settings": "𐌱𐌰𐌹𐍂𐌲 𐌲𐌰𐍃𐌰𐍄𐌴𐌹𐌽𐍃",
+  "No Public Albums Found": "𐌽𐌹 𐌰𐌹𐌽𐍃 𐌰𐌻𐌻𐌰𐌹𐌶𐌴 𐌱𐍉𐌺𐌰 𐌱𐌹𐌲𐌹𐍄𐌰𐌽"
 }

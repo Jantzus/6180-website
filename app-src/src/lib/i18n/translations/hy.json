@@ -189,7 +189,7 @@
   "Downgrade To Free": "Նվազեցնել Անվճար",
   "Change Plan": "Փոխել Ծրագիրը",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Դուք ունեք 5-ից ավելի ալբոմ: Այս ալբոմները ավտոմատ կերպով ջնջվում են, եթե չարդիականացնեք ձեր բաժանորդագրությունը:",
-  "Click To Upgrade Subscription": "Սեղմեք Բաժանորդագրությունը Արդիականացնելու Համար",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Սեղմեք Բաժանորդագրությունը Բարելավելու Համար (Ամսական 1 ԱՄՆ դոլար 10 ԳԲ-ի համար)",
   "WILL BE DELETED": "ԿՀՁ ՋՆՋՎԵԼ",
   "Create an album in 90 sec": "Ստեղծեք ալբոմ 90 վայրկյանում",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Ձեր ֆայլերը գրավում են {formatGB(usedGB)} {totalStorageGB} GB պահեստից։ Կարող է շուտով պետք լինի արտոնագրությունը թարմացնել։",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Եթե գաղտնաբառի դաշտը թողնեք դատարկ, \"password\"-ը կօգտագործվի որպես կանխադրված գաղտնաբառ: Կարող եք այն փոխել ցանկացած ժամանակ ալբոմի կարգավորումներում:",
   "💡 Password Protection Info:": "💡 Գաղտնաբառի Պաշտպանության Տեղեկություն:",
   "Select Protection Level": "Ընտրեք Պաշտպանության Մակարդակը",
-  "Save Settings": "Պահպանել Կարգավորումները"
+  "Save Settings": "Պահպանել Կարգավորումները",
+  "No Public Albums Found": "Հրապարակային Ալբումներ Չեն Գտնվել"
 }

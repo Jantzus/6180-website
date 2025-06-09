@@ -189,7 +189,7 @@
   "Downgrade To Free": "Muft Me Kam Karo",
   "Change Plan": "Plan Change Karo",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Aap ke paas 5 se jaada album hai. Ii album apne aap delete ho rahe hai jab tak aap apna subscription upgrade nahi karte:",
-  "Click To Upgrade Subscription": "Subscription upgrade kare ke khatir click karo",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Subscription upgrade kare ke liye click karo (mahina US$1 10 GB ke liye)",
   "WILL BE DELETED": "HATA DEWA JAAI",
   "Create an album in 90 sec": "90 second me album banao",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Agar aap password field khali chhod dete hain, to \"password\" default password ke roop mein use hoga. Aap ise album setting mein kabhi bhi badal sakte hain.",
   "💡 Password Protection Info:": "💡 Password suraksha jaankari:",
   "Select Protection Level": "Suraksha level chuniye",
-  "Save Settings": "Settings bachao"
+  "Save Settings": "Settings bachao",
+  "No Public Albums Found": "Koi bhi public album nahi mila"
 }

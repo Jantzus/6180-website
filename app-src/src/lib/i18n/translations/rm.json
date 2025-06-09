@@ -189,7 +189,7 @@
   "Downgrade To Free": "Reducir A Gratuita",
   "Change Plan": "Midar Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Vus avais plirs che 5 albums. Quests albums vegnan stizzads automaticamain, nun che vus actualisais voss abunament:",
-  "Click To Upgrade Subscription": "Cliccar Per Actualisar L'Abonnament",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Cliccar Per Megliurar L'Abunament (1 USD al mais per 10 GB)",
   "WILL BE DELETED": "VEGN STIZZÀ VIA",
   "Create an album in 90 sec": "Crear in album en 90 secundas",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Schebain ti laschar vid il champ da la cifra, vegn \"password\" utilisà sco cifra da standard. Ti pos midar quai da tut temp en las configuraziuns da l'album.",
   "💡 Password Protection Info:": "💡 Infurmaziuns davart Protecziun da Plav:",
   "Select Protection Level": "Tscherna Nivel da Protecziun",
-  "Save Settings": "Memorisar Configuraziuns"
+  "Save Settings": "Memorisar Configuraziuns",
+  "No Public Albums Found": "Nagins Albums Publics Chattads"
 }

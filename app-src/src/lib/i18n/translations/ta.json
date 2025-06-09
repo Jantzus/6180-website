@@ -189,7 +189,7 @@
   "Downgrade To Free": "இலவசத்திற்கு குறையுங்கள்",
   "Change Plan": "திட்டத்தை மாற்றவும்",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "உங்களிடம் 5 க்கும் மேற்பட்ட ஆல்பங்கள் உள்ளன. நீங்கள் உங்கள் சந்தாவை மேம்படுத்தவில்லை என்றால் இந்த ஆல்பங்கள் தானாகவே நீக்கப்படுகின்றன:",
-  "Click To Upgrade Subscription": "சந்தாவை மேம்படுத்த கிளிக் செய்யுங்கள்",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "சந்தாவை மேம்படுத்த கிளிக் செய்யுங்கள் (மாதம் US$1 10 GB க்கு)",
   "WILL BE DELETED": "நீக்கப்படும்",
   "Create an album in 90 sec": "90 வினாடிகளில் ஆல்பம் உருவாக்கவும்",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "உங்கள் கோப்புகள் {totalStorageGB} GB சேமிப்பில் {formatGB(usedGB)} ஆக்கிரமித்துள்ளன। நீங்கள் விரைவில் உங்கள் சந்தாவை மேம்படுத்த வேண்டியிருக்கலாம்.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "நீங்கள் கடவுச்சொல் புலத்தை வெறுமையாக விட்டால், \"password\" முன்னிருப்பு கடவுச்சொலாகப் பயன்படுத்தப்படும். நீங்கள் இதை ஆல்பம் அமைப்புகளில் எந்த நேரத்திலும் மாற்றலாம்.",
   "💡 Password Protection Info:": "💡 கடவுச்சொல் பாதுகாப்பு தகவல்:",
   "Select Protection Level": "பாதுகாப்பு நிலையைத் தேர்ந்தெடுக்கவும்",
-  "Save Settings": "அமைப்புகளைச் சேமிக்கவும்"
+  "Save Settings": "அமைப்புகளைச் சேமிக்கவும்",
+  "No Public Albums Found": "பொது ஆல்பங்கள் எதுவும் காணப்படவில்லை"
 }

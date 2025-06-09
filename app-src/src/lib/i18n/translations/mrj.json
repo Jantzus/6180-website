@@ -189,7 +189,7 @@
   "Downgrade To Free": "Дарома Кушкын Шуаш",
   "Change Plan": "План Шалме",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Тидӹ 5-тӹ шукырак альбом улыт. Нӹ альбомвлӓ автоматикӹ кӹрылтӹт, тӹ абонементыт кӹчыктӹшӹгӹ дӹнӹ:",
-  "Click To Upgrade Subscription": "Подписка сайыкташ темлаш",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Подписка Сайылташ Тӹшкӹ Темдалза (Тӹлзӹштӹ 1 АКШ доллар 10 ГБ деч)",
   "WILL BE DELETED": "КӸРЫЛМӸ",
   "Create an album in 90 sec": "90 секундышты альбом ышташ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Пароль котырым пуштӹ кодын кодат гын, \"password\" тӹнг пароль семӹн кучылтеш. Тӹдӹм альбом келыштарымаште кужна кырык торлаяш лиеш.",
   "💡 Password Protection Info:": "💡 Пароль Арален Увер:",
   "Select Protection Level": "Арален Кӱкшӧм Айыраш",
-  "Save Settings": "Келыштарымашым Аралаш"
+  "Save Settings": "Келыштарымашым Аралаш",
+  "No Public Albums Found": "Кӱлтӹрӹм Альбомшамла Муэш"
 }

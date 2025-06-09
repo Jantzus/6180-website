@@ -189,7 +189,7 @@
   "Downgrade To Free": "უფინოშა ჩამონთება",
   "Change Plan": "გეგმას ალაშქა",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "თქვანს 5-ზე მეტი ალბომი გოფენით. ალბომეფი ოთომატურო მოისუტყუნები, თუ არ გაუმსხუნათ თქვანი საახალწლო:",
-  "Click To Upgrade Subscription": "ააპესენ ხოთერი გამოწერე დო ოტობალე",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "ღილაკი ნაჭირჲო მოწესნუას ოლაღი ოდო (დოთუნა 1 დოლარი აშშ-იშა 10 გბ-იშათი)",
   "WILL BE DELETED": "წაიშლება",
   "Create an album in 90 sec": "90 წამში ალბომი ქორთუ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "მუჭოჲ პაროლიშ ვალი ცარიელი კომუთ, \"password\" ღუნოფენ ღუ ბუნერიღ პაროლო. ათე ალბომიშ პარამეტრეფშა შილებაშ ვალიუ ბოლებირინ ჩქინ ათე.",
   "💡 Password Protection Info:": "💡 პაროლიშ დოჩამალი ინფორმაცია:",
   "Select Protection Level": "აირჩე დოჩამალი რინგი",
-  "Save Settings": "ნაცუნები შენახე"
+  "Save Settings": "ნაცუნები შენახე",
+  "No Public Albums Found": "არა რაშია საყოველთაო ალბომეფი ძაფუნაფილია"
 }

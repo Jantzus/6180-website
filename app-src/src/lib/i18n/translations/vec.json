@@ -189,7 +189,7 @@
   "Downgrade To Free": "Sbasso A Gratuito",
   "Change Plan": "Canbia Pian",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ti ghe più de 5 album. Sti album i vegne scanseła automaticamente, se no ti agiorna el to abonamеnto:",
-  "Click To Upgrade Subscription": "Schiscia Par Mejorare El Abonamento",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Struca Par Mejorare El Abonamęto (1 dołaro USA al mexe par 10 GB)",
   "WILL BE DELETED": "EL SARÀ SCANCEŁÀ",
   "Create an album in 90 sec": "Crea un album in 90 secondi",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se te lassi vodo el canpo de la password, \"password\" el sarà doparà come password predefinia. Te poli canbiarlo quando che te vol inte le inpostasion de l'album.",
   "💡 Password Protection Info:": "💡 Informasion su ła Protesion de ła Password:",
   "Select Protection Level": "Sełesiona el Łiveło de Protesion",
-  "Save Settings": "Salva Inpostasion"
+  "Save Settings": "Salva Inpostasion",
+  "No Public Albums Found": "Nesun Album Publico Catà"
 }

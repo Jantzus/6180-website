@@ -189,7 +189,7 @@
   "Downgrade To Free": "Siirry Ilmaiseen",
   "Change Plan": "Vaihda Suunnitelma",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Sinulla on yli 5 albumia. Nämä albumit poistetaan automaattisesti, ellet päivitä tilausasi:",
-  "Click To Upgrade Subscription": "Napsauta Päivittääksesi Tilauksen",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klikkaa Päivittääksesi Tilauksen (1 USD kuukaudessa 10 GB:lle)",
   "WILL BE DELETED": "POISTETAAN",
   "Create an album in 90 sec": "Luo albumi 90 sekunnissa",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Tiedostosi vievät {formatGB(usedGB)} / {totalStorageGB} GB tallennustilaa. Saatat tarvita tilauksen päivitystä pian.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jos jätät salasanakentän tyhjäksi, \"password\" käytetään oletussalasanana. Voit muuttaa tämän milloin tahansa albumin asetuksissa.",
   "💡 Password Protection Info:": "💡 Salasanasuojauksen Tiedot:",
   "Select Protection Level": "Valitse Suojaustaso",
-  "Save Settings": "Tallenna Asetukset"
+  "Save Settings": "Tallenna Asetukset",
+  "No Public Albums Found": "Julkisia Albumeita Ei Löytynyt"
 }

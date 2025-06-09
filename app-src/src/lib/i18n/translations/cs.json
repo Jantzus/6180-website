@@ -189,7 +189,7 @@
   "Downgrade To Free": "Přejít Na Zdarma",
   "Change Plan": "Změnit Plán",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Máte více než 5 alb. Tato alba se automaticky mažou, pokud si neupgradujete předplatné:",
-  "Click To Upgrade Subscription": "Klikněte Pro Upgrade Předplatného",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klikněte Pro Upgrade Předplatného (1 USD měsíčně za 10 GB)",
   "WILL BE DELETED": "BUDE SMAZÁNO",
   "Create an album in 90 sec": "Vytvořte album za 90 sekund",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Vaše soubory zabírají {formatGB(usedGB)} z {totalStorageGB} GB úložiště. Možná brzy budete muset upgradovat své předplatné.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Pokud necháte pole hesla prázdné, \"password\" bude použito jako výchozí heslo. Můžete to kdykoli změnit v nastavení alba.",
   "💡 Password Protection Info:": "💡 Informace o Ochraně Hesla:",
   "Select Protection Level": "Vyberte Úroveň Ochrany",
-  "Save Settings": "Uložit Nastavení"
+  "Save Settings": "Uložit Nastavení",
+  "No Public Albums Found": "Nenalezeny Žádné Veřejné Albumy"
 }

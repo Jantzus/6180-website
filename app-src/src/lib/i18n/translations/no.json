@@ -189,7 +189,7 @@
   "Downgrade To Free": "Nedgrader Til Gratis",
   "Change Plan": "Endre Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Du har mer enn 5 album. Disse albumene slettes automatisk med mindre du oppgraderer abonnementet ditt:",
-  "Click To Upgrade Subscription": "Klikk For Å Oppgradere Abonnementet",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klikk For Å Oppgradere Abonnement (1 USD per måned for 10 GB)",
   "WILL BE DELETED": "VIL BLI SLETTET",
   "Create an album in 90 sec": "Opprett et album på 90 sekunder",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Filene dine tar {formatGB(usedGB)} av {totalStorageGB} GB lagring. Du må kanskje oppgradere abonnementet ditt snart.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Hvis du lar passordfeltet stå tomt, vil \"password\" brukes som standardpassord. Du kan endre dette når som helst i albuminnstillinger.",
   "💡 Password Protection Info:": "💡 Passord Beskyttelse Info:",
   "Select Protection Level": "Velg Beskyttelsesnivå",
-  "Save Settings": "Lagre Innstillinger"
+  "Save Settings": "Lagre Innstillinger",
+  "No Public Albums Found": "Ingen Offentlige Albums Funnet"
 }

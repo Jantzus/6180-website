@@ -189,7 +189,7 @@
   "Downgrade To Free": "Rebaxal A Gratis",
   "Change Plan": "Mudal Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tenéis más de 5 álbumes. Estus álbumes se están borrandu automáticamente a menus que actualicéis la vuestra suscripción:",
-  "Click To Upgrade Subscription": "Hazel Clic Pa Melloral La Suscripción",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Azi Clic Pa Mejorai La Suscripción (1 dólal USA mensual pol 10 GB)",
   "WILL BE DELETED": "SERÁ BORRÁU",
   "Create an album in 90 sec": "Creal un álbum en 90 segundus",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si dexas el campu de contraseña vaciu, \"password\" s'usará comu contraseña predefinia. Pueis cambial estu en cualisquiel momentu ena configuración del álbumi.",
   "💡 Password Protection Info:": "💡 Enformacioin de Proteicioin de Contraseña:",
   "Select Protection Level": "Esohi Libel de Proteicioin",
-  "Save Settings": "Guardal Configuracion"
+  "Save Settings": "Guardal Configuracion",
+  "No Public Albums Found": "Nu S'an Alcuntrau Albums Publicus"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "Sian Kɔ Kwa",
   "Change Plan": "Sesa Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Wowɔ albɔm anum sen a esen. Saa albɔm yi wɔreyiyi no ankasa bere a woannyɛ wo nhyehyeɛ no yiye:",
-  "Click To Upgrade Subscription": "Klik Na Wo Nya Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Mua Na Wo Ama Subscription No Atu (US$1 bosome biara ma 10 GB)",
   "WILL BE DELETED": "WOBƐYI NO",
   "Create an album in 90 sec": "Yɛ album wɔ simma 90 mu",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Wo fael ahorow gye {formatGB(usedGB)} firi {totalStorageGB} GB nkora mu. Ebia wubehia sɛ wokyɛ wo nhyehyɛe no kɛse.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Sɛ wogya password field no hunu a, \"password\" na wɔde bɛyɛ default password no. Wobɛtumi asesa saa wɔ album settings mu bere biara.",
   "💡 Password Protection Info:": "💡 Nsoromma Mfiri Nsɛm:",
   "Select Protection Level": "Paw Mfiri Kɔdo",
-  "Save Settings": "Kora Nhyehyɛe"
+  "Save Settings": "Kora Nhyehyɛe",
+  "No Public Albums Found": "Enni Albums Ahorow Anhu"
 }

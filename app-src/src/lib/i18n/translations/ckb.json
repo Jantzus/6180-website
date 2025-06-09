@@ -189,7 +189,7 @@
   "Downgrade To Free": "دابەزاندن بۆ بەخۆڕایی",
   "Change Plan": "گۆڕینی پلان",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "تۆ زیاتر لە ٥ ئەلبوومت هەیە. ئەم ئەلبوومانە بە شێوەیەکی خۆکار دەسڕدرێنەوە مەگەر ئەبونەمەنتەکەت بەرەو پێش ببەیت:",
-  "Click To Upgrade Subscription": "کرتە بکە بۆ باشتەرکردنی بەشداری",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "کرتە بکە بۆ بەرزکردنەوەی بەشداری (مانگانە 1 دۆلاری ئەمریکی بۆ 10 گیگابایت)",
   "WILL BE DELETED": "دەسڕێتەوە",
   "Create an album in 90 sec": "ئەلبوومێک بە 90 چرکە دروست بکە",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ئەگەر بواری پاسوۆردەکە بەتاڵ جێبهێڵیت، \"password\" وەک پاسوۆردی بنەڕەت بەکاردێت. دەتوانیت لە هەر کاتێکدا لە ڕێکخستنەکانی ئەلبومدا بیگۆڕیت.",
   "💡 Password Protection Info:": "💡 زانیاری پاراستنی وشەی نهێنی:",
   "Select Protection Level": "ئاستی پاراستن هەڵبژێرە",
-  "Save Settings": "ڕێکخستنەکان هەڵگرە"
+  "Save Settings": "ڕێکخستنەکان هەڵگرە",
+  "No Public Albums Found": "هیچ ئەلبومی گشتی نەدۆزرایەوە"
 }

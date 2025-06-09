@@ -189,7 +189,7 @@
   "Downgrade To Free": "Sivulliqługu Piniqsaijuksrimun",
   "Change Plan": "Piqqusilirijit Atchaglu",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Album 5 iñugiaksratin. Taapkua album autamatikuak pinañiaqtuq ullumi subscription upgrade uunakpiñ:",
-  "Click To Upgrade Subscription": "Aniqsaiy Subscription Piiqsimmauruk",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Anakligi Subscription Angijuuniamik (Taqtu US$1 10 GB qanuq)",
   "WILL BE DELETED": "ANAQTUSIMAÑIQTUQ",
   "Create an album in 90 sec": "Album pikti 90 sivulliq",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Kingunatchiqpat password-mik, \"password\" aullartuksrauq atuniqsrauq password-mun. Tainna alakkarguitchutin album settings-mi.",
   "💡 Password Protection Info:": "💡 Atausiq Anguniq Nihuksiraq:",
   "Select Protection Level": "Anguniq Aullartiq Piiqqusiq",
-  "Save Settings": "Niḷiqsaiyat Piqqusijit"
+  "Save Settings": "Niḷiqsaiyat Piqqusijit",
+  "No Public Albums Found": "Atausiniit Piqqusiat Naalaguksrit"
 }

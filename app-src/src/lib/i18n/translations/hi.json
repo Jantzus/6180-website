@@ -189,7 +189,7 @@
   "Downgrade To Free": "मुफ़्त में डाउनग्रेड",
   "Change Plan": "योजना बदलें",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "आपके पास 5 से अधिक एल्बम हैं। ये एल्बम अपने आप डिलीट हो रहे हैं जब तक आप अपनी सब्स्क्रिप्शन अपग्रेड नहीं करते:",
-  "Click To Upgrade Subscription": "सदस्यता अपग्रेड करने के लिए क्लिक करें",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "सब्सक्रिप्शन अपग्रेड करने के लिए क्लिक करें (मासिक US$1 10 GB के लिए)",
   "WILL BE DELETED": "हटा दिया जाएगा",
   "Create an album in 90 sec": "90 सेकंड में एल्बम बनाएं",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "आपकी फाइलें {totalStorageGB} GB स्टोरेज में से {formatGB(usedGB)} घेरती हैं। आपको जल्द ही अपनी सब्सक्रिप्शन अपग्रेड करने की जरूरत हो सकती है।",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "यदि आप पासवर्ड फील्ड को खाली छोड़ देते हैं, तो \"password\" का उपयोग डिफ़ॉल्ट पासवर्ड के रूप में किया जाएगा। आप इसे एल्बम सेटिंग में कभी भी बदल सकते हैं।",
   "💡 Password Protection Info:": "💡 पासवर्ड सुरक्षा जानकारी:",
   "Select Protection Level": "सुरक्षा स्तर चुनें",
-  "Save Settings": "सेटिंग सेव करें"
+  "Save Settings": "सेटिंग सेव करें",
+  "No Public Albums Found": "कोई सार्वजनिक एल्बम नहीं मिले"
 }

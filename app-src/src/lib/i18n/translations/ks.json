@@ -189,7 +189,7 @@
   "Downgrade To Free": "مُفت ہِس کم کَرُن",
   "Change Plan": "منصوبہ تبدیل کَرُن",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "تؤہس 5 کھوتہ زیادہ آلبم چھ۔ یِم آلبم خودکار طور پر ہٹاونہ یِوان چھ، تہ کمہ تؤہس پنٔن سبسکرپشن اپگریڈ کرو:",
-  "Click To Upgrade Subscription": "سبسکرپشن اپگریڈ کرنہ باپت کلک کریو",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "سَبسکرِپشَن اَپگریڈ کَرنہٕ خٲطرٕ کِلک کَرِو (مہٕ وار US$1 10 GB خٲطرٕ)",
   "WILL BE DELETED": "کڈ ویجھ",
   "Create an album in 90 sec": "90 سیکنڈن منز آلبم بناؤ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "اگر تۄہہ پاس ورڈ فیلڈ خالی ژھوڑان، \"password\" ڈیفالٹ پاس ورڈ منٛز استعمال گژھان. تۄہہ یہ البم سیٹنگنہٕ منٛز کانہہ وقتس تبدیل کٔرِتھ ہیکو۔",
   "💡 Password Protection Info:": "💡 پاس ورڈ تحفُظ معلومات:",
   "Select Protection Level": "تحفُظ سطح ژأرو",
-  "Save Settings": "سیٹِنگَن محفوظ کَرؠو"
+  "Save Settings": "سیٹِنگَن محفوظ کَرؠو",
+  "No Public Albums Found": "کانٛہہ عوامی البم نہٕ مِلیاہ"
 }

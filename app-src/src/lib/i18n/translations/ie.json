@@ -189,7 +189,7 @@
   "Downgrade To Free": "Degrdar A Gratuita",
   "Change Plan": "Cambiar Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Vos have plus quam 5 albums. Ti albums es automaticmen deleat except si vos actualisa vor subscription:",
-  "Click To Upgrade Subscription": "Cliccar Por Actualisar Li Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Clicca Por Meliorar Li Subscription (1 dollar USA per mensu por 10 GB)",
   "WILL BE DELETED": "VA ESSER DELETET",
   "Create an album in 90 sec": "Crear un album in 90 secundes",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si vos lassat voide li camp del password, \"password\" va esser usat quam li password standard. Vos posse changear to in quandocunc in li parametres del album.",
   "💡 Password Protection Info:": "💡 Information de Protection del Passa-parol:",
   "Select Protection Level": "Selecter Nivelle de Protection",
-  "Save Settings": "Gardar Configurationes"
+  "Save Settings": "Gardar Configurationes",
+  "No Public Albums Found": "Null Album Public Trovatе"
 }

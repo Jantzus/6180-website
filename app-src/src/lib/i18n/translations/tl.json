@@ -189,7 +189,7 @@
   "Downgrade To Free": "Ibaba Sa Libre",
   "Change Plan": "Baguhin Ang Plano",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Mayroon kayong higit sa 5 album. Ang mga album na ito ay awtomatikong binubura maliban kung i-upgrade ninyo ang inyong subscription:",
-  "Click To Upgrade Subscription": "I-Click Para Sa Pag-Upgrade Ng Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "I-click Para I-upgrade Ang Subscription (US$1 bawat buwan para sa 10 GB)",
   "WILL BE DELETED": "BUBURAHIN",
   "Create an album in 90 sec": "Gumawa ng album sa 90 segundo",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Kung iwanan mo nang walang laman ang password field, gagamitin ang \"password\" bilang default na password. Maaari mo itong baguhin anumang oras sa mga setting ng album.",
   "💡 Password Protection Info:": "💡 Impormasyon ng Proteksyon sa Password:",
   "Select Protection Level": "Piliin ang Antas ng Proteksyon",
-  "Save Settings": "I-save ang mga Setting"
+  "Save Settings": "I-save ang mga Setting",
+  "No Public Albums Found": "Walang Nakitang Mga Pampublikong Album"
 }

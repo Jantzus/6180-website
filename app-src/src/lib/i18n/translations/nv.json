@@ -189,7 +189,7 @@
   "Downgrade To Free": "T'áá Jíík'eh Yázhí",
   "Change Plan": "Nahalin Át'é",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ashdlaʼ dóó neeznádiin sínída bee naʼniłkaadí nihaa. Díí naʼniłkaadí nihee bíighah ałtso íłtą, nti tʼáá nihikéyah doo naat'aanii dahóyáalgo:",
-  "Click To Upgrade Subscription": "Ákʼeh Naaltsoos Áłtso Bá Naashá",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Ániłt'éego Subscription Ályaa (Dah US$1 naaki ashdla GB ánádaalyaa)",
   "WILL BE DELETED": "NÁHODÍÍŁKĄ́Ą́'",
   "Create an album in 90 sec": "Album 90 yoołkááł góne ałhįįh",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Áko bee hózhó bąąh nanitįįh bąąh dahojoobaałígíí ąąh lá, \"password\" bitsįį doo dahojoobaałígíí bee ałk'idáá dooleel. Kó bąąh álbam ádaalyaa yee índa nanitįįh.",
   "💡 Password Protection Info:": "💡 Atsʼíísh Bee Anáʼádaohii Bee Bééhózin:",
   "Select Protection Level": "Chʼééh Anáʼádaohii Bee Ózhį́į́ł",
-  "Save Settings": "Tʼáá Bee Anáʼídaohii Bee Anáʼínahodlit"
+  "Save Settings": "Tʼáá Bee Anáʼídaohii Bee Anáʼínahodlit",
+  "No Public Albums Found": "Doo T'áá Bee Naaltsoos Bąąh Ąją Da"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "تقليل إلى مجاني",
   "Change Plan": "تغيير الخطة",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "لديك أكثر من 5 ألبومات. هذه الألبومات يتم حذفها تلقائياً إلا إذا قمت بترقية اشتراكك:",
-  "Click To Upgrade Subscription": "انقر لترقية الاشتراك",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "انقر لترقية الاشتراك (1 دولار أمريكي شهرياً مقابل 10 جيجابايت)",
   "WILL BE DELETED": "سيتم الحذف",
   "Create an album in 90 sec": "إنشاء ألبوم في 90 ثانية",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ملفاتك تحتل {formatGB(usedGB)} من {totalStorageGB} جيجابايت للتخزين. قد تحتاج إلى ترقية اشتراكك قريباً.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "إذا تركت حقل كلمة المرور فارغاً، سيتم استخدام \"password\" ككلمة مرور افتراضية. يمكنك تغيير هذا في أي وقت في إعدادات الألبوم.",
   "💡 Password Protection Info:": "💡 معلومات حماية كلمة المرور:",
   "Select Protection Level": "اختر مستوى الحماية",
-  "Save Settings": "حفظ الإعدادات"
+  "Save Settings": "حفظ الإعدادات",
+  "No Public Albums Found": "لم يتم العثور على ألبومات عامة"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "Spùscëc Na Za Darmo",
   "Change Plan": "Zmienëc Plôn",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Môsz wiãcy jak 5 albumów. Te albumë òstóną automaticznie rëmniãte, jeżlë nié zaktualizëjesz swòji abònemëntu:",
-  "Click To Upgrade Subscription": "Klëkni Żebë Ùpsôbic Abònamént",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klëkni Żebë Pòlepszyc Abònement (1 dolar USD miesãczno za 10 GB)",
   "WILL BE DELETED": "ÒSTANIE SKAZÓNÉ",
   "Create an album in 90 sec": "Ùstwórz albùm za 90 sekùndów",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jeżlë òstaniesz pole parolë prózny, \"password\" bãdze brëkòwóné jakno sztandardowé parolë. Mòżesz to zmienić kòżdy czas w ùstôwieniach albùmu.",
   "💡 Password Protection Info:": "💡 Wëdowiédzô ò Òkrywaniu Parolë:",
   "Select Protection Level": "Wëbierzë Rebész Òkrywaniô",
-  "Save Settings": "Zapiszë Ùstôwë"
+  "Save Settings": "Zapiszë Ùstôwë",
+  "No Public Albums Found": "Ni Ma Żóstałë Nalezóne Pùbliczné Albumë"
 }

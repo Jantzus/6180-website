@@ -189,7 +189,7 @@
   "Downgrade To Free": "Спусти На Бесплатно",
   "Change Plan": "Промени План",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Имате више од 5 албума. Ови албуми се аутоматски бришу осим ако не надоградите своју претплату:",
-  "Click To Upgrade Subscription": "Кликните За Надоградњу Претплате",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Кликните За Надоградњу Претплате (1 УСД месечно за 10 ГБ)",
   "WILL BE DELETED": "БИЋЕ ОБРИСАНО",
   "Create an album in 90 sec": "Направите албум за 90 секунди",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Ваши фајлови заузимају {formatGB(usedGB)} од {totalStorageGB} GB складишта. Можда ћете ускоро требати да надоградите претплату.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ако оставите поље лозинке празно, \"password\" ће се користити као подразумевана лозинка. Можете то променити у било које време у подешавањима албума.",
   "💡 Password Protection Info:": "💡 Информације о Заштити Лозинке:",
   "Select Protection Level": "Изаберите Ниво Заштите",
-  "Save Settings": "Сачувај Подешавања"
+  "Save Settings": "Сачувај Подешавања",
+  "No Public Albums Found": "Нема Пронађених Јавних Албума"
 }

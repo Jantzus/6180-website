@@ -258,7 +258,7 @@ const PersonaViewer: React.FC = () => {
           setFolders([]);
         }
       } else {
-        setError(t('Profile not found'));
+        setError(t('No Public Albums Found'));
       }
     } catch (error) {
       console.error('Error fetching profile data:', error);

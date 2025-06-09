@@ -189,7 +189,7 @@
   "Downgrade To Free": "Fokotsa Go Mahala",
   "Change Plan": "Fetola Leano",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "O na le di-album tse di feta 5. Di-album tse di a tlhosiwa ka boyona ntle le ge o ka tokafatsa thuelo ya gago:",
-  "Click To Upgrade Subscription": "Tobetsa Go Tokafatsa Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Tobetsa Go Tokafatsa Subscription (US$1 kgwedi nngwe le nngwe ya 10 GB)",
   "WILL BE DELETED": "E TLA PHIMOLWA",
   "Create an album in 90 sec": "Tlhama albamo mo ditshotsong tse 90",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Fa o siee lefelo la password le se na sepe, \"password\" e tla dirisiwa jaaka password ya tlwaelo. O ka e fetola mo nakong efe kapa efe mo ditheong tsa album.",
   "💡 Password Protection Info:": "💡 Tshedimosetso ya Sireletso ya Password:",
   "Select Protection Level": "Tlhopha Seelo sa Sireletso",
-  "Save Settings": "Boloka Ditirelo"
+  "Save Settings": "Boloka Ditirelo",
+  "No Public Albums Found": "Ga Go Na Albums Tsa Badudi Tse Di Bonweng"
 }

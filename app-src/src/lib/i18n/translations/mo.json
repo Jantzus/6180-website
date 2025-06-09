@@ -189,7 +189,7 @@
   "Downgrade To Free": "Coborî La Gratuit",
   "Change Plan": "Schimbă Planul",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Aveți mai mult de 5 albume. Aceste albume sunt șterse automat, cu excepția cazului în care vă actualizați abonamentul:",
-  "Click To Upgrade Subscription": "Faceți Clic Pentru A Actualiza Abonamentul",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Faceți Clic Pentru A Îmbunătăți Abonamentul (1 USD lunar pentru 10 GB)",
   "WILL BE DELETED": "VA FI ȘTERS",
   "Create an album in 90 sec": "Creați un album în 90 de secunde",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Dacă lăsați câmpul de parolă gol, \"password\" va fi folosit ca parolă implicită. Puteți schimba aceasta oricând în setările albumului.",
   "💡 Password Protection Info:": "💡 Informații despre Protecția Parolei:",
   "Select Protection Level": "Selectați Nivelul de Protecție",
-  "Save Settings": "Salvează Setările"
+  "Save Settings": "Salvează Setările",
+  "No Public Albums Found": "Nu S-au Găsit Albume Publice"
 }

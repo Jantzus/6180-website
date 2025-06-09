@@ -189,7 +189,7 @@
   "Downgrade To Free": "Znižić Na Darmotny",
   "Change Plan": "Plan Změnić",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Maće wjace hač 5 albumow. Tute albumy so awtomatisce škrjeje, jeli swój abonement njeaktualizujeće:",
-  "Click To Upgrade Subscription": "Kliknyć Za Polěpšenje Abonnementa",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klikń Za Polěpšenje Abonementа (1 USD měsac za 10 GB)",
   "WILL BE DELETED": "BUDŹE SO ZNIČENY",
   "Create an album in 90 sec": "Wutwor album za 90 sekundow",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jeli polo hesła prozny wóstajiš, budźe so \"password\" jako standardne hesło wužiwać. Móžeš to kóždy čas w nastajenjach albuma změnić.",
   "💡 Password Protection Info:": "💡 Informacije wo Škiće Hesła:",
   "Select Protection Level": "Wubjerće Schodźenku Škićenja",
-  "Save Settings": "Nastajenja Składować"
+  "Save Settings": "Nastajenja Składować",
+  "No Public Albums Found": "Žane Werjejne Albumy Namakane"
 }

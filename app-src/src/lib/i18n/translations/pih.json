@@ -189,7 +189,7 @@
   "Downgrade To Free": "Daengried Tu Free",
   "Change Plan": "Chaenj Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Yus gwen owher 5 albam. Dem albam ya gwine delete yusself ef yus nora upgrade yus subscription:",
-  "Click To Upgrade Subscription": "Klik Fer Upgrade Yuh Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klik Fe Upgrade Dem Subscription (US$1 munthly fe 10 GB)",
   "WILL BE DELETED": "WIL BI DILIITID",
   "Create an album in 90 sec": "Maek album in 90 sekond",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ef yuu liiv dem password field empti, \"password\" gwen yiis es default password. Yuu ken chaenj dis eni taem in album settings.",
   "💡 Password Protection Info:": "💡 Password Protection Infamaashan:",
   "Select Protection Level": "Chüs Protection Level",
-  "Save Settings": "Siev Settings"
+  "Save Settings": "Siev Settings",
+  "No Public Albums Found": "Noe Paablik Albem Faand"
 }

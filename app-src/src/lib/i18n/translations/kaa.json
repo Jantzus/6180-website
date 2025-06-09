@@ -189,7 +189,7 @@
   "Downgrade To Free": "Pulsızğa Tüsiriw",
   "Change Plan": "Planı Özgertiriw",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Siznin 5-tan көп альбоміңіз bаr. Бул альбомлар автоматически өшіріледі, егер сіз жазылымыңызды жаңартпасаңыз:",
-  "Click To Upgrade Subscription": "Podpiska Jaqsılaw Ushın Bas",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Abonementni Jaldaq Qılıw Ushın Basıń (Aylıq 1 AQSh dolları 10 GB ushın)",
   "WILL BE DELETED": "ÖSHIRILEDI",
   "Create an album in 90 sec": "90 sekundda albom jaratıñ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Eger parol maydanın bos qoyıp tashlasañız, \"password\" túp parol retinde paydalanıladı. Bunı album sazlamalarında qaysı waqıtta bolsa da ózgertip boladi.",
   "💡 Password Protection Info:": "💡 Parol Qorğaması Aqparatı:",
   "Select Protection Level": "Qorğama Seviyesin Tanlaw",
-  "Save Settings": "Sozlawları Saqlaw"
+  "Save Settings": "Sozlawları Saqlaw",
+  "No Public Albums Found": "Esh Qandiy Halıq Albom Tabılmadı"
 }

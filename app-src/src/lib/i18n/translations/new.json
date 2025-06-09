@@ -189,7 +189,7 @@
   "Downgrade To Free": "निःशुल्कय् न्हूगु",
   "Change Plan": "योजना सापं",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "छिं ५ खँया दुगु एल्बम दु। अप्व एल्बम सब्स्क्रिप्शन अपग्रेड मतयागु स्वचालित रूपया मेकिइगु:",
-  "Click To Upgrade Subscription": "सब्सक्रिप्शन अपग्रेड यानेया क्लिक याना",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "सब्स्क्रिप्शन अपग्रेड यायेत क्लिक यानादिसँ (म्हिंगुकिं US$1 10 GB याना)",
   "WILL BE DELETED": "म्हासा जुने",
   "Create an album in 90 sec": "९० सेकेन्डया अल्बम बनाइ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "छि पासवर्ड फिल्ड खाली थासं, \"password\" मतलब पासवर्ड दक्ला ब्वनेगु। छिं यात एल्बम सेटिंग्स याम् गुलि दुइगु यात बदलूं येकाय्।",
   "💡 Password Protection Info:": "💡 ग्वाःछेँ सुरक्षा सूचना:",
   "Select Protection Level": "सुरक्षा तह खः",
-  "Save Settings": "सेटिं यक्व"
+  "Save Settings": "सेटिं यक्व",
+  "No Public Albums Found": "छगु सार्वजनिक एल्बम न्ये"
 }

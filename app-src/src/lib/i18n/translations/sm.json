@@ -189,7 +189,7 @@
   "Downgrade To Free": "Fa'aitiiti I Leai Se Totogi",
   "Change Plan": "Suia Le Fuafuaga",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "E sili atu lou 5 api. O nei api o loʻo aveese faaautomatik pe a le toe faʻaleleia lou faʻaagafaapoʻo:",
-  "Click To Upgrade Subscription": "Kiliki E Faʻaleleia Ai Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Kiliki E Faʻaleleia Ai Le Subscription (US$1 i masina ta'itasi mo le 10 GB)",
   "WILL BE DELETED": "O LE A SOLOIA",
   "Create an album in 90 sec": "Fai se api i le 90 sekone",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Afai e te tu'ua le password field e gaogao, o le a fa'aaogaina \"password\" e pei o le password masani. E mafai ona e suia lenei i so'o se taimi i totonu o album settings.",
   "💡 Password Protection Info:": "💡 Faʻamatalaga e Uiga i le Puipuiga o le Password:",
   "Select Protection Level": "Filifili le Tulaga Puipui",
-  "Save Settings": "Teu Sauniga"
+  "Save Settings": "Teu Sauniga",
+  "No Public Albums Found": "E Leai Se Album Lautele"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "Spuścić Na Za Darmo",
   "Change Plan": "Zmiyńić Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Mosz wiyncyj jak 5 albumůw. Te albumy sům autůmatycznie skasowywane, jak niy zaktualizujesz swůj abůnymynt:",
-  "Click To Upgrade Subscription": "Kliknij Coby Podzwignōnć Abōnamynt",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klykńij Coby Polepšyć Subskrypcyjo (1 USD na mjeśōnc za 10 GB)",
   "WILL BE DELETED": "BYDZIE SKASOWANY",
   "Create an album in 90 sec": "Stwōrz album za 90 sekund",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jeźli żostawisz pole hasła pusto, \"password\" bydzie używane jako sztandardowe hasło. Możesz to zmiyniś kedy chcesz we sztalowaniach albumu.",
   "💡 Password Protection Info:": "💡 Wiadomośći uo Sztucu Hasła:",
   "Select Protection Level": "Ôbier Poziōm Sztycu",
-  "Save Settings": "Spamiyntej Sztalōnki"
+  "Save Settings": "Spamiyntej Sztalōnki",
+  "No Public Albums Found": "Ńy Ło Żodne Publiczne Albumy"
 }

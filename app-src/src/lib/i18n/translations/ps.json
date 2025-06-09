@@ -189,7 +189,7 @@
   "Downgrade To Free": "وړیا ته ښکته کول",
   "Change Plan": "پلان بدل کړئ",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "تاسو د 5 څخه ډېر البومونه لرئ. دا البومونه په اتوماتيک ډول ړنګېږي پرته له دې چې تاسو خپل ګډون ته وده ورکړئ:",
-  "Click To Upgrade Subscription": "د ګډون د پرمختګ لپاره کلیک وکړئ",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "د پیرودنې د ښه کولو لپاره کلیک وکړئ (میاشتنی US$1 د 10 GB لپاره)",
   "WILL BE DELETED": "به ړنګ شي",
   "Create an album in 90 sec": "په 90 ثانیو کې البوم جوړ کړئ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "که تاسو د پاسورډ ساحه تشه پریږدئ، \"password\" د ډیفالټ پاسورډ په توګه وکارول شي. تاسو کولی شئ دا د البم ترتیباتو کې ګر وخت بدل کړئ।",
   "💡 Password Protection Info:": "💡 د پټنوم د ساتنې معلومات:",
   "Select Protection Level": "د ساتنې کچه وټاکئ",
-  "Save Settings": "تنظیمات وساتئ"
+  "Save Settings": "تنظیمات وساتئ",
+  "No Public Albums Found": "هیڅ عمومي البومونه ونه موندل شول"
 }

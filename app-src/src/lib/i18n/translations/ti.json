@@ -189,7 +189,7 @@
   "Downgrade To Free": "ናብ ነፃ ምትሓት",
   "Change Plan": "ውጥን ቀይር",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "ካብ 5 ተበሊሑ ዝበዝሕ ኣልበም ኣለካ። እዞም ኣልበማት ደንበኛነት ክታማት እንተዘይሃንጺኻ በኣውቶማቲክ ይድምሰሱ ኣለዉ:",
-  "Click To Upgrade Subscription": "ሰብስክሪፕሽን ንምዕላይ ተጠቐም",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "ምዝገባ ንምምሕያሽ ጠውቑ (ወርሓዊ US$1 ን10 ጂቢ)",
   "WILL BE DELETED": "ይደምሰስ",
   "Create an album in 90 sec": "ኣብ 90 ሰከንድ አልበም ምፍጣር",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "የይለፍ ቃል ሜዳ ባዶ እንተ ገዲፍካዮ \"password\" ከም ነባሪ ይለፍ ቃል ክጥቀመሉ እዩ። ንዚ ኣብ ኣልበም ምምሕዳር ኣብ ዝኾነ እዋን ክትቅይሮ ትኽእል ኢኻ።",
   "💡 Password Protection Info:": "💡 ናይ መሕለፊ ቃል ምክልኻል ሓበሬታ:",
   "Select Protection Level": "ደረጃ ምክልኻል ምረጽ",
-  "Save Settings": "ምግላጻት ኣቀምጥ"
+  "Save Settings": "ምግላጻት ኣቀምጥ",
+  "No Public Albums Found": "ናይ ሕዝቢ ዳስካ ዘይተረኽበ"
 }

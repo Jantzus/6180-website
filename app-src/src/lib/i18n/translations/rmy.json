@@ -189,7 +189,7 @@
   "Downgrade To Free": "Telal Karing Bešukar",
   "Change Plan": "Bašavel Plano",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tu san zurales 5 albumondar but. Kadale albuma mechinen automatikanes, te na kamas upgrade tiri subscription:",
-  "Click To Upgrade Subscription": "Klikis Te Baro Keresi O Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Kher But Subscription Te Bashales (US$1 mashekar pe 10 GB)",
   "WILL BE DELETED": "KA OV ŠTRAVNO",
   "Create an album in 90 sec": "Keren album ando 90 sekunde",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Te mukhesan khokhavno o password-kano than, \"password\" kerelape sar o zhutimatos password. Shukares te aldares aver drom e album-kere konfiguracijendar.",
   "💡 Password Protection Info:": "💡 Džaniben pal Rakhaven ka Lav:",
   "Select Protection Level": "Zuravel o Zuralo ko Rakhaven",
-  "Save Settings": "Rakhav o Ladzharipen"
+  "Save Settings": "Rakhav o Ladzharipen",
+  "No Public Albums Found": "Ništi Lumiako Alboma Alakerde"
 }

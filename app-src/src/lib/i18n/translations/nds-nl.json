@@ -189,7 +189,7 @@
   "Downgrade To Free": "Delemaak Nao Gretis",
   "Change Plan": "Plan Verannern",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Je hebt meer as 5 albums. Disse albums wordt automaotisch vortedoan, as je dien abonnement neet upgradeerst:",
-  "Click To Upgrade Subscription": "Klik Üm't Abonnement Te Verbetern",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klik Veur Abonnemint Verbeitern (1 USD per maond veur 10 GB)",
   "WILL BE DELETED": "WÖRDT WEGMAAKT",
   "Create an album in 90 sec": "Maak n album in 90 seconden",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "As ie 't wachtwoord-veld leeg laot, wördt \"password\" as standaard wachtwoord bruukt. Ie kunnen dit altied veranderen in de album-instellingen.",
   "💡 Password Protection Info:": "💡 Wachwoord Beveiliging Informaosie:",
   "Select Protection Level": "Beschaerming Level Utkezen",
-  "Save Settings": "Instellingen Bewaren"
+  "Save Settings": "Instellingen Bewaren",
+  "No Public Albums Found": "Gin Publieke Albums Vunnen"
 }

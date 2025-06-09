@@ -189,7 +189,7 @@
   "Downgrade To Free": "Түөлбэккэ Түһэрии",
   "Change Plan": "План Уларытыы",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Эн 5-тэн элбэх альбомнооххун. Бу альбомнар автоматическай түһүлүөхтэр, эн подпискаңы сайыннарбатах буоллаххына:",
-  "Click To Upgrade Subscription": "Подписканы Үөскэтии Баттаа",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Подписканы Сайыннарарга Баттаа (Ый US$1 10 ГБ-га)",
   "WILL BE DELETED": "СОТУЛЛУОН",
   "Create an album in 90 sec": "90 сөкүүндэ альбом оҥорун",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Пароль талбарын куруук хаалларыгар, \"password\" сүрүн пароль туттуллуо. Маны альбом туруоруулларыттан хайдах да кэмҥэ уларытыахха сөп.",
   "💡 Password Protection Info:": "💡 Пароль Харыстааһына Туһунан:",
   "Select Protection Level": "Харыстаһын Сыаналаах Тал",
-  "Save Settings": "Туруоруулары Хааллар"
+  "Save Settings": "Туруоруулары Хааллар",
+  "No Public Albums Found": "Дьон-сэргэ Альбом Булбатах"
 }

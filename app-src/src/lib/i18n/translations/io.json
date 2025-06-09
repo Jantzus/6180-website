@@ -189,7 +189,7 @@
   "Downgrade To Free": "Deskalar Ad Gratuita",
   "Change Plan": "Chanjar Plano",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Vi havas pludé kam 5 albumi. Ci albumi automatike efacigas, ecepte se vi progresas vua abonamento:",
-  "Click To Upgrade Subscription": "Kliktez Por Plubonigar Abonajo",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Kliktez Por Plibonigar L'Aboneso (1 USD monthe por 10 GB)",
   "WILL BE DELETED": "ESOS DELETITA",
   "Create an album in 90 sec": "Krear album en 90 sekundi",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se vu restar vakua la passwordo-chambro, \"password\" uzesos kom la passwordo defalta. Vu povas chanjar to irga tempo en la albuma konfigururi.",
   "💡 Password Protection Info:": "💡 Informo pri Parolala Protektado:",
   "Select Protection Level": "Selektez Nivelo dil Protektado",
-  "Save Settings": "Konservez Ajustifiki"
+  "Save Settings": "Konservez Ajustifiki",
+  "No Public Albums Found": "Nula Publika Album Trovata"
 }

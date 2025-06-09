@@ -189,7 +189,7 @@
   "Downgrade To Free": "Israddio I Am Ddim",
   "Change Plan": "Newid Cynllun",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Mae gennych chi dros 5 albwm. Mae'r albymau hyn yn cael eu dileu'n awtomatig oni bai eich bod yn uwchraddio'ch tanysgrifiad:",
-  "Click To Upgrade Subscription": "Cliciwch I Uwchraddio'r Tanysgrifiad",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Cliciwch I Uwchraddio'r Tanysgrifiad (US$1 y mis am 10 GB)",
   "WILL BE DELETED": "CAIFF EI DDILEU",
   "Create an album in 90 sec": "Creu albwm mewn 90 eiliad",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Mae eich ffeiliau'n cymeryd {formatGB(usedGB)} o {totalStorageGB} GB o storfa. Efallai y bydd angen i chi uwchraddio'ch tanysgrifiad yn fuan.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Os gadewch y maes cyfrinair yn wag, defnyddir \"password\" fel y cyfrinair rhagosodedig. Gallwch newid hyn unrhyw bryd yng ngosodiadau'r albwm.",
   "💡 Password Protection Info:": "💡 Gwybodaeth Diogelu Cyfrinair:",
   "Select Protection Level": "Dewis Lefel Diogelu",
-  "Save Settings": "Cadw Gosodiadau"
+  "Save Settings": "Cadw Gosodiadau",
+  "No Public Albums Found": "Dim Albymau Cyhoeddus Wedi'u Canfod"
 }

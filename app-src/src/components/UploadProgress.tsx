@@ -16,9 +16,11 @@ type UploadProgressProps = {
     success?: string;
     error?: string;
   };
-  // NEW: Allow parent to explicitly control visibility
+  // Allow parent to explicitly control visibility
   isUploading?: boolean;
   isProcessingFiles?: boolean;
+  // NEW: Context for better messaging
+  context?: 'uploading' | 'saving' | 'processing';
 };
 
 export const UploadProgress: React.FC<UploadProgressProps> = ({ 
@@ -33,7 +35,8 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
   showErrorMessage = false,
   customMessages = {},
   isUploading = false,
-  isProcessingFiles = false
+  isProcessingFiles = false,
+  context = 'uploading'
 }) => {
   const { t } = useTranslation();
   
@@ -46,8 +49,16 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
     overallProgress 
   } = progressTracker;
   
-  // Improved visibility logic: Show if explicitly uploading OR if we have files being tracked
-  const shouldShow = isUploading || isProcessingFiles || totalFiles > 0;
+  // Calculate if all files are complete
+  const allFilesComplete = totalFiles > 0 && filesComplete === totalFiles && filesWithError === 0;
+  
+  // Enhanced visibility logic: Only show when actively processing or when there are incomplete files
+  const hasIncompleteFiles = filesUploading > 0 || filesProcessing > 0 || (totalFiles > 0 && !allFilesComplete);
+  const isActivelyProcessing = isUploading || isProcessingFiles;
+  
+  // Show if actively processing OR if there are incomplete files
+  // Hide if all files are complete and we're not actively processing
+  const shouldShow = isActivelyProcessing || hasIncompleteFiles;
   
   // Don't render anything if we shouldn't show the progress
   if (!shouldShow) {
@@ -57,16 +68,39 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
   // Determine the progress status text and color
   const getStatusColor = () => {
     if (filesWithError > 0) return "#ff9800"; // Warning color
-    if (overallProgress === 100) return "#2e7d32"; // Darker green for completion
+    if (allFilesComplete) return "#2e7d32"; // Darker green for completion
     return "#4caf50"; // Default green for in progress
   };
 
+  // Improved status text based on context
   const getStatusText = () => {
-    if (overallProgress === 100) return t('Completed');
-    if (filesProcessing > 0 || isProcessingFiles) return t('Processing');
-    if (filesUploading > 0) return t('Uploading');
-    if (isUploading && totalFiles === 0) return t('Preparing'); // NEW: Handle initial state
-    return t('Uploading');
+    // Check if all files are complete first
+    if (allFilesComplete) {
+      return context === 'saving' ? t('Album Ready') : t('Completed');
+    }
+    if (filesProcessing > 0 || isProcessingFiles) {
+      return context === 'saving' ? t('Preparing Album') : t('Processing');
+    }
+    if (filesUploading > 0) {
+      return t('Uploading');
+    }
+    if (isUploading && totalFiles === 0) {
+      return t('Preparing');
+    }
+    return context === 'saving' ? t('Preparing Album') : t('Uploading');
+  };
+
+  // Improved header text based on context
+  const getHeaderText = () => {
+    switch (context) {
+      case 'saving':
+        return allFilesComplete ? t('Album preparation complete') : t('Album preparation');
+      case 'processing':
+        return allFilesComplete ? t('Processing complete') : t('File processing');
+      case 'uploading':
+      default:
+        return allFilesComplete ? t('Upload complete') : t('Upload progress');
+    }
   };
 
   // Determine if we should show success/error messages
@@ -91,7 +125,8 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
   };
   
   // Handle the case where we're initializing (files selected but not yet processed)
-  const displayProgress = totalFiles > 0 ? overallProgress : 0;
+  // If all files are complete, don't show low progress percentages
+  const displayProgress = allFilesComplete ? 100 : (totalFiles > 0 ? overallProgress : 0);
   const displayTotal = totalFiles > 0 ? totalFiles : (isUploading ? '...' : 0);
   const displayComplete = totalFiles > 0 ? filesComplete : 0;
   
@@ -110,7 +145,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
           <span style={{ fontSize: 14, color: "#555" }}>
             <strong>{getStatusText()}</strong>: {Math.round(displayProgress)}%
           </span>
-          {onCancel && overallProgress < 100 && (
+          {onCancel && !allFilesComplete && (
             <button
               onClick={onCancel}
               style={{
@@ -122,8 +157,8 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
                 padding: "4px 8px",
                 borderRadius: 4,
               }}
-              aria-label={t('Cancel Upload')}
-              title={t('Cancel Upload')}
+              aria-label={t('Cancel')}
+              title={t('Cancel')}
             >
               {t('Cancel')}
             </button>
@@ -182,7 +217,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
             color: "#333",
             marginBottom: 8
           }}>
-            {t('Upload progress')}
+            {getHeaderText()}
           </h3>
           
           <div style={{ 
@@ -265,7 +300,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
             </div>
           )}
           
-          {onCancel && overallProgress < 100 && (
+          {onCancel && !allFilesComplete && (
             <button
               onClick={onCancel}
               style={{
@@ -287,7 +322,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
     );
   }
   
-  // Default variant (the original implementation)
+  // Default variant (the original implementation with improved context)
   return (
     <div 
       className={className}
@@ -311,7 +346,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
           <span style={{ fontSize: 14, color: "#555", fontWeight: "bold" }}>
             {Math.round(displayProgress)}%
           </span>
-          {onCancel && overallProgress < 100 && (
+          {onCancel && !allFilesComplete && (
             <button
               onClick={onCancel}
               style={{
@@ -323,8 +358,8 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
                 padding: "4px 8px",
                 borderRadius: 4,
               }}
-              aria-label={t('Cancel Upload')}
-              title={t('Cancel Upload')}
+              aria-label={t('Cancel')}
+              title={t('Cancel')}
             >
               {t('Cancel')}
             </button>
@@ -380,7 +415,12 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
           marginTop: '10px',
           textAlign: 'center'
         }}>
-          {customMessages.success || t('Upload complete! Preparing to save your album...')}
+          {customMessages.success || 
+            (context === 'saving' 
+              ? t('Album ready to save!') 
+              : t('Upload complete! Preparing to save your album...')
+            )
+          }
         </div>
       )}
       

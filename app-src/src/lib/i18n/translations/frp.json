@@ -189,7 +189,7 @@
   "Downgrade To Free": "Rebaissar A Gratuito",
   "Change Plan": "Changiér Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Vos avéd més de 5 albums. Cetos albums sont dèfacits ôtomaticament, a muens que vos mètâd a nivél voutron abonament:",
-  "Click To Upgrade Subscription": "Clicâd Por Mèlyorar L'Abonament",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Cliquéd Por Mèlyorar L'Abonament (1 dolar amèrican per mês por 10 Go)",
   "WILL BE DELETED": "SERAT SUPRIMÂ",
   "Create an album in 90 sec": "Crèar un album en 90 secondes",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se vos lèssâd vouedo lo champ du mot de pâssa, \"password\" serat empleyê coment mot de pâssa per dèfôt. Vos pouede changiér cen a tot moment dens los paramètros de l'album.",
   "💡 Password Protection Info:": "💡 Enfôrmacions de Protèccion per Mot de Passa:",
   "Select Protection Level": "Chouèsir lo Nivél de Protèccion",
-  "Save Settings": "Enregisstrar los Paramètros"
+  "Save Settings": "Enregisstrar los Paramètros",
+  "No Public Albums Found": "Nion Album Public Trovâ"
 }

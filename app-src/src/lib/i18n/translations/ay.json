@@ -189,7 +189,7 @@
   "Downgrade To Free": "Janiwa Ukar Apaqaña",
   "Change Plan": "Plan Mayjt'añataki",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5 álbumes ukax juk'ampi utjaskta. Aka álbumes ukax automáticamente ch'uqañatakiw utji, janiw suscripción actualizañamti:",
-  "Click To Upgrade Subscription": "Lurañataki Clickañamawa",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Lurañataki Uñt'ayañani (Sapa phaxsi 1 dólar USA 10 GB jaña)",
   "WILL BE DELETED": "CHHAQTAYATAWA",
   "Create an album in 90 sec": "90 segundo ukanx álbum lurañani",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Archivonakax {formatGB(usedGB)} {totalStorageGB} GB qhipanawi apantañ ukanakat. Nayra qalltañ mantañamaw kuntixi tantachaña wakiskan.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jisk'a puriña k'uchimp ch'usax jaytañäni ukat, \"password\" qallta puriña thakhiw utjaraki. Ukat albun mayjt'anakanakapar kuna pachanakatix mayjt'ayañawa.",
   "💡 Password Protection Info:": "💡 Aruskipawi Arkañatawa Yatiyawi:",
   "Select Protection Level": "Arkañatawa Nivel Ajlliña",
-  "Save Settings": "Wakichawi Imañt'aña"
+  "Save Settings": "Wakichawi Imañt'aña",
+  "No Public Albums Found": "Janiw Taqi Janañataki Albums Jikisitakäkanti"
 }

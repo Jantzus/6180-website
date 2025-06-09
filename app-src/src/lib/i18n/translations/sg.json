@@ -189,7 +189,7 @@
   "Downgrade To Free": "Yeke Balao Tî",
   "Change Plan": "Yeke Kua Oko",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Àla na bâa albüm 5. Àla albüm so sí tere da nânigü, na ndo ye na kua wali na mbîti na vo mo:",
-  "Click To Upgrade Subscription": "Nyen Ti Subscription Kanga",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Sü Subscription Mo Kodoro Awe (US$1 nze kue ti 10 GB)",
   "WILL BE DELETED": "ÄKÖ WARA",
   "Create an album in 90 sec": "Sara album na miniti 90",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Sê mo bâa lo password tene na ngangü, \"password\" mo sêngbi password ôko na gue. Mo yeke na kakôi ya a lo na kua so ôko mo bâa ngâ na âhû album.",
   "💡 Password Protection Info:": "💡 Âlege ti Fadésé ti Yângâ Fadéngö:",
   "Select Protection Level": "Suga ti Fadésé ti Fadéngö",
-  "Save Settings": "Fadese ti Fadéngö"
+  "Save Settings": "Fadese ti Fadéngö",
+  "No Public Albums Found": "Albums Ti Halena Kue Si Benê"
 }

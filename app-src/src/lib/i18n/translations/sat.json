@@ -189,7 +189,7 @@
   "Downgrade To Free": "ᱵᱟᱝ ᱠᱷᱚᱨᱪᱟ ᱨᱮ ᱠᱚᱢ ᱢᱮ",
   "Change Plan": "ᱯᱞᱟᱱ ᱵᱚᱫᱚᱞ ᱢᱮ",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "ᱟᱢᱟᱜ ᱟᱞᱵᱟᱢ ᱕ ᱠᱷᱚᱱ ᱰᱤᱰᱟᱹ ᱢᱮᱱᱟᱜ᱾ ᱱᱚᱭᱟ ᱟᱞᱵᱟᱢ ᱠᱚ ᱟᱯᱚᱱᱟᱨ ᱵᱷᱮᱜᱮᱫ ᱮᱫᱟᱭ ᱯᱚᱦᱮᱞ ᱟᱢ ᱯᱚᱱᱚᱛ ᱛᱟᱦᱮᱸ ᱞᱟᱹᱜᱤᱫ ᱚᱲᱟᱜ ᱯᱚᱞᱚᱛ ᱨᱮᱞᱟᱠᱚ᱾",
-  "Click To Upgrade Subscription": "ᱥᱚᱵᱥᱠᱨᱤᱯᱥᱚᱱ ᱪᱮᱛᱟᱱ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱮ ᱢᱮ",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "ᱥᱟᱵᱥᱠᱨᱤᱯᱥᱚᱱ ᱟᱯᱜᱨᱮᱰ ᱞᱟᱹᱜᱤᱫ ᱠᱞᱤᱠ ᱢᱮ (ᱪᱟᱸᱫᱚ US$1 10 GB ᱞᱟᱹᱜᱤᱫ)",
   "WILL BE DELETED": "ᱜᱤᱪᱩ ᱜᱤᱰᱤᱭᱟ",
   "Create an album in 90 sec": "90 ᱥᱮᱠᱮᱸᱰ ᱨᱮ ᱟᱞᱵᱟᱢ ᱵᱮᱱᱟᱣ ᱢᱮ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ᱡᱩᱫᱤ ᱟᱢ ᱯᱟᱥᱣᱟᱨᱰ ᱡᱟᱭᱜᱟ ᱠᱷᱟᱞᱤ ᱫᱚᱦᱚᱭᱟ, \"password\" ᱫᱚ ᱢᱩᱞ ᱯᱟᱥᱣᱟᱨᱰ ᱞᱮᱠᱷᱟᱛᱮ ᱵᱮᱵᱷᱟᱨᱚᱜ-ᱟ᱾ ᱟᱢ ᱱᱚᱶᱟ ᱮᱞᱵᱟᱢ ᱥᱮᱴᱤᱝ ᱨᱮ ᱚᱠᱛᱚ ᱠᱷᱚᱱ ᱵᱚᱫᱚᱞ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ᱾",
   "💡 Password Protection Info:": "💡 ᱩᱫᱩᱜᱟᱱ ᱯᱟᱸᱡᱟ ᱞᱟᱹᱭ ᱞᱟᱹᱭᱟᱱ:",
   "Select Protection Level": "ᱨᱩᱠᱷᱤᱭᱟᱹ ᱜᱟᱴᱟᱝ ᱵᱟᱪᱷᱟᱣ ᱢᱮ",
-  "Save Settings": "ᱥᱮᱴᱤᱝ ᱨᱩᱠᱷᱤᱭᱟᱹᱣ ᱢᱮ"
+  "Save Settings": "ᱥᱮᱴᱤᱝ ᱨᱩᱠᱷᱤᱭᱟᱹᱣ ᱢᱮ",
+  "No Public Albums Found": "ᱡᱚᱛᱚ ᱦᱚᱲ ᱞᱟᱹᱜᱤᱫ ᱮᱞᱵᱚᱢ ᱵᱟᱹᱱᱩᱜ-ᱟ"
 }

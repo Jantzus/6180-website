@@ -189,7 +189,7 @@
   "Downgrade To Free": "ወደ ነጻ ዝቅ ማድረግ",
   "Change Plan": "እቅድ ቀይር",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "ከ5 አልበሞች በላይ አሎት። እነዚህ አልበሞች የደንበኝነት አገልግሎትህን ካላሻሻልክ በስተቀር በራስ-ሰር ይሰረዛሉ:",
-  "Click To Upgrade Subscription": "ምዝገባን ለማሻሻል ጠቅ ያድርጉ",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "ምዝገባን ለማሻሻል ይጫኑ (በወር 1 ዶላር ለ10 ጂቢ)",
   "WILL BE DELETED": "ይደመሰሳል",
   "Create an album in 90 sec": "በ90 ሰከንድ አልበም ይፍጠሩ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "የእርስዎ ፋይሎች ከ{totalStorageGB} GB ማከማቻ {formatGB(usedGB)} ይይዛሉ። በቅርቡ የእርስዎን ምዝገባ ማሻሻል ሊያስፈልግዎት ይችላል።",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "የይለፍ ቃል መስኩን ባዶ ካስቀመጡ ፣ \"password\" እንደ ነባሪ የይለፍ ቃል ይጠቀማል። ይህንን በአልበም ቅንብር ውስጥ በማንኛውም ጊዜ መቀየር ይችላሉ።",
   "💡 Password Protection Info:": "💡 የይለፍ ቃል ጥበቃ መረጃ:",
   "Select Protection Level": "የጥበቃ ደረጃ ምርጫ",
-  "Save Settings": "ቅንብሮች አስቀምጥ"
+  "Save Settings": "ቅንብሮች አስቀምጥ",
+  "No Public Albums Found": "ምንም ሕዝባዊ ተመሳሳይ መጽሃፍት አልተገኙም"
 }

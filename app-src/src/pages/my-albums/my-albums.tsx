@@ -1,10 +1,11 @@
-import React, { useMemo, useCallback } from "react";
+import React, { useMemo, useCallback, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 import { redirectTo, generateUrl } from "@/lib/utils";
+import { prewarmCredentials } from "@/lib/s3";
 
 // Import components
 import {
@@ -430,7 +431,7 @@ const StorageMessage = React.memo(({
             e.currentTarget.style.color = '#007bff';
           }}
         >
-          {t('Click To Upgrade Subscription')}
+          {t('Click To Upgrade Subscription (US$1 monthly per 10 GB)')}
         </a>
       </div>
     </div>
@@ -458,23 +459,6 @@ const MyAlbums = () => {
     calculatedBytesUsed
   } = useFolderManagement((message: string) => log(message));
   
-  // MEMOIZED: Get albums that should be marked for deletion (only if subscriptionInfo is loaded)
-  const albumsToDelete = useMemo(() => 
-    subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed) : [],
-    [folders, subscriptionInfo, calculatedBytesUsed]
-  );
-  
-  const albumsToDeleteIds = useMemo(() => 
-    new Set(albumsToDelete.map(album => album.folderId)),
-    [albumsToDelete]
-  );
-  
-  // MEMOIZED: Filter out albums marked for deletion from the main list
-  const displayFolders = useMemo(() =>
-    filteredFolders.filter(folder => !albumsToDeleteIds.has(folder.folderId)),
-    [filteredFolders, albumsToDeleteIds]
-  );
-  
   // Directly integrate the file upload processor hook
   const fileUploadProcessor = useFileUploadProcessor((folderId) => {
     // Custom navigation callback for the album upload flow
@@ -494,6 +478,37 @@ const MyAlbums = () => {
     debugMessages,
     log
   } = fileUploadProcessor;
+
+  // NEW: Prewarm S3 credentials when the page loads for extra reliability
+  useEffect(() => {
+    const warmUpPageCredentials = async () => {
+      try {
+        await prewarmCredentials();
+        log("🔥 Page-level S3 credentials prewarmed successfully");
+      } catch (error) {
+        log(`⚠️ Page-level credential prewarming failed: ${String(error)}`);
+      }
+    };
+    
+    warmUpPageCredentials();
+  }, []); // Empty dependency array - run once when page loads
+  
+  // MEMOIZED: Get albums that should be marked for deletion (only if subscriptionInfo is loaded)
+  const albumsToDelete = useMemo(() => 
+    subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed) : [],
+    [folders, subscriptionInfo, calculatedBytesUsed]
+  );
+  
+  const albumsToDeleteIds = useMemo(() => 
+    new Set(albumsToDelete.map(album => album.folderId)),
+    [albumsToDelete]
+  );
+  
+  // MEMOIZED: Filter out albums marked for deletion from the main list
+  const displayFolders = useMemo(() =>
+    filteredFolders.filter(folder => !albumsToDeleteIds.has(folder.folderId)),
+    [filteredFolders, albumsToDeleteIds]
+  );
 
   // MEMOIZED: Specialized open file picker for album upload
   const openFilePicker = useCallback((folderId: string | null = null) => {
@@ -595,6 +610,7 @@ const MyAlbums = () => {
               isProcessingFiles={isProcessingFiles}
               isRTL={getLanguageDirection(language) === "rtl"}
               style={{ marginTop: '20px' }}
+              context="uploading" // This keeps the traditional "Upload progress" text
               showSuccessMessage={true}
               showErrorMessage={true}
             />

@@ -189,7 +189,7 @@
   "Downgrade To Free": "Malpromocii Al Senpaga",
   "Change Plan": "Ŝanĝi Planon",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Vi havas pli ol 5 albumoj. Ĉi tiuj albumoj estas aŭtomate forigitaj krom se vi promocias vian abonon:",
-  "Click To Upgrade Subscription": "Alklaku Por Plibonigi Abonon",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Alklaku Por Plibonigi Abonon (1 USD monate por 10 GB)",
   "WILL BE DELETED": "ESTOS FORIGITA",
   "Create an album in 90 sec": "Krei albumon en 90 sekundoj",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Viaj dosieroj okupas {formatGB(usedGB)} de {totalStorageGB} GB memorigo. Vi eble devos baldaŭ promocii vian abonon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se vi lasas la pasvortkampon malplena, \"password\" estos uzata kiel la defaŭlta pasvorto. Vi povas ŝanĝi tion iam ajn en albumaj agordoj.",
   "💡 Password Protection Info:": "💡 Informoj pri Pasvorta Protekto:",
   "Select Protection Level": "Elektu Protektan Nivelon",
-  "Save Settings": "Konservu Agordojn"
+  "Save Settings": "Konservu Agordojn",
+  "No Public Albums Found": "Neniuj Publikaj Albumoj Trovitaj"
 }

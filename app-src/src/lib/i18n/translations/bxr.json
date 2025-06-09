@@ -189,7 +189,7 @@
   "Downgrade To Free": "Үнэгүй Болгохо Бууруулха",
   "Change Plan": "Плааные Хубяаха",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Танда 5-һоо ехэ альбом бии. Энэ альбомууд автоматаар арилгагдаха болоно, хэрэб та подпискаа дээшэлүүлэхэгүй бол:",
-  "Click To Upgrade Subscription": "Подписка дээшэлхэхэ гэжэ дарагты",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Захидалга дээшэлүүлхэ дарагты (сарын 1 АНУ доллар 10 ГБ-д)",
   "WILL BE DELETED": "ХАСАГДАХА",
   "Create an album in 90 sec": "90 секундэдэ альбом бүтээе",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Хэрэгбэ та нүүсэ үгэ талбариие хоосон үлдээхэ болобол, \"password\" үндэсэн нүүсэ үгэ болохо. Та энэе альбомой тохиргоондо хэдыгээш дураараа өөршэлхэ боложо.",
   "💡 Password Protection Info:": "💡 Нүүсэ үгын хамгаалалтын мэдээсэл:",
   "Select Protection Level": "Хамгаалалтын түвшэниие хубаарагты",
-  "Save Settings": "Тохиргоог хадгална уу"
+  "Save Settings": "Тохиргоог хадгална уу",
+  "No Public Albums Found": "Ямар нэгэ олон нэйтын цомог олдоогүй"
 }

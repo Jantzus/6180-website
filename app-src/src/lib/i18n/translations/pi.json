@@ -189,7 +189,7 @@
   "Downgrade To Free": "निस्सुल्को हेठ करणुं",
   "Change Plan": "योजना परिवत्तेतु",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "तुम्हे पञ्च अलबमानि अतिरिच्छन्ति। इमे अलबमा स्वचलन निर्घाटयन्ते यदि तुम्हे सब्स्क्रिप्शन उत्तम न करोहि:",
-  "Click To Upgrade Subscription": "सब्सक्रिप्शन उप्पादंति करणाय क्लिक्क करोतु",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "अभिदानं उन्नयितुं कुर्वतु निक्खेपं (मासे US$1 दश GB हेतु)",
   "WILL BE DELETED": "भाविस्सति लोपेति",
   "Create an album in 90 sec": "90 खणेसु गीतसङ्गहं करेहि",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "यदि भवं गुह्यपदस्स क्खेत्तं सुञ्ञं छडेति, \"password\" मूलकं गुह्यपदं होति। एतं भवं अल्बमविकल्पेसु कदाचि परिवत्तेतुं सक्कोति।",
   "💡 Password Protection Info:": "💡 गुप्तपदस्स रक्खणानिदेसो:",
   "Select Protection Level": "रक्खणा-गुणं वरे",
-  "Save Settings": "निदानानि रक्खतु"
+  "Save Settings": "निदानानि रक्खतु",
+  "No Public Albums Found": "न कोपि सब्बसामञ्ञगीतग्गन्थो लब्भो"
 }

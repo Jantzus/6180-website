@@ -189,7 +189,7 @@
   "Downgrade To Free": "Түләүһеҙгә Киметеү",
   "Change Plan": "Планды Үҙгәртеү",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Һеҙҙең 5-тән күп альбомығыҙ бар. Бы альбомдар автоматик юҡ ителә, әгәр һеҙ абонементығыҙҙы яңыртмаһағыҙ:",
-  "Click To Upgrade Subscription": "Яҙылыуҙы Яһшыртыу Өсөн Баҫығыҙ",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Подпискалы Яңыртыу Өсөн Баҫығыҙ (айына 1 АҠШ доллары 10 ГБ өсөн)",
   "WILL BE DELETED": "БЕТЕРӘЛӘСӘК",
   "Create an album in 90 sec": "90 секундта альбом төҙөргөҙ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Һеҙҙең файлдарығыҙ {totalStorageGB} GB һаҡлау урынының {formatGB(usedGB)} ала. Һеҙгә яҡын арала подпискағыҙҙы яңыртырға кәрәк булыуы мөмкин.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Әгәр дә пароль мәйҙанын буш ҡалдырһаҡ, \"password\" төп пароль булып ҡулланылаҫаҡ. Һеҙ был альбом көйләүҙәрендә теләгән ваҡытта үҙгәртә алаһығыҙ.",
   "💡 Password Protection Info:": "💡 Пароль Һаҡлау Мәғлүмәте:",
   "Select Protection Level": "Һаҡлау Кимәлен Һайлағыҙ",
-  "Save Settings": "Көйләүҙәрҙе Һаҡлағыҙ"
+  "Save Settings": "Көйләүҙәрҙе Һаҡлағыҙ",
+  "No Public Albums Found": "Башҡа Альбомдар Табылманы"
 }

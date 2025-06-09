@@ -189,7 +189,7 @@
   "Downgrade To Free": "Ehupisa Ko Omahena",
   "Change Plan": "Zuvisa Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Omu na albumbu omungana 5. Albumbu ayo omauwa automaatikaa kapi omauwa upgrade subscription yomwe:",
-  "Click To Upgrade Subscription": "Rina Ku Subscription Nene",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Tinde Ku Upgrade Subscription (US$1 omwedhi gwose po 10 GB)",
   "WILL BE DELETED": "OKUURISWA",
   "Create an album in 90 sec": "Tambula album mo 90 sekonde",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Manga mu kara ombanda yo password kombanda inondje, \"password\" mu kara kombanda yo password tjinene. Mwa zi ka kuvurura omunatjero wa kehe mo album omakura.",
   "💡 Password Protection Info:": "💡 Eyambo lyoPassword Protection:",
   "Select Protection Level": "Panda Eyambo lyoProtection",
-  "Save Settings": "Longekesa Omayameko"
+  "Save Settings": "Longekesa Omayameko",
+  "No Public Albums Found": "Kaindu Albums Hepunguena Kaumine"
 }

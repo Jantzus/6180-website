@@ -189,7 +189,7 @@
   "Downgrade To Free": "Daon Go Long Fri",
   "Change Plan": "Jenis Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Yu gat mo long 5 albam. Ol dispela albam oli stap pinis otomatik sapos yu no mekim upgrade long saskripsion bilong yu:",
-  "Click To Upgrade Subscription": "Klik Blong Apgred Sabskripsen",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klik Blong Sapotim Sabskripsen (US$1 evri manis blong 10 GB)",
   "WILL BE DELETED": "BAI DELET",
   "Create an album in 90 sec": "Mekem album long 90 sekon",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Sapos yu lef password field i nating, \"password\" bae stap olsem namba wan password. Yu save jenis long eni taim long album settings.",
   "💡 Password Protection Info:": "💡 Infomesen Blong Password Protection:",
   "Select Protection Level": "Piki Protection Level",
-  "Save Settings": "Sev Settings"
+  "Save Settings": "Sev Settings",
+  "No Public Albums Found": "I No Gat Pablik Album Long Hia"
 }

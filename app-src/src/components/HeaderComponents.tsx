@@ -114,9 +114,9 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
             
             {menuOpen && (
               <DropdownMenu>
-                <DropdownMenuChoice onClick={() => handleAction(saveAlbum)}>
+                {/* <DropdownMenuChoice onClick={() => handleAction(saveAlbum)}>
                   {t('Open On Phone')}
-                </DropdownMenuChoice> 
+                </DropdownMenuChoice>  */}
 
                 {usingFolderInviteGrantsRightToAddItems && (
                   <DropdownMenuChoice onClick={() => handleAction(addPhotosToAlbum)}>

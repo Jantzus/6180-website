@@ -189,7 +189,7 @@
   "Downgrade To Free": "Máhtaehe Éše Ého'e",
   "Change Plan": "Plan Éše-amá'xeme",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5 nanóhéme ho'évééšė éšeéváhe'éhá'e. Hetana ho'évééšė autómátíkahéva mohéhae'éhá'e méta'e nanóhéme kȧhéšeohtsé'haehe'éhá'e:",
-  "Click To Upgrade Subscription": "Ame'hahtáhe Subscription É-vonenáotse",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Mo'ȯhtávėstse Subscription Hohpoestse (Héstóva US$1 10 GB hóva)",
   "WILL BE DELETED": "HÉÉSO'ÊŠEÉVA",
   "Create an album in 90 sec": "Album ho'óhta 90 véhpėstse",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Hóháʼo éšeévaʼenȯhévo password field vé'ho'e éno'sétȯxe'ohe, \"password\" héva'e náhe'ȯhévo password tohketovahe. Éne'enosȧhévo taa'éše album settings tóhpe.",
   "💡 Password Protection Info:": "💡 Password Protection Information:",
   "Select Protection Level": "Select Protection Level",
-  "Save Settings": "Save Settings"
+  "Save Settings": "Save Settings",
+  "No Public Albums Found": "Sáa-vée'še Album Éešeehe"
 }

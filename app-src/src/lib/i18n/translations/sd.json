@@ -189,7 +189,7 @@
   "Downgrade To Free": "مفت ۾ گھٽ ڪريو",
   "Change Plan": "منصوبو تبديل ڪريو",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "توهان وٽ 5 کان وڌيڪ البم آهن. اهي البم پاڻمرادو ڊهي رهيا آهن جيستائين توهان پنهنجو سبسڪرپشن اپگريڊ نه ڪندا:",
-  "Click To Upgrade Subscription": "سبسڪرپشن اپگريڊ ڪرڻ لاءِ ڪلڪ ڪريو",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "سبسڪرپشن اپگريڊ ڪرڻ لاءِ ڪلڪ ڪريو (مهيني US$1 10 GB لاءِ)",
   "WILL BE DELETED": "ختم ڪيو ويندو",
   "Create an album in 90 sec": "90 سيڪنڊن ۾ البم ٺاهيو",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "جيڪڏهن توهان پاسورڊ فيلڊ کي خالي ڇڏيو ته \"password\" ڊفالٽ پاسورڊ طور استعمال ٿيندو. توهان هن کي البم سيٽنگز ۾ ڪنهن به وقت تبديل ڪري سگهو ٿا۔",
   "💡 Password Protection Info:": "💡 پاس ورڊ تحفظ جي معلومات:",
   "Select Protection Level": "تحفظ جي سطح چونڊيو",
-  "Save Settings": "سيٽنگز محفوظ ڪريو"
+  "Save Settings": "سيٽنگز محفوظ ڪريو",
+  "No Public Albums Found": "ڪابه عوامي البم نه لڌا"
 }

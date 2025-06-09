@@ -189,7 +189,7 @@
   "Downgrade To Free": "Spušćiś Na Dermo",
   "Change Plan": "Plan Změniś",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Maśo wěcej ako 5 albumow. Toś te albumy se awtomatiski lašuju, snaźkuli swój abonement aktualizěrujośo:",
-  "Click To Upgrade Subscription": "Klikni Za Wuběranje Abonnementa",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klikniśo Za Pólěpšenje Abonementа (1 USD mjasec za 10 GB)",
   "WILL BE DELETED": "SE WULAŠUJO",
   "Create an album in 90 sec": "Napóraj album za 90 sekundow",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jolic polo hesła prozny wóstajiś, \"password\" se ako standardne hesło buźo wužywaś. Móžoš to kuždy cas w nastajenjach albuma změniś.",
   "💡 Password Protection Info:": "💡 Informacije wó Šćicie Gronidła:",
   "Select Protection Level": "Wubjerśo Rownina Šćita",
-  "Save Settings": "Wašnje Nastajenja"
+  "Save Settings": "Wašnje Nastajenja",
+  "No Public Albums Found": "Žedne Zjawne Albumy Namakane"
 }

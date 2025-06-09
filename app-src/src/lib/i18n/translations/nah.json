@@ -189,7 +189,7 @@
   "Downgrade To Free": "Temoa Amo Tlaxtlahuilli",
   "Change Plan": "Temachtilli Patla",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ticpiya cenca miac 5 albums. Inīn albums mocuepasque automaticamente tla ahmo ticyectlahtoa in mo subscription:",
-  "Click To Upgrade Subscription": "Tla Xiquinpatla Yc Tomoa Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Tekiti Ika Subscription Kualtia (Metzli US$1 pampa 10 GB)",
   "WILL BE DELETED": "MOTLAZOS",
   "Create an album in 90 sec": "Chihua album ipan 90 segundo",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Tla xiccahua cempoalli itlatolhuilli, \"password\" mochihuas itlatolhuilli nemilis. Cualli huel ticcuepas inin ipan mochipa album tlanahuatiloni.",
   "💡 Password Protection Info:": "💡 Tlahtōlcāqui Tēmaquixtilistli Nepapāhualiztli:",
   "Select Protection Level": "Xicpehua Tēmaquixtilistli Tlahtōlli",
-  "Save Settings": "Xicpiyalo in Nepantlaliliztli"
+  "Save Settings": "Xicpiyalo in Nepantlaliliztli",
+  "No Public Albums Found": "Ahuic Tlahuapahualli In Altepetl"
 }

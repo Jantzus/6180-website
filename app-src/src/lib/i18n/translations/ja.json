@@ -189,7 +189,7 @@
   "Downgrade To Free": "無料にダウングレード",
   "Change Plan": "プランを変更",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "5つ以上のアルバムをお持ちです。サブスクリプションをアップグレードしない限り、これらのアルバムは自動的に削除されます:",
-  "Click To Upgrade Subscription": "クリックしてサブスクリプションをアップグレード",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "サブスクリプションをアップグレードするにはクリック (月額1米ドルで10GB)",
   "WILL BE DELETED": "削除されます",
   "Create an album in 90 sec": "90秒でアルバムを作成",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ファイルが{totalStorageGB} GBストレージのうち{formatGB(usedGB)}を使用しています。近いうちにサブスクリプションをアップグレードする必要があるかもしれません。",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "パスワードフィールドを空のままにすると、\"password\"がデフォルトパスワードとして使用されます。これはアルバム設定でいつでも変更できます。",
   "💡 Password Protection Info:": "💡 パスワード保護情報:",
   "Select Protection Level": "保護レベルを選択",
-  "Save Settings": "設定を保存"
+  "Save Settings": "設定を保存",
+  "No Public Albums Found": "パブリックアルバムが見つかりません"
 }

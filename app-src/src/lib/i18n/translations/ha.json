@@ -189,7 +189,7 @@
   "Downgrade To Free": "Rage Zuwa Kyauta",
   "Change Plan": "Canza Shirin",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Kuna da fiye da album 5. Wadannan album amma zaasu goge su kai tsaye sai dai kun gyara biyan kudin ku:",
-  "Click To Upgrade Subscription": "Danna Don Ɗaukaka Biyan Kuɗi",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Danna Don Inganta Biyan Kuɗi (US$1 kowane wata don 10 GB)",
   "WILL BE DELETED": "ZA A SHARE",
   "Create an album in 90 sec": "Kirkiro album a cikin daƙiƙa 90",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Idan ka bar filin kalmar shiga babu komai, \"password\" za a yi amfani da shi a matsayin kalmar shigar tushe. Kana iya canza wannan a kowane lokaci a cikin saitunan kundi.",
   "💡 Password Protection Info:": "💡 Bayani Kariyar Kalmar Sirri:",
   "Select Protection Level": "Zaɓi Matsayin Kariya",
-  "Save Settings": "Adana Saiti"
+  "Save Settings": "Adana Saiti",
+  "No Public Albums Found": "Ba A Sami Albums Jama'a Ba"
 }

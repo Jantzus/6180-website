@@ -189,7 +189,7 @@
   "Downgrade To Free": "Ik Holisso Ma Akmo",
   "Change Plan": "Plan Tikali",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tahlhpisa 5 imaiya holhtina hosh ish aiasha. Holhtina ilvppa putta ilap inla im asha kash im aiokha imponna ka:",
-  "Click To Upgrade Subscription": "Binili Isht Subscription Achukmali",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Subscription Achulhchishke Ponaklashke (Hvshi US$1 10 GB oka)",
   "WILL BE DELETED": "HOLIHTA TUKLO",
   "Create an album in 90 sec": "Album ikbi 90 sekint ish",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Holissa password field ash ik ishi beka, \"password\" ak o fohka chito ak o fohka keyuk a hi. Ilvppa chohmachi ma ish falama hiloha ma album settings a isht ish taklashke.",
   "💡 Password Protection Info:": "💡 Password Protection Anoli:",
   "Select Protection Level": "Protection Level Atoka",
-  "Save Settings": "Settings Hilecha"
+  "Save Settings": "Settings Hilecha",
+  "No Public Albums Found": "Keyu Album Katimi Aholitopa"
 }

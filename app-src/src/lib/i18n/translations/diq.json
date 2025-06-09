@@ -189,7 +189,7 @@
   "Downgrade To Free": "Kêm Ke Bêpere",
   "Change Plan": "Plani Bıvurne",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Şıma 5 ra zêde albûmê şıma esto. Nê albûmî otomatîk benê hewadayene, eke şıma aboneya xo upgrade nêkerê:",
-  "Click To Upgrade Subscription": "Qey Aboneyi Berzkerdişi Bıtıkne",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Abonelik Berz Kerdene Ser Bitikne (Aşme 1 dolar ABD 10 GB re)",
   "WILL BE DELETED": "BEŞ BESTERNIYAYO",
   "Create an album in 90 sec": "Album 90 saniye de vırazê",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Eke şıma zerre parola veng bımaniş, \"password\" parola standart de bıgoreniye. Şıma eşkenê wexto her de ayaranê albumê de bıvurniş.",
   "💡 Password Protection Info:": "💡 Melumata Pawıtışê Parola:",
   "Select Protection Level": "Sewiya Pawıtışi Weçinê",
-  "Save Settings": "Ayaran Qeyd Ke"
+  "Save Settings": "Ayaran Qeyd Ke",
+  "No Public Albums Found": "Album Resmiyê Çıni Veniyê"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "නොමිලේ වෙත පහත්කරන්න",
   "Change Plan": "සැලැස්ම වෙනස් කරන්න",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "ඔබ සතුව ඇල්බම 5 කට වඩා ඇත. ඔබ ඔබගේ දායකත්වය උත්ශ්‍රේණි නොකළහොත් මෙම ඇල්බම ස්වයංක්‍රීයව මකා දමනු ලැබේ:",
-  "Click To Upgrade Subscription": "ග්‍රාහක සේවය වැඩිදියුණු කිරීමට ක්ලික් කරන්න",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "දායකත්වය උත්ශ්‍රේණි කිරීමට ක්ලික් කරන්න (මාසිකව US$1 10 GB සඳහා)",
   "WILL BE DELETED": "ඉවත් කරනු ලැබේ",
   "Create an album in 90 sec": "තත්පර 90 කින් ඇල්බමයක් සාදන්න",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "ඔබගේ ගොනු {totalStorageGB} GB ගබඩාවෙන් {formatGB(usedGB)} ක් ගනී. ඔබට ඉක්මනින් ඔබගේ දායකත්වය උත්ශ්‍රේණි කිරීමට අවශ්‍ය විය හැක.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "ඔබ මුරපද ක්‍ෂේත්‍රය හිස් කළහොත්, \"password\" පෙරනිමි මුරපදය ලෙස භාවිතා කරනු ඇත. ඔබට මෙය ඇල්බමයේ සැකසීම්වල ඕනෑම වේලාවක වෙනස් කළ හැක.",
   "💡 Password Protection Info:": "💡 මුරපද ආරක්ෂණ තොරතුරු:",
   "Select Protection Level": "ආරක්ෂණ මට්ටම තෝරන්න",
-  "Save Settings": "සැකසුම් සුරකින්න"
+  "Save Settings": "සැකසුම් සුරකින්න",
+  "No Public Albums Found": "කිසිම පොදු ඇල්බම් සොයා ගත නොහැකි විය"
 }

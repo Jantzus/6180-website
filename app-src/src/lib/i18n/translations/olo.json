@@ -189,7 +189,7 @@
   "Downgrade To Free": "Alenda Ilman Maksuo",
   "Change Plan": "Vaihtua Suunnitelmu",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Teillä on enemmän kui 5 albumie. Nämä albumit häviöt automaattisesti, jollet päivitä tilaustanne:",
-  "Click To Upgrade Subscription": "Kliukkua Parantau Tilauksen",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klikkua Paremmuakses Tilaus (1 USD kuus 10 GB varoin)",
   "WILL BE DELETED": "HÄVITOITÄH",
   "Create an album in 90 sec": "Tehkäh albumi 90 sekundas",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Ku jätät salasanu kentän tyhjäksi, \"password\" käytetty perustoini salasanuon. Tämän voit muttua milloin hyvänsä albumin asetuksissa.",
   "💡 Password Protection Info:": "💡 Parolan Suojan Tiedot:",
   "Select Protection Level": "Valiče Suojan Aste",
-  "Save Settings": "Tallendua Azetukset"
+  "Save Settings": "Tallendua Azetukset",
+  "No Public Albums Found": "Ei Rahvahalline Albuumie Löydätty"
 }

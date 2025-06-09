@@ -189,7 +189,7 @@
   "Downgrade To Free": "Diminuir Pa Gratuito",
   "Change Plan": "Altarar Plano",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Tens más de 5 álbuns. Estes álbuns stan sendo apagados automaticamente a nun ser que actualizes la tua subscripción:",
-  "Click To Upgrade Subscription": "Carrega Para Atualizar La Subscriçon",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Carrega Pa Melhorar La Suscriçon (1 dólar EUA mensal por 10 GB)",
   "WILL BE DELETED": "SERÁ SCANCELADO",
   "Create an album in 90 sec": "Criar un álbun an 90 segundos",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Se deixares l campo de palavra-passe balho, \"password\" será ousado cumo palavra-passe padrão. Puodes trocar esso an qualquiera altura nas defeniçones de l álbun.",
   "💡 Password Protection Info:": "💡 Anformaçon de Proteçon de Palabra-chabe:",
   "Select Protection Level": "Selecionar Nible de Proteçon",
-  "Save Settings": "Salbar Cumfiguraçones"
+  "Save Settings": "Salbar Cumfiguraçones",
+  "No Public Albums Found": "Nanhun Álbun Público Antrado"
 }

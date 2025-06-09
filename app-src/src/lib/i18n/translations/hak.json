@@ -189,7 +189,7 @@
   "Downgrade To Free": "降級到免費",
   "Change Plan": "改變計劃",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ngì yû chhiá-kwo 5-ke sióng-chṳk. Liá-kî sióng-chṳk chṳn-teu chhṳ-thung thet-tû, chhù-fî ngì sên-kip ngì-ke tên-yok:",
-  "Click To Upgrade Subscription": "撳下升級訂閱",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "撳做升級訂閱 (每月1美金10GB)",
   "WILL BE DELETED": "TSIONG-HOI HI TSHÙ-TIÁU",
   "Create an album in 90 sec": "90秒鐘內創建相冊",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "假使汝共密碼欄留空，「password」會拿來做預設密碼。汝做得佇相册設定肚隨時改變佢。",
   "💡 Password Protection Info:": "💡 密碼保護資訊:",
   "Select Protection Level": "選擇保護級別",
-  "Save Settings": "保存設定"
+  "Save Settings": "保存設定",
+  "No Public Albums Found": "無搵到公共个相簿"
 }

@@ -189,7 +189,7 @@
   "Downgrade To Free": "मुफ्त में कम करीं",
   "Change Plan": "योजना बदलीं",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "राउर 5 से जादा एल्बम बा। अगर राउर सब्स्क्रिप्शन अपग्रेड नइखे करत त इ एल्बम सब अपने आप मिट जई:",
-  "Click To Upgrade Subscription": "सबस्क्रिप्शन अपग्रेड करे खातिर क्लिक करीं",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "सब्सक्रिप्शन अपग्रेड करे खातिर क्लिक करीं (महीना US$1 10 GB खातिर)",
   "WILL BE DELETED": "मिटा दिहल जाई",
   "Create an album in 90 sec": "90 सेकंड में एल्बम बनाईं",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "अगर रउआ पासवर्ड फील्ड के खाली छोड़ दीं, त \"password\" डिफ़ॉल्ट पासवर्ड के रूप में इस्तेमाल होई। रउआ एकरा के एल्बम सेटिंग में कबो भी बदल सकीं।",
   "💡 Password Protection Info:": "💡 पासवर्ड सुरक्षा जानकारी:",
   "Select Protection Level": "सुरक्षा स्तर चुनीं",
-  "Save Settings": "सेटिंग सेभ करीं"
+  "Save Settings": "सेटिंग सेभ करीं",
+  "No Public Albums Found": "कवनो सार्वजनिक एल्बम ना मिलल"
 }

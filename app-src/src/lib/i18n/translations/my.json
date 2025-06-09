@@ -189,7 +189,7 @@
   "Downgrade To Free": "အခမဲ့သို့ လျှော့ချရန်",
   "Change Plan": "အစီအစဉ်ပြောင်းရန်",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "သင့်တွင် အယ်လ်ဘမ် ၅ ခုထက် ပိုရှိပါသည်။ သင့်စာရင်းသွင်းမှုကို အဆင့်မြှင့်တင်ခြင်းမရှိလျှင် ဤအယ်လ်ဘမ်များကို အလိုအလျောက် ဖျက်ပစ်နေပါသည်:",
-  "Click To Upgrade Subscription": "စာရင်းသွင်းခြင်းကို အဆင့်မြှင့်ရန် နှိပ်ပါ",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "စာရင်းသွင်းမှုအဆင့်မြှင့်ရန် နှိပ်ပါ (လစဉ် US$1 ဖြင့် 10 GB)",
   "WILL BE DELETED": "ဖျက်လိုက်မည်",
   "Create an album in 90 sec": "90 စက္ကန့်အတွင်း အယ်လ်ဘမ်ပြုလုပ်ပါ",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "သင့်ဖိုင်တွေက {totalStorageGB} GB သိုလှောင်ခန်းမှ {formatGB(usedGB)} ယူထားပါတယ်။ မကြာမီ သင့်စာရင်းသွင်းမှုကို အဆင့်မြှင့်ရန် လိုအပ်ကောင်းလိုအပ်နိုင်ပါတယ်။",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "သင်သည် စကားဝှက်အကွက်ကို အလွတ်ထားခဲ့လျှင် \"password\" ကို ပုံမှန်စကားဝှက်အဖြစ် အသုံးပြုပါမည်။ သင်သည် ၎င်းကို အယ်လ်ဘမ်ဆက်တင်များတွင် အချိန်မရွေး ပြောင်းလဲနိုင်ပါသည်။",
   "💡 Password Protection Info:": "💡 စကားဝှက် ကာကွယ်မှု အချက်အလက်များ:",
   "Select Protection Level": "ကာကွယ်မှု အဆင့်ကို ရွေးပါ",
-  "Save Settings": "ဆက်တင်များကို သိမ်းပါ"
+  "Save Settings": "ဆက်တင်များကို သိမ်းပါ",
+  "No Public Albums Found": "အများပြည်သူဆိုင်ရာ အယ်လ်ဘမ်များ မတွေ့ရ"
 }

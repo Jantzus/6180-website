@@ -189,7 +189,7 @@
   "Downgrade To Free": "Rbaisser À Gratiss",
   "Change Plan": "Canger Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Vos avez pus d'5 albums. Chès albums sont automatiquement effaîchis à moins qu'vos mettiez à jour votre abonnement:",
-  "Click To Upgrade Subscription": "Clictez Por Mieux Foaire L'Abonnémint",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Clique Por Améliorer L'Abonnémint (1 dollar US par moés por 10 Go)",
   "WILL BE DELETED": "SARO EFFACÉ",
   "Create an album in 90 sec": "Créer un album in 90 secondes",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si vos lèssez vouide ech champ del mot d'passe, \"password\" ch'sro ûsé conme mot d'passe défaut. Vos pouvez changi cho à n'înporte qué momint ès paramètes del album.",
   "💡 Password Protection Info:": "💡 Rinsègnmints d'Protèkchon d'Mot d'passe:",
   "Select Protection Level": "Chouèsir ch'Niviau d'Protèkchon",
-  "Save Settings": "Sauvér chès Réglages"
+  "Save Settings": "Sauvér chès Réglages",
+  "No Public Albums Found": "Nul Album Public Trouvé"
 }

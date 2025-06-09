@@ -189,7 +189,7 @@
   "Downgrade To Free": "Turunkan Ke Gratis",
   "Change Plan": "Ubah Rencana",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Anda memiliki lebih dari 5 album. Album-album ini sedang dihapus secara otomatis kecuali Anda meningkatkan langganan:",
-  "Click To Upgrade Subscription": "Klik Untuk Meningkatkan Langganan",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klik Untuk Meningkatkan Langganan (US$1 per bulan untuk 10 GB)",
   "WILL BE DELETED": "AKAN DIHAPUS",
   "Create an album in 90 sec": "Buat album dalam 90 detik",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "File Anda menggunakan {formatGB(usedGB)} dari {totalStorageGB} GB penyimpanan. Anda mungkin perlu meningkatkan langganan Anda segera.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Jika Anda membiarkan bidang kata sandi kosong, \"password\" akan digunakan sebagai kata sandi bawaan. Anda dapat mengubah ini kapan saja di pengaturan album.",
   "💡 Password Protection Info:": "💡 Info Perlindungan Kata Sandi:",
   "Select Protection Level": "Pilih Tingkat Perlindungan",
-  "Save Settings": "Simpan Pengaturan"
+  "Save Settings": "Simpan Pengaturan",
+  "No Public Albums Found": "Tidak Ada Album Publik Ditemukan"
 }

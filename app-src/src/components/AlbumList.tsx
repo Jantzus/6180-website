@@ -101,7 +101,7 @@ const DropdownContainer = styled.div`
 
 // Changed from styled.a to styled.button to avoid nested anchor tags
 const EditButton = styled.button`
-  font-size: 13px;
+  font-size: 12px;
   color: #2196f3;
   text-decoration: none;
   background: none;
@@ -116,7 +116,7 @@ const EditButton = styled.button`
 
 // Changed from styled.a to styled.button to avoid nested anchor tags
 const DeleteButton = styled.button`
-  font-size: 13px;
+  font-size: 12px;
   color: #d32f2f;
   text-decoration: none;
   background: none;
@@ -151,7 +151,7 @@ const DropdownItem = styled.button<{ $isDelete?: boolean; $isRTL?: boolean }>`
   padding: 8px 16px;
   color: ${props => props.$isDelete ? "#d32f2f" : "#2196f3"};
   text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
   white-space: nowrap;
   background: none;
   border: none;
@@ -542,7 +542,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                           handleDeleteButtonClick(folder.folderPositionId);
                         }}
                       >
-                        {t('Delete')}
+                        {t('Delete My Copy')}
                       </DeleteButton>
                     )}
                   </ActionSection>

@@ -189,7 +189,7 @@
   "Downgrade To Free": "Downgrade Tae Free",
   "Change Plan": "Change Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ye hae mair than 5 albums. Thir albums are gettin deletit automatically unless ye upgrade yer subscription:",
-  "Click To Upgrade Subscription": "Click Tae Upgrade Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Click Tae Upgrade Subscription (US$1 monthly per 10 GB)",
   "WILL BE DELETED": "WILL BE DELETIT",
   "Create an album in 90 sec": "Mak an album in 90 seiconts",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Gin ye lea the passwird field tuim, \"password\" will be uised as the defaut passwird. Ye can chynge this onytime in album settins.",
   "💡 Password Protection Info:": "💡 Password Protection Info:",
   "Select Protection Level": "Select Protection Level",
-  "Save Settings": "Save Settings"
+  "Save Settings": "Save Settings",
+  "No Public Albums Found": "Nae Public Albums Fund"
 }

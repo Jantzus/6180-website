@@ -189,7 +189,7 @@
   "Downgrade To Free": "Eronger Op Ömöss",
   "Change Plan": "Plan Ändere",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Ehr hät mieh wie 5 Album. Hä Album wääde automatesh fottjeschmeße, ußer Ehr üür Abonnemang upgrade:",
-  "Click To Upgrade Subscription": "Donn Klicke För Et Abonnement Ze Verbeßere",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klick För Et Abonnement Ze Verbessere (1 USD pro Monet för 10 GB)",
   "WILL BE DELETED": "WEED FOTTJEMAAT",
   "Create an album in 90 sec": "En Album en 90 Sekonde maache",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Wann De dat Passwoot-Feld leddich löss, dann weed \"password\" als et Standard-Passwoot jenomme. Dat kanns De ömmer ändere en de Album-Enstellunge.",
   "💡 Password Protection Info:": "💡 Passwoot Schotz Enfommazjohn:",
   "Select Protection Level": "Schotz Level Ußsöke",
-  "Save Settings": "Enstellunge Faßhalde"
+  "Save Settings": "Enstellunge Faßhalde",
+  "No Public Albums Found": "Kein Öffentlich Albüm Jefunge"
 }

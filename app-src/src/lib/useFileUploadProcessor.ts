@@ -11,11 +11,14 @@ import {
   updateProgressTracker,
   processFilesBeforeUploadingToS3
 } from "@/lib/file-upload-utils";
+import { prewarmCredentials } from "./s3";
 
 /**
  * Optimized custom hook for handling file upload functionality
  * This hook consolidates common file upload logic used across the application
  * with performance optimizations to prevent unnecessary re-renders and bandwidth usage
+ * 
+ * NEW: Includes credential prewarming to eliminate first-upload stalling
  */
 export const useFileUploadProcessor = (
   navigateAfterUpload?: (folderId: string | null) => void
@@ -42,6 +45,20 @@ export const useFileUploadProcessor = (
   
   // MEMOIZED: Create photo status updater to prevent recreation on every render
   const updatePhotoStatus = useMemo(() => createPhotoStatusUpdater(setSelectedPhotos), []);
+  
+  // NEW: Prewarm S3 credentials on hook initialization to eliminate first-upload stalling
+  useEffect(() => {
+    const warmUpCredentials = async () => {
+      try {
+        await prewarmCredentials();
+        log("🔥 S3 credentials prewarmed successfully");
+      } catch (error) {
+        log(`⚠️ Credential prewarming failed: ${String(error)}`);
+      }
+    };
+    
+    warmUpCredentials();
+  }, []); // Empty dependency array - run once on mount
   
   // THROTTLED: Update progress tracker when selected photos change
   // Use a ref to track if an update is already scheduled to prevent excessive updates

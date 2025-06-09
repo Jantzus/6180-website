@@ -189,7 +189,7 @@
   "Downgrade To Free": "Baha Na Gratis",
   "Change Plan": "Kambia Plan",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Bo tin mas di 5 album. E album-nan aki ta bira automatically, si bo no upgrade bo subscription:",
-  "Click To Upgrade Subscription": "Klek Pa Mehora E Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klek Pa Mehora E Subscription (US$1 kada luna pa 10 GB)",
   "WILL BE DELETED": "LO WORDO KITA",
   "Create an album in 90 sec": "Krea un album den 90 segundo",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Si bo laga password field bashi, \"password\" lo wordo usa komo password predeterminá. Bo por kambia esaki na kualke momento den album settings.",
   "💡 Password Protection Info:": "💡 Informashon di Protekshon di Password:",
   "Select Protection Level": "Skohe Nivel di Protekshon",
-  "Save Settings": "Warda Settings"
+  "Save Settings": "Warda Settings",
+  "No Public Albums Found": "No Tin Album Publiko Haña"
 }

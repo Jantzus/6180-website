@@ -189,7 +189,7 @@
   "Downgrade To Free": "Дармӧ Вылӧ Лэдзны",
   "Change Plan": "План Вежны",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Тіян 5-сянь унджык альбом эм. Кыдзи альбомъяс автоматически чышкисьӧны, кӧ тэ эн содты абонементсӧ:",
-  "Click To Upgrade Subscription": "Подписка бурсӧдны понда личкы",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Подписка Бурӧдны Понда Кырткӧ (Тӧлысь 1 АӦШ доллар 10 ГБ понда)",
   "WILL BE DELETED": "ЧЫШКАНА",
   "Create an album in 90 sec": "90 секундын альбом лöсьöдны",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Кӧр паролъ пытшкӧсӧс дырйыс колямӧз, \"password\" туп паролькӧт пыраласа. Ті альбом асшӧръясын кыдз ковмӧз воштыны позан.",
   "💡 Password Protection Info:": "💡 Парольлöн Дзоньсьöм Тöдмалун:",
   "Select Protection Level": "Дзоньсьöм Уровень Быдмöдны",
-  "Save Settings": "Ладӧмъяссӧ Видзöдлыны"
+  "Save Settings": "Ладӧмъяссӧ Видзöдлыны",
+  "No Public Albums Found": "Ӧтlaсь Общественнӧй Альбомъяс Абу"
 }

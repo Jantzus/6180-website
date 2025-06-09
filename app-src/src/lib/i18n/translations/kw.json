@@ -189,7 +189,7 @@
   "Downgrade To Free": "Diskyrgh Dhe Heb Kost",
   "Change Plan": "Kemmya Towlen",
   "You have over 5 albums. These albums are being automatically deleted unless you upgrade your subscription:": "Yma dhywgh moy es 5 albom. An albommow ma a vydh dileys yn awtobrys marth ny vynnowgh uwchradia agas tanskripsyon:",
-  "Click To Upgrade Subscription": "Klyckya Rag Gwellhe An Subscription",
+  "Click To Upgrade Subscription (US$1 monthly per 10 GB)": "Klykya Rag Gwellhe An Skrifans (US$1 pub mys rag 10 GB)",
   "WILL BE DELETED": "A VY DILES",
   "Create an album in 90 sec": "Gwruthyl album yn 90 kenyver",
   "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.": "Your files occupy {formatGB(usedGB)} of {totalStorageGB} GB storage. You may need to upgrade your subscription soon.",
@@ -278,5 +278,6 @@
   "If you leave the password field empty, \"password\" will be used as the default password. You can change this anytime in album settings.": "Mars yu gesys y vel geryow tremena gwag, \"password\" a vydh devnydhys avel an ger tremena defowt. Y hallowgh chanjya hemma pub prys yn sodhogyon an albom.",
   "💡 Password Protection Info:": "💡 Kedhlow Diogeleth Ger Tremena:",
   "Select Protection Level": "Dewis Nivel Diogeleth",
-  "Save Settings": "Gwitha Dewisow"
+  "Save Settings": "Gwitha Dewisow",
+  "No Public Albums Found": "Nyns Eus Albums Poblek Kevys"
 }
