@@ -4,7 +4,7 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from '@/lib/i18n/translations';
 import { redirectTo, generateUrl } from "@/lib/utils";
-import { API_ENDPOINT_REDEEM_TOKEN } from "@/lib/config";
+import { API_ENDPOINT_REDEEM_TOKEN, AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import styled from 'styled-components'
 import {
   GlobalStyle,
@@ -95,6 +95,8 @@ interface TokenRedemptionResponse {
   message: string;
   redirect: string;
   userSub: string;
+  idToken: string;
+  accessToken: string;
 }
 
 interface TokenRedemptionError {
@@ -155,6 +157,57 @@ const TokenLoginPage = () => {
       const result = data as TokenRedemptionResponse
       
       if (result.success) {
+        // Store the fresh idToken in localStorage (same as regular login)
+        if (result.idToken) {
+          localStorage.setItem('idToken', result.idToken)
+          
+          // Also fetch and store the display name like regular login
+          const payload = JSON.parse(atob(result.idToken.split('.')[1]))
+          const username = payload['cognito:username']
+          const relationId = `${username}_____Public____Profile`
+
+          try {
+            const gqlResponse = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${result.idToken}`,
+              },
+              body: JSON.stringify({
+                query: `
+                  mutation MyMutation($relationIds: [ID!]) {
+                    batchGetItems(relationIds: $relationIds) {
+                      items {
+                        id
+                        item {
+                          ... on Profile {
+                            anyDisplayName
+                          }
+                        }
+                      }
+                      nextToken
+                    }
+                  }
+                `,
+                variables: {
+                  relationIds: [relationId],
+                },
+              }),
+            })
+
+            const json = await gqlResponse.json()
+            const displayName = json?.data?.batchGetItems?.items?.[0]?.item?.anyDisplayName
+            if (displayName) {
+              localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, displayName)
+            }
+          } catch (profileError) {
+            console.warn('Failed to fetch profile info:', profileError)
+            // Continue with login even if profile fetch fails
+          }
+        } else {
+          throw new Error('No IdToken received from server')
+        }
+        
         setStatus('redirecting')
         
         // Clean the URL to remove the token
@@ -162,12 +215,6 @@ const TokenLoginPage = () => {
         newUrl.searchParams.delete('token')
         newUrl.searchParams.delete('redirect')
         window.history.replaceState({}, '', newUrl.pathname)
-        
-        // Store any user info if needed
-        if (result.userSub) {
-          // You might want to fetch user profile info here
-          // For now, we'll just redirect
-        }
         
         // Use the redirect from the server response, fallback to the original redirectPath
         const finalRedirect = result.redirect || redirectPath
