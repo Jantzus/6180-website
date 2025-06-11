@@ -30,7 +30,7 @@ import {
   useSelectionMode, 
   usePasswordProtection,
   useShareActions
- } from "./utils";
+} from "./utils";
 
 // Import extracted components
 import { 
