@@ -319,6 +319,14 @@ export const BrandLogo = styled.img`
   width: 20px;
   height: 20px;
   margin: 0;
+  /* Image protection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
 `;
 
 export const BrandLogoContainer = styled.div<DirectionalProps>`
@@ -425,6 +433,14 @@ export const LogoContainer = styled.div<DirectionalProps>`
 
 export const Logo = styled.img`
   height: 32px;
+  /* Image protection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
 `;
 
 export const Headline = styled.h1`
@@ -814,6 +830,15 @@ export const Image = styled.img<ImageProps>`
   max-height: 100%;
   object-fit: ${props => props.$objectFit || 'contain'};
   border-radius: ${theme.borderRadius.medium};
+  /* Image protection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: auto; /* Keep pointer events for click handlers */
+  
   ${props => props.$objectFit === 'cover' && css`
     width: 100%;
     height: 100%;
@@ -831,12 +856,27 @@ export const ThumbnailImage = styled.img`
   object-fit: contain;
   opacity: 0.5;
   border-radius: ${theme.borderRadius.medium};
+  /* Image protection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
 `;
 
 export const VideoElement = styled.video`
   max-width: 100%;
   max-height: 100%;
   border-radius: ${theme.borderRadius.medium};
+  /* Video protection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 `;
 
 export const ThumbnailWrapper = styled.div`
@@ -903,12 +943,27 @@ export const MediaItem = styled.img`
   max-width: 100%;
   max-height: 100%;
   border-radius: ${theme.borderRadius.medium};
+  /* Image protection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: auto;
 `;
 
 export const VideoItem = styled.video`
   max-width: 100%;
   max-height: 100%;
   border-radius: ${theme.borderRadius.medium};
+  /* Video protection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 `;
 
 export const MediaWrapper = styled.div`

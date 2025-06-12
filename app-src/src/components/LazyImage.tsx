@@ -80,6 +80,18 @@ export const LazyImage: React.FC<LazyImageProps> = React.memo(({
     }
   }, [fallbackSrc, fallbackAttempted]);
 
+  // MEMOIZED: Prevent right-click context menu
+  const handleContextMenu = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
+    e.preventDefault();
+    return false;
+  }, []);
+
+  // MEMOIZED: Prevent dragging
+  const handleDragStart = useCallback((e: React.DragEvent<HTMLImageElement>) => {
+    e.preventDefault();
+    return false;
+  }, []);
+
   // Don't render anything if there's no valid source
   if (!imageSrc) {
     return null;
@@ -101,9 +113,18 @@ export const LazyImage: React.FC<LazyImageProps> = React.memo(({
         ...style,
         opacity: loaded ? 1 : 0.3,
         transition: 'opacity 0.3s ease-in-out',
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
+        MozUserSelect: 'none',
+        msUserSelect: 'none',
+        WebkitTouchCallout: 'none',
+        pointerEvents: 'auto' // Keep pointer events for click handlers but prevent dragging
       }}
       onLoad={handleImageLoaded}
       onError={handleImageError}
+      onContextMenu={handleContextMenu}
+      onDragStart={handleDragStart}
+      draggable={false}
       loading="lazy" // BANDWIDTH OPTIMIZATION: Native lazy loading
       decoding="async" // PERFORMANCE: Non-blocking image decoding
       {...props}

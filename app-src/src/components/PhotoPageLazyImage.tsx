@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { 
   LazyImageContainer, 
@@ -55,6 +55,18 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
       };
     }
   }, [loadFullResolution, src, fullResLoaded, onFullResolutionLoaded]);
+
+  // MEMOIZED: Prevent right-click context menu
+  const handleContextMenu = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
+    e.preventDefault();
+    return false;
+  }, []);
+
+  // MEMOIZED: Prevent dragging
+  const handleDragStart = useCallback((e: React.DragEvent<HTMLImageElement>) => {
+    e.preventDefault();
+    return false;
+  }, []);
   
   return (
     <LazyImageContainer onClick={onClick}>
@@ -64,6 +76,9 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
         className={className}
         $isLoaded={isLoaded}
         $objectFit="cover"
+        onContextMenu={handleContextMenu}
+        onDragStart={handleDragStart}
+        draggable={false}
         style={{ cursor: onClick ? 'pointer' : 'default' }}
       />
       {!isLoaded && <LoadingPlaceholder />}

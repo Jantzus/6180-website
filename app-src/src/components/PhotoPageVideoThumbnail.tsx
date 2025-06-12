@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 
 import { 
@@ -80,11 +80,38 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
       };
     }
   }, [loadFullVideo, isVideoLoaded]);
+
+  // MEMOIZED: Prevent right-click context menu
+  const handleContextMenu = useCallback((e: React.MouseEvent<HTMLVideoElement>) => {
+    e.preventDefault();
+    return false;
+  }, []);
+
+  // MEMOIZED: Prevent dragging
+  const handleDragStart = useCallback((e: React.DragEvent<HTMLVideoElement>) => {
+    e.preventDefault();
+    return false;
+  }, []);
   
   if (isPlaying) {
     return (
       <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-        <video ref={videoRef} controls style={{ width: '100%', height: '100%' }}>
+        <video 
+          ref={videoRef} 
+          controls 
+          style={{ 
+            width: '100%', 
+            height: '100%',
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+            MozUserSelect: 'none',
+            msUserSelect: 'none',
+            WebkitTouchCallout: 'none'
+          }}
+          onContextMenu={handleContextMenu}
+          onDragStart={handleDragStart}
+          draggable={false}
+        >
           <source src={videoUrl} type="video/mp4" />
           {t('Your browser does not support the video tag.')}
         </video>
@@ -111,8 +138,18 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
         </Overlay>
         <video 
           ref={videoRef} 
-          style={{ display: 'none' }} 
+          style={{ 
+            display: 'none',
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+            MozUserSelect: 'none',
+            msUserSelect: 'none',
+            WebkitTouchCallout: 'none'
+          }} 
           preload="auto"
+          onContextMenu={handleContextMenu}
+          onDragStart={handleDragStart}
+          draggable={false}
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
