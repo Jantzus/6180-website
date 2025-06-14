@@ -19,6 +19,7 @@ import { prewarmCredentials } from "./s3";
  * with performance optimizations to prevent unnecessary re-renders and bandwidth usage
  * 
  * NEW: Includes credential prewarming to eliminate first-upload stalling
+ * UPDATED: Now supports adding files to existing selection instead of replacing
  */
 export const useFileUploadProcessor = (
   navigateAfterUpload?: (folderId: string | null) => void
@@ -162,9 +163,19 @@ export const useFileUploadProcessor = (
   }, []);
 
   // MEMOIZED: Handle file selection with optimized state management
+  // UPDATED: Now supports adding to existing photos instead of replacing
   const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>, cognitoUsername: string | null) => {
     const files = Array.from(e.target.files || []);
     if (!files.length) return false;
+
+    // Get current photos to append to
+    const existingPhotos = selectedPhotos.filter(photo => photo.status === 'complete' || photo.status === 'error');
+    const isAddingToExisting = existingPhotos.length > 0;
+    
+    log(isAddingToExisting ? 
+      `📸 Adding ${files.length} new files to ${existingPhotos.length} existing photos` : 
+      `📸 Processing ${files.length} new files`
+    );
 
     // Set states immediately for better UX
     setIsUploading(true);
@@ -173,14 +184,17 @@ export const useFileUploadProcessor = (
     // Reset file processing completion flag
     setFileProcessingComplete(false);
     
-    // Initialize progress tracker immediately
+    // Initialize progress tracker - account for existing completed photos
+    const totalFiles = existingPhotos.length + files.length;
+    const filesComplete = existingPhotos.length;
+    
     setProgressTracker({
-      totalFiles: files.length,
-      filesComplete: 0,
+      totalFiles,
+      filesComplete,
       filesUploading: 0,
       filesProcessing: files.length,
       filesWithError: 0,
-      overallProgress: 0
+      overallProgress: totalFiles > 0 ? (filesComplete / totalFiles) * 100 : 0
     });
     
     // Get a fresh token using the async function
@@ -206,8 +220,8 @@ export const useFileUploadProcessor = (
       log(`📁 Using folder ID: ${newFolderId}`);
       setCurrentFolderId(newFolderId);
       
-      // Initialize selected photos with proper initial state
-      const initialPhotos = files.map((file) => ({
+      // Initialize new photos with proper initial state
+      const newPhotos = files.map((file) => ({
         fileName: file.name,
         s3PreviewUrl: URL.createObjectURL(file),
         type: file.type,
@@ -216,27 +230,32 @@ export const useFileUploadProcessor = (
         progress: 0
       }));
       
-      setSelectedPhotos(initialPhotos);
+      // Combine existing photos with new photos for immediate UI update
+      const combinedPhotos = [...existingPhotos, ...newPhotos];
+      setSelectedPhotos(combinedPhotos);
       
-      // Use the processFilesBeforeUploadingToS3 function from utils
-      const processedPhotos = await processFilesBeforeUploadingToS3(files, cognitoUsername, updatePhotoStatus, log);
+      // Process only the new files
+      const processedNewPhotos = await processFilesBeforeUploadingToS3(files, cognitoUsername, updatePhotoStatus, log);
+      
+      // Combine existing photos with processed new photos
+      const finalCombinedPhotos = [...existingPhotos, ...processedNewPhotos];
+      setSelectedPhotos(finalCombinedPhotos);
       
       // Make sure we have a final progress update
-      updateProgressTracker(processedPhotos, setProgressTracker);
+      updateProgressTracker(finalCombinedPhotos, setProgressTracker);
       
       // Save to localStorage - ONLY the keys and metadata, not the file data
-      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(processedPhotos));
-      log(`📸 Saved ${processedPhotos.length} photos metadata to storage`);
+      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(finalCombinedPhotos));
+      log(`📸 Saved ${finalCombinedPhotos.length} photos metadata to storage (${existingPhotos.length} existing + ${processedNewPhotos.length} new)`);
       
-      // If all photos are uploaded successfully, show a completion message
-      const allComplete = processedPhotos.every(photo => photo.status === 'complete');
-      const anyErrors = processedPhotos.some(photo => photo.status === 'error');
+      // Check results for new photos only
+      const newCompletePhotos = processedNewPhotos.filter(photo => photo.status === 'complete');
+      const newErrorPhotos = processedNewPhotos.filter(photo => photo.status === 'error');
       
-      if (allComplete && !anyErrors) {
-        log(`✅ All ${processedPhotos.length} files successfully uploaded`);
-      } else if (anyErrors) {
-        const errorCount = processedPhotos.filter(photo => photo.status === 'error').length;
-        log(`⚠️ Upload completed with ${errorCount} errors`);
+      if (newCompletePhotos.length === processedNewPhotos.length && newErrorPhotos.length === 0) {
+        log(`✅ All ${processedNewPhotos.length} new files successfully uploaded`);
+      } else if (newErrorPhotos.length > 0) {
+        log(`⚠️ Upload completed with ${newErrorPhotos.length} errors out of ${processedNewPhotos.length} new files`);
       }
       
       // Set the file processing completion flag to trigger the navigation effect
@@ -252,7 +271,7 @@ export const useFileUploadProcessor = (
       // Clear the file input to allow selecting the same files again
       if (e.target) e.target.value = "";
     }
-  }, [currentFolderId, updatePhotoStatus, log]);
+  }, [currentFolderId, updatePhotoStatus, log, selectedPhotos]);
 
   // Cleanup function to prevent memory leaks
   useEffect(() => {

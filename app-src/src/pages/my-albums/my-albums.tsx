@@ -623,6 +623,7 @@ const MyAlbums = () => {
     isProcessingFiles,
     progressTracker,
     debugMessages,
+    setSelectedPhotos,
     log
   } = fileUploadProcessor;
 
@@ -659,6 +660,9 @@ const MyAlbums = () => {
 
   // MEMOIZED: Specialized open file picker for album upload
   const openFilePicker = useCallback((folderId: string | null = null) => {
+    // Clear selected photos when starting a new album
+    setSelectedPhotos([]);
+
     // Use the shared file picker
     fileUploadProcessor.openFilePicker(folderId);
   }, [fileUploadProcessor]);
