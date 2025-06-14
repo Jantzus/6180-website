@@ -1,4 +1,4 @@
-import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary:"#007bff",primaryDark:"#0056b3",success:"#4caf50",danger:"#e53935",warning:"#ff9800",info:"#2196f3",gray:"#8c8c8c",grayLight:"#e0e0e0",grayLighter:"#f0f0f0",white:"#fff",black:"#000",overlay:"rgba(0, 0, 0, 0.7)",overlayLight:"rgba(0, 0, 0, 0.5)",border:"#ddd",borderLight:"#eaeaea",text:{primary:"#333",secondary:"#666",light:"#777",lighter:"#999",white:"#fff"},background:{primary:"#f9fafb",card:"#fff",highlight:"#f0f7ff",error:"#fdeded"},highlight:{border:"#cce0ff",error:"#f7d0d0"}},spacing:{xs:"4px",sm:"8px",md:"16px",xl:"32px"},borderRadius:{small:"4px",medium:"8px",large:"16px",circle:"50%"},fontSizes:{xs:"12px",sm:"14px",md:"16px",lg:"18px",xxl:"24px"},boxShadow:{sm:"0 1px 2px rgba(0,0,0,0.06)",md:"0 1px 3px rgba(0,0,0,0.1)",xl:"0 8px 24px rgba(0,0,0,0.2)",primaryBtn:"0 4px 12px rgba(0, 123, 255, 0.2)",selection:"0 2px 4px rgba(0, 0, 0, 0.2)",textShadow:"0 0 5px rgba(0, 0, 0, 0.8)"},breakpoints:{mobile:"767px"}},b=p`
+import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary:"#007bff",primaryDark:"#0056b3",success:"#4caf50",danger:"#e53935",warning:"#ff9800",info:"#2196f3",gray:"#8c8c8c",grayLight:"#e0e0e0",grayLighter:"#f0f0f0",white:"#fff",black:"#000",overlay:"rgba(0, 0, 0, 0.7)",overlayLight:"rgba(0, 0, 0, 0.5)",border:"#ddd",borderLight:"#eaeaea",text:{primary:"#333",secondary:"#666",light:"#777",lighter:"#999",white:"#fff"},background:{primary:"#f9fafb",card:"#fff",highlight:"#f0f7ff",error:"#fdeded"},highlight:{border:"#cce0ff",error:"#f7d0d0"}},spacing:{xs:"4px",sm:"8px",md:"16px",xl:"32px"},borderRadius:{small:"4px",medium:"8px",large:"16px",circle:"50%"},fontSizes:{xs:"12px",sm:"14px",md:"16px",lg:"18px",xxl:"24px"},boxShadow:{sm:"0 1px 2px rgba(0,0,0,0.06)",md:"0 1px 3px rgba(0,0,0,0.1)",xl:"0 8px 24px rgba(0,0,0,0.2)",primaryBtn:"0 4px 12px rgba(0, 123, 255, 0.2)",selection:"0 2px 4px rgba(0, 0, 0, 0.2)",textShadow:"0 0 5px rgba(0, 0, 0, 0.8)"},breakpoints:{mobile:"767px"}},u=p`
   @keyframes loadingAnimation {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
@@ -70,9 +70,44 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   width: 100%;
   padding: 10px 12px;
   font-size: ${o.fontSizes.md};
+  font-family: inherit; // Ensure same font family
+  line-height: 1.5; // Consistent line height
   border-radius: ${o.borderRadius.small};
   border: 1px solid ${o.colors.border};
   box-sizing: border-box;
+  background-color: ${o.colors.white};
+  color: ${o.colors.text.primary};
+  
+  // Consistent placeholder styling
+  &::placeholder {
+    color: ${o.colors.text.lighter};
+    opacity: 1; // Override browser defaults
+    font-size: ${o.fontSizes.md};
+    font-family: inherit;
+    font-weight: normal;
+  }
+  
+  // Remove browser-specific styling differences
+  &::-webkit-input-placeholder {
+    color: ${o.colors.text.lighter};
+    opacity: 1;
+  }
+  
+  &::-moz-placeholder {
+    color: ${o.colors.text.lighter};
+    opacity: 1;
+  }
+  
+  &:-ms-input-placeholder {
+    color: ${o.colors.text.lighter};
+    opacity: 1;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: ${o.colors.primary};
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
 `,c=i`
   cursor: ${e=>e.disabled||e.$isDisabled?"not-allowed":"pointer"};
   opacity: ${e=>e.disabled||e.$isDisabled?.6:1};
@@ -103,7 +138,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   ${r(`
     padding: ${o.spacing.sm};
   `)}
-`,h=t.div`
+`,b=t.div`
   padding: ${o.spacing.md};
   background-color: ${o.colors.background.primary};
   min-height: 100vh;
@@ -233,7 +268,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
       align-items: center;
     }
   `}
-`,B=t.div`
+`,C=t.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -250,16 +285,16 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
     flex-wrap: wrap;
     gap: ${o.spacing.sm};
   `)}
-`,T=t.div`
+`,B=t.div`
   display: flex;
   align-items: center;
   margin-top: ${o.spacing.sm};
-`,j=t.label`
+`,T=t.label`
   margin-right: ${o.spacing.sm};
   font-size: ${o.fontSizes.sm};
   color: ${o.colors.text.secondary};
   font-weight: normal;
-`,C=t.select`
+`,j=t.select`
   padding: 5px ${o.spacing.sm};
   border: 1px solid ${o.colors.border};
   border-radius: ${o.borderRadius.small};
@@ -282,7 +317,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
   pointer-events: none;
-`,F=t.h1`
+`,A=t.h1`
   font-size: ${o.fontSizes.xxl};
   margin: ${o.spacing.sm} 0;
 `,l=t.button`
@@ -304,13 +339,13 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   &:hover {
     background-color: ${e=>e.$primary?o.colors.primaryDark:e.$passwordSet?"#333333":o.colors.grayLighter};
   }
-`,H=t(l)`
+`,F=t(l)`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px 8px;
   width: auto;
-`,A=t.span`
+`,H=t.span`
   width: 18px;
   height: 14px;
   display: flex;
@@ -357,7 +392,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   gap: ${o.spacing.sm};
   margin-bottom: ${o.spacing.md};
   width: 100%;
-`,W=t.a`
+`,O=t.a`
   font-size: ${o.fontSizes.sm};
   color: ${o.colors.primary};
   text-decoration: none;
@@ -371,7 +406,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
 `;t.div`
   font-size: ${o.fontSizes.md};
   color: ${o.colors.text.secondary};
-`;const N=t.a`
+`;const W=t.a`
   text-decoration: none;
   color: ${o.colors.text.white};
   background-color: ${o.colors.primary};
@@ -381,7 +416,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   display: flex;
   align-items: center;
   gap: 6px;
-`,O=t.div`
+`,N=t.div`
   margin-bottom: ${o.spacing.md};
   text-align: center;
   direction: ${e=>e.$isRTL?"rtl":"ltr"};
@@ -698,10 +733,10 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   border-radius: ${o.borderRadius.small};
   z-index: 10;
   font-size: ${o.fontSizes.md};
-`,uo=t.h3`
+`,ho=t.h3`
   font-size: ${o.fontSizes.lg};
   margin: 0 0 ${o.spacing.sm} 0;
-`,bo=t.div`
+`,uo=t.div`
   height: ${e=>e.$height||"8px"};
   background-color: ${o.colors.grayLight};
   border-radius: ${o.borderRadius.small};
@@ -716,7 +751,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   border-radius: ${o.borderRadius.small};
   transition: width 0.3s ease;
   width: ${e=>(e.$progress||0)*100}%;
-`,ho=t.div`
+`,bo=t.div`
   font-size: ${o.fontSizes.sm};
   margin-bottom: ${o.spacing.sm};
 `,fo=t.div`
@@ -832,7 +867,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   justify-content: space-between;
   align-items: center;
   box-shadow: ${o.boxShadow.md};
-`,Bo=t.div`
+`,Co=t.div`
   position: absolute;
   z-index: 2;
   bottom: ${o.spacing.sm};
@@ -856,7 +891,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
       text-overflow: ellipsis;
     `}
   `)}
-`,To=t.div`
+`,Bo=t.div`
   position: absolute;
   top: ${o.spacing.sm};
   right: ${o.spacing.sm};
@@ -870,9 +905,9 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   color: ${o.colors.white};
   z-index: 1;
   background-color: ${e=>{switch(e.$status){case"complete":return o.colors.success;case"error":return o.colors.danger;case"uploading":return o.colors.info;case"processing":return o.colors.warning;default:return o.colors.gray}}};
-`,jo=t.div`
+`,To=t.div`
   margin-bottom: ${o.spacing.md};
-`,Co=t.label`
+`,jo=t.label`
   display: block;
   margin-bottom: ${o.spacing.sm};
   font-size: ${o.fontSizes.sm};
@@ -883,20 +918,32 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
 `,Po=t.textarea`
   ${d}
   resize: vertical;
+  min-height: 80px; // Ensure consistent minimum height
+  font-family: inherit; // Explicitly inherit font family for textarea
+  
+  // Additional textarea-specific placeholder styling
+  &::placeholder {
+    color: ${o.colors.text.lighter};
+    opacity: 1;
+    font-size: ${o.fontSizes.md};
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1.5;
+  }
 `;t.input`
   display: none;
-`;const Fo=t.div`
+`;const Ao=t.div`
   display: flex;
   align-items: center;
   margin-bottom: ${o.spacing.md};
   padding: 4px 0;
   gap: 15px;
-`,Ho=t.div`
+`,Fo=t.div`
   font-size: ${o.fontSizes.sm};
   font-weight: 500;
   color: ${o.colors.text.primary};
   line-height: 24px;
-`,Ao=t.label`
+`,Ho=t.label`
   position: relative;
   display: inline-block;
   width: 40px;
@@ -986,7 +1033,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   margin: 0 ${o.spacing.sm};
   color: ${o.colors.text.secondary};
   text-decoration: ${e=>e.$isHovered?"underline":"none"};
-`,Wo=t.div`
+`,Oo=t.div`
   text-align: center; 
   padding: 40px ${o.spacing.md};
   border-radius: ${o.borderRadius.medium};
@@ -1016,7 +1063,7 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
 `;t.div`
   margin-bottom: ${o.spacing.xs};
   font-size: ${o.fontSizes.xs};
-`;const No=t.a`
+`;const Wo=t.a`
   font-size: ${o.fontSizes.xs};
   color: ${o.colors.text.secondary};
   text-decoration: underline;
@@ -1026,11 +1073,11 @@ import{aF as p,aG as i,d as t}from"./utils-CuQXS0Z6.js";const o={colors:{primary
   &:hover {
     color: ${o.colors.text.primary};
   }
-`,Oo=t.div`
+`,No=t.div`
   font-size: ${o.fontSizes.xs};
   color: ${o.colors.text.lighter};
   text-align: ${e=>(e.$isRTL,"right")};
   margin-bottom: ${o.spacing.md};
   display: flex;
   justify-content: flex-end;
-`;export{K as $,h as A,l as B,Y as C,wo as D,ko as E,jo as F,b as G,B as H,ro as I,no as J,go as K,I as L,Q as M,G as N,mo as O,to as P,so as Q,E as R,To as S,Fo as T,ao as U,po as V,Do as W,Bo as X,So as Y,Ro as Z,eo as _,P as a,X as a0,J as a1,H as a2,A as a3,M as a4,vo as a5,D as a6,S as a7,R as a8,L as a9,T as aa,j as ab,C as ac,x as ad,w as ae,y as af,m as ag,k as ah,z as ai,v as aj,f as ak,yo as al,O as am,U as an,q as ao,Wo as ap,Z as aq,oo as ar,_ as as,Oo as at,F as b,Go as c,Vo as d,Co as e,Io as f,Po as g,Ho as h,Ao as i,Mo as j,io as k,co as l,lo as m,bo as n,xo as o,Eo as p,uo as q,ho as r,W as s,V as t,No as u,Lo as v,zo as w,$o as x,N as y,fo as z};
+`;export{K as $,b as A,l as B,Y as C,wo as D,ko as E,To as F,u as G,C as H,ro as I,no as J,go as K,I as L,Q as M,G as N,mo as O,to as P,so as Q,E as R,Bo as S,Ao as T,ao as U,po as V,Do as W,Co as X,So as Y,Ro as Z,eo as _,P as a,X as a0,J as a1,F as a2,H as a3,M as a4,vo as a5,D as a6,S as a7,R as a8,L as a9,B as aa,T as ab,j as ac,x as ad,w as ae,y as af,m as ag,k as ah,z as ai,v as aj,f as ak,yo as al,N as am,U as an,q as ao,Oo as ap,Z as aq,oo as ar,_ as as,No as at,A as b,Go as c,Vo as d,jo as e,Io as f,Po as g,Fo as h,Ho as i,Mo as j,io as k,co as l,lo as m,uo as n,xo as o,Eo as p,ho as q,bo as r,O as s,V as t,Wo as u,Lo as v,zo as w,$o as x,W as y,fo as z};

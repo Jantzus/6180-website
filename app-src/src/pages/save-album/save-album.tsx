@@ -43,6 +43,10 @@ import {
   FolderDetailsComponent
 } from "./components";
 
+// Import tags functionality
+import { useTagsManagement } from "./useTagsManagement";
+import { TagsDisplay } from "./TagDisplayComponents";
+
 // ========== MAIN COMPONENT ==========
 
 const SaveAlbum = () => {
@@ -153,6 +157,9 @@ const SaveAlbum = () => {
     log(logMessage);
   };
 
+  // Initialize tags management
+  const tagsManager = useTagsManagement(enhancedLog);
+
   // Use the album initialization hook
   const { cognitoUsername, publicUsername, setPublicUsername } = useAlbumInitialization(
     setFolderId,
@@ -170,7 +177,7 @@ const SaveAlbum = () => {
     enhancedLog
   );
 
-  // Use the album save hook with all required parameters
+  // Use the album save hook with all required parameters (now including tags)
   const { saveAlbumDirectly } = useAlbumSave(
     folderId || currentFolderId,
     cognitoUsername,
@@ -183,6 +190,7 @@ const SaveAlbum = () => {
     participantsCanAddItems,
     passwordProtectionOption,
     albumPassword,
+    tagsManager.selectedTags, // Pass selected tags to save hook
     setIsSavingAlbum,
     setSavingProgress,
     setSelectedPhotos,
@@ -236,6 +244,7 @@ const SaveAlbum = () => {
 
   const handleSaveAlbum = async () => {
     enhancedLog("Album save initiated");
+    enhancedLog("Selected tags for album:", tagsManager.selectedTags);
     setIsSavingAlbum(true);
 
     try {
@@ -249,6 +258,7 @@ const SaveAlbum = () => {
 
       // If we have a valid username, proceed directly to saving
       enhancedLog("Valid username found, proceeding to save album directly");
+      // TODO: Include selected tags in the save process
       saveAlbumDirectly();
     } catch (err) {
       console.error("Error in handleSaveAlbum:", err);
@@ -307,6 +317,9 @@ const SaveAlbum = () => {
     enhancedLog("Add photos button clicked");
     openFilePicker(folderId);
   };
+
+  // Determine if tagging should be disabled
+  const isTaggingDisabled = isSavingAlbum || isUploading;
 
   // ========== RENDER METHODS ==========
 
@@ -376,6 +389,15 @@ const SaveAlbum = () => {
             onRemovePhoto={removePhoto}
           />
           
+          {/* Tags Section - Only show if user is creator and folder details are visible */}
+          {showFolderDetails && isCreator === true && (
+            <TagsDisplay 
+              tagsManager={tagsManager}
+              disabled={isTaggingDisabled}
+              enhancedLog={enhancedLog}
+            />
+          )}
+                    
           {/* Saving Progress */}
           <SavingProgressComponent 
             isSavingAlbum={isSavingAlbum} 

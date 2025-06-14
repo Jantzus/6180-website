@@ -171,9 +171,44 @@ const formInputStyle = css`
   width: 100%;
   padding: 10px 12px;
   font-size: ${theme.fontSizes.md};
+  font-family: inherit; // Ensure same font family
+  line-height: 1.5; // Consistent line height
   border-radius: ${theme.borderRadius.small};
   border: 1px solid ${theme.colors.border};
   box-sizing: border-box;
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.text.primary};
+  
+  // Consistent placeholder styling
+  &::placeholder {
+    color: ${theme.colors.text.lighter};
+    opacity: 1; // Override browser defaults
+    font-size: ${theme.fontSizes.md};
+    font-family: inherit;
+    font-weight: normal;
+  }
+  
+  // Remove browser-specific styling differences
+  &::-webkit-input-placeholder {
+    color: ${theme.colors.text.lighter};
+    opacity: 1;
+  }
+  
+  &::-moz-placeholder {
+    color: ${theme.colors.text.lighter};
+    opacity: 1;
+  }
+  
+  &:-ms-input-placeholder {
+    color: ${theme.colors.text.lighter};
+    opacity: 1;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: ${theme.colors.primary};
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
 `;
 
 interface ButtonProps {
@@ -1278,6 +1313,18 @@ export const FormInput = styled.input`
 export const FormTextarea = styled.textarea`
   ${formInputStyle}
   resize: vertical;
+  min-height: 80px; // Ensure consistent minimum height
+  font-family: inherit; // Explicitly inherit font family for textarea
+  
+  // Additional textarea-specific placeholder styling
+  &::placeholder {
+    color: ${theme.colors.text.lighter};
+    opacity: 1;
+    font-size: ${theme.fontSizes.md};
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1.5;
+  }
 `;
 
 export const HiddenFileInput = styled.input`

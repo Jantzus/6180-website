@@ -21,13 +21,26 @@ interface SubAlbumData {
   selectedPhotos?: SelectedPhoto[];
 }
 
-// Interface for file reference input
+// Additional types and interfaces for tag support
+interface SelectedTagInput {
+  TagType: string;
+  tagTitle: string;
+  selectedSubtagInputs: SelectedSubtagInput[];
+}
+
+interface SelectedSubtagInput {
+  TagType: string;
+  tagTitle: string;
+  subtagTitle: string;
+}
+
+// Interface for file reference input (updated to include tags)
 interface FileReferenceInput {
   fileReferencesHolderId: string;
   currentTime: number;
   points: number;
   hasBeenDeleted: boolean;
-  selectedTagInputs: any[];
+  selectedTagInputs: SelectedTagInput[];
   fileId: string;
   fileInput: any | null;
 }
@@ -430,7 +443,7 @@ export const useAlbumInitialization = (
   };
 };
 
-// Custom hook for saving album
+// Custom hook for saving album (updated with tag support)
 export const useAlbumSave = (
   folderId: string | null,
   cognitoUsername: string | null,
@@ -443,12 +456,30 @@ export const useAlbumSave = (
   participantsCanAddItems: boolean,
   passwordProtectionOption: PasswordPolicyEnum,
   albumPassword: string,
+  // NEW: Add selectedTags parameter (optional for backward compatibility)
+  selectedTags: { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[] = [],
   setIsSavingAlbum: React.Dispatch<React.SetStateAction<boolean>>,
   setSavingProgress: React.Dispatch<React.SetStateAction<number>>,
   setSelectedPhotos: React.Dispatch<React.SetStateAction<SelectedPhoto[]>>,
   setProgressTracker: React.Dispatch<React.SetStateAction<ProgressTracker>>,
   enhancedLog: (message: string, data?: any) => void
 ) => {
+  
+  // Convert selected tags to the format expected by the API
+  const convertTagsToApiFormat = (tags: typeof selectedTags): SelectedTagInput[] => {
+    enhancedLog(`Converting ${tags.length} tags to API format`);
+    
+    return tags.map(tag => ({
+      TagType: tag.TagType,
+      tagTitle: tag.tagTitle,
+      selectedSubtagInputs: tag.subtags.map(subtag => ({
+        TagType: tag.TagType,
+        tagTitle: subtag.tagTitle,
+        subtagTitle: subtag.subtagTitle
+      }))
+    }));
+  };
+
   // Helper function to update progress text
   const updateSaveProgressText = (text: string) => {
     enhancedLog(`Save progress text: ${text}`);
@@ -495,14 +526,16 @@ export const useAlbumSave = (
     });
   };
 
-  // Create folder position input
+  // Create folder position input (updated with tag support)
   const createFolderPositionInput = (
     timestamp: number, 
     accountId: string, 
-    folderTargetItemIdentifier: string
+    folderTargetItemIdentifier: string,
+    albumTags: SelectedTagInput[] = []
   ) => {
-    enhancedLog("Creating folder position input");
+    enhancedLog("Creating folder position input with tags");
     enhancedLog(`Profile visibility: ${isOnPublicProfile ? 'Public' : 'Only Me'}`);
+    enhancedLog(`Album-level tags: ${albumTags.length} tags selected`);
     
     // Use the correct profileIds based on the toggle state
     const profileIds = isOnPublicProfile 
@@ -549,18 +582,17 @@ export const useAlbumSave = (
     }
     
     const targetItemIdentifier = getTargetItemIdentifier(folderId)
-
     const nanoId = createNanoIdFromUUID(targetItemIdentifier)
 
     return {
       currentTime: timestamp,
       folderId,
       profileIds,
-      folderPositionSelectedTagInputs: [],
+      folderPositionSelectedTagInputs: albumTags, // Add album-level tags here
       folderPositionPoints: 1,
       acceptedFileReferenceIds,
       folderInput: {
-        folderSelectedTagInputs: [],
+        folderSelectedTagInputs: albumTags, // Also add to folder input
         folderAboutContactIds: [accountId],
         albumNanoId: nanoId,
         folderName: folderName,
@@ -581,13 +613,14 @@ export const useAlbumSave = (
     };
   };
 
-  // Create file reference inputs
+  // Create file reference inputs (updated with tag support)
   const createFileReferenceInputs = (
     validPhotos: SelectedPhoto[], 
     timestamp: number, 
-    accountId: string
+    accountId: string,
+    photoTags: SelectedTagInput[] = [] // For future individual photo tagging or album-level tags
   ) => {
-    enhancedLog(`Creating file reference inputs for ${validPhotos.length} photos`);
+    enhancedLog(`Creating file reference inputs with tags for ${validPhotos.length} photos`);
     
     return validPhotos.map(photo => {
       // If the photo already has a fileId (from a sub-album), use that directly
@@ -598,7 +631,7 @@ export const useAlbumSave = (
           currentTime: timestamp,
           points: 1,
           hasBeenDeleted: false,
-          selectedTagInputs: [],
+          selectedTagInputs: photoTags, // Apply tags to existing files
           fileId: photo.fileId,
           fileInput: null // No file input needed for existing files
         };
@@ -618,13 +651,14 @@ export const useAlbumSave = (
       enhancedLog(`  - size: ${photo.size}`);
       enhancedLog(`  - thumbnailSize: ${photo.thumbnailSize || 0}`);
       enhancedLog(`  - duration: ${photo.duration || 'undefined'}`);
+      enhancedLog(`  - tags: ${photoTags.length} tags selected`);
 
       return {
         fileReferencesHolderId: folderId!,
         currentTime: timestamp,
         points: 1,
         hasBeenDeleted: false,
-        selectedTagInputs: [],
+        selectedTagInputs: photoTags, // Apply tags to new uploads
         fileId,
         fileInput: {
           fileId,
@@ -958,9 +992,10 @@ export const useAlbumSave = (
     }
   };
 
-  // Function to save album directly
+  // Function to save album directly (updated with tag support)
   const saveAlbumDirectly = async () => {
     enhancedLog("Starting direct album save");
+    enhancedLog(`Selected tags for album: ${selectedTags.length} tags`);
     setIsSavingAlbum(true);
     setSavingProgress(5); // Start progress at 5%
 
@@ -972,6 +1007,10 @@ export const useAlbumSave = (
         setIsSavingAlbum(false);
         return;
       }
+      
+      // Convert tags to API format
+      const albumTagsForApi = convertTagsToApiFormat(selectedTags);
+      enhancedLog("Converted tags for API:", albumTagsForApi);
       
       // Prepare folder and account IDs
       const now = Math.floor(Date.now() / 1000);
@@ -986,7 +1025,7 @@ export const useAlbumSave = (
 
       // Prepare file references - handle both new uploads and existing files
       enhancedLog("Creating folder position input");
-      const folderPositionInput = createFolderPositionInput(now, accountId, folderTargetItemIdentifier);
+      const folderPositionInput = createFolderPositionInput(now, accountId, folderTargetItemIdentifier, albumTagsForApi);
       enhancedLog("Folder position input created:", folderPositionInput);
       
       let fileReferenceInputs: FileReferenceInput[] = [];
@@ -1010,9 +1049,9 @@ export const useAlbumSave = (
           );
         }
         
-        // Create file references for new uploads
+        // Create file references for new uploads (apply album tags to all photos)
         enhancedLog("Creating file reference inputs for uploads");
-        const newFileReferenceInputs = createFileReferenceInputs(validPhotos, now, accountId);
+        const newFileReferenceInputs = createFileReferenceInputs(validPhotos, now, accountId, albumTagsForApi);
         enhancedLog(`Created ${newFileReferenceInputs.length} file reference inputs for uploads`, newFileReferenceInputs);
         fileReferenceInputs = fileReferenceInputs.concat(newFileReferenceInputs);
       }
@@ -1028,7 +1067,7 @@ export const useAlbumSave = (
             currentTime: now,
             points: 1,
             hasBeenDeleted: false,
-            selectedTagInputs: [],
+            selectedTagInputs: albumTagsForApi, // Apply album tags to existing files too
             fileId,
             fileInput: null // No file input needed for existing files
           };
