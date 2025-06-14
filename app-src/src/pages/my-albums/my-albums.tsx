@@ -84,7 +84,7 @@ const AppDownloadPromotion = React.memo(({
               color: '#333',
               lineHeight: '1.3'
             }}>
-              {t('Use the 6180 app to show case albums offline')}
+              {t('Use the 6180 app to showcase your albums offline')}
             </div>
             <div style={{
               fontSize: '14px',

@@ -17,7 +17,6 @@ import {
   ProgressBar as UploadProgressBar,
   FileInfo,
   Message,
-  RemoveButton,
   Card as FolderDetails,
   FormGroup,
   FormLabel,
@@ -38,6 +37,7 @@ export interface PhotoHandlerProps {
   onTogglePhotoSelection: (index: number) => void;
   onSelectAllPhotos: () => void;
   onDeselectAllPhotos: () => void;
+  hideHeader?: boolean; // NEW: Optional prop to hide the header instruction
 }
 
 export const PhotoHandler: React.FC<PhotoHandlerProps> = ({ 
@@ -47,7 +47,8 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
   onRemovePhoto,
   onTogglePhotoSelection,
   onSelectAllPhotos,
-  onDeselectAllPhotos
+  onDeselectAllPhotos,
+  hideHeader = false // NEW: Default to false for backward compatibility
 }) => {
   const { t } = useTranslation();
 
@@ -60,14 +61,14 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
 
   return (
     <>
-      {/* Photo Selection Controls */}
-      {selectedPhotos.length > 1 && (
+      {/* Photo Selection Controls - Only show if not hidden */}
+      {!hideHeader && selectedPhotos.length > 1 && (
         <Card style={{ marginBottom: '16px', border: '2px solid #007bff' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px' }}>
             <span style={{ fontWeight: 'bold', fontSize: '14px', color: '#007bff' }}>
-              📷  {hasSelectedPhotos 
-                ? t('{{count}} photo(s) selected for tagging', { count: selectedPhotoIndices.size })
-                : t('Click photos below to select them for tagging')
+              {hasSelectedPhotos 
+                ? t('{{count}} file(s) selected for tagging', { count: selectedPhotoIndices.size })
+                : t('Click files below to select them for tagging')
               }
             </span>
             <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
@@ -127,33 +128,53 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
               }}
               onClick={() => selectedPhotos.length > 1 && onTogglePhotoSelection(i)}
             >
-              {/* Selection Overlay - Always show for multiple photos */}
-              {selectedPhotos.length > 1 && (
-                <div 
-                  style={{
-                    position: 'absolute',
-                    top: '8px',
-                    right: '8px',
-                    width: '28px',
-                    height: '28px',
-                    borderRadius: '50%',
-                    border: `3px solid ${isSelected ? '#007bff' : '#ffffff'}`,
-                    background: isSelected ? '#007bff' : 'rgba(255, 255, 255, 0.9)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: 10,
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-                    transition: 'all 0.2s ease'
-                  }}
-                >
-                  {isSelected ? (
-                    <span style={{ color: 'white', fontSize: '16px', fontWeight: 'bold' }}>✓</span>
-                  ) : (
-                    <span style={{ color: '#6c757d', fontSize: '12px' }}>+</span>
-                  )}
-                </div>
-              )}
+              {/* Remove button - small X in top right */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (!isSavingAlbum && confirm(t('Are you sure you want to remove this photo?'))) {
+                    onRemovePhoto(i);
+                  }
+                }}
+                disabled={isSavingAlbum}
+                style={{
+                  position: 'absolute',
+                  top: '8px',
+                  right: '8px',
+                  width: '24px',
+                  height: '24px',
+                  borderRadius: '50%',
+                  border: 'none',
+                  backgroundColor: 'rgba(220, 53, 69, 0.9)',
+                  color: 'white',
+                  cursor: isSavingAlbum ? 'not-allowed' : 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '14px',
+                  fontWeight: '900',
+                  zIndex: 20,
+                  opacity: isSavingAlbum ? 0.5 : 1,
+                  transition: 'all 0.2s ease',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                  lineHeight: '1'
+                }}
+                onMouseEnter={(e) => {
+                  if (!isSavingAlbum) {
+                    e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 1)';
+                    e.currentTarget.style.transform = 'scale(1.1)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isSavingAlbum) {
+                    e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.9)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }
+                }}
+                title={t('Remove photo')}
+              >
+                ×
+              </button>
 
               {/* Selection Indicator Text */}
               {selectedPhotos.length > 1 && isSelected && (
@@ -216,14 +237,6 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                   {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
                 </Message>
               )}
-              
-              {/* Remove button */}
-              <RemoveButton 
-                onClick={() => onRemovePhoto(i)} 
-                disabled={isSavingAlbum}
-              >
-                {t('Remove')}
-              </RemoveButton>
             </PhotoCard>
           );
         })}
