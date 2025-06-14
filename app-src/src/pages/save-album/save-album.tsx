@@ -324,6 +324,21 @@ const SaveAlbum = () => {
             <LogoutButton t={t} />
           </HeaderContainer>
           
+          {/* Folder Details - Only show if user is creator */}
+          <FolderDetailsComponent
+            showFolderDetails={showFolderDetails}
+            isCreator={isCreator}
+            folderName={folderName}
+            setFolderName={setFolderName}
+            folderDescription={folderDescription}
+            setFolderDescription={setFolderDescription}
+            isOnPublicProfile={isOnPublicProfile}
+            handlePublicProfileToggle={handlePublicProfileToggle}
+            participantsCanAddItems={participantsCanAddItems}
+            handleParticipantsCanAddItemsToggle={handleParticipantsCanAddItemsToggle}
+            isSavingAlbum={isSavingAlbum || isUploading}
+          />
+
           {/* Progress Tracking - Only show when files are actually being processed */}
           {(isUploading || 
             (progressTracker.totalFiles > 0 && 
@@ -369,21 +384,6 @@ const SaveAlbum = () => {
 
           {/* Action Buttons */}
           <ActionButtons>
-            
-            {/* Folder Details - Only show if user is creator */}
-            <FolderDetailsComponent
-              showFolderDetails={showFolderDetails}
-              isCreator={isCreator}
-              folderName={folderName}
-              setFolderName={setFolderName}
-              folderDescription={folderDescription}
-              setFolderDescription={setFolderDescription}
-              isOnPublicProfile={isOnPublicProfile}
-              handlePublicProfileToggle={handlePublicProfileToggle}
-              participantsCanAddItems={participantsCanAddItems}
-              handleParticipantsCanAddItemsToggle={handleParticipantsCanAddItemsToggle}
-              isSavingAlbum={isSavingAlbum || isUploading}
-            />
             
             <Button
               onClick={handleAddPhotos}

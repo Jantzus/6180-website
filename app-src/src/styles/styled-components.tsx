@@ -1201,12 +1201,6 @@ export const SelectionBanner = styled.div`
   box-shadow: ${theme.boxShadow.md};
 `;
 
-export const SelectedCount = styled.p`
-  font-size: ${theme.fontSizes.sm};
-  margin-bottom: ${theme.spacing.md};
-  color: ${theme.colors.text.primary};
-`;
-
 // Badge styles
 interface BadgeProps {
   $position: 'bottomLeft' | 'bottomRight';

@@ -35,6 +35,53 @@ interface FileReferenceInput {
 // GraphQL query for fetching folder details
 const FETCH_FOLDER_QUERY = `
   query FetchFolders($folderIds: [String!]!) {
+    fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
+      items {
+        ... on Folder {
+          id
+          albumNanoId
+          folderName
+          folderDescription
+          creatorId
+          createdAt
+          updatedAt
+          folderPassword {
+            password
+            policy
+          }
+          fileReferencesPage {
+            items {
+              file {
+                id
+                ownerContactId
+                dataKey
+                thumbnailDataKey
+                durationInSeconds
+                dataInBytes
+              }
+            }
+          }
+          contactsUsingInvite {
+            items {
+              id
+              item {
+                ... on Persona {
+                  publicDisplayName
+                }
+              }
+            }
+          }
+          folderInviteParameters {
+            usingFolderInviteGrantsRightToAddItems
+          }
+          folderPosition {
+            id
+            profileIds
+          }
+        }
+      }
+      nextToken
+    }
     fetchFolders(folderIds: $folderIds) {
       items {
         creatorId      
@@ -205,7 +252,16 @@ export const useAlbumInitialization = (
         },
         body: JSON.stringify({
           query: FETCH_FOLDER_QUERY,
-          variables: { folderIds: [folderId] }
+          variables: { 
+            folderIds: [folderId],
+            fetchRelationsInput: {
+              ownerItemId: "myAccountOwnerItemId",
+              rangeKeyPrefix: "FolderPosition",
+              index: "ownerItemId_____RelationType____sortParameter",
+              limit: 2000,
+              scanIndexForward: false,
+            },
+          }
         })
       });
       

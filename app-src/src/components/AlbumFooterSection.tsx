@@ -266,17 +266,6 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
               {t('Add Photos')}
             </button>)}
             
-            {/* New Download Photos button added between Add Photos and Copy Link */}
-            <button
-              onClick={handleDownloadPhotos}
-              style={{
-                ...buttonStyle,
-                backgroundColor: "#e0e0e0",
-              }}
-            >
-              {t('Download')}
-            </button>
-            
             <button
               onClick={(e) => {
                 e.preventDefault(); 
@@ -289,6 +278,17 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
               }}
             >
               {t('Copy Link')}
+            </button>
+            
+            {/* New Download Photos button added between Add Photos and Copy Link */}
+            <button
+              onClick={handleDownloadPhotos}
+              style={{
+                ...buttonStyle,
+                backgroundColor: "#e0e0e0",
+              }}
+            >
+              {t('Download')}
             </button>
             
             <button

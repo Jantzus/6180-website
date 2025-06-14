@@ -29,6 +29,153 @@ import { useFolderManagement } from "./utils";
 const FREE_TIER_STORAGE_LIMIT_GB = 10;
 const MAX_PREVIEW_IMAGES = 3; // Limit preview images to reduce bandwidth
 
+// Elegant App Promotion Component - Consistent with Brand
+const AppDownloadPromotion = React.memo(({ 
+  t, 
+  isRTL 
+}: { 
+  t: (key: string) => string; 
+  isRTL: boolean; 
+}) => {
+  return (
+    <div style={{
+      padding: '20px 24px',
+      marginTop: '20px',
+      marginBottom: '20px',
+      backgroundColor: '#fff',
+      border: '1px solid #ddd',
+      borderRadius: '8px',
+      textAlign: isRTL ? 'right' : 'left',
+      direction: isRTL ? 'rtl' : 'ltr',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+      position: 'relative'
+    }}>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: '16px'
+      }}>
+        <div style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          gap: '16px',
+          flex: '1',
+          minWidth: '200px'
+        }}>
+          {/* App icon using actual logo */}
+          <img 
+            src={generateUrl("images/logo_no_background.png")}
+            alt="6180 App Icon"
+            style={{
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              flexShrink: 0,
+              objectFit: 'cover'
+            }}
+          />
+          <div>
+            <div style={{
+              fontSize: '18px',
+              fontWeight: '600',
+              marginBottom: '4px',
+              color: '#333',
+              lineHeight: '1.3'
+            }}>
+              {t('Use the 6180 app to access and show off albums offline')}
+            </div>
+            <div style={{
+              fontSize: '14px',
+              color: '#666',
+              lineHeight: '1.4',
+              fontWeight: '400'
+            }}>
+              {t('Intelligently tagged and beautifully organized')}
+            </div>
+          </div>
+        </div>
+        
+        <div style={{
+          display: 'flex',
+          gap: '12px',
+          alignItems: 'center',
+          flexShrink: 0
+        }}>
+          <a
+            href="#" // Replace with App Store URL
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '8px 16px',
+              backgroundColor: '#007bff',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              color: 'white',
+              fontSize: '14px',
+              fontWeight: '500',
+              transition: 'all 0.2s ease',
+              whiteSpace: 'nowrap',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#0056b3';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#007bff';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
+          >
+            <span style={{ fontSize: '16px' }}>🍎</span>
+            iOS App
+          </a>
+          
+          <a
+            href="#" // Replace with Google Play URL
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '8px 16px',
+              backgroundColor: '#007bff',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              color: 'white',
+              fontSize: '14px',
+              fontWeight: '500',
+              transition: 'all 0.2s ease',
+              whiteSpace: 'nowrap',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#0056b3';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#007bff';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
+          >
+            <span style={{ fontSize: '16px' }}>🤖</span>
+            Android App
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+});
+
+
+
 // Helper function to convert bytes to GB
 const bytesToGB = (bytes: number): number => {
   return bytes / (1024 * 1024 * 1024);
@@ -576,16 +723,23 @@ const MyAlbums = () => {
           )}
         </div>
         
-        {/* Dynamic storage limit message */}
-        <StorageMessage 
-          subscriptionInfo={subscriptionInfo}
-          albumCount={folders.length}
-          folders={folders}
-          calculatedBytesUsed={calculatedBytesUsed}
-          t={t}
-          isRTL={isRTL}
-        />
+        {/* Dynamic storage limit message - only show if more than 3 albums */}
+        {displayFolders.length > 3 && (
+          <StorageMessage 
+            subscriptionInfo={subscriptionInfo}
+            albumCount={folders.length}
+            folders={folders}
+            calculatedBytesUsed={calculatedBytesUsed}
+            t={t}
+            isRTL={isRTL}
+          />
+        )}
         
+        {/* Enhanced App promotion message for users with few albums */}
+        {displayFolders.length <= 3 && (
+          <AppDownloadPromotion t={t} isRTL={isRTL} />
+        )}
+
         {/* Search Bar Component */}
         <SearchBar 
           searchQuery={searchQuery}

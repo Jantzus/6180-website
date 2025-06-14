@@ -8,7 +8,6 @@ import {
   ProgressBarBg,
   ProgressBar,
   ProgressText,
-  SelectedCount,
   PhotoGrid,
   PhotoCard,
   StatusIndicator,
@@ -50,10 +49,6 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
 
   return (
     <>
-      <SelectedCount>
-        {selectedPhotos.length} {selectedPhotos.length > 1 ? t('photos selected') : t('photo selected')}:
-      </SelectedCount>
-
       <PhotoGrid>
         {selectedPhotos.map((photo, i) => (
           <PhotoCard key={i}>
