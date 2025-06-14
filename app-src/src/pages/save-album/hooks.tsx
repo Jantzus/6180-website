@@ -34,49 +34,27 @@ interface FileReferenceInput {
 
 // GraphQL query for fetching folder details
 const FETCH_FOLDER_QUERY = `
-  query FetchFolders($folderIds: [String!]!) {
+  query FetchFolders($folderIds: [String!]!, $fetchRelationsInput: FetchRelationsInput!) {
     fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
       items {
-        ... on Folder {
+        ... on Tag {
           id
-          albumNanoId
-          folderName
-          folderDescription
-          creatorId
           createdAt
           updatedAt
-          folderPassword {
-            password
-            policy
-          }
-          fileReferencesPage {
-            items {
-              file {
-                id
-                ownerContactId
-                dataKey
-                thumbnailDataKey
-                durationInSeconds
-                dataInBytes
-              }
-            }
-          }
-          contactsUsingInvite {
+          TagType
+          tagTitle
+          points
+          subtags {
             items {
               id
-              item {
-                ... on Persona {
-                  publicDisplayName
-                }
-              }
+              createdAt
+              updatedAt
+              TagType
+              tagTitle
+              subtagTitle
+              points
             }
-          }
-          folderInviteParameters {
-            usingFolderInviteGrantsRightToAddItems
-          }
-          folderPosition {
-            id
-            profileIds
+            nextToken
           }
         }
       }
@@ -256,11 +234,11 @@ export const useAlbumInitialization = (
             folderIds: [folderId],
             fetchRelationsInput: {
               ownerItemId: "myAccountOwnerItemId",
-              rangeKeyPrefix: "FolderPosition",
+              rangeKeyPrefix: "Tag____File",
               index: "ownerItemId_____RelationType____sortParameter",
               limit: 2000,
               scanIndexForward: false,
-            },
+            }
           }
         })
       });
