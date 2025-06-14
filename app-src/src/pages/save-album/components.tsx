@@ -32,14 +32,22 @@ import {
 // ========== PHOTO HANDLING COMPONENT ==========
 export interface PhotoHandlerProps {
   selectedPhotos: SelectedPhoto[];
+  selectedPhotoIndices: Set<number>;
   isSavingAlbum: boolean;
   onRemovePhoto: (index: number) => void;
+  onTogglePhotoSelection: (index: number) => void;
+  onSelectAllPhotos: () => void;
+  onDeselectAllPhotos: () => void;
 }
 
 export const PhotoHandler: React.FC<PhotoHandlerProps> = ({ 
   selectedPhotos, 
+  selectedPhotoIndices,
   isSavingAlbum, 
-  onRemovePhoto 
+  onRemovePhoto,
+  onTogglePhotoSelection,
+  onSelectAllPhotos,
+  onDeselectAllPhotos
 }) => {
   const { t } = useTranslation();
 
@@ -47,58 +55,178 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
     return null;
   }
 
+  const hasSelectedPhotos = selectedPhotoIndices.size > 0;
+  const allPhotosSelected = selectedPhotoIndices.size === selectedPhotos.length;
+
   return (
     <>
-      <PhotoGrid>
-        {selectedPhotos.map((photo, i) => (
-          <PhotoCard key={i}>
-            {/* Status indicator */}
-            <StatusIndicator $status={photo.status}>
-              {photo.status === 'complete' ? '✓' : 
-               photo.status === 'error' ? '✕' :
-               photo.status === 'uploading' ? '↑' :
-               photo.status === 'processing' ? '⚙️' : '•'}
-            </StatusIndicator>
+      {/* Photo Selection Controls */}
+      {selectedPhotos.length > 1 && (
+        <Card style={{ marginBottom: '16px', border: '2px solid #007bff' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px' }}>
+            <span style={{ fontWeight: 'bold', fontSize: '14px', color: '#007bff' }}>
+              📷  {hasSelectedPhotos 
+                ? t('{{count}} photo(s) selected for tagging', { count: selectedPhotoIndices.size })
+                : t('Click photos below to select them for tagging')
+              }
+            </span>
+            <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
+              {!allPhotosSelected && (
+                <button 
+                  onClick={onSelectAllPhotos}
+                  disabled={isSavingAlbum}
+                  style={{
+                    padding: '6px 12px',
+                    border: '1px solid #007bff',
+                    borderRadius: '4px',
+                    background: '#007bff',
+                    color: 'white',
+                    fontSize: '12px',
+                    cursor: 'pointer',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  {t('Select All')}
+                </button>
+              )}
+              {hasSelectedPhotos && (
+                <button 
+                  onClick={onDeselectAllPhotos}
+                  disabled={isSavingAlbum}
+                  style={{
+                    padding: '6px 12px',
+                    border: '1px solid #6c757d',
+                    borderRadius: '4px',
+                    background: 'transparent',
+                    color: '#6c757d',
+                    fontSize: '12px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {t('Deselect All')}
+                </button>
+              )}
+            </div>
+          </div>
+        </Card>
+      )}
 
-            {/* Media preview */}
-            <MediaPreview>
-              {photo.type === "video" || photo.type?.startsWith("video") ? (
-                <VideoItem src={photo.s3PreviewUrl} controls />
-              ) : (
-                <MediaItem src={photo.s3PreviewUrl} alt={photo.fileName} />
+      <PhotoGrid>
+        {selectedPhotos.map((photo, i) => {
+          const isSelected = selectedPhotoIndices.has(i);
+          
+          return (
+            <PhotoCard 
+              key={i} 
+              style={{ 
+                position: 'relative',
+                cursor: selectedPhotos.length > 1 ? 'pointer' : 'default',
+                border: isSelected ? '3px solid #007bff' : '1px solid #e9ecef',
+                borderRadius: '8px',
+                overflow: 'hidden'
+              }}
+              onClick={() => selectedPhotos.length > 1 && onTogglePhotoSelection(i)}
+            >
+              {/* Selection Overlay - Always show for multiple photos */}
+              {selectedPhotos.length > 1 && (
+                <div 
+                  style={{
+                    position: 'absolute',
+                    top: '8px',
+                    right: '8px',
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '50%',
+                    border: `3px solid ${isSelected ? '#007bff' : '#ffffff'}`,
+                    background: isSelected ? '#007bff' : 'rgba(255, 255, 255, 0.9)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 10,
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  {isSelected ? (
+                    <span style={{ color: 'white', fontSize: '16px', fontWeight: 'bold' }}>✓</span>
+                  ) : (
+                    <span style={{ color: '#6c757d', fontSize: '12px' }}>+</span>
+                  )}
+                </div>
+              )}
+
+              {/* Selection Indicator Text */}
+              {selectedPhotos.length > 1 && isSelected && (
+                <div style={{
+                  position: 'absolute',
+                  bottom: '8px',
+                  left: '8px',
+                  right: '8px',
+                  background: 'rgba(0, 123, 255, 0.9)',
+                  color: 'white',
+                  padding: '4px 8px',
+                  borderRadius: '4px',
+                  fontSize: '11px',
+                  fontWeight: 'bold',
+                  textAlign: 'center',
+                  zIndex: 10
+                }}>
+                  SELECTED FOR TAGGING
+                </div>
+              )}
+
+              {/* Status indicator - only show for non-complete status or errors */}
+              {photo.status !== 'complete' && (
+                <StatusIndicator $status={photo.status}>
+                  {photo.status === 'error' ? '✕' :
+                   photo.status === 'uploading' ? '↑' :
+                   photo.status === 'processing' ? '⚙️' : '•'}
+                </StatusIndicator>
+              )}
+
+              {/* Media preview */}
+              <MediaPreview style={{ 
+                opacity: selectedPhotos.length === 1 || !isSelected ? 1 : 0.85,
+                transition: 'opacity 0.2s ease'
+              }}>
+                {photo.type === "video" || photo.type?.startsWith("video") ? (
+                  <VideoItem src={photo.s3PreviewUrl} controls />
+                ) : (
+                  <MediaItem src={photo.s3PreviewUrl} alt={photo.fileName} />
+                )}
+                
+                {/* Upload progress bar for in-progress items */}
+                {(photo.status === 'uploading' || photo.status === 'processing') && (
+                  <ProgressBarBg $bottom="4px" $left="4px" $right="4px" $height="4px">
+                    <UploadProgressBar $progress={photo.progress} $status={photo.status} />
+                  </ProgressBarBg>
+                )}
+              </MediaPreview>
+              
+              {/* File info */}
+              <FileInfo>
+                {photo.type?.startsWith("video") ? t('Video') : t('Image')}
+                {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} MB`}
+                {photo.duration && ` • ${photo.duration}s`}
+              </FileInfo>
+
+              {/* Error message if any */}
+              {photo.status === 'error' && photo.errorMessage && (
+                <Message $type="error">
+                  {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
+                </Message>
               )}
               
-              {/* Upload progress bar for in-progress items */}
-              {(photo.status === 'uploading' || photo.status === 'processing') && (
-                <ProgressBarBg $bottom="4px" $left="4px" $right="4px" $height="4px">
-                  <UploadProgressBar $progress={photo.progress} $status={photo.status} />
-                </ProgressBarBg>
-              )}
-            </MediaPreview>
-            
-            {/* File info */}
-            <FileInfo>
-              {photo.type?.startsWith("video") ? t('Video') : t('Image')}
-              {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} MB`}
-              {photo.duration && ` • ${photo.duration}s`}
-            </FileInfo>
-
-            {/* Error message if any */}
-            {photo.status === 'error' && photo.errorMessage && (
-              <Message $type="error">
-                {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
-              </Message>
-            )}
-            
-            {/* Remove button */}
-            <RemoveButton 
-              onClick={() => onRemovePhoto(i)} 
-              disabled={isSavingAlbum}
-            >
-              {t('Remove')}
-            </RemoveButton>
-          </PhotoCard>
-        ))}
+              {/* Remove button */}
+              <RemoveButton 
+                onClick={() => onRemovePhoto(i)} 
+                disabled={isSavingAlbum}
+              >
+                {t('Remove')}
+              </RemoveButton>
+            </PhotoCard>
+          );
+        })}
       </PhotoGrid>
     </>
   );
@@ -230,7 +358,12 @@ const useTranslation = () => {
   // This is just a stub to prevent errors in this file
   // The actual implementation will be imported in the main file
   return {
-    t: (key: string) => key,
+    t: (key: string, options?: any) => {
+      if (options && typeof options === 'object' && 'count' in options) {
+        return key.replace('{{count}}', String(options.count));
+      }
+      return key;
+    },
     language: "en"
   };
 };

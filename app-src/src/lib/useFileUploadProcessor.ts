@@ -148,9 +148,6 @@ export const useFileUploadProcessor = (
     // Set current folder ID if adding to existing folder
     setCurrentFolderId(folderId);
     
-    // Clear current selected photos before opening file picker
-    setSelectedPhotos([]);
-    
     // Reset file processing completion flag
     setFileProcessingComplete(false);
     setIsProcessingFiles(false);

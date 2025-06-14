@@ -36,7 +36,7 @@ import {
   useAlbumSave
 } from "./hooks";
 
-// Import components
+// Import components - using updated PhotoHandler
 import {
   PhotoHandler,
   SavingProgressComponent,
@@ -89,6 +89,10 @@ const SaveAlbum = () => {
   // State for sub-album data
   const [isSubAlbum, setIsSubAlbum] = useState<boolean>(false);
   const [selectedFileIds, setSelectedFileIds] = useState<string[]>([]);
+
+  // NEW: State for photo selection and tagging
+  const [selectedPhotoIndices, setSelectedPhotoIndices] = useState<Set<number>>(new Set());
+  const [photoTagsMap, setPhotoTagsMap] = useState<Map<number, { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[]>>(new Map());
 
   // Custom navigation function for the useFileUploadProcessor hook
   const navigateAfterUpload = (uploadedFolderId: string | null) => {
@@ -177,7 +181,7 @@ const SaveAlbum = () => {
     enhancedLog
   );
 
-  // Use the album save hook with all required parameters (now including tags)
+  // Use the album save hook with updated parameters for file-level tagging
   const { saveAlbumDirectly } = useAlbumSave(
     folderId || currentFolderId,
     cognitoUsername,
@@ -190,7 +194,7 @@ const SaveAlbum = () => {
     participantsCanAddItems,
     passwordProtectionOption,
     albumPassword,
-    tagsManager.selectedTags, // Pass selected tags to save hook
+    photoTagsMap, // NEW: pass photo tags map instead of global tags
     setIsSavingAlbum,
     setSavingProgress,
     setSelectedPhotos,
@@ -205,6 +209,38 @@ const SaveAlbum = () => {
       enhancedLog(`Updated folder ID from upload processor: ${currentFolderId}`);
     }
   }, [currentFolderId, folderId]);
+
+  // NEW: Clean up photo selection when photos are removed
+  useEffect(() => {
+    // Remove any selected indices that are beyond the current photo count
+    setSelectedPhotoIndices(prev => {
+      const updated = new Set<number>();
+      prev.forEach(index => {
+        if (index < selectedPhotos.length) {
+          updated.add(index);
+        }
+      });
+      return updated;
+    });
+
+    // Remove any photo tags for indices that no longer exist
+    setPhotoTagsMap(prev => {
+      const updated = new Map(prev);
+      const indicesToRemove: number[] = [];
+      
+      prev.forEach((_, index) => {
+        if (index >= selectedPhotos.length) {
+          indicesToRemove.push(index);
+        }
+      });
+      
+      indicesToRemove.forEach(index => {
+        updated.delete(index);
+      });
+      
+      return updated;
+    });
+  }, [selectedPhotos.length]);
 
   // ---------- PHOTO MANAGEMENT ----------
 
@@ -222,6 +258,63 @@ const SaveAlbum = () => {
       localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
       enhancedLog("Removed photos from localStorage");
     }
+
+    // Update selected indices and tags map - shift indices down for photos after the removed one
+    setSelectedPhotoIndices(prev => {
+      const updated = new Set<number>();
+      prev.forEach(index => {
+        if (index < indexToRemove) {
+          updated.add(index);
+        } else if (index > indexToRemove) {
+          updated.add(index - 1);
+        }
+        // Skip the removed index
+      });
+      return updated;
+    });
+
+    setPhotoTagsMap(prev => {
+      const updated = new Map();
+      prev.forEach((tags, index) => {
+        if (index < indexToRemove) {
+          updated.set(index, tags);
+        } else if (index > indexToRemove) {
+          updated.set(index - 1, tags);
+        }
+        // Skip the removed index
+      });
+      return updated;
+    });
+  };
+
+  // NEW: Photo selection functions
+  const togglePhotoSelection = (index: number) => {
+    enhancedLog(`Toggling selection for photo at index: ${index}`);
+    setSelectedPhotoIndices(prev => {
+      const updated = new Set(prev);
+      if (updated.has(index)) {
+        updated.delete(index);
+        enhancedLog(`Deselected photo ${index}`);
+      } else {
+        updated.add(index);
+        enhancedLog(`Selected photo ${index}`);
+      }
+      return updated;
+    });
+  };
+
+  const selectAllPhotos = () => {
+    enhancedLog("Selecting all photos");
+    const allIndices = new Set<number>();
+    for (let i = 0; i < selectedPhotos.length; i++) {
+      allIndices.add(i);
+    }
+    setSelectedPhotoIndices(allIndices);
+  };
+
+  const deselectAllPhotos = () => {
+    enhancedLog("Deselecting all photos");
+    setSelectedPhotoIndices(new Set());
   };
 
   // ---------- PUBLIC PROFILE TOGGLE ----------
@@ -244,7 +337,7 @@ const SaveAlbum = () => {
 
   const handleSaveAlbum = async () => {
     enhancedLog("Album save initiated");
-    enhancedLog("Selected tags for album:", tagsManager.selectedTags);
+    enhancedLog("Photo tags applied:", Object.fromEntries(photoTagsMap));
     setIsSavingAlbum(true);
 
     try {
@@ -257,8 +350,7 @@ const SaveAlbum = () => {
       }
 
       // If we have a valid username, proceed directly to saving
-      enhancedLog("Valid username found, proceeding to save album directly");
-      // TODO: Include selected tags in the save process
+      enhancedLog("Valid username found, proceeding to save album directly with file-level tagging");
       saveAlbumDirectly();
     } catch (err) {
       console.error("Error in handleSaveAlbum:", err);
@@ -382,20 +474,29 @@ const SaveAlbum = () => {
             style={{ display: 'none' }}
           />
           
-          {/* Photo Grid */}
+          {/* Photo Grid with Selection Support */}
           <PhotoHandler 
             selectedPhotos={selectedPhotos}
+            selectedPhotoIndices={selectedPhotoIndices}
             isSavingAlbum={isSavingAlbum || isUploading}
             onRemovePhoto={removePhoto}
+            onTogglePhotoSelection={togglePhotoSelection}
+            onSelectAllPhotos={selectAllPhotos}
+            onDeselectAllPhotos={deselectAllPhotos}
           />
           
           {/* Tags Section - Only show if user is creator and folder details are visible */}
           {showFolderDetails && isCreator === true && (
-            <TagsDisplay 
-              tagsManager={tagsManager}
-              disabled={isTaggingDisabled}
-              enhancedLog={enhancedLog}
-            />
+            <div style={{ margin: '16px 0' }}>
+
+              {/* Tags Selection */}
+              <TagsDisplay 
+                tagsManager={tagsManager}
+                disabled={isTaggingDisabled}
+                enhancedLog={enhancedLog}
+                photoCount={selectedPhotos.length}
+              />
+            </div>
           )}
                     
           {/* Saving Progress */}

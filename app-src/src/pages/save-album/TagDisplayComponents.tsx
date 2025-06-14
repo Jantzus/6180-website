@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { TagData, SubtagData, useTagsManagement } from './useTagsManagement';
 
@@ -20,6 +20,9 @@ const TagsLabel = styled.h3`
   font-size: 14px;
   font-weight: 600;
   color: #495057;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
 
 const TagsRow = styled.div`
@@ -30,7 +33,8 @@ const TagsRow = styled.div`
   min-height: 32px;
 `;
 
-const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed?: boolean }>`
+const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed?: boolean; $isBeingDeleted?: boolean }>`
+  position: relative;
   padding: 6px 12px;
   border: 1px solid ${props => props.$isSelected ? '#007bff' : '#ced4da'};
   border-radius: 16px;
@@ -44,6 +48,11 @@ const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed?: boolean }
     border-color: #28a745;
     background: #28a745;
     color: white;
+  `}
+
+  ${props => props.$isBeingDeleted && `
+    opacity: 0.5;
+    pointer-events: none;
   `}
 
   &:hover {
@@ -63,6 +72,34 @@ const SubtagButton = styled(TagButton)`
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 12px;
+`;
+
+const DeleteButton = styled.button`
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: #dc3545;
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #c82333;
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `;
 
 const LoadingText = styled.div`
@@ -98,27 +135,249 @@ const ActionButton = styled.button`
   }
 `;
 
-// Main Tags Display Component
+const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 1px solid #007bff;
+  border-radius: 12px;
+  background: white;
+`;
+
+const TagInput = styled.input`
+  border: none;
+  outline: none;
+  font-size: 12px;
+  background: transparent;
+  min-width: 80px;
+  max-width: 200px;
+
+  &::placeholder {
+    color: #999;
+  }
+`;
+
+const InputButton = styled.button`
+  border: none;
+  background: transparent;
+  color: #007bff;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #007bff;
+    color: white;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+`;
+
+const InfoBadge = styled.span`
+  background: #6c757d;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: bold;
+`;
+
+// Tag with delete functionality component
+interface TagWithDeleteProps {
+  tag: TagData;
+  isSelected: boolean;
+  isDisplayed: boolean;
+  isBeingDeleted: boolean;
+  disabled: boolean;
+  onTagClick: (tag: TagData) => void;
+  onDeleteTag: (tagId: string) => void;
+  getTagDisplayText: (tag: TagData) => string;
+}
+
+const TagWithDelete: React.FC<TagWithDeleteProps> = ({
+  tag,
+  isSelected,
+  isDisplayed,
+  isBeingDeleted,
+  disabled,
+  onTagClick,
+  onDeleteTag,
+  getTagDisplayText
+}) => {
+  const [showDelete, setShowDelete] = useState(false);
+
+  return (
+    <TagButton
+      $isSelected={isSelected}
+      $isDisplayed={isDisplayed}
+      $isBeingDeleted={isBeingDeleted}
+      disabled={disabled}
+      onClick={() => onTagClick(tag)}
+      onMouseEnter={() => setShowDelete(true)}
+      onMouseLeave={() => setShowDelete(false)}
+    >
+      {getTagDisplayText(tag)}
+      {showDelete && !disabled && !isBeingDeleted && (
+        <DeleteButton
+          onClick={(e) => {
+            e.stopPropagation();
+            onDeleteTag(tag.id);
+          }}
+          disabled={isBeingDeleted}
+        >
+          ×
+        </DeleteButton>
+      )}
+    </TagButton>
+  );
+};
+
+// Subtag with delete functionality component
+interface SubtagWithDeleteProps {
+  subtag: SubtagData;
+  isSelected: boolean;
+  isBeingDeleted: boolean;
+  disabled: boolean;
+  onSubtagClick: (subtag: SubtagData) => void;
+  onDeleteSubtag: (subtagId: string) => void;
+}
+
+const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = ({
+  subtag,
+  isSelected,
+  isBeingDeleted,
+  disabled,
+  onSubtagClick,
+  onDeleteSubtag
+}) => {
+  const [showDelete, setShowDelete] = useState(false);
+
+  return (
+    <SubtagButton
+      $isSelected={isSelected}
+      $isBeingDeleted={isBeingDeleted}
+      disabled={disabled}
+      onClick={() => onSubtagClick(subtag)}
+      onMouseEnter={() => setShowDelete(true)}
+      onMouseLeave={() => setShowDelete(false)}
+    >
+      {subtag.subtagTitle}
+      {showDelete && !disabled && !isBeingDeleted && (
+        <DeleteButton
+          onClick={(e) => {
+            e.stopPropagation();
+            onDeleteSubtag(subtag.id);
+          }}
+          disabled={isBeingDeleted}
+        >
+          ×
+        </DeleteButton>
+      )}
+    </SubtagButton>
+  );
+};
+
+// New tag input component
+interface NewTagInputProps {
+  value: string;
+  onChange: (value: string) => void;
+  onSubmit: () => void;
+  onCancel: () => void;
+  isSubmitting: boolean;
+  placeholder?: string;
+}
+
+const NewTagInput: React.FC<NewTagInputProps> = ({
+  value,
+  onChange,
+  onSubmit,
+  onCancel,
+  isSubmitting,
+  placeholder = "Enter tag name..."
+}) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      onSubmit();
+    } else if (e.key === 'Escape') {
+      onCancel();
+    }
+  };
+
+  return (
+    <InputContainer>
+      <TagInput
+        ref={inputRef}
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onKeyDown={handleKeyPress}
+        placeholder={placeholder}
+        disabled={isSubmitting}
+      />
+      <InputButton
+        onClick={onSubmit}
+        disabled={!value.trim() || isSubmitting}
+        title="Add (Enter)"
+      >
+        {isSubmitting ? '...' : '✓'}
+      </InputButton>
+      <InputButton
+        onClick={onCancel}
+        disabled={isSubmitting}
+        title="Cancel (Escape)"
+      >
+        ×
+      </InputButton>
+    </InputContainer>
+  );
+};
+
+// Main Tags Display Component - UPDATED for photo-level tagging
 interface TagsDisplayProps {
   tagsManager: ReturnType<typeof useTagsManagement>;
   disabled?: boolean;
   enhancedLog: (message: string, data?: any) => void;
+  photoCount?: number; // NEW: Add photo count to adjust instructions
 }
 
 export const TagsDisplay: React.FC<TagsDisplayProps> = ({ 
   tagsManager, 
   disabled = false,
-  enhancedLog 
+  enhancedLog,
+  photoCount = 1
 }) => {
   const {
     tags,
     selectedTags,
     displayedTagId,
     isLoadingTags,
+    tagIdBeingDeleted,
+    isAddingNewTag,
+    newTagTitle,
+    isSubmittingNewTag,
     selectTag,
     unselectTag,
     setDisplayedTag,
-    isTagSelected
+    isTagSelected,
+    deleteTag,
+    startAddingNewTag,
+    cancelAddingNewTag,
+    submitNewTag,
+    setNewTagTitle
   } = tagsManager;
 
   const handleTagClick = (tag: TagData) => {
@@ -128,10 +387,10 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = ({
     const isDisplayed = displayedTagId === tag.id;
     
     if (!isSelected) {
-      // Tag is not selected, select it
+      // Tag is not selected, select it for application to photos
       selectTag(tag);
       setDisplayedTag(tag.id);
-      enhancedLog(`Selected and displayed tag: ${tag.tagTitle}`);
+      enhancedLog(`Selected tag for photo application: ${tag.tagTitle}`);
     } else if (isSelected && !isDisplayed) {
       // Tag is selected but not displayed, display it
       setDisplayedTag(tag.id);
@@ -141,6 +400,25 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = ({
       unselectTag(tag);
       setDisplayedTag(null);
       enhancedLog(`Unselected tag: ${tag.tagTitle}`);
+    }
+  };
+
+  const handleDeleteTag = async (tagId: string) => {
+    if (disabled) return;
+    
+    enhancedLog(`Delete tag initiated: ${tagId}`);
+    const success = await deleteTag(tagId);
+    if (success) {
+      enhancedLog(`Tag successfully deleted: ${tagId}`);
+    } else {
+      enhancedLog(`Failed to delete tag: ${tagId}`);
+    }
+  };
+
+  const handleSubmitNewTag = async () => {
+    const success = await submitNewTag();
+    if (!success) {
+      enhancedLog("Failed to submit new tag");
     }
   };
 
@@ -165,28 +443,52 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = ({
   return (
     <TagsContainer>
       <TagsSection>
-        <TagsLabel>Tags</TagsLabel>
+        <TagsLabel>
+          Select Tags to Apply to Photos
+          {selectedTags.length > 0 && (
+            <InfoBadge>{selectedTags.length} selected</InfoBadge>
+          )}
+        </TagsLabel>
         <TagsRow>
           {isLoadingTags ? (
             <LoadingText>Loading tags...</LoadingText>
-          ) : sortedTags.length === 0 ? (
-            <EmptyState>No tags available</EmptyState>
           ) : (
             <>
               {sortedTags.map(tag => (
-                <TagButton
+                <TagWithDelete
                   key={tag.id}
-                  $isSelected={isTagSelected(tag)}
-                  $isDisplayed={displayedTagId === tag.id}
+                  tag={tag}
+                  isSelected={isTagSelected(tag)}
+                  isDisplayed={displayedTagId === tag.id}
+                  isBeingDeleted={tagIdBeingDeleted === tag.id}
                   disabled={disabled}
-                  onClick={() => handleTagClick(tag)}
-                >
-                  {getTagDisplayText(tag)}
-                </TagButton>
+                  onTagClick={handleTagClick}
+                  onDeleteTag={handleDeleteTag}
+                  getTagDisplayText={getTagDisplayText}
+                />
               ))}
-              <ActionButton disabled={disabled}>
-                + Add Tag
-              </ActionButton>
+              
+              {isAddingNewTag ? (
+                <NewTagInput
+                  value={newTagTitle}
+                  onChange={setNewTagTitle}
+                  onSubmit={handleSubmitNewTag}
+                  onCancel={cancelAddingNewTag}
+                  isSubmitting={isSubmittingNewTag}
+                  placeholder="Enter tag name..."
+                />
+              ) : (
+                <ActionButton 
+                  disabled={disabled}
+                  onClick={startAddingNewTag}
+                >
+                  + Add Tag
+                </ActionButton>
+              )}
+              
+              {sortedTags.length === 0 && !isAddingNewTag && (
+                <EmptyState>No tags available</EmptyState>
+              )}
             </>
           )}
         </TagsRow>
@@ -199,11 +501,34 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = ({
           enhancedLog={enhancedLog}
         />
       )}
+
+      {/* Instructions for photo tagging */}
+      {selectedTags.length > 0 && (
+        <div style={{
+          marginTop: '12px',
+          padding: '12px 16px',
+          background: '#e7f3ff',
+          borderRadius: '6px',
+          fontSize: '13px',
+          color: '#0c5aa6',
+          border: '1px solid #b3d9ff'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+            <span>🎯</span>
+            <strong>Ready to Apply Tags:</strong>
+          </div>
+          You have selected <strong>{selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''}</strong> to apply to photos.<br/>
+          <strong>Next:</strong> {photoCount === 1 
+            ? 'Click "Apply Selected Tags to Photo" above to tag your photo.'
+            : 'Select photos above (they\'ll show blue borders), then click "Apply Selected Tags to Photos".'
+          }
+        </div>
+      )}
     </TagsContainer>
   );
 };
 
-// Subtags Display Component
+// Subtags Display Component - UPDATED for photo-level tagging
 interface SubtagsDisplayProps {
   tagsManager: ReturnType<typeof useTagsManagement>;
   disabled?: boolean;
@@ -217,9 +542,18 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = ({
 }) => {
   const {
     displayedTagId,
+    subtagIdBeingDeleted,
+    isAddingNewSubtag,
+    newSubtagTitle,
+    isSubmittingNewSubtag,
     selectSubtag,
     unselectSubtag,
-    isSubtagSelected
+    isSubtagSelected,
+    deleteSubtag,
+    startAddingNewSubtag,
+    cancelAddingNewSubtag,
+    submitNewSubtag,
+    setNewSubtagTitle
   } = tagsManager;
 
   const displayedTagSubtags = displayedTagId ? 
@@ -234,25 +568,34 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = ({
     
     if (isSelected) {
       unselectSubtag(subtag);
-      enhancedLog(`Unselected subtag: ${subtag.subtagTitle}`);
+      enhancedLog(`Unselected subtag for photo application: ${subtag.subtagTitle}`);
     } else {
       selectSubtag(subtag);
-      enhancedLog(`Selected subtag: ${subtag.subtagTitle}`);
+      enhancedLog(`Selected subtag for photo application: ${subtag.subtagTitle}`);
     }
   };
 
-  if (!displayedTag || displayedTagSubtags.length === 0) {
-    return (
-      <TagsSection>
-        <TagsLabel>Subtags for "{displayedTag?.tagTitle}"</TagsLabel>
-        <TagsRow>
-          <EmptyState>No subtags available</EmptyState>
-          <ActionButton disabled={disabled}>
-            + Add Subtag
-          </ActionButton>
-        </TagsRow>
-      </TagsSection>
-    );
+  const handleDeleteSubtag = async (subtagId: string) => {
+    if (disabled) return;
+    
+    enhancedLog(`Delete subtag initiated: ${subtagId}`);
+    const success = await deleteSubtag(subtagId);
+    if (success) {
+      enhancedLog(`Subtag successfully deleted: ${subtagId}`);
+    } else {
+      enhancedLog(`Failed to delete subtag: ${subtagId}`);
+    }
+  };
+
+  const handleSubmitNewSubtag = async () => {
+    const success = await submitNewSubtag();
+    if (!success) {
+      enhancedLog("Failed to submit new subtag");
+    }
+  };
+
+  if (!displayedTag) {
+    return null;
   }
 
   // Sort subtags by points (highest first) then by updated date
@@ -268,34 +611,54 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = ({
       <TagsLabel>Subtags for "{displayedTag.tagTitle}"</TagsLabel>
       <TagsRow>
         {sortedSubtags.map(subtag => (
-          <SubtagButton
+          <SubtagWithDelete
             key={subtag.id}
-            $isSelected={isSubtagSelected(subtag)}
+            subtag={subtag}
+            isSelected={isSubtagSelected(subtag)}
+            isBeingDeleted={subtagIdBeingDeleted === subtag.id}
             disabled={disabled}
-            onClick={() => handleSubtagClick(subtag)}
-          >
-            {subtag.subtagTitle}
-          </SubtagButton>
+            onSubtagClick={handleSubtagClick}
+            onDeleteSubtag={handleDeleteSubtag}
+          />
         ))}
-        <ActionButton disabled={disabled}>
-          + Add Subtag
-        </ActionButton>
+        
+        {isAddingNewSubtag ? (
+          <NewTagInput
+            value={newSubtagTitle}
+            onChange={setNewSubtagTitle}
+            onSubmit={handleSubmitNewSubtag}
+            onCancel={cancelAddingNewSubtag}
+            isSubmitting={isSubmittingNewSubtag}
+            placeholder="Enter subtag name..."
+          />
+        ) : (
+          <ActionButton 
+            disabled={disabled}
+            onClick={startAddingNewSubtag}
+          >
+            + Add Subtag
+          </ActionButton>
+        )}
+        
+        {sortedSubtags.length === 0 && !isAddingNewSubtag && (
+          <EmptyState>No subtags available</EmptyState>
+        )}
       </TagsRow>
     </TagsSection>
   );
 };
 
-// Placeholder component for individual photo tagging (future functionality)
+// Updated PhotoTagging component for individual photo tagging display
 interface PhotoTaggingProps {
-  photoFileName: string; // Will be used when individual photo tagging is implemented
-  selectedTags: ReturnType<typeof useTagsManagement>['selectedTags'];
-  onUpdatePhotoTags?: (photoFileName: string, tags: any[]) => void; // Will be used for future functionality
+  photoTags: { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[];
+  isSelected?: boolean;
+  onToggleSelection?: () => void;
 }
 
 export const PhotoTagging: React.FC<PhotoTaggingProps> = ({ 
-  photoFileName: _photoFileName, // Prefix with underscore to indicate intentionally unused
-  selectedTags, 
-  onUpdatePhotoTags: _onUpdatePhotoTags // Prefix with underscore to indicate intentionally unused
+  photoTags,
+  isSelected = false,
+  onToggleSelection
 }) => {
   return (
     <div style={{ 
@@ -307,18 +670,22 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
       color: 'white',
       padding: '4px 8px',
       borderRadius: '4px',
-      fontSize: '12px'
-    }}>
-      {selectedTags.length > 0 ? (
+      fontSize: '12px',
+      cursor: onToggleSelection ? 'pointer' : 'default'
+    }}
+    onClick={onToggleSelection}>
+      {photoTags.length > 0 ? (
         <div>
-          Tags: {selectedTags.map(tag => 
+          Tags: {photoTags.map(tag => 
             tag.subtags.length > 0 
               ? `${tag.tagTitle} (${tag.subtags.map(s => s.subtagTitle).join(', ')})`
               : tag.tagTitle
           ).join(', ')}
         </div>
       ) : (
-        <div style={{ opacity: 0.7 }}>Click to tag this photo</div>
+        <div style={{ opacity: 0.7 }}>
+          {isSelected ? 'Selected for tagging' : 'No tags applied'}
+        </div>
       )}
     </div>
   );
