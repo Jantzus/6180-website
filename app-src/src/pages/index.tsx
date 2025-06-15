@@ -22,8 +22,8 @@ import {
 if (import.meta.env.MODE !== 'production') {
   import('@/lib/i18n/checkTranslations').then(({ checkTranslationFiles, checkTranslationKey }) => {
     checkTranslationFiles();
-    checkTranslationKey('Instant Photo and Video Sharing to Spark Conversations');
-    checkTranslationKey('Tag by event, location, mood, and more — then share password-protected albums instantly.');
+    checkTranslationKey('Doorway to Your Memories');
+    checkTranslationKey('Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.');
   });
 }
 
@@ -68,12 +68,6 @@ const IndexPage: React.FC = () => {
                 src={generateUrl("images/logo_no_background.png")}
                 alt="6180 Logo"
               />
-              <h1 style={{ 
-                fontSize: '1.4em',
-                fontWeight: 'bold',
-                color: '#222',
-                margin: 0
-              }}>6180</h1>
             </LogoContainer>
             
             {/* Language selector removed from header */}
@@ -81,7 +75,7 @@ const IndexPage: React.FC = () => {
 
           <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', padding: '0 20px' }}>
             <Headline>
-              {t('Share Photos and Videos Instantly to Spark Conversations')}
+              {t('Doorway to Your Memories')}
             </Headline>
             
             <p style={{ 
@@ -90,16 +84,16 @@ const IndexPage: React.FC = () => {
               marginBottom: '30px',
               lineHeight: '1.6'
             }}>
-              {t('Tag by event, location, mood, and more — then share password-protected albums instantly.')}
+              {t('Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.')}
             </p>
-            
+
             <Button 
               $primary
               onClick={goToAlbums}
               className="hover-button"
               style={{ marginTop: '20px', padding: '12px 20px' }}
             >
-              {t('Start')}
+              {t('Enter 6180')}
             </Button>
           </div>
 

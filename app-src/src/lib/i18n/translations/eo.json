@@ -279,5 +279,12 @@
   "💡 Password Protection Info:": "💡 Informoj pri Pasvorta Protekto:",
   "Select Protection Level": "Elektu Protektan Nivelon",
   "Save Settings": "Konservu Agordojn",
-  "No Public Albums Found": "Neniuj Publikaj Albumoj Trovitaj"
+  "No Public Albums Found": "Neniuj Publikaj Albumoj Trovitaj",
+  "Doorway to Your Memories": "Pordo al Viaj Memoroj",
+  "Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.": "Etikedu kaj revizitu viajn plej ŝatatajn momentojn — laŭ okazo, humoro aŭ loko — en sekundoj.",
+  "Enter 6180": "Enmetu 6180",
+  "Access Your 6180 Albums": "Aliri Viajn 6180 Albumojn",
+  "Revisit Your Albums": "Revizitu Viajn Albumojn",
+  "We'll email you a one-time code to verify it's really you": "Ni sendos al vi unufoje uzeblan kodon per retpoŝto por kontroli, ke vi vere estas vi",
+  "We sent a 6-digit code to": "Ni sendis 6-cifran kodon al"
 }

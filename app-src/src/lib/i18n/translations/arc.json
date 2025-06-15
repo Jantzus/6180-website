@@ -279,5 +279,12 @@
   "💡 Password Protection Info:": "💡 ܝܘܕܥܬܐ ܕܡܛܪܬܐ ܕܡܠܬܐ ܦܪܘܫܬܐ:",
   "Select Protection Level": "ܓܒܝ ܕܪܓܐ ܕܡܛܪܬܐ",
   "Save Settings": "ܢܛܪ ܛܘܟܣܐ",
-  "No Public Albums Found": "ܠܐ ܐܫܬܟܚܘ ܐܠܒܘܡܐ ܓܠܝܐ"
+  "No Public Albums Found": "ܠܐ ܐܫܬܟܚܘ ܐܠܒܘܡܐ ܓܠܝܐ",
+  "Doorway to Your Memories": "ܬܪܥܐ ܠܕܘܟܪܢܝܟ",
+  "Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.": "ܪܘܫܡ ܘܗܕܪ ܠܙܒܢܐ ܪܚܝܡܐ ܕܝܠܟ — ܒܙܒܢܐ ܐܘ ܪܓܫܐ ܐܘ ܕܘܟܬܐ — ܒܪܓܥܬܐ.",
+  "Enter 6180": "ܥܘܠ 6180",
+  "Access Your 6180 Albums": "ܚܙܝ ܠܟܬܒܝ̈ܟ 6180",
+  "Revisit Your Albums": "ܣܘܪ ܒܘܟ̈ܐ ܕܝܠܟ",
+  "We'll email you a one-time code to verify it's really you": "ܢܫܕܪ ܠܟ ܪܡܙܐ ܕܚܕܐ ܙܒܢܐ ܒܐܝܓܪܬܐ ܐܠܩܛܪܘܢܝܬܐ ܠܘܕܥܬܐ ܕܐܢܬ ܐܢܬ",
+  "We sent a 6-digit code to": "ܫܕܪܢ ܪܡܙܐ ܕܫܬܐ ܡܢܝܢܐ ܠܘܬ"
 }

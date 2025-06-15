@@ -313,7 +313,7 @@ const LoginPage = () => {
         alignItems: 'center', 
         height: '100vh' 
       }}>
-        Loading...
+        {t('Loading...')}
       </div>
     )
   }
@@ -331,7 +331,7 @@ const LoginPage = () => {
                   alt="6180 Logo" 
                 />
                 <LoginTitle>
-                  {t('Sign in to 6180')}
+                  {t('Revisit Your Albums')}
                 </LoginTitle>
               </LoginHeader>
 
@@ -362,13 +362,13 @@ const LoginPage = () => {
                     }
                   </Button>
                   <InfoText>
-                    {t("We'll send a secure verification code to your email")}
+                    {t("We'll email you a one-time code to verify it's really you")}
                   </InfoText>
                 </>
               ) : (
                 <>
                   <InfoText style={{ marginBottom: '16px', color: '#555' }}>
-                    {t("Check your email for a 6-digit verification code sent to")} <strong>{email}</strong>
+                    {t("We sent a 6-digit code to")} <strong>{email}</strong>
                   </InfoText>
                   <OtpInput
                     ref={otpInputRef}

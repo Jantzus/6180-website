@@ -279,5 +279,12 @@
   "💡 Password Protection Info:": "💡 პაროლის დაცვის ინფორმაცია:",
   "Select Protection Level": "აირჩიეთ დაცვის დონე",
   "Save Settings": "პარამეტრების შენახვა",
-  "No Public Albums Found": "საზოგადოებრივი ალბომები ვერ მოიძებნა"
+  "No Public Albums Found": "საზოგადოებრივი ალბომები ვერ მოიძებნა",
+  "Doorway to Your Memories": "კარი თქვენს მოგონებებისკენ",
+  "Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.": "მონიშნეთ და ხელახლა ეწვიეთ თქვენს ყველაზე საყვარელ მომენტებს — შემთხვევის, განწყობის ან ადგილმდებარეობის მიხედვით — წამებში.",
+  "Enter 6180": "შეიყვანეთ 6180",
+  "Access Your 6180 Albums": "შედით თქვენს 6180 ალბომში",
+  "Revisit Your Albums": "ნახეთ ისევ თქვენი ალბომები",
+  "We'll email you a one-time code to verify it's really you": "ჩვენ გამოგიგზავნით ერთჯერადი გამოყენების კოდს ელ.ფოსტით, რათა დავადასტუროთ, რომ ნამდვილად თქვენ ხართ",
+  "We sent a 6-digit code to": "გავგზავნეთ 6-ნიშნა კოდი მისამართზე"
 }

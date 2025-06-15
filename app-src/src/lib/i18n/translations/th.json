@@ -279,5 +279,12 @@
   "💡 Password Protection Info:": "💡 ข้อมูลการป้องกันรหัสผ่าน:",
   "Select Protection Level": "เลือกระดับการป้องกัน",
   "Save Settings": "บันทึกการตั้งค่า",
-  "No Public Albums Found": "ไม่พบอัลบั้มสาธารณะ"
+  "No Public Albums Found": "ไม่พบอัลบั้มสาธารณะ",
+  "Doorway to Your Memories": "ประตูสู่ความทรงจำของคุณ",
+  "Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.": "แท็กและกลับไปเยี่ยมชมช่วงเวลาโปรดของคุณ — ตามโอกาส อารมณ์ หรือสถานที่ — ในไม่กี่วินาที",
+  "Enter 6180": "ป้อน 6180",
+  "Access Your 6180 Albums": "เข้าถึง 6180 อัลบั้มของคุณ",
+  "Revisit Your Albums": "เยี่ยมชมอัลบัมของคุณอีกครั้ง",
+  "We'll email you a one-time code to verify it's really you": "เราจะส่งรหัสใช้ครั้งเดียวทางอีเมลเพื่อยืนยันตัวตนของคุณ",
+  "We sent a 6-digit code to": "เราส่งรหัส 6 หลักไปยัง"
 }

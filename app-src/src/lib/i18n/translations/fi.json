@@ -279,5 +279,12 @@
   "💡 Password Protection Info:": "💡 Salasanasuojauksen Tiedot:",
   "Select Protection Level": "Valitse Suojaustaso",
   "Save Settings": "Tallenna Asetukset",
-  "No Public Albums Found": "Julkisia Albumeita Ei Löytynyt"
+  "No Public Albums Found": "Julkisia Albumeita Ei Löytynyt",
+  "Doorway to Your Memories": "Ovi Muistoihisi",
+  "Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.": "Merkitse ja vieraile uudelleen suosikkihetkissäsi — tilaisuuden, mielialan tai sijainnin mukaan — sekunneissa.",
+  "Enter 6180": "Syötä 6180",
+  "Access Your 6180 Albums": "Käytä 6180 Albumiasi",
+  "Revisit Your Albums": "Vieraile Albumeissasi Uudelleen",
+  "We'll email you a one-time code to verify it's really you": "Lähetämme sinulle sähköpostitse kertakäyttökoodin vahvistaaksemme, että olet todella sinä",
+  "We sent a 6-digit code to": "Lähetimme 6-numeroisen koodin osoitteeseen"
 }

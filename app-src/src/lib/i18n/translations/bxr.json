@@ -279,5 +279,12 @@
   "💡 Password Protection Info:": "💡 Нүүсэ үгын хамгаалалтын мэдээсэл:",
   "Select Protection Level": "Хамгаалалтын түвшэниие хубаарагты",
   "Save Settings": "Тохиргоог хадгална уу",
-  "No Public Albums Found": "Ямар нэгэ олон нэйтын цомог олдоогүй"
+  "No Public Albums Found": "Ямар нэгэ олон нэйтын цомог олдоогүй",
+  "Doorway to Your Memories": "Таны Дурсамжуудын Үүдэн",
+  "Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.": "Эдэнэй дурата мүргүүдые тэмдэглээд дахин харагты — орилситой, сэдьхэлээр эсэбэл газарай нэрээр — секундсаар.",
+  "Enter 6180": "6180 Оруулна",
+  "Access Your 6180 Albums": "Танай 6180 Цомогой Үзэхэ",
+  "Revisit Your Albums": "Өөрынгөө альбомуудые дахин үзэгты",
+  "We'll email you a one-time code to verify it's really you": "Бид танай жэнхэни байдал баталгаажуулхын тулада нэгэ удаагай кодые электрон шуудангаар ябуулна",
+  "We sent a 6-digit code to": "Бид 6 тоотой кодые илгээбэ"
 }

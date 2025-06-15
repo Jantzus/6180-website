@@ -279,5 +279,12 @@
   "💡 Password Protection Info:": "💡 Нууц Үг Хамгаалах Мэдээлэл:",
   "Select Protection Level": "Хамгаалах Түвшинг Сонгох",
   "Save Settings": "Тохиргоог Хадгалах",
-  "No Public Albums Found": "Ямар ч Олон Нийтийн Цомог Олдсонгүй"
+  "No Public Albums Found": "Ямар ч Олон Нийтийн Цомог Олдсонгүй",
+  "Doorway to Your Memories": "Таны Дурсамжид Хаалга",
+  "Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.": "Хамгийн дуртай мөчүүдээ тэмдэглэж, дахин орж үзээрэй — тохиолдол, сэтгэл санаа, байршлаар — хэдхэн секундын дотор.",
+  "Enter 6180": "6180 Оруулах",
+  "Access Your 6180 Albums": "Таны 6180 Цомог Үзэх",
+  "Revisit Your Albums": "Цомгуудаа Дахин Үзээрэй",
+  "We'll email you a one-time code to verify it's really you": "Бид таны биеийн байдлыг баталгаажуулахын тулд нэг удаагийн код и-мэйлээр илгээх болно",
+  "We sent a 6-digit code to": "Бид 6 оронтой код илгээлээ"
 }

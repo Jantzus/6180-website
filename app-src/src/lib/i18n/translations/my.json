@@ -279,5 +279,12 @@
   "💡 Password Protection Info:": "💡 စကားဝှက် ကာကွယ်မှု အချက်အလက်များ:",
   "Select Protection Level": "ကာကွယ်မှု အဆင့်ကို ရွေးပါ",
   "Save Settings": "ဆက်တင်များကို သိမ်းပါ",
-  "No Public Albums Found": "အများပြည်သူဆိုင်ရာ အယ်လ်ဘမ်များ မတွေ့ရ"
+  "No Public Albums Found": "အများပြည်သူဆိုင်ရာ အယ်လ်ဘမ်များ မတွေ့ရ",
+  "Doorway to Your Memories": "သင်၏အမှတ်တရားများသို့တံခါး",
+  "Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.": "သင့်အကြိုက်ဆုံး အချိန်များကို အမှတ်တံဆိပ်တပ်ပြီး ပြန်လည်ကြည့်ရှုပါ — အခင်းအကျင်း၊ စိတ်ခံစားမှု သို့မဟုတ် နေရာအရ — စက္ကန့်အနည်းငယ်အတွင်း။",
+  "Enter 6180": "6180 ရိုက်ထည့်ပါ",
+  "Access Your 6180 Albums": "သင်၏ 6180 အယ်လ်ဘမ်များကို ဝင်ရောက်ပါ",
+  "Revisit Your Albums": "သင့်အယ်လ်ဘမ်များကို ပြန်လည်လေ့လာပါ",
+  "We'll email you a one-time code to verify it's really you": "သင့်အမှန်တကယ်ကိုယ်ဖြစ်ကြောင်းစစ်ဆေးရန် အီးမေးလ်ဖြင့် တစ်ကြိမ်သုံးကုဒ်ပို့ပေးမည်",
+  "We sent a 6-digit code to": "ကျွန်ုပ်တို့သည် ဂဏန်း ၆ လုံးပါ ကုဒ်ကို ပို့လိုက်ပါပြီ"
 }

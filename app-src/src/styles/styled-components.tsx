@@ -24,6 +24,9 @@ const theme = {
     overlayLight: "rgba(0, 0, 0, 0.5)",
     border: "#ddd",
     borderLight: "#eaeaea",
+    // Enhanced focus colors for visual polish
+    focusGlow: "#99caff",
+    focusGlowShadow: "rgba(153, 202, 255, 0.4)",
     text: {
       primary: "#333",
       secondary: "#666",
@@ -33,6 +36,9 @@ const theme = {
     },
     background: {
       primary: "#f9fafb",
+      // Enhanced gradient backgrounds for visual depth
+      gradientStart: "#fdfdfd",
+      gradientEnd: "#f6f6f6",
       card: "#fff",
       highlight: "#f0f7ff",
       error: "#fdeded"
@@ -49,12 +55,12 @@ const theme = {
     lg: "24px",
     xl: "32px"
   },
-  // Simplified border radius system with fewer options based on component context
+  // Enhanced border radius system for visual polish
   borderRadius: {
     none: "0",
     small: "4px",      // For small UI elements like tags, badges, chips
     medium: "8px",     // For most containers, cards, buttons
-    large: "16px",     // For prominent elements, modals, featured cards
+    large: "16px",     // For prominent elements, modals, featured cards - enhanced for login card
     full: "999px",     // For pills, tags (nearly circular but works with any height)
     circle: "50%"      // Perfect circles (for avatars, icons)
   },
@@ -71,9 +77,13 @@ const theme = {
     md: "0 1px 3px rgba(0,0,0,0.1)",
     lg: "0 4px 10px rgba(0,0,0,0.08)",
     xl: "0 8px 24px rgba(0,0,0,0.2)",
+    // Enhanced shadows for visual polish
+    cardSoft: "0 8px 32px rgba(0,0,0,0.08)", // Softer, more elevated card shadow
     primaryBtn: "0 4px 12px rgba(0, 123, 255, 0.2)",
     selection: "0 2px 4px rgba(0, 0, 0, 0.2)",
-    textShadow: "0 0 5px rgba(0, 0, 0, 0.8)"
+    textShadow: "0 0 5px rgba(0, 0, 0, 0.8)",
+    // Enhanced focus shadow
+    focusGlow: "0 0 0 2px rgba(153, 202, 255, 0.4)"
   },
   breakpoints: {
     mobile: "767px"
@@ -117,6 +127,8 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     overflow-x: hidden;
     font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    /* Enhanced neutral background gradient for visual depth */
+    background: linear-gradient(135deg, ${theme.colors.background.gradientStart} 0%, ${theme.colors.background.gradientEnd} 100%);
     /* Prevent content from being hidden behind notches/status bars */
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
@@ -160,13 +172,14 @@ const mobile = (content: any) => css`
   }
 `;
 
-// Shared style mixins
+// Enhanced card style with softer shadow
 const cardStyle = css`
   background-color: ${theme.colors.background.card};
   border-radius: ${theme.borderRadius.medium};
   box-shadow: ${theme.boxShadow.md};
 `;
 
+// Enhanced form input style with focus improvements
 const formInputStyle = css`
   width: 100%;
   padding: 10px 12px;
@@ -174,15 +187,17 @@ const formInputStyle = css`
   font-family: inherit; // Ensure same font family
   line-height: 1.5; // Consistent line height
   border-radius: ${theme.borderRadius.small};
-  border: 1px solid ${theme.colors.border};
+  /* Enhanced: Remove border until focused for cleaner look */
+  border: 1px solid transparent;
   box-sizing: border-box;
   background-color: ${theme.colors.white};
   color: ${theme.colors.text.primary};
+  transition: all 0.2s ease; /* Smooth transition for focus state */
   
-  // Consistent placeholder styling
+  // Enhanced placeholder styling for elegance
   &::placeholder {
     color: ${theme.colors.text.lighter};
-    opacity: 1; // Override browser defaults
+    opacity: 0.5; // Lower opacity for more elegant appearance
     font-size: ${theme.fontSizes.md};
     font-family: inherit;
     font-weight: normal;
@@ -191,23 +206,29 @@ const formInputStyle = css`
   // Remove browser-specific styling differences
   &::-webkit-input-placeholder {
     color: ${theme.colors.text.lighter};
-    opacity: 1;
+    opacity: 0.5;
   }
   
   &::-moz-placeholder {
     color: ${theme.colors.text.lighter};
-    opacity: 1;
+    opacity: 0.5;
   }
   
   &:-ms-input-placeholder {
     color: ${theme.colors.text.lighter};
-    opacity: 1;
+    opacity: 0.5;
   }
   
+  /* Enhanced focus state with blue glow */
   &:focus {
     outline: none;
     border-color: ${theme.colors.primary};
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    box-shadow: ${theme.boxShadow.focusGlow};
+  }
+  
+  /* Subtle hover state for better UX */
+  &:hover:not(:focus) {
+    border-color: ${theme.colors.borderLight};
   }
 `;
 
@@ -259,7 +280,8 @@ export const Body = styled.div`
 
 export const AppContainer = styled.div<DirectionalProps>`
   padding: ${theme.spacing.md};
-  background-color: ${theme.colors.background.primary};
+  /* Enhanced: Use gradient background for visual depth */
+  background: linear-gradient(135deg, ${theme.colors.background.gradientStart} 0%, ${theme.colors.background.gradientEnd} 100%);
   min-height: 100vh;
   max-width: 100vw;
   position: relative;
@@ -372,6 +394,139 @@ export const BrandLogoContainer = styled.div<DirectionalProps>`
   margin: 0;
 `;
 
+// ========== Enhanced Login Components ==========
+
+// Additional styled components specific to login page with enhanced visual polish
+export const LoginCard = styled.div`
+  max-width: 400px;
+  width: 100%;
+  /* Enhanced: Increased top padding for breathing room above logo */
+  padding: 40px 32px 32px;
+  /* Enhanced: Larger border radius for more modern look */
+  border-radius: ${theme.borderRadius.large}; // 16px as mentioned
+  /* Enhanced: Softer, more elevated shadow */
+  box-shadow: ${theme.boxShadow.cardSoft};
+  text-align: center;
+  background-color: ${theme.colors.background.card};
+  /* Add subtle backdrop blur for depth */
+  backdrop-filter: blur(10px);
+  
+  ${mobile(`
+    padding: 32px 24px 24px;
+    margin: 0 16px;
+  `)}
+`;
+
+export const LoginTitle = styled.h2`
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+`;
+
+export const LoginHeader = styled.div`
+  margin-bottom: 24px;
+`;
+
+export const LogoImage = styled.img`
+  height: 60px;
+  margin-bottom: 16px;
+  /* Image protection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
+`;
+
+// Enhanced Input component with visual polish
+export const Input = styled.input`
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  /* Enhanced: Remove border until focused */
+  border: 1px solid transparent;
+  background-color: ${theme.colors.grayLighter};
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  
+  /* Enhanced placeholder styling for elegance */
+  &::placeholder {
+    color: ${theme.colors.text.lighter};
+    opacity: 0.5; // Lower opacity for more elegant appearance
+  }
+  
+  /* Enhanced: Light blue glow on focus */
+  &:focus {
+    outline: none;
+    border-color: ${theme.colors.primary};
+    background-color: ${theme.colors.white};
+    box-shadow: ${theme.boxShadow.focusGlow};
+  }
+  
+  /* Subtle hover state */
+  &:hover:not(:focus) {
+    background-color: ${theme.colors.white};
+    border-color: ${theme.colors.borderLight};
+  }
+`;
+
+export const OtpInput = styled(Input)`
+  letter-spacing: 2px;
+  text-align: center;
+`;
+
+export const InfoText = styled.p`
+  font-size: 13px;
+  color: #666;
+  margin-top: 16px;
+  text-align: center;
+`;
+
+export const ResendWrapper = styled.div`
+  margin-top: 16px;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+`;
+
+export const ResendButton = styled.button`
+  background: none;
+  border: none;
+  color: #007bff;
+  padding: 0;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: ${theme.colors.primaryDark};
+  }
+`;
+
+// Container components
+export const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 20px;
+`;
+
+export const CenteredContent = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
 // ========== Header Components ==========
 
 export const Header = styled.div`
@@ -462,7 +617,7 @@ export const RowSelectorSelect = styled.select`
 export const LogoContainer = styled.div<DirectionalProps>`
   display: flex;
   align-items: center;
-  flex-direction: ${props => props.$isRTL ? 'row-reverse' : 'row'};
+  flex-direction: ${props => props.$isRTL ? 'row' : 'row-reverse'};
   gap: ${theme.spacing.sm};  
 `;
 
@@ -497,7 +652,8 @@ export const Button = styled.button<ButtonProps>`
     if (props.$passwordSet) return theme.colors.white;
     return theme.colors.primary;
   }};
-  font-weight: ${props => props.$primary ? '500' : 'normal'};
+  /* Enhanced: Lighter font weight for premium feel */
+  font-weight: 500;
   padding: 12px 20px;
   font-size: ${theme.fontSizes.md};
   border: ${props => props.$primary ? 'none' : `1px solid ${theme.colors.primary}`};

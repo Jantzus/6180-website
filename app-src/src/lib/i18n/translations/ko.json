@@ -279,5 +279,12 @@
   "💡 Password Protection Info:": "💡 비밀번호 보호 정보:",
   "Select Protection Level": "보호 수준 선택",
   "Save Settings": "설정 저장",
-  "No Public Albums Found": "공개 앨범을 찾을 수 없습니다"
+  "No Public Albums Found": "공개 앨범을 찾을 수 없습니다",
+  "Doorway to Your Memories": "당신의 기억으로의 문",
+  "Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.": "좋아하는 순간들을 태그하고 다시 방문하세요 — 행사, 기분 또는 위치별로 — 몇 초 만에.",
+  "Enter 6180": "6180 입력",
+  "Access Your 6180 Albums": "당신의 6180개 앨범에 접근",
+  "Revisit Your Albums": "앨범 다시 보기",
+  "We'll email you a one-time code to verify it's really you": "본인 확인을 위해 일회용 코드를 이메일로 보내드립니다",
+  "We sent a 6-digit code to": "6자리 코드를 보냈습니다"
 }
