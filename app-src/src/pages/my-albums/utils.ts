@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FolderType, FOLDERPOSITION_FIELD } from "@/lib/types";
+import { FolderType, FOLDERPOSITION_FIELD, SelectedTag } from "@/lib/types";
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { checkLoginWithRefresh } from "@/lib/utils";
 
@@ -30,6 +30,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isContactFiltered, setIsContactFiltered] = useState<boolean>(false);
+  const [isTagFiltered, setIsTagFiltered] = useState<boolean>(false);
   const [subscriptionInfo, setSubscriptionInfo] = useState<SubscriptionInfo | null>(null);
   const [calculatedBytesUsed, setCalculatedBytesUsed] = useState<number>(0);
 
@@ -64,23 +65,23 @@ export const useFolderManagement = (log: (message: string) => void) => {
 
   // Initialize filteredFolders with all folders when folders changes
   useEffect(() => {
-    if (!isContactFiltered) {
+    if (!isContactFiltered && !isTagFiltered) {
       setFilteredFolders(folders);
     }
-  }, [folders, isContactFiltered]);
+  }, [folders, isContactFiltered, isTagFiltered]);
 
   // Filter folders based on search query
   useEffect(() => {
     if (searchQuery === "") {
-      // If no search query but contact filter is active, don't reset
-      if (!isContactFiltered) {
+      // If no search query but contact or tag filter is active, don't reset
+      if (!isContactFiltered && !isTagFiltered) {
         setFilteredFolders(folders);
       }
       return;
     }
     
-    // Apply search filter on top of current folders (either all or contact-filtered)
-    const basefolders = isContactFiltered ? filteredFolders : folders;
+    // Apply search filter on top of current folders (either all or contact/tag-filtered)
+    const basefolders = (isContactFiltered || isTagFiltered) ? filteredFolders : folders;
     
     const searchFiltered = basefolders.filter(folder => {
       const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
@@ -89,11 +90,12 @@ export const useFolderManagement = (log: (message: string) => void) => {
     });
     
     setFilteredFolders(searchFiltered);
-  }, [searchQuery, folders, isContactFiltered]);
+  }, [searchQuery, folders, isContactFiltered, isTagFiltered]);
 
   // Handle contact filter change
   const handleContactFilterChange = (contactFilteredFolders: FolderType[]) => {
     setIsContactFiltered(true);
+    setIsTagFiltered(false); // Reset tag filter when contact filter is applied
     setFilteredFolders(contactFilteredFolders);
     
     // If there's also a search query, apply that filter too
@@ -111,6 +113,43 @@ export const useFolderManagement = (log: (message: string) => void) => {
   // Reset contact filter
   const resetContactFilter = () => {
     setIsContactFiltered(false);
+    
+    // If there's a search query, still filter by that
+    if (searchQuery) {
+      setFilteredFolders(
+        folders.filter(folder => {
+          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+          return nameMatch || descMatch;
+        })
+      );
+    } else {
+      // Otherwise show all folders
+      setFilteredFolders(folders);
+    }
+  };
+
+  // Handle tag filter change
+  const handleTagFilterChange = (tagFilteredFolders: FolderType[]) => {
+    setIsTagFiltered(true);
+    setIsContactFiltered(false); // Reset contact filter when tag filter is applied
+    setFilteredFolders(tagFilteredFolders);
+    
+    // If there's also a search query, apply that filter too
+    if (searchQuery) {
+      setFilteredFolders(prevFiltered => 
+        prevFiltered.filter(folder => {
+          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+          return nameMatch || descMatch;
+        })
+      );
+    }
+  };
+
+  // Reset tag filter
+  const resetTagFilter = () => {
+    setIsTagFiltered(false);
     
     // If there's a search query, still filter by that
     if (searchQuery) {
@@ -181,16 +220,34 @@ export const useFolderManagement = (log: (message: string) => void) => {
 
       const parsed: FolderType[] = validItems.map((item: any) => {
         const folder = item.folder;
-        const rawFiles = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || [];
-      
-        const files = rawFiles
-          .filter((f: any) => f && f.dataKey)
-          .map((file: any) => ({
-            dataKey: file.dataKey,
-            thumbnailDataKey: file.thumbnailDataKey || null,
-            durationInSeconds: file.durationInSeconds || null,
-            dataInBytes: file.dataInBytes || 0
-          }));
+        
+        // UPDATED: Process fileReferencesPage items to include selectedTags
+        const fileReferences = folder?.fileReferencesPage?.items || [];
+        
+        const files = fileReferences
+          .filter((ref: any) => ref && ref.file && ref.file.dataKey)
+          .map((ref: any) => {
+            const file = ref.file;
+            
+            // Parse selectedTags from the reference
+            const selectedTags: SelectedTag[] = ref.selectedTags?.map((tag: any) => ({
+              TagType: tag.TagType,
+              tagTitle: tag.tagTitle,
+              subtags: tag.subtags?.map((subtag: any) => ({
+                TagType: subtag.TagType,
+                tagTitle: subtag.tagTitle,
+                subtagTitle: subtag.subtagTitle
+              })) || []
+            })) || [];
+            
+            return {
+              dataKey: file.dataKey,
+              thumbnailDataKey: file.thumbnailDataKey || null,
+              durationInSeconds: file.durationInSeconds || null,
+              dataInBytes: file.dataInBytes || 0,
+              selectedTags: selectedTags
+            };
+          });
       
         const contacts: Record<string, string> = {};
         if (folder?.contactsUsingInvite?.items) {
@@ -220,7 +277,14 @@ export const useFolderManagement = (log: (message: string) => void) => {
       });
 
       setFolders(parsed);
-      log(`✅ Successfully fetched ${parsed.length} folders`);
+      
+      // Log tag statistics for debugging
+      const totalAlbums = parsed.length;
+      const albumsWithTags = parsed.filter(folder => 
+        folder.files.some(file => file.selectedTags && file.selectedTags.length > 0)
+      ).length;
+      
+      log(`✅ Successfully fetched ${totalAlbums} folders, ${albumsWithTags} have tags`);
 
       // SECOND: Fetch subscription info separately (if needed)
       await fetchSubscriptionInfo(token);
@@ -350,6 +414,8 @@ export const useFolderManagement = (log: (message: string) => void) => {
     setSearchQuery,
     handleContactFilterChange,
     resetContactFilter,
+    handleTagFilterChange,
+    resetTagFilter,
     handleDeleteClick,
     setFolders,
     subscriptionInfo, // This can now be null

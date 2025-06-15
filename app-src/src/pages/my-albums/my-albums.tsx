@@ -16,10 +16,11 @@ import { MyAlbumsHeader } from "./MyAlbumsHeader";
 import { NewAlbumButton } from "@/components/NewAlbumButton";
 import { SearchBar } from "@/components/SearchBar";
 import { ContactsFilter } from "@/components/ContactsFilter";
+import { TagsFilter } from "@/components/TagsFilter";
 import { UploadProgress } from "@/components/UploadProgress";
 import { AlbumList } from "@/components/AlbumList";
 import { FileInput } from "@/components/FileInput";
-import { DebugLog } from "@/components/DebugLog";
+// import { DebugLog } from "@/components/DebugLog";
 import { LazyImage } from "@/components/LazyImage";
 
 // Import custom hooks and utilities
@@ -600,6 +601,8 @@ const MyAlbums = () => {
     setSearchQuery,
     handleContactFilterChange,
     resetContactFilter,
+    handleTagFilterChange,
+    resetTagFilter,
     handleDeleteClick,
     setFolders,
     subscriptionInfo,
@@ -622,7 +625,7 @@ const MyAlbums = () => {
     isUploading,
     isProcessingFiles,
     progressTracker,
-    debugMessages,
+    // debugMessages,
     setSelectedPhotos,
     log
   } = fileUploadProcessor;
@@ -726,7 +729,23 @@ const MyAlbums = () => {
             </a>
           )}
         </div>
-        
+
+        {/* Updated conditional rendering for enhanced status messages */}
+        {(isUploading || isProcessingFiles) && (
+          <div style={{ width: '100%', marginBottom: '20px' }}>
+            <UploadProgress 
+              progressTracker={progressTracker}
+              isUploading={isUploading}
+              isProcessingFiles={isProcessingFiles}
+              isRTL={getLanguageDirection(language) === "rtl"}
+              style={{ marginTop: '20px' }}
+              context="uploading" // This keeps the traditional "Upload progress" text
+              showSuccessMessage={true}
+              showErrorMessage={true}
+            />
+          </div>
+        )}
+
         {/* Dynamic storage limit message - only show if more than 3 albums */}
         {displayFolders.length > 3 && (
           <StorageMessage 
@@ -752,25 +771,31 @@ const MyAlbums = () => {
           isRTL={isRTL}
         />
         
-        {/* Add the new ContactsFilter component here */}
-        <ContactsFilter
-          folders={folders}
-          onFilterChange={handleContactFilterChange}
-          resetFilter={resetContactFilter}
-        />
-        
-        {/* Updated conditional rendering for enhanced status messages */}
-        {(isUploading || isProcessingFiles) && (
-          <div style={{ width: '100%', marginBottom: '20px' }}>
-            <UploadProgress 
-              progressTracker={progressTracker}
-              isUploading={isUploading}
-              isProcessingFiles={isProcessingFiles}
-              isRTL={getLanguageDirection(language) === "rtl"}
-              style={{ marginTop: '20px' }}
-              context="uploading" // This keeps the traditional "Upload progress" text
-              showSuccessMessage={true}
-              showErrorMessage={true}
+        {(folders.some(folder => folder.contacts && Object.keys(folder.contacts).length > 0) || 
+          folders.some(folder => folder.files.some(file => file.selectedTags && file.selectedTags.length > 0))) && (
+          <div
+            style={{
+              width: "100%",
+              marginBottom: 24,
+              padding: 16,
+              background: '#f8f9fa',
+              borderRadius: 8,
+              border: '1px solid #e9ecef',
+              direction: isRTL ? "rtl" : "ltr",
+            }}
+          >
+            {/* Add the ContactsFilter component here */}
+            <ContactsFilter
+              folders={folders}
+              onFilterChange={handleContactFilterChange}
+              resetFilter={resetContactFilter}
+            />
+            
+            {/* Add the TagsFilter component here */}
+            <TagsFilter
+              folders={folders}
+              onFilterChange={handleTagFilterChange}
+              resetFilter={resetTagFilter}
             />
           </div>
         )}
@@ -791,12 +816,12 @@ const MyAlbums = () => {
           ref={fileInputRef}
         />
 
-        <DebugLog 
+        {/* <DebugLog 
           debugMessages={debugMessages}
           t={t}
           isRTL={isRTL}
           textDirection={isRTL ? "rtl" : "ltr"}
-        />
+        /> */}
       </AppContainer>
     </>
   )

@@ -599,7 +599,7 @@ const SaveAlbum = () => {
       );
 
       if (!targetFolder) {
-        enhancedLog(`⚠️ Folder with ID ${albumFolderId} not found`);
+        // enhancedLog(`⚠️ Folder with ID ${albumFolderId} not found`);
         return;
       }
 

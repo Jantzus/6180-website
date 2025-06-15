@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "transform-i18n": "node src/lib/i18n/transformTranslations.cjs",
-    "prebuild": "npm run transform-i18n"
+    "prebuild": "npm run transform-i18n",
+    "deploy": "aws s3 sync ../dist s3://6180-website --delete",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E1MOSNTHBN77UB --paths '/*' && aws cloudfront create-invalidation --distribution-id E1OIOI9YGA4QEK --paths '/*'"
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.787.0",

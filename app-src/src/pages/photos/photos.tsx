@@ -15,7 +15,7 @@ import { prewarmCredentials } from "@/lib/s3";
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 
 // Import types and utilities
-import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
+import { AlbumData, PasswordPolicyEnum, MediaItem } from "@/lib/types";
 import { formatUUID, generateInviteLink } from "@/lib/utils";
 import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/databaseAPIService";
 import { downloadPhotos } from "@/lib/fileOperations";
@@ -37,6 +37,9 @@ import {
   SelectPhotosButton, 
   SelectionModeBanner 
 } from "./components";
+
+// Import the new MediaTagsFilter component
+import { MediaTagsFilter } from "./MediaTagsFilter";
 
 // Import styled components
 import { 
@@ -86,6 +89,10 @@ const PhotoAlbumContent: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [folderId, setFolderId] = useState<string | null>(null);
+  
+  // Media filtering state
+  const [filteredMediaItems, setFilteredMediaItems] = useState<MediaItem[]>([]);
+  const [isMediaFiltered, setIsMediaFiltered] = useState<boolean>(false);
   
   // Login and user state
   const [showInlineOTPLogin, setShowInlineOTPLogin] = useState(false);
@@ -153,6 +160,27 @@ const PhotoAlbumContent: React.FC = () => {
     
     warmUpPageCredentials();
   }, []); // Empty dependency array - run once when page loads
+
+  // Initialize filtered media items when album data changes
+  useEffect(() => {
+    if (albumData?.mediaItems) {
+      setFilteredMediaItems(albumData.mediaItems);
+      setIsMediaFiltered(false);
+    }
+  }, [albumData]);
+
+  // Media filter handlers
+  const handleMediaFilterChange = (newFilteredItems: MediaItem[]) => {
+    setFilteredMediaItems(newFilteredItems);
+    setIsMediaFiltered(true);
+  };
+
+  const resetMediaFilter = () => {
+    if (albumData?.mediaItems) {
+      setFilteredMediaItems(albumData.mediaItems);
+      setIsMediaFiltered(false);
+    }
+  };
   
   // Handle password submission
   const handlePasswordSubmit = async (password: string) => {
@@ -618,11 +646,13 @@ const PhotoAlbumContent: React.FC = () => {
       error,
       albumDataExists: !!albumData,
       mediaItemsCount: albumData?.mediaItems?.length,
+      filteredMediaItemsCount: filteredMediaItems?.length,
       columns,
       shouldShowContent,
-      shouldShowWatermark
+      shouldShowWatermark,
+      isMediaFiltered
     });
-  }, [isLoading, error, albumData, columns, shouldShowContent, shouldShowWatermark]);
+  }, [isLoading, error, albumData, filteredMediaItems, columns, shouldShowContent, shouldShowWatermark, isMediaFiltered]);
 
   // Extract album owner name function
   const getAlbumOwnerName = (): string => {
@@ -638,6 +668,12 @@ const PhotoAlbumContent: React.FC = () => {
 
   // Check if RTL
   const isRTL = getLanguageDirection(language) === 'rtl';
+
+  // Create album data with filtered media items for passing to components
+  const displayAlbumData = albumData ? {
+    ...albumData,
+    mediaItems: filteredMediaItems
+  } : null;
 
   // Render
   return (
@@ -726,11 +762,20 @@ const PhotoAlbumContent: React.FC = () => {
           t={t}
         />
         
+        {/* Media Tags Filter */}
+        {albumData?.mediaItems && albumData.mediaItems.length > 0 && (
+          <MediaTagsFilter
+            mediaItems={albumData.mediaItems}
+            onFilterChange={handleMediaFilterChange}
+            resetFilter={resetMediaFilter}
+          />
+        )}
+        
         {/* Media Grid */}
         <AlbumMediaGrid
           isLoading={isLoading}
           error={error}
-          albumData={albumData}
+          albumData={displayAlbumData}
           columns={columns}
           shouldShowContent={shouldShowContent}
           shouldShowWatermark={shouldShowWatermark}
@@ -772,24 +817,24 @@ const PhotoAlbumContent: React.FC = () => {
       />
       
       {/* Fullscreen Media Viewer */}
-      {fullscreenItem !== null && albumData && (
+      {fullscreenItem !== null && displayAlbumData && (
         <FullscreenMediaViewer
-          item={albumData.mediaItems[fullscreenItem]}
+          item={displayAlbumData.mediaItems[fullscreenItem]}
           index={fullscreenItem}
           onClose={closeFullscreenView}
           onPrev={goToPrevItem}
-          onNext={() => goToNextItem(albumData.mediaItems.length)}
-          hasNext={fullscreenItem < albumData.mediaItems.length - 1}
+          onNext={() => goToNextItem(filteredMediaItems.length)}
+          hasNext={fullscreenItem < filteredMediaItems.length - 1}
           hasPrev={fullscreenItem > 0}
           showWatermark={shouldShowWatermark()}
           ownerName={
             (() => {
               // Get the owner contact ID
-              const ownerContactId = albumData.mediaItems[fullscreenItem].ownerContactId;
+              const ownerContactId = filteredMediaItems[fullscreenItem].ownerContactId;
               if (!ownerContactId) return "";
               
               // Check if contacts exists and has a direct entry
-              if (albumData.contacts && albumData.contacts[ownerContactId]) {
+              if (albumData?.contacts && albumData.contacts[ownerContactId]) {
                 return albumData.contacts[ownerContactId];
               }
               

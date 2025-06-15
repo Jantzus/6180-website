@@ -22,7 +22,8 @@ import {
 if (import.meta.env.MODE !== 'production') {
   import('@/lib/i18n/checkTranslations').then(({ checkTranslationFiles, checkTranslationKey }) => {
     checkTranslationFiles();
-    checkTranslationKey('Create Albums Together');
+    checkTranslationKey('Instant Photo and Video Sharing to Spark Conversations');
+    checkTranslationKey('Tag by event, location, mood, and more — then share password-protected albums instantly.');
   });
 }
 
@@ -78,10 +79,19 @@ const IndexPage: React.FC = () => {
             {/* Language selector removed from header */}
           </HeaderContainer>
 
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', padding: '0 20px' }}>
             <Headline>
-              {t('Create Albums Together')}
+              {t('Share Photos and Videos Instantly to Spark Conversations')}
             </Headline>
+            
+            <p style={{ 
+              fontSize: '1.1em',
+              color: '#666',
+              marginBottom: '30px',
+              lineHeight: '1.6'
+            }}>
+              {t('Tag by event, location, mood, and more — then share password-protected albums instantly.')}
+            </p>
             
             <Button 
               $primary

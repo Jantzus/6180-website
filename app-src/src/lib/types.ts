@@ -51,11 +51,25 @@ export type FolderPasswordParameters = {
   policy?: PasswordPolicyEnum;
 };
 
+// Tag-related types
+export type SelectedSubtag = {
+  TagType: string;
+  tagTitle: string;
+  subtagTitle: string;
+};
+
+export type SelectedTag = {
+  TagType: string;
+  tagTitle: string;
+  subtags: SelectedSubtag[];
+};
+
 export type FileType = {
   dataKey: string;
   thumbnailDataKey: string | null;
   durationInSeconds: number | null;
   dataInBytes?: number;
+  selectedTags?: SelectedTag[];
 };
 
 export interface FolderType {
@@ -76,6 +90,7 @@ export interface FolderType {
     thumbnailDataKey?: string;
     durationInSeconds?: number;
     dataInBytes?: number;
+    selectedTags?: SelectedTag[];
   }>;
   profileIds?: string[];
   contacts?: Record<string, string>;
@@ -86,6 +101,7 @@ export interface File {
   thumbnailDataKey: string | null
   durationInSeconds: number | null
   dataInBytes?: number
+  selectedTags?: SelectedTag[]
 }
 
 export interface Folder {
@@ -185,6 +201,15 @@ export const FOLDERPOSITION_FIELD = `
     updatedAt
     fileReferencesPage {
       items {
+        selectedTags {
+          TagType
+          tagTitle
+          subtags {
+              TagType
+              tagTitle
+              subtagTitle
+          }
+        }
         file {
           dataInBytes
           dataKey
@@ -227,6 +252,15 @@ export const FETCH_FOLDERS_QUERY = `
           }
           fileReferencesPage {
             items {
+              selectedTags {
+                TagType
+                tagTitle
+                subtags {
+                    TagType
+                    tagTitle
+                    subtagTitle
+                }
+              }
               file {
                 id
                 ownerContactId

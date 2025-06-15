@@ -160,6 +160,21 @@ export const ContactsFilter: React.FC<ContactsFilterProps> = ({
           flexWrap: "nowrap", // Prevent wrapping to new lines
         }}
       >
+        {/* Filter label - now inside the scrollable area */}
+        <div
+          style={{
+            fontSize: 14,
+            color: "#555",
+            whiteSpace: "nowrap",
+            display: "flex",
+            alignItems: "center",
+            height: "40px",
+            flexShrink: 0,
+            padding: isRTL ? "0 0 0 4px" : "0 4px 0 0",
+          }}
+        >
+          {t('Filter')}:
+        </div>
         
         {/* Contact buttons - now allowing multi-selection */}
         {visibleContacts.map(contact => (

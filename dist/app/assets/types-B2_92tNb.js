@@ -15,6 +15,15 @@ const e=`
     updatedAt
     fileReferencesPage {
       items {
+        selectedTags {
+          TagType
+          tagTitle
+          subtags {
+              TagType
+              tagTitle
+              subtagTitle
+          }
+        }
         file {
           dataInBytes
           dataKey
@@ -55,6 +64,15 @@ const e=`
           }
           fileReferencesPage {
             items {
+              selectedTags {
+                TagType
+                tagTitle
+                subtags {
+                    TagType
+                    tagTitle
+                    subtagTitle
+                }
+              }
               file {
                 id
                 ownerContactId

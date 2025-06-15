@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { API_ENDPOINT_REFRESHTOKEN, COGNITO_CLIENT_ID } from "@/lib/config"
-import { AlbumData, SelectedPhoto, ProgressTracker } from "@/lib/types";
+import { AlbumData, SelectedPhoto, ProgressTracker, SelectedTag, SelectedSubtag } from "@/lib/types";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
 // Import upload utilities
@@ -8,6 +8,104 @@ import {
   createLogger, 
   updateProgressTracker,
 } from "@/lib/file-upload-utils";
+
+// Tag utility functions
+
+// Re-export tag types for convenience
+export type { SelectedTag, SelectedSubtag } from "@/lib/types";
+
+/**
+ * Collapses an array of selectedTags arrays by merging tags with the same tagTitle
+ * and combining their subtags without duplicates
+ * @param arrayOfSelectedTags - Array of selectedTags arrays from different files
+ * @returns Collapsed array of unique tags with merged subtags
+ */
+export const getAnySelectedTagsAppearingIn = (
+  arrayOfSelectedTags: SelectedTag[][]
+): SelectedTag[] => {
+  const tagDict = new Map<string, SelectedTag>();
+  
+  for (const selectedTags of arrayOfSelectedTags) {
+    if (!selectedTags || selectedTags.length === 0) continue;
+    
+    for (const tag of selectedTags) {
+      const existingTag = tagDict.get(tag.tagTitle);
+      
+      if (existingTag) {
+        // Use Set for O(1) subtag lookups
+        const existingSubtagTitles = new Set(
+          existingTag.subtags.map(subtag => subtag.subtagTitle)
+        );
+        
+        // Add new subtags that don't already exist
+        for (const subtag of tag.subtags) {
+          if (!existingSubtagTitles.has(subtag.subtagTitle)) {
+            existingTag.subtags.push({
+              TagType: subtag.TagType,
+              tagTitle: subtag.tagTitle,
+              subtagTitle: subtag.subtagTitle
+            });
+          }
+        }
+        
+        tagDict.set(tag.tagTitle, existingTag);
+      } else {
+        // Create new tag with copied subtags
+        tagDict.set(tag.tagTitle, createTagCopy(tag));
+      }
+    }
+  }
+  
+  return Array.from(tagDict.values());
+};
+
+/**
+ * Creates a deep copy of a SelectedTag
+ * @param tag - The tag to copy
+ * @returns A new SelectedTag with copied subtags
+ */
+const createTagCopy = (tag: SelectedTag): SelectedTag => {
+  const copiedSubtags: SelectedSubtag[] = tag.subtags.map(subtag => ({
+    TagType: subtag.TagType,
+    tagTitle: subtag.tagTitle,
+    subtagTitle: subtag.subtagTitle
+  }));
+  
+  return {
+    TagType: tag.TagType,
+    tagTitle: tag.tagTitle,
+    subtags: copiedSubtags
+  };
+};
+
+/**
+ * Formats tags for display - creates a readable string from collapsed tags
+ * @param tags - Array of collapsed tags
+ * @param maxTags - Maximum number of tags to display before truncating
+ * @returns Formatted string for display
+ */
+export const formatTagsForDisplay = (
+  tags: SelectedTag[], 
+  maxTags: number = 5
+): string => {
+  if (!tags || tags.length === 0) return '';
+  
+  const displayTags = tags.slice(0, maxTags);
+  const tagStrings = displayTags.map(tag => {
+    if (tag.subtags.length > 0) {
+      // Show tag with first few subtags
+      const subtagNames = tag.subtags.slice(0, 2).map(s => s.subtagTitle);
+      const moreSubtags = tag.subtags.length > 2 ? ` +${tag.subtags.length - 2}` : '';
+      return `${tag.tagTitle}: ${subtagNames.join(', ')}${moreSubtags}`;
+    }
+    return tag.tagTitle;
+  });
+  
+  const result = tagStrings.join(' • ');
+  const hasMore = tags.length > maxTags;
+  
+  return hasMore ? `${result} • +${tags.length - maxTags} more` : result;
+};
 
 /**
  * Clean redirect utility that handles base URL prefixing
