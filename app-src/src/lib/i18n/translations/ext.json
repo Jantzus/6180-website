@@ -126,7 +126,6 @@
   "No items to download": "Nu hai elementus pa descargar",
   "Failed to update album visibility. Please try again.": "Nu se pueu atualizal la visibiliá del álbum. Pol favol, preba otra vezi.",
   "You must be logged in to perform this action": "Tienis qu'entral pa realizal esta ación",
-  "Search album title or description": "Busca el títulu o la descrición del álbum",
   "Enter a password for this album.": "Escrebi una contrazeña pa esti álbum",
   "Enter password": "Introduci contraseña",
   "Select password restrictions.": "Seleciona las restriccionis de contrasseña.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accedel a Tus 6180 Álbumes",
   "Revisit Your Albums": "Revisital Tus Albums",
   "We'll email you a one-time code to verify it's really you": "T'embiaremus un códigu d'usu únicu pol correu eletrónicu pa verifical que verdaderamientri es tú",
-  "We sent a 6-digit code to": "Embiamus un códigu de 6 díjitus a"
+  "We sent a 6-digit code to": "Embiamus un códigu de 6 díjitus a",
+  "Search albums by title or description": "Busca álbumes pol títulu o descrición",
+  "View Public Profile": "Vel Perfil Públicu",
+  "Storage": "Almacenamiéntu",
+  "Use the 6180 app to showcase your albums offline": "Usa l'aplicación 6180 pa mostral tus álbums sin conexión",
+  "Intelligently tagged and beautifully organized": "Marcaus inteligentemente y organizaus hermosamente",
+  "Open On iOS": "Abril En iOS",
+  "Open On Android": "Abril En Android",
+  "Toggle contacts filter": "Camudar filtru de contautus",
+  "Showing albums with all selected contacts and tags": "Amostral álbumes con tol los contautus y etiquetas esbillás",
+  "Showing albums with all selected tags": "Amostral álbumes con tol las etiquetas esbillás"
 }

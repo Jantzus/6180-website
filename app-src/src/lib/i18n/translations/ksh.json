@@ -126,7 +126,6 @@
   "No items to download": "Nix zom Erongerlaade",
   "Failed to update album visibility. Please try again.": "Et Albümm-Aanzeije kunnt nit aktoaliseert wääde. Bes esu joot un versöök et noch ens.",
   "You must be logged in to perform this action": "Do moss enjelogg sin, öm dat maache ze künne",
-  "Search album title or description": "Söhk noh Albomtitel udder Beschrievong",
   "Enter a password for this album.": "Jivv e Paßwoot för dat Album enn",
   "Enter password": "Passwood enjävve",
   "Select password restrictions.": "Paßwoot Beschränkunge ußsöke.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Zohjang op Ding 6180 Albem",
   "Revisit Your Albums": "Ding Albums Widder Beloore",
   "We'll email you a one-time code to verify it's really you": "Mer scheke üch ene Äijmaal-Kood för zejescheck dat ehr et wërklich sidt",
-  "We sent a 6-digit code to": "Mer han en 6-stellije Kood jeschek noh"
+  "We sent a 6-digit code to": "Mer han en 6-stellije Kood jeschek noh",
+  "Search albums by title or description": "Albuume noh Tittel udder Beschrievung söke",
+  "View Public Profile": "Öffentlich Profiel Beloore",
+  "Storage": "Speicher",
+  "Use the 6180 app to showcase your albums offline": "Bruch de 6180 App öm ding Album offline ze zeije",
+  "Intelligently tagged and beautifully organized": "Clever jemaat un schön zorteet",
+  "Open On iOS": "Op iOS Opmaache",
+  "Open On Android": "Op Android Opmaache",
+  "Toggle contacts filter": "Kontak-Filter ömschalde",
+  "Showing albums with all selected contacts and tags": "Alben zeije met alle ußjewählte Kontakte un Makeerunge",
+  "Showing albums with all selected tags": "Alben zeije met alle ußjewählte Makeerunge"
 }

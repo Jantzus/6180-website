@@ -126,7 +126,6 @@
   "No items to download": "Ласун зат дакъар",
   "Failed to update album visibility. Please try again.": "Альбомрал чӀалачӀин цӏу буккан къабювхъунни. Бувчӏу, цӏунилгу хӏарачат бара.",
   "You must be logged in to perform this action": "Ва даву бан, вин системалувун уххан аьркинссар",
-  "Search album title or description": "Альбомрал цӀа ягу баян лякъин",
   "Enter a password for this album.": "Альбомран пароль бучIи бува",
   "Enter password": "Пароль бувхъа",
   "Select password restrictions.": "Кьюлтlуссаннул дазурду язи бува.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ДурхӀал 6180 Альбомалухъ",
   "Revisit Your Albums": "Ттул Альбомру Кьини Лъазава",
   "We'll email you a one-time code to verify it's really you": "Нама уяв захӏ-захӏ ттуну код e-mail ялув галай хьуну, ду жуван ина жу",
-  "We sent a 6-digit code to": "Ряхва рум код кьулну"
+  "We sent a 6-digit code to": "Ряхва рум код кьулну",
+  "Search albums by title or description": "Альбомру цIару я къэярдагь хьунулаг хъирив",
+  "View Public Profile": "Халкьрал Профиль Лаглагун",
+  "Storage": "Хранилище",
+  "Use the 6180 app to showcase your albums offline": "6180 программа лагайми хъун альбомру оффлайн къалуриз",
+  "Intelligently tagged and beautifully organized": "АкӀлулул белгаляйну, хъинну тартибалуну",
+  "Open On iOS": "iOS-лиу Хъазайрун",
+  "Open On Android": "Android-лиу Хъазайрун",
+  "Toggle contacts filter": "Контактрал фильтр хийитун",
+  "Showing albums with all selected contacts and tags": "Хьунал архӀи контактрулла тагрулла альбомру къалурни",
+  "Showing albums with all selected tags": "Хьунал архӀи тагрулла альбомру къалурни"
 }

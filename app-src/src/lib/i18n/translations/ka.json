@@ -126,7 +126,6 @@
   "No items to download": "ჩამოსატვირთი ელემენტები არ არის",
   "Failed to update album visibility. Please try again.": "ალბომის ხილვადობის განახლება ვერ მოხერხდა. გთხოვთ, სცადოთ ხელახლა.",
   "You must be logged in to perform this action": "ამ მოქმედების შესასრულებლად უნდა შეხვიდეთ სისტემაში",
-  "Search album title or description": "ალბომის სათაურის ან აღწერის ძიება",
   "Enter a password for this album.": "შეიყვანეთ პაროლი ამ ალბომისთვის",
   "Enter password": "შეიყვანეთ პაროლი",
   "Select password restrictions.": "აირჩიეთ პაროლის შეზღუდვები.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "შედით თქვენს 6180 ალბომში",
   "Revisit Your Albums": "ნახეთ ისევ თქვენი ალბომები",
   "We'll email you a one-time code to verify it's really you": "ჩვენ გამოგიგზავნით ერთჯერადი გამოყენების კოდს ელ.ფოსტით, რათა დავადასტუროთ, რომ ნამდვილად თქვენ ხართ",
-  "We sent a 6-digit code to": "გავგზავნეთ 6-ნიშნა კოდი მისამართზე"
+  "We sent a 6-digit code to": "გავგზავნეთ 6-ნიშნა კოდი მისამართზე",
+  "Search albums by title or description": "ძებნა ალბომების სათაურით ან აღწერით",
+  "View Public Profile": "საჯარო პროფილის ნახვა",
+  "Storage": "საცავი",
+  "Use the 6180 app to showcase your albums offline": "გამოიყენეთ 6180 აპლიკაცია თქვენი ალბომების ოფლაინ ჩვენებისთვის",
+  "Intelligently tagged and beautifully organized": "ჭკვიანურად ნიშნულ-დასმული და ლამაზად ორგანიზებული",
+  "Open On iOS": "iOS-ზე გახსნა",
+  "Open On Android": "Android-ზე გახსნა",
+  "Toggle contacts filter": "კონტაქტების ფილტრის გადართვა",
+  "Showing albums with all selected contacts and tags": "ყველა არჩეული კონტაქტებისა და ტეგების მქონე ალბომების ჩვენება",
+  "Showing albums with all selected tags": "ყველა არჩეული ტეგების მქონე ალბომების ჩვენება"
 }

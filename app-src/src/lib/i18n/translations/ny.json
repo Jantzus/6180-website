@@ -126,7 +126,6 @@
   "No items to download": "Palibe zinthu zoti mutsitse",
   "Failed to update album visibility. Please try again.": "Kusintha kwa kuwonekera kwa ma albamu kwathetsa. Chonde yesaninso.",
   "You must be logged in to perform this action": "Muyenera kulowa kuti muchite izi",
-  "Search album title or description": "Fufuza dzina kapena kutanthauzira kwa albamu",
   "Enter a password for this album.": "Lembani mawu achinsinsi pa albamu iyi",
   "Enter password": "Lembani mawu achinsinsi",
   "Select password restrictions.": "Sankhani zoletsa achinsinsi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Lowani ku 6180 Albums Anu",
   "Revisit Your Albums": "Chezani Albums Anu Mowanso",
   "We'll email you a one-time code to verify it's really you": "Tidzakutumizira kodi yogwiritsidwa ntchito kamodzi kokha pa email kuti tione kuti ndi inu",
-  "We sent a 6-digit code to": "Tinatumiza kodi ya manambala asanu ndi imodzi ku"
+  "We sent a 6-digit code to": "Tinatumiza kodi ya manambala asanu ndi imodzi ku",
+  "Search albums by title or description": "Funafuna ma albamu ndi mutu kapena kufotokoza",
+  "View Public Profile": "Onani Mbiri ya Pagulu",
+  "Storage": "Kusungira",
+  "Use the 6180 app to showcase your albums offline": "Gwiritsani ntchito pulogalamu ya 6180 kuwonetsa ma albamu anu pa offline",
+  "Intelligently tagged and beautifully organized": "Amalemba mwanzeru ndipo akonzedwa mokongola",
+  "Open On iOS": "Tsegulani Ku iOS",
+  "Open On Android": "Tsegulani Ku Android",
+  "Toggle contacts filter": "Sinthani fyuluta ya kulumikizana",
+  "Showing albums with all selected contacts and tags": "Kuwonetsa ma albamu ndi zonse zomwe zasankhidwa ndi manambala",
+  "Showing albums with all selected tags": "Kuwonetsa ma albamu ndi manambala onse osankhidwa"
 }

@@ -13,10 +13,7 @@ import {
   AppContainer,
 } from "@/styles/styled-components";
 import { MyAlbumsHeader } from "./MyAlbumsHeader";
-import { NewAlbumButton } from "@/components/NewAlbumButton";
-import { SearchBar } from "@/components/SearchBar";
-import { ContactsFilter } from "@/components/ContactsFilter";
-import { TagsFilter } from "@/components/TagsFilter";
+import { EnhancedTagsFilter } from "./EnhancedTagsFilter"; // Combined search and filter
 import { UploadProgress } from "@/components/UploadProgress";
 import { AlbumList } from "@/components/AlbumList";
 import { FileInput } from "@/components/FileInput";
@@ -58,43 +55,23 @@ const AppDownloadPromotion = React.memo(({
         flexWrap: 'wrap',
         gap: '16px'
       }}>
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '16px',
-          flex: '1',
-          minWidth: '200px'
-        }}>
-          {/* App icon using actual logo */}
-          <img 
-            src={generateUrl("images/logo_no_background.png")}
-            alt="6180 App Icon"
-            style={{
-              width: '48px',
-              height: '48px',
-              borderRadius: '50%',
-              flexShrink: 0,
-              objectFit: 'cover'
-            }}
-          />
-          <div>
-            <div style={{
-              fontSize: '18px',
-              fontWeight: '600',
-              marginBottom: '4px',
-              color: '#333',
-              lineHeight: '1.3'
-            }}>
-              {t('Use the 6180 app to showcase your albums offline')}
-            </div>
-            <div style={{
-              fontSize: '14px',
-              color: '#666',
-              lineHeight: '1.4',
-              fontWeight: '400'
-            }}>
-              {t('Intelligently tagged and beautifully organized')}
-            </div>
+        <div>
+          <div style={{
+            fontSize: '18px',
+            fontWeight: '600',
+            marginBottom: '4px',
+            color: '#333',
+            lineHeight: '1.3'
+          }}>
+            {t('Use the 6180 app to showcase your albums offline')}
+          </div>
+          <div style={{
+            fontSize: '14px',
+            color: '#666',
+            lineHeight: '1.4',
+            fontWeight: '400'
+          }}>
+            {t('Intelligently tagged and beautifully organized')}
           </div>
         </div>
         
@@ -133,8 +110,8 @@ const AppDownloadPromotion = React.memo(({
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
-            <span style={{ fontSize: '16px' }}>🍎</span>
-            iOS App
+            <span style={{ fontSize: '16px' }}>🍎</span>            
+            {t('Open On iOS')}
           </a>
           
           <a
@@ -166,16 +143,14 @@ const AppDownloadPromotion = React.memo(({
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
-            <span style={{ fontSize: '16px' }}>🤖</span>
-            Android App
+            <span style={{ fontSize: '16px' }}>🤖</span>            
+            {t('Open On Android')}
           </a>
         </div>
       </div>
     </div>
   );
 });
-
-
 
 // Helper function to convert bytes to GB
 const bytesToGB = (bytes: number): number => {
@@ -518,6 +493,10 @@ const StorageMessage = React.memo(({
       // Over storage only
       messageType = 'free-storage-exceeded';
       message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
+    } else if (isOverStorage) {
+      // Over storage only
+      messageType = 'free-storage-exceeded';
+      message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
     }
   } else {
     // Paid tier logic
@@ -675,60 +654,23 @@ const MyAlbums = () => {
     return await fileUploadProcessor.handleFileSelection(e, cognitoUsername);
   }, [fileUploadProcessor, cognitoUsername]);
 
+  // Check if we should show the combined search and filter - now includes search query
+  const shouldShowSearchAndFilter = searchQuery.length > 0 || folders.some(folder => 
+    (folder.contacts && Object.keys(folder.contacts).length > 0) || 
+    folder.files.some(file => file.selectedTags && file.selectedTags.length > 0)
+  );
+
   return (
     <>
       <GlobalStyle />
       <AppContainer $isRTL={isRTL}>
+        {/* NEW: Premium Header with integrated New Album button */}
         <MyAlbumsHeader
           publicUsername={publicUsername}
+          subscriptionInfo={subscriptionInfo}
+          calculatedBytesUsed={calculatedBytesUsed}
+          onNewAlbum={() => openFilePicker(null)}
         />
-
-        {/* Create Album button with storage indicator */}
-        <div style={{
-          display: "flex",
-          alignItems: "baseline",
-          gap: "16px",
-          marginBottom: "16px",
-          direction: isRTL ? "rtl" : "ltr"
-        }}>
-          <NewAlbumButton
-            isUploading={isUploading}
-            isProcessingFiles={isProcessingFiles}
-            openFilePicker={openFilePicker}
-            t={t}
-            isRTL={isRTL}
-          />
-          
-          {/* Storage usage indicator as hyperlink */}
-          {subscriptionInfo && (
-            <a 
-              href={generateUrl("storage/manage.html")}
-              style={{
-                fontSize: "14px",
-                color: "#007bff",
-                fontWeight: "500",
-                whiteSpace: "nowrap",
-                textDecoration: "underline",
-                transition: "color 0.2s ease",
-                lineHeight: "1.5",
-                marginTop: "2px",
-                cursor: "pointer"
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#0056b3";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#007bff";
-              }}
-            >
-              {formatGB(bytesToGB(calculatedBytesUsed))} / {
-                subscriptionInfo.intNumberOfSubscriptions === 0 
-                  ? FREE_TIER_STORAGE_LIMIT_GB
-                  : subscriptionInfo.intNumberOfSubscriptions * 10
-              } GB
-            </a>
-          )}
-        </div>
 
         {/* Updated conditional rendering for enhanced status messages */}
         {(isUploading || isProcessingFiles) && (
@@ -747,7 +689,7 @@ const MyAlbums = () => {
         )}
 
         {/* Dynamic storage limit message - only show if more than 3 albums */}
-        {displayFolders.length > 3 && (
+        {folders.length > 3 && (
           <StorageMessage 
             subscriptionInfo={subscriptionInfo}
             albumCount={folders.length}
@@ -759,45 +701,21 @@ const MyAlbums = () => {
         )}
         
         {/* Enhanced App promotion message for users with few albums */}
-        {displayFolders.length <= 3 && (
+        {folders.length <= 3 && (
           <AppDownloadPromotion t={t} isRTL={isRTL} />
         )}
 
-        {/* Search Bar Component */}
-        <SearchBar 
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          t={t}
-          isRTL={isRTL}
-        />
-        
-        {(folders.some(folder => folder.contacts && Object.keys(folder.contacts).length > 0) || 
-          folders.some(folder => folder.files.some(file => file.selectedTags && file.selectedTags.length > 0))) && (
-          <div
-            style={{
-              width: "100%",
-              marginBottom: 24,
-              padding: 16,
-              background: '#f8f9fa',
-              borderRadius: 8,
-              border: '1px solid #e9ecef',
-              direction: isRTL ? "rtl" : "ltr",
-            }}
-          >
-            {/* Add the ContactsFilter component here */}
-            <ContactsFilter
-              folders={folders}
-              onFilterChange={handleContactFilterChange}
-              resetFilter={resetContactFilter}
-            />
-            
-            {/* Add the TagsFilter component here */}
-            <TagsFilter
-              folders={folders}
-              onFilterChange={handleTagFilterChange}
-              resetFilter={resetTagFilter}
-            />
-          </div>
+        {/* Enhanced Combined Search and Filter - always show if there's content or search query */}
+        {shouldShowSearchAndFilter && (
+          <EnhancedTagsFilter
+            folders={folders}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            onTagFilterChange={handleTagFilterChange}
+            onContactFilterChange={handleContactFilterChange}
+            resetTagFilter={resetTagFilter}
+            resetContactFilter={resetContactFilter}
+          />
         )}
         
         <AlbumList 

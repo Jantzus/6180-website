@@ -126,7 +126,6 @@
   "No items to download": "Nuay cosa para bajar",
   "Failed to update album visibility. Please try again.": "No puede actualiza el visibilidad del album. Favor trata otra vez.",
   "You must be logged in to perform this action": "Necesita tu entra session para hace este accion",
-  "Search album title or description": "Busca el titulo del album o descripcion",
   "Enter a password for this album.": "Pone un contraseña para este album",
   "Enter password": "Entra el contraseña",
   "Select password restrictions.": "Selecciona restricciones de contraseña.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accede na Inyong 6180 Albums",
   "Revisit Your Albums": "Revisita Vuestros Albums",
   "We'll email you a one-time code to verify it's really you": "Nosotros ta manda contigo un codigo de un vez solo uso na email para verifica que tu el verdadero",
-  "We sent a 6-digit code to": "Ya manda nosotros un codigo de 6 numero na"
+  "We sent a 6-digit code to": "Ya manda nosotros un codigo de 6 numero na",
+  "Search albums by title or description": "Busca albums por titulo o descripcion",
+  "View Public Profile": "Mira el Perfil Publico",
+  "Storage": "Deposito",
+  "Use the 6180 app to showcase your albums offline": "Usa el aplicacion 6180 para mostra tu mga album sin conexion",
+  "Intelligently tagged and beautifully organized": "Marcado inteligentemente y organizado hermosamente",
+  "Open On iOS": "Abri Na iOS",
+  "Open On Android": "Abri Na Android",
+  "Toggle contacts filter": "Cambia el filtro de contactos",
+  "Showing albums with all selected contacts and tags": "Ta mostra albums con todo el contactos y tags escogido",
+  "Showing albums with all selected tags": "Ta mostra albums con todo el tags escogido"
 }

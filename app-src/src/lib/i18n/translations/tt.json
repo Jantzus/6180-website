@@ -126,7 +126,6 @@
   "No items to download": "Йөкләргә берни дә юк",
   "Failed to update album visibility. Please try again.": "Альбом күренешен яңарту уңышсыз тәмамланды. Зинһар, янәдән карап алыгыз.",
   "You must be logged in to perform this action": "Бу гамәлне башкару өчен системага керергә кирәк",
-  "Search album title or description": "Альбом исемен яки тасвирламасын эзләү",
   "Enter a password for this album.": "Бу альбом өчен серсүзне кертегез",
   "Enter password": "Серсүзне кертегез",
   "Select password restrictions.": "Серсүз чикләүләрен сайлагыз.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Альбомнарыгызга Керү",
   "Revisit Your Albums": "Альбомнарыгызны Кабат Карагыз",
   "We'll email you a one-time code to verify it's really you": "Сезнең чынлап та сез икәнегезне раслау өчен электрон почта аша бер тапкыр кулланыла торган код җибәрербез",
-  "We sent a 6-digit code to": "Без 6 саннан торган код җибәрдек"
+  "We sent a 6-digit code to": "Без 6 саннан торган код җибәрдек",
+  "Search albums by title or description": "Альбомнарны исеме яки тасвирламасы буенча эзләү",
+  "View Public Profile": "Җәмәгать Профилен Карау",
+  "Storage": "Саклагыч",
+  "Use the 6180 app to showcase your albums offline": "6180 кушымтасын кулланыгыз альбомнарыгызны оффлайн күрсәтү өчен",
+  "Intelligently tagged and beautifully organized": "Акыллы билгеләнгән һәм матур оештырылган",
+  "Open On iOS": "iOS-та Ачу",
+  "Open On Android": "Android-та Ачу",
+  "Toggle contacts filter": "Контакт фильтрын алыштыру",
+  "Showing albums with all selected contacts and tags": "Сайланган бөтен контактлар һәм тамгалар белән альбомнарны күрсәтү",
+  "Showing albums with all selected tags": "Сайланган бөтен тамгалар белән альбомнарны күрсәтү"
 }

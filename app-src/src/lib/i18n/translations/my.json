@@ -126,7 +126,6 @@
   "No items to download": "ဒေါင်းလုဒ်လုပ်ရန် အိုင်တမ်များ မရှိပါ",
   "Failed to update album visibility. Please try again.": "အယ်လ်ဘမ်မြင်သာမှု အပ်ဒိတ်လုပ်ရန် မအောင်မြင်ပါ။ ထပ်မံကြိုးစားကြည့်ပါ။",
   "You must be logged in to perform this action": "ဤလုပ်ဆောင်ချက်ကို ဆောင်ရွက်ရန် သင်သည် အကောင့်ဝင်ထားရမည်",
-  "Search album title or description": "အယ်လ်ဘမ်ခေါင်းစဉ် သို့မဟုတ် ဖော်ပြချက်ကို ရှာဖွေပါ",
   "Enter a password for this album.": "ဤအယ်လ်ဘမ်အတွက် စကားဝှက် ထည့်ပါ",
   "Enter password": "စကားဝှက် ထည့်ပါ",
   "Select password restrictions.": "စကားဝှက် ကန့်သတ်ချက်များကို ရွေးချယ်ပါ။",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "သင်၏ 6180 အယ်လ်ဘမ်များကို ဝင်ရောက်ပါ",
   "Revisit Your Albums": "သင့်အယ်လ်ဘမ်များကို ပြန်လည်လေ့လာပါ",
   "We'll email you a one-time code to verify it's really you": "သင့်အမှန်တကယ်ကိုယ်ဖြစ်ကြောင်းစစ်ဆေးရန် အီးမေးလ်ဖြင့် တစ်ကြိမ်သုံးကုဒ်ပို့ပေးမည်",
-  "We sent a 6-digit code to": "ကျွန်ုပ်တို့သည် ဂဏန်း ၆ လုံးပါ ကုဒ်ကို ပို့လိုက်ပါပြီ"
+  "We sent a 6-digit code to": "ကျွန်ုပ်တို့သည် ဂဏန်း ၆ လုံးပါ ကုဒ်ကို ပို့လိုက်ပါပြီ",
+  "Search albums by title or description": "ခေါင်းစဉ် သို့မဟုတ် ဖော်ပြချက်ဖြင့် အယ်လ်ဘမ်များ ရှာဖွေပါ",
+  "View Public Profile": "အများပြည်သူ ကိုယ်ရေးမှတ်တမ်းကြည့်ရှုရန်",
+  "Storage": "သိုလှောင်မှု",
+  "Use the 6180 app to showcase your albums offline": "သင့်အယ်လ်ဘမ်များကို အော့ဖ်လိုင်းဖြင့် ပြသရန် 6180 အက်ပ်ကို အသုံးပြုပါ",
+  "Intelligently tagged and beautifully organized": "ထက်မြက်စွာ တံဆိပ်တပ်ပြီး လှပစွာ စီစဉ်ထားသည်",
+  "Open On iOS": "iOS တွင်ဖွင့်ပါ",
+  "Open On Android": "Android တွင်ဖွင့်ပါ",
+  "Toggle contacts filter": "အဆက်အသွယ်စစ်ထုတ်ကိရိယာကို ပြောင်းရန်",
+  "Showing albums with all selected contacts and tags": "ရွေးချယ်ထားသောဆက်သွယ်မှုနှင့်တဂ်များအားလုံးပါသောအယ်လ်ဘမ်များပြသနေပါသည်",
+  "Showing albums with all selected tags": "ရွေးချယ်ထားသောတဂ်များအားလုံးပါသောအယ်လ်ဘမ်များပြသနေပါသည်"
 }

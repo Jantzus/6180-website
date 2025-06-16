@@ -126,7 +126,6 @@
   "No items to download": "ʻOku ʻikai ha meʻa ke hiki mai",
   "Failed to update album visibility. Please try again.": "Ne ʻikai lava ʻo fakafo'ou e lava ke sio e ʻālipamu. Kātaki toe feinga.",
   "You must be logged in to perform this action": "ʻOku pau ke ke kau ki he ngāueʻni",
-  "Search album title or description": "Kumi hingoa pē fakamatala ʻo e ʻālipamu",
   "Enter a password for this album.": "Hū ha lea fakapulipuli ki he ʻālipamu ko ʻeni",
   "Enter password": "Hū ki he lea fakapulipuli",
   "Select password restrictions.": "Fili e ngaahi fakangatangata ʻo e leapaasi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Hu ki ho'o 6180 Albums",
   "Revisit Your Albums": "Kāvaʻaki ʻA Hoʻo Albums",
   "We'll email you a one-time code to verify it's really you": "Te kau 'alu atu 'a e konga fakaʻilonga taha pe ko ha 'imēle ke fakamaau ko koe ia mo'oni",
-  "We sent a 6-digit code to": "Na mau 'alu atu 'a e konga fakaʻilonga ono ki"
+  "We sent a 6-digit code to": "Na mau 'alu atu 'a e konga fakaʻilonga ono ki",
+  "Search albums by title or description": "Kumi 'ālipamu 'i he hingoa pe fakamatala",
+  "View Public Profile": "Sio ki he Fakamatala Fakatautaha",
+  "Storage": "Tauhi",
+  "Use the 6180 app to showcase your albums offline": "Fakaʻaongaʻi ʻa e ʻalepikēsheni ʻo 6180 ke fakahāʻaki ho ngaahi ʻālipamu ʻi he offline",
+  "Intelligently tagged and beautifully organized": "Fakaʻilonga fakapoto mo fakatulungaʻi fakaʻatakai",
+  "Open On iOS": "Fakaava Ki iOS",
+  "Open On Android": "Fakaava Ki Android",
+  "Toggle contacts filter": "Fetongi ʻa e fakamaama ʻo e ngaahi fetuʻutaki",
+  "Showing albums with all selected contacts and tags": "Fakaha ʻa e ngaahi ʻālipamu mo e ngaahi fetuʻutaki mo e ngaahi mahina kuo fili",
+  "Showing albums with all selected tags": "Fakaha ʻa e ngaahi ʻālipamu mo e ngaahi mahina kuo fili"
 }

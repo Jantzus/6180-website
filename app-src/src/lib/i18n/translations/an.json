@@ -126,7 +126,6 @@
   "No items to download": "No bi ha elementos ta descargar",
   "Failed to update album visibility. Please try again.": "No s'ha puesto actualizar a visibilidat d'o album. Per favor, preba-lo de nuevas.",
   "You must be logged in to perform this action": "Has d'estar connectau ta fer ista acción",
-  "Search album title or description": "Buscar o títol u descripción d'o album",
   "Enter a password for this album.": "Mete a clau ta iste álbum",
   "Enter password": "Introduzca a clau",
   "Select password restrictions.": "Seleccionar as restriccions de clau.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accedir a los Tuyos 6180 Albums",
   "Revisit Your Albums": "Revisitar Los Tuyos Albums",
   "We'll email you a one-time code to verify it's really you": "T'ninviaremos un codigo d'uso unico per correu electronico ta verificar que realment yes tu",
-  "We sent a 6-digit code to": "Hemos ninviau un codigo de 6 dichitos ta"
+  "We sent a 6-digit code to": "Hemos ninviau un codigo de 6 dichitos ta",
+  "Search albums by title or description": "Mirar albums por titulo u descripción",
+  "View Public Profile": "Veyer o Perfil Publico",
+  "Storage": "Amagacenamiento",
+  "Use the 6180 app to showcase your albums offline": "Usa l'aplicación 6180 ta amostrar os tuyos álbums sin conexión",
+  "Intelligently tagged and beautifully organized": "Marcau inteligentement y organizau de bella manera",
+  "Open On iOS": "Ubrir En iOS",
+  "Open On Android": "Ubrir En Android",
+  "Toggle contacts filter": "Cambiar filtro de contactos",
+  "Showing albums with all selected contacts and tags": "Amostrar álbumes con totz os contactos y etiquetas seleccionaus",
+  "Showing albums with all selected tags": "Amostrar álbumes con todas as etiquetas seleccionadas"
 }

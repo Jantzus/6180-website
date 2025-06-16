@@ -126,7 +126,6 @@
   "No items to download": "ʻAita e mau mea no te tikiō",
   "Failed to update album visibility. Please try again.": "Ua 'ere te fa'ahou i te 'ite'itera'a o te 'ālipamu. Tāmata fa'ahou.",
   "You must be logged in to perform this action": "E titau ia oe ia tāfao mai no te rave i teie ʻohipa",
-  "Search album title or description": "Imira i te tāpura o ʻālipamu, e aore ra te faʻaʻiteʻiteraʻa",
   "Enter a password for this album.": "A pāpa'a i te hō'ē parau muna nō teie ʻālipamu",
   "Enter password": "Tāpa'o i te parau moe'a",
   "Select password restrictions.": "A māʻiti i te mau ōtia parau muna.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Fa'a'ite i tāu 6180 Albums",
   "Revisit Your Albums": "Imi Atu I Tō Albums",
   "We'll email you a one-time code to verify it's really you": "Tā hōroa vau i te hōroa fa'aanahia hookahi ā'ano i te mēra numera ē fa'amaoro ai te mea 'oe 'oe maoa'e",
-  "We sent a 6-digit code to": "Tā horoʻa vau i te horoʻa ono rā'au i"
+  "We sent a 6-digit code to": "Tā horoʻa vau i te horoʻa ono rā'au i",
+  "Search albums by title or description": "Tairi 'ālipamu e te i'oa e te fa'amatalira'a",
+  "View Public Profile": "Tēi te Profil Taata",
+  "Storage": "Fa'aputura'a",
+  "Use the 6180 app to showcase your albums offline": "Haamaina te ʻālipamu 6180 no te horoʻa ʻē i to outou ʻālipamu i te offline",
+  "Intelligently tagged and beautifully organized": "Fa'a'aitehia raverave ma te nehenehe'aa",
+  "Open On iOS": "Hōpā I iOS",
+  "Open On Android": "Hōpā I Android",
+  "Toggle contacts filter": "Taui te faaroʻo ʻanapa",
+  "Showing albums with all selected contacts and tags": "Te faaʻite nei i te mau ʻālipamu e te mau ʻanapa e te mau taʻa katoa i hiloia",
+  "Showing albums with all selected tags": "Te faaʻite nei i te mau ʻālipamu e te mau taʻa katoa i hiloia"
 }

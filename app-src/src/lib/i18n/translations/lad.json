@@ -126,7 +126,6 @@
   "No items to download": "No ay kozes para deskargar",
   "Failed to update album visibility. Please try again.": "No se pudieron aktualisar la vidibilidad del album. Por favor, prova de muevo.",
   "You must be logged in to perform this action": "Devas entrar en tu kuenta para azer esta aksion",
-  "Search album title or description": "Bushkar titulo de album o deskripsion",
   "Enter a password for this album.": "Entrá una klaviya para este album",
   "Enter password": "Entregar el kode",
   "Select password restrictions.": "Seleksiona restriksiones de kontrasenia.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Akkeso a Tus 6180 Albums",
   "Revisit Your Albums": "Mirar Otra Vez Vuestros Albums",
   "We'll email you a one-time code to verify it's really you": "Vos embiaremos un kodiko de uso único por correo elektroniko para verifikar ke verdaderamente sos vos",
-  "We sent a 6-digit code to": "Embiamos un kodiko de 6 dijitos a"
+  "We sent a 6-digit code to": "Embiamos un kodiko de 6 dijitos a",
+  "Search albums by title or description": "Bushkar albums por titulo o deskrision",
+  "View Public Profile": "Veer Perfil Publiko",
+  "Storage": "Almasenasyon",
+  "Use the 6180 app to showcase your albums offline": "Uza la aplikasyon 6180 para mostrar tus albums sin koneksyon",
+  "Intelligently tagged and beautifully organized": "Markadas intelijentemente i organizadas ermozamente",
+  "Open On iOS": "Avrir En iOS",
+  "Open On Android": "Avrir En Android",
+  "Toggle contacts filter": "Trokar filtro de kontaktos",
+  "Showing albums with all selected contacts and tags": "Amostrando álbumes kon todos los kontaktos i etiketas eskojidos",
+  "Showing albums with all selected tags": "Amostrando álbumes kon todas las etiketas eskojidas"
 }

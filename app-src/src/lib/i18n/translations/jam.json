@@ -126,7 +126,6 @@
   "No items to download": "No ting fi dong-luod",
   "Failed to update album visibility. Please try again.": "Kyaahn opdiet di album vizibility. Pliz chrai agen.",
   "You must be logged in to perform this action": "Yu afi log iin fi du dis akshan",
-  "Search album title or description": "Saach album taytl ar diskripshn",
   "Enter a password for this album.": "Enta waan paasword fi dis album",
   "Enter password": "Enta passwod",
   "Select password restrictions.": "Selec paswod restricshan dem.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Access Yu 6180 Albums dem",
   "Revisit Your Albums": "Go Bak A Yu Albums Dem",
   "We'll email you a one-time code to verify it's really you": "Wi ago send yu wan time use code pan email fi verify se a yu fi real",
-  "We sent a 6-digit code to": "Wi sen wan 6-digit code go"
+  "We sent a 6-digit code to": "Wi sen wan 6-digit code go",
+  "Search albums by title or description": "Sorch fi album dem pon titel ar deskripshan",
+  "View Public Profile": "Si Pablik Profail",
+  "Storage": "Stuorij",
+  "Use the 6180 app to showcase your albums offline": "Yuuz di 6180 app fi sho yu albam dem offline",
+  "Intelligently tagged and beautifully organized": "Smart tag an nice organise",
+  "Open On iOS": "Open Pon iOS",
+  "Open On Android": "Open Pon Android",
+  "Toggle contacts filter": "Toggle contact filter",
+  "Showing albums with all selected contacts and tags": "Show album wid all pick contact an tag dem",
+  "Showing albums with all selected tags": "Show album wid all pick tag dem"
 }

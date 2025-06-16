@@ -126,7 +126,6 @@
   "No items to download": "Keng Elementer fir erofzelueden",
   "Failed to update album visibility. Please try again.": "D'Albumsiichtbarkeet konnt net aktualiséiert ginn. Probéiert et w.e.g. nach eng Kéier.",
   "You must be logged in to perform this action": "Dir musst ageloggt sinn fir dës Aktioun auszeféieren",
-  "Search album title or description": "Albumstitel oder Beschreiwung sichen",
   "Enter a password for this album.": "Gëff e Passwuert fir dëst Album an",
   "Enter password": "Passwuert aginn",
   "Select password restrictions.": "Passwuert-Aschränkunge wielen.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Zougang op Är 6180 Alben",
   "Revisit Your Albums": "Besicht Är Albums Erëm",
   "We'll email you a one-time code to verify it's really you": "Mir schécken Dir een eenmalegen Code per E-Mail fir ze verifizéieren datt Dir et wierklech sidd",
-  "We sent a 6-digit code to": "Mir hunn een 6-stellegen Code geschéckt op"
+  "We sent a 6-digit code to": "Mir hunn een 6-stellegen Code geschéckt op",
+  "Search albums by title or description": "Alben no Titel oder Beschreiwung sichen",
+  "View Public Profile": "Ëffentlechen Profil Ukucken",
+  "Storage": "Späicher",
+  "Use the 6180 app to showcase your albums offline": "Benotzt d'6180 App fir Är Alben offline ze weisen",
+  "Intelligently tagged and beautifully organized": "Intelligent markéiert a schéin organiséiert",
+  "Open On iOS": "Op iOS Opmaachen",
+  "Open On Android": "Op Android Opmaachen",
+  "Toggle contacts filter": "Kontakt-Filter ëmschalten",
+  "Showing albums with all selected contacts and tags": "Weist Alben mat all erausgesichte Kontakter an Tags",
+  "Showing albums with all selected tags": "Weist Alben mat all erausgesichte Tags"
 }

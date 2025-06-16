@@ -126,7 +126,6 @@
   "No items to download": "چۈشۈرگىلى ھېچقانداق تۈر يوق",
   "Failed to update album visibility. Please try again.": "ئالبوم كۆرۈنۈشىنى يېڭىلاش مەغلۇپ بولدى. مەرھەمەت قايتا سىناڭ.",
   "You must be logged in to perform this action": "بۇ مەشغۇلاتنى قىلىش ئۈچۈن كىرىشىڭىز كېرەك",
-  "Search album title or description": "ئالبوم نامى ياكى چۈشەندۈرۈشنى ئىزدەش",
   "Enter a password for this album.": "بۇ ئالبوم ئۈچۈن مەخپىي نومۇر كىرگۈزۈڭ",
   "Enter password": "پارولنى كىرگۈزۈڭ",
   "Select password restrictions.": "پارول چەكلىمىسىنى تاللاڭ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 ئالبومىڭىزغا كىرىڭ",
   "Revisit Your Albums": "ئالبۇملىرىڭىزنى قايتا كۆرۈڭ",
   "We'll email you a one-time code to verify it's really you": "سىزنىڭ راستتىن سىز ئىكەنلىكىڭىزنى جەزملەشتۈرۈش ئۈچۈن سىزگە ئېلخەت ئارقىلىق بىر قېتىملىق ئىشلىتىلىدىغان كود ئەۋەتىمىز",
-  "We sent a 6-digit code to": "بىز 6 خانىلىق كودنى ئەۋەتتۇق"
+  "We sent a 6-digit code to": "بىز 6 خانىلىق كودنى ئەۋەتتۇق",
+  "Search albums by title or description": "ماۋزۇ ياكى چۈشەندۈرۈش ئارقىلىق ئالبوم ئىزدەش",
+  "View Public Profile": "ئاممىۋى ئايدىلىق ھۆججىتىنى كۆرۈش",
+  "Storage": "ساقلاش",
+  "Use the 6180 app to showcase your albums offline": "ئالبوملىرىڭىزنى توردا ئەمەس ھالەتتە كۆرسىتىش ئۈچۈن 6180 دېتالىنى ئىشلىتىڭ",
+  "Intelligently tagged and beautifully organized": "ئەقىللىق بىلەن بەلگە قويۇلغان ۋە چىرايلىق تەرتىپكە سېلىنغان",
+  "Open On iOS": "iOS دا ئاچ",
+  "Open On Android": "Android دا ئاچ",
+  "Toggle contacts filter": "ئالاقىداشلار سۈزگۈچى ئالماشتۇرۇش",
+  "Showing albums with all selected contacts and tags": "بارلىق تاللانغان ئالاقىداشلار ۋە بەلگىلەر بىلەن ئالبوملارنى كۆرسىتىش",
+  "Showing albums with all selected tags": "بارلىق تاللانغان بەلگىلەر بىلەن ئالبوملارنى كۆرسىتىش"
 }

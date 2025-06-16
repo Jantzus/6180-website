@@ -126,7 +126,6 @@
   "No items to download": "Neniuj elementoj por elŝuti",
   "Failed to update album visibility. Please try again.": "Malsukcesis ĝisdatigi albumvideblecon. Bonvolu provi denove.",
   "You must be logged in to perform this action": "Vi devas ensaluti por fari ĉi tiun agon",
-  "Search album title or description": "Serĉi albumtitolon aŭ priskribon",
   "Enter a password for this album.": "Enigu pasvorton por ĉi tiu albumo",
   "Enter password": "Enigu pasvorton",
   "Select password restrictions.": "Elekti pasvorto limigojn.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Aliri Viajn 6180 Albumojn",
   "Revisit Your Albums": "Revizitu Viajn Albumojn",
   "We'll email you a one-time code to verify it's really you": "Ni sendos al vi unufoje uzeblan kodon per retpoŝto por kontroli, ke vi vere estas vi",
-  "We sent a 6-digit code to": "Ni sendis 6-cifran kodon al"
+  "We sent a 6-digit code to": "Ni sendis 6-cifran kodon al",
+  "Search albums by title or description": "Serĉi albumojn laŭ titolo aŭ priskribo",
+  "View Public Profile": "Vidi Publikan Profilon",
+  "Storage": "Konservado",
+  "Use the 6180 app to showcase your albums offline": "Uzu la aplikaĵon 6180 por prezenti viajn albumojn senrete",
+  "Intelligently tagged and beautifully organized": "Inteligente etikeditaj kaj bele organizitaj",
+  "Open On iOS": "Malfermi En iOS",
+  "Open On Android": "Malfermi En Android",
+  "Toggle contacts filter": "Ŝalti kontaktan filtrilon",
+  "Showing albums with all selected contacts and tags": "Montri albumojn kun ĉiuj elektitaj kontaktoj kaj etikedoj",
+  "Showing albums with all selected tags": "Montri albumojn kun ĉiuj elektitaj etikedoj"
 }

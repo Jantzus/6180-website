@@ -126,7 +126,6 @@
   "No items to download": "Júklep alıw ushın hesh nárse joq",
   "Failed to update album visibility. Please try again.": "Album ko'riniwshiligin jan'alawda qa'telik ju'z berdi. Qaytadan ha'reket qılıp ko'rin'.",
   "You must be logged in to perform this action": "Bul háreketni orınlaw ushın kiriw kerek",
-  "Search album title or description": "Albom ataması yamasa sipatlawın izlew",
   "Enter a password for this album.": "Bul albom ushın parol engizıń",
   "Enter password": "Paroldi kiritıń",
   "Select password restrictions.": "Parol sheklewlerin saylańız.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Albomlarıñızğa Kiriw",
   "Revisit Your Albums": "Albomlarıńızġa Qayta Baryp Kóriń",
   "We'll email you a one-time code to verify it's really you": "Biz sizge shın háqıyqatında siz ekenińizdi tasdıyqlaw ushın email arqalı bir ret paydalanılatın kod jiberemiz",
-  "We sent a 6-digit code to": "6 sanli kod jiberdik"
+  "We sent a 6-digit code to": "6 sanli kod jiberdik",
+  "Search albums by title or description": "Albumlardı atı yamasa taswirlemesi boyınsha izlew",
+  "View Public Profile": "Halıq Profili Kóriw",
+  "Storage": "Saqlaw",
+  "Use the 6180 app to showcase your albums offline": "6180 programmadan paydalanıñ öz albomlarıñıznı oflayan körstiw üşin",
+  "Intelligently tagged and beautifully organized": "Aqlı menen belgilengen hám járdem korinisli",
+  "Open On iOS": "iOS-ta Ash",
+  "Open On Android": "Android-ta Ash",
+  "Toggle contacts filter": "Kontakt filtrini özgertish",
+  "Showing albums with all selected contacts and tags": "Tanlangan barı kontaktlar hem teglar menen albomlardı körsitish",
+  "Showing albums with all selected tags": "Tanlangan barı teglar menen albomlardı körsitish"
 }

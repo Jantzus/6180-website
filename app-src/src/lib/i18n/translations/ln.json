@@ -126,7 +126,6 @@
   "No items to download": "Eloko moko te pona kokitola",
   "Failed to update album visibility. Please try again.": "Bokɔkɔki te kosala sɔsɔli ya kokoma ya album. Tosɛngi yo omeka lisusu.",
   "You must be logged in to perform this action": "Osengeli kozala na molɔngɔ na yo mpo na kosala likambo oyo",
-  "Search album title or description": "Luka lokola ya album to maloba ma yango",
   "Enter a password for this album.": "Kokoma mot de passe mpo na album oyo",
   "Enter password": "Tyá mot de passe",
   "Select password restrictions.": "Pona mitíndá ya bondeko ya liloba lya sekele.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Kóta na 6180 Albums na yɔ",
   "Revisit Your Albums": "Tálanda Lisusu Na Búkóló Ya Yó",
   "We'll email you a one-time code to verify it's really you": "Tokotinda yo code ya mbala moko na email mpo na koyeba soki ozali yo solo",
-  "We sent a 6-digit code to": "Totindi code ya misato motoba na"
+  "We sent a 6-digit code to": "Totindi code ya misato motoba na",
+  "Search albums by title or description": "Luka ba album na nkoma to na ndimbola",
+  "View Public Profile": "Táála Profil ya Bato Bánso",
+  "Storage": "Ebombelo",
+  "Use the 6180 app to showcase your albums offline": "Saléla lisáleli 6180 mpo na kolakisa ba-album na yo na offline",
+  "Intelligently tagged and beautifully organized": "Na mayele e-tag-ami mpe na kitoko e-organiser",
+  "Open On iOS": "Fungola Na iOS",
+  "Open On Android": "Fungola Na Android",
+  "Toggle contacts filter": "Kobongola mosala mwa bakutani",
+  "Showing albums with all selected contacts and tags": "Kolakisa ba album na bakutani nyonso ba ponami mpe ba tag",
+  "Showing albums with all selected tags": "Kolakisa ba album na ba tag nyonso ba ponami"
 }

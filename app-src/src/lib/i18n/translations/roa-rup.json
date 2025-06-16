@@ -126,7 +126,6 @@
   "No items to download": "Nu sunt elemente ti dischircari",
   "Failed to update album visibility. Please try again.": "Nu s-ari ndreptatu vidzârea a albumlui. Vâ plâcârsescu, pruvats nauă oarâ.",
   "You must be logged in to perform this action": "Lipseashti s-hii aloghedz ti s-fats aestã",
-  "Search album title or description": "Cafti titlu i discriptsii di albomu",
   "Enter a password for this album.": "Bagă unã parolă ti aestu album",
   "Enter password": "Bagă parola",
   "Select password restrictions.": "Aledz restrictsiili di parola.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Intrã tu 6180 Albums a Tali",
   "Revisit Your Albums": "Anviseadzâ Albumurle Tãle",
   "We'll email you a one-time code to verify it's really you": "Nă vă năthimirămu un cod di nă adoubă shuriclju prin email păntrună să vă adevăritsescu că săntsă cu adevărat voi",
-  "We sent a 6-digit code to": "Trimitsãrãm un cod di șasi cifri la"
+  "We sent a 6-digit code to": "Trimitsãrãm un cod di șasi cifri la",
+  "Search albums by title or description": "Caftu albume dupã titlu ari discriari",
+  "View Public Profile": "Veadi Profilul Publicu",
+  "Storage": "Pãstrari",
+  "Use the 6180 app to showcase your albums offline": "Aleziti aplicarea 6180 s-aratati albumurli di voi offline",
+  "Intelligently tagged and beautifully organized": "Arăţatură cu minţă şi ărgănizată fru",
+  "Open On iOS": "Diskid Tu iOS",
+  "Open On Android": "Diskid Tu Android",
+  "Toggle contacts filter": "Schimbă filtrul cu contactele",
+  "Showing albums with all selected contacts and tags": "Arată albumurile cu tuti contactile shi etichetile aleasili",
+  "Showing albums with all selected tags": "Arată albumurile cu tuti etichetile aleasili"
 }

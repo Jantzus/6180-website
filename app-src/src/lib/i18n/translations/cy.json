@@ -126,7 +126,6 @@
   "No items to download": "Dim eitemau i'w lawrlwytho",
   "Failed to update album visibility. Please try again.": "Methu diweddaru gwelededd yr albwm. Rhowch gynnig arall arni os gwelwch yn dda.",
   "You must be logged in to perform this action": "Rhaid i chi fewngofnodi i gyflawni'r weithred hon",
-  "Search album title or description": "Chwilio am deitl neu ddisgrifiad albwm",
   "Enter a password for this album.": "Rhowch gyfrinair ar gyfer yr albwm hwn",
   "Enter password": "Rhowch gyfrinair",
   "Select password restrictions.": "Dewiswch gyfyngiadau cyfrinair.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Mynediad i'ch 6180 Albwm",
   "Revisit Your Albums": "Ymwelwch Â'ch Albymau Eto",
   "We'll email you a one-time code to verify it's really you": "Byddwn yn anfon cod untro atoch drwy e-bost i gadarnhau mai chi ydych chi go iawn",
-  "We sent a 6-digit code to": "Anfonom god 6 digid i"
+  "We sent a 6-digit code to": "Anfonom god 6 digid i",
+  "Search albums by title or description": "Chwilio am albymau yn ôl teitl neu ddisgrifiad",
+  "View Public Profile": "Gweld y Proffil Cyhoeddus",
+  "Storage": "Storfa",
+  "Use the 6180 app to showcase your albums offline": "Defnyddiwch yr app 6180 i ddangos eich albymau all-lein",
+  "Intelligently tagged and beautifully organized": "Wedi'u tagio'n ddeallus a'u trefnu'n brydferth",
+  "Open On iOS": "Agor Ar iOS",
+  "Open On Android": "Agor Ar Android",
+  "Toggle contacts filter": "Toglo hidlydd cysylltiadau",
+  "Showing albums with all selected contacts and tags": "Dangos albymau gyda'r holl gysylltiadau a thagiau a ddewiswyd",
+  "Showing albums with all selected tags": "Dangos albymau gyda'r holl dagiau a ddewiswyd"
 }

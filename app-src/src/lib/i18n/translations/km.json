@@ -126,7 +126,6 @@
   "No items to download": "គ្មានធាតុដើម្បីទាញយកទេ",
   "Failed to update album visibility. Please try again.": "បានបរាជ័យក្នុងការធ្វើបច្ចុប្បន្នភាពការមើលឃើញអាល់ប៊ុម។ សូមព្យាយាមម្តងទៀត។",
   "You must be logged in to perform this action": "អ្នកត្រូវតែចូលគណនីដើម្បីអនុវត្តសកម្មភាពនេះ",
-  "Search album title or description": "ស្វែងរកចំណងជើងអាល់ប៊ុមឬការពណ៌នា",
   "Enter a password for this album.": "បញ្ចូលពាក្យសម្ងាត់សម្រាប់អាល់ប៊ុមនេះ",
   "Enter password": "បញ្ចូលពាក្យសម្ងាត់",
   "Select password restrictions.": "ជ្រើសរើសការដាក់កំហិតពាក្យសម្ងាត់។",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ចូលមើល 6180 អាល់ប៊ុមរបស់អ្នក",
   "Revisit Your Albums": "ទៅមើលអាល់ប៊ុមរបស់អ្នកម្តងទៀត",
   "We'll email you a one-time code to verify it's really you": "យើងនឹងផ្ញើលេខកូដដែលប្រើតែម្តងតាមអ៊ីមែលដើម្បីផ្ទៀងផ្ទាត់ថាអ្នកពិតជាអ្នក",
-  "We sent a 6-digit code to": "យើងបានផ្ញើកូដ ៦ ខ្ទង់ទៅ"
+  "We sent a 6-digit code to": "យើងបានផ្ញើកូដ ៦ ខ្ទង់ទៅ",
+  "Search albums by title or description": "ស្វែងរកអាល់ប៊ុមតាមចំណងជើង ឬការពិពណ៌នា",
+  "View Public Profile": "មើលកម្រងព័ត៌មានសាធារណៈ",
+  "Storage": "ការរក្សាទុក",
+  "Use the 6180 app to showcase your albums offline": "ប្រើប្រាស់កម្មវិធី 6180 ដើម្បីបង្ហាញអាល់ប៊ុមរបស់អ្នកនៅរបៀបអុស្រាយ",
+  "Intelligently tagged and beautifully organized": "ដាក់ស្លាកយ៉ាងឆ្លាតនិងរៀបចំយ៉ាងស្រស់ស្អាត",
+  "Open On iOS": "បើកនៅលើ iOS",
+  "Open On Android": "បើកនៅលើ Android",
+  "Toggle contacts filter": "ប្ដូរតម្រងទំនាក់ទំនង",
+  "Showing albums with all selected contacts and tags": "បង្ហាញអាល់ប៊ុមជាមួយទំនាក់ទំនងនិងប្លាកដែលបានជ្រើសរើសទាំងអស់",
+  "Showing albums with all selected tags": "បង្ហាញអាល់ប៊ុមជាមួយប្លាកដែលបានជ្រើសរើសទាំងអស់"
 }

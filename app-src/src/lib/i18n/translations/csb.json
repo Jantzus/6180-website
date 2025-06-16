@@ -126,7 +126,6 @@
   "No items to download": "Felënków do zladënkù nie nalazłé",
   "Failed to update album visibility. Please try again.": "Nie darzëło sã zaktualizowac widzawnotë albùma. Proszã, spróbùjta jesz rôz.",
   "You must be logged in to perform this action": "Mùszisz sã wlogòwac, cobë wëkònac tã akcëjã",
-  "Search album title or description": "Szëkôj titel albùma abò òpisënk",
   "Enter a password for this album.": "Wpiszë parolã dlô negò albùma",
   "Enter password": "Wpiszë parola",
   "Select password restrictions.": "Wëbierzë limitacëje parola.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Przistąp do Twòjich 6180 Albumòw",
   "Revisit Your Albums": "Òdzwiedzë Swòje Albumë",
   "We'll email you a one-time code to verify it's really you": "Pòślemy wama jedno-razny kod przez e-mail, żebë sprawdzëc że to je rzecziwiszcze wë",
-  "We sent a 6-digit code to": "Pòslalë më 6-cyfrowë kod na"
+  "We sent a 6-digit code to": "Pòslalë më 6-cyfrowë kod na",
+  "Search albums by title or description": "Szëkòjë albùmów pò tëtuleszu abò òpisie",
+  "View Public Profile": "Òbaczë Pùbliczny Profil",
+  "Storage": "Sktôd",
+  "Use the 6180 app to showcase your albums offline": "Brëkùj aplikacjã 6180 bë ùkazac swòje albùmë bez sprëznaniô",
+  "Intelligently tagged and beautifully organized": "Mądrze òznaczoné ë piãkno zorganizowóné",
+  "Open On iOS": "Òtczënë Na iOS",
+  "Open On Android": "Òtczënë Na Android",
+  "Toggle contacts filter": "Przeńc filter kòntakta",
+  "Showing albums with all selected contacts and tags": "Wëskôzënk albumë ze wszëtkimi wëbrónyma kòntaktama ë etiketama",
+  "Showing albums with all selected tags": "Wëskôzënk albumë ze wszëtkimi wëbrónyma etiketama"
 }

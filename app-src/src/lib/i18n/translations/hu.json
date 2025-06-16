@@ -126,7 +126,6 @@
   "No items to download": "Nincsenek letölthető elemek",
   "Failed to update album visibility. Please try again.": "Nem sikerült frissíteni az album láthatóságát. Kérjük, próbálja újra.",
   "You must be logged in to perform this action": "Be kell jelentkezned ehhez a művelethez",
-  "Search album title or description": "Album címének vagy leírásának keresése",
   "Enter a password for this album.": "Adjon meg jelszót ehhez az albumhoz",
   "Enter password": "Adja meg a jelszót",
   "Select password restrictions.": "Válassza ki a jelszó korlátozásait.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Hozzáférés a 6180 Albumodhoz",
   "Revisit Your Albums": "Látogassa Meg Újra Az Albumait",
   "We'll email you a one-time code to verify it's really you": "Egyszeri használatos kódot küldünk e-mailben, hogy ellenőrizzük, valóban Ön az",
-  "We sent a 6-digit code to": "6-jegyű kódot küldtünk a következő címre:"
+  "We sent a 6-digit code to": "6-jegyű kódot küldtünk a következő címre:",
+  "Search albums by title or description": "Albumok keresése cím vagy leírás alapján",
+  "View Public Profile": "Nyilvános Profil Megtekintése",
+  "Storage": "Tárolás",
+  "Use the 6180 app to showcase your albums offline": "Használja a 6180 alkalmazást az albumai offline megjelenítéséhez",
+  "Intelligently tagged and beautifully organized": "Intelligensen címkézett és gyönyörűen szervezett",
+  "Open On iOS": "Megnyitás iOS-on",
+  "Open On Android": "Megnyitás Android-on",
+  "Toggle contacts filter": "Névjegy-szűrő váltás",
+  "Showing albums with all selected contacts and tags": "Albumok megjelenítése minden kiválasztott névjeggyel és címkével",
+  "Showing albums with all selected tags": "Albumok megjelenítése minden kiválasztott címkével"
 }

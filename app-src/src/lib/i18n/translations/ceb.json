@@ -126,7 +126,6 @@
   "No items to download": "Walay mga butang nga ipalusad",
   "Failed to update album visibility. Please try again.": "Napakyas ang pag-update sa pagkakita sa album. Palihug sulayi pag-usab.",
   "You must be logged in to perform this action": "Kinahanglan nga naka-login ka aron mahimo kini nga lihok",
-  "Search album title or description": "Pangitaa ang titulo sa album o deskripsyon",
   "Enter a password for this album.": "Isulod ang password alang niini nga album",
   "Enter password": "Isulod ang password",
   "Select password restrictions.": "Pagpili og mga pagpugong sa password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Pag-access sa Inyong 6180 Albums",
   "Revisit Your Albums": "Bisitaha Pag-usab Ang Imong Mga Album",
   "We'll email you a one-time code to verify it's really you": "Magpadala mi ninyong usa ka higayon nga gamiton nga code pinaagi sa email aron ma-verify nga ikaw gyud kini",
-  "We sent a 6-digit code to": "Nagpadala mi ug 6-digit nga code sa"
+  "We sent a 6-digit code to": "Nagpadala mi ug 6-digit nga code sa",
+  "Search albums by title or description": "Pangitaa ang mga album pinaagi sa titulo o deskripsyon",
+  "View Public Profile": "Tan-awa ang Publikong Profile",
+  "Storage": "Tipiganan",
+  "Use the 6180 app to showcase your albums offline": "Gamita ang 6180 app aron ipakita ang imong mga album nga offline",
+  "Intelligently tagged and beautifully organized": "Maibuot nga na-tag ug nindot nga na-organisar",
+  "Open On iOS": "Ablihi Sa iOS",
+  "Open On Android": "Ablihi Sa Android",
+  "Toggle contacts filter": "Ilisan ang filter sa mga kontak",
+  "Showing albums with all selected contacts and tags": "Gipakita ang mga album nga adunay tanang piniling mga kontak ug mga tag",
+  "Showing albums with all selected tags": "Gipakita ang mga album nga adunay tanang piniling mga tag"
 }

@@ -126,7 +126,6 @@
   "No items to download": "İndirilecek öğe yok",
   "Failed to update album visibility. Please try again.": "Albüm görünürlüğü güncellenemedi. Lütfen tekrar deneyin.",
   "You must be logged in to perform this action": "Bu eylemi gerçekleştirmek için giriş yapmalısınız",
-  "Search album title or description": "Albüm başlığını veya açıklamasını ara",
   "Enter a password for this album.": "Bu albüm için bir şifre girin",
   "Enter password": "Parolayı girin",
   "Select password restrictions.": "Parola kısıtlamalarını seçin.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Albümünüze Erişin",
   "Revisit Your Albums": "Albümlerinizi Tekrar Ziyaret Edin",
   "We'll email you a one-time code to verify it's really you": "Gerçekten siz olduğunuzu doğrulamak için size e-posta ile tek kullanımlık bir kod göndereceğiz",
-  "We sent a 6-digit code to": "6 haneli kod gönderdik"
+  "We sent a 6-digit code to": "6 haneli kod gönderdik",
+  "Search albums by title or description": "Albümleri başlığa veya açıklamaya göre arayın",
+  "View Public Profile": "Herkese Açık Profili Görüntüle",
+  "Storage": "Depolama",
+  "Use the 6180 app to showcase your albums offline": "Albümlerinizi çevrimdışı göstermek için 6180 uygulamasını kullanın",
+  "Intelligently tagged and beautifully organized": "Akıllıca etiketlenmiş ve güzelce düzenlenmiş",
+  "Open On iOS": "iOS'ta Aç",
+  "Open On Android": "Android'ta Aç",
+  "Toggle contacts filter": "Kişi filtresini değiştir",
+  "Showing albums with all selected contacts and tags": "Seçilen tüm kişiler ve etiketlerle albümleri gösterme",
+  "Showing albums with all selected tags": "Seçilen tüm etiketlerle albümleri gösterme"
 }

@@ -126,7 +126,6 @@
   "No items to download": "چی چیزی سی دؤملود نئ",
   "Failed to update album visibility. Please try again.": "نڤشار آلبوم نۉ ناموفق ڤابی. لطفاً دۉفارٱ تلاش کیم.",
   "You must be logged in to perform this action": "شما واس انجوم ای کار ونه سیستم وارد بوید",
-  "Search album title or description": "پی جوری عنوان یا توضیح آلبوم",
   "Enter a password for this album.": "یه رمز واسی ای آلبوم وارد کونین",
   "Enter password": "رمز دڵک بنئیسیت",
   "Select password restrictions.": "محدودیت‌های رمز عبور را انتخاب کنید.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "دسرسی سه 6180 آلبوم تو",
   "Revisit Your Albums": "آلبومهاتان دوباره ببینید",
   "We'll email you a one-time code to verify it's really you": "ما یه گل کد یه کرره استفاده را به ایمیل واست می فرسیم که مطمئن بیم که شما هستین",
-  "We sent a 6-digit code to": "ما یه گل کد شش رقمی فرسادیم به"
+  "We sent a 6-digit code to": "ما یه گل کد شش رقمی فرسادیم به",
+  "Search albums by title or description": "آلبوم نه سر ونگ یا شرح پئ پی جوری",
+  "View Public Profile": "دیاری نیمگه عموومی",
+  "Storage": "ذخیره",
+  "Use the 6180 app to showcase your albums offline": "ج 6180 ؤفزار بکاریو که وختی اینتئرنت نئ آلبومیاتؤنه نئشؤن بدی",
+  "Intelligently tagged and beautifully organized": "هۊشمنداني برچسپ خوٙرده ؤ زیڤایي جه تنظیم بیه",
+  "Open On iOS": "iOS مئن وا بؤرده",
+  "Open On Android": "Android مئن وا بؤرده",
+  "Toggle contacts filter": "گوڵ کردنی فیلتر دیدارکەکان",
+  "Showing albums with all selected contacts and tags": "آلبومیا دیار کردن بە گشت دیدارکەکان و نیشانێیا بجارکاری",
+  "Showing albums with all selected tags": "آلبومیا دیار کردن بە گشت نیشانێیا بجارکاری"
 }

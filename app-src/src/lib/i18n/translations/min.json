@@ -126,7 +126,6 @@
   "No items to download": "Indak ado item untuak diunduh",
   "Failed to update album visibility. Please try again.": "Gagal mamparbarui tampiakan album. Cubo sekali lai.",
   "You must be logged in to perform this action": "Sanak musti masuak log untuak malakuan tindakan ko",
-  "Search album title or description": "Cari judul album atau deskripsi",
   "Enter a password for this album.": "Masuakan kato sandi untuak album ko",
   "Enter password": "Masuakan kato sandi",
   "Select password restrictions.": "Piliah batasan kato sandi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Akses 6180 Album Ang",
   "Revisit Your Albums": "Lawek Baliak Album Ang",
   "We'll email you a one-time code to verify it's really you": "Kami akan mangiriman kode sakali pakai malalui email untuak mamastikan bahwasanya bana-bana awak tu",
-  "We sent a 6-digit code to": "Kami alah mangiriman kode 6 digit ka"
+  "We sent a 6-digit code to": "Kami alah mangiriman kode 6 digit ka",
+  "Search albums by title or description": "Cari album dek judul atau keterangan",
+  "View Public Profile": "Liek Profil Umum",
+  "Storage": "Panyimpanan",
+  "Use the 6180 app to showcase your albums offline": "Gunoan aplikasi 6180 untuak manunjuakan album awak sacaro offline",
+  "Intelligently tagged and beautifully organized": "Ditandoi jo cadiak dan diatur jo cantiak",
+  "Open On iOS": "Bukak Di iOS",
+  "Open On Android": "Bukak Di Android",
+  "Toggle contacts filter": "Tukar filter kontak",
+  "Showing albums with all selected contacts and tags": "Manunjuakkan album jo sagalo kontak jo tag nan dipiliah",
+  "Showing albums with all selected tags": "Manunjuakkan album jo sagalo tag nan dipiliah"
 }

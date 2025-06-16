@@ -126,7 +126,6 @@
   "No items to download": "Κατεβαστέα κι εςς'",
   "Failed to update album visibility. Please try again.": "Κι έτονεν να ενημερωθείται το άλμπουμ θεωρείται. Παρακαλώ δοκιμάστεν ξανά.",
   "You must be logged in to perform this action": "Πρέπει να είσαι συνδεδεμένος για να εκτελέσεις αυτήν την ενέργεια",
-  "Search album title or description": "Αναζήτησην τ'άλμπουμ τ'όνεμαν για περιγραφήν",
   "Enter a password for this album.": "Γράψον έναν κωδικόν για τ'άλμπουμ",
   "Enter password": "Κωδικόν εισάγετεν",
   "Select password restrictions.": "Επίλεξον τα ορισμούς τη κωδικού.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Εισέν ση 6180 Άλμπουμ σας",
   "Revisit Your Albums": "Ἰδεῖτε Πάλι Τὰ Ἄλμπουμ Σας",
   "We'll email you a one-time code to verify it's really you": "Θα σας στείλουμεν έναν κωδικόν μίας χρήσεως δια ηλεκτρονικόν ταχυδρομείον",
-  "We sent a 6-digit code to": "Στείλαμεν έναν κωδικόν έξ ψηφίων εις"
+  "We sent a 6-digit code to": "Στείλαμεν έναν κωδικόν έξ ψηφίων εις",
+  "Search albums by title or description": "Γυρεύγετε άλμπουμ κατά τον τίτλον αη την περιγραφήν",
+  "View Public Profile": "Ιδείν τον Δημόσιον Χαρακτήρα",
+  "Storage": "Αποθήκευσις",
+  "Use the 6180 app to showcase your albums offline": "Χρησιμοποιήστεν την εφαρμογήν 6180 για να δείξετεν τ' άλμπουμ σας εκτός διαδικτύου",
+  "Intelligently tagged and beautifully organized": "Έξυπνα σημαδεμένα και όμορφα οργανωμένα",
+  "Open On iOS": "Άνοιξον εις iOS",
+  "Open On Android": "Άνοιξον εις Android",
+  "Toggle contacts filter": "Άλλαξε το φίλτρον τών επαφών",
+  "Showing albums with all selected contacts and tags": "Δείχνει τα άλμπουμ με όλ' τ' επαφάς και τ' ετικέττας εκλεγμένας",
+  "Showing albums with all selected tags": "Δείχνει τα άλμπουμ με όλ' τ' ετικέττας εκλεγμένας"
 }

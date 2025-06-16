@@ -126,7 +126,6 @@
   "No items to download": "No items to download",
   "Failed to update album visibility. Please try again.": "Failed to update album visibility. Please try again.",
   "You must be logged in to perform this action": "You must be logged in to perform this action",
-  "Search album title or description": "Search album title or description",
   "Enter a password for this album.": "Enter a password for this album.",
   "Enter password": "Enter password",
   "Select password restrictions.": "Select password restrictions.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Access Your 6180 Albums",
   "Revisit Your Albums": "Revisit Your Albums",
   "We'll email you a one-time code to verify it's really you": "We'll email you a one-time code to verify it's really you",
-  "We sent a 6-digit code to": "We sent a 6-digit code to"
+  "We sent a 6-digit code to": "We sent a 6-digit code to",
+  "Search albums by title or description": "Search albums by title or description",
+  "View Public Profile": "View Public Profile",
+  "Storage": "Storage",
+  "Use the 6180 app to showcase your albums offline": "Use the 6180 app to showcase your albums offline",
+  "Intelligently tagged and beautifully organized": "Intelligently tagged and beautifully organized",
+  "Open On iOS": "Open On iOS",
+  "Open On Android": "Open On Android",
+  "Toggle contacts filter": "Toggle contacts filter",
+  "Showing albums with all selected contacts and tags": "Showing albums with all selected contacts and tags",
+  "Showing albums with all selected tags": "Showing albums with all selected tags"
 }

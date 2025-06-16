@@ -126,7 +126,6 @@
   "No items to download": "Nag eus tra vyth dhe wolaskarga",
   "Failed to update album visibility. Please try again.": "Fyllas dhe nowedhi gweladewder an albumow. Mar pleg assayewgh arta.",
   "You must be logged in to perform this action": "Res yw dhis omloggya rag gwruthyl an gwrians-ma",
-  "Search album title or description": "Hwilas titl py deskrifans an album",
   "Enter a password for this album.": "Gorrewgh ger-tremena rag an album ma",
   "Enter password": "Entra ger-tremena",
   "Select password restrictions.": "Dewis kevrennow ger tremena.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Entreans dhe'gas 6180 Albums",
   "Revisit Your Albums": "Gwelewgh Agas Albums Arta",
   "We'll email you a one-time code to verify it's really you": "Ny a dhonon code defnythyansow onan dhywgh dre ebost rag profya bos why yu da wir",
-  "We sent a 6-digit code to": "Ny a dhanvonas koden 6-niver dhe"
+  "We sent a 6-digit code to": "Ny a dhanvonas koden 6-niver dhe",
+  "Search albums by title or description": "Hwilas albumow dre hanow po deskrifans",
+  "View Public Profile": "Gweles an Profil Poblek",
+  "Storage": "Gwithva",
+  "Use the 6180 app to showcase your albums offline": "Devnydhygh an app 6180 dhe wòlweles agas albumow yn mes a'n wias",
+  "Intelligently tagged and beautifully organized": "Studyusly merkys ha teg ordenys",
+  "Open On iOS": "Ygor War iOS",
+  "Open On Android": "Ygor War Android",
+  "Toggle contacts filter": "Chanjya sidhydh kesskrifa",
+  "Showing albums with all selected contacts and tags": "Diskwedhes albymow gans oll an gesskriforyon ha taggys dewisys",
+  "Showing albums with all selected tags": "Diskwedhes albymow gans oll an taggys dewisys"
 }

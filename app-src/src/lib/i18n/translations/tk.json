@@ -126,7 +126,6 @@
   "No items to download": "Ýüklemek üçin zat ýok",
   "Failed to update album visibility. Please try again.": "Album görünýänligini täzelemek başartmady. Gaýtadan synanyşyň.",
   "You must be logged in to perform this action": "Bu hereketi ýerine ýetirmek üçin ulgama girmeli",
-  "Search album title or description": "Albom adyny ýa-da beýanyny gözle",
   "Enter a password for this album.": "Bu albom üçin parol giriziň",
   "Enter password": "Paroly giriziň",
   "Select password restrictions.": "Parol çäklendirmelerini saýlaň.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Albumlaryňyza Girmek",
   "Revisit Your Albums": "Albumlaryňyzy Gaýtadan Görüň",
   "We'll email you a one-time code to verify it's really you": "Hakykatdanam siz boldugyňyzy tassyklamak üçin size e-poçta arkaly bir gezek ulanylýan kod ibereris",
-  "We sent a 6-digit code to": "6 sanly kod iberdik"
+  "We sent a 6-digit code to": "6 sanly kod iberdik",
+  "Search albums by title or description": "Albümleri ady ýa-da beýany boýunça gözläň",
+  "View Public Profile": "Jemgyýetçilik Profilini Görmek",
+  "Storage": "Ammar",
+  "Use the 6180 app to showcase your albums offline": "6180 programmany ulan, albumlaryňyzy awtonom görkez",
+  "Intelligently tagged and beautifully organized": "Akylly belgilenýär we owadan tertiplenýär",
+  "Open On iOS": "iOS-da Aç",
+  "Open On Android": "Android-da Aç",
+  "Toggle contacts filter": "Kontakt filtri üýtgetmek",
+  "Showing albums with all selected contacts and tags": "Saýlanan ähli kontaktlar we bellikler bilen albomlary görkezmek",
+  "Showing albums with all selected tags": "Saýlanan ähli bellikler bilen albomlary görkezmek"
 }

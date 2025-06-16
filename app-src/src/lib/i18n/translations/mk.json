@@ -126,7 +126,6 @@
   "No items to download": "Нема ставки за преземање",
   "Failed to update album visibility. Please try again.": "Неуспешно ажурирање на видливоста на албумот. Обидете се повторно.",
   "You must be logged in to perform this action": "Мора да сте најавени за да ја изведете оваа акција",
-  "Search album title or description": "Пребарај наслов или опис на албум",
   "Enter a password for this album.": "Внесете лозинка за овој албум",
   "Enter password": "Внесете лозинка",
   "Select password restrictions.": "Изберете ограничувања на лозинката.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Пристап до Вашите 6180 Албуми",
   "Revisit Your Albums": "Посетете Ги Повторно Вашите Албуми",
   "We'll email you a one-time code to verify it's really you": "Ќе ви испратиме еднократен код преку е-пошта за да потврдиме дека сте навистина вие",
-  "We sent a 6-digit code to": "Испративме 6-цифрен код на"
+  "We sent a 6-digit code to": "Испративме 6-цифрен код на",
+  "Search albums by title or description": "Пребарувај албуми по наслов или опис",
+  "View Public Profile": "Прикажи Јавен Профил",
+  "Storage": "Складирање",
+  "Use the 6180 app to showcase your albums offline": "Користете ја апликацијата 6180 за прикажување на вашите албуми без врска",
+  "Intelligently tagged and beautifully organized": "Интелигентно означени и убаво организирани",
+  "Open On iOS": "Отвори Во iOS",
+  "Open On Android": "Отвори Во Android",
+  "Toggle contacts filter": "Вклучи/исклучи филтер за контакти",
+  "Showing albums with all selected contacts and tags": "Прикажување албуми со сите избрани контакти и ознаки",
+  "Showing albums with all selected tags": "Прикажување албуми со сите избрани ознаки"
 }

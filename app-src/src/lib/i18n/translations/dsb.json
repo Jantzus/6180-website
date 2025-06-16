@@ -126,7 +126,6 @@
   "No items to download": "Žedne zapiski k ześěgnjenju",
   "Failed to update album visibility. Please try again.": "Widobnosć albuma njejo se aktualizěrowaś dała. Pšosym wopytajśo hyšći raz.",
   "You must be logged in to perform this action": "Musyš se pśizjawiś, aby toś tu akciju pśewjasć",
-  "Search album title or description": "Titel albuma abo wopisanje pytaś",
   "Enter a password for this album.": "Gronidło za toś ten album zapódaś",
   "Enter password": "Gronidłowe słowo zapódaś",
   "Select password restrictions.": "Wobgranicowanja gronidła wubraś.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Pśistup na Waše 6180 Albumy",
   "Revisit Your Albums": "Woglědajśo Swóje Albumy Zasej",
   "We'll email you a one-time code to verify it's really you": "Pošljomy wam jano-razowy kod pśez e-mail, aby my wobkšuśili až sćo to wopšawdu wy",
-  "We sent a 6-digit code to": "Smy pósłali 6-cyfrowny kod na"
+  "We sent a 6-digit code to": "Smy pósłali 6-cyfrowny kod na",
+  "Search albums by title or description": "Albumy pó titelu abo wopisanju pytaś",
+  "View Public Profile": "Zjawny profil pokazaś",
+  "Storage": "Składowanje",
+  "Use the 6180 app to showcase your albums offline": "Wužywajśo nałoženje 6180 za pokazowanje wašych albumow offline",
+  "Intelligently tagged and beautifully organized": "Inteligentnje markěrowane a rědnje organizěrowane",
+  "Open On iOS": "Na iOS Wócyniś",
+  "Open On Android": "Na Android Wócyniś",
+  "Toggle contacts filter": "Kontaktowy filter pśešaltowaś",
+  "Showing albums with all selected contacts and tags": "Albumy ze wšymi wubranymi kontaktami a wobznamjenjami pokazaś",
+  "Showing albums with all selected tags": "Albumy ze wšymi wubranymi wobznamjenjami pokazaś"
 }

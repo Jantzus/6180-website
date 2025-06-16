@@ -126,7 +126,6 @@
   "No items to download": "ڈاؤن لوڈ کرن لئی کوئی آئیٹم نئیں",
   "Failed to update album visibility. Please try again.": "البم دی نظر آنا اپڈیٹ کرن وچ ناکام۔ مہربانی کر کے دوبارہ کوشش کرو۔",
   "You must be logged in to perform this action": "You must be logged in to perform this action",
-  "Search album title or description": "البم دا عنوان یا وضاحت لبھو",
   "Enter a password for this album.": "ایس البم لئی پاس ورڈ درج کرو",
   "Enter password": "پاس ورڈ درج کرو",
   "Select password restrictions.": "پاس ورڈ دیاں پابندیاں چنو۔",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "اپنے 6180 البم ویکھو",
   "Revisit Your Albums": "اپنے البم واپس ویکھو",
   "We'll email you a one-time code to verify it's really you": "اساں توں ای میل نال اک واری استعمال ہون والا کوڈ بھیجاں گے تاکہ تصدیق کر سکاں کہ تسیں ہی او",
-  "We sent a 6-digit code to": "اساں 6 ہندسیاں والا کوڈ بھیجیا اے"
+  "We sent a 6-digit code to": "اساں 6 ہندسیاں والا کوڈ بھیجیا اے",
+  "Search albums by title or description": "ٹائٹل یا وضاحت نال البم تلاش کرو",
+  "View Public Profile": "عوامی پروفائل ویکھو",
+  "Storage": "محفوظ کرنا",
+  "Use the 6180 app to showcase your albums offline": "اپنے البم آف لائن دکھان لئی 6180 ایپ ورت",
+  "Intelligently tagged and beautifully organized": "عقلمندی نال ٹیگ کیتے گئے تے خوبصورتی نال منظم",
+  "Open On iOS": "iOS ویچ کھولو",
+  "Open On Android": "Android ویچ کھولو",
+  "Toggle contacts filter": "رابطے دا فلٹر بدلو",
+  "Showing albums with all selected contacts and tags": "سارے چنے گئے رابطیاں تے ٹیگاں دے نال البم دسدا پیا",
+  "Showing albums with all selected tags": "سارے چنے گئے ٹیگاں دے نال البم دسدا پیا"
 }

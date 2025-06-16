@@ -126,7 +126,6 @@
   "No items to download": "Olõ-õi midägi allapandmisõs",
   "Failed to update album visibility. Please try again.": "Albumi nätäq saa-s vahtsõndõduq. Proomiq viil üts kõrd.",
   "You must be logged in to perform this action": "Sa piät olõma sisseloginuq, et taad toimõndust tetäq",
-  "Search album title or description": "Otsi albumi päälkirjä vai seletüst",
   "Enter a password for this album.": "Panõq salasõna seole albumilõ",
   "Enter password": "Kirodaq salasõna",
   "Select password restrictions.": "Valigõq salasõna piirangit.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Pääs 6180 Albumitõ Mano",
   "Revisit Your Albums": "Kaeq Uma Albumõ Peri",
   "We'll email you a one-time code to verify it's really you": "Mie läkitäs tõlõ üteskõrdsõlt pruugitava koodi elektronposti perrä kinnitämäq, et sa õõk tõõstõ sa",
-  "We sent a 6-digit code to": "Läkitä 6-numbriga koodi"
+  "We sent a 6-digit code to": "Läkitä 6-numbriga koodi",
+  "Search albums by title or description": "Otsõ albummit nimes vai kirjeldusõ perrä",
+  "View Public Profile": "Kaeq Avalikkut Profiili",
+  "Storage": "Tallitaminõ",
+  "Use the 6180 app to showcase your albums offline": "Pruuki 6180 rakendust, et näütäq uma albummit internetitä",
+  "Intelligently tagged and beautifully organized": "Tarkalt märgistatud ja ilostas korraldatud",
+  "Open On iOS": "Ava iOS-n",
+  "Open On Android": "Ava Android-n",
+  "Toggle contacts filter": "Kontaktidõ filter lülüteq",
+  "Showing albums with all selected contacts and tags": "Näütäs albumõ ku kõik valitu kontaktiq ja märgiq",
+  "Showing albums with all selected tags": "Näütäs albumõ ku kõik valitu märgiq"
 }

@@ -126,7 +126,6 @@
   "No items to download": "אין פריטים להורדה",
   "Failed to update album visibility. Please try again.": "עדכון נראות האלבום נכשל. אנא נסה שנית.",
   "You must be logged in to perform this action": "עליך להיות מחובר כדי לבצע פעולה זו",
-  "Search album title or description": "חיפוש כותרת אלבום או תיאור",
   "Enter a password for this album.": "הזן סיסמה לאלבום זה",
   "Enter password": "הזן סיסמה",
   "Select password restrictions.": "בחר הגבלות סיסמה.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "גישה ל-6180 האלבומים שלך",
   "Revisit Your Albums": "בקר שוב באלבומים שלך",
   "We'll email you a one-time code to verify it's really you": "נשלח לך קוד חד-פעמי בדוא\"ל כדי לאמת שזה באמת אתה",
-  "We sent a 6-digit code to": "שלחנו קוד בן 6 ספרות אל"
+  "We sent a 6-digit code to": "שלחנו קוד בן 6 ספרות אל",
+  "Search albums by title or description": "חפש אלבומים לפי כותרת או תיאור",
+  "View Public Profile": "צפה בפרופיל ציבורי",
+  "Storage": "אחסון",
+  "Use the 6180 app to showcase your albums offline": "השתמש באפליקציית 6180 להצגת האלבומים שלך במצב לא מקוון",
+  "Intelligently tagged and beautifully organized": "מתויגים בחכמה ומאורגנים יפה",
+  "Open On iOS": "פתח ב-iOS",
+  "Open On Android": "פתח ב-Android",
+  "Toggle contacts filter": "החלף מסנן אנשי קשר",
+  "Showing albums with all selected contacts and tags": "מציג אלבומים עם כל אנשי הקשר והתגיות שנבחרו",
+  "Showing albums with all selected tags": "מציג אלבומים עם כל התגיות שנבחרו"
 }

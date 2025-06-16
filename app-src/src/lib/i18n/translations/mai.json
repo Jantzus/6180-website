@@ -126,7 +126,6 @@
   "No items to download": "डाउनलोड करबाक लेल कोनो आइटम नहि अछि",
   "Failed to update album visibility. Please try again.": "एल्बम के दृश्यता अपडेट करबा मे असफल। कृपया फेर कोशिश करू।",
   "You must be logged in to perform this action": "ई कार्य करबाक लेल अहाँ लॉग इन कएल हेबाक चाही",
-  "Search album title or description": "एल्बम शीर्षक या विवरण खोजू",
   "Enter a password for this album.": "एहि एल्बम लेल पासवर्ड दर्ज करू",
   "Enter password": "पासवर्ड दर्ज करू",
   "Select password restrictions.": "पासवर्ड प्रतिबंध चुनू।",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "अपन 6180 एल्बम देखू",
   "Revisit Your Albums": "अपन एल्बम फिर से देखू",
   "We'll email you a one-time code to verify it's really you": "हम अपनके पहचान सत्यापित करए लेल ईमेल द्वारा एक बेर उपयोग होमए वाला कोड भेजब",
-  "We sent a 6-digit code to": "हम 6 अंकक कोड भेजलियै"
+  "We sent a 6-digit code to": "हम 6 अंकक कोड भेजलियै",
+  "Search albums by title or description": "शीर्षक या विवरण सँ एल्बम खोजू",
+  "View Public Profile": "सार्वजनिक प्रोफाइल देखू",
+  "Storage": "भंडारण",
+  "Use the 6180 app to showcase your albums offline": "अपन एल्बम के ऑफलाइन देखावे लेल 6180 एप के इस्तेमाल करू",
+  "Intelligently tagged and beautifully organized": "बुद्धिमानी स टैग कैल गेल अउर सुंदरता स संगठित",
+  "Open On iOS": "iOS मे खोलू",
+  "Open On Android": "Android मे खोलू",
+  "Toggle contacts filter": "संपर्क फिल्टर बदलू",
+  "Showing albums with all selected contacts and tags": "सब चुनल संपर्क आ टैग क साथ एल्बम देखाव",
+  "Showing albums with all selected tags": "सब चुनल टैग क साथ एल्बम देखाव"
 }

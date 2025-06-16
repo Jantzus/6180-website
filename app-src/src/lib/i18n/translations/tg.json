@@ -126,7 +126,6 @@
   "No items to download": "Ягон чиз барои боргирӣ нест",
   "Failed to update album visibility. Please try again.": "Навсозии намоёнии албом ба нокомӣ дучор шуд. Лутфан бори дигар кӯшиш кунед.",
   "You must be logged in to perform this action": "Шумо бояд ворид шавед, то ин амалро иҷро кунед",
-  "Search album title or description": "Ҷустуҷӯи номи албом ё тавсифи он",
   "Enter a password for this album.": "Барои ин албом рамз ворид кунед",
   "Enter password": "Рамзро ворид кунед",
   "Select password restrictions.": "Интихоби маҳдудиятҳои парол.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Дастрасӣ ба 6180 Альбоми Шумо",
   "Revisit Your Albums": "Албомҳоятонро Боз Дидан Кунед",
   "We'll email you a one-time code to verify it's really you": "Барои таҳқиқи ҳақиқат будани шумо код-и якбора истифодабарандаро тавассути почтаи электронӣ ирсол мекунем",
-  "We sent a 6-digit code to": "Мо рамзи 6-рақамӣ фиристодем ба"
+  "We sent a 6-digit code to": "Мо рамзи 6-рақамӣ фиристодем ба",
+  "Search albums by title or description": "Ҷустуҷӯи альбомҳо аз рӯи сарлавҳа ё тавсиф",
+  "View Public Profile": "Дидани Профили Ҷамъиятӣ",
+  "Storage": "Захирагоҳ",
+  "Use the 6180 app to showcase your albums offline": "Барои намоиши албомҳои худ дар ҳолати офлайн барномаи 6180-ро истифода баред",
+  "Intelligently tagged and beautifully organized": "Бо ақл нишонагузорӣ шуда ва зебо мураттаб гардида",
+  "Open On iOS": "Дар iOS Кушодан",
+  "Open On Android": "Дар Android Кушодан",
+  "Toggle contacts filter": "Фильтри тамосҳоро тағйир додан",
+  "Showing albums with all selected contacts and tags": "Нишон додани албомҳо бо ҳамаи тамосҳо ва тегҳои интихобшуда",
+  "Showing albums with all selected tags": "Нишон додани албомҳо бо ҳамаи тегҳои интихобшуда"
 }

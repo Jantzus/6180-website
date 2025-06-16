@@ -126,7 +126,6 @@
   "No items to download": "Kadada barang nang kawa diunduh",
   "Failed to update album visibility. Please try again.": "Gagal maupdate katinggianan album. Silakan cuba pulang.",
   "You must be logged in to perform this action": "Pian harus masuk log hagan manggawi ini",
-  "Search album title or description": "Gagai judul album atawa katarangan",
   "Enter a password for this album.": "Mamasukakan katasandi gasan album ngini",
   "Enter password": "Masukakan katasandi",
   "Select password restrictions.": "Pilihi pambatasan katasundik.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Masuk Kada 6180 Album Pian",
   "Revisit Your Albums": "Kunjungi Balikan Album Pian",
   "We'll email you a one-time code to verify it's really you": "Kami akan mangiring kitu kode nang dipake sikih haja liwat email untuk mastikan kawa bujur-bujur ikam",
-  "We sent a 6-digit code to": "Kami sudah mangiring kode 6 digit ka"
+  "We sent a 6-digit code to": "Kami sudah mangiring kode 6 digit ka",
+  "Search albums by title or description": "Cari album dengan judul atawa katerangan",
+  "View Public Profile": "Unjuk Profil Umum",
+  "Storage": "Panyimpanan",
+  "Use the 6180 app to showcase your albums offline": "Pakek aplikasi 6180 hagan manampakan album pian sacara offline",
+  "Intelligently tagged and beautifully organized": "Ditandai dengan bijak wan diatur dengan baik",
+  "Open On iOS": "Buka Di iOS",
+  "Open On Android": "Buka Di Android",
+  "Toggle contacts filter": "Ganti filter kontak",
+  "Showing albums with all selected contacts and tags": "Manampaiakan album lawan sabarataan kontak wan tag nang dipilih",
+  "Showing albums with all selected tags": "Manampaiakan album lawan sabarataan tag nang dipilih"
 }

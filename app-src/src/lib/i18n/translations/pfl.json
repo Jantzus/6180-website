@@ -126,7 +126,6 @@
   "No items to download": "Nix zum Runnerlade",
   "Failed to update album visibility. Please try again.": "Album-Sichtbarkeit hot net aktualisiert werre kenne. Bitte vasuach nochemol.",
   "You must be logged in to perform this action": "Du musschd oigeloggt soi, um die Agtion ausfieahrn zu kenne",
-  "Search album title or description": "Such Albumtitel odder Beschreibung",
   "Enter a password for this album.": "Geb e Passwort fer des Album oi",
   "Enter password": "Passwort ingeve",
   "Select password restrictions.": "Passwortbeschränkunge auswähle.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Zugriff uf Dei 6180 Alben",
   "Revisit Your Albums": "Dein Albums Nomol Aaluege",
   "We'll email you a one-time code to verify it's really you": "Mir schicke dir ä eimoliger Code iwwer E-Mail fer ze beweise dass du s wireklich bisch",
-  "We sent a 6-digit code to": "Mir hen ä 6-stelliger Code gschickt an"
+  "We sent a 6-digit code to": "Mir hen ä 6-stelliger Code gschickt an",
+  "Search albums by title or description": "Alben nach Titel oder Beschreibung suche",
+  "View Public Profile": "Öffentlich Profil Aaluege",
+  "Storage": "Speicher",
+  "Use the 6180 app to showcase your albums offline": "Benutz die 6180 App fer deini Albe offline zu zeige",
+  "Intelligently tagged and beautifully organized": "Intelligent markiert un schee organisiert",
+  "Open On iOS": "Uf iOS Uffmache",
+  "Open On Android": "Uf Android Uffmache",
+  "Toggle contacts filter": "Kontakt Filter umschalte",
+  "Showing albums with all selected contacts and tags": "Zeigt Alben mit alle gwehlte Kontakte un Tags",
+  "Showing albums with all selected tags": "Zeigt Alben mit alle gwehlte Tags"
 }

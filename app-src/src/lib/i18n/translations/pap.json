@@ -126,7 +126,6 @@
   "No items to download": "No tin item pa download",
   "Failed to update album visibility. Please try again.": "No por a aktualisá e bisibildiat di album. Por fabor purba atrobe.",
   "You must be logged in to perform this action": "Mester drenta pa por hasi e aksion aki",
-  "Search album title or description": "Busca título di album òf deskripshon",
   "Enter a password for this album.": "Yena un password pa e album aki",
   "Enter password": "Drenta password",
   "Select password restrictions.": "Skohe e restrikshonnan di password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Akses na Bo 6180 Albums",
   "Revisit Your Albums": "Bishita Bo Albums Otra Bes",
   "We'll email you a one-time code to verify it's really you": "Nos lo manda bo un kódigo ku ta usa un biaha so pa e-mail pa verifiká ku bo ta berdaderamente bo",
-  "We sent a 6-digit code to": "Nos a manda un kódigo di 6 sifra na"
+  "We sent a 6-digit code to": "Nos a manda un kódigo di 6 sifra na",
+  "Search albums by title or description": "Buska album segun titulo o deskripshon",
+  "View Public Profile": "Mira Profil Publiko",
+  "Storage": "Depot",
+  "Use the 6180 app to showcase your albums offline": "Usa e app 6180 pa mustra bo album-nan offline",
+  "Intelligently tagged and beautifully organized": "Inteligentemente marca y organisa hermosamente",
+  "Open On iOS": "Habri Na iOS",
+  "Open On Android": "Habri Na Android",
+  "Toggle contacts filter": "Kambio e filtro di kontakto",
+  "Showing albums with all selected contacts and tags": "Ta mustra album ku tur kontakto i tag skohi",
+  "Showing albums with all selected tags": "Ta mustra album ku tur tag skohi"
 }

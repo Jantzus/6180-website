@@ -126,7 +126,6 @@
   "No items to download": "Nema stavki za preuzimanje",
   "Failed to update album visibility. Please try again.": "Neuspjelo ažuriranje vidljivosti albuma. Molimo pokušajte ponovno.",
   "You must be logged in to perform this action": "Morate biti prijavljeni da biste izvršili ovu radnju",
-  "Search album title or description": "Pretraži naslov albuma ili opis",
   "Enter a password for this album.": "Unesite lozinku za ovaj album",
   "Enter password": "Unesite lozinku",
   "Select password restrictions.": "Odaberite ograničenja lozinke.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Pristupite Svojim 6180 Albumima",
   "Revisit Your Albums": "Ponovo Posjetite Svoje Albume",
   "We'll email you a one-time code to verify it's really you": "Poslat ćemo vam jednokratnu šifru putem e-pošte kako bismo potvrdili da ste to stvarno vi",
-  "We sent a 6-digit code to": "Poslali smo 6-znamenkasti kod na"
+  "We sent a 6-digit code to": "Poslali smo 6-znamenkasti kod na",
+  "Search albums by title or description": "Pretraži albume po naslovu ili opisu",
+  "View Public Profile": "Prikaži Javni Profil",
+  "Storage": "Skladištenje",
+  "Use the 6180 app to showcase your albums offline": "Koristite 6180 aplikaciju za prikaz vaših albuma offline",
+  "Intelligently tagged and beautifully organized": "Inteligentno označene i lijepo organizirane",
+  "Open On iOS": "Otvori Na iOS",
+  "Open On Android": "Otvori Na Android",
+  "Toggle contacts filter": "Prebaci filtar kontakata",
+  "Showing albums with all selected contacts and tags": "Prikazuje albume sa svim odabranim kontaktima i oznakama",
+  "Showing albums with all selected tags": "Prikazuje albume sa svim odabranim oznakama"
 }

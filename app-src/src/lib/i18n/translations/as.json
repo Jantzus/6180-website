@@ -126,7 +126,6 @@
   "No items to download": "ডাউনলোড কৰিবলৈ কোনো বস্তু নাই",
   "Failed to update album visibility. Please try again.": "এলবাম দৃশ্যমানতা আপডেট কৰিবলৈ ব্যৰ্থ। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
   "You must be logged in to perform this action": "এই কাৰ্য কৰিবলৈ আপুনি লগ ইন কৰিব লাগিব",
-  "Search album title or description": "এলবাম শিৰোনাম বা বিৱৰণ সন্ধান কৰক",
   "Enter a password for this album.": "এই এলবামৰ বাবে পাছৱৰ্ড দিয়ক",
   "Enter password": "পাছৱৰ্ড দিয়ক",
   "Select password restrictions.": "পাছৱাৰ্ড সীমাবদ্ধতা নিৰ্বাচন কৰক।",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "আপোনাৰ 6180 এলবাম দেখক",
   "Revisit Your Albums": "আপোনাৰ এলবামবোৰ পুনৰ চাওক",
   "We'll email you a one-time code to verify it's really you": "আমি আপোনাৰ পৰিচয় প্ৰমাণিত কৰিবলৈ ইমেইলৰ জৰিয়তে এবাৰ ব্যৱহাৰৰ কোড পঠিয়াম",
-  "We sent a 6-digit code to": "আমি ৬ সংখ্যাৰ কোড পঠিয়াইছো"
+  "We sent a 6-digit code to": "আমি ৬ সংখ্যাৰ কোড পঠিয়াইছো",
+  "Search albums by title or description": "শিৰোনাম বা বিৱৰণ অনুসৰি এলবাম বিচাৰক",
+  "View Public Profile": "সৰ্বজনীন প্ৰফাইল চাওক",
+  "Storage": "সংৰক্ষণ",
+  "Use the 6180 app to showcase your albums offline": "আপোনাৰ এলবামসমূহ অফলাইনত প্ৰদৰ্শন কৰিবলৈ 6180 এপ্প ব্যৱহাৰ কৰক",
+  "Intelligently tagged and beautifully organized": "বুদ্ধিমত্তাৰে টেগ কৰা আৰু সুন্দৰভাৱে সংগঠিত",
+  "Open On iOS": "iOS ত খোলক",
+  "Open On Android": "Android ত খোলক",
+  "Toggle contacts filter": "যোগাযোগ ফিল্টাৰ পৰিৱৰ্তন কৰক",
+  "Showing albums with all selected contacts and tags": "সকলো নিৰ্বাচিত যোগাযোগ আৰু টেগৰ সৈতে এলবাম দেখুৱাইছে",
+  "Showing albums with all selected tags": "সকলো নিৰ্বাচিত টেগৰ সৈতে এলবাম দেখুৱাইছে"
 }

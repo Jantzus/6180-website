@@ -126,7 +126,6 @@
   "No items to download": "ᓂᑲᒧᐧᐃᓐ ᐊᓯᔭᐸᑎᑲᑌᐤ",
   "Failed to update album visibility. Please try again.": "ᑲᐎᓐ ᑭ ᓇᓂᑐᐤ ᓂᑲᒧᐧᐃᓂᓇᐦ ᑲ ᓇᑲᓂᑲᑌᒃ᙮ ᑭ ᓇᓐᑐᑎᓐ, ᐊᓱ ᐧᐄ ᒥᓇ ᑯᒋᑕ᙮",
   "You must be logged in to perform this action": "ᐴᐦᑕᐃᐧᓐ ᐅᐦᒋ ᐆᒪ ᐁᐃᐧ ᑐᑕᒪᓐ",
-  "Search album title or description": "ᓂᑲᒧᐧᐃᓐ ᐁᑲᐧᐊᐸᑕᒪᓐ ᓇᒪᐤ ᐁᒪᓯᓇᑌᐠ",
   "Enter a password for this album.": "ᐊᔅᐹᐦᐃᑲᓐ ᐊᓯᓇᐦᐊᒻ ᐆᒪ ᓂᑲᒧᐧᐃᓐ",
   "Enter password": "ᐱᑖᐦᑭᐦᐊᐤ ᑳᐸᔥᑎᓂᑫᐎᐣ",
   "Select password restrictions.": "ᓃᐢᑕᐤ ᑲᒋᑎᓂᑫᐏᐣ ᐊᒋᐢᑕᓂᑫᐏᓇ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ᐱᓂᑐᑲᐧᐣ 6180 ᒪᓯᓇᐦᐃᑲᓇ",
   "Revisit Your Albums": "ᑭᓇᐸᓯᐧᓄᐣ ᐁᐸᓯᑐᓀᔨᐠ",
   "We'll email you a one-time code to verify it's really you": "ᓂᑲᒥᐣ ᑫ ᐃᔑᓇᒋᑲᑌᐠ ᒥᓇ ᐯᔭᐠ ᑲᔅᑭᐦᑌᐱᓇᐠ ᐁᐦᒋᐱᓄᓈᓇᐘᐠ ᓂᓄᑐᓂᑲᒧᐃᓇᐣ ᐱᔦᔭᐠ ᐁᐦᒋᐅᒋᓇᒪᐠ",
-  "We sent a 6-digit code to": "ᓂᑕᐦᒋᓀᐣ ᖿᐊᓂᐣ ᒥᐢᑲᐦᐃᑲᐣ ᒥᓇ ᐱᔭᐠ ᐁᐦᒋᐅᒋᓇᒪᐠ"
+  "We sent a 6-digit code to": "ᓂᑕᐦᒋᓀᐣ ᖿᐊᓂᐣ ᒥᐢᑲᐦᐃᑲᐣ ᒥᓇ ᐱᔭᐠ ᐁᐦᒋᐅᒋᓇᒪᐠ",
+  "Search albums by title or description": "ᐃᑭᑦᐃᐧᓐ ᐸᐦᑭᒋᑭᐧᓐ ᑭᓄᐧᐊᐤ ᒪᓄᔮᐧᓂ ᒪᐧᒋᒋᐃᐧᓇ",
+  "View Public Profile": "ᑭᔭᐱᒃ ᓇᑯᓇᐸᒼ ᒥᑯᔅᑲᒥᓐ",
+  "Storage": "ᐊᐦᑯᐧᐃᐧᐣ",
+  "Use the 6180 app to showcase your albums offline": "6180 ᐊᐱᔨᐦᑭᐟ ᐊᐱᑕ ᑭᔮᐤ ᐊᓚᐸᒧᐤ ᐅᑕᐸᔨᒧᐤ ᓇᒪᐤ ᒣᑎᐍᐃᐦᒡ",
+  "Intelligently tagged and beautifully organized": "ᒥᓂᔨᐅᐃᐧᓇᐣ ᐊᐦᑭᐁᐧᐃᐧᓇᐣ ᐊᑭᐧ ᐱᔪᐊᑲᒥᔅᑯᓇᐣ ᑭᓄᑕᐢᑭᐊᓱᐣ",
+  "Open On iOS": "iOS ᐅᐦᐱᑲᑌ",
+  "Open On Android": "Android ᐅᐦᐱᑲᑌ",
+  "Toggle contacts filter": "ᑭᑕᐦᓯᓇᐤ ᓇᑯᐧᐃᐧᐣ",
+  "Showing albums with all selected contacts and tags": "ᐁᑕᐱᒋᓇᓂᐧᐊᐠ ᐁᐃᐧᑭᑑᐦᒋᓇᓂᐧᐊᐠ ᒪᐢᐱᑐᓂᑲᐣ",
+  "Showing albums with all selected tags": "ᐁᑕᐱᒋᓇᓂᐧᐊᐠ ᒪᐢᐱᑐᓂᑲᐣ"
 }

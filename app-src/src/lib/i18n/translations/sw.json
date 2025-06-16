@@ -126,7 +126,6 @@
   "No items to download": "Hakuna vipengee vya kupakua",
   "Failed to update album visibility. Please try again.": "Imeshindwa kusasisha mwonekano wa albamu. Tafadhali jaribu tena.",
   "You must be logged in to perform this action": "Lazima uwe umejiandikisha ili kufanya kitendo hiki",
-  "Search album title or description": "Tafuta jina la albamu au maelezo",
   "Enter a password for this album.": "Ingiza nenosiri kwa hii albamu",
   "Enter password": "Ingiza nenosiri",
   "Select password restrictions.": "Chagua vizuizi vya nenosiri.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Fikia 6180 Albums Zako",
   "Revisit Your Albums": "Tembelea Tena Maalbamu Yako",
   "We'll email you a one-time code to verify it's really you": "Tutatuma nambari ya matumizi ya mara moja kupitia barua pepe ili kuthibitisha kwamba ni wewe kweli",
-  "We sent a 6-digit code to": "Tulituma nambari ya tarakimu sita kwa"
+  "We sent a 6-digit code to": "Tulituma nambari ya tarakimu sita kwa",
+  "Search albums by title or description": "Tafuta albamu kwa kichwa au maelezo",
+  "View Public Profile": "Ona Wasifu wa Umma",
+  "Storage": "Hifadhi",
+  "Use the 6180 app to showcase your albums offline": "Tumia programu ya 6180 kuonyesha maalamu yako nje ya mtandao",
+  "Intelligently tagged and beautifully organized": "Zimewekwa alama kwa akili na kupangwa vizuri",
+  "Open On iOS": "Fungua Kwenye iOS",
+  "Open On Android": "Fungua Kwenye Android",
+  "Toggle contacts filter": "Badilisha kichujio cha anwani",
+  "Showing albums with all selected contacts and tags": "Kuonyesha albamu zenye anwani na lebo zote zilizochaguliwa",
+  "Showing albums with all selected tags": "Kuonyesha albamu zenye lebo zote zilizochaguliwa"
 }

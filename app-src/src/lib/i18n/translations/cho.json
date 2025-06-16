@@ -126,7 +126,6 @@
   "No items to download": "Nana aholhtina isht akopula",
   "Failed to update album visibility. Please try again.": "Album otwayachi asilhha fehna. Himak foki hosh akinlih ish pisa.",
   "You must be logged in to perform this action": "Ish toksali ish pilashke chi login ish toksalashke",
-  "Search album title or description": "Album hochifo himmaka anumpa itim anukfilli imahoyo",
   "Enter a password for this album.": "Album ilappat password chi foki",
   "Enter password": "Password chi foki",
   "Select password restrictions.": "Password restrictions select ish.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Ish 6180 Albums Pisah",
   "Revisit Your Albums": "Chi Album Aiokpulo Pisalit",
   "We'll email you a one-time code to verify it's really you": "Chim email yosh ish code achukma nanta chi holisso pila ak osh ish yoshubli hoke",
-  "We sent a 6-digit code to": "Chim hannali tok code pila ak osh"
+  "We sent a 6-digit code to": "Chim hannali tok code pila ak osh",
+  "Search albums by title or description": "Album holisso ahayuchi achafa keyukmut anumpa tikba",
+  "View Public Profile": "Okla Im Anumpa Holisso Pisa",
+  "Storage": "Tanchi",
+  "Use the 6180 app to showcase your albums offline": "6180 app ish atokowashke chi albumholitompa ik nan atok",
+  "Intelligently tagged and beautifully organized": "Akostininchi isht takalichi micha nakfish aiasha",
+  "Open On iOS": "iOS Pakvli",
+  "Open On Android": "Android Pakvli",
+  "Toggle contacts filter": "Kontakt ikba chumpa im anukfilla",
+  "Showing albums with all selected contacts and tags": "Album ik chitolit kontakt putta tag aiokpachi atokolit im anoli",
+  "Showing albums with all selected tags": "Album ik chitolit tag aiokpachi atokolit im anoli"
 }

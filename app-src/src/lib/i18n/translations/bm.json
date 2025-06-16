@@ -126,7 +126,6 @@
   "No items to download": "Foyi tɛ yan ka lajɛ",
   "Failed to update album visibility. Please try again.": "A ma se ka ɔrɔmu jirali ɲɛnabɔ kura. I ny'a nyini, a kɛ kokura.",
   "You must be logged in to perform this action": "I ka kan don ka nin baara kɛ",
-  "Search album title or description": "Ɔrɔmu tɔgɔ walima ɲɛfɔli ɲini",
   "Enter a password for this album.": "Ka donko i ka tɛmɛsira don nin ɔrɔmu kama",
   "Enter password": "Donnin tigɛ lafoli",
   "Select password restrictions.": "Aw ka tɛmɛsira dansira sugandiyaw ɲɛnabɔ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Soro Ka 6180 Album",
   "Revisit Your Albums": "I Ka Albumu Segin Lajɛ",
   "We'll email you a one-time code to verify it's really you": "An bɛna kode kelen bi ci i ma imɛli la walasa ka i dɔn ko i ye i de ye",
-  "We sent a 6-digit code to": "An ye kode 6 fila ci"
+  "We sent a 6-digit code to": "An ye kode 6 fila ci",
+  "Search albums by title or description": "Aw ye albɔmu ɲini tɔgɔ walima aw kɔlɔsili kɔ",
+  "View Public Profile": "Fɛn Profili Foroba Ye",
+  "Storage": "Marayasun",
+  "Use the 6180 app to showcase your albums offline": "Baara ni 6180 app ye walasa ka i ka album-w jira offline",
+  "Intelligently tagged and beautifully organized": "Ka kɛ ni hakili ye ani ka ɲɔgɔn kɛ cɛɲɛ la",
+  "Open On iOS": "Da Wuli iOS Kan",
+  "Open On Android": "Da Wuli Android Kan",
+  "Toggle contacts filter": "Ka jɛgɛn",
+  "Showing albums with all selected contacts and tags": "Ka jirali sɛbɛnni ni taamasiyɛn bɛɛ ye",
+  "Showing albums with all selected tags": "Ka jirali taamasiyɛn bɛɛ ye"
 }

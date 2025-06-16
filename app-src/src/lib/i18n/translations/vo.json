@@ -126,7 +126,6 @@
   "No items to download": "Nos binon ad nüdönalödön",
   "Failed to update album visibility. Please try again.": "No eplöpos ad nufodön logovi lalbümas. Steifülolös dönu.",
   "You must be logged in to perform this action": "Mutol nunädön ad dunön atosi",
-  "Search album title or description": "Sukön tiädi e laibüma u bepenami",
   "Enter a password for this album.": "Penolös letavödi pro laibüm at",
   "Enter password": "Nüpenolöd penädön",
   "Select password restrictions.": "Välolös mifavödatagami.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Dagetön oli 6180 Albums olik",
   "Revisit Your Albums": "Visitolöd Albumis Olik Dönu",
   "We'll email you a one-time code to verify it's really you": "Obsendobs ole kodi balid te sölo bai nelekot ad kontrolön, das ol binol te ol",
-  "We sent a 6-digit code to": "Obsendobs kodi cifik mälid al"
+  "We sent a 6-digit code to": "Obsendobs kodi cifik mälid al",
+  "Search albums by title or description": "Sukön laibümi tefü titul u bepenam",
+  "View Public Profile": "Logön Profili Valik",
+  "Storage": "Kipladöp",
+  "Use the 6180 app to showcase your albums offline": "Gebolöd nuni 6180 ad ojonön oli laibümis labüo nätanunäd",
+  "Intelligently tagged and beautifully organized": "Pukovik palöfon e jönik pepödon",
+  "Open On iOS": "Kiplöpön Su iOS",
+  "Open On Android": "Kiplöpön Su Android",
+  "Toggle contacts filter": "Votükön kontakans filoti",
+  "Showing albums with all selected contacts and tags": "Jonön lalbumis labü oms kobädöl kontakans e tägüls",
+  "Showing albums with all selected tags": "Jonön lalbumis labü oms kobädöl tägüls"
 }

@@ -126,7 +126,6 @@
   "No items to download": "अवरोपणाय न किमपि अस्ति",
   "Failed to update album visibility. Please try again.": "सङ्गीतसङ्ग्रहस्य दृश्यतायाः नवीकरणम् अफलम् । कृपया पुनः प्रयतताम् ।",
   "You must be logged in to perform this action": "इदं कर्म कर्तुं त्वम् प्रविशितुम् अर्हसि",
-  "Search album title or description": "गीतसङ्ग्रहस्य शीर्षकं विवरणं वा अन्विष्यतु",
   "Enter a password for this album.": "अस्य गीतसङ्ग्रहस्य कृते सङ्केतपदं लिखतु",
   "Enter password": "सङ्केतशब्दः प्रविष्टं कुरु",
   "Select password restrictions.": "संकेतशब्दनियमानि चयतु।",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "तव 6180 संग्रहाणां प्रवेशः",
   "Revisit Your Albums": "स्वकीयान् आल्बम् पुनः पश्यतु",
   "We'll email you a one-time code to verify it's really you": "वयं भवतः पहिचानस्य प्रामाणिकतायै विद्युत्पत्रेण एकवारप्रयोजनीयं गुप्तसंकेतं प्रेषयिष्यामः",
-  "We sent a 6-digit code to": "वयं षड्ङ्कैः गुप्तसंकेतं प्रैषम"
+  "We sent a 6-digit code to": "वयं षड्ङ्कैः गुप्तसंकेतं प्रैषम",
+  "Search albums by title or description": "शीर्षकेन वा वर्णनेन वा गीतसङ्ग्रहाणि अन्विष्यन्ताम्",
+  "View Public Profile": "सार्वजनिकं रूपरेखां पश्यतु",
+  "Storage": "संग्रहणम्",
+  "Use the 6180 app to showcase your albums offline": "स्वकीयान् गीतसङ्ग्रहान् निर्जालरूपेण प्रदर्शयितुं ६१८० अनुप्रयोगस्य उपयोगं कुरुत",
+  "Intelligently tagged and beautifully organized": "बुद्धिमत्ता सङ्केतितानि सुन्दरं च व्यवस्थितानि",
+  "Open On iOS": "iOS मध्ये खोल",
+  "Open On Android": "Android मध्ये खोल",
+  "Toggle contacts filter": "सम्पर्क निस्यन्दकं परिवर्तयतु",
+  "Showing albums with all selected contacts and tags": "सर्वेषु चयनितेषु सम्पर्केषु चिह्नकेषु च छायाचित्र-संग्रहान् दर्शयति",
+  "Showing albums with all selected tags": "सर्वेषु चयनितेषु चिह्नकेषु छायाचित्र-संग्रहान् दर्शयति"
 }

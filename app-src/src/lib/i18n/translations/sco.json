@@ -126,7 +126,6 @@
   "No items to download": "Nae items tae doonload",
   "Failed to update album visibility. Please try again.": "Failed tae update album veesibility. Please try again.",
   "You must be logged in to perform this action": "Ye maun be loggit in tae perform this action",
-  "Search album title or description": "Sairch album title or description",
   "Enter a password for this album.": "Enter a password fur this album",
   "Enter password": "Enter passwird",
   "Select password restrictions.": "Select passwird restrictions.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Access Yer 6180 Albums",
   "Revisit Your Albums": "Veesit Yer Albums Again",
   "We'll email you a one-time code to verify it's really you": "We'll send ye a ance-uised code bi email tae verify that it's really ye",
-  "We sent a 6-digit code to": "We sent a 6-digit code tae"
+  "We sent a 6-digit code to": "We sent a 6-digit code tae",
+  "Search albums by title or description": "Sairch albums bi title or descriptioun",
+  "View Public Profile": "See Public Profile",
+  "Storage": "Storage",
+  "Use the 6180 app to showcase your albums offline": "Uise the 6180 app tae shaw yer albums affline",
+  "Intelligently tagged and beautifully organized": "Cleverly tagged an bonnie organised",
+  "Open On iOS": "Open On iOS",
+  "Open On Android": "Open On Android",
+  "Toggle contacts filter": "Chynge contact filter",
+  "Showing albums with all selected contacts and tags": "Shaw albums wi aw the selectit contacts an tags",
+  "Showing albums with all selected tags": "Shaw albums wi aw the selectit tags"
 }

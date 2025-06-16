@@ -126,7 +126,6 @@
   "No items to download": "Mò yiù-muk khi̍p-sông",
   "Failed to update album visibility. Please try again.": "Kiên-sîn sióng-chṳk khó-kiên-sṳ̀n-chhṳ pó-sit. Chhiáng chai chhì-khoán.",
   "You must be logged in to perform this action": "Ngì pit-sû tên-ngi̍p chhai-nèn chṳ́n-hàng ke chhâ-chok",
-  "Search album title or description": "搜尋相簿標題或描述",
   "Enter a password for this album.": "Sṳ̍p-ngi̍p me̍t-ma̍ khon chhâ sióng-chṳk",
   "Enter password": "Sṳ-ngi̍p me̍t-mâ",
   "Select password restrictions.": "Sién-fa me̍t-ma̍ han-chṳ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "訪問汝嘅6180隻專輯",
   "Revisit Your Albums": "重新看下你嘅相簿",
   "We'll email you a one-time code to verify it's really you": "𠊎兜會用電子郵件寄分汝一擺用個驗證碼，來驗證汝個身份",
-  "We sent a 6-digit code to": "𠊎兜發送一隻6位數个代碼到"
+  "We sent a 6-digit code to": "𠊎兜發送一隻6位數个代碼到",
+  "Search albums by title or description": "Yung pâu-thì fe mô-su lòi chháu sióng-chṳk",
+  "View Public Profile": "看公共個人檔案",
+  "Storage": "存儲",
+  "Use the 6180 app to showcase your albums offline": "Yung 6180 ứng-yung lòi tién-sṳ ngì ke sióng-chṳk mò mióng-lò ke sṳ-heu",
+  "Intelligently tagged and beautifully organized": "Thúng-mìn-ke piau-ki lâu mî-lì-ke tsû-chṳt",
+  "Open On iOS": "響iOS開啟",
+  "Open On Android": "響Android開啟",
+  "Toggle contacts filter": "Sṳ̂n-fòng lièn-lo̍k-ngìn kói-se",
+  "Showing albums with all selected contacts and tags": "Hién-sṳ包含全部所選聯繫人kap tiáu-phiêu kì sióng-chṳk",
+  "Showing albums with all selected tags": "Hién-sṳ包含全部所選tiáu-phiêu kì sióng-chṳk"
 }

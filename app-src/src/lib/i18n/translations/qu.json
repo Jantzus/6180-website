@@ -126,7 +126,6 @@
   "No items to download": "Mana mayqin kaqpas urayachinapaq",
   "Failed to update album visibility. Please try again.": "Album qhawasqa kayta musuqchayta mana atirqanchu. Ama hina kaspa, huk kutita yanapaway.",
   "You must be logged in to perform this action": "Kay ruranaykipaqqa qallariy ruwaqmi kanayki tiyan",
-  "Search album title or description": "Album sutinta utaq willayninta maskay",
   "Enter a password for this album.": "Kay albumman yaykuy niykichapaq pakasqa rimata qillqay",
   "Enter password": "Yaykuna rimata qillqay",
   "Select password restrictions.": "Kichkay pakasqa rimata akllana.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Albumniykiman Yaykuy",
   "Revisit Your Albums": "Iskaynintin Albun-kunata Rikunki",
   "We'll email you a one-time code to verify it's really you": "Huk kuti llank'anapaq k'askaqta qillqana p'anqawan apachisayki chiqap qamchu kasqaykita yachanapaq",
-  "We sent a 6-digit code to": "Suqta yupaynayuq k'askaqta apachirqani"
+  "We sent a 6-digit code to": "Suqta yupaynayuq k'askaqta apachirqani",
+  "Search albums by title or description": "Suti otaq willakuywan ima albumkunata maskay",
+  "View Public Profile": "Llaqtaq Kaqninta Qawapay",
+  "Storage": "Waqaychana",
+  "Use the 6180 app to showcase your albums offline": "6180 aplicacionta llamk'achiy albumniykikuna mana internetwan rikuchinaykipaq",
+  "Intelligently tagged and beautifully organized": "Yuyaysapa sutichisqa hinaspa sumaq wakichasqa",
+  "Open On iOS": "iOS-pi Kichay",
+  "Open On Android": "Android-pi Kichay",
+  "Toggle contacts filter": "Rimaynakuna filtruta t'ikray",
+  "Showing albums with all selected contacts and tags": "Tukuy akllasqa rimanakuykuna chaymanta unanchakunawan albumkunata rikuchispa",
+  "Showing albums with all selected tags": "Tukuy akllasqa unanchakunawan albumkunata rikuchispa"
 }

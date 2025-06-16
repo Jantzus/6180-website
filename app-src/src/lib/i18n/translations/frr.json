@@ -126,7 +126,6 @@
   "No items to download": "Nian datein tu deelloudin",
   "Failed to update album visibility. Please try again.": "Albumsachtbarkaid küd ei aktualisiaret wurd. Fersjük det noch ans.",
   "You must be logged in to perform this action": "Do skel uunmeldet wees, am detdiar aksjuun ütjtufeeren",
-  "Search album title or description": "Albumtitel of beskriiwang schük",
   "Enter a password for this album.": "Dü en Paaswurd för diar Album iin",
   "Enter password": "Passwurd inföören",
   "Select password restrictions.": "Paaswurd-begränsinge ütjwääle.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Tuagung tu diin 6180 Albem",
   "Revisit Your Albums": "Besek Diin Albums Weer",
   "We'll email you a one-time code to verify it's really you": "Wi schik di en ian-mool-kode auer e-mail am tu bewiise dat dü det wiirkelk bast",
-  "We sent a 6-digit code to": "Wi haa en 6-stelig kode schikt tu"
+  "We sent a 6-digit code to": "Wi haa en 6-stelig kode schikt tu",
+  "Search albums by title or description": "Alben nach Titel of Beskreewang söke",
+  "View Public Profile": "Öffentlik Profil Wise",
+  "Storage": "Spiiker",
+  "Use the 6180 app to showcase your albums offline": "Brük det 6180-program för dien album offline wis",
+  "Intelligently tagged and beautifully organized": "Intelligent markiard en smook organisiard",
+  "Open On iOS": "Uun iOS Aap Maage",
+  "Open On Android": "Uun Android Aap Maage",
+  "Toggle contacts filter": "Kontakt-Filter wisel",
+  "Showing albums with all selected contacts and tags": "Wiset Albume mä aal ütwäälde Kontakte an Tags",
+  "Showing albums with all selected tags": "Wiset Albume mä aal ütwäälde Tags"
 }

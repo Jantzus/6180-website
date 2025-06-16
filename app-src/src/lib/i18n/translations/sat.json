@@ -126,7 +126,6 @@
   "No items to download": "ᱰᱟᱣᱱᱞᱚᱰ ᱞᱟᱹᱜᱤᱫ ᱡᱤᱱᱤᱥ ᱵᱟᱹᱱᱩᱜ-ᱟ",
   "Failed to update album visibility. Please try again.": "ᱟᱞᱵᱟᱢ ᱧᱮᱞᱚᱜ ᱨᱮᱭᱟᱜ ᱦᱟᱹᱞᱤᱭᱟᱹᱠ ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱᱟ᱾ ᱫᱟᱭᱟᱠᱟᱛᱮ ᱫᱩᱦᱲᱟᱹ ᱪᱮᱥᱴᱟᱭ ᱢᱮ᱾",
   "You must be logged in to perform this action": "ᱱᱚᱶᱟ ᱠᱟᱹᱢᱤ ᱞᱟᱹᱜᱤᱫ ᱟᱢ ᱞᱳᱜᱽ ᱤᱱ ᱛᱟᱦᱮᱱ ᱢᱟ",
-  "Search album title or description": "ᱟᱞᱵᱟᱢ ᱧᱩᱛᱩᱢ ᱟᱨᱵᱟᱝ ᱵᱤᱵᱨᱚᱬ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ",
   "Enter a password for this album.": "ᱱᱚᱶᱟ ᱟᱞᱵᱟᱢ ᱞᱟᱹᱜᱤᱫ ᱯᱟᱥᱥᱣᱟᱨᱰ ᱮᱢ ᱢᱮ",
   "Enter password": "ᱫᱟᱱᱟᱝ ᱨᱳᱲ ᱟᱫᱮᱨᱢᱮ",
   "Select password restrictions.": "ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫ ᱵᱟᱫᱷᱟ ᱠᱚ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ᱟᱢᱟᱜ 6180 ᱮᱞᱵᱟᱢ ᱧᱮᱞ ᱢᱮ",
   "Revisit Your Albums": "ᱟᱢᱟᱜ ᱚᱞᱵᱚᱢ ᱠᱚ ᱫᱚᱦᱲᱟ ᱧᱮᱞ ᱢᱮ",
   "We'll email you a one-time code to verify it's really you": "ᱟᱢᱟᱜ ᱪᱤᱱᱦᱟᱹ ᱨᱮᱭᱟᱲ ᱞᱟᱹᱜᱤᱫ ᱟᱞᱮ ᱤᱢᱮᱞ ᱛᱮ ᱢᱤᱫ ᱫᱷᱟᱣ ᱵᱮᱵᱷᱟᱨ ᱠᱚᱰ ᱞᱮ ᱠᱩᱞᱟᱹᱭᱟᱹ",
-  "We sent a 6-digit code to": "ᱟᱞᱮ ᱛᱩᱨᱩᱭ ᱮᱞᱮᱞ ᱠᱚᱰ ᱠᱩᱞ ᱞᱮᱫᱟ"
+  "We sent a 6-digit code to": "ᱟᱞᱮ ᱛᱩᱨᱩᱭ ᱮᱞᱮᱞ ᱠᱚᱰ ᱠᱩᱞ ᱞᱮᱫᱟ",
+  "Search albums by title or description": "ᱧᱩᱛᱩᱢ ᱨᱮᱦᱚᱸ ᱵᱤᱵᱨᱚᱬ ᱛᱮ ᱟᱞᱵᱟᱢ ᱯᱟᱱᱛᱮ ᱢᱮ",
+  "View Public Profile": "ᱥᱟᱫᱷᱟᱨᱚᱱ ᱢᱮᱱᱮᱛ ᱧᱮᱞ ᱢᱮ",
+  "Storage": "ᱫᱚᱦᱚ ᱠᱟᱱᱟ",
+  "Use the 6180 app to showcase your albums offline": "ᱟᱢᱟᱜ ᱞᱮᱵᱟᱢ ᱚᱯᱷᱞᱟᱭᱤᱱ ᱫᱮᱠᱦᱟᱣ ᱞᱟᱹᱜᱤᱫ 6180 ᱟᱯ ᱵᱮᱣᱦᱟᱨ ᱢᱮ",
+  "Intelligently tagged and beautifully organized": "ᱵᱤᱱᱛᱤ ᱜᱟᱱ ᱞᱮᱵᱮᱞ ᱟᱨ ᱥᱟᱨᱦᱟᱣ ᱞᱮᱠᱟ ᱛᱮ ᱦᱟᱛᱟᱣ",
+  "Open On iOS": "iOS ᱨᱮ ᱠᱷᱩᱞᱟᱹᱢᱮ",
+  "Open On Android": "Android ᱨᱮ ᱠᱷᱩᱞᱟᱹᱢᱮ",
+  "Toggle contacts filter": "ᱠᱚᱱᱴᱟᱠᱴ ᱯᱷᱤᱞᱴᱟᱨ ᱵᱚᱫᱚᱞ ᱢᱮ",
+  "Showing albums with all selected contacts and tags": "ᱯᱟᱱᱛᱮ ᱮᱰ ᱠᱚᱱᱴᱟᱠᱴ ᱟᱨ ᱴᱮᱜᱽ ᱮᱢ ᱟᱞᱵᱟᱢ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱮᱫᱟ",
+  "Showing albums with all selected tags": "ᱯᱟᱱᱛᱮ ᱮᱰ ᱴᱮᱜᱽ ᱮᱢ ᱟᱞᱵᱟᱢ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱮᱫᱟ"
 }

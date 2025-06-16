@@ -126,7 +126,6 @@
   "No items to download": "Download na gita jachok dongja",
   "Failed to update album visibility. Please try again.": "Album nina dongmitingo dakgipaaniko kora hamjaha. Apsan sia'",
   "You must be logged in to perform this action": "Noko kam ka·na darang nangni login ong·na nanggipa",
-  "Search album title or description": "Album bimung ba description nam",
   "Enter a password for this album.": "Album ona password dakbo",
   "Enter password": "Password ra'bao",
   "Select password restrictions.": "Password restrictions batchina.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Nga 6180 Albums anga nanga",
   "Revisit Your Albums": "Nangni album dur chibakna",
   "We'll email you a one-time code to verify it's really you": "Amen mõ nã kod hõjãi mõte mõ email da phareya kaniyeyakanaini",
-  "We sent a 6-digit code to": "Amen mõ turuy ango kod sitarenteyõt"
+  "We sent a 6-digit code to": "Amen mõ turuy ango kod sitarenteyõt",
+  "Search albums by title or description": "Muchondong bad udar sãsãna kaba album",
+  "View Public Profile": "Aam profail rangna",
+  "Storage": "Thap gachina",
+  "Use the 6180 app to showcase your albums offline": "Apang album jõ offline uyui gõrõng mãsãre 6180 app ma rẽ kayo",
+  "Intelligently tagged and beautifully organized": "Budi gõrõng tag kõ tui nongo rẽ jyãmi wayã urag nõ behe",
+  "Open On iOS": "iOS mande onen",
+  "Open On Android": "Android mande onen",
+  "Toggle contacts filter": "Kontak filter bodol",
+  "Showing albums with all selected contacts and tags": "Dakha album gapa manirang contact aro tag manbo sange",
+  "Showing albums with all selected tags": "Dakha album gapa manirang tag manbo sange"
 }

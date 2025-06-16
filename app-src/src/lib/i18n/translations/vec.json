@@ -126,7 +126,6 @@
   "No items to download": "Nisun elemento da descargàr",
   "Failed to update album visibility. Please try again.": "No go podesto ajornare ła vixibiłità de l'album. Par piaxere, próa de nóvo.",
   "You must be logged in to perform this action": "Te ghè da èsar coneso par far sta azion",
-  "Search album title or description": "Serca el titolo o la descrision de l'album",
   "Enter a password for this album.": "Inserissi na password par sto album",
   "Enter password": "Inserissi ła password",
   "Select password restrictions.": "Selesiona łe riestrision de ła password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accedi ai To 6180 Album",
   "Revisit Your Albums": "Rivarda I Tò Albums",
   "We'll email you a one-time code to verify it's really you": "Te mandaremo un codice da usar na olta sola par email par verificar che te sii proprio ti",
-  "We sent a 6-digit code to": "Gavemo mandà un còdese de 6 zifre a"
+  "We sent a 6-digit code to": "Gavemo mandà un còdese de 6 zifre a",
+  "Search albums by title or description": "Çerca album par tìtoło o descrision",
+  "View Public Profile": "Varda el Profil Pùblico",
+  "Storage": "Archivio",
+  "Use the 6180 app to showcase your albums offline": "Dòpara l'aplicasion 6180 par mostar i to album offline",
+  "Intelligently tagged and beautifully organized": "Eticheta intelligentemente e organizà belamente",
+  "Open On iOS": "Arvi Su iOS",
+  "Open On Android": "Arvi Su Android",
+  "Toggle contacts filter": "Canbia filtro contati",
+  "Showing albums with all selected contacts and tags": "Mostra album co tuti i contati e tag sełecionai",
+  "Showing albums with all selected tags": "Mostra album co tuti i tag sełecionai"
 }

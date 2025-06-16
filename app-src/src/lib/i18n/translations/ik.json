@@ -126,7 +126,6 @@
   "No items to download": "Nuktaksrat tikiñaitchut",
   "Failed to update album visibility. Please try again.": "Album tautukłikun nuġutchiuq. Piyumauŋ, pisuqtaġlutin.",
   "You must be logged in to perform this action": "Iqiuttuksrarutin una savaktitchuklutin",
-  "Search album title or description": "Album atiġa naġiluqtaqlu qiñiġiuk",
   "Enter a password for this album.": "Pasuatsaŋ isiqtiġuq taavrumuŋa album-mun",
   "Enter password": "Isiqsiutigilutin password",
   "Select password restrictions.": "Password restrictions piḷiguk.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Piqqusivlugu 6180 Albums-nik",
   "Revisit Your Albums": "Maliqsiñ Immiq Albumich",
   "We'll email you a one-time code to verify it's really you": "Ilisaġvitigitit email piuraġuq atausimi atuqtaugaalu iñiq ila'aŋun",
-  "We sent a 6-digit code to": "Itchaksruk 6-mik naniq kooda"
+  "We sent a 6-digit code to": "Itchaksruk 6-mik naniq kooda",
+  "Search albums by title or description": "Album kenaqtuliaqsi atłiqich utiqiḷḷugu uummali",
+  "View Public Profile": "Kuviañiq Aglaan Itchuuk",
+  "Storage": "Piqqusinaaq",
+  "Use the 6180 app to showcase your albums offline": "6180 app atausimayuq albam piyauyit offline",
+  "Intelligently tagged and beautifully organized": "Isumaksraqtuq tag-mik aullartuq pitikłuni",
+  "Open On iOS": "iOS-mi Aniraq",
+  "Open On Android": "Android-mi Aniraq",
+  "Toggle contacts filter": "Aullat ilisaiġniqtit suli",
+  "Showing albums with all selected contacts and tags": "Alirat albomat piqqusivaiḷutik atautchit kontaktat ammalu tægiñ",
+  "Showing albums with all selected tags": "Alirat albomat piqqusivaiḷutik atautchit tægiñ"
 }

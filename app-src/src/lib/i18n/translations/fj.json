@@ -126,7 +126,6 @@
   "No items to download": "Sega na ka me download",
   "Failed to update album visibility. Please try again.": "Sega ni rawa ni vakacavari na vakadedeicaka ni album. Yalovinaka tovolea tale.",
   "You must be logged in to perform this action": "Mo lokiloki mo ni qarava na cakacaka oqo",
-  "Search album title or description": "Vakasaqara na ulutaga ni album se vakamacala",
   "Enter a password for this album.": "Vakacuruma na password me baleta na album oqo",
   "Enter password": "Vakacuruma na password",
   "Select password restrictions.": "Digitaka na yalani ni vosa ni curu.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Saumi Kina na Nomuni 6180 Albums",
   "Revisit Your Albums": "Vakacurumi Tale Na Nomuni Albums",
   "We'll email you a one-time code to verify it's really you": "Keimami na tubuci vei kemudou e dua na kova me baleti koya ga ena imeeli me vakavinaka ni kemudou dina",
-  "We sent a 6-digit code to": "Keimami a tukuna e dua na kova e ono na wilika ki"
+  "We sent a 6-digit code to": "Keimami a tukuna e dua na kova e ono na wilika ki",
+  "Search albums by title or description": "Raica na album ena yaca se na i vakamacala",
+  "View Public Profile": "Raica na Profile ni Veiwekani",
+  "Storage": "Taqomaki",
+  "Use the 6180 app to showcase your albums offline": "Vakaivola na 6180 app me rawa ni kila kina na nomu album kina na offline",
+  "Intelligently tagged and beautifully organized": "Vakavukei tarogi kina ka vakadodonutaki vinaka",
+  "Open On iOS": "Dolava E iOS",
+  "Open On Android": "Dolava E Android",
+  "Toggle contacts filter": "Vakararavi na ivola ni veiqaravi",
+  "Showing albums with all selected contacts and tags": "Raica na iwasewase kei na ivola kecega sa digitaka",
+  "Showing albums with all selected tags": "Raica na iwasewase kei na ivola kecega sa digitaka"
 }

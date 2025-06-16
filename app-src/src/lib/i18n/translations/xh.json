@@ -126,7 +126,6 @@
   "No items to download": "Akukho zinto zokukhuphela",
   "Failed to update album visibility. Please try again.": "Ayiphumelelanga ukuhlaziya ukubonakala kwe-album. Nceda uzame kwakhona.",
   "You must be logged in to perform this action": "Kufuneka ungene ukuze wenze lo msebenzi",
-  "Search album title or description": "Khangela isihloko se-album okanye inkcazelo",
   "Enter a password for this album.": "Faka igama lokugqithisa kule album",
   "Enter password": "Faka igama lokugqithisa",
   "Select password restrictions.": "Khetha iimfuneko zokufihlakala.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Fikelela kwi-6180 Albums zakho",
   "Revisit Your Albums": "Tyelela Kwakhona IiAlbum Zakho",
   "We'll email you a one-time code to verify it's really you": "Siza kukuthumelela ikhowudi esetyenziswa kube kanye nge-imeyili ukuze siqinisekise ukuba nguwe ngokwenene",
-  "We sent a 6-digit code to": "Sithumele ikhowudi yeedijithi ezintandathu ku"
+  "We sent a 6-digit code to": "Sithumele ikhowudi yeedijithi ezintandathu ku",
+  "Search albums by title or description": "Khangela ii-albhamu ngesihloko okanye ingcaciso",
+  "View Public Profile": "Jonga iProfile yoLuntu",
+  "Storage": "Ukugcina",
+  "Use the 6180 app to showcase your albums offline": "Sebenzisa i-app ye-6180 ukubonisa ii-albhamu zakho ngaphandle kokunxulumana",
+  "Intelligently tagged and beautifully organized": "Kubhalwe ngobuchule kwaye kulungiswe kakuhle",
+  "Open On iOS": "Vula Kwi iOS",
+  "Open On Android": "Vula Kwi Android",
+  "Toggle contacts filter": "Tshintsha isihluzi sobunxibelelwano",
+  "Showing albums with all selected contacts and tags": "Kubonisa ii-albhamu ezinobunxibelelwano obukhethiweyo neetagi",
+  "Showing albums with all selected tags": "Kubonisa ii-albhamu ezineetagi ezikhethiweyo"
 }

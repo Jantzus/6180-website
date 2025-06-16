@@ -126,7 +126,6 @@
   "No items to download": "Amul dara luy yebbi",
   "Failed to update album visibility. Please try again.": "Yeesalul album bi mënul dajal. Jéema ko deeloosi.",
   "You must be logged in to perform this action": "Danga wara dugg ngir def jëf jii",
-  "Search album title or description": "Seet boppu album bi walla ci leeral gi",
   "Enter a password for this album.": "Dugalal baat bu gaaw ngir album bii",
   "Enter password": "Duggalal baatu jaale bi",
   "Select password restrictions.": "Tànnal ay digalal baatu jàll bi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Dugg ci 6180 Albums yi",
   "Revisit Your Albums": "Gëstu Albums Yi Kenn",
   "We'll email you a one-time code to verify it's really you": "Danu la yónente ab kood buy jëf ab yoon rekk ci imel ngir nu xam ni yaw la",
-  "We sent a 6-digit code to": "Nu yónente kood yu nekk juróom-benn ci"
+  "We sent a 6-digit code to": "Nu yónente kood yu nekk juróom-benn ci",
+  "Search albums by title or description": "Seet albomu ci tur si wala ci melokaan mi",
+  "View Public Profile": "Xool li Profil bu Bees",
+  "Storage": "Këru",
+  "Use the 6180 app to showcase your albums offline": "Jëfandikoo appli bi 6180 ngir wone sa album yi offline",
+  "Intelligently tagged and beautifully organized": "Ak xelam yi tag ak yokk yi nekk na ñu samp",
+  "Open On iOS": "Ubbi Ci iOS",
+  "Open On Android": "Ubbi Ci Android",
+  "Toggle contacts filter": "Soppi filte yu wàcc yi",
+  "Showing albums with all selected contacts and tags": "Wone ab-xaale ak ñépp ay filte yu wàcc yu bàyyi ak ay tag",
+  "Showing albums with all selected tags": "Wone ab-xaale ak ñépp ay tag yu bàyyi"
 }

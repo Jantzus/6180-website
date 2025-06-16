@@ -126,7 +126,6 @@
   "No items to download": "Ingen element å laste ned",
   "Failed to update album visibility. Please try again.": "Kunne ikkje oppdatere albumet si synlegheit. Ver så snill og prøv igjen.",
   "You must be logged in to perform this action": "Du må vera pålogga for å utføra denne handlinga",
-  "Search album title or description": "Søk etter albumtittel eller skildring",
   "Enter a password for this album.": "Skriv inn eit passord for dette albumet",
   "Enter password": "Skriv inn passord",
   "Select password restrictions.": "Vel passordavgrensingar.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Tilgang til Dine 6180 Album",
   "Revisit Your Albums": "Besøk Albuma Dine Igjen",
   "We'll email you a one-time code to verify it's really you": "Vi sender deg ein eingongskode på e-post for å stadfeste at det verkeleg er deg",
-  "We sent a 6-digit code to": "Vi sende ein 6-sifra kode til"
+  "We sent a 6-digit code to": "Vi sende ein 6-sifra kode til",
+  "Search albums by title or description": "Søk album etter tittel eller skildring",
+  "View Public Profile": "Sjå Offentleg Profil",
+  "Storage": "Lagring",
+  "Use the 6180 app to showcase your albums offline": "Bruk 6180-appen for å vise albuma dine utan tilkopling",
+  "Intelligently tagged and beautifully organized": "Intelligent merka og vakkert organiserte",
+  "Open On iOS": "Opne På iOS",
+  "Open On Android": "Opne På Android",
+  "Toggle contacts filter": "Byt kontaktfilter",
+  "Showing albums with all selected contacts and tags": "Viser album med alle valde kontaktar og merke",
+  "Showing albums with all selected tags": "Viser album med alle valde merke"
 }

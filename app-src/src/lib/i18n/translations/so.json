@@ -126,7 +126,6 @@
   "No items to download": "Ma jiro walxo la soo dejisan karo",
   "Failed to update album visibility. Please try again.": "Waxaa ku guul darreystay inaad cusboonaysiiso muuqaalka albumka. Fadlan isku day mar kale.",
   "You must be logged in to perform this action": "Waa in aad gelisaa si aad u sameyso falkaan",
-  "Search album title or description": "Raadi cinwaanka ama sharraxaadda albumka",
   "Enter a password for this album.": "Geli erey sir ah albumkan",
   "Enter password": "Geli erayga sirta ah",
   "Select password restrictions.": "Dooro xaddidaadda furaha.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Gal 6180 Albums-kaaga",
   "Revisit Your Albums": "Booqo Albumyadaada Mar Kale",
   "We'll email you a one-time code to verify it's really you": "Waxaan kuu diri doonaa hal mar la isticmaalo kood email ahaan si aan u xaqiijino in adiga tahay run ahaan",
-  "We sent a 6-digit code to": "Waxaan u dirnay kood 6 tiro ah"
+  "We sent a 6-digit code to": "Waxaan u dirnay kood 6 tiro ah",
+  "Search albums by title or description": "Raadi albums magaca ama sharraxaadda",
+  "View Public Profile": "Eeg Profile-ka Dadweynaha",
+  "Storage": "Kaydka",
+  "Use the 6180 app to showcase your albums offline": "Isticmaal app-ka 6180 si aad u muujiso albumyadeeda offline",
+  "Intelligently tagged and beautifully organized": "Si caqli leh loo calaamadeeyay oo si qurux badan loo habaynayo",
+  "Open On iOS": "Ku Fur iOS",
+  "Open On Android": "Ku Fur Android",
+  "Toggle contacts filter": "Badal shaashasha xiriirinta",
+  "Showing albums with all selected contacts and tags": "Muujinta albamada ee dhammaan xiriirinta iyo calaamadaha la doortay",
+  "Showing albums with all selected tags": "Muujinta albamada ee dhammaan calaamadaha la doortay"
 }

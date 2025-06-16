@@ -126,7 +126,6 @@
   "No items to download": "ডাউনলোড করার জন্য কোনো আইটেম নেই",
   "Failed to update album visibility. Please try again.": "অ্যালবাম দৃশ্যমানতা আপডেট করতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।",
   "You must be logged in to perform this action": "এই কাজটি করতে আপনাকে লগ ইন করতে হবে",
-  "Search album title or description": "অ্যালবাম শিরোনাম বা বিবরণ অনুসন্ধান করুন",
   "Enter a password for this album.": "এই অ্যালবামের জন্য একটি পাসওয়ার্ড লিখুন",
   "Enter password": "পাসওয়ার্ড লিখুন",
   "Select password restrictions.": "পাসওয়ার্ড সীমাবদ্ধতা নির্বাচন করুন।",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "আপনার 6180 অ্যালবাম দেখুন",
   "Revisit Your Albums": "আপনার অ্যালবামগুলি পুনর্দর্শন করুন",
   "We'll email you a one-time code to verify it's really you": "আমরা আপনার পরিচয় যাচাই করার জন্য ইমেইলের মাধ্যমে একটি একবার ব্যবহারের কোড পাঠাব",
-  "We sent a 6-digit code to": "আমরা ৬ সংখ্যার কোড পাঠিয়েছি"
+  "We sent a 6-digit code to": "আমরা ৬ সংখ্যার কোড পাঠিয়েছি",
+  "Search albums by title or description": "শিরোনাম বা বিবরণ দিয়ে অ্যালবাম খুঁজুন",
+  "View Public Profile": "সর্বজনীন প্রোফাইল দেখুন",
+  "Storage": "সংরক্ষণাগার",
+  "Use the 6180 app to showcase your albums offline": "আপনার অ্যালবামগুলি অফলাইনে প্রদর্শন করতে 6180 অ্যাপটি ব্যবহার করুন",
+  "Intelligently tagged and beautifully organized": "বুদ্ধিমত্তার সাথে ট্যাগ করা এবং সুন্দরভাবে সংগঠিত",
+  "Open On iOS": "iOS এ খুলুন",
+  "Open On Android": "Android এ খুলুন",
+  "Toggle contacts filter": "যোগাযোগ ফিল্টার টগল করুন",
+  "Showing albums with all selected contacts and tags": "সমস্ত নির্বাচিত যোগাযোগ এবং ট্যাগ সহ অ্যালবাম দেখানো হচ্ছে",
+  "Showing albums with all selected tags": "সমস্ত নির্বাচিত ট্যাগ সহ অ্যালবাম দেখানো হচ্ছে"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Eo item eo wanawanain",
   "Failed to update album visibility. Please try again.": "Eo update eo imwin album. Tsimor wo, ekeowen.",
   "You must be logged in to perform this action": "Ete kor log in ean enim kor mwi eko",
-  "Search album title or description": "Kor inga album itseia ko description",
   "Enter a password for this album.": "Enter eow password ean album eiy",
   "Enter password": "Enter password",
   "Select password restrictions.": "Select password restrictions.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Akses omo 6180 Albums",
   "Revisit Your Albums": "Dobog Album Omo",
   "We'll email you a one-time code to verify it's really you": "Atun aran kodewen ngea ewaia email ro in kararuan ngungun ko",
-  "We sent a 6-digit code to": "Aran tabuna ekae kodewen ngea ewen"
+  "We sent a 6-digit code to": "Aran tabuna ekae kodewen ngea ewen",
+  "Search albums by title or description": "Ekae album me bwiin atij eo bwirok",
+  "View Public Profile": "Eigi Profile ni Eben Anij",
+  "Storage": "Edorer",
+  "Use the 6180 app to showcase your albums offline": "Atungok 6180 app bwe en kile album eo offline",
+  "Intelligently tagged and beautifully organized": "Egeiy ne itelij me kakawir me dorer",
+  "Open On iOS": "Egen Bwo iOS",
+  "Open On Android": "Egen Bwo Android",
+  "Toggle contacts filter": "Akaunga filter ian kontakt",
+  "Showing albums with all selected contacts and tags": "Itaek albums eo me ekakaunga kontakt me tag it naan",
+  "Showing albums with all selected tags": "Itaek albums eo me ekakaunga tag it naan"
 }

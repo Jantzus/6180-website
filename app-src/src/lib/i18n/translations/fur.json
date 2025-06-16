@@ -126,7 +126,6 @@
   "No items to download": "Nissun element di discjariâ",
   "Failed to update album visibility. Please try again.": "No si è rivâts a inzornâ la visibilitât dal album. Par plasê, torne prove.",
   "You must be logged in to perform this action": "Tu tu âs di jessi jentrât pe eseguî cheste azion",
-  "Search album title or description": "Cîr il titul o la descrizion dal album",
   "Enter a password for this album.": "Inserìs une password par chest album",
   "Enter password": "Inserìs la password",
   "Select password restrictions.": "Selezione lis limitazions de password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Jentre tai Vuestris 6180 Album",
   "Revisit Your Albums": "Viôt Ancjemò I Vuestris Albums",
   "We'll email you a one-time code to verify it's really you": "Ti mandarìn un codic di doprâ dome une volte par pueste eletroniche par verificâ che tu sês propri tu",
-  "We sent a 6-digit code to": "O vin mandât un codic di 6 cifris a"
+  "We sent a 6-digit code to": "O vin mandât un codic di 6 cifris a",
+  "Search albums by title or description": "Cîr album par titul o descrizion",
+  "View Public Profile": "Viôt il Profîl Public",
+  "Storage": "Archivi",
+  "Use the 6180 app to showcase your albums offline": "Dopre la aplicazion 6180 par mostrâ i tiei album offline",
+  "Intelligently tagged and beautifully organized": "Marcâts inteligjentmentri e organizâts bielmentri",
+  "Open On iOS": "Vierzi Su iOS",
+  "Open On Android": "Vierzi Su Android",
+  "Toggle contacts filter": "Cambie filtri contats",
+  "Showing albums with all selected contacts and tags": "Mostre album cun ducj i contats e lis etichetis selezionadis",
+  "Showing albums with all selected tags": "Mostre album cun dutis lis etichetis selezionadis"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Мом кораш уке",
   "Failed to update album visibility. Please try again.": "Альбомын ужмын уэш ыштымаш ыш лек. Пожалуйста, угыч тӧчӧ.",
   "You must be logged in to perform this action": "Тиде пашам ышташ тыланда системыш пураш кӱлеш",
-  "Search album title or description": "Альбомын лӱмжым але сылнымутшым кычалаш",
   "Enter a password for this album.": "Ты альбомлан йӱкшӧ мутым пуртыза",
   "Enter password": "Шолыпмутым пуртыза",
   "Select password restrictions.": "Пароль чектерым ойырызатак ыш.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Шӱдӧ Тыйын 6180 Альбомет-влак",
   "Revisit Your Albums": "Альбомет-влакым Угыч Ончо",
   "We'll email you a one-time code to verify it's really you": "Мый тыйыт электрон почто дене ик гана кучылтмо кодым колтена, тый чынак тыйет манын шындаш",
-  "We sent a 6-digit code to": "Кудыт тамга код колтенна"
+  "We sent a 6-digit code to": "Кудыт тамга код колтенна",
+  "Search albums by title or description": "Альбом-влакым лӱмышт гыч але ончыктымашышт гыч кычалмаш",
+  "View Public Profile": "Калыкын Профильым Ужаш",
+  "Storage": "Шуарымаш",
+  "Use the 6180 app to showcase your albums offline": "6180 программым кучылт тыйын альбом-влакым интернеттеде петыраш",
+  "Intelligently tagged and beautifully organized": "Акылеш пасиме да мотор ямдыме",
+  "Open On iOS": "iOS-ште Почаш",
+  "Open On Android": "Android-ште Почаш",
+  "Toggle contacts filter": "Контакт фильтрым вашталташ",
+  "Showing albums with all selected contacts and tags": "Чыла ойырымо контакт-влак дене тег-влак дене альбом-влакым ончыкташ",
+  "Showing albums with all selected tags": "Чыла ойырымо тег-влак дене альбом-влакым ончыкташ"
 }

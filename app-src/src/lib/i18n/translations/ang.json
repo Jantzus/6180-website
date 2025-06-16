@@ -126,7 +126,6 @@
   "No items to download": "Nāne þing to niþerlǣdenne",
   "Failed to update album visibility. Please try again.": "Ne mæg albuma gesihþ edstaðelian. Bidde þe, eft afanda.",
   "You must be logged in to perform this action": "Þū sċealt inmeldan þisne dǣd tō dōnne",
-  "Search album title or description": "Albumes naman oþþe getæcnunge secan",
   "Enter a password for this album.": "Sete þisum albume ānċennedsǣde",
   "Enter password": "Ingangspeord ingān",
   "Select password restrictions.": "Worda Þrōwungā cȳosan.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Geneálǣcan Þīnum 6180 Bōcum",
   "Revisit Your Albums": "Þīne Bōccynn Eftsōcn",
   "We'll email you a one-time code to verify it's really you": "Wē sendan þē ān-hwīlne cōde þurh ǣrend-gewrit tō ġetrymanne þæt þū eart sōþlīce þū",
-  "We sent a 6-digit code to": "Wē sendan cōde mid six tācnum tō"
+  "We sent a 6-digit code to": "Wē sendan cōde mid six tācnum tō",
+  "Search albums by title or description": "Sēcaþ albuma eftær līde ōþ gerecenesse",
+  "View Public Profile": "Folclic Endebyrdnesse Sceawian",
+  "Storage": "Hordung",
+  "Use the 6180 app to showcase your albums offline": "Brūc þā 6180 app tō īewenne þīne albuma būton nete",
+  "Intelligently tagged and beautifully organized": "Snotorlic getācnod and fægre gesceadwīs",
+  "Open On iOS": "On iOS Openian",
+  "Open On Android": "On Android Openian",
+  "Toggle contacts filter": "Wrixlan gecynde sēare",
+  "Showing albums with all selected contacts and tags": "Īeweþ albuma mid eallum gecorenum gecyndum and mearce",
+  "Showing albums with all selected tags": "Īeweþ albuma mid eallum gecorenum mearcum"
 }

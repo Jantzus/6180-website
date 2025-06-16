@@ -126,7 +126,6 @@
   "No items to download": "ບໍ່ມີລາຍການເພື່ອດາວໂຫລດ",
   "Failed to update album visibility. Please try again.": "ລົ້ມເຫລວໃນການອັບເດດການເບິ່ງເຫັນຂອງອາລະບໍ້າ. ກະລຸນາລອງອີກຄັ້ງ.",
   "You must be logged in to perform this action": "ທ່ານຕ້ອງເຂົ້າສູ່ລະບົບເພື່ອດຳເນີນການນີ້",
-  "Search album title or description": "ຄົ້ນຫາຊື່ອາລະບໍ້າ ຫຼື ລາຍລະອຽດ",
   "Enter a password for this album.": "ໃສ່ລະຫັດຜ່ານສຳລັບອາລະບໍ້ານີ້",
   "Enter password": "ໃສ່ລະຫັດຜ່ານ",
   "Select password restrictions.": "ເລືອກຂໍ້ຈຳກັດລະຫັດຜ່ານ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ເຂົ້າເຖິງ 6180 ອະນບັມຂອງເຈົ້າ",
   "Revisit Your Albums": "ຢ້ຽມຊົມອະລະບໍ້າຂອງທ່ານອີກຄັ້ງ",
   "We'll email you a one-time code to verify it's really you": "ພວກເຮົາຈະສົ່ງລະຫັດໃຊ້ຄັ້ງດຽວທາງອີເມວ ເພື່ອຢືນຢັນວ່າເປັນເຈົ້າແທ້",
-  "We sent a 6-digit code to": "ພວກເຮົາໄດ້ສົ່ງລະຫັດ 6 ຕົວເລກໄປ"
+  "We sent a 6-digit code to": "ພວກເຮົາໄດ້ສົ່ງລະຫັດ 6 ຕົວເລກໄປ",
+  "Search albums by title or description": "ຄົ້ນຫາອາລະບໍ້ານຕາມຊື່ຫຼືຄຳອະທິບາຍ",
+  "View Public Profile": "ເບິ່ງໂພຣໄຟລ໌ສາທາລະນະ",
+  "Storage": "ການເກັບມ້ຽນ",
+  "Use the 6180 app to showcase your albums offline": "ໃຊ້ແອັບ 6180 ເພື່ອສະແດງອາລະບໍ້າຂອງທ່ານແບບອອບລາຍ",
+  "Intelligently tagged and beautifully organized": "ຖືກແທັກຢ່າງສະຫລາດແລະຈັດລຽງຢ່າງສວຍງາມ",
+  "Open On iOS": "ເປີດໃນ iOS",
+  "Open On Android": "ເປີດໃນ Android",
+  "Toggle contacts filter": "ສະຫຼັບຕົວກອງຕິດຕໍ່",
+  "Showing albums with all selected contacts and tags": "ສະແດງອາລະບໍ້າທີ່ມີການຕິດຕໍ່ແລະປ້າຍທີ່ເລືອກທັງໝົດ",
+  "Showing albums with all selected tags": "ສະແດງອາລະບໍ້າທີ່ມີປ້າຍທີ່ເລືອກທັງໝົດ"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Gein items óm te downloade",
   "Failed to update album visibility. Please try again.": "Zichbaarheid van album kós neet biejgewerk waere. Probeer 't opnuuj.",
   "You must be logged in to perform this action": "De mós ingelogd zien um dees actie oet te veure",
-  "Search album title or description": "Albumtitel of besjrieving zeuke",
   "Enter a password for this album.": "Veur e wachwoord in veur dit album",
   "Enter password": "Veur wachwaord in",
   "Select password restrictions.": "Kees wachwoordbeperkinge.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Toegank nao Dien 6180 Albums",
   "Revisit Your Albums": "Bekiek Dien Albums Opnuuj",
   "We'll email you a one-time code to verify it's really you": "Veer sture deech e einmaolege code per email óm te verifiëere dat geer 't ech zeet",
-  "We sent a 6-digit code to": "Veer höbbe 'n 6-stellige code gestuurd nao"
+  "We sent a 6-digit code to": "Veer höbbe 'n 6-stellige code gestuurd nao",
+  "Search albums by title or description": "Zeuk albums op titel of besjriewing",
+  "View Public Profile": "Openbaar Profiel Bekieke",
+  "Storage": "Opslag",
+  "Use the 6180 app to showcase your albums offline": "Gebroek de 6180-app om dien albome offline te toene",
+  "Intelligently tagged and beautifully organized": "Intelligent getakt en prächtig georganiseerd",
+  "Open On iOS": "Äöpene Op iOS",
+  "Open On Android": "Äöpene Op Android",
+  "Toggle contacts filter": "Kontakfilter wissele",
+  "Showing albums with all selected contacts and tags": "Toent albums mèt alle gekeuze kontakten en labels",
+  "Showing albums with all selected tags": "Toent albums mèt alle gekeuze labels"
 }

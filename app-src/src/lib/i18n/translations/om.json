@@ -126,7 +126,6 @@
   "No items to download": "Wanti gadi buufamu hin jiru",
   "Failed to update album visibility. Please try again.": "Mul-dhageettii albaamii haaromsuuf hin milkoofne. Maaloo, irra deebi'ii yaali.",
   "You must be logged in to perform this action": "Tarkaanfii kana raawwachuuf seensuu qabda",
-  "Search album title or description": "Maqaa yookiin ibsa album barbaadi",
   "Enter a password for this album.": "Jecha iccitii albumii kanaaf galchi",
   "Enter password": "Jecha-icciitii galchi",
   "Select password restrictions.": "Daangaa jecha darbii filadhu.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Seeni 6180 Albums Kee",
   "Revisit Your Albums": "Albums Kee Lamatti Dabalii Ilaali",
   "We'll email you a one-time code to verify it's really you": "Akka dhugumaan si taate mirkaneessuuf koodii yeroo tokko qofa itti fayyadaman iimeeliidhaan siif ergina",
-  "We sent a 6-digit code to": "Koodii lakkofsa jaʼa gara"
+  "We sent a 6-digit code to": "Koodii lakkofsa jaʼa gara",
+  "Search albums by title or description": "Mata duree fi ibsa kanaan albamoota barbaadi",
+  "View Public Profile": "Profaayilii Uumamaa Ilaali",
+  "Storage": "Kuusaa",
+  "Use the 6180 app to showcase your albums offline": "Albamoota kee maxxansuu offline taasisuuf application 6180 fayyadami",
+  "Intelligently tagged and beautifully organized": "Beekumsa waliin mallattood fi bareedina waliin qophaa'e",
+  "Open On iOS": "iOS Irratti Banuu",
+  "Open On Android": "Android Irratti Banuu",
+  "Toggle contacts filter": "Qunnamtii walqabii jijjiiri",
+  "Showing albums with all selected contacts and tags": "Qunnamtii adda taʼe quunnama walqabii fi asxaa filatamaniin argisisa",
+  "Showing albums with all selected tags": "Qunnamtii adda taʼe asxaa filatamaniin argisisa"
 }

@@ -126,7 +126,6 @@
   "No items to download": "No gat samting bilong daunim",
   "Failed to update album visibility. Please try again.": "Album na bin senisim sait long luk. Plis traim gen.",
   "You must be logged in to perform this action": "Peim i must login long wokim dispela aksen",
-  "Search album title or description": "Painim album nem o toksave",
   "Enter a password for this album.": "Passwod enter long dispela album",
   "Enter password": "Toksave password",
   "Select password restrictions.": "Select password restrictions.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Lukim 6180 Album Bilong Yu",
   "Revisit Your Albums": "Kam Bak Long Ol Albums Blong Yu",
   "We'll email you a one-time code to verify it's really you": "Mi bae sendem yu wan taem nomo kod long email blong verifaiem se yu stret tru",
-  "We sent a 6-digit code to": "Mi bin sendem wan 6-dijit kod long"
+  "We sent a 6-digit code to": "Mi bin sendem wan 6-dijit kod long",
+  "Search albums by title or description": "Painim album long nem o deskripsen",
+  "View Public Profile": "Lukim Profael Bilong Evriwan",
+  "Storage": "Stoa",
+  "Use the 6180 app to showcase your albums offline": "Yusum 6180 app blong soim ol albam blong yu long oflaen",
+  "Intelligently tagged and beautifully organized": "Tagging wetem smart mo organisem gud",
+  "Open On iOS": "Opim Long iOS",
+  "Open On Android": "Opim Long Android",
+  "Toggle contacts filter": "Jenisim kontakt filta",
+  "Showing albums with all selected contacts and tags": "Soem album wetem ol kakae kontakt mo tag",
+  "Showing albums with all selected tags": "Soem album wetem ol kakae tag"
 }

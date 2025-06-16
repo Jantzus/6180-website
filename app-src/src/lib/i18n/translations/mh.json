@@ -126,7 +126,6 @@
   "No items to download": "Ejjelọk men bajjōk",
   "Failed to update album visibility. Please try again.": "Album lale edit eo jab teban. Jouj im bar wōt.",
   "You must be logged in to perform this action": "Kwoj aikuj in drelon būkūn mōn kōmane men",
-  "Search album title or description": "Kappukot album title ak deskripsen",
   "Enter a password for this album.": "Kadkad ilo password non album in",
   "Enter password": "Likūt password",
   "Select password restrictions.": "Kāālōt jemlok in password ko.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Jerbal ko an 6180 Albums",
   "Revisit Your Albums": "Jebwe Bok Aō Kọpepe",
   "We'll email you a one-time code to verify it's really you": "Kwōj aikuj jikin email ñan kwe kōjañ ḷọk kein kōjro in katak ko kwōj eṃṃan",
-  "We sent a 6-digit code to": "Kwōn kōjañ ḷọk kein ko ōn 6 ñan"
+  "We sent a 6-digit code to": "Kwōn kōjañ ḷọk kein ko ōn 6 ñan",
+  "Search albums by title or description": "Jerbal album ko an kōn utiej",
+  "View Public Profile": "Kōjparok Aō Tōnal",
+  "Storage": "Kōrrar",
+  "Use the 6180 app to showcase your albums offline": "Jiban 6180 app ñan kwōn album ko jet offline",
+  "Intelligently tagged and beautifully organized": "Lotak ilo naaj in armij ro ak bar ejmour",
+  "Open On iOS": "Kadek Ilo iOS",
+  "Open On Android": "Kadek Ilo Android",
+  "Toggle contacts filter": "Kōnaan kōmkab ilo filter",
+  "Showing albums with all selected contacts and tags": "Kōnaan album ro kōmkab ak tag in aer jeraaņ",
+  "Showing albums with all selected tags": "Kōnaan album ro tag in aer jeraaņ"
 }

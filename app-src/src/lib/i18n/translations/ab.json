@@ -126,7 +126,6 @@
   "No items to download": "Алхыҧхьаӡара ҭагалара азы иҟам",
   "Failed to update album visibility. Please try again.": "Альбом збара аҟаҵара залымшеит. Даҽазнык иԥышәа.",
   "You must be logged in to perform this action": "Ари аус азура азы ашәҟәы ҭаҩра шәыхәҭоуп",
-  "Search album title or description": "Альбом ахьӡи ма аилыркаара аԥшаара",
   "Enter a password for this album.": "Ари альбом азы апароль атәы",
   "Enter password": "Ажәамаӡа аҭагалара",
   "Select password restrictions.": "Апарол аҧкаарақәа алх.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Бзиоуеит Шәара 6180 Альбомқәа",
   "Revisit Your Albums": "Уи Альбомқәа Еиҳаркыла",
   "We'll email you a one-time code to verify it's really you": "Ари шәара хәҭа ркод абри ҳара ишәыҟалеит уи уеиԥшым амч иашәырҭеит",
-  "We sent a 6-digit code to": "Хыԥшылауеи рак код ҳара ишәыҟалеит"
+  "We sent a 6-digit code to": "Хыԥшылауеи рак код ҳара ишәыҟалеит",
+  "Search albums by title or description": "Альбомқәа ахықәкы ма акәгаҽырха аҳәарылоу",
+  "View Public Profile": "Аԥсха Ҩыҧсыуааи Аҳәаҿы",
+  "Storage": "Анацәара",
+  "Use the 6180 app to showcase your albums offline": "И6180 аҧҧликациа ахьыӡауп шәара албумқәа офлаин амаду",
+  "Intelligently tagged and beautifully organized": "Аҧсахрала ирзылаз ахы наиара ацәаҳәоуп",
+  "Open On iOS": "iOS Аҟны Аҟәу",
+  "Open On Android": "Android Аҟны Аҟәу",
+  "Toggle contacts filter": "Контактқәа филтр аҧштәуп",
+  "Showing albums with all selected contacts and tags": "Иалху контактқәеи тегқәеи зегьы альбомқәа рыҧхьаӡара",
+  "Showing albums with all selected tags": "Иалху тегқәеи зегьы альбомқәа рыҧхьаӡара"
 }

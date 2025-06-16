@@ -126,7 +126,6 @@
   "No items to download": "Cha nel cooid erbee dy laadey neose",
   "Failed to update album visibility. Please try again.": "Er-ourys jeeaghyn yn albym er vailleil. Prow reesht, my sailt.",
   "You must be logged in to perform this action": "Shegin dhyt loggal stiagh dy yannoo yn obbyr shoh",
-  "Search album title or description": "Ronsaghey ard-ennym ny coontey jeh'n albym",
   "Enter a password for this album.": "Cur stiagh facal yn arrey son yn albym shoh",
   "Enter password": "Cur stiagh fockle follit",
   "Select password restrictions.": "Reih cagleeyn fockle dorraghey.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Roshtyn rish Dty 6180 Albymyn",
   "Revisit Your Albums": "Jeeagh Er Dty Albums Reesht",
   "We'll email you a one-time code to verify it's really you": "Nee cur-jee code nane-ymmyd diu liorish post-l dy hickyraghey dy nee oo t'ayn dy firrinagh",
-  "We sent a 6-digit code to": "Hug shin code 6-figyr da"
+  "We sent a 6-digit code to": "Hug shin code 6-figyr da",
+  "Search albums by title or description": "Shirrey son albymyn rere ennym ny coontey",
+  "View Public Profile": "Jeeagh er Fylley Theayagh",
+  "Storage": "Stoyral",
+  "Use the 6180 app to showcase your albums offline": "Jannoo ymmyd jeh'n app 6180 dy hoilshaghey dty albymyn gyn ceangal",
+  "Intelligently tagged and beautifully organized": "Cowrit dy cheeayllagh as reaghit dy aalin",
+  "Open On iOS": "Foshil Er iOS",
+  "Open On Android": "Foshil Er Android",
+  "Toggle contacts filter": "Çhyndaa ny scagheyder ym-loayrtys",
+  "Showing albums with all selected contacts and tags": "Soilshaghey albymyn lesh dy chooilley haghyrt as lipaid reiht",
+  "Showing albums with all selected tags": "Soilshaghey albymyn lesh dy chooilley lipaid reiht"
 }

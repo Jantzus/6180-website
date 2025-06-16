@@ -126,7 +126,6 @@
   "No items to download": "Yüklemek içün hiç bir unsur yoq",
   "Failed to update album visibility. Please try again.": "Album körünüşini yañartmaq başarısız oldı. Lütfen, tekrar deñeñiz.",
   "You must be logged in to perform this action": "Bu areketni yapmaq içün tizimge kirmek kereksiñiz",
-  "Search album title or description": "Albom serlevası ya da tarifini qıdır",
   "Enter a password for this album.": "Bu albom içün parol kirsetiñiz",
   "Enter password": "Parolni kiriting",
   "Select password restrictions.": "Parol sınırlamalarını seçiñiz.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Albomlarıñızğa Kiriñ",
   "Revisit Your Albums": "Albumlarıñıznı Yañıdan Ziyaret Etiñiz",
   "We'll email you a one-time code to verify it's really you": "Hakikatende sen olduğuñnı doğrulamaq içün sana email ile bir kereliq kod yiberecegiz",
-  "We sent a 6-digit code to": "6 raqqamlı kod yiberdik"
+  "We sent a 6-digit code to": "6 raqqamlı kod yiberdik",
+  "Search albums by title or description": "Albümlerni adı yaki tanıtıp boyunca arama",
+  "View Public Profile": "Halq Profilini Körmek",
+  "Storage": "Saqlav",
+  "Use the 6180 app to showcase your albums offline": "6180 uygulamasını kullanıñ albümlerıñıznı çevrimdışı köstermek içün",
+  "Intelligently tagged and beautifully organized": "Aqıllı belgilengen ve güzel teşkil etilgen",
+  "Open On iOS": "iOS'ta Aç",
+  "Open On Android": "Android'ta Aç",
+  "Toggle contacts filter": "Kontakt filtresini değiştir",
+  "Showing albums with all selected contacts and tags": "Saýlangan barı kontaktlar ve etiketler ile albomlarnı köster",
+  "Showing albums with all selected tags": "Saýlangan barı etiketler ile albomlarnı köster"
 }

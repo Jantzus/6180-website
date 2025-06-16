@@ -126,7 +126,6 @@
   "No items to download": "Ayikho into yokudawuniloda",
   "Failed to update album visibility. Please try again.": "Kuhlulekile ukubuyekeza ukubonakala kwe-albhamu. Sicela uzame futhi.",
   "You must be logged in to perform this action": "Kumele ungene ngemvume ukuze wenze lo msebenzi",
-  "Search album title or description": "Sesha isihloko se-albhamu noma incazelo",
   "Enter a password for this album.": "Faka iphasiwedi ye-albhamu",
   "Enter password": "Faka iphasiwedi",
   "Select password restrictions.": "Khetha imikhawulo yephasiwedi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Ngena ku-6180 Albums zakho",
   "Revisit Your Albums": "Vakashela Kabusha Ama-Album Akho",
   "We'll email you a one-time code to verify it's really you": "Sizokuthumelela ikhodi engasetshenziswa kanye kuphela nge-imeyili ukuze siqinisekise ukuthi uwena ngempela",
-  "We sent a 6-digit code to": "Sithumele ikhodi yamadigithi ayisithupha ku"
+  "We sent a 6-digit code to": "Sithumele ikhodi yamadigithi ayisithupha ku",
+  "Search albums by title or description": "Sesha ama-albhamu ngesihloko noma incazelo",
+  "View Public Profile": "Bona iProfayeli Yomphakathi",
+  "Storage": "Ukugcina",
+  "Use the 6180 app to showcase your albums offline": "Sebenzisa uhlelo lokusebenza lwe-6180 ukubonisa ama-albhamu akho ngaphandle kokuxhumana",
+  "Intelligently tagged and beautifully organized": "Kubhalwe ngokuhlakanipha futhi kuhlelelwe ngokuhle",
+  "Open On iOS": "Vula Ku iOS",
+  "Open On Android": "Vula Ku Android",
+  "Toggle contacts filter": "Shintsha isihluzi sabothengiselana nabo",
+  "Showing albums with all selected contacts and tags": "Sibonisa ama-albhamu anazo zonke izixhumano nezinkomba ezikhethiwe",
+  "Showing albums with all selected tags": "Sibonisa ama-albhamu anazo zonke izinkomba ezikhethiwe"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Кёчюрюрге зат джокъду",
   "Failed to update album visibility. Please try again.": "Альбомланы кёрюнюшлерин джангыртыргъа болмады. Джангыдан кёрюгюз.",
   "You must be logged in to perform this action": "Бу ишни этер ючюн системагъа кирирге керексиз",
-  "Search album title or description": "Альбомну атын неда ачыкълауун излеу",
   "Enter a password for this album.": "Бу альбомгъа пароль джазыгъыз",
   "Enter password": "Парольну кийир",
   "Select password restrictions.": "Пароль чеклениулерин сайлагъыз.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Альбомларыгъызгъа Кирирге",
   "Revisit Your Albums": "Альбомларыгъызны Кери Кёрюгюз",
   "We'll email you a one-time code to verify it's really you": "Бизни сизге чыннай сиз эканлыгъызны тамамлагъанлыкъ ючюн электрон почта бла бир заман ишлетилген код жиберирбиз",
-  "We sent a 6-digit code to": "6 санлы код жибердик"
+  "We sent a 6-digit code to": "6 санлы код жибердик",
+  "Search albums by title or description": "Альбомланы атларына неда ачыкламаларына кёре излеу",
+  "View Public Profile": "Халкны Профилин Кёрюрге",
+  "Storage": "Сакълау",
+  "Use the 6180 app to showcase your albums offline": "6180 программаны къулланыгъыз альбомларыгъызны оффлайн кёргюзюрге",
+  "Intelligently tagged and beautifully organized": "Акъыллы белгиленнген эм чебер тизилген",
+  "Open On iOS": "iOS-да Ач",
+  "Open On Android": "Android-да Ач",
+  "Toggle contacts filter": "Контакт фильтрны ауушдурургъа",
+  "Showing albums with all selected contacts and tags": "Бютеу сайлагъан контактла бла тегле бла альбомланы кёргюзюу",
+  "Showing albums with all selected tags": "Бютеу сайлагъан тегле бла альбомланы кёргюзюу"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Nėra elementų atsisiųsti",
   "Failed to update album visibility. Please try again.": "Nepavyko atnaujinti albumo matomumo. Bandykite dar kartą.",
   "You must be logged in to perform this action": "Turite būti prisijungę, kad galėtumėte atlikti šį veiksmą",
-  "Search album title or description": "Ieškoti albumo pavadinimo ar aprašymo",
   "Enter a password for this album.": "Įveskite slaptažodį šiam albumui",
   "Enter password": "Įveskite slaptažodį",
   "Select password restrictions.": "Pasirinkite slaptažodžio apribojimus.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Prieiga prie Jūsų 6180 Albumų",
   "Revisit Your Albums": "Dar Kartą Aplankykite Savo Albumus",
   "We'll email you a one-time code to verify it's really you": "Išsiųsime jums vienkartinio naudojimo kodą el. paštu, kad patvirtintume, jog tai tikrai jūs",
-  "We sent a 6-digit code to": "Išsiuntėme 6 skaitmenų kodą į"
+  "We sent a 6-digit code to": "Išsiuntėme 6 skaitmenų kodą į",
+  "Search albums by title or description": "Ieškoti albumų pagal pavadinimą ar aprašymą",
+  "View Public Profile": "Žiūrėti Viešą Profilį",
+  "Storage": "Saugykla",
+  "Use the 6180 app to showcase your albums offline": "Naudokite 6180 programėlę savo albumams rodyti neprisijungus",
+  "Intelligently tagged and beautifully organized": "Protingai pažymėti ir gražiai organizuoti",
+  "Open On iOS": "Atidaryti iOS",
+  "Open On Android": "Atidaryti Android",
+  "Toggle contacts filter": "Perjungti kontaktų filtrą",
+  "Showing albums with all selected contacts and tags": "Rodomi albumai su visais pasirinktais kontaktais ir žymomis",
+  "Showing albums with all selected tags": "Rodomi albumai su visomis pasirinktomis žymomis"
 }

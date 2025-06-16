@@ -126,7 +126,6 @@
   "No items to download": "ڈاؤن لوڈ کرنے کے لیے کوئی آئٹم نہیں ہے",
   "Failed to update album visibility. Please try again.": "البم کی نمائش کو اپ ڈیٹ کرنے میں ناکام۔ براہ کرم دوبارہ کوشش کریں۔",
   "You must be logged in to perform this action": "اس کارروائی کو انجام دینے کے لیے آپ کو لاگ ان ہونا چاہیے",
-  "Search album title or description": "البم کا عنوان یا تفصیل تلاش کریں",
   "Enter a password for this album.": "اس البم کے لیے پاس ورڈ درج کریں",
   "Enter password": "پاس ورڈ درج کریں",
   "Select password restrictions.": "پاس ورڈ کی پابندیاں منتخب کریں۔",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "اپنے 6180 البم دیکھیں",
   "Revisit Your Albums": "اپنے البم دوبارہ دیکھیں",
   "We'll email you a one-time code to verify it's really you": "ہم آپ کی شناخت کی تصدیق کے لیے ای میل کے ذریعے ایک بار استعمال ہونے والا کوڈ بھیجیں گے",
-  "We sent a 6-digit code to": "ہم نے 6 ہندسوں کا کوڈ بھیجا ہے"
+  "We sent a 6-digit code to": "ہم نے 6 ہندسوں کا کوڈ بھیجا ہے",
+  "Search albums by title or description": "عنوان یا تفصیل کے ذریعے البم تلاش کریں",
+  "View Public Profile": "عوامی پروفائل دیکھیں",
+  "Storage": "اسٹوریج",
+  "Use the 6180 app to showcase your albums offline": "اپنے البمز کو آف لائن دکھانے کے لیے 6180 ایپ استعمال کریں",
+  "Intelligently tagged and beautifully organized": "ذہانت سے ٹیگ کیا گیا اور خوبصورتی سے منظم",
+  "Open On iOS": "iOS میں کھولیں",
+  "Open On Android": "Android میں کھولیں",
+  "Toggle contacts filter": "رابطوں کا فلٹر ٹوگل کریں",
+  "Showing albums with all selected contacts and tags": "تمام منتخب شدہ رابطوں اور ٹیگز کے ساتھ البمز دکھا رہا ہے",
+  "Showing albums with all selected tags": "تمام منتخب شدہ ٹیگز کے ساتھ البمز دکھا رہا ہے"
 }

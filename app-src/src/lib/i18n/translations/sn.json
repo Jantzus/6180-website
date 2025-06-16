@@ -126,7 +126,6 @@
   "No items to download": "Hapana zvinhu zvekurodha",
   "Failed to update album visibility. Please try again.": "Kutsiva kuoneka kwebhuku yemifananidzo kwakundikana. Ndapota edza zvakare.",
   "You must be logged in to perform this action": "Unofanira kulogini kuti uite izvi",
-  "Search album title or description": "Tsvaga musoro kana tsanangudzo yebhuku",
   "Enter a password for this album.": "Isa pasiwedhi yebhuku iri",
   "Enter password": "Isa password",
   "Select password restrictions.": "Sarudza zvinodzivirira password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Wona 6180 Albums Dzako",
   "Revisit Your Albums": "Shanyira Albums Dzako Zvakare",
   "We'll email you a one-time code to verify it's really you": "Tichakutumira kodhi inoshandiswa kamwe chete ne-imeyiri kuti tione kuti ndiwe chaiye",
-  "We sent a 6-digit code to": "Takatumira kodhi ine makumi matanhatu ku"
+  "We sent a 6-digit code to": "Takatumira kodhi ine makumi matanhatu ku",
+  "Search albums by title or description": "Tsvaga mabhuku nemazita kana rondedzero",
+  "View Public Profile": "Ona Profayera Yeruzhinji",
+  "Storage": "Chivharo",
+  "Use the 6180 app to showcase your albums offline": "Shandisa iyo 6180 app kuti uratidze ma album ako offline",
+  "Intelligently tagged and beautifully organized": "Zvakaiswa matag nehungwaru uye zvakarongeka zvinonaka",
+  "Open On iOS": "Vhura Pa iOS",
+  "Open On Android": "Vhura Pa Android",
+  "Toggle contacts filter": "Shandura filita yekubatana",
+  "Showing albums with all selected contacts and tags": "Kuratidza maalbumu ane zvese zvakasarudzwa zvekubatana nezvirango",
+  "Showing albums with all selected tags": "Kuratidza maalbumu ane zvese zvakasarudzwa zvezvirango"
 }

@@ -126,7 +126,6 @@
   "No items to download": "A hu na zwithu zwa u daunuloudu",
   "Failed to update album visibility. Please try again.": "Yo kundelwa u khwinifhadza u vhonala ha albamu. Ri humbela ni lingedze hafhu.",
   "You must be logged in to perform this action": "Ni tea u dzhenelela kha u ita nyito iyi",
-  "Search album title or description": "Ṱoḓa ṱhoho ya alubamu kana ṱhalutshedzo",
   "Enter a password for this album.": "Dzhenisani phasiwede ya albamu heyi",
   "Enter password": "Dzhenisani password",
   "Select password restrictions.": "Nanga zwithithisi zwa phasiwedi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Swikela kha 6180 Albums dzanu",
   "Revisit Your Albums": "Divhona Albums Dzaṋu Hafhu",
   "We'll email you a one-time code to verify it's really you": "Ri ḓo ni rumelela khomo ya u shumisa lwa ḽiṅwe fhedzi nga email u vhona uri ndi inwi nga maḓa",
-  "We sent a 6-digit code to": "Ri rumele khomo ya nomboro rathanu na"
+  "We sent a 6-digit code to": "Ri rumele khomo ya nomboro rathanu na",
+  "Search albums by title or description": "Toda albumbu nga hedzelo kana thalutshedzo",
+  "View Public Profile": "Vhona Phurofayile ya Tshitshavha",
+  "Storage": "Khakhala",
+  "Use the 6180 app to showcase your albums offline": "Shumisani app ya 6180 u kombetshedza albumba dza vhone offline",
+  "Intelligently tagged and beautifully organized": "Vho tage nga vhuhali na u dzudzanea zwavhudi",
+  "Open On iOS": "Vhudza Kha iOS",
+  "Open On Android": "Vhudza Kha Android",
+  "Toggle contacts filter": "Shandukisa sivhongolose ha vhunzhi",
+  "Showing albums with all selected contacts and tags": "U kombetsha ama albamu na vhunzhi ha zwipiḓa na zwitauga zwo nanganywaho",
+  "Showing albums with all selected tags": "U kombetsha ama albamu na zwitauga zwo nanganywaho zwothe"
 }

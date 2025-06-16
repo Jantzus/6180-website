@@ -126,7 +126,6 @@
   "No items to download": "Нѣстъ ничьсоже къ сътѧжанию",
   "Failed to update album visibility. Please try again.": "Не можаше обновити видѣниѥ алъбома. Молимъ, паки искѹси.",
   "You must be logged in to perform this action": "Нѫжда ѥстъ въходити да сътвориши дѣиство сѥ",
-  "Search album title or description": "Иска алъбома имѧ или описаниѥ",
   "Enter a password for this album.": "Вънєси тайнꙑѩ словъ за сь алъбомъ",
   "Enter password": "Вънеси тайнѫ рѣчь",
   "Select password restrictions.": "Избєри ограничєниꙗ таинаго слова.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Доступъ Къ Твоимъ 6180 Альбомомъ",
   "Revisit Your Albums": "Посѣтите Альбоумꙑ Вашѧ Паки",
   "We'll email you a one-time code to verify it's really you": "Послѣмъ ти кодъ единою потрѣбънъ по електрѣньнѣй почтѣ да свѣдѣниѥ ѥжде ты правьдъно ты ѥси",
-  "We sent a 6-digit code to": "Послахомъ кодъ шести чисълъ къ"
+  "We sent a 6-digit code to": "Послахомъ кодъ шести чисълъ къ",
+  "Search albums by title or description": "Іскати алъбоми по назвѫ или описанїи",
+  "View Public Profile": "Видѣти Людьскъ Обраꙁъ",
+  "Storage": "Съхранѥниѥ",
+  "Use the 6180 app to showcase your albums offline": "Польꙁоуи програма 6180 къ покаꙁаниѭ твоихъ алъбомъ беꙁъ мрежа",
+  "Intelligently tagged and beautifully organized": "Мѫдростиѭ знамєновани и красно ѹстроєни",
+  "Open On iOS": "Отврьзти Въ iOS",
+  "Open On Android": "Отврьзти Въ Android",
+  "Toggle contacts filter": "Прѣмѣни съвѫзъ очишчения",
+  "Showing albums with all selected contacts and tags": "Показаниѥ алъбомъ съ въсѣми избьраными съвѫзи и съзнакы",
+  "Showing albums with all selected tags": "Показаниѥ алъбомъ съ въсѣми избьраными съзнакы"
 }

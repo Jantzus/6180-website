@@ -126,7 +126,6 @@
   "No items to download": "Tu tişt ji bo daxistinê tune",
   "Failed to update album visibility. Please try again.": "Nûvekirina dîtbariya albûmê bi ser neket. Ji kerema xwe cardin biceribîne.",
   "You must be logged in to perform this action": "Ji bo vê çalakiyê divê tu têkevî hesabê xwe",
-  "Search album title or description": "Li sernavê albûm an danasînê bigere",
   "Enter a password for this album.": "Ji bo vê albûmê şîfreyekê binivîse",
   "Enter password": "Şîfreyê binivîse",
   "Select password restrictions.": "Sînorkirinên şîfreyê hilbijêre.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Bigihîje 6180 Albumên Xwe",
   "Revisit Your Albums": "Albûmên Xwe Dîsa Bibîne",
   "We'll email you a one-time code to verify it's really you": "Em ê ji we re bi riya e-nameyê kodeke bi carekî bi kar tê bidin ku bersivê we rasbike",
-  "We sent a 6-digit code to": "Kodeke 6 hejmarî şand"
+  "We sent a 6-digit code to": "Kodeke 6 hejmarî şand",
+  "Search albums by title or description": "Li gor sernav an danasîn album bigere",
+  "View Public Profile": "Profîla Gelemperî Bibîne",
+  "Storage": "Hilanîn",
+  "Use the 6180 app to showcase your albums offline": "Ji bo nîşandana albûmên xwe yên offline sepana 6180 bikar bînin",
+  "Intelligently tagged and beautifully organized": "Bi aqil hat nîşankirin û bi xweşî hat organîzekirin",
+  "Open On iOS": "Li iOS-ê Veke",
+  "Open On Android": "Li Android-ê Veke",
+  "Toggle contacts filter": "Parzûna têkiliyan biguhêre",
+  "Showing albums with all selected contacts and tags": "Albûmên bi hemû têkiliyan û nîşanên bijartî nîşan didin",
+  "Showing albums with all selected tags": "Albûmên bi hemû nîşanên bijartî nîşan didin"
 }

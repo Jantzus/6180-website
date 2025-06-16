@@ -126,7 +126,6 @@
   "No items to download": "Nta bintu vyo kwimura",
   "Failed to update album visibility. Please try again.": "Kwashitse guhindura ukuboneka kw'ibitabu vy'amashusho. Gerageza nanone.",
   "You must be logged in to perform this action": "Utegerezwa kwinjira kugira ukore igikorwa",
-  "Search album title or description": "Rondera umutwe canke insiguro y'album",
   "Enter a password for this album.": "Andika ijambo ryibanga kuri iri albumu",
   "Enter password": "Andika ijambo ry'ibanga",
   "Select password restrictions.": "Hitamwo imyitwarire y'ijambo ry'ibanga.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Injira mu 6180 Albums zawe",
   "Revisit Your Albums": "Subirane Albums Zawe",
   "We'll email you a one-time code to verify it's really you": "Tuzagukoherereza kode ikoreshwa kamwe gusa kugira ngo tubone ko uri wewe rwose",
-  "We sent a 6-digit code to": "Twoherereje kode y'imibare itandatu"
+  "We sent a 6-digit code to": "Twoherereje kode y'imibare itandatu",
+  "Search albums by title or description": "Shakisha albums kuva izina canke ibisobanuro",
+  "View Public Profile": "Raba Profile ya Imbere",
+  "Storage": "Ubushingantahe",
+  "Use the 6180 app to showcase your albums offline": "Koresha application 6180 kugira ugaragaze ama albums yawe offline",
+  "Intelligently tagged and beautifully organized": "Bikoresheje ubwoba kandi bikaba neza",
+  "Open On iOS": "Gufungura Kuri iOS",
+  "Open On Android": "Gufungura Kuri Android",
+  "Toggle contacts filter": "Guhindura ibyo byunze mu kwandika",
+  "Showing albums with all selected contacts and tags": "Kwerekana ama albumu n'abo bose batoranijwe n'ama tag",
+  "Showing albums with all selected tags": "Kwerekana ama albumu n'ama tag bose batoranijwe"
 }

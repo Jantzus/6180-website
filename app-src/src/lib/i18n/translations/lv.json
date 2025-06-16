@@ -126,7 +126,6 @@
   "No items to download": "Nav vienumu, ko lejupielādēt",
   "Failed to update album visibility. Please try again.": "Neizdevās atjaunināt albuma redzamību. Lūdzu, mēģiniet vēlreiz.",
   "You must be logged in to perform this action": "Jums jāpiesakās, lai veiktu šo darbību",
-  "Search album title or description": "Meklēt albuma nosaukumu vai aprakstu",
   "Enter a password for this album.": "Ievadiet paroli šim albumam",
   "Enter password": "Ievadiet paroli",
   "Select password restrictions.": "Izvēlieties paroles ierobežojumus.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Piekļuve Jūsu 6180 Albumiem",
   "Revisit Your Albums": "Apmeklējiet Savus Albumus Vēlreiz",
   "We'll email you a one-time code to verify it's really you": "Mēs nosūtīsim jums vienreizējās lietošanas kodu pa e-pastu, lai pārbaudītu, ka esat tiešām jūs",
-  "We sent a 6-digit code to": "Mēs nosūtījām 6 ciparu kodu uz"
+  "We sent a 6-digit code to": "Mēs nosūtījām 6 ciparu kodu uz",
+  "Search albums by title or description": "Meklēt albumus pēc nosaukuma vai apraksta",
+  "View Public Profile": "Skatīt Publisko Profilu",
+  "Storage": "Glabātuve",
+  "Use the 6180 app to showcase your albums offline": "Izmantojiet 6180 lietotni, lai parādītu savus albumus bezsaistē",
+  "Intelligently tagged and beautifully organized": "Inteliģenti atzīmēti un skaisti organizēti",
+  "Open On iOS": "Atvērt iOS",
+  "Open On Android": "Atvērt Android",
+  "Toggle contacts filter": "Pārslēgt kontaktu filtru",
+  "Showing albums with all selected contacts and tags": "Rāda albumus ar visiem izvēlētajiem kontaktiem un atzīmēm",
+  "Showing albums with all selected tags": "Rāda albumus ar visām izvēlētajām atzīmēm"
 }

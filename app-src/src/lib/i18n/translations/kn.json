@@ -126,7 +126,6 @@
   "No items to download": "ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಯಾವುದೇ ಐಟಂಗಳಿಲ್ಲ",
   "Failed to update album visibility. Please try again.": "ಆಲ್ಬಮ್ ಗೋಚರಿಕೆಯನ್ನು ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
   "You must be logged in to perform this action": "ಈ ಕ್ರಿಯೆಯನ್ನು ನಿರ್ವಹಿಸಲು ನೀವು ಲಾಗ್ ಇನ್ ಆಗಿರಬೇಕು",
-  "Search album title or description": "ಆಲ್ಬಮ್ ಶೀರ್ಷಿಕೆ ಅಥವಾ ವಿವರಣೆಯನ್ನು ಹುಡುಕಿ",
   "Enter a password for this album.": "ಈ ಆಲ್ಬಮ್‌ಗೆ ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ",
   "Enter password": "ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ",
   "Select password restrictions.": "ಪಾಸ್‌ವರ್ಡ್ ನಿರ್ಬಂಧಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ನಿಮ್ಮ 6180 ಆಲ್ಬಮ್‌ಗಳನ್ನು ಪ್ರವೇಶಿಸಿ",
   "Revisit Your Albums": "ನಿಮ್ಮ ಆಲ್ಬಂಗಳನ್ನು ಮತ್ತೆ ನೋಡಿ",
   "We'll email you a one-time code to verify it's really you": "ನಿಮ್ಮ ಗುರುತನ್ನು ಪರಿಶೀಲಿಸಲು ನಾವು ಇಮೇಲ್‌ನಲ್ಲಿ ಒಂದು ಬಾರಿ ಮಾತ್ರ ಬಳಸುವ ಕೋಡ್ ಅನ್ನು ಕಳುಹಿಸುತ್ತೇವೆ",
-  "We sent a 6-digit code to": "ನಾವು 6-ಅಂಕಿಯ ಕೋಡ್ ಅನ್ನು ಕಳುಹಿಸಿದ್ದೇವೆ"
+  "We sent a 6-digit code to": "ನಾವು 6-ಅಂಕಿಯ ಕೋಡ್ ಅನ್ನು ಕಳುಹಿಸಿದ್ದೇವೆ",
+  "Search albums by title or description": "ಶೀರ್ಷಿಕೆ ಅಥವಾ ವಿವರಣೆಯ ಮೂಲಕ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಹುಡುಕಿ",
+  "View Public Profile": "ಸಾರ್ವಜನಿಕ ಪ್ರೊಫೈಲ್ ನೋಡಿ",
+  "Storage": "ಸಂಗ್ರಹಣೆ",
+  "Use the 6180 app to showcase your albums offline": "ನಿಮ್ಮ ಆಲ್ಬಮ್‌ಗಳನ್ನು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಪ್ರದರ್ಶಿಸಲು 6180 ಅಪ್ಲಿಕೇಶನ್ ಬಳಸಿ",
+  "Intelligently tagged and beautifully organized": "ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ಟ್ಯಾಗ್ ಮಾಡಲಾಗಿದೆ ಮತ್ತು ಸುಂದರವಾಗಿ ಸಂಘಟಿಸಲಾಗಿದೆ",
+  "Open On iOS": "iOS ನಲ್ಲಿ ತೆರೆಯಿರಿ",
+  "Open On Android": "Android ನಲ್ಲಿ ತೆರೆಯಿರಿ",
+  "Toggle contacts filter": "ಸಂಪರ್ಕಗಳ ಫಿಲ್ಟರ್ ಟಾಗಲ್ ಮಾಡಿ",
+  "Showing albums with all selected contacts and tags": "ಎಲ್ಲಾ ಆಯ್ಕೆಯಾದ ಸಂಪರ್ಕಗಳು ಮತ್ತು ಟ್ಯಾಗ್‌ಗಳೊಂದಿಗೆ ಆಲ್ಬಮ್‌ಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ",
+  "Showing albums with all selected tags": "ಎಲ್ಲಾ ಆಯ್ಕೆಯಾದ ಟ್ಯಾಗ್‌ಗಳೊಂದಿಗೆ ಆಲ್ಬಮ್‌ಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ"
 }

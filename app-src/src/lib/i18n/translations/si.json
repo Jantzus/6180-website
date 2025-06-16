@@ -126,7 +126,6 @@
   "No items to download": "බාගත කිරීමට අයිතමයක් නැත",
   "Failed to update album visibility. Please try again.": "ඇල්බමය දෘශ්‍යතාව යාවත්කාලීන කිරීමට අසමත් විය. කරුණාකර නැවත උත්සාහ කරන්න.",
   "You must be logged in to perform this action": "මෙම ක්‍රියාව සිදු කිරීමට ඔබ පුරන වී සිටිය යුතුය",
-  "Search album title or description": "ඇල්බමයේ මාතෘකාව හෝ විස්තරය සොයන්න",
   "Enter a password for this album.": "මෙම ඇල්බමය සඳහා මුරපදයක් ඇතුලත් කරන්න",
   "Enter password": "මුරපදය ඇතුළත් කරන්න",
   "Select password restrictions.": "මුරපද සීමාවන් තෝරන්න.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ඔබේ 6180 ඇල්බම වලට ප්‍රවේශය",
   "Revisit Your Albums": "ඔබේ ඇල්බම් නැවත බලන්න",
   "We'll email you a one-time code to verify it's really you": "අපි ඔබේ අනන්‍යතාවය සත්‍යාපනය කිරීම සඳහා ඊමේල් මගින් එක් වරක් භාවිතා කරන කේතයක් එවන්නෙමු",
-  "We sent a 6-digit code to": "අපි ඉලක්කම් 6ක් සහිත කේතයක් යැව්වෙමු"
+  "We sent a 6-digit code to": "අපි ඉලක්කම් 6ක් සහිත කේතයක් යැව්වෙමු",
+  "Search albums by title or description": "මාතෘකාව හෝ විස්තරය අනුව ඇල්බම් සොයන්න",
+  "View Public Profile": "පොදු පැතිකඩ බලන්න",
+  "Storage": "ගබඩාව",
+  "Use the 6180 app to showcase your albums offline": "ඔබේ ඇල්බම් නොබැඳිව පෙන්වීමට 6180 යෙදුම භාවිතා කරන්න",
+  "Intelligently tagged and beautifully organized": "බුද්ධිමත්ව ටැග් කර ඇති අතර ලස්සනට සංවිධානය කර ඇත",
+  "Open On iOS": "iOS හි විවෘත කරන්න",
+  "Open On Android": "Android හි විවෘත කරන්න",
+  "Toggle contacts filter": "සම්බන්ධතා පෙරහන මාරු කරන්න",
+  "Showing albums with all selected contacts and tags": "සියලුම තෝරාගත් සම්බන්ධතා සහ ටැග සමඟ ඇල්බම ප්‍රදර්ශනය",
+  "Showing albums with all selected tags": "සියලුම තෝරාගත් ටැග සමඟ ඇල්බම ප්‍රදර්ශනය"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Inga objekt att ladda ner",
   "Failed to update album visibility. Please try again.": "Det gick inte att uppdatera albumets synlighet. Försök igen.",
   "You must be logged in to perform this action": "Du måste vara inloggad för att utföra denna åtgärd",
-  "Search album title or description": "Sök albumtitel eller beskrivning",
   "Enter a password for this album.": "Ange ett lösenord för det här albumet",
   "Enter password": "Ange lösenord",
   "Select password restrictions.": "Välj lösenordsbegränsningar.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Åtkomst till Dina 6180 Album",
   "Revisit Your Albums": "Återbesök Dina Album",
   "We'll email you a one-time code to verify it's really you": "Vi skickar dig en engångskod via e-post för att verifiera att det verkligen är du",
-  "We sent a 6-digit code to": "Vi skickade en 6-siffrig kod till"
+  "We sent a 6-digit code to": "Vi skickade en 6-siffrig kod till",
+  "Search albums by title or description": "Sök album efter titel eller beskrivning",
+  "View Public Profile": "Visa Offentlig Profil",
+  "Storage": "Lagring",
+  "Use the 6180 app to showcase your albums offline": "Använd 6180-appen för att visa dina album offline",
+  "Intelligently tagged and beautifully organized": "Intelligent märkta och vackert organiserade",
+  "Open On iOS": "Öppna På iOS",
+  "Open On Android": "Öppna På Android",
+  "Toggle contacts filter": "Växla kontaktfilter",
+  "Showing albums with all selected contacts and tags": "Visar album med alla valda kontakter och taggar",
+  "Showing albums with all selected tags": "Visar album med alla valda taggar"
 }

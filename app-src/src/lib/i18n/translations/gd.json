@@ -126,7 +126,6 @@
   "No items to download": "Chan eil nì ri luchdadh a-nuas",
   "Failed to update album visibility. Please try again.": "Cha deach leinn faicinneachd an albam ùrachadh. Feuch a-rithist.",
   "You must be logged in to perform this action": "Feumaidh tu clàradh a-steach gus an gnìomh seo a dhèanamh",
-  "Search album title or description": "Lorg tiotal no tuairisgeul an albaim",
   "Enter a password for this album.": "Cuir a-steach facal-faire airson an albam seo",
   "Enter password": "Cuir a-steach facal-faire",
   "Select password restrictions.": "Tagh cuingeachaidhean facal-faire.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Faigh cothrom air na 6180 Clàran-ciùil agad",
   "Revisit Your Albums": "Tadhail Air Na h-Albums Agad A-rithist",
   "We'll email you a one-time code to verify it's really you": "Cuiridh sinn còd aon-chleachdaidh thugaibh air post-d gus dearbhadh gur sibhse a th' ann dha-rìribh",
-  "We sent a 6-digit code to": "Chuir sinn còd 6-àireamh gu"
+  "We sent a 6-digit code to": "Chuir sinn còd 6-àireamh gu",
+  "Search albums by title or description": "Lorg albaman a-rèir tiotal no tuairisgeul",
+  "View Public Profile": "Seall am Pròifil Poblach",
+  "Storage": "Stòradh",
+  "Use the 6180 app to showcase your albums offline": "Cleachd an aplacaid 6180 gus na clàran agad a shealltainn far-loidhne",
+  "Intelligently tagged and beautifully organized": "Air an comharrachadh gu tuigseach 's air an eagrachadh gu àlainn",
+  "Open On iOS": "Fosgail Air iOS",
+  "Open On Android": "Fosgail Air Android",
+  "Toggle contacts filter": "Togail criathrag conaltraidh",
+  "Showing albums with all selected contacts and tags": "A' sealltainn clàran le gach conaltradh is taga a chaidh a thaghadh",
+  "Showing albums with all selected tags": "A' sealltainn clàran le gach taga a chaidh a thaghadh"
 }

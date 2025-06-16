@@ -126,7 +126,6 @@
   "No items to download": "E leai ni mea e fa'aifo",
   "Failed to update album visibility. Please try again.": "Ua le mafai ona fa'afouina le va'aia o le api. Fa'amolemole toe taumafai.",
   "You must be logged in to perform this action": "E tatau ona e ulufale mai e fai lenei gaioiga",
-  "Search album title or description": "Saili le ulutala poo o le faamatalaga o le api",
   "Enter a password for this album.": "Fa'amolemole tu'u mai se upu fa'ailoga mo lenei api",
   "Enter password": "Fa'aulu le upu fa'ailo",
   "Select password restrictions.": "Filifilia tapulaa o upu faalilolilo.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Ulufale i au 6180 Albums",
   "Revisit Your Albums": "Toe Asiasi Lau Albums",
   "We'll email you a one-time code to verify it's really you": "O le a matou auina atu ia te oe se numera faʻaoga tasi e tasi i le imeli e faʻamaonia ai o oe lava",
-  "We sent a 6-digit code to": "Sa matou auina atu le numera e ono i le"
+  "We sent a 6-digit code to": "Sa matou auina atu le numera e ono i le",
+  "Search albums by title or description": "Su'e album i igoa po'o fa'amatalaga",
+  "View Public Profile": "Va'ai le Fa'amatalaga Lautele",
+  "Storage": "Fa'aputu",
+  "Use the 6180 app to showcase your albums offline": "Fa'aaoga le 6180 talosaga e fa'aali ai au album i luga ole offline",
+  "Intelligently tagged and beautifully organized": "Fa'ailoga ma le atamai ma fa'atulaga ma le matagofie",
+  "Open On iOS": "Tatala I Le iOS",
+  "Open On Android": "Tatala I Le Android",
+  "Toggle contacts filter": "Suia le fa'amama o feso'ota'iga",
+  "Showing albums with all selected contacts and tags": "Fa'aali ata fa'amaumau ma feso'ota'iga uma ma fa'ailoga uma",
+  "Showing albums with all selected tags": "Fa'aali ata fa'amaumau ma fa'ailoga uma"
 }

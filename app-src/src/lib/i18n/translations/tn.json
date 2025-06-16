@@ -126,7 +126,6 @@
   "No items to download": "Ga go na dilo tse di laolelwang",
   "Failed to update album visibility. Please try again.": "Go palelegile go ntšhwafatsa ponagatšo ya di-album. Tswee-tswee, leka gape.",
   "You must be logged in to perform this action": "O tshwanetse go tsena go dira tiro e",
-  "Search album title or description": "Batla setlhogo sa album kgotsa tlhaloso",
   "Enter a password for this album.": "Tsenya lefoko la sephiri la albamo e",
   "Enter password": "Tsenya khunolelefatshe",
   "Select password restrictions.": "Tlhopha dikganetso tsa lefoko la sephiri.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Tsena go 6180 Albums tsa Gago",
   "Revisit Your Albums": "Etela Albums Tsa Gago Gape",
   "We'll email you a one-time code to verify it's really you": "Re tla go romela khoutu ya go dirisiwa gangwe fela ka imeile go netefatsa gore ke wena ruri",
-  "We sent a 6-digit code to": "Re rometse khoutu ya dinomoro tshela go"
+  "We sent a 6-digit code to": "Re rometse khoutu ya dinomoro tshela go",
+  "Search albums by title or description": "Batla di-album ka sehlogo kgotsa tlhaloso",
+  "View Public Profile": "Bone Profaele ya Setšhaba",
+  "Storage": "Polokelo",
+  "Use the 6180 app to showcase your albums offline": "Dirisa app ya 6180 go bontsha dialbamo tsa gago offline",
+  "Intelligently tagged and beautifully organized": "Botlhale bo tshwayedi le go rulaganyeditswe sentle",
+  "Open On iOS": "Bula Mo iOS",
+  "Open On Android": "Bula Mo Android",
+  "Toggle contacts filter": "Fetola filter ya dikgokagano",
+  "Showing albums with all selected contacts and tags": "Go bontsha di-album tsa dikgokagano tsohle tse di kgethilweng le di-tag",
+  "Showing albums with all selected tags": "Go bontsha di-album tsa di-tag tsohle tse di kgethilweng"
 }

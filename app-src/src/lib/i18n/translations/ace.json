@@ -126,7 +126,6 @@
   "No items to download": "Hana beureukaih nyang na untuk drop",
   "Failed to update album visibility. Please try again.": "Hana meuhasé jeunameuë album teupiléh. Neubaci lom.",
   "You must be logged in to perform this action": "Droeneuh meuh tamong log keu peulaku buet nyoe",
-  "Search album title or description": "Mita album nan atawa ureuëng",
   "Enter a password for this album.": "Pasoe password keu album nyoe",
   "Enter password": "Pasoë kata lalôn",
   "Select password restrictions.": "Pileeh peunatah katasandi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Buek Droëneuh 6180 Album",
   "Revisit Your Albums": "Kunjoeng Baliëk Album Droëneuh",
   "We'll email you a one-time code to verify it's really you": "Kamoe akan kirem kod nyang guna saboh boh lewat email keu pastikan bahwa droeneuh beutoi",
-  "We sent a 6-digit code to": "Kamoe ka kirem kod 6 digit keu"
+  "We sent a 6-digit code to": "Kamoe ka kirem kod 6 digit keu",
+  "Search albums by title or description": "Mita album ngon nan geularan atawa keteurangn",
+  "View Public Profile": "Teuem Profil Umum",
+  "Storage": "Peunyimpan",
+  "Use the 6180 app to showcase your albums offline": "Pakek aplikasi 6180 keu peuhah album droeneuh secara offline",
+  "Intelligently tagged and beautifully organized": "Ditandai dengan jeuneh ngon ditata dengan lagak",
+  "Open On iOS": "Peuka Bak iOS",
+  "Open On Android": "Peuka Bak Android",
+  "Toggle contacts filter": "Ubah filter kontak",
+  "Showing albums with all selected contacts and tags": "Peuleumah album ngon ban kontakmeunan ngon tag nyang dipileh",
+  "Showing albums with all selected tags": "Peuleumah album ngon ban tag nyang dipileh"
 }

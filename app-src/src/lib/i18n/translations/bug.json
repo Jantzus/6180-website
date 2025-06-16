@@ -126,7 +126,6 @@
   "No items to download": "Dek barang riloé",
   "Failed to update album visibility. Please try again.": "Gagal mappamanyaranni tampakna album. Tulisenna jajaki paimeng.",
   "You must be logged in to perform this action": "Engka harusuki muttama log untuk pogau'i iyae",
-  "Search album title or description": "Sappa judul album iarega panjelasanna",
   "Enter a password for this album.": "Puttamai sandi lao album iyae",
   "Enter password": "Iyalengng katassandhi",
   "Select password restrictions.": "Pilii pampagentengang kata sandi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Ala 6180 Album-mu",
   "Revisit Your Albums": "Balii Cini Album-Mu",
   "We'll email you a one-time code to verify it's really you": "Narekko kode macca-macca sipatuo e-mail iare wenni yanareko bettua iko naiya",
-  "We sent a 6-digit code to": "Kigirim ma kode 6 angka ri"
+  "We sent a 6-digit code to": "Kigirim ma kode 6 angka ri",
+  "Search albums by title or description": "Sitta' album sére judul ri deskripsi",
+  "View Public Profile": "Ita Profil Umum",
+  "Storage": "Passimpenan",
+  "Use the 6180 app to showcase your albums offline": "Engka aplikasi 6180 pole mapatonang album-mu secara offline",
+  "Intelligently tagged and beautifully organized": "Ditandai secara cerdas dan diatur dengan indah",
+  "Open On iOS": "Buka Di iOS",
+  "Open On Android": "Buka Di Android",
+  "Toggle contacts filter": "Ganti filter kontak",
+  "Showing albums with all selected contacts and tags": "Mancaji album sareng kontak siagang tag namallupu",
+  "Showing albums with all selected tags": "Mancaji album sareng tag namallupu"
 }

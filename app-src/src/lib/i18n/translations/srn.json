@@ -126,7 +126,6 @@
   "No items to download": "No item fu download",
   "Failed to update album visibility. Please try again.": "A no man lukt fu kenki a si album. Proberi baka.",
   "You must be logged in to perform this action": "Yu musu psa ini fu du a sani disi",
-  "Search album title or description": "Suku album nen noso prakseri",
   "Enter a password for this album.": "Poti wan paspatu gi a albùm disi",
   "Enter password": "Poti a password",
   "Select password restrictions.": "Teki password beperkingen.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Akses na Yu 6180 Albums",
   "Revisit Your Albums": "Luku Yu Albums Baka",
   "We'll email you a one-time code to verify it's really you": "Wi e go sen yu wan tem bruik kodo nanga email fu tesi taki na yu reti",
-  "We sent a 6-digit code to": "Wi ben sen wan 6-dijit kode na"
+  "We sent a 6-digit code to": "Wi ben sen wan 6-dijit kode na",
+  "Search albums by title or description": "Suku album nanga nen efru taki",
+  "View Public Profile": "Si Pablik Profiel",
+  "Storage": "Planga",
+  "Use the 6180 app to showcase your albums offline": "Bruki den 6180 app fu sori yu album dem san internet",
+  "Intelligently tagged and beautifully organized": "Sma tagi nanga moi organisi",
+  "Open On iOS": "Opo Na iOS",
+  "Open On Android": "Opo Na Android",
+  "Toggle contacts filter": "Tron kontak filter",
+  "Showing albums with all selected contacts and tags": "Sabi album nanga ala pick kontak nanga tag",
+  "Showing albums with all selected tags": "Sabi album nanga ala pick tag"
 }

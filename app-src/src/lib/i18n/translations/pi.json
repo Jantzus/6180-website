@@ -126,7 +126,6 @@
   "No items to download": "अवरोपेतुं न किञ्चि अत्थि",
   "Failed to update album visibility. Please try again.": "सङ्गीतकट्ठता दिस्सनिये अपडेट असफला। अनुग्गहं करित्वा पुनः वायमथ।",
   "You must be logged in to perform this action": "इमं कम्मं कातुं तव सञ्जालेन प्रवेष्टब्बं",
-  "Search album title or description": "सङ्गीतकट्ठता सीसकं वा विवरणं खोजेथ",
   "Enter a password for this album.": "इमस्स सङ्गीतकट्ठतस्स पासवोड अल्लखतु",
   "Enter password": "पासवर्ड लिखतु",
   "Select password restrictions.": "संकेतशब्दनियमानि चिनन्तु।",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "तव 6180 संग्रहाणि पस्स",
   "Revisit Your Albums": "तुम्हारा एल्बुमा पुन दस्सन",
   "We'll email you a one-time code to verify it's really you": "मयं तुम्हाकं पहिचानवेरिफिकेसनत्थं इमेलेन एकवारुप्पयोगकोडं पहिणिस्सामो",
-  "We sent a 6-digit code to": "मयं छ अंकक कोडं पहिणित्था"
+  "We sent a 6-digit code to": "मयं छ अंकक कोडं पहिणित्था",
+  "Search albums by title or description": "नामञ्च वा वण्णनञ्च योजेत्व सङ्गीतकट्ठतं गवेसेथ",
+  "View Public Profile": "जनसामान्य रूपरेखा पस्सतु",
+  "Storage": "संग्रहण",
+  "Use the 6180 app to showcase your albums offline": "तुम्ह अल्बम अफ्फलाइन दस्सणार ६१८० अप्प इस्सा करत्थु",
+  "Intelligently tagged and beautifully organized": "विज्ञाने संकेतिता अउर सुन्दरतावत् संविधानिता",
+  "Open On iOS": "iOS मज्झे खोल",
+  "Open On Android": "Android मज्झे खोल",
+  "Toggle contacts filter": "सम्पत्ति निस्सरण बदलतु",
+  "Showing albums with all selected contacts and tags": "सब्बेसु पसत्थेसु संपत्तिसु निस्सरणेसु च फ़ोटो-संग्रहानि दस्सेति",
+  "Showing albums with all selected tags": "सब्बेसु पसत्थेसु निस्सरणेसु फ़ोटो-संग्रहानि दस्सेति"
 }

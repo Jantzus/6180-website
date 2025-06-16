@@ -126,7 +126,6 @@
   "No items to download": "Абу мый босьтны",
   "Failed to update album visibility. Please try again.": "Альбомъяслысь аддзанлун выльмӧдны эз артмы. Видзӧдӧй мӧдысь.",
   "You must be logged in to perform this action": "Тайӧ вӧчӧм вылӧ колӧ пырны системаӧ",
-  "Search album title or description": "Альбомлӧн ним либӧ гижӧд корсьны",
   "Enter a password for this album.": "Пыртӧ пароль тайӧ альбомлы",
   "Enter password": "Пыртӧдӧй гусяпас",
   "Select password restrictions.": "Бöрйы пароль дзескöдлуннэз.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Пырны Тіян 6180 Альбомъясӧ",
   "Revisit Your Albums": "Альбомъяссӧ Бӧр Видлыны",
   "We'll email you a one-time code to verify it's really you": "Ми тэныд кыкӧт электрон пошта пыр колям, медым тӧдны, мый тэ гӧгӧр тэ",
-  "We sent a 6-digit code to": "Миян кватыт код кыдзим"
+  "We sent a 6-digit code to": "Миян кватыт код кыдзим",
+  "Search albums by title or description": "Альбомъясӧс нимъяснас али висьталӧмъяснас корсьны",
+  "View Public Profile": "Йӧзкостса Профиль Видлыны",
+  "Storage": "Видзӧдан",
+  "Use the 6180 app to showcase your albums offline": "6180 программаӧн уджалӧй ас альбомъястӧ интернеттӧг петкӧдланы",
+  "Intelligently tagged and beautifully organized": "Валалысь пасйӧм да мича ладӧм",
+  "Open On iOS": "iOS-ын Восьтыны",
+  "Open On Android": "Android-ын Восьтыны",
+  "Toggle contacts filter": "Котырӧс фильтр вежны",
+  "Showing albums with all selected contacts and tags": "Быдмӧн бӧрйӧм котырӧс да пас альбомъяс петкӧдлӧм",
+  "Showing albums with all selected tags": "Быдмӧн бӧрйӧм пас альбомъяс петкӧдлӧм"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Mbouj miz gijmaz hwnz",
   "Failed to update album visibility. Please try again.": "Mbouj miz gvaq sawgên heinzyoux sa album. Cingqcwz coq ciengq sawjlwnh.",
   "You must be logged in to perform this action": "De couh dau vah saeh cix cawjyouq coj",
-  "Search album title or description": "Cwmh bit doq haij album hek mbouj cinjbaih",
   "Enter a password for this album.": "Ndaep ma haenx naj album neix",
   "Enter password": "Sauj ma'nyinz",
   "Select password restrictions.": "Gonjhai cinhma geibit.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Rox neixnaj 6180 boux Albums",
   "Revisit Your Albums": "Boux'ienh geij youq naj album",
   "We'll email you a one-time code to verify it's really you": "Goek gangj ndaej email seizsaiz houxlai ma hanji ma oux raen couh aeu doxgaiq goek neix youz goek",
-  "We sent a 6-digit code to": "Goek gangj seizsaiz ma haiji ma couh"
+  "We sent a 6-digit code to": "Goek gangj seizsaiz ma haiji ma couh",
+  "Search albums by title or description": "Daih bieuxtitl caeuq gaeqsouj laeuj haet album",
+  "View Public Profile": "Lai bouxgung geiqgaiq",
+  "Storage": "Gungjcuengh",
+  "Use the 6180 app to showcase your albums offline": "Aeu 6180 app doengh beix miz coenz gvaq gaiq sienh",
+  "Intelligently tagged and beautifully organized": "Aeu siengj gou bouxbei hix neix gaiq sienh",
+  "Open On iOS": "Bi iOS boek",
+  "Open On Android": "Bi Android boek",
+  "Toggle contacts filter": "Gangj lienhsi bouxboux lanz",
+  "Showing albums with all selected contacts and tags": "Dangj saek saw youq lienhsi bouxboux caw haemqde lanz",
+  "Showing albums with all selected tags": "Dangj saek saw youq haemqde lanz"
 }

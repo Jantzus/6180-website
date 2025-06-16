@@ -126,7 +126,6 @@
   "No items to download": "ಡೌನ್‌ಲೋಡ್ ಮಲ್ಪುಂದು ಏಚಿಲಾ",
   "Failed to update album visibility. Please try again.": "ಆಲ್ಬಂದ ತೋಜುನಿನ ಅಪ್‌ಡೇಟ್ ಮಲ್ಪಕ್ ಆಯಂದ್. ದಯದೆರೆ, ಪಿರ ದುಂಬು ಪ್ರಯತ್ನ ಮಲ್ಪುಲೆ.",
   "You must be logged in to perform this action": "ಈ ಕ್ರಿಯೆದ ನಡಪಾವಳಿಗ್ ಈರ್ ದಾಲ್ ಆಯಿನ ಉಂಡು",
-  "Search album title or description": "ಆಲ್ಬಂ ಪುದರ್ ಅತ್ತ್ ವಿವರಣೆ ನಾಡ್ದ್",
   "Enter a password for this album.": "ಈ ಆಲ್ಬಂಗ್ ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಾಪಿಲೆ",
   "Enter password": "ಗುಪ್ತಪದೊನು ನಮೂದಿಸಾಲೆ",
   "Select password restrictions.": "ಪಾಸ್‌ವರ್ಡ್ ನಿಯಮೊಲೆನ್ ಆಯ್ಕೆ ಮಲ್ಪುಲೆ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ನಿನ್ನ 6180 ಆಲ್ಬಮ್‌ಲೆನ್ ನೋಡ್",
   "Revisit Your Albums": "ನಿಮ್ಮ ಆಲ್ಬಂಗಳನ್ನು ಮತ್ತೆ ನೋಡಿ",
   "We'll email you a one-time code to verify it's really you": "ಎಮ್ಮೆನ ಪತ್ರ ಸೇವೆ ದ್ ಅರೆ ಸ್ದಿ ದ್ ಮಾತ್ರ ಉಪಯೋಗ ದ್ ಸಂಕೇತ ಮಲ್ಪುಲಾ ನಿಮ್ಮೆನ ಪರಿಚಯ ಸ್ರಿೀಕಾರೀಸೂನ್ಲಾ",
-  "We sent a 6-digit code to": "ನಮ್ಮ 6 ಅಂಕಿದ್ ಸಂಕೇತ ಕಡಪುಡ್‌ದ್"
+  "We sent a 6-digit code to": "ನಮ್ಮ 6 ಅಂಕಿದ್ ಸಂಕೇತ ಕಡಪುಡ್‌ದ್",
+  "Search albums by title or description": "ಶಿರ್ಶಿಕೆ ಅತ್ತಂಡ ವಿವರಣೆದ ಪ್ರಕಾರ ಆಲ್ಬಂಲೆನ್ ನಾಡ್",
+  "View Public Profile": "ಸಾರ್ವಜನಿಕ ಪ್ರೊಫೈಲ್ ನೋಡಿ",
+  "Storage": "ಸಂಗ್ರಹಣೆ",
+  "Use the 6180 app to showcase your albums offline": "ಇಲ್ಲಿನ ಆಲ್ಬಂ ಆಫ್ ಲೈನ್ ತೊಣೆಯೆರ್ ಬುಡ್ಪ್ಪ 6180 ಅಪ್ಲಿಕೇಶನ್ ಬಳಸ್",
+  "Intelligently tagged and beautifully organized": "ಬುದ್ಧಿಮತ್ತೆಗ್ ಟ್ಯಾಗ್ ಮಲ್ತಿನ ಬುಕ್ಕ ಸುಂದರೊಡು ಕ್ರಮೀಕರಿಸ್ದಿನ",
+  "Open On iOS": "iOS ಇತ್ತ್ ತೆಗ್",
+  "Open On Android": "Android ಇತ್ತ್ ತೆಗ್",
+  "Toggle contacts filter": "ಸಂಪರ್ಕೊಕುಲೆನ್ ಫಿಲ್ಟರ್ ಬದಲಾವಣೆ ಮಲ್ಪುಲೆ",
+  "Showing albums with all selected contacts and tags": "ಪೂರಾ ಆಯ್ಕೆ ಮಲ್ತಿನ ಸಂಪರ್ಕೊಕುಲು ಬೊಕ್ಕ ಟ್ಯಾಗ್‌ಲೆನ್ ಆಲ್ಬಮ್‌ಲೆನ್ ತೋಜುಂದು",
+  "Showing albums with all selected tags": "ಪೂರಾ ಆಯ್ಕೆ ಮಲ್ತಿನ ಟ್ಯಾಗ್‌ಲೆನ್ ಆಲ್ಬಮ್‌ಲೆನ್ ತೋಜುಂದು"
 }

@@ -291,15 +291,37 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
               {t('Download')}
             </button>
             
+            {/* Elegant Public Profile Toggle Button */}
             <button
               onClick={handlePublicProfileClick}
               style={{
                 ...buttonStyle,
                 backgroundColor: isOnPublicProfile ? "#4caf50" : "#e0e0e0",
                 color: isOnPublicProfile ? "white" : "inherit",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                position: "relative",
+                border: isOnPublicProfile ? "none" : "1px solid #ccc",
+                transition: "all 0.2s ease",
               }}
             >
-              {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
+              {/* Subtle toggle indicator - small dot */}
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: isOnPublicProfile ? "rgba(255,255,255,0.8)" : "#999",
+                  borderRadius: "50%",
+                  transition: "all 0.2s ease",
+                  flexShrink: 0,
+                }}
+              />
+              
+              {/* Descriptive label that changes */}
+              <span style={{ flexShrink: 0 }}>
+                {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
+              </span>
             </button>
           </div>
         </div>

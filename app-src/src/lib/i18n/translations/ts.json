@@ -126,7 +126,6 @@
   "No items to download": "Ku hava swilo swo rhenderiwa",
   "Failed to update album visibility. Please try again.": "Ku tsandzeka ku pfuxeta vumbonakelo bya ti-albhamu. Hi kombela, ringeta nakambe.",
   "You must be logged in to perform this action": "U fanele u nghena eka sisiteme ku endla leswi",
-  "Search album title or description": "Lavanisa nhlokomhaka wa albhamu kumbe nhlamuselo",
   "Enter a password for this album.": "Nghenisa phasiwedi ya albhamu leyi",
   "Enter password": "Nghenisa phasiwedi",
   "Select password restrictions.": "Hlawula swipimelo swa phasiwedi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Nghena eka 6180 Albums ya Wena",
   "Revisit Your Albums": "Pfula Albums Ta Wena Nakambe",
   "We'll email you a one-time code to verify it's really you": "Hi ta mi rumela khodi yo tirhisa kan'we ntsena hi email ku tiyisisa leswaku i wena ra ntiyiso",
-  "We sent a 6-digit code to": "Hi rumele khodi ya tinomboro ntsevu eka"
+  "We sent a 6-digit code to": "Hi rumele khodi ya tinomboro ntsevu eka",
+  "Search albums by title or description": "Lavisisa ti-albhamu hi ntloko kumbe nhlamuselo",
+  "View Public Profile": "Vona Xiphrofayili xa Vanhu",
+  "Storage": "Vuhlayiselo",
+  "Use the 6180 app to showcase your albums offline": "Tirhisa app ya 6180 ku kombisa ti-albamu ta wena hi offline",
+  "Intelligently tagged and beautifully organized": "Swi makiwile hi vutlhari na swi hlengeletiwile kahle",
+  "Open On iOS": "Pfula Eka iOS",
+  "Open On Android": "Pfula Eka Android",
+  "Toggle contacts filter": "Cincana xivonelo xa vuxaka",
+  "Showing albums with all selected contacts and tags": "Ku kombisa ti-albhamu ta vuxaka bya nkoka byo hlawuriwa hinkwabyo",
+  "Showing albums with all selected tags": "Ku kombisa ti-albhamu ta switako swo hlawuriwa hinkwaswo"
 }

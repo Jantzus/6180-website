@@ -126,7 +126,6 @@
   "No items to download": "Kima mosi ve kele ya kubakula",
   "Failed to update album visibility. Please try again.": "Bungisa ya kimonsono album me kubwa ve. Mfumu, landa diaka.",
   "You must be logged in to perform this action": "Fwana yo kota na kati po sala ye",
-  "Search album title or description": "Sosa nkumbu ya album to mambu na yandi",
   "Enter a password for this album.": "Kota nsalu sambu na album yayi",
   "Enter password": "Kota mpovo ya kinsweki",
   "Select password restrictions.": "Sola mikangudulu ya mpasi ya nsavukidi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Kena na 6180 Albums eto",
   "Revisit Your Albums": "Tambula Misambu Miaku",
   "We'll email you a one-time code to verify it's really you": "Tutatuma kove yineni mosika bu bumosi na email mpo totanga nti ngeye mono",
-  "We sent a 6-digit code to": "Tutumini kodi ya namba ntandatu na"
+  "We sent a 6-digit code to": "Tutumini kodi ya namba ntandatu na",
+  "Search albums by title or description": "Sosa maalbumi ye bitumbu to luyalukilu",
+  "View Public Profile": "Mona Nkanda ya Batu Banso",
+  "Storage": "Nkanda",
+  "Use the 6180 app to showcase your albums offline": "Salela aplikasya 6180 mono ukombola album yaku ku offline",
+  "Intelligently tagged and beautifully organized": "Bitelama na mayele ye bongolo ye",
+  "Open On iOS": "Fungula Mu iOS",
+  "Open On Android": "Fungula Mu Android",
+  "Toggle contacts filter": "Baluka filtre ya mindimi",
+  "Showing albums with all selected contacts and tags": "Kulangisa ba albums ya ba mindimi yina yonso yisolo ne ba tags",
+  "Showing albums with all selected tags": "Kulangisa ba albums ya ba tags yina yonso yisolo"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Аш мезе ускомс",
   "Failed to update album visibility. Please try again.": "Альбомть няеви шинь од тиема ашезь лисев. Тага варжак.",
   "You must be logged in to perform this action": "Тейть эряви сувамс системати, штоба тиемс тя тевть",
-  "Search album title or description": "Альбомть лемонц или сёрмадовксонц вешендемс",
   "Enter a password for this album.": "Сувак парол тя альбомти",
   "Enter password": "Сувак паролцень",
   "Select password restrictions.": "Кочкамс парольть ётамань полаптоманза.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Совафтк Тонь 6180 Альбомнэнте",
   "Revisit Your Albums": "Ванфтомс Тонь Альбомхнень",
   "We'll email you a one-time code to verify it's really you": "Минь тонеть седтеме идень кепотеманди код электрон почтава, тевс мерема тон гак тон улят",
-  "We sent a 6-digit code to": "Минь кота ди код кулфнень"
+  "We sent a 6-digit code to": "Минь кота ди код кулфнень",
+  "Search albums by title or description": "Альбопне лемцнон эли азондомань коряс вешкснемс",
+  "View Public Profile": "Ломаттнень Профильть Неемс",
+  "Storage": "Вансема",
+  "Use the 6180 app to showcase your albums offline": "Кармак 6180 програмнать эсь альбомненьге нетьнефтома ащемс",
+  "Intelligently tagged and beautifully organized": "Валса няфтьфт ди шачфт аноклафт",
+  "Open On iOS": "iOS-ста Панжомс",
+  "Open On Android": "Android-ста Панжомс",
+  "Toggle contacts filter": "Контактонь фильтронь полафтомс",
+  "Showing albums with all selected contacts and tags": "Кучфтемс альбомат васенце контактнень эди тагонь мархта",
+  "Showing albums with all selected tags": "Кучфтемс альбомат васенце тагонь мархта"
 }

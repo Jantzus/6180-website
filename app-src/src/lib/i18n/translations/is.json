@@ -126,7 +126,6 @@
   "No items to download": "Engar vörur til að sækja",
   "Failed to update album visibility. Please try again.": "Mistókst að uppfæra sýnileika albúms. Vinsamlegast reyndu aftur.",
   "You must be logged in to perform this action": "Þú verður að vera skráður inn til að framkvæma þessa aðgerð",
-  "Search album title or description": "Leita að titli eða lýsingu albúms",
   "Enter a password for this album.": "Sláðu inn lykilorð fyrir þetta albúm",
   "Enter password": "Sláðu inn lykilorð",
   "Select password restrictions.": "Veldu aðgangsorðatakmarkanir.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Aðgangur að 6180 Plötunum Þínum",
   "Revisit Your Albums": "Heimsæktu Albúmin Þín Aftur",
   "We'll email you a one-time code to verify it's really you": "Við munum senda þér einskiptiskóða í tölvupósti til að staðfesta að þú sért það virkilega",
-  "We sent a 6-digit code to": "Við sendum 6 stafa kóða á"
+  "We sent a 6-digit code to": "Við sendum 6 stafa kóða á",
+  "Search albums by title or description": "Leita að albúmum eftir titli eða lýsingu",
+  "View Public Profile": "Skoða Opinbera Notendaupplýsingu",
+  "Storage": "Geymsla",
+  "Use the 6180 app to showcase your albums offline": "Notaðu 6180 forritið til að sýna albúmin þín án nettengingar",
+  "Intelligently tagged and beautifully organized": "Greindarlega merkt og fallega skipulagt",
+  "Open On iOS": "Opna Á iOS",
+  "Open On Android": "Opna Á Android",
+  "Toggle contacts filter": "Víxla tengiliða síu",
+  "Showing albums with all selected contacts and tags": "Sýnir albúm með öllum völdum tengiliðum og merkjum",
+  "Showing albums with all selected tags": "Sýnir albúm með öllum völdum merkjum"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Чуйаккха хIумнаш яц",
   "Failed to update album visibility. Please try again.": "Альбоман гучу хьалар карлаяккха цаделира. Дехар до, юха гӀорта.",
   "You must be logged in to perform this action": "Хьуна чуваьлла веза хIара дийриг кхочушдан",
-  "Search album title or description": "Альбоман цӀе я цуьнах лаьцна лаха",
   "Enter a password for this album.": "Альбоман пароль язъе",
   "Enter password": "Пароль язъе",
   "Select password restrictions.": "Къайлах дош доза харжа.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Хьо 6180 Альбомийн Чухула",
   "Revisit Your Albums": "Хьан Альбомаш Юха Хьажа",
   "We'll email you a one-time code to verify it's really you": "Хьо хlинцца хьо ву хlокху табан цунах email чохь цхъа заман лело кодекс дохуш ду",
-  "We sent a 6-digit code to": "Вай ялх цифрашца код дохийна"
+  "We sent a 6-digit code to": "Вай ялх цифрашца код дохийна",
+  "Search albums by title or description": "Альбомийн цӏе я цуьнан хаам",
+  "View Public Profile": "Массарна Профиль Хьажа",
+  "Storage": "Лархар",
+  "Use the 6180 app to showcase your albums offline": "6180 программа лелале хьуна альбомаш офлайн гайта",
+  "Intelligently tagged and beautifully organized": "АкӀлехь билгалдина, дика цӀенъяьккхина",
+  "Open On iOS": "iOS чохь Да",
+  "Open On Android": "Android чохь Да",
+  "Toggle contacts filter": "Контактийн фильтр хийца",
+  "Showing albums with all selected contacts and tags": "Харжа контакташ а, тегаш а цӀахь йолуш альбомаш гайта",
+  "Showing albums with all selected tags": "Харжа тегаш цӀахь йолуш альбомаш гайта"
 }

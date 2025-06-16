@@ -126,7 +126,6 @@
   "No items to download": "Татх зүүл уга",
   "Failed to update album visibility. Please try again.": "Альбомин үзгдц шинчлх амжлтта болв уга. Буйн болтха, дәкәд зүткн.",
   "You must be logged in to perform this action": "Энүг кехлә та системд орх йоста",
-  "Search album title or description": "Альбомин нерн аль заалтинь хәәх",
   "Enter a password for this album.": "Эн альбомд нууц үг бичтн",
   "Enter password": "Нууц үгиг бичтн",
   "Select password restrictions.": "Нууц угин заагнь суңһх.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Чини 6180 Альбомдт Орх",
   "Revisit Your Albums": "Альбомнрән Дәкәд Үзх",
   "We'll email you a one-time code to verify it's really you": "Би чамд нэгш хэрэглэх код шуудангаар илгээж, чи яг чи болохыг баталгаажуулна",
-  "We sent a 6-digit code to": "Би зургаан тооһар код илгәәв"
+  "We sent a 6-digit code to": "Би зургаан тооһар код илгәәв",
+  "Search albums by title or description": "Альбомуд нерәр эс тодлвр-ар хәәх",
+  "View Public Profile": "Халһын Профил Җирһх",
+  "Storage": "Нүүдлһн",
+  "Use the 6180 app to showcase your albums offline": "6180 программыг хәрглҗ, альбомуд offline үзүлх",
+  "Intelligently tagged and beautifully organized": "Уха санаһар теергтә, үзәскән зохицлһн",
+  "Open On iOS": "iOS-д Нээх",
+  "Open On Android": "Android-д Нээх",
+  "Toggle contacts filter": "Харилцагчин шүүлтг сольх",
+  "Showing albums with all selected contacts and tags": "Сонгсн бүкл харилцагч болн тэмдгтә альбомуд үзүлж",
+  "Showing albums with all selected tags": "Сонгсн бүкл тэмдгтә альбомуд үзүлж"
 }

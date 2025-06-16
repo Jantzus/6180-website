@@ -126,7 +126,6 @@
   "No items to download": "Onki lutir at taka niður",
   "Failed to update album visibility. Please try again.": "Miseydnaðist at dagføra sjónligheit av albumi. Vinarliga royn aftur.",
   "You must be logged in to perform this action": "Tú mást rita inn fyri at gera hesa handling",
-  "Search album title or description": "Leita eftir albumheiti ella frágreiðing",
   "Enter a password for this album.": "Skriva loyniorð fyri hetta albumið",
   "Enter password": "Skriva loyniorð",
   "Select password restrictions.": "Vel atkomuorð avmarkingar.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Atgongd til Tíni 6180 Albúm",
   "Revisit Your Albums": "Vitja Tíni Albums Aftur",
   "We'll email you a one-time code to verify it's really you": "Vit senda tær eina eingongskotu við teldupost fyri at vátta, at tað veruliga er tú",
-  "We sent a 6-digit code to": "Vit sendu eina 6-tala kotu til"
+  "We sent a 6-digit code to": "Vit sendu eina 6-tala kotu til",
+  "Search albums by title or description": "Leita eftir plötum við heiti ella lýsing",
+  "View Public Profile": "Vís Almennan Persónsbláð",
+  "Storage": "Goymslur",
+  "Use the 6180 app to showcase your albums offline": "Brúka 6180 appina fyri at vísa tíni album uttan sambandið",
+  "Intelligently tagged and beautifully organized": "Klókliga merkjað og vakurt skipað",
+  "Open On iOS": "Lat Upp Á iOS",
+  "Open On Android": "Lat Upp Á Android",
+  "Toggle contacts filter": "Skift kontakt-filtur",
+  "Showing albums with all selected contacts and tags": "Vísir album við øllum valdum kontaktum og merkjum",
+  "Showing albums with all selected tags": "Vísir album við øllum valdum merkjum"
 }

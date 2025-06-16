@@ -126,7 +126,6 @@
   "No items to download": "Mbênî na këkë tî télé pëpe",
   "Failed to update album visibility. Please try again.": "Sö amu leke na album ti gue ape. Baba, tara encore.",
   "You must be logged in to perform this action": "Mo lingbi na douti ti sala so",
-  "Search album title or description": "Gi album iri wala tënë na ndö",
   "Enter a password for this album.": "Tènè yanga na ndö na album sô",
   "Enter password": "Tokua mo poro ndo lêge",
   "Select password restrictions.": "Soro âlisio tî kodönînga.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Yeke na 6180 Albums tî mo",
   "Revisit Your Albums": "Gue Albums Ti Ao Na Oko",
   "We'll email you a one-time code to verify it's really you": "Tî ani va kodö ti yê tî kêîrî-kêîrî kue so na-elektönnö na yâmengö tî mo so î lî nî na nä",
-  "We sent a 6-digit code to": "Tî awe kôdö tî numêro usia na"
+  "We sent a 6-digit code to": "Tî awe kôdö tî numêro usia na",
+  "Search albums by title or description": "Yeke àlbäm na yâ tî nî na kpälïngö",
+  "View Public Profile": "Gue Profil ti Kọdọrọ",
+  "Storage": "Fadêpo",
+  "Use the 6180 app to showcase your albums offline": "Iri yê 6180 app sô tî atonengôsô tî album â mo tî offline",
+  "Intelligently tagged and beautifully organized": "Tî mayêlê sô tî mbênî na zônî sô",
+  "Open On iOS": "Yeke Na iOS",
+  "Open On Android": "Yeke Na Android",
+  "Toggle contacts filter": "Kängö filter tî kontakt",
+  "Showing albums with all selected contacts and tags": "Fa album na kontakt na tag ape so kue",
+  "Showing albums with all selected tags": "Fa album na tag ape so kue"
 }

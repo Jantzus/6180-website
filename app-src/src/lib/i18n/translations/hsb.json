@@ -126,7 +126,6 @@
   "No items to download": "Žane zapiski ke sćehnjenju",
   "Failed to update album visibility. Please try again.": "Widźomnosć albuma njeje so aktualizować dała. Prošu spytajće hišće raz.",
   "You must be logged in to perform this action": "Dyrbiće so přizjewić, zo byšće tutu akciju wuwjedł",
-  "Search album title or description": "Titl albuma abo wopisanje pytać",
   "Enter a password for this album.": "Zapodajće hesło za tutón album",
   "Enter password": "Zapodajće hesło",
   "Select password restrictions.": "Wobmjezowanja hesła wubrać.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Přistup na Waše 6180 Albumy",
   "Revisit Your Albums": "Woglědajće Swoje Albumy Zaso",
   "We'll email you a one-time code to verify it's really you": "Pošljemy wam jedno-razowy kod přez e-mail, zo bychom přepruwowali, zo sće to woprawdźe wy",
-  "We sent a 6-digit code to": "Smy pósłali 6-cyfrowny kod na"
+  "We sent a 6-digit code to": "Smy pósłali 6-cyfrowny kod na",
+  "Search albums by title or description": "Albumy po titelu abo wopisanju pytać",
+  "View Public Profile": "Zjawny profil pokazać",
+  "Storage": "Składowanje",
+  "Use the 6180 app to showcase your albums offline": "Wužiwajće aplikaciju 6180 za pokazowanje wašich albumow offline",
+  "Intelligently tagged and beautifully organized": "Inteligentnje označowane a rjenje organizowane",
+  "Open On iOS": "Na iOS Wočinić",
+  "Open On Android": "Na Android Wočinić",
+  "Toggle contacts filter": "Kontaktowy filter přepnyć",
+  "Showing albums with all selected contacts and tags": "Pokazować albumy ze wšěmi wubranymi kontaktami a wobznamjenjemi",
+  "Showing albums with all selected tags": "Pokazować albumy ze wšěmi wubranymi wobznamjenjemi"
 }

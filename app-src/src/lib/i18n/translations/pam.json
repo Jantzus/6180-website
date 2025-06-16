@@ -126,7 +126,6 @@
   "No items to download": "Alang aytem a kuldutan",
   "Failed to update album visibility. Please try again.": "E me-update ing pakakit ning album. Pakisubukan pasibayu.",
   "You must be logged in to perform this action": "Kailangan kang mag-log in para agawan ini",
-  "Search album title or description": "Maintun king pamagat ning album o description",
   "Enter a password for this album.": "Magpalub kang password para king album a ini",
   "Enter password": "Ipalub ya ing password",
   "Select password restrictions.": "Mamili kareng pamagbawal ning password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "I-access me reng 6180 Albums",
   "Revisit Your Albums": "Daraptan Mu Naman Deng Albums Mu",
   "We'll email you a one-time code to verify it's really you": "Magpadala kaming metung a kodigo king email bang i-verify na kayo talaga ini",
-  "We sent a 6-digit code to": "Migpadala kami ng 6-digit a kodigo king"
+  "We sent a 6-digit code to": "Migpadala kami ng 6-digit a kodigo king",
+  "Search albums by title or description": "Paintunan reng album kapamilatan ning pamagat o description",
+  "View Public Profile": "Lon ya ing Publikong Profile",
+  "Storage": "Pagsimpan",
+  "Use the 6180 app to showcase your albums offline": "Gamitan me ing 6180 app ba mipakita la reng album mu king offline",
+  "Intelligently tagged and beautifully organized": "Matalinong me-tag ampong magagandang me-organisar",
+  "Open On iOS": "Ibuklat King iOS",
+  "Open On Android": "Ibuklat King Android",
+  "Toggle contacts filter": "Alilan ya ing contact filter",
+  "Showing albums with all selected contacts and tags": "Papakit no reng album a maki ding miyaliwang contact ampong tag",
+  "Showing albums with all selected tags": "Papakit no reng album a maki ding miyaliwang tag"
 }

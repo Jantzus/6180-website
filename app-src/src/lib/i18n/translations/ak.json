@@ -126,7 +126,6 @@
   "No items to download": "Nneɛma biara nni hɔ a wobɛtumi atwɛrɛ aba fam",
   "Failed to update album visibility. Please try again.": "Woantumi ansakra album no ahwehwɛmu. Mepa wo kyɛw, sane yɛ bio.",
   "You must be logged in to perform this action": "Ɛsɛ sɛ woahyɛ mu ansa na woayɛ dwumadie yi",
-  "Search album title or description": "Hwehwɛ albɔm din anaa nkyerɛkyerɛmu",
   "Enter a password for this album.": "Hyehyɛ kratafa nsɛm ahintasɛm ma saa albɔm yi",
   "Enter password": "Hyehyɛ wo nsɛmfua",
   "Select password restrictions.": "Yi wɔde password restrictions.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Kɔ Wo 6180 Albums So",
   "Revisit Your Albums": "San Wo Albums No Bio",
   "We'll email you a one-time code to verify it's really you": "Yɛbɛma wo nkrataa a wɔde di dwuma pɛn koro no wɔ email so na yɛahu sɛ ɛyɛ wo ankasa",
-  "We sent a 6-digit code to": "Yɛde nkrataa 6 a ɛwɔ hɔ no kɔɔ"
+  "We sent a 6-digit code to": "Yɛde nkrataa 6 a ɛwɔ hɔ no kɔɔ",
+  "Search albums by title or description": "Hwehwɛ albɔm wɔ title anaa nkyerɛase mu",
+  "View Public Profile": "Hwe Profaɛl A Ɛyɛ Aberan",
+  "Storage": "Akorade",
+  "Use the 6180 app to showcase your albums offline": "Fa 6180 app no di wo albɔm ahorow offline",
+  "Intelligently tagged and beautifully organized": "Wɔde nyansa ahyɛ no nsɛnkyerɛnne na wɔahyehyɛ no fɛfɛɛfɛ",
+  "Open On iOS": "Bue Wɔ iOS So",
+  "Open On Android": "Bue Wɔ Android So",
+  "Toggle contacts filter": "Sesa abusuakuw sow",
+  "Showing albums with all selected contacts and tags": "Kyerɛ album a wɔahyɛ abusuakuw ne nsɛnkyerɛnne nyinaa",
+  "Showing albums with all selected tags": "Kyerɛ album a wɔahyɛ nsɛnkyerɛnne nyinaa"
 }

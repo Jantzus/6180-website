@@ -126,7 +126,6 @@
   "No items to download": "Tewali bintu bya kukasa",
   "Failed to update album visibility. Please try again.": "Tekimanyiddwa kukozesa okulabiika kw'akatambi. Mwattu gezaako nate.",
   "You must be logged in to perform this action": "Oteekwa okuba nga oyingidde mukkawunti yo okusobola okukola kino",
-  "Search album title or description": "Noonya omutwe gw'album oba okunyonyola",
   "Enter a password for this album.": "Yingiza ekigambo ky'okuyingira ku albamu eno",
   "Enter password": "Yingiza password",
   "Select password restrictions.": "Londa ebikwata ku bigambo by'okuyingira.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Yingira ku 6180 Albums zo",
   "Revisit Your Albums": "Kyalira Albums Zo",
   "We'll email you a one-time code to verify it's really you": "Tugenda kukuweereza kkoodi ekozesebwa olumu lwokka ku email okukakasa nti gwe",
-  "We sent a 6-digit code to": "Twatumine kkoodi ey'obunyonyi mukaaga ku"
+  "We sent a 6-digit code to": "Twatumine kkoodi ey'obunyonyi mukaaga ku",
+  "Search albums by title or description": "Noonya albumbu nga okozesa omutwe oba okwanjula",
+  "View Public Profile": "Laba Profayili ya Lukale",
+  "Storage": "Kutereka",
+  "Use the 6180 app to showcase your albums offline": "Kozesa app 6180 okulaga albam zo nga tolina ku mukutu",
+  "Intelligently tagged and beautifully organized": "Obumanyirivu obulaga n'obusigibwa obulungi",
+  "Open On iOS": "Ggula Ku iOS",
+  "Open On Android": "Ggula Ku Android",
+  "Toggle contacts filter": "Kyuusa akafuzi k'abakwatagana",
+  "Showing albums with all selected contacts and tags": "Kulaga ebyali biwandiikirwa n'obukwatagano n'ebitabo byonna ebyalondeddwa",
+  "Showing albums with all selected tags": "Kulaga ebyali biwandiikirwa n'ebitabo byonna ebyalondeddwa"
 }

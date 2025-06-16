@@ -126,7 +126,6 @@
   "No items to download": "Babu abubua da za a sauke",
   "Failed to update album visibility. Please try again.": "An kasa sabunta ƙayatarwar album din. Don Allah sake gwadawa.",
   "You must be logged in to perform this action": "Ka faru da zaune a shiga domin yin wannan aiki",
-  "Search album title or description": "Nemo album sunan ko bayanin",
   "Enter a password for this album.": "Rubuta kalmar sirri don wannan album ɗin",
   "Enter password": "Rubuta kalmar sirri",
   "Select password restrictions.": "Namba da sirri iyakokin zabar.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Kulu 6180 Albums ni",
   "Revisit Your Albums": "Te Albums Hen Mo Le",
   "We'll email you a one-time code to verify it's really you": "Man chi yi kol den kanyang bawa email aci ngachi ko ase nii",
-  "We sent a 6-digit code to": "Man son kol kanyang yi"
+  "We sent a 6-digit code to": "Man son kol kanyang yi",
+  "Search albums by title or description": "Sore albums malu nde titlu tsu nde deskripsiyon",
+  "View Public Profile": "Sii Profaai Lehulehu",
+  "Storage": "Ngankai",
+  "Use the 6180 app to showcase your albums offline": "Tumwa 6180 app ki sa album yo ba offline",
+  "Intelligently tagged and beautifully organized": "Ayanga mwene tetigal sa yu marangal sa",
+  "Open On iOS": "Gbere Na iOS",
+  "Open On Android": "Gbere Na Android",
+  "Toggle contacts filter": "Ngyeer kontakt filter",
+  "Showing albums with all selected contacts and tags": "Har album nii kontakt putta tag anwa me kpii ngyeer nyi",
+  "Showing albums with all selected tags": "Har album nii tag anwa me kpii ngyeer nyi"
 }

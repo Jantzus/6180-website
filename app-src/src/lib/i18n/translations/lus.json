@@ -126,7 +126,6 @@
   "No items to download": "Thunluh tur pakhat mah a awm lo",
   "Failed to update album visibility. Please try again.": "Album hmuhtheih dana update theih loh. Khawngaihin, chhin nawn rawh.",
   "You must be logged in to perform this action": "Hei thil ti tur hian i log in a ngai",
-  "Search album title or description": "Album thupui emaw sawifiahna zawng rawh",
   "Enter a password for this album.": "He album atana password dah rawh",
   "Enter password": "Password ziak rawh",
   "Select password restrictions.": "Password chhing danhna thlan rawh.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "I 6180 Albums en rawh",
   "Revisit Your Albums": "I album te kir let la",
   "We'll email you a one-time code to verify it's really you": "I dikna tehfung tur ah email hmanga one-time code ka thawn ang che",
-  "We sent a 6-digit code to": "6-digit code kan thawn ta"
+  "We sent a 6-digit code to": "6-digit code kan thawn ta",
+  "Search albums by title or description": "Title emaw sawifiahna hmanga album zawng rawh",
+  "View Public Profile": "Mipui profile en tih",
+  "Storage": "dahkhawlna",
+  "Use the 6180 app to showcase your albums offline": "I album te offline-ah entir nan tur chuan 6180 app hi hmang rawh",
+  "Intelligently tagged and beautifully organized": "Finfiahna takin tag a ni a leh hmel nuamtakin sorted a ni",
+  "Open On iOS": "iOS-ah hawng rawh",
+  "Open On Android": "Android-ah hawng rawh",
+  "Toggle contacts filter": "Contact filter siam danglam",
+  "Showing albums with all selected contacts and tags": "Contact leh tag thlan zawng nena album awmte hriattirna",
+  "Showing albums with all selected tags": "Tag thlan zawng nena album awmte hriattirna"
 }

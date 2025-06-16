@@ -126,7 +126,6 @@
   "No items to download": "ダウンロードするアイテムがありません",
   "Failed to update album visibility. Please try again.": "アルバムの表示設定を更新できませんでした。もう一度お試しください。",
   "You must be logged in to perform this action": "このアクションを実行するにはログインが必要です",
-  "Search album title or description": "アルバムのタイトルまたは説明を検索",
   "Enter a password for this album.": "このアルバムのパスワードを入力してください",
   "Enter password": "パスワードを入力",
   "Select password restrictions.": "パスワード制限を選択してください。",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "あなたの6180のアルバムにアクセス",
   "Revisit Your Albums": "アルバムを再訪する",
   "We'll email you a one-time code to verify it's really you": "本人確認のため、ワンタイムコードをメールでお送りします",
-  "We sent a 6-digit code to": "6桁のコードを送信しました"
+  "We sent a 6-digit code to": "6桁のコードを送信しました",
+  "Search albums by title or description": "タイトルまたは説明でアルバムを検索",
+  "View Public Profile": "公開プロフィールを表示",
+  "Storage": "ストレージ",
+  "Use the 6180 app to showcase your albums offline": "6180アプリを使用してオフラインでアルバムを表示する",
+  "Intelligently tagged and beautifully organized": "インテリジェントにタグ付けされ、美しく整理されています",
+  "Open On iOS": "iOSで開く",
+  "Open On Android": "Androidで開く",
+  "Toggle contacts filter": "連絡先フィルターを切り替え",
+  "Showing albums with all selected contacts and tags": "選択したすべての連絡先とタグのアルバムを表示",
+  "Showing albums with all selected tags": "選択したすべてのタグのアルバムを表示"
 }

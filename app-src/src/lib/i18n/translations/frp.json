@@ -126,7 +126,6 @@
   "No items to download": "Gins d'èlèment a tèlèchargiér",
   "Failed to update album visibility. Please try again.": "Dèfôta de la misa a jorn de la visibilitât de l'album. Volyéd tornar èprovar.",
   "You must be logged in to perform this action": "Vos dête étre branchiê por fâre ceta accion",
-  "Search album title or description": "Rechèrchiér lo titro ou la dèscripcion de l'album",
   "Enter a password for this album.": "Entrâd un mot de pâssa por ceti album",
   "Enter password": "Entrâd lo mot de pâssa",
   "Select password restrictions.": "Chouèsir les restrictions de mot de pâssa.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accèdâd a voutros 6180 Albums",
   "Revisit Your Albums": "Revêde Voutros Albums",
   "We'll email you a one-time code to verify it's really you": "Nos vo mandarons un code d'usâjo solèt per mèssageria èlèctronica por vèrificar qu'èt ben vos",
-  "We sent a 6-digit code to": "Nos avons mandâ un code de 6 chifres a"
+  "We sent a 6-digit code to": "Nos avons mandâ un code de 6 chifres a",
+  "Search albums by title or description": "Rechèrchiér des alboms per titro ou dèscripcion",
+  "View Public Profile": "Vêre lo Profil Public",
+  "Storage": "Archivájo",
+  "Use the 6180 app to showcase your albums offline": "Utilisâd l'applicacion 6180 por montrar voutros albums sens connexion",
+  "Intelligently tagged and beautifully organized": "Marcâs avouéc entèllijence et organizâs bèlament",
+  "Open On iOS": "Uvrir Dessus iOS",
+  "Open On Android": "Uvrir Dessus Android",
+  "Toggle contacts filter": "Changiér lo filtro des contacts",
+  "Showing albums with all selected contacts and tags": "Afichiér los albums avouéc tôs los contacts et mots-clâfs chouesis",
+  "Showing albums with all selected tags": "Afichiér los albums avouéc tôs los mots-clâfs chouesis"
 }

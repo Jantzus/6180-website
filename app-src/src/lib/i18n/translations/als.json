@@ -126,7 +126,6 @@
   "No items to download": "Kei Elemente zum Abelade",
   "Failed to update album visibility. Please try again.": "Album-Sichtbarkeit isch nit aktualisiert worde. Bitte nomol probiere.",
   "You must be logged in to perform this action": "Du muesch aagmäldet si zum die Aktion durezfüere",
-  "Search album title or description": "Albumtitel oder Beschreibig sueche",
   "Enter a password for this album.": "Gib s'Passwort für das Album ii",
   "Enter password": "Passwort yygeh",
   "Select password restrictions.": "Passwortbschränkige uuswähle.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Zuegriff uf Dini 6180 Album",
   "Revisit Your Albums": "Dini Alben Wieder Aaluege",
   "We'll email you a one-time code to verify it's really you": "Mir schicked dir en Einmalcode per E-Mail für z verifiziere dass du s würkli bisch",
-  "We sent a 6-digit code to": "Mir händ en 6-stellige Code gschickt an"
+  "We sent a 6-digit code to": "Mir händ en 6-stellige Code gschickt an",
+  "Search albums by title or description": "Albe nache Titel oder Beschribig sueche",
+  "View Public Profile": "Öffentlichs Profil Aaluege",
+  "Storage": "Speicher",
+  "Use the 6180 app to showcase your albums offline": "Bruuch d 6180 App zum dini Albe offline zeige",
+  "Intelligently tagged and beautifully organized": "Intelligent markiert und schön organisiert",
+  "Open On iOS": "Uf iOS Ufmache",
+  "Open On Android": "Uf Android Ufmache",
+  "Toggle contacts filter": "Kontakt Filter wiixlä",
+  "Showing albums with all selected contacts and tags": "Zeigt Albe mit allnä gwehlte Kontakte und Tags",
+  "Showing albums with all selected tags": "Zeigt Albe mit allnä gwehlte Tags"
 }

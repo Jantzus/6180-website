@@ -126,7 +126,6 @@
   "No items to download": "Ọ dịghị ihe dị maka ibudata",
   "Failed to update album visibility. Please try again.": "Ọdịda mgbe ịkwụeba ịhụ álbụm. Biko nwaa ọzọ.",
   "You must be logged in to perform this action": "Ị ghaghị banye mgbe ị na-eme ihe a",
-  "Search album title or description": "Chọọ aha ọba ma ọkọwa",
   "Enter a password for this album.": "Tinye okwuntughe maka álbụm a",
   "Enter password": "Tinye okwuntughe",
   "Select password restrictions.": "Họrọ mgbochi okwuntughe.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Banye 6180 Albums Gị",
   "Revisit Your Albums": "Gakwuru Ọzọ Ebe Albums Gị Dị",
   "We'll email you a one-time code to verify it's really you": "Anyị ga-ezitere gị koodu iji naanị otu ugboro site na email ka anyị kwuo na ọ bụ gị n'ezie",
-  "We sent a 6-digit code to": "Anyị zitere koodu nwere mkpụrụedemede isii na"
+  "We sent a 6-digit code to": "Anyị zitere koodu nwere mkpụrụedemede isii na",
+  "Search albums by title or description": "Chọọ album site na aha ma ọ bụ nkọwa",
+  "View Public Profile": "Lee Profaịlụ Ọha",
+  "Storage": "Nchekwa",
+  "Use the 6180 app to showcase your albums offline": "Jiri ngwa 6180 gosipụta ọba egwu gị na-adịghị online",
+  "Intelligently tagged and beautifully organized": "Ejiri ọgụgụ isi mee akara na ejiri mma hazie",
+  "Open On iOS": "Meghee Na iOS",
+  "Open On Android": "Meghee Na Android",
+  "Toggle contacts filter": "Gbanwee nzacha mkpakọrịta",
+  "Showing albums with all selected contacts and tags": "Na-egosi ndekọ foto na mkpakọrịta na mkpado ahọpụtara niile",
+  "Showing albums with all selected tags": "Na-egosi ndekọ foto na mkpado ahọpụtara niile"
 }

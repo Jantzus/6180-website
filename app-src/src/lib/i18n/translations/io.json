@@ -126,7 +126,6 @@
   "No items to download": "Nula kozi por deskargar",
   "Failed to update album visibility. Please try again.": "Nesuceseble aktualigis albumo videblo. Bonvole, probez itere.",
   "You must be logged in to perform this action": "Vu mustas esar enirisita por facar ca ago",
-  "Search album title or description": "Serchar album titulo o deskriptado",
   "Enter a password for this album.": "Enskribi pasvorto por ca albumo",
   "Enter password": "Enigez la pasovorto",
   "Select password restrictions.": "Selektez pasvorto limitizuri.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Acesez a Vua 6180 Albumuri",
   "Revisit Your Albums": "Rivizitez Vua Albums",
   "We'll email you a one-time code to verify it's really you": "Ni sendos ad vu kodiko uzata nur un-foye per retoposto por verifiar ke vu esas vere vu",
-  "We sent a 6-digit code to": "Ni sendis kodiko di 6 zifri ad"
+  "We sent a 6-digit code to": "Ni sendis kodiko di 6 zifri ad",
+  "Search albums by title or description": "Serchez albumi per titulo od deskripto",
+  "View Public Profile": "Vidar la Publika Profilo",
+  "Storage": "Rezerveyo",
+  "Use the 6180 app to showcase your albums offline": "Uzez la aplikacio 6180 por montrar vua albumi sen-reto",
+  "Intelligently tagged and beautifully organized": "Inteligente etikesat e belege organizat",
+  "Open On iOS": "Apertar En iOS",
+  "Open On Android": "Apertar En Android",
+  "Toggle contacts filter": "Chanjar kontakti-filtro",
+  "Showing albums with all selected contacts and tags": "Montrar albumi kun omna selektita kontakti e etiketi",
+  "Showing albums with all selected tags": "Montrar albumi kun omna selektita etiketi"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Niy ma elymyntůw do sebrańo",
   "Failed to update album visibility. Please try again.": "Niy sztimuje zaktualizować widoczności albumu. Sprōbuj jeszcze roz.",
   "You must be logged in to perform this action": "Musisz sie zalogować, coby wykůnać ta czyńność",
-  "Search album title or description": "Szukej tytuła albumu abo ôpisu",
   "Enter a password for this album.": "Wkludź hasło do tygo albumu",
   "Enter password": "Wkludź hasło",
   "Select password restrictions.": "Wybier uograničynia hasła.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Dostůmp do Twoich 6180 Albumůw",
   "Revisit Your Albums": "Ôbezdrzij Swoje Albumy Nazod",
   "We'll email you a one-time code to verify it's really you": "Wyślym Ci kod jednorazowego użytku emailym, coby sprawdzić że to naprawdę Ty",
-  "We sent a 6-digit code to": "Wysłali my kod sześciocyfrowy na"
+  "We sent a 6-digit code to": "Wysłali my kod sześciocyfrowy na",
+  "Search albums by title or description": "Szukaj albumůw podug titułu abo uopisu",
+  "View Public Profile": "Ôbocz Publiczny Profil",
+  "Storage": "Przechowywanie",
+  "Use the 6180 app to showcase your albums offline": "Użyj aplikacyje 6180, żeby pokazać swoje albumy offline",
+  "Intelligently tagged and beautifully organized": "Inteligentnie ôznaczone i szumnie zorganizowane",
+  "Open On iOS": "Òtworzić We iOS",
+  "Open On Android": "Òtworzić We Android",
+  "Toggle contacts filter": "Przełōnczyć filter kōntaktůw",
+  "Showing albums with all selected contacts and tags": "Pokŏzuje albumy ze wszyskimi wŏbrōnymi kōntaktami i etykietkami",
+  "Showing albums with all selected tags": "Pokŏzuje albumy ze wszyskimi wŏbrōnymi etykietkami"
 }

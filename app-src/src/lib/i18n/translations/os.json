@@ -126,7 +126,6 @@
   "No items to download": "Æрвистæн ницы ис",
   "Failed to update album visibility. Please try again.": "Альбомы фенынад сног кӕныны рӕдыд. Дӕ хорзӕхӕй, ногӕй бафӕлвар.",
   "You must be logged in to perform this action": "Ацы архайд æххæст кæнынæн хъæуы системæмæ бацæуын",
-  "Search album title or description": "Альбомы ном кæнæ æмбарынгæнæн агурын",
   "Enter a password for this album.": "Бафысс пароль ацы альбомæн",
   "Enter password": "Бафынай, парол бафысс",
   "Select password restrictions.": "Пароль арæнтæ равзарын.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Бахæны Дæ 6180 Альбомтæм",
   "Revisit Your Albums": "Дæ Альбомтæ Ноджы Амой",
   "We'll email you a one-time code to verify it's really you": "Нæ дæм дыл ссарынæн, цы дæм дæ дæ уый ахъазгæйæ, ноджы равзарæм фыстæджы кодæн электрон пост æрдæм",
-  "We sent a 6-digit code to": "Нæ равзæрстæм 6-цифрæйæ кодæ"
+  "We sent a 6-digit code to": "Нæ равзæрстæм 6-цифрæйæ кодæ",
+  "Search albums by title or description": "Альбомтæ сæрмæгæй кæнæ æмбарынгæнæнæй агурын",
+  "View Public Profile": "Адæймаг Профиль Кæсын",
+  "Storage": "Æвæрд",
+  "Use the 6180 app to showcase your albums offline": "6180 программӕ хъуамӕ ӕвзерын дӕу альбомтӕ интернетӕй ӕнӕ ӕвдисынӕн",
+  "Intelligently tagged and beautifully organized": "Зондджын белгитӕ ӕмӕ рӕсугъд арӕзт",
+  "Open On iOS": "iOS-ы Дзæвгарын",
+  "Open On Android": "Android-ы Дзæвгарын",
+  "Toggle contacts filter": "Контактты фильтр иухыл кæнын",
+  "Showing albums with all selected contacts and tags": "Æвдисын альбомтæ æппæт равзæрд контакттимæ æмæ тæгтимæ",
+  "Showing albums with all selected tags": "Æвдисын альбомтæ æппæт равзæрд тæгтимæ"
 }

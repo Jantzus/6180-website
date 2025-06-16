@@ -126,7 +126,6 @@
   "No items to download": "Ei ole ehtoid alazkargandaks",
   "Failed to update album visibility. Please try again.": "Ei voind udištada al'bomiden nägubut. Olkaha hüväd probujakat tošti.",
   "You must be logged in to perform this action": "Sinun pidab ičeze registriruida necen tegendad vart",
-  "Search album title or description": "Eci al'boman pälkirjutez vai ümbrikirjutez",
   "Enter a password for this album.": "Pankad peitsana necen al'bomale",
   "Enter password": "Kirjutada peitsana",
   "Select password restrictions.": "Valičkat peitsanan röunatused.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Pääsk 6180 Albumihe",
   "Revisit Your Albums": "Kackat Uma Albumid Udestai",
   "We'll email you a one-time code to verify it's really you": "Lähetäm teile ühte kerdu käytettäv koodi sähköposti päle, ku todeta što oleta todel te",
-  "We sent a 6-digit code to": "Lähetimmö 6-numerazen koodi"
+  "We sent a 6-digit code to": "Lähetimmö 6-numerazen koodi",
+  "Search albums by title or description": "Eciä al'bomid nimen vai ümbrikirjutesen mödhe",
+  "View Public Profile": "Kacta Rahvahališt Profilit",
+  "Storage": "Säilütand",
+  "Use the 6180 app to showcase your albums offline": "Kävutage 6180-programad oziden al'bomiden ozutamiseks internetata",
+  "Intelligently tagged and beautifully organized": "Järgenvuitte erevuitte da čomasti järgetud",
+  "Open On iOS": "Avata iOS:s",
+  "Open On Android": "Avata Android:s",
+  "Toggle contacts filter": "Vaihta kontaktiden suodin",
+  "Showing albums with all selected contacts and tags": "Ozutadas albumid kaikidenke valituidenke kontaktoidenke da tagoidenke",
+  "Showing albums with all selected tags": "Ozutadas albumid kaikidenke valituidenke tagoidenke"
 }

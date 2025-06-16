@@ -126,7 +126,6 @@
   "No items to download": "Neen Elemente toun Deelleeden",
   "Failed to update album visibility. Please try again.": "Albumsichboarkaid kuud nit aktualisierd wäide. Fersäik dät jädden noch insen.",
   "You must be logged in to perform this action": "Du moast anmälded weese, uum disse Aktion uuttoföieren",
-  "Search album title or description": "Säik Albumtittel of Beskrieuwenge",
   "Enter a password for this album.": "Reek n Paaswoud fon dit Album ien",
   "Enter password": "Paaswoud ienreeke",
   "Select password restrictions.": "Woude Paaswoud-Ienschränkengen uut.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Tougriep tou dien 6180 Albem",
   "Revisit Your Albums": "Besiik Dien Albums Wier",
   "We'll email you a one-time code to verify it's really you": "Wie schicke die n eenmoalge Code uur E-Mail toun bewiese dät du dät wuddelk bäst",
-  "We sent a 6-digit code to": "Wie hääbe n 6-stelligen Code schikt ätter"
+  "We sent a 6-digit code to": "Wie hääbe n 6-stelligen Code schikt ätter",
+  "Search albums by title or description": "Alben naach Tittel of Beschrieuwenge souke",
+  "View Public Profile": "Eepentelke Profil Wiesje",
+  "Storage": "Spieker",
+  "Use the 6180 app to showcase your albums offline": "Bruuk ju 6180-App uum dien Albums offline tou wiesjen",
+  "Intelligently tagged and beautifully organized": "Intelligänt markeert un skööne organiseert",
+  "Open On iOS": "Ap iOS Opmääke",
+  "Open On Android": "Ap Android Opmääke",
+  "Toggle contacts filter": "Kontakt-Filter uumskaltje",
+  "Showing albums with all selected contacts and tags": "Wiest Albums mäd aal uutwäälde Kontakte un Määrken",
+  "Showing albums with all selected tags": "Wiest Albums mäd aal uutwäälde Määrken"
 }

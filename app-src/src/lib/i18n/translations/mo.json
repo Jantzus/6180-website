@@ -126,7 +126,6 @@
   "No items to download": "Nu există elemente de descărcat",
   "Failed to update album visibility. Please try again.": "Nu s-a reușit actualizarea vizibilității albumului. Vă rugăm să încercați din nou.",
   "You must be logged in to perform this action": "Trebuie să fii autentificat pentru a efectua această acțiune",
-  "Search album title or description": "Căutați titlul sau descrierea albumului",
   "Enter a password for this album.": "Introduceți o parolă pentru acest album",
   "Enter password": "Introduceți parola",
   "Select password restrictions.": "Selectează restricțiile parolei.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accesați la 6180 Albumele Dumneavoastră",
   "Revisit Your Albums": "Revizitați Albumele Voastre",
   "We'll email you a one-time code to verify it's really you": "Vă vom trimite un cod de utilizare unică prin email pentru a verifica că sunteți într-adevăr dumneavoastră",
-  "We sent a 6-digit code to": "Am trimis un cod de 6 cifre la"
+  "We sent a 6-digit code to": "Am trimis un cod de 6 cifre la",
+  "Search albums by title or description": "Căutați albume după titlu sau descriere",
+  "View Public Profile": "Vezi Profilul Public",
+  "Storage": "Depozitare",
+  "Use the 6180 app to showcase your albums offline": "Folosiți aplicația 6180 pentru a prezenta albumele dumneavoastră offline",
+  "Intelligently tagged and beautifully organized": "Etichetate inteligent și organizate frumos",
+  "Open On iOS": "Deschide În iOS",
+  "Open On Android": "Deschide În Android",
+  "Toggle contacts filter": "Comută filtrul de contacte",
+  "Showing albums with all selected contacts and tags": "Arată albumele cu toate contactele și etichetele selectate",
+  "Showing albums with all selected tags": "Arată albumele cu toate etichetele selectate"
 }

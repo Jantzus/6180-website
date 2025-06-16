@@ -126,7 +126,6 @@
   "No items to download": "Kute lutfo lengatombekwa",
   "Failed to update album visibility. Please try again.": "Kwehlulekile kuvuselela kubonakala kwama-albhamu. Sicela utame futsi.",
   "You must be logged in to perform this action": "Kumele ungene ngemvume kute wente lesento",
-  "Search album title or description": "Sesha sihloko se-albhamu noma inchazelo",
   "Enter a password for this album.": "Faka ligama lelingena ku-albhamu lena",
   "Enter password": "Faka ligama lelidzala",
   "Select password restrictions.": "Khetsa kufinyetwa kwelikhodi.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Ngena ku 6180 Albums takho",
   "Revisit Your Albums": "Veka Ema-Albums Akho",
   "We'll email you a one-time code to verify it's really you": "Sitakuphosela likhodi lelisetjentiswa kanye kuphela nge-imeyili kuze sicinisekise kutsi unguwe ngempela",
-  "We sent a 6-digit code to": "Sithumele likhodi lenombolo letfupha ku"
+  "We sent a 6-digit code to": "Sithumele likhodi lenombolo letfupha ku",
+  "Search albums by title or description": "Funa ema-albhamu ngetivi noma incazelo",
+  "View Public Profile": "Bona Lilwazi Leliphahla",
+  "Storage": "Ligcina",
+  "Use the 6180 app to showcase your albums offline": "Sebentisa i-app ye-6180 kutsi ubonise ema-albhamu wakho nge-offline",
+  "Intelligently tagged and beautifully organized": "Kufakwa emakha ngekhaliphayo nekuhleleka ngekuhle",
+  "Open On iOS": "Vula Ku iOS",
+  "Open On Android": "Vula Ku Android",
+  "Toggle contacts filter": "Shintja sicelo sekuxhumana",
+  "Showing albums with all selected contacts and tags": "Kubonisa ema-albhamu ngemindluluko nekamcondvo loketiwa",
+  "Showing albums with all selected tags": "Kubonisa ema-albhamu nekamcondvo loketiwa"
 }

@@ -126,7 +126,6 @@
   "No items to download": "L-ebda oġġetti x'tniżżel",
   "Failed to update album visibility. Please try again.": "Ma rnexxiex taġġorna l-viżibilità tal-album. Jekk jogħġbok erġa' pprova.",
   "You must be logged in to perform this action": "Trid tkun illogjat biex twettaq din l-azzjoni",
-  "Search album title or description": "Fittex titlu jew deskrizzjoni tal-album",
   "Enter a password for this album.": "Daħħal password għal dan l-album",
   "Enter password": "Daħħal il-password",
   "Select password restrictions.": "Agħżel restrizzjonijiet tal-password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Aċċess għal 6180 Albums Tiegħek",
   "Revisit Your Albums": "Żuru L-Albums Tiegħek Mill-Ġdid",
   "We'll email you a one-time code to verify it's really you": "Se nibagħtulek kodiċi ta' darba waħda bl-email biex niverifikaw li int tassew int",
-  "We sent a 6-digit code to": "Bgħatna kodiċi ta' 6 ċifri lil"
+  "We sent a 6-digit code to": "Bgħatna kodiċi ta' 6 ċifri lil",
+  "Search albums by title or description": "Fittex albums bit-titlu jew deskrizzjoni",
+  "View Public Profile": "Ara l-Profil Pubbliku",
+  "Storage": "Ħażna",
+  "Use the 6180 app to showcase your albums offline": "Uża l-app 6180 biex turi l-albums tiegħek offline",
+  "Intelligently tagged and beautifully organized": "Immarkati b'għerf u organizzati b'mod sabiħ",
+  "Open On iOS": "Iftaħ Fuq iOS",
+  "Open On Android": "Iftaħ Fuq Android",
+  "Toggle contacts filter": "Ibdel il-filtru tal-kuntatti",
+  "Showing albums with all selected contacts and tags": "Qiegħed juri albums b'kontattatti u tags magħżula kollha",
+  "Showing albums with all selected tags": "Qiegħed juri albums b'tags magħżula kollha"
 }

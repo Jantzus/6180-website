@@ -126,7 +126,6 @@
   "No items to download": "Nagins elements per telechargiar",
   "Failed to update album visibility. Please try again.": "Betg reussì dad actualisar la visibilitad da l'album. Per plaschair emprova anc ina giada.",
   "You must be logged in to perform this action": "Ti stos esser annunzià per exequir questa acziun",
-  "Search album title or description": "Tschertgar titel u descripziun da l'album",
   "Enter a password for this album.": "Endatescha in pled-clav per quest album",
   "Enter password": "Endatescha pled-clav",
   "Select password restrictions.": "Tscherna restricziuns dal pled-clav.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Access a Tes 6180 Albums",
   "Revisit Your Albums": "Visitar Puspè Tia Albums",
   "We'll email you a one-time code to verify it's really you": "Nus t'enviarein in code per utilisar mo ina giada via e-mail per verifitgar ch'igl es propi ti",
-  "We sent a 6-digit code to": "Nus avain tramess in code cun 6 cifras a"
+  "We sent a 6-digit code to": "Nus avain tramess in code cun 6 cifras a",
+  "Search albums by title or description": "Tschertgar albums tenor titel u descripziun",
+  "View Public Profile": "Mirar il Profil Public",
+  "Storage": "Memorisaziun",
+  "Use the 6180 app to showcase your albums offline": "Dovra l'applicaziun 6180 per mussrar tes albums senza connexiun",
+  "Intelligently tagged and beautifully organized": "Marcads intelligentamain e organisads bellamain",
+  "Open On iOS": "Avrir En iOS",
+  "Open On Android": "Avrir En Android",
+  "Toggle contacts filter": "Midar il filter da contacts",
+  "Showing albums with all selected contacts and tags": "Mussa albums cun tut ils contacts ed etiquettas tschernidas",
+  "Showing albums with all selected tags": "Mussa albums cun tuttas etiquettas tschernidas"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Nuddu elementi pi scarricari",
   "Failed to update album visibility. Please try again.": "Aggiurnamentu di la visibilitati di l'album fallitu. Pi favuri prova arrè.",
   "You must be logged in to perform this action": "Hai a trasiri pi fari st'azzioni",
-  "Search album title or description": "Cerca tìtulu o discrizzioni di l'album",
   "Enter a password for this album.": "Metti na password pi st'album",
   "Enter password": "Metti la password",
   "Select password restrictions.": "Scègghiri li ristrizzioni di la password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Trasi nni 6180 Albums Toi",
   "Revisit Your Albums": "Talìa N'Autra Vota Li Tò Albums",
   "We'll email you a one-time code to verify it's really you": "Ti mandamu nu codici ca s'usa sulu na vota cu l'email pi virificari ca si veramenti tu",
-  "We sent a 6-digit code to": "Manu nu codici di 6 cifri a"
+  "We sent a 6-digit code to": "Manu nu codici di 6 cifri a",
+  "Search albums by title or description": "Talìa l'album pi titulu o discrizzioni",
+  "View Public Profile": "Talìa u Prufilu Pùbblicu",
+  "Storage": "Magazzinu",
+  "Use the 6180 app to showcase your albums offline": "Usa l'applicazzioni 6180 pi mustrari l'album tò offline",
+  "Intelligently tagged and beautifully organized": "Marcati ntilliggentimenti e urganizzati bellamenti",
+  "Open On iOS": "Rapi 'N iOS",
+  "Open On Android": "Rapi 'N Android",
+  "Toggle contacts filter": "Canciare lu filtru dî cuntatti",
+  "Showing albums with all selected contacts and tags": "Ammustra l'album cu tutti li cuntatti e tag scigghiuti",
+  "Showing albums with all selected tags": "Ammustra l'album cu tutti li tag scigghiuti"
 }

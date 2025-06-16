@@ -126,7 +126,6 @@
   "No items to download": "هیچ بابەتێک نییە بۆ داگرتن",
   "Failed to update album visibility. Please try again.": "نەتوانرا ڕوونی ئەلبووم نوێ بکرێتەوە. تکایە دووبارە هەوڵ بدەوە.",
   "You must be logged in to perform this action": "پێویستە بچیتە ژوورەوە بۆ ئەنجامدانی ئەم کردارە",
-  "Search album title or description": "گەڕان بۆ ناوی ئەلبووم یان وەسف",
   "Enter a password for this album.": "وشەی نهێنی بۆ ئەم ئەلبوومە داخڵ بکە",
   "Enter password": "وشەی نهێنی بنووسە",
   "Select password restrictions.": "سنوورەکانی وشەی تێپەڕبوون هەڵبژێرە.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "دەستت بگات بە 6180 ئەلبومەکانت",
   "Revisit Your Albums": "بگەڕێوە بۆ ئەلبومەکانت",
   "We'll email you a one-time code to verify it's really you": "کۆدێکی یەک جار بەکارهاتوو بە ئیمەیل بۆت دەنێرین بۆ پشتڕاستکردنەوەی ئەوەی تۆی",
-  "We sent a 6-digit code to": "کۆدێکی ٦ ژمارەیی ناردووین بۆ"
+  "We sent a 6-digit code to": "کۆدێکی ٦ ژمارەیی ناردووین بۆ",
+  "Search albums by title or description": "بە ناونیشان یان پێناسە گەڕان بە ئەلبوم",
+  "View Public Profile": "پرۆفایلی گشتی بینە",
+  "Storage": "هەڵگرتن",
+  "Use the 6180 app to showcase your albums offline": "بەکارهێنانی ئەپی 6180 بۆ پیشاندانی ئەلبومەکانت بەبێ ئینتەرنێت",
+  "Intelligently tagged and beautifully organized": "بە ژیری تاگ کراو و بە جوانی ڕێکخراو",
+  "Open On iOS": "لە iOS-دا بکەرەوە",
+  "Open On Android": "لە Android-دا بکەرەوە",
+  "Toggle contacts filter": "فلتەری پەیوەندی گۆڕین",
+  "Showing albums with all selected contacts and tags": "پیشاندانی ئەلبومەکان بە گشت پەیوەندی و تاگە هەڵبژێردراوەکان",
+  "Showing albums with all selected tags": "پیشاندانی ئەلبومەکان بە گشت تاگە هەڵبژێردراوەکان"
 }

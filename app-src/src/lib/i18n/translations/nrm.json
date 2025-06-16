@@ -126,7 +126,6 @@
   "No items to download": "Pon d'affaithes à télécatchi",
   "Failed to update album visibility. Please try again.": "L'album n'pé pas êt' actualljé. S'ous pliait, essèyiz à rinouvé.",
   "You must be logged in to perform this action": "Vos d'vez êt' connècteu pouor fé ch't'action",
-  "Search album title or description": "Trachi tithre ou dêcripcioun d'l'album",
   "Enter a password for this album.": "Entchez un mot d'pâsse pour chet'album",
   "Enter password": "Entrez le mot d'passe",
   "Select password restrictions.": "Choisyi les restrincthons du mot d'pâsse.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accès à tes 6180 Albums",
   "Revisit Your Albums": "Vaei Vos Albums Derchief",
   "We'll email you a one-time code to verify it's really you": "J'ous env'rôns un code d'eune fais d'usâge par courriél pour vérifier qu'c'est bein vous",
-  "We sent a 6-digit code to": "J'avons env'yé un code d'six chiffes à"
+  "We sent a 6-digit code to": "J'avons env'yé un code d'six chiffes à",
+  "Search albums by title or description": "Chèrchi des albums par tit ou dèscripsioun",
+  "View Public Profile": "Vaer le Profil Publyique",
+  "Storage": "Dépôt",
+  "Use the 6180 app to showcase your albums offline": "Ûsez l'app 6180 pouor moustrer vos albums sans rapport",
+  "Intelligently tagged and beautifully organized": "Marquées eun intelligence et organisées bellement",
+  "Open On iOS": "Ouvrir Dans iOS",
+  "Open On Android": "Ouvrir Dans Android",
+  "Toggle contacts filter": "Changi l'filtreu d'contacts",
+  "Showing albums with all selected contacts and tags": "Môntre d'albums avé touts les contacts et étiquettes chouésis",
+  "Showing albums with all selected tags": "Môntre d'albums avé toutes les étiquettes chouésis"
 }

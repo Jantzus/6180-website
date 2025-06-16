@@ -126,7 +126,6 @@
   "No items to download": "Aláskahch isht akoffola",
   "Failed to update album visibility. Please try again.": "Album hvveci hvmecvn cvpehcēkot. Ce cerakkon, hvtvm momekvs.",
   "You must be logged in to perform this action": "Mvskoke emponvkv Cem fekcv haketos",
-  "Search album title or description": "Album ishochifo hvtvm iskvckvnv iskorrit",
   "Enter a password for this album.": "Album isknot password hompitaks",
   "Enter password": "Password isfaka",
   "Select password restrictions.": "Password mēco lahnakosēn evhopayvs.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Albums Enheckv",
   "Revisit Your Albums": "Ce Album-vlken Em Etecakes",
   "We'll email you a one-time code to verify it's really you": "Cem opunakat hoktaren em opunvkv mvkerkv cem email ofvn em vtotkv cem vnokeckv vlket omekv",
-  "We sent a 6-digit code to": "Ekvkwusat em opunvkv cencakhêckv em vtotkv"
+  "We sent a 6-digit code to": "Ekvkwusat em opunvkv cencakhêckv em vtotkv",
+  "Search albums by title or description": "Yekce hotvle mohis vkueckvyvkares album hopoyet",
+  "View Public Profile": "Esten Okla em Profile",
+  "Storage": "Vcokofv",
+  "Use the 6180 app to showcase your albums offline": "6180 app isahohcvkes chim album-itsk offline heketvn",
+  "Intelligently tagged and beautifully organized": "Hoporren fekcakhoyetv momet heros em ohonayetv",
+  "Open On iOS": "iOS Aossē",
+  "Open On Android": "Android Aossē",
+  "Toggle contacts filter": "Hoyanat kerhokat apoksicelat",
+  "Showing albums with all selected contacts and tags": "Kerkoyat komat hokyanat pokenayat kerhokat aperoksicelat",
+  "Showing albums with all selected tags": "Kerkoyat komat aperoksicelat"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Ez dago deskargatzeko elementurik",
   "Failed to update album visibility. Please try again.": "Albumaren ikusgarritasuna eguneratzea huts egin du. Mesedez, saiatu berriro.",
   "You must be logged in to perform this action": "Saioa hasi behar duzu ekintza hau burutzeko",
-  "Search album title or description": "Bilatu albumaren izenburua edo deskribapena",
   "Enter a password for this album.": "Sartu pasahitz bat album honetarako",
   "Enter password": "Sartu pasahitza",
   "Select password restrictions.": "Hautatu pasahitz-murrizketak.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Sartu Zure 6180 Albumetara",
   "Revisit Your Albums": "Bisitatu Berriro Zure Albumak",
   "We'll email you a one-time code to verify it's really you": "Korreo elektroniko bidez erabilera bakarreko kode bat bidaliko dizugu benetan zu zarela egiaztatzeko",
-  "We sent a 6-digit code to": "6 zifrako kode bat bidali dugu hona:"
+  "We sent a 6-digit code to": "6 zifrako kode bat bidali dugu hona:",
+  "Search albums by title or description": "Bilatu albumak izenburuaren edo deskribapenen arabera",
+  "View Public Profile": "Profil Publikoa Ikusi",
+  "Storage": "Biltegiratzea",
+  "Use the 6180 app to showcase your albums offline": "Erabili 6180 aplikazioa zure albumak lineaz kanpo erakusteko",
+  "Intelligently tagged and beautifully organized": "Adimenduz etiketatuta eta ederki antolatuta",
+  "Open On iOS": "Ireki iOS-en",
+  "Open On Android": "Ireki Android-en",
+  "Toggle contacts filter": "Kontaktuen iragazkia aldatu",
+  "Showing albums with all selected contacts and tags": "Hautatutako kontaktu eta etiketa guztiak dituzten albumak erakusten",
+  "Showing albums with all selected tags": "Hautatutako etiketa guztiak dituzten albumak erakusten"
 }

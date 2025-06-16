@@ -126,7 +126,6 @@
   "No items to download": "डाउनलोड यायेत छुं मदु",
   "Failed to update album visibility. Please try again.": "अल्बम खने थइगु अपडेट यायेमफुत। कृपया हानं कोशिश यानादिसँ।",
   "You must be logged in to perform this action": "थ्व ज्या यायेत छिं लग इन जुइमाःगु",
-  "Search album title or description": "अल्बमया धइगु थें थुथिइया मालिगुतः",
   "Enter a password for this album.": "थ्व अल्बमया लागि पासवर्ड तयेकादिसँ",
   "Enter password": "पासवर्ड तःतयेकी",
   "Select password restrictions.": "पासवर्ड सिमाहरू चयन यानादिसँ।",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "छिगु 6180 एल्बम चायेके",
   "Revisit Your Albums": "छिगु अल्बमसः फिं ब्वनेत्वा",
   "We'll email you a one-time code to verify it's really you": "छिं न्ह्यःया पुष्टि यानातः अइमेइल धुंकाव फखः मात्याक च्वनिगु कोड कुलक",
-  "We sent a 6-digit code to": "जिं ६ नंबरया कोड कुलक"
+  "We sent a 6-digit code to": "जिं ६ नंबरया कोड कुलक",
+  "Search albums by title or description": "शीर्षक वा विवरण अन्या एल्बम म्हसिके",
+  "View Public Profile": "सार्वजनिक प्रोफाइल यातं",
+  "Storage": "न्हापुं",
+  "Use the 6180 app to showcase your albums offline": "छि एल्बम ऑफलाइन दया वास्ते 6180 एप यन् बिया",
+  "Intelligently tagged and beautifully organized": "बुद्धिक तरिकाइ तग करी गव सुन्दर व्यवस्थित",
+  "Open On iOS": "iOS य् कः",
+  "Open On Android": "Android य् कः",
+  "Toggle contacts filter": "सम्पर्क फिल्टर बदल्या",
+  "Showing albums with all selected contacts and tags": "ध्यागु संपर्क व ट्याग यागु अल्बम धयागु",
+  "Showing albums with all selected tags": "ध्यागु ट्याग यागु अल्बम धयागु"
 }

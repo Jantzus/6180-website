@@ -126,7 +126,6 @@
   "No items to download": "ไม่มีรายการให้ดาวน์โหลด",
   "Failed to update album visibility. Please try again.": "ไม่สามารถอัปเดตการมองเห็นอัลบั้มได้ โปรดลองอีกครั้ง",
   "You must be logged in to perform this action": "คุณต้องลงชื่อเข้าใช้เพื่อดำเนินการนี้",
-  "Search album title or description": "ค้นหาชื่อหรือคำอธิบายอัลบั้ม",
   "Enter a password for this album.": "ป้อนรหัสผ่านสำหรับอัลบั้มนี้",
   "Enter password": "ใส่รหัสผ่าน",
   "Select password restrictions.": "เลือกข้อจำกัดรหัสผ่าน",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "เข้าถึง 6180 อัลบั้มของคุณ",
   "Revisit Your Albums": "เยี่ยมชมอัลบัมของคุณอีกครั้ง",
   "We'll email you a one-time code to verify it's really you": "เราจะส่งรหัสใช้ครั้งเดียวทางอีเมลเพื่อยืนยันตัวตนของคุณ",
-  "We sent a 6-digit code to": "เราส่งรหัส 6 หลักไปยัง"
+  "We sent a 6-digit code to": "เราส่งรหัส 6 หลักไปยัง",
+  "Search albums by title or description": "ค้นหาอัลบั้มตามชื่อหรือคำอธิบาย",
+  "View Public Profile": "ดูโปรไฟล์สาธารณะ",
+  "Storage": "จัดเก็บ",
+  "Use the 6180 app to showcase your albums offline": "ใช้แอป 6180 เพื่อแสดงอัลบั้มของคุณแบบออฟไลน์",
+  "Intelligently tagged and beautifully organized": "ติดแท็กอย่างชาญฉลาดและจัดระเบียบอย่างสวยงาม",
+  "Open On iOS": "เปิดใน iOS",
+  "Open On Android": "เปิดใน Android",
+  "Toggle contacts filter": "สลับตัวกรองสำหรับที่อยู่",
+  "Showing albums with all selected contacts and tags": "แสดงอัลบั้มที่มีรายชื่อติดต่อและแท็กที่เลือกทั้งหมด",
+  "Showing albums with all selected tags": "แสดงอัลบั้มที่มีแท็กที่เลือกทั้งหมด"
 }

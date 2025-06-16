@@ -126,7 +126,6 @@
   "No items to download": "Жүктеу үшін ешнәрсе жоқ",
   "Failed to update album visibility. Please try again.": "Альбом көрінісін жаңарту сәтсіз аяқталды. Қайталап көріңіз.",
   "You must be logged in to perform this action": "Бұл әрекетті орындау үшін жүйеге кіруіңіз керек",
-  "Search album title or description": "Альбом атауын немесе сипаттамасын іздеу",
   "Enter a password for this album.": "Бұл альбом үшін құпия сөзді енгізіңіз",
   "Enter password": "Құпия сөзді енгізіңіз",
   "Select password restrictions.": "Құпия сөз шектеулерін таңдаңыз.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Альбомдарыңызға Кіру",
   "Revisit Your Albums": "Альбомдарыңызды Қайта Көріңіз",
   "We'll email you a one-time code to verify it's really you": "Сіздің шын мәнінде сіз екеніңізді растау үшін электрондық пошта арқылы бір рет қолданылатын код жібереміз",
-  "We sent a 6-digit code to": "Біз 6 санды код жібердік мынаған:"
+  "We sent a 6-digit code to": "Біз 6 санды код жібердік мынаған:",
+  "Search albums by title or description": "Тақырыптары немесе сипаттамалары бойынша альбомдарды іздеу",
+  "View Public Profile": "Қоғамдық Профильді Көру",
+  "Storage": "Сақтау",
+  "Use the 6180 app to showcase your albums offline": "Альбомдарыңызды дербес көрсету үшін 6180 қолданбасын пайдаланыңыз",
+  "Intelligently tagged and beautifully organized": "Ақылды түрде белгіленген және әдемі ұйымдастырылған",
+  "Open On iOS": "iOS-та Ашу",
+  "Open On Android": "Android-та Ашу",
+  "Toggle contacts filter": "Контакттар сүзгісін ауыстыру",
+  "Showing albums with all selected contacts and tags": "Барлық таңдалған контакттар мен тегтері бар альбомдарды көрсету",
+  "Showing albums with all selected tags": "Барлық таңдалған тегтері бар альбомдарды көрсету"
 }

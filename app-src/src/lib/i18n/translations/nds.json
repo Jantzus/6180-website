@@ -126,7 +126,6 @@
   "No items to download": "Keen Elementen to'n Dalladen",
   "Failed to update album visibility. Please try again.": "Album-Sichtborkeet kunn nich aktualiseert warrn. Versöök dat bidde noch mol.",
   "You must be logged in to perform this action": "Du musst anmellt wesen, üm disse Akschoon uttoföhren",
-  "Search album title or description": "Na Albumtitel oder Beschrieven söken",
   "Enter a password for this album.": "Giv en Passwoort för dit Album in",
   "Enter password": "Passwort ingeven",
   "Select password restrictions.": "Passwoord-Beschränken utwählen.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Togriep na Dien 6180 Alben",
   "Revisit Your Albums": "Dien Albums Nochmaal Ankieken",
   "We'll email you a one-time code to verify it's really you": "Wi sendt di en Inmaal-Kode över E-Mail, üm to bewiesen, dat du dat würklich büst",
-  "We sent a 6-digit code to": "Wi hebbt en 6-stellen Kode sendt na"
+  "We sent a 6-digit code to": "Wi hebbt en 6-stellen Kode sendt na",
+  "Search albums by title or description": "Alben na Titel oder Beschrievung söken",
+  "View Public Profile": "Öffentlich Profil Ankieken",
+  "Storage": "Speicher",
+  "Use the 6180 app to showcase your albums offline": "Bruuk de 6180-App, dat du dien Albums offline wiesen kannst",
+  "Intelligently tagged and beautifully organized": "Klook markeert un schöön organiseert",
+  "Open On iOS": "Op iOS Opmaken",
+  "Open On Android": "Op Android Opmaken",
+  "Toggle contacts filter": "Kontakt-Filter ümschalten",
+  "Showing albums with all selected contacts and tags": "Wiest Albums mit all utsöökten Kontakte un Döörmarken",
+  "Showing albums with all selected tags": "Wiest Albums mit all utsöökten Döörmarken"
 }

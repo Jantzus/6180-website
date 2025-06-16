@@ -126,7 +126,6 @@
   "No items to download": "Татаха юумэ алга байна",
   "Failed to update album visibility. Please try again.": "Альбомой харагдасын шэнэлхэ амжалтагүй болоо. Дахин оролдоно уу.",
   "You must be logged in to perform this action": "Энэ үйлдэлийг гүйцэтгэхэд та нэвтрэх хэрэгтэй",
-  "Search album title or description": "Альбомын нэр эсвэл тайлбар хайх",
   "Enter a password for this album.": "Энэ цомогт нууц үгээ оруулна уу",
   "Enter password": "Нууц үгээ оруулна уу",
   "Select password restrictions.": "Нюуса үгын хизгаарлалтануудые һунгаарайгты.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Танай 6180 Цомогой Үзэхэ",
   "Revisit Your Albums": "Өөрынгөө альбомуудые дахин үзэгты",
   "We'll email you a one-time code to verify it's really you": "Бид танай жэнхэни байдал баталгаажуулхын тулада нэгэ удаагай кодые электрон шуудангаар ябуулна",
-  "We sent a 6-digit code to": "Бид 6 тоотой кодые илгээбэ"
+  "We sent a 6-digit code to": "Бид 6 тоотой кодые илгээбэ",
+  "Search albums by title or description": "Альбомнуудые нэрээрээ али тайлбараар хайха",
+  "View Public Profile": "Ниитын профайли харха",
+  "Storage": "Хадгалгын газар",
+  "Use the 6180 app to showcase your albums offline": "6180 програмые ашаглажа альбомнуудаа оффлайн үзүүлхэдэ",
+  "Intelligently tagged and beautifully organized": "Ухаантайгаар тэмдэглэжэ, гоё зохиогдоһон",
+  "Open On iOS": "iOS дээр Нээхэ",
+  "Open On Android": "Android дээр Нээхэ",
+  "Toggle contacts filter": "Контактын шүүлтүүр солихо",
+  "Showing albums with all selected contacts and tags": "Сонгогдohон бүхы контакт болон тэмдэгтэй альбомууд үзүүлжэ",
+  "Showing albums with all selected tags": "Сонгогдohон бүхы тэмдэгтэй альбомууд үзүүлжэ"
 }

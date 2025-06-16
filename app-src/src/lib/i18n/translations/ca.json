@@ -126,7 +126,6 @@
   "No items to download": "No hi ha elements per descarregar",
   "Failed to update album visibility. Please try again.": "No s'ha pogut actualitzar la visibilitat de l'àlbum. Si us plau, torneu-ho a provar.",
   "You must be logged in to perform this action": "Has d'iniciar sessió per realitzar aquesta acció",
-  "Search album title or description": "Cerca el títol o la descripció de l'àlbum",
   "Enter a password for this album.": "Introdueix una contrasenya per a aquest àlbum",
   "Enter password": "Introduïu la contrasenya",
   "Select password restrictions.": "Seleccioneu les restriccions de contrasenya.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accedeix als Teus 6180 Àlbums",
   "Revisit Your Albums": "Revisiteu Els Vostres Àlbums",
   "We'll email you a one-time code to verify it's really you": "T'enviarem un codi d'un sol ús per correu electrònic per verificar que realment ets tu",
-  "We sent a 6-digit code to": "Hem enviat un codi de 6 dígits a"
+  "We sent a 6-digit code to": "Hem enviat un codi de 6 dígits a",
+  "Search albums by title or description": "Cerca àlbums per títol o descripció",
+  "View Public Profile": "Veure el Perfil Públic",
+  "Storage": "Emmagatzematge",
+  "Use the 6180 app to showcase your albums offline": "Utilitzeu l'aplicació 6180 per mostrar els vostres àlbums sense connexió",
+  "Intelligently tagged and beautifully organized": "Etiquetats intel·ligentment i organitzats bellament",
+  "Open On iOS": "Obrir A iOS",
+  "Open On Android": "Obrir A Android",
+  "Toggle contacts filter": "Commuta el filtre de contactes",
+  "Showing albums with all selected contacts and tags": "Mostrant àlbums amb tots els contactes i etiquetes seleccionats",
+  "Showing albums with all selected tags": "Mostrant àlbums amb totes les etiquetes seleccionades"
 }

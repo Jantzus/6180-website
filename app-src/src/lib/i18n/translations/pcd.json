@@ -126,7 +126,6 @@
   "No items to download": "Pont d'truc à téléquértchi",
   "Failed to update album visibility. Please try again.": "Point réussi à mèttre à jour l'visibilité d'l'album. S'ou plait, érssaie à nou.",
   "You must be logged in to perform this action": "Os dvez iète connecté pou foaire ch't'action",
-  "Search album title or description": "Tracher ch'tite ou l'dèscripchon d'l'album",
   "Enter a password for this album.": "Intrez un mot d'passe pour ch'album-lo",
   "Enter password": "Intrer ch'mot d'passe",
   "Select password restrictions.": "Sélectionner chés restrictions du mot d'passe.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accès à tes 6180 Albums",
   "Revisit Your Albums": "Ervir Vos Albums",
   "We'll email you a one-time code to verify it's really you": "J'vous anv'rranche un code d'eune seule fois d'usache par courriél pour vérifier qu'ch'est bén vous",
-  "We sent a 6-digit code to": "J'avons inv'yé un code d'six chiffes à"
+  "We sent a 6-digit code to": "J'avons inv'yé un code d'six chiffes à",
+  "Search albums by title or description": "Chèrqué des alboms par tit ou dèscripchon",
+  "View Public Profile": "Vir l'Profil d'Chacun",
+  "Storage": "Rimisache",
+  "Use the 6180 app to showcase your albums offline": "Ésez l'app 6180 pou montrer vos albums hors lègne",
+  "Intelligently tagged and beautifully organized": "Marqués intelligèmint et organisés belèmint",
+  "Open On iOS": "Ovrir Dsur iOS",
+  "Open On Android": "Ovrir Dsur Android",
+  "Toggle contacts filter": "Cangi ch'filtreu d'contacts",
+  "Showing albums with all selected contacts and tags": "Montre d'albums avc tous chés contacts éch étiquettes tchoésis",
+  "Showing albums with all selected tags": "Montre d'albums avc toutes chés étiquettes tchoésis"
 }

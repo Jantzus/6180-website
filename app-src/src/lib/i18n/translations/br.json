@@ -126,7 +126,6 @@
   "No items to download": "N'eus elfenn ebet da pellgargañ",
   "Failed to update album visibility. Please try again.": "C'hwitadenn evit hizivaat gwelusted an albom. Mar plij, klaskit en-dro.",
   "You must be logged in to perform this action": "Ret eo deoc'h bezañ kevreet evit ober an obererezh-mañ",
-  "Search album title or description": "Klask titl pe deskrivadur un albom",
   "Enter a password for this album.": "Ebarzhit ur ger-tremen evit an albom-mañ",
   "Enter password": "Ebarzhit ar ger-tremen",
   "Select password restrictions.": "Dibabit strishadurioù ar ger-tremen.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Mont da'z 6180 Albom",
   "Revisit Your Albums": "Adwelout Ho Alboumoù",
   "We'll email you a one-time code to verify it's really you": "Kas a raimp deoc'h ur c'hod implijadur unnik dre bostel evit gwiriañ e-peus c'hwi eo da vat",
-  "We sent a 6-digit code to": "Kaset hon ur c'hod 6 niver da"
+  "We sent a 6-digit code to": "Kaset hon ur c'hod 6 niver da",
+  "Search albums by title or description": "Klask albomoù dre an titl pe an deskrivadur",
+  "View Public Profile": "Gwelet ar Profil Foran",
+  "Storage": "Kadaozadur",
+  "Use the 6180 app to showcase your albums offline": "Grit an arload 6180 evit diskouez ho albomoù hep kenlugan",
+  "Intelligently tagged and beautifully organized": "Merket gant furnez ha kempenn brav",
+  "Open On iOS": "Digeriñ War iOS",
+  "Open On Android": "Digeriñ War Android",
+  "Toggle contacts filter": "Cheñch silañ darempredoù",
+  "Showing albums with all selected contacts and tags": "Diskouez alboumoù gant an holl darempredoù ha balizennoù diuzet",
+  "Showing albums with all selected tags": "Diskouez alboumoù gant an holl valizennoù diuzet"
 }

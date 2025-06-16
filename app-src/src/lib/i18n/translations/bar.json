@@ -126,7 +126,6 @@
   "No items to download": "Koane Elemente zum Obelodn",
   "Failed to update album visibility. Please try again.": "De Album-Sichtbarkeit hod ned aktualisiert wern kenna. Bitte probiers nuamoi.",
   "You must be logged in to perform this action": "Du muasst ågmödt sei, um de Aktión duachzfiahn",
-  "Search album title or description": "Albumtitel oder Beschreibung suacha",
   "Enter a password for this album.": "Gib a Passwort füa des Album ei",
   "Enter password": "Posswort eigehm",
   "Select password restrictions.": "Passwort-Beschränkungen auswählen.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Zuagriff auf deine 6180 Alben",
   "Revisit Your Albums": "Deine Alben Wieda Oschaun",
   "We'll email you a one-time code to verify it's really you": "Mia schicka dia an Oanmalcode per E-Mail zum varifiziara dassd du s wirkle bist",
-  "We sent a 6-digit code to": "Mia hom an 6-stellign Code gschickt an"
+  "We sent a 6-digit code to": "Mia hom an 6-stellign Code gschickt an",
+  "Search albums by title or description": "Alben nåch Titl oda Beschreibung suachen",
+  "View Public Profile": "Öffentliches Profil Anschaun",
+  "Storage": "Speicher",
+  "Use the 6180 app to showcase your albums offline": "Nutz de 6180 App zum deine Alben offline zeign",
+  "Intelligently tagged and beautifully organized": "Intelligent markiert und schön organisiert",
+  "Open On iOS": "Auf iOS Aufmachen",
+  "Open On Android": "Auf Android Aufmachen",
+  "Toggle contacts filter": "Kontakt Filter umschoitn",
+  "Showing albums with all selected contacts and tags": "Zoagt Alben mit alle gwejlte Kontakte und Tags",
+  "Showing albums with all selected tags": "Zoagt Alben mit alle gwejlte Tags"
 }

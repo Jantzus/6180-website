@@ -126,7 +126,6 @@
   "No items to download": "ডাউনলোড করনির আইটেম কিছু নাই",
   "Failed to update album visibility. Please try again.": "অ্যালবাম দৃশ্যমানতা আপডেট করতে ব্যর্থ হলো। দয়া করে আবারও চেষ্টা করুন।",
   "You must be logged in to perform this action": "এই কাজ করার জন্য আপনাকে লগ ইন করতে হবে",
-  "Search album title or description": "অ্যালবাম শিরোনাম বা বিবরণ অনুসন্ধান করুন",
   "Enter a password for this album.": "এই অ্যালবামের জন্য পাসওয়ার্ড লেখো",
   "Enter password": "পাসওয়ার্ড লেখো",
   "Select password restrictions.": "পাসওয়ার্ড সীমাবদ্ধতা বাছাই করেন।",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "তর 6180 এলবাম দেখা",
   "Revisit Your Albums": "তর অ্যালবামগুলানরে আরেকবার দেহ",
   "We'll email you a one-time code to verify it's really you": "আমরাগো আপনার পৰিচয় প্ৰমাণিত কৰতে ইমেইল দিয়া এবেরে ব্যবহাৰৰ কোড পাঠাইয়ুম",
-  "We sent a 6-digit code to": "আমরা ৬ সংখ্যার কোড পাঠাইছি"
+  "We sent a 6-digit code to": "আমরা ৬ সংখ্যার কোড পাঠাইছি",
+  "Search albums by title or description": "শিরোনাম বা বর্ণনা দিয়ে অ্যালবাম খুইজেন",
+  "View Public Profile": "সাধারণ প্রোফাইল দেখেন",
+  "Storage": "ভান্ডার",
+  "Use the 6180 app to showcase your albums offline": "তর এল্বাম হানি অফলাইনে দেখাইবার কা 6180 এপ ব্যবহার কর",
+  "Intelligently tagged and beautifully organized": "বুদ্ধিমত্তার সাতে ট্যাগ কর অাক সুন্দরলে সাজানো",
+  "Open On iOS": "iOS এহান খোল",
+  "Open On Android": "Android এহান খোল",
+  "Toggle contacts filter": "যোগাযোগর ফিল্টার পাল্টান",
+  "Showing albums with all selected contacts and tags": "আসিলা বাছরা যোগাযোগ বারো ট্যাগর লগে অ্যালবাম দেহাদেতারা",
+  "Showing albums with all selected tags": "আসিলা বাছরা ট্যাগর লগে অ্যালবাম দেহাদেতারা"
 }

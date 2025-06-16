@@ -126,7 +126,6 @@
   "No items to download": "ཕབ་ལེན་བྱེད་རྒྱུ་གང་ཡང་མི་འདུག",
   "Failed to update album visibility. Please try again.": "གླུ་ཚོམས་མངོན་པར་གསར་བཅོས་བྱེད་མ་ཐུབ། ཡང་བསྐྱར་ཚོད་ལྟ་གནང་རོགས།",
   "You must be logged in to perform this action": "བྱ་འགུལ་འདི་ལག་བསྟར་བྱེད་པར་ཁྱེད་རང་ནང་འཛུལ་བྱེད་དགོས།",
-  "Search album title or description": "གླུ་ཚོམས་མིང་བམ་ འགྲེལ་བཤད་འཚོལ་བ།",
   "Enter a password for this album.": "གླུ་ཚོམས་འདིའི་གསང་ཚིག་འཇུག་རོགས།",
   "Enter password": "གསང་ཚིག་འཇུག་རོགས།",
   "Select password restrictions.": "གསང་ཚིག་སྒྲིག་འདོམས་གདམ་གསེས་གྱིས།",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ཁྱེད་རང་གི་པོ་ཏི་ ༦༡༨༠ ལ་འཛུལ་ཞུགས།",
   "Revisit Your Albums": "ཁྱེད་རང་གི་པར་རིས་པོད་ཡང་བསྐྱར་ལྟ་རོགས།",
   "We'll email you a one-time code to verify it's really you": "ང་ཚོས་ཁྱེད་རང་གི་ངོ་བོ་གཏན་འཁེལ་བྱེད་པའི་ཆེད་དུ་གློག་འཕྲིན་བརྒྱུད་ནས་ལན་གཅིག་ཙམ་སྤྱོད་པའི་ཨང་གྲངས་འཕྲིན་པར་བཏང་ངོ་།",
-  "We sent a 6-digit code to": "ང་ཚོས་ཨང་གྲངས་དྲུག་པའི་ཨང་གྲངས་བཏང་སོང་།"
+  "We sent a 6-digit code to": "ང་ཚོས་ཨང་གྲངས་དྲུག་པའི་ཨང་གྲངས་བཏང་སོང་།",
+  "Search albums by title or description": "མཚན་བྱང་ངམ་གསལ་བཤད་ཀྱིས་གླུ་ཚོམས་འཚོལ་བ།",
+  "View Public Profile": "མི་མང་གི་ངོ་སྤྲོད་ལྟ།",
+  "Storage": "གསོག་ཉར།",
+  "Use the 6180 app to showcase your albums offline": "ཁྱེད་རང་གི་གླུ་ཚོམས་ཁ་བྲལ་ངང་སྟོན་པར་6180 འཕྲུལ་ཆས་སྤྱོད་རོགས།",
+  "Intelligently tagged and beautifully organized": "བློ་གྲོས་ལྡན་པའི་རྟགས་སྦྱར་ཞིང་མཛེས་སྡུག་ངང་སྒྲིག་སྦྱོར་བྱས་པ།",
+  "Open On iOS": "iOS ལ་ཁ་ཕྱེ།",
+  "Open On Android": "Android ལ་ཁ་ཕྱེ།",
+  "Toggle contacts filter": "འབྲེལ་བ་འཚག་འདེམས་འགྱུར་བ།",
+  "Showing albums with all selected contacts and tags": "འདེམས་པའི་འབྲེལ་བ་དང་རྟགས་ཡོད་པའི་འདྲ་པར་ཚོམ་འཆར་བ།",
+  "Showing albums with all selected tags": "འདེམས་པའི་རྟགས་ཡོད་པའི་འདྲ་པར་ཚོམ་འཆར་བ།"
 }

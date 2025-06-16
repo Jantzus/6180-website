@@ -126,7 +126,6 @@
   "No items to download": "Níl míreanna le híoslódáil",
   "Failed to update album visibility. Please try again.": "Theip ar nuashonrú infheictheacht an albaim. Bain triail eile as.",
   "You must be logged in to perform this action": "Ní mór duit logáil isteach chun an gníomh seo a dhéanamh",
-  "Search album title or description": "Cuardaigh teideal nó cur síos an albaim",
   "Enter a password for this album.": "Cuir isteach pasfhocal don albam seo",
   "Enter password": "Iontráil focal faire",
   "Select password restrictions.": "Roghnaigh srianta pasfhocail.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Rochtain ar do 6180 Albam",
   "Revisit Your Albums": "Tabhair Cuairt Arís Ar Do Chuid Albam",
   "We'll email you a one-time code to verify it's really you": "Seolfaimid cód aon-úsáide chugat trí ríomhphost lena fhíorú gur tusa é i ndáiríre",
-  "We sent a 6-digit code to": "Sheol muid cód 6 digit chuig"
+  "We sent a 6-digit code to": "Sheol muid cód 6 digit chuig",
+  "Search albums by title or description": "Cuardaigh albaim de réir teidil nó tuairisc",
+  "View Public Profile": "Féach ar Phróifíl Phoiblí",
+  "Storage": "Stóráil",
+  "Use the 6180 app to showcase your albums offline": "Úsáid an aip 6180 chun d'albaim a thaispeáint as líne",
+  "Intelligently tagged and beautifully organized": "Clibeáilte go cliste agus eagraithe go hálainn",
+  "Open On iOS": "Oscail Ar iOS",
+  "Open On Android": "Oscail Ar Android",
+  "Toggle contacts filter": "Scoránaigh scagaire teagmhála",
+  "Showing albums with all selected contacts and tags": "Ag taispeáint albam le gach teagmháil agus chlib roghnaithe",
+  "Showing albums with all selected tags": "Ag taispeáint albam le gach clib roghnaithe"
 }

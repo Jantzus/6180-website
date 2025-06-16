@@ -126,7 +126,6 @@
   "No items to download": "Download kare ke koi chij nai hai",
   "Failed to update album visibility. Please try again.": "Album visibility update kare me fail hoe gais. Kripya fir se kosis karo.",
   "You must be logged in to perform this action": "Ii kaam kare ke khatir aapke log in kare ke pari",
-  "Search album title or description": "Album title ya description khojo",
   "Enter a password for this album.": "Ii album ke khatir ek password likho",
   "Enter password": "Password darj karo",
   "Select password restrictions.": "Password restrictions ke chuno.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Aapan 6180 Albums dekho",
   "Revisit Your Albums": "Aapan albums ke dubara dekho",
   "We'll email you a one-time code to verify it's really you": "Ham aapka pahchaan verify kare ke liye email se ek baar use hone waala code bhejenge",
-  "We sent a 6-digit code to": "Ham 6 digit waala code bheja hai"
+  "We sent a 6-digit code to": "Ham 6 digit waala code bheja hai",
+  "Search albums by title or description": "Title ya description se album khojo",
+  "View Public Profile": "Public profile dekho",
+  "Storage": "Rakhna",
+  "Use the 6180 app to showcase your albums offline": "Aapan album ke offline dekhaawe khatir 6180 app ke use karo",
+  "Intelligently tagged and beautifully organized": "Samajh se tag kiya gais aur sundar se organize kiya gais",
+  "Open On iOS": "iOS me kholo",
+  "Open On Android": "Android me kholo",
+  "Toggle contacts filter": "Contact filter toggle karo",
+  "Showing albums with all selected contacts and tags": "Sab chune gaye contact aur tags ke saath album dikhawa rahaa hai",
+  "Showing albums with all selected tags": "Sab chune gaye tags ke saath album dikhawa rahaa hai"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Eai gávdno mihkkege viežžat",
   "Failed to update album visibility. Please try again.": "Ii lihkostuvvan ođasmahttit albuma oinnolašvuođa. Geahččal fas ođđasit.",
   "You must be logged in to perform this action": "Don fertet leat sisačálihodan dahkat dán doaimma",
-  "Search album title or description": "Oza albuma namahusa dahje govvádusa",
   "Enter a password for this album.": "Čális beassansáni dán albumii",
   "Enter password": "Čális beassansáni",
   "Select password restrictions.": "Vállje beassansátneráddjehusaid.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Beaska Du 6180 Albumaiddasa",
   "Revisit Your Albums": "Vierit Albumaidda Fas",
   "We'll email you a one-time code to verify it's really you": "Mii sáddet dutnje ovttageardásaš koda email bokte nannet ahte leat duođaid don",
-  "We sent a 6-digit code to": "Mii sáddejedje 6-numbergoddi"
+  "We sent a 6-digit code to": "Mii sáddejedje 6-numbergoddi",
+  "Search albums by title or description": "Oza albumaid namma dahje čilgehusa mielde",
+  "View Public Profile": "Čájehit Almmolaš Profila",
+  "Storage": "Vuorkeheapmi",
+  "Use the 6180 app to showcase your albums offline": "Geavat 6180-prográmma čájehit du albumaid nuortaankeahttá",
+  "Intelligently tagged and beautifully organized": "Jáhkkimáht merkejuvvon ja čáppa organiserejuvvon",
+  "Open On iOS": "Raba iOS:s",
+  "Open On Android": "Raba Android:s",
+  "Toggle contacts filter": "Molsut oktavuođaid silui",
+  "Showing albums with all selected contacts and tags": "Čájeha albumaid buot válljejuvvon oktavuođaiguin ja táhkaiguin",
+  "Showing albums with all selected tags": "Čájeha albumaid buot válljejuvvon táhkaiguin"
 }

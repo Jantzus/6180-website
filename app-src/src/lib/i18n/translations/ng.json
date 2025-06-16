@@ -126,7 +126,6 @@
   "No items to download": "Ka pe na oiitya ya shunitha",
   "Failed to update album visibility. Please try again.": "Shi ya holola omalongelo kuume okapidiliko. Tu pula, kondjashike.",
   "You must be logged in to perform this action": "Oto ke na ku ziama po ku ungura oku",
-  "Search album title or description": "Konga album edhina ile ngandu",
   "Enter a password for this album.": "Tyapula password molongwa kombapila ndi",
   "Enter password": "Shange password",
   "Select password restrictions.": "Hogolola omawi gwopasiwoda.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Katula 6180 Albums yove",
   "Revisit Your Albums": "Ulike Omangalo Yawe",
   "We'll email you a one-time code to verify it's really you": "Ame oto kwenda noe kodi oja okupilila po kupitila kwa imeyili kupokola kuti ndi mwenimweni",
-  "We sent a 6-digit code to": "Ame oto tume kodi ya zintatu ku"
+  "We sent a 6-digit code to": "Ame oto tume kodi ya zintatu ku",
+  "Search albums by title or description": "Ondapara albums nga otinene ko onkalo",
+  "View Public Profile": "Mona Profile ya Omukwao",
+  "Storage": "Otjiho",
+  "Use the 6180 app to showcase your albums offline": "Landula 6180 app kwashipaka albums dhoo offline",
+  "Intelligently tagged and beautifully organized": "Yalonga vha shi khulufhia na vha linganyiswa zwinothe",
+  "Open On iOS": "Zuvura Mo iOS",
+  "Open On Android": "Zuvura Mo Android",
+  "Toggle contacts filter": "Nyangua filtro ya kontakt",
+  "Showing albums with all selected contacts and tags": "Po album ye oko nii kontakt putta tag anwa kpii ngyeer",
+  "Showing albums with all selected tags": "Po album ye oko nii tag anwa kpii ngyeer"
 }

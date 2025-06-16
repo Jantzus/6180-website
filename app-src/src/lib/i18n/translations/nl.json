@@ -126,7 +126,6 @@
   "No items to download": "Geen items om te downloaden",
   "Failed to update album visibility. Please try again.": "Kon albumzichtbaarheid niet bijwerken. Probeer het opnieuw.",
   "You must be logged in to perform this action": "U moet ingelogd zijn om deze actie uit te voeren",
-  "Search album title or description": "Zoek albumtitel of beschrijving",
   "Enter a password for this album.": "Voer een wachtwoord in voor dit album",
   "Enter password": "Voer wachtwoord in",
   "Select password restrictions.": "Selecteer wachtwoordbeperkingen.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Toegang tot Je 6180 Albums",
   "Revisit Your Albums": "Bezoek Uw Albums Opnieuw",
   "We'll email you a one-time code to verify it's really you": "We sturen je een eenmalige code per e-mail om te verifiëren dat jij het echt bent",
-  "We sent a 6-digit code to": "We hebben een 6-cijferige code gestuurd naar"
+  "We sent a 6-digit code to": "We hebben een 6-cijferige code gestuurd naar",
+  "Search albums by title or description": "Zoek albums op titel of beschrijving",
+  "View Public Profile": "Openbaar Profiel Bekijken",
+  "Storage": "Opslag",
+  "Use the 6180 app to showcase your albums offline": "Gebruik de 6180-app om je albums offline te tonen",
+  "Intelligently tagged and beautifully organized": "Intelligent gelabeld en prachtig georganiseerd",
+  "Open On iOS": "Openen Op iOS",
+  "Open On Android": "Openen Op Android",
+  "Toggle contacts filter": "Contactenfilter wisselen",
+  "Showing albums with all selected contacts and tags": "Albums tonen met alle geselecteerde contacten en labels",
+  "Showing albums with all selected tags": "Albums tonen met alle geselecteerde labels"
 }

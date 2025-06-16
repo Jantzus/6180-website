@@ -126,7 +126,6 @@
   "No items to download": "Хачайдаммыт суох",
   "Failed to update album visibility. Please try again.": "Альбом көстүүтүн саҥардар сатаммата. Бука диэн, хат испит.",
   "You must be logged in to perform this action": "Бу дьайыыны оҥорорго киириэххин наада",
-  "Search album title or description": "Альбом аатын эбэтэр быһаарыытын көрдөө",
   "Enter a password for this album.": "Бу альбомҥа аһарыгын киллэр",
   "Enter password": "Аһарпаскын киллэр",
   "Select password restrictions.": "Киирии тыла хааччахтарын талыҥ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Эн 6180 Альбомнарыгар Киирии",
   "Revisit Your Albums": "Альбоммуннары Кэриэтэ Көр",
   "We'll email you a one-time code to verify it's really you": "Бихиги эн этэ эн буоллаххына бигэргэтэргэ биир кэм туттуллар коду электроннай почта көмөтүнэн ыыталлаабыт",
-  "We sent a 6-digit code to": "Биһиги алта цифралаах кодка ыыталлаабыт"
+  "We sent a 6-digit code to": "Биһиги алта цифралаах кодка ыыталлаабыт",
+  "Search albums by title or description": "Альбом аатынан эбэтэр быһаарыыластык булуох",
+  "View Public Profile": "Сирэй Профайлы Көрүү",
+  "Storage": "Хараҥа",
+  "Use the 6180 app to showcase your albums offline": "6180 программаны туттуҥ альбомнарыгар көннөрөр интернеттэҕэ суох",
+  "Intelligently tagged and beautifully organized": "Өйдөөхтүк бэлиэтэммит уонна көрүҥүн ыраастаммыт",
+  "Open On iOS": "iOS-қа Арый",
+  "Open On Android": "Android-қа Арый",
+  "Toggle contacts filter": "Контакт фильтрын уларытыы",
+  "Showing albums with all selected contacts and tags": "Барыта талыллыбыт контакттара уонна тиэктэрэ альбомнара көрдөрүү",
+  "Showing albums with all selected tags": "Барыта талыллыбыт тиэктэрэ альбомнара көрдөрүү"
 }

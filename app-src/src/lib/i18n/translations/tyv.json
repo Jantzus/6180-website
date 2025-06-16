@@ -126,7 +126,6 @@
   "No items to download": "Киирер чүү-даа чок",
   "Failed to update album visibility. Please try again.": "Альбомнуң көскүзүн чаартып шыдаваан. Дилег кылдым, катап оралдажып көрүңер.",
   "You must be logged in to perform this action": "Бо ажылды кылыр дизе, системаже кирер херек",
-  "Search album title or description": "Альбомнуң ады азы тайылбырын дилээр",
   "Enter a password for this album.": "Бо альбомга нууц сөс киирер",
   "Enter password": "Нууц сөзүн киириңер",
   "Select password restrictions.": "Чажыт сөзүңерниң кызыгаарлаашкыннарын шилиңер.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Альбомнарыӊарга Кирип",
   "Revisit Your Albums": "Альбомнарыңарны Дахыында Көрүңер",
   "We'll email you a one-time code to verify it's really you": "Бис силерде чээрби сен деп болгаш силер менээнге делгээр ужуравышаан, электрон почта-биле бир удаа ажыглаар кодду чоруур",
-  "We sent a 6-digit code to": "Бис алды саннаар кодду чоргаан"
+  "We sent a 6-digit code to": "Бис алды саннаар кодду чоргаан",
+  "Search albums by title or description": "Альбомнарды адынга азы тайылбырынга дилеп көрүп",
+  "View Public Profile": "Чоннуң Профилин Көөр",
+  "Storage": "Делгээр",
+  "Use the 6180 app to showcase your albums offline": "6180 программаны ажыглап, альбомнарыңарны оффлайн көргүзүр",
+  "Intelligently tagged and beautifully organized": "Акылдыг демдеглээн болгаш чараш үндүрген",
+  "Open On iOS": "iOS-та Ажыдар",
+  "Open On Android": "Android-та Ажыдар",
+  "Toggle contacts filter": "Контакт фильтр өскертир",
+  "Showing albums with all selected contacts and tags": "Сонгаан бүгү контакт биле тег-биле альбомнарны көргүзер",
+  "Showing albums with all selected tags": "Сонгаан бүгү тег-биле альбомнарны көргүзер"
 }

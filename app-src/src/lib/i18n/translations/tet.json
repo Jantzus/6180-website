@@ -126,7 +126,6 @@
   "No items to download": "La iha buat ida atu hatún",
   "Failed to update album visibility. Please try again.": "Falla atualizasaun visibilidade álbum nian. Favór koko fali.",
   "You must be logged in to perform this action": "Ita tenke hatama atu halo asaun ida-ne'e",
-  "Search album title or description": "Buka títulu álbum ka deskrisaun",
   "Enter a password for this album.": "Hatama liafuan-pase ba álbum ida ne'e",
   "Enter password": "Hatama liafuan-pase",
   "Select password restrictions.": "Hili restrições liafuan-pase nian.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Asesu ba Ita-nia 6180 Albums",
   "Revisit Your Albums": "Fila-fali Ksolok Album Sira",
   "We'll email you a one-time code to verify it's really you": "Ami sei haruka ita kódigu ida-de'it uza liu email hodi haree katak ita mak ita",
-  "We sent a 6-digit code to": "Ami haruka ona kódigu ho dijitu neen ba"
+  "We sent a 6-digit code to": "Ami haruka ona kódigu ho dijitu neen ba",
+  "Search albums by title or description": "Buka album tuir títulu ka deskrisaun",
+  "View Public Profile": "Haree Perfil Públiku",
+  "Storage": "Armazenamentu",
+  "Use the 6180 app to showcase your albums offline": "Uza aplikasaun 6180 atu hatudu ita-nia album sira iha offline",
+  "Intelligently tagged and beautifully organized": "Marca ho matenek no organiza ho buat",
+  "Open On iOS": "Loke Iha iOS",
+  "Open On Android": "Loke Iha Android",
+  "Toggle contacts filter": "Muda filtru kontaktu nian",
+  "Showing albums with all selected contacts and tags": "Hatudu álbum ho kontaktu hotu-hotu ne tag sira-ne'ebé hili",
+  "Showing albums with all selected tags": "Hatudu álbum ho tag sira-ne'ebé hili hotu-hotu"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Ulac iferdisen i usader",
   "Failed to update album visibility. Please try again.": "Ur yezmir ara ad ileqqem taggant n walbum. Ttxil-k ɛreḍ tikelt-nniḍen.",
   "You must be logged in to perform this action": "Yessefk ad teqqneḍ iwakken ad teggeḍ tigawt-agi",
-  "Search album title or description": "Nadi azwel n walbum neɣ aglam",
   "Enter a password for this album.": "Sekcem awal n uɛeddi i walbum-agi",
   "Enter password": "Sekcem awal uffir",
   "Select password restrictions.": "Fren isefraken n wawal uffir.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Kcem ɣer 6180 Albums-inek",
   "Revisit Your Albums": "Ɛawed Rzu Ɣer Iḍebsiyen-ik",
   "We'll email you a one-time code to verify it's really you": "Ad ak-d-nazen tangalt n useqdec yiwen n tikkelt s imayl i usenqed belli d kečč-it s tideț",
-  "We sent a 6-digit code to": "Nuzzen tangalt n sḍis uṭṭunen ɣer"
+  "We sent a 6-digit code to": "Nuzzen tangalt n sḍis uṭṭunen ɣer",
+  "Search albums by title or description": "Nadi albums s uyzenzi neɣ d aglam",
+  "View Public Profile": "Wali Amaɣnu Azayez",
+  "Storage": "Aḥraz",
+  "Use the 6180 app to showcase your albums offline": "Seqdec asnas 6180 i uskan n yidhebtar-ik war tmeqqna",
+  "Intelligently tagged and beautifully organized": "Ţwajerred s leɛqel d usnulfu s tmusni",
+  "Open On iOS": "Ldi Deg iOS",
+  "Open On Android": "Ldi Deg Android",
+  "Toggle contacts filter": "Snifel amzizdig n unermis",
+  "Showing albums with all selected contacts and tags": "Sken iɣbula s akk inermas d ticraḍ ittufernen",
+  "Showing albums with all selected tags": "Sken iɣbula s akk ticraḍ ittufernen"
 }

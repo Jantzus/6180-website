@@ -126,7 +126,6 @@
   "No items to download": "Ken Sache zum runnerlaade",
   "Failed to update album visibility. Please try again.": "Album-Sichtbaarkeit konnt net aktualisiert warre. Bitte versuuche nochmal.",
   "You must be logged in to perform this action": "Du muscht eigeloggt sei fer die Aktion ausfihre",
-  "Search album title or description": "Such Albumtitel odder Beschreiwung",
   "Enter a password for this album.": "Geb en Paesswatt fer sell Album ei",
   "Enter password": "Geb es Passwatt ei",
   "Select password restrictions.": "Passwot-Beschrenke auswehle.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Zugriff uf Dei 6180 Albums",
   "Revisit Your Albums": "Guck Dein Albums Nochemool",
   "We'll email you a one-time code to verify it's really you": "Mir schicke dir en eemoliger Code iwwer E-Mail fer zu beweise dass du s wireklich bischt",
-  "We sent a 6-digit code to": "Mir hen en 6-stelliger Code gschickt an"
+  "We sent a 6-digit code to": "Mir hen en 6-stelliger Code gschickt an",
+  "Search albums by title or description": "Alben nach Titel oder Beschreiwung suche",
+  "View Public Profile": "Eeffentlich Profil Gucke",
+  "Storage": "Schpeicher",
+  "Use the 6180 app to showcase your albums offline": "Yus die 6180 App fer deiner Albums offline zu weise",
+  "Intelligently tagged and beautifully organized": "Gescheit gemarkt un schee organisiert",
+  "Open On iOS": "Uff iOS Uffmache",
+  "Open On Android": "Uff Android Uffmache",
+  "Toggle contacts filter": "Kontakt Filter um-schalte",
+  "Showing albums with all selected contacts and tags": "Zeigt Albums mit all die gwaehlte Contacts un Tags",
+  "Showing albums with all selected tags": "Zeigt Albums mit all die gwaehlte Tags"
 }

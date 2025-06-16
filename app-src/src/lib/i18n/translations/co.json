@@ -126,7 +126,6 @@
   "No items to download": "Nisunu elementi à scaricà",
   "Failed to update album visibility. Please try again.": "Fiascu à aghjurnà a visibilità di l'album. Per piacè, pruvate torna.",
   "You must be logged in to perform this action": "Deve esse cunnessu per fà st'azzione",
-  "Search album title or description": "Circà u titulu o a descrizzione di l'album",
   "Enter a password for this album.": "Mittiti una password per stu album",
   "Enter password": "Intruduce a password",
   "Select password restrictions.": "Selezziunà e limitazione di password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accede à i Vostri 6180 Album",
   "Revisit Your Albums": "Rivede I Vostri Albums",
   "We'll email you a one-time code to verify it's really you": "Vi mandaremu un codice di usu unicu per email per verificà chì site veramente voi",
-  "We sent a 6-digit code to": "Avemu mandatu un codice di 6 cifre à"
+  "We sent a 6-digit code to": "Avemu mandatu un codice di 6 cifre à",
+  "Search albums by title or description": "Circà l'album per titulu o descrizione",
+  "View Public Profile": "Vede u Prufilu Publicu",
+  "Storage": "Spaziale",
+  "Use the 6180 app to showcase your albums offline": "Aduperate l'applicazione 6180 per presentà i vostri album senza cunnessione",
+  "Intelligently tagged and beautifully organized": "Marcati intelligentementi è urganizati bellamenti",
+  "Open On iOS": "Apre Nantu À iOS",
+  "Open On Android": "Apre Nantu À Android",
+  "Toggle contacts filter": "Cambià u filtru di cuntatti",
+  "Showing albums with all selected contacts and tags": "Mustrà l'albums cù tutti i cuntatti è l'etichette seleziunate",
+  "Showing albums with all selected tags": "Mustrà l'albums cù tutte l'etichette seleziunate"
 }

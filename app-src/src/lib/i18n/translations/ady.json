@@ -126,7 +126,6 @@
   "No items to download": "Къехьэхын хьазыр щыIэкъым",
   "Failed to update album visibility. Please try again.": "Альбомхэм я плъагъоу зэблэхъун ылъэкӏагъэп. КъыкӀэлъыкӀожь.",
   "You must be logged in to perform this action": "Мы Iуэхур пшІэнымкІэ ухыхьэн фай",
-  "Search album title or description": "Альбомым и цӀэ е тхыпӀэ къэгъуэтын",
   "Enter a password for this album.": "Мы альбомым и пароль хэгъэуцу",
   "Enter password": "Пароль дэгъэхьэн",
   "Select password restrictions.": "Пароль зэхъок1ын къыхэх.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ЕплъыкӀэ Уи 6180 Альбомхэр",
   "Revisit Your Albums": "Уи Альбомхэр Еплъын",
   "We'll email you a one-time code to verify it's really you": "Тхьэмыщкӏэм щыгъуэ кӏэ пхуэдэу ихьэн код тхэ къытхуеджэнукъым",
-  "We sent a 6-digit code to": "Тхьэмыщкӏэм хъурыс цифрэ код къытхуеджэнукъым"
+  "We sent a 6-digit code to": "Тхьэмыщкӏэм хъурыс цифрэ код къытхуеджэнукъым",
+  "Search albums by title or description": "Альбомхэр цӀэпхъэу е зегъуэгу хэплъыхь",
+  "View Public Profile": "Зэпыщӏэ ПрофильыщӀэ Кэгъэщӏэн",
+  "Storage": "ТэгъэӀуатэ",
+  "Use the 6180 app to showcase your albums offline": "6180 аппликэцэр ахэтым шъуи альбомхэр къэгьуэгъуэныгъэм папщӀэ",
+  "Intelligently tagged and beautifully organized": "АкъылыщӀэкӀэ игъэлъэгъуащ ыкӀи дэгъуащ щӀэрыщтэу",
+  "Open On iOS": "iOS-м Ичъэ",
+  "Open On Android": "Android-м Ичъэ",
+  "Toggle contacts filter": "Контактхэр филтрыр зэгъэувыпэн",
+  "Showing albums with all selected contacts and tags": "Къыхэхахэм контактхэмрэ тегхэмрэ ящыщэу альбомхэр гущыӏэх",
+  "Showing albums with all selected tags": "Къыхэхахэм тегхэмкӀэ альбомхэр гущыӏэх"
 }

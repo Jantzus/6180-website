@@ -126,7 +126,6 @@
   "No items to download": "Null elementes por descargar",
   "Failed to update album visibility. Please try again.": "Actualisation del album visibilitá ne successat. Ples, prova denov.",
   "You must be logged in to perform this action": "Vu deve aperter session por executar ti action",
-  "Search album title or description": "Serchar titul o descrition del album",
   "Enter a password for this album.": "Pune un contrasigne por ti album",
   "Enter password": "Intrar li parol-clave",
   "Select password restrictions.": "Selecte restrictiones de contrasigne.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accesse al Vor 6180 Albums",
   "Revisit Your Albums": "Revisitar Vostre Albums",
   "We'll email you a one-time code to verify it's really you": "Ni sendera vos un códic de un-foy usa per e-post por verificar que vos es ver vos",
-  "We sent a 6-digit code to": "Ni sendat un códic de 6 zifres a"
+  "We sent a 6-digit code to": "Ni sendat un códic de 6 zifres a",
+  "Search albums by title or description": "Serchar albums per titul o description",
+  "View Public Profile": "Vider li Public Profilie",
+  "Storage": "Magazinage",
+  "Use the 6180 app to showcase your albums offline": "Usar li application 6180 por monstrar vor albums offline",
+  "Intelligently tagged and beautifully organized": "Intelligentmen marcat e bellmen organisat",
+  "Open On iOS": "Aperter In iOS",
+  "Open On Android": "Aperter In Android",
+  "Toggle contacts filter": "Alterner filtre de contactes",
+  "Showing albums with all selected contacts and tags": "Monstrar álbumes con omni contactes e etiquettes selectet",
+  "Showing albums with all selected tags": "Monstrar álbumes con omni etiquettes selectet"
 }

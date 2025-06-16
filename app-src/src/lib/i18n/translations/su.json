@@ -126,7 +126,6 @@
   "No items to download": "Teu aya item pikeun diundeur",
   "Failed to update album visibility. Please try again.": "Gagal nganyarkeun visibilitas album. Mangga cobian deui.",
   "You must be logged in to perform this action": "Anjeun kudu asup log pikeun ngalakukeun ieu",
-  "Search album title or description": "Téangan judul album atawa déskripsi",
   "Enter a password for this album.": "Asupkeun kecap sandi pikeun album ieu",
   "Enter password": "Asupkeun kecap sandi",
   "Select password restrictions.": "Pilih pembatesan kecap konci.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Aksés 6180 Album Anjeun",
   "Revisit Your Albums": "Kunjungan Deui Album Anjeun",
   "We'll email you a one-time code to verify it's really you": "Kami baris ngirim kode hiji-kali-paké ngaliwatan surel pikeun mariksa yén anjeun leres-leres anjeun",
-  "We sent a 6-digit code to": "Kami parantos ngirim kode 6 digit ka"
+  "We sent a 6-digit code to": "Kami parantos ngirim kode 6 digit ka",
+  "Search albums by title or description": "Milarian album dumasar judul atawa pedaran",
+  "View Public Profile": "Tingali Profil Umum",
+  "Storage": "Panyimpen",
+  "Use the 6180 app to showcase your albums offline": "Paké aplikasi 6180 pikeun némbongkeun album anjeun sacara offline",
+  "Intelligently tagged and beautifully organized": "Ditandaan sacara pinter sareng diatur sacara éndah",
+  "Open On iOS": "Buka Di iOS",
+  "Open On Android": "Buka Di Android",
+  "Toggle contacts filter": "Gentos saringan kontak",
+  "Showing albums with all selected contacts and tags": "Némbongkeun albeum sareng sadaya kontak sareng tag anu dipilih",
+  "Showing albums with all selected tags": "Némbongkeun albeum sareng sadaya tag anu dipilih"
 }

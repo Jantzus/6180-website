@@ -126,7 +126,6 @@
   "No items to download": "Amo onca tlamantli para temouizque",
   "Failed to update album visibility. Please try again.": "Ahmo ohuelitik mopatla tlaixpantiliztli albums. Xicmopacho occeppa.",
   "You must be logged in to perform this action": "Timocalaquihtoc pampa ticchihuas inin tequitl",
-  "Search album title or description": "Xiktemo albums itōcā noso tlahcuilōlli",
   "Enter a password for this album.": "Xiktlali ichtaka tlahtōlli ica inīn album",
   "Enter password": "Xicalaqui motlahtolichtacayo",
   "Select password restrictions.": "Xihtlapohuah cahcalohualiztli in ichtacatlapoalli.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Xicalaqui Mochi 6180 Albums",
   "Revisit Your Albums": "Occeppa Titlatoa Mocuillotecpan",
   "We'll email you a one-time code to verify it's really you": "Titomitlhuizqueh se codigo cen ocupaz itech email para ticcuazqueh in melahuan tehuatl",
-  "We sent a 6-digit code to": "Titomitlhuiqueh ce codigo chicuace tlapohualnemiliztica"
+  "We sent a 6-digit code to": "Titomitlhuiqueh ce codigo chicuace tlapohualnemiliztica",
+  "Search albums by title or description": "Tlatemohua albums ipan itoca ahnozo tlanahuatilli",
+  "View Public Profile": "Ittani in Altepetl Tlacuilolli",
+  "Storage": "Cehualoni",
+  "Use the 6180 app to showcase your albums offline": "Ticmatiz in 6180 aplicación inic ticnextiz in malbum amo ixtlahuatiliztli",
+  "Intelligently tagged and beautifully organized": "Nepantlayocoxqui nahuillotl ihuan necuallotl nahuatlatolli",
+  "Open On iOS": "iOS-pan Pōhua",
+  "Open On Android": "Android-pan Pōhua",
+  "Toggle contacts filter": "Nepantla xeliuhqui ica netlahueliloni",
+  "Showing albums with all selected contacts and tags": "Nechmach albums ica mochi tlanemiliztli ihuan marca tlaelhuilli",
+  "Showing albums with all selected tags": "Nechmach albums ica mochi marca tlaelhuilli"
 }

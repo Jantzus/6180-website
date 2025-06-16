@@ -126,7 +126,6 @@
   "No items to download": "Awan ti banag nga mailukat",
   "Failed to update album visibility. Please try again.": "Napaay ti panagpabaro ti pannakakita ti album. Pangngaasi ta padasen manen.",
   "You must be logged in to perform this action": "Masapul a nakastrekka tapno maaramid daytoy",
-  "Search album title or description": "Agbiruk iti titulo ti album wenno deskripsion",
   "Enter a password for this album.": "Ikabil ti password para iti daytoy nga album",
   "Enter password": "Ikabil ti password",
   "Select password restrictions.": "Agpili kadagiti panagparit ti password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Iserek dagiti 6180 Albums-yo",
   "Revisit Your Albums": "Sarungkaran Manen Dagiti Albumyo",
   "We'll email you a one-time code to verify it's really you": "Ipatulodminto kadakayo ti maminsan nga mausar a kodigo babaen ti email tapno mapaneknekan a dakayo talaga daytoy",
-  "We sent a 6-digit code to": "Nangipatulodkami iti 6-a-numero a kodigo iti"
+  "We sent a 6-digit code to": "Nangipatulodkami iti 6-a-numero a kodigo iti",
+  "Search albums by title or description": "Biruken dagiti album babaen ti titulo wenno deskripsion",
+  "View Public Profile": "Kitaen ti Publiko a Profile",
+  "Storage": "Pangiduldulin",
+  "Use the 6180 app to showcase your albums offline": "Usaren ti 6180 nga app tapno maipakita dagiti album mo nga offline",
+  "Intelligently tagged and beautifully organized": "Manakem a na-tag ken napintas a naiurnos",
+  "Open On iOS": "Luktan Idiay iOS",
+  "Open On Android": "Luktan Idiay Android",
+  "Toggle contacts filter": "Baliwen ti filter ti kontak",
+  "Showing albums with all selected contacts and tags": "Ipakpakita dagiti album nga addaan iti amin a napili a kontak ken tag",
+  "Showing albums with all selected tags": "Ipakpakita dagiti album nga addaan iti amin a napili a tag"
 }

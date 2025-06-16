@@ -126,7 +126,6 @@
   "No items to download": "no da datni tu cpacu",
   "Failed to update album visibility. Please try again.": "nu fliba lo nu binxo lo nu facki lo sanga girzu. ko troci za'ure'u",
   "You must be logged in to perform this action": "do bilga lo nunterlogji tezu'e lo nu zukte ti",
-  "Search album title or description": "sisku lo sanga girzu cmene a se skicu",
   "Enter a password for this album.": ".i ko ciska lo se mipri jaspu sera lo sanga girzu",
   "Enter password": "ciska le jaspu",
   "Select password restrictions.": "cuxna da lerpinsle steci",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "pilno le do 6180 zgana",
   "Revisit Your Albums": "xruti le do fukpi be lei pixra",
   "We'll email you a one-time code to verify it's really you": "mi'o ba lebna do lo pa nu pilno kodik ta'e le samru'e ni'i lo ka jorne lo ka do ja'o do",
-  "We sent a 6-digit code to": "mi'o benji lo xa namcu kodik fi"
+  "We sent a 6-digit code to": "mi'o benji lo xa namcu kodik fi",
+  "Search albums by title or description": "sisku lo sanga girzu sepi'o cmene ja ve cusku",
+  "View Public Profile": "catlu le gubni velcki",
+  "Storage": "vreji",
+  "Use the 6180 app to showcase your albums offline": "pilno le 6180 samtci le nu jarco do sanga girzu poi na jai ke'a",
+  "Intelligently tagged and beautifully organized": "pinka ku'i xamgu se tcila .e melbi se jorne",
+  "Open On iOS": "kargau fi'o iOS",
+  "Open On Android": "kargau fi'o Android",
+  "Toggle contacts filter": "slacu lo ka jorne",
+  "Showing albums with all selected contacts and tags": "viska loi girzu be lo se cuxna be lo jorne be'o je lo te jorne",
+  "Showing albums with all selected tags": "viska loi girzu be lo se cuxna be lo te jorne"
 }

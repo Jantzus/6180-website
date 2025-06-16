@@ -126,7 +126,6 @@
   "No items to download": "Pole ühtegi elementi allalaadimiseks",
   "Failed to update album visibility. Please try again.": "Albumi nähtavuse värskendamine ebaõnnestus. Palun proovige uuesti.",
   "You must be logged in to perform this action": "Selle toimingu tegemiseks peate olema sisse logitud",
-  "Search album title or description": "Otsi albumi pealkirja või kirjeldust",
   "Enter a password for this album.": "Sisesta selle albumi jaoks parool",
   "Enter password": "Sisesta parool",
   "Select password restrictions.": "Valige parooli piirangud.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Juurdepääs Teie 6180 Albumile",
   "Revisit Your Albums": "Külastage Oma Albumeid Uuesti",
   "We'll email you a one-time code to verify it's really you": "Saadame teile ühekordselt kasutatava koodi e-posti teel, et kinnitada, et olete tõesti teie",
-  "We sent a 6-digit code to": "Saatsime 6-kohalise koodi aadressile"
+  "We sent a 6-digit code to": "Saatsime 6-kohalise koodi aadressile",
+  "Search albums by title or description": "Otsi albumeid pealkirja või kirjelduse järgi",
+  "View Public Profile": "Vaata Avalikku Profiili",
+  "Storage": "Säilitamine",
+  "Use the 6180 app to showcase your albums offline": "Kasutage rakendust 6180, et kuvada oma albumeid võrguühenduseta",
+  "Intelligently tagged and beautifully organized": "Targalt märgistatud ja ilusalt korraldatud",
+  "Open On iOS": "Ava iOS-is",
+  "Open On Android": "Ava Android-is",
+  "Toggle contacts filter": "Lülita kontaktide filter",
+  "Showing albums with all selected contacts and tags": "Näitan albumeid kõigi valitud kontaktide ja siltidega",
+  "Showing albums with all selected tags": "Näitan albumeid kõigi valitud siltidega"
 }

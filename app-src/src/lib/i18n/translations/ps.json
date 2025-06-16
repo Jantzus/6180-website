@@ -126,7 +126,6 @@
   "No items to download": "د ښکته کولو لپاره هیڅ توکي نشته",
   "Failed to update album visibility. Please try again.": "د البوم د لیدنې تازه کول ناکام شو. مهرباني وکړئ بیا هڅه وکړئ.",
   "You must be logged in to perform this action": "د دې عمل د ترسره کولو لپاره باید غونډال ته ننوځئ",
-  "Search album title or description": "د البوم سرلیک یا تشریح ولټوئ",
   "Enter a password for this album.": "د دې البوم لپاره پټنوم ولیکئ",
   "Enter password": "پټنوم ولیکئ",
   "Select password restrictions.": "د پټنوم محدودیتونه وټاکئ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ستاسو 6180 البومونو ته لاسرسی",
   "Revisit Your Albums": "خپل البومونه بیا وګورئ",
   "We'll email you a one-time code to verify it's really you": "موږ به تاسو ته د یو ځل کارولو کوډ د بریښنالیک له لارې واستوو ترڅو تصدیق کړو چې تاسو یاست",
-  "We sent a 6-digit code to": "موږ د ۶ رقمونو کوډ واستاوه"
+  "We sent a 6-digit code to": "موږ د ۶ رقمونو کوډ واستاوه",
+  "Search albums by title or description": "د سرلیک یا تشرېح له مخې البومونه ولټوئ",
+  "View Public Profile": "عامه پروفایل وګورئ",
+  "Storage": "زېرمه",
+  "Use the 6180 app to showcase your albums offline": "د خپلو البومونو د آفلاین ښودلو لپاره د 6180 اپ وکاروئ",
+  "Intelligently tagged and beautifully organized": "په هوښیارۍ سره نښه شوي او په ښکلا سره تنظیم شوي",
+  "Open On iOS": "په iOS کې وغړوئ",
+  "Open On Android": "په Android کې وغړوئ",
+  "Toggle contacts filter": "د اړیکو فلټر بدلول",
+  "Showing albums with all selected contacts and tags": "د ټولو غوره شویو اړیکو او ټاګونو سره البومونه ښودل",
+  "Showing albums with all selected tags": "د ټولو غوره شویو ټاګونو سره البومونه ښودل"
 }

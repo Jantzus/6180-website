@@ -126,7 +126,6 @@
   "No items to download": "Tsésaahkéso éno'hémanéhe",
   "Failed to update album visibility. Please try again.": "Éšeévaʼe éno'hestȯtse éohke'hahtse. Néhe'še, náto'éše.",
   "You must be logged in to perform this action": "Né'éevasetanóoze mé'ho'ėstse háne'évȯhoohénėstse",
-  "Search album title or description": "Éšeévaʼe éno'sétȯxe'ohe mahpe ohtȧheme",
   "Enter a password for this album.": "Hóháʼo motsėstse álbum nomáhtȯhéstse",
   "Enter password": "Éto'sėnóvȧho'ȯhtse",
   "Select password restrictions.": "Náestse'he háomōhtáotséohtsévose.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Album Hóhkėhasëöhtse",
   "Revisit Your Albums": "Náhtse-mâhtáahe Hénėhéohe Nâhéóó'o",
   "We'll email you a one-time code to verify it's really you": "Návoestse nêhešėstse hóhtâhévanôtse voestanôtse nê-hešėstse email náma éše-hoséstse",
-  "We sent a 6-digit code to": "Naéšešėstse šé'še voestanôtse hóhtâhévanôtse"
+  "We sent a 6-digit code to": "Naéšešėstse šé'še voestanôtse hóhtâhévanôtse",
+  "Search albums by title or description": "Naa'ée'e éšeévaʼe hováhkėhestse kȯhtȧhéve'ho'e évo'kȯhtȧhóó'o",
+  "View Public Profile": "Ótsé-veháome hóhtaa'e",
+  "Storage": "Náhtáhémëhotovseto",
+  "Use the 6180 app to showcase your albums offline": "6180 app ho'e éhpe'e ma'ēšé'e véhpo'e heške náhkohe",
+  "Intelligently tagged and beautifully organized": "Vé'kėsė'e tó'omȧhtséháa'e ma'éneo'o éše'he",
+  "Open On iOS": "iOS Hoohá'e",
+  "Open On Android": "Android Hoohá'e",
+  "Toggle contacts filter": "Véhone-hoohtsestse hóxovėstse",
+  "Showing albums with all selected contacts and tags": "Hoohtsestse oova véhone-hoohtsestse tsėhetaneo'estȯxe méhotovestse",
+  "Showing albums with all selected tags": "Hoohtsestse oova tsėhetaneo'estȯxe méhotovestse"
 }

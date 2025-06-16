@@ -126,7 +126,6 @@
   "No items to download": "Wax lagu soo dejiyo ma jiro",
   "Failed to update album visibility. Please try again.": "Alboom mul-ega hal-haalissa diiday. Mara lammat yaali.",
   "You must be logged in to perform this action": "Kuni faylisu macalitti galdu qabda",
-  "Search album title or description": "Alboom ciwaan walla faahfaahin baari",
   "Enter a password for this album.": "Tani albom kee password kasey",
   "Enter password": "Paaswoord galchi",
   "Select password restrictions.": "Doori qulqullaata filatta.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Gal Keetoo 6180 Albaamuwwan",
   "Revisit Your Albums": "Albuumadaada Keerka Booqo",
   "We'll email you a one-time code to verify it's really you": "Email kee kod hal mar dambe kuusannoo jedhiinsa akka ati ati taate mirkaneessuuf siif ergina",
-  "We sent a 6-digit code to": "Kod 6 lakkofsa kee"
+  "We sent a 6-digit code to": "Kod 6 lakkofsa kee",
+  "Search albums by title or description": "Album gudooni ku sabab ama qeexis",
+  "View Public Profile": "Dadaaki Baraakata Muuqa",
+  "Storage": "Baarto",
+  "Use the 6180 app to showcase your albums offline": "6180 app-ka isticmaal samee si aad u muujiso alboomyadaada offline",
+  "Intelligently tagged and beautifully organized": "Si caqli leh oo qurux badan loo habeeyey",
+  "Open On iOS": "iOS Kaa Furi",
+  "Open On Android": "Android Kaa Furi",
+  "Toggle contacts filter": "Gudubbiis filtar badu",
+  "Showing albums with all selected contacts and tags": "Alboom doortamme gudubbiis iyo sumadaha ka hoose",
+  "Showing albums with all selected tags": "Alboom doortamme sumadaha ka hoose"
 }

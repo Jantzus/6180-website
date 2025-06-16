@@ -126,7 +126,6 @@
   "No items to download": "Taya nå kosa para u dównloåd",
   "Failed to update album visibility. Please try again.": "Ti maolek i ma na'nuebu ni lini'e' i album. Pot fabot, chagi ta'lo.",
   "You must be logged in to perform this action": "Debi di un logging in para un cho' este aksion",
-  "Search album title or description": "Aligao i titulo pat diskripsion i album",
   "Enter a password for this album.": "Na'i password para este na album",
   "Enter password": "Na'hålom i password",
   "Select password restrictions.": "Ayek i nina'an palabra.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Akses I 6180 Albums-mu",
   "Revisit Your Albums": "Gues Takkilo I Album-mu",
   "We'll email you a one-time code to verify it's really you": "Bei in fanågon hao ni unu na kodigu un biahi ha' para bei ta beriféka na hago yanggen",
-  "We sent a 6-digit code to": "Manafanague ham ni 6-digit na kodigu para"
+  "We sent a 6-digit code to": "Manafanague ham ni 6-digit na kodigu para",
+  "Search albums by title or description": "Aligao na album gi titulo pat deskripsiyon",
+  "View Public Profile": "Li'e' i Publiku na Profile",
+  "Storage": "Sagan",
+  "Use the 6180 app to showcase your albums offline": "Atungo' i 6180 app para un fa'nu'i i album-mu gi oflaen",
+  "Intelligently tagged and beautifully organized": "Malaña' na ma-tag yan bonitu na ma-organisar",
+  "Open On iOS": "Na'åbri Giya iOS",
+  "Open On Android": "Na'åbri Giya Android",
+  "Toggle contacts filter": "Tulaika kontakto filter",
+  "Showing albums with all selected contacts and tags": "Fiha na album ni todu mina'ayao kontakto yan tag",
+  "Showing albums with all selected tags": "Fiha na album ni todu mina'ayao tag"
 }

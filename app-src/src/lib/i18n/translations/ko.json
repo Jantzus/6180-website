@@ -126,7 +126,6 @@
   "No items to download": "다운로드할 항목이 없습니다",
   "Failed to update album visibility. Please try again.": "앨범 가시성 업데이트에 실패했습니다. 다시 시도해 주세요.",
   "You must be logged in to perform this action": "이 작업을 수행하려면 로그인해야 합니다",
-  "Search album title or description": "앨범 제목 또는 설명 검색",
   "Enter a password for this album.": "이 앨범의 비밀번호를 입력하세요",
   "Enter password": "비밀번호 입력",
   "Select password restrictions.": "비밀번호 제한 설정을 선택하세요.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "당신의 6180개 앨범에 접근",
   "Revisit Your Albums": "앨범 다시 보기",
   "We'll email you a one-time code to verify it's really you": "본인 확인을 위해 일회용 코드를 이메일로 보내드립니다",
-  "We sent a 6-digit code to": "6자리 코드를 보냈습니다"
+  "We sent a 6-digit code to": "6자리 코드를 보냈습니다",
+  "Search albums by title or description": "제목이나 설명으로 앨범 검색",
+  "View Public Profile": "공개 프로필 보기",
+  "Storage": "저장소",
+  "Use the 6180 app to showcase your albums offline": "오프라인으로 앨범을 보여주기 위해 6180 앱을 사용하세요",
+  "Intelligently tagged and beautifully organized": "지능적으로 태그되고 아름답게 정리됨",
+  "Open On iOS": "iOS에서 열기",
+  "Open On Android": "Android에서 열기",
+  "Toggle contacts filter": "연락처 필터 전환",
+  "Showing albums with all selected contacts and tags": "선택된 모든 연락처와 태그가 포함된 앨범 표시",
+  "Showing albums with all selected tags": "선택된 모든 태그가 포함된 앨범 표시"
 }

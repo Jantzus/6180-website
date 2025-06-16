@@ -126,7 +126,6 @@
   "No items to download": "Janiw kuna apaqañataki utjkiti",
   "Failed to update album visibility. Please try again.": "Albuma uñjañapa janiw machkasikit. Ukhamax wali, mayampi yant'am.",
   "You must be logged in to perform this action": "Aka luraña lurapxañatakixa mantañama wakisi",
-  "Search album title or description": "Álbum sutiyapa ukhamaraki qillqatapa thaqhaña",
   "Enter a password for this album.": "Aka álbumtaki contraseña uñakipam",
   "Enter password": "Aru pachawi uñakataña",
   "Select password restrictions.": "Contraseña ch'amanchasiwinaka ajlliñataki.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "6180 Albums ukar Mantañataki",
   "Revisit Your Albums": "Album Nakamax Wasitat Uñjañani",
   "We'll email you a one-time code to verify it's really you": "Jumat ch'amakaru maya kastu apnaqañataki email tuqiwa apaniñäni ukhamatxa chiqpachawa jumasti ukhamaraki yatiñataki",
-  "We sent a 6-digit code to": "6 jakhuna chimpu apayañani"
+  "We sent a 6-digit code to": "6 jakhuna chimpu apayañani",
+  "Search albums by title or description": "Álbumes sutipatxi utj saphi jan ukax qhanañchtayasaw thaqhañ",
+  "View Public Profile": "Taqi Jaqinakar Uñjaña",
+  "Storage": "Imañatawi",
+  "Use the 6180 app to showcase your albums offline": "6180 app apnaqaña álbumes ukanaka jan internet ukampi uñachayañataki",
+  "Intelligently tagged and beautifully organized": "Amuyun uñt'ayata ukat suma askichatawa",
+  "Open On iOS": "iOS Ukan Jist'araña",
+  "Open On Android": "Android Ukan Jist'araña",
+  "Toggle contacts filter": "Jakañani chimpuñani tikxataña",
+  "Showing albums with all selected contacts and tags": "Jakañanakampi chimpunakampisa álbumes uñachayaña",
+  "Showing albums with all selected tags": "Chimpunakampisa álbumes uñachayaña"
 }

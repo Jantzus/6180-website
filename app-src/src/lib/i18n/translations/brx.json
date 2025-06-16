@@ -126,7 +126,6 @@
   "No items to download": "डाउनलोड खालामनो मोनसेबो गैया",
   "Failed to update album visibility. Please try again.": "आलबाम नुजाथि सोलायनायखौ दिहुन्नानै थांखि जाबाय। अन्नानै नायबावहोनांगौ।",
   "You must be logged in to perform this action": "बे हाबाया खालामनो नों लग इन जानो गोनां",
-  "Search album title or description": "आलबामनि मुंखौ एबा फोरमायथिखौ नाइगिरि",
   "Enter a password for this album.": "बे आलबामनि थाखाय पासवार्ड हाबा",
   "Enter password": "पासवर्ड सोनानै",
   "Select password restrictions.": "पासवर्ड बान्देजथि बासिख।",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "नों 6180 एल्बम नायनो",
   "Revisit Your Albums": "नांथि एल्बुमखौ दावबो आन्दाय",
   "We'll email you a one-time code to verify it's really you": "बि नोंथांनि पहिचान सत्यापित खालामनि थागो ई-मेल जों एक सावनि बाहागो जानाय कोड कुलांगोन",
-  "We sent a 6-digit code to": "बि छय गोजोन कोड कुलांजो"
+  "We sent a 6-digit code to": "बि छय गोजोन कोड कुलांजो",
+  "Search albums by title or description": "मुखिया थिफिन बा बिबरन जादों आलबाम नागिर",
+  "View Public Profile": "रावलै प्रोफाइल नायजो",
+  "Storage": "जाबनाय",
+  "Use the 6180 app to showcase your albums offline": "नङा आलबाम ऑफलाइन देखावनो दं 6180 आप बाहायो",
+  "Intelligently tagged and beautifully organized": "सुबुद्धि नाङा ट्यग हो अनि सुन्दर तरिकाया संगठित",
+  "Open On iOS": "iOS आव खेव",
+  "Open On Android": "Android आव खेव",
+  "Toggle contacts filter": "संपर्क फिलटार सोलाय",
+  "Showing albums with all selected contacts and tags": "गासै सायखो संपर्क आरो टैग दं आळबाम देखाव नागोन",
+  "Showing albums with all selected tags": "गासै सायखो टैग दं आळबाम देखाव नागोन"
 }

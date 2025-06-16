@@ -126,7 +126,6 @@
   "No items to download": "Kāore he tūemi hei tango iho",
   "Failed to update album visibility. Please try again.": "I rahua te whakahou i te kitea o te kōpaki. Tēnā koa ngana anō.",
   "You must be logged in to perform this action": "Me takiuru koe kia mahi tēnei mahi",
-  "Search album title or description": "Rapu taitara, whakamārama rānei o te kōpaki",
   "Enter a password for this album.": "Tāuru i te kupuhipa mō tēnei kōpaki",
   "Enter password": "Tomo kupu muna",
   "Select password restrictions.": "Tīpakohia ngā herenga kupuhipa.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Whakauru ki ō 6180 Albums",
   "Revisit Your Albums": "Toro Anō Ki Ō Albums",
   "We'll email you a one-time code to verify it's really you": "Ka tono mātou he kōmaka kotahi-ā-taima ki a koe nā te īmēra hei whakaū koe nei hoki koe",
-  "We sent a 6-digit code to": "I tono mātou he kōmaka 6-tau ki"
+  "We sent a 6-digit code to": "I tono mātou he kōmaka 6-tau ki",
+  "Search albums by title or description": "Rapu kōpaki mā te ingoa rānei, te whakaahua rānei",
+  "View Public Profile": "Matakitaki Kōtahi Raina",
+  "Storage": "Rokiroki",
+  "Use the 6180 app to showcase your albums offline": "Whakamahia te taupānga 6180 hei whakaatu i ō kōpaki tuunga kore",
+  "Intelligently tagged and beautifully organized": "He whakaatu atahua hoki te whakarite rawa",
+  "Open On iOS": "Whakatuwheratia Ki iOS",
+  "Open On Android": "Whakatuwheratia Ki Android",
+  "Toggle contacts filter": "Tawhiri ine whakawhiti",
+  "Showing albums with all selected contacts and tags": "Whakaatuhia ngā kōpaki me ngā hononga me ngā tohu katoa i kōwhiria",
+  "Showing albums with all selected tags": "Whakaatuhia ngā kōpaki me ngā tohu katoa i kōwhiria"
 }

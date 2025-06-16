@@ -126,7 +126,6 @@
   "No items to download": "Babu abubuwa don zazzagewa",
   "Failed to update album visibility. Please try again.": "An kasa sabunta ƙayatarwar album din. Don Allah sake gwadawa.",
   "You must be logged in to perform this action": "Dole ne ka shiga domin yin wannan aiki",
-  "Search album title or description": "Nemo sunan album ko bayani",
   "Enter a password for this album.": "Shigar da kalmar sirri don wannan album ɗin",
   "Enter password": "Shigar da kalmar sirri",
   "Select password restrictions.": "Zaɓi iyakancin kalmar sirri.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Shiga 6180 Albums ɗinku",
   "Revisit Your Albums": "Ziyarta Hotunanka Kuma",
   "We'll email you a one-time code to verify it's really you": "Za mu aika muku lambar amfani guda ɗaya ta imel don tabbatar da cewa ku ne da gaske",
-  "We sent a 6-digit code to": "Mun aika lambar mai lamba 6 zuwa"
+  "We sent a 6-digit code to": "Mun aika lambar mai lamba 6 zuwa",
+  "Search albums by title or description": "Bincika albums da taken ko bayanin",
+  "View Public Profile": "Duba Bayanin Mutum na Jama'a",
+  "Storage": "Ajiya",
+  "Use the 6180 app to showcase your albums offline": "Yi amfani da 6180 app don nuna albums naku a layi",
+  "Intelligently tagged and beautifully organized": "An yiwa alama cikin hankali kuma an tsara da kyau",
+  "Open On iOS": "Bude A iOS",
+  "Open On Android": "Bude A Android",
+  "Toggle contacts filter": "Canja tacewa mai tace",
+  "Showing albums with all selected contacts and tags": "Nuna albums da duk zaɓaɓɓun tuntuɓar da alamun",
+  "Showing albums with all selected tags": "Nuna albums da duk zaɓaɓɓun alamun"
 }

@@ -126,7 +126,6 @@
   "No items to download": "ഡൗൺലോഡ് ചെയ്യാൻ ഇനങ്ങളൊന്നുമില്ല",
   "Failed to update album visibility. Please try again.": "ആൽബം ദൃശ്യത അപ്ഡേറ്റ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
   "You must be logged in to perform this action": "ഈ പ്രവർത്തനം നടത്താൻ നിങ്ങൾ ലോഗിൻ ചെയ്തിരിക്കണം",
-  "Search album title or description": "ആൽബം തലക്കെട്ട് അല്ലെങ്കിൽ വിവരണം തിരയുക",
   "Enter a password for this album.": "ഈ ആൽബത്തിനായി പാസ്‌വേഡ് നൽകുക",
   "Enter password": "പാസ്‌വേഡ് നൽകുക",
   "Select password restrictions.": "പാസ്‌വേഡ് നിയന്ത്രണങ്ങൾ തിരഞ്ഞെടുക്കുക.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "നിങ്ങളുടെ 6180 ആൽബങ്ങൾ കാണുക",
   "Revisit Your Albums": "നിങ്ങളുടെ ആൽബങ്ങൾ വീണ്ടും കാണുക",
   "We'll email you a one-time code to verify it's really you": "നിങ്ങളുടെ ഐഡന്റിറ്റി പരിശോധിക്കാൻ ഞങ്ങൾ ഇമെയിലിൽ ഒരു വൺ-ടൈം കോഡ് അയയ്ക്കും",
-  "We sent a 6-digit code to": "ഞങ്ങൾ 6-അക്ക കോഡ് അയച്ചു"
+  "We sent a 6-digit code to": "ഞങ്ങൾ 6-അക്ക കോഡ് അയച്ചു",
+  "Search albums by title or description": "ശീർഷകം അല്ലെങ്കിൽ വിവരണം അനുസരിച്ച് ആൽബങ്ങൾ തിരയുക",
+  "View Public Profile": "പൊതു പ്രൊഫൈൽ കാണുക",
+  "Storage": "സംഭരണം",
+  "Use the 6180 app to showcase your albums offline": "നിങ്ങളുടെ ആൽബങ്ങൾ ഓഫ്‌ലൈനിൽ പ്രദർശിപ്പിക്കാൻ 6180 ആപ്പ് ഉപയോഗിക്കുക",
+  "Intelligently tagged and beautifully organized": "ബുദ്ധിപരമായി ടാഗ് ചെയ്യപ്പെട്ടതും മനോഹരമായി സംഘടിപ്പിച്ചതും",
+  "Open On iOS": "iOS-ൽ തുറക്കുക",
+  "Open On Android": "Android-ൽ തുറക്കുക",
+  "Toggle contacts filter": "കോൺടാക്റ്റ് ഫിൽറ്റർ ടോഗിൾ ചെയ്യുക",
+  "Showing albums with all selected contacts and tags": "തിരഞ്ഞെടുത്ത എല്ലാ കോൺടാക്റ്റുകളും ടാഗുകളും ഉള്ള ആൽബങ്ങൾ കാണിക്കുന്നു",
+  "Showing albums with all selected tags": "തിരഞ്ഞെടുത്ത എല്ലാ ടാഗുകളും ഉള്ള ആൽബങ്ങൾ കാണിക്കുന്നു"
 }

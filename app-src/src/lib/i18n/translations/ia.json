@@ -126,7 +126,6 @@
   "No items to download": "Nulle elementos a discargar",
   "Failed to update album visibility. Please try again.": "Falleva actualisar le visibilitate del album. Per favor, reproba.",
   "You must be logged in to perform this action": "Tu debe aperir session pro executar iste action",
-  "Search album title or description": "Cercar titulo o description del album",
   "Enter a password for this album.": "Entra un contrasigno pro iste album",
   "Enter password": "Insere le contrasigno",
   "Select password restrictions.": "Elige restrictiones de contrasigno.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accesso al Vostre 6180 Albums",
   "Revisit Your Albums": "Revisita Vostre Albums",
   "We'll email you a one-time code to verify it's really you": "Nos te inviara un codice de uso unic per email pro verificar que es vermente tu",
-  "We sent a 6-digit code to": "Nos inviava un codice de 6 cifras a"
+  "We sent a 6-digit code to": "Nos inviava un codice de 6 cifras a",
+  "Search albums by title or description": "Cercar albums per titulo o description",
+  "View Public Profile": "Vider le Profilo Public",
+  "Storage": "Immagazinage",
+  "Use the 6180 app to showcase your albums offline": "Usar le application 6180 pro monstrar tu albums sin connexion",
+  "Intelligently tagged and beautifully organized": "Intelligentemente etiquettate e bellemente organisate",
+  "Open On iOS": "Aperir In iOS",
+  "Open On Android": "Aperir In Android",
+  "Toggle contacts filter": "Commutar filtro de contactos",
+  "Showing albums with all selected contacts and tags": "Monstrar albums con tote le contactos e etiquettas seligite",
+  "Showing albums with all selected tags": "Monstrar albums con tote le etiquettas seligite"
 }

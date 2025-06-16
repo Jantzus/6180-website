@@ -1,1 +1,0 @@
-import{j as e,r as n}from"./utils-B5IJzCfT.js";import{u as a}from"./styled-components-DYsn5kNr.js";const u=({t:o})=>{const t=r=>{r.preventDefault(),localStorage.clear(),n("index.html")};return e.jsx(a,{href:"#",onClick:t,children:o("Log Out")})};export{u as L};

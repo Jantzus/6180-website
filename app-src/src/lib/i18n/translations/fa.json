@@ -126,7 +126,6 @@
   "No items to download": "موردی برای بارگیری وجود ندارد",
   "Failed to update album visibility. Please try again.": "به‌روزرسانی قابلیت مشاهده آلبوم ناموفق بود. لطفاً دوباره تلاش کنید.",
   "You must be logged in to perform this action": "شما باید وارد سیستم شوید تا بتوانید این کار را انجام دهید",
-  "Search album title or description": "جستجوی عنوان یا توضیح آلبوم",
   "Enter a password for this album.": "یک رمز عبور برای این آلبوم وارد کنید",
   "Enter password": "رمز عبور را وارد کنید",
   "Select password restrictions.": "محدودیت‌های رمز عبور را انتخاب کنید.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "دسترسی به 6180 آلبوم شما",
   "Revisit Your Albums": "بازدید مجدد از آلبوم‌هایتان",
   "We'll email you a one-time code to verify it's really you": "ما یک کد یکبار مصرف را از طریق ایمیل برای شما ارسال خواهیم کرد تا هویت شما را تأیید کنیم",
-  "We sent a 6-digit code to": "ما کد ۶ رقمی را ارسال کردیم به"
+  "We sent a 6-digit code to": "ما کد ۶ رقمی را ارسال کردیم به",
+  "Search albums by title or description": "جستجوی آلبوم‌ها بر اساس عنوان یا توضیحات",
+  "View Public Profile": "مشاهده نمایه عمومی",
+  "Storage": "ذخیره‌سازی",
+  "Use the 6180 app to showcase your albums offline": "از برنامه 6180 برای نمایش آلبوم‌هایتان آفلاین استفاده کنید",
+  "Intelligently tagged and beautifully organized": "هوشمندانه برچسب‌گذاری شده و زیبا سازماندهی شده",
+  "Open On iOS": "باز کردن در iOS",
+  "Open On Android": "باز کردن در Android",
+  "Toggle contacts filter": "تغییر فیلتر مخاطبین",
+  "Showing albums with all selected contacts and tags": "نمایش آلبوم‌ها با تمام مخاطبین و برچسب‌های انتخاب شده",
+  "Showing albums with all selected tags": "نمایش آلبوم‌ها با تمام برچسب‌های انتخاب شده"
 }

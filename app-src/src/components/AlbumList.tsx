@@ -50,20 +50,34 @@ const AlbumLink = styled.div`
   cursor: pointer;
 `;
 
+// Enhanced AlbumCard with improved styling for better "pop"
 const AlbumCard = styled.div`
   background: #fff;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: box-shadow 0.2s ease;
+  /* Enhanced shadow for more depth */
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.04),
+    0 8px 16px rgba(0,0,0,0.06);
+  /* Subtle border for definition */
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
   width: 100%;
   max-width: 100%;
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
+  /* Very subtle backdrop effect */
+  backdrop-filter: blur(1px);
 
   &:hover {
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    /* Enhanced hover state */
+    box-shadow: 
+      0 4px 8px rgba(0,0,0,0.06),
+      0 12px 24px rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.08);
+    /* Subtle lift effect */
+    transform: translateY(-2px);
   }
 `;
 

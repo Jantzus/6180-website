@@ -126,7 +126,6 @@
   "No items to download": "Kapena sa ke shukulula",
   "Failed to update album visibility. Please try again.": "Album kohi tjyaponukwa kashi ku tjukifika. Indjo, tala sana.",
   "You must be logged in to perform this action": "Nena ku zima opo ku ungura omuinjo ou",
-  "Search album title or description": "Konga album edhina ile okatumbululwa",
   "Enter a password for this album.": "Tjanga password molongwa mombapila ndji",
   "Enter password": "Tjangesa password",
   "Select password restrictions.": "Hokola omahogololo gospawod.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Katula 6180 Albums yove",
   "Revisit Your Albums": "Ulike Omangalo Yawe",
   "We'll email you a one-time code to verify it's really you": "Twali totweka numbala yimwe tu kola mo email pokutya tuhole kutya ngo wena nonene",
-  "We sent a 6-digit code to": "Twatumine numbala yinene ntandatu ku"
+  "We sent a 6-digit code to": "Twatumine numbala yinene ntandatu ku",
+  "Search albums by title or description": "Panga albums pongando tji ljakuvindavida",
+  "View Public Profile": "Mona Profile ya Omukwao Womunhu",
+  "Storage": "Otjiho",
+  "Use the 6180 app to showcase your albums offline": "Tulonga 6180 app oto okukombinga albumba dhawo offline",
+  "Intelligently tagged and beautifully organized": "Omalavo yomunene no orudundo ruupe",
+  "Open On iOS": "Zuvura Mo iOS",
+  "Open On Android": "Zuvura Mo Android",
+  "Toggle contacts filter": "Tjinga kontak filter",
+  "Showing albums with all selected contacts and tags": "Harepa album ja kontak omu ndjimbo yima ja pitilwa",
+  "Showing albums with all selected tags": "Harepa album ja ndjimbo yima ja pitilwa"
 }

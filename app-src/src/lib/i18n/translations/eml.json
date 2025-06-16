@@ -126,7 +126,6 @@
   "No items to download": "Nissón element da scarichèr",
   "Failed to update album visibility. Please try again.": "Falî a agiurnèr la visibilitê dl'album. Par piasér, pruvê da nôv.",
   "You must be logged in to perform this action": "A dviv èser coleghê par fèr sta aziòun",
-  "Search album title or description": "Serca al titul o la descriziòun dal album",
   "Enter a password for this album.": "Metti una password per st'album",
   "Enter password": "Introdùs la password",
   "Select password restrictions.": "Selesiunèr limiti dla password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Andèr ai Tò 6180 Album",
   "Revisit Your Albums": "Rivédì I Vòster Album",
   "We'll email you a one-time code to verify it's really you": "Av manderàn un còdeg da dovràr sòl una volta par email par verificàr che a si pròpi vuèter",
-  "We sent a 6-digit code to": "Avèmm mandàd un còdeg da 6 zifar a"
+  "We sent a 6-digit code to": "Avèmm mandàd un còdeg da 6 zifar a",
+  "Search albums by title or description": "Cèrca album par titol o descrission",
+  "View Public Profile": "Guêrda al Profîl Pùblic",
+  "Storage": "Magasèn",
+  "Use the 6180 app to showcase your albums offline": "Dòvra l'aplicaziòn 6180 par mustràr i tō album offline",
+  "Intelligently tagged and beautifully organized": "Marcà ch'al ufizièn e urganizà bel",
+  "Open On iOS": "Åverzer In iOS",
+  "Open On Android": "Åverzer In Android",
+  "Toggle contacts filter": "Câmbia filter cuntàt",
+  "Showing albums with all selected contacts and tags": "Måstra album cun tót i cuntàt e tag selesiónè",
+  "Showing albums with all selected tags": "Måstra album cun tót i tag selesiónè"
 }

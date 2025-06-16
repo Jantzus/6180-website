@@ -126,7 +126,6 @@
   "No items to download": "ንምውራድ ዝኾነ ነገር የለን",
   "Failed to update album visibility. Please try again.": "ናይ ኣልበም ምርኣይ ምዕራፍ ኣይተዓወተን። በጃኻ እንደገና ፈትን።",
   "You must be logged in to perform this action": "ነዚ ተግባር ንምፍጻም ክትኣቱ ኣሎካ",
-  "Search album title or description": "ናይ ኣልበም ርእሰ ጉዳይ ወይ መግለጺ ይድለዩ",
   "Enter a password for this album.": "ለዚህ አልበም የይለፍ ቃል ያስገቡ",
   "Enter password": "መሕለፊ ቃል አእትው",
   "Select password restrictions.": "ናይ መሕለፊ ቃል ገደባት ምረጽ።",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ናብ 6180 ኣልበምኻ እትኽእል",
   "Revisit Your Albums": "ኣልበማትኩም ተመለሱ ተዓዘብዎም",
   "We'll email you a one-time code to verify it's really you": "ብሓቂ ንስኻ ምዃንካ ንምርግጋጽ ሓደ ጊዜ ጥራይ ዝጥቀመሉ ኮድ ብኢመይል ክንልኸካ ኢና",
-  "We sent a 6-digit code to": "6 ቁጽሪ ኮድ ለኣክናልና"
+  "We sent a 6-digit code to": "6 ቁጽሪ ኮድ ለኣክናልና",
+  "Search albums by title or description": "ብኣርእስቲ ወይ ብገለጻ አልበማት ድለዩ",
+  "View Public Profile": "ናይ ሕዝቢ መግለጺ ርአ",
+  "Storage": "ማኽዘን",
+  "Use the 6180 app to showcase your albums offline": "ናይ እሙን አልበማት ሰብዓይ ግደፍ እዝኒ 6180 አፕ ተጠቐሙ",
+  "Intelligently tagged and beautifully organized": "ብጥበብ ተሰኒዱ ኣብ ዝገርም ሓደ ሰርዓት ተወሳኺ",
+  "Open On iOS": "ኣብ iOS ክፈት",
+  "Open On Android": "ኣብ Android ክፈት",
+  "Toggle contacts filter": "የእውቂያዎች ማጣሪያ ቀይር",
+  "Showing albums with all selected contacts and tags": "ንኹሎም ዝተመረጹ እውቂያታትን ተግባራትን ዘለዎም ኣልበማት ኣርእዩ",
+  "Showing albums with all selected tags": "ንኹሎም ዝተመረጹ ተግባራት ዘለዎም ኣልበማት ኣርእዩ"
 }

@@ -126,7 +126,6 @@
   "No items to download": "ꯆꯥꯎꯟꯂꯣꯗ ꯋꯥꯔꯣꯜꯁꯤꯡ ꯂꯩꯇꯦ",
   "Failed to update album visibility. Please try again.": "ꯑꯦꯜꯕꯝ ꯎꯕ ꯅꯧꯁꯥꯀꯄ ꯃꯥꯏꯄꯥꯛꯂꯦ। ꯑꯃꯨꯛ ꯍꯟꯅ ꯍꯣꯠꯅꯕꯤꯌꯨ।",
   "You must be logged in to perform this action": "ꯃꯁꯤ ꯇꯧꯅꯕ ꯆꯌꯣꯜ ꯍꯥꯞꯆꯤꯟꯕ ꯃꯊꯧ ꯇꯥꯏ",
-  "Search album title or description": "ꯑꯦꯜꯕꯝꯒꯤ ꯃꯥꯏꯉꯣꯟ ꯅꯠꯇ꯭ꯔꯒ ꯋꯥꯍꯟꯊꯣꯛ ꯊꯤꯕ",
   "Enter a password for this album.": "ꯑꯁꯤꯒꯤ ꯑꯦꯜꯕꯝꯒꯤ ꯑꯆꯪ ꯑꯍꯦꯟ ꯄꯤꯌꯨ",
   "Enter password": "ꯄꯥꯁꯕꯥꯔ꯭ꯗ ꯈꯨꯗꯣꯜꯂꯨ",
   "Select password restrictions.": "ꯄꯥꯁꯋꯥꯔꯗ ꯑꯍꯧꯕꯁꯤꯡ ꯈꯟꯆꯧ꯫",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "নহাকশিং গী 6180 এলবাম উন্নু",
   "Revisit Your Albums": "নহাকপু এলবম শিং অমুক উবা",
   "We'll email you a one-time code to verify it's really you": "ꯏꯃꯦꯏꯜ ꯄꯥꯡꯊꯣꯛꯇꯨꯅꯥ ꯅꯍꯥꯛꯀꯤ ꯃꯤꯡ ꯍꯦꯟꯅꯥ ꯁꯦꯟꯗꯣꯛꯅꯕꯒꯤꯗꯃꯛ ꯑꯃꯨꯛ ꯍꯟꯅꯥ ꯁꯤꯖꯤꯟꯅꯕꯥ ꯀꯣꯗ ꯑꯃꯥ ꯊꯥꯒꯅꯤ",
-  "We sent a 6-digit code to": "ꯑꯩꯈꯣꯌꯅꯥ ꯱꯶ ꯗꯤꯖꯤꯠ ꯀꯣꯗ ꯊꯥꯈꯤ"
+  "We sent a 6-digit code to": "ꯑꯩꯈꯣꯌꯅꯥ ꯱꯶ ꯗꯤꯖꯤꯠ ꯀꯣꯗ ꯊꯥꯈꯤ",
+  "Search albums by title or description": "ꯍꯤꯔꯝ ꯅꯠꯔꯒ ꯐꯣꯡꯗꯣꯛ-ꯐꯥꯑꯣꯔꯕꯒꯤ ꯁꯤꯖꯤꯟꯅꯗꯨꯅ ꯑꯦꯜꯕꯝ ꯂꯩꯕ",
+  "View Public Profile": "পব্লিক প্রোফাইল য়েংবা",
+  "Storage": "থবক",
+  "Use the 6180 app to showcase your albums offline": "ꯅꯍꯥꯛꯀꯤ ꯑꯦꯜꯕꯝ ꯑꯁꯤ ꯑꯣꯐꯂꯥꯏꯟꯗꯥ ꯎꯠꯅꯕꯒꯤꯗꯃꯛ 6180 ꯑꯦꯞ ꯁꯤꯖꯤꯟꯅꯧ",
+  "Intelligently tagged and beautifully organized": "ꯂꯧꯁꯤꯡꯅꯥ ꯇꯦꯒ ꯇꯧꯔꯝꯕ ꯑꯃꯁꯨꯡ ꯐꯖꯅꯥ ꯄꯥꯡꯊꯣꯀꯄꯥ",
+  "Open On iOS": "iOS দা হাংদোক্কো",
+  "Open On Android": "Android দা হাংদোক্কো",
+  "Toggle contacts filter": "ꯀꯟꯇꯦꯛꯇ ꯐꯤꯜꯇꯔ ꯇꯣꯒꯜ ꯇꯧꯕ",
+  "Showing albums with all selected contacts and tags": "ꯈꯅꯒꯠꯂꯕ ꯀꯟꯇꯦꯛꯇ ꯑꯃꯁꯨꯡ ꯇꯦꯒ ꯄꯨꯝꯅꯃꯛ ꯌꯥꯑꯣꯕ ꯑꯦꯂꯕꯝ ꯎꯠꯂꯤ",
+  "Showing albums with all selected tags": "ꯈꯅꯒꯠꯂꯕ ꯇꯦꯒ ꯄꯨꯝꯅꯃꯛ ꯌꯥꯑꯣꯕ ꯑꯦꯂꯕꯝ ꯎꯠꯂꯤ"
 }

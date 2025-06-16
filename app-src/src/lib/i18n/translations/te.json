@@ -126,7 +126,6 @@
   "No items to download": "డౌన్‌లోడ్ చేయడానికి ఏమీ లేవు",
   "Failed to update album visibility. Please try again.": "ఆల్బమ్ దృశ్యమానతను నవీకరించడంలో విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.",
   "You must be logged in to perform this action": "ఈ చర్యను నిర్వహించడానికి మీరు లాగిన్ అయి ఉండాలి",
-  "Search album title or description": "ఆల్బమ్ శీర్షిక లేదా వివరణను వెతకండి",
   "Enter a password for this album.": "ఈ ఆల్బమ్‌కు పాస్‌వర్డ్‌ను నమోదు చేయండి",
   "Enter password": "పాస్‌వర్డ్ నమోదు చేయండి",
   "Select password restrictions.": "పాస్‌వర్డ్ పరిమితులను ఎంచుకోండి.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "మీ 6180 ఆల్బమ్‌లను చూడండి",
   "Revisit Your Albums": "మీ ఆల్బమ్‌లను మళ్లీ చూడండి",
   "We'll email you a one-time code to verify it's really you": "మీ గుర్తింపును ధృవీకరించడానికి మేము ఇమెయిల్ ద్వారా వన్-టైమ్ కోడ్‌ను పంపుతాము",
-  "We sent a 6-digit code to": "మేము 6-అంకెల కోడ్‌ను పంపించాము"
+  "We sent a 6-digit code to": "మేము 6-అంకెల కోడ్‌ను పంపించాము",
+  "Search albums by title or description": "శీర్షిక లేదా వివరణ ద్వారా ఆల్బమ్‌లను వెతకండి",
+  "View Public Profile": "పబ్లిక్ ప్రొఫైల్ చూడండి",
+  "Storage": "నిల్వ",
+  "Use the 6180 app to showcase your albums offline": "మీ ఆల్బమ్‌లను ఆఫ్‌లైన్‌లో ప్రదర్శించడానికి 6180 యాప్‌ను ఉపయోగించండి",
+  "Intelligently tagged and beautifully organized": "తెలివిగా ట్యాగ్ చేయబడింది మరియు అందంగా నిర్వహించబడింది",
+  "Open On iOS": "iOS లో తెరవండి",
+  "Open On Android": "Android లో తెరవండి",
+  "Toggle contacts filter": "సంపర్కాల ఫిల్టర్‌ను టాగిల్ చేయండి",
+  "Showing albums with all selected contacts and tags": "ఎంపిక చేసిన అన్ని పరిచయాలు మరియు ట్యాగ్‌లతో ఆల్బమ్‌లను చూపిస్తోంది",
+  "Showing albums with all selected tags": "ఎంపిక చేసిన అన్ని ట్యాగ్‌లతో ఆల్బమ్‌లను చూపిస్తోంది"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Pa gen atik pou telechaje",
   "Failed to update album visibility. Please try again.": "Echwe pou mete ajou vizibilite albòm lan. Tanpri eseye ankò.",
   "You must be logged in to perform this action": "Ou dwe konekte pou fè aksyon sa a",
-  "Search album title or description": "Chèche tit albòm oswa deskripsyon",
   "Enter a password for this album.": "Antre yon modpas pou albòm sa a",
   "Enter password": "Antre modpas",
   "Select password restrictions.": "Chwazi restriksyon modpas.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Jwenn 6180 Albòm ou yo",
   "Revisit Your Albums": "Vizite Albums Ou Yo Ankò",
   "We'll email you a one-time code to verify it's really you": "Nou ap voye ou yon kòd ki sèvi yon sèl fwa nan imèl la pou nou konnen se ou menm lan",
-  "We sent a 6-digit code to": "Nou voye yon kòd 6 chif nan"
+  "We sent a 6-digit code to": "Nou voye yon kòd 6 chif nan",
+  "Search albums by title or description": "Chèche albòm yo nan tit oswa deskripsyon",
+  "View Public Profile": "Gade Pwofil Piblik",
+  "Storage": "Depo",
+  "Use the 6180 app to showcase your albums offline": "Sèvi ak aplikasyon 6180 an pou montre albòm ou yo san koneksyon",
+  "Intelligently tagged and beautifully organized": "Yo make ak entèlijans epi yo òganize trè bèl",
+  "Open On iOS": "Ouvè Sou iOS",
+  "Open On Android": "Ouvè Sou Android",
+  "Toggle contacts filter": "Chanje filè kontak yo",
+  "Showing albums with all selected contacts and tags": "Montre album yo ak tout kontak ak etikèt ki chwazi yo",
+  "Showing albums with all selected tags": "Montre album yo ak tout etikèt ki chwazi yo"
 }

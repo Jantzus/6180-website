@@ -126,7 +126,6 @@
   "No items to download": "Татаж авах зүйл алга",
   "Failed to update album visibility. Please try again.": "Цомгийн харагдах байдлыг шинэчлэхэд алдаа гарлаа. Дахин оролдоно уу.",
   "You must be logged in to perform this action": "Энэ үйлдлийг гүйцэтгэхийн тулд та нэвтэрсэн байх ёстой",
-  "Search album title or description": "Цомгийн гарчиг эсвэл тайлбарыг хайх",
   "Enter a password for this album.": "Энэ цомогт нууц үг оруулна уу",
   "Enter password": "Нууц үгээ оруулна уу",
   "Select password restrictions.": "Нууц үгийн хязгаарлалтуудыг сонгоно уу.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Таны 6180 Цомог Үзэх",
   "Revisit Your Albums": "Цомгуудаа Дахин Үзээрэй",
   "We'll email you a one-time code to verify it's really you": "Бид таны биеийн байдлыг баталгаажуулахын тулд нэг удаагийн код и-мэйлээр илгээх болно",
-  "We sent a 6-digit code to": "Бид 6 оронтой код илгээлээ"
+  "We sent a 6-digit code to": "Бид 6 оронтой код илгээлээ",
+  "Search albums by title or description": "Гарчиг эсвэл тайлбараар цомог хайх",
+  "View Public Profile": "Нийтийн Профайл Харах",
+  "Storage": "Хадгалалт",
+  "Use the 6180 app to showcase your albums offline": "Цомогуудаа оффлайн харуулахын тулд 6180 аппыг ашиглана уу",
+  "Intelligently tagged and beautifully organized": "Ухаалгаар тэмдэглэсэн, гоё зохицуулсан",
+  "Open On iOS": "iOS-д Нээх",
+  "Open On Android": "Android-д Нээх",
+  "Toggle contacts filter": "Харилцагчийн шүүлтүүр солих",
+  "Showing albums with all selected contacts and tags": "Сонгосон бүх харилцагч болон шошготой цомгуудыг харуулж байна",
+  "Showing albums with all selected tags": "Сонгосон бүх шошготой цомгуудыг харуулж байна"
 }

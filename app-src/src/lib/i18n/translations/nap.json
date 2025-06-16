@@ -126,7 +126,6 @@
   "No items to download": "Nun ce stann' element' a scarecà",
   "Failed to update album visibility. Please try again.": "'A visibilità d''e album nun s'è pututa ammurnà. Pe' piacere, prova n'ata vota.",
   "You must be logged in to perform this action": "Adda trasì pe' fà st'azzione",
-  "Search album title or description": "Truva 'o titolo o 'a descriziona d''o album",
   "Enter a password for this album.": "Mette 'na password pe st'album",
   "Enter password": "Mettere 'a password",
   "Select password restrictions.": "'E restrizzioni 'e password 'a sciglie.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accede a 'e Tuoie 6180 Album",
   "Revisit Your Albums": "Rivere Li Albums Tuoj",
   "We'll email you a one-time code to verify it's really you": "Te mannamo nu codece ca se po ausà sulamente 'na vota cu ll'email pe verrefecà ca si proprio tu",
-  "We sent a 6-digit code to": "Simm mannàt nu codece 'e 6 cifre a"
+  "We sent a 6-digit code to": "Simm mannàt nu codece 'e 6 cifre a",
+  "Search albums by title or description": "Cerca album pe titulo o descrizione",
+  "View Public Profile": "Vere 'o Profilo Pubblico",
+  "Storage": "Magazziò",
+  "Use the 6180 app to showcase your albums offline": "Usa l'applicaziona 6180 pe fà vedé 'e album tuoie offline",
+  "Intelligently tagged and beautifully organized": "'E taggate cu 'ntelligenza e organizzate cu bellezza",
+  "Open On iOS": "Rape 'Ncopp A iOS",
+  "Open On Android": "Rape 'Ncopp A Android",
+  "Toggle contacts filter": "Cagna 'o filtro d''e cuntatte",
+  "Showing albums with all selected contacts and tags": "Muost''e album cu tutt''e cuntatte e tag scegliute",
+  "Showing albums with all selected tags": "Muost''e album cu tutt''e tag scegliute"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Gnun element da dëscarié",
   "Failed to update album visibility. Please try again.": "Falì a agiorné la visibilità dl'album. Për piasì, preuva torna.",
   "You must be logged in to perform this action": "It deve esse colegà për fé costa assion",
-  "Search album title or description": "Sërché tìtol ò descrission dl'album",
   "Enter a password for this album.": "Anseriss na ciav për st'album",
   "Enter password": "Anseriss la ciav",
   "Select password restrictions.": "Selession-a le restrission dla ciav.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Acède a ij Tò 6180 Album",
   "Revisit Your Albums": "Rivëdde Ij Tò Albums",
   "We'll email you a one-time code to verify it's really you": "I mandroma un còdis da dovré mach na vira për pòsta eletrònica për verifichè che a sia pròpi chiel",
-  "We sent a 6-digit code to": "I l'oma mandà un còdis da 6 sifre a"
+  "We sent a 6-digit code to": "I l'oma mandà un còdis da 6 sifre a",
+  "Search albums by title or description": "Serca album për tìtol o descrission",
+  "View Public Profile": "Vëdde ël Profil Pùblich",
+  "Storage": "Depòsit",
+  "Use the 6180 app to showcase your albums offline": "Dòvra l'aplicassion 6180 për monstré ij tò album offline",
+  "Intelligently tagged and beautifully organized": "Marcà inteligentement e organisà belament",
+  "Open On iOS": "Àrvë An iOS",
+  "Open On Android": "Àrvë An Android",
+  "Toggle contacts filter": "Cangia filtro ëd contàt",
+  "Showing albums with all selected contacts and tags": "A mostra j'album con tùit ij contàt e ëd tag selessionà",
+  "Showing albums with all selected tags": "A mostra j'album con tùit ëd tag selessionà"
 }

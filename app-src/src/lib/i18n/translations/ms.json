@@ -126,7 +126,6 @@
   "No items to download": "Tiada item untuk dimuat turun",
   "Failed to update album visibility. Please try again.": "Gagal mengemas kini kebolehlihatan album. Sila cuba lagi.",
   "You must be logged in to perform this action": "Anda mesti log masuk untuk melakukan tindakan ini",
-  "Search album title or description": "Cari tajuk album atau perihalan",
   "Enter a password for this album.": "Masukkan kata laluan untuk album ini",
   "Enter password": "Masukkan kata laluan",
   "Select password restrictions.": "Pilih sekatan kata laluan.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Akses 6180 Album Anda",
   "Revisit Your Albums": "Lawati Semula Album Anda",
   "We'll email you a one-time code to verify it's really you": "Kami akan menghantar kod sekali guna melalui emel untuk mengesahkan bahawa itu benar-benar anda",
-  "We sent a 6-digit code to": "Kami telah menghantar kod 6 digit ke"
+  "We sent a 6-digit code to": "Kami telah menghantar kod 6 digit ke",
+  "Search albums by title or description": "Cari album mengikut tajuk atau penerangan",
+  "View Public Profile": "Lihat Profil Awam",
+  "Storage": "Penyimpanan",
+  "Use the 6180 app to showcase your albums offline": "Gunakan aplikasi 6180 untuk mempamerkan album anda secara luar talian",
+  "Intelligently tagged and beautifully organized": "Ditanda dengan bijak dan diatur dengan cantik",
+  "Open On iOS": "Buka Di iOS",
+  "Open On Android": "Buka Di Android",
+  "Toggle contacts filter": "Togol penapis kenalan",
+  "Showing albums with all selected contacts and tags": "Menunjukkan album dengan semua kenalan dan tag yang dipilih",
+  "Showing albums with all selected tags": "Menunjukkan album dengan semua tag yang dipilih"
 }

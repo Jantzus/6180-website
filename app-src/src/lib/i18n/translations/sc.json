@@ -126,7 +126,6 @@
   "No items to download": "Nudda elementos de iscarrigai",
   "Failed to update album visibility. Please try again.": "Sa visibilidade de s'album non s'est potida atualizare. Pro praghere, torra a provare.",
   "You must be logged in to perform this action": "Depes intrare pro poder fàghere custa atzione",
-  "Search album title or description": "Chirca su tìtulu o sa descritzione de s'album",
   "Enter a password for this album.": "Pone una crae po custu album",
   "Enter password": "Inserta sa password",
   "Select password restrictions.": "Sèbera sas limitatziones de sa crae.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Intrada a is 6180 Albums Tuos",
   "Revisit Your Albums": "Bide Torra Sos Albums Tuos",
   "We'll email you a one-time code to verify it's really you": "Bos semus imbiende unu codice de usu unicu pro posta eletrònica pro verificare chi ses beru tue",
-  "We sent a 6-digit code to": "Amus imbiadu unu codice de 6 zifras a"
+  "We sent a 6-digit code to": "Amus imbiadu unu codice de 6 zifras a",
+  "Search albums by title or description": "Chirca albums pro titulu o descritzione",
+  "View Public Profile": "Biri su Profilu Pùblicu",
+  "Storage": "Archìviu",
+  "Use the 6180 app to showcase your albums offline": "Impreat s'aplicatzione 6180 pro ammustrare is album tuos offline",
+  "Intelligently tagged and beautifully organized": "Marcados intelligentemente e organizados bellamente",
+  "Open On iOS": "Àbere In iOS",
+  "Open On Android": "Àbere In Android",
+  "Toggle contacts filter": "Cambia filtru de contatos",
+  "Showing albums with all selected contacts and tags": "Ammustende álbunes cun tòtus is contatos e etiquetas seletzionados",
+  "Showing albums with all selected tags": "Ammustende álbunes cun tòtas is etiquetas seletzionadas"
 }

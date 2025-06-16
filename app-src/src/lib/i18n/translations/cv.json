@@ -126,7 +126,6 @@
   "No items to download": "Тиемелли япаласем çук",
   "Failed to update album visibility. Please try again.": "Альбом курăнăҫлăхне ҫӗнетме пултараймарӗ. Тархасшăн, тепре хăтланса пăхăр.",
   "You must be logged in to perform this action": "Ку ĕçе тумашкăн системăна кĕмелле",
-  "Search album title or description": "Альбом ятне е ӑнлантарӑвне шыра",
   "Enter a password for this album.": "Ку альбомшӑн пароль кӗртӗр",
   "Enter password": "Пароль кĕртӗр",
   "Select password restrictions.": "Пароль чарăнусене суйласа илӗр.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Сан 6180 Альбомӗсене Кӑтарт",
   "Revisit Your Albums": "Альбомӗсене Тепӗр хут Пӑхӑр",
   "We'll email you a one-time code to verify it's really you": "Эпир сана пӗр хут ҫине кӗрекен код электрон почта умӗнче йăварăпăр, санăн чăнлăхуна пӗлес тума",
-  "We sent a 6-digit code to": "Пӗр вунна цифрӑпа код яравнӑ"
+  "We sent a 6-digit code to": "Пӗр вунна цифрӑпа код яравнӑ",
+  "Search albums by title or description": "Альбомсене ячӗпе е ӑнлантарӑвӗпе шырамалла",
+  "View Public Profile": "Халӑх Профильне Кӑтарт",
+  "Storage": "Хурăну",
+  "Use the 6180 app to showcase your albums offline": "6180 программăпа усă курса эсир альбомсене интернетсĕр кăтартасшăн",
+  "Intelligently tagged and beautifully organized": "Ăсăмлăхпа пěлтерни тата чипер йĕркеленě",
+  "Open On iOS": "iOS-ра Ус",
+  "Open On Android": "Android-ра Ус",
+  "Toggle contacts filter": "Контактсен фильтрне улӑштар",
+  "Showing albums with all selected contacts and tags": "Тӳрлетнӗ пур контактсемпе тӗпсемпе альбомсене кӑтартасси",
+  "Showing albums with all selected tags": "Тӳрлетнӗ пур тӗпсемпе альбомсене кӑтартасси"
 }

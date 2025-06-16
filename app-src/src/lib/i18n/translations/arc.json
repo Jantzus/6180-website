@@ -126,7 +126,6 @@
   "No items to download": "ܠܝܬ ܡܕܡ ܠܡܚܬܐ",
   "Failed to update album visibility. Please try again.": "ܠܐ ܡܨܐ ܠܡܚܕܬܐ ܚܙܘܝܘܬܐ ܕܐܠܒܘܡܐ. ܒܒܥܘܬܐ ܢܣܝ ܬܘܒ.",
   "You must be logged in to perform this action": "ܣܢܝܩܐ ܐܢܬ ܠܡܥܠ ܠܚܫܒܢܟ ܠܡܣܥܪ ܗܕܐ ܦܥܠܐ",
-  "Search album title or description": "ܒܨܝ ܫܡܐ ܕܐܠܒܘܡܐ ܐܘ ܦܘܫܩܐ",
   "Enter a password for this album.": "ܥܠ ܡܠܬܐ ܕܥܒܪܐ ܠܗܢܐ ܐܠܒܘܡܐ",
   "Enter password": "ܐܥܠ ܡܠܬܐ ܕܥܒܪܐ",
   "Select password restrictions.": "ܓܒܝ ܣܘܓܐܐ ܕܦܬܓܡܐ ܡܛܫܝܐ.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ܚܙܝ ܠܟܬܒܝ̈ܟ 6180",
   "Revisit Your Albums": "ܣܘܪ ܒܘܟ̈ܐ ܕܝܠܟ",
   "We'll email you a one-time code to verify it's really you": "ܢܫܕܪ ܠܟ ܪܡܙܐ ܕܚܕܐ ܙܒܢܐ ܒܐܝܓܪܬܐ ܐܠܩܛܪܘܢܝܬܐ ܠܘܕܥܬܐ ܕܐܢܬ ܐܢܬ",
-  "We sent a 6-digit code to": "ܫܕܪܢ ܪܡܙܐ ܕܫܬܐ ܡܢܝܢܐ ܠܘܬ"
+  "We sent a 6-digit code to": "ܫܕܪܢ ܪܡܙܐ ܕܫܬܐ ܡܢܝܢܐ ܠܘܬ",
+  "Search albums by title or description": "ܒܨܐ ܐܠܒܘܡܐ ܒܫܡܐ ܐܘ ܒܦܘܫܩܐ",
+  "View Public Profile": "ܚܙܝ ܕܘܟܬܐ ܓܠܝܬܐ",
+  "Storage": "ܣܘܡܟܐ",
+  "Use the 6180 app to showcase your albums offline": "ܗܘܐ ܒܚܘܫܒܢܐ 6180 ܠܡܚܘܝܘ ܐܠܒܘܡܝܟ ܕܠܐ ܚܘܒܪܐ",
+  "Intelligently tagged and beautifully organized": "ܚܟܝܡܐܝܬ ܡܬܩܪܝܢ ܘܫܦܝܪܐܝܬ ܡܣܝܡܝܢ",
+  "Open On iOS": "ܦܬܚ ܒiOS",
+  "Open On Android": "ܦܬܚ ܒAndroid",
+  "Toggle contacts filter": "ܫܚܠܦ ܡܨܦܝܢܐ ܕܩܘܪܒܐ",
+  "Showing albums with all selected contacts and tags": "ܡܚܘܐ ܐܠܒܘܡܐ ܥܡ ܟܠܗܘܢ ܓܒܝܐ ܩܘܪܒܐ ܘܪܫܡܐ",
+  "Showing albums with all selected tags": "ܡܚܘܐ ܐܠܒܘܡܐ ܥܡ ܟܠܗܘܢ ܓܒܝܐ ܪܫܡܐ"
 }

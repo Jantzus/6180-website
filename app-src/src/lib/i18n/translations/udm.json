@@ -126,7 +126,6 @@
   "No items to download": "Кысконлы номыр но ӧвӧл",
   "Failed to update album visibility. Please try again.": "Альбомлэсь адӟымон луонзэ выльдон ӧз пӧрмы. Эшшо одӥг пол выльысен тыршыса учке вал.",
   "You must be logged in to perform this action": "Та ужез лэсьтыны понна системае пыроно",
-  "Search album title or description": "Альбомлэсь нимзэ яке валэктонзэ утчан",
   "Enter a password for this album.": "Та альбомлы пароль гожтэ",
   "Enter password": "Пароль пыртэ",
   "Select password restrictions.": "Пароль ограничениосты быръе.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Тонэ 6180 Альбомъёслы Пырон",
   "Revisit Your Albums": "Альбомъёсты Выль Учке",
   "We'll email you a one-time code to verify it's really you": "Ми тонэ электрон почта пыр ӧтӥ гуртлэм код колям, тӥляд-а тон ӧвӧл уг-а соин тодыны",
-  "We sent a 6-digit code to": "Ми куать нум код колям"
+  "We sent a 6-digit code to": "Ми куать нум код колям",
+  "Search albums by title or description": "Альбомъёсты нимъёссыя але валэктонъёссыя утчаны",
+  "View Public Profile": "Калык Профиль Учкыны",
+  "Storage": "Кутон",
+  "Use the 6180 app to showcase your albums offline": "6180 программаен кутыса ас альбомъёсты интернеттэк возьматон",
+  "Intelligently tagged and beautifully organized": "Валалыкен паськытэм но чебер ӝутэм",
+  "Open On iOS": "iOS-ын Усьтыны",
+  "Open On Android": "Android-ын Усьтыны",
+  "Toggle contacts filter": "Котырӟан фильтр выжыны",
+  "Showing albums with all selected contacts and tags": "Выбранные ваньбур контактъёс но тегъёс сярысь альбомъёс кутон",
+  "Showing albums with all selected tags": "Выбранные ваньбур тегъёс сярысь альбомъёс кутон"
 }

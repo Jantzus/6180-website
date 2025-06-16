@@ -126,7 +126,6 @@
   "No items to download": "Nun hai elementos pa descargar",
   "Failed to update album visibility. Please try again.": "Fallu al anovar la visibilidá del álbum. Por favor, inténtalo otra vegada.",
   "You must be logged in to perform this action": "Tienes de tar identificáu pa facer esta aición",
-  "Search album title or description": "Buscar títulu del álbum o descripción",
   "Enter a password for this album.": "Introduz una contraseña pa esti álbum",
   "Enter password": "Introduza la contraseña",
   "Select password restrictions.": "Seleicionar restricciones de contraseña.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Acceder a los Tos 6180 Álbumes",
   "Revisit Your Albums": "Revisitar Los Tos Álbumes",
   "We'll email you a one-time code to verify it's really you": "Unviarémoste un códigu d'usu únicu per corréu electrónicu pa verificar que daveres yes tu",
-  "We sent a 6-digit code to": "Unviamos un códigu de 6 díxitos a"
+  "We sent a 6-digit code to": "Unviamos un códigu de 6 díxitos a",
+  "Search albums by title or description": "Guetar álbumes pel títulu o descripción",
+  "View Public Profile": "Ver el Perfil Publicu",
+  "Storage": "Almacenamiento",
+  "Use the 6180 app to showcase your albums offline": "Usa l'aplicación 6180 p'amosar los tos álbumes ensin conexón",
+  "Intelligently tagged and beautifully organized": "Marcaos intelixentemente y guapamente organizaos",
+  "Open On iOS": "Abrir N'iOS",
+  "Open On Android": "Abrir N'Android",
+  "Toggle contacts filter": "Camudar filtru de contautos",
+  "Showing albums with all selected contacts and tags": "Amosar álbumes con tolos contautos y etiquetes esbillaes",
+  "Showing albums with all selected tags": "Amosar álbumes con toles etiquetes esbillaes"
 }

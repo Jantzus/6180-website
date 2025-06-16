@@ -126,7 +126,6 @@
   "No items to download": "Nullae res trahendae",
   "Failed to update album visibility. Please try again.": "Album videri renovare nequit. Iterum conare, quaeso.",
   "You must be logged in to perform this action": "Tibi ineundum est ad hanc actionem faciendam",
-  "Search album title or description": "Quaerere titulum aut descriptionem albi",
   "Enter a password for this album.": "Intra tesseram pro hoc album",
   "Enter password": "Tesseram insere",
   "Select password restrictions.": "Elige restrictiones tesserae.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Aditus ad Vestra 6180 Albums",
   "Revisit Your Albums": "Revisite Albums Tuos",
   "We'll email you a one-time code to verify it's really you": "Codicem unius usus tibi per epistulam electronicam mittemus ad confirmandum te vere esse",
-  "We sent a 6-digit code to": "Misimus codicem sex numerorum ad"
+  "We sent a 6-digit code to": "Misimus codicem sex numerorum ad",
+  "Search albums by title or description": "Quaere alba per titulum vel descriptionem",
+  "View Public Profile": "Videre Profilo Publico",
+  "Storage": "Repositio",
+  "Use the 6180 app to showcase your albums offline": "Utere applicatione 6180 ad tua album sine nexu ostendenda",
+  "Intelligently tagged and beautifully organized": "Sapienter signata et pulchre ordinata",
+  "Open On iOS": "Aperire In iOS",
+  "Open On Android": "Aperire In Android",
+  "Toggle contacts filter": "Commuta filtrum nexuum",
+  "Showing albums with all selected contacts and tags": "Monstrare phototheca cum omnibus electis nexibus et notis",
+  "Showing albums with all selected tags": "Monstrare phototheca cum omnibus electis notis"
 }

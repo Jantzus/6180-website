@@ -126,7 +126,6 @@
   "No items to download": "Çi elementi de ronayışi çıni",
   "Failed to update album visibility. Please try again.": "Asayışê albuman newekerd. Kerem ke, fına bıcerrebnê.",
   "You must be logged in to perform this action": "Şıma gani cıkewtış bıkerê ke nê kari bıkerê",
-  "Search album title or description": "Sernamey albuman ya zi şınasnayış cı geyre",
   "Enter a password for this album.": "Ena albumi rê parola bınusne",
   "Enter password": "Parola bınusnê",
   "Select password restrictions.": "Sınırlayanê parola weçine.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Akses be 6180 Albumê Xo",
   "Revisit Your Albums": "Albuman Xo Fına Cı",
   "We'll email you a one-time code to verify it's really you": "Ma şıma rê kodê yew-care ra email ser de şawên ke şıma raştî şıma şınê",
-  "We sent a 6-digit code to": "Kodê 6 raqami şawıt"
+  "We sent a 6-digit code to": "Kodê 6 raqami şawıt",
+  "Search albums by title or description": "Albuman sernameya ra an şınasiyayışa ra bıgêre",
+  "View Public Profile": "Profilo Şari Bıvin",
+  "Storage": "Anbari",
+  "Use the 6180 app to showcase your albums offline": "Qandê albuman xo yo oflayn mocnayış, aplikasyonê 6180 bışuxulnê",
+  "Intelligently tagged and beautifully organized": "Aqlane etiket biyo u rındane organize biyo",
+  "Open On iOS": "iOS De Ak",
+  "Open On Android": "Android De Ak",
+  "Toggle contacts filter": "Filtrê têkiliyoqo bıvurne",
+  "Showing albums with all selected contacts and tags": "Albumê ke pêro têkiliyê u etîketê weçînayeyê şêno",
+  "Showing albums with all selected tags": "Albumê ke pêro etîketê weçînayeyê şêno"
 }

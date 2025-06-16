@@ -126,7 +126,6 @@
   "No items to download": "გედმოტვირთაფალი ელემენტეფი ვარე",
   "Failed to update album visibility. Please try again.": "ალბომეფიშ ოძირაფეს გოახალაფა ვეგიშინე. მოხვამილი რეთ ხოლო ოცადით.",
   "You must be logged in to perform this action": "თე ქმედებაშ გეძინებუშენი სისტემას ქოძირჸოფუ თენა",
-  "Search album title or description": "ალბომიშ ჯოხო ვარა აღწერაშ გორუა",
   "Enter a password for this album.": "ქჷმიოჭარით პაროლი თე ალბომიშო",
   "Enter password": "შქჷდით პაროლი",
   "Select password restrictions.": "მიკოირთიე პაროლიშ ლიმიტეფი.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "შევიდით თქვენს 6180 ალბომში",
   "Revisit Your Albums": "იგეთ თქვან ალბომეფს",
   "We'll email you a one-time code to verify it's really you": "ჩქინ შენთე მართალეფი შუნა ქვა ფირი ხოჯას ელ. ფოშჟით ართ ხოჯღალა კოდი გოჸოშქენან",
-  "We sent a 6-digit code to": "ჩქინ ღომო ლუშნიანი კოდი გამოგურუ"
+  "We sent a 6-digit code to": "ჩქინ ღომო ლუშნიანი კოდი გამოგურუ",
+  "Search albums by title or description": "ართოთ ალბომეფი სახელით ვარდა აღწერით",
+  "View Public Profile": "ნახე საზოგადო პროფილი",
+  "Storage": "შინახვა",
+  "Use the 6180 app to showcase your albums offline": "6180 აპლიკაციას გამუშა ხანი ალბომეფი ოფლაინ ძირუნ",
+  "Intelligently tagged and beautifully organized": "ბრძენაღ ნიშნული დო ლაჟ ორგანიზებული",
+  "Open On iOS": "iOS-შა გიშხანთუ",
+  "Open On Android": "Android-შა გიშხანთუ",
+  "Toggle contacts filter": "კონტაქტეფიშ ფილტრიშ ლაჩქორუა",
+  "Showing albums with all selected contacts and tags": "უჩქონს ალბომეფი ყველა არჩეული კონტაქტეფითა ტეგეფით",
+  "Showing albums with all selected tags": "უჩქონს ალბომეფი ყველა არჩეული ტეგეფით"
 }

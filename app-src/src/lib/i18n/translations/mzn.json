@@ -126,7 +126,6 @@
   "No items to download": "هیچی دانلود هارشی نینه",
   "Failed to update album visibility. Please try again.": "نتونستیم دیدن آلبوم ره آپدیت هاکنیم. لطفاً دباره امتحان هاکنین.",
   "You must be logged in to perform this action": "شما باید وارد سیستم بوین تا بتونین این کارره انجام بدین",
-  "Search album title or description": "جستجوی عنوان یا توضیح آلبوم",
   "Enter a password for this album.": "اته رمز وسه این آلبوم وارد هاکنین",
   "Enter password": "رمز ره وارد هاکنین",
   "Select password restrictions.": "اونتخابِ محدودیت‌های رمز.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "دسرسی سه 6180 آلبوم تو",
   "Revisit Your Albums": "آلبوماتون دوواره بدیتیت",
   "We'll email you a one-time code to verify it's really you": "ما یتگل کد یه‌بار استفاده‌ای ایمیل جی بی‌فرسیم که اطمینان حاصل بکیم که شما هستنه",
-  "We sent a 6-digit code to": "ما یتگل کد شش رقمی بی‌فرسادیم به"
+  "We sent a 6-digit code to": "ما یتگل کد شش رقمی بی‌فرسادیم به",
+  "Search albums by title or description": "آلبوم نه عنوان یا توضیحات سی دونستن",
+  "View Public Profile": "مشاهده نمایه عمومی",
+  "Storage": "ذخیره‌سازی",
+  "Use the 6180 app to showcase your albums offline": "6180 ؤفزار ج بکاری وختی اینتئرنت نیش آلبوماتؤنه نئشؤن بدی",
+  "Intelligently tagged and beautifully organized": "هۊشمنداني برچسپ خۊردنه ؤ زیبایي جه تنظیم بینه",
+  "Open On iOS": "iOS مئن وا بؤن",
+  "Open On Android": "Android مئن وا بؤن",
+  "Toggle contacts filter": "تماس فیلتر آلشتن",
+  "Showing albums with all selected contacts and tags": "نشون دئن آلبومان همه انتخاب بوده تماسان ؤ تگان دئن",
+  "Showing albums with all selected tags": "نشون دئن آلبومان همه انتخاب بوده تگان دئن"
 }

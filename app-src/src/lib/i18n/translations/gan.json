@@ -126,7 +126,6 @@
   "No items to download": "冇項目可下載",
   "Failed to update album visibility. Please try again.": "更新相册可见性失败。请再试一次。",
   "You must be logged in to perform this action": "倷要登錄後才能做箇隻操作",
-  "Search album title or description": "搜索相册标题或描述",
   "Enter a password for this album.": "輸入密碼來查看該相册",
   "Enter password": "输入密码",
   "Select password restrictions.": "選取密碼限制。",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "訪問汝嗰6180隻專輯",
   "Revisit Your Albums": "重新訪問你嗰相冊",
   "We'll email you a one-time code to verify it's really you": "我哩会用电子邮件发给你一次性个验证码，来验证你个身份",
-  "We sent a 6-digit code to": "我哩发条6位数个验证码到"
+  "We sent a 6-digit code to": "我哩发条6位数个验证码到",
+  "Search albums by title or description": "按標題或描述搵相册",
+  "View Public Profile": "看公眾檔案",
+  "Storage": "存儲",
+  "Use the 6180 app to showcase your albums offline": "用6180軟件嚟展示你其相册喺無網絡情況下",
+  "Intelligently tagged and beautifully organized": "聰明嘅標記同美麗嘅組織",
+  "Open On iOS": "響iOS開啟",
+  "Open On Android": "響Android開啟",
+  "Toggle contacts filter": "切換聯繫人篩選器",
+  "Showing albums with all selected contacts and tags": "顯示包含全部所選聯繫人共標籤其相册",
+  "Showing albums with all selected tags": "顯示包含全部所選標籤其相册"
 }

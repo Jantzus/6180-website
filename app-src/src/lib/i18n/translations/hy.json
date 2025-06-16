@@ -126,7 +126,6 @@
   "No items to download": "Ներբեռնման համար տարրեր չկան",
   "Failed to update album visibility. Please try again.": "Ալբոմի տեսանելիության թարմացումը ձախողվեց: Խնդրում ենք կրկին փորձել:",
   "You must be logged in to perform this action": "Այս գործողությունը կատարելու համար դուք պետք է մուտք գործեք",
-  "Search album title or description": "Որոնել ալբոմի անունը կամ նկարագրությունը",
   "Enter a password for this album.": "Մուտքագրեք գաղտնաբառ այս ալբոմի համար",
   "Enter password": "Մուտքագրեք գաղտնաբառը",
   "Select password restrictions.": "Ընտրեք գաղտնաբառի սահմանափակումները։",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Մուտք Ձեր 6180 Ալբոմներին",
   "Revisit Your Albums": "Վերանայեք Ձեր Ալբոմները",
   "We'll email you a one-time code to verify it's really you": "Մենք ձեզ կուղարկենք մեկանգամյա գործածման կոդ էլ․ փոստով՝ հաստատելու համար, որ դուք իսկապես դուք եք",
-  "We sent a 6-digit code to": "Մենք ուղարկեցինք 6-նիշ կոդ դեպի"
+  "We sent a 6-digit code to": "Մենք ուղարկեցինք 6-նիշ կոդ դեպի",
+  "Search albums by title or description": "Ալբոմներ որոնել վերնագրով կամ նկարագրությամբ",
+  "View Public Profile": "Տեսնել Հանրային Պրոֆիլը",
+  "Storage": "Պահոց",
+  "Use the 6180 app to showcase your albums offline": "Օգտագործեք 6180 հավելվածը ձեր ալբոմները անցանց ցուցադրելու համար",
+  "Intelligently tagged and beautifully organized": "Խելամտորեն պիտակավորված և գեղեցիկ կազմակերպված",
+  "Open On iOS": "Բացել iOS-ում",
+  "Open On Android": "Բացել Android-ում",
+  "Toggle contacts filter": "Կոնտակտների ֆիլտրի փոխարկում",
+  "Showing albums with all selected contacts and tags": "Ցույց տալիս է ալբոմները բոլոր ընտրված կոնտակտներով և պիտակներով",
+  "Showing albums with all selected tags": "Ցույց տալիս է ալբոմները բոլոր ընտրված պիտակներով"
 }

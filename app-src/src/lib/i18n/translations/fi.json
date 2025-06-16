@@ -126,7 +126,6 @@
   "No items to download": "Ei kohteita ladattavaksi",
   "Failed to update album visibility. Please try again.": "Albumin näkyvyyden päivittäminen epäonnistui. Yritä uudelleen.",
   "You must be logged in to perform this action": "Sinun täytyy kirjautua sisään suorittaaksesi tämän toiminnon",
-  "Search album title or description": "Etsi albumin otsikkoa tai kuvausta",
   "Enter a password for this album.": "Anna salasana tälle albumille",
   "Enter password": "Syötä salasana",
   "Select password restrictions.": "Valitse salasanarajoitukset.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Käytä 6180 Albumiasi",
   "Revisit Your Albums": "Vieraile Albumeissasi Uudelleen",
   "We'll email you a one-time code to verify it's really you": "Lähetämme sinulle sähköpostitse kertakäyttökoodin vahvistaaksemme, että olet todella sinä",
-  "We sent a 6-digit code to": "Lähetimme 6-numeroisen koodin osoitteeseen"
+  "We sent a 6-digit code to": "Lähetimme 6-numeroisen koodin osoitteeseen",
+  "Search albums by title or description": "Etsi albumeita otsikon tai kuvauksen perusteella",
+  "View Public Profile": "Näytä Julkinen Profiili",
+  "Storage": "Tallennustila",
+  "Use the 6180 app to showcase your albums offline": "Käytä 6180-sovellusta albumiesi näyttämiseen offline-tilassa",
+  "Intelligently tagged and beautifully organized": "Älykkäästi merkitty ja kauniisti järjestetty",
+  "Open On iOS": "Avaa iOS:ssä",
+  "Open On Android": "Avaa Android:ssa",
+  "Toggle contacts filter": "Vaihda yhteystietojen suodatin",
+  "Showing albums with all selected contacts and tags": "Näytetään albumit kaikilla valituilla yhteystiedoilla ja tunnisteilla",
+  "Showing albums with all selected tags": "Näytetään albumit kaikilla valituilla tunnisteilla"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Aaneartakkat piunngilat",
   "Failed to update album visibility. Please try again.": "Albuminik takusinnaanerup nutarterneqarnissaa ajornakusoortippaat. Misiligitissavat.",
   "You must be logged in to perform this action": "Iliuuteqassaatit taassuma atorsinnaanissaanut",
-  "Search album title or description": "Albumip qulequtaa nassuiaataaluunniit ujaruk",
   "Enter a password for this album.": "Albumimut matumunnga isissutissaq allakkit",
   "Enter password": "Isissutissat allaguk",
   "Select password restrictions.": "Isummagit nalunaaqqutaannik killeqarfiusunik qinikkit.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Atugassuk 6180 Albummik",
   "Revisit Your Albums": "Ataassikkut Takusaavutit",
   "We'll email you a one-time code to verify it's really you": "Ataatsimikkut atorneqassaq pitsaanermut tilliuutigassaanni, ila-ip taamani",
-  "We sent a 6-digit code to": "Ataatsimikkut misissuit atorneqassaat tilliuutigassaanni"
+  "We sent a 6-digit code to": "Ataatsimikkut misissuit atorneqassaat tilliuutigassaanni",
+  "Search albums by title or description": "Aalimmassagit atiit uunaalu nalunaarutigineqartartik",
+  "View Public Profile": "Takussaaneq Tamarmik Profili",
+  "Storage": "Erseqqissineq",
+  "Use the 6180 app to showcase your albums offline": "6180-mit atorsinneqarput albumi assilisarisiuk internetikkut ataasinngilaq",
+  "Intelligently tagged and beautifully organized": "Silarsusiinik nalunaasunik eqqortutigalugu ajornanersullu",
+  "Open On iOS": "iOS-mi Ammaruk",
+  "Open On Android": "Android-mi Ammaruk",
+  "Toggle contacts filter": "Kontaktit sivissuit anerniqarput",
+  "Showing albums with all selected contacts and tags": "Takuunermik albumit kontakit taggilinillu ataatsimeersunut",
+  "Showing albums with all selected tags": "Takuunermik albumit taggilinillu ataatsimeersunut"
 }

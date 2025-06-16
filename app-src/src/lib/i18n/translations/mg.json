@@ -126,7 +126,6 @@
   "No items to download": "Tsy misy zavatra azo alaina",
   "Failed to update album visibility. Please try again.": "Tsy afaka nanao fanavaozana ny fahitana ny album. Andramo indray azafady.",
   "You must be logged in to perform this action": "Tsy maintsy miditra ianao mba hanatanteraka ity hetsika ity",
-  "Search album title or description": "Hitady lohateny na fanazavana alboma",
   "Enter a password for this album.": "Ampidiro ny teny miafina ho an'ity alboma ity",
   "Enter password": "Ampidiro ny teny miafina",
   "Select password restrictions.": "Fidio ny fepetra momba ny teny miafina.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Midira amin'ny 6180 Albums-nao",
   "Revisit Your Albums": "Jereo Indray Ny Albums-Nao",
   "We'll email you a one-time code to verify it's really you": "Handefa kaody ampiasaina indray mandeha ihany amin'ny mailaka aminao izahay mba hamarinana fa ianao marina ianao",
-  "We sent a 6-digit code to": "Nandefa kaody 6 tarehimarika izahay tany"
+  "We sent a 6-digit code to": "Nandefa kaody 6 tarehimarika izahay tany",
+  "Search albums by title or description": "Hitady rakikira amin'ny lohateny na famaritana",
+  "View Public Profile": "Jereo ny Mombamomba Baolina",
+  "Storage": "Fitehirizam-baovao",
+  "Use the 6180 app to showcase your albums offline": "Ampiasao ny fampiharana 6180 hanehoana ny rakikira anao tsy misy fifandraisana",
+  "Intelligently tagged and beautifully organized": "Novelezina amin'ny faharanitra-tsaina ary voalamina tsara",
+  "Open On iOS": "Sokafy Amin'ny iOS",
+  "Open On Android": "Sokafy Amin'ny Android",
+  "Toggle contacts filter": "Ovay ny sivana fifandraisana",
+  "Showing albums with all selected contacts and tags": "Mampiseho rakitra sary miaraka amin'ny fifandraisana sy marika voafidy rehetra",
+  "Showing albums with all selected tags": "Mampiseho rakitra sary miaraka amin'ny marika voafidy rehetra"
 }

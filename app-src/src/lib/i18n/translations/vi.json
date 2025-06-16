@@ -126,7 +126,6 @@
   "No items to download": "Không có mục nào để tải xuống",
   "Failed to update album visibility. Please try again.": "Không thể cập nhật khả năng hiển thị của album. Vui lòng thử lại.",
   "You must be logged in to perform this action": "Bạn phải đăng nhập để thực hiện hành động này",
-  "Search album title or description": "Tìm kiếm tiêu đề hoặc mô tả album",
   "Enter a password for this album.": "Nhập mật khẩu cho album này",
   "Enter password": "Nhập mật khẩu",
   "Select password restrictions.": "Chọn hạn chế mật khẩu.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Truy Cập 6180 Album Của Bạn",
   "Revisit Your Albums": "Truy Cập Lại Album Của Bạn",
   "We'll email you a one-time code to verify it's really you": "Chúng tôi sẽ gửi cho bạn một mã sử dụng một lần qua email để xác minh danh tính của bạn",
-  "We sent a 6-digit code to": "Chúng tôi đã gửi mã 6 chữ số tới"
+  "We sent a 6-digit code to": "Chúng tôi đã gửi mã 6 chữ số tới",
+  "Search albums by title or description": "Tìm kiếm album theo tiêu đề hoặc mô tả",
+  "View Public Profile": "Xem Hồ Sơ Công Khai",
+  "Storage": "Lưu Trữ",
+  "Use the 6180 app to showcase your albums offline": "Sử dụng ứng dụng 6180 để hiển thị album của bạn ngoại tuyến",
+  "Intelligently tagged and beautifully organized": "Được gắn thẻ thông minh và tổ chức đẹp mắt",
+  "Open On iOS": "Mở Trên iOS",
+  "Open On Android": "Mở Trên Android",
+  "Toggle contacts filter": "Chuyển bộ lọc liên hệ",
+  "Showing albums with all selected contacts and tags": "Hiển thị album với tất cả các liên hệ và thẻ đã chọn",
+  "Showing albums with all selected tags": "Hiển thị album với tất cả các thẻ đã chọn"
 }

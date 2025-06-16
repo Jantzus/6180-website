@@ -126,7 +126,6 @@
   "No items to download": "Nanhun eilemento para zcarregar",
   "Failed to update album visibility. Please try again.": "Falhou al atualizar la besibilidade de l álbun. Por fabor, tente nuobamente.",
   "You must be logged in to perform this action": "Debe star aniciado pa rializar esta accion",
-  "Search album title or description": "Percurar títalo ou çcriçon de álbun",
   "Enter a password for this album.": "Scriba ua palavra-passe para este álbun",
   "Enter password": "Antre la palabra-passe",
   "Select password restrictions.": "Selecion restriçones de palavra-passe.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Acesso als Sous 6180 Álbuns",
   "Revisit Your Albums": "Rebisitar Sous Albums",
   "We'll email you a one-time code to verify it's really you": "Ambiaremos-che un código de uso único por correio eiletrónico para berificar que ye realmente tu",
-  "We sent a 6-digit code to": "Ambiamos un código de 6 dígitos pa"
+  "We sent a 6-digit code to": "Ambiamos un código de 6 dígitos pa",
+  "Search albums by title or description": "Percurar álbuns por títalo ou çcriçon",
+  "View Public Profile": "Ber Perfil Público",
+  "Storage": "Armazenamiento",
+  "Use the 6180 app to showcase your albums offline": "Usa l'aplicaçon 6180 pa mostrar ls tius álbuns sin cunexon",
+  "Intelligently tagged and beautifully organized": "Marcados anteligentemente i organizados buonamente",
+  "Open On iOS": "Abrir An iOS",
+  "Open On Android": "Abrir An Android",
+  "Toggle contacts filter": "Trocar filtro de cuntatos",
+  "Showing albums with all selected contacts and tags": "Amostrando álbuns cun todos ls cuntatos i etiquetas selecionadas",
+  "Showing albums with all selected tags": "Amostrando álbuns cun todas las etiquetas selecionadas"
 }

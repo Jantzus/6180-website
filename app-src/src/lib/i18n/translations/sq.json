@@ -126,7 +126,6 @@
   "No items to download": "Asnjë artikull për të shkarkuar",
   "Failed to update album visibility. Please try again.": "Dështoi në përditësimin e dukshmërisë së albumit. Ju lutemi, provoni përsëri.",
   "You must be logged in to perform this action": "Ju duhet të identifikoheni për të kryer këtë veprim",
-  "Search album title or description": "Kërko titullin ose përshkrimin e albumit",
   "Enter a password for this album.": "Vendosni një fjalëkalim për këtë album",
   "Enter password": "Futni fjalëkalimin",
   "Select password restrictions.": "Zgjidhni kufizimet e fjalëkalimit.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Qasja në 6180 Albumet Tuaja",
   "Revisit Your Albums": "Rishikoni Albumet Tuaja",
   "We'll email you a one-time code to verify it's really you": "Do t'ju dërgojmë një kod njëpërdorimsh me email për të verifikuar se jeni vërtet ju",
-  "We sent a 6-digit code to": "Dërguam një kod 6-shifror në"
+  "We sent a 6-digit code to": "Dërguam një kod 6-shifror në",
+  "Search albums by title or description": "Kërkoni albume sipas titullit ose përshkrimit",
+  "View Public Profile": "Shiko Profilin Publik",
+  "Storage": "Ruajtja",
+  "Use the 6180 app to showcase your albums offline": "Përdorni aplikacionin 6180 për të shfaqur albumet tuaja offline",
+  "Intelligently tagged and beautifully organized": "Etiketuar në mënyrë inteligjente dhe organizuar bukur",
+  "Open On iOS": "Hap Në iOS",
+  "Open On Android": "Hap Në Android",
+  "Toggle contacts filter": "Ndryshoni filtrin e kontakteve",
+  "Showing albums with all selected contacts and tags": "Duke treguar albumet me të gjitha kontaktet dhe etiketat e zgjedhura",
+  "Showing albums with all selected tags": "Duke treguar albumet me të gjitha etiketat e zgjedhura"
 }

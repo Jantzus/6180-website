@@ -126,7 +126,6 @@
   "No items to download": "Немає елементів для завантаження",
   "Failed to update album visibility. Please try again.": "Неуспішно оновити видимість альбома. Спробуйте знову.",
   "You must be logged in to perform this action": "Вы повинні увійти в систему, щоб виконати цю дію",
-  "Search album title or description": "Глядати назву або опис альбома",
   "Enter a password for this album.": "Задайте гесло про тот албум",
   "Enter password": "Уведьте гесло",
   "Select password restrictions.": "Выберіть обмеження пароля.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Доступ до Вашых 6180 Альбомів",
   "Revisit Your Albums": "Навщівте Свої Альбомы Знова",
   "We'll email you a one-time code to verify it's really you": "Пошлеме вам однократный код через електронну пошту, жебы сьме оверили, же то справди вы",
-  "We sent a 6-digit code to": "Послали сьме 6-цисловый код на"
+  "We sent a 6-digit code to": "Послали сьме 6-цисловый код на",
+  "Search albums by title or description": "Глядати албумы по назві ці описі",
+  "View Public Profile": "Подивити ся на Публічный Профіль",
+  "Storage": "Схованище",
+  "Use the 6180 app to showcase your albums offline": "Хоснуйте aplikaciju 6180 про демонстрацію вашых албумів offline",
+  "Intelligently tagged and beautifully organized": "Розумно познамкованы а красно організованы",
+  "Open On iOS": "Одкрити У iOS",
+  "Open On Android": "Одкрити У Android",
+  "Toggle contacts filter": "Перемкнути филтер контактів",
+  "Showing albums with all selected contacts and tags": "Показують ся албумы з усіма выбранымы контактамы і тегамы",
+  "Showing albums with all selected tags": "Показують ся албумы з усіма выбранымы тегамы"
 }

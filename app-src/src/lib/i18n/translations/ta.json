@@ -126,7 +126,6 @@
   "No items to download": "பதிவிறக்க எதுவும் இல்லை",
   "Failed to update album visibility. Please try again.": "ஆல்பத்தின் காட்சித்தன்மையைப் புதுப்பிக்க முடியவில்லை. தயவுசெய்து மீண்டும் முயற்சிக்கவும்.",
   "You must be logged in to perform this action": "இந்த செயலைச் செய்ய நீங்கள் உள்நுழைந்திருக்க வேண்டும்",
-  "Search album title or description": "ஆல்பத்தின் தலைப்பு அல்லது விளக்கத்தைத் தேடுங்கள்",
   "Enter a password for this album.": "இந்த ஆல்பத்திற்கு கடவுச்சொல்லை உள்ளிடவும்",
   "Enter password": "கடவுச்சொல்லை உள்ளிடவும்",
   "Select password restrictions.": "கடவுச்சொல் கட்டுப்பாடுகளைத் தேர்ந்தெடுக்கவும்.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "உங்கள் 6180 ஆல்பங்களை அணுகவும்",
   "Revisit Your Albums": "உங்கள் ஆல்பங்களை மீண்டும் பார்வையிடுங்கள்",
   "We'll email you a one-time code to verify it's really you": "உங்கள் அடையாளத்தை சரிபார்க்க மின்னஞ்சல் மூலம் ஒரு முறை பயன்பாட்டு குறியீட்டை அனுப்புவோம்",
-  "We sent a 6-digit code to": "6 இலக்க குறியீட்டை அனுப்பினோம்"
+  "We sent a 6-digit code to": "6 இலக்க குறியீட்டை அனுப்பினோம்",
+  "Search albums by title or description": "தலைப்பு அல்லது விளக்கத்தின் மூலம் ஆல்பங்களைத் தேடுங்கள்",
+  "View Public Profile": "பொது சுயவிவரத்தைப் பார்க்கவும்",
+  "Storage": "சேமிப்பு",
+  "Use the 6180 app to showcase your albums offline": "உங்கள் ஆல்பங்களை ஆஃப்லைனில் காட்ட 6180 பயன்பாட்டைப் பயன்படுத்துங்கள்",
+  "Intelligently tagged and beautifully organized": "புத்திசாலித்தனமாக குறியிடப்பட்டது மற்றும் அழகாக ஒழுங்கமைக்கப்பட்டது",
+  "Open On iOS": "iOS இல் திறக்கவும்",
+  "Open On Android": "Android இல் திறக்கவும்",
+  "Toggle contacts filter": "தொடர்பு வடிகட்டியை மாற்றவும்",
+  "Showing albums with all selected contacts and tags": "அனைத்து தேர்ந்தெடுக்கப்பட்ட தொடர்புகள் மற்றும் குறிச்சொற்களுடன் ஆல்பங்களைக் காட்டுகிறது",
+  "Showing albums with all selected tags": "அனைத்து தேர்ந்தெடுக்கப்பட்ட குறிச்சொற்களுடன் ஆல்பங்களைக் காட்டுகிறது"
 }

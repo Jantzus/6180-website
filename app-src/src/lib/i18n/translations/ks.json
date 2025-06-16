@@ -126,7 +126,6 @@
   "No items to download": "ڈاؤنلوڈ کَرنہٕ خٲطرٕ کہٕ آئٹم نِہ چھےٚ",
   "Failed to update album visibility. Please try again.": "آلبم دَر آوَیچھ اَپڈیٹ کَرنہٕ منز ناکام۔ مہربأنی کٔرِتھ دوٗبارٕ کوشش کرٕو۔",
   "You must be logged in to perform this action": "یِہ عمل کَرنہٕ خٲطرٕ گٲژھنٕہ لاگ اِن کَرنٕہ",
-  "Search album title or description": "آلبم عُنوان یا وضاحت ژھارُن",
   "Enter a password for this album.": "یٚہؠ آلبم کؠ باپتھ پاسورڈ درِج کٔرؠو",
   "Enter password": "پاس ورڈ درج کریں",
   "Select password restrictions.": "پَسوَرڑ رُکاوٹ مُنتَخب کَرِو۔",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "پنٕنؠ 6180 البمن کِس رسٲیی",
   "Revisit Your Albums": "اپنٛہ البمَن واریاہ وُچھو",
   "We'll email you a one-time code to verify it's really you": "اسہ توہیہ کٔر ایمیل ذریعہٕ اکھ ؤری استعمال ؤنہ والو کوڈ سوزنو یتھ تۄہنز شناخت کرتھ چھہ",
-  "We sent a 6-digit code to": "اسہ چھے ہندسن کوڈ ژھلو"
+  "We sent a 6-digit code to": "اسہ چھے ہندسن کوڈ ژھلو",
+  "Search albums by title or description": "نام یا تفصیل کے ذریعے البمز تلاش کریں",
+  "View Public Profile": "عوامی پروفائل وُچھن",
+  "Storage": "ذخیرہ",
+  "Use the 6180 app to showcase your albums offline": "اپنٲ ایلبم آف لائن وینہٕ باپت 6180 ایپ استعمال کریو",
+  "Intelligently tagged and beautifully organized": "عقلمندی نال ٹیگ کوٚرمُت تہٕ خوٗبصوٗرت طریقہٕ سٟتؠ منظم",
+  "Open On iOS": "iOS مَنٛز کھولؠو",
+  "Open On Android": "Android مَنٛز کھولؠو",
+  "Toggle contacts filter": "رابطہ فلٹر تبدیل کریں",
+  "Showing albums with all selected contacts and tags": "تمام منتخب کردہ رابطوں اور ٹیگز کے ساتھ البم دکھانا",
+  "Showing albums with all selected tags": "تمام منتخب کردہ ٹیگز کے ساتھ البم دکھانا"
 }

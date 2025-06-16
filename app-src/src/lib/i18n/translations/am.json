@@ -126,7 +126,6 @@
   "No items to download": "ለማውረድ ምንም ዓይነት ነገሮች የሉም",
   "Failed to update album visibility. Please try again.": "የአልበም ታይነትን ማዘመን አልተቻለም። እባክዎ እንደገና ይሞክሩ።",
   "You must be logged in to perform this action": "ይህን እርምጃ ለመውሰድ መግባት አለብዎት",
-  "Search album title or description": "የአልበም ርዕስ ወይም መግለጫ ይፈልጉ",
   "Enter a password for this album.": "ለዚህ አልበም የይለፍ ቃል ያስገቡ",
   "Enter password": "የይለፍ ቃል ያስገቡ",
   "Select password restrictions.": "የይለፍ ቃል ገደቦችን ይምረጡ።",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "የእርስዎን 6180 አልበሞች ያግኙ",
   "Revisit Your Albums": "የአንተን አልበሞች እንደገና ጎብኝ",
   "We'll email you a one-time code to verify it's really you": "መንነትዎን ለማረጋገጥ በኢሜይል አንድ ጊዜ የሚጠቀም ኮድ እንልክልዎታለን",
-  "We sent a 6-digit code to": "6 ዲጂት ኮድ ልኬናል ወደ"
+  "We sent a 6-digit code to": "6 ዲጂት ኮድ ልኬናል ወደ",
+  "Search albums by title or description": "በርዕስ ወይም በማብራሪያ አልበሞችን ፈልግ",
+  "View Public Profile": "የሕዝብ መገለጫ ይመልከቱ",
+  "Storage": "ማከማቻ",
+  "Use the 6180 app to showcase your albums offline": "የ6180 መተግበሪያን ተጠቅመው የእርስዎን አልበሞች ከመስመር ውጪ ለማሳየት",
+  "Intelligently tagged and beautifully organized": "በብልጠት የተለየ እና በውበት የተደራጀ",
+  "Open On iOS": "በ iOS ላይ ክፈት",
+  "Open On Android": "በ Android ላይ ክፈት",
+  "Toggle contacts filter": "እውቂያዎች ማጣሪያ ቀይር",
+  "Showing albums with all selected contacts and tags": "ሁሉም የተመረጡ እውቂያዎች እና መለያዎች ካላቸው አልበሞች ማሳያ",
+  "Showing albums with all selected tags": "ሁሉም የተመረጡ መለያዎች ካላቸው አልበሞች ማሳያ"
 }

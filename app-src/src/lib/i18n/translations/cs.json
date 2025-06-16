@@ -126,7 +126,6 @@
   "No items to download": "Žádné položky ke stažení",
   "Failed to update album visibility. Please try again.": "Nepodařilo se aktualizovat viditelnost alba. Zkuste to prosím znovu.",
   "You must be logged in to perform this action": "Pro provedení této akce musíte být přihlášeni",
-  "Search album title or description": "Hledat název alba nebo popis",
   "Enter a password for this album.": "Zadejte heslo pro toto album",
   "Enter password": "Zadejte heslo",
   "Select password restrictions.": "Vyberte omezení hesla.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Přístup k Vašim 6180 Albům",
   "Revisit Your Albums": "Znovu Navštivte Vaše Alba",
   "We'll email you a one-time code to verify it's really you": "Pošleme vám jednorázový kód e-mailem, abychom ověřili, že jste to skutečně vy",
-  "We sent a 6-digit code to": "Poslali jsme 6místný kód na"
+  "We sent a 6-digit code to": "Poslali jsme 6místný kód na",
+  "Search albums by title or description": "Hledat alba podle názvu nebo popisu",
+  "View Public Profile": "Zobrazit Veřejný Profil",
+  "Storage": "Úložiště",
+  "Use the 6180 app to showcase your albums offline": "Použijte aplikaci 6180 pro zobrazení vašich alb offline",
+  "Intelligently tagged and beautifully organized": "Inteligentně označené a krásně organizované",
+  "Open On iOS": "Otevřít V iOS",
+  "Open On Android": "Otevřít V Android",
+  "Toggle contacts filter": "Přepnout filtr kontaktů",
+  "Showing albums with all selected contacts and tags": "Zobrazení alb se všemi vybranými kontakty a štítky",
+  "Showing albums with all selected tags": "Zobrazení alb se všemi vybranými štítky"
 }

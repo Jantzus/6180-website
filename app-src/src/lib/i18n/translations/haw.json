@@ -126,7 +126,6 @@
   "No items to download": "ʻAʻohe mea e hoʻoili mai",
   "Failed to update album visibility. Please try again.": "Ua hiki ʻole i ka hoʻololi ʻana i ka ʻālapa ʻikena. E hoʻāʻo hou.",
   "You must be logged in to perform this action": "Pono ʻoe e komo i hiki ke hana i kēia hana",
-  "Search album title or description": "Huli i ke poʻo inoa ʻālapa a i ʻole ka wehewehe",
   "Enter a password for this album.": "E komo i ka hua huna no kēia ʻālapa",
   "Enter password": "Hoʻokomo i ka hua huna",
   "Select password restrictions.": "Koho i nā palena hua huna.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Komo i kāu mau 6180 Albums",
   "Revisit Your Albums": "Kipa Hou I Kāu Mau Albums",
   "We'll email you a one-time code to verify it's really you": "E hoouna aku iā ʻoe i kahi kōmike hoʻokahi wale no ma ka leka uila e hōʻoia ai he ʻoe maoli kēia",
-  "We sent a 6-digit code to": "Ua hoouna mākou i kahi kōmike helu ono i"
+  "We sent a 6-digit code to": "Ua hoouna mākou i kahi kōmike helu ono i",
+  "Search albums by title or description": "Huli ʻālapa ma ka inoa a me ka wehewehe paha",
+  "View Public Profile": "Nānā i ka Papa Inoa Lehulehu",
+  "Storage": "Hoʻopili",
+  "Use the 6180 app to showcase your albums offline": "E hoʻohana i ka ʻālapa 6180 e hōʻike ai i kāu mau ʻālapa ma waho o ka noho pūnaewele",
+  "Intelligently tagged and beautifully organized": "Ma ka naʻau ʻōnaehana a me ka nani hoʻonohonoho ʻia",
+  "Open On iOS": "Wehe Ma iOS",
+  "Open On Android": "Wehe Ma Android",
+  "Toggle contacts filter": "Hoololi kahi hoʻokolohua kaikaina",
+  "Showing albums with all selected contacts and tags": "Hōʻike ʻālapa me nā lawelawe ʻānela a me nā lepili i koho ʻia",
+  "Showing albums with all selected tags": "Hōʻike ʻālapa me nā lepili i koho ʻia a pau"
 }

@@ -126,7 +126,6 @@
   "No items to download": "No hay elementos para descargar",
   "Failed to update album visibility. Please try again.": "No se pudo actualizar la visibilidad del álbum. Por favor, inténtalo de nuevo.",
   "You must be logged in to perform this action": "Debes iniciar sesión para realizar esta acción",
-  "Search album title or description": "Buscar título o descripción del álbum",
   "Enter a password for this album.": "Introduce una contraseña para este álbum",
   "Enter password": "Introduzca contraseña",
   "Select password restrictions.": "Seleccione restricciones de contraseña.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accede a Tus 6180 Álbumes",
   "Revisit Your Albums": "Revisitar Sus Álbumes",
   "We'll email you a one-time code to verify it's really you": "Te enviaremos por email un código de un solo uso para verificar que realmente eres tú",
-  "We sent a 6-digit code to": "Enviamos un código de 6 dígitos a"
+  "We sent a 6-digit code to": "Enviamos un código de 6 dígitos a",
+  "Search albums by title or description": "Buscar álbumes por título o descripción",
+  "View Public Profile": "Ver Perfil Público",
+  "Storage": "Almacenamiento",
+  "Use the 6180 app to showcase your albums offline": "Usa la aplicación 6180 para mostrar tus álbumes sin conexión",
+  "Intelligently tagged and beautifully organized": "Etiquetados inteligentemente y organizados bellamente",
+  "Open On iOS": "Abrir En iOS",
+  "Open On Android": "Abrir En Android",
+  "Toggle contacts filter": "Alternar filtro de contactos",
+  "Showing albums with all selected contacts and tags": "Mostrando álbumes con todos los contactos y etiquetas seleccionadas",
+  "Showing albums with all selected tags": "Mostrando álbumes con todas las etiquetas seleccionadas"
 }

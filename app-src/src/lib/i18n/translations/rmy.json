@@ -126,7 +126,6 @@
   "No items to download": "Naj khanchi te xalavav",
   "Failed to update album visibility. Please try again.": "Ni zhanglom te aktualiziriv o dikhibnasipe e albumosko. Rugiv tut, proviv pale.",
   "You must be logged in to perform this action": "Musaj te aves andre loghin te kerel kadava",
-  "Search album title or description": "Rode titlùl va o deskriptzia e albumosko",
   "Enter a password for this album.": "Ramosara jekh parola vaš kado albùmo",
   "Enter password": "Ramosaren o parola",
   "Select password restrictions.": "Alosarav o restrictsiyi le parolaske.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Jas karing Tire 6180 Albums",
   "Revisit Your Albums": "Dikhen Avri Tume Albums",
   "We'll email you a one-time code to verify it's really you": "Amahe tuke bhejaha ekh kodoski so ek mol te kerel pe email te dikhel so tu sano tu san",
-  "We sent a 6-digit code to": "Amahe bhejaha 6-dijitoskere kodoski"
+  "We sent a 6-digit code to": "Amahe bhejaha 6-dijitoskere kodoski",
+  "Search albums by title or description": "Rodav e albume andar o titlos thai o opisanipe",
+  "View Public Profile": "Dikhel o Publiko Profilo",
+  "Storage": "Rakhipe",
+  "Use the 6180 app to showcase your albums offline": "Karo 6180 aplikacia karing but dikhas tire album offline",
+  "Intelligently tagged and beautifully organized": "Aklenca markirde thaj šukares urjarijde",
+  "Open On iOS": "Putren Ando iOS",
+  "Open On Android": "Putren Ando Android",
+  "Toggle contacts filter": "Keren o filtro e kontaktenge",
+  "Showing albums with all selected contacts and tags": "Sikavel e albumura sa vrytane kontaktenca thaj tagenca",
+  "Showing albums with all selected tags": "Sikavel e albumura sa vrytane tagenca"
 }

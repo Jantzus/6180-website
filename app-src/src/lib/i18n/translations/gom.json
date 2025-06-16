@@ -126,7 +126,6 @@
   "No items to download": "डाऊनलोड करपाक कसलेच आयटम ना",
   "Failed to update album visibility. Please try again.": "अल्बम पळोवपाची सुविधा अद्यतनीत करपाक अपेस. उपकार करून परतून प्रयत्न करात.",
   "You must be logged in to perform this action": "ही क्रिया करपाक तुमी लॉग इन जावंक जाय",
-  "Search album title or description": "अल्बम शीर्षक वा वर्णन सोदचें",
   "Enter a password for this album.": "ह्या आल्बमा खातीर पासवर्ड भरात",
   "Enter password": "पासवर्ड भरात",
   "Select password restrictions.": "पासवर्ड मर्यादा निवड.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "तुजे 6180 अल्बम पळयात",
   "Revisit Your Albums": "तुमचे अल्बम परत बगात",
   "We'll email you a one-time code to verify it's really you": "आमी तुमचो वळख तपासूंक ईमेलान एक फावट वापरूंक येवपी कोड धाडटेलो",
-  "We sent a 6-digit code to": "आमी 6 अंकाचो कोड धाडला"
+  "We sent a 6-digit code to": "आमी 6 अंकाचो कोड धाडला",
+  "Search albums by title or description": "शीर्षक वा वर्णनान प्रमाणे आल्बम सोद",
+  "View Public Profile": "सार्वजनीक प्रोफाइल पळयात",
+  "Storage": "ठेवप",
+  "Use the 6180 app to showcase your albums offline": "तुमच्या अल्बमांक ऑफलाइन दाखोवपाक 6180 अॅप वापर",
+  "Intelligently tagged and beautifully organized": "बुद्धीमतेन तग कल्लीं आनी सुरेखान संघटित",
+  "Open On iOS": "iOS चेर उगडा",
+  "Open On Android": "Android चेर उगडा",
+  "Toggle contacts filter": "संपर्क फिल्टर बदलावचे",
+  "Showing albums with all selected contacts and tags": "निवडिल्ले सगळे संपर्क आनी टॅग आसत अल्बम दाखयतात",
+  "Showing albums with all selected tags": "निवडिल्ले सगळे टॅग आसत अल्बम दाखयतात"
 }

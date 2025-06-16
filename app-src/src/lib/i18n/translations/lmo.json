@@ -126,7 +126,6 @@
   "No items to download": "Nissün element de descaregà",
   "Failed to update album visibility. Please try again.": "Mia reüsii a agiurnà la visibilità de l'album. Per piasè, prova amò.",
   "You must be logged in to perform this action": "Ta gh'het da vèss culegaa per fà 'sta assiun chì",
-  "Search album title or description": "Cerca titul o descriziun del album",
   "Enter a password for this album.": "Mett dent una password per stu album",
   "Enter password": "Mett denter la password",
   "Select password restrictions.": "Seleziunà i restricziun de la paròla d'urdin.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accèd ai Tò 6180 Album",
   "Revisit Your Albums": "Rivarda I Tò Albums",
   "We'll email you a one-time code to verify it's really you": "Te manderemm on coodes de dovrà domà ona volta per email per verificà che te seet propri te",
-  "We sent a 6-digit code to": "Hemm mandaa on coodes de 6 zifer a"
+  "We sent a 6-digit code to": "Hemm mandaa on coodes de 6 zifer a",
+  "Search albums by title or description": "Cerca album per titul o descrizion",
+  "View Public Profile": "Védèr el Profil Pùblic",
+  "Storage": "Archivi",
+  "Use the 6180 app to showcase your albums offline": "Dopra l'aplicaziun 6180 per mustrà i tò album offline",
+  "Intelligently tagged and beautifully organized": "Marcaa con intellighenza e organizaa bellament",
+  "Open On iOS": "Vèrt In iOS",
+  "Open On Android": "Vèrt In Android",
+  "Toggle contacts filter": "Cambià filter cuntàt",
+  "Showing albums with all selected contacts and tags": "Mosstra album con tüt i cuntàt e tag seleziunaa",
+  "Showing albums with all selected tags": "Mosstra album con tüt i tag seleziunaa"
 }

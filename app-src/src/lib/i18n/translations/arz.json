@@ -126,7 +126,6 @@
   "No items to download": "مفيش حاجات للتحميل",
   "Failed to update album visibility. Please try again.": "فشل تحديث تفاصيل الألبوم. من فضلك حاول تاني.",
   "You must be logged in to perform this action": "لازم تسجل دخول عشان تعمل الحاجة دي",
-  "Search album title or description": "دور على عنوان الألبوم أو الوصف",
   "Enter a password for this album.": "ادخل كلمة سر للألبوم ده",
   "Enter password": "دخل كلمة السر",
   "Select password restrictions.": "اختار قيود الباسورد.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "ادخل على الألبومات بتاعتك الـ 6180",
   "Revisit Your Albums": "راجع البوماتك",
   "We'll email you a one-time code to verify it's really you": "هنبعتلك كود استخدام مرة واحدة على الإيميل عشان نتأكد إنك فعلاً إنت",
-  "We sent a 6-digit code to": "بعتنا كود 6 أرقام لـ"
+  "We sent a 6-digit code to": "بعتنا كود 6 أرقام لـ",
+  "Search albums by title or description": "دور على الألبومات بالعنوان أو الوصف",
+  "View Public Profile": "شوف البروفايل العام",
+  "Storage": "التخزين",
+  "Use the 6180 app to showcase your albums offline": "استعمل أپليكيشن 6180 عشان تورّي الألبومات بتاعتك أوفلاين",
+  "Intelligently tagged and beautifully organized": "معلّمة بذكاء ومنظمة بجمال",
+  "Open On iOS": "افتح على iOS",
+  "Open On Android": "افتح على Android",
+  "Toggle contacts filter": "غيّر فلتر الكونتاكتات",
+  "Showing albums with all selected contacts and tags": "عرض الألبومات بكل الكونتاكتات والتاجات المختارة",
+  "Showing albums with all selected tags": "عرض الألبومات بكل التاجات المختارة"
 }

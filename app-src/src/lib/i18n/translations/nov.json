@@ -126,7 +126,6 @@
   "No items to download": "Nul koses por descharjar",
   "Failed to update album visibility. Please try again.": "Non sukses-te aktualisa albumi vidableske. Ples, proba nove.",
   "You must be logged in to perform this action": "Vu muste esar asesed por efekter dise aksione",
-  "Search album title or description": "Sercha titul o deskriptione de album",
   "Enter a password for this album.": "Entra un pasuorde por ti albume",
   "Enter password": "Entra pasvordo",
   "Select password restrictions.": "Selekte restriktiones de pasu-vorde.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Akese a Vos 6180 Albums",
   "Revisit Your Albums": "Revizita Vos Albums",
   "We'll email you a one-time code to verify it's really you": "Nus vole sende a vu un kode de un-ves usa per e-poste por verifica ke vu es veri vu",
-  "We sent a 6-digit code to": "Nus senda un kode de 6 zifras a"
+  "We sent a 6-digit code to": "Nus senda un kode de 6 zifras a",
+  "Search albums by title or description": "Sercha albumes per titul o deskriptione",
+  "View Public Profile": "Vide li Publik Profil",
+  "Storage": "Magazinage",
+  "Use the 6180 app to showcase your albums offline": "Use li 6180 app por monstra vori albums offline",
+  "Intelligently tagged and beautifully organized": "Inteligentmen markat e belmen organisat",
+  "Open On iOS": "Aperi In iOS",
+  "Open On Android": "Aperi In Android",
+  "Toggle contacts filter": "Swich kontakte filtre",
+  "Showing albums with all selected contacts and tags": "Montra albumos kun omni selektit kontaktes e tags",
+  "Showing albums with all selected tags": "Montra albumos kun omni selektit tags"
 }

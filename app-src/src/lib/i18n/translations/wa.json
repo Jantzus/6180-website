@@ -126,7 +126,6 @@
   "No items to download": "Nén elemint a discherdji",
   "Failed to update album visibility. Please try again.": "Dji n' a nén savou mete a djoû l' veyaeblité d' l' album. Sayîz co on côp s' i vs plait.",
   "You must be logged in to perform this action": "Vos dvoz esse elodjî po fé cisse accion ci",
-  "Search album title or description": "Cweri l' tite ou l' discrijhaedje di l' album",
   "Enter a password for this album.": "Tapez on scret po cist album ci",
   "Enter password": "Intrez l' sicret",
   "Select password restrictions.": "Tchoezi les restrictios des screts.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accès åzès tos 6180 Albums",
   "Revisit Your Albums": "Rivey Vos Albums",
   "We'll email you a one-time code to verify it's really you": "Nos vs evoyrans on code d' on côp seulmint pol courî electronike po verifia qui c' est vormint vos",
-  "We sent a 6-digit code to": "Nos avans evoyî on code di 6 chifes a"
+  "We sent a 6-digit code to": "Nos avans evoyî on code di 6 chifes a",
+  "Search albums by title or description": "Cweri des alboms d' après l' tite ou l' discrijhaedje",
+  "View Public Profile": "Vey l'Profil a Totès",
+  "Storage": "Wårdaedje",
+  "Use the 6180 app to showcase your albums offline": "Eployîz l' app 6180 po mostrer vos albums sins raloyaedje",
+  "Intelligently tagged and beautifully organized": "Marcou avou cervea eyet arindjî baudimint",
+  "Open On iOS": "Drovi So iOS",
+  "Open On Android": "Drovi So Android",
+  "Toggle contacts filter": "Candjî l' passete des contactes",
+  "Showing albums with all selected contacts and tags": "Mostrer les alboms avou tos les contactes et etiketes tchoezeyes",
+  "Showing albums with all selected tags": "Mostrer les alboms avou totes les etiketes tchoezeyes"
 }

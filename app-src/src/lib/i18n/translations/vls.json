@@ -126,7 +126,6 @@
   "No items to download": "Gin items om te downloaden",
   "Failed to update album visibility. Please try again.": "Kon albumzichtboarheit nie biewerken. Probeert opnieuw.",
   "You must be logged in to perform this action": "Je moet angemeld zyn om deze actie uut te voern",
-  "Search album title or description": "Albumtitel of beschryvinge zoekn",
   "Enter a password for this album.": "Voert e wachtwoord in vô dit album",
   "Enter password": "Voert paswoord in",
   "Select password restrictions.": "Selecteer wachtwoord beperkingn.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Toegank noa Junder 6180 Albums",
   "Revisit Your Albums": "Bezoek Joen Albums Werrom",
   "We'll email you a one-time code to verify it's really you": "Wij góan u een eenmaolige code via e-mail stuurn vo te verifieern da gij 't echt zijt",
-  "We sent a 6-digit code to": "Wij ên e 6-cijferige code verstuurd no"
+  "We sent a 6-digit code to": "Wij ên e 6-cijferige code verstuurd no",
+  "Search albums by title or description": "Zuuk albums op titel of beschrieving",
+  "View Public Profile": "Openboarn Profiel Bekiken",
+  "Storage": "Opslag",
+  "Use the 6180 app to showcase your albums offline": "Gebruukt de 6180-app vo junder albums offline te toogn",
+  "Intelligently tagged and beautifully organized": "Intelligent getakt en schoon georganiseerd",
+  "Open On iOS": "Opendoen Op iOS",
+  "Open On Android": "Opendoen Op Android",
+  "Toggle contacts filter": "Kontaktfilter wisseln",
+  "Showing albums with all selected contacts and tags": "Toan albums me alle gekozene kontakten en labels",
+  "Showing albums with all selected tags": "Toan albums me alle gekozene labels"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Nisciun elemento da scaregâ",
   "Failed to update album visibility. Please try again.": "No l'é stæto poscibbile agiornnâ a vixibilitæ do album. Pe piaxei, preuva torna.",
   "You must be logged in to perform this action": "Ti devi accede pe poei ezegwî st'açion",
-  "Search album title or description": "Çerca titolo ò descriçion do album",
   "Enter a password for this album.": "Inserisci 'na paròlla segrétta pe st'album",
   "Enter password": "Inserisci a paròlla d'ordine",
   "Select password restrictions.": "Seleçionn-a restriçioin da password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accede ai Teu 6180 Album",
   "Revisit Your Albums": "Arreveddì I Veustri Albums",
   "We'll email you a one-time code to verify it's really you": "Te mandeimu un còdice da dêuviâ sulo 'na vòtta pe e-mail pe verificâ che ti t'ê pròpio ti",
-  "We sent a 6-digit code to": "Aémmo mandòu un còdice da 6 çifre a"
+  "We sent a 6-digit code to": "Aémmo mandòu un còdice da 6 çifre a",
+  "Search albums by title or description": "Çerca album pe tittolo o descriçion",
+  "View Public Profile": "Védde o Profîlo Pùblico",
+  "Storage": "Archivio",
+  "Use the 6180 app to showcase your albums offline": "Deuvra l'aplicaçion 6180 pe fâ védde i teu album offline",
+  "Intelligently tagged and beautifully organized": "Marcòu inteligentemente e organizzòu belamente",
+  "Open On iOS": "Àrvi In iOS",
+  "Open On Android": "Àrvi In Android",
+  "Toggle contacts filter": "Cangia filtro contàtti",
+  "Showing albums with all selected contacts and tags": "Mostra album con tutti i contàtti e tag seleçionæ",
+  "Showing albums with all selected tags": "Mostra album con tutti i tag seleçionæ"
 }

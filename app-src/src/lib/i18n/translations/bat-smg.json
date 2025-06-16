@@ -126,7 +126,6 @@
   "No items to download": "Nėra elementu parsisiųsti",
   "Failed to update album visibility. Please try again.": "Nepavīka atnaujinti albūma matomuma. Praša pamieginti viel karta.",
   "You must be logged in to perform this action": "Tori būtė prisėjongės, kad galietomi atliktė šį veiksmą",
-  "Search album title or description": "Ieškoti albumo pavadinimo ar aprašymo",
   "Enter a password for this album.": "Īveskėt slaptažuodī šėtam albomou",
   "Enter password": "Iveskėt slaptažuodi",
   "Select password restrictions.": "Pasėrėnktė slaptažuodė apribuojėmus.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Prīeitė Pri Sava 6180 Alboma",
   "Revisit Your Albums": "Aplankeit Sava Albuomus",
   "We'll email you a one-time code to verify it's really you": "Mes atsiųsim jums vienkartiniu naudojimo kuoda par el. pašta, kad patvirtintum, jog tas esot jūs",
-  "We sent a 6-digit code to": "Atsiuntėm 6 skaitmenių kuoda"
+  "We sent a 6-digit code to": "Atsiuntėm 6 skaitmenių kuoda",
+  "Search albums by title or description": "Ėiškuotė albūmus pagan pavadėnėma a aprašīma",
+  "View Public Profile": "Žvelgietė Visous Pruopielė",
+  "Storage": "Sauguoms",
+  "Use the 6180 app to showcase your albums offline": "Nauda 6180 pruogrāma, kab paruodītom sovus albūmus be interneta",
+  "Intelligently tagged and beautifully organized": "Protėngā pažīmėts ė gražiā suruošts",
+  "Open On iOS": "Atėdari iOS",
+  "Open On Android": "Atėdari Android",
+  "Toggle contacts filter": "Pakeistė kontaktu filtra",
+  "Showing albums with all selected contacts and tags": "Ruoda albumos so vėsais pažemėtais kontaktais ė žīmelėmis",
+  "Showing albums with all selected tags": "Ruoda albumos so vėsomis pažemėtomis žīmelėmis"
 }

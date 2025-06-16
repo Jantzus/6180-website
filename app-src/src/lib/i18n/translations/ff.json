@@ -126,7 +126,6 @@
   "No items to download": "Alaa geɗe baɗɗi njaawtorde",
   "Failed to update album visibility. Please try again.": "Ronka hisde yiytugol jayangol albomu. Tiiɗno, etoo kadi.",
   "You must be logged in to perform this action": "Aan limtidaa loggagol ngam waɗde ɗiin baɗal",
-  "Search album title or description": "Ɗaɓɓit tiitoonde albomu maa sifaa",
   "Enter a password for this album.": "Winndu konngol suturo ngam oo deftere",
   "Enter password": "Naatnu codnorgol",
   "Select password restrictions.": "Suɓa ko haɗata finnde suriire.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Yaahu 6180 Albums Maa",
   "Revisit Your Albums": "Yillo Albumaaji Maa",
   "We'll email you a one-time code to verify it's really you": "Min maa neldaa ma kode oo kuutoree tan wonande e iimeel ngam min anndino ko a woni ma goonga",
-  "We sent a 6-digit code to": "Min neldii kode aye jeetati e"
+  "We sent a 6-digit code to": "Min neldii kode aye jeetati e",
+  "Search albums by title or description": "Yiylo albomuuji foti sifa mo e cifanndo",
+  "View Public Profile": "Yiy Heftinirde Kadi",
+  "Storage": "Mooftaade",
+  "Use the 6180 app to showcase your albums offline": "Huutoro jaaɓngal 6180 ngal ngam hollude albomuuji maa hakkunde geese",
+  "Intelligently tagged and beautifully organized": "Taggaama no hakiilo e hesɗitinaa no haali",
+  "Open On iOS": "Uddit E iOS",
+  "Open On Android": "Uddit E Android",
+  "Toggle contacts filter": "Waylu jeñorde",
+  "Showing albums with all selected contacts and tags": "Hollaade kelnaaɓe e jeñorde kala e cullituɗe",
+  "Showing albums with all selected tags": "Hollaade kelnaaɓe e cullituɗe kala"
 }

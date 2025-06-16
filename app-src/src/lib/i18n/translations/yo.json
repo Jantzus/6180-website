@@ -126,7 +126,6 @@
   "No items to download": "Kò sí ohun tí ó wà láti gba wálẹ̀",
   "Failed to update album visibility. Please try again.": "Ó kùnà láti ṣe ìmúdójúìwọ̀n ìríran àlbọ́mù. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan si.",
   "You must be logged in to perform this action": "O gbọdọ wọlé láti ṣe ìgbésẹ̀ yìí",
-  "Search album title or description": "Àwárí àkọlé tàbí àlàyé àlbọ́mù",
   "Enter a password for this album.": "Ṣe àfikún ọ̀rọ̀ aṣínà fún àlbọ́mù yìí",
   "Enter password": "Ṣe àkọsílẹ̀ ọ̀rọ̀ìwọlé",
   "Select password restrictions.": "Yan àwọn ìdíwọ́ ọ̀rọ̀ìdánimọ̀.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Wọle si 6180 Albums Rẹ",
   "Revisit Your Albums": "Ṣàbẹ̀wò Sí Àwọn Albums Rẹ Lẹ́ẹ̀kan Sí i",
   "We'll email you a one-time code to verify it's really you": "A o fi email ran yin ni koodu ti o le lo lekan kan lati ri daju pe eyin ni gangan",
-  "We sent a 6-digit code to": "A fi koodu onka mefa ranṣẹ si"
+  "We sent a 6-digit code to": "A fi koodu onka mefa ranṣẹ si",
+  "Search albums by title or description": "Wa àlbọ́mù nípasẹ àkọlé tàbí àpèjúwe",
+  "View Public Profile": "Wo Profaili Gbogbo Eniyan",
+  "Storage": "Iṣura",
+  "Use the 6180 app to showcase your albums offline": "Lo ìṣàmúlò 6180 láti fi àwọn àlbọ́mù rẹ hàn ní àìnímọ́ ohun tí o gbọ́",
+  "Intelligently tagged and beautifully organized": "Tí a fi ọgbọ́n sámì àti tí a ṣètò ní ẹwà",
+  "Open On iOS": "Ṣii Lori iOS",
+  "Open On Android": "Ṣii Lori Android",
+  "Toggle contacts filter": "Yí àṣẹ iṣẹ-àjọpọ̀ dà",
+  "Showing albums with all selected contacts and tags": "Ṣíṣe àfihàn àwọn álbọ́mù pẹ̀lú gbogbo àwọn ìbáṣepọ̀ àti àwọn àmì tí a yàn",
+  "Showing albums with all selected tags": "Ṣíṣe àfihàn àwọn álbọ́mù pẹ̀lú gbogbo àwọn àmì tí a yàn"
 }

@@ -126,7 +126,6 @@
   "No items to download": "Ym don ei jingbuh ban der",
   "Failed to update album visibility. Please try again.": "Ym lah ban pyndap ia ka jingiohi album. Sngewbha pyrkhat biang.",
   "You must be logged in to perform this action": "Phai shong noh ha account jong phi ban leh kane ka kam",
-  "Search album title or description": "Wad ia ka kyrteng album lane ka jingbatai",
   "Enter a password for this album.": "Buh password ia kane album",
   "Enter password": "Pynbna password",
   "Select password restrictions.": "Jied ia ki jingthiah password.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Jait ka 6180 Albums sha",
   "Revisit Your Albums": "Bor Da La Ka U Album",
   "We'll email you a one-time code to verify it's really you": "Nga nga dei e-mail jong ka khulei haba sit khmat lyngkhoi code u khui ia kha um katta noh",
-  "We sent a 6-digit code to": "Nga nga dei 6-digit code u khui"
+  "We sent a 6-digit code to": "Nga nga dei 6-digit code u khui",
+  "Search albums by title or description": "Mynsiem heading bad u pyrthei ia kata album",
+  "View Public Profile": "Jingbha Profile Nga",
+  "Storage": "Khyndaw",
+  "Use the 6180 app to showcase your albums offline": "Ua album kyrteng offline ban snem ban, 6180 app nga soo",
+  "Intelligently tagged and beautifully organized": "Ka rei ba nong iaid tag o ar ka ioh ban burom",
+  "Open On iOS": "Khih Ha iOS",
+  "Open On Android": "Khih Ha Android",
+  "Toggle contacts filter": "Ka filter contact ieit pynmih",
+  "Showing albums with all selected contacts and tags": "Ka album ka shem bad ka contact bad ka tag shalang ia ka longtein",
+  "Showing albums with all selected tags": "Ka album ka shem bad ka tag shalang ia ka longtein"
 }

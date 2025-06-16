@@ -126,7 +126,6 @@
   "No items to download": "Naneke mele afisiɖeɖe o",
   "Failed to update album visibility. Please try again.": "Mete ŋu awɔ album ƒe kpɔkpɔ ŋu dzɔdzɔ o. Taflatse, gatee kpɔ.",
   "You must be logged in to perform this action": "Ele be nàɖe ŋkɔ hafi àte ŋu àwɔ esi",
-  "Search album title or description": "Di album ŋkɔ alo ŋutinya ŋuti",
   "Enter a password for this album.": "Ŋlɔ nyagbla ɖo album sia ŋu",
   "Enter password": "Ŋlɔ nyagbea",
   "Select password restrictions.": "Tia nyaŋuɖoɖo ƒe kpɔɖeŋukpɔɖeŋuwo.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Ge Wò 6180 Albums Me",
   "Revisit Your Albums": "Gakpe Wo Albums Gbɔ",
   "We'll email you a one-time code to verify it's really you": "Míaɖo ga wò kɔpi si wozãna zi ɖeka ko la to email dzi be míakpɔe ɖa be wòe nye amea",
-  "We sent a 6-digit code to": "Míeɖo kɔpi ade si me nɔmber ade le la ɖe"
+  "We sent a 6-digit code to": "Míeɖo kɔpi ade si me nɔmber ade le la ɖe",
+  "Search albums by title or description": "Di album siwo to tanya alo nyatakakawo me",
+  "View Public Profile": "Kpɔ Dukɔme Profile",
+  "Storage": "Nudzraɖoƒe",
+  "Use the 6180 app to showcase your albums offline": "Zã 6180 app la tsɔ ɖe wò albumwo fia le offline",
+  "Intelligently tagged and beautifully organized": "Wowɔ nunya tsɔ ɖo dzesi eye wòdzra ɖo nyuie",
+  "Open On iOS": "Ʋu Le iOS Dzi",
+  "Open On Android": "Ʋu Le Android Dzi",
+  "Toggle contacts filter": "Trɔ kakaɖeɖe ŋutinukpɔkplɔ̃",
+  "Showing albums with all selected contacts and tags": "Fifia album siwo me amekakaɖeɖe kple dzesi siwo katã wotia le",
+  "Showing albums with all selected tags": "Fifia album siwo me dzesi siwo katã wotia le"
 }

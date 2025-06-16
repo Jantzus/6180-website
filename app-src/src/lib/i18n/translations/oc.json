@@ -126,7 +126,6 @@
   "No items to download": "Cap d'elements per telecargar",
   "Failed to update album visibility. Please try again.": "Fracàs al metre a jorn la visibilitat de l'album. Mercés d'ensajar tornamai.",
   "You must be logged in to perform this action": "Vos cal èsser connectat per efectuar aquesta accion",
-  "Search album title or description": "Recercar lo títol o la descripcion de l'albom",
   "Enter a password for this album.": "Picatz un senhal per aqueste albom",
   "Enter password": "Picatz lo senhal",
   "Select password restrictions.": "Seleccionar las restriccions de senhal.",
@@ -286,5 +285,15 @@
   "Access Your 6180 Albums": "Accès a vòstres 6180 Albums",
   "Revisit Your Albums": "Tornar Veire Vòstres Albums",
   "We'll email you a one-time code to verify it's really you": "Vos mandarem un còde d'usatge unic per corrièr electronic per verificar que sètz vertadièrament vos",
-  "We sent a 6-digit code to": "Avèm mandat un còde de 6 chifras a"
+  "We sent a 6-digit code to": "Avèm mandat un còde de 6 chifras a",
+  "Search albums by title or description": "Cercar albums per títol o descripcion",
+  "View Public Profile": "Veire lo Perfil Public",
+  "Storage": "Emmagazinatge",
+  "Use the 6180 app to showcase your albums offline": "Utilizatz l'aplicacion 6180 per mostrar vòstres albums fòra linha",
+  "Intelligently tagged and beautifully organized": "Etiquetats intelligentament e organizats belament",
+  "Open On iOS": "Dubrir Sus iOS",
+  "Open On Android": "Dubrir Sus Android",
+  "Toggle contacts filter": "Comutar lo filtre de contactes",
+  "Showing albums with all selected contacts and tags": "Afichar los albums amb totes los contactes e etiquetas seleccionats",
+  "Showing albums with all selected tags": "Afichar los albums amb totas las etiquetas seleccionadas"
 }
