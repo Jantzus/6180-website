@@ -38,8 +38,8 @@ import {
   SelectionModeBanner 
 } from "./components";
 
-// Import the new MediaTagsFilter component
-import { MediaTagsFilter } from "./MediaTagsFilter";
+// Import the new Enhanced MediaTagsFilter component
+import { EnhancedMediaTagsFilter } from "./EnhancedMediaTagsFilter";
 
 // Import styled components
 import { 
@@ -161,9 +161,29 @@ const PhotoAlbumContent: React.FC = () => {
     warmUpPageCredentials();
   }, []); // Empty dependency array - run once when page loads
 
-  // Initialize filtered media items when album data changes
+  // ✅ ENHANCED DEBUG: Initialize filtered media items when album data changes
   useEffect(() => {
     if (albumData?.mediaItems) {
+      console.log('🎯 photos.tsx: albumData updated, checking mediaItems tags:', {
+        totalItems: albumData.mediaItems.length,
+        itemsWithTags: albumData.mediaItems.filter(item => item.selectedTags && item.selectedTags.length > 0).length,
+        firstItemTagCount: albumData.mediaItems[0]?.selectedTags?.length || 0
+      });
+      
+      // Log detailed info about first few items
+      albumData.mediaItems.slice(0, 3).forEach((item, index) => {
+        console.log(`🎯 photos.tsx item ${index}:`, {
+          fileId: item.fileId.substring(0, 50) + '...',
+          hasSelectedTags: !!item.selectedTags,
+          tagCount: item.selectedTags?.length || 0,
+          tags: item.selectedTags?.map(tag => ({
+            type: tag.TagType,
+            title: tag.tagTitle,
+            subtags: tag.subtags?.length || 0
+          })) || []
+        });
+      });
+      
       setFilteredMediaItems(albumData.mediaItems);
       setIsMediaFiltered(false);
     }
@@ -677,7 +697,7 @@ const PhotoAlbumContent: React.FC = () => {
 
   // Render
   return (
-    <Body>
+    <Body $isRTL={isRTL}>
       <GlobalStyle />
       
       {/* 6180 Brand Header */}
@@ -762,9 +782,9 @@ const PhotoAlbumContent: React.FC = () => {
           t={t}
         />
         
-        {/* Media Tags Filter */}
+        {/* Enhanced Media Tags Filter */}
         {albumData?.mediaItems && albumData.mediaItems.length > 0 && (
-          <MediaTagsFilter
+          <EnhancedMediaTagsFilter
             mediaItems={albumData.mediaItems}
             onFilterChange={handleMediaFilterChange}
             resetFilter={resetMediaFilter}

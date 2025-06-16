@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from '@/lib/config';
 import { checkLoginWithRefresh } from '@/lib/utils';
+import { SelectedTag } from '@/lib/types';
 
 // Types for tags and subtags
 export interface TagData {
@@ -21,17 +22,6 @@ export interface SubtagData {
   points: number;
   createdAt: number;
   updatedAt: number;
-}
-
-export interface SelectedTag {
-  tagTitle: string;
-  TagType: string;
-  subtags: SelectedSubtag[];
-}
-
-export interface SelectedSubtag {
-  tagTitle: string;
-  subtagTitle: string;
 }
 
 // GraphQL query for fetching tags and subtags
@@ -243,6 +233,7 @@ export const useTagsManagement = (
           return {
             ...tag,
             subtags: [...tag.subtags, {
+              TagType: subtag.TagType,
               tagTitle: subtag.tagTitle,
               subtagTitle: subtag.subtagTitle
             }]

@@ -133,6 +133,22 @@ export const processData = (
       // Add to our set of seen dataKeys
       uniqueDataKeys.add(dataKey);
       
+      // ✅ CRITICAL FIX: Parse selectedTags from the reference
+      console.log(`🔍 Raw selectedTags for file ${id}:`, ref.selectedTags);
+      
+      const selectedTags = ref.selectedTags?.map((tag: any) => ({
+        TagType: tag.TagType,
+        tagTitle: tag.tagTitle,
+        subtags: tag.subtags?.map((subtag: any) => ({
+          TagType: subtag.TagType,
+          tagTitle: subtag.tagTitle,
+          subtagTitle: subtag.subtagTitle
+        })) || []
+      })) || [];
+      
+      console.log(`🏷️ Processed selectedTags for file ${id}:`, selectedTags);
+      console.log(`📊 Number of tags:`, selectedTags.length);
+      
       const url = `${S3_BUCKET_URL}${dataKey}`;
       const thumbnailUrl = thumbnailDataKey ? `${S3_BUCKET_URL}${thumbnailDataKey}` : undefined;
 
@@ -143,10 +159,20 @@ export const processData = (
           url,
           thumbnailUrl: thumbnailUrl || url,
           ownerContactId: ownerContactId,
-          loaded: false
+          loaded: false,
+          selectedTags: selectedTags // ✅ ADD selectedTags to image items
         };
+        
+        // ✅ ADDITIONAL DEBUG: Log the complete imageItem
+        console.log('🖼️ Complete image item with tags:', {
+          fileId: imageItem.fileId,
+          type: imageItem.type,
+          tagCount: imageItem.selectedTags?.length || 0,
+          tags: imageItem.selectedTags
+        });
+        
         mediaItems.push(imageItem);
-        console.log('🖼️ Added image item:', JSON.stringify(imageItem, null, 2));
+        console.log('✅ Successfully added image item to mediaItems array');
       } else if (dataKey.startsWith("Input/Video/")) {
         const videoItem = {
           type: "video" as const,
@@ -155,10 +181,19 @@ export const processData = (
           thumbnailUrl: thumbnailUrl || url,
           duration: formatTime(durationInSeconds),
           ownerContactId: ownerContactId,
-          loaded: false
+          loaded: false,
+          selectedTags: selectedTags // ✅ ADD selectedTags to video items
         };
+        
+        console.log('🎥 Complete video item with tags:', {
+          fileId: videoItem.fileId,
+          type: videoItem.type,
+          tagCount: videoItem.selectedTags?.length || 0,
+          tags: videoItem.selectedTags
+        });
+        
         mediaItems.push(videoItem);
-        console.log('🎥 Added video item:', JSON.stringify(videoItem, null, 2));
+        console.log('✅ Successfully added video item to mediaItems array');
       } else {
         console.log(`❓ Unknown file type for dataKey: ${dataKey}`);
       }
@@ -180,6 +215,23 @@ export const processData = (
     actualPassword,
     usingFolderInviteGrantsRightToAddItems
   };
+  
+  // ✅ ENHANCED DEBUG: Log detailed info about the final result
+  console.log('✅ processData final result summary:', {
+    mediaItemsCount: result.mediaItems.length,
+    mediaItemsWithTags: result.mediaItems.filter(item => item.selectedTags && item.selectedTags.length > 0).length,
+    firstItemTags: result.mediaItems[0]?.selectedTags?.length || 0,
+    totalTagsAcrossAllItems: result.mediaItems.reduce((total, item) => total + (item.selectedTags?.length || 0), 0)
+  });
+  
+  // Log first few items with their tags
+  result.mediaItems.slice(0, 3).forEach((item, index) => {
+    console.log(`📋 Item ${index} tags:`, {
+      fileId: item.fileId,
+      tagCount: item.selectedTags?.length || 0,
+      tags: item.selectedTags?.map(tag => `${tag.tagTitle}(${tag.subtags.length})`) || []
+    });
+  });
   
   console.log('✅ processData final result:', JSON.stringify(result, null, 2));
   return result;

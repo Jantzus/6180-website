@@ -1,4 +1,4 @@
-import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:"#007bff",primaryDark:"#0056b3",success:"#4caf50",danger:"#e53935",warning:"#ff9800",info:"#2196f3",gray:"#8c8c8c",grayLight:"#e0e0e0",grayLighter:"#f0f0f0",white:"#fff",black:"#000",overlay:"rgba(0, 0, 0, 0.7)",overlayLight:"rgba(0, 0, 0, 0.5)",border:"#ddd",borderLight:"#eaeaea",text:{primary:"#333",secondary:"#666",light:"#777",lighter:"#999",white:"#fff"},background:{primary:"#f9fafb",gradientStart:"#fdfdfd",gradientEnd:"#f6f6f6",card:"#fff",highlight:"#f0f7ff",error:"#fdeded"},highlight:{border:"#cce0ff",error:"#f7d0d0"}},spacing:{xs:"4px",sm:"8px",md:"16px",xl:"32px"},borderRadius:{small:"4px",medium:"8px",large:"16px",circle:"50%"},fontSizes:{xs:"12px",sm:"14px",md:"16px",lg:"18px",xxl:"24px"},boxShadow:{sm:"0 1px 2px rgba(0,0,0,0.06)",md:"0 1px 3px rgba(0,0,0,0.1)",xl:"0 8px 24px rgba(0,0,0,0.2)",cardSoft:"0 8px 32px rgba(0,0,0,0.08)",primaryBtn:"0 4px 12px rgba(0, 123, 255, 0.2)",selection:"0 2px 4px rgba(0, 0, 0, 0.2)",textShadow:"0 0 5px rgba(0, 0, 0, 0.8)",focusGlow:"0 0 0 2px rgba(153, 202, 255, 0.4)"},breakpoints:{mobile:"767px"}},b=p`
+import{aG as g,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:"#007bff",primaryDark:"#0056b3",success:"#4caf50",danger:"#e53935",warning:"#ff9800",info:"#2196f3",gray:"#8c8c8c",grayLight:"#e0e0e0",grayLighter:"#f0f0f0",white:"#fff",black:"#000",overlay:"rgba(0, 0, 0, 0.7)",overlayLight:"rgba(0, 0, 0, 0.5)",border:"#ddd",borderLight:"#eaeaea",text:{primary:"#333",secondary:"#666",light:"#777",lighter:"#999",white:"#fff"},background:{primary:"#f9fafb",gradientStart:"#fdfdfd",gradientEnd:"#f6f6f6",card:"#fff",highlight:"#f0f7ff",error:"#fdeded"},highlight:{border:"#cce0ff",error:"#f7d0d0"}},spacing:{xs:"4px",sm:"8px",md:"16px",xl:"32px"},borderRadius:{small:"4px",medium:"8px",large:"16px",circle:"50%"},fontSizes:{xs:"12px",sm:"14px",md:"16px",lg:"18px",xxl:"24px"},boxShadow:{sm:"0 1px 2px rgba(0,0,0,0.06)",md:"0 1px 3px rgba(0,0,0,0.1)",xl:"0 8px 24px rgba(0,0,0,0.2)",cardSoft:"0 8px 32px rgba(0,0,0,0.08)",primaryBtn:"0 4px 12px rgba(0, 123, 255, 0.2)",selection:"0 2px 4px rgba(0, 0, 0, 0.2)",textShadow:"0 0 5px rgba(0, 0, 0, 0.8)",focusGlow:"0 0 0 2px rgba(153, 202, 255, 0.4)"},breakpoints:{mobile:"767px"}},x=g`
   @keyframes loadingAnimation {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
@@ -15,15 +15,6 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    /* Ensure viewport is properly handled */
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
   
   body {
@@ -33,21 +24,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
     height: 100%;
     overflow-x: hidden;
     font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    /* Enhanced neutral background gradient for visual depth */
     background: linear-gradient(135deg, ${o.colors.background.gradientStart} 0%, ${o.colors.background.gradientEnd} 100%);
-    /* Prevent content from being hidden behind notches/status bars */
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-    /* Fallback for older browsers */
-    padding-top: constant(safe-area-inset-top);
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-left: constant(safe-area-inset-left);
-    padding-right: constant(safe-area-inset-right);
-    /* Prevent zooming issues */
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
   }
 
   #root {
@@ -55,8 +32,6 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
-    /* Ensure proper stacking context */
-    z-index: 0;
   }  
 `,s=e=>i`
   direction: ${e?"rtl":"ltr"};
@@ -123,7 +98,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   opacity: ${e=>e.disabled||e.$isDisabled?.6:1};
   transition: all 0.2s ease;
   border-radius: ${o.borderRadius.medium};
-`,g=i`
+`,p=i`
   position: absolute;
   top: 0;
   left: 0;
@@ -132,13 +107,13 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   display: flex;
   justify-content: center;
   align-items: center;
-`,x=t.div`
+`,b=t.div`
   max-width: 1200px;
   margin: auto;
   background: ${o.colors.background.primary};
   color: ${o.colors.text.primary};
   line-height: 1.5;
-  padding: ${o.spacing.md};
+  padding: 0 ${o.spacing.md} ${o.spacing.md};
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
@@ -146,33 +121,26 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   flex-direction: column;
   
   ${r(`
-    padding: ${o.spacing.sm};
+    padding: 0 ${o.spacing.sm} ${o.spacing.sm};
   `)}
 `,f=t.div`
   padding: ${o.spacing.md};
-  /* Enhanced: Use gradient background for visual depth */
   background: linear-gradient(135deg, ${o.colors.background.gradientStart} 0%, ${o.colors.background.gradientEnd} 100%);
   min-height: 100vh;
   max-width: 100vw;
   position: relative;
-  /* Ensure proper spacing from top, accounting for safe areas */
-  padding-top: max(${o.spacing.md}, env(safe-area-inset-top));
-  padding-top: max(${o.spacing.md}, constant(safe-area-inset-top));
-  /* Handle RTL direction */
   ${e=>s(e.$isRTL)}
   
   ${r(`
     padding: ${o.spacing.sm};
-    padding-top: max(${o.spacing.sm}, env(safe-area-inset-top));
-    padding-top: max(${o.spacing.sm}, constant(safe-area-inset-top));
   `)}
 `,w=t.div`
-  padding: 0 ${o.spacing.md} ${o.spacing.md};
+  padding: ${o.spacing.sm} ${o.spacing.md} ${o.spacing.md};
   width: 100%;
   overflow: visible;
   
   ${r(`
-    padding: 0 ${o.spacing.md} ${o.spacing.sm};
+    padding: ${o.spacing.sm} ${o.spacing.md} ${o.spacing.sm};
     width: 100%;
   `)}
 `;t.div`
@@ -184,11 +152,11 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid ${o.colors.borderLight};
-  /* Remove sticky positioning to prevent conflicts */
   position: relative;
   z-index: 100;
   backdrop-filter: blur(8px);
   margin-bottom: ${o.spacing.sm};
+  padding: ${o.spacing.sm} 0;
 `,v=t.div`
   display: flex;
   justify-content: space-between;
@@ -218,7 +186,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
     outline: 2px solid ${o.colors.primary};
     outline-offset: 2px;
   }
-`,k=t(m)`
+`,z=t(m)`
   font-style: italic;
   color: ${o.colors.text.light};
   font-size: ${o.fontSizes.xs};
@@ -226,7 +194,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   &:hover {
     color: ${o.colors.text.secondary};
   }
-`,z=t.img`
+`,k=t.img`
   width: 20px;
   height: 20px;
   margin: 0;
@@ -351,7 +319,6 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   justify-content: center;
   align-items: center;
 `;const L=t.div`
-  /* Remove sticky positioning to prevent cutoff issues */
   position: relative;
   background: ${o.colors.white};
   box-shadow: ${o.boxShadow.sm};
@@ -359,6 +326,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   margin-bottom: ${o.spacing.sm};
   width: 100%;
   border-radius: ${o.borderRadius.medium};
+  margin-top: 0;
 `,R=t.div`
   display: flex;
   flex-direction: column;
@@ -391,14 +359,12 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   align-items: center;
   width: 100%;
   margin-bottom: ${o.spacing.md};
-  /* Ensure no positioning conflicts */
   position: relative;
   z-index: 1;
-  /* Add some top margin to prevent cutoff */
-  margin-top: ${o.spacing.sm};
+  margin-top: 0;
   
   ${r(`
-    margin-top: ${o.spacing.xs};
+    margin-top: 0;
     flex-wrap: wrap;
     gap: ${o.spacing.sm};
   `)}
@@ -406,12 +372,12 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   display: flex;
   align-items: center;
   margin-top: ${o.spacing.sm};
-`,T=t.label`
+`,B=t.label`
   margin-right: ${o.spacing.sm};
   font-size: ${o.fontSizes.sm};
   color: ${o.colors.text.secondary};
   font-weight: normal;
-`,B=t.select`
+`,T=t.select`
   padding: 5px ${o.spacing.sm};
   border: 1px solid ${o.colors.border};
   border-radius: ${o.borderRadius.small};
@@ -504,13 +470,13 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
 `;const G=t.div`
   display: flex;
   gap: ${o.spacing.sm};
-`,U=t.div`
+`,V=t.div`
   display: flex;
   flex-direction: column;
   gap: ${o.spacing.sm};
   margin-bottom: ${o.spacing.md};
   width: 100%;
-`,V=t.a`
+`,U=t.a`
   font-size: ${o.fontSizes.sm};
   color: ${o.colors.primary};
   text-decoration: none;
@@ -806,7 +772,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
   pointer-events: auto;
-`,po=t.video`
+`,go=t.video`
   max-width: 100%;
   max-height: 100%;
   border-radius: ${o.borderRadius.medium};
@@ -819,7 +785,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   -webkit-touch-callout: none;
 `;t.div`
   position: relative;
-`;const go=t.div`
+`;const po=t.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -831,7 +797,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   z-index: 0;
   border-radius: ${o.borderRadius.medium};
 `,mo=t.div`
-  ${g}
+  ${p}
   background-color: ${e=>e.$type==="loading"?o.colors.overlayLight:"transparent"};
   z-index: ${e=>e.$type==="loading"?4:5};
   color: ${e=>e.$type==="loading"?o.colors.white:"inherit"};
@@ -863,13 +829,13 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   ${e=>e.$left&&`left: ${e.$left};`}
   ${e=>e.$right&&`right: ${e.$right};`}
   ${e=>e.$bottom&&e.$left&&e.$right&&"position: absolute;"}
-`,bo=t.div`
+`,xo=t.div`
   height: 100%;
   background-color: ${e=>e.$status==="processing"?o.colors.warning:e.$status==="error"?o.colors.danger:e.$status==="complete"?o.colors.success:o.colors.info};
   border-radius: ${o.borderRadius.small};
   transition: width 0.3s ease;
   width: ${e=>(e.$progress||0)*100}%;
-`,xo=t.div`
+`,bo=t.div`
   font-size: ${o.fontSizes.sm};
   margin-bottom: ${o.spacing.sm};
 `,fo=t.div`
@@ -937,7 +903,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   flex-direction: column;
   min-width: 180px;
   margin-top: ${o.spacing.xs};
-`,ko=t.div`
+`,zo=t.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -947,7 +913,7 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   z-index: 2000;
   display: flex;
   flex-direction: column;
-`,zo=t.div`
+`,ko=t.div`
   text-align: center;
   margin-top: ${o.spacing.md};
   font-size: 11px;
@@ -1025,13 +991,13 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   background-color: ${e=>{switch(e.$status){case"complete":return o.colors.success;case"error":return o.colors.danger;case"uploading":return o.colors.info;case"processing":return o.colors.warning;default:return o.colors.gray}}};
 `,Io=t.div`
   margin-bottom: ${o.spacing.md};
-`,To=t.label`
+`,Bo=t.label`
   display: block;
   margin-bottom: ${o.spacing.sm};
   font-size: ${o.fontSizes.sm};
   font-weight: 500;
   color: ${o.colors.text.primary};
-`,Bo=t.input`
+`,To=t.input`
   ${d}
 `,Eo=t.textarea`
   ${d}
@@ -1130,28 +1096,11 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   padding: ${o.spacing.md};
   font-size: 0.9em;
   color: ${o.colors.text.secondary};
-  
-  /* Progressive enhancement - start with safe-area, add mobile offset */
-  padding-bottom: env(safe-area-inset-bottom, ${o.spacing.md});
-  padding-bottom: constant(safe-area-inset-bottom, ${o.spacing.md});
-  
-  @media (max-width: 768px) {
-    /* Add extra padding for mobile browser controls */
-    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 30px);
-    padding-bottom: calc(constant(safe-area-inset-bottom, 0px) + 30px);
-  }
-  
-  @media (max-width: 480px) {
-    padding: ${o.spacing.sm};
-    /* More conservative for small screens */
-    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 40px);
-    padding-bottom: calc(constant(safe-area-inset-bottom, 0px) + 40px);
-  }
-`,Uo=t.a`
+`,Vo=t.a`
   margin: 0 ${o.spacing.sm};
   color: ${o.colors.text.secondary};
   text-decoration: ${e=>e.$isHovered?"underline":"none"};
-`,Vo=t.div`
+`,Uo=t.div`
   text-align: center; 
   padding: 40px ${o.spacing.md};
   border-radius: ${o.borderRadius.medium};
@@ -1198,4 +1147,4 @@ import{aG as p,o as i,d as t}from"./utils-C1FUk2iD.js";const o={colors:{primary:
   margin-bottom: ${o.spacing.md};
   display: flex;
   justify-content: flex-end;
-`;export{K as $,f as A,l as B,Y as C,wo as D,zo as E,Io as F,b as G,C as H,ro as I,no as J,go as K,E as L,Q as M,G as N,mo as O,ho as P,ao as Q,so as R,Wo as S,Po as T,jo as U,po as V,Do as W,So as X,Lo as Y,eo as Z,q as _,P as a,J as a0,H as a1,F as a2,D as a3,vo as a4,M as a5,L as a6,R as a7,j as a8,I as a9,T as aa,B as ab,x as ac,y as ad,v as ae,m as af,S as ag,z as ah,k as ai,w as aj,yo as ak,N as al,O as am,X as an,Vo as ao,Z as ap,oo as aq,_ as ar,No as as,A as b,Go as c,Uo as d,To as e,Bo as f,Eo as g,Ao as h,Ho as i,Fo as j,xo as k,uo as l,bo as m,to as n,io as o,Co as p,co as q,lo as r,Mo as s,V as t,U as u,Ro as v,ko as w,$o as x,W as y,fo as z};
+`;export{K as $,f as A,l as B,Y as C,wo as D,ko as E,Io as F,x as G,C as H,ro as I,no as J,po as K,E as L,Q as M,G as N,mo as O,ho as P,ao as Q,so as R,Wo as S,Po as T,jo as U,go as V,Do as W,So as X,Lo as Y,eo as Z,q as _,P as a,J as a0,H as a1,F as a2,D as a3,vo as a4,M as a5,L as a6,R as a7,j as a8,I as a9,B as aa,T as ab,b as ac,y as ad,v as ae,m as af,S as ag,k as ah,z as ai,w as aj,yo as ak,N as al,O as am,X as an,Uo as ao,Z as ap,oo as aq,_ as ar,No as as,A as b,Go as c,Vo as d,Bo as e,To as f,Eo as g,Ao as h,Ho as i,Fo as j,bo as k,uo as l,xo as m,to as n,io as o,Co as p,co as q,lo as r,Mo as s,U as t,V as u,Ro as v,zo as w,$o as x,W as y,fo as z};

@@ -52,17 +52,17 @@ export type FolderPasswordParameters = {
 };
 
 // Tag-related types
-export type SelectedSubtag = {
-  TagType: string;
-  tagTitle: string;
-  subtagTitle: string;
-};
-
-export type SelectedTag = {
+export interface SelectedTag {
   TagType: string;
   tagTitle: string;
   subtags: SelectedSubtag[];
-};
+}
+
+export interface SelectedSubtag {
+  TagType: string;
+  tagTitle: string;
+  subtagTitle: string;
+}
 
 export type FileType = {
   dataKey: string;
@@ -133,6 +133,7 @@ export interface MediaItem {
   ownerContactId?: string;
   loaded?: boolean;
   dataInBytes?: number;
+  selectedTags?: SelectedTag[]; // Add this line
 }
 
 // Contact mapping

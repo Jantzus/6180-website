@@ -1,4 +1,4 @@
-import{A as V,d as s,R as J,j as e,I as K,a as o,u as Q,b as x,g as Y,C as R,f as X,L as Z,r as ee}from"./utils-C1FUk2iD.js";import{G as te,A as ne,M as oe,B as N,c as se,d as w,C as re}from"./styled-components-BlKL9vJ2.js";import{C as ie,S as ae,I as le,R as ce}from"./SignUpCommand-6aY3Hezn.js";import"./parseJsonBody-DDQ2PJJC.js";const A=new ie({region:V}),de=s(re)`
+import{A as V,d as s,R as J,j as e,I as K,a as o,u as Q,b as x,g as Y,C as R,f as X,L as Z,r as ee}from"./utils-C1FUk2iD.js";import{G as te,A as ne,M as oe,B as N,c as se,d as w,C as re}from"./styled-components-3YNZ6KsQ.js";import{C as ie,S as ae,I as le,R as ce}from"./SignUpCommand-6aY3Hezn.js";import"./parseJsonBody-DDQ2PJJC.js";const A=new ie({region:V}),de=s(re)`
   max-width: 450px;
   width: 100%;
   padding: 32px;

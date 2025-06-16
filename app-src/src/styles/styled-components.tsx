@@ -109,15 +109,6 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    /* Ensure viewport is properly handled */
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
   
   body {
@@ -127,21 +118,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     overflow-x: hidden;
     font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    /* Enhanced neutral background gradient for visual depth */
     background: linear-gradient(135deg, ${theme.colors.background.gradientStart} 0%, ${theme.colors.background.gradientEnd} 100%);
-    /* Prevent content from being hidden behind notches/status bars */
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-    /* Fallback for older browsers */
-    padding-top: constant(safe-area-inset-top);
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-left: constant(safe-area-inset-left);
-    padding-right: constant(safe-area-inset-right);
-    /* Prevent zooming issues */
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
   }
 
   #root {
@@ -149,8 +126,6 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
-    /* Ensure proper stacking context */
-    z-index: 0;
   }  
 `;
 
@@ -260,13 +235,13 @@ const overlayStyle = css`
 
 // ========== Layout Components ==========
 
-export const Body = styled.div`
+export const Body = styled.div<DirectionalProps>`
   max-width: 1200px;
   margin: auto;
   background: ${theme.colors.background.primary};
   color: ${theme.colors.text.primary};
   line-height: 1.5;
-  padding: ${theme.spacing.md};
+  padding: 0 ${theme.spacing.md} ${theme.spacing.md};
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
@@ -274,37 +249,30 @@ export const Body = styled.div`
   flex-direction: column;
   
   ${mobile(`
-    padding: ${theme.spacing.sm};
+    padding: 0 ${theme.spacing.sm} ${theme.spacing.sm};
   `)}
 `;
 
 export const AppContainer = styled.div<DirectionalProps>`
   padding: ${theme.spacing.md};
-  /* Enhanced: Use gradient background for visual depth */
   background: linear-gradient(135deg, ${theme.colors.background.gradientStart} 0%, ${theme.colors.background.gradientEnd} 100%);
   min-height: 100vh;
   max-width: 100vw;
   position: relative;
-  /* Ensure proper spacing from top, accounting for safe areas */
-  padding-top: max(${theme.spacing.md}, env(safe-area-inset-top));
-  padding-top: max(${theme.spacing.md}, constant(safe-area-inset-top));
-  /* Handle RTL direction */
   ${props => directionalStyles(props.$isRTL)}
   
   ${mobile(`
     padding: ${theme.spacing.sm};
-    padding-top: max(${theme.spacing.sm}, env(safe-area-inset-top));
-    padding-top: max(${theme.spacing.sm}, constant(safe-area-inset-top));
   `)}
 `;
 
 export const MediaContainer = styled.div`
-  padding: 0 ${theme.spacing.md} ${theme.spacing.md};
+  padding: ${theme.spacing.sm} ${theme.spacing.md} ${theme.spacing.md};
   width: 100%;
   overflow: visible;
   
   ${mobile(`
-    padding: 0 ${theme.spacing.md} ${theme.spacing.sm};
+    padding: ${theme.spacing.sm} ${theme.spacing.md} ${theme.spacing.sm};
     width: 100%;
   `)}
 `;
@@ -322,11 +290,11 @@ export const BrandHeader = styled.div`
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid ${theme.colors.borderLight};
-  /* Remove sticky positioning to prevent conflicts */
   position: relative;
   z-index: 100;
   backdrop-filter: blur(8px);
   margin-bottom: ${theme.spacing.sm};
+  padding: ${theme.spacing.sm} 0;
 `;
 
 export const BrandHeaderContent = styled.div`
@@ -530,7 +498,6 @@ export const CenteredContent = styled.div`
 // ========== Header Components ==========
 
 export const Header = styled.div`
-  /* Remove sticky positioning to prevent cutoff issues */
   position: relative;
   background: ${theme.colors.white};
   box-shadow: ${theme.boxShadow.sm};
@@ -538,6 +505,7 @@ export const Header = styled.div`
   margin-bottom: ${theme.spacing.sm};
   width: 100%;
   border-radius: ${theme.borderRadius.medium};
+  margin-top: 0;
 `;
 
 export const HeaderContent = styled.div`
@@ -576,14 +544,12 @@ export const HeaderContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: ${theme.spacing.md};
-  /* Ensure no positioning conflicts */
   position: relative;
   z-index: 1;
-  /* Add some top margin to prevent cutoff */
-  margin-top: ${theme.spacing.sm};
+  margin-top: 0;
   
   ${mobile(`
-    margin-top: ${theme.spacing.xs};
+    margin-top: 0;
     flex-wrap: wrap;
     gap: ${theme.spacing.sm};
   `)}
@@ -1585,23 +1551,6 @@ export const LegalLinksFooter = styled.div`
   padding: ${theme.spacing.md};
   font-size: 0.9em;
   color: ${theme.colors.text.secondary};
-  
-  /* Progressive enhancement - start with safe-area, add mobile offset */
-  padding-bottom: env(safe-area-inset-bottom, ${theme.spacing.md});
-  padding-bottom: constant(safe-area-inset-bottom, ${theme.spacing.md});
-  
-  @media (max-width: 768px) {
-    /* Add extra padding for mobile browser controls */
-    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 30px);
-    padding-bottom: calc(constant(safe-area-inset-bottom, 0px) + 30px);
-  }
-  
-  @media (max-width: 480px) {
-    padding: ${theme.spacing.sm};
-    /* More conservative for small screens */
-    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 40px);
-    padding-bottom: calc(constant(safe-area-inset-bottom, 0px) + 40px);
-  }
 `;
 
 export const LegalLinkFooterButton = styled.a<{ $isHovered?: boolean }>`
