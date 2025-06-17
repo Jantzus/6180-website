@@ -317,5 +317,6 @@
   "Share Specific Files": "Сподели Одредени Датотеки",
   "Delete All": "Избриши Ги Сите",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Дали сте сигурни дека сакате да ги избришете сите нови датотеки? Оваа акција не може да се поништи.",
-  "Choose an action": "Изберете акција"
+  "Choose an action": "Изберете акција",
+  "Filter by:": "Филтрирај по:"
 }

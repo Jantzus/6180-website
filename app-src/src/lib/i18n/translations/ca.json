@@ -317,5 +317,6 @@
   "Share Specific Files": "Compartir Arxius Específics",
   "Delete All": "Eliminar Tot",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Esteu segur que voleu suprimir tots els fitxers nous? Aquesta acció no es pot desfer.",
-  "Choose an action": "Trieu una acció"
+  "Choose an action": "Trieu una acció",
+  "Filter by:": "Filtrar per:"
 }

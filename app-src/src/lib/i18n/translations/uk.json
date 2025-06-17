@@ -317,5 +317,6 @@
   "Share Specific Files": "Поділитися Конкретними Файлами",
   "Delete All": "Видалити Все",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Ви впевнені, що хочете видалити всі нові файли? Цю дію неможливо скасувати.",
-  "Choose an action": "Оберіть дію"
+  "Choose an action": "Оберіть дію",
+  "Filter by:": "Фільтрувати за:"
 }

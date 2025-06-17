@@ -317,5 +317,6 @@
   "Share Specific Files": "Споделяне на Конкретни Файлове",
   "Delete All": "Изтрий Всички",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Сигурни ли сте, че искате да изтриете всички нови файлове? Това действие не може да бъде отменено.",
-  "Choose an action": "Изберете действие"
+  "Choose an action": "Изберете действие",
+  "Filter by:": "Филтриране по:"
 }

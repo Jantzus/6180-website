@@ -317,5 +317,6 @@
   "Share Specific Files": "分享特定文件",
   "Delete All": "删除全部",
   "Are you sure you want to delete all new files? This action cannot be undone.": "您确定要删除所有新文件吗？此操作无法撤销。",
-  "Choose an action": "选择操作"
+  "Choose an action": "选择操作",
+  "Filter by:": "筛选:"
 }

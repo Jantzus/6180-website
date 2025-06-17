@@ -317,5 +317,6 @@
   "Share Specific Files": "ހާއް ފައިލް ހިއްސާ ކުރުން",
   "Delete All": "ހުރިހާ ކަމެއް ފޮހެލާ",
   "Are you sure you want to delete all new files? This action cannot be undone.": "ހުރިހާ އާ ފައިލްތައް ހުއްޓުވަން ބޭނުންވީ ޔަގީންތޯ؟ މި ޢަމަލު ކުރިކަމަށް ނުފެނޭ.",
-  "Choose an action": "ޢަމަލެއް ނެގުމާ"
+  "Choose an action": "ޢަމަލެއް ނެގުމާ",
+  "Filter by:": "ފިލްޓަރ:"
 }

@@ -9,14 +9,20 @@ import {
 } from "@/styles/styled-components";
 import { ResponsiveHeaderProps } from "@/lib/types";
 
-// ResponsiveHeader component with improved responsive behavior
-const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ 
+// Extended props to include buttonStyle
+interface ExtendedResponsiveHeaderProps extends ResponsiveHeaderProps {
+  buttonStyle?: React.CSSProperties;
+}
+
+// ResponsiveHeader component with improved responsive behavior and tighter spacing
+const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({ 
   addPhotosToAlbum, 
   saveAlbum, 
   promptForPassword, 
   showingEnterPassword, 
   passwordPolicy,
   usingFolderInviteGrantsRightToAddItems,
+  buttonStyle = {},
   t 
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,6 +31,12 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
   
   // Define our breakpoint - set this high enough to accommodate all buttons with comfortable spacing
   const BREAKPOINT = 840; // px - higher than typical tablet breakpoint to ensure buttons don't wrap
+  
+  // Default button style with reduced padding
+  const defaultButtonStyle: React.CSSProperties = {
+    padding: '8px 16px', // Reduced vertical padding by 4px
+    ...buttonStyle // Allow override from props
+  };
   
   // Check window width on mount and when resized
   useEffect(() => {
@@ -103,6 +115,10 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
               onClick={toggleMenu}
               aria-label={t('Menu')}
               aria-expanded={menuOpen}
+              style={{
+                padding: '6px 12px', // Tighter mobile padding
+                fontSize: '14px'
+              }}
             >
               <HamburgerIcon>
                 <HamburgerLine />
@@ -113,22 +129,34 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
             </MenuButton>
             
             {menuOpen && (
-              <DropdownMenu>
+              <DropdownMenu style={{
+                padding: '8px 0', // Reduced dropdown padding
+                gap: '4px' // Tighter spacing between menu items
+              }}>
                 {/* <DropdownMenuChoice onClick={() => handleAction(saveAlbum)}>
                   {t('Open On Phone')}
                 </DropdownMenuChoice>  */}
 
                 {usingFolderInviteGrantsRightToAddItems && (
-                  <DropdownMenuChoice onClick={() => handleAction(addPhotosToAlbum)}>
+                  <DropdownMenuChoice 
+                    onClick={() => handleAction(addPhotosToAlbum)}
+                    style={{ padding: '8px 16px' }} // Consistent mobile menu item padding
+                  >
                     {t('Add Photos To Album')}
                   </DropdownMenuChoice>
                 )}
 
-                <DropdownMenuChoice onClick={() => handleAction(saveAlbum)}>
+                <DropdownMenuChoice 
+                  onClick={() => handleAction(saveAlbum)}
+                  style={{ padding: '8px 16px' }} // Consistent mobile menu item padding
+                >
                   {t('Save To Library')}
                 </DropdownMenuChoice> 
 
-                <DropdownMenuChoice onClick={() => handleAction(saveAlbum)}>
+                <DropdownMenuChoice 
+                  onClick={() => handleAction(saveAlbum)}
+                  style={{ padding: '8px 16px' }} // Consistent mobile menu item padding
+                >
                   {t('Download')}
                 </DropdownMenuChoice>
               </DropdownMenu>
@@ -139,7 +167,14 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
         {/* Show Enter Password button if needed */}
         {showingEnterPassword && passwordPolicy && passwordPolicy !== 'NoPassword' && (
           <div style={{ flexShrink: 0 }}> 
-            <Button onClick={promptForPassword} $passwordSet={true}>
+            <Button 
+              onClick={promptForPassword} 
+              $passwordSet={true}
+              style={{
+                padding: '6px 12px', // Tighter mobile padding
+                fontSize: '14px'
+              }}
+            >
               {t('Enter Password')}
             </Button>
           </div>
@@ -153,7 +188,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
     <div style={{ 
       display: 'flex', 
       alignItems: 'center', 
-      gap: '20px',
+      gap: '16px', // Reduced from 20px to 16px for consistent spacing
       justifyContent: 'flex-end',
       flexWrap: 'nowrap'
     }}>
@@ -161,20 +196,29 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
       {!showingEnterPassword && (
         <div style={{ 
           display: 'flex', 
-          gap: '20px',
+          gap: '16px', // Reduced from 20px to 16px for consistent spacing
           flexWrap: 'nowrap'
         }}>
           {usingFolderInviteGrantsRightToAddItems && (
-            <Button onClick={addPhotosToAlbum}>
+            <Button 
+              onClick={addPhotosToAlbum}
+              style={defaultButtonStyle}
+            >
               {t('Add Photos')}
             </Button>
           )}
           
-          <Button onClick={saveAlbum}>
+          <Button 
+            onClick={saveAlbum}
+            style={defaultButtonStyle}
+          >
             {t('Save To Library')}
           </Button>
 
-          <Button onClick={saveAlbum}>
+          <Button 
+            onClick={saveAlbum}
+            style={defaultButtonStyle}
+          >
             {t('Download')}
           </Button>
         </div>
@@ -183,10 +227,14 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
       {/* Show Enter Password button if needed */}
       {showingEnterPassword && (
         <div>
-          <Button onClick={promptForPassword} $passwordSet={true}>
+          <Button 
+            onClick={promptForPassword} 
+            $passwordSet={true}
+            style={defaultButtonStyle}
+          >
             {t('Enter Password')}
           </Button>
-          </div>
+        </div>
       )}
     </div>
   );

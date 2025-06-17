@@ -4,44 +4,38 @@ import { MediaItem } from "@/lib/types";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 
-// Styled components for media tag filter display
+// Styled components for filter display
 const FilterContainer = styled.div<{ $isRTL: boolean }>`
   width: 100%;
-  margin-bottom: 24px;
-  padding: 16px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
+  /* Remove gray background, padding, border, and border-radius */
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
   direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
 `;
 
 const FilterSection = styled.div`
-  margin-bottom: 12px;
+  margin-bottom: 8px; /* Reduced from 12px to 8px for tighter spacing */
 
   &:last-child {
     margin-bottom: 0;
   }
+  
+  @media (max-width: 480px) {
+    margin-bottom: 6px; /* Tighter mobile spacing */
+  }
 `;
 
-const FilterLabel = styled.h3<{ $isRTL: boolean }>`
-  margin: 0 0 12px 0;
-  font-size: 14px;
-  font-weight: 600;
-  color: #495057;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-align: ${props => props.$isRTL ? 'right' : 'left'};
-`;
-
-const TagsScrollContainer = styled.div<{ $isRTL: boolean }>`
+const FilterRow = styled.div<{ $isRTL: boolean }>`
   display: flex;
   flex-direction: ${props => props.$isRTL ? 'row-reverse' : 'row'};
-  gap: 12px;
+  gap: 12px; /* Keep 12px horizontal spacing between tag buttons */
   overflow-x: auto;
-  padding-bottom: 8px;
+  padding-bottom: 6px; /* Reduced from 8px to 6px */
   -webkit-overflow-scrolling: touch;
   flex-wrap: nowrap;
+  align-items: center;
 
   /* Hide scrollbar for WebKit browsers */
   &::-webkit-scrollbar {
@@ -50,10 +44,15 @@ const TagsScrollContainer = styled.div<{ $isRTL: boolean }>`
   
   /* Hide scrollbar for Firefox */
   scrollbar-width: none;
+  
+  @media (max-width: 480px) {
+    gap: 8px; /* Tighter mobile spacing */
+    padding-bottom: 4px; /* Tighter mobile spacing */
+  }
 `;
 
 const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed: boolean }>`
-  padding: 6px 12px;
+  padding: 6px 12px; /* Keeping existing padding for good touch targets */
   border: 1px solid ${props => 
     props.$isDisplayed ? '#28a745' : 
     props.$isSelected ? '#007bff' : '#ced4da'
@@ -71,9 +70,12 @@ const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed: boolean }>
   transition: all 0.2s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  height: 40px;
+  height: 36px; /* Reduced from 40px to 36px */
   display: flex;
   align-items: center;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:hover {
     background: ${props => 
@@ -86,6 +88,14 @@ const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed: boolean }>
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 5px 10px; /* Slightly tighter mobile padding */
+    font-size: 12px;
+    height: 32px; /* Reduced mobile height */
+    max-width: 250px;
+    border-radius: 12px;
   }
 `;
 
@@ -100,6 +110,9 @@ const SubtagButton = styled.button<{ $isSelected: boolean }>`
   transition: all 0.2s ease;
   white-space: nowrap;
   flex-shrink: 0;
+  height: 28px; /* Reduced height for subtags */
+  display: flex;
+  align-items: center;
 
   &:hover {
     background: ${props => props.$isSelected ? '#0056b3' : '#e9ecef'};
@@ -110,10 +123,17 @@ const SubtagButton = styled.button<{ $isSelected: boolean }>`
     opacity: 0.6;
     cursor: not-allowed;
   }
+  
+  @media (max-width: 480px) {
+    padding: 3px 6px; /* Tighter mobile padding */
+    font-size: 11px;
+    height: 24px; /* Smaller mobile height */
+    border-radius: 8px;
+  }
 `;
 
 const SummaryText = styled.div<{ $isRTL: boolean }>`
-  margin-top: 8px;
+  margin-top: 6px; /* Reduced from 8px to 6px */
   font-size: 13px;
   color: #555;
   font-style: italic;
@@ -124,7 +144,36 @@ const EmptyState = styled.div`
   color: #6c757d;
   font-size: 13px;
   font-style: italic;
-  padding: 8px 0;
+  padding: 6px 0; /* Reduced from 8px to 6px */
+`;
+
+const ClearButton = styled.button`
+  padding: 6px 12px;
+  border: 1px solid #dc3545;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #dc3545;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  height: 36px; /* Reduced from 40px to 36px */
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background: #dc3545;
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+  
+  @media (max-width: 480px) {
+    padding: 5px 10px; /* Tighter mobile padding */
+    font-size: 12px;
+    height: 32px; /* Reduced mobile height */
+    border-radius: 12px;
+  }
 `;
 
 // Tag structure for display purposes
@@ -132,7 +181,7 @@ interface DisplayTag {
   key: string;
   TagType: string;
   tagTitle: string;
-  timestamp: number;
+  count: number; // Number of media items with this tag
   subtags: DisplaySubtag[];
 }
 
@@ -141,13 +190,13 @@ interface DisplaySubtag {
   TagType: string;
   tagTitle: string;
   subtagTitle: string;
-  timestamp: number;
+  count: number; // Number of media items with this subtag
 }
 
-// MediaTagsFilter Component with hierarchical multi-select filtering
+// Enhanced MediaTagsFilter Component
 type MediaTagsFilterProps = {
   mediaItems: MediaItem[];
-  onFilterChange: (filteredMediaItems: MediaItem[]) => void;
+  onFilterChange: (filteredItems: MediaItem[]) => void;
   resetFilter: () => void;
 };
 
@@ -158,6 +207,25 @@ export const MediaTagsFilter: React.FC<MediaTagsFilterProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  
+  // ✅ ADD DEBUG LOGGING AT THE START
+  console.log('🎯 MediaTagsFilter received props:', {
+    mediaItemsCount: mediaItems.length,
+    mediaItemsWithTags: mediaItems.filter(item => item.selectedTags && item.selectedTags.length > 0).length,
+    firstItemHasTags: mediaItems[0]?.selectedTags ? true : false,
+    firstItemTagCount: mediaItems[0]?.selectedTags?.length || 0,
+    sampleTags: mediaItems[0]?.selectedTags?.slice(0, 2) || []
+  });
+  
+  // Log each media item's tags
+  mediaItems.slice(0, 3).forEach((item, index) => {
+    console.log(`🎯 Filter received item ${index}:`, {
+      fileId: item.fileId,
+      hasSelectedTags: !!item.selectedTags,
+      tagCount: item.selectedTags?.length || 0,
+      tags: item.selectedTags?.map(tag => `${tag.tagTitle}(${tag.subtags?.length || 0})`) || []
+    });
+  });
   
   // State to track all unique tags across media items
   const [allTags, setAllTags] = useState<DisplayTag[]>([]);
@@ -171,21 +239,39 @@ export const MediaTagsFilter: React.FC<MediaTagsFilterProps> = ({
   // State to track tags from the currently visible media items
   const [visibleTags, setVisibleTags] = useState<DisplayTag[]>([]);
   
+  // Helper function to get selected subtags for a tag
+  const getSelectedSubtags = (tag: DisplayTag): DisplaySubtag[] => {
+    return tag.subtags.filter(subtag => selectedTagKeys.includes(subtag.key));
+  };
+  
+  // Helper function to render tag content with subtags
+  const renderTagContent = (tag: DisplayTag) => {
+    const selectedSubtags = getSelectedSubtags(tag);
+    
+    if (selectedSubtags.length === 0) {
+      return `${tag.tagTitle} (${tag.count})`;
+    }
+    
+    const subtagText = selectedSubtags.map(st => `${st.subtagTitle} (${st.count})`).join(', ');
+    return `${tag.tagTitle} (${subtagText})`;
+  };
+  
   // Extract all unique tags and subtags from media items and organize hierarchically
   useEffect(() => {
-    // Create maps to track the most recent timestamp for each tag and subtag
-    const tagsMap = new Map<string, { tag: DisplayTag; timestamp: number }>();
+    console.log('🏷️ MediaTagsFilter: Starting tag extraction from mediaItems:', mediaItems.length);
     
-    mediaItems.forEach((mediaItem, index) => {
-      // Use index as a timestamp substitute since media items might not have timestamps
-      const itemTimestamp = Date.now() - index; // Most recent items have higher timestamps
+    const tagsMap = new Map<string, { tag: DisplayTag; count: number }>();
+    
+    mediaItems.forEach((mediaItem, itemIndex) => {
+      console.log(`🏷️ Processing mediaItem ${itemIndex}:`, {
+        fileId: mediaItem.fileId,
+        hasSelectedTags: !!mediaItem.selectedTags,
+        selectedTagsLength: mediaItem.selectedTags?.length || 0
+      });
       
-      // Check if mediaItem has selectedTags (similar to file structure)
-      const selectedTags = (mediaItem as any).selectedTags;
-      if (!selectedTags) return;
-      
-      selectedTags.forEach((tag: any) => {
-        // Process main tag
+      mediaItem.selectedTags?.forEach((tag, tagIndex) => {
+        console.log(`  🏷️ Processing tag ${tagIndex}:`, tag);
+        
         const mainTagKey = `${tag.TagType}-${tag.tagTitle}`;
         
         if (!tagsMap.has(mainTagKey)) {
@@ -194,26 +280,26 @@ export const MediaTagsFilter: React.FC<MediaTagsFilterProps> = ({
               key: mainTagKey,
               TagType: tag.TagType,
               tagTitle: tag.tagTitle,
-              timestamp: itemTimestamp,
+              count: 0,
               subtags: []
             },
-            timestamp: itemTimestamp
+            count: 0
           });
-        } else {
-          // Update timestamp if this is more recent
-          const existing = tagsMap.get(mainTagKey)!;
-          if (itemTimestamp > existing.timestamp) {
-            existing.timestamp = itemTimestamp;
-            existing.tag.timestamp = itemTimestamp;
-          }
+          console.log(`    ✅ Created new tag: ${mainTagKey}`);
         }
         
-        // Process subtags
-        tag.subtags?.forEach((subtag: any) => {
-          const subtagKey = `${subtag.TagType}-${subtag.tagTitle}-${subtag.subtagTitle}`;
-          const mainTag = tagsMap.get(mainTagKey)!.tag;
+        // Increment count for this tag
+        const tagEntry = tagsMap.get(mainTagKey)!;
+        tagEntry.count++;
+        tagEntry.tag.count = tagEntry.count;
+        console.log(`    📊 Updated tag count: ${mainTagKey} = ${tagEntry.count}`);
+        
+        tag.subtags?.forEach((subtag, subtagIndex) => {
+          console.log(`    🏷️ Processing subtag ${subtagIndex}:`, subtag);
           
-          // Check if this subtag already exists for this main tag
+          const subtagKey = `${subtag.TagType}-${subtag.tagTitle}-${subtag.subtagTitle}`;
+          const mainTag = tagEntry.tag;
+          
           const existingSubtag = mainTag.subtags.find(s => s.key === subtagKey);
           
           if (!existingSubtag) {
@@ -222,67 +308,64 @@ export const MediaTagsFilter: React.FC<MediaTagsFilterProps> = ({
               TagType: subtag.TagType,
               tagTitle: subtag.tagTitle,
               subtagTitle: subtag.subtagTitle,
-              timestamp: itemTimestamp
+              count: 1
             });
+            console.log(`      ✅ Created new subtag: ${subtagKey}`);
           } else {
-            // Update timestamp if this is more recent
-            if (itemTimestamp > existingSubtag.timestamp) {
-              existingSubtag.timestamp = itemTimestamp;
-            }
+            existingSubtag.count++;
+            console.log(`      📊 Updated subtag count: ${subtagKey} = ${existingSubtag.count}`);
           }
         });
       });
     });
     
-    // Convert Map to array and sort by timestamp (most recent first)
+    // Convert tags to array and sort by count (descending)
     const tagsArray = Array.from(tagsMap.values())
-      .sort((a, b) => b.timestamp - a.timestamp)
+      .sort((a, b) => b.count - a.count)
       .map(entry => {
-        // Sort subtags by timestamp too
-        entry.tag.subtags.sort((a, b) => b.timestamp - a.timestamp);
+        entry.tag.subtags.sort((a, b) => b.count - a.count);
         return entry.tag;
       });
+    
+    console.log('🏷️ Final tags array:', {
+      totalTags: tagsArray.length,
+      tags: tagsArray.map(tag => ({
+        key: tag.key,
+        title: tag.tagTitle,
+        count: tag.count,
+        subtagsCount: tag.subtags.length
+      }))
+    });
     
     setAllTags(tagsArray);
     setVisibleTags(tagsArray);
   }, [mediaItems]);
   
   // Filter media items when tag/subtag selection changes
-  const filterMediaItems = (selectedKeys: string[]) => {
+  const filterByTags = (selectedKeys: string[]) => {
     if (selectedKeys.length === 0) {
       resetFilter();
       setVisibleTags(allTags);
       return;
     }
     
-    // Filter media items to only those containing ALL selected tags/subtags
-    const newFilteredMediaItems = mediaItems.filter(mediaItem => {
-      // Get all tag keys from this media item
-      const mediaItemTagKeys = new Set<string>();
+    const newFilteredItems = mediaItems.filter(mediaItem => {
+      const mediaTagKeys = new Set<string>();
       
-      const selectedTags = (mediaItem as any).selectedTags;
-      if (!selectedTags) return false;
-      
-      selectedTags.forEach((tag: any) => {
-        // Add main tag key
-        mediaItemTagKeys.add(`${tag.TagType}-${tag.tagTitle}`);
-        
-        // Add subtag keys
-        tag.subtags?.forEach((subtag: any) => {
-          mediaItemTagKeys.add(`${subtag.TagType}-${subtag.tagTitle}-${subtag.subtagTitle}`);
+      mediaItem.selectedTags?.forEach(tag => {
+        mediaTagKeys.add(`${tag.TagType}-${tag.tagTitle}`);
+        tag.subtags?.forEach(subtag => {
+          mediaTagKeys.add(`${subtag.TagType}-${subtag.tagTitle}-${subtag.subtagTitle}`);
         });
       });
       
-      // Check if ALL selected tags exist in this media item's tags
       return selectedKeys.every(selectedKey => 
-        mediaItemTagKeys.has(selectedKey)
+        mediaTagKeys.has(selectedKey)
       );
     });
     
-    // Update visible tags based on the filtered media items
-    updateVisibleTags(newFilteredMediaItems);
-    
-    onFilterChange(newFilteredMediaItems);
+    updateVisibleTags(newFilteredItems);
+    onFilterChange(newFilteredItems);
   };
   
   // Handle main tag click
@@ -291,22 +374,19 @@ export const MediaTagsFilter: React.FC<MediaTagsFilterProps> = ({
     const isDisplayed = displayedTagKey === tag.key;
     
     if (!isSelected) {
-      // Tag is not selected, select it for filtering
       const newSelectedKeys = [...selectedTagKeys, tag.key];
       setSelectedTagKeys(newSelectedKeys);
       setDisplayedTagKey(tag.key);
-      filterMediaItems(newSelectedKeys);
+      filterByTags(newSelectedKeys);
     } else if (isSelected && !isDisplayed) {
-      // Tag is selected but not displayed, display it to show subtags
       setDisplayedTagKey(tag.key);
     } else if (isSelected && isDisplayed) {
-      // Tag is selected and displayed, unselect it and hide subtags
       const newSelectedKeys = selectedTagKeys.filter(k => 
         k !== tag.key && !tag.subtags.some(s => s.key === k)
       );
       setSelectedTagKeys(newSelectedKeys);
       setDisplayedTagKey(null);
-      filterMediaItems(newSelectedKeys);
+      filterByTags(newSelectedKeys);
     }
   };
   
@@ -316,41 +396,39 @@ export const MediaTagsFilter: React.FC<MediaTagsFilterProps> = ({
     
     let newSelectedKeys: string[];
     if (isSelected) {
-      // Remove subtag from selection
       newSelectedKeys = selectedTagKeys.filter(k => k !== subtag.key);
     } else {
-      // Add subtag to selection
       newSelectedKeys = [...selectedTagKeys, subtag.key];
     }
     
     setSelectedTagKeys(newSelectedKeys);
-    filterMediaItems(newSelectedKeys);
+    filterByTags(newSelectedKeys);
+  };
+  
+  // Handle clear all filters
+  const handleClearAll = () => {
+    setSelectedTagKeys([]);
+    setDisplayedTagKey(null);
+    resetFilter();
+    setVisibleTags(allTags);
   };
   
   // Helper function to update visible tags based on filtered media items
-  const updateVisibleTags = (filteredMediaItems: MediaItem[]) => {
-    // Extract all unique tag keys from the filtered media items
+  const updateVisibleTags = (filteredItems: MediaItem[]) => {
     const tagKeysSet = new Set<string>();
     
-    filteredMediaItems.forEach(mediaItem => {
-      const selectedTags = (mediaItem as any).selectedTags;
-      if (!selectedTags) return;
-      
-      selectedTags.forEach((tag: any) => {
-        // Add main tag key
+    filteredItems.forEach(mediaItem => {
+      mediaItem.selectedTags?.forEach(tag => {
         tagKeysSet.add(`${tag.TagType}-${tag.tagTitle}`);
       });
     });
     
-    // Make sure all selected main tags remain visible
     selectedTagKeys.forEach(tagKey => {
-      // Check if this is a main tag key (not a subtag)
       if (!tagKey.includes('-', tagKey.indexOf('-') + 1)) {
         tagKeysSet.add(tagKey);
       }
     });
     
-    // Filter tags based on visible keys
     const newVisibleTags = allTags.filter(tag => 
       tagKeysSet.has(tag.key)
     );
@@ -361,60 +439,84 @@ export const MediaTagsFilter: React.FC<MediaTagsFilterProps> = ({
   // Get the currently displayed tag
   const displayedTag = displayedTagKey ? allTags.find(t => t.key === displayedTagKey) : null;
   
-  // Count total selections (main tags + subtags)
+  // Count total selections
   const totalSelections = selectedTagKeys.length;
   
+  // Check if we have any tags to show
+  const hasTags = allTags.length > 0;
+  
+  // ✅ ADD DEBUG LOGGING FOR COMPONENT RENDERING DECISION
+  console.log('🎯 MediaTagsFilter render decision:', {
+    allTagsLength: allTags.length,
+    hasTags,
+    willRender: hasTags
+  });
+  
   // If no tags found, don't render the component
-  if (allTags.length === 0) {
+  if (!hasTags) {
+    console.log('❌ MediaTagsFilter: No tags found, returning null');
     return null;
   }
   
+  console.log('✅ MediaTagsFilter: Rendering with tags');
+  
   return (
     <FilterContainer $isRTL={isRTL}>
+      {/* Main filter row with tags */}
       <FilterSection>
-        <TagsScrollContainer $isRTL={isRTL}>
-          {visibleTags.length > 0 ? (
-            visibleTags.map(tag => (
-              <TagButton
-                key={tag.key}
-                $isSelected={selectedTagKeys.includes(tag.key)}
-                $isDisplayed={displayedTagKey === tag.key}
-                onClick={() => handleTagClick(tag)}
-                title={`${tag.TagType}: ${tag.tagTitle}`}
-              >
-                {tag.tagTitle}
-              </TagButton>
-            ))
-          ) : (
-            <EmptyState>No tags available</EmptyState>
+        <FilterRow $isRTL={isRTL}>
+          {/* Clear all button - only show if there are selections */}
+          {totalSelections > 0 && (
+            <ClearButton onClick={handleClearAll}>
+              {t('Clear All')}
+            </ClearButton>
           )}
-        </TagsScrollContainer>
+          
+          {visibleTags.length > 0 ? (
+            visibleTags.map(tag => {
+              const selectedSubtags = getSelectedSubtags(tag);
+              const tooltipText = selectedSubtags.length > 0 
+                ? `${tag.TagType}: ${tag.tagTitle} (${selectedSubtags.map(st => st.subtagTitle).join(', ')})`
+                : `Click to add/remove: ${tag.TagType}: ${tag.tagTitle}`;
+              
+              return (
+                <TagButton
+                  key={tag.key}
+                  $isSelected={selectedTagKeys.includes(tag.key)}
+                  $isDisplayed={displayedTagKey === tag.key}
+                  onClick={() => handleTagClick(tag)}
+                  title={tooltipText}
+                >
+                  {renderTagContent(tag)}
+                </TagButton>
+              );
+            })
+          ) : (
+            <EmptyState>{t('No tags available')}</EmptyState>
+          )}
+        </FilterRow>
       </FilterSection>
 
       {/* Subtags section - only show when a tag is displayed */}
       {displayedTag && displayedTag.subtags.length > 0 && (
         <FilterSection>
-          <FilterLabel $isRTL={isRTL}>
-            Subtags for "{displayedTag.tagTitle}"
-          </FilterLabel>
-          
-          <TagsScrollContainer $isRTL={isRTL}>
+          <FilterRow $isRTL={isRTL}>
             {displayedTag.subtags.map(subtag => (
               <SubtagButton
                 key={subtag.key}
                 $isSelected={selectedTagKeys.includes(subtag.key)}
                 onClick={() => handleSubtagClick(subtag)}
-                title={`${subtag.TagType}: ${subtag.tagTitle} → ${subtag.subtagTitle}`}
+                title={`Click to add/remove: ${subtag.TagType}: ${subtag.tagTitle} → ${subtag.subtagTitle}`}
               >
-                {subtag.subtagTitle}
+                {subtag.subtagTitle} ({subtag.count})
               </SubtagButton>
             ))}
-          </TagsScrollContainer>
+          </FilterRow>
         </FilterSection>
       )}
       
       {/* Show selection summary if multiple items are selected */}
-      {totalSelections > 1 && (
+      {totalSelections > 0 && (
         <SummaryText $isRTL={isRTL}>
           {t('Showing photos with all selected tags')}
         </SummaryText>

@@ -71,8 +71,8 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
 }) => {
   return (
     <div style={{
-      padding: '24px',
-      marginBottom: '24px',
+      padding: '32px',
+      marginBottom: '32px',
       backgroundColor: '#f8f9fa',
       border: '2px solid #e9ecef',
       borderRadius: '12px',
@@ -85,7 +85,7 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
         fontSize: '18px',
         color: '#495057',
         fontWeight: '600',
-        marginBottom: '20px',
+        marginBottom: '24px',
         flexDirection: isRTL ? 'row-reverse' : 'row'
       }}>
         <span style={{ marginRight: isRTL ? '0' : '12px', marginLeft: isRTL ? '12px' : '0', fontSize: '20px' }}>
@@ -99,7 +99,7 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
   );
 };
 
-// NEW: New Photos Section Component (styled like Existing Files) - Updated with delete all
+// NEW: New Photos Section Component (styled like Existing Files) - Updated with delete all and soft selection styling
 const NewPhotosSection = ({ 
   selectedPhotos,
   selectedPhotoIndices, 
@@ -127,14 +127,14 @@ const NewPhotosSection = ({
 
   return (
     <div style={{ 
-      marginBottom: '24px',
+      marginBottom: '32px',
       direction: isRTL ? 'rtl' : 'ltr'
     }}>
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: '16px',
+        marginBottom: '24px',
         flexDirection: isRTL ? 'row-reverse' : 'row'
       }}>
         <h3 style={{
@@ -224,7 +224,7 @@ const NewPhotosSection = ({
   );
 };
 
-// Updated ExistingFilesSection Component with simplified delete button behavior
+// Updated ExistingFilesSection Component with soft selection styling
 const ExistingFilesSection = ({ 
   existingFiles, 
   selectedExistingIndices, 
@@ -250,14 +250,14 @@ const ExistingFilesSection = ({
 
   return (
     <div style={{ 
-      marginBottom: '24px',
+      marginBottom: '32px',
       direction: isRTL ? 'rtl' : 'ltr'
     }}>
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: '16px',
+        marginBottom: '24px',
         flexDirection: isRTL ? 'row-reverse' : 'row'
       }}>
         <h3 style={{
@@ -306,11 +306,12 @@ const ExistingFilesSection = ({
       <div style={{
         display: 'flex',
         overflowX: 'auto',
-        gap: '12px',
-        padding: '16px',
+        gap: '16px',
+        padding: '20px',
         border: '2px dashed #007bff',
-        borderRadius: '8px',
+        borderRadius: '12px',
         backgroundColor: '#fff',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
         scrollbarWidth: 'thin',
         scrollbarColor: '#007bff #f8f9fa'
       }}>
@@ -325,12 +326,14 @@ const ExistingFilesSection = ({
                 width: '160px',
                 height: '160px',
                 flexShrink: 0,
-                borderRadius: '8px',
+                borderRadius: '12px',
                 overflow: 'hidden',
-                border: isSelected ? '3px solid #007bff' : '2px solid #ddd',
+                border: isSelected ? '2px solid rgba(0, 123, 255, 0.6)' : '2px solid #ddd',
                 cursor: disabled ? 'not-allowed' : 'pointer',
                 opacity: disabled ? 0.6 : 1,
-                transition: 'all 0.2s ease'
+                transition: 'all 0.3s ease',
+                boxShadow: isSelected ? '0 0 0 3px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 123, 255, 0.15)' : '0 2px 8px rgba(0, 0, 0, 0.04)',
+                transform: isSelected ? 'translateY(-2px)' : 'translateY(0)'
               }}
               onClick={() => !disabled && onToggleSelection(index)}
             >
@@ -345,7 +348,7 @@ const ExistingFilesSection = ({
                 }}
               />
               
-              {/* Selection Indicator Text */}
+              {/* Soft Selection Indicator */}
               {isSelected && (
                 <div style={{
                   position: 'absolute',
@@ -355,53 +358,56 @@ const ExistingFilesSection = ({
                   background: 'rgba(0, 123, 255, 0.9)',
                   color: 'white',
                   padding: '4px 8px',
-                  borderRadius: '4px',
+                  borderRadius: '6px',
                   fontSize: '11px',
-                  fontWeight: 'bold',
+                  fontWeight: '600',
                   textAlign: 'center',
-                  zIndex: 10
+                  zIndex: 10,
+                  backdropFilter: 'blur(4px)'
                 }}>
                   SELECTED
                 </div>
               )}
 
-              {/* Individual Delete Button - Only show when selected */}
+              {/* Soft Delete Button - Only show when selected and on hover */}
               {isSelected && !disabled && (
                 <button
                   onClick={(e) => {
-                    e.stopPropagation(); // Prevent triggering the selection toggle
+                    e.stopPropagation();
                     if (confirm(t('Are you sure you want to remove this file?'))) {
                       onDeleteFile(index);
                     }
                   }}
                   style={{
                     position: 'absolute',
-                    top: '8px',
-                    right: '8px',
-                    width: '24px',
-                    height: '24px',
+                    top: '6px',
+                    right: '6px',
+                    width: '18px',
+                    height: '18px',
                     borderRadius: '50%',
                     border: 'none',
-                    backgroundColor: 'rgba(220, 53, 69, 0.9)',
+                    backgroundColor: 'rgba(220, 53, 69, 0.8)',
                     color: 'white',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '14px',
-                    fontWeight: '900',
-                    zIndex: 20,
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    zIndex: 15,
+                    opacity: 0,
                     transition: 'all 0.2s ease',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                    lineHeight: '1'
+                    transform: 'scale(0.8)'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 1)';
-                    e.currentTarget.style.transform = 'scale(1.1)';
+                    e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 0.9)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.opacity = '1';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.9)';
-                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.8)';
+                    e.currentTarget.style.transform = 'scale(0.8)';
+                    e.currentTarget.style.opacity = '0';
                   }}
                   title={t('Remove file')}
                 >
@@ -1070,7 +1076,7 @@ const SaveAlbum = () => {
     <>
       <GlobalStyle />
       
-      {/* NEW: Fixed Header with Settings Dropdown and Save Button */}
+      {/* Updated Fixed Header with proper alignment and gear icon positioning */}
       <FixedHeader>
         <FixedHeaderContent>
           <ProfileLink href="my-albums.html">
@@ -1078,21 +1084,7 @@ const SaveAlbum = () => {
           </ProfileLink>
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            {/* Save Album Button */}
-            <Button
-              $primary
-              onClick={handleSaveAlbum}
-              disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
-              style={{
-                minWidth: '120px',
-                fontSize: '14px',
-                padding: '8px 16px'
-              }}
-            >
-              {isSavingAlbum ? t('Saving...') : t('Save Album')}
-            </Button>
-
-            {/* Settings Dropdown - Only show if user is creator */}
+            {/* Settings Dropdown - Moved to left side of Save Album button */}
             {isCreator === true && (
               <div 
                 className="settings-dropdown-container"
@@ -1224,14 +1216,28 @@ const SaveAlbum = () => {
                 )}
               </div>
             )}
+
+            {/* Save Album Button */}
+            <Button
+              $primary
+              onClick={handleSaveAlbum}
+              disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+              style={{
+                minWidth: '120px',
+                fontSize: '14px',
+                padding: '8px 16px'
+              }}
+            >
+              {isSavingAlbum ? t('Saving...') : t('Save Album')}
+            </Button>
           </div>
         </FixedHeaderContent>
       </FixedHeader>
 
       {/* NEW: Use Body component for proper fixed header spacing */}
       <Body $isRTL={isRTL}>
-        {/* Folder Details - Only show if user is creator */}
-        <div style={{ marginTop: showFolderDetails && isCreator === true ? '24px' : '0' }}>
+        {/* Folder Details - Only show if user is creator with updated placeholder text */}
+        <div style={{ marginTop: showFolderDetails && isCreator === true ? '32px' : '0' }}>
           <FolderDetailsComponent
             showFolderDetails={showFolderDetails}
             isCreator={isCreator}
@@ -1278,7 +1284,7 @@ const SaveAlbum = () => {
           <TaggingSectionContainer t={t} isRTL={isRTL}>
             {/* Existing Files Section */}
             {existingFiles.length > 0 && (
-              <div style={{ marginBottom: '24px' }}>
+              <div style={{ marginBottom: '32px' }}>
                 <ExistingFilesSection
                   existingFiles={existingFiles}
                   selectedExistingIndices={selectedExistingIndices}
@@ -1309,7 +1315,7 @@ const SaveAlbum = () => {
             
             {/* Tags Selection Section - Only show when photos are selected */}
             {hasSelectedPhotos && (
-              <div style={{ marginTop: '24px' }}>
+              <div style={{ marginTop: '32px' }}>
                 <TagsDisplay 
                   tagsManager={tagsManager}
                   disabled={isTaggingDisabled}

@@ -2,48 +2,50 @@ import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { TagData, SubtagData, useTagsManagement } from './useTagsManagement';
 
-// Styled components for tag display
+// Styled components for tag display with improved spacing and soft selection
 const TagsContainer = styled.div`
-  margin: 16px 0;
+  margin: 32px 0; /* Increased spacing */
 `;
 
 const TagsSection = styled.div`
-  margin-bottom: 12px;
+  margin-bottom: 24px; /* Increased spacing */
 `;
 
 const TagsLabel = styled.h3`
-  margin: 0 0 8px 0;
+  margin: 0 0 16px 0; /* Increased spacing */
   font-size: 14px;
   font-weight: 600;
   color: #495057;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px; /* Increased spacing */
 `;
 
 const TagsRow = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px; /* Increased spacing */
   align-items: center;
   min-height: 32px;
 `;
 
 const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed?: boolean; $isBeingDeleted?: boolean }>`
   position: relative;
-  padding: 6px 12px;
+  padding: 8px 16px; /* Increased padding */
   border: 1px solid ${props => props.$isSelected ? '#007bff' : '#ced4da'};
-  border-radius: 16px;
+  border-radius: 20px; /* More rounded for modern look */
   background: ${props => props.$isSelected ? '#007bff' : '#ffffff'};
   color: ${props => props.$isSelected ? '#ffffff' : '#495057'};
   font-size: 13px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s ease; /* Smoother transition */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Soft shadow */
   
   ${props => props.$isDisplayed && `
     border-color: #28a745;
     background: #28a745;
     color: white;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3), 0 4px 12px rgba(40, 167, 69, 0.15);
   `}
 
   ${props => props.$isBeingDeleted && `
@@ -52,49 +54,57 @@ const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed?: boolean; 
   `}
 
   &:hover {
-    background: ${props => props.$isSelected ? '#0056b3' : '#e9ecef'};
+    background: ${props => props.$isSelected ? '#0056b3' : '#f8f9fa'};
+    transform: translateY(-1px); /* Subtle lift effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
     ${props => props.$isDisplayed && `
       background: #1e7e34;
+      box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.4), 0 6px 16px rgba(40, 167, 69, 0.2);
     `}
   }
 
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    transform: none;
   }
 `;
 
 const SubtagButton = styled(TagButton)`
   font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 12px;
+  padding: 6px 12px; /* Adjusted padding */
+  border-radius: 16px; /* Slightly less rounded */
 `;
 
 const DeleteButton = styled.button`
   position: absolute;
-  top: -4px;
-  right: -4px;
-  width: 16px;
-  height: 16px;
+  top: -6px; /* Adjusted position */
+  right: -6px;
+  width: 18px; /* Slightly larger */
+  height: 18px;
   border: none;
   border-radius: 50%;
-  background: #dc3545;
+  background: rgba(220, 53, 69, 0.9); /* More opaque */
   color: white;
-  font-size: 10px;
+  font-size: 11px; /* Slightly larger */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3); /* Soft shadow */
 
   &:hover {
     background: #c82333;
     transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
   }
 
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    transform: none;
   }
 `;
 
@@ -102,43 +112,55 @@ const LoadingText = styled.div`
   color: #6c757d;
   font-size: 13px;
   font-style: italic;
+  padding: 16px; /* Added padding */
 `;
 
 const EmptyState = styled.div`
   color: #6c757d;
   font-size: 13px;
   font-style: italic;
+  padding: 16px; /* Added padding */
 `;
 
 const ActionButton = styled.button`
-  padding: 4px 8px;
+  padding: 8px 16px; /* Increased padding */
   border: 1px solid #6c757d;
-  border-radius: 12px;
+  border-radius: 16px; /* More rounded */
   background: transparent;
   color: #6c757d;
   font-size: 12px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s ease; /* Smoother transition */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Soft shadow */
 
   &:hover {
     background: #6c757d;
     color: white;
+    transform: translateY(-1px); /* Subtle lift effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    transform: none;
   }
 `;
 
 const InputContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 8px;
+  gap: 6px; /* Increased gap */
+  padding: 6px 12px; /* Increased padding */
   border: 1px solid #007bff;
-  border-radius: 12px;
+  border-radius: 16px; /* More rounded */
   background: white;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1); /* Soft shadow */
+  transition: all 0.2s ease;
+  
+  &:focus-within {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 123, 255, 0.15);
+  }
 `;
 
 const TagInput = styled.input`
@@ -146,11 +168,12 @@ const TagInput = styled.input`
   outline: none;
   font-size: 12px;
   background: transparent;
-  min-width: 80px;
+  min-width: 100px; /* Increased min-width */
   max-width: 200px;
 
   &::placeholder {
     color: #999;
+    opacity: 0.7;
   }
 `;
 
@@ -158,30 +181,33 @@ const InputButton = styled.button`
   border: none;
   background: transparent;
   color: #007bff;
-  font-size: 10px;
+  font-size: 11px; /* Slightly larger */
   cursor: pointer;
-  padding: 2px 4px;
-  border-radius: 4px;
-  transition: all 0.2s;
+  padding: 4px 6px; /* Increased padding */
+  border-radius: 6px; /* More rounded */
+  transition: all 0.2s ease;
 
   &:hover {
     background: #007bff;
     color: white;
+    transform: scale(1.05); /* Subtle scale effect */
   }
 
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    transform: none;
   }
 `;
 
 const InfoBadge = styled.span`
   background: #6c757d;
   color: white;
-  padding: 2px 6px;
-  border-radius: 10px;
+  padding: 3px 8px; /* Increased padding */
+  border-radius: 12px; /* More rounded */
   font-size: 10px;
   font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
 `;
 
 // Tag with delete functionality component
@@ -496,28 +522,31 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = ({
         />
       )}
 
-      {/* Instructions for photo tagging */}
+      {/* Instructions for photo tagging with improved styling */}
       {selectedTags.length > 0 && (
         <div style={{
-          marginTop: '12px',
-          padding: '12px 16px',
-          background: '#e7f3ff',
-          borderRadius: '6px',
+          marginTop: '24px', /* Increased spacing */
+          padding: '20px 24px', /* Increased padding */
+          background: 'linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%)', /* Gradient background */
+          borderRadius: '12px', /* More rounded */
           fontSize: '13px',
           color: '#0c5aa6',
-          border: '1px solid #b3d9ff'
+          border: '1px solid #b3d9ff',
+          boxShadow: '0 4px 12px rgba(0, 123, 255, 0.08)' /* Soft shadow */
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-            <span>✅</span>
-            <strong>Tags Applied:</strong>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+            <span style={{ fontSize: '16px' }}>✅</span>
+            <strong style={{ fontSize: '14px' }}>Tags Applied:</strong>
           </div>
-          All selected files will have <strong>{selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''}</strong> applied to them when you save the album.<br/>
-          <strong>Selected tags:</strong> {selectedTags.map(tag => {
-            const subtagNames = tag.subtags.map(s => s.subtagTitle);
-            return subtagNames.length > 0 
-              ? `${tag.tagTitle} (${subtagNames.join(', ')})` 
-              : tag.tagTitle;
-          }).join(', ')}
+          <div style={{ lineHeight: '1.5' }}>
+            All selected files will have <strong>{selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''}</strong> applied to them when you save the album.<br/>
+            <strong>Selected tags:</strong> {selectedTags.map(tag => {
+              const subtagNames = tag.subtags.map(s => s.subtagTitle);
+              return subtagNames.length > 0 
+                ? `${tag.tagTitle} (${subtagNames.join(', ')})` 
+                : tag.tagTitle;
+            }).join(', ')}
+          </div>
         </div>
       )}
     </TagsContainer>
@@ -664,10 +693,12 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
       right: '8px',
       background: 'rgba(0, 0, 0, 0.7)',
       color: 'white',
-      padding: '4px 8px',
-      borderRadius: '4px',
+      padding: '6px 12px', /* Increased padding */
+      borderRadius: '6px', /* More rounded */
       fontSize: '12px',
-      cursor: onToggleSelection ? 'pointer' : 'default'
+      cursor: onToggleSelection ? 'pointer' : 'default',
+      backdropFilter: 'blur(4px)', /* Subtle blur effect */
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)' /* Soft shadow */
     }}
     onClick={onToggleSelection}>
       {photoTags.length > 0 ? (

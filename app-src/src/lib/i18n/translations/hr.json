@@ -317,5 +317,6 @@
   "Share Specific Files": "Dijeli Određene Datoteke",
   "Delete All": "Izbriši Sve",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Jeste li sigurni da želite obrisati sve nove datoteke? Ova radnja se ne može poništiti.",
-  "Choose an action": "Odaberite radnju"
+  "Choose an action": "Odaberite radnju",
+  "Filter by:": "Filtriraj po:"
 }

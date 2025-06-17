@@ -317,5 +317,6 @@
   "Share Specific Files": "သီးခြားဖိုင်များ မျှဝေခြင်း",
   "Delete All": "အားလုံးကိုဖျက်ပါ",
   "Are you sure you want to delete all new files? This action cannot be undone.": "ဖိုင်အသစ်များအားလုံးကို ဖယ်ရှားလိုသည်မှာ သေချာပါသလား? ဤလုပ်ဆောင်ချက်ကို ပြန်လည်ပြုပြင်မရပါ။",
-  "Choose an action": "လုပ်ဆောင်မှုတစ်ခုရွေးချယ်ပါ"
+  "Choose an action": "လုပ်ဆောင်မှုတစ်ခုရွေးချယ်ပါ",
+  "Filter by:": "စစ်ထုတ်မည်:"
 }

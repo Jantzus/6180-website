@@ -317,5 +317,6 @@
   "Share Specific Files": "Билгеле Файлларны Бүлешү",
   "Delete All": "Барысын да Бетерергә",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Барлык яңа файлларны бетерергә теләвегезгә ышанасызмы? Бу гамәлне кире кайтарып булмый.",
-  "Choose an action": "Гамәл сайлагыз"
+  "Choose an action": "Гамәл сайлагыз",
+  "Filter by:": "Филтрлау:"
 }

@@ -317,5 +317,6 @@
   "Share Specific Files": "Maxsus Fayllarni Ulashish",
   "Delete All": "Barchasini O'chirish",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Barcha yangi fayllarni o'chirishni istaysizmi? Bu amaliyotni bekor qilib bo'lmaydi.",
-  "Choose an action": "Harakatni tanlang"
+  "Choose an action": "Harakatni tanlang",
+  "Filter by:": "Filtr:"
 }

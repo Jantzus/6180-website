@@ -317,5 +317,6 @@
   "Share Specific Files": "Belirli Dosyaları Paylaş",
   "Delete All": "Hepsini Sil",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Tüm yeni dosyaları silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
-  "Choose an action": "Bir eylem seçin"
+  "Choose an action": "Bir eylem seçin",
+  "Filter by:": "Filtrele:"
 }

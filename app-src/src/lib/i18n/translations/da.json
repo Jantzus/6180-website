@@ -317,5 +317,6 @@
   "Share Specific Files": "Del Specifikke Filer",
   "Delete All": "Slet Alle",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Er du sikker på, at du vil slette alle nye filer? Denne handling kan ikke fortrydes.",
-  "Choose an action": "Vælg en handling"
+  "Choose an action": "Vælg en handling",
+  "Filter by:": "Filtrer efter:"
 }

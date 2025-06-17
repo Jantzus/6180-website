@@ -317,5 +317,6 @@
   "Share Specific Files": "Dalintis Konkrečiais Failais",
   "Delete All": "Ištrinti Viską",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Ar tikrai norite ištrinti visus naujus failus? Šis veiksmas negali būti atšauktas.",
-  "Choose an action": "Pasirinkite veiksmą"
+  "Choose an action": "Pasirinkite veiksmą",
+  "Filter by:": "Filtruoti pagal:"
 }

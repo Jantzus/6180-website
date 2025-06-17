@@ -317,5 +317,6 @@
   "Share Specific Files": "განსაზღვრული ფაილების გაზიარება",
   "Delete All": "ყველაფრის წაშლა",
   "Are you sure you want to delete all new files? This action cannot be undone.": "დარწმუნებული ხართ, რომ გსურთ ყველა ახალი ფაილის წაშლა? ეს მოქმედება გაუქმებადი არ არის.",
-  "Choose an action": "აირჩიეთ მოქმედება"
+  "Choose an action": "აირჩიეთ მოქმედება",
+  "Filter by:": "ფილტრაცია:"
 }

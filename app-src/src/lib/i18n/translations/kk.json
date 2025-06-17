@@ -317,5 +317,6 @@
   "Share Specific Files": "Белгілі Файлдарды Бөлісу",
   "Delete All": "Барлығын Жою",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Барлық жаңа файлдарды жойғыңыз келетініне сенімдісіз бе? Бұл әрекетті қайтару мүмкін емес.",
-  "Choose an action": "Әрекетті таңдаңыз"
+  "Choose an action": "Әрекетті таңдаңыз",
+  "Filter by:": "Сүзу:"
 }

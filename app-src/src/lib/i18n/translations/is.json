@@ -317,5 +317,6 @@
   "Share Specific Files": "Deila Ákveðnum Skrám",
   "Delete All": "Eyða Öllu",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Ertu viss um að þú viljir eyða öllum nýjum skrám? Þessa aðgerð er ekki hægt að afturkalla.",
-  "Choose an action": "Veldu aðgerð"
+  "Choose an action": "Veldu aðgerð",
+  "Filter by:": "Sía eftir:"
 }

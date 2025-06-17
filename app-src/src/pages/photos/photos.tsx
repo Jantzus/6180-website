@@ -40,20 +40,23 @@ import {
 } from "./components";
 
 // Import the new Enhanced MediaTagsFilter component
-import { EnhancedMediaTagsFilter } from "./EnhancedMediaTagsFilter";
+import { MediaTagsFilter } from "./MediaTagsFilter";
 
-// Import styled components
+// Import styled components with new layout styles
 import { 
   Body, 
   MediaContainer,
   GlobalStyle,
-  // Add the new brand header components:
+  // Updated brand header components with reduced padding:
   FixedHeader,
   FixedHeaderContent,
   BrandLink,
   BrandLogo,
   BrandLogoContainer,
-  BrandSlogan
+  // Updated layout+filter control components with improved spacing:
+  LayoutFilterBlock,
+  ControlLabel,
+  ColumnsSelector
 } from "@/styles/styled-components";
 
 // Import components
@@ -158,11 +161,21 @@ const PhotoAlbumContent: React.FC = () => {
   } = fullscreenView;
   
   const {
-    isSelectionMode, setIsSelectionMode, selectedItems, toggleItemSelection, cancelSelection
+    isSelectionMode, setIsSelectionMode, selectedItems, toggleItemSelection, 
+    selectAll, unselectAll, cancelSelection
   } = selectionMode;
   
   // Initialize share actions hook
   const shareActions = useShareActions(albumData, folderId, cognitoUsername, t);
+
+  // Wrapper functions to pass the correct parameters to the hook functions
+  const handleSelectAll = () => selectAll(filteredMediaItems.length);
+  const handleUnselectAll = () => unselectAll();
+
+  // Check if any media items have tags
+  const hasAnyTags = albumData?.mediaItems?.some(item => 
+    item.selectedTags && item.selectedTags.length > 0
+  ) || false;
 
   // NEW: Prewarm S3 credentials when the page loads for extra reliability
   useEffect(() => {
@@ -226,12 +239,18 @@ const PhotoAlbumContent: React.FC = () => {
   const handleMediaFilterChange = (newFilteredItems: MediaItem[]) => {
     setFilteredMediaItems(newFilteredItems);
     setIsMediaFiltered(true);
+    
+    // Clear selections when filter changes since item indices change
+    selectedItems.clear();
   };
 
   const resetMediaFilter = () => {
     if (albumData?.mediaItems) {
       setFilteredMediaItems(albumData.mediaItems);
       setIsMediaFiltered(false);
+      
+      // Clear selections when filter is reset since item indices change
+      selectedItems.clear();
     }
   };
   
@@ -756,9 +775,15 @@ const PhotoAlbumContent: React.FC = () => {
     <>
       <GlobalStyle />
       
-      {/* 6180 Brand Header - Fixed positioning, outside any containers */}
-      <FixedHeader>
-        <FixedHeaderContent>
+      {/* 6180 Brand Header - Reduced padding by 35% */}
+      <FixedHeader style={{ padding: '12px 0' }}>
+        <FixedHeaderContent style={{ 
+          padding: '0 24px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        }}>
+          {/* Left side: Logo and Home text */}
           <BrandLink 
             href="https://6180.io" 
             target="_blank" 
@@ -770,18 +795,19 @@ const PhotoAlbumContent: React.FC = () => {
                 src={generateUrl("images/logo_no_background.png")}
                 alt={t('6180 Logo')}
               />
-              <span style={{ marginLeft: '8px', fontSize: '18px', fontWeight: 'bold' }}>
+              <span style={{ marginLeft: isRTL ? '0' : '8px', marginRight: isRTL ? '8px' : '0', fontSize: '20px', fontWeight: '700' }}>
                 {cognitoUsername ? t('Home') : t('6180')}
               </span>
             </BrandLogoContainer>
           </BrandLink>
           
-          <BrandSlogan 
-            href="https://6180.io" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            aria-label={t(slogans[currentSloganIndex])}
+          {/* Right side: Tagline in original position, smaller italic font */}
+          <div 
             style={{ 
+              fontSize: '14px',
+              fontStyle: 'italic',
+              color: '#666',
+              textAlign: isRTL ? 'left' : 'right',
               transition: 'opacity 0.8s ease-in-out, transform 0.8s ease-in-out',
               opacity: sloganVisible ? 1 : 0,
               transform: sloganVisible ? 'translateY(0)' : 'translateY(-1px)',
@@ -789,18 +815,20 @@ const PhotoAlbumContent: React.FC = () => {
             }}
           >
             {t(slogans[currentSloganIndex])}
-          </BrandSlogan>
+          </div>
         </FixedHeaderContent>
       </FixedHeader>
 
-      {/* Body content - now has proper padding for fixed header */}
-      <Body $isRTL={isRTL}>
+      {/* Body content - adjusted padding for new header height */}
+      <Body $isRTL={isRTL} style={{ paddingTop: '88px' }}>
         <AlbumHeader
           t={t}
           isSelectionMode={isSelectionMode}
           selectedItems={selectedItems}
           shareSelectPhotos={shareSelectPhotos}
           cancelSelection={cancelSelection}
+          selectAll={handleSelectAll}
+          unselectAll={handleUnselectAll}
           showingEnterPassword={showingEnterPassword}
           promptForPassword={promptForPassword}
           passwordPolicy={passwordPolicy}
@@ -810,11 +838,12 @@ const PhotoAlbumContent: React.FC = () => {
           handleDownloadPhotos={handleDownloadPhotos}
           handleCopyLink={() => shareActions.setShowingCopyLinkAlert(true)}
           albumData={albumData}
-          columns={columns}
-          changeColumns={changeColumns}
         />
 
-        <MediaContainer id="media-container">
+        <MediaContainer id="media-container" style={{
+          paddingTop: '12px', // Reduced from default to tighten spacing after header
+          paddingBottom: '24px' // Keep bottom padding
+        }}>
           {/* Select Photos Button */}
           <SelectPhotosButton 
             showSelectPhotosButton={showSelectPhotosButton}
@@ -825,11 +854,11 @@ const PhotoAlbumContent: React.FC = () => {
           
           {/* Enhanced Upload Progress Component with more detailed status */}
           {isUploading && (
-            <div style={{ width: '100%', marginBottom: '20px' }}>
+            <div style={{ width: '100%', marginBottom: '16px' }}>
               <UploadProgress 
                 progressTracker={progressTracker} 
                 isRTL={getLanguageDirection(language) === "rtl"}
-                style={{ marginTop: '20px' }}
+                style={{ marginTop: '16px' }}
                 showSuccessMessage={true}
                 showErrorMessage={true}
               />
@@ -848,29 +877,73 @@ const PhotoAlbumContent: React.FC = () => {
             t={t}
           />
           
-          {/* Enhanced Media Tags Filter */}
+          {/* UPDATED: Unified Layout + Filter Control Block with improved styling */}
           {albumData?.mediaItems && albumData.mediaItems.length > 0 && (
-            <EnhancedMediaTagsFilter
-              mediaItems={albumData.mediaItems}
-              onFilterChange={handleMediaFilterChange}
-              resetFilter={resetMediaFilter}
-            />
+            <LayoutFilterBlock style={{
+              background: 'rgba(248, 249, 250, 0.8)',
+              border: '1px solid #e9ecef',
+              borderRadius: '8px',
+              padding: '16px',
+              marginBottom: '16px',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+            }}>
+              {/* Columns Selector - reduced spacing for premium compact feel */}
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '8px', 
+                marginBottom: hasAnyTags ? '8px' : '0'
+              }}>
+                <ControlLabel style={{ margin: '0' }}>{t('Columns:')}</ControlLabel>
+                <ColumnsSelector
+                  value={columns}
+                  onChange={(e) => changeColumns(e.target.value)}
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </ColumnsSelector>
+              </div>
+              
+              {/* Filter Tags - only show if there are tags */}
+              {hasAnyTags && (
+                <div style={{ 
+                  display: 'flex', 
+                  alignItems: 'flex-start', 
+                  gap: '8px',
+                  flexWrap: 'wrap'
+                }}>
+                  <ControlLabel style={{ margin: '0', paddingTop: '6px', flexShrink: 0 }}>{t('Filter by:')}</ControlLabel>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <MediaTagsFilter
+                      mediaItems={albumData.mediaItems}
+                      onFilterChange={handleMediaFilterChange}
+                      resetFilter={resetMediaFilter}
+                    />
+                  </div>
+                </div>
+              )}
+            </LayoutFilterBlock>
           )}
           
-          {/* Media Grid */}
-          <AlbumMediaGrid
-            isLoading={isLoading}
-            error={error}
-            albumData={displayAlbumData}
-            columns={columns}
-            shouldShowContent={shouldShowContent}
-            shouldShowWatermark={shouldShowWatermark}
-            isSelectionMode={isSelectionMode}
-            selectedItems={selectedItems}
-            toggleItemSelection={toggleItemSelection}
-            openFullscreenView={openFullscreenView}
-            t={t}
-          />
+          {/* Media Grid - reduced spacing */}
+          <div style={{ marginTop: '16px' }}>
+            <AlbumMediaGrid
+              isLoading={isLoading}
+              error={error}
+              albumData={displayAlbumData}
+              columns={columns}
+              shouldShowContent={shouldShowContent}
+              shouldShowWatermark={shouldShowWatermark}
+              isSelectionMode={isSelectionMode}
+              selectedItems={selectedItems}
+              toggleItemSelection={toggleItemSelection}
+              openFullscreenView={openFullscreenView}
+              t={t}
+            />
+          </div>
         </MediaContainer>
         
         {/* Password Modal with error display */}

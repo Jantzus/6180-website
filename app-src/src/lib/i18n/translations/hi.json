@@ -317,5 +317,6 @@
   "Share Specific Files": "विशिष्ट फाइलें साझा करें",
   "Delete All": "सभी हटाएं",
   "Are you sure you want to delete all new files? This action cannot be undone.": "क्या आप वाकई सभी नई फ़ाइलें हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती।",
-  "Choose an action": "एक कार्य चुनें"
+  "Choose an action": "एक कार्य चुनें",
+  "Filter by:": "इससे फ़िल्टर करें:"
 }

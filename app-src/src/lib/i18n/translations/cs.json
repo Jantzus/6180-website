@@ -317,5 +317,6 @@
   "Share Specific Files": "Sdílet Konkrétní Soubory",
   "Delete All": "Smazat Vše",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Jste si jisti, že chcete smazat všechny nové soubory? Tuto akci nelze vrátit zpět.",
-  "Choose an action": "Vyberte akci"
+  "Choose an action": "Vyberte akci",
+  "Filter by:": "Filtrovat podle:"
 }

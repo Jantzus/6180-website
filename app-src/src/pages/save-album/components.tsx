@@ -115,16 +115,14 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
           return (
             <PhotoCard 
               key={i} 
+              data-selected={isSelected ? "true" : "false"}
               style={{ 
                 position: 'relative',
-                cursor: selectedPhotos.length > 1 ? 'pointer' : 'default',
-                border: isSelected ? '3px solid #007bff' : '1px solid #e9ecef',
-                borderRadius: '8px',
-                overflow: 'hidden'
+                cursor: selectedPhotos.length > 1 ? 'pointer' : 'default'
               }}
               onClick={() => selectedPhotos.length > 1 && onTogglePhotoSelection(i)}
             >
-              {/* Remove button - Only show when selected */}
+              {/* Soft Delete Button - Only show when selected and on hover */}
               {isSelected && !isSavingAlbum && (
                 <button
                   onClick={(e) => {
@@ -135,32 +133,34 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                   }}
                   style={{
                     position: 'absolute',
-                    top: '8px',
-                    right: '8px',
-                    width: '24px',
-                    height: '24px',
+                    top: '6px',
+                    right: '6px',
+                    width: '18px',
+                    height: '18px',
                     borderRadius: '50%',
                     border: 'none',
-                    backgroundColor: 'rgba(220, 53, 69, 0.9)',
+                    backgroundColor: 'rgba(220, 53, 69, 0.8)',
                     color: 'white',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '14px',
-                    fontWeight: '900',
-                    zIndex: 20,
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    zIndex: 15,
+                    opacity: 0,
                     transition: 'all 0.2s ease',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                    lineHeight: '1'
+                    transform: 'scale(0.8)'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 1)';
-                    e.currentTarget.style.transform = 'scale(1.1)';
+                    e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 0.9)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.opacity = '1';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.9)';
-                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.8)';
+                    e.currentTarget.style.transform = 'scale(0.8)';
+                    e.currentTarget.style.opacity = '0';
                   }}
                   title={t('Remove photo')}
                 >
@@ -168,7 +168,7 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                 </button>
               )}
 
-              {/* Selection Indicator Text */}
+              {/* Soft Selection Indicator Text */}
               {selectedPhotos.length > 1 && isSelected && (
                 <div style={{
                   position: 'absolute',
@@ -178,11 +178,12 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                   background: 'rgba(0, 123, 255, 0.9)',
                   color: 'white',
                   padding: '4px 8px',
-                  borderRadius: '4px',
+                  borderRadius: '6px',
                   fontSize: '11px',
-                  fontWeight: 'bold',
+                  fontWeight: '600',
                   textAlign: 'center',
-                  zIndex: 10
+                  zIndex: 10,
+                  backdropFilter: 'blur(4px)'
                 }}>
                   SELECTED
                 </div>
@@ -233,6 +234,16 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
           );
         })}
       </PhotoGrid>
+
+      {/* CSS for hover effect on PhotoCard to show delete button */}
+      <style>
+        {`
+          [data-selected="true"]:hover button {
+            opacity: 1 !important;
+            transform: scale(1) !important;
+          }
+        `}
+      </style>
     </>
   );
 };
@@ -298,7 +309,7 @@ export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = ({
           type="text"
           value={folderName}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFolderName(e.target.value)}
-          placeholder={t('Enter album name (optional)')}
+          placeholder={t('e.g. Family Vacation in Kyoto')}
           disabled={isSavingAlbum}
         />
       </FormGroup>
@@ -311,7 +322,7 @@ export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = ({
           id="folderDescription"
           value={folderDescription}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setFolderDescription(e.target.value)}
-          placeholder={t('Enter album description (optional)')}
+          placeholder={t("e.g. what's special about this album")}
           rows={4}
           disabled={isSavingAlbum}
         />

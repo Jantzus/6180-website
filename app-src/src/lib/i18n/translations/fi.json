@@ -317,5 +317,6 @@
   "Share Specific Files": "Jaa Tietyt Tiedostot",
   "Delete All": "Poista Kaikki",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Oletko varma, että haluat poistaa kaikki uudet tiedostot? Tätä toimintoa ei voi perua.",
-  "Choose an action": "Valitse toiminto"
+  "Choose an action": "Valitse toiminto",
+  "Filter by:": "Suodata:"
 }

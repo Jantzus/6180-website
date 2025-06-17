@@ -317,5 +317,6 @@
   "Share Specific Files": "ངེས་ཅན་གྱི་ཡིག་ཆ་སྤྱི་མཉམ་སྤྱོད།",
   "Delete All": "ཚང་མ་སུབ་རོགས།",
   "Are you sure you want to delete all new files? This action cannot be undone.": "ཁྱེད་ཀྱིས་ཡིག་ཆ་གསར་པ་ཚང་མ་སུབ་དགོས་པ་ངེས་ཅན་ནམ། བྱེད་སྐུལ་འདི་ཕྱིར་འཐེན་མི་ཐུབ།",
-  "Choose an action": "བྱ་བ་གཅིག་འདེམས།"
+  "Choose an action": "བྱ་བ་གཅིག་འདེམས།",
+  "Filter by:": "འདེམས་འདེགས:"
 }

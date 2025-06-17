@@ -317,5 +317,6 @@
   "Share Specific Files": "Jaga Kindlaid Faile",
   "Delete All": "Kustuta Kõik",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Kas olete kindel, et soovite kustutada kõik uued failid? Seda tegevust ei saa tagasi võtta.",
-  "Choose an action": "Valige tegevus"
+  "Choose an action": "Valige tegevus",
+  "Filter by:": "Filtreeri:"
 }

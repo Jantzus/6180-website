@@ -27,11 +27,15 @@ const theme = {
     // Enhanced focus colors for visual polish
     focusGlow: "#99caff",
     focusGlowShadow: "rgba(153, 202, 255, 0.4)",
+    // New: Soft selection glow colors
+    selectionGlow: "rgba(0, 123, 255, 0.3)",
+    selectionBorder: "rgba(0, 123, 255, 0.6)",
     text: {
       primary: "#333",
       secondary: "#666",
       light: "#777",
       lighter: "#999",
+      subtle: "#aaa", // Even lighter for subtle text
       white: "#fff"
     },
     background: {
@@ -52,7 +56,7 @@ const theme = {
     xs: "4px",
     sm: "8px",
     md: "16px",
-    lg: "24px",
+    lg: "24px", // Main grid spacing - used for consistent alignment
     xl: "32px"
   },
   // Enhanced border radius system for visual polish
@@ -83,7 +87,11 @@ const theme = {
     selection: "0 2px 4px rgba(0, 0, 0, 0.2)",
     textShadow: "0 0 5px rgba(0, 0, 0, 0.8)",
     // Enhanced focus shadow
-    focusGlow: "0 0 0 2px rgba(153, 202, 255, 0.4)"
+    focusGlow: "0 0 0 2px rgba(153, 202, 255, 0.4)",
+    // New: Soft selection shadow
+    selectionGlow: "0 0 0 3px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 123, 255, 0.15)",
+    // New: Input shadows
+    inputSoft: "0 2px 8px rgba(0, 0, 0, 0.04)"
   },
   breakpoints: {
     mobile: "767px"
@@ -159,25 +167,25 @@ const cardStyle = css`
   box-shadow: ${theme.boxShadow.md};
 `;
 
-// Enhanced form input style with focus improvements
+// Enhanced form input style with improved visual design
 const formInputStyle = css`
   width: 100%;
-  padding: 10px 12px;
+  padding: 14px 16px;
   font-size: ${theme.fontSizes.md};
-  font-family: inherit; // Ensure same font family
-  line-height: 1.5; // Consistent line height
-  border-radius: ${theme.borderRadius.small};
-  /* Enhanced: Remove border until focused for cleaner look */
-  border: 1px solid transparent;
+  font-family: inherit;
+  line-height: 1.5;
+  border-radius: ${theme.borderRadius.medium};
+  border: 1px solid ${theme.colors.borderLight};
   box-sizing: border-box;
   background-color: ${theme.colors.white};
   color: ${theme.colors.text.primary};
-  transition: all 0.2s ease; /* Smooth transition for focus state */
+  transition: all 0.3s ease;
+  box-shadow: ${theme.boxShadow.inputSoft};
   
   // Enhanced placeholder styling for elegance
   &::placeholder {
     color: ${theme.colors.text.lighter};
-    opacity: 0.5; // Lower opacity for more elegant appearance
+    opacity: 0.7;
     font-size: ${theme.fontSizes.md};
     font-family: inherit;
     font-weight: normal;
@@ -186,29 +194,30 @@ const formInputStyle = css`
   // Remove browser-specific styling differences
   &::-webkit-input-placeholder {
     color: ${theme.colors.text.lighter};
-    opacity: 0.5;
+    opacity: 0.7;
   }
   
   &::-moz-placeholder {
     color: ${theme.colors.text.lighter};
-    opacity: 0.5;
+    opacity: 0.7;
   }
   
   &:-ms-input-placeholder {
     color: ${theme.colors.text.lighter};
-    opacity: 0.5;
+    opacity: 0.7;
   }
   
   /* Enhanced focus state with blue glow */
   &:focus {
     outline: none;
     border-color: ${theme.colors.primary};
-    box-shadow: ${theme.boxShadow.focusGlow};
+    box-shadow: ${theme.boxShadow.focusGlow}, ${theme.boxShadow.inputSoft};
   }
   
   /* Subtle hover state for better UX */
   &:hover:not(:focus) {
-    border-color: ${theme.colors.borderLight};
+    border-color: ${theme.colors.border};
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 `;
 
@@ -246,15 +255,15 @@ export const Body = styled.div<DirectionalProps>`
   background: ${theme.colors.background.primary};
   color: ${theme.colors.text.primary};
   line-height: 1.5;
-  /* Add top padding to account for fixed header */
-  padding: ${HEADER_HEIGHT} ${theme.spacing.md} ${theme.spacing.md};
+  /* Enhanced: Increased top padding for more breathing room from fixed header */
+  padding: calc(${HEADER_HEIGHT} + 24px) ${theme.spacing.md} ${theme.spacing.md};
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
   
   ${mobile(`
-    padding: ${HEADER_HEIGHT_MOBILE} ${theme.spacing.sm} ${theme.spacing.sm};
+    padding: calc(${HEADER_HEIGHT_MOBILE} + 20px) ${theme.spacing.sm} ${theme.spacing.sm};
   `)}
 `;
 
@@ -272,12 +281,13 @@ export const AppContainer = styled.div<DirectionalProps>`
 `;
 
 export const MediaContainer = styled.div`
-  padding: ${theme.spacing.sm} ${theme.spacing.md} ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing (24px) for uniform alignment */
+  padding: ${theme.spacing.sm} ${theme.spacing.lg} ${theme.spacing.lg};
   width: 100%;
   overflow: visible;
   
   ${mobile(`
-    padding: ${theme.spacing.sm} ${theme.spacing.md} ${theme.spacing.sm};
+    padding: ${theme.spacing.sm} ${theme.spacing.lg} ${theme.spacing.sm};
     width: 100%;
   `)}
 `;
@@ -300,12 +310,12 @@ export const FixedHeader = styled.div`
   width: 100%;
   height: ${HEADER_HEIGHT};
   
-  /* Styling */
+  /* Enhanced styling with subtle blur and divider */
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid ${theme.colors.borderLight};
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); /* Safari support */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   
   /* Fixed z-index - stays below modals but above normal content */
   z-index: 9999;
@@ -328,11 +338,9 @@ export const FixedHeaderContent = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 ${theme.spacing.md};
-  gap: ${theme.spacing.md}; /* Add gap between logo and slogan */
   
   ${mobile(`
-    padding: 0 ${theme.spacing.sm};
-    gap: ${theme.spacing.sm}; /* Smaller gap on mobile */
+    padding: 0 ${theme.spacing.md};
   `)}
 `;
 
@@ -344,7 +352,8 @@ export const BrandLink = styled.a`
   color: ${theme.colors.text.secondary};
   font-size: ${theme.fontSizes.sm};
   transition: all 0.2s ease;
-  padding: ${theme.spacing.xs} ${theme.spacing.sm};
+  /* Enhanced: Increased vertical padding for better visual centering */
+  padding: ${theme.spacing.md} ${theme.spacing.sm};
   border-radius: ${theme.borderRadius.small};
   
   &:hover {
@@ -360,17 +369,22 @@ export const BrandLink = styled.a`
 
 export const BrandSlogan = styled(BrandLink)`
   font-style: italic;
-  color: ${theme.colors.text.secondary}; /* Made darker for better visibility */
-  font-size: ${theme.fontSizes.xs};
+  /* Enhanced: Made more subtle with lighter color and smaller font */
+  color: ${theme.colors.text.subtle}; /* Changed from secondary to subtle for more dimmed appearance */
+  font-size: 9px; /* Further reduced from 10px to 9px for even less prominence */
+  font-weight: 300; /* Lighter weight for reduced visual load */
+  /* Enhanced: Nudged down slightly for better vertical balance */
+  margin-top: 5px;
   
   &:hover {
-    color: ${theme.colors.text.primary};
+    color: ${theme.colors.text.secondary}; /* Lighter hover color than before */
   }
   
   ${mobile(`
-    font-size: 11px; /* Slightly smaller on mobile but still visible */
-    max-width: 200px; /* Limit width on mobile */
+    font-size: 8px; /* Even smaller on mobile */
+    max-width: 180px; /* Reduced max width */
     text-align: right;
+    margin-top: 3px; /* Smaller nudge on mobile */
   `)}
 `;
 
@@ -529,6 +543,72 @@ export const CenteredContent = styled.div`
   align-items: center;
 `;
 
+// ========== Layout & Filter Control Components ==========
+
+export const LayoutFilterBlock = styled.div`
+  ${cardStyle} /* Apply white card styling */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px; /* Increased spacing before media grid */
+  padding: ${theme.spacing.lg}; /* Add padding for content inside white box */
+  
+  ${mobile(`
+    gap: 16px; /* Slightly more spacing on mobile for better separation */
+    padding: ${theme.spacing.md}; /* Smaller padding on mobile */
+  `)}
+`;
+
+export const ControlRow = styled.div`
+  display: flex;
+  align-items: flex-start; /* Align to top for better stacking */
+  gap: 24px; /* 24px between Columns and Filter by sections */
+  flex-wrap: wrap;
+  
+  ${mobile(`
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  `)}
+`;
+
+export const ControlGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+`;
+
+export const ControlLabel = styled.span`
+  font-size: 14px;
+  color: ${theme.colors.text.lighter}; /* Subtle gray labels */
+  font-weight: 500;
+  white-space: nowrap;
+`;
+
+export const ColumnsSelector = styled.select`
+  padding: 8px 12px;
+  border-radius: ${theme.borderRadius.medium}; /* Match tag styling */
+  border: 1px solid ${theme.colors.borderLight};
+  background-color: ${theme.colors.white};
+  font-size: 14px; /* Match tag font size */
+  cursor: pointer;
+  box-shadow: ${theme.boxShadow.sm}; /* Subtle shadow to match tags */
+  min-width: 60px;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: ${theme.colors.border};
+    box-shadow: ${theme.boxShadow.md};
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: ${theme.colors.primary};
+    box-shadow: ${theme.boxShadow.focusGlow};
+  }
+`;
+
 // ========== Header Components ==========
 
 export const Header = styled.div`
@@ -536,7 +616,8 @@ export const Header = styled.div`
   background: ${theme.colors.white};
   box-shadow: ${theme.boxShadow.sm};
   z-index: 10;
-  margin-bottom: ${theme.spacing.sm};
+  /* Enhanced: Increased margin-bottom for more breathing room */
+  margin-bottom: ${theme.spacing.xl}; /* 32px instead of 24px */
   width: 100%;
   border-radius: ${theme.borderRadius.medium};
   margin-top: 0;
@@ -545,10 +626,11 @@ export const Header = styled.div`
 export const HeaderContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  padding: ${theme.spacing.lg};
   
   ${mobile(`
-    padding: ${theme.spacing.md};
+    padding: ${theme.spacing.lg};
   `)}
 `;
 
@@ -556,8 +638,9 @@ export const HeaderControls = styled.div<{ $fullWidth?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: ${theme.spacing.sm};
-  margin-bottom: ${theme.spacing.xs};
+  /* Enhanced: Use consistent grid spacing */
+  margin-top: ${theme.spacing.lg};
+  margin-bottom: ${theme.spacing.sm};
   gap: ${theme.spacing.sm};
   flex-wrap: wrap;
   
@@ -577,7 +660,8 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
   position: relative;
   z-index: 1;
   margin-top: 0;
@@ -592,23 +676,25 @@ export const HeaderContainer = styled.div`
 export const RowSelectorContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: ${theme.spacing.sm};
+  /* Enhanced: Better anchoring - reduce gap and tighten with buttons above */
+  margin-top: ${theme.spacing.xs}; /* Reduced from sm to xs for tighter grouping */
+  margin-left: 0; /* Ensure flush left alignment */
 `;
 
 export const RowSelectorLabel = styled.label`
   margin-right: ${theme.spacing.sm};
-  font-size: ${theme.fontSizes.sm};
+  font-size: ${theme.fontSizes.xs}; /* Reduced from sm to xs for less prominence */
   color: ${theme.colors.text.secondary};
   font-weight: normal;
 `;
 
 export const RowSelectorSelect = styled.select`
-  padding: 5px ${theme.spacing.sm};
+  padding: 4px ${theme.spacing.sm}; /* Reduced vertical padding */
   border: 1px solid ${theme.colors.border};
   border-radius: ${theme.borderRadius.small};
   background-color: ${theme.colors.white};
   cursor: pointer;
-  font-size: ${theme.fontSizes.sm};
+  font-size: ${theme.fontSizes.xs}; /* Reduced from sm to xs to match label */
   min-width: 50px;
 `;
 
@@ -654,11 +740,13 @@ export const Button = styled.button<ButtonProps>`
   }};
   /* Enhanced: Lighter font weight for premium feel */
   font-weight: 500;
-  padding: 12px 20px;
-  font-size: ${theme.fontSizes.md};
+  /* Enhanced: Reduced padding for more cohesive sizing */
+  padding: 10px 16px; /* Reduced from 12px 20px for less visual weight */
+  /* Enhanced: Smaller font size for better cohesion with page text */
+  font-size: ${theme.fontSizes.sm}; /* Reduced from md to sm (14px instead of 16px) */
   border: ${props => props.$primary ? 'none' : `1px solid ${theme.colors.primary}`};
   border-radius: ${theme.borderRadius.medium};
-  min-width: 140px; /* Changed from fixed width to min-width */
+  min-width: 120px; /* Reduced from 140px to match smaller sizing */
   width: auto; /* Allow the button to grow based on content */
   white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
@@ -737,7 +825,8 @@ export const ActionButtons = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing.sm};
-  margin-bottom: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
   width: 100%;
 `;
 
@@ -748,8 +837,14 @@ export const ProfileLink = styled.a`
   color: ${theme.colors.primary};
   text-decoration: none;
   font-weight: 500;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing.sm};
   padding: ${theme.spacing.xs} 0;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const UserInfo = styled.div`
@@ -776,7 +871,8 @@ export const OwnerProfileLink = styled.a`
 `;
 
 export const ProfileHeaderContainer = styled.div<DirectionalProps>`
-  margin-bottom: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
   text-align: center;
   direction: ${props => props.$isRTL ? "rtl" : "ltr"};
 `;
@@ -833,7 +929,8 @@ export const PublicProfileExplanation = styled.div`
 
 export const AlbumTitle = styled.h2`
   font-weight: 400;
-  margin: 0 0 ${theme.spacing.md} 0;
+  /* Enhanced: Use consistent grid spacing */
+  margin: 0 0 ${theme.spacing.lg} 0;
   font-size: ${theme.fontSizes.xxl};
   padding: 0;
   
@@ -848,8 +945,9 @@ export const AlbumTitleStrong = styled.strong`
 
 export const Card = styled.div<{ $padding?: string; $marginBottom?: string }>`
   ${cardStyle}
-  padding: ${props => props.$padding || theme.spacing.md};
-  margin-bottom: ${props => props.$marginBottom || theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  padding: ${props => props.$padding || theme.spacing.lg};
+  margin-bottom: ${props => props.$marginBottom || theme.spacing.lg};
   width: 100%;
 `;
 
@@ -887,7 +985,8 @@ export const Message = styled.div<MessageProps>`
 
 export const AlbumDescription = styled.div<DirectionalProps>`
   margin-top: ${theme.spacing.sm};
-  margin-bottom: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
   font-size: ${theme.fontSizes.xs};
   color: ${theme.colors.text.secondary};
   line-height: 1.5;
@@ -913,7 +1012,8 @@ export const PolicyIndicator = styled.div`
 
 export const MediaGrid = styled.div<{ $columns: string }>`
   display: grid;
-  grid-gap: ${theme.spacing.md};
+  /* Enhanced: This is the main grid spacing that other elements should align to */
+  grid-gap: ${theme.spacing.lg};
   width: 100%;
   min-height: 0;
   
@@ -929,7 +1029,7 @@ export const MediaGrid = styled.div<{ $columns: string }>`
   }}
   
   @media (max-width: ${theme.breakpoints.mobile}) {
-    grid-gap: ${theme.spacing.sm};
+    grid-gap: ${theme.spacing.md};
     ${props => {
       const col = parseInt(props.$columns);
       if (col > 3) return css`grid-template-columns: repeat(3, minmax(0, 1fr));`;
@@ -949,14 +1049,15 @@ const mediaBlockStyle = css<{ $isHovered?: boolean }>`
   flex-direction: column;
   width: 100%;
   overflow: hidden;
-  margin-bottom: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
   
   ${props => props.$isHovered && css`
     transform: translateY(-2px);
   `}
   
   ${mobile(`
-    margin-bottom: ${theme.spacing.sm};
+    margin-bottom: ${theme.spacing.lg};
   `)}
 `;
 
@@ -978,8 +1079,9 @@ export const MediaBlock = styled.div<{
 export const PhotoGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: ${theme.spacing.md};
-  margin-bottom: ${theme.spacing.xl};
+  /* Enhanced: Use consistent grid spacing */
+  gap: ${theme.spacing.lg};
+  margin-bottom: ${theme.spacing.lg};
   width: 100%;
 `;
 
@@ -990,6 +1092,14 @@ export const PhotoCard = styled.div`
   padding: ${theme.spacing.sm};
   width: 160px;
   position: relative;
+  transition: all 0.3s ease;
+  
+  /* Soft selection styling instead of heavy blue box */
+  &[data-selected="true"] {
+    box-shadow: ${theme.boxShadow.selectionGlow};
+    border: 2px solid ${theme.colors.selectionBorder};
+    transform: translateY(-2px);
+  }
 `;
 
 // ========== Image & Video Components ==========
@@ -1263,7 +1373,8 @@ export const Modal = styled.div<ModalProps>`
 
 export const ModalContent = styled.div`
   ${cardStyle}
-  padding: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  padding: ${theme.spacing.lg};
   max-width: 90%;
   max-height: 90%;
   overflow: auto;
@@ -1272,7 +1383,7 @@ export const ModalContent = styled.div`
   align-items: center;
   
   ${mobile(`
-    padding: ${theme.spacing.md};
+    padding: ${theme.spacing.lg};
     width: 90%;
   `)}
 `;
@@ -1295,7 +1406,8 @@ export const UsernameTitle = styled.p`
 
 export const UsernameDescription = styled.p`
   font-size: ${theme.fontSizes.sm};
-  margin-bottom: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
   color: ${theme.colors.text.secondary};
 `;
 
@@ -1346,7 +1458,8 @@ export const FullscreenContainer = styled.div`
 
 export const TwoFactorAuthLabel = styled.div`
   text-align: center;
-  margin-top: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-top: ${theme.spacing.lg};
   font-size: 11px;
   color: ${theme.colors.text.secondary};
 `;
@@ -1382,17 +1495,18 @@ export const Checkmark = styled.div`
 `;
 
 export const SelectionBanner = styled.div`
-  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  padding: ${theme.spacing.sm} ${theme.spacing.lg};
   background-color: ${theme.colors.background.highlight};
   border-radius: ${theme.borderRadius.small};
-  margin-bottom: ${theme.spacing.md};
+  margin-bottom: ${theme.spacing.lg};
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: ${theme.boxShadow.md};
 `;
 
-// Badge styles
+// Badge styles with softer delete button
 interface BadgeProps {
   $position: 'bottomLeft' | 'bottomRight';
   $light?: boolean;
@@ -1448,15 +1562,51 @@ export const StatusIndicator = styled.div<{ $status: UploadStatus }>`
   }};
 `;
 
+// Soft delete button for selected items
+export const SoftDeleteButton = styled.button`
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: ${theme.borderRadius.circle};
+  border: none;
+  background: rgba(220, 53, 69, 0.8);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 15;
+  opacity: 0;
+  transition: all 0.2s ease;
+  transform: scale(0.8);
+  
+  &:hover {
+    background: rgba(200, 35, 51, 0.9);
+    transform: scale(1);
+  }
+  
+  /* Show on parent hover */
+  *:hover > & {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
 // ========== Form Components ==========
 
 export const FormGroup = styled.div`
-  margin-bottom: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
 `;
 
 export const FormLabel = styled.label`
   display: block;
-  margin-bottom: ${theme.spacing.sm};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.md};
   font-size: ${theme.fontSizes.sm};
   font-weight: 500;
   color: ${theme.colors.text.primary};
@@ -1469,13 +1619,13 @@ export const FormInput = styled.input`
 export const FormTextarea = styled.textarea`
   ${formInputStyle}
   resize: vertical;
-  min-height: 80px; // Ensure consistent minimum height
-  font-family: inherit; // Explicitly inherit font family for textarea
+  min-height: 100px; /* Increased minimum height */
+  font-family: inherit;
   
-  // Additional textarea-specific placeholder styling
+  // Ensure consistent placeholder styling with FormInput
   &::placeholder {
     color: ${theme.colors.text.lighter};
-    opacity: 1;
+    opacity: 0.7;
     font-size: ${theme.fontSizes.md};
     font-family: inherit;
     font-weight: normal;
@@ -1492,7 +1642,8 @@ export const HiddenFileInput = styled.input`
 export const ToggleContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
   padding: 4px 0;
   gap: 15px;
 `;
@@ -1582,7 +1733,8 @@ export const FileInfo = styled.div`
 
 export const LegalLinksFooter = styled.div`
   text-align: center;
-  padding: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  padding: ${theme.spacing.lg};
   font-size: 0.9em;
   color: ${theme.colors.text.secondary};
 `;
@@ -1600,12 +1752,13 @@ interface StateProps {
 
 export const State = styled.div<StateProps>`
   text-align: center; 
-  padding: 40px ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  padding: 40px ${theme.spacing.lg};
   border-radius: ${theme.borderRadius.medium};
   background-color: ${props => props.$type === 'error' ? theme.colors.background.error : theme.colors.white};
   border: ${props => props.$type === 'error' ? `1px solid ${theme.colors.highlight.error}` : 'none'};
   box-shadow: ${props => props.$type === 'empty' ? theme.boxShadow.md : 'none'};
-  margin-bottom: ${props => props.$type === 'error' ? theme.spacing.md : '0'};
+  margin-bottom: ${props => props.$type === 'error' ? theme.spacing.lg : '0'};
   
   p {
     font-size: ${theme.fontSizes.md};
@@ -1614,14 +1767,16 @@ export const State = styled.div<StateProps>`
 `;
 
 export const DebugContainer = styled.div`
-  margin-top: ${theme.spacing.md};
-  padding: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-top: ${theme.spacing.lg};
+  padding: ${theme.spacing.lg};
   background-color: ${theme.colors.grayLighter};
   border-radius: ${theme.borderRadius.medium};
 `;
 
 export const DebugTitle = styled.h3`
-  margin: 0 0 ${theme.spacing.sm} 0;
+  /* Enhanced: Use consistent grid spacing */
+  margin: 0 0 ${theme.spacing.md} 0;
   font-size: ${theme.fontSizes.md};
 `;
 
@@ -1634,7 +1789,8 @@ export const DebugMessages = styled.pre`
 `;
 
 export const DebugMessage = styled.div`
-  margin-bottom: ${theme.spacing.xs};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.sm};
   font-size: ${theme.fontSizes.xs};
 `;
 
@@ -1655,7 +1811,8 @@ export const FileCount = styled.div<DirectionalProps>`
   font-size: ${theme.fontSizes.xs};
   color: ${theme.colors.text.lighter};
   text-align: ${props => props.$isRTL ? "right" : "right"};
-  margin-bottom: ${theme.spacing.md};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
   display: flex;
   justify-content: flex-end;
 `;

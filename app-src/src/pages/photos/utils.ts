@@ -449,7 +449,7 @@ export const usePasswordProtection = () => {
   };
 };
 
-// Hook for selection mode management
+// Hook for selection mode management - OPTIMIZED with selectAll/unselectAll
 export const useSelectionMode = () => {
   const [isSelectionMode, setIsSelectionMode] = useState<boolean>(false);
   const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set());
@@ -468,6 +468,20 @@ export const useSelectionMode = () => {
     });
   }, []);
   
+  // OPTIMIZED: Select all items at once using React state
+  const selectAll = useCallback((totalCount: number) => {
+    if (totalCount <= 0) return;
+    
+    // Create new Set with all indices - much faster than looping
+    const allIndices = new Set(Array.from({ length: totalCount }, (_, i) => i));
+    setSelectedItems(allIndices);
+  }, []);
+  
+  // OPTIMIZED: Clear all selections instantly
+  const unselectAll = useCallback(() => {
+    setSelectedItems(new Set());
+  }, []);
+  
   const cancelSelection = useCallback(() => {
     setIsSelectionMode(false);
     setSelectedItems(new Set());
@@ -479,6 +493,8 @@ export const useSelectionMode = () => {
     selectedItems,
     setSelectedItems,
     toggleItemSelection,
+    selectAll,
+    unselectAll,
     cancelSelection
   };
 };

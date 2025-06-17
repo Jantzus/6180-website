@@ -317,5 +317,6 @@
   "Share Specific Files": "Jaga Eriti Failõ",
   "Delete All": "Kistutaq Kõik",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Kas sa olõt kimmäne, et sa tahat kõiki vahtsit failõ kustutada? Tuu toimingut ei saa tagasi võtta.",
-  "Choose an action": "Valiq tüü"
+  "Choose an action": "Valiq tüü",
+  "Filter by:": "Sõlmi:"
 }

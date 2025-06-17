@@ -317,5 +317,6 @@
   "Share Specific Files": "فایلون مخصوص رو به اشتراک گذاشتن",
   "Delete All": "همه حذف کن",
   "Are you sure you want to delete all new files? This action cannot be undone.": "آیا اطمینان داری که ایشون همه فایلان نو ره حذف بکونی؟ ای کار بازگشت پذیر نی یا.",
-  "Choose an action": "یه کار انتخاب کو"
+  "Choose an action": "یه کار انتخاب کو",
+  "Filter by:": "فیلتر کردن بر اساس:"
 }

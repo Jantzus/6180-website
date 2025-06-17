@@ -317,5 +317,6 @@
   "Share Specific Files": "benji lo tcini vreji",
   "Delete All": "vimcu ro",
   "Are you sure you want to delete all new files? This action cannot be undone.": "xu do birti lo nu do djica lo nu vimcu ro cnino datni? ti zukte na'e ka'e xruti",
-  "Choose an action": "cuxna lo zukte"
+  "Choose an action": "cuxna lo zukte",
+  "Filter by:": "filteru fi:"
 }

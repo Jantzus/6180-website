@@ -317,5 +317,6 @@
   "Share Specific Files": "Կիսվել Հատուկ Ֆայլերով",
   "Delete All": "Ջնջել Բոլորը",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Համոզվա՞ծ եք, որ ցանկանում եք ջնջել բոլոր նոր ֆայլերը: Այս գործողությունը չի կարող չեղյալ համարվել:",
-  "Choose an action": "Ընտրել գործողություն"
+  "Choose an action": "Ընտրել գործողություն",
+  "Filter by:": "Զտել ըստ:"
 }

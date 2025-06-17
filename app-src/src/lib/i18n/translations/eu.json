@@ -317,5 +317,6 @@
   "Share Specific Files": "Fitxategi Zehatzak Partekatu",
   "Delete All": "Ezabatu Dena",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Ziur zaude fitxategi berri guztiak ezabatu nahi dituzula? Ekintza hau ezin da desegin.",
-  "Choose an action": "Ekintza bat aukeratu"
+  "Choose an action": "Ekintza bat aukeratu",
+  "Filter by:": "Iragazi:"
 }

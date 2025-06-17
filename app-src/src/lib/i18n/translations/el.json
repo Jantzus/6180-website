@@ -317,5 +317,6 @@
   "Share Specific Files": "Κοινοποίηση Συγκεκριμένων Αρχείων",
   "Delete All": "Διαγραφή Όλων",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Είστε σίγουροι ότι θέλετε να διαγράψετε όλα τα νέα αρχεία; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
-  "Choose an action": "Επιλέξτε ενέργεια"
+  "Choose an action": "Επιλέξτε ενέργεια",
+  "Filter by:": "Φιλτράρισμα κατά:"
 }

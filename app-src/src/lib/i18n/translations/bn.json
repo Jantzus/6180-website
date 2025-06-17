@@ -317,5 +317,6 @@
   "Share Specific Files": "নির্দিষ্ট ফাইল শেয়ার করুন",
   "Delete All": "সব মুছুন",
   "Are you sure you want to delete all new files? This action cannot be undone.": "আপনি কি নিশ্চিত যে আপনি সব নতুন ফাইল মুছে ফেলতে চান? এই ক্রিয়াটি পূর্বাবস্থায় ফেরানো যাবে না।",
-  "Choose an action": "একটি কাজ বেছে নিন"
+  "Choose an action": "একটি কাজ বেছে নিন",
+  "Filter by:": "এই অনুযায়ী ফিল্টার:"
 }

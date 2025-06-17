@@ -317,5 +317,6 @@
   "Share Specific Files": "ځانګړي دوتنې شریکول",
   "Delete All": "ټول ړنګه کړئ",
   "Are you sure you want to delete all new files? This action cannot be undone.": "ایا تاسو ډاډه یاست چې ټول نوي فایلونه حذف کول غواړئ؟ دا عمل بیرته نشي کیدی.",
-  "Choose an action": "یو عمل غوره کړئ"
+  "Choose an action": "یو عمل غوره کړئ",
+  "Filter by:": "د دغه له مخې پاکول:"
 }

@@ -317,5 +317,6 @@
   "Share Specific Files": "اشتراک فایل‌های خاص",
   "Delete All": "حذف همه",
   "Are you sure you want to delete all new files? This action cannot be undone.": "آیا مطمئن هستید که می‌خواهید همه فایل‌های جدید را حذف کنید؟ این عمل قابل بازگشت نیست.",
-  "Choose an action": "یک عمل انتخاب کنید"
+  "Choose an action": "یک عمل انتخاب کنید",
+  "Filter by:": "فیلتر بر اساس:"
 }

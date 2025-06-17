@@ -317,5 +317,6 @@
   "Share Specific Files": "నిర్దిష్ట ఫైల్‌లను భాగస్వామ్యం చేయండి",
   "Delete All": "అన్నీ తొలగించండి",
   "Are you sure you want to delete all new files? This action cannot be undone.": "మీరు నిజంగా అన్ని కొత్త ఫైల్‌లను తొలగించాలని అనుకుంటున్నారా? ఈ చర్యను రద్దు చేయలేరు.",
-  "Choose an action": "ఒక చర్యను ఎంచుకోండి"
+  "Choose an action": "ఒక చర్యను ఎంచుకోండి",
+  "Filter by:": "దీని ఆధారంగా ఫిల్టర్:"
 }

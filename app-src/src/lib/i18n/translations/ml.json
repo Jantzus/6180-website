@@ -317,5 +317,6 @@
   "Share Specific Files": "നിർദ്ദിഷ്ട ഫയലുകൾ പങ്കിടുക",
   "Delete All": "എല്ലാം ഇല്ലാതാക്കുക",
   "Are you sure you want to delete all new files? This action cannot be undone.": "എല്ലാ പുതിയ ഫയലുകളും ഇല്ലാതാക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുവെന്ന് ഉറപ്പാണോ? ഈ പ്രവർത്തനം പഴയപടിയാക്കാൻ കഴിയില്ല.",
-  "Choose an action": "ഒരു പ്രവൃത്തി തിരഞ്ഞെടുക്കുക"
+  "Choose an action": "ഒരു പ്രവൃത്തി തിരഞ്ഞെടുക്കുക",
+  "Filter by:": "ഇത് പ്രകാരം ഫിൽട്ടർ:"
 }

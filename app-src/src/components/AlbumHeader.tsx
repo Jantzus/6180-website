@@ -1,24 +1,20 @@
 import React from "react";
 import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
-// Import styled components
+// Import styled components - removed Header and HeaderContent since buttons are now standalone
 import { 
-  Header, 
-  HeaderContent,
-  HeaderControls,
-  Button,
-  RowSelectorContainer, 
-  RowSelectorLabel, 
-  RowSelectorSelect
+  Button
 } from "@/styles/styled-components";
 import ResponsiveHeader from "@/components/HeaderComponents";
 
-// Album Header Component
+// Album Header Component - Now just renders standalone buttons without container
 export const AlbumHeader: React.FC<{
   t: (key: string) => string;
   isSelectionMode: boolean;
   selectedItems?: Set<number>;
   shareSelectPhotos?: () => void;
   cancelSelection: () => void;
+  selectAll: () => void;
+  unselectAll: () => void;
   showingEnterPassword: () => boolean;
   promptForPassword: () => void;
   passwordPolicy: PasswordPolicyEnum | undefined;
@@ -28,14 +24,14 @@ export const AlbumHeader: React.FC<{
   handleDownloadPhotos: () => void;
   handleCopyLink: () => void;
   albumData: AlbumData | null;
-  columns: string;
-  changeColumns: (value: string) => void;
 }> = ({
   t,
   isSelectionMode,
   selectedItems = new Set(),
   shareSelectPhotos,
   cancelSelection,
+  selectAll,
+  unselectAll,
   showingEnterPassword,
   promptForPassword,
   passwordPolicy,
@@ -44,14 +40,25 @@ export const AlbumHeader: React.FC<{
   saveAlbumDirectly,
   handleDownloadPhotos,
   handleCopyLink,
-  albumData,
-  columns,
-  changeColumns
+  albumData
 }) => {
+
+  // Determine if all items are selected
+  const totalItems = albumData?.mediaItems?.length || 0;
+  const allItemsSelected = totalItems > 0 && selectedItems.size === totalItems;
 
   // Selection mode actions
   const renderSelectionModeActions = () => (
-    <div style={{ display: 'flex', gap: '16px' }}>
+    <div style={{ 
+      display: 'flex', 
+      gap: '16px',
+      alignItems: 'center',
+      justifyContent: 'flex-start', // Explicitly align to the left
+      width: '100%',
+      marginBottom: '24px', // Reduced from 32px to 24px
+      paddingLeft: '24px',
+      paddingRight: '24px'
+    }}>
       {shareSelectPhotos && (
         <Button 
           onClick={shareSelectPhotos} 
@@ -60,12 +67,46 @@ export const AlbumHeader: React.FC<{
             opacity: selectedItems.size === 0 ? 0.5 : 1,
             backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
             color: selectedItems.size > 0 ? 'white' : undefined,
+            padding: '8px 16px', // Reduced vertical padding by 4px
+            marginLeft: '0', // Override the default margin-left: auto
           }}
         >
           {t('Share Selection')} ({selectedItems.size})
         </Button>
       )}
-      <Button onClick={cancelSelection}>
+      
+      {/* Select All / Unselect All button */}
+      {totalItems > 0 && (
+        allItemsSelected ? (
+          <Button 
+            onClick={unselectAll}
+            style={{ 
+              padding: '8px 16px',
+              marginLeft: '0',
+            }}
+          >
+            {t('Unselect All')}
+          </Button>
+        ) : (
+          <Button 
+            onClick={selectAll}
+            style={{ 
+              padding: '8px 16px',
+              marginLeft: '0',
+            }}
+          >
+            {t('Select All')}
+          </Button>
+        )
+      )}
+      
+      <Button 
+        onClick={cancelSelection}
+        style={{ 
+          padding: '8px 16px', // Reduced vertical padding by 4px
+          marginLeft: '0', // Override the default margin-left: auto
+        }}
+      >
         {t('Cancel')}
       </Button>
     </div>
@@ -77,7 +118,13 @@ export const AlbumHeader: React.FC<{
     !isAuthorized && 
     passwordPolicy && 
     passwordPolicy !== 'NoPassword' && (
-      <Button onClick={promptForPassword} $passwordSet={true}>
+      <Button 
+        onClick={promptForPassword} 
+        $passwordSet={true}
+        style={{ 
+          padding: '8px 16px', // Reduced vertical padding by 4px
+        }}
+      >
         {t('Enter Password')}
       </Button>
     )
@@ -85,7 +132,12 @@ export const AlbumHeader: React.FC<{
 
   // Simple "Download" button for albums with folderPositionId
   const renderDownloadButton = () => (
-    <Button onClick={handleDownloadPhotos}>
+    <Button 
+      onClick={handleDownloadPhotos}
+      style={{ 
+        padding: '8px 16px', // Reduced vertical padding by 4px
+      }}
+    >
       {t('Download')}
     </Button>
   );
@@ -102,12 +154,21 @@ export const AlbumHeader: React.FC<{
         justifyContent: 'space-between',
         width: '100%', 
         flexWrap: 'nowrap', 
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '24px', // Reduced from 32px to 24px
+        paddingLeft: '24px',
+        paddingRight: '24px'
       }}>
         <div style={{ flexShrink: 0 }}> 
           {!showingEnterPassword() && (
             <>
-              <Button onClick={handleCopyLink}>
+              <Button 
+                onClick={handleCopyLink}
+                style={{ 
+                  padding: '8px 16px', // Reduced vertical padding by 4px
+                  marginLeft: '0', // Override the default margin-left: auto for left-side button
+                }}
+              >
                 {t('Share')}
               </Button>
             </>
@@ -118,7 +179,7 @@ export const AlbumHeader: React.FC<{
         <div style={{ 
           display: 'flex',
           alignItems: 'center',
-          gap: '10px'
+          gap: '16px' // Consistent 16px spacing between buttons
         }}>
           {renderPasswordButton()}
           
@@ -138,6 +199,9 @@ export const AlbumHeader: React.FC<{
                 passwordPolicy={passwordPolicy}
                 usingFolderInviteGrantsRightToAddItems={albumData?.usingFolderInviteGrantsRightToAddItems}
                 t={t} 
+                buttonStyle={{ 
+                  padding: '8px 16px', // Reduced vertical padding by 4px
+                }}
               />
             )
           )}
@@ -146,27 +210,6 @@ export const AlbumHeader: React.FC<{
     );
   };
 
-  return (
-    <Header>
-      <HeaderContent>
-        <HeaderControls $fullWidth>
-          {renderMainContent()}
-        </HeaderControls>
-        <RowSelectorContainer>
-          <RowSelectorLabel htmlFor="columns" id="columns-label">
-            <strong>{t('Columns:')}</strong>
-          </RowSelectorLabel>
-          <RowSelectorSelect 
-            id="columns" 
-            value={columns} 
-            onChange={(e) => changeColumns(e.target.value)}
-          >
-            {[1, 2, 3, 4, 5].map(num => (
-              <option key={num} value={num.toString()}>{num}</option>
-            ))}
-          </RowSelectorSelect>
-        </RowSelectorContainer>
-      </HeaderContent>
-    </Header>
-  );
+  // Return buttons directly without Header container
+  return renderMainContent();
 };

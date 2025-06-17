@@ -317,5 +317,6 @@
   "Share Specific Files": "특정 파일 공유",
   "Delete All": "모두 삭제",
   "Are you sure you want to delete all new files? This action cannot be undone.": "모든 새 파일을 삭제하시겠습니까? 이 작업은 실행 취소할 수 없습니다.",
-  "Choose an action": "작업 선택"
+  "Choose an action": "작업 선택",
+  "Filter by:": "필터링:"
 }

@@ -317,5 +317,6 @@
   "Share Specific Files": "مشاركة ملفات محددة",
   "Delete All": "حذف الكل",
   "Are you sure you want to delete all new files? This action cannot be undone.": "هل أنت متأكد من أنك تريد حذف جميع الملفات الجديدة؟ لا يمكن التراجع عن هذا الإجراء.",
-  "Choose an action": "اختر إجراء"
+  "Choose an action": "اختر إجراء",
+  "Filter by:": "تصفية حسب:"
 }

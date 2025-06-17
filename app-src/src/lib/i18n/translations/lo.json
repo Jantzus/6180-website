@@ -317,5 +317,6 @@
   "Share Specific Files": "ແບ່ງປັນໄຟລ໌ສະເພາະ",
   "Delete All": "ລຶບທັງໝົດ",
   "Are you sure you want to delete all new files? This action cannot be undone.": "ເຈົ້າແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບໄຟລ໌ໃໝ່ທັງໝົດ? ການກະທຳນີ້ບໍ່ສາມາດຍົກເລີກໄດ້.",
-  "Choose an action": "ເລືອກການປະຕິບັດ"
+  "Choose an action": "ເລືອກການປະຕິບັດ",
+  "Filter by:": "ຄັດລອກໂດຍ:"
 }

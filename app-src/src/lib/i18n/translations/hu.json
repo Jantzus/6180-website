@@ -317,5 +317,6 @@
   "Share Specific Files": "Adott Fájlok Megosztása",
   "Delete All": "Törölje Mind",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Biztos, hogy törölni szeretné az összes új fájlt? Ez a művelet nem vonható vissza.",
-  "Choose an action": "Válasszon műveletet"
+  "Choose an action": "Válasszon műveletet",
+  "Filter by:": "Szűrés:"
 }

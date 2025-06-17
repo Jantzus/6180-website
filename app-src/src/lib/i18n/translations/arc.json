@@ -317,5 +317,6 @@
   "Share Specific Files": "ܦܠܓܘܬܐ ܕܦܟܣܐ ܓܒܝܐ",
   "Delete All": "ܡܚܠ ܟܠܗܘܢ",
   "Are you sure you want to delete all new files? This action cannot be undone.": "ܐܢܬ ܝܕܥ ܐܢܬ ܕܒܥܐ ܐܢܬ ܕܬܫܪܝ ܟܠܗܘܢ ܟܬܒܐ ܚܕܬܐ؟ ܗܕܐ ܥܒܕܐ ܠܐ ܡܨܐ ܕܬܬܒܛܠ.",
-  "Choose an action": "ܓܒܝ ܥܒܕܐ"
+  "Choose an action": "ܓܒܝ ܥܒܕܐ",
+  "Filter by:": "ܫܠܝܐ ܒ:"
 }

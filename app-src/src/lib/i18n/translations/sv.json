@@ -317,5 +317,6 @@
   "Share Specific Files": "Dela Specifika Filer",
   "Delete All": "Radera Alla",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Är du säker på att du vill ta bort alla nya filer? Den här åtgärden kan inte ångras.",
-  "Choose an action": "Välj en åtgärd"
+  "Choose an action": "Välj en åtgärd",
+  "Filter by:": "Filtrera efter:"
 }

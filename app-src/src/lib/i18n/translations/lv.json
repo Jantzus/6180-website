@@ -317,5 +317,6 @@
   "Share Specific Files": "Dalīties ar Konkrētiem Failiem",
   "Delete All": "Dzēst Visu",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Vai esat pārliecināts, ka vēlaties dzēst visus jaunos failus? Šo darbību nevar atsaukt.",
-  "Choose an action": "Izvēlieties darbību"
+  "Choose an action": "Izvēlieties darbību",
+  "Filter by:": "Filtrēt pēc:"
 }

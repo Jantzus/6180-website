@@ -317,5 +317,6 @@
   "Share Specific Files": "Partager des Fichiers Spécifiques",
   "Delete All": "Supprimer Tout",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Êtes-vous sûr de vouloir supprimer tous les nouveaux fichiers ? Cette action ne peut pas être annulée.",
-  "Choose an action": "Choisir une action"
+  "Choose an action": "Choisir une action",
+  "Filter by:": "Filtrer par:"
 }

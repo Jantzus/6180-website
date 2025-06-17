@@ -317,5 +317,6 @@
   "Share Specific Files": "特定のファイルを共有",
   "Delete All": "全て削除",
   "Are you sure you want to delete all new files? This action cannot be undone.": "すべての新しいファイルを削除してもよろしいですか？この操作は取り消すことができません。",
-  "Choose an action": "アクションを選択"
+  "Choose an action": "アクションを選択",
+  "Filter by:": "フィルタ:"
 }

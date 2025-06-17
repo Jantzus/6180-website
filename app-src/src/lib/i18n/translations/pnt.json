@@ -317,5 +317,6 @@
   "Share Specific Files": "Μερίζεν Συγκεκριμένα Αρχεία",
   "Delete All": "Έσβησον Πάντα",
   "Are you sure you want to delete all new files? This action cannot be undone.": "Ἤ σίγουρα ὁτ θέλετε να σβήσετεν ὅλα τα καινούργια ἀρχεῖα; Τὸ ἔργον τοῦτο 'κ ἠμπορεῖ να ἀκυρωθῆ.",
-  "Choose an action": "Διαλέξτε ενέργεια"
+  "Choose an action": "Διαλέξτε ενέργεια",
+  "Filter by:": "Φιλτράρεμαν κατά:"
 }
