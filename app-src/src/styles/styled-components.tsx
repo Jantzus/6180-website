@@ -641,7 +641,7 @@ export const HeaderControls = styled.div<{ $fullWidth?: boolean }>`
   /* Enhanced: Use consistent grid spacing */
   margin-top: ${theme.spacing.lg};
   margin-bottom: ${theme.spacing.sm};
-  gap: ${theme.spacing.sm};
+  gap: ${theme.spacing.xs}; /* Reduced from sm (8px) to xs (4px) */
   flex-wrap: wrap;
   
   ${props => props.$fullWidth && css`
@@ -740,18 +740,21 @@ export const Button = styled.button<ButtonProps>`
   }};
   /* Enhanced: Lighter font weight for premium feel */
   font-weight: 500;
-  /* Enhanced: Reduced padding for more cohesive sizing */
-  padding: 10px 16px; /* Reduced from 12px 20px for less visual weight */
-  /* Enhanced: Smaller font size for better cohesion with page text */
-  font-size: ${theme.fontSizes.sm}; /* Reduced from md to sm (14px instead of 16px) */
+  /* Enhanced: Consistent padding for uniform sizing */
+  padding: 12px 20px; /* Increased back to 12px for better button proportions */
+  /* Enhanced: Consistent font size */
+  font-size: ${theme.fontSizes.sm}; /* 14px */
   border: ${props => props.$primary ? 'none' : `1px solid ${theme.colors.primary}`};
   border-radius: ${theme.borderRadius.medium};
-  min-width: 120px; /* Reduced from 140px to match smaller sizing */
-  width: auto; /* Allow the button to grow based on content */
+  min-width: 140px; /* Increased back to 140px for consistent button widths */
+  width: 140px; /* Fixed width instead of auto for uniform sizing */
   white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
   margin-left: auto; /* Align to trailing side */
   box-shadow: ${props => props.$primary ? theme.boxShadow.primaryBtn : 'none'};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   &:hover {
     background-color: ${props => {
@@ -818,13 +821,13 @@ export const RemoveButton = styled.button<ButtonProps>`
 
 export const NavButtonsContainer = styled.div`
   display: flex;
-  gap: ${theme.spacing.sm};
+  gap: ${theme.spacing.xs}; /* Reduced from sm (8px) to xs (4px) */
 `;
 
 export const ActionButtons = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${theme.spacing.sm};
+  gap: ${theme.spacing.xs}; /* Reduced from sm (8px) to xs (4px) */
   /* Enhanced: Use consistent grid spacing */
   margin-bottom: ${theme.spacing.lg};
   width: 100%;

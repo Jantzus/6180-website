@@ -39,7 +39,7 @@ import {
   SelectionModeBanner 
 } from "./components";
 
-// Import the new Enhanced MediaTagsFilter component
+// Import the new MediaTagsFilter component
 import { MediaTagsFilter } from "./MediaTagsFilter";
 
 // Import styled components with new layout styles
@@ -207,7 +207,7 @@ const PhotoAlbumContent: React.FC = () => {
     return () => clearInterval(interval);
   }, [slogans.length]);
 
-  // ✅ ENHANCED DEBUG: Initialize filtered media items when album data changes
+  // ✅ DEBUG: Initialize filtered media items when album data changes
   useEffect(() => {
     if (albumData?.mediaItems) {
       console.log('🎯 photos.tsx: albumData updated, checking mediaItems tags:', {
@@ -877,8 +877,31 @@ const PhotoAlbumContent: React.FC = () => {
             t={t}
           />
           
-          {/* UPDATED: Unified Layout + Filter Control Block with improved styling */}
-          {albumData?.mediaItems && albumData.mediaItems.length > 0 && (
+          {/* Columns selector - when no tags, show as simple left-aligned control */}
+          {albumData?.mediaItems && albumData.mediaItems.length > 0 && !hasAnyTags && (
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '8px', 
+              marginBottom: '16px'
+              // Remove paddingLeft to align with the natural flow
+            }}>
+              <ControlLabel style={{ margin: '0' }}>{t('Columns:')}</ControlLabel>
+              <ColumnsSelector
+                value={columns}
+                onChange={(e) => changeColumns(e.target.value)}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </ColumnsSelector>
+            </div>
+          )}
+
+          {/* UPDATED: Unified Layout + Filter Control Block - only show when there are tags */}
+          {albumData?.mediaItems && albumData.mediaItems.length > 0 && hasAnyTags && (
             <LayoutFilterBlock style={{
               background: 'rgba(248, 249, 250, 0.8)',
               border: '1px solid #e9ecef',
@@ -887,12 +910,12 @@ const PhotoAlbumContent: React.FC = () => {
               marginBottom: '16px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
             }}>
-              {/* Columns Selector - reduced spacing for premium compact feel */}
+              {/* Columns Selector */}
               <div style={{ 
                 display: 'flex', 
                 alignItems: 'center', 
                 gap: '8px', 
-                marginBottom: hasAnyTags ? '8px' : '0'
+                marginBottom: '8px'
               }}>
                 <ControlLabel style={{ margin: '0' }}>{t('Columns:')}</ControlLabel>
                 <ColumnsSelector
@@ -907,24 +930,22 @@ const PhotoAlbumContent: React.FC = () => {
                 </ColumnsSelector>
               </div>
               
-              {/* Filter Tags - only show if there are tags */}
-              {hasAnyTags && (
-                <div style={{ 
-                  display: 'flex', 
-                  alignItems: 'flex-start', 
-                  gap: '8px',
-                  flexWrap: 'wrap'
-                }}>
-                  <ControlLabel style={{ margin: '0', paddingTop: '6px', flexShrink: 0 }}>{t('Filter by:')}</ControlLabel>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <MediaTagsFilter
-                      mediaItems={albumData.mediaItems}
-                      onFilterChange={handleMediaFilterChange}
-                      resetFilter={resetMediaFilter}
-                    />
-                  </div>
+              {/* Filter Tags */}
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                gap: '8px',
+                flexWrap: 'wrap'
+              }}>
+                <ControlLabel style={{ margin: '0', paddingTop: '6px', flexShrink: 0 }}>{t('Filter by:')}</ControlLabel>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <MediaTagsFilter
+                    mediaItems={albumData.mediaItems}
+                    onFilterChange={handleMediaFilterChange}
+                    resetFilter={resetMediaFilter}
+                  />
                 </div>
-              )}
+              </div>
             </LayoutFilterBlock>
           )}
           
