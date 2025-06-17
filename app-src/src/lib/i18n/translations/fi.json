@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Lisää Kuvia",
   "Album successfully saved!": "Albumi tallennettu onnistuneesti!",
   "All files successfully uploaded": "Kaikki tiedostot on ladattu onnistuneesti",
@@ -295,5 +296,22 @@
   "Open On Android": "Avaa Android:ssa",
   "Toggle contacts filter": "Vaihda yhteystietojen suodatin",
   "Showing albums with all selected contacts and tags": "Näytetään albumit kaikilla valituilla yhteystiedoilla ja tunnisteilla",
-  "Showing albums with all selected tags": "Näytetään albumit kaikilla valituilla tunnisteilla"
+  "Showing albums with all selected tags": "Näytetään albumit kaikilla valituilla tunnisteilla",
+  "Clear All": "Tyhjennä Kaikki",
+  "6180 Logo": "6180 Logo",
+  "Home": "Koti",
+  "Visit Home": "Vieraile Kotisivulla",
+  "Visit 6180.io": "Vieraile 6180.io",
+  "No tags available": "Tunnisteita ei ole saatavilla",
+  "Showing photos with all selected tags": "Näytetään kuvat kaikilla valituilla tunnisteilla",
+  "Valid parameters not found in URL": "Kelvollisia parametreja ei löytynyt URL-osoitteesta",
+  "Invalid id parameter format": "Virheellinen id-parametrin muoto",
+  "Album not found": "Albumia ei löytynyt",
+  "the album owner": "albumin omistaja",
+  "Tag, save and find that performance — before it's lost.": "Merkitse, tallenna ja löydä tuo esitys — ennen kuin se katoaa.",
+  "Tag, save and find that smile — before it's lost.": "Merkitse, tallenna ja löydä tuo hymy — ennen kuin se katoaa.",
+  "Tag, save and find that birthday — before it's lost.": "Merkitse, tallenna ja löydä tuo syntymäpäivä — ennen kuin se katoaa.",
+  "Tag, save and find that sunset — before it's lost.": "Merkitse, tallenna ja löydä tuo auringonlasku — ennen kuin se katoaa.",
+  "Tag, save and find that party — before it's lost.": "Merkitse, tallenna ja löydä tuo juhlat — ennen kuin se katoaa.",
+  "Tag, save and find that vacation — before it's lost.": "Merkitse, tallenna ja löydä tuo loma — ennen kuin se katoaa."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tilføj Billeder",
   "Album successfully saved!": "Dit album er gemt med succes!",
   "All files successfully uploaded": "Alle filer er blevet uploadet med succes",
@@ -295,5 +296,22 @@
   "Open On Android": "Åbn På Android",
   "Toggle contacts filter": "Skift kontaktfilter",
   "Showing albums with all selected contacts and tags": "Viser albums med alle valgte kontakter og tags",
-  "Showing albums with all selected tags": "Viser albums med alle valgte tags"
+  "Showing albums with all selected tags": "Viser albums med alle valgte tags",
+  "Clear All": "Ryd Alt",
+  "6180 Logo": "6180 Logo",
+  "Home": "Hjem",
+  "Visit Home": "Besøg Hjem",
+  "Visit 6180.io": "Besøg 6180.io",
+  "No tags available": "Ingen tags tilgængelige",
+  "Showing photos with all selected tags": "Viser billeder med alle valgte tags",
+  "Valid parameters not found in URL": "Gyldige parametre ikke fundet i URL",
+  "Invalid id parameter format": "Ugyldigt id parameter format",
+  "Album not found": "Album ikke fundet",
+  "the album owner": "album ejeren",
+  "Tag, save and find that performance — before it's lost.": "Tag, gem og find den optræden — før den går tabt.",
+  "Tag, save and find that smile — before it's lost.": "Tag, gem og find det smil — før det går tabt.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, gem og find den fødselsdag — før den går tabt.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, gem og find den solnedgang — før den går tabt.",
+  "Tag, save and find that party — before it's lost.": "Tag, gem og find den fest — før den går tabt.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, gem og find den ferie — før den går tabt."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Adaugă Fotografii",
   "Album successfully saved!": "Albumul tău a fost salvat cu succes!",
   "All files successfully uploaded": "Toate fișierele au fost încărcate cu succes",
@@ -295,5 +296,22 @@
   "Open On Android": "Deschide În Android",
   "Toggle contacts filter": "Comută filtrul de contacte",
   "Showing albums with all selected contacts and tags": "Afișează albumele cu toate contactele și etichetele selectate",
-  "Showing albums with all selected tags": "Afișează albumele cu toate etichetele selectate"
+  "Showing albums with all selected tags": "Afișează albumele cu toate etichetele selectate",
+  "Clear All": "Șterge Tot",
+  "6180 Logo": "Logo 6180",
+  "Home": "Acasă",
+  "Visit Home": "Vizitează Acasă",
+  "Visit 6180.io": "Vizitează 6180.io",
+  "No tags available": "Nu sunt etichete disponibile",
+  "Showing photos with all selected tags": "Afișând fotografii cu toate etichetele selectate",
+  "Valid parameters not found in URL": "Parametri valizi nu au fost găsiți în URL",
+  "Invalid id parameter format": "Format de parametru id invalid",
+  "Album not found": "Albumul nu a fost găsit",
+  "the album owner": "proprietarul albumului",
+  "Tag, save and find that performance — before it's lost.": "Etichetează, salvează și găsește acea zi de naștere — înainte să se piardă.",
+  "Tag, save and find that smile — before it's lost.": "Etichetează, salvează și găsește acel zâmbet — înainte să se piardă.",
+  "Tag, save and find that birthday — before it's lost.": "Etichetează, salvează și găsește acea performanță — înainte să se piardă.",
+  "Tag, save and find that sunset — before it's lost.": "Etichetează, salvează și găsește acea vacanță — înainte să se piardă.",
+  "Tag, save and find that party — before it's lost.": "Etichetează, salvează și găsește acea petrecere — înainte să se piardă.",
+  "Tag, save and find that vacation — before it's lost.": "Etichetează, salvează și găsește acel apus — înainte să se piardă."
 }

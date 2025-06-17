@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ఫోటోలను జోడించండి",
   "Album successfully saved!": "మీ ఆల్బమ్ విజయవంతంగా సేవ్ చేయబడింది!",
   "All files successfully uploaded": "అన్ని ఫైళ్ళూ విజయవంతంగా అప్‌లోడ్ అయ్యాయి",
@@ -295,5 +296,22 @@
   "Open On Android": "Android లో తెరవండి",
   "Toggle contacts filter": "సంపర్కాల ఫిల్టర్‌ను టాగిల్ చేయండి",
   "Showing albums with all selected contacts and tags": "ఎంపిక చేసిన అన్ని పరిచయాలు మరియు ట్యాగ్‌లతో ఆల్బమ్‌లను చూపిస్తోంది",
-  "Showing albums with all selected tags": "ఎంపిక చేసిన అన్ని ట్యాగ్‌లతో ఆల్బమ్‌లను చూపిస్తోంది"
+  "Showing albums with all selected tags": "ఎంపిక చేసిన అన్ని ట్యాగ్‌లతో ఆల్బమ్‌లను చూపిస్తోంది",
+  "Clear All": "అన్నింటినీ తొలగించండి",
+  "6180 Logo": "6180 లోగో",
+  "Home": "హోమ్",
+  "Visit Home": "హోమ్‌ను సందర్శించండి",
+  "Visit 6180.io": "6180.io-ను సందర్శించండి",
+  "No tags available": "ట్యాగులు ఏవీ లేవు",
+  "Showing photos with all selected tags": "ఎంచుకున్న అన్ని ట్యాగులతో ఫోటోలను చూపిస్తోంది",
+  "Valid parameters not found in URL": "URL లో చెల్లుబాటు అయ్యే పారామీటర్లు కనుగొనబడలేదు",
+  "Invalid id parameter format": "చెల్లని id పరామితి ఫార్మాట్",
+  "Album not found": "ఆల్బమ్ కనుగొనబడలేదు",
+  "the album owner": "ఆల్బమ్ యజమాని",
+  "Tag, save and find that performance — before it's lost.": "ట్యాగ్ చేయండి, సేవ్ చేయండి మరియు ఆ పుట్టినరోజును కనుగొనండి — అది పోయే ముందు.",
+  "Tag, save and find that smile — before it's lost.": "ట్యాగ్ చేయండి, సేవ్ చేయండి మరియు ఆ చిరునవ్వును కనుగొనండి — అది పోయే ముందు.",
+  "Tag, save and find that birthday — before it's lost.": "ట్యాగ్ చేయండి, సేవ్ చేయండి మరియు ఆ ప్రదర్శనను కనుగొనండి — అది పోయే ముందు.",
+  "Tag, save and find that sunset — before it's lost.": "ట్యాగ్ చేయండి, సేవ్ చేయండి మరియు ఆ సెలవులను కనుగొనండి — అవి పోయే ముందు.",
+  "Tag, save and find that party — before it's lost.": "ట్యాగ్ చేయండి, సేవ్ చేయండి మరియు ఆ పార్టీని కనుగొనండి — అది పోయే ముందు.",
+  "Tag, save and find that vacation — before it's lost.": "ట్యాగ్ చేయండి, సేవ్ చేయండి మరియు ఆ సూర్యాస్తమయాన్ని కనుగొనండి — అది పోయే ముందు."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "سۈرەت قوشۇش",
   "Album successfully saved!": "ئالبومىڭىز مۇۋەپپەقىيەتلىك ساقلاندى!",
   "All files successfully uploaded": "بارلىق ھۆججەتلەر مۇۋەپپەقىيەتلىك يۈكلەندى",
@@ -295,5 +296,22 @@
   "Open On Android": "Android دا ئاچ",
   "Toggle contacts filter": "ئالاقىداشلار سۈزگۈچى ئالماشتۇرۇش",
   "Showing albums with all selected contacts and tags": "بارلىق تاللانغان ئالاقىداشلار ۋە بەلگىلەر بىلەن ئالبوملارنى كۆرسىتىش",
-  "Showing albums with all selected tags": "بارلىق تاللانغان بەلگىلەر بىلەن ئالبوملارنى كۆرسىتىش"
+  "Showing albums with all selected tags": "بارلىق تاللانغان بەلگىلەر بىلەن ئالبوملارنى كۆرسىتىش",
+  "Clear All": "ھەممىنى تازىلاش",
+  "6180 Logo": "6180 لوگوسى",
+  "Home": "باش بەت",
+  "Visit Home": "ئۆيگە بېرىش",
+  "Visit 6180.io": "6180.io غا بېرىش",
+  "No tags available": "ھېچقانداق بەلگە يوق",
+  "Showing photos with all selected tags": "تاللانغان بارلىق بەلگىلەر بىلەن سۈرەتلەرنى كۆرسىتىش",
+  "Valid parameters not found in URL": "URL دا ئىناۋەتلىك پارامېتىرلار تېپىلمىدى",
+  "Invalid id parameter format": "خاتا id پارامېتىر فورماتى",
+  "Album not found": "ئالبوم تېپىلمىدى",
+  "the album owner": "ئالبوم ئىگىسى",
+  "Tag, save and find that performance — before it's lost.": "بەلگە قويۇڭ، ساقلاڭ ۋە ئو تۇغۇلغان كۈننى تېپىڭ — يوقىلىشتىن بۇرۇن.",
+  "Tag, save and find that smile — before it's lost.": "بەلگە قويۇڭ، ساقلاڭ ۋە ئو تەبەسسۈمنى تېپىڭ — يوقىلىشتىن بۇرۇن.",
+  "Tag, save and find that birthday — before it's lost.": "بەلگە قويۇڭ، ساقلاڭ ۋە ئو كۆرسىتىشنى تېپىڭ — يوقىلىشتىن بۇرۇن.",
+  "Tag, save and find that sunset — before it's lost.": "بەلگە قويۇڭ، ساقلاڭ ۋە ئو دەم ئېلىشنى تېپىڭ — يوقىلىشتىن بۇرۇن.",
+  "Tag, save and find that party — before it's lost.": "بەلگە قويۇڭ، ساقلاڭ ۋە ئو پارتىيەنى تېپىڭ — يوقىلىشتىن بۇرۇن.",
+  "Tag, save and find that vacation — before it's lost.": "بەلگە قويۇڭ، ساقلاڭ ۋە ئو كۈن پېتىشنى تېپىڭ — يوقىلىشتىن بۇرۇن."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Cuir Dealbhan Ris",
   "Album successfully saved!": "Chaidh an t-albam agad a shàbhaladh gu soirbheachail!",
   "All files successfully uploaded": "Chaidh a h-uile faidhle a luchdadh suas gu soirbheachail",
@@ -295,5 +296,22 @@
   "Open On Android": "Fosgail Air Android",
   "Toggle contacts filter": "Togail criathrag conaltraidh",
   "Showing albums with all selected contacts and tags": "A' sealltainn clàran le gach conaltradh is taga a chaidh a thaghadh",
-  "Showing albums with all selected tags": "A' sealltainn clàran le gach taga a chaidh a thaghadh"
+  "Showing albums with all selected tags": "A' sealltainn clàran le gach taga a chaidh a thaghadh",
+  "Clear All": "Falamhaich na h-Uile",
+  "6180 Logo": "Logo 6180",
+  "Home": "Dachaigh",
+  "Visit Home": "Tadhal air Dachaigh",
+  "Visit 6180.io": "Tadhal air 6180.io",
+  "No tags available": "Chan eil tagaichean ri làimh",
+  "Showing photos with all selected tags": "A' sealltainn dealbhan le a h-uile tag a chaidh a thaghadh",
+  "Valid parameters not found in URL": "Cha deach paramadairean dligheach a lorg san URL",
+  "Invalid id parameter format": "Cruth parametair id mì-dhligheach",
+  "Album not found": "Cha deach an albam a lorg",
+  "the album owner": "sealbhadair an albam",
+  "Tag, save and find that performance — before it's lost.": "Comharraich, sàbhail agus lorg an taisbeanadh sin — mus tèid e air chall.",
+  "Tag, save and find that smile — before it's lost.": "Comharraich, sàbhail agus lorg an gàire sin — mus tèid e air chall.",
+  "Tag, save and find that birthday — before it's lost.": "Comharraich, sàbhail agus lorg an co-là-breith sin — mus tèid e air chall.",
+  "Tag, save and find that sunset — before it's lost.": "Comharraich, sàbhail agus lorg an dol fodha na grèine sin — mus tèid e air chall.",
+  "Tag, save and find that party — before it's lost.": "Comharraich, sàbhail agus lorg an cuirm sin — mus tèid e air chall.",
+  "Tag, save and find that vacation — before it's lost.": "Comharraich, sàbhail agus lorg na saor-làithean sin — mus tèid iad air chall."
 }

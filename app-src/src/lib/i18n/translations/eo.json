@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Aldoni Fotojn",
   "Album successfully saved!": "Via albumo sukcese konservita!",
   "All files successfully uploaded": "Ĉiuj dosieroj sukcese alŝutitaj",
@@ -295,5 +296,22 @@
   "Open On Android": "Malfermi En Android",
   "Toggle contacts filter": "Ŝalti kontaktan filtrilon",
   "Showing albums with all selected contacts and tags": "Montri albumojn kun ĉiuj elektitaj kontaktoj kaj etikedoj",
-  "Showing albums with all selected tags": "Montri albumojn kun ĉiuj elektitaj etikedoj"
+  "Showing albums with all selected tags": "Montri albumojn kun ĉiuj elektitaj etikedoj",
+  "Clear All": "Forigi Ĉion",
+  "6180 Logo": "Emblemo de 6180",
+  "Home": "Hejmo",
+  "Visit Home": "Viziti Hejmon",
+  "Visit 6180.io": "Viziti 6180.io",
+  "No tags available": "Neniuj etikedoj disponeblas",
+  "Showing photos with all selected tags": "Montrado de fotoj kun ĉiuj elektitaj etikedoj",
+  "Valid parameters not found in URL": "Validaj parametroj ne trovitaj en URL",
+  "Invalid id parameter format": "Nevalida formato de parametro id",
+  "Album not found": "Albumo ne trovita",
+  "the album owner": "la albumposedanto",
+  "Tag, save and find that performance — before it's lost.": "Etikedi, konservi kaj trovi tiun prezenton — antaŭ ol ĝi perdiĝos.",
+  "Tag, save and find that smile — before it's lost.": "Etikedi, konservi kaj trovi tiun rideton — antaŭ ol ĝi perdiĝos.",
+  "Tag, save and find that birthday — before it's lost.": "Etikedi, konservi kaj trovi tiun naskiĝtagon — antaŭ ol ĝi perdiĝos.",
+  "Tag, save and find that sunset — before it's lost.": "Etikedi, konservi kaj trovi tiun sunsubiradon — antaŭ ol ĝi perdiĝos.",
+  "Tag, save and find that party — before it's lost.": "Etikedi, konservi kaj trovi tiun feston — antaŭ ol ĝi perdiĝos.",
+  "Tag, save and find that vacation — before it's lost.": "Etikedi, konservi kaj trovi tiun feriadon — antaŭ ol ĝi perdiĝos."
 }

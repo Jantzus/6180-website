@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Сурэтхэр хэгъэуэн",
   "Album successfully saved!": "Уи альбомыр ехъулӀэныгъэ хэлъу тхагъэщ!",
   "All files successfully uploaded": "Файл псори ехъулӀэныгъэкӀэ къэгъэхьа хъуащ",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-м Ихъун",
   "Toggle contacts filter": "Контакт фильтрыр зэгъэувыпэн",
   "Showing albums with all selected contacts and tags": "Къыхэхахэм контактхэмрэ тегхэмрэ ящыщэу альбомхэр къэгупсысын",
-  "Showing albums with all selected tags": "Къыхэхахэм тегхэмкӀэ альбомхэр къэгупсысын"
+  "Showing albums with all selected tags": "Къыхэхахэм тегхэмкӀэ альбомхэр къэгупсысын",
+  "Clear All": "ПсӀапхъэхэм Зегъэхъуэн",
+  "6180 Logo": "6180 Логотип",
+  "Home": "Унэ",
+  "Visit Home": "НэкӀубгъом Кeur",
+  "Visit 6180.io": "6180.io-м Кeur",
+  "No tags available": "Тегхэр къэгъуэтакъым",
+  "Showing photos with all selected tags": "Зэхэгъэхьэзырышъхуэ тегхэмкIэ сурэтхэр",
+  "Valid parameters not found in URL": "URL-м параметрхэр щыхъумафэхэр къэгъуэтэкъым",
+  "Invalid id parameter format": "Хэлъкъым id параметр форматыр",
+  "Album not found": "Альбом къэгъуэтакъым",
+  "the album owner": "Альбом иес",
+  "Tag, save and find that performance — before it's lost.": "Къалъысей хуэдэ, хъумэн псом зэфӀэкӀи — псынщӀэу щытмэ.",
+  "Tag, save and find that smile — before it's lost.": "Къалъысей хуэдэ, хъумэн псом зэфӀэкӀи — кхъэщӀэу щытмэ.",
+  "Tag, save and find that birthday — before it's lost.": "Къалъысей хуэдэ, хъумэн псом зэфӀэкӀи — дыгъужьыфышыфӀэу щытмэ.",
+  "Tag, save and find that sunset — before it's lost.": "Къалъысей хуэдэ, хъумэн псом зэфӀэкӀи — дыгъужьыфышыфӀэу щытмэ.",
+  "Tag, save and find that party — before it's lost.": "Къалъысей хуэдэ, хъумэн псом зэфӀэкӀи — къуажэу щытмэ.",
+  "Tag, save and find that vacation — before it's lost.": "Къалъысей хуэдэ, хъумэн псом зэфӀэкӀи — дамыгъэу щытмэ."
 }

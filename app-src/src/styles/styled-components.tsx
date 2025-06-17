@@ -90,6 +90,11 @@ const theme = {
   }
 };
 
+// ========== Header Height Constants ==========
+// Define header height as a constant to keep it consistent across components
+const HEADER_HEIGHT = '64px'; // Increased from 60px for better slogan visibility
+const HEADER_HEIGHT_MOBILE = '60px'; // Increased from 56px
+
 // ========== Global Styles ==========
 
 export const GlobalStyle = createGlobalStyle`
@@ -107,7 +112,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
     overflow-x: hidden;
   }
   
@@ -115,10 +119,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
     overflow-x: hidden;
     font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     background: linear-gradient(135deg, ${theme.colors.background.gradientStart} 0%, ${theme.colors.background.gradientEnd} 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
   }
 
   #root {
@@ -241,15 +246,15 @@ export const Body = styled.div<DirectionalProps>`
   background: ${theme.colors.background.primary};
   color: ${theme.colors.text.primary};
   line-height: 1.5;
-  padding: 0 ${theme.spacing.md} ${theme.spacing.md};
+  /* Add top padding to account for fixed header */
+  padding: ${HEADER_HEIGHT} ${theme.spacing.md} ${theme.spacing.md};
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  position: relative;
   
   ${mobile(`
-    padding: 0 ${theme.spacing.sm} ${theme.spacing.sm};
+    padding: ${HEADER_HEIGHT_MOBILE} ${theme.spacing.sm} ${theme.spacing.sm};
   `)}
 `;
 
@@ -287,24 +292,47 @@ export const ContentContainer = styled.div`
 // ========== Brand Header Components ==========
 
 export const BrandHeader = styled.div`
+  /* Fixed positioning for 100% reliability */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
+  height: ${HEADER_HEIGHT};
+  
+  /* Styling */
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid ${theme.colors.borderLight};
-  position: relative;
-  z-index: 100;
   backdrop-filter: blur(8px);
-  margin-bottom: ${theme.spacing.sm};
-  padding: ${theme.spacing.sm} 0;
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Fixed z-index - stays below modals but above normal content */
+  z-index: 9999;
+  
+  /* Performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
+  
+  /* Mobile adjustments */
+  ${mobile(`
+    height: ${HEADER_HEIGHT_MOBILE};
+  `)}
 `;
 
 export const BrandHeaderContent = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  padding: 0 ${theme.spacing.md};
+  gap: ${theme.spacing.md}; /* Add gap between logo and slogan */
   
   ${mobile(`
-    padding: ${theme.spacing.sm};
+    padding: 0 ${theme.spacing.sm};
+    gap: ${theme.spacing.sm}; /* Smaller gap on mobile */
   `)}
 `;
 
@@ -332,12 +360,18 @@ export const BrandLink = styled.a`
 
 export const BrandSlogan = styled(BrandLink)`
   font-style: italic;
-  color: ${theme.colors.text.light};
+  color: ${theme.colors.text.secondary}; /* Made darker for better visibility */
   font-size: ${theme.fontSizes.xs};
   
   &:hover {
-    color: ${theme.colors.text.secondary};
+    color: ${theme.colors.text.primary};
   }
+  
+  ${mobile(`
+    font-size: 11px; /* Slightly smaller on mobile but still visible */
+    max-width: 200px; /* Limit width on mobile */
+    text-align: right;
+  `)}
 `;
 
 export const BrandLogo = styled.img`
@@ -1221,7 +1255,7 @@ export const Modal = styled.div<ModalProps>`
   width: 100%;
   height: 100%;
   background-color: ${theme.colors.overlay};
-  z-index: ${props => props.$zIndex || 1000};
+  z-index: ${props => props.$zIndex || 10000}; /* Always above header (9999) */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1285,7 +1319,7 @@ export const DropdownMenu = styled.div`
   position: absolute;
   top: 100%;
   right: 0;
-  z-index: 100;
+  z-index: 9998; /* Just below header, above normal content */
   background-color: ${theme.colors.white};
   box-shadow: ${theme.boxShadow.md};
   border-radius: ${theme.borderRadius.small};
@@ -1303,7 +1337,7 @@ export const FullscreenContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 2000;
+  z-index: 10000; /* Always above header (9999) */
   display: flex;
   flex-direction: column;
 `;

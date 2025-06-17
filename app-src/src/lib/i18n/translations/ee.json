@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tsɔ Fotowo Kpɔ Eŋu",
   "Album successfully saved!": "Wò albɔm dzra ɖo dzidzɔtɔe!",
   "All files successfully uploaded": "Faɛl siwo katã wodɔ dzidzedze me",
@@ -295,5 +296,22 @@
   "Open On Android": "Ʋu Le Android Dzi",
   "Toggle contacts filter": "Trɔ kakaɖeɖe ŋutinukpɔkplɔ̃",
   "Showing albums with all selected contacts and tags": "Fifia album siwo me amekakaɖeɖe kple dzesi siwo katã wotia le",
-  "Showing albums with all selected tags": "Fifia album siwo me dzesi siwo katã wotia le"
+  "Showing albums with all selected tags": "Fifia album siwo me dzesi siwo katã wotia le",
+  "Clear All": "Tutu Blibo",
+  "6180 Logo": "6180 Logo",
+  "Home": "Aƒe",
+  "Visit Home": "Dze Aƒe",
+  "Visit 6180.io": "Dze 6180.io",
+  "No tags available": "Tag aɖeke meli o",
+  "Showing photos with all selected tags": "Fiase fɔtowo kple tag siwo woaƒo la katã",
+  "Valid parameters not found in URL": "Womeɖe parameter si le eme kpɔ le URL me o",
+  "Invalid id parameter format": "Id parameter format si medze o",
+  "Album not found": "Womekpɔ album o",
+  "the album owner": "album tɔ",
+  "Tag, save and find that performance — before it's lost.": "De dzesi, dzra eye di dɔwɔwɔ la — hafi bu.",
+  "Tag, save and find that smile — before it's lost.": "De dzesi, dzra eye di nukokoe la — hafi bu.",
+  "Tag, save and find that birthday — before it's lost.": "De dzesi, dzra eye di dzigbeɣi la — hafi bu.",
+  "Tag, save and find that sunset — before it's lost.": "De dzesi, dzra eye di ɣetrɔ la — hafi bu.",
+  "Tag, save and find that party — before it's lost.": "De dzesi, dzra eye di takpekpe la — hafi bu.",
+  "Tag, save and find that vacation — before it's lost.": "De dzesi, dzra eye di dzudzɔ la — hafi bu."
 }

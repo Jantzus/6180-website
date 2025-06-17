@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ṣàfikún Àwọn Fótò",
   "Album successfully saved!": "Àwòrán rẹ ti fi pamọ́ ni ìjàṣẹ́yọrí!",
   "All files successfully uploaded": "Gbogbo àwọn fáìlì ti gba ìgbéga láṣeyọrí",
@@ -295,5 +296,22 @@
   "Open On Android": "Ṣii Lori Android",
   "Toggle contacts filter": "Yí àṣẹ iṣẹ-àjọpọ̀ dà",
   "Showing albums with all selected contacts and tags": "Ṣíṣe àfihàn àwọn álbọ́mù pẹ̀lú gbogbo àwọn ìbáṣepọ̀ àti àwọn àmì tí a yàn",
-  "Showing albums with all selected tags": "Ṣíṣe àfihàn àwọn álbọ́mù pẹ̀lú gbogbo àwọn àmì tí a yàn"
+  "Showing albums with all selected tags": "Ṣíṣe àfihàn àwọn álbọ́mù pẹ̀lú gbogbo àwọn àmì tí a yàn",
+  "Clear All": "Pa Gbogbo Rẹ́",
+  "6180 Logo": "Àmì 6180",
+  "Home": "Ilé",
+  "Visit Home": "Lọ Sí Ilé",
+  "Visit 6180.io": "Lọ Sí 6180.io",
+  "No tags available": "Kò sí àmì kankan",
+  "Showing photos with all selected tags": "Fifi awọn fọto pẹlu gbogbo awọn aami ti a yan",
+  "Valid parameters not found in URL": "Kò rí àwọn ìpínrọ̀ tó tọ́ nínú URL",
+  "Invalid id parameter format": "Ọna parameter id ti ko tọ",
+  "Album not found": "Kò rí àlbọ́mù náà",
+  "the album owner": "oníṣẹ́ àlbọ́mù náà",
+  "Tag, save and find that performance — before it's lost.": "Samí ami, pamọ́ ati wá ọjọ́ ìbí yẹn — kí ó tó sọnu.",
+  "Tag, save and find that smile — before it's lost.": "Samí ami, pamọ́ ati wá ẹ̀rín yẹn — kí ó tó sọnu.",
+  "Tag, save and find that birthday — before it's lost.": "Samí ami, pamọ́ ati wá iṣẹ́ yẹn — kí ó tó sọnu.",
+  "Tag, save and find that sunset — before it's lost.": "Samí ami, pamọ́ ati wá ìsinmi yẹn — kí ó tó sọnu.",
+  "Tag, save and find that party — before it's lost.": "Samí ami, pamọ́ ati wá ayẹyẹ yẹn — kí ó tó sọnu.",
+  "Tag, save and find that vacation — before it's lost.": "Samí ami, pamọ́ ati wá ìwọ̀-òòrùn yẹn — kí ó tó sọnu."
 }

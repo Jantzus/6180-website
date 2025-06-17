@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tambahkeun Poto",
   "Album successfully saved!": "Album anjeun geus hasil disimpen!",
   "All files successfully uploaded": "Sakabéh file geus hasil diunggah",
@@ -295,5 +296,22 @@
   "Open On Android": "Buka Di Android",
   "Toggle contacts filter": "Gentos saringan kontak",
   "Showing albums with all selected contacts and tags": "Némbongkeun albeum sareng sadaya kontak sareng tag anu dipilih",
-  "Showing albums with all selected tags": "Némbongkeun albeum sareng sadaya tag anu dipilih"
+  "Showing albums with all selected tags": "Némbongkeun albeum sareng sadaya tag anu dipilih",
+  "Clear All": "Hapus Sadayana",
+  "6180 Logo": "Logo 6180",
+  "Home": "Imah",
+  "Visit Home": "Mampir ka Imah",
+  "Visit 6180.io": "Mampir ka 6180.io",
+  "No tags available": "Teu aya tag nu aya",
+  "Showing photos with all selected tags": "Némbongkeun poto sareng sadaya tag anu dipilih",
+  "Valid parameters not found in URL": "Parameter anu sah henteu kapanggih dina URL",
+  "Invalid id parameter format": "Format parameter id teu valid",
+  "Album not found": "Album teu kapanggih",
+  "the album owner": "nu boga album",
+  "Tag, save and find that performance — before it's lost.": "Tag, simpen jeung panggihan ultah éta — sateuacan leungit.",
+  "Tag, save and find that smile — before it's lost.": "Tag, simpen jeung panggihan seuri éta — sateuacan leungit.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, simpen jeung panggihan pintonan éta — sateuacan leungit.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, simpen jeung panggihan liburan éta — sateuacan leungit.",
+  "Tag, save and find that party — before it's lost.": "Tag, simpen jeung panggihan pésta éta — sateuacan leungit.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, simpen jeung panggihan panonpoé surup éta — sateuacan leungit."
 }

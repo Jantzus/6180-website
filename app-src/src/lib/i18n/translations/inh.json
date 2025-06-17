@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Сурташ тӀатоха",
   "Album successfully saved!": "Хьа альбом могаш доландаь Ӏалашьяьй!",
   "All files successfully uploaded": "Деррига файлаш хьаязаь дукхеттача",
@@ -295,5 +296,22 @@
   "Open On Android": "Android чу Ха",
   "Toggle contacts filter": "Контактийн фильтр хийца",
   "Showing albums with all selected contacts and tags": "Харжа контакташ а, тегаш а цӀахь йолуш альбомаш гайта",
-  "Showing albums with all selected tags": "Харжа тегаш цӀахь йолуш альбомаш гайта"
+  "Showing albums with all selected tags": "Харжа тегаш цӀахь йолуш альбомаш гайта",
+  "Clear All": "Дерриг ДӀаяккха",
+  "6180 Logo": "6180 Логотип",
+  "Home": "ЦIа",
+  "Visit Home": "ЦIа Дача",
+  "Visit 6180.io": "6180.io Дача",
+  "No tags available": "Тегаш яц",
+  "Showing photos with all selected tags": "Массарча хаьржача тегашца суртал",
+  "Valid parameters not found in URL": "URL чохь хьакхача параметраш яц",
+  "Invalid id parameter format": "Нийса йоцу id параметран формат",
+  "Album not found": "Альбом кораяьяц",
+  "the album owner": "альбоман хозяин",
+  "Tag, save and find that performance — before it's lost.": "Билгал дан, Ӏалаш а иза къамел кароль — юхаоагӀаяр хана.",
+  "Tag, save and find that smile — before it's lost.": "Билгал дан, Ӏалаш а иза мевел карор — юхаоагӀаяр хана.",
+  "Tag, save and find that birthday — before it's lost.": "Билгал дан, Ӏалаш а иза дийцар де — юхаоагӀаяр хана.",
+  "Tag, save and find that sunset — before it's lost.": "Билгал дан, Ӏалаш а иза малх чекхьоьхуш де — юхаоагӀаяр хана.",
+  "Tag, save and find that party — before it's lost.": "Билгал дан, Ӏалаш а иза бокъорг де — юхаоагӀаяр хана.",
+  "Tag, save and find that vacation — before it's lost.": "Билгал дан, Ӏалаш а иза лоам де — юхаоагӀаяр хана."
 }

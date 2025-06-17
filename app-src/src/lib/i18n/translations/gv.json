@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Cur Jallooyn Lesh",
   "Album successfully saved!": "Dty albym er ny hauail dy speeideilagh!",
   "All files successfully uploaded": "Dy chooilley choadan currit seose dy speeideilagh",
@@ -295,5 +296,22 @@
   "Open On Android": "Foshil Er Android",
   "Toggle contacts filter": "Çhyndaa ny scagheyder ym-loayrtys",
   "Showing albums with all selected contacts and tags": "Soilshaghey albymyn lesh dy chooilley haghyrt as lipaid reiht",
-  "Showing albums with all selected tags": "Soilshaghey albymyn lesh dy chooilley lipaid reiht"
+  "Showing albums with all selected tags": "Soilshaghey albymyn lesh dy chooilley lipaid reiht",
+  "Clear All": "Geddyn Rey dy Chooilley",
+  "6180 Logo": "Logo 6180",
+  "Home": "Thie",
+  "Visit Home": "Cur Shilley er y Valley",
+  "Visit 6180.io": "Cur Shilley er 6180.io",
+  "No tags available": "Cha nel tagyn ry-gheddyn",
+  "Showing photos with all selected tags": "Soilshaghey jallooyee lesh ooilley ny tagyn reiht",
+  "Valid parameters not found in URL": "Cha row parameteryn fondagh ry-gheddyn ayns URL",
+  "Invalid id parameter format": "Aght pharameadar id neuchiart",
+  "Album not found": "Cha row yn albym ry-gheddyn",
+  "the album owner": "sheelteyr yn albym",
+  "Tag, save and find that performance — before it's lost.": "Jean cowrey er, freill as fow yn taishbynys shen — roish my vel eh caillt.",
+  "Tag, save and find that smile — before it's lost.": "Jean cowrey er, freill as fow yn shymley shen — roish my vel eh caillt.",
+  "Tag, save and find that birthday — before it's lost.": "Jean cowrey er, freill as fow yn laa-ruggyree shen — roish my vel eh caillt.",
+  "Tag, save and find that sunset — before it's lost.": "Jean cowrey er, freill as fow yn lhag ny greiney shen — roish my vel eh caillt.",
+  "Tag, save and find that party — before it's lost.": "Jean cowrey er, freill as fow yn cuirrey shen — roish my vel eh caillt.",
+  "Tag, save and find that vacation — before it's lost.": "Jean cowrey er, freill as fow ny laghyn seyr shen — roish my vel ad caillt."
 }

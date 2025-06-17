@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fa'aopoopo Ata",
   "Album successfully saved!": "Ua fa'asaoina lau alipamu!",
   "All files successfully uploaded": "Ua mae'a ona fa'aleleia uma faila",
@@ -295,5 +296,22 @@
   "Open On Android": "Tatala I Le Android",
   "Toggle contacts filter": "Suia le fa'amama o feso'ota'iga",
   "Showing albums with all selected contacts and tags": "Fa'aali ata fa'amaumau ma feso'ota'iga uma ma fa'ailoga uma",
-  "Showing albums with all selected tags": "Fa'aali ata fa'amaumau ma fa'ailoga uma"
+  "Showing albums with all selected tags": "Fa'aali ata fa'amaumau ma fa'ailoga uma",
+  "Clear All": "Faamama Uma",
+  "6180 Logo": "Logo o 6180",
+  "Home": "Fale",
+  "Visit Home": "Asiasi i le Fale",
+  "Visit 6180.io": "Asiasi i 6180.io",
+  "No tags available": "Leai ni fa'ailoga",
+  "Showing photos with all selected tags": "Fa'aali ata fa'atasi ma fa'ailoga uma filifilia",
+  "Valid parameters not found in URL": "Le o maua ni fa'aogaina sa'o i le URL",
+  "Invalid id parameter format": "Format parameter id le talafeagai",
+  "Album not found": "Leai ni api e maua",
+  "the album owner": "le tagata e ona le api",
+  "Tag, save and find that performance — before it's lost.": "Fa'ailoga, teu ma su'e le aso fanau lea — a'o le'i leiloa.",
+  "Tag, save and find that smile — before it's lost.": "Fa'ailoga, teu ma su'e le atamaliei lea — a'o le'i leiloa.",
+  "Tag, save and find that birthday — before it's lost.": "Fa'ailoga, teu ma su'e le fa'aaliga lea — a'o le'i leiloa.",
+  "Tag, save and find that sunset — before it's lost.": "Fa'ailoga, teu ma su'e le tafaoga lea — a'o le'i leiloa.",
+  "Tag, save and find that party — before it's lost.": "Fa'ailoga, teu ma su'e le ta'amilosaga lea — a'o le'i leiloa.",
+  "Tag, save and find that vacation — before it's lost.": "Fa'ailoga, teu ma su'e le to o le la lea — a'o le'i leiloa."
 }

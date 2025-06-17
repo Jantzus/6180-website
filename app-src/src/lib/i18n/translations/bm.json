@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ka Foto Fara",
   "Album successfully saved!": "I ka malo marayɔrɔ baara kɛra ka ɲɛ!",
   "All files successfully uploaded": "Fichier bɛɛ ladɔnna ni ɲɛtaa ye",
@@ -295,5 +296,22 @@
   "Open On Android": "Da Wuli Android Kan",
   "Toggle contacts filter": "Ka jɛgɛn",
   "Showing albums with all selected contacts and tags": "Ka jirali sɛbɛnni ni taamasiyɛn bɛɛ ye",
-  "Showing albums with all selected tags": "Ka jirali taamasiyɛn bɛɛ ye"
+  "Showing albums with all selected tags": "Ka jirali taamasiyɛn bɛɛ ye",
+  "Clear All": "Ka Bɛɛ Tunya",
+  "6180 Logo": "6180 Logo",
+  "Home": "So",
+  "Visit Home": "Taa So",
+  "Visit 6180.io": "Taa 6180.io",
+  "No tags available": "Tag si kɔrɔ",
+  "Showing photos with all selected tags": "Ka foto k'a kɛ ni tag bɛɛ sugandili",
+  "Valid parameters not found in URL": "Parameter tiɲɛ tɛ URL kɔnɔ",
+  "Invalid id parameter format": "Id parametɛri ladaban tɛ ɲuman",
+  "Album not found": "Album ma sɔrɔ",
+  "the album owner": "albumɛ tigi",
+  "Tag, save and find that performance — before it's lost.": "Tagi, bika ani ka kɛ fɛn in ɲini — ka sɔrɔ ka taa.",
+  "Tag, save and find that smile — before it's lost.": "Tagi, bika ani ka ɲɛgɛn in ɲini — ka sɔrɔ ka taa.",
+  "Tag, save and find that birthday — before it's lost.": "Tagi, bika ani ka banko in ɲini — ka sɔrɔ ka taa.",
+  "Tag, save and find that sunset — before it's lost.": "Tagi, bika ani ka tilema cɛ in ɲini — ka sɔrɔ ka taa.",
+  "Tag, save and find that party — before it's lost.": "Tagi, bika ani ka dɔnko in ɲini — ka sɔrɔ ka taa.",
+  "Tag, save and find that vacation — before it's lost.": "Tagi, bika ani ka foro in ɲini — ka sɔrɔ ka taa."
 }

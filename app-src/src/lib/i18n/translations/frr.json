@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Bilen hentudu",
   "Album successfully saved!": "Din album as gud seekert wurden!",
   "All files successfully uploaded": "Aal datein san erfolgraik huuchlaaden wurden",
@@ -295,5 +296,22 @@
   "Open On Android": "Uun Android Aap Maage",
   "Toggle contacts filter": "Kontakt-Filter wisel",
   "Showing albums with all selected contacts and tags": "Wiset Albume mä aal ütwäälde Kontakte an Tags",
-  "Showing albums with all selected tags": "Wiset Albume mä aal ütwäälde Tags"
+  "Showing albums with all selected tags": "Wiset Albume mä aal ütwäälde Tags",
+  "Clear All": "Ales Struck",
+  "6180 Logo": "6180 Logo",
+  "Home": "Tuhuus",
+  "Visit Home": "Tuhuus Besäke",
+  "Visit 6180.io": "6180.io Besäke",
+  "No tags available": "Nian Tags diar",
+  "Showing photos with all selected tags": "Wisang foon Bialer mä ale uutwääld Tags",
+  "Valid parameters not found in URL": "Gültige Parameter ei bi'n URL fünjen",
+  "Invalid id parameter format": "Ünjeelti ID Parameter Format",
+  "Album not found": "Album ei fünjen",
+  "the album owner": "Album Eigner",
+  "Tag, save and find that performance — before it's lost.": "Tag, seekre en schük da Upfäären — eer't wech is.",
+  "Tag, save and find that smile — before it's lost.": "Tag, seekre en schük da Glims — eer't wech is.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, seekre en schük da Gebortensdai — eer't wech is.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, seekre en schük da Söönerunergung — eer't wech is.",
+  "Tag, save and find that party — before it's lost.": "Tag, seekre en schük da Fest — eer't wech is.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, seekre en schük da Ferian — eer't wech sön."
 }

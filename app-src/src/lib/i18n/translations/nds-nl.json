@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Foto's derbieveungen",
   "Album successfully saved!": "Joew album is succesvol op-eslagen!",
   "All files successfully uploaded": "Alle bestaanden bin succesvol op-eladen",
@@ -295,5 +296,22 @@
   "Open On Android": "Opendoon Op Android",
   "Toggle contacts filter": "Kontakfilter wisselen",
   "Showing albums with all selected contacts and tags": "Toon albums mit alle keuzen kontakten en labels",
-  "Showing albums with all selected tags": "Toon albums mit alle keuzen labels"
+  "Showing albums with all selected tags": "Toon albums mit alle keuzen labels",
+  "Clear All": "Ales Vortsmiten",
+  "6180 Logo": "6180 Logo",
+  "Home": "Hoes",
+  "Visit Home": "Nao Hoes Goan",
+  "Visit 6180.io": "Nao 6180.io Goan",
+  "No tags available": "Gien labels beschikbaar",
+  "Showing photos with all selected tags": "Tonen van foto's mit alle uutekeuzen labels",
+  "Valid parameters not found in URL": "Gildige parameters neet evunnen in URL",
+  "Invalid id parameter format": "Ónjeldich id parameter formaat",
+  "Album not found": "Album neet evunnen",
+  "the album owner": "de album eigenaar",
+  "Tag, save and find that performance — before it's lost.": "Markeren, opsloan en vienen de verjaardag — veurdat ze verduunt.",
+  "Tag, save and find that smile — before it's lost.": "Markeren, opsloan en vienen de glimlach — veurdat ze verduunt.",
+  "Tag, save and find that birthday — before it's lost.": "Markeren, opsloan en vienen de voarstellieng — veurdat ze verduunt.",
+  "Tag, save and find that sunset — before it's lost.": "Markeren, opsloan en vienen de vakantie — veurdat ze verduunt.",
+  "Tag, save and find that party — before it's lost.": "Markeren, opsloan en vienen 't feest — veurdat 't verduunt.",
+  "Tag, save and find that vacation — before it's lost.": "Markeren, opsloan en vienen de zunondergang — veurdat ze verduunt."
 }

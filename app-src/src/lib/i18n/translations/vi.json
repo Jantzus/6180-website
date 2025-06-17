@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Thêm Ảnh",
   "Album successfully saved!": "Đã lưu album của bạn thành công!",
   "All files successfully uploaded": "Tất cả các tệp đã được tải lên thành công",
@@ -295,5 +296,22 @@
   "Open On Android": "Mở Trên Android",
   "Toggle contacts filter": "Chuyển bộ lọc liên hệ",
   "Showing albums with all selected contacts and tags": "Hiển thị album với tất cả các liên hệ và thẻ đã chọn",
-  "Showing albums with all selected tags": "Hiển thị album với tất cả các thẻ đã chọn"
+  "Showing albums with all selected tags": "Hiển thị album với tất cả các thẻ đã chọn",
+  "Clear All": "Xóa Tất Cả",
+  "6180 Logo": "Logo 6180",
+  "Home": "Trang Chủ",
+  "Visit Home": "Thăm Trang Chủ",
+  "Visit 6180.io": "Thăm 6180.io",
+  "No tags available": "Không có thẻ nào",
+  "Showing photos with all selected tags": "Hiển thị ảnh với tất cả các thẻ đã chọn",
+  "Valid parameters not found in URL": "Không tìm thấy tham số hợp lệ trong URL",
+  "Invalid id parameter format": "Định dạng tham số id không hợp lệ",
+  "Album not found": "Không tìm thấy album",
+  "the album owner": "chủ sở hữu album",
+  "Tag, save and find that performance — before it's lost.": "Gắn thẻ, lưu và tìm ngày sinh nhật đó — trước khi nó bị mất.",
+  "Tag, save and find that smile — before it's lost.": "Gắn thẻ, lưu và tìm nụ cười đó — trước khi nó bị mất.",
+  "Tag, save and find that birthday — before it's lost.": "Gắn thẻ, lưu và tìm buổi biểu diễn đó — trước khi nó bị mất.",
+  "Tag, save and find that sunset — before it's lost.": "Gắn thẻ, lưu và tìm kỳ nghỉ đó — trước khi nó bị mất.",
+  "Tag, save and find that party — before it's lost.": "Gắn thẻ, lưu và tìm bữa tiệc đó — trước khi nó bị mất.",
+  "Tag, save and find that vacation — before it's lost.": "Gắn thẻ, lưu và tìm hoàng hôn đó — trước khi nó bị mất."
 }

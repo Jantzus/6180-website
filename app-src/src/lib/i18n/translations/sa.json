@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "छायाचित्राणि योजयतु",
   "Album successfully saved!": "तव चित्रसङ्ग्रहः सफलतया रक्षितः!",
   "All files successfully uploaded": "सर्वाणि सञ्चिकाः सफलतापूर्वकम् उपारोपिताः",
@@ -295,5 +296,22 @@
   "Open On Android": "Android मध्ये खोल",
   "Toggle contacts filter": "सम्पर्क निस्यन्दकं परिवर्तयतु",
   "Showing albums with all selected contacts and tags": "सर्वेषु चयनितेषु सम्पर्केषु चिह्नकेषु च छायाचित्र-संग्रहान् दर्शयति",
-  "Showing albums with all selected tags": "सर्वेषु चयनितेषु चिह्नकेषु छायाचित्र-संग्रहान् दर्शयति"
+  "Showing albums with all selected tags": "सर्वेषु चयनितेषु चिह्नकेषु छायाचित्र-संग्रहान् दर्शयति",
+  "Clear All": "सर्वं विलोपयतु",
+  "6180 Logo": "6180 चिह्नम्",
+  "Home": "गृहम्",
+  "Visit Home": "गृहं गमयतु",
+  "Visit 6180.io": "6180.io गमयतु",
+  "No tags available": "न काः अङ्कः प्राप्तः",
+  "Showing photos with all selected tags": "सर्वेषु चिताङ्केषु सहितानि चित्राणि दर्शयति",
+  "Valid parameters not found in URL": "यूआरएल मध्ये ग्राह्यप्राचलाः न प्राप्ताः",
+  "Invalid id parameter format": "अयोग्यः id पारामीटरस्य स्वरूपम्",
+  "Album not found": "एल्बम न प्राप्तम्",
+  "the album owner": "एल्बमस्य स्वामी",
+  "Tag, save and find that performance — before it's lost.": "चिह्नयत, रक्षत च तं जन्मदिनं न्वेषत — नष्टात् पूर्वम्।",
+  "Tag, save and find that smile — before it's lost.": "चिह्नयत, रक्षत च तत् हासं न्वेषत — नष्टात् पूर्वम्।",
+  "Tag, save and find that birthday — before it's lost.": "चिह्नयत, रक्षत च तत् प्रदर्शनं न्वेषत — नष्टात् पूर्वम्।",
+  "Tag, save and find that sunset — before it's lost.": "चिह्नयत, रक्षत च तत् विश्रामं न्वेषत — नष्टात् पूर्वम्।",
+  "Tag, save and find that party — before it's lost.": "चिह्नयत, रक्षत च तत् उत्सवं न्वेषत — नष्टात् पूर्वम्।",
+  "Tag, save and find that vacation — before it's lost.": "चिह्नयत, रक्षत च तं सूर्यास्तं न्वेषत — नष्टात् पूर्वम्।"
 }

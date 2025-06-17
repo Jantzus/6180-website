@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Keworra Skeudhynnow",
   "Album successfully saved!": "Agas albom re beu gwithys yn sowethus!",
   "All files successfully uploaded": "Pub restren yw bos keworrys yn sodhogel",
@@ -295,5 +296,22 @@
   "Open On Android": "Ygor War Android",
   "Toggle contacts filter": "Chanjya sidhydh kesskrifa",
   "Showing albums with all selected contacts and tags": "Diskwedhes albymow gans oll an gesskriforyon ha taggys dewisys",
-  "Showing albums with all selected tags": "Diskwedhes albymow gans oll an taggys dewisys"
+  "Showing albums with all selected tags": "Diskwedhes albymow gans oll an taggys dewisys",
+  "Clear All": "Klerhe Oll",
+  "6180 Logo": "Logo 6180",
+  "Home": "Tre",
+  "Visit Home": "Mos Tre",
+  "Visit 6180.io": "Mos dhe 6180.io",
+  "No tags available": "Ny's eus tagys vyth",
+  "Showing photos with all selected tags": "Gorra skeusennyow gans oll an tagys dewysys",
+  "Valid parameters not found in URL": "Arghansow gwir ny's cafas yn URL",
+  "Invalid id parameter format": "Furvow parameter id na dhiworth",
+  "Album not found": "Album ny'n cafas",
+  "the album owner": "perchen an album",
+  "Tag, save and find that performance — before it's lost.": "Gorhemm, gwitha ha kavos an penn-bloedh-na — kens dhe golli.",
+  "Tag, save and find that smile — before it's lost.": "Gorhemm, gwitha ha kavos an hwerthin-na — kens dhe golli.",
+  "Tag, save and find that birthday — before it's lost.": "Gorhemm, gwitha ha kavos an warnigeth-na — kens dhe golli.",
+  "Tag, save and find that sunset — before it's lost.": "Gorhemm, gwitha ha kavos an gwylys-na — kens dhe golli.",
+  "Tag, save and find that party — before it's lost.": "Gorhemm, gwitha ha kavos an parti-na — kens dhe golli.",
+  "Tag, save and find that vacation — before it's lost.": "Gorhemm, gwitha ha kavos an hwyrnoswyth-na — kens dhe golli."
 }

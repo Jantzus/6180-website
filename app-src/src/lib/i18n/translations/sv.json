@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Lägg till Foton",
   "Album successfully saved!": "Ditt album har sparats!",
   "All files successfully uploaded": "Alla filer har laddats upp framgångsrikt",
@@ -295,5 +296,22 @@
   "Open On Android": "Öppna På Android",
   "Toggle contacts filter": "Växla kontaktfilter",
   "Showing albums with all selected contacts and tags": "Visar album med alla valda kontakter och taggar",
-  "Showing albums with all selected tags": "Visar album med alla valda taggar"
+  "Showing albums with all selected tags": "Visar album med alla valda taggar",
+  "Clear All": "Rensa Allt",
+  "6180 Logo": "6180 Logotyp",
+  "Home": "Hem",
+  "Visit Home": "Besök Hem",
+  "Visit 6180.io": "Besök 6180.io",
+  "No tags available": "Inga taggar tillgängliga",
+  "Showing photos with all selected tags": "Visar foton med alla valda taggar",
+  "Valid parameters not found in URL": "Giltiga parametrar hittades inte i URL",
+  "Invalid id parameter format": "Ogiltigt id parameter format",
+  "Album not found": "Album hittades inte",
+  "the album owner": "albumägaren",
+  "Tag, save and find that performance — before it's lost.": "Tagga, spara och hitta den födelsedagen — innan den försvinner.",
+  "Tag, save and find that smile — before it's lost.": "Tagga, spara och hitta det leendet — innan det försvinner.",
+  "Tag, save and find that birthday — before it's lost.": "Tagga, spara och hitta den föreställningen — innan den försvinner.",
+  "Tag, save and find that sunset — before it's lost.": "Tagga, spara och hitta den semestern — innan den försvinner.",
+  "Tag, save and find that party — before it's lost.": "Tagga, spara och hitta den festen — innan den försvinner.",
+  "Tag, save and find that vacation — before it's lost.": "Tagga, spara och hitta den solnedgången — innan den försvinner."
 }

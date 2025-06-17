@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "사진 추가",
   "Album successfully saved!": "앨범이 성공적으로 저장되었습니다!",
   "All files successfully uploaded": "모든 파일이 성공적으로 업로드되었습니다",
@@ -295,5 +296,22 @@
   "Open On Android": "Android에서 열기",
   "Toggle contacts filter": "연락처 필터 전환",
   "Showing albums with all selected contacts and tags": "선택된 모든 연락처와 태그가 포함된 앨범 표시",
-  "Showing albums with all selected tags": "선택된 모든 태그가 포함된 앨범 표시"
+  "Showing albums with all selected tags": "선택된 모든 태그가 포함된 앨범 표시",
+  "Clear All": "모두 지우기",
+  "6180 Logo": "6180 로고",
+  "Home": "홈",
+  "Visit Home": "홈 방문",
+  "Visit 6180.io": "6180.io 방문",
+  "No tags available": "사용 가능한 태그가 없습니다",
+  "Showing photos with all selected tags": "선택된 모든 태그가 있는 사진 표시",
+  "Valid parameters not found in URL": "URL에서 유효한 매개변수를 찾을 수 없습니다",
+  "Invalid id parameter format": "잘못된 id 매개변수 형식",
+  "Album not found": "앨범을 찾을 수 없습니다",
+  "the album owner": "앨범 소유자",
+  "Tag, save and find that performance — before it's lost.": "그 공연에 태그를 달고 저장하여 찾아보세요 — 잃어버리기 전에.",
+  "Tag, save and find that smile — before it's lost.": "그 미소에 태그를 달고 저장하여 찾아보세요 — 잃어버리기 전에.",
+  "Tag, save and find that birthday — before it's lost.": "그 생일에 태그를 달고 저장하여 찾아보세요 — 잃어버리기 전에.",
+  "Tag, save and find that sunset — before it's lost.": "그 일몰에 태그를 달고 저장하여 찾아보세요 — 잃어버리기 전에.",
+  "Tag, save and find that party — before it's lost.": "그 파티에 태그를 달고 저장하여 찾아보세요 — 잃어버리기 전에.",
+  "Tag, save and find that vacation — before it's lost.": "그 휴가에 태그를 달고 저장하여 찾아보세요 — 잃어버리기 전에."
 }

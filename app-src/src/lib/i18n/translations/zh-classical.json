@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "添照片",
   "Album successfully saved!": "閣下之影集已成功保存!",
   "All files successfully uploaded": "所有文件皆已上傳成功",
@@ -295,5 +296,22 @@
   "Open On Android": "開於Android",
   "Toggle contacts filter": "切換聯繫人篩選器",
   "Showing albums with all selected contacts and tags": "顯示包含所有所選聯繫人及標籤之相冊",
-  "Showing albums with all selected tags": "顯示包含所有所選標籤之相冊"
+  "Showing albums with all selected tags": "顯示包含所有所選標籤之相冊",
+  "Clear All": "清諸",
+  "6180 Logo": "6180徽",
+  "Home": "首",
+  "Visit Home": "訪首頁",
+  "Visit 6180.io": "訪6180.io",
+  "No tags available": "無標籤",
+  "Showing photos with all selected tags": "示具所選標籤之照片",
+  "Valid parameters not found in URL": "於URL中未尋得有效參數",
+  "Invalid id parameter format": "無效之識別參數格式",
+  "Album not found": "未尋得相冊",
+  "the album owner": "相冊主人",
+  "Tag, save and find that performance — before it's lost.": "標記、保存尋得彼生辰 — 於失前。",
+  "Tag, save and find that smile — before it's lost.": "標記、保存尋得彼笑容 — 於失前。",
+  "Tag, save and find that birthday — before it's lost.": "標記、保存尋得彼演出 — 於失前。",
+  "Tag, save and find that sunset — before it's lost.": "標記、保存尋得彼假期 — 於失前。",
+  "Tag, save and find that party — before it's lost.": "標記、保存尋得彼宴會 — 於失前。",
+  "Tag, save and find that vacation — before it's lost.": "標記、保存尋得彼日暮 — 於失前。"
 }

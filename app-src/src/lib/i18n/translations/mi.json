@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tāpiri Whakaahua",
   "Album successfully saved!": "Kua whakaorangia tō puka!",
   "All files successfully uploaded": "Kua pai te tukuake o ngā kōnae katoa",
@@ -295,5 +296,22 @@
   "Open On Android": "Whakatuwheratia Ki Android",
   "Toggle contacts filter": "Tawhiri ine whakawhiti",
   "Showing albums with all selected contacts and tags": "Whakaatuhia ngā kōpaki me ngā hononga me ngā tohu katoa i kōwhiria",
-  "Showing albums with all selected tags": "Whakaatuhia ngā kōpaki me ngā tohu katoa i kōwhiria"
+  "Showing albums with all selected tags": "Whakaatuhia ngā kōpaki me ngā tohu katoa i kōwhiria",
+  "Clear All": "Uku Katoa",
+  "6180 Logo": "Tohu 6180",
+  "Home": "Kāinga",
+  "Visit Home": "Toro ki te Kāinga",
+  "Visit 6180.io": "Toro ki 6180.io",
+  "No tags available": "Kāore he tapanga",
+  "Showing photos with all selected tags": "Whakaatu whakaahua me nga tapanga katoa i kōwhiria",
+  "Valid parameters not found in URL": "Kāore i kitea he tawhā tika ki te URL",
+  "Invalid id parameter format": "He tawhito kētenga hē parameter id",
+  "Album not found": "Kāore i kitea te kōpaki",
+  "the album owner": "te rangatira o te kōpaki",
+  "Tag, save and find that performance — before it's lost.": "Tapu, tiaki me kimi tērā rā whānau — kia kore ai a ngaro.",
+  "Tag, save and find that smile — before it's lost.": "Tapu, tiaki me kimi tērā menemene — kia kore ai a ngaro.",
+  "Tag, save and find that birthday — before it's lost.": "Tapu, tiaki me kimi tērā whakaaturanga — kia kore ai a ngaro.",
+  "Tag, save and find that sunset — before it's lost.": "Tapu, tiaki me kimi tērā rā whakatā — kia kore ai a ngaro.",
+  "Tag, save and find that party — before it's lost.": "Tapu, tiaki me kimi tērā pāti — kia kore ai a ngaro.",
+  "Tag, save and find that vacation — before it's lost.": "Tapu, tiaki me kimi tērā rorohanga rā — kia kore ai a ngaro."
 }

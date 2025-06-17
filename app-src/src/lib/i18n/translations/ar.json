@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "إضافة صور",
   "Album successfully saved!": "تم حفظ ألبومك بنجاح!",
   "All files successfully uploaded": "تم رفع جميع الملفات بنجاح",
@@ -295,5 +296,22 @@
   "Open On Android": "فتح على Android",
   "Toggle contacts filter": "تبديل مرشح جهات الاتصال",
   "Showing albums with all selected contacts and tags": "عرض الألبومات مع جميع جهات الاتصال والعلامات المحددة",
-  "Showing albums with all selected tags": "عرض الألبومات مع جميع العلامات المحددة"
+  "Showing albums with all selected tags": "عرض الألبومات مع جميع العلامات المحددة",
+  "Clear All": "مسح الكل",
+  "6180 Logo": "شعار 6180",
+  "Home": "الرئيسية",
+  "Visit Home": "زيارة الصفحة الرئيسية",
+  "Visit 6180.io": "زيارة 6180.io",
+  "No tags available": "لا توجد علامات متاحة",
+  "Showing photos with all selected tags": "عرض الصور مع جميع العلامات المحددة",
+  "Valid parameters not found in URL": "لم يتم العثور على معاملات صالحة في الرابط",
+  "Invalid id parameter format": "تنسيق معامل المعرف غير صالح",
+  "Album not found": "لم يتم العثور على الألبوم",
+  "the album owner": "مالك الألبوم",
+  "Tag, save and find that performance — before it's lost.": "اضع علامة واحفظ واعثر على ذلك الأداء — قبل أن يضيع.",
+  "Tag, save and find that smile — before it's lost.": "اضع علامة واحفظ واعثر على تلك الابتسامة — قبل أن تضيع.",
+  "Tag, save and find that birthday — before it's lost.": "اضع علامة واحفظ واعثر على عيد الميلاد ذلك — قبل أن يضيع.",
+  "Tag, save and find that sunset — before it's lost.": "اضع علامة واحفظ واعثر على تلك الغروب — قبل أن تضيع.",
+  "Tag, save and find that party — before it's lost.": "اضع علامة واحفظ واعثر على تلك الحفلة — قبل أن تضيع.",
+  "Tag, save and find that vacation — before it's lost.": "اضع علامة واحفظ واعثر على تلك الإجازة — قبل أن تضيع."
 }

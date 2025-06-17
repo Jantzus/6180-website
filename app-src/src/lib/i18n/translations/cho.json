@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Holisso apelaachi hoklit",
   "Album successfully saved!": "Chi album chimattohmi ittola!",
   "All files successfully uploaded": "Atakafa moma uplodate imalhpesa",
@@ -295,5 +296,22 @@
   "Open On Android": "Android Pakvli",
   "Toggle contacts filter": "Kontakt ikba chumpa im anukfilla",
   "Showing albums with all selected contacts and tags": "Album ik chitolit kontakt putta tag aiokpachi atokolit im anoli",
-  "Showing albums with all selected tags": "Album ik chitolit tag aiokpachi atokolit im anoli"
+  "Showing albums with all selected tags": "Album ik chitolit tag aiokpachi atokolit im anoli",
+  "Clear All": "Momakma Kashoffi",
+  "6180 Logo": "6180 Logo",
+  "Home": "Chuka",
+  "Visit Home": "Chuka Pisa",
+  "Visit 6180.io": "6180.io Pisa",
+  "No tags available": "Tag iksho",
+  "Showing photos with all selected tags": "Yvnnahvlli holhtina bika tag pisa ai",
+  "Valid parameters not found in URL": "URL ishki parameter vlhpisa ik im ahayucho",
+  "Invalid id parameter format": "Id parameter format ik achukmo",
+  "Album not found": "Album ik ahayucho",
+  "the album owner": "album im aieshi",
+  "Tag, save and find that performance — before it's lost.": "Tahli, hollo acha im ishtimpuli huchi — okpulo aiokha tuk.",
+  "Tag, save and find that smile — before it's lost.": "Tahli, hollo acha im yopali huchi — okpulo aiokha tuk.",
+  "Tag, save and find that birthday — before it's lost.": "Tahli, hollo acha im ittimipuli huchi — okpulo aiokha tuk.",
+  "Tag, save and find that sunset — before it's lost.": "Tahli, hollo acha im hvshi aiokpulo huchi — okpulo aiokha tuk.",
+  "Tag, save and find that party — before it's lost.": "Tahli, hollo acha im impvchi huchi — okpulo aiokha tuk.",
+  "Tag, save and find that vacation — before it's lost.": "Tahli, hollo acha im foha huchi — okpulo aiokha tuk."
 }

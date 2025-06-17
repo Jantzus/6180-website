@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Хаартыскалары Эбии",
   "Album successfully saved!": "Эн альбомуҥ ситиһиилээхтик харалынна!",
   "All files successfully uploaded": "Барыта билэтэр ситиһиилээхтик киирдилэр",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-қа Арый",
   "Toggle contacts filter": "Контакт фильтрын уларытыы",
   "Showing albums with all selected contacts and tags": "Барыта талыллыбыт контакттара уонна тиэктэрэ альбомнара көрдөрүү",
-  "Showing albums with all selected tags": "Барыта талыллыбыт тиэктэрэ альбомнара көрдөрүү"
+  "Showing albums with all selected tags": "Барыта талыллыбыт тиэктэрэ альбомнара көрдөрүү",
+  "Clear All": "Барыын Соторго",
+  "6180 Logo": "6180 Лого",
+  "Home": "Дьиэ",
+  "Visit Home": "Дьиэккэ Кэл",
+  "Visit 6180.io": "6180.io-ка Кэл",
+  "No tags available": "Тиэк суох",
+  "Showing photos with all selected tags": "Бары талыллыбыт тиэктэрдээх фото көрдөрүү",
+  "Valid parameters not found in URL": "URL-га сөп параметрдар көстүбэттэр",
+  "Invalid id parameter format": "Алдьаабыт id параметр формата",
+  "Album not found": "Альбом көстүбэтэ",
+  "the album owner": "альбом ийэтэ",
+  "Tag, save and find that performance — before it's lost.": "Белиэтинэн, хааматын уонна ол төрүт күнүн булуу — суох буолуохтаах инник.",
+  "Tag, save and find that smile — before it's lost.": "Белиэтинэн, хааматын уонна ол мичээрин булуу — суох буолуохтаах инник.",
+  "Tag, save and find that birthday — before it's lost.": "Белиэтинэн, хааматын уонна ол көрүүнү булуу — суох буолуохтаах инник.",
+  "Tag, save and find that sunset — before it's lost.": "Белиэтинэн, хааматын уонна ол дьыл булуу — суох буолуохтаах инник.",
+  "Tag, save and find that party — before it's lost.": "Белиэтинэн, хааматын уонна ол ыйа булуу — суох буолуохтаах инник.",
+  "Tag, save and find that vacation — before it's lost.": "Белиэтинэн, хааматын уонна ол күн киирэрин булуу — суох буолуохтаах инник."
 }

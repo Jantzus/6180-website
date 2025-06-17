@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotografije Pśidaś",
   "Album successfully saved!": "Waš album jo wuspěšnje skłaźony!",
   "All files successfully uploaded": "Wšykne dataje su se wuspěšnje naladowali",
@@ -295,5 +296,22 @@
   "Open On Android": "Na Android Wócyniś",
   "Toggle contacts filter": "Kontaktowy filter pśešaltowaś",
   "Showing albums with all selected contacts and tags": "Albumy ze wšymi wubranymi kontaktami a wobznamjenjami pokazaś",
-  "Showing albums with all selected tags": "Albumy ze wšymi wubranymi wobznamjenjami pokazaś"
+  "Showing albums with all selected tags": "Albumy ze wšymi wubranymi wobznamjenjami pokazaś",
+  "Clear All": "Wšykno Wulašowaś",
+  "6180 Logo": "Logo 6180",
+  "Home": "Zachopny",
+  "Visit Home": "Startowy bok woglědaś",
+  "Visit 6180.io": "6180.io woglědaś",
+  "No tags available": "Žedne wobznamjenja k dispoziciji",
+  "Showing photos with all selected tags": "Pokazujo wobraze ze wšykanymi wubranych wobznamjenjami",
+  "Valid parameters not found in URL": "Płaśiwe parametry njejsu se namakali w URL",
+  "Invalid id parameter format": "Njepłaśiwy format parametra id",
+  "Album not found": "Album njejo se namakał",
+  "the album owner": "bogaty albuma",
+  "Tag, save and find that performance — before it's lost.": "Wóznamjenja, składuj a namakaj tu pśedstajenje — nježli se zgubjujo.",
+  "Tag, save and find that smile — before it's lost.": "Wóznamjenja, składuj a namakaj ten smjech — nježli se zgubjujo.",
+  "Tag, save and find that birthday — before it's lost.": "Wóznamjenja, składuj a namakaj te narodniny — nježli se zgubjujo.",
+  "Tag, save and find that sunset — before it's lost.": "Wóznamjenja, składuj a namakaj ten zachod słońca — nježli se zgubjujo.",
+  "Tag, save and find that party — before it's lost.": "Wóznamjenja, składuj a namakaj tu swjatk — nježli se zgubjujo.",
+  "Tag, save and find that vacation — before it's lost.": "Wóznamjenja, składuj a namakaj te dowcasnje — nježli se zgubjujo."
 }

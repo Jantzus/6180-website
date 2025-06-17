@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Añadí Potretnan",
   "Album successfully saved!": "Bo album a warda eksitosamente!",
   "All files successfully uploaded": "Tur filenan a wordu karga exitosamente",
@@ -295,5 +296,22 @@
   "Open On Android": "Habri Na Android",
   "Toggle contacts filter": "Kambio e filtro di kontakto",
   "Showing albums with all selected contacts and tags": "Ta mustra album ku tur kontakto i tag skohi",
-  "Showing albums with all selected tags": "Ta mustra album ku tur tag skohi"
+  "Showing albums with all selected tags": "Ta mustra album ku tur tag skohi",
+  "Clear All": "Kita Tur",
+  "6180 Logo": "Logo di 6180",
+  "Home": "Casa",
+  "Visit Home": "Bai Casa",
+  "Visit 6180.io": "Bai 6180.io",
+  "No tags available": "No a tin tag",
+  "Showing photos with all selected tags": "Ta mustra retrato ku tur tag skohe",
+  "Valid parameters not found in URL": "No a haña parametro balido den URL",
+  "Invalid id parameter format": "Format di parameter id no valido",
+  "Album not found": "Album no a haña",
+  "the album owner": "e dunjo di album",
+  "Tag, save and find that performance — before it's lost.": "Pone etikèt, warda i buska e kumplianos ei — promé ku e pèrdè.",
+  "Tag, save and find that smile — before it's lost.": "Pone etikèt, warda i buska e sonrisa ei — promé ku e pèrdè.",
+  "Tag, save and find that birthday — before it's lost.": "Pone etikèt, warda i buska e performance ei — promé ku e pèrdè.",
+  "Tag, save and find that sunset — before it's lost.": "Pone etikèt, warda i buska e vakantie ei — promé ku e pèrdè.",
+  "Tag, save and find that party — before it's lost.": "Pone etikèt, warda i buska e fiesta ei — promé ku e pèrdè.",
+  "Tag, save and find that vacation — before it's lost.": "Pone etikèt, warda i buska e puesta di solo ei — promé ku e pèrdè."
 }

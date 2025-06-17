@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Magdagdag nin mga Litrato",
   "Album successfully saved!": "An saimong album matagumpay na na-save!",
   "All files successfully uploaded": "An gabos na mga file matriumpo na ikinarga",
@@ -295,5 +296,22 @@
   "Open On Android": "Buksan Sa Android",
   "Toggle contacts filter": "Liwaton an filter sa mga kontak",
   "Showing albums with all selected contacts and tags": "Pigtatanong mga album sa gabos na piniling mga kontak asin mga tag",
-  "Showing albums with all selected tags": "Pigtatanong mga album sa gabos na piniling mga tag"
+  "Showing albums with all selected tags": "Pigtatanong mga album sa gabos na piniling mga tag",
+  "Clear All": "Buraon an Gabos",
+  "6180 Logo": "Logo nin 6180",
+  "Home": "Harong",
+  "Visit Home": "Dumuman sa Harong",
+  "Visit 6180.io": "Dumuman sa 6180.io",
+  "No tags available": "Mayong mga tag na pwede",
+  "Showing photos with all selected tags": "Pinapahiling an mga ladawan na igwang gabos na mga piniling tag",
+  "Valid parameters not found in URL": "Mayong mga parameter na saro sa URL",
+  "Invalid id parameter format": "Dai tama na format kan id parameter",
+  "Album not found": "Mayong album na nahanap",
+  "the album owner": "an may-ari kan album",
+  "Tag, save and find that performance — before it's lost.": "Tag, tago asin hanap an saiyang pagpahiling — antes makawara.",
+  "Tag, save and find that smile — before it's lost.": "Tag, tago asin hanap an saiyang pahinganga — antes makawara.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, tago asin hanap an saiyang kaarawan — antes makawara.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, tago asin hanap an saiyang paglubot kan aldaw — antes makawara.",
+  "Tag, save and find that party — before it's lost.": "Tag, tago asin hanap an saiyang parti — antes makawara.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, tago asin hanap an saiyang bakasyon — antes makawara."
 }

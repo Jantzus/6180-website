@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Engetela Swifaniso",
   "Album successfully saved!": "Albamu ya wena yi hlayisiwile hi ndlela leyi humeleleke!",
   "All files successfully uploaded": "Swifayela hinkwaswo swi nghenisiwe hi ndlela leyi humeleleke",
@@ -295,5 +296,22 @@
   "Open On Android": "Pfula Eka Android",
   "Toggle contacts filter": "Cincana xivonelo xa vuxaka",
   "Showing albums with all selected contacts and tags": "Ku kombisa ti-albhamu ta vuxaka bya nkoka byo hlawuriwa hinkwabyo",
-  "Showing albums with all selected tags": "Ku kombisa ti-albhamu ta switako swo hlawuriwa hinkwaswo"
+  "Showing albums with all selected tags": "Ku kombisa ti-albhamu ta switako swo hlawuriwa hinkwaswo",
+  "Clear All": "Sula Hinkwavo",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Kaya",
+  "Visit Home": "Etlela Kaya",
+  "Visit 6180.io": "Etlela 6180.io",
+  "No tags available": "Ku hava switagi",
+  "Showing photos with all selected tags": "Ku kombisa swifaniso na switagi hinkwaswo leswi hlawulekeke",
+  "Valid parameters not found in URL": "Ku hava tiparametara letinene ku URL",
+  "Invalid id parameter format": "Xivumbeko xa parameter id lexi nga riki xo lulamela",
+  "Album not found": "Album a ri kona ku kumeka",
+  "the album owner": "n'wina wa album",
+  "Tag, save and find that performance — before it's lost.": "Nandzhaku xikombiso, hlayisa ivi kuma siku leri ra n'weti — ku nga si ri lahleka.",
+  "Tag, save and find that smile — before it's lost.": "Nandzhaku xikombiso, hlayisa ivi kuma ririso leri — ku nga si ri lahleka.",
+  "Tag, save and find that birthday — before it's lost.": "Nandzhaku xikombiso, hlayisa ivi kuma rixaka leri — ku nga si ri lahleka.",
+  "Tag, save and find that sunset — before it's lost.": "Nandzhaku xikombiso, hlayisa ivi kuma pfuhlo leri — ku nga si ri lahleka.",
+  "Tag, save and find that party — before it's lost.": "Nandzhaku xikombiso, hlayisa ivi kuma vukosi lebyi — ku nga si ri lahleka.",
+  "Tag, save and find that vacation — before it's lost.": "Nandzhaku xikombiso, hlayisa ivi kuma dyambu ra tibela — ku nga si ri lahleka."
 }

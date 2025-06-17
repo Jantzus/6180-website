@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Фотом Пиштӓш",
   "Album successfully saved!": "Тӓ альбомдам ирӓш перегӓлтӹн!",
   "All files successfully uploaded": "Цилӓ файлвлӓ яжон пиштӹмӹ",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-ыште Почаш",
   "Toggle contacts filter": "Кагаз ди фильтрым вашталтымы",
   "Showing albums with all selected contacts and tags": "Цилӓ кӹлӹмӹт контакт дӹнӹ тӓг дӹнӹ альбомвлӓм ончыкташ",
-  "Showing albums with all selected tags": "Цилӓ кӹлӹмӹт тӓг дӹнӹ альбомвлӓм ончыкташ"
+  "Showing albums with all selected tags": "Цилӓ кӹлӹмӹт тӓг дӹнӹ альбомвлӓм ончыкташ",
+  "Clear All": "Чыла Шӧраш",
+  "6180 Logo": "6180 Логотип",
+  "Home": "Пӧрт",
+  "Visit Home": "Мӧнгештӧ Каяш",
+  "Visit 6180.io": "6180.io-шкӧ Каяш",
+  "No tags available": "Тегвлӓ йогыт",
+  "Showing photos with all selected tags": "Айырен нӓлмӹ кердшӹ тегвлӓм фотовлӓм ончыктен",
+  "Valid parameters not found in URL": "URL-ыште ӓшӓн параметрвлӓ уке",
+  "Invalid id parameter format": "Чынвелӓ кыдалтдыме id параметр формат",
+  "Album not found": "Альбом кӹчӓлтелӹт",
+  "the album owner": "альбомын ӹшӹзӹ",
+  "Tag, save and find that performance — before it's lost.": "Палемдыман, аралыман да корыман тудым шочмо кече — йомдарыме деч ончыч.",
+  "Tag, save and find that smile — before it's lost.": "Палемдыман, аралыман да корыман тудым ыр — йомдарыме деч ончыч.",
+  "Tag, save and find that birthday — before it's lost.": "Палемдыман, аралыман да корыман тудым ончыктымаш — йомдарыме деч ончыч.",
+  "Tag, save and find that sunset — before it's lost.": "Палемдыман, аралыман да корыман тудым ял — йомдарыме деч ончыч.",
+  "Tag, save and find that party — before it's lost.": "Палемдыман, аралыман да корыман тудым курым — йомдарыме деч ончыч.",
+  "Tag, save and find that vacation — before it's lost.": "Палемдыман, аралыман да корыман тудым кеча кондымо — йомдарыме деч ончыч."
 }

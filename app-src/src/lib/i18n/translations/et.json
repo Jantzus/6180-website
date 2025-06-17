@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Lisa Fotosid",
   "Album successfully saved!": "Teie album on edukalt salvestatud!",
   "All files successfully uploaded": "Kõik failid edukalt üles laaditud",
@@ -295,5 +296,22 @@
   "Open On Android": "Ava Android-is",
   "Toggle contacts filter": "Lülita kontaktide filter",
   "Showing albums with all selected contacts and tags": "Näitan albumeid kõigi valitud kontaktide ja siltidega",
-  "Showing albums with all selected tags": "Näitan albumeid kõigi valitud siltidega"
+  "Showing albums with all selected tags": "Näitan albumeid kõigi valitud siltidega",
+  "Clear All": "Kustuta Kõik",
+  "6180 Logo": "6180 Logo",
+  "Home": "Avaleht",
+  "Visit Home": "Külasta Avaleht",
+  "Visit 6180.io": "Külasta 6180.io",
+  "No tags available": "Silte pole saadaval",
+  "Showing photos with all selected tags": "Näitan fotosid kõigi valitud siltidega",
+  "Valid parameters not found in URL": "URL-ist ei leitud kehtivaid parameetreid",
+  "Invalid id parameter format": "Vigane id parameetri formaat",
+  "Album not found": "Albumit ei leitud",
+  "the album owner": "albumi omanik",
+  "Tag, save and find that performance — before it's lost.": "Märgista, salvesta ja leia see etendus — enne kui see kaob.",
+  "Tag, save and find that smile — before it's lost.": "Märgista, salvesta ja leia see naeratus — enne kui see kaob.",
+  "Tag, save and find that birthday — before it's lost.": "Märgista, salvesta ja leia see sünnipäev — enne kui see kaob.",
+  "Tag, save and find that sunset — before it's lost.": "Märgista, salvesta ja leia see päikeseloojang — enne kui see kaob.",
+  "Tag, save and find that party — before it's lost.": "Märgista, salvesta ja leia see pidu — enne kui see kaob.",
+  "Tag, save and find that vacation — before it's lost.": "Märgista, salvesta ja leia see puhkus — enne kui see kaob."
 }

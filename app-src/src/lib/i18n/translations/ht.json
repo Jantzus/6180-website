@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ajoute Foto",
   "Album successfully saved!": "Albòm ou a anrejistre avèk siksè!",
   "All files successfully uploaded": "Tout fichye yo te telechaje avèk siksè",
@@ -295,5 +296,22 @@
   "Open On Android": "Ouvè Sou Android",
   "Toggle contacts filter": "Chanje filè kontak yo",
   "Showing albums with all selected contacts and tags": "Montre album yo ak tout kontak ak etikèt ki chwazi yo",
-  "Showing albums with all selected tags": "Montre album yo ak tout etikèt ki chwazi yo"
+  "Showing albums with all selected tags": "Montre album yo ak tout etikèt ki chwazi yo",
+  "Clear All": "Efase Tout Bagay",
+  "6180 Logo": "Logo 6180",
+  "Home": "Kay",
+  "Visit Home": "Vizite Kay",
+  "Visit 6180.io": "Vizite 6180.io",
+  "No tags available": "Pa gen tag ki disponib",
+  "Showing photos with all selected tags": "Ap montre foto yo ak tout tag yo ki chwazi yo",
+  "Valid parameters not found in URL": "Pa jwenn paramèt ki valab nan URL la",
+  "Invalid id parameter format": "Fòma paramèt id ki pa valab",
+  "Album not found": "Album an pa jwenn",
+  "the album owner": "mèt album an",
+  "Tag, save and find that performance — before it's lost.": "Depo etikèt sou li, konsève li epi jwenn perfòmans sa a — anvan li pèdi.",
+  "Tag, save and find that smile — before it's lost.": "Depo etikèt sou li, konsève li epi jwenn souri sa a — anvan li pèdi.",
+  "Tag, save and find that birthday — before it's lost.": "Depo etikèt sou li, konsève li epi jwenn kominote sa a — anvan li pèdi.",
+  "Tag, save and find that sunset — before it's lost.": "Depo etikèt sou li, konsève li epi jwenn solèy kouche sa a — anvan li pèdi.",
+  "Tag, save and find that party — before it's lost.": "Depo etikèt sou li, konsève li epi jwenn fèt sa a — anvan li pèdi.",
+  "Tag, save and find that vacation — before it's lost.": "Depo etikèt sou li, konsève li epi jwenn vakans sa a — anvan li pèdi."
 }

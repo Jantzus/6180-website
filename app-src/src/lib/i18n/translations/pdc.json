@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Bilder dezu duh",
   "Album successfully saved!": "Dei Album iss gschbeichert worre!",
   "All files successfully uploaded": "All die Dateie sinn goot nuff gelaade warre",
@@ -295,5 +296,22 @@
   "Open On Android": "Uff Android Uffmache",
   "Toggle contacts filter": "Kontakt Filter um-schalte",
   "Showing albums with all selected contacts and tags": "Zeigt Albums mit all die gwaehlte Contacts un Tags",
-  "Showing albums with all selected tags": "Zeigt Albums mit all die gwaehlte Tags"
+  "Showing albums with all selected tags": "Zeigt Albums mit all die gwaehlte Tags",
+  "Clear All": "Alles Rausmache",
+  "6180 Logo": "6180 Logo",
+  "Home": "Heem",
+  "Visit Home": "Heem Besiche",
+  "Visit 6180.io": "6180.io Besiche",
+  "No tags available": "Ken Zeiche do",
+  "Showing photos with all selected tags": "Weist Bilder mit alle ausgsucht Zeiche",
+  "Valid parameters not found in URL": "Ken geldiche Parameter im URL gfunne",
+  "Invalid id parameter format": "Ungüllich ID Parameter Format",
+  "Album not found": "Album net gfunne",
+  "the album owner": "der Album Eigner",
+  "Tag, save and find that performance — before it's lost.": "Zeiche, sei un guck der Gebortsdag — eb er verschwinde.",
+  "Tag, save and find that smile — before it's lost.": "Zeiche, sei un guck des Lache — eb et verschwinde.",
+  "Tag, save and find that birthday — before it's lost.": "Zeiche, sei un guck die Uffierung — eb sie verschwinde.",
+  "Tag, save and find that sunset — before it's lost.": "Zeiche, sei un guck der Urlaub — eb er verschwinde.",
+  "Tag, save and find that party — before it's lost.": "Zeiche, sei un guck die Party — eb se verschwinde.",
+  "Tag, save and find that vacation — before it's lost.": "Zeiche, sei un guck der Sunnenunnergang — eb er verschwinde."
 }

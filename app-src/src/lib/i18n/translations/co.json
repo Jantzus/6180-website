@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Aghjunghje Fotò",
   "Album successfully saved!": "U vostru album hè statu salvatu!",
   "All files successfully uploaded": "Tutti i file sò stati trasmessi bè",
@@ -295,5 +296,22 @@
   "Open On Android": "Apre Nantu À Android",
   "Toggle contacts filter": "Cambià u filtru di cuntatti",
   "Showing albums with all selected contacts and tags": "Mustrà l'albums cù tutti i cuntatti è l'etichette seleziunate",
-  "Showing albums with all selected tags": "Mustrà l'albums cù tutte l'etichette seleziunate"
+  "Showing albums with all selected tags": "Mustrà l'albums cù tutte l'etichette seleziunate",
+  "Clear All": "Sguassà Tuttu",
+  "6180 Logo": "Logo di 6180",
+  "Home": "Casa",
+  "Visit Home": "Visità a Casa",
+  "Visit 6180.io": "Visità 6180.io",
+  "No tags available": "Nisuna tag dispunibile",
+  "Showing photos with all selected tags": "Affissà foto cù tutti i tag selezziunati",
+  "Valid parameters not found in URL": "Parametri validi micca truvati in l'URL",
+  "Invalid id parameter format": "Formatu di parametru id invalidu",
+  "Album not found": "Albumè micca trovu",
+  "the album owner": "u pruprietariu di l'albumè",
+  "Tag, save and find that performance — before it's lost.": "Etichetta, cunserva è trova sta prestazione — prima ch'ella si perde.",
+  "Tag, save and find that smile — before it's lost.": "Etichetta, cunserva è trova stu surrisu — prima ch'ellu si perde.",
+  "Tag, save and find that birthday — before it's lost.": "Etichetta, cunserva è trova stu anniversariu — prima ch'ellu si perde.",
+  "Tag, save and find that sunset — before it's lost.": "Etichetta, cunserva è trova stu tramontu — prima ch'ellu si perde.",
+  "Tag, save and find that party — before it's lost.": "Etichetta, cunserva è trova sta festa — prima ch'ella si perde.",
+  "Tag, save and find that vacation — before it's lost.": "Etichetta, cunserva è trova sta vacanza — prima ch'ella si perde."
 }

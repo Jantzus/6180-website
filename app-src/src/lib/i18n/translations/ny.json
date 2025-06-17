@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Onjezani Zithunzi",
   "Album successfully saved!": "Albamu yanu yasunga bwino!",
   "All files successfully uploaded": "Mafayilo onse apakidwa bwino",
@@ -295,5 +296,22 @@
   "Open On Android": "Tsegulani Ku Android",
   "Toggle contacts filter": "Sinthani fyuluta ya kulumikizana",
   "Showing albums with all selected contacts and tags": "Kuwonetsa ma albamu ndi zonse zomwe zasankhidwa ndi manambala",
-  "Showing albums with all selected tags": "Kuwonetsa ma albamu ndi manambala onse osankhidwa"
+  "Showing albums with all selected tags": "Kuwonetsa ma albamu ndi manambala onse osankhidwa",
+  "Clear All": "Fufuta Zonse",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Nyumba",
+  "Visit Home": "Pitani Kwawo",
+  "Visit 6180.io": "Pitani ku 6180.io",
+  "No tags available": "Palibe matekingi",
+  "Showing photos with all selected tags": "Kuwonetsa zithunzi zonse zokhala ndi matekingi osankhidwa",
+  "Valid parameters not found in URL": "Sipalibenso ma parameter abwino mu URL",
+  "Invalid id parameter format": "Chizindikiro cha parameter id chosayenera",
+  "Album not found": "Album sinapezeka",
+  "the album owner": "mwiniwake wa album",
+  "Tag, save and find that performance — before it's lost.": "Lemba, sunga ndi kupeza tsiku lobadwa chimenecho — chisanasowe.",
+  "Tag, save and find that smile — before it's lost.": "Lemba, sunga ndi kupeza chiseko chimenecho — chisanasowe.",
+  "Tag, save and find that birthday — before it's lost.": "Lemba, sunga ndi kupeza chiwonetsero chimenecho — chisanasowe.",
+  "Tag, save and find that sunset — before it's lost.": "Lemba, sunga ndi kupeza tchuthi chimenecho — chisanasowe.",
+  "Tag, save and find that party — before it's lost.": "Lemba, sunga ndi kupeza phwando chimenecho — chisanasowe.",
+  "Tag, save and find that vacation — before it's lost.": "Lemba, sunga ndi kupeza kulowa kwa dzuwa chimenecho — chisanasowe."
 }

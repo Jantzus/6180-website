@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Суредъёс Ватсаны",
   "Album successfully saved!": "Тӥляд альбомдэс азинлыко утемын!",
   "All files successfully uploaded": "Вань файлъёс азинлыко тырмытэмын",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-ын Усьтыны",
   "Toggle contacts filter": "Котырӟан фильтр выжыны",
   "Showing albums with all selected contacts and tags": "Выбранные ваньбур контактъёс но тегъёс сярысь альбомъёс кутон",
-  "Showing albums with all selected tags": "Выбранные ваньбур тегъёс сярысь альбомъёс кутон"
+  "Showing albums with all selected tags": "Выбранные ваньбур тегъёс сярысь альбомъёс кутон",
+  "Clear All": "Ваньзэ Ӵушоно",
+  "6180 Logo": "6180 Логотип",
+  "Home": "Гуръёс",
+  "Visit Home": "Керекӥлы Сӥзы",
+  "Visit 6180.io": "6180.io Сӥзы",
+  "No tags available": "Тегъёс ӧвӧл",
+  "Showing photos with all selected tags": "Бырон тегъёскын фотоосъёс адӟыны",
+  "Valid parameters not found in URL": "URL-ын ӧвӧл параметръёс ӧз сётэ",
+  "Invalid id parameter format": "Ӧвӧл id параметр формат",
+  "Album not found": "Альбом шедьтымтэ",
+  "the album owner": "альбом озясь",
+  "Tag, save and find that performance — before it's lost.": "Пален тэрмаськыны, утьыны но тазы шуон лунэз утчаны — йӧтконысь азьвыл.",
+  "Tag, save and find that smile — before it's lost.": "Пален тэрмаськыны, утьыны но тазы шыргонэз утчаны — йӧтконысь азьвыл.",
+  "Tag, save and find that birthday — before it's lost.": "Пален тэрмаськыны, утьыны но тазы петкӧдӥськонэз утчаны — йӧтконысь азьвыл.",
+  "Tag, save and find that sunset — before it's lost.": "Пален тэрмаськыны, утьыны но тазы каникулэз утчаны — йӧтконысь азьвыл.",
+  "Tag, save and find that party — before it's lost.": "Пален тэрмаськыны, утьыны но тазы ойдодэ утчаны — йӧтконысь азьвыл.",
+  "Tag, save and find that vacation — before it's lost.": "Пален тэрмаськыны, утьыны но тазы шунды пуксись утчаны — йӧтконысь азьвыл."
 }

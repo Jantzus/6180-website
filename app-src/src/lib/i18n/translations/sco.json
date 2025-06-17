@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Add Photies",
   "Album successfully saved!": "Yer album haes been saved successfully!",
   "All files successfully uploaded": "Aw files successfullie uploadit",
@@ -295,5 +296,22 @@
   "Open On Android": "Open On Android",
   "Toggle contacts filter": "Chynge contact filter",
   "Showing albums with all selected contacts and tags": "Shaw albums wi aw the selectit contacts an tags",
-  "Showing albums with all selected tags": "Shaw albums wi aw the selectit tags"
+  "Showing albums with all selected tags": "Shaw albums wi aw the selectit tags",
+  "Clear All": "Clear Awthing",
+  "6180 Logo": "6180 Logo",
+  "Home": "Hame",
+  "Visit Home": "Veesit Hame",
+  "Visit 6180.io": "Veesit 6180.io",
+  "No tags available": "Nae tags available",
+  "Showing photos with all selected tags": "Shawin photaes wi aw the selectit tags",
+  "Valid parameters not found in URL": "Valid parameters no foond in URL",
+  "Invalid id parameter format": "Invalid id parameter format",
+  "Album not found": "Album no foond",
+  "the album owner": "the album awner",
+  "Tag, save and find that performance — before it's lost.": "Tag, keep an find thon birthday — afore it's tint.",
+  "Tag, save and find that smile — before it's lost.": "Tag, keep an find thon smile — afore it's tint.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, keep an find thon performance — afore it's tint.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, keep an find thon vacation — afore it's tint.",
+  "Tag, save and find that party — before it's lost.": "Tag, keep an find thon party — afore it's tint.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, keep an find thon sunset — afore it's tint."
 }

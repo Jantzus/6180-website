@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Piksaich Ilaliuqtikkich",
   "Album successfully saved!": "Igligruaqtuat atuqtuq savamiut iłuaqhaqtuat!",
   "All files successfully uploaded": "Ukpiqnasugnikpak atausimarugaat ikiiniqhuni",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-mi Aniraq",
   "Toggle contacts filter": "Aullat ilisaiġniqtit suli",
   "Showing albums with all selected contacts and tags": "Alirat albomat piqqusivaiḷutik atautchit kontaktat ammalu tægiñ",
-  "Showing albums with all selected tags": "Alirat albomat piqqusivaiḷutik atautchit tægiñ"
+  "Showing albums with all selected tags": "Alirat albomat piqqusivaiḷutik atautchit tægiñ",
+  "Clear All": "Aasiiviññit Tamaita",
+  "6180 Logo": "6180 Atchialak",
+  "Home": "Aullartut",
+  "Visit Home": "Aasiivami Ailbm",
+  "Visit 6180.io": "6180.io Ailbm",
+  "No tags available": "Tags angeyuq",
+  "Showing photos with all selected tags": "Tags angusraat ukiumik qaimmaksrit ikayuat",
+  "Valid parameters not found in URL": "URL mani ullaaksrat angeyuq",
+  "Invalid id parameter format": "Id parameter format pijuksrualuni",
+  "Album not found": "Album iniqisiñaitchuq",
+  "the album owner": "album atausiñaich",
+  "Tag, save and find that performance — before it's lost.": "Aliłruit, piqqusit uunali sivullirit — anginiqsuruq siñuni.",
+  "Tag, save and find that smile — before it's lost.": "Aliłruit, piqqusit uunali sivullirit quyakkaniaq — anginiqsuruq siñuni.",
+  "Tag, save and find that birthday — before it's lost.": "Aliłruit, piqqusit uunali sivullirit suvġiq — anginiqsuruq siñuni.",
+  "Tag, save and find that sunset — before it's lost.": "Aliłruit, piqqusit uunali sivullirit siqiniq akuni — anginiqsuruq siñuni.",
+  "Tag, save and find that party — before it's lost.": "Aliłruit, piqqusit uunali sivullirit kiviaq — anginiqsuruq siñuni.",
+  "Tag, save and find that vacation — before it's lost.": "Aliłruit, piqqusit uunali sivullirit aniñiksaaq — anginiqsuruq siñuni."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "छायाचित्र योजेतु",
   "Album successfully saved!": "तव एल्बम सफलतापूर्वकं रक्खितं!",
   "All files successfully uploaded": "सब्बे सञ्चिका सफला ऊपलोडिता",
@@ -295,5 +296,22 @@
   "Open On Android": "Android मज्झे खोल",
   "Toggle contacts filter": "सम्पत्ति निस्सरण बदलतु",
   "Showing albums with all selected contacts and tags": "सब्बेसु पसत्थेसु संपत्तिसु निस्सरणेसु च फ़ोटो-संग्रहानि दस्सेति",
-  "Showing albums with all selected tags": "सब्बेसु पसत्थेसु निस्सरणेसु फ़ोटो-संग्रहानि दस्सेति"
+  "Showing albums with all selected tags": "सब्बेसु पसत्थेसु निस्सरणेसु फ़ोटो-संग्रहानि दस्सेति",
+  "Clear All": "सब्बं विसोधयन्तु",
+  "6180 Logo": "6180 चिह्नं",
+  "Home": "गृहं",
+  "Visit Home": "गृहं गच्छतु",
+  "Visit 6180.io": "6180.io गच्छतु",
+  "No tags available": "न कोचि टग्गो अत्थि",
+  "Showing photos with all selected tags": "सम्मत टग्गेहि सद्धिं फोतो दस्सेति",
+  "Valid parameters not found in URL": "यूआरएल मज्झे न कोचि ठिक परमीटर मिलइ",
+  "Invalid id parameter format": "अयोग्गो id परमेत्त फम्मतो",
+  "Album not found": "न कोचि सङ्गीतकट्ठता मिलइ",
+  "the album owner": "सङ्गीतकट्ठतस्स स्सामी",
+  "Tag, save and find that performance — before it's lost.": "पत्तानं करेहि, रक्खेहि च तं जातिदिनानं गवेसेहि — नस्सनतो पुब्बं।",
+  "Tag, save and find that smile — before it's lost.": "पत्तानं करेहि, रक्खेहि च तं हसितानं गवेसेहि — नस्सनतो पुब्बं।",
+  "Tag, save and find that birthday — before it's lost.": "पत्तानं करेहि, रक्खेहि च तं खेलानं गवेसेहि — नस्सनतो पुब्बं।",
+  "Tag, save and find that sunset — before it's lost.": "पत्तानं करेहि, रक्खेहि च तं विसमानं गवेसेहि — नस्सनतो पुब्बं।",
+  "Tag, save and find that party — before it's lost.": "पत्तानं करेहि, रक्खेहि च तं समाजानं गवेसेहि — नस्सनतो पुब्बं।",
+  "Tag, save and find that vacation — before it's lost.": "पत्तानं करेहि, रक्खेहि च तं सूरियास्तानं गवेसेहि — नस्सनतो पुब्बं।"
 }

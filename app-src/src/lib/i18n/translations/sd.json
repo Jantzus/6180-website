@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "فوٽو وجهو",
   "Album successfully saved!": "توهان جي البم کامیابيءَ سان سانڍيو ويو!",
   "All files successfully uploaded": "سڀ فائل ڪامياب طور تي اپلوڊ ڪيا ويا",
@@ -295,5 +296,22 @@
   "Open On Android": "Android ۾ کوليو",
   "Toggle contacts filter": "رابطي جو فلٽر تبديل ڪريو",
   "Showing albums with all selected contacts and tags": "سڀني چونڊيل رابطن ۽ ٽيگن سان گڏ البم ڏيکاري رهيا آهن",
-  "Showing albums with all selected tags": "سڀني چونڊيل ٽيگن سان گڏ البم ڏيکاري رهيا آهن"
+  "Showing albums with all selected tags": "سڀني چونڊيل ٽيگن سان گڏ البم ڏيکاري رهيا آهن",
+  "Clear All": "سڀ صاف ڪريو",
+  "6180 Logo": "6180 لوگو",
+  "Home": "گھر",
+  "Visit Home": "گھر وڃو",
+  "Visit 6180.io": "6180.io وڃو",
+  "No tags available": "ڪي به ٽيگ نه آهن",
+  "Showing photos with all selected tags": "سڀني چونڊيل ٽيگن سان تصويرون ڏيکاريندي",
+  "Valid parameters not found in URL": "URL ۾ صحيح معياري نه ملياً",
+  "Invalid id parameter format": "غلط آئي ڊي پيراميٽر فارميٽ",
+  "Album not found": "البم نه مليو",
+  "the album owner": "البم جو مالڪ",
+  "Tag, save and find that performance — before it's lost.": "ٽيگ ڪريو، محفوظ ڪريو ۽ اها سالگراهه ڳوليو — وڃائڻ کان اڳ.",
+  "Tag, save and find that smile — before it's lost.": "ٽيگ ڪريو، محفوظ ڪريو ۽ اها مسڪراهٽ ڳوليو — وڃائڻ کان اڳ.",
+  "Tag, save and find that birthday — before it's lost.": "ٽيگ ڪريو، محفوظ ڪريو ۽ اها ڪارڪردگي ڳوليو — وڃائڻ کان اڳ.",
+  "Tag, save and find that sunset — before it's lost.": "ٽيگ ڪريو، محفوظ ڪريو ۽ اهو موڪل ڳوليو — وڃائڻ کان اڳ.",
+  "Tag, save and find that party — before it's lost.": "ٽيگ ڪريو، محفوظ ڪريو ۽ اها پارٽي ڳوليو — وڃائڻ کان اڳ.",
+  "Tag, save and find that vacation — before it's lost.": "ٽيگ ڪريو، محفوظ ڪريو ۽ اهو سج لهڻ ڳوليو — وڃائڻ کان اڳ."
 }

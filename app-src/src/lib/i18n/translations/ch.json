@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Na'ye Litratu",
   "Album successfully saved!": "Albummu mamamanekket maolek!",
   "All files successfully uploaded": "Todu i failu siña ma na hålom",
@@ -295,5 +296,22 @@
   "Open On Android": "Na'åbri Giya Android",
   "Toggle contacts filter": "Tulaika kontakto filter",
   "Showing albums with all selected contacts and tags": "Fiha na album ni todu mina'ayao kontakto yan tag",
-  "Showing albums with all selected tags": "Fiha na album ni todu mina'ayao tag"
+  "Showing albums with all selected tags": "Fiha na album ni todu mina'ayao tag",
+  "Clear All": "Funas Todu",
+  "6180 Logo": "Logo 6180",
+  "Home": "Guma'",
+  "Visit Home": "Hanao Para Guma'",
+  "Visit 6180.io": "Hanao Para 6180.io",
+  "No tags available": "Taya na tags ya disponible",
+  "Showing photos with all selected tags": "Munafanue i litrato yan i todu na piniling tags",
+  "Valid parameters not found in URL": "Ti man sigi na parametros gi fanmalago put i URL",
+  "Invalid id parameter format": "Ti malagu na id parameter format",
+  "Album not found": "Ti album masodda'",
+  "the album owner": "magas album",
+  "Tag, save and find that performance — before it's lost.": "Tag, na'tago yan sodda' i actuasion — antes mañot.",
+  "Tag, save and find that smile — before it's lost.": "Tag, na'tago yan sodda' i nina'magof — antes mañot.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, na'tago yan sodda' i kumplianos — antes mañot.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, na'tago yan sodda' i atadedesi — antes mañot.",
+  "Tag, save and find that party — before it's lost.": "Tag, na'tago yan sodda' i gupot — antes mañot.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, na'tago yan sodda' i bakasion — antes mañot."
 }

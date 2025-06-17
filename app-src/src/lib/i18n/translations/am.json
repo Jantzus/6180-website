@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ፎቶዎችን ጨምር",
   "Album successfully saved!": "አልበምዎ በተሳካ ሁኔታ ተቀምጧል!",
   "All files successfully uploaded": "ሁሉም ፋይሎች በተሳካ ሁኔታ ተሰቅለዋል",
@@ -295,5 +296,22 @@
   "Open On Android": "በ Android ላይ ክፈት",
   "Toggle contacts filter": "እውቂያዎች ማጣሪያ ቀይር",
   "Showing albums with all selected contacts and tags": "ሁሉም የተመረጡ እውቂያዎች እና መለያዎች ካላቸው አልበሞች ማሳያ",
-  "Showing albums with all selected tags": "ሁሉም የተመረጡ መለያዎች ካላቸው አልበሞች ማሳያ"
+  "Showing albums with all selected tags": "ሁሉም የተመረጡ መለያዎች ካላቸው አልበሞች ማሳያ",
+  "Clear All": "ሁሉንም ሰርዝ",
+  "6180 Logo": "6180 ዓርማ",
+  "Home": "ቤት",
+  "Visit Home": "ቤትን ጎብኝ",
+  "Visit 6180.io": "6180.io-ን ጎብኝ",
+  "No tags available": "ምንም ታጎች የሉም",
+  "Showing photos with all selected tags": "የተመረጡ ሁሉንም ታጎች ያላቸው ፎቶዎች በማሳየት ላይ",
+  "Valid parameters not found in URL": "በ URL ውስጥ ትክክለኛ መስፈርቶች አልተገኙም",
+  "Invalid id parameter format": "ልክ ያልሆነ የመታወቂያ መለኪያ ቅርጸት",
+  "Album not found": "አልበም አልተገኘም",
+  "the album owner": "የአልበሙ ባለቤት",
+  "Tag, save and find that performance — before it's lost.": "ይለያዩ፣ ያቆዩ እና ያንን ትወና ያግኙ — ከመጥፋቱ በፊት።",
+  "Tag, save and find that smile — before it's lost.": "ይለያዩ፣ ያቆዩ እና ያንን ፈገግታ ያግኙ — ከመጥፋቱ በፊት።",
+  "Tag, save and find that birthday — before it's lost.": "ይለያዩ፣ ያቆዩ እና ያንን የልደት ቀን ያግኙ — ከመጥፋቱ በፊት።",
+  "Tag, save and find that sunset — before it's lost.": "ይለያዩ፣ ያቆዩ እና ያንን የፀሐይ ጥልቀት ያግኙ — ከመጥፋቱ በፊት።",
+  "Tag, save and find that party — before it's lost.": "ይለያዩ፣ ያቆዩ እና ያንን ድግስ ያግኙ — ከመጥፋቱ በፊት።",
+  "Tag, save and find that vacation — before it's lost.": "ይለያዩ፣ ያቆዩ እና ያንን እረፍት ያግኙ — ከመጥፋቱ በፊት።"
 }

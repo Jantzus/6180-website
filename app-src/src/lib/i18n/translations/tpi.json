@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Putim ol Piksa",
   "Album successfully saved!": "Albam bilong yu i bin sevim gut!",
   "All files successfully uploaded": "Olgeta fail i go antap pinis gut",
@@ -295,5 +296,22 @@
   "Open On Android": "Opim Long Android",
   "Toggle contacts filter": "Senisim kontakt filta",
   "Showing albums with all selected contacts and tags": "Soim album wantaim olgeta pick kontakt na tag",
-  "Showing albums with all selected tags": "Soim album wantaim olgeta pick tag"
+  "Showing albums with all selected tags": "Soim album wantaim olgeta pick tag",
+  "Clear All": "Klinim Olgeta",
+  "6180 Logo": "Logo bilong 6180",
+  "Home": "Haus",
+  "Visit Home": "Go Long Haus",
+  "Visit 6180.io": "Go Long 6180.io",
+  "No tags available": "I no gat tag",
+  "Showing photos with all selected tags": "Soim piksa wantaim ol tag yu makim olgeta",
+  "Valid parameters not found in URL": "Valid parameter i no stap long URL",
+  "Invalid id parameter format": "Id parameter format i no gud",
+  "Album not found": "Album i no gat painim",
+  "the album owner": "papa bilong album",
+  "Tag, save and find that performance — before it's lost.": "Makim mak, sevm na painim dispela dei bilong kamap — bipo em lus.",
+  "Tag, save and find that smile — before it's lost.": "Makim mak, sevm na painim dispela smaelgut — bipo em lus.",
+  "Tag, save and find that birthday — before it's lost.": "Makim mak, sevm na painim dispela sho — bipo em lus.",
+  "Tag, save and find that sunset — before it's lost.": "Makim mak, sevm na painim dispela holi — bipo em lus.",
+  "Tag, save and find that party — before it's lost.": "Makim mak, sevm na painim dispela pati — bipo em lus.",
+  "Tag, save and find that vacation — before it's lost.": "Makim mak, sevm na painim dispela san go daon — bipo em lus."
 }

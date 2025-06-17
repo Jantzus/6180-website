@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Nayunan Kadagiti Ladawan",
   "Album successfully saved!": "Ti albummo ket agnanayon a nadulin!",
   "All files successfully uploaded": "Amin a papeles naipan iti naballigi",
@@ -295,5 +296,22 @@
   "Open On Android": "Luktan Idiay Android",
   "Toggle contacts filter": "Baliwen ti filter ti kontak",
   "Showing albums with all selected contacts and tags": "Ipakpakita dagiti album nga addaan iti amin a napili a kontak ken tag",
-  "Showing albums with all selected tags": "Ipakpakita dagiti album nga addaan iti amin a napili a tag"
+  "Showing albums with all selected tags": "Ipakpakita dagiti album nga addaan iti amin a napili a tag",
+  "Clear All": "Ikkaten Amin",
+  "6180 Logo": "Logo ti 6180",
+  "Home": "Balay",
+  "Visit Home": "Sarungkaran ti Balay",
+  "Visit 6180.io": "Sarungkaran ti 6180.io",
+  "No tags available": "Awan dagiti tag a mabalin",
+  "Showing photos with all selected tags": "Ipakpakita dagiti ladawan nga addaan kadagiti amin a napili a tag",
+  "Valid parameters not found in URL": "Awan ti nasarakan a makatarunos a parametro iti URL",
+  "Invalid id parameter format": "Saan a valid nga format ti id parameter",
+  "Album not found": "Awan ti nasarakan nga album",
+  "the album owner": "ti makinkukua ti album",
+  "Tag, save and find that performance — before it's lost.": "I-tag, idulin ken biruken dayta panagtaray — sakbay a mapukaw.",
+  "Tag, save and find that smile — before it's lost.": "I-tag, idulin ken biruken dayta panagisem — sakbay a mapukaw.",
+  "Tag, save and find that birthday — before it's lost.": "I-tag, idulin ken biruken dayta pannakaiyanay — sakbay a mapukaw.",
+  "Tag, save and find that sunset — before it's lost.": "I-tag, idulin ken biruken dayta pannakalennek ti init — sakbay a mapukaw.",
+  "Tag, save and find that party — before it's lost.": "I-tag, idulin ken biruken dayta party — sakbay a mapukaw.",
+  "Tag, save and find that vacation — before it's lost.": "I-tag, idulin ken biruken dayta bakasion — sakbay a mapukaw."
 }

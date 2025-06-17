@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ngeta Titfombe",
   "Album successfully saved!": "Li-albhamu lakho ligcineke kahle!",
   "All files successfully uploaded": "Onkhe emafayela aphumelele kuwalodwa",
@@ -295,5 +296,22 @@
   "Open On Android": "Vula Ku Android",
   "Toggle contacts filter": "Shintja sicelo sekuxhumana",
   "Showing albums with all selected contacts and tags": "Kubonisa ema-albhamu ngemindluluko nekamcondvo loketiwa",
-  "Showing albums with all selected tags": "Kubonisa ema-albhamu nekamcondvo loketiwa"
+  "Showing albums with all selected tags": "Kubonisa ema-albhamu nekamcondvo loketiwa",
+  "Clear All": "Sula Konkhe",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Ekhaya",
+  "Visit Home": "Vakashela Ekhaya",
+  "Visit 6180.io": "Vakashela 6180.io",
+  "No tags available": "Kutemtags latfolakele",
+  "Showing photos with all selected tags": "Kubonisa timafoto ngetagamane tonkhe letichongwe",
+  "Valid parameters not found in URL": "Kutemtindzaba letifanele letitfolakale ku-URL",
+  "Invalid id parameter format": "Limo le-parameter id le-lingalungele",
+  "Album not found": "Album alitfolakala",
+  "the album owner": "umnikati we-album",
+  "Tag, save and find that performance — before it's lost.": "Bheka umbiko, londvolosa futsi ufune lelo lusuku loluzalwa — ngekusati kulahleka.",
+  "Tag, save and find that smile — before it's lost.": "Bheka umbiko, londvolosa futsi ufune lelo kuyindla — ngekusati kulahleka.",
+  "Tag, save and find that birthday — before it's lost.": "Bheka umbiko, londvolosa futsi ufune lelo bhongolose — ngekusati kulahleka.",
+  "Tag, save and find that sunset — before it's lost.": "Bheka umbiko, londvolosa futsi ufune lelo kuphumula — ngekusati kulahleka.",
+  "Tag, save and find that party — before it's lost.": "Bheka umbiko, londvolosa futsi ufune lelo emcimbi — ngekusati kulahleka.",
+  "Tag, save and find that vacation — before it's lost.": "Bheka umbiko, londvolosa futsi ufune lelo kuchofoteka kwelanga — ngekusati kulahleka."
 }

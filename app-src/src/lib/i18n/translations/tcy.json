@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ಚಿತ್ರಗಳನ್ನ ಸೇರ್ಸಾಲೆ",
   "Album successfully saved!": "ನಿಕ್ಲೆನ ಆಲ್ಬಂ ಜಯಶಾಲಿಯಾದ್ ಒರಿಪುಲೆಕ್ ಆಂಡ್!",
   "All files successfully uploaded": "ಮುಯಿನ ಫೈಲ್‍ಲು ದಿಂಜುನಡ್ಡ್ ಪಾಡೆರೆ ಆಪುಂಡು",
@@ -295,5 +296,22 @@
   "Open On Android": "Android ಇತ್ತ್ ತೆಗ್",
   "Toggle contacts filter": "ಸಂಪರ್ಕೊಕುಲೆನ್ ಫಿಲ್ಟರ್ ಬದಲಾವಣೆ ಮಲ್ಪುಲೆ",
   "Showing albums with all selected contacts and tags": "ಪೂರಾ ಆಯ್ಕೆ ಮಲ್ತಿನ ಸಂಪರ್ಕೊಕುಲು ಬೊಕ್ಕ ಟ್ಯಾಗ್‌ಲೆನ್ ಆಲ್ಬಮ್‌ಲೆನ್ ತೋಜುಂದು",
-  "Showing albums with all selected tags": "ಪೂರಾ ಆಯ್ಕೆ ಮಲ್ತಿನ ಟ್ಯಾಗ್‌ಲೆನ್ ಆಲ್ಬಮ್‌ಲೆನ್ ತೋಜುಂದು"
+  "Showing albums with all selected tags": "ಪೂರಾ ಆಯ್ಕೆ ಮಲ್ತಿನ ಟ್ಯಾಗ್‌ಲೆನ್ ಆಲ್ಬಮ್‌ಲೆನ್ ತೋಜುಂದು",
+  "Clear All": "ಎಲ್ಲಾ ಸಾಫ್ ಮಲ್ಪು",
+  "6180 Logo": "6180 ಲೋಗೋ",
+  "Home": "ಮನೆ",
+  "Visit Home": "ಮನೆಗ್ ಪೋಲೆ",
+  "Visit 6180.io": "6180.io ಗ್ ಪೋಲೆ",
+  "No tags available": "ಯಾವುದೆ ಟ್ಯಾಗ್ ಇಜ್ಜಿ",
+  "Showing photos with all selected tags": "ಎಲ್ಲಾ ಆಯ್ಕೆ ಮಲ್ತಿನ ಟ್ಯಾಗ್‌ಲೆಗ್ ಫೋಟೋಲೆನ್ ತೋಜುಂದ್",
+  "Valid parameters not found in URL": "URL ಅಡ್ ಸರಿ ಆಪಿನ ಪ್ಯಾರಾಮೀಟರ್ ತಿಕ್ಕಂದಿಜ್ಜಿ",
+  "Invalid id parameter format": "ಅಮಾನ್ಯ id ಪರಾಮೀಟರ್ ಫಾರ್ಮ್ಯಾಟ್",
+  "Album not found": "ಆಲ್ಬಮ್ ತಿಕ್ಕಿಜಿ",
+  "the album owner": "ಆಲ್ಬಮ್‌ನ ಮಾಲೀಕ",
+  "Tag, save and find that performance — before it's lost.": "ಟ್ಯಾಗ್ ಮಲ್ಪ, ಸೇವ್ ಮಲ್ಪ ಬುಕ್ಕೊ ಅ ಜನ್ಮದಿನೊನು ನಾಡ್ — ಕಳ್ಪೊಪೊಗೊಡ್ತ ಮುಕ್ಯಾ.",
+  "Tag, save and find that smile — before it's lost.": "ಟ್ಯಾಗ್ ಮಲ್ಪ, ಸೇವ್ ಮಲ್ಪ ಬುಕ್ಕೊ ಅ ನಗೆನು ನಾಡ್ — ಕಳ್ಪೊಪೊಗೊಡ್ತ ಮುಕ್ಯಾ.",
+  "Tag, save and find that birthday — before it's lost.": "ಟ್ಯಾಗ್ ಮಲ್ಪ, ಸೇವ್ ಮಲ್ಪ ಬುಕ್ಕೊ ಅ ಪ್ರದರ್ಶನೊನು ನಾಡ್ — ಕಳ್ಪೊಪೊಗೊಡ್ತ ಮುಕ್ಯಾ.",
+  "Tag, save and find that sunset — before it's lost.": "ಟ್ಯಾಗ್ ಮಲ್ಪ, ಸೇವ್ ಮಲ್ಪ ಬುಕ್ಕೊ ಅ ರಜೆನು ನಾಡ್ — ಕಳ್ಪೊಪೊಗೊಡ್ತ ಮುಕ್ಯಾ.",
+  "Tag, save and find that party — before it's lost.": "ಟ್ಯಾಗ್ ಮಲ್ಪ, ಸೇವ್ ಮಲ್ಪ ಬುಕ್ಕೊ ಅ ಪಾರ್ಟಿನು ನಾಡ್ — ಕಳ್ಪೊಪೊಗೊಡ್ತ ಮುಕ್ಯಾ.",
+  "Tag, save and find that vacation — before it's lost.": "ಟ್ಯಾಗ್ ಮಲ್ಪ, ಸೇವ್ ಮಲ್ಪ ಬುಕ್ಕೊ ಅ ಸೂರ್ಯಾಸ್ತೊನು ನಾಡ್ — ಕಳ್ಪೊಪೊಗೊಡ್ತ ಮುಕ್ಯಾ."
 }

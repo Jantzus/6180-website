@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "པར་བཙུགས་ནི།",
   "Album successfully saved!": "ཁྱོད་ཀྱི་སྒྲ་སྡེབ་ལེགས་ཤོམ་སྦེ་བསྲུངས་ཡོདཔ།",
   "All files successfully uploaded": "ཡིག་སྣོད་ཚུ་ག་ར་གྲུབ་འབྲས་ཅན་འབད་བཀོག་བཞག་འབད་ཡོདཔ",
@@ -295,5 +296,22 @@
   "Open On Android": "Android ལ་ཁ་ཕྱེ།",
   "Toggle contacts filter": "འབྲེལ་བ་འདེམས་འཚག་བསྒྱུར།",
   "Showing albums with all selected contacts and tags": "འདེམས་པའི་འབྲེལ་བ་དང་རྟགས་ཡོད་ཨལ་བཱམ་འཆར་དགོས།",
-  "Showing albums with all selected tags": "འདེམས་པའི་རྟགས་ཡོད་ཨལ་བཱམ་འཆར་དགོས།"
+  "Showing albums with all selected tags": "འདེམས་པའི་རྟགས་ཡོད་ཨལ་བཱམ་འཆར་དགོས།",
+  "Clear All": "ཚང་མ་བསུབ།",
+  "6180 Logo": "6180 མཚོན་རྟགས།",
+  "Home": "ཁྱིམ།",
+  "Visit Home": "ཁྱིམ་ལ་ལྟ།",
+  "Visit 6180.io": "6180.io ལ་ལྟ།",
+  "No tags available": "ཏེག་གི་ཚུ་མེད།",
+  "Showing photos with all selected tags": "གདམ་ཁ་འདེམས་པའི་ཏེག་རིགས་ཆ་ཚང་དང་བཅས་པའི་པར་འདེབས།",
+  "Valid parameters not found in URL": "URL ནང་ལུ་ནུས་ལྡན་གྱི་ཚད་གཞི་ཚུ་རྙེད་མ་ཐོབ།",
+  "Invalid id parameter format": "ནོར་བ་ཡི་ id པ་ར་མི་ཊར་རྣམ་གཞག",
+  "Album not found": "ཨལ་བཱམ་མ་རྙེད།",
+  "the album owner": "ཨལ་བཱམ་གྱི་བདག་པོ།",
+  "Tag, save and find that performance — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་རྩེད་མོ་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།",
+  "Tag, save and find that smile — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་འཛུམ་སྒེག་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།",
+  "Tag, save and find that birthday — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་སྐྱེས་སྐར་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།",
+  "Tag, save and find that sunset — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་ཉི་ནུབ་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།",
+  "Tag, save and find that party — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་དགའ་སྟོན་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།",
+  "Tag, save and find that vacation — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་གུང་སེང་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།"
 }

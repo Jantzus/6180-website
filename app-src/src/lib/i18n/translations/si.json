@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ඡායාරූප එකතු කරන්න",
   "Album successfully saved!": "ඔබේ ඇල්බමය සාර්ථකව සුරකින ලදී!",
   "All files successfully uploaded": "සියලුම ගොනු සාර්ථකව උඩුගත කරන ලදී",
@@ -295,5 +296,22 @@
   "Open On Android": "Android හි විවෘත කරන්න",
   "Toggle contacts filter": "සම්බන්ධතා පෙරහන මාරු කරන්න",
   "Showing albums with all selected contacts and tags": "සියලුම තෝරාගත් සම්බන්ධතා සහ ටැග සමඟ ඇල්බම ප්‍රදර්ශනය",
-  "Showing albums with all selected tags": "සියලුම තෝරාගත් ටැග සමඟ ඇල්බම ප්‍රදර්ශනය"
+  "Showing albums with all selected tags": "සියලුම තෝරාගත් ටැග සමඟ ඇල්බම ප්‍රදර්ශනය",
+  "Clear All": "සියල්ල මකන්න",
+  "6180 Logo": "6180 ලාංඡනය",
+  "Home": "මුල් පිටුව",
+  "Visit Home": "මුල් පිටුවට යන්න",
+  "Visit 6180.io": "6180.io වෙත යන්න",
+  "No tags available": "කිසිදු ටැගයක් නැත",
+  "Showing photos with all selected tags": "සියලුම තෝරාගත් ටැග සමඟ ඡායාරූප පෙන්වමින්",
+  "Valid parameters not found in URL": "URL හි වලංගු පරාමිති සොයා ගත නොහැක",
+  "Invalid id parameter format": "අවලංගු id පරාමිති ආකෘතිය",
+  "Album not found": "ඇල්බමය හමු නොවීය",
+  "the album owner": "ඇල්බමයේ හිමිකරු",
+  "Tag, save and find that performance — before it's lost.": "ටැග් කරන්න, සේව් කරන්න සහ එම උපන්දිනය සොයන්න — එය නැති වීමට පෙර.",
+  "Tag, save and find that smile — before it's lost.": "ටැග් කරන්න, සේව් කරන්න සහ එම සිනහව සොයන්න — එය නැති වීමට පෙර.",
+  "Tag, save and find that birthday — before it's lost.": "ටැග් කරන්න, සේව් කරන්න සහ එම ප්‍රසංගය සොයන්න — එය නැති වීමට පෙර.",
+  "Tag, save and find that sunset — before it's lost.": "ටැග් කරන්න, සේව් කරන්න සහ එම නිවාඩුව සොයන්න — එය නැති වීමට පෙර.",
+  "Tag, save and find that party — before it's lost.": "ටැග් කරන්න, සේව් කරන්න සහ එම සාදය සොයන්න — එය නැති වීමට පෙර.",
+  "Tag, save and find that vacation — before it's lost.": "ටැග් කරන්න, සේව් කරන්න සහ එම හිරු බැසීම සොයන්න — එය නැති වීමට පෙර."
 }

@@ -100,6 +100,22 @@ const PhotoAlbumContent: React.FC = () => {
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [addPhotosClicked, setAddPhotosClicked] = useState(false);
   
+  // Rotating slogan state - start with random slogan
+  const [currentSloganIndex, setCurrentSloganIndex] = useState(() => 
+    Math.floor(Math.random() * 6)
+  );
+  const [sloganVisible, setSloganVisible] = useState(true);
+  
+  // Array of rotating slogans
+  const slogans = [
+    t('Tag, save and find that performance — before it\'s lost.'),
+    t('Tag, save and find that smile — before it\'s lost.'),
+    t('Tag, save and find that birthday — before it\'s lost.'),
+    t('Tag, save and find that sunset — before it\'s lost.'),
+    t('Tag, save and find that party — before it\'s lost.'),
+    t('Tag, save and find that vacation — before it\'s lost.')
+  ];
+  
   // Use the new shared hook for file uploads
   const fileUpload = useFileUploadProcessor((folderId) => {
     // Custom navigation callback
@@ -160,6 +176,22 @@ const PhotoAlbumContent: React.FC = () => {
     
     warmUpPageCredentials();
   }, []); // Empty dependency array - run once when page loads
+
+  // Rotating slogan effect with smooth fade transitions
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Start fade out
+      setSloganVisible(false);
+      
+      // After fade out completes, change text and fade in
+      setTimeout(() => {
+        setCurrentSloganIndex((prevIndex) => (prevIndex + 1) % slogans.length);
+        setSloganVisible(true);
+      }, 1000); // Wait for fade out to complete (1s)
+    }, 7000); // Every 7 seconds
+
+    return () => clearInterval(interval);
+  }, [slogans.length]);
 
   // ✅ ENHANCED DEBUG: Initialize filtered media items when album data changes
   useEffect(() => {
@@ -676,14 +708,14 @@ const PhotoAlbumContent: React.FC = () => {
 
   // Extract album owner name function
   const getAlbumOwnerName = (): string => {
-    if (!albumData) return 'the album owner';
+    if (!albumData) return t('the album owner');
 
     if (albumData.creatorId && albumData.contacts[albumData.creatorId]) {
       return albumData.contacts[albumData.creatorId];
     }
     
     // Default fallback
-    return 'the album owner';
+    return t('the album owner');
   };
 
   // Check if RTL
@@ -697,25 +729,25 @@ const PhotoAlbumContent: React.FC = () => {
 
   // Render
   return (
-    <Body $isRTL={isRTL}>
+    <>
       <GlobalStyle />
       
-      {/* 6180 Brand Header */}
+      {/* 6180 Brand Header - Fixed positioning, outside any containers */}
       <BrandHeader>
         <BrandHeaderContent>
           <BrandLink 
             href="https://6180.io" 
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label={t('Visit 6180.io')}
+            aria-label={cognitoUsername ? t('Visit Home') : t('Visit 6180.io')}
           >
             <BrandLogoContainer $isRTL={isRTL}>
               <BrandLogo 
                 src={generateUrl("images/logo_no_background.png")}
-                alt="6180 Logo"
+                alt={t('6180 Logo')}
               />
               <span style={{ marginLeft: '8px', fontSize: '18px', fontWeight: 'bold' }}>
-                {t('Home')}
+                {cognitoUsername ? t('Home') : t('6180')}
               </span>
             </BrandLogoContainer>
           </BrandLink>
@@ -724,192 +756,201 @@ const PhotoAlbumContent: React.FC = () => {
             href="https://6180.io" 
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label={t('Create an album in 90 sec')}
+            aria-label={t(slogans[currentSloganIndex])}
+            style={{ 
+              transition: 'opacity 0.8s ease-in-out, transform 0.8s ease-in-out',
+              opacity: sloganVisible ? 1 : 0,
+              transform: sloganVisible ? 'translateY(0)' : 'translateY(-1px)',
+              willChange: 'opacity, transform'
+            }}
           >
-            {t('Create an album in 90 sec')}
+            {t(slogans[currentSloganIndex])}
           </BrandSlogan>
         </BrandHeaderContent>
       </BrandHeader>
-      
-      <AlbumHeader
-        t={t}
-        isSelectionMode={isSelectionMode}
-        cancelSelection={cancelSelection}
-        showingEnterPassword={showingEnterPassword}
-        promptForPassword={promptForPassword}
-        passwordPolicy={passwordPolicy}
-        isAuthorized={isAuthorized}
-        addPhotosToAlbum={addPhotosToAlbum}
-        saveAlbumDirectly={saveAlbumDirectly}
-        handleDownloadPhotos={handleDownloadPhotos}
-        handleCopyLink={() => shareActions.setShowingCopyLinkAlert(true)}
-        albumData={albumData}
-        columns={columns}
-        changeColumns={changeColumns}
-      />
 
-      <MediaContainer id="media-container">
-        {/* Select Photos Button */}
-        <SelectPhotosButton 
-          showSelectPhotosButton={showSelectPhotosButton}
-          albumData={albumData}
-          openFilePicker={openFilePicker}
+      {/* Body content - now has proper padding for fixed header */}
+      <Body $isRTL={isRTL}>
+        <AlbumHeader
           t={t}
-        />
-        
-        {/* Enhanced Upload Progress Component with more detailed status */}
-        {isUploading && (
-          <div style={{ width: '100%', marginBottom: '20px' }}>
-            <UploadProgress 
-              progressTracker={progressTracker} 
-              isRTL={getLanguageDirection(language) === "rtl"}
-              style={{ marginTop: '20px' }}
-              showSuccessMessage={true}
-              showErrorMessage={true}
-            />
-          </div>
-        )}
-                
-        {/* Selection Mode Banner */}
-        <SelectionModeBanner
           isSelectionMode={isSelectionMode}
-          t={t}
-        />
-      
-        {/* Album Title and Description */}
-        <AlbumInfoComponent
+          cancelSelection={cancelSelection}
+          showingEnterPassword={showingEnterPassword}
+          promptForPassword={promptForPassword}
+          passwordPolicy={passwordPolicy}
+          isAuthorized={isAuthorized}
+          addPhotosToAlbum={addPhotosToAlbum}
+          saveAlbumDirectly={saveAlbumDirectly}
+          handleDownloadPhotos={handleDownloadPhotos}
+          handleCopyLink={() => shareActions.setShowingCopyLinkAlert(true)}
           albumData={albumData}
+          columns={columns}
+          changeColumns={changeColumns}
+        />
+
+        <MediaContainer id="media-container">
+          {/* Select Photos Button */}
+          <SelectPhotosButton 
+            showSelectPhotosButton={showSelectPhotosButton}
+            albumData={albumData}
+            openFilePicker={openFilePicker}
+            t={t}
+          />
+          
+          {/* Enhanced Upload Progress Component with more detailed status */}
+          {isUploading && (
+            <div style={{ width: '100%', marginBottom: '20px' }}>
+              <UploadProgress 
+                progressTracker={progressTracker} 
+                isRTL={getLanguageDirection(language) === "rtl"}
+                style={{ marginTop: '20px' }}
+                showSuccessMessage={true}
+                showErrorMessage={true}
+              />
+            </div>
+          )}
+                  
+          {/* Selection Mode Banner */}
+          <SelectionModeBanner
+            isSelectionMode={isSelectionMode}
+            t={t}
+          />
+        
+          {/* Album Title and Description */}
+          <AlbumInfoComponent
+            albumData={albumData}
+            t={t}
+          />
+          
+          {/* Enhanced Media Tags Filter */}
+          {albumData?.mediaItems && albumData.mediaItems.length > 0 && (
+            <EnhancedMediaTagsFilter
+              mediaItems={albumData.mediaItems}
+              onFilterChange={handleMediaFilterChange}
+              resetFilter={resetMediaFilter}
+            />
+          )}
+          
+          {/* Media Grid */}
+          <AlbumMediaGrid
+            isLoading={isLoading}
+            error={error}
+            albumData={displayAlbumData}
+            columns={columns}
+            shouldShowContent={shouldShowContent}
+            shouldShowWatermark={shouldShowWatermark}
+            isSelectionMode={isSelectionMode}
+            selectedItems={selectedItems}
+            toggleItemSelection={toggleItemSelection}
+            openFullscreenView={openFullscreenView}
+            t={t}
+          />
+        </MediaContainer>
+        
+        {/* Password Modal with error display */}
+        <PasswordModal
+          isOpen={showPasswordModal}
+          onClose={() => {
+            setShowPasswordModal(false);
+            setPasswordError(null); // Clear error when closing modal
+          }}
+          onSubmit={handlePasswordSubmit}
+          error={passwordError}
           t={t}
         />
         
-        {/* Enhanced Media Tags Filter */}
-        {albumData?.mediaItems && albumData.mediaItems.length > 0 && (
-          <EnhancedMediaTagsFilter
-            mediaItems={albumData.mediaItems}
-            onFilterChange={handleMediaFilterChange}
-            resetFilter={resetMediaFilter}
+        {/* PhotoLoginModal Component */}
+        <PhotoLoginModal
+          isOpen={showInlineOTPLogin}
+          onClose={() => {
+            setShowInlineOTPLogin(false);
+          }}
+          onLoginSuccess={handleLoginSuccess}
+          ownerName={getAlbumOwnerName()}
+          t={t}
+        />
+        
+        {/* FileInput Component */}
+        <FileInput 
+          onFileSelection={handleFileSelection} 
+          ref={fileInputRef}
+        />
+        
+        {/* Fullscreen Media Viewer */}
+        {fullscreenItem !== null && displayAlbumData && (
+          <FullscreenMediaViewer
+            item={displayAlbumData.mediaItems[fullscreenItem]}
+            index={fullscreenItem}
+            onClose={closeFullscreenView}
+            onPrev={goToPrevItem}
+            onNext={() => goToNextItem(filteredMediaItems.length)}
+            hasNext={fullscreenItem < filteredMediaItems.length - 1}
+            hasPrev={fullscreenItem > 0}
+            showWatermark={shouldShowWatermark()}
+            ownerName={
+              (() => {
+                // Get the owner contact ID
+                const ownerContactId = filteredMediaItems[fullscreenItem].ownerContactId;
+                if (!ownerContactId) return "";
+                
+                // Check if contacts exists and has a direct entry
+                if (albumData?.contacts && albumData.contacts[ownerContactId]) {
+                  return albumData.contacts[ownerContactId];
+                }
+                
+                // Extract the username portion
+                const extractedUsername = ownerContactId.split('_____')[0] || "";
+                
+                // If the extracted username matches the current user's cognito username, display "Me"
+                if (extractedUsername === cognitoUsername) {
+                  return t('Me');
+                }
+                
+                // Otherwise use the extracted username
+                return extractedUsername;
+              })()
+            }
           />
         )}
         
-        {/* Media Grid */}
-        <AlbumMediaGrid
-          isLoading={isLoading}
-          error={error}
-          albumData={displayAlbumData}
-          columns={columns}
-          shouldShowContent={shouldShowContent}
-          shouldShowWatermark={shouldShowWatermark}
-          isSelectionMode={isSelectionMode}
-          selectedItems={selectedItems}
-          toggleItemSelection={toggleItemSelection}
-          openFullscreenView={openFullscreenView}
+        {/* Username Prompt Modal */}
+        <UsernamePrompt
           t={t}
+          language={language}
+          usernameManager={usernameManager}
+          onSuccess={(_) => {
+            // Automatically proceed with saving the album
+            executeAlbumSave(t, folderId, albumData);
+          }}
         />
-      </MediaContainer>
-      
-      {/* Password Modal with error display */}
-      <PasswordModal
-        isOpen={showPasswordModal}
-        onClose={() => {
-          setShowPasswordModal(false);
-          setPasswordError(null); // Clear error when closing modal
-        }}
-        onSubmit={handlePasswordSubmit}
-        error={passwordError}
-        t={t}
-      />
-      
-      {/* PhotoLoginModal Component */}
-      <PhotoLoginModal
-        isOpen={showInlineOTPLogin}
-        onClose={() => {
-          setShowInlineOTPLogin(false);
-        }}
-        onLoginSuccess={handleLoginSuccess}
-        ownerName={getAlbumOwnerName()}
-        t={t}
-      />
-      
-      {/* FileInput Component */}
-      <FileInput 
-        onFileSelection={handleFileSelection} 
-        ref={fileInputRef}
-      />
-      
-      {/* Fullscreen Media Viewer */}
-      {fullscreenItem !== null && displayAlbumData && (
-        <FullscreenMediaViewer
-          item={displayAlbumData.mediaItems[fullscreenItem]}
-          index={fullscreenItem}
-          onClose={closeFullscreenView}
-          onPrev={goToPrevItem}
-          onNext={() => goToNextItem(filteredMediaItems.length)}
-          hasNext={fullscreenItem < filteredMediaItems.length - 1}
-          hasPrev={fullscreenItem > 0}
-          showWatermark={shouldShowWatermark()}
-          ownerName={
-            (() => {
-              // Get the owner contact ID
-              const ownerContactId = filteredMediaItems[fullscreenItem].ownerContactId;
-              if (!ownerContactId) return "";
-              
-              // Check if contacts exists and has a direct entry
-              if (albumData?.contacts && albumData.contacts[ownerContactId]) {
-                return albumData.contacts[ownerContactId];
-              }
-              
-              // Extract the username portion
-              const extractedUsername = ownerContactId.split('_____')[0] || "";
-              
-              // If the extracted username matches the current user's cognito username, display "Me"
-              if (extractedUsername === cognitoUsername) {
-                return t('Me');
-              }
-              
-              // Otherwise use the extracted username
-              return extractedUsername;
-            })()
+        
+        {/* Copy Link Modals */}
+        <CopyLinkModal
+          isOpen={shareActions.showingCopyLinkAlert}
+          onClose={() => shareActions.setShowingCopyLinkAlert(false)}
+          inviteLink={
+            generateInviteLink(
+              folderId,
+              albumData?.albumNanoId,
+              albumData?.creatorId && albumData?.contacts && albumData?.contacts[albumData?.creatorId] 
+              ? albumData?.contacts[albumData?.creatorId] 
+              : 'album',
+              albumData?.folderName
+            )
           }
+          onCopy={shareActions.handleCopy}
+          t={t}
+          isRTL={getLanguageDirection(language) === "rtl"}
         />
-      )}
-      
-      {/* Username Prompt Modal */}
-      <UsernamePrompt
-        t={t}
-        language={language}
-        usernameManager={usernameManager}
-        onSuccess={(_) => {
-          // Automatically proceed with saving the album
-          executeAlbumSave(t, folderId, albumData);
-        }}
-      />
-      
-      {/* Copy Link Modals */}
-      <CopyLinkModal
-        isOpen={shareActions.showingCopyLinkAlert}
-        onClose={() => shareActions.setShowingCopyLinkAlert(false)}
-        inviteLink={
-          generateInviteLink(
-            folderId,
-            albumData?.albumNanoId,
-            albumData?.creatorId && albumData?.contacts && albumData?.contacts[albumData?.creatorId] 
-            ? albumData?.contacts[albumData?.creatorId] 
-            : 'album',
-            albumData?.folderName
-          )
-        }
-        onCopy={shareActions.handleCopy}
-        t={t}
-        isRTL={getLanguageDirection(language) === "rtl"}
-      />
-      
-      <ConfirmationModal
-        isOpen={shareActions.showingCopiedLinkAlert}
-        onClose={() => shareActions.setShowingCopiedLinkAlert(false)}
-        t={t}
-        isRTL={getLanguageDirection(language) === "rtl"}
-      />
-    </Body>
+        
+        <ConfirmationModal
+          isOpen={shareActions.showingCopiedLinkAlert}
+          onClose={() => shareActions.setShowingCopiedLinkAlert(false)}
+          t={t}
+          isRTL={getLanguageDirection(language) === "rtl"}
+        />
+      </Body>
+    </>
   );
 };
 

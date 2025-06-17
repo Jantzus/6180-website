@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Βαλέστε Φωτογραφίας",
   "Album successfully saved!": "Τ'άλμπουμ' εσούν εφυλάχτεν επιτυχώς!",
   "All files successfully uploaded": "Όλα τα αρχεία ανεβαίνθαν επιτυχώς",
@@ -295,5 +296,22 @@
   "Open On Android": "Άνοιξον εις Android",
   "Toggle contacts filter": "Άλλαξε το φίλτρον τών επαφών",
   "Showing albums with all selected contacts and tags": "Δείχνει τα άλμπουμ με όλ' τ' επαφάς και τ' ετικέττας εκλεγμένας",
-  "Showing albums with all selected tags": "Δείχνει τα άλμπουμ με όλ' τ' ετικέττας εκλεγμένας"
+  "Showing albums with all selected tags": "Δείχνει τα άλμπουμ με όλ' τ' ετικέττας εκλεγμένας",
+  "Clear All": "Καθάρισον Πάντα",
+  "6180 Logo": "Λογότυπον 6180",
+  "Home": "Οίκος",
+  "Visit Home": "Πηγαίνετον εις τον Οίκον",
+  "Visit 6180.io": "Πηγαίνετον εις 6180.io",
+  "No tags available": "Κανέναν ετικέτ κι εν",
+  "Showing photos with all selected tags": "Δείχνει φωτογραφίες με όλες τις επιλεγμένες ετικέτες",
+  "Valid parameters not found in URL": "Κανέναν έγκυρον παράμετρον κι ευρέθεν σο URL",
+  "Invalid id parameter format": "Μη έγκυρον σχήμαν παραμέτρου id",
+  "Album not found": "Άλμπουμ κι ευρέθεν",
+  "the album owner": "ο κτήτωρ τη άλμπουμ",
+  "Tag, save and find that performance — before it's lost.": "Σημάδεψον, ασφάλεσον και εβρέτον τα γενέθλια — εμπροστά να χαθούν.",
+  "Tag, save and find that smile — before it's lost.": "Σημάδεψον, ασφάλεσον και εβρέτον το χαμόγελον — εμπροστά να χαθεί.",
+  "Tag, save and find that birthday — before it's lost.": "Σημάδεψον, ασφάλεσον και εβρέτον την παράστασην — εμπροστά να χαθεί.",
+  "Tag, save and find that sunset — before it's lost.": "Σημάδεψον, ασφάλεσον και εβρέτον τας διακοπάς — εμπροστά να χαθούν.",
+  "Tag, save and find that party — before it's lost.": "Σημάδεψον, ασφάλεσον και εβρέτον το γλέντι — εμπροστά να χαθεί.",
+  "Tag, save and find that vacation — before it's lost.": "Σημάδεψον, ασφάλεσον και εβρέτον το δύσιν — εμπροστά να χαθεί."
 }

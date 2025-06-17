@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Adi Fotos",
   "Album successfully saved!": "Tun albume ha esed salvat kon sukses!",
   "All files successfully uploaded": "Omni arkives sukses-kargaten",
@@ -295,5 +296,22 @@
   "Open On Android": "Aperi In Android",
   "Toggle contacts filter": "Swich kontakte filtre",
   "Showing albums with all selected contacts and tags": "Montra albumos kun omni selektit kontaktes e tags",
-  "Showing albums with all selected tags": "Montra albumos kun omni selektit tags"
+  "Showing albums with all selected tags": "Montra albumos kun omni selektit tags",
+  "Clear All": "Klari Omnia",
+  "6180 Logo": "6180 Loge",
+  "Home": "Hem",
+  "Visit Home": "Visita Hem",
+  "Visit 6180.io": "Visita 6180.io",
+  "No tags available": "Nul tags disponibli",
+  "Showing photos with all selected tags": "Montrante fotos kon omni selektit tags",
+  "Valid parameters not found in URL": "Valid parametres non trovat in URL",
+  "Invalid id parameter format": "Invalid id parametre formate",
+  "Album not found": "Album non trovat",
+  "the album owner": "li possessore del album",
+  "Tag, save and find that performance — before it's lost.": "Tagise, preserve e trove ti naskotago — ante ke it es perdete.",
+  "Tag, save and find that smile — before it's lost.": "Tagise, preserve e trove ti surriso — ante ke it es perdete.",
+  "Tag, save and find that birthday — before it's lost.": "Tagise, preserve e trove ti performance — ante ke it es perdete.",
+  "Tag, save and find that sunset — before it's lost.": "Tagise, preserve e trove ti vakanse — ante ke it es perdete.",
+  "Tag, save and find that party — before it's lost.": "Tagise, preserve e trove ti feste — ante ke it es perdete.",
+  "Tag, save and find that vacation — before it's lost.": "Tagise, preserve e trove ti sunokado — ante ke it es perdete."
 }

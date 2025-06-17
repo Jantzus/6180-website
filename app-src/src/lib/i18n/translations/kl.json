@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Assilineri Ilisiguk",
   "Album successfully saved!": "Albumit toqqortarineqarpoq!",
   "All files successfully uploaded": "Fili tamarmik iluatsilluartumik ikisarneqarput",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-mi Ammaruk",
   "Toggle contacts filter": "Kontaktit sivissuit anerniqarput",
   "Showing albums with all selected contacts and tags": "Takuunermik albumit kontakit taggilinillu ataatsimeersunut",
-  "Showing albums with all selected tags": "Takuunermik albumit taggilinillu ataatsimeersunut"
+  "Showing albums with all selected tags": "Takuunermik albumit taggilinillu ataatsimeersunut",
+  "Clear All": "Piareqinartut Tamaasa",
+  "6180 Logo": "6180-p Allineq",
+  "Home": "Angerlarsimavit",
+  "Visit Home": "Angerlarsimavit",
+  "Visit 6180.io": "6180.io-mut",
+  "No tags available": "Tarliit pisimasut",
+  "Showing photos with all selected tags": "Assilirinninneq angijunut talaanni piserissanut",
+  "Valid parameters not found in URL": "URL-imiit akerliit naallugu",
+  "Invalid id parameter format": "Tassaanngilaq id paramitra format",
+  "Album not found": "Album nanittagaanngilaq",
+  "the album owner": "album-p piqqusisaa",
+  "Tag, save and find that performance — before it's lost.": "Naalisaq, toqqaruk aamma takkuuk taanna siammarneq — tassanngajassavaat suli.",
+  "Tag, save and find that smile — before it's lost.": "Naalisaq, toqqaruk aamma takkuuk taanna qiassumik — tassanngajassavaat suli.",
+  "Tag, save and find that birthday — before it's lost.": "Naalisaq, toqqaruk aamma takkuuk taanna inuusip ullua — tassanngajassavaat suli.",
+  "Tag, save and find that sunset — before it's lost.": "Naalisaq, toqqaruk aamma takkuuk taanna seqinip nipaa — tassanngajassavaat suli.",
+  "Tag, save and find that party — before it's lost.": "Naalisaq, toqqaruk aamma takkuuk taanna kaffemik — tassanngajassavaat suli.",
+  "Tag, save and find that vacation — before it's lost.": "Naalisaq, toqqaruk aamma takkuuk taanna sinerlugu — tassanngajassavaat suli."
 }

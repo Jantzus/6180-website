@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotokuna Yapay",
   "Album successfully saved!": "Albumniyki allinta waqaychasqa!",
   "All files successfully uploaded": "Llapan willañiqikuna allinta churasqa",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-pi Kichay",
   "Toggle contacts filter": "Rimaynakuna filtruta t'ikray",
   "Showing albums with all selected contacts and tags": "Tukuy akllasqa rimanakuykuna chaymanta unanchakunawan albumkunata rikuchispa",
-  "Showing albums with all selected tags": "Tukuy akllasqa unanchakunawan albumkunata rikuchispa"
+  "Showing albums with all selected tags": "Tukuy akllasqa unanchakunawan albumkunata rikuchispa",
+  "Clear All": "Tukuy Pichay",
+  "6180 Logo": "6180 Unanchay",
+  "Home": "Wasi",
+  "Visit Home": "Wasiman Riy",
+  "Visit 6180.io": "6180.io-man Riy",
+  "No tags available": "Mana ima tagkunapas kanchu",
+  "Showing photos with all selected tags": "Akllarusqa llapa tagkunawan rikch'anakunata rikuchiy",
+  "Valid parameters not found in URL": "URL nisqapi allin parametrokuna mana tarisqachu",
+  "Invalid id parameter format": "Mana allin id parametro formato",
+  "Album not found": "Album mana tarisqachu",
+  "the album owner": "albumpa kaqnin",
+  "Tag, save and find that performance — before it's lost.": "Unanchay, waqaychay hinaspa chay punchaw p'unchawta tariy — chinkaspa manaraq.",
+  "Tag, save and find that smile — before it's lost.": "Unanchay, waqaychay hinaspa chay asikuyta tariy — chinkaspa manaraq.",
+  "Tag, save and find that birthday — before it's lost.": "Unanchay, waqaychay hinaspa chay ruwayta tariy — chinkaspa manaraq.",
+  "Tag, save and find that sunset — before it's lost.": "Unanchay, waqaychay hinaspa chay samay tariy — chinkaspa manaraq.",
+  "Tag, save and find that party — before it's lost.": "Unanchay, waqaychay hinaspa chay raymi tariy — chinkaspa manaraq.",
+  "Tag, save and find that vacation — before it's lost.": "Unanchay, waqaychay hinaspa chay inti yaykuyta tariy — chinkaspa manaraq."
 }

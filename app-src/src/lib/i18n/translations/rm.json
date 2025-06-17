@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Agiuntar Fotografias",
   "Album successfully saved!": "Tes album è vegnì memorisà cun success!",
   "All files successfully uploaded": "Tut ils datotecas èn vegnidas chargiadas cun success",
@@ -295,5 +296,22 @@
   "Open On Android": "Avrir En Android",
   "Toggle contacts filter": "Midar il filter da contacts",
   "Showing albums with all selected contacts and tags": "Mussa albums cun tut ils contacts ed etiquettas tschernidas",
-  "Showing albums with all selected tags": "Mussa albums cun tuttas etiquettas tschernidas"
+  "Showing albums with all selected tags": "Mussa albums cun tuttas etiquettas tschernidas",
+  "Clear All": "Stizzar Tut",
+  "6180 Logo": "Logo da 6180",
+  "Home": "Chasa",
+  "Visit Home": "Ir a Casa",
+  "Visit 6180.io": "Ir a 6180.io",
+  "No tags available": "Nagins etichettas",
+  "Showing photos with all selected tags": "Mussar maletgs cun tut las etichettas tschernidas",
+  "Valid parameters not found in URL": "Nagins parameters valids chatads en l'URL",
+  "Invalid id parameter format": "Format nunvalid dal parameter id",
+  "Album not found": "Album betg chattà",
+  "the album owner": "il possessur da l'album",
+  "Tag, save and find that performance — before it's lost.": "Marcar, spargnar e chattar quella cumpleavsaziun — avant ch'ella sa perda.",
+  "Tag, save and find that smile — before it's lost.": "Marcar, spargnar e chattar quel survir — avant ch'el sa perda.",
+  "Tag, save and find that birthday — before it's lost.": "Marcar, spargnar e chattar quella prestaziun — avant ch'ella sa perda.",
+  "Tag, save and find that sunset — before it's lost.": "Marcar, spargnar e chattar quellas vacanzas — avant ch'ellas sa perdan.",
+  "Tag, save and find that party — before it's lost.": "Marcar, spargnar e chattar quella festa — avant ch'ella sa perda.",
+  "Tag, save and find that vacation — before it's lost.": "Marcar, spargnar e chattar quel tramont — avant ch'el sa perda."
 }

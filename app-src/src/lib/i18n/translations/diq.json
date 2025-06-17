@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotrafan cı kerê",
   "Album successfully saved!": "Albumê şıma be serkotışi qeyd bi!",
   "All files successfully uploaded": "Pêro dosyey bi serkewtiş bar biyê",
@@ -295,5 +296,22 @@
   "Open On Android": "Android De Ak",
   "Toggle contacts filter": "Filtrê têkiliyoqo bıvurne",
   "Showing albums with all selected contacts and tags": "Albumê ke pêro têkiliyê u etîketê weçînayeyê şêno",
-  "Showing albums with all selected tags": "Albumê ke pêro etîketê weçînayeyê şêno"
+  "Showing albums with all selected tags": "Albumê ke pêro etîketê weçînayeyê şêno",
+  "Clear All": "Pêro Besternê",
+  "6180 Logo": "Logoê 6180",
+  "Home": "Keye",
+  "Visit Home": "Keye Şere",
+  "Visit 6180.io": "6180.io Şere",
+  "No tags available": "Tag çıniyê",
+  "Showing photos with all selected tags": "Etiketanê weçinıtıyan pêroınan aseno",
+  "Valid parameters not found in URL": "Parametreyê raştê URL de çıniyê",
+  "Invalid id parameter format": "Formatê parametreyê id ğeleto",
+  "Album not found": "Album nêvêniya",
+  "the album owner": "albumê welatî",
+  "Tag, save and find that performance — before it's lost.": "Etiket bike, star bike u performansê bivêne — verdeno berê.",
+  "Tag, save and find that smile — before it's lost.": "Etiket bike, star bike u kênayişê bivêne — verdeno berê.",
+  "Tag, save and find that birthday — before it's lost.": "Etiket bike, star bike u rojê biyaênê bivêne — verdeno berê.",
+  "Tag, save and find that sunset — before it's lost.": "Etiket bike, star bike u şivayışê roc bivêne — verdeno berê.",
+  "Tag, save and find that party — before it's lost.": "Etiket bike, star bike u partiê bivêne — verdeno berê.",
+  "Tag, save and find that vacation — before it's lost.": "Etiket bike, star bike u tatilanê bivêne — verdeno berê."
 }

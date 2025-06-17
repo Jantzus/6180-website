@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Idugang ang mga Hulagway",
   "Album successfully saved!": "Ang imong album malampuson nga natipig!",
   "All files successfully uploaded": "Ang tanang mga file malampuson nga gi-upload",
@@ -295,5 +296,22 @@
   "Open On Android": "Ablihi Sa Android",
   "Toggle contacts filter": "Ilisan ang filter sa mga kontak",
   "Showing albums with all selected contacts and tags": "Gipakita ang mga album nga adunay tanang piniling mga kontak ug mga tag",
-  "Showing albums with all selected tags": "Gipakita ang mga album nga adunay tanang piniling mga tag"
+  "Showing albums with all selected tags": "Gipakita ang mga album nga adunay tanang piniling mga tag",
+  "Clear All": "Limpiyohi Tanan",
+  "6180 Logo": "Logo sa 6180",
+  "Home": "Balay",
+  "Visit Home": "Bisitahi ang Home",
+  "Visit 6180.io": "Bisitahi ang 6180.io",
+  "No tags available": "Walay tag nga anaa",
+  "Showing photos with all selected tags": "Nagpakita sa mga hulagway nga adunay tanan nga gipili nga tag",
+  "Valid parameters not found in URL": "Walay valid nga mga parameter nga nakit-an sa URL",
+  "Invalid id parameter format": "Dili valid nga format sa id parameter",
+  "Album not found": "Wala'y album nga nakit-an",
+  "the album owner": "ang tag-iya sa album",
+  "Tag, save and find that performance — before it's lost.": "Tag, tipigi ug pangitaa ang performance — sa dili pa mawala.",
+  "Tag, save and find that smile — before it's lost.": "Tag, tipigi ug pangitaa ang pahiyom — sa dili pa mawala.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, tipigi ug pangitaa ang adlawng natawhan — sa dili pa mawala.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, tipigi ug pangitaa ang pagsalop sa adlaw — sa dili pa mawala.",
+  "Tag, save and find that party — before it's lost.": "Tag, tipigi ug pangitaa ang handaan — sa dili pa mawala.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, tipigi ug pangitaa ang bakasyon — sa dili pa mawala."
 }

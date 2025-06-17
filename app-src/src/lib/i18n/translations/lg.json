@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Yongerako Bifaananyi",
   "Album successfully saved!": "Akatabo ko katerekeddwa bulungi!",
   "All files successfully uploaded": "Fayiro zonna zitikkidwa bulungi",
@@ -295,5 +296,22 @@
   "Open On Android": "Ggula Ku Android",
   "Toggle contacts filter": "Kyuusa akafuzi k'abakwatagana",
   "Showing albums with all selected contacts and tags": "Kulaga ebyali biwandiikirwa n'obukwatagano n'ebitabo byonna ebyalondeddwa",
-  "Showing albums with all selected tags": "Kulaga ebyali biwandiikirwa n'ebitabo byonna ebyalondeddwa"
+  "Showing albums with all selected tags": "Kulaga ebyali biwandiikirwa n'ebitabo byonna ebyalondeddwa",
+  "Clear All": "Gyawo Byonna",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Maka",
+  "Visit Home": "Kyalira ewa",
+  "Visit 6180.io": "Kyalira 6180.io",
+  "No tags available": "Tewali bulungi bwa tag",
+  "Showing photos with all selected tags": "Kulaga ebifaananyi ebirina obubonero bwonna obulondeddwa",
+  "Valid parameters not found in URL": "Tewabonekayo bipimo ebirungi mu URL",
+  "Invalid id parameter format": "Empandika ya parameter id etali",
+  "Album not found": "Album tesanze",
+  "the album owner": "nannyini wa album",
+  "Tag, save and find that performance — before it's lost.": "Teeka, kuuma n'onoonya olunaku lw'okuzaalibwa — nga tegukyabuliddwa.",
+  "Tag, save and find that smile — before it's lost.": "Teeka, kuuma n'onoonya omusaanyizo ogwo — nga tegukyabuliddwa.",
+  "Tag, save and find that birthday — before it's lost.": "Teeka, kuuma n'onoonya olukung'aana olwo — nga tegukyabuliddwa.",
+  "Tag, save and find that sunset — before it's lost.": "Teeka, kuuma n'onoonya okuwummula okwo — nga tegukyabuliddwa.",
+  "Tag, save and find that party — before it's lost.": "Teeka, kuuma n'onoonya enkuŋŋaana eyo — nga tegukyabuliddwa.",
+  "Tag, save and find that vacation — before it's lost.": "Teeka, kuuma n'onoonya olwaggulu lw'enjuba — nga tegukyabuliddwa."
 }

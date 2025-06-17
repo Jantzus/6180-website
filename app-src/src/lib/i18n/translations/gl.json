@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Engadir Fotos",
   "Album successfully saved!": "O teu álbum gardouse con éxito!",
   "All files successfully uploaded": "Todos os ficheiros subidos con éxito",
@@ -295,5 +296,22 @@
   "Open On Android": "Abrir En Android",
   "Toggle contacts filter": "Alternar filtro de contactos",
   "Showing albums with all selected contacts and tags": "Mostrando álbums con todos os contactos e etiquetas seleccionados",
-  "Showing albums with all selected tags": "Mostrando álbums con todas as etiquetas seleccionadas"
+  "Showing albums with all selected tags": "Mostrando álbums con todas as etiquetas seleccionadas",
+  "Clear All": "Limpar Todo",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Inicio",
+  "Visit Home": "Visitar Inicio",
+  "Visit 6180.io": "Visitar 6180.io",
+  "No tags available": "Non hai etiquetas dispoñibles",
+  "Showing photos with all selected tags": "Mostrando fotos con todas as etiquetas seleccionadas",
+  "Valid parameters not found in URL": "Non se atoparon parámetros válidos na URL",
+  "Invalid id parameter format": "Formato de parámetro de id non válido",
+  "Album not found": "Non se atopou o álbum",
+  "the album owner": "o propietario do álbum",
+  "Tag, save and find that performance — before it's lost.": "Etiqueta, garda e atopa esa actuación — antes de que se perda.",
+  "Tag, save and find that smile — before it's lost.": "Etiqueta, garda e atopa esa sonrisa — antes de que se perda.",
+  "Tag, save and find that birthday — before it's lost.": "Etiqueta, garda e atopa ese aniversario — antes de que se perda.",
+  "Tag, save and find that sunset — before it's lost.": "Etiqueta, garda e atopa ese solpor — antes de que se perda.",
+  "Tag, save and find that party — before it's lost.": "Etiqueta, garda e atopa esa festa — antes de que se perda.",
+  "Tag, save and find that vacation — before it's lost.": "Etiqueta, garda e atopa esas vacacións — antes de que se perdan."
 }

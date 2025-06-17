@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Radjouter des Fotos",
   "Album successfully saved!": "Vost' album a stî schapé avou succès!",
   "All files successfully uploaded": "Tos les fitchîs ont stî eberwetés avou succès",
@@ -295,5 +296,22 @@
   "Open On Android": "Drovi So Android",
   "Toggle contacts filter": "Candjî l' passete des contactes",
   "Showing albums with all selected contacts and tags": "Mostrer les alboms avou tos les contactes et etiketes tchoezeyes",
-  "Showing albums with all selected tags": "Mostrer les alboms avou totes les etiketes tchoezeyes"
+  "Showing albums with all selected tags": "Mostrer les alboms avou totes les etiketes tchoezeyes",
+  "Clear All": "Netyî Totafet",
+  "6180 Logo": "Logo di 6180",
+  "Home": "Måjhon",
+  "Visit Home": "Aler al Måjhon",
+  "Visit 6180.io": "Aler a 6180.io",
+  "No tags available": "Nou etikete",
+  "Showing photos with all selected tags": "Mostrant les fotos avou totes les etiketes tchoûzeyes",
+  "Valid parameters not found in URL": "Paramètes valides nén trovés dins l'URL",
+  "Invalid id parameter format": "Furmaedje di paramète id nén valabu",
+  "Album not found": "Album nén trové",
+  "the album owner": "li maisse del album",
+  "Tag, save and find that performance — before it's lost.": "Etiketer, schaper et trover ci anniversaire la — divant qu' il si piede.",
+  "Tag, save and find that smile — before it's lost.": "Etiketer, schaper et trover ci sourire la — divant qu' il si piede.",
+  "Tag, save and find that birthday — before it's lost.": "Etiketer, schaper et trover ci spectåcle la — divant qu' il si piede.",
+  "Tag, save and find that sunset — before it's lost.": "Etiketer, schaper et trover ces vacances la — divant qu' eles si pierdent.",
+  "Tag, save and find that party — before it's lost.": "Etiketer, schaper et trover ci fièsse la — divant qu' ele si piede.",
+  "Tag, save and find that vacation — before it's lost.": "Etiketer, schaper et trover ci solea couchant la — divant qu' il si piede."
 }

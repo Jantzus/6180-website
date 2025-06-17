@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotos hinzufügen",
   "Album successfully saved!": "Dein Album wurde erfolgreich gespeichert!",
   "All files successfully uploaded": "Alle Dateien erfolgreich hochgeladen",
@@ -295,5 +296,22 @@
   "Open On Android": "In Android Öffnen",
   "Toggle contacts filter": "Kontaktfilter umschalten",
   "Showing albums with all selected contacts and tags": "Zeige Alben mit allen ausgewählten Kontakten und Tags",
-  "Showing albums with all selected tags": "Zeige Alben mit allen ausgewählten Tags"
+  "Showing albums with all selected tags": "Zeige Alben mit allen ausgewählten Tags",
+  "Clear All": "Alles Löschen",
+  "6180 Logo": "6180 Logo",
+  "Home": "Startseite",
+  "Visit Home": "Startseite Besuchen",
+  "Visit 6180.io": "6180.io Besuchen",
+  "No tags available": "Keine Tags verfügbar",
+  "Showing photos with all selected tags": "Zeige Fotos mit allen ausgewählten Tags",
+  "Valid parameters not found in URL": "Gültige Parameter in URL nicht gefunden",
+  "Invalid id parameter format": "Ungültiges ID-Parameter-Format",
+  "Album not found": "Album nicht gefunden",
+  "the album owner": "der Album-Besitzer",
+  "Tag, save and find that performance — before it's lost.": "Markiere, speichere und finde diese Aufführung — bevor sie verloren geht.",
+  "Tag, save and find that smile — before it's lost.": "Markiere, speichere und finde dieses Lächeln — bevor es verloren geht.",
+  "Tag, save and find that birthday — before it's lost.": "Markiere, speichere und finde diesen Geburtstag — bevor er verloren geht.",
+  "Tag, save and find that sunset — before it's lost.": "Markiere, speichere und finde diesen Sonnenuntergang — bevor er verloren geht.",
+  "Tag, save and find that party — before it's lost.": "Markiere, speichere und finde diese Party — bevor sie verloren geht.",
+  "Tag, save and find that vacation — before it's lost.": "Markiere, speichere und finde diesen Urlaub — bevor er verloren geht."
 }

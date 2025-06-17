@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ফটো যোগ কৰক",
   "Album successfully saved!": "আপোনাৰ এলবাম সফলতাৰে সংৰক্ষণ কৰা হ'ল!",
   "All files successfully uploaded": "সকলো ফাইল সফলতাৰে আপলোড কৰা হ'ল",
@@ -295,5 +296,22 @@
   "Open On Android": "Android ত খোলক",
   "Toggle contacts filter": "যোগাযোগ ফিল্টাৰ পৰিৱৰ্তন কৰক",
   "Showing albums with all selected contacts and tags": "সকলো নিৰ্বাচিত যোগাযোগ আৰু টেগৰ সৈতে এলবাম দেখুৱাইছে",
-  "Showing albums with all selected tags": "সকলো নিৰ্বাচিত টেগৰ সৈতে এলবাম দেখুৱাইছে"
+  "Showing albums with all selected tags": "সকলো নিৰ্বাচিত টেগৰ সৈতে এলবাম দেখুৱাইছে",
+  "Clear All": "সকলো মচক",
+  "6180 Logo": "6180 ল'গ'",
+  "Home": "ঘৰ",
+  "Visit Home": "ঘৰলৈ যাওক",
+  "Visit 6180.io": "6180.io-লৈ যাওক",
+  "No tags available": "কোনো টেগ নাই",
+  "Showing photos with all selected tags": "সকলো নিৰ্বাচিত টেগ থকা ফটো দেখুৱা হৈছে",
+  "Valid parameters not found in URL": "URL ত বৈধ প্ৰামিটাৰ পোৱা নাই",
+  "Invalid id parameter format": "অবৈধ আইডি পেৰামিটাৰ ফৰ্মেট",
+  "Album not found": "এলবাম পোৱা নাই",
+  "the album owner": "এলবামৰ গৰাকী",
+  "Tag, save and find that performance — before it's lost.": "টেগ কৰক, সংৰক্ষণ কৰক আৰু সেই প্ৰদৰ্শন বিচাৰি উলিয়াওক — হেৰুৱাৰ আগতে।",
+  "Tag, save and find that smile — before it's lost.": "টেগ কৰক, সংৰক্ষণ কৰক আৰু সেই হাঁহি বিচাৰি উলিয়াওক — হেৰুৱাৰ আগতে।",
+  "Tag, save and find that birthday — before it's lost.": "টেগ কৰক, সংৰক্ষণ কৰক আৰু সেই জন্মদিন বিচাৰি উলিয়াওক — হেৰুৱাৰ আগতে।",
+  "Tag, save and find that sunset — before it's lost.": "টেগ কৰক, সংৰক্ষণ কৰক আৰু সেই সূৰ্যাস্ত বিচাৰি উলিয়াওক — হেৰুৱাৰ আগতে।",
+  "Tag, save and find that party — before it's lost.": "টেগ কৰক, সংৰক্ষণ কৰক আৰু সেই পাৰ্টি বিচাৰি উলিয়াওক — হেৰুৱাৰ আগতে।",
+  "Tag, save and find that vacation — before it's lost.": "টেগ কৰক, সংৰক্ষণ কৰক আৰু সেই বন্ধৰ দিন বিচাৰি উলিয়াওক — হেৰুৱাৰ আগতে।"
 }

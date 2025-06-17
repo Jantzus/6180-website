@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fa Mfonyin Ka Ho",
   "Album successfully saved!": "Wo nwoma no asie yie!",
   "All files successfully uploaded": "Nwoma no nyinaa adi dwuma yie",
@@ -295,5 +296,22 @@
   "Open On Android": "Bue Wɔ Android So",
   "Toggle contacts filter": "Sesa abusuakuw sow",
   "Showing albums with all selected contacts and tags": "Kyerɛ album a wɔahyɛ abusuakuw ne nsɛnkyerɛnne nyinaa",
-  "Showing albums with all selected tags": "Kyerɛ album a wɔahyɛ nsɛnkyerɛnne nyinaa"
+  "Showing albums with all selected tags": "Kyerɛ album a wɔahyɛ nsɛnkyerɛnne nyinaa",
+  "Clear All": "Pepa Biara",
+  "6180 Logo": "Logo 6180",
+  "Home": "Fie",
+  "Visit Home": "Kᴐ Fie",
+  "Visit 6180.io": "Kᴐ 6180.io",
+  "No tags available": "Tag biara nni hɔ",
+  "Showing photos with all selected tags": "Ɛkyerɛ mfoni a tag a wɔyi nyinaa ka ho",
+  "Valid parameters not found in URL": "Wɔanhu parameter a eye wɔ URL no mu",
+  "Invalid id parameter format": "Id parameter format a ɛnyɛ dɛ",
+  "Album not found": "Wɔanhu album no",
+  "the album owner": "album no wura",
+  "Tag, save and find that performance — before it's lost.": "Ma nsεnkyerεne, sie na hwehwε saa awo da no — ansa na ayera.",
+  "Tag, save and find that smile — before it's lost.": "Ma nsεnkyerεne, sie na hwehwε saa serew no — ansa na ayera.",
+  "Tag, save and find that birthday — before it's lost.": "Ma nsεnkyerεne, sie na hwehwε saa nhyɛso no — ansa na ayera.",
+  "Tag, save and find that sunset — before it's lost.": "Ma nsεnkyerεne, sie na hwehwε saa home no — ansa na ayera.",
+  "Tag, save and find that party — before it's lost.": "Ma nsεnkyerεne, sie na hwehwε saa afahyε no — ansa na ayera.",
+  "Tag, save and find that vacation — before it's lost.": "Ma nsεnkyerεne, sie na hwehwε saa owia a εkɔto no — ansa na ayera."
 }

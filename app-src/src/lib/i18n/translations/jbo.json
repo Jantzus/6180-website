@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "jmina lo pixra",
   "Album successfully saved!": "lo do pixra ckusro pu se lacpu",
   "All files successfully uploaded": "ro datnyvei cu se benji saze'i",
@@ -295,5 +296,22 @@
   "Open On Android": "kargau fi'o Android",
   "Toggle contacts filter": "slacu lo ka jorne",
   "Showing albums with all selected contacts and tags": "viska loi girzu be lo se cuxna be lo jorne be'o je lo te jorne",
-  "Showing albums with all selected tags": "viska loi girzu be lo se cuxna be lo te jorne"
+  "Showing albums with all selected tags": "viska loi girzu be lo se cuxna be lo te jorne",
+  "Clear All": "vimcu ro",
+  "6180 Logo": "6180 sinxa",
+  "Home": "zdani",
+  "Visit Home": "klama lo zdani",
+  "Visit 6180.io": "klama lo 6180.io",
+  "No tags available": "no da cmene girzu",
+  "Showing photos with all selected tags": "jarco pixra poi ke'a se cmene girzu poi cuxna",
+  "Valid parameters not found in URL": "no da sarcu paramita viska pe'i URL",
+  "Invalid id parameter format": "na drani id te pruce",
+  "Album not found": "album na zvati",
+  "the album owner": "la album ponse",
+  "Tag, save and find that performance — before it's lost.": "tagi gi vreji gi tolci'i ta jvinu — pu lo nu tolci'o",
+  "Tag, save and find that smile — before it's lost.": "tagi gi vreji gi tolci'i ta cisma — pu lo nu tolci'o",
+  "Tag, save and find that birthday — before it's lost.": "tagi gi vreji gi tolci'i ta jbena — pu lo nu tolci'o",
+  "Tag, save and find that sunset — before it's lost.": "tagi gi vreji gi tolci'i ta solnai — pu lo nu tolci'o",
+  "Tag, save and find that party — before it's lost.": "tagi gi vreji gi tolci'i ta jbeni — pu lo nu tolci'o",
+  "Tag, save and find that vacation — before it's lost.": "tagi gi vreji gi tolci'i ta nundanfu — pu lo nu tolci'o"
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Przidej Zdjyńcia",
   "Album successfully saved!": "Twůj album ôstoł spamiyntany!",
   "All files successfully uploaded": "Wszyjske zbiory wciepńyńte pomyślńy",
@@ -295,5 +296,22 @@
   "Open On Android": "Òtworzić We Android",
   "Toggle contacts filter": "Przełōnczyć filter kōntaktůw",
   "Showing albums with all selected contacts and tags": "Pokŏzuje albumy ze wszyskimi wŏbrōnymi kōntaktami i etykietkami",
-  "Showing albums with all selected tags": "Pokŏzuje albumy ze wszyskimi wŏbrōnymi etykietkami"
+  "Showing albums with all selected tags": "Pokŏzuje albumy ze wszyskimi wŏbrōnymi etykietkami",
+  "Clear All": "Wywciep Wszyjsko",
+  "6180 Logo": "Logo 6180",
+  "Home": "Gyminiy",
+  "Visit Home": "Nawiedź Dom",
+  "Visit 6180.io": "Nawiedź 6180.io",
+  "No tags available": "Niy ma dostympnych metków",
+  "Showing photos with all selected tags": "Pokozowanie ôbrôzkôw ze wszystkimi wybrańymi tagami",
+  "Valid parameters not found in URL": "Niy znaleźōno poprawnych parametrōw w URL",
+  "Invalid id parameter format": "Niyporōndny format parametru id",
+  "Album not found": "Album niy znaleźiono",
+  "the album owner": "włodziosz albumu",
+  "Tag, save and find that performance — before it's lost.": "Oznacz, schrōń a znojdź tã urozdiny — zanim sie sztrocōn.",
+  "Tag, save and find that smile — before it's lost.": "Oznacz, schrōń a znojdź tã śmiych — zanim sie sztrocōn.",
+  "Tag, save and find that birthday — before it's lost.": "Oznacz, schrōń a znojdź tã wystomp — zanim sie sztrocōn.",
+  "Tag, save and find that sunset — before it's lost.": "Oznacz, schrōń a znojdź te wakacyje — zanim sie sztrocōn.",
+  "Tag, save and find that party — before it's lost.": "Oznacz, schrōń a znojdź tã zabawa — zanim sie sztrocōn.",
+  "Tag, save and find that vacation — before it's lost.": "Oznacz, schrōń a znojdź tyn zachōd słōńca — zanim sie sztrocōn."
 }

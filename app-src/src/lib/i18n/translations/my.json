@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ဓာတ်ပုံများ ထည့်ပါ",
   "Album successfully saved!": "သင့်ဓာတ်ပုံအယ်လ်ဘမ်ကို အောင်မြင်စွာ သိမ်းဆည်းပြီးပါပြီ!",
   "All files successfully uploaded": "ဖိုင်အားလုံး အောင်မြင်စွာ တင်ပြီးပါပြီ",
@@ -295,5 +296,22 @@
   "Open On Android": "Android တွင်ဖွင့်ပါ",
   "Toggle contacts filter": "အဆက်အသွယ်စစ်ထုတ်ကိရိယာကို ပြောင်းရန်",
   "Showing albums with all selected contacts and tags": "ရွေးချယ်ထားသောဆက်သွယ်မှုနှင့်တဂ်များအားလုံးပါသောအယ်လ်ဘမ်များပြသနေပါသည်",
-  "Showing albums with all selected tags": "ရွေးချယ်ထားသောတဂ်များအားလုံးပါသောအယ်လ်ဘမ်များပြသနေပါသည်"
+  "Showing albums with all selected tags": "ရွေးချယ်ထားသောတဂ်များအားလုံးပါသောအယ်လ်ဘမ်များပြသနေပါသည်",
+  "Clear All": "အားလုံးရှင်းလင်းပါ",
+  "6180 Logo": "6180 လိုဂို",
+  "Home": "အိမ်",
+  "Visit Home": "အိမ်သို့သွားပါ",
+  "Visit 6180.io": "6180.io သို့သွားပါ",
+  "No tags available": "တဲ့ဂ်များ မရှိပါ",
+  "Showing photos with all selected tags": "ရွေးချယ်ထားသော တဲ့ဂ်အားလုံးပါသော ဓာတ်ပုံများကို ပြသနေသည်",
+  "Valid parameters not found in URL": "URL တွင် တရားဝင်သောဖြည့်စွက်အချက်များ မတွေ့ပါ",
+  "Invalid id parameter format": "မမှန်ကန်သော id ပါရာမီတာ ပုံစံ",
+  "Album not found": "အယ်လ်ဘမ် မတွေ့ပါ",
+  "the album owner": "အယ်လ်ဘမ်ပိုင်ရှင်",
+  "Tag, save and find that performance — before it's lost.": "တဂ်လုပ်ပါ၊ သိမ်းဆည်းပါ နှင့် ထိုမွေးနေ့ကို ရှာပါ — ပျောက်ဆုံးခင်မှာ။",
+  "Tag, save and find that smile — before it's lost.": "တဂ်လုပ်ပါ၊ သိမ်းဆည်းပါ နှင့် ထိုပုံရိပ်ကို ရှာပါ — ပျောက်ဆုံးခင်မှာ။",
+  "Tag, save and find that birthday — before it's lost.": "တဂ်လုပ်ပါ၊ သိမ်းဆည်းပါ နှင့် ထိုဖျော်ဖြေပွဲကို ရှာပါ — ပျောက်ဆုံးခင်မှာ။",
+  "Tag, save and find that sunset — before it's lost.": "တဂ်လုပ်ပါ၊ သိမ်းဆည်းပါ နှင့် ထိုအားလပ်ရက်ကို ရှာပါ — ပျောက်ဆုံးခင်မှာ။",
+  "Tag, save and find that party — before it's lost.": "တဂ်လုပ်ပါ၊ သိမ်းဆည်းပါ နှင့် ထိုပါတီကို ရှာပါ — ပျောက်ဆုံးခင်မှာ။",
+  "Tag, save and find that vacation — before it's lost.": "တဂ်လုပ်ပါ၊ သိမ်းဆည်းပါ နှင့် ထိုနေ့ဝင်ချိန်ကို ရှာပါ — ပျောက်ဆုံးခင်မှာ။"
 }

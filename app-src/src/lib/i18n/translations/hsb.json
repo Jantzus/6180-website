@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotografije Přidać",
   "Album successfully saved!": "Waš album je so wuspěšnje składował!",
   "All files successfully uploaded": "Wšě dataje buchu wuspěšnje nahrate",
@@ -295,5 +296,22 @@
   "Open On Android": "Na Android Wočinić",
   "Toggle contacts filter": "Kontaktowy filter přepnyć",
   "Showing albums with all selected contacts and tags": "Pokazować albumy ze wšěmi wubranymi kontaktami a wobznamjenjemi",
-  "Showing albums with all selected tags": "Pokazować albumy ze wšěmi wubranymi wobznamjenjemi"
+  "Showing albums with all selected tags": "Pokazować albumy ze wšěmi wubranymi wobznamjenjemi",
+  "Clear All": "Wšitko Zhašeć",
+  "6180 Logo": "Logo 6180",
+  "Home": "Startowa",
+  "Visit Home": "Startowu stronu wopytać",
+  "Visit 6180.io": "6180.io wopytać",
+  "No tags available": "Žane wobznamjenja k dispoziciji",
+  "Showing photos with all selected tags": "Pokazuje wobrazy ze wšymi wubranymi wobznamjenjami",
+  "Valid parameters not found in URL": "Płaćiwe parametry w URL njenamakane",
+  "Invalid id parameter format": "Njepłaćiwy format parametra id",
+  "Album not found": "Album njeje so namakał",
+  "the album owner": "wobsadźer albuma",
+  "Tag, save and find that performance — before it's lost.": "Woznamjenjuj, składuj a namakaj tu předstajenje — prjedy hač so zhubi.",
+  "Tag, save and find that smile — before it's lost.": "Woznamjenjuj, składuj a namakaj ten směch — prjedy hač so zhubi.",
+  "Tag, save and find that birthday — before it's lost.": "Woznamjenjuj, składuj a namakaj te narodniny — prjedy hač so zhubi.",
+  "Tag, save and find that sunset — before it's lost.": "Woznamjenjuj, składuj a namakaj ten zachod słónca — prjedy hač so zhubi.",
+  "Tag, save and find that party — before it's lost.": "Woznamjenjuj, składuj a namakaj tu swjatk — prjedy hač so zhubi.",
+  "Tag, save and find that vacation — before it's lost.": "Woznamjenjuj, składuj a namakaj te prózdniny — prjedy hač so zhubja."
 }

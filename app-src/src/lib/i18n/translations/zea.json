@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Foto's toevoege",
   "Album successfully saved!": "Je album is mit succes op-eslaen!",
   "All files successfully uploaded": "Alle bestanden bin succesvol geupload",
@@ -295,5 +296,22 @@
   "Open On Android": "Opendoen Op Android",
   "Toggle contacts filter": "Kontaktfilter wisseln",
   "Showing albums with all selected contacts and tags": "Albums tooan mee alle ekozene kontakten en labels",
-  "Showing albums with all selected tags": "Albums tooan mee alle ekozene labels"
+  "Showing albums with all selected tags": "Albums tooan mee alle ekozene labels",
+  "Clear All": "Alles Wegdoen",
+  "6180 Logo": "6180 Logo",
+  "Home": "Uus",
+  "Visit Home": "Noa Uus",
+  "Visit 6180.io": "Noa 6180.io",
+  "No tags available": "Geen labels",
+  "Showing photos with all selected tags": "Toongn van foto's mee alle e-selecteerde labels",
+  "Valid parameters not found in URL": "Geldige parameters nie gevonden in URL",
+  "Invalid id parameter format": "Ónjeldich id parameter formaat",
+  "Album not found": "Album nie gevonden",
+  "the album owner": "de album eigenoare",
+  "Tag, save and find that performance — before it's lost.": "Markeer, bewaar en vind die verjoardag — voorda 't verdwient.",
+  "Tag, save and find that smile — before it's lost.": "Markeer, bewaar en vind die glimlach — voorda 't verdwient.",
+  "Tag, save and find that birthday — before it's lost.": "Markeer, bewaar en vind die vertoonienge — voorda 't verdwient.",
+  "Tag, save and find that sunset — before it's lost.": "Markeer, bewaar en vind die vakantie — voorda 't verdwient.",
+  "Tag, save and find that party — before it's lost.": "Markeer, bewaar en vind die feest — voorda 't verdwient.",
+  "Tag, save and find that vacation — before it's lost.": "Markeer, bewaar en vind die zunondergang — voorda 't verdwient."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ɓeydu Nataali",
   "Album successfully saved!": "Albumma danngaama no yaawi!",
   "All files successfully uploaded": "Dendaaɗe fof naatnaaɗe no moƴƴirta",
@@ -295,5 +296,22 @@
   "Open On Android": "Uddit E Android",
   "Toggle contacts filter": "Waylu jeñorde",
   "Showing albums with all selected contacts and tags": "Hollaade kelnaaɓe e jeñorde kala e cullituɗe",
-  "Showing albums with all selected tags": "Hollaade kelnaaɓe e cullituɗe kala"
+  "Showing albums with all selected tags": "Hollaade kelnaaɓe e cullituɗe kala",
+  "Clear All": "Momtu Fof",
+  "6180 Logo": "Logo 6180",
+  "Home": "Suudu",
+  "Visit Home": "Yah Suudu",
+  "Visit 6180.io": "Yah 6180.io",
+  "No tags available": "Alaa tage",
+  "Showing photos with all selected tags": "Hollooji sawre e jam tage ceeɓtude",
+  "Valid parameters not found in URL": "Paramete ɓurɓe ngantaaka e URL",
+  "Invalid id parameter format": "Siftorde id parameter ngol waawi",
+  "Album not found": "Album ngol laati",
+  "the album owner": "jaɓɓe albumii",
+  "Tag, save and find that performance — before it's lost.": "Taggo, danndu e yiylo ngal waɗoto — hade makko no woodi.",
+  "Tag, save and find that smile — before it's lost.": "Taggo, danndu e yiylo ngal tamsol — hade makko no woodi.",
+  "Tag, save and find that birthday — before it's lost.": "Taggo, danndu e yiylo ngal bannge ɓanndu — hade makko no woodi.",
+  "Tag, save and find that sunset — before it's lost.": "Taggo, danndu e yiylo ngal hiirde naange — hade makko no woodi.",
+  "Tag, save and find that party — before it's lost.": "Taggo, danndu e yiylo ngal jammirgol — hade makko no woodi.",
+  "Tag, save and find that vacation — before it's lost.": "Taggo, danndu e yiylo ngal nafoore — hade makko no woodi."
 }

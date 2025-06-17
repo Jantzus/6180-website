@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Къамтæ Бафтауын",
   "Album successfully saved!": "Дæ альбом æнтыстджынæй бавæрд æрцыд!",
   "All files successfully uploaded": "Æппæт файлтæ æнтыстджынæй бавгæдтой",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-ы Дзæвгарын",
   "Toggle contacts filter": "Контактты фильтр иухыл кæнын",
   "Showing albums with all selected contacts and tags": "Æвдисын альбомтæ æппæт равзæрд контакттимæ æмæ тæгтимæ",
-  "Showing albums with all selected tags": "Æвдисын альбомтæ æппæт равзæрд тæгтимæ"
+  "Showing albums with all selected tags": "Æвдисын альбомтæ æппæт равзæрд тæгтимæ",
+  "Clear All": "Æппæт Схафын",
+  "6180 Logo": "6180 Логотип",
+  "Home": "Хæдзар",
+  "Visit Home": "Хæдзармæ Хъуыды",
+  "Visit 6180.io": "6180.io-мæ Хъуыды",
+  "No tags available": "Тегтæ нæй",
+  "Showing photos with all selected tags": "Равзӕрд ӕппӕт тегтӕм хъусын фотойы равдисы",
+  "Valid parameters not found in URL": "URL-ы раст параметртæ не ссардзиуæгтæ",
+  "Invalid id parameter format": "Æнæраст id параметры формат",
+  "Album not found": "Альбом не ссардзиуæгтæ",
+  "the album owner": "альбомы хицау",
+  "Tag, save and find that performance — before it's lost.": "Ныстуан, бавæрын æмæ уыдон райгуырæн бон райсын — феххæццæй раздæр.",
+  "Tag, save and find that smile — before it's lost.": "Ныстуан, бавæрын æмæ уыдон мудыгай райсын — феххæццæй раздæр.",
+  "Tag, save and find that birthday — before it's lost.": "Ныстуан, бавæрын æмæ уыдон театрон райсын — феххæццæй раздæр.",
+  "Tag, save and find that sunset — before it's lost.": "Ныстуан, бавæрын æмæ уыдон дæмгъæ райсын — феххæццæй раздæр.",
+  "Tag, save and find that party — before it's lost.": "Ныстуан, бавæрын æмæ уыдон кувд райсын — феххæццæй раздæр.",
+  "Tag, save and find that vacation — before it's lost.": "Ныстуан, бавæрын æмæ уыдон хур æрлæууын райсын — феххæццæй раздæр."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ongeranya Amafoto",
   "Album successfully saved!": "Amasanamu yawe yabitswe neza!",
   "All files successfully uploaded": "Ibikoresho vyose vyoherejwe neza",
@@ -295,5 +296,22 @@
   "Open On Android": "Gufungura Kuri Android",
   "Toggle contacts filter": "Guhindura ibyo byunze mu kwandika",
   "Showing albums with all selected contacts and tags": "Kwerekana ama albumu n'abo bose batoranijwe n'ama tag",
-  "Showing albums with all selected tags": "Kwerekana ama albumu n'ama tag bose batoranijwe"
+  "Showing albums with all selected tags": "Kwerekana ama albumu n'ama tag bose batoranijwe",
+  "Clear All": "Gusiba Vyose",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Inzu",
+  "Visit Home": "Genda Mu Nzu",
+  "Visit 6180.io": "Genda kuri 6180.io",
+  "No tags available": "Nta matags ahari",
+  "Showing photos with all selected tags": "Kwerekana amatafoto hamwe n'ibimenyetso byose byatoranijwe",
+  "Valid parameters not found in URL": "Nta ma parameteri yemewe yabonetse muri URL",
+  "Invalid id parameter format": "Ifishi rya parameter id ntiryakoreye",
+  "Album not found": "Album ntaboneka",
+  "the album owner": "nyene wa album",
+  "Tag, save and find that performance — before it's lost.": "Shira, bika kandi urore iryo mu kuvuka — mbere y'uko rigera.",
+  "Tag, save and find that smile — before it's lost.": "Shira, bika kandi urore iryo gusetsa — mbere y'uko igera.",
+  "Tag, save and find that birthday — before it's lost.": "Shira, bika kandi urore iryo gushaka — mbere y'uko igera.",
+  "Tag, save and find that sunset — before it's lost.": "Shira, bika kandi urore iryo kuruhuka — mbere y'uko rigera.",
+  "Tag, save and find that party — before it's lost.": "Shira, bika kandi urore iryo gushimira — mbere y'uko rigera.",
+  "Tag, save and find that vacation — before it's lost.": "Shira, bika kandi urore iryo iziko ryirangere — mbere y'uko rigera."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Pridėti Nuotraukas",
   "Album successfully saved!": "Jūsų albumas sėkmingai išsaugotas!",
   "All files successfully uploaded": "Visi failai sėkmingai įkelti",
@@ -295,5 +296,22 @@
   "Open On Android": "Atidaryti Android",
   "Toggle contacts filter": "Perjungti kontaktų filtrą",
   "Showing albums with all selected contacts and tags": "Rodomi albumai su visais pasirinktais kontaktais ir žymomis",
-  "Showing albums with all selected tags": "Rodomi albumai su visomis pasirinktomis žymomis"
+  "Showing albums with all selected tags": "Rodomi albumai su visomis pasirinktomis žymomis",
+  "Clear All": "Išvalyti Viską",
+  "6180 Logo": "6180 Logotipas",
+  "Home": "Pradžia",
+  "Visit Home": "Aplankyti Pradžią",
+  "Visit 6180.io": "Aplankyti 6180.io",
+  "No tags available": "Žymių nėra",
+  "Showing photos with all selected tags": "Rodomi nuotraukos su visomis pasirinktomis žymėmis",
+  "Valid parameters not found in URL": "URL nerasti tinkami parametrai",
+  "Invalid id parameter format": "Netinkamas id parametro formatas",
+  "Album not found": "Albumas nerastas",
+  "the album owner": "albumo savininkas",
+  "Tag, save and find that performance — before it's lost.": "Pažymėti, išsaugoti ir rasti tą gimtadienį — prieš jam praradus.",
+  "Tag, save and find that smile — before it's lost.": "Pažymėti, išsaugoti ir rasti tą šypseną — prieš jam praradus.",
+  "Tag, save and find that birthday — before it's lost.": "Pažymėti, išsaugoti ir rasti tą pasirodymą — prieš jam praradus.",
+  "Tag, save and find that sunset — before it's lost.": "Pažymėti, išsaugoti ir rasti tas atostogas — prieš joms praradus.",
+  "Tag, save and find that party — before it's lost.": "Pažymėti, išsaugoti ir rasti tą vakarėlį — prieš jam praradus.",
+  "Tag, save and find that vacation — before it's lost.": "Pažymėti, išsaugoti ir rasti tą saulėlydį — prieš jam praradus."
 }

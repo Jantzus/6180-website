@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotoğraf Ekle",
   "Album successfully saved!": "Albümünüz başarıyla kaydedildi!",
   "All files successfully uploaded": "Tüm dosyalar başarıyla yüklendi",
@@ -295,5 +296,22 @@
   "Open On Android": "Android'ta Aç",
   "Toggle contacts filter": "Kişi filtresini değiştir",
   "Showing albums with all selected contacts and tags": "Seçilen tüm kişiler ve etiketlerle albümleri gösterme",
-  "Showing albums with all selected tags": "Seçilen tüm etiketlerle albümleri gösterme"
+  "Showing albums with all selected tags": "Seçilen tüm etiketlerle albümleri gösterme",
+  "Clear All": "Tümünü Temizle",
+  "6180 Logo": "6180 Logosu",
+  "Home": "Ana Sayfa",
+  "Visit Home": "Ana Sayfayı Ziyaret Et",
+  "Visit 6180.io": "6180.io'yu Ziyaret Et",
+  "No tags available": "Hiç etiket yok",
+  "Showing photos with all selected tags": "Seçilen tüm etiketlerle fotoğrafları gösterme",
+  "Valid parameters not found in URL": "URL'de geçerli parametreler bulunamadı",
+  "Invalid id parameter format": "Geçersiz id parametre formatı",
+  "Album not found": "Albüm bulunamadı",
+  "the album owner": "albüm sahibi",
+  "Tag, save and find that performance — before it's lost.": "Etiketleyin, kaydedin ve o doğum gününü bulun — kaybedilmeden önce.",
+  "Tag, save and find that smile — before it's lost.": "Etiketleyin, kaydedin ve o gülümsemeyi bulun — kaybedilmeden önce.",
+  "Tag, save and find that birthday — before it's lost.": "Etiketleyin, kaydedin ve o performansı bulun — kaybedilmeden önce.",
+  "Tag, save and find that sunset — before it's lost.": "Etiketleyin, kaydedin ve o tatili bulun — kaybedilmeden önce.",
+  "Tag, save and find that party — before it's lost.": "Etiketleyin, kaydedin ve o partiyi bulun — kaybedilmeden önce.",
+  "Tag, save and find that vacation — before it's lost.": "Etiketleyin, kaydedin ve o günbatımını bulun — kaybedilmeden önce."
 }

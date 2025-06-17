@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Apondre des Fotos",
   "Album successfully saved!": "Voutron album at étâ sôvâ avouéc reusséta!",
   "All files successfully uploaded": "Tôs los fichiérs sont étâs tèlèchargiês avouéc reusséta",
@@ -295,5 +296,22 @@
   "Open On Android": "Uvrir Dessus Android",
   "Toggle contacts filter": "Changiér lo filtro des contacts",
   "Showing albums with all selected contacts and tags": "Afichiér los albums avouéc tôs los contacts et mots-clâfs chouesis",
-  "Showing albums with all selected tags": "Afichiér los albums avouéc tôs los mots-clâfs chouesis"
+  "Showing albums with all selected tags": "Afichiér los albums avouéc tôs los mots-clâfs chouesis",
+  "Clear All": "Neteyi Tot",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Acolyence",
+  "Visit Home": "Visitar la Pâge d'Acolyence",
+  "Visit 6180.io": "Visitar 6180.io",
+  "No tags available": "Gins d'ètiquèta disponibla",
+  "Showing photos with all selected tags": "Afichâjo de fôtos avouéc totes les ètiquètes chouèsies",
+  "Valid parameters not found in URL": "Paramètros validos pas trovâs dens l'URL",
+  "Invalid id parameter format": "Format de paramètre id envalido",
+  "Album not found": "Album pas trovâ",
+  "the album owner": "lo propriètâre de l'album",
+  "Tag, save and find that performance — before it's lost.": "Ètiquetar, enregistrar et trovar cela prèstacion — devant qu'ela se pèrde.",
+  "Tag, save and find that smile — before it's lost.": "Ètiquetar, enregistrar et trovar cél sorrére — devant qu'él se pèrde.",
+  "Tag, save and find that birthday — before it's lost.": "Ètiquetar, enregistrar et trovar cél anniversèro — devant qu'él se pèrde.",
+  "Tag, save and find that sunset — before it's lost.": "Ètiquetar, enregistrar et trovar cél couchér de solèlh — devant qu'él se pèrde.",
+  "Tag, save and find that party — before it's lost.": "Ètiquetar, enregistrar et trovar cela fèta — devant qu'ela se pèrde.",
+  "Tag, save and find that vacation — before it's lost.": "Ètiquetar, enregistrar et trovar celes vacances — devant qu'eles se pèrdont."
 }

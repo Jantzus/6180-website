@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fakela Iifoto",
   "Album successfully saved!": "I-albhamu yakho igcinwe ngempumelelo!",
   "All files successfully uploaded": "Zonke iifayile zilayishwe ngempumelelo",
@@ -295,5 +296,22 @@
   "Open On Android": "Vula Kwi Android",
   "Toggle contacts filter": "Tshintsha isihluzi sobunxibelelwano",
   "Showing albums with all selected contacts and tags": "Kubonisa ii-albhamu ezinobunxibelelwano obukhethiweyo neetagi",
-  "Showing albums with all selected tags": "Kubonisa ii-albhamu ezineetagi ezikhethiweyo"
+  "Showing albums with all selected tags": "Kubonisa ii-albhamu ezineetagi ezikhethiweyo",
+  "Clear All": "Sula Konke",
+  "6180 Logo": "Uphawu lwe-6180",
+  "Home": "Ikhaya",
+  "Visit Home": "Tyelela Ekhaya",
+  "Visit 6180.io": "Tyelela 6180.io",
+  "No tags available": "Akukho zityhila",
+  "Showing photos with all selected tags": "Ukubonisa iifoto nezityhila zonke ezikhethiweyo",
+  "Valid parameters not found in URL": "Akufunyenwanga zizibalo ezifanelekileyo kwi-URL",
+  "Invalid id parameter format": "Ifomathi yeparameter id engasebenziyo",
+  "Album not found": "Akukho i-album efunyenweyo",
+  "the album owner": "umnini we-album",
+  "Tag, save and find that performance — before it's lost.": "Phawula, gcina uze ufumane olo suku lokuzalwa — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that smile — before it's lost.": "Phawula, gcina uze ufumane olo ncumo — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that birthday — before it's lost.": "Phawula, gcina uze ufumane olo mdlalo — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that sunset — before it's lost.": "Phawula, gcina uze ufumane olo khuphulo — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that party — before it's lost.": "Phawula, gcina uze ufumane olo msindo — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that vacation — before it's lost.": "Phawula, gcina uze ufumane ukutshona kwelanga — ngaphambi kokuba kulahleke."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "เพิ่มรูปภาพ",
   "Album successfully saved!": "บันทึกอัลบั้มของคุณเรียบร้อยแล้ว!",
   "All files successfully uploaded": "อัปโหลดไฟล์ทั้งหมดสำเร็จแล้ว",
@@ -295,5 +296,22 @@
   "Open On Android": "เปิดใน Android",
   "Toggle contacts filter": "สลับตัวกรองสำหรับที่อยู่",
   "Showing albums with all selected contacts and tags": "แสดงอัลบั้มที่มีรายชื่อติดต่อและแท็กที่เลือกทั้งหมด",
-  "Showing albums with all selected tags": "แสดงอัลบั้มที่มีแท็กที่เลือกทั้งหมด"
+  "Showing albums with all selected tags": "แสดงอัลบั้มที่มีแท็กที่เลือกทั้งหมด",
+  "Clear All": "ล้างทั้งหมด",
+  "6180 Logo": "โลโก้ 6180",
+  "Home": "หน้าแรก",
+  "Visit Home": "ไปหน้าแรก",
+  "Visit 6180.io": "ไป 6180.io",
+  "No tags available": "ไม่มีแท็กที่ใช้ได้",
+  "Showing photos with all selected tags": "แสดงรูปภาพที่มีแท็กที่เลือกทั้งหมด",
+  "Valid parameters not found in URL": "ไม่พบพารามิเตอร์ที่ถูกต้องใน URL",
+  "Invalid id parameter format": "รูปแบบพารามิเตอร์ id ไม่ถูกต้อง",
+  "Album not found": "ไม่พบอัลบั้ม",
+  "the album owner": "เจ้าของอัลบั้ม",
+  "Tag, save and find that performance — before it's lost.": "แท็ก บันทึก และค้นหาวันเกิดนั้น — ก่อนที่มันจะหายไป",
+  "Tag, save and find that smile — before it's lost.": "แท็ก บันทึก และค้นหารอยยิ้มนั้น — ก่อนที่มันจะหายไป",
+  "Tag, save and find that birthday — before it's lost.": "แท็ก บันทึก และค้นหาการแสดงนั้น — ก่อนที่มันจะหายไป",
+  "Tag, save and find that sunset — before it's lost.": "แท็ก บันทึก และค้นหาวันหยุดนั้น — ก่อนที่มันจะหายไป",
+  "Tag, save and find that party — before it's lost.": "แท็ก บันทึก และค้นหาปาร์ตี้นั้น — ก่อนที่มันจะหายไป",
+  "Tag, save and find that vacation — before it's lost.": "แท็ก บันทึก และค้นหาพระอาทิตย์ตกนั้น — ก่อนที่มันจะหายไป"
 }

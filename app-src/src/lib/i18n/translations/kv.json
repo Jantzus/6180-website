@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Фотояс Содтыны",
   "Album successfully saved!": "Тіянлысь альбом бура видзӧма!",
   "All files successfully uploaded": "Став файлъяс бура пуктӧма",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-ын Восьтыны",
   "Toggle contacts filter": "Котырӧс фильтр вежны",
   "Showing albums with all selected contacts and tags": "Быдмӧн бӧрйӧм котырӧс да пас альбомъяс петкӧдлӧм",
-  "Showing albums with all selected tags": "Быдмӧн бӧрйӧм пас альбомъяс петкӧдлӧм"
+  "Showing albums with all selected tags": "Быдмӧн бӧрйӧм пас альбомъяс петкӧдлӧм",
+  "Clear All": "Ставсӧ Вешты",
+  "6180 Logo": "6180 Лого",
+  "Home": "Керку",
+  "Visit Home": "Ӧтув Восьлавны",
+  "Visit 6180.io": "6180.io Восьлавны",
+  "No tags available": "Тегъяс абуӧсь",
+  "Showing photos with all selected tags": "Бӧрйӧм став тегъясӧн серпасъяс",
+  "Valid parameters not found in URL": "URL-ын бур параметръяс абу аддзӧма",
+  "Invalid id parameter format": "Лёк абу id параметр формат",
+  "Album not found": "Альбом абу аддзӧма",
+  "the album owner": "альбом эзысь",
+  "Tag, save and find that performance — before it's lost.": "Пасйыны, видзны да корны сійӧ чужан лун — вошӧм водзӧ.",
+  "Tag, save and find that smile — before it's lost.": "Пасйыны, видзны да корны сійӧ серам — вошӧм водзӧ.",
+  "Tag, save and find that birthday — before it's lost.": "Пасйыны, видзны да корны сійӧ петкӧдлӧм — вошӧм водзӧ.",
+  "Tag, save and find that sunset — before it's lost.": "Пасйыны, видзны да корны сійӧ каникул — вошӧм водзӧ.",
+  "Tag, save and find that party — before it's lost.": "Пасйыны, видзны да корны сійӧ кадакывлӧм — вошӧм водзӧ.",
+  "Tag, save and find that vacation — before it's lost.": "Пасйыны, видзны да корны сійӧ шондi пуксьӧм — вошӧм водзӧ."
 }

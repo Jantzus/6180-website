@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ku dar Sawirro",
   "Album successfully saved!": "Albumkaaga si guul leh ayaa loo keydiyay!",
   "All files successfully uploaded": "Dhammaan faylasha si guul leh ayaa loo soo geliyey",
@@ -295,5 +296,22 @@
   "Open On Android": "Ku Fur Android",
   "Toggle contacts filter": "Badal shaashasha xiriirinta",
   "Showing albums with all selected contacts and tags": "Muujinta albamada ee dhammaan xiriirinta iyo calaamadaha la doortay",
-  "Showing albums with all selected tags": "Muujinta albamada ee dhammaan calaamadaha la doortay"
+  "Showing albums with all selected tags": "Muujinta albamada ee dhammaan calaamadaha la doortay",
+  "Clear All": "Tirtir Dhammaantood",
+  "6180 Logo": "Astaanta 6180",
+  "Home": "Guri",
+  "Visit Home": "Booqo Guriga",
+  "Visit 6180.io": "Booqo 6180.io",
+  "No tags available": "Ma jiro calaamado",
+  "Showing photos with all selected tags": "Muujinta sawirrada oo leh dhammaan calaamadaha la doortay",
+  "Valid parameters not found in URL": "Cabbiraasi sax laguma helin URL-ka",
+  "Invalid id parameter format": "Qaabka parameter id ee aan saxnayn",
+  "Album not found": "Album ma helin",
+  "the album owner": "milkiilaha albumka",
+  "Tag, save and find that performance — before it's lost.": "Calaamadee, kaydi oo raadi maalintii dhalashada — ka hor inta aanay lumi.",
+  "Tag, save and find that smile — before it's lost.": "Calaamadee, kaydi oo raadi dhooldoolka — ka hor inta aanay lumi.",
+  "Tag, save and find that birthday — before it's lost.": "Calaamadee, kaydi oo raadi bandhigga — ka hor inta aanay lumi.",
+  "Tag, save and find that sunset — before it's lost.": "Calaamadee, kaydi oo raadi fasaxaad — ka hor inta aanay lumi.",
+  "Tag, save and find that party — before it's lost.": "Calaamadee, kaydi oo raadi xaflada — ka hor inta aanay lumi.",
+  "Tag, save and find that vacation — before it's lost.": "Calaamadee, kaydi oo raadi qorax dhaca — ka hor inta aanay lumi."
 }

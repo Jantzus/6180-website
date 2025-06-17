@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Aggiunge le Fote",
   "Album successfully saved!": "L'album tue ha state salvate cu successe!",
   "All files successfully uploaded": "Tutte le file sonde state careche cu successe",
@@ -295,5 +296,22 @@
   "Open On Android": "Àrpe 'Mbrà Android",
   "Toggle contacts filter": "Cange 'u filtre de le contatte",
   "Showing albums with all selected contacts and tags": "Fa vedè l'album cu tutte le contatte e tag sciute",
-  "Showing albums with all selected tags": "Fa vedè l'album cu tutte le tag sciute"
+  "Showing albums with all selected tags": "Fa vedè l'album cu tutte le tag sciute",
+  "Clear All": "Pulezze Tutte Cose",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Case",
+  "Visit Home": "Vide 'a Case",
+  "Visit 6180.io": "Vide 6180.io",
+  "No tags available": "Non ge stonne tag",
+  "Showing photos with all selected tags": "Ste face vedè le fòte cu tutt'i tag scegliute",
+  "Valid parameters not found in URL": "Parametre valide non ge stonne acchiate jndr'à l'URL",
+  "Invalid id parameter format": "Formate de parametre id invalide",
+  "Album not found": "Album non ge iacchiate",
+  "the album owner": "le patrone de l'album",
+  "Tag, save and find that performance — before it's lost.": "Mitte 'na marca, reggistre e iacche stu cumbliane — apprime ca se perde.",
+  "Tag, save and find that smile — before it's lost.": "Mitte 'na marca, reggistre e iacche stu surriso — apprime ca se perde.",
+  "Tag, save and find that birthday — before it's lost.": "Mitte 'na marca, reggistre e iacche sta prueve — apprime ca se perde.",
+  "Tag, save and find that sunset — before it's lost.": "Mitte 'na marca, reggistre e iacche ste vacanze — apprime ca se perdene.",
+  "Tag, save and find that party — before it's lost.": "Mitte 'na marca, reggistre e iacche sta festa — apprime ca se perde.",
+  "Tag, save and find that vacation — before it's lost.": "Mitte 'na marca, reggistre e iacche stu tramonde — apprime ca se perde."
 }

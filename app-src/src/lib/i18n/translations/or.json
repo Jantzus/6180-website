@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ଫଟୋ ଯୋଡନ୍ତୁ",
   "Album successfully saved!": "ଆପଣଙ୍କ ଆଲବମ୍ ସଫଳତାର ସହ ସଞ୍ଚୟ ହୋଇଛି!",
   "All files successfully uploaded": "ସମସ୍ତ ଫାଇଲ୍ ସଫଳତାର ସହ ଅପଲୋଡ୍ ହୋଇଛି",
@@ -295,5 +296,22 @@
   "Open On Android": "Android ରେ ଖୋଲନ୍ତୁ",
   "Toggle contacts filter": "ଯୋଗାଯୋଗ ଫିଲ୍ଟର ଟଗଲ୍ କରନ୍ତୁ",
   "Showing albums with all selected contacts and tags": "ସମସ୍ତ ଚୟନ କରାଯାଇଥିବା ଯୋଗାଯୋଗ ଏବଂ ଟ୍ୟାଗ ସହିତ ଆଲବମ ଦେଖାଉଛି",
-  "Showing albums with all selected tags": "ସମସ୍ତ ଚୟନ କରାଯାଇଥିବା ଟ୍ୟାଗ ସହିତ ଆଲବମ ଦେଖାଉଛି"
+  "Showing albums with all selected tags": "ସମସ୍ତ ଚୟନ କରାଯାଇଥିବା ଟ୍ୟାଗ ସହିତ ଆଲବମ ଦେଖାଉଛି",
+  "Clear All": "ସବୁ ସଫା କରନ୍ତୁ",
+  "6180 Logo": "6180 ଲୋଗୋ",
+  "Home": "ଘର",
+  "Visit Home": "ଘରକୁ ଯାଆନ୍ତୁ",
+  "Visit 6180.io": "6180.io କୁ ଯାଆନ୍ତୁ",
+  "No tags available": "କୌଣସି ଟ୍ୟାଗ୍ ନାହିଁ",
+  "Showing photos with all selected tags": "ସମସ୍ତ ମନୋନୀତ ଟ୍ୟାଗ୍ ସହିତ ଫଟୋ ଦେଖାଉଛି",
+  "Valid parameters not found in URL": "URL ରେ ବୈଧ ପାରାମିଟର ମିଳିଲା ନାହିଁ",
+  "Invalid id parameter format": "ଅବୈଧ id ପାରାମିଟର ଫର୍ମାଟ",
+  "Album not found": "ଆଲବମ୍ ମିଳିଲା ନାହିଁ",
+  "the album owner": "ଆଲବମ୍ ମାଲିକ",
+  "Tag, save and find that performance — before it's lost.": "ଟ୍ୟାଗ୍ କରନ୍ତୁ, ସେଭ୍ କରନ୍ତୁ ଏବଂ ସେହି ଜନ୍ମଦିନ ଖୋଜନ୍ତୁ — ହଜିଯିବା ପୂର୍ବରୁ।",
+  "Tag, save and find that smile — before it's lost.": "ଟ୍ୟାଗ୍ କରନ୍ତୁ, ସେଭ୍ କରନ୍ତୁ ଏବଂ ସେହି ହସ ଖୋଜନ୍ତୁ — ହଜିଯିବା ପୂର୍ବରୁ।",
+  "Tag, save and find that birthday — before it's lost.": "ଟ୍ୟାଗ୍ କରନ୍ତୁ, ସେଭ୍ କରନ୍ତୁ ଏବଂ ସେହି ପ୍ରଦର୍ଶନ ଖୋଜନ୍ତୁ — ହଜିଯିବା ପୂର୍ବରୁ।",
+  "Tag, save and find that sunset — before it's lost.": "ଟ୍ୟାଗ୍ କରନ୍ତୁ, ସେଭ୍ କରନ୍ତୁ ଏବଂ ସେହି ଛୁଟି ଖୋଜନ୍ତୁ — ହଜିଯିବା ପୂର୍ବରୁ।",
+  "Tag, save and find that party — before it's lost.": "ଟ୍ୟାଗ୍ କରନ୍ତୁ, ସେଭ୍ କରନ୍ତୁ ଏବଂ ସେହି ପାର୍ଟି ଖୋଜନ୍ତୁ — ହଜିଯିବା ପୂର୍ବରୁ।",
+  "Tag, save and find that vacation — before it's lost.": "ଟ୍ୟାଗ୍ କରନ୍ତୁ, ସେଭ୍ କରନ୍ତୁ ଏବଂ ସେହି ସୂର୍ଯ୍ୟାସ୍ତ ଖୋଜନ୍ତୁ — ହଜିଯିବା ପୂର୍ବରୁ।"
 }

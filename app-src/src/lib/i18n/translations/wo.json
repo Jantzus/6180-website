@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Yokk Nataal yi",
   "Album successfully saved!": "Sa àlbëm dees na bu baax!",
   "All files successfully uploaded": "Wàll dencukaay yi dugg nañu ci jàmm",
@@ -295,5 +296,22 @@
   "Open On Android": "Ubbi Ci Android",
   "Toggle contacts filter": "Soppi filte yu wàcc yi",
   "Showing albums with all selected contacts and tags": "Wone ab-xaale ak ñépp ay filte yu wàcc yu bàyyi ak ay tag",
-  "Showing albums with all selected tags": "Wone ab-xaale ak ñépp ay tag yu bàyyi"
+  "Showing albums with all selected tags": "Wone ab-xaale ak ñépp ay tag yu bàyyi",
+  "Clear All": "Far Yepp",
+  "6180 Logo": "Logo bu 6180",
+  "Home": "Kër",
+  "Visit Home": "Dem Sa Kër",
+  "Visit 6180.io": "Dem 6180.io",
+  "No tags available": "Amul tag",
+  "Showing photos with all selected tags": "Wone nataal ak tag yépp yu ñuy faj",
+  "Valid parameters not found in URL": "Parametar yu ñu defar amul ci URL yi",
+  "Invalid id parameter format": "Format parameter id amul njariñ",
+  "Album not found": "Amul album bu gis",
+  "the album owner": "kilifa album bi",
+  "Tag, save and find that performance — before it's lost.": "Tëggali, duggal te seet ci bëccug wi — ban mu dëmb.",
+  "Tag, save and find that smile — before it's lost.": "Tëggali, duggal te seet ci bis wi — ban mu dëmb.",
+  "Tag, save and find that birthday — before it's lost.": "Tëggali, duggal te seet ci waxtuug — ban mu dëmb.",
+  "Tag, save and find that sunset — before it's lost.": "Tëggali, duggal te seet ci nawet wi — ban mu dëmb.",
+  "Tag, save and find that party — before it's lost.": "Tëggali, duggal te seet ci lékk wi — ban mu dëmb.",
+  "Tag, save and find that vacation — before it's lost.": "Tëggali, duggal te seet ci jëfreel wi — ban mu dëmb."
 }

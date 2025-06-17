@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Προσθήκη Φωτογραφιών",
   "Album successfully saved!": "Το άλμπουμ σας αποθηκεύτηκε με επιτυχία!",
   "All files successfully uploaded": "Όλα τα αρχεία μεταφορτώθηκαν με επιτυχία",
@@ -295,5 +296,22 @@
   "Open On Android": "Άνοιγμα Στο Android",
   "Toggle contacts filter": "Εναλλαγή φίλτρου επαφών",
   "Showing albums with all selected contacts and tags": "Εμφάνιση άλμπουμ με όλες τις επιλεγμένες επαφές και ετικέτες",
-  "Showing albums with all selected tags": "Εμφάνιση άλμπουμ με όλες τις επιλεγμένες ετικέτες"
+  "Showing albums with all selected tags": "Εμφάνιση άλμπουμ με όλες τις επιλεγμένες ετικέτες",
+  "Clear All": "Εκκαθάριση Όλων",
+  "6180 Logo": "Λογότυπο 6180",
+  "Home": "Αρχική",
+  "Visit Home": "Επίσκεψη Αρχικής",
+  "Visit 6180.io": "Επίσκεψη 6180.io",
+  "No tags available": "Δεν υπάρχουν διαθέσιμες ετικέτες",
+  "Showing photos with all selected tags": "Εμφάνιση φωτογραφιών με όλες τις επιλεγμένες ετικέτες",
+  "Valid parameters not found in URL": "Δεν βρέθηκαν έγκυρες παράμετροι στο URL",
+  "Invalid id parameter format": "Μη έγκυρη μορφή παραμέτρου id",
+  "Album not found": "Το άλμπουμ δεν βρέθηκε",
+  "the album owner": "ο ιδιοκτήτης του άλμπουμ",
+  "Tag, save and find that performance — before it's lost.": "Επισημάνετε, αποθηκεύστε και βρείτε αυτή την παράσταση — πριν χαθεί.",
+  "Tag, save and find that smile — before it's lost.": "Επισημάνετε, αποθηκεύστε και βρείτε αυτό το χαμόγελο — πριν χαθεί.",
+  "Tag, save and find that birthday — before it's lost.": "Επισημάνετε, αποθηκεύστε και βρείτε αυτά τα γενέθλια — πριν χαθούν.",
+  "Tag, save and find that sunset — before it's lost.": "Επισημάνετε, αποθηκεύστε και βρείτε αυτό το ηλιοβασίλεμα — πριν χαθεί.",
+  "Tag, save and find that party — before it's lost.": "Επισημάνετε, αποθηκεύστε και βρείτε αυτό το πάρτι — πριν χαθεί.",
+  "Tag, save and find that vacation — before it's lost.": "Επισημάνετε, αποθηκεύστε και βρείτε αυτές τις διακοπές — πριν χαθούν."
 }

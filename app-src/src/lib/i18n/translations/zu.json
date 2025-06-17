@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Faka Izithombe",
   "Album successfully saved!": "I-albhamu yakho igcinwe ngempumelelo!",
   "All files successfully uploaded": "Wonke amafayela alayishwe ngempumelelo",
@@ -295,5 +296,22 @@
   "Open On Android": "Vula Ku Android",
   "Toggle contacts filter": "Shintsha isihluzi sabothengiselana nabo",
   "Showing albums with all selected contacts and tags": "Sibonisa ama-albhamu anazo zonke izixhumano nezinkomba ezikhethiwe",
-  "Showing albums with all selected tags": "Sibonisa ama-albhamu anazo zonke izinkomba ezikhethiwe"
+  "Showing albums with all selected tags": "Sibonisa ama-albhamu anazo zonke izinkomba ezikhethiwe",
+  "Clear All": "Sula Konke",
+  "6180 Logo": "Uphawu lwe-6180",
+  "Home": "Ikhaya",
+  "Visit Home": "Vakashela Ekhaya",
+  "Visit 6180.io": "Vakashela 6180.io",
+  "No tags available": "Awekho amategi",
+  "Showing photos with all selected tags": "Ukubonisa izithombe ezinezitaki zonke ezikhethiwe",
+  "Valid parameters not found in URL": "Akutholakalanga imingcele evumelekile ku-URL",
+  "Invalid id parameter format": "Ifomathi yeparameter id engasebenziyo",
+  "Album not found": "I-album ayitholakalanga",
+  "the album owner": "umnikazi we-album",
+  "Tag, save and find that performance — before it's lost.": "Phawula, gcina futhi uthole usuku lokuzalwa — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that smile — before it's lost.": "Phawula, gcina futhi uthole ukuhleka okho — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that birthday — before it's lost.": "Phawula, gcina futhi uthole ukwenziwa okho — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that sunset — before it's lost.": "Phawula, gcina futhi uthole ikhefu — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that party — before it's lost.": "Phawula, gcina futhi uthole umcimbi — ngaphambi kokuba kulahleke.",
+  "Tag, save and find that vacation — before it's lost.": "Phawula, gcina futhi uthole ukushona kwelanga — ngaphambi kokuba kulahleke."
 }

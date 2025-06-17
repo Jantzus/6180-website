@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Суратру ххи дува",
   "Album successfully saved!": "Вил альбом тӀайлану дуруччунни!",
   "All files successfully uploaded": "Щалла файллу тӀайлану гьаз бувну",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-лиу Хъазайрун",
   "Toggle contacts filter": "Контактрал фильтр хийитун",
   "Showing albums with all selected contacts and tags": "Хьунал архӀи контактрулла тагрулла альбомру къалурни",
-  "Showing albums with all selected tags": "Хьунал архӀи тагрулла альбомру къалурни"
+  "Showing albums with all selected tags": "Хьунал архӀи тагрулла альбомру къалурни",
+  "Clear All": "ЧIuru Массаву",
+  "6180 Logo": "6180 Логотип",
+  "Home": "ЧIава",
+  "Visit Home": "ЧIавахьан Дин",
+  "Visit 6180.io": "6180.io Дин",
+  "No tags available": "Тегру дакъар",
+  "Showing photos with all selected tags": "ХIайри лай тегравукассарду кьини",
+  "Valid parameters not found in URL": "URL-лай хьхьичIвасса параметрал дакъар",
+  "Invalid id parameter format": "Къюлухъанвач id параметрал формат",
+  "Album not found": "Альбом ляркъуссар дакъар",
+  "the album owner": "альбомрал къулувчи",
+  "Tag, save and find that performance — before it's lost.": "Билгал хьи, хашбакьи ва ина чими махъ лякьи — ччин хъи.",
+  "Tag, save and find that smile — before it's lost.": "Билгал хьи, хашбакьи ва ина жигъир лякьи — ччин хъи.",
+  "Tag, save and find that birthday — before it's lost.": "Билгал хьи, хашбакьи ва ина спектакль лякьи — ччин хъи.",
+  "Tag, save and find that sunset — before it's lost.": "Билгал хьи, хашбакьи ва ина каникул лякьи — ччин хъи.",
+  "Tag, save and find that party — before it's lost.": "Билгал хьи, хашбакьи ва ина байрам лякьи — ччин хъи.",
+  "Tag, save and find that vacation — before it's lost.": "Билгал хьи, хашбакьи ва ина баркалла махъ лякьи — ччин хъи."
 }

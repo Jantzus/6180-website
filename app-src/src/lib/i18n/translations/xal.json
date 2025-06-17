@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Зургуд Немх",
   "Album successfully saved!": "Таньгчин альбомиг йовудта хадһллав!",
   "All files successfully uploaded": "Цуг боомгуд амр цуглрлав",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-д Нээх",
   "Toggle contacts filter": "Харилцагчин шүүлтг сольх",
   "Showing albums with all selected contacts and tags": "Сонгсн бүкл харилцагч болн тэмдгтә альбомуд үзүлж",
-  "Showing albums with all selected tags": "Сонгсн бүкл тэмдгтә альбомуд үзүлж"
+  "Showing albums with all selected tags": "Сонгсн бүкл тэмдгтә альбомуд үзүлж",
+  "Clear All": "Бүтнә Арлһх",
+  "6180 Logo": "6180 Лого",
+  "Home": "Гер",
+  "Visit Home": "Өргә Одх",
+  "Visit 6180.io": "6180.io Одх",
+  "No tags available": "Тег угаш",
+  "Showing photos with all selected tags": "Соңһсн бүкд тегтә зурган",
+  "Valid parameters not found in URL": "URL-д зөв парамэтр уга",
+  "Invalid id parameter format": "Алдмшта id параметрин формат",
+  "Album not found": "Альбом олдгдсн уга",
+  "the album owner": "альбомин эзн",
+  "Tag, save and find that performance — before it's lost.": "Теегд өргх, хадглх болн энд төрсн өдр олх — алддг өмн.",
+  "Tag, save and find that smile — before it's lost.": "Теегд өргх, хадглх болн энд инәәх олх — алддг өмн.",
+  "Tag, save and find that birthday — before it's lost.": "Теегд өргх, хадглх болн энд үзүүлх олх — алддг өмн.",
+  "Tag, save and find that sunset — before it's lost.": "Теегд өргх, хадглх болн энд амрлт олх — алддг өмн.",
+  "Tag, save and find that party — before it's lost.": "Теегд өргх, хадглх болн энд үдшлг олх — алддг өмн.",
+  "Tag, save and find that vacation — before it's lost.": "Теегд өргх, хадглх болн энд нар жаргх олх — алддг өмн."
 }

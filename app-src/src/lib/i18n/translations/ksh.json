@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotos dobei donn",
   "Album successfully saved!": "Di Albume sin jepeichet!",
   "All files successfully uploaded": "All de Dateië sin joot eropjelaade woode",
@@ -295,5 +296,22 @@
   "Open On Android": "Op Android Opmaache",
   "Toggle contacts filter": "Kontak-Filter ömschalde",
   "Showing albums with all selected contacts and tags": "Alben zeije met alle ußjewählte Kontakte un Makeerunge",
-  "Showing albums with all selected tags": "Alben zeije met alle ußjewählte Makeerunge"
+  "Showing albums with all selected tags": "Alben zeije met alle ußjewählte Makeerunge",
+  "Clear All": "Alles Fottschmiiße",
+  "6180 Logo": "6180 Logo",
+  "Home": "Houpsigg",
+  "Visit Home": "Op de Houpsigg",
+  "Visit 6180.io": "Op 6180.io",
+  "No tags available": "Kein Kennzeiche do",
+  "Showing photos with all selected tags": "Zeish Bellder met alle usjesöhkte Kennzeiche",
+  "Valid parameters not found in URL": "Jültige Parameter en dä URL nit jefonge",
+  "Invalid id parameter format": "Kein jöllich ID Parameter Format",
+  "Album not found": "Album nit jefonge",
+  "the album owner": "dä Album Ejendomësch",
+  "Tag, save and find that performance — before it's lost.": "Makeer, späscher un fenger dä Jebootsdach — iih se flöte jeit.",
+  "Tag, save and find that smile — before it's lost.": "Makeer, späscher un fenger dat Lache — iih et flöte jeit.",
+  "Tag, save and find that birthday — before it's lost.": "Makeer, späscher un fenger dä Dörstellong — iih se flöte jeit.",
+  "Tag, save and find that sunset — before it's lost.": "Makeer, späscher un fenger de Ferien — iih se flöte jeit.",
+  "Tag, save and find that party — before it's lost.": "Makeer, späscher un fenger de Feier — iih se flöte jeit.",
+  "Tag, save and find that vacation — before it's lost.": "Makeer, späscher un fenger dä Sonnenungergang — iih se flöte jeit."
 }

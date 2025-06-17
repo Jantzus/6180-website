@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Přidat Fotky",
   "Album successfully saved!": "Vaše album bylo úspěšně uloženo!",
   "All files successfully uploaded": "Všechny soubory byly úspěšně nahrány",
@@ -295,5 +296,22 @@
   "Open On Android": "Otevřít V Android",
   "Toggle contacts filter": "Přepnout filtr kontaktů",
   "Showing albums with all selected contacts and tags": "Zobrazení alb se všemi vybranými kontakty a štítky",
-  "Showing albums with all selected tags": "Zobrazení alb se všemi vybranými štítky"
+  "Showing albums with all selected tags": "Zobrazení alb se všemi vybranými štítky",
+  "Clear All": "Vymazat Vše",
+  "6180 Logo": "Logo 6180",
+  "Home": "Úvod",
+  "Visit Home": "Navštívit Úvod",
+  "Visit 6180.io": "Navštívit 6180.io",
+  "No tags available": "Žádné štítky nejsou k dispozici",
+  "Showing photos with all selected tags": "Zobrazování fotografií se všemi vybranými štítky",
+  "Valid parameters not found in URL": "V URL nebyly nalezeny platné parametry",
+  "Invalid id parameter format": "Neplatný formát id parametru",
+  "Album not found": "Album nebyl nalezen",
+  "the album owner": "majitel alba",
+  "Tag, save and find that performance — before it's lost.": "Označte, uložte a najděte tuto představu — než se ztratí.",
+  "Tag, save and find that smile — before it's lost.": "Označte, uložte a najděte ten úsměv — než se ztratí.",
+  "Tag, save and find that birthday — before it's lost.": "Označte, uložte a najděte ty narozeniny — než se ztratí.",
+  "Tag, save and find that sunset — before it's lost.": "Označte, uložte a najděte ten západ slunce — než se ztratí.",
+  "Tag, save and find that party — before it's lost.": "Označte, uložte a najděte tu párty — než se ztratí.",
+  "Tag, save and find that vacation — before it's lost.": "Označte, uložte a najděte tu dovolenou — než se ztratí."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Juntar Retratos",
   "Album successfully saved!": "L sou álbun fui salbado cun éxito!",
   "All files successfully uploaded": "Todos ls fexeiros carregados cun sucesso",
@@ -295,5 +296,22 @@
   "Open On Android": "Abrir An Android",
   "Toggle contacts filter": "Trocar filtro de cuntatos",
   "Showing albums with all selected contacts and tags": "Amostrando álbuns cun todos ls cuntatos i etiquetas selecionadas",
-  "Showing albums with all selected tags": "Amostrando álbuns cun todas las etiquetas selecionadas"
+  "Showing albums with all selected tags": "Amostrando álbuns cun todas las etiquetas selecionadas",
+  "Clear All": "Lhimpar Tudo",
+  "6180 Logo": "Lhogótipo de 6180",
+  "Home": "Ampeço",
+  "Visit Home": "Besitar Casa",
+  "Visit 6180.io": "Besitar 6180.io",
+  "No tags available": "Nanhuas etiquetas çpuníbeis",
+  "Showing photos with all selected tags": "Amostrar fotos cun todas las etiquetas seleccionadas",
+  "Valid parameters not found in URL": "Parámetros bálidos nun ancontrados na URL",
+  "Invalid id parameter format": "Furmato de parámetro id anválido",
+  "Album not found": "Álbun nó ancontrado",
+  "the album owner": "l dono de l álbun",
+  "Tag, save and find that performance — before it's lost.": "Etiqueta, salva i ancuontra esse aniversário — antes que se pierda.",
+  "Tag, save and find that smile — before it's lost.": "Etiqueta, salva i ancuontra esse sorriso — antes que se pierda.",
+  "Tag, save and find that birthday — before it's lost.": "Etiqueta, salva i ancuontra essa atuaçon — antes que se pierda.",
+  "Tag, save and find that sunset — before it's lost.": "Etiqueta, salva i ancuontra essas férias — antes que se pierdan.",
+  "Tag, save and find that party — before it's lost.": "Etiqueta, salva i ancuontra essa festa — antes que se pierda.",
+  "Tag, save and find that vacation — before it's lost.": "Etiqueta, salva i ancuontra esse poner de sol — antes que se pierda."
 }

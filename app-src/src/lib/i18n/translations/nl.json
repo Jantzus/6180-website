@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Foto's Toevoegen",
   "Album successfully saved!": "Je album is succesvol opgeslagen!",
   "All files successfully uploaded": "Alle bestanden zijn succesvol geüpload",
@@ -295,5 +296,22 @@
   "Open On Android": "Openen Op Android",
   "Toggle contacts filter": "Contactenfilter wisselen",
   "Showing albums with all selected contacts and tags": "Albums tonen met alle geselecteerde contacten en labels",
-  "Showing albums with all selected tags": "Albums tonen met alle geselecteerde labels"
+  "Showing albums with all selected tags": "Albums tonen met alle geselecteerde labels",
+  "Clear All": "Alles Wissen",
+  "6180 Logo": "6180 Logo",
+  "Home": "Home",
+  "Visit Home": "Bezoek Thuis",
+  "Visit 6180.io": "Bezoek 6180.io",
+  "No tags available": "Geen tags beschikbaar",
+  "Showing photos with all selected tags": "Tonen van foto's met alle geselecteerde tags",
+  "Valid parameters not found in URL": "Geldige parameters niet gevonden in URL",
+  "Invalid id parameter format": "Ongeldig id parameter formaat",
+  "Album not found": "Album niet gevonden",
+  "the album owner": "de album eigenaar",
+  "Tag, save and find that performance — before it's lost.": "Tag, bewaar en vind die verjaardag — voordat het verloren gaat.",
+  "Tag, save and find that smile — before it's lost.": "Tag, bewaar en vind die glimlach — voordat het verloren gaat.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, bewaar en vind die voorstelling — voordat het verloren gaat.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, bewaar en vind die vakantie — voordat het verloren gaat.",
+  "Tag, save and find that party — before it's lost.": "Tag, bewaar en vind dat feest — voordat het verloren gaat.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, bewaar en vind die zonsondergang — voordat het verloren gaat."
 }

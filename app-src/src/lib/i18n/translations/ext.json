@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Añidil Fotus",
   "Album successfully saved!": "¡Álbun guardau con ésitu!",
   "All files successfully uploaded": "Tos los archivus subíus con ésitu",
@@ -295,5 +296,22 @@
   "Open On Android": "Abril En Android",
   "Toggle contacts filter": "Camudar filtru de contautus",
   "Showing albums with all selected contacts and tags": "Amostral álbumes con tol los contautus y etiquetas esbillás",
-  "Showing albums with all selected tags": "Amostral álbumes con tol las etiquetas esbillás"
+  "Showing albums with all selected tags": "Amostral álbumes con tol las etiquetas esbillás",
+  "Clear All": "Limpial Tó",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Entamu",
+  "Visit Home": "Visitá Entamu",
+  "Visit 6180.io": "Visitá 6180.io",
+  "No tags available": "Nu ai etiquetas disponibris",
+  "Showing photos with all selected tags": "Amostandu fotos con tolas etiquetas selicionás",
+  "Valid parameters not found in URL": "Nu s'han encontrau parámetrus válibus en la URL",
+  "Invalid id parameter format": "Formatu de parámetru id inválidu",
+  "Album not found": "Álbum nu s'ha encontrau",
+  "the album owner": "el propietariu del álbum",
+  "Tag, save and find that performance — before it's lost.": "Etiqueta, guarda y alcuentra esa actuación — antis que se pierda.",
+  "Tag, save and find that smile — before it's lost.": "Etiqueta, guarda y alcuentra esa sonrisa — antis que se pierda.",
+  "Tag, save and find that birthday — before it's lost.": "Etiqueta, guarda y alcuentra esi cumpleaños — antis que se pierda.",
+  "Tag, save and find that sunset — before it's lost.": "Etiqueta, guarda y alcuentra esi atardecel — antis que se pierda.",
+  "Tag, save and find that party — before it's lost.": "Etiqueta, guarda y alcuentra esa fiesta — antis que se pierda.",
+  "Tag, save and find that vacation — before it's lost.": "Etiqueta, guarda y alcuentra esas vacaciones — antis que se pierdan."
 }

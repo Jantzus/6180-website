@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Приложити Видъ",
   "Album successfully saved!": "Твои алъбомъ съхранѥнъ бꙑстъ!",
   "All files successfully uploaded": "Вьсѩ дѣла съ ѹспѣхомь положєна сѫтъ",
@@ -295,5 +296,22 @@
   "Open On Android": "Отврьзти Въ Android",
   "Toggle contacts filter": "Прѣмѣни съвѫзъ очишчения",
   "Showing albums with all selected contacts and tags": "Показаниѥ алъбомъ съ въсѣми избьраными съвѫзи и съзнакы",
-  "Showing albums with all selected tags": "Показаниѥ алъбомъ съ въсѣми избьраными съзнакы"
+  "Showing albums with all selected tags": "Показаниѥ алъбомъ съ въсѣми избьраными съзнакы",
+  "Clear All": "Вьсꙗ Иꙁгладити",
+  "6180 Logo": "6180 Ꙁнакъ",
+  "Home": "Домъ",
+  "Visit Home": "Домъ Посѣтити",
+  "Visit 6180.io": "6180.io Посѣтити",
+  "No tags available": "Не сѫтъ знамена",
+  "Showing photos with all selected tags": "Покаꙁание снимъкы съ вьсѣми избраньными знамены",
+  "Valid parameters not found in URL": "Въ ОуРЛ не обрѣтошѧ иждивени параметри",
+  "Invalid id parameter format": "Неправилънъ форматъ параметра id",
+  "Album not found": "Алъбомъ не обрѣтенъ",
+  "the album owner": "алъбома влѣтель",
+  "Tag, save and find that performance — before it's lost.": "Знамѣнати, съхранити и намѣрити то представлѥниѥ — прѣждѥ загѷбити сѧ.",
+  "Tag, save and find that smile — before it's lost.": "Знамѣнати, съхранити и намѣрити тъи осмѣхъ — прѣждѥ загѷбити сѧ.",
+  "Tag, save and find that birthday — before it's lost.": "Знамѣнати, съхранити и намѣрити тъи рожьство — прѣждѥ загѷбити сѧ.",
+  "Tag, save and find that sunset — before it's lost.": "Знамѣнати, съхранити и намѣрити тъи заходъ слънцє — прѣждѥ загѷбити сѧ.",
+  "Tag, save and find that party — before it's lost.": "Знамѣнати, съхранити и намѣрити тъи празьникъ — прѣждѥ загѷбити сѧ.",
+  "Tag, save and find that vacation — before it's lost.": "Знамѣнати, съхранити и намѣрити тъи почивкы — прѣждѥ загѷбити сѧ."
 }

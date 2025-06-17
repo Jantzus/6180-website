@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "انځورونه اضافه کړئ",
   "Album successfully saved!": "ستاسو البوم په بریالیتوب سره وساتل شو!",
   "All files successfully uploaded": "ټول فایلونه په بریالیتوب سره پورته شول",
@@ -295,5 +296,22 @@
   "Open On Android": "په Android کې وغړوئ",
   "Toggle contacts filter": "د اړیکو فلټر بدلول",
   "Showing albums with all selected contacts and tags": "د ټولو غوره شویو اړیکو او ټاګونو سره البومونه ښودل",
-  "Showing albums with all selected tags": "د ټولو غوره شویو ټاګونو سره البومونه ښودل"
+  "Showing albums with all selected tags": "د ټولو غوره شویو ټاګونو سره البومونه ښودل",
+  "Clear All": "ټول پاک کړئ",
+  "6180 Logo": "د 6180 لوګو",
+  "Home": "کور",
+  "Visit Home": "کور ته ولاړ شه",
+  "Visit 6180.io": "6180.io ته ولاړ شه",
+  "No tags available": "هيڅ ټګ نشته",
+  "Showing photos with all selected tags": "د ټولو غوره شويو ټګونو سره انځورونه ښودل",
+  "Valid parameters not found in URL": "په URL کې د دروستو ټاکنو نه موندل کیږي",
+  "Invalid id parameter format": "د id پارامتر بڼه سمه نده",
+  "Album not found": "البوم ونه موندل شو",
+  "the album owner": "د البوم خاوند",
+  "Tag, save and find that performance — before it's lost.": "ټاګ کړئ، خوندي کړئ او دا د زېږېدو ورځ ومومئ — د ورکیدو دمخه.",
+  "Tag, save and find that smile — before it's lost.": "ټاګ کړئ، خوندي کړئ او دا موسکا ومومئ — د ورکیدو دمخه.",
+  "Tag, save and find that birthday — before it's lost.": "ټاګ کړئ، خوندي کړئ او دا فعالیت ومومئ — د ورکیدو دمخه.",
+  "Tag, save and find that sunset — before it's lost.": "ټاګ کړئ، خوندي کړئ او دا رخصتي ومومئ — د ورکیدو دمخه.",
+  "Tag, save and find that party — before it's lost.": "ټاګ کړئ، خوندي کړئ او دا ډله ومومئ — د ورکیدو دمخه.",
+  "Tag, save and find that vacation — before it's lost.": "ټاګ کړئ، خوندي کړئ او دا لمر ډوب ومومئ — د ورکیدو دمخه."
 }

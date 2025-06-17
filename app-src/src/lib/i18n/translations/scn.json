@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Agghiunci Fotu",
   "Album successfully saved!": "Lu to album havi statu sarvatu cu successu!",
   "All files successfully uploaded": "Tutti li file sunnu stati carricati cu successu",
@@ -295,5 +296,22 @@
   "Open On Android": "Rapi 'N Android",
   "Toggle contacts filter": "Canciare lu filtru dî cuntatti",
   "Showing albums with all selected contacts and tags": "Ammustra l'album cu tutti li cuntatti e tag scigghiuti",
-  "Showing albums with all selected tags": "Ammustra l'album cu tutti li tag scigghiuti"
+  "Showing albums with all selected tags": "Ammustra l'album cu tutti li tag scigghiuti",
+  "Clear All": "Pulizza Tuttu",
+  "6180 Logo": "Logo di 6180",
+  "Home": "Casa",
+  "Visit Home": "Vài a Casa",
+  "Visit 6180.io": "Vài a 6180.io",
+  "No tags available": "Nudda etichetta",
+  "Showing photos with all selected tags": "Mustra foto cu tutti li tag scigghiuti",
+  "Valid parameters not found in URL": "Parmètri validi nun attruvati nta URL",
+  "Invalid id parameter format": "Formatu di paràmitru id nun vàlidu",
+  "Album not found": "Album nun attruvatu",
+  "the album owner": "u patrunazzu di l'album",
+  "Tag, save and find that performance — before it's lost.": "Metti na marca, sarva e attrova ddu cumpleannu — prima ca si perdi.",
+  "Tag, save and find that smile — before it's lost.": "Metti na marca, sarva e attrova ddu surrisu — prima ca si perdi.",
+  "Tag, save and find that birthday — before it's lost.": "Metti na marca, sarva e attrova ddu spittàculu — prima ca si perdi.",
+  "Tag, save and find that sunset — before it's lost.": "Metti na marca, sarva e attrova ddi vacànzi — prima ca si perdinu.",
+  "Tag, save and find that party — before it's lost.": "Metti na marca, sarva e attrova dda festa — prima ca si perdi.",
+  "Tag, save and find that vacation — before it's lost.": "Metti na marca, sarva e attrova ddu tramontu — prima ca si perdi."
 }

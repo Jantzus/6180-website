@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tö Tënë na Ndö",
   "Album successfully saved!": "A bata album ti mo nzoni mingi!",
   "All files successfully uploaded": "A yeke ti zia awe akotisa mbilimbili nzoni",
@@ -295,5 +296,22 @@
   "Open On Android": "Yeke Na Android",
   "Toggle contacts filter": "Kängö filter tî kontakt",
   "Showing albums with all selected contacts and tags": "Fa album na kontakt na tag ape so kue",
-  "Showing albums with all selected tags": "Fa album na tag ape so kue"
+  "Showing albums with all selected tags": "Fa album na tag ape so kue",
+  "Clear All": "Fadë Kötä",
+  "6180 Logo": "Logo ti 6180",
+  "Home": "Da",
+  "Visit Home": "Iri na Kubo",
+  "Visit 6180.io": "Iri na 6180.io",
+  "No tags available": "Mbi tag ayeke pëpe",
+  "Showing photos with all selected tags": "Asângbä ân'kpä na mbi matondo",
+  "Valid parameters not found in URL": "Aparamètre ayeke sï na URL",
+  "Invalid id parameter format": "Format tî parameter id ayeke mo molongü",
+  "Album not found": "Album ayeke pëpe",
+  "the album owner": "molongo tî album",
+  "Tag, save and find that performance — before it's lost.": "Zo tené, dû tâa a târâ a ködörö â mbeni — siriri wâ kâga.",
+  "Tag, save and find that smile — before it's lost.": "Zo tené, dû tâa a târâ a yèngbe â — siriri wâ kâga.",
+  "Tag, save and find that birthday — before it's lost.": "Zo tené, dû tâa a târâ a ködörö â wâli — siriri wâ kâga.",
+  "Tag, save and find that sunset — before it's lost.": "Zo tené, dû tâa a târâ a ködörö â mongikiri — siriri wâ kâga.",
+  "Tag, save and find that party — before it's lost.": "Zo tené, dû tâa a târâ a ködörö â lo — siriri wâ kâga.",
+  "Tag, save and find that vacation — before it's lost.": "Zo tené, dû tâa a târâ a ngbanga â ködörö â lo — siriri wâ kâga."
 }

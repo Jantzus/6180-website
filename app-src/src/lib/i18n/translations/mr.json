@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "फोटो जोडा",
   "Album successfully saved!": "तुमचे अल्बम यशस्वीरित्या जतन केले!",
   "All files successfully uploaded": "सर्व फाईल्स यशस्वीरित्या अपलोड केल्या",
@@ -295,5 +296,22 @@
   "Open On Android": "Android वर उघडा",
   "Toggle contacts filter": "संपर्क फिल्टर टॉगल करा",
   "Showing albums with all selected contacts and tags": "सर्व निवडलेले संपर्क आणि टॅग असलेले अल्बम दाखवत आहे",
-  "Showing albums with all selected tags": "सर्व निवडलेले टॅग असलेले अल्बम दाखवत आहे"
+  "Showing albums with all selected tags": "सर्व निवडलेले टॅग असलेले अल्बम दाखवत आहे",
+  "Clear All": "सर्व साफ करा",
+  "6180 Logo": "6180 लोगो",
+  "Home": "मुख्यपृष्ठ",
+  "Visit Home": "मुख्यपृष्ठावर जा",
+  "Visit 6180.io": "6180.io ला भेट द्या",
+  "No tags available": "कोणतेही टॅग उपलब्ध नाहीत",
+  "Showing photos with all selected tags": "सर्व निवडलेल्या टॅगसह फोटो दाखवत आहे",
+  "Valid parameters not found in URL": "URL मध्ये वैध पॅरामीटर सापडले नाहीत",
+  "Invalid id parameter format": "अवैध id पॅरामीटर फॉर्मेट",
+  "Album not found": "अल्बम सापडला नाही",
+  "the album owner": "अल्बमचा मालक",
+  "Tag, save and find that performance — before it's lost.": "टॅग करा, सेव्ह करा आणि तो वाढदिवस शोधा — तो हरवण्यापूर्वी.",
+  "Tag, save and find that smile — before it's lost.": "टॅग करा, सेव्ह करा आणि ते हास्य शोधा — ते हरवण्यापूर्वी.",
+  "Tag, save and find that birthday — before it's lost.": "टॅग करा, सेव्ह करा आणि तो परफॉर्मन्स शोधा — तो हरवण्यापूर्वी.",
+  "Tag, save and find that sunset — before it's lost.": "टॅग करा, सेव्ह करा आणि ती सुट्टी शोधा — ती हरवण्यापूर्वी.",
+  "Tag, save and find that party — before it's lost.": "टॅग करा, सेव्ह करा आणि ती पार्टी शोधा — ती हरवण्यापूर्वी.",
+  "Tag, save and find that vacation — before it's lost.": "टॅग करा, सेव्ह करा आणि ते सूर्यास्त शोधा — ते हरवण्यापूर्वी."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "فوٹو شامل کریو",
   "Album successfully saved!": "تُہنٛد اَلبَم کامیابی سان مٲحفوٗظ کَرمٔچ!",
   "All files successfully uploaded": "تَمام فایِل کامیابی سان اَپلوڈ کَرنہٕ آیی",
@@ -295,5 +296,22 @@
   "Open On Android": "Android مَنٛز کھولؠو",
   "Toggle contacts filter": "رابطہ فلٹر تبدیل کریں",
   "Showing albums with all selected contacts and tags": "تمام منتخب کردہ رابطوں اور ٹیگز کے ساتھ البم دکھانا",
-  "Showing albums with all selected tags": "تمام منتخب کردہ ٹیگز کے ساتھ البم دکھانا"
+  "Showing albums with all selected tags": "تمام منتخب کردہ ٹیگز کے ساتھ البم دکھانا",
+  "Clear All": "تَمام صاف کَرؠو",
+  "6180 Logo": "6180 لوگو",
+  "Home": "گۂر",
+  "Visit Home": "گۂر واپس کن",
+  "Visit 6180.io": "6180.io کن",
+  "No tags available": "کہٕ ٹیگ نِہ",
+  "Showing photos with all selected tags": "تمام مُنتخِب کردہ ٹیگ سٟتۍ فوٹو ہأیون",
+  "Valid parameters not found in URL": "URL مَنٛز صحیح پیرامیٹر نِہ مِلے",
+  "Invalid id parameter format": "نادروست آیڈی پیرامیٹر فارمیٹ",
+  "Album not found": "آلبم نِہ مِلے",
+  "the album owner": "آلبم کُن مالِک",
+  "Tag, save and find that performance — before it's lost.": "ٹیگ کور، محفوظ کور أتِہ یِہ پیدائش ہُند دۄہ لبھِیو — ضائع بونے برونہہ۔",
+  "Tag, save and find that smile — before it's lost.": "ٹیگ کور، محفوظ کور أتِہ یِہ مسکراہٹ لبھِیو — ضائع بونے برونہہ۔",
+  "Tag, save and find that birthday — before it's lost.": "ٹیگ کور، محفوظ کور أتِہ یِہ پرفارمنس لبھِیو — ضائع بونے برونہہ۔",
+  "Tag, save and find that sunset — before it's lost.": "ٹیگ کور، محفوظ کور أتِہ یِہ چھٹی لبھِیو — ضائع بونے برونہہ۔",
+  "Tag, save and find that party — before it's lost.": "ٹیگ کور، محفوظ کور أتِہ یِہ پارٹی لبھِیو — ضائع بونے برونہہ۔",
+  "Tag, save and find that vacation — before it's lost.": "ٹیگ کور، محفوظ کور أتِہ یِہ غروب آفتاب لبھِیو — ضائع بونے برونہہ۔"
 }

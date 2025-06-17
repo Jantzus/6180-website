@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Adjunter Photos",
   "Album successfully saved!": "Tui album ha esset salvat con success!",
   "All files successfully uploaded": "Omni files succesosimen cargat",
@@ -295,5 +296,22 @@
   "Open On Android": "Aperter In Android",
   "Toggle contacts filter": "Alterner filtre de contactes",
   "Showing albums with all selected contacts and tags": "Monstrar álbumes con omni contactes e etiquettes selectet",
-  "Showing albums with all selected tags": "Monstrar álbumes con omni etiquettes selectet"
+  "Showing albums with all selected tags": "Monstrar álbumes con omni etiquettes selectet",
+  "Clear All": "Rader Omni",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Dom",
+  "Visit Home": "Visitar Dom",
+  "Visit 6180.io": "Visitar 6180.io",
+  "No tags available": "Null etiquettes disponibil",
+  "Showing photos with all selected tags": "Monstrante photos con omni etiquettes selectat",
+  "Valid parameters not found in URL": "Valid parametres ne esset trovat in URL",
+  "Invalid id parameter format": "Invalide formate de parametre id",
+  "Album not found": "Album ne trovat",
+  "the album owner": "li possessor del album",
+  "Tag, save and find that performance — before it's lost.": "Marcar, gardar e trovar ti performance — ante it es perdit.",
+  "Tag, save and find that smile — before it's lost.": "Marcar, gardar e trovar ti surriso — ante it es perdit.",
+  "Tag, save and find that birthday — before it's lost.": "Marcar, gardar e trovar ti anniversari — ante it es perdit.",
+  "Tag, save and find that sunset — before it's lost.": "Marcar, gardar e trovar ti sol-ocase — ante it es perdit.",
+  "Tag, save and find that party — before it's lost.": "Marcar, gardar e trovar ti feste — ante it es perdit.",
+  "Tag, save and find that vacation — before it's lost.": "Marcar, gardar e trovar ti vacantie — ante it es perdit."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Panõq Pilte Mano",
   "Album successfully saved!": "Su album om edukalt salvõstõt!",
   "All files successfully uploaded": "Kõik failiq ommaq edokalt üles laaditúq",
@@ -295,5 +296,22 @@
   "Open On Android": "Ava Android-n",
   "Toggle contacts filter": "Kontaktidõ filter lülüteq",
   "Showing albums with all selected contacts and tags": "Näütäs albumõ ku kõik valitu kontaktiq ja märgiq",
-  "Showing albums with all selected tags": "Näütäs albumõ ku kõik valitu märgiq"
+  "Showing albums with all selected tags": "Näütäs albumõ ku kõik valitu märgiq",
+  "Clear All": "Kistutaq Kõik",
+  "6180 Logo": "6180 Logo",
+  "Home": "Peäleht",
+  "Visit Home": "Kodo-lehe Kaiaq",
+  "Visit 6180.io": "6180.io Kaiaq",
+  "No tags available": "Märgisõnnu ei olõq",
+  "Showing photos with all selected tags": "Näütäs pildiq kõigi valitut märgisõnnadõga",
+  "Valid parameters not found in URL": "URL-st ei lövvüq kehtivas parameetrit",
+  "Invalid id parameter format": "Vära id parameetri formaat",
+  "Album not found": "Albummi ei lövvüq",
+  "the album owner": "albummi peremiis",
+  "Tag, save and find that performance — before it's lost.": "Märgistäq, tallõndaleq ja löüdäq tuud edütest — enne ku se kaos.",
+  "Tag, save and find that smile — before it's lost.": "Märgistäq, tallõndaleq ja löüdäq tuud narost — enne ku se kaos.",
+  "Tag, save and find that birthday — before it's lost.": "Märgistäq, tallõndaleq ja löüdäq tuud sündümispäiv — enne ku se kaos.",
+  "Tag, save and find that sunset — before it's lost.": "Märgistäq, tallõndaleq ja löüdäq tuud päävälüüminguq — enne ku se kaos.",
+  "Tag, save and find that party — before it's lost.": "Märgistäq, tallõndaleq ja löüdäq tuud pido — enne ku se kaos.",
+  "Tag, save and find that vacation — before it's lost.": "Märgistäq, tallõndaleq ja löüdäq tuud puhkusõq — enne ku se kaos."
 }

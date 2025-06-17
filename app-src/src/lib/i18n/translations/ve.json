@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ṅwala Zwifanyiso",
   "Album successfully saved!": "Albamu yanu yo vhulungwa zwavhuḓi!",
   "All files successfully uploaded": "Faela dzoṱhe dzo ḓiswa zwavhuḓi",
@@ -295,5 +296,22 @@
   "Open On Android": "Vhudza Kha Android",
   "Toggle contacts filter": "Shandukisa sivhongolose ha vhunzhi",
   "Showing albums with all selected contacts and tags": "U kombetsha ama albamu na vhunzhi ha zwipiḓa na zwitauga zwo nanganywaho",
-  "Showing albums with all selected tags": "U kombetsha ama albamu na zwitauga zwo nanganywaho zwothe"
+  "Showing albums with all selected tags": "U kombetsha ama albamu na zwitauga zwo nanganywaho zwothe",
+  "Clear All": "Thutha Zwothe",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Hayani",
+  "Visit Home": "Shonela Hayani",
+  "Visit 6180.io": "Shonela 6180.io",
+  "No tags available": "A hu na matag",
+  "Showing photos with all selected tags": "U bvisela zwifanyiso na mataga othe a nangwaho",
+  "Valid parameters not found in URL": "A hu wani na parameta dzinalo kha URL",
+  "Invalid id parameter format": "Fomate ya parameter id yo si yo pfesesa",
+  "Album not found": "Albumbu a hu na",
+  "the album owner": "muṅe wa albumbu",
+  "Tag, save and find that performance — before it's lost.": "Lugisani tshiga, dzhenisani na todani ḓuvha ḽa mabebo — ḽo sa mbedze phanḓa.",
+  "Tag, save and find that smile — before it's lost.": "Lugisani tshiga, dzhenisani na todani zwisetshe zwi — zwo sa mbedze phanḓa.",
+  "Tag, save and find that birthday — before it's lost.": "Lugisani tshiga, dzhenisani na todani zwiitisi zwi — zwo sa mbedze phanḓa.",
+  "Tag, save and find that sunset — before it's lost.": "Lugisani tshiga, dzhenisani na todani matsheloni — a sa mbedze phanḓa.",
+  "Tag, save and find that party — before it's lost.": "Lugisani tshiga, dzhenisani na todani mutambo wo — wo sa mbedze phanḓa.",
+  "Tag, save and find that vacation — before it's lost.": "Lugisani tshiga, dzhenisani na todani zwiito zwa ḓuvha — zwo sa mbedze phanḓa."
 }

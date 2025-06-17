@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotos hentofögen",
   "Album successfully saved!": "Dien Album is mit Spood spiekert worrn!",
   "All files successfully uploaded": "All Dateien sünd mit Erfolg hoochladen worrn",
@@ -295,5 +296,22 @@
   "Open On Android": "Op Android Opmaken",
   "Toggle contacts filter": "Kontakt-Filter ümschalten",
   "Showing albums with all selected contacts and tags": "Wiest Albums mit all utsöökten Kontakte un Döörmarken",
-  "Showing albums with all selected tags": "Wiest Albums mit all utsöökten Döörmarken"
+  "Showing albums with all selected tags": "Wiest Albums mit all utsöökten Döörmarken",
+  "Clear All": "Allens Wegmaken",
+  "6180 Logo": "6180 Logo",
+  "Home": "Hööftsiet",
+  "Visit Home": "Na Huus Gahn",
+  "Visit 6180.io": "Na 6180.io Gahn",
+  "No tags available": "Keen Etiketten dor",
+  "Showing photos with all selected tags": "Wiesen Biller mit alle utsöchte Etiketten",
+  "Valid parameters not found in URL": "Gellen Parameter in URL nich funnen",
+  "Invalid id parameter format": "Ungödig id Parameter-Format",
+  "Album not found": "Album nich funnen",
+  "the album owner": "de Album-Besitter",
+  "Tag, save and find that performance — before it's lost.": "Markeren, spiekern un finnen den Gebornsdag — ehr he wegkümmt.",
+  "Tag, save and find that smile — before it's lost.": "Markeren, spiekern un finnen dat Lachen — ehr dat wegkümmt.",
+  "Tag, save and find that birthday — before it's lost.": "Markeren, spiekern un finnen de Vörstellung — ehr se wegkümmt.",
+  "Tag, save and find that sunset — before it's lost.": "Markeren, spiekern un finnen den Urlaub — ehr he wegkümmt.",
+  "Tag, save and find that party — before it's lost.": "Markeren, spiekern un finnen de Fete — ehr se wegkümmt.",
+  "Tag, save and find that vacation — before it's lost.": "Markeren, spiekern un finnen den Sünnünnergang — ehr he wegkümmt."
 }

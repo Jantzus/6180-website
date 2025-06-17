@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Azonzi Foto",
   "Album successfully saved!": "O teu album o l'è stæto sarvòu con successo!",
   "All files successfully uploaded": "Tutti i file son stæti caregæ con successo",
@@ -295,5 +296,22 @@
   "Open On Android": "Àrvi In Android",
   "Toggle contacts filter": "Cangia filtro contàtti",
   "Showing albums with all selected contacts and tags": "Mostra album con tutti i contàtti e tag seleçionæ",
-  "Showing albums with all selected tags": "Mostra album con tutti i tag seleçionæ"
+  "Showing albums with all selected tags": "Mostra album con tutti i tag seleçionæ",
+  "Clear All": "Netâ Tùtto",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Cà",
+  "Visit Home": "Vixitâ a Pâgina Prinçipâ",
+  "Visit 6180.io": "Vixitâ 6180.io",
+  "No tags available": "Nisciun tag disponibile",
+  "Showing photos with all selected tags": "Mostro fòto con tutt-i tag seleçionaæ",
+  "Valid parameters not found in URL": "Parametri validi no truvæ into URL",
+  "Invalid id parameter format": "Formòu paramètro id nón valido",
+  "Album not found": "Album non trovòu",
+  "the album owner": "o propriêtäio de l'album",
+  "Tag, save and find that performance — before it's lost.": "Etichetta, sarva e trêuva quell'cumpleanni — primma che o se perde.",
+  "Tag, save and find that smile — before it's lost.": "Etichetta, sarva e trêuva quell'sorriso — primma che o se perde.",
+  "Tag, save and find that birthday — before it's lost.": "Etichetta, sarva e trêuva quell'esibissión — primma che a se perde.",
+  "Tag, save and find that sunset — before it's lost.": "Etichetta, sarva e trêuva quelle vacanse — primma che se perde.",
+  "Tag, save and find that party — before it's lost.": "Etichetta, sarva e trêuva quella festa — primma che a se perde.",
+  "Tag, save and find that vacation — before it's lost.": "Etichetta, sarva e trêuva quell'tramónto — primma che o se perde."
 }

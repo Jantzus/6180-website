@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Wedzera Mifananidzo",
   "Album successfully saved!": "Albhamu yako yachengetedzwa zvakanaka!",
   "All files successfully uploaded": "Zvikwata zvese zvabudiswa zvakanaka",
@@ -295,5 +296,22 @@
   "Open On Android": "Vhura Pa Android",
   "Toggle contacts filter": "Shandura filita yekubatana",
   "Showing albums with all selected contacts and tags": "Kuratidza maalbumu ane zvese zvakasarudzwa zvekubatana nezvirango",
-  "Showing albums with all selected tags": "Kuratidza maalbumu ane zvese zvakasarudzwa zvezvirango"
+  "Showing albums with all selected tags": "Kuratidza maalbumu ane zvese zvakasarudzwa zvezvirango",
+  "Clear All": "Bvisa Zvose",
+  "6180 Logo": "Logo ye6180",
+  "Home": "Musha",
+  "Visit Home": "Shanyira Kumba",
+  "Visit 6180.io": "Shanyira 6180.io",
+  "No tags available": "Hapana matag aripo",
+  "Showing photos with all selected tags": "Kuratidza mafoto nezvikwangwadza zvose zvakasarudzwa",
+  "Valid parameters not found in URL": "Paramita dzakanaka hadzina kuwanikwa muURL",
+  "Invalid id parameter format": "Chimiro che parameter id chisina chakakwana",
+  "Album not found": "Album harina kuwanikwa",
+  "the album owner": "muridzi we album",
+  "Tag, save and find that performance — before it's lost.": "Isa chiratidzo, chengetedza uye tsvaga zuva rekuzvarwa iro — risati rarasika.",
+  "Tag, save and find that smile — before it's lost.": "Isa chiratidzo, chengetedza uye tsvaga kunyemwerera iko — risati rarasika.",
+  "Tag, save and find that birthday — before it's lost.": "Isa chiratidzo, chengetedza uye tsvaga ratidzo iro — risati rarasika.",
+  "Tag, save and find that sunset — before it's lost.": "Isa chiratidzo, chengetedza uye tsvaga zororo iro — risati rarasika.",
+  "Tag, save and find that party — before it's lost.": "Isa chiratidzo, chengetedza uye tsvaga mafaro ayo — asati arasika.",
+  "Tag, save and find that vacation — before it's lost.": "Isa chiratidzo, chengetedza uye tsvaga kunyura kwezuva iko — risati rarasika."
 }

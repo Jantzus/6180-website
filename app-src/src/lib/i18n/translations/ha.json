@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ƙara Hotuna",
   "Album successfully saved!": "An ajiye albomin ka cikin nasara!",
   "All files successfully uploaded": "Duk fayilolin sun haɗu da nasarar",
@@ -295,5 +296,22 @@
   "Open On Android": "Bude A Android",
   "Toggle contacts filter": "Canja tacewa mai tace",
   "Showing albums with all selected contacts and tags": "Nuna albums da duk zaɓaɓɓun tuntuɓar da alamun",
-  "Showing albums with all selected tags": "Nuna albums da duk zaɓaɓɓun alamun"
+  "Showing albums with all selected tags": "Nuna albums da duk zaɓaɓɓun alamun",
+  "Clear All": "Share Duka",
+  "6180 Logo": "Tambarin 6180",
+  "Home": "Gida",
+  "Visit Home": "Ziyarci Gida",
+  "Visit 6180.io": "Ziyarci 6180.io",
+  "No tags available": "Babu alamar da ake samu",
+  "Showing photos with all selected tags": "Nuna hotuna da duka alamar da aka zaba",
+  "Valid parameters not found in URL": "Ba a sami ingantattun sahihi a cikin URL",
+  "Invalid id parameter format": "Ba daidai id parameter format ba",
+  "Album not found": "Ba a sami album ba",
+  "the album owner": "mai album",
+  "Tag, save and find that performance — before it's lost.": "Yi alama, ajiye kuma nemo waccan wasan kwaikwayo — kafin ya bace.",
+  "Tag, save and find that smile — before it's lost.": "Yi alama, ajiye kuma nemo wannan murmushin — kafin ya bace.",
+  "Tag, save and find that birthday — before it's lost.": "Yi alama, ajiye kuma nemo wannan ranar haihuwa — kafin ya bace.",
+  "Tag, save and find that sunset — before it's lost.": "Yi alama, ajiye kuma nemo wannan faduwar rana — kafin ya bace.",
+  "Tag, save and find that party — before it's lost.": "Yi alama, ajiye kuma nemo wannan liyafa — kafin ya bace.",
+  "Tag, save and find that vacation — before it's lost.": "Yi alama, ajiye kuma nemo wannan hutu — kafin ya bace."
 }

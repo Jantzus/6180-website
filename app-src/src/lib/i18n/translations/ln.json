@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Bakisa Bafɔtɔ",
   "Album successfully saved!": "Album na yɔ ebombami na malamu!",
   "All files successfully uploaded": "Bafikye nyonso etindamaki na bolamu",
@@ -295,5 +296,22 @@
   "Open On Android": "Fungola Na Android",
   "Toggle contacts filter": "Kobongola mosala mwa bakutani",
   "Showing albums with all selected contacts and tags": "Kolakisa ba album na bakutani nyonso ba ponami mpe ba tag",
-  "Showing albums with all selected tags": "Kolakisa ba album na ba tag nyonso ba ponami"
+  "Showing albums with all selected tags": "Kolakisa ba album na ba tag nyonso ba ponami",
+  "Clear All": "Longola Nyonso",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Ndako",
+  "Visit Home": "Kokende na Ndako",
+  "Visit 6180.io": "Kokende na 6180.io",
+  "No tags available": "Tags ezalí té",
+  "Showing photos with all selected tags": "Kolakisa bililingi na bamatandu nyonso oyo baponaki",
+  "Valid parameters not found in URL": "Ata parametre ya malamu na URL",
+  "Invalid id parameter format": "Format ya parameter id ezali malamu te",
+  "Album not found": "Album emonanaka te",
+  "the album owner": "nkolo ya album",
+  "Tag, save and find that performance — before it's lost.": "Kotia elembo, kobomba mpe koluka ngai ya mbotama — liboso ezanga.",
+  "Tag, save and find that smile — before it's lost.": "Kotia elembo, kobomba mpe koluka ngai ya liseki — liboso ezanga.",
+  "Tag, save and find that birthday — before it's lost.": "Kotia elembo, kobomba mpe koluka ngai ya lipanzani — liboso ezanga.",
+  "Tag, save and find that sunset — before it's lost.": "Kotia elembo, kobomba mpe koluka ngai ya bopemi — liboso ezanga.",
+  "Tag, save and find that party — before it's lost.": "Kotia elembo, kobomba mpe koluka ngai ya fèti — liboso ezanga.",
+  "Tag, save and find that vacation — before it's lost.": "Kotia elembo, kobomba mpe koluka ngai ya molali moi — liboso ezanga."
 }

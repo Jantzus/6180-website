@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Xiccalaqui Tlapōhualmeh",
   "Album successfully saved!": "Motlaixiptlayo zan tlapialistli!",
   "All files successfully uploaded": "Nochi in tlahcuilolamatl omocargaro ica cualli",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-pan Pōhua",
   "Toggle contacts filter": "Nepantla xeliuhqui ica netlahueliloni",
   "Showing albums with all selected contacts and tags": "Nechmach albums ica mochi tlanemiliztli ihuan marca tlaelhuilli",
-  "Showing albums with all selected tags": "Nechmach albums ica mochi marca tlaelhuilli"
+  "Showing albums with all selected tags": "Nechmach albums ica mochi marca tlaelhuilli",
+  "Clear All": "Xitlami Mochi",
+  "6180 Logo": "Machiyotl 6180",
+  "Home": "Chantli",
+  "Visit Home": "Kalli Chantli",
+  "Visit 6180.io": "Kalli 6180.io",
+  "No tags available": "Amo machiliuhtli",
+  "Showing photos with all selected tags": "Kinehhuatoc iconos ika mochiin machiliuhtli tlatlanilistli",
+  "Valid parameters not found in URL": "Amo validos parámetros otitech URL",
+  "Invalid id parameter format": "Amo cualli id parameter nemiliztli",
+  "Album not found": "Amo mopantih album",
+  "the album owner": "album iteca",
+  "Tag, save and find that performance — before it's lost.": "Machiya tlahcuiloli, piya wan ximotemoq in ilhuicatl — ahmo polihuiz.",
+  "Tag, save and find that smile — before it's lost.": "Machiya tlahcuiloli, piya wan ximotemoq in huetzqui — ahmo polihuiz.",
+  "Tag, save and find that birthday — before it's lost.": "Machiya tlahcuiloli, piya wan ximotemoq in nepantlahtoliliztli — ahmo polihuiz.",
+  "Tag, save and find that sunset — before it's lost.": "Machiya tlahcuiloli, piya wan ximotemoq in cehuiliztli — ahmo polihuiz.",
+  "Tag, save and find that party — before it's lost.": "Machiya tlahcuiloli, piya wan ximotemoq in ilhuitl — ahmo polihuiz.",
+  "Tag, save and find that vacation — before it's lost.": "Machiya tlahcuiloli, piya wan ximotemoq in tonatiuh icalaqui — ahmo polihuiz."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ಚಿತ್ರಗಳನ್ನು ಸೇರಿಸಿ",
   "Album successfully saved!": "ನಿಮ್ಮ ಆಲ್ಬಮ್ ಯಶಸ್ವಿಯಾಗಿ ಉಳಿಸಲಾಗಿದೆ!",
   "All files successfully uploaded": "ಎಲ್ಲಾ ಫೈಲ್‌ಗಳನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗಿದೆ",
@@ -295,5 +296,22 @@
   "Open On Android": "Android ನಲ್ಲಿ ತೆರೆಯಿರಿ",
   "Toggle contacts filter": "ಸಂಪರ್ಕಗಳ ಫಿಲ್ಟರ್ ಟಾಗಲ್ ಮಾಡಿ",
   "Showing albums with all selected contacts and tags": "ಎಲ್ಲಾ ಆಯ್ಕೆಯಾದ ಸಂಪರ್ಕಗಳು ಮತ್ತು ಟ್ಯಾಗ್‌ಗಳೊಂದಿಗೆ ಆಲ್ಬಮ್‌ಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ",
-  "Showing albums with all selected tags": "ಎಲ್ಲಾ ಆಯ್ಕೆಯಾದ ಟ್ಯಾಗ್‌ಗಳೊಂದಿಗೆ ಆಲ್ಬಮ್‌ಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ"
+  "Showing albums with all selected tags": "ಎಲ್ಲಾ ಆಯ್ಕೆಯಾದ ಟ್ಯಾಗ್‌ಗಳೊಂದಿಗೆ ಆಲ್ಬಮ್‌ಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ",
+  "Clear All": "ಎಲ್ಲವನ್ನೂ ತೆರವುಗೊಳಿಸಿ",
+  "6180 Logo": "6180 ಲೋಗೋ",
+  "Home": "ಮನೆ",
+  "Visit Home": "ಮನೆಗೆ ಭೇಟಿ ನೀಡಿ",
+  "Visit 6180.io": "6180.io-ಗೆ ಭೇಟಿ ನೀಡಿ",
+  "No tags available": "ಯಾವುದೇ ಟ್ಯಾಗ್‌ಗಳು ಲಭ್ಯವಿಲ್ಲ",
+  "Showing photos with all selected tags": "ಆಯ್ಕೆಮಾಡಿದ ಎಲ್ಲಾ ಟ್ಯಾಗ್‌ಗಳೊಂದಿಗೆ ಫೋಟೋಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ",
+  "Valid parameters not found in URL": "URL ನಲ್ಲಿ ಮಾನ್ಯವಾದ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+  "Invalid id parameter format": "ಅಮಾನ್ಯ id ಪೆರಾಮೀಟರ್ ಫಾರ್ಮ್ಯಾಟ್",
+  "Album not found": "ಆಲ್ಬಂ ಸಿಗಲಿಲ್ಲ",
+  "the album owner": "ಆಲ್ಬಮ್ ಮಾಲೀಕ",
+  "Tag, save and find that performance — before it's lost.": "ಟ್ಯಾಗ್ ಮಾಡಿ, ಸೇವ್ ಮಾಡಿ ಮತ್ತು ಆ ಪ್ರದರ್ಶನವನ್ನು ಹುಡುಕಿ — ಅದು ಕಳೆದುಹೋಗುವ ಮೊದಲು।",
+  "Tag, save and find that smile — before it's lost.": "ಟ್ಯಾಗ್ ಮಾಡಿ, ಸೇವ್ ಮಾಡಿ ಮತ್ತು ಆ ನಗುವನ್ನು ಹುಡುಕಿ — ಅದು ಕಳೆದುಹೋಗುವ ಮೊದಲು।",
+  "Tag, save and find that birthday — before it's lost.": "ಟ್ಯಾಗ್ ಮಾಡಿ, ಸೇವ್ ಮಾಡಿ ಮತ್ತು ಆ ಜನ್ಮದಿನವನ್ನು ಹುಡುಕಿ — ಅದು ಕಳೆದುಹೋಗುವ ಮೊದಲು।",
+  "Tag, save and find that sunset — before it's lost.": "ಟ್ಯಾಗ್ ಮಾಡಿ, ಸೇವ್ ಮಾಡಿ ಮತ್ತು ಆ ಸೂರ್ಯಾಸ್ತವನ್ನು ಹುಡುಕಿ — ಅದು ಕಳೆದುಹೋಗುವ ಮೊದಲು।",
+  "Tag, save and find that party — before it's lost.": "ಟ್ಯಾಗ್ ಮಾಡಿ, ಸೇವ್ ಮಾಡಿ ಮತ್ತು ಆ ಪಾರ್ಟಿಯನ್ನು ಹುಡುಕಿ — ಅದು ಕಳೆದುಹೋಗುವ ಮೊದಲು।",
+  "Tag, save and find that vacation — before it's lost.": "ಟ್ಯಾಗ್ ಮಾಡಿ, ಸೇವ್ ಮಾಡಿ ಮತ್ತು ಆ ರಜೆಯನ್ನು ಹುಡುಕಿ — ಅದು ಕಳೆದುಹೋಗುವ ಮೊದಲು।"
 }

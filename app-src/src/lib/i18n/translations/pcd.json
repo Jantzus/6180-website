@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ajouter des Fotos",
   "Album successfully saved!": "Tin album a té inèrjistreu avuc réussite!",
   "All files successfully uploaded": "Tous chés fichiés sont t'étè étchértchés avuc réussite",
@@ -295,5 +296,22 @@
   "Open On Android": "Ovrir Dsur Android",
   "Toggle contacts filter": "Cangi ch'filtreu d'contacts",
   "Showing albums with all selected contacts and tags": "Montre d'albums avc tous chés contacts éch étiquettes tchoésis",
-  "Showing albums with all selected tags": "Montre d'albums avc toutes chés étiquettes tchoésis"
+  "Showing albums with all selected tags": "Montre d'albums avc toutes chés étiquettes tchoésis",
+  "Clear All": "Nétoyer Toute",
+  "6180 Logo": "Logo éd 6180",
+  "Home": "Maison",
+  "Visit Home": "Aller ch'és Nous",
+  "Visit 6180.io": "Aller à 6180.io",
+  "No tags available": "Point d'étiquettes",
+  "Showing photos with all selected tags": "Montré des portraits aveuc toutes les étiquettes couèsies",
+  "Valid parameters not found in URL": "Point d'paramètres valides éd trouvés din l'URL",
+  "Invalid id parameter format": "Format d'paramète id point valid",
+  "Album not found": "Album point trouvé",
+  "the album owner": "ch'propriétaire d'l'album",
+  "Tag, save and find that performance — before it's lost.": "Marque, sauve pi trouve chelle naîssance — d'vant qu'al s'perde.",
+  "Tag, save and find that smile — before it's lost.": "Marque, sauve pi trouve chel sourire — d'vant qu'al s'perde.",
+  "Tag, save and find that birthday — before it's lost.": "Marque, sauve pi trouve chelle prestation — d'vant qu'al s'perde.",
+  "Tag, save and find that sunset — before it's lost.": "Marque, sauve pi trouve chelles vacances — d'vant qu'elles s'perdent.",
+  "Tag, save and find that party — before it's lost.": "Marque, sauve pi trouve chelle fièrte — d'vant qu'al s'perde.",
+  "Tag, save and find that vacation — before it's lost.": "Marque, sauve pi trouve chel couchée d'solé — d'vant qu'al s'perde."
 }

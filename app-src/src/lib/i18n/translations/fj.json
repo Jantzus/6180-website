@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Vakuria na iTaba",
   "Album successfully saved!": "Nomu albamu sa maroroi vakavinaka!",
   "All files successfully uploaded": "Na faile kece era vakavodoki vinaka",
@@ -295,5 +296,22 @@
   "Open On Android": "Dolava E Android",
   "Toggle contacts filter": "Vakararavi na ivola ni veiqaravi",
   "Showing albums with all selected contacts and tags": "Raica na iwasewase kei na ivola kecega sa digitaka",
-  "Showing albums with all selected tags": "Raica na iwasewase kei na ivola kecega sa digitaka"
+  "Showing albums with all selected tags": "Raica na iwasewase kei na ivola kecega sa digitaka",
+  "Clear All": "Vakayagataka Na Kece",
+  "6180 Logo": "Logo ni 6180",
+  "Home": "Vale",
+  "Visit Home": "Caka ki Vuni",
+  "Visit 6180.io": "Caka ki 6180.io",
+  "No tags available": "Sega na tag e tiko",
+  "Showing photos with all selected tags": "Vakarautaka na icitabua kei na kece na tag vakasaqa",
+  "Valid parameters not found in URL": "Sega na parameter dodonu e kitaki ena URL",
+  "Invalid id parameter format": "Id parameter format e sega ni dina",
+  "Album not found": "Album sega na kunei",
+  "the album owner": "na dau ni album",
+  "Tag, save and find that performance — before it's lost.": "Vakatau, maroroya ka kila na ivakarau — eso kina sa tu.",
+  "Tag, save and find that smile — before it's lost.": "Vakatau, maroroya ka kila na ivudreivudreitaki — eso kina sa tu.",
+  "Tag, save and find that birthday — before it's lost.": "Vakatau, maroroya ka kila na siga ni sucu — eso kina sa tu.",
+  "Tag, save and find that sunset — before it's lost.": "Vakatau, maroroya ka kila na siganisucu — eso kina sa tu.",
+  "Tag, save and find that party — before it's lost.": "Vakatau, maroroya ka kila na soqo — eso kina sa tu.",
+  "Tag, save and find that vacation — before it's lost.": "Vakatau, maroroya ka kila na kena se — eso kina sa tu."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Lizua Kuvii",
   "Album successfully saved!": "Teijän al'bomu on tallendunuh hyvin!",
   "All files successfully uploaded": "Kai failat on menestyksekkähästi ladattu",
@@ -295,5 +296,22 @@
   "Open On Android": "Avata Android:s",
   "Toggle contacts filter": "Vaihta kontaktien suodin",
   "Showing albums with all selected contacts and tags": "Ozuttamas albumit kaikil valituil kontakteil da tegeil",
-  "Showing albums with all selected tags": "Ozuttamas albumit kaikil valituil tegeil"
+  "Showing albums with all selected tags": "Ozuttamas albumit kaikil valituil tegeil",
+  "Clear All": "Poistada Kai",
+  "6180 Logo": "6180 Logo",
+  "Home": "Koti",
+  "Visit Home": "Menö Kotiih",
+  "Visit 6180.io": "Menö 6180.io-h",
+  "No tags available": "Tägii ei ole",
+  "Showing photos with all selected tags": "Näyttäy kuvii kaikki valittujen tägien kansa",
+  "Valid parameters not found in URL": "URL:s löüdyh kelvollisii parametrii",
+  "Invalid id parameter format": "Vära id parameetrin formuatti",
+  "Album not found": "Albumii ei löydynyh",
+  "the album owner": "albumin piäi",
+  "Tag, save and find that performance — before it's lost.": "Paikal merkit, talletah da löydäh tuo sündündäpäiv — hukkih ennei.",
+  "Tag, save and find that smile — before it's lost.": "Paikal merkit, talletah da löydäh tuo hymy — hukkih ennei.",
+  "Tag, save and find that birthday — before it's lost.": "Paikal merkit, talletah da löydäh tuo ezitys — hukkih ennei.",
+  "Tag, save and find that sunset — before it's lost.": "Paikal merkit, talletah da löydäh tuo loma — hukkih ennei.",
+  "Tag, save and find that party — before it's lost.": "Paikal merkit, talletah da löydäh tuo juhlat — hukkih ennei.",
+  "Tag, save and find that vacation — before it's lost.": "Paikal merkit, talletah da löydäh tuo auringon lasku — hukkih ennei."
 }

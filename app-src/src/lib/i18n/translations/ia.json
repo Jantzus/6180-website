@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Adder Photos",
   "Album successfully saved!": "Tu album ha essite salvate con successo!",
   "All files successfully uploaded": "Tote le files cargate con successo",
@@ -295,5 +296,22 @@
   "Open On Android": "Aperir In Android",
   "Toggle contacts filter": "Commutar filtro de contactos",
   "Showing albums with all selected contacts and tags": "Monstrar albums con tote le contactos e etiquettas seligite",
-  "Showing albums with all selected tags": "Monstrar albums con tote le etiquettas seligite"
+  "Showing albums with all selected tags": "Monstrar albums con tote le etiquettas seligite",
+  "Clear All": "Rader Toto",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Domo",
+  "Visit Home": "Visitar Domo",
+  "Visit 6180.io": "Visitar 6180.io",
+  "No tags available": "Nulle etiquettas disponibile",
+  "Showing photos with all selected tags": "Monstrante photos con tote le etiquettas seligite",
+  "Valid parameters not found in URL": "Parametros valide non trovate in URL",
+  "Invalid id parameter format": "Formato invalide de parametro id",
+  "Album not found": "Album non trovate",
+  "the album owner": "le proprietario del album",
+  "Tag, save and find that performance — before it's lost.": "Etiquettar, salveguardar e trovar ille execution — ante que illo se perde.",
+  "Tag, save and find that smile — before it's lost.": "Etiquettar, salveguardar e trovar ille surriso — ante que illo se perde.",
+  "Tag, save and find that birthday — before it's lost.": "Etiquettar, salveguardar e trovar ille anniversario — ante que illo se perde.",
+  "Tag, save and find that sunset — before it's lost.": "Etiquettar, salveguardar e trovar ille tramontar — ante que illo se perde.",
+  "Tag, save and find that party — before it's lost.": "Etiquettar, salveguardar e trovar ille festa — ante que illo se perde.",
+  "Tag, save and find that vacation — before it's lost.": "Etiquettar, salveguardar e trovar ille vacantias — ante que illos se perde."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Hanampy Sary",
   "Album successfully saved!": "Nahomby ny fandraiketana ny albomanao!",
   "All files successfully uploaded": "Ny rakitra rehetra dia voavoaka soa aman-tsara",
@@ -295,5 +296,22 @@
   "Open On Android": "Sokafy Amin'ny Android",
   "Toggle contacts filter": "Ovay ny sivana fifandraisana",
   "Showing albums with all selected contacts and tags": "Mampiseho rakitra sary miaraka amin'ny fifandraisana sy marika voafidy rehetra",
-  "Showing albums with all selected tags": "Mampiseho rakitra sary miaraka amin'ny marika voafidy rehetra"
+  "Showing albums with all selected tags": "Mampiseho rakitra sary miaraka amin'ny marika voafidy rehetra",
+  "Clear All": "Mamafa Rehetra",
+  "6180 Logo": "Logo 6180",
+  "Home": "Fandraisana",
+  "Visit Home": "Mitsidika ny Trano",
+  "Visit 6180.io": "Mitsidika 6180.io",
+  "No tags available": "Tsy misy marika",
+  "Showing photos with all selected tags": "Mampiseho sary miaraka amin'ny marika rehetra voafidy",
+  "Valid parameters not found in URL": "Tsy nahita parameter marina tao amin'ny URL",
+  "Invalid id parameter format": "Endrika parameter id tsy mety",
+  "Album not found": "Tsy nahita ny alboma",
+  "the album owner": "tompon'ny alboma",
+  "Tag, save and find that performance — before it's lost.": "Asio mari-pamantatra, tehirizo ary hitady izay tsingerintaona izay — alohan'ny ho very.",
+  "Tag, save and find that smile — before it's lost.": "Asio mari-pamantatra, tehirizo ary hitady izay tsikitsikitra izay — alohan'ny ho very.",
+  "Tag, save and find that birthday — before it's lost.": "Asio mari-pamantatra, tehirizo ary hitady izay fampisehoana izay — alohan'ny ho very.",
+  "Tag, save and find that sunset — before it's lost.": "Asio mari-pamantatra, tehirizo ary hitady izay fialan-tsasatra izay — alohan'ny ho very.",
+  "Tag, save and find that party — before it's lost.": "Asio mari-pamantatra, tehirizo ary hitady izay fety izay — alohan'ny ho very.",
+  "Tag, save and find that vacation — before it's lost.": "Asio mari-pamantatra, tehirizo ary hitady izay maty masoandro izay — alohan'ny ho very."
 }

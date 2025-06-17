@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Magdagdag ng mga Larawan",
   "Album successfully saved!": "Matagumpay na na-save ang iyong album!",
   "All files successfully uploaded": "Lahat ng mga file ay matagumpay na na-upload",
@@ -295,5 +296,22 @@
   "Open On Android": "Buksan Sa Android",
   "Toggle contacts filter": "I-toggle ang filter ng mga contact",
   "Showing albums with all selected contacts and tags": "Nagpapakita ng mga album na may lahat ng mga napiling contact at tag",
-  "Showing albums with all selected tags": "Nagpapakita ng mga album na may lahat ng mga napiling tag"
+  "Showing albums with all selected tags": "Nagpapakita ng mga album na may lahat ng mga napiling tag",
+  "Clear All": "Linisin Lahat",
+  "6180 Logo": "Logo ng 6180",
+  "Home": "Tahanan",
+  "Visit Home": "Bumisita sa Tahanan",
+  "Visit 6180.io": "Bumisita sa 6180.io",
+  "No tags available": "Walang available na mga tag",
+  "Showing photos with all selected tags": "Nagpapakita ng mga larawan na may lahat ng mga napilin tag",
+  "Valid parameters not found in URL": "Hindi nahanap ang valid na mga parameter sa URL",
+  "Invalid id parameter format": "Hindi wastong format ng id parameter",
+  "Album not found": "Hindi nahanap ang album",
+  "the album owner": "ang may-ari ng album",
+  "Tag, save and find that performance — before it's lost.": "I-tag, i-save at hanapin ang kaarawan iyon — bago ito mawala.",
+  "Tag, save and find that smile — before it's lost.": "I-tag, i-save at hanapin ang ngiting iyon — bago ito mawala.",
+  "Tag, save and find that birthday — before it's lost.": "I-tag, i-save at hanapin ang pagtatanghaling iyon — bago ito mawala.",
+  "Tag, save and find that sunset — before it's lost.": "I-tag, i-save at hanapin ang bakasyon iyon — bago ito mawala.",
+  "Tag, save and find that party — before it's lost.": "I-tag, i-save at hanapin ang party iyon — bago ito mawala.",
+  "Tag, save and find that vacation — before it's lost.": "I-tag, i-save at hanapin ang takipsilim iyon — bago ito mawala."
 }

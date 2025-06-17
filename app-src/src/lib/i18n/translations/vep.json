@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ližata Fotod",
   "Album successfully saved!": "Teidan al'bom om aighoidut satusekahašti!",
   "All files successfully uploaded": "Kaik failad oma joudutadud satusekahas",
@@ -295,5 +296,22 @@
   "Open On Android": "Avata Android:s",
   "Toggle contacts filter": "Vaihta kontaktiden suodin",
   "Showing albums with all selected contacts and tags": "Ozutadas albumid kaikidenke valituidenke kontaktoidenke da tagoidenke",
-  "Showing albums with all selected tags": "Ozutadas albumid kaikidenke valituidenke tagoidenke"
+  "Showing albums with all selected tags": "Ozutadas albumid kaikidenke valituidenke tagoidenke",
+  "Clear All": "Heitta Kaik",
+  "6180 Logo": "6180 Logo",
+  "Home": "Kodi",
+  "Visit Home": "Mene Kodihe",
+  "Visit 6180.io": "Mene 6180.io-he",
+  "No tags available": "Ei ole tegid",
+  "Showing photos with all selected tags": "Ozutab fotoid kaikidenke valičenke tegidke",
+  "Valid parameters not found in URL": "URL:as ei ole löutud kelvollisid parametrid",
+  "Invalid id parameter format": "Vär id parametran format",
+  "Album not found": "Al'bom ei ole löutud",
+  "the album owner": "al'boman pidäi",
+  "Tag, save and find that performance — before it's lost.": "Märičiha, panda da oze nece sündundpäiv — hukates edel.",
+  "Tag, save and find that smile — before it's lost.": "Märičiha, panda da oze nece namaidand — hukates edel.",
+  "Tag, save and find that birthday — before it's lost.": "Märičiha, panda da oze nece ozutuz — hukates edel.",
+  "Tag, save and find that sunset — before it's lost.": "Märičiha, panda da oze nece lonkad — hukates edel.",
+  "Tag, save and find that party — before it's lost.": "Märičiha, panda da oze nece praznikad — hukates edel.",
+  "Tag, save and find that vacation — before it's lost.": "Märičiha, panda da oze nece päivänlaskm — hukates edel."
 }

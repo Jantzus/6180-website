@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Shto Fotografi",
   "Album successfully saved!": "Albumi juaj u ruajt me sukses!",
   "All files successfully uploaded": "Të gjitha skedarët u ngarkuan me sukses",
@@ -295,5 +296,22 @@
   "Open On Android": "Hap Në Android",
   "Toggle contacts filter": "Ndryshoni filtrin e kontakteve",
   "Showing albums with all selected contacts and tags": "Duke treguar albumet me të gjitha kontaktet dhe etiketat e zgjedhura",
-  "Showing albums with all selected tags": "Duke treguar albumet me të gjitha etiketat e zgjedhura"
+  "Showing albums with all selected tags": "Duke treguar albumet me të gjitha etiketat e zgjedhura",
+  "Clear All": "Pastro Të Gjitha",
+  "6180 Logo": "Logo e 6180",
+  "Home": "Kryesore",
+  "Visit Home": "Vizito Shtëpinë",
+  "Visit 6180.io": "Vizito 6180.io",
+  "No tags available": "Asnjë etiketë e disponueshme",
+  "Showing photos with all selected tags": "Shfaqje fotosh me të gjitha etiketat e përzgjedhura",
+  "Valid parameters not found in URL": "Parametra të vlefshëm nuk u gjetën në URL",
+  "Invalid id parameter format": "Format i pavlefshëm i parametrit id",
+  "Album not found": "Albumi nuk u gjet",
+  "the album owner": "pronari i albumit",
+  "Tag, save and find that performance — before it's lost.": "Etiketoni, ruajeni dhe gjeni atë ditëlindje — para se të humbet.",
+  "Tag, save and find that smile — before it's lost.": "Etiketoni, ruajeni dhe gjeni atë buzëqeshje — para se të humbet.",
+  "Tag, save and find that birthday — before it's lost.": "Etiketoni, ruajeni dhe gjeni atë shfaqje — para se të humbet.",
+  "Tag, save and find that sunset — before it's lost.": "Etiketoni, ruajeni dhe gjeni atë pushim — para se të humbet.",
+  "Tag, save and find that party — before it's lost.": "Etiketoni, ruajeni dhe gjeni atë festë — para se të humbet.",
+  "Tag, save and find that vacation — before it's lost.": "Etiketoni, ruajeni dhe gjeni atë perëndim dielli — para se të humbet."
 }

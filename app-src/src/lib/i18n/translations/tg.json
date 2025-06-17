@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Иловаи Аксҳо",
   "Album successfully saved!": "Албоми шумо бомуваффақият нигоҳдорӣ шуд!",
   "All files successfully uploaded": "Ҳамаи файлҳо бомуваффақият боргузорӣ шуданд",
@@ -295,5 +296,22 @@
   "Open On Android": "Дар Android Кушодан",
   "Toggle contacts filter": "Фильтри тамосҳоро тағйир додан",
   "Showing albums with all selected contacts and tags": "Нишон додани албомҳо бо ҳамаи тамосҳо ва тегҳои интихобшуда",
-  "Showing albums with all selected tags": "Нишон додани албомҳо бо ҳамаи тегҳои интихобшуда"
+  "Showing albums with all selected tags": "Нишон додани албомҳо бо ҳамаи тегҳои интихобшуда",
+  "Clear All": "Ҳамаашро Тоза Кунед",
+  "6180 Logo": "Логотипи 6180",
+  "Home": "Хона",
+  "Visit Home": "Ба Хона Гашт",
+  "Visit 6180.io": "Ба 6180.io Гашт",
+  "No tags available": "Ягон тег нест",
+  "Showing photos with all selected tags": "Нишон додани аксҳо бо ҳамаи тегҳои интихобшуда",
+  "Valid parameters not found in URL": "Параметрҳои дуруст дар URL ёфт нашуданд",
+  "Invalid id parameter format": "Формати параметри id нодуруст",
+  "Album not found": "Албум ёфт нашуд",
+  "the album owner": "соҳиби албум",
+  "Tag, save and find that performance — before it's lost.": "Тамға гузоред, захира кунед ва он зодрӯзро ёбед — пеш аз гум шудан.",
+  "Tag, save and find that smile — before it's lost.": "Тамға гузоред, захира кунед ва он табассумро ёбед — пеш аз гум шудан.",
+  "Tag, save and find that birthday — before it's lost.": "Тамға гузоред, захира кунед ва он намоишро ёбед — пеш аз гум шудан.",
+  "Tag, save and find that sunset — before it's lost.": "Тамға гузоред, захира кунед ва он истироҳатро ёбед — пеш аз гум шудан.",
+  "Tag, save and find that party — before it's lost.": "Тамға гузоред, захира кунед ва он ҳафларо ёбед — пеш аз гум шудан.",
+  "Tag, save and find that vacation — before it's lost.": "Тамға гузоред, захира кунед ва он ғурубро ёбед — пеш аз гум шудан."
 }

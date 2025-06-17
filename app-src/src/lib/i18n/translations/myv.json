@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Фотот Поладомс",
   "Album successfully saved!": "Тонь альбомонть ванстовсь парсте!",
   "All files successfully uploaded": "Весе файлатне парсте кучовсть",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-сэ Панжомс",
   "Toggle contacts filter": "Контактнэнь фильтрант полавтомс",
   "Showing albums with all selected contacts and tags": "Невтемс альбомтнэнь ламо контактнэнь ды тегнэнь марто",
-  "Showing albums with all selected tags": "Невтемс альбомтнэнь ламо тегнэнь марто"
+  "Showing albums with all selected tags": "Невтемс альбомтнэнь ламо тегнэнь марто",
+  "Clear All": "Весементь Ёмавтомс",
+  "6180 Logo": "6180 Логотип",
+  "Home": "Куд",
+  "Visit Home": "Кудов Вакска",
+  "Visit 6180.io": "6180.io-в Вакска",
+  "No tags available": "Тевть кевсть арасть",
+  "Showing photos with all selected tags": "Невтеви фотованть валонь сёрмадовкснэ марто",
+  "Valid parameters not found in URL": "URL-сэ келевть параметрат арасть",
+  "Invalid id parameter format": "Аволь виде id параметрань формац",
+  "Album not found": "Альбом апак муе",
+  "the album owner": "альбомонь максыця",
+  "Tag, save and find that performance — before it's lost.": "Тешксчaвтomс, ванфтомс ди корхтанс ся шачема чи — ёмафтомста икеле.",
+  "Tag, save and find that smile — before it's lost.": "Тешксчaвтomс, ванфтомс ди корхтанс ся эрфай — ёмафтомста икеле.",
+  "Tag, save and find that birthday — before it's lost.": "Тешксчaвтomс, ванфтомс ди корхтанс ся театралмат — ёмафтомста икеле.",
+  "Tag, save and find that sunset — before it's lost.": "Тешксчaвтomс, ванфтомс ди корхтанс ся каникулат — ёмафтомста икеле.",
+  "Tag, save and find that party — before it's lost.": "Тешксчaвтomс, ванфтомс ди корхтанс ся покшчи — ёмафтомста икеле.",
+  "Tag, save and find that vacation — before it's lost.": "Тешксчaвтomс, ванфтомс ди корхтанс ся чивалгома — ёмафтомста икеле."
 }

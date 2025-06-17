@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Żid Ritratti",
   "Album successfully saved!": "L-album tiegħek ġie ssejvjat b'suċċess!",
   "All files successfully uploaded": "Il-fajls kollha ttellgħu b'suċċess",
@@ -295,5 +296,22 @@
   "Open On Android": "Iftaħ Fuq Android",
   "Toggle contacts filter": "Ibdel il-filtru tal-kuntatti",
   "Showing albums with all selected contacts and tags": "Qiegħed juri albums b'kontattatti u tags magħżula kollha",
-  "Showing albums with all selected tags": "Qiegħed juri albums b'tags magħżula kollha"
+  "Showing albums with all selected tags": "Qiegħed juri albums b'tags magħżula kollha",
+  "Clear All": "Neħħi Kollox",
+  "6180 Logo": "Logo ta' 6180",
+  "Home": "Dar",
+  "Visit Home": "Żur id-Dar",
+  "Visit 6180.io": "Żur 6180.io",
+  "No tags available": "Ebda tag disponibbli",
+  "Showing photos with all selected tags": "Uri ritratti b'kollox it-tags magħżula",
+  "Valid parameters not found in URL": "Ma nstabux parametri validi fl-URL",
+  "Invalid id parameter format": "Format tal-parametru id invalidu",
+  "Album not found": "Album ma nstab",
+  "the album owner": "is-sid tal-album",
+  "Tag, save and find that performance — before it's lost.": "Tmarkja, issejvja u sib din l-għeluq — qabel ma jitilef.",
+  "Tag, save and find that smile — before it's lost.": "Tmarkja, issejvja u sib dik il-tbissima — qabel ma titilef.",
+  "Tag, save and find that birthday — before it's lost.": "Tmarkja, issejvja u sib dik il-prestazzjoni — qabel ma titilef.",
+  "Tag, save and find that sunset — before it's lost.": "Tmarkja, issejvja u sib dik il-vaganza — qabel ma titilef.",
+  "Tag, save and find that party — before it's lost.": "Tmarkja, issejvja u sib dik il-festa — qabel ma titilef.",
+  "Tag, save and find that vacation — before it's lost.": "Tmarkja, issejvja u sib dan il-mundar — qabel ma jitilef."
 }

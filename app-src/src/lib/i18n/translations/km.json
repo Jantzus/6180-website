@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "បន្ថែមរូបថត",
   "Album successfully saved!": "អាល់បុមរបស់អ្នកត្រូវបានរក្សាទុកដោយជោគជ័យ!",
   "All files successfully uploaded": "ឯកសារទាំងអស់ត្រូវបានផ្ទុកឡើងដោយជោគជ័យ",
@@ -295,5 +296,22 @@
   "Open On Android": "បើកនៅលើ Android",
   "Toggle contacts filter": "ប្ដូរតម្រងទំនាក់ទំនង",
   "Showing albums with all selected contacts and tags": "បង្ហាញអាល់ប៊ុមជាមួយទំនាក់ទំនងនិងប្លាកដែលបានជ្រើសរើសទាំងអស់",
-  "Showing albums with all selected tags": "បង្ហាញអាល់ប៊ុមជាមួយប្លាកដែលបានជ្រើសរើសទាំងអស់"
+  "Showing albums with all selected tags": "បង្ហាញអាល់ប៊ុមជាមួយប្លាកដែលបានជ្រើសរើសទាំងអស់",
+  "Clear All": "លុបទាំងអស់",
+  "6180 Logo": "រូបសញ្ញា6180",
+  "Home": "ទំព័រដើម",
+  "Visit Home": "ទៅទំព័រដើម",
+  "Visit 6180.io": "ទៅ6180.io",
+  "No tags available": "គ្មានស្លាកសម្គាល់ទេ",
+  "Showing photos with all selected tags": "បង្ហាញរូបភាពដែលមានស្លាកសម្គាល់ទាំងអស់ដែលបានជ្រើសរើស",
+  "Valid parameters not found in URL": "រកមិនឃើញប៉ារ៉ាម៉ែត្រត្រឹមត្រូវនៅក្នុង URL ទេ",
+  "Invalid id parameter format": "ទ្រង់ទ្រាយប៉ារ៉ាម៉ែត្រ id មិនត្រឹមត្រូវ",
+  "Album not found": "រកមិនឃើញអាល់ប៊ុម",
+  "the album owner": "ម្ចាស់អាល់ប៊ុម",
+  "Tag, save and find that performance — before it's lost.": "ដាក់ស្លាក រក្សាទុក ហើយស្វែងរកការសម្តែងនោះ — មុនពេលវាបាត់បង់។",
+  "Tag, save and find that smile — before it's lost.": "ដាក់ស្លាក រក្សាទុក ហើយស្វែងរកស្នាមញញឹមនោះ — មុនពេលវាបាត់បង់។",
+  "Tag, save and find that birthday — before it's lost.": "ដាក់ស្លាក រក្សាទុក ហើយស្វែងរកថ្ងៃកំណើតនោះ — មុនពេលវាបាត់បង់។",
+  "Tag, save and find that sunset — before it's lost.": "ដាក់ស្លាក រក្សាទុក ហើយស្វែងរកពេលលិចព្រះអាទិត្យនោះ — មុនពេលវាបាត់បង់។",
+  "Tag, save and find that party — before it's lost.": "ដាក់ស្លាក រក្សាទុក ហើយស្វែងរកពិធីជប់លៀងនោះ — មុនពេលវាបាត់បង់។",
+  "Tag, save and find that vacation — before it's lost.": "ដាក់ស្លាក រក្សាទុក ហើយស្វែងរកវិស្សមកាលនោះ — មុនពេលវាបាត់បង់។"
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Adjuntar Fotografuri",
   "Album successfully saved!": "Vua albumo sucese salvita!",
   "All files successfully uploaded": "Omna arkivi sucesante sendita",
@@ -295,5 +296,22 @@
   "Open On Android": "Apertar En Android",
   "Toggle contacts filter": "Chanjar kontakti-filtro",
   "Showing albums with all selected contacts and tags": "Montrar albumi kun omna selektita kontakti e etiketi",
-  "Showing albums with all selected tags": "Montrar albumi kun omna selektita etiketi"
+  "Showing albums with all selected tags": "Montrar albumi kun omna selektita etiketi",
+  "Clear All": "Efacez Omno",
+  "6180 Logo": "Logo di 6180",
+  "Home": "Hemo",
+  "Visit Home": "Irez a Hemo",
+  "Visit 6180.io": "Irez a 6180.io",
+  "No tags available": "Nula etiketi existas",
+  "Showing photos with all selected tags": "Montranta fotografuri kun omna selektita etiketi",
+  "Valid parameters not found in URL": "Valida parametri ne trovesis en URL",
+  "Invalid id parameter format": "Nevalida formato di parametro id",
+  "Album not found": "Album ne trovita",
+  "the album owner": "la proprietero di l'albumo",
+  "Tag, save and find that performance — before it's lost.": "Etiketez, konservez ed trovez ta prezentado — antee ol perdesos.",
+  "Tag, save and find that smile — before it's lost.": "Etiketez, konservez ed trovez ta rideto — antee ol perdesos.",
+  "Tag, save and find that birthday — before it's lost.": "Etiketez, konservez ed trovez ta naskotago — antee ol perdesos.",
+  "Tag, save and find that sunset — before it's lost.": "Etiketez, konservez ed trovez ta sunokado — antee ol perdesos.",
+  "Tag, save and find that party — before it's lost.": "Etiketez, konservez ed trovez ta festo — antee ol perdesos.",
+  "Tag, save and find that vacation — before it's lost.": "Etiketez, konservez ed trovez ta libertempo — antee ol perdesos."
 }

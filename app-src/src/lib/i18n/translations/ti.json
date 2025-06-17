@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ምስሊታት ወስኽ",
   "Album successfully saved!": "ናይ ስእልታት ኣልበምካ ብዓወት ተዓቂቡ!",
   "All files successfully uploaded": "ኩሎም ፋይላት ብዓወት ተሰቒሎም",
@@ -295,5 +296,22 @@
   "Open On Android": "ኣብ Android ክፈት",
   "Toggle contacts filter": "የእውቂያዎች ማጣሪያ ቀይር",
   "Showing albums with all selected contacts and tags": "ንኹሎም ዝተመረጹ እውቂያታትን ተግባራትን ዘለዎም ኣልበማት ኣርእዩ",
-  "Showing albums with all selected tags": "ንኹሎም ዝተመረጹ ተግባራት ዘለዎም ኣልበማት ኣርእዩ"
+  "Showing albums with all selected tags": "ንኹሎም ዝተመረጹ ተግባራት ዘለዎም ኣልበማት ኣርእዩ",
+  "Clear All": "ቅላል ኩሉ",
+  "6180 Logo": "6180 ሎጎ",
+  "Home": "ቤት",
+  "Visit Home": "ገዛ ኣትዉ",
+  "Visit 6180.io": "6180.io ኣትዉ",
+  "No tags available": "ምንም ትግሄ የለም",
+  "Showing photos with all selected tags": "ዝተመረጹ ብዙሕ ትግሄታት ዘለዎም ስእልታት ምርኢ",
+  "Valid parameters not found in URL": "ኣብ URL ዝግባእ ዕላማታት ኣይተረኽቡን",
+  "Invalid id parameter format": "ርጉጽ ዘይኮነ id ፓራሜተር ቅርጺ",
+  "Album not found": "አልበም አልተረኽበን",
+  "the album owner": "ባዕል ዓዲ አልበም",
+  "Tag, save and find that performance — before it's lost.": "ዕላማ ግበሩ፣ ሓልዉ እናተሓላለዩ ኣብቲ ዕለት ልደት ርከቡ — ቅድሚ ምጥፋእ።",
+  "Tag, save and find that smile — before it's lost.": "ዕላማ ግበሩ፣ ሓልዉ እናተሓላለዩ ኣብቲ ሓጎስ ርከቡ — ቅድሚ ምጥፋእ።",
+  "Tag, save and find that birthday — before it's lost.": "ዕላማ ግበሩ፣ ሓልዉ እናተሓላለዩ ኣብቲ ኣቐራርባ ርከቡ — ቅድሚ ምጥፋእ።",
+  "Tag, save and find that sunset — before it's lost.": "ዕላማ ግበሩ፣ ሓልዉ እናተሓላለዩ ኣብቲ እረፍቲ ርከቡ — ቅድሚ ምጥፋእ።",
+  "Tag, save and find that party — before it's lost.": "ዕላማ ግበሩ፣ ሓልዉ እናተሓላለዩ ኣብቲ በዓል ርከቡ — ቅድሚ ምጥፋእ።",
+  "Tag, save and find that vacation — before it's lost.": "ዕላማ ግበሩ፣ ሓልዉ እናተሓላለዩ ኣብቲ ፀሓይ ምጥፋእ ርከቡ — ቅድሚ ምጥፋእ።"
 }

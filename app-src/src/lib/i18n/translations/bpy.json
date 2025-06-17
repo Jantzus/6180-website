@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ছবি যোগ করো",
   "Album successfully saved!": "তোমার অ্যালবাম সফলভাবে সংরক্ষণ করা হইছে!",
   "All files successfully uploaded": "সমস্ত ফাইল সফলভাবে আপলোড করা অয়নি",
@@ -295,5 +296,22 @@
   "Open On Android": "Android এহান খোল",
   "Toggle contacts filter": "যোগাযোগর ফিল্টার পাল্টান",
   "Showing albums with all selected contacts and tags": "আসিলা বাছরা যোগাযোগ বারো ট্যাগর লগে অ্যালবাম দেহাদেতারা",
-  "Showing albums with all selected tags": "আসিলা বাছরা ট্যাগর লগে অ্যালবাম দেহাদেতারা"
+  "Showing albums with all selected tags": "আসিলা বাছরা ট্যাগর লগে অ্যালবাম দেহাদেতারা",
+  "Clear All": "সমস্ত মুছে ফেলাই",
+  "6180 Logo": "6180 লোগো",
+  "Home": "ঘর",
+  "Visit Home": "ঘরে যান",
+  "Visit 6180.io": "6180.io-তে যান",
+  "No tags available": "কোন ট্যাগ নাই",
+  "Showing photos with all selected tags": "সব বাছাইকরা ট্যাগ লগে ছবি দেখানো হইতেছে",
+  "Valid parameters not found in URL": "URL এর মাইদে বৈধ প্যারামিটার পাওয়া যায়নি",
+  "Invalid id parameter format": "অবৈধ আইডি প্যারামিটার ফরম্যাট",
+  "Album not found": "অ্যালবাম পাওয়া নগেল",
+  "the album owner": "অ্যালবামের মালিক",
+  "Tag, save and find that performance — before it's lost.": "ট্যাগ করুন, সেভ করুন বারো ইতা পারফরমেন্স বিগাইয়ের পাদুন — আরাকুইয়া যাগর আগে।",
+  "Tag, save and find that smile — before it's lost.": "ট্যাগ করুন, সেভ করুন বারো ইতা হাসি বিগাইয়ের পাদুন — আরাকুইয়া যাগর আগে।",
+  "Tag, save and find that birthday — before it's lost.": "ট্যাগ করুন, সেভ করুন বারো ইতা জন্মদিন বিগাইয়ের পাদুন — আরাকুইয়া যাগর আগে।",
+  "Tag, save and find that sunset — before it's lost.": "ট্যাগ করুন, সেভ করুন বারো ইতা সূর্যাস্ত বিগাইয়ের পাদুন — আরাকুইয়া যাগর আগে।",
+  "Tag, save and find that party — before it's lost.": "ট্যাগ করুন, সেভ করুন বারো ইতা পার্টি বিগাইয়ের পাদুন — আরাকুইয়া যাগর আগে।",
+  "Tag, save and find that vacation — before it's lost.": "ট্যাগ করুন, সেভ করুন বারো ইতা ছুটি বিগাইয়ের পাদুন — আরাকুইয়া যাগর আগে।"
 }

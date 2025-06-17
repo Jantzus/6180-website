@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "הוסף תמונות",
   "Album successfully saved!": "האלבום שלך נשמר בהצלחה!",
   "All files successfully uploaded": "כל הקבצים הועלו בהצלחה",
@@ -295,5 +296,22 @@
   "Open On Android": "פתח ב-Android",
   "Toggle contacts filter": "החלף מסנן אנשי קשר",
   "Showing albums with all selected contacts and tags": "מציג אלבומים עם כל אנשי הקשר והתגיות שנבחרו",
-  "Showing albums with all selected tags": "מציג אלבומים עם כל התגיות שנבחרו"
+  "Showing albums with all selected tags": "מציג אלבומים עם כל התגיות שנבחרו",
+  "Clear All": "נקה הכל",
+  "6180 Logo": "לוגו 6180",
+  "Home": "בית",
+  "Visit Home": "בקר בעמוד הבית",
+  "Visit 6180.io": "בקר ב-6180.io",
+  "No tags available": "אין תגיות זמינות",
+  "Showing photos with all selected tags": "מציג תמונות עם כל התגיות הנבחרות",
+  "Valid parameters not found in URL": "פרמטרים תקפים לא נמצאו ב-URL",
+  "Invalid id parameter format": "פורמט פרמטר זיהוי לא תקף",
+  "Album not found": "האלבום לא נמצא",
+  "the album owner": "בעל האלבום",
+  "Tag, save and find that performance — before it's lost.": "תייגו, שמרו ומצאו את ההופעה ההיא — לפני שהיא תיאבד.",
+  "Tag, save and find that smile — before it's lost.": "תייגו, שמרו ומצאו את החיוך ההוא — לפני שהוא יאבד.",
+  "Tag, save and find that birthday — before it's lost.": "תייגו, שמרו ומצאו את יום ההולדת ההוא — לפני שהוא יאבד.",
+  "Tag, save and find that sunset — before it's lost.": "תייגו, שמרו ומצאו את השקיעה ההיא — לפני שהיא תאבד.",
+  "Tag, save and find that party — before it's lost.": "תייגו, שמרו ומצאו את המסיבה ההיא — לפני שהיא תאבד.",
+  "Tag, save and find that vacation — before it's lost.": "תייגו, שמרו ומצאו את החופשה ההיא — לפני שהיא תאבד."
 }

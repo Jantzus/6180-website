@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Wêneyan Lê Zêde Bike",
   "Album successfully saved!": "Albûma te bi serkeftî hat tomarkirin!",
   "All files successfully uploaded": "Hemû pel bi serkeftî hatin barkirin",
@@ -295,5 +296,22 @@
   "Open On Android": "Li Android-ê Veke",
   "Toggle contacts filter": "Parzûna têkiliyan biguhêre",
   "Showing albums with all selected contacts and tags": "Albûmên bi hemû têkiliyan û nîşanên bijartî nîşan didin",
-  "Showing albums with all selected tags": "Albûmên bi hemû nîşanên bijartî nîşan didin"
+  "Showing albums with all selected tags": "Albûmên bi hemû nîşanên bijartî nîşan didin",
+  "Clear All": "Hemû Paqij Bike",
+  "6180 Logo": "Logoya 6180",
+  "Home": "Mal",
+  "Visit Home": "Serdana Malê",
+  "Visit 6180.io": "Serdana 6180.io",
+  "No tags available": "Ti tag tune",
+  "Showing photos with all selected tags": "Nîşandana wêneyan bi hemû tagên hilbijartî",
+  "Valid parameters not found in URL": "Parametreyên derbasdar li URL nehatin dîtin",
+  "Invalid id parameter format": "Formata parametreya id ya şaş",
+  "Album not found": "Album nehate dîtin",
+  "the album owner": "xwedî yê albumê",
+  "Tag, save and find that performance — before it's lost.": "Nîşan bike, tomar bike û ew rojbûnê bibîne — berî ku winda bibe.",
+  "Tag, save and find that smile — before it's lost.": "Nîşan bike, tomar bike û ew kenîn bibîne — berî ku winda bibe.",
+  "Tag, save and find that birthday — before it's lost.": "Nîşan bike, tomar bike û ew performansa bibîne — berî ku winda bibe.",
+  "Tag, save and find that sunset — before it's lost.": "Nîşan bike, tomar bike û ew betlaneyê bibîne — berî ku winda bibe.",
+  "Tag, save and find that party — before it's lost.": "Nîşan bike, tomar bike û ew partiyê bibîne — berî ku winda bibe.",
+  "Tag, save and find that vacation — before it's lost.": "Nîşan bike, tomar bike û ew rojava bibîne — berî ku winda bibe."
 }

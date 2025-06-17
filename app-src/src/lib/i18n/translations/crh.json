@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotolar Eklemek",
   "Album successfully saved!": "Albomıñız muvafaqiyetnen saqlap tutuldı!",
   "All files successfully uploaded": "Cümle dosyeler muvafaqiyetnen yüklengen",
@@ -295,5 +296,22 @@
   "Open On Android": "Android'ta Aç",
   "Toggle contacts filter": "Kontakt filtresini değiştir",
   "Showing albums with all selected contacts and tags": "Saýlangan barı kontaktlar ve etiketler ile albomlarnı köster",
-  "Showing albums with all selected tags": "Saýlangan barı etiketler ile albomlarnı köster"
+  "Showing albums with all selected tags": "Saýlangan barı etiketler ile albomlarnı köster",
+  "Clear All": "Episini Sil",
+  "6180 Logo": "6180 Logosu",
+  "Home": "Ev",
+  "Visit Home": "Ev Kelüv",
+  "Visit 6180.io": "6180.io Kelüv",
+  "No tags available": "İç bir etiket yoq",
+  "Showing photos with all selected tags": "Saylanğan bar etiketler birle suretlerni kösterme",
+  "Valid parameters not found in URL": "URL içinde keçerli parametreler tapılmadı",
+  "Invalid id parameter format": "Yañış id parametr formatı",
+  "Album not found": "Albom tapılmadı",
+  "the album owner": "albom saibı",
+  "Tag, save and find that performance — before it's lost.": "Etiket et, saqla em şu gösteriyi tap — zayi olmadan evel.",
+  "Tag, save and find that smile — before it's lost.": "Etiket et, saqla em şu tebessümü tap — zayi olmadan evel.",
+  "Tag, save and find that birthday — before it's lost.": "Etiket et, saqla em şu doğum gününi tap — zayi olmadan evel.",
+  "Tag, save and find that sunset — before it's lost.": "Etiket et, saqla em şu batışı tap — zayi olmadan evel.",
+  "Tag, save and find that party — before it's lost.": "Etiket et, saqla em şu partiyi tap — zayi olmadan evel.",
+  "Tag, save and find that vacation — before it's lost.": "Etiket et, saqla em şu tatili tap — zayi olmadan evel."
 }

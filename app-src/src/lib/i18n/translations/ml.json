@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ഫോട്ടോകൾ ചേർക്കുക",
   "Album successfully saved!": "നിങ്ങളുടെ ആൽബം വിജയകരമായി സംരക്ഷിച്ചു!",
   "All files successfully uploaded": "എല്ലാ ഫയലുകളും വിജയകരമായി അപ്‌ലോഡ് ചെയ്തു",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-ൽ തുറക്കുക",
   "Toggle contacts filter": "കോൺടാക്റ്റ് ഫിൽറ്റർ ടോഗിൾ ചെയ്യുക",
   "Showing albums with all selected contacts and tags": "തിരഞ്ഞെടുത്ത എല്ലാ കോൺടാക്റ്റുകളും ടാഗുകളും ഉള്ള ആൽബങ്ങൾ കാണിക്കുന്നു",
-  "Showing albums with all selected tags": "തിരഞ്ഞെടുത്ത എല്ലാ ടാഗുകളും ഉള്ള ആൽബങ്ങൾ കാണിക്കുന്നു"
+  "Showing albums with all selected tags": "തിരഞ്ഞെടുത്ത എല്ലാ ടാഗുകളും ഉള്ള ആൽബങ്ങൾ കാണിക്കുന്നു",
+  "Clear All": "എല്ലാം മായ്ക്കുക",
+  "6180 Logo": "6180 ലോഗോ",
+  "Home": "ഹോം",
+  "Visit Home": "ഹോം സന്ദർശിക്കുക",
+  "Visit 6180.io": "6180.io സന്ദർശിക്കുക",
+  "No tags available": "ടാഗുകളൊന്നുമില്ല",
+  "Showing photos with all selected tags": "തിരഞ്ഞെടുത്ത എല്ലാ ടാഗുകളുമായി ഫോട്ടോകൾ കാണിക്കുന്നു",
+  "Valid parameters not found in URL": "URL-ൽ സാധുവായ പാരാമീറ്ററുകൾ കണ്ടെത്തിയില്ല",
+  "Invalid id parameter format": "അസാധുവായ id പരാമീറ്റർ ഫോർമാറ്റ്",
+  "Album not found": "ആൽബം കണ്ടെത്തിയില്ല",
+  "the album owner": "ആൽബത്തിന്റെ ഉടമ",
+  "Tag, save and find that performance — before it's lost.": "ടാഗ് ചെയ്യുക, സേവ് ചെയ്യുക, ആ ജന്മദിനം കണ്ടെത്തുക — നഷ്ടമാകുന്നതിന് മുമ്പ്.",
+  "Tag, save and find that smile — before it's lost.": "ടാഗ് ചെയ്യുക, സേവ് ചെയ്യുക, ആ പുഞ്ചിരി കണ്ടെത്തുക — നഷ്ടമാകുന്നതിന് മുമ്പ്.",
+  "Tag, save and find that birthday — before it's lost.": "ടാഗ് ചെയ്യുക, സേവ് ചെയ്യുക, ആ പ്രകടനം കണ്ടെത്തുക — നഷ്ടമാകുന്നതിന് മുമ്പ്.",
+  "Tag, save and find that sunset — before it's lost.": "ടാഗ് ചെയ്യുക, സേവ് ചെയ്യുക, ആ അവധിക്കാലം കണ്ടെത്തുക — നഷ്ടമാകുന്നതിന് മുമ്പ്.",
+  "Tag, save and find that party — before it's lost.": "ടാഗ് ചെയ്യുക, സേവ് ചെയ്യുക, ആ പാർട്ടി കണ്ടെത്തുക — നഷ്ടമാകുന്നതിന് മുമ്പ്.",
+  "Tag, save and find that vacation — before it's lost.": "ടാഗ് ചെയ്യുക, സേവ് ചെയ്യുക, ആ സൂര്യാസ്തമയം കണ്ടെത്തുക — നഷ്ടമാകുന്നതിന് മുമ്പ്."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ajouter des Photos",
   "Album successfully saved!": "Vot'e album a té saûvé aveu réussite!",
   "All files successfully uploaded": "Tous les fichiés sont t'aeu tchèrtchis aveu réussite",
@@ -295,5 +296,22 @@
   "Open On Android": "Ouvrir Dans Android",
   "Toggle contacts filter": "Changi l'filtreu d'contacts",
   "Showing albums with all selected contacts and tags": "Môntre d'albums avé touts les contacts et étiquettes chouésis",
-  "Showing albums with all selected tags": "Môntre d'albums avé toutes les étiquettes chouésis"
+  "Showing albums with all selected tags": "Môntre d'albums avé toutes les étiquettes chouésis",
+  "Clear All": "Netti Tout",
+  "6180 Logo": "Logo dé 6180",
+  "Home": "Amène",
+  "Visit Home": "Aller à l'Amène",
+  "Visit 6180.io": "Aller à 6180.io",
+  "No tags available": "Pon d'êtitchettes",
+  "Showing photos with all selected tags": "Montrer portraits avec toutes les êtitchettes chouaîsies",
+  "Valid parameters not found in URL": "Pon d'paramètres valides tréthés dans l'URL",
+  "Invalid id parameter format": "Format d'paramètre id pas vallide",
+  "Album not found": "Album pouent tréthé",
+  "the album owner": "l'propriétaithe dé l'album",
+  "Tag, save and find that performance — before it's lost.": "Marque, sauv'garde et trouve chette naîssance — d'vant qu'est pèrdue.",
+  "Tag, save and find that smile — before it's lost.": "Marque, sauv'garde et trouve chette souorire — d'vant qu'est pèrdue.",
+  "Tag, save and find that birthday — before it's lost.": "Marque, sauv'garde et trouve chette prestation — d'vant qu'est pèrdue.",
+  "Tag, save and find that sunset — before it's lost.": "Marque, sauv'garde et trouve chettes vacances — d'vant qu'elles sont pèrdues.",
+  "Tag, save and find that party — before it's lost.": "Marque, sauv'garde et trouve chette fièrte — d'vant qu'est pèrdue.",
+  "Tag, save and find that vacation — before it's lost.": "Marque, sauv'garde et trouve chette couchée d'solé — d'vant qu'est pèrdue."
 }

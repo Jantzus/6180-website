@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Gionté Fòto",
   "Album successfully saved!": "Tò album a l'é stàit salvà con sucess!",
   "All files successfully uploaded": "Tùit ij file carià con sucess",
@@ -295,5 +296,22 @@
   "Open On Android": "Àrvë An Android",
   "Toggle contacts filter": "Cangia filtro ëd contàt",
   "Showing albums with all selected contacts and tags": "A mostra j'album con tùit ij contàt e ëd tag selessionà",
-  "Showing albums with all selected tags": "A mostra j'album con tùit ëd tag selessionà"
+  "Showing albums with all selected tags": "A mostra j'album con tùit ëd tag selessionà",
+  "Clear All": "Neta Tùt",
+  "6180 Logo": "Logo ëd 6180",
+  "Home": "Cà",
+  "Visit Home": "Visité la Casa",
+  "Visit 6180.io": "Visité 6180.io",
+  "No tags available": "Gnun tag disponìbil",
+  "Showing photos with all selected tags": "Mostré fòto con tùit ij tag selessionà",
+  "Valid parameters not found in URL": "Gnun paramèter vàlid trovà ant l'URL",
+  "Invalid id parameter format": "Formà ëd parameter id nen valid",
+  "Album not found": "Album pa trovà",
+  "the album owner": "ël proprietari ëd l'album",
+  "Tag, save and find that performance — before it's lost.": "Eticheta, salva e treuva col cumplean — prima che as perde.",
+  "Tag, save and find that smile — before it's lost.": "Eticheta, salva e treuva col sorriso — prima che as perde.",
+  "Tag, save and find that birthday — before it's lost.": "Eticheta, salva e treuva cola prestassion — prima che as perde.",
+  "Tag, save and find that sunset — before it's lost.": "Eticheta, salva e treuva cole vacanse — prima che as perde.",
+  "Tag, save and find that party — before it's lost.": "Eticheta, salva e treuva cola festa — prima che as perde.",
+  "Tag, save and find that vacation — before it's lost.": "Eticheta, salva e treuva col tramont — prima che as perde."
 }

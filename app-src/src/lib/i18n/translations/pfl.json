@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Bilder nzufiesche",
   "Album successfully saved!": "Doi Album isch erfolgreich gschbaischert worre!",
   "All files successfully uploaded": "Alle Dateie erfolgreich nuffglade",
@@ -295,5 +296,22 @@
   "Open On Android": "Uf Android Uffmache",
   "Toggle contacts filter": "Kontakt Filter umschalte",
   "Showing albums with all selected contacts and tags": "Zeigt Alben mit alle gwehlte Kontakte un Tags",
-  "Showing albums with all selected tags": "Zeigt Alben mit alle gwehlte Tags"
+  "Showing albums with all selected tags": "Zeigt Alben mit alle gwehlte Tags",
+  "Clear All": "Alles Wegmache",
+  "6180 Logo": "6180 Logo",
+  "Home": "Hääm",
+  "Visit Home": "Hääm Geh",
+  "Visit 6180.io": "6180.io Geh",
+  "No tags available": "Kä Tags do",
+  "Showing photos with all selected tags": "Zeish Bilder mit alle usgsuchte Tags",
+  "Valid parameters not found in URL": "Kä güldiche Parameter im URL gfunne",
+  "Invalid id parameter format": "Ungültisch ID Parameter Format",
+  "Album not found": "Album net gfunne",
+  "the album owner": "da Album Besitzer",
+  "Tag, save and find that performance — before it's lost.": "Zeichä, spare un suchä de Geburtstag — eb r'wegkummt.",
+  "Tag, save and find that smile — before it's lost.": "Zeichä, spare un suchä des Lache — eb s'wegkummt.",
+  "Tag, save and find that birthday — before it's lost.": "Zeichä, spare un suchä des Uffiera — eb s'wegkummt.",
+  "Tag, save and find that sunset — before it's lost.": "Zeichä, spare un suchä de Urlaub — eb r'wegkummt.",
+  "Tag, save and find that party — before it's lost.": "Zeichä, spare un suchä des Fest — eb s'wegkummt.",
+  "Tag, save and find that vacation — before it's lost.": "Zeichä, spare un suchä de Sunnenunnergang — eb r'wegkummt."
 }

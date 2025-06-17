@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fényképek hozzáadása",
   "Album successfully saved!": "Az album sikeresen elmentve!",
   "All files successfully uploaded": "Az összes fájl sikeresen feltöltve",
@@ -295,5 +296,22 @@
   "Open On Android": "Megnyitás Android-on",
   "Toggle contacts filter": "Névjegy-szűrő váltás",
   "Showing albums with all selected contacts and tags": "Albumok megjelenítése minden kiválasztott névjeggyel és címkével",
-  "Showing albums with all selected tags": "Albumok megjelenítése minden kiválasztott címkével"
+  "Showing albums with all selected tags": "Albumok megjelenítése minden kiválasztott címkével",
+  "Clear All": "Minden Törlése",
+  "6180 Logo": "6180 Logó",
+  "Home": "Főoldal",
+  "Visit Home": "Főoldal Meglátogatása",
+  "Visit 6180.io": "6180.io Meglátogatása",
+  "No tags available": "Nincsenek elérhető címkék",
+  "Showing photos with all selected tags": "Fényképek megjelenítése az összes kiválasztott címkével",
+  "Valid parameters not found in URL": "Érvényes paraméterek nem találhatók az URL-ben",
+  "Invalid id parameter format": "Érvénytelen azonosító paraméter formátum",
+  "Album not found": "Az album nem található",
+  "the album owner": "az album tulajdonosa",
+  "Tag, save and find that performance — before it's lost.": "Címkézd, mentsd és találd meg azt az előadást — mielőtt elvész.",
+  "Tag, save and find that smile — before it's lost.": "Címkézd, mentsd és találd meg azt a mosolyt — mielőtt elvész.",
+  "Tag, save and find that birthday — before it's lost.": "Címkézd, mentsd és találd meg azt a születésnapot — mielőtt elvész.",
+  "Tag, save and find that sunset — before it's lost.": "Címkézd, mentsd és találd meg azt a naplementét — mielőtt elvész.",
+  "Tag, save and find that party — before it's lost.": "Címkézd, mentsd és találd meg azt a bulit — mielőtt elvész.",
+  "Tag, save and find that vacation — before it's lost.": "Címkézd, mentsd és találd meg azt a nyaralást — mielőtt elvész."
 }

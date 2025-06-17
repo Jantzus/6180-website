@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "تصاویر شامل کریں",
   "Album successfully saved!": "آپ کی البم کامیابی سے محفوظ کر لی گئی ہے!",
   "All files successfully uploaded": "تمام فائلیں کامیابی سے اپ لوڈ ہو گئیں",
@@ -295,5 +296,22 @@
   "Open On Android": "Android میں کھولیں",
   "Toggle contacts filter": "رابطوں کا فلٹر ٹوگل کریں",
   "Showing albums with all selected contacts and tags": "تمام منتخب شدہ رابطوں اور ٹیگز کے ساتھ البمز دکھا رہا ہے",
-  "Showing albums with all selected tags": "تمام منتخب شدہ ٹیگز کے ساتھ البمز دکھا رہا ہے"
+  "Showing albums with all selected tags": "تمام منتخب شدہ ٹیگز کے ساتھ البمز دکھا رہا ہے",
+  "Clear All": "سب صاف کریں",
+  "6180 Logo": "6180 لوگو",
+  "Home": "گھر",
+  "Visit Home": "گھر جائیں",
+  "Visit 6180.io": "6180.io جائیں",
+  "No tags available": "کوئی ٹیگ دستیاب نہیں",
+  "Showing photos with all selected tags": "تمام منتخب کردہ ٹیگز کے ساتھ تصاویر دکھانا",
+  "Valid parameters not found in URL": "URL میں صحیح پیرامیٹر نہیں ملے",
+  "Invalid id parameter format": "غلط id پیرامیٹر فارمیٹ",
+  "Album not found": "البم نہیں ملا",
+  "the album owner": "البم کا مالک",
+  "Tag, save and find that performance — before it's lost.": "ٹیگ کریں، محفوظ کریں اور اس سالگرہ کو تلاش کریں — کھونے سے پہلے۔",
+  "Tag, save and find that smile — before it's lost.": "ٹیگ کریں، محفوظ کریں اور اس مسکراہٹ کو تلاش کریں — کھونے سے پہلے۔",
+  "Tag, save and find that birthday — before it's lost.": "ٹیگ کریں، محفوظ کریں اور اس پرفارمنس کو تلاش کریں — کھونے سے پہلے۔",
+  "Tag, save and find that sunset — before it's lost.": "ٹیگ کریں، محفوظ کریں اور اس چھٹی کو تلاش کریں — کھونے سے پہلے۔",
+  "Tag, save and find that party — before it's lost.": "ٹیگ کریں، محفوظ کریں اور اس پارٹی کو تلاش کریں — کھونے سے پہلے۔",
+  "Tag, save and find that vacation — before it's lost.": "ٹیگ کریں، محفوظ کریں اور اس غروب آفتاب کو تلاش کریں — کھونے سے پہلے۔"
 }

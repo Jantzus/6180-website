@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Şəkillər Əlavə Et",
   "Album successfully saved!": "Albomunuz uğurla saxlanıldı!",
   "All files successfully uploaded": "Bütün fayllar uğurla yükləndi",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-də Aç",
   "Toggle contacts filter": "Əlaqə filtrini dəyiş",
   "Showing albums with all selected contacts and tags": "Bütün seçilmiş əlaqələr və etiketlərlə albomları göstərmək",
-  "Showing albums with all selected tags": "Bütün seçilmiş etiketlərlə albomları göstərmək"
+  "Showing albums with all selected tags": "Bütün seçilmiş etiketlərlə albomları göstərmək",
+  "Clear All": "Hamısını Silin",
+  "6180 Logo": "6180 Loqosu",
+  "Home": "Əsas",
+  "Visit Home": "Əsas Səhifəyə Get",
+  "Visit 6180.io": "6180.io-a Get",
+  "No tags available": "Heç bir teq mövcud deyil",
+  "Showing photos with all selected tags": "Bütün seçilmiş teqlərlə fotoşəkillər göstərilir",
+  "Valid parameters not found in URL": "URL-də etibarlı parametrlər tapılmadı",
+  "Invalid id parameter format": "Yanlış id parametr formatı",
+  "Album not found": "Albom tapılmadı",
+  "the album owner": "albom sahibi",
+  "Tag, save and find that performance — before it's lost.": "Etiket edin, yadda saxlayın və həmin performansı tapın — itirmədən əvvəl.",
+  "Tag, save and find that smile — before it's lost.": "Etiket edin, yadda saxlayın və həmin təbəssümü tapın — itirmədən əvvəl.",
+  "Tag, save and find that birthday — before it's lost.": "Etiket edin, yadda saxlayın və həmin ad günü tapın — itirmədən əvvəl.",
+  "Tag, save and find that sunset — before it's lost.": "Etiket edin, yadda saxlayın və həmin gün batımını tapın — itirmədən əvvəl.",
+  "Tag, save and find that party — before it's lost.": "Etiket edin, yadda saxlayın və həmin partiyanı tapın — itirmədən əvvəl.",
+  "Tag, save and find that vacation — before it's lost.": "Etiket edin, yadda saxlayın və həmin tətili tapın — itirmədən əvvəl."
 }

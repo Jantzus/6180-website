@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fi Awọn Foto si",
   "Album successfully saved!": "Albumin naka ya ajiye da nasara!",
   "All files successfully uploaded": "Duk fayiloli sun haɗu da nasarar",
@@ -295,5 +296,22 @@
   "Open On Android": "Gbere Na Android",
   "Toggle contacts filter": "Ngyeer kontakt filter",
   "Showing albums with all selected contacts and tags": "Har album nii kontakt putta tag anwa me kpii ngyeer nyi",
-  "Showing albums with all selected tags": "Har album nii tag anwa me kpii ngyeer nyi"
+  "Showing albums with all selected tags": "Har album nii tag anwa me kpii ngyeer nyi",
+  "Clear All": "Gbe Na Cile",
+  "6180 Logo": "Logo 6180",
+  "Home": "Kura",
+  "Visit Home": "We Wan Ma",
+  "Visit 6180.io": "6180.io Wan",
+  "No tags available": "Ba tags ba samu ba",
+  "Showing photos with all selected tags": "Ba sigi pictures lawa ba tags ba lanu ba",
+  "Valid parameters not found in URL": "Ba parameter ba kore ba ba to ba URL",
+  "Invalid id parameter format": "Id parameter format ba daidai ba",
+  "Album not found": "Ba album ba samu ba",
+  "the album owner": "mai album",
+  "Tag, save and find that performance — before it's lost.": "Tag kere, mana ka ture doro akere buzasi — amana bo.",
+  "Tag, save and find that smile — before it's lost.": "Tag kere, mana ka ture doro akakere — amana bo.",
+  "Tag, save and find that birthday — before it's lost.": "Tag kere, mana ka turedoro akere — amana bo.",
+  "Tag, save and find that sunset — before it's lost.": "Tag kere, mana ka ture doro akerewu rechirangere — amana bo.",
+  "Tag, save and find that party — before it's lost.": "Tag kere, mana ka ture doro akerefoyuru — amana bo.",
+  "Tag, save and find that vacation — before it's lost.": "Tag kere, mana ka ture doro akerekomasu — amana bo."
 }

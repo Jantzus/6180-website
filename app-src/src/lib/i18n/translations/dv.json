@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ފޮޓޯ އިތުރުކުރާ",
   "Album successfully saved!": "ތިޔަބޭފުޅާގެ އެލްބަމް ކާމިޔާބުކަމާއެކު ރައްކާކުރެވިއްޖެ!",
   "All files successfully uploaded": "ހުރިހާ ފައިލްތައް ކާމިޔާބުކަމާއެކު އަޕްލޯޑް ކުރެވިއްޖެ",
@@ -295,5 +296,22 @@
   "Open On Android": "Android އެއް ހުޅުވާލާ",
   "Toggle contacts filter": "ގުޅުނުތަކުގެ ފިލްޓަރު ބަދަލުކުރުން",
   "Showing albums with all selected contacts and tags": "ހުރިހާ އިޚްތިޔާރުކުރެވުނު ގުޅުންތަކާއި ޓެގްތަކާ އެކު އެލްބަމްތައް ދައްކަން",
-  "Showing albums with all selected tags": "ހުރިހާ އިޚްތިޔާރުކުރެވުނު ޓެގްތަކާ އެކު އެލްބަމްތައް ދައްކަން"
+  "Showing albums with all selected tags": "ހުރިހާ އިޚްތިޔާރުކުރެވުނު ޓެގްތަކާ އެކު އެލްބަމްތައް ދައްކަން",
+  "Clear All": "ހުރިހާ އެއްޗެއް ފޮހެލާ",
+  "6180 Logo": "6180 ލޯގޯ",
+  "Home": "ހޯމް",
+  "Visit Home": "ހޯމް ދައްކާ",
+  "Visit 6180.io": "6180.io ދައްކާ",
+  "No tags available": "ޓެގެއް ނެތް",
+  "Showing photos with all selected tags": "ހުރިހާ ހޮވާލި ޓެގު އެކު ފޮޓޯ ދައްކަވަނީ",
+  "Valid parameters not found in URL": "URL ގައި ސައްޙަ ޕެރެމީޓަރެއް ނުހުރެ",
+  "Invalid id parameter format": "ގައްޖޫ އައިޑީ ޕެރަމީޓަރ ފޯމެޓް",
+  "Album not found": "އެލްބަމެއް ނުފެނުނު",
+  "the album owner": "އެލްބަމުގެ މާލިކު",
+  "Tag, save and find that performance — before it's lost.": "ޓެގް ކުރާށެވެ، ސޭވް ކުރާށެވެ އަދި އެ ޕާފޯމަންސް ހޯދާށެވެ — އެއް ގެއްލެމުން ކުރިން।",
+  "Tag, save and find that smile — before it's lost.": "ޓެގް ކުރާށެވެ، ސޭވް ކުރާށެވެ އަދި އެ މުސްކުޅިއްޖެހުން ހޯދާށެވެ — އެއް ގެއްލެމުން ކުރިން।",
+  "Tag, save and find that birthday — before it's lost.": "ޓެގް ކުރާށެވެ، ސޭވް ކުރާށެވެ އަދި އެ އުފަންދުވަސް ހޯދާށެވެ — އެއް ގެއްލެމުން ކުރިން।",
+  "Tag, save and find that sunset — before it's lost.": "ޓެގް ކުރާށެވެ، ސޭވް ކުރާށެވެ އަދި އެ އިރުމަތިއިރު ހޯދާށެވެ — އެއް ގެއްލެމުން ކުރިން।",
+  "Tag, save and find that party — before it's lost.": "ޓެގް ކުރާށެވެ، ސޭވް ކުރާށެވެ އަދި އެ ޕާޓީ ހޯދާށެވެ — އެއް ގެއްލެމުން ކުރިން।",
+  "Tag, save and find that vacation — before it's lost.": "ޓެގް ކުރާށެވެ، ސޭވް ކުރާށެވެ އަދި އެ ހޮޅިޑޭ ހޯދާށެވެ — އެއް ގެއްލެމުން ކުރިން।"
 }

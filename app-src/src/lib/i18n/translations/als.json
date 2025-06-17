@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotos drzuedüe",
   "Album successfully saved!": "S'Album isch gschpeicheret!",
   "All files successfully uploaded": "Alli Dateie isch erfolgriich ufeglade worde",
@@ -295,5 +296,22 @@
   "Open On Android": "Uf Android Ufmache",
   "Toggle contacts filter": "Kontakt Filter wiixlä",
   "Showing albums with all selected contacts and tags": "Zeigt Albe mit allnä gwehlte Kontakte und Tags",
-  "Showing albums with all selected tags": "Zeigt Albe mit allnä gwehlte Tags"
+  "Showing albums with all selected tags": "Zeigt Albe mit allnä gwehlte Tags",
+  "Clear All": "Alles Lösche",
+  "6180 Logo": "6180 Logo",
+  "Home": "Hei",
+  "Visit Home": "Bsueche d'Heimetsite",
+  "Visit 6180.io": "Bsueche 6180.io",
+  "No tags available": "Kei Tags gfunde",
+  "Showing photos with all selected tags": "Tags alli usägwählte Tags",
+  "Valid parameters not found in URL": "Gültigi Parameter i dere URL nid gfunde",
+  "Invalid id parameter format": "Ungültigs ID Parameter Format",
+  "Album not found": "Album net gfunde",
+  "the album owner": "dr Album-Bsitzer",
+  "Tag, save and find that performance — before it's lost.": "Tag, speicher und find die Ufführig — bevors verlore goht.",
+  "Tag, save and find that smile — before it's lost.": "Tag, speicher und find s Lächle — bevors verlore goht.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, speicher und find de Geburtstag — bevors verlore goht.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, speicher und find de Sunnenuntergang — bevors verlore goht.",
+  "Tag, save and find that party — before it's lost.": "Tag, speicher und find d Party — bevors verlore goht.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, speicher und find d Ferie — bevors verlore goht."
 }

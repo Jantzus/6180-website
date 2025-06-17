@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Wedamo Oethitha",
   "Album successfully saved!": "Albuma yandje ya tumbulwa nawa!",
   "All files successfully uploaded": "Omakwatho agehe ga londo nawa",
@@ -295,5 +296,22 @@
   "Open On Android": "Zuvura Mo Android",
   "Toggle contacts filter": "Nyangua filtro ya kontakt",
   "Showing albums with all selected contacts and tags": "Po album ye oko nii kontakt putta tag anwa kpii ngyeer",
-  "Showing albums with all selected tags": "Po album ye oko nii tag anwa kpii ngyeer"
+  "Showing albums with all selected tags": "Po album ye oko nii tag anwa kpii ngyeer",
+  "Clear All": "Zima Vyose",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Omuhoko",
+  "Visit Home": "Yenda Omuhoko",
+  "Visit 6180.io": "Yenda 6180.io",
+  "No tags available": "Ko ku na tags ya geya po",
+  "Showing photos with all selected tags": "Oshikuvilile otuvilu tseni otutaaga toya longith",
+  "Valid parameters not found in URL": "Ko oku funa parameter oya tu na URL",
+  "Invalid id parameter format": "Id parameter format ye shi daidai ba",
+  "Album not found": "Album ya ba samu ba",
+  "the album owner": "mai album",
+  "Tag, save and find that performance — before it's lost.": "Tag kane, landula ko oshiinwa shaayeuveleke — po shi yamb'po.",
+  "Tag, save and find that smile — before it's lost.": "Tag kane, landula ko oshiinwa shaayikala — po shi yamb'po.",
+  "Tag, save and find that birthday — before it's lost.": "Tag kane, landula ko oshiinwa shaayeyu — po shi yamb'po.",
+  "Tag, save and find that sunset — before it's lost.": "Tag kane, landula ko oshiinwa shaayohambelelo — po shi yamb'po.",
+  "Tag, save and find that party — before it's lost.": "Tag kane, landula ko oshiinwa shaayoshongole — po shi yamb'po.",
+  "Tag, save and find that vacation — before it's lost.": "Tag kane, landula ko oshiinwa shaamena omukoya — po shi yamb'po."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "फोटो थ्वयेके",
   "Album successfully saved!": "छिगु एल्बम तःधंक बचत जुल!",
   "All files successfully uploaded": "सकल छ्यालेन् थ्व सफलतापूर्वक अपलोड याःगु दु",
@@ -295,5 +296,22 @@
   "Open On Android": "Android य् कः",
   "Toggle contacts filter": "सम्पर्क फिल्टर बदल्या",
   "Showing albums with all selected contacts and tags": "ध्यागु संपर्क व ट्याग यागु अल्बम धयागु",
-  "Showing albums with all selected tags": "ध्यागु ट्याग यागु अल्बम धयागु"
+  "Showing albums with all selected tags": "ध्यागु ट्याग यागु अल्बम धयागु",
+  "Clear All": "सब्वहि साफ छ्वे",
+  "6180 Logo": "6180 लोगो",
+  "Home": "घ्वे",
+  "Visit Home": "घ्वे वनेगु",
+  "Visit 6180.io": "6180.io वनेगु",
+  "No tags available": "ट्याग छुं मदु",
+  "Showing photos with all selected tags": "छ्वसा ट्याग दु फोटो उँइकादिसा",
+  "Valid parameters not found in URL": "URL या वैध प्यारामीटर छुं मदु",
+  "Invalid id parameter format": "अवैध id प्यारामिटर ढाँचा",
+  "Album not found": "अल्बम छुं मदु",
+  "the album owner": "एल्बमया स्वामी",
+  "Tag, save and find that performance — before it's lost.": "ट्याग यानादिसा, थासा यानादिसा नुग दु जन्मदिन म्हासादिसा — मायेकेगु याना।",
+  "Tag, save and find that smile — before it's lost.": "ट्याग यानादिसा, थासा यानादिसा नुग दु मुसुका म्हासादिसा — मायेकेगु याना।",
+  "Tag, save and find that birthday — before it's lost.": "ट्याग यानादिसा, थासा यानादिसा नुग दु प्रदर्शन म्हासादिसा — मायेकेगु याना।",
+  "Tag, save and find that sunset — before it's lost.": "ट्याग यानादिसा, थासा यानादिसा नुग दु बिदा म्हासादिसा — मायेकेगु याना।",
+  "Tag, save and find that party — before it's lost.": "ट्याग यानादिसा, थासा यानादिसा नुग दु भोज म्हासादिसा — मायेकेगु याना।",
+  "Tag, save and find that vacation — before it's lost.": "ट्याग यानादिसा, थासा यानादिसा नुग दु सूर्यास्त म्हासादिसा — मायेकेगु याना।"
 }

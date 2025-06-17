@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "צולייגן בילדער",
   "Album successfully saved!": "דיין אלבום איז געהיטן מיט הצלחה!",
   "All files successfully uploaded": "אַלע טעקעס דערפאלגרייך ארויפגעלאדן",
@@ -295,5 +296,22 @@
   "Open On Android": "עפֿענען אויף Android",
   "Toggle contacts filter": "אויסטוישן קאנטאקט פילטער",
   "Showing albums with all selected contacts and tags": "ווייזן אלבומען מיט אלע אויסגעקליבענע קאנטאקטן און טאגס",
-  "Showing albums with all selected tags": "ווייזן אלבומען מיט אלע אויסגעקליבענע טאגס"
+  "Showing albums with all selected tags": "ווייזן אלבומען מיט אלע אויסגעקליבענע טאגס",
+  "Clear All": "מעק אלץ",
+  "6180 Logo": "6180 לאגא",
+  "Home": "היים",
+  "Visit Home": "גיין היים",
+  "Visit 6180.io": "גיין צו 6180.io",
+  "No tags available": "קיין טאַגס נישטא",
+  "Showing photos with all selected tags": "ווײַזן פֿאָטאָס מיט אַלע אויסגעקליבענע טאַגס",
+  "Valid parameters not found in URL": "גילטיקע פּאַראַמעטערס נישט געפֿונען אין URL",
+  "Invalid id parameter format": "אומגילטיק id פּאַראַמעטער פֿאָרמאַט",
+  "Album not found": "אלבאם נישט געפֿונען",
+  "the album owner": "דער אלבאם בעל",
+  "Tag, save and find that performance — before it's lost.": "טאַג, היט און געפֿינען יענער געבורטסטאָג — איידער עס איז פֿאַרלוירן.",
+  "Tag, save and find that smile — before it's lost.": "טאַג, היט און געפֿינען יענע שמייכל — איידער עס איז פֿאַרלוירן.",
+  "Tag, save and find that birthday — before it's lost.": "טאַג, היט און געפֿינען יענע פֿאָרשטעלונג — איידער עס איז פֿאַרלוירן.",
+  "Tag, save and find that sunset — before it's lost.": "טאַג, היט און געפֿינען יענע וואַקאַציע — איידער עס איז פֿאַרלוירן.",
+  "Tag, save and find that party — before it's lost.": "טאַג, היט און געפֿינען יענע פּאַרטיי — איידער עס איז פֿאַרלוירן.",
+  "Tag, save and find that vacation — before it's lost.": "טאַג, היט און געפֿינען יענער זונ־אונטערגאַנג — איידער עס איז פֿאַרלוירן."
 }

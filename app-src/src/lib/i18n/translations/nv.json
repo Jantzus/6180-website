@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Naʼaníłtaʼí Ałnééʼ",
   "Album successfully saved!": "Bee baa ahééh ninádleehí bił ahxíłtꞌéé'go hadaasdzoh!",
   "All files successfully uploaded": "T'áá ałtso naaltsoos bee bíighah",
@@ -295,5 +296,22 @@
   "Open On Android": "Android Bikáá' Yishgish",
   "Toggle contacts filter": "Níłtsánígíí bee ałhéeh",
   "Showing albums with all selected contacts and tags": "Níłtságo bee ałhéeh áká dahólǫ́ bééhózin dóó yoo",
-  "Showing albums with all selected tags": "Níłtságo bééhózin dahólǫ́ bééhózin"
+  "Showing albums with all selected tags": "Níłtságo bééhózin dahólǫ́ bééhózin",
+  "Clear All": "Tʼáá Ałtso Hadoołnééh",
+  "6180 Logo": "6180 Ałchʼįʼ Naashchʼąąʼ",
+  "Home": "Hooghandi",
+  "Visit Home": "Hooghan Yah",
+  "Visit 6180.io": "6180.io Yah",
+  "No tags available": "Tags doo álʼį da",
+  "Showing photos with all selected tags": "Ee' hasht'ezhii bąąh yił yádlaał naalkeh",
+  "Valid parameters not found in URL": "URL goo naanish ałtso ádaalyaa da",
+  "Invalid id parameter format": "Id parameter format doo áyóó'í da",
+  "Album not found": "Album doo bééhoozįįd da",
+  "the album owner": "album bizaad beeʼ éhólǫ́",
+  "Tag, save and find that performance — before it's lost.": "Ályaa, áshja'á áádóó bee na'asdzo' — t'áá bee aheehígíí naalgeedígíí.",
+  "Tag, save and find that smile — before it's lost.": "Ályaa, áshja'á áádóó bee na'asdzo' — t'áá bee aheezhélígíí.",
+  "Tag, save and find that birthday — before it's lost.": "Ályaa, áshja'á áádóó bee na'asdzo' — t'áá bee aheehígíí.",
+  "Tag, save and find that sunset — before it's lost.": "Ályaa, áshja'á áádóó bee na'asdzo' — t'áá bee aheehígíí náhásdláadígíí.",
+  "Tag, save and find that party — before it's lost.": "Ályaa, áshja'á áádóó bee na'asdzo' — t'áá bee aheehígíí neeznááígíí.",
+  "Tag, save and find that vacation — before it's lost.": "Ályaa, áshja'á áádóó bee na'asdzo' — t'áá bee aheehígíí shináálwodígíí."
 }

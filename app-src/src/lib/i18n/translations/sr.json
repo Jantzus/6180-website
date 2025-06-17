@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Додај Фотографије",
   "Album successfully saved!": "Ваш албум је успешно сачуван!",
   "All files successfully uploaded": "Све датотеке су успешно отпремљене",
@@ -295,5 +296,22 @@
   "Open On Android": "Отвори На Android",
   "Toggle contacts filter": "Укључи/искључи филтер контаката",
   "Showing albums with all selected contacts and tags": "Приказује албуме са свим одабраним контактима и ознакама",
-  "Showing albums with all selected tags": "Приказује албуме са свим одабраним ознакама"
+  "Showing albums with all selected tags": "Приказује албуме са свим одабраним ознакама",
+  "Clear All": "Обриши Све",
+  "6180 Logo": "Лого 6180",
+  "Home": "Почетна",
+  "Visit Home": "Посети Почетну",
+  "Visit 6180.io": "Посети 6180.io",
+  "No tags available": "Нема доступних ознака",
+  "Showing photos with all selected tags": "Приказ фотографија са свим изабраним ознакама",
+  "Valid parameters not found in URL": "Важећи параметри нису пронађени у URL-у",
+  "Invalid id parameter format": "Неважећи формат id параметра",
+  "Album not found": "Албум није пронађен",
+  "the album owner": "власник албума",
+  "Tag, save and find that performance — before it's lost.": "Означи, сачувај и пронађи тај рођендан — пре него што се изгуби.",
+  "Tag, save and find that smile — before it's lost.": "Означи, сачувај и пронађи тај осмех — пре него што се изгуби.",
+  "Tag, save and find that birthday — before it's lost.": "Означи, сачувај и пронађи то извођење — пре него што се изгуби.",
+  "Tag, save and find that sunset — before it's lost.": "Означи, сачувај и пронађи тај одмор — пре него што се изгуби.",
+  "Tag, save and find that party — before it's lost.": "Означи, сачувај и пронађи ту забаву — пре него што се изгуби.",
+  "Tag, save and find that vacation — before it's lost.": "Означи, сачувај и пронађи тај залазак сунца — пре него што се изгуби."
 }

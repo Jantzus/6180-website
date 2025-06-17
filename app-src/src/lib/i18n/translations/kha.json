@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Pynbun Dur",
   "Album successfully saved!": "Album jong phi la pynbna hi phyllang!",
   "All files successfully uploaded": "Ki failki baroh la dep iorngam",
@@ -295,5 +296,22 @@
   "Open On Android": "Khih Ha Android",
   "Toggle contacts filter": "Ka filter contact ieit pynmih",
   "Showing albums with all selected contacts and tags": "Ka album ka shem bad ka contact bad ka tag shalang ia ka longtein",
-  "Showing albums with all selected tags": "Ka album ka shem bad ka tag shalang ia ka longtein"
+  "Showing albums with all selected tags": "Ka album ka shem bad ka tag shalang ia ka longtein",
+  "Clear All": "Jingim Donkam",
+  "6180 Logo": "6180 logo",
+  "Home": "Ka ïing",
+  "Visit Home": "Wan ka ïing",
+  "Visit 6180.io": "Wan 6180.io",
+  "No tags available": "Ym shem da tag eiei",
+  "Showing photos with all selected tags": "Kamdien mynta phi shem tang da tag ym",
+  "Valid parameters not found in URL": "URL ba phi shem da parameter ym",
+  "Invalid id parameter format": "Bad la id parameter format",
+  "Album not found": "Album ym shem",
+  "the album owner": "album ba ïo",
+  "Tag, save and find that performance — before it's lost.": "Tag shai, tyrkai bad long tang jingiat ka dei u ia — shnong ma kane u kba.",
+  "Tag, save and find that smile — before it's lost.": "Tag shai, tyrkai bad long tang jingsngewbha u ia — shnong ma kane u kba.",
+  "Tag, save and find that birthday — before it's lost.": "Tag shai, tyrkai bad long tang performance u ia — shnong ma kane u kba.",
+  "Tag, save and find that sunset — before it's lost.": "Tag shai, tyrkai bad long tang jingpyniap u ia — shnong ma kane u kba.",
+  "Tag, save and find that party — before it's lost.": "Tag shai, tyrkai bad long tang jingkylla u ia — shnong ma kane u kba.",
+  "Tag, save and find that vacation — before it's lost.": "Tag shai, tyrkai bad long tang sngi ka thang u ia — shnong ma kane u kba."
 }

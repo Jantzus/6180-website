@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Чуруктар Немээр",
   "Album successfully saved!": "Силерниң альбом чедиишкинниг шыгжаттынды!",
   "All files successfully uploaded": "Шупту файлдар чедимчелиг киирген",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-та Ажыдар",
   "Toggle contacts filter": "Контакт фильтр өскертир",
   "Showing albums with all selected contacts and tags": "Сонгаан бүгү контакт биле тег-биле альбомнарны көргүзер",
-  "Showing albums with all selected tags": "Сонгаан бүгү тег-биле альбомнарны көргүзер"
+  "Showing albums with all selected tags": "Сонгаан бүгү тег-биле альбомнарны көргүзер",
+  "Clear All": "Бүгүнү Чогаадыр",
+  "6180 Logo": "6180 Логотип",
+  "Home": "Өг",
+  "Visit Home": "Даштыкы Деп",
+  "Visit 6180.io": "6180.io Деп",
+  "No tags available": "Тег чок",
+  "Showing photos with all selected tags": "Шилип алган бүгү тегилерниң фотозун көрүкчүлээри",
+  "Valid parameters not found in URL": "URL-де бодунуң параметрлери чок",
+  "Invalid id parameter format": "Буруу id параметр формат",
+  "Album not found": "Альбом тывылбаан",
+  "the album owner": "альбомнуң ээзи",
+  "Tag, save and find that performance — before it's lost.": "Демдеглээр, аажаар база ол төрүттүнген хүнүн булур — дүжүп каар мурнунда.",
+  "Tag, save and find that smile — before it's lost.": "Демдеглээр, аажаар база ол мыскалды булур — дүжүп каар мурнунда.",
+  "Tag, save and find that birthday — before it's lost.": "Демдеглээр, аажаар база ол көрүүшкүннү булур — дүжүп каар мурнунда.",
+  "Tag, save and find that sunset — before it's lost.": "Демдеглээр, аажаар база ол дыл алышты булур — дүжүп каар мурнунда.",
+  "Tag, save and find that party — before it's lost.": "Демдеглээр, аажаар база ол дойны булур — дүжүп каар мурнунда.",
+  "Tag, save and find that vacation — before it's lost.": "Демдеглээр, аажаар база ол хүн кирерин булур — дүжүп каар мурнунда."
 }

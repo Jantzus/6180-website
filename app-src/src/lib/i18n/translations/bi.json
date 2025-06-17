@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ademap Pikja",
   "Album successfully saved!": "Albam blong yu i sevem finis!",
   "All files successfully uploaded": "Ol fael i bin stap suksesful",
@@ -295,5 +296,22 @@
   "Open On Android": "Opem Long Android",
   "Toggle contacts filter": "Jenisim kontakt filta",
   "Showing albums with all selected contacts and tags": "Soem album wetem ol kakae kontakt mo tag",
-  "Showing albums with all selected tags": "Soem album wetem ol kakae tag"
+  "Showing albums with all selected tags": "Soem album wetem ol kakae tag",
+  "Clear All": "Katem Olgeta Samting",
+  "6180 Logo": "Logo bilong 6180",
+  "Home": "Haos",
+  "Visit Home": "Go Long Haos",
+  "Visit 6180.io": "Go Long 6180.io",
+  "No tags available": "No tag i stap",
+  "Showing photos with all selected tags": "Sho foto wetem olgeta tag we yu bin makem",
+  "Valid parameters not found in URL": "I no gat valid parameter long URL",
+  "Invalid id parameter format": "ID parameter format i no gud",
+  "Album not found": "Album i no bin faenem",
+  "the album owner": "papa blong album",
+  "Tag, save and find that performance — before it's lost.": "Tag, sev mo faendem performans ia — bipo i lus.",
+  "Tag, save and find that smile — before it's lost.": "Tag, sev mo faendem smaelgod ia — bipo i lus.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, sev mo faendem dei bilong bon ia — bipo i lus.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, sev mo faendem san go daon ia — bipo i lus.",
+  "Tag, save and find that party — before it's lost.": "Tag, sev mo faendem pati ia — bipo i lus.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, sev mo faendem holade ia — bipo i lus."
 }

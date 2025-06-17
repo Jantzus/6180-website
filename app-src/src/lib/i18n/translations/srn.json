@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Poti Prenki",
   "Album successfully saved!": "Yu album kibri bun!",
   "All files successfully uploaded": "Ala den file poti nanga bun fasi",
@@ -295,5 +296,22 @@
   "Open On Android": "Opo Na Android",
   "Toggle contacts filter": "Tron kontak filter",
   "Showing albums with all selected contacts and tags": "Sabi album nanga ala pick kontak nanga tag",
-  "Showing albums with all selected tags": "Sabi album nanga ala pick tag"
+  "Showing albums with all selected tags": "Sabi album nanga ala pick tag",
+  "Clear All": "Krin Alla",
+  "6180 Logo": "Logo fu 6180",
+  "Home": "Oso",
+  "Visit Home": "Go na Oso",
+  "Visit 6180.io": "Go na 6180.io",
+  "No tags available": "No tag de",
+  "Showing photos with all selected tags": "Sori foto nanga ala tag disi yu pik",
+  "Valid parameters not found in URL": "Valid parameter no ben feni na URL",
+  "Invalid id parameter format": "Wan wroko id parameter format",
+  "Album not found": "Album no feni",
+  "the album owner": "da album owna",
+  "Tag, save and find that performance — before it's lost.": "Meki teki, seyfi nanga feni da bon dei — fer' a lasi.",
+  "Tag, save and find that smile — before it's lost.": "Meki teki, seyfi nanga feni da lagre — fer' a lasi.",
+  "Tag, save and find that birthday — before it's lost.": "Meki teki, seyfi nanga feni da performance — fer' a lasi.",
+  "Tag, save and find that sunset — before it's lost.": "Meki teki, seyfi nanga feni da fre-troe — fer' a lasi.",
+  "Tag, save and find that party — before it's lost.": "Meki teki, seyfi nanga feni da pati — fer' a lasi.",
+  "Tag, save and find that vacation — before it's lost.": "Meki teki, seyfi nanga feni da san go ondro — fer' a lasi."
 }

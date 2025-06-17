@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Adhibir Fotos",
   "Album successfully saved!": "O tuyo álbum ye alzau!",
   "All files successfully uploaded": "Totz os fichers puyaus con exito",
@@ -295,5 +296,22 @@
   "Open On Android": "Ubrir En Android",
   "Toggle contacts filter": "Cambiar filtro de contactos",
   "Showing albums with all selected contacts and tags": "Amostrar álbumes con totz os contactos y etiquetas seleccionaus",
-  "Showing albums with all selected tags": "Amostrar álbumes con todas as etiquetas seleccionadas"
+  "Showing albums with all selected tags": "Amostrar álbumes con todas as etiquetas seleccionadas",
+  "Clear All": "Borrar Tot",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Inicio",
+  "Visit Home": "Visitar Inicio",
+  "Visit 6180.io": "Visitar 6180.io",
+  "No tags available": "No i ha tags disponibles",
+  "Showing photos with all selected tags": "Amostrando fotos con totz os tags seleccionaus",
+  "Valid parameters not found in URL": "No s'han trobau parametros validos en a URL",
+  "Invalid id parameter format": "Formato de parametro d'id invalido",
+  "Album not found": "No s'ha trobau l'album",
+  "the album owner": "o propietario de l'album",
+  "Tag, save and find that performance — before it's lost.": "Etiqueta, alza y troba ixe espectacle — antes que se pierda.",
+  "Tag, save and find that smile — before it's lost.": "Etiqueta, alza y troba ixa sonrisa — antes que se pierda.",
+  "Tag, save and find that birthday — before it's lost.": "Etiqueta, alza y troba ixo cumpleaños — antes que se pierda.",
+  "Tag, save and find that sunset — before it's lost.": "Etiqueta, alza y troba ixa puesta de sol — antes que se pierda.",
+  "Tag, save and find that party — before it's lost.": "Etiqueta, alza y troba ixa fiesta — antes que se pierda.",
+  "Tag, save and find that vacation — before it's lost.": "Etiqueta, alza y troba ixas vacacions — antes que se pierdan."
 }

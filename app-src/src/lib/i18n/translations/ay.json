@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Uñacht'aña Uñanaka",
   "Album successfully saved!": "Album uñt'ayañataki uñstayataynawa!",
   "All files successfully uploaded": "Taqi q'ipinaka suma phuqhata apantataxa",
@@ -295,5 +296,22 @@
   "Open On Android": "Android Ukan Jist'araña",
   "Toggle contacts filter": "Jakañani chimpuñani tikxataña",
   "Showing albums with all selected contacts and tags": "Jakañanakampi chimpunakampisa álbumes uñachayaña",
-  "Showing albums with all selected tags": "Chimpunakampisa álbumes uñachayaña"
+  "Showing albums with all selected tags": "Chimpunakampisa álbumes uñachayaña",
+  "Clear All": "Taqi Apaqaña",
+  "6180 Logo": "6180 Logo",
+  "Home": "Uta",
+  "Visit Home": "Utaru Sarnaqaña",
+  "Visit 6180.io": "6180.io Sarnaqaña",
+  "No tags available": "Janiw tags jakiskiti",
+  "Showing photos with all selected tags": "Ajllita tags taqpachana siq'isawi uñstayaña",
+  "Valid parameters not found in URL": "URL ukan alisirir parametros janiw jikxatäkiti",
+  "Invalid id parameter format": "Jani wakiskiri id parametro formato",
+  "Album not found": "Janiw álbum jakiskiti",
+  "the album owner": "álbum jaqi",
+  "Tag, save and find that performance — before it's lost.": "Uñt'aña, imaña ukat taqi actuación jikxataña — chhaqhayañanakatpachaya.",
+  "Tag, save and find that smile — before it's lost.": "Uñt'aña, imaña ukat taqi sonrisa jikxataña — chhaqhayañanakatpachaya.",
+  "Tag, save and find that birthday — before it's lost.": "Uñt'aña, imaña ukat taqi cumpleaños jikxataña — chhaqhayañanakatpachaya.",
+  "Tag, save and find that sunset — before it's lost.": "Uñt'aña, imaña ukat taqi inti jalsu jikxataña — chhaqhayañanakatpachaya.",
+  "Tag, save and find that party — before it's lost.": "Uñt'aña, imaña ukat taqi fiesta jikxataña — chhaqhayañanakatpachaya.",
+  "Tag, save and find that vacation — before it's lost.": "Uñt'aña, imaña ukat taqi samäñäpa jikxataña — chhaqhayañanakatpachaya."
 }

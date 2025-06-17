@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "فوٹو پاؤ",
   "Album successfully saved!": "تہاڈی ایلبم کامیابی نال بچ گئی اے!",
   "All files successfully uploaded": "ساریاں فائلاں کامیابی نال اپلوڈ کر دتیاں گئیاں نیں",
@@ -295,5 +296,22 @@
   "Open On Android": "Android ویچ کھولو",
   "Toggle contacts filter": "رابطے دا فلٹر بدلو",
   "Showing albums with all selected contacts and tags": "سارے چنے گئے رابطیاں تے ٹیگاں دے نال البم دسدا پیا",
-  "Showing albums with all selected tags": "سارے چنے گئے ٹیگاں دے نال البم دسدا پیا"
+  "Showing albums with all selected tags": "سارے چنے گئے ٹیگاں دے نال البم دسدا پیا",
+  "Clear All": "سب صاف کرو",
+  "6180 Logo": "6180 لوگو",
+  "Home": "گھر",
+  "Visit Home": "گھر جاؤ",
+  "Visit 6180.io": "6180.io جاؤ",
+  "No tags available": "کوئی ٹیگ نہیں",
+  "Showing photos with all selected tags": "تمام منتخب کردہ ٹیگاں نال فوٹو وکھا رہیا اے",
+  "Valid parameters not found in URL": "URL وچ صحیح پیرامیٹر نہیں لبھے",
+  "Invalid id parameter format": "غلط آئی ڈی پیرامیٹر فارمیٹ",
+  "Album not found": "البم نہیں لبھا",
+  "the album owner": "البم دا مالک",
+  "Tag, save and find that performance — before it's lost.": "ٹیگ کرو، سیو کرو تے اوہ جنم دن لبھو — گمن توں پہلاں۔",
+  "Tag, save and find that smile — before it's lost.": "ٹیگ کرو، سیو کرو تے اوہ مسکراہٹ لبھو — گمن توں پہلاں۔",
+  "Tag, save and find that birthday — before it's lost.": "ٹیگ کرو، سیو کرو تے اوہ پرفارمنس لبھو — گمن توں پہلاں۔",
+  "Tag, save and find that sunset — before it's lost.": "ٹیگ کرو، سیو کرو تے اوہ چھٹیاں لبھو — گمن توں پہلاں۔",
+  "Tag, save and find that party — before it's lost.": "ٹیگ کرو، سیو کرو تے اوہ پارٹی لبھو — گمن توں پہلاں۔",
+  "Tag, save and find that vacation — before it's lost.": "ٹیگ کرو، سیو کرو تے اوہ غروب آفتاب لبھو — گمن توں پہلاں۔"
 }

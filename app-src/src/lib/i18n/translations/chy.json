@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Néstse ho'honáévo",
   "Album successfully saved!": "Né'ėstse máhoéstôtse nėstáve!",
   "All files successfully uploaded": "Néhe ma'ėhnevotse móstanevone",
@@ -295,5 +296,22 @@
   "Open On Android": "Android Hoohá'e",
   "Toggle contacts filter": "Véhone-hoohtsestse hóxovėstse",
   "Showing albums with all selected contacts and tags": "Hoohtsestse oova véhone-hoohtsestse tsėhetaneo'estȯxe méhotovestse",
-  "Showing albums with all selected tags": "Hoohtsestse oova tsėhetaneo'estȯxe méhotovestse"
+  "Showing albums with all selected tags": "Hoohtsestse oova tsėhetaneo'estȯxe méhotovestse",
+  "Clear All": "Mâhtáahe véseme",
+  "6180 Logo": "6180 logo",
+  "Home": "Mahpe",
+  "Visit Home": "Enoo mahpe",
+  "Visit 6180.io": "6180.io mahpe",
+  "No tags available": "Hóháʼo tags",
+  "Showing photos with all selected tags": "Évasėhestove ho'évohkôtse ma'evé'ho'ēno tsėhéstove tags",
+  "Valid parameters not found in URL": "URL ėške mȧhpe valid éšeéné'ėstse éno'sétȯxe'ohe",
+  "Invalid id parameter format": "Sáa'némáne id parameter format",
+  "Album not found": "Album éno'sétȯxe'ohe",
+  "the album owner": "album oešemȯhtáheo'o",
+  "Tag, save and find that performance — before it's lost.": "É'šeévaneo'o, anonévohoma'e ma hohtsémeno'e véhone náno'kėstse — naohketánoto'e ohketóho.",
+  "Tag, save and find that smile — before it's lost.": "É'šeévaneo'o, anonévohoma'e ma hohtsémeno'e véhone vonovėstse — naohketánoto'e ohketóho.",
+  "Tag, save and find that birthday — before it's lost.": "É'šeévaneo'o, anonévohoma'e ma hohtsémeno'e véhone vé'koná'kėstse — naohketánoto'e ohketóho.",
+  "Tag, save and find that sunset — before it's lost.": "É'šeévaneo'o, anonévohoma'e ma hohtsémeno'e véhone éše'he náno'xetto — naohketánoto'e ohketóho.",
+  "Tag, save and find that party — before it's lost.": "É'šeévaneo'o, anonévohoma'e ma hohtsémeno'e véhone vé'ho'këso — naohketánoto'e ohketóho.",
+  "Tag, save and find that vacation — before it's lost.": "É'šeévaneo'o, anonévohoma'e ma hohtsémeno'e véhone náhóó'ėstse — naohketánoto'e ohketóho."
 }

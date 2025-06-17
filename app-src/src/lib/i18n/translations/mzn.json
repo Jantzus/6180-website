@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "عکسؤن اضافه هاکنین",
   "Album successfully saved!": "آلبوم شما با موفقیت ذخیره بیّه!",
   "All files successfully uploaded": "همه فایل‌ها با موفقیت بارگذاری بیّه",
@@ -295,5 +296,22 @@
   "Open On Android": "Android مئن وا بؤن",
   "Toggle contacts filter": "تماس فیلتر آلشتن",
   "Showing albums with all selected contacts and tags": "نشون دئن آلبومان همه انتخاب بوده تماسان ؤ تگان دئن",
-  "Showing albums with all selected tags": "نشون دئن آلبومان همه انتخاب بوده تگان دئن"
+  "Showing albums with all selected tags": "نشون دئن آلبومان همه انتخاب بوده تگان دئن",
+  "Clear All": "همه پاک کردن",
+  "6180 Logo": "لوگوی 6180",
+  "Home": "خونه",
+  "Visit Home": "خونه رفتن",
+  "Visit 6180.io": "6180.io رفتن",
+  "No tags available": "هیچ تگی نیه",
+  "Showing photos with all selected tags": "نشان دهن عکسان گل هممرا کل تگان انتخابی",
+  "Valid parameters not found in URL": "پارامتری صحیح بئ URL دله پیدا نونه",
+  "Invalid id parameter format": "نادروست id پارامتر فرمت",
+  "Album not found": "آلبوم پیدا نونه",
+  "the album owner": "آلبوم مالک",
+  "Tag, save and find that performance — before it's lost.": "برچسپ بزن، ذخیره کون ؤ اون تولدنه بدی — گم بیین جا دما.",
+  "Tag, save and find that smile — before it's lost.": "برچسپ بزن، ذخیره کون ؤ اون خندانه بدی — گم بیین جا دما.",
+  "Tag, save and find that birthday — before it's lost.": "برچسپ بزن، ذخیره کون ؤ اون اجرانه بدی — گم بیین جا دما.",
+  "Tag, save and find that sunset — before it's lost.": "برچسپ بزن، ذخیره کون ؤ اون تعطیلاتنه بدی — گم بیین جا دما.",
+  "Tag, save and find that party — before it's lost.": "برچسپ بزن، ذخیره کون ؤ اون مهمونینه بدی — گم بیین جا دما.",
+  "Tag, save and find that vacation — before it's lost.": "برچسپ بزن، ذخیره کون ؤ اون غروبنه بدی — گم بیین جا دما."
 }

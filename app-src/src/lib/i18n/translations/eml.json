@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Agiúngner Fòt",
   "Album successfully saved!": "Al tô album l'é stê salvê cun sucès!",
   "All files successfully uploaded": "Tótt i fìl carichê cun sucèss",
@@ -295,5 +296,22 @@
   "Open On Android": "Åverzer In Android",
   "Toggle contacts filter": "Câmbia filter cuntàt",
   "Showing albums with all selected contacts and tags": "Måstra album cun tót i cuntàt e tag selesiónè",
-  "Showing albums with all selected tags": "Måstra album cun tót i tag selesiónè"
+  "Showing albums with all selected tags": "Måstra album cun tót i tag selesiónè",
+  "Clear All": "Elimina Tótt",
+  "6180 Logo": "Logo 'd 6180",
+  "Home": "Chêsa",
+  "Visit Home": "Andé a Chêsa",
+  "Visit 6180.io": "Andé a 6180.io",
+  "No tags available": "Nissóna eticheta",
+  "Showing photos with all selected tags": "Mustrànd fòti cun tùt i etichèti selezionèdi",
+  "Valid parameters not found in URL": "Nissón paramètar vālid in te URL",
+  "Invalid id parameter format": "Furmàt ad paràmetar id mìa vàlid",
+  "Album not found": "Album mìa truvà",
+  "the album owner": "al padrån di l'album",
+  "Tag, save and find that performance — before it's lost.": "Marca, salva e trôva cal spetàcol — préma ch'al vaga pêrs.",
+  "Tag, save and find that smile — before it's lost.": "Marca, salva e trôva cal sórrérs — préma ch'al vaga pêrs.",
+  "Tag, save and find that birthday — before it's lost.": "Marca, salva e trôva cl cumpleanòs — préma ch'al vaga pêrs.",
+  "Tag, save and find that sunset — before it's lost.": "Marca, salva e trôva cal tramònt — préma ch'al vaga pêrs.",
+  "Tag, save and find that party — before it's lost.": "Marca, salva e trôva cla festa — préma ch'la vaga pêrsa.",
+  "Tag, save and find that vacation — before it's lost.": "Marca, salva e trôva cla vacànsa — préma ch'la vaga pêrsa."
 }

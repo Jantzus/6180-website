@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Pridietė Nuotraukas",
   "Album successfully saved!": "Jūsų albumas sėkmingai išsaugotas!",
   "All files successfully uploaded": "Visi failai sėkmingai įkelti",
@@ -295,5 +296,22 @@
   "Open On Android": "Atėdari Android",
   "Toggle contacts filter": "Pakeistė kontaktu filtra",
   "Showing albums with all selected contacts and tags": "Ruoda albumos so vėsais pažemėtais kontaktais ė žīmelėmis",
-  "Showing albums with all selected tags": "Ruoda albumos so vėsomis pažemėtomis žīmelėmis"
+  "Showing albums with all selected tags": "Ruoda albumos so vėsomis pažemėtomis žīmelėmis",
+  "Clear All": "Ėštrėntė Vėska",
+  "6180 Logo": "6180 Luogs",
+  "Home": "Namoí",
+  "Visit Home": "Navagotė i Namoús",
+  "Visit 6180.io": "Navagotė 6180.io",
+  "No tags available": "Tags nėi",
+  "Showing photos with all selected tags": "Ruodoma paveikslus so vėsoms pasėrinktomis žīmomis",
+  "Valid parameters not found in URL": "URL rasta negaliuojantis parametros",
+  "Invalid id parameter format": "Netėnkams id parametra fuormats",
+  "Album not found": "Albūms nerasts",
+  "the album owner": "albūma savėninks",
+  "Tag, save and find that performance — before it's lost.": "Pažėmėkėt, ėšsausaukėt ė atraskėt ton pasiruošėma — prīš ding atrudīs.",
+  "Tag, save and find that smile — before it's lost.": "Pažėmėkėt, ėšsausaukėt ė atraskėt ton šėpsūjėma — prīš ding atrudīs.",
+  "Tag, save and find that birthday — before it's lost.": "Pažėmėkėt, ėšsausaukėt ė atraskėt ton gėmėma dėina — prīš ding atrudīs.",
+  "Tag, save and find that sunset — before it's lost.": "Pažėmėkėt, ėšsausaukėt ė atraskėt ton saulės nuėjėma — prīš ding atrudīs.",
+  "Tag, save and find that party — before it's lost.": "Pažėmėkėt, ėšsausaukėt ė atraskėt ton šventima — prīš ding atrudīs.",
+  "Tag, save and find that vacation — before it's lost.": "Pažėmėkėt, ėšsausaukėt ė atraskėt ton atostogis — prīš ding atrudīs."
 }

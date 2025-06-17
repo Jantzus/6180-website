@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Zontar Foto",
   "Album successfully saved!": "El to album xe stà salvà con suceso!",
   "All files successfully uploaded": "Tuti i file i ze stai caricai co suceso",
@@ -295,5 +296,22 @@
   "Open On Android": "Arvi Su Android",
   "Toggle contacts filter": "Canbia filtro contati",
   "Showing albums with all selected contacts and tags": "Mostra album co tuti i contati e tag sełecionai",
-  "Showing albums with all selected tags": "Mostra album co tuti i tag sełecionai"
+  "Showing albums with all selected tags": "Mostra album co tuti i tag sełecionai",
+  "Clear All": "Neta Tuto",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Casa",
+  "Visit Home": "Vixita Casa",
+  "Visit 6180.io": "Vixita 6180.io",
+  "No tags available": "Nisuna eticheta",
+  "Showing photos with all selected tags": "Mostra foto con tuti i tag sełesionai",
+  "Valid parameters not found in URL": "Parametri validi no catà in te URL",
+  "Invalid id parameter format": "Formato parametro id mìa valido",
+  "Album not found": "Album no catà",
+  "the album owner": "el paron de l'album",
+  "Tag, save and find that performance — before it's lost.": "Eticheta, salva e cata cheł cumplean — prima che ło se perde.",
+  "Tag, save and find that smile — before it's lost.": "Eticheta, salva e cata cheł soriso — prima che ło se perde.",
+  "Tag, save and find that birthday — before it's lost.": "Eticheta, salva e cata cheła prestasion — prima che ła se perde.",
+  "Tag, save and find that sunset — before it's lost.": "Eticheta, salva e cata cheła vacansa — prima che ła se perde.",
+  "Tag, save and find that party — before it's lost.": "Eticheta, salva e cata cheła festa — prima che ła se perde.",
+  "Tag, save and find that vacation — before it's lost.": "Eticheta, salva e cata cheł tramonto — prima che ło se perde."
 }

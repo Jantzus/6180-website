@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Cuir Grianghraif Leis",
   "Album successfully saved!": "D'albam sábháilte go rathúil!",
   "All files successfully uploaded": "Gach comhad uaslódáilte go rathúil",
@@ -295,5 +296,22 @@
   "Open On Android": "Oscail Ar Android",
   "Toggle contacts filter": "Scoránaigh scagaire teagmhála",
   "Showing albums with all selected contacts and tags": "Ag taispeáint albam le gach teagmháil agus chlib roghnaithe",
-  "Showing albums with all selected tags": "Ag taispeáint albam le gach clib roghnaithe"
+  "Showing albums with all selected tags": "Ag taispeáint albam le gach clib roghnaithe",
+  "Clear All": "Glan Gach Rud",
+  "6180 Logo": "Lógó 6180",
+  "Home": "Baile",
+  "Visit Home": "Cuairt a Thabhairt ar Bhaile",
+  "Visit 6180.io": "Cuairt a Thabhairt ar 6180.io",
+  "No tags available": "Níl aon chlibeanna ar fáil",
+  "Showing photos with all selected tags": "Ag taispeáint grianghraif le gach clib roghnaithe",
+  "Valid parameters not found in URL": "Ní bhfuarthas paraiméadair bailí san URL",
+  "Invalid id parameter format": "Formáid pharaiméadar id neamhbhailí",
+  "Album not found": "Níor aimsíodh an t-albam",
+  "the album owner": "úinéir an albam",
+  "Tag, save and find that performance — before it's lost.": "Clib, sábháil agus aimsigh an taibhiú sin — sula gcailltear é.",
+  "Tag, save and find that smile — before it's lost.": "Clib, sábháil agus aimsigh an meangadh sin — sula gcailltear é.",
+  "Tag, save and find that birthday — before it's lost.": "Clib, sábháil agus aimsigh an breithlá sin — sula gcailltear é.",
+  "Tag, save and find that sunset — before it's lost.": "Clib, sábháil agus aimsigh an luí na gréine sin — sula gcailltear é.",
+  "Tag, save and find that party — before it's lost.": "Clib, sábháil agus aimsigh an cóisir sin — sula gcailltear é.",
+  "Tag, save and find that vacation — before it's lost.": "Clib, sábháil agus aimsigh na laethanta saoire sin — sula gcailltear iad."
 }

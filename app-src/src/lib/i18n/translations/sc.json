@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Agiùnghere Fotos",
   "Album successfully saved!": "S'album tuo est istadu sarvadu chin esitu!",
   "All files successfully uploaded": "Totus sos files sunt istados carrigados chin èsitu",
@@ -295,5 +296,22 @@
   "Open On Android": "Àbere In Android",
   "Toggle contacts filter": "Cambia filtru de contatos",
   "Showing albums with all selected contacts and tags": "Ammustende álbunes cun tòtus is contatos e etiquetas seletzionados",
-  "Showing albums with all selected tags": "Ammustende álbunes cun tòtas is etiquetas seletzionadas"
+  "Showing albums with all selected tags": "Ammustende álbunes cun tòtas is etiquetas seletzionadas",
+  "Clear All": "Nettare Totu",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Domo",
+  "Visit Home": "Bìsita sa Domo",
+  "Visit 6180.io": "Bìsita 6180.io",
+  "No tags available": "Peruna eticheta",
+  "Showing photos with all selected tags": "Mustret fotos cun totu sas etichetas seletzionadas",
+  "Valid parameters not found in URL": "Paràmetros vàlidos no agatados in s'URL",
+  "Invalid id parameter format": "Formatu de paràmetru id non vàlidu",
+  "Album not found": "Album non agatadu",
+  "the album owner": "su patronu de s'album",
+  "Tag, save and find that performance — before it's lost.": "Marca, sarva e agata cussa festa 'e cumpreannu — in antis chi si perdat.",
+  "Tag, save and find that smile — before it's lost.": "Marca, sarva e agata cussa arrisu — in antis chi si perdat.",
+  "Tag, save and find that birthday — before it's lost.": "Marca, sarva e agata cussa prestassione — in antis chi si perdat.",
+  "Tag, save and find that sunset — before it's lost.": "Marca, sarva e agata cussas vacanzas — in antis chi si perdant.",
+  "Tag, save and find that party — before it's lost.": "Marca, sarva e agata cussa festa — in antis chi si perdat.",
+  "Tag, save and find that vacation — before it's lost.": "Marca, sarva e agata cussa calada 'e sole — in antis chi si perdat."
 }

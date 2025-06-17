@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Dugangan an mga Litrato",
   "Album successfully saved!": "An imo album malinampon nga nasalbar!",
   "All files successfully uploaded": "An ngatanan nga mga paypay malinampuson nga gin-upload",
@@ -295,5 +296,22 @@
   "Open On Android": "Bukas Ha Android",
   "Toggle contacts filter": "Liwaton an filter sa mga kontak",
   "Showing albums with all selected contacts and tags": "Ginpapakita an mga album nga may amon nga piniling mga kontak ngan mga tag",
-  "Showing albums with all selected tags": "Ginpapakita an mga album nga may amon nga piniling mga tag"
+  "Showing albums with all selected tags": "Ginpapakita an mga album nga may amon nga piniling mga tag",
+  "Clear All": "Limpiyohi Tanan",
+  "6180 Logo": "Logo han 6180",
+  "Home": "Balay",
+  "Visit Home": "Bisitahi an Balay",
+  "Visit 6180.io": "Bisitahi an 6180.io",
+  "No tags available": "Waray tag nga makita",
+  "Showing photos with all selected tags": "Nagpapakita han mga hulagway nga may tanan nga ginpili nga tag",
+  "Valid parameters not found in URL": "Waray valid nga mga parameter nga nakita ha URL",
+  "Invalid id parameter format": "Diri husto nga format han id parameter",
+  "Album not found": "Waray album nga nakit-an",
+  "the album owner": "an tag-iya han album",
+  "Tag, save and find that performance — before it's lost.": "I-tag, i-save ngan hanapon an adlaw han pagkatawo — antes mapupud-an.",
+  "Tag, save and find that smile — before it's lost.": "I-tag, i-save ngan hanapon an pahiyom — antes mapupud-an.",
+  "Tag, save and find that birthday — before it's lost.": "I-tag, i-save ngan hanapon an pagpapakita — antes mapupud-an.",
+  "Tag, save and find that sunset — before it's lost.": "I-tag, i-save ngan hanapon an bakasyon — antes mapupud-an.",
+  "Tag, save and find that party — before it's lost.": "I-tag, i-save ngan hanapon an handaan — antes mapupud-an.",
+  "Tag, save and find that vacation — before it's lost.": "I-tag, i-save ngan hanapon an kaadlawon — antes mapupud-an."
 }

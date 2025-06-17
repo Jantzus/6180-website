@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ᱪᱤᱛᱟᱹᱨᱠᱚ ᱥᱮᱞᱮᱫ",
   "Album successfully saved!": "ᱟᱢᱟᱜ ᱮᱞᱵᱟᱢ ᱥᱟᱶᱛᱮ ᱥᱟᱧᱪᱟᱣ ᱦᱩᱭ ᱮᱱᱟ!",
   "All files successfully uploaded": "ᱡᱷᱚᱛᱚ ᱨᱮᱫ ᱠᱚ ᱥᱟᱹᱨᱤ ᱨᱟᱠᱟᱵ ᱮᱱᱟ",
@@ -295,5 +296,22 @@
   "Open On Android": "Android ᱨᱮ ᱠᱷᱩᱞᱟᱹᱢᱮ",
   "Toggle contacts filter": "ᱠᱚᱱᱴᱟᱠᱴ ᱯᱷᱤᱞᱴᱟᱨ ᱵᱚᱫᱚᱞ ᱢᱮ",
   "Showing albums with all selected contacts and tags": "ᱯᱟᱱᱛᱮ ᱮᱰ ᱠᱚᱱᱴᱟᱠᱴ ᱟᱨ ᱴᱮᱜᱽ ᱮᱢ ᱟᱞᱵᱟᱢ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱮᱫᱟ",
-  "Showing albums with all selected tags": "ᱯᱟᱱᱛᱮ ᱮᱰ ᱴᱮᱜᱽ ᱮᱢ ᱟᱞᱵᱟᱢ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱮᱫᱟ"
+  "Showing albums with all selected tags": "ᱯᱟᱱᱛᱮ ᱮᱰ ᱴᱮᱜᱽ ᱮᱢ ᱟᱞᱵᱟᱢ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱮᱫᱟ",
+  "Clear All": "ᱡᱚᱛᱚ ᱜᱮ ᱢᱮᱴᱟᱣ",
+  "6180 Logo": "6180 ᱪᱤᱱᱦᱟᱹ",
+  "Home": "ᱚᱲᱟᱜ",
+  "Visit Home": "ᱚᱲᱟᱜ ᱫᱮᱠᱷᱟᱣ",
+  "Visit 6180.io": "6180.io ᱫᱮᱠᱷᱟᱣ",
+  "No tags available": "ᱴᱮᱜ ᱢᱟᱭ ᱧᱟᱢ ᱟᱠᱟᱫ-ᱟ",
+  "Showing photos with all selected tags": "ᱥᱟᱨᱮᱡ ᱵᱟᱪᱷᱟᱣ ᱟᱠᱟᱱ ᱴᱮᱜ ᱨᱮᱭᱟᱜ ᱨᱮᱢᱦᱟᱴᱮᱫ",
+  "Valid parameters not found in URL": "URL ᱨᱮ ᱵᱟᱹᱲᱛᱤ ᱯᱟᱨᱟᱢᱤᱴᱟᱨ ᱵᱟᱭ ᱧᱟᱢ ᱟᱠᱟᱫ-ᱟ",
+  "Invalid id parameter format": "ᱵᱮᱜᱟᱨ id ᱯᱟᱨᱟᱢᱤᱴᱟᱨ ᱯᱷᱚᱨᱢᱮᱴ",
+  "Album not found": "ᱟᱞᱵᱟᱢ ᱵᱟᱭ ᱧᱟᱢ ᱞᱮᱱᱟ",
+  "the album owner": "ᱟᱞᱵᱟᱢ ᱨᱮᱱ ᱢᱟᱞᱤᱠ",
+  "Tag, save and find that performance — before it's lost.": "ᱪᱤᱦᱱᱟᱹ ᱮᱢ, ᱫᱚᱦᱚ ᱥᱟᱧᱪᱟᱣ ᱟᱨ ᱡᱟᱱᱟᱢ ᱢᱟᱦᱟᱸ ᱧᱟᱢ — ᱦᱟᱨᱟᱣ ᱞᱟᱦᱟ ᱨᱮ।",
+  "Tag, save and find that smile — before it's lost.": "ᱪᱤᱦᱱᱟᱹ ᱮᱢ, ᱫᱚᱦᱚ ᱥᱟᱧᱪᱟᱣ ᱟᱨ ᱨᱚᱱᱚᱫ ᱵᱚᱱᱫᱚᱞ ᱧᱟᱢ — ᱦᱟᱨᱟᱣ ᱞᱟᱦᱟ ᱨᱮ।",
+  "Tag, save and find that birthday — before it's lost.": "ᱪᱤᱦᱱᱟᱹ ᱮᱢ, ᱫᱚᱦᱚ ᱥᱟᱧᱪᱟᱣ ᱟᱨ ᱧᱮᱞᱚᱜ ᱠᱟᱱ ᱯᱮᱨᱯᱷᱚᱨᱢᱮᱱᱥ ᱧᱟᱢ — ᱦᱟᱨᱟᱣ ᱞᱟᱦᱟ ᱨᱮ।",
+  "Tag, save and find that sunset — before it's lost.": "ᱪᱤᱦᱱᱟᱹ ᱮᱢ, ᱫᱚᱦᱚ ᱥᱟᱧᱪᱟᱣ ᱟᱨ ᱪᱷᱩᱴᱤ ᱧᱟᱢ — ᱦᱟᱨᱟᱣ ᱞᱟᱦᱟ ᱨᱮ।",
+  "Tag, save and find that party — before it's lost.": "ᱪᱤᱦᱱᱟᱹ ᱮᱢ, ᱫᱚᱦᱚ ᱥᱟᱧᱪᱟᱣ ᱟᱨ ᱯᱟᱨᱴᱤ ᱧᱟᱢ — ᱦᱟᱨᱟᱣ ᱞᱟᱦᱟ ᱨᱮ।",
+  "Tag, save and find that vacation — before it's lost.": "ᱪᱤᱦᱱᱟᱹ ᱮᱢ, ᱫᱚᱦᱚ ᱥᱟᱧᱪᱟᱣ ᱟᱨ ᱥᱤᱧ ᱫᱤᱥᱚᱢ ᱧᱟᱢ — ᱦᱟᱨᱟᱣ ᱞᱟᱦᱟ ᱨᱮ।"
 }

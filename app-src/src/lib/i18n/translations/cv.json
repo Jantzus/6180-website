@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Сӑн ӳкерчӗкӗсем хуш",
   "Album successfully saved!": "Сирӗн альбом ӑнӑҫлӑ упранчӗ!",
   "All files successfully uploaded": "Мӗн файлсем ӑнӑҫлӑ тиерсе хучӗҫ",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-ра Ус",
   "Toggle contacts filter": "Контактсен фильтрне улӑштар",
   "Showing albums with all selected contacts and tags": "Тӳрлетнӗ пур контактсемпе тӗпсемпе альбомсене кӑтартасси",
-  "Showing albums with all selected tags": "Тӳрлетнӗ пур тӗпсемпе альбомсене кӑтартасси"
+  "Showing albums with all selected tags": "Тӳрлетнӗ пур тӗпсемпе альбомсене кӑтартасси",
+  "Clear All": "Пурне Кӑларса Пӑрах",
+  "6180 Logo": "6180 Логотипӗ",
+  "Home": "Пуçламӑш",
+  "Visit Home": "Пуçламӑш Странкӑна",
+  "Visit 6180.io": "6180.io-на",
+  "No tags available": "Тегсем ҫук",
+  "Showing photos with all selected tags": "Суйласа илнӗ пӗтӗм тегсемпе сӳретсем",
+  "Valid parameters not found in URL": "URL-та лайӑх параметрсем ҫук",
+  "Invalid id parameter format": "Тӗрӗс мар id параметр форматӗ",
+  "Album not found": "Альбом тупӑнмарӗ",
+  "the album owner": "альбом туртӑкчи",
+  "Tag, save and find that performance — before it's lost.": "Палӑртма, упрама тата кӑна кӑтартуне тупма — сутанпа.",
+  "Tag, save and find that smile — before it's lost.": "Палӑртма, упрама тата кӑна елӗмӗпе тупма — сутанпа.",
+  "Tag, save and find that birthday — before it's lost.": "Палӑртма, упрама тата кӑна çуралнӑ кун тупма — сутанпа.",
+  "Tag, save and find that sunset — before it's lost.": "Палӑртма, упрама тата кӑна хӗвел лекме тупма — сутанпа.",
+  "Tag, save and find that party — before it's lost.": "Палӑртма, упрама тата кӑна ял йăли тупма — сутанпа.",
+  "Tag, save and find that vacation — before it's lost.": "Палӑртма, упрама тата кӑна ял тупма — сутанпа."
 }

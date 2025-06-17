@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tāpiri i te mau Hoho'a",
   "Album successfully saved!": "Ua tape-maita'i-hia ta oe hoho'a buka!",
   "All files successfully uploaded": "Ua fa'atupuina te mau tāpura parau ato'a",
@@ -295,5 +296,22 @@
   "Open On Android": "Hōpā I Android",
   "Toggle contacts filter": "Taui te faaroʻo ʻanapa",
   "Showing albums with all selected contacts and tags": "Te faaʻite nei i te mau ʻālipamu e te mau ʻanapa e te mau taʻa katoa i hiloia",
-  "Showing albums with all selected tags": "Te faaʻite nei i te mau ʻālipamu e te mau taʻa katoa i hiloia"
+  "Showing albums with all selected tags": "Te faaʻite nei i te mau ʻālipamu e te mau taʻa katoa i hiloia",
+  "Clear All": "Faamate Atoa",
+  "6180 Logo": "Logo 6180",
+  "Home": "Fare",
+  "Visit Home": "Hōpōi Te Fare",
+  "Visit 6180.io": "Hōpōi 6180.io",
+  "No tags available": "Aita e tahua",
+  "Showing photos with all selected tags": "Te hōho'a nei i te mau ata'e e te mau tahua atoa i te hiri",
+  "Valid parameters not found in URL": "Aita e mau tahua'a rahi i reira i te URL",
+  "Invalid id parameter format": "Faʻaahuahia parameter id ʻaita",
+  "Album not found": "Aita e ʻālipamu i ʻiteahia",
+  "the album owner": "te tia'i ʻālipamu",
+  "Tag, save and find that performance — before it's lost.": "Taata'a te hoho'a, fa'aora e tia i te mahana fanau ra — ino'a vau ia pohe.",
+  "Tag, save and find that smile — before it's lost.": "Taata'a te hoho'a, fa'aora e tia i tei ataata — ino'a vau ia pohe.",
+  "Tag, save and find that birthday — before it's lost.": "Taata'a te hoho'a, fa'aora e tia i tei hō'ē — ino'a vau ia pohe.",
+  "Tag, save and find that sunset — before it's lost.": "Taata'a te hoho'a, fa'aora e tia i te fariuraa — ino'a vau ia pohe.",
+  "Tag, save and find that party — before it's lost.": "Taata'a te hoho'a, fa'aora e tia i te tamaaraa — ino'a vau ia pohe.",
+  "Tag, save and find that vacation — before it's lost.": "Taata'a te hoho'a, fa'aora e tia i te mahana tō ra — ino'a vau ia pohe."
 }

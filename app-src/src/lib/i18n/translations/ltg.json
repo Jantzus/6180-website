@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Pīlikt Fotografejis",
   "Album successfully saved!": "Jiusu albums veiksmeigierobuots!",
   "All files successfully uploaded": "Vysi faili veiksmeigipasorteiti",
@@ -295,5 +296,22 @@
   "Open On Android": "Atdareit Android",
   "Toggle contacts filter": "Pārslēgt kontaktu filtru",
   "Showing albums with all selected contacts and tags": "Ruoda albumus ar vysom izvielitom kontaktom un tagom",
-  "Showing albums with all selected tags": "Ruoda albumus ar vysom izvielitom tagom"
+  "Showing albums with all selected tags": "Ruoda albumus ar vysom izvielitom tagom",
+  "Clear All": "Dzēst Vysu",
+  "6180 Logo": "6180 Logo",
+  "Home": "Sākonī",
+  "Visit Home": "Īt Sākonī",
+  "Visit 6180.io": "Īt 6180.io",
+  "No tags available": "Nav ategov",
+  "Showing photos with all selected tags": "Ruoda attālu ar vysim izvalātajim ategim",
+  "Valid parameters not found in URL": "URL nav atrasti derīgi parametri",
+  "Invalid id parameter format": "Napareizs id parametra formats",
+  "Album not found": "Albums nav atrasts",
+  "the album owner": "alboma īpašneiks",
+  "Tag, save and find that performance — before it's lost.": "Atzīmej, saglobuoj i atrūn itūs dzimšonys dīnu — prekš tam ka izzynuoj.",
+  "Tag, save and find that smile — before it's lost.": "Atzīmej, saglobuoj i atrūn itū smaidu — prekš tam ka izzynuoj.",
+  "Tag, save and find that birthday — before it's lost.": "Atzīmej, saglobuoj i atrūn itū uzstāšonūs — prekš tam ka izzynuoj.",
+  "Tag, save and find that sunset — before it's lost.": "Atzīmej, saglobuoj i atrūn itūs atpūtys — prekš tam ka izzynuoj.",
+  "Tag, save and find that party — before it's lost.": "Atzīmej, saglobuoj i atrūn itū sviestki — prekš tam ka izzynuoj.",
+  "Tag, save and find that vacation — before it's lost.": "Atzīmej, saglobuoj i atrūn itū saules norītu — prekš tam ka izzynuoj."
 }

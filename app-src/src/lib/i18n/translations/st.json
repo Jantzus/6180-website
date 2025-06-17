@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Kenya Litshwantsho",
   "Album successfully saved!": "Albamo ya hao e bolokilwe ka katleho!",
   "All files successfully uploaded": "Difaele tsohle di kentswe ka katleho",
@@ -295,5 +296,22 @@
   "Open On Android": "Bula Ho Android",
   "Toggle contacts filter": "Fetola filter ya dikgokagano",
   "Showing albums with all selected contacts and tags": "Ho bontsha di-album tsa dikgokagano tsohle tse kgethilweng le di-tag",
-  "Showing albums with all selected tags": "Ho bontsha di-album tsa di-tag tsohle tse kgethilweng"
+  "Showing albums with all selected tags": "Ho bontsha di-album tsa di-tag tsohle tse kgethilweng",
+  "Clear All": "Hlakola Tsohle",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Hae",
+  "Visit Home": "Etela Hae",
+  "Visit 6180.io": "Etela 6180.io",
+  "No tags available": "Ha ho di-tag tse fumanehang",
+  "Showing photos with all selected tags": "Ho bontsha ditshwantsho tsa di-tag tsohle tse kgethilweng",
+  "Valid parameters not found in URL": "Ha ho fumanoe ditekanyetso tse nepahetseng ho URL",
+  "Invalid id parameter format": "Sebopeho sa parameter id se seng",
+  "Album not found": "Album ha a fumanehe",
+  "the album owner": "mong wa album",
+  "Tag, save and find that performance — before it's lost.": "Tšwaya letšoao, boloka le fumana letsatsi leo la tswalo — pele le lahlehelwa.",
+  "Tag, save and find that smile — before it's lost.": "Tšwaya letšoao, boloka le fumana tšeho eo — pele e lahlehelwa.",
+  "Tag, save and find that birthday — before it's lost.": "Tšwaya letšoao, boloka le fumana ts'ebetso eo — pele e lahlehelwa.",
+  "Tag, save and find that sunset — before it's lost.": "Tšwaya letšoao, boloka le fumana phomolo eo — pele e lahlehelwa.",
+  "Tag, save and find that party — before it's lost.": "Tšwaya letšoao, boloka le fumana mokete oo — pele o lahlehelwa.",
+  "Tag, save and find that vacation — before it's lost.": "Tšwaya letšoao, boloka le fumana ho tshoha letsatsi leo — pele le lahlehelwa."
 }

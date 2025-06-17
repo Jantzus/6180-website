@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Pievienot Fotoattēlus",
   "Album successfully saved!": "Jūsu albums ir veiksmīgi saglabāts!",
   "All files successfully uploaded": "Visi faili ir veiksmīgi augšupielādēti",
@@ -295,5 +296,22 @@
   "Open On Android": "Atvērt Android",
   "Toggle contacts filter": "Pārslēgt kontaktu filtru",
   "Showing albums with all selected contacts and tags": "Rāda albumus ar visiem izvēlētajiem kontaktiem un atzīmēm",
-  "Showing albums with all selected tags": "Rāda albumus ar visām izvēlētajām atzīmēm"
+  "Showing albums with all selected tags": "Rāda albumus ar visām izvēlētajām atzīmēm",
+  "Clear All": "Notīrīt Visu",
+  "6180 Logo": "6180 Logo",
+  "Home": "Sākums",
+  "Visit Home": "Apmeklēt Sākumu",
+  "Visit 6180.io": "Apmeklēt 6180.io",
+  "No tags available": "Nav pieejamu atzīmju",
+  "Showing photos with all selected tags": "Rāda fotogrāfijas ar visām izvēlētajām atzīmēm",
+  "Valid parameters not found in URL": "URL nav atrasti derīgi parametri",
+  "Invalid id parameter format": "Nederīgs id parametra formāts",
+  "Album not found": "Albums nav atrasts",
+  "the album owner": "albuma īpašnieks",
+  "Tag, save and find that performance — before it's lost.": "Atzīmē, saglabā un atrod šo dzimšanas dienu — pirms tā pazūd.",
+  "Tag, save and find that smile — before it's lost.": "Atzīmē, saglabā un atrod šo smaidu — pirms tas pazūd.",
+  "Tag, save and find that birthday — before it's lost.": "Atzīmē, saglabā un atrod šo uzstāšanos — pirms tā pazūd.",
+  "Tag, save and find that sunset — before it's lost.": "Atzīmē, saglabā un atrod šo atvaļinājumu — pirms tas pazūd.",
+  "Tag, save and find that party — before it's lost.": "Atzīmē, saglabā un atrod šo ballīti — pirms tā pazūd.",
+  "Tag, save and find that vacation — before it's lost.": "Atzīmē, saglabā un atrod šo saulrietu — pirms tas pazūd."
 }

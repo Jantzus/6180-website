@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "عکسؤن ایضافه بکون",
   "Album successfully saved!": "آلبوم شما با موفقیت ذخیره بوبوسته!",
   "All files successfully uploaded": "همه فایل‌ها با موفقیت بارگذاری بوبوسته",
@@ -295,5 +296,22 @@
   "Open On Android": "Android مئن وا بۊکۊن",
   "Toggle contacts filter": "تماس فیلتر آلشتن",
   "Showing albums with all selected contacts and tags": "آلبومان نشون دن همه انتخاب بوده تماسان ؤ تگ ان دئن",
-  "Showing albums with all selected tags": "آلبومان نشون دن همه انتخاب بوده تگان دئن"
+  "Showing albums with all selected tags": "آلبومان نشون دن همه انتخاب بوده تگان دئن",
+  "Clear All": "پاک کردن همه",
+  "6180 Logo": "لوگوی 6180",
+  "Home": "خونه",
+  "Visit Home": "خونه بازدید",
+  "Visit 6180.io": "6180.io بازدید",
+  "No tags available": "هیچ تگی نداریم",
+  "Showing photos with all selected tags": "نشان دهن عکسان همرا تمام تگان انتخابی",
+  "Valid parameters not found in URL": "پارامترا صحیح به URL مئن پیدا نبوسته",
+  "Invalid id parameter format": "نادروست id پارامتر فرمت",
+  "Album not found": "آلبوم پیدا نبوسته",
+  "the album owner": "آلبوم صاحب",
+  "Tag, save and find that performance — before it's lost.": "برچسپن، حیفظ کردن ؤ پیدا کردن اون اجرا — گم بون جا دما.",
+  "Tag, save and find that smile — before it's lost.": "برچسپن، حیفظ کردن ؤ پیدا کردن اون خنده — گم بون جا دما.",
+  "Tag, save and find that birthday — before it's lost.": "برچسپن، حیفظ کردن ؤ پیدا کردن اون تولد — گم بون جا دما.",
+  "Tag, save and find that sunset — before it's lost.": "برچسپن، حیفظ کردن ؤ پیدا کردن اون غروب — گم بون جا دما.",
+  "Tag, save and find that party — before it's lost.": "برچسپن، حیفظ کردن ؤ پیدا کردن اون مهمونی — گم بون جا دما.",
+  "Tag, save and find that vacation — before it's lost.": "برچسپن، حیفظ کردن ؤ پیدا کردن اون تعطیلات — گم بون جا دما."
 }

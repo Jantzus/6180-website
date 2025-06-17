@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Hoʻohui i nā Kiʻi",
   "Album successfully saved!": "Ua mālama 'ia kāu 'ālapa me ka holomua!",
   "All files successfully uploaded": "Ua ho'ouka 'ia a pau nā waihona me ka kūleʻa",
@@ -295,5 +296,22 @@
   "Open On Android": "Wehe Ma Android",
   "Toggle contacts filter": "Hoololi kahi hoʻokolohua kaikaina",
   "Showing albums with all selected contacts and tags": "Hōʻike ʻālapa me nā lawelawe ʻānela a me nā lepili i koho ʻia",
-  "Showing albums with all selected tags": "Hōʻike ʻālapa me nā lepili i koho ʻia a pau"
+  "Showing albums with all selected tags": "Hōʻike ʻālapa me nā lepili i koho ʻia a pau",
+  "Clear All": "Holoi I Nā Mea Apau",
+  "6180 Logo": "Hōʻailona 6180",
+  "Home": "Home",
+  "Visit Home": "Kipa i ka Home",
+  "Visit 6180.io": "Kipa i 6180.io",
+  "No tags available": "ʻAʻohe hōʻailona loa",
+  "Showing photos with all selected tags": "E hōʻike nei i nā kiʻi me nā hōʻailona a pau i koho ʻia",
+  "Valid parameters not found in URL": "ʻAʻole i loaʻa nā parameka pono ma ka URL",
+  "Invalid id parameter format": "Helu id parameter kūpono 'ole",
+  "Album not found": "ʻAʻohe ʻālapa i loaʻa",
+  "the album owner": "ka mea nona ka ʻālapa",
+  "Tag, save and find that performance — before it's lost.": "Hōʻailona, mālama a loaʻa ka hōʻike — ma mua o ka nalowale.",
+  "Tag, save and find that smile — before it's lost.": "Hōʻailona, mālama a loaʻa ka ʻano minomino — ma mua o ka nalowale.",
+  "Tag, save and find that birthday — before it's lost.": "Hōʻailona, mālama a loaʻa ka lā hānau — ma mua o ka nalowale.",
+  "Tag, save and find that sunset — before it's lost.": "Hōʻailona, mālama a loaʻa ka napoo o ka lā — ma mua o ka nalowale.",
+  "Tag, save and find that party — before it's lost.": "Hōʻailona, mālama a loaʻa ka pāʻina — ma mua o ka nalowale.",
+  "Tag, save and find that vacation — before it's lost.": "Hōʻailona, mālama a loaʻa ka hoʻomaha — ma mua o ka nalowale."
 }

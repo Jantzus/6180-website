@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Bæta við Myndum",
   "Album successfully saved!": "Albúmið þitt var vistað!",
   "All files successfully uploaded": "Allar skrár hlaðnar upp með góðum árangri",
@@ -295,5 +296,22 @@
   "Open On Android": "Opna Á Android",
   "Toggle contacts filter": "Víxla tengiliða síu",
   "Showing albums with all selected contacts and tags": "Sýnir albúm með öllum völdum tengiliðum og merkjum",
-  "Showing albums with all selected tags": "Sýnir albúm með öllum völdum merkjum"
+  "Showing albums with all selected tags": "Sýnir albúm með öllum völdum merkjum",
+  "Clear All": "Hreinsa Allt",
+  "6180 Logo": "6180 Lógó",
+  "Home": "Heim",
+  "Visit Home": "Fara Heim",
+  "Visit 6180.io": "Fara á 6180.io",
+  "No tags available": "Engin merki til staðar",
+  "Showing photos with all selected tags": "Sýnir myndir með öllum völdum merkjum",
+  "Valid parameters not found in URL": "Gild færibreytur ekki fundnar í URL",
+  "Invalid id parameter format": "Ógilt id stika snið",
+  "Album not found": "Album fannst ekki",
+  "the album owner": "eigandi albúmsins",
+  "Tag, save and find that performance — before it's lost.": "Merktu, vistaðu og finndu þessa frammistöðu — áður en hún týnist.",
+  "Tag, save and find that smile — before it's lost.": "Merktu, vistaðu og finndu þetta bros — áður en það týnist.",
+  "Tag, save and find that birthday — before it's lost.": "Merktu, vistaðu og finndu þann afmælisdag — áður en hann týnist.",
+  "Tag, save and find that sunset — before it's lost.": "Merktu, vistaðu og finndu þann sólsetur — áður en hann týnist.",
+  "Tag, save and find that party — before it's lost.": "Merktu, vistaðu og finndu þann veisluna — áður en hann týnist.",
+  "Tag, save and find that vacation — before it's lost.": "Merktu, vistaðu og finndu þann frí — áður en hann týnist."
 }

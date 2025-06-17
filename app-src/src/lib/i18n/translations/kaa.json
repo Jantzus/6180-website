@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotolardı Qosıw",
   "Album successfully saved!": "Albomınız tabıslı saqlandı!",
   "All files successfully uploaded": "Pútkil fayllar tabıslı júklendi",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-ta Ash",
   "Toggle contacts filter": "Kontakt filtrini özgertish",
   "Showing albums with all selected contacts and tags": "Tanlangan barı kontaktlar hem teglar menen albomlardı körsitish",
-  "Showing albums with all selected tags": "Tanlangan barı teglar menen albomlardı körsitish"
+  "Showing albums with all selected tags": "Tanlangan barı teglar menen albomlardı körsitish",
+  "Clear All": "Hámmesin Óshiriw",
+  "6180 Logo": "6180 Logası",
+  "Home": "Úy",
+  "Visit Home": "Úyge Bariw",
+  "Visit 6180.io": "6180.io-ge Bariw",
+  "No tags available": "Teglar joq",
+  "Showing photos with all selected tags": "Saylanǧan barlyq teglar menen fotolar ko'rsetu",
+  "Valid parameters not found in URL": "URL içinde geçerli parametreler tabılmadı",
+  "Invalid id parameter format": "Qáte id parametr formatı",
+  "Album not found": "Albom tabılmadı",
+  "the album owner": "albom egesi",
+  "Tag, save and find that performance — before it's lost.": "Belgi qoy, saqla ham ol spektaklni tap — joybollmazdan oldin.",
+  "Tag, save and find that smile — before it's lost.": "Belgi qoy, saqla ham ol jılmayıwşını tap — joybollmazdan oldin.",
+  "Tag, save and find that birthday — before it's lost.": "Belgi qoy, saqla ham ol tuğılğan künni tap — joybollmazdan oldin.",
+  "Tag, save and find that sunset — before it's lost.": "Belgi qoy, saqla ham ol küyesh batıwın tap — joybollmazdan oldin.",
+  "Tag, save and find that party — before it's lost.": "Belgi qoy, saqla ham ol toylı tap — joybollmazdan oldin.",
+  "Tag, save and find that vacation — before it's lost.": "Belgi qoy, saqla ham ol dem alıwın tap — joybollmazdan oldin."
 }

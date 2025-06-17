@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "फोटो दानाय",
   "Album successfully saved!": "नां आलबामखौ जेब्लाबो थांखिनदोंमोन!",
   "All files successfully uploaded": "गासै फाइलफोर जौगानै आपलोड जाबाय",
@@ -295,5 +296,22 @@
   "Open On Android": "Android आव खेव",
   "Toggle contacts filter": "संपर्क फिलटार सोलाय",
   "Showing albums with all selected contacts and tags": "गासै सायखो संपर्क आरो टैग दं आळबाम देखाव नागोन",
-  "Showing albums with all selected tags": "गासै सायखो टैग दं आळबाम देखाव नागोन"
+  "Showing albums with all selected tags": "गासै सायखो टैग दं आळबाम देखाव नागोन",
+  "Clear All": "दाहासे बुंनाय",
+  "6180 Logo": "6180 लोगो",
+  "Home": "दाव",
+  "Visit Home": "दावगिरि हों",
+  "Visit 6180.io": "6180.io हों",
+  "No tags available": "टैग मोनसे मोनाखै",
+  "Showing photos with all selected tags": "गासै नोंथांहोनाय टैग लाव फोटो दिखानो",
+  "Valid parameters not found in URL": "URL आव योग्य प्राचल मोनाखै",
+  "Invalid id parameter format": "गुसांनाव id पारामिटार फारमेट",
+  "Album not found": "आलबाम मोनसे दंमोन",
+  "the album owner": "आलबाम सालाव",
+  "Tag, save and find that performance — before it's lost.": "टैग खालाम, सेभ खालाम आरो बे जनम सान नाय — मासिन याहागोनानि।",
+  "Tag, save and find that smile — before it's lost.": "टैग खालाम, सेभ खालाम आरो बे मुसुका नाय — मासिन याहागोनानि।",
+  "Tag, save and find that birthday — before it's lost.": "टैग खालाम, सेभ खालाम आरो बे परफर्मान्स नाय — मासिन याहागोनानि।",
+  "Tag, save and find that sunset — before it's lost.": "टैग खालाम, सेभ खालाम आरो बे छुट्टी नाय — मासिन याहागोनानि।",
+  "Tag, save and find that party — before it's lost.": "टैग खालाम, सेभ खालाम आरो बे पार्टी नाय — मासिन याहागोनानि।",
+  "Tag, save and find that vacation — before it's lost.": "टैग खालाम, सेभ खालाम आरो बे बेलासे बिसोर नाय — मासिन याहागोनानि।"
 }

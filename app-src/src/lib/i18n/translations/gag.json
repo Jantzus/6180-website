@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Resim Ekle",
   "Album successfully saved!": "Sizin albüm başarıyla kaydedildi!",
   "All files successfully uploaded": "Bütün dosyalar başarıyla yüklendi",
@@ -295,5 +296,22 @@
   "Open On Android": "Android'ta Aç",
   "Toggle contacts filter": "Kontakt filtrini değiştir",
   "Showing albums with all selected contacts and tags": "Seçilen tüm kontaktlar hem etiketler ile albümleri göster",
-  "Showing albums with all selected tags": "Seçilen tüm etiketler ile albümleri göster"
+  "Showing albums with all selected tags": "Seçilen tüm etiketler ile albümleri göster",
+  "Clear All": "Episi Sil",
+  "6180 Logo": "6180 Logosu",
+  "Home": "Ev",
+  "Visit Home": "Ev Ziyaret Et",
+  "Visit 6180.io": "6180.io Ziyaret Et",
+  "No tags available": "Tag yok",
+  "Showing photos with all selected tags": "Seçilen tüm taglarla fotorafları göstermek",
+  "Valid parameters not found in URL": "URL içinde geçerli parametreler bulunmadı",
+  "Invalid id parameter format": "Geçersiz id parametre formatı",
+  "Album not found": "Albom bulunamadı",
+  "the album owner": "albom saibı",
+  "Tag, save and find that performance — before it's lost.": "Etiketlä, sakla hem bul bu gösteriyi — kaybolmadan evvel.",
+  "Tag, save and find that smile — before it's lost.": "Etiketlä, sakla hem bul bu gülümseyi — kaybolmadan evvel.",
+  "Tag, save and find that birthday — before it's lost.": "Etiketlä, sakla hem bul bu doğum gününi — kaybolmadan evvel.",
+  "Tag, save and find that sunset — before it's lost.": "Etiketlä, sakla hem bul bu günbatımını — kaybolmadan evvel.",
+  "Tag, save and find that party — before it's lost.": "Etiketlä, sakla hem bul bu partiyı — kaybolmadan evvel.",
+  "Tag, save and find that vacation — before it's lost.": "Etiketlä, sakla hem bul bu tatili — kaybolmadan evvel."
 }

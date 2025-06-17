@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Добавить Фотографии",
   "Album successfully saved!": "Ваш альбом успешно сохранен!",
   "All files successfully uploaded": "Все файлы успешно загружены",
@@ -295,5 +296,22 @@
   "Open On Android": "Открыть В Android",
   "Toggle contacts filter": "Переключить фильтр контактов",
   "Showing albums with all selected contacts and tags": "Показываются альбомы со всеми выбранными контактами и тегами",
-  "Showing albums with all selected tags": "Показываются альбомы со всеми выбранными тегами"
+  "Showing albums with all selected tags": "Показываются альбомы со всеми выбранными тегами",
+  "Clear All": "Очистить Всё",
+  "6180 Logo": "Логотип 6180",
+  "Home": "Главная",
+  "Visit Home": "Перейти на Главную",
+  "Visit 6180.io": "Перейти на 6180.io",
+  "No tags available": "Теги недоступны",
+  "Showing photos with all selected tags": "Показ фотографий со всеми выбранными тегами",
+  "Valid parameters not found in URL": "Действительные параметры не найдены в URL",
+  "Invalid id parameter format": "Неверный формат параметра id",
+  "Album not found": "Альбом не найден",
+  "the album owner": "владелец альбома",
+  "Tag, save and find that performance — before it's lost.": "Отметьте, сохраните и найдите этот день рождения — прежде чем он потеряется.",
+  "Tag, save and find that smile — before it's lost.": "Отметьте, сохраните и найдите эту улыбку — прежде чем она потеряется.",
+  "Tag, save and find that birthday — before it's lost.": "Отметьте, сохраните и найдите это выступление — прежде чем оно потеряется.",
+  "Tag, save and find that sunset — before it's lost.": "Отметьте, сохраните и найдите этот отпуск — прежде чем он потеряется.",
+  "Tag, save and find that party — before it's lost.": "Отметьте, сохраните и найдите эту вечеринку — прежде чем она потеряется.",
+  "Tag, save and find that vacation — before it's lost.": "Отметьте, сохраните и найдите этот закат — прежде чем он потеряется."
 }

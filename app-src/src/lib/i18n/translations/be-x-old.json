@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Дадаць Фотаздымкі",
   "Album successfully saved!": "Ваш альбом паспяхова захаваны!",
   "All files successfully uploaded": "Усе файлы пасьпяхова загружаныя",
@@ -295,5 +296,22 @@
   "Open On Android": "Адкрыць У Android",
   "Toggle contacts filter": "Пераключыць фільтар кантактаў",
   "Showing albums with all selected contacts and tags": "Паказ альбомаў з усімі абранымі кантактамі і тэгамі",
-  "Showing albums with all selected tags": "Паказ альбомаў з усімі абранымі тэгамі"
+  "Showing albums with all selected tags": "Паказ альбомаў з усімі абранымі тэгамі",
+  "Clear All": "Выдаліць Усё",
+  "6180 Logo": "Лагатып 6180",
+  "Home": "Галоўная",
+  "Visit Home": "Наведаць Галоўную",
+  "Visit 6180.io": "Наведаць 6180.io",
+  "No tags available": "Тэгаў няма",
+  "Showing photos with all selected tags": "Паказ фотаграфіяў з усімі абранымі тэгамі",
+  "Valid parameters not found in URL": "У URL не знойдзеныя правільныя параметры",
+  "Invalid id parameter format": "Няправільны фармат парамэтра id",
+  "Album not found": "Альбом ня знойдзены",
+  "the album owner": "уладальнік альбому",
+  "Tag, save and find that performance — before it's lost.": "Пазначыць, захаваць і знайсьці гэтае выступленьне — перш чым яно згубіцца.",
+  "Tag, save and find that smile — before it's lost.": "Пазначыць, захаваць і знайсьці гэтую ўсьмешку — перш чым яна згубіцца.",
+  "Tag, save and find that birthday — before it's lost.": "Пазначыць, захаваць і знайсьці гэты дзень нараджэньня — перш чым ён згубіцца.",
+  "Tag, save and find that sunset — before it's lost.": "Пазначыць, захаваць і знайсьці гэты захад сонца — перш чым ён згубіцца.",
+  "Tag, save and find that party — before it's lost.": "Пазначыць, захаваць і знайсьці гэтую вечарыну — перш чым яна згубіцца.",
+  "Tag, save and find that vacation — before it's lost.": "Пазначыць, захаваць і знайсьці гэты адпачынак — перш чым ён згубіцца."
 }

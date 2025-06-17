@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "افزودن عکس‌ها",
   "Album successfully saved!": "آلبوم شما با موفقیت ذخیره شد!",
   "All files successfully uploaded": "همه فایل‌ها با موفقیت بارگذاری شدند",
@@ -295,5 +296,22 @@
   "Open On Android": "باز کردن در Android",
   "Toggle contacts filter": "تغییر فیلتر مخاطبین",
   "Showing albums with all selected contacts and tags": "نمایش آلبوم‌ها با تمام مخاطبین و برچسب‌های انتخاب شده",
-  "Showing albums with all selected tags": "نمایش آلبوم‌ها با تمام برچسب‌های انتخاب شده"
+  "Showing albums with all selected tags": "نمایش آلبوم‌ها با تمام برچسب‌های انتخاب شده",
+  "Clear All": "پاک کردن همه",
+  "6180 Logo": "لوگوی 6180",
+  "Home": "خانه",
+  "Visit Home": "بازدید از خانه",
+  "Visit 6180.io": "بازدید از 6180.io",
+  "No tags available": "هیچ برچسبی در دسترس نیست",
+  "Showing photos with all selected tags": "نمایش عکس‌ها با تمام برچسب‌های انتخابی",
+  "Valid parameters not found in URL": "پارامترهای معتبر در نشانی وب یافت نشد",
+  "Invalid id parameter format": "فرمت پارامتر شناسه نامعتبر",
+  "Album not found": "آلبوم یافت نشد",
+  "the album owner": "مالک آلبوم",
+  "Tag, save and find that performance — before it's lost.": "برچسب‌گذاری، ذخیره و یافتن آن اجرا — قبل از گم شدن.",
+  "Tag, save and find that smile — before it's lost.": "برچسب‌گذاری، ذخیره و یافتن آن لبخند — قبل از گم شدن.",
+  "Tag, save and find that birthday — before it's lost.": "برچسب‌گذاری، ذخیره و یافتن آن تولد — قبل از گم شدن.",
+  "Tag, save and find that sunset — before it's lost.": "برچسب‌گذاری، ذخیره و یافتن آن غروب — قبل از گم شدن.",
+  "Tag, save and find that party — before it's lost.": "برچسب‌گذاری، ذخیره و یافتن آن مهمانی — قبل از گم شدن.",
+  "Tag, save and find that vacation — before it's lost.": "برچسب‌گذاری، ذخیره و یافتن آن تعطیلات — قبل از گم شدن."
 }

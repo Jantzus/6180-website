@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ajustar de Fòtos",
   "Album successfully saved!": "Vòstre album es estat enregistrat amb succès!",
   "All files successfully uploaded": "Totes los fichièrs son estats mandats amb succès",
@@ -295,5 +296,22 @@
   "Open On Android": "Dubrir Sus Android",
   "Toggle contacts filter": "Comutar lo filtre de contactes",
   "Showing albums with all selected contacts and tags": "Afichar los albums amb totes los contactes e etiquetas seleccionats",
-  "Showing albums with all selected tags": "Afichar los albums amb totas las etiquetas seleccionadas"
+  "Showing albums with all selected tags": "Afichar los albums amb totas las etiquetas seleccionadas",
+  "Clear All": "Escafar Tot",
+  "6180 Logo": "Lògo de 6180",
+  "Home": "Acuèlh",
+  "Visit Home": "Visitar Acuèlh",
+  "Visit 6180.io": "Visitar 6180.io",
+  "No tags available": "Cap d'etiqueta pas disponibla",
+  "Showing photos with all selected tags": "Afichatge de fòtos amb totas las etiquetas seleccionadas",
+  "Valid parameters not found in URL": "Paramètres valids pas trobats dins l'URL",
+  "Invalid id parameter format": "Format de paramètre id invalid",
+  "Album not found": "Album pas trobat",
+  "the album owner": "lo proprietari de l'album",
+  "Tag, save and find that performance — before it's lost.": "Etiquetar, enregistrar e trobar aquel anniversari — abans qu'el se pèrda.",
+  "Tag, save and find that smile — before it's lost.": "Etiquetar, enregistrar e trobar aquel sorrire — abans qu'el se pèrda.",
+  "Tag, save and find that birthday — before it's lost.": "Etiquetar, enregistrar e trobar aquela prestacion — abans qu'ela se pèrda.",
+  "Tag, save and find that sunset — before it's lost.": "Etiquetar, enregistrar e trobar aquelas vacàncias — abans qu'elas se pèrdan.",
+  "Tag, save and find that party — before it's lost.": "Etiquetar, enregistrar e trobar aquela fèsta — abans qu'ela se pèrda.",
+  "Tag, save and find that vacation — before it's lost.": "Etiquetar, enregistrar e trobar aquel solelh couchant — abans qu'el se pèrda."
 }

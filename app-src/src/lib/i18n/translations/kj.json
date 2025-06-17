@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Gweda Uuredhidhimbukwa",
   "Album successfully saved!": "Album yoye inamana osikilila!",
   "All files successfully uploaded": "Omambo alehe omakalumbula",
@@ -295,5 +296,22 @@
   "Open On Android": "Zuvura Mo Android",
   "Toggle contacts filter": "Tjinga kontak filter",
   "Showing albums with all selected contacts and tags": "Harepa album ja kontak omu ndjimbo yima ja pitilwa",
-  "Showing albums with all selected tags": "Harepa album ja ndjimbo yima ja pitilwa"
+  "Showing albums with all selected tags": "Harepa album ja ndjimbo yima ja pitilwa",
+  "Clear All": "Zima Vyose",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Omuhoko",
+  "Visit Home": "Yenda Omuhoko",
+  "Visit 6180.io": "Yenda 6180.io",
+  "No tags available": "Kaku tags kehe",
+  "Showing photos with all selected tags": "Kuatisa umupe kuramenu komeva kontjanda",
+  "Valid parameters not found in URL": "Kaku parameters kehe va URI",
+  "Invalid id parameter format": "Id parameter format ihe linonene",
+  "Album not found": "Album meku mona",
+  "the album owner": "omunu wa album",
+  "Tag, save and find that performance — before it's lost.": "Namibia, kanga ndu ehi oshi performance — ngaashi e li po.",
+  "Tag, save and find that smile — before it's lost.": "Namibia, kanga ndu ehi oshi hambelela — ngaashi e li po.",
+  "Tag, save and find that birthday — before it's lost.": "Namibia, kanga ndu ehi omupyu wo kuyeleka — ngaashi e li po.",
+  "Tag, save and find that sunset — before it's lost.": "Namibia, kanga ndu ehi omupyu wa ri zuva rinoenda — ngaashi e li po.",
+  "Tag, save and find that party — before it's lost.": "Namibia, kanga ndu ehi omulilo womhako — ngaashi e li po.",
+  "Tag, save and find that vacation — before it's lost.": "Namibia, kanga ndu ehi omwenyo womhako — ngaashi e li po."
 }

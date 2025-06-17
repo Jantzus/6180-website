@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Suuraa Dabaluu",
   "Album successfully saved!": "Albaama kee milkiin olkaa'ameera!",
   "All files successfully uploaded": "Faayiloonni hundinuu milkaa'inaan fe'atameera",
@@ -295,5 +296,22 @@
   "Open On Android": "Android Irratti Banuu",
   "Toggle contacts filter": "Qunnamtii walqabii jijjiiri",
   "Showing albums with all selected contacts and tags": "Qunnamtii adda taʼe quunnama walqabii fi asxaa filatamaniin argisisa",
-  "Showing albums with all selected tags": "Qunnamtii adda taʼe asxaa filatamaniin argisisa"
+  "Showing albums with all selected tags": "Qunnamtii adda taʼe asxaa filatamaniin argisisa",
+  "Clear All": "Haqii Hunda",
+  "6180 Logo": "Mallattoo 6180",
+  "Home": "Mana",
+  "Visit Home": "Mana Galma",
+  "Visit 6180.io": "6180.io Galma",
+  "No tags available": "Mallattoo hin jiru",
+  "Showing photos with all selected tags": "Fakkii hunda filataman wajjin suuraa argisiisuu",
+  "Valid parameters not found in URL": "Ulaagaan sirrii ta'an URL keessatti hin argamne",
+  "Invalid id parameter format": "Bifa parameter id hin haala",
+  "Album not found": "Albumii hin argamne",
+  "the album owner": "abbaa albumii",
+  "Tag, save and find that performance — before it's lost.": "Mallattoo, olkaa'ii fi argachuu dhaloota — osoo hin badin dura.",
+  "Tag, save and find that smile — before it's lost.": "Mallattoo, olkaa'ii fi argachuu sanduqa kolfaa — osoo hin badin dura.",
+  "Tag, save and find that birthday — before it's lost.": "Mallattoo, olkaa'ii fi argachuu sanduqa mul'ataa — osoo hin badin dura.",
+  "Tag, save and find that sunset — before it's lost.": "Mallattoo, olkaa'ii fi argachuu boqonnaa — osoo hin badin dura.",
+  "Tag, save and find that party — before it's lost.": "Mallattoo, olkaa'ii fi argachuu ayyaana — osoo hin badin dura.",
+  "Tag, save and find that vacation — before it's lost.": "Mallattoo, olkaa'ii fi argachuu lixa aduu — osoo hin badin dura."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ongerera Picha",
   "Album successfully saved!": "Albamu yaku nihonekire!",
   "All files successfully uploaded": "Faili ciothe kwarikio wega",
@@ -295,5 +296,22 @@
   "Open On Android": "Hingura Android-ini",
   "Toggle contacts filter": "Garũra kĩhũũgi kĩa mĩgwatanĩro",
   "Showing albums with all selected contacts and tags": "Kũnyoroithia mĩgwatanĩro ya mũciĩ na mawara mothe marĩa mathuurĩtwo",
-  "Showing albums with all selected tags": "Kũnyoroithia mĩgwatanĩro ya mawara mothe marĩa mathuurĩtwo"
+  "Showing albums with all selected tags": "Kũnyoroithia mĩgwatanĩro ya mawara mothe marĩa mathuurĩtwo",
+  "Clear All": "Theria Cia Ciothe",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Mũciĩ",
+  "Visit Home": "Thiĩ Mũciĩ",
+  "Visit 6180.io": "Thiĩ 6180.io",
+  "No tags available": "Hatirĩ ici cionekire",
+  "Showing photos with all selected tags": "Kuonia mahinda na ici ciothe ciathuurirwo",
+  "Valid parameters not found in URL": "Gũtirĩ ihindũrũra iria irĩ bata irĩ URL-inĩ",
+  "Invalid id parameter format": "Id parameter format itagiire wega",
+  "Album not found": "Album ndirĩ ionekire",
+  "the album owner": "mwene wa album",
+  "Tag, save and find that performance — before it's lost.": "Handũka, hinga na mona kũina kũrĩa — mbere yakũũra.",
+  "Tag, save and find that smile — before it's lost.": "Handũka, hinga na mona kũtheka kũrĩa — mbere yakũũra.",
+  "Tag, save and find that birthday — before it's lost.": "Handũka, hinga na mona mũthenya wa gũciarwo — mbere yakũũra.",
+  "Tag, save and find that sunset — before it's lost.": "Handũka, hinga na mona riua rĩgũa — mbere yakũũra.",
+  "Tag, save and find that party — before it's lost.": "Handũka, hinga na mona ndũmĩrĩri ĩrĩa — mbere yakũũra.",
+  "Tag, save and find that vacation — before it's lost.": "Handũka, hinga na mona kĩhurũko kĩrĩa — mbere yakũũra."
 }

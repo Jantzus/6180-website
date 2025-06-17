@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tambaiy Gambar",
   "Album successfully saved!": "Albummu apparecce' mattarimma!",
   "All files successfully uploaded": "Maneng file malobbangngi carakka ripammase",
@@ -295,5 +296,22 @@
   "Open On Android": "Buka Di Android",
   "Toggle contacts filter": "Ganti filter kontak",
   "Showing albums with all selected contacts and tags": "Mancaji album sareng kontak siagang tag namallupu",
-  "Showing albums with all selected tags": "Mancaji album sareng tag namallupu"
+  "Showing albums with all selected tags": "Mancaji album sareng tag namallupu",
+  "Clear All": "Leddaki Siega",
+  "6180 Logo": "Logo 6180",
+  "Home": "Bola",
+  "Visit Home": "Lao ri Bola",
+  "Visit 6180.io": "Lao ri 6180.io",
+  "No tags available": "Tena tag makanja",
+  "Showing photos with all selected tags": "Mappakita gambar marua tona tag ripilih",
+  "Valid parameters not found in URL": "Dek ada parameter baja riolo ri URL",
+  "Invalid id parameter format": "Format parameter id dek bener",
+  "Album not found": "Album dek riaseng",
+  "the album owner": "pammalli album",
+  "Tag, save and find that performance — before it's lost.": "Tag, simpang si anu pakkawing-E — seubelum hilange.",
+  "Tag, save and find that smile — before it's lost.": "Tag, simpang si anu meseka-E — seubelum hilange.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, simpang si anu allino-E — seubelum hilange.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, simpang si anu allo pettu-E — seubelum hilange.",
+  "Tag, save and find that party — before it's lost.": "Tag, simpang si anu pesta-E — seubelum hilange.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, simpang si anu libure-E — seubelum hilange."
 }

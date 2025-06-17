@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Суьрташ тӀетоха",
   "Album successfully saved!": "Хьан альбом кӏалхьарйоккхуш аьтто хилла!",
   "All files successfully uploaded": "Массо файлаш кхиамца чуяьхна",
@@ -295,5 +296,22 @@
   "Open On Android": "Android чохь Да",
   "Toggle contacts filter": "Контактийн фильтр хийца",
   "Showing albums with all selected contacts and tags": "Харжа контакташ а, тегаш а цӀахь йолуш альбомаш гайта",
-  "Showing albums with all selected tags": "Харжа тегаш цӀахь йолуш альбомаш гайта"
+  "Showing albums with all selected tags": "Харжа тегаш цӀахь йолуш альбомаш гайта",
+  "Clear All": "Массо ДӀаяккха",
+  "6180 Logo": "6180 Логотип",
+  "Home": "Дуьха",
+  "Visit Home": "Дуьха Дача",
+  "Visit 6180.io": "6180.io Дача",
+  "No tags available": "Тегаш яц",
+  "Showing photos with all selected tags": "Массо хаьржина тегаш долу суьртех",
+  "Valid parameters not found in URL": "URL-чохь бехкаш параметраш цакарийна",
+  "Invalid id parameter format": "Лелош йоцу id параметран формат",
+  "Album not found": "Альбом цакарийна",
+  "the album owner": "альбоман хозяин",
+  "Tag, save and find that performance — before it's lost.": "Билгал дан, Ӏалашъян а иза дихар карор — юхъанцара.",
+  "Tag, save and find that smile — before it's lost.": "Билгал дан, Ӏалашъян а иза догӏаргъялар — юхъанцара.",
+  "Tag, save and find that birthday — before it's lost.": "Билгал дан, Ӏалашъян а иза дуьненазалар — юхъанцара.",
+  "Tag, save and find that sunset — before it's lost.": "Билгал дан, Ӏалашъян а иза малх чекхьоьхуш — юхъанцара.",
+  "Tag, save and find that party — before it's lost.": "Билгал дан, Ӏалашъян а иза хьулдам — юхъанцара.",
+  "Tag, save and find that vacation — before it's lost.": "Билгал дан, Ӏалашъян а иза дуьхьа — юхъанцара."
 }

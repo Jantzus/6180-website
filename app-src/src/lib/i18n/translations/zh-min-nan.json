@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "加入相片",
   "Album successfully saved!": "你的相簿已經成功保存!",
   "All files successfully uploaded": "所有檔案上傳成功",
@@ -295,5 +296,22 @@
   "Open On Android": "Tī Android khai",
   "Toggle contacts filter": "Chhoat-ōaⁿ liân-lo̍k-jîn sái-suann-khì",
   "Showing albums with all selected contacts and tags": "Hián-sī pau-hâm chóan-pō͘ soáⁿ-tông ê liân-lo̍k-jîn kap piau-chiám ê sòng-chîⁿ",
-  "Showing albums with all selected tags": "Hián-sī pau-hâm chóan-pō͘ soáⁿ-tông ê piau-chiám ê sòng-chîⁿ"
+  "Showing albums with all selected tags": "Hián-sī pau-hâm chóan-pō͘ soáⁿ-tông ê piau-chiám ê sòng-chîⁿ",
+  "Clear All": "清除全部",
+  "6180 Logo": "6180標誌",
+  "Home": "主頁",
+  "Visit Home": "參觀主頁",
+  "Visit 6180.io": "參觀6180.io",
+  "No tags available": "無標籤ē-tàng hòo",
+  "Showing photos with all selected tags": "Hián-sī choân-pō͘ sóan-tiak ê phiau-chhiam ê siòng-phìn",
+  "Valid parameters not found in URL": "Tī URL lāi-bīn chhōe bô chèng-tòng ê chham-sò",
+  "Invalid id parameter format": "無效 ê ID 參數格式",
+  "Album not found": "揣無相簿",
+  "the album owner": "相簿 ê 主人",
+  "Tag, save and find that performance — before it's lost.": "Phiau-kì, pó-chûn kap chhōe hit ê seⁿ-ji̍t — tī sit-khì chìn-chêng.",
+  "Tag, save and find that smile — before it's lost.": "Phiau-kì, pó-chûn kap chhōe hit ê chhìⁿ — tī sit-khì chìn-chêng.",
+  "Tag, save and find that birthday — before it's lost.": "Phiau-kì, pó-chûn kap chhōe hit ê piáu-ián — tī sit-khì chìn-chêng.",
+  "Tag, save and find that sunset — before it's lost.": "Phiau-kì, pó-chûn kap chhōe hit ê kè-kî — tī sit-khì chìn-chêng.",
+  "Tag, save and find that party — before it's lost.": "Phiau-kì, pó-chûn kap chhōe hit ê pài-tùi — tī sit-khì chìn-chêng.",
+  "Tag, save and find that vacation — before it's lost.": "Phiau-kì, pó-chûn kap chhōe hit ê ji̍t-lo̍h — tī sit-khì chìn-chêng."
 }

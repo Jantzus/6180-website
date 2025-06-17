@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fakalahi e ngaahi 'Ata",
   "Album successfully saved!": "Kuo fakahaofi lelei ho'o pusa fakatātā!",
   "All files successfully uploaded": "Kuo hiki hake lelei 'a e ngaahi faile kotoa",
@@ -295,5 +296,22 @@
   "Open On Android": "Fakaava Ki Android",
   "Toggle contacts filter": "Fetongi ʻa e fakamaama ʻo e ngaahi fetuʻutaki",
   "Showing albums with all selected contacts and tags": "Fakaha ʻa e ngaahi ʻālipamu mo e ngaahi fetuʻutaki mo e ngaahi mahina kuo fili",
-  "Showing albums with all selected tags": "Fakaha ʻa e ngaahi ʻālipamu mo e ngaahi mahina kuo fili"
+  "Showing albums with all selected tags": "Fakaha ʻa e ngaahi ʻālipamu mo e ngaahi mahina kuo fili",
+  "Clear All": "Holisi Kotoa",
+  "6180 Logo": "Logo ʻo 6180",
+  "Home": "Fale",
+  "Visit Home": "Vakai ki 'Api",
+  "Visit 6180.io": "Vakai ki 6180.io",
+  "No tags available": "ʻIkai ha ngaahi fakaʻilonga",
+  "Showing photos with all selected tags": "Fakaali 'a e ngaahi fakamatala mo e fakaʻilonga kotoa kuo fili",
+  "Valid parameters not found in URL": "ʻIkai ha ngaahi fakamatala angatonu ʻi he URL",
+  "Invalid id parameter format": "Fakamatala ʻo e parameter id ʻikai lelei",
+  "Album not found": "ʻIkai maʻu ha ʻālipamu",
+  "the album owner": "ʻoku pule ki he ʻālipamu",
+  "Tag, save and find that performance — before it's lost.": "Fakamatala, tauhi pea kumi 'a e 'aho fanau ko ia — ka 'ikai ngalo.",
+  "Tag, save and find that smile — before it's lost.": "Fakamatala, tauhi pea kumi 'a e malimali ko ia — ka 'ikai ngalo.",
+  "Tag, save and find that birthday — before it's lost.": "Fakamatala, tauhi pea kumi 'a e fa'ahiga ko ia — ka 'ikai ngalo.",
+  "Tag, save and find that sunset — before it's lost.": "Fakamatala, tauhi pea kumi 'a e malolo ko ia — ka 'ikai ngalo.",
+  "Tag, save and find that party — before it's lost.": "Fakamatala, tauhi pea kumi 'a e fakataha ko ia — ka 'ikai ngalo.",
+  "Tag, save and find that vacation — before it's lost.": "Fakamatala, tauhi pea kumi 'a e aho hake ko ia — ka 'ikai ngalo."
 }

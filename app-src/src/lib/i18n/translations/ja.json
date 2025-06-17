@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "写真を追加",
   "Album successfully saved!": "アルバムが正常に保存されました！",
   "All files successfully uploaded": "すべてのファイルが正常にアップロードされました",
@@ -295,5 +296,22 @@
   "Open On Android": "Androidで開く",
   "Toggle contacts filter": "連絡先フィルターを切り替え",
   "Showing albums with all selected contacts and tags": "選択したすべての連絡先とタグのアルバムを表示",
-  "Showing albums with all selected tags": "選択したすべてのタグのアルバムを表示"
+  "Showing albums with all selected tags": "選択したすべてのタグのアルバムを表示",
+  "Clear All": "すべてクリア",
+  "6180 Logo": "6180ロゴ",
+  "Home": "ホーム",
+  "Visit Home": "ホームを訪問",
+  "Visit 6180.io": "6180.ioを訪問",
+  "No tags available": "利用可能なタグがありません",
+  "Showing photos with all selected tags": "選択されたすべてのタグが付いた写真を表示",
+  "Valid parameters not found in URL": "URLに有効なパラメータが見つかりません",
+  "Invalid id parameter format": "無効なIDパラメータ形式",
+  "Album not found": "アルバムが見つかりません",
+  "the album owner": "アルバムの所有者",
+  "Tag, save and find that performance — before it's lost.": "タグを付けて、保存してそのパフォーマンスを見つける — 失われる前に。",
+  "Tag, save and find that smile — before it's lost.": "タグを付けて、保存してその笑顔を見つける — 失われる前に。",
+  "Tag, save and find that birthday — before it's lost.": "タグを付けて、保存してその誕生日を見つける — 失われる前に。",
+  "Tag, save and find that sunset — before it's lost.": "タグを付けて、保存してその夕日を見つける — 失われる前に。",
+  "Tag, save and find that party — before it's lost.": "タグを付けて、保存してそのパーティーを見つける — 失われる前に。",
+  "Tag, save and find that vacation — before it's lost.": "タグを付けて、保存してその休暇を見つける — 失われる前に。"
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Aggiunge Fote",
   "Album successfully saved!": "O tuo album è stato sarvato cu successo!",
   "All files successfully uploaded": "'E file so state caricate con succiesso",
@@ -295,5 +296,22 @@
   "Open On Android": "Rape 'Ncopp A Android",
   "Toggle contacts filter": "Cagna 'o filtro d''e cuntatte",
   "Showing albums with all selected contacts and tags": "Muost''e album cu tutt''e cuntatte e tag scegliute",
-  "Showing albums with all selected tags": "Muost''e album cu tutt''e tag scegliute"
+  "Showing albums with all selected tags": "Muost''e album cu tutt''e tag scegliute",
+  "Clear All": "Pulezza Tutt'chello",
+  "6180 Logo": "Logo 'e 6180",
+  "Home": "Casa",
+  "Visit Home": "Vaje a Casa",
+  "Visit 6180.io": "Vaje a 6180.io",
+  "No tags available": "Nisciuna etichetta",
+  "Showing photos with all selected tags": "'E futugrafia cu tutt' 'e tag scigliute",
+  "Valid parameters not found in URL": "Nuje tuvatr'o parametr'e valit'n't URL",
+  "Invalid id parameter format": "Formato 'e parametro id nun buono",
+  "Album not found": "Album nun s'attrova",
+  "the album owner": "'o patrò 'e ll'album",
+  "Tag, save and find that performance — before it's lost.": "Metti na marca, salva e cerca chillu cumpleanni — primma ca se perde.",
+  "Tag, save and find that smile — before it's lost.": "Metti na marca, salva e cerca chillu sorriso — primma ca se perde.",
+  "Tag, save and find that birthday — before it's lost.": "Metti na marca, salva e cerca chillu spettacolo — primma ca se perde.",
+  "Tag, save and find that sunset — before it's lost.": "Metti na marca, salva e cerca chille vacanze — primma ca se perdeno.",
+  "Tag, save and find that party — before it's lost.": "Metti na marca, salva e cerca chilla festa — primma ca se perde.",
+  "Tag, save and find that vacation — before it's lost.": "Metti na marca, salva e cerca chillu tramonto — primma ca se perde."
 }

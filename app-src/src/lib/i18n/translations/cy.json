@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ychwanegu Lluniau",
   "Album successfully saved!": "Cadwyd eich albwm yn llwyddiannus!",
   "All files successfully uploaded": "Pob ffeil wedi'u llwytho'n llwyddiannus",
@@ -295,5 +296,22 @@
   "Open On Android": "Agor Ar Android",
   "Toggle contacts filter": "Toglo hidlydd cysylltiadau",
   "Showing albums with all selected contacts and tags": "Dangos albymau gyda'r holl gysylltiadau a thagiau a ddewiswyd",
-  "Showing albums with all selected tags": "Dangos albymau gyda'r holl dagiau a ddewiswyd"
+  "Showing albums with all selected tags": "Dangos albymau gyda'r holl dagiau a ddewiswyd",
+  "Clear All": "Clirio Popeth",
+  "6180 Logo": "Logo 6180",
+  "Home": "Hafan",
+  "Visit Home": "Ymweld â'r Hafan",
+  "Visit 6180.io": "Ymweld â 6180.io",
+  "No tags available": "Dim tagiau ar gael",
+  "Showing photos with all selected tags": "Yn dangos lluniau gyda'r holl dagiau a ddewiswyd",
+  "Valid parameters not found in URL": "Heb ddod o hyd i baramedrau dilys yn yr URL",
+  "Invalid id parameter format": "Fformat paramedr id annilys",
+  "Album not found": "Ni chanfuwyd yr albwm",
+  "the album owner": "perchennog yr albwm",
+  "Tag, save and find that performance — before it's lost.": "Tagio, cadw a chanfod y perfformiad hwnnw — cyn iddo gael ei golli.",
+  "Tag, save and find that smile — before it's lost.": "Tagio, cadw a chanfod y wên honno — cyn iddi gael ei cholli.",
+  "Tag, save and find that birthday — before it's lost.": "Tagio, cadw a chanfod y pen-blwydd hwnnw — cyn iddo gael ei golli.",
+  "Tag, save and find that sunset — before it's lost.": "Tagio, cadw a chanfod y machlud hwnnw — cyn iddo gael ei golli.",
+  "Tag, save and find that party — before it's lost.": "Tagio, cadw a chanfod y parti hwnnw — cyn iddo gael ei golli.",
+  "Tag, save and find that vacation — before it's lost.": "Tagio, cadw a chanfod y gwyliau hynny — cyn iddynt gael eu colli."
 }

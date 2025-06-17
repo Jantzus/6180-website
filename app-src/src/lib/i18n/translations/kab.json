@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Rnu Tugniwin",
   "Album successfully saved!": "Albumu-ik yettwasekles akken iwata!",
   "All files successfully uploaded": "Akk ifuyla ttwazen akken iwata",
@@ -295,5 +296,22 @@
   "Open On Android": "Ldi Deg Android",
   "Toggle contacts filter": "Snifel amzizdig n unermis",
   "Showing albums with all selected contacts and tags": "Sken iɣbula s akk inermas d ticraḍ ittufernen",
-  "Showing albums with all selected tags": "Sken iɣbula s akk ticraḍ ittufernen"
+  "Showing albums with all selected tags": "Sken iɣbula s akk ticraḍ ittufernen",
+  "Clear All": "Sfeḍ Akk",
+  "6180 Logo": "Anekcum n 6180",
+  "Home": "Agejdan",
+  "Visit Home": "Ruh ɣer Agejdan",
+  "Visit 6180.io": "Ruh ɣer 6180.io",
+  "No tags available": "Ulac ticreḍ",
+  "Showing photos with all selected tags": "Askan n tugniwin s akk ticreḍ i tettufernen",
+  "Valid parameters not found in URL": "Ur d-ttwafen ara isefka uzɣinen deg URL",
+  "Invalid id parameter format": "Anaw n umsestay id ur d-ameɣtu",
+  "Album not found": "Albom ur yettwafen",
+  "the album owner": "bab n albom",
+  "Tag, save and find that performance — before it's lost.": "Creḍ, ḥrez udiaf-d abexxes-nni — uqbel ad iruḥ.",
+  "Tag, save and find that smile — before it's lost.": "Creḍ, ḥrez udiaf-d adlis-nni — uqbel ad iruḥ.",
+  "Tag, save and find that birthday — before it's lost.": "Creḍ, ḥrez udiaf-d aass n tlalit-nni — uqbel ad iruḥ.",
+  "Tag, save and find that sunset — before it's lost.": "Creḍ, ḥrez udiaf-d aɣrem n tafukt-nni — uqbel ad iruḥ.",
+  "Tag, save and find that party — before it's lost.": "Creḍ, ḥrez udiaf-d alemmas-nni — uqbel ad iruḥ.",
+  "Tag, save and find that vacation — before it's lost.": "Creḍ, ḥrez udiaf-d agla-nni — uqbel ad iruḥ."
 }

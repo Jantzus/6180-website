@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ເພີ່ມຮູບພາບ",
   "Album successfully saved!": "ອະລະບ້ຳຂອງທ່ານຖືກບັນທຶກຢ່າງສຳເລັດຜົນ!",
   "All files successfully uploaded": "ໄຟລ໌ທັງໝົດອັບໂຫລດສຳເລັດແລ້ວ",
@@ -295,5 +296,22 @@
   "Open On Android": "ເປີດໃນ Android",
   "Toggle contacts filter": "ສະຫຼັບຕົວກອງຕິດຕໍ່",
   "Showing albums with all selected contacts and tags": "ສະແດງອາລະບໍ້າທີ່ມີການຕິດຕໍ່ແລະປ້າຍທີ່ເລືອກທັງໝົດ",
-  "Showing albums with all selected tags": "ສະແດງອາລະບໍ້າທີ່ມີປ້າຍທີ່ເລືອກທັງໝົດ"
+  "Showing albums with all selected tags": "ສະແດງອາລະບໍ້າທີ່ມີປ້າຍທີ່ເລືອກທັງໝົດ",
+  "Clear All": "ລຶບທັງໝົດ",
+  "6180 Logo": "ໂລໂກ້6180",
+  "Home": "ໜ້າຫຼັກ",
+  "Visit Home": "ໄປທີ່ໜ້າຫຼັກ",
+  "Visit 6180.io": "ໄປທີ່ 6180.io",
+  "No tags available": "ບໍ່ມີແທັກໃດໆ",
+  "Showing photos with all selected tags": "ສະແດງຮູບພາບທີ່ມີແທັກທັງໝົດທີ່ເລືອກ",
+  "Valid parameters not found in URL": "ບໍ່ພົບພາລາມິເຕີທີ່ຖືກຕ້ອງໃນ URL",
+  "Invalid id parameter format": "ຮູບແບບພາລາມີເຕີ id ບໍ່ຖືກຕ້ອງ",
+  "Album not found": "ບໍ່ພົບອາລະບໍ້າ",
+  "the album owner": "ເຈົ້າຂອງອາລະບໍ້າ",
+  "Tag, save and find that performance — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາວັນເກີດນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ.",
+  "Tag, save and find that smile — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາຮອຍຍິ້ມນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ.",
+  "Tag, save and find that birthday — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາການສະແດງນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ.",
+  "Tag, save and find that sunset — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາການພັກຜ່ອນນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ.",
+  "Tag, save and find that party — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາງານລ້ຽງນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ.",
+  "Tag, save and find that vacation — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາການຕົກຂອງຕາວັນນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ."
 }

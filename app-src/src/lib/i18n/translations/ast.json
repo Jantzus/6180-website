@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Añadir Semeyes",
   "Album successfully saved!": "El to álbum guardóse con ésitu!",
   "All files successfully uploaded": "Tolos ficheros xubíos con ésitu",
@@ -295,5 +296,22 @@
   "Open On Android": "Abrir N'Android",
   "Toggle contacts filter": "Camudar filtru de contautos",
   "Showing albums with all selected contacts and tags": "Amosar álbumes con tolos contautos y etiquetes esbillaes",
-  "Showing albums with all selected tags": "Amosar álbumes con toles etiquetes esbillaes"
+  "Showing albums with all selected tags": "Amosar álbumes con toles etiquetes esbillaes",
+  "Clear All": "Desaniciar Tolo",
+  "6180 Logo": "Logotripo de 6180",
+  "Home": "Entamu",
+  "Visit Home": "Visitar Entamu",
+  "Visit 6180.io": "Visitar 6180.io",
+  "No tags available": "Nun hai etiquetes disponibles",
+  "Showing photos with all selected tags": "Amosar semeyes con toles etiquetes esbillaes",
+  "Valid parameters not found in URL": "Nun s'atoparon parámetros válidos na URL",
+  "Invalid id parameter format": "Formatu de parámetru d'id inválidu",
+  "Album not found": "Nun s'atopó l'álbum",
+  "the album owner": "el propietariu del álbum",
+  "Tag, save and find that performance — before it's lost.": "Etiqueta, guarda y alcontri esa actuación — enantes que se pierda.",
+  "Tag, save and find that smile — before it's lost.": "Etiqueta, guarda y alcontri esa sonrisa — enantes que se pierda.",
+  "Tag, save and find that birthday — before it's lost.": "Etiqueta, guarda y alcontri esi cumpleaños — enantes que se pierda.",
+  "Tag, save and find that sunset — before it's lost.": "Etiqueta, guarda y alcontri esi atapecer — enantes que se pierda.",
+  "Tag, save and find that party — before it's lost.": "Etiqueta, guarda y alcontri esa fiesta — enantes que se pierda.",
+  "Tag, save and find that vacation — before it's lost.": "Etiqueta, guarda y alcontri eses vacaciones — enantes que se pierdan."
 }

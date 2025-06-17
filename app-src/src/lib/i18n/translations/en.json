@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Add Photos",
   "Album successfully saved!": "Album successfully saved!",
   "All files successfully uploaded": "All files successfully uploaded",
@@ -295,5 +296,22 @@
   "Open On Android": "Open On Android",
   "Toggle contacts filter": "Toggle contacts filter",
   "Showing albums with all selected contacts and tags": "Showing albums with all selected contacts and tags",
-  "Showing albums with all selected tags": "Showing albums with all selected tags"
+  "Showing albums with all selected tags": "Showing albums with all selected tags",
+  "Clear All": "Clear All",
+  "6180 Logo": "6180 Logo",
+  "Home": "Home",
+  "Visit Home": "Visit Home",
+  "Visit 6180.io": "Visit 6180.io",
+  "No tags available": "No tags available",
+  "Showing photos with all selected tags": "Showing photos with all selected tags",
+  "Valid parameters not found in URL": "Valid parameters not found in URL",
+  "Invalid id parameter format": "Invalid id parameter format",
+  "Album not found": "Album not found",
+  "the album owner": "the album owner",
+  "Tag, save and find that performance — before it's lost.": "Tag, save and find that performance — before it's lost.",
+  "Tag, save and find that smile — before it's lost.": "Tag, save and find that smile — before it's lost.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, save and find that birthday — before it's lost.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, save and find that sunset — before it's lost.",
+  "Tag, save and find that party — before it's lost.": "Tag, save and find that party — before it's lost.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, save and find that vacation — before it's lost."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Dodôj Òdjimczi",
   "Album successfully saved!": "Twòj albùm òstôł zapisóny!",
   "All files successfully uploaded": "Wszëtczé lopczi òstałë darzënno wësłóné",
@@ -295,5 +296,22 @@
   "Open On Android": "Òtczënë Na Android",
   "Toggle contacts filter": "Przeńc filter kòntakta",
   "Showing albums with all selected contacts and tags": "Wëskôzënk albumë ze wszëtkimi wëbrónyma kòntaktama ë etiketama",
-  "Showing albums with all selected tags": "Wëskôzënk albumë ze wszëtkimi wëbrónyma etiketama"
+  "Showing albums with all selected tags": "Wëskôzënk albumë ze wszëtkimi wëbrónyma etiketama",
+  "Clear All": "Rëmôj Wszëtkò",
+  "6180 Logo": "Logo 6180",
+  "Home": "Domôcô",
+  "Visit Home": "Òdwiedzë Domôcé",
+  "Visit 6180.io": "Òdwiedzë 6180.io",
+  "No tags available": "Nié ma dostãpnëch znaczków",
+  "Showing photos with all selected tags": "Wëskrzëniwanie òbrôzków z wszëtkimi wëbranëmi znaczkami",
+  "Valid parameters not found in URL": "Ni nalazłé rozsądnëch parametrów w URL",
+  "Invalid id parameter format": "Nlégalny format parametrù id",
+  "Album not found": "Album ni òstôł nalazłi",
+  "the album owner": "włôdôrz albùmu",
+  "Tag, save and find that performance — before it's lost.": "Òznaczë, wëschowaj ë òdnôjdë tã wystãpã — nigle sã nie stratëjë.",
+  "Tag, save and find that smile — before it's lost.": "Òznaczë, wëschowaj ë òdnôjdë ten ùśmiech — nigle sã nie stratëjë.",
+  "Tag, save and find that birthday — before it's lost.": "Òznaczë, wëschowaj ë òdnôjdë te ùrodzënë — nigle sã nie stratëjë.",
+  "Tag, save and find that sunset — before it's lost.": "Òznaczë, wëschowaj ë òdnôjdë ten zachód słuńca — nigle sã nie stratëjë.",
+  "Tag, save and find that party — before it's lost.": "Òznaczë, wëschowaj ë òdnôjdë tã zabôwã — nigle sã nie stratëjë.",
+  "Tag, save and find that vacation — before it's lost.": "Òznaczë, wëschowaj ë òdnôjdë të wôkacje — nigle sã nie stratëjë."
 }

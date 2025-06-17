@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Suratlary Goş",
   "Album successfully saved!": "Albumyňyz üstünlikli ýatda saklandy!",
   "All files successfully uploaded": "Ähli faýllar üstünlikli ýüklendi",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-da Aç",
   "Toggle contacts filter": "Kontakt filtri üýtgetmek",
   "Showing albums with all selected contacts and tags": "Saýlanan ähli kontaktlar we bellikler bilen albomlary görkezmek",
-  "Showing albums with all selected tags": "Saýlanan ähli bellikler bilen albomlary görkezmek"
+  "Showing albums with all selected tags": "Saýlanan ähli bellikler bilen albomlary görkezmek",
+  "Clear All": "Hemmesini Pozmak",
+  "6180 Logo": "6180 Logotipi",
+  "Home": "Öý",
+  "Visit Home": "Öýe Git",
+  "Visit 6180.io": "6180.io-a Git",
+  "No tags available": "Hiç tag ýok",
+  "Showing photos with all selected tags": "Saýlanan ähli teglar bolan suratlary görkezmek",
+  "Valid parameters not found in URL": "URL-de dogry parametrler tapylmady",
+  "Invalid id parameter format": "Nädogry id parametr formaty",
+  "Album not found": "Album tapylmady",
+  "the album owner": "albumyň eýesi",
+  "Tag, save and find that performance — before it's lost.": "Belgi goýuň, saklaň we şol doglan günü tapyň — ýitirmezden öň.",
+  "Tag, save and find that smile — before it's lost.": "Belgi goýuň, saklaň we şol ýylgyryşy tapyň — ýitirmezden öň.",
+  "Tag, save and find that birthday — before it's lost.": "Belgi goýuň, saklaň we şol çykyşy tapyň — ýitirmezden öň.",
+  "Tag, save and find that sunset — before it's lost.": "Belgi goýuň, saklaň we şol dynç alyşy tapyň — ýitirmezden öň.",
+  "Tag, save and find that party — before it's lost.": "Belgi goýuň, saklaň we şol partiany tapyň — ýitirmezden öň.",
+  "Tag, save and find that vacation — before it's lost.": "Belgi goýuň, saklaň we şol günbatışy tapyň — ýitirmezden öň."
 }

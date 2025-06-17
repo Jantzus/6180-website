@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Myndas Ēacian",
   "Album successfully saved!": "Þīn sangbōc ġehordod!",
   "All files successfully uploaded": "Eall þā fīlas sind ġesundfulliċe ūpbærode",
@@ -295,5 +296,22 @@
   "Open On Android": "On Android Openian",
   "Toggle contacts filter": "Wrixlan gecynde sēare",
   "Showing albums with all selected contacts and tags": "Īeweþ albuma mid eallum gecorenum gecyndum and mearce",
-  "Showing albums with all selected tags": "Īeweþ albuma mid eallum gecorenum mearcum"
+  "Showing albums with all selected tags": "Īeweþ albuma mid eallum gecorenum mearcum",
+  "Clear All": "Eall Adīlegian",
+  "6180 Logo": "6180 Mearcbeacn",
+  "Home": "Hām",
+  "Visit Home": "Hām Sēcan",
+  "Visit 6180.io": "6180.io Sēcan",
+  "No tags available": "Nā taggas ne sindon",
+  "Showing photos with all selected tags": "Ēawedon lēohtu mid eallum ġecorenedum taggum",
+  "Valid parameters not found in URL": "Ne wurdon gemetene rihtlīce giefa in þǣm URL",
+  "Invalid id parameter format": "Untrēowe id parameter format",
+  "Album not found": "Album ne gemet",
+  "the album owner": "sē albumes āgend",
+  "Tag, save and find that performance — before it's lost.": "Tæg, healdeþ and findþ þone scēawung — ǣr hē forweorþe.",
+  "Tag, save and find that smile — before it's lost.": "Tæg, healdeþ and findþ þone smile — ǣr hē forweorþe.",
+  "Tag, save and find that birthday — before it's lost.": "Tæg, healdeþ and findþ þone gebyrdtīd — ǣr hē forweorþe.",
+  "Tag, save and find that sunset — before it's lost.": "Tæg, healdeþ and findþ þone sunnesetl — ǣr hē forweorþe.",
+  "Tag, save and find that party — before it's lost.": "Tæg, healdeþ and findþ þone symbel — ǣr hē forweorþe.",
+  "Tag, save and find that vacation — before it's lost.": "Tæg, healdeþ and findþ þone frēotīd — ǣr hē forweorþe."
 }

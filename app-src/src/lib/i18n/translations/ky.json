@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Сүрөттөрдү Кошуу",
   "Album successfully saved!": "Сиздин альбомуңуз ийгиликтүү сакталды!",
   "All files successfully uploaded": "Бардык файлдар ийгиликтүү жүктөлдү",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-те Ачуу",
   "Toggle contacts filter": "Байланыш фильтрин которуу",
   "Showing albums with all selected contacts and tags": "Тандалган бардык байланыштар жана тегдер менен альбомдорду көрсөтүү",
-  "Showing albums with all selected tags": "Тандалган бардык тегдер менен альбомдорду көрсөтүү"
+  "Showing albums with all selected tags": "Тандалган бардык тегдер менен альбомдорду көрсөтүү",
+  "Clear All": "Баарын Тазалоо",
+  "6180 Logo": "6180 Логотиби",
+  "Home": "Башкы",
+  "Visit Home": "Башкы Бетке Өтүү",
+  "Visit 6180.io": "6180.io-го Өтүү",
+  "No tags available": "Эч бир тег жок",
+  "Showing photos with all selected tags": "Тандалган бардык тегдер менен сүрөттөрдү көрсөтүү",
+  "Valid parameters not found in URL": "URL-да жарактуу параметрлер табылган жок",
+  "Invalid id parameter format": "Туура эмес id параметр форматы",
+  "Album not found": "Альбом табылган жок",
+  "the album owner": "альбомдун ээси",
+  "Tag, save and find that performance — before it's lost.": "Белгилөө, сактоо жана ал туулган күндү табуу — жоготулуп калганга чейин.",
+  "Tag, save and find that smile — before it's lost.": "Белгилөө, сактоо жана ал жылмайууну табуу — жоготулуп калганга чейин.",
+  "Tag, save and find that birthday — before it's lost.": "Белгилөө, сактоо жана ал аткарууну табуу — жоготулуп калганга чейин.",
+  "Tag, save and find that sunset — before it's lost.": "Белгилөө, сактоо жана ал эс алышты табуу — жоготулуп калганга чейин.",
+  "Tag, save and find that party — before it's lost.": "Белгилөө, сактоо жана ал кечени табуу — жоготулуп калганга чейин.",
+  "Tag, save and find that vacation — before it's lost.": "Белгилөө, сактоо жана ал күн батышын табуу — жоготулуп калганга чейин."
 }

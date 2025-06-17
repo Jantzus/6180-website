@@ -16,7 +16,7 @@ export const AlbumInfoComponent: React.FC<{
   
   return (
     <>
-      {albumData.folderName && albumData.folderName !== t('Photos') && albumData.folderName.trim() !== "" && (
+      {albumData.folderName && albumData.folderName !== t('Photos') && albumData.folderName !== 'Photos' && albumData.folderName.trim() !== "" && (
         <AlbumTitle id="album-title">
           <AlbumTitleStrong>{albumData.folderName}</AlbumTitleStrong>
         </AlbumTitle>

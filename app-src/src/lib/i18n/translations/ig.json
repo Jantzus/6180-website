@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tinye Foto",
   "Album successfully saved!": "Echekwala album gị nke ọma!",
   "All files successfully uploaded": "Faịlụ niile ekwere ịkpọnye ya",
@@ -295,5 +296,22 @@
   "Open On Android": "Meghee Na Android",
   "Toggle contacts filter": "Gbanwee nzacha mkpakọrịta",
   "Showing albums with all selected contacts and tags": "Na-egosi ndekọ foto na mkpakọrịta na mkpado ahọpụtara niile",
-  "Showing albums with all selected tags": "Na-egosi ndekọ foto na mkpado ahọpụtara niile"
+  "Showing albums with all selected tags": "Na-egosi ndekọ foto na mkpado ahọpụtara niile",
+  "Clear All": "Kpochapụ Ihe Niile",
+  "6180 Logo": "Logo 6180",
+  "Home": "Ụlọ",
+  "Visit Home": "Gaa Ụlọ",
+  "Visit 6180.io": "Gaa 6180.io",
+  "No tags available": "Enweghị mkpado ọ bụla",
+  "Showing photos with all selected tags": "Na-egosi foto niile nwere mkpado niile ahọrọla",
+  "Valid parameters not found in URL": "Achọpụtaghị paramita ndị ziri ezi na URL",
+  "Invalid id parameter format": "Adịghị mma id parameter format",
+  "Album not found": "A hụghị album",
+  "the album owner": "onye nwe album",
+  "Tag, save and find that performance — before it's lost.": "Ákpányé, chekwaa ma chọta ihe ọrụ ahụ — tupu o fuo.",
+  "Tag, save and find that smile — before it's lost.": "Ákpányé, chekwaa ma chọta ọmụmụ ọchị ahụ — tupu o fuo.",
+  "Tag, save and find that birthday — before it's lost.": "Ákpányé, chekwaa ma chọta ụbọchị ọmụmụ ahụ — tupu o fuo.",
+  "Tag, save and find that sunset — before it's lost.": "Ákpányé, chekwaa ma chọta anwụ ada ahụ — tupu o fuo.",
+  "Tag, save and find that party — before it's lost.": "Ákpányé, chekwaa ma chọta oriri ahụ — tupu o fuo.",
+  "Tag, save and find that vacation — before it's lost.": "Ákpányé, chekwaa ma chọta ezumike ahụ — tupu o fuo."
 }

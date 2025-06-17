@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotoe bäisetzen",
   "Album successfully saved!": "Däin Album gouf erfollegräich gespäichert!",
   "All files successfully uploaded": "All Dateie sinn erfollegräich eropgelueden",
@@ -295,5 +296,22 @@
   "Open On Android": "Op Android Opmaachen",
   "Toggle contacts filter": "Kontakt-Filter ëmschalten",
   "Showing albums with all selected contacts and tags": "Weist Alben mat all erausgesichte Kontakter an Tags",
-  "Showing albums with all selected tags": "Weist Alben mat all erausgesichte Tags"
+  "Showing albums with all selected tags": "Weist Alben mat all erausgesichte Tags",
+  "Clear All": "Alles Läschen",
+  "6180 Logo": "6180 Logo",
+  "Home": "Heim",
+  "Visit Home": "Heim Besichen",
+  "Visit 6180.io": "6180.io Besichen",
+  "No tags available": "Keng Taggen disponibel",
+  "Showing photos with all selected tags": "Weist Fotoen mat allen erausgesichten Taggen",
+  "Valid parameters not found in URL": "Gültig Parameteren net an der URL fonnt",
+  "Invalid id parameter format": "Ongëltegt ID Parameter Format",
+  "Album not found": "Album net fonnt",
+  "the album owner": "den Album-Besëtzer",
+  "Tag, save and find that performance — before it's lost.": "Markéieren, späicheren a fannen dee Gebuertsdag — ier en verluer geet.",
+  "Tag, save and find that smile — before it's lost.": "Markéieren, späicheren a fannen dat Lächelen — ier et verluer geet.",
+  "Tag, save and find that birthday — before it's lost.": "Markéieren, späicheren a fannen déi Virstellung — ier se verluer geet.",
+  "Tag, save and find that sunset — before it's lost.": "Markéieren, späicheren a fannen déi Vakanz — ier se verluer geet.",
+  "Tag, save and find that party — before it's lost.": "Markéieren, späicheren a fannen déi Party — ier se verluer geet.",
+  "Tag, save and find that vacation — before it's lost.": "Markéieren, späicheren a fannen de Sonnenënnergong — ier en verluer geet."
 }

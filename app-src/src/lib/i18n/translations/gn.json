@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Embojuapy Ta'anga",
   "Album successfully saved!": "Ne álbum oñeñongatu porãma!",
   "All files successfully uploaded": "Opaite marandurenda ojehupi oĩporãvo",
@@ -295,5 +296,22 @@
   "Open On Android": "Jeike Android-pe",
   "Toggle contacts filter": "Moambue ñe'ẽjuhu rembipuru",
   "Showing albums with all selected contacts and tags": "Hechauka álbumes opaite ñe'ẽjuhu ha téra jeporavopyréva ndive",
-  "Showing albums with all selected tags": "Hechauka álbumes opaite téra jeporavopyréva ndive"
+  "Showing albums with all selected tags": "Hechauka álbumes opaite téra jeporavopyréva ndive",
+  "Clear All": "Mopotĩ Opaite",
+  "6180 Logo": "6180 Logo",
+  "Home": "Ñepyrũ",
+  "Visit Home": "Ñepyrũ Jehechauka",
+  "Visit 6180.io": "6180.io Jehechauka",
+  "No tags available": "Ndaipóri tegs ojepuru",
+  "Showing photos with all selected tags": "Hechauka ta'angamýi opaite tegs jeporavopyre",
+  "Valid parameters not found in URL": "Ndojejuhúi parámetros oikóva URL-pe",
+  "Invalid id parameter format": "Id parámetro formato oiko'ỹva",
+  "Album not found": "Ndaipóri álbum ojejuhúva",
+  "the album owner": "álbum jára",
+  "Tag, save and find that performance — before it's lost.": "Emongueta, ñongatu ha jeheka ko ñemuha — okañy mboyve.",
+  "Tag, save and find that smile — before it's lost.": "Emongueta, ñongatu ha jeheka ko pukavy — okañy mboyve.",
+  "Tag, save and find that birthday — before it's lost.": "Emongueta, ñongatu ha jeheka ko aragua — okañy mboyve.",
+  "Tag, save and find that sunset — before it's lost.": "Emongueta, ñongatu ha jeheka ko kuarahyreike — okañy mboyve.",
+  "Tag, save and find that party — before it's lost.": "Emongueta, ñongatu ha jeheka ko mboraivy — okañy mboyve.",
+  "Tag, save and find that vacation — before it's lost.": "Emongueta, ñongatu ha jeheka ko arete — okañy mboyve."
 }

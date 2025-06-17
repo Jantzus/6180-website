@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ფოტოების დამატება",
   "Album successfully saved!": "თქვენი ალბომი წარმატებით შეინახა!",
   "All files successfully uploaded": "ყველა ფაილი წარმატებით აიტვირთა",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-ზე გახსნა",
   "Toggle contacts filter": "კონტაქტების ფილტრის გადართვა",
   "Showing albums with all selected contacts and tags": "ყველა არჩეული კონტაქტებისა და ტეგების მქონე ალბომების ჩვენება",
-  "Showing albums with all selected tags": "ყველა არჩეული ტეგების მქონე ალბომების ჩვენება"
+  "Showing albums with all selected tags": "ყველა არჩეული ტეგების მქონე ალბომების ჩვენება",
+  "Clear All": "ყველაფრის გასუფთავება",
+  "6180 Logo": "6180 ლოგო",
+  "Home": "მთავარი",
+  "Visit Home": "სახლის ნახვა",
+  "Visit 6180.io": "6180.io-ის ნახვა",
+  "No tags available": "ტეგები არ არის ხელმისაწვდომი",
+  "Showing photos with all selected tags": "ფოტოების ჩვენება ყველა არჩეული ტეგით",
+  "Valid parameters not found in URL": "URL-ში არ არის ნაპოვნი მართებული პარამეტრები",
+  "Invalid id parameter format": "არასწორი id პარამეტრის ფორმატი",
+  "Album not found": "ალბომი ვერ მოიძებნა",
+  "the album owner": "ალბომის მფლობელი",
+  "Tag, save and find that performance — before it's lost.": "ტეგი, შეინახე და იპოვე ეს წარმოდგენა — დაკარგვამდე.",
+  "Tag, save and find that smile — before it's lost.": "ტეგი, შეინახე და იპოვე ეს ღიმილი — დაკარგვამდე.",
+  "Tag, save and find that birthday — before it's lost.": "ტეგი, შეინახე და იპოვე ეს დაბადების დღე — დაკარგვამდე.",
+  "Tag, save and find that sunset — before it's lost.": "ტეგი, შეინახე და იპოვე ეს მზის ჩასვლა — დაკარგვამდე.",
+  "Tag, save and find that party — before it's lost.": "ტეგი, შეინახე და იპოვე ეს წვეულება — დაკარგვამდე.",
+  "Tag, save and find that vacation — before it's lost.": "ტეგი, შეინახე და იპოვე ეს შვებულება — დაკარგვამდე."
 }

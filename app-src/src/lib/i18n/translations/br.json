@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ouzhpennañ Luc'hskeudennoù",
   "Album successfully saved!": "Enrollet eo bet ho albom gant berzh!",
   "All files successfully uploaded": "An holl restroù a zo bet pellgarget gant berzh",
@@ -295,5 +296,22 @@
   "Open On Android": "Digeriñ War Android",
   "Toggle contacts filter": "Cheñch silañ darempredoù",
   "Showing albums with all selected contacts and tags": "Diskouez alboumoù gant an holl darempredoù ha balizennoù diuzet",
-  "Showing albums with all selected tags": "Diskouez alboumoù gant an holl valizennoù diuzet"
+  "Showing albums with all selected tags": "Diskouez alboumoù gant an holl valizennoù diuzet",
+  "Clear All": "Dilemel Pep Tra",
+  "6180 Logo": "Logo 6180",
+  "Home": "Degemer",
+  "Visit Home": "Mont d'ar Bajenn-degemer",
+  "Visit 6180.io": "Mont da 6180.io",
+  "No tags available": "Tag ebet da gaout",
+  "Showing photos with all selected tags": "Diskouez luc'hskeudennoù gant an holl daginennoù dibabet",
+  "Valid parameters not found in URL": "N'eus bet kavet arventennoù talvoudus ebet en URL",
+  "Invalid id parameter format": "Furmad arventenn id fall",
+  "Album not found": "N'eus bet kavet an albom",
+  "the album owner": "perc'henn an albom",
+  "Tag, save and find that performance — before it's lost.": "Tagañ, enrollañ ha kavout an diskouez-se — a-raok ma vo kollet.",
+  "Tag, save and find that smile — before it's lost.": "Tagañ, enrollañ ha kavout ar mousc'hoarzh-se — a-raok ma vo kollet.",
+  "Tag, save and find that birthday — before it's lost.": "Tagañ, enrollañ ha kavout an deiz-ha-bloaz-se — a-raok ma vo kollet.",
+  "Tag, save and find that sunset — before it's lost.": "Tagañ, enrollañ ha kavout an heol kuzh-se — a-raok ma vo kollet.",
+  "Tag, save and find that party — before it's lost.": "Tagañ, enrollañ ha kavout ar fest-se — a-raok ma vo kollet.",
+  "Tag, save and find that vacation — before it's lost.": "Tagañ, enrollañ ha kavout an vakañsoù-se — a-raok ma vint kollet."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Maragdag Letrato",
   "Album successfully saved!": "Ing kekang album metagumpayan yang misikap!",
   "All files successfully uploaded": "Eganaganang simpan melaus king pamaglulan",
@@ -295,5 +296,22 @@
   "Open On Android": "Ibuklat King Android",
   "Toggle contacts filter": "Alilan ya ing contact filter",
   "Showing albums with all selected contacts and tags": "Papakit no reng album a maki ding miyaliwang contact ampong tag",
-  "Showing albums with all selected tags": "Papakit no reng album a maki ding miyaliwang tag"
+  "Showing albums with all selected tags": "Papakit no reng album a maki ding miyaliwang tag",
+  "Clear All": "Buran Ne Ngan",
+  "6180 Logo": "Logo ning 6180",
+  "Home": "Bale",
+  "Visit Home": "Punta king Bale",
+  "Visit 6180.io": "Punta king 6180.io",
+  "No tags available": "Alang tag a meyakit",
+  "Showing photos with all selected tags": "Ipakit ne ing larawan a maki tag a meging pipili",
+  "Valid parameters not found in URL": "Alang valid a parameter a meyakit king URL",
+  "Invalid id parameter format": "E valid a format ning id parameter",
+  "Album not found": "Alang album a meyakit",
+  "the album owner": "ing katanggapan ning album",
+  "Tag, save and find that performance — before it's lost.": "I-tag, i-save at alawan ya ing kebaitan na — bayu ya mawala.",
+  "Tag, save and find that smile — before it's lost.": "I-tag, i-save at alawan ya ing ngiti na — bayu ya mawala.",
+  "Tag, save and find that birthday — before it's lost.": "I-tag, i-save at alawan ya ing performance na — bayu ya mawala.",
+  "Tag, save and find that sunset — before it's lost.": "I-tag, i-save at alawan ya ing bakasyon na — bayu ya mawala.",
+  "Tag, save and find that party — before it's lost.": "I-tag, i-save at alawan ya ing party na — bayu ya mawala.",
+  "Tag, save and find that vacation — before it's lost.": "I-tag, i-save at alawan ya ing salep ning aldo — bayu ya mawala."
 }

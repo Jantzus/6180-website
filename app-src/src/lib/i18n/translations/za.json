@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Gwnz daengzcungh",
   "Album successfully saved!": "Vot song cwyouz gamj dih doeq zinj coengz!",
   "All files successfully uploaded": "Doenghnaeuz venj cwyouz gamj dih",
@@ -295,5 +296,22 @@
   "Open On Android": "Bi Android boek",
   "Toggle contacts filter": "Gangj lienhsi bouxboux lanz",
   "Showing albums with all selected contacts and tags": "Dangj saek saw youq lienhsi bouxboux caw haemqde lanz",
-  "Showing albums with all selected tags": "Dangj saek saw youq haemqde lanz"
+  "Showing albums with all selected tags": "Dangj saek saw youq haemqde lanz",
+  "Clear All": "Baet bouxcuengh",
+  "6180 Logo": "6180 bouxlog",
+  "Home": "bouxbwnz",
+  "Visit Home": "Go daeuz bwnz",
+  "Visit 6180.io": "Go 6180.io",
+  "No tags available": "Mbouj miz baeuznaeuz",
+  "Showing photos with all selected tags": "Gingh boux hoiz miz baeuznaeuz bouxlai",
+  "Valid parameters not found in URL": "Mbouj miz naenx youq de aen baeuznaeuz",
+  "Invalid id parameter format": "Bouxbaux id cansu ginhyenz",
+  "Album not found": "Mbouj miz yetyauq album",
+  "the album owner": "album neix boux",
+  "Tag, save and find that performance — before it's lost.": "Gyaez aeu, baenzseiq aeu duz saek naj geij ndat dou bou — seizneix mbouj bit.",
+  "Tag, save and find that smile — before it's lost.": "Gyaez aeu, baenzseiq aeu duz saek naj ciz daeuj bou — seizneix mbouj bit.",
+  "Tag, save and find that birthday — before it's lost.": "Gyaez aeu, baenzseiq aeu duz saek naj gaeq dou bou — seizneix mbouj bit.",
+  "Tag, save and find that sunset — before it's lost.": "Gyaez aeu, baenzseiq aeu duz saek naj youq bae dou bou — seizneix mbouj bit.",
+  "Tag, save and find that party — before it's lost.": "Gyaez aeu, baenzseiq aeu duz saek naj daeuq dou bou — seizneix mbouj bit.",
+  "Tag, save and find that vacation — before it's lost.": "Gyaez aeu, baenzseiq aeu duz saek naj dat loet dou bou — seizneix mbouj bit."
 }

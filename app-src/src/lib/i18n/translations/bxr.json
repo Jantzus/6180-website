@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Фото нэмэхэ",
   "Album successfully saved!": "Таны альбом амжалттай хадгалагдлаа!",
   "All files successfully uploaded": "Бүхы файлнууд амжалтатай ачаалагдлаа",
@@ -295,5 +296,22 @@
   "Open On Android": "Android дээр Нээхэ",
   "Toggle contacts filter": "Контактын шүүлтүүр солихо",
   "Showing albums with all selected contacts and tags": "Сонгогдohон бүхы контакт болон тэмдэгтэй альбомууд үзүүлжэ",
-  "Showing albums with all selected tags": "Сонгогдohон бүхы тэмдэгтэй альбомууд үзүүлжэ"
+  "Showing albums with all selected tags": "Сонгогдohон бүхы тэмдэгтэй альбомууд үзүүлжэ",
+  "Clear All": "Бүхэныг устгана уу",
+  "6180 Logo": "6180 лого",
+  "Home": "Гэр",
+  "Visit Home": "Гэр лүү явах",
+  "Visit 6180.io": "6180.io рүү явах",
+  "No tags available": "Тэг үгы",
+  "Showing photos with all selected tags": "Бүхы һонгогдоһон тэг бүхы зургуудые харуулжа",
+  "Valid parameters not found in URL": "URL-да үнэһэн параметр олдоогүй",
+  "Invalid id parameter format": "Буруу id параметрын формат",
+  "Album not found": "Альбом олдоогүй",
+  "the album owner": "альбомын эзэн",
+  "Tag, save and find that performance — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ дүрсэлэл олон — алдрахнаас үмнө.",
+  "Tag, save and find that smile — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ инээмсэглэл олон — алдрахнаас үмнө.",
+  "Tag, save and find that birthday — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ төрсөн өдөр олон — алдрахнаас үмнө.",
+  "Tag, save and find that sunset — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ нар жаргах олон — алдрахнаас үмнө.",
+  "Tag, save and find that party — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ наадам олон — алдрахнаас үмнө.",
+  "Tag, save and find that vacation — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ амаралт олон — алдрахнаас үмнө."
 }

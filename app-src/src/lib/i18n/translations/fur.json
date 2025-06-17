@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Zonte Fotos",
   "Album successfully saved!": "Il to album al è stât salvât cun sucès!",
   "All files successfully uploaded": "Ducj i files a son stâts cjariâts cun sucès",
@@ -295,5 +296,22 @@
   "Open On Android": "Vierzi Su Android",
   "Toggle contacts filter": "Cambie filtri contats",
   "Showing albums with all selected contacts and tags": "Mostre album cun ducj i contats e lis etichetis selezionadis",
-  "Showing albums with all selected tags": "Mostre album cun dutis lis etichetis selezionadis"
+  "Showing albums with all selected tags": "Mostre album cun dutis lis etichetis selezionadis",
+  "Clear All": "Nete Dut",
+  "6180 Logo": "Logo di 6180",
+  "Home": "Cjase",
+  "Visit Home": "Visite la Pagjine Principâl",
+  "Visit 6180.io": "Visite 6180.io",
+  "No tags available": "Nissune etichete disponibile",
+  "Showing photos with all selected tags": "Mostre fotografia cun dutis lis etichetis sielzudis",
+  "Valid parameters not found in URL": "Nissun parametri valit cjatât te URL",
+  "Invalid id parameter format": "Formât parametri id no valit",
+  "Album not found": "Album no cjatât",
+  "the album owner": "il proprietari dal album",
+  "Tag, save and find that performance — before it's lost.": "Etichete, salve e cjate chê prestazion — prime che si pierdi.",
+  "Tag, save and find that smile — before it's lost.": "Etichete, salve e cjate chê sorîs — prime che si pierdi.",
+  "Tag, save and find that birthday — before it's lost.": "Etichete, salve e cjate chel complean — prime che si pierdi.",
+  "Tag, save and find that sunset — before it's lost.": "Etichete, salve e cjate chel tramont — prime che si pierdi.",
+  "Tag, save and find that party — before it's lost.": "Etichete, salve e cjate chê fieste — prime che si pierdi.",
+  "Tag, save and find that vacation — before it's lost.": "Etichete, salve e cjate chês vacancis — prime che si pierdin."
 }

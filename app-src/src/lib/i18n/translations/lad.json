@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Adjustar Fotos",
   "Album successfully saved!": "¡Tu álbum fue guardado kon éksito!",
   "All files successfully uploaded": "Todos los arkivos subidos con éxito",
@@ -295,5 +296,22 @@
   "Open On Android": "Avrir En Android",
   "Toggle contacts filter": "Trokar filtro de kontaktos",
   "Showing albums with all selected contacts and tags": "Amostrando álbumes kon todos los kontaktos i etiketas eskojidos",
-  "Showing albums with all selected tags": "Amostrando álbumes kon todas las etiketas eskojidas"
+  "Showing albums with all selected tags": "Amostrando álbumes kon todas las etiketas eskojidas",
+  "Clear All": "Limpiar Todo",
+  "6180 Logo": "Logo de 6180",
+  "Home": "Kaza",
+  "Visit Home": "Visitar Kaza",
+  "Visit 6180.io": "Visitar 6180.io",
+  "No tags available": "No ay etiketas",
+  "Showing photos with all selected tags": "Amostrando fotos kon todas las etiketas eskojidas",
+  "Valid parameters not found in URL": "No se toparon parametros validos en la URL",
+  "Invalid id parameter format": "Formato de parametro id no valido",
+  "Album not found": "Album no se topo",
+  "the album owner": "el dueño del album",
+  "Tag, save and find that performance — before it's lost.": "Punya etiketa, guadra i atopa esi nasimiento — antes que se pierde.",
+  "Tag, save and find that smile — before it's lost.": "Punya etiketa, guadra i atopa esa sonrisa — antes que se pierde.",
+  "Tag, save and find that birthday — before it's lost.": "Punya etiketa, guadra i atopa esa aktualidad — antes que se pierde.",
+  "Tag, save and find that sunset — before it's lost.": "Punya etiketa, guadra i atopa esas vakansas — antes que se pierde.",
+  "Tag, save and find that party — before it's lost.": "Punya etiketa, guadra i atopa esa fiesta — antes que se pierde.",
+  "Tag, save and find that vacation — before it's lost.": "Punya etiketa, guadra i atopa esi sol poniente — antes que se pierde."
 }

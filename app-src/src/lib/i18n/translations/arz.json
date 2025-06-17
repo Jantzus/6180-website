@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ضيف صور",
   "Album successfully saved!": "الألبوم بتاعك اتحفظ بنجاح!",
   "All files successfully uploaded": "كل الملفات اترفعت بنجاح",
@@ -295,5 +296,22 @@
   "Open On Android": "افتح على Android",
   "Toggle contacts filter": "غيّر فلتر الكونتاكتات",
   "Showing albums with all selected contacts and tags": "عرض الألبومات بكل الكونتاكتات والتاجات المختارة",
-  "Showing albums with all selected tags": "عرض الألبومات بكل التاجات المختارة"
+  "Showing albums with all selected tags": "عرض الألبومات بكل التاجات المختارة",
+  "Clear All": "امسح كله",
+  "6180 Logo": "لوجو 6180",
+  "Home": "البيت",
+  "Visit Home": "روح البيت",
+  "Visit 6180.io": "زور 6180.io",
+  "No tags available": "مفيش تاجز متاحة",
+  "Showing photos with all selected tags": "بيعرض الصور بكل التاجز المختارة",
+  "Valid parameters not found in URL": "متلقاش باراميترز صح فى الURL",
+  "Invalid id parameter format": "فورمات بارامتر الآيدي مش صح",
+  "Album not found": "الألبوم مالوش",
+  "the album owner": "صاحب الألبوم",
+  "Tag, save and find that performance — before it's lost.": "حط علامة واحفظ ولاقي العرض ده — قبل ما يضيع.",
+  "Tag, save and find that smile — before it's lost.": "حط علامة واحفظ ولاقي الابتسامة دي — قبل ما تضيع.",
+  "Tag, save and find that birthday — before it's lost.": "حط علامة واحفظ ولاقي عيد الميلاد ده — قبل ما يضيع.",
+  "Tag, save and find that sunset — before it's lost.": "حط علامة واحفظ ولاقي الغروب ده — قبل ما يضيع.",
+  "Tag, save and find that party — before it's lost.": "حط علامة واحفظ ولاقي الحفلة دي — قبل ما تضيع.",
+  "Tag, save and find that vacation — before it's lost.": "حط علامة واحفظ ولاقي الأجازة دي — قبل ما تضيع."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ավելացնել Լուսանկարներ",
   "Album successfully saved!": "Ձեր ալբոմը հաջողությամբ պահպանվել է!",
   "All files successfully uploaded": "Բոլոր ֆայլերը հաջողությամբ վերբեռնվել են",
@@ -295,5 +296,22 @@
   "Open On Android": "Բացել Android-ում",
   "Toggle contacts filter": "Կոնտակտների ֆիլտրի փոխարկում",
   "Showing albums with all selected contacts and tags": "Ցույց տալիս է ալբոմները բոլոր ընտրված կոնտակտներով և պիտակներով",
-  "Showing albums with all selected tags": "Ցույց տալիս է ալբոմները բոլոր ընտրված պիտակներով"
+  "Showing albums with all selected tags": "Ցույց տալիս է ալբոմները բոլոր ընտրված պիտակներով",
+  "Clear All": "Մաքրել Բոլորը",
+  "6180 Logo": "6180 Լոգո",
+  "Home": "Գլխավոր",
+  "Visit Home": "Այցելել Գլխավոր",
+  "Visit 6180.io": "Այցելել 6180.io",
+  "No tags available": "Պիտակներ չկան",
+  "Showing photos with all selected tags": "Ցուցադրում է լուսանկարները բոլոր նշված պիտակներով",
+  "Valid parameters not found in URL": "URL-ում վավեր պարամետրներ չեն գտնվել",
+  "Invalid id parameter format": "Անվավեր id պարամետրի ֆորմատ",
+  "Album not found": "Ալբոմը չգտնվեց",
+  "the album owner": "ալբոմի տերը",
+  "Tag, save and find that performance — before it's lost.": "Պիտակավորել, պահպանել և գտնել այդ կատարումը — մինչև կորչելը:",
+  "Tag, save and find that smile — before it's lost.": "Պիտակավորել, պահպանել և գտնել այդ ժպիտը — մինչև կորչելը:",
+  "Tag, save and find that birthday — before it's lost.": "Պիտակավորել, պահպանել և գտնել այդ ծննդյան օրը — մինչև կորչելը:",
+  "Tag, save and find that sunset — before it's lost.": "Պիտակավորել, պահպանել և գտնել այդ մայրամուտը — մինչև կորչելը:",
+  "Tag, save and find that party — before it's lost.": "Պիտակավորել, պահպանել և գտնել այդ կուսակցությունը — մինչև կորչելը:",
+  "Tag, save and find that vacation — before it's lost.": "Պիտակավորել, պահպանել և գտնել այդ արձակուրդը — մինչև կորչելը:"
 }

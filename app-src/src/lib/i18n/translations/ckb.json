@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "وێنە زیاد بکە",
   "Album successfully saved!": "ئەلبوومەکەت بە سەرکەوتوویی پاشەکەوتکرا!",
   "All files successfully uploaded": "هەموو پەڕگەکان بە سەرکەوتوویی بارکران",
@@ -295,5 +296,22 @@
   "Open On Android": "لە Android-دا بکەرەوە",
   "Toggle contacts filter": "فلتەری پەیوەندی گۆڕین",
   "Showing albums with all selected contacts and tags": "پیشاندانی ئەلبومەکان بە گشت پەیوەندی و تاگە هەڵبژێردراوەکان",
-  "Showing albums with all selected tags": "پیشاندانی ئەلبومەکان بە گشت تاگە هەڵبژێردراوەکان"
+  "Showing albums with all selected tags": "پیشاندانی ئەلبومەکان بە گشت تاگە هەڵبژێردراوەکان",
+  "Clear All": "هەمووی بسڕەوە",
+  "6180 Logo": "لۆگۆی 6180",
+  "Home": "ماڵەوە",
+  "Visit Home": "سەردانی ماڵەوە بکە",
+  "Visit 6180.io": "سەردانی 6180.io بکە",
+  "No tags available": "هیچ تاگێک نییە",
+  "Showing photos with all selected tags": "پیشاندانی وێنەکان بە هەموو تاگە هەڵبژێردراوەکان",
+  "Valid parameters not found in URL": "پارامەتەری دروست لە URL دا نەدۆزرایەوە",
+  "Invalid id parameter format": "فۆرماتی پارامەتەری ناسنامە نادروست",
+  "Album not found": "ئەلبوومەکە نەدۆزرایەوە",
+  "the album owner": "خاوەنی ئەلبوومەکە",
+  "Tag, save and find that performance — before it's lost.": "تاگ بکە، پاشەکەوت بکە و ئەو نمایشە بدۆزەوە — پێش ون بوونی.",
+  "Tag, save and find that smile — before it's lost.": "تاگ بکە، پاشەکەوت بکە و ئەو پێکەنینە بدۆزەوە — پێش ون بوونی.",
+  "Tag, save and find that birthday — before it's lost.": "تاگ بکە، پاشەکەوت بکە و ئەو جەژنی لەدایکبوونە بدۆزەوە — پێش ون بوونی.",
+  "Tag, save and find that sunset — before it's lost.": "تاگ بکە، پاشەکەوت بکە و ئەو ئاوابوونی خۆر بدۆزەوە — پێش ون بوونی.",
+  "Tag, save and find that party — before it's lost.": "تاگ بکە، پاشەکەوت بکە و ئەو پارتیە بدۆزەوە — پێش ون بوونی.",
+  "Tag, save and find that vacation — before it's lost.": "تاگ بکە، پاشەکەوت بکە و ئەو پشووە بدۆزەوە — پێش ون بوونی."
 }

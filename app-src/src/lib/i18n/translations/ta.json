@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "புகைப்படங்களைச் சேர்",
   "Album successfully saved!": "உங்கள் ஆல்பம் வெற்றிகரமாக சேமிக்கப்பட்டது!",
   "All files successfully uploaded": "அனைத்து கோப்புகளும் வெற்றிகரமாக பதிவேற்றப்பட்டன",
@@ -295,5 +296,22 @@
   "Open On Android": "Android இல் திறக்கவும்",
   "Toggle contacts filter": "தொடர்பு வடிகட்டியை மாற்றவும்",
   "Showing albums with all selected contacts and tags": "அனைத்து தேர்ந்தெடுக்கப்பட்ட தொடர்புகள் மற்றும் குறிச்சொற்களுடன் ஆல்பங்களைக் காட்டுகிறது",
-  "Showing albums with all selected tags": "அனைத்து தேர்ந்தெடுக்கப்பட்ட குறிச்சொற்களுடன் ஆல்பங்களைக் காட்டுகிறது"
+  "Showing albums with all selected tags": "அனைத்து தேர்ந்தெடுக்கப்பட்ட குறிச்சொற்களுடன் ஆல்பங்களைக் காட்டுகிறது",
+  "Clear All": "அனைத்தையும் அழி",
+  "6180 Logo": "6180 சின்னம்",
+  "Home": "முகப்பு",
+  "Visit Home": "முகப்பைப் பார்வையிடுங்கள்",
+  "Visit 6180.io": "6180.io-ஐப் பார்வையிடுங்கள்",
+  "No tags available": "எந்த டேக்குகளும் இல்லை",
+  "Showing photos with all selected tags": "தேர்ந்தெடுக்கப்பட்ட அனைத்து டேக்குகளுடன் புகைப்படங்களைக் காட்டுகிறது",
+  "Valid parameters not found in URL": "URL இல் செல்லுபடியாகும் அளவுருக்கள் காணப்படவில்லை",
+  "Invalid id parameter format": "தவறான id அளவுரு வடிவம்",
+  "Album not found": "ஆல்பம் கிடைக்கவில்லை",
+  "the album owner": "ஆல்பத்தின் உரிமையாளர்",
+  "Tag, save and find that performance — before it's lost.": "டேக் செய்யுங்கள், சேமித்து அந்த பிறந்தநாளை கண்டுபிடியுங்கள் — அது இழக்கப்படுவதற்கு முன்.",
+  "Tag, save and find that smile — before it's lost.": "டேக் செய்யுங்கள், சேமித்து அந்த புன்னகையை கண்டுபிடியுங்கள் — அது இழக்கப்படுவதற்கு முன்.",
+  "Tag, save and find that birthday — before it's lost.": "டேக் செய்யுங்கள், சேமித்து அந்த நிகழ்ச்சியை கண்டுபிடியுங்கள் — அது இழக்கப்படுவதற்கு முன்.",
+  "Tag, save and find that sunset — before it's lost.": "டேக் செய்யுங்கள், சேமித்து அந்த விடுமுறையை கண்டுபிடியுங்கள் — அது இழக்கப்படுவதற்கு முன்.",
+  "Tag, save and find that party — before it's lost.": "டேக் செய்யுங்கள், சேமித்து அந்த விழாவை கண்டுபிடியுங்கள் — அது இழக்கப்படுவதற்கு முன்.",
+  "Tag, save and find that vacation — before it's lost.": "டேக் செய்யுங்கள், சேமித்து அந்த சூரியன் மறையும் நேரத்தை கண்டுபிடியுங்கள் — அது இழக்கப்படுவதற்கு முன்."
 }

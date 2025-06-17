@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Aumenta Foto",
   "Album successfully saved!": "O-nia álbun rai ho diak ona!",
   "All files successfully uploaded": "Arkivu hotu-hotu hatama ho susesu",
@@ -295,5 +296,22 @@
   "Open On Android": "Loke Iha Android",
   "Toggle contacts filter": "Muda filtru kontaktu nian",
   "Showing albums with all selected contacts and tags": "Hatudu álbum ho kontaktu hotu-hotu ne tag sira-ne'ebé hili",
-  "Showing albums with all selected tags": "Hatudu álbum ho tag sira-ne'ebé hili hotu-hotu"
+  "Showing albums with all selected tags": "Hatudu álbum ho tag sira-ne'ebé hili hotu-hotu",
+  "Clear All": "Hamoos Hotu",
+  "6180 Logo": "Logo 6180",
+  "Home": "Uma",
+  "Visit Home": "Fó Uma",
+  "Visit 6180.io": "Fó 6180.io",
+  "No tags available": "La iha tag ida",
+  "Showing photos with all selected tags": "Hatudu imajen ho tag hotu-hotu ne'ebé hili ona",
+  "Valid parameters not found in URL": "Parametros válidos la hetan iha URL",
+  "Invalid id parameter format": "Formatu parameter id la los",
+  "Album not found": "Album la hetan",
+  "the album owner": "album nia owner",
+  "Tag, save and find that performance — before it's lost.": "Marka, rai no buka loron moris ne'e — molok lakon.",
+  "Tag, save and find that smile — before it's lost.": "Marka, rai no buka sorrisu ne'e — molok lakon.",
+  "Tag, save and find that birthday — before it's lost.": "Marka, rai no buka aprezentasaun ne'e — molok lakon.",
+  "Tag, save and find that sunset — before it's lost.": "Marka, rai no buka fériasne'e — molok lakon.",
+  "Tag, save and find that party — before it's lost.": "Marka, rai no buka festa ne'e — molok lakon.",
+  "Tag, save and find that vacation — before it's lost.": "Marka, rai no buka loron nakonu ne'e — molok lakon."
 }

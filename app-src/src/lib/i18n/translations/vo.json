@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Läükön Fotografis",
   "Album successfully saved!": "Albumi olik pedakipolöl benosekiko!",
   "All files successfully uploaded": "Ragivs valik pelöpons benosüko",
@@ -295,5 +296,22 @@
   "Open On Android": "Kiplöpön Su Android",
   "Toggle contacts filter": "Votükön kontakans filoti",
   "Showing albums with all selected contacts and tags": "Jonön lalbumis labü oms kobädöl kontakans e tägüls",
-  "Showing albums with all selected tags": "Jonön lalbumis labü oms kobädöl tägüls"
+  "Showing albums with all selected tags": "Jonön lalbumis labü oms kobädöl tägüls",
+  "Clear All": "Moükön Alli",
+  "6180 Logo": "Logo 6180-a",
+  "Home": "Hemi",
+  "Visit Home": "Visitön Hemi",
+  "Visit 6180.io": "Visitön 6180.io",
+  "No tags available": "Tags no binons",
+  "Showing photos with all selected tags": "Jonon fotos löfükön kö tags valik valik",
+  "Valid parameters not found in URL": "Parameters lonöföl no petöl in URL",
+  "Invalid id parameter format": "Format parama id no lonöfik",
+  "Album not found": "Album no petöl",
+  "the album owner": "laibüma jietükan",
+  "Tag, save and find that performance — before it's lost.": "Penön, kopädön e gevön motedadel at — bü vormön lo.",
+  "Tag, save and find that smile — before it's lost.": "Penön, kopädön e gevön smili at — bü vormön lo.",
+  "Tag, save and find that birthday — before it's lost.": "Penön, kopädön e gevön gebi at — bü vormön lo.",
+  "Tag, save and find that sunset — before it's lost.": "Penön, kopädön e gevön livüpafif at — bü vormön lo.",
+  "Tag, save and find that party — before it's lost.": "Penön, kopädön e gevön fit at — bü vormön lo.",
+  "Tag, save and find that vacation — before it's lost.": "Penön, kopädön e gevön solagolöpi at — bü vormön lo."
 }

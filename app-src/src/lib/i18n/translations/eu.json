@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Gehitu Argazkiak",
   "Album successfully saved!": "Zure albuma arrakastaz gorde da!",
   "All files successfully uploaded": "Fitxategi guztiak arrakastaz igo dira",
@@ -295,5 +296,22 @@
   "Open On Android": "Ireki Android-en",
   "Toggle contacts filter": "Kontaktuen iragazkia aldatu",
   "Showing albums with all selected contacts and tags": "Hautatutako kontaktu eta etiketa guztiak dituzten albumak erakusten",
-  "Showing albums with all selected tags": "Hautatutako etiketa guztiak dituzten albumak erakusten"
+  "Showing albums with all selected tags": "Hautatutako etiketa guztiak dituzten albumak erakusten",
+  "Clear All": "Garbitu Guztia",
+  "6180 Logo": "6180 Logoa",
+  "Home": "Hasiera",
+  "Visit Home": "Hasiera Bisitatu",
+  "Visit 6180.io": "6180.io Bisitatu",
+  "No tags available": "Ez dago etiketarik erabilgarri",
+  "Showing photos with all selected tags": "Hautatutako etiketa guztiak dituzten argazkiak erakusten",
+  "Valid parameters not found in URL": "Ez da parametro baliozkorik aurkitu URL-an",
+  "Invalid id parameter format": "Id parametroaren formatu baliogabea",
+  "Album not found": "Albuma ez da aurkitu",
+  "the album owner": "albumaren jabea",
+  "Tag, save and find that performance — before it's lost.": "Etiketa jarri, gorde eta aurkitu jarduera hori — gal aurretik.",
+  "Tag, save and find that smile — before it's lost.": "Etiketa jarri, gorde eta aurkitu irribarre hori — gal aurretik.",
+  "Tag, save and find that birthday — before it's lost.": "Etiketa jarri, gorde eta aurkitu urtebetetzea hori — gal aurretik.",
+  "Tag, save and find that sunset — before it's lost.": "Etiketa jarri, gorde eta aurkitu ilunabarra hori — gal aurretik.",
+  "Tag, save and find that party — before it's lost.": "Etiketa jarri, gorde eta aurkitu festa hori — gal aurretik.",
+  "Tag, save and find that vacation — before it's lost.": "Etiketa jarri, gorde eta aurkitu opor hori — gal aurretik."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Thov Fotografii",
   "Album successfully saved!": "To albumo garaves suksesoski!",
   "All files successfully uploaded": "Sa filipisarde savorră files",
@@ -295,5 +296,22 @@
   "Open On Android": "Putren Ando Android",
   "Toggle contacts filter": "Keren o filtro e kontaktenge",
   "Showing albums with all selected contacts and tags": "Sikavel e albumura sa vrytane kontaktenca thaj tagenca",
-  "Showing albums with all selected tags": "Sikavel e albumura sa vrytane tagenca"
+  "Showing albums with all selected tags": "Sikavel e albumura sa vrytane tagenca",
+  "Clear All": "Khosav Sa",
+  "6180 Logo": "Logo le 6180",
+  "Home": "Kher",
+  "Visit Home": "Dža Khere",
+  "Visit 6180.io": "Dža ko 6180.io",
+  "No tags available": "Ni jek etiketa",
+  "Showing photos with all selected tags": "Sikavela kherutnaskere foto sa kornarutne etiketa",
+  "Valid parameters not found in URL": "Na arakhle valutne parametri ande URL",
+  "Invalid id parameter format": "Nashti formati id parametro",
+  "Album not found": "Album khanči arakhlo",
+  "the album owner": "e albumeskero phiraveskero",
+  "Tag, save and find that performance — before it's lost.": "Shai phuv, rakh thaj lav kado biyandipe — anglal te nashel.",
+  "Tag, save and find that smile — before it's lost.": "Shai phuv, rakh thaj lav kado khelipe — anglal te nashel.",
+  "Tag, save and find that birthday — before it's lost.": "Shai phuv, rakh thaj lav kado khelandipe — anglal te nashel.",
+  "Tag, save and find that sunset — before it's lost.": "Shai phuv, rakh thaj lav kado bistipe — anglal te nashel.",
+  "Tag, save and find that party — before it's lost.": "Shai phuv, rakh thaj lav kado khelipe — anglal te nashel.",
+  "Tag, save and find that vacation — before it's lost.": "Shai phuv, rakh thaj lav kado kham asardipe — anglal te nashel."
 }

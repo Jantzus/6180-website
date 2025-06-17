@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Legg Myndir Afturat",
   "Album successfully saved!": "Tínar myndir goymdar við hepni!",
   "All files successfully uploaded": "Allar fílur vórðu góðtiknar",
@@ -295,5 +296,22 @@
   "Open On Android": "Lat Upp Á Android",
   "Toggle contacts filter": "Skift kontakt-filtur",
   "Showing albums with all selected contacts and tags": "Vísir album við øllum valdum kontaktum og merkjum",
-  "Showing albums with all selected tags": "Vísir album við øllum valdum merkjum"
+  "Showing albums with all selected tags": "Vísir album við øllum valdum merkjum",
+  "Clear All": "Strika Allt",
+  "6180 Logo": "6180 Merki",
+  "Home": "Heim",
+  "Visit Home": "Vitja Heimasíðu",
+  "Visit 6180.io": "Vitja 6180.io",
+  "No tags available": "Ongar merki tøk",
+  "Showing photos with all selected tags": "Vísir myndir við øllum valdi merkjum",
+  "Valid parameters not found in URL": "Gyldig parametur ikki funnin í URL",
+  "Invalid id parameter format": "Ógildugt id parameter snið",
+  "Album not found": "Album ikki funnið",
+  "the album owner": "album eigarin",
+  "Tag, save and find that performance — before it's lost.": "Merkja, goyma og finn ta framførsluna — áðrenn hon hvørvur.",
+  "Tag, save and find that smile — before it's lost.": "Merkja, goyma og finn ta broslykku — áðrenn hon hvørvur.",
+  "Tag, save and find that birthday — before it's lost.": "Merkja, goyma og finn tann føðingardag — áðrenn hann hvørvur.",
+  "Tag, save and find that sunset — before it's lost.": "Merkja, goyma og finn ta sólarsetu — áðrenn hon hvørvur.",
+  "Tag, save and find that party — before it's lost.": "Merkja, goyma og finn ta veitslu — áðrenn hon hvørvur.",
+  "Tag, save and find that vacation — before it's lost.": "Merkja, goyma og finn tann frítíð — áðrenn hann hvørvur."
 }

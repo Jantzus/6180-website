@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Taswiram jorro",
   "Album successfully saved!": "Aapke album ke success se save kar diya gais hai!",
   "All files successfully uploaded": "Sab files successfully upload hoe gais hai",
@@ -295,5 +296,22 @@
   "Open On Android": "Android me kholo",
   "Toggle contacts filter": "Contact filter toggle karo",
   "Showing albums with all selected contacts and tags": "Sab chune gaye contact aur tags ke saath album dikhawa rahaa hai",
-  "Showing albums with all selected tags": "Sab chune gaye tags ke saath album dikhawa rahaa hai"
+  "Showing albums with all selected tags": "Sab chune gaye tags ke saath album dikhawa rahaa hai",
+  "Clear All": "Sab safai karo",
+  "6180 Logo": "6180 logo",
+  "Home": "Ghar",
+  "Visit Home": "Ghar jaao",
+  "Visit 6180.io": "6180.io jaao",
+  "No tags available": "Koi tag nai hai",
+  "Showing photos with all selected tags": "Sab chuna gais tag ke saath photo dekhawa rahaa hai",
+  "Valid parameters not found in URL": "URL me valid parameter nai mila",
+  "Invalid id parameter format": "Galat id parameter format",
+  "Album not found": "Album nai mila",
+  "the album owner": "album ke malik",
+  "Tag, save and find that performance — before it's lost.": "Tag karo, save karo aur uu performance khodho — kharab hone se pahile.",
+  "Tag, save and find that smile — before it's lost.": "Tag karo, save karo aur uu muskan khodho — kharab hone se pahile.",
+  "Tag, save and find that birthday — before it's lost.": "Tag karo, save karo aur uu janamdin khodho — kharab hone se pahile.",
+  "Tag, save and find that sunset — before it's lost.": "Tag karo, save karo aur uu suryast khodho — kharab hone se pahile.",
+  "Tag, save and find that party — before it's lost.": "Tag karo, save karo aur uu party khodho — kharab hone se pahile.",
+  "Tag, save and find that vacation — before it's lost.": "Tag karo, save karo aur uu chhuti khodho — kharab hone se pahile."
 }

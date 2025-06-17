@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ongeza Picha",
   "Album successfully saved!": "Albamu yako imehifadhiwa kwa mafanikio!",
   "All files successfully uploaded": "Faili zote zimepakiwa kwa ufanisi",
@@ -295,5 +296,22 @@
   "Open On Android": "Fungua Kwenye Android",
   "Toggle contacts filter": "Badilisha kichujio cha anwani",
   "Showing albums with all selected contacts and tags": "Kuonyesha albamu zenye anwani na lebo zote zilizochaguliwa",
-  "Showing albums with all selected tags": "Kuonyesha albamu zenye lebo zote zilizochaguliwa"
+  "Showing albums with all selected tags": "Kuonyesha albamu zenye lebo zote zilizochaguliwa",
+  "Clear All": "Futa Vyote",
+  "6180 Logo": "Nembo la 6180",
+  "Home": "Nyumbani",
+  "Visit Home": "Tembelea Nyumbani",
+  "Visit 6180.io": "Tembelea 6180.io",
+  "No tags available": "Hakuna lebo zinazopatikana",
+  "Showing photos with all selected tags": "Kuonyesha picha zenye lebo zote zilizochaguliwa",
+  "Valid parameters not found in URL": "Vigezo sahihi havikupatikana katika URL",
+  "Invalid id parameter format": "Mpangilio wa parameter id usio sahihi",
+  "Album not found": "Album halijapatikana",
+  "the album owner": "mmiliki wa album",
+  "Tag, save and find that performance — before it's lost.": "Weka alama, hifadhi na pata siku hiyo ya kuzaliwa — kabla haijapotea.",
+  "Tag, save and find that smile — before it's lost.": "Weka alama, hifadhi na pata tabasamu hilo — kabla halijaupotea.",
+  "Tag, save and find that birthday — before it's lost.": "Weka alama, hifadhi na pata onyesho hilo — kabla halijapotea.",
+  "Tag, save and find that sunset — before it's lost.": "Weka alama, hifadhi na pata likizo hilo — kabla halijaupotea.",
+  "Tag, save and find that party — before it's lost.": "Weka alama, hifadhi na pata sherehe hilo — kabla halijaupotea.",
+  "Tag, save and find that vacation — before it's lost.": "Weka alama, hifadhi na pata machelezo ya jua hayo — kabla hayajaupotea."
 }

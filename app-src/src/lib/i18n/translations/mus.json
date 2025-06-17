@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Vhesse Estemerkv Ohvpvyetv",
   "Album successfully saved!": "Ce album emehakv metetakuecvke tares!",
   "All files successfully uploaded": "Naksvke omvlkvn tocceskv hahoyet",
@@ -295,5 +296,22 @@
   "Open On Android": "Android Aossē",
   "Toggle contacts filter": "Hoyanat kerhokat apoksicelat",
   "Showing albums with all selected contacts and tags": "Kerkoyat komat hokyanat pokenayat kerhokat aperoksicelat",
-  "Showing albums with all selected tags": "Kerkoyat komat aperoksicelat"
+  "Showing albums with all selected tags": "Kerkoyat komat aperoksicelat",
+  "Clear All": "Omvlkvn Vskehcy",
+  "6180 Logo": "6180 Nakcokv",
+  "Home": "Cuko",
+  "Visit Home": "Cuko Oh-ayvty",
+  "Visit 6180.io": "6180.io Oh-ayvty",
+  "No tags available": "Tags yohmi keyu",
+  "Showing photos with all selected tags": "Holohtoli nakcokv-felvska omvlkv yvfekvranvte",
+  "Valid parameters not found in URL": "URL ofvn parameter akeyuksvres kono",
+  "Invalid id parameter format": "Id parameter format vm aksárričkos",
+  "Album not found": "Album aksárričkos",
+  "the album owner": "album em oh tv",
+  "Tag, save and find that performance — before it's lost.": "Naorkehpvtes, vhecicvtes momat erkenvtes mv hvcce nettv — sumecickofv emunken.",
+  "Tag, save and find that smile — before it's lost.": "Naorkehpvtes, vhecicvtes momat erkenvtes mv yvpefket'v — sumecickofv emunken.",
+  "Tag, save and find that birthday — before it's lost.": "Naorkehpvtes, vhecicvtes momat erkenvtes mv ohfvcceckv — sumecickofv emunken.",
+  "Tag, save and find that sunset — before it's lost.": "Naorkehpvtes, vhecicvtes momat erkenvtes mv nvfkv — sumecickofv emunken.",
+  "Tag, save and find that party — before it's lost.": "Naorkehpvtes, vhecicvtes momat erkenvtes mv vpohetv — sumecickofv emunken.",
+  "Tag, save and find that vacation — before it's lost.": "Naorkehpvtes, vhecicvtes momat erkenvtes mv hvse akvsumkv — sumecickofv emunken."
 }

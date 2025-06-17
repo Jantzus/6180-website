@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Voeg Foto's By",
   "Album successfully saved!": "Album suksesvol gestoor!",
   "All files successfully uploaded": "Alle lêers suksesvol opgelaai",
@@ -295,5 +296,22 @@
   "Open On Android": "Maak Oop Op Android",
   "Toggle contacts filter": "Wissel kontak filter",
   "Showing albums with all selected contacts and tags": "Wys albums met alle gekose kontakte en etikette",
-  "Showing albums with all selected tags": "Wys albums met alle gekose etikette"
+  "Showing albums with all selected tags": "Wys albums met alle gekose etikette",
+  "Clear All": "Vee Alles Uit",
+  "6180 Logo": "6180 Logo",
+  "Home": "Tuiste",
+  "Visit Home": "Besoek Tuiste",
+  "Visit 6180.io": "Besoek 6180.io",
+  "No tags available": "Geen etikette beskikbaar nie",
+  "Showing photos with all selected tags": "Wys foto's met alle geselekteerde etikette",
+  "Valid parameters not found in URL": "Geldige parameters nie in URL gevind nie",
+  "Invalid id parameter format": "Ongeldige id parameter formaat",
+  "Album not found": "Album nie gevind nie",
+  "the album owner": "die album eienaar",
+  "Tag, save and find that performance — before it's lost.": "Merk, stoor en vind daardie optrede — voordat dit verlore gaan.",
+  "Tag, save and find that smile — before it's lost.": "Merk, stoor en vind daardie glimlag — voordat dit verlore gaan.",
+  "Tag, save and find that birthday — before it's lost.": "Merk, stoor en vind daardie verjaardag — voordat dit verlore gaan.",
+  "Tag, save and find that sunset — before it's lost.": "Merk, stoor en vind daardie sonsondergang — voordat dit verlore gaan.",
+  "Tag, save and find that party — before it's lost.": "Merk, stoor en vind daardie partytjie — voordat dit verlore gaan.",
+  "Tag, save and find that vacation — before it's lost.": "Merk, stoor en vind daardie vakansie — voordat dit verlore gaan."
 }

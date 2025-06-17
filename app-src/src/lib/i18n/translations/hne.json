@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "फोटो जोड़व",
   "Album successfully saved!": "आप के एलबम सफलता के साथ बच गे हे!",
   "All files successfully uploaded": "सब्बो फाइल मन ल सफलता पूर्वक अपलोड करे गीस",
@@ -295,5 +296,22 @@
   "Open On Android": "Android मा खोल",
   "Toggle contacts filter": "संपर्क फिल्टर बदलव",
   "Showing albums with all selected contacts and tags": "सब चुनल संपर्क अउ टैग वाला एल्बम देखा रहे हे",
-  "Showing albums with all selected tags": "सब चुनल टैग वाला एल्बम देखा रहे हे"
+  "Showing albums with all selected tags": "सब चुनल टैग वाला एल्बम देखा रहे हे",
+  "Clear All": "सब्बो साफ करव",
+  "6180 Logo": "6180 लोगो",
+  "Home": "घर",
+  "Visit Home": "घर जाव",
+  "Visit 6180.io": "6180.io जाव",
+  "No tags available": "कोनो टैग नइ हे",
+  "Showing photos with all selected tags": "सब चुनल गे टैग मन के साथ फोटो देखाउत हे",
+  "Valid parameters not found in URL": "URL मा वैध पैरामीटर नइ मिलिस",
+  "Invalid id parameter format": "गलत आयडी पैरामीटर फॉर्मेट",
+  "Album not found": "एलबम नइ मिलिस",
+  "the album owner": "एलबम के मालिक",
+  "Tag, save and find that performance — before it's lost.": "ट्याग करव, सेव करव अउर ओ जन्मदिन खोजव — खतम होवइ से पहिने।",
+  "Tag, save and find that smile — before it's lost.": "ट्याग करव, सेव करव अउर ओ मुस्कान खोजव — खतम होवइ से पहिने।",
+  "Tag, save and find that birthday — before it's lost.": "ट्याग करव, सेव करव अउर ओ प्रदर्शन खोजव — खतम होवइ से पहिने।",
+  "Tag, save and find that sunset — before it's lost.": "ट्याग करव, सेव करव अउर ओ छुट्टी खोजव — खतम होवइ से पहिने।",
+  "Tag, save and find that party — before it's lost.": "ट्याग करव, सेव करव अउर ओ पार्टी खोजव — खतम होवइ से पहिने।",
+  "Tag, save and find that vacation — before it's lost.": "ट्याग करव, सेव करव अउर ओ सूर्यास्त खोजव — खतम होवइ से पहिने।"
 }

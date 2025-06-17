@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Foto's Tafoegje",
   "Album successfully saved!": "Jo album is mei sukses opslein!",
   "All files successfully uploaded": "Alle bestannen binne mei súkses oplaad",
@@ -295,5 +296,22 @@
   "Open On Android": "Iepenje Op Android",
   "Toggle contacts filter": "Kontakt filter wikselje",
   "Showing albums with all selected contacts and tags": "Toant albums mei alle selektearre kontakten en labels",
-  "Showing albums with all selected tags": "Toant albums mei alle selektearre labels"
+  "Showing albums with all selected tags": "Toant albums mei alle selektearre labels",
+  "Clear All": "Alles Wiskje",
+  "6180 Logo": "6180 Logo",
+  "Home": "Thús",
+  "Visit Home": "Besjoch Thús",
+  "Visit 6180.io": "Besjoch 6180.io",
+  "No tags available": "Gjin labels beskikber",
+  "Showing photos with all selected tags": "Toanje fan foto's mei alle selektearre labels",
+  "Valid parameters not found in URL": "Jildige parameters net fûn yn URL",
+  "Invalid id parameter format": "Ûnjildich id parameter formaat",
+  "Album not found": "Album net fûn",
+  "the album owner": "de album eigenaar",
+  "Tag, save and find that performance — before it's lost.": "Label, bewarje en fyn dy opfoering — foardat it ferdwine.",
+  "Tag, save and find that smile — before it's lost.": "Label, bewarje en fyn dy glimke — foardat it ferdwine.",
+  "Tag, save and find that birthday — before it's lost.": "Label, bewarje en fyn dy jierdei — foardat it ferdwine.",
+  "Tag, save and find that sunset — before it's lost.": "Label, bewarje en fyn dy sinneûndergong — foardat it ferdwine.",
+  "Tag, save and find that party — before it's lost.": "Label, bewarje en fyn dat feestje — foardat it ferdwine.",
+  "Tag, save and find that vacation — before it's lost.": "Label, bewarje en fyn dy fakânsje — foardat it ferdwine."
 }

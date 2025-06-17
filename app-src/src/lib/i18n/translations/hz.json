@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tenda Onondyelela",
   "Album successfully saved!": "Album zoje zatuurirwa nawa!",
   "All files successfully uploaded": "Ozondjahama zondotjivisiro nawa nombudi",
@@ -295,5 +296,22 @@
   "Open On Android": "Zuvura Ku Android",
   "Toggle contacts filter": "Kaikurana kondupo sifitala",
   "Showing albums with all selected contacts and tags": "Kaharupa album tja kamapareko matjaparatehepo oukwatupa komakumo",
-  "Showing albums with all selected tags": "Kaharupa album tja kamapareko makumo"
+  "Showing albums with all selected tags": "Kaharupa album tja kamapareko makumo",
+  "Clear All": "Tiisa Vyose",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Omundu",
+  "Visit Home": "Pula Omundu",
+  "Visit 6180.io": "Pula 6180.io",
+  "No tags available": "Kaina tags ra kara",
+  "Showing photos with all selected tags": "Kuatisa ukarumendu kuratjindua tags rokukara",
+  "Valid parameters not found in URL": "Kaina parameters ra uriri ka URI",
+  "Invalid id parameter format": "Id parameter format ombili ino lye",
+  "Album not found": "Album ina monike",
+  "the album owner": "omuna y'album",
+  "Tag, save and find that performance — before it's lost.": "Tambula, zunga ni humbata ku performing — peo gwa lile.",
+  "Tag, save and find that smile — before it's lost.": "Tambula, zunga ni humbata ku smiling — peo gwa lile.",
+  "Tag, save and find that birthday — before it's lost.": "Tambula, zunga ni humbata ku birth day — peo gwa lile.",
+  "Tag, save and find that sunset — before it's lost.": "Tambula, zunga ni humbata ku ri zuva rinoenda — peo gwa lile.",
+  "Tag, save and find that party — before it's lost.": "Tambula, zunga ni humbata ku party — peo gwa lile.",
+  "Tag, save and find that vacation — before it's lost.": "Tambula, zunga ni humbata ku hamberera — peo gwa lile."
 }

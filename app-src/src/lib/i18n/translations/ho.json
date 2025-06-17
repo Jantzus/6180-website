@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Putim Poto",
   "Album successfully saved!": "Album bilong yu i bin sevim gutpela!",
   "All files successfully uploaded": "All files napo oda uploads tou",
@@ -295,5 +296,22 @@
   "Open On Android": "Opim Long Android",
   "Toggle contacts filter": "Jenisim kontakt filta",
   "Showing albums with all selected contacts and tags": "Soem album wetem ol kakae kontakt mo tag",
-  "Showing albums with all selected tags": "Soem album wetem ol kakae tag"
+  "Showing albums with all selected tags": "Soem album wetem ol kakae tag",
+  "Clear All": "Rausim Olgeta",
+  "6180 Logo": "Logo bilong 6180",
+  "Home": "Haus",
+  "Visit Home": "Go Long Haus",
+  "Visit 6180.io": "Go Long 6180.io",
+  "No tags available": "No tag i stap",
+  "Showing photos with all selected tags": "Stap sho foto wantaim olgeta tag yu makem",
+  "Valid parameters not found in URL": "No valid parameter blong yu long URL",
+  "Invalid id parameter format": "Id parameter format i no gud",
+  "Album not found": "Album i no painim",
+  "the album owner": "papa blong album",
+  "Tag, save and find that performance — before it's lost.": "Taggim, sefti mo faenim i performance — bitaem i no spoil.",
+  "Tag, save and find that smile — before it's lost.": "Taggim, sefti mo faenim i smael — bitaem i no spoil.",
+  "Tag, save and find that birthday — before it's lost.": "Taggim, sefti mo faenim i birthday — bitaem i no spoil.",
+  "Tag, save and find that sunset — before it's lost.": "Taggim, sefti mo faenim i san go daon — bitaem i no spoil.",
+  "Tag, save and find that party — before it's lost.": "Taggim, sefti mo faenim i pati — bitaem i no spoil.",
+  "Tag, save and find that vacation — before it's lost.": "Taggim, sefti mo faenim i holoade — bitaem i no spoil."
 }

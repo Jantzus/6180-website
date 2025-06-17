@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tsenya Ditshwantsho",
   "Album successfully saved!": "Albamo ya gago e bolokilwe sentle!",
   "All files successfully uploaded": "Difaele tsotlhe di kentswe ka katlego",
@@ -295,5 +296,22 @@
   "Open On Android": "Bula Mo Android",
   "Toggle contacts filter": "Fetola filter ya dikgokagano",
   "Showing albums with all selected contacts and tags": "Go bontsha di-album tsa dikgokagano tsohle tse di kgethilweng le di-tag",
-  "Showing albums with all selected tags": "Go bontsha di-album tsa di-tag tsohle tse di kgethilweng"
+  "Showing albums with all selected tags": "Go bontsha di-album tsa di-tag tsohle tse di kgethilweng",
+  "Clear All": "Phepafatsa Tsotlhe",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Gae",
+  "Visit Home": "Etela Gae",
+  "Visit 6180.io": "Etela 6180.io",
+  "No tags available": "Ga go na di-tag tse di teng",
+  "Showing photos with all selected tags": "Go bontsha ditshwantsho tse di nang le di-tag tsotlhe tse di tlhophilweng",
+  "Valid parameters not found in URL": "Dikarolo tse di siameng ga di a bonwa mo URL",
+  "Invalid id parameter format": "Sebopego sa parameter id se se siameng",
+  "Album not found": "Album ga e bonweng",
+  "the album owner": "mong wa album",
+  "Tag, save and find that performance — before it's lost.": "Tshwaya letshwao, boloka le batla letsatsi leo la matsalo — pele le latlhegelwa.",
+  "Tag, save and find that smile — before it's lost.": "Tshwaya letshwao, boloka le batla tsiego eo — pele e latlhegelwa.",
+  "Tag, save and find that birthday — before it's lost.": "Tshwaya letshwao, boloka le batla tiro eo — pele e latlhegelwa.",
+  "Tag, save and find that sunset — before it's lost.": "Tshwaya letshwao, boloka le batla boikgutlo joo — pele jo latlhegelwa.",
+  "Tag, save and find that party — before it's lost.": "Tshwaya letshwao, boloka le batla mokete oo — pele o latlhegelwa.",
+  "Tag, save and find that vacation — before it's lost.": "Tshwaya letshwao, boloka le batla phirima ya letsatsi eo — pele e latlhegelwa."
 }

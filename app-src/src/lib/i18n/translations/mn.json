@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Зураг Нэмэх",
   "Album successfully saved!": "Таны цомог амжилттай хадгалагдлаа!",
   "All files successfully uploaded": "Бүх файлууд амжилттай байршуулагдлаа",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-д Нээх",
   "Toggle contacts filter": "Харилцагчийн шүүлтүүр солих",
   "Showing albums with all selected contacts and tags": "Сонгосон бүх харилцагч болон шошготой цомгуудыг харуулж байна",
-  "Showing albums with all selected tags": "Сонгосон бүх шошготой цомгуудыг харуулж байна"
+  "Showing albums with all selected tags": "Сонгосон бүх шошготой цомгуудыг харуулж байна",
+  "Clear All": "Бүгдийг Арилгах",
+  "6180 Logo": "6180 Лого",
+  "Home": "Нүүр",
+  "Visit Home": "Гэр Лүү Орох",
+  "Visit 6180.io": "6180.io Лүү Орох",
+  "No tags available": "Шошго байхгүй",
+  "Showing photos with all selected tags": "Сонгосон бүх шошготой зургууд харуулах",
+  "Valid parameters not found in URL": "URL-ээс хүчинтэй параметр олдсонгүй",
+  "Invalid id parameter format": "Буруу id параметрийн формат",
+  "Album not found": "Цомог олдсонгүй",
+  "the album owner": "цомгийн эзэн",
+  "Tag, save and find that performance — before it's lost.": "Тэмдэглэх, хадгалах ба тэр төрсөн өдрийг олох — алдагдахаас өмнө.",
+  "Tag, save and find that smile — before it's lost.": "Тэмдэглэх, хадгалах ба тэр инээмсэглэлийг олох — алдагдахаас өмнө.",
+  "Tag, save and find that birthday — before it's lost.": "Тэмдэглэх, хадгалах ба тэр тоглолтыг олох — алдагдахаас өмнө.",
+  "Tag, save and find that sunset — before it's lost.": "Тэмдэглэх, хадгалах ба тэр амралтыг олох — алдагдахаас өмнө.",
+  "Tag, save and find that party — before it's lost.": "Тэмдэглэх, хадгалах ба тэр үдэшлэгийг олох — алдагдахаас өмнө.",
+  "Tag, save and find that vacation — before it's lost.": "Тэмдэглэх, хадгалах ба тэр нарны жаргалтыг олох — алдагдахаас өмнө."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Rasmlar Qo'shish",
   "Album successfully saved!": "Sizning albumingiz muvaffaqiyatli saqlandi!",
   "All files successfully uploaded": "Barcha fayllar muvaffaqiyatli yuklandi",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-da Ochish",
   "Toggle contacts filter": "Kontaktlar filtrini almashtirish",
   "Showing albums with all selected contacts and tags": "Tanlangan barcha kontaktlar va teglar bilan albomlari ko'rsatish",
-  "Showing albums with all selected tags": "Tanlangan barcha teglar bilan albomlari ko'rsatish"
+  "Showing albums with all selected tags": "Tanlangan barcha teglar bilan albomlari ko'rsatish",
+  "Clear All": "Hammasini Tozalash",
+  "6180 Logo": "6180 Logotipi",
+  "Home": "Uy",
+  "Visit Home": "Uyga Tashrif",
+  "Visit 6180.io": "6180.io Tashrif",
+  "No tags available": "Hech qanday teg yo'q",
+  "Showing photos with all selected tags": "Tanlangan barcha teglar bilan rasmlarni ko'rsatish",
+  "Valid parameters not found in URL": "URL da to'g'ri parametrlar topilmadi",
+  "Invalid id parameter format": "Noto'g'ri id parametr formati",
+  "Album not found": "Albom topilmadi",
+  "the album owner": "albom egasi",
+  "Tag, save and find that performance — before it's lost.": "Belgila, saqlang va o'sha tug'ilgan kunni toping — yo'qolishidan oldin.",
+  "Tag, save and find that smile — before it's lost.": "Belgila, saqlang va o'sha tabassum toping — yo'qolishidan oldin.",
+  "Tag, save and find that birthday — before it's lost.": "Belgila, saqlang va o'sha namoyishni toping — yo'qolishidan oldin.",
+  "Tag, save and find that sunset — before it's lost.": "Belgila, saqlang va o'sha ta'tilni toping — yo'qolishidan oldin.",
+  "Tag, save and find that party — before it's lost.": "Belgila, saqlang va o'sha ziyofatni toping — yo'qolishidan oldin.",
+  "Tag, save and find that vacation — before it's lost.": "Belgila, saqlang va o'sha quyosh botishini toping — yo'qolishidan oldin."
 }

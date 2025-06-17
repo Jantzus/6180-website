@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ad Pikchas",
   "Album successfully saved!": "Yoo aelbm sievd gud!",
   "All files successfully uploaded": "Orla fiel dem se uplodid guud",
@@ -295,5 +296,22 @@
   "Open On Android": "Oepen Iin Android",
   "Toggle contacts filter": "Chienj kontak filta",
   "Showing albums with all selected contacts and tags": "Sho album wief orl dem pick kontak en tag",
-  "Showing albums with all selected tags": "Sho album wief orl dem pick tag"
+  "Showing albums with all selected tags": "Sho album wief orl dem pick tag",
+  "Clear All": "Kliin Olkain",
+  "6180 Logo": "6180 Logo",
+  "Home": "Huem",
+  "Visit Home": "Gan Huem",
+  "Visit 6180.io": "Gan 6180.io",
+  "No tags available": "Nor tags deh ya",
+  "Showing photos with all selected tags": "Showin piktyors wid all yu select tags",
+  "Valid parameters not found in URL": "Nor valid parameter faund en URL",
+  "Invalid id parameter format": "Invalid id parameter format",
+  "Album not found": "Album nor faund",
+  "the album owner": "di album owna",
+  "Tag, save and find that performance — before it's lost.": "Tag, siev en fain daet borthdee — biifor it lorst.",
+  "Tag, save and find that smile — before it's lost.": "Tag, siev en fain daet smail — biifor it lorst.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, siev en fain daet pikcha — biifor it lorst.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, siev en fain daet holide — biifor it lorst.",
+  "Tag, save and find that party — before it's lost.": "Tag, siev en fain daet paati — biifor it lorst.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, siev en fain daet sunnaset — biifor it lorst."
 }

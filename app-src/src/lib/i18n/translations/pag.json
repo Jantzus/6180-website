@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Pandagdag na Letratu",
   "Album successfully saved!": "Say albummo et matagumpay ya inimikel!",
   "All files successfully uploaded": "Amin ya file sikses ya naiyarawi",
@@ -295,5 +296,22 @@
   "Open On Android": "Lukaten Ed Android",
   "Toggle contacts filter": "Baliwen so filter na kontak",
   "Showing albums with all selected contacts and tags": "Ipapakitay so album ya may amin na napili na kontak tan tag",
-  "Showing albums with all selected tags": "Ipapakitay so album ya may amin na napili na tag"
+  "Showing albums with all selected tags": "Ipapakitay so album ya may amin na napili na tag",
+  "Clear All": "Paway Amin",
+  "6180 Logo": "Logo na 6180",
+  "Home": "Balay",
+  "Visit Home": "Sambet ed Balay",
+  "Visit 6180.io": "Sambet ed 6180.io",
+  "No tags available": "Anggapo so tag",
+  "Showing photos with all selected tags": "Ipakita tan mga retrato na arapan tan amin so napili ya tag",
+  "Valid parameters not found in URL": "Anggapo so parameter ya saro diad URL",
+  "Invalid id parameter format": "Andi valid so format na id parameter",
+  "Album not found": "Anggapo so album ya naanap",
+  "the album owner": "say nanaanak so album",
+  "Tag, save and find that performance — before it's lost.": "Tag-mo, save-yo tan anapen to ya kaarawan — balon mawala.",
+  "Tag, save and find that smile — before it's lost.": "Tag-mo, save-yo tan anapen to ya ngisi — balon mawala.",
+  "Tag, save and find that birthday — before it's lost.": "Tag-mo, save-yo tan anapen to ya performance — balon mawala.",
+  "Tag, save and find that sunset — before it's lost.": "Tag-mo, save-yo tan anapen to ya bakasyon — balon mawala.",
+  "Tag, save and find that party — before it's lost.": "Tag-mo, save-yo tan anapen to ya party — balon mawala.",
+  "Tag, save and find that vacation — before it's lost.": "Tag-mo, save-yo tan anapen to ya labi na aldaw — balon mawala."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Ajouter des Photos",
   "Album successfully saved!": "Votre album a été enregistré avec succès!",
   "All files successfully uploaded": "Tous les fichiers ont été téléchargés avec succès",
@@ -295,5 +296,22 @@
   "Open On Android": "Ouvrir Sur Android",
   "Toggle contacts filter": "Basculer le filtre des contacts",
   "Showing albums with all selected contacts and tags": "Affichage des albums avec tous les contacts et tags sélectionnés",
-  "Showing albums with all selected tags": "Affichage des albums avec tous les tags sélectionnés"
+  "Showing albums with all selected tags": "Affichage des albums avec tous les tags sélectionnés",
+  "Clear All": "Tout Effacer",
+  "6180 Logo": "Logo 6180",
+  "Home": "Accueil",
+  "Visit Home": "Visiter Accueil",
+  "Visit 6180.io": "Visiter 6180.io",
+  "No tags available": "Aucune étiquette disponible",
+  "Showing photos with all selected tags": "Affichage des photos avec toutes les étiquettes sélectionnées",
+  "Valid parameters not found in URL": "Paramètres valides non trouvés dans l'URL",
+  "Invalid id parameter format": "Format de paramètre id invalide",
+  "Album not found": "Album non trouvé",
+  "the album owner": "le propriétaire de l'album",
+  "Tag, save and find that performance — before it's lost.": "Étiquetez, sauvegardez et trouvez cette performance — avant qu'elle ne soit perdue.",
+  "Tag, save and find that smile — before it's lost.": "Étiquetez, sauvegardez et trouvez ce sourire — avant qu'il ne soit perdu.",
+  "Tag, save and find that birthday — before it's lost.": "Étiquetez, sauvegardez et trouvez cet anniversaire — avant qu'il ne soit perdu.",
+  "Tag, save and find that sunset — before it's lost.": "Étiquetez, sauvegardez et trouvez ce coucher de soleil — avant qu'il ne soit perdu.",
+  "Tag, save and find that party — before it's lost.": "Étiquetez, sauvegardez et trouvez cette fête — avant qu'elle ne soit perdue.",
+  "Tag, save and find that vacation — before it's lost.": "Étiquetez, sauvegardez et trouvez ces vacances — avant qu'elles ne soient perdues."
 }

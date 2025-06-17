@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "სურათეფიშ გეძინა",
   "Album successfully saved!": "თქვანი ალბომი ჯგირო ჩუალირი რე!",
   "All files successfully uploaded": "არძა ფაილეფი წოხოლენდო მინოჭარილი რე",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-შა გიშხანთუ",
   "Toggle contacts filter": "კონტაქტეფიშ ფილტრიშ ლაჩქორუა",
   "Showing albums with all selected contacts and tags": "უჩქონს ალბომეფი ყველა არჩეული კონტაქტეფითა ტეგეფით",
-  "Showing albums with all selected tags": "უჩქონს ალბომეფი ყველა არჩეული ტეგეფით"
+  "Showing albums with all selected tags": "უჩქონს ალბომეფი ყველა არჩეული ტეგეფით",
+  "Clear All": "ყოველაფარი ლასირი",
+  "6180 Logo": "6180 ლოგო",
+  "Home": "ოხორი",
+  "Visit Home": "ოხორში ნახვა",
+  "Visit 6180.io": "6180.io ნახვა",
+  "No tags available": "ტეგები არე",
+  "Showing photos with all selected tags": "ვერსიანი ტეგეფიშ ფოტოეფიშ ჩვენება",
+  "Valid parameters not found in URL": "URL-შა ძალაშიანი პარამეტრეფი ვერე ძირუ",
+  "Invalid id parameter format": "უმოქმედო id პარამეტრიშ ფორმატი",
+  "Album not found": "ალბომი ვერ ძირუ",
+  "the album owner": "ალბომიშ მქუდი",
+  "Tag, save and find that performance — before it's lost.": "ნიშნალი დაჯიშ, ადგილეთ დო ძირუ ეშენ გადაბადნი — გაპარსქუმენდი.",
+  "Tag, save and find that smile — before it's lost.": "ნიშნალი დაჯიშ, ადგილეთ დო ძირუ ეშენ ღრუბალი — გაპარსქუმენდი.",
+  "Tag, save and find that birthday — before it's lost.": "ნიშნალი დაჯიშ, ადგილეთ დო ძირუ ეშენ ძირუამე — გაპარსქუმენდი.",
+  "Tag, save and find that sunset — before it's lost.": "ნიშნალი დაჯიშ, ადგილეთ დო ძირუ ეშენ შვებული — გაპარსქუმენდი.",
+  "Tag, save and find that party — before it's lost.": "ნიშნალი დაჯიშ, ადგილეთ დო ძირუ ეშენ ზაფხული — გაპარსქუმენდი.",
+  "Tag, save and find that vacation — before it's lost.": "ნიშნალი დაჯიშ, ადგილეთ დო ძირუ ეშენ მზოშ ღარეფენი — გაპარსქუმენდი."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tambahkan Foto",
   "Album successfully saved!": "Album Anda berhasil disimpan!",
   "All files successfully uploaded": "Semua file berhasil diunggah",
@@ -295,5 +296,22 @@
   "Open On Android": "Buka Di Android",
   "Toggle contacts filter": "Alihkan filter kontak",
   "Showing albums with all selected contacts and tags": "Menampilkan album dengan semua kontak dan tag yang dipilih",
-  "Showing albums with all selected tags": "Menampilkan album dengan semua tag yang dipilih"
+  "Showing albums with all selected tags": "Menampilkan album dengan semua tag yang dipilih",
+  "Clear All": "Hapus Semua",
+  "6180 Logo": "Logo 6180",
+  "Home": "Beranda",
+  "Visit Home": "Kunjungi Beranda",
+  "Visit 6180.io": "Kunjungi 6180.io",
+  "No tags available": "Tidak ada tag tersedia",
+  "Showing photos with all selected tags": "Menampilkan foto dengan semua tag yang dipilih",
+  "Valid parameters not found in URL": "Parameter yang valid tidak ditemukan di URL",
+  "Invalid id parameter format": "Format parameter id tidak valid",
+  "Album not found": "Album tidak ditemukan",
+  "the album owner": "pemilik album",
+  "Tag, save and find that performance — before it's lost.": "Tag, simpan dan temukan pertunjukan itu — sebelum hilang.",
+  "Tag, save and find that smile — before it's lost.": "Tag, simpan dan temukan senyuman itu — sebelum hilang.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, simpan dan temukan ulang tahun itu — sebelum hilang.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, simpan dan temukan matahari terbenam itu — sebelum hilang.",
+  "Tag, save and find that party — before it's lost.": "Tag, simpan dan temukan pesta itu — sebelum hilang.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, simpan dan temukan liburan itu — sebelum hilang."
 }

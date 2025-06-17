@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Суратла къош",
   "Album successfully saved!": "Сизни альбомугъуз жетишимли сакъланды!",
   "All files successfully uploaded": "Битеу файлла жетишимли джюкленнгендиле",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-да Ач",
   "Toggle contacts filter": "Контакт фильтрны ауушдурургъа",
   "Showing albums with all selected contacts and tags": "Бютеу сайлагъан контактла бла тегле бла альбомланы кёргюзюу",
-  "Showing albums with all selected tags": "Бютеу сайлагъан тегле бла альбомланы кёргюзюу"
+  "Showing albums with all selected tags": "Бютеу сайлагъан тегле бла альбомланы кёргюзюу",
+  "Clear All": "Барысы Кетерюу",
+  "6180 Logo": "6180 Логотип",
+  "Home": "Юй",
+  "Visit Home": "Баш-бетге Келиу",
+  "Visit 6180.io": "6180.io-гъа Келиу",
+  "No tags available": "Тегла джокъдула",
+  "Showing photos with all selected tags": "Сайланнган барысы тегла бла суратла",
+  "Valid parameters not found in URL": "URL-да тюз параметрла табылмагъандыла",
+  "Invalid id parameter format": "Джарамсыз id параметр форматы",
+  "Album not found": "Альбом табылмагъанды",
+  "the album owner": "альбомну игиси",
+  "Tag, save and find that performance — before it's lost.": "Белгилей бер, сакъла да ол туугъан кюнню таб — джоюлургъа къадар.",
+  "Tag, save and find that smile — before it's lost.": "Белгилей бер, сакъла да ол джылмайыуну таб — джоюлургъа къадар.",
+  "Tag, save and find that birthday — before it's lost.": "Белгилей бер, сакъла да ол спектаклы таб — джоюлургъа къадар.",
+  "Tag, save and find that sunset — before it's lost.": "Белгилей бер, сакъла да ол кюн батышны таб — джоюлургъа къадар.",
+  "Tag, save and find that party — before it's lost.": "Белгилей бер, сакъла да ол тойну таб — джоюлургъа къадар.",
+  "Tag, save and find that vacation — before it's lost.": "Белгилей бер, сакъла да ол эс алышны таб — джоюлургъа къадар."
 }

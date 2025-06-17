@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tambah Foto",
   "Album successfully saved!": "Album sampéyan kasil disimpen!",
   "All files successfully uploaded": "Kabèh file sampun kasil diunggah",
@@ -295,5 +296,22 @@
   "Open On Android": "Bukak Nang Android",
   "Toggle contacts filter": "Ganti panyaring kontak",
   "Showing albums with all selected contacts and tags": "Nuduhake album kanthi kabeh kontak lan tag sing dipilih",
-  "Showing albums with all selected tags": "Nuduhake album kanthi kabeh tag sing dipilih"
+  "Showing albums with all selected tags": "Nuduhake album kanthi kabeh tag sing dipilih",
+  "Clear All": "Busak Kabèh",
+  "6180 Logo": "Logo 6180",
+  "Home": "Omah",
+  "Visit Home": "Mampir Omah",
+  "Visit 6180.io": "Mampir 6180.io",
+  "No tags available": "Ora ana tag sing kasedhiya",
+  "Showing photos with all selected tags": "Nampilake foto kabeh karo tag sing dipilih",
+  "Valid parameters not found in URL": "Parameter valid ora ketemu ing URL",
+  "Invalid id parameter format": "Format parameter id ora valid",
+  "Album not found": "Album ora ditemokake",
+  "the album owner": "sing duwe album",
+  "Tag, save and find that performance — before it's lost.": "Tag, simpen lan goleki pagelaran kasebut — sadurunge ilang.",
+  "Tag, save and find that smile — before it's lost.": "Tag, simpen lan goleki eseman kasebut — sadurunge ilang.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, simpen lan goleki ulang tahun kasebut — sadurunge ilang.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, simpen lan goleki srengenge surup kasebut — sadurunge ilang.",
+  "Tag, save and find that party — before it's lost.": "Tag, simpen lan goleki pesta kasebut — sadurunge ilang.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, simpen lan goleki liburan kasebut — sadurunge ilang."
 }

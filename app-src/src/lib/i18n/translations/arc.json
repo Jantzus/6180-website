@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ܐܘܣܦ ܨܘܪ̈ܬܐ",
   "Album successfully saved!": "ܐܠܒܘܡܟ ܐܬܢܛܪ ܒܗܨܠܚܘܬܐ!",
   "All files successfully uploaded": "ܟܠܗܘܢ ܩܒܝ̈ܐ ܐܫܛܪܘ ܒܝܨܝܦܘܬܐ",
@@ -295,5 +296,22 @@
   "Open On Android": "ܦܬܚ ܒAndroid",
   "Toggle contacts filter": "ܫܚܠܦ ܡܨܦܝܢܐ ܕܩܘܪܒܐ",
   "Showing albums with all selected contacts and tags": "ܡܚܘܐ ܐܠܒܘܡܐ ܥܡ ܟܠܗܘܢ ܓܒܝܐ ܩܘܪܒܐ ܘܪܫܡܐ",
-  "Showing albums with all selected tags": "ܡܚܘܐ ܐܠܒܘܡܐ ܥܡ ܟܠܗܘܢ ܓܒܝܐ ܪܫܡܐ"
+  "Showing albums with all selected tags": "ܡܚܘܐ ܐܠܒܘܡܐ ܥܡ ܟܠܗܘܢ ܓܒܝܐ ܪܫܡܐ",
+  "Clear All": "ܟܠܝܐ ܡܚܠ",
+  "6180 Logo": "ܪܡܙܐ ܕ6180",
+  "Home": "ܒܝܬܐ",
+  "Visit Home": "ܐܬܐ ܠܒܝܬܐ",
+  "Visit 6180.io": "ܐܬܐ ܠ6180.io",
+  "No tags available": "ܠܐ ܐܝܬ ܪܫܘܡܐ",
+  "Showing photos with all selected tags": "ܡܚܘܐ ܨܘܪܬܐ ܥܡ ܟܠܗܘܢ ܪܫܘܡܐ ܓܒܝܐ",
+  "Valid parameters not found in URL": "ܠܐ ܐܫܬܟܚܘ ܦܪܡܛܪܐ ܫܪܝܪܐ ܒܐܘܪܠ",
+  "Invalid id parameter format": "ܦܘܪܡܐܬܐ ܕܦܪܡܛܪܐ ܗܘܝܘܬܐ ܠܐ ܟܫܝܪܐ",
+  "Album not found": "ܐܠܒܘܡܐ ܠܐ ܐܫܬܟܚ",
+  "the album owner": "ܡܪܐ ܐܠܒܘܡܐ",
+  "Tag, save and find that performance — before it's lost.": "ܬܪܣܡ ܘܢܛܪ ܘܐܫܟܚ ܗܘ ܬܬܚܘܝܬܐ — ܡܢ ܩܕܡ ܕܢܐܒܕ.",
+  "Tag, save and find that smile — before it's lost.": "ܬܪܣܡ ܘܢܛܪ ܘܐܫܟܚ ܗܘ ܚܘܒܐ — ܡܢ ܩܕܡ ܕܢܐܒܕ.",
+  "Tag, save and find that birthday — before it's lost.": "ܬܪܣܡ ܘܢܛܪ ܘܐܫܟܚ ܗܘ ܝܘܡܐ ܕܝܠܕܐ — ܡܢ ܩܕܡ ܕܢܐܒܕ.",
+  "Tag, save and find that sunset — before it's lost.": "ܬܪܣܡ ܘܢܛܪ ܘܐܫܟܚ ܗܘ ܡܥܪܒܐ ܕܫܡܫܐ — ܡܢ ܩܕܡ ܕܢܐܒܕ.",
+  "Tag, save and find that party — before it's lost.": "ܬܪܣܡ ܘܢܛܪ ܘܐܫܟܚ ܗܘ ܚܕܘܬܐ — ܡܢ ܩܕܡ ܕܢܐܒܕ.",
+  "Tag, save and find that vacation — before it's lost.": "ܬܪܣܡ ܘܢܛܪ ܘܐܫܟܚ ܗܘ ܢܝܚܐ — ܡܢ ܩܕܡ ܕܢܐܒܕ."
 }

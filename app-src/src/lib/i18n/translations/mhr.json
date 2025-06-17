@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Фотом Ешараш",
   "Album successfully saved!": "Тендан альбомдам сайын арален кодо!",
   "All files successfully uploaded": "Чыла файл-влак сайын пураш",
@@ -295,5 +296,22 @@
   "Open On Android": "Android-ште Почаш",
   "Toggle contacts filter": "Контакт фильтрым вашталташ",
   "Showing albums with all selected contacts and tags": "Чыла ойырымо контакт-влак дене тег-влак дене альбом-влакым ончыкташ",
-  "Showing albums with all selected tags": "Чыла ойырымо тег-влак дене альбом-влакым ончыкташ"
+  "Showing albums with all selected tags": "Чыла ойырымо тег-влак дене альбом-влакым ончыкташ",
+  "Clear All": "Чыла Шӧраш",
+  "6180 Logo": "6180 Логотип",
+  "Home": "Пӧрт",
+  "Visit Home": "Мӧнгышӧ Куржеш",
+  "Visit 6180.io": "6180.io-шко Куржеш",
+  "No tags available": "Тег-влак огыт",
+  "Showing photos with all selected tags": "Ойырымо тег-влак денек фото-влак ончыктымо",
+  "Valid parameters not found in URL": "URL-ышто чын параметр-влак огытыл",
+  "Invalid id parameter format": "Чын огыл id параметр форматыш",
+  "Album not found": "Альбом огыл му",
+  "the album owner": "альбом-влакын шкеныжы",
+  "Tag, save and find that performance — before it's lost.": "Палемдымаш, аралымаш да корымаш тудым шочмо кече — йомдарыме деч ончыч.",
+  "Tag, save and find that smile — before it's lost.": "Палемдымаш, аралымаш да корымаш тудым шыргыжмыш — йомдарыме деч ончыч.",
+  "Tag, save and find that birthday — before it's lost.": "Палемдымаш, аралымаш да корымаш тудым ончылымаш — йомдарыме деч ончыч.",
+  "Tag, save and find that sunset — before it's lost.": "Палемдымаш, аралымаш да корымаш тудым ял — йомдарыме деч ончыч.",
+  "Tag, save and find that party — before it's lost.": "Палемдымаш, аралымаш да корымаш тудым курым — йомдарыме деч ончыч.",
+  "Tag, save and find that vacation — before it's lost.": "Палемдымаш, аралымаш да корымаш тудым кече кондымо — йомдарыме деч ончыч."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Addere Imagines",
   "Album successfully saved!": "Album tuum feliciter servatum est!",
   "All files successfully uploaded": "Omnia scapus feliciter submissit",
@@ -295,5 +296,22 @@
   "Open On Android": "Aperire In Android",
   "Toggle contacts filter": "Commuta filtrum nexuum",
   "Showing albums with all selected contacts and tags": "Monstrare phototheca cum omnibus electis nexibus et notis",
-  "Showing albums with all selected tags": "Monstrare phototheca cum omnibus electis notis"
+  "Showing albums with all selected tags": "Monstrare phototheca cum omnibus electis notis",
+  "Clear All": "Deleo Omnia",
+  "6180 Logo": "Signum 6180",
+  "Home": "Domus",
+  "Visit Home": "Domum Visitare",
+  "Visit 6180.io": "6180.io Visitare",
+  "No tags available": "Nullae notae praesto",
+  "Showing photos with all selected tags": "Ostendere imagines cum omnibus notis selectis",
+  "Valid parameters not found in URL": "Parametri validi in URL non reperti",
+  "Invalid id parameter format": "Formatum parametri id invalidum",
+  "Album not found": "Album non inventum",
+  "the album owner": "album dominus",
+  "Tag, save and find that performance — before it's lost.": "Designa, serva et invenies illum natalem — antequam amittatur.",
+  "Tag, save and find that smile — before it's lost.": "Designa, serva et invenies illum risum — antequam amittatur.",
+  "Tag, save and find that birthday — before it's lost.": "Designa, serva et invenies illam praestationem — antequam amittatur.",
+  "Tag, save and find that sunset — before it's lost.": "Designa, serva et invenies illas ferias — antequam amittantur.",
+  "Tag, save and find that party — before it's lost.": "Designa, serva et invenies illam festivitatem — antequam amittatur.",
+  "Tag, save and find that vacation — before it's lost.": "Designa, serva et invenies illum occasum solis — antequam amittatur."
 }

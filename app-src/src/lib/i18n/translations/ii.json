@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "ꐪꑊꌌꇐꂷ",
   "Album successfully saved!": "ꆏꌠꈌꁱꁘꃀꁧꐯꄉꀐ!",
   "All files successfully uploaded": "ꋍꌠꈍꁨꌊꐥꀐ",
@@ -295,5 +296,22 @@
   "Open On Android": "Android ꉬ ꃀꐚ",
   "Toggle contacts filter": "ꉘꌋꇤꑍꋍꋏ",
   "Showing albums with all selected contacts and tags": "ꉘꌋꇤꌠꐨꌋꇤꁧꑌꎆꇫꅼꌋꇤ",
-  "Showing albums with all selected tags": "ꉘꌋꇤꌠꐨꌋꇤꁧꑌꎆꇫ"
+  "Showing albums with all selected tags": "ꉘꌋꇤꌠꐨꌋꇤꁧꑌꎆꇫ",
+  "Clear All": "ꊿꊇꀨꁱ",
+  "6180 Logo": "6180 ꌦꄂ",
+  "Home": "ꀔꆹ",
+  "Visit Home": "ꀔꆹꋧꏸ",
+  "Visit 6180.io": "6180.io ꋧꏸ",
+  "No tags available": "ꈀꏣꀋꊌ",
+  "Showing photos with all selected tags": "ꊿꅪꌠꉪꈀꏣꉬꀕꁧꄶ",
+  "Valid parameters not found in URL": "URL ꅉꇯꇬꃅꀕꉙꇳ",
+  "Invalid id parameter format": "ꎫꀠꇤꌋ id ꂿꃅꁧꂷꄉꌠ",
+  "Album not found": "ꎫꀠꇤꌋꀋꊌ",
+  "the album owner": "ꎫꀠꇤꌋꀋꊱꆸ",
+  "Tag, save and find that performance — before it's lost.": "ꀭꆏ, ꊈꌂ ꅐ ꆹꄮ ꋪꂷ — ꈀꄉ ꊿ ꁮꄀ.",
+  "Tag, save and find that smile — before it's lost.": "ꀭꆏ, ꊈꌂ ꅐ ꆹꄮ ꌦꀠ — ꈀꄉ ꊿ ꁮꄀ.",
+  "Tag, save and find that birthday — before it's lost.": "ꀭꆏ, ꊈꌂ ꅐ ꆹꄮ ꋺꈝ — ꈀꄉ ꊿ ꁮꄀ.",
+  "Tag, save and find that sunset — before it's lost.": "ꀭꆏ, ꊈꌂ ꅐ ꆹꄮ ꑍꄮ — ꈀꄉ ꊿ ꁮꄀ.",
+  "Tag, save and find that party — before it's lost.": "ꀭꆏ, ꊈꌂ ꅐ ꆹꄮ ꊰꋊ — ꈀꄉ ꊿ ꁮꄀ.",
+  "Tag, save and find that vacation — before it's lost.": "ꀭꆏ, ꊈꌂ ꅐ ꆹꄮ ꉈꄮ — ꈀꄉ ꊿ ꁮꄀ."
 }

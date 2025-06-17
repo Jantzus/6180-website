@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Bielden bietouföigje",
   "Album successfully saved!": "Dien Album wuude mäd Ärfoulch spiekerd!",
   "All files successfully uploaded": "Aal Doatäie sunt mäd Ärfoulch hoochleeden wuuden",
@@ -295,5 +296,22 @@
   "Open On Android": "Ap Android Opmääke",
   "Toggle contacts filter": "Kontakt-Filter uumskaltje",
   "Showing albums with all selected contacts and tags": "Wiest Albums mäd aal uutwäälde Kontakte un Määrken",
-  "Showing albums with all selected tags": "Wiest Albums mäd aal uutwäälde Määrken"
+  "Showing albums with all selected tags": "Wiest Albums mäd aal uutwäälde Määrken",
+  "Clear All": "Ales Läskje",
+  "6180 Logo": "6180 Logo",
+  "Home": "Houbje",
+  "Visit Home": "Tuhuus Besäke",
+  "Visit 6180.io": "6180.io Besäke",
+  "No tags available": "Neen Tags deer",
+  "Showing photos with all selected tags": "Wiesenge fon Bielden mäd aal uutwäälde Tags",
+  "Valid parameters not found in URL": "Guldige Parameter in URL nit fuunen",
+  "Invalid id parameter format": "Uungultich ID Parameter Format",
+  "Album not found": "Album neen fuunen",
+  "the album owner": "die Album-Besitter",
+  "Tag, save and find that performance — before it's lost.": "Markierje, spiekerje un fiende dän Geboartendai — eer he wächkumt.",
+  "Tag, save and find that smile — before it's lost.": "Markierje, spiekerje un fiende dät Laghen — eer dät wächkumt.",
+  "Tag, save and find that birthday — before it's lost.": "Markierje, spiekerje un fiende ju Vörstellenge — eer ju wächkumt.",
+  "Tag, save and find that sunset — before it's lost.": "Markierje, spiekerje un fiende ju Ferian — eer ju wächkumt.",
+  "Tag, save and find that party — before it's lost.": "Markierje, spiekerje un fiende ju Fierkap — eer ju wächkumt.",
+  "Tag, save and find that vacation — before it's lost.": "Markierje, spiekerje un fiende dän Sünnenuundergong — eer he wächkumt."
 }

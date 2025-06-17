@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Lasit Govaid",
   "Album successfully saved!": "Du albuma lea vurkejuvvon lihkkulaččat!",
   "All files successfully uploaded": "Buot fiillat leat liktojuvvon lihkkolaččat",
@@ -295,5 +296,22 @@
   "Open On Android": "Raba Android:s",
   "Toggle contacts filter": "Molsut oktavuođaid silui",
   "Showing albums with all selected contacts and tags": "Čájeha albumaid buot válljejuvvon oktavuođaiguin ja táhkaiguin",
-  "Showing albums with all selected tags": "Čájeha albumaid buot válljejuvvon táhkaiguin"
+  "Showing albums with all selected tags": "Čájeha albumaid buot válljejuvvon táhkaiguin",
+  "Clear All": "Sihko Buot",
+  "6180 Logo": "6180 Logo",
+  "Home": "Ruoktu",
+  "Visit Home": "Dálvve Ruovttui",
+  "Visit 6180.io": "Dálvve 6180.io",
+  "No tags available": "Ii gávdnan merkkaid",
+  "Showing photos with all selected tags": "Čájeha govat buot válljejuvvon merkkain",
+  "Valid parameters not found in URL": "Gustojeaddji parameteraid eai gávdnan URL-s",
+  "Invalid id parameter format": "Boastut id parametera hámit",
+  "Album not found": "Album ii gávdnan",
+  "the album owner": "albuma eaiggát",
+  "Tag, save and find that performance — before it's lost.": "Merke, vurke ja oza dan riegádanbeaivvi — ovdalgo dat massá.",
+  "Tag, save and find that smile — before it's lost.": "Merke, vurke ja oza dan čuovžžila — ovdalgo dat massá.",
+  "Tag, save and find that birthday — before it's lost.": "Merke, vurke ja oza dan ovdanbuktima — ovdalgo dat massá.",
+  "Tag, save and find that sunset — before it's lost.": "Merke, vurke ja oza dan lohkkema — ovdalgo dat massá.",
+  "Tag, save and find that party — before it's lost.": "Merke, vurke ja oza dan buollašeame — ovdalgo dat massá.",
+  "Tag, save and find that vacation — before it's lost.": "Merke, vurke ja oza dan beaivváš vuollánan — ovdalgo dat massá."
 }

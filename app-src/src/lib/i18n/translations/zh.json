@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "添加照片",
   "Album successfully saved!": "你的相册已成功保存!",
   "All files successfully uploaded": "所有文件上传成功",
@@ -295,5 +296,22 @@
   "Open On Android": "在Android上打开",
   "Toggle contacts filter": "切换联系人过滤器",
   "Showing albums with all selected contacts and tags": "显示包含所有选定联系人和标签的相册",
-  "Showing albums with all selected tags": "显示包含所有选定标签的相册"
+  "Showing albums with all selected tags": "显示包含所有选定标签的相册",
+  "Clear All": "清除全部",
+  "6180 Logo": "6180标志",
+  "Home": "主页",
+  "Visit Home": "访问主页",
+  "Visit 6180.io": "访问6180.io",
+  "No tags available": "没有可用标签",
+  "Showing photos with all selected tags": "显示包含所有选定标签的照片",
+  "Valid parameters not found in URL": "URL中未找到有效参数",
+  "Invalid id parameter format": "无效的id参数格式",
+  "Album not found": "未找到相册",
+  "the album owner": "相册所有者",
+  "Tag, save and find that performance — before it's lost.": "标记、保存并找到那个生日 — 在失去之前。",
+  "Tag, save and find that smile — before it's lost.": "标记、保存并找到那张笑脸 — 在失去之前。",
+  "Tag, save and find that birthday — before it's lost.": "标记、保存并找到那场表演 — 在失去之前。",
+  "Tag, save and find that sunset — before it's lost.": "标记、保存并找到那个假期 — 在失去之前。",
+  "Tag, save and find that party — before it's lost.": "标记、保存并找到那个聚会 — 在失去之前。",
+  "Tag, save and find that vacation — before it's lost.": "标记、保存并找到那个日落 — 在失去之前。"
 }

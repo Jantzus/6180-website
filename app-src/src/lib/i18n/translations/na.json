@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Add Photos",
   "Album successfully saved!": "Aiwan album save ean successfully!",
   "All files successfully uploaded": "Dorer file edae upload iat",
@@ -295,5 +296,22 @@
   "Open On Android": "Egen Bwo Android",
   "Toggle contacts filter": "Akaunga filter ian kontakt",
   "Showing albums with all selected contacts and tags": "Itaek albums eo me ekakaunga kontakt me tag it naan",
-  "Showing albums with all selected tags": "Itaek albums eo me ekakaunga tag it naan"
+  "Showing albums with all selected tags": "Itaek albums eo me ekakaunga tag it naan",
+  "Clear All": "Kakawir Eaiy",
+  "6180 Logo": "Logo 6180",
+  "Home": "Im",
+  "Visit Home": "Roar Eao",
+  "Visit 6180.io": "Roar 6180.io",
+  "No tags available": "Eab tag eo",
+  "Showing photos with all selected tags": "Kepwer ituen akea tag aebwiuok",
+  "Valid parameters not found in URL": "Eab parameters iyin eo URL",
+  "Invalid id parameter format": "Id parameter format eo eakada",
+  "Album not found": "Album eo ikorena",
+  "the album owner": "album eo eman",
+  "Tag, save and find that performance — before it's lost.": "Tag, tauge me dobur en ranet — omo e dorer.",
+  "Tag, save and find that smile — before it's lost.": "Tag, tauge me dobur en jeroenimin — omo e dorer.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, tauge me dobur en jeroenimin — omo e dorer.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, tauge me dobur en holoade — omo e dorer.",
+  "Tag, save and find that party — before it's lost.": "Tag, tauge me dobur en parti — omo e dorer.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, tauge me dobur en dorer — omo e dorer."
 }

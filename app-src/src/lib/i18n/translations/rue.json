@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Додати Фотоґрафії",
   "Album successfully saved!": "Ваш альбом успішно збережено!",
   "All files successfully uploaded": "Вшыткы файлы успішно загружены",
@@ -295,5 +296,22 @@
   "Open On Android": "Одкрити У Android",
   "Toggle contacts filter": "Перемкнути филтер контактів",
   "Showing albums with all selected contacts and tags": "Показують ся албумы з усіма выбранымы контактамы і тегамы",
-  "Showing albums with all selected tags": "Показують ся албумы з усіма выбранымы тегамы"
+  "Showing albums with all selected tags": "Показують ся албумы з усіма выбранымы тегамы",
+  "Clear All": "Очистити Все",
+  "6180 Logo": "Лого 6180",
+  "Home": "Домів",
+  "Visit Home": "Піти Домів",
+  "Visit 6180.io": "Піти на 6180.io",
+  "No tags available": "Тагы не суть",
+  "Showing photos with all selected tags": "Показованя фотографій з вшыткыма выбраныма тагами",
+  "Valid parameters not found in URL": "Платны параметры не найдены в URL",
+  "Invalid id parameter format": "Неправилный формат параметра id",
+  "Album not found": "Албум не найденый",
+  "the album owner": "власник албуму",
+  "Tag, save and find that performance — before it's lost.": "Позначте, заховайте і найдьте тоты народины — перед тым як ся загублять.",
+  "Tag, save and find that smile — before it's lost.": "Позначте, заховайте і найдьте тоту усмішку — перед тым як ся загубить.",
+  "Tag, save and find that birthday — before it's lost.": "Позначте, заховайте і найдьте тото выступленя — перед тым як ся загубить.",
+  "Tag, save and find that sunset — before it's lost.": "Позначте, заховайте і найдьте тоты вакації — перед тым як ся загублять.",
+  "Tag, save and find that party — before it's lost.": "Позначте, заховайте і найдьте тоту забаву — перед тым як ся загубить.",
+  "Tag, save and find that vacation — before it's lost.": "Позначте, заховайте і найдьте тот захід сонця — перед тым як ся загубить."
 }

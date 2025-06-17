@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Foto's Toevoegn",
   "Album successfully saved!": "Jen album es succesvol op-eslegen!",
   "All files successfully uploaded": "Olle bestanden zyn succesvol upgeload",
@@ -295,5 +296,22 @@
   "Open On Android": "Opendoen Op Android",
   "Toggle contacts filter": "Kontaktfilter wisseln",
   "Showing albums with all selected contacts and tags": "Toan albums me alle gekozene kontakten en labels",
-  "Showing albums with all selected tags": "Toan albums me alle gekozene labels"
+  "Showing albums with all selected tags": "Toan albums me alle gekozene labels",
+  "Clear All": "Alles Wegdoen",
+  "6180 Logo": "6180 Logo",
+  "Home": "Uus",
+  "Visit Home": "Noa Uus Goan",
+  "Visit 6180.io": "Noa 6180.io Goan",
+  "No tags available": "Gin etiketten",
+  "Showing photos with all selected tags": "Toogn van foto's me alle geselecteerde etiketten",
+  "Valid parameters not found in URL": "Gin geldige parameters gevonden in URL",
+  "Invalid id parameter format": "Ónjeldich id parameter formaat",
+  "Album not found": "Album nie gevonden",
+  "the album owner": "de album eigenoare",
+  "Tag, save and find that performance — before it's lost.": "Label, bewoar en vindj die verjoardag — voordakt ze verdwint.",
+  "Tag, save and find that smile — before it's lost.": "Label, bewoar en vindj die glimlach — voordakt ze verdwint.",
+  "Tag, save and find that birthday — before it's lost.": "Label, bewoar en vindj die vôrstellienge — voordakt ze verdwint.",
+  "Tag, save and find that sunset — before it's lost.": "Label, bewoar en vindj die vakantie — voordakt ze verdwint.",
+  "Tag, save and find that party — before it's lost.": "Label, bewoar en vindj da feestje — voordakt 't verdwint.",
+  "Tag, save and find that vacation — before it's lost.": "Label, bewoar en vindj die zunondergang — voordakt ze verdwint."
 }

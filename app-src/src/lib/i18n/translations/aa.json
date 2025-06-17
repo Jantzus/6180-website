@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Miskilat Raacat",
   "Album successfully saved!": "Ku alboomu labhada kaydime!",
   "All files successfully uploaded": "Fayl-tee maraw raksiimeh soole",
@@ -295,5 +296,22 @@
   "Open On Android": "Android Kaa Furi",
   "Toggle contacts filter": "Gudubbiis filtar badu",
   "Showing albums with all selected contacts and tags": "Alboom doortamme gudubbiis iyo sumadaha ka hoose",
-  "Showing albums with all selected tags": "Alboom doortamme sumadaha ka hoose"
+  "Showing albums with all selected tags": "Alboom doortamme sumadaha ka hoose",
+  "Clear All": "Waa Xabiili",
+  "6180 Logo": "6180 Calaq",
+  "Home": "Gaal",
+  "Visit Home": "Sinam Gaal Sab",
+  "Visit 6180.io": "Sinam 6180.io Sab",
+  "No tags available": "Tags ma geeysan",
+  "Showing photos with all selected tags": "Alsoome tags isii bara wali daakuu kee",
+  "Valid parameters not found in URL": "URL keessa parameters haqaan hin argamne",
+  "Invalid id parameter format": "Ramz-tawhish lata geeysan",
+  "Album not found": "Alboom ma geeysan",
+  "the album owner": "Alboom kee maleeti",
+  "Tag, save and find that performance — before it's lost.": "Calaal, kaydi oo soo hel bandhiggan — ka hor inta aanay lumi.",
+  "Tag, save and find that smile — before it's lost.": "Calaal, kaydi oo soo hel dhooldoolka — ka hor inta aanay lumi.",
+  "Tag, save and find that birthday — before it's lost.": "Calaal, kaydi oo soo hel maalintii dhalashada — ka hor inta aanay lumi.",
+  "Tag, save and find that sunset — before it's lost.": "Calaal, kaydi oo soo hel qorax dhaca — ka hor inta aanay lumi.",
+  "Tag, save and find that party — before it's lost.": "Calaal, kaydi oo soo hel xaflada — ka hor inta aanay lumi.",
+  "Tag, save and find that vacation — before it's lost.": "Calaal, kaydi oo soo hel fasaxaad — ka hor inta aanay lumi."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Photo donbo",
   "Album successfully saved!": "Nangni album dongsia ong'aniko jringaniko!",
   "All files successfully uploaded": "Soni dakgipa fileni dagtang badita dongenga",
@@ -295,5 +296,22 @@
   "Open On Android": "Android mande onen",
   "Toggle contacts filter": "Kontak filter bodol",
   "Showing albums with all selected contacts and tags": "Dakha album gapa manirang contact aro tag manbo sange",
-  "Showing albums with all selected tags": "Dakha album gapa manirang tag manbo sange"
+  "Showing albums with all selected tags": "Dakha album gapa manirang tag manbo sange",
+  "Clear All": "Wanra sil",
+  "6180 Logo": "6180 logo",
+  "Home": "Nokma",
+  "Visit Home": "Ghar wan",
+  "Visit 6180.io": "6180.io wan",
+  "No tags available": "Tag ra dongja",
+  "Showing photos with all selected tags": "Photo da tag nanga saba ra dakha",
+  "Valid parameters not found in URL": "URL nanga valid parameter ra dongja",
+  "Invalid id parameter format": "Kharap id parameter format",
+  "Album not found": "Album dongja mãsãna",
+  "the album owner": "album dongja uisa",
+  "Tag, save and find that performance — before it's lost.": "Taigi'a, saiba'o oso'a ñandu ara arekua — perde'aa'o jave.",
+  "Tag, save and find that smile — before it's lost.": "Taigi'a, saiba'o oso'a risãdã arekua — perde'aa'o jave.",
+  "Tag, save and find that birthday — before it's lost.": "Taigi'a, saiba'o oso'a performançã arekua — perde'aa'o jave.",
+  "Tag, save and find that sunset — before it's lost.": "Taigi'a, saiba'o oso'a kyringue rehe arekua — perde'aa'o jave.",
+  "Tag, save and find that party — before it's lost.": "Taigi'a, saiba'o oso'a festa arekua — perde'aa'o jave.",
+  "Tag, save and find that vacation — before it's lost.": "Taigi'a, saiba'o oso'a kuara jeike arekua — perde'aa'o jave."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Legg til Bilder",
   "Album successfully saved!": "Albumet ditt er lagret!",
   "All files successfully uploaded": "Alle filer er lastet opp med suksess",
@@ -295,5 +296,22 @@
   "Open On Android": "Åpne På Android",
   "Toggle contacts filter": "Bytt kontaktfilter",
   "Showing albums with all selected contacts and tags": "Viser album med alle valgte kontakter og merker",
-  "Showing albums with all selected tags": "Viser album med alle valgte merker"
+  "Showing albums with all selected tags": "Viser album med alle valgte merker",
+  "Clear All": "Fjern Alt",
+  "6180 Logo": "6180 Logo",
+  "Home": "Hjem",
+  "Visit Home": "Besøk Hjem",
+  "Visit 6180.io": "Besøk 6180.io",
+  "No tags available": "Ingen tagger tilgjengelig",
+  "Showing photos with all selected tags": "Viser bilder med alle valgte tagger",
+  "Valid parameters not found in URL": "Gyldige parametere ikke funnet i URL",
+  "Invalid id parameter format": "Ugyldig id parameter format",
+  "Album not found": "Album ikke funnet",
+  "the album owner": "album-eieren",
+  "Tag, save and find that performance — before it's lost.": "Merk, lagre og finn den fødselsdagen — før den går tapt.",
+  "Tag, save and find that smile — before it's lost.": "Merk, lagre og finn det smilet — før det går tapt.",
+  "Tag, save and find that birthday — before it's lost.": "Merk, lagre og finn den forestillingen — før den går tapt.",
+  "Tag, save and find that sunset — before it's lost.": "Merk, lagre og finn den ferien — før den går tapt.",
+  "Tag, save and find that party — before it's lost.": "Merk, lagre og finn den festen — før den går tapt.",
+  "Tag, save and find that vacation — before it's lost.": "Merk, lagre og finn den solnedgangen — før den går tapt."
 }

@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Afegir Fotos",
   "Album successfully saved!": "El teu àlbum s'ha desat correctament!",
   "All files successfully uploaded": "Tots els fitxers s'han pujat correctament",
@@ -295,5 +296,22 @@
   "Open On Android": "Obrir A Android",
   "Toggle contacts filter": "Commuta el filtre de contactes",
   "Showing albums with all selected contacts and tags": "Mostrant àlbums amb tots els contactes i etiquetes seleccionats",
-  "Showing albums with all selected tags": "Mostrant àlbums amb totes les etiquetes seleccionades"
+  "Showing albums with all selected tags": "Mostrant àlbums amb totes les etiquetes seleccionades",
+  "Clear All": "Esborrar Tot",
+  "6180 Logo": "Logotip de 6180",
+  "Home": "Inici",
+  "Visit Home": "Visitar Inici",
+  "Visit 6180.io": "Visitar 6180.io",
+  "No tags available": "No hi ha etiquetes disponibles",
+  "Showing photos with all selected tags": "Mostrant fotos amb totes les etiquetes seleccionades",
+  "Valid parameters not found in URL": "No s'han trobat paràmetres vàlids a l'URL",
+  "Invalid id parameter format": "Format de paràmetre d'id invàlid",
+  "Album not found": "No s'ha trobat l'àlbum",
+  "the album owner": "el propietari de l'àlbum",
+  "Tag, save and find that performance — before it's lost.": "Etiqueta, desa i troba aquesta actuació — abans que es perdi.",
+  "Tag, save and find that smile — before it's lost.": "Etiqueta, desa i troba aquest somriure — abans que es perdi.",
+  "Tag, save and find that birthday — before it's lost.": "Etiqueta, desa i troba aquest aniversari — abans que es perdi.",
+  "Tag, save and find that sunset — before it's lost.": "Etiqueta, desa i troba aquesta posta de sol — abans que es perdi.",
+  "Tag, save and find that party — before it's lost.": "Etiqueta, desa i troba aquesta festa — abans que es perdi.",
+  "Tag, save and find that vacation — before it's lost.": "Etiqueta, desa i troba aquestes vacances — abans que es perdin."
 }

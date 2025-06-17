@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Fotos dazuagebn",
   "Album successfully saved!": "Dein Album is gespeichert!",
   "All files successfully uploaded": "Olle Datein san erfolgreich aufgladen worn",
@@ -295,5 +296,22 @@
   "Open On Android": "Auf Android Aufmachen",
   "Toggle contacts filter": "Kontakt Filter umschoitn",
   "Showing albums with all selected contacts and tags": "Zoagt Alben mit alle gwejlte Kontakte und Tags",
-  "Showing albums with all selected tags": "Zoagt Alben mit alle gwejlte Tags"
+  "Showing albums with all selected tags": "Zoagt Alben mit alle gwejlte Tags",
+  "Clear All": "Ålles Löschen",
+  "6180 Logo": "6180 Logo",
+  "Home": "Hoam",
+  "Visit Home": "Hoam Geh",
+  "Visit 6180.io": "6180.io Geh",
+  "No tags available": "Koane Tags vorhanden",
+  "Showing photos with all selected tags": "Zoag Fotós mid olle ausagwöhlte Tags",
+  "Valid parameters not found in URL": "Güitige Parameter in dere URL ned gfundn",
+  "Invalid id parameter format": "Ungültigs ID Parameter Format",
+  "Album not found": "Album net gfundn",
+  "the album owner": "da Album-Bsitzer",
+  "Tag, save and find that performance — before it's lost.": "Tag, speichern und find de Uffirung — bevors vaschwindt.",
+  "Tag, save and find that smile — before it's lost.": "Tag, speichern und find des Lächeln — bevors vaschwindt.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, speichern und find den Geburtstag — bevors vaschwindt.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, speichern und find den Sunnenuntergang — bevors vaschwindt.",
+  "Tag, save and find that party — before it's lost.": "Tag, speichern und find de Party — bevors vaschwindt.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, speichern und find de Urlaub — bevors vaschwindt."
 }

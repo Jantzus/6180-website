@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Tamah Potret",
   "Album successfully saved!": "Album droeneuh meukeumah",
   "All files successfully uploaded": "Bandum berkas teungöh meuhasé geupasoe",
@@ -295,5 +296,22 @@
   "Open On Android": "Peuka Bak Android",
   "Toggle contacts filter": "Ubah filter kontak",
   "Showing albums with all selected contacts and tags": "Peuleumah album ngon ban kontakmeunan ngon tag nyang dipileh",
-  "Showing albums with all selected tags": "Peuleumah album ngon ban tag nyang dipileh"
+  "Showing albums with all selected tags": "Peuleumah album ngon ban tag nyang dipileh",
+  "Clear All": "Sampôh Mandum",
+  "6180 Logo": "Logo 6180",
+  "Home": "Rumoh",
+  "Visit Home": "Jak u Rumoh",
+  "Visit 6180.io": "Jak u 6180.io",
+  "No tags available": "Hana tag nyang meuteumèë",
+  "Showing photos with all selected tags": "Peuleumah gambar ngön saban tag nyang geupeulheueh",
+  "Valid parameters not found in URL": "Parameter sah hana geutumoe bak URL",
+  "Invalid id parameter format": "Format parameter id hana jelas",
+  "Album not found": "Album hana meuteumèë",
+  "the album owner": "ureueng nyang na album nyan",
+  "Tag, save and find that performance — before it's lost.": "Tag, keubah ngon cari pertunjukan nyan — seubelom hilang.",
+  "Tag, save and find that smile — before it's lost.": "Tag, keubah ngon cari seunyom nyan — seubelom hilang.",
+  "Tag, save and find that birthday — before it's lost.": "Tag, keubah ngon cari ulang tahun nyan — seubelom hilang.",
+  "Tag, save and find that sunset — before it's lost.": "Tag, keubah ngon cari matahari tranom nyan — seubelom hilang.",
+  "Tag, save and find that party — before it's lost.": "Tag, keubah ngon cari pesta nyan — seubelom hilang.",
+  "Tag, save and find that vacation — before it's lost.": "Tag, keubah ngon cari liburan nyan — seubelom hilang."
 }

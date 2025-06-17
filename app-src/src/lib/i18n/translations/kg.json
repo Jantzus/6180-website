@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Bakisa Foto",
   "Album successfully saved!": "Albumo ya nge me bonga mbote!",
   "All files successfully uploaded": "Bansaka ya vutuka nionso kubasika mbote",
@@ -295,5 +296,22 @@
   "Open On Android": "Fungula Mu Android",
   "Toggle contacts filter": "Baluka filtre ya mindimi",
   "Showing albums with all selected contacts and tags": "Kulangisa ba albums ya ba mindimi yina yonso yisolo ne ba tags",
-  "Showing albums with all selected tags": "Kulangisa ba albums ya ba tags yina yonso yisolo"
+  "Showing albums with all selected tags": "Kulangisa ba albums ya ba tags yina yonso yisolo",
+  "Clear All": "Longola Mambu Monso",
+  "6180 Logo": "Logo ya 6180",
+  "Home": "Nzo",
+  "Visit Home": "Kenda mu Nzo",
+  "Visit 6180.io": "Kenda na 6180.io",
+  "No tags available": "Tags ko mu tuku ko",
+  "Showing photos with all selected tags": "Kukulakisa bia foto na bioso tags bana bakua",
+  "Valid parameters not found in URL": "Parameters ya balongani ko mu URL ko",
+  "Invalid id parameter format": "Format ya parameter id ya kiye vo",
+  "Album not found": "Album mosi ye kumoneka",
+  "the album owner": "nkuwa wa album",
+  "Tag, save and find that performance — before it's lost.": "Kanga, keba ye kambu ye kianguka kineni — tuamina ye yamana.",
+  "Tag, save and find that smile — before it's lost.": "Kanga, keba ye kambu ye kibaseka kineni — tuamina ye yamana.",
+  "Tag, save and find that birthday — before it's lost.": "Kanga, keba ye kambu ye buzazi bwa kineni — tuamina ye yamana.",
+  "Tag, save and find that sunset — before it's lost.": "Kanga, keba ye kambu ye moyi wa tangu kineni — tuamina ye yamana.",
+  "Tag, save and find that party — before it's lost.": "Kanga, keba ye kambu ye nsalu kineni — tuamina ye yamana.",
+  "Tag, save and find that vacation — before it's lost.": "Kanga, keba ye kambu ye luvunu kineni — tuamina ye yamana."
 }

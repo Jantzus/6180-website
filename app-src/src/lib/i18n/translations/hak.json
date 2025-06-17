@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "添加照片",
   "Album successfully saved!": "你嘅相冊保存成功！",
   "All files successfully uploaded": "所有文件上傳成功",
@@ -295,5 +296,22 @@
   "Open On Android": "響Android開啟",
   "Toggle contacts filter": "Sṳ̂n-fòng lièn-lo̍k-ngìn kói-se",
   "Showing albums with all selected contacts and tags": "Hién-sṳ包含全部所選聯繫人kap tiáu-phiêu kì sióng-chṳk",
-  "Showing albums with all selected tags": "Hién-sṳ包含全部所選tiáu-phiêu kì sióng-chṳk"
+  "Showing albums with all selected tags": "Hién-sṳ包含全部所選tiáu-phiêu kì sióng-chṳk",
+  "Clear All": "清除全部",
+  "6180 Logo": "6180標誌",
+  "Home": "主頁",
+  "Visit Home": "訪問主頁",
+  "Visit 6180.io": "訪問6180.io",
+  "No tags available": "Mò-yû phiêu-chhiam",
+  "Showing photos with all selected tags": "Hién-sṳ yû-yù sǔn-thin phiêu-chhiam ke siòng-phìn",
+  "Valid parameters not found in URL": "URL nui-mien chhìm-m-tó yû-háu chham-sú",
+  "Invalid id parameter format": "無效个ID參數格式",
+  "Album not found": "搵毋到相册",
+  "the album owner": "相册个主人",
+  "Tag, save and find that performance — before it's lost.": "Tiám-ki, pó-chhùn lâu chhìm-cháu ke hiáu-yén — mò-sṳ̂t chhièn.",
+  "Tag, save and find that smile — before it's lost.": "Tiám-ki, pó-chhùn lâu chhìm-cháu ke chhiò-yúng — mò-sṳ̂t chhièn.",
+  "Tag, save and find that birthday — before it's lost.": "Tiám-ki, pó-chhùn lâu chhìm-cháu ke sâng-ngit — mò-sṳ̂t chhièn.",
+  "Tag, save and find that sunset — before it's lost.": "Tiám-ki, pó-chhùn lâu chhìm-cháu ke ngit-lok — mò-sṳ̂t chhièn.",
+  "Tag, save and find that party — before it's lost.": "Tiám-ki, pó-chhùn lâu chhìm-cháu ke chit-fi — mò-sṳ̂t chhièn.",
+  "Tag, save and find that vacation — before it's lost.": "Tiám-ki, pó-chhùn lâu chhìm-cháu ke kă-khì — mò-sṳ̂t chhièn."
 }

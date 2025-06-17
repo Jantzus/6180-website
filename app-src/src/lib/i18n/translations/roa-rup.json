@@ -1,5 +1,6 @@
 {
   "123": "123",
+  "6180": "6180",
   "Add Photos": "Adavgi Fotoksi",
   "Album successfully saved!": "Albumlu a tău s'anvishta cu sutsesă!",
   "All files successfully uploaded": "Tuti fișierili fu ăncărcati cu suțsesu",
@@ -295,5 +296,22 @@
   "Open On Android": "Diskid Tu Android",
   "Toggle contacts filter": "Schimbă filtrul cu contactele",
   "Showing albums with all selected contacts and tags": "Arată albumurile cu tuti contactile shi etichetile aleasili",
-  "Showing albums with all selected tags": "Arată albumurile cu tuti etichetile aleasili"
+  "Showing albums with all selected tags": "Arată albumurile cu tuti etichetile aleasili",
+  "Clear All": "Şteardzi Tuti",
+  "6180 Logo": "Logo a 6180",
+  "Home": "Acasã",
+  "Visit Home": "Duc Acasã",
+  "Visit 6180.io": "Duc la 6180.io",
+  "No tags available": "Nu s'aflã etichete",
+  "Showing photos with all selected tags": "Arãtãndu fotografie cu tuti etichitili vari",
+  "Valid parameters not found in URL": "Nu s'aflã paramitri buni ăn URL",
+  "Invalid id parameter format": "Format di paramitru id nu valid",
+  "Album not found": "Albumlu nu s'aflã",
+  "the album owner": "stãpãnul di albumlu",
+  "Tag, save and find that performance — before it's lost.": "Pune eticheta, aspitseashti shi gasiashi acela annomasariu — nainti să si piardu.",
+  "Tag, save and find that smile — before it's lost.": "Pune eticheta, aspitseashti shi gasiashi acela arâdiri — nainti să si piardu.",
+  "Tag, save and find that birthday — before it's lost.": "Pune eticheta, aspitseashti shi gasiashi acela espectaclu — nainti să si piardu.",
+  "Tag, save and find that sunset — before it's lost.": "Pune eticheta, aspitseashti shi gasiashi acela odihnâ — nainti să si piardu.",
+  "Tag, save and find that party — before it's lost.": "Pune eticheta, aspitseashti shi gasiashi acela sarabanda — nainti să si piardu.",
+  "Tag, save and find that vacation — before it's lost.": "Pune eticheta, aspitseashti shi gasiashi acela soali apuniri — nainti să si piardu."
 }
