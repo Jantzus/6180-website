@@ -740,14 +740,13 @@ export const Button = styled.button<ButtonProps>`
   }};
   /* Enhanced: Lighter font weight for premium feel */
   font-weight: 500;
-  /* Enhanced: Consistent padding for uniform sizing */
-  padding: 12px 20px; /* Increased back to 12px for better button proportions */
+  /* FIXED: Consistent padding for uniform button heights */
+  padding: 8px 16px; /* Standardized to 8px vertical, 16px horizontal */
   /* Enhanced: Consistent font size */
   font-size: ${theme.fontSizes.sm}; /* 14px */
   border: ${props => props.$primary ? 'none' : `1px solid ${theme.colors.primary}`};
   border-radius: ${theme.borderRadius.medium};
-  min-width: 140px; /* Increased back to 140px for consistent button widths */
-  width: 140px; /* Fixed width instead of auto for uniform sizing */
+  min-width: 120px; /* Reduced slightly for better mobile fit */
   white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
   margin-left: auto; /* Align to trailing side */
@@ -755,6 +754,9 @@ export const Button = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  /* FIXED: Ensure consistent line-height for uniform button heights */
+  line-height: 1.4;
+  height: 40px; /* Fixed height to ensure all buttons are exactly the same height */
   
   &:hover {
     background-color: ${props => {
@@ -769,8 +771,9 @@ export const MenuButton = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 8px;
+  padding: 8px 12px; /* Consistent with Button padding */
   width: auto;
+  height: 40px; /* Same fixed height as Button */
 `;
 
 export const HamburgerIcon = styled.span`
@@ -796,6 +799,7 @@ export const DropdownMenuChoice = styled(Button)`
   color: ${theme.colors.primary};
   border: none;
   margin: 2px 0;
+  height: auto; /* Allow dropdown items to have natural height */
   
   &:hover {
     background-color: ${theme.colors.grayLighter};
@@ -817,6 +821,7 @@ export const RemoveButton = styled.button<ButtonProps>`
   padding: 6px ${theme.spacing.sm};
   font-size: ${theme.fontSizes.xs};
   margin-top: auto;
+  height: auto; /* Allow remove buttons to have natural height */
 `;
 
 export const NavButtonsContainer = styled.div`

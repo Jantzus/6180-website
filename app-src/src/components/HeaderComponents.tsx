@@ -14,7 +14,7 @@ interface ExtendedResponsiveHeaderProps extends ResponsiveHeaderProps {
   buttonStyle?: React.CSSProperties;
 }
 
-// ResponsiveHeader component with improved responsive behavior and tighter spacing
+// ResponsiveHeader component with improved responsive behavior and consistent button heights
 const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({ 
   addPhotosToAlbum, 
   saveAlbum, 
@@ -32,9 +32,13 @@ const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({
   // Define our breakpoint - set this high enough to accommodate all buttons with comfortable spacing
   const BREAKPOINT = 840; // px - higher than typical tablet breakpoint to ensure buttons don't wrap
   
-  // Default button style with reduced padding
+  // FIXED: Consistent button style with standardized height
   const defaultButtonStyle: React.CSSProperties = {
-    padding: '8px 16px', // Reduced vertical padding by 4px
+    padding: '8px 16px', // Consistent with base Button component
+    height: '40px', // Fixed height to match Button component
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     ...buttonStyle // Allow override from props
   };
   
@@ -116,7 +120,8 @@ const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({
               aria-label={t('Menu')}
               aria-expanded={menuOpen}
               style={{
-                padding: '6px 12px', // Tighter mobile padding
+                ...defaultButtonStyle,
+                padding: '8px 12px', // Slightly tighter horizontal padding for mobile
                 fontSize: '14px'
               }}
             >
@@ -133,10 +138,6 @@ const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({
                 padding: '8px 0', // Reduced dropdown padding
                 gap: '4px' // Tighter spacing between menu items
               }}>
-                {/* <DropdownMenuChoice onClick={() => handleAction(saveAlbum)}>
-                  {t('Open On Phone')}
-                </DropdownMenuChoice>  */}
-
                 {usingFolderInviteGrantsRightToAddItems && (
                   <DropdownMenuChoice 
                     onClick={() => handleAction(addPhotosToAlbum)}
@@ -171,7 +172,8 @@ const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({
               onClick={promptForPassword} 
               $passwordSet={true}
               style={{
-                padding: '6px 12px', // Tighter mobile padding
+                ...defaultButtonStyle,
+                padding: '8px 12px', // Slightly tighter horizontal padding for mobile
                 fontSize: '14px'
               }}
             >
