@@ -750,7 +750,6 @@ export const Button = styled.button<ButtonProps>`
   white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
   box-shadow: ${props => props.$primary ? theme.boxShadow.primaryBtn : 'none'};
-  display: flex;
   align-items: center;
   justify-content: center;
   /* FIXED: Ensure consistent line-height for uniform button heights */

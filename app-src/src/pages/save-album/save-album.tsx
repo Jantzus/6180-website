@@ -500,6 +500,9 @@ const SaveAlbum = () => {
   const [isSubAlbum, setIsSubAlbum] = useState<boolean>(false);
   const [selectedFileIds, setSelectedFileIds] = useState<string[]>([]);
 
+  // NEW: State to track if we're loading from query parameter
+  const [isLoadingFromQueryParam, setIsLoadingFromQueryParam] = useState<boolean>(false);
+
   // NEW: State for settings dropdown
   const [showSettingsDropdown, setShowSettingsDropdown] = useState<boolean>(false);
 
@@ -694,6 +697,75 @@ const SaveAlbum = () => {
     }
   };
 
+  // NEW: Check for query parameters first and set up state accordingly
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const folderIdParam = urlParams.get('folderId');
+    
+    if (folderIdParam) {
+      enhancedLog(`Found folderId query parameter: ${folderIdParam} - loading existing album`);
+      setIsLoadingFromQueryParam(true);
+      
+      // Set the folder ID from query parameter
+      setFolderId(folderIdParam);
+      
+      // This is not a sub-album since we're editing an existing album
+      setIsSubAlbum(false);
+      
+      // Clear any sub-album data from localStorage since we're loading an existing album
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
+      enhancedLog("Cleared sub-album data from localStorage - loading existing album from query parameter");
+      
+      // FIXED: Only clear selected photos if there aren't any photos currently being processed
+      // Check if the useFileUploadProcessor is currently handling photos for this album
+      const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+      if (!storedPhotos) {
+        enhancedLog("No stored photos found - proceeding with existing album load");
+      } else {
+        try {
+          const parsedPhotos = JSON.parse(storedPhotos);
+          if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
+            enhancedLog(`Found ${parsedPhotos.length} stored photos - these may be newly uploaded for this album, preserving them`);
+            // Don't clear - let the album initialization hook handle this
+          } else {
+            localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+            enhancedLog("Cleared empty photos array from localStorage");
+          }
+        } catch (error) {
+          enhancedLog(`Error parsing stored photos: ${error}`);
+          localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+        }
+      }
+      
+      // Show folder details for existing album
+      setShowFolderDetails(true);
+      
+      // Set creator status to true for now (will be verified when album data loads)
+      setIsCreator(true);
+    } else {
+      enhancedLog("No folderId query parameter found, will proceed with normal initialization");
+      setIsLoadingFromQueryParam(false);
+    }
+  }, []); // Run once on component mount
+
+  // Use the album initialization hook - but conditionally skip some setters when loading from query param
+  const { cognitoUsername, publicUsername, setPublicUsername } = useAlbumInitialization(
+    isLoadingFromQueryParam ? () => {} : setFolderId, // Skip folder ID setting if loading from query param
+    setSelectedPhotos, // Always allow photo setting - hook will load from localStorage
+    isLoadingFromQueryParam ? () => {} : setIsCreator, // Skip creator setting if loading from query param
+    isLoadingFromQueryParam ? () => {} : setShowFolderDetails, // Skip folder details if loading from query param
+    setFolderName,
+    setFolderDescription,
+    setIsOnPublicProfile,
+    setParticipantsCanAddItems,
+    setPasswordProtectionOption,
+    setAlbumPassword,
+    isLoadingFromQueryParam ? () => {} : setIsSubAlbum, // Skip sub-album setting if loading from query param
+    isLoadingFromQueryParam ? () => {} : setSelectedFileIds, // Skip file IDs if loading from query param
+    setParticipantsCanDeleteItems,
+    enhancedLog
+  );
+
   // UPDATED: Load existing files when folderId changes (simplified)
   useEffect(() => {
     if (folderId) {
@@ -704,24 +776,6 @@ const SaveAlbum = () => {
 
   // Initialize tags management
   const tagsManager = useTagsManagement(enhancedLog);
-
-  // Use the album initialization hook
-  const { cognitoUsername, publicUsername, setPublicUsername } = useAlbumInitialization(
-    setFolderId,
-    setSelectedPhotos,
-    setIsCreator,
-    setShowFolderDetails,
-    setFolderName,
-    setFolderDescription,
-    setIsOnPublicProfile,
-    setParticipantsCanAddItems,
-    setPasswordProtectionOption,
-    setAlbumPassword,
-    setIsSubAlbum,
-    setSelectedFileIds,
-    setParticipantsCanDeleteItems, // NEW: Add this parameter
-    enhancedLog
-  );
 
   // Use the album save hook with updated parameters for file-level tagging
   const { saveAlbumDirectly } = useAlbumSave(

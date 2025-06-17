@@ -514,7 +514,6 @@ import{aG as m,o as i,d as t}from"./utils-DWLWZiq9.js";const e={colors:{primary:
   white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
   box-shadow: ${o=>o.$primary?e.boxShadow.primaryBtn:"none"};
-  display: flex;
   align-items: center;
   justify-content: center;
   /* FIXED: Ensure consistent line-height for uniform button heights */
