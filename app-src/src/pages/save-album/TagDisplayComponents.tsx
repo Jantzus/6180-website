@@ -5,10 +5,6 @@ import { TagData, SubtagData, useTagsManagement } from './useTagsManagement';
 // Styled components for tag display
 const TagsContainer = styled.div`
   margin: 16px 0;
-  padding: 16px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
 `;
 
 const TagsSection = styled.div`
@@ -351,14 +347,12 @@ interface TagsDisplayProps {
   tagsManager: ReturnType<typeof useTagsManagement>;
   disabled?: boolean;
   enhancedLog: (message: string, data?: any) => void;
-  photoCount?: number; // NEW: Add photo count to adjust instructions
 }
 
 export const TagsDisplay: React.FC<TagsDisplayProps> = ({ 
   tagsManager, 
   disabled = false,
-  enhancedLog,
-  photoCount = 1
+  enhancedLog
 }) => {
   const {
     tags,
@@ -444,7 +438,7 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = ({
     <TagsContainer>
       <TagsSection>
         <TagsLabel>
-          Select Tags to Apply to Photos
+          Tag the selected photos
           {selectedTags.length > 0 && (
             <InfoBadge>{selectedTags.length} selected</InfoBadge>
           )}
@@ -514,14 +508,16 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = ({
           border: '1px solid #b3d9ff'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-            <span>🎯</span>
-            <strong>Ready to Apply Tags:</strong>
+            <span>✅</span>
+            <strong>Tags Applied:</strong>
           </div>
-          You have selected <strong>{selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''}</strong> to apply to photos.<br/>
-          <strong>Next:</strong> {photoCount === 1 
-            ? 'Click "Apply Selected Tags to Photo" above to tag your photo.'
-            : 'Select photos above (they\'ll show blue borders), then click "Apply Selected Tags to Photos".'
-          }
+          All selected files will have <strong>{selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''}</strong> applied to them when you save the album.<br/>
+          <strong>Selected tags:</strong> {selectedTags.map(tag => {
+            const subtagNames = tag.subtags.map(s => s.subtagTitle);
+            return subtagNames.length > 0 
+              ? `${tag.tagTitle} (${subtagNames.join(', ')})` 
+              : tag.tagTitle;
+          }).join(', ')}
         </div>
       )}
     </TagsContainer>

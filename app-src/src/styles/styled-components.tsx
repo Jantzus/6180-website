@@ -291,7 +291,7 @@ export const ContentContainer = styled.div`
 
 // ========== Brand Header Components ==========
 
-export const BrandHeader = styled.div`
+export const FixedHeader = styled.div`
   /* Fixed positioning for 100% reliability */
   position: fixed;
   top: 0;
@@ -320,7 +320,7 @@ export const BrandHeader = styled.div`
   `)}
 `;
 
-export const BrandHeaderContent = styled.div`
+export const FixedHeaderContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   height: 100%;

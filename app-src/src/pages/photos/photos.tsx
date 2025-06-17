@@ -48,8 +48,8 @@ import {
   MediaContainer,
   GlobalStyle,
   // Add the new brand header components:
-  BrandHeader,
-  BrandHeaderContent,
+  FixedHeader,
+  FixedHeaderContent,
   BrandLink,
   BrandLogo,
   BrandLogoContainer,
@@ -757,8 +757,8 @@ const PhotoAlbumContent: React.FC = () => {
       <GlobalStyle />
       
       {/* 6180 Brand Header - Fixed positioning, outside any containers */}
-      <BrandHeader>
-        <BrandHeaderContent>
+      <FixedHeader>
+        <FixedHeaderContent>
           <BrandLink 
             href="https://6180.io" 
             target="_blank" 
@@ -790,8 +790,8 @@ const PhotoAlbumContent: React.FC = () => {
           >
             {t(slogans[currentSloganIndex])}
           </BrandSlogan>
-        </BrandHeaderContent>
-      </BrandHeader>
+        </FixedHeaderContent>
+      </FixedHeader>
 
       {/* Body content - now has proper padding for fixed header */}
       <Body $isRTL={isRTL}>

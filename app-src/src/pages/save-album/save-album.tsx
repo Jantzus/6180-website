@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 
-// Import styled components
+// Import styled components - UPDATED: Added FixedHeader, FixedHeaderContent, Body, DropdownMenu, DropdownMenuChoice
 import {
   GlobalStyle,
-  AppContainer,
-  HeaderContainer,
+  FixedHeader,
+  FixedHeaderContent,
+  Body,
   ProfileLink,
   ActionButtons,
-  Button
+  Button,
+  DropdownMenu,
+  DropdownMenuChoice
 } from "@/styles/styled-components";
 import { UsernamePrompt } from "@/components/UsernamePrompt";
 import { UploadProgress } from "@/components/UploadProgress";
@@ -23,7 +26,6 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n/translations";
 import { PasswordDialog } from "@/components/PasswordDialog";
-import { LogoutButton } from "@/components/LogoutButton";
 import { DebugLog } from "@/components/DebugLog";
 import { useUsernameManagement } from "@/lib/useUsernameManagement";
 import { prewarmCredentials } from "@/lib/s3";
@@ -87,7 +89,7 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
         flexDirection: isRTL ? 'row-reverse' : 'row'
       }}>
         <span style={{ marginRight: isRTL ? '0' : '12px', marginLeft: isRTL ? '12px' : '0', fontSize: '20px' }}>
-          📷
+          🏷️
         </span>
         {t('Click files below to select them for tagging')}
       </div>
@@ -222,7 +224,7 @@ const NewPhotosSection = ({
   );
 };
 
-// NEW: Existing Files Display Component - Updated with horizontal scrolling layout
+// Updated ExistingFilesSection Component with simplified delete button behavior
 const ExistingFilesSection = ({ 
   existingFiles, 
   selectedExistingIndices, 
@@ -312,135 +314,135 @@ const ExistingFilesSection = ({
         scrollbarWidth: 'thin',
         scrollbarColor: '#007bff #f8f9fa'
       }}>
-        {existingFiles.map((file, index) => (
-          <div
-            key={`existing-${index}-${file.dataKey}`}
-            style={{
-              position: 'relative',
-              width: '160px',
-              height: '160px',
-              flexShrink: 0,
-              borderRadius: '8px',
-              overflow: 'hidden',
-              border: selectedExistingIndices.has(index) ? '3px solid #007bff' : '2px solid #ddd',
-              cursor: disabled ? 'not-allowed' : 'pointer',
-              opacity: disabled ? 0.6 : 1,
-              transition: 'all 0.2s ease'
-            }}
-            onClick={() => !disabled && onToggleSelection(index)}
-          >
-            <LazyImage
-              thumbnailDataKey={file.thumbnailDataKey}
-              dataKey={file.dataKey}
-              alt={t('Existing file')}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover'
-              }}
-            />
-            
-            {/* Selection Indicator Text */}
-            {selectedExistingIndices.has(index) && (
-              <div style={{
-                position: 'absolute',
-                bottom: '8px',
-                left: '8px',
-                right: '8px',
-                background: 'rgba(0, 123, 255, 0.9)',
-                color: 'white',
-                padding: '4px 8px',
-                borderRadius: '4px',
-                fontSize: '11px',
-                fontWeight: 'bold',
-                textAlign: 'center',
-                zIndex: 10
-              }}>
-                SELECTED FOR TAGGING
-              </div>
-            )}
+        {existingFiles.map((file, index) => {
+          const isSelected = selectedExistingIndices.has(index);
 
-            {/* Individual Delete Button - small X in top right */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent triggering the selection toggle
-                if (!disabled && confirm(t('Are you sure you want to remove this file?'))) {
-                  onDeleteFile(index);
-                }
-              }}
-              disabled={disabled}
+          return (
+            <div
+              key={`existing-${index}-${file.dataKey}`}
               style={{
-                position: 'absolute',
-                top: '8px',
-                right: '8px',
-                width: '24px',
-                height: '24px',
-                borderRadius: '50%',
-                border: 'none',
-                backgroundColor: 'rgba(220, 53, 69, 0.9)',
-                color: 'white',
+                position: 'relative',
+                width: '160px',
+                height: '160px',
+                flexShrink: 0,
+                borderRadius: '8px',
+                overflow: 'hidden',
+                border: isSelected ? '3px solid #007bff' : '2px solid #ddd',
                 cursor: disabled ? 'not-allowed' : 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '14px',
-                fontWeight: '900',
-                zIndex: 20,
-                opacity: disabled ? 0.5 : 1,
-                transition: 'all 0.2s ease',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                lineHeight: '1'
+                opacity: disabled ? 0.6 : 1,
+                transition: 'all 0.2s ease'
               }}
-              onMouseEnter={(e) => {
-                if (!disabled) {
-                  e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 1)';
-                  e.currentTarget.style.transform = 'scale(1.1)';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (!disabled) {
-                  e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.9)';
-                  e.currentTarget.style.transform = 'scale(1)';
-                }
-              }}
-              title={t('Remove file')}
+              onClick={() => !disabled && onToggleSelection(index)}
             >
-              ×
-            </button>
+              <LazyImage
+                thumbnailDataKey={file.thumbnailDataKey}
+                dataKey={file.dataKey}
+                alt={t('Existing file')}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
+              
+              {/* Selection Indicator Text */}
+              {isSelected && (
+                <div style={{
+                  position: 'absolute',
+                  bottom: '8px',
+                  left: '8px',
+                  right: '8px',
+                  background: 'rgba(0, 123, 255, 0.9)',
+                  color: 'white',
+                  padding: '4px 8px',
+                  borderRadius: '4px',
+                  fontSize: '11px',
+                  fontWeight: 'bold',
+                  textAlign: 'center',
+                  zIndex: 10
+                }}>
+                  SELECTED
+                </div>
+              )}
 
-            {/* File size indicator */}
-            {file.dataInBytes > 0 && (
-              <div style={{
-                position: 'absolute',
-                bottom: '4px',
-                left: '4px',
-                backgroundColor: 'rgba(0,0,0,0.7)',
-                color: 'white',
-                fontSize: '10px',
-                padding: '2px 4px',
-                borderRadius: '4px'
-              }}>
-                {(file.dataInBytes / (1024 * 1024)).toFixed(1)}MB
-              </div>
-            )}
+              {/* Individual Delete Button - Only show when selected */}
+              {isSelected && !disabled && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent triggering the selection toggle
+                    if (confirm(t('Are you sure you want to remove this file?'))) {
+                      onDeleteFile(index);
+                    }
+                  }}
+                  style={{
+                    position: 'absolute',
+                    top: '8px',
+                    right: '8px',
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '50%',
+                    border: 'none',
+                    backgroundColor: 'rgba(220, 53, 69, 0.9)',
+                    color: 'white',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '14px',
+                    fontWeight: '900',
+                    zIndex: 20,
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                    lineHeight: '1'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 1)';
+                    e.currentTarget.style.transform = 'scale(1.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.9)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                  title={t('Remove file')}
+                >
+                  ×
+                </button>
+              )}
 
-            {/* Video duration indicator */}
-            {file.durationInSeconds && (
-              <div style={{
-                position: 'absolute',
-                top: '8px',
-                left: '8px',
-                backgroundColor: 'rgba(0,0,0,0.7)',
-                color: 'white',
-                fontSize: '10px',
-                padding: '2px 4px',
-                borderRadius: '4px'
-              }}>
-                {Math.floor(file.durationInSeconds / 60)}:{String(Math.floor(file.durationInSeconds % 60)).padStart(2, '0')}
-              </div>
-            )}
-          </div>
-        ))}
+              {/* File size indicator */}
+              {file.dataInBytes > 0 && (
+                <div style={{
+                  position: 'absolute',
+                  bottom: '4px',
+                  left: '4px',
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  color: 'white',
+                  fontSize: '10px',
+                  padding: '2px 4px',
+                  borderRadius: '4px'
+                }}>
+                  {(file.dataInBytes / (1024 * 1024)).toFixed(1)}MB
+                </div>
+              )}
+
+              {/* Video duration indicator */}
+              {file.durationInSeconds && (
+                <div style={{
+                  position: 'absolute',
+                  top: '8px',
+                  left: '8px',
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  color: 'white',
+                  fontSize: '10px',
+                  padding: '2px 4px',
+                  borderRadius: '4px'
+                }}>
+                  {Math.floor(file.durationInSeconds / 60)}:{String(Math.floor(file.durationInSeconds % 60)).padStart(2, '0')}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -488,6 +490,9 @@ const SaveAlbum = () => {
   // State for sub-album data
   const [isSubAlbum, setIsSubAlbum] = useState<boolean>(false);
   const [selectedFileIds, setSelectedFileIds] = useState<string[]>([]);
+
+  // NEW: State for settings dropdown
+  const [showSettingsDropdown, setShowSettingsDropdown] = useState<boolean>(false);
 
   // NEW: State for photo selection and tagging
   const [selectedPhotoIndices, setSelectedPhotoIndices] = useState<Set<number>>(new Set());
@@ -960,6 +965,9 @@ const SaveAlbum = () => {
     enhancedLog("Album save initiated");
     enhancedLog("Photo tags applied:", Object.fromEntries(photoTagsMap));
     enhancedLog("Existing file tags applied:", Object.fromEntries(existingFileTagsMap));
+    
+    // Close settings dropdown if open
+    setShowSettingsDropdown(false);
     setIsSavingAlbum(true);
 
     try {
@@ -1007,19 +1015,6 @@ const SaveAlbum = () => {
     
     setShowPasswordDialog(false);
   };
-  
-  const getPasswordPolicyButtonText = () => {
-    if (passwordProtectionOption === 'NoPassword') {
-      return t('Album Password Policy');
-    }
-    
-    const optionText = 
-      passwordProtectionOption === 'NotVisible' ? t('Password Required To See Or Save') :
-      passwordProtectionOption === 'Watermark' ? t('Watermarked And No Saving Without Password') :
-      t('Password Required To Save');
-    
-    return `${optionText} ${albumPassword ? `(${albumPassword})` : ''}`;
-  };
 
   const handleOpenPasswordDialog = () => {
     enhancedLog("Opening password dialog");
@@ -1032,29 +1027,211 @@ const SaveAlbum = () => {
     openFilePicker(folderId);
   };
 
+  // NEW: Settings dropdown handlers
+  const handleSettingsDropdownToggle = () => {
+    setShowSettingsDropdown(!showSettingsDropdown);
+  };
+
+  const handleSettingsOptionClick = (action: () => void) => {
+    action();
+    setShowSettingsDropdown(false);
+  };
+
+  // NEW: Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (showSettingsDropdown && !target.closest('.settings-dropdown-container')) {
+        setShowSettingsDropdown(false);
+      }
+    };
+
+    if (showSettingsDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showSettingsDropdown]);
+
   // Determine if tagging should be disabled
   const isTaggingDisabled = isSavingAlbum || isUploading || isLoadingExistingFiles;
 
   // Check if we have any files to show the tagging section
   const hasAnyFiles = selectedPhotos.length > 0 || existingFiles.length > 0;
 
+  // Check if any photos are selected to show the tagging section
+  const hasSelectedPhotos = selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0;
+
   // ========== RENDER METHODS ==========
 
   return (
     <>
       <GlobalStyle />
-      <AppContainer $isRTL={isRTL}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          {/* Header Section */}
-          <HeaderContainer>
-            <ProfileLink href="my-albums.html">
-              {t('My Albums')}
-            </ProfileLink>
-
-            <LogoutButton t={t} />
-          </HeaderContainer>
+      
+      {/* NEW: Fixed Header with Settings Dropdown and Save Button */}
+      <FixedHeader>
+        <FixedHeaderContent>
+          <ProfileLink href="my-albums.html">
+            {t('My Albums')}
+          </ProfileLink>
           
-          {/* Folder Details - Only show if user is creator */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {/* Save Album Button */}
+            <Button
+              $primary
+              onClick={handleSaveAlbum}
+              disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+              style={{
+                minWidth: '120px',
+                fontSize: '14px',
+                padding: '8px 16px'
+              }}
+            >
+              {isSavingAlbum ? t('Saving...') : t('Save Album')}
+            </Button>
+
+            {/* Settings Dropdown - Only show if user is creator */}
+            {isCreator === true && (
+              <div 
+                className="settings-dropdown-container"
+                style={{ 
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+              >
+                <button
+                  onClick={handleSettingsDropdownToggle}
+                  disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    cursor: (isSavingAlbum || isUploading || isLoadingExistingFiles) ? 'not-allowed' : 'pointer',
+                    padding: '8px',
+                    borderRadius: '4px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: (isSavingAlbum || isUploading || isLoadingExistingFiles) ? '#ccc' : '#666',
+                    fontSize: '18px',
+                    transition: 'all 0.2s ease',
+                    backgroundColor: showSettingsDropdown ? '#f0f0f0' : 'transparent',
+                    opacity: (isSavingAlbum || isUploading || isLoadingExistingFiles) ? 0.5 : 1
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!showSettingsDropdown && !isSavingAlbum && !isUploading && !isLoadingExistingFiles) {
+                      e.currentTarget.style.backgroundColor = '#f8f9fa';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!showSettingsDropdown && !isSavingAlbum && !isUploading && !isLoadingExistingFiles) {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                    }
+                  }}
+                  title={t('Album Settings')}
+                >
+                  ⚙️
+                </button>
+                
+                {showSettingsDropdown && !isSavingAlbum && !isUploading && !isLoadingExistingFiles && (
+                  <DropdownMenu style={{ minWidth: '280px' }}>
+                    <DropdownMenuChoice
+                      onClick={() => handleSettingsOptionClick(handlePublicProfileToggle)}
+                    >
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '100%'
+                      }}>
+                        <span>{isOnPublicProfile ? t('Remove From Public Profile') : t('Add To Public Profile')}</span>
+                        <span style={{ 
+                          fontSize: '12px', 
+                          color: isOnPublicProfile ? '#28a745' : '#6c757d',
+                          fontWeight: 'bold'
+                        }}>
+                          {isOnPublicProfile ? '✓' : '○'}
+                        </span>
+                      </div>
+                    </DropdownMenuChoice>
+                    
+                    <DropdownMenuChoice
+                      onClick={() => handleSettingsOptionClick(handleParticipantsCanAddItemsToggle)}
+                    >
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '100%'
+                      }}>
+                        <span>{t('Participants Can Add Items')}</span>
+                        <span style={{ 
+                          fontSize: '12px', 
+                          color: participantsCanAddItems ? '#28a745' : '#6c757d',
+                          fontWeight: 'bold'
+                        }}>
+                          {participantsCanAddItems ? '✓' : '○'}
+                        </span>
+                      </div>
+                    </DropdownMenuChoice>
+                    
+                    <DropdownMenuChoice
+                      onClick={() => handleSettingsOptionClick(() => {
+                        // Placeholder for "Participants Can Delete Items" - this functionality would need to be implemented
+                        enhancedLog("Participants Can Delete Items clicked - functionality not yet implemented");
+                      })}
+                      style={{ opacity: 0.6 }}
+                    >
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '100%'
+                      }}>
+                        <span>{t('Participants Can Delete Items')}</span>
+                        <span style={{ 
+                          fontSize: '12px', 
+                          color: '#6c757d',
+                          fontWeight: 'bold'
+                        }}>
+                          ○
+                        </span>
+                      </div>
+                    </DropdownMenuChoice>
+                    
+                    <DropdownMenuChoice
+                      onClick={() => handleSettingsOptionClick(handleOpenPasswordDialog)}
+                    >
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '100%'
+                      }}>
+                        <span>{t('Album Password Policy')}</span>
+                        <span style={{ 
+                          fontSize: '12px', 
+                          color: passwordProtectionOption !== 'NoPassword' ? '#28a745' : '#6c757d',
+                          fontWeight: 'bold'
+                        }}>
+                          {passwordProtectionOption !== 'NoPassword' ? '✓' : '○'}
+                        </span>
+                      </div>
+                    </DropdownMenuChoice>
+                  </DropdownMenu>
+                )}
+              </div>
+            )}
+          </div>
+        </FixedHeaderContent>
+      </FixedHeader>
+
+      {/* NEW: Use Body component for proper fixed header spacing */}
+      <Body $isRTL={isRTL}>
+        {/* Folder Details - Only show if user is creator */}
+        <div style={{ marginTop: showFolderDetails && isCreator === true ? '24px' : '0' }}>
           <FolderDetailsComponent
             showFolderDetails={showFolderDetails}
             isCreator={isCreator}
@@ -1062,152 +1239,118 @@ const SaveAlbum = () => {
             setFolderName={setFolderName}
             folderDescription={folderDescription}
             setFolderDescription={setFolderDescription}
-            isOnPublicProfile={isOnPublicProfile}
-            handlePublicProfileToggle={handlePublicProfileToggle}
-            participantsCanAddItems={participantsCanAddItems}
-            handleParticipantsCanAddItemsToggle={handleParticipantsCanAddItemsToggle}
             isSavingAlbum={isSavingAlbum || isUploading}
           />
+        </div>
 
-          {/* Progress Tracking - Only show when files are actually being processed */}
-          {(isUploading || 
-            (progressTracker.totalFiles > 0 && 
-             (progressTracker.filesUploading > 0 || progressTracker.filesProcessing > 0 || 
-              progressTracker.filesComplete < progressTracker.totalFiles))) && (
-            <UploadProgress
-              progressTracker={progressTracker}
-              isRTL={getLanguageDirection(language) === "rtl"}
-              variant="detailed"
-              context="saving"
-              isUploading={isUploading}
-              showSuccessMessage={false}
-              showErrorMessage={true}
-              customMessages={{
-                error: t('Some photos could not be processed. You can continue with the successfully processed photos.')
-              }}
-            />
-          )}
-          
-          {/* Hidden File Input - now using the ref from the hook */}
-          <input
-            ref={fileInputRef}
-            id="file-input"
-            type="file"
-            accept="image/*,video/*"
-            multiple
-            onChange={(e) => handleFileSelection(e, cognitoUsername)}
-            style={{ display: 'none' }}
+        {/* Progress Tracking - Only show when files are actually being processed */}
+        {(isUploading || 
+          (progressTracker.totalFiles > 0 && 
+           (progressTracker.filesUploading > 0 || progressTracker.filesProcessing > 0 || 
+            progressTracker.filesComplete < progressTracker.totalFiles))) && (
+          <UploadProgress
+            progressTracker={progressTracker}
+            isRTL={getLanguageDirection(language) === "rtl"}
+            variant="detailed"
+            context="saving"
+            isUploading={isUploading}
+            showSuccessMessage={false}
+            showErrorMessage={true}
+            customMessages={{
+              error: t('Some photos could not be processed. You can continue with the successfully processed photos.')
+            }}
           />
-          
-          {/* NEW: Unified Tagging Section - Only show if user is creator and has files */}
-          {showFolderDetails && isCreator === true && hasAnyFiles && (
-            <TaggingSectionContainer t={t} isRTL={isRTL}>
-              {/* Existing Files Section */}
-              {(existingFiles.length > 0 || isLoadingExistingFiles) && (
-                <div style={{ marginBottom: '24px' }}>
-                  {isLoadingExistingFiles ? (
-                    <div style={{
-                      padding: '20px',
-                      textAlign: 'center',
-                      color: '#666',
-                      fontSize: '14px'
-                    }}>
-                      {t('Loading existing files...')}
-                    </div>
-                  ) : (
-                    <ExistingFilesSection
-                      existingFiles={existingFiles}
-                      selectedExistingIndices={selectedExistingIndices}
-                      onToggleSelection={toggleExistingFileSelection}
-                      onSelectAll={selectAllExistingFiles}
-                      onDeselectAll={deselectAllExistingFiles}
-                      onDeleteFile={removeExistingFile}
-                      disabled={isTaggingDisabled}
-                      t={t}
-                      isRTL={isRTL}
-                    />
-                  )}
-                </div>
-              )}
+        )}
+        
+        {/* Hidden File Input - now using the ref from the hook */}
+        <input
+          ref={fileInputRef}
+          id="file-input"
+          type="file"
+          accept="image/*,video/*"
+          multiple
+          onChange={(e) => handleFileSelection(e, cognitoUsername)}
+          style={{ display: 'none' }}
+        />
+        
+        {/* NEW: Unified Tagging Section - Always show files if user is creator and has files */}
+        {showFolderDetails && isCreator === true && hasAnyFiles && (
+          <TaggingSectionContainer t={t} isRTL={isRTL}>
+            {/* Existing Files Section */}
+            {existingFiles.length > 0 && (
+              <div style={{ marginBottom: '24px' }}>
+                <ExistingFilesSection
+                  existingFiles={existingFiles}
+                  selectedExistingIndices={selectedExistingIndices}
+                  onToggleSelection={toggleExistingFileSelection}
+                  onSelectAll={selectAllExistingFiles}
+                  onDeselectAll={deselectAllExistingFiles}
+                  onDeleteFile={removeExistingFile}
+                  disabled={isTaggingDisabled}
+                  t={t}
+                  isRTL={isRTL}
+                />
+              </div>
+            )}
 
-              {/* New Photos Section */}
-              <NewPhotosSection
-                selectedPhotos={selectedPhotos}
-                selectedPhotoIndices={selectedPhotoIndices}
-                onToggleSelection={togglePhotoSelection}
-                onSelectAll={selectAllPhotos}
-                onDeselectAll={deselectAllPhotos}
-                onRemovePhoto={removePhoto}
-                onDeleteAll={deleteAllPhotos}
-                disabled={isTaggingDisabled}
-                t={t}
-                isRTL={isRTL}
-              />
-              
-              {/* Tags Selection Section */}
+            {/* New Photos Section */}
+            <NewPhotosSection
+              selectedPhotos={selectedPhotos}
+              selectedPhotoIndices={selectedPhotoIndices}
+              onToggleSelection={togglePhotoSelection}
+              onSelectAll={selectAllPhotos}
+              onDeselectAll={deselectAllPhotos}
+              onRemovePhoto={removePhoto}
+              onDeleteAll={deleteAllPhotos}
+              disabled={isTaggingDisabled}
+              t={t}
+              isRTL={isRTL}
+            />
+            
+            {/* Tags Selection Section - Only show when photos are selected */}
+            {hasSelectedPhotos && (
               <div style={{ marginTop: '24px' }}>
                 <TagsDisplay 
                   tagsManager={tagsManager}
                   disabled={isTaggingDisabled}
                   enhancedLog={enhancedLog}
-                  photoCount={selectedPhotos.length + existingFiles.length}
                 />
               </div>
-            </TaggingSectionContainer>
-          )}
-                    
-          {/* Saving Progress */}
-          <SavingProgressComponent 
-            isSavingAlbum={isSavingAlbum} 
-            savingProgress={savingProgress} 
-          />
-
-          {/* Action Buttons */}
-          <ActionButtons>
-            
-            <Button
-              onClick={handleAddPhotos}
-              disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
-            >
-              {isUploading ? t('Uploading...') : t('Add More Photos')}
-            </Button>
-            
-            {/* Only show password button if user is creator */}
-            {isCreator === true && (
-              <Button
-                $passwordSet={passwordProtectionOption !== 'NoPassword'}
-                onClick={handleOpenPasswordDialog}
-                disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
-              >
-                {getPasswordPolicyButtonText()}
-              </Button>
             )}
+          </TaggingSectionContainer>
+        )}
+                  
+        {/* Saving Progress */}
+        <SavingProgressComponent 
+          isSavingAlbum={isSavingAlbum} 
+          savingProgress={savingProgress} 
+        />
 
-            <Button
-              $primary
-              onClick={handleSaveAlbum}
-              disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
-            >
-              {isSavingAlbum ? t('Saving Album...') : t('Save Album')}
-            </Button>
-          </ActionButtons>
-          
-          {/* Username Prompt Modal */}
-          <UsernamePrompt
-            t={t}
-            language={language}
-            usernameManager={usernameManager}
-            onSuccess={handleSuccessfulUsernameUpdate}
-          />
-          
-          {/* Password Dialog */}
-          <PasswordDialog 
-            isOpen={showPasswordDialog} 
-            onClose={handleClosePasswordDialog}
-            initialOption={passwordProtectionOption}
-            initialPassword={albumPassword} 
-          />
-        </div>
+        {/* Action Buttons - Only "Add More Photos" */}
+        <ActionButtons>
+          <Button
+            onClick={handleAddPhotos}
+            disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+          >
+            {isUploading ? t('Uploading...') : t('Add More Photos')}
+          </Button>
+        </ActionButtons>
+        
+        {/* Username Prompt Modal */}
+        <UsernamePrompt
+          t={t}
+          language={language}
+          usernameManager={usernameManager}
+          onSuccess={handleSuccessfulUsernameUpdate}
+        />
+        
+        {/* Password Dialog */}
+        <PasswordDialog 
+          isOpen={showPasswordDialog} 
+          onClose={handleClosePasswordDialog}
+          initialOption={passwordProtectionOption}
+          initialPassword={albumPassword} 
+        />
 
         {/* Debug Log */}
         <DebugLog 
@@ -1216,7 +1359,7 @@ const SaveAlbum = () => {
           isRTL={isRTL}
           textDirection={isRTL ? "rtl" : "ltr"} 
         />
-      </AppContainer>
+      </Body>
     </>
   );
 };

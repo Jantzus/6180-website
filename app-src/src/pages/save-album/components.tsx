@@ -21,11 +21,7 @@ import {
   FormGroup,
   FormLabel,
   FormInput,
-  FormTextarea,
-  ToggleContainer,
-  ToggleLabel,
-  ToggleSwitch,
-  ToggleSlider
+  FormTextarea
 } from "@/styles/styled-components";
 
 // ========== PHOTO HANDLING COMPONENT ==========
@@ -128,53 +124,49 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
               }}
               onClick={() => selectedPhotos.length > 1 && onTogglePhotoSelection(i)}
             >
-              {/* Remove button - small X in top right */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (!isSavingAlbum && confirm(t('Are you sure you want to remove this photo?'))) {
-                    onRemovePhoto(i);
-                  }
-                }}
-                disabled={isSavingAlbum}
-                style={{
-                  position: 'absolute',
-                  top: '8px',
-                  right: '8px',
-                  width: '24px',
-                  height: '24px',
-                  borderRadius: '50%',
-                  border: 'none',
-                  backgroundColor: 'rgba(220, 53, 69, 0.9)',
-                  color: 'white',
-                  cursor: isSavingAlbum ? 'not-allowed' : 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '14px',
-                  fontWeight: '900',
-                  zIndex: 20,
-                  opacity: isSavingAlbum ? 0.5 : 1,
-                  transition: 'all 0.2s ease',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                  lineHeight: '1'
-                }}
-                onMouseEnter={(e) => {
-                  if (!isSavingAlbum) {
+              {/* Remove button - Only show when selected */}
+              {isSelected && !isSavingAlbum && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (confirm(t('Are you sure you want to remove this photo?'))) {
+                      onRemovePhoto(i);
+                    }
+                  }}
+                  style={{
+                    position: 'absolute',
+                    top: '8px',
+                    right: '8px',
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '50%',
+                    border: 'none',
+                    backgroundColor: 'rgba(220, 53, 69, 0.9)',
+                    color: 'white',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '14px',
+                    fontWeight: '900',
+                    zIndex: 20,
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                    lineHeight: '1'
+                  }}
+                  onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 1)';
                     e.currentTarget.style.transform = 'scale(1.1)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!isSavingAlbum) {
+                  }}
+                  onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.9)';
                     e.currentTarget.style.transform = 'scale(1)';
-                  }
-                }}
-                title={t('Remove photo')}
-              >
-                ×
-              </button>
+                  }}
+                  title={t('Remove photo')}
+                >
+                  ×
+                </button>
+              )}
 
               {/* Selection Indicator Text */}
               {selectedPhotos.length > 1 && isSelected && (
@@ -192,7 +184,7 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                   textAlign: 'center',
                   zIndex: 10
                 }}>
-                  SELECTED FOR TAGGING
+                  SELECTED
                 </div>
               )}
 
@@ -269,7 +261,7 @@ export const SavingProgressComponent: React.FC<SavingProgressComponentProps> = (
   );
 };
 
-// ========== FOLDER DETAILS COMPONENT ==========
+// ========== SIMPLIFIED FOLDER DETAILS COMPONENT ==========
 export interface FolderDetailsComponentProps {
   showFolderDetails: boolean;
   isCreator: boolean | null;
@@ -277,10 +269,6 @@ export interface FolderDetailsComponentProps {
   setFolderName: React.Dispatch<React.SetStateAction<string>>;
   folderDescription: string;
   setFolderDescription: React.Dispatch<React.SetStateAction<string>>;
-  isOnPublicProfile: boolean;
-  handlePublicProfileToggle: () => void;
-  participantsCanAddItems: boolean;
-  handleParticipantsCanAddItemsToggle: () => void;
   isSavingAlbum: boolean;
 }
 
@@ -291,10 +279,6 @@ export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = ({
   setFolderName,
   folderDescription,
   setFolderDescription,
-  isOnPublicProfile,
-  handlePublicProfileToggle,
-  participantsCanAddItems,
-  handleParticipantsCanAddItemsToggle,
   isSavingAlbum
 }) => {
   const { t } = useTranslation();
@@ -307,61 +291,31 @@ export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = ({
     <FolderDetails>
       <FormGroup>
         <FormLabel htmlFor="folderName">
-          {t('Album Name (Optional)')}
+          {t('Album Name')}
         </FormLabel>
         <FormInput
           id="folderName"
           type="text"
           value={folderName}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFolderName(e.target.value)}
-          placeholder={t('Enter album name')}
+          placeholder={t('Enter album name (optional)')}
+          disabled={isSavingAlbum}
         />
       </FormGroup>
       
       <FormGroup>
         <FormLabel htmlFor="folderDescription">
-          {t('Album Description (Optional)')}
+          {t('Album Description')}
         </FormLabel>
         <FormTextarea
           id="folderDescription"
           value={folderDescription}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setFolderDescription(e.target.value)}
-          placeholder={t('Enter album description')}
+          placeholder={t('Enter album description (optional)')}
           rows={4}
+          disabled={isSavingAlbum}
         />
       </FormGroup>
-      
-      {/* Public Profile Toggle */}
-      <ToggleContainer>
-        <ToggleLabel>
-          {isOnPublicProfile ? t('On Public Profile') : t('Not On Public Profile')}
-        </ToggleLabel>
-        <ToggleSwitch>
-          <input 
-            type="checkbox" 
-            checked={isOnPublicProfile} 
-            onChange={handlePublicProfileToggle}
-            disabled={isSavingAlbum}
-          />
-          <ToggleSlider />
-        </ToggleSwitch>
-      </ToggleContainer>
-
-      {/* Participants Can Add Items Toggle */}
-      <ToggleContainer>
-        <ToggleLabel>
-          {participantsCanAddItems ? t('Participants Can Add Items') : t('Participants Cannot Add Items')}
-        </ToggleLabel>
-        <ToggleSwitch>
-          <input 
-            type="checkbox" 
-            checked={participantsCanAddItems} 
-            onChange={handleParticipantsCanAddItemsToggle}
-            disabled={isSavingAlbum}
-          />
-          <ToggleSlider />
-        </ToggleSwitch>
-      </ToggleContainer>
     </FolderDetails>
   );
 };
