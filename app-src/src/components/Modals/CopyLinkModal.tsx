@@ -1,9 +1,13 @@
+import React from "react";
+
 // Types for the modal components
 interface CopyLinkModalProps {
   isOpen: boolean;
   onClose: () => void;
   inviteLink: string;
   onCopy: (text: string) => void;
+  onCreateSubAlbum?: () => void;
+  showCreateSubAlbum?: boolean;
   t: (key: string) => string;
   isRTL: boolean;
 }
@@ -14,6 +18,8 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
   onClose, 
   inviteLink, 
   onCopy,
+  onCreateSubAlbum,
+  showCreateSubAlbum = false,
   t,
   isRTL
 }) => {
@@ -66,8 +72,29 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         <h3 style={{ marginTop: 0, marginBottom: "16px", fontSize: "18px" }}>
-          {t('Choose a message template')}
+          {t('Choose an action')}
         </h3>
+        
+        {/* Create Sub-Album Button - Only show when specified */}
+        {showCreateSubAlbum && onCreateSubAlbum && (
+          <button
+            style={buttonStyle}
+            onClick={(e) => {
+              e.stopPropagation(); // Stop event from bubbling up
+              onCreateSubAlbum();
+            }}
+            onMouseOver={(e) => {
+              e.stopPropagation(); // Stop mouseOver event bubbling
+            e.currentTarget.style.backgroundColor = "#f5f5f5";
+            }}
+            onMouseOut={(e) => {
+              e.stopPropagation(); // Stop mouseOut event bubbling
+              e.currentTarget.style.backgroundColor = "#fff";
+            }}
+          >
+            {t('Share Specific Files')}
+          </button>
+        )}
         
         <button
           style={buttonStyle}

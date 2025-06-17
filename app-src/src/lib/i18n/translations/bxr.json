@@ -313,5 +313,9 @@
   "Tag, save and find that birthday — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ төрсөн өдөр олон — алдрахнаас үмнө.",
   "Tag, save and find that sunset — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ нар жаргах олон — алдрахнаас үмнө.",
   "Tag, save and find that party — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ наадам олон — алдрахнаас үмнө.",
-  "Tag, save and find that vacation — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ амаралт олон — алдрахнаас үмнө."
+  "Tag, save and find that vacation — before it's lost.": "Түмэр тэмдэг, хадагалан болон энэ амаралт олон — алдрахнаас үмнө.",
+  "Share Specific Files": "Тодорхой файлуудыг хуваалцах",
+  "Delete All": "Бүхыг устгана уу",
+  "Are you sure you want to delete all new files? This action cannot be undone.": "Бүхы шэнэ файлуудые устагаха гээшэб үү? Энэ үйлэ ажаллагые буцааха боломжогүй.",
+  "Choose an action": "Үйлэ һунгагты"
 }

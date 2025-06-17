@@ -313,5 +313,9 @@
   "Tag, save and find that birthday — before it's lost.": "tagi gi vreji gi tolci'i ta jbena — pu lo nu tolci'o",
   "Tag, save and find that sunset — before it's lost.": "tagi gi vreji gi tolci'i ta solnai — pu lo nu tolci'o",
   "Tag, save and find that party — before it's lost.": "tagi gi vreji gi tolci'i ta jbeni — pu lo nu tolci'o",
-  "Tag, save and find that vacation — before it's lost.": "tagi gi vreji gi tolci'i ta nundanfu — pu lo nu tolci'o"
+  "Tag, save and find that vacation — before it's lost.": "tagi gi vreji gi tolci'i ta nundanfu — pu lo nu tolci'o",
+  "Share Specific Files": "benji lo tcini vreji",
+  "Delete All": "vimcu ro",
+  "Are you sure you want to delete all new files? This action cannot be undone.": "xu do birti lo nu do djica lo nu vimcu ro cnino datni? ti zukte na'e ka'e xruti",
+  "Choose an action": "cuxna lo zukte"
 }

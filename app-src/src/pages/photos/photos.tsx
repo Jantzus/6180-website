@@ -27,6 +27,7 @@ import { useUsernameManagement } from "@/lib/useUsernameManagement";
 // Import extracted utility functions
 import { 
   executeAlbumSave, 
+  createSubAlbumWithSelectedItems,
   useSelectionMode, 
   usePasswordProtection,
   useShareActions
@@ -157,7 +158,7 @@ const PhotoAlbumContent: React.FC = () => {
   } = fullscreenView;
   
   const {
-    isSelectionMode, selectedItems, toggleItemSelection, cancelSelection
+    isSelectionMode, setIsSelectionMode, selectedItems, toggleItemSelection, cancelSelection
   } = selectionMode;
   
   // Initialize share actions hook
@@ -477,7 +478,24 @@ const PhotoAlbumContent: React.FC = () => {
     executeAlbumSave(t, folderId, albumData);
   };
 
-  // Create Sub-album function - REMOVED
+  // Create Sub-album function - RESTORED
+  const createSubalbum = async () => {
+    // Check if authorized for protected policies
+    if ((passwordPolicy === 'NotVisible' || passwordPolicy === 'CannotBeSaved') && !isAuthorized) {
+      promptForPassword();
+      return;
+    }
+    
+    // Toggle selection mode
+    setIsSelectionMode(!isSelectionMode);
+    // Clear any existing selections when toggling
+    selectedItems.clear();
+  };
+  
+  // Share the selected items - RESTORED
+  const shareSelectPhotos = async () => {
+    createSubAlbumWithSelectedItems(t, albumData, selectedItems);
+  };
 
   // Modified handle download photos function to directly save the album
   const handleDownloadPhotos = async () => {
@@ -500,6 +518,12 @@ const PhotoAlbumContent: React.FC = () => {
     if (albumData) {
       downloadPhotos(albumData, t, openFullscreenView);
     }
+  };
+
+  // Handle create sub-album from copy link modal
+  const handleCreateSubAlbum = () => {
+    shareActions.setShowingCopyLinkAlert(false);
+    createSubalbum();
   };
 
   // Set default columns
@@ -774,6 +798,8 @@ const PhotoAlbumContent: React.FC = () => {
         <AlbumHeader
           t={t}
           isSelectionMode={isSelectionMode}
+          selectedItems={selectedItems}
+          shareSelectPhotos={shareSelectPhotos}
           cancelSelection={cancelSelection}
           showingEnterPassword={showingEnterPassword}
           promptForPassword={promptForPassword}
@@ -939,6 +965,8 @@ const PhotoAlbumContent: React.FC = () => {
             )
           }
           onCopy={shareActions.handleCopy}
+          onCreateSubAlbum={handleCreateSubAlbum}
+          showCreateSubAlbum={true}
           t={t}
           isRTL={getLanguageDirection(language) === "rtl"}
         />

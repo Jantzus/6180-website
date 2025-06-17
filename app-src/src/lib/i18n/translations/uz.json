@@ -313,5 +313,9 @@
   "Tag, save and find that birthday — before it's lost.": "Belgila, saqlang va o'sha namoyishni toping — yo'qolishidan oldin.",
   "Tag, save and find that sunset — before it's lost.": "Belgila, saqlang va o'sha ta'tilni toping — yo'qolishidan oldin.",
   "Tag, save and find that party — before it's lost.": "Belgila, saqlang va o'sha ziyofatni toping — yo'qolishidan oldin.",
-  "Tag, save and find that vacation — before it's lost.": "Belgila, saqlang va o'sha quyosh botishini toping — yo'qolishidan oldin."
+  "Tag, save and find that vacation — before it's lost.": "Belgila, saqlang va o'sha quyosh botishini toping — yo'qolishidan oldin.",
+  "Share Specific Files": "Maxsus Fayllarni Ulashish",
+  "Delete All": "Barchasini O'chirish",
+  "Are you sure you want to delete all new files? This action cannot be undone.": "Barcha yangi fayllarni o'chirishni istaysizmi? Bu amaliyotni bekor qilib bo'lmaydi.",
+  "Choose an action": "Harakatni tanlang"
 }

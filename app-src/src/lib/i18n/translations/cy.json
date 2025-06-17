@@ -313,5 +313,9 @@
   "Tag, save and find that birthday — before it's lost.": "Tagio, cadw a chanfod y pen-blwydd hwnnw — cyn iddo gael ei golli.",
   "Tag, save and find that sunset — before it's lost.": "Tagio, cadw a chanfod y machlud hwnnw — cyn iddo gael ei golli.",
   "Tag, save and find that party — before it's lost.": "Tagio, cadw a chanfod y parti hwnnw — cyn iddo gael ei golli.",
-  "Tag, save and find that vacation — before it's lost.": "Tagio, cadw a chanfod y gwyliau hynny — cyn iddynt gael eu colli."
+  "Tag, save and find that vacation — before it's lost.": "Tagio, cadw a chanfod y gwyliau hynny — cyn iddynt gael eu colli.",
+  "Share Specific Files": "Rhannu Ffeiliau Penodol",
+  "Delete All": "Dileu Popeth",
+  "Are you sure you want to delete all new files? This action cannot be undone.": "Ydych chi'n siŵr eich bod am ddileu'r holl ffeiliau newydd? Ni ellir dadwneud y weithred hon.",
+  "Choose an action": "Dewiswch weithred"
 }

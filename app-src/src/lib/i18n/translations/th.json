@@ -313,5 +313,9 @@
   "Tag, save and find that birthday — before it's lost.": "แท็ก บันทึก และค้นหาการแสดงนั้น — ก่อนที่มันจะหายไป",
   "Tag, save and find that sunset — before it's lost.": "แท็ก บันทึก และค้นหาวันหยุดนั้น — ก่อนที่มันจะหายไป",
   "Tag, save and find that party — before it's lost.": "แท็ก บันทึก และค้นหาปาร์ตี้นั้น — ก่อนที่มันจะหายไป",
-  "Tag, save and find that vacation — before it's lost.": "แท็ก บันทึก และค้นหาพระอาทิตย์ตกนั้น — ก่อนที่มันจะหายไป"
+  "Tag, save and find that vacation — before it's lost.": "แท็ก บันทึก และค้นหาพระอาทิตย์ตกนั้น — ก่อนที่มันจะหายไป",
+  "Share Specific Files": "แชร์ไฟล์เฉพาะ",
+  "Delete All": "ลบทั้งหมด",
+  "Are you sure you want to delete all new files? This action cannot be undone.": "คุณแน่ใจหรือไม่ว่าต้องการลบไฟล์ใหม่ทั้งหมด? การกระทำนี้ไม่สามารถยกเลิกได้",
+  "Choose an action": "เลือกการดำเนินการ"
 }

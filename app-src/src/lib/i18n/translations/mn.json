@@ -313,5 +313,9 @@
   "Tag, save and find that birthday — before it's lost.": "Тэмдэглэх, хадгалах ба тэр тоглолтыг олох — алдагдахаас өмнө.",
   "Tag, save and find that sunset — before it's lost.": "Тэмдэглэх, хадгалах ба тэр амралтыг олох — алдагдахаас өмнө.",
   "Tag, save and find that party — before it's lost.": "Тэмдэглэх, хадгалах ба тэр үдэшлэгийг олох — алдагдахаас өмнө.",
-  "Tag, save and find that vacation — before it's lost.": "Тэмдэглэх, хадгалах ба тэр нарны жаргалтыг олох — алдагдахаас өмнө."
+  "Tag, save and find that vacation — before it's lost.": "Тэмдэглэх, хадгалах ба тэр нарны жаргалтыг олох — алдагдахаас өмнө.",
+  "Share Specific Files": "Тодорхой Файлууд Хуваалцах",
+  "Delete All": "Бүгдийг Устгах",
+  "Are you sure you want to delete all new files? This action cannot be undone.": "Та бүх шинэ файлуудыг устгахдаа итгэлтэй байна уу? Энэ үйлдлийг буцаах боломжгүй.",
+  "Choose an action": "Үйлдэл сонгох"
 }

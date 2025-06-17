@@ -97,7 +97,7 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
   );
 };
 
-// NEW: New Photos Section Component (styled like Existing Files) - Updated without bulk delete
+// NEW: New Photos Section Component (styled like Existing Files) - Updated with delete all
 const NewPhotosSection = ({ 
   selectedPhotos,
   selectedPhotoIndices, 
@@ -105,6 +105,7 @@ const NewPhotosSection = ({
   onSelectAll, 
   onDeselectAll, 
   onRemovePhoto,
+  onDeleteAll,
   disabled, 
   t, 
   isRTL 
@@ -115,6 +116,7 @@ const NewPhotosSection = ({
   onSelectAll: () => void;
   onDeselectAll: () => void;
   onRemovePhoto: (index: number) => void;
+  onDeleteAll: () => void;
   disabled: boolean;
   t: (key: string) => string;
   isRTL: boolean;
@@ -172,6 +174,35 @@ const NewPhotosSection = ({
             }}
           >
             {selectedPhotoIndices.size === selectedPhotos.length ? t('Deselect All') : t('Select All')}
+          </button>
+          
+          <button
+            style={{
+              padding: '6px 12px',
+              fontSize: '12px',
+              border: '1px solid #dc3545',
+              borderRadius: '4px',
+              backgroundColor: disabled ? '#f8f9fa' : '#fff',
+              color: disabled ? '#999' : '#dc3545',
+              cursor: disabled ? 'not-allowed' : 'pointer',
+              transition: 'all 0.2s ease'
+            }}
+            onClick={onDeleteAll}
+            disabled={disabled}
+            onMouseEnter={(e) => {
+              if (!disabled) {
+                e.currentTarget.style.backgroundColor = '#dc3545';
+                e.currentTarget.style.color = '#fff';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!disabled) {
+                e.currentTarget.style.backgroundColor = '#fff';
+                e.currentTarget.style.color = '#dc3545';
+              }
+            }}
+          >
+            {t('Delete All')}
           </button>
         </div>
       </div>
@@ -893,6 +924,20 @@ const SaveAlbum = () => {
     setSelectedPhotoIndices(new Set());
   };
 
+  // NEW: Delete all photos function with confirmation
+  const deleteAllPhotos = () => {
+    if (confirm(t('Are you sure you want to delete all new files? This action cannot be undone.'))) {
+      enhancedLog("Deleting all new photos");
+      setSelectedPhotos([]);
+      setSelectedPhotoIndices(new Set());
+      setPhotoTagsMap(new Map());
+      
+      // Clear from localStorage
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+      enhancedLog("Cleared all photos from localStorage");
+    }
+  };
+
   // ---------- PUBLIC PROFILE TOGGLE ----------
   
   const handlePublicProfileToggle = () => {
@@ -1093,6 +1138,7 @@ const SaveAlbum = () => {
                 onSelectAll={selectAllPhotos}
                 onDeselectAll={deselectAllPhotos}
                 onRemovePhoto={removePhoto}
+                onDeleteAll={deleteAllPhotos}
                 disabled={isTaggingDisabled}
                 t={t}
                 isRTL={isRTL}

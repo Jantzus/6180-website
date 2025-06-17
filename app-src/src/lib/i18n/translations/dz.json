@@ -313,5 +313,9 @@
   "Tag, save and find that birthday — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་སྐྱེས་སྐར་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།",
   "Tag, save and find that sunset — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་ཉི་ནུབ་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།",
   "Tag, save and find that party — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་དགའ་སྟོན་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།",
-  "Tag, save and find that vacation — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་གུང་སེང་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།"
+  "Tag, save and find that vacation — before it's lost.": "ཏེག་རྟགས་དང་ཉར་ཚགས་གནང་ལ་འདིའི་གུང་སེང་འཚོལ། — བརླག་མ་འགྲོ་བའི་སྔོན་ལ།",
+  "Share Specific Files": "ངེས་ཅན་གྱི་ཡིག་ཆ་གཏམས།",
+  "Delete All": "ཚང་མ་བསུབ།",
+  "Are you sure you want to delete all new files? This action cannot be undone.": "ཁྱེད་ཀྱིས་ཡིག་ཆ་གསར་བ་ཚང་མ་བྱང་དགོ་ཡིན་ལུ་ངེས་ཏིག་ཨིན་ན? ལཱ་འདི་ལོག་སྒྲིག་འབད་མི་ཚུགས།",
+  "Choose an action": "ལས་ཀ་གཅིག་འདེམས།"
 }

@@ -16,6 +16,8 @@ import ResponsiveHeader from "@/components/HeaderComponents";
 export const AlbumHeader: React.FC<{
   t: (key: string) => string;
   isSelectionMode: boolean;
+  selectedItems?: Set<number>;
+  shareSelectPhotos?: () => void;
   cancelSelection: () => void;
   showingEnterPassword: () => boolean;
   promptForPassword: () => void;
@@ -31,6 +33,8 @@ export const AlbumHeader: React.FC<{
 }> = ({
   t,
   isSelectionMode,
+  selectedItems = new Set(),
+  shareSelectPhotos,
   cancelSelection,
   showingEnterPassword,
   promptForPassword,
@@ -48,6 +52,19 @@ export const AlbumHeader: React.FC<{
   // Selection mode actions
   const renderSelectionModeActions = () => (
     <div style={{ display: 'flex', gap: '16px' }}>
+      {shareSelectPhotos && (
+        <Button 
+          onClick={shareSelectPhotos} 
+          disabled={selectedItems.size === 0}
+          style={{ 
+            opacity: selectedItems.size === 0 ? 0.5 : 1,
+            backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
+            color: selectedItems.size > 0 ? 'white' : undefined,
+          }}
+        >
+          {t('Share Selection')} ({selectedItems.size})
+        </Button>
+      )}
       <Button onClick={cancelSelection}>
         {t('Cancel')}
       </Button>
@@ -66,8 +83,8 @@ export const AlbumHeader: React.FC<{
     )
   );
 
-  // Simple "Open On Phone" button
-  const renderOpenOnPhoneButton = () => (
+  // Simple "Download" button for albums with folderPositionId
+  const renderDownloadButton = () => (
     <Button onClick={handleDownloadPhotos}>
       {t('Download')}
     </Button>
@@ -89,9 +106,11 @@ export const AlbumHeader: React.FC<{
       }}>
         <div style={{ flexShrink: 0 }}> 
           {!showingEnterPassword() && (
-            <Button onClick={handleCopyLink}>
-              {t('Share')}
-            </Button>
+            <>
+              <Button onClick={handleCopyLink}>
+                {t('Share')}
+              </Button>
+            </>
           )}
         </div>
         
@@ -108,7 +127,7 @@ export const AlbumHeader: React.FC<{
             !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
           ) && (
             albumData?.folderPositionId ? (
-              renderOpenOnPhoneButton()
+              renderDownloadButton()
             ) : (
               <ResponsiveHeader 
                 addPhotosToAlbum={addPhotosToAlbum}

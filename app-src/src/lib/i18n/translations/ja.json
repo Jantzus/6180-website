@@ -313,5 +313,9 @@
   "Tag, save and find that birthday — before it's lost.": "タグを付けて、保存してその誕生日を見つける — 失われる前に。",
   "Tag, save and find that sunset — before it's lost.": "タグを付けて、保存してその夕日を見つける — 失われる前に。",
   "Tag, save and find that party — before it's lost.": "タグを付けて、保存してそのパーティーを見つける — 失われる前に。",
-  "Tag, save and find that vacation — before it's lost.": "タグを付けて、保存してその休暇を見つける — 失われる前に。"
+  "Tag, save and find that vacation — before it's lost.": "タグを付けて、保存してその休暇を見つける — 失われる前に。",
+  "Share Specific Files": "特定のファイルを共有",
+  "Delete All": "全て削除",
+  "Are you sure you want to delete all new files? This action cannot be undone.": "すべての新しいファイルを削除してもよろしいですか？この操作は取り消すことができません。",
+  "Choose an action": "アクションを選択"
 }

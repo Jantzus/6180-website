@@ -313,5 +313,9 @@
   "Tag, save and find that birthday — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາການສະແດງນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ.",
   "Tag, save and find that sunset — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາການພັກຜ່ອນນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ.",
   "Tag, save and find that party — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາງານລ້ຽງນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ.",
-  "Tag, save and find that vacation — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາການຕົກຂອງຕາວັນນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ."
+  "Tag, save and find that vacation — before it's lost.": "ລົງປ້າຍກຳກັບ, ບັນທຶກ ແລະ ຄົ້ນຫາການຕົກຂອງຕາວັນນັ້ນ — ກ່ອນມັນຈະສູນຫາຍ.",
+  "Share Specific Files": "ແບ່ງປັນໄຟລ໌ສະເພາະ",
+  "Delete All": "ລຶບທັງໝົດ",
+  "Are you sure you want to delete all new files? This action cannot be undone.": "ເຈົ້າແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບໄຟລ໌ໃໝ່ທັງໝົດ? ການກະທຳນີ້ບໍ່ສາມາດຍົກເລີກໄດ້.",
+  "Choose an action": "ເລືອກການປະຕິບັດ"
 }
