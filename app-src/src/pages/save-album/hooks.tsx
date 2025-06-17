@@ -45,6 +45,13 @@ interface FileReferenceInput {
   fileInput: any | null;
 }
 
+// NEW: Interface for applied tags (matching the type used in save-album.tsx)
+interface AppliedTag {
+  tagTitle: string;
+  TagType: string;
+  subtags: { tagTitle: string; subtagTitle: string; }[];
+}
+
 // GraphQL query for fetching folder details
 const FETCH_FOLDER_QUERY = `
   query FetchFolders($folderIds: [String!]!, $fetchRelationsInput: FetchRelationsInput!) {
@@ -456,7 +463,7 @@ export const useAlbumInitialization = (
   };
 };
 
-// Custom hook for saving album (updated to apply tags to individual files)
+// Custom hook for saving album (UPDATED to handle existing files with tags)
 export const useAlbumSave = (
   folderId: string | null,
   cognitoUsername: string | null,
@@ -471,7 +478,12 @@ export const useAlbumSave = (
   passwordProtectionOption: PasswordPolicyEnum,
   albumPassword: string,
   // NEW: Map of photo indices to their tags
-  photoTagsMap: Map<number, { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[]>,
+  photoTagsMap: Map<number, AppliedTag[]>,
+  // NEW: Map of existing file indices to their tags  
+  existingFileTagsMap: Map<number, AppliedTag[]>,
+  // NEW: Existing files and selected indices for processing
+  existingFiles: any[], // Array of existing file objects
+  selectedExistingIndices: Set<number>,
   setIsSavingAlbum: React.Dispatch<React.SetStateAction<boolean>>,
   setSavingProgress: React.Dispatch<React.SetStateAction<number>>,
   setSelectedPhotos: React.Dispatch<React.SetStateAction<SelectedPhoto[]>>,
@@ -479,8 +491,8 @@ export const useAlbumSave = (
   enhancedLog: (message: string, data?: any) => void
 ) => {
   
-  // Convert selected tags to the format expected by the API
-  const convertTagsToApiFormat = (tags: typeof photoTagsMap extends Map<any, infer T> ? T : never): SelectedTagInput[] => {
+  // Convert applied tags to the format expected by the API
+  const convertTagsToApiFormat = (tags: AppliedTag[]): SelectedTagInput[] => {
     enhancedLog(`Converting ${tags.length} tags to API format`);
     
     return tags.map(tag => ({
@@ -698,6 +710,48 @@ export const useAlbumSave = (
         }
       };
     });
+  };
+
+  // NEW: Create file reference inputs for existing files with tags
+  const createExistingFileReferenceInputs = (
+    timestamp: number
+  ): FileReferenceInput[] => {
+    const existingFileReferences: FileReferenceInput[] = [];
+    
+    // Process existing files that have tags applied
+    selectedExistingIndices.forEach((index) => {
+      const tags = existingFileTagsMap.get(index) || [];
+      if (tags.length > 0) {
+        // Only create file references for selected existing files that have tags applied
+        const existingFile = existingFiles[index];
+        if (existingFile) {
+          // Extract filename from dataKey for fileId generation
+          // DataKey format is typically like "Input/Image/filename.jpg" or similar
+          const dataKeyParts = existingFile.dataKey.split('/');
+          const fileName = dataKeyParts[dataKeyParts.length - 1];
+          
+          // Generate fileId in the expected format
+          const fileId = `${cognitoUsername}_____${fileName}____File`;
+          
+          const tagsForApi = convertTagsToApiFormat(tags);
+          
+          enhancedLog(`Creating file reference for existing file ${index} (${fileName}) with ${tags.length} tags`);
+          
+          existingFileReferences.push({
+            fileReferencesHolderId: folderId!,
+            currentTime: timestamp,
+            points: 1,
+            hasBeenDeleted: false,
+            selectedTagInputs: tagsForApi,
+            fileId,
+            fileInput: null // No file input needed for existing files - they already exist
+          });
+        }
+      }
+    });
+    
+    enhancedLog(`Created ${existingFileReferences.length} file references for existing files with tags`);
+    return existingFileReferences;
   };
 
   // Mutation for saving only folder position (UPDATED: no folder tags)
@@ -952,9 +1006,9 @@ export const useAlbumSave = (
     }, 1000);
   };
 
-  // Main save with chunking function (UPDATED: no folder tags)
+  // Main save with chunking function (UPDATED: no folder tags, includes existing files with tags)
   const saveWithChunking = async (folderPositionInput: any, fileReferenceInputs: FileReferenceInput[]) => {
-    enhancedLog("Starting chunked save process (individual photo tags, no folder tags)");
+    enhancedLog("Starting chunked save process (individual photo tags, no folder tags, including existing files with tags)");
     try {
       updateSaveProgressText("Processing files in chunks...");
       
@@ -1010,10 +1064,11 @@ export const useAlbumSave = (
     }
   };
 
-  // Function to save album directly (UPDATED: use individual photo tags instead of folder tags)
+  // Function to save album directly (UPDATED: use individual photo tags and existing file tags)
   const saveAlbumDirectly = async () => {
-    enhancedLog("Starting direct album save with individual photo tagging");
+    enhancedLog("Starting direct album save with individual photo tagging and existing file tagging");
     enhancedLog(`Photo tags map: ${photoTagsMap.size} photos have tags applied`);
+    enhancedLog(`Existing file tags map: ${existingFileTagsMap.size} existing files have tags applied`);
     setIsSavingAlbum(true);
     setSavingProgress(5); // Start progress at 5%
 
@@ -1070,12 +1125,19 @@ export const useAlbumSave = (
         fileReferenceInputs = fileReferenceInputs.concat(newFileReferenceInputs);
       }
       
+      // NEW: Add existing file references for files with tags applied
+      const existingFileReferenceInputs = createExistingFileReferenceInputs(now);
+      if (existingFileReferenceInputs.length > 0) {
+        enhancedLog(`Adding ${existingFileReferenceInputs.length} existing file references with tags`);
+        fileReferenceInputs = fileReferenceInputs.concat(existingFileReferenceInputs);
+      }
+      
       // Add existing file references for sub-album files
       if (isSubAlbum && selectedFileIds.length > 0) {
         enhancedLog(`Adding ${selectedFileIds.length} existing file references for sub-album`);
         // Create file reference inputs from selectedFileIds
-        const existingFileReferenceInputs: FileReferenceInput[] = selectedFileIds.map((fileId) => {
-          enhancedLog(`Creating file reference for existing file ID: ${fileId}`);
+        const subAlbumFileReferenceInputs: FileReferenceInput[] = selectedFileIds.map((fileId) => {
+          enhancedLog(`Creating file reference for existing sub-album file ID: ${fileId}`);
           
           // For sub-album files, we need to check if they have tags applied
           // Since selectedFileIds don't correspond to photo indices, we'll apply no tags for now
@@ -1093,14 +1155,14 @@ export const useAlbumSave = (
           };
         });
         
-        enhancedLog(`Created ${existingFileReferenceInputs.length} file reference inputs for existing files`, existingFileReferenceInputs);
-        fileReferenceInputs = fileReferenceInputs.concat(existingFileReferenceInputs);
+        enhancedLog(`Created ${subAlbumFileReferenceInputs.length} file reference inputs for sub-album files`, subAlbumFileReferenceInputs);
+        fileReferenceInputs = fileReferenceInputs.concat(subAlbumFileReferenceInputs);
       }
       
       enhancedLog(`Total file reference inputs: ${fileReferenceInputs.length}`);
       
       // Send GraphQL mutation with all file references using chunking approach
-      enhancedLog("Sending GraphQL mutations with chunked file references (individual photo tags)");
+      enhancedLog("Sending GraphQL mutations with chunked file references (individual photo tags and existing file tags)");
       await saveWithChunking(folderPositionInput, fileReferenceInputs);
     } catch (err) {
       console.error("Error in saveAlbumDirectly:", err);

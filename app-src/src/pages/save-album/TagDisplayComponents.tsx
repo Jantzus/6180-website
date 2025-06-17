@@ -2,51 +2,63 @@ import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { TagData, SubtagData, useTagsManagement } from './useTagsManagement';
 
-// Styled components for tag display with improved spacing and soft selection
+// Styled components for tag display with clear binary states
 const TagsContainer = styled.div`
-  margin: 32px 0; /* Increased spacing */
+  margin: 32px 0;
 `;
 
 const TagsSection = styled.div`
-  margin-bottom: 24px; /* Increased spacing */
+  margin-bottom: 24px;
 `;
 
 const TagsLabel = styled.h3`
-  margin: 0 0 16px 0; /* Increased spacing */
+  margin: 0 0 16px 0;
   font-size: 14px;
   font-weight: 600;
   color: #495057;
   display: flex;
   align-items: center;
-  gap: 12px; /* Increased spacing */
+  gap: 12px;
 `;
 
 const TagsRow = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 12px; /* Increased spacing */
+  gap: 12px;
   align-items: center;
   min-height: 32px;
 `;
 
-const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed?: boolean; $isBeingDeleted?: boolean }>`
+// UPDATED: Black with white text for applied tags, green for displayed tag
+const TagButton = styled.button<{ 
+  $isApplied: boolean; 
+  $isDisplayed?: boolean; 
+  $isBeingDeleted?: boolean 
+}>`
   position: relative;
-  padding: 8px 16px; /* Increased padding */
-  border: 1px solid ${props => props.$isSelected ? '#007bff' : '#ced4da'};
-  border-radius: 20px; /* More rounded for modern look */
-  background: ${props => props.$isSelected ? '#007bff' : '#ffffff'};
-  color: ${props => props.$isSelected ? '#ffffff' : '#495057'};
+  padding: 8px 16px;
+  border: 2px solid ${props => {
+    if (props.$isDisplayed) return '#28a745';
+    return props.$isApplied ? '#333333' : '#dee2e6';
+  }};
+  border-radius: 20px;
+  background: ${props => {
+    if (props.$isDisplayed) return '#28a745';
+    return props.$isApplied ? '#333333' : '#ffffff';
+  }};
+  color: ${props => {
+    if (props.$isDisplayed) return '#ffffff';
+    return props.$isApplied ? '#ffffff' : '#6c757d';
+  }};
   font-size: 13px;
+  font-weight: ${props => props.$isApplied || props.$isDisplayed ? '600' : '500'};
   cursor: pointer;
-  transition: all 0.3s ease; /* Smoother transition */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Soft shadow */
-  
-  ${props => props.$isDisplayed && `
-    border-color: #28a745;
-    background: #28a745;
-    color: white;
-    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3), 0 4px 12px rgba(40, 167, 69, 0.15);
-  `}
+  transition: all 0.2s ease;
+  box-shadow: ${props => {
+    if (props.$isDisplayed) return '0 0 0 3px rgba(40, 167, 69, 0.3), 0 4px 12px rgba(40, 167, 69, 0.15)';
+    if (props.$isApplied) return '0 0 0 2px rgba(51, 51, 51, 0.2), 0 4px 12px rgba(51, 51, 51, 0.15)';
+    return '0 2px 8px rgba(0, 0, 0, 0.04)';
+  }};
 
   ${props => props.$isBeingDeleted && `
     opacity: 0.5;
@@ -54,14 +66,29 @@ const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed?: boolean; 
   `}
 
   &:hover {
-    background: ${props => props.$isSelected ? '#0056b3' : '#f8f9fa'};
-    transform: translateY(-1px); /* Subtle lift effect */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+    box-shadow: ${props => {
+      if (props.$isDisplayed) return '0 0 0 4px rgba(40, 167, 69, 0.4), 0 6px 16px rgba(40, 167, 69, 0.2)';
+      if (props.$isApplied) return '0 0 0 3px rgba(51, 51, 51, 0.3), 0 6px 16px rgba(51, 51, 51, 0.2)';
+      return '0 4px 12px rgba(0, 0, 0, 0.1)';
+    }};
     
-    ${props => props.$isDisplayed && `
-      background: #1e7e34;
-      box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.4), 0 6px 16px rgba(40, 167, 69, 0.2);
-    `}
+    background: ${props => {
+      if (props.$isDisplayed) return '#1e7e34';
+      if (props.$isApplied) return '#1a1a1a';
+      return '#f8f9fa';
+    }};
+    
+    border-color: ${props => {
+      if (props.$isDisplayed) return '#1e7e34';
+      if (props.$isApplied) return '#1a1a1a';
+      return '#007bff';
+    }};
+    
+    color: ${props => {
+      if (props.$isDisplayed || props.$isApplied) return '#ffffff';
+      return '#007bff';
+    }};
   }
 
   &:disabled {
@@ -73,27 +100,27 @@ const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed?: boolean; 
 
 const SubtagButton = styled(TagButton)`
   font-size: 12px;
-  padding: 6px 12px; /* Adjusted padding */
-  border-radius: 16px; /* Slightly less rounded */
+  padding: 6px 12px;
+  border-radius: 16px;
 `;
 
 const DeleteButton = styled.button`
   position: absolute;
-  top: -6px; /* Adjusted position */
+  top: -6px;
   right: -6px;
-  width: 18px; /* Slightly larger */
+  width: 18px;
   height: 18px;
   border: none;
   border-radius: 50%;
-  background: rgba(220, 53, 69, 0.9); /* More opaque */
+  background: rgba(220, 53, 69, 0.9);
   color: white;
-  font-size: 11px; /* Slightly larger */
+  font-size: 11px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3); /* Soft shadow */
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 
   &:hover {
     background: #c82333;
@@ -112,31 +139,31 @@ const LoadingText = styled.div`
   color: #6c757d;
   font-size: 13px;
   font-style: italic;
-  padding: 16px; /* Added padding */
+  padding: 16px;
 `;
 
 const EmptyState = styled.div`
   color: #6c757d;
   font-size: 13px;
   font-style: italic;
-  padding: 16px; /* Added padding */
+  padding: 16px;
 `;
 
 const ActionButton = styled.button`
-  padding: 8px 16px; /* Increased padding */
+  padding: 8px 16px;
   border: 1px solid #6c757d;
-  border-radius: 16px; /* More rounded */
+  border-radius: 16px;
   background: transparent;
   color: #6c757d;
   font-size: 12px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Smoother transition */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Soft shadow */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
   &:hover {
     background: #6c757d;
     color: white;
-    transform: translateY(-1px); /* Subtle lift effect */
+    transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
@@ -150,12 +177,12 @@ const ActionButton = styled.button`
 const InputContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px; /* Increased gap */
-  padding: 6px 12px; /* Increased padding */
+  gap: 6px;
+  padding: 6px 12px;
   border: 1px solid #007bff;
-  border-radius: 16px; /* More rounded */
+  border-radius: 16px;
   background: white;
-  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1); /* Soft shadow */
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
   transition: all 0.2s ease;
   
   &:focus-within {
@@ -168,7 +195,7 @@ const TagInput = styled.input`
   outline: none;
   font-size: 12px;
   background: transparent;
-  min-width: 100px; /* Increased min-width */
+  min-width: 100px;
   max-width: 200px;
 
   &::placeholder {
@@ -181,16 +208,16 @@ const InputButton = styled.button`
   border: none;
   background: transparent;
   color: #007bff;
-  font-size: 11px; /* Slightly larger */
+  font-size: 11px;
   cursor: pointer;
-  padding: 4px 6px; /* Increased padding */
-  border-radius: 6px; /* More rounded */
+  padding: 4px 6px;
+  border-radius: 6px;
   transition: all 0.2s ease;
 
   &:hover {
     background: #007bff;
     color: white;
-    transform: scale(1.05); /* Subtle scale effect */
+    transform: scale(1.05);
   }
 
   &:disabled {
@@ -200,20 +227,10 @@ const InputButton = styled.button`
   }
 `;
 
-const InfoBadge = styled.span`
-  background: #6c757d;
-  color: white;
-  padding: 3px 8px; /* Increased padding */
-  border-radius: 12px; /* More rounded */
-  font-size: 10px;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
-`;
-
-// Tag with delete functionality component
+// Tag with delete functionality component - UPDATED: removed arrow, simplified click behavior
 interface TagWithDeleteProps {
   tag: TagData;
-  isSelected: boolean;
+  isApplied: boolean;
   isDisplayed: boolean;
   isBeingDeleted: boolean;
   disabled: boolean;
@@ -222,9 +239,9 @@ interface TagWithDeleteProps {
   getTagDisplayText: (tag: TagData) => string;
 }
 
-const TagWithDelete: React.FC<TagWithDeleteProps> = ({
+const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
   tag,
-  isSelected,
+  isApplied,
   isDisplayed,
   isBeingDeleted,
   disabled,
@@ -236,7 +253,7 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = ({
 
   return (
     <TagButton
-      $isSelected={isSelected}
+      $isApplied={isApplied}
       $isDisplayed={isDisplayed}
       $isBeingDeleted={isBeingDeleted}
       disabled={disabled}
@@ -244,7 +261,8 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = ({
       onMouseEnter={() => setShowDelete(true)}
       onMouseLeave={() => setShowDelete(false)}
     >
-      {getTagDisplayText(tag)}
+      <span>{getTagDisplayText(tag)}</span>
+      
       {showDelete && !disabled && !isBeingDeleted && (
         <DeleteButton
           onClick={(e) => {
@@ -258,21 +276,21 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = ({
       )}
     </TagButton>
   );
-};
+});
 
 // Subtag with delete functionality component
 interface SubtagWithDeleteProps {
   subtag: SubtagData;
-  isSelected: boolean;
+  isApplied: boolean;
   isBeingDeleted: boolean;
   disabled: boolean;
   onSubtagClick: (subtag: SubtagData) => void;
   onDeleteSubtag: (subtagId: string) => void;
 }
 
-const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = ({
+const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = React.memo(({
   subtag,
-  isSelected,
+  isApplied,
   isBeingDeleted,
   disabled,
   onSubtagClick,
@@ -282,7 +300,7 @@ const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = ({
 
   return (
     <SubtagButton
-      $isSelected={isSelected}
+      $isApplied={isApplied}
       $isBeingDeleted={isBeingDeleted}
       disabled={disabled}
       onClick={() => onSubtagClick(subtag)}
@@ -303,7 +321,7 @@ const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = ({
       )}
     </SubtagButton>
   );
-};
+});
 
 // New tag input component
 interface NewTagInputProps {
@@ -368,59 +386,64 @@ const NewTagInput: React.FC<NewTagInputProps> = ({
   );
 };
 
-// Main Tags Display Component - UPDATED for photo-level tagging
+// Main Tags Display Component
 interface TagsDisplayProps {
   tagsManager: ReturnType<typeof useTagsManagement>;
   disabled?: boolean;
   enhancedLog: (message: string, data?: any) => void;
 }
 
-export const TagsDisplay: React.FC<TagsDisplayProps> = ({ 
+export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({ 
   tagsManager, 
   disabled = false,
   enhancedLog
 }) => {
   const {
     tags,
-    selectedTags,
     displayedTagId,
     isLoadingTags,
     tagIdBeingDeleted,
     isAddingNewTag,
     newTagTitle,
     isSubmittingNewTag,
-    selectTag,
-    unselectTag,
+    toggleTagOnSelectedFiles,
     setDisplayedTag,
-    isTagSelected,
+    isTagAppliedToSelected,
     deleteTag,
     startAddingNewTag,
     cancelAddingNewTag,
     submitNewTag,
-    setNewTagTitle
+    setNewTagTitle,
+    getAppliedTagsForSelected,
+    hasSelectedFiles
   } = tagsManager;
+
+  // Hide completely if no files are selected
+  if (!hasSelectedFiles()) {
+    return null;
+  }
 
   const handleTagClick = (tag: TagData) => {
     if (disabled) return;
     
-    const isSelected = isTagSelected(tag);
-    const isDisplayed = displayedTagId === tag.id;
+    const wasApplied = isTagAppliedToSelected(tag);
+    enhancedLog(`Tag "${tag.tagTitle}" clicked - current state: ${wasApplied ? 'applied to all' : 'not applied to all'}`);
     
-    if (!isSelected) {
-      // Tag is not selected, select it for application to photos
-      selectTag(tag);
-      setDisplayedTag(tag.id);
-      enhancedLog(`Selected tag for photo application: ${tag.tagTitle}`);
-    } else if (isSelected && !isDisplayed) {
-      // Tag is selected but not displayed, display it
-      setDisplayedTag(tag.id);
-      enhancedLog(`Displayed tag: ${tag.tagTitle}`);
-    } else if (isSelected && isDisplayed) {
-      // Tag is selected and displayed, unselect it
-      unselectTag(tag);
-      setDisplayedTag(null);
-      enhancedLog(`Unselected tag: ${tag.tagTitle}`);
+    // ALWAYS apply/remove the tag first
+    toggleTagOnSelectedFiles(tag);
+    
+    // Handle subtag display logic AFTER the tag state change
+    if (tag.subtags && tag.subtags.length > 0) {
+      // If tag was applied and is now being removed, hide subtags
+      if (wasApplied) {
+        setDisplayedTag(null);
+      } else {
+        // If tag is being applied, show its subtags
+        setDisplayedTag(tag.id);
+      }
     }
+    
+    enhancedLog(`After toggle - new state: ${wasApplied ? 'removed from all' : 'applied to all'}`);
   };
 
   const handleDeleteTag = async (tagId: string) => {
@@ -443,50 +466,54 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = ({
   };
 
   const getTagDisplayText = (tag: TagData): string => {
-    const selectedTag = selectedTags.find(t => t.tagTitle === tag.tagTitle);
-    if (!selectedTag || selectedTag.subtags.length === 0) {
+    const appliedTags = getAppliedTagsForSelected();
+    const appliedTag = appliedTags.find(t => t.tagTitle === tag.tagTitle);
+    
+    if (!appliedTag || appliedTag.subtags.length === 0) {
       return tag.tagTitle;
     }
     
-    const subtagNames = selectedTag.subtags.map(s => s.subtagTitle).join(' || ');
+    const subtagNames = appliedTag.subtags.map(s => s.subtagTitle).join(' || ');
     return `${tag.tagTitle}  |  ${subtagNames}`;
   };
 
   // Sort tags by points (highest first) then by updated date
-  const sortedTags = [...tags].sort((a, b) => {
-    if (a.points !== b.points) {
-      return b.points - a.points;
-    }
-    return b.updatedAt - a.updatedAt;
-  });
+  const sortedTags = React.useMemo(() => {
+    return [...tags].sort((a, b) => {
+      if (a.points !== b.points) {
+        return b.points - a.points;
+      }
+      return b.updatedAt - a.updatedAt;
+    });
+  }, [tags]);
 
   return (
     <TagsContainer>
       <TagsSection>
         <TagsLabel>
-          Tag the selected photos
-          {selectedTags.length > 0 && (
-            <InfoBadge>{selectedTags.length} selected</InfoBadge>
-          )}
+          Apply tags to selected files
         </TagsLabel>
         <TagsRow>
           {isLoadingTags ? (
             <LoadingText>Loading tags...</LoadingText>
           ) : (
             <>
-              {sortedTags.map(tag => (
-                <TagWithDelete
-                  key={tag.id}
-                  tag={tag}
-                  isSelected={isTagSelected(tag)}
-                  isDisplayed={displayedTagId === tag.id}
-                  isBeingDeleted={tagIdBeingDeleted === tag.id}
-                  disabled={disabled}
-                  onTagClick={handleTagClick}
-                  onDeleteTag={handleDeleteTag}
-                  getTagDisplayText={getTagDisplayText}
-                />
-              ))}
+              {sortedTags.map(tag => {
+                const isApplied = isTagAppliedToSelected(tag);
+                return (
+                  <TagWithDelete
+                    key={tag.id}
+                    tag={tag}
+                    isApplied={isApplied}
+                    isDisplayed={displayedTagId === tag.id}
+                    isBeingDeleted={tagIdBeingDeleted === tag.id}
+                    disabled={disabled}
+                    onTagClick={handleTagClick}
+                    onDeleteTag={handleDeleteTag}
+                    getTagDisplayText={getTagDisplayText}
+                  />
+                );
+              })}
               
               {isAddingNewTag ? (
                 <NewTagInput
@@ -522,45 +549,40 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = ({
         />
       )}
 
-      {/* Instructions for photo tagging with improved styling */}
-      {selectedTags.length > 0 && (
-        <div style={{
-          marginTop: '24px', /* Increased spacing */
-          padding: '20px 24px', /* Increased padding */
-          background: 'linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%)', /* Gradient background */
-          borderRadius: '12px', /* More rounded */
-          fontSize: '13px',
-          color: '#0c5aa6',
-          border: '1px solid #b3d9ff',
-          boxShadow: '0 4px 12px rgba(0, 123, 255, 0.08)' /* Soft shadow */
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-            <span style={{ fontSize: '16px' }}>✅</span>
-            <strong style={{ fontSize: '14px' }}>Tags Applied:</strong>
-          </div>
-          <div style={{ lineHeight: '1.5' }}>
-            All selected files will have <strong>{selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''}</strong> applied to them when you save the album.<br/>
-            <strong>Selected tags:</strong> {selectedTags.map(tag => {
-              const subtagNames = tag.subtags.map(s => s.subtagTitle);
-              return subtagNames.length > 0 
-                ? `${tag.tagTitle} (${subtagNames.join(', ')})` 
-                : tag.tagTitle;
-            }).join(', ')}
-          </div>
+      {/* Instructions with new black/green color scheme */}
+      <div style={{
+        marginTop: '24px',
+        padding: '20px 24px',
+        background: 'linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%)',
+        borderRadius: '12px',
+        fontSize: '13px',
+        color: '#0c5aa6',
+        border: '1px solid #b3d9ff',
+        boxShadow: '0 4px 12px rgba(0, 123, 255, 0.08)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+          <span style={{ fontSize: '16px' }}>🏷️</span>
+          <strong style={{ fontSize: '14px' }}>Tag States:</strong>
         </div>
-      )}
+        <div style={{ lineHeight: '1.5' }}>
+          <strong>Click any tag once to apply/remove it from ALL selected files</strong><br/>
+          • <strong style={{ color: '#333333' }}>⚫ Black tags:</strong> Applied to selected files<br/>
+          • <strong style={{ color: '#28a745' }}>🟢 Green tags:</strong> Most recently clicked tag (showing subtags)<br/>
+          • <strong style={{ color: '#6c757d' }}>⚪ Gray tags:</strong> Available but not applied<br/>
+        </div>
+      </div>
     </TagsContainer>
   );
-};
+});
 
-// Subtags Display Component - UPDATED for photo-level tagging
+// Subtags Display Component
 interface SubtagsDisplayProps {
   tagsManager: ReturnType<typeof useTagsManagement>;
   disabled?: boolean;
   enhancedLog: (message: string, data?: any) => void;
 }
 
-const SubtagsDisplay: React.FC<SubtagsDisplayProps> = ({ 
+const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({ 
   tagsManager, 
   disabled = false,
   enhancedLog 
@@ -571,33 +593,26 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = ({
     isAddingNewSubtag,
     newSubtagTitle,
     isSubmittingNewSubtag,
-    selectSubtag,
-    unselectSubtag,
-    isSubtagSelected,
+    toggleSubtagOnSelectedFiles,
+    isSubtagAppliedToSelected,
     deleteSubtag,
     startAddingNewSubtag,
     cancelAddingNewSubtag,
     submitNewSubtag,
-    setNewSubtagTitle
+    setNewSubtagTitle,
+    tags
   } = tagsManager;
 
   const displayedTagSubtags = displayedTagId ? 
-    tagsManager.tags.find(t => t.id === displayedTagId)?.subtags || [] : 
+    tags.find(t => t.id === displayedTagId)?.subtags || [] : 
     [];
-  const displayedTag = tagsManager.tags.find(t => t.id === displayedTagId);
+  const displayedTag = tags.find(t => t.id === displayedTagId);
 
   const handleSubtagClick = (subtag: SubtagData) => {
     if (disabled) return;
     
-    const isSelected = isSubtagSelected(subtag);
-    
-    if (isSelected) {
-      unselectSubtag(subtag);
-      enhancedLog(`Unselected subtag for photo application: ${subtag.subtagTitle}`);
-    } else {
-      selectSubtag(subtag);
-      enhancedLog(`Selected subtag for photo application: ${subtag.subtagTitle}`);
-    }
+    enhancedLog(`Subtag "${subtag.subtagTitle}" clicked - current state: ${isSubtagAppliedToSelected(subtag) ? 'applied to all' : 'not applied to all'}`);
+    toggleSubtagOnSelectedFiles(subtag);
   };
 
   const handleDeleteSubtag = async (subtagId: string) => {
@@ -624,12 +639,14 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = ({
   }
 
   // Sort subtags by points (highest first) then by updated date
-  const sortedSubtags = [...displayedTagSubtags].sort((a, b) => {
-    if (a.points !== b.points) {
-      return b.points - a.points;
-    }
-    return b.updatedAt - a.updatedAt;
-  });
+  const sortedSubtags = React.useMemo(() => {
+    return [...displayedTagSubtags].sort((a, b) => {
+      if (a.points !== b.points) {
+        return b.points - a.points;
+      }
+      return b.updatedAt - a.updatedAt;
+    });
+  }, [displayedTagSubtags]);
 
   return (
     <TagsSection>
@@ -639,7 +656,7 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = ({
           <SubtagWithDelete
             key={subtag.id}
             subtag={subtag}
-            isSelected={isSubtagSelected(subtag)}
+            isApplied={isSubtagAppliedToSelected(subtag)}
             isBeingDeleted={subtagIdBeingDeleted === subtag.id}
             disabled={disabled}
             onSubtagClick={handleSubtagClick}
@@ -671,9 +688,9 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = ({
       </TagsRow>
     </TagsSection>
   );
-};
+});
 
-// Updated PhotoTagging component for individual photo tagging display
+// PhotoTagging component for individual photo tagging display
 interface PhotoTaggingProps {
   photoTags: { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[];
   isSelected?: boolean;
@@ -693,12 +710,12 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
       right: '8px',
       background: 'rgba(0, 0, 0, 0.7)',
       color: 'white',
-      padding: '6px 12px', /* Increased padding */
-      borderRadius: '6px', /* More rounded */
+      padding: '6px 12px',
+      borderRadius: '6px',
       fontSize: '12px',
       cursor: onToggleSelection ? 'pointer' : 'default',
-      backdropFilter: 'blur(4px)', /* Subtle blur effect */
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)' /* Soft shadow */
+      backdropFilter: 'blur(4px)',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
     }}
     onClick={onToggleSelection}>
       {photoTags.length > 0 ? (

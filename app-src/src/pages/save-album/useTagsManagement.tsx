@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from '@/lib/config';
 import { checkLoginWithRefresh } from '@/lib/utils';
-import { SelectedTag } from '@/lib/types';
 
 // Types for tags and subtags
 export interface TagData {
@@ -24,7 +23,14 @@ export interface SubtagData {
   updatedAt: number;
 }
 
-// GraphQL query for fetching tags and subtags
+// Interface for applied tags (what gets saved to backend)
+export interface AppliedTag {
+  tagTitle: string;
+  TagType: string;
+  subtags: { tagTitle: string; subtagTitle: string; }[];
+}
+
+// GraphQL queries and mutations (same as before)
 const FETCH_TAGS_QUERY = `
   query FetchTags($fetchRelationsInput: FetchRelationsInput!) {
     fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
@@ -55,7 +61,6 @@ const FETCH_TAGS_QUERY = `
   }
 `;
 
-// GraphQL mutation for adding a new tag
 const ADD_TAG_MUTATION = `
   mutation AddTag($tagInput: TagInput!) {
     addTag(tagInput: $tagInput) {
@@ -69,7 +74,6 @@ const ADD_TAG_MUTATION = `
   }
 `;
 
-// GraphQL mutation for adding a new subtag
 const ADD_SUBTAG_MUTATION = `
   mutation AddSubtag($subtagInput: SubtagInput!) {
     addSubtag(subtagInput: $subtagInput) {
@@ -84,7 +88,6 @@ const ADD_SUBTAG_MUTATION = `
   }
 `;
 
-// GraphQL mutation for removing/deleting a tag
 const DELETE_TAG_MUTATION = `
   mutation DeleteTag($tagId: String!) {
     deleteTag(tagId: $tagId) {
@@ -94,7 +97,6 @@ const DELETE_TAG_MUTATION = `
   }
 `;
 
-// GraphQL mutation for removing/deleting a subtag
 const DELETE_SUBTAG_MUTATION = `
   mutation DeleteSubtag($subtagId: String!) {
     deleteSubtag(subtagId: $subtagId) {
@@ -105,11 +107,16 @@ const DELETE_SUBTAG_MUTATION = `
 `;
 
 export const useTagsManagement = (
+  // File maps and selection indices passed from parent
+  photoTagsMap: Map<number, AppliedTag[]>,
+  setPhotoTagsMap: React.Dispatch<React.SetStateAction<Map<number, AppliedTag[]>>>,
+  existingFileTagsMap: Map<number, AppliedTag[]>,
+  setExistingFileTagsMap: React.Dispatch<React.SetStateAction<Map<number, AppliedTag[]>>>,
+  selectedPhotoIndices: Set<number>,
+  selectedExistingIndices: Set<number>,
   enhancedLog: (message: string, data?: any) => void
 ) => {
   const [tags, setTags] = useState<TagData[]>([]);
-  // UPDATED: selectedTags now represents tags being prepared for application to photos
-  const [selectedTags, setSelectedTags] = useState<SelectedTag[]>([]);
   const [displayedTagId, setDisplayedTagId] = useState<string | null>(null);
   const [isLoadingTags, setIsLoadingTags] = useState(false);
   const [tagIdBeingDeleted, setTagIdBeingDeleted] = useState<string | null>(null);
@@ -123,7 +130,272 @@ export const useTagsManagement = (
   const [isSubmittingNewTag, setIsSubmittingNewTag] = useState(false);
   const [isSubmittingNewSubtag, setIsSubmittingNewSubtag] = useState(false);
 
-  // Fetch tags from the API
+  // Memoized helper to get all currently selected file indices
+  const getAllSelectedIndices = useMemo(() => {
+    return {
+      photoIndices: Array.from(selectedPhotoIndices),
+      existingIndices: Array.from(selectedExistingIndices)
+    };
+  }, [selectedPhotoIndices, selectedExistingIndices]);
+
+  // FIXED: Check if tag is applied to ALL currently selected files - properly memoized
+  const isTagAppliedToSelected = useCallback((tag: TagData): boolean => {
+    const { photoIndices, existingIndices } = getAllSelectedIndices;
+    
+    // If no files are selected, return false
+    if (photoIndices.length === 0 && existingIndices.length === 0) {
+      return false;
+    }
+    
+    // Check if ALL selected photos have this tag
+    const allPhotosHaveTag = photoIndices.length === 0 || photoIndices.every(index => {
+      const fileTags = photoTagsMap.get(index) || [];
+      return fileTags.some(t => t.tagTitle === tag.tagTitle);
+    });
+    
+    // Check if ALL selected existing files have this tag
+    const allExistingHaveTag = existingIndices.length === 0 || existingIndices.every(index => {
+      const fileTags = existingFileTagsMap.get(index) || [];
+      return fileTags.some(t => t.tagTitle === tag.tagTitle);
+    });
+    
+    // Return true only if ALL selected files have the tag
+    const result = allPhotosHaveTag && allExistingHaveTag;
+    
+    return result;
+  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap]);
+
+  // FIXED: Check if subtag is applied to ALL currently selected files that have the parent tag - properly memoized
+  const isSubtagAppliedToSelected = useCallback((subtag: SubtagData): boolean => {
+    const { photoIndices, existingIndices } = getAllSelectedIndices;
+    
+    // For photos
+    let photoFilesWithParentTag = 0;
+    let photoFilesWithSubtag = 0;
+    
+    photoIndices.forEach(index => {
+      const fileTags = photoTagsMap.get(index) || [];
+      const parentTag = fileTags.find(t => t.tagTitle === subtag.tagTitle);
+      if (parentTag) {
+        photoFilesWithParentTag++;
+        if (parentTag.subtags.some(s => s.subtagTitle === subtag.subtagTitle)) {
+          photoFilesWithSubtag++;
+        }
+      }
+    });
+    
+    // For existing files
+    let existingFilesWithParentTag = 0;
+    let existingFilesWithSubtag = 0;
+    
+    existingIndices.forEach(index => {
+      const fileTags = existingFileTagsMap.get(index) || [];
+      const parentTag = fileTags.find(t => t.tagTitle === subtag.tagTitle);
+      if (parentTag) {
+        existingFilesWithParentTag++;
+        if (parentTag.subtags.some(s => s.subtagTitle === subtag.subtagTitle)) {
+          existingFilesWithSubtag++;
+        }
+      }
+    });
+    
+    const totalFilesWithParentTag = photoFilesWithParentTag + existingFilesWithParentTag;
+    const totalFilesWithSubtag = photoFilesWithSubtag + existingFilesWithSubtag;
+    
+    // Only return true if ALL files with the parent tag also have this subtag
+    return totalFilesWithParentTag > 0 && totalFilesWithSubtag === totalFilesWithParentTag;
+  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap]);
+
+  // FIXED: Apply/remove tag to ALL selected files based on current state - properly memoized
+  const toggleTagOnSelectedFiles = useCallback((tag: TagData) => {
+    const { photoIndices, existingIndices } = getAllSelectedIndices;
+    
+    if (photoIndices.length === 0 && existingIndices.length === 0) {
+      enhancedLog("No files selected for tag application");
+      return;
+    }
+    
+    const isAppliedToAll = isTagAppliedToSelected(tag);
+    enhancedLog(`${isAppliedToAll ? 'Removing' : 'Applying'} tag "${tag.tagTitle}" ${isAppliedToAll ? 'from' : 'to'} all selected files`);
+    
+    // Update photo tags
+    if (photoIndices.length > 0) {
+      setPhotoTagsMap(prev => {
+        const updated = new Map(prev);
+        photoIndices.forEach(index => {
+          const currentTags = updated.get(index) || [];
+          
+          if (isAppliedToAll) {
+            // Remove the tag from this file
+            const filteredTags = currentTags.filter(t => t.tagTitle !== tag.tagTitle);
+            updated.set(index, filteredTags);
+            enhancedLog(`Removed tag "${tag.tagTitle}" from photo ${index}`);
+          } else {
+            // Add the tag to this file (if not already present)
+            const hasTag = currentTags.some(t => t.tagTitle === tag.tagTitle);
+            if (!hasTag) {
+              const newTag: AppliedTag = {
+                tagTitle: tag.tagTitle,
+                TagType: tag.TagType,
+                subtags: []
+              };
+              updated.set(index, [...currentTags, newTag]);
+              enhancedLog(`Added tag "${tag.tagTitle}" to photo ${index}`);
+            }
+          }
+        });
+        return updated;
+      });
+    }
+    
+    // Update existing file tags
+    if (existingIndices.length > 0) {
+      setExistingFileTagsMap(prev => {
+        const updated = new Map(prev);
+        existingIndices.forEach(index => {
+          const currentTags = updated.get(index) || [];
+          
+          if (isAppliedToAll) {
+            // Remove the tag from this file
+            const filteredTags = currentTags.filter(t => t.tagTitle !== tag.tagTitle);
+            updated.set(index, filteredTags);
+            enhancedLog(`Removed tag "${tag.tagTitle}" from existing file ${index}`);
+          } else {
+            // Add the tag to this file (if not already present)
+            const hasTag = currentTags.some(t => t.tagTitle === tag.tagTitle);
+            if (!hasTag) {
+              const newTag: AppliedTag = {
+                tagTitle: tag.tagTitle,
+                TagType: tag.TagType,
+                subtags: []
+              };
+              updated.set(index, [...currentTags, newTag]);
+              enhancedLog(`Added tag "${tag.tagTitle}" to existing file ${index}`);
+            }
+          }
+        });
+        return updated;
+      });
+    }
+  }, [getAllSelectedIndices, isTagAppliedToSelected, setPhotoTagsMap, setExistingFileTagsMap, enhancedLog]);
+
+  // FIXED: Apply/remove subtag to ALL selected files that have the parent tag - properly memoized
+  const toggleSubtagOnSelectedFiles = useCallback((subtag: SubtagData) => {
+    const { photoIndices, existingIndices } = getAllSelectedIndices;
+    
+    if (photoIndices.length === 0 && existingIndices.length === 0) {
+      enhancedLog("No files selected for subtag application");
+      return;
+    }
+    
+    const isAppliedToAll = isSubtagAppliedToSelected(subtag);
+    enhancedLog(`${isAppliedToAll ? 'Removing' : 'Applying'} subtag "${subtag.subtagTitle}" ${isAppliedToAll ? 'from' : 'to'} all selected files with parent tag`);
+    
+    // Update photo tags
+    if (photoIndices.length > 0) {
+      setPhotoTagsMap(prev => {
+        const updated = new Map(prev);
+        photoIndices.forEach(index => {
+          const currentTags = updated.get(index) || [];
+          const updatedTags = currentTags.map(tag => {
+            if (tag.tagTitle === subtag.tagTitle) {
+              if (isAppliedToAll) {
+                // Remove the subtag
+                return {
+                  ...tag,
+                  subtags: tag.subtags.filter(s => s.subtagTitle !== subtag.subtagTitle)
+                };
+              } else {
+                // Add the subtag (if not already present)
+                const hasSubtag = tag.subtags.some(s => s.subtagTitle === subtag.subtagTitle);
+                if (!hasSubtag) {
+                  return {
+                    ...tag,
+                    subtags: [...tag.subtags, {
+                      tagTitle: subtag.tagTitle,
+                      subtagTitle: subtag.subtagTitle
+                    }]
+                  };
+                }
+              }
+            }
+            return tag;
+          });
+          updated.set(index, updatedTags);
+        });
+        return updated;
+      });
+    }
+    
+    // Update existing file tags
+    if (existingIndices.length > 0) {
+      setExistingFileTagsMap(prev => {
+        const updated = new Map(prev);
+        existingIndices.forEach(index => {
+          const currentTags = updated.get(index) || [];
+          const updatedTags = currentTags.map(tag => {
+            if (tag.tagTitle === subtag.tagTitle) {
+              if (isAppliedToAll) {
+                // Remove the subtag
+                return {
+                  ...tag,
+                  subtags: tag.subtags.filter(s => s.subtagTitle !== subtag.subtagTitle)
+                };
+              } else {
+                // Add the subtag (if not already present)
+                const hasSubtag = tag.subtags.some(s => s.subtagTitle === subtag.subtagTitle);
+                if (!hasSubtag) {
+                  return {
+                    ...tag,
+                    subtags: [...tag.subtags, {
+                      tagTitle: subtag.tagTitle,
+                      subtagTitle: subtag.subtagTitle
+                    }]
+                  };
+                }
+              }
+            }
+            return tag;
+          });
+          updated.set(index, updatedTags);
+        });
+        return updated;
+      });
+    }
+  }, [getAllSelectedIndices, isSubtagAppliedToSelected, setPhotoTagsMap, setExistingFileTagsMap, enhancedLog]);
+
+  // Get all unique tags that are applied to currently selected files
+  const getAppliedTagsForSelected = useCallback((): AppliedTag[] => {
+    const { photoIndices, existingIndices } = getAllSelectedIndices;
+    const allAppliedTags: AppliedTag[] = [];
+    
+    // Collect from photos
+    photoIndices.forEach(index => {
+      const fileTags = photoTagsMap.get(index) || [];
+      allAppliedTags.push(...fileTags);
+    });
+    
+    // Collect from existing files
+    existingIndices.forEach(index => {
+      const fileTags = existingFileTagsMap.get(index) || [];
+      allAppliedTags.push(...fileTags);
+    });
+    
+    // Return unique tags
+    const uniqueTags = new Map<string, AppliedTag>();
+    allAppliedTags.forEach(tag => {
+      uniqueTags.set(tag.tagTitle, tag);
+    });
+    
+    return Array.from(uniqueTags.values());
+  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap]);
+
+  // Check if any files are currently selected
+  const hasSelectedFiles = useCallback((): boolean => {
+    return selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0;
+  }, [selectedPhotoIndices.size, selectedExistingIndices.size]);
+
+  // Fetch tags from the API (same as before)
   const fetchTags = async () => {
     enhancedLog("Fetching tags from API");
     setIsLoadingTags(true);
@@ -166,7 +438,6 @@ export const useTagsManagement = (
 
       const fetchedTags = result?.data?.fetchRelations?.items || [];
       
-      // Transform the data to match our TagData interface
       const transformedTags: TagData[] = fetchedTags.map((tag: any) => ({
         id: tag.id,
         tagTitle: tag.tagTitle,
@@ -195,101 +466,19 @@ export const useTagsManagement = (
     }
   };
 
-  // UPDATED: Select a tag for later application to photos
-  const selectTag = (tag: TagData) => {
-    enhancedLog(`Selecting tag for photo application: ${tag.tagTitle}`);
-    
-    const existingTag = selectedTags.find(t => t.tagTitle === tag.tagTitle);
-    if (!existingTag) {
-      const newSelectedTag: SelectedTag = {
-        tagTitle: tag.tagTitle,
-        TagType: tag.TagType,
-        subtags: []
-      };
-      setSelectedTags(prev => [...prev, newSelectedTag]);
-      enhancedLog(`Tag ${tag.tagTitle} added to selection for photo application`);
-    }
-  };
-
-  // UPDATED: Unselect a tag from photo application selection
-  const unselectTag = (tag: TagData) => {
-    enhancedLog(`Unselecting tag from photo application: ${tag.tagTitle}`);
-    setSelectedTags(prev => prev.filter(t => t.tagTitle !== tag.tagTitle));
-    
-    // If this was the displayed tag, clear the displayed tag
-    if (displayedTagId === tag.id) {
-      setDisplayedTagId(null);
-    }
-  };
-
-  // UPDATED: Select a subtag for later application to photos
-  const selectSubtag = (subtag: SubtagData) => {
-    enhancedLog(`Selecting subtag for photo application: ${subtag.subtagTitle} for tag: ${subtag.tagTitle}`);
-    
-    setSelectedTags(prev => prev.map(tag => {
-      if (tag.tagTitle === subtag.tagTitle) {
-        const existingSubtag = tag.subtags.find(s => s.subtagTitle === subtag.subtagTitle);
-        if (!existingSubtag) {
-          return {
-            ...tag,
-            subtags: [...tag.subtags, {
-              TagType: subtag.TagType,
-              tagTitle: subtag.tagTitle,
-              subtagTitle: subtag.subtagTitle
-            }]
-          };
-        }
-      }
-      return tag;
-    }));
-  };
-
-  // UPDATED: Unselect a subtag from photo application selection
-  const unselectSubtag = (subtag: SubtagData) => {
-    enhancedLog(`Unselecting subtag from photo application: ${subtag.subtagTitle} for tag: ${subtag.tagTitle}`);
-    
-    setSelectedTags(prev => prev.map(tag => {
-      if (tag.tagTitle === subtag.tagTitle) {
-        return {
-          ...tag,
-          subtags: tag.subtags.filter(s => s.subtagTitle !== subtag.subtagTitle)
-        };
-      }
-      return tag;
-    }));
-  };
-
   // Set displayed tag (for showing subtags)
-  const setDisplayedTag = (tagId: string | null) => {
+  const setDisplayedTag = useCallback((tagId: string | null) => {
     enhancedLog(`Setting displayed tag: ${tagId}`);
     setDisplayedTagId(tagId);
-  };
-
-  // Check if a tag is selected for photo application
-  const isTagSelected = (tag: TagData): boolean => {
-    return selectedTags.some(t => t.tagTitle === tag.tagTitle);
-  };
-
-  // Check if a subtag is selected for photo application
-  const isSubtagSelected = (subtag: SubtagData): boolean => {
-    const selectedTag = selectedTags.find(t => t.tagTitle === subtag.tagTitle);
-    return selectedTag?.subtags.some(s => s.subtagTitle === subtag.subtagTitle) || false;
-  };
+  }, [enhancedLog]);
 
   // Get subtags for the displayed tag
-  const getDisplayedTagSubtags = (): SubtagData[] => {
+  const getDisplayedTagSubtags = useCallback((): SubtagData[] => {
     if (!displayedTagId) return [];
     
     const displayedTag = tags.find(t => t.id === displayedTagId);
     return displayedTag?.subtags || [];
-  };
-
-  // NEW: Clear all selected tags (useful after applying tags to photos)
-  const clearSelectedTags = () => {
-    enhancedLog("Clearing all selected tags");
-    setSelectedTags([]);
-    setDisplayedTagId(null);
-  };
+  }, [displayedTagId, tags]);
 
   // Generate a UUID (simple version for demo)
   const generateUUID = (): string => {
@@ -300,7 +489,7 @@ export const useTagsManagement = (
     });
   };
 
-  // Add new tag function - now with actual implementation
+  // Add new tag function
   const addNewTag = async (tagTitle: string, TagType: string): Promise<boolean> => {
     enhancedLog(`Adding new tag: ${tagTitle} of type: ${TagType}`);
     
@@ -319,9 +508,7 @@ export const useTagsManagement = (
       }
 
       // TODO: Replace this with actual backend call
-      // For now, this is a placeholder that simulates the API call
       const simulateBackendCall = async () => {
-        // Placeholder for actual GraphQL mutation
         enhancedLog("PLACEHOLDER: Would send GraphQL mutation to add tag", {
           mutation: ADD_TAG_MUTATION,
           variables: {
@@ -329,22 +516,18 @@ export const useTagsManagement = (
               tagTitle: tagTitle.trim(),
               TagType,
               points: 1,
-              myAccountOwnerItemId: "myAccountOwnerItemId" // This should come from authentication
+              myAccountOwnerItemId: "myAccountOwnerItemId"
             }
           }
         });
         
-        // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 500));
-        
-        // Return simulated success
         return true;
       };
 
       const success = await simulateBackendCall();
       
       if (success) {
-        // Create a temporary tag object to add to local state
         const newTag: TagData = {
           id: generateUUID(),
           tagTitle: tagTitle.trim(),
@@ -355,18 +538,16 @@ export const useTagsManagement = (
           subtags: []
         };
 
-        // Add to local state
         setTags(prev => [newTag, ...prev]);
         
-        // Auto-select and display the new tag for photo application
-        selectTag(newTag);
+        // Auto-apply the new tag to selected files
+        toggleTagOnSelectedFiles(newTag);
         setDisplayedTag(newTag.id);
         
-        // Clear the input
         setNewTagTitle('');
         setIsAddingNewTag(false);
         
-        enhancedLog(`Successfully added new tag for photo application: ${tagTitle}`);
+        enhancedLog(`Successfully added and applied new tag: ${tagTitle}`);
         return true;
       }
       
@@ -380,7 +561,7 @@ export const useTagsManagement = (
     }
   };
 
-  // Add new subtag function - now with actual implementation
+  // Add new subtag function
   const addNewSubtag = async (tagTitle: string, subtagTitle: string, TagType: string): Promise<boolean> => {
     enhancedLog(`Adding new subtag: ${subtagTitle} to tag: ${tagTitle}`);
     
@@ -404,9 +585,7 @@ export const useTagsManagement = (
       }
 
       // TODO: Replace this with actual backend call
-      // For now, this is a placeholder that simulates the API call
       const simulateBackendCall = async () => {
-        // Placeholder for actual GraphQL mutation
         enhancedLog("PLACEHOLDER: Would send GraphQL mutation to add subtag", {
           mutation: ADD_SUBTAG_MUTATION,
           variables: {
@@ -415,22 +594,18 @@ export const useTagsManagement = (
               subtagTitle: subtagTitle.trim(),
               TagType,
               points: 1,
-              myAccountOwnerItemId: "myAccountOwnerItemId" // This should come from authentication
+              myAccountOwnerItemId: "myAccountOwnerItemId"
             }
           }
         });
         
-        // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 500));
-        
-        // Return simulated success
         return true;
       };
 
       const success = await simulateBackendCall();
       
       if (success) {
-        // Create a temporary subtag object to add to local state
         const newSubtag: SubtagData = {
           id: generateUUID(),
           tagTitle,
@@ -441,7 +616,6 @@ export const useTagsManagement = (
           updatedAt: Math.floor(Date.now() / 1000)
         };
 
-        // Add to local state - find the parent tag and add the subtag
         setTags(prev => prev.map(tag => {
           if (tag.id === displayedTagId) {
             return {
@@ -452,14 +626,13 @@ export const useTagsManagement = (
           return tag;
         }));
         
-        // Auto-select the new subtag for photo application
-        selectSubtag(newSubtag);
+        // Auto-apply the new subtag to selected files that have the parent tag
+        toggleSubtagOnSelectedFiles(newSubtag);
         
-        // Clear the input
         setNewSubtagTitle('');
         setIsAddingNewSubtag(false);
         
-        enhancedLog(`Successfully added new subtag for photo application: ${subtagTitle}`);
+        enhancedLog(`Successfully added and applied new subtag: ${subtagTitle}`);
         return true;
       }
       
@@ -473,7 +646,7 @@ export const useTagsManagement = (
     }
   };
 
-  // Delete tag function - now with actual implementation
+  // Delete tag function
   const deleteTag = async (tagId: string): Promise<boolean> => {
     enhancedLog(`Deleting tag: ${tagId}`);
     setTagIdBeingDeleted(tagId);
@@ -486,36 +659,45 @@ export const useTagsManagement = (
       }
 
       // TODO: Replace this with actual backend call
-      // For now, this is a placeholder that simulates the API call
       const simulateBackendCall = async () => {
-        // Placeholder for actual GraphQL mutation
         enhancedLog("PLACEHOLDER: Would send GraphQL mutation to delete tag", {
           mutation: DELETE_TAG_MUTATION,
-          variables: {
-            tagId
-          }
+          variables: { tagId }
         });
         
-        // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 500));
-        
-        // Return simulated success
         return true;
       };
 
       const success = await simulateBackendCall();
       
       if (success) {
+        const deletedTag = tags.find(tag => tag.id === tagId);
+        
         // Remove from local state
         setTags(prev => prev.filter(tag => tag.id !== tagId));
         
-        // Remove from selected tags if it was selected for photo application
-        const deletedTag = tags.find(tag => tag.id === tagId);
+        // Remove from all file tag maps
         if (deletedTag) {
-          unselectTag(deletedTag);
+          setPhotoTagsMap(prev => {
+            const updated = new Map(prev);
+            prev.forEach((tags, index) => {
+              const filteredTags = tags.filter(t => t.tagTitle !== deletedTag.tagTitle);
+              updated.set(index, filteredTags);
+            });
+            return updated;
+          });
+          
+          setExistingFileTagsMap(prev => {
+            const updated = new Map(prev);
+            prev.forEach((tags, index) => {
+              const filteredTags = tags.filter(t => t.tagTitle !== deletedTag.tagTitle);
+              updated.set(index, filteredTags);
+            });
+            return updated;
+          });
         }
         
-        // Clear displayed tag if it was the deleted one
         if (displayedTagId === tagId) {
           setDisplayedTag(null);
         }
@@ -534,7 +716,7 @@ export const useTagsManagement = (
     }
   };
 
-  // Delete subtag function - now with actual implementation
+  // Delete subtag function
   const deleteSubtag = async (subtagId: string): Promise<boolean> => {
     enhancedLog(`Deleting subtag: ${subtagId}`);
     setSubtagIdBeingDeleted(subtagId);
@@ -547,27 +729,19 @@ export const useTagsManagement = (
       }
 
       // TODO: Replace this with actual backend call
-      // For now, this is a placeholder that simulates the API call
       const simulateBackendCall = async () => {
-        // Placeholder for actual GraphQL mutation
         enhancedLog("PLACEHOLDER: Would send GraphQL mutation to delete subtag", {
           mutation: DELETE_SUBTAG_MUTATION,
-          variables: {
-            subtagId
-          }
+          variables: { subtagId }
         });
         
-        // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 500));
-        
-        // Return simulated success
         return true;
       };
 
       const success = await simulateBackendCall();
       
       if (success) {
-        // Find the subtag to be deleted
         let deletedSubtag: SubtagData | null = null;
         
         // Remove from local state
@@ -586,9 +760,41 @@ export const useTagsManagement = (
           };
         }));
         
-        // Remove from selected subtags if it was selected for photo application
+        // Remove from all file tag maps
         if (deletedSubtag) {
-          unselectSubtag(deletedSubtag);
+          setPhotoTagsMap(prev => {
+            const updated = new Map(prev);
+            prev.forEach((tags, index) => {
+              const updatedTags = tags.map(tag => {
+                if (tag.tagTitle === deletedSubtag!.tagTitle) {
+                  return {
+                    ...tag,
+                    subtags: tag.subtags.filter(s => s.subtagTitle !== deletedSubtag!.subtagTitle)
+                  };
+                }
+                return tag;
+              });
+              updated.set(index, updatedTags);
+            });
+            return updated;
+          });
+          
+          setExistingFileTagsMap(prev => {
+            const updated = new Map(prev);
+            prev.forEach((tags, index) => {
+              const updatedTags = tags.map(tag => {
+                if (tag.tagTitle === deletedSubtag!.tagTitle) {
+                  return {
+                    ...tag,
+                    subtags: tag.subtags.filter(s => s.subtagTitle !== deletedSubtag!.subtagTitle)
+                  };
+                }
+                return tag;
+              });
+              updated.set(index, updatedTags);
+            });
+            return updated;
+          });
         }
         
         enhancedLog(`Successfully deleted subtag: ${subtagId}`);
@@ -603,13 +809,6 @@ export const useTagsManagement = (
     } finally {
       setSubtagIdBeingDeleted(null);
     }
-  };
-
-  // Update tag points function - placeholder for future implementation
-  const updateTagPoints = async (tagId: string, points: number): Promise<boolean> => {
-    enhancedLog(`Placeholder: Updating tag points: ${tagId} to ${points}`);
-    // TODO: Implement GraphQL mutation to update tag points
-    return false;
   };
 
   // UI state management functions
@@ -635,7 +834,7 @@ export const useTagsManagement = (
 
   const submitNewTag = async () => {
     if (newTagTitle.trim()) {
-      const success = await addNewTag(newTagTitle, "File"); // Default TagType
+      const success = await addNewTag(newTagTitle, "File");
       return success;
     }
     return false;
@@ -657,10 +856,14 @@ export const useTagsManagement = (
     fetchTags();
   }, []);
 
+  // FIXED: Debug log when selection changes to verify reactivity
+  useEffect(() => {
+    enhancedLog(`Selection changed - Photos: ${selectedPhotoIndices.size}, Existing: ${selectedExistingIndices.size}`);
+  }, [selectedPhotoIndices.size, selectedExistingIndices.size, enhancedLog]);
+
   return {
     // State
     tags,
-    selectedTags, // UPDATED: now represents tags prepared for photo application
     displayedTagId,
     isLoadingTags,
     tagIdBeingDeleted,
@@ -676,28 +879,22 @@ export const useTagsManagement = (
     
     // Actions
     fetchTags,
-    selectTag, // UPDATED: selects tag for photo application
-    unselectTag, // UPDATED: unselects tag from photo application
-    selectSubtag, // UPDATED: selects subtag for photo application
-    unselectSubtag, // UPDATED: unselects subtag from photo application
+    toggleTagOnSelectedFiles,
+    toggleSubtagOnSelectedFiles,
     setDisplayedTag,
-    clearSelectedTags, // NEW: clears all selected tags
     
-    // Getters
-    isTagSelected, // UPDATED: checks if tag is selected for photo application
-    isSubtagSelected, // UPDATED: checks if subtag is selected for photo application
+    // FIXED: Properly memoized getters that update when selection changes
+    isTagAppliedToSelected,
+    isSubtagAppliedToSelected,
     getDisplayedTagSubtags,
-    
-    // State setters
-    setTagIdBeingDeleted,
-    setSubtagIdBeingDeleted,
+    getAppliedTagsForSelected,
+    hasSelectedFiles,
     
     // Add/Remove functions
     addNewTag,
     addNewSubtag,
     deleteTag,
     deleteSubtag,
-    updateTagPoints,
     
     // UI state management
     startAddingNewTag,

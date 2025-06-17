@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
+import React from "react";
 
 // Import styled components - UPDATED: Added FixedHeader, FixedHeaderContent, Body, DropdownMenu, DropdownMenuChoice
 import {
@@ -47,7 +48,7 @@ import {
   FolderDetailsComponent
 } from "./components";
 
-// Import tags functionality
+// SIMPLIFIED: Import simplified tags functionality
 import { useTagsManagement } from "./useTagsManagement";
 import { TagsDisplay } from "./TagDisplayComponents";
 
@@ -506,7 +507,7 @@ const SaveAlbum = () => {
   // NEW: State for settings dropdown
   const [showSettingsDropdown, setShowSettingsDropdown] = useState<boolean>(false);
 
-  // NEW: State for photo selection and tagging
+  // SIMPLIFIED: State for photo selection and tagging
   const [selectedPhotoIndices, setSelectedPhotoIndices] = useState<Set<number>>(new Set());
   const [photoTagsMap, setPhotoTagsMap] = useState<Map<number, { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[]>>(new Map());
 
@@ -774,8 +775,16 @@ const SaveAlbum = () => {
     }
   }, [folderId]);
 
-  // Initialize tags management
-  const tagsManager = useTagsManagement(enhancedLog);
+  // SIMPLIFIED: Initialize tags management with simplified logic - FIXED to ensure reactivity
+  const tagsManager = useTagsManagement(
+    photoTagsMap,
+    setPhotoTagsMap,
+    existingFileTagsMap,
+    setExistingFileTagsMap,
+    selectedPhotoIndices,
+    selectedExistingIndices,
+    enhancedLog
+  );
 
   // Use the album save hook with updated parameters for file-level tagging
   const { saveAlbumDirectly } = useAlbumSave(
@@ -792,6 +801,9 @@ const SaveAlbum = () => {
     passwordProtectionOption,
     albumPassword,
     photoTagsMap, // NEW: pass photo tags map instead of global tags
+    existingFileTagsMap, // NEW: pass existing file tags map
+    existingFiles, // NEW: pass existing files array
+    selectedExistingIndices, // NEW: pass selected existing file indices
     setIsSavingAlbum,
     setSavingProgress,
     setSelectedPhotos,
@@ -947,28 +959,33 @@ const SaveAlbum = () => {
     });
   };
 
+  // FIXED: Enhanced existing file selection functions with better logging
   const toggleExistingFileSelection = (index: number) => {
     enhancedLog(`Toggling selection for existing file at index: ${index}`);
     setSelectedExistingIndices(prev => {
       const updated = new Set(prev);
-      if (updated.has(index)) {
+      const wasSelected = updated.has(index);
+      
+      if (wasSelected) {
         updated.delete(index);
-        enhancedLog(`Deselected existing file ${index}`);
+        enhancedLog(`Deselected existing file ${index} - remaining selected: ${updated.size}`);
       } else {
         updated.add(index);
-        enhancedLog(`Selected existing file ${index}`);
+        enhancedLog(`Selected existing file ${index} - total selected: ${updated.size}`);
       }
+      
       return updated;
     });
   };
 
   const selectAllExistingFiles = () => {
-    enhancedLog("Selecting all existing files");
+    enhancedLog(`Selecting all ${existingFiles.length} existing files`);
     const allIndices = new Set<number>();
     for (let i = 0; i < existingFiles.length; i++) {
       allIndices.add(i);
     }
     setSelectedExistingIndices(allIndices);
+    enhancedLog(`Selected all existing files - total: ${allIndices.size}`);
   };
 
   const deselectAllExistingFiles = () => {
@@ -976,29 +993,33 @@ const SaveAlbum = () => {
     setSelectedExistingIndices(new Set());
   };
 
-  // NEW: Photo selection functions
+  // FIXED: Enhanced photo selection functions with better logging
   const togglePhotoSelection = (index: number) => {
     enhancedLog(`Toggling selection for photo at index: ${index}`);
     setSelectedPhotoIndices(prev => {
       const updated = new Set(prev);
-      if (updated.has(index)) {
+      const wasSelected = updated.has(index);
+      
+      if (wasSelected) {
         updated.delete(index);
-        enhancedLog(`Deselected photo ${index}`);
+        enhancedLog(`Deselected photo ${index} - remaining selected: ${updated.size}`);
       } else {
         updated.add(index);
-        enhancedLog(`Selected photo ${index}`);
+        enhancedLog(`Selected photo ${index} - total selected: ${updated.size}`);
       }
+      
       return updated;
     });
   };
 
   const selectAllPhotos = () => {
-    enhancedLog("Selecting all photos");
+    enhancedLog(`Selecting all ${selectedPhotos.length} photos`);
     const allIndices = new Set<number>();
     for (let i = 0; i < selectedPhotos.length; i++) {
       allIndices.add(i);
     }
     setSelectedPhotoIndices(allIndices);
+    enhancedLog(`Selected all photos - total: ${allIndices.size}`);
   };
 
   const deselectAllPhotos = () => {
@@ -1019,6 +1040,15 @@ const SaveAlbum = () => {
       enhancedLog("Cleared all photos from localStorage");
     }
   };
+
+  // FIXED: Add useEffect to log when selection changes for debugging
+  useEffect(() => {
+    enhancedLog(`Selection state changed:`, {
+      selectedPhotos: Array.from(selectedPhotoIndices),
+      selectedExistingFiles: Array.from(selectedExistingIndices),
+      totalSelected: selectedPhotoIndices.size + selectedExistingIndices.size
+    });
+  }, [selectedPhotoIndices, selectedExistingIndices, enhancedLog]);
 
   // ---------- PUBLIC PROFILE TOGGLE ----------
   
@@ -1143,11 +1173,16 @@ const SaveAlbum = () => {
   // Determine if tagging should be disabled
   const isTaggingDisabled = isSavingAlbum || isUploading || isLoadingExistingFiles;
 
-  // Check if we have any files to show the tagging section
+  // SIMPLIFIED: Check if we have any files and if any are selected
   const hasAnyFiles = selectedPhotos.length > 0 || existingFiles.length > 0;
+  const hasSelectedFiles = selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0;
 
-  // Check if any photos are selected to show the tagging section
-  const hasSelectedPhotos = selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0;
+  // FIXED: Calculate total selected files count with proper memoization to trigger re-renders
+  const totalSelectedFilesCount = React.useMemo(() => {
+    const count = selectedPhotoIndices.size + selectedExistingIndices.size;
+    enhancedLog(`Total selected files count updated: ${count}`);
+    return count;
+  }, [selectedPhotoIndices.size, selectedExistingIndices.size, enhancedLog]);
 
   // ========== RENDER METHODS ==========
 
@@ -1312,7 +1347,7 @@ const SaveAlbum = () => {
       {/* NEW: Use Body component for proper fixed header spacing */}
       <Body $isRTL={isRTL}>
         {/* Folder Details - Only show if user is creator with updated placeholder text */}
-        <div style={{ marginTop: showFolderDetails && isCreator === true ? '32px' : '0' }}>
+        <div style={{ marginTop: showFolderDetails && isCreator === true ? '3px' : '0' }}>
           <FolderDetailsComponent
             showFolderDetails={showFolderDetails}
             isCreator={isCreator}
@@ -1354,7 +1389,7 @@ const SaveAlbum = () => {
           style={{ display: 'none' }}
         />
         
-        {/* NEW: Unified Tagging Section - Always show files if user is creator and has files */}
+        {/* SIMPLIFIED: Unified Tagging Section - Only show if user is creator and has files */}
         {showFolderDetails && isCreator === true && hasAnyFiles && (
           <TaggingSectionContainer t={t} isRTL={isRTL}>
             {/* Existing Files Section */}
@@ -1388,16 +1423,15 @@ const SaveAlbum = () => {
               isRTL={isRTL}
             />
             
-            {/* Tags Selection Section - Only show when photos are selected */}
-            {hasSelectedPhotos && (
-              <div style={{ marginTop: '32px' }}>
-                <TagsDisplay 
-                  tagsManager={tagsManager}
-                  disabled={isTaggingDisabled}
-                  enhancedLog={enhancedLog}
-                />
-              </div>
-            )}
+            {/* SIMPLIFIED: Tags Section - FIXED to ensure proper re-rendering */}
+            <div style={{ marginTop: hasSelectedFiles ? '32px' : '16px' }}>
+              <TagsDisplay 
+                key={`tags-${totalSelectedFilesCount}`} // FIXED: Force re-render when selection changes
+                tagsManager={tagsManager}
+                disabled={isTaggingDisabled}
+                enhancedLog={enhancedLog}
+              />
+            </div>
           </TaggingSectionContainer>
         )}
                   
