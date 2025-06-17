@@ -104,6 +104,7 @@ const FETCH_FOLDER_QUERY = `
         }
         folderInviteParameters {
           usingFolderInviteGrantsRightToAddItems
+          usingFolderInviteGrantsRightToRemoveItems
         }
         folderPosition {
           id
@@ -128,6 +129,7 @@ export const useAlbumInitialization = (
   setAlbumPassword: React.Dispatch<React.SetStateAction<string>>,
   setIsSubAlbum: React.Dispatch<React.SetStateAction<boolean>>,
   setSelectedFileIds: React.Dispatch<React.SetStateAction<string[]>>,
+  setParticipantsCanDeleteItems: React.Dispatch<React.SetStateAction<boolean>>, // NEW: Add this parameter
   enhancedLog: (message: string, data?: any) => void
 ) => {
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
@@ -176,6 +178,12 @@ export const useAlbumInitialization = (
               if (folderDetails.participantsCanAddItems !== undefined) {
                 setParticipantsCanAddItems(folderDetails.participantsCanAddItems);
                 enhancedLog(`Setting participantsCanAddItems: ${folderDetails.participantsCanAddItems}`);
+              }
+              
+              // NEW: Set participants can delete items toggle state based on folderDetails
+              if (folderDetails.participantsCanDeleteItems !== undefined) {
+                setParticipantsCanDeleteItems(folderDetails.participantsCanDeleteItems);
+                enhancedLog(`Setting participantsCanDeleteItems: ${folderDetails.participantsCanDeleteItems}`);
               }
               
               // Handle password policy with proper enum mapping
@@ -288,6 +296,10 @@ export const useAlbumInitialization = (
       const canAddItems = folder.folderInviteParameters?.usingFolderInviteGrantsRightToAddItems;
       enhancedLog(`Participants can add items: ${canAddItems}`);
       
+      // NEW: Extract participants can delete items setting
+      const canDeleteItems = folder.folderInviteParameters?.usingFolderInviteGrantsRightToRemoveItems;
+      enhancedLog(`Participants can delete items: ${canDeleteItems}`);
+      
       return {
         creatorId: folder.creatorId || '',
         folderName: folder.folderName || '',
@@ -295,7 +307,8 @@ export const useAlbumInitialization = (
         passwordPolicy: folder.folderPassword?.policy || 'NoPassword',
         password: folder.folderPassword?.password || '',
         isOnPublicProfile: isPublic,
-        participantsCanAddItems: canAddItems !== undefined ? canAddItems : true
+        participantsCanAddItems: canAddItems !== undefined ? canAddItems : true,
+        participantsCanDeleteItems: canDeleteItems !== undefined ? canDeleteItems : false // NEW: Add this field
       };
     } catch (error) {
       console.error("Error in fetchFolderDetails:", error);
@@ -454,6 +467,7 @@ export const useAlbumSave = (
   folderDescription: string,
   isOnPublicProfile: boolean,
   participantsCanAddItems: boolean,
+  participantsCanDeleteItems: boolean, // NEW: Add this parameter
   passwordProtectionOption: PasswordPolicyEnum,
   albumPassword: string,
   // NEW: Map of photo indices to their tags
@@ -573,6 +587,7 @@ export const useAlbumSave = (
     enhancedLog(`Password protection: ${passwordProtectionOption}`);
     enhancedLog(`Album password: ${folderPassword ? '******' : 'null'}`);
     enhancedLog(`Participants can add items: ${participantsCanAddItems}`);
+    enhancedLog(`Participants can delete items: ${participantsCanDeleteItems}`); // NEW: Add this log
     
     if (!folderId) {
       enhancedLog("Error: folderId is null or undefined");
@@ -602,9 +617,9 @@ export const useAlbumSave = (
         folderInviteParametersInput: {
           folderIsOnlyVisibleThroughCode: true,
           folderInviteHasBeenDisabled: false,
-          usingFolderInviteGrantsRightToRemoveItems: false,
           tagContactIdUsingFolderInviteAsFolderAboutContact: true,
           usingFolderInviteGrantsRightToAddItems: participantsCanAddItems,
+          usingFolderInviteGrantsRightToRemoveItems: participantsCanDeleteItems,
           addedItemsNeedFolderCreatorApproval: false
         }
       }

@@ -395,7 +395,7 @@ const ExistingFilesSection = ({
                     fontSize: '12px',
                     fontWeight: 'bold',
                     zIndex: 15,
-                    opacity: 0,
+                    opacity: 1,
                     transition: 'all 0.2s ease',
                     transform: 'scale(0.8)'
                   }}
@@ -490,6 +490,9 @@ const SaveAlbum = () => {
   // Participants Can Add Items toggle state
   const [participantsCanAddItems, setParticipantsCanAddItems] = useState<boolean>(true);
   
+  // NEW: Participants Can Delete Items toggle state
+  const [participantsCanDeleteItems, setParticipantsCanDeleteItems] = useState<boolean>(false);
+  
   // State for checking if user is the creator - initialize as null (undetermined)
   const [isCreator, setIsCreator] = useState<boolean | null>(null);
 
@@ -530,9 +533,22 @@ const SaveAlbum = () => {
     currentFolderId,
     openFilePicker,
     handleFileSelection,
-    setEditingExistingAlbum,
+    setOnSaveAlbumPage, // UPDATED: Use setOnSaveAlbumPage instead of setEditingExistingAlbum
     log
   } = useFileUploadProcessor(navigateAfterUpload, true); // Disable auto-navigation
+
+  // NEW: Set that we're on the save-album page so navigation is disabled
+  useEffect(() => {
+    // Tell the hook we're on the save-album page so it won't navigate
+    setOnSaveAlbumPage(true);
+    enhancedLog("🏠 Set isOnSaveAlbumPage to true - navigation disabled");
+    
+    return () => {
+      // Clean up when leaving the page
+      setOnSaveAlbumPage(false);
+      enhancedLog("🏠 Set isOnSaveAlbumPage to false - navigation enabled");
+    };
+  }, [setOnSaveAlbumPage]);
 
   // NEW: Prewarm S3 credentials when the page loads for extra reliability
   useEffect(() => {
@@ -668,8 +684,7 @@ const SaveAlbum = () => {
         setFolderDescription(folder.folderDescription);
       }
 
-      // Set up the upload processor for existing album mode
-      setEditingExistingAlbum(albumFolderId);
+      // REMOVED: No longer calling setEditingExistingAlbum since we use setOnSaveAlbumPage
 
     } catch (error) {
       console.error("Failed to fetch existing album data:", error);
@@ -679,13 +694,13 @@ const SaveAlbum = () => {
     }
   };
 
-  // NEW: Load existing files when folderId changes
+  // UPDATED: Load existing files when folderId changes (simplified)
   useEffect(() => {
-    if (folderId && folderId !== currentFolderId) {
+    if (folderId) {
       enhancedLog(`Loading existing files for folder ID: ${folderId}`);
       fetchExistingAlbumData(folderId);
     }
-  }, [folderId, currentFolderId]);
+  }, [folderId]);
 
   // Initialize tags management
   const tagsManager = useTagsManagement(enhancedLog);
@@ -704,6 +719,7 @@ const SaveAlbum = () => {
     setAlbumPassword,
     setIsSubAlbum,
     setSelectedFileIds,
+    setParticipantsCanDeleteItems, // NEW: Add this parameter
     enhancedLog
   );
 
@@ -718,6 +734,7 @@ const SaveAlbum = () => {
     folderDescription,
     isOnPublicProfile,
     participantsCanAddItems,
+    participantsCanDeleteItems, // NEW: Add this parameter
     passwordProtectionOption,
     albumPassword,
     photoTagsMap, // NEW: pass photo tags map instead of global tags
@@ -728,7 +745,7 @@ const SaveAlbum = () => {
     enhancedLog
   );
 
-  // Update folderId when currentFolderId changes
+  // UPDATED: Update folderId when currentFolderId changes (simplified)
   useEffect(() => {
     if (currentFolderId && !folderId) {
       setFolderId(currentFolderId);
@@ -965,6 +982,14 @@ const SaveAlbum = () => {
     setParticipantsCanAddItems(newValue);
   };
 
+  // NEW: ---------- PARTICIPANTS CAN DELETE ITEMS TOGGLE ----------
+  
+  const handleParticipantsCanDeleteItemsToggle = () => {
+    const newValue = !participantsCanDeleteItems;
+    enhancedLog(`Toggling participantsCanDeleteItems to: ${newValue}`);
+    setParticipantsCanDeleteItems(newValue);
+  };
+
   // ---------- ALBUM SAVING ----------
 
   const handleSaveAlbum = async () => {
@@ -1128,7 +1153,7 @@ const SaveAlbum = () => {
                 </button>
                 
                 {showSettingsDropdown && !isSavingAlbum && !isUploading && !isLoadingExistingFiles && (
-                  <DropdownMenu style={{ minWidth: '280px' }}>
+                  <DropdownMenu>
                     <DropdownMenuChoice
                       onClick={() => handleSettingsOptionClick(handlePublicProfileToggle)}
                     >
@@ -1158,7 +1183,7 @@ const SaveAlbum = () => {
                         alignItems: 'center',
                         width: '100%'
                       }}>
-                        <span>{t('Participants Can Add Items')}</span>
+                        <span>{participantsCanAddItems ? t('Allow Additions') : t('Do Not Allow Additions')}</span>
                         <span style={{ 
                           fontSize: '12px', 
                           color: participantsCanAddItems ? '#28a745' : '#6c757d',
@@ -1170,11 +1195,7 @@ const SaveAlbum = () => {
                     </DropdownMenuChoice>
                     
                     <DropdownMenuChoice
-                      onClick={() => handleSettingsOptionClick(() => {
-                        // Placeholder for "Participants Can Delete Items" - this functionality would need to be implemented
-                        enhancedLog("Participants Can Delete Items clicked - functionality not yet implemented");
-                      })}
-                      style={{ opacity: 0.6 }}
+                      onClick={() => handleSettingsOptionClick(handleParticipantsCanDeleteItemsToggle)}
                     >
                       <div style={{
                         display: 'flex',
@@ -1182,13 +1203,13 @@ const SaveAlbum = () => {
                         alignItems: 'center',
                         width: '100%'
                       }}>
-                        <span>{t('Participants Can Delete Items')}</span>
+                        <span>{participantsCanDeleteItems ? t('Allow Removals') : t('Do Not Allow Removals')}</span>
                         <span style={{ 
                           fontSize: '12px', 
-                          color: '#6c757d',
+                          color: participantsCanDeleteItems ? '#28a745' : '#6c757d',
                           fontWeight: 'bold'
                         }}>
-                          ○
+                          {participantsCanDeleteItems ? '✓' : '○'}
                         </span>
                       </div>
                     </DropdownMenuChoice>

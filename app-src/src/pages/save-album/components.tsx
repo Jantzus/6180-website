@@ -148,7 +148,7 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                     fontSize: '12px',
                     fontWeight: 'bold',
                     zIndex: 15,
-                    opacity: 0,
+                    opacity: 1,
                     transition: 'all 0.2s ease',
                     transform: 'scale(0.8)'
                   }}

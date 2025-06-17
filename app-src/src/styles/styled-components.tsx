@@ -749,7 +749,6 @@ export const Button = styled.button<ButtonProps>`
   min-width: 120px; /* Reduced slightly for better mobile fit */
   white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
-  margin-left: auto; /* Align to trailing side */
   box-shadow: ${props => props.$primary ? theme.boxShadow.primaryBtn : 'none'};
   display: flex;
   align-items: center;
@@ -821,12 +820,12 @@ export const RemoveButton = styled.button<ButtonProps>`
   padding: 6px ${theme.spacing.sm};
   font-size: ${theme.fontSizes.xs};
   margin-top: auto;
-  height: auto; /* Allow remove buttons to have natural height */
+  height: auto;
 `;
 
 export const NavButtonsContainer = styled.div`
   display: flex;
-  gap: ${theme.spacing.xs}; /* Reduced from sm (8px) to xs (4px) */
+  gap: ${theme.spacing.xs};
 `;
 
 export const ActionButtons = styled.div`
@@ -836,6 +835,8 @@ export const ActionButtons = styled.div`
   /* Enhanced: Use consistent grid spacing */
   margin-bottom: ${theme.spacing.lg};
   width: 100%;
+  align-items: flex-end; /* Align buttons to the right side */
+  padding: 0 ${theme.spacing.sm}; /* Match the header button positioning */
 `;
 
 // ========== User Profile & Account Components ==========

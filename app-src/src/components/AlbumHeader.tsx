@@ -71,7 +71,7 @@ export const AlbumHeader: React.FC<{
             marginLeft: '0', // Override the default margin-left: auto
           }}
         >
-          {t('Share Selection')} ({selectedItems.size})
+          {t('Share')} ({selectedItems.size})
         </Button>
       )}
       

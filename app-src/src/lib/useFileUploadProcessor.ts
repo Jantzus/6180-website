@@ -18,13 +18,13 @@ import { prewarmCredentials } from "./s3";
  * This hook consolidates common file upload logic used across the application
  * with performance optimizations to prevent unnecessary re-renders and bandwidth usage
  * 
- * NEW: Enhanced to better separate new uploads from existing files
- * UPDATED: Improved navigation logic and state management for existing albums
+ * FIXED: Enhanced navigation logic to properly handle "Add Photos" flow
+ * UPDATED: Improved navigation logic using isOnSaveAlbumPage instead of isEditingExistingAlbum
  * ENHANCED: Support for credential prewarming and better error handling
  */
 export const useFileUploadProcessor = (
   navigateAfterUpload?: (folderId: string | null) => void,
-  // NEW: Option to disable auto-navigation (useful when editing existing albums)
+  // Option to disable auto-navigation (useful when editing existing albums)
   disableAutoNavigation?: boolean
 ) => {
   // Core file input and state management
@@ -44,8 +44,8 @@ export const useFileUploadProcessor = (
   const [fileProcessingComplete, setFileProcessingComplete] = useState(false);
   const [currentFolderId, setCurrentFolderId] = useState<string | null>(null);
   
-  // NEW: Track if we're working with an existing album
-  const [isEditingExistingAlbum, setIsEditingExistingAlbum] = useState(false);
+  // Track if we're on the save-album page (instead of isEditingExistingAlbum)
+  const [isOnSaveAlbumPage, setIsOnSaveAlbumPage] = useState(false);
   
   // MEMOIZED: Create logger function to prevent recreation on every render
   const log = useMemo(() => createLogger(setDebugMessages), []);
@@ -53,7 +53,7 @@ export const useFileUploadProcessor = (
   // MEMOIZED: Create photo status updater to prevent recreation on every render
   const updatePhotoStatus = useMemo(() => createPhotoStatusUpdater(setSelectedPhotos), []);
   
-  // NEW: Prewarm S3 credentials on hook initialization to eliminate first-upload stalling
+  // Prewarm S3 credentials on hook initialization to eliminate first-upload stalling
   useEffect(() => {
     const warmUpCredentials = async () => {
       try {
@@ -83,13 +83,18 @@ export const useFileUploadProcessor = (
     }
   }, [selectedPhotos]);
 
-  // OPTIMIZED: Handle navigation after file processing is complete
-  // Use refs to avoid stale closure issues and reduce re-renders
+  // FIXED: Handle navigation after file processing is complete
+  // Simplified navigation logic to fix "Add Photos" flow
   const navigationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   useEffect(() => {
-    // NEW: Only navigate if auto-navigation is enabled and we're not editing an existing album
-    if (fileProcessingComplete && selectedPhotos.length > 0 && !disableAutoNavigation && !isEditingExistingAlbum) {
+    // FIXED: Simplified navigation conditions
+    const shouldNavigate = fileProcessingComplete && 
+                          selectedPhotos.length > 0 && 
+                          disableAutoNavigation !== true && 
+                          !isOnSaveAlbumPage;
+    
+    if (shouldNavigate) {
       // Clear any existing timeout to prevent duplicate navigation
       if (navigationTimeoutRef.current) {
         clearTimeout(navigationTimeoutRef.current);
@@ -100,26 +105,32 @@ export const useFileUploadProcessor = (
       const errorCount = selectedPhotos.filter(photo => photo.status === 'error').length;
       
       log(`✅ Upload complete: ${successCount} successful, ${errorCount} failed`);
+      log(`🚀 Navigating to save-album with folderId: ${currentFolderId}`);
       
       // Set uploading to false immediately to clean up UI
       setIsUploading(false);
       setIsProcessingFiles(false);
       
-      // Schedule navigation with cleanup
+      // FIXED: Shorter timeout and better navigation logic
       navigationTimeoutRef.current = setTimeout(() => {
-        if (navigateAfterUpload) {
-          navigateAfterUpload(currentFolderId);
-        } else {
-          // Default navigation behavior if no callback provided
-          if (currentFolderId) {
-            redirectTo(`save-album.html?folderId=${encodeURIComponent(currentFolderId)}`);
+        try {
+          if (navigateAfterUpload) {
+            log(`🎯 Using custom navigation callback with folderId: ${currentFolderId}`);
+            navigateAfterUpload(currentFolderId);
           } else {
-            redirectTo("save-album.html");
+            // Default navigation behavior if no callback provided
+            const targetUrl = currentFolderId ? 
+              `save-album.html?folderId=${encodeURIComponent(currentFolderId)}` : 
+              "save-album.html";
+            log(`🎯 Using default navigation to: ${targetUrl}`);
+            redirectTo(targetUrl);
           }
+        } catch (error) {
+          log(`❌ Navigation error: ${String(error)}`);
         }
-      }, 800);
-    } else if (fileProcessingComplete && selectedPhotos.length > 0) {
-      // NEW: For existing albums, just clean up the upload state without navigating
+      }, 500); // Reduced timeout for faster navigation
+    } else if (fileProcessingComplete && selectedPhotos.length > 0 && isOnSaveAlbumPage) {
+      // For save-album page, just clean up the upload state without navigating
       const successCount = selectedPhotos.filter(photo => photo.status === 'complete').length;
       const errorCount = selectedPhotos.filter(photo => photo.status === 'error').length;
       
@@ -134,7 +145,7 @@ export const useFileUploadProcessor = (
         clearTimeout(navigationTimeoutRef.current);
       }
     };
-  }, [fileProcessingComplete, selectedPhotos.length, currentFolderId, navigateAfterUpload, log, disableAutoNavigation, isEditingExistingAlbum]);
+  }, [fileProcessingComplete, selectedPhotos.length, currentFolderId, navigateAfterUpload, log, disableAutoNavigation, isOnSaveAlbumPage]);
 
   // MEMOIZED: Function to clear upload data
   const clearUploadData = useCallback(() => {
@@ -151,7 +162,7 @@ export const useFileUploadProcessor = (
     setIsUploading(false);
     setIsProcessingFiles(false);
     setFileProcessingComplete(false);
-    setIsEditingExistingAlbum(false);
+    setIsOnSaveAlbumPage(false);
     
     // Clear any pending navigation
     if (navigationTimeoutRef.current) {
@@ -162,9 +173,8 @@ export const useFileUploadProcessor = (
 
   // MEMOIZED: Function to open file picker
   const openFilePicker = useCallback((folderId: string | null = null) => {
-    // NEW: Determine if we're working with an existing album
+    // Determine if we're working with an existing album
     const isExistingAlbum = Boolean(folderId);
-    setIsEditingExistingAlbum(isExistingAlbum);
     
     // Set current folder ID if adding to existing folder
     setCurrentFolderId(folderId);
@@ -180,36 +190,38 @@ export const useFileUploadProcessor = (
     }
     
     log(isExistingAlbum ? 
-      `Opening file picker for existing album: ${folderId}` : 
-      "Opening file picker for new album"
+      `📂 Opening file picker for existing album: ${folderId}` : 
+      "📂 Opening file picker for new album"
     );
     
     fileInputRef.current?.click();
   }, [log]);
 
-  // NEW: Function to set up for editing an existing album
-  const setEditingExistingAlbum = useCallback((folderId: string) => {
-    setCurrentFolderId(folderId);
-    setIsEditingExistingAlbum(true);
-    log(`Set up for editing existing album: ${folderId}`);
+  // Function to set that we're on the save-album page
+  const setOnSaveAlbumPage = useCallback((isOnPage: boolean) => {
+    setIsOnSaveAlbumPage(isOnPage);
+    log(`🏠 Set isOnSaveAlbumPage to: ${isOnPage}`);
   }, [log]);
 
   // MEMOIZED: Handle file selection with optimized state management
-  // UPDATED: Enhanced logic for existing albums vs new albums
+  // FIXED: Enhanced error handling and logging
   const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>, cognitoUsername: string | null) => {
     const files = Array.from(e.target.files || []);
-    if (!files.length) return false;
+    if (!files.length) {
+      log("❌ No files selected");
+      return false;
+    }
 
-    // Get current photos to append to (only if we're editing an existing album and want to preserve uploads)
-    const existingPhotos = isEditingExistingAlbum ? 
+    // Get current photos to append to (only if we're on save-album page and want to preserve uploads)
+    const existingPhotos = isOnSaveAlbumPage ? 
       selectedPhotos.filter(photo => photo.status === 'complete' || photo.status === 'error') : 
       [];
     const isAddingToExisting = existingPhotos.length > 0;
     
-    log(isEditingExistingAlbum ? 
+    log(currentFolderId ? 
       (isAddingToExisting ? 
         `📸 Adding ${files.length} new files to existing album with ${existingPhotos.length} previously uploaded photos` : 
-        `📸 Adding ${files.length} new files to existing album`
+        `📸 Adding ${files.length} new files to existing album: ${currentFolderId}`
       ) :
       `📸 Processing ${files.length} new files for new album`
     );
@@ -234,24 +246,24 @@ export const useFileUploadProcessor = (
       overallProgress: totalFiles > 0 ? (filesComplete / totalFiles) * 100 : 0
     });
     
-    // Get a fresh token using the async function
-    const token = await checkLoginWithRefresh();
-    
-    if (!token) {
-      log("❌ Authentication failed");
-      setIsUploading(false);
-      setIsProcessingFiles(false);
-      return false;
-    }
-    
-    if (!cognitoUsername) {
-      log("❌ Missing Cognito Username");
-      setIsUploading(false);
-      setIsProcessingFiles(false);
-      return false;
-    }
-  
     try {
+      // Get a fresh token using the async function
+      const token = await checkLoginWithRefresh();
+      
+      if (!token) {
+        log("❌ Authentication failed");
+        setIsUploading(false);
+        setIsProcessingFiles(false);
+        return false;
+      }
+      
+      if (!cognitoUsername) {
+        log("❌ Missing Cognito Username");
+        setIsUploading(false);
+        setIsProcessingFiles(false);
+        return false;
+      }
+    
       // Generate a new folder ID or use existing one
       const newFolderId = currentFolderId || `${cognitoUsername}_____${generateUUID()}____Folder`;
       log(`📁 Using folder ID: ${newFolderId}${currentFolderId ? ' (existing)' : ' (new)'}`);
@@ -271,6 +283,8 @@ export const useFileUploadProcessor = (
       const combinedPhotos = [...existingPhotos, ...newPhotos];
       setSelectedPhotos(combinedPhotos);
       
+      log(`🚀 Starting upload process for ${files.length} files...`);
+      
       // Process only the new files
       const processedNewPhotos = await processFilesBeforeUploadingToS3(files, cognitoUsername, updatePhotoStatus, log);
       
@@ -281,14 +295,10 @@ export const useFileUploadProcessor = (
       // Make sure we have a final progress update
       updateProgressTracker(finalCombinedPhotos, setProgressTracker);
       
-      // Save to localStorage - ONLY the keys and metadata, not the file data
-      // NEW: For existing albums, we might want to handle localStorage differently
-      if (!isEditingExistingAlbum || existingPhotos.length === 0) {
-        localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(finalCombinedPhotos));
-        log(`📸 Saved ${finalCombinedPhotos.length} photos metadata to storage`);
-      } else {
-        log(`📸 Processed ${processedNewPhotos.length} new photos for existing album (not overwriting localStorage)`);
-      }
+      // FIXED: Always save to localStorage for navigation flow
+      // This ensures save-album.tsx can load the photos
+      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(finalCombinedPhotos));
+      log(`💾 Saved ${finalCombinedPhotos.length} photos metadata to localStorage`);
       
       // Check results for new photos only
       const newCompletePhotos = processedNewPhotos.filter(photo => photo.status === 'complete');
@@ -300,30 +310,33 @@ export const useFileUploadProcessor = (
         log(`⚠️ Upload completed with ${newErrorPhotos.length} errors out of ${processedNewPhotos.length} new files`);
       }
       
-      // Set the file processing completion flag to trigger the navigation effect
+      // FIXED: Set the file processing completion flag to trigger the navigation effect
+      log(`🎯 Setting fileProcessingComplete=true to trigger navigation`);
       setFileProcessingComplete(true);
       return true;
 
     } catch (error) {
       log(`❌ Fatal error in handleFileSelection: ${String(error)}`);
+      console.error("Upload error:", error);
       setIsUploading(false);
       setIsProcessingFiles(false);
+      setFileProcessingComplete(false);
       return false;
     } finally {
       // Clear the file input to allow selecting the same files again
       if (e.target) e.target.value = "";
     }
-  }, [currentFolderId, updatePhotoStatus, log, selectedPhotos, isEditingExistingAlbum]);
+  }, [currentFolderId, updatePhotoStatus, log, selectedPhotos, isOnSaveAlbumPage]);
 
-  // NEW: Function to reset for new album creation
+  // Function to reset for new album creation
   const resetForNewAlbum = useCallback(() => {
     clearUploadData();
     setCurrentFolderId(null);
-    setIsEditingExistingAlbum(false);
+    setIsOnSaveAlbumPage(false);
     log("🔄 Reset for new album creation");
   }, [clearUploadData, log]);
 
-  // NEW: Function to load photos from localStorage (useful for page refreshes)
+  // Function to load photos from localStorage (useful for page refreshes)
   const loadPhotosFromStorage = useCallback(() => {
     try {
       const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
@@ -341,7 +354,7 @@ export const useFileUploadProcessor = (
     return [];
   }, [log]);
 
-  // NEW: Function to check if there are uploads in progress
+  // Function to check if there are uploads in progress
   const hasUploadsInProgress = useCallback(() => {
     return isUploading || isProcessingFiles || (
       progressTracker.totalFiles > 0 && 
@@ -349,7 +362,7 @@ export const useFileUploadProcessor = (
     );
   }, [isUploading, isProcessingFiles, progressTracker]);
 
-  // NEW: Function to get upload statistics
+  // Function to get upload statistics
   const getUploadStats = useCallback(() => {
     const complete = selectedPhotos.filter(photo => photo.status === 'complete').length;
     const errors = selectedPhotos.filter(photo => photo.status === 'error').length;
@@ -397,8 +410,8 @@ export const useFileUploadProcessor = (
     setFileProcessingComplete,
     currentFolderId,
     
-    // NEW: Enhanced state for existing album support
-    isEditingExistingAlbum,
+    // Enhanced state for save-album page tracking
+    isOnSaveAlbumPage,
     
     // Core functions
     openFilePicker,
@@ -407,8 +420,8 @@ export const useFileUploadProcessor = (
     log,
     updatePhotoStatus,
     
-    // NEW: Enhanced functions for existing album support
-    setEditingExistingAlbum,
+    // Enhanced functions for save-album page support
+    setOnSaveAlbumPage,
     resetForNewAlbum,
     loadPhotosFromStorage,
     hasUploadsInProgress,

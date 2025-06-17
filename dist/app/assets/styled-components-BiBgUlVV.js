@@ -513,7 +513,6 @@ import{aG as m,o as i,d as t}from"./utils-DWLWZiq9.js";const e={colors:{primary:
   min-width: 120px; /* Reduced slightly for better mobile fit */
   white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
-  margin-left: auto; /* Align to trailing side */
   box-shadow: ${o=>o.$primary?e.boxShadow.primaryBtn:"none"};
   display: flex;
   align-items: center;
@@ -571,18 +570,20 @@ import{aG as m,o as i,d as t}from"./utils-DWLWZiq9.js";const e={colors:{primary:
   padding: 6px ${e.spacing.sm};
   font-size: ${e.fontSizes.xs};
   margin-top: auto;
-  height: auto; /* Allow remove buttons to have natural height */
+  height: auto;
 `;const H=t.div`
   display: flex;
-  gap: ${e.spacing.xs}; /* Reduced from sm (8px) to xs (4px) */
-`,D=t.div`
+  gap: ${e.spacing.xs};
+`,M=t.div`
   display: flex;
   flex-direction: column;
   gap: ${e.spacing.xs}; /* Reduced from sm (8px) to xs (4px) */
   /* Enhanced: Use consistent grid spacing */
   margin-bottom: ${e.spacing.lg};
   width: 100%;
-`,M=t.a`
+  align-items: flex-end; /* Align buttons to the right side */
+  padding: 0 ${e.spacing.sm}; /* Match the header button positioning */
+`,D=t.a`
   font-size: ${e.fontSizes.sm};
   color: ${e.colors.primary};
   text-decoration: none;
@@ -1318,4 +1319,4 @@ import{aG as m,o as i,d as t}from"./utils-DWLWZiq9.js";const e={colors:{primary:
   margin-bottom: ${e.spacing.lg};
   display: flex;
   justify-content: flex-end;
-`;export{W as $,y as A,p as B,_ as C,fe as D,be as E,Le as F,f as G,j as H,te as I,ie as J,ce as K,B as L,J as M,H as N,le as O,pe as P,re as Q,ne as R,Re as S,ye as T,Se as U,de as V,Be as W,ve as X,ze as Y,Q as Z,O as _,U as a,Y as a0,F as a1,T as a2,A as a3,x as a4,R as a5,S as a6,v as a7,E as a8,I as a9,L as aa,$e as ab,V as ac,X as ad,N as ae,Te as af,K as ag,q as ah,Z as ai,Ae as aj,C as b,Ce as c,Fe as d,Ee as e,Ie as f,je as g,xe as h,me as i,he as j,ee as k,oe as l,ae as m,se as n,Ue as o,z as p,k as q,M as r,P as s,w as t,D as u,ke as v,we as w,ge as x,G as y,ue as z};
+`;export{W as $,y as A,p as B,_ as C,fe as D,be as E,Le as F,f as G,j as H,te as I,ie as J,ce as K,B as L,J as M,H as N,le as O,pe as P,re as Q,ne as R,Re as S,ye as T,Se as U,de as V,Be as W,ve as X,ze as Y,Q as Z,O as _,U as a,Y as a0,F as a1,T as a2,A as a3,x as a4,R as a5,S as a6,v as a7,E as a8,I as a9,L as aa,$e as ab,V as ac,X as ad,N as ae,Te as af,K as ag,q as ah,Z as ai,Ae as aj,C as b,Ce as c,Fe as d,Ee as e,Ie as f,je as g,xe as h,me as i,he as j,ee as k,oe as l,ae as m,se as n,Ue as o,z as p,k as q,D as r,P as s,w as t,M as u,ke as v,we as w,ge as x,G as y,ue as z};

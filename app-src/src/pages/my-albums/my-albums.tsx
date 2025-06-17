@@ -588,15 +588,23 @@ const MyAlbums = () => {
     calculatedBytesUsed
   } = useFolderManagement((message: string) => log(message));
   
-  // Directly integrate the file upload processor hook
-  const fileUploadProcessor = useFileUploadProcessor((folderId) => {
+  // FIXED: Directly integrate the file upload processor hook with proper navigation
+  const fileUploadProcessor = useFileUploadProcessor(
     // Custom navigation callback for the album upload flow
-    if (folderId) {
-      redirectTo(`save-album.html?folderId=${encodeURIComponent(folderId)}`);
-    } else {
-      redirectTo("save-album.html");
-    }
-  });
+    (folderId) => {
+      log(`🚀 Navigation callback triggered with folderId: ${folderId}`);
+      if (folderId) {
+        const targetUrl = `save-album.html?folderId=${encodeURIComponent(folderId)}`;
+        log(`🎯 Redirecting to: ${targetUrl}`);
+        redirectTo(targetUrl);
+      } else {
+        log(`🎯 Redirecting to: save-album.html`);
+        redirectTo("save-album.html");
+      }
+    },
+    // FIXED: Explicitly set disableAutoNavigation to false to ensure navigation works
+    false // This ensures auto-navigation is enabled for my-albums page
+  );
   
   // Destructure the file upload processor for easier access
   const {
@@ -609,7 +617,7 @@ const MyAlbums = () => {
     log
   } = fileUploadProcessor;
 
-  // NEW: Prewarm S3 credentials when the page loads for extra reliability
+  // Prewarm S3 credentials when the page loads for extra reliability
   useEffect(() => {
     const warmUpPageCredentials = async () => {
       try {
@@ -640,19 +648,26 @@ const MyAlbums = () => {
     [filteredFolders, albumsToDeleteIds]
   );
 
-  // MEMOIZED: Specialized open file picker for album upload
+  // FIXED: Specialized open file picker for album upload with better logging
   const openFilePicker = useCallback((folderId: string | null = null) => {
-    // Clear selected photos when starting a new album
+    log(`📂 openFilePicker called with folderId: ${folderId}`);
+    
+    // Clear selected photos when starting a new album or adding to existing
     setSelectedPhotos([]);
+    log(`🧹 Cleared existing selected photos`);
 
     // Use the shared file picker
     fileUploadProcessor.openFilePicker(folderId);
-  }, [fileUploadProcessor]);
+    log(`🎬 File picker opened for ${folderId ? 'existing album' : 'new album'}`);
+  }, [fileUploadProcessor, setSelectedPhotos, log]);
 
   // MEMOIZED: Specialized file selection handler that passes the cognitoUsername
   const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
-    return await fileUploadProcessor.handleFileSelection(e, cognitoUsername);
-  }, [fileUploadProcessor, cognitoUsername]);
+    log(`📁 File selection started with cognitoUsername: ${cognitoUsername}`);
+    const result = await fileUploadProcessor.handleFileSelection(e, cognitoUsername);
+    log(`📁 File selection completed with result: ${result}`);
+    return result;
+  }, [fileUploadProcessor, cognitoUsername, log]);
 
   // Check if we should show the combined search and filter - now includes search query
   const shouldShowSearchAndFilter = searchQuery.length > 0 || folders.some(folder => 
@@ -664,7 +679,7 @@ const MyAlbums = () => {
     <>
       <GlobalStyle />
       <AppContainer $isRTL={isRTL}>
-        {/* NEW: Premium Header with integrated New Album button */}
+        {/* Premium Header with integrated New Album button */}
         <MyAlbumsHeader
           publicUsername={publicUsername}
           subscriptionInfo={subscriptionInfo}
@@ -672,7 +687,7 @@ const MyAlbums = () => {
           onNewAlbum={() => openFilePicker(null)}
         />
 
-        {/* Updated conditional rendering for enhanced status messages */}
+        {/* Upload progress - show when files are being processed */}
         {(isUploading || isProcessingFiles) && (
           <div style={{ width: '100%', marginBottom: '20px' }}>
             <UploadProgress 
@@ -734,7 +749,8 @@ const MyAlbums = () => {
           ref={fileInputRef}
         />
 
-        {/* <DebugLog 
+        {/* Uncomment for debugging:
+        <DebugLog 
           debugMessages={debugMessages}
           t={t}
           isRTL={isRTL}

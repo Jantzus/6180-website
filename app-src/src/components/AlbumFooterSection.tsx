@@ -251,20 +251,31 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
               flexDirection: isRTL ? "row-reverse" : "row"
             }}
           >
-            {(openFilePicker && <button
-              onClick={(e) => {
-                e.preventDefault(); 
-                e.stopPropagation();
-                openFilePicker(folder.folderId);
-              }}
-              style={{
-                ...buttonStyle,
-                backgroundColor: "#4caf50",
-                color: "white",
-              }}
-            >
-              {t('Add Photos')}
-            </button>)}
+            {/* FIXED: Enhanced Add Photos button with better error handling */}
+            {(openFilePicker && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault(); 
+                  e.stopPropagation();
+                  console.log(`🎬 Add Photos clicked for folder: ${folder.folderId}`);
+                  
+                  // Ensure we have a valid folderId before calling openFilePicker
+                  if (folder.folderId) {
+                    openFilePicker(folder.folderId);
+                  } else {
+                    console.error('❌ No folderId available for Add Photos');
+                    alert(t('Error: Unable to add photos to this album. Please try refreshing the page.'));
+                  }
+                }}
+                style={{
+                  ...buttonStyle,
+                  backgroundColor: "#4caf50",
+                  color: "white",
+                }}
+              >
+                {t('Add Photos')}
+              </button>
+            ))}
             
             <button
               onClick={(e) => {
@@ -280,7 +291,7 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
               {t('Copy Link')}
             </button>
             
-            {/* New Download Photos button added between Add Photos and Copy Link */}
+            {/* Download Photos button */}
             <button
               onClick={handleDownloadPhotos}
               style={{

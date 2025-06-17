@@ -55,12 +55,12 @@ const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed: boolean }>
   padding: 6px 12px; /* Keeping existing padding for good touch targets */
   border: 1px solid ${props => 
     props.$isDisplayed ? '#28a745' : 
-    props.$isSelected ? '#007bff' : '#ced4da'
+    props.$isSelected ? '#000000' : '#ced4da'  // Changed from #007bff to #000000 (black)
   };
   border-radius: 16px;
   background: ${props => 
     props.$isDisplayed ? '#28a745' : 
-    props.$isSelected ? '#007bff' : '#ffffff'
+    props.$isSelected ? '#000000' : '#ffffff'  // Changed from #007bff to #000000 (black)
   };
   color: ${props => 
     (props.$isDisplayed || props.$isSelected) ? '#ffffff' : '#495057'
@@ -80,7 +80,7 @@ const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed: boolean }>
   &:hover {
     background: ${props => 
       props.$isDisplayed ? '#1e7e34' :
-      props.$isSelected ? '#0056b3' : '#e9ecef'
+      props.$isSelected ? '#333333' : '#e9ecef'  // Changed from #0056b3 to #333333 (dark gray)
     };
     transform: translateY(-1px);
   }
@@ -101,9 +101,9 @@ const TagButton = styled.button<{ $isSelected: boolean; $isDisplayed: boolean }>
 
 const SubtagButton = styled.button<{ $isSelected: boolean }>`
   padding: 4px 8px;
-  border: 1px solid ${props => props.$isSelected ? '#007bff' : '#ced4da'};
+  border: 1px solid ${props => props.$isSelected ? '#000000' : '#ced4da'};  // Changed from #007bff to #000000 (black)
   border-radius: 12px;
-  background: ${props => props.$isSelected ? '#007bff' : '#ffffff'};
+  background: ${props => props.$isSelected ? '#000000' : '#ffffff'};  // Changed from #007bff to #000000 (black)
   color: ${props => props.$isSelected ? '#ffffff' : '#495057'};
   font-size: 12px;
   cursor: pointer;
@@ -115,7 +115,7 @@ const SubtagButton = styled.button<{ $isSelected: boolean }>`
   align-items: center;
 
   &:hover {
-    background: ${props => props.$isSelected ? '#0056b3' : '#e9ecef'};
+    background: ${props => props.$isSelected ? '#333333' : '#e9ecef'};  // Changed from #0056b3 to #333333 (dark gray)
     transform: translateY(-1px);
   }
 
