@@ -317,7 +317,7 @@ interface DisplaySubtag {
 }
 
 // Enhanced TagsFilter Component with integrated search and ContactsFilter
-type EnhancedTagsFilterProps = {
+type AlbumsFilterProps = {
   folders: FolderType[];
   searchQuery: string;
   setSearchQuery: (query: string) => void;
@@ -327,7 +327,7 @@ type EnhancedTagsFilterProps = {
   resetContactFilter: () => void;
 };
 
-export const EnhancedTagsFilter: React.FC<EnhancedTagsFilterProps> = ({
+export const AlbumsFilter: React.FC<AlbumsFilterProps> = ({
   folders,
   searchQuery,
   setSearchQuery,

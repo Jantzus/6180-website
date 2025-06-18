@@ -144,6 +144,25 @@ interface TouchState {
   startTranslateY: number;
 }
 
+// Simple streaming video component - closer to original
+const StreamingVideo: React.FC<{
+  src: string;
+  onLoadedData: () => void;
+  t: (key: string) => string;
+}> = ({ src, onLoadedData, t }) => {
+  return (
+    <VideoElement 
+      controls 
+      autoPlay 
+      playsInline // Only add this for mobile compatibility
+      onLoadedData={onLoadedData}
+    >
+      <source src={src} type="video/mp4" />
+      {t('Your browser does not support the video tag.')}
+    </VideoElement>
+  );
+};
+
 // FullscreenMediaViewer component
 export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
   item,
@@ -445,14 +464,11 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
             </MediaWrapper>
           ) : (
             <MediaWrapper>
-              <VideoElement 
-                controls 
-                autoPlay 
+              <StreamingVideo 
+                src={item.url}
                 onLoadedData={() => setIsLoading(false)}
-              >
-                <source src={item.url} type="video/mp4" />
-                {t('Your browser does not support the video tag.')}
-              </VideoElement>
+                t={t}
+              />
               {showWatermark && (
                 <Overlay $type="watermark">
                   <WatermarkText>6180 Watermarked</WatermarkText>

@@ -13,7 +13,7 @@ import {
   AppContainer,
 } from "@/styles/styled-components";
 import { MyAlbumsHeader } from "./MyAlbumsHeader";
-import { EnhancedTagsFilter } from "./EnhancedTagsFilter"; // Combined search and filter
+import { AlbumsFilter } from "./AlbumsFilter"; // Combined search and filter
 import { UploadProgress } from "@/components/UploadProgress";
 import { AlbumList } from "@/components/AlbumList";
 import { FileInput } from "@/components/FileInput";
@@ -722,7 +722,7 @@ const MyAlbums = () => {
 
         {/* Enhanced Combined Search and Filter - always show if there's content or search query */}
         {shouldShowSearchAndFilter && (
-          <EnhancedTagsFilter
+          <AlbumsFilter
             folders={folders}
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
