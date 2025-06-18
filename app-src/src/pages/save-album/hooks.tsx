@@ -25,7 +25,7 @@ interface SubAlbumData {
 interface SelectedTagInput {
   TagType: string;
   tagTitle: string;
-  selectedSubtagInputs: SelectedSubtagInput[];
+  subtags: SelectedSubtagInput[];
 }
 
 interface SelectedSubtagInput {
@@ -488,7 +488,8 @@ export const useAlbumSave = (
   setSavingProgress: React.Dispatch<React.SetStateAction<number>>,
   setSelectedPhotos: React.Dispatch<React.SetStateAction<SelectedPhoto[]>>,
   setProgressTracker: React.Dispatch<React.SetStateAction<ProgressTracker>>,
-  enhancedLog: (message: string, data?: any) => void
+  enhancedLog: (message: string, data?: any) => void,
+  t: (key: string, options?: any) => string // ADD: Accept t function for translations
 ) => {
   
   // Convert applied tags to the format expected by the API
@@ -498,7 +499,7 @@ export const useAlbumSave = (
     return tags.map(tag => ({
       TagType: tag.TagType,
       tagTitle: tag.tagTitle,
-      selectedSubtagInputs: tag.subtags.map(subtag => ({
+      subtags: tag.subtags.map(subtag => ({
         TagType: tag.TagType,
         tagTitle: subtag.tagTitle,
         subtagTitle: subtag.subtagTitle
@@ -506,8 +507,9 @@ export const useAlbumSave = (
     }));
   };
 
-  // Helper function to update progress text
-  const updateSaveProgressText = (text: string) => {
+  // Helper function to update progress text with translation
+  const updateSaveProgressText = (key: string, options?: any) => {
+    const text = t(key, options);
     enhancedLog(`Save progress text: ${text}`);
     const saveProgressText = document.getElementById('saveProgressText');
     if (saveProgressText) {
@@ -990,7 +992,7 @@ export const useAlbumSave = (
     
     const saveSuccessText = document.getElementById('saveProgressText');
     if (saveSuccessText) {
-      saveSuccessText.innerText = 'Album saved successfully!';
+      saveSuccessText.innerText = t('Album saved successfully!');
       enhancedLog("Updated progress text to 'Album saved successfully!'");
     }
     
@@ -1040,7 +1042,10 @@ export const useAlbumSave = (
           
           if (i < chunks.length - 1) {
             // Process all chunks except the last one - just save file references
-            updateSaveProgressText(`Saving files: chunk ${i + 1} of ${chunks.length}...`);
+            updateSaveProgressText('Saving files: chunk {{chunkNumber}} of {{totalChunks}}...', { 
+              chunkNumber: i + 1, 
+              totalChunks: chunks.length 
+            });
             await sendFileReferencesOnlyMutation(chunk);
           } else {
             // Process the last chunk with the folder position

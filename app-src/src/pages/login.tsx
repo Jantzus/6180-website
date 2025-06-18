@@ -354,7 +354,7 @@ const LoginPage = () => {
                     $primary
                     onClick={sendCode}
                     disabled={status === 'sending' || !email.trim()}
-                    style={{ width: '100%', padding: '12px', fontSize: '16px' }}
+                    style={{ width: '100%' }}
                   >
                     {status === 'sending' ? 
                       t('Sending...') : 
@@ -384,7 +384,7 @@ const LoginPage = () => {
                     $primary
                     onClick={confirmCode}
                     disabled={status === 'verifying' || otpCode.length !== 6}
-                    style={{ width: '100%', padding: '12px', fontSize: '16px', backgroundColor: '#28a745' }}
+                    style={{ width: '100%', backgroundColor: '#28a745' }}
                   >
                     {status === 'verifying' ? 
                       t('Verifying...') : 

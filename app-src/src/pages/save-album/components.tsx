@@ -23,6 +23,7 @@ import {
   FormInput,
   FormTextarea
 } from "@/styles/styled-components";
+import { useTranslation } from "@/lib/i18n/hooks";
 
 // ========== PHOTO HANDLING COMPONENT ==========
 export interface PhotoHandlerProps {
@@ -58,7 +59,7 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
   return (
     <>
       {/* Photo Selection Controls - Only show if not hidden */}
-      {!hideHeader && selectedPhotos.length > 1 && (
+      {!hideHeader && (
         <Card style={{ marginBottom: '16px', border: '2px solid #007bff' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px' }}>
             <span style={{ fontWeight: 'bold', fontSize: '14px', color: '#007bff' }}>
@@ -118,9 +119,9 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
               data-selected={isSelected ? "true" : "false"}
               style={{ 
                 position: 'relative',
-                cursor: selectedPhotos.length > 1 ? 'pointer' : 'default'
+                cursor: 'pointer'
               }}
-              onClick={() => selectedPhotos.length > 1 && onTogglePhotoSelection(i)}
+              onClick={() => onTogglePhotoSelection(i)}
             >
               {/* Soft Delete Button - Only show when selected and on hover */}
               {isSelected && !isSavingAlbum && (
@@ -169,7 +170,7 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
               )}
 
               {/* Soft Selection Indicator Text */}
-              {selectedPhotos.length > 1 && isSelected && (
+              {isSelected && (
                 <div style={{
                   position: 'absolute',
                   bottom: '8px',
@@ -185,7 +186,7 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                   zIndex: 10,
                   backdropFilter: 'blur(4px)'
                 }}>
-                  SELECTED
+                  {t('SELECTED')}
                 </div>
               )}
 
@@ -329,19 +330,4 @@ export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = ({
       </FormGroup>
     </FolderDetails>
   );
-};
-
-// Add missing useTranslation definition to avoid import errors
-const useTranslation = () => {
-  // This is just a stub to prevent errors in this file
-  // The actual implementation will be imported in the main file
-  return {
-    t: (key: string, options?: any) => {
-      if (options && typeof options === 'object' && 'count' in options) {
-        return key.replace('{{count}}', String(options.count));
-      }
-      return key;
-    },
-    language: "en"
-  };
 };

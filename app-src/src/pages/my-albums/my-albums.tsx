@@ -82,7 +82,7 @@ const AppDownloadPromotion = React.memo(({
           flexShrink: 0
         }}>
           <a
-            href="#" // Replace with App Store URL
+            href="https://apps.apple.com/app/6180/id6468679610"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -115,7 +115,7 @@ const AppDownloadPromotion = React.memo(({
           </a>
           
           <a
-            href="#" // Replace with Google Play URL
+            href="https://play.google.com/store/apps/details?id=io.i6180.android"
             target="_blank"
             rel="noopener noreferrer"
             style={{

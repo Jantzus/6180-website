@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from "@/lib/i18n/hooks";
 import { TagData, SubtagData, useTagsManagement } from './useTagsManagement';
 
 // Styled components for tag display with clear binary states
@@ -341,6 +342,7 @@ const NewTagInput: React.FC<NewTagInputProps> = ({
   isSubmitting,
   placeholder = "Enter tag name..."
 }) => {
+  const { t } = useTranslation();
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -371,14 +373,14 @@ const NewTagInput: React.FC<NewTagInputProps> = ({
       <InputButton
         onClick={onSubmit}
         disabled={!value.trim() || isSubmitting}
-        title="Add (Enter)"
+        title={t('Add (Enter)')}
       >
         {isSubmitting ? '...' : '✓'}
       </InputButton>
       <InputButton
         onClick={onCancel}
         disabled={isSubmitting}
-        title="Cancel (Escape)"
+        title={t('Cancel (Escape)')}
       >
         ×
       </InputButton>
@@ -398,6 +400,7 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
   disabled = false,
   enhancedLog
 }) => {
+  const { t } = useTranslation();
   const {
     tags,
     displayedTagId,
@@ -491,11 +494,11 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     <TagsContainer>
       <TagsSection>
         <TagsLabel>
-          Apply tags to selected files
+          {t('Apply tags to selected files')}
         </TagsLabel>
         <TagsRow>
           {isLoadingTags ? (
-            <LoadingText>Loading tags...</LoadingText>
+            <LoadingText>{t('Loading tags...')}</LoadingText>
           ) : (
             <>
               {sortedTags.map(tag => {
@@ -522,19 +525,19 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
                   onSubmit={handleSubmitNewTag}
                   onCancel={cancelAddingNewTag}
                   isSubmitting={isSubmittingNewTag}
-                  placeholder="Enter tag name..."
+                  placeholder={t('Enter tag name...')}
                 />
               ) : (
                 <ActionButton 
                   disabled={disabled}
                   onClick={startAddingNewTag}
                 >
-                  + Add Tag
+                  {t('+ Add Tag')}
                 </ActionButton>
               )}
               
               {sortedTags.length === 0 && !isAddingNewTag && (
-                <EmptyState>No tags available</EmptyState>
+                <EmptyState>{t('No tags available')}</EmptyState>
               )}
             </>
           )}
@@ -562,13 +565,13 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
           <span style={{ fontSize: '16px' }}>🏷️</span>
-          <strong style={{ fontSize: '14px' }}>Tag States:</strong>
+          <strong style={{ fontSize: '14px' }}>{t('Tag States:')}</strong>
         </div>
         <div style={{ lineHeight: '1.5' }}>
-          <strong>Click any tag once to apply/remove it from ALL selected files</strong><br/>
-          • <strong style={{ color: '#333333' }}>⚫ Black tags:</strong> Applied to selected files<br/>
-          • <strong style={{ color: '#28a745' }}>🟢 Green tags:</strong> Most recently clicked tag (showing subtags)<br/>
-          • <strong style={{ color: '#6c757d' }}>⚪ Gray tags:</strong> Available but not applied<br/>
+          <strong>{t('Click any tag once to apply/remove it from ALL selected files')}</strong><br/>
+          • <strong style={{ color: '#333333' }}>⚫</strong> {t('Black tags: Applied to selected files')}<br/>
+          • <strong style={{ color: '#28a745' }}>🟢</strong> {t('Green tags: Most recently clicked tag (showing subtags)')}<br/>
+          • <strong style={{ color: '#6c757d' }}>⚪</strong> {t('Gray tags: Available but not applied')}<br/>
         </div>
       </div>
     </TagsContainer>
@@ -587,6 +590,7 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
   disabled = false,
   enhancedLog 
 }) => {
+  const { t } = useTranslation();
   const {
     displayedTagId,
     subtagIdBeingDeleted,
@@ -650,7 +654,7 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
 
   return (
     <TagsSection>
-      <TagsLabel>Subtags for "{displayedTag.tagTitle}"</TagsLabel>
+      <TagsLabel>{t('Subtags for "{{tagTitle}}"', { tagTitle: displayedTag.tagTitle })}</TagsLabel>
       <TagsRow>
         {sortedSubtags.map(subtag => (
           <SubtagWithDelete
@@ -671,19 +675,19 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
             onSubmit={handleSubmitNewSubtag}
             onCancel={cancelAddingNewSubtag}
             isSubmitting={isSubmittingNewSubtag}
-            placeholder="Enter subtag name..."
+            placeholder={t('Enter subtag name...')}
           />
         ) : (
           <ActionButton 
             disabled={disabled}
             onClick={startAddingNewSubtag}
           >
-            + Add Subtag
+            {t('+ Add Subtag')}
           </ActionButton>
         )}
         
         {sortedSubtags.length === 0 && !isAddingNewSubtag && (
-          <EmptyState>No subtags available</EmptyState>
+          <EmptyState>{t('No subtags available')}</EmptyState>
         )}
       </TagsRow>
     </TagsSection>
@@ -702,6 +706,8 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
   isSelected = false,
   onToggleSelection
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div style={{ 
       position: 'absolute', 
@@ -720,7 +726,7 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
     onClick={onToggleSelection}>
       {photoTags.length > 0 ? (
         <div>
-          Tags: {photoTags.map(tag => 
+          {t('Tags: ')}{photoTags.map(tag => 
             tag.subtags.length > 0 
               ? `${tag.tagTitle} (${tag.subtags.map(s => s.subtagTitle).join(', ')})`
               : tag.tagTitle
@@ -728,7 +734,7 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
         </div>
       ) : (
         <div style={{ opacity: 0.7 }}>
-          {isSelected ? 'Selected for tagging' : 'No tags applied'}
+          {isSelected ? t('Selected for tagging') : t('No tags applied')}
         </div>
       )}
     </div>

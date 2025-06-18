@@ -225,7 +225,7 @@ const NewPhotosSection = ({
   );
 };
 
-// Updated ExistingFilesSection Component with soft selection styling
+// Updated ExistingFilesSection Component with proper permission checks for delete functionality
 const ExistingFilesSection = ({ 
   existingFiles, 
   selectedExistingIndices, 
@@ -234,6 +234,8 @@ const ExistingFilesSection = ({
   onDeselectAll, 
   onDeleteFile, 
   disabled, 
+  isCreator,
+  participantsCanDeleteItems,
   t, 
   isRTL 
 }: {
@@ -244,6 +246,8 @@ const ExistingFilesSection = ({
   onDeselectAll: () => void;
   onDeleteFile: (index: number) => void;
   disabled: boolean;
+  isCreator: boolean | null;
+  participantsCanDeleteItems: boolean;
   t: (key: string) => string;
   isRTL: boolean;
 }) => {
@@ -370,8 +374,8 @@ const ExistingFilesSection = ({
                 </div>
               )}
 
-              {/* Soft Delete Button - Only show when selected and on hover */}
-              {isSelected && !disabled && (
+              {/* Soft Delete Button - Only show when selected and user has delete permissions */}
+              {isSelected && !disabled && (isCreator === true || participantsCanDeleteItems) && (
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -786,7 +790,7 @@ const SaveAlbum = () => {
     enhancedLog
   );
 
-  // Use the album save hook with updated parameters for file-level tagging
+  // Use the album save hook with updated parameters for file-level tagging and pass t function
   const { saveAlbumDirectly } = useAlbumSave(
     folderId || currentFolderId,
     cognitoUsername,
@@ -808,7 +812,8 @@ const SaveAlbum = () => {
     setSavingProgress,
     setSelectedPhotos,
     setProgressTracker,
-    enhancedLog
+    enhancedLog,
+    t // NEW: Pass the t function for translations
   );
 
   // UPDATED: Update folderId when currentFolderId changes (simplified)
@@ -1403,6 +1408,8 @@ const SaveAlbum = () => {
                   onDeselectAll={deselectAllExistingFiles}
                   onDeleteFile={removeExistingFile}
                   disabled={isTaggingDisabled}
+                  isCreator={isCreator}
+                  participantsCanDeleteItems={participantsCanDeleteItems}
                   t={t}
                   isRTL={isRTL}
                 />
