@@ -60,7 +60,7 @@ import {
 } from "@/styles/styled-components";
 
 // Import components
-import { FullscreenMediaViewer } from "@/components/FullscreenMediaViewer";
+import { FullscreenMediaViewer } from "./FullscreenMediaViewer";
 import { PasswordModal } from "@/pages/photos/PasswordModal";
 import { PhotoLoginModal } from "@/pages/photos/PhotoLoginModal";
 import { FileInput } from "@/components/FileInput";
