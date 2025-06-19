@@ -50,7 +50,7 @@ import {
 
 // SIMPLIFIED: Import simplified tags functionality
 import { useTagsManagement } from "./useTagsManagement";
-import { TagsDisplay } from "./TagDisplayComponents";
+import { TagsDisplay, PhotoTagging } from "./TagDisplayComponents";
 
 // Import LazyImage for existing files display
 import { LazyImage } from "@/components/LazyImage";
@@ -62,6 +62,13 @@ interface ExistingFile {
   durationInSeconds: number | null;
   dataInBytes: number;
   fileName?: string; // We might not have this for existing files
+}
+
+// NEW: Interface for applied tags (matching the type used throughout the app)
+interface AppliedTag {
+  tagTitle: string;
+  TagType: string;
+  subtags: { tagTitle: string; subtagTitle: string; }[];
 }
 
 // NEW: Unified Tagging Section Container Component
@@ -92,7 +99,7 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
         <span style={{ marginRight: isRTL ? '0' : '12px', marginLeft: isRTL ? '12px' : '0', fontSize: '20px' }}>
           🏷️
         </span>
-        {t('Click files below to select them for tagging')}
+        {t('Select files to start tagging')}
       </div>
       
       {children}
@@ -109,7 +116,8 @@ const NewPhotosSection = ({
   onDeselectAll, 
   onRemovePhoto,
   onDeleteAll,
-  disabled, 
+  disabled,
+  photoTagsMap, // NEW: Added photoTagsMap prop
   t, 
   isRTL 
 }: {
@@ -121,6 +129,7 @@ const NewPhotosSection = ({
   onRemovePhoto: (index: number) => void;
   onDeleteAll: () => void;
   disabled: boolean;
+  photoTagsMap: Map<number, AppliedTag[]>; // NEW: Added type
   t: (key: string) => string;
   isRTL: boolean;
 }) => {
@@ -163,7 +172,7 @@ const NewPhotosSection = ({
               cursor: disabled ? 'not-allowed' : 'pointer',
               transition: 'all 0.2s ease'
             }}
-            onClick={selectedPhotoIndices.size === selectedPhotos.length ? onDeselectAll : onSelectAll}
+            onClick={selectedPhotoIndices.size > 0 ? onDeselectAll : onSelectAll}
             disabled={disabled}
             onMouseEnter={(e) => {
               if (!disabled) {
@@ -176,41 +185,43 @@ const NewPhotosSection = ({
               }
             }}
           >
-            {selectedPhotoIndices.size === selectedPhotos.length ? t('Deselect All') : t('Select All')}
+            {selectedPhotoIndices.size > 0 ? t('Done Tagging Selected') : t('Select All')}
           </button>
           
-          <button
-            style={{
-              padding: '6px 12px',
-              fontSize: '12px',
-              border: '1px solid #dc3545',
-              borderRadius: '4px',
-              backgroundColor: disabled ? '#f8f9fa' : '#fff',
-              color: disabled ? '#999' : '#dc3545',
-              cursor: disabled ? 'not-allowed' : 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-            onClick={onDeleteAll}
-            disabled={disabled}
-            onMouseEnter={(e) => {
-              if (!disabled) {
-                e.currentTarget.style.backgroundColor = '#dc3545';
-                e.currentTarget.style.color = '#fff';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!disabled) {
-                e.currentTarget.style.backgroundColor = '#fff';
-                e.currentTarget.style.color = '#dc3545';
-              }
-            }}
-          >
-            {t('Delete All')}
-          </button>
+          {selectedPhotoIndices.size === 0 && (
+            <button
+              style={{
+                padding: '6px 12px',
+                fontSize: '12px',
+                border: '1px solid #dc3545',
+                borderRadius: '4px',
+                backgroundColor: disabled ? '#f8f9fa' : '#fff',
+                color: disabled ? '#999' : '#dc3545',
+                cursor: disabled ? 'not-allowed' : 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+              onClick={onDeleteAll}
+              disabled={disabled}
+              onMouseEnter={(e) => {
+                if (!disabled) {
+                  e.currentTarget.style.backgroundColor = '#dc3545';
+                  e.currentTarget.style.color = '#fff';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!disabled) {
+                  e.currentTarget.style.backgroundColor = '#fff';
+                  e.currentTarget.style.color = '#dc3545';
+                }
+              }}
+            >
+              {t('Delete All')}
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Use the existing PhotoHandler but hide its header */}
+      {/* Use the existing PhotoHandler but hide its header and pass photoTagsMap */}
       <PhotoHandler 
         selectedPhotos={selectedPhotos}
         selectedPhotoIndices={selectedPhotoIndices}
@@ -220,12 +231,13 @@ const NewPhotosSection = ({
         onSelectAllPhotos={onSelectAll}
         onDeselectAllPhotos={onDeselectAll}
         hideHeader={true}
+        photoTagsMap={photoTagsMap} // NEW: Pass the photo tags map
       />
     </div>
   );
 };
 
-// Updated ExistingFilesSection Component with proper permission checks for delete functionality
+// Updated ExistingFilesSection Component with enhanced tag visibility
 const ExistingFilesSection = ({ 
   existingFiles, 
   selectedExistingIndices, 
@@ -236,6 +248,7 @@ const ExistingFilesSection = ({
   disabled, 
   isCreator,
   participantsCanDeleteItems,
+  existingFileTagsMap, // NEW: Added existing file tags map
   t, 
   isRTL 
 }: {
@@ -248,6 +261,7 @@ const ExistingFilesSection = ({
   disabled: boolean;
   isCreator: boolean | null;
   participantsCanDeleteItems: boolean;
+  existingFileTagsMap: Map<number, AppliedTag[]>; // NEW: Added type
   t: (key: string) => string;
   isRTL: boolean;
 }) => {
@@ -265,14 +279,16 @@ const ExistingFilesSection = ({
         marginBottom: '24px',
         flexDirection: isRTL ? 'row-reverse' : 'row'
       }}>
-        <h3 style={{
-          fontSize: '16px',
-          fontWeight: '600',
-          color: '#333',
-          margin: 0
-        }}>
-          {t('Existing Files')} ({existingFiles.length})
-        </h3>
+        <div>
+          <h3 style={{
+            fontSize: '16px',
+            fontWeight: '600',
+            color: '#333',
+            margin: 0
+          }}>
+            {t('Existing Files')} ({existingFiles.length})
+          </h3>
+        </div>
         
         <div style={{
           display: 'flex',
@@ -290,7 +306,7 @@ const ExistingFilesSection = ({
               cursor: disabled ? 'not-allowed' : 'pointer',
               transition: 'all 0.2s ease'
             }}
-            onClick={selectedExistingIndices.size === existingFiles.length ? onDeselectAll : onSelectAll}
+            onClick={selectedExistingIndices.size > 0 ? onDeselectAll : onSelectAll}
             disabled={disabled}
             onMouseEnter={(e) => {
               if (!disabled) {
@@ -303,7 +319,7 @@ const ExistingFilesSection = ({
               }
             }}
           >
-            {selectedExistingIndices.size === existingFiles.length ? t('Deselect All') : t('Select All')}
+            {selectedExistingIndices.size > 0 ? t('Done Tagging Selected') : t('Select All')}
           </button>
         </div>
       </div>
@@ -322,135 +338,130 @@ const ExistingFilesSection = ({
       }}>
         {existingFiles.map((file, index) => {
           const isSelected = selectedExistingIndices.has(index);
+          const appliedTags = existingFileTagsMap.get(index) || []; // Get applied tags for this file
 
           return (
-            <div
-              key={`existing-${index}-${file.dataKey}`}
-              style={{
-                position: 'relative',
-                width: '160px',
-                height: '160px',
-                flexShrink: 0,
-                borderRadius: '12px',
-                overflow: 'hidden',
-                border: isSelected ? '2px solid rgba(0, 123, 255, 0.6)' : '2px solid #ddd',
-                cursor: disabled ? 'not-allowed' : 'pointer',
-                opacity: disabled ? 0.6 : 1,
-                transition: 'all 0.3s ease',
-                boxShadow: isSelected ? '0 0 0 3px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 123, 255, 0.15)' : '0 2px 8px rgba(0, 0, 0, 0.04)',
-                transform: isSelected ? 'translateY(-2px)' : 'translateY(0)'
-              }}
-              onClick={() => !disabled && onToggleSelection(index)}
-            >
-              <LazyImage
-                thumbnailDataKey={file.thumbnailDataKey}
-                dataKey={file.dataKey}
-                alt={t('Existing file')}
+            <div key={`existing-${index}-${file.dataKey}`} style={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              gap: '8px',
+              minWidth: '160px' // Ensure consistent width
+            }}>
+              <div
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover'
+                  position: 'relative',
+                  width: '160px',
+                  height: '160px',
+                  flexShrink: 0,
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  border: isSelected ? '2px solid rgba(0, 123, 255, 0.6)' : '2px solid #ddd',
+                  cursor: disabled ? 'not-allowed' : 'pointer',
+                  opacity: disabled ? 0.6 : 1,
+                  transition: 'all 0.3s ease',
+                  boxShadow: isSelected ? '0 0 0 3px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 123, 255, 0.15)' : '0 2px 8px rgba(0, 0, 0, 0.04)',
+                  transform: isSelected ? 'translateY(-2px)' : 'translateY(0)'
                 }}
-              />
-              
-              {/* Soft Selection Indicator */}
-              {isSelected && (
-                <div style={{
-                  position: 'absolute',
-                  bottom: '8px',
-                  left: '8px',
-                  right: '8px',
-                  background: 'rgba(0, 123, 255, 0.9)',
-                  color: 'white',
-                  padding: '4px 8px',
-                  borderRadius: '6px',
-                  fontSize: '11px',
-                  fontWeight: '600',
-                  textAlign: 'center',
-                  zIndex: 10,
-                  backdropFilter: 'blur(4px)'
-                }}>
-                  SELECTED
-                </div>
-              )}
-
-              {/* Soft Delete Button - Only show when selected and user has delete permissions */}
-              {isSelected && !disabled && (isCreator === true || participantsCanDeleteItems) && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (confirm(t('Are you sure you want to remove this file?'))) {
-                      onDeleteFile(index);
-                    }
-                  }}
+                onClick={() => !disabled && onToggleSelection(index)}
+              >
+                <LazyImage
+                  thumbnailDataKey={file.thumbnailDataKey}
+                  dataKey={file.dataKey}
+                  alt={t('Existing file')}
                   style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
+                
+                {/* Soft Delete Button - Only show when selected and user has delete permissions */}
+                {isSelected && !disabled && (isCreator === true || participantsCanDeleteItems) && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (confirm(t('Are you sure you want to remove this file?'))) {
+                        onDeleteFile(index);
+                      }
+                    }}
+                    style={{
+                      position: 'absolute',
+                      top: '6px',
+                      right: '6px',
+                      width: '18px',
+                      height: '18px',
+                      borderRadius: '50%',
+                      border: 'none',
+                      backgroundColor: 'rgba(220, 53, 69, 0.8)',
+                      color: 'white',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '12px',
+                      fontWeight: 'bold',
+                      zIndex: 15,
+                      opacity: 1,
+                      transition: 'all 0.2s ease',
+                      transform: 'scale(0.8)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 0.9)';
+                      e.currentTarget.style.transform = 'scale(1)';
+                      e.currentTarget.style.opacity = '1';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.8)';
+                      e.currentTarget.style.transform = 'scale(0.8)';
+                      e.currentTarget.style.opacity = '0';
+                    }}
+                    title={t('Remove file')}
+                  >
+                    ×
+                  </button>
+                )}
+
+                {/* File size indicator */}
+                {file.dataInBytes > 0 && (
+                  <div style={{
                     position: 'absolute',
-                    top: '6px',
-                    right: '6px',
-                    width: '18px',
-                    height: '18px',
-                    borderRadius: '50%',
-                    border: 'none',
-                    backgroundColor: 'rgba(220, 53, 69, 0.8)',
+                    bottom: '4px',
+                    left: '4px',
+                    backgroundColor: 'rgba(0,0,0,0.7)',
                     color: 'white',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '12px',
-                    fontWeight: 'bold',
-                    zIndex: 15,
-                    opacity: 1,
-                    transition: 'all 0.2s ease',
-                    transform: 'scale(0.8)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 0.9)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                    e.currentTarget.style.opacity = '1';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.8)';
-                    e.currentTarget.style.transform = 'scale(0.8)';
-                    e.currentTarget.style.opacity = '0';
-                  }}
-                  title={t('Remove file')}
-                >
-                  ×
-                </button>
-              )}
+                    fontSize: '10px',
+                    padding: '2px 4px',
+                    borderRadius: '4px'
+                  }}>
+                    {(file.dataInBytes / (1024 * 1024)).toFixed(1)}{t('MB')}
+                  </div>
+                )}
 
-              {/* File size indicator */}
-              {file.dataInBytes > 0 && (
-                <div style={{
-                  position: 'absolute',
-                  bottom: '4px',
-                  left: '4px',
-                  backgroundColor: 'rgba(0,0,0,0.7)',
-                  color: 'white',
-                  fontSize: '10px',
-                  padding: '2px 4px',
-                  borderRadius: '4px'
-                }}>
-                  {(file.dataInBytes / (1024 * 1024)).toFixed(1)}MB
-                </div>
-              )}
-
-              {/* Video duration indicator */}
-              {file.durationInSeconds && (
-                <div style={{
-                  position: 'absolute',
-                  top: '8px',
-                  left: '8px',
-                  backgroundColor: 'rgba(0,0,0,0.7)',
-                  color: 'white',
-                  fontSize: '10px',
-                  padding: '2px 4px',
-                  borderRadius: '4px'
-                }}>
-                  {Math.floor(file.durationInSeconds / 60)}:{String(Math.floor(file.durationInSeconds % 60)).padStart(2, '0')}
-                </div>
-              )}
+                {/* Video duration indicator */}
+                {file.durationInSeconds && (
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '4px',
+                    right: '4px',
+                    backgroundColor: 'rgba(0,0,0,0.7)',
+                    color: 'white',
+                    fontSize: '10px',
+                    padding: '2px 4px',
+                    borderRadius: '4px'
+                  }}>
+                    {Math.floor(file.durationInSeconds / 60)}:{String(Math.floor(file.durationInSeconds % 60)).padStart(2, '0')}
+                  </div>
+                )}
+              </div>
+              
+              {/* ENHANCED: Applied Tags Display with better visibility */}
+              <div style={{ minHeight: '44px' }}> {/* Reserve space for tags */}
+                <PhotoTagging 
+                  photoTags={appliedTags}
+                  isSelected={isSelected}
+                  onToggleSelection={() => !disabled && onToggleSelection(index)}
+                />
+              </div>
             </div>
           );
         })}
@@ -513,12 +524,12 @@ const SaveAlbum = () => {
 
   // SIMPLIFIED: State for photo selection and tagging
   const [selectedPhotoIndices, setSelectedPhotoIndices] = useState<Set<number>>(new Set());
-  const [photoTagsMap, setPhotoTagsMap] = useState<Map<number, { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[]>>(new Map());
+  const [photoTagsMap, setPhotoTagsMap] = useState<Map<number, AppliedTag[]>>(new Map());
 
   // NEW: State for existing files
   const [existingFiles, setExistingFiles] = useState<ExistingFile[]>([]);
   const [selectedExistingIndices, setSelectedExistingIndices] = useState<Set<number>>(new Set());
-  const [existingFileTagsMap, setExistingFileTagsMap] = useState<Map<number, { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[]>>(new Map());
+  const [existingFileTagsMap, setExistingFileTagsMap] = useState<Map<number, AppliedTag[]>>(new Map());
   const [isLoadingExistingFiles, setIsLoadingExistingFiles] = useState(false);
 
   // Custom navigation function for the useFileUploadProcessor hook
@@ -602,7 +613,7 @@ const SaveAlbum = () => {
     log(logMessage);
   };
 
-  // NEW: Function to fetch existing album data
+  // FIXED: Function to fetch existing album data with proper tag extraction
   const fetchExistingAlbumData = async (albumFolderId: string) => {
     if (!albumFolderId) return;
     
@@ -665,24 +676,51 @@ const SaveAlbum = () => {
       );
 
       if (!targetFolder) {
-        // enhancedLog(`⚠️ Folder with ID ${albumFolderId} not found`);
         return;
       }
 
       const folder = targetFolder.folder;
-      const rawFiles = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || [];
+      const fileReferences = folder?.fileReferencesPage?.items || [];
     
-      const files: ExistingFile[] = rawFiles
-        .filter((f: any) => f && f.dataKey)
-        .map((file: any) => ({
-          dataKey: file.dataKey,
-          thumbnailDataKey: file.thumbnailDataKey || null,
-          durationInSeconds: file.durationInSeconds || null,
-          dataInBytes: file.dataInBytes || 0
-        }));
+      // FIXED: Extract both files AND their existing tags
+      const files: ExistingFile[] = [];
+      const existingTagsMap = new Map<number, AppliedTag[]>();
+      
+      fileReferences.forEach((ref: any, index: number) => {
+        const file = ref.file;
+        if (file && file.dataKey) {
+          // Add file to the files array
+          files.push({
+            dataKey: file.dataKey,
+            thumbnailDataKey: file.thumbnailDataKey || null,
+            durationInSeconds: file.durationInSeconds || null,
+            dataInBytes: file.dataInBytes || 0
+          });
+          
+          // FIXED: Extract existing selectedTags and convert to AppliedTag format
+          const selectedTags = ref.selectedTags || [];
+          if (selectedTags.length > 0) {
+            const appliedTags: AppliedTag[] = selectedTags.map((tag: any) => ({
+              tagTitle: tag.tagTitle,
+              TagType: tag.TagType,
+              subtags: tag.subtags?.map((subtag: any) => ({
+                tagTitle: subtag.tagTitle,
+                subtagTitle: subtag.subtagTitle
+              })) || []
+            }));
+            
+            existingTagsMap.set(index, appliedTags);
+            enhancedLog(`Existing file ${index} has ${appliedTags.length} tags applied:`, appliedTags.map(t => t.tagTitle));
+          }
+        }
+      });
 
       setExistingFiles(files);
-      enhancedLog(`✅ Successfully loaded ${files.length} existing files`);
+      
+      // FIXED: Set the existing tags map with the extracted tags
+      setExistingFileTagsMap(existingTagsMap);
+      
+      enhancedLog(`✅ Successfully loaded ${files.length} existing files with ${existingTagsMap.size} files having existing tags`);
 
       // Update folder details if they haven't been set yet
       if (!folderName && folder.folderName) {
@@ -691,8 +729,6 @@ const SaveAlbum = () => {
       if (!folderDescription && folder.folderDescription) {
         setFolderDescription(folder.folderDescription);
       }
-
-      // REMOVED: No longer calling setEditingExistingAlbum since we use setOnSaveAlbumPage
 
     } catch (error) {
       console.error("Failed to fetch existing album data:", error);
@@ -1182,12 +1218,25 @@ const SaveAlbum = () => {
   const hasAnyFiles = selectedPhotos.length > 0 || existingFiles.length > 0;
   const hasSelectedFiles = selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0;
 
-  // FIXED: Calculate total selected files count with proper memoization to trigger re-renders
+  // FIXED: Calculate total selected files count and tag map hash to trigger re-renders
   const totalSelectedFilesCount = React.useMemo(() => {
     const count = selectedPhotoIndices.size + selectedExistingIndices.size;
     enhancedLog(`Total selected files count updated: ${count}`);
     return count;
   }, [selectedPhotoIndices.size, selectedExistingIndices.size, enhancedLog]);
+
+  // NEW: Calculate a hash of the tag maps to ensure re-render when tags change
+  const tagMapsHash = React.useMemo(() => {
+    const photoTagsHash = Array.from(photoTagsMap.entries()).map(([index, tags]) => 
+      `${index}:${tags.map(t => `${t.tagTitle}(${t.subtags.map(s => s.subtagTitle).join(',')})`).join('|')}`
+    ).join(';');
+    
+    const existingTagsHash = Array.from(existingFileTagsMap.entries()).map(([index, tags]) => 
+      `${index}:${tags.map(t => `${t.tagTitle}(${t.subtags.map(s => s.subtagTitle).join(',')})`).join('|')}`
+    ).join(';');
+    
+    return `${photoTagsHash}||${existingTagsHash}`;
+  }, [photoTagsMap, existingFileTagsMap]);
 
   // ========== RENDER METHODS ==========
 
@@ -1383,6 +1432,22 @@ const SaveAlbum = () => {
           />
         )}
         
+        {/* Loading Existing Files Message */}
+        {isLoadingExistingFiles && (
+          <div style={{
+            padding: '16px',
+            marginBottom: '16px',
+            backgroundColor: '#f8f9fa',
+            border: '1px solid #dee2e6',
+            borderRadius: '8px',
+            color: '#6c757d',
+            textAlign: 'center',
+            fontStyle: 'italic'
+          }}>
+            {t('Loading existing files...')}
+          </div>
+        )}
+        
         {/* Hidden File Input - now using the ref from the hook */}
         <input
           ref={fileInputRef}
@@ -1410,6 +1475,7 @@ const SaveAlbum = () => {
                   disabled={isTaggingDisabled}
                   isCreator={isCreator}
                   participantsCanDeleteItems={participantsCanDeleteItems}
+                  existingFileTagsMap={existingFileTagsMap} // NEW: Pass existing file tags map
                   t={t}
                   isRTL={isRTL}
                 />
@@ -1426,6 +1492,7 @@ const SaveAlbum = () => {
               onRemovePhoto={removePhoto}
               onDeleteAll={deleteAllPhotos}
               disabled={isTaggingDisabled}
+              photoTagsMap={photoTagsMap} // NEW: Pass photo tags map
               t={t}
               isRTL={isRTL}
             />
@@ -1433,7 +1500,7 @@ const SaveAlbum = () => {
             {/* SIMPLIFIED: Tags Section - FIXED to ensure proper re-rendering */}
             <div style={{ marginTop: hasSelectedFiles ? '32px' : '16px' }}>
               <TagsDisplay 
-                key={`tags-${totalSelectedFilesCount}`} // FIXED: Force re-render when selection changes
+                key={`tags-${totalSelectedFilesCount}-${tagMapsHash.slice(0, 20)}`} // FIXED: Force re-render when selection OR tags change
                 tagsManager={tagsManager}
                 disabled={isTaggingDisabled}
                 enhancedLog={enhancedLog}

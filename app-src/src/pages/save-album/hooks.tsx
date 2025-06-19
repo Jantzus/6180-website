@@ -91,6 +91,15 @@ const FETCH_FOLDER_QUERY = `
         }
         fileReferencesPage {
           items {
+            selectedTags {
+              TagType
+              tagTitle
+              subtags {
+                  TagType
+                  tagTitle
+                  subtagTitle
+              }
+            }          
             file {
               ownerContactId
               dataKey
@@ -507,9 +516,8 @@ export const useAlbumSave = (
     }));
   };
 
-  // Helper function to update progress text with translation
-  const updateSaveProgressText = (key: string, options?: any) => {
-    const text = t(key, options);
+  // Helper function to update progress text (expects already translated text)
+  const updateSaveProgressText = (text: string) => {
     enhancedLog(`Save progress text: ${text}`);
     const saveProgressText = document.getElementById('saveProgressText');
     if (saveProgressText) {
@@ -990,11 +998,7 @@ export const useAlbumSave = (
     clearAlbumData(setSelectedPhotos, setProgressTracker, [LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA], enhancedLog);
     enhancedLog("Album data cleared");
     
-    const saveSuccessText = document.getElementById('saveProgressText');
-    if (saveSuccessText) {
-      saveSuccessText.innerText = t('Album saved successfully!');
-      enhancedLog("Updated progress text to 'Album saved successfully!'");
-    }
+    updateSaveProgressText(t('Album saved successfully!'));
     
     // Set a flag in sessionStorage that we just completed an album
     sessionStorage.setItem('album_just_saved', 'true');
@@ -1012,7 +1016,7 @@ export const useAlbumSave = (
   const saveWithChunking = async (folderPositionInput: any, fileReferenceInputs: FileReferenceInput[]) => {
     enhancedLog("Starting chunked save process (individual photo tags, no folder tags, including existing files with tags)");
     try {
-      updateSaveProgressText("Processing files in chunks...");
+      updateSaveProgressText(t("Processing files in chunks..."));
       
       // Define chunk size - similar to the iOS code
       const chunkSize = 48;
@@ -1042,14 +1046,14 @@ export const useAlbumSave = (
           
           if (i < chunks.length - 1) {
             // Process all chunks except the last one - just save file references
-            updateSaveProgressText('Saving files: chunk {{chunkNumber}} of {{totalChunks}}...', { 
+            updateSaveProgressText(t('Saving files: chunk {{chunkNumber}} of {{totalChunks}}...', { 
               chunkNumber: i + 1, 
               totalChunks: chunks.length 
-            });
+            }));
             await sendFileReferencesOnlyMutation(chunk);
           } else {
             // Process the last chunk with the folder position
-            updateSaveProgressText("Finalizing album...");
+            updateSaveProgressText(t("Finalizing album..."));
             await sendFinalChunkWithFolderMutation(chunk, folderPositionInput);
           }
         }
@@ -1058,13 +1062,13 @@ export const useAlbumSave = (
       // Complete the save process
       setSavingProgress(100);
       updateSaveProgress(100);
-      updateSaveProgressText("Album saved successfully!");
+      updateSaveProgressText(t("Album saved successfully!"));
       handleSuccessfulSave();
       
     } catch (error) {
       console.error("Error in chunked save process:", error);
       enhancedLog(`Error in chunked save process: ${error}`);
-      updateSaveProgressText(`Error: ${error}`);
+      updateSaveProgressText(t("Error: {{error}}", { error: String(error) }));
       setIsSavingAlbum(false);
     }
   };

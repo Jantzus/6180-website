@@ -15,7 +15,6 @@ import {
   MediaItem,
   VideoItem,
   ProgressBar as UploadProgressBar,
-  FileInfo,
   Message,
   Card as FolderDetails,
   FormGroup,
@@ -24,6 +23,14 @@ import {
   FormTextarea
 } from "@/styles/styled-components";
 import { useTranslation } from "@/lib/i18n/hooks";
+import { PhotoTagging } from "./TagDisplayComponents";
+
+// Interface for applied tags (matching the type used in save-album.tsx)
+interface AppliedTag {
+  tagTitle: string;
+  TagType: string;
+  subtags: { tagTitle: string; subtagTitle: string; }[];
+}
 
 // ========== PHOTO HANDLING COMPONENT ==========
 export interface PhotoHandlerProps {
@@ -34,7 +41,8 @@ export interface PhotoHandlerProps {
   onTogglePhotoSelection: (index: number) => void;
   onSelectAllPhotos: () => void;
   onDeselectAllPhotos: () => void;
-  hideHeader?: boolean; // NEW: Optional prop to hide the header instruction
+  hideHeader?: boolean; // Optional prop to hide the header instruction
+  photoTagsMap: Map<number, AppliedTag[]>; // NEW: Photo tags map to show applied tags
 }
 
 export const PhotoHandler: React.FC<PhotoHandlerProps> = ({ 
@@ -45,7 +53,8 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
   onTogglePhotoSelection,
   onSelectAllPhotos,
   onDeselectAllPhotos,
-  hideHeader = false // NEW: Default to false for backward compatibility
+  hideHeader = false, // Default to false for backward compatibility
+  photoTagsMap // NEW: Photo tags map
 }) => {
   const { t } = useTranslation();
 
@@ -65,7 +74,7 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
             <span style={{ fontWeight: 'bold', fontSize: '14px', color: '#007bff' }}>
               {hasSelectedPhotos 
                 ? t('{{count}} file(s) selected for tagging', { count: selectedPhotoIndices.size })
-                : t('Click files below to select them for tagging')
+                : t('Select files with blue borders for tagging')
               }
             </span>
             <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
@@ -112,17 +121,18 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
       <PhotoGrid>
         {selectedPhotos.map((photo, i) => {
           const isSelected = selectedPhotoIndices.has(i);
+          const appliedTags = photoTagsMap.get(i) || []; // Get applied tags for this photo
           
           return (
-            <PhotoCard 
-              key={i} 
-              data-selected={isSelected ? "true" : "false"}
-              style={{ 
-                position: 'relative',
-                cursor: 'pointer'
-              }}
-              onClick={() => onTogglePhotoSelection(i)}
-            >
+            <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <PhotoCard 
+                data-selected={isSelected ? "true" : "false"}
+                style={{ 
+                  position: 'relative',
+                  cursor: 'pointer'
+                }}
+                onClick={() => onTogglePhotoSelection(i)}
+              >
               {/* Soft Delete Button - Only show when selected and on hover */}
               {isSelected && !isSavingAlbum && (
                 <button
@@ -169,27 +179,6 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                 </button>
               )}
 
-              {/* Soft Selection Indicator Text */}
-              {isSelected && (
-                <div style={{
-                  position: 'absolute',
-                  bottom: '8px',
-                  left: '8px',
-                  right: '8px',
-                  background: 'rgba(0, 123, 255, 0.9)',
-                  color: 'white',
-                  padding: '4px 8px',
-                  borderRadius: '6px',
-                  fontSize: '11px',
-                  fontWeight: '600',
-                  textAlign: 'center',
-                  zIndex: 10,
-                  backdropFilter: 'blur(4px)'
-                }}>
-                  {t('SELECTED')}
-                </div>
-              )}
-
               {/* Status indicator - only show for non-complete status or errors */}
               {photo.status !== 'complete' && (
                 <StatusIndicator $status={photo.status}>
@@ -218,12 +207,24 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                 )}
               </MediaPreview>
               
-              {/* File info */}
-              <FileInfo>
+              {/* File info - Back to normal position */}
+              <div style={{
+                position: 'absolute',
+                bottom: '32px', // Leave space for SELECTED indicator
+                left: '8px',
+                right: '8px',
+                background: 'rgba(0, 0, 0, 0.7)',
+                color: 'white',
+                padding: '4px 8px',
+                borderRadius: '4px',
+                fontSize: '11px',
+                textAlign: 'center',
+                backdropFilter: 'blur(4px)'
+              }}>
                 {photo.type?.startsWith("video") ? t('Video') : t('Image')}
-                {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} MB`}
-                {photo.duration && ` • ${photo.duration}s`}
-              </FileInfo>
+                {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} ${t('MB')}`}
+                {photo.duration && ` • ${photo.duration}${t('s')}`}
+              </div>
 
               {/* Error message if any */}
               {photo.status === 'error' && photo.errorMessage && (
@@ -232,6 +233,14 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
                 </Message>
               )}
             </PhotoCard>
+            
+            {/* NEW: Applied Tags Display - Outside the photo card */}
+            <PhotoTagging 
+              photoTags={appliedTags}
+              isSelected={isSelected}
+              onToggleSelection={() => onTogglePhotoSelection(i)}
+            />
+          </div>
           );
         })}
       </PhotoGrid>

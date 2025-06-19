@@ -138,7 +138,7 @@ export const useTagsManagement = (
     };
   }, [selectedPhotoIndices, selectedExistingIndices]);
 
-  // FIXED: Check if tag is applied to ALL currently selected files - properly memoized
+  // FIXED: Check if tag is applied to ALL currently selected files - properly memoized with enhanced logging
   const isTagAppliedToSelected = useCallback((tag: TagData): boolean => {
     const { photoIndices, existingIndices } = getAllSelectedIndices;
     
@@ -162,8 +162,13 @@ export const useTagsManagement = (
     // Return true only if ALL selected files have the tag
     const result = allPhotosHaveTag && allExistingHaveTag;
     
+    // Enhanced logging for debugging
+    if (photoIndices.length > 0 || existingIndices.length > 0) {
+      enhancedLog(`Tag "${tag.tagTitle}" applied to all selected? ${result} (photos: ${allPhotosHaveTag}, existing: ${allExistingHaveTag})`);
+    }
+    
     return result;
-  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap]);
+  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap, enhancedLog]);
 
   // FIXED: Check if subtag is applied to ALL currently selected files that have the parent tag - properly memoized
   const isSubtagAppliedToSelected = useCallback((subtag: SubtagData): boolean => {
@@ -364,7 +369,7 @@ export const useTagsManagement = (
     }
   }, [getAllSelectedIndices, isSubtagAppliedToSelected, setPhotoTagsMap, setExistingFileTagsMap, enhancedLog]);
 
-  // Get all unique tags that are applied to currently selected files
+  // Get all unique tags that are applied to currently selected files - enhanced logging
   const getAppliedTagsForSelected = useCallback((): AppliedTag[] => {
     const { photoIndices, existingIndices } = getAllSelectedIndices;
     const allAppliedTags: AppliedTag[] = [];
@@ -381,14 +386,29 @@ export const useTagsManagement = (
       allAppliedTags.push(...fileTags);
     });
     
-    // Return unique tags
+    // Return unique tags with subtag consolidation
     const uniqueTags = new Map<string, AppliedTag>();
+    
     allAppliedTags.forEach(tag => {
-      uniqueTags.set(tag.tagTitle, tag);
+      if (uniqueTags.has(tag.tagTitle)) {
+        // Merge subtags if tag already exists
+        const existingTag = uniqueTags.get(tag.tagTitle)!;
+        const allSubtags = [...existingTag.subtags, ...tag.subtags];
+        // Remove duplicate subtags
+        const uniqueSubtags = Array.from(
+          new Map(allSubtags.map(s => [s.subtagTitle, s])).values()
+        );
+        uniqueTags.set(tag.tagTitle, { ...existingTag, subtags: uniqueSubtags });
+      } else {
+        uniqueTags.set(tag.tagTitle, tag);
+      }
     });
     
-    return Array.from(uniqueTags.values());
-  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap]);
+    const result = Array.from(uniqueTags.values());
+    enhancedLog(`getAppliedTagsForSelected: ${result.length} unique tags from ${photoIndices.length} photos + ${existingIndices.length} existing files`);
+    
+    return result;
+  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap, enhancedLog]);
 
   // Check if any files are currently selected
   const hasSelectedFiles = useCallback((): boolean => {
@@ -856,10 +876,30 @@ export const useTagsManagement = (
     fetchTags();
   }, []);
 
-  // FIXED: Debug log when selection changes to verify reactivity
+  // FIXED: Debug log when selection changes to verify reactivity + clear displayed tag if no longer applied
   useEffect(() => {
     enhancedLog(`Selection changed - Photos: ${selectedPhotoIndices.size}, Existing: ${selectedExistingIndices.size}`);
-  }, [selectedPhotoIndices.size, selectedExistingIndices.size, enhancedLog]);
+    
+    // Clear displayed tag if it's no longer applied to all selected files
+    if (displayedTagId) {
+      const displayedTag = tags.find(t => t.id === displayedTagId);
+      if (displayedTag && !isTagAppliedToSelected(displayedTag)) {
+        enhancedLog(`Clearing displayed tag "${displayedTag.tagTitle}" because it's no longer applied to all selected files`);
+        setDisplayedTagId(null);
+      }
+    }
+  }, [selectedPhotoIndices.size, selectedExistingIndices.size, displayedTagId, tags, isTagAppliedToSelected, enhancedLog]);
+
+  // NEW: Additional effect to handle tag map changes that might affect displayed tag
+  useEffect(() => {
+    if (displayedTagId) {
+      const displayedTag = tags.find(t => t.id === displayedTagId);
+      if (displayedTag && !isTagAppliedToSelected(displayedTag)) {
+        enhancedLog(`Clearing displayed tag "${displayedTag.tagTitle}" due to tag map changes`);
+        setDisplayedTagId(null);
+      }
+    }
+  }, [photoTagsMap, existingFileTagsMap, displayedTagId, tags, isTagAppliedToSelected, enhancedLog]);
 
   return {
     // State

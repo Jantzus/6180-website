@@ -21,6 +21,7 @@ import { prewarmCredentials } from "./s3";
  * FIXED: Enhanced navigation logic to properly handle "Add Photos" flow
  * UPDATED: Improved navigation logic using isOnSaveAlbumPage instead of isEditingExistingAlbum
  * ENHANCED: Support for credential prewarming and better error handling
+ * ENHANCED: Natural/numeric filename sorting for better file ordering
  */
 export const useFileUploadProcessor = (
   navigateAfterUpload?: (folderId: string | null) => void,
@@ -205,8 +206,11 @@ export const useFileUploadProcessor = (
 
   // MEMOIZED: Handle file selection with optimized state management
   // FIXED: Enhanced error handling and logging
+  // ENHANCED: Natural/numeric filename sorting for proper file ordering
   const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>, cognitoUsername: string | null) => {
-    const files = Array.from(e.target.files || []);
+    const files = Array.from(e.target.files || []).sort((a, b) => 
+      a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' })
+    );
     if (!files.length) {
       log("❌ No files selected");
       return false;

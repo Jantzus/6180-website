@@ -105,7 +105,7 @@ const SubtagButton = styled(TagButton)`
   border-radius: 16px;
 `;
 
-const DeleteButton = styled.button`
+const DeleteButton = styled.button<{ $isMobile?: boolean }>`
   position: absolute;
   top: -6px;
   right: -6px;
@@ -122,6 +122,14 @@ const DeleteButton = styled.button`
   justify-content: center;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+
+  ${props => props.$isMobile && `
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    box-shadow: 0 3px 10px rgba(220, 53, 69, 0.4);
+    background: rgba(220, 53, 69, 0.95);
+  `}
 
   &:hover {
     background: #c82333;
@@ -228,7 +236,7 @@ const InputButton = styled.button`
   }
 `;
 
-// Tag with delete functionality component - UPDATED: removed arrow, simplified click behavior
+// Tag with delete functionality component - UPDATED: Mobile-friendly delete buttons
 interface TagWithDeleteProps {
   tag: TagData;
   isApplied: boolean;
@@ -250,7 +258,28 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
   onDeleteTag,
   getTagDisplayText
 }) => {
+  const { t } = useTranslation();
   const [showDelete, setShowDelete] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Detect if this is a touch device
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    };
+    
+    checkTouchDevice();
+    window.addEventListener('resize', checkTouchDevice);
+    
+    return () => window.removeEventListener('resize', checkTouchDevice);
+  }, []);
+
+  // Only show delete button for GREEN tags (displayed/most recently selected)
+  // On touch devices, always show for green tags
+  // On non-touch devices, show on hover for green tags
+  const shouldShowDelete = isTouchDevice 
+    ? isDisplayed && !disabled && !isBeingDeleted
+    : showDelete && isDisplayed && !disabled && !isBeingDeleted;
 
   return (
     <TagButton
@@ -259,18 +288,22 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
       $isBeingDeleted={isBeingDeleted}
       disabled={disabled}
       onClick={() => onTagClick(tag)}
-      onMouseEnter={() => setShowDelete(true)}
-      onMouseLeave={() => setShowDelete(false)}
+      onMouseEnter={() => !isTouchDevice && isDisplayed && setShowDelete(true)}
+      onMouseLeave={() => !isTouchDevice && isDisplayed && setShowDelete(false)}
     >
-      <span>{getTagDisplayText(tag)}</span>
+      <span style={{ paddingRight: shouldShowDelete ? '20px' : '0' }}>
+        {getTagDisplayText(tag)}
+      </span>
       
-      {showDelete && !disabled && !isBeingDeleted && (
+      {shouldShowDelete && (
         <DeleteButton
+          $isMobile={isTouchDevice}
           onClick={(e) => {
             e.stopPropagation();
             onDeleteTag(tag.id);
           }}
           disabled={isBeingDeleted}
+          title={t('Delete tag')}
         >
           ×
         </DeleteButton>
@@ -279,7 +312,7 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
   );
 });
 
-// Subtag with delete functionality component
+// Subtag with delete functionality component - UPDATED: Mobile-friendly delete buttons
 interface SubtagWithDeleteProps {
   subtag: SubtagData;
   isApplied: boolean;
@@ -297,7 +330,28 @@ const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = React.memo(({
   onSubtagClick,
   onDeleteSubtag
 }) => {
+  const { t } = useTranslation();
   const [showDelete, setShowDelete] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Detect if this is a touch device
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    };
+    
+    checkTouchDevice();
+    window.addEventListener('resize', checkTouchDevice);
+    
+    return () => window.removeEventListener('resize', checkTouchDevice);
+  }, []);
+
+  // Only show delete button for applied subtags (since subtags are only visible when parent tag is green)
+  // On touch devices, always show for applied subtags
+  // On non-touch devices, show on hover for applied subtags
+  const shouldShowDelete = isTouchDevice 
+    ? isApplied && !disabled && !isBeingDeleted
+    : showDelete && isApplied && !disabled && !isBeingDeleted;
 
   return (
     <SubtagButton
@@ -305,17 +359,21 @@ const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = React.memo(({
       $isBeingDeleted={isBeingDeleted}
       disabled={disabled}
       onClick={() => onSubtagClick(subtag)}
-      onMouseEnter={() => setShowDelete(true)}
-      onMouseLeave={() => setShowDelete(false)}
+      onMouseEnter={() => !isTouchDevice && isApplied && setShowDelete(true)}
+      onMouseLeave={() => !isTouchDevice && isApplied && setShowDelete(false)}
     >
-      {subtag.subtagTitle}
-      {showDelete && !disabled && !isBeingDeleted && (
+      <span style={{ paddingRight: shouldShowDelete ? '20px' : '0' }}>
+        {subtag.subtagTitle}
+      </span>
+      {shouldShowDelete && (
         <DeleteButton
+          $isMobile={isTouchDevice}
           onClick={(e) => {
             e.stopPropagation();
             onDeleteSubtag(subtag.id);
           }}
           disabled={isBeingDeleted}
+          title={t('Delete subtag')}
         >
           ×
         </DeleteButton>
@@ -367,7 +425,7 @@ const NewTagInput: React.FC<NewTagInputProps> = ({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={handleKeyPress}
-        placeholder={placeholder}
+        placeholder={t(placeholder)}
         disabled={isSubmitting}
       />
       <InputButton
@@ -426,6 +484,37 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     return null;
   }
 
+  // Memoize getTagDisplayText to ensure it updates when dependencies change
+  const getTagDisplayText = React.useCallback((tag: TagData): string => {
+    // Only show subtags if the tag is actually applied to ALL selected files
+    const isApplied = isTagAppliedToSelected(tag);
+    
+    if (!isApplied) {
+      // If tag is not applied to all selected files, just show the tag title
+      return tag.tagTitle;
+    }
+    
+    // If tag is applied, check for subtags
+    const appliedTags = getAppliedTagsForSelected();
+    const appliedTag = appliedTags.find(t => t.tagTitle === tag.tagTitle);
+    
+    if (!appliedTag || appliedTag.subtags.length === 0) {
+      return tag.tagTitle;
+    }
+    
+    const subtagNames = appliedTag.subtags.map(s => s.subtagTitle).join(' || ');
+    return `${tag.tagTitle}  |  ${subtagNames}`;
+  }, [isTagAppliedToSelected, getAppliedTagsForSelected]);
+
+  // Log current tag states for debugging
+  React.useEffect(() => {
+    const appliedTags = tags.filter(tag => isTagAppliedToSelected(tag));
+    const appliedTagsWithSubtags = getAppliedTagsForSelected();
+    enhancedLog(`TagsDisplay render - ${appliedTags.length} tags applied to all selected files:`, 
+      appliedTags.map(t => `${t.tagTitle} (display: "${getTagDisplayText(t)}")`));
+    enhancedLog(`Applied tags with subtags:`, appliedTagsWithSubtags);
+  }, [tags, isTagAppliedToSelected, getAppliedTagsForSelected, getTagDisplayText, enhancedLog]);
+
   const handleTagClick = (tag: TagData) => {
     if (disabled) return;
     
@@ -466,18 +555,6 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     if (!success) {
       enhancedLog("Failed to submit new tag");
     }
-  };
-
-  const getTagDisplayText = (tag: TagData): string => {
-    const appliedTags = getAppliedTagsForSelected();
-    const appliedTag = appliedTags.find(t => t.tagTitle === tag.tagTitle);
-    
-    if (!appliedTag || appliedTag.subtags.length === 0) {
-      return tag.tagTitle;
-    }
-    
-    const subtagNames = appliedTag.subtags.map(s => s.subtagTitle).join(' || ');
-    return `${tag.tagTitle}  |  ${subtagNames}`;
   };
 
   // Sort tags by points (highest first) then by updated date
@@ -552,7 +629,7 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
         />
       )}
 
-      {/* Instructions with new black/green color scheme */}
+      {/* Instructions with mobile-friendly delete information */}
       <div style={{
         marginTop: '24px',
         padding: '20px 24px',
@@ -567,11 +644,18 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
           <span style={{ fontSize: '16px' }}>🏷️</span>
           <strong style={{ fontSize: '14px' }}>{t('Tag States:')}</strong>
         </div>
-        <div style={{ lineHeight: '1.5' }}>
+        <div style={{ lineHeight: '1.5', marginBottom: '12px' }}>
           <strong>{t('Click any tag once to apply/remove it from ALL selected files')}</strong><br/>
-          • <strong style={{ color: '#333333' }}>⚫</strong> {t('Black tags: Applied to selected files')}<br/>
-          • <strong style={{ color: '#28a745' }}>🟢</strong> {t('Green tags: Most recently clicked tag (showing subtags)')}<br/>
-          • <strong style={{ color: '#6c757d' }}>⚪</strong> {t('Gray tags: Available but not applied')}<br/>
+          • <strong style={{ color: '#333333' }}>⚫</strong> {t('Black tags: Applied to selected files (shows subtags if any)')}<br/>
+          • <strong style={{ color: '#28a745' }}>🟢</strong> {t('Green tags: Most recently clicked tag (showing subtags) - can be deleted')}<br/>
+          • <strong style={{ color: '#6c757d' }}>⚪</strong> {t('Gray tags: Available but not applied to all selected files')}<br/>
+        </div>
+        <div style={{ lineHeight: '1.5', fontSize: '12px', opacity: 0.9 }}>
+          <strong>{t('Delete Tags:')}</strong><br/>
+          • <strong>{t('Desktop:')}</strong> {t('Hover over green tags to see delete button (×)')}<br/>
+          • <strong>{t('Mobile:')}</strong> {t('Delete button (×) is always visible on green tags')}<br/>
+          <em style={{ fontSize: '11px', opacity: 0.8 }}>{t('Tip: Click a tag to make it green and reveal the delete option')}</em><br/>
+          <em style={{ fontSize: '11px', opacity: 0.8 }}>{t('Note: Selecting files without tags will clear all tag states')}</em>
         </div>
       </div>
     </TagsContainer>
@@ -694,7 +778,7 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
   );
 });
 
-// PhotoTagging component for individual photo tagging display
+// ENHANCED PhotoTagging component for displaying tags outside individual files
 interface PhotoTaggingProps {
   photoTags: { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[];
   isSelected?: boolean;
@@ -708,33 +792,98 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
 }) => {
   const { t } = useTranslation();
 
+  // Enhanced tag display formatting
+  const formatTagsDisplay = (tags: typeof photoTags): string => {
+    if (tags.length === 0) return '';
+    
+    return tags.map(tag => {
+      if (tag.subtags.length > 0) {
+        const subtagNames = tag.subtags.map(s => s.subtagTitle).join(', ');
+        return `${tag.tagTitle}: ${subtagNames}`;
+      }
+      return tag.tagTitle;
+    }).join(' • ');
+  };
+
+  const tagsText = formatTagsDisplay(photoTags);
+  const hasAnyTags = photoTags.length > 0;
+
+  // Don't render anything if no tags and not selected
+  if (!hasAnyTags && !isSelected) {
+    return null;
+  }
+
   return (
-    <div style={{ 
-      position: 'absolute', 
-      bottom: '8px', 
-      left: '8px', 
-      right: '8px',
-      background: 'rgba(0, 0, 0, 0.7)',
-      color: 'white',
-      padding: '6px 12px',
-      borderRadius: '6px',
-      fontSize: '12px',
-      cursor: onToggleSelection ? 'pointer' : 'default',
-      backdropFilter: 'blur(4px)',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
-    }}
-    onClick={onToggleSelection}>
-      {photoTags.length > 0 ? (
-        <div>
-          {t('Tags: ')}{photoTags.map(tag => 
-            tag.subtags.length > 0 
-              ? `${tag.tagTitle} (${tag.subtags.map(s => s.subtagTitle).join(', ')})`
-              : tag.tagTitle
-          ).join(', ')}
+    <div 
+      style={{ 
+        background: hasAnyTags 
+          ? 'linear-gradient(135deg, rgba(0, 123, 255, 0.95) 0%, rgba(0, 123, 255, 0.85) 100%)'
+          : 'rgba(108, 117, 125, 0.6)', // Subtle gray for untagged files
+        color: 'white',
+        padding: hasAnyTags ? '8px 12px' : '6px 12px',
+        borderRadius: hasAnyTags ? '8px' : '6px',
+        fontSize: hasAnyTags ? '11px' : '10px',
+        cursor: onToggleSelection ? 'pointer' : 'default',
+        backdropFilter: 'blur(6px)',
+        boxShadow: hasAnyTags 
+          ? '0 4px 12px rgba(0, 123, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)'
+          : '0 2px 8px rgba(0, 0, 0, 0.2)',
+        border: hasAnyTags ? '1px solid rgba(255, 255, 255, 0.2)' : 'none',
+        transition: 'all 0.3s ease',
+        lineHeight: '1.3',
+        minHeight: '32px',
+        display: 'flex',
+        alignItems: 'center',
+        wordBreak: 'break-word'
+      }}
+      onClick={onToggleSelection}
+      onMouseEnter={(e) => {
+        if (hasAnyTags) {
+          e.currentTarget.style.transform = 'translateY(-1px)';
+          e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 123, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)';
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (hasAnyTags) {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 123, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)';
+        }
+      }}
+    >
+      {hasAnyTags ? (
+        <div style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          gap: '6px',
+          width: '100%',
+          flexWrap: 'wrap'
+        }}>
+          {/* Tag icon */}
+          <span style={{ 
+            fontSize: '12px',
+            opacity: 0.9,
+            flexShrink: 0
+          }}>
+            🏷️
+          </span>
+          {/* Tags text - no truncation, allow wrapping */}
+          <span style={{ 
+            fontWeight: '600',
+            textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+            flex: 1
+          }}>
+            {tagsText}
+          </span>
         </div>
       ) : (
-        <div style={{ opacity: 0.7 }}>
-          {isSelected ? t('Selected for tagging') : t('No tags applied')}
+        <div style={{ 
+          opacity: 0.8,
+          fontStyle: 'italic',
+          textAlign: 'center',
+          width: '100%',
+          fontSize: '10px'
+        }}>
+          {t('No tags applied')}
         </div>
       )}
     </div>
