@@ -61,7 +61,7 @@ interface ExistingFile {
   thumbnailDataKey: string | null;
   durationInSeconds: number | null;
   dataInBytes: number;
-  fileName?: string; // NEW: Original filename from fileDisplayName
+  fileName?: string; // NEW: Original filename from fileDisplayName or extracted from dataKey
 }
 
 // NEW: Interface for applied tags (matching the type used throughout the app)
@@ -650,7 +650,7 @@ const SaveAlbum = () => {
     log(logMessage);
   };
 
-  // UPDATED: Function to fetch existing album data with proper tag extraction and filename capture
+  // UPDATED: Function to fetch existing album data with proper tag extraction and filename capture WITH FALLBACK
   const fetchExistingAlbumData = async (albumFolderId: string) => {
     if (!albumFolderId) return;
     
@@ -719,15 +719,22 @@ const SaveAlbum = () => {
       const folder = targetFolder.folder;
       const fileReferences = folder?.fileReferencesPage?.items || [];
     
-      // UPDATED: Extract both files AND their existing tags AND filenames
+      // UPDATED: Extract both files AND their existing tags AND filenames WITH FALLBACK
       const files: ExistingFile[] = [];
       const existingTagsMap = new Map<number, AppliedTag[]>();
       
       fileReferences.forEach((ref: any, index: number) => {
         const file = ref.file;
         if (file && file.dataKey) {
-          // NEW: Extract filename from fileDisplayName if available
-          const fileName = ref.fileDisplayName || null;
+          // NEW: Extract filename from fileDisplayName if available, fallback to dataKey
+          let fileName = ref.fileDisplayName;
+          
+          // If no fileDisplayName, extract filename from dataKey as fallback
+          if (!fileName && file.dataKey) {
+            const dataKeyParts = file.dataKey.split('/');
+            fileName = dataKeyParts[dataKeyParts.length - 1];
+            enhancedLog(`Using dataKey fallback filename for existing file: ${fileName}`);
+          }
           
           // Add file to the files array with filename
           files.push({
@@ -735,7 +742,7 @@ const SaveAlbum = () => {
             thumbnailDataKey: file.thumbnailDataKey || null,
             durationInSeconds: file.durationInSeconds || null,
             dataInBytes: file.dataInBytes || 0,
-            fileName: fileName // NEW: Include filename from backend
+            fileName: fileName || null // NEW: Include filename from backend or extracted from dataKey
           });
           
           // FIXED: Extract existing selectedTags and convert to AppliedTag format
@@ -761,7 +768,7 @@ const SaveAlbum = () => {
       // FIXED: Set the existing tags map with the extracted tags
       setExistingFileTagsMap(existingTagsMap);
       
-      enhancedLog(`✅ Successfully loaded ${files.length} existing files with ${existingTagsMap.size} files having existing tags and ${files.filter(f => f.fileName).length} files with names`);
+      enhancedLog(`✅ Successfully loaded ${files.length} existing files with ${existingTagsMap.size} files having existing tags and ${files.filter(f => f.fileName).length} files with names (including fallback from dataKey)`);
 
       // Update folder details if they haven't been set yet
       if (!folderName && folder.folderName) {
