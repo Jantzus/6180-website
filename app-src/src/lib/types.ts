@@ -19,6 +19,7 @@ export type LanguageCode =
 
 export type SelectedPhoto = {
   fileName: string
+  originalFileName?: string  // NEW: Add original filename from user's system
   s3PreviewUrl: string
   type: string | undefined
   size?: number
@@ -70,6 +71,7 @@ export type FileType = {
   durationInSeconds: number | null;
   dataInBytes?: number;
   selectedTags?: SelectedTag[];
+  fileDisplayName?: string;  // NEW: Add fileDisplayName support
 };
 
 export interface FolderType {
@@ -91,6 +93,7 @@ export interface FolderType {
     durationInSeconds?: number;
     dataInBytes?: number;
     selectedTags?: SelectedTag[];
+    fileDisplayName?: string;  // NEW: Add fileDisplayName support
   }>;
   profileIds?: string[];
   contacts?: Record<string, string>;
@@ -102,6 +105,7 @@ export interface File {
   durationInSeconds: number | null
   dataInBytes?: number
   selectedTags?: SelectedTag[]
+  fileDisplayName?: string  // NEW: Add fileDisplayName support
 }
 
 export interface Folder {
@@ -134,6 +138,7 @@ export interface MediaItem {
   loaded?: boolean;
   dataInBytes?: number;
   selectedTags?: SelectedTag[]; // Add this line
+  fileName?: string;  // NEW: Add filename support
 }
 
 // Contact mapping
@@ -184,7 +189,7 @@ export interface ResponsiveHeaderProps {
   t: (key: string) => string;
 }
 
-// GraphQL query
+// GraphQL query - Updated to include fileDisplayName
 export const FOLDERPOSITION_FIELD = `
   id
   profileIds
@@ -202,6 +207,7 @@ export const FOLDERPOSITION_FIELD = `
     updatedAt
     fileReferencesPage {
       items {
+        fileDisplayName
         selectedTags {
           TagType
           tagTitle
@@ -253,6 +259,7 @@ export const FETCH_FOLDERS_QUERY = `
           }
           fileReferencesPage {
             items {
+              fileDisplayName
               selectedTags {
                 TagType
                 tagTitle

@@ -640,22 +640,16 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
         border: '1px solid #b3d9ff',
         boxShadow: '0 4px 12px rgba(0, 123, 255, 0.08)'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-          <span style={{ fontSize: '16px' }}>🏷️</span>
-          <strong style={{ fontSize: '14px' }}>{t('Tag States:')}</strong>
-        </div>
-        <div style={{ lineHeight: '1.5', marginBottom: '12px' }}>
-          <strong>{t('Click any tag once to apply/remove it from ALL selected files')}</strong><br/>
-          • <strong style={{ color: '#333333' }}>⚫</strong> {t('Black tags: Applied to selected files (shows subtags if any)')}<br/>
-          • <strong style={{ color: '#28a745' }}>🟢</strong> {t('Green tags: Most recently clicked tag (showing subtags) - can be deleted')}<br/>
-          • <strong style={{ color: '#6c757d' }}>⚪</strong> {t('Gray tags: Available but not applied to all selected files')}<br/>
-        </div>
-        <div style={{ lineHeight: '1.5', fontSize: '12px', opacity: 0.9 }}>
-          <strong>{t('Delete Tags:')}</strong><br/>
-          • <strong>{t('Desktop:')}</strong> {t('Hover over green tags to see delete button (×)')}<br/>
-          • <strong>{t('Mobile:')}</strong> {t('Delete button (×) is always visible on green tags')}<br/>
-          <em style={{ fontSize: '11px', opacity: 0.8 }}>{t('Tip: Click a tag to make it green and reveal the delete option')}</em><br/>
-          <em style={{ fontSize: '11px', opacity: 0.8 }}>{t('Note: Selecting files without tags will clear all tag states')}</em>
+        <div style={{ lineHeight: '2.2' }}>
+          <div style={{ marginBottom: '8px' }}>
+            <strong style={{ color: '#28a745' }}>🟢</strong>  {t('Most recently clicked tag (showing subtags)')}
+          </div>
+          <div style={{ marginBottom: '8px' }}>
+            <strong style={{ color: '#333333' }}>⚫</strong>  {t('Applied to selected files')}
+          </div>
+          <div>
+            <strong style={{ color: '#6c757d' }}>⚪</strong>  {t('Available but not applied to all selected files')}
+          </div>
         </div>
       </div>
     </TagsContainer>
@@ -778,17 +772,21 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
   );
 });
 
-// ENHANCED PhotoTagging component for displaying tags outside individual files
+// ENHANCED PhotoTagging component for displaying tags outside individual files - UPDATED with filename support
 interface PhotoTaggingProps {
   photoTags: { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[];
   isSelected?: boolean;
   onToggleSelection?: () => void;
+  fileName?: string; // NEW: Optional filename parameter
+  showFileName?: boolean; // NEW: Optional flag to show filename
 }
 
 export const PhotoTagging: React.FC<PhotoTaggingProps> = ({ 
   photoTags,
   isSelected = false,
-  onToggleSelection
+  onToggleSelection,
+  fileName, // NEW: Filename parameter
+  showFileName = false // NEW: Flag to control filename display
 }) => {
   const { t } = useTranslation();
 
@@ -808,84 +806,109 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
   const tagsText = formatTagsDisplay(photoTags);
   const hasAnyTags = photoTags.length > 0;
 
-  // Don't render anything if no tags and not selected
-  if (!hasAnyTags && !isSelected) {
+  // NEW: Show component if we have filename to display OR tags OR if selected
+  const shouldRender = showFileName && fileName || hasAnyTags || isSelected;
+
+  // Don't render anything if no relevant content to show
+  if (!shouldRender) {
     return null;
   }
 
   return (
-    <div 
-      style={{ 
-        background: hasAnyTags 
-          ? 'linear-gradient(135deg, rgba(0, 123, 255, 0.95) 0%, rgba(0, 123, 255, 0.85) 100%)'
-          : 'rgba(108, 117, 125, 0.6)', // Subtle gray for untagged files
-        color: 'white',
-        padding: hasAnyTags ? '8px 12px' : '6px 12px',
-        borderRadius: hasAnyTags ? '8px' : '6px',
-        fontSize: hasAnyTags ? '11px' : '10px',
-        cursor: onToggleSelection ? 'pointer' : 'default',
-        backdropFilter: 'blur(6px)',
-        boxShadow: hasAnyTags 
-          ? '0 4px 12px rgba(0, 123, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)'
-          : '0 2px 8px rgba(0, 0, 0, 0.2)',
-        border: hasAnyTags ? '1px solid rgba(255, 255, 255, 0.2)' : 'none',
-        transition: 'all 0.3s ease',
-        lineHeight: '1.3',
-        minHeight: '32px',
-        display: 'flex',
-        alignItems: 'center',
-        wordBreak: 'break-word'
-      }}
-      onClick={onToggleSelection}
-      onMouseEnter={(e) => {
-        if (hasAnyTags) {
-          e.currentTarget.style.transform = 'translateY(-1px)';
-          e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 123, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)';
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (hasAnyTags) {
-          e.currentTarget.style.transform = 'translateY(0)';
-          e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 123, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)';
-        }
-      }}
-    >
-      {hasAnyTags ? (
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '6px',
-          width: '100%',
-          flexWrap: 'wrap'
-        }}>
-          {/* Tag icon */}
-          <span style={{ 
-            fontSize: '12px',
-            opacity: 0.9,
-            flexShrink: 0
-          }}>
-            🏷️
-          </span>
-          {/* Tags text - no truncation, allow wrapping */}
-          <span style={{ 
-            fontWeight: '600',
-            textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
-            flex: 1
-          }}>
-            {tagsText}
-          </span>
-        </div>
-      ) : (
-        <div style={{ 
-          opacity: 0.8,
-          fontStyle: 'italic',
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+      {/* NEW: Filename display */}
+      {showFileName && fileName && (
+        <div style={{
+          fontSize: '11px',
+          fontWeight: '600',
+          color: '#333',
+          padding: '4px 8px',
+          backgroundColor: isSelected ? '#e3f2fd' : '#f8f9fa',
+          borderRadius: '4px',
+          border: `1px solid ${isSelected ? '#90caf9' : '#e9ecef'}`,
           textAlign: 'center',
-          width: '100%',
-          fontSize: '10px'
+          wordBreak: 'break-word',
+          lineHeight: '1.2',
+          transition: 'all 0.2s ease'
         }}>
-          {t('No tags applied')}
+          {fileName}
         </div>
       )}
+
+      {/* Tags display */}
+      <div 
+        style={{ 
+          background: hasAnyTags 
+            ? 'linear-gradient(135deg, rgba(0, 123, 255, 0.95) 0%, rgba(0, 123, 255, 0.85) 100%)'
+            : 'rgba(108, 117, 125, 0.6)', // Subtle gray for untagged files
+          color: 'white',
+          padding: hasAnyTags ? '8px 12px' : '6px 12px',
+          borderRadius: hasAnyTags ? '8px' : '6px',
+          fontSize: hasAnyTags ? '11px' : '10px',
+          cursor: onToggleSelection ? 'pointer' : 'default',
+          backdropFilter: 'blur(6px)',
+          boxShadow: hasAnyTags 
+            ? '0 4px 12px rgba(0, 123, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)'
+            : '0 2px 8px rgba(0, 0, 0, 0.2)',
+          border: hasAnyTags ? '1px solid rgba(255, 255, 255, 0.2)' : 'none',
+          transition: 'all 0.3s ease',
+          lineHeight: '1.3',
+          minHeight: '32px',
+          display: 'flex',
+          alignItems: 'center',
+          wordBreak: 'break-word'
+        }}
+        onClick={onToggleSelection}
+        onMouseEnter={(e) => {
+          if (hasAnyTags) {
+            e.currentTarget.style.transform = 'translateY(-1px)';
+            e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 123, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)';
+          }
+        }}
+        onMouseLeave={(e) => {
+          if (hasAnyTags) {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 123, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)';
+          }
+        }}
+      >
+        {hasAnyTags ? (
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '6px',
+            width: '100%',
+            flexWrap: 'wrap'
+          }}>
+            {/* Tag icon */}
+            <span style={{ 
+              fontSize: '12px',
+              opacity: 0.9,
+              flexShrink: 0
+            }}>
+              🏷️
+            </span>
+            {/* Tags text - no truncation, allow wrapping */}
+            <span style={{ 
+              fontWeight: '600',
+              textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+              flex: 1
+            }}>
+              {tagsText}
+            </span>
+          </div>
+        ) : (
+          <div style={{ 
+            opacity: 0.8,
+            fontStyle: 'italic',
+            textAlign: 'center',
+            width: '100%',
+            fontSize: '10px'
+          }}>
+            {t('No tags applied')}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

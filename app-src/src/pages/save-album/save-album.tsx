@@ -55,13 +55,13 @@ import { TagsDisplay, PhotoTagging } from "./TagDisplayComponents";
 // Import LazyImage for existing files display
 import { LazyImage } from "@/components/LazyImage";
 
-// NEW: Interface for existing files
+// UPDATED: Interface for existing files - now includes fileName
 interface ExistingFile {
   dataKey: string;
   thumbnailDataKey: string | null;
   durationInSeconds: number | null;
   dataInBytes: number;
-  fileName?: string; // We might not have this for existing files
+  fileName?: string; // NEW: Original filename from fileDisplayName
 }
 
 // NEW: Interface for applied tags (matching the type used throughout the app)
@@ -237,7 +237,7 @@ const NewPhotosSection = ({
   );
 };
 
-// Updated ExistingFilesSection Component with enhanced tag visibility
+// Updated ExistingFilesSection Component with enhanced tag visibility and filename display
 const ExistingFilesSection = ({ 
   existingFiles, 
   selectedExistingIndices, 
@@ -454,13 +454,50 @@ const ExistingFilesSection = ({
                 )}
               </div>
               
-              {/* ENHANCED: Applied Tags Display with better visibility */}
-              <div style={{ minHeight: '44px' }}> {/* Reserve space for tags */}
-                <PhotoTagging 
-                  photoTags={appliedTags}
-                  isSelected={isSelected}
-                  onToggleSelection={() => !disabled && onToggleSelection(index)}
-                />
+              {/* NEW: Enhanced filename and tags display */}
+              <div style={{ minHeight: '60px', display: 'flex', flexDirection: 'column', gap: '4px' }}> 
+                {/* Filename display */}
+                {file.fileName && (
+                  <div style={{
+                    fontSize: '11px',
+                    fontWeight: '600',
+                    color: '#333',
+                    padding: '4px 8px',
+                    backgroundColor: isSelected ? '#e3f2fd' : '#f8f9fa',
+                    borderRadius: '4px',
+                    border: `1px solid ${isSelected ? '#90caf9' : '#e9ecef'}`,
+                    textAlign: 'center',
+                    wordBreak: 'break-word',
+                    lineHeight: '1.2',
+                    transition: 'all 0.2s ease'
+                  }}>
+                    {file.fileName}
+                  </div>
+                )}
+                
+                {/* Tags or "No tags" display */}
+                <div style={{ minHeight: '32px' }}>
+                  {appliedTags.length > 0 ? (
+                    <PhotoTagging 
+                      photoTags={appliedTags}
+                      isSelected={isSelected}
+                      onToggleSelection={() => !disabled && onToggleSelection(index)}
+                    />
+                  ) : (
+                    <div style={{
+                      fontSize: '10px',
+                      color: '#6c757d',
+                      fontStyle: 'italic',
+                      textAlign: 'center',
+                      padding: '6px 8px',
+                      backgroundColor: 'rgba(108, 117, 125, 0.1)',
+                      borderRadius: '4px',
+                      border: '1px solid rgba(108, 117, 125, 0.2)'
+                    }}>
+                      {t('No tags applied')}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           );
@@ -613,7 +650,7 @@ const SaveAlbum = () => {
     log(logMessage);
   };
 
-  // FIXED: Function to fetch existing album data with proper tag extraction
+  // UPDATED: Function to fetch existing album data with proper tag extraction and filename capture
   const fetchExistingAlbumData = async (albumFolderId: string) => {
     if (!albumFolderId) return;
     
@@ -682,19 +719,23 @@ const SaveAlbum = () => {
       const folder = targetFolder.folder;
       const fileReferences = folder?.fileReferencesPage?.items || [];
     
-      // FIXED: Extract both files AND their existing tags
+      // UPDATED: Extract both files AND their existing tags AND filenames
       const files: ExistingFile[] = [];
       const existingTagsMap = new Map<number, AppliedTag[]>();
       
       fileReferences.forEach((ref: any, index: number) => {
         const file = ref.file;
         if (file && file.dataKey) {
-          // Add file to the files array
+          // NEW: Extract filename from fileDisplayName if available
+          const fileName = ref.fileDisplayName || null;
+          
+          // Add file to the files array with filename
           files.push({
             dataKey: file.dataKey,
             thumbnailDataKey: file.thumbnailDataKey || null,
             durationInSeconds: file.durationInSeconds || null,
-            dataInBytes: file.dataInBytes || 0
+            dataInBytes: file.dataInBytes || 0,
+            fileName: fileName // NEW: Include filename from backend
           });
           
           // FIXED: Extract existing selectedTags and convert to AppliedTag format
@@ -710,7 +751,7 @@ const SaveAlbum = () => {
             }));
             
             existingTagsMap.set(index, appliedTags);
-            enhancedLog(`Existing file ${index} has ${appliedTags.length} tags applied:`, appliedTags.map(t => t.tagTitle));
+            enhancedLog(`Existing file ${index} (${fileName || 'unnamed'}) has ${appliedTags.length} tags applied:`, appliedTags.map(t => t.tagTitle));
           }
         }
       });
@@ -720,7 +761,7 @@ const SaveAlbum = () => {
       // FIXED: Set the existing tags map with the extracted tags
       setExistingFileTagsMap(existingTagsMap);
       
-      enhancedLog(`✅ Successfully loaded ${files.length} existing files with ${existingTagsMap.size} files having existing tags`);
+      enhancedLog(`✅ Successfully loaded ${files.length} existing files with ${existingTagsMap.size} files having existing tags and ${files.filter(f => f.fileName).length} files with names`);
 
       // Update folder details if they haven't been set yet
       if (!folderName && folder.folderName) {

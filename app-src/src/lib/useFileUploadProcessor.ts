@@ -22,6 +22,7 @@ import { prewarmCredentials } from "./s3";
  * UPDATED: Improved navigation logic using isOnSaveAlbumPage instead of isEditingExistingAlbum
  * ENHANCED: Support for credential prewarming and better error handling
  * ENHANCED: Natural/numeric filename sorting for better file ordering
+ * NEW: Added original filename capture and storage
  */
 export const useFileUploadProcessor = (
   navigateAfterUpload?: (folderId: string | null) => void,
@@ -207,6 +208,7 @@ export const useFileUploadProcessor = (
   // MEMOIZED: Handle file selection with optimized state management
   // FIXED: Enhanced error handling and logging
   // ENHANCED: Natural/numeric filename sorting for proper file ordering
+  // NEW: Capture original filenames from user's system
   const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>, cognitoUsername: string | null) => {
     const files = Array.from(e.target.files || []).sort((a, b) => 
       a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' })
@@ -229,6 +231,9 @@ export const useFileUploadProcessor = (
       ) :
       `📸 Processing ${files.length} new files for new album`
     );
+
+    // NEW: Log original filenames being captured
+    log(`📝 Original filenames: ${files.map(f => f.name).join(', ')}`);
 
     // Set states immediately for better UX
     setIsUploading(true);
@@ -273,9 +278,10 @@ export const useFileUploadProcessor = (
       log(`📁 Using folder ID: ${newFolderId}${currentFolderId ? ' (existing)' : ' (new)'}`);
       setCurrentFolderId(newFolderId);
       
-      // Initialize new photos with proper initial state
+      // Initialize new photos with proper initial state - NEW: Include original filename
       const newPhotos = files.map((file) => ({
         fileName: file.name,
+        originalFileName: file.name,  // NEW: Store original filename from user's system
         s3PreviewUrl: URL.createObjectURL(file),
         type: file.type,
         size: file.size,
@@ -287,9 +293,9 @@ export const useFileUploadProcessor = (
       const combinedPhotos = [...existingPhotos, ...newPhotos];
       setSelectedPhotos(combinedPhotos);
       
-      log(`🚀 Starting upload process for ${files.length} files...`);
+      log(`🚀 Starting upload process for ${files.length} files with original filenames preserved...`);
       
-      // Process only the new files
+      // Process only the new files - NEW: Pass original filenames to processing
       const processedNewPhotos = await processFilesBeforeUploadingToS3(files, cognitoUsername, updatePhotoStatus, log);
       
       // Combine existing photos with processed new photos
@@ -302,14 +308,14 @@ export const useFileUploadProcessor = (
       // FIXED: Always save to localStorage for navigation flow
       // This ensures save-album.tsx can load the photos
       localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(finalCombinedPhotos));
-      log(`💾 Saved ${finalCombinedPhotos.length} photos metadata to localStorage`);
+      log(`💾 Saved ${finalCombinedPhotos.length} photos metadata to localStorage (including original filenames)`);
       
       // Check results for new photos only
       const newCompletePhotos = processedNewPhotos.filter(photo => photo.status === 'complete');
       const newErrorPhotos = processedNewPhotos.filter(photo => photo.status === 'error');
       
       if (newCompletePhotos.length === processedNewPhotos.length && newErrorPhotos.length === 0) {
-        log(`✅ All ${processedNewPhotos.length} new files successfully uploaded`);
+        log(`✅ All ${processedNewPhotos.length} new files successfully uploaded with original filenames`);
       } else if (newErrorPhotos.length > 0) {
         log(`⚠️ Upload completed with ${newErrorPhotos.length} errors out of ${processedNewPhotos.length} new files`);
       }
@@ -348,7 +354,7 @@ export const useFileUploadProcessor = (
         const parsedPhotos = JSON.parse(storedPhotos);
         if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
           setSelectedPhotos(parsedPhotos);
-          log(`📸 Loaded ${parsedPhotos.length} photos from storage`);
+          log(`📸 Loaded ${parsedPhotos.length} photos from storage (including original filenames)`);
           return parsedPhotos;
         }
       }

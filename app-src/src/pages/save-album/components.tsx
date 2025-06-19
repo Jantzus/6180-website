@@ -234,12 +234,16 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
               )}
             </PhotoCard>
             
-            {/* NEW: Applied Tags Display - Outside the photo card */}
-            <PhotoTagging 
-              photoTags={appliedTags}
-              isSelected={isSelected}
-              onToggleSelection={() => onTogglePhotoSelection(i)}
-            />
+            {/* NEW: Enhanced filename and tags display - Outside the photo card */}
+            <div style={{ minHeight: '60px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <PhotoTagging 
+                photoTags={appliedTags}
+                isSelected={isSelected}
+                onToggleSelection={() => onTogglePhotoSelection(i)}
+                fileName={photo.originalFileName || photo.fileName} // NEW: Pass filename
+                showFileName={true} // NEW: Enable filename display
+              />
+            </div>
           </div>
           );
         })}

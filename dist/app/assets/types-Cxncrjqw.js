@@ -15,6 +15,7 @@ const e=`
     updatedAt
     fileReferencesPage {
       items {
+        fileDisplayName
         selectedTags {
           TagType
           tagTitle
@@ -64,6 +65,7 @@ const e=`
           }
           fileReferencesPage {
             items {
+              fileDisplayName
               selectedTags {
                 TagType
                 tagTitle

@@ -1,1 +1,0 @@
-import{o as i,j as n}from"./utils-DjWiEyfK.js";const p=i.forwardRef(({onFileSelection:e},t)=>n.jsx("input",{type:"file",id:"file-input",ref:t,accept:"image/*,video/*",multiple:!0,style:{display:"none"},onChange:e}));export{p as F};

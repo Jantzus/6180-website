@@ -74,7 +74,7 @@ export const updateProgressTracker = (
   })
 }
 
-// Process files for upload - updated to include image resizing
+// Process files for upload - NEW: Preserve original filenames and ensure UUID filename for S3
 export const processFilesBeforeUploadingToS3 = async (
   files: File[],
   cognitoUsername: string,
@@ -89,23 +89,7 @@ export const processFilesBeforeUploadingToS3 = async (
   }
 
   try {
-    log("🔄 Starting file processing...")
-    
-    // First, add files to state with pending status
-    const initialPhotos = files.map(file => {
-      const type: string = file.type
-      const fileExt = file.name.split('.').pop() || "jpg"
-      const uuidFileName = `${generateUUID()}.${fileExt}`
-      
-      return {
-        fileName: uuidFileName,
-        s3PreviewUrl: URL.createObjectURL(file), // Use local object URL initially
-        type,
-        size: file.size,
-        status: 'pending' as UploadStatus,
-        progress: 0
-      } as SelectedPhoto
-    })
+    log("🔄 Starting file processing with original filename preservation...")
     
     // Array to collect processed photos info
     const processedPhotos: SelectedPhoto[] = []
@@ -113,15 +97,20 @@ export const processFilesBeforeUploadingToS3 = async (
     // Process each file one by one, updating its status as we go
     for (let i = 0; i < files.length; i++) {
       const file = files[i]
-      const photo = initialPhotos[i]
       
       try {
         updatePhotoStatus(i, 'uploading', 0.1)
         log(`📝 Processing file ${i + 1}/${files.length}: ${file.name} (${file.type})`)
         
         const type: string = file.type
-        const uuidFileName = photo.fileName
-        log(`🆔 Generated UUID filename: ${uuidFileName}`)
+        const originalFileName = file.name  // NEW: Preserve original filename
+        
+        // Generate UUID filename for S3 storage (to avoid conflicts and ensure uniqueness)
+        const fileExt = file.name.split('.').pop() || "jpg"
+        const uuidFileName = `${generateUUID()}.${fileExt}`
+        
+        log(`🆔 Original filename: ${originalFileName}`)
+        log(`🆔 Generated UUID filename for S3: ${uuidFileName}`)
         
         const baseKey = type.startsWith("video")
           ? `Input/Video/${uuidFileName}`
@@ -232,9 +221,10 @@ export const processFilesBeforeUploadingToS3 = async (
         // Update the photo status to complete
         updatePhotoStatus(i, 'complete', 1)
         
-        // Add processed photo info to our collection
+        // Add processed photo info to our collection - NEW: Include original filename
         processedPhotos.push({
-          fileName: uuidFileName,
+          fileName: uuidFileName,  // UUID filename for S3 storage
+          originalFileName: originalFileName,  // NEW: Original filename from user's system
           s3PreviewUrl, 
           type,
           size: file.size,
@@ -247,21 +237,14 @@ export const processFilesBeforeUploadingToS3 = async (
           progress: 1
         })
         
-        log(`✅ File ${i + 1} processing complete`)
+        log(`✅ File ${i + 1} processing complete (original: ${originalFileName}, S3: ${uuidFileName})`)
       } catch (fileErr) {
         log(`❌ Error processing file ${i + 1}: ${String(fileErr)}`)
         updatePhotoStatus(i, 'error', 0, String(fileErr))
       }
     }
   
-    log(`✅ All files processed`)
-    
-    // Revoke object URLs to prevent memory leaks
-    initialPhotos.forEach(photo => {
-      if (photo.s3PreviewUrl.startsWith('blob:')) {
-        URL.revokeObjectURL(photo.s3PreviewUrl)
-      }
-    })
+    log(`✅ All files processed with original filenames preserved`)
     
     return processedPhotos
   } catch (error) {
@@ -283,7 +266,7 @@ export const moveFilesToPublic = async (
   
   for (let index = 0; index < validPhotos.length; index++) {
     const photo = validPhotos[index]
-    log(`📝 Processing photo ${index + 1}/${validPhotos.length}: ${photo.fileName}`)
+    log(`📝 Processing photo ${index + 1}/${validPhotos.length}: ${photo.originalFileName || photo.fileName}`)
     
     if (photo.tempKey) {
       try {
