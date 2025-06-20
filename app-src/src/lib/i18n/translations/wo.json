@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Mbir: {{error}}",
-  "file(s) with tags": "benn téere ak tagu yi"
+  "file(s) with tags": "benn téere ak tagu yi",
+  "Image {{index}}": "Nataal {{index}}",
+  "Thumbnail {{index}}": "Nataal bu tuuti {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Bëgg ci rax/jël: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Bëgg ci rax/jël: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Jëfandiku benn dencukaay ci yëb yi..."
 }

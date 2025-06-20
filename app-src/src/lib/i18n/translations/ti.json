@@ -388,5 +388,11 @@
   "s": "ሰ",
   "MB": "ሜባ",
   "Error: {{error}}": "ስሕተት: {{error}}",
-  "file(s) with tags": "በመለያ ዘለዎ ፋይል(ታት)"
+  "file(s) with tags": "በመለያ ዘለዎ ፋይል(ታት)",
+  "Image {{index}}": "ስእሊ {{index}}",
+  "Thumbnail {{index}}": "ንእሽቶ ስእሊ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ንምውሳኽ/ንምውጋድ ጠውቕ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ንምውሳኽ/ንምውጋድ ጠውቕ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ፋይላት ኣብ ክፋላት ኣብ ምስራሕ..."
 }

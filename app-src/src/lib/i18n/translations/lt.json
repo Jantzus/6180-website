@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Klaida: {{error}}",
-  "file(s) with tags": "failas(-ai) su žymomis"
+  "file(s) with tags": "failas(-ai) su žymomis",
+  "Image {{index}}": "Vaizdas {{index}}",
+  "Thumbnail {{index}}": "Miniatiūra {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Spustelėkite pridėti/pašalinti: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Spustelėkite pridėti/pašalinti: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Apdorojami failai dalimis..."
 }

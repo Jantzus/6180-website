@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Qalad: {{error}}",
-  "file(s) with tags": "faylal leh sumado"
+  "file(s) with tags": "faylal leh sumado",
+  "Image {{index}}": "Sawir {{index}}",
+  "Thumbnail {{index}}": "Sawir yar {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Riix si aad u kordhiso/u masaxdo: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Riix si aad u kordhiso/u masaxdo: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Hawlgelin faylasha qaybqayb..."
 }

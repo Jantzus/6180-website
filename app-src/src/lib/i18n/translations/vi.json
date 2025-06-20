@@ -388,5 +388,11 @@
   "s": "giây",
   "MB": "MB",
   "Error: {{error}}": "Lỗi: {{error}}",
-  "file(s) with tags": "tập tin có thẻ"
+  "file(s) with tags": "tập tin có thẻ",
+  "Image {{index}}": "Hình ảnh {{index}}",
+  "Thumbnail {{index}}": "Hình thu nhỏ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Nhấp để thêm/xóa: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Nhấp để thêm/xóa: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Đang xử lý tập tin theo từng phần..."
 }

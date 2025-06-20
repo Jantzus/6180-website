@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Feil: {{error}}",
-  "file(s) with tags": "fil(er) med merkelappar"
+  "file(s) with tags": "fil(er) med merkelappar",
+  "Image {{index}}": "Bilete {{index}}",
+  "Thumbnail {{index}}": "Miniatyrbilete {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klikk for å leggje til/fjerne: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klikk for å leggje til/fjerne: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Behandlar filer i bolkar..."
 }

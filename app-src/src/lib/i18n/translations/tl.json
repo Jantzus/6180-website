@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Kamalian: {{error}}",
-  "file(s) with tags": "file na may mga tag"
+  "file(s) with tags": "file na may mga tag",
+  "Image {{index}}": "Larawan {{index}}",
+  "Thumbnail {{index}}": "Maliit na larawan {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "I-click upang idagdag/tanggalin: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "I-click upang idagdag/tanggalin: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Pinoproseso ang mga file sa mga piraso..."
 }

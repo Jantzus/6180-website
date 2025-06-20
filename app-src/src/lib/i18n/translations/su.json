@@ -388,5 +388,11 @@
   "s": "dt",
   "MB": "MB",
   "Error: {{error}}": "Kasalahan: {{error}}",
-  "file(s) with tags": "koropak sareng tag"
+  "file(s) with tags": "koropak sareng tag",
+  "Image {{index}}": "Gambar {{index}}",
+  "Thumbnail {{index}}": "Gambar leutik {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Pencét pikeun nambihan/ngahapus: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Pencét pikeun nambihan/ngahapus: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ngolah file ku bagian-bagian..."
 }

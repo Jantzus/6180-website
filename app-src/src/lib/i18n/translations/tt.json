@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Хата: {{error}}",
-  "file(s) with tags": "тег белән файл(лар)"
+  "file(s) with tags": "тег белән файл(лар)",
+  "Image {{index}}": "Рәсем {{index}}",
+  "Thumbnail {{index}}": "Кечкенә рәсем {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Өстәү/бетерү өчен басыгыз: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Өстәү/бетерү өчен басыгыз: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлларны өлешләрдә эшкәртү..."
 }

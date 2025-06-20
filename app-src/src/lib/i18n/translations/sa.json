@@ -388,5 +388,11 @@
   "s": "से",
   "MB": "एमबी",
   "Error: {{error}}": "त्रुटिः: {{error}}",
-  "file(s) with tags": "चिह्नसहित सञ्चिका(एषु)"
+  "file(s) with tags": "चिह्नसहित सञ्चिका(एषु)",
+  "Image {{index}}": "चित्रम् {{index}}",
+  "Thumbnail {{index}}": "लघुचित्रम् {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "योजनं/निष्कासनं कर्तुं चालयन्तु: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "योजनं/निष्कासनं कर्तुं चालयन्तु: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "सञ्चिकाः खण्डेषु संसाध्यन्ते..."
 }

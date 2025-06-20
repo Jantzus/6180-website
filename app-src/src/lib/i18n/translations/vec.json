@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Eror: {{error}}",
-  "file(s) with tags": "file co etichete"
+  "file(s) with tags": "file co etichete",
+  "Image {{index}}": "Imàgine {{index}}",
+  "Thumbnail {{index}}": "Miniadura {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Schicia par xontar/cavar: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Schicia par xontar/cavar: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Elaborassion de file a tochi..."
 }

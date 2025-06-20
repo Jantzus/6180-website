@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Hape: {{error}}",
-  "file(s) with tags": "rahirahira e tei ai ta'a"
+  "file(s) with tags": "rahirahira e tei ai ta'a",
+  "Image {{index}}": "Ata {{index}}",
+  "Thumbnail {{index}}": "Ata iti {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Piti no te fa'aapora'a/ave: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Piti no te fa'aapora'a/ave: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Te hōroa nei i te mau faira'a e te mau pū..."
 }

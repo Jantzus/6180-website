@@ -17,7 +17,7 @@ import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 // Import types and utilities
 import { AlbumData, PasswordPolicyEnum, MediaItem } from "@/lib/types";
 import { formatUUID, generateInviteLink } from "@/lib/utils";
-import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "@/lib/databaseAPIService";
+import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "./databaseAPIService";
 import { downloadPhotos } from "@/lib/fileOperations";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
@@ -71,7 +71,7 @@ import { ConfirmationModal } from "@/components/Modals/ConfirmationModal";
 import { UsernamePrompt } from "@/components/UsernamePrompt";
 import { AlbumMediaGrid } from "@/components/AlbumMediaGrid";
 import { AlbumInfoComponent } from "@/components/AlbumInfoComponent";
-import { AlbumHeader } from "@/components/AlbumHeader";
+import { AlbumHeader } from "./AlbumHeader";
 
 // ============================
 // Main Photo Album Component

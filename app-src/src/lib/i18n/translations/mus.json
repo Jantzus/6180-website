@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Holwvyeckv: {{error}}",
-  "file(s) with tags": "nakcokv-vlke etohkvlken"
+  "file(s) with tags": "nakcokv-vlke etohkvlken",
+  "Image {{index}}": "Nakcokv {{index}}",
+  "Thumbnail {{index}}": "Lopockuce nakcokv {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Tenkāpvs em ēs pokres/ākvs: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Tenkāpvs em ēs pokres/ākvs: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Fayłvlke nakcokv óhrolopen..."
 }

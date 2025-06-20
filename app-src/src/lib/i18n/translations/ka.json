@@ -388,5 +388,11 @@
   "s": "წმ",
   "MB": "მბ",
   "Error: {{error}}": "შეცდომა: {{error}}",
-  "file(s) with tags": "ნიშნებიანი ფაილ(ებ)ი"
+  "file(s) with tags": "ნიშნებიანი ფაილ(ებ)ი",
+  "Image {{index}}": "სურათი {{index}}",
+  "Thumbnail {{index}}": "მიკროსურათი {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "დააწკაპუნეთ დასამატებლად/წასაშლელად: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "დააწკაპუნეთ დასამატებლად/წასაშლელად: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ფაილების დამუშავება ნაწილებად..."
 }

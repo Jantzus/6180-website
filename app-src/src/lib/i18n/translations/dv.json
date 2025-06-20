@@ -388,5 +388,11 @@
   "s": "ސ",
   "MB": "އެމްބީ",
   "Error: {{error}}": "ގޯސް: {{error}}",
-  "file(s) with tags": "ޓެގަކުންނެވާ ފައިލު(ތައް)"
+  "file(s) with tags": "ޓެގަކުންނެވާ ފައިލު(ތައް)",
+  "Image {{index}}": "ތަސްވީރު {{index}}",
+  "Thumbnail {{index}}": "ކުޑަ ތަސްވީރު {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "އިތުރުކުރަން/ނައްޓާލަން ފިތާލާށެވެ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "އިތުރުކުރަން/ނައްޓާލަން ފިތާލާށެވެ: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "ފައިލުތައް ބައިތަކުގައި ޕްރޮސެސް ކުރަމުން..."
 }

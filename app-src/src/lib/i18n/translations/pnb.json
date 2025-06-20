@@ -388,5 +388,11 @@
   "s": "س",
   "MB": "ایم بی",
   "Error: {{error}}": "غلطی: {{error}}",
-  "file(s) with tags": "ٹیگ والیاں فائلاں"
+  "file(s) with tags": "ٹیگ والیاں فائلاں",
+  "Image {{index}}": "تصویر {{index}}",
+  "Thumbnail {{index}}": "چھوٹی تصویر {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "شامل کرن/ہٹان لئی کلک کرو: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "شامل کرن/ہٹان لئی کلک کرو: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "فائلاں نوں حصیاں وچ پروسیس کر ریا اے..."
 }

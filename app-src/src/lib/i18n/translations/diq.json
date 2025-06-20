@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Xeta: {{error}}",
-  "file(s) with tags": "dosya(y) pê etiketani"
+  "file(s) with tags": "dosya(y) pê etiketani",
+  "Image {{index}}": "Resim {{index}}",
+  "Thumbnail {{index}}": "Resımê werdi {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Ser dızayene/wedarne tıkne: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Ser dızayene/wedarne tıkne: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Dosyeyi parçeyan de vurnayiş..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Tassaavoq: {{error}}",
-  "file(s) with tags": "fiilerit makkunik"
+  "file(s) with tags": "fiilerit makkunik",
+  "Image {{index}}": "Assiliaq {{index}}",
+  "Thumbnail {{index}}": "Mikisaanik {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Killileruk atorlugu/peeruk: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Killileruk atorlugu/peeruk: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Filinik anernissaq killilirijunik..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Aglaan: {{error}}",
-  "file(s) with tags": "faylak tagjunik"
+  "file(s) with tags": "faylak tagjunik",
+  "Image {{index}}": "Anirniq {{index}}",
+  "Thumbnail {{index}}": "Mikisaiyaq anirniq {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Aullartuksauyik ilitchurayaglu/piyaglu: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Aullartuksauyik ilitchurayaglu/piyaglu: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Aullaqtuksauyut failit atausimik..."
 }

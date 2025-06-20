@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Kukanganisa: {{error}}",
-  "file(s) with tags": "mafaira ane matag"
+  "file(s) with tags": "mafaira ane matag",
+  "Image {{index}}": "Mufananidzo {{index}}",
+  "Thumbnail {{index}}": "Mufananidzo mudiki {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Baya kuti uwedzere/ubvise: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Baya kuti uwedzere/ubvise: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Kugadzira mafaira muzvidimbu..."
 }

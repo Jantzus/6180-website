@@ -388,5 +388,11 @@
   "s": "秒",
   "MB": "MB",
   "Error: {{error}}": "錯誤: {{error}}",
-  "file(s) with tags": "有標籤個文件"
+  "file(s) with tags": "有標籤個文件",
+  "Image {{index}}": "圖像 {{index}}",
+  "Thumbnail {{index}}": "縮圖 {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "撳來加添/移除: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "撳來加添/移除: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "拍文件分批處理緊..."
 }

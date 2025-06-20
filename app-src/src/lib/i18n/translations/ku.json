@@ -388,5 +388,11 @@
   "s": "ç",
   "MB": "MB",
   "Error: {{error}}": "Çewtî: {{error}}",
-  "file(s) with tags": "pelên bi nîşaney"
+  "file(s) with tags": "pelên bi nîşaney",
+  "Image {{index}}": "Wêne {{index}}",
+  "Thumbnail {{index}}": "Wêneyê piçûk {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Ji bo lê zêdekirin/jêbirin bitikîne: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Ji bo lê zêdekirin/jêbirin bitikîne: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "File di beşan de tên xebatkirin..."
 }

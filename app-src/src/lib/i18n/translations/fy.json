@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Flater: {{error}}",
-  "file(s) with tags": "bestân(nen) mei tags"
+  "file(s) with tags": "bestân(nen) mei tags",
+  "Image {{index}}": "Ofbylding {{index}}",
+  "Thumbnail {{index}}": "Miniatueroefbylding {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klik om ta foegjen/fuortsmiten: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klik om ta foegjen/fuortsmiten: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Bestannen bewurkje yn blokken..."
 }

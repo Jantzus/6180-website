@@ -388,5 +388,11 @@
   "s": "ث",
   "MB": "مگابایت",
   "Error: {{error}}": "خطا: {{error}}",
-  "file(s) with tags": "فایل(یا) گا برچسپ"
+  "file(s) with tags": "فایل(یا) گا برچسپ",
+  "Image {{index}}": "ویر {{index}}",
+  "Thumbnail {{index}}": "ویر کوچک {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "کلیک بکیت سی اضاف کرد/پاک کرد: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "کلیک بکیت سی اضاف کرد/پاک کرد: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "فایلونه په تیکه ئه کار کردن..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Hala: {{error}}",
-  "file(s) with tags": "faile mo ngaahi fakaʻilonga"
+  "file(s) with tags": "faile mo ngaahi fakaʻilonga",
+  "Image {{index}}": "Fakamatala {{index}}",
+  "Thumbnail {{index}}": "Fakamatala si'isi'i {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Lomi ke fakaʻopoʻopo/ʻave: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Lomi ke fakaʻopoʻopo/ʻave: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ngāue ki he ngaahi faile 'i he ngaahi konga..."
 }

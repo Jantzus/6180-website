@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Error: {{error}}",
-  "file(s) with tags": "archivo(s) con etiquetas"
+  "file(s) with tags": "archivo(s) con etiquetas",
+  "Image {{index}}": "Imagen {{index}}",
+  "Thumbnail {{index}}": "Imagen chikito {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Dale click para añadi/kita: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Dale click para añadi/kita: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Haciendo proceso con los archivos por pedazos..."
 }

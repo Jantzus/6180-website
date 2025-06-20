@@ -388,5 +388,11 @@
   "s": "स",
   "MB": "MB",
   "Error: {{error}}": "Galti: {{error}}",
-  "file(s) with tags": "tag waali file(nan)"
+  "file(s) with tags": "tag waali file(nan)",
+  "Image {{index}}": "Tasveer {{index}}",
+  "Thumbnail {{index}}": "Chhota tasveer {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Jorne/hatane ke khatir click karo: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Jorne/hatane ke khatir click karo: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "File sabke tukra me process kar rahe hae..."
 }

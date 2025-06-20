@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Йоҥылыш: {{error}}",
-  "file(s) with tags": "тег дене файл-влак"
+  "file(s) with tags": "тег дене файл-влак",
+  "Image {{index}}": "Сӱрет {{index}}",
+  "Thumbnail {{index}}": "Изи сӱрет {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Ешараш/кораҥдаш деч личкалык: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Ешараш/кораҥдаш деч личкалык: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлым ужашвлакыште ышташ..."
 }

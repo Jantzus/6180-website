@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Ihĩtia: {{error}}",
-  "file(s) with tags": "faili na tũtumbe"
+  "file(s) with tags": "faili na tũtumbe",
+  "Image {{index}}": "Mbugua {{index}}",
+  "Thumbnail {{index}}": "Mbugua nyinini {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Hũra nĩguo wongere/weherie: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Hũra nĩguo wongere/weherie: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Gũthugania mafaili na tũcunjũ..."
 }

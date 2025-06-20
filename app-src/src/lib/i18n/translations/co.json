@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "Mo",
   "Error: {{error}}": "Sbagliu: {{error}}",
-  "file(s) with tags": "schedariu(i) cù etichette"
+  "file(s) with tags": "schedariu(i) cù etichette",
+  "Image {{index}}": "Stampa {{index}}",
+  "Thumbnail {{index}}": "Miniatura {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Cliccate per aghjunghje/caccià: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Cliccate per aghjunghje/caccià: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Trattamentu di schedarii in pezzi..."
 }

@@ -388,5 +388,11 @@
   "s": "ಸೆ",
   "MB": "ಎಂಬಿ",
   "Error: {{error}}": "ದೋಷ: {{error}}",
-  "file(s) with tags": "ಟ್ಯಾಗ್‌ಗಳೊಂದಿಗೆ ಫೈಲ್(ಗಳು)"
+  "file(s) with tags": "ಟ್ಯಾಗ್‌ಗಳೊಂದಿಗೆ ಫೈಲ್(ಗಳು)",
+  "Image {{index}}": "ಚಿತ್ರ {{index}}",
+  "Thumbnail {{index}}": "ಸಣ್ಣ ಚಿತ್ರ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ಸೇರಿಸಲು/ತೆಗೆದುಹಾಕಲು ಕ್ಲಿಕ್ ಮಾಡಿ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ಸೇರಿಸಲು/ತೆಗೆದುಹಾಕಲು ಕ್ಲಿಕ್ ಮಾಡಿ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ಫೈಲ್‌ಗಳನ್ನು ತುಣುಕುಗಳಲ್ಲಿ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗುತ್ತಿದೆ..."
 }

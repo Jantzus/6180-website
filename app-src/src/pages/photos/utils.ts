@@ -266,20 +266,28 @@ export const createSubAlbumWithSelectedItems = async (
           hasMediaItem: !!mediaItem,
           fileId: mediaItem?.fileId,
           type: mediaItem?.type,
-          hasUrl: !!mediaItem?.url
+          hasUrl: !!mediaItem?.url,
+          fileDisplayName: mediaItem?.fileDisplayName
         });
         
         if (mediaItem && mediaItem.fileId) {
           // Add to fileIds array
           selectedFileIds.push(mediaItem.fileId);
           
-          // Debug file name extraction
-          const fileIdParts = mediaItem.fileId.split('_____');
-          const fileName = fileIdParts[1]?.split('____')[0] || `file-${index}`;
-          console.log(`[SubAlbum] Extracted fileName:`, {
-            fileIdParts,
-            fileName
-          });
+          // Use fileDisplayName if available, otherwise extract from fileId
+          let fileName: string;
+          if (mediaItem.fileDisplayName) {
+            fileName = mediaItem.fileDisplayName;
+            console.log(`[SubAlbum] Using fileDisplayName: ${fileName}`);
+          } else {
+            // Fallback to extracting from fileId
+            const fileIdParts = mediaItem.fileId.split('_____');
+            fileName = fileIdParts[1]?.split('____')[0] || `file-${index}`;
+            console.log(`[SubAlbum] Extracted fileName from fileId:`, {
+              fileIdParts,
+              fileName
+            });
+          }
           
           // Create a SelectedPhoto object
           const newSelectedPhoto: SelectedPhoto = {

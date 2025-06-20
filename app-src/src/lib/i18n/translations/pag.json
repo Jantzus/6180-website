@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Sala: {{error}}",
-  "file(s) with tags": "file ya may tag"
+  "file(s) with tags": "file ya may tag",
+  "Image {{index}}": "Ladawan {{index}}",
+  "Thumbnail {{index}}": "Bassit na ladawan {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "I-click para itabi/ikkat: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "I-click para itabi/ikkat: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Nanggagawa ed files so parte-parte..."
 }

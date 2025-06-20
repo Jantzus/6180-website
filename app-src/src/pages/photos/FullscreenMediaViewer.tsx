@@ -25,11 +25,27 @@ const Header = styled.div`
 const Footer = styled.div`
   padding: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   z-index: 10;
   position: relative;
+  gap: 8px;
+`;
+
+const FileDisplayName = styled.div`
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 600px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 4px;
+  opacity: 0.9;
 `;
 
 const CloseButton = styled.button`
@@ -440,7 +456,7 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
             <MediaWrapper>
               <Image 
                 src={item.url}
-                alt={`Image ${index + 1}`}
+                alt={t('Image {{index}}', { index: index + 1 })}
                 $isLoaded={isLoaded}
                 onLoad={() => {
                   setIsLoaded(true);
@@ -457,7 +473,7 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
               {!isLoaded && item.thumbnailUrl && (
                 <ThumbnailImage 
                   src={item.thumbnailUrl}
-                  alt={`Thumbnail ${index + 1}`}
+                  alt={t('Thumbnail {{index}}', { index: index + 1 })}
                   draggable={false}
                 />
               )}
@@ -485,8 +501,16 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
         )}
       </MediaContainer>
       
-      {/* Footer with owner profile link */}
+      {/* Footer with file display name and owner profile link */}
       <Footer>
+        {/* File Display Name */}
+        {item.fileDisplayName && (
+          <FileDisplayName title={item.fileDisplayName}>
+            {item.fileDisplayName}
+          </FileDisplayName>
+        )}
+        
+        {/* Owner Profile Link */}
         {item.ownerContactId && ownerName && (
           <OwnerProfileLink href={`https://6180.io/${ownerName}`}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Błōnd: {{error}}",
-  "file(s) with tags": "zbiōr(y) z tagami"
+  "file(s) with tags": "zbiōr(y) z tagami",
+  "Image {{index}}": "Ôbroz {{index}}",
+  "Thumbnail {{index}}": "Miniaturka {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kliknij żeby przidać/ůzewnąć: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kliknij żeby przidać/ůzewnąć: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Sprowiywanie plikůw we części..."
 }

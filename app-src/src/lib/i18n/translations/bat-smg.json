@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Klaida: {{error}}",
-  "file(s) with tags": "faila(ē) so žīmėm"
+  "file(s) with tags": "faila(ē) so žīmėm",
+  "Image {{index}}": "Vaizdas {{index}}",
+  "Thumbnail {{index}}": "Mažas vaizdėlis {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Spauskat pridėt/pašalint: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Spauskat pridėt/pašalint: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Apdoruoja fails dalīmės..."
 }

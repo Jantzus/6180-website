@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Ikosa: {{error}}",
-  "file(s) with tags": "amadosiye afite amatag"
+  "file(s) with tags": "amadosiye afite amatag",
+  "Image {{index}}": "Ishusho {{index}}",
+  "Thumbnail {{index}}": "Ishusho nto {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kanda kugirango wongere/ukuremo: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kanda kugirango wongere/ukuremo: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Gutunganya amadosiye mu bitego..."
 }

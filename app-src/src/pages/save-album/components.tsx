@@ -43,6 +43,7 @@ export interface PhotoHandlerProps {
   onDeselectAllPhotos: () => void;
   hideHeader?: boolean; // Optional prop to hide the header instruction
   photoTagsMap: Map<number, AppliedTag[]>; // NEW: Photo tags map to show applied tags
+  columns?: string; // NEW: Optional columns prop for grid layout
 }
 
 export const PhotoHandler: React.FC<PhotoHandlerProps> = ({ 
@@ -54,7 +55,8 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
   onSelectAllPhotos,
   onDeselectAllPhotos,
   hideHeader = false, // Default to false for backward compatibility
-  photoTagsMap // NEW: Photo tags map
+  photoTagsMap, // NEW: Photo tags map
+  columns = "1" // NEW: Default to 1 column if not provided
 }) => {
   const { t } = useTranslation();
 
@@ -64,6 +66,12 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
 
   const hasSelectedPhotos = selectedPhotoIndices.size > 0;
   const allPhotosSelected = selectedPhotoIndices.size === selectedPhotos.length;
+
+  // Function to get grid columns based on the columns value
+  const getGridColumns = () => {
+    const numColumns = parseInt(columns, 10);
+    return `repeat(${numColumns}, 1fr)`;
+  };
 
   return (
     <>
@@ -118,13 +126,23 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
         </Card>
       )}
 
-      <PhotoGrid>
+      {/* UPDATED: PhotoGrid with dynamic columns support */}
+      <PhotoGrid style={{
+        display: 'grid',
+        gridTemplateColumns: getGridColumns(),
+        gap: '16px',
+        padding: '20px',
+        border: '2px dashed #007bff',
+        borderRadius: '12px',
+        backgroundColor: '#fff',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
+      }}>
         {selectedPhotos.map((photo, i) => {
           const isSelected = selectedPhotoIndices.has(i);
           const appliedTags = photoTagsMap.get(i) || []; // Get applied tags for this photo
           
           return (
-            <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: '0' }}>
               <PhotoCard 
                 data-selected={isSelected ? "true" : "false"}
                 style={{ 

@@ -388,5 +388,11 @@
   "s": "h",
   "MB": "MB",
   "Error: {{error}}": "Hē: {{error}}",
-  "file(s) with tags": "kōnae me ngā taputapu"
+  "file(s) with tags": "kōnae me ngā taputapu",
+  "Image {{index}}": "Whakaahua {{index}}",
+  "Thumbnail {{index}}": "Whakaahua iti {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Pāwhiri ki te tāpiri/tango: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Pāwhiri ki te tāpiri/tango: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Te whakahaere kōnae i ngā wāhanga..."
 }

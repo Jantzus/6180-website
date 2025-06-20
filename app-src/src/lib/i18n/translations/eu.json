@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Errorea: {{error}}",
-  "file(s) with tags": "etiketekin fitxategi(ak)"
+  "file(s) with tags": "etiketekin fitxategi(ak)",
+  "Image {{index}}": "Irudi {{index}}",
+  "Thumbnail {{index}}": "Txiki-irudi {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Egin klik gehitzeko/kentzeko: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Egin klik gehitzeko/kentzeko: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Fitxategiak zatika prozesatzen..."
 }

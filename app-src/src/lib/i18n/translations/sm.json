@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Sese: {{error}}",
-  "file(s) with tags": "faila ma faailoga"
+  "file(s) with tags": "faila ma faailoga",
+  "Image {{index}}": "Ata {{index}}",
+  "Thumbnail {{index}}": "Ata laiti {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kiliki e faaopoopo/ave ese: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kiliki e faaopoopo/ave ese: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "O lo faaaogaina o faila i vaega..."
 }

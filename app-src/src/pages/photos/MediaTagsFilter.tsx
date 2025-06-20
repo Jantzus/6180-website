@@ -476,8 +476,12 @@ export const MediaTagsFilter: React.FC<MediaTagsFilterProps> = ({
             visibleTags.map(tag => {
               const selectedSubtags = getSelectedSubtags(tag);
               const tooltipText = selectedSubtags.length > 0 
-                ? `${tag.TagType}: ${tag.tagTitle} (${selectedSubtags.map(st => st.subtagTitle).join(', ')})`
-                : `Click to add/remove: ${tag.TagType}: ${tag.tagTitle}`;
+                ? t('{{tagType}}: {{tagTitle}} ({{subtags}})', { 
+                    tagType: tag.TagType, 
+                    tagTitle: tag.tagTitle, 
+                    subtags: selectedSubtags.map(st => st.subtagTitle).join(', ')
+                  })
+                : t('Click to add/remove: {{tagType}}: {{tagTitle}}', { tagType: tag.TagType, tagTitle: tag.tagTitle });
               
               return (
                 <TagButton
@@ -506,7 +510,11 @@ export const MediaTagsFilter: React.FC<MediaTagsFilterProps> = ({
                 key={subtag.key}
                 $isSelected={selectedTagKeys.includes(subtag.key)}
                 onClick={() => handleSubtagClick(subtag)}
-                title={`Click to add/remove: ${subtag.TagType}: ${subtag.tagTitle} → ${subtag.subtagTitle}`}
+                title={t('Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}', { 
+                  tagType: subtag.TagType, 
+                  tagTitle: subtag.tagTitle, 
+                  subtagTitle: subtag.subtagTitle 
+                })}
               >
                 {subtag.subtagTitle} ({subtag.count})
               </SubtagButton>

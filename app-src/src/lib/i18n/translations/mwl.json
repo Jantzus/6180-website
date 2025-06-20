@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Erro: {{error}}",
-  "file(s) with tags": "fexeiro(s) cun etiquetas"
+  "file(s) with tags": "fexeiro(s) cun etiquetas",
+  "Image {{index}}": "Eimaige {{index}}",
+  "Thumbnail {{index}}": "Miniatura {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Clica para acrecentar/tirar: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Clica para acrecentar/tirar: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Processando ficheiros an bocados..."
 }

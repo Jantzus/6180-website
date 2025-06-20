@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Ehina: {{error}}",
-  "file(s) with tags": "omafaela namateg"
+  "file(s) with tags": "omafaela namateg",
+  "Image {{index}}": "Ombepo {{index}}",
+  "Thumbnail {{index}}": "Ombepo omupiti {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Fiindja okuongeza/okusisa: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Fiindja okuongeza/okusisa: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Omafaile mokutindi..."
 }

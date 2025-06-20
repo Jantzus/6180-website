@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Error: {{error}}",
-  "file(s) with tags": "fitxer(s) amb etiquetes"
+  "file(s) with tags": "fitxer(s) amb etiquetes",
+  "Image {{index}}": "Imatge {{index}}",
+  "Thumbnail {{index}}": "Miniatura {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Feu clic per afegir/eliminar: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Feu clic per afegir/eliminar: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Processant fitxers per fragments..."
 }

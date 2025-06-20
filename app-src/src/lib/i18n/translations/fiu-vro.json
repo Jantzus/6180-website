@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Viga: {{error}}",
-  "file(s) with tags": "sildõga fail(iq)"
+  "file(s) with tags": "sildõga fail(iq)",
+  "Image {{index}}": "Pilt {{index}}",
+  "Thumbnail {{index}}": "Pissikene pilt {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klõpsa liikmisõks/kõrvaldasõks: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klõpsa liikmisõks/kõrvaldasõks: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Failõ tüütlemisõ tükkidä perrä..."
 }

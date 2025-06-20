@@ -388,5 +388,11 @@
   "s": "წმ",
   "MB": "მბ",
   "Error: {{error}}": "ცდომილება: {{error}}",
-  "file(s) with tags": "ნიშნულქიანი ფაილეფი"
+  "file(s) with tags": "ნიშნულქიანი ფაილეფი",
+  "Image {{index}}": "სურათი {{index}}",
+  "Thumbnail {{index}}": "წვრილი სურათი {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ზუნიან/რაფუნ ღირაფქით: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ზუნიან/რაფუნ ღირაფქით: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ფაილეფიშ დამუშაბა ნაჭრეფითა..."
 }

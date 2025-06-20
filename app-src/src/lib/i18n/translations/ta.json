@@ -388,5 +388,11 @@
   "s": "வி",
   "MB": "எம்பி",
   "Error: {{error}}": "பிழை: {{error}}",
-  "file(s) with tags": "குறிச்சொற்களுடன் கோப்பு(கள்)"
+  "file(s) with tags": "குறிச்சொற்களுடன் கோப்பு(கள்)",
+  "Image {{index}}": "படம் {{index}}",
+  "Thumbnail {{index}}": "சிறுபடம் {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "சேர்க்க/நீக்குவதற்கு க்ளிக் செய்யவும்: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "சேர்க்க/நீக்குவதற்கு க்ளிக் செய்யவும்: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "கோப்புகளை பகுதிகளாக செயல்படுத்துகிறது..."
 }

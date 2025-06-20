@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "Mo",
   "Error: {{error}}": "Erreur: {{error}}",
-  "file(s) with tags": "fichier(s) avec des étiquettes"
+  "file(s) with tags": "fichier(s) avec des étiquettes",
+  "Image {{index}}": "Image {{index}}",
+  "Thumbnail {{index}}": "Miniature {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Cliquez pour ajouter/retirer: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Cliquez pour ajouter/retirer: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Traitement des fichiers par blocs..."
 }

@@ -388,5 +388,11 @@
   "s": "ܣ",
   "MB": "ܡܒ",
   "Error: {{error}}": "ܛܥܘܬܐ: {{error}}",
-  "file(s) with tags": "ܦܐܦܐ ܥܡ ܛܒܥܐ"
+  "file(s) with tags": "ܦܐܦܐ ܥܡ ܛܒܥܐ",
+  "Image {{index}}": "ܨܘܪܬܐ {{index}}",
+  "Thumbnail {{index}}": "ܨܘܪܬܐ ܙܥܘܪܬܐ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ܦܩܘܚ ܠܡܘܣܦܘ/ܠܡܥܒܪܘ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ܦܩܘܚ ܠܡܘܣܦܘ/ܠܡܥܒܪܘ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ܡܫܟܢܐ ܦܐܬܐ ܒܦܠܘܬܐ..."
 }

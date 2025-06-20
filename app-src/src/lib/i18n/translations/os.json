@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Радгæс: {{error}}",
-  "file(s) with tags": "тегтимæ файлтæ"
+  "file(s) with tags": "тегтимæ файлтæ",
+  "Image {{index}}": "Ныв {{index}}",
+  "Thumbnail {{index}}": "Чысыл ныв {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Ныххæц бахæссын/схафын: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Ныххæц бахæссын/схафын: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлтæ хайæнтæм гæсгæ кусын..."
 }

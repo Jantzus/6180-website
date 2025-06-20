@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Pantay: {{error}}",
-  "file(s) with tags": "etiquetayuq willañiqi(kuna)"
+  "file(s) with tags": "etiquetayuq willañiqi(kuna)",
+  "Image {{index}}": "Rikch'a {{index}}",
+  "Thumbnail {{index}}": "Uchuy rikch'a {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Yapay/qichuy munanayqa ñit'iy: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Yapay/qichuy munanayqa ñit'iy: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Willañakunata t'aqakunapi ruwaspa..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Sala: {{error}}",
-  "file(s) with tags": "arkivu ho etiketa"
+  "file(s) with tags": "arkivu ho etiketa",
+  "Image {{index}}": "Imajen {{index}}",
+  "Thumbnail {{index}}": "Imajen ki'ik {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klika atu atu hatama/hasai: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klika atu atu hatama/hasai: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Fase hatama iha ba pedasu..."
 }

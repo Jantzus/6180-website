@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Алдвр: {{error}}",
-  "file(s) with tags": "темдгтә файлмуд"
+  "file(s) with tags": "темдгтә файлмуд",
+  "Image {{index}}": "Зурһ {{index}}",
+  "Thumbnail {{index}}": "Биичкн зурһ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Нәмх/арлһх келҗ дарһт: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Нәмх/арлһх келҗ дарһт: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлуд кәәжгүдәр көдлвр..."
 }

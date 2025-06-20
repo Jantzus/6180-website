@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Dogoggora: {{error}}",
-  "file(s) with tags": "faayilii mallattoodhaan"
+  "file(s) with tags": "faayilii mallattoodhaan",
+  "Image {{index}}": "Fakkii {{index}}",
+  "Thumbnail {{index}}": "Fakkii xinnaa {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Cuqaasaa dabaluuf/balleessuuf: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Cuqaasaa dabaluuf/balleessuuf: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Faayilota bakka tokkotti qopheessuu..."
 }

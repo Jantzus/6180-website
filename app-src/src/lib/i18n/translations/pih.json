@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Eror: {{error}}",
-  "file(s) with tags": "fayl(s) wif tag"
+  "file(s) with tags": "fayl(s) wif tag",
+  "Image {{index}}": "Piksha {{index}}",
+  "Thumbnail {{index}}": "Lil piksha {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klik fe add/tek awt: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klik fe add/tek awt: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Prosesing fail dem ina likkle chank..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Fout: {{error}}",
-  "file(s) with tags": "lêer(s) met etikette"
+  "file(s) with tags": "lêer(s) met etikette",
+  "Image {{index}}": "Beeld {{index}}",
+  "Thumbnail {{index}}": "Duimnael {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klik om by te voeg/te verwyder: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klik om by te voeg/te verwyder: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Verwerk lêers in dele..."
 }

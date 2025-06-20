@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Ensobi: {{error}}",
-  "file(s) with tags": "fayiro n'obubonero"
+  "file(s) with tags": "fayiro n'obubonero",
+  "Image {{index}}": "Kifaananyi {{index}}",
+  "Thumbnail {{index}}": "Kifaananyi katono {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Nyiga okugyako/okuggyawo: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Nyiga okugyako/okuggyawo: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Okukola ku fayiro mu bitundu..."
 }

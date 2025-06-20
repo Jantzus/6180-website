@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Impazamo: {{error}}",
-  "file(s) with tags": "iifayile ezinamatag"
+  "file(s) with tags": "iifayile ezinamatag",
+  "Image {{index}}": "Umfanekiso {{index}}",
+  "Thumbnail {{index}}": "Umfanekiso omncinci {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Cofa ukuze wongeze/ususe: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Cofa ukuze wongeze/ususe: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ukucubungula iifayile ngamaqhekeza..."
 }

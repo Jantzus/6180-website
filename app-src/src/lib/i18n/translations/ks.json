@@ -388,5 +388,11 @@
   "s": "س",
   "MB": "ایم بی",
   "Error: {{error}}": "خرابی: {{error}}",
-  "file(s) with tags": "ٹیگ کامیت فائل(فائل)"
+  "file(s) with tags": "ٹیگ کامیت فائل(فائل)",
+  "Image {{index}}": "تصویٖر {{index}}",
+  "Thumbnail {{index}}": "چہوٹ تصویٖر {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "شامِل کرنس/کڈنس باپت کلک کورِو: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "شامِل کرنس/کڈنس باپت کلک کورِو: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "فایلن کو حِصن مُطابق پراسیس کران..."
 }

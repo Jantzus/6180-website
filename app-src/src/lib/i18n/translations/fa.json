@@ -388,5 +388,11 @@
   "s": "ث",
   "MB": "مگابایت",
   "Error: {{error}}": "خطا: {{error}}",
-  "file(s) with tags": "فایل(ها) با برچسب"
+  "file(s) with tags": "فایل(ها) با برچسب",
+  "Image {{index}}": "تصویر {{index}}",
+  "Thumbnail {{index}}": "تصویر کوچک {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "برای افزودن/حذف کلیک کنید: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "برای افزودن/حذف کلیک کنید: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "پردازش فایل‌ها در قطعات..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Salà: {{error}}",
-  "file(s) with tags": "mga file na igwang tag"
+  "file(s) with tags": "mga file na igwang tag",
+  "Image {{index}}": "Ladawan {{index}}",
+  "Thumbnail {{index}}": "Sakuyang ladawan {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "I-click tanganing idagdag/itanggal: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "I-click tanganing idagdag/itanggal: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Nagpoproseso nin mga file sa mga piraso..."
 }

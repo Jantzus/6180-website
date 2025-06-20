@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Eror: {{error}}",
-  "file(s) with tags": "fayl(s) wetem tag"
+  "file(s) with tags": "fayl(s) wetem tag",
+  "Image {{index}}": "Pikja {{index}}",
+  "Thumbnail {{index}}": "Smolpela pikja {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klik blong putim/tekem aot: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klik blong putim/tekem aot: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Mekem wok long ol fail long liklik hap..."
 }

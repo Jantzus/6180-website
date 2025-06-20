@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Error: {{error}}",
-  "file(s) with tags": "file(s) with tags"
+  "file(s) with tags": "file(s) with tags",
+  "Image {{index}}": "Image {{index}}",
+  "Thumbnail {{index}}": "Thumbnail {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Click to add/remove: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Processing files in chunks..."
 }

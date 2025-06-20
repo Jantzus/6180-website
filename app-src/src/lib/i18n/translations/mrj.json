@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Йоҥылыш: {{error}}",
-  "file(s) with tags": "тег дӹнӹ файл-влӓ"
+  "file(s) with tags": "тег дӹнӹ файл-влӓ",
+  "Image {{index}}": "Сӱретвлӓ {{index}}",
+  "Thumbnail {{index}}": "Изи сӱретвлӓ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Ешараш/пуаш деч пырчаклык: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Ешараш/пуаш деч пырчаклык: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлвлӓм ужашвлӓшке ышташ..."
 }

@@ -388,5 +388,11 @@
   "s": "k",
   "MB": "MB",
   "Error: {{error}}": "Hewa: {{error}}",
-  "file(s) with tags": "waihona me nā hōʻailona"
+  "file(s) with tags": "waihona me nā hōʻailona",
+  "Image {{index}}": "Ki'i {{index}}",
+  "Thumbnail {{index}}": "Ki'i li'ili'i {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kaomi e hoʻohui/hoʻokuʻu: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kaomi e hoʻohui/hoʻokuʻu: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Hoʻoponopono ʻana i nā waihona ma nā ʻāpana..."
 }

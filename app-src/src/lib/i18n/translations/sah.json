@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Алҕас: {{error}}",
-  "file(s) with tags": "тиэктээх биирдэр"
+  "file(s) with tags": "тиэктээх биирдэр",
+  "Image {{index}}": "Ойуу {{index}}",
+  "Thumbnail {{index}}": "Кыра ойуу {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Эбии/таһаарыы диэн товар: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Эбии/таһаарыы диэн товар: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Билиилэри сиэрдэргэ көрдөрүү..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Jerbal: {{error}}",
-  "file(s) with tags": "fayl eo tag ro"
+  "file(s) with tags": "fayl eo tag ro",
+  "Image {{index}}": "Jikin {{index}}",
+  "Thumbnail {{index}}": "Jikin tikitik {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kilōk ñan kōkkōn/jelot: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kilōk ñan kōkkōn/jelot: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Jejerbal ko an fail ko ñan jekad..."
 }

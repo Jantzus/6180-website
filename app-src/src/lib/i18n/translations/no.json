@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Feil: {{error}}",
-  "file(s) with tags": "fil(er) med tagger"
+  "file(s) with tags": "fil(er) med tagger",
+  "Image {{index}}": "Bilde {{index}}",
+  "Thumbnail {{index}}": "Miniatyrbilde {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klikk for å legge til/fjerne: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klikk for å legge til/fjerne: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Behandler filer i biter..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Foute: {{error}}",
-  "file(s) with tags": "bestanden me tags"
+  "file(s) with tags": "bestanden me tags",
+  "Image {{index}}": "Plaetje {{index}}",
+  "Thumbnail {{index}}": "Klein plaetje {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klikt om toe te voegn/wegnoame: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klikt om toe te voegn/wegnoame: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Bestoanden in stukken verwerkn..."
 }

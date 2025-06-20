@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Phoso: {{error}}",
-  "file(s) with tags": "difaele tse di nang le ditšhupetšo"
+  "file(s) with tags": "difaele tse di nang le ditšhupetšo",
+  "Image {{index}}": "Setshwantsho {{index}}",
+  "Thumbnail {{index}}": "Setshwantsho se senyane {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Tobetsa go oketša/tloša: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Tobetsa go oketša/tloša: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Go dira ka difaele ka dikarolo..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Erô: {{error}}",
-  "file(s) with tags": "file con etichette"
+  "file(s) with tags": "file con etichette",
+  "Image {{index}}": "Imàgine {{index}}",
+  "Thumbnail {{index}}": "Figûra picìn-na {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Sciacca pe azónze/levâ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Sciacca pe azónze/levâ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Elaboraçion de file a tòchi..."
 }

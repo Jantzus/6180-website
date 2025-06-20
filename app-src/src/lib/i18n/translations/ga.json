@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Earráid: {{error}}",
-  "file(s) with tags": "comhad(anna) le clibeanna"
+  "file(s) with tags": "comhad(anna) le clibeanna",
+  "Image {{index}}": "Íomhá {{index}}",
+  "Thumbnail {{index}}": "Mionsamhail {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Cliceáil chun a chur leis/a bhaint: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Cliceáil chun a chur leis/a bhaint: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Comhaid á bpróiseáil i mblúirí..."
 }

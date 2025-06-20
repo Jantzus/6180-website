@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Хэмыдэ: {{error}}",
-  "file(s) with tags": "файлхэр тэгхэмкIэ"
+  "file(s) with tags": "файлхэр тэгхэмкIэ",
+  "Image {{index}}": "Суретыр {{index}}",
+  "Thumbnail {{index}}": "Суретэ лъапэгъу {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Къэхъунэн еплъ/къэгъэкӏынэн: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Къэхъунэн еплъ/къэгъэкӏынэн: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлхэр хуабжьыу еплъыхьагъ..."
 }

@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Грешка: {{error}}",
-  "file(s) with tags": "датотека(е) са ознакама"
+  "file(s) with tags": "датотека(е) са ознакама",
+  "Image {{index}}": "Слика {{index}}",
+  "Thumbnail {{index}}": "Сличица {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Кликните за додавање/уклањање: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Кликните за додавање/уклањање: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Обрада датотека у деловима..."
 }

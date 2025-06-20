@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Dilembe: {{error}}",
-  "file(s) with tags": "mafayele na bitumba"
+  "file(s) with tags": "mafayele na bitumba",
+  "Image {{index}}": "Kisusanisa {{index}}",
+  "Thumbnail {{index}}": "Kisusanisa kele {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Fiindika kulongisa/kuvinzula: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Fiindika kulongisa/kuvinzula: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Vanga misala mi makanda..."
 }

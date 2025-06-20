@@ -388,5 +388,11 @@
   "s": "س",
   "MB": "ايم بي",
   "Error: {{error}}": "غلطي: {{error}}",
-  "file(s) with tags": "ٽيگ سان فائل(فائلون)"
+  "file(s) with tags": "ٽيگ سان فائل(فائلون)",
+  "Image {{index}}": "تصوير {{index}}",
+  "Thumbnail {{index}}": "ننڍي تصوير {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "شامل ڪرڻ/هٽائڻ لاءِ ڪلڪ ڪريو: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "شامل ڪرڻ/هٽائڻ لاءِ ڪلڪ ڪريو: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "فائلن کي حصن ۾ پروسيس ڪرڻ..."
 }

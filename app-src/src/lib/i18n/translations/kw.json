@@ -388,5 +388,11 @@
   "s": "e",
   "MB": "MB",
   "Error: {{error}}": "Gwall: {{error}}",
-  "file(s) with tags": "restren(ow) gans tagmow"
+  "file(s) with tags": "restren(ow) gans tagmow",
+  "Image {{index}}": "Skeusen {{index}}",
+  "Thumbnail {{index}}": "Skeusen vyghan {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klyckya rag keworra/dilea: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klyckya rag keworra/dilea: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ow treusya restrennow yn godrennow..."
 }

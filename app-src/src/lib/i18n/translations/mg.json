@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Diso: {{error}}",
-  "file(s) with tags": "rakitra miaraka amin'ny marika"
+  "file(s) with tags": "rakitra miaraka amin'ny marika",
+  "Image {{index}}": "Sary {{index}}",
+  "Thumbnail {{index}}": "Sary kely {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Tsindrio raha hanampiana/hanesorana: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Tsindrio raha hanampiana/hanesorana: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Mandamina rakitra amin'ny ampahany..."
 }

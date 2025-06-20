@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Йöшкытöм: {{error}}",
-  "file(s) with tags": "пӧзьӧдчантор понда файлъяс"
+  "file(s) with tags": "пӧзьӧдчантор понда файлъяс",
+  "Image {{index}}": "Серпас {{index}}",
+  "Thumbnail {{index}}": "Ичӧт серпас {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Содтыны/бырӧдны понда личкы: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Содтыны/бырӧдны понда личкы: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлъяссӧ часьтъясӧн уджалӧм..."
 }

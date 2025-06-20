@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Ýalňyş: {{error}}",
-  "file(s) with tags": "belgili fayl(lar)"
+  "file(s) with tags": "belgili fayl(lar)",
+  "Image {{index}}": "Surat {{index}}",
+  "Thumbnail {{index}}": "Kiçi surat {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Goşmak/aýyrmak üçin basyň: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Goşmak/aýyrmak üçin basyň: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Faýllary böleklerde işlemek..."
 }

@@ -388,5 +388,11 @@
   "s": "초",
   "MB": "MB",
   "Error: {{error}}": "오류: {{error}}",
-  "file(s) with tags": "태그가 있는 파일"
+  "file(s) with tags": "태그가 있는 파일",
+  "Image {{index}}": "이미지 {{index}}",
+  "Thumbnail {{index}}": "섬네일 {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "추가/제거하려면 클릭: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "추가/제거하려면 클릭: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "파일을 청크로 처리 중..."
 }

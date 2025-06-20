@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Beeʼeldǫǫh: {{error}}",
-  "file(s) with tags": "naałtsoos bee índa"
+  "file(s) with tags": "naałtsoos bee índa",
+  "Image {{index}}": "Eʼelyaaígíí {{index}}",
+  "Thumbnail {{index}}": "Eʼelyaaígíí bighą́ą́ʼ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Yinołjííh doo ałhosh ninaaltsoos/yee ałnééh: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Yinołjííh doo ałhosh ninaaltsoos/yee ałnééh: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Naaltsoostsoh biyázhí bił nanááł..."
 }

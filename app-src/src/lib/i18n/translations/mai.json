@@ -388,5 +388,11 @@
   "s": "स",
   "MB": "एमबी",
   "Error: {{error}}": "गलती: {{error}}",
-  "file(s) with tags": "टैग वाला फाइल(सब)"
+  "file(s) with tags": "टैग वाला फाइल(सब)",
+  "Image {{index}}": "छबि {{index}}",
+  "Thumbnail {{index}}": "नन्हुन छबि {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "जोड़ब/हटावब लेल क्लिक करू: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "जोड़ब/हटावब लेल क्लिक करू: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "फाइल सब के टुकड़ा में प्रोसेस कइल जा रहल अछि..."
 }

@@ -388,5 +388,11 @@
   "s": "ସେ",
   "MB": "ଏମବି",
   "Error: {{error}}": "ତ୍ରୁଟି: {{error}}",
-  "file(s) with tags": "ଟ୍ୟାଗ ସହିତ ଫାଇଲ(ଗୁଡ଼ିକ)"
+  "file(s) with tags": "ଟ୍ୟାଗ ସହିତ ଫାଇଲ(ଗୁଡ଼ିକ)",
+  "Image {{index}}": "ଚିତ୍ର {{index}}",
+  "Thumbnail {{index}}": "ଛୋଟ ଚିତ୍ର {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ଯୋଗକରିବା/ଅପସାରଣ କରିବାକୁ କ୍ଲିକ୍ କରନ୍ତୁ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ଯୋଗକରିବା/ଅପସାରଣ କରିବାକୁ କ୍ଲିକ୍ କରନ୍ତୁ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ଫାଇଲଗୁଡ଼ିକୁ ଖଣ୍ଡରେ ପ୍ରକ୍ରିୟା କରୁଅଛି..."
 }

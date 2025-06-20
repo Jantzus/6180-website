@@ -388,5 +388,11 @@
   "s": "mp",
   "MB": "MB",
   "Error: {{error}}": "Hiba: {{error}}",
-  "file(s) with tags": "címkézett fájl(ok)"
+  "file(s) with tags": "címkézett fájl(ok)",
+  "Image {{index}}": "Kép {{index}}",
+  "Thumbnail {{index}}": "Bélyegkép {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kattints hozzáadáshoz/eltávolításhoz: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kattints hozzáadáshoz/eltávolításhoz: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Fájlok feldolgozása részletekben..."
 }

@@ -388,5 +388,11 @@
   "s": "秒",
   "MB": "MB",
   "Error: {{error}}": "错误: {{error}}",
-  "file(s) with tags": "个文件带有标签"
+  "file(s) with tags": "个文件带有标签",
+  "Image {{index}}": "图像 {{index}}",
+  "Thumbnail {{index}}": "缩略图 {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "点击添加/移除: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "点击添加/移除: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "正在分块处理文件..."
 }

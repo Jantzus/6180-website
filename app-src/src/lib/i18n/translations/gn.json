@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Javy: {{error}}",
-  "file(s) with tags": "marandurenda etiqueta reheve"
+  "file(s) with tags": "marandurenda etiqueta reheve",
+  "Image {{index}}": "Ta'anga {{index}}",
+  "Thumbnail {{index}}": "Ta'anga michĩ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Jeporavo emoñepyrũ/embogue hag̃ua: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Jeporavo emoñepyrũ/embogue hag̃ua: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Marandurenda rembiapo joaju..."
 }

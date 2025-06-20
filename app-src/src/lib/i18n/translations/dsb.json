@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Zmólka: {{error}}",
-  "file(s) with tags": "dataja(je) z markami"
+  "file(s) with tags": "dataja(je) z markami",
+  "Image {{index}}": "Wobraz {{index}}",
+  "Thumbnail {{index}}": "Miniaturka {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klikni za pśidawanje/wótwónoźenje: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klikni za pśidawanje/wótwónoźenje: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Dataje w źělach pśeźěłuju..."
 }

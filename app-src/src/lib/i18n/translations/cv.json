@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Йăнăш: {{error}}",
-  "file(s) with tags": "тегсемпе файлсем"
+  "file(s) with tags": "тегсемпе файлсем",
+  "Image {{index}}": "Ӳкерчĕк {{index}}",
+  "Thumbnail {{index}}": "Пĕчĕк ӳкерчĕк {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Хушма/хӳтӗм тӑвасшӑн пус: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Хушма/хӳтӗм тӑвасшӑн пус: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлсене пайсемпе ӗҫлени..."
 }

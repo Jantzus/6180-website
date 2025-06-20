@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Villa: {{error}}",
-  "file(s) with tags": "skrá(r) með merkjum"
+  "file(s) with tags": "skrá(r) með merkjum",
+  "Image {{index}}": "Mynd {{index}}",
+  "Thumbnail {{index}}": "Smámynd {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Smelltu til að bæta við/fjarlægja: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Smelltu til að bæta við/fjarlægja: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Vinnsluskrár í hlutum..."
 }

@@ -388,5 +388,11 @@
   "s": "स",
   "MB": "एमबी",
   "Error: {{error}}": "गलती: {{error}}",
-  "file(s) with tags": "टैग वाली फाइल(फाइली)"
+  "file(s) with tags": "टैग वाली फाइल(फाइली)",
+  "Image {{index}}": "तस्वीर {{index}}",
+  "Thumbnail {{index}}": "छोटी तस्वीर {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "जोड़ने/हटाने खातर दबाओ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "जोड़ने/हटाने खातर दबाओ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "फाइलां नै टुकड़ेयां में प्रोसेस कर रिया है..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Qalad: {{error}}",
-  "file(s) with tags": "fayloole tageede"
+  "file(s) with tags": "fayloole tageede",
+  "Image {{index}}": "Sawir {{index}}",
+  "Thumbnail {{index}}": "Yeeyla sawir {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Si gelite geeli/ka'i: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Si gelite geeli/ka'i: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Faylasha qeybleyda socodsiinaya..."
 }

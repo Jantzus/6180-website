@@ -388,5 +388,11 @@
   "s": "स",
   "MB": "एमबी",
   "Error: {{error}}": "दोसो: {{error}}",
-  "file(s) with tags": "संकेतयुत्त फाइल"
+  "file(s) with tags": "संकेतयुत्त फाइल",
+  "Image {{index}}": "चित्त {{index}}",
+  "Thumbnail {{index}}": "लघु चित्त {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "योगे/निष्कासने चुम्बकं करोति: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "योगे/निष्कासने चुम्बकं करोति: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "सञ्चिकाणि खण्डेषु संसाधयति..."
 }

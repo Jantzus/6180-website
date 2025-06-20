@@ -388,5 +388,11 @@
   "s": "སྐར",
   "MB": "ཨེམ་བི",
   "Error: {{error}}": "ནོར་འཁྲུལ: {{error}}",
-  "file(s) with tags": "དབྱེ་བ་ཡོད་པའི་ཡིག་ཆ"
+  "file(s) with tags": "དབྱེ་བ་ཡོད་པའི་ཡིག་ཆ",
+  "Image {{index}}": "པར་རིས་ {{index}}",
+  "Thumbnail {{index}}": "པར་རིས་ཆུང་བ་ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "སྣོན་པ་/འདོར་བ་ལ་སྣེ་གནོན་རོགས། {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "སྣོན་པ་/འདོར་བ་ལ་སྣེ་གནོན་རོགས། {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ཡིག་ཆ་རྣམས་ཆ་ཤས་སུ་བཟོས་ནས་སྒྲིག་འགོད་བྱེད་བཞིན་པ།"
 }

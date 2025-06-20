@@ -388,5 +388,11 @@
   "s": "ש",
   "MB": "מ״ב",
   "Error: {{error}}": "שגיאה: {{error}}",
-  "file(s) with tags": "קובץ/קבצים עם תגיות"
+  "file(s) with tags": "קובץ/קבצים עם תגיות",
+  "Image {{index}}": "תמונה {{index}}",
+  "Thumbnail {{index}}": "תמונה ממוזערת {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "לחץ כדי להוסיף/להסיר: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "לחץ כדי להוסיף/להסיר: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "מעבד קבצים בחלקים..."
 }

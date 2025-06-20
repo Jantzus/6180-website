@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import React from "react";
 
-// Import styled components - UPDATED: Added FixedHeader, FixedHeaderContent, Body, DropdownMenu, DropdownMenuChoice
+// Import styled components - UPDATED: Added FixedHeader, FixedHeaderContent, Body, DropdownMenu, DropdownMenuChoice, ColumnsSelector, ControlLabel
 import {
   GlobalStyle,
   FixedHeader,
@@ -12,7 +12,9 @@ import {
   ActionButtons,
   Button,
   DropdownMenu,
-  DropdownMenuChoice
+  DropdownMenuChoice,
+  ColumnsSelector,
+  ControlLabel
 } from "@/styles/styled-components";
 import { UsernamePrompt } from "@/components/UsernamePrompt";
 import { UploadProgress } from "@/components/UploadProgress";
@@ -99,7 +101,7 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
         <span style={{ marginRight: isRTL ? '0' : '12px', marginLeft: isRTL ? '12px' : '0', fontSize: '20px' }}>
           🏷️
         </span>
-        {t('Select files to start tagging')}
+        {t('Select files to start adding or removing tags')}
       </div>
       
       {children}
@@ -107,7 +109,7 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
   );
 };
 
-// NEW: New Photos Section Component (styled like Existing Files) - Updated with delete all and soft selection styling
+// NEW: New Photos Section Component (styled like Existing Files) - Updated with column selector and multi-row display
 const NewPhotosSection = ({ 
   selectedPhotos,
   selectedPhotoIndices, 
@@ -118,6 +120,8 @@ const NewPhotosSection = ({
   onDeleteAll,
   disabled,
   photoTagsMap, // NEW: Added photoTagsMap prop
+  columns, // NEW: Added columns prop
+  setColumns, // NEW: Added setColumns prop
   t, 
   isRTL 
 }: {
@@ -130,6 +134,8 @@ const NewPhotosSection = ({
   onDeleteAll: () => void;
   disabled: boolean;
   photoTagsMap: Map<number, AppliedTag[]>; // NEW: Added type
+  columns: string; // NEW: Added columns prop
+  setColumns: (columns: string) => void; // NEW: Added setColumns prop
   t: (key: string) => string;
   isRTL: boolean;
 }) => {
@@ -143,8 +149,8 @@ const NewPhotosSection = ({
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: '24px',
+        alignItems: 'flex-start',
+        marginBottom: '16px',
         flexDirection: isRTL ? 'row-reverse' : 'row'
       }}>
         <h3 style={{
@@ -158,70 +164,99 @@ const NewPhotosSection = ({
         
         <div style={{
           display: 'flex',
-          gap: '8px',
-          flexDirection: isRTL ? 'row-reverse' : 'row'
+          flexDirection: 'column',
+          alignItems: isRTL ? 'flex-start' : 'flex-end',
+          gap: '8px'
         }}>
-          <button
-            style={{
-              padding: '6px 12px',
-              fontSize: '12px',
-              border: '1px solid #ddd',
-              borderRadius: '4px',
-              backgroundColor: disabled ? '#f8f9fa' : '#fff',
-              color: disabled ? '#999' : '#333',
-              cursor: disabled ? 'not-allowed' : 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-            onClick={selectedPhotoIndices.size > 0 ? onDeselectAll : onSelectAll}
-            disabled={disabled}
-            onMouseEnter={(e) => {
-              if (!disabled) {
-                e.currentTarget.style.backgroundColor = '#f8f9fa';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!disabled) {
-                e.currentTarget.style.backgroundColor = '#fff';
-              }
-            }}
-          >
-            {selectedPhotoIndices.size > 0 ? t('Done Tagging Selected') : t('Select All')}
-          </button>
-          
-          {selectedPhotoIndices.size === 0 && (
+          {/* Action buttons */}
+          <div style={{
+            display: 'flex',
+            gap: '8px',
+            flexDirection: isRTL ? 'row-reverse' : 'row'
+          }}>
             <button
               style={{
                 padding: '6px 12px',
                 fontSize: '12px',
-                border: '1px solid #dc3545',
+                border: '1px solid #ddd',
                 borderRadius: '4px',
                 backgroundColor: disabled ? '#f8f9fa' : '#fff',
-                color: disabled ? '#999' : '#dc3545',
+                color: disabled ? '#999' : '#333',
                 cursor: disabled ? 'not-allowed' : 'pointer',
                 transition: 'all 0.2s ease'
               }}
-              onClick={onDeleteAll}
+              onClick={selectedPhotoIndices.size > 0 ? onDeselectAll : onSelectAll}
               disabled={disabled}
               onMouseEnter={(e) => {
                 if (!disabled) {
-                  e.currentTarget.style.backgroundColor = '#dc3545';
-                  e.currentTarget.style.color = '#fff';
+                  e.currentTarget.style.backgroundColor = '#f8f9fa';
                 }
               }}
               onMouseLeave={(e) => {
                 if (!disabled) {
                   e.currentTarget.style.backgroundColor = '#fff';
-                  e.currentTarget.style.color = '#dc3545';
                 }
               }}
             >
-              {t('Delete All')}
+              {selectedPhotoIndices.size > 0 ? t('Done Tagging Selected') : t('Select All')}
             </button>
-          )}
+            
+            {selectedPhotoIndices.size === 0 && (
+              <button
+                style={{
+                  padding: '6px 12px',
+                  fontSize: '12px',
+                  border: '1px solid #dc3545',
+                  borderRadius: '4px',
+                  backgroundColor: disabled ? '#f8f9fa' : '#fff',
+                  color: disabled ? '#999' : '#dc3545',
+                  cursor: disabled ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onClick={onDeleteAll}
+                disabled={disabled}
+                onMouseEnter={(e) => {
+                  if (!disabled) {
+                    e.currentTarget.style.backgroundColor = '#dc3545';
+                    e.currentTarget.style.color = '#fff';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!disabled) {
+                    e.currentTarget.style.backgroundColor = '#fff';
+                    e.currentTarget.style.color = '#dc3545';
+                  }
+                }}
+              >
+                {t('Delete All')}
+              </button>
+            )}
+          </div>
+          
+          {/* Column selector underneath buttons */}
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '6px',
+            flexDirection: isRTL ? 'row-reverse' : 'row'
+          }}>
+            <ControlLabel style={{ margin: '0', fontSize: '12px' }}>{t('Columns:')}</ControlLabel>
+            <ColumnsSelector
+              value={columns}
+              onChange={(e) => setColumns(e.target.value)}
+              style={{ fontSize: '12px' }}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </ColumnsSelector>
+          </div>
         </div>
       </div>
 
-      {/* Use the existing PhotoHandler but hide its header and pass photoTagsMap */}
+      {/* Use the existing PhotoHandler but hide its header and pass photoTagsMap and columns */}
       <PhotoHandler 
         selectedPhotos={selectedPhotos}
         selectedPhotoIndices={selectedPhotoIndices}
@@ -232,6 +267,7 @@ const NewPhotosSection = ({
         onDeselectAllPhotos={onDeselectAll}
         hideHeader={true}
         photoTagsMap={photoTagsMap} // NEW: Pass the photo tags map
+        columns={columns} // NEW: Pass the columns prop
       />
     </div>
   );
@@ -324,6 +360,7 @@ const ExistingFilesSection = ({
         </div>
       </div>
 
+      {/* UPDATED: Use flexbox with overflow scroll instead of CSS Grid */}
       <div style={{
         display: 'flex',
         overflowX: 'auto',
@@ -345,12 +382,12 @@ const ExistingFilesSection = ({
               display: 'flex', 
               flexDirection: 'column', 
               gap: '8px',
-              minWidth: '160px' // Ensure consistent width
+              minWidth: '160px' // Ensure consistent width for flexbox
             }}>
               <div
                 style={{
                   position: 'relative',
-                  width: '160px',
+                  width: '100%',
                   height: '160px',
                   flexShrink: 0,
                   borderRadius: '12px',
@@ -559,6 +596,9 @@ const SaveAlbum = () => {
   // NEW: State for settings dropdown
   const [showSettingsDropdown, setShowSettingsDropdown] = useState<boolean>(false);
 
+  // NEW: State for columns (similar to photos.tsx)
+  const [columns, setColumns] = useState<string>('2'); // Default to 2 columns for better tagging experience
+
   // SIMPLIFIED: State for photo selection and tagging
   const [selectedPhotoIndices, setSelectedPhotoIndices] = useState<Set<number>>(new Set());
   const [photoTagsMap, setPhotoTagsMap] = useState<Map<number, AppliedTag[]>>(new Map());
@@ -592,6 +632,18 @@ const SaveAlbum = () => {
     setOnSaveAlbumPage, // UPDATED: Use setOnSaveAlbumPage instead of setEditingExistingAlbum
     log
   } = useFileUploadProcessor(navigateAfterUpload, true); // Disable auto-navigation
+
+  // NEW: Set default columns (similar to photos.tsx)
+  useEffect(() => {
+    const savedColumnsValue = localStorage.getItem('save-album-columns') || '2'; // Use separate key for save-album
+    setColumns(savedColumnsValue);
+  }, []);
+
+  // NEW: Save columns to localStorage when changed
+  const handleColumnsChange = (newColumns: string) => {
+    setColumns(newColumns);
+    localStorage.setItem('save-album-columns', newColumns); // Use separate key for save-album
+  };
 
   // NEW: Set that we're on the save-album page so navigation is disabled
   useEffect(() => {
@@ -1541,6 +1593,8 @@ const SaveAlbum = () => {
               onDeleteAll={deleteAllPhotos}
               disabled={isTaggingDisabled}
               photoTagsMap={photoTagsMap} // NEW: Pass photo tags map
+              columns={columns} // NEW: Pass columns
+              setColumns={handleColumnsChange} // NEW: Pass setColumns
               t={t}
               isRTL={isRTL}
             />

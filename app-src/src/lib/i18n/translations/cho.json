@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Himma: {{error}}",
-  "file(s) with tags": "holisso aiasha"
+  "file(s) with tags": "holisso aiasha",
+  "Image {{index}}": "Holisso {{index}}",
+  "Thumbnail {{index}}": "Ikitok holisso {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Tikba ish ahoba/tali: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Tikba ish ahoba/tali: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Holhtina pila holisso tok tikba..."
 }

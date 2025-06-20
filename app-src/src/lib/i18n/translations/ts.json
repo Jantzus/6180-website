@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Xihoxo: {{error}}",
-  "file(s) with tags": "tifayela leti nga matag"
+  "file(s) with tags": "tifayela leti nga matag",
+  "Image {{index}}": "Xifaniso {{index}}",
+  "Thumbnail {{index}}": "Xifaniso xitsongo {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Tirhisa ku engetela/susa: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Tirhisa ku engetela/susa: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ku tirhisa tifayila hi swiphemu..."
 }

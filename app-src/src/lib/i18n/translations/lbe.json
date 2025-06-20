@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "ГӀалат: {{error}}",
-  "file(s) with tags": "тегашца файлал"
+  "file(s) with tags": "тегашца файлал",
+  "Image {{index}}": "Сурат {{index}}",
+  "Thumbnail {{index}}": "ЦIуб сурат {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Лавшунни/дустуннав лавру: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Лавшунни/дустуннав лавру: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлал гьантӏзава дулун..."
 }

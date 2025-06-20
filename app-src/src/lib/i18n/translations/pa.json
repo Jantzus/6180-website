@@ -388,5 +388,11 @@
   "s": "ਸੈ",
   "MB": "ਐਮਬੀ",
   "Error: {{error}}": "ਗਲਤੀ: {{error}}",
-  "file(s) with tags": "ਟੈਗਾਂ ਵਾਲੀ ਫਾਇਲ(ਾਂ)"
+  "file(s) with tags": "ਟੈਗਾਂ ਵਾਲੀ ਫਾਇਲ(ਾਂ)",
+  "Image {{index}}": "ਚਿੱਤਰ {{index}}",
+  "Thumbnail {{index}}": "ਛੋਟਾ ਚਿੱਤਰ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ਸ਼ਾਮਲ ਕਰਨ/ਹਟਾਉਣ ਲਈ ਕਲਿੱਕ ਕਰੋ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ਸ਼ਾਮਲ ਕਰਨ/ਹਟਾਉਣ ਲਈ ਕਲਿੱਕ ਕਰੋ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ਫਾਇਲਾਂ ਨੂੰ ਟੁਕੜਿਆਂ ਵਿੱਚ ਪ੍ਰਕਿਰਿਆ ਕਰ ਰਿਹਾ ਹੈ..."
 }

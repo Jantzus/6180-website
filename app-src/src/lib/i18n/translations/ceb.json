@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Sayop: {{error}}",
-  "file(s) with tags": "mga file nga naay tag"
+  "file(s) with tags": "mga file nga naay tag",
+  "Image {{index}}": "Hulagway {{index}}",
+  "Thumbnail {{index}}": "Gamayng hulagway {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "I-klik aron dugangi/kuhaa: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "I-klik aron dugangi/kuhaa: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Giproseso ang mga file sa mga bahin..."
 }

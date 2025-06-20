@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Tlatlacolli: {{error}}",
-  "file(s) with tags": "tlahcuilolamatl itoca"
+  "file(s) with tags": "tlahcuilolamatl itoca",
+  "Image {{index}}": "Ixiptli {{index}}",
+  "Thumbnail {{index}}": "Tepiton ixiptli {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Tlāchi ipa timotlālīz/motlātīz: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Tlāchi ipa timotlālīz/motlātīz: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Tlachihualoya in amatl itech nepantla..."
 }

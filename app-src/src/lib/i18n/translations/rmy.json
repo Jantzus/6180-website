@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Greška: {{error}}",
-  "file(s) with tags": "fajlura labelenca"
+  "file(s) with tags": "fajlura labelenca",
+  "Image {{index}}": "Kep {{index}}",
+  "Thumbnail {{index}}": "Tikno kep {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Tikn te zutil/tel avel: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Tikn te zutil/tel avel: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Kerdipe e dokumentengo ande tuke..."
 }

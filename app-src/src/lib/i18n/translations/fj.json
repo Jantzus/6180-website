@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Sala: {{error}}",
-  "file(s) with tags": "faile(s) kei na itag"
+  "file(s) with tags": "faile(s) kei na itag",
+  "Image {{index}}": "iVakarau {{index}}",
+  "Thumbnail {{index}}": "iVakarau lailai {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kiliki me vakarautaka/cakava: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kiliki me vakarautaka/cakava: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Vakarautaka na vola vata kina ni veika..."
 }

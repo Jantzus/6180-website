@@ -388,5 +388,11 @@
   "s": "چ",
   "MB": "مێگابایت",
   "Error: {{error}}": "هەڵە: {{error}}",
-  "file(s) with tags": "پەڕگە(کان) بە نیشانە"
+  "file(s) with tags": "پەڕگە(کان) بە نیشانە",
+  "Image {{index}}": "وێنە {{index}}",
+  "Thumbnail {{index}}": "وێنەی بچووک {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "کرتە بکە بۆ زیادکردن/سڕینەوە: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "کرتە بکە بۆ زیادکردن/سڕینەوە: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "کارکردن لەسەر فایلەکان بە کەڵک..."
 }

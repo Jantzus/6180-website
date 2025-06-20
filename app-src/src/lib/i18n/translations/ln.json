@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Libunga: {{error}}",
-  "file(s) with tags": "fichye(s) na makambo"
+  "file(s) with tags": "fichye(s) na makambo",
+  "Image {{index}}": "Elilingi {{index}}",
+  "Thumbnail {{index}}": "Elilingi ya mikemike {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Fínyá mpo na kobakisa/kolongola: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Fínyá mpo na kobakisa/kolongola: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Kosala na ba fichier na biteni..."
 }

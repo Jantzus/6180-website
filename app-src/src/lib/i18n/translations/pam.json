@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Mali: {{error}}",
-  "file(s) with tags": "file a maki tag"
+  "file(s) with tags": "file a maki tag",
+  "Image {{index}}": "Larawan {{index}}",
+  "Thumbnail {{index}}": "Maliit a larawan {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "I-click ba dugang/alis: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "I-click ba dugang/alis: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Miglilako king mga file ketang dake..."
 }

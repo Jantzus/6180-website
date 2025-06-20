@@ -388,5 +388,11 @@
   "s": "තත්",
   "MB": "එම්බී",
   "Error: {{error}}": "දෝෂය: {{error}}",
-  "file(s) with tags": "ටැග සහිත ගොනු(ව)"
+  "file(s) with tags": "ටැග සහිත ගොනු(ව)",
+  "Image {{index}}": "රූපය {{index}}",
+  "Thumbnail {{index}}": "කුඩා රූපය {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "එකතු කිරීමට/ඉවත් කිරීමට ක්ලික් කරන්න: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "එකතු කිරීමට/ඉවත් කිරීමට ක්ලික් කරන්න: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ගොනු කොටස් වශයෙන් සැකසීම..."
 }

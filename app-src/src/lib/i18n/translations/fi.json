@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "Mt",
   "Error: {{error}}": "Virhe: {{error}}",
-  "file(s) with tags": "tiedosto(a) tunnisteilla"
+  "file(s) with tags": "tiedosto(a) tunnisteilla",
+  "Image {{index}}": "Kuva {{index}}",
+  "Thumbnail {{index}}": "Pikkukuva {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klikkaa lisätäksesi/poistaaksesi: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klikkaa lisätäksesi/poistaaksesi: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Käsitellään tiedostoja osissa..."
 }

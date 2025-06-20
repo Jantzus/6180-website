@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "srera: {{error}}",
-  "file(s) with tags": "datnyvei poi se cmene"
+  "file(s) with tags": "datnyvei poi se cmene",
+  "Image {{index}}": "pixra {{index}}",
+  "Thumbnail {{index}}": "cmalu pixra {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ti'u le jmina/vimcu: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ti'u le jmina/vimcu: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "lo datnyveikei cu zukte fi lo pormei"
 }

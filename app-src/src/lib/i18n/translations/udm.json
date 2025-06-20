@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Йöшкытэм: {{error}}",
-  "file(s) with tags": "пӧртэм файлъёс"
+  "file(s) with tags": "пӧртэм файлъёс",
+  "Image {{index}}": "Сӥзон {{index}}",
+  "Thumbnail {{index}}": "Пичи сӥзон {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Ватсаны/быдэстыны понна тыдалык: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Ватсаны/быдэстыны понна тыдалык: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлъёсты люкетъясын дасян..."
 }

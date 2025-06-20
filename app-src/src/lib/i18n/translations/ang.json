@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Gedwola: {{error}}",
-  "file(s) with tags": "feolhord(as) mid tæcnum"
+  "file(s) with tags": "feolhord(as) mid tæcnum",
+  "Image {{index}}": "Onlīcnes {{index}}",
+  "Thumbnail {{index}}": "Þūman nægl {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Cliccige tō ēacunge/āweġe: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Cliccige tō ēacunge/āweġe: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Wrītiende feolas in styccum..."
 }

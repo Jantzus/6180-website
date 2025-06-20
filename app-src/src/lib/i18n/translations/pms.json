@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Eror: {{error}}",
-  "file(s) with tags": "file con etichëtte"
+  "file(s) with tags": "file con etichëtte",
+  "Image {{index}}": "Figura {{index}}",
+  "Thumbnail {{index}}": "Figurin-a {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Clica për gionta/gavé: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Clica për gionta/gavé: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Elaborassion ëd file a tòch..."
 }

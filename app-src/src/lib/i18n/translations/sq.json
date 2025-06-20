@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Gabim: {{error}}",
-  "file(s) with tags": "skedar(ë) me etiketa"
+  "file(s) with tags": "skedar(ë) me etiketa",
+  "Image {{index}}": "Imazh {{index}}",
+  "Thumbnail {{index}}": "Miniaturë {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kliko për të shtuar/hequr: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kliko për të shtuar/hequr: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Duke përpunuar skedarët në pjesë..."
 }

@@ -388,5 +388,11 @@
   "s": "সে",
   "MB": "এমবি",
   "Error: {{error}}": "ত্রুটি: {{error}}",
-  "file(s) with tags": "ট্যাগসহ ফাইল(সমূহ)"
+  "file(s) with tags": "ট্যাগসহ ফাইল(সমূহ)",
+  "Image {{index}}": "ছবি {{index}}",
+  "Thumbnail {{index}}": "থাম্বনেইল {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "যোগ/অপসারণ করতে ক্লিক করুন: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "যোগ/অপসারণ করতে ক্লিক করুন: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ফাইলগুলো ভাগ করে প্রসেস করা হচ্ছে..."
 }

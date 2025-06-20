@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Żball: {{error}}",
-  "file(s) with tags": "fajl(jiet) b'tags"
+  "file(s) with tags": "fajl(jiet) b'tags",
+  "Image {{index}}": "Stampa {{index}}",
+  "Thumbnail {{index}}": "Stampa żghira {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Ikklikkja biex iżżid/tneħħi: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Ikklikkja biex iżżid/tneħħi: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ipproċessar fajls f'biċċiet..."
 }

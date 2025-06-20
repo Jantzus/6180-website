@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Syngap: {{error}}",
-  "file(s) with tags": "file bad tag"
+  "file(s) with tags": "file bad tag",
+  "Image {{index}}": "Jingpyrde {{index}}",
+  "Thumbnail {{index}}": "Jingpyrde kti {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Shem bad/jied ïa click: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Shem bad/jied ïa click: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Files ka jingki bad bad la jingsuk..."
 }

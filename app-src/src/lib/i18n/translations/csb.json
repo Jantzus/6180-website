@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Fela: {{error}}",
-  "file(s) with tags": "lopk(i) z metkami"
+  "file(s) with tags": "lopk(i) z metkami",
+  "Image {{index}}": "Òbrôzk {{index}}",
+  "Thumbnail {{index}}": "Miniaturka {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klëkni żebë przidac/ùbrać: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klëkni żebë przidac/ùbrać: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Òbrôbka lopków w sztëckach..."
 }

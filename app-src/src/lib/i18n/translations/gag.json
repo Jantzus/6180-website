@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Yanlış: {{error}}",
-  "file(s) with tags": "etiketli dosya(lar)"
+  "file(s) with tags": "etiketli dosya(lar)",
+  "Image {{index}}": "Resim {{index}}",
+  "Thumbnail {{index}}": "Küçük resim {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Eklemää/çıkarmaa için tıkla: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Eklemää/çıkarmaa için tıkla: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Dosyaları parçalarda işlendirir..."
 }

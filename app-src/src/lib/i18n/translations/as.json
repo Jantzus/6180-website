@@ -388,5 +388,11 @@
   "s": "সে",
   "MB": "এমবি",
   "Error: {{error}}": "ভুল: {{error}}",
-  "file(s) with tags": "টেগৰ সৈতে ফাইল(সমূহ)"
+  "file(s) with tags": "টেগৰ সৈতে ফাইল(সমূহ)",
+  "Image {{index}}": "ছবি {{index}}",
+  "Thumbnail {{index}}": "ক্ষুদ্ৰ ছবি {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "যোগ কৰিবলৈ/আঁতৰাবলৈ ক্লিক কৰক: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "যোগ কৰিবলৈ/আঁতৰাবলৈ ক্লিক কৰক: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ফাইলসমূহ টুকুৰাত প্ৰক্ৰিয়া কৰি আছে..."
 }

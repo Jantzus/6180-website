@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Sayop: {{error}}",
-  "file(s) with tags": "file nga may tag"
+  "file(s) with tags": "file nga may tag",
+  "Image {{index}}": "Hulagway {{index}}",
+  "Thumbnail {{index}}": "Gamay nga hulagway {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "I-klik han pagdugang/pagkuha: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "I-klik han pagdugang/pagkuha: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Gin-proproseso an mga file ha mga piraso..."
 }

@@ -388,5 +388,11 @@
   "s": "സെ",
   "MB": "എംബി",
   "Error: {{error}}": "പിശക്: {{error}}",
-  "file(s) with tags": "ടാഗുകളുള്ള ഫയൽ(കൾ)"
+  "file(s) with tags": "ടാഗുകളുള്ള ഫയൽ(കൾ)",
+  "Image {{index}}": "ചിത്രം {{index}}",
+  "Thumbnail {{index}}": "ലഘുചിത്രം {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ചേർക്കാൻ/നീക്കം ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ചേർക്കാൻ/നീക്കം ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ഫയലുകൾ ഭാഗങ്ങളായി പ്രോസസ്സ് ചെയ്യുന്നു..."
 }

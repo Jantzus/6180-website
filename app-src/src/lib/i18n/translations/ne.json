@@ -388,5 +388,11 @@
   "s": "से",
   "MB": "एमबी",
   "Error: {{error}}": "त्रुटि: {{error}}",
-  "file(s) with tags": "ट्यागसहितको फाइल(हरू)"
+  "file(s) with tags": "ट्यागसहितको फाइल(हरू)",
+  "Image {{index}}": "छवि {{index}}",
+  "Thumbnail {{index}}": "सानो छवि {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "थप्न/हटाउनको लागि क्लिक गर्नुहोस्: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "थप्न/हटाउनको लागि क्लिक गर्नुहोस्: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "फाइलहरूलाई टुक्राहरूमा प्रशोधन गर्दै..."
 }

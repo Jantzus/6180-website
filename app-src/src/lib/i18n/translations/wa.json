@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "Mo",
   "Error: {{error}}": "Aroke: {{error}}",
-  "file(s) with tags": "fitchî(s) avou etiketes"
+  "file(s) with tags": "fitchî(s) avou etiketes",
+  "Image {{index}}": "Imådje {{index}}",
+  "Thumbnail {{index}}": "Pitite imådje {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Clitchîz po radjouter/oster: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Clitchîz po radjouter/oster: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ovrant les fitchîs pa bocês..."
 }

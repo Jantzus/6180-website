@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Помилка: {{error}}",
-  "file(s) with tags": "файл(и) з тегами"
+  "file(s) with tags": "файл(и) з тегами",
+  "Image {{index}}": "Зображення {{index}}",
+  "Thumbnail {{index}}": "Мініатюра {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Натисніть, щоб додати/видалити: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Натисніть, щоб додати/видалити: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Обробка файлів частинами..."
 }

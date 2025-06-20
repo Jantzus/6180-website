@@ -388,5 +388,11 @@
   "s": "秒",
   "MB": "MB",
   "Error: {{error}}": "エラー: {{error}}",
-  "file(s) with tags": "タグ付きファイル"
+  "file(s) with tags": "タグ付きファイル",
+  "Image {{index}}": "画像 {{index}}",
+  "Thumbnail {{index}}": "サムネイル {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "追加/削除するにはクリック: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "追加/削除するにはクリック: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ファイルをチャンクで処理中..."
 }

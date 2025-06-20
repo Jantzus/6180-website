@@ -388,5 +388,11 @@
   "s": "စ",
   "MB": "မီဂါဘိုက်",
   "Error: {{error}}": "အမှား: {{error}}",
-  "file(s) with tags": "တက်ဂ်ပါသော ဖိုင်(များ)"
+  "file(s) with tags": "တက်ဂ်ပါသော ဖိုင်(များ)",
+  "Image {{index}}": "ရုပ်ပုံ {{index}}",
+  "Thumbnail {{index}}": "ငယ်ရုပ်ပုံ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ထပ်ထည့်/ဖယ်ရှားရန် နှိပ်ပါ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ထပ်ထည့်/ဖယ်ရှားရန် နှိပ်ပါ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ဖိုင်များကို အစိတ်အပိုင်းများဖြင့် လုပ်ဆောင်နေသည်..."
 }

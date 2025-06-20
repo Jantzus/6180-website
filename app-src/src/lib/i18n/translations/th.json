@@ -388,5 +388,11 @@
   "s": "วิ",
   "MB": "เมกะไบต์",
   "Error: {{error}}": "ข้อผิดพลาด: {{error}}",
-  "file(s) with tags": "ไฟล์ที่มีแท็ก"
+  "file(s) with tags": "ไฟล์ที่มีแท็ก",
+  "Image {{index}}": "รูปภาพ {{index}}",
+  "Thumbnail {{index}}": "รูปย่อ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "คลิกเพื่อเพิ่ม/ลบ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "คลิกเพื่อเพิ่ม/ลบ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "กำลังประมวลผลไฟล์เป็นชิ้นๆ..."
 }

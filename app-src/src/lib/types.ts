@@ -135,10 +135,10 @@ export interface MediaItem {
   duration?: string;
   ownerName?: string;
   ownerContactId?: string;
+  fileDisplayName?: string; // NEW: Display name for the file
   loaded?: boolean;
   dataInBytes?: number;
   selectedTags?: SelectedTag[]; // Add this line
-  fileName?: string;  // NEW: Add filename support
 }
 
 // Contact mapping

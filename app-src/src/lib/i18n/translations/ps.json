@@ -388,5 +388,11 @@
   "s": "ث",
   "MB": "ایم بي",
   "Error: {{error}}": "تېروتنه: {{error}}",
-  "file(s) with tags": "د نښې سره دوتنې"
+  "file(s) with tags": "د نښې سره دوتنې",
+  "Image {{index}}": "انځور {{index}}",
+  "Thumbnail {{index}}": "کشر انځور {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ورګډولو/لرې کولو لپاره کلک وکړئ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ورګډولو/لرې کولو لپاره کلک وکړئ: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "د فایلونو په برخو کې پروسیس کول..."
 }

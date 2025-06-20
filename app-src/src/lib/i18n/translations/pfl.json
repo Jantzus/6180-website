@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Fehler: {{error}}",
-  "file(s) with tags": "Datei(e) mit Tags"
+  "file(s) with tags": "Datei(e) mit Tags",
+  "Image {{index}}": "Bild {{index}}",
+  "Thumbnail {{index}}": "Duumnagel {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klig zom neidooh/wegnemmeh: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klig zom neidooh/wegnemmeh: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Dateie in Schtickl bearbetä..."
 }

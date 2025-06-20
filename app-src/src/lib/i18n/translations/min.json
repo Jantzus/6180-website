@@ -388,5 +388,11 @@
   "s": "dt",
   "MB": "MB",
   "Error: {{error}}": "Kasalahan: {{error}}",
-  "file(s) with tags": "berkas jo tag"
+  "file(s) with tags": "berkas jo tag",
+  "Image {{index}}": "Gambar {{index}}",
+  "Thumbnail {{index}}": "Gambar kaciak {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klik untuak manambaah/mambusaak: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klik untuak manambaah/mambusaak: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Maolah file dalam bagian..."
 }

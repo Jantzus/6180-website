@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Falta: {{error}}",
-  "file(s) with tags": "arquivo(nan) ku etiketa"
+  "file(s) with tags": "arquivo(nan) ku etiketa",
+  "Image {{index}}": "Portret {{index}}",
+  "Thumbnail {{index}}": "Portret chikito {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klek pa agregá/kita: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klek pa agregá/kita: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Prosesando archivo nan pedazo..."
 }

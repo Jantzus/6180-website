@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Tahdong: {{error}}",
-  "file(s) with tags": "fayl(es) yan tag"
+  "file(s) with tags": "fayl(es) yan tag",
+  "Image {{index}}": "Litråtu {{index}}",
+  "Thumbnail {{index}}": "Diki na litråtu {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klåkk para un aumento/na'chacha': {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klåkk para un aumento/na'chacha': {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Fumankayao na ma'pos gi pedazo..."
 }

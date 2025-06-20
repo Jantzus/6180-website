@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Fähler: {{error}}",
-  "file(s) with tags": "Datei(e) met Makeeronge"
+  "file(s) with tags": "Datei(e) met Makeeronge",
+  "Image {{index}}": "Beld {{index}}",
+  "Thumbnail {{index}}": "Minni-Beld {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Donn klėcke öm dobëj ze donn/fott ze nämme: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Donn klėcke öm dobëj ze donn/fott ze nämme: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Dateiie en Stöcker beärbeide..."
 }

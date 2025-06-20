@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Қате: {{error}}",
-  "file(s) with tags": "белгілерімен файл(дар)"
+  "file(s) with tags": "белгілерімен файл(дар)",
+  "Image {{index}}": "Сурет {{index}}",
+  "Thumbnail {{index}}": "Кішкентай сурет {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Қосу/жою үшін басыңыз: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Қосу/жою үшін басыңыз: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлдарды бөліктер бойынша өңдеу..."
 }

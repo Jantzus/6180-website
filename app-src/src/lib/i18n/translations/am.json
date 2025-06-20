@@ -388,5 +388,11 @@
   "s": "ሰ",
   "MB": "ሜባ",
   "Error: {{error}}": "ስህተት: {{error}}",
-  "file(s) with tags": "በመለያዎች ያሉ ፋይል(ዎች)"
+  "file(s) with tags": "በመለያዎች ያሉ ፋይል(ዎች)",
+  "Image {{index}}": "ምስል {{index}}",
+  "Thumbnail {{index}}": "አነስተኛ ምስል {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ለመጨመር/ለማስወገድ ይጫኑ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ለመጨመር/ለማስወገድ ይጫኑ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ፋይሎችን በቁርጥራጦች በማስኬድ ላይ..."
 }

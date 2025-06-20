@@ -388,5 +388,11 @@
   "s": "δ",
   "MB": "MB",
   "Error: {{error}}": "Λάθος: {{error}}",
-  "file(s) with tags": "αρχείον με ετικέτ'ς"
+  "file(s) with tags": "αρχείον με ετικέτ'ς",
+  "Image {{index}}": "Εικόνα {{index}}",
+  "Thumbnail {{index}}": "Μικρόν εικόναν {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Κλικ να προσθέσετε/αφαιρέσετε: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Κλικ να προσθέσετε/αφαιρέσετε: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Επεξεργασίαν αρχείων σε κομμάτια..."
 }

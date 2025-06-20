@@ -388,5 +388,11 @@
   "s": "س",
   "MB": "مېگابايت",
   "Error: {{error}}": "خاتالىق: {{error}}",
-  "file(s) with tags": "بەلگىلىك ھۆججەت(لەر)"
+  "file(s) with tags": "بەلگىلىك ھۆججەت(لەر)",
+  "Image {{index}}": "رەسىم {{index}}",
+  "Thumbnail {{index}}": "كىچىك رەسىم {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "قوشۇش/چىقىرىش ئۈچۈن چېكىڭ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "قوشۇش/چىقىرىش ئۈچۈن چېكىڭ: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "ھۆججەتلەرنى پارچە-پارچە بىر تەرەپ قىلىش..."
 }

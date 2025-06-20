@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Ката: {{error}}",
-  "file(s) with tags": "белгилуу файл(дар)"
+  "file(s) with tags": "белгилуу файл(дар)",
+  "Image {{index}}": "Сүрөт {{index}}",
+  "Thumbnail {{index}}": "Кичинекей сүрөт {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Кошуу/өчүрүү үчүн басыңыз: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Кошуу/өчүрүү үчүн басыңыз: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлдарды бөлүктөр менен иштетүү..."
 }

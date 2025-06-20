@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Gbagba: {{error}}",
-  "file(s) with tags": "fênde na tî-yângâ"
+  "file(s) with tags": "fênde na tî-yângâ",
+  "Image {{index}}": "Yângâ {{index}}",
+  "Thumbnail {{index}}": "Yângâ kêtê {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kângbi ti yâa/yôko: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kângbi ti yâa/yôko: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Baara tî kôdoro-kôngba..."
 }

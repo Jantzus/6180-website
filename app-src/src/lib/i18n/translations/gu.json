@@ -388,5 +388,11 @@
   "s": "સે",
   "MB": "એમબી",
   "Error: {{error}}": "ભૂલ: {{error}}",
-  "file(s) with tags": "ટેગવાળી ફાઇલ(ો)"
+  "file(s) with tags": "ટેગવાળી ફાઇલ(ો)",
+  "Image {{index}}": "છબી {{index}}",
+  "Thumbnail {{index}}": "થંબનેઇલ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ઉમેરવા/દૂર કરવા માટે ક્લિક કરો: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ઉમેરવા/દૂર કરવા માટે ક્લિક કરો: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ફાઇલોને ભાગોમાં પ્રોસેસ કરી રહ્યું છે..."
 }

@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Cholakwika: {{error}}",
-  "file(s) with tags": "mafayilo andi matag"
+  "file(s) with tags": "mafayilo andi matag",
+  "Image {{index}}": "Chithunzi {{index}}",
+  "Thumbnail {{index}}": "Chithunzi chaching'ono {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Dindani kuti muwonjezere/muchotse: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Dindani kuti muwonjezere/muchotse: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Kukonza mafayilo m'magawo..."
 }

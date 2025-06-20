@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Eraro: {{error}}",
-  "file(s) with tags": "dosiero(j) kun etikedoj"
+  "file(s) with tags": "dosiero(j) kun etikedoj",
+  "Image {{index}}": "Bildo {{index}}",
+  "Thumbnail {{index}}": "Bildeto {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Alklaku por aldoni/forigi: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Alklaku por aldoni/forigi: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Prilaborado de dosieroj en eroj..."
 }

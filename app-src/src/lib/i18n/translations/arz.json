@@ -388,5 +388,11 @@
   "s": "ث",
   "MB": "م.ب",
   "Error: {{error}}": "غلط: {{error}}",
-  "file(s) with tags": "فايل(ات) بعلامات"
+  "file(s) with tags": "فايل(ات) بعلامات",
+  "Image {{index}}": "صورة {{index}}",
+  "Thumbnail {{index}}": "صورة صغيرة {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "دوس عشان تضيف/تشيل: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "دوس عشان تضيف/تشيل: {{tagType}}: {{tagTitle}} ← {{subtagTitle}}",
+  "Processing files in chunks...": "بشغل الملفات فى قطع..."
 }

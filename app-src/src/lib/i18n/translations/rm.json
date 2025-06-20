@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Sbagl: {{error}}",
-  "file(s) with tags": "datoteca(s) cun etichetas"
+  "file(s) with tags": "datoteca(s) cun etichetas",
+  "Image {{index}}": "Maletg {{index}}",
+  "Thumbnail {{index}}": "Maletg pitschen {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Cliccar per agiuntar/allontanar: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Cliccar per agiuntar/allontanar: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Elavuraziun da datotecas en parts..."
 }

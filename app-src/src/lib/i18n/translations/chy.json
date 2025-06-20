@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Éšėhéhe: {{error}}",
-  "file(s) with tags": "mo'ôhtávėhahtotáhéva"
+  "file(s) with tags": "mo'ôhtávėhahtotáhéva",
+  "Image {{index}}": "Mo'ôhtávéhoneestse {{index}}",
+  "Thumbnail {{index}}": "Véhoneestse {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Vé'ho'éna'hané/hénano'éhné: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Vé'ho'éna'hané/hénano'éhné: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Tsé'tóhko ma'xemósemȧháme..."
 }

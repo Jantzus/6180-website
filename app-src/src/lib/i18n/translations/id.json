@@ -388,5 +388,11 @@
   "s": "dt",
   "MB": "MB",
   "Error: {{error}}": "Kesalahan: {{error}}",
-  "file(s) with tags": "berkas dengan tag"
+  "file(s) with tags": "berkas dengan tag",
+  "Image {{index}}": "Gambar {{index}}",
+  "Thumbnail {{index}}": "Gambar mini {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klik untuk menambahkan/menghapus: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klik untuk menambahkan/menghapus: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Memproses file dalam potongan..."
 }

@@ -388,5 +388,11 @@
   "s": "ວິ",
   "MB": "ເມກາໄບ",
   "Error: {{error}}": "ຄວາມຜິດພາດ: {{error}}",
-  "file(s) with tags": "ໄຟລ່ມີປ້າຍ"
+  "file(s) with tags": "ໄຟລ່ມີປ້າຍ",
+  "Image {{index}}": "ຮູບພາບ {{index}}",
+  "Thumbnail {{index}}": "ຮູບນ້ອຍ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ຄລິກເພື່ອເພີ່ມ/ລົບ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ຄລິກເພື່ອເພີ່ມ/ລົບ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ກຳລັງປະມວນຜົນໄຟລ໌ເປັນສ່ວນໆ..."
 }

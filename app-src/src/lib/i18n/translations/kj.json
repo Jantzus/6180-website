@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Ehova: {{error}}",
-  "file(s) with tags": "omafaile natag"
+  "file(s) with tags": "omafaile natag",
+  "Image {{index}}": "Omukumo {{index}}",
+  "Thumbnail {{index}}": "Omukumo omunyanyahano {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Shiindja pokuongela/pokusisa: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Shiindja pokuongela/pokusisa: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Kuvanga omafaile mokutindi..."
 }

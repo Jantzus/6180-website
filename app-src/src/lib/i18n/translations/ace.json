@@ -388,5 +388,11 @@
   "s": "d",
   "MB": "MB",
   "Error: {{error}}": "Salah: {{error}}",
-  "file(s) with tags": "alah keuh bak tag"
+  "file(s) with tags": "alah keuh bak tag",
+  "Image {{index}}": "Gamba {{index}}",
+  "Thumbnail {{index}}": "Gamba ucèë {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Teugön keu neuubah/neusöe: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Teugön keu neuubah/neusöe: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ngiëng file-file sinan bagian..."
 }

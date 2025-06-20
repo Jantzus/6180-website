@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "Mo",
   "Error: {{error}}": "Èrror: {{error}}",
-  "file(s) with tags": "fichiér(s) avouéc des étiquètes"
+  "file(s) with tags": "fichiér(s) avouéc des étiquètes",
+  "Image {{index}}": "Émâge {{index}}",
+  "Thumbnail {{index}}": "Petita émâge {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Cllichiéd por apondre/ôtar: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Cllichiéd por apondre/ôtar: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Èlaboracion de fichiérs per morcê..."
 }

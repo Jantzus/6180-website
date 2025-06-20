@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Fäägel: {{error}}",
-  "file(s) with tags": "datei(en) mä marken"
+  "file(s) with tags": "datei(en) mä marken",
+  "Image {{index}}": "Bild {{index}}",
+  "Thumbnail {{index}}": "Lüttjet bild {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klik tu ianfäigin/wechnimen: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klik tu ianfäigin/wechnimen: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Datein uun steker ferwurken..."
 }

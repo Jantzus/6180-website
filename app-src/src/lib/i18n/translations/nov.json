@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Erore: {{error}}",
-  "file(s) with tags": "file(s) kun etiketes"
+  "file(s) with tags": "file(s) kun etiketes",
+  "Image {{index}}": "Imaje {{index}}",
+  "Thumbnail {{index}}": "Parvul imaje {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klike por adjuntar/remover: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klike por adjuntar/remover: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Prosesante files in fragmentes..."
 }

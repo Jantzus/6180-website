@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Error: {{error}}",
-  "file(s) with tags": "tabella(e) cum notulis"
+  "file(s) with tags": "tabella(e) cum notulis",
+  "Image {{index}}": "Imago {{index}}",
+  "Thumbnail {{index}}": "Unguis {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Pulsa ad addendum/removendum: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Pulsa ad addendum/removendum: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Plicae in frustulis tractandae..."
 }

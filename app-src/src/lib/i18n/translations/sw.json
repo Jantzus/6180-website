@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Kosa: {{error}}",
-  "file(s) with tags": "faili zenye lebo"
+  "file(s) with tags": "faili zenye lebo",
+  "Image {{index}}": "Picha {{index}}",
+  "Thumbnail {{index}}": "Picha ndogo {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Bonyeza kuongeza/kuondoa: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Bonyeza kuongeza/kuondoa: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Kuchakata faili kwa vipande..."
 }

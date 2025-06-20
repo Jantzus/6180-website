@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Mistak: {{error}}",
-  "file(s) with tags": "file(s) wi tags"
+  "file(s) with tags": "file(s) wi tags",
+  "Image {{index}}": "Pictur {{index}}",
+  "Thumbnail {{index}}": "Thoum-nail {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Clap tae add/remuiv: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Clap tae add/remuiv: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Processin files in chunks..."
 }

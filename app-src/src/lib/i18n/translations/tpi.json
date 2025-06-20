@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Rong: {{error}}",
-  "file(s) with tags": "fayl(s) wantaim tag"
+  "file(s) with tags": "fayl(s) wantaim tag",
+  "Image {{index}}": "Piksa {{index}}",
+  "Thumbnail {{index}}": "Liklik piksa {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Pres bilong putim/rausim: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Pres bilong putim/rausim: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Mekim wok long ol fail long liklik hap..."
 }

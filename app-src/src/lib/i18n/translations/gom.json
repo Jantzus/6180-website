@@ -388,5 +388,11 @@
   "s": "स",
   "MB": "एमबी",
   "Error: {{error}}": "चूक: {{error}}",
-  "file(s) with tags": "टॅगांसयत फायल(फायली)"
+  "file(s) with tags": "टॅगांसयत फायल(फायली)",
+  "Image {{index}}": "प्रतिमा {{index}}",
+  "Thumbnail {{index}}": "ल्हान प्रतिमा {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "दाखोवपाक/काडपाक दाबात: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "दाखोवपाक/काडपाक दाबात: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "फायली तुकड्यान प्रोसेस करात..."
 }

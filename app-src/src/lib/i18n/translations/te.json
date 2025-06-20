@@ -388,5 +388,11 @@
   "s": "సె",
   "MB": "ఎంబీ",
   "Error: {{error}}": "దోషం: {{error}}",
-  "file(s) with tags": "ట్యాగ్‌లతో ఫైల్(లు)"
+  "file(s) with tags": "ట్యాగ్‌లతో ఫైల్(లు)",
+  "Image {{index}}": "చిత్రం {{index}}",
+  "Thumbnail {{index}}": "చిన్న చిత్రం {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "జోడించడానికి/తొలగించడానికి క్లిక్ చేయండి: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "జోడించడానికి/తొలగించడానికి క్లిక్ చేయండి: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ఫైళ్లను భాగాలుగా ప్రాసెస్ చేయడం..."
 }

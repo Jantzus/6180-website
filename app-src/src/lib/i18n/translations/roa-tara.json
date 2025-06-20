@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Sbagghie: {{error}}",
-  "file(s) with tags": "file cu etichette"
+  "file(s) with tags": "file cu etichette",
+  "Image {{index}}": "Immagene {{index}}",
+  "Thumbnail {{index}}": "Miniature {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Cazze pe jungere/levà: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Cazze pe jungere/levà: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ste fatìche le file a pezze..."
 }

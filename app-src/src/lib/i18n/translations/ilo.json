@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Biddut: {{error}}",
-  "file(s) with tags": "papeles nga addaan iti tag"
+  "file(s) with tags": "papeles nga addaan iti tag",
+  "Image {{index}}": "Ladawan {{index}}",
+  "Thumbnail {{index}}": "Bassit a ladawan {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "I-click tapno maikabil/maikkaten: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "I-click tapno maikabil/maikkaten: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Pang-proseso kadagiti papeles iti paset..."
 }

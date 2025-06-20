@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Isbagliu: {{error}}",
-  "file(s) with tags": "archiviu(s) cun etichetas"
+  "file(s) with tags": "archiviu(s) cun etichetas",
+  "Image {{index}}": "Immàgine {{index}}",
+  "Thumbnail {{index}}": "Miniadura {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Incarca pro agiùnghiri/bogai: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Incarca pro agiùnghiri/bogai: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Elaboradura de archìvios a trocos..."
 }

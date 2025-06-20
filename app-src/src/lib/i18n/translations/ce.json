@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "ГӀалат: {{error}}",
-  "file(s) with tags": "тегашца файлаш"
+  "file(s) with tags": "тегашца файлаш",
+  "Image {{index}}": "Сурт {{index}}",
+  "Thumbnail {{index}}": "Жима сурт {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Товалар/дӀаяккхар дӀа: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Товалар/дӀаяккхар дӀа: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлаш дакъош дала дарийна..."
 }

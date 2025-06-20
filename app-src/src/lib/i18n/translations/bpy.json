@@ -388,5 +388,11 @@
   "s": "সে",
   "MB": "এমবি",
   "Error: {{error}}": "ভুল: {{error}}",
-  "file(s) with tags": "ট্যাগর লগে ফাইল(পিলা)"
+  "file(s) with tags": "ট্যাগর লগে ফাইল(পিলা)",
+  "Image {{index}}": "ছবি {{index}}",
+  "Thumbnail {{index}}": "আকর ছবি {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "যোগ করা/বাদ দেওয়ার লাগি টিপেন: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "যোগ করা/বাদ দেওয়ার লাগি টিপেন: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ফাইলহানাক টুকরা কইরা প্রসেস করের..."
 }

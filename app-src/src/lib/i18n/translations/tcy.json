@@ -388,5 +388,11 @@
   "s": "ಸೆ",
   "MB": "ಎಂಬಿ",
   "Error: {{error}}": "ದೋಷ: {{error}}",
-  "file(s) with tags": "ಟ್ಯಾಗ್‌ಗಳೊಟ್ಟುಗೆ ಫೈಲ್(ಲು)"
+  "file(s) with tags": "ಟ್ಯಾಗ್‌ಗಳೊಟ್ಟುಗೆ ಫೈಲ್(ಲು)",
+  "Image {{index}}": "ಚಿತ್ರೊ {{index}}",
+  "Thumbnail {{index}}": "ಎಲ್ಯ ಚಿತ್ರೊ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ಸೇರಿಸಲಿಗ್/ದೆಪ್ಪುನಲಿಗ್ ಒತ್ತುಲೆ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ಸೇರಿಸಲಿಗ್/ದೆಪ್ಪುನಲಿಗ್ ಒತ್ತುಲೆ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "ಫೈಲ್‌ಲೆನ್ ಪೀಸ್‌ಲೆಡ್ ಪ್ರೊಸೆಸ್ಸ್ ಮಲ್ಪೆರ್..."
 }

@@ -388,5 +388,11 @@
   "s": "վ",
   "MB": "ՄԲ",
   "Error: {{error}}": "Սխալ: {{error}}",
-  "file(s) with tags": "պիտակավորված ֆայլ(եր)"
+  "file(s) with tags": "պիտակավորված ֆայլ(եր)",
+  "Image {{index}}": "Նկար {{index}}",
+  "Thumbnail {{index}}": "Փոքր նկար {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Կտտացրեք ավելացնելու/հեռացնելու համար: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Կտտացրեք ավելացնելու/հեռացնելու համար: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ֆայլերի մշակում հատվածներով..."
 }

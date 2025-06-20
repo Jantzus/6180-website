@@ -388,5 +388,11 @@
   "s": "dt",
   "MB": "MB",
   "Error: {{error}}": "Salah: {{error}}",
-  "file(s) with tags": "berkas karo tag"
+  "file(s) with tags": "berkas karo tag",
+  "Image {{index}}": "Gambar {{index}}",
+  "Thumbnail {{index}}": "Gambar cilik {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klik nggone nambah/mbusak: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klik nggone nambah/mbusak: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ngolah berkas ing bagean..."
 }

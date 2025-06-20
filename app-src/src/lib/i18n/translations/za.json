@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Coh: {{error}}",
-  "file(s) with tags": "faej youq byaej"
+  "file(s) with tags": "faej youq byaej",
+  "Image {{index}}": "Doenghdaiq {{index}}",
+  "Thumbnail {{index}}": "Doenghdaiq iq {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Deiq baez aeu daeuj/cied: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Deiq baez aeu daeuj/cied: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Vunz doenghleix guh ngaenj dieg dieg..."
 }

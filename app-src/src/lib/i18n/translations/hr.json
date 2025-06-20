@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Greška: {{error}}",
-  "file(s) with tags": "datoteka(e) s oznakama"
+  "file(s) with tags": "datoteka(e) s oznakama",
+  "Image {{index}}": "Slika {{index}}",
+  "Thumbnail {{index}}": "Sličica {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kliknite da dodate/uklonite: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kliknite da dodate/uklonite: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Obrađivanje datoteka u dijelovima..."
 }

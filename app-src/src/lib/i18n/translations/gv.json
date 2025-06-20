@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Marrantys: {{error}}",
-  "file(s) with tags": "coadan(yn) lesh tagyn"
+  "file(s) with tags": "coadan(yn) lesh tagyn",
+  "Image {{index}}": "Jalloo {{index}}",
+  "Thumbnail {{index}}": "Ordaag-jalloo {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Crig dy chur stiagh/geddyn rey rish: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Crig dy chur stiagh/geddyn rey rish: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Yn reaghey coadanyn ayns peeshyn..."
 }

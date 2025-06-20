@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Phošo: {{error}}",
-  "file(s) with tags": "faele tša go ba le ditšhupetšo"
+  "file(s) with tags": "faele tša go ba le ditšhupetšo",
+  "Image {{index}}": "Seswantšho {{index}}",
+  "Thumbnail {{index}}": "Seswantšho se senyane {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Tobetša go oketša/tloša: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Tobetša go oketša/tloša: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Go šomišana le difaele ka dikgato..."
 }

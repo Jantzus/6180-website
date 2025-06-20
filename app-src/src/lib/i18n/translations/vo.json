@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Pöl: {{error}}",
-  "file(s) with tags": "ragiv(s) labü tägot"
+  "file(s) with tags": "ragiv(s) labü tägot",
+  "Image {{index}}": "Magod {{index}}",
+  "Thumbnail {{index}}": "Magodül {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klikön ad läükön/moükön: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klikön ad läükön/moükön: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ragiv dunön demü valiks..."
 }

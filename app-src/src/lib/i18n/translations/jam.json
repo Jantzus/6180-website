@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Errar: {{error}}",
-  "file(s) with tags": "file(s) wid tag dem"
+  "file(s) with tags": "file(s) wid tag dem",
+  "Image {{index}}": "Pikcha {{index}}",
+  "Thumbnail {{index}}": "Likkle pikcha {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klik fi put iin/tek out: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klik fi put iin/tek out: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Prosesing fail dem ina likkle bita..."
 }

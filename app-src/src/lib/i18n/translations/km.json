@@ -388,5 +388,11 @@
   "s": "វិ",
   "MB": "មេកាបៃ",
   "Error: {{error}}": "កំហុស: {{error}}",
-  "file(s) with tags": "ឯកសារមានស្លាក"
+  "file(s) with tags": "ឯកសារមានស្លាក",
+  "Image {{index}}": "រូបភាព {{index}}",
+  "Thumbnail {{index}}": "រូបភាពតូច {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ចុចដើម្បីបន្ថែម/លុប: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ចុចដើម្បីបន្ថែម/លុប: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "កំពុងដំណើរការឯកសារជាដុំៗ..."
 }

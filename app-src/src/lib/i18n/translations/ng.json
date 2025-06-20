@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Oshilema: {{error}}",
-  "file(s) with tags": "omafaele ya omasingililo"
+  "file(s) with tags": "omafaele ya omasingililo",
+  "Image {{index}}": "Kiri {{index}}",
+  "Thumbnail {{index}}": "Kiri kaulungililo {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kiliki ye koongeza/ye kuvavuna: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kiliki ye koongeza/ye kuvavuna: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Ukusebenzelana nokona ko amafile..."
 }

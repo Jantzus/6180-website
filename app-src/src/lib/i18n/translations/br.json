@@ -388,5 +388,11 @@
   "s": "e",
   "MB": "Mo",
   "Error: {{error}}": "Fazi: {{error}}",
-  "file(s) with tags": "restr(où) gant klavioù"
+  "file(s) with tags": "restr(où) gant klavioù",
+  "Image {{index}}": "Skeudenn {{index}}",
+  "Thumbnail {{index}}": "Munud {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Klikañ evit ouzhpennañ/diverkañ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Klikañ evit ouzhpennañ/diverkañ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Tretadur restroù dre hanterioù..."
 }

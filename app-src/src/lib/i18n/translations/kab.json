@@ -388,5 +388,11 @@
   "s": "t",
   "MB": "MB",
   "Error: {{error}}": "Tuccḍa: {{error}}",
-  "file(s) with tags": "afaylu(yiten) s tecraḍ"
+  "file(s) with tags": "afaylu(yiten) s tecraḍ",
+  "Image {{index}}": "Tugna {{index}}",
+  "Thumbnail {{index}}": "Tugna tamectuḥt {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Sit i timerna/tukksa: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Sit i timerna/tukksa: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Asesmel n ifuyla s yigzamen..."
 }

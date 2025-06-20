@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Pantjawi: {{error}}",
-  "file(s) with tags": "archivo(naka) etiquetanakampi"
+  "file(s) with tags": "archivo(naka) etiquetanakampi",
+  "Image {{index}}": "Laq'a {{index}}",
+  "Thumbnail {{index}}": "Jisk'a laq'a {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Yapxataña/apsuña ch'iqt'aña: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Yapxataña/apsuña ch'iqt'aña: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Archivo ukanaka t'aqanakan lurata..."
 }

@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Погрѣшєниѥ: {{error}}",
-  "file(s) with tags": "дѣла съ знамєньми"
+  "file(s) with tags": "дѣла съ знамєньми",
+  "Image {{index}}": "Обраꙁъ {{index}}",
+  "Thumbnail {{index}}": "Малъ обраꙁъ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "ѩти дрьжи въ придаваниѥ/отѩтиѥ: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "ѩти дрьжи въ придаваниѥ/отѩтиѥ: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "дѣлатель дѣлъ въ чѧстехъ..."
 }

@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Алдаа: {{error}}",
-  "file(s) with tags": "шошготой файл(ууд)"
+  "file(s) with tags": "шошготой файл(ууд)",
+  "Image {{index}}": "Зураг {{index}}",
+  "Thumbnail {{index}}": "Жижиг зураг {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Нэмэх/устгахын тулд дарна уу: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Нэмэх/устгахын тулд дарна уу: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлуудыг хэсгээр боловсруулж байна..."
 }

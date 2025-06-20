@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Napaka: {{error}}",
-  "file(s) with tags": "datoteka(e) z oznakami"
+  "file(s) with tags": "datoteka(e) z oznakami",
+  "Image {{index}}": "Slika {{index}}",
+  "Thumbnail {{index}}": "Sličica {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Kliknite za dodajanje/odstranjevanje: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Kliknite za dodajanje/odstranjevanje: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Obdelava datotek v delih..."
 }

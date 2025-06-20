@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Eroare: {{error}}",
-  "file(s) with tags": "fişier(e) cu etichete"
+  "file(s) with tags": "fişier(e) cu etichete",
+  "Image {{index}}": "Imagine {{index}}",
+  "Thumbnail {{index}}": "Miniatură {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Faceți clic pentru a adăuga/elimina: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Faceți clic pentru a adăuga/elimina: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Procesarea fișierelor în bucăți..."
 }

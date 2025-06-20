@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Bhul: {{error}}",
-  "file(s) with tags": "tag ko dokhon file(bor)"
+  "file(s) with tags": "tag ko dokhon file(bor)",
+  "Image {{index}}": "Hõrõ {{index}}",
+  "Thumbnail {{index}}": "Mãtra hõrõ {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Jond/kõja latare click koro: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Jond/kõja latare click koro: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "File sagõm jolo jolo kõ kõrõ dohoã..."
 }

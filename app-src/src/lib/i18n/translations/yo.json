@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Àṣìṣe: {{error}}",
-  "file(s) with tags": "fáìlì pẹ̀lú àwọn àmì"
+  "file(s) with tags": "fáìlì pẹ̀lú àwọn àmì",
+  "Image {{index}}": "Aworan {{index}}",
+  "Thumbnail {{index}}": "Aworan kékeré {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Tẹ láti ṣàfikún/yọ kúrò: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Tẹ láti ṣàfikún/yọ kúrò: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "N ṣiṣẹ lori awọn faili ni awọn ege..."
 }

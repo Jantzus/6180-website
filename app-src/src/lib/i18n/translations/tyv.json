@@ -388,5 +388,11 @@
   "s": "с",
   "MB": "МБ",
   "Error: {{error}}": "Алдаг: {{error}}",
-  "file(s) with tags": "теглиг файлдар"
+  "file(s) with tags": "теглиг файлдар",
+  "Image {{index}}": "Чуруу {{index}}",
+  "Thumbnail {{index}}": "Биче чуруу {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Немер/ыдар дээш басыр: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Немер/ыдар дээш басыр: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Файлдарны кезээнде боолгап турар..."
 }

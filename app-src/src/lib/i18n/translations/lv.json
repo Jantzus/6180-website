@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "MB",
   "Error: {{error}}": "Kļūda: {{error}}",
-  "file(s) with tags": "faili ar etiķetēm"
+  "file(s) with tags": "faili ar etiķetēm",
+  "Image {{index}}": "Attēls {{index}}",
+  "Thumbnail {{index}}": "Sīktēls {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Noklikšķiniet, lai pievienotu/noņemtu: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Noklikšķiniet, lai pievienotu/noņemtu: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Apstrādā failus pa daļām..."
 }

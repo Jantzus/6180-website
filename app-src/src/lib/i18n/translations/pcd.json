@@ -388,5 +388,11 @@
   "s": "s",
   "MB": "Mo",
   "Error: {{error}}": "Faute: {{error}}",
-  "file(s) with tags": "fichié(s) aveuc des étiquètes"
+  "file(s) with tags": "fichié(s) aveuc des étiquètes",
+  "Image {{index}}": "Imache {{index}}",
+  "Thumbnail {{index}}": "P'tite imache {{index}}",
+  "Click to add/remove: {{tagType}}: {{tagTitle}}": "Clliquez pour ajouter/ôter: {{tagType}}: {{tagTitle}}",
+  "{{tagType}}: {{tagTitle}} ({{subtags}})": "{{tagType}}: {{tagTitle}} ({{subtags}})",
+  "Click to add/remove: {{tagType}}: {{tagTitle}} → {{subtagTitle}}": "Clliquez pour ajouter/ôter: {{tagType}}: {{tagTitle}} → {{subtagTitle}}",
+  "Processing files in chunks...": "Tratémint d'fichiés par morcés..."
 }
