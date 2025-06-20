@@ -5,7 +5,7 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { redirectTo, generateUrl, checkLoginWithRefresh } from "@/lib/utils";
-import { useFolderManagement } from "../my-albums/utils";
+import { useFolderManagement } from "@/lib/useFolderManagement";
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 
 // ===== TYPE DEFINITIONS =====

@@ -21,7 +21,7 @@ import { FileInput } from "@/components/FileInput";
 import { LazyImage } from "@/components/LazyImage";
 
 // Import custom hooks and utilities
-import { useFolderManagement } from "./utils";
+import { useFolderManagement } from "@/lib/useFolderManagement";
 
 // Constants
 const FREE_TIER_STORAGE_LIMIT_GB = 10;
