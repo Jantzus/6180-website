@@ -5,6 +5,7 @@ import { getLanguageDirection } from "@/lib/i18n";
 import { generateInviteLink } from "@/lib/utils";
 import { CopyLinkModal } from "./Modals/CopyLinkModal";
 import { ConfirmationModal } from "./Modals/ConfirmationModal";
+import { QRCodeModal } from "./Modals/QRCodeModal";
 import { checkLoginWithRefresh, checkLoginWithoutRedirect } from "@/lib/utils";
 import { S3_BUCKET_URL, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 import { downloadPhotos } from "@/lib/fileOperations";
@@ -12,7 +13,6 @@ import { downloadPhotos } from "@/lib/fileOperations";
 // FooterSection Component
 type AlbumFooterSectionProps = {
   folder: FolderType;
-  openFilePicker?: (folderId: string | null) => void;
   cognitoUsername: string | null;
   updateProfileIds?: (profileIds: string[]) => void; 
   onModalStateChange?: (isOpen: boolean) => void; // New prop to communicate modal state
@@ -20,7 +20,6 @@ type AlbumFooterSectionProps = {
 
 export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
   folder,
-  openFilePicker,
   cognitoUsername,
   updateProfileIds,
   onModalStateChange
@@ -29,6 +28,7 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
   const isRTL = getLanguageDirection(language) === "rtl";
   const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
   const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
+  const [showingQRCode, setShowingQRCode] = useState<boolean>(false);
   
   // Compute isOnPublicProfile from the current folder state
   const [localProfileIds, setLocalProfileIds] = useState<string[]>(folder.profileIds || []);
@@ -52,11 +52,11 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
 
   // Notify parent component when any modal state changes
   useEffect(() => {
-    const isAnyModalOpen = showingCopyLinkAlert || showingCopiedLinkAlert;
+    const isAnyModalOpen = showingCopyLinkAlert || showingCopiedLinkAlert || showingQRCode;
     if (onModalStateChange) {
       onModalStateChange(isAnyModalOpen);
     }
-  }, [showingCopyLinkAlert, showingCopiedLinkAlert, onModalStateChange]);
+  }, [showingCopyLinkAlert, showingCopiedLinkAlert, showingQRCode, onModalStateChange]);
 
   // Handle copy function
   const handleCopy = (textToCopy: string) => {
@@ -251,31 +251,21 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
               flexDirection: isRTL ? "row-reverse" : "row"
             }}
           >
-            {/* FIXED: Enhanced Add Photos button with better error handling */}
-            {(openFilePicker && (
-              <button
-                onClick={(e) => {
-                  e.preventDefault(); 
-                  e.stopPropagation();
-                  console.log(`🎬 Add Photos clicked for folder: ${folder.folderId}`);
-                  
-                  // Ensure we have a valid folderId before calling openFilePicker
-                  if (folder.folderId) {
-                    openFilePicker(folder.folderId);
-                  } else {
-                    console.error('❌ No folderId available for Add Photos');
-                    alert(t('Error: Unable to add photos to this album. Please try refreshing the page.'));
-                  }
-                }}
-                style={{
-                  ...buttonStyle,
-                  backgroundColor: "#4caf50",
-                  color: "white",
-                }}
-              >
-                {t('Add Photos')}
-              </button>
-            ))}
+            {/* Show QR Code button */}
+            <button
+              onClick={(e) => {
+                e.preventDefault(); 
+                e.stopPropagation();
+                setShowingQRCode(true);
+              }}
+              style={{
+                ...buttonStyle,
+                backgroundColor: "#4caf50",
+                color: "white",
+              }}
+            >
+              {t('Show QR Code')}
+            </button>
             
             <button
               onClick={(e) => {
@@ -337,23 +327,6 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
           </div>
         </div>
         
-        {/* Copy Link Modals */}
-        <CopyLinkModal
-          isOpen={showingCopyLinkAlert}
-          onClose={() => setShowingCopyLinkAlert(false)}
-          inviteLink={inviteLink}
-          onCopy={handleCopy}
-          t={t}
-          isRTL={isRTL}
-        />
-        
-        <ConfirmationModal
-          isOpen={showingCopiedLinkAlert}
-          onClose={() => setShowingCopiedLinkAlert(false)}
-          t={t}
-          isRTL={isRTL}
-        />
-        
         {/* Hide scrollbar for WebKit browsers */}
         <style>
           {`
@@ -363,6 +336,32 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
           `}
         </style>
       </div>
+      
+      {/* Copy Link Modals - Now using React Portal */}
+      <CopyLinkModal
+        isOpen={showingCopyLinkAlert}
+        onClose={() => setShowingCopyLinkAlert(false)}
+        inviteLink={inviteLink}
+        onCopy={handleCopy}
+        t={t}
+        isRTL={isRTL}
+      />
+      
+      <ConfirmationModal
+        isOpen={showingCopiedLinkAlert}
+        onClose={() => setShowingCopiedLinkAlert(false)}
+        t={t}
+        isRTL={isRTL}
+      />
+
+      {/* QR Code Modal */}
+      <QRCodeModal
+        isOpen={showingQRCode}
+        onClose={() => setShowingQRCode(false)}
+        albumLink={inviteLink}
+        t={t}
+        isRTL={isRTL}
+      />
     </>
   );
 };

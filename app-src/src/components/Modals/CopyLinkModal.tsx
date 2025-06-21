@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 // Types for the modal components
 interface CopyLinkModalProps {
@@ -12,7 +13,7 @@ interface CopyLinkModalProps {
   isRTL: boolean;
 }
 
-// CopyLinkModal Component with proper TypeScript types
+// CopyLinkModal Component with React Portal and proper TypeScript types
 export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({ 
   isOpen, 
   onClose, 
@@ -42,7 +43,7 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
     transition: "background-color 0.2s"
   };
 
-  return (
+  const modalContent = (
     <div 
       style={{
         position: "fixed",
@@ -54,7 +55,9 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        zIndex: 1000,
+        zIndex: 10000, // Increased z-index to ensure it's above everything
+        backdropFilter: "blur(4px)",
+        WebkitBackdropFilter: "blur(4px)", // Safari support
       }}
       onClick={onClose}
     >
@@ -65,13 +68,21 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
           padding: "20px",
           width: "90%",
           maxWidth: "400px",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+          boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
           direction: isRTL ? "rtl" : "ltr",
           textAlign: textAlignValue, // Use the typed value
+          position: "relative",
+          animation: "modalFadeIn 0.2s ease-out",
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <h3 style={{ marginTop: 0, marginBottom: "16px", fontSize: "18px" }}>
+        <h3 style={{ 
+          marginTop: 0, 
+          marginBottom: "16px", 
+          fontSize: "18px",
+          color: "#333",
+          fontWeight: "600"
+        }}>
           {t('Choose an action')}
         </h3>
         
@@ -85,7 +96,7 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
             }}
             onMouseOver={(e) => {
               e.stopPropagation(); // Stop mouseOver event bubbling
-            e.currentTarget.style.backgroundColor = "#f5f5f5";
+              e.currentTarget.style.backgroundColor = "#f5f5f5";
             }}
             onMouseOut={(e) => {
               e.stopPropagation(); // Stop mouseOut event bubbling
@@ -172,6 +183,25 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
           {t('Cancel')}
         </button>
       </div>
+      
+      {/* Add CSS animation styles */}
+      <style>
+        {`
+          @keyframes modalFadeIn {
+            from {
+              opacity: 0;
+              transform: scale(0.9) translateY(-10px);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1) translateY(0);
+            }
+          }
+        `}
+      </style>
     </div>
   );
+
+  // Use React Portal to render the modal at the document body level
+  return ReactDOM.createPortal(modalContent, document.body);
 };

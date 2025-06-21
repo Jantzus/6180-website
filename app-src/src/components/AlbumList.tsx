@@ -46,11 +46,10 @@ const AlbumLink = styled.div`
   color: inherit;
   display: block;
   width: 100%;
-  overflow: hidden;
   cursor: pointer;
 `;
 
-// Enhanced AlbumCard with improved styling for better "pop"
+// Enhanced AlbumCard with improved styling - REMOVED overflow: hidden to allow modals to extend beyond
 const AlbumCard = styled.div`
   background: #fff;
   border-radius: 12px;
@@ -66,7 +65,7 @@ const AlbumCard = styled.div`
   max-width: 100%;
   position: relative;
   box-sizing: border-box;
-  overflow: hidden;
+  /* REMOVED: overflow: hidden; - This was preventing modals from extending beyond the card */
   /* Very subtle backdrop effect */
   backdrop-filter: blur(1px);
 
@@ -243,7 +242,6 @@ export interface AlbumListProps {
   folders: FolderType[];
   setFolders?: React.Dispatch<React.SetStateAction<any[]>>;
   handleDeleteClick?: (folderPositionId: string, t?: any) => void;
-  openFilePicker?: (folderId: string | null | undefined) => void;
   isUploading?: boolean;
   cognitoUsername: string | null;
   isProfileView?: boolean;
@@ -254,7 +252,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   folders,
   setFolders,
   handleDeleteClick,
-  openFilePicker,
   isUploading = false,
   cognitoUsername,
   isProfileView = false,
@@ -615,7 +612,6 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                 {isProfileView == false && (
                   <AlbumFooterSection
                     folder={folder}
-                    openFilePicker={openFilePicker}
                     cognitoUsername={cognitoUsername}
                     updateProfileIds={(profileIds) => updateFolderProfileIds(folder.folderId, profileIds)}
                     onModalStateChange={(isOpen) => updateModalState(folder.folderId, isOpen)}

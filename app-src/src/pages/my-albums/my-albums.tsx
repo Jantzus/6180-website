@@ -982,7 +982,6 @@ const MyAlbums = () => {
           folders={displayFolders}
           setFolders={setFolders}
           handleDeleteClick={(folderPositionId: string) => handleDeleteClick(folderPositionId, t)}
-          openFilePicker={(folderId: string | null | undefined) => openFilePicker(folderId, 'files')}
           isUploading={isUploading}
           cognitoUsername={cognitoUsername}
           isProfileView={false}

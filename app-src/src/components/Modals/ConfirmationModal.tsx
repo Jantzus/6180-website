@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 interface ConfirmationModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -5,7 +8,7 @@ interface ConfirmationModalProps {
   isRTL: boolean;
 }
 
-// Confirmation Modal Component with proper TypeScript types
+// Confirmation Modal Component with React Portal based on your existing design
 export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ 
   isOpen, 
   onClose, 
@@ -14,7 +17,7 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
 }) => {
   if (!isOpen) return null;
 
-  return (
+  const modalContent = (
     <div 
       style={{
         position: "fixed",
@@ -26,7 +29,7 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        zIndex: 1000,
+        zIndex: 10000, // Increased z-index to ensure it's above everything
       }}
       onClick={onClose}
     >
@@ -76,4 +79,7 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
       </div>
     </div>
   );
+
+  // Use React Portal to render the modal at the document body level
+  return ReactDOM.createPortal(modalContent, document.body);
 };

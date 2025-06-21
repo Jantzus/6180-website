@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
@@ -14,8 +15,9 @@ const ModalOverlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 10000;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   padding: 20px;
 `;
 
@@ -25,13 +27,25 @@ const ModalContent = styled.div<{ $isRTL: boolean }>`
   padding: 32px;
   max-width: 500px;
   width: 100%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
+  animation: modalFadeIn 0.3s ease-out;
   
   @media (max-width: 768px) {
     padding: 24px;
     margin: 20px;
     max-width: calc(100vw - 40px);
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
   }
 `;
 
@@ -230,7 +244,7 @@ export const AlbumCreationModal: React.FC<AlbumCreationModalProps> = ({
     onChoice(choice);
   };
 
-  return (
+  const modalContent = (
     <ModalOverlay onClick={onCancel}>
       <ModalContent $isRTL={isRTL} onClick={(e) => e.stopPropagation()}>
         <ModalTitle>{t('Create Multiple Albums?')}</ModalTitle>
@@ -271,4 +285,7 @@ export const AlbumCreationModal: React.FC<AlbumCreationModalProps> = ({
       </ModalContent>
     </ModalOverlay>
   );
+
+  // Use React Portal to render the modal at the document body level
+  return ReactDOM.createPortal(modalContent, document.body);
 };
