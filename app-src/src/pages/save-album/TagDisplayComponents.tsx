@@ -510,10 +510,9 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
   React.useEffect(() => {
     const appliedTags = tags.filter(tag => isTagAppliedToSelected(tag));
     const appliedTagsWithSubtags = getAppliedTagsForSelected();
-    enhancedLog(`TagsDisplay render - ${appliedTags.length} tags applied to all selected files:`, 
-      appliedTags.map(t => `${t.tagTitle} (display: "${getTagDisplayText(t)}")`));
+    enhancedLog(`TagsDisplay render - ${appliedTags.length} tags applied to all selected files`);
     enhancedLog(`Applied tags with subtags:`, appliedTagsWithSubtags);
-  }, [tags, isTagAppliedToSelected, getAppliedTagsForSelected, getTagDisplayText, enhancedLog]);
+  }, [tags, isTagAppliedToSelected, getAppliedTagsForSelected, enhancedLog]);
 
   const handleTagClick = (tag: TagData) => {
     if (disabled) return;

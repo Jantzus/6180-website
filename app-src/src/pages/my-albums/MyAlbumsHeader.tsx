@@ -12,7 +12,9 @@ type MyAlbumsHeaderProps = {
     bytesOfDataUsed: number; 
   } | null;
   calculatedBytesUsed: number;
-  onNewAlbum?: () => void;
+  onNewAlbum?: () => void; // Keep for backward compatibility
+  onSelectFiles?: () => void; // File selection handler
+  onSelectFolder?: () => void; // Folder selection handler
 };
 
 interface DirectionalProps {
@@ -146,6 +148,13 @@ const CenterSection = styled.div`
   }
 `;
 
+// Simplified button group for two separate buttons
+const ButtonGroup = styled.div`
+  display: inline-flex;
+  gap: ${theme.spacing.sm};
+  align-items: center;
+`;
+
 const NewAlbumButton = styled.button`
   display: inline-flex;
   align-items: center;
@@ -160,19 +169,48 @@ const NewAlbumButton = styled.button`
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-  min-width: 140px;
+  min-width: 120px;
   box-shadow: ${theme.boxShadow.primaryBtn};
-  position: relative;
-  overflow: hidden;
 
   &:hover {
     background-color: ${theme.colors.primaryDark};
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
   }
 
   &:active {
-    transform: translateY(0px) scale(0.98);
+    transform: scale(0.98);
+  }
+`;
+
+const UploadFolderButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: ${theme.spacing.sm};
+  padding: 10px ${theme.spacing.md};
+  background-color: transparent;
+  color: ${theme.colors.primary};
+  border: 1px solid ${theme.colors.primary};
+  border-radius: ${theme.borderRadius.medium};
+  font-size: ${theme.fontSizes.sm};
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  min-width: 120px;
+
+  &:hover {
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.text.white};
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  // Hide on mobile/tablet
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
 
@@ -180,6 +218,11 @@ const PlusIcon = styled.span`
   font-size: 18px;
   line-height: 1;
   font-weight: 300;
+`;
+
+const FolderIcon = styled.span`
+  font-size: 16px;
+  line-height: 1;
 `;
 
 const RightSection = styled.div`
@@ -274,7 +317,7 @@ const DropdownArrow = styled.svg<{ $isOpen: boolean }>`
   opacity: 0.6;
 `;
 
-const DropdownMenu = styled.div<DirectionalProps>`
+const ProfileDropdownMenu = styled.div<DirectionalProps>`
   position: absolute;
   top: 100%;
   right: ${props => props.$isRTL ? 'auto' : '0'};
@@ -295,7 +338,7 @@ const DropdownMenu = styled.div<DirectionalProps>`
   `)}
 `;
 
-const DropdownItem = styled.a`
+const ProfileDropdownItem = styled.a`
   display: flex;
   align-items: center;
   gap: ${theme.spacing.sm};
@@ -313,7 +356,7 @@ const DropdownItem = styled.a`
   }
 `;
 
-const DropdownButton = styled.button`
+const ProfileDropdownButton = styled.button`
   display: flex;
   align-items: center;
   gap: ${theme.spacing.sm};
@@ -364,18 +407,20 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
   publicUsername,
   subscriptionInfo,
   calculatedBytesUsed,
-  onNewAlbum
+  onNewAlbum,
+  onSelectFiles,
+  onSelectFolder
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const profileDropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
+  // Close profile dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
+      if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target as Node)) {
+        setIsProfileDropdownOpen(false);
       }
     };
 
@@ -408,6 +453,22 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
     redirectTo("index.html");
   };
 
+  // Handle button clicks
+  const handleSelectFiles = () => {
+    if (onSelectFiles) {
+      onSelectFiles();
+    } else if (onNewAlbum) {
+      // Fallback to original behavior
+      onNewAlbum();
+    }
+  };
+
+  const handleSelectFolder = () => {
+    if (onSelectFolder) {
+      onSelectFolder();
+    }
+  };
+
   return (
     <>
       <HeaderContainer>
@@ -421,82 +482,94 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
             <AppTitle>6180</AppTitle>
           </LogoSection>
 
-          {/* Center: New Album Button (hidden on mobile) */}
+          {/* Center: New Album and Upload Folder Buttons (hidden on mobile) */}
           <CenterSection>
-            <NewAlbumButton onClick={onNewAlbum}>
-              <PlusIcon>+</PlusIcon>
-              {t('New Album(s)')}
-            </NewAlbumButton>
+            <ButtonGroup>
+              <NewAlbumButton onClick={handleSelectFiles}>
+                <PlusIcon>+</PlusIcon>
+                {t('New Album')}
+              </NewAlbumButton>
+              
+              {/* Upload Folder Button - only show if handler exists and on desktop */}
+              {onSelectFolder && (
+                <UploadFolderButton onClick={handleSelectFolder}>
+                  <FolderIcon>📁</FolderIcon>
+                  {t('Upload Folder')}
+                </UploadFolderButton>
+              )}
+            </ButtonGroup>
           </CenterSection>
 
           {/* Right: Profile Section */}
-          <RightSection ref={dropdownRef}>
+          <RightSection>
             {/* Mobile New Album Button */}
-            <MobileNewAlbumButton onClick={onNewAlbum}>
-              {t('New Album(s)')}
+            <MobileNewAlbumButton onClick={handleSelectFiles}>
+              {t('New Album')}
             </MobileNewAlbumButton>
 
             {/* Profile Button */}
-            <ProfileButton onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-              <UserAvatar>
-                {getDisplayName().charAt(0).toUpperCase()}
-              </UserAvatar>
-              
-              <Username>
-                {getDisplayName()}
-              </Username>
-              
-              <DropdownArrow 
-                $isOpen={isDropdownOpen}
-                viewBox="0 0 12 12"
-              >
-                <path 
-                  d="M2.5 4.5L6 8L9.5 4.5" 
-                  stroke="currentColor" 
-                  strokeWidth="1.5" 
-                  fill="none" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-              </DropdownArrow>
-            </ProfileButton>
+            <div ref={profileDropdownRef} style={{ position: 'relative' }}>
+              <ProfileButton onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}>
+                <UserAvatar>
+                  {getDisplayName().charAt(0).toUpperCase()}
+                </UserAvatar>
+                
+                <Username>
+                  {getDisplayName()}
+                </Username>
+                
+                <DropdownArrow 
+                  $isOpen={isProfileDropdownOpen}
+                  viewBox="0 0 12 12"
+                >
+                  <path 
+                    d="M2.5 4.5L6 8L9.5 4.5" 
+                    stroke="currentColor" 
+                    strokeWidth="1.5" 
+                    fill="none" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </DropdownArrow>
+              </ProfileButton>
 
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
-              <DropdownMenu $isRTL={isRTL}>
-                {/* View Public Profile */}
-                {publicUsername && (
-                  <DropdownItem
-                    href={`https://6180.io/${publicUsername}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span style={{ fontSize: '16px' }}>👤</span>
-                    {t('View Public Profile')}
-                  </DropdownItem>
-                )}
-                
-                {/* Storage */}
-                <DropdownItem href={generateUrl("storage/manage.html")}>
-                  <span style={{ fontSize: '16px' }}>📦</span>
-                  <StorageInfo>
-                    <span>{t('Storage')}</span>
-                    <StorageUsage>
-                      {formatStorage()}
-                    </StorageUsage>
-                  </StorageInfo>
-                </DropdownItem>
-                
-                {/* Separator */}
-                <Separator />
-                
-                {/* Log Out */}
-                <DropdownButton onClick={handleLogout}>
-                  <span style={{ fontSize: '16px' }}>🚪</span>
-                  {t('Log Out')}
-                </DropdownButton>
-              </DropdownMenu>
-            )}
+              {/* Profile Dropdown Menu */}
+              {isProfileDropdownOpen && (
+                <ProfileDropdownMenu $isRTL={isRTL}>
+                  {/* View Public Profile */}
+                  {publicUsername && (
+                    <ProfileDropdownItem
+                      href={`https://6180.io/${publicUsername}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span style={{ fontSize: '16px' }}>👤</span>
+                      {t('View Public Profile')}
+                    </ProfileDropdownItem>
+                  )}
+                  
+                  {/* Storage */}
+                  <ProfileDropdownItem href={generateUrl("storage/manage.html")}>
+                    <span style={{ fontSize: '16px' }}>📦</span>
+                    <StorageInfo>
+                      <span>{t('Storage')}</span>
+                      <StorageUsage>
+                        {formatStorage()}
+                      </StorageUsage>
+                    </StorageInfo>
+                  </ProfileDropdownItem>
+                  
+                  {/* Separator */}
+                  <Separator />
+                  
+                  {/* Log Out */}
+                  <ProfileDropdownButton onClick={handleLogout}>
+                    <span style={{ fontSize: '16px' }}>🚪</span>
+                    {t('Log Out')}
+                  </ProfileDropdownButton>
+                </ProfileDropdownMenu>
+              )}
+            </div>
           </RightSection>
         </HeaderContent>
         

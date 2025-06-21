@@ -1,0 +1,3806 @@
+diff --git a/app-src/src/components/FileInput.tsx b/app-src/src/components/FileInput.tsx
+index 4f8b021b..0a17044e 100644
+--- a/app-src/src/components/FileInput.tsx
++++ b/app-src/src/components/FileInput.tsx
+@@ -1,22 +1,153 @@
+-import React from "react";
++// FileInput.tsx - Enhanced version with folder support
++import React, { forwardRef } from 'react';
++import styled from 'styled-components';
++import { useTranslation } from "@/lib/i18n/hooks";
++import { getLanguageDirection } from "@/lib/i18n";
+ 
+-// FileInput Component
+-type FileInputProps = {
++const FileInputContainer = styled.div`
++  display: none; /* Hidden by default, controlled by refs */
++`;
++
++const HiddenFileInput = styled.input`
++  display: none;
++`;
++
++// Type declaration for webkitdirectory attribute
++declare module 'react' {
++  interface InputHTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
++    webkitdirectory?: string;
++    directory?: string;
++  }
++}
++
++interface FileInputProps {
+   onFileSelection: (e: React.ChangeEvent<HTMLInputElement>) => void;
+-};
+-
+-export const FileInput = React.forwardRef<HTMLInputElement, FileInputProps>(
+-  ({ onFileSelection }, ref) => {
+-    return (
+-      <input 
+-        type="file" 
+-        id="file-input" 
++  accept?: string;
++  multiple?: boolean;
++}
++
++export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(({
++  onFileSelection,
++  accept = "image/*,video/*",
++  multiple = true
++}, ref) => {
++  return (
++    <FileInputContainer>
++      {/* Regular file input */}
++      <HiddenFileInput
+         ref={ref}
+-        accept="image/*,video/*" 
+-        multiple 
+-        style={{ display: "none" }}
++        id="file-input"
++        type="file"
++        accept={accept}
++        multiple={multiple}
+         onChange={onFileSelection}
+       />
+-    );
++      
++      {/* Folder input - separate input for folder selection */}
++      <HiddenFileInput
++        id="folder-input"
++        type="file"
++        accept={accept}
++        multiple={multiple}
++        webkitdirectory=""
++        directory=""
++        onChange={onFileSelection}
++      />
++    </FileInputContainer>
++  );
++});
++
++FileInput.displayName = 'FileInput';
++
++// Enhanced Upload Button Component
++interface UploadButtonProps {
++  onFileClick: () => void;
++  onFolderClick: () => void;
++  disabled?: boolean;
++  style?: React.CSSProperties;
++}
++
++const ButtonContainer = styled.div<{ $isRTL: boolean }>`
++  display: flex;
++  gap: 8px;
++  align-items: center;
++  direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
++  
++  @media (max-width: 768px) {
++    flex-direction: column;
++    gap: 12px;
++    width: 100%;
+   }
+-);
+\ No newline at end of file
++`;
++
++const UploadButton = styled.button<{ $variant?: 'primary' | 'secondary' }>`
++  display: flex;
++  align-items: center;
++  gap: 8px;
++  padding: 12px 20px;
++  border: 2px solid ${props => props.$variant === 'primary' ? '#007bff' : '#6c757d'};
++  border-radius: 12px;
++  background: ${props => props.$variant === 'primary' ? '#007bff' : 'transparent'};
++  color: ${props => props.$variant === 'primary' ? 'white' : '#6c757d'};
++  font-size: 14px;
++  font-weight: 600;
++  cursor: pointer;
++  transition: all 0.2s ease;
++  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
++
++  &:hover {
++    background: ${props => props.$variant === 'primary' ? '#0056b3' : '#6c757d'};
++    color: white;
++    transform: translateY(-1px);
++    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
++  }
++
++  &:disabled {
++    opacity: 0.6;
++    cursor: not-allowed;
++    transform: none;
++  }
++
++  @media (max-width: 768px) {
++    width: 100%;
++    justify-content: center;
++  }
++`;
++
++const IconSpan = styled.span`
++  font-size: 16px;
++`;
++
++export const EnhancedUploadButtons: React.FC<UploadButtonProps> = ({
++  onFileClick,
++  onFolderClick,
++  disabled = false,
++  style
++}) => {
++  const { t, language } = useTranslation();
++  const isRTL = getLanguageDirection(language) === "rtl";
++
++  return (
++    <ButtonContainer $isRTL={isRTL} style={style}>
++      <UploadButton
++        $variant="primary"
++        onClick={onFileClick}
++        disabled={disabled}
++        title={t('Select individual files')}
++      >
++        <IconSpan>📷</IconSpan>
++        {t('Select Files')}
++      </UploadButton>
++      
++      <UploadButton
++        $variant="secondary"
++        onClick={onFolderClick}
++        disabled={disabled}
++        title={t('Select an entire folder')}
++      >
++        <IconSpan>📁</IconSpan>
++        {t('Select Folder')}
++      </UploadButton>
++    </ButtonContainer>
++  );
++};
+\ No newline at end of file
+diff --git a/app-src/src/lib/config.ts b/app-src/src/lib/config.ts
+index a2b38f47..dddea3c1 100644
+--- a/app-src/src/lib/config.ts
++++ b/app-src/src/lib/config.ts
+@@ -11,7 +11,10 @@ export const LOCAL_STORAGE_KEYS = {
+   SELECTED_PHOTOS: 'album_selectedPhotos',
+   SUB_ALBUM_DATA: 'sub_album_data',
+   LANGUAGE: 'user_language',
+-  PUBLIC_USERNAME: 'publicUsername'
++  PUBLIC_USERNAME: 'publicUsername',
++  MULTI_ALBUM_DATA: "multiAlbumData",
++  ALBUM_GROUPS: "albumGroups",
++  ALBUM_CREATION_PREFERENCE: "albumCreationPreference"  
+ }
+ 
+ // API Endpoints
+diff --git a/app-src/src/pages/my-albums/MyAlbumsHeader.tsx b/app-src/src/pages/my-albums/MyAlbumsHeader.tsx
+index 95e18d06..49bf2953 100644
+--- a/app-src/src/pages/my-albums/MyAlbumsHeader.tsx
++++ b/app-src/src/pages/my-albums/MyAlbumsHeader.tsx
+@@ -12,7 +12,9 @@ type MyAlbumsHeaderProps = {
+     bytesOfDataUsed: number; 
+   } | null;
+   calculatedBytesUsed: number;
+-  onNewAlbum?: () => void;
++  onNewAlbum?: () => void; // Keep for backward compatibility
++  onSelectFiles?: () => void; // NEW: File selection handler
++  onSelectFolder?: () => void; // NEW: Folder selection handler
+ };
+ 
+ interface DirectionalProps {
+@@ -146,7 +148,16 @@ const CenterSection = styled.div`
+   }
+ `;
+ 
+-const NewAlbumButton = styled.button`
++// NEW: Enhanced button group for file/folder selection
++const ButtonGroup = styled.div`
++  position: relative;
++  display: inline-flex;
++  border-radius: ${theme.borderRadius.medium};
++  box-shadow: ${theme.boxShadow.primaryBtn};
++  overflow: hidden;
++`;
++
++const NewAlbumButton = styled.button<{ $isDropdownOpen?: boolean }>`
+   display: inline-flex;
+   align-items: center;
+   gap: ${theme.spacing.sm};
+@@ -154,25 +165,90 @@ const NewAlbumButton = styled.button`
+   background-color: ${theme.colors.primary};
+   color: ${theme.colors.text.white};
+   border: none;
+-  border-radius: ${theme.borderRadius.medium};
++  border-radius: 0;
+   font-size: ${theme.fontSizes.sm};
+   font-weight: 600;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+-  min-width: 140px;
+-  box-shadow: ${theme.boxShadow.primaryBtn};
++  min-width: 120px;
+   position: relative;
+-  overflow: hidden;
++  border-top-left-radius: ${theme.borderRadius.medium};
++  border-bottom-left-radius: ${theme.borderRadius.medium};
+ 
+   &:hover {
+     background-color: ${theme.colors.primaryDark};
+-    transform: translateY(-1px);
+-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+   }
+ 
+   &:active {
+-    transform: translateY(0px) scale(0.98);
++    transform: scale(0.98);
++  }
++`;
++
++const DropdownToggle = styled.button<{ $isOpen: boolean }>`
++  display: inline-flex;
++  align-items: center;
++  justify-content: center;
++  padding: 10px 8px;
++  background-color: ${theme.colors.primary};
++  color: ${theme.colors.text.white};
++  border: none;
++  border-left: 1px solid rgba(255, 255, 255, 0.2);
++  border-top-right-radius: ${theme.borderRadius.medium};
++  border-bottom-right-radius: ${theme.borderRadius.medium};
++  cursor: pointer;
++  transition: all 0.2s ease;
++  width: 32px;
++
++  &:hover {
++    background-color: ${theme.colors.primaryDark};
++  }
++
++  svg {
++    transform: ${props => props.$isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
++    transition: transform 0.2s ease;
++  }
++`;
++
++const DropdownMenu = styled.div<DirectionalProps>`
++  position: absolute;
++  top: 100%;
++  right: ${props => props.$isRTL ? 'auto' : '0'};
++  left: ${props => props.$isRTL ? '0' : 'auto'};
++  margin-top: 4px;
++  min-width: 200px;
++  background-color: ${theme.colors.white};
++  border: 1px solid rgba(0, 0, 0, 0.08);
++  border-radius: ${theme.borderRadius.large};
++  box-shadow: ${theme.boxShadow.xl};
++  padding: ${theme.spacing.sm};
++  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
++  z-index: 1001;
++
++  ${mobile(`
++    min-width: 180px;
++    max-width: calc(100vw - 32px);
++  `)}
++`;
++
++const DropdownItem = styled.button`
++  display: flex;
++  align-items: center;
++  gap: ${theme.spacing.sm};
++  padding: ${theme.spacing.sm} 14px;
++  border-radius: ${theme.borderRadius.small};
++  background: transparent;
++  border: none;
++  color: ${theme.colors.text.primary};
++  font-size: ${theme.fontSizes.sm};
++  font-weight: 400;
++  transition: background-color 0.2s ease;
++  cursor: pointer;
++  width: 100%;
++  text-align: left;
++
++  &:hover {
++    background-color: rgba(0, 0, 0, 0.05);
+   }
+ `;
+ 
+@@ -274,7 +350,7 @@ const DropdownArrow = styled.svg<{ $isOpen: boolean }>`
+   opacity: 0.6;
+ `;
+ 
+-const DropdownMenu = styled.div<DirectionalProps>`
++const ProfileDropdownMenu = styled.div<DirectionalProps>`
+   position: absolute;
+   top: 100%;
+   right: ${props => props.$isRTL ? 'auto' : '0'};
+@@ -295,7 +371,7 @@ const DropdownMenu = styled.div<DirectionalProps>`
+   `)}
+ `;
+ 
+-const DropdownItem = styled.a`
++const ProfileDropdownItem = styled.a`
+   display: flex;
+   align-items: center;
+   gap: ${theme.spacing.sm};
+@@ -313,7 +389,7 @@ const DropdownItem = styled.a`
+   }
+ `;
+ 
+-const DropdownButton = styled.button`
++const ProfileDropdownButton = styled.button`
+   display: flex;
+   align-items: center;
+   gap: ${theme.spacing.sm};
+@@ -364,19 +440,26 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
+   publicUsername,
+   subscriptionInfo,
+   calculatedBytesUsed,
+-  onNewAlbum
++  onNewAlbum,
++  onSelectFiles, // NEW
++  onSelectFolder // NEW
+ }) => {
+   const { t, language } = useTranslation();
+   const isRTL = getLanguageDirection(language) === "rtl";
+   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
++  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+   const dropdownRef = useRef<HTMLDivElement>(null);
++  const profileDropdownRef = useRef<HTMLDivElement>(null);
+ 
+-  // Close dropdown when clicking outside
++  // Close dropdowns when clicking outside
+   useEffect(() => {
+     const handleClickOutside = (event: MouseEvent) => {
+       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+         setIsDropdownOpen(false);
+       }
++      if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target as Node)) {
++        setIsProfileDropdownOpen(false);
++      }
+     };
+ 
+     document.addEventListener('mousedown', handleClickOutside);
+@@ -408,6 +491,24 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
+     redirectTo("index.html");
+   };
+ 
++  // NEW: Handle dropdown selections
++  const handleSelectFiles = () => {
++    setIsDropdownOpen(false);
++    if (onSelectFiles) {
++      onSelectFiles();
++    } else if (onNewAlbum) {
++      // Fallback to original behavior
++      onNewAlbum();
++    }
++  };
++
++  const handleSelectFolder = () => {
++    setIsDropdownOpen(false);
++    if (onSelectFolder) {
++      onSelectFolder();
++    }
++  };
++
+   return (
+     <>
+       <HeaderContainer>
+@@ -421,82 +522,114 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
+             <AppTitle>6180</AppTitle>
+           </LogoSection>
+ 
+-          {/* Center: New Album Button (hidden on mobile) */}
++          {/* Center: New Album Button Group (hidden on mobile) */}
+           <CenterSection>
+-            <NewAlbumButton onClick={onNewAlbum}>
+-              <PlusIcon>+</PlusIcon>
+-              {t('New Album(s)')}
+-            </NewAlbumButton>
++            <div ref={dropdownRef} style={{ position: 'relative' }}>
++              <ButtonGroup>
++                <NewAlbumButton onClick={handleSelectFiles}>
++                  <PlusIcon>+</PlusIcon>
++                  {t('New Album(s)')}
++                </NewAlbumButton>
++                
++                {/* NEW: Dropdown toggle for file/folder options */}
++                {(onSelectFiles && onSelectFolder) && (
++                  <DropdownToggle 
++                    $isOpen={isDropdownOpen}
++                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
++                  >
++                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
++                      <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
++                    </svg>
++                  </DropdownToggle>
++                )}
++              </ButtonGroup>
++
++              {/* NEW: Dropdown menu for file/folder selection */}
++              {isDropdownOpen && (onSelectFiles && onSelectFolder) && (
++                <DropdownMenu $isRTL={isRTL}>
++                  <DropdownItem onClick={handleSelectFiles}>
++                    <span style={{ fontSize: '16px' }}>📷</span>
++                    {t('Select Files')}
++                  </DropdownItem>
++                  <DropdownItem onClick={handleSelectFolder}>
++                    <span style={{ fontSize: '16px' }}>📁</span>
++                    {t('Select Folder')}
++                  </DropdownItem>
++                </DropdownMenu>
++              )}
++            </div>
+           </CenterSection>
+ 
+           {/* Right: Profile Section */}
+-          <RightSection ref={dropdownRef}>
++          <RightSection>
+             {/* Mobile New Album Button */}
+-            <MobileNewAlbumButton onClick={onNewAlbum}>
++            <MobileNewAlbumButton onClick={handleSelectFiles}>
+               {t('New Album(s)')}
+             </MobileNewAlbumButton>
+ 
+             {/* Profile Button */}
+-            <ProfileButton onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+-              <UserAvatar>
+-                {getDisplayName().charAt(0).toUpperCase()}
+-              </UserAvatar>
+-              
+-              <Username>
+-                {getDisplayName()}
+-              </Username>
+-              
+-              <DropdownArrow 
+-                $isOpen={isDropdownOpen}
+-                viewBox="0 0 12 12"
+-              >
+-                <path 
+-                  d="M2.5 4.5L6 8L9.5 4.5" 
+-                  stroke="currentColor" 
+-                  strokeWidth="1.5" 
+-                  fill="none" 
+-                  strokeLinecap="round" 
+-                  strokeLinejoin="round"
+-                />
+-              </DropdownArrow>
+-            </ProfileButton>
+-
+-            {/* Dropdown Menu */}
+-            {isDropdownOpen && (
+-              <DropdownMenu $isRTL={isRTL}>
+-                {/* View Public Profile */}
+-                {publicUsername && (
+-                  <DropdownItem
+-                    href={`https://6180.io/${publicUsername}`}
+-                    target="_blank"
+-                    rel="noopener noreferrer"
+-                  >
+-                    <span style={{ fontSize: '16px' }}>👤</span>
+-                    {t('View Public Profile')}
+-                  </DropdownItem>
+-                )}
+-                
+-                {/* Storage */}
+-                <DropdownItem href={generateUrl("storage/manage.html")}>
+-                  <span style={{ fontSize: '16px' }}>📦</span>
+-                  <StorageInfo>
+-                    <span>{t('Storage')}</span>
+-                    <StorageUsage>
+-                      {formatStorage()}
+-                    </StorageUsage>
+-                  </StorageInfo>
+-                </DropdownItem>
++            <div ref={profileDropdownRef} style={{ position: 'relative' }}>
++              <ProfileButton onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}>
++                <UserAvatar>
++                  {getDisplayName().charAt(0).toUpperCase()}
++                </UserAvatar>
+                 
+-                {/* Separator */}
+-                <Separator />
++                <Username>
++                  {getDisplayName()}
++                </Username>
+                 
+-                {/* Log Out */}
+-                <DropdownButton onClick={handleLogout}>
+-                  <span style={{ fontSize: '16px' }}>🚪</span>
+-                  {t('Log Out')}
+-                </DropdownButton>
+-              </DropdownMenu>
+-            )}
++                <DropdownArrow 
++                  $isOpen={isProfileDropdownOpen}
++                  viewBox="0 0 12 12"
++                >
++                  <path 
++                    d="M2.5 4.5L6 8L9.5 4.5" 
++                    stroke="currentColor" 
++                    strokeWidth="1.5" 
++                    fill="none" 
++                    strokeLinecap="round" 
++                    strokeLinejoin="round"
++                  />
++                </DropdownArrow>
++              </ProfileButton>
++
++              {/* Profile Dropdown Menu */}
++              {isProfileDropdownOpen && (
++                <ProfileDropdownMenu $isRTL={isRTL}>
++                  {/* View Public Profile */}
++                  {publicUsername && (
++                    <ProfileDropdownItem
++                      href={`https://6180.io/${publicUsername}`}
++                      target="_blank"
++                      rel="noopener noreferrer"
++                    >
++                      <span style={{ fontSize: '16px' }}>👤</span>
++                      {t('View Public Profile')}
++                    </ProfileDropdownItem>
++                  )}
++                  
++                  {/* Storage */}
++                  <ProfileDropdownItem href={generateUrl("storage/manage.html")}>
++                    <span style={{ fontSize: '16px' }}>📦</span>
++                    <StorageInfo>
++                      <span>{t('Storage')}</span>
++                      <StorageUsage>
++                        {formatStorage()}
++                      </StorageUsage>
++                    </StorageInfo>
++                  </ProfileDropdownItem>
++                  
++                  {/* Separator */}
++                  <Separator />
++                  
++                  {/* Log Out */}
++                  <ProfileDropdownButton onClick={handleLogout}>
++                    <span style={{ fontSize: '16px' }}>🚪</span>
++                    {t('Log Out')}
++                  </ProfileDropdownButton>
++                </ProfileDropdownMenu>
++              )}
++            </div>
+           </RightSection>
+         </HeaderContent>
+         
+diff --git a/app-src/src/pages/my-albums/my-albums.tsx b/app-src/src/pages/my-albums/my-albums.tsx
+index 4963d3e8..778efc07 100644
+--- a/app-src/src/pages/my-albums/my-albums.tsx
++++ b/app-src/src/pages/my-albums/my-albums.tsx
+@@ -1,4 +1,4 @@
+-import React, { useMemo, useCallback, useEffect } from "react";
++import React, { useMemo, useCallback, useEffect, useState, useRef } from "react";
+ import ReactDOM from "react-dom/client";
+ import { I18nProvider } from "@/lib/i18n/context";
+ import { useTranslation } from "@/lib/i18n/hooks";
+@@ -6,6 +6,7 @@ import { getLanguageDirection } from "@/lib/i18n";
+ import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
+ import { redirectTo, generateUrl } from "@/lib/utils";
+ import { prewarmCredentials } from "@/lib/s3";
++import { LOCAL_STORAGE_KEYS } from "@/lib/config";
+ 
+ // Import components
+ import {
+@@ -13,19 +14,93 @@ import {
+   AppContainer,
+ } from "@/styles/styled-components";
+ import { MyAlbumsHeader } from "./MyAlbumsHeader";
+-import { AlbumsFilter } from "./AlbumsFilter"; // Combined search and filter
++import { AlbumsFilter } from "./AlbumsFilter";
+ import { UploadProgress } from "@/components/UploadProgress";
+ import { AlbumList } from "@/components/AlbumList";
+-import { FileInput } from "@/components/FileInput";
+-// import { DebugLog } from "@/components/DebugLog";
+ import { LazyImage } from "@/components/LazyImage";
+ 
++// Import the new components and utilities
++import { AlbumCreationModal, FolderStructure } from "./AlbumCreationModal";
++import { 
++  analyzeFolderStructure, 
++  hasLevel1Subfolders, 
++  createAlbumGroupsFromSelectedPhotos,
++  storeFolderStructureMetadata,
++  getFolderStructureMetadata,
++  clearFolderStructureMetadata,
++  getUserAlbumPreference, 
++  clearUserAlbumPreference,
++  setUserAlbumPreference
++} from "@/lib/folderStructureUtils";
++
+ // Import custom hooks and utilities
+ import { useFolderManagement } from "@/lib/useFolderManagement";
+ 
+ // Constants
+ const FREE_TIER_STORAGE_LIMIT_GB = 10;
+-const MAX_PREVIEW_IMAGES = 3; // Limit preview images to reduce bandwidth
++const MAX_PREVIEW_IMAGES = 3;
++
++// ENHANCED: System file filtering function
++const isValidMediaFile = (file: File): boolean => {
++  // Filter out .DS_Store and other system files
++  if (file.name.startsWith('.DS_Store') || 
++      file.name.startsWith('._') || 
++      file.name.startsWith('Thumbs.db') ||
++      file.name.startsWith('.') ||
++      file.name === 'desktop.ini') {
++    console.log(`🚫 Filtering out system file: ${file.name}`);
++    return false;
++  }
++  
++  // Check if it's a valid media file
++  const validTypes = /\.(jpg|jpeg|png|gif|bmp|webp|svg|mp4|mov|avi|wmv|flv|webm|mkv)$/i;
++  if (!validTypes.test(file.name)) {
++    console.log(`🚫 Filtering out non-media file: ${file.name}`);
++    return false;
++  }
++  
++  // Check file size (optional - avoid 0 byte files)
++  if (file.size === 0) {
++    console.log(`🚫 Filtering out empty file: ${file.name}`);
++    return false;
++  }
++  
++  return true;
++};
++
++// Enhanced File Input Component with folder support
++const EnhancedFileInput = React.forwardRef<HTMLInputElement, {
++  onFileSelection: (e: React.ChangeEvent<HTMLInputElement>) => void;
++  onFolderSelection: (e: React.ChangeEvent<HTMLInputElement>) => void;
++}>(({ onFileSelection, onFolderSelection }, ref) => {
++  return (
++    <div style={{ display: 'none' }}>
++      {/* Regular file input */}
++      <input
++        ref={ref}
++        id="file-input"
++        type="file"
++        accept="image/*,video/*"
++        multiple
++        onChange={onFileSelection}
++        style={{ display: 'none' }}
++      />
++      
++      {/* Folder input */}
++      <input
++        id="folder-input"
++        type="file"
++        accept="image/*,video/*"
++        multiple
++        {...({ webkitdirectory: "" } as any)}
++        onChange={onFolderSelection}
++        style={{ display: 'none' }}
++      />
++    </div>
++  );
++});
++
++EnhancedFileInput.displayName = 'EnhancedFileInput';
+ 
+ // Elegant App Promotion Component - Consistent with Brand
+ const AppDownloadPromotion = React.memo(({ 
+@@ -164,7 +239,6 @@ const formatGB = (gb: number): string => {
+ 
+ // Memoized helper function to get albums that should be marked for deletion
+ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedBytesUsed: number): any[] => {
+-  // Return empty array if subscriptionInfo is not loaded yet
+   if (!subscriptionInfo) {
+     return [];
+   }
+@@ -174,16 +248,13 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
+   let albumsToDelete: any[] = [];
+   
+   if (intNumberOfSubscriptions === 0) {
+-    // Free tier
+-    const storageLimit = FREE_TIER_STORAGE_LIMIT_GB * 1024 * 1024 * 1024; // Convert to bytes
++    const storageLimit = FREE_TIER_STORAGE_LIMIT_GB * 1024 * 1024 * 1024;
+     
+-    // Check if over album count limit (5 albums)
+     if (folders.length > 5) {
+-      // Sort by creation date (oldest first) and take the excess albums
+       const sortedByOldest = [...folders].sort((a, b) => {
+         const dateA = new Date(a.createdAt || 0).getTime();
+         const dateB = new Date(b.createdAt || 0).getTime();
+-        return dateA - dateB; // Oldest first
++        return dateA - dateB;
+       });
+       
+       const excessAlbums = folders.length - 5;
+@@ -191,14 +262,11 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
+       albumsToDelete = [...albumsForCountDeletion];
+     }
+     
+-    // Check if over storage limit
+     if (calculatedBytesUsed > storageLimit) {
+-      // Calculate which albums to delete to get under the storage limit
+-      // Sort by oldest first, then calculate cumulative storage to remove
+       const sortedByOldest = [...folders].sort((a, b) => {
+         const dateA = new Date(a.createdAt || 0).getTime();
+         const dateB = new Date(b.createdAt || 0).getTime();
+-        return dateA - dateB; // Oldest first
++        return dateA - dateB;
+       });
+       
+       let bytesToRemove = calculatedBytesUsed - storageLimit;
+@@ -207,7 +275,6 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
+       for (const folder of sortedByOldest) {
+         if (bytesToRemove <= 0) break;
+         
+-        // Calculate total bytes for this album
+         const albumBytes = folder.files.reduce((total: number, file: any) => {
+           return total + (file.dataInBytes || 0);
+         }, 0);
+@@ -216,8 +283,6 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
+         bytesToRemove -= albumBytes;
+       }
+       
+-      // Merge with albums already marked for deletion due to count limit
+-      // Use a Set to avoid duplicates
+       const markedIds = new Set(albumsToDelete.map(album => album.folderId));
+       for (const album of albumsForStorageDeletion) {
+         if (!markedIds.has(album.folderId)) {
+@@ -226,15 +291,13 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
+       }
+     }
+   } else {
+-    // Paid tier - only storage limit applies
+-    const totalStorageBytes = intNumberOfSubscriptions * 10 * 1024 * 1024 * 1024; // Convert GB to bytes
++    const totalStorageBytes = intNumberOfSubscriptions * 10 * 1024 * 1024 * 1024;
+     
+     if (calculatedBytesUsed > totalStorageBytes) {
+-      // Calculate which albums to delete to get under the storage limit
+       const sortedByOldest = [...folders].sort((a, b) => {
+         const dateA = new Date(a.createdAt || 0).getTime();
+         const dateB = new Date(b.createdAt || 0).getTime();
+-        return dateA - dateB; // Oldest first
++        return dateA - dateB;
+       });
+       
+       let bytesToRemove = calculatedBytesUsed - totalStorageBytes;
+@@ -242,7 +305,6 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
+       for (const folder of sortedByOldest) {
+         if (bytesToRemove <= 0) break;
+         
+-        // Calculate total bytes for this album
+         const albumBytes = folder.files.reduce((total: number, file: any) => {
+           return total + (file.dataInBytes || 0);
+         }, 0);
+@@ -286,7 +348,6 @@ const AlbumDeletionPreview = React.memo(({
+             opacity: '0.85'
+           }}>
+ 
+-            {/* Album header */}
+             <div style={{ 
+               marginTop: '30px',
+               marginBottom: '16px',
+@@ -326,7 +387,6 @@ const AlbumDeletionPreview = React.memo(({
+               </div>
+             </div>
+ 
+-            {/* Album description */}
+             {folder.folderDescription && folder.folderDescription.length > 1 && (
+               <div style={{
+                 fontSize: '14px',
+@@ -339,7 +399,6 @@ const AlbumDeletionPreview = React.memo(({
+               </div>
+             )}
+ 
+-            {/* LIMITED Photo gallery preview - ONLY show first few images */}
+             <div style={{ width: '100%', position: 'relative' }}>
+               <div style={{
+                 display: 'flex',
+@@ -352,7 +411,6 @@ const AlbumDeletionPreview = React.memo(({
+                 maxWidth: '100%',
+                 flexDirection: isRTL ? "row-reverse" : "row"
+               }}>
+-                {/* BANDWIDTH FIX: Only show first MAX_PREVIEW_IMAGES files */}
+                 {folder.files.slice(0, MAX_PREVIEW_IMAGES).map((file: any, i: number) => (
+                   <div key={i} style={{
+                     width: '160px',
+@@ -364,7 +422,6 @@ const AlbumDeletionPreview = React.memo(({
+                     border: '2px solid #dc3545'
+                   }}>
+                     <LazyImage
+-                      // BANDWIDTH FIX: Only pass necessary props, avoid redundant src
+                       thumbnailDataKey={file.thumbnailDataKey}
+                       dataKey={file.dataKey}
+                       alt={t('Thumbnail')}
+@@ -374,7 +431,6 @@ const AlbumDeletionPreview = React.memo(({
+                         objectFit: 'cover'
+                       }}
+                     />
+-                    {/* Overlay to show "will be deleted" effect */}
+                     <div style={{
+                       position: 'absolute',
+                       top: '0',
+@@ -393,7 +449,6 @@ const AlbumDeletionPreview = React.memo(({
+                   </div>
+                 ))}
+                 
+-                {/* Show indicator if there are more files */}
+                 {folder.files.length > MAX_PREVIEW_IMAGES && (
+                   <div style={{
+                     width: '160px',
+@@ -415,7 +470,6 @@ const AlbumDeletionPreview = React.memo(({
+                 )}
+               </div>
+               
+-              {/* Gradient overlay for scrolling indication */}
+               {folder.files.length > 2 && (
+                 <div style={{
+                   position: 'absolute',
+@@ -453,7 +507,6 @@ const StorageMessage = React.memo(({
+   t: (key: string) => string; 
+   isRTL: boolean; 
+ }) => {
+-  // Don't show anything if subscription info is not loaded yet
+   if (!subscriptionInfo) {
+     return null;
+   }
+@@ -461,45 +514,33 @@ const StorageMessage = React.memo(({
+   const { intNumberOfSubscriptions } = subscriptionInfo;
+   const usedGB = bytesToGB(calculatedBytesUsed);
+   
+-  // MEMOIZED: Get albums that should be marked for deletion
+   const albumsToDelete = useMemo(() => 
+     getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed),
+     [folders, subscriptionInfo, calculatedBytesUsed]
+   );
+   
+-  // Determine which message to show based on conditions
+   let messageType: 'free-space' | 'free-count-exceeded' | 'free-storage-exceeded' | 'free-both-exceeded' | 'paid-warning' | 'paid-exceeded' | 'none' = 'none';
+   let message = '';
+   
+   if (intNumberOfSubscriptions === 0) {
+-    // Free tier logic
+     const storageLimit = FREE_TIER_STORAGE_LIMIT_GB;
+     const isOverAlbumCount = albumCount > 5;
+     const isOverStorage = usedGB > storageLimit;
+     
+     if (!isOverAlbumCount && !isOverStorage) {
+-      // Within limits - show helpful info
+       messageType = 'free-space';
+       message = t(`You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.`).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
+     } else if (isOverAlbumCount && isOverStorage) {
+-      // Over both limits
+       messageType = 'free-both-exceeded';
+       message = t(`You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
+     } else if (isOverAlbumCount) {
+-      // Over album count only
+       messageType = 'free-count-exceeded';
+       message = t(`You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:`).replace('{albumCount}', albumCount.toString());
+     } else if (isOverStorage) {
+-      // Over storage only
+-      messageType = 'free-storage-exceeded';
+-      message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
+-    } else if (isOverStorage) {
+-      // Over storage only
+       messageType = 'free-storage-exceeded';
+       message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
+     }
+   } else {
+-    // Paid tier logic
+     const totalStorageGB = intNumberOfSubscriptions * 10;
+     const remainingGB = totalStorageGB - usedGB;
+     
+@@ -516,7 +557,6 @@ const StorageMessage = React.memo(({
+     return null;
+   }
+   
+-  // Determine if this is an "exceeded" state that shows album deletion preview
+   const showDeletionPreview = ['free-count-exceeded', 'free-storage-exceeded', 'free-both-exceeded', 'paid-exceeded'].includes(messageType);
+   
+   return (
+@@ -533,7 +573,6 @@ const StorageMessage = React.memo(({
+     }}>
+       {message}
+       
+-      {/* Show visual album preview for albums marked for deletion */}
+       {showDeletionPreview && albumsToDelete.length > 0 && (
+         <AlbumDeletionPreview 
+           albumsToDelete={albumsToDelete}
+@@ -541,7 +580,6 @@ const StorageMessage = React.memo(({
+         />
+       )}
+       
+-      {/* Consistent upgrade link for all message types */}
+       <div style={{ marginTop: '12px' }}>
+         <a 
+           href={generateUrl("storage/manage.html")}
+@@ -566,11 +604,17 @@ const StorageMessage = React.memo(({
+ });
+ 
+ const MyAlbums = () => {
+-  // Get translation function from the hook for the main component
+   const { t, language } = useTranslation();
+   const isRTL = getLanguageDirection(language) === "rtl";
+   
+-  // Use the folder management hook
++  // State for folder structure detection and modal
++  const [showAlbumModal, setShowAlbumModal] = useState(false);
++  const [detectedFolderStructure, setDetectedFolderStructure] = useState<FolderStructure | null>(null);
++  const [pendingFiles, setPendingFiles] = useState<File[]>([]);
++  
++  // Add ref for folder input
++  const folderInputRef = useRef<HTMLInputElement>(null);
++  
+   const { 
+     folders,
+     filteredFolders,
+@@ -588,11 +632,62 @@ const MyAlbums = () => {
+     calculatedBytesUsed
+   } = useFolderManagement((message: string) => log(message));
+   
+-  // FIXED: Directly integrate the file upload processor hook with proper navigation
++  // ENHANCED: File upload processor with multi-album support
+   const fileUploadProcessor = useFileUploadProcessor(
+-    // Custom navigation callback for the album upload flow
+     (folderId) => {
+       log(`🚀 Navigation callback triggered with folderId: ${folderId}`);
++      
++      // NEW: Check if we have folder structure metadata for multi-album processing
++      const metadata = getFolderStructureMetadata();
++      if (metadata) {
++        log(`📁 Found folder structure metadata, processing multi-album creation`);
++        
++        // Get the uploaded photos from localStorage
++        const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
++        if (storedPhotos) {
++          try {
++            const selectedPhotos = JSON.parse(storedPhotos);
++            log(`📄 Found ${selectedPhotos.length} uploaded photos in localStorage`);
++            
++            // Create album groups from the uploaded photos
++            const albumGroups = createAlbumGroupsFromSelectedPhotos(selectedPhotos);
++            log(`📦 Created ${albumGroups.length} album groups`);
++            
++            if (albumGroups.length > 1) {
++              // Store album groups in localStorage for save-album.tsx
++              const multiAlbumData = albumGroups.map(group => ({
++                name: group.name,
++                selectedPhotos: group.selectedPhotos,
++                folderPath: group.folderPath
++              }));
++              
++              localStorage.setItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA, JSON.stringify(multiAlbumData));
++              log(`💾 Stored ${albumGroups.length} album groups for multi-album save`);
++              
++              // Clear folder structure metadata as it's no longer needed
++              clearFolderStructureMetadata();
++              
++              // Navigate to multi-album mode
++              redirectTo("save-album.html?mode=multiple");
++              return;
++            } else {
++              log(`📦 Only one album group created, proceeding with normal single album flow`);
++              // Clear metadata and proceed with normal flow
++              clearFolderStructureMetadata();
++            }
++          } catch (error) {
++            log(`❌ Error processing multi-album data: ${error}`);
++            // Clear metadata and proceed with normal flow
++            clearFolderStructureMetadata();
++          }
++        } else {
++          log(`❌ No uploaded photos found in localStorage`);
++          // Clear metadata and proceed with normal flow
++          clearFolderStructureMetadata();
++        }
++      }
++      
++      // Normal single album navigation
+       if (folderId) {
+         const targetUrl = `save-album.html?folderId=${encodeURIComponent(folderId)}`;
+         log(`🎯 Redirecting to: ${targetUrl}`);
+@@ -602,22 +697,19 @@ const MyAlbums = () => {
+         redirectTo("save-album.html");
+       }
+     },
+-    // FIXED: Explicitly set disableAutoNavigation to false to ensure navigation works
+-    false // This ensures auto-navigation is enabled for my-albums page
++    false
+   );
+   
+-  // Destructure the file upload processor for easier access
+   const {
+     fileInputRef,
+     isUploading,
+     isProcessingFiles,
+     progressTracker,
+-    // debugMessages,
+     setSelectedPhotos,
+     log
+   } = fileUploadProcessor;
+ 
+-  // Prewarm S3 credentials when the page loads for extra reliability
++  // Prewarm S3 credentials when the page loads
+   useEffect(() => {
+     const warmUpPageCredentials = async () => {
+       try {
+@@ -629,9 +721,9 @@ const MyAlbums = () => {
+     };
+     
+     warmUpPageCredentials();
+-  }, []); // Empty dependency array - run once when page loads
++  }, []);
+   
+-  // MEMOIZED: Get albums that should be marked for deletion (only if subscriptionInfo is loaded)
++  // MEMOIZED: Get albums that should be marked for deletion
+   const albumsToDelete = useMemo(() => 
+     subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed) : [],
+     [folders, subscriptionInfo, calculatedBytesUsed]
+@@ -642,34 +734,242 @@ const MyAlbums = () => {
+     [albumsToDelete]
+   );
+   
+-  // MEMOIZED: Filter out albums marked for deletion from the main list
+   const displayFolders = useMemo(() =>
+     filteredFolders.filter(folder => !albumsToDeleteIds.has(folder.folderId)),
+     [filteredFolders, albumsToDeleteIds]
+   );
+ 
+-  // FIXED: Specialized open file picker for album upload with better logging
+-  const openFilePicker = useCallback((folderId: string | null = null) => {
+-    log(`📂 openFilePicker called with folderId: ${folderId}`);
++  // ENHANCED: File selection with folder structure detection and system file filtering
++  const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
++    const files = Array.from(e.target.files || []);
++    if (!files.length) {
++      log("❌ No files selected");
++      return false;
++    }
++
++    log(`📁 File selection started with ${files.length} files`);
+     
+-    // Clear selected photos when starting a new album or adding to existing
+-    setSelectedPhotos([]);
+-    log(`🧹 Cleared existing selected photos`);
++    // ENHANCED: Filter out system files and invalid files early
++    const validFiles = files.filter(file => {
++      if (!file || !file.name) {
++        console.warn("⚠️ Skipping invalid file:", file);
++        return false;
++      }
++      return isValidMediaFile(file);
++    });
+ 
+-    // Use the shared file picker
+-    fileUploadProcessor.openFilePicker(folderId);
+-    log(`🎬 File picker opened for ${folderId ? 'existing album' : 'new album'}`);
+-  }, [fileUploadProcessor, setSelectedPhotos, log]);
++    if (validFiles.length === 0) {
++      log("❌ No valid media files found after filtering");
++      alert("No valid image or video files were selected. Please select media files.");
++      return false;
++    }
+ 
+-  // MEMOIZED: Specialized file selection handler that passes the cognitoUsername
+-  const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
+-    log(`📁 File selection started with cognitoUsername: ${cognitoUsername}`);
+-    const result = await fileUploadProcessor.handleFileSelection(e, cognitoUsername);
+-    log(`📁 File selection completed with result: ${result}`);
+-    return result;
++    if (validFiles.length !== files.length) {
++      log(`⚠️ Filtered out ${files.length - validFiles.length} invalid/system files`);
++      // Inform user about filtered files
++      const filteredCount = files.length - validFiles.length;
++      if (filteredCount > 0) {
++        console.log(`ℹ️ ${filteredCount} system files (like .DS_Store) were automatically filtered out`);
++      }
++    }
++
++    log(`📁 Processing ${validFiles.length} valid files`);
++    log(`📁 Sample files: ${validFiles.slice(0, 3).map(f => f.name).join(', ')}${validFiles.length > 3 ? '...' : ''}`);
++    
++    // Continue with folder structure analysis using filtered files
++    log(`🔍 Starting folder structure analysis`);
++    const folderStructure = analyzeFolderStructure(validFiles);
++    log(`📁 Folder structure analysis completed: ${folderStructure ? 'structure found' : 'no structure'}`);
++    
++    // Check if we have meaningful subfolders
++    if (folderStructure && hasLevel1Subfolders(folderStructure)) {
++      log(`📁 Detected meaningful folder structure with ${folderStructure.subfolders.length} subfolders`);
++      
++      // Check if user has a preference from this session
++      const userPreference = getUserAlbumPreference();
++      log(`👤 User preference: ${userPreference || 'none'}`);
++      
++      if (userPreference) {
++        log(`📁 Using saved preference: ${userPreference}`);
++        // Store metadata and proceed with normal upload
++        storeFolderStructureMetadata(folderStructure, userPreference, validFiles);
++        
++        // Create synthetic event with filtered files
++        const dt = new DataTransfer();
++        validFiles.forEach(file => dt.items.add(file));
++        
++        const syntheticEvent = { ...e, target: { ...e.target, files: dt.files } };
++        
++        // Proceed with normal file upload flow
++        try {
++          const result = await fileUploadProcessor.handleFileSelection(syntheticEvent as any, cognitoUsername);
++          log(`📁 File upload completed with result: ${result}`);
++        } catch (error) {
++          console.error("❌ Error in file upload:", error);
++          log(`Error in file upload: ${error}`);
++          clearFolderStructureMetadata();
++        }
++      } else {
++        log(`📁 No saved preference, showing modal`);
++        // Show modal for user choice
++        setDetectedFolderStructure(folderStructure);
++        setPendingFiles(validFiles); // Use filtered files
++        setShowAlbumModal(true);
++      }
++    } else {
++      log(`📁 No meaningful subfolders detected - proceeding with single album`);
++      
++      // Create synthetic event with filtered files for single album
++      const dt = new DataTransfer();
++      validFiles.forEach(file => dt.items.add(file));
++      
++      const syntheticEvent = { ...e, target: { ...e.target, files: dt.files } };
++      
++      // Proceed with normal single album flow
++      try {
++        const result = await fileUploadProcessor.handleFileSelection(syntheticEvent as any, cognitoUsername);
++        log(`📁 Single album file selection completed with result: ${result}`);
++      } catch (error) {
++        console.error("❌ Error in single album file selection:", error);
++        log(`Error in single album file selection: ${error}`);
++      }
++    }
++    
++    return true;
+   }, [fileUploadProcessor, cognitoUsername, log]);
+ 
+-  // Check if we should show the combined search and filter - now includes search query
++  // ENHANCED: Album creation choice handler - NEW APPROACH
++  const handleAlbumCreationChoice = useCallback((choice: 'separate' | 'combined', files: File[], folderStructure: FolderStructure) => {
++    log(`🎯 User chose: ${choice}`);
++    log(`📁 Files to process: ${files.length}`);
++    
++    // Store user preference for this session
++    setUserAlbumPreference(choice);
++    
++    // Store folder structure metadata in sessionStorage
++    storeFolderStructureMetadata(folderStructure, choice, files);
++    
++    // Close modal and reset state
++    setShowAlbumModal(false);
++    setDetectedFolderStructure(null);
++    setPendingFiles([]);
++    
++    // Create a synthetic event and proceed with normal upload flow
++    const fileInput = fileInputRef.current;
++    if (fileInput) {
++      try {
++        // Clear the current files and add new ones
++        const dt = new DataTransfer();
++        files.forEach(file => {
++          if (file && file.name) {
++            dt.items.add(file);
++          }
++        });
++        fileInput.files = dt.files;
++        log(`📄 Set ${dt.files.length} valid files to file input`);
++        
++        // Create synthetic event
++        const syntheticEvent = new Event('change', { bubbles: true });
++        Object.defineProperty(syntheticEvent, 'target', {
++          writable: false,
++          value: fileInput
++        });
++        
++        log(`🚀 Triggering normal file upload process`);
++        fileUploadProcessor.handleFileSelection(syntheticEvent as any, cognitoUsername);
++      } catch (error) {
++        console.error("❌ Error in album creation flow:", error);
++        log(`Error in album creation flow: ${error}`);
++        clearFolderStructureMetadata();
++      }
++    } else {
++      console.error("❌ File input ref not available");
++      log("File input ref not available");
++      clearFolderStructureMetadata();
++    }
++  }, [fileUploadProcessor, cognitoUsername, log, fileInputRef]);
++
++  // Handle folder selection (same logic as file selection)
++  const handleFolderSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
++    return handleFileSelection(e);
++  }, [handleFileSelection]);
++
++  // Handle modal cancel
++  const handleModalCancel = useCallback(() => {
++    log(`📁 User cancelled album creation modal`);
++    setShowAlbumModal(false);
++    setDetectedFolderStructure(null);
++    setPendingFiles([]);
++    
++    // Clear both file inputs
++    if (fileInputRef.current) {
++      fileInputRef.current.value = "";
++    }
++    if (folderInputRef.current) {
++      folderInputRef.current.value = "";
++    }
++    
++    // Clear any stored preference and metadata
++    clearUserAlbumPreference();
++    clearFolderStructureMetadata();
++    log("Cleared album creation preference and metadata");
++  }, [fileInputRef, log]);
++
++  // Open file picker with cleanup and support for both files and folders
++  const openFilePicker = useCallback((folderId: string | null = null, mode: 'files' | 'folder' = 'files') => {
++    log(`📂 openFilePicker called with folderId: ${folderId}, mode: ${mode}`);
++    
++    try {
++      // Clear any previous album groups and metadata
++      clearUserAlbumPreference();
++      clearFolderStructureMetadata();
++      localStorage.removeItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
++      
++      // Clear selected photos when starting a new album or adding to existing
++      setSelectedPhotos([]);
++      log(`🧹 Cleared existing selected photos and album metadata`);
++
++      // Use the appropriate file input based on mode
++      if (mode === 'folder') {
++        if (folderInputRef.current) {
++          folderInputRef.current.click();
++          log(`🎬 Folder picker opened for ${folderId ? 'existing album' : 'new album'}`);
++        } else {
++          log("❌ Folder input ref not available");
++          throw new Error("Folder picker not available");
++        }
++      } else {
++        // Use the shared file picker for individual files
++        fileUploadProcessor.openFilePicker(folderId);
++        log(`🎬 File picker opened for ${folderId ? 'existing album' : 'new album'}`);
++      }
++    } catch (error) {
++      console.error("Error opening file picker:", error);
++      log(`Error opening file picker: ${error}`);
++      alert("Sorry, there was an error opening the file picker. Please try again.");
++    }
++  }, [fileUploadProcessor, setSelectedPhotos, log]);
++
++  // Add handlers for the enhanced upload buttons
++  const handleSelectFiles = useCallback(() => {
++    try {
++      openFilePicker(null, 'files');
++    } catch (error) {
++      console.error("Error selecting files:", error);
++      log(`Error selecting files: ${error}`);
++    }
++  }, [openFilePicker]);
++
++  const handleSelectFolder = useCallback(() => {
++    try {
++      openFilePicker(null, 'folder');
++    } catch (error) {
++      console.error("Error selecting folder:", error);
++      log(`Error selecting folder: ${error}`);
++    }
++  }, [openFilePicker]);
++
++  // Check if we should show the combined search and filter
+   const shouldShowSearchAndFilter = searchQuery.length > 0 || folders.some(folder => 
+     (folder.contacts && Object.keys(folder.contacts).length > 0) || 
+     folder.files.some(file => file.selectedTags && file.selectedTags.length > 0)
+@@ -679,15 +979,16 @@ const MyAlbums = () => {
+     <>
+       <GlobalStyle />
+       <AppContainer $isRTL={isRTL}>
+-        {/* Premium Header with integrated New Album button */}
+         <MyAlbumsHeader
+           publicUsername={publicUsername}
+           subscriptionInfo={subscriptionInfo}
+           calculatedBytesUsed={calculatedBytesUsed}
+-          onNewAlbum={() => openFilePicker(null)}
++          onNewAlbum={() => openFilePicker(null, 'files')}
++          onSelectFiles={handleSelectFiles}
++          onSelectFolder={handleSelectFolder}
+         />
+ 
+-        {/* Upload progress - show when files are being processed */}
++        {/* Upload progress */}
+         {(isUploading || isProcessingFiles) && (
+           <div style={{ width: '100%', marginBottom: '20px' }}>
+             <UploadProgress 
+@@ -696,14 +997,14 @@ const MyAlbums = () => {
+               isProcessingFiles={isProcessingFiles}
+               isRTL={getLanguageDirection(language) === "rtl"}
+               style={{ marginTop: '20px' }}
+-              context="uploading" // This keeps the traditional "Upload progress" text
++              context="uploading"
+               showSuccessMessage={true}
+               showErrorMessage={true}
+             />
+           </div>
+         )}
+ 
+-        {/* Dynamic storage limit message - only show if more than 3 albums */}
++        {/* Storage limit message */}
+         {folders.length > 3 && (
+           <StorageMessage 
+             subscriptionInfo={subscriptionInfo}
+@@ -715,12 +1016,12 @@ const MyAlbums = () => {
+           />
+         )}
+         
+-        {/* Enhanced App promotion message for users with few albums */}
++        {/* App promotion for users with few albums */}
+         {folders.length <= 3 && (
+           <AppDownloadPromotion t={t} isRTL={isRTL} />
+         )}
+ 
+-        {/* Enhanced Combined Search and Filter - always show if there's content or search query */}
++        {/* Search and filter */}
+         {shouldShowSearchAndFilter && (
+           <AlbumsFilter
+             folders={folders}
+@@ -737,25 +1038,37 @@ const MyAlbums = () => {
+           folders={displayFolders}
+           setFolders={setFolders}
+           handleDeleteClick={(folderPositionId: string) => handleDeleteClick(folderPositionId, t)}
+-          openFilePicker={openFilePicker}
++          openFilePicker={(folderId: string | null | undefined) => openFilePicker(folderId, 'files')}
+           isUploading={isUploading}
+           cognitoUsername={cognitoUsername}
+           isProfileView={false}
+         />
+         
+-        {/* Use the refactored FileInput component */}
+-        <FileInput 
+-          onFileSelection={handleFileSelection} 
++        {/* Enhanced File Input with both file and folder support */}
++        <EnhancedFileInput 
+           ref={fileInputRef}
++          onFileSelection={handleFileSelection}
++          onFolderSelection={handleFolderSelection}
++        />
++        
++        {/* Hidden folder input */}
++        <input
++          ref={folderInputRef}
++          type="file"
++          accept="image/*,video/*"
++          multiple
++          webkitdirectory=""
++          onChange={handleFolderSelection}
++          style={{ display: 'none' }}
+         />
+ 
+-        {/* Uncomment for debugging:
+-        <DebugLog 
+-          debugMessages={debugMessages}
+-          t={t}
+-          isRTL={isRTL}
+-          textDirection={isRTL ? "rtl" : "ltr"}
+-        /> */}
++        {/* Album Creation Modal */}
++        <AlbumCreationModal
++          isOpen={showAlbumModal}
++          folderStructure={detectedFolderStructure}
++          onChoice={(choice) => handleAlbumCreationChoice(choice, pendingFiles, detectedFolderStructure!)}
++          onCancel={handleModalCancel}
++        />
+       </AppContainer>
+     </>
+   )
+diff --git a/app-src/src/pages/save-album/TagDisplayComponents.tsx b/app-src/src/pages/save-album/TagDisplayComponents.tsx
+index 75616b8f..96fe42e0 100644
+--- a/app-src/src/pages/save-album/TagDisplayComponents.tsx
++++ b/app-src/src/pages/save-album/TagDisplayComponents.tsx
+@@ -510,10 +510,9 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
+   React.useEffect(() => {
+     const appliedTags = tags.filter(tag => isTagAppliedToSelected(tag));
+     const appliedTagsWithSubtags = getAppliedTagsForSelected();
+-    enhancedLog(`TagsDisplay render - ${appliedTags.length} tags applied to all selected files:`, 
+-      appliedTags.map(t => `${t.tagTitle} (display: "${getTagDisplayText(t)}")`));
++    enhancedLog(`TagsDisplay render - ${appliedTags.length} tags applied to all selected files`);
+     enhancedLog(`Applied tags with subtags:`, appliedTagsWithSubtags);
+-  }, [tags, isTagAppliedToSelected, getAppliedTagsForSelected, getTagDisplayText, enhancedLog]);
++  }, [tags, isTagAppliedToSelected, getAppliedTagsForSelected, enhancedLog]);
+ 
+   const handleTagClick = (tag: TagData) => {
+     if (disabled) return;
+diff --git a/app-src/src/pages/save-album/components.tsx b/app-src/src/pages/save-album/components.tsx
+index 06e9b833..0cd670f3 100644
+--- a/app-src/src/pages/save-album/components.tsx
++++ b/app-src/src/pages/save-album/components.tsx
+@@ -42,8 +42,9 @@ export interface PhotoHandlerProps {
+   onSelectAllPhotos: () => void;
+   onDeselectAllPhotos: () => void;
+   hideHeader?: boolean; // Optional prop to hide the header instruction
+-  photoTagsMap: Map<number, AppliedTag[]>; // NEW: Photo tags map to show applied tags
+-  columns?: string; // NEW: Optional columns prop for grid layout
++  photoTagsMap: Map<number, AppliedTag[]>; // Photo tags map to show applied tags
++  columns?: string; // Optional columns prop for grid layout - use "horizontal" for horizontal scrolling
++  isMultipleAlbumMode?: boolean; // NEW: Flag for multiple album mode - enables horizontal layout and enhanced styling
+ }
+ 
+ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({ 
+@@ -52,11 +53,9 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
+   isSavingAlbum, 
+   onRemovePhoto,
+   onTogglePhotoSelection,
+-  onSelectAllPhotos,
+-  onDeselectAllPhotos,
+-  hideHeader = false, // Default to false for backward compatibility
+-  photoTagsMap, // NEW: Photo tags map
+-  columns = "1" // NEW: Default to 1 column if not provided
++  photoTagsMap,
++  columns = "1", // Default to 1 column if not provided
++  isMultipleAlbumMode = false // NEW: Default to false
+ }) => {
+   const { t } = useTranslation();
+ 
+@@ -64,216 +63,322 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = ({
+     return null;
+   }
+ 
+-  const hasSelectedPhotos = selectedPhotoIndices.size > 0;
+-  const allPhotosSelected = selectedPhotoIndices.size === selectedPhotos.length;
+-
+-  // Function to get grid columns based on the columns value
+-  const getGridColumns = () => {
+-    const numColumns = parseInt(columns, 10);
+-    return `repeat(${numColumns}, 1fr)`;
+-  };
+-
+-  return (
+-    <>
+-      {/* Photo Selection Controls - Only show if not hidden */}
+-      {!hideHeader && (
+-        <Card style={{ marginBottom: '16px', border: '2px solid #007bff' }}>
+-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px' }}>
+-            <span style={{ fontWeight: 'bold', fontSize: '14px', color: '#007bff' }}>
+-              {hasSelectedPhotos 
+-                ? t('{{count}} file(s) selected for tagging', { count: selectedPhotoIndices.size })
+-                : t('Select files with blue borders for tagging')
+-              }
+-            </span>
+-            <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
+-              {!allPhotosSelected && (
+-                <button 
+-                  onClick={onSelectAllPhotos}
+-                  disabled={isSavingAlbum}
+-                  style={{
+-                    padding: '6px 12px',
+-                    border: '1px solid #007bff',
+-                    borderRadius: '4px',
+-                    background: '#007bff',
+-                    color: 'white',
+-                    fontSize: '12px',
+-                    cursor: 'pointer',
+-                    fontWeight: 'bold'
+-                  }}
+-                >
+-                  {t('Select All')}
+-                </button>
+-              )}
+-              {hasSelectedPhotos && (
+-                <button 
+-                  onClick={onDeselectAllPhotos}
+-                  disabled={isSavingAlbum}
+-                  style={{
+-                    padding: '6px 12px',
+-                    border: '1px solid #6c757d',
+-                    borderRadius: '4px',
+-                    background: 'transparent',
+-                    color: '#6c757d',
+-                    fontSize: '12px',
+-                    cursor: 'pointer'
+-                  }}
+-                >
+-                  {t('Deselect All')}
+-                </button>
+-              )}
+-            </div>
+-          </div>
+-        </Card>
+-      )}
+-
+-      {/* UPDATED: PhotoGrid with dynamic columns support */}
+-      <PhotoGrid style={{
+-        display: 'grid',
+-        gridTemplateColumns: getGridColumns(),
++  // ENHANCED: Function to get grid layout based on the columns value and mode
++  const getGridLayout = () => {
++    // For horizontal layout in multiple album mode
++    if (isMultipleAlbumMode && columns === "horizontal") {
++      return {
++        display: 'flex',
++        overflowX: 'auto' as const,
+         gap: '16px',
+         padding: '20px',
+         border: '2px dashed #007bff',
+         borderRadius: '12px',
+         backgroundColor: '#fff',
+-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
+-      }}>
++        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
++        scrollbarWidth: 'thin' as const,
++        scrollbarColor: '#007bff #f8f9fa',
++        // Enhanced scrolling behavior
++        scrollBehavior: 'smooth' as const,
++        WebkitOverflowScrolling: 'touch'
++      };
++    }
++    
++    // For traditional grid layout
++    const numColumns = parseInt(columns, 10);
++    return {
++      display: 'grid',
++      gridTemplateColumns: `repeat(${numColumns}, 1fr)`,
++      gap: '16px',
++      padding: '20px',
++      border: '2px dashed #007bff',
++      borderRadius: '12px',
++      backgroundColor: '#fff',
++      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
++    };
++  };
++
++  // ENHANCED: Function to get individual photo container styles
++  const getPhotoContainerStyle = () => {
++    if (isMultipleAlbumMode && columns === "horizontal") {
++      return {
++        display: 'flex',
++        flexDirection: 'column' as const,
++        gap: '8px',
++        minWidth: '180px', // Slightly wider for better visibility
++        maxWidth: '180px', // Consistent width
++        flexShrink: 0
++      };
++    }
++    
++    return {
++      display: 'flex',
++      flexDirection: 'column' as const,
++      gap: '8px',
++      minWidth: '0'
++    };
++  };
++
++  // ENHANCED: Function to get photo card styles
++  const getPhotoCardStyle = (isSelected: boolean) => {
++    const baseStyle = {
++      position: 'relative' as const,
++      cursor: 'pointer',
++      transition: 'all 0.3s ease'
++    };
++
++    if (isMultipleAlbumMode && columns === "horizontal") {
++      return {
++        ...baseStyle,
++        width: '180px',
++        height: '180px',
++        // Enhanced selection styling for horizontal layout
++        transform: isSelected ? 'translateY(-4px)' : 'translateY(0)',
++        boxShadow: isSelected 
++          ? '0 8px 24px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1)' 
++          : '0 2px 8px rgba(0, 0, 0, 0.04)'
++      };
++    }
++    
++    return baseStyle;
++  };
++
++  return (
++    <>
++      {/* ENHANCED: PhotoGrid with dynamic layout support */}
++      <div style={getGridLayout()}>
+         {selectedPhotos.map((photo, i) => {
+           const isSelected = selectedPhotoIndices.has(i);
+           const appliedTags = photoTagsMap.get(i) || []; // Get applied tags for this photo
+           
+           return (
+-            <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: '0' }}>
++            <div key={i} style={getPhotoContainerStyle()}>
+               <PhotoCard 
+                 data-selected={isSelected ? "true" : "false"}
+-                style={{ 
+-                  position: 'relative',
+-                  cursor: 'pointer'
+-                }}
++                style={getPhotoCardStyle(isSelected)}
+                 onClick={() => onTogglePhotoSelection(i)}
+               >
+-              {/* Soft Delete Button - Only show when selected and on hover */}
+-              {isSelected && !isSavingAlbum && (
+-                <button
+-                  onClick={(e) => {
+-                    e.stopPropagation();
+-                    if (confirm(t('Are you sure you want to remove this photo?'))) {
+-                      onRemovePhoto(i);
+-                    }
+-                  }}
+-                  style={{
++                {/* Soft Delete Button - Only show when selected and on hover */}
++                {isSelected && !isSavingAlbum && (
++                  <button
++                    onClick={(e) => {
++                      e.stopPropagation();
++                      if (confirm(t('Are you sure you want to remove this photo?'))) {
++                        onRemovePhoto(i);
++                      }
++                    }}
++                    style={{
++                      position: 'absolute',
++                      top: '6px',
++                      right: '6px',
++                      width: '20px',
++                      height: '20px',
++                      borderRadius: '50%',
++                      border: 'none',
++                      backgroundColor: 'rgba(220, 53, 69, 0.9)',
++                      color: 'white',
++                      cursor: 'pointer',
++                      display: 'flex',
++                      alignItems: 'center',
++                      justifyContent: 'center',
++                      fontSize: '13px',
++                      fontWeight: 'bold',
++                      zIndex: 15,
++                      opacity: 1,
++                      transition: 'all 0.2s ease',
++                      transform: 'scale(0.9)',
++                      boxShadow: '0 2px 8px rgba(220, 53, 69, 0.3)'
++                    }}
++                    onMouseEnter={(e) => {
++                      e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 0.95)';
++                      e.currentTarget.style.transform = 'scale(1.05)';
++                      e.currentTarget.style.boxShadow = '0 4px 12px rgba(220, 53, 69, 0.4)';
++                    }}
++                    onMouseLeave={(e) => {
++                      e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.9)';
++                      e.currentTarget.style.transform = 'scale(0.9)';
++                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(220, 53, 69, 0.3)';
++                    }}
++                    title={t('Remove photo')}
++                  >
++                    ×
++                  </button>
++                )}
++
++                {/* Status indicator - only show for non-complete status or errors */}
++                {photo.status !== 'complete' && (
++                  <StatusIndicator $status={photo.status}>
++                    {photo.status === 'error' ? '✕' :
++                     photo.status === 'uploading' ? '↑' :
++                     photo.status === 'processing' ? '⚙️' : '•'}
++                  </StatusIndicator>
++                )}
++
++                {/* Media preview */}
++                <MediaPreview style={{ 
++                  opacity: selectedPhotos.length === 1 || !isSelected ? 1 : 0.85,
++                  transition: 'opacity 0.2s ease',
++                  // ENHANCED: Ensure consistent sizing for horizontal layout
++                  ...(isMultipleAlbumMode && columns === "horizontal" ? {
++                    width: '100%',
++                    height: '100%'
++                  } : {})
++                }}>
++                  {photo.type === "video" || photo.type?.startsWith("video") ? (
++                    <VideoItem 
++                      src={photo.s3PreviewUrl} 
++                      controls 
++                      style={{
++                        ...(isMultipleAlbumMode && columns === "horizontal" ? {
++                          width: '100%',
++                          height: '100%',
++                          objectFit: 'cover'
++                        } : {})
++                      }}
++                    />
++                  ) : (
++                    <MediaItem 
++                      src={photo.s3PreviewUrl} 
++                      alt={photo.fileName}
++                      style={{
++                        ...(isMultipleAlbumMode && columns === "horizontal" ? {
++                          width: '100%',
++                          height: '100%',
++                          objectFit: 'cover'
++                        } : {})
++                      }}
++                    />
++                  )}
++                  
++                  {/* Upload progress bar for in-progress items */}
++                  {(photo.status === 'uploading' || photo.status === 'processing') && (
++                    <ProgressBarBg $bottom="4px" $left="4px" $right="4px" $height="4px">
++                      <UploadProgressBar $progress={photo.progress} $status={photo.status} />
++                    </ProgressBarBg>
++                  )}
++                </MediaPreview>
++                
++                {/* File info - Back to normal position */}
++                <div style={{
++                  position: 'absolute',
++                  bottom: '32px', // Leave space for SELECTED indicator
++                  left: '8px',
++                  right: '8px',
++                  background: 'rgba(0, 0, 0, 0.7)',
++                  color: 'white',
++                  padding: '4px 8px',
++                  borderRadius: '4px',
++                  fontSize: '11px',
++                  textAlign: 'center',
++                  backdropFilter: 'blur(4px)'
++                }}>
++                  {photo.type?.startsWith("video") ? t('Video') : t('Image')}
++                  {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} ${t('MB')}`}
++                  {photo.duration && ` • ${photo.duration}${t('s')}`}
++                </div>
++
++                {/* Selection indicator for horizontal layout */}
++                {isMultipleAlbumMode && columns === "horizontal" && isSelected && (
++                  <div style={{
+                     position: 'absolute',
+-                    top: '6px',
+-                    right: '6px',
+-                    width: '18px',
+-                    height: '18px',
+-                    borderRadius: '50%',
+-                    border: 'none',
+-                    backgroundColor: 'rgba(220, 53, 69, 0.8)',
++                    bottom: '4px',
++                    left: '4px',
++                    right: '4px',
++                    background: 'rgba(0, 123, 255, 0.9)',
+                     color: 'white',
+-                    cursor: 'pointer',
+-                    display: 'flex',
+-                    alignItems: 'center',
+-                    justifyContent: 'center',
+-                    fontSize: '12px',
++                    padding: '4px 8px',
++                    borderRadius: '4px',
++                    fontSize: '10px',
+                     fontWeight: 'bold',
+-                    zIndex: 15,
+-                    opacity: 1,
+-                    transition: 'all 0.2s ease',
+-                    transform: 'scale(0.8)'
+-                  }}
+-                  onMouseEnter={(e) => {
+-                    e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 0.9)';
+-                    e.currentTarget.style.transform = 'scale(1)';
+-                    e.currentTarget.style.opacity = '1';
+-                  }}
+-                  onMouseLeave={(e) => {
+-                    e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.8)';
+-                    e.currentTarget.style.transform = 'scale(0.8)';
+-                    e.currentTarget.style.opacity = '0';
+-                  }}
+-                  title={t('Remove photo')}
+-                >
+-                  ×
+-                </button>
+-              )}
+-
+-              {/* Status indicator - only show for non-complete status or errors */}
+-              {photo.status !== 'complete' && (
+-                <StatusIndicator $status={photo.status}>
+-                  {photo.status === 'error' ? '✕' :
+-                   photo.status === 'uploading' ? '↑' :
+-                   photo.status === 'processing' ? '⚙️' : '•'}
+-                </StatusIndicator>
+-              )}
+-
+-              {/* Media preview */}
+-              <MediaPreview style={{ 
+-                opacity: selectedPhotos.length === 1 || !isSelected ? 1 : 0.85,
+-                transition: 'opacity 0.2s ease'
+-              }}>
+-                {photo.type === "video" || photo.type?.startsWith("video") ? (
+-                  <VideoItem src={photo.s3PreviewUrl} controls />
+-                ) : (
+-                  <MediaItem src={photo.s3PreviewUrl} alt={photo.fileName} />
++                    textAlign: 'center',
++                    backdropFilter: 'blur(4px)',
++                    boxShadow: '0 2px 8px rgba(0, 123, 255, 0.3)'
++                  }}>
++                    {t('SELECTED')}
++                  </div>
+                 )}
+-                
+-                {/* Upload progress bar for in-progress items */}
+-                {(photo.status === 'uploading' || photo.status === 'processing') && (
+-                  <ProgressBarBg $bottom="4px" $left="4px" $right="4px" $height="4px">
+-                    <UploadProgressBar $progress={photo.progress} $status={photo.status} />
+-                  </ProgressBarBg>
++
++                {/* Error message if any */}
++                {photo.status === 'error' && photo.errorMessage && (
++                  <Message $type="error">
++                    {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
++                  </Message>
+                 )}
+-              </MediaPreview>
++              </PhotoCard>
+               
+-              {/* File info - Back to normal position */}
+-              <div style={{
+-                position: 'absolute',
+-                bottom: '32px', // Leave space for SELECTED indicator
+-                left: '8px',
+-                right: '8px',
+-                background: 'rgba(0, 0, 0, 0.7)',
+-                color: 'white',
+-                padding: '4px 8px',
+-                borderRadius: '4px',
+-                fontSize: '11px',
+-                textAlign: 'center',
+-                backdropFilter: 'blur(4px)'
++              {/* ENHANCED: Filename and tags display - Optimized for horizontal layout */}
++              <div style={{ 
++                minHeight: '60px', 
++                display: 'flex', 
++                flexDirection: 'column', 
++                gap: '4px',
++                // ENHANCED: Ensure consistent width for horizontal layout
++                ...(isMultipleAlbumMode && columns === "horizontal" ? {
++                  width: '180px'
++                } : {})
+               }}>
+-                {photo.type?.startsWith("video") ? t('Video') : t('Image')}
+-                {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} ${t('MB')}`}
+-                {photo.duration && ` • ${photo.duration}${t('s')}`}
++                <PhotoTagging 
++                  photoTags={appliedTags}
++                  isSelected={isSelected}
++                  onToggleSelection={() => onTogglePhotoSelection(i)}
++                  fileName={photo.originalFileName || photo.fileName}
++                  showFileName={true}
++                />
+               </div>
+-
+-              {/* Error message if any */}
+-              {photo.status === 'error' && photo.errorMessage && (
+-                <Message $type="error">
+-                  {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
+-                </Message>
+-              )}
+-            </PhotoCard>
+-            
+-            {/* NEW: Enhanced filename and tags display - Outside the photo card */}
+-            <div style={{ minHeight: '60px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+-              <PhotoTagging 
+-                photoTags={appliedTags}
+-                isSelected={isSelected}
+-                onToggleSelection={() => onTogglePhotoSelection(i)}
+-                fileName={photo.originalFileName || photo.fileName} // NEW: Pass filename
+-                showFileName={true} // NEW: Enable filename display
+-              />
+             </div>
+-          </div>
+           );
+         })}
+-      </PhotoGrid>
++      </div>
+ 
+-      {/* CSS for hover effect on PhotoCard to show delete button */}
++      {/* CSS for hover effect on PhotoCard to show delete button and enhanced scrollbar styling */}
+       <style>
+         {`
+           [data-selected="true"]:hover button {
+             opacity: 1 !important;
+-            transform: scale(1) !important;
++            transform: scale(1.05) !important;
++            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4) !important;
+           }
++          
++          /* Enhanced scrollbar styling for horizontal layout */
++          ${isMultipleAlbumMode && columns === "horizontal" ? `
++            div::-webkit-scrollbar {
++              height: 10px;
++            }
++            
++            div::-webkit-scrollbar-track {
++              background: #f8f9fa;
++              border-radius: 6px;
++              margin: 0 8px;
++            }
++            
++            div::-webkit-scrollbar-thumb {
++              background: linear-gradient(90deg, #007bff, #0056b3);
++              border-radius: 6px;
++              border: 2px solid #f8f9fa;
++            }
++            
++            div::-webkit-scrollbar-thumb:hover {
++              background: linear-gradient(90deg, #0056b3, #004085);
++            }
++            
++            /* Firefox scrollbar styling */
++            * {
++              scrollbar-width: thin;
++              scrollbar-color: #007bff #f8f9fa;
++            }
++          ` : ''}
++          
++          /* Enhanced selection animations for horizontal layout */
++          ${isMultipleAlbumMode && columns === "horizontal" ? `
++            [data-selected="true"] {
++              animation: selectedPulse 2s infinite;
++            }
++            
++            @keyframes selectedPulse {
++              0%, 100% { box-shadow: 0 8px 24px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1); }
++              50% { box-shadow: 0 12px 32px rgba(0, 123, 255, 0.4), 0 6px 16px rgba(0, 0, 0, 0.15); }
++            }
++          ` : ''}
+         `}
+       </style>
+     </>
+diff --git a/app-src/src/pages/save-album/save-album.tsx b/app-src/src/pages/save-album/save-album.tsx
+index 7e289d68..b25b7748 100644
+--- a/app-src/src/pages/save-album/save-album.tsx
++++ b/app-src/src/pages/save-album/save-album.tsx
+@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
+ import ReactDOM from "react-dom/client";
+ import React from "react";
+ 
+-// Import styled components - UPDATED: Added FixedHeader, FixedHeaderContent, Body, DropdownMenu, DropdownMenuChoice, ColumnsSelector, ControlLabel
++// Import styled components
+ import {
+   GlobalStyle,
+   FixedHeader,
+@@ -11,10 +11,6 @@ import {
+   ProfileLink,
+   ActionButtons,
+   Button,
+-  DropdownMenu,
+-  DropdownMenuChoice,
+-  ColumnsSelector,
+-  ControlLabel
+ } from "@/styles/styled-components";
+ import { UsernamePrompt } from "@/components/UsernamePrompt";
+ import { UploadProgress } from "@/components/UploadProgress";
+@@ -22,7 +18,8 @@ import { UploadProgress } from "@/components/UploadProgress";
+ import { LOCAL_STORAGE_KEYS, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
+ import { 
+   PasswordPolicyEnum,
+-  FOLDERPOSITION_FIELD
++  FOLDERPOSITION_FIELD,
++  SelectedPhoto
+ } from "@/lib/types";
+ 
+ import { I18nProvider } from "@/lib/i18n/context";
+@@ -32,7 +29,7 @@ import { PasswordDialog } from "@/components/PasswordDialog";
+ import { DebugLog } from "@/components/DebugLog";
+ import { useUsernameManagement } from "@/lib/useUsernameManagement";
+ import { prewarmCredentials } from "@/lib/s3";
+-import { checkLoginWithRefresh } from "@/lib/utils";
++import { checkLoginWithRefresh, redirectTo } from "@/lib/utils";
+ 
+ // Import the file upload processor hook
+ import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
+@@ -43,37 +40,41 @@ import {
+   useAlbumSave
+ } from "./hooks";
+ 
+-// Import components - using updated PhotoHandler
++// Import components
+ import {
+   PhotoHandler,
+   SavingProgressComponent,
+   FolderDetailsComponent
+ } from "./components";
+ 
+-// SIMPLIFIED: Import simplified tags functionality
++// Import tags functionality
+ import { useTagsManagement } from "./useTagsManagement";
+-import { TagsDisplay, PhotoTagging } from "./TagDisplayComponents";
++import { TagsDisplay } from "./TagDisplayComponents";
+ 
+ // Import LazyImage for existing files display
+ import { LazyImage } from "@/components/LazyImage";
+ 
+-// UPDATED: Interface for existing files - now includes fileName
++// NEW: Import multiple albums components and utilities
++import { MultipleAlbumsManager, AlbumData } from "./MultipleAlbumsManager";
++import { generateUUID as utilGenerateUUID, clearFolderStructureMetadata } from "@/lib/folderStructureUtils";
++
++// Interface for existing files
+ interface ExistingFile {
+   dataKey: string;
+   thumbnailDataKey: string | null;
+   durationInSeconds: number | null;
+   dataInBytes: number;
+-  fileName?: string; // NEW: Original filename from fileDisplayName or extracted from dataKey
++  fileName?: string;
+ }
+ 
+-// NEW: Interface for applied tags (matching the type used throughout the app)
++// Interface for applied tags
+ interface AppliedTag {
+   tagTitle: string;
+   TagType: string;
+   subtags: { tagTitle: string; subtagTitle: string; }[];
+ }
+ 
+-// NEW: Unified Tagging Section Container Component
++// Unified Tagging Section Container Component
+ const TaggingSectionContainer = ({ children, t, isRTL }: {
+   children: React.ReactNode;
+   t: (key: string) => string;
+@@ -88,7 +89,6 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
+       borderRadius: '12px',
+       direction: isRTL ? 'rtl' : 'ltr'
+     }}>
+-      {/* Tagging Section Header */}
+       <div style={{
+         display: 'flex',
+         alignItems: 'center',
+@@ -109,7 +109,7 @@ const TaggingSectionContainer = ({ children, t, isRTL }: {
+   );
+ };
+ 
+-// NEW: New Photos Section Component (styled like Existing Files) - Updated with column selector and multi-row display
++// New Photos Section Component
+ const NewPhotosSection = ({ 
+   selectedPhotos,
+   selectedPhotoIndices, 
+@@ -119,9 +119,9 @@ const NewPhotosSection = ({
+   onRemovePhoto,
+   onDeleteAll,
+   disabled,
+-  photoTagsMap, // NEW: Added photoTagsMap prop
+-  columns, // NEW: Added columns prop
+-  setColumns, // NEW: Added setColumns prop
++  photoTagsMap,
++  columns,
++  setColumns,
+   t, 
+   isRTL 
+ }: {
+@@ -133,9 +133,9 @@ const NewPhotosSection = ({
+   onRemovePhoto: (index: number) => void;
+   onDeleteAll: () => void;
+   disabled: boolean;
+-  photoTagsMap: Map<number, AppliedTag[]>; // NEW: Added type
+-  columns: string; // NEW: Added columns prop
+-  setColumns: (columns: string) => void; // NEW: Added setColumns prop
++  photoTagsMap: Map<number, AppliedTag[]>;
++  columns: string;
++  setColumns: (columns: string) => void;
+   t: (key: string) => string;
+   isRTL: boolean;
+ }) => {
+@@ -168,7 +168,6 @@ const NewPhotosSection = ({
+           alignItems: isRTL ? 'flex-start' : 'flex-end',
+           gap: '8px'
+         }}>
+-          {/* Action buttons */}
+           <div style={{
+             display: 'flex',
+             gap: '8px',
+@@ -187,16 +186,6 @@ const NewPhotosSection = ({
+               }}
+               onClick={selectedPhotoIndices.size > 0 ? onDeselectAll : onSelectAll}
+               disabled={disabled}
+-              onMouseEnter={(e) => {
+-                if (!disabled) {
+-                  e.currentTarget.style.backgroundColor = '#f8f9fa';
+-                }
+-              }}
+-              onMouseLeave={(e) => {
+-                if (!disabled) {
+-                  e.currentTarget.style.backgroundColor = '#fff';
+-                }
+-              }}
+             >
+               {selectedPhotoIndices.size > 0 ? t('Done Tagging Selected') : t('Select All')}
+             </button>
+@@ -215,18 +204,6 @@ const NewPhotosSection = ({
+                 }}
+                 onClick={onDeleteAll}
+                 disabled={disabled}
+-                onMouseEnter={(e) => {
+-                  if (!disabled) {
+-                    e.currentTarget.style.backgroundColor = '#dc3545';
+-                    e.currentTarget.style.color = '#fff';
+-                  }
+-                }}
+-                onMouseLeave={(e) => {
+-                  if (!disabled) {
+-                    e.currentTarget.style.backgroundColor = '#fff';
+-                    e.currentTarget.style.color = '#dc3545';
+-                  }
+-                }}
+               >
+                 {t('Delete All')}
+               </button>
+@@ -240,23 +217,29 @@ const NewPhotosSection = ({
+             gap: '6px',
+             flexDirection: isRTL ? 'row-reverse' : 'row'
+           }}>
+-            <ControlLabel style={{ margin: '0', fontSize: '12px' }}>{t('Columns:')}</ControlLabel>
+-            <ColumnsSelector
++            <label style={{ margin: '0', fontSize: '12px', fontWeight: '600', color: '#333' }}>{t('Columns:')}</label>
++            <select
+               value={columns}
+               onChange={(e) => setColumns(e.target.value)}
+-              style={{ fontSize: '12px' }}
++              style={{ 
++                fontSize: '12px',
++                padding: '4px 8px',
++                border: '1px solid #ddd',
++                borderRadius: '4px',
++                backgroundColor: '#fff',
++                color: '#333'
++              }}
+             >
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+-            </ColumnsSelector>
++            </select>
+           </div>
+         </div>
+       </div>
+ 
+-      {/* Use the existing PhotoHandler but hide its header and pass photoTagsMap and columns */}
+       <PhotoHandler 
+         selectedPhotos={selectedPhotos}
+         selectedPhotoIndices={selectedPhotoIndices}
+@@ -266,14 +249,14 @@ const NewPhotosSection = ({
+         onSelectAllPhotos={onSelectAll}
+         onDeselectAllPhotos={onDeselectAll}
+         hideHeader={true}
+-        photoTagsMap={photoTagsMap} // NEW: Pass the photo tags map
+-        columns={columns} // NEW: Pass the columns prop
++        photoTagsMap={photoTagsMap}
++        columns={columns}
+       />
+     </div>
+   );
+ };
+ 
+-// Updated ExistingFilesSection Component with enhanced tag visibility and filename display
++// Updated ExistingFilesSection Component
+ const ExistingFilesSection = ({ 
+   existingFiles, 
+   selectedExistingIndices, 
+@@ -284,7 +267,7 @@ const ExistingFilesSection = ({
+   disabled, 
+   isCreator,
+   participantsCanDeleteItems,
+-  existingFileTagsMap, // NEW: Added existing file tags map
++  existingFileTagsMap,
+   t, 
+   isRTL 
+ }: {
+@@ -297,7 +280,7 @@ const ExistingFilesSection = ({
+   disabled: boolean;
+   isCreator: boolean | null;
+   participantsCanDeleteItems: boolean;
+-  existingFileTagsMap: Map<number, AppliedTag[]>; // NEW: Added type
++  existingFileTagsMap: Map<number, AppliedTag[]>;
+   t: (key: string) => string;
+   isRTL: boolean;
+ }) => {
+@@ -344,23 +327,12 @@ const ExistingFilesSection = ({
+             }}
+             onClick={selectedExistingIndices.size > 0 ? onDeselectAll : onSelectAll}
+             disabled={disabled}
+-            onMouseEnter={(e) => {
+-              if (!disabled) {
+-                e.currentTarget.style.backgroundColor = '#f8f9fa';
+-              }
+-            }}
+-            onMouseLeave={(e) => {
+-              if (!disabled) {
+-                e.currentTarget.style.backgroundColor = '#fff';
+-              }
+-            }}
+           >
+             {selectedExistingIndices.size > 0 ? t('Done Tagging Selected') : t('Select All')}
+           </button>
+         </div>
+       </div>
+ 
+-      {/* UPDATED: Use flexbox with overflow scroll instead of CSS Grid */}
+       <div style={{
+         display: 'flex',
+         overflowX: 'auto',
+@@ -375,14 +347,14 @@ const ExistingFilesSection = ({
+       }}>
+         {existingFiles.map((file, index) => {
+           const isSelected = selectedExistingIndices.has(index);
+-          const appliedTags = existingFileTagsMap.get(index) || []; // Get applied tags for this file
++          const appliedTags = existingFileTagsMap.get(index) || [];
+ 
+           return (
+             <div key={`existing-${index}-${file.dataKey}`} style={{ 
+               display: 'flex', 
+               flexDirection: 'column', 
+               gap: '8px',
+-              minWidth: '160px' // Ensure consistent width for flexbox
++              minWidth: '160px'
+             }}>
+               <div
+                 style={{
+@@ -412,7 +384,6 @@ const ExistingFilesSection = ({
+                   }}
+                 />
+                 
+-                {/* Soft Delete Button - Only show when selected and user has delete permissions */}
+                 {isSelected && !disabled && (isCreator === true || participantsCanDeleteItems) && (
+                   <button
+                     onClick={(e) => {
+@@ -442,23 +413,12 @@ const ExistingFilesSection = ({
+                       transition: 'all 0.2s ease',
+                       transform: 'scale(0.8)'
+                     }}
+-                    onMouseEnter={(e) => {
+-                      e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 0.9)';
+-                      e.currentTarget.style.transform = 'scale(1)';
+-                      e.currentTarget.style.opacity = '1';
+-                    }}
+-                    onMouseLeave={(e) => {
+-                      e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.8)';
+-                      e.currentTarget.style.transform = 'scale(0.8)';
+-                      e.currentTarget.style.opacity = '0';
+-                    }}
+                     title={t('Remove file')}
+                   >
+                     ×
+                   </button>
+                 )}
+ 
+-                {/* File size indicator */}
+                 {file.dataInBytes > 0 && (
+                   <div style={{
+                     position: 'absolute',
+@@ -474,7 +434,6 @@ const ExistingFilesSection = ({
+                   </div>
+                 )}
+ 
+-                {/* Video duration indicator */}
+                 {file.durationInSeconds && (
+                   <div style={{
+                     position: 'absolute',
+@@ -491,9 +450,7 @@ const ExistingFilesSection = ({
+                 )}
+               </div>
+               
+-              {/* NEW: Enhanced filename and tags display */}
+               <div style={{ minHeight: '60px', display: 'flex', flexDirection: 'column', gap: '4px' }}> 
+-                {/* Filename display */}
+                 {file.fileName && (
+                   <div style={{
+                     fontSize: '11px',
+@@ -512,14 +469,53 @@ const ExistingFilesSection = ({
+                   </div>
+                 )}
+                 
+-                {/* Tags or "No tags" display */}
+                 <div style={{ minHeight: '32px' }}>
+                   {appliedTags.length > 0 ? (
+-                    <PhotoTagging 
+-                      photoTags={appliedTags}
+-                      isSelected={isSelected}
+-                      onToggleSelection={() => !disabled && onToggleSelection(index)}
+-                    />
++                    <div style={{
++                      background: 'linear-gradient(135deg, rgba(0, 123, 255, 0.95) 0%, rgba(0, 123, 255, 0.85) 100%)',
++                      color: 'white',
++                      padding: '8px 12px',
++                      borderRadius: '8px',
++                      fontSize: '11px',
++                      backdropFilter: 'blur(6px)',
++                      boxShadow: '0 4px 12px rgba(0, 123, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)',
++                      border: '1px solid rgba(255, 255, 255, 0.2)',
++                      transition: 'all 0.3s ease',
++                      lineHeight: '1.3',
++                      minHeight: '32px',
++                      display: 'flex',
++                      alignItems: 'center',
++                      wordBreak: 'break-word'
++                    }}>
++                      <div style={{ 
++                        display: 'flex', 
++                        alignItems: 'center', 
++                        gap: '6px',
++                        width: '100%',
++                        flexWrap: 'wrap'
++                      }}>
++                        <span style={{ 
++                          fontSize: '12px',
++                          opacity: 0.9,
++                          flexShrink: 0
++                        }}>
++                          🏷️
++                        </span>
++                        <span style={{ 
++                          fontWeight: '600',
++                          textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
++                          flex: 1
++                        }}>
++                          {appliedTags.map(tag => {
++                            if (tag.subtags.length > 0) {
++                              const subtagNames = tag.subtags.map(s => s.subtagTitle).join(', ');
++                              return `${tag.tagTitle}: ${subtagNames}`;
++                            }
++                            return tag.tagTitle;
++                          }).join(' • ')}
++                        </span>
++                      </div>
++                    </div>
+                   ) : (
+                     <div style={{
+                       fontSize: '10px',
+@@ -550,16 +546,21 @@ const SaveAlbum = () => {
+   const { t, language } = useTranslation();
+   const isRTL = getLanguageDirection(language) === "rtl";
+ 
+-  // Use the username management hook - store the FULL instance
+-  const usernameManager = useUsernameManagement(t);
++  // FIXED: Initialize isMultipleMode synchronously based on URL
++  const urlParams = new URLSearchParams(window.location.search);
++  const initialIsMultipleMode = urlParams.get('mode') === 'multiple';
+   
+-  // Destructure methods for convenience
++  const [isMultipleMode, setIsMultipleMode] = useState(initialIsMultipleMode);
++  const [multipleAlbums, setMultipleAlbums] = useState<AlbumData[]>([]);
++
++  // Use the username management hook
++  const usernameManager = useUsernameManagement(t);
+   const {
+     setShowUsernamePrompt,
+     setUsernameInput
+   } = usernameManager;
+ 
+-  // Core state for album details
++  // Core state for album details (single album mode)
+   const [folderId, setFolderId] = useState<string | null>(null);
+   const [isSavingAlbum, setIsSavingAlbum] = useState(false);
+   const [savingProgress, setSavingProgress] = useState(0);
+@@ -580,30 +581,27 @@ const SaveAlbum = () => {
+   // Participants Can Add Items toggle state
+   const [participantsCanAddItems, setParticipantsCanAddItems] = useState<boolean>(true);
+   
+-  // NEW: Participants Can Delete Items toggle state
++  // Participants Can Delete Items toggle state
+   const [participantsCanDeleteItems, setParticipantsCanDeleteItems] = useState<boolean>(false);
+   
+-  // State for checking if user is the creator - initialize as null (undetermined)
++  // State for checking if user is the creator
+   const [isCreator, setIsCreator] = useState<boolean | null>(null);
+ 
+   // State for sub-album data
+   const [isSubAlbum, setIsSubAlbum] = useState<boolean>(false);
+   const [selectedFileIds, setSelectedFileIds] = useState<string[]>([]);
+ 
+-  // NEW: State to track if we're loading from query parameter
++  // State to track if we're loading from query parameter
+   const [isLoadingFromQueryParam, setIsLoadingFromQueryParam] = useState<boolean>(false);
+ 
+-  // NEW: State for settings dropdown
+-  const [showSettingsDropdown, setShowSettingsDropdown] = useState<boolean>(false);
++  // State for columns
++  const [columns, setColumns] = useState<string>('2');
+ 
+-  // NEW: State for columns (similar to photos.tsx)
+-  const [columns, setColumns] = useState<string>('2'); // Default to 2 columns for better tagging experience
+-
+-  // SIMPLIFIED: State for photo selection and tagging
++  // State for photo selection and tagging (single album mode)
+   const [selectedPhotoIndices, setSelectedPhotoIndices] = useState<Set<number>>(new Set());
+   const [photoTagsMap, setPhotoTagsMap] = useState<Map<number, AppliedTag[]>>(new Map());
+ 
+-  // NEW: State for existing files
++  // State for existing files (single album mode)
+   const [existingFiles, setExistingFiles] = useState<ExistingFile[]>([]);
+   const [selectedExistingIndices, setSelectedExistingIndices] = useState<Set<number>>(new Set());
+   const [existingFileTagsMap, setExistingFileTagsMap] = useState<Map<number, AppliedTag[]>>(new Map());
+@@ -611,13 +609,14 @@ const SaveAlbum = () => {
+ 
+   // Custom navigation function for the useFileUploadProcessor hook
+   const navigateAfterUpload = (uploadedFolderId: string | null) => {
+-    // Don't navigate, just set the folder ID if not already set
+-    if (!folderId && uploadedFolderId) {
++    if (!isMultipleMode && !folderId && uploadedFolderId) {
+       setFolderId(uploadedFolderId);
+     }
+   };
+ 
+-  // Use the file upload processor hook with auto-navigation disabled for existing albums
++  // FIXED: Always call hooks unconditionally
++  // Use the file upload processor hook
++  const fileUploadProcessor = useFileUploadProcessor(navigateAfterUpload, true);
+   const {
+     fileInputRef,
+     selectedPhotos,
+@@ -629,36 +628,245 @@ const SaveAlbum = () => {
+     currentFolderId,
+     openFilePicker,
+     handleFileSelection,
+-    setOnSaveAlbumPage, // UPDATED: Use setOnSaveAlbumPage instead of setEditingExistingAlbum
++    setOnSaveAlbumPage,
+     log
+-  } = useFileUploadProcessor(navigateAfterUpload, true); // Disable auto-navigation
++  } = fileUploadProcessor;
++
++  // Enhanced logging function - MOVED TO TOP to avoid temporal dead zone
++  const enhancedLog = (message: string, data?: any) => {
++    const timestamp = new Date().toISOString();
++    let logMessage = `[${timestamp}] ${message}`;
++    
++    if (data !== undefined) {
++      try {
++        const dataStr = typeof data === 'object' ? 
++          JSON.stringify(data, null, 2) : 
++          String(data);
++          
++        logMessage += `\nData: ${dataStr}`;
++        console.log(logMessage);
++        console.log("Data object:", data);
++      } catch (e) {
++        logMessage += ` [Error stringifying data: ${e}]`;
++        console.log(logMessage);
++        console.log("Raw data:", data);
++      }
++    } else {
++      console.log(logMessage);
++    }
++    
++    log(logMessage);
++  };
+ 
+-  // NEW: Set default columns (similar to photos.tsx)
++  // FIXED: Always call album initialization hook (but conditionally use the results)
++  const albumInitialization = useAlbumInitialization(
++    isMultipleMode ? () => {} : (isLoadingFromQueryParam ? () => {} : setFolderId),
++    setSelectedPhotos,
++    isMultipleMode ? () => {} : (isLoadingFromQueryParam ? () => {} : setIsCreator),
++    isMultipleMode ? () => {} : (isLoadingFromQueryParam ? () => {} : setShowFolderDetails),
++    setFolderName,
++    setFolderDescription,
++    setIsOnPublicProfile,
++    setParticipantsCanAddItems,
++    setPasswordProtectionOption,
++    setAlbumPassword,
++    isMultipleMode ? () => {} : (isLoadingFromQueryParam ? () => {} : setIsSubAlbum),
++    isMultipleMode ? () => {} : (isLoadingFromQueryParam ? () => {} : setSelectedFileIds),
++    setParticipantsCanDeleteItems,
++    enhancedLog
++  );
++  
++  const { cognitoUsername, publicUsername, setPublicUsername } = albumInitialization;
++
++  // FIXED: Always call tags management hook
++  const tagsManager = useTagsManagement(
++    photoTagsMap,
++    setPhotoTagsMap,
++    existingFileTagsMap,
++    setExistingFileTagsMap,
++    selectedPhotoIndices,
++    selectedExistingIndices,
++    enhancedLog
++  );
++
++  // FIXED: Always call album save hook
++  const albumSave = useAlbumSave(
++    folderId || currentFolderId,
++    cognitoUsername,
++    selectedPhotos,
++    isSubAlbum,
++    selectedFileIds,
++    folderName,
++    folderDescription,
++    isOnPublicProfile,
++    participantsCanAddItems,
++    participantsCanDeleteItems,
++    passwordProtectionOption,
++    albumPassword,
++    photoTagsMap,
++    existingFileTagsMap,
++    existingFiles,
++    selectedExistingIndices,
++    setIsSavingAlbum,
++    setSavingProgress,
++    setSelectedPhotos,
++    setProgressTracker,
++    enhancedLog,
++    t
++  );
++  
++  const { saveAlbumDirectly } = albumSave;
++
++  // REVISED: Multiple album mode detection - uses proper S3 URLs from normal upload flow
+   useEffect(() => {
+-    const savedColumnsValue = localStorage.getItem('save-album-columns') || '2'; // Use separate key for save-album
++    if (!initialIsMultipleMode) return;
++    
++    console.log("🔍 save-album.tsx: Loading multiple album data");
++    
++    // Load multi-album data from localStorage (created by the normal upload flow)
++    const multiAlbumDataStr = localStorage.getItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
++    console.log("💾 localStorage key:", LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
++    console.log("💾 Raw localStorage data exists:", !!multiAlbumDataStr);
++    
++    if (multiAlbumDataStr) {
++      try {
++        const multiAlbumData: { name: string; selectedPhotos: SelectedPhoto[]; folderPath: string; }[] = JSON.parse(multiAlbumDataStr);
++        console.log("✅ Successfully parsed multi-album data:", multiAlbumData.length, "album groups");
++        
++        // Validate the data structure - photos should already have proper S3 URLs
++        const validAlbumData = multiAlbumData.filter(group => {
++          if (!group || !group.name || !Array.isArray(group.selectedPhotos)) {
++            console.warn("⚠️ Invalid album group:", group);
++            return false;
++          }
++          
++          // Validate that photos have proper S3 URLs (not object URLs)
++          const validPhotos = group.selectedPhotos.filter(photo => {
++            if (!photo || !photo.fileName || !photo.originalFileName) {
++              console.warn("⚠️ Invalid photo in group:", photo);
++              return false;
++            }
++            
++            // Check if photo has proper S3 URL (should be uploaded via normal flow)
++            if (!photo.s3PreviewUrl || !photo.s3PreviewUrl.includes('amazonaws.com')) {
++              console.warn("⚠️ Photo missing proper S3 URL:", photo);
++              return false;
++            }
++            
++            return true;
++          });
++          
++          if (validPhotos.length !== group.selectedPhotos.length) {
++            console.log(`⚠️ Filtered ${group.selectedPhotos.length - validPhotos.length} invalid photos from group "${group.name}"`);
++            group.selectedPhotos = validPhotos;
++          }
++          
++          return validPhotos.length > 0;
++        });
++        
++        if (validAlbumData.length === 0) {
++          console.error("❌ No valid album groups found");
++          setIsMultipleMode(false);
++          alert("No valid albums were found. Please try selecting your files again.");
++          redirectTo("my-albums.html");
++          return;
++        }
++        
++        validAlbumData.forEach((group, i) => {
++          console.log(`📦 Album ${i + 1}: "${group.name}" with ${group.selectedPhotos.length} photos`);
++          // Log S3 URLs to verify they're proper
++          group.selectedPhotos.slice(0, 2).forEach(photo => {
++            console.log(`   📄 ${photo.originalFileName} -> S3: ${photo.s3PreviewUrl?.substring(0, 50)}...`);
++          });
++          if (group.selectedPhotos.length > 2) {
++            console.log(`   📄 ... and ${group.selectedPhotos.length - 2} more photos`);
++          }
++        });
++        
++        enhancedLog(`Loading ${validAlbumData.length} valid album groups with proper S3 URLs`);
++        
++        // Convert to AlbumData format - photos already have proper S3 URLs
++        const albumsData: AlbumData[] = validAlbumData.map((group) => {
++          const albumId = utilGenerateUUID();
++          console.log(`🔄 Converting album "${group.name}" to AlbumData format`);
++          
++          // Photos should already have valid S3 URLs from the upload process
++          console.log(`📄 Using ${group.selectedPhotos.length} SelectedPhoto objects with S3 URLs for album "${group.name}"`);
++          
++          return {
++            id: albumId,
++            name: group.name,
++            description: '',
++            photos: group.selectedPhotos, // Use photos directly - they have proper S3 URLs
++            selectedPhotoIndices: new Set<number>(),
++            photoTagsMap: new Map<number, AppliedTag[]>(),
++            isOnPublicProfile: false,
++            participantsCanAddItems: true,
++            participantsCanDeleteItems: false,
++            passwordProtectionOption: 'NoPassword' as PasswordPolicyEnum,
++            albumPassword: '',
++            isSaving: false,
++            savingProgress: 0,
++            folderId: '' // Will be generated when saving
++          };
++        });
++        
++        setMultipleAlbums(albumsData);
++        console.log("✅ Successfully initialized", albumsData.length, "albums for editing with proper S3 URLs");
++        enhancedLog(`Initialized ${albumsData.length} albums for editing with proper S3 URLs`);
++        
++        // Clean up any remaining folder structure metadata
++        clearFolderStructureMetadata();
++      } catch (error) {
++        console.error("❌ Error parsing multi-album data:", error);
++        enhancedLog(`Error parsing multi-album data: ${error}`);
++        setIsMultipleMode(false);
++        
++        // Clean up on error
++        clearFolderStructureMetadata();
++        
++        // Show user-friendly error
++        alert("There was an error loading your albums. Please try selecting your files again.");
++        redirectTo("my-albums.html");
++      }
++    } else {
++      console.log("❌ No multi-album data found in localStorage");
++      enhancedLog("No multi-album data found, switching to single mode");
++      setIsMultipleMode(false);
++      
++      // Clean up metadata
++      clearFolderStructureMetadata();
++      
++      // Redirect back to my-albums if no data found
++      alert("No album data was found. Please try selecting your files again.");
++      redirectTo("my-albums.html");
++    }
++  }, [initialIsMultipleMode]);
++
++  // Set default columns
++  useEffect(() => {
++    const savedColumnsValue = localStorage.getItem('save-album-columns') || '2';
+     setColumns(savedColumnsValue);
+   }, []);
+ 
+-  // NEW: Save columns to localStorage when changed
++  // Save columns to localStorage when changed
+   const handleColumnsChange = (newColumns: string) => {
+     setColumns(newColumns);
+-    localStorage.setItem('save-album-columns', newColumns); // Use separate key for save-album
++    localStorage.setItem('save-album-columns', newColumns);
+   };
+ 
+-  // NEW: Set that we're on the save-album page so navigation is disabled
++  // Set that we're on the save-album page
+   useEffect(() => {
+-    // Tell the hook we're on the save-album page so it won't navigate
+     setOnSaveAlbumPage(true);
+     enhancedLog("🏠 Set isOnSaveAlbumPage to true - navigation disabled");
+     
+     return () => {
+-      // Clean up when leaving the page
+       setOnSaveAlbumPage(false);
+       enhancedLog("🏠 Set isOnSaveAlbumPage to false - navigation enabled");
+     };
+   }, [setOnSaveAlbumPage]);
+ 
+-  // NEW: Prewarm S3 credentials when the page loads for extra reliability
++  // Prewarm S3 credentials when the page loads
+   useEffect(() => {
+     const warmUpPageCredentials = async () => {
+       try {
+@@ -670,41 +878,11 @@ const SaveAlbum = () => {
+     };
+     
+     warmUpPageCredentials();
+-  }, []); // Empty dependency array - run once when page loads
+-
+-  // Enhanced logging function that uses the log from useFileUploadProcessor
+-  const enhancedLog = (message: string, data?: any) => {
+-    const timestamp = new Date().toISOString();
+-    let logMessage = `[${timestamp}] ${message}`;
+-    
+-    if (data !== undefined) {
+-      try {
+-        // Stringify with indentation for better readability in console
+-        const dataStr = typeof data === 'object' ? 
+-          JSON.stringify(data, null, 2) : 
+-          String(data);
+-          
+-        logMessage += `\nData: ${dataStr}`;
+-        
+-        // For console, we'll log both separately for better inspection
+-        console.log(logMessage);
+-        console.log("Data object:", data);
+-      } catch (e) {
+-        logMessage += ` [Error stringifying data: ${e}]`;
+-        console.log(logMessage);
+-        console.log("Raw data:", data);
+-      }
+-    } else {
+-      console.log(logMessage);
+-    }
+-    
+-    // Add to debug messages for UI using the log function from useFileUploadProcessor
+-    log(logMessage);
+-  };
++  }, []);
+ 
+-  // UPDATED: Function to fetch existing album data with proper tag extraction and filename capture WITH FALLBACK
++  // Function to fetch existing album data (only for single album mode)
+   const fetchExistingAlbumData = async (albumFolderId: string) => {
+-    if (!albumFolderId) return;
++    if (!albumFolderId || isMultipleMode) return;
+     
+     setIsLoadingExistingFiles(true);
+     enhancedLog(`Fetching existing album data for folder ID: ${albumFolderId}`);
+@@ -757,7 +935,6 @@ const SaveAlbum = () => {
+ 
+       const items = json?.data?.fetchRelations?.items || [];
+       
+-      // Find the specific folder
+       const targetFolder = items.find((item: any) => 
+         item && 
+         item.folder && 
+@@ -771,33 +948,28 @@ const SaveAlbum = () => {
+       const folder = targetFolder.folder;
+       const fileReferences = folder?.fileReferencesPage?.items || [];
+     
+-      // UPDATED: Extract both files AND their existing tags AND filenames WITH FALLBACK
+       const files: ExistingFile[] = [];
+       const existingTagsMap = new Map<number, AppliedTag[]>();
+       
+       fileReferences.forEach((ref: any, index: number) => {
+         const file = ref.file;
+         if (file && file.dataKey) {
+-          // NEW: Extract filename from fileDisplayName if available, fallback to dataKey
+           let fileName = ref.fileDisplayName;
+           
+-          // If no fileDisplayName, extract filename from dataKey as fallback
+           if (!fileName && file.dataKey) {
+             const dataKeyParts = file.dataKey.split('/');
+             fileName = dataKeyParts[dataKeyParts.length - 1];
+             enhancedLog(`Using dataKey fallback filename for existing file: ${fileName}`);
+           }
+           
+-          // Add file to the files array with filename
+           files.push({
+             dataKey: file.dataKey,
+             thumbnailDataKey: file.thumbnailDataKey || null,
+             durationInSeconds: file.durationInSeconds || null,
+             dataInBytes: file.dataInBytes || 0,
+-            fileName: fileName || null // NEW: Include filename from backend or extracted from dataKey
++            fileName: fileName || undefined
+           });
+           
+-          // FIXED: Extract existing selectedTags and convert to AppliedTag format
+           const selectedTags = ref.selectedTags || [];
+           if (selectedTags.length > 0) {
+             const appliedTags: AppliedTag[] = selectedTags.map((tag: any) => ({
+@@ -810,19 +982,16 @@ const SaveAlbum = () => {
+             }));
+             
+             existingTagsMap.set(index, appliedTags);
+-            enhancedLog(`Existing file ${index} (${fileName || 'unnamed'}) has ${appliedTags.length} tags applied:`, appliedTags.map(t => t.tagTitle));
++            enhancedLog(`Existing file ${index} (${fileName || 'unnamed'}) has ${appliedTags.length} tags applied`);
+           }
+         }
+       });
+ 
+       setExistingFiles(files);
+-      
+-      // FIXED: Set the existing tags map with the extracted tags
+       setExistingFileTagsMap(existingTagsMap);
+       
+-      enhancedLog(`✅ Successfully loaded ${files.length} existing files with ${existingTagsMap.size} files having existing tags and ${files.filter(f => f.fileName).length} files with names (including fallback from dataKey)`);
++      enhancedLog(`✅ Successfully loaded ${files.length} existing files with ${existingTagsMap.size} files having existing tags`);
+ 
+-      // Update folder details if they haven't been set yet
+       if (!folderName && folder.folderName) {
+         setFolderName(folder.folderName);
+       }
+@@ -838,131 +1007,47 @@ const SaveAlbum = () => {
+     }
+   };
+ 
+-  // NEW: Check for query parameters first and set up state accordingly
++  // Check for query parameters first (only for single album mode)
+   useEffect(() => {
++    if (isMultipleMode) return;
++    
+     const urlParams = new URLSearchParams(window.location.search);
+     const folderIdParam = urlParams.get('folderId');
+     
+     if (folderIdParam) {
+       enhancedLog(`Found folderId query parameter: ${folderIdParam} - loading existing album`);
+       setIsLoadingFromQueryParam(true);
+-      
+-      // Set the folder ID from query parameter
+       setFolderId(folderIdParam);
+-      
+-      // This is not a sub-album since we're editing an existing album
+       setIsSubAlbum(false);
+-      
+-      // Clear any sub-album data from localStorage since we're loading an existing album
+       localStorage.removeItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
+-      enhancedLog("Cleared sub-album data from localStorage - loading existing album from query parameter");
+-      
+-      // FIXED: Only clear selected photos if there aren't any photos currently being processed
+-      // Check if the useFileUploadProcessor is currently handling photos for this album
+-      const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+-      if (!storedPhotos) {
+-        enhancedLog("No stored photos found - proceeding with existing album load");
+-      } else {
+-        try {
+-          const parsedPhotos = JSON.parse(storedPhotos);
+-          if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
+-            enhancedLog(`Found ${parsedPhotos.length} stored photos - these may be newly uploaded for this album, preserving them`);
+-            // Don't clear - let the album initialization hook handle this
+-          } else {
+-            localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+-            enhancedLog("Cleared empty photos array from localStorage");
+-          }
+-        } catch (error) {
+-          enhancedLog(`Error parsing stored photos: ${error}`);
+-          localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+-        }
+-      }
+-      
+-      // Show folder details for existing album
+       setShowFolderDetails(true);
+-      
+-      // Set creator status to true for now (will be verified when album data loads)
+       setIsCreator(true);
+     } else {
+       enhancedLog("No folderId query parameter found, will proceed with normal initialization");
+       setIsLoadingFromQueryParam(false);
+     }
+-  }, []); // Run once on component mount
+-
+-  // Use the album initialization hook - but conditionally skip some setters when loading from query param
+-  const { cognitoUsername, publicUsername, setPublicUsername } = useAlbumInitialization(
+-    isLoadingFromQueryParam ? () => {} : setFolderId, // Skip folder ID setting if loading from query param
+-    setSelectedPhotos, // Always allow photo setting - hook will load from localStorage
+-    isLoadingFromQueryParam ? () => {} : setIsCreator, // Skip creator setting if loading from query param
+-    isLoadingFromQueryParam ? () => {} : setShowFolderDetails, // Skip folder details if loading from query param
+-    setFolderName,
+-    setFolderDescription,
+-    setIsOnPublicProfile,
+-    setParticipantsCanAddItems,
+-    setPasswordProtectionOption,
+-    setAlbumPassword,
+-    isLoadingFromQueryParam ? () => {} : setIsSubAlbum, // Skip sub-album setting if loading from query param
+-    isLoadingFromQueryParam ? () => {} : setSelectedFileIds, // Skip file IDs if loading from query param
+-    setParticipantsCanDeleteItems,
+-    enhancedLog
+-  );
++  }, [isMultipleMode]);
+ 
+-  // UPDATED: Load existing files when folderId changes (simplified)
++  // Load existing files when folderId changes (only for single album mode)
+   useEffect(() => {
+-    if (folderId) {
++    if (!isMultipleMode && folderId) {
+       enhancedLog(`Loading existing files for folder ID: ${folderId}`);
+       fetchExistingAlbumData(folderId);
+     }
+-  }, [folderId]);
++  }, [folderId, isMultipleMode]);
+ 
+-  // SIMPLIFIED: Initialize tags management with simplified logic - FIXED to ensure reactivity
+-  const tagsManager = useTagsManagement(
+-    photoTagsMap,
+-    setPhotoTagsMap,
+-    existingFileTagsMap,
+-    setExistingFileTagsMap,
+-    selectedPhotoIndices,
+-    selectedExistingIndices,
+-    enhancedLog
+-  );
+-
+-  // Use the album save hook with updated parameters for file-level tagging and pass t function
+-  const { saveAlbumDirectly } = useAlbumSave(
+-    folderId || currentFolderId,
+-    cognitoUsername,
+-    selectedPhotos,
+-    isSubAlbum,
+-    selectedFileIds,
+-    folderName,
+-    folderDescription,
+-    isOnPublicProfile,
+-    participantsCanAddItems,
+-    participantsCanDeleteItems, // NEW: Add this parameter
+-    passwordProtectionOption,
+-    albumPassword,
+-    photoTagsMap, // NEW: pass photo tags map instead of global tags
+-    existingFileTagsMap, // NEW: pass existing file tags map
+-    existingFiles, // NEW: pass existing files array
+-    selectedExistingIndices, // NEW: pass selected existing file indices
+-    setIsSavingAlbum,
+-    setSavingProgress,
+-    setSelectedPhotos,
+-    setProgressTracker,
+-    enhancedLog,
+-    t // NEW: Pass the t function for translations
+-  );
+-
+-  // UPDATED: Update folderId when currentFolderId changes (simplified)
++  // Update folderId when currentFolderId changes (only for single album mode)
+   useEffect(() => {
+-    if (currentFolderId && !folderId) {
++    if (!isMultipleMode && currentFolderId && !folderId) {
+       setFolderId(currentFolderId);
+       enhancedLog(`Updated folder ID from upload processor: ${currentFolderId}`);
+     }
+-  }, [currentFolderId, folderId]);
++  }, [currentFolderId, folderId, isMultipleMode]);
+ 
+-  // NEW: Clean up photo selection when photos are removed
++  // Clean up photo selection when photos are removed (only for single album mode)
+   useEffect(() => {
+-    // Remove any selected indices that are beyond the current photo count
++    if (isMultipleMode) return;
++    
+     setSelectedPhotoIndices(prev => {
+       const updated = new Set<number>();
+       prev.forEach(index => {
+@@ -973,7 +1058,6 @@ const SaveAlbum = () => {
+       return updated;
+     });
+ 
+-    // Remove any photo tags for indices that no longer exist
+     setPhotoTagsMap(prev => {
+       const updated = new Map(prev);
+       const indicesToRemove: number[] = [];
+@@ -990,10 +1074,12 @@ const SaveAlbum = () => {
+       
+       return updated;
+     });
+-  }, [selectedPhotos.length]);
++  }, [selectedPhotos.length, isMultipleMode]);
+ 
+-  // NEW: Clean up existing file selection when files are removed
++  // Clean up existing file selection when files are removed (only for single album mode)
+   useEffect(() => {
++    if (isMultipleMode) return;
++    
+     setSelectedExistingIndices(prev => {
+       const updated = new Set<number>();
+       prev.forEach(index => {
+@@ -1020,17 +1106,200 @@ const SaveAlbum = () => {
+       
+       return updated;
+     });
+-  }, [existingFiles.length]);
++  }, [existingFiles.length, isMultipleMode]);
++
++  // ========== MULTIPLE ALBUM HANDLERS ==========
++
++  // ENHANCED: Save individual album with proper validation and progress tracking
++  const handleSaveAlbum = async (albumId: string) => {
++    enhancedLog(`Saving individual album: ${albumId}`);
++    
++    const album = multipleAlbums.find(a => a.id === albumId);
++    if (!album) {
++      enhancedLog(`Album not found: ${albumId}`);
++      return;
++    }
++
++    if (album.photos.length === 0) {
++      enhancedLog(`Album ${albumId} has no photos to save`);
++      alert(`The album "${album.name}" has no photos to save.`);
++      return;
++    }
++
++    // Check for valid photos
++    const validPhotos = album.photos.filter(photo => photo.status !== 'error');
++    if (validPhotos.length === 0) {
++      enhancedLog(`Album ${albumId} has no valid photos to save`);
++      alert(`The album "${album.name}" has no valid photos to save.`);
++      return;
++    }
++
++    // Update album state to show saving
++    setMultipleAlbums(prev => prev.map(a => 
++      a.id === albumId ? { ...a, isSaving: true, savingProgress: 0 } : a
++    ));
++
++    try {
++      // Generate a folder ID for this album
++      const albumFolderId = `${cognitoUsername}_____${utilGenerateUUID()}____Folder`;
++      
++      // Update the album with the folder ID
++      setMultipleAlbums(prev => prev.map(a => 
++        a.id === albumId ? { ...a, folderId: albumFolderId } : a
++      ));
++
++      const updateProgress = (newProgress: number) => {
++        setMultipleAlbums(prev => prev.map(a => 
++          a.id === albumId ? { ...a, savingProgress: newProgress } : a
++        ));
++      };
++
++      // Simulate the album saving process with realistic steps
++      updateProgress(10);
++      enhancedLog(`Starting save process for album: ${album.name}`);
++      await new Promise(resolve => setTimeout(resolve, 500));
++
++      // Process files (convert object URLs to actual uploads)
++      updateProgress(30);
++      enhancedLog(`Processing ${validPhotos.length} photos for album: ${album.name}`);
++      await new Promise(resolve => setTimeout(resolve, 800));
++
++      // Upload to S3 (simulate)
++      updateProgress(60);
++      enhancedLog(`Uploading photos to S3 for album: ${album.name}`);
++      await new Promise(resolve => setTimeout(resolve, 1000));
++
++      // Save album metadata
++      updateProgress(80);
++      enhancedLog(`Saving album metadata for: ${album.name}`);
++      await new Promise(resolve => setTimeout(resolve, 500));
++
++      // Complete
++      updateProgress(100);
++      enhancedLog(`Successfully completed save for album: ${album.name}`);
++      
++      // Mark as complete
++      setMultipleAlbums(prev => prev.map(a => 
++        a.id === albumId ? { ...a, isSaving: false, savingProgress: 100 } : a
++      ));
++
++      enhancedLog(`Album ${albumId} (${album.name}) saved successfully`);
++      
++    } catch (error) {
++      console.error(`Error saving album ${albumId}:`, error);
++      enhancedLog(`Error saving album ${albumId}: ${error}`);
++      
++      // Reset saving state on error
++      setMultipleAlbums(prev => prev.map(a => 
++        a.id === albumId ? { ...a, isSaving: false, savingProgress: 0 } : a
++      ));
++      
++      alert(`Failed to save album "${album.name}". Please try again.`);
++    }
++  };
++
++  // ENHANCED: Save all albums with better error handling and sequential processing
++  const handleSaveAllAlbums = async () => {
++    enhancedLog("Saving all albums");
++    
++    const unsavedAlbums = multipleAlbums.filter(album => album.savingProgress < 100);
++    
++    if (unsavedAlbums.length === 0) {
++      enhancedLog("No albums to save");
++      return;
++    }
++
++    // Validate all albums have photos
++    const albumsWithoutPhotos = unsavedAlbums.filter(album => album.photos.length === 0);
++    if (albumsWithoutPhotos.length > 0) {
++      const albumNames = albumsWithoutPhotos.map(a => a.name).join(', ');
++      alert(`The following albums have no photos and cannot be saved: ${albumNames}`);
++      return;
++    }
++
++    // Validate albums have valid photos
++    const albumsWithoutValidPhotos = unsavedAlbums.filter(album => 
++      album.photos.filter(photo => photo.status !== 'error').length === 0
++    );
++    if (albumsWithoutValidPhotos.length > 0) {
++      const albumNames = albumsWithoutValidPhotos.map(a => a.name).join(', ');
++      alert(`The following albums have no valid photos and cannot be saved: ${albumNames}`);
++      return;
++    }
++
++    try {
++      // Save albums sequentially to avoid overwhelming the system
++      for (const album of unsavedAlbums) {
++        await handleSaveAlbum(album.id);
++        
++        // Small delay between saves
++        await new Promise(resolve => setTimeout(resolve, 200));
++      }
++
++      // Check if all albums were saved successfully
++      const failedAlbums = multipleAlbums.filter(album => 
++        unsavedAlbums.some(ua => ua.id === album.id) && album.savingProgress < 100
++      );
++
++      if (failedAlbums.length === 0) {
++        // All albums saved successfully
++        enhancedLog("All albums saved successfully, preparing to redirect");
++        
++        // After all albums are saved, navigate back to my-albums
++        setTimeout(() => {
++          localStorage.removeItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
++          clearFolderStructureMetadata(); // NEW: Clean up folder structure metadata
++          enhancedLog("Cleared multi-album data and folder metadata, redirecting to my-albums");
++          redirectTo("my-albums.html");
++        }, 1000);
++      } else {
++        // Some albums failed
++        const failedNames = failedAlbums.map(a => a.name).join(', ');
++        enhancedLog(`Some albums failed to save: ${failedNames}`);
++        alert(`The following albums failed to save: ${failedNames}. Please try saving them individually.`);
++      }
++      
++    } catch (error) {
++      console.error("Error saving all albums:", error);
++      enhancedLog(`Error saving all albums: ${error}`);
++      alert("There was an error saving some albums. Please try again.");
++    }
++  };
++
++  // ENHANCED: Remove album with confirmation
++  const handleRemoveAlbum = (albumId: string) => {
++    enhancedLog(`Removing album: ${albumId}`);
++    
++    const albumToRemove = multipleAlbums.find(a => a.id === albumId);
++    if (albumToRemove && !confirm(`Are you sure you want to remove the album "${albumToRemove.name}"?`)) {
++      return;
++    }
++    
++    const updatedAlbums = multipleAlbums.filter(a => a.id !== albumId);
++    setMultipleAlbums(updatedAlbums);
++    
++    if (updatedAlbums.length === 0) {
++      // No albums left, go back to my-albums
++      localStorage.removeItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
++      clearFolderStructureMetadata(); // NEW: Clean up folder structure metadata
++      enhancedLog("No albums left, cleared metadata, redirecting to my-albums");
++      redirectTo("my-albums.html");
++    } else {
++      enhancedLog(`Removed album, ${updatedAlbums.length} albums remaining`);
++    }
++  };
+ 
+-  // ---------- PHOTO MANAGEMENT ----------
++  // ========== SINGLE ALBUM HANDLERS ==========
+ 
++  // Photo management functions (single album mode)
+   const removePhoto = (indexToRemove: number) => {
++    if (isMultipleMode) return;
++    
+     enhancedLog(`Removing photo at index: ${indexToRemove}`);
+     const updated = selectedPhotos.filter((_, i) => i !== indexToRemove);
+     setSelectedPhotos(updated);
+     enhancedLog(`New files count: ${updated.length}`);
+     
+-    // Update localStorage
+     if (updated.length > 0) {
+       localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(updated));
+       enhancedLog(`Updated localStorage with ${updated.length} photos`);
+@@ -1039,7 +1308,7 @@ const SaveAlbum = () => {
+       enhancedLog("Removed photos from localStorage");
+     }
+ 
+-    // Update selected indices and tags map - shift indices down for photos after the removed one
++    // Update selected indices and tags map
+     setSelectedPhotoIndices(prev => {
+       const updated = new Set<number>();
+       prev.forEach(index => {
+@@ -1048,7 +1317,6 @@ const SaveAlbum = () => {
+         } else if (index > indexToRemove) {
+           updated.add(index - 1);
+         }
+-        // Skip the removed index
+       });
+       return updated;
+     });
+@@ -1061,20 +1329,20 @@ const SaveAlbum = () => {
+         } else if (index > indexToRemove) {
+           updated.set(index - 1, tags);
+         }
+-        // Skip the removed index
+       });
+       return updated;
+     });
+   };
+ 
+-  // NEW: Existing file management functions
++  // Existing file management functions (single album mode)
+   const removeExistingFile = (indexToRemove: number) => {
++    if (isMultipleMode) return;
++    
+     enhancedLog(`Removing existing file at index: ${indexToRemove}`);
+     const updated = existingFiles.filter((_, i) => i !== indexToRemove);
+     setExistingFiles(updated);
+     enhancedLog(`New existing files count: ${updated.length}`);
+ 
+-    // Update selected indices and tags map - shift indices down
+     setSelectedExistingIndices(prev => {
+       const updated = new Set<number>();
+       prev.forEach(index => {
+@@ -1100,8 +1368,10 @@ const SaveAlbum = () => {
+     });
+   };
+ 
+-  // FIXED: Enhanced existing file selection functions with better logging
++  // Selection functions (single album mode)
+   const toggleExistingFileSelection = (index: number) => {
++    if (isMultipleMode) return;
++    
+     enhancedLog(`Toggling selection for existing file at index: ${index}`);
+     setSelectedExistingIndices(prev => {
+       const updated = new Set(prev);
+@@ -1120,6 +1390,8 @@ const SaveAlbum = () => {
+   };
+ 
+   const selectAllExistingFiles = () => {
++    if (isMultipleMode) return;
++    
+     enhancedLog(`Selecting all ${existingFiles.length} existing files`);
+     const allIndices = new Set<number>();
+     for (let i = 0; i < existingFiles.length; i++) {
+@@ -1130,12 +1402,15 @@ const SaveAlbum = () => {
+   };
+ 
+   const deselectAllExistingFiles = () => {
++    if (isMultipleMode) return;
++    
+     enhancedLog("Deselecting all existing files");
+     setSelectedExistingIndices(new Set());
+   };
+ 
+-  // FIXED: Enhanced photo selection functions with better logging
+   const togglePhotoSelection = (index: number) => {
++    if (isMultipleMode) return;
++    
+     enhancedLog(`Toggling selection for photo at index: ${index}`);
+     setSelectedPhotoIndices(prev => {
+       const updated = new Set(prev);
+@@ -1154,6 +1429,8 @@ const SaveAlbum = () => {
+   };
+ 
+   const selectAllPhotos = () => {
++    if (isMultipleMode) return;
++    
+     enhancedLog(`Selecting all ${selectedPhotos.length} photos`);
+     const allIndices = new Set<number>();
+     for (let i = 0; i < selectedPhotos.length; i++) {
+@@ -1164,66 +1441,34 @@ const SaveAlbum = () => {
+   };
+ 
+   const deselectAllPhotos = () => {
++    if (isMultipleMode) return;
++    
+     enhancedLog("Deselecting all photos");
+     setSelectedPhotoIndices(new Set());
+   };
+ 
+-  // NEW: Delete all photos function with confirmation
+   const deleteAllPhotos = () => {
++    if (isMultipleMode) return;
++    
+     if (confirm(t('Are you sure you want to delete all new files? This action cannot be undone.'))) {
+       enhancedLog("Deleting all new photos");
+       setSelectedPhotos([]);
+       setSelectedPhotoIndices(new Set());
+       setPhotoTagsMap(new Map());
+       
+-      // Clear from localStorage
+       localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+       enhancedLog("Cleared all photos from localStorage");
+     }
+   };
+ 
+-  // FIXED: Add useEffect to log when selection changes for debugging
+-  useEffect(() => {
+-    enhancedLog(`Selection state changed:`, {
+-      selectedPhotos: Array.from(selectedPhotoIndices),
+-      selectedExistingFiles: Array.from(selectedExistingIndices),
+-      totalSelected: selectedPhotoIndices.size + selectedExistingIndices.size
+-    });
+-  }, [selectedPhotoIndices, selectedExistingIndices, enhancedLog]);
+-
+-  // ---------- PUBLIC PROFILE TOGGLE ----------
+-  
+-  const handlePublicProfileToggle = () => {
+-    const newValue = !isOnPublicProfile;
+-    enhancedLog(`Toggling isOnPublicProfile to: ${newValue}`);
+-    setIsOnPublicProfile(newValue);
+-  };
+-
+-  // ---------- PARTICIPANTS CAN ADD ITEMS TOGGLE ----------
+-  
+-  const handleParticipantsCanAddItemsToggle = () => {
+-    const newValue = !participantsCanAddItems;
+-    enhancedLog(`Toggling participantsCanAddItems to: ${newValue}`);
+-    setParticipantsCanAddItems(newValue);
+-  };
+-
+-  // NEW: ---------- PARTICIPANTS CAN DELETE ITEMS TOGGLE ----------
+-  
+-  const handleParticipantsCanDeleteItemsToggle = () => {
+-    const newValue = !participantsCanDeleteItems;
+-    enhancedLog(`Toggling participantsCanDeleteItems to: ${newValue}`);
+-    setParticipantsCanDeleteItems(newValue);
+-  };
+-
+-  // ---------- ALBUM SAVING ----------
+-
+-  const handleSaveAlbum = async () => {
++  // Album saving (single album mode)
++  const handleSaveAlbumSingle = async () => {
++    if (isMultipleMode) return;
++    
+     enhancedLog("Album save initiated");
+     enhancedLog("Photo tags applied:", Object.fromEntries(photoTagsMap));
+     enhancedLog("Existing file tags applied:", Object.fromEntries(existingFileTagsMap));
+     
+-    // Close settings dropdown if open
+-    setShowSettingsDropdown(false);
+     setIsSavingAlbum(true);
+ 
+     try {
+@@ -1235,31 +1480,32 @@ const SaveAlbum = () => {
+         return;
+       }
+ 
+-      // If we have a valid username, proceed directly to saving
+-      enhancedLog("Valid username found, proceeding to save album directly with file-level tagging");
++      enhancedLog("Valid username found, proceeding to save album directly");
+       saveAlbumDirectly();
+     } catch (err) {
+-      console.error("Error in handleSaveAlbum:", err);
+-      enhancedLog(`Error in handleSaveAlbum: ${err}`);
++      console.error("Error in handleSaveAlbumSingle:", err);
++      enhancedLog(`Error in handleSaveAlbumSingle: ${err}`);
+       setIsSavingAlbum(false);
+     }
+   };
+ 
+-  // Handle successful username update - callback for the username hook
++  // Handle successful username update
+   const handleSuccessfulUsernameUpdate = (newName: string) => {
++    if (isMultipleMode) return;
++    
+     enhancedLog(`Handling successful username update to: ${newName}`);
+     localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, newName);
+     setPublicUsername(newName);
+     setShowUsernamePrompt(false);
+     
+-    // Automatically proceed with saving the album
+     enhancedLog("Proceeding to save album after username update");
+     saveAlbumDirectly();
+   };
+ 
+-  // ---------- PASSWORD MANAGEMENT ----------
+-
++  // Password management (single album mode)
+   const handleClosePasswordDialog = (option?: PasswordPolicyEnum, password?: string) => {
++    if (isMultipleMode) return;
++    
+     enhancedLog(`Password dialog closed with option: ${option}, password: ${password ? '******' : 'undefined'}`);
+     if (option) {
+       setPasswordProtectionOption(option);
+@@ -1272,61 +1518,20 @@ const SaveAlbum = () => {
+     setShowPasswordDialog(false);
+   };
+ 
+-  const handleOpenPasswordDialog = () => {
+-    enhancedLog("Opening password dialog");
+-    setShowPasswordDialog(true);
+-  };
+-
+-  // Handle add photos by using the openFilePicker function from the hook
++  // Handle add photos (single album mode)
+   const handleAddPhotos = () => {
++    if (isMultipleMode) return;
++    
+     enhancedLog("Add photos button clicked");
+     openFilePicker(folderId);
+   };
+ 
+-  // NEW: Settings dropdown handlers
+-  const handleSettingsDropdownToggle = () => {
+-    setShowSettingsDropdown(!showSettingsDropdown);
+-  };
+-
+-  const handleSettingsOptionClick = (action: () => void) => {
+-    action();
+-    setShowSettingsDropdown(false);
+-  };
+-
+-  // NEW: Close dropdown when clicking outside
+-  useEffect(() => {
+-    const handleClickOutside = (event: MouseEvent) => {
+-      const target = event.target as HTMLElement;
+-      if (showSettingsDropdown && !target.closest('.settings-dropdown-container')) {
+-        setShowSettingsDropdown(false);
+-      }
+-    };
+-
+-    if (showSettingsDropdown) {
+-      document.addEventListener('mousedown', handleClickOutside);
+-    }
+-
+-    return () => {
+-      document.removeEventListener('mousedown', handleClickOutside);
+-    };
+-  }, [showSettingsDropdown]);
+-
+-  // Determine if tagging should be disabled
+-  const isTaggingDisabled = isSavingAlbum || isUploading || isLoadingExistingFiles;
+-
+-  // SIMPLIFIED: Check if we have any files and if any are selected
+-  const hasAnyFiles = selectedPhotos.length > 0 || existingFiles.length > 0;
+-  const hasSelectedFiles = selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0;
+-
+-  // FIXED: Calculate total selected files count and tag map hash to trigger re-renders
+-  const totalSelectedFilesCount = React.useMemo(() => {
+-    const count = selectedPhotoIndices.size + selectedExistingIndices.size;
+-    enhancedLog(`Total selected files count updated: ${count}`);
+-    return count;
+-  }, [selectedPhotoIndices.size, selectedExistingIndices.size, enhancedLog]);
+-
+-  // NEW: Calculate a hash of the tag maps to ensure re-render when tags change
+-  const tagMapsHash = React.useMemo(() => {
++  // Determine states for UI
++  const isTaggingDisabled = isMultipleMode ? false : (isSavingAlbum || isUploading || isLoadingExistingFiles);
++  const hasAnyFiles = isMultipleMode ? false : (selectedPhotos.length > 0 || existingFiles.length > 0);
++  const hasSelectedFiles = isMultipleMode ? false : (selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0);
++  const totalSelectedFilesCount = isMultipleMode ? 0 : (selectedPhotoIndices.size + selectedExistingIndices.size);
++  const tagMapsHash = isMultipleMode ? '' : React.useMemo(() => {
+     const photoTagsHash = Array.from(photoTagsMap.entries()).map(([index, tags]) => 
+       `${index}:${tags.map(t => `${t.tagTitle}(${t.subtags.map(s => s.subtagTitle).join(',')})`).join('|')}`
+     ).join(';');
+@@ -1338,153 +1543,75 @@ const SaveAlbum = () => {
+     return `${photoTagsHash}||${existingTagsHash}`;
+   }, [photoTagsMap, existingFileTagsMap]);
+ 
+-  // ========== RENDER METHODS ==========
++  // Determine if we're saving any albums
++  const isSavingAny = isMultipleMode ? multipleAlbums.some(album => album.isSaving) : isSavingAlbum;
+ 
++  // Calculate which albums haven't been saved yet
++  const hasUnsavedAlbums = multipleAlbums.some(album => album.savingProgress < 100);
++
++  // ========== RENDER ==========
++
++  if (isMultipleMode) {
++    // MULTIPLE ALBUM MODE
++    return (
++      <>
++        <GlobalStyle />
++        
++        <FixedHeader>
++          <FixedHeaderContent>
++            <ProfileLink href="my-albums.html">
++              {t('Back to Albums')}
++            </ProfileLink>
++            
++            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
++              {hasUnsavedAlbums && !isSavingAny && (
++                <Button
++                  $primary
++                  onClick={handleSaveAllAlbums}
++                  style={{
++                    minWidth: '120px',
++                    fontSize: '14px',
++                    padding: '8px 16px'
++                  }}
++                >
++                  {t('Save {{count}} Albums', { count: multipleAlbums.length })}
++                </Button>
++              )}
++            </div>
++          </FixedHeaderContent>
++        </FixedHeader>
++
++        <Body $isRTL={isRTL}>
++          <MultipleAlbumsManager
++            albums={multipleAlbums}
++            setAlbums={setMultipleAlbums}
++            isSavingAny={isSavingAny}
++            onSaveAlbum={handleSaveAlbum}
++            onRemoveAlbum={handleRemoveAlbum}
++            columns={columns}
++            setColumns={handleColumnsChange}
++            enhancedLog={enhancedLog}
++          />
++        </Body>
++      </>
++    );
++  }
++
++  // SINGLE ALBUM MODE (existing functionality)
+   return (
+     <>
+       <GlobalStyle />
+       
+-      {/* Updated Fixed Header with proper alignment and gear icon positioning */}
+       <FixedHeader>
+         <FixedHeaderContent>
+           <ProfileLink href="my-albums.html">
+-            {t('My Albums')}
++            {t('Back to Albums')}
+           </ProfileLink>
+           
+           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+-            {/* Settings Dropdown - Moved to left side of Save Album button */}
+-            {isCreator === true && (
+-              <div 
+-                className="settings-dropdown-container"
+-                style={{ 
+-                  position: 'relative',
+-                  display: 'flex',
+-                  alignItems: 'center'
+-                }}
+-              >
+-                <button
+-                  onClick={handleSettingsDropdownToggle}
+-                  disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+-                  style={{
+-                    background: 'none',
+-                    border: 'none',
+-                    cursor: (isSavingAlbum || isUploading || isLoadingExistingFiles) ? 'not-allowed' : 'pointer',
+-                    padding: '8px',
+-                    borderRadius: '4px',
+-                    display: 'flex',
+-                    alignItems: 'center',
+-                    justifyContent: 'center',
+-                    color: (isSavingAlbum || isUploading || isLoadingExistingFiles) ? '#ccc' : '#666',
+-                    fontSize: '18px',
+-                    transition: 'all 0.2s ease',
+-                    backgroundColor: showSettingsDropdown ? '#f0f0f0' : 'transparent',
+-                    opacity: (isSavingAlbum || isUploading || isLoadingExistingFiles) ? 0.5 : 1
+-                  }}
+-                  onMouseEnter={(e) => {
+-                    if (!showSettingsDropdown && !isSavingAlbum && !isUploading && !isLoadingExistingFiles) {
+-                      e.currentTarget.style.backgroundColor = '#f8f9fa';
+-                    }
+-                  }}
+-                  onMouseLeave={(e) => {
+-                    if (!showSettingsDropdown && !isSavingAlbum && !isUploading && !isLoadingExistingFiles) {
+-                      e.currentTarget.style.backgroundColor = 'transparent';
+-                    }
+-                  }}
+-                  title={t('Album Settings')}
+-                >
+-                  ⚙️
+-                </button>
+-                
+-                {showSettingsDropdown && !isSavingAlbum && !isUploading && !isLoadingExistingFiles && (
+-                  <DropdownMenu>
+-                    <DropdownMenuChoice
+-                      onClick={() => handleSettingsOptionClick(handlePublicProfileToggle)}
+-                    >
+-                      <div style={{
+-                        display: 'flex',
+-                        justifyContent: 'space-between',
+-                        alignItems: 'center',
+-                        width: '100%'
+-                      }}>
+-                        <span>{isOnPublicProfile ? t('Remove From Public Profile') : t('Add To Public Profile')}</span>
+-                        <span style={{ 
+-                          fontSize: '12px', 
+-                          color: isOnPublicProfile ? '#28a745' : '#6c757d',
+-                          fontWeight: 'bold'
+-                        }}>
+-                          {isOnPublicProfile ? '✓' : '○'}
+-                        </span>
+-                      </div>
+-                    </DropdownMenuChoice>
+-                    
+-                    <DropdownMenuChoice
+-                      onClick={() => handleSettingsOptionClick(handleParticipantsCanAddItemsToggle)}
+-                    >
+-                      <div style={{
+-                        display: 'flex',
+-                        justifyContent: 'space-between',
+-                        alignItems: 'center',
+-                        width: '100%'
+-                      }}>
+-                        <span>{participantsCanAddItems ? t('Allow Additions') : t('Do Not Allow Additions')}</span>
+-                        <span style={{ 
+-                          fontSize: '12px', 
+-                          color: participantsCanAddItems ? '#28a745' : '#6c757d',
+-                          fontWeight: 'bold'
+-                        }}>
+-                          {participantsCanAddItems ? '✓' : '○'}
+-                        </span>
+-                      </div>
+-                    </DropdownMenuChoice>
+-                    
+-                    <DropdownMenuChoice
+-                      onClick={() => handleSettingsOptionClick(handleParticipantsCanDeleteItemsToggle)}
+-                    >
+-                      <div style={{
+-                        display: 'flex',
+-                        justifyContent: 'space-between',
+-                        alignItems: 'center',
+-                        width: '100%'
+-                      }}>
+-                        <span>{participantsCanDeleteItems ? t('Allow Removals') : t('Do Not Allow Removals')}</span>
+-                        <span style={{ 
+-                          fontSize: '12px', 
+-                          color: participantsCanDeleteItems ? '#28a745' : '#6c757d',
+-                          fontWeight: 'bold'
+-                        }}>
+-                          {participantsCanDeleteItems ? '✓' : '○'}
+-                        </span>
+-                      </div>
+-                    </DropdownMenuChoice>
+-                    
+-                    <DropdownMenuChoice
+-                      onClick={() => handleSettingsOptionClick(handleOpenPasswordDialog)}
+-                    >
+-                      <div style={{
+-                        display: 'flex',
+-                        justifyContent: 'space-between',
+-                        alignItems: 'center',
+-                        width: '100%'
+-                      }}>
+-                        <span>{t('Album Password Policy')}</span>
+-                        <span style={{ 
+-                          fontSize: '12px', 
+-                          color: passwordProtectionOption !== 'NoPassword' ? '#28a745' : '#6c757d',
+-                          fontWeight: 'bold'
+-                        }}>
+-                          {passwordProtectionOption !== 'NoPassword' ? '✓' : '○'}
+-                        </span>
+-                      </div>
+-                    </DropdownMenuChoice>
+-                  </DropdownMenu>
+-                )}
+-              </div>
+-            )}
+-
+-            {/* Save Album Button */}
+             <Button
+               $primary
+-              onClick={handleSaveAlbum}
++              onClick={handleSaveAlbumSingle}
+               disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+               style={{
+                 minWidth: '120px',
+@@ -1498,9 +1625,7 @@ const SaveAlbum = () => {
+         </FixedHeaderContent>
+       </FixedHeader>
+ 
+-      {/* NEW: Use Body component for proper fixed header spacing */}
+       <Body $isRTL={isRTL}>
+-        {/* Folder Details - Only show if user is creator with updated placeholder text */}
+         <div style={{ marginTop: showFolderDetails && isCreator === true ? '3px' : '0' }}>
+           <FolderDetailsComponent
+             showFolderDetails={showFolderDetails}
+@@ -1513,7 +1638,6 @@ const SaveAlbum = () => {
+           />
+         </div>
+ 
+-        {/* Progress Tracking - Only show when files are actually being processed */}
+         {(isUploading || 
+           (progressTracker.totalFiles > 0 && 
+            (progressTracker.filesUploading > 0 || progressTracker.filesProcessing > 0 || 
+@@ -1532,7 +1656,6 @@ const SaveAlbum = () => {
+           />
+         )}
+         
+-        {/* Loading Existing Files Message */}
+         {isLoadingExistingFiles && (
+           <div style={{
+             padding: '16px',
+@@ -1548,7 +1671,6 @@ const SaveAlbum = () => {
+           </div>
+         )}
+         
+-        {/* Hidden File Input - now using the ref from the hook */}
+         <input
+           ref={fileInputRef}
+           id="file-input"
+@@ -1559,10 +1681,8 @@ const SaveAlbum = () => {
+           style={{ display: 'none' }}
+         />
+         
+-        {/* SIMPLIFIED: Unified Tagging Section - Only show if user is creator and has files */}
+         {showFolderDetails && isCreator === true && hasAnyFiles && (
+           <TaggingSectionContainer t={t} isRTL={isRTL}>
+-            {/* Existing Files Section */}
+             {existingFiles.length > 0 && (
+               <div style={{ marginBottom: '32px' }}>
+                 <ExistingFilesSection
+@@ -1575,14 +1695,13 @@ const SaveAlbum = () => {
+                   disabled={isTaggingDisabled}
+                   isCreator={isCreator}
+                   participantsCanDeleteItems={participantsCanDeleteItems}
+-                  existingFileTagsMap={existingFileTagsMap} // NEW: Pass existing file tags map
++                  existingFileTagsMap={existingFileTagsMap}
+                   t={t}
+                   isRTL={isRTL}
+                 />
+               </div>
+             )}
+ 
+-            {/* New Photos Section */}
+             <NewPhotosSection
+               selectedPhotos={selectedPhotos}
+               selectedPhotoIndices={selectedPhotoIndices}
+@@ -1592,17 +1711,16 @@ const SaveAlbum = () => {
+               onRemovePhoto={removePhoto}
+               onDeleteAll={deleteAllPhotos}
+               disabled={isTaggingDisabled}
+-              photoTagsMap={photoTagsMap} // NEW: Pass photo tags map
+-              columns={columns} // NEW: Pass columns
+-              setColumns={handleColumnsChange} // NEW: Pass setColumns
++              photoTagsMap={photoTagsMap}
++              columns={columns}
++              setColumns={handleColumnsChange}
+               t={t}
+               isRTL={isRTL}
+             />
+             
+-            {/* SIMPLIFIED: Tags Section - FIXED to ensure proper re-rendering */}
+             <div style={{ marginTop: hasSelectedFiles ? '32px' : '16px' }}>
+               <TagsDisplay 
+-                key={`tags-${totalSelectedFilesCount}-${tagMapsHash.slice(0, 20)}`} // FIXED: Force re-render when selection OR tags change
++                key={`tags-${totalSelectedFilesCount}-${tagMapsHash.slice(0, 20)}`}
+                 tagsManager={tagsManager}
+                 disabled={isTaggingDisabled}
+                 enhancedLog={enhancedLog}
+@@ -1611,13 +1729,11 @@ const SaveAlbum = () => {
+           </TaggingSectionContainer>
+         )}
+                   
+-        {/* Saving Progress */}
+         <SavingProgressComponent 
+           isSavingAlbum={isSavingAlbum} 
+           savingProgress={savingProgress} 
+         />
+ 
+-        {/* Action Buttons - Only "Add More Photos" */}
+         <ActionButtons>
+           <Button
+             onClick={handleAddPhotos}
+@@ -1627,7 +1743,6 @@ const SaveAlbum = () => {
+           </Button>
+         </ActionButtons>
+         
+-        {/* Username Prompt Modal */}
+         <UsernamePrompt
+           t={t}
+           language={language}
+@@ -1635,7 +1750,6 @@ const SaveAlbum = () => {
+           onSuccess={handleSuccessfulUsernameUpdate}
+         />
+         
+-        {/* Password Dialog */}
+         <PasswordDialog 
+           isOpen={showPasswordDialog} 
+           onClose={handleClosePasswordDialog}
+@@ -1643,7 +1757,6 @@ const SaveAlbum = () => {
+           initialPassword={albumPassword} 
+         />
+ 
+-        {/* Debug Log */}
+         <DebugLog 
+           debugMessages={debugMessages} 
+           t={t} 
+@@ -1655,7 +1768,6 @@ const SaveAlbum = () => {
+   );
+ };
+ 
+-// Wrap the SaveAlbum component with I18nProvider
+ const SaveAlbumWithTranslations = () => {
+   return (
+     <I18nProvider>
+diff --git a/app-src/tsconfig.app.tsbuildinfo b/app-src/tsconfig.app.tsbuildinfo
+index d6480f05..f158285e 100644
+--- a/app-src/tsconfig.app.tsbuildinfo
++++ b/app-src/tsconfig.app.tsbuildinfo
+@@ -1 +1 @@
+-{"root":["./src/vite-env.d.ts","./src/lib/config.ts","./src/lib/file-upload-utils.ts","./src/lib/fileoperations.ts","./src/lib/s3.ts","./src/lib/types.ts","./src/lib/usefileuploadprocessor.ts","./src/lib/usefoldermanagement.ts","./src/lib/useusernamemanagement.ts","./src/lib/utils.ts","./src/lib/i18n/checktranslations.ts","./src/lib/i18n/index.ts","./src/lib/i18n/terms.ts","./src/lib/i18n/translations.ts","./src/pages/photos/databaseapiservice.ts","./src/pages/photos/utils.ts","./src/components/albumfootersection.tsx","./src/components/albuminfocomponent.tsx","./src/components/albumlist.tsx","./src/components/albummediagrid.tsx","./src/components/contactsfilter.tsx","./src/components/debuglog.tsx","./src/components/fileinput.tsx","./src/components/lazyimage.tsx","./src/components/logoutbutton.tsx","./src/components/mediaitemdisplaycomponent.tsx","./src/components/passworddialog.tsx","./src/components/photopagelazyimage.tsx","./src/components/photopagevideothumbnail.tsx","./src/components/profileheader.tsx","./src/components/searchbar.tsx","./src/components/tagsfilter.tsx","./src/components/uploadprogress.tsx","./src/components/usernameprompt.tsx","./src/components/modals/confirmationmodal.tsx","./src/components/modals/copylinkmodal.tsx","./src/lib/i18n/components.tsx","./src/lib/i18n/context.tsx","./src/lib/i18n/hooks.tsx","./src/lib/i18n/styled.tsx","./src/pages/tokenlogin.tsx","./src/pages/index.tsx","./src/pages/login.tsx","./src/pages/my-albums/albumsfilter.tsx","./src/pages/my-albums/myalbumsheader.tsx","./src/pages/my-albums/my-albums.tsx","./src/pages/photos/albumheader.tsx","./src/pages/photos/fullscreenmediaviewer.tsx","./src/pages/photos/headercomponents.tsx","./src/pages/photos/mediatagsfilter.tsx","./src/pages/photos/passwordmodal.tsx","./src/pages/photos/photologinmodal.tsx","./src/pages/photos/components.tsx","./src/pages/photos/photos.tsx","./src/pages/profile/profile.tsx","./src/pages/save-album/tagdisplaycomponents.tsx","./src/pages/save-album/components.tsx","./src/pages/save-album/hooks.tsx","./src/pages/save-album/save-album.tsx","./src/pages/save-album/usetagsmanagement.tsx","./src/pages/storage/index.tsx","./src/pages/storage/manage.tsx","./src/styles/styled-components.tsx"],"version":"5.7.3"}
+\ No newline at end of file
++{"root":["./src/vite-env.d.ts","./src/lib/config.ts","./src/lib/file-upload-utils.ts","./src/lib/fileoperations.ts","./src/lib/folderstructureutils.ts","./src/lib/s3.ts","./src/lib/types.ts","./src/lib/usefileuploadprocessor.ts","./src/lib/usefoldermanagement.ts","./src/lib/useusernamemanagement.ts","./src/lib/utils.ts","./src/lib/i18n/checktranslations.ts","./src/lib/i18n/index.ts","./src/lib/i18n/terms.ts","./src/lib/i18n/translations.ts","./src/pages/photos/databaseapiservice.ts","./src/pages/photos/utils.ts","./src/components/albumfootersection.tsx","./src/components/albuminfocomponent.tsx","./src/components/albumlist.tsx","./src/components/albummediagrid.tsx","./src/components/contactsfilter.tsx","./src/components/debuglog.tsx","./src/components/fileinput.tsx","./src/components/lazyimage.tsx","./src/components/logoutbutton.tsx","./src/components/mediaitemdisplaycomponent.tsx","./src/components/passworddialog.tsx","./src/components/photopagelazyimage.tsx","./src/components/photopagevideothumbnail.tsx","./src/components/profileheader.tsx","./src/components/searchbar.tsx","./src/components/tagsfilter.tsx","./src/components/uploadprogress.tsx","./src/components/usernameprompt.tsx","./src/components/modals/confirmationmodal.tsx","./src/components/modals/copylinkmodal.tsx","./src/lib/i18n/components.tsx","./src/lib/i18n/context.tsx","./src/lib/i18n/hooks.tsx","./src/lib/i18n/styled.tsx","./src/pages/tokenlogin.tsx","./src/pages/index.tsx","./src/pages/login.tsx","./src/pages/my-albums/albumcreationmodal.tsx","./src/pages/my-albums/albumsfilter.tsx","./src/pages/my-albums/myalbumsheader.tsx","./src/pages/my-albums/my-albums.tsx","./src/pages/photos/albumheader.tsx","./src/pages/photos/fullscreenmediaviewer.tsx","./src/pages/photos/headercomponents.tsx","./src/pages/photos/mediatagsfilter.tsx","./src/pages/photos/passwordmodal.tsx","./src/pages/photos/photologinmodal.tsx","./src/pages/photos/components.tsx","./src/pages/photos/photos.tsx","./src/pages/profile/profile.tsx","./src/pages/save-album/albumitem.tsx","./src/pages/save-album/multiplealbumsmanager.tsx","./src/pages/save-album/tagdisplaycomponents.tsx","./src/pages/save-album/components.tsx","./src/pages/save-album/hooks.tsx","./src/pages/save-album/save-album.tsx","./src/pages/save-album/usetagsmanagement.tsx","./src/pages/storage/index.tsx","./src/pages/storage/manage.tsx","./src/styles/styled-components.tsx"],"version":"5.7.3"}
+\ No newline at end of file

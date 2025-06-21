@@ -1824,3 +1824,42 @@ export const FileCount = styled.div<DirectionalProps>`
   display: flex;
   justify-content: flex-end;
 `;
+
+export const HeaderControlLabel = styled.span`
+  font-size: ${theme.fontSizes.sm}; // 14px to match other header elements
+  color: ${theme.colors.text.secondary}; // Subtle gray like other controls
+  font-weight: 500;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+`;
+
+export const HeaderControlSelect = styled.select`
+  padding: 6px 12px;
+  border-radius: ${theme.borderRadius.medium};
+  border: 1px solid ${theme.colors.borderLight};
+  background-color: ${theme.colors.white};
+  font-size: ${theme.fontSizes.sm}; // 14px to match label
+  cursor: pointer;
+  box-shadow: ${theme.boxShadow.sm};
+  min-width: 60px;
+  transition: all 0.2s ease;
+  color: ${theme.colors.text.primary};
+  
+  &:hover {
+    border-color: ${theme.colors.border};
+    box-shadow: ${theme.boxShadow.md};
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: ${theme.colors.primary};
+    box-shadow: ${theme.boxShadow.focusGlow};
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: ${theme.colors.grayLighter};
+  }
+`;

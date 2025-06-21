@@ -11,7 +11,10 @@ export const LOCAL_STORAGE_KEYS = {
   SELECTED_PHOTOS: 'album_selectedPhotos',
   SUB_ALBUM_DATA: 'sub_album_data',
   LANGUAGE: 'user_language',
-  PUBLIC_USERNAME: 'publicUsername'
+  PUBLIC_USERNAME: 'publicUsername',
+  MULTI_ALBUM_DATA: "multiAlbumData",
+  ALBUM_GROUPS: "albumGroups",
+  ALBUM_CREATION_PREFERENCE: "albumCreationPreference"  
 }
 
 // API Endpoints

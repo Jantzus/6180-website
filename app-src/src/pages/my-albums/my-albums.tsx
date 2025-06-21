@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback, useEffect } from "react";
+import React, { useMemo, useCallback, useEffect, useState, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -6,6 +6,7 @@ import { getLanguageDirection } from "@/lib/i18n";
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 import { redirectTo, generateUrl } from "@/lib/utils";
 import { prewarmCredentials } from "@/lib/s3";
+import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
 // Import components
 import {
@@ -13,19 +14,105 @@ import {
   AppContainer,
 } from "@/styles/styled-components";
 import { MyAlbumsHeader } from "./MyAlbumsHeader";
-import { AlbumsFilter } from "./AlbumsFilter"; // Combined search and filter
+import { AlbumsFilter } from "./AlbumsFilter";
 import { UploadProgress } from "@/components/UploadProgress";
 import { AlbumList } from "@/components/AlbumList";
-import { FileInput } from "@/components/FileInput";
-// import { DebugLog } from "@/components/DebugLog";
 import { LazyImage } from "@/components/LazyImage";
+
+// Import the new components and utilities
+import { AlbumCreationModal, FolderStructure } from "./AlbumCreationModal";
+import { 
+  analyzeFolderStructure, 
+  hasLevel1Subfolders, 
+  createAlbumGroupsFromSelectedPhotos,
+  storeFolderStructureMetadata,
+  getFolderStructureMetadata,
+  clearFolderStructureMetadata,
+  getUserAlbumPreference, 
+  clearUserAlbumPreference,
+  setUserAlbumPreference
+} from "@/lib/folderStructureUtils";
 
 // Import custom hooks and utilities
 import { useFolderManagement } from "@/lib/useFolderManagement";
 
 // Constants
 const FREE_TIER_STORAGE_LIMIT_GB = 10;
-const MAX_PREVIEW_IMAGES = 3; // Limit preview images to reduce bandwidth
+const MAX_PREVIEW_IMAGES = 3;
+
+// FIXED: Single file filtering function with minimal logging
+const isValidMediaFile = (file: File): boolean => {
+  // Filter out system files
+  if (file.name.startsWith('.DS_Store') || 
+      file.name.startsWith('._') || 
+      file.name.startsWith('Thumbs.db') ||
+      file.name.startsWith('.') ||
+      file.name === 'desktop.ini') {
+    return false;
+  }
+  
+  // Check if it's a valid media file
+  const validTypes = /\.(jpg|jpeg|png|gif|bmp|webp|svg|mp4|mov|avi|wmv|flv|webm|mkv)$/i;
+  if (!validTypes.test(file.name)) {
+    return false;
+  }
+  
+  // Check file size (avoid 0 byte files)
+  return file.size > 0;
+};
+
+// FIXED: Optimized file filtering with single pass - no redundant calculations
+const filterValidFiles = (files: File[]): { validFiles: File[]; filteredCount: number } => {
+  const validFiles: File[] = [];
+  let filteredCount = 0;
+  
+  for (const file of files) {
+    if (!file || !file.name) {
+      filteredCount++;
+      continue;
+    }
+    
+    if (isValidMediaFile(file)) {
+      validFiles.push(file);
+    } else {
+      filteredCount++;
+    }
+  }
+  
+  return { validFiles, filteredCount };
+};
+
+// Enhanced File Input Component with folder support
+const EnhancedFileInput = React.forwardRef<HTMLInputElement, {
+  onFileSelection: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFolderSelection: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}>(({ onFileSelection, onFolderSelection }, ref) => {
+  return (
+    <div style={{ display: 'none' }}>
+      <input
+        ref={ref}
+        id="file-input"
+        type="file"
+        accept="image/*,video/*"
+        multiple
+        onChange={onFileSelection}
+        style={{ display: 'none' }}
+      />
+      
+      <input
+        id="folder-input"
+        type="file"
+        accept="image/*,video/*"
+        multiple
+        {...({ webkitdirectory: "" } as any)}
+        onChange={onFolderSelection}
+        style={{ display: 'none' }}
+      />
+    </div>
+  );
+});
+
+EnhancedFileInput.displayName = 'EnhancedFileInput';
 
 // Elegant App Promotion Component - Consistent with Brand
 const AppDownloadPromotion = React.memo(({ 
@@ -164,7 +251,6 @@ const formatGB = (gb: number): string => {
 
 // Memoized helper function to get albums that should be marked for deletion
 const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedBytesUsed: number): any[] => {
-  // Return empty array if subscriptionInfo is not loaded yet
   if (!subscriptionInfo) {
     return [];
   }
@@ -174,16 +260,13 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
   let albumsToDelete: any[] = [];
   
   if (intNumberOfSubscriptions === 0) {
-    // Free tier
-    const storageLimit = FREE_TIER_STORAGE_LIMIT_GB * 1024 * 1024 * 1024; // Convert to bytes
+    const storageLimit = FREE_TIER_STORAGE_LIMIT_GB * 1024 * 1024 * 1024;
     
-    // Check if over album count limit (5 albums)
     if (folders.length > 5) {
-      // Sort by creation date (oldest first) and take the excess albums
       const sortedByOldest = [...folders].sort((a, b) => {
         const dateA = new Date(a.createdAt || 0).getTime();
         const dateB = new Date(b.createdAt || 0).getTime();
-        return dateA - dateB; // Oldest first
+        return dateA - dateB;
       });
       
       const excessAlbums = folders.length - 5;
@@ -191,14 +274,11 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
       albumsToDelete = [...albumsForCountDeletion];
     }
     
-    // Check if over storage limit
     if (calculatedBytesUsed > storageLimit) {
-      // Calculate which albums to delete to get under the storage limit
-      // Sort by oldest first, then calculate cumulative storage to remove
       const sortedByOldest = [...folders].sort((a, b) => {
         const dateA = new Date(a.createdAt || 0).getTime();
         const dateB = new Date(b.createdAt || 0).getTime();
-        return dateA - dateB; // Oldest first
+        return dateA - dateB;
       });
       
       let bytesToRemove = calculatedBytesUsed - storageLimit;
@@ -207,7 +287,6 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
       for (const folder of sortedByOldest) {
         if (bytesToRemove <= 0) break;
         
-        // Calculate total bytes for this album
         const albumBytes = folder.files.reduce((total: number, file: any) => {
           return total + (file.dataInBytes || 0);
         }, 0);
@@ -216,8 +295,6 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
         bytesToRemove -= albumBytes;
       }
       
-      // Merge with albums already marked for deletion due to count limit
-      // Use a Set to avoid duplicates
       const markedIds = new Set(albumsToDelete.map(album => album.folderId));
       for (const album of albumsForStorageDeletion) {
         if (!markedIds.has(album.folderId)) {
@@ -226,15 +303,13 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
       }
     }
   } else {
-    // Paid tier - only storage limit applies
-    const totalStorageBytes = intNumberOfSubscriptions * 10 * 1024 * 1024 * 1024; // Convert GB to bytes
+    const totalStorageBytes = intNumberOfSubscriptions * 10 * 1024 * 1024 * 1024;
     
     if (calculatedBytesUsed > totalStorageBytes) {
-      // Calculate which albums to delete to get under the storage limit
       const sortedByOldest = [...folders].sort((a, b) => {
         const dateA = new Date(a.createdAt || 0).getTime();
         const dateB = new Date(b.createdAt || 0).getTime();
-        return dateA - dateB; // Oldest first
+        return dateA - dateB;
       });
       
       let bytesToRemove = calculatedBytesUsed - totalStorageBytes;
@@ -242,7 +317,6 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
       for (const folder of sortedByOldest) {
         if (bytesToRemove <= 0) break;
         
-        // Calculate total bytes for this album
         const albumBytes = folder.files.reduce((total: number, file: any) => {
           return total + (file.dataInBytes || 0);
         }, 0);
@@ -286,7 +360,6 @@ const AlbumDeletionPreview = React.memo(({
             opacity: '0.85'
           }}>
 
-            {/* Album header */}
             <div style={{ 
               marginTop: '30px',
               marginBottom: '16px',
@@ -326,7 +399,6 @@ const AlbumDeletionPreview = React.memo(({
               </div>
             </div>
 
-            {/* Album description */}
             {folder.folderDescription && folder.folderDescription.length > 1 && (
               <div style={{
                 fontSize: '14px',
@@ -339,7 +411,6 @@ const AlbumDeletionPreview = React.memo(({
               </div>
             )}
 
-            {/* LIMITED Photo gallery preview - ONLY show first few images */}
             <div style={{ width: '100%', position: 'relative' }}>
               <div style={{
                 display: 'flex',
@@ -352,7 +423,6 @@ const AlbumDeletionPreview = React.memo(({
                 maxWidth: '100%',
                 flexDirection: isRTL ? "row-reverse" : "row"
               }}>
-                {/* BANDWIDTH FIX: Only show first MAX_PREVIEW_IMAGES files */}
                 {folder.files.slice(0, MAX_PREVIEW_IMAGES).map((file: any, i: number) => (
                   <div key={i} style={{
                     width: '160px',
@@ -364,7 +434,6 @@ const AlbumDeletionPreview = React.memo(({
                     border: '2px solid #dc3545'
                   }}>
                     <LazyImage
-                      // BANDWIDTH FIX: Only pass necessary props, avoid redundant src
                       thumbnailDataKey={file.thumbnailDataKey}
                       dataKey={file.dataKey}
                       alt={t('Thumbnail')}
@@ -374,7 +443,6 @@ const AlbumDeletionPreview = React.memo(({
                         objectFit: 'cover'
                       }}
                     />
-                    {/* Overlay to show "will be deleted" effect */}
                     <div style={{
                       position: 'absolute',
                       top: '0',
@@ -393,7 +461,6 @@ const AlbumDeletionPreview = React.memo(({
                   </div>
                 ))}
                 
-                {/* Show indicator if there are more files */}
                 {folder.files.length > MAX_PREVIEW_IMAGES && (
                   <div style={{
                     width: '160px',
@@ -415,7 +482,6 @@ const AlbumDeletionPreview = React.memo(({
                 )}
               </div>
               
-              {/* Gradient overlay for scrolling indication */}
               {folder.files.length > 2 && (
                 <div style={{
                   position: 'absolute',
@@ -453,7 +519,6 @@ const StorageMessage = React.memo(({
   t: (key: string) => string; 
   isRTL: boolean; 
 }) => {
-  // Don't show anything if subscription info is not loaded yet
   if (!subscriptionInfo) {
     return null;
   }
@@ -461,45 +526,33 @@ const StorageMessage = React.memo(({
   const { intNumberOfSubscriptions } = subscriptionInfo;
   const usedGB = bytesToGB(calculatedBytesUsed);
   
-  // MEMOIZED: Get albums that should be marked for deletion
   const albumsToDelete = useMemo(() => 
     getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed),
     [folders, subscriptionInfo, calculatedBytesUsed]
   );
   
-  // Determine which message to show based on conditions
   let messageType: 'free-space' | 'free-count-exceeded' | 'free-storage-exceeded' | 'free-both-exceeded' | 'paid-warning' | 'paid-exceeded' | 'none' = 'none';
   let message = '';
   
   if (intNumberOfSubscriptions === 0) {
-    // Free tier logic
     const storageLimit = FREE_TIER_STORAGE_LIMIT_GB;
     const isOverAlbumCount = albumCount > 5;
     const isOverStorage = usedGB > storageLimit;
     
     if (!isOverAlbumCount && !isOverStorage) {
-      // Within limits - show helpful info
       messageType = 'free-space';
       message = t(`You can save 5 albums that total a maximum of {FREE_TIER_STORAGE_LIMIT_GB} GB for free. Delete unused albums to make space.`).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
     } else if (isOverAlbumCount && isOverStorage) {
-      // Over both limits
       messageType = 'free-both-exceeded';
       message = t(`You have over 5 albums AND your files occupy {formatGB(usedGB)} space (limit: {FREE_TIER_STORAGE_LIMIT_GB} GB). These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
     } else if (isOverAlbumCount) {
-      // Over album count only
       messageType = 'free-count-exceeded';
       message = t(`You have {albumCount} albums but can only save 5 for free. These oldest albums are being automatically deleted unless you decide to delete other albums:`).replace('{albumCount}', albumCount.toString());
     } else if (isOverStorage) {
-      // Over storage only
-      messageType = 'free-storage-exceeded';
-      message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
-    } else if (isOverStorage) {
-      // Over storage only
       messageType = 'free-storage-exceeded';
       message = t(`Your files occupy {formatGB(usedGB)} space, but you only have {FREE_TIER_STORAGE_LIMIT_GB} GB storage. These albums are being automatically deleted unless you decide to delete other albums:`).replace('{formatGB(usedGB)}', formatGB(usedGB)).replace('{FREE_TIER_STORAGE_LIMIT_GB}', storageLimit.toString());
     }
   } else {
-    // Paid tier logic
     const totalStorageGB = intNumberOfSubscriptions * 10;
     const remainingGB = totalStorageGB - usedGB;
     
@@ -516,7 +569,6 @@ const StorageMessage = React.memo(({
     return null;
   }
   
-  // Determine if this is an "exceeded" state that shows album deletion preview
   const showDeletionPreview = ['free-count-exceeded', 'free-storage-exceeded', 'free-both-exceeded', 'paid-exceeded'].includes(messageType);
   
   return (
@@ -533,7 +585,6 @@ const StorageMessage = React.memo(({
     }}>
       {message}
       
-      {/* Show visual album preview for albums marked for deletion */}
       {showDeletionPreview && albumsToDelete.length > 0 && (
         <AlbumDeletionPreview 
           albumsToDelete={albumsToDelete}
@@ -541,7 +592,6 @@ const StorageMessage = React.memo(({
         />
       )}
       
-      {/* Consistent upgrade link for all message types */}
       <div style={{ marginTop: '12px' }}>
         <a 
           href={generateUrl("storage/manage.html")}
@@ -566,11 +616,17 @@ const StorageMessage = React.memo(({
 });
 
 const MyAlbums = () => {
-  // Get translation function from the hook for the main component
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
-  // Use the folder management hook
+  // State for folder structure detection and modal
+  const [showAlbumModal, setShowAlbumModal] = useState(false);
+  const [detectedFolderStructure, setDetectedFolderStructure] = useState<FolderStructure | null>(null);
+  const [pendingFiles, setPendingFiles] = useState<File[]>([]);
+  
+  // Add ref for folder input
+  const folderInputRef = useRef<HTMLInputElement>(null);
+  
   const { 
     folders,
     filteredFolders,
@@ -586,52 +642,81 @@ const MyAlbums = () => {
     setFolders,
     subscriptionInfo,
     calculatedBytesUsed
-  } = useFolderManagement((message: string) => log(message));
+  } = useFolderManagement((message: string) => {
+    // FIXED: Minimal logging only for critical errors
+    if (message.includes('Error') || message.includes('Failed')) {
+      console.error(message);
+    }
+  });
   
-  // FIXED: Directly integrate the file upload processor hook with proper navigation
+  // FIXED: File upload processor with minimal logging
   const fileUploadProcessor = useFileUploadProcessor(
-    // Custom navigation callback for the album upload flow
     (folderId) => {
-      log(`🚀 Navigation callback triggered with folderId: ${folderId}`);
+      // Check if we have folder structure metadata for multi-album processing
+      const metadata = getFolderStructureMetadata();
+      if (metadata) {
+        const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+        if (storedPhotos) {
+          try {
+            const selectedPhotos = JSON.parse(storedPhotos);
+            const albumGroups = createAlbumGroupsFromSelectedPhotos(selectedPhotos);
+            
+            if (albumGroups.length > 1) {
+              const multiAlbumData = albumGroups.map(group => ({
+                name: group.name,
+                selectedPhotos: group.selectedPhotos,
+                folderPath: group.folderPath
+              }));
+              
+              localStorage.setItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA, JSON.stringify(multiAlbumData));
+              clearFolderStructureMetadata();
+              redirectTo("save-album.html?mode=multiple");
+              return;
+            } else {
+              clearFolderStructureMetadata();
+            }
+          } catch (error) {
+            console.error('Error processing multi-album data:', error);
+            clearFolderStructureMetadata();
+          }
+        } else {
+          clearFolderStructureMetadata();
+        }
+      }
+      
+      // Normal single album navigation
       if (folderId) {
         const targetUrl = `save-album.html?folderId=${encodeURIComponent(folderId)}`;
-        log(`🎯 Redirecting to: ${targetUrl}`);
         redirectTo(targetUrl);
       } else {
-        log(`🎯 Redirecting to: save-album.html`);
         redirectTo("save-album.html");
       }
     },
-    // FIXED: Explicitly set disableAutoNavigation to false to ensure navigation works
-    false // This ensures auto-navigation is enabled for my-albums page
+    false
   );
   
-  // Destructure the file upload processor for easier access
   const {
     fileInputRef,
     isUploading,
     isProcessingFiles,
     progressTracker,
-    // debugMessages,
     setSelectedPhotos,
-    log
   } = fileUploadProcessor;
 
-  // Prewarm S3 credentials when the page loads for extra reliability
+  // Prewarm S3 credentials when the page loads
   useEffect(() => {
     const warmUpPageCredentials = async () => {
       try {
         await prewarmCredentials();
-        log("🔥 Page-level S3 credentials prewarmed successfully");
       } catch (error) {
-        log(`⚠️ Page-level credential prewarming failed: ${String(error)}`);
+        console.warn("Credential prewarming failed:", error);
       }
     };
     
     warmUpPageCredentials();
-  }, []); // Empty dependency array - run once when page loads
+  }, []);
   
-  // MEMOIZED: Get albums that should be marked for deletion (only if subscriptionInfo is loaded)
+  // MEMOIZED: Get albums that should be marked for deletion
   const albumsToDelete = useMemo(() => 
     subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed) : [],
     [folders, subscriptionInfo, calculatedBytesUsed]
@@ -642,34 +727,193 @@ const MyAlbums = () => {
     [albumsToDelete]
   );
   
-  // MEMOIZED: Filter out albums marked for deletion from the main list
   const displayFolders = useMemo(() =>
     filteredFolders.filter(folder => !albumsToDeleteIds.has(folder.folderId)),
     [filteredFolders, albumsToDeleteIds]
   );
 
-  // FIXED: Specialized open file picker for album upload with better logging
-  const openFilePicker = useCallback((folderId: string | null = null) => {
-    log(`📂 openFilePicker called with folderId: ${folderId}`);
-    
-    // Clear selected photos when starting a new album or adding to existing
-    setSelectedPhotos([]);
-    log(`🧹 Cleared existing selected photos`);
-
-    // Use the shared file picker
-    fileUploadProcessor.openFilePicker(folderId);
-    log(`🎬 File picker opened for ${folderId ? 'existing album' : 'new album'}`);
-  }, [fileUploadProcessor, setSelectedPhotos, log]);
-
-  // MEMOIZED: Specialized file selection handler that passes the cognitoUsername
+  // FIXED: Enhanced file selection with single-pass filtering and minimal logging
   const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
-    log(`📁 File selection started with cognitoUsername: ${cognitoUsername}`);
-    const result = await fileUploadProcessor.handleFileSelection(e, cognitoUsername);
-    log(`📁 File selection completed with result: ${result}`);
-    return result;
-  }, [fileUploadProcessor, cognitoUsername, log]);
+    const files = Array.from(e.target.files || []);
+    if (!files.length) {
+      return false;
+    }
 
-  // Check if we should show the combined search and filter - now includes search query
+    // FIXED: Single-pass file filtering - no redundant calculations
+    const { validFiles, filteredCount } = filterValidFiles(files);
+
+    if (validFiles.length === 0) {
+      alert("No valid image or video files were selected. Please select media files.");
+      return false;
+    }
+
+    // FIXED: Minimal logging - only report if files were filtered
+    if (filteredCount > 0) {
+      console.log(`Filtered out ${filteredCount} invalid/system files`);
+    }
+    
+    // Continue with folder structure analysis using filtered files
+    const folderStructure = analyzeFolderStructure(validFiles);
+    
+    // Check if we have meaningful subfolders
+    if (folderStructure && hasLevel1Subfolders(folderStructure)) {
+      const userPreference = getUserAlbumPreference();
+      
+      if (userPreference) {
+        // Store metadata and proceed with normal upload
+        storeFolderStructureMetadata(folderStructure, userPreference, validFiles);
+        
+        // Create synthetic event with filtered files
+        const dt = new DataTransfer();
+        validFiles.forEach(file => dt.items.add(file));
+        
+        const syntheticEvent = { ...e, target: { ...e.target, files: dt.files } };
+        
+        // Proceed with normal file upload flow
+        try {
+          await fileUploadProcessor.handleFileSelection(syntheticEvent as any, cognitoUsername);
+        } catch (error) {
+          console.error("Error in file upload:", error);
+          clearFolderStructureMetadata();
+        }
+      } else {
+        // Show modal for user choice
+        setDetectedFolderStructure(folderStructure);
+        setPendingFiles(validFiles);
+        setShowAlbumModal(true);
+      }
+    } else {
+      // Create synthetic event with filtered files for single album
+      const dt = new DataTransfer();
+      validFiles.forEach(file => dt.items.add(file));
+      
+      const syntheticEvent = { ...e, target: { ...e.target, files: dt.files } };
+      
+      // Proceed with normal single album flow
+      try {
+        await fileUploadProcessor.handleFileSelection(syntheticEvent as any, cognitoUsername);
+      } catch (error) {
+        console.error("Error in single album file selection:", error);
+      }
+    }
+    
+    return true;
+  }, [fileUploadProcessor, cognitoUsername]);
+
+  // Album creation choice handler
+  const handleAlbumCreationChoice = useCallback((choice: 'separate' | 'combined', files: File[], folderStructure: FolderStructure) => {
+    // Store user preference for this session
+    setUserAlbumPreference(choice);
+    
+    // Store folder structure metadata in sessionStorage
+    storeFolderStructureMetadata(folderStructure, choice, files);
+    
+    // Close modal and reset state
+    setShowAlbumModal(false);
+    setDetectedFolderStructure(null);
+    setPendingFiles([]);
+    
+    // Create a synthetic event and proceed with normal upload flow
+    const fileInput = fileInputRef.current;
+    if (fileInput) {
+      try {
+        // Clear the current files and add new ones
+        const dt = new DataTransfer();
+        files.forEach(file => {
+          if (file && file.name) {
+            dt.items.add(file);
+          }
+        });
+        fileInput.files = dt.files;
+        
+        // Create synthetic event
+        const syntheticEvent = new Event('change', { bubbles: true });
+        Object.defineProperty(syntheticEvent, 'target', {
+          writable: false,
+          value: fileInput
+        });
+        
+        fileUploadProcessor.handleFileSelection(syntheticEvent as any, cognitoUsername);
+      } catch (error) {
+        console.error("Error in album creation flow:", error);
+        clearFolderStructureMetadata();
+      }
+    } else {
+      console.error("File input ref not available");
+      clearFolderStructureMetadata();
+    }
+  }, [fileUploadProcessor, cognitoUsername, fileInputRef]);
+
+  // Handle folder selection (same logic as file selection)
+  const handleFolderSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
+    return handleFileSelection(e);
+  }, [handleFileSelection]);
+
+  // Handle modal cancel
+  const handleModalCancel = useCallback(() => {
+    setShowAlbumModal(false);
+    setDetectedFolderStructure(null);
+    setPendingFiles([]);
+    
+    // Clear both file inputs
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+    if (folderInputRef.current) {
+      folderInputRef.current.value = "";
+    }
+    
+    // Clear any stored preference and metadata
+    clearUserAlbumPreference();
+    clearFolderStructureMetadata();
+  }, [fileInputRef]);
+
+  // Open file picker with cleanup and support for both files and folders
+  const openFilePicker = useCallback((folderId: string | null = null, mode: 'files' | 'folder' = 'files') => {
+    try {
+      // Clear any previous album groups and metadata
+      clearUserAlbumPreference();
+      clearFolderStructureMetadata();
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
+      
+      // Clear selected photos when starting a new album or adding to existing
+      setSelectedPhotos([]);
+
+      // Use the appropriate file input based on mode
+      if (mode === 'folder') {
+        if (folderInputRef.current) {
+          folderInputRef.current.click();
+        } else {
+          throw new Error("Folder picker not available");
+        }
+      } else {
+        // Use the shared file picker for individual files
+        fileUploadProcessor.openFilePicker(folderId);
+      }
+    } catch (error) {
+      console.error("Error opening file picker:", error);
+      alert("Sorry, there was an error opening the file picker. Please try again.");
+    }
+  }, [fileUploadProcessor, setSelectedPhotos]);
+
+  // Add handlers for the enhanced upload buttons
+  const handleSelectFiles = useCallback(() => {
+    try {
+      openFilePicker(null, 'files');
+    } catch (error) {
+      console.error("Error selecting files:", error);
+    }
+  }, [openFilePicker]);
+
+  const handleSelectFolder = useCallback(() => {
+    try {
+      openFilePicker(null, 'folder');
+    } catch (error) {
+      console.error("Error selecting folder:", error);
+    }
+  }, [openFilePicker]);
+
+  // Check if we should show the combined search and filter
   const shouldShowSearchAndFilter = searchQuery.length > 0 || folders.some(folder => 
     (folder.contacts && Object.keys(folder.contacts).length > 0) || 
     folder.files.some(file => file.selectedTags && file.selectedTags.length > 0)
@@ -679,15 +923,16 @@ const MyAlbums = () => {
     <>
       <GlobalStyle />
       <AppContainer $isRTL={isRTL}>
-        {/* Premium Header with integrated New Album button */}
         <MyAlbumsHeader
           publicUsername={publicUsername}
           subscriptionInfo={subscriptionInfo}
           calculatedBytesUsed={calculatedBytesUsed}
-          onNewAlbum={() => openFilePicker(null)}
+          onNewAlbum={() => openFilePicker(null, 'files')}
+          onSelectFiles={handleSelectFiles}
+          onSelectFolder={handleSelectFolder}
         />
 
-        {/* Upload progress - show when files are being processed */}
+        {/* Upload progress */}
         {(isUploading || isProcessingFiles) && (
           <div style={{ width: '100%', marginBottom: '20px' }}>
             <UploadProgress 
@@ -696,14 +941,14 @@ const MyAlbums = () => {
               isProcessingFiles={isProcessingFiles}
               isRTL={getLanguageDirection(language) === "rtl"}
               style={{ marginTop: '20px' }}
-              context="uploading" // This keeps the traditional "Upload progress" text
+              context="uploading"
               showSuccessMessage={true}
               showErrorMessage={true}
             />
           </div>
         )}
 
-        {/* Dynamic storage limit message - only show if more than 3 albums */}
+        {/* Storage limit message */}
         {folders.length > 3 && (
           <StorageMessage 
             subscriptionInfo={subscriptionInfo}
@@ -715,12 +960,12 @@ const MyAlbums = () => {
           />
         )}
         
-        {/* Enhanced App promotion message for users with few albums */}
+        {/* App promotion for users with few albums */}
         {folders.length <= 3 && (
           <AppDownloadPromotion t={t} isRTL={isRTL} />
         )}
 
-        {/* Enhanced Combined Search and Filter - always show if there's content or search query */}
+        {/* Search and filter */}
         {shouldShowSearchAndFilter && (
           <AlbumsFilter
             folders={folders}
@@ -737,25 +982,37 @@ const MyAlbums = () => {
           folders={displayFolders}
           setFolders={setFolders}
           handleDeleteClick={(folderPositionId: string) => handleDeleteClick(folderPositionId, t)}
-          openFilePicker={openFilePicker}
+          openFilePicker={(folderId: string | null | undefined) => openFilePicker(folderId, 'files')}
           isUploading={isUploading}
           cognitoUsername={cognitoUsername}
           isProfileView={false}
         />
         
-        {/* Use the refactored FileInput component */}
-        <FileInput 
-          onFileSelection={handleFileSelection} 
+        {/* Enhanced File Input with both file and folder support */}
+        <EnhancedFileInput 
           ref={fileInputRef}
+          onFileSelection={handleFileSelection}
+          onFolderSelection={handleFolderSelection}
+        />
+        
+        {/* Hidden folder input */}
+        <input
+          ref={folderInputRef}
+          type="file"
+          accept="image/*,video/*"
+          multiple
+          webkitdirectory=""
+          onChange={handleFolderSelection}
+          style={{ display: 'none' }}
         />
 
-        {/* Uncomment for debugging:
-        <DebugLog 
-          debugMessages={debugMessages}
-          t={t}
-          isRTL={isRTL}
-          textDirection={isRTL ? "rtl" : "ltr"}
-        /> */}
+        {/* Album Creation Modal */}
+        <AlbumCreationModal
+          isOpen={showAlbumModal}
+          folderStructure={detectedFolderStructure}
+          onChoice={(choice) => handleAlbumCreationChoice(choice, pendingFiles, detectedFolderStructure!)}
+          onCancel={handleModalCancel}
+        />
       </AppContainer>
     </>
   )

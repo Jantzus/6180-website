@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { 
   SelectedPhoto,
 } from "@/lib/types";
@@ -8,7 +8,6 @@ import {
   ProgressBarBg,
   ProgressBar,
   ProgressText,
-  PhotoGrid,
   PhotoCard,
   StatusIndicator,
   MediaPreview,
@@ -32,6 +31,49 @@ interface AppliedTag {
   subtags: { tagTitle: string; subtagTitle: string; }[];
 }
 
+// FIXED: CSS classes instead of JavaScript object creation on every render
+const PHOTO_GRID_STYLES = {
+  traditional: {
+    padding: '20px',
+    border: '2px dashed #007bff',
+    borderRadius: '12px',
+    backgroundColor: '#fff',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
+  },
+  horizontal: {
+    display: 'flex',
+    overflowX: 'auto',
+    gap: '16px',
+    padding: '20px',
+    border: '2px dashed #007bff',
+    borderRadius: '12px',
+    backgroundColor: '#fff',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+    scrollbarWidth: 'thin',
+    scrollbarColor: '#007bff #f8f9fa',
+    scrollBehavior: 'smooth',
+    WebkitOverflowScrolling: 'touch'
+  }
+} as const;
+
+// FIXED: Memoized style objects to prevent recreation on every render
+const PHOTO_CONTAINER_STYLES = {
+  traditional: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    gap: '8px',
+    minWidth: '0'
+  },
+  horizontal: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    gap: '8px',
+    minWidth: '180px',
+    maxWidth: '180px',
+    flexShrink: 0
+  }
+} as const;
+
 // ========== PHOTO HANDLING COMPONENT ==========
 export interface PhotoHandlerProps {
   selectedPhotos: SelectedPhoto[];
@@ -41,244 +83,166 @@ export interface PhotoHandlerProps {
   onTogglePhotoSelection: (index: number) => void;
   onSelectAllPhotos: () => void;
   onDeselectAllPhotos: () => void;
-  hideHeader?: boolean; // Optional prop to hide the header instruction
-  photoTagsMap: Map<number, AppliedTag[]>; // NEW: Photo tags map to show applied tags
-  columns?: string; // NEW: Optional columns prop for grid layout
+  hideHeader?: boolean;
+  photoTagsMap: Map<number, AppliedTag[]>;
+  columns?: string;
+  isMultipleAlbumMode?: boolean;
 }
 
-export const PhotoHandler: React.FC<PhotoHandlerProps> = ({ 
+export const PhotoHandler: React.FC<PhotoHandlerProps> = React.memo(({ 
   selectedPhotos, 
   selectedPhotoIndices,
   isSavingAlbum, 
   onRemovePhoto,
   onTogglePhotoSelection,
-  onSelectAllPhotos,
-  onDeselectAllPhotos,
-  hideHeader = false, // Default to false for backward compatibility
-  photoTagsMap, // NEW: Photo tags map
-  columns = "1" // NEW: Default to 1 column if not provided
+  photoTagsMap,
+  columns = "1",
+  isMultipleAlbumMode = false
 }) => {
   const { t } = useTranslation();
+
+  // FIXED: Corrected grid layout calculation with proper column updates
+  const gridLayout = useMemo(() => {
+    // For multiple album mode, we only want horizontal layout if explicitly set to "horizontal"
+    // Otherwise, always use grid layout with specified columns
+    if (isMultipleAlbumMode && columns === "horizontal") {
+      return PHOTO_GRID_STYLES.horizontal;
+    }
+    
+    // Parse the column number and create grid layout
+    const numColumns = parseInt(columns, 10);
+    const validColumns = isNaN(numColumns) || numColumns < 1 ? 1 : Math.min(numColumns, 5);
+    
+    return {
+      ...PHOTO_GRID_STYLES.traditional,
+      display: 'grid',
+      gridTemplateColumns: `repeat(${validColumns}, 1fr)`,
+      gap: '16px'
+    };
+  }, [isMultipleAlbumMode, columns]);
+
+  // FIXED: Memoized container style calculation  
+  const containerStyle = useMemo(() => {
+    return isMultipleAlbumMode && columns === "horizontal" 
+      ? PHOTO_CONTAINER_STYLES.horizontal 
+      : PHOTO_CONTAINER_STYLES.traditional;
+  }, [isMultipleAlbumMode, columns]);
+
+  // FIXED: Memoized photo card styles
+  const getPhotoCardClassName = useMemo(() => {
+    return isMultipleAlbumMode && columns === "horizontal" 
+      ? 'photo-card-horizontal' 
+      : 'photo-card-traditional';
+  }, [isMultipleAlbumMode, columns]);
 
   if (selectedPhotos.length === 0) {
     return null;
   }
 
-  const hasSelectedPhotos = selectedPhotoIndices.size > 0;
-  const allPhotosSelected = selectedPhotoIndices.size === selectedPhotos.length;
-
-  // Function to get grid columns based on the columns value
-  const getGridColumns = () => {
-    const numColumns = parseInt(columns, 10);
-    return `repeat(${numColumns}, 1fr)`;
-  };
-
   return (
     <>
-      {/* Photo Selection Controls - Only show if not hidden */}
-      {!hideHeader && (
-        <Card style={{ marginBottom: '16px', border: '2px solid #007bff' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px' }}>
-            <span style={{ fontWeight: 'bold', fontSize: '14px', color: '#007bff' }}>
-              {hasSelectedPhotos 
-                ? t('{{count}} file(s) selected for tagging', { count: selectedPhotoIndices.size })
-                : t('Select files with blue borders for tagging')
-              }
-            </span>
-            <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
-              {!allPhotosSelected && (
-                <button 
-                  onClick={onSelectAllPhotos}
-                  disabled={isSavingAlbum}
-                  style={{
-                    padding: '6px 12px',
-                    border: '1px solid #007bff',
-                    borderRadius: '4px',
-                    background: '#007bff',
-                    color: 'white',
-                    fontSize: '12px',
-                    cursor: 'pointer',
-                    fontWeight: 'bold'
-                  }}
-                >
-                  {t('Select All')}
-                </button>
-              )}
-              {hasSelectedPhotos && (
-                <button 
-                  onClick={onDeselectAllPhotos}
-                  disabled={isSavingAlbum}
-                  style={{
-                    padding: '6px 12px',
-                    border: '1px solid #6c757d',
-                    borderRadius: '4px',
-                    background: 'transparent',
-                    color: '#6c757d',
-                    fontSize: '12px',
-                    cursor: 'pointer'
-                  }}
-                >
-                  {t('Deselect All')}
-                </button>
-              )}
-            </div>
-          </div>
-        </Card>
-      )}
-
-      {/* UPDATED: PhotoGrid with dynamic columns support */}
-      <PhotoGrid style={{
-        display: 'grid',
-        gridTemplateColumns: getGridColumns(),
-        gap: '16px',
-        padding: '20px',
-        border: '2px dashed #007bff',
-        borderRadius: '12px',
-        backgroundColor: '#fff',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
-      }}>
+      <div style={gridLayout} className="photo-grid">
         {selectedPhotos.map((photo, i) => {
           const isSelected = selectedPhotoIndices.has(i);
-          const appliedTags = photoTagsMap.get(i) || []; // Get applied tags for this photo
+          const appliedTags = photoTagsMap.get(i) || [];
           
           return (
-            <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: '0' }}>
+            <div key={i} style={containerStyle}>
               <PhotoCard 
                 data-selected={isSelected ? "true" : "false"}
-                style={{ 
-                  position: 'relative',
-                  cursor: 'pointer'
-                }}
+                className={`${getPhotoCardClassName} ${isSelected ? 'selected' : ''}`}
                 onClick={() => onTogglePhotoSelection(i)}
               >
-              {/* Soft Delete Button - Only show when selected and on hover */}
-              {isSelected && !isSavingAlbum && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (confirm(t('Are you sure you want to remove this photo?'))) {
-                      onRemovePhoto(i);
-                    }
-                  }}
-                  style={{
-                    position: 'absolute',
-                    top: '6px',
-                    right: '6px',
-                    width: '18px',
-                    height: '18px',
-                    borderRadius: '50%',
-                    border: 'none',
-                    backgroundColor: 'rgba(220, 53, 69, 0.8)',
-                    color: 'white',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '12px',
-                    fontWeight: 'bold',
-                    zIndex: 15,
-                    opacity: 1,
-                    transition: 'all 0.2s ease',
-                    transform: 'scale(0.8)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(200, 35, 51, 0.9)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                    e.currentTarget.style.opacity = '1';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(220, 53, 69, 0.8)';
-                    e.currentTarget.style.transform = 'scale(0.8)';
-                    e.currentTarget.style.opacity = '0';
-                  }}
-                  title={t('Remove photo')}
-                >
-                  ×
-                </button>
-              )}
-
-              {/* Status indicator - only show for non-complete status or errors */}
-              {photo.status !== 'complete' && (
-                <StatusIndicator $status={photo.status}>
-                  {photo.status === 'error' ? '✕' :
-                   photo.status === 'uploading' ? '↑' :
-                   photo.status === 'processing' ? '⚙️' : '•'}
-                </StatusIndicator>
-              )}
-
-              {/* Media preview */}
-              <MediaPreview style={{ 
-                opacity: selectedPhotos.length === 1 || !isSelected ? 1 : 0.85,
-                transition: 'opacity 0.2s ease'
-              }}>
-                {photo.type === "video" || photo.type?.startsWith("video") ? (
-                  <VideoItem src={photo.s3PreviewUrl} controls />
-                ) : (
-                  <MediaItem src={photo.s3PreviewUrl} alt={photo.fileName} />
+                {/* Delete Button */}
+                {isSelected && !isSavingAlbum && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (confirm(t('Are you sure you want to remove this photo?'))) {
+                        onRemovePhoto(i);
+                      }
+                    }}
+                    className="photo-delete-button"
+                    title={t('Remove photo')}
+                  >
+                    ×
+                  </button>
                 )}
+
+                {/* Status indicator */}
+                {photo.status !== 'complete' && (
+                  <StatusIndicator $status={photo.status}>
+                    {photo.status === 'error' ? '✕' :
+                     photo.status === 'uploading' ? '↑' :
+                     photo.status === 'processing' ? '⚙️' : '•'}
+                  </StatusIndicator>
+                )}
+
+                {/* Media preview */}
+                <MediaPreview className={`media-preview ${isSelected ? 'selected' : ''}`}>
+                  {photo.type === "video" || photo.type?.startsWith("video") ? (
+                    <VideoItem 
+                      src={photo.s3PreviewUrl} 
+                      controls 
+                      className="media-item"
+                    />
+                  ) : (
+                    <MediaItem 
+                      src={photo.s3PreviewUrl} 
+                      alt={photo.fileName}
+                      className="media-item"
+                    />
+                  )}
+                  
+                  {/* Upload progress bar */}
+                  {(photo.status === 'uploading' || photo.status === 'processing') && (
+                    <ProgressBarBg $bottom="4px" $left="4px" $right="4px" $height="4px">
+                      <UploadProgressBar $progress={photo.progress} $status={photo.status} />
+                    </ProgressBarBg>
+                  )}
+                </MediaPreview>
                 
-                {/* Upload progress bar for in-progress items */}
-                {(photo.status === 'uploading' || photo.status === 'processing') && (
-                  <ProgressBarBg $bottom="4px" $left="4px" $right="4px" $height="4px">
-                    <UploadProgressBar $progress={photo.progress} $status={photo.status} />
-                  </ProgressBarBg>
-                )}
-              </MediaPreview>
-              
-              {/* File info - Back to normal position */}
-              <div style={{
-                position: 'absolute',
-                bottom: '32px', // Leave space for SELECTED indicator
-                left: '8px',
-                right: '8px',
-                background: 'rgba(0, 0, 0, 0.7)',
-                color: 'white',
-                padding: '4px 8px',
-                borderRadius: '4px',
-                fontSize: '11px',
-                textAlign: 'center',
-                backdropFilter: 'blur(4px)'
-              }}>
-                {photo.type?.startsWith("video") ? t('Video') : t('Image')}
-                {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} ${t('MB')}`}
-                {photo.duration && ` • ${photo.duration}${t('s')}`}
-              </div>
+                {/* File info */}
+                <div className="file-info-overlay">
+                  {photo.type?.startsWith("video") ? t('Video') : t('Image')}
+                  {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} ${t('MB')}`}
+                  {photo.duration && ` • ${photo.duration}${t('s')}`}
+                </div>
 
-              {/* Error message if any */}
-              {photo.status === 'error' && photo.errorMessage && (
-                <Message $type="error">
-                  {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
-                </Message>
-              )}
-            </PhotoCard>
-            
-            {/* NEW: Enhanced filename and tags display - Outside the photo card */}
-            <div style={{ minHeight: '60px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <PhotoTagging 
-                photoTags={appliedTags}
-                isSelected={isSelected}
-                onToggleSelection={() => onTogglePhotoSelection(i)}
-                fileName={photo.originalFileName || photo.fileName} // NEW: Pass filename
-                showFileName={true} // NEW: Enable filename display
-              />
+                {/* Selection indicator for horizontal layout */}
+                {isMultipleAlbumMode && columns === "horizontal" && isSelected && (
+                  <div className="selection-indicator">
+                    {t('SELECTED')}
+                  </div>
+                )}
+
+                {/* Error message */}
+                {photo.status === 'error' && photo.errorMessage && (
+                  <Message $type="error">
+                    {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
+                  </Message>
+                )}
+              </PhotoCard>
+              
+              {/* Filename and tags display */}
+              <div className={`photo-info ${isMultipleAlbumMode && columns === "horizontal" ? 'horizontal' : 'traditional'}`}>
+                <PhotoTagging 
+                  photoTags={appliedTags}
+                  isSelected={isSelected}
+                  onToggleSelection={() => onTogglePhotoSelection(i)}
+                  fileName={photo.originalFileName || photo.fileName}
+                  showFileName={true}
+                />
+              </div>
             </div>
-          </div>
           );
         })}
-      </PhotoGrid>
-
-      {/* CSS for hover effect on PhotoCard to show delete button */}
-      <style>
-        {`
-          [data-selected="true"]:hover button {
-            opacity: 1 !important;
-            transform: scale(1) !important;
-          }
-        `}
-      </style>
+      </div>
     </>
   );
-};
+});
+
+PhotoHandler.displayName = 'PhotoHandler';
 
 // ========== SAVING PROGRESS COMPONENT ==========
 export interface SavingProgressComponentProps {
@@ -286,7 +250,10 @@ export interface SavingProgressComponentProps {
   savingProgress: number;
 }
 
-export const SavingProgressComponent: React.FC<SavingProgressComponentProps> = ({ isSavingAlbum, savingProgress }) => {
+export const SavingProgressComponent: React.FC<SavingProgressComponentProps> = React.memo(({ 
+  isSavingAlbum, 
+  savingProgress 
+}) => {
   const { t } = useTranslation();
 
   if (!isSavingAlbum) {
@@ -302,7 +269,9 @@ export const SavingProgressComponent: React.FC<SavingProgressComponentProps> = (
       </ProgressBarBg>
     </Card>
   );
-};
+});
+
+SavingProgressComponent.displayName = 'SavingProgressComponent';
 
 // ========== SIMPLIFIED FOLDER DETAILS COMPONENT ==========
 export interface FolderDetailsComponentProps {
@@ -315,7 +284,7 @@ export interface FolderDetailsComponentProps {
   isSavingAlbum: boolean;
 }
 
-export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = ({
+export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = React.memo(({
   showFolderDetails,
   isCreator,
   folderName,
@@ -361,4 +330,185 @@ export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = ({
       </FormGroup>
     </FolderDetails>
   );
-};
+});
+
+FolderDetailsComponent.displayName = 'FolderDetailsComponent';
+
+// FIXED: CSS styles to replace inline JavaScript objects - improves performance
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement("style");
+  styleSheet.textContent = `
+    .photo-grid {
+      position: relative;
+      /* FIXED: Added transition for smooth column changes */
+      transition: grid-template-columns 0.3s ease;
+    }
+
+    .photo-card-traditional {
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .photo-card-horizontal {
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 180px;
+      height: 180px;
+    }
+
+    .photo-card-horizontal.selected {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo-delete-button {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: none;
+      background-color: rgba(220, 53, 69, 0.9);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      z-index: 15;
+      opacity: 1;
+      transition: all 0.2s ease;
+      transform: scale(0.9);
+      box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+    }
+
+    .photo-delete-button:hover {
+      background-color: rgba(200, 35, 51, 0.95);
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+    }
+
+    .media-preview {
+      transition: opacity 0.2s ease;
+    }
+
+    .media-preview.selected {
+      opacity: 0.85;
+    }
+
+    .media-item {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-card-horizontal .media-item {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .file-info-overlay {
+      position: absolute;
+      bottom: 32px;
+      left: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .selection-indicator {
+      position: absolute;
+      bottom: 4px;
+      left: 4px;
+      right: 4px;
+      background: rgba(0, 123, 255, 0.9);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: bold;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+    }
+
+    .photo-info {
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .photo-info.horizontal {
+      width: 180px;
+    }
+
+    /* Enhanced scrollbar styling for horizontal layout */
+    .photo-grid::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .photo-grid::-webkit-scrollbar-track {
+      background: #f8f9fa;
+      border-radius: 6px;
+      margin: 0 8px;
+    }
+
+    .photo-grid::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #007bff, #0056b3);
+      border-radius: 6px;
+      border: 2px solid #f8f9fa;
+    }
+
+    .photo-grid::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(90deg, #0056b3, #004085);
+    }
+
+    /* Enhanced selection animations for horizontal layout */
+    .photo-card-horizontal.selected {
+      animation: selectedPulse 2s infinite;
+    }
+
+    @keyframes selectedPulse {
+      0%, 100% { 
+        box-shadow: 0 8px 24px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1); 
+      }
+      50% { 
+        box-shadow: 0 12px 32px rgba(0, 123, 255, 0.4), 0 6px 16px rgba(0, 0, 0, 0.15); 
+      }
+    }
+
+    /* Show delete button on hover for selected cards */
+    .photo-card-traditional[data-selected="true"]:hover .photo-delete-button,
+    .photo-card-horizontal[data-selected="true"]:hover .photo-delete-button {
+      opacity: 1;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+    }
+
+    /* FIXED: Add smooth transitions for responsive grid changes */
+    .photo-grid[style*="display: grid"] {
+      transition: all 0.3s ease;
+    }
+
+    .photo-grid[style*="display: grid"] > div {
+      transition: all 0.3s ease;
+    }
+  `;
+  
+  // Only append if not already added
+  if (!document.head.querySelector('#photo-handler-styles')) {
+    styleSheet.id = 'photo-handler-styles';
+    document.head.appendChild(styleSheet);
+  }
+}

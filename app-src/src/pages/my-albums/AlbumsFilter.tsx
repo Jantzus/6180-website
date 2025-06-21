@@ -717,7 +717,7 @@ export const AlbumsFilter: React.FC<AlbumsFilterProps> = ({
                   );
                 })
               ) : hasTags ? (
-                <EmptyState>No tags available</EmptyState>
+                <EmptyState>{t('No tags available')}</EmptyState>
               ) : null}
             </FilterRow>
           </FilterSection>
