@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import React from "react";
 
@@ -59,6 +59,7 @@ import { LazyImage } from "@/components/LazyImage";
 // Import multiple albums components and utilities
 import { MultipleAlbumsManager, AlbumData } from "./MultipleAlbumsManager";
 import { generateUUID as utilGenerateUUID, clearFolderStructureMetadata } from "@/lib/folderStructureUtils";
+import styled from 'styled-components';
 
 // Interface for existing files
 interface ExistingFile {
@@ -84,6 +85,177 @@ interface FileState {
   existingFileTagsMap: Map<number, AppliedTag[]>;
 }
 
+// Styled components for global gear menu
+const GlobalGearButton = styled.button`
+  padding: 8px;
+  border: 1px solid #6c757d;
+  border-radius: 6px;
+  background: transparent;
+  color: #6c757d;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  position: relative;
+
+  &:hover {
+    background: #6c757d;
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+`;
+
+const GlobalGearDropdown = styled.div<{ $isRTL: boolean }>`
+  position: absolute;
+  top: 100%;
+  ${props => props.$isRTL ? 'left: 0;' : 'right: 0;'}
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 300px;
+  padding: 20px;
+  margin-top: 4px;
+`;
+
+const GlobalDropdownSection = styled.div`
+  margin-bottom: 24px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const GlobalDropdownLabel = styled.h4`
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+`;
+
+const GlobalToggleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 8px 0;
+`;
+
+const GlobalToggleLabel = styled.div`
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+`;
+
+const GlobalToggleSwitch = styled.label`
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 26px;
+  
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+    &:checked + span {
+      background-color: #007bff;
+    }
+    
+    &:checked + span:before {
+      transform: translateX(18px);
+    }
+    
+    &:disabled + span {
+      background-color: #e6e6e6;
+      cursor: not-allowed;
+    }
+  }
+`;
+
+const GlobalToggleSlider = styled.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .2s;
+  border-radius: 26px;
+  
+  &:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 2px;
+    top: 2px;
+    background-color: white;
+    transition: .2s;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const GlobalPasswordButton = styled.button<{ $hasAnyPassword: boolean }>`
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid ${props => props.$hasAnyPassword ? '#28a745' : '#dee2e6'};
+  border-radius: 8px;
+  background: ${props => props.$hasAnyPassword ? '#28a745' : '#f8f9fa'};
+  color: ${props => props.$hasAnyPassword ? 'white' : '#6c757d'};
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &:hover {
+    background: ${props => props.$hasAnyPassword ? '#218838' : '#e9ecef'};
+    border-color: ${props => props.$hasAnyPassword ? '#218838' : '#adb5bd'};
+  }
+`;
+
+const ApplyButton = styled.button`
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #007bff;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+
+  &:hover {
+    background: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+`;
+
 // Updated MultipleAlbumMode component in save-album.tsx
 const MultipleAlbumMode: React.FC = () => {
   const { t, language } = useTranslation();
@@ -91,6 +263,16 @@ const MultipleAlbumMode: React.FC = () => {
   
   const [multipleAlbums, setMultipleAlbums] = useState<AlbumData[]>([]);
   const [columns, setColumns] = useState<string>('2');
+  const [showGlobalGear, setShowGlobalGear] = useState(false);
+  const [showPasswordDialog, setShowPasswordDialog] = useState(false);
+  const [currentPasswordAlbumId, setCurrentPasswordAlbumId] = useState<string | null>(null);
+  const [globalSettings, setGlobalSettings] = useState({
+    isOnPublicProfile: false,
+    participantsCanAddItems: true,
+    participantsCanDeleteItems: false,
+    passwordProtectionOption: 'NoPassword' as PasswordPolicyEnum,
+    albumPassword: ''
+  });
 
   // Enhanced logging function
   const enhancedLog = (message: string, data?: any) => {
@@ -170,6 +352,64 @@ const MultipleAlbumMode: React.FC = () => {
     const savedColumnsValue = localStorage.getItem('save-album-columns') || '2';
     setColumns(savedColumnsValue);
   }, []);
+
+  // Handle showing password dialog for individual album
+  const handleShowPasswordDialog = (albumId: string) => {
+    const album = multipleAlbums.find(a => a.id === albumId);
+    if (album) {
+      setCurrentPasswordAlbumId(albumId);
+      setGlobalSettings(prev => ({
+        ...prev,
+        passwordProtectionOption: album.passwordProtectionOption,
+        albumPassword: album.albumPassword
+      }));
+      setShowPasswordDialog(true);
+    }
+  };
+
+  // Handle showing password dialog for global settings
+  const handleGlobalPasswordClick = () => {
+    setCurrentPasswordAlbumId(null); // Indicates global settings
+    setShowPasswordDialog(true);
+  };
+
+  // Handle password dialog close
+  const handleClosePasswordDialog = (option?: PasswordPolicyEnum, password?: string) => {
+    if (option !== undefined && password !== undefined) {
+      if (currentPasswordAlbumId) {
+        // Update specific album
+        setMultipleAlbums(prev => prev.map(album => 
+          album.id === currentPasswordAlbumId 
+            ? { ...album, passwordProtectionOption: option, albumPassword: password }
+            : album
+        ));
+      } else {
+        // Update global settings
+        setGlobalSettings(prev => ({
+          ...prev,
+          passwordProtectionOption: option,
+          albumPassword: password
+        }));
+      }
+    }
+    
+    setShowPasswordDialog(false);
+    setCurrentPasswordAlbumId(null);
+  };
+
+  // Apply global settings to all albums
+  const applyGlobalSettings = () => {
+    setMultipleAlbums(prev => prev.map(album => ({
+      ...album,
+      isOnPublicProfile: globalSettings.isOnPublicProfile,
+      participantsCanAddItems: globalSettings.participantsCanAddItems,
+      participantsCanDeleteItems: globalSettings.participantsCanDeleteItems,
+      passwordProtectionOption: globalSettings.passwordProtectionOption,
+      albumPassword: globalSettings.albumPassword
+    })));
+    setShowGlobalGear(false);
+    enhancedLog('Applied global settings to all albums', globalSettings);
+  };
 
   // Save individual album
   const handleSaveAlbum = async (albumId: string) => {
@@ -274,7 +514,7 @@ const MultipleAlbumMode: React.FC = () => {
           </ProfileLink>
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            {/* FIXED: Global column selector for all albums */}
+            {/* Global column selector */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <HeaderControlLabel>
                 {t('Columns:')}
@@ -290,22 +530,88 @@ const MultipleAlbumMode: React.FC = () => {
                 <option value="4">4</option>
                 <option value="5">5</option>
               </HeaderControlSelect>
-              
-              {hasUnsavedAlbums && !isSavingAny && (
-                <Button
-                  $primary
-                  onClick={handleSaveAllAlbums}
-                  style={{
-                    minWidth: '120px',
-                    fontSize: '14px',
-                    padding: '8px 16px'
-                  }}
-                >
-                  {t('Save {{count}} Albums', { count: multipleAlbums.length })}
-                </Button>
+            </div>
+
+            {/* Global gear menu */}
+            <div style={{ position: 'relative' }}>
+              <GlobalGearButton
+                onClick={() => setShowGlobalGear(!showGlobalGear)}
+                disabled={isSavingAny}
+                title={t('Global Settings for All Albums')}
+              >
+                ⚙️
+              </GlobalGearButton>
+              {showGlobalGear && (
+                <GlobalGearDropdown $isRTL={isRTL}>
+                  <GlobalDropdownSection>
+                    <GlobalDropdownLabel>{t('Apply to All Albums')}</GlobalDropdownLabel>
+                    
+                    <GlobalDropdownSection>
+                      <GlobalToggleContainer>
+                        <GlobalToggleLabel>{t('Public Profile')}</GlobalToggleLabel>
+                        <GlobalToggleSwitch>
+                          <input
+                            type="checkbox"
+                            checked={globalSettings.isOnPublicProfile}
+                            onChange={(e) => setGlobalSettings(prev => ({
+                              ...prev,
+                              isOnPublicProfile: e.target.checked
+                            }))}
+                          />
+                          <GlobalToggleSlider />
+                        </GlobalToggleSwitch>
+                      </GlobalToggleContainer>
+                      
+                      <GlobalToggleContainer>
+                        <GlobalToggleLabel>{t('Participants Can Add Items')}</GlobalToggleLabel>
+                        <GlobalToggleSwitch>
+                          <input
+                            type="checkbox"
+                            checked={globalSettings.participantsCanAddItems}
+                            onChange={(e) => setGlobalSettings(prev => ({
+                              ...prev,
+                              participantsCanAddItems: e.target.checked
+                            }))}
+                          />
+                          <GlobalToggleSlider />
+                        </GlobalToggleSwitch>
+                      </GlobalToggleContainer>
+                      
+                      <GlobalToggleContainer>
+                        <GlobalToggleLabel>{t('Participants Can Delete Items')}</GlobalToggleLabel>
+                        <GlobalToggleSwitch>
+                          <input
+                            type="checkbox"
+                            checked={globalSettings.participantsCanDeleteItems}
+                            onChange={(e) => setGlobalSettings(prev => ({
+                              ...prev,
+                              participantsCanDeleteItems: e.target.checked
+                            }))}
+                          />
+                          <GlobalToggleSlider />
+                        </GlobalToggleSwitch>
+                      </GlobalToggleContainer>
+                    </GlobalDropdownSection>
+
+                    <GlobalDropdownSection>
+                      <GlobalPasswordButton
+                        $hasAnyPassword={globalSettings.passwordProtectionOption !== 'NoPassword' && !!globalSettings.albumPassword}
+                        onClick={handleGlobalPasswordClick}
+                      >
+                        {globalSettings.passwordProtectionOption !== 'NoPassword' && globalSettings.albumPassword ? '🔒' : '🔓'}
+                        {globalSettings.passwordProtectionOption !== 'NoPassword' && globalSettings.albumPassword ? t('Password Set') : t('Set Password for All')}
+                      </GlobalPasswordButton>
+                    </GlobalDropdownSection>
+
+                    <ApplyButton onClick={applyGlobalSettings}>
+                      {t('Apply to All Albums')}
+                    </ApplyButton>
+                  </GlobalDropdownSection>
+                </GlobalGearDropdown>
               )}
             </div>
 
+            {/* Save all albums button */}
             {hasUnsavedAlbums && !isSavingAny && (
               <Button
                 $primary
@@ -330,11 +636,26 @@ const MultipleAlbumMode: React.FC = () => {
           isSavingAny={isSavingAny}
           onSaveAlbum={handleSaveAlbum}
           onRemoveAlbum={handleRemoveAlbum}
+          onShowPasswordDialog={handleShowPasswordDialog}
           columns={columns}
-          setColumns={handleColumnsChange} // FIXED: Pass the handler that saves to localStorage
+          setColumns={handleColumnsChange}
           enhancedLog={enhancedLog}
         />
       </Body>
+
+      {/* Password Dialog */}
+      <PasswordDialog 
+        isOpen={showPasswordDialog} 
+        onClose={handleClosePasswordDialog}
+        initialOption={currentPasswordAlbumId ? 
+          multipleAlbums.find(a => a.id === currentPasswordAlbumId)?.passwordProtectionOption || 'NoPassword' :
+          globalSettings.passwordProtectionOption
+        }
+        initialPassword={currentPasswordAlbumId ?
+          multipleAlbums.find(a => a.id === currentPasswordAlbumId)?.albumPassword || '' :
+          globalSettings.albumPassword
+        }
+      />
     </>
   );
 };
@@ -397,11 +718,29 @@ const SingleAlbumMode: React.FC = () => {
   const [existingFiles, setExistingFiles] = useState<ExistingFile[]>([]);
   const [isLoadingExistingFiles, setIsLoadingExistingFiles] = useState(false);
 
+  // State for single album gear menu
+  const [showSingleGear, setShowSingleGear] = useState(false);
+  const singleGearRef = useRef<HTMLDivElement>(null);
+
   // Enhanced logging function
   const enhancedLog = (message: string, data?: any) => {
     const timestamp = new Date().toISOString();
     console.log(`[${timestamp}] ${message}`, data);
   };
+
+  // Close single gear dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (singleGearRef.current && !singleGearRef.current.contains(event.target as Node)) {
+        setShowSingleGear(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   // Custom navigation function for the useFileUploadProcessor hook
   const navigateAfterUpload = (uploadedFolderId: string | null) => {
@@ -892,7 +1231,7 @@ const SingleAlbumMode: React.FC = () => {
     saveAlbumDirectly();
   };
 
-  // Password management
+  // Handle password dialog close
   const handleClosePasswordDialog = (option?: PasswordPolicyEnum, password?: string) => {
     if (option) {
       setPasswordProtectionOption(option);
@@ -903,6 +1242,24 @@ const SingleAlbumMode: React.FC = () => {
     }
     
     setShowPasswordDialog(false);
+  };
+
+  // Handle single album gear menu password click
+  const handleSingleAlbumPasswordClick = () => {
+    setShowPasswordDialog(true);
+  };
+
+  // Handle single album gear menu toggles
+  const handleToggleSinglePublicProfile = () => {
+    setIsOnPublicProfile(!isOnPublicProfile);
+  };
+
+  const handleToggleSingleParticipantsCanAdd = () => {
+    setParticipantsCanAddItems(!participantsCanAddItems);
+  };
+
+  const handleToggleSingleParticipantsCanDelete = () => {
+    setParticipantsCanDeleteItems(!participantsCanDeleteItems);
   };
 
   // Handle add photos
@@ -926,6 +1283,78 @@ const SingleAlbumMode: React.FC = () => {
           </ProfileLink>
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {/* Single album gear menu */}
+            {showFolderDetails && isCreator === true && (
+              <div ref={singleGearRef} style={{ position: 'relative' }}>
+                <GlobalGearButton
+                  onClick={() => setShowSingleGear(!showSingleGear)}
+                  disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+                  title={t('Album Settings')}
+                >
+                  ⚙️
+                </GlobalGearButton>
+                {showSingleGear && (
+                  <GlobalGearDropdown $isRTL={isRTL}>
+                    <GlobalDropdownSection>
+                      <GlobalDropdownLabel>{t('Album Settings')}</GlobalDropdownLabel>
+                      
+                      <GlobalDropdownSection>
+                        <GlobalToggleContainer>
+                          <GlobalToggleLabel>{t('Public Profile')}</GlobalToggleLabel>
+                          <GlobalToggleSwitch>
+                            <input
+                              type="checkbox"
+                              checked={isOnPublicProfile}
+                              onChange={handleToggleSinglePublicProfile}
+                              disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+                            />
+                            <GlobalToggleSlider />
+                          </GlobalToggleSwitch>
+                        </GlobalToggleContainer>
+                        
+                        <GlobalToggleContainer>
+                          <GlobalToggleLabel>{t('Participants Can Add Items')}</GlobalToggleLabel>
+                          <GlobalToggleSwitch>
+                            <input
+                              type="checkbox"
+                              checked={participantsCanAddItems}
+                              onChange={handleToggleSingleParticipantsCanAdd}
+                              disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+                            />
+                            <GlobalToggleSlider />
+                          </GlobalToggleSwitch>
+                        </GlobalToggleContainer>
+                        
+                        <GlobalToggleContainer>
+                          <GlobalToggleLabel>{t('Participants Can Delete Items')}</GlobalToggleLabel>
+                          <GlobalToggleSwitch>
+                            <input
+                              type="checkbox"
+                              checked={participantsCanDeleteItems}
+                              onChange={handleToggleSingleParticipantsCanDelete}
+                              disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+                            />
+                            <GlobalToggleSlider />
+                          </GlobalToggleSwitch>
+                        </GlobalToggleContainer>
+                      </GlobalDropdownSection>
+
+                      <GlobalDropdownSection>
+                        <GlobalPasswordButton
+                          $hasAnyPassword={passwordProtectionOption !== 'NoPassword' && !!albumPassword}
+                          onClick={handleSingleAlbumPasswordClick}
+                          disabled={isSavingAlbum || isUploading || isLoadingExistingFiles}
+                        >
+                          {passwordProtectionOption !== 'NoPassword' && albumPassword ? '🔒' : '🔓'}
+                          {passwordProtectionOption !== 'NoPassword' && albumPassword ? t('Password Set') : t('Set Password')}
+                        </GlobalPasswordButton>
+                      </GlobalDropdownSection>
+                    </GlobalDropdownSection>
+                  </GlobalGearDropdown>
+                )}
+              </div>
+            )}
+
             <Button
               $primary
               onClick={handleSaveAlbumSingle}

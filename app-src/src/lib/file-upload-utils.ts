@@ -23,11 +23,13 @@ export const createLogger = (setDebugMessages: React.Dispatch<React.SetStateActi
   }
 }
 
-// Update photo status helper
+// SIMPLIFIED: Update photo status helper - remove complex logging that was causing issues
 export const createPhotoStatusUpdater = (
   setSelectedPhotos: React.Dispatch<React.SetStateAction<SelectedPhoto[]>>
 ) => {
   return (index: number, status: UploadStatus, progress: number, errorMessage?: string) => {
+    console.log(`File ${index + 1}: ${status} - ${Math.round(progress * 100)}%`);
+    
     setSelectedPhotos(prev => 
       prev.map((photo, i) => 
         i === index 
@@ -38,7 +40,7 @@ export const createPhotoStatusUpdater = (
   }
 }
 
-// Update progress tracker
+// SIMPLIFIED: Update progress tracker - keep it simple to avoid blocking
 export const updateProgressTracker = (
   selectedPhotos: SelectedPhoto[],
   setProgressTracker: React.Dispatch<React.SetStateAction<ProgressTracker>>
@@ -60,9 +62,9 @@ export const updateProgressTracker = (
   const filesComplete = selectedPhotos.filter(p => p.status === 'complete').length
   const filesWithError = selectedPhotos.filter(p => p.status === 'error').length
   
-  // Calculate overall progress as a percentage
+  // Keep it simple - average progress as percentage
   const totalProgress = selectedPhotos.reduce((sum, photo) => sum + photo.progress, 0)
-  const overallProgress = Math.round((totalProgress / selectedPhotos.length) * 100) / 100
+  const overallProgress = selectedPhotos.length > 0 ? Math.round((totalProgress / selectedPhotos.length) * 100) : 0
 
   setProgressTracker({
     totalFiles: selectedPhotos.length,
@@ -74,14 +76,14 @@ export const updateProgressTracker = (
   })
 }
 
-// Process files for upload - NEW: Preserve original filenames and ensure UUID filename for S3
+// SIMPLIFIED: Process files with better error handling and clearer progress steps
 export const processFilesBeforeUploadingToS3 = async (
   files: File[],
   cognitoUsername: string,
   updatePhotoStatus: (index: number, status: UploadStatus, progress: number, errorMessage?: string) => void,
   log: (message: string) => void
 ): Promise<SelectedPhoto[]> => {
-  log(`📁 Files selected: ${files.length}`)
+  log(`📁 Processing ${files.length} files...`)
   
   if (!cognitoUsername) {
     log("❌ Missing Cognito Username")
@@ -99,11 +101,13 @@ export const processFilesBeforeUploadingToS3 = async (
       const file = files[i]
       
       try {
-        updatePhotoStatus(i, 'uploading', 0.1)
         log(`📝 Processing file ${i + 1}/${files.length}: ${file.name} (${file.type})`)
         
+        // Start processing
+        updatePhotoStatus(i, 'processing', 0.1)
+        
         const type: string = file.type
-        const originalFileName = file.name  // NEW: Preserve original filename
+        const originalFileName = file.name  // Preserve original filename
         
         // Generate UUID filename for S3 storage (to avoid conflicts and ensure uniqueness)
         const fileExt = file.name.split('.').pop() || "jpg"
@@ -128,10 +132,13 @@ export const processFilesBeforeUploadingToS3 = async (
         let arrayBuffer: ArrayBuffer;
         let thumbnailBlob: Blob | null = null;
         let thumbnailSize: number | null = null;
+        let duration: number | null = null;
+        
+        // Update progress
+        updatePhotoStatus(i, 'processing', 0.3)
         
         // For images, create a resized thumbnail version
         if (type.startsWith("image")) {
-          updatePhotoStatus(i, 'processing', 0.2)
           log(`🖼️ Creating resized thumbnail for image...`)
           
           try {
@@ -143,17 +150,33 @@ export const processFilesBeforeUploadingToS3 = async (
               thumbnailSize = thumbnailBlob.size;
               log(`🖼️ Thumbnail generated: ${thumbnailSize} bytes, path: ${thumbnailDataKey}`)
             }
-            updatePhotoStatus(i, 'processing', 0.3)
           } catch (imageErr) {
             log(`⚠️ Image resize error: ${String(imageErr)}`)
             // Continue without thumbnail if resize fails
           }
         }
         
+        // Process video files - extract duration and thumbnail
+        if (type.startsWith("video")) {
+          try {
+            log(`🎬 Processing video metadata...`)
+            duration = Math.round(await getVideoDuration(file))
+            log(`⏱️ Video duration: ${duration} seconds`)
+            
+            log(`🎬 Generating video thumbnail...`)
+            thumbnailBlob = await getVideoThumbnailBlob(file)
+            thumbnailSize = Math.round(thumbnailBlob.size)
+            log(`🎬 Thumbnail generated: ${thumbnailSize} bytes, path: ${thumbnailDataKey}`)
+          } catch (videoErr) {
+            log(`⚠️ Video processing error: ${String(videoErr)}`)
+            // Continue without thumbnail if it fails
+          }
+        }
+        
         // Convert original file to ArrayBuffer for S3 upload
+        updatePhotoStatus(i, 'uploading', 0.5)
         arrayBuffer = await file.arrayBuffer()
         log(`📦 Converted file to ArrayBuffer`)
-        updatePhotoStatus(i, 'uploading', 0.4)
         
         // Upload original file to temp folder
         try {
@@ -165,7 +188,7 @@ export const processFilesBeforeUploadingToS3 = async (
             ContentType: file.type || "application/octet-stream"
           }))
           log(`✅ Upload to ${tempS3Key} successful`)
-          updatePhotoStatus(i, 'uploading', 0.6)
+          updatePhotoStatus(i, 'uploading', 0.8)
         } catch (uploadErr) {
           log(`❌ S3 upload error: ${String(uploadErr)}`)
           updatePhotoStatus(i, 'error', 0, String(uploadErr))
@@ -175,27 +198,6 @@ export const processFilesBeforeUploadingToS3 = async (
         // Create S3 preview URL
         const s3PreviewUrl = `https://${AWS_BUCKET_NAME}.s3.amazonaws.com/${tempS3Key}`
         log(`🔗 Generated S3 preview URL: ${s3PreviewUrl}`)
-        
-        let duration: number | null = null;
-        
-        // Process video files - extract duration and thumbnail
-        if (type.startsWith("video")) {
-          updatePhotoStatus(i, 'processing', 0.7)
-          try {
-            log(`🎬 Processing video metadata...`)
-            duration = Math.round(await getVideoDuration(file))
-            log(`⏱️ Video duration: ${duration} seconds`)
-            
-            log(`🎬 Generating video thumbnail...`)
-            thumbnailBlob = await getVideoThumbnailBlob(file)
-            thumbnailSize = Math.round(thumbnailBlob.size)
-            log(`🎬 Thumbnail generated: ${thumbnailSize} bytes, path: ${thumbnailDataKey}`)
-            updatePhotoStatus(i, 'processing', 0.8)
-          } catch (videoErr) {
-            log(`⚠️ Video processing error: ${String(videoErr)}`)
-            // Continue without thumbnail if it fails
-          }
-        }
         
         // Upload thumbnail if we have one (for both images and videos)
         if (thumbnailBlob) {
@@ -211,7 +213,6 @@ export const processFilesBeforeUploadingToS3 = async (
               ContentType: "image/jpeg"
             }))
             log(`✅ Thumbnail upload successful`)
-            updatePhotoStatus(i, 'processing', 0.9)
           } catch (thumbnailErr) {
             log(`⚠️ Thumbnail upload error: ${String(thumbnailErr)}`)
             // Don't fail the whole upload if just the thumbnail fails
@@ -219,12 +220,12 @@ export const processFilesBeforeUploadingToS3 = async (
         }
 
         // Update the photo status to complete
-        updatePhotoStatus(i, 'complete', 1)
+        updatePhotoStatus(i, 'complete', 1.0)
         
-        // Add processed photo info to our collection - NEW: Include original filename
+        // Add processed photo info to our collection
         processedPhotos.push({
           fileName: uuidFileName,  // UUID filename for S3 storage
-          originalFileName: originalFileName,  // NEW: Original filename from user's system
+          originalFileName: originalFileName,  // Original filename from user's system
           s3PreviewUrl, 
           type,
           size: file.size,
@@ -234,17 +235,31 @@ export const processFilesBeforeUploadingToS3 = async (
           tempKey: tempS3Key,
           tempThumbnailKey,
           status: 'complete',
-          progress: 1
+          progress: 1.0
         })
         
         log(`✅ File ${i + 1} processing complete (original: ${originalFileName}, S3: ${uuidFileName})`)
+        
       } catch (fileErr) {
         log(`❌ Error processing file ${i + 1}: ${String(fileErr)}`)
         updatePhotoStatus(i, 'error', 0, String(fileErr))
+        
+        // Add error photo to maintain index consistency
+        processedPhotos.push({
+          fileName: file.name,
+          originalFileName: file.name,
+          s3PreviewUrl: '',
+          type: file.type,
+          size: file.size,
+          status: 'error',
+          progress: 0,
+          errorMessage: String(fileErr)
+        })
       }
     }
   
     log(`✅ All files processed with original filenames preserved`)
+    log(`✅ Processing complete: ${processedPhotos.filter(p => p.status === 'complete').length}/${files.length} successful`)
     
     return processedPhotos
   } catch (error) {

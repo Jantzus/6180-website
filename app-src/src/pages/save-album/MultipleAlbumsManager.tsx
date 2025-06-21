@@ -1,10 +1,10 @@
-// MultipleAlbumsManager.tsx - Updated to remove individual column controls since we have global control
+// MultipleAlbumsManager.tsx - Updated to support gear menus and password dialogs
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { SelectedPhoto, PasswordPolicyEnum } from "@/lib/types";
-import { AlbumItem } from "./AlbumItem"; // Import the full AlbumItem component
+import { AlbumItem } from "./AlbumItem";
 
 // Interface for applied tags (matching the type used in save-album.tsx)
 interface AppliedTag {
@@ -45,8 +45,9 @@ interface MultipleAlbumsManagerProps {
   isSavingAny: boolean;
   onSaveAlbum: (albumId: string) => void;
   onRemoveAlbum: (albumId: string) => void;
+  onShowPasswordDialog: (albumId: string) => void;
   columns: string;
-  setColumns: (columns: string) => void; // This is passed but not used individually anymore
+  setColumns: (columns: string) => void;
   enhancedLog: (message: string, data?: any) => void;
 }
 
@@ -56,6 +57,7 @@ export const MultipleAlbumsManager: React.FC<MultipleAlbumsManagerProps> = ({
   isSavingAny,
   onSaveAlbum,
   onRemoveAlbum,
+  onShowPasswordDialog,
   columns,
   setColumns,
   enhancedLog
@@ -72,7 +74,7 @@ export const MultipleAlbumsManager: React.FC<MultipleAlbumsManagerProps> = ({
 
   return (
     <div>
-      {/* Albums list - Using imported AlbumItem with simplified functionality */}
+      {/* Albums list */}
       <AlbumsContainer $isRTL={isRTL}>
         {albums.map((album) => (
           <AlbumItem
@@ -81,9 +83,10 @@ export const MultipleAlbumsManager: React.FC<MultipleAlbumsManagerProps> = ({
             onUpdate={(updates) => updateAlbum(album.id, updates)}
             onSave={() => onSaveAlbum(album.id)}
             onRemove={() => onRemoveAlbum(album.id)}
+            onShowPasswordDialog={onShowPasswordDialog}
             disabled={isSavingAny}
-            columns={columns} // Global columns value
-            setColumns={setColumns} // Kept for compatibility but not used individually
+            columns={columns}
+            setColumns={setColumns}
             enhancedLog={enhancedLog}
           />
         ))}

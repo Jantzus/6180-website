@@ -1,5 +1,5 @@
-// AlbumItem.tsx - Updated to remove individual column selectors since we have global control
-import React from 'react';
+// AlbumItem.tsx - Updated to include gear menu for individual album settings
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
@@ -61,6 +61,7 @@ const AlbumActions = styled.div`
   display: flex;
   gap: 8px;
   flex-shrink: 0;
+  align-items: center;
 
   @media (max-width: 768px) {
     justify-content: stretch;
@@ -103,6 +104,150 @@ const ActionButton = styled.button<{ $variant?: 'primary' | 'danger' | 'secondar
 
   @media (max-width: 768px) {
     flex: 1;
+  }
+`;
+
+const GearButton = styled.button`
+  padding: 8px;
+  border: 1px solid #6c757d;
+  border-radius: 6px;
+  background: transparent;
+  color: #6c757d;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  position: relative;
+
+  &:hover {
+    background: #6c757d;
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+`;
+
+const GearDropdown = styled.div<{ $isRTL: boolean }>`
+  position: absolute;
+  top: 100%;
+  ${props => props.$isRTL ? 'left: 0;' : 'right: 0;'}
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 280px;
+  padding: 16px;
+  margin-top: 4px;
+`;
+
+const DropdownSection = styled.div`
+  margin-bottom: 20px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const DropdownLabel = styled.h4`
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+`;
+
+const ToggleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 4px 0;
+`;
+
+const ToggleLabel = styled.div`
+  font-size: 13px;
+  color: #333;
+  line-height: 1.4;
+`;
+
+const ToggleSwitch = styled.label`
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+    &:checked + span {
+      background-color: #007bff;
+    }
+    
+    &:checked + span:before {
+      transform: translateX(16px);
+    }
+    
+    &:disabled + span {
+      background-color: #e6e6e6;
+      cursor: not-allowed;
+    }
+  }
+`;
+
+const ToggleSlider = styled.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .2s;
+  border-radius: 24px;
+  
+  &:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    top: 2px;
+    background-color: white;
+    transition: .2s;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const PasswordButton = styled.button<{ $hasPassword: boolean }>`
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid ${props => props.$hasPassword ? '#28a745' : '#dee2e6'};
+  border-radius: 6px;
+  background: ${props => props.$hasPassword ? '#28a745' : '#f8f9fa'};
+  color: ${props => props.$hasPassword ? 'white' : '#6c757d'};
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  &:hover {
+    background: ${props => props.$hasPassword ? '#218838' : '#e9ecef'};
+    border-color: ${props => props.$hasPassword ? '#218838' : '#adb5bd'};
   }
 `;
 
@@ -184,7 +329,6 @@ const ProgressFill = styled.div<{ $progress: number }>`
   transition: width 0.3s ease;
 `;
 
-// UPDATED: Simplified selection controls without column selector
 const SelectionControls = styled.div<{ $isRTL: boolean }>`
   display: flex;
   gap: 8px;
@@ -225,9 +369,10 @@ interface AlbumItemProps {
   onUpdate: (updates: Partial<AlbumData>) => void;
   onSave: () => void;
   onRemove: () => void;
+  onShowPasswordDialog: (albumId: string) => void;
   disabled: boolean;
   columns: string;
-  setColumns: (columns: string) => void; // This is now unused but kept for compatibility
+  setColumns: (columns: string) => void;
   enhancedLog: (message: string, data?: any) => void;
 }
 
@@ -236,27 +381,43 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
   onUpdate,
   onSave,
   onRemove,
+  onShowPasswordDialog,
   disabled,
-  columns, // Global columns value passed from parent
+  columns,
   enhancedLog
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  const [showGearDropdown, setShowGearDropdown] = useState(false);
+  const gearRef = useRef<HTMLDivElement>(null);
 
-  // NOW SAFE: Hook is called at the top level of this component
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (gearRef.current && !gearRef.current.contains(event.target as Node)) {
+        setShowGearDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Tags management
   const tagsManager = useTagsManagement(
     album.photoTagsMap,
     (newPhotoTagsMap) => {
-      // Handle both direct map and setter function
       const resolvedMap = typeof newPhotoTagsMap === 'function' 
         ? newPhotoTagsMap(album.photoTagsMap)
         : newPhotoTagsMap;
       onUpdate({ photoTagsMap: resolvedMap });
     },
-    new Map(), // No existing files for new albums
-    () => {}, // No existing files setter
+    new Map(),
+    () => {},
     album.selectedPhotoIndices,
-    new Set(), // No existing files selected
+    new Set(),
     enhancedLog
   );
 
@@ -312,7 +473,6 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
     const newPhotos = album.photos.filter((_, i) => i !== photoIndex);
     const newSelectedIndices = new Set<number>();
     
-    // Adjust selected indices
     album.selectedPhotoIndices.forEach(index => {
       if (index < photoIndex) {
         newSelectedIndices.add(index);
@@ -321,7 +481,6 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
       }
     });
 
-    // Adjust photo tags map
     const newPhotoTagsMap = new Map();
     album.photoTagsMap.forEach((tags, index) => {
       if (index < photoIndex) {
@@ -337,6 +496,25 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
       photoTagsMap: newPhotoTagsMap
     });
   };
+
+  // Settings handlers
+  const handleTogglePublicProfile = () => {
+    onUpdate({ isOnPublicProfile: !album.isOnPublicProfile });
+  };
+
+  const handleToggleParticipantsCanAdd = () => {
+    onUpdate({ participantsCanAddItems: !album.participantsCanAddItems });
+  };
+
+  const handleToggleParticipantsCanDelete = () => {
+    onUpdate({ participantsCanDeleteItems: !album.participantsCanDeleteItems });
+  };
+
+  const handlePasswordClick = () => {
+    onShowPasswordDialog(album.id);
+  };
+
+  const hasPassword = album.passwordProtectionOption !== 'NoPassword' && album.albumPassword;
 
   return (
     <AlbumBlock>
@@ -369,6 +547,74 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
               >
                 {t('Save')}
               </ActionButton>
+              <div ref={gearRef} style={{ position: 'relative' }}>
+                <GearButton
+                  onClick={() => setShowGearDropdown(!showGearDropdown)}
+                  disabled={disabled}
+                  title={t('Album Settings')}
+                >
+                  ⚙️
+                </GearButton>
+                {showGearDropdown && (
+                  <GearDropdown $isRTL={isRTL}>
+                    <DropdownSection>
+                      <DropdownLabel>{t('Visibility')}</DropdownLabel>
+                      <ToggleContainer>
+                        <ToggleLabel>{t('Public Profile')}</ToggleLabel>
+                        <ToggleSwitch>
+                          <input
+                            type="checkbox"
+                            checked={album.isOnPublicProfile}
+                            onChange={handleTogglePublicProfile}
+                            disabled={album.isSaving}
+                          />
+                          <ToggleSlider />
+                        </ToggleSwitch>
+                      </ToggleContainer>
+                    </DropdownSection>
+
+                    <DropdownSection>
+                      <DropdownLabel>{t('Participant Permissions')}</DropdownLabel>
+                      <ToggleContainer>
+                        <ToggleLabel>{t('Can Add Items')}</ToggleLabel>
+                        <ToggleSwitch>
+                          <input
+                            type="checkbox"
+                            checked={album.participantsCanAddItems}
+                            onChange={handleToggleParticipantsCanAdd}
+                            disabled={album.isSaving}
+                          />
+                          <ToggleSlider />
+                        </ToggleSwitch>
+                      </ToggleContainer>
+                      <ToggleContainer>
+                        <ToggleLabel>{t('Can Delete Items')}</ToggleLabel>
+                        <ToggleSwitch>
+                          <input
+                            type="checkbox"
+                            checked={album.participantsCanDeleteItems}
+                            onChange={handleToggleParticipantsCanDelete}
+                            disabled={album.isSaving}
+                          />
+                          <ToggleSlider />
+                        </ToggleSwitch>
+                      </ToggleContainer>
+                    </DropdownSection>
+
+                    <DropdownSection>
+                      <DropdownLabel>{t('Security')}</DropdownLabel>
+                      <PasswordButton
+                        $hasPassword={!!hasPassword}
+                        onClick={handlePasswordClick}
+                        disabled={album.isSaving}
+                      >
+                        {hasPassword ? '🔒' : '🔓'}
+                        {hasPassword ? t('Password Set') : t('Set Password')}
+                      </PasswordButton>
+                    </DropdownSection>
+                  </GearDropdown>
+                )}
+              </div>
               <ActionButton 
                 $variant="danger"
                 onClick={onRemove}
@@ -381,7 +627,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
         </AlbumActions>
       </AlbumHeader>
 
-      {/* UPDATED: Album details form - removed column selector since it's now global */}
+      {/* Album details form */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
         <FormGroup>
           <FormLabel>{t('Album Name')}</FormLabel>
@@ -406,7 +652,6 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
             />
           </FormGroup>
 
-          {/* UPDATED: Simplified selection controls without column selector */}
           {album.photos.length > 0 && (
             <SelectionControls $isRTL={isRTL}>
               <ControlButton
@@ -430,7 +675,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
         </div>
       </div>
 
-      {/* Photos grid - uses global columns value */}
+      {/* Photos grid */}
       <PhotoHandler
         selectedPhotos={album.photos}
         selectedPhotoIndices={album.selectedPhotoIndices}
@@ -441,8 +686,8 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
         onDeselectAllPhotos={handleDeselectAllPhotos}
         hideHeader={false}
         photoTagsMap={album.photoTagsMap}
-        columns={columns} // Global columns value
-        isMultipleAlbumMode={true} // Ensure proper layout for multiple albums
+        columns={columns}
+        isMultipleAlbumMode={true}
       />
 
       {/* Tagging section */}

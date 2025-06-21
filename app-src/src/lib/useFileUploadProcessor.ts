@@ -23,6 +23,7 @@ import { prewarmCredentials } from "./s3";
  * ENHANCED: Support for credential prewarming and better error handling
  * ENHANCED: Natural/numeric filename sorting for better file ordering
  * NEW: Added original filename capture and storage
+ * SIMPLIFIED: Progress tracking to prevent blocking issues
  */
 export const useFileUploadProcessor = (
   navigateAfterUpload?: (folderId: string | null) => void,
@@ -69,20 +70,9 @@ export const useFileUploadProcessor = (
     warmUpCredentials();
   }, []); // Empty dependency array - run once on mount
   
-  // THROTTLED: Update progress tracker when selected photos change
-  // Use a ref to track if an update is already scheduled to prevent excessive updates
-  const updateScheduledRef = useRef(false);
-  
+  // SIMPLIFIED: Update progress tracker when selected photos change - no complex intervals
   useEffect(() => {
-    if (!updateScheduledRef.current) {
-      updateScheduledRef.current = true;
-      
-      // Use requestAnimationFrame to batch progress updates
-      requestAnimationFrame(() => {
-        updateProgressTracker(selectedPhotos, setProgressTracker);
-        updateScheduledRef.current = false;
-      });
-    }
+    updateProgressTracker(selectedPhotos, setProgressTracker);
   }, [selectedPhotos]);
 
   // FIXED: Handle navigation after file processing is complete
@@ -252,7 +242,7 @@ export const useFileUploadProcessor = (
       filesUploading: 0,
       filesProcessing: files.length,
       filesWithError: 0,
-      overallProgress: totalFiles > 0 ? (filesComplete / totalFiles) * 100 : 0
+      overallProgress: totalFiles > 0 ? Math.round((filesComplete / totalFiles) * 100) : 0
     });
     
     try {
