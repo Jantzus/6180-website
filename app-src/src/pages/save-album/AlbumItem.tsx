@@ -528,8 +528,8 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
           </AlbumTitle>
           <AlbumStats>
             {album.photos.length === 1 
-              ? t('{{count}} file', { count: album.photos.length.toString() })
-              : t('{{count}} files', { count: album.photos.length.toString() })
+              ? t('1 file')
+              : t('{{count}} files', { count: album.photos.length })
             }
             {album.selectedPhotoIndices.size > 0 && (
               <span> • {t('{{count}} selected for tagging', { count: album.selectedPhotoIndices.size })}</span>
@@ -714,7 +714,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
               {t('Saving album...')}
             </span>
             <span style={{ fontSize: '14px', color: '#666' }}>
-              {album.savingProgress}%
+              {t('{{progress}}%', { progress: album.savingProgress })}
             </span>
           </div>
           <ProgressBar>

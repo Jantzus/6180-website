@@ -503,8 +503,8 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     }
     
     const subtagNames = appliedTag.subtags.map(s => s.subtagTitle).join(' || ');
-    return `${tag.tagTitle}  |  ${subtagNames}`;
-  }, [isTagAppliedToSelected, getAppliedTagsForSelected]);
+    return t('{{tagTitle}}  |  {{subtags}}', { tagTitle: tag.tagTitle, subtags: subtagNames });
+  }, [isTagAppliedToSelected, getAppliedTagsForSelected, t]);
 
   // Log current tag states for debugging
   React.useEffect(() => {
@@ -796,7 +796,7 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
     return tags.map(tag => {
       if (tag.subtags.length > 0) {
         const subtagNames = tag.subtags.map(s => s.subtagTitle).join(', ');
-        return `${tag.tagTitle}: ${subtagNames}`;
+        return t('{{tagTitle}}: {{subtags}}', { tagTitle: tag.tagTitle, subtags: subtagNames });
       }
       return tag.tagTitle;
     }).join(' • ');

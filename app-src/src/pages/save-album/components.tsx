@@ -205,8 +205,8 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = React.memo(({
                 {/* File info */}
                 <div className="file-info-overlay">
                   {photo.type?.startsWith("video") ? t('Video') : t('Image')}
-                  {photo.size && ` • ${(photo.size / 1024 / 1024).toFixed(1)} ${t('MB')}`}
-                  {photo.duration && ` • ${photo.duration}${t('s')}`}
+                  {photo.size && t(' • {{size}} MB', { size: (photo.size / 1024 / 1024).toFixed(1) })}
+                  {photo.duration && t(' • {{duration}}s', { duration: photo.duration })}
                 </div>
 
                 {/* Selection indicator for horizontal layout */}
@@ -219,7 +219,11 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = React.memo(({
                 {/* Error message */}
                 {photo.status === 'error' && photo.errorMessage && (
                   <Message $type="error">
-                    {t('Error')}: {photo.errorMessage.length > 40 ? photo.errorMessage.substring(0, 37) + "..." : photo.errorMessage}
+                    {t('Error: {{message}}', { 
+                      message: photo.errorMessage.length > 40 
+                        ? photo.errorMessage.substring(0, 37) + "..." 
+                        : photo.errorMessage 
+                    })}
                   </Message>
                 )}
               </PhotoCard>
