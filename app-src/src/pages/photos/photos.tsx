@@ -18,7 +18,6 @@ import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 import { AlbumData, PasswordPolicyEnum, MediaItem } from "@/lib/types";
 import { formatUUID, generateInviteLink } from "@/lib/utils";
 import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "./databaseAPIService";
-import { downloadPhotos } from "@/lib/fileOperations";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
 // Import the useUsernameManagement hook from the correct location
@@ -102,7 +101,6 @@ const PhotoAlbumContent: React.FC = () => {
   const [showInlineOTPLogin, setShowInlineOTPLogin] = useState(false);
   const [showSelectPhotosButton, setShowSelectPhotosButton] = useState(false);
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
-  const [addPhotosClicked, setAddPhotosClicked] = useState(false);
   
   // Rotating slogan state - start with random slogan
   const [currentSloganIndex, setCurrentSloganIndex] = useState(() => 
@@ -350,33 +348,7 @@ const PhotoAlbumContent: React.FC = () => {
     fileUpload.openFilePicker(folderId);
   };
 
-  // Function to open file picker after checking login
-  const addPhotosToAlbum = async () => {
-    // Check login first
-    const token = await checkLoginWithoutRedirect();
-    
-    if (!token) {
-      // User is not logged in and clicking Add Photos - set the flag
-      setAddPhotosClicked(true);
-      // Show the inline login
-      setShowInlineOTPLogin(true);
-      return;
-    }
-    
-    // If there's a token but we don't have the username, get it
-    if (!cognitoUsername) {
-      try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        const username = payload["cognito:username"];
-        setCognitoUsername(username);
-      } catch (err) {
-        console.error("Failed to decode token", err);
-      }
-    }
-    
-    // User is logged in, continue with file selection
-    openFilePicker();
-  };
+
 
   // Handler for successful login
   const handleLoginSuccess = async () => {
@@ -395,13 +367,6 @@ const PhotoAlbumContent: React.FC = () => {
         if (passwordVerified) {
           setIsAuthorized(true);
           setPasswordVerified(false); // Reset the flag
-        }
-        
-        // Only set the timestamp if the user clicked Add Photos and needed to log in
-        if (addPhotosClicked) {
-          localStorage.setItem('selectPhotosButtonTimestamp', Date.now().toString());
-          // Reset the flag
-          setAddPhotosClicked(false);
         }
         
         // Check the public username from localStorage before proceeding with album save
@@ -516,28 +481,7 @@ const PhotoAlbumContent: React.FC = () => {
     createSubAlbumWithSelectedItems(t, albumData, selectedItems);
   };
 
-  // Modified handle download photos function to directly save the album
-  const handleDownloadPhotos = async () => {
-    // Check if download should be restricted
-    if (passwordPolicy === 'CannotBeSaved' && !isAuthorized) {
-      promptForPassword();
-      return;
-    }
-    
-    // Check login first for certain operations
-    const token = await checkLoginWithoutRedirect();
-    
-    if (!token && (folderId || passwordPolicy === 'CannotBeSaved')) {
-      // Instead of redirecting, show the inline login
-      setShowInlineOTPLogin(true);
-      return;
-    }
-    
-    // Call download function from fileOperations
-    if (albumData) {
-      downloadPhotos(albumData, t, openFullscreenView);
-    }
-  };
+
 
   // Handle create sub-album from copy link modal
   const handleCreateSubAlbum = () => {
@@ -833,9 +777,7 @@ const PhotoAlbumContent: React.FC = () => {
           promptForPassword={promptForPassword}
           passwordPolicy={passwordPolicy}
           isAuthorized={isAuthorized}
-          addPhotosToAlbum={addPhotosToAlbum}
           saveAlbumDirectly={saveAlbumDirectly}
-          handleDownloadPhotos={handleDownloadPhotos}
           handleCopyLink={() => shareActions.setShowingCopyLinkAlert(true)}
           albumData={albumData}
         />

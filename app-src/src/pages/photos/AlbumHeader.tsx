@@ -4,7 +4,6 @@ import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
 import { 
   Button
 } from "@/styles/styled-components";
-import ResponsiveHeader from "./HeaderComponents";
 
 // Album Header Component - Now just renders standalone buttons without container
 export const AlbumHeader: React.FC<{
@@ -19,9 +18,7 @@ export const AlbumHeader: React.FC<{
   promptForPassword: () => void;
   passwordPolicy: PasswordPolicyEnum | undefined;
   isAuthorized: boolean;
-  addPhotosToAlbum: () => void;
   saveAlbumDirectly: () => void;
-  handleDownloadPhotos: () => void;
   handleCopyLink: () => void;
   albumData: AlbumData | null;
 }> = ({
@@ -36,9 +33,7 @@ export const AlbumHeader: React.FC<{
   promptForPassword,
   passwordPolicy,
   isAuthorized,
-  addPhotosToAlbum,
   saveAlbumDirectly,
-  handleDownloadPhotos,
   handleCopyLink,
   albumData
 }) => {
@@ -130,18 +125,6 @@ export const AlbumHeader: React.FC<{
     )
   );
 
-  // Simple "Download" button for albums with folderPositionId
-  const renderDownloadButton = () => (
-    <Button 
-      onClick={handleDownloadPhotos}
-      style={{ 
-        padding: '8px 16px', // Reduced vertical padding by 4px
-      }}
-    >
-      {t('Download')}
-    </Button>
-  );
-
   // Render the main content area based on various conditions
   const renderMainContent = () => {
     if (isSelectionMode) {
@@ -183,27 +166,18 @@ export const AlbumHeader: React.FC<{
         }}>
           {renderPasswordButton()}
           
-          {/* Show the modified header component with action menu for albums with folderPositionId */}
+          {/* Show save button only when album hasn't been saved yet */}
           {!isSelectionMode && !(
             !isAuthorized && passwordPolicy && passwordPolicy !== 'NoPassword'
-          ) && (
-            albumData?.folderPositionId ? (
-              renderDownloadButton()
-            ) : (
-              <ResponsiveHeader 
-                addPhotosToAlbum={addPhotosToAlbum}
-                saveAlbum={saveAlbumDirectly}
-                downloadPhotos={handleDownloadPhotos}
-                promptForPassword={promptForPassword}
-                showingEnterPassword={showingEnterPassword()}
-                passwordPolicy={passwordPolicy}
-                usingFolderInviteGrantsRightToAddItems={albumData?.usingFolderInviteGrantsRightToAddItems}
-                t={t} 
-                buttonStyle={{ 
-                  padding: '8px 16px', // Reduced vertical padding by 4px
-                }}
-              />
-            )
+          ) && !albumData?.folderPositionId && (
+            <Button 
+              onClick={saveAlbumDirectly}
+              style={{ 
+                padding: '8px 16px', // Reduced vertical padding by 4px
+              }}
+            >
+              {t('Save')}
+            </Button>
           )}
         </div>
       </div>

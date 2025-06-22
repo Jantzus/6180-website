@@ -146,7 +146,7 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({
             lineHeight: "1.4",
             textAlign: isRTL ? "right" : "left"
           }}>
-            • {t('ppen your phone camera app (or use any QR code scanner app)')}<br/>
+            • {t('open your phone camera app (or use any QR code scanner app)')}<br/>
             • {t('point camera at the QR code')}<br/>
             • {t('tap the notification that appears')}<br/>
           </p>
