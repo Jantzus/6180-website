@@ -331,7 +331,7 @@ const LoginPage = () => {
                   alt="6180 Logo" 
                 />
                 <LoginTitle>
-                  {t('Revisit Your Albums')}
+                  {t('Login to 6180')}
                 </LoginTitle>
               </LoginHeader>
 

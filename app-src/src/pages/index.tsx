@@ -22,8 +22,8 @@ import {
 if (import.meta.env.MODE !== 'production') {
   import('@/lib/i18n/checkTranslations').then(({ checkTranslationFiles, checkTranslationKey }) => {
     checkTranslationFiles();
-    checkTranslationKey('Doorway to Your Memories');
-    checkTranslationKey('Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.');
+    checkTranslationKey('Best Way to Save and Share Photos');
+    checkTranslationKey('Tag, revisit and send your favorite moments — by occasion, mood, or location — in seconds.');
   });
 }
 
@@ -75,7 +75,7 @@ const IndexPage: React.FC = () => {
 
           <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', padding: '0 20px' }}>
             <Headline>
-              {t('Doorway to Your Memories')}
+              {t('Best Way to Save and Share Photos')}
             </Headline>
             
             <p style={{ 
@@ -84,7 +84,7 @@ const IndexPage: React.FC = () => {
               marginBottom: '30px',
               lineHeight: '1.6'
             }}>
-              {t('Tag and revisit your favorite moments — by occasion, mood, or location — in seconds.')}
+              {t('Tag, revisit and send your favorite moments — by occasion, mood, or location — in seconds.')}
             </p>
 
             <Button 
@@ -93,7 +93,7 @@ const IndexPage: React.FC = () => {
               className="hover-button"
               style={{ marginTop: '20px', padding: '12px 20px' }}
             >
-              {t('Enter 6180')}
+              {t('Use 6180')}
             </Button>
           </div>
 

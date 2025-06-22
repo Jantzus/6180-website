@@ -176,7 +176,7 @@ export const AlbumHeader: React.FC<{
                 padding: '8px 16px', // Reduced vertical padding by 4px
               }}
             >
-              {t('Save')}
+              {t('Download')}
             </Button>
           )}
         </div>
