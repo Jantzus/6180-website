@@ -8,8 +8,9 @@ import { FETCH_FOLDERS_QUERY } from '@/lib/types';
 import { AlbumData, MediaItem, Contact } from '@/lib/types';
 import { formatTime } from '@/lib/utils';
 import { checkLoginWithoutRedirect } from "@/lib/utils";
+import { RawAPIResponse } from './rawApiTypes';
 
-// Process data returned from API - DEBUG VERSION
+// Process data returned from API - DEBUG VERSION (kept for backward compatibility)
 export const processData = (
   json: any, 
   setFolderId?: (id: string | null) => void
@@ -251,7 +252,132 @@ export const processData = (
   return result;
 };
 
-// Fetch folder data with dual API approach - DEBUG VERSION
+// NEW: Fetch folder data with dual API approach - returns raw API response
+export const fetchFolderRawAPIResponse = async (
+  searchType: 'targetItemIdentifier' | 'albumNanoId',
+  identifier: string, 
+  setFolderId?: (id: string | null) => void
+): Promise<RawAPIResponse | null> => {
+  console.log(`🔍 fetchFolderRawAPIResponse called with ${searchType}:`, identifier);
+  
+  try {
+    // Create the input for the query format
+    let fetchRelationsInput: any;
+    
+    if (searchType === 'targetItemIdentifier') {
+      fetchRelationsInput = {
+        targetItemIdentifier____RelationType: `${identifier}____Folder`,
+        index: "targetItemIdentifier____RelationType",
+        limit: 1,
+        scanIndexForward: false,
+        nextToken: null
+      };
+    } else {
+      fetchRelationsInput = {
+        albumNanoId: identifier,
+        index: "albumNanoId",
+        limit: 1,
+        scanIndexForward: false,
+        nextToken: null
+      };
+    }
+
+    const variables = {
+      fetchRelationsInput: fetchRelationsInput
+    };
+    
+    console.log('📤 Query variables:', JSON.stringify(variables, null, 2));
+    
+    // First, use the public API to get a quick response
+    console.log('🌐 Making public API call...');
+    const publicApiPromise = fetch(AWS_PUBLIC_GRAPHQL_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': AWS_PUBLIC_API_KEY
+      },
+      body: JSON.stringify({
+        query: FETCH_FOLDERS_QUERY,
+        variables: variables
+      })
+    }).then(response => response.json());
+    
+    // In parallel, try to use the private API if the user is logged in
+    console.log('🔒 Checking private API availability...');
+    const privateApiPromise = (async () => {
+      const token = await checkLoginWithoutRedirect();
+      console.log('🎫 Token available:', !!token);
+      
+      if (!token) {
+        console.log('❌ No token - skipping private API');
+        return null; // User is not logged in
+      }
+      
+      console.log('🌐 Making private API call...');
+      // User is logged in, use private API for richer data
+      return fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          query: FETCH_FOLDERS_QUERY,
+          variables: variables
+        })
+      }).then(response => response.json());
+    })();
+    
+    // Wait for the public API to respond first
+    console.log('⏳ Waiting for public API response...');
+    let publicResult = await publicApiPromise;
+    console.log('📥 Public API raw response:', JSON.stringify(publicResult, null, 2));
+    
+    let finalResult = publicResult;
+    
+    // Set folder ID from public result if available
+    if (setFolderId && publicResult?.data?.fetchRelations?.items?.[0]?.id) {
+      console.log('🆔 Setting folder ID from public API:', publicResult.data.fetchRelations.items[0].id);
+      setFolderId(publicResult.data.fetchRelations.items[0].id);
+    }
+    
+    // Then wait for the private API (if available)
+    console.log('⏳ Waiting for private API response...');
+    const privateResult = await privateApiPromise;
+    
+    if (privateResult) {
+      console.log('📥 Private API raw response:', JSON.stringify(privateResult, null, 2));
+      
+      const folderPosition = privateResult?.data?.fetchRelations?.items?.[0]?.folderPosition;
+      console.log('📍 Folder position found:', !!folderPosition);
+      console.log('📍 Folder position details:', JSON.stringify(folderPosition, null, 2));
+      
+      if (folderPosition) {
+        // Enhance the public result with folder position data
+        finalResult = { ...privateResult };
+        console.log('🔄 Using enhanced private data');
+        
+        // Set folder ID from private result if available
+        if (setFolderId && privateResult?.data?.fetchRelations?.items?.[0]?.id) {
+          console.log('🆔 Setting folder ID from private API:', privateResult.data.fetchRelations.items[0].id);
+          setFolderId(privateResult.data.fetchRelations.items[0].id);
+        }
+      } else {
+        console.log('❌ No folder position in private API response');
+      }
+    } else {
+      console.log('❌ No private API response (user not logged in or API failed)');
+    }
+    
+    console.log('✅ Final raw API response:', JSON.stringify(finalResult, null, 2));
+    return finalResult as RawAPIResponse;
+  } catch (error) {
+    console.error('💥 Error in fetchFolderRawAPIResponse:', error);
+    return null;
+  }
+};
+
+// Legacy functions for backward compatibility
 export const fetchFolderUsingTargetItemIdentifier = async (
   targetItemIdentifier: string, 
   setFolderId?: (id: string | null) => void

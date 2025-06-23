@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { checkLoginWithoutRedirect } from "@/lib/utils";
-import { AlbumData } from "@/lib/types";
 import { formatUUID } from "@/lib/utils";
-import { fetchFolderUsingTargetItemIdentifier, fetchFolderUsingAlbumNanoId } from "./databaseAPIService";
+import { fetchFolderRawAPIResponse } from "./databaseAPIService";
 import { AlbumPageStatic } from "./AlbumPageStatic";
+import { RawAPIResponse } from "./rawApiTypes";
 
 // ============================
 // Album Data Fetching Wrapper Component
@@ -14,7 +14,7 @@ export const AlbumPageDynamic: React.FC = () => {
   const { t } = useTranslation();
   
   // Data fetching state
-  const [albumData, setAlbumData] = useState<AlbumData | null>(null);
+  const [rawAPIResponse, setRawAPIResponse] = useState<RawAPIResponse | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [folderId, setFolderId] = useState<string | null>(null);
@@ -98,10 +98,10 @@ export const AlbumPageDynamic: React.FC = () => {
         console.log('Identifier does not contain "-", keeping as is:', identifier);
       }
       
-      let data;
+      let rawResponse: RawAPIResponse | null;
       
       if (useTargetItemIdentifier) {
-        console.log('Calling fetchFolderUsingTargetItemIdentifier with identifier:', identifier);
+        console.log('Calling fetchFolderRawAPIResponse with targetItemIdentifier:', identifier);
         // Use fetchFolderUsingTargetItemIdentifier logic
 
         let formattedId = identifier
@@ -109,28 +109,26 @@ export const AlbumPageDynamic: React.FC = () => {
         // Make sure it's exactly 32 characters before formatting
         if (formattedId.length === 32) {
           formattedId = formatUUID(formattedId);
-          console.log(formattedId); // e.g., B89D8BAF-F9A1-484B-A379-FA7FAD081303
+          console.log('Formatted UUID:', formattedId);
         } else {
           console.error('Invalid UUID format: must be 32 characters after removing dashes');
         }
   
-        data = await fetchFolderUsingTargetItemIdentifier(formattedId, setFolderId);
+        rawResponse = await fetchFolderRawAPIResponse('targetItemIdentifier', formattedId, setFolderId);
       } else {
-        console.log('Calling fetchFolderUsingAlbumNanoId with identifier:', identifier);
+        console.log('Calling fetchFolderRawAPIResponse with albumNanoId:', identifier);
         // Use fetchFolderUsingAlbumNanoId logic
-        data = await fetchFolderUsingAlbumNanoId(identifier, setFolderId);
+        rawResponse = await fetchFolderRawAPIResponse('albumNanoId', identifier, setFolderId);
       }
       
-      console.log('API call result:', data ? 'Success' : 'Failed');
+      console.log('API call result:', rawResponse ? 'Success' : 'Failed');
       
-      if (data) {
-        console.log('Full album data received:', data);
-        console.log('Media items count:', data.mediaItems ? data.mediaItems.length : 'No mediaItems property');
-        console.log('Password policy:', data.passwordPolicy);
-        console.log('Folder position ID:', data.folderPositionId);
+      if (rawResponse) {
+        console.log('Full raw API response received:', rawResponse);
+        console.log('Items count:', rawResponse?.data?.fetchRelations?.items?.length || 0);
         
-        setAlbumData(data);
-        console.log('Album data set successfully');
+        setRawAPIResponse(rawResponse);
+        console.log('Raw API response set successfully');
       } else {
         console.log('No data returned from API, setting error');
         setError(t('Album not found'));
@@ -192,10 +190,10 @@ export const AlbumPageDynamic: React.FC = () => {
     );
   }
 
-  // Render the static component with fetched data
+  // Render the static component with raw API response
   return (
     <AlbumPageStatic
-      albumData={albumData}
+      rawAPIResponse={rawAPIResponse}
       folderId={folderId}
       cognitoUsername={cognitoUsername}
     />

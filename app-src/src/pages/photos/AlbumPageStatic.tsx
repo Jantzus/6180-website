@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { 
@@ -6,16 +6,21 @@ import {
   useFullscreenView,
   redirectTo,
   generateUrl,
+  formatTime,
 } from "@/lib/utils";
 import { prewarmCredentials } from "@/lib/s3";
+import { S3_BUCKET_URL } from '@/lib/config';
 
 // Import the new shared hook
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 
 // Import types and utilities
-import { AlbumData, PasswordPolicyEnum, MediaItem } from "@/lib/types";
+import { AlbumData, PasswordPolicyEnum, MediaItem, Contact, SelectedTag } from "@/lib/types";
 import { generateInviteLink } from "@/lib/utils";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
+
+// Import the raw API types
+import { RawAPIResponse, AlbumPageStaticProps } from "./rawApiTypes";
 
 // Import the useUsernameManagement hook from the correct location
 import { useUsernameManagement } from "@/lib/useUsernameManagement";
@@ -70,26 +75,276 @@ import { AlbumInfoComponent } from "@/components/AlbumInfoComponent";
 import { AlbumHeader } from "./AlbumHeader";
 
 // ============================
-// Pure Album UI Component Props Interface
+// Internal Data Processing Function (moved from databaseAPIService)
 // ============================
 
-export interface AlbumPageStaticProps {
-  albumData: AlbumData | null;
-  folderId: string | null;
-  cognitoUsername: string | null;
-}
+const processRawAPIResponse = (
+  rawResponse: RawAPIResponse, 
+  setFolderId?: (id: string | null) => void
+): AlbumData => {
+  console.log('🔄 processRawAPIResponse called with raw data:', rawResponse);
+  
+  const items = rawResponse?.data?.fetchRelations?.items || [];
+  console.log('📊 Items found:', items.length);
+  
+  const mediaItems: MediaItem[] = [];
+  const contacts: Contact = {};
+  let folderName = 'Photos';
+  let albumNanoId: string | null | undefined = undefined;
+  let creatorId: string | null | undefined = undefined;
+  let folderDescription = '';
+  let passwordPolicy = undefined;
+  let passwordRequired = false;
+  let hasPassword = false;
+  let actualPassword = undefined;
+  let usingFolderInviteGrantsRightToAddItems = false;
+  let folderPositionId: string | undefined = undefined;
+  let profileIds: string[] | undefined = undefined;
+  
+  // Set to track unique dataKeys
+  const uniqueDataKeys = new Set<string>();
+  
+  if (items.length > 0) {
+    const folder = items[0];
+    console.log('📁 Processing folder:', folder);
+    
+    // Save the folder ID if setter is provided
+    if (setFolderId && folder?.id) {
+      console.log('🆔 Setting folder ID:', folder.id);
+      setFolderId(folder.id);
+    }
+    
+    // Get albumNanoId if available
+    if (folder?.albumNanoId) {
+      albumNanoId = folder.albumNanoId;
+      console.log('🏷️ Album nano ID found:', albumNanoId);
+    }
+    
+    // Get folder name if available
+    if (folder?.folderName && folder.folderName.length > 0) {
+      folderName = folder.folderName;
+      console.log('📝 Folder name found:', folderName);
+    }
+    
+    // Get creator ID if available
+    if (folder?.creatorId && folder.creatorId.length > 0) {
+      creatorId = folder.creatorId;
+      console.log('👤 Creator ID found:', creatorId);
+    }
+
+    // Get folder description if available
+    if (folder?.folderDescription && folder.folderDescription.length > 0) {
+      folderDescription = folder.folderDescription;
+      console.log('📄 Folder description found:', folderDescription);
+    }
+    
+    // Get password policy and the actual password
+    if (folder?.folderPassword) {
+      console.log('🔐 Folder password object found:', folder.folderPassword);
+      
+      if (folder.folderPassword.policy) {
+        passwordPolicy = folder.folderPassword.policy;
+        console.log('🔒 Password policy:', passwordPolicy);
+        
+        // Check if password is required
+        passwordRequired = passwordPolicy !== 'NoPassword';
+        console.log('🔑 Password required:', passwordRequired);
+      }
+      
+      // Store the actual password if it exists
+      if (folder.folderPassword.password && passwordPolicy !== 'NoPassword') {
+        hasPassword = true;
+        actualPassword = folder.folderPassword.password;
+        console.log('🗝️ Actual password found (length):', actualPassword.length);
+      }
+    }
+    
+    // Extract the usingFolderInviteGrantsRightToAddItems property
+    if (folder?.folderInviteParameters) {
+      console.log('📨 Folder invite parameters found:', folder.folderInviteParameters);
+      usingFolderInviteGrantsRightToAddItems = !!folder.folderInviteParameters.usingFolderInviteGrantsRightToAddItems;
+      console.log('➕ Using folder invite grants right to add items:', usingFolderInviteGrantsRightToAddItems);
+    }
+    
+    // Extract folder position information
+    if (folder?.folderPosition) {
+      folderPositionId = folder.folderPosition.id;
+      profileIds = folder.folderPosition.profileIds;
+      console.log('📍 Folder position found:', { folderPositionId, profileIds });
+    }
+    
+    // Build contacts map
+    const contactItems = folder?.contactsUsingInvite?.items || [];
+    console.log('👥 Processing contacts:', contactItems.length);
+    contactItems.forEach((contact, index) => {
+      console.log(`👤 Contact ${index}:`, contact);
+      if (contact?.id && contact?.item?.publicDisplayName) {
+        contacts[contact.id] = contact.item.publicDisplayName;
+        console.log(`✅ Added contact: ${contact.id} -> ${contact.item.publicDisplayName}`);
+      }
+    });
+    
+    // Get media items and filter duplicates by dataKey
+    const fileReferences = folder?.fileReferencesPage?.items || [];
+    console.log('📸 Processing file references:', fileReferences.length);
+    
+    fileReferences.forEach((ref, index) => {
+      console.log(`📄 File reference ${index}:`, ref);
+      
+      const file = ref?.file;
+      if (!file?.dataKey) {
+        console.log(`❌ Skipping file reference ${index} - no dataKey`);
+        return;
+      }
+
+      const { id, dataKey, thumbnailDataKey, durationInSeconds, ownerContactId } = file;
+      // Extract fileDisplayName from the reference level, not file level
+      const refFileDisplayName = ref.fileDisplayName;
+      console.log(`📂 Processing file: ID=${id}, dataKey=${dataKey}, thumbnailDataKey=${thumbnailDataKey}, duration=${durationInSeconds}, owner=${ownerContactId}, refFileDisplayName=${refFileDisplayName}`);
+      
+      // Skip this item if we've already seen this dataKey
+      if (uniqueDataKeys.has(dataKey)) {
+        console.log(`⚠️ Duplicate dataKey found, skipping: ${dataKey}`);
+        return;
+      }
+      
+      // Add to our set of seen dataKeys
+      uniqueDataKeys.add(dataKey);
+      
+      // Parse selectedTags from the reference
+      console.log(`🔍 Raw selectedTags for file ${id}:`, ref.selectedTags);
+      
+      const selectedTags: SelectedTag[] = ref.selectedTags?.map((tag) => ({
+        TagType: tag.TagType,
+        tagTitle: tag.tagTitle,
+        subtags: tag.subtags?.map((subtag) => ({
+          TagType: subtag.TagType,
+          tagTitle: subtag.tagTitle,
+          subtagTitle: subtag.subtagTitle
+        })) || []
+      })) || [];
+      
+      console.log(`🏷️ Processed selectedTags for file ${id}:`, selectedTags);
+      console.log(`📊 Number of tags:`, selectedTags.length);
+      
+      // Extract fileDisplayName from reference level or fall back to a generated name
+      const displayName = refFileDisplayName || 
+        (dataKey.split('/').pop()?.split('.')[0]) || 
+        `file-${index}`;
+      
+      console.log(`📝 File display name: ${displayName}`);
+      
+      const url = `${S3_BUCKET_URL}${dataKey}`;
+      const thumbnailUrl = thumbnailDataKey ? `${S3_BUCKET_URL}${thumbnailDataKey}` : undefined;
+
+      if (dataKey.startsWith("Input/Image/")) {
+        const imageItem: MediaItem = { 
+          type: "image" as const, 
+          fileId: id,
+          url,
+          thumbnailUrl: thumbnailUrl || url,
+          ownerContactId: ownerContactId,
+          fileDisplayName: displayName,
+          loaded: false,
+          selectedTags: selectedTags
+        };
+        
+        console.log('🖼️ Complete image item with tags:', {
+          fileId: imageItem.fileId,
+          type: imageItem.type,
+          fileDisplayName: imageItem.fileDisplayName,
+          tagCount: imageItem.selectedTags?.length || 0,
+          tags: imageItem.selectedTags
+        });
+        
+        mediaItems.push(imageItem);
+        console.log('✅ Successfully added image item to mediaItems array');
+      } else if (dataKey.startsWith("Input/Video/")) {
+        const videoItem: MediaItem = {
+          type: "video" as const,
+          fileId: id,
+          url,
+          thumbnailUrl: thumbnailUrl || url,
+          duration: durationInSeconds ? formatTime(durationInSeconds) : undefined,
+          ownerContactId: ownerContactId,
+          fileDisplayName: displayName,
+          loaded: false,
+          selectedTags: selectedTags
+        };
+        
+        console.log('🎥 Complete video item with tags:', {
+          fileId: videoItem.fileId,
+          type: videoItem.type,
+          fileDisplayName: videoItem.fileDisplayName,
+          tagCount: videoItem.selectedTags?.length || 0,
+          tags: videoItem.selectedTags
+        });
+        
+        mediaItems.push(videoItem);
+        console.log('✅ Successfully added video item to mediaItems array');
+      } else {
+        console.log(`❓ Unknown file type for dataKey: ${dataKey}`);
+      }
+    });
+  } else {
+    console.log('❌ No items found in API response');
+  }
+  
+  const result: AlbumData = { 
+    mediaItems, 
+    folderName, 
+    albumNanoId,
+    creatorId,
+    folderDescription, 
+    contacts, 
+    passwordPolicy,
+    passwordRequired,
+    hasPassword,
+    actualPassword,
+    usingFolderInviteGrantsRightToAddItems,
+    folderPositionId,
+    profileIds
+  };
+  
+  // Enhanced debug logging for final result
+  console.log('✅ processRawAPIResponse final result summary:', {
+    mediaItemsCount: result.mediaItems.length,
+    mediaItemsWithTags: result.mediaItems.filter(item => item.selectedTags && item.selectedTags.length > 0).length,
+    firstItemTags: result.mediaItems[0]?.selectedTags?.length || 0,
+    totalTagsAcrossAllItems: result.mediaItems.reduce((total, item) => total + (item.selectedTags?.length || 0), 0)
+  });
+  
+  // Log first few items with their tags and display names
+  result.mediaItems.slice(0, 3).forEach((item, index) => {
+    console.log(`📋 Item ${index} details:`, {
+      fileId: item.fileId,
+      fileDisplayName: item.fileDisplayName,
+      tagCount: item.selectedTags?.length || 0,
+      tags: item.selectedTags?.map(tag => `${tag.tagTitle}(${tag.subtags.length})`) || []
+    });
+  });
+  
+  console.log('✅ processRawAPIResponse final result:', result);
+  return result;
+};
 
 // ============================
 // Pure Album UI Component
 // ============================
 
 export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
-  albumData,
+  rawAPIResponse,
   folderId,
   cognitoUsername: initialCognitoUsername
 }) => {
   // Hooks for i18n
   const { t, language } = useTranslation();
+  
+  // Process raw API response into AlbumData using useMemo for performance
+  const albumData = useMemo(() => {
+    if (!rawAPIResponse) return null;
+    return processRawAPIResponse(rawAPIResponse);
+  }, [rawAPIResponse]);
   
   // Custom hooks
   const fullscreenView = useFullscreenView();
@@ -596,6 +851,21 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
     ...albumData,
     mediaItems: filteredMediaItems
   } : null;
+
+  // If no raw API response, show loading or error state
+  if (!rawAPIResponse) {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        fontSize: '18px'
+      }}>
+        {t('Loading album...')}
+      </div>
+    );
+  }
 
   // Render
   return (
