@@ -6,16 +6,16 @@ import { generateInviteLink } from "@/lib/utils";
 import { CopyLinkModal } from "./Modals/CopyLinkModal";
 import { ConfirmationModal } from "./Modals/ConfirmationModal";
 import { QRCodeModal } from "./Modals/QRCodeModal";
+import { DownloadModal } from "./Modals/DownloadModal";
 import { checkLoginWithRefresh, checkLoginWithoutRedirect } from "@/lib/utils";
-import { S3_BUCKET_URL, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
-import { downloadPhotos } from "@/lib/fileOperations";
+import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 
 // FooterSection Component
 type AlbumFooterSectionProps = {
   folder: FolderType;
   cognitoUsername: string | null;
   updateProfileIds?: (profileIds: string[]) => void; 
-  onModalStateChange?: (isOpen: boolean) => void; // New prop to communicate modal state
+  onModalStateChange?: (isOpen: boolean) => void;
 };
 
 export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
@@ -29,6 +29,7 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
   const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
   const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
   const [showingQRCode, setShowingQRCode] = useState<boolean>(false);
+  const [showingDownloadModal, setShowingDownloadModal] = useState<boolean>(false);
   
   // Compute isOnPublicProfile from the current folder state
   const [localProfileIds, setLocalProfileIds] = useState<string[]>(folder.profileIds || []);
@@ -52,11 +53,11 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
 
   // Notify parent component when any modal state changes
   useEffect(() => {
-    const isAnyModalOpen = showingCopyLinkAlert || showingCopiedLinkAlert || showingQRCode;
+    const isAnyModalOpen = showingCopyLinkAlert || showingCopiedLinkAlert || showingQRCode || showingDownloadModal;
     if (onModalStateChange) {
       onModalStateChange(isAnyModalOpen);
     }
-  }, [showingCopyLinkAlert, showingCopiedLinkAlert, showingQRCode, onModalStateChange]);
+  }, [showingCopyLinkAlert, showingCopiedLinkAlert, showingQRCode, showingDownloadModal, onModalStateChange]);
 
   // Handle copy function
   const handleCopy = (textToCopy: string) => {
@@ -71,12 +72,12 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
       });
   };
 
-  // Handle downloading photos
-  const handleDownloadPhotos = async (e: React.MouseEvent) => {
+  // Handle opening download modal
+  const handleDownloadClick = async (e: React.MouseEvent) => {
     e.preventDefault(); 
     e.stopPropagation();
     
-    // Check login first for certain operations
+    // Check login first
     const token = await checkLoginWithoutRedirect();
     
     if (!token) {
@@ -84,41 +85,14 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
       return;
     }
     
-    // Transform the folder data to the format expected by downloadPhotos
-    if (folder && folder.files && folder.files.length > 0) {
-      // Convert the folder files to MediaItem format
-      const mediaItems = folder.files.map((file, index) => {
-        // Explicitly type as "image" or "video" to match MediaItem type
-        const fileType: "image" | "video" = file.dataKey.toLowerCase().endsWith('.mp4') ? 'video' : 'image';
-        
-        return {
-          url: `${S3_BUCKET_URL}${file.dataKey}`,
-          thumbnailUrl: file.thumbnailDataKey ? `${S3_BUCKET_URL}${file.thumbnailDataKey}` : undefined,
-          type: fileType,
-          index: index,
-          // Add other required properties from MediaItem type
-          id: `file-${index}`,
-          fileId: file.dataKey,
-          loaded: false
-        };
-      });
-      
-      // Create the album data structure required by downloadPhotos
-      const albumData = {
-        mediaItems: mediaItems,
-        folderName: folder.folderName || 'Album'
-      };
-      
-      // Create a dummy openFullscreenView function (since we don't have fullscreen view in this component)
-      const openFullscreenView = (index: number) => {
-        window.open(mediaItems[index].url, '_blank');
-      };
-      
-      // Call the downloadPhotos function from fileOperations
-      downloadPhotos(albumData, t, openFullscreenView);
-    } else {
+    // Check if folder has files
+    if (!folder || !folder.files || folder.files.length === 0) {
       alert(t('No items to download'));
+      return;
     }
+    
+    // Open the download modal
+    setShowingDownloadModal(true);
   };
 
   // Handle public profile toggle
@@ -221,8 +195,8 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
     borderRadius: 6,
     cursor: "pointer",
     fontSize: 14,
-    textAlign: "center" as const, // Use const assertion to fix type issue
-    whiteSpace: "nowrap" as const, // Use const assertion to fix type issue
+    textAlign: "center" as const,
+    whiteSpace: "nowrap" as const,
     flexShrink: 0
   };
 
@@ -281,9 +255,9 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
               {t('Copy Link')}
             </button>
             
-            {/* Download Photos button */}
+            {/* Updated Download button - now opens modal */}
             <button
-              onClick={handleDownloadPhotos}
+              onClick={handleDownloadClick}
               style={{
                 ...buttonStyle,
                 backgroundColor: "#e0e0e0",
@@ -361,6 +335,13 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
         albumLink={inviteLink}
         t={t}
         isRTL={isRTL}
+      />
+
+      {/* Download Modal */}
+      <DownloadModal
+        isOpen={showingDownloadModal}
+        folder={folder}
+        onClose={() => setShowingDownloadModal(false)}
       />
     </>
   );

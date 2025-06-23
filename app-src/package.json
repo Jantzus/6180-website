@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "transform-i18n": "node src/lib/i18n/transformTranslations.cjs",
     "prebuild": "npm run transform-i18n",
-    "deploy": "aws s3 sync ../dist s3://6180-website --delete",
+    "deploy": "npm run build && aws s3 sync ../dist s3://6180-website --delete && npm run invalidate",
     "invalidate": "aws cloudfront create-invalidation --distribution-id E1MOSNTHBN77UB --paths '/*' && aws cloudfront create-invalidation --distribution-id E1OIOI9YGA4QEK --paths '/*'"
   },
   "dependencies": {

@@ -36,7 +36,7 @@ import {
 } from "./components";
 
 // Import the new MediaTagsFilter component
-import { MediaTagsFilter } from "./MediaTagsFilter";
+import { MediaTagsFilter } from "@/components/MediaTagsFilter";
 
 // Import styled components with new layout styles
 import { 
