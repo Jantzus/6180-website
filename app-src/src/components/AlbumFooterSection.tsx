@@ -241,6 +241,18 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
               {t('Show QR Code')}
             </button>
             
+            {/* Updated Download button - now opens modal */}
+            <button
+              onClick={handleDownloadClick}
+              style={{
+                ...buttonStyle,
+                backgroundColor: "#2196f3",
+                color: "white",
+              }}
+            >
+              {t('Download')}
+            </button>
+            
             <button
               onClick={(e) => {
                 e.preventDefault(); 
@@ -253,19 +265,8 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
               }}
             >
               {t('Copy Link')}
-            </button>
-            
-            {/* Updated Download button - now opens modal */}
-            <button
-              onClick={handleDownloadClick}
-              style={{
-                ...buttonStyle,
-                backgroundColor: "#e0e0e0",
-              }}
-            >
-              {t('Download')}
-            </button>
-            
+            </button>            
+
             {/* Elegant Public Profile Toggle Button */}
             <button
               onClick={handlePublicProfileClick}

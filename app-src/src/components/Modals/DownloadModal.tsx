@@ -23,19 +23,22 @@ const ModalOverlay = styled.div`
   z-index: 10000;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: 20px;
+  padding: 40px 16px;
   overflow: hidden;
   overscroll-behavior: contain;
+  
+  @media (max-width: 768px) {
+    padding: 60px 16px;
+  }
 `;
 
 const ModalContent = styled.div<{ $isRTL: boolean }>`
   background: white;
   border-radius: 16px;
   padding: 0;
-  max-width: 90vw;
-  max-height: 90vh;
-  width: 1200px;
-  height: 800px;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 100%;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
   animation: modalFadeIn 0.3s ease-out;
@@ -44,10 +47,7 @@ const ModalContent = styled.div<{ $isRTL: boolean }>`
   overflow: hidden;
   
   @media (max-width: 768px) {
-    width: 95vw;
-    height: 95vh;
-    max-width: none;
-    max-height: none;
+    border-radius: 12px;
   }
   
   @keyframes modalFadeIn {
@@ -63,7 +63,7 @@ const ModalContent = styled.div<{ $isRTL: boolean }>`
 `;
 
 const ModalHeader = styled.div<{ $isRTL: boolean }>`
-  padding: 24px 32px 16px 32px;
+  padding: 20px 24px 16px 24px;
   border-bottom: 1px solid #e9ecef;
   flex-shrink: 0;
   display: flex;
@@ -72,34 +72,18 @@ const ModalHeader = styled.div<{ $isRTL: boolean }>`
   flex-direction: ${props => props.$isRTL ? 'row-reverse' : 'row'};
   
   @media (max-width: 768px) {
-    padding: 20px 20px 12px 20px;
+    padding: 16px 16px 12px 16px;
   }
 `;
 
 const ModalTitle = styled.h2`
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #333;
   
   @media (max-width: 768px) {
-    font-size: 20px;
-  }
-`;
-
-const CloseButton = styled.button`
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #666;
-  padding: 8px;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  
-  &:hover {
-    background: #f5f5f5;
-    color: #333;
+    font-size: 18px;
   }
 `;
 
@@ -107,17 +91,17 @@ const ModalBody = styled.div`
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 16px 32px;
+  padding: 12px 24px;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
   
   @media (max-width: 768px) {
-    padding: 12px 20px;
+    padding: 8px 16px;
   }
 `;
 
 const ModalFooter = styled.div<{ $isRTL: boolean }>`
-  padding: 16px 32px 24px 32px;
+  padding: 12px 24px 20px 24px;
   border-top: 1px solid #e9ecef;
   flex-shrink: 0;
   display: flex;
@@ -126,9 +110,10 @@ const ModalFooter = styled.div<{ $isRTL: boolean }>`
   flex-direction: ${props => props.$isRTL ? 'row-reverse' : 'row'};
   
   @media (max-width: 768px) {
-    padding: 12px 20px 20px 20px;
+    padding: 12px 16px 16px 16px;
     flex-direction: column;
     gap: 12px;
+    align-items: stretch;
   }
 `;
 
@@ -141,13 +126,18 @@ const SelectionInfo = styled.div<{ $isRTL: boolean }>`
   @media (max-width: 768px) {
     width: 100%;
     justify-content: space-between;
+    gap: 8px;
   }
 `;
 
 const SelectionCount = styled.span`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #333;
+  
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 const SelectionActions = styled.div`
@@ -156,16 +146,17 @@ const SelectionActions = styled.div`
   
   @media (max-width: 768px) {
     width: 100%;
+    gap: 8px;
   }
 `;
 
 const ActionButton = styled.button<{ $primary?: boolean }>`
-  padding: 10px 20px;
+  padding: 8px 16px;
   border: ${props => props.$primary ? 'none' : '1px solid #ccc'};
-  border-radius: 8px;
+  border-radius: 6px;
   background: ${props => props.$primary ? '#007bff' : 'transparent'};
   color: ${props => props.$primary ? 'white' : '#666'};
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -184,7 +175,8 @@ const ActionButton = styled.button<{ $primary?: boolean }>`
   
   @media (max-width: 768px) {
     flex: 1;
-    padding: 12px 16px;
+    padding: 10px 12px;
+    font-size: 12px;
   }
 `;
 
@@ -199,80 +191,96 @@ const DownloadButton = styled(ActionButton)`
 `;
 
 const FilterSection = styled.div<{ $isRTL: boolean }>`
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
 `;
 
 const ControlRow = styled.div<{ $isRTL: boolean }>`
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 8px;
   flex-direction: ${props => props.$isRTL ? 'row-reverse' : 'row'};
   flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
 `;
 
 const ControlLabel = styled.label`
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: #333;
   white-space: nowrap;
+  
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const ColumnsSelector = styled.select`
-  padding: 6px 12px;
+  padding: 4px 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 13px;
   background: white;
   cursor: pointer;
+  
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const FilterLabel = styled.div`
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: #333;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const MediaGrid = styled.div<{ $columns: string }>`
   display: grid;
   grid-template-columns: repeat(${props => props.$columns}, 1fr);
-  gap: 16px;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 12px;
   
   @media (max-width: 768px) {
     grid-template-columns: repeat(${props => Math.min(parseInt(props.$columns), 3)}, 1fr);
-    gap: 12px;
+    gap: 8px;
   }
   
   @media (max-width: 480px) {
     grid-template-columns: repeat(${props => Math.min(parseInt(props.$columns), 2)}, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
 `;
 
 const MediaItemContainer = styled.div<{ $isSelected: boolean }>`
   position: relative;
   aspect-ratio: 1;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.2s ease;
-  border: 3px solid ${props => props.$isSelected ? '#007bff' : 'transparent'};
+  border: 2px solid ${props => props.$isSelected ? '#007bff' : 'transparent'};
   
   &:hover {
     transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 `;
 
 const SelectionOverlay = styled.div<{ $isSelected: boolean }>`
   position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 24px;
-  height: 24px;
+  top: 6px;
+  right: 6px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: ${props => props.$isSelected ? '#007bff' : 'rgba(255, 255, 255, 0.8)'};
   border: 2px solid ${props => props.$isSelected ? '#007bff' : '#ccc'};
@@ -284,7 +292,7 @@ const SelectionOverlay = styled.div<{ $isSelected: boolean }>`
   &::after {
     content: '✓';
     color: white;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     opacity: ${props => props.$isSelected ? 1 : 0};
   }
@@ -292,21 +300,21 @@ const SelectionOverlay = styled.div<{ $isSelected: boolean }>`
 
 const VideoDurationOverlay = styled.div`
   position: absolute;
-  bottom: 8px;
-  right: 8px;
+  bottom: 6px;
+  right: 6px;
   background: rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 10px;
   font-weight: 500;
 `;
 
 const EmptyState = styled.div`
   text-align: center;
-  padding: 40px;
+  padding: 40px 20px;
   color: #666;
-  font-size: 16px;
+  font-size: 14px;
   grid-column: 1 / -1;
 `;
 
@@ -473,7 +481,6 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({
       >
         <ModalHeader $isRTL={isRTL}>
           <ModalTitle>{t('Select Items to Download')}</ModalTitle>
-          <CloseButton onClick={onClose}>×</CloseButton>
         </ModalHeader>
         
         <ModalBody>
@@ -568,7 +575,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({
             </SelectionCount>
             
             {isMediaFiltered && (
-              <span style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
+              <span style={{ fontSize: '12px', color: '#666', fontStyle: 'italic' }}>
                 {filteredMediaItems.length === 1
                   ? t('({{count}} item shown after filtering)', { count: filteredMediaItems.length.toString() })
                   : t('({{count}} items shown after filtering)', { count: filteredMediaItems.length.toString() })

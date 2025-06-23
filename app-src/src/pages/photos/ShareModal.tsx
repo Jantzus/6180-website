@@ -2,21 +2,33 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // Types for the modal components
-interface CopyLinkModalProps {
+interface ShareModalProps {
   isOpen: boolean;
   onClose: () => void;
   inviteLink: string;
   onCopy: (text: string) => void;
+  onCreateSubAlbum?: () => void;
+  onShowQRCode?: () => void;
+  onDownload?: () => void;
+  showCreateSubAlbum?: boolean;
+  showQRCode?: boolean;
+  showDownload?: boolean;
   t: (key: string) => string;
   isRTL: boolean;
 }
 
-// CopyLinkModal Component with React Portal and proper TypeScript types
-export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({ 
+// ShareModal Component with React Portal and proper TypeScript types
+export const ShareModal: React.FC<ShareModalProps> = ({ 
   isOpen, 
   onClose, 
   inviteLink, 
   onCopy,
+  onCreateSubAlbum,
+  onShowQRCode,
+  onDownload,
+  showCreateSubAlbum = false,
+  showQRCode = true,
+  showDownload = true,
   t,
   isRTL
 }) => {
@@ -81,61 +93,90 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
         }}>
           {t('Choose an action')}
         </h3>
-                
+        
+        {/* Create Sub-Album Button - Only show when specified */}
+        {showCreateSubAlbum && onCreateSubAlbum && (
+          <button
+            style={buttonStyle}
+            onClick={(e) => {
+              e.stopPropagation();
+              onCreateSubAlbum();
+            }}
+            onMouseOver={(e) => {
+              e.stopPropagation();
+              e.currentTarget.style.backgroundColor = "#f5f5f5";
+            }}
+            onMouseOut={(e) => {
+              e.stopPropagation();
+              e.currentTarget.style.backgroundColor = "#fff";
+            }}
+          >
+            {t('Share Specific Files')}
+          </button>
+        )}
+
+        {/* Show QR Code Button */}
+        {showQRCode && onShowQRCode && (
+          <button
+            style={buttonStyle}
+            onClick={(e) => {
+              e.stopPropagation();
+              onShowQRCode();
+            }}
+            onMouseOver={(e) => {
+              e.stopPropagation();
+              e.currentTarget.style.backgroundColor = "#45a049";
+            }}
+            onMouseOut={(e) => {
+              e.stopPropagation();
+              e.currentTarget.style.backgroundColor = "#4caf50";
+            }}
+          >
+            {t('Show QR Code')}
+          </button>
+        )}
+
+        {/* Download Button */}
+        {showDownload && onDownload && (
+          <button
+            style={buttonStyle}
+            onClick={(e) => {
+              e.stopPropagation();
+              onDownload();
+            }}
+            onMouseOver={(e) => {
+              e.stopPropagation();
+              e.currentTarget.style.backgroundColor = "#1976d2";
+            }}
+            onMouseOut={(e) => {
+              e.stopPropagation();
+              e.currentTarget.style.backgroundColor = "#2196f3";
+            }}
+          >
+            {t('Download')}
+          </button>
+        )}
+        
+        {/* Copy Link Button */}
         <button
           style={buttonStyle}
           onClick={(e) => {
-            e.stopPropagation(); // Stop event from bubbling up
+            e.stopPropagation();
             onCopy(inviteLink);
           }}
           onMouseOver={(e) => {
-            e.stopPropagation(); // Stop mouseOver event bubbling
+            e.stopPropagation();
             e.currentTarget.style.backgroundColor = "#f5f5f5";
           }}
           onMouseOut={(e) => {
-            e.stopPropagation(); // Stop mouseOut event bubbling
+            e.stopPropagation();
             e.currentTarget.style.backgroundColor = "#fff";
           }}
         >
-          {t('Link Only')}
+          {t('Copy Link')}
         </button>
         
-        <button
-          style={buttonStyle}
-          onClick={(e) => {
-            e.stopPropagation(); // Stop event from bubbling up
-            onCopy(`${t('Here are photos from our event')}: ${inviteLink}`);
-          }}
-          onMouseOver={(e) => {
-            e.stopPropagation(); // Stop mouseOver event bubbling
-            e.currentTarget.style.backgroundColor = "#f5f5f5";
-          }}
-          onMouseOut={(e) => {
-            e.stopPropagation(); // Stop mouseOut event bubbling
-            e.currentTarget.style.backgroundColor = "#fff";
-          }}
-        >
-          {t('View Album Photos')}
-        </button>
-        
-        <button
-          style={buttonStyle}
-          onClick={(e) => {
-            e.stopPropagation(); // Stop event from bubbling up
-            onCopy(`${t('Please add any photos from our event here')}: ${inviteLink}`);
-          }}
-          onMouseOver={(e) => {
-            e.stopPropagation(); // Stop mouseOver event bubbling
-            e.currentTarget.style.backgroundColor = "#f5f5f5";
-          }}
-          onMouseOut={(e) => {
-            e.stopPropagation(); // Stop mouseOut event bubbling
-            e.currentTarget.style.backgroundColor = "#fff";
-          }}
-        >
-          {t('Add Photos To Album')}
-        </button>
-        
+        {/* Cancel Button */}
         <button
           style={{
             ...buttonStyle,
@@ -143,15 +184,15 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
             marginTop: "16px"
           }}
           onClick={(e) => {
-            e.stopPropagation(); // Stop event from bubbling up
+            e.stopPropagation();
             onClose();
           }}
           onMouseOver={(e) => {
-            e.stopPropagation(); // Stop mouseOver event bubbling
+            e.stopPropagation();
             e.currentTarget.style.backgroundColor = "#e0e0e0";
           }}
           onMouseOut={(e) => {
-            e.stopPropagation(); // Stop mouseOut event bubbling
+            e.stopPropagation();
             e.currentTarget.style.backgroundColor = "#f0f0f0";
           }}
         >

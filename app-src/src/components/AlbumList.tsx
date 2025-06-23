@@ -538,7 +538,10 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
-                              handleDeleteButtonClick(folder.folderPositionId);
+                              // Check if folderPositionId exists before calling handleDeleteButtonClick
+                              if (folder.folderPositionId) {
+                                handleDeleteButtonClick(folder.folderPositionId);
+                              }
                             }}
                           >
                             {t('Delete My Copy')}
@@ -550,7 +553,10 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
-                          handleDeleteButtonClick(folder.folderPositionId);
+                          // Check if folderPositionId exists before calling handleDeleteButtonClick
+                          if (folder.folderPositionId) {
+                            handleDeleteButtonClick(folder.folderPositionId);
+                          }
                         }}
                       >
                         {t('Delete My Copy')}

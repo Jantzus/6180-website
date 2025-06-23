@@ -15,7 +15,7 @@ import { S3_BUCKET_URL } from '@/lib/config';
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 
 // Import types and utilities
-import { AlbumData, PasswordPolicyEnum, MediaItem, Contact, SelectedTag } from "@/lib/types";
+import { AlbumData, PasswordPolicyEnum, MediaItem, Contact, SelectedTag, FolderType } from "@/lib/types";
 import { generateInviteLink } from "@/lib/utils";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 
@@ -36,7 +36,6 @@ import {
 
 // Import extracted components
 import { 
-  SelectPhotosButton, 
   SelectionModeBanner 
 } from "./components";
 
@@ -57,7 +56,8 @@ import {
   // Updated layout+filter control components with improved spacing:
   LayoutFilterBlock,
   ControlLabel,
-  ColumnsSelector
+  ColumnsSelector,
+  Button
 } from "@/styles/styled-components";
 
 // Import components
@@ -66,8 +66,10 @@ import { PasswordModal } from "@/pages/photos/PasswordModal";
 import { PhotoLoginModal } from "@/pages/photos/PhotoLoginModal";
 import { FileInput } from "@/components/FileInput";
 import { UploadProgress } from "@/components/UploadProgress";
-import { CopyLinkModal } from "@/components/Modals/CopyLinkModal";
+import { ShareModal } from "./ShareModal";
 import { ConfirmationModal } from "@/components/Modals/ConfirmationModal";
+import { QRCodeModal } from "@/components/Modals/QRCodeModal";
+import { DownloadModal } from "@/components/Modals/DownloadModal";
 
 import { UsernamePrompt } from "@/components/UsernamePrompt";
 import { AlbumMediaGrid } from "@/components/AlbumMediaGrid";
@@ -328,6 +330,37 @@ const processRawAPIResponse = (
   return result;
 };
 
+// Helper function to convert AlbumData to FolderType format for DownloadModal
+const albumDataToFolderType = (albumData: AlbumData): FolderType => {
+  // Convert MediaItem[] to the file format expected by DownloadModal
+  const files = albumData.mediaItems.map(item => ({
+    dataKey: item.fileId, // Use fileId as dataKey
+    thumbnailDataKey: item.thumbnailUrl ? item.thumbnailUrl.replace(S3_BUCKET_URL, '') : undefined,
+    durationInSeconds: item.duration ? parseFloat(item.duration.split(':').reduce((acc, time) => (60 * acc) + parseFloat(time), 0).toString()) : undefined,
+    dataInBytes: 0, // Not available in MediaItem, using 0 as default
+    selectedTags: item.selectedTags || [],
+    fileDisplayName: item.fileDisplayName
+  }));
+
+  return {
+    folderId: '', // Not needed for download
+    folderName: albumData.folderName,
+    folderDescription: albumData.folderDescription,
+    albumNanoId: albumData.albumNanoId,
+    creatorId: albumData.creatorId,
+    files: files,
+    contacts: albumData.contacts,
+    folderPassword: albumData.passwordPolicy ? {
+      policy: albumData.passwordPolicy,
+      password: albumData.actualPassword
+    } : undefined,
+    profileIds: albumData.profileIds,
+    folderPositionId: albumData.folderPositionId,
+    createdAt: null,
+    updatedAt: null
+  };
+};
+
 // ============================
 // Pure Album UI Component
 // ============================
@@ -361,8 +394,11 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
   
   // Login and user state
   const [showInlineOTPLogin, setShowInlineOTPLogin] = useState(false);
-  const [showSelectPhotosButton, setShowSelectPhotosButton] = useState(false);
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(initialCognitoUsername);
+  
+  // New modal states for QR Code and Download
+  const [showingQRCode, setShowingQRCode] = useState<boolean>(false);
+  const [showingDownloadModal, setShowingDownloadModal] = useState<boolean>(false);
   
   // Rotating slogan state - start with random slogan
   const [currentSloganIndex, setCurrentSloganIndex] = useState(() => 
@@ -436,6 +472,39 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
   const hasAnyTags = albumData?.mediaItems?.some(item => 
     item.selectedTags && item.selectedTags.length > 0
   ) || false;
+
+  // Convert AlbumData to FolderType for DownloadModal
+  const folderForDownload = useMemo(() => {
+    return albumData ? albumDataToFolderType(albumData) : null;
+  }, [albumData]);
+
+  // Handle QR code button click
+  const handleShowQRCode = () => {
+    shareActions.setShowingCopyLinkAlert(false);
+    setShowingQRCode(true);
+  };
+
+  // Handle download button click
+  const handleDownload = async () => {
+    shareActions.setShowingCopyLinkAlert(false);
+    
+    // Check login first
+    const token = await checkLoginWithoutRedirect();
+    
+    if (!token) {
+      alert(t('You must be logged in to download photos'));
+      return;
+    }
+    
+    // Check if album has media items
+    if (!albumData || !albumData.mediaItems || albumData.mediaItems.length === 0) {
+      alert(t('No items to download'));
+      return;
+    }
+    
+    // Open the download modal
+    setShowingDownloadModal(true);
+  };
 
   // NEW: Prewarm S3 credentials when the page loads for extra reliability
   useEffect(() => {
@@ -624,11 +693,6 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
     localStorage.setItem('columns', value);
   };
 
-  // Function to open file picker directly
-  const openFilePicker = () => {
-    fileUpload.openFilePicker(folderId);
-  };
-
   // Handler for successful login
   const handleLoginSuccess = async () => {
     // Close the login modal first
@@ -679,7 +743,6 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
   
     // Remove the localStorage timestamp once files are selected
     localStorage.removeItem('selectPhotosButtonTimestamp');
-    setShowSelectPhotosButton(false);
     
     // Use the shared file upload processor
     const success = await fileUpload.handleFileSelection(e, cognitoUsername);
@@ -782,24 +845,6 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
           const username = payload["cognito:username"];
           setCognitoUsername(username);
           
-          // Check if the Select Photos button should be shown based on timestamp
-          const buttonTimestamp = localStorage.getItem('selectPhotosButtonTimestamp');
-          if (buttonTimestamp) {
-            const timestamp = parseInt(buttonTimestamp, 10);
-            const currentTime = Date.now();
-            // Calculate time difference in minutes
-            const timeDifference = (currentTime - timestamp) / (1000 * 60);
-            
-            // Only show the button if less than 10 minutes have passed
-            setShowSelectPhotosButton(timeDifference < 10);
-            
-            // If more than 10 minutes have passed, remove the timestamp from localStorage
-            if (timeDifference >= 10) {
-              localStorage.removeItem('selectPhotosButtonTimestamp');
-            }
-          } else {
-            setShowSelectPhotosButton(false);
-          }
         } catch (err) {
           console.error("Failed to decode token", err);
         }
@@ -851,6 +896,150 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
     ...albumData,
     mediaItems: filteredMediaItems
   } : null;
+
+  // Generate the invite link for QR Code and sharing
+  const inviteLink = generateInviteLink(
+    folderId,
+    albumData?.albumNanoId,
+    albumData?.creatorId && albumData?.contacts && albumData?.contacts[albumData?.creatorId] 
+    ? albumData?.contacts[albumData?.creatorId] 
+    : 'album',
+    albumData?.folderName
+  );
+
+  // Helper function to render Share/Download/Cancel button
+  const renderShareOrDownloadButton = () => {
+    // If in selection mode, show cancel button
+    if (isSelectionMode) {
+      return (
+        <button
+          onClick={cancelSelection}
+          style={{
+            background: 'none',
+            border: '1px solid #ccc',
+            borderRadius: '4px',
+            padding: '6px 12px',
+            fontSize: '14px',
+            color: '#333',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px'
+          }}
+        >
+          {t('Cancel')}
+        </button>
+      );
+    }
+
+    // If album has no folderPositionId, show download button
+    if (!albumData?.folderPositionId) {
+      return (
+        <button
+          onClick={saveAlbumDirectly}
+          style={{
+            backgroundColor: "#2196f3",
+            color: "white",
+            border: 'none',
+            borderRadius: '4px',
+            padding: '6px 12px',
+            fontSize: '14px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px'
+          }}
+        >
+          {t('Download')}
+        </button>
+      );
+    }
+
+    // If user is not authorized and has password protection, show nothing
+    if (!isAuthorized && passwordPolicy !== undefined && passwordPolicy !== 'NoPassword') {
+      return null;
+    }
+
+    // Otherwise show share button
+    return (
+      <button
+        onClick={() => shareActions.setShowingCopyLinkAlert(true)}
+        style={{
+          background: 'none',
+          border: '1px solid #ccc',
+          borderRadius: '4px',
+          padding: '6px 12px',
+          fontSize: '14px',
+          color: '#333',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '4px'
+        }}
+      >
+        {t('Share')}
+      </button>
+    );
+  };
+
+  // Function to render selection mode actions (moved from AlbumHeader)
+  const renderSelectionModeActions = () => {
+    if (!isSelectionMode) return null;
+
+    // Determine if all items are selected
+    const totalItems = filteredMediaItems?.length || 0;
+    const allItemsSelected = totalItems > 0 && selectedItems.size === totalItems;
+
+    return (
+      <div style={{ 
+        display: 'flex', 
+        gap: '16px',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '100%',
+        marginBottom: '16px',
+      }}>
+        <Button 
+          onClick={shareSelectPhotos} 
+          disabled={selectedItems.size === 0}
+          style={{ 
+            opacity: selectedItems.size === 0 ? 0.5 : 1,
+            backgroundColor: selectedItems.size > 0 ? '#006adc' : undefined,
+            color: selectedItems.size > 0 ? 'white' : undefined,
+            padding: '8px 16px',
+            margin: '0',
+          }}
+        >
+          {t('Share')} ({selectedItems.size})
+        </Button>
+        
+        {/* Select All / Unselect All button */}
+        {totalItems > 0 && (
+          allItemsSelected ? (
+            <Button 
+              onClick={handleUnselectAll}
+              style={{ 
+                padding: '8px 16px',
+                margin: '0',
+              }}
+            >
+              {t('Unselect All')}
+            </Button>
+          ) : (
+            <Button 
+              onClick={handleSelectAll}
+              style={{ 
+                padding: '8px 16px',
+                margin: '0',
+              }}
+            >
+              {isMediaFiltered ? t('Select Filtered') : t('Select All')}
+            </Button>
+          )
+        )}
+      </div>
+    );
+  };
 
   // If no raw API response, show loading or error state
   if (!rawAPIResponse) {
@@ -917,35 +1106,20 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
       </FixedHeader>
 
       {/* Body content - adjusted padding for new header height */}
-      <Body $isRTL={isRTL} style={{ paddingTop: '88px' }}>
+      <Body $isRTL={isRTL} style={{ paddingTop: '70px' }}>
         <AlbumHeader
           t={t}
-          isSelectionMode={isSelectionMode}
-          selectedItems={selectedItems}
-          shareSelectPhotos={shareSelectPhotos}
-          cancelSelection={cancelSelection}
-          selectAll={handleSelectAll}
-          unselectAll={handleUnselectAll}
-          showingEnterPassword={showingEnterPassword}
           promptForPassword={promptForPassword}
           passwordPolicy={passwordPolicy}
           isAuthorized={isAuthorized}
           saveAlbumDirectly={saveAlbumDirectly}
-          handleCopyLink={() => shareActions.setShowingCopyLinkAlert(true)}
           albumData={albumData}
         />
 
         <MediaContainer id="media-container" style={{
-          paddingTop: '12px', // Reduced from default to tighten spacing after header
-          paddingBottom: '24px' // Keep bottom padding
+          paddingTop: '12px',
+          paddingBottom: '24px'
         }}>
-          {/* Select Photos Button */}
-          <SelectPhotosButton 
-            showSelectPhotosButton={showSelectPhotosButton}
-            albumData={albumData}
-            openFilePicker={openFilePicker}
-            t={t}
-          />
           
           {/* Enhanced Upload Progress Component with more detailed status */}
           {isUploading && (
@@ -959,12 +1133,6 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
               />
             </div>
           )}
-                  
-          {/* Selection Mode Banner */}
-          <SelectionModeBanner
-            isSelectionMode={isSelectionMode}
-            t={t}
-          />
         
           {/* Album Title and Description */}
           <AlbumInfoComponent
@@ -972,26 +1140,31 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
             t={t}
           />
           
-          {/* Columns selector - when no tags, show as simple left-aligned control */}
+          {/* Columns selector - when no tags, show with Share/Download button on same row */}
           {albumData?.mediaItems && albumData.mediaItems.length > 0 && !hasAnyTags && (
             <div style={{ 
               display: 'flex', 
               alignItems: 'center', 
-              gap: '8px', 
-              marginBottom: '16px'
-              // Remove paddingLeft to align with the natural flow
+              gap: '16px', 
+              marginBottom: '16px',
+              justifyContent: 'space-between'              
             }}>
-              <ControlLabel style={{ margin: '0' }}>{t('Columns:')}</ControlLabel>
-              <ColumnsSelector
-                value={columns}
-                onChange={(e) => changeColumns(e.target.value)}
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </ColumnsSelector>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <ControlLabel style={{ margin: '0' }}>{t('Columns:')}</ControlLabel>
+                <ColumnsSelector
+                  value={columns}
+                  onChange={(e) => changeColumns(e.target.value)}
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </ColumnsSelector>
+              </div>
+              
+              {/* Share/Download button with appropriate styling */}
+              {renderShareOrDownloadButton()}
             </div>
           )}
 
@@ -1005,24 +1178,30 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
               marginBottom: '16px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
             }}>
-              {/* Columns Selector */}
+              {/* Columns Selector and Share/Download button */}
               <div style={{ 
                 display: 'flex', 
                 alignItems: 'center', 
-                gap: '8px', 
-                marginBottom: '8px'
+                gap: '16px', 
+                marginBottom: '8px',
+                justifyContent: 'space-between'
               }}>
-                <ControlLabel style={{ margin: '0' }}>{t('Columns:')}</ControlLabel>
-                <ColumnsSelector
-                  value={columns}
-                  onChange={(e) => changeColumns(e.target.value)}
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </ColumnsSelector>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <ControlLabel style={{ margin: '0' }}>{t('Columns:')}</ControlLabel>
+                  <ColumnsSelector
+                    value={columns}
+                    onChange={(e) => changeColumns(e.target.value)}
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </ColumnsSelector>
+                </div>
+                
+                {/* Share/Download button with appropriate styling */}
+                {renderShareOrDownloadButton()}
               </div>
               
               {/* Filter Tags */}
@@ -1043,7 +1222,16 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
               </div>
             </LayoutFilterBlock>
           )}
+
+          {/* Selection Mode Actions - NEW LOCATION */}
+          {renderSelectionModeActions()}
           
+          {/* Selection Mode Banner */}
+          <SelectionModeBanner
+            isSelectionMode={isSelectionMode}
+            t={t}
+          />
+
           {/* Media Grid - reduced spacing */}
           <div style={{ marginTop: '16px' }}>
             <AlbumMediaGrid
@@ -1139,26 +1327,39 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
           }}
         />
         
-        {/* Copy Link Modals */}
-        <CopyLinkModal
+        {/* Share Modal with QR Code and Download buttons */}
+        <ShareModal
           isOpen={shareActions.showingCopyLinkAlert}
           onClose={() => shareActions.setShowingCopyLinkAlert(false)}
-          inviteLink={
-            generateInviteLink(
-              folderId,
-              albumData?.albumNanoId,
-              albumData?.creatorId && albumData?.contacts && albumData?.contacts[albumData?.creatorId] 
-              ? albumData?.contacts[albumData?.creatorId] 
-              : 'album',
-              albumData?.folderName
-            )
-          }
+          inviteLink={inviteLink}
           onCopy={shareActions.handleCopy}
           onCreateSubAlbum={handleCreateSubAlbum}
+          onShowQRCode={handleShowQRCode}
+          onDownload={handleDownload}
           showCreateSubAlbum={true}
+          showQRCode={true}
+          showDownload={true}
           t={t}
           isRTL={getLanguageDirection(language) === "rtl"}
         />
+        
+        {/* QR Code Modal */}
+        <QRCodeModal
+          isOpen={showingQRCode}
+          onClose={() => setShowingQRCode(false)}
+          albumLink={inviteLink}
+          t={t}
+          isRTL={getLanguageDirection(language) === "rtl"}
+        />
+
+        {/* Download Modal */}
+        {folderForDownload && (
+          <DownloadModal
+            isOpen={showingDownloadModal}
+            folder={folderForDownload}
+            onClose={() => setShowingDownloadModal(false)}
+          />
+        )}
         
         <ConfirmationModal
           isOpen={shareActions.showingCopiedLinkAlert}

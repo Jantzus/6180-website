@@ -75,7 +75,7 @@ export type FileType = {
 };
 
 export interface FolderType {
-  folderPositionId: string;
+  folderPositionId?: string;
   folderId: string;
   albumNanoId?: string | null;
   folderName?: string;
@@ -84,9 +84,9 @@ export interface FolderType {
     password?: string;
     policy?: string;
   };
-  creatorId?: string;
-  createdAt?: number;
-  updatedAt?: number;
+  creatorId?: string | null | undefined;
+  createdAt?: number | null | undefined;
+  updatedAt?: number | null | undefined;
   files: Array<{
     dataKey: string;
     thumbnailDataKey?: string;
