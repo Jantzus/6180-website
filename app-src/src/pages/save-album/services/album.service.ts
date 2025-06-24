@@ -5,7 +5,8 @@ import {
   FETCH_FOLDER_QUERY, 
   SAVE_FOLDER_MUTATION, 
   SAVE_FILE_REFERENCES_MUTATION, 
-  SAVE_FINAL_CHUNK_WITH_FOLDER_MUTATION 
+  SAVE_FINAL_CHUNK_WITH_FOLDER_MUTATION,
+  DELETE_FILE_REFERENCES_MUTATION
 } from "../graphql/album-queries";
 import { FileReferenceInput } from "../types/album-types";
 
@@ -261,6 +262,58 @@ export class AlbumService {
     } catch (error) {
       console.error("Error in saveFinalChunkWithFolder:", error);
       enhancedLog(`Error in saveFinalChunkWithFolder: ${error}`);
+      throw error;
+    }
+  }
+
+  /**
+   * NEW: Delete file references by their IDs
+   */
+  static async deleteFileReferences(fileReferenceIds: string[], enhancedLog: (message: string, data?: any) => void) {
+    enhancedLog(`Deleting ${fileReferenceIds.length} file references: ${fileReferenceIds.join(', ')}`);
+    
+    const token = await checkLoginWithRefresh();
+    if (!token) {
+      enhancedLog("No token available for deleting file references, aborting");
+      throw new Error("Authentication token not available");
+    }
+
+    const variables = {
+      deletedFileReferenceIds: fileReferenceIds
+    };
+
+    enhancedLog("GraphQL delete file references mutation variables:", variables);
+
+    try {
+      enhancedLog("Sending API request to delete file references");
+      const response = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: DELETE_FILE_REFERENCES_MUTATION, variables }),
+      });
+      
+      enhancedLog(`API response status: ${response.status}`);
+      
+      const responseText = await response.text();
+      enhancedLog(`API response raw text: ${responseText}`);
+      
+      const json = JSON.parse(responseText);
+      enhancedLog("API response JSON:", json);
+
+      if (json.errors) {
+        console.error("File references deletion failed:", json.errors);
+        enhancedLog(`File references deletion failed with errors:`, json.errors);
+        throw new Error("Failed to delete file references");
+      }
+      
+      enhancedLog(`Successfully deleted ${fileReferenceIds.length} file references`);
+      return json.data?.changeFiles?.items || [];
+    } catch (error) {
+      console.error("Error in deleteFileReferences:", error);
+      enhancedLog(`Error in deleteFileReferences: ${error}`);
       throw error;
     }
   }

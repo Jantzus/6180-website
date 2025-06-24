@@ -1,4 +1,4 @@
-// MultipleAlbumsManager.tsx - Updated to support gear menus and password dialogs
+// MultipleAlbumsManager.tsx - Updated to support real save functionality
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -43,7 +43,7 @@ interface MultipleAlbumsManagerProps {
   albums: AlbumData[];
   setAlbums: React.Dispatch<React.SetStateAction<AlbumData[]>>;
   isSavingAny: boolean;
-  onSaveAlbum: (albumId: string) => void;
+  onSaveAlbum: (albumId: string) => Promise<boolean>; // Updated to return Promise<boolean>
   onRemoveAlbum: (albumId: string) => void;
   onShowPasswordDialog: (albumId: string) => void;
   columns: string;
@@ -72,6 +72,18 @@ export const MultipleAlbumsManager: React.FC<MultipleAlbumsManagerProps> = ({
     ));
   }, [setAlbums]);
 
+  // Handle individual album save
+  const handleSaveAlbum = useCallback(async (albumId: string) => {
+    try {
+      const success = await onSaveAlbum(albumId);
+      enhancedLog(`Album ${albumId} save result: ${success ? 'success' : 'failed'}`);
+      return success;
+    } catch (error) {
+      enhancedLog(`Error saving album ${albumId}: ${error}`);
+      return false;
+    }
+  }, [onSaveAlbum, enhancedLog]);
+
   return (
     <div>
       {/* Albums list */}
@@ -81,7 +93,7 @@ export const MultipleAlbumsManager: React.FC<MultipleAlbumsManagerProps> = ({
             key={album.id}
             album={album}
             onUpdate={(updates) => updateAlbum(album.id, updates)}
-            onSave={() => onSaveAlbum(album.id)}
+            onSave={() => handleSaveAlbum(album.id)}
             onRemove={() => onRemoveAlbum(album.id)}
             onShowPasswordDialog={onShowPasswordDialog}
             disabled={isSavingAny}

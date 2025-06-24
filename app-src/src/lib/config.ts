@@ -8,10 +8,10 @@ export const COGNITO_IDENTITY_POOL_ID = "us-east-1:a5655055-4c58-4173-8d05-af1bb
 export const COGNITO_USER_POOL_ID = "us-east-1_rqcAR61SV"
 export const COGNITO_CLIENT_ID = '1r1gppqh9cat1debtgpghslvgl'
 export const LOCAL_STORAGE_KEYS = {
-  SELECTED_PHOTOS: 'album_selectedPhotos',
-  SUB_ALBUM_DATA: 'sub_album_data',
   LANGUAGE: 'user_language',
   PUBLIC_USERNAME: 'publicUsername',
+  SELECTED_PHOTOS: 'album_selectedPhotos',
+  SUB_ALBUM_DATA: 'sub_album_data',
   MULTI_ALBUM_DATA: "multiAlbumData",
   ALBUM_GROUPS: "albumGroups",
   ALBUM_CREATION_PREFERENCE: "albumCreationPreference"  

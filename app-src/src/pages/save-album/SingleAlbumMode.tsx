@@ -1,4 +1,4 @@
-// SingleAlbumMode.tsx - Single album creation mode component
+// SingleAlbumMode.tsx - Single album creation mode component with proper file deletion
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n/translations";
@@ -44,9 +44,10 @@ import {
   ActionButtons,
   Button
 } from "@/styles/styled-components";
-import { FileState, ExistingFile, AppliedTag } from "./album-types";
+import { FileState, ExistingFile, AppliedTag } from "./types/album-types";
+import { AlbumService } from "./services/album.service";
 
-// Single album mode component with consolidated state
+// Single album mode component with consolidated state and proper file deletion
 export const SingleAlbumMode: React.FC = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
@@ -99,6 +100,7 @@ export const SingleAlbumMode: React.FC = () => {
   // State for existing files
   const [existingFiles, setExistingFiles] = useState<ExistingFile[]>([]);
   const [isLoadingExistingFiles, setIsLoadingExistingFiles] = useState(false);
+  const [isDeletingFiles, setIsDeletingFiles] = useState(false); // NEW: Deletion state
 
   // State for single album gear menu
   const [showSingleGear, setShowSingleGear] = useState(false);
@@ -251,7 +253,7 @@ export const SingleAlbumMode: React.FC = () => {
     warmUpPageCredentials();
   }, []);
 
-  // Function to fetch existing album data
+  // UPDATED: Function to fetch existing album data with fileReferenceId
   const fetchExistingAlbumData = async (albumFolderId: string) => {
     if (!albumFolderId) return;
     
@@ -326,6 +328,7 @@ export const SingleAlbumMode: React.FC = () => {
           }
           
           files.push({
+            fileReferenceId: ref.id, // IMPORTANT: Include fileReferenceId for deletion
             dataKey: file.dataKey,
             thumbnailDataKey: file.thumbnailDataKey || null,
             durationInSeconds: file.durationInSeconds || null,
@@ -489,37 +492,62 @@ export const SingleAlbumMode: React.FC = () => {
     });
   };
 
-  // Existing file management functions
-  const removeExistingFile = (indexToRemove: number) => {
-    const updated = existingFiles.filter((_, i) => i !== indexToRemove);
-    setExistingFiles(updated);
+  // UPDATED: Existing file management functions with proper backend deletion
+  const removeExistingFile = async (indexToRemove: number) => {
+    const fileToRemove = existingFiles[indexToRemove];
+    if (!fileToRemove) {
+      enhancedLog(`No file found at index ${indexToRemove}`);
+      return;
+    }
 
-    setFileState(prev => {
-      const newSelectedIndices = new Set<number>();
-      const newExistingTagsMap = new Map<number, AppliedTag[]>();
-      
-      prev.selectedExistingIndices.forEach(index => {
-        if (index < indexToRemove) {
-          newSelectedIndices.add(index);
-        } else if (index > indexToRemove) {
-          newSelectedIndices.add(index - 1);
-        }
+    // Set deletion state to show loading
+    setIsDeletingFiles(true);
+    enhancedLog(`Starting deletion of file reference: ${fileToRemove.fileReferenceId}`);
+
+    try {
+      // Call backend to delete the file reference
+      await AlbumService.deleteFileReferences([fileToRemove.fileReferenceId], enhancedLog);
+      enhancedLog(`Successfully deleted file reference: ${fileToRemove.fileReferenceId}`);
+
+      // Remove from local state only after successful backend deletion
+      const updated = existingFiles.filter((_, i) => i !== indexToRemove);
+      setExistingFiles(updated);
+
+      setFileState(prev => {
+        const newSelectedIndices = new Set<number>();
+        const newExistingTagsMap = new Map<number, AppliedTag[]>();
+        
+        prev.selectedExistingIndices.forEach(index => {
+          if (index < indexToRemove) {
+            newSelectedIndices.add(index);
+          } else if (index > indexToRemove) {
+            newSelectedIndices.add(index - 1);
+          }
+        });
+
+        prev.existingFileTagsMap.forEach((tags, index) => {
+          if (index < indexToRemove) {
+            newExistingTagsMap.set(index, tags);
+          } else if (index > indexToRemove) {
+            newExistingTagsMap.set(index - 1, tags);
+          }
+        });
+        
+        return {
+          ...prev,
+          selectedExistingIndices: newSelectedIndices,
+          existingFileTagsMap: newExistingTagsMap
+        };
       });
 
-      prev.existingFileTagsMap.forEach((tags, index) => {
-        if (index < indexToRemove) {
-          newExistingTagsMap.set(index, tags);
-        } else if (index > indexToRemove) {
-          newExistingTagsMap.set(index - 1, tags);
-        }
-      });
-      
-      return {
-        ...prev,
-        selectedExistingIndices: newSelectedIndices,
-        existingFileTagsMap: newExistingTagsMap
-      };
-    });
+      enhancedLog(`File removed from local state, ${updated.length} files remaining`);
+    } catch (error) {
+      console.error("Failed to delete file reference:", error);
+      enhancedLog(`Failed to delete file reference: ${error}`);
+      alert(t("Failed to delete file. Please try again."));
+    } finally {
+      setIsDeletingFiles(false);
+    }
   };
 
   // Selection functions
@@ -649,7 +677,7 @@ export const SingleAlbumMode: React.FC = () => {
   };
 
   // Determine states for UI
-  const isTaggingDisabled = isSavingAlbum || isUploading || isLoadingExistingFiles;
+  const isTaggingDisabled = isSavingAlbum || isUploading || isLoadingExistingFiles || isDeletingFiles;
   const hasAnyFiles = selectedPhotos.length > 0 || existingFiles.length > 0;
   const hasSelectedFiles = fileState.selectedPhotoIndices.size > 0 || fileState.selectedExistingIndices.size > 0;
 
@@ -733,6 +761,22 @@ export const SingleAlbumMode: React.FC = () => {
               error: t('Some photos could not be processed. You can continue with the successfully processed photos.')
             }}
           />
+        )}
+        
+        {/* NEW: Show deletion loading state */}
+        {isDeletingFiles && (
+          <div style={{
+            padding: '16px',
+            marginBottom: '16px',
+            backgroundColor: '#fff3cd',
+            border: '1px solid #ffeaa7',
+            borderRadius: '8px',
+            color: '#856404',
+            textAlign: 'center',
+            fontWeight: '500'
+          }}>
+            {t('Deleting file...')}
+          </div>
         )}
         
         {isLoadingExistingFiles && (

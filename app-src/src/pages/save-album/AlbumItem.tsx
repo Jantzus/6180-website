@@ -1,4 +1,4 @@
-// AlbumItem.tsx - Updated to include gear menu for individual album settings
+// AlbumItem.tsx - Updated to handle async save operations
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -367,7 +367,7 @@ const ControlButton = styled.button<{ $variant?: 'danger' }>`
 interface AlbumItemProps {
   album: AlbumData;
   onUpdate: (updates: Partial<AlbumData>) => void;
-  onSave: () => void;
+  onSave: () => Promise<boolean>; // Updated to return Promise<boolean>
   onRemove: () => void;
   onShowPasswordDialog: (albumId: string) => void;
   disabled: boolean;
@@ -389,6 +389,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   const [showGearDropdown, setShowGearDropdown] = useState(false);
+  const [isCurrentlySaving, setIsCurrentlySaving] = useState(false); // Local saving state
   const gearRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown when clicking outside
@@ -514,7 +515,32 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
     onShowPasswordDialog(album.id);
   };
 
+  // Handle save with async operation
+  const handleSaveClick = async () => {
+    if (isCurrentlySaving || disabled) return;
+
+    setIsCurrentlySaving(true);
+    enhancedLog(`Starting save for album: ${album.name}`);
+
+    try {
+      const success = await onSave();
+      enhancedLog(`Save completed for album: ${album.name}, success: ${success}`);
+      
+      if (!success) {
+        // Show error message if save failed
+        alert(t('Failed to save album "{{albumName}}". Please try again.', { albumName: album.name }));
+      }
+    } catch (error) {
+      console.error('Error saving album:', error);
+      enhancedLog(`Error saving album ${album.name}: ${error}`);
+      alert(t('Failed to save album "{{albumName}}". Please try again.', { albumName: album.name }));
+    } finally {
+      setIsCurrentlySaving(false);
+    }
+  };
+
   const hasPassword = album.passwordProtectionOption !== 'NoPassword' && album.albumPassword;
+  const isDisabledForSaving = disabled || isCurrentlySaving || album.isSaving;
 
   return (
     <AlbumBlock>
@@ -523,7 +549,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
           <AlbumTitle>
             <span>📁</span>
             {album.name}
-            {album.isSaving && <span style={{ color: '#007bff' }}>⏳</span>}
+            {(album.isSaving || isCurrentlySaving) && <span style={{ color: '#007bff' }}>⏳</span>}
             {album.savingProgress === 100 && <span style={{ color: '#28a745' }}>✅</span>}
           </AlbumTitle>
           <AlbumStats>
@@ -538,19 +564,19 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
         </AlbumInfo>
 
         <AlbumActions>
-          {!album.isSaving && album.savingProgress < 100 && (
+          {!album.isSaving && !isCurrentlySaving && album.savingProgress < 100 && (
             <>
               <ActionButton 
                 $variant="primary"
-                onClick={onSave}
-                disabled={disabled}
+                onClick={handleSaveClick}
+                disabled={isDisabledForSaving}
               >
-                {t('Save')}
+                {isCurrentlySaving ? t('Saving...') : t('Save')}
               </ActionButton>
               <div ref={gearRef} style={{ position: 'relative' }}>
                 <GearButton
                   onClick={() => setShowGearDropdown(!showGearDropdown)}
-                  disabled={disabled}
+                  disabled={isDisabledForSaving}
                   title={t('Album Settings')}
                 >
                   ⚙️
@@ -566,7 +592,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
                             type="checkbox"
                             checked={album.isOnPublicProfile}
                             onChange={handleTogglePublicProfile}
-                            disabled={album.isSaving}
+                            disabled={isDisabledForSaving}
                           />
                           <ToggleSlider />
                         </ToggleSwitch>
@@ -582,7 +608,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
                             type="checkbox"
                             checked={album.participantsCanAddItems}
                             onChange={handleToggleParticipantsCanAdd}
-                            disabled={album.isSaving}
+                            disabled={isDisabledForSaving}
                           />
                           <ToggleSlider />
                         </ToggleSwitch>
@@ -594,7 +620,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
                             type="checkbox"
                             checked={album.participantsCanDeleteItems}
                             onChange={handleToggleParticipantsCanDelete}
-                            disabled={album.isSaving}
+                            disabled={isDisabledForSaving}
                           />
                           <ToggleSlider />
                         </ToggleSwitch>
@@ -606,7 +632,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
                       <PasswordButton
                         $hasPassword={!!hasPassword}
                         onClick={handlePasswordClick}
-                        disabled={album.isSaving}
+                        disabled={isDisabledForSaving}
                       >
                         {hasPassword ? '🔒' : '🔓'}
                         {hasPassword ? t('Password Set') : t('Set Password')}
@@ -618,7 +644,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
               <ActionButton 
                 $variant="danger"
                 onClick={onRemove}
-                disabled={disabled}
+                disabled={isDisabledForSaving}
               >
                 {t('Remove')}
               </ActionButton>
@@ -636,7 +662,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
             value={album.name}
             onChange={(e) => handleNameChange(e.target.value)}
             placeholder={t('e.g. Family Vacation in Kyoto')}
-            disabled={album.isSaving || album.savingProgress === 100}
+            disabled={isDisabledForSaving}
           />
         </FormGroup>
 
@@ -647,7 +673,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
               value={album.description}
               onChange={(e) => handleDescriptionChange(e.target.value)}
               placeholder={t("e.g. what's special about this album")}
-              disabled={album.isSaving || album.savingProgress === 100}
+              disabled={isDisabledForSaving}
               rows={3}
             />
           </FormGroup>
@@ -656,7 +682,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
             <SelectionControls $isRTL={isRTL}>
               <ControlButton
                 onClick={album.selectedPhotoIndices.size > 0 ? handleDeselectAllPhotos : handleSelectAllPhotos}
-                disabled={album.isSaving || album.savingProgress === 100}
+                disabled={isDisabledForSaving}
               >
                 {album.selectedPhotoIndices.size > 0 ? t('Done Tagging Selected') : t('Select All')}
               </ControlButton>
@@ -665,7 +691,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
                 <ControlButton
                   $variant="danger"
                   onClick={handleDeleteAllPhotos}
-                  disabled={album.isSaving || album.savingProgress === 100}
+                  disabled={isDisabledForSaving}
                 >
                   {t('Delete All')}
                 </ControlButton>
@@ -679,7 +705,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
       <PhotoHandler
         selectedPhotos={album.photos}
         selectedPhotoIndices={album.selectedPhotoIndices}
-        isSavingAlbum={album.isSaving || album.savingProgress === 100}
+        isSavingAlbum={isDisabledForSaving}
         onRemovePhoto={handleRemovePhoto}
         onTogglePhotoSelection={handlePhotoSelection}
         onSelectAllPhotos={handleSelectAllPhotos}
@@ -695,14 +721,14 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
         <TaggingSection>
           <TagsDisplay 
             tagsManager={tagsManager}
-            disabled={album.isSaving || album.savingProgress === 100}
+            disabled={isDisabledForSaving}
             enhancedLog={enhancedLog}
           />
         </TaggingSection>
       )}
 
       {/* Saving progress */}
-      {album.isSaving && (
+      {(album.isSaving || isCurrentlySaving) && (
         <div style={{ marginTop: '16px' }}>
           <div style={{ 
             display: 'flex', 
@@ -711,7 +737,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({
             marginBottom: '8px'
           }}>
             <span style={{ fontSize: '14px', fontWeight: '600', color: '#333' }}>
-              {t('Saving album...')}
+              {isCurrentlySaving ? t('Starting save...') : t('Saving album...')}
             </span>
             <span style={{ fontSize: '14px', color: '#666' }}>
               {t('{{progress}}%', { progress: album.savingProgress })}

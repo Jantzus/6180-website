@@ -2,7 +2,7 @@
 import React from 'react';
 import { LazyImage } from "@/components/LazyImage";
 import { PhotoHandler } from "./components";
-import { ExistingFile, AppliedTag } from "./album-types";
+import { ExistingFile, AppliedTag } from "./types/album-types";
 
 // Props interfaces
 interface ExistingFilesSectionProps {

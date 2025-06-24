@@ -6,7 +6,7 @@ import { getLanguageDirection } from "@/lib/i18n";
 import { formatDate, generateInviteLink, generateUrl } from "@/lib/utils";
 import { LazyImage } from "./LazyImage";
 import { AlbumFooterSection } from "./AlbumFooterSection";
-import { S3_BUCKET_URL } from "@/lib/config";
+import { S3_BUCKET_URL, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { 
   PolicyIndicator, 
   AlbumDescription,
@@ -31,6 +31,14 @@ const calculateTotalSize = (files: Array<{ dataInBytes?: number }>): number => {
   return files.reduce((total, file) => {
     return total + (file.dataInBytes || 0);
   }, 0);
+};
+
+// Helper function to clear album-related localStorage items
+const clearAlbumStorageData = () => {
+  localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+  localStorage.removeItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
+  localStorage.removeItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
+  localStorage.removeItem(LOCAL_STORAGE_KEYS.ALBUM_GROUPS);
 };
 
 // Styled Components (from original AlbumList.tsx)
@@ -515,7 +523,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             }
                           }}
                         >
-                          {t('Edit')}
+                          {t('Edit Files')}
                         </EditButton>
                         <DropdownMenu
                           $isRTL={isRTL}
@@ -527,10 +535,12 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             $isRTL={isRTL}
                             onClick={(e) => {
                               e.stopPropagation();
+                              // Clear album-related localStorage data before navigating to edit
+                              clearAlbumStorageData();
                               window.location.href = generateUrl(`save-album.html?folderId=${encodeURIComponent(folder.folderId)}`);
                             }}
                           >
-                            {t('Edit Details')}
+                            {t('Edit Files or Album Settings')}
                           </DropdownItem>
                           <DropdownItem
                             $isRTL={isRTL}

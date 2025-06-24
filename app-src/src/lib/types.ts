@@ -207,6 +207,7 @@ export const FOLDERPOSITION_FIELD = `
     updatedAt
     fileReferencesPage {
       items {
+        id
         fileDisplayName
         selectedTags {
           TagType

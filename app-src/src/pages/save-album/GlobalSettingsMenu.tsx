@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n/translations";
 import { PasswordPolicyEnum } from "@/lib/types";
-import { GlobalSettings } from "./album-types";
+import { GlobalSettings } from "./types/album-types";
 
 // Styled components for global gear menu
 const GlobalGearButton = styled.button`

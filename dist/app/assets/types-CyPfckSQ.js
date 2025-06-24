@@ -15,6 +15,7 @@ const e=`
     updatedAt
     fileReferencesPage {
       items {
+        id
         fileDisplayName
         selectedTags {
           TagType

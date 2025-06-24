@@ -1,6 +1,6 @@
 // album.queries.ts - All GraphQL queries and mutations for album functionality
 
-// Query for fetching folder details - Updated to include fileDisplayName
+// Query for fetching folder details - Updated to include fileReferenceId for deletion
 export const FETCH_FOLDER_QUERY = `
   query FetchFolders($folderIds: [String!]!, $fetchRelationsInput: FetchRelationsInput!) {
     fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
@@ -39,6 +39,7 @@ export const FETCH_FOLDER_QUERY = `
         }
         fileReferencesPage {
           items {
+            id
             fileDisplayName
             selectedTags {
               TagType
@@ -54,6 +55,7 @@ export const FETCH_FOLDER_QUERY = `
               dataKey
               thumbnailDataKey
               durationInSeconds
+              dataInBytes
             }
           }
         }
@@ -135,6 +137,17 @@ export const SAVE_FINAL_CHUNK_WITH_FOLDER_MUTATION = `
     }
     changeFiles(folderPositionInputs: $folderPositionInputs) {
       items { id }
+    }
+  }
+`;
+
+// NEW: Mutation for deleting file references
+export const DELETE_FILE_REFERENCES_MUTATION = `
+  mutation DeleteFileReferences($deletedFileReferenceIds: [ID!]!) {
+    changeFiles(deletedFileReferenceIds: $deletedFileReferenceIds) {
+      items {
+        id
+      }
     }
   }
 `;
