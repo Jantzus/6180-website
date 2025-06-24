@@ -34,10 +34,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
 }) => {
   if (!isOpen) return null;
 
-  // Define textAlign value with proper type
-  const textAlignValue: "left" | "right" | "center" = isRTL ? "right" : "left";
-
-  // Common button style with properly typed textAlign
+  // Common button style with center alignment
   const buttonStyle = {
     width: "100%",
     padding: "12px",
@@ -45,7 +42,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
     border: "1px solid #ddd",
     borderRadius: "6px",
     backgroundColor: "#fff",
-    textAlign: textAlignValue, // Use the typed value
+    textAlign: "center" as const, // Center aligned buttons
     cursor: "pointer",
     fontSize: "14px",
     transition: "background-color 0.2s"
@@ -78,7 +75,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
           maxWidth: "400px",
           boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
           direction: isRTL ? "rtl" : "ltr",
-          textAlign: textAlignValue, // Use the typed value
+          textAlign: "center", // Center aligned content
           position: "relative",
           animation: "modalFadeIn 0.2s ease-out",
         }}
@@ -89,7 +86,8 @@ export const ShareModal: React.FC<ShareModalProps> = ({
           marginBottom: "16px", 
           fontSize: "18px",
           color: "#333",
-          fontWeight: "600"
+          fontWeight: "600",
+          textAlign: isRTL ? "right" : "left" // Leading side alignment for title
         }}>
           {t('Choose an action')}
         </h3>
@@ -118,7 +116,12 @@ export const ShareModal: React.FC<ShareModalProps> = ({
         {/* Show QR Code Button */}
         {showQRCode && onShowQRCode && (
           <button
-            style={buttonStyle}
+            style={{
+              ...buttonStyle,
+              backgroundColor: "#4caf50",
+              color: "white",
+              border: "none"
+            }}
             onClick={(e) => {
               e.stopPropagation();
               onShowQRCode();
@@ -139,7 +142,12 @@ export const ShareModal: React.FC<ShareModalProps> = ({
         {/* Download Button */}
         {showDownload && onDownload && (
           <button
-            style={buttonStyle}
+            style={{
+              ...buttonStyle,
+              backgroundColor: "#2196f3",
+              color: "white",
+              border: "none"
+            }}
             onClick={(e) => {
               e.stopPropagation();
               onDownload();

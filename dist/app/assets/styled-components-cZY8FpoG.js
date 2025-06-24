@@ -383,7 +383,6 @@ import{aH as m,q as i,d as t}from"./utils-C9eagC26.js";const o={colors:{primary:
   flex-wrap: wrap;
 `;const E=t.span`
   font-size: 14px;
-  color: ${o.colors.text.lighter}; /* Subtle gray labels */
   font-weight: 500;
   white-space: nowrap;
 `,I=t.select`

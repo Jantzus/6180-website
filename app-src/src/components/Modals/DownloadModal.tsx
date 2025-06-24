@@ -110,9 +110,9 @@ const ModalFooter = styled.div<{ $isRTL: boolean }>`
   flex-direction: ${props => props.$isRTL ? 'row-reverse' : 'row'};
   
   @media (max-width: 768px) {
-    padding: 12px 16px 16px 16px;
+    padding: 16px 16px 20px 16px;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     align-items: stretch;
   }
 `;
@@ -146,7 +146,7 @@ const SelectionActions = styled.div`
   
   @media (max-width: 768px) {
     width: 100%;
-    gap: 8px;
+    gap: 12px;
   }
 `;
 
@@ -175,8 +175,8 @@ const ActionButton = styled.button<{ $primary?: boolean }>`
   
   @media (max-width: 768px) {
     flex: 1;
-    padding: 10px 12px;
-    font-size: 12px;
+    padding: 14px 16px;
+    font-size: 13px;
   }
 `;
 
@@ -191,8 +191,12 @@ const DownloadButton = styled(ActionButton)`
 `;
 
 const FilterSection = styled.div<{ $isRTL: boolean }>`
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
+  
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const ControlRow = styled.div<{ $isRTL: boolean }>`
@@ -204,7 +208,8 @@ const ControlRow = styled.div<{ $isRTL: boolean }>`
   flex-wrap: wrap;
   
   @media (max-width: 768px) {
-    gap: 8px;
+    gap: 12px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -240,6 +245,15 @@ const FilterLabel = styled.div`
   
   @media (max-width: 768px) {
     font-size: 12px;
+    margin-bottom: 8px;
+  }
+`;
+
+const TagsFilterSection = styled.div`
+  margin: 10px 0;
+  
+  @media (max-width: 768px) {
+    margin: 12px 0;
   }
 `;
 
@@ -498,7 +512,21 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({
                 <option value="4">4</option>
                 <option value="5">5</option>
               </ColumnsSelector>
-              
+            </ControlRow>
+            
+            {/* Tags Filter Section - only show if there are tags */}
+            {hasAnyTags && (
+              <TagsFilterSection>
+                <FilterLabel>{t('Filter by tags:')}</FilterLabel>
+                <MediaTagsFilter
+                  mediaItems={mediaItems}
+                  onFilterChange={handleMediaFilterChange}
+                  resetFilter={resetMediaFilter}
+                />
+              </TagsFilterSection>
+            )}
+
+            <ControlRow $isRTL={isRTL}>
               <ActionButton onClick={selectAll}>
                 {isMediaFiltered 
                   ? t('Select Filtered ({{count}})', { count: filteredMediaItems.length.toString() })
@@ -511,19 +539,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({
                   {t('Unselect All')}
                 </ActionButton>
               )}
-            </ControlRow>
-            
-            {/* Tags Filter Section - only show if there are tags */}
-            {hasAnyTags && (
-              <div>
-                <FilterLabel>{t('Filter by tags:')}</FilterLabel>
-                <MediaTagsFilter
-                  mediaItems={mediaItems}
-                  onFilterChange={handleMediaFilterChange}
-                  resetFilter={resetMediaFilter}
-                />
-              </div>
-            )}
+            </ControlRow>            
           </FilterSection>
           
           {/* Media Grid */}

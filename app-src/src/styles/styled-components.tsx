@@ -581,7 +581,6 @@ export const ControlGroup = styled.div`
 
 export const ControlLabel = styled.span`
   font-size: 14px;
-  color: ${theme.colors.text.lighter}; /* Subtle gray labels */
   font-weight: 500;
   white-space: nowrap;
 `;
