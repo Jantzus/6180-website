@@ -1,4 +1,4 @@
-import{d as h,R as ne,j as t,I as ie,u as oe,a as b,r as J,b as K,h as Z,f as ee,g as ae,o as M}from"./utils-C9eagC26.js";import{u as se}from"./useFolderManagement-CPyvLSdZ.js";import"./types-Cxncrjqw.js";const ce=`
+import{d as h,R as ne,j as t,I as ie,u as oe,a as b,r as J,b as K,h as Z,f as ee,g as ae,o as M}from"./utils-BR5Tkj09.js";import{u as se}from"./useFolderManagement-BDuN9HsA.js";import"./types-Cxncrjqw.js";const ce=`
   mutation CreatePaymentIntentWithProration($input: CreatePaymentIntentWithProrationInput!) {
     changeMySubscription(createPaymentIntentWithProration: $input) {
       ... on PaymentIntentResponse {

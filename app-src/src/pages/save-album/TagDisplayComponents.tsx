@@ -789,6 +789,30 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
 }) => {
   const { t } = useTranslation();
 
+  // Add CSS for pulse animation if not already present
+  React.useEffect(() => {
+    const styleId = 'photo-tagging-animations';
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement('style');
+      style.id = styleId;
+      style.textContent = `
+        @keyframes subtlePulse {
+          0%, 100% { 
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+          }
+          50% { 
+            opacity: 0.95;
+            transform: scale(1.01);
+            box-shadow: 0 3px 12px rgba(0, 123, 255, 0.3);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }, []);
+
   // Enhanced tag display formatting
   const formatTagsDisplay = (tags: typeof photoTags): string => {
     if (tags.length === 0) return '';
@@ -839,20 +863,20 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
         style={{ 
           background: hasAnyTags 
             ? 'linear-gradient(135deg, rgba(0, 123, 255, 0.95) 0%, rgba(0, 123, 255, 0.85) 100%)'
-            : 'rgba(108, 117, 125, 0.6)', // Subtle gray for untagged files
+            : 'transparent', // No background for untagged files
           color: 'white',
           padding: hasAnyTags ? '8px 12px' : '6px 12px',
           borderRadius: hasAnyTags ? '8px' : '6px',
           fontSize: hasAnyTags ? '11px' : '10px',
           cursor: onToggleSelection ? 'pointer' : 'default',
-          backdropFilter: 'blur(6px)',
+          backdropFilter: hasAnyTags ? 'blur(6px)' : 'none',
           boxShadow: hasAnyTags 
             ? '0 4px 12px rgba(0, 123, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)'
-            : '0 2px 8px rgba(0, 0, 0, 0.2)',
+            : 'none',
           border: hasAnyTags ? '1px solid rgba(255, 255, 255, 0.2)' : 'none',
           transition: 'all 0.3s ease',
           lineHeight: '1.3',
-          minHeight: '32px',
+          minHeight: hasAnyTags ? '32px' : 'auto',
           display: 'flex',
           alignItems: 'center',
           wordBreak: 'break-word'
@@ -898,13 +922,31 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
           </div>
         ) : (
           <div style={{ 
-            opacity: 0.8,
-            fontStyle: 'italic',
+            opacity: 1,
+            fontStyle: 'normal',
             textAlign: 'center',
             width: '100%',
-            fontSize: '10px'
+            fontSize: isSelected ? '11px' : '10px',
+            fontWeight: isSelected ? '600' : 'normal',
+            background: isSelected 
+              ? 'white' 
+              : 'transparent',
+            color: isSelected ? '#007bff' : 'white',
+            borderRadius: isSelected ? '6px' : '0',
+            padding: isSelected ? '8px 12px' : '0',
+            border: isSelected ? '1px solid #007bff' : 'none',
+            boxShadow: isSelected ? '0 2px 8px rgba(0, 123, 255, 0.2)' : 'none',
+            animation: isSelected ? 'subtlePulse 2.5s infinite' : 'none'
           }}>
-            {t('No tags applied')}
+            {isSelected ? (
+              <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+                <span>👇</span> {t('Scroll down to select tags')}
+              </span>
+            ) : (
+              <span style={{ opacity: 0.8, fontStyle: 'italic' }}>
+                {t('No tags applied')}
+              </span>
+            )}
           </div>
         )}
       </div>

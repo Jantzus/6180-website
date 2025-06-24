@@ -1,0 +1,1 @@
+class s{async sign(n,t,i){return n}}const e=r=>{if(r==null)return{};if(Array.isArray(r))return r.filter(n=>n!=null).map(e);if(typeof r=="object"){const n={};for(const t of Object.keys(r))r[t]!=null&&(n[t]=e(r[t]));return n}return r};export{s as N,e as _};

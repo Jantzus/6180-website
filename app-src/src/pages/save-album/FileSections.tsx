@@ -51,6 +51,30 @@ export const ExistingFilesSection: React.FC<ExistingFilesSectionProps> = ({
   t, 
   isRTL 
 }) => {
+  // Add CSS for pulse animation if not already present
+  React.useEffect(() => {
+    const styleId = 'existing-files-animations';
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement('style');
+      style.id = styleId;
+      style.textContent = `
+        @keyframes subtlePulse {
+          0%, 100% { 
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+          }
+          50% { 
+            opacity: 0.95;
+            transform: scale(1.01);
+            box-shadow: 0 3px 12px rgba(0, 123, 255, 0.3);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }, []);
+
   if (existingFiles.length === 0) return null;
 
   return (
@@ -173,11 +197,25 @@ export const ExistingFilesSection: React.FC<ExistingFilesSectionProps> = ({
                         </span>
                       </div>
                     </div>
-                  ) : (
-                    <div className="no-tags">
-                      {t('No tags applied')}
+                  ) : isSelected ? (
+                    <div style={{
+                      background: 'white',
+                      border: '1px solid #007bff',
+                      color: '#007bff',
+                      fontWeight: '600',
+                      fontSize: '11px',
+                      fontStyle: 'normal',
+                      padding: '8px 12px',
+                      borderRadius: '6px',
+                      boxShadow: '0 2px 8px rgba(0, 123, 255, 0.2)',
+                      animation: 'subtlePulse 2.5s infinite'
+                    }}>
+                      <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+                        <span>👇</span> {t('Scroll down to select tags')}
+                      </span>
                     </div>
-                  )}
+                  ) : null
+                  }
                 </div>
               </div>
             </div>
