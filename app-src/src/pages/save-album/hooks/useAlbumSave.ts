@@ -1,4 +1,4 @@
-// useAlbumSave.ts - Fixed version with stable dependencies and simplified logic
+// useAlbumSave.ts - Fixed version with no conditional hooks
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { SelectedPhoto, PasswordPolicyEnum, ProgressTracker } from "@/lib/types";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
@@ -39,10 +39,11 @@ export const useAlbumSave = (
   t: (key: string, options?: Record<string, string | number>) => string
 ) => {
   
-  // SSR-safe client detection
+  // FIXED: All state and hooks called unconditionally at the top
   const [isClient, setIsClient] = useState(false);
   const saveInProgressRef = useRef(false);
 
+  // SSR-safe client detection
   useEffect(() => {
     setIsClient(true);
   }, []);

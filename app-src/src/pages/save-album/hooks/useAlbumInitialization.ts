@@ -1,4 +1,4 @@
-// useAlbumInitialization.ts - Fixed version with stable dependencies
+// useAlbumInitialization.ts - Fixed version with no conditional hooks
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { SelectedPhoto, PasswordPolicyEnum } from "@/lib/types";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
@@ -24,12 +24,12 @@ export const useAlbumInitialization = (
   setParticipantsCanDeleteItems: React.Dispatch<React.SetStateAction<boolean>>,
   enhancedLog: (message: string, data?: unknown) => void
 ) => {
-  // Stable state initialization
+  // FIXED: All state initialization at the top, no conditional calls
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [publicUsername, setPublicUsername] = useState<string | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const [isExistingAlbum, setIsExistingAlbum] = useState(false); // NEW: Track if this is an existing album
+  const [isExistingAlbum, setIsExistingAlbum] = useState(false);
 
   // Refs to prevent multiple initializations
   const initializationRef = useRef(false);
@@ -112,7 +112,7 @@ export const useAlbumInitialization = (
       if (id) {
         // EXISTING ALBUM - has folderId query parameter
         setFolderId(id);
-        setIsExistingAlbum(true); // NEW: Mark as existing album
+        setIsExistingAlbum(true);
         enhancedLog(`Using existing folder ID: ${id}`);
         setIsCreator(true);
         setShowFolderDetails(true);
@@ -148,7 +148,7 @@ export const useAlbumInitialization = (
         }
       } else {
         // NEW ALBUM - no folderId query parameter
-        setIsExistingAlbum(false); // NEW: Mark as new album
+        setIsExistingAlbum(false);
         
         // Check for sub-album data first
         const subAlbumDataStr = getFromLocalStorage(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
@@ -196,7 +196,7 @@ export const useAlbumInitialization = (
   }, [isClient, enhancedLog, getFromLocalStorage, setFolderId, setIsCreator, setShowFolderDetails, 
       setFolderName, setFolderDescription, setIsOnPublicProfile, setParticipantsCanAddItems, 
       setParticipantsCanDeleteItems, setPasswordProtectionOption, setAlbumPassword, 
-      setIsSubAlbum, setSelectedFileIds, setSelectedPhotos]);
+      setIsSubAlbum, setSelectedFileIds, setSelectedPhotos, setIsExistingAlbum]);
 
   // Stable photo restoration function
   const restorePhotosFromStorage = useCallback(() => {
@@ -242,6 +242,7 @@ export const useAlbumInitialization = (
     }
   }, [enhancedLog]);
 
+  // FIXED: All useEffect calls are now unconditional and always run
   // Main initialization effect - only run once when client is ready
   useEffect(() => {
     if (isClient) {
@@ -269,6 +270,6 @@ export const useAlbumInitialization = (
     publicUsername,
     setPublicUsername,
     isInitialized,
-    isExistingAlbum // NEW: Return whether this is an existing album
+    isExistingAlbum
   };
 };

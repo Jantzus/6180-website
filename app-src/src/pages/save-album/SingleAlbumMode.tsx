@@ -1,4 +1,4 @@
-// SingleAlbumMode.tsx - Complete fixed version with tags functionality restored
+// SingleAlbumMode.tsx - Fixed version with hooks called before any conditional returns
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n/translations";
@@ -87,61 +87,15 @@ const useCircuitBreaker = (componentName: string, maxRenders = 50, timeWindow = 
   };
 };
 
-
-
 // Main component with all original functionality restored
 export const SingleAlbumMode: React.FC = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
-  // Circuit breaker protection
+  // FIXED: Call circuit breaker hook first, but don't return early yet
   const { isBlocked, renderCount, reset } = useCircuitBreaker('SingleAlbumMode');
-  
-  // Show safe UI if blocked
-  if (isBlocked) {
-    return (
-      <div style={{ 
-        padding: '20px', 
-        textAlign: 'center', 
-        backgroundColor: '#ffebee',
-        border: '2px solid #f44336',
-        borderRadius: '8px',
-        margin: '20px'
-      }}>
-        <h2>🚨 Component Temporarily Blocked</h2>
-        <p>The component was rendering too frequently and has been safely stopped.</p>
-        <p>Render count: {renderCount}</p>
-        <button 
-          onClick={reset}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#4caf50',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            marginRight: '10px'
-          }}
-        >
-          Reset Component
-        </button>
-        <button 
-          onClick={() => window.location.reload()}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#f44336',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer'
-          }}
-        >
-          Reload Page
-        </button>
-      </div>
-    );
-  }
 
+  // FIXED: Call ALL hooks before any conditional returns
   // Consolidated file state
   const [fileState, setFileState] = useState<FileState>({
     selectedPhotoIndices: new Set(),
@@ -766,6 +720,51 @@ export const SingleAlbumMode: React.FC = () => {
   // Determine states for UI
   const isTaggingDisabled = isSavingAlbum || isUploading || isLoadingExistingFiles || isDeletingFiles;
   const hasAnyFiles = selectedPhotos.length > 0 || existingFiles.length > 0;
+
+  // FIXED: NOW show safe UI if blocked - all hooks have been called above
+  if (isBlocked) {
+    return (
+      <div style={{ 
+        padding: '20px', 
+        textAlign: 'center', 
+        backgroundColor: '#ffebee',
+        border: '2px solid #f44336',
+        borderRadius: '8px',
+        margin: '20px'
+      }}>
+        <h2>🚨 Component Temporarily Blocked</h2>
+        <p>The component was rendering too frequently and has been safely stopped.</p>
+        <p>Render count: {renderCount}</p>
+        <button 
+          onClick={reset}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: '#4caf50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            marginRight: '10px'
+          }}
+        >
+          Reset Component
+        </button>
+        <button 
+          onClick={() => window.location.reload()}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: '#f44336',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          Reload Page
+        </button>
+      </div>
+    );
+  }
 
   return (
     <>
