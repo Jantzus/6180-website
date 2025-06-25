@@ -28,12 +28,30 @@ export const useAlbumInitialization = (
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [publicUsername, setPublicUsername] = useState<string | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // SSR-safe client detection
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // SSR-safe localStorage utilities
+  const getFromLocalStorage = (key: string): string | null => {
+    if (!isClient) return null;
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  };
 
   // Helper function for folder initialization
   const initializeFolderIdWithUsername = async (username: string) => {
     enhancedLog(`Initializing folder ID with username: ${username}`);
     try {
       // Get folderId from URL query parameter (client-side only)
+      if (!isClient) return;
+      
       const params = new URLSearchParams(window.location.search);
       const id = params.get("folderId");
       enhancedLog(`Folder ID from URL: ${id || 'null'}`);
@@ -129,9 +147,11 @@ export const useAlbumInitialization = (
 
   // SSR-safe photo restoration
   const restorePhotosFromStorage = () => {
+    if (!isClient) return;
+    
     enhancedLog("Attempting to restore photos from localStorage");
     try {
-      const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+      const storedPhotos = getFromLocalStorage(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
       enhancedLog(`Found stored photos: ${storedPhotos ? 'yes' : 'no'}`);
       
       if (storedPhotos) {
@@ -172,6 +192,8 @@ export const useAlbumInitialization = (
 
   // Main initialization function (client-side only)
   const initializeComponent = async () => {
+    if (!isClient) return;
+    
     enhancedLog("Starting component initialization");
     
     try {
@@ -184,8 +206,8 @@ export const useAlbumInitialization = (
       
       // Extract username directly here instead of in a separate function
       try {
-        // Get public username from localStorage
-        const savedUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
+        // Get public username from localStorage (SSR-safe)
+        const savedUsername = getFromLocalStorage(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
         enhancedLog(`Retrieved public username from localStorage: ${savedUsername || 'null'}`);
         setPublicUsername(savedUsername || null);
         
@@ -198,8 +220,8 @@ export const useAlbumInitialization = (
           // Set the username in state
           setCognitoUsername(username);
           
-          // Check for sub-album data in localStorage
-          const subAlbumDataStr = localStorage.getItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
+          // Check for sub-album data in localStorage (SSR-safe)
+          const subAlbumDataStr = getFromLocalStorage(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
           enhancedLog(`Sub-album data from localStorage: ${subAlbumDataStr || 'null'}`);
           
           if (subAlbumDataStr) {
@@ -260,10 +282,12 @@ export const useAlbumInitialization = (
     }
   };
 
-  // SSR-safe initialization - only run on client
+  // SSR-safe initialization - only run on client after hydration
   useEffect(() => {
-    initializeComponent();
-  }, []);
+    if (isClient) {
+      initializeComponent();
+    }
+  }, [isClient]);
 
   return {
     cognitoUsername,

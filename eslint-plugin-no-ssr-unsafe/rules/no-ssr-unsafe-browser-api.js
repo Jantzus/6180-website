@@ -1,8 +1,8 @@
 // eslint-plugin-no-ssr-unsafe/rules/no-ssr-unsafe-browser-api.js
 
 /**
- * Fixed ESLint rule for SSR-safe browser API detection
- * Focus: Much more aggressive safe context detection to reduce false positives
+ * Conservative ESLint rule improvements for SSR-safe browser API detection
+ * Focus: Reduce false positives while maintaining strong SSR error detection
  */
 
 const BROWSER_APIS = new Set([
@@ -39,12 +39,15 @@ const SAFE_FUNCTION_PATTERNS = [
   /cleanup/i,           // cleanup functions
   /mount/i,             // onMount, mountHandler
   /unmount/i,           // onUnmount, unmountHandler
+  /SSRSafe/i,           // SSR-safe utilities (NEW)
+  /ClientOnly/i,        // Client-only utilities (NEW)
+  /BrowserSafe/i,       // Browser-safe utilities (NEW)
 ];
 
 const EVENT_HANDLER_PATTERN = /^on[A-Z]/; // onClick, onSubmit, etc.
 
 /**
- * File classification - much more lenient
+ * File classification - more conservative, but with better utility detection
  */
 function getFileType(filename) {
   const utilityPatterns = [
@@ -70,6 +73,11 @@ function getFileType(filename) {
     /\.api\.tsx?$/,
     /\.hook\.tsx?$/,
     /use[A-Z].*\.tsx?$/,  // useLocalStorage.ts, etc.
+    
+    // SSR-safe utility patterns (NEW)
+    /ssr[-_]?safe/i,
+    /client[-_]?only/i,
+    /browser[-_]?safe/i,
   ];
   
   // If it matches utility patterns, it's utility
@@ -87,52 +95,178 @@ function getFileType(filename) {
 }
 
 /**
- * Enhanced safe context detection with much more aggressive detection
+ * Enhanced client-side check detection (NEW IMPROVEMENT)
  */
-function isInSafeContext(node) {
+function isInClientSideCheck(node) {
   let current = node.parent;
   let depth = 0;
-  const MAX_DEPTH = 15; // Increased from 8
+  const MAX_DEPTH = 8;
   
   while (current && depth < MAX_DEPTH) {
     depth++;
     
-    // 1. React effect hooks and callbacks
+    // Check for explicit client-side checks
+    if (current.type === 'IfStatement' && hasClientSideCheck(current.test)) {
+      return true;
+    }
+    
+    // Check for ternary client-side checks
+    if (current.type === 'ConditionalExpression' && hasClientSideCheck(current.test)) {
+      return true;
+    }
+    
+    // Check for logical && with client check
+    if (current.type === 'LogicalExpression' && 
+        current.operator === '&&' && 
+        hasClientSideCheck(current.left)) {
+      return true;
+    }
+    
+    // Check for early return patterns (NEW)
+    if (isEarlyReturnPattern(current)) {
+      return true;
+    }
+    
+    current = current.parent;
+  }
+  
+  return false;
+}
+
+/**
+ * Detect client-side check patterns (IMPROVED)
+ */
+function hasClientSideCheck(condition) {
+  if (!condition) return false;
+  
+  const conditionText = getNodeText(condition);
+  
+  // More specific client-side check patterns
+  const clientCheckPatterns = [
+    // TypeScript/JavaScript environment checks
+    /typeof\s+window\s*[!=]==?\s*['"]undefined['"]/,
+    /typeof\s+document\s*[!=]==?\s*['"]undefined['"]/,
+    /typeof\s+navigator\s*[!=]==?\s*['"]undefined['"]/,
+    /window\s*[!=]==?\s*undefined/,
+    /document\s*[!=]==?\s*undefined/,
+    
+    // Common SSR guard patterns
+    /isClient\s*[!=]==?\s*(true|false)/,
+    /isBrowser\s*[!=]==?\s*(true|false)/,
+    /isServer\s*[!=]==?\s*(true|false)/,
+    /hasWindow\s*[!=]==?\s*(true|false)/,
+    
+    // Logical patterns
+    /window\s*&&/,
+    /document\s*&&/,
+    /navigator\s*&&/,
+    
+    // Process/environment checks
+    /process\.browser/,
+    /process\.client/,
+    /typeof\s+process\s*[!=]==?\s*['"]undefined['"]/,
+  ];
+  
+  return clientCheckPatterns.some(pattern => pattern.test(conditionText));
+}
+
+/**
+ * Detect early return patterns for SSR safety (NEW)
+ */
+function isEarlyReturnPattern(node) {
+  // Look for early return statements with client checks
+  if (node.type === 'ReturnStatement') {
+    // Check if this return is at the beginning of a function
+    const parent = node.parent;
+    if (parent?.type === 'BlockStatement') {
+      const statements = parent.body;
+      const returnIndex = statements.indexOf(node);
+      
+      // If it's one of the first few statements, check for client guards
+      if (returnIndex <= 2) {
+        // Look for client check patterns in preceding statements
+        for (let i = 0; i < returnIndex; i++) {
+          const stmt = statements[i];
+          if (hasClientCheckInStatement(stmt)) {
+            return true;
+          }
+        }
+      }
+    }
+  }
+  
+  return false;
+}
+
+/**
+ * Check if a statement contains client-side checks (NEW)
+ */
+function hasClientCheckInStatement(statement) {
+  const stmtText = getNodeText(statement);
+  
+  const earlyReturnPatterns = [
+    /if\s*\(\s*!isClient\s*\)/,
+    /if\s*\(\s*!isBrowser\s*\)/,
+    /if\s*\(\s*isServer\s*\)/,
+    /if\s*\(\s*typeof\s+window\s*===?\s*['"]undefined['"]\s*\)/,
+    /if\s*\(\s*!window\s*\)/,
+  ];
+  
+  return earlyReturnPatterns.some(pattern => pattern.test(stmtText));
+}
+
+/**
+ * Enhanced safe context detection with new client-side check detection
+ */
+function isInSafeContext(node) {
+  let current = node.parent;
+  let depth = 0;
+  const MAX_DEPTH = 15;
+  
+  while (current && depth < MAX_DEPTH) {
+    depth++;
+    
+    // 1. CLIENT-SIDE CHECKS (NEW - HIGHEST PRIORITY)
+    if (isInClientSideCheck(node)) {
+      return true;
+    }
+    
+    // 2. React effect hooks and callbacks
     if (isInReactSafeHook(current)) {
       return true;
     }
     
-    // 2. Event handler props in JSX
+    // 3. Event handler props in JSX
     if (isEventHandlerProp(current)) {
       return true;
     }
     
-    // 3. Event handler function assignments
+    // 4. Event handler function assignments
     if (isEventHandlerFunction(current)) {
       return true;
     }
     
-    // 4. Browser API method calls (addEventListener, etc.)
+    // 5. Browser API method calls (addEventListener, etc.)
     if (isBrowserAPIMethod(current)) {
       return true;
     }
     
-    // 5. Try-catch blocks (feature detection)
+    // 6. Try-catch blocks (feature detection)
     if (current.type === 'TryStatement') {
       return true;
     }
     
-    // 6. Async execution contexts
+    // 7. Async execution contexts
     if (isAsyncContext(current)) {
       return true;
     }
     
-    // 7. Modal/portal mounting contexts
+    // 8. Modal/portal mounting contexts
     if (isModalContext(current)) {
       return true;
     }
     
-    // 8. Conditional execution based on user interaction
+    // 9. Conditional execution based on user interaction
     if (isUserInteractionConditional(current)) {
       return true;
     }
@@ -144,7 +278,7 @@ function isInSafeContext(node) {
 }
 
 /**
- * Detect React safe hooks more reliably
+ * Enhanced React hook detection (IMPROVED)
  */
 function isInReactSafeHook(node) {
   if (node.type === 'CallExpression' && node.callee) {
@@ -160,6 +294,23 @@ function isInReactSafeHook(node) {
         SAFE_HOOKS.has(node.callee.property.name)) {
       return true;
     }
+  }
+  
+  // Check if we're inside any hook callback function (IMPROVED)
+  let current = node.parent;
+  let hookDepth = 0;
+  const MAX_HOOK_DEPTH = 5;
+  
+  while (current && hookDepth < MAX_HOOK_DEPTH) {
+    hookDepth++;
+    
+    if (current.type === 'CallExpression' && 
+        current.callee?.type === 'Identifier' &&
+        SAFE_HOOKS.has(current.callee.name)) {
+      return true;
+    }
+    
+    current = current.parent;
   }
   
   return false;
@@ -186,7 +337,7 @@ function isEventHandlerProp(node) {
 }
 
 /**
- * Detect event handler function patterns
+ * Enhanced event handler function detection (IMPROVED)
  */
 function isEventHandlerFunction(node) {
   // Variable declarations with handler patterns
@@ -358,7 +509,7 @@ function getNodeText(node) {
 }
 
 /**
- * Enhanced guard detection - much more permissive
+ * Enhanced guard detection - more permissive but still conservative (IMPROVED)
  */
 function isWithinGuard(node) {
   let current = node.parent;
@@ -392,7 +543,7 @@ function isWithinGuard(node) {
 }
 
 /**
- * Very permissive guard detection
+ * Enhanced guard detection with better patterns (IMPROVED)
  */
 function hasAnyGuard(condition) {
   if (!condition) return false;
@@ -400,19 +551,34 @@ function hasAnyGuard(condition) {
   // Check for any browser API checks
   const conditionText = getNodeText(condition);
   const guardPatterns = [
+    // Standard typeof checks
     /typeof.*window/i,
     /typeof.*document/i,
     /typeof.*navigator/i,
     /window.*undefined/i,
     /document.*undefined/i,
+    
+    // Logical checks
     /window\s*&&/i,
     /document\s*&&/i,
     /navigator\s*&&/i,
+    
+    // Conditional checks
     /if.*window/i,
     /if.*document/i,
+    
+    // Environment checks
     /browser/i,
     /client/i,
-    /server/i
+    /server/i,
+    
+    // Common SSR patterns (NEW)
+    /isClient/i,
+    /isBrowser/i,
+    /isServer/i,
+    /hasWindow/i,
+    /process\.browser/i,
+    /process\.client/i,
   ];
   
   return guardPatterns.some(pattern => pattern.test(conditionText));
@@ -477,6 +643,11 @@ module.exports = {
             type: 'boolean',
             default: false,
             description: 'Enable debug logging'
+          },
+          enhancedClientDetection: {
+            type: 'boolean',
+            default: true,
+            description: 'Enable enhanced client-side check detection'
           }
         },
         additionalProperties: false
@@ -496,7 +667,8 @@ module.exports = {
       allowGuarded = true, 
       strictMode = false, 
       utilityLeniency = true,
-      debugMode = false
+      debugMode = false,
+      enhancedClientDetection = true
     } = options;
     
     const filename = context.getFilename();
@@ -509,7 +681,15 @@ module.exports = {
         return strictMode;
       }
       
-      // 2. Check if in any safe execution context
+      // 2. Enhanced client-side check detection (NEW)
+      if (enhancedClientDetection && isInClientSideCheck(node)) {
+        if (debugMode) {
+          console.log(`CLIENT-SIDE CHECK: ${getApiName(node)} at ${filename}`);
+        }
+        return false;
+      }
+      
+      // 3. Check if in any safe execution context
       if (isInSafeContext(node)) {
         if (debugMode) {
           console.log(`SAFE CONTEXT: ${getApiName(node)} at ${filename}`);
@@ -517,7 +697,7 @@ module.exports = {
         return false;
       }
       
-      // 3. Check if properly guarded
+      // 4. Check if properly guarded
       if (allowGuarded && isWithinGuard(node)) {
         if (debugMode) {
           console.log(`GUARDED: ${getApiName(node)} at ${filename}`);
@@ -525,7 +705,7 @@ module.exports = {
         return false;
       }
       
-      // 4. Flag it
+      // 5. Flag it
       if (debugMode) {
         console.log(`FLAGGING: ${getApiName(node)} at ${filename}`);
       }

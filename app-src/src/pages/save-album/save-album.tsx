@@ -10,22 +10,25 @@ import "./album-styles.css";
 
 // SSR-safe mode detection component
 const SaveAlbum = () => {
-  // Default to single album mode during SSR
+  // Default to single album mode during SSR to avoid layout shift
   const [isMultipleMode, setIsMultipleMode] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
   
-  // Detect mode client-side after hydration
+  // Detect mode client-side after hydration to avoid SSR issues
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const mode = urlParams.get('mode');
-    setIsMultipleMode(mode === 'multiple');
-    setIsInitialized(true);
+    // Only run on client-side to avoid document access during SSR
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const mode = urlParams.get('mode');
+      setIsMultipleMode(mode === 'multiple');
+      setIsInitialized(true);
+    }
   }, []);
   
-  // Render single mode by default, then switch after hydration if needed
+  // Render single mode by default during SSR, then switch after hydration if needed
   // This prevents layout shift since both modes have similar structure
   if (!isInitialized) {
-    // During SSR and initial client render, show single mode
+    // During SSR and initial client render, show single mode to ensure consistent rendering
     return <SingleAlbumMode />;
   }
   
@@ -40,4 +43,10 @@ const SaveAlbumWithTranslations = () => {
   );
 };
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<SaveAlbumWithTranslations />);
+// SSR-safe DOM mounting - only mount after DOM is ready
+if (typeof document !== 'undefined') {
+  const rootElement = document.getElementById("root");
+  if (rootElement) {
+    ReactDOM.createRoot(rootElement).render(<SaveAlbumWithTranslations />);
+  }
+}

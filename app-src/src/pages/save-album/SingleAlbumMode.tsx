@@ -56,27 +56,27 @@ const useSSRSafeLocalStorage = () => {
   }, []);
 
   const getItem = (key: string): string | null => {
-    if (!isClient) return null;
+    if (!isClient || typeof window === 'undefined') return null;
     try {
-      return localStorage.getItem(key);
+      return window.localStorage.getItem(key);
     } catch {
       return null;
     }
   };
 
   const setItem = (key: string, value: string): void => {
-    if (!isClient) return;
+    if (!isClient || typeof window === 'undefined') return;
     try {
-      localStorage.setItem(key, value);
+      window.localStorage.setItem(key, value);
     } catch {
       // Silent fail
     }
   };
 
   const removeItem = (key: string): void => {
-    if (!isClient) return;
+    if (!isClient || typeof window === 'undefined') return;
     try {
-      localStorage.removeItem(key);
+      window.localStorage.removeItem(key);
     } catch {
       // Silent fail
     }
@@ -149,7 +149,7 @@ export const SingleAlbumMode: React.FC = () => {
   const [isSubAlbum, setIsSubAlbum] = useState<boolean>(false);
   const [selectedFileIds, setSelectedFileIds] = useState<string[]>([]);
 
-  // State for columns - default to desktop assumption
+  // State for columns - default to desktop assumption (2 columns)
   const [columns, setColumns] = useState<string>('2');
 
   // State for existing files
@@ -279,18 +279,21 @@ export const SingleAlbumMode: React.FC = () => {
   
   const { saveAlbumDirectly } = albumSave;
 
-  // Set default columns from localStorage (client-side only)
+  // SSR-safe columns initialization - use the utility instead of direct localStorage
   useEffect(() => {
     if (!isClient) return;
     
     const savedColumnsValue = localStorage.getItem('save-album-columns') || '2';
     setColumns(savedColumnsValue);
-  }, [isClient, localStorage]);
+  }, [isClient]);
 
-  // Save columns to localStorage when changed
+  // SSR-safe columns save to localStorage when changed
   const handleColumnsChange = (newColumns: string) => {
     setColumns(newColumns);
-    localStorage.setItem('save-album-columns', newColumns);
+    // Only save to localStorage on client-side
+    if (isClient) {
+      localStorage.setItem('save-album-columns', newColumns);
+    }
   };
 
   // Set that we're on the save-album page
@@ -431,7 +434,7 @@ export const SingleAlbumMode: React.FC = () => {
     }
   };
 
-  // Check for query parameters first (client-side only)
+  // SSR-safe query parameters check (client-side only)
   useEffect(() => {
     if (!isClient) return;
     
@@ -440,11 +443,18 @@ export const SingleAlbumMode: React.FC = () => {
     if (folderIdParam) {
       setFolderId(folderIdParam);
       setIsSubAlbum(false);
-      localStorage.removeItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
+      // SSR-safe localStorage removal
+      if (typeof window !== 'undefined') {
+        try {
+          window.localStorage.removeItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
+        } catch {
+          // Silent fail
+        }
+      }
       setShowFolderDetails(true);
       setIsCreator(true);
     }
-  }, [isClient, urlParams, localStorage]);
+  }, [isClient, urlParams]);
 
   // Load existing files when folderId changes
   useEffect(() => {
@@ -512,15 +522,22 @@ export const SingleAlbumMode: React.FC = () => {
     });
   }, [existingFiles.length]);
 
-  // Photo management functions
+  // Photo management functions with SSR-safe localStorage
   const removePhoto = (indexToRemove: number) => {
     const updated = selectedPhotos.filter((_, i) => i !== indexToRemove);
     setSelectedPhotos(updated);
     
-    if (updated.length > 0) {
-      localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(updated));
-    } else {
-      localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+    // SSR-safe localStorage operations
+    if (isClient && typeof window !== 'undefined') {
+      try {
+        if (updated.length > 0) {
+          window.localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(updated));
+        } else {
+          window.localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+        }
+      } catch {
+        // Silent fail
+      }
     }
 
     // Update file state
@@ -668,7 +685,14 @@ export const SingleAlbumMode: React.FC = () => {
         existingFileTagsMap: new Map()
       });
       
-      localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+      // SSR-safe localStorage removal
+      if (isClient && typeof window !== 'undefined') {
+        try {
+          window.localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+        } catch {
+          // Silent fail
+        }
+      }
     }
   };
 
@@ -693,7 +717,14 @@ export const SingleAlbumMode: React.FC = () => {
 
   // Handle successful username update
   const handleSuccessfulUsernameUpdate = (newName: string) => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, newName);
+    // SSR-safe localStorage operations
+    if (isClient && typeof window !== 'undefined') {
+      try {
+        window.localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, newName);
+      } catch {
+        // Silent fail
+      }
+    }
     setPublicUsername(newName);
     setShowUsernamePrompt(false);
     saveAlbumDirectly();

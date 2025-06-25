@@ -1,5 +1,5 @@
-// useAlbumSave.ts - Focused hook for album saving only
-import React from "react";
+// useAlbumSave.ts - SSR-safe focused hook for album saving only
+import React, { useState, useEffect } from "react";
 import { SelectedPhoto, PasswordPolicyEnum, ProgressTracker } from "@/lib/types";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { redirectTo } from "@/lib/utils";
@@ -39,25 +39,48 @@ export const useAlbumSave = (
   t: (key: string, options?: any) => string
 ) => {
   
-  // Helper function to update progress text (expects already translated text)
+  // SSR-safe client detection
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // SSR-safe helper function to update progress text (expects already translated text)
   const updateSaveProgressText = (text: string) => {
     enhancedLog(`Save progress text: ${text}`);
-    const saveProgressText = document.getElementById('saveProgressText');
-    if (saveProgressText) {
-      saveProgressText.innerText = text;
+    
+    // Only access DOM on client-side to avoid SSR issues
+    if (!isClient) return;
+    
+    try {
+      const saveProgressText = document.getElementById('saveProgressText');
+      if (saveProgressText) {
+        saveProgressText.innerText = text;
+      }
+    } catch (error) {
+      // Silent fail if DOM access fails
+      enhancedLog(`Failed to update progress text in DOM: ${error}`);
     }
   };
 
-  // Helper function to update progress UI
+  // SSR-safe helper function to update progress UI
   const updateSaveProgress = (progress: number) => {
-    // Update progress in UI
-    const progressBar = document.getElementById('saveProgress');
-    if (progressBar) {
-      progressBar.style.width = `${progress}%`;
-      enhancedLog(`Updated save progress bar: ${progress}%`);
-    } else {
-      enhancedLog("Progress bar element not found");
+    // Update progress in UI (client-side only)
+    if (isClient) {
+      try {
+        const progressBar = document.getElementById('saveProgress');
+        if (progressBar) {
+          progressBar.style.width = `${progress}%`;
+          enhancedLog(`Updated save progress bar: ${progress}%`);
+        } else {
+          enhancedLog("Progress bar element not found");
+        }
+      } catch (error) {
+        enhancedLog(`Failed to update progress bar: ${error}`);
+      }
     }
+    
     setSavingProgress(progress);
   };
 
@@ -88,9 +111,16 @@ export const useAlbumSave = (
     
     updateSaveProgressText(t('Album saved successfully!'));
     
-    // Set a flag in sessionStorage that we just completed an album
-    sessionStorage.setItem('album_just_saved', 'true');
-    enhancedLog("Set 'album_just_saved' flag in sessionStorage");
+    // SSR-safe sessionStorage operation
+    if (isClient) {
+      try {
+        // Set a flag in sessionStorage that we just completed an album
+        sessionStorage.setItem('album_just_saved', 'true');
+        enhancedLog("Set 'album_just_saved' flag in sessionStorage");
+      } catch (error) {
+        enhancedLog(`Failed to set sessionStorage flag: ${error}`);
+      }
+    }
     
     // Slight delay before redirect for user to see success message
     enhancedLog("Setting timeout for redirect to my-albums.html");

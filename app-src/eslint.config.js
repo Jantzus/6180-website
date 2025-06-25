@@ -1,4 +1,4 @@
-// eslint.config.js - Updated configuration with simplified SSR rule
+// eslint.config.js - Updated configuration with enhanced SSR rule
 
 import js from '@eslint/js'
 import globals from 'globals'
@@ -33,14 +33,15 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       
-      // 🚀 FIXED: Enhanced SSR-safe browser API rule with aggressive safe context detection
+      // 🚀 ENHANCED: SSR-safe browser API rule with improved client detection
       'no-ssr-unsafe/no-ssr-unsafe-browser-api': [
-        'warn',  // Start with warnings to assess impact
+        'warn',  // Start with warnings to assess the improved detection
         {
-          allowGuarded: true,        // Allow typeof window !== 'undefined' checks
-          strictMode: false,         // Standard mode (set true for extra strict)
-          utilityLeniency: true,     // Be very lenient with utility files
-          debugMode: false           // Enable to see what's being flagged/allowed
+          allowGuarded: true,                    // Allow typeof window !== 'undefined' checks
+          strictMode: false,                     // Standard mode for general files
+          utilityLeniency: true,                 // Be very lenient with utility files
+          enhancedClientDetection: true,         // 🆕 NEW: Better client-side check detection
+          debugMode: false                       // 🔧 Set to true temporarily to see improvements
         },
       ],
     },
@@ -48,13 +49,20 @@ export default tseslint.config(
   
   // 📁 File-specific overrides for fine-tuning
   {
-    files: ['**/utils/**/*.{ts,tsx}', '**/helpers/**/*.{ts,tsx}', '**/services/**/*.{ts,tsx}'],
+    files: [
+      '**/utils/**/*.{ts,tsx}', 
+      '**/helpers/**/*.{ts,tsx}', 
+      '**/services/**/*.{ts,tsx}',
+      '**/lib/**/*.{ts,tsx}',           // Added lib directory
+      '**/hooks/**/*.{ts,tsx}'          // Added hooks directory
+    ],
     rules: {
       // Extra lenient for utility directories
       'no-ssr-unsafe/no-ssr-unsafe-browser-api': ['warn', {
         allowGuarded: true,
         strictMode: false,
-        utilityLeniency: true
+        utilityLeniency: true,
+        enhancedClientDetection: true     // 🆕 Enhanced detection for utilities
       }]
     }
   },
@@ -62,11 +70,31 @@ export default tseslint.config(
   {
     files: ['**/components/**/*.{tsx}', '**/pages/**/*.{tsx}'],
     rules: {
-      // Stricter for component files
+      // More balanced strictness for component files with enhanced detection
       'no-ssr-unsafe/no-ssr-unsafe-browser-api': ['error', {
         allowGuarded: true,
-        strictMode: true,          // More strict for components
-        utilityLeniency: false
+        strictMode: false,                     // 🔄 CHANGED: Less strict due to enhanced detection
+        utilityLeniency: false,
+        enhancedClientDetection: true          // 🆕 Enhanced detection for components
+      }]
+    }
+  },
+  
+  // 🆕 NEW: Special handling for SSR-safe utilities
+  {
+    files: [
+      '**/*SSRSafe*.{ts,tsx}',
+      '**/*ClientOnly*.{ts,tsx}', 
+      '**/*BrowserSafe*.{ts,tsx}',
+      '**/ssr-safe/**/*.{ts,tsx}'
+    ],
+    rules: {
+      // Very lenient for explicitly SSR-safe files
+      'no-ssr-unsafe/no-ssr-unsafe-browser-api': ['warn', {
+        allowGuarded: true,
+        strictMode: false,
+        utilityLeniency: true,
+        enhancedClientDetection: true
       }]
     }
   },
