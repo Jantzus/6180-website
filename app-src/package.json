@@ -8,15 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    
     "lint:ssr": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [warn, {allowGuarded: true, strictMode: false, utilityLeniency: true}]'",
     "lint:ssr-strict": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [error, {allowGuarded: true, strictMode: true, utilityLeniency: false}]'",
     "lint:ssr-lenient": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [warn, {allowGuarded: true, strictMode: false, utilityLeniency: true}]'",
     "lint:ssr-debug": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [warn, {allowGuarded: true, strictMode: false, utilityLeniency: true, debugMode: true}]'",
-    
     "lint:ssr-count": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [warn, {allowGuarded: true, strictMode: false, utilityLeniency: true}]' --format compact | grep -c 'no-ssr-unsafe/no-ssr-unsafe-browser-api' || echo '0 errors found'",
     "lint:ssr-diff": "npm run lint:ssr-count && echo 'Previous count: 468 errors'",
-    
     "preview": "vite preview",
     "transform-i18n": "node src/lib/i18n/transformTranslations.cjs",
     "prebuild": "npm run transform-i18n",
@@ -30,7 +27,6 @@
     "@aws-sdk/client-s3": "^3.787.0",
     "@aws-sdk/credential-provider-cognito-identity": "^3.787.0",
     "@types/jszip": "^3.4.0",
-    "jszip": "^3.10.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-qr-code": "^2.0.15",

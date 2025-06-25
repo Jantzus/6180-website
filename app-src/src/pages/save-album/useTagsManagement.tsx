@@ -34,6 +34,31 @@ export interface AppliedTag {
   subtags: { tagTitle: string; subtagTitle: string; }[];
 }
 
+// Interface for API tag response
+interface APITagResponse {
+  id: string;
+  createdAt: number;
+  updatedAt: number;
+  TagType: string;
+  tagTitle: string;
+  points: number;
+  subtags?: {
+    items?: APISubtagResponse[];
+    nextToken?: string;
+  };
+}
+
+// Interface for API subtag response
+interface APISubtagResponse {
+  id: string;
+  createdAt: number;
+  updatedAt: number;
+  TagType: string;
+  tagTitle: string;
+  subtagTitle: string;
+  points: number;
+}
+
 // GraphQL queries and mutations
 const FETCH_TAGS_QUERY = `
   query FetchTags($fetchRelationsInput: FetchRelationsInput!) {
@@ -133,7 +158,7 @@ export const useTagsManagement = (
   setExistingFileTagsMap: React.Dispatch<React.SetStateAction<Map<number, AppliedTag[]>>>,
   selectedPhotoIndices: Set<number>,
   selectedExistingIndices: Set<number>,
-  enhancedLog: (message: string, data?: any) => void
+  enhancedLog: (message: string, data?: unknown) => void
 ) => {
   // SSR-safe state initialization
   const [tags, setTags] = useState<TagData[]>([]);
@@ -549,7 +574,7 @@ export const useTagsManagement = (
   }, [selectedPhotoIndices.size, selectedExistingIndices.size]);
 
   // Fetch tags from the API and merge with missing applied tags
-  const fetchTags = async () => {
+  const fetchTags = useCallback(async () => {
     enhancedLog("Fetching tags from API and checking for missing applied tags");
     setIsLoadingTags(true);
     
@@ -591,14 +616,14 @@ export const useTagsManagement = (
 
       const fetchedTags = result?.data?.fetchRelations?.items || [];
       
-      let transformedTags: TagData[] = fetchedTags.map((tag: any) => ({
+      let transformedTags: TagData[] = fetchedTags.map((tag: APITagResponse) => ({
         id: tag.id,
         tagTitle: tag.tagTitle,
         TagType: tag.TagType,
         points: tag.points,
         createdAt: tag.createdAt,
         updatedAt: tag.updatedAt,
-        subtags: tag.subtags?.items?.map((subtag: any) => ({
+        subtags: tag.subtags?.items?.map((subtag: APISubtagResponse) => ({
           id: subtag.id,
           tagTitle: subtag.tagTitle,
           subtagTitle: subtag.subtagTitle,
@@ -633,7 +658,7 @@ export const useTagsManagement = (
     } finally {
       setIsLoadingTags(false);
     }
-  };
+  }, [enhancedLog, extractAllAppliedTags, createMissingAppliedTags]);
 
   // Set displayed tag (for showing subtags)
   const setDisplayedTag = useCallback((tagId: string | null) => {
@@ -1014,7 +1039,7 @@ export const useTagsManagement = (
   // SSR-safe initialization - only run on client
   useEffect(() => {
     fetchTags();
-  }, []);
+  }, [fetchTags]);
 
   // Re-fetch tags when file tag maps change to ensure missing applied tags are detected
   useEffect(() => {
@@ -1030,7 +1055,7 @@ export const useTagsManagement = (
         fetchTags();
       }
     }
-  }, [photoTagsMap, existingFileTagsMap, extractAllAppliedTags, tags, enhancedLog]);
+  }, [photoTagsMap, existingFileTagsMap, extractAllAppliedTags, tags, enhancedLog, fetchTags]);
 
   // Debug log when selection changes to verify reactivity + clear displayed tag if no longer applied
   useEffect(() => {

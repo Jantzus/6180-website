@@ -2,7 +2,14 @@
 import { SelectedPhoto, UploadStatus } from "@/lib/types";
 import { generateUUID, getTargetItemIdentifier } from "@/lib/utils";
 import { createNanoIdFromUUID } from "@/lib/utils";
-import { AppliedTag, SelectedTagInput, FileReferenceInput } from "../types/album-types";
+import { AppliedTag, SelectedTagInput, FileReferenceInput, FileInput } from "../types/album-types";
+
+// Interface for existing file item (matching the structure used in createExistingFileReferenceInputs)
+interface ExistingFileItem {
+  dataKey: string;
+  fileName?: string;
+  [key: string]: unknown; // Allow additional properties
+}
 
 /**
  * Create initial photo objects from files
@@ -32,7 +39,7 @@ export const updatePhotosWithProcessedInfo = (
   startIndex: number, 
   processedPhotos: SelectedPhoto[],
   setSelectedPhotos: React.Dispatch<React.SetStateAction<SelectedPhoto[]>>,
-  enhancedLog: (message: string, data?: any) => void
+  enhancedLog: (message: string, data?: unknown) => void
 ) => {
   enhancedLog(`Updating photos with processed info, starting at index ${startIndex}`);
   setSelectedPhotos(prev => {
@@ -109,7 +116,7 @@ export const createFolderPositionInput = (
   folderDescription: string,
   isSubAlbum: boolean,
   selectedFileIds: string[],
-  enhancedLog: (message: string, data?: any) => void
+  enhancedLog: (message: string, data?: unknown) => void
 ) => {
   enhancedLog("Creating folder position input WITHOUT folder-level tags");
   enhancedLog(`Profile visibility: ${isOnPublicProfile ? 'Public' : 'Only Me'}`);
@@ -199,7 +206,7 @@ export const createFileReferenceInputs = (
   folderId: string,
   cognitoUsername: string,
   photoTagsMap: Map<number, AppliedTag[]>,
-  enhancedLog: (message: string, data?: any) => void
+  enhancedLog: (message: string, data?: unknown) => void
 ): FileReferenceInput[] => {
   enhancedLog(`Creating file reference inputs with individual photo tags and original filenames for ${validPhotos.length} photos`);
   
@@ -245,6 +252,25 @@ export const createFileReferenceInputs = (
     enhancedLog(`  - duration: ${photo.duration || 'undefined'}`);
     enhancedLog(`  - tags: ${photoTags.length} tags selected for this photo`);
 
+    const fileInput: FileInput = {
+      fileId,
+      ownerFileInput: {
+        editorContactIds: [accountId],
+        FileSharingOptionsEnum: "Anyone",
+        dataKey,
+        thumbnailDataKey: photo.thumbnailDataKey,
+        dataInBytes: photo.size!,
+        thumbnailDataInBytes: photo.thumbnailSize || 0,
+        s3UploadedAt: timestamp,
+        durationInSeconds: photo.duration
+      },
+      editorFileInput: {
+        aboutContactIds: [accountId],
+        captionText: "",
+        numericFilterInputs: [],
+      }
+    };
+
     return {
       fileReferencesHolderId: folderId!,
       currentTime: timestamp,
@@ -253,24 +279,7 @@ export const createFileReferenceInputs = (
       selectedTagInputs: photoTagsForApi, // Apply tags specific to this photo
       fileId,
       fileDisplayName: fileDisplayName, // Include original filename
-      fileInput: {
-        fileId,
-        ownerFileInput: {
-          editorContactIds: [accountId],
-          FileSharingOptionsEnum: "Anyone",
-          dataKey,
-          thumbnailDataKey: photo.thumbnailDataKey,
-          dataInBytes: photo.size!,
-          thumbnailDataInBytes: photo.thumbnailSize || 0,
-          s3UploadedAt: timestamp,
-          durationInSeconds: photo.duration
-        },
-        editorFileInput: {
-          aboutContactIds: [accountId],
-          captionText: "",
-          numericFilterInputs: [],
-        }
-      }
+      fileInput
     };
   });
 };
@@ -282,10 +291,10 @@ export const createExistingFileReferenceInputs = (
   timestamp: number,
   folderId: string,
   cognitoUsername: string,
-  existingFiles: any[],
+  existingFiles: ExistingFileItem[],
   selectedExistingIndices: Set<number>,
   existingFileTagsMap: Map<number, AppliedTag[]>,
-  enhancedLog: (message: string, data?: any) => void
+  enhancedLog: (message: string, data?: unknown) => void
 ): FileReferenceInput[] => {
   const existingFileReferences: FileReferenceInput[] = [];
   

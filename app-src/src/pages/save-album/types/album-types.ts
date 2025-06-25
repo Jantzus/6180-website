@@ -1,5 +1,5 @@
 // album-types.ts - All TypeScript interfaces and types for album functionality
-import { PasswordPolicyEnum } from "@/lib/types";
+import { PasswordPolicyEnum, SelectedPhoto } from "@/lib/types";
 
 // Interface for existing files - Updated to include fileReferenceId for deletion
 export interface ExistingFile {
@@ -39,7 +39,7 @@ export interface GlobalSettings {
 export interface SubAlbumData {
   isSubAlbum: boolean;
   selectedFileIds: string[];
-  selectedPhotos?: any[]; // Using any[] to avoid circular dependency with SelectedPhoto
+  selectedPhotos?: SelectedPhoto[]; // Fixed: Using proper SelectedPhoto type instead of any[]
 }
 
 // Additional types for tag support
@@ -55,6 +55,26 @@ export interface SelectedSubtagInput {
   subtagTitle: string;
 }
 
+// Interface for file input structure
+export interface FileInput {
+  fileId: string;
+  ownerFileInput: {
+    editorContactIds: string[];
+    FileSharingOptionsEnum: string;
+    dataKey: string;
+    thumbnailDataKey?: string | null;
+    dataInBytes: number;
+    thumbnailDataInBytes: number;
+    s3UploadedAt: number;
+    durationInSeconds?: number | null;
+  };
+  editorFileInput: {
+    aboutContactIds: string[];
+    captionText: string;
+    numericFilterInputs: unknown[];
+  };
+}
+
 // Interface for file reference input (updated to include tags and fileDisplayName)
 export interface FileReferenceInput {
   fileReferencesHolderId: string;
@@ -64,5 +84,5 @@ export interface FileReferenceInput {
   selectedTagInputs: SelectedTagInput[];
   fileId: string;
   fileDisplayName?: string;  // Add fileDisplayName support
-  fileInput: any | null;
+  fileInput: FileInput | null; // Fixed: Using proper FileInput type instead of any
 }

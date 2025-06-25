@@ -534,19 +534,22 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({
             )}
 
             <ControlRow $isRTL={isRTL}>
-              <ActionButton onClick={selectAll}>
-                {isMediaFiltered 
-                  ? t('Select Filtered ({{count}})', { count: filteredMediaItems.length.toString() })
-                  : t('Select All')
-                }
-              </ActionButton>
+              {/* Only show Select All button when not all items are selected */}
+              {selectedItems.size < filteredMediaItems.length && (
+                <ActionButton onClick={selectAll}>
+                  {isMediaFiltered 
+                    ? t('Select Filtered ({{count}})', { count: filteredMediaItems.length.toString() })
+                    : t('Select All')
+                  }
+                </ActionButton>
+              )}
               
               {selectedItems.size > 0 && (
                 <ActionButton onClick={unselectAll}>
                   {t('Unselect All')}
                 </ActionButton>
               )}
-            </ControlRow>            
+            </ControlRow>     
           </FilterSection>
           
           {/* Media Grid */}
