@@ -39,7 +39,7 @@ export interface GlobalSettings {
 export interface SubAlbumData {
   isSubAlbum: boolean;
   selectedFileIds: string[];
-  selectedPhotos?: SelectedPhoto[]; // Fixed: Using proper SelectedPhoto type instead of any[]
+  selectedPhotos?: SelectedPhoto[];
 }
 
 // Additional types for tag support
@@ -84,5 +84,5 @@ export interface FileReferenceInput {
   selectedTagInputs: SelectedTagInput[];
   fileId: string;
   fileDisplayName?: string;  // Add fileDisplayName support
-  fileInput: FileInput | null; // Fixed: Using proper FileInput type instead of any
+  fileInput: FileInput | null;
 }

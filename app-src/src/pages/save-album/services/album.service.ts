@@ -14,7 +14,7 @@ export class AlbumService {
   /**
    * Fetch folder details from the API
    */
-  static async fetchFolderDetails(folderId: string, enhancedLog: (message: string, data?: any) => void) {
+  static async fetchFolderDetails(folderId: string, enhancedLog: (message: string, data?: unknown) => void) {
     enhancedLog(`Fetching details for folder ID: ${folderId}`);
     try {
       const token = await checkLoginWithRefresh();
@@ -62,34 +62,38 @@ export class AlbumService {
         return null;
       }
       
-      const folder = items[0];
+      const folder = items[0] as Record<string, unknown>;
       enhancedLog("Retrieved folder data:", folder);
       
       // Check if this folder is on the public profile
-      const isPublic = folder.folderPosition?.profileIds?.some(
+      const folderPosition = folder.folderPosition as Record<string, unknown> | undefined;
+      const profileIds = folderPosition?.profileIds;
+      
+      // FIXED: Check if profileIds is an array before using .some()
+      const isPublic = Array.isArray(profileIds) && profileIds.some(
         (profileId: string) => profileId.includes("Public____Profile")
       ) || false;
       
       enhancedLog(`Folder is on public profile: ${isPublic}`);
-      enhancedLog("Profile IDs:", folder.folderPosition?.profileIds);
+      enhancedLog("Profile IDs:", profileIds);
       
       // Extract participants can add items setting
-      const canAddItems = folder.folderInviteParameters?.usingFolderInviteGrantsRightToAddItems;
+      const canAddItems = (folder.folderInviteParameters as Record<string, unknown>)?.usingFolderInviteGrantsRightToAddItems;
       enhancedLog(`Participants can add items: ${canAddItems}`);
       
       // Extract participants can delete items setting
-      const canDeleteItems = folder.folderInviteParameters?.usingFolderInviteGrantsRightToRemoveItems;
+      const canDeleteItems = (folder.folderInviteParameters as Record<string, unknown>)?.usingFolderInviteGrantsRightToRemoveItems;
       enhancedLog(`Participants can delete items: ${canDeleteItems}`);
       
       return {
-        creatorId: folder.creatorId || '',
-        folderName: folder.folderName || '',
-        folderDescription: folder.folderDescription || '',
-        passwordPolicy: folder.folderPassword?.policy || 'NoPassword',
-        password: folder.folderPassword?.password || '',
+        creatorId: folder.creatorId as string || '',
+        folderName: folder.folderName as string || '',
+        folderDescription: folder.folderDescription as string || '',
+        passwordPolicy: (folder.folderPassword as Record<string, unknown>)?.policy as string || 'NoPassword',
+        password: (folder.folderPassword as Record<string, unknown>)?.password as string || '',
         isOnPublicProfile: isPublic,
-        participantsCanAddItems: canAddItems !== undefined ? canAddItems : true,
-        participantsCanDeleteItems: canDeleteItems !== undefined ? canDeleteItems : false
+        participantsCanAddItems: canAddItems !== undefined ? canAddItems as boolean : true,
+        participantsCanDeleteItems: canDeleteItems !== undefined ? canDeleteItems as boolean : false
       };
     } catch (error) {
       console.error("Error in fetchFolderDetails:", error);
@@ -101,7 +105,7 @@ export class AlbumService {
   /**
    * Save folder only (no file references)
    */
-  static async saveFolderOnly(folderPositionInput: any, enhancedLog: (message: string, data?: any) => void) {
+  static async saveFolderOnly(folderPositionInput: Record<string, unknown>, enhancedLog: (message: string, data?: unknown) => void) {
     enhancedLog("Sending folder-only mutation (no file references, no folder tags)");
     
     const token = await checkLoginWithRefresh();
@@ -153,7 +157,7 @@ export class AlbumService {
   /**
    * Save file references only
    */
-  static async saveFileReferences(fileReferenceInputs: FileReferenceInput[], enhancedLog: (message: string, data?: any) => void) {
+  static async saveFileReferences(fileReferenceInputs: FileReferenceInput[], enhancedLog: (message: string, data?: unknown) => void) {
     enhancedLog(`Sending file references-only mutation with ${fileReferenceInputs.length} items (each with individual tags and filenames)`);
     
     const token = await checkLoginWithRefresh();
@@ -208,8 +212,8 @@ export class AlbumService {
    */
   static async saveFinalChunkWithFolder(
     fileReferenceInputs: FileReferenceInput[], 
-    folderPositionInput: any, 
-    enhancedLog: (message: string, data?: any) => void
+    folderPositionInput: Record<string, unknown>, 
+    enhancedLog: (message: string, data?: unknown) => void
   ) {
     enhancedLog(`Sending final chunk with folder mutation (${fileReferenceInputs.length} file references with filenames, no folder tags)`);
     
@@ -267,9 +271,9 @@ export class AlbumService {
   }
 
   /**
-   * NEW: Delete file references by their IDs
+   * Delete file references by their IDs
    */
-  static async deleteFileReferences(fileReferenceIds: string[], enhancedLog: (message: string, data?: any) => void) {
+  static async deleteFileReferences(fileReferenceIds: string[], enhancedLog: (message: string, data?: unknown) => void) {
     enhancedLog(`Deleting ${fileReferenceIds.length} file references: ${fileReferenceIds.join(', ')}`);
     
     const token = await checkLoginWithRefresh();

@@ -1,5 +1,5 @@
-// useAlbumInitialization.ts - SSR-safe album initialization hook
-import React, { useState, useEffect } from "react";
+// useAlbumInitialization.ts - Fixed version with stable dependencies
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { SelectedPhoto, PasswordPolicyEnum } from "@/lib/types";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { generateUUID } from "@/lib/utils";
@@ -22,178 +22,40 @@ export const useAlbumInitialization = (
   setIsSubAlbum: React.Dispatch<React.SetStateAction<boolean>>,
   setSelectedFileIds: React.Dispatch<React.SetStateAction<string[]>>,
   setParticipantsCanDeleteItems: React.Dispatch<React.SetStateAction<boolean>>,
-  enhancedLog: (message: string, data?: any) => void
+  enhancedLog: (message: string, data?: unknown) => void
 ) => {
-  // SSR-safe state initialization
+  // Stable state initialization
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [publicUsername, setPublicUsername] = useState<string | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isExistingAlbum, setIsExistingAlbum] = useState(false); // NEW: Track if this is an existing album
 
-  // SSR-safe client detection
+  // Refs to prevent multiple initializations
+  const initializationRef = useRef(false);
+  const folderInitRef = useRef(false);
+  const photosRestoredRef = useRef(false);
+
+  // SSR-safe client detection - only run once
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // SSR-safe localStorage utilities
-  const getFromLocalStorage = (key: string): string | null => {
+  // SSR-safe localStorage utilities - memoized to prevent re-creation
+  const getFromLocalStorage = useCallback((key: string): string | null => {
     if (!isClient) return null;
     try {
       return localStorage.getItem(key);
     } catch {
       return null;
     }
-  };
+  }, [isClient]);
 
-  // Helper function for folder initialization
-  const initializeFolderIdWithUsername = async (username: string) => {
-    enhancedLog(`Initializing folder ID with username: ${username}`);
-    try {
-      // Get folderId from URL query parameter (client-side only)
-      if (!isClient) return;
-      
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get("folderId");
-      enhancedLog(`Folder ID from URL: ${id || 'null'}`);
-      
-      if (id) {
-        setFolderId(id);
-        enhancedLog(`Using existing folder ID: ${id}`);
-        
-        // Since this is an existing album, fetch its details
-        try {
-          enhancedLog(`Fetching details for folder: ${id}`);
-          const folderDetails = await AlbumService.fetchFolderDetails(id, enhancedLog);
-          enhancedLog("Folder details retrieved:", folderDetails);
-          
-          if (folderDetails) {
-            // Check if current user is the creator
-            const accountId = `${username}_____${username}____Account`;
-            const userIsCreator = folderDetails.creatorId === accountId;
-            enhancedLog(`User is creator of folder: ${userIsCreator}, accountId: ${accountId}, creator: ${folderDetails.creatorId}`);
-            setIsCreator(userIsCreator);
-            
-            // If user is creator, show folder details
-            if (userIsCreator) {
-              enhancedLog("User is creator, showing folder details");
-              setShowFolderDetails(true);
-              
-              // Update album details in state
-              setFolderName(folderDetails.folderName);
-              setFolderDescription(folderDetails.folderDescription);
-              
-              // Set the public profile toggle state
-              setIsOnPublicProfile(folderDetails.isOnPublicProfile);
-              enhancedLog(`Setting isOnPublicProfile: ${folderDetails.isOnPublicProfile}`);
-              
-              // Set participants can add items toggle state based on folderDetails
-              if (folderDetails.participantsCanAddItems !== undefined) {
-                setParticipantsCanAddItems(folderDetails.participantsCanAddItems);
-                enhancedLog(`Setting participantsCanAddItems: ${folderDetails.participantsCanAddItems}`);
-              }
-              
-              // Set participants can delete items toggle state based on folderDetails
-              if (folderDetails.participantsCanDeleteItems !== undefined) {
-                setParticipantsCanDeleteItems(folderDetails.participantsCanDeleteItems);
-                enhancedLog(`Setting participantsCanDeleteItems: ${folderDetails.participantsCanDeleteItems}`);
-              }
-              
-              // Handle password policy with proper enum mapping
-              const policy = folderDetails.passwordPolicy;
-              enhancedLog(`Password policy from folder details: ${policy}`);
-              
-              // Map the PasswordPolicyEnum values to our local state options
-              setPasswordProtectionOption(policy);
-              if (policy !== 'NoPassword' && folderDetails.password) {
-                setAlbumPassword(folderDetails.password);
-              }
-              enhancedLog(`Set password protection option to: ${policy}`);
-            } else {
-              // If not creator, still load the data but don't show editable fields
-              enhancedLog("User is NOT the creator, hiding editable fields");
-              setShowFolderDetails(false);
-            }
-          } else {
-            // If we couldn't fetch folder details, set it is a new folder
-            enhancedLog("No folder details retrieved, setting isCreator to true");
-            setIsCreator(true);
-            setShowFolderDetails(true);
-          }
-        } catch (fetchErr) {
-          console.error("Error fetching folder details:", fetchErr);
-          enhancedLog(`Error fetching folder details: ${fetchErr}`);
-          // Set isCreator to false on error as a safety measure
-          setIsCreator(false);
-        }
-      } else {
-        // If no ID in URL, create a new one
-        const newId = `${username}_____${generateUUID()}____Folder`;
-        enhancedLog(`Creating new folder ID: ${newId}`);
-        setFolderId(newId);
-        
-        // For new albums, user is automatically the creator
-        enhancedLog("Setting isCreator to true for new album");
-        setIsCreator(true);
-        // Show folder details for new albums
-        setShowFolderDetails(true);
-      }
-    } catch (err) {
-      console.error("Folder ID initialization error:", err);
-      enhancedLog(`Folder ID initialization error: ${err}`);
-      // Set isCreator to false on error as a safety measure
-      setIsCreator(false);
-    }
-  };
+  // Stable initialization function that only runs once
+  const initializeComponent = useCallback(async () => {
+    if (initializationRef.current || !isClient) return;
+    initializationRef.current = true;
 
-  // SSR-safe photo restoration
-  const restorePhotosFromStorage = () => {
-    if (!isClient) return;
-    
-    enhancedLog("Attempting to restore photos from localStorage");
-    try {
-      const storedPhotos = getFromLocalStorage(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
-      enhancedLog(`Found stored photos: ${storedPhotos ? 'yes' : 'no'}`);
-      
-      if (storedPhotos) {
-        try {
-          const parsedPhotos = JSON.parse(storedPhotos) as SelectedPhoto[];
-          enhancedLog(`Parsed ${parsedPhotos.length} photos from localStorage`);
-          
-          if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
-            setSelectedPhotos(parsedPhotos);
-            enhancedLog(`Restored ${parsedPhotos.length} photos to state (including original filenames)`);
-          }
-        } catch (parseErr) {
-          console.error("Error parsing stored photos:", parseErr);
-          enhancedLog(`Error parsing stored photos: ${parseErr}`);
-        }
-      }
-    } catch (storageErr) {
-      console.error("Error restoring photos from storage:", storageErr);
-      enhancedLog(`Error restoring photos from storage: ${storageErr}`);
-    }
-  };
-
-  // SSR-safe S3 connection test
-  const testS3Connection = () => {
-    enhancedLog("Testing S3 connection");
-    try {
-      if (!s3) {
-        console.error("S3 client not available");
-        enhancedLog("S3 client not available");
-      } else {
-        enhancedLog("S3 client is available");
-      }
-    } catch (s3Err) {
-      console.error("S3 connection test error:", s3Err);
-      enhancedLog(`S3 connection test error: ${s3Err}`);
-    }
-  };
-
-  // Main initialization function (client-side only)
-  const initializeComponent = async () => {
-    if (!isClient) return;
-    
     enhancedLog("Starting component initialization");
     
     try {
@@ -204,9 +66,9 @@ export const useAlbumInitialization = (
         return;
       }
       
-      // Extract username directly here instead of in a separate function
+      // Extract username directly here
       try {
-        // Get public username from localStorage (SSR-safe)
+        // Get public username from localStorage
         const savedUsername = getFromLocalStorage(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
         enhancedLog(`Retrieved public username from localStorage: ${savedUsername || 'null'}`);
         setPublicUsername(savedUsername || null);
@@ -217,52 +79,7 @@ export const useAlbumInitialization = (
         
         if (username) {
           enhancedLog(`Extracted Cognito username from token: ${username}`);
-          // Set the username in state
           setCognitoUsername(username);
-          
-          // Check for sub-album data in localStorage (SSR-safe)
-          const subAlbumDataStr = getFromLocalStorage(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
-          enhancedLog(`Sub-album data from localStorage: ${subAlbumDataStr || 'null'}`);
-          
-          if (subAlbumDataStr) {
-            try {
-              const subAlbumData = JSON.parse(subAlbumDataStr) as SubAlbumData;
-              enhancedLog("Parsed sub-album data:", subAlbumData);
-              
-              if (subAlbumData.isSubAlbum && subAlbumData.selectedFileIds?.length > 0) {
-                enhancedLog(`Valid sub-album data found with ${subAlbumData.selectedFileIds.length} files`);
-                setIsSubAlbum(true);
-                setSelectedFileIds(subAlbumData.selectedFileIds);
-                
-                // If we have selectedPhotos in the sub-album data, use them
-                if (subAlbumData.selectedPhotos && subAlbumData.selectedPhotos.length > 0) {
-                  enhancedLog(`Found ${subAlbumData.selectedPhotos.length} selected photos in sub-album data`);
-                  setSelectedPhotos(subAlbumData.selectedPhotos);
-                }
-                
-                // For sub-albums, always show folder details
-                setShowFolderDetails(true);
-                // User is automatically the creator for new sub-albums
-                setIsCreator(true);
-                // Create a new folder ID
-                const newId = `${username}_____${generateUUID()}____Folder`;
-                enhancedLog(`Generated new folder ID for sub-album: ${newId}`);
-                setFolderId(newId);
-              } else {
-                // If we have any issues with the sub-album data, proceed with normal initialization
-                enhancedLog("Invalid sub-album data, proceeding with normal initialization");
-                await initializeFolderIdWithUsername(username);
-              }
-            } catch (e) {
-              console.error("Error parsing sub-album data:", e);
-              enhancedLog(`Error parsing sub-album data: ${e}`);
-              await initializeFolderIdWithUsername(username);
-            }
-          } else {
-            // No sub-album data, proceed with normal folder initialization
-            enhancedLog("No sub-album data found, proceeding with normal folder initialization");
-            await initializeFolderIdWithUsername(username);
-          }
         } else {
           enhancedLog("No Cognito username found in token");
         }
@@ -271,8 +88,6 @@ export const useAlbumInitialization = (
         enhancedLog(`User data initialization error: ${err}`);
       }
       
-      restorePhotosFromStorage();
-      testS3Connection();
       enhancedLog("Component initialization completed");
     } catch (initErr) {
       console.error("Initialization error:", initErr);
@@ -280,19 +95,180 @@ export const useAlbumInitialization = (
     } finally {
       setIsInitialized(true);
     }
-  };
+  }, [isClient, enhancedLog, getFromLocalStorage]);
 
-  // SSR-safe initialization - only run on client after hydration
+  // Stable folder initialization function
+  const initializeFolderIdWithUsername = useCallback(async (username: string) => {
+    if (folderInitRef.current || !isClient) return;
+    folderInitRef.current = true;
+
+    enhancedLog(`Initializing folder ID with username: ${username}`);
+    try {
+      // Get folderId from URL query parameter
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("folderId");
+      enhancedLog(`Folder ID from URL: ${id || 'null'}`);
+      
+      if (id) {
+        // EXISTING ALBUM - has folderId query parameter
+        setFolderId(id);
+        setIsExistingAlbum(true); // NEW: Mark as existing album
+        enhancedLog(`Using existing folder ID: ${id}`);
+        setIsCreator(true);
+        setShowFolderDetails(true);
+        
+        // Try to fetch folder details
+        try {
+          enhancedLog(`Fetching details for existing folder: ${id}`);
+          const folderDetails = await AlbumService.fetchFolderDetails(id, enhancedLog);
+          
+          if (folderDetails) {
+            // Update folder details
+            setFolderName(folderDetails.folderName);
+            setFolderDescription(folderDetails.folderDescription);
+            setIsOnPublicProfile(folderDetails.isOnPublicProfile);
+            
+            if (folderDetails.participantsCanAddItems !== undefined) {
+              setParticipantsCanAddItems(folderDetails.participantsCanAddItems);
+            }
+            
+            if (folderDetails.participantsCanDeleteItems !== undefined) {
+              setParticipantsCanDeleteItems(folderDetails.participantsCanDeleteItems);
+            }
+            
+            const policy = folderDetails.passwordPolicy;
+            setPasswordProtectionOption(policy as PasswordPolicyEnum);
+            if (policy !== 'NoPassword' && folderDetails.password) {
+              setAlbumPassword(folderDetails.password);
+            }
+          }
+        } catch (fetchErr) {
+          console.error("Error fetching folder details:", fetchErr);
+          enhancedLog(`Error fetching folder details: ${fetchErr}`);
+        }
+      } else {
+        // NEW ALBUM - no folderId query parameter
+        setIsExistingAlbum(false); // NEW: Mark as new album
+        
+        // Check for sub-album data first
+        const subAlbumDataStr = getFromLocalStorage(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
+        
+        if (subAlbumDataStr) {
+          try {
+            const subAlbumData = JSON.parse(subAlbumDataStr) as SubAlbumData;
+            
+            if (subAlbumData.isSubAlbum && subAlbumData.selectedFileIds?.length > 0) {
+              enhancedLog(`Valid sub-album data found with ${subAlbumData.selectedFileIds.length} files`);
+              setIsSubAlbum(true);
+              setSelectedFileIds(subAlbumData.selectedFileIds);
+              
+              if (subAlbumData.selectedPhotos && subAlbumData.selectedPhotos.length > 0) {
+                setSelectedPhotos(subAlbumData.selectedPhotos);
+              }
+              
+              setShowFolderDetails(true);
+              setIsCreator(true);
+              
+              // Create a new folder ID for sub-album
+              const newId = `${username}_____${generateUUID()}____Folder`;
+              setFolderId(newId);
+              enhancedLog(`Created new folder ID for sub-album: ${newId}`);
+              return;
+            }
+          } catch (e) {
+            console.error("Error parsing sub-album data:", e);
+            enhancedLog(`Error parsing sub-album data: ${e}`);
+          }
+        }
+        
+        // Create new folder ID if no existing ID and no sub-album
+        const newId = `${username}_____${generateUUID()}____Folder`;
+        enhancedLog(`Creating new folder ID: ${newId}`);
+        setFolderId(newId);
+        setIsCreator(true);
+        setShowFolderDetails(true);
+      }
+    } catch (err) {
+      console.error("Folder ID initialization error:", err);
+      enhancedLog(`Folder ID initialization error: ${err}`);
+      setIsCreator(false);
+    }
+  }, [isClient, enhancedLog, getFromLocalStorage, setFolderId, setIsCreator, setShowFolderDetails, 
+      setFolderName, setFolderDescription, setIsOnPublicProfile, setParticipantsCanAddItems, 
+      setParticipantsCanDeleteItems, setPasswordProtectionOption, setAlbumPassword, 
+      setIsSubAlbum, setSelectedFileIds, setSelectedPhotos]);
+
+  // Stable photo restoration function
+  const restorePhotosFromStorage = useCallback(() => {
+    if (!isClient || photosRestoredRef.current) return;
+    photosRestoredRef.current = true;
+    
+    enhancedLog("Attempting to restore photos from localStorage");
+    try {
+      const storedPhotos = getFromLocalStorage(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+      
+      if (storedPhotos) {
+        try {
+          const parsedPhotos = JSON.parse(storedPhotos) as SelectedPhoto[];
+          enhancedLog(`Parsed ${parsedPhotos.length} photos from localStorage`);
+          
+          if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
+            setSelectedPhotos(parsedPhotos);
+            enhancedLog(`Restored ${parsedPhotos.length} photos to state`);
+          }
+        } catch (parseErr) {
+          console.error("Error parsing stored photos:", parseErr);
+          enhancedLog(`Error parsing stored photos: ${parseErr}`);
+        }
+      }
+    } catch (storageErr) {
+      console.error("Error restoring photos from storage:", storageErr);
+      enhancedLog(`Error restoring photos from storage: ${storageErr}`);
+    }
+  }, [isClient, enhancedLog, getFromLocalStorage, setSelectedPhotos]);
+
+  // Test S3 connection - memoized
+  const testS3Connection = useCallback(() => {
+    enhancedLog("Testing S3 connection");
+    try {
+      if (!s3) {
+        enhancedLog("S3 client not available");
+      } else {
+        enhancedLog("S3 client is available");
+      }
+    } catch (s3Err) {
+      console.error("S3 connection test error:", s3Err);
+      enhancedLog(`S3 connection test error: ${s3Err}`);
+    }
+  }, [enhancedLog]);
+
+  // Main initialization effect - only run once when client is ready
   useEffect(() => {
     if (isClient) {
       initializeComponent();
     }
-  }, [isClient]);
+  }, [isClient, initializeComponent]);
+
+  // Folder initialization effect - only run when we have a username
+  useEffect(() => {
+    if (cognitoUsername && !folderInitRef.current) {
+      initializeFolderIdWithUsername(cognitoUsername);
+    }
+  }, [cognitoUsername, initializeFolderIdWithUsername]);
+
+  // Photo restoration effect - only run once when client is ready
+  useEffect(() => {
+    if (isClient) {
+      restorePhotosFromStorage();
+      testS3Connection();
+    }
+  }, [isClient, restorePhotosFromStorage, testS3Connection]);
 
   return {
     cognitoUsername,
     publicUsername,
     setPublicUsername,
-    isInitialized
+    isInitialized,
+    isExistingAlbum // NEW: Return whether this is an existing album
   };
 };

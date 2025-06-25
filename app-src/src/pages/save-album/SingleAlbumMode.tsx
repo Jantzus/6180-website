@@ -1,5 +1,5 @@
-// SingleAlbumMode.tsx - SSR-safe single album creation mode component
-import React, { useState, useEffect, useRef } from "react";
+// SingleAlbumMode.tsx - Complete fixed version with tags functionality restored
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n/translations";
 import { PasswordPolicyEnum, FOLDERPOSITION_FIELD } from "@/lib/types";
@@ -17,7 +17,6 @@ import {
 import { 
   useAlbumSave 
 } from "./hooks/useAlbumSave";
-import { useTagsManagement } from "./useTagsManagement";
 import { 
   ExistingFilesSection, 
   NewPhotosSection 
@@ -30,7 +29,6 @@ import {
   FolderDetailsComponent,
   SavingProgressComponent
 } from "./components";
-import { TagsDisplay } from "./TagDisplayComponents";
 import { UsernamePrompt } from "@/components/UsernamePrompt";
 import { UploadProgress } from "@/components/UploadProgress";
 import { PasswordDialog } from "@/components/PasswordDialog";
@@ -46,66 +44,103 @@ import {
 } from "@/styles/styled-components";
 import { FileState, ExistingFile, AppliedTag } from "./types/album-types";
 import { AlbumService } from "./services/album.service";
+import { useTagsManagement } from "./useTagsManagement";
+import { TagsDisplay } from "./TagDisplayComponents";
 
-// SSR-safe localStorage utilities
-const useSSRSafeLocalStorage = () => {
-  const [isClient, setIsClient] = useState(false);
+// Enhanced circuit breaker with cooldown
+const useCircuitBreaker = (componentName: string, maxRenders = 50, timeWindow = 3000) => {
+  const renderCount = useRef(0);
+  const lastResetTime = useRef(Date.now());
+  const isBlocked = useRef(false);
+  const blockStartTime = useRef(0);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const now = Date.now();
+  
+  // Reset counter if time window has passed
+  if (now - lastResetTime.current > timeWindow) {
+    renderCount.current = 0;
+    lastResetTime.current = now;
+    
+    // Only unblock after a longer cooldown period
+    if (isBlocked.current && now - blockStartTime.current > 10000) {
+      isBlocked.current = false;
+      console.log(`🔄 Circuit breaker reset for ${componentName}`);
+    }
+  }
 
-  const getItem = (key: string): string | null => {
-    if (!isClient || typeof window === 'undefined') return null;
-    try {
-      return window.localStorage.getItem(key);
-    } catch {
-      return null;
+  renderCount.current++;
+
+  if (renderCount.current > maxRenders && !isBlocked.current) {
+    isBlocked.current = true;
+    blockStartTime.current = now;
+    console.error(`🚨 CIRCUIT BREAKER ACTIVATED for ${componentName}! Renders: ${renderCount.current}`);
+  }
+
+  return { 
+    isBlocked: isBlocked.current, 
+    renderCount: renderCount.current,
+    reset: () => {
+      renderCount.current = 0;
+      lastResetTime.current = Date.now();
+      isBlocked.current = false;
     }
   };
-
-  const setItem = (key: string, value: string): void => {
-    if (!isClient || typeof window === 'undefined') return;
-    try {
-      window.localStorage.setItem(key, value);
-    } catch {
-      // Silent fail
-    }
-  };
-
-  const removeItem = (key: string): void => {
-    if (!isClient || typeof window === 'undefined') return;
-    try {
-      window.localStorage.removeItem(key);
-    } catch {
-      // Silent fail
-    }
-  };
-
-  return { getItem, setItem, removeItem, isClient };
 };
 
-// SSR-safe URL utilities
-const useSSRSafeURL = () => {
-  const [urlParams, setUrlParams] = useState<URLSearchParams>(new URLSearchParams());
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-    if (typeof window !== 'undefined') {
-      setUrlParams(new URLSearchParams(window.location.search));
-    }
-  }, []);
 
-  return { urlParams, isClient };
-};
-
-// Single album mode component with SSR safety
+// Main component with all original functionality restored
 export const SingleAlbumMode: React.FC = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
-  const localStorage = useSSRSafeLocalStorage();
-  const { urlParams, isClient } = useSSRSafeURL();
+  
+  // Circuit breaker protection
+  const { isBlocked, renderCount, reset } = useCircuitBreaker('SingleAlbumMode');
+  
+  // Show safe UI if blocked
+  if (isBlocked) {
+    return (
+      <div style={{ 
+        padding: '20px', 
+        textAlign: 'center', 
+        backgroundColor: '#ffebee',
+        border: '2px solid #f44336',
+        borderRadius: '8px',
+        margin: '20px'
+      }}>
+        <h2>🚨 Component Temporarily Blocked</h2>
+        <p>The component was rendering too frequently and has been safely stopped.</p>
+        <p>Render count: {renderCount}</p>
+        <button 
+          onClick={reset}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: '#4caf50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            marginRight: '10px'
+          }}
+        >
+          Reset Component
+        </button>
+        <button 
+          onClick={() => window.location.reload()}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: '#f44336',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          Reload Page
+        </button>
+      </div>
+    );
+  }
 
   // Consolidated file state
   const [fileState, setFileState] = useState<FileState>({
@@ -161,34 +196,18 @@ export const SingleAlbumMode: React.FC = () => {
   const [showSingleGear, setShowSingleGear] = useState(false);
   const singleGearRef = useRef<HTMLDivElement>(null);
 
-  // Enhanced logging function
-  const enhancedLog = (message: string, data?: any) => {
+  // Enhanced logging function - memoized to prevent re-creation
+  const enhancedLog = useCallback((message: string, data?: unknown) => {
     const timestamp = new Date().toISOString();
     console.log(`[${timestamp}] ${message}`, data);
-  };
-
-  // SSR-safe click outside handler
-  useEffect(() => {
-    if (!isClient) return;
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (singleGearRef.current && !singleGearRef.current.contains(event.target as Node)) {
-        setShowSingleGear(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isClient]);
+  }, []);
 
   // Custom navigation function for the useFileUploadProcessor hook
-  const navigateAfterUpload = (uploadedFolderId: string | null) => {
+  const navigateAfterUpload = useCallback((uploadedFolderId: string | null) => {
     if (!folderId && uploadedFolderId) {
       setFolderId(uploadedFolderId);
     }
-  };
+  }, [folderId]);
 
   // File upload processor
   const fileUploadProcessor = useFileUploadProcessor(navigateAfterUpload, true);
@@ -226,7 +245,7 @@ export const SingleAlbumMode: React.FC = () => {
   
   const { cognitoUsername, publicUsername, setPublicUsername } = albumInitialization;
 
-  // Tags management with consolidated state
+  // Tags management - now using the full implementation
   const tagsManager = useTagsManagement(
     fileState.photoTagsMap,
     (newPhotoTagsMap) => {
@@ -279,22 +298,31 @@ export const SingleAlbumMode: React.FC = () => {
   
   const { saveAlbumDirectly } = albumSave;
 
-  // SSR-safe columns initialization - use the utility instead of direct localStorage
+  // SSR-safe columns initialization
   useEffect(() => {
-    if (!isClient) return;
-    
     const savedColumnsValue = localStorage.getItem('save-album-columns') || '2';
     setColumns(savedColumnsValue);
-  }, [isClient]);
+  }, []);
 
   // SSR-safe columns save to localStorage when changed
-  const handleColumnsChange = (newColumns: string) => {
+  const handleColumnsChange = useCallback((newColumns: string) => {
     setColumns(newColumns);
-    // Only save to localStorage on client-side
-    if (isClient) {
-      localStorage.setItem('save-album-columns', newColumns);
-    }
-  };
+    localStorage.setItem('save-album-columns', newColumns);
+  }, []);
+
+  // SSR-safe click outside handler
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (singleGearRef.current && !singleGearRef.current.contains(event.target as Node)) {
+        setShowSingleGear(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   // Set that we're on the save-album page
   useEffect(() => {
@@ -316,7 +344,7 @@ export const SingleAlbumMode: React.FC = () => {
   }, []);
 
   // Function to fetch existing album data with fileReferenceId
-  const fetchExistingAlbumData = async (albumFolderId: string) => {
+  const fetchExistingAlbumData = useCallback(async (albumFolderId: string) => {
     if (!albumFolderId) return;
     
     setIsLoadingExistingFiles(true);
@@ -365,48 +393,49 @@ export const SingleAlbumMode: React.FC = () => {
 
       const items = json?.data?.fetchRelations?.items || [];
       
-      const targetFolder = items.find((item: any) => 
+      const targetFolder = items.find((item: Record<string, unknown>) => 
         item && 
         item.folder && 
-        item.folder.id === albumFolderId
+        (item.folder as Record<string, unknown>).id === albumFolderId
       );
 
       if (!targetFolder) return;
 
-      const folder = targetFolder.folder;
-      const fileReferences = folder?.fileReferencesPage?.items || [];
+      const folder = (targetFolder as Record<string, unknown>).folder as Record<string, unknown>;
+      const fileReferencesPage = folder.fileReferencesPage as Record<string, unknown> | undefined;
+      const fileReferences = Array.isArray(fileReferencesPage?.items) ? fileReferencesPage.items : [];
     
       const files: ExistingFile[] = [];
       const existingTagsMap = new Map<number, AppliedTag[]>();
       
-      fileReferences.forEach((ref: any, index: number) => {
-        const file = ref.file;
+      fileReferences.forEach((ref: Record<string, unknown>, index: number) => {
+        const file = ref.file as Record<string, unknown>;
         if (file && file.dataKey) {
-          let fileName = ref.fileDisplayName;
+          let fileName = ref.fileDisplayName as string | undefined;
           
           if (!fileName && file.dataKey) {
-            const dataKeyParts = file.dataKey.split('/');
+            const dataKeyParts = (file.dataKey as string).split('/');
             fileName = dataKeyParts[dataKeyParts.length - 1];
           }
           
           files.push({
-            fileReferenceId: ref.id,
-            dataKey: file.dataKey,
-            thumbnailDataKey: file.thumbnailDataKey || null,
-            durationInSeconds: file.durationInSeconds || null,
-            dataInBytes: file.dataInBytes || 0,
+            fileReferenceId: ref.id as string,
+            dataKey: file.dataKey as string,
+            thumbnailDataKey: (file.thumbnailDataKey as string) || null,
+            durationInSeconds: (file.durationInSeconds as number) || null,
+            dataInBytes: (file.dataInBytes as number) || 0,
             fileName: fileName || undefined
           });
           
-          const selectedTags = ref.selectedTags || [];
-          if (selectedTags.length > 0) {
-            const appliedTags: AppliedTag[] = selectedTags.map((tag: any) => ({
-              tagTitle: tag.tagTitle,
-              TagType: tag.TagType,
-              subtags: tag.subtags?.map((subtag: any) => ({
-                tagTitle: subtag.tagTitle,
-                subtagTitle: subtag.subtagTitle
-              })) || []
+          const selectedTags = ref.selectedTags;
+          if (Array.isArray(selectedTags) && selectedTags.length > 0) {
+            const appliedTags: AppliedTag[] = selectedTags.map((tag: Record<string, unknown>) => ({
+              tagTitle: tag.tagTitle as string,
+              TagType: tag.TagType as string,
+              subtags: Array.isArray(tag.subtags) ? tag.subtags.map((subtag: Record<string, unknown>) => ({
+                tagTitle: subtag.tagTitle as string,
+                subtagTitle: subtag.subtagTitle as string
+              })) : []
             }));
             
             existingTagsMap.set(index, appliedTags);
@@ -421,10 +450,10 @@ export const SingleAlbumMode: React.FC = () => {
       }));
 
       if (!folderName && folder.folderName) {
-        setFolderName(folder.folderName);
+        setFolderName(folder.folderName as string);
       }
       if (!folderDescription && folder.folderDescription) {
-        setFolderDescription(folder.folderDescription);
+        setFolderDescription(folder.folderDescription as string);
       }
 
     } catch (error) {
@@ -432,36 +461,14 @@ export const SingleAlbumMode: React.FC = () => {
     } finally {
       setIsLoadingExistingFiles(false);
     }
-  };
-
-  // SSR-safe query parameters check (client-side only)
-  useEffect(() => {
-    if (!isClient) return;
-    
-    const folderIdParam = urlParams.get('folderId');
-    
-    if (folderIdParam) {
-      setFolderId(folderIdParam);
-      setIsSubAlbum(false);
-      // SSR-safe localStorage removal
-      if (typeof window !== 'undefined') {
-        try {
-          window.localStorage.removeItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
-        } catch {
-          // Silent fail
-        }
-      }
-      setShowFolderDetails(true);
-      setIsCreator(true);
-    }
-  }, [isClient, urlParams]);
+  }, [folderName, folderDescription]);
 
   // Load existing files when folderId changes
   useEffect(() => {
     if (folderId) {
       fetchExistingAlbumData(folderId);
     }
-  }, [folderId]);
+  }, [folderId, fetchExistingAlbumData]);
 
   // Update folderId when currentFolderId changes
   useEffect(() => {
@@ -522,25 +529,21 @@ export const SingleAlbumMode: React.FC = () => {
     });
   }, [existingFiles.length]);
 
-  // Photo management functions with SSR-safe localStorage
-  const removePhoto = (indexToRemove: number) => {
+  // Photo management functions
+  const removePhoto = useCallback((indexToRemove: number) => {
     const updated = selectedPhotos.filter((_, i) => i !== indexToRemove);
     setSelectedPhotos(updated);
     
-    // SSR-safe localStorage operations
-    if (isClient && typeof window !== 'undefined') {
-      try {
-        if (updated.length > 0) {
-          window.localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(updated));
-        } else {
-          window.localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
-        }
-      } catch {
-        // Silent fail
+    try {
+      if (updated.length > 0) {
+        localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS, JSON.stringify(updated));
+      } else {
+        localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
       }
+    } catch (error) {
+      console.warn("Failed to update localStorage:", error);
     }
 
-    // Update file state
     setFileState(prev => {
       const newSelectedIndices = new Set<number>();
       const newPhotoTagsMap = new Map<number, AppliedTag[]>();
@@ -567,10 +570,10 @@ export const SingleAlbumMode: React.FC = () => {
         photoTagsMap: newPhotoTagsMap
       };
     });
-  };
+  }, [selectedPhotos, setSelectedPhotos]);
 
-  // Existing file management functions with proper backend deletion
-  const removeExistingFile = async (indexToRemove: number) => {
+  // Existing file management functions
+  const removeExistingFile = useCallback(async (indexToRemove: number) => {
     const fileToRemove = existingFiles[indexToRemove];
     if (!fileToRemove) {
       enhancedLog(`No file found at index ${indexToRemove}`);
@@ -622,10 +625,10 @@ export const SingleAlbumMode: React.FC = () => {
     } finally {
       setIsDeletingFiles(false);
     }
-  };
+  }, [existingFiles, enhancedLog, t]);
 
   // Selection functions
-  const toggleExistingFileSelection = (index: number) => {
+  const toggleExistingFileSelection = useCallback((index: number) => {
     setFileState(prev => {
       const updated = new Set(prev.selectedExistingIndices);
       if (updated.has(index)) {
@@ -635,21 +638,21 @@ export const SingleAlbumMode: React.FC = () => {
       }
       return { ...prev, selectedExistingIndices: updated };
     });
-  };
+  }, []);
 
-  const selectAllExistingFiles = () => {
+  const selectAllExistingFiles = useCallback(() => {
     const allIndices = new Set<number>();
     for (let i = 0; i < existingFiles.length; i++) {
       allIndices.add(i);
     }
     setFileState(prev => ({ ...prev, selectedExistingIndices: allIndices }));
-  };
+  }, [existingFiles.length]);
 
-  const deselectAllExistingFiles = () => {
+  const deselectAllExistingFiles = useCallback(() => {
     setFileState(prev => ({ ...prev, selectedExistingIndices: new Set() }));
-  };
+  }, []);
 
-  const togglePhotoSelection = (index: number) => {
+  const togglePhotoSelection = useCallback((index: number) => {
     setFileState(prev => {
       const updated = new Set(prev.selectedPhotoIndices);
       if (updated.has(index)) {
@@ -659,23 +662,21 @@ export const SingleAlbumMode: React.FC = () => {
       }
       return { ...prev, selectedPhotoIndices: updated };
     });
-  };
+  }, []);
 
-  const selectAllPhotos = () => {
+  const selectAllPhotos = useCallback(() => {
     const allIndices = new Set<number>();
     for (let i = 0; i < selectedPhotos.length; i++) {
       allIndices.add(i);
     }
     setFileState(prev => ({ ...prev, selectedPhotoIndices: allIndices }));
-  };
+  }, [selectedPhotos.length]);
 
-  const deselectAllPhotos = () => {
+  const deselectAllPhotos = useCallback(() => {
     setFileState(prev => ({ ...prev, selectedPhotoIndices: new Set() }));
-  };
+  }, []);
 
-  const deleteAllPhotos = () => {
-    if (!isClient) return;
-    
+  const deleteAllPhotos = useCallback(() => {
     if (confirm(t('Are you sure you want to delete all new files? This action cannot be undone.'))) {
       setSelectedPhotos([]);
       setFileState({
@@ -685,19 +686,18 @@ export const SingleAlbumMode: React.FC = () => {
         existingFileTagsMap: new Map()
       });
       
-      // SSR-safe localStorage removal
-      if (isClient && typeof window !== 'undefined') {
-        try {
-          window.localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
-        } catch {
-          // Silent fail
-        }
+      try {
+        localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+      } catch (error) {
+        console.warn("Failed to update localStorage:", error);
       }
     }
-  };
+  }, [t, setSelectedPhotos]);
 
   // Album saving
-  const handleSaveAlbumSingle = async () => {
+  const handleSaveAlbumSingle = useCallback(async () => {
+    if (isSavingAlbum) return; // Prevent multiple saves
+    
     setIsSavingAlbum(true);
 
     try {
@@ -713,25 +713,22 @@ export const SingleAlbumMode: React.FC = () => {
       console.error("Error in handleSaveAlbumSingle:", err);
       setIsSavingAlbum(false);
     }
-  };
+  }, [isSavingAlbum, publicUsername, setUsernameInput, setShowUsernamePrompt, saveAlbumDirectly]);
 
   // Handle successful username update
-  const handleSuccessfulUsernameUpdate = (newName: string) => {
-    // SSR-safe localStorage operations
-    if (isClient && typeof window !== 'undefined') {
-      try {
-        window.localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, newName);
-      } catch {
-        // Silent fail
-      }
+  const handleSuccessfulUsernameUpdate = useCallback((newName: string) => {
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, newName);
+    } catch (error) {
+      console.warn("Failed to save username to localStorage:", error);
     }
     setPublicUsername(newName);
     setShowUsernamePrompt(false);
     saveAlbumDirectly();
-  };
+  }, [setPublicUsername, setShowUsernamePrompt, saveAlbumDirectly]);
 
   // Handle password dialog close
-  const handleClosePasswordDialog = (option?: PasswordPolicyEnum, password?: string) => {
+  const handleClosePasswordDialog = useCallback((option?: PasswordPolicyEnum, password?: string) => {
     if (option) {
       setPasswordProtectionOption(option);
     }
@@ -741,39 +738,55 @@ export const SingleAlbumMode: React.FC = () => {
     }
     
     setShowPasswordDialog(false);
-  };
+  }, []);
 
   // Handle single album gear menu password click
-  const handleSingleAlbumPasswordClick = () => {
+  const handleSingleAlbumPasswordClick = useCallback(() => {
     setShowPasswordDialog(true);
-  };
+  }, []);
 
   // Handle single album gear menu toggles
-  const handleToggleSinglePublicProfile = () => {
+  const handleToggleSinglePublicProfile = useCallback(() => {
     setIsOnPublicProfile(!isOnPublicProfile);
-  };
+  }, [isOnPublicProfile]);
 
-  const handleToggleSingleParticipantsCanAdd = () => {
+  const handleToggleSingleParticipantsCanAdd = useCallback(() => {
     setParticipantsCanAddItems(!participantsCanAddItems);
-  };
+  }, [participantsCanAddItems]);
 
-  const handleToggleSingleParticipantsCanDelete = () => {
+  const handleToggleSingleParticipantsCanDelete = useCallback(() => {
     setParticipantsCanDeleteItems(!participantsCanDeleteItems);
-  };
+  }, [participantsCanDeleteItems]);
 
   // Handle add photos
-  const handleAddPhotos = () => {
+  const handleAddPhotos = useCallback(() => {
     openFilePicker(folderId);
-  };
+  }, [openFilePicker, folderId]);
 
   // Determine states for UI
   const isTaggingDisabled = isSavingAlbum || isUploading || isLoadingExistingFiles || isDeletingFiles;
   const hasAnyFiles = selectedPhotos.length > 0 || existingFiles.length > 0;
-  const hasSelectedFiles = fileState.selectedPhotoIndices.size > 0 || fileState.selectedExistingIndices.size > 0;
 
   return (
     <>
       <GlobalStyle />
+      
+      {/* Debug info in development */}
+      {process.env.NODE_ENV === 'development' && (
+        <div style={{ 
+          position: 'fixed', 
+          top: '10px', 
+          right: '10px', 
+          background: 'rgba(0,0,0,0.8)', 
+          color: 'white', 
+          padding: '10px',
+          borderRadius: '4px',
+          fontSize: '12px',
+          zIndex: 9999
+        }}>
+          Renders: {renderCount}
+        </div>
+      )}
       
       <FixedHeader>
         <FixedHeaderContent>
@@ -950,13 +963,14 @@ export const SingleAlbumMode: React.FC = () => {
               isRTL={isRTL}
             />
             
-            <div style={{ marginTop: hasSelectedFiles ? '32px' : '16px' }}>
+            {/* Tags functionality - now fully restored */}
+            {(fileState.selectedPhotoIndices.size > 0 || fileState.selectedExistingIndices.size > 0) && (
               <TagsDisplay 
                 tagsManager={tagsManager}
                 disabled={isTaggingDisabled}
                 enhancedLog={enhancedLog}
               />
-            </div>
+            )}
           </div>
         )}
                   

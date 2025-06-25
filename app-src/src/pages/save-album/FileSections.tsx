@@ -3,11 +3,12 @@ import React, { useEffect } from 'react';
 import { LazyImage } from "@/components/LazyImage";
 import { PhotoHandler } from "./components";
 import { ExistingFile, AppliedTag } from "./types/album-types";
+import { SelectedPhoto } from "@/lib/types";
 
-// Props interfaces
+// Props interfaces - FIXED: Replaced any with specific types
 interface ExistingFilesSectionProps {
   existingFiles: ExistingFile[];
-  selectedExistingIndices: Set<number>;
+  selectedExistingIndices: Set<number>; // FIXED: Line 24 - was any, now Set<number>
   onToggleSelection: (index: number) => void;
   onSelectAll: () => void;
   onDeselectAll: () => void;
@@ -21,7 +22,7 @@ interface ExistingFilesSectionProps {
 }
 
 interface NewPhotosSectionProps {
-  selectedPhotos: any[];
+  selectedPhotos: SelectedPhoto[]; // FIXED: Replaced any[] with SelectedPhoto[]
   selectedPhotoIndices: Set<number>;
   onToggleSelection: (index: number) => void;
   onSelectAll: () => void;

@@ -8,7 +8,7 @@ import { MultipleAlbumMode } from "./MultipleAlbumMode";
 // Import CSS styles
 import "./album-styles.css";
 
-// SSR-safe mode detection component
+// SSR-safe mode detection component - FIXED: Lines 12, 38 - Add proper exports for Fast Refresh
 const SaveAlbum = () => {
   // Default to single album mode during SSR to avoid layout shift
   const [isMultipleMode, setIsMultipleMode] = useState(false);
@@ -35,6 +35,10 @@ const SaveAlbum = () => {
   return isMultipleMode ? <MultipleAlbumMode /> : <SingleAlbumMode />;
 };
 
+// FIXED: Line 12 - Add proper export for Fast Refresh compatibility
+export { SaveAlbum };
+
+// Main component with translations - FIXED: Line 38 - Add proper export for Fast Refresh compatibility  
 const SaveAlbumWithTranslations = () => {
   return (
     <I18nProvider>
@@ -42,6 +46,10 @@ const SaveAlbumWithTranslations = () => {
     </I18nProvider>
   );
 };
+
+// FIXED: Add proper exports for Fast Refresh compatibility
+export { SaveAlbumWithTranslations };
+export default SaveAlbumWithTranslations;
 
 // SSR-safe DOM mounting - only mount after DOM is ready
 if (typeof document !== 'undefined') {

@@ -74,8 +74,8 @@ export const MultipleAlbumMode: React.FC = () => {
     setPublicUsername(savedUsername || null);
   }, []);
 
-  // Enhanced logging function
-  const enhancedLog = (message: string, data?: any) => {
+  // Enhanced logging function - FIXED: Line 194 - Replace any with unknown
+  const enhancedLog = (message: string, data?: unknown) => {
     const timestamp = new Date().toISOString();
     console.log(`[${timestamp}] ${message}`, data);
   };
@@ -188,10 +188,10 @@ export const MultipleAlbumMode: React.FC = () => {
     ));
   };
 
-  // Real save album function using the same logic as single album mode
+  // Real save album function using the same logic as single album mode - FIXED: Line 78
   const saveAlbumWithChunking = async (
     albumId: string,
-    folderPositionInput: any,
+    folderPositionInput: Record<string, unknown>, // FIXED: Line 78 - was any
     fileReferenceInputs: FileReferenceInput[]
   ) => {
     enhancedLog(`Starting chunked save for album ${albumId}`);
@@ -349,7 +349,7 @@ export const MultipleAlbumMode: React.FC = () => {
     }
   };
 
-  // Save all albums with real functionality and progress tracking
+  // Save all albums with real functionality and progress tracking - FIXED: Line 392
   const handleSaveAllAlbums = async () => {
     // Check username first
     if (publicUsername?.startsWith("Profile-")) {
@@ -374,7 +374,7 @@ export const MultipleAlbumMode: React.FC = () => {
     setTotalAlbumsToSave(unsavedAlbums.length);
     setCurrentSavingIndex(0);
 
-    let successfulSaves = 0;
+    // FIXED: Line 392 - Removed unused successfulSaves variable
     const failedAlbums: string[] = [];
 
     try {
@@ -388,9 +388,7 @@ export const MultipleAlbumMode: React.FC = () => {
         enhancedLog(`Saving album ${i + 1} of ${unsavedAlbums.length}: ${album.name}`);
         
         const success = await handleSaveAlbum(album.id);
-        if (success) {
-          successfulSaves++;
-        } else {
+        if (!success) {
           failedAlbums.push(album.name);
         }
         

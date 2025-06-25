@@ -176,36 +176,38 @@ export const useTagsManagement = (
   const [isSubmittingNewTag, setIsSubmittingNewTag] = useState(false);
   const [isSubmittingNewSubtag, setIsSubmittingNewSubtag] = useState(false);
 
-  // Use refs to prevent infinite loops - track if we've already fetched tags
+  // Use refs to prevent infinite loops and track state
   const hasFetchedTags = useRef(false);
   const lastAppliedTagsHash = useRef<string>('');
+  const isCurrentlyFetching = useRef(false);
 
-  // Memoized helper to get all currently selected file indices
-  const getAllSelectedIndices = useMemo(() => {
+  // OPTIMIZED: Memoize selection data to reduce computations
+  const selectionData = useMemo(() => {
     return {
       photoIndices: Array.from(selectedPhotoIndices),
-      existingIndices: Array.from(selectedExistingIndices)
+      existingIndices: Array.from(selectedExistingIndices),
+      hasSelection: selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0
     };
   }, [selectedPhotoIndices, selectedExistingIndices]);
 
-  // Function to extract all unique applied tags from file maps - MEMOIZED
-  const extractAllAppliedTags = useCallback((): AppliedTag[] => {
-    const allAppliedTags: AppliedTag[] = [];
+  // OPTIMIZED: Memoize applied tags extraction with better caching
+  const allAppliedTags = useMemo((): AppliedTag[] => {
+    const appliedTags: AppliedTag[] = [];
     
     // Collect from photos
     photoTagsMap.forEach(fileTags => {
-      allAppliedTags.push(...fileTags);
+      appliedTags.push(...fileTags);
     });
     
     // Collect from existing files
     existingFileTagsMap.forEach(fileTags => {
-      allAppliedTags.push(...fileTags);
+      appliedTags.push(...fileTags);
     });
     
     // Return unique tags with subtag consolidation
     const uniqueTags = new Map<string, AppliedTag>();
     
-    allAppliedTags.forEach(tag => {
+    appliedTags.forEach(tag => {
       if (uniqueTags.has(tag.tagTitle)) {
         // Merge subtags if tag already exists
         const existingTag = uniqueTags.get(tag.tagTitle)!;
@@ -223,16 +225,16 @@ export const useTagsManagement = (
     return Array.from(uniqueTags.values());
   }, [photoTagsMap, existingFileTagsMap]);
 
-  // Function to create missing tags from applied tags - MEMOIZED
+  // OPTIMIZED: Create missing tags function with better performance
   const createMissingAppliedTags = useCallback((fetchedTags: TagData[], appliedTags: AppliedTag[]): TagData[] => {
     const missingTags: TagData[] = [];
     const currentTime = Math.floor(Date.now() / 1000);
     
+    // Create a Set for faster lookups
+    const fetchedTagTitles = new Set(fetchedTags.map(t => t.tagTitle));
+    
     appliedTags.forEach(appliedTag => {
-      // Check if this tag exists in fetched tags
-      const existingTag = fetchedTags.find(t => t.tagTitle === appliedTag.tagTitle);
-      
-      if (!existingTag) {
+      if (!fetchedTagTitles.has(appliedTag.tagTitle)) {
         // Create missing tag
         const newTag: TagData = {
           id: generateUUID(),
@@ -263,33 +265,34 @@ export const useTagsManagement = (
         enhancedLog(`Created missing tag from applied tags: ${appliedTag.tagTitle} with ${appliedTag.subtags.length} subtags`);
       } else {
         // Check for missing subtags in existing tag
-        const missingSubtags: SubtagData[] = [];
-        
-        appliedTag.subtags.forEach(appliedSubtag => {
-          const existingSubtag = existingTag.subtags?.find(s => s.subtagTitle === appliedSubtag.subtagTitle);
+        const existingTagIndex = fetchedTags.findIndex(t => t.tagTitle === appliedTag.tagTitle);
+        if (existingTagIndex !== -1) {
+          const existingTag = fetchedTags[existingTagIndex];
+          const existingSubtagTitles = new Set((existingTag.subtags || []).map(s => s.subtagTitle));
           
-          if (!existingSubtag) {
-            const newSubtag: SubtagData = {
-              id: generateUUID(),
-              tagTitle: appliedSubtag.tagTitle,
-              subtagTitle: appliedSubtag.subtagTitle,
-              TagType: appliedTag.TagType || 'File',
-              points: 1,
-              createdAt: currentTime,
-              updatedAt: currentTime,
-              isCreatedFromApplied: true
-            };
-            
-            missingSubtags.push(newSubtag);
-            enhancedLog(`Created missing subtag from applied tags: ${appliedSubtag.subtagTitle} for tag ${appliedSubtag.tagTitle}`);
-          }
-        });
-        
-        // Add missing subtags to existing tag if any
-        if (missingSubtags.length > 0) {
-          const tagIndex = fetchedTags.findIndex(t => t.id === existingTag.id);
-          if (tagIndex !== -1) {
-            fetchedTags[tagIndex] = {
+          const missingSubtags: SubtagData[] = [];
+          
+          appliedTag.subtags.forEach(appliedSubtag => {
+            if (!existingSubtagTitles.has(appliedSubtag.subtagTitle)) {
+              const newSubtag: SubtagData = {
+                id: generateUUID(),
+                tagTitle: appliedSubtag.tagTitle,
+                subtagTitle: appliedSubtag.subtagTitle,
+                TagType: appliedTag.TagType || 'File',
+                points: 1,
+                createdAt: currentTime,
+                updatedAt: currentTime,
+                isCreatedFromApplied: true
+              };
+              
+              missingSubtags.push(newSubtag);
+              enhancedLog(`Created missing subtag from applied tags: ${appliedSubtag.subtagTitle} for tag ${appliedSubtag.tagTitle}`);
+            }
+          });
+          
+          // Add missing subtags to existing tag if any
+          if (missingSubtags.length > 0) {
+            fetchedTags[existingTagIndex] = {
               ...existingTag,
               subtags: [...(existingTag.subtags || []), ...missingSubtags]
             };
@@ -301,40 +304,39 @@ export const useTagsManagement = (
     return missingTags;
   }, [enhancedLog]);
 
-  // Check if tag is applied to ALL currently selected files - MEMOIZED
+  // OPTIMIZED: Check if tag is applied to ALL currently selected files with better caching
   const isTagAppliedToSelected = useCallback((tag: TagData): boolean => {
-    const { photoIndices, existingIndices } = getAllSelectedIndices;
-    
-    // If no files are selected, return false
-    if (photoIndices.length === 0 && existingIndices.length === 0) {
+    if (!selectionData.hasSelection) {
       return false;
     }
     
     // Check if ALL selected photos have this tag
-    const allPhotosHaveTag = photoIndices.length === 0 || photoIndices.every(index => {
+    const allPhotosHaveTag = selectionData.photoIndices.length === 0 || selectionData.photoIndices.every(index => {
       const fileTags = photoTagsMap.get(index) || [];
       return fileTags.some(t => t.tagTitle === tag.tagTitle);
     });
     
     // Check if ALL selected existing files have this tag
-    const allExistingHaveTag = existingIndices.length === 0 || existingIndices.every(index => {
+    const allExistingHaveTag = selectionData.existingIndices.length === 0 || selectionData.existingIndices.every(index => {
       const fileTags = existingFileTagsMap.get(index) || [];
       return fileTags.some(t => t.tagTitle === tag.tagTitle);
     });
     
     // Return true only if ALL selected files have the tag
     return allPhotosHaveTag && allExistingHaveTag;
-  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap]);
+  }, [selectionData, photoTagsMap, existingFileTagsMap]);
 
-  // Check if subtag is applied to ALL currently selected files that have the parent tag - MEMOIZED
+  // OPTIMIZED: Check if subtag is applied to ALL currently selected files that have the parent tag
   const isSubtagAppliedToSelected = useCallback((subtag: SubtagData): boolean => {
-    const { photoIndices, existingIndices } = getAllSelectedIndices;
+    if (!selectionData.hasSelection) {
+      return false;
+    }
     
     // For photos
     let photoFilesWithParentTag = 0;
     let photoFilesWithSubtag = 0;
     
-    photoIndices.forEach(index => {
+    selectionData.photoIndices.forEach(index => {
       const fileTags = photoTagsMap.get(index) || [];
       const parentTag = fileTags.find(t => t.tagTitle === subtag.tagTitle);
       if (parentTag) {
@@ -349,7 +351,7 @@ export const useTagsManagement = (
     let existingFilesWithParentTag = 0;
     let existingFilesWithSubtag = 0;
     
-    existingIndices.forEach(index => {
+    selectionData.existingIndices.forEach(index => {
       const fileTags = existingFileTagsMap.get(index) || [];
       const parentTag = fileTags.find(t => t.tagTitle === subtag.tagTitle);
       if (parentTag) {
@@ -365,13 +367,11 @@ export const useTagsManagement = (
     
     // Only return true if ALL files with the parent tag also have this subtag
     return totalFilesWithParentTag > 0 && totalFilesWithSubtag === totalFilesWithParentTag;
-  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap]);
+  }, [selectionData, photoTagsMap, existingFileTagsMap]);
 
-  // Apply/remove tag to ALL selected files based on current state - MEMOIZED
+  // OPTIMIZED: Apply/remove tag with batched updates
   const toggleTagOnSelectedFiles = useCallback((tag: TagData) => {
-    const { photoIndices, existingIndices } = getAllSelectedIndices;
-    
-    if (photoIndices.length === 0 && existingIndices.length === 0) {
+    if (!selectionData.hasSelection) {
       enhancedLog("No files selected for tag application");
       return;
     }
@@ -379,18 +379,17 @@ export const useTagsManagement = (
     const isAppliedToAll = isTagAppliedToSelected(tag);
     enhancedLog(`${isAppliedToAll ? 'Removing' : 'Applying'} tag "${tag.tagTitle}" ${isAppliedToAll ? 'from' : 'to'} all selected files`);
     
-    // Update photo tags
-    if (photoIndices.length > 0) {
+    // Batch update photo tags
+    if (selectionData.photoIndices.length > 0) {
       setPhotoTagsMap(prev => {
         const updated = new Map(prev);
-        photoIndices.forEach(index => {
+        selectionData.photoIndices.forEach(index => {
           const currentTags = updated.get(index) || [];
           
           if (isAppliedToAll) {
             // Remove the tag from this file
             const filteredTags = currentTags.filter(t => t.tagTitle !== tag.tagTitle);
             updated.set(index, filteredTags);
-            enhancedLog(`Removed tag "${tag.tagTitle}" from photo ${index}`);
           } else {
             // Add the tag to this file (if not already present)
             const hasTag = currentTags.some(t => t.tagTitle === tag.tagTitle);
@@ -401,7 +400,6 @@ export const useTagsManagement = (
                 subtags: []
               };
               updated.set(index, [...currentTags, newTag]);
-              enhancedLog(`Added tag "${tag.tagTitle}" to photo ${index}`);
             }
           }
         });
@@ -409,18 +407,17 @@ export const useTagsManagement = (
       });
     }
     
-    // Update existing file tags
-    if (existingIndices.length > 0) {
+    // Batch update existing file tags
+    if (selectionData.existingIndices.length > 0) {
       setExistingFileTagsMap(prev => {
         const updated = new Map(prev);
-        existingIndices.forEach(index => {
+        selectionData.existingIndices.forEach(index => {
           const currentTags = updated.get(index) || [];
           
           if (isAppliedToAll) {
             // Remove the tag from this file
             const filteredTags = currentTags.filter(t => t.tagTitle !== tag.tagTitle);
             updated.set(index, filteredTags);
-            enhancedLog(`Removed tag "${tag.tagTitle}" from existing file ${index}`);
           } else {
             // Add the tag to this file (if not already present)
             const hasTag = currentTags.some(t => t.tagTitle === tag.tagTitle);
@@ -431,20 +428,17 @@ export const useTagsManagement = (
                 subtags: []
               };
               updated.set(index, [...currentTags, newTag]);
-              enhancedLog(`Added tag "${tag.tagTitle}" to existing file ${index}`);
             }
           }
         });
         return updated;
       });
     }
-  }, [getAllSelectedIndices, isTagAppliedToSelected, setPhotoTagsMap, setExistingFileTagsMap, enhancedLog]);
+  }, [selectionData, isTagAppliedToSelected, setPhotoTagsMap, setExistingFileTagsMap, enhancedLog]);
 
-  // Apply/remove subtag to ALL selected files that have the parent tag - MEMOIZED
+  // OPTIMIZED: Apply/remove subtag with batched updates
   const toggleSubtagOnSelectedFiles = useCallback((subtag: SubtagData) => {
-    const { photoIndices, existingIndices } = getAllSelectedIndices;
-    
-    if (photoIndices.length === 0 && existingIndices.length === 0) {
+    if (!selectionData.hasSelection) {
       enhancedLog("No files selected for subtag application");
       return;
     }
@@ -452,11 +446,11 @@ export const useTagsManagement = (
     const isAppliedToAll = isSubtagAppliedToSelected(subtag);
     enhancedLog(`${isAppliedToAll ? 'Removing' : 'Applying'} subtag "${subtag.subtagTitle}" ${isAppliedToAll ? 'from' : 'to'} all selected files with parent tag`);
     
-    // Update photo tags
-    if (photoIndices.length > 0) {
+    // Batch update photo tags
+    if (selectionData.photoIndices.length > 0) {
       setPhotoTagsMap(prev => {
         const updated = new Map(prev);
-        photoIndices.forEach(index => {
+        selectionData.photoIndices.forEach(index => {
           const currentTags = updated.get(index) || [];
           const updatedTags = currentTags.map(tag => {
             if (tag.tagTitle === subtag.tagTitle) {
@@ -488,11 +482,11 @@ export const useTagsManagement = (
       });
     }
     
-    // Update existing file tags
-    if (existingIndices.length > 0) {
+    // Batch update existing file tags
+    if (selectionData.existingIndices.length > 0) {
       setExistingFileTagsMap(prev => {
         const updated = new Map(prev);
-        existingIndices.forEach(index => {
+        selectionData.existingIndices.forEach(index => {
           const currentTags = updated.get(index) || [];
           const updatedTags = currentTags.map(tag => {
             if (tag.tagTitle === subtag.tagTitle) {
@@ -523,29 +517,28 @@ export const useTagsManagement = (
         return updated;
       });
     }
-  }, [getAllSelectedIndices, isSubtagAppliedToSelected, setPhotoTagsMap, setExistingFileTagsMap, enhancedLog]);
+  }, [selectionData, isSubtagAppliedToSelected, setPhotoTagsMap, setExistingFileTagsMap, enhancedLog]);
 
-  // Get all unique tags that are applied to currently selected files - MEMOIZED
+  // OPTIMIZED: Get applied tags for selected files with better memoization
   const getAppliedTagsForSelected = useCallback((): AppliedTag[] => {
-    const { photoIndices, existingIndices } = getAllSelectedIndices;
-    const allAppliedTags: AppliedTag[] = [];
+    const appliedTags: AppliedTag[] = [];
     
     // Collect from photos
-    photoIndices.forEach(index => {
+    selectionData.photoIndices.forEach(index => {
       const fileTags = photoTagsMap.get(index) || [];
-      allAppliedTags.push(...fileTags);
+      appliedTags.push(...fileTags);
     });
     
     // Collect from existing files
-    existingIndices.forEach(index => {
+    selectionData.existingIndices.forEach(index => {
       const fileTags = existingFileTagsMap.get(index) || [];
-      allAppliedTags.push(...fileTags);
+      appliedTags.push(...fileTags);
     });
     
     // Return unique tags with subtag consolidation
     const uniqueTags = new Map<string, AppliedTag>();
     
-    allAppliedTags.forEach(tag => {
+    appliedTags.forEach(tag => {
       if (uniqueTags.has(tag.tagTitle)) {
         // Merge subtags if tag already exists
         const existingTag = uniqueTags.get(tag.tagTitle)!;
@@ -561,20 +554,21 @@ export const useTagsManagement = (
     });
     
     return Array.from(uniqueTags.values());
-  }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap]);
+  }, [selectionData, photoTagsMap, existingFileTagsMap]);
 
-  // Check if any files are currently selected - MEMOIZED
+  // Check if any files are currently selected
   const hasSelectedFiles = useCallback((): boolean => {
-    return selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0;
-  }, [selectedPhotoIndices.size, selectedExistingIndices.size]);
+    return selectionData.hasSelection;
+  }, [selectionData.hasSelection]);
 
-  // Fetch tags from the API and merge with missing applied tags - MEMOIZED to prevent infinite loops
+  // OPTIMIZED: Fetch tags with better error handling and duplicate prevention
   const fetchTags = useCallback(async () => {
-    if (isLoadingTags) {
+    if (isCurrentlyFetching.current || isLoadingTags) {
       enhancedLog("Tags already loading, skipping duplicate fetch");
       return;
     }
 
+    isCurrentlyFetching.current = true;
     enhancedLog("Fetching tags from API and checking for missing applied tags");
     setIsLoadingTags(true);
     setFetchError(null);
@@ -644,9 +638,6 @@ export const useTagsManagement = (
       enhancedLog(`Fetched ${transformedTags.length} tags from API`);
 
       // Check for missing applied tags and create them
-      const allAppliedTags = extractAllAppliedTags();
-      enhancedLog(`Found ${allAppliedTags.length} unique applied tags in file maps`);
-
       if (allAppliedTags.length > 0) {
         const missingTags = createMissingAppliedTags(transformedTags, allAppliedTags);
         
@@ -666,16 +657,17 @@ export const useTagsManagement = (
       setFetchError(error instanceof Error ? error.message : 'Unknown error occurred');
     } finally {
       setIsLoadingTags(false);
+      isCurrentlyFetching.current = false;
     }
-  }, [isLoadingTags, enhancedLog, extractAllAppliedTags, createMissingAppliedTags]);
+  }, [isLoadingTags, enhancedLog, allAppliedTags, createMissingAppliedTags]);
 
-  // Set displayed tag (for showing subtags) - MEMOIZED
+  // Set displayed tag (for showing subtags)
   const setDisplayedTag = useCallback((tagId: string | null) => {
     enhancedLog(`Setting displayed tag: ${tagId}`);
     setDisplayedTagId(tagId);
   }, [enhancedLog]);
 
-  // Get subtags for the displayed tag - MEMOIZED
+  // Get subtags for the displayed tag
   const getDisplayedTagSubtags = useCallback((): SubtagData[] => {
     if (!displayedTagId) return [];
     
@@ -1045,20 +1037,24 @@ export const useTagsManagement = (
     return false;
   };
 
-  // FIXED: Initial fetch on mount - only run once
+  // OPTIMIZED: Initial fetch on mount - only run once
   useEffect(() => {
     if (!hasFetchedTags.current) {
       fetchTags();
     }
   }, []); // Empty dependency array - only run once
 
-  // FIXED: Smart tag refresh based on applied tags changes
+  // OPTIMIZED: Debounced tag refresh based on applied tags changes
   useEffect(() => {
     // Only check for missing tags if we've already fetched tags initially
-    if (!hasFetchedTags.current) return;
+    if (!hasFetchedTags.current || isCurrentlyFetching.current) return;
 
-    const allAppliedTags = extractAllAppliedTags();
-    const appliedTagsHash = JSON.stringify(allAppliedTags.map(t => ({ title: t.tagTitle, subtags: t.subtags.map(s => s.subtagTitle).sort() })));
+    const appliedTagsHash = JSON.stringify(
+      allAppliedTags.map(t => ({ 
+        title: t.tagTitle, 
+        subtags: t.subtags.map(s => s.subtagTitle).sort() 
+      }))
+    );
     
     // Only refetch if the applied tags have actually changed
     if (appliedTagsHash !== lastAppliedTagsHash.current) {
@@ -1071,10 +1067,16 @@ export const useTagsManagement = (
       
       if (missingAppliedTags.length > 0) {
         enhancedLog(`Detected ${missingAppliedTags.length} new applied tags, refreshing tags list`, missingAppliedTags.map(t => t.tagTitle));
-        fetchTags();
+        
+        // Debounce the fetch to avoid too many calls
+        const timeoutId = setTimeout(() => {
+          fetchTags();
+        }, 300);
+        
+        return () => clearTimeout(timeoutId);
       }
     }
-  }, [photoTagsMap, existingFileTagsMap, tags, extractAllAppliedTags, enhancedLog, fetchTags]);
+  }, [allAppliedTags, tags, enhancedLog, fetchTags]);
 
   // Clear displayed tag if it's no longer applied to all selected files
   useEffect(() => {
@@ -1110,7 +1112,7 @@ export const useTagsManagement = (
     toggleSubtagOnSelectedFiles,
     setDisplayedTag,
     
-    // Properly memoized getters that update when selection changes
+    // Optimized getters that update when selection changes
     isTagAppliedToSelected,
     isSubtagAppliedToSelected,
     getDisplayedTagSubtags,
@@ -1131,10 +1133,6 @@ export const useTagsManagement = (
     submitNewTag,
     submitNewSubtag,
     setNewTagTitle,
-    setNewSubtagTitle,
-    
-    // Utility functions
-    extractAllAppliedTags,
-    createMissingAppliedTags
+    setNewSubtagTitle
   };
 };

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
 import { TagData, SubtagData, useTagsManagement } from './useTagsManagement';
@@ -267,7 +267,7 @@ const useTouchDevice = () => {
   return isTouchDevice;
 };
 
-// Tag with delete functionality component - SSR-safe with touch detection
+// OPTIMIZED: Tag with delete functionality component - memoized properly
 interface TagWithDeleteProps {
   tag: TagData;
   isApplied: boolean;
@@ -276,7 +276,7 @@ interface TagWithDeleteProps {
   disabled: boolean;
   onTagClick: (tag: TagData) => void;
   onDeleteTag: (tagId: string) => void;
-  getTagDisplayText: (tag: TagData) => string;
+  displayText: string; // Pre-computed display text to avoid re-computation
 }
 
 const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
@@ -287,11 +287,22 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
   disabled,
   onTagClick,
   onDeleteTag,
-  getTagDisplayText
+  displayText
 }) => {
   const { t } = useTranslation();
   const [showDelete, setShowDelete] = useState(false);
   const isTouchDevice = useTouchDevice();
+
+  // OPTIMIZED: Memoize click handler to prevent recreation
+  const handleTagClick = useCallback(() => {
+    onTagClick(tag);
+  }, [onTagClick, tag]);
+
+  // OPTIMIZED: Memoize delete handler to prevent recreation
+  const handleDeleteClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    onDeleteTag(tag.id);
+  }, [onDeleteTag, tag.id]);
 
   // Only show delete button for GREEN tags (displayed/most recently selected)
   // On touch devices, always show for green tags
@@ -306,21 +317,18 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
       $isDisplayed={isDisplayed}
       $isBeingDeleted={isBeingDeleted}
       disabled={disabled}
-      onClick={() => onTagClick(tag)}
+      onClick={handleTagClick}
       onMouseEnter={() => !isTouchDevice && isDisplayed && setShowDelete(true)}
       onMouseLeave={() => !isTouchDevice && isDisplayed && setShowDelete(false)}
     >
       <span style={{ paddingRight: shouldShowDelete ? '20px' : '0' }}>
-        {getTagDisplayText(tag)}
+        {displayText}
       </span>
       
       {shouldShowDelete && (
         <DeleteButton
           $isMobile={isTouchDevice}
-          onClick={(e) => {
-            e.stopPropagation();
-            onDeleteTag(tag.id);
-          }}
+          onClick={handleDeleteClick}
           disabled={isBeingDeleted}
           title={t('Delete tag')}
         >
@@ -331,7 +339,9 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
   );
 });
 
-// Subtag with delete functionality component - SSR-safe with touch detection
+TagWithDelete.displayName = 'TagWithDelete';
+
+// OPTIMIZED: Subtag with delete functionality component - memoized properly
 interface SubtagWithDeleteProps {
   subtag: SubtagData;
   isApplied: boolean;
@@ -353,6 +363,16 @@ const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = React.memo(({
   const [showDelete, setShowDelete] = useState(false);
   const isTouchDevice = useTouchDevice();
 
+  // OPTIMIZED: Memoize click handlers to prevent recreation
+  const handleSubtagClick = useCallback(() => {
+    onSubtagClick(subtag);
+  }, [onSubtagClick, subtag]);
+
+  const handleDeleteClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    onDeleteSubtag(subtag.id);
+  }, [onDeleteSubtag, subtag.id]);
+
   // Only show delete button for applied subtags (since subtags are only visible when parent tag is green)
   // On touch devices, always show for applied subtags
   // On non-touch devices, show on hover for applied subtags
@@ -365,7 +385,7 @@ const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = React.memo(({
       $isApplied={isApplied}
       $isBeingDeleted={isBeingDeleted}
       disabled={disabled}
-      onClick={() => onSubtagClick(subtag)}
+      onClick={handleSubtagClick}
       onMouseEnter={() => !isTouchDevice && isApplied && setShowDelete(true)}
       onMouseLeave={() => !isTouchDevice && isApplied && setShowDelete(false)}
     >
@@ -375,10 +395,7 @@ const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = React.memo(({
       {shouldShowDelete && (
         <DeleteButton
           $isMobile={isTouchDevice}
-          onClick={(e) => {
-            e.stopPropagation();
-            onDeleteSubtag(subtag.id);
-          }}
+          onClick={handleDeleteClick}
           disabled={isBeingDeleted}
           title={t('Delete subtag')}
         >
@@ -389,7 +406,9 @@ const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = React.memo(({
   );
 });
 
-// New tag input component
+SubtagWithDelete.displayName = 'SubtagWithDelete';
+
+// New tag input component - memoized properly
 interface NewTagInputProps {
   value: string;
   onChange: (value: string) => void;
@@ -399,7 +418,7 @@ interface NewTagInputProps {
   placeholder?: string;
 }
 
-const NewTagInput: React.FC<NewTagInputProps> = ({
+const NewTagInput: React.FC<NewTagInputProps> = React.memo(({
   value,
   onChange,
   onSubmit,
@@ -416,13 +435,17 @@ const NewTagInput: React.FC<NewTagInputProps> = ({
     }
   }, []);
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyPress = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       onSubmit();
     } else if (e.key === 'Escape') {
       onCancel();
     }
-  };
+  }, [onSubmit, onCancel]);
+
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(e.target.value);
+  }, [onChange]);
 
   return (
     <InputContainer>
@@ -430,7 +453,7 @@ const NewTagInput: React.FC<NewTagInputProps> = ({
         ref={inputRef}
         type="text"
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={handleChange}
         onKeyDown={handleKeyPress}
         placeholder={t(placeholder)}
         disabled={isSubmitting}
@@ -451,13 +474,15 @@ const NewTagInput: React.FC<NewTagInputProps> = ({
       </InputButton>
     </InputContainer>
   );
-};
+});
 
-// Main Tags Display Component
+NewTagInput.displayName = 'NewTagInput';
+
+// OPTIMIZED: Main Tags Display Component with better memoization
 interface TagsDisplayProps {
   tagsManager: ReturnType<typeof useTagsManagement>;
   disabled?: boolean;
-  enhancedLog: (message: string, data?: any) => void;
+  enhancedLog: (message: string, data?: unknown) => void;
 }
 
 export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({ 
@@ -491,8 +516,8 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     return null;
   }
 
-  // Memoize getTagDisplayText to ensure it updates when dependencies change
-  const getTagDisplayText = React.useCallback((tag: TagData): string => {
+  // OPTIMIZED: Memoize getTagDisplayText to ensure it updates when dependencies change
+  const getTagDisplayText = useCallback((tag: TagData): string => {
     // Only show subtags if the tag is actually applied to ALL selected files
     const isApplied = isTagAppliedToSelected(tag);
     
@@ -513,15 +538,19 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     return t('{{tagTitle}}  |  {{subtags}}', { tagTitle: tag.tagTitle, subtags: subtagNames });
   }, [isTagAppliedToSelected, getAppliedTagsForSelected, t]);
 
-  // Log current tag states for debugging
-  React.useEffect(() => {
-    const appliedTags = tags.filter(tag => isTagAppliedToSelected(tag));
-    const appliedTagsWithSubtags = getAppliedTagsForSelected();
-    enhancedLog(`TagsDisplay render - ${appliedTags.length} tags applied to all selected files`);
-    enhancedLog(`Applied tags with subtags:`, appliedTagsWithSubtags);
-  }, [tags, isTagAppliedToSelected, getAppliedTagsForSelected, enhancedLog]);
+  // OPTIMIZED: Memoize tag display data to reduce computations
+  const tagDisplayData = useMemo(() => {
+    return tags.map(tag => ({
+      tag,
+      isApplied: isTagAppliedToSelected(tag),
+      isDisplayed: displayedTagId === tag.id,
+      isBeingDeleted: tagIdBeingDeleted === tag.id,
+      displayText: getTagDisplayText(tag)
+    }));
+  }, [tags, isTagAppliedToSelected, displayedTagId, tagIdBeingDeleted, getTagDisplayText]);
 
-  const handleTagClick = (tag: TagData) => {
+  // OPTIMIZED: Memoize click handlers to prevent recreation
+  const handleTagClick = useCallback((tag: TagData) => {
     if (disabled) return;
     
     const wasApplied = isTagAppliedToSelected(tag);
@@ -542,9 +571,9 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     }
     
     enhancedLog(`After toggle - new state: ${wasApplied ? 'removed from all' : 'applied to all'}`);
-  };
+  }, [disabled, isTagAppliedToSelected, enhancedLog, toggleTagOnSelectedFiles, setDisplayedTag]);
 
-  const handleDeleteTag = async (tagId: string) => {
+  const handleDeleteTag = useCallback(async (tagId: string) => {
     if (disabled) return;
     
     enhancedLog(`Delete tag initiated: ${tagId}`);
@@ -554,24 +583,32 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     } else {
       enhancedLog(`Failed to delete tag: ${tagId}`);
     }
-  };
+  }, [disabled, enhancedLog, deleteTag]);
 
-  const handleSubmitNewTag = async () => {
+  const handleSubmitNewTag = useCallback(async () => {
     const success = await submitNewTag();
     if (!success) {
       enhancedLog("Failed to submit new tag");
     }
-  };
+  }, [submitNewTag, enhancedLog]);
 
-  // Sort tags by points (highest first) then by updated date
-  const sortedTags = React.useMemo(() => {
-    return [...tags].sort((a, b) => {
-      if (a.points !== b.points) {
-        return b.points - a.points;
+  // OPTIMIZED: Sort tags by points (highest first) then by updated date - memoized
+  const sortedTagDisplayData = useMemo(() => {
+    return [...tagDisplayData].sort((a, b) => {
+      if (a.tag.points !== b.tag.points) {
+        return b.tag.points - a.tag.points;
       }
-      return b.updatedAt - a.updatedAt;
+      return b.tag.updatedAt - a.tag.updatedAt;
     });
-  }, [tags]);
+  }, [tagDisplayData]);
+
+  // Log current tag states for debugging - throttled to avoid spam
+  useEffect(() => {
+    const appliedTags = tags.filter(tag => isTagAppliedToSelected(tag));
+    const appliedTagsWithSubtags = getAppliedTagsForSelected();
+    enhancedLog(`TagsDisplay render - ${appliedTags.length} tags applied to all selected files`);
+    enhancedLog(`Applied tags with subtags:`, appliedTagsWithSubtags);
+  }, [tags.length, getAppliedTagsForSelected, enhancedLog]); // Only log when tags count changes
 
   return (
     <TagsContainer>
@@ -584,22 +621,19 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
             <LoadingText>{t('Loading tags...')}</LoadingText>
           ) : (
             <>
-              {sortedTags.map(tag => {
-                const isApplied = isTagAppliedToSelected(tag);
-                return (
-                  <TagWithDelete
-                    key={tag.id}
-                    tag={tag}
-                    isApplied={isApplied}
-                    isDisplayed={displayedTagId === tag.id}
-                    isBeingDeleted={tagIdBeingDeleted === tag.id}
-                    disabled={disabled}
-                    onTagClick={handleTagClick}
-                    onDeleteTag={handleDeleteTag}
-                    getTagDisplayText={getTagDisplayText}
-                  />
-                );
-              })}
+              {sortedTagDisplayData.map(({ tag, isApplied, isDisplayed, isBeingDeleted, displayText }) => (
+                <TagWithDelete
+                  key={tag.id}
+                  tag={tag}
+                  isApplied={isApplied}
+                  isDisplayed={isDisplayed}
+                  isBeingDeleted={isBeingDeleted}
+                  disabled={disabled}
+                  onTagClick={handleTagClick}
+                  onDeleteTag={handleDeleteTag}
+                  displayText={displayText}
+                />
+              ))}
               
               {isAddingNewTag ? (
                 <NewTagInput
@@ -619,7 +653,7 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
                 </ActionButton>
               )}
               
-              {sortedTags.length === 0 && !isAddingNewTag && (
+              {sortedTagDisplayData.length === 0 && !isAddingNewTag && (
                 <EmptyState>{t('No tags available')}</EmptyState>
               )}
             </>
@@ -662,11 +696,13 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
   );
 });
 
-// Subtags Display Component
+TagsDisplay.displayName = 'TagsDisplay';
+
+// OPTIMIZED: Subtags Display Component with better memoization
 interface SubtagsDisplayProps {
   tagsManager: ReturnType<typeof useTagsManagement>;
   disabled?: boolean;
-  enhancedLog: (message: string, data?: any) => void;
+  enhancedLog: (message: string, data?: unknown) => void;
 }
 
 const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({ 
@@ -691,19 +727,43 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
     tags
   } = tagsManager;
 
-  const displayedTagSubtags = displayedTagId ? 
-    tags.find(t => t.id === displayedTagId)?.subtags || [] : 
-    [];
-  const displayedTag = tags.find(t => t.id === displayedTagId);
+  // Find displayed tag and its subtags - memoized
+  const displayedTagData = useMemo(() => {
+    const displayedTag = tags.find(t => t.id === displayedTagId);
+    if (!displayedTag) return null;
+    
+    const subtags = displayedTag.subtags || [];
+    
+    // Pre-compute subtag display data
+    const subtagDisplayData = subtags.map(subtag => ({
+      subtag,
+      isApplied: isSubtagAppliedToSelected(subtag),
+      isBeingDeleted: subtagIdBeingDeleted === subtag.id
+    }));
+    
+    // Sort subtags by points then by updated date
+    const sortedSubtagDisplayData = subtagDisplayData.sort((a, b) => {
+      if (a.subtag.points !== b.subtag.points) {
+        return b.subtag.points - a.subtag.points;
+      }
+      return b.subtag.updatedAt - a.subtag.updatedAt;
+    });
 
-  const handleSubtagClick = (subtag: SubtagData) => {
+    return {
+      displayedTag,
+      subtagDisplayData: sortedSubtagDisplayData
+    };
+  }, [tags, displayedTagId, isSubtagAppliedToSelected, subtagIdBeingDeleted]);
+
+  // OPTIMIZED: Memoize click handlers to prevent recreation
+  const handleSubtagClick = useCallback((subtag: SubtagData) => {
     if (disabled) return;
     
     enhancedLog(`Subtag "${subtag.subtagTitle}" clicked - current state: ${isSubtagAppliedToSelected(subtag) ? 'applied to all' : 'not applied to all'}`);
     toggleSubtagOnSelectedFiles(subtag);
-  };
+  }, [disabled, enhancedLog, isSubtagAppliedToSelected, toggleSubtagOnSelectedFiles]);
 
-  const handleDeleteSubtag = async (subtagId: string) => {
+  const handleDeleteSubtag = useCallback(async (subtagId: string) => {
     if (disabled) return;
     
     enhancedLog(`Delete subtag initiated: ${subtagId}`);
@@ -713,39 +773,32 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
     } else {
       enhancedLog(`Failed to delete subtag: ${subtagId}`);
     }
-  };
+  }, [disabled, enhancedLog, deleteSubtag]);
 
-  const handleSubmitNewSubtag = async () => {
+  const handleSubmitNewSubtag = useCallback(async () => {
     const success = await submitNewSubtag();
     if (!success) {
       enhancedLog("Failed to submit new subtag");
     }
-  };
+  }, [submitNewSubtag, enhancedLog]);
 
-  if (!displayedTag) {
+  // Early return AFTER all hooks are called
+  if (!displayedTagData) {
     return null;
   }
 
-  // Sort subtags by points (highest first) then by updated date
-  const sortedSubtags = React.useMemo(() => {
-    return [...displayedTagSubtags].sort((a, b) => {
-      if (a.points !== b.points) {
-        return b.points - a.points;
-      }
-      return b.updatedAt - a.updatedAt;
-    });
-  }, [displayedTagSubtags]);
+  const { displayedTag, subtagDisplayData } = displayedTagData;
 
   return (
     <TagsSection>
       <TagsLabel>{t('Subtags for "{{tagTitle}}"', { tagTitle: displayedTag.tagTitle })}</TagsLabel>
       <TagsRow>
-        {sortedSubtags.map(subtag => (
+        {subtagDisplayData.map(({ subtag, isApplied, isBeingDeleted }) => (
           <SubtagWithDelete
             key={subtag.id}
             subtag={subtag}
-            isApplied={isSubtagAppliedToSelected(subtag)}
-            isBeingDeleted={subtagIdBeingDeleted === subtag.id}
+            isApplied={isApplied}
+            isBeingDeleted={isBeingDeleted}
             disabled={disabled}
             onSubtagClick={handleSubtagClick}
             onDeleteSubtag={handleDeleteSubtag}
@@ -770,7 +823,7 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
           </ActionButton>
         )}
         
-        {sortedSubtags.length === 0 && !isAddingNewSubtag && (
+        {subtagDisplayData.length === 0 && !isAddingNewSubtag && (
           <EmptyState>{t('No subtags available')}</EmptyState>
         )}
       </TagsRow>
@@ -778,7 +831,9 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
   );
 });
 
-// SSR-safe PhotoTagging component with animation styles
+SubtagsDisplay.displayName = 'SubtagsDisplay';
+
+// OPTIMIZED: SSR-safe PhotoTagging component with animation styles
 interface PhotoTaggingProps {
   photoTags: { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[];
   isSelected?: boolean;
@@ -787,7 +842,7 @@ interface PhotoTaggingProps {
   showFileName?: boolean;
 }
 
-export const PhotoTagging: React.FC<PhotoTaggingProps> = ({ 
+export const PhotoTagging: React.FC<PhotoTaggingProps> = React.memo(({ 
   photoTags,
   isSelected = false,
   onToggleSelection,
@@ -822,20 +877,19 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
     }
   }, []);
 
-  // Enhanced tag display formatting
-  const formatTagsDisplay = (tags: typeof photoTags): string => {
-    if (tags.length === 0) return '';
+  // OPTIMIZED: Memoize tag display formatting to prevent re-computation
+  const tagsText = useMemo(() => {
+    if (photoTags.length === 0) return '';
     
-    return tags.map(tag => {
+    return photoTags.map(tag => {
       if (tag.subtags.length > 0) {
         const subtagNames = tag.subtags.map(s => s.subtagTitle).join(', ');
         return t('{{tagTitle}}: {{subtags}}', { tagTitle: tag.tagTitle, subtags: subtagNames });
       }
       return tag.tagTitle;
     }).join(' • ');
-  };
+  }, [photoTags, t]);
 
-  const tagsText = formatTagsDisplay(photoTags);
   const hasAnyTags = photoTags.length > 0;
 
   // Show component if we have filename to display OR tags OR if selected
@@ -961,4 +1015,6 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
       </div>
     </div>
   );
-};
+});
+
+PhotoTagging.displayName = 'PhotoTagging';

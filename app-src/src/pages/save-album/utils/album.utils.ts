@@ -2,14 +2,7 @@
 import { SelectedPhoto, UploadStatus } from "@/lib/types";
 import { generateUUID, getTargetItemIdentifier } from "@/lib/utils";
 import { createNanoIdFromUUID } from "@/lib/utils";
-import { AppliedTag, SelectedTagInput, FileReferenceInput, FileInput } from "../types/album-types";
-
-// Interface for existing file item (matching the structure used in createExistingFileReferenceInputs)
-interface ExistingFileItem {
-  dataKey: string;
-  fileName?: string;
-  [key: string]: unknown; // Allow additional properties
-}
+import { AppliedTag, SelectedTagInput, FileReferenceInput, FileInput, ExistingFile } from "../types/album-types";
 
 /**
  * Create initial photo objects from files
@@ -285,13 +278,13 @@ export const createFileReferenceInputs = (
 };
 
 /**
- * Create file reference inputs for existing files with tags
+ * Create file reference inputs for existing files with tags - FIXED: Use proper ExistingFile type
  */
 export const createExistingFileReferenceInputs = (
   timestamp: number,
   folderId: string,
   cognitoUsername: string,
-  existingFiles: ExistingFileItem[],
+  existingFiles: ExistingFile[], // FIXED: Use proper ExistingFile type instead of ExistingFileItem
   selectedExistingIndices: Set<number>,
   existingFileTagsMap: Map<number, AppliedTag[]>,
   enhancedLog: (message: string, data?: unknown) => void
