@@ -627,6 +627,9 @@ const MyAlbums = () => {
   const [detectedFolderStructure, setDetectedFolderStructure] = useState<FolderStructure | null>(null);
   const [pendingFiles, setPendingFiles] = useState<File[]>([]);
   
+  // Add state to track if this is a new album creation
+  const [isCreatingNewAlbum, setIsCreatingNewAlbum] = useState(false);
+  
   // Add ref for folder input
   const folderInputRef = useRef<HTMLInputElement>(null);
   
@@ -657,7 +660,7 @@ const MyAlbums = () => {
     }
   });
   
-  // FIXED: File upload processor with minimal logging
+  // FIXED: File upload processor with minimal logging and new album tracking
   const fileUploadProcessor = useFileUploadProcessor(
     (folderId) => {
       // SSR-safe metadata operations
@@ -698,7 +701,11 @@ const MyAlbums = () => {
       }
       
       // Normal single album navigation
-      if (folderId) {
+      // If this was initiated as a new album, don't include folderId in URL
+      if (isCreatingNewAlbum) {
+        setIsCreatingNewAlbum(false); // Reset the flag
+        redirectTo("save-album.html");
+      } else if (folderId) {
         const targetUrl = `save-album.html?folderId=${encodeURIComponent(folderId)}`;
         redirectTo(targetUrl);
       } else {
@@ -874,6 +881,9 @@ const MyAlbums = () => {
     setDetectedFolderStructure(null);
     setPendingFiles([]);
     
+    // Reset the new album flag
+    setIsCreatingNewAlbum(false);
+    
     // Clear both file inputs
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
@@ -894,6 +904,9 @@ const MyAlbums = () => {
     if (!isClient) return;
     
     try {
+      // Set the new album flag if folderId is null (new album)
+      setIsCreatingNewAlbum(folderId === null);
+      
       // Clear any previous album groups and metadata - SSR-safe
       clearUserAlbumPreference();
       clearFolderStructureMetadata();
@@ -915,6 +928,7 @@ const MyAlbums = () => {
       }
     } catch (error) {
       console.error("Error opening file picker:", error);
+      setIsCreatingNewAlbum(false); // Reset flag on error
       alert("Sorry, there was an error opening the file picker. Please try again.");
     }
   }, [fileUploadProcessor, setSelectedPhotos, isClient]);
