@@ -1,4 +1,4 @@
-// MultipleAlbumsManager.tsx - Updated to support real save functionality
+// MultipleAlbumsManager.tsx - Updated to support real save functionality - Fixed TypeScript errors
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -21,7 +21,7 @@ const AlbumsContainer = styled.div<{ $isRTL: boolean }>`
   direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
 `;
 
-// Interface for album data
+// Interface for album data - Fixed: replaced any with SelectedPhoto
 export interface AlbumData {
   id: string;
   name: string;
@@ -48,7 +48,7 @@ interface MultipleAlbumsManagerProps {
   onShowPasswordDialog: (albumId: string) => void;
   columns: string;
   setColumns: (columns: string) => void;
-  enhancedLog: (message: string, data?: any) => void;
+  enhancedLog: (message: string, data?: unknown) => void; // Fixed: changed any to unknown
 }
 
 export const MultipleAlbumsManager: React.FC<MultipleAlbumsManagerProps> = ({

@@ -1,4 +1,4 @@
-// AlbumItem.tsx - Updated to handle async save operations
+// AlbumItem.tsx - Updated to handle async save operations - Fixed TypeScript errors
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -373,7 +373,7 @@ interface AlbumItemProps {
   disabled: boolean;
   columns: string;
   setColumns: (columns: string) => void;
-  enhancedLog: (message: string, data?: any) => void;
+  enhancedLog: (message: string, data?: unknown) => void; // Fixed: changed any to unknown
 }
 
 export const AlbumItem: React.FC<AlbumItemProps> = ({
