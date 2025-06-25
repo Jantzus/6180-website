@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 interface QRCodeModalProps {
@@ -17,7 +17,13 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({
   t,
   isRTL
 }) => {
-  if (!isOpen) return null;
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isOpen || !isClient) return null;
 
   // Generate QR code URL using QR Server API (free service, no API key needed)
   const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(albumLink)}`;

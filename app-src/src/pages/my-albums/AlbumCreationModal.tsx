@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -192,6 +192,14 @@ export const AlbumCreationModal: React.FC<AlbumCreationModalProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  
+  // SSR-safe state for portal mounting
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Ensure portal only renders on client-side
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   if (!isOpen || !folderStructure) return null;
 
@@ -239,8 +247,14 @@ export const AlbumCreationModal: React.FC<AlbumCreationModalProps> = ({
   };
 
   const handleChoice = (choice: 'separate' | 'combined') => {
-    // Store user's choice for this session
-    sessionStorage.setItem('album_creation_preference', choice);
+    // Store user's choice for this session - SSR-safe
+    if (typeof window !== 'undefined' && window.sessionStorage) {
+      try {
+        sessionStorage.setItem('album_creation_preference', choice);
+      } catch (error) {
+        console.warn('Failed to store album creation preference:', error);
+      }
+    }
     onChoice(choice);
   };
 
@@ -285,6 +299,11 @@ export const AlbumCreationModal: React.FC<AlbumCreationModalProps> = ({
       </ModalContent>
     </ModalOverlay>
   );
+
+  // SSR-safe portal: only render portal on client-side after mount
+  if (!isMounted) {
+    return null;
+  }
 
   // Use React Portal to render the modal at the document body level
   return ReactDOM.createPortal(modalContent, document.body);

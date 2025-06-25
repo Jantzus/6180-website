@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useUsernameManagement } from "@/lib/useUsernameManagement"
 import { getLanguageDirection } from "@/lib/i18n";
 
@@ -19,6 +20,8 @@ export const UsernamePrompt: React.FC<{
   usernameManager: ReturnType<typeof useUsernameManagement>;
   onSuccess: (newName: string) => void;
 }> = ({ t, language, usernameManager, onSuccess }) => {
+  const [isClient, setIsClient] = useState(false);
+
   const {
     showUsernamePrompt,
     setShowUsernamePrompt,
@@ -32,9 +35,16 @@ export const UsernamePrompt: React.FC<{
     isSubmittingUsername
   } = usernameManager;
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const handleSuccessfulUsernameUpdate = (newName: string) => {
     console.log(`Username successfully updated to: ${newName}`);
-    localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, newName);
+    // Only access localStorage on the client
+    if (isClient && typeof window !== 'undefined') {
+      localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, newName);
+    }
     setShowUsernamePrompt(false);
     onSuccess(newName);
   };

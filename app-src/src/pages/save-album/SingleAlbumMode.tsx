@@ -1,4 +1,4 @@
-// SingleAlbumMode.tsx - Single album creation mode component with proper file deletion
+// SingleAlbumMode.tsx - SSR-safe single album creation mode component
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n/translations";
@@ -47,10 +47,65 @@ import {
 import { FileState, ExistingFile, AppliedTag } from "./types/album-types";
 import { AlbumService } from "./services/album.service";
 
-// Single album mode component with consolidated state and proper file deletion
+// SSR-safe localStorage utilities
+const useSSRSafeLocalStorage = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const getItem = (key: string): string | null => {
+    if (!isClient) return null;
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  };
+
+  const setItem = (key: string, value: string): void => {
+    if (!isClient) return;
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Silent fail
+    }
+  };
+
+  const removeItem = (key: string): void => {
+    if (!isClient) return;
+    try {
+      localStorage.removeItem(key);
+    } catch {
+      // Silent fail
+    }
+  };
+
+  return { getItem, setItem, removeItem, isClient };
+};
+
+// SSR-safe URL utilities
+const useSSRSafeURL = () => {
+  const [urlParams, setUrlParams] = useState<URLSearchParams>(new URLSearchParams());
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    if (typeof window !== 'undefined') {
+      setUrlParams(new URLSearchParams(window.location.search));
+    }
+  }, []);
+
+  return { urlParams, isClient };
+};
+
+// Single album mode component with SSR safety
 export const SingleAlbumMode: React.FC = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  const localStorage = useSSRSafeLocalStorage();
+  const { urlParams, isClient } = useSSRSafeURL();
 
   // Consolidated file state
   const [fileState, setFileState] = useState<FileState>({
@@ -94,13 +149,13 @@ export const SingleAlbumMode: React.FC = () => {
   const [isSubAlbum, setIsSubAlbum] = useState<boolean>(false);
   const [selectedFileIds, setSelectedFileIds] = useState<string[]>([]);
 
-  // State for columns
+  // State for columns - default to desktop assumption
   const [columns, setColumns] = useState<string>('2');
 
   // State for existing files
   const [existingFiles, setExistingFiles] = useState<ExistingFile[]>([]);
   const [isLoadingExistingFiles, setIsLoadingExistingFiles] = useState(false);
-  const [isDeletingFiles, setIsDeletingFiles] = useState(false); // NEW: Deletion state
+  const [isDeletingFiles, setIsDeletingFiles] = useState(false);
 
   // State for single album gear menu
   const [showSingleGear, setShowSingleGear] = useState(false);
@@ -112,8 +167,10 @@ export const SingleAlbumMode: React.FC = () => {
     console.log(`[${timestamp}] ${message}`, data);
   };
 
-  // Close single gear dropdown when clicking outside
+  // SSR-safe click outside handler
   useEffect(() => {
+    if (!isClient) return;
+
     const handleClickOutside = (event: MouseEvent) => {
       if (singleGearRef.current && !singleGearRef.current.contains(event.target as Node)) {
         setShowSingleGear(false);
@@ -124,7 +181,7 @@ export const SingleAlbumMode: React.FC = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [isClient]);
 
   // Custom navigation function for the useFileUploadProcessor hook
   const navigateAfterUpload = (uploadedFolderId: string | null) => {
@@ -222,11 +279,13 @@ export const SingleAlbumMode: React.FC = () => {
   
   const { saveAlbumDirectly } = albumSave;
 
-  // Set default columns
+  // Set default columns from localStorage (client-side only)
   useEffect(() => {
+    if (!isClient) return;
+    
     const savedColumnsValue = localStorage.getItem('save-album-columns') || '2';
     setColumns(savedColumnsValue);
-  }, []);
+  }, [isClient, localStorage]);
 
   // Save columns to localStorage when changed
   const handleColumnsChange = (newColumns: string) => {
@@ -253,7 +312,7 @@ export const SingleAlbumMode: React.FC = () => {
     warmUpPageCredentials();
   }, []);
 
-  // UPDATED: Function to fetch existing album data with fileReferenceId
+  // Function to fetch existing album data with fileReferenceId
   const fetchExistingAlbumData = async (albumFolderId: string) => {
     if (!albumFolderId) return;
     
@@ -328,7 +387,7 @@ export const SingleAlbumMode: React.FC = () => {
           }
           
           files.push({
-            fileReferenceId: ref.id, // IMPORTANT: Include fileReferenceId for deletion
+            fileReferenceId: ref.id,
             dataKey: file.dataKey,
             thumbnailDataKey: file.thumbnailDataKey || null,
             durationInSeconds: file.durationInSeconds || null,
@@ -372,9 +431,10 @@ export const SingleAlbumMode: React.FC = () => {
     }
   };
 
-  // Check for query parameters first
+  // Check for query parameters first (client-side only)
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
+    if (!isClient) return;
+    
     const folderIdParam = urlParams.get('folderId');
     
     if (folderIdParam) {
@@ -384,7 +444,7 @@ export const SingleAlbumMode: React.FC = () => {
       setShowFolderDetails(true);
       setIsCreator(true);
     }
-  }, []);
+  }, [isClient, urlParams, localStorage]);
 
   // Load existing files when folderId changes
   useEffect(() => {
@@ -492,7 +552,7 @@ export const SingleAlbumMode: React.FC = () => {
     });
   };
 
-  // UPDATED: Existing file management functions with proper backend deletion
+  // Existing file management functions with proper backend deletion
   const removeExistingFile = async (indexToRemove: number) => {
     const fileToRemove = existingFiles[indexToRemove];
     if (!fileToRemove) {
@@ -500,16 +560,13 @@ export const SingleAlbumMode: React.FC = () => {
       return;
     }
 
-    // Set deletion state to show loading
     setIsDeletingFiles(true);
     enhancedLog(`Starting deletion of file reference: ${fileToRemove.fileReferenceId}`);
 
     try {
-      // Call backend to delete the file reference
       await AlbumService.deleteFileReferences([fileToRemove.fileReferenceId], enhancedLog);
       enhancedLog(`Successfully deleted file reference: ${fileToRemove.fileReferenceId}`);
 
-      // Remove from local state only after successful backend deletion
       const updated = existingFiles.filter((_, i) => i !== indexToRemove);
       setExistingFiles(updated);
 
@@ -600,6 +657,8 @@ export const SingleAlbumMode: React.FC = () => {
   };
 
   const deleteAllPhotos = () => {
+    if (!isClient) return;
+    
     if (confirm(t('Are you sure you want to delete all new files? This action cannot be undone.'))) {
       setSelectedPhotos([]);
       setFileState({
@@ -763,7 +822,6 @@ export const SingleAlbumMode: React.FC = () => {
           />
         )}
         
-        {/* NEW: Show deletion loading state */}
         {isDeletingFiles && (
           <div style={{
             padding: '16px',

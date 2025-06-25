@@ -26,6 +26,9 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  
+  // SSR-safe state management
+  const [isClient, setIsClient] = useState(false);
   const [showingCopyLinkAlert, setShowingCopyLinkAlert] = useState<boolean>(false);
   const [showingCopiedLinkAlert, setShowingCopiedLinkAlert] = useState<boolean>(false);
   const [showingQRCode, setShowingQRCode] = useState<boolean>(false);
@@ -46,6 +49,11 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
     folder.folderName
   )
 
+  // SSR-safe client detection
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   // Update local state when the folder prop changes
   useEffect(() => {
     setLocalProfileIds(folder.profileIds || []);
@@ -59,17 +67,69 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
     }
   }, [showingCopyLinkAlert, showingCopiedLinkAlert, showingQRCode, showingDownloadModal, onModalStateChange]);
 
-  // Handle copy function
+  // SSR-safe clipboard copy function
   const handleCopy = (textToCopy: string) => {
-    navigator.clipboard.writeText(textToCopy)
-      .then(() => {
+    if (!isClient) return;
+    
+    // Check if clipboard API is available
+    if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          setShowingCopyLinkAlert(false);
+          setShowingCopiedLinkAlert(true);
+        })
+        .catch(err => {
+          console.error("Failed to copy link:", err);
+          // Fallback for older browsers
+          try {
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            setShowingCopyLinkAlert(false);
+            setShowingCopiedLinkAlert(true);
+          } catch (fallbackErr) {
+            console.error("Fallback copy failed:", fallbackErr);
+            if (typeof alert !== 'undefined') {
+              alert(t('Failed to copy link'));
+            }
+          }
+        });
+    } else {
+      // Fallback for browsers without clipboard API
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = textToCopy;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
         setShowingCopyLinkAlert(false);
         setShowingCopiedLinkAlert(true);
-      })
-      .catch(err => {
-        console.error("Failed to copy link:", err);
-        alert(t('Failed to copy link'));
-      });
+      } catch (err) {
+        console.error("Copy failed:", err);
+        if (typeof alert !== 'undefined') {
+          alert(t('Failed to copy link'));
+        }
+      }
+    }
+  };
+
+  // SSR-safe alert function
+  const showAlert = (message: string) => {
+    if (isClient && typeof alert !== 'undefined') {
+      alert(message);
+    }
   };
 
   // Handle opening download modal
@@ -77,17 +137,19 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
     e.preventDefault(); 
     e.stopPropagation();
     
+    if (!isClient) return;
+    
     // Check login first
     const token = await checkLoginWithoutRedirect();
     
     if (!token) {
-      alert(t('You must be logged in to download photos'));
+      showAlert(t('You must be logged in to download photos'));
       return;
     }
     
     // Check if folder has files
     if (!folder || !folder.files || folder.files.length === 0) {
-      alert(t('No items to download'));
+      showAlert(t('No items to download'));
       return;
     }
     
@@ -100,8 +162,10 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
     e.preventDefault(); 
     e.stopPropagation();
     
+    if (!isClient) return;
+    
     if (!cognitoUsername) {
-      alert(t('You must be logged in to perform this action'));
+      showAlert(t('You must be logged in to perform this action'));
       return;
     }
     
@@ -184,7 +248,7 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
       }
     } catch (err) {
       console.error("Failed to toggle album visibility:", err);
-      alert(t('Failed to update album visibility. Please try again.'));
+      showAlert(t('Failed to update album visibility. Please try again.'));
     }
   };
 

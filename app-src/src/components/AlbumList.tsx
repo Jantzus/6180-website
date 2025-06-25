@@ -33,12 +33,20 @@ const calculateTotalSize = (files: Array<{ dataInBytes?: number }>): number => {
   }, 0);
 };
 
-// Helper function to clear album-related localStorage items
-const clearAlbumStorageData = () => {
-  localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
-  localStorage.removeItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
-  localStorage.removeItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
-  localStorage.removeItem(LOCAL_STORAGE_KEYS.ALBUM_GROUPS);
+// SSR-safe navigation helper
+const navigateToUrl = (url: string) => {
+  if (typeof window !== 'undefined' && window.location) {
+    window.location.href = url;
+  }
+};
+
+// SSR-safe confirmation dialog helper
+const showConfirmDialog = (message: string): boolean => {
+  if (typeof window !== 'undefined' && window.confirm) {
+    return window.confirm(message);
+  }
+  // Return false as a safe default for SSR
+  return false;
 };
 
 // Styled Components (from original AlbumList.tsx)
@@ -245,11 +253,14 @@ const ThumbnailWrapper = styled.div`
   flex-shrink: 0;
 `;
 
+// Type for translation function
+type TranslationFunction = (key: string, options?: { count?: string }) => string;
+
 // Props for the unified AlbumList component
 export interface AlbumListProps {
   folders: FolderType[];
-  setFolders?: React.Dispatch<React.SetStateAction<any[]>>;
-  handleDeleteClick?: (folderPositionId: string, t?: any) => void;
+  setFolders?: React.Dispatch<React.SetStateAction<FolderType[]>>;
+  handleDeleteClick?: (folderPositionId: string, t?: TranslationFunction) => void;
   isUploading?: boolean;
   cognitoUsername: string | null;
   isProfileView?: boolean;
@@ -267,14 +278,38 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
 
+  // SSR-safe state management
+  const [isClient, setIsClient] = useState(false);
+
   // Reference to keep track of active dropdown menu
   const activeDropdownRef = useRef<HTMLElement | null>(null);
   
   // Track modal states for each folder
   const [folderModalStates, setFolderModalStates] = useState<Record<string, boolean>>({});
 
-  // Function to handle clicks outside dropdown menu and scrolling
+  // SSR-safe client detection
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // SSR-safe helper function to clear album-related localStorage items
+  const clearAlbumStorageData = React.useCallback(() => {
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      try {
+        localStorage.removeItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+        localStorage.removeItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA);
+        localStorage.removeItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
+        localStorage.removeItem(LOCAL_STORAGE_KEYS.ALBUM_GROUPS);
+      } catch (error) {
+        console.error('Failed to clear album storage data:', error);
+      }
+    }
+  }, []);
+
+  // Function to handle clicks outside dropdown menu and scrolling - SSR-safe
+  useEffect(() => {
+    if (!isClient) return;
+
     // Function to close active dropdown
     function closeActiveDropdown() {
       if (activeDropdownRef.current) {
@@ -288,19 +323,23 @@ export const AlbumList: React.FC<AlbumListProps> = ({
       closeActiveDropdown();
     }
 
-    // Add only scroll event listener
-    window.addEventListener("scroll", handleScroll, true); // Use capture phase to detect all scrolling
-    
-    // Clean up
-    return () => {
-      window.removeEventListener("scroll", handleScroll, true);
-    };
-  }, []);
+    // Add only scroll event listener if window is available
+    if (typeof window !== 'undefined') {
+      window.addEventListener("scroll", handleScroll, true); // Use capture phase to detect all scrolling
+      
+      // Clean up
+      return () => {
+        window.removeEventListener("scroll", handleScroll, true);
+      };
+    }
+  }, [isClient]);
 
   // Function to toggle dropdown visibility
   const toggleDropdown = (e: React.MouseEvent, dropdownElement: HTMLElement) => {
     e.preventDefault();
     e.stopPropagation();
+    
+    if (!isClient) return;
     
     // If there's already an open dropdown and it's not this one, close it
     if (activeDropdownRef.current && activeDropdownRef.current !== dropdownElement) {
@@ -315,16 +354,18 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     activeDropdownRef.current = isVisible ? null : dropdownElement;
   };
 
-  // New function to initiate delete process with system dialog
+  // New function to initiate delete process with system dialog - SSR-safe
   const handleDeleteButtonClick = (folderPositionId: string) => {
+    if (!isClient) return;
+
     // Close any open dropdown
     if (activeDropdownRef.current) {
       activeDropdownRef.current.style.display = "none";
       activeDropdownRef.current = null;
     }
     
-    // Use the browser's native confirm dialog
-    const confirmDelete = window.confirm(t('Are you sure you want to delete this album? This action cannot be undone.'));
+    // Use the browser's native confirm dialog if available
+    const confirmDelete = showConfirmDialog(t('Are you sure you want to delete this album? This action cannot be undone.'));
     
     if (confirmDelete && handleDeleteClick) {
       handleDeleteClick(folderPositionId, t);
@@ -359,8 +400,10 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     }
   };
 
-  // Helper function to handle album link click
+  // SSR-safe helper function to handle album link click
   const handleAlbumClick = (inviteLink: string, folderId: string) => {
+    if (!isClient) return;
+
     // Check if dropdown is open
     const isDropdownOpen = activeDropdownRef.current && activeDropdownRef.current.style.display === "block";
     
@@ -369,7 +412,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     
     // Only navigate if no dropdown or modal is open
     if (!isDropdownOpen && !isModalOpen) {
-      window.location.href = inviteLink;
+      navigateToUrl(inviteLink);
     }
   };
 
@@ -381,10 +424,19 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     }));
   };
 
+  // SSR-safe edit navigation handler
+  const handleEditNavigation = (folderId: string) => {
+    if (!isClient) return;
+    
+    // Clear album-related localStorage data before navigating to edit
+    clearAlbumStorageData();
+    navigateToUrl(generateUrl(`save-album.html?folderId=${encodeURIComponent(folderId)}`));
+  };
+
   if (folders.length === 0 && !isUploading) {
     return (
       <State $type="empty">
-        <p>{t('No albums found')}</p>
+        <p>{t('Loading albums....')}</p>
       </State>
     );
   }
@@ -535,9 +587,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             $isRTL={isRTL}
                             onClick={(e) => {
                               e.stopPropagation();
-                              // Clear album-related localStorage data before navigating to edit
-                              clearAlbumStorageData();
-                              window.location.href = generateUrl(`save-album.html?folderId=${encodeURIComponent(folder.folderId)}`);
+                              handleEditNavigation(folder.folderId);
                             }}
                           >
                             {t('Edit Files or Album Settings')}

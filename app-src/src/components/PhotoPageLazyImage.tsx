@@ -24,11 +24,16 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
   const [fullResLoaded, setFullResLoaded] = useState(false);
   const [isLoadingFullRes, setIsLoadingFullRes] = useState(false);
   const [imageSrc, setImageSrc] = useState("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E");
+  const [isClient, setIsClient] = useState(false);
   const { t } = useTranslation();
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   
   // First load the thumbnail if available
   useEffect(() => {
-    if (thumbnailSrc) {
+    if (thumbnailSrc && isClient) {
       const img = new globalThis.Image();
       img.src = thumbnailSrc;
       img.onload = () => {
@@ -36,11 +41,11 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
         setIsLoaded(true);
       };
     }
-  }, [thumbnailSrc]);
+  }, [thumbnailSrc, isClient]);
   
   // Load the full resolution image when requested
   useEffect(() => {
-    if (loadFullResolution && !fullResLoaded) {
+    if (loadFullResolution && !fullResLoaded && isClient) {
       setIsLoadingFullRes(true);
       
       const img = new globalThis.Image();
@@ -54,7 +59,7 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
         }
       };
     }
-  }, [loadFullResolution, src, fullResLoaded, onFullResolutionLoaded]);
+  }, [loadFullResolution, src, fullResLoaded, onFullResolutionLoaded, isClient]);
 
   // MEMOIZED: Prevent right-click context menu
   const handleContextMenu = useCallback((e: React.MouseEvent<HTMLImageElement>) => {

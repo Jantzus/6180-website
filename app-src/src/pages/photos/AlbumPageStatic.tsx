@@ -385,8 +385,8 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
   const passwordProtection = usePasswordProtection();
   const usernameManager = useUsernameManagement(t);
   
-  // State
-  const [columns, setColumns] = useState<string>('1');
+  // State with SSR-safe defaults
+  const [columns, setColumns] = useState<string>('1'); // Default to '1' for SSR
   
   // Media filtering state
   const [filteredMediaItems, setFilteredMediaItems] = useState<MediaItem[]>([]);
@@ -400,10 +400,8 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
   const [showingQRCode, setShowingQRCode] = useState<boolean>(false);
   const [showingDownloadModal, setShowingDownloadModal] = useState<boolean>(false);
   
-  // Rotating slogan state - start with random slogan
-  const [currentSloganIndex, setCurrentSloganIndex] = useState(() => 
-    Math.floor(Math.random() * 6)
-  );
+  // Rotating slogan state - start with random slogan (SSR-safe)
+  const [currentSloganIndex, setCurrentSloganIndex] = useState(0); // Default to 0 for SSR
   const [sloganVisible, setSloganVisible] = useState(true);
   
   // Array of rotating slogans
@@ -506,8 +504,59 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
     setShowingDownloadModal(true);
   };
 
-  // NEW: Prewarm S3 credentials when the page loads for extra reliability
+  // SSR-safe effects
+  
+  // Initialize slogan index randomly on client side
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentSloganIndex(Math.floor(Math.random() * 6));
+    }
+  }, []);
+
+  // Set default columns from localStorage on client side
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedColumnsValue = localStorage.getItem('columns') || '1';
+      setColumns(savedColumnsValue);
+    }
+  }, []);
+
+  // Check if user is logged in and get cognito username - SSR safe
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const getUserInfo = async () => {
+      const token = await checkLoginWithoutRedirect();
+      if (token) {
+        try {
+          const payload = JSON.parse(atob(token.split('.')[1]));
+          const username = payload["cognito:username"];
+          setCognitoUsername(username);
+          
+        } catch (err) {
+          console.error("Failed to decode token", err);
+        }
+      }
+    };
+  
+    getUserInfo();
+  }, []);
+
+  // Set page title - SSR safe
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    
+    if (albumData?.folderName) {
+      document.title = albumData.folderName;
+    } else {
+      document.title = t('Photos');
+    }
+  }, [albumData, language, t]);
+
+  // Prewarm S3 credentials - SSR safe
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const warmUpPageCredentials = async () => {
       try {
         await prewarmCredentials();
@@ -518,10 +567,12 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
     };
     
     warmUpPageCredentials();
-  }, []); // Empty dependency array - run once when page loads
+  }, [log]);
 
-  // Rotating slogan effect with smooth fade transitions
+  // Rotating slogan effect with smooth fade transitions - SSR safe
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const interval = setInterval(() => {
       // Start fade out
       setSloganVisible(false);
@@ -670,27 +721,31 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
     }
     
     // Check the public username from localStorage before executing album save
-    const publicUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
-    if (publicUsername?.startsWith("Profile-")) {
-      console.log("Public username starts with 'Profile-', showing username prompt");
+    if (typeof window !== 'undefined') {
+      const publicUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
+      if (publicUsername?.startsWith("Profile-")) {
+        console.log("Public username starts with 'Profile-', showing username prompt");
 
-      // If username exists, set it as input value
-      if (publicUsername) {
-        usernameManager.setUsernameInput("");
+        // If username exists, set it as input value
+        if (publicUsername) {
+          usernameManager.setUsernameInput("");
+        }
+
+        usernameManager.setShowUsernamePrompt(true);
+        return;
       }
-
-      usernameManager.setShowUsernamePrompt(true);
-      return;
     }
     
     // Execute the save operation
     executeAlbumSave(t, folderId, albumData);
   };
 
-  // Change columns
+  // Change columns and save to localStorage
   const changeColumns = (value: string) => {
     setColumns(value);
-    localStorage.setItem('columns', value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('columns', value);
+    }
   };
 
   // Handler for successful login
@@ -713,17 +768,19 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
         }
         
         // Check the public username from localStorage before proceeding with album save
-        const publicUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
-        if (publicUsername?.startsWith("Profile-")) {
-          console.log("Public username starts with 'Profile-', showing username prompt");
+        if (typeof window !== 'undefined') {
+          const publicUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
+          if (publicUsername?.startsWith("Profile-")) {
+            console.log("Public username starts with 'Profile-', showing username prompt");
 
-          // If username exists, set it as input value
-          if (publicUsername) {
-            usernameManager.setUsernameInput("");
+            // If username exists, set it as input value
+            if (publicUsername) {
+              usernameManager.setUsernameInput("");
+            }
+
+            usernameManager.setShowUsernamePrompt(true);
+            return;
           }
-
-          usernameManager.setShowUsernamePrompt(true);
-          return;
         }
         
         // Check if there's a pending save album operation
@@ -742,7 +799,9 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
     if (!files.length) return;
   
     // Remove the localStorage timestamp once files are selected
-    localStorage.removeItem('selectPhotosButtonTimestamp');
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('selectPhotosButtonTimestamp');
+    }
     
     // Use the shared file upload processor
     const success = await fileUpload.handleFileSelection(e, cognitoUsername);
@@ -786,18 +845,20 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
     }
     
     // Check the public username from localStorage
-    const publicUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
-    if (publicUsername?.startsWith("Profile-")) {
+    if (typeof window !== 'undefined') {
+      const publicUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
+      if (publicUsername?.startsWith("Profile-")) {
 
-      console.log("Public username starts with 'Profile-', showing username prompt");
+        console.log("Public username starts with 'Profile-', showing username prompt");
 
-      // If username exists, set it as input value
-      if (publicUsername) {
-        usernameManager.setUsernameInput("");
+        // If username exists, set it as input value
+        if (publicUsername) {
+          usernameManager.setUsernameInput("");
+        }
+
+        usernameManager.setShowUsernamePrompt(true);
+        return;
       }
-
-      usernameManager.setShowUsernamePrompt(true);
-      return;
     }
     
     // User is logged in and has valid username, continue with album save
@@ -828,40 +889,6 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
     shareActions.setShowingCopyLinkAlert(false);
     createSubalbum();
   };
-
-  // Set default columns
-  useEffect(() => {
-    const savedColumnsValue = localStorage.getItem('columns') || '1';
-    setColumns(savedColumnsValue);
-  }, []);
-
-  // Check if user is logged in and get cognito username
-  useEffect(() => {
-    const getUserInfo = async () => {
-      const token = await checkLoginWithoutRedirect();
-      if (token) {
-        try {
-          const payload = JSON.parse(atob(token.split('.')[1]));
-          const username = payload["cognito:username"];
-          setCognitoUsername(username);
-          
-        } catch (err) {
-          console.error("Failed to decode token", err);
-        }
-      }
-    };
-  
-    getUserInfo();
-  }, []);
-
-  // Set page title
-  useEffect(() => {
-    if (albumData?.folderName) {
-      document.title = albumData.folderName;
-    } else {
-      document.title = t('Photos');
-    }
-  }, [albumData, language]);
 
   // Debug logging for media grid props
   useEffect(() => {

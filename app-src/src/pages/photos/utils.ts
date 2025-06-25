@@ -6,16 +6,10 @@ import {
   generateInviteLink
 } from "@/lib/utils";
 
-
-// Execute album save operation
-export const executeAlbumSave = async (
-  t: (key: string) => string,
-  folderId: string | null,
-  albumData: AlbumData | null
-) => {
-  console.log("Starting album registration");
+// SSR-safe DOM element creation helper
+const createLoadingModal = (t: (key: string) => string) => {
+  if (typeof document === 'undefined') return null;
   
-  // Create a loading indicator for album saving
   const loadingModal = document.createElement('div');
   loadingModal.style.position = 'fixed';
   loadingModal.style.top = '0';
@@ -65,6 +59,49 @@ export const executeAlbumSave = async (
   loadingContent.appendChild(progressBarBg);
   loadingContent.appendChild(errorText);
   loadingModal.appendChild(loadingContent);
+  
+  return {
+    modal: loadingModal,
+    loadingText,
+    progressBar,
+    errorText
+  };
+};
+
+// SSR-safe DOM cleanup helper
+const cleanupLoadingModal = () => {
+  if (typeof document === 'undefined') return;
+  
+  try {
+    // Try to remove the loading modal if it exists
+    const loadingModal = document.querySelector('div[style*="position: fixed"][style*="backgroundColor: rgba(0, 0, 0, 0.5)"]');
+    if (loadingModal && loadingModal.parentNode) {
+      loadingModal.parentNode.removeChild(loadingModal);
+    }
+  } catch (cleanupError) {
+    console.error('Error cleaning up loading modal:', cleanupError);
+  }
+};
+
+// Execute album save operation
+export const executeAlbumSave = async (
+  t: (key: string) => string,
+  folderId: string | null,
+  albumData: AlbumData | null
+) => {
+  console.log("Starting album registration");
+  
+  // Skip DOM manipulation during SSR
+  if (typeof document === 'undefined') {
+    console.warn('executeAlbumSave called during SSR, skipping');
+    return;
+  }
+  
+  // Create a loading indicator for album saving
+  const modalElements = createLoadingModal(t);
+  if (!modalElements) return;
+  
+  const { modal: loadingModal, loadingText, progressBar, errorText } = modalElements;
   document.body.appendChild(loadingModal);
 
   try {
@@ -189,11 +226,15 @@ export const executeAlbumSave = async (
       updateSaveProgress(100, loadingText, progressBar, t('Album registered successfully!'));
       
       // Set a flag in sessionStorage that we just completed an album
-      sessionStorage.setItem('album_just_saved', 'true');
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('album_just_saved', 'true');
+      }
       
       // Slight delay before redirect for user to see success message
       setTimeout(() => {
-        document.body.removeChild(loadingModal);
+        if (typeof document !== 'undefined') {
+          document.body.removeChild(loadingModal);
+        }
         redirectTo("my-albums.html");
       }, 2000);
     } catch (err) {
@@ -218,6 +259,12 @@ export const createSubAlbumWithSelectedItems = async (
   if (selectedItems.size === 0) {
     console.log("[SubAlbum] Error: No items selected");
     alert(t('Please select at least one item to share.'));
+    return;
+  }
+  
+  // Skip DOM manipulation during SSR
+  if (typeof document === 'undefined') {
+    console.warn('createSubAlbumWithSelectedItems called during SSR, skipping');
     return;
   }
   
@@ -330,26 +377,28 @@ export const createSubAlbumWithSelectedItems = async (
         selectedPhotosCount: subAlbumData.selectedPhotos.length
       });
       
-      // Save to localStorage
-      try {
-        console.log(`[SubAlbum] Saving to localStorage with key: ${LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA}`);
-        const serializedData = JSON.stringify(subAlbumData);
-        console.log(`[SubAlbum] Serialized data length: ${serializedData.length} characters`);
-        
-        localStorage.setItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA, serializedData);
-        console.log("[SubAlbum] Successfully saved to localStorage");
-      } catch (storageError) {
-        console.error("[SubAlbum] Error saving to localStorage:", storageError);
-        // Check if it's a quota error
-        if (storageError instanceof DOMException && 
-            (storageError.name === 'QuotaExceededError' || 
-             storageError.name === 'NS_ERROR_DOM_QUOTA_REACHED')) {
-          console.error("[SubAlbum] localStorage quota exceeded");
-          alert(t('Storage limit exceeded. The album may be too large to share this way.'));
-          document.body.removeChild(loadingModal);
-          return;
+      // Save to localStorage - SSR safe
+      if (typeof window !== 'undefined') {
+        try {
+          console.log(`[SubAlbum] Saving to localStorage with key: ${LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA}`);
+          const serializedData = JSON.stringify(subAlbumData);
+          console.log(`[SubAlbum] Serialized data length: ${serializedData.length} characters`);
+          
+          localStorage.setItem(LOCAL_STORAGE_KEYS.SUB_ALBUM_DATA, serializedData);
+          console.log("[SubAlbum] Successfully saved to localStorage");
+        } catch (storageError) {
+          console.error("[SubAlbum] Error saving to localStorage:", storageError);
+          // Check if it's a quota error
+          if (storageError instanceof DOMException && 
+              (storageError.name === 'QuotaExceededError' || 
+               storageError.name === 'NS_ERROR_DOM_QUOTA_REACHED')) {
+            console.error("[SubAlbum] localStorage quota exceeded");
+            alert(t('Storage limit exceeded. The album may be too large to share this way.'));
+            document.body.removeChild(loadingModal);
+            return;
+          }
+          throw storageError; // re-throw to be caught by the outer catch
         }
-        throw storageError; // re-throw to be caught by the outer catch
       }
       
       console.log("[SubAlbum] Removing loading modal");
@@ -363,16 +412,7 @@ export const createSubAlbumWithSelectedItems = async (
     } catch (error) {
       console.error('[SubAlbum] Error creating selection:', error);
       alert(t('There was an error creating the selection. Please try again.'));
-      try {
-        // Try to remove the loading modal if it exists
-        const loadingModal = document.querySelector('div[style*="position: fixed"][style*="backgroundColor: rgba(0, 0, 0, 0.5)"]');
-        if (loadingModal && loadingModal.parentNode) {
-          console.log("[SubAlbum] Cleaning up loading modal after error");
-          loadingModal.parentNode.removeChild(loadingModal);
-        }
-      } catch (cleanupError) {
-        console.error('[SubAlbum] Error cleaning up after main error:', cleanupError);
-      }
+      cleanupLoadingModal();
     }
   } else {
     console.error('[SubAlbum] Error: Album data is null');
@@ -523,14 +563,22 @@ export const useShareActions = (albumData: AlbumData | null, folderId: string | 
     }
   }, [albumData, cognitoUsername]);
   
-  // Handle copy function
+  // Handle copy function - SSR safe
   const handleCopy = useCallback(() => {
+    if (typeof navigator === 'undefined' || !navigator.clipboard) {
+      // Fallback for environments without clipboard API
+      console.warn('Clipboard API not available');
+      alert(t('Clipboard not available. Please copy the link manually.'));
+      return;
+    }
+    
     const inviteLink = generateInviteLink(
       folderId,
       albumData?.albumNanoId,
       albumData?.creatorId && albumData?.contacts && albumData?.contacts[albumData?.creatorId],
       albumData?.folderName
-    )
+    );
+    
     navigator.clipboard.writeText(inviteLink)
       .then(() => {
         setShowingCopyLinkAlert(false);
@@ -540,7 +588,7 @@ export const useShareActions = (albumData: AlbumData | null, folderId: string | 
         console.error("Failed to copy link:", err);
         alert(t('Failed to copy link'));
       });
-  }, [folderId, t]);
+  }, [folderId, albumData, t]);
   
   // Handle public profile toggle
   const handlePublicProfileToggle = useCallback(async () => {

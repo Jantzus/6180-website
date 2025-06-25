@@ -1,4 +1,4 @@
-// useAlbumInitialization.ts - Focused hook for album initialization only
+// useAlbumInitialization.ts - SSR-safe album initialization hook
 import React, { useState, useEffect } from "react";
 import { SelectedPhoto, PasswordPolicyEnum } from "@/lib/types";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
@@ -24,14 +24,16 @@ export const useAlbumInitialization = (
   setParticipantsCanDeleteItems: React.Dispatch<React.SetStateAction<boolean>>,
   enhancedLog: (message: string, data?: any) => void
 ) => {
+  // SSR-safe state initialization
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
   const [publicUsername, setPublicUsername] = useState<string | null>(null);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   // Helper function for folder initialization
   const initializeFolderIdWithUsername = async (username: string) => {
     enhancedLog(`Initializing folder ID with username: ${username}`);
     try {
-      // Get folderId from URL query parameter
+      // Get folderId from URL query parameter (client-side only)
       const params = new URLSearchParams(window.location.search);
       const id = params.get("folderId");
       enhancedLog(`Folder ID from URL: ${id || 'null'}`);
@@ -125,6 +127,7 @@ export const useAlbumInitialization = (
     }
   };
 
+  // SSR-safe photo restoration
   const restorePhotosFromStorage = () => {
     enhancedLog("Attempting to restore photos from localStorage");
     try {
@@ -151,6 +154,7 @@ export const useAlbumInitialization = (
     }
   };
 
+  // SSR-safe S3 connection test
   const testS3Connection = () => {
     enhancedLog("Testing S3 connection");
     try {
@@ -166,6 +170,7 @@ export const useAlbumInitialization = (
     }
   };
 
+  // Main initialization function (client-side only)
   const initializeComponent = async () => {
     enhancedLog("Starting component initialization");
     
@@ -179,7 +184,7 @@ export const useAlbumInitialization = (
       
       // Extract username directly here instead of in a separate function
       try {
-        // Get public username
+        // Get public username from localStorage
         const savedUsername = localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME);
         enhancedLog(`Retrieved public username from localStorage: ${savedUsername || 'null'}`);
         setPublicUsername(savedUsername || null);
@@ -250,9 +255,12 @@ export const useAlbumInitialization = (
     } catch (initErr) {
       console.error("Initialization error:", initErr);
       enhancedLog(`Initialization error: ${initErr}`);
+    } finally {
+      setIsInitialized(true);
     }
   };
 
+  // SSR-safe initialization - only run on client
   useEffect(() => {
     initializeComponent();
   }, []);
@@ -260,6 +268,7 @@ export const useAlbumInitialization = (
   return {
     cognitoUsername,
     publicUsername,
-    setPublicUsername
+    setPublicUsername,
+    isInitialized
   };
 };

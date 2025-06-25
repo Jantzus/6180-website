@@ -34,8 +34,13 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
   const [isPlaying, setIsPlaying] = useState(false);
   const [loadFullVideo, setLoadFullVideo] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const { t } = useTranslation();
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   
   const handleClick = () => {
     if (onClick) {
@@ -61,7 +66,7 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
   
   // Load video when the video element is available
   useEffect(() => {
-    if (loadFullVideo && videoRef.current && !isVideoLoaded) {
+    if (loadFullVideo && videoRef.current && !isVideoLoaded && isClient) {
       const video = videoRef.current;
       
       // Set up event listeners for video loading
@@ -79,7 +84,7 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
         video.removeEventListener('canplaythrough', handleCanPlayThrough);
       };
     }
-  }, [loadFullVideo, isVideoLoaded]);
+  }, [loadFullVideo, isVideoLoaded, isClient]);
 
   // MEMOIZED: Prevent right-click context menu
   const handleContextMenu = useCallback((e: React.MouseEvent<HTMLVideoElement>) => {
@@ -93,7 +98,7 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
     return false;
   }, []);
   
-  if (isPlaying) {
+  if (isPlaying && isClient) {
     return (
       <div style={{ position: 'relative', width: '100%', height: '100%' }}>
         <video 
@@ -136,23 +141,25 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
         <Overlay $type="loading">
           {t('Loading video...')}
         </Overlay>
-        <video 
-          ref={videoRef} 
-          style={{ 
-            display: 'none',
-            userSelect: 'none',
-            WebkitUserSelect: 'none',
-            MozUserSelect: 'none',
-            msUserSelect: 'none',
-            WebkitTouchCallout: 'none'
-          }} 
-          preload="auto"
-          onContextMenu={handleContextMenu}
-          onDragStart={handleDragStart}
-          draggable={false}
-        >
-          <source src={videoUrl} type="video/mp4" />
-        </video>
+        {isClient && (
+          <video 
+            ref={videoRef} 
+            style={{ 
+              display: 'none',
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              MozUserSelect: 'none',
+              msUserSelect: 'none',
+              WebkitTouchCallout: 'none'
+            }} 
+            preload="auto"
+            onContextMenu={handleContextMenu}
+            onDragStart={handleDragStart}
+            draggable={false}
+          >
+            <source src={videoUrl} type="video/mp4" />
+          </video>
+        )}
       </ThumbnailWrapper>
     );
   }

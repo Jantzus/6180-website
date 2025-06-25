@@ -21,6 +21,9 @@ interface DirectionalProps {
   $isRTL: boolean;
 }
 
+// SSR-safe device detection defaults
+const DEFAULT_IS_MOBILE = false;
+
 // Theme object (matching your existing theme structure)
 const theme = {
   colors: {
@@ -137,9 +140,9 @@ const AppTitle = styled.h1`
   `)}
 `;
 
-const CenterSection = styled.div`
+const CenterSection = styled.div<{ $isMobile: boolean }>`
   flex: 1 1 auto;
-  display: flex;
+  display: ${props => props.$isMobile ? 'none' : 'flex'};
   justify-content: center;
   padding: 0 ${theme.spacing.md};
   
@@ -182,8 +185,8 @@ const NewAlbumButton = styled.button`
   }
 `;
 
-const UploadFolderButton = styled.button`
-  display: inline-flex;
+const UploadFolderButton = styled.button<{ $isMobile: boolean }>`
+  display: ${props => props.$isMobile ? 'none' : 'inline-flex'};
   align-items: center;
   gap: ${theme.spacing.sm};
   padding: 10px ${theme.spacing.md};
@@ -233,8 +236,8 @@ const RightSection = styled.div`
   gap: ${theme.spacing.sm};
 `;
 
-const MobileNewAlbumButton = styled.button`
-  display: none;
+const MobileNewAlbumButton = styled.button<{ $isMobile: boolean }>`
+  display: ${props => props.$isMobile ? 'flex' : 'none'};
   align-items: center;
   justify-content: center;
   padding: 8px 12px;
@@ -298,11 +301,12 @@ const UserAvatar = styled.div`
   font-weight: 600;
 `;
 
-const Username = styled.span`
+const Username = styled.span<{ $isMobile: boolean }>`
   max-width: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: ${props => props.$isMobile ? 'none' : 'inline'};
 
   @media (max-width: 768px) {
     display: none;
@@ -413,19 +417,49 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  
+  // SSR-safe state management
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(DEFAULT_IS_MOBILE);
+  const [isClient, setIsClient] = useState(false);
+  
   const profileDropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close profile dropdown when clicking outside
+  // SSR-safe device detection and event listeners
   useEffect(() => {
+    setIsClient(true);
+    
+    // Detect device type after hydration
+    const checkDevice = () => {
+      if (typeof window !== 'undefined') {
+        const windowWidth = window.innerWidth;
+        const newIsMobile = windowWidth <= 768;
+        setIsMobile(newIsMobile);
+      }
+    };
+    
+    checkDevice();
+    
+    // Set up event listeners
     const handleClickOutside = (event: MouseEvent) => {
       if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target as Node)) {
         setIsProfileDropdownOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    const handleResize = () => {
+      checkDevice();
+    };
+
+    if (typeof window !== 'undefined') {
+      document.addEventListener('mousedown', handleClickOutside);
+      window.addEventListener('resize', handleResize);
+      
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   // Format storage usage
@@ -447,9 +481,11 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
     return firstName.length > 12 ? firstName.substring(0, 12) + "..." : firstName;
   };
 
-  // Handle logout
+  // Handle logout - SSR-safe
   const handleLogout = () => {
-    localStorage.clear();
+    if (isClient && typeof localStorage !== 'undefined') {
+      localStorage.clear();
+    }
     redirectTo("index.html");
   };
 
@@ -483,7 +519,7 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
           </LogoSection>
 
           {/* Center: New Album and Upload Folder Buttons (hidden on mobile) */}
-          <CenterSection>
+          <CenterSection $isMobile={isMobile}>
             <ButtonGroup>
               <NewAlbumButton onClick={handleSelectFiles}>
                 <PlusIcon>+</PlusIcon>
@@ -492,7 +528,7 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
               
               {/* Upload Folder Button - only show if handler exists and on desktop */}
               {onSelectFolder && (
-                <UploadFolderButton onClick={handleSelectFolder}>
+                <UploadFolderButton $isMobile={isMobile} onClick={handleSelectFolder}>
                   <FolderIcon>📁</FolderIcon>
                   {t('Upload Folder')}
                 </UploadFolderButton>
@@ -503,7 +539,7 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
           {/* Right: Profile Section */}
           <RightSection>
             {/* Mobile New Album Button */}
-            <MobileNewAlbumButton onClick={handleSelectFiles}>
+            <MobileNewAlbumButton $isMobile={isMobile} onClick={handleSelectFiles}>
               {t('New Album')}
             </MobileNewAlbumButton>
 
@@ -514,7 +550,7 @@ export const MyAlbumsHeader: React.FC<MyAlbumsHeaderProps> = ({
                   {getDisplayName().charAt(0).toUpperCase()}
                 </UserAvatar>
                 
-                <Username>
+                <Username $isMobile={isMobile}>
                   {getDisplayName()}
                 </Username>
                 

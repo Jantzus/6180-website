@@ -26,6 +26,7 @@ const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({
   t 
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  // SSR-safe default: assume desktop during SSR (1280px > 840px breakpoint)
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   
@@ -42,21 +43,23 @@ const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({
     ...buttonStyle // Allow override from props
   };
   
-  // Check window width on mount and when resized
+  // SSR-safe viewport width detection
   useEffect(() => {
-    // Set initial state immediately to avoid flicker
-    setIsMobile(window.innerWidth < BREAKPOINT);
+    if (typeof window === 'undefined') return;
     
     const checkWidth = () => {
       setIsMobile(window.innerWidth < BREAKPOINT);
     };
+    
+    // Set initial state
+    checkWidth();
     
     // Add resize listener
     window.addEventListener('resize', checkWidth);
     
     // Cleanup
     return () => window.removeEventListener('resize', checkWidth);
-  }, []);
+  }, [BREAKPOINT]);
   
   // Toggle menu
   const toggleMenu = () => {
@@ -74,8 +77,10 @@ const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({
     closeMenu();
   };
   
-  // Handle click outside to close menu
+  // Handle click outside to close menu - SSR safe
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+    
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setMenuOpen(false);
@@ -185,7 +190,7 @@ const ResponsiveHeader: React.FC<ExtendedResponsiveHeaderProps> = ({
     );
   }
   
-  // Desktop view with all buttons visible
+  // Desktop view with all buttons visible (default for SSR)
   return (
     <div style={{ 
       display: 'flex', 

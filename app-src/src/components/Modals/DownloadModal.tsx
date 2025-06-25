@@ -353,10 +353,15 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  const [isClient, setIsClient] = useState(false);
   
   // State for UI controls
   const [columns, setColumns] = useState<string>('3');
   const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   
   // Convert folder files to MediaItem format
   const mediaItems: MediaItem[] = useMemo(() => {
@@ -431,7 +436,9 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({
     
     // Dummy openFullscreenView function
     const openFullscreenView = (index: number) => {
-      window.open(selectedMediaItems[index].url, '_blank');
+      if (isClient) {
+        window.open(selectedMediaItems[index].url, '_blank');
+      }
     };
     
     // Call download function
@@ -458,7 +465,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({
   
   // Lock/unlock body scroll when modal opens/closes
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && isClient) {
       // Store original overflow value
       const originalOverflow = document.body.style.overflow;
       const originalTouchAction = document.body.style.touchAction;
@@ -473,9 +480,9 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({
         document.body.style.touchAction = originalTouchAction;
       };
     }
-  }, [isOpen]);
+  }, [isOpen, isClient]);
   
-  if (!isOpen) return null;
+  if (!isOpen || !isClient) return null;
   
   const modalContent = (
     <ModalOverlay 

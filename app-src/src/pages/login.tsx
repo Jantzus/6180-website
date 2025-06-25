@@ -125,6 +125,7 @@ const LoginPage = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'verifying' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [hoverLink, setHoverLink] = useState<string | null>(null)
+  const [redirectPath, setRedirectPath] = useState('my-albums.html') // Default for SSR
   
   // Use the i18n hook
   const { t, language, loading } = useTranslation()
@@ -143,29 +144,35 @@ const LoginPage = () => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr'
   }, [language, isRTL])
 
+  // Extract redirect parameter client-side
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const redirectParam = new URLSearchParams(window.location.search).get('redirect') || 'my-albums.html'
+      
+      // Security enhancement: Validate redirect URL to prevent open redirect vulnerabilities
+      const isValidRedirect = (url: string): boolean => {
+        // Allow relative paths or URLs to your own domain
+        return url.startsWith('/') || 
+               url.startsWith(window.location.origin) || 
+               /^https?:\/\/([\w-]+\.)*6180\.app(\/.*)?$/.test(url)
+      }
+      
+      // Ensure the redirect path is properly formatted and secure
+      const validatedPath = isValidRedirect(redirectParam) ? 
+                           (redirectParam.startsWith('http') ? redirectParam : 
+                           (redirectParam.startsWith('/') ? redirectParam : `/${redirectParam}`)) :
+                           'my-albums.html' // Fallback to safe default if invalid
+      
+      setRedirectPath(validatedPath)
+    }
+  }, [])
+
   // Focus the OTP input when code is sent
   useEffect(() => {
     if (codeSent && otpInputRef.current) {
       otpInputRef.current.focus()
     }
   }, [codeSent])
-
-  // Get the redirect parameter, defaulting to my-albums.html if not provided
-  const redirectParam = new URLSearchParams(location.search).get('redirect') || 'my-albums.html'
-  
-  // Security enhancement: Validate redirect URL to prevent open redirect vulnerabilities
-  const isValidRedirect = (url: string): boolean => {
-    // Allow relative paths or URLs to your own domain
-    return url.startsWith('/') || 
-           url.startsWith(window.location.origin) || 
-           /^https?:\/\/([\w-]+\.)*6180\.app(\/.*)?$/.test(url)
-  }
-  
-  // Ensure the redirect path is properly formatted and secure
-  const redirectPath = isValidRedirect(redirectParam) ? 
-                       (redirectParam.startsWith('http') ? redirectParam : 
-                       (redirectParam.startsWith('/') ? redirectParam : `/${redirectParam}`)) :
-                       'my-albums.html' // Fallback to safe default if invalid
 
   // Only allow numeric input for OTP code
   function handleOtpChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -287,7 +294,6 @@ const LoginPage = () => {
       }
 
       // Redirect to the specified page after successful login
-      // Handle external URLs differently from internal paths
       redirectTo(redirectPath)
 
     } catch (e) {
@@ -311,9 +317,10 @@ const LoginPage = () => {
         display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center', 
-        height: '100vh' 
+        height: '100vh',
+        fontFamily: 'system-ui, -apple-system, sans-serif'
       }}>
-        {t('Loading...')}
+        Loading...
       </div>
     )
   }
@@ -434,17 +441,29 @@ const LoginPage = () => {
   )
 }
 
-// Get stored language or default
-const storedLanguage = localStorage.getItem("preferred-language") || 
-                      localStorage.getItem("user_language") || 
-                      "en";
+// SSR-safe App wrapper
+const App: React.FC = () => {
+  const [storedLanguage, setStoredLanguage] = useState("en"); // Default for SSR
 
-// Render the app
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <I18nProvider 
-    initialLanguage={storedLanguage} 
-    preloadLanguages={["en"]}
-  >
-    <LoginPage />
-  </I18nProvider>
-);
+  useEffect(() => {
+    // Get stored language from localStorage client-side
+    const preferredLanguage = localStorage.getItem("preferred-language") || 
+                             localStorage.getItem("user_language") || 
+                             "en";
+    setStoredLanguage(preferredLanguage);
+  }, []);
+
+  return (
+    <I18nProvider 
+      initialLanguage={storedLanguage} 
+      preloadLanguages={["en"]}
+    >
+      <LoginPage />
+    </I18nProvider>
+  );
+};
+
+// SSR-safe initialization
+if (typeof window !== 'undefined') {
+  ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
+}

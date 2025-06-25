@@ -3,8 +3,6 @@
 ├── app-src
 │   ├── 6180-website.txt
 │   ├── AWSCLIV2.pkg
-│   ├── dev-utils
-│   ├── dist-lambda
 │   ├── eslint.config.js
 │   ├── index.html
 │   ├── login.html
@@ -26,7 +24,6 @@
 │   │   └── terms.html
 │   ├── README.md
 │   ├── save-album.html
-│   ├── scripts
 │   ├── src
 │   │   ├── components
 │   │   │   ├── AlbumFooterSection.tsx
@@ -53,7 +50,6 @@
 │   │   │   ├── TagsFilter.tsx
 │   │   │   ├── UploadProgress.tsx
 │   │   │   └── UsernamePrompt.tsx
-│   │   ├── lambda
 │   │   ├── lib
 │   │   │   ├── config.ts
 │   │   │   ├── file-upload-utils.ts
@@ -433,6 +429,8 @@
 │   │   │   │   └── utils
 │   │   │   │       └── album.utils.ts
 │   │   │   ├── storage
+│   │   │   │   ├── components
+│   │   │   │   ├── hooks
 │   │   │   │   ├── index.tsx
 │   │   │   │   └── manage.tsx
 │   │   │   └── TokenLogin.tsx
@@ -451,8 +449,9 @@
 │   ├── tsconfig.node.json
 │   ├── tsconfig.node.tsbuildinfo
 │   └── vite.config.ts
-├── eslint-plugin-no-ssr-unsafe
-│   └── index.js
-└── structure.txt
+└── eslint-plugin-no-ssr-unsafe
+    ├── index.js
+    └── rules
+        └── no-ssr-unsafe-browser-api.js
 
-31 directories, 425 files
+30 directories, 425 files

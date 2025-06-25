@@ -444,10 +444,15 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
+  const [isClient, setIsClient] = useState(false);
   
   // Initialize state with props
   const [selectedOption, setSelectedOption] = useState<PasswordPolicyEnum>(initialOption);
   const [password, setPassword] = useState(initialPassword);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Reset state when dialog opens
   useEffect(() => {
@@ -457,7 +462,7 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
     }
   }, [isOpen, initialOption, initialPassword]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !isClient) return null;
 
   // Check if password is empty
   const passwordEmpty = password.trim() === '';

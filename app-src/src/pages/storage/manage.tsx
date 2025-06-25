@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import ReactDOM from "react-dom/client";
 import styled from 'styled-components';
 import { I18nProvider } from "@/lib/i18n/context";
@@ -8,12 +8,242 @@ import { redirectTo, generateUrl, checkLoginWithRefresh } from "@/lib/utils";
 import { useFolderManagement } from "@/lib/useFolderManagement";
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 
+// ===== SSR-SAFE HOOKS =====
+
+// Hook for safe browser API access
+const useBrowserAPIs = () => {
+  const [isClient, setIsClient] = useState(false);
+  const [windowObj, setWindowObj] = useState<Window | null>(null);
+  const [documentObj, setDocumentObj] = useState<Document | null>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+    if (typeof window !== 'undefined') {
+      setWindowObj(window);
+    }
+    if (typeof document !== 'undefined') {
+      setDocumentObj(document);
+    }
+  }, []);
+
+  return { isClient, window: windowObj, document: documentObj };
+};
+
+// Hook for safe localStorage access
+const useLocalStorage = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const getItem = useCallback((key: string): string | null => {
+    if (!isClient || typeof localStorage === 'undefined') return null;
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }, [isClient]);
+
+  const setItem = useCallback((key: string, value: string): void => {
+    if (!isClient || typeof localStorage === 'undefined') return;
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Silently fail if localStorage is not available
+    }
+  }, [isClient]);
+
+  const removeItem = useCallback((key: string): void => {
+    if (!isClient || typeof localStorage === 'undefined') return;
+    try {
+      localStorage.removeItem(key);
+    } catch {
+      // Silently fail if localStorage is not available
+    }
+  }, [isClient]);
+
+  return { getItem, setItem, removeItem, isClient };
+};
+
+// Hook for safe Intl API access with SSR-safe defaults
+const useIntlAPIs = () => {
+  // Default to US for SSR (desktop assumption)
+  const [userCountry, setUserCountry] = useState('US');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    
+    if (typeof Intl === 'undefined') return;
+    
+    try {
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (timezone.includes('Europe/Amsterdam')) setUserCountry('NL');
+      else if (timezone.includes('Europe/Berlin')) setUserCountry('DE');
+      else if (timezone.includes('Europe/Vienna')) setUserCountry('AT');
+      else if (timezone.includes('Europe/Brussels')) setUserCountry('BE');
+      else if (timezone.includes('Europe/Warsaw')) setUserCountry('PL');
+      else setUserCountry('US');
+    } catch {
+      setUserCountry('US');
+    }
+  }, []);
+
+  const formatCurrency = useCallback((amount: number, currency: string = 'USD'): string => {
+    if (!isClient || typeof Intl === 'undefined') {
+      // SSR-safe fallback
+      return `$${amount.toFixed(2)}`;
+    }
+    
+    try {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: currency,
+      }).format(amount);
+    } catch {
+      // Fallback for when Intl is not available
+      return `$${amount.toFixed(2)}`;
+    }
+  }, [isClient]);
+
+  return { userCountry, formatCurrency, isClient };
+};
+
 // ===== TYPE DEFINITIONS =====
+
+// Stripe types
+interface StripeInstance {
+  elements: () => StripeElements;
+  confirmCardPayment: (clientSecret: string, options: StripeCardPaymentOptions) => Promise<StripePaymentResult>;
+  confirmAlipayPayment: (clientSecret: string, options: StripeRedirectPaymentOptions) => Promise<StripePaymentResult>;
+  confirmWechatPayPayment: (clientSecret: string, options: StripeWechatPayOptions) => Promise<StripePaymentResult>;
+  confirmKlarnaPayment: (clientSecret: string, options: StripeKlarnaPaymentOptions) => Promise<StripePaymentResult>;
+  confirmIdealPayment: (clientSecret: string, options: StripeIdealPaymentOptions) => Promise<StripePaymentResult>;
+  confirmSofortPayment: (clientSecret: string, options: StripeSofortPaymentOptions) => Promise<StripePaymentResult>;
+  confirmBancontactPayment: (clientSecret: string, options: StripeBancontactPaymentOptions) => Promise<StripePaymentResult>;
+  confirmGiropayPayment: (clientSecret: string, options: StripeGiropayPaymentOptions) => Promise<StripePaymentResult>;
+  confirmEpsPayment: (clientSecret: string, options: StripeEpsPaymentOptions) => Promise<StripePaymentResult>;
+  confirmP24Payment: (clientSecret: string, options: StripeP24PaymentOptions) => Promise<StripePaymentResult>;
+  retrievePaymentIntent: (clientSecret: string) => Promise<{ paymentIntent: StripePaymentIntent }>;
+}
+
+interface StripeElements {
+  create: (type: string, options?: StripeElementOptions) => StripeElement;
+}
+
+interface StripeElement {
+  mount: (domElement: string | Element) => void;
+  unmount: () => void;
+}
+
+interface StripeElementOptions {
+  style?: {
+    base?: {
+      fontSize?: string;
+      color?: string;
+      '::placeholder'?: {
+        color?: string;
+      };
+    };
+  };
+}
+
+interface StripePaymentResult {
+  error?: { message: string };
+  paymentIntent?: StripePaymentIntent;
+}
+
+interface StripePaymentIntent {
+  status: 'succeeded' | 'requires_payment_method' | 'requires_action' | 'requires_source_action' | 'processing';
+}
+
+interface StripeCardPaymentOptions {
+  payment_method: {
+    card: StripeElement;
+  };
+}
+
+interface StripeRedirectPaymentOptions {
+  return_url: string;
+}
+
+interface StripeWechatPayOptions {
+  payment_method_options: {
+    wechat_pay: {
+      client: string;
+    };
+  };
+}
+
+interface StripeKlarnaPaymentOptions {
+  payment_method: {
+    billing_details: {
+      email: string;
+    };
+  };
+  return_url: string;
+}
+
+interface StripeIdealPaymentOptions {
+  payment_method: {
+    ideal: {
+      bank: string;
+    };
+  };
+  return_url: string;
+}
+
+interface StripeSofortPaymentOptions {
+  payment_method: {
+    sofort: {
+      country: string;
+    };
+  };
+  return_url: string;
+}
+
+interface StripeBancontactPaymentOptions {
+  payment_method: {
+    billing_details: {
+      name: string;
+    };
+  };
+  return_url: string;
+}
+
+interface StripeGiropayPaymentOptions {
+  payment_method: {
+    billing_details: {
+      name: string;
+    };
+  };
+  return_url: string;
+}
+
+interface StripeEpsPaymentOptions {
+  payment_method: {
+    eps: {
+      bank: string;
+    };
+  };
+  return_url: string;
+}
+
+interface StripeP24PaymentOptions {
+  payment_method: {
+    billing_details: {
+      email: string;
+    };
+  };
+  return_url: string;
+}
 
 // Extend Window interface to include Stripe
 declare global {
   interface Window {
-    Stripe: (publishableKey: string) => any;
+    Stripe: (publishableKey: string) => StripeInstance;
   }
 }
 
@@ -111,22 +341,26 @@ const UPDATE_SUBSCRIPTION_MUTATION = `
   }
 `;
 
-// ===== STRIPE SERVICE =====
+// ===== SSR-SAFE STRIPE SERVICE =====
 class StripeService {
-  // Initialize Stripe with publishable key
-  static async initializeStripe(publishableKey: string): Promise<any> {
+  // Initialize Stripe with publishable key - SSR safe
+  static async initializeStripe(publishableKey: string, windowObj: Window | null, documentObj: Document | null): Promise<StripeInstance> {
+    if (!windowObj || !documentObj) {
+      throw new Error('Browser environment required for Stripe initialization');
+    }
+
     // Load Stripe.js dynamically
-    if (!window.Stripe) {
-      const script = document.createElement('script');
+    if (!windowObj.Stripe) {
+      const script = documentObj.createElement('script');
       script.src = 'https://js.stripe.com/v3/';
-      document.head.appendChild(script);
+      documentObj.head.appendChild(script);
       
       await new Promise((resolve) => {
         script.onload = resolve;
       });
     }
     
-    return window.Stripe(publishableKey);
+    return windowObj.Stripe(publishableKey);
   }
 
   // Create payment intent with proration through GraphQL
@@ -165,7 +399,7 @@ class StripeService {
   }
 
   // Update subscription through GraphQL
-  static async updateSubscription(newTier: number, prorationBehavior: string = 'create_prorations'): Promise<any> {
+  static async updateSubscription(newTier: number, prorationBehavior: string = 'create_prorations'): Promise<SubscriptionInfo> {
     const token = await checkLoginWithRefresh();
     if (!token) {
       throw new Error('Authentication failed');
@@ -198,9 +432,19 @@ class StripeService {
     return json.data?.changeMySubscription;
   }
 
-  // Confirm payment based on payment method type
-  static async confirmPayment(stripe: any, paymentMethod: PaymentMethod, clientSecret: string, cardElement?: any): Promise<any> {
-    const returnUrl = `${window.location.origin}${window.location.pathname}?payment_return=true`;
+  // Confirm payment based on payment method type - SSR safe
+  static async confirmPayment(
+    stripe: StripeInstance, 
+    paymentMethod: PaymentMethod, 
+    clientSecret: string, 
+    cardElement?: StripeElement,
+    windowObj?: Window | null
+  ): Promise<StripePaymentResult> {
+    if (!windowObj) {
+      throw new Error('Browser environment required for payment confirmation');
+    }
+
+    const returnUrl = `${windowObj.location.origin}${windowObj.location.pathname}?payment_return=true`;
 
     switch (paymentMethod) {
       case 'card':
@@ -227,7 +471,7 @@ class StripeService {
         return await stripe.confirmKlarnaPayment(clientSecret, {
           payment_method: {
             billing_details: {
-              email: 'customer@example.com' // You should collect this from user
+              email: 'customer@example.com'
             }
           },
           return_url: returnUrl
@@ -236,7 +480,7 @@ class StripeService {
       case 'ideal':
         return await stripe.confirmIdealPayment(clientSecret, {
           payment_method: {
-            ideal: { bank: 'abn_amro' } // You could let user select bank
+            ideal: { bank: 'abn_amro' }
           },
           return_url: returnUrl
         });
@@ -244,7 +488,7 @@ class StripeService {
       case 'sofort':
         return await stripe.confirmSofortPayment(clientSecret, {
           payment_method: {
-            sofort: { country: 'DE' } // Should be determined by user location
+            sofort: { country: 'DE' }
           },
           return_url: returnUrl
         });
@@ -252,7 +496,7 @@ class StripeService {
       case 'bancontact':
         return await stripe.confirmBancontactPayment(clientSecret, {
           payment_method: {
-            billing_details: { name: 'Customer Name' } // Collect from user
+            billing_details: { name: 'Customer Name' }
           },
           return_url: returnUrl
         });
@@ -260,7 +504,7 @@ class StripeService {
       case 'giropay':
         return await stripe.confirmGiropayPayment(clientSecret, {
           payment_method: {
-            billing_details: { name: 'Customer Name' } // Collect from user
+            billing_details: { name: 'Customer Name' }
           },
           return_url: returnUrl
         });
@@ -268,7 +512,7 @@ class StripeService {
       case 'eps':
         return await stripe.confirmEpsPayment(clientSecret, {
           payment_method: {
-            eps: { bank: 'arzte_und_apotheker_bank' } // Let user select bank
+            eps: { bank: 'arzte_und_apotheker_bank' }
           },
           return_url: returnUrl
         });
@@ -277,7 +521,7 @@ class StripeService {
         return await stripe.confirmP24Payment(clientSecret, {
           payment_method: {
             billing_details: {
-              email: 'customer@example.com' // Collect from user
+              email: 'customer@example.com'
             }
           },
           return_url: returnUrl
@@ -317,13 +561,6 @@ const selectTierForGB = (requestedGB: number, albumCount: number): number => {
     return albumCount <= 5 ? 0 : 1;
   }
   return Math.ceil(requestedGB / 10);
-};
-
-const formatCurrency = (amount: number, currency: string = 'USD'): string => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: currency,
-  }).format(amount);
 };
 
 const getPaymentMethodConfig = (method: PaymentMethod): PaymentMethodConfig => {
@@ -399,18 +636,6 @@ const getPaymentMethodConfig = (method: PaymentMethod): PaymentMethodConfig => {
   };
   
   return configs[method];
-};
-
-// Detect user's country (you might want to use a more sophisticated method)
-const getUserCountry = (): string => {
-  // This is a simple fallback - you might want to use IP geolocation or user profile
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  if (timezone.includes('Europe/Amsterdam')) return 'NL';
-  if (timezone.includes('Europe/Berlin')) return 'DE';
-  if (timezone.includes('Europe/Vienna')) return 'AT';
-  if (timezone.includes('Europe/Brussels')) return 'BE';
-  if (timezone.includes('Europe/Warsaw')) return 'PL';
-  return 'US'; // Default to US
 };
 
 // ===== THEME =====
@@ -734,7 +959,7 @@ const StripeElementContainer = styled.div`
 `;
 
 // ===== CUSTOM HOOKS =====
-const useSubscriptionLogic = (subscriptionInfo: SubscriptionInfo | null, calculatedBytesUsed: number, albumCount: number, t: any) => {
+const useSubscriptionLogic = (subscriptionInfo: SubscriptionInfo | null, calculatedBytesUsed: number, albumCount: number, t: (key: string, vars?: Record<string, string | number>) => string) => {
   const canDowngrade = useCallback((targetTier: number) => {
     if (!subscriptionInfo) {
       return { canDowngrade: false, reason: t('Loading subscription information...') };
@@ -799,7 +1024,12 @@ const useSubscriptionLogic = (subscriptionInfo: SubscriptionInfo | null, calcula
 };
 
 // ===== COMPONENTS =====
-const StorageUsageCard = ({ subscriptionInfo, calculatedBytesUsed, t }: { subscriptionInfo: SubscriptionInfo | null; calculatedBytesUsed: number; t: any }) => {
+const StorageUsageCard = ({ subscriptionInfo, calculatedBytesUsed, t, formatCurrency }: { 
+  subscriptionInfo: SubscriptionInfo | null; 
+  calculatedBytesUsed: number; 
+  t: (key: string, vars?: Record<string, string | number>) => string;
+  formatCurrency: (amount: number, currency?: string) => string;
+}) => {
   if (!subscriptionInfo) {
     return (
       <Card>
@@ -840,14 +1070,16 @@ const CustomGBInput = ({
   subscriptionInfo, 
   calculatedBytesUsed,
   albumCount,
-  t 
+  t,
+  formatCurrency
 }: { 
   customGB: string; 
   onCustomGBChange: (value: string) => void; 
   subscriptionInfo: SubscriptionInfo | null;
   calculatedBytesUsed: number;
   albumCount: number;
-  t: any;
+  t: (key: string, vars?: Record<string, string | number>) => string;
+  formatCurrency: (amount: number, currency?: string) => string;
 }) => {
   const getRecommendationText = () => {
     if (!customGB || isNaN(parseFloat(customGB)) || !subscriptionInfo) return '';
@@ -953,7 +1185,7 @@ const PlanSelectionGrid = ({
   isPlanSelected: boolean; 
   customGB: string; 
   onPlanSelect: (plan: Plan) => void;
-  t: any;
+  t: (key: string, vars?: Record<string, string | number>) => string;
 }) => {
   return (
     <PlanGrid>
@@ -1024,7 +1256,7 @@ const PaymentMethodSelector = ({
   amount: number;
   currency?: string;
   userCountry?: string;
-  t: any;
+  t: (key: string, vars?: Record<string, string | number>) => string;
 }) => {
   const paymentMethods: { id: PaymentMethod; name: string; icon: string }[] = [
     { id: 'card', name: t('Credit Card'), icon: '💳' },
@@ -1112,11 +1344,13 @@ const PaymentMethodSelector = ({
 const ProRataDisplay = ({ 
   proRataInfo, 
   isUpgrade,
-  t 
+  t,
+  formatCurrency
 }: { 
   proRataInfo: ProRataInfo | null; 
   isUpgrade: boolean;
-  t: any;
+  t: (key: string, vars?: Record<string, string | number>) => string;
+  formatCurrency: (amount: number, currency?: string) => string;
 }) => {
   if (!proRataInfo || !isUpgrade) return null;
 
@@ -1152,7 +1386,8 @@ const PaymentModal = ({
   onClose, 
   onPaymentSuccess,
   setLoading,
-  t 
+  t,
+  formatCurrency
 }: {
   showStripe: boolean;
   loading: boolean;
@@ -1163,12 +1398,18 @@ const PaymentModal = ({
   onClose: () => void;
   onPaymentSuccess: () => void;
   setLoading: (loading: boolean) => void;
-  t: any;
+  t: (key: string, vars?: Record<string, string | number>) => string;
+  formatCurrency: (amount: number, currency?: string) => string;
 }) => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethod>('card');
   const [proRataInfo, setProRataInfo] = useState<ProRataInfo | null>(null);
-  const [stripe, setStripe] = useState<any>(null);
-  const [cardElement, setCardElement] = useState<any>(null);
+  const [stripe, setStripe] = useState<StripeInstance | null>(null);
+  const [cardElement, setCardElement] = useState<StripeElement | null>(null);
+
+  // Use SSR-safe hooks
+  const { window: windowObj, document: documentObj, isClient } = useBrowserAPIs();
+  const { userCountry } = useIntlAPIs();
+  const localStorage = useLocalStorage();
 
   const targetTier = customGB && !isNaN(parseFloat(customGB)) 
     ? selectTierForGB(parseFloat(customGB), albumCount) 
@@ -1178,15 +1419,16 @@ const PaymentModal = ({
   const price = getPrice(targetTier);
   const currentTier = subscriptionInfo?.intNumberOfSubscriptions || 0;
   const isUpgrade = targetTier > currentTier;
-  const userCountry = getUserCountry();
 
-  // Initialize Stripe when modal opens
-  React.useEffect(() => {
-    if (showStripe && !stripe) {
+  // Initialize Stripe when modal opens - SSR safe
+  useEffect(() => {
+    if (showStripe && !stripe && isClient && windowObj && documentObj) {
       const initStripe = async () => {
         try {
           const stripeInstance = await StripeService.initializeStripe(
-            import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_live_51O77MNA5szNEcsv6LqXfWX0BY2V8mBwAXnaBHcmdwsBHUaeXlQjlqRq3ELWFaycPzQvCRYOyz3sg3x2EkZ7ifRnR00QewJDIRL'
+            import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_live_51O77MNA5szNEcsv6LqXfWX0BY2V8mBwAXnaBHcmdwsBHUaeXlQjlqRq3ELWFaycPzQvCRYOyz3sg3x2EkZ7ifRnR00QewJDIRL',
+            windowObj,
+            documentObj
           );
           setStripe(stripeInstance);
           
@@ -1206,7 +1448,8 @@ const PaymentModal = ({
             setCardElement(cardElementInstance);
             
             setTimeout(() => {
-              if (document.getElementById('card-element')) {
+              const cardElementDiv = documentObj.getElementById('card-element');
+              if (cardElementDiv) {
                 cardElementInstance.mount('#card-element');
               }
             }, 100);
@@ -1218,11 +1461,11 @@ const PaymentModal = ({
       
       initStripe();
     }
-  }, [showStripe, stripe, selectedPaymentMethod]);
+  }, [showStripe, stripe, selectedPaymentMethod, isClient, windowObj, documentObj]);
 
-  // Handle payment method changes
-  React.useEffect(() => {
-    if (stripe && selectedPaymentMethod === 'card' && !cardElement) {
+  // Handle payment method changes - SSR safe
+  useEffect(() => {
+    if (stripe && selectedPaymentMethod === 'card' && !cardElement && isClient && documentObj) {
       const elementsInstance = stripe.elements();
       const cardElementInstance = elementsInstance.create('card', {
         style: {
@@ -1238,7 +1481,8 @@ const PaymentModal = ({
       setCardElement(cardElementInstance);
       
       setTimeout(() => {
-        if (document.getElementById('card-element')) {
+        const cardElementDiv = documentObj.getElementById('card-element');
+        if (cardElementDiv) {
           cardElementInstance.mount('#card-element');
         }
       }, 100);
@@ -1246,10 +1490,10 @@ const PaymentModal = ({
       cardElement.unmount();
       setCardElement(null);
     }
-  }, [selectedPaymentMethod, stripe, cardElement]);
+  }, [selectedPaymentMethod, stripe, cardElement, isClient, documentObj]);
 
   // Get proration info when modal opens for upgrades
-  React.useEffect(() => {
+  useEffect(() => {
     if (showStripe && isUpgrade && subscriptionInfo) {
       const fetchProRata = async () => {
         try {
@@ -1272,7 +1516,7 @@ const PaymentModal = ({
   }, [showStripe, isUpgrade, currentTier, targetTier, subscriptionInfo, selectedPaymentMethod]);
 
   // Cleanup Stripe elements when modal closes
-  React.useEffect(() => {
+  useEffect(() => {
     return () => {
       if (cardElement) {
         cardElement.unmount();
@@ -1280,10 +1524,12 @@ const PaymentModal = ({
     };
   }, [cardElement]);
 
-  // Handle payment completion from redirects
-  React.useEffect(() => {
+  // Handle payment completion from redirects - SSR safe
+  useEffect(() => {
     const handlePaymentCompletion = async () => {
-      const urlParams = new URLSearchParams(window.location.search);
+      if (!isClient || !windowObj || !documentObj) return;
+
+      const urlParams = new URLSearchParams(windowObj.location.search);
       const paymentReturn = urlParams.get('payment_return');
       const paymentIntentClientSecret = urlParams.get('payment_intent_client_secret');
       
@@ -1301,16 +1547,15 @@ const PaymentModal = ({
               localStorage.removeItem('pendingSubscriptionTier');
               
               // Clean up URL parameters
-              const cleanUrl = window.location.href.split('?')[0];
-              window.history.replaceState({}, document.title, cleanUrl);
+              const cleanUrl = windowObj.location.href.split('?')[0];
+              windowObj.history.replaceState({}, documentObj.title || '', cleanUrl);
               
               onPaymentSuccess();
             }
           } else if (paymentIntent.status === 'requires_payment_method') {
             alert(t('Payment failed. Please try again with a different payment method.'));
           }
-        } catch (error) {
-          console.error('Error handling payment completion:', error);
+        } catch {
           alert(t('There was an issue processing your payment. Please contact support.'));
         } finally {
           setLoading(false);
@@ -1321,7 +1566,7 @@ const PaymentModal = ({
     if (showStripe) {
       handlePaymentCompletion();
     }
-  }, [showStripe, stripe, currentTier, onPaymentSuccess, setLoading, t]);
+  }, [showStripe, stripe, currentTier, onPaymentSuccess, setLoading, t, isClient, windowObj, documentObj, localStorage]);
 
   const handleStripeSubmit = async () => {
     setLoading(true);
@@ -1363,7 +1608,8 @@ const PaymentModal = ({
         stripe, 
         selectedPaymentMethod, 
         paymentIntent.clientSecret, 
-        cardElement
+        cardElement || undefined,
+        windowObj
       );
 
       const { error, paymentIntent: confirmedPayment } = result;
@@ -1392,9 +1638,8 @@ const PaymentModal = ({
         throw new Error('Payment was not successful');
       }
 
-    } catch (error) {
+    } catch {
       setLoading(false);
-      console.error('Payment error:', error);
       alert(t('Payment failed. Please try again.'));
     }
   };
@@ -1435,7 +1680,7 @@ const PaymentModal = ({
           </div>
         </div>
 
-        <ProRataDisplay proRataInfo={proRataInfo} isUpgrade={isUpgrade} t={t} />
+        <ProRataDisplay proRataInfo={proRataInfo} isUpgrade={isUpgrade} t={t} formatCurrency={formatCurrency} />
 
         <PaymentMethodSelector 
           selectedMethod={selectedPaymentMethod}
@@ -1526,16 +1771,26 @@ const StorageManagePageContent = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
+  // Use SSR-safe hooks
+  const { formatCurrency } = useIntlAPIs();
+  
   const { folders, subscriptionInfo, calculatedBytesUsed } = useFolderManagement((message: string) => console.log(message));
   const albumCount = folders.length;
   const isSubscriptionInfoLoaded = subscriptionInfo !== null;
   
   // State
-  const [selectedTier, setSelectedTier] = useState<number>(subscriptionInfo?.intNumberOfSubscriptions || 0);
+  const [selectedTier, setSelectedTier] = useState<number>(0); // Default to 0 for SSR
   const [isPlanSelected, setIsPlanSelected] = useState<boolean>(false);
   const [showStripe, setShowStripe] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [customGB, setCustomGB] = useState<string>('');
+
+  // Update selectedTier when subscriptionInfo loads
+  useEffect(() => {
+    if (subscriptionInfo && selectedTier === 0) {
+      setSelectedTier(subscriptionInfo.intNumberOfSubscriptions);
+    }
+  }, [subscriptionInfo, selectedTier]);
 
   // Custom hooks
   const { canDowngrade, generatePlans } = useSubscriptionLogic(subscriptionInfo, calculatedBytesUsed, albumCount, t);
@@ -1589,7 +1844,7 @@ const StorageManagePageContent = () => {
         setLoading(false);
         alert(t('Successfully scheduled downgrade to free plan at end of billing period.'));
       }, 2000);
-    } catch (error) {
+    } catch {
       setLoading(false);
       alert(t('Error processing downgrade. Please try again.'));
     }
@@ -1624,7 +1879,8 @@ const StorageManagePageContent = () => {
     }
 
     if (targetTier === 0) {
-      if (window.confirm(t('Are you sure you want to downgrade to the free plan? This will take effect at the end of your current billing period.'))) {
+      // SSR-safe confirmation
+      if (typeof window !== 'undefined' && window.confirm && window.confirm(t('Are you sure you want to downgrade to the free plan? This will take effect at the end of your current billing period.'))) {
         handleCancelSubscription();
       }
     } else {
@@ -1698,7 +1954,12 @@ const StorageManagePageContent = () => {
         </BackButton>
       </div>
 
-      <StorageUsageCard subscriptionInfo={subscriptionInfo} calculatedBytesUsed={calculatedBytesUsed} t={t} />
+      <StorageUsageCard 
+        subscriptionInfo={subscriptionInfo} 
+        calculatedBytesUsed={calculatedBytesUsed} 
+        t={t} 
+        formatCurrency={formatCurrency}
+      />
 
       <Card>
         <SectionTitle>{t('Select Storage Capacity')}</SectionTitle>
@@ -1729,6 +1990,7 @@ const StorageManagePageContent = () => {
               calculatedBytesUsed={calculatedBytesUsed}
               albumCount={albumCount}
               t={t}
+              formatCurrency={formatCurrency}
             />
 
             <div style={{ marginTop: theme.spacing.lg, textAlign: 'center' }}>
@@ -1759,6 +2021,7 @@ const StorageManagePageContent = () => {
         onPaymentSuccess={handlePaymentSuccess}
         setLoading={setLoading}
         t={t}
+        formatCurrency={formatCurrency}
       />
     </PageContainer>
   );
@@ -1770,4 +2033,10 @@ const StorageManagePage = () => (
   </I18nProvider>
 );
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<StorageManagePage />);
+// SSR-safe initialization
+if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+  ReactDOM.createRoot(document.getElementById("root")!).render(<StorageManagePage />);
+}
+
+// Exports for React refresh - fixes the fast refresh warnings
+export { StorageManagePage as default, StorageManagePageContent };

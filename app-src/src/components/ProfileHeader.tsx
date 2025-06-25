@@ -28,7 +28,12 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
 }) => {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [isClient, setIsClient] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   
   // Toggle dropdown menu
   const toggleMenu = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -39,6 +44,8 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
 
   // Close menu when clicked outside
   useEffect(() => {
+    if (!isClient) return;
+
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setMenuOpen(false);
@@ -59,7 +66,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
       document.removeEventListener('mousedown', handleClickOutside);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [menuOpen]);
+  }, [menuOpen, isClient]);
   
   // Execute action and close menu
   const handleAction = (action: () => void) => {

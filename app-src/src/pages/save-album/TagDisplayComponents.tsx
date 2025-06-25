@@ -236,7 +236,38 @@ const InputButton = styled.button`
   }
 `;
 
-// Tag with delete functionality component - UPDATED: Mobile-friendly delete buttons
+// SSR-safe touch device hook
+const useTouchDevice = () => {
+  // Default to desktop (non-touch) during SSR
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      // Check multiple indicators for touch support
+      const hasTouch = 'ontouchstart' in window || 
+                      (navigator.maxTouchPoints && navigator.maxTouchPoints > 0) ||
+                      ((navigator as any).msMaxTouchPoints && (navigator as any).msMaxTouchPoints > 0);
+      setIsTouchDevice(hasTouch);
+    };
+    
+    checkTouchDevice();
+    
+    // Listen for resize to handle device changes
+    const handleResize = () => {
+      checkTouchDevice();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
+  return isTouchDevice;
+};
+
+// Tag with delete functionality component - SSR-safe with touch detection
 interface TagWithDeleteProps {
   tag: TagData;
   isApplied: boolean;
@@ -260,19 +291,7 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
 }) => {
   const { t } = useTranslation();
   const [showDelete, setShowDelete] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-  // Detect if this is a touch device
-  useEffect(() => {
-    const checkTouchDevice = () => {
-      setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
-    };
-    
-    checkTouchDevice();
-    window.addEventListener('resize', checkTouchDevice);
-    
-    return () => window.removeEventListener('resize', checkTouchDevice);
-  }, []);
+  const isTouchDevice = useTouchDevice();
 
   // Only show delete button for GREEN tags (displayed/most recently selected)
   // On touch devices, always show for green tags
@@ -312,7 +331,7 @@ const TagWithDelete: React.FC<TagWithDeleteProps> = React.memo(({
   );
 });
 
-// Subtag with delete functionality component - UPDATED: Mobile-friendly delete buttons
+// Subtag with delete functionality component - SSR-safe with touch detection
 interface SubtagWithDeleteProps {
   subtag: SubtagData;
   isApplied: boolean;
@@ -332,19 +351,7 @@ const SubtagWithDelete: React.FC<SubtagWithDeleteProps> = React.memo(({
 }) => {
   const { t } = useTranslation();
   const [showDelete, setShowDelete] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-  // Detect if this is a touch device
-  useEffect(() => {
-    const checkTouchDevice = () => {
-      setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
-    };
-    
-    checkTouchDevice();
-    window.addEventListener('resize', checkTouchDevice);
-    
-    return () => window.removeEventListener('resize', checkTouchDevice);
-  }, []);
+  const isTouchDevice = useTouchDevice();
 
   // Only show delete button for applied subtags (since subtags are only visible when parent tag is green)
   // On touch devices, always show for applied subtags
@@ -771,28 +778,30 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
   );
 });
 
-// ENHANCED PhotoTagging component for displaying tags outside individual files - UPDATED with filename support
+// SSR-safe PhotoTagging component with animation styles
 interface PhotoTaggingProps {
   photoTags: { tagTitle: string; TagType: string; subtags: { tagTitle: string; subtagTitle: string; }[] }[];
   isSelected?: boolean;
   onToggleSelection?: () => void;
-  fileName?: string; // NEW: Optional filename parameter
-  showFileName?: boolean; // NEW: Optional flag to show filename
+  fileName?: string;
+  showFileName?: boolean;
 }
 
 export const PhotoTagging: React.FC<PhotoTaggingProps> = ({ 
   photoTags,
   isSelected = false,
   onToggleSelection,
-  fileName, // NEW: Filename parameter
-  showFileName = false // NEW: Flag to control filename display
+  fileName,
+  showFileName = false
 }) => {
   const { t } = useTranslation();
 
-  // Add CSS for pulse animation if not already present
-  React.useEffect(() => {
+  // SSR-safe animation styles injection
+  useEffect(() => {
     const styleId = 'photo-tagging-animations';
-    if (!document.getElementById(styleId)) {
+    
+    // Only inject styles on client-side
+    if (typeof document !== 'undefined' && !document.getElementById(styleId)) {
       const style = document.createElement('style');
       style.id = styleId;
       style.textContent = `
@@ -829,7 +838,7 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
   const tagsText = formatTagsDisplay(photoTags);
   const hasAnyTags = photoTags.length > 0;
 
-  // NEW: Show component if we have filename to display OR tags OR if selected
+  // Show component if we have filename to display OR tags OR if selected
   const shouldRender = showFileName && fileName || hasAnyTags || isSelected;
 
   // Don't render anything if no relevant content to show
@@ -839,7 +848,7 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-      {/* NEW: Filename display */}
+      {/* Filename display */}
       {showFileName && fileName && (
         <div style={{
           fontSize: '11px',
@@ -863,7 +872,7 @@ export const PhotoTagging: React.FC<PhotoTaggingProps> = ({
         style={{ 
           background: hasAnyTags 
             ? 'linear-gradient(135deg, rgba(0, 123, 255, 0.95) 0%, rgba(0, 123, 255, 0.85) 100%)'
-            : 'transparent', // No background for untagged files
+            : 'transparent',
           color: 'white',
           padding: hasAnyTags ? '8px 12px' : '6px 12px',
           borderRadius: hasAnyTags ? '8px' : '6px',

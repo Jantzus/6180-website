@@ -32,6 +32,24 @@ function normalizeEmail(input: string): string {
   return trimmed;
 }
 
+// SSR-safe UUID generation fallback
+function generateFallbackUUID(): string {
+  // Simple fallback for SSR - not cryptographically secure but functional
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    const r = Math.random() * 16 | 0;
+    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+// SSR-safe crypto UUID function
+function getSecureUUID(): string {
+  if (typeof window !== 'undefined' && window.crypto && typeof window.crypto.randomUUID === 'function') {
+    return window.crypto.randomUUID();
+  }
+  return generateFallbackUUID();
+}
+
 // PhotoLoginModal Component
 interface PhotoLoginModalProps {
   isOpen: boolean;
@@ -61,14 +79,14 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
 
   // Focus the OTP input when code is sent
   useEffect(() => {
-    if (codeSent && otpInputRef.current) {
+    if (codeSent && otpInputRef.current && typeof document !== 'undefined') {
       otpInputRef.current.focus();
     }
   }, [codeSent]);
 
   // Focus email input when modal opens
   useEffect(() => {
-    if (isOpen && emailInputRef.current && !codeSent) {
+    if (isOpen && emailInputRef.current && !codeSent && typeof document !== 'undefined') {
       emailInputRef.current.focus();
     }
   }, [isOpen, codeSent]);
@@ -98,7 +116,7 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
       const signUpCommand = new SignUpCommand({
         ClientId: COGNITO_CLIENT_ID,
         Username: normalizedEmail,
-        Password: crypto.randomUUID(),
+        Password: getSecureUUID(), // SSR-safe UUID generation
         UserAttributes: [{ Name: 'email', Value: normalizedEmail }],
       });
 
@@ -152,7 +170,11 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
       const token = response.AuthenticationResult?.IdToken;
 
       if (!token) throw new Error('No token received');
-      localStorage.setItem('idToken', token);
+      
+      // SSR-safe localStorage usage
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('idToken', token);
+      }
 
       const payload = JSON.parse(atob(token.split('.')[1]));
       const username = payload['cognito:username'];
@@ -188,7 +210,9 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
 
       const json = await gqlResponse.json();
       const displayName = json?.data?.batchGetItems?.items?.[0]?.item?.anyDisplayName;
-      if (displayName) {
+      
+      // SSR-safe localStorage usage
+      if (displayName && typeof window !== 'undefined') {
         localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, displayName);
       }
 

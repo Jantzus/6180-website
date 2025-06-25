@@ -1,5 +1,5 @@
-// FileSections.tsx - Components for managing existing files and new photos
-import React from 'react';
+// FileSections.tsx - SSR-safe components for managing existing files and new photos
+import React, { useEffect } from 'react';
 import { LazyImage } from "@/components/LazyImage";
 import { PhotoHandler } from "./components";
 import { ExistingFile, AppliedTag } from "./types/album-types";
@@ -36,7 +36,38 @@ interface NewPhotosSectionProps {
   isRTL: boolean;
 }
 
-// Existing files section component
+// SSR-safe animation styles hook
+const useExistingFilesStyles = () => {
+  useEffect(() => {
+    // Only inject styles on client-side to avoid SSR issues
+    if (typeof document === 'undefined') return;
+    
+    const styleId = 'existing-files-animations';
+    
+    // Check if styles are already injected
+    if (document.getElementById(styleId)) return;
+    
+    const style = document.createElement('style');
+    style.id = styleId;
+    style.textContent = `
+      @keyframes subtlePulse {
+        0%, 100% { 
+          opacity: 1;
+          transform: scale(1);
+          box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+        }
+        50% { 
+          opacity: 0.95;
+          transform: scale(1.01);
+          box-shadow: 0 3px 12px rgba(0, 123, 255, 0.3);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }, []);
+};
+
+// Existing files section component - SSR-safe
 export const ExistingFilesSection: React.FC<ExistingFilesSectionProps> = ({ 
   existingFiles, 
   selectedExistingIndices, 
@@ -51,29 +82,8 @@ export const ExistingFilesSection: React.FC<ExistingFilesSectionProps> = ({
   t, 
   isRTL 
 }) => {
-  // Add CSS for pulse animation if not already present
-  React.useEffect(() => {
-    const styleId = 'existing-files-animations';
-    if (!document.getElementById(styleId)) {
-      const style = document.createElement('style');
-      style.id = styleId;
-      style.textContent = `
-        @keyframes subtlePulse {
-          0%, 100% { 
-            opacity: 1;
-            transform: scale(1);
-            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
-          }
-          50% { 
-            opacity: 0.95;
-            transform: scale(1.01);
-            box-shadow: 0 3px 12px rgba(0, 123, 255, 0.3);
-          }
-        }
-      `;
-      document.head.appendChild(style);
-    }
-  }, []);
+  // Inject styles safely
+  useExistingFilesStyles();
 
   if (existingFiles.length === 0) return null;
 
@@ -226,7 +236,7 @@ export const ExistingFilesSection: React.FC<ExistingFilesSectionProps> = ({
   );
 };
 
-// New photos section component
+// New photos section component - SSR-safe
 export const NewPhotosSection: React.FC<NewPhotosSectionProps> = ({ 
   selectedPhotos,
   selectedPhotoIndices, 

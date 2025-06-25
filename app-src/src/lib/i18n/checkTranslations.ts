@@ -2,9 +2,16 @@
 // This is a utility script to validate that translation files are accessible
 
 /**
- * Run this function to check if all translation files can be loaded
+ * SSR-safe function to check if all translation files can be loaded
+ * Should only be called on the client-side (e.g., in useEffect)
  */
 export const checkTranslationFiles = async () => {
+  // Guard against SSR
+  if (typeof window === 'undefined') {
+    console.warn('checkTranslationFiles called during SSR - skipping');
+    return;
+  }
+  
   console.group('Translation Files Check');
   
   // List of languages to check
@@ -36,9 +43,16 @@ export const checkTranslationFiles = async () => {
 };
 
 /**
- * Run this to check a specific translation key across all languages
+ * SSR-safe function to check a specific translation key across all languages
+ * Should only be called on the client-side (e.g., in useEffect)
  */
 export const checkTranslationKey = async (key: string) => {
+  // Guard against SSR
+  if (typeof window === 'undefined') {
+    console.warn('checkTranslationKey called during SSR - skipping');
+    return;
+  }
+  
   console.group(`Checking Translation Key: "${key}"`);
   
   // List of languages to check
@@ -65,10 +79,36 @@ export const checkTranslationKey = async (key: string) => {
   console.groupEnd();
 };
 
-// To use these functions, import them and call them from your component:
-// import { checkTranslationFiles, checkTranslationKey } from '@/lib/i18n/checkTranslations';
+/**
+ * React hook for checking translations safely in components
+ * This handles SSR automatically and only runs on client-side
+ */
+export const useTranslationChecker = () => {
+  // Return SSR-safe functions that can be called anytime
+  return {
+    checkFiles: async () => {
+      if (typeof window !== 'undefined') {
+        await checkTranslationFiles();
+      }
+    },
+    checkKey: async (key: string) => {
+      if (typeof window !== 'undefined') {
+        await checkTranslationKey(key);
+      }
+    }
+  };
+};
+
+// Example usage in a React component:
+// import { useTranslationChecker } from '@/lib/i18n/checkTranslations';
 // 
-// useEffect(() => {
-//   checkTranslationFiles();
-//   checkTranslationKey('Create Albums Together');
-// }, []);
+// const MyComponent = () => {
+//   const { checkFiles, checkKey } = useTranslationChecker();
+//   
+//   useEffect(() => {
+//     checkFiles();
+//     checkKey('Create Albums Together');
+//   }, []);
+//   
+//   return <div>...</div>;
+// };

@@ -114,7 +114,7 @@ const EnhancedFileInput = React.forwardRef<HTMLInputElement, {
 
 EnhancedFileInput.displayName = 'EnhancedFileInput';
 
-// Elegant App Promotion Component - Consistent with Brand
+// Elegant App Promotion Component - SSR-safe
 const AppDownloadPromotion = React.memo(({ 
   t, 
   isRTL 
@@ -619,6 +619,9 @@ const MyAlbums = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
+  // SSR-safe device detection state
+  const [isClient, setIsClient] = useState(false);
+  
   // State for folder structure detection and modal
   const [showAlbumModal, setShowAlbumModal] = useState(false);
   const [detectedFolderStructure, setDetectedFolderStructure] = useState<FolderStructure | null>(null);
@@ -626,6 +629,11 @@ const MyAlbums = () => {
   
   // Add ref for folder input
   const folderInputRef = useRef<HTMLInputElement>(null);
+  
+  // SSR-safe device detection and client setup
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   
   const { 
     folders,
@@ -652,12 +660,15 @@ const MyAlbums = () => {
   // FIXED: File upload processor with minimal logging
   const fileUploadProcessor = useFileUploadProcessor(
     (folderId) => {
-      // Check if we have folder structure metadata for multi-album processing
-      const metadata = getFolderStructureMetadata();
-      if (metadata) {
-        const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
-        if (storedPhotos) {
-          try {
+      // SSR-safe metadata operations
+      if (!isClient) return;
+      
+      try {
+        // Check if we have folder structure metadata for multi-album processing
+        const metadata = getFolderStructureMetadata();
+        if (metadata) {
+          const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+          if (storedPhotos) {
             const selectedPhotos = JSON.parse(storedPhotos);
             const albumGroups = createAlbumGroupsFromSelectedPhotos(selectedPhotos);
             
@@ -675,11 +686,13 @@ const MyAlbums = () => {
             } else {
               clearFolderStructureMetadata();
             }
-          } catch (error) {
-            console.error('Error processing multi-album data:', error);
+          } else {
             clearFolderStructureMetadata();
           }
-        } else {
+        }
+      } catch (error) {
+        console.error('Error processing multi-album data:', error);
+        if (typeof clearFolderStructureMetadata === 'function') {
           clearFolderStructureMetadata();
         }
       }
@@ -703,8 +716,10 @@ const MyAlbums = () => {
     setSelectedPhotos,
   } = fileUploadProcessor;
 
-  // Prewarm S3 credentials when the page loads
+  // SSR-safe credential prewarming
   useEffect(() => {
+    if (!isClient) return;
+    
     const warmUpPageCredentials = async () => {
       try {
         await prewarmCredentials();
@@ -714,7 +729,7 @@ const MyAlbums = () => {
     };
     
     warmUpPageCredentials();
-  }, []);
+  }, [isClient]);
   
   // MEMOIZED: Get albums that should be marked for deletion
   const albumsToDelete = useMemo(() => 
@@ -734,6 +749,8 @@ const MyAlbums = () => {
 
   // FIXED: Enhanced file selection with single-pass filtering and minimal logging
   const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!isClient) return false;
+    
     const files = Array.from(e.target.files || []);
     if (!files.length) {
       return false;
@@ -798,10 +815,12 @@ const MyAlbums = () => {
     }
     
     return true;
-  }, [fileUploadProcessor, cognitoUsername]);
+  }, [fileUploadProcessor, cognitoUsername, isClient]);
 
   // Album creation choice handler
   const handleAlbumCreationChoice = useCallback((choice: 'separate' | 'combined', files: File[], folderStructure: FolderStructure) => {
+    if (!isClient) return;
+    
     // Store user preference for this session
     setUserAlbumPreference(choice);
     
@@ -842,7 +861,7 @@ const MyAlbums = () => {
       console.error("File input ref not available");
       clearFolderStructureMetadata();
     }
-  }, [fileUploadProcessor, cognitoUsername, fileInputRef]);
+  }, [fileUploadProcessor, cognitoUsername, fileInputRef, isClient]);
 
   // Handle folder selection (same logic as file selection)
   const handleFolderSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -863,15 +882,19 @@ const MyAlbums = () => {
       folderInputRef.current.value = "";
     }
     
-    // Clear any stored preference and metadata
-    clearUserAlbumPreference();
-    clearFolderStructureMetadata();
-  }, [fileInputRef]);
+    // Clear any stored preference and metadata - SSR-safe
+    if (isClient) {
+      clearUserAlbumPreference();
+      clearFolderStructureMetadata();
+    }
+  }, [fileInputRef, isClient]);
 
   // Open file picker with cleanup and support for both files and folders
   const openFilePicker = useCallback((folderId: string | null = null, mode: 'files' | 'folder' = 'files') => {
+    if (!isClient) return;
+    
     try {
-      // Clear any previous album groups and metadata
+      // Clear any previous album groups and metadata - SSR-safe
       clearUserAlbumPreference();
       clearFolderStructureMetadata();
       localStorage.removeItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
@@ -894,7 +917,7 @@ const MyAlbums = () => {
       console.error("Error opening file picker:", error);
       alert("Sorry, there was an error opening the file picker. Please try again.");
     }
-  }, [fileUploadProcessor, setSelectedPhotos]);
+  }, [fileUploadProcessor, setSelectedPhotos, isClient]);
 
   // Add handlers for the enhanced upload buttons
   const handleSelectFiles = useCallback(() => {
@@ -1017,9 +1040,18 @@ const MyAlbums = () => {
   )
 }
 
-// Initialize the app with I18nProvider
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <I18nProvider>
-    <MyAlbums />
-  </I18nProvider>
-)
+// SSR-safe app initialization
+const MyAlbumsApp = () => {
+
+  // Render the app even during SSR, but defer client-specific features
+  return (
+    <I18nProvider>
+      <MyAlbums />
+    </I18nProvider>
+  );
+};
+
+// Initialize the app with SSR-safe mounting
+if (typeof window !== 'undefined' && document.getElementById("root")) {
+  ReactDOM.createRoot(document.getElementById("root")!).render(<MyAlbumsApp />);
+}

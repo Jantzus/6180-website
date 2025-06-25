@@ -7,11 +7,23 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    
+    "lint:ssr": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [warn, {allowGuarded: true, strictMode: false, utilityLeniency: true}]'",
+    "lint:ssr-strict": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [error, {allowGuarded: true, strictMode: true, utilityLeniency: false}]'",
+    "lint:ssr-lenient": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [warn, {allowGuarded: true, strictMode: false, utilityLeniency: true}]'",
+    "lint:ssr-debug": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [warn, {allowGuarded: true, strictMode: false, utilityLeniency: true, debugMode: true}]'",
+    
+    "lint:ssr-count": "eslint . --ext .ts,.tsx --rule 'no-ssr-unsafe/no-ssr-unsafe-browser-api: [warn, {allowGuarded: true, strictMode: false, utilityLeniency: true}]' --format compact | grep -c 'no-ssr-unsafe/no-ssr-unsafe-browser-api' || echo '0 errors found'",
+    "lint:ssr-diff": "npm run lint:ssr-count && echo 'Previous count: 468 errors'",
+    
     "preview": "vite preview",
     "transform-i18n": "node src/lib/i18n/transformTranslations.cjs",
     "prebuild": "npm run transform-i18n",
     "deploy": "aws s3 sync ../dist s3://6180-website --delete && npm run invalidate",
-    "invalidate": "aws cloudfront create-invalidation --distribution-id E1MOSNTHBN77UB --paths '/*' && aws cloudfront create-invalidation --distribution-id E1OIOI9YGA4QEK --paths '/*'"
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E1MOSNTHBN77UB --paths '/*' && aws cloudfront create-invalidation --distribution-id E1OIOI9YGA4QEK --paths '/*'",
+    "test:eslint-plugin": "cd eslint-plugin-no-ssr-unsafe && npm test",
+    "test:eslint-plugin:watch": "cd eslint-plugin-no-ssr-unsafe && npm run test:watch"
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.787.0",
@@ -26,6 +38,8 @@
     "styled-components": "^6.1.17"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.25.0",
+    "@babel/preset-react": "^7.25.0",
     "@eslint/js": "^9.22.0",
     "@types/node": "^22.15.29",
     "@types/react": "^19.0.10",
@@ -36,6 +50,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "nodemon": "^3.1.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.26.1",
     "vite": "^6.3.1",

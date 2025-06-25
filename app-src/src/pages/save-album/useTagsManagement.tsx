@@ -11,7 +11,7 @@ export interface TagData {
   createdAt: number;
   updatedAt: number;
   subtags?: SubtagData[];
-  // NEW: Flag to indicate if this tag was created from applied tags
+  // Flag to indicate if this tag was created from applied tags
   isCreatedFromApplied?: boolean;
 }
 
@@ -23,7 +23,7 @@ export interface SubtagData {
   points: number;
   createdAt: number;
   updatedAt: number;
-  // NEW: Flag to indicate if this subtag was created from applied tags
+  // Flag to indicate if this subtag was created from applied tags
   isCreatedFromApplied?: boolean;
 }
 
@@ -34,7 +34,7 @@ export interface AppliedTag {
   subtags: { tagTitle: string; subtagTitle: string; }[];
 }
 
-// GraphQL queries and mutations (same as before)
+// GraphQL queries and mutations
 const FETCH_TAGS_QUERY = `
   query FetchTags($fetchRelationsInput: FetchRelationsInput!) {
     fetchRelations(fetchRelationsInput: $fetchRelationsInput) {
@@ -110,6 +110,21 @@ const DELETE_SUBTAG_MUTATION = `
   }
 `;
 
+// SSR-safe UUID generator
+const generateUUID = (): string => {
+  // Use crypto.randomUUID if available (modern browsers), fallback to custom implementation
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  
+  // Fallback implementation for SSR/older browsers
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    const r = Math.random() * 16 | 0;
+    const v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+};
+
 export const useTagsManagement = (
   // File maps and selection indices passed from parent
   photoTagsMap: Map<number, AppliedTag[]>,
@@ -120,6 +135,7 @@ export const useTagsManagement = (
   selectedExistingIndices: Set<number>,
   enhancedLog: (message: string, data?: any) => void
 ) => {
+  // SSR-safe state initialization
   const [tags, setTags] = useState<TagData[]>([]);
   const [displayedTagId, setDisplayedTagId] = useState<string | null>(null);
   const [isLoadingTags, setIsLoadingTags] = useState(false);
@@ -142,16 +158,7 @@ export const useTagsManagement = (
     };
   }, [selectedPhotoIndices, selectedExistingIndices]);
 
-  // Generate a UUID (simple version for demo)
-  const generateUUID = (): string => {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      const r = Math.random() * 16 | 0;
-      const v = c == 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
-    });
-  };
-
-  // NEW: Function to extract all unique applied tags from file maps
+  // Function to extract all unique applied tags from file maps
   const extractAllAppliedTags = useCallback((): AppliedTag[] => {
     const allAppliedTags: AppliedTag[] = [];
     
@@ -186,7 +193,7 @@ export const useTagsManagement = (
     return Array.from(uniqueTags.values());
   }, [photoTagsMap, existingFileTagsMap]);
 
-  // NEW: Function to create missing tags from applied tags
+  // Function to create missing tags from applied tags
   const createMissingAppliedTags = useCallback((fetchedTags: TagData[], appliedTags: AppliedTag[]): TagData[] => {
     const missingTags: TagData[] = [];
     const currentTime = Math.floor(Date.now() / 1000);
@@ -205,7 +212,7 @@ export const useTagsManagement = (
           createdAt: currentTime,
           updatedAt: currentTime,
           subtags: [],
-          isCreatedFromApplied: true // Mark as created from applied tags
+          isCreatedFromApplied: true
         };
         
         // Add subtags if any
@@ -218,7 +225,7 @@ export const useTagsManagement = (
             points: 1,
             createdAt: currentTime,
             updatedAt: currentTime,
-            isCreatedFromApplied: true // Mark as created from applied tags
+            isCreatedFromApplied: true
           }));
         }
         
@@ -240,7 +247,7 @@ export const useTagsManagement = (
               points: 1,
               createdAt: currentTime,
               updatedAt: currentTime,
-              isCreatedFromApplied: true // Mark as created from applied tags
+              isCreatedFromApplied: true
             };
             
             missingSubtags.push(newSubtag);
@@ -262,9 +269,9 @@ export const useTagsManagement = (
     });
     
     return missingTags;
-  }, [generateUUID, enhancedLog]);
+  }, [enhancedLog]);
 
-  // FIXED: Check if tag is applied to ALL currently selected files - properly memoized with enhanced logging
+  // Check if tag is applied to ALL currently selected files
   const isTagAppliedToSelected = useCallback((tag: TagData): boolean => {
     const { photoIndices, existingIndices } = getAllSelectedIndices;
     
@@ -296,7 +303,7 @@ export const useTagsManagement = (
     return result;
   }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap, enhancedLog]);
 
-  // FIXED: Check if subtag is applied to ALL currently selected files that have the parent tag - properly memoized
+  // Check if subtag is applied to ALL currently selected files that have the parent tag
   const isSubtagAppliedToSelected = useCallback((subtag: SubtagData): boolean => {
     const { photoIndices, existingIndices } = getAllSelectedIndices;
     
@@ -337,7 +344,7 @@ export const useTagsManagement = (
     return totalFilesWithParentTag > 0 && totalFilesWithSubtag === totalFilesWithParentTag;
   }, [getAllSelectedIndices, photoTagsMap, existingFileTagsMap]);
 
-  // FIXED: Apply/remove tag to ALL selected files based on current state - properly memoized
+  // Apply/remove tag to ALL selected files based on current state
   const toggleTagOnSelectedFiles = useCallback((tag: TagData) => {
     const { photoIndices, existingIndices } = getAllSelectedIndices;
     
@@ -410,7 +417,7 @@ export const useTagsManagement = (
     }
   }, [getAllSelectedIndices, isTagAppliedToSelected, setPhotoTagsMap, setExistingFileTagsMap, enhancedLog]);
 
-  // FIXED: Apply/remove subtag to ALL selected files that have the parent tag - properly memoized
+  // Apply/remove subtag to ALL selected files that have the parent tag
   const toggleSubtagOnSelectedFiles = useCallback((subtag: SubtagData) => {
     const { photoIndices, existingIndices } = getAllSelectedIndices;
     
@@ -495,7 +502,7 @@ export const useTagsManagement = (
     }
   }, [getAllSelectedIndices, isSubtagAppliedToSelected, setPhotoTagsMap, setExistingFileTagsMap, enhancedLog]);
 
-  // Get all unique tags that are applied to currently selected files - enhanced logging
+  // Get all unique tags that are applied to currently selected files
   const getAppliedTagsForSelected = useCallback((): AppliedTag[] => {
     const { photoIndices, existingIndices } = getAllSelectedIndices;
     const allAppliedTags: AppliedTag[] = [];
@@ -541,7 +548,7 @@ export const useTagsManagement = (
     return selectedPhotoIndices.size > 0 || selectedExistingIndices.size > 0;
   }, [selectedPhotoIndices.size, selectedExistingIndices.size]);
 
-  // ENHANCED: Fetch tags from the API and merge with missing applied tags
+  // Fetch tags from the API and merge with missing applied tags
   const fetchTags = async () => {
     enhancedLog("Fetching tags from API and checking for missing applied tags");
     setIsLoadingTags(true);
@@ -604,7 +611,7 @@ export const useTagsManagement = (
 
       enhancedLog(`Fetched ${transformedTags.length} tags from API`);
 
-      // NEW: Check for missing applied tags and create them
+      // Check for missing applied tags and create them
       const allAppliedTags = extractAllAppliedTags();
       enhancedLog(`Found ${allAppliedTags.length} unique applied tags in file maps`);
 
@@ -1004,12 +1011,12 @@ export const useTagsManagement = (
     return false;
   };
 
-  // Initialize tags on mount
+  // SSR-safe initialization - only run on client
   useEffect(() => {
     fetchTags();
   }, []);
 
-  // NEW: Re-fetch tags when file tag maps change to ensure missing applied tags are detected
+  // Re-fetch tags when file tag maps change to ensure missing applied tags are detected
   useEffect(() => {
     const allAppliedTags = extractAllAppliedTags();
     if (allAppliedTags.length > 0 && tags.length > 0) {
@@ -1025,7 +1032,7 @@ export const useTagsManagement = (
     }
   }, [photoTagsMap, existingFileTagsMap, extractAllAppliedTags, tags, enhancedLog]);
 
-  // FIXED: Debug log when selection changes to verify reactivity + clear displayed tag if no longer applied
+  // Debug log when selection changes to verify reactivity + clear displayed tag if no longer applied
   useEffect(() => {
     enhancedLog(`Selection changed - Photos: ${selectedPhotoIndices.size}, Existing: ${selectedExistingIndices.size}`);
     
@@ -1039,7 +1046,7 @@ export const useTagsManagement = (
     }
   }, [selectedPhotoIndices.size, selectedExistingIndices.size, displayedTagId, tags, isTagAppliedToSelected, enhancedLog]);
 
-  // NEW: Additional effect to handle tag map changes that might affect displayed tag
+  // Additional effect to handle tag map changes that might affect displayed tag
   useEffect(() => {
     if (displayedTagId) {
       const displayedTag = tags.find(t => t.id === displayedTagId);
@@ -1072,7 +1079,7 @@ export const useTagsManagement = (
     toggleSubtagOnSelectedFiles,
     setDisplayedTag,
     
-    // FIXED: Properly memoized getters that update when selection changes
+    // Properly memoized getters that update when selection changes
     isTagAppliedToSelected,
     isSubtagAppliedToSelected,
     getDisplayedTagSubtags,
@@ -1095,7 +1102,7 @@ export const useTagsManagement = (
     setNewTagTitle,
     setNewSubtagTitle,
     
-    // NEW: Utility functions
+    // Utility functions
     extractAllAppliedTags,
     createMissingAppliedTags
   };

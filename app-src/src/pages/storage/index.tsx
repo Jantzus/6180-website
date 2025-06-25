@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   CognitoIdentityProviderClient,
@@ -9,7 +9,7 @@ import {
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT, AWS_REGION, COGNITO_CLIENT_ID } from "@/lib/config"
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
-import { getLanguageDirection } from '@/lib/i18n'; // Fixed import path to match photos.tsx
+import { getLanguageDirection } from '@/lib/i18n';
 import { redirectTo, generateUrl } from "@/lib/utils";
 import styled from 'styled-components'
 import {
@@ -24,6 +24,87 @@ import {
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
 
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION })
+
+// ===== SSR-SAFE HOOKS =====
+
+// Hook for safe document API access
+const useDocumentAPI = () => {
+  const [isClient, setIsClient] = useState(false);
+  const [documentObj, setDocumentObj] = useState<Document | null>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+    setDocumentObj(document);
+  }, []);
+
+  const setDocumentLang = useCallback((lang: string) => {
+    if (isClient && documentObj) {
+      documentObj.documentElement.lang = lang;
+    }
+  }, [isClient, documentObj]);
+
+  const setDocumentDir = useCallback((dir: 'ltr' | 'rtl') => {
+    if (isClient && documentObj) {
+      documentObj.documentElement.dir = dir;
+    }
+  }, [isClient, documentObj]);
+
+  return { setDocumentLang, setDocumentDir, isClient };
+};
+
+// Hook for safe localStorage access
+const useLocalStorage = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const setItem = useCallback((key: string, value: string): void => {
+    if (!isClient) return;
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Silently fail if localStorage is not available
+      console.warn('localStorage not available');
+    }
+  }, [isClient]);
+
+  const getItem = useCallback((key: string): string | null => {
+    if (!isClient) return null;
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }, [isClient]);
+
+  return { setItem, getItem, isClient };
+};
+
+// Hook for safe crypto API access with fallback
+const useCryptoAPI = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const generateUUID = useCallback((): string => {
+    if (isClient && typeof crypto !== 'undefined' && crypto.randomUUID) {
+      return crypto.randomUUID();
+    }
+    
+    // Fallback UUID generation for SSR or when crypto is not available
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      const r = Math.random() * 16 | 0;
+      const v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }, [isClient]);
+
+  return { generateUUID, isClient };
+};
 
 // Additional styled components specific to login page
 const LoginCard = styled(Card)`
@@ -123,19 +204,23 @@ const StorageLoginPageContent = () => {
   // Use the i18n hook
   const { t, language } = useTranslation()
   
+  // Use SSR-safe hooks
+  const { setDocumentLang, setDocumentDir } = useDocumentAPI();
+  const localStorage = useLocalStorage();
+  const { generateUUID } = useCryptoAPI();
+  
   // Refs for input elements
   const emailInputRef = useRef<HTMLInputElement>(null)
   const otpInputRef = useRef<HTMLInputElement>(null)
 
-  // Check if current language is RTL
+  // Check if current language is RTL (SSR-safe default)
   const isRTL = getLanguageDirection(language) === 'rtl'
 
-  // Update HTML document properties when language changes
+  // Update HTML document properties when language changes - SSR safe
   useEffect(() => {
-    // Set language and direction in HTML attributes
-    document.documentElement.lang = language
-    document.documentElement.dir = isRTL ? 'rtl' : 'ltr'
-  }, [language, isRTL])
+    setDocumentLang(language);
+    setDocumentDir(isRTL ? 'rtl' : 'ltr');
+  }, [language, isRTL, setDocumentLang, setDocumentDir])
 
   // Focus the OTP input when code is sent
   useEffect(() => {
@@ -172,7 +257,7 @@ const StorageLoginPageContent = () => {
       const signUpCommand = new SignUpCommand({
         ClientId: COGNITO_CLIENT_ID,
         Username: normalizedEmail,
-        Password: crypto.randomUUID(),
+        Password: generateUUID(), // Use SSR-safe UUID generation
         UserAttributes: [{ Name: 'email', Value: normalizedEmail }],
       })
 
@@ -226,6 +311,8 @@ const StorageLoginPageContent = () => {
       const token = response.AuthenticationResult?.IdToken
 
       if (!token) throw new Error('No token received')
+      
+      // Use SSR-safe localStorage
       localStorage.setItem('idToken', token)
 
       const payload = JSON.parse(atob(token.split('.')[1]))

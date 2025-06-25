@@ -1,8 +1,6 @@
 .
 ├── 6180-website.txt
 ├── AWSCLIV2.pkg
-├── dev-utils
-├── dist-lambda
 ├── eslint.config.js
 ├── index.html
 ├── login.html
@@ -24,7 +22,6 @@
 │   └── terms.html
 ├── README.md
 ├── save-album.html
-├── scripts
 ├── src
 │   ├── components
 │   │   ├── AlbumFooterSection.tsx
@@ -51,7 +48,6 @@
 │   │   ├── TagsFilter.tsx
 │   │   ├── UploadProgress.tsx
 │   │   └── UsernamePrompt.tsx
-│   ├── lambda
 │   ├── lib
 │   │   ├── config.ts
 │   │   ├── file-upload-utils.ts
@@ -431,6 +427,8 @@
 │   │   │   └── utils
 │   │   │       └── album.utils.ts
 │   │   ├── storage
+│   │   │   ├── components
+│   │   │   ├── hooks
 │   │   │   ├── index.tsx
 │   │   │   └── manage.tsx
 │   │   └── TokenLogin.tsx
@@ -450,4 +448,4 @@
 ├── tsconfig.node.tsbuildinfo
 └── vite.config.ts
 
-29 directories, 422 files
+27 directories, 422 files

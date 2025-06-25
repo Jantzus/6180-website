@@ -31,11 +31,107 @@ const getSearchableString = (originalString: string): string => {
     .trim(); // Trim whitespace
 };
 
+// SSR-safe token decoder with fallback
+const decodeTokenSafely = (token: string): { username?: string } => {
+  try {
+    // Base64 decode without browser dependency
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    let jsonPayload = '';
+    
+    // Try browser atob first if available
+    if (typeof window !== 'undefined' && window.atob) {
+      jsonPayload = window.atob(base64);
+    } else {
+      // Fallback for SSR - simple base64 decode simulation
+      // This is a simplified version and might not work for all cases
+      try {
+        jsonPayload = decodeURIComponent(escape(atob(base64)));
+      } catch {
+        return {};
+      }
+    }
+    
+    const payload = JSON.parse(jsonPayload);
+    return { username: payload["cognito:username"] };
+  } catch (err) {
+    console.error("Failed to decode token", err);
+  }
+  return {};
+};
+
+// SSR-safe URL parser
+const useSSRSafeURL = () => {
+  const [profileName, setProfileName] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    
+    if (typeof window === 'undefined') return;
+
+    // Parse URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    let publicDisplayName = urlParams.get('id');
+    
+    if (publicDisplayName) {
+      setProfileName(publicDisplayName);
+      return;
+    }
+    
+    // Check in path
+    const pathMatch = window.location.pathname.match(/\/persona\/([^\/]+)/);
+    if (pathMatch && pathMatch[1]) {
+      setProfileName(pathMatch[1]);
+      return;
+    }
+
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    
+    // Skip if this is an /app/ path or other special paths
+    if (pathSegments.length > 0 && 
+      (pathSegments[0] === 'app')) {
+      // Continue to traditional method
+    } else if (pathSegments.length === 1) {
+      // Single segment URL like /Snapitwithsam
+      setProfileName(pathSegments[0]);
+      return;
+    }
+    
+    setProfileName(null);
+  }, []);
+
+  return { profileName, isClient };
+};
+
+// SSR-safe document title manager
+const useSSRSafeDocumentTitle = (title: string) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
+    if (typeof document !== 'undefined') {
+      document.title = title;
+    }
+    
+    // Optional: Clean up on unmount by restoring original title
+    return () => {
+      if (typeof document !== 'undefined') {
+        document.title = '6180 bio';
+      }
+    };
+  }, [title, isClient]);
+};
+
 // Main PersonaViewer Component
 const PersonaViewer: React.FC = () => {
   
   const [ownerItemId, setOwnerItemId] = useState<string>("");
-  const [profileUsername, setProfileUsername] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [folders, setFolders] = useState<FolderType[]>([]);
@@ -44,6 +140,12 @@ const PersonaViewer: React.FC = () => {
   // Auth state
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
+  
+  // Client-side hydration state
+  const [isClient, setIsClient] = useState<boolean>(false);
+  
+  // SSR-safe hooks
+  const { profileName, isClient: urlIsClient } = useSSRSafeURL();
   
   // Check if the logged-in user is the owner of this profile
   const isOwner = useMemo(() => {
@@ -64,60 +166,41 @@ const PersonaViewer: React.FC = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
-  // Extract publicDisplayName from URL on component mount
+  // Document title management
+  useSSRSafeDocumentTitle(profileName || '6180 bio');
+  
+  // Mark as client-side after hydration
   useEffect(() => {
-    const getPublicDisplayNameFromUrl = (): string | null => {
-      // Check in query params
-      const urlParams = new URLSearchParams(window.location.search);
-      let publicDisplayName = urlParams.get('id');
-      
-      if (publicDisplayName) return publicDisplayName;
-      
-      // Check in path
-      const pathMatch = window.location.pathname.match(/\/persona\/([^\/]+)/);
-      if (pathMatch && pathMatch[1]) {
-        return pathMatch[1];
-      }
+    setIsClient(true);
+  }, []);
 
-      const pathSegments = window.location.pathname.split('/').filter(Boolean);
-      
-      // Skip if this is an /app/ path or other special paths
-      if (pathSegments.length > 0 && 
-        (pathSegments[0] === 'app')) {
-      // Continue to traditional method
-      } else if (pathSegments.length === 1) {
-        // Single segment URL like /Snapitwithsam
-        return pathSegments[0];
+  // Extract publicDisplayName from URL on component mount (client-side only)
+  useEffect(() => {
+    if (!urlIsClient || !profileName) {
+      if (urlIsClient && !profileName) {
+        setError(t('No profile name provided'));
+        setIsLoading(false);
       }
-      
-      return null;
-    };
-
-    const publicDisplayName = getPublicDisplayNameFromUrl();
-    if (publicDisplayName) {
-      setProfileUsername(publicDisplayName);
-      fetchContactPositionBasedOnPublicDisplayName(publicDisplayName);
-    } else {
-      setError(t('No profile name provided'));
-      setIsLoading(false);
+      return;
     }
-  }, [t]);
+    
+    fetchContactPositionBasedOnPublicDisplayName(profileName);
+  }, [urlIsClient, profileName, t]);
 
-  // Check user login status
+  // Check user login status (client-side only)
   useEffect(() => {
+    if (!isClient) return; // Skip during SSR
+    
     const checkLogin = async () => {
       try {
         const token = await checkLoginWithoutRedirect();
         if (token) {
           setIsLoggedIn(true);
           
-          // Extract username from token
-          try {
-            const payload = JSON.parse(atob(token.split('.')[1]));
-            const username = payload["cognito:username"];
+          // Extract username from token using SSR-safe decoder
+          const { username } = decodeTokenSafely(token);
+          if (username) {
             setCognitoUsername(username);
-          } catch (err) {
-            console.error("Failed to decode token", err);
           }
         }
       } catch (err) {
@@ -126,21 +209,7 @@ const PersonaViewer: React.FC = () => {
     };
     
     checkLogin();
-  }, []);
-
-  // Update page title when profile username changes
-  useEffect(() => {
-    if (profileUsername) {
-      document.title = profileUsername;
-    } else {
-      document.title = '6180 bio'; // Fallback to original title
-    }
-    
-    // Optional: Clean up on unmount by restoring original title
-    return () => {
-      document.title = '6180 bio';
-    };
-  }, [profileUsername]);
+  }, [isClient]);
 
   // Function to fetch contact position based on public display name
   const fetchContactPositionBasedOnPublicDisplayName = async (publicDisplayName: string) => {
@@ -286,7 +355,7 @@ const PersonaViewer: React.FC = () => {
       <AppContainer $isRTL={isRTL}>
           {/* Profile Header */}
           <ProfileHeader 
-            username={profileUsername || t('User')}
+            username={profileName || t('User')}
             isCurrentUser={isOwner}
             isRTL={isRTL}
           />
@@ -327,9 +396,21 @@ const PersonaViewer: React.FC = () => {
   );
 };
 
-// Initialize the app with I18nProvider
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <I18nProvider>
-    <PersonaViewer />
-  </I18nProvider>
-);
+// SSR-safe app initialization
+const initializeApp = () => {
+  if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+    const rootElement = document.getElementById("root");
+    if (rootElement) {
+      ReactDOM.createRoot(rootElement).render(
+        <I18nProvider>
+          <PersonaViewer />
+        </I18nProvider>
+      );
+    }
+  }
+};
+
+// Initialize the app with I18nProvider (client-side only)
+if (typeof window !== 'undefined') {
+  initializeApp();
+}

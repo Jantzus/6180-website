@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import { 
   SelectedPhoto,
 } from "@/lib/types";
@@ -31,7 +31,192 @@ interface AppliedTag {
   subtags: { tagTitle: string; subtagTitle: string; }[];
 }
 
-// FIXED: CSS classes instead of JavaScript object creation on every render
+// SSR-safe style injection hook
+const usePhotoHandlerStyles = () => {
+  useEffect(() => {
+    // Only inject styles on client-side to avoid SSR issues
+    if (typeof document === 'undefined') return;
+    
+    const styleId = 'photo-handler-styles';
+    
+    // Check if styles are already injected
+    if (document.getElementById(styleId)) return;
+    
+    const styleSheet = document.createElement("style");
+    styleSheet.id = styleId;
+    styleSheet.textContent = `
+      .photo-grid {
+        position: relative;
+        transition: grid-template-columns 0.3s ease;
+      }
+
+      .photo-card-traditional {
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .photo-card-horizontal {
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 180px;
+        height: 180px;
+      }
+
+      .photo-card-horizontal.selected {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .photo-delete-button {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: none;
+        background-color: rgba(220, 53, 69, 0.9);
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: bold;
+        z-index: 15;
+        opacity: 1;
+        transition: all 0.2s ease;
+        transform: scale(0.9);
+        box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+      }
+
+      .photo-delete-button:hover {
+        background-color: rgba(200, 35, 51, 0.95);
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+      }
+
+      .media-preview {
+        transition: opacity 0.2s ease;
+      }
+
+      .media-preview.selected {
+        opacity: 0.85;
+      }
+
+      .media-item {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .photo-card-horizontal .media-item {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .file-info-overlay {
+        position: absolute;
+        bottom: 32px;
+        left: 8px;
+        right: 8px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        text-align: center;
+        backdrop-filter: blur(4px);
+      }
+
+      .selection-indicator {
+        position: absolute;
+        bottom: 4px;
+        left: 4px;
+        right: 4px;
+        background: rgba(0, 123, 255, 0.9);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+      }
+
+      .photo-info {
+        min-height: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .photo-info.horizontal {
+        width: 180px;
+      }
+
+      /* Enhanced scrollbar styling for horizontal layout */
+      .photo-grid::-webkit-scrollbar {
+        height: 10px;
+      }
+
+      .photo-grid::-webkit-scrollbar-track {
+        background: #f8f9fa;
+        border-radius: 6px;
+        margin: 0 8px;
+      }
+
+      .photo-grid::-webkit-scrollbar-thumb {
+        background: linear-gradient(90deg, #007bff, #0056b3);
+        border-radius: 6px;
+        border: 2px solid #f8f9fa;
+      }
+
+      .photo-grid::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(90deg, #0056b3, #004085);
+      }
+
+      /* Enhanced selection animations for horizontal layout */
+      .photo-card-horizontal.selected {
+        animation: selectedPulse 2s infinite;
+      }
+
+      @keyframes selectedPulse {
+        0%, 100% { 
+          box-shadow: 0 8px 24px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1); 
+        }
+        50% { 
+          box-shadow: 0 12px 32px rgba(0, 123, 255, 0.4), 0 6px 16px rgba(0, 0, 0, 0.15); 
+        }
+      }
+
+      /* Show delete button on hover for selected cards */
+      .photo-card-traditional[data-selected="true"]:hover .photo-delete-button,
+      .photo-card-horizontal[data-selected="true"]:hover .photo-delete-button {
+        opacity: 1;
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+      }
+
+      /* Add smooth transitions for responsive grid changes */
+      .photo-grid[style*="display: grid"] {
+        transition: all 0.3s ease;
+      }
+
+      .photo-grid[style*="display: grid"] > div {
+        transition: all 0.3s ease;
+      }
+    `;
+    
+    document.head.appendChild(styleSheet);
+  }, []);
+};
+
+// SSR-safe constants for photo grid styles
 const PHOTO_GRID_STYLES = {
   traditional: {
     padding: '20px',
@@ -56,7 +241,7 @@ const PHOTO_GRID_STYLES = {
   }
 } as const;
 
-// FIXED: Memoized style objects to prevent recreation on every render
+// SSR-safe constants for photo container styles
 const PHOTO_CONTAINER_STYLES = {
   traditional: {
     display: 'flex',
@@ -100,8 +285,11 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = React.memo(({
   isMultipleAlbumMode = false
 }) => {
   const { t } = useTranslation();
+  
+  // Inject styles safely
+  usePhotoHandlerStyles();
 
-  // FIXED: Corrected grid layout calculation with proper column updates
+  // Memoized grid layout calculation with proper column updates
   const gridLayout = useMemo(() => {
     // For multiple album mode, we only want horizontal layout if explicitly set to "horizontal"
     // Otherwise, always use grid layout with specified columns
@@ -121,14 +309,14 @@ export const PhotoHandler: React.FC<PhotoHandlerProps> = React.memo(({
     };
   }, [isMultipleAlbumMode, columns]);
 
-  // FIXED: Memoized container style calculation  
+  // Memoized container style calculation  
   const containerStyle = useMemo(() => {
     return isMultipleAlbumMode && columns === "horizontal" 
       ? PHOTO_CONTAINER_STYLES.horizontal 
       : PHOTO_CONTAINER_STYLES.traditional;
   }, [isMultipleAlbumMode, columns]);
 
-  // FIXED: Memoized photo card styles
+  // Memoized photo card styles
   const getPhotoCardClassName = useMemo(() => {
     return isMultipleAlbumMode && columns === "horizontal" 
       ? 'photo-card-horizontal' 
@@ -337,182 +525,3 @@ export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = Rea
 });
 
 FolderDetailsComponent.displayName = 'FolderDetailsComponent';
-
-// FIXED: CSS styles to replace inline JavaScript objects - improves performance
-if (typeof document !== 'undefined') {
-  const styleSheet = document.createElement("style");
-  styleSheet.textContent = `
-    .photo-grid {
-      position: relative;
-      /* FIXED: Added transition for smooth column changes */
-      transition: grid-template-columns 0.3s ease;
-    }
-
-    .photo-card-traditional {
-      position: relative;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .photo-card-horizontal {
-      position: relative;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 180px;
-      height: 180px;
-    }
-
-    .photo-card-horizontal.selected {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .photo-delete-button {
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: none;
-      background-color: rgba(220, 53, 69, 0.9);
-      color: white;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: bold;
-      z-index: 15;
-      opacity: 1;
-      transition: all 0.2s ease;
-      transform: scale(0.9);
-      box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
-    }
-
-    .photo-delete-button:hover {
-      background-color: rgba(200, 35, 51, 0.95);
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
-    }
-
-    .media-preview {
-      transition: opacity 0.2s ease;
-    }
-
-    .media-preview.selected {
-      opacity: 0.85;
-    }
-
-    .media-item {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .photo-card-horizontal .media-item {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .file-info-overlay {
-      position: absolute;
-      bottom: 32px;
-      left: 8px;
-      right: 8px;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      text-align: center;
-      backdrop-filter: blur(4px);
-    }
-
-    .selection-indicator {
-      position: absolute;
-      bottom: 4px;
-      left: 4px;
-      right: 4px;
-      background: rgba(0, 123, 255, 0.9);
-      color: white;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: bold;
-      text-align: center;
-      backdrop-filter: blur(4px);
-      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
-    }
-
-    .photo-info {
-      min-height: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .photo-info.horizontal {
-      width: 180px;
-    }
-
-    /* Enhanced scrollbar styling for horizontal layout */
-    .photo-grid::-webkit-scrollbar {
-      height: 10px;
-    }
-
-    .photo-grid::-webkit-scrollbar-track {
-      background: #f8f9fa;
-      border-radius: 6px;
-      margin: 0 8px;
-    }
-
-    .photo-grid::-webkit-scrollbar-thumb {
-      background: linear-gradient(90deg, #007bff, #0056b3);
-      border-radius: 6px;
-      border: 2px solid #f8f9fa;
-    }
-
-    .photo-grid::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(90deg, #0056b3, #004085);
-    }
-
-    /* Enhanced selection animations for horizontal layout */
-    .photo-card-horizontal.selected {
-      animation: selectedPulse 2s infinite;
-    }
-
-    @keyframes selectedPulse {
-      0%, 100% { 
-        box-shadow: 0 8px 24px rgba(0, 123, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1); 
-      }
-      50% { 
-        box-shadow: 0 12px 32px rgba(0, 123, 255, 0.4), 0 6px 16px rgba(0, 0, 0, 0.15); 
-      }
-    }
-
-    /* Show delete button on hover for selected cards */
-    .photo-card-traditional[data-selected="true"]:hover .photo-delete-button,
-    .photo-card-horizontal[data-selected="true"]:hover .photo-delete-button {
-      opacity: 1;
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
-    }
-
-    /* FIXED: Add smooth transitions for responsive grid changes */
-    .photo-grid[style*="display: grid"] {
-      transition: all 0.3s ease;
-    }
-
-    .photo-grid[style*="display: grid"] > div {
-      transition: all 0.3s ease;
-    }
-  `;
-  
-  // Only append if not already added
-  if (!document.head.querySelector('#photo-handler-styles')) {
-    styleSheet.id = 'photo-handler-styles';
-    document.head.appendChild(styleSheet);
-  }
-}

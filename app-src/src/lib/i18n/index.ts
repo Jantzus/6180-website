@@ -452,13 +452,50 @@ export const tSync = (key: string, params?: Record<string, string | number>): st
 };
 
 /**
- * Detects browser language and returns a supported match or fallback
+ * SSR-safe browser language detection
+ * Returns detected language or null if not in browser environment
  */
-export const detectBrowserLanguage = (): SupportedLanguage => {
-  if (typeof window === 'undefined') return 'en';
+export const detectBrowserLanguage = (): SupportedLanguage | null => {
+  // Return null during SSR - let components handle this in useEffect
+  if (typeof window === 'undefined') return null;
   
   const browserLang = window.navigator.language.split('-')[0];
   return browserLang in supportedLanguages ? browserLang as SupportedLanguage : 'en';
+};
+
+/**
+ * SSR-safe localStorage access
+ * Returns stored language or null if not available
+ */
+export const getStoredLanguage = (): SupportedLanguage | null => {
+  // Return null during SSR - let components handle this in useEffect
+  if (typeof window === 'undefined') return null;
+  
+  try {
+    // Check both possible storage keys
+    const preferredLang = window.localStorage.getItem('preferred-language') as SupportedLanguage;
+    const userLang = window.localStorage.getItem('user_language') as SupportedLanguage;
+    
+    const storedLang = preferredLang || userLang;
+    return (storedLang && (storedLang in supportedLanguages)) ? storedLang : null;
+  } catch (error) {
+    console.warn('Failed to access localStorage:', error);
+    return null;
+  }
+};
+
+/**
+ * SSR-safe localStorage setter
+ */
+export const setStoredLanguage = (language: SupportedLanguage): void => {
+  if (typeof window === 'undefined') return;
+  
+  try {
+    window.localStorage.setItem('preferred-language', language);
+    window.localStorage.setItem('user_language', language); // For compatibility
+  } catch (error) {
+    console.warn('Failed to save language to localStorage:', error);
+  }
 };
 
 /**
@@ -483,22 +520,31 @@ export const preloadTranslations = async (languages: SupportedLanguage | Support
 };
 
 /**
- * Initializes i18n with browser language or saved preference
+ * SSR-safe initialization that returns current language
+ * This should be called from components in useEffect, not during SSR
  */
 export const init = async (): Promise<SupportedLanguage> => {
-  let language: SupportedLanguage = 'en';
-  
-  if (typeof window !== 'undefined' && window.localStorage) {
-    // Check both possible storage keys
-    const preferredLang = window.localStorage.getItem('preferred-language') as SupportedLanguage;
-    const userLang = window.localStorage.getItem('user_language') as SupportedLanguage;
-    
-    language = (preferredLang && (preferredLang in supportedLanguages)) ? preferredLang :
-               (userLang && (userLang in supportedLanguages)) ? userLang :
-               detectBrowserLanguage();
+  // Check stored preference first
+  const storedLang = getStoredLanguage();
+  if (storedLang) {
+    return await setLanguage(storedLang);
   }
   
-  return await setLanguage(language);
+  // Fallback to browser language detection
+  const browserLang = detectBrowserLanguage();
+  if (browserLang) {
+    return await setLanguage(browserLang);
+  }
+  
+  // Final fallback to English
+  return await setLanguage('en');
+};
+
+/**
+ * Get current language (SSR-safe)
+ */
+export const getCurrentLanguage = (): SupportedLanguage => {
+  return currentLanguage;
 };
 
 // Define the TranslationKey type for backwards compatibility

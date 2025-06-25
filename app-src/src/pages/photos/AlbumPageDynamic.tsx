@@ -20,8 +20,13 @@ export const AlbumPageDynamic: React.FC = () => {
   const [folderId, setFolderId] = useState<string | null>(null);
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
 
-  // Updated URL parameter extraction function
+  // SSR-safe URL parameter extraction function
   const getParametersFromUrl = (): string | null => {
+    // Return null during SSR, will be handled in useEffect
+    if (typeof window === 'undefined') {
+      return null;
+    }
+    
     console.log('getParametersFromUrl called');
     console.log('window.location.pathname:', window.location.pathname);
     
@@ -45,7 +50,7 @@ export const AlbumPageDynamic: React.FC = () => {
     return null;
   };
 
-  // Album initialization logic
+  // Album initialization logic - moved to useEffect for SSR safety
   useEffect(() => {
     const initAlbum = async () => {
       console.log('initAlbum called');
@@ -138,12 +143,17 @@ export const AlbumPageDynamic: React.FC = () => {
       console.log('initAlbum completed');
     };
 
-    initAlbum();
+    // Only run on client side
+    if (typeof window !== 'undefined') {
+      initAlbum();
+    }
   }, [t]);
 
-  // Check if user is logged in and get cognito username
+  // Check if user is logged in and get cognito username - SSR safe
   useEffect(() => {
     const getUserInfo = async () => {
+      if (typeof window === 'undefined') return;
+      
       const token = await checkLoginWithoutRedirect();
       if (token) {
         try {

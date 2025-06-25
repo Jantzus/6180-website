@@ -88,7 +88,7 @@ const CenteredContent = styled.div`
 // API endpoint for token redemption - imported from config
 const REDEEM_TOKEN_ENDPOINT = API_ENDPOINT_REDEEM_TOKEN;
 
-type TokenStatus = 'loading' | 'success' | 'error' | 'redirecting'
+type TokenStatus = 'loading' | 'success' | 'error' | 'redirecting' | 'waiting'
 
 interface TokenRedemptionResponse {
   success: boolean;
@@ -104,7 +104,7 @@ interface TokenRedemptionError {
 }
 
 const TokenLoginPage = () => {
-  const [status, setStatus] = useState<TokenStatus>('loading')
+  const [status, setStatus] = useState<TokenStatus>('waiting') // Start in waiting state for SSR
   const [errorMessage, setErrorMessage] = useState('')
   const [hoverLink, setHoverLink] = useState<string | null>(null)
   
@@ -120,8 +120,10 @@ const TokenLoginPage = () => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr'
   }, [language, isRTL])
 
-  // Extract token and redirect from URL parameters
+  // Extract token and redirect from URL parameters and start redemption process
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const urlParams = new URLSearchParams(window.location.search)
     const token = urlParams.get('token')
     const redirect = urlParams.get('redirect') || '/home'
@@ -132,13 +134,12 @@ const TokenLoginPage = () => {
       return
     }
     
+    setStatus('loading')
     redeemToken(token, redirect)
   }, [t])
 
   const redeemToken = async (token: string, redirectPath: string) => {
     try {
-      setStatus('loading')
-      
       // Call the redeem endpoint
       const response = await fetch(`${REDEEM_TOKEN_ENDPOINT}?token=${encodeURIComponent(token)}`, {
         method: 'GET',
@@ -211,10 +212,12 @@ const TokenLoginPage = () => {
         setStatus('redirecting')
         
         // Clean the URL to remove the token
-        const newUrl = new URL(window.location.href)
-        newUrl.searchParams.delete('token')
-        newUrl.searchParams.delete('redirect')
-        window.history.replaceState({}, '', newUrl.pathname)
+        if (typeof window !== 'undefined') {
+          const newUrl = new URL(window.location.href)
+          newUrl.searchParams.delete('token')
+          newUrl.searchParams.delete('redirect')
+          window.history.replaceState({}, '', newUrl.pathname)
+        }
         
         // Use the redirect from the server response, fallback to the original redirectPath
         const finalRedirect = result.redirect || redirectPath
@@ -252,15 +255,23 @@ const TokenLoginPage = () => {
         display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center', 
-        height: '100vh' 
+        height: '100vh',
+        fontFamily: 'system-ui, -apple-system, sans-serif'
       }}>
-        {t('Loading...')}
+        Loading...
       </div>
     )
   }
 
   const renderContent = () => {
     switch (status) {
+      case 'waiting':
+        return (
+          <StatusMessage $type="loading">
+            {t('Preparing login...')}
+          </StatusMessage>
+        )
+        
       case 'loading':
         return (
           <>
@@ -348,17 +359,29 @@ const TokenLoginPage = () => {
   )
 }
 
-// Get stored language or default
-const storedLanguage = localStorage.getItem("preferred-language") || 
-                      localStorage.getItem("user_language") || 
-                      "en";
+// SSR-safe App wrapper
+const App: React.FC = () => {
+  const [storedLanguage, setStoredLanguage] = useState("en"); // Default for SSR
 
-// Render the app
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <I18nProvider 
-    initialLanguage={storedLanguage} 
-    preloadLanguages={["en"]}
-  >
-    <TokenLoginPage />
-  </I18nProvider>
-);
+  useEffect(() => {
+    // Get stored language from localStorage client-side
+    const preferredLanguage = localStorage.getItem("preferred-language") || 
+                             localStorage.getItem("user_language") || 
+                             "en";
+    setStoredLanguage(preferredLanguage);
+  }, []);
+
+  return (
+    <I18nProvider 
+      initialLanguage={storedLanguage} 
+      preloadLanguages={["en"]}
+    >
+      <TokenLoginPage />
+    </I18nProvider>
+  );
+};
+
+// SSR-safe initialization
+if (typeof window !== 'undefined') {
+  ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
+}

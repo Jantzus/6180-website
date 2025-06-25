@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 // Types for the modal components
@@ -20,7 +20,13 @@ export const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
   t,
   isRTL
 }) => {
-  if (!isOpen) return null;
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isOpen || !isClient) return null;
 
   // Common button style with center alignment
   const buttonStyle = {

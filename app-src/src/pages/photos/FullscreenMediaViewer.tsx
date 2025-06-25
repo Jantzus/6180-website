@@ -240,8 +240,10 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
     };
   }, []);
 
-  // Handle keyboard navigation
+  // Handle keyboard navigation - SSR safe
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();

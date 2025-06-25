@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -17,15 +17,6 @@ import {
   LegalLinksFooter,
   LegalLinkFooterButton
 } from "@/styles/styled-components";
-
-// Only run in development
-if (import.meta.env.MODE !== 'production') {
-  import('@/lib/i18n/checkTranslations').then(({ checkTranslationFiles, checkTranslationKey }) => {
-    checkTranslationFiles();
-    checkTranslationKey('Best Way to Save and Share Photos');
-    checkTranslationKey('Tag, revisit and send your favorite moments — by occasion, mood, or location — in seconds.');
-  });
-}
 
 // Main page component
 const IndexPage: React.FC = () => {
@@ -126,23 +117,65 @@ const IndexPage: React.FC = () => {
   );
 };
 
-// Main initialization function - needed for async operations
-(async function() {
-  const storedLanguage = localStorage.getItem("preferred-language") || 
-  localStorage.getItem("user_language") || 
-  "en";
-  
-  // Check if user is already logged in
-  const token = await checkLoginWithoutRedirect();
-  
-  if (token) {
-    // User is logged in, redirect to albums page
-    redirectTo(`my-albums.html?lang=${storedLanguage}`);
-    return;
+// SSR-safe App wrapper component
+const App: React.FC = () => {
+  const [storedLanguage, setStoredLanguage] = useState("en"); // Default to English for SSR
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    // Initialize app after hydration
+    const initializeApp = async () => {
+      // Get stored language from localStorage
+      const preferredLanguage = localStorage.getItem("preferred-language") || 
+                               localStorage.getItem("user_language") || 
+                               "en";
+      setStoredLanguage(preferredLanguage);
+
+      // Check if user is already logged in
+      try {
+        const token = await checkLoginWithoutRedirect();
+        if (token) {
+          // User is logged in, redirect to albums page
+          redirectTo(`my-albums.html?lang=${preferredLanguage}`);
+          return;
+        }
+      } catch (error) {
+        console.warn('Login check failed:', error);
+      }
+
+      setIsInitialized(true);
+    };
+
+    initializeApp();
+  }, []);
+
+  // Only run translation checks in development and client-side
+  useEffect(() => {
+    if (typeof window !== 'undefined' && import.meta.env?.MODE !== 'production') {
+      import('@/lib/i18n/checkTranslations').then(({ checkTranslationFiles, checkTranslationKey }) => {
+        checkTranslationFiles();
+        checkTranslationKey('Best Way to Save and Share Photos');
+        checkTranslationKey('Tag, revisit and send your favorite moments — by occasion, mood, or location — in seconds.');
+      }).catch(console.warn);
+    }
+  }, []);
+
+  // Show loading state or render main page
+  if (!isInitialized) {
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh',
+        fontFamily: 'system-ui, -apple-system, sans-serif'
+      }}>
+        Loading...
+      </div>
+    );
   }
-  
-  // User is not logged in, render the homepage
-  ReactDOM.createRoot(document.getElementById("root")!).render(
+
+  return (
     <I18nProvider 
       initialLanguage={storedLanguage} 
       preloadLanguages={["en"]}
@@ -150,4 +183,9 @@ const IndexPage: React.FC = () => {
       <IndexPage />
     </I18nProvider>
   );
-})();
+};
+
+// SSR-safe initialization
+if (typeof window !== 'undefined') {
+  ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
+}

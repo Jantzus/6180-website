@@ -7,12 +7,32 @@ let cachedS3Client: S3Client | null = null;
 let lastIdToken: string | null = null;
 
 /**
+ * SSR-safe function to get ID token from localStorage
+ * Returns empty string during SSR, actual token on client
+ */
+const getIdTokenSafe = (): string => {
+  // SSR-safe: return empty string if localStorage is not available
+  if (typeof window === 'undefined' || typeof localStorage === 'undefined') {
+    return "";
+  }
+  
+  try {
+    return localStorage.getItem("idToken") || "";
+  } catch (error) {
+    // Fallback for cases where localStorage access might fail
+    console.warn("Failed to access localStorage:", error);
+    return "";
+  }
+};
+
+/**
  * Gets or creates a memoized S3 client with prewarmed credentials
  * Caches the client to avoid expensive recreation on every call
  * Recreates client if the ID token changes
+ * SSR-safe: Will create client with empty token during SSR, update on client
  */
 export const getS3Client = (): S3Client => {
-  const currentIdToken = localStorage.getItem("idToken") || "";
+  const currentIdToken = getIdTokenSafe();
   
   // Create new client if none exists or if ID token changed
   if (!cachedS3Client || lastIdToken !== currentIdToken) {
@@ -34,10 +54,16 @@ export const getS3Client = (): S3Client => {
 };
 
 /**
+ * SSR-safe credential prewarming
  * Prewarns AWS credentials by calling the credential provider
  * This resolves credentials eagerly instead of waiting for first S3 operation
  */
 export const prewarmCredentials = async (): Promise<void> => {
+  // Skip prewarming during SSR
+  if (typeof window === 'undefined') {
+    return;
+  }
+  
   try {
     const client = getS3Client();
     // Force credential resolution by calling the credentials function

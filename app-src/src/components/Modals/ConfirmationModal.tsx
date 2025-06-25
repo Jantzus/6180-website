@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 interface ConfirmationModalProps {
@@ -15,7 +15,13 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
   t,
   isRTL
 }) => {
-  if (!isOpen) return null;
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isOpen || !isClient) return null;
 
   const modalContent = (
     <div 
