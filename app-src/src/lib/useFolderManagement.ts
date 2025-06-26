@@ -126,129 +126,56 @@ export const useFolderManagement = (log: (message: string) => void) => {
     setCalculatedBytesUsed(totalBytes);
   }, [folders]);
 
-  // Load user data and fetch folders
-  useEffect(() => {
-    setPublicUsername(localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME) || null);
+  // Separate function for subscription info
+  const fetchSubscriptionInfo = async (token: string) => {
+    try {
+      const subscriptionQuery = `
+        mutation GetSubscriptionInfo {
+          changeMySubscription(getSubscriptionInfoInput: true) {
+            ... on SubscriptionInfo {
+              id
+              createdAt
+              updatedAt
+              stripeCustomerId
+              SubscriptionStatus
+              intNumberOfSubscriptions
+            }
+          }
+        }
+      `;
 
-    // Use async/await with the new checkLoginWithRefresh function
-    const fetchUserAndFolders = async () => {
-      const token = await checkLoginWithRefresh();
-      if (!token) return;
+      const subscriptionRes = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ query: subscriptionQuery }),
+      });
 
-      try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        const username = payload["cognito:username"];
-        setCognitoUsername(username);
-      } catch (err) {
-        console.error("Failed to decode token", err);
+      const subscriptionJson: GraphQLSubscriptionResponse = await subscriptionRes.json();
+
+      if (subscriptionJson.errors) {
+        console.error("Subscription GraphQL errors:", subscriptionJson.errors);
+        // Don't fail the entire operation if subscription fetch fails
+        log(`⚠️ Warning: Failed to fetch subscription info: ${JSON.stringify(subscriptionJson.errors)}`);
+        return;
       }
 
-      await fetchFolders(token);
-    };
-
-    fetchUserAndFolders();
-  }, []);
-
-  // Initialize filteredFolders with all folders when folders changes
-  useEffect(() => {
-    if (!isContactFiltered && !isTagFiltered) {
-      setFilteredFolders(folders);
-    }
-  }, [folders, isContactFiltered, isTagFiltered]);
-
-  // Filter folders based on search query
-  useEffect(() => {
-    if (searchQuery === "") {
-      // If no search query but contact or tag filter is active, don't reset
-      if (!isContactFiltered && !isTagFiltered) {
-        setFilteredFolders(folders);
+      const subscriptionData = subscriptionJson?.data?.changeMySubscription;
+      if (subscriptionData) {
+        setSubscriptionInfo({
+          intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
+          bytesOfDataUsed: 0, // We'll use calculatedBytesUsed instead
+          SubscriptionStatus: subscriptionData.SubscriptionStatus
+        });
+        log(`✅ Successfully fetched subscription info`);
       }
-      return;
-    }
-    
-    // Apply search filter on top of current folders (either all or contact/tag-filtered)
-    const basefolders = (isContactFiltered || isTagFiltered) ? filteredFolders : folders;
-    
-    const searchFiltered = basefolders.filter(folder => {
-      const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
-      const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
-      return nameMatch || descMatch;
-    });
-    
-    setFilteredFolders(searchFiltered);
-  }, [searchQuery, folders, isContactFiltered, isTagFiltered]);
 
-  // Handle contact filter change
-  const handleContactFilterChange = (contactFilteredFolders: FolderType[]) => {
-    setIsContactFiltered(true);
-    setIsTagFiltered(false); // Reset tag filter when contact filter is applied
-    setFilteredFolders(contactFilteredFolders);
-    
-    // If there's also a search query, apply that filter too
-    if (searchQuery) {
-      setFilteredFolders(prevFiltered => 
-        prevFiltered.filter(folder => {
-          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
-          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
-          return nameMatch || descMatch;
-        })
-      );
-    }
-  };
-
-  // Reset contact filter
-  const resetContactFilter = () => {
-    setIsContactFiltered(false);
-    
-    // If there's a search query, still filter by that
-    if (searchQuery) {
-      setFilteredFolders(
-        folders.filter(folder => {
-          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
-          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
-          return nameMatch || descMatch;
-        })
-      );
-    } else {
-      // Otherwise show all folders
-      setFilteredFolders(folders);
-    }
-  };
-
-  // Handle tag filter change
-  const handleTagFilterChange = (tagFilteredFolders: FolderType[]) => {
-    setIsTagFiltered(true);
-    setIsContactFiltered(false); // Reset contact filter when tag filter is applied
-    setFilteredFolders(tagFilteredFolders);
-    
-    // If there's also a search query, apply that filter too
-    if (searchQuery) {
-      setFilteredFolders(prevFiltered => 
-        prevFiltered.filter(folder => {
-          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
-          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
-          return nameMatch || descMatch;
-        })
-      );
-    }
-  };
-
-  // Reset tag filter
-  const resetTagFilter = () => {
-    setIsTagFiltered(false);
-    
-    // If there's a search query, still filter by that
-    if (searchQuery) {
-      setFilteredFolders(
-        folders.filter(folder => {
-          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
-          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
-          return nameMatch || descMatch;
-        })
-      );
-    } else {
-      // Otherwise show all folders
-      setFilteredFolders(folders);
+    } catch (err) {
+      console.error("Failed to load subscription info:", err);
+      log(`⚠️ Warning: Failed to fetch subscription info: ${String(err)}`);
+      // Don't fail the entire operation
     }
   };
   
@@ -382,56 +309,136 @@ export const useFolderManagement = (log: (message: string) => void) => {
     }
   };
 
-  // Separate function for subscription info
-  const fetchSubscriptionInfo = async (token: string) => {
-    try {
-      const subscriptionQuery = `
-        mutation GetSubscriptionInfo {
-          changeMySubscription(getSubscriptionInfoInput: true) {
-            ... on SubscriptionInfo {
-              id
-              createdAt
-              updatedAt
-              stripeCustomerId
-              SubscriptionStatus
-              intNumberOfSubscriptions
-            }
-          }
-        }
-      `;
+  // Load user data and fetch folders
+  useEffect(() => {
+    setPublicUsername(localStorage.getItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME) || null);
 
-      const subscriptionRes = await fetch(AWS_PRIVATE_GRAPHQL_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ query: subscriptionQuery }),
+    // Use async/await with the new checkLoginWithRefresh function
+    const fetchUserAndFolders = async () => {
+      const token = await checkLoginWithRefresh();
+      if (!token) return;
+
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const username = payload["cognito:username"];
+        setCognitoUsername(username);
+      } catch (err) {
+        console.error("Failed to decode token", err);
+      }
+
+      await fetchFolders(token);
+    };
+
+    fetchUserAndFolders();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Initialize filteredFolders with all folders when folders changes
+  useEffect(() => {
+    if (!isContactFiltered && !isTagFiltered) {
+      setFilteredFolders(folders);
+    }
+  }, [folders, isContactFiltered, isTagFiltered]);
+
+  // Filter folders based on search query
+  useEffect(() => {
+    if (searchQuery === "") {
+      // If no search query but contact or tag filter is active, don't reset
+      if (!isContactFiltered && !isTagFiltered) {
+        setFilteredFolders(folders);
+      }
+      return;
+    }
+    
+    // For search filtering, we need to determine the base set of folders to filter from
+    // If contact or tag filters are active, we need to recalculate from the original folders
+    // and apply all filters together to avoid circular dependencies
+    const searchFiltered = folders.filter(folder => {
+      const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+      const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+      return nameMatch || descMatch;
+    });
+    
+    // Apply additional filters only if they are active
+    // Note: This will be overridden by handleContactFilterChange/handleTagFilterChange
+    // when those filters are active
+    if (!isContactFiltered && !isTagFiltered) {
+      setFilteredFolders(searchFiltered);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery, folders]);
+
+  // Handle contact filter change
+  const handleContactFilterChange = (contactFilteredFolders: FolderType[]) => {
+    setIsContactFiltered(true);
+    setIsTagFiltered(false); // Reset tag filter when contact filter is applied
+    
+    // Apply search filter on top of contact filter if search query exists
+    if (searchQuery) {
+      const searchFiltered = contactFilteredFolders.filter(folder => {
+        const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+        const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+        return nameMatch || descMatch;
       });
+      setFilteredFolders(searchFiltered);
+    } else {
+      setFilteredFolders(contactFilteredFolders);
+    }
+  };
 
-      const subscriptionJson: GraphQLSubscriptionResponse = await subscriptionRes.json();
+  // Reset contact filter
+  const resetContactFilter = () => {
+    setIsContactFiltered(false);
+    
+    // If there's a search query, still filter by that
+    if (searchQuery) {
+      setFilteredFolders(
+        folders.filter(folder => {
+          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+          return nameMatch || descMatch;
+        })
+      );
+    } else {
+      // Otherwise show all folders
+      setFilteredFolders(folders);
+    }
+  };
 
-      if (subscriptionJson.errors) {
-        console.error("Subscription GraphQL errors:", subscriptionJson.errors);
-        // Don't fail the entire operation if subscription fetch fails
-        log(`⚠️ Warning: Failed to fetch subscription info: ${JSON.stringify(subscriptionJson.errors)}`);
-        return;
-      }
+  // Handle tag filter change
+  const handleTagFilterChange = (tagFilteredFolders: FolderType[]) => {
+    setIsTagFiltered(true);
+    setIsContactFiltered(false); // Reset contact filter when tag filter is applied
+    
+    // Apply search filter on top of tag filter if search query exists
+    if (searchQuery) {
+      const searchFiltered = tagFilteredFolders.filter(folder => {
+        const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+        const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+        return nameMatch || descMatch;
+      });
+      setFilteredFolders(searchFiltered);
+    } else {
+      setFilteredFolders(tagFilteredFolders);
+    }
+  };
 
-      const subscriptionData = subscriptionJson?.data?.changeMySubscription;
-      if (subscriptionData) {
-        setSubscriptionInfo({
-          intNumberOfSubscriptions: subscriptionData.intNumberOfSubscriptions || 0,
-          bytesOfDataUsed: 0, // We'll use calculatedBytesUsed instead
-          SubscriptionStatus: subscriptionData.SubscriptionStatus
-        });
-        log(`✅ Successfully fetched subscription info`);
-      }
-
-    } catch (err) {
-      console.error("Failed to load subscription info:", err);
-      log(`⚠️ Warning: Failed to fetch subscription info: ${String(err)}`);
-      // Don't fail the entire operation
+  // Reset tag filter
+  const resetTagFilter = () => {
+    setIsTagFiltered(false);
+    
+    // If there's a search query, still filter by that
+    if (searchQuery) {
+      setFilteredFolders(
+        folders.filter(folder => {
+          const nameMatch = folder.folderName?.toLowerCase().includes(searchQuery.toLowerCase());
+          const descMatch = folder.folderDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+          return nameMatch || descMatch;
+        })
+      );
+    } else {
+      // Otherwise show all folders
+      setFilteredFolders(folders);
     }
   };
  
@@ -505,7 +512,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
     resetTagFilter,
     handleDeleteClick,
     setFolders,
-    subscriptionInfo, // This can now be null
-    calculatedBytesUsed // Add the calculated bytes used
+    subscriptionInfo,
+    calculatedBytesUsed
   };
 };
