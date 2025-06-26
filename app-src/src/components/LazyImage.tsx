@@ -2,14 +2,13 @@ import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { S3_BUCKET_URL } from "@/lib/config";
 
 // LazyImage Component - Optimized to prevent unnecessary re-renders and bandwidth usage
-interface LazyImageProps {
+interface LazyImageProps extends Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt' | 'style'> {
   src?: string;
   alt: string;
   style: React.CSSProperties;
   thumbnailDataKey?: string | null;
   dataKey?: string | null;
   bucketUrl?: string;
-  [key: string]: any;
 }
 
 // Optimized LazyImage Component with better dependency management and error handling

@@ -4,13 +4,24 @@ import styled from "styled-components";
 import { 
   Overlay,
   WatermarkText,
-  FullscreenContainer,
   Button,
   NavButtonsContainer,
   OwnerProfileLink,
   LoadingIndicator,
 } from "@/styles/styled-components";
 import { MediaItem } from "@/lib/types";
+
+const FullscreenContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10000; /* Always above header (9999) */
+  display: flex;
+  flex-direction: column;
+`;
 
 const Header = styled.div`
   padding: 15px;
@@ -20,6 +31,7 @@ const Header = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 10;
   position: relative;
+  flex-shrink: 0; /* Prevent header from shrinking */
 `;
 
 const Footer = styled.div`
@@ -33,6 +45,7 @@ const Footer = styled.div`
   z-index: 10;
   position: relative;
   gap: 8px;
+  flex-shrink: 0; /* Prevent footer from shrinking */
 `;
 
 const FileDisplayName = styled.div`
@@ -63,6 +76,7 @@ const CloseButton = styled.button`
   }
 `;
 
+// Updated MediaContainer with proper height calculation
 export const MediaContainer = styled.div`
   flex: 1;
   display: flex;
@@ -71,7 +85,9 @@ export const MediaContainer = styled.div`
   overflow: hidden;
   padding: 10px;
   position: relative;
-  touch-action: none; /* Prevent default touch behaviors */
+  touch-action: none;
+  min-height: 0; /* Important: allows flex item to shrink below content size */
+  height: 100%; /* Ensure it takes full available height */
 `;
 
 const ZoomableWrapper = styled.div<{ $scale: number; $translateX: number; $translateY: number }>`
@@ -79,6 +95,11 @@ const ZoomableWrapper = styled.div<{ $scale: number; $translateX: number; $trans
   transition: transform 0.1s ease-out;
   transform-origin: center center;
   will-change: transform;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const MediaWrapper = styled.div`
@@ -86,13 +107,18 @@ const MediaWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
 `;
 
+// Updated Image with better sizing constraints
 const Image = styled.img<{ $isLoaded: boolean }>`
-  max-width: 100%;
-  max-height: 100%;
+  max-width: calc(100vw - 20px); /* Account for container padding */
+  max-height: calc(100vh - 140px); /* Account for header, footer, and padding */
+  width: auto;
+  height: auto;
   object-fit: contain;
   opacity: ${props => props.$isLoaded ? 1 : 0};
   transition: opacity 0.3s ease;
@@ -105,8 +131,10 @@ const ThumbnailImage = styled.img`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 100%;
-  max-height: 100%;
+  max-width: calc(100vw - 20px);
+  max-height: calc(100vh - 140px);
+  width: auto;
+  height: auto;
   object-fit: contain;
   opacity: 0.8;
   filter: blur(2px);
@@ -114,9 +142,12 @@ const ThumbnailImage = styled.img`
   pointer-events: none;
 `;
 
+// Updated VideoElement with better sizing
 const VideoElement = styled.video`
-  max-width: 100%;
-  max-height: 100%;
+  max-width: calc(100vw - 20px);
+  max-height: calc(100vh - 140px);
+  width: auto;
+  height: auto;
   object-fit: contain;
   user-select: none;
 `;
@@ -136,6 +167,8 @@ const ZoomIndicator = styled.div<{ $visible: boolean }>`
   z-index: 5;
   pointer-events: none;
 `;
+
+
 
 export interface FullscreenMediaViewerProps {
   item: MediaItem;

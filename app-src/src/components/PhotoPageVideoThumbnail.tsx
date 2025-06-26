@@ -55,14 +55,14 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
     }
   };
   
-  // When full video is loaded, mark as ready to play
-  const handleFullVideoLoaded = () => {
+  // MEMOIZED: When full video is loaded, mark as ready to play
+  const handleFullVideoLoaded = useCallback(() => {
     setIsVideoLoaded(true);
     setIsPlaying(true);
     if (onFullResolutionLoaded) {
       onFullResolutionLoaded();
     }
-  };
+  }, [onFullResolutionLoaded]);
   
   // Load video when the video element is available
   useEffect(() => {
@@ -84,7 +84,7 @@ export const PhotoPageVideoThumbnail: React.FC<PhotoPageVideoThumbnailProps> = (
         video.removeEventListener('canplaythrough', handleCanPlayThrough);
       };
     }
-  }, [loadFullVideo, isVideoLoaded, isClient]);
+  }, [loadFullVideo, isVideoLoaded, isClient, handleFullVideoLoaded]);
 
   // MEMOIZED: Prevent right-click context menu
   const handleContextMenu = useCallback((e: React.MouseEvent<HTMLVideoElement>) => {

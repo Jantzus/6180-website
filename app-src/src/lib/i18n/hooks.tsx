@@ -1,6 +1,6 @@
 // src/lib/i18n/hooks.tsx
 import { useContext } from 'react';
-import { I18nContext } from './context';
+import { I18nContext } from './types';
 
 // Hook to use translations in components
 export const useTranslation = () => {

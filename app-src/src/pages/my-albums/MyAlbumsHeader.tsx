@@ -66,7 +66,7 @@ const theme = {
 };
 
 // Responsive mixin
-const mobile = (content: any) => css`
+const mobile = (content: string) => css`
   @media (max-width: ${theme.breakpoints.mobile}) {
     ${content}
   }

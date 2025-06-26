@@ -1,5 +1,5 @@
 // src/lib/i18n/context.tsx
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 import { 
   t,
   tSync,
@@ -11,19 +11,7 @@ import {
   setStoredLanguage,
   detectBrowserLanguage
 } from '@/lib/i18n/index';
-
-// Create a context for i18n in React
-export interface I18nContextType {
-  t: (key: string, params?: Record<string, string | number>) => string;
-  tAsync: (key: string, params?: Record<string, string | number>) => Promise<string>;
-  language: SupportedLanguage;
-  setLanguage: (lang: SupportedLanguage) => Promise<void>;
-  languages: Array<{ code: SupportedLanguage; name: string }>;
-  loading: boolean;
-  isSSR: boolean;
-}
-
-export const I18nContext = createContext<I18nContextType | undefined>(undefined);
+import { I18nContext, I18nContextType } from './types';
 
 // Provider component
 interface I18nProviderProps {
@@ -108,7 +96,7 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
     return () => {
       isMounted = false;
     };
-  }, [initialLanguage]); // Only depend on initialLanguage
+  }, [initialLanguage, preloadLanguages]); // Added preloadLanguages to dependency array
 
   // Handle language changes
   const changeLang = async (lang: SupportedLanguage) => {

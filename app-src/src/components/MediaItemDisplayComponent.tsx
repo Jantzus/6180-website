@@ -1,5 +1,6 @@
 import { PhotoPageLazyImage } from "@/components/PhotoPageLazyImage";
 import { PhotoPageVideoThumbnail } from "@/components/PhotoPageVideoThumbnail";
+import { MediaItem } from "@/lib/types";
 
 // Import styled components
 import { 
@@ -10,7 +11,7 @@ import {
 
 // Media Item Component
 export const MediaItemDisplayComponent: React.FC<{
-  item: any;
+  item: MediaItem;
   index: number;
   isSelectionMode: boolean;
   isSelected: boolean;

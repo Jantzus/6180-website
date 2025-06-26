@@ -3,6 +3,15 @@ import { MediaItem } from "@/lib/types";
 // SSR-safe check for browser environment
 const isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
 
+// Type definition for progress modal elements
+interface ProgressModal {
+  container: HTMLDivElement;
+  title: HTMLParagraphElement;
+  progressBar: HTMLDivElement;
+  progressText: HTMLDivElement;
+  cancelBtn: HTMLButtonElement;
+}
+
 // Simple, reliable download function
 export const downloadPhotos = (
   albumData: { mediaItems: MediaItem[], folderName: string },
@@ -210,7 +219,7 @@ const handleDesktopDownload = (
 };
 
 // Create progress modal (browser-only)
-const createProgressModal = (t: (key: string) => string) => {
+const createProgressModal = (t: (key: string) => string): ProgressModal | null => {
   if (!isBrowser) return null;
 
   const container = document.createElement('div');
@@ -272,7 +281,7 @@ const createProgressModal = (t: (key: string) => string) => {
 const startDownloadProcess = async (
   items: MediaItem[],
   folderName: string,
-  modal: any,
+  modal: ProgressModal,
   t: (key: string) => string,
   cancelled: boolean
 ) => {
@@ -389,7 +398,7 @@ const handleIndividualDownloads = (
 
 // Fallback: show error message (browser-only)
 const showError = (
-  modal: any,
+  modal: ProgressModal,
   t: (key: string) => string,
   errorMsg: string,
   retryFn: () => void
@@ -412,5 +421,5 @@ const showError = (
   `;
   retryBtn.onclick = retryFn;
   
-  modal.cancelBtn.parentNode.appendChild(retryBtn);
+  modal.cancelBtn.parentNode!.appendChild(retryBtn);
 };

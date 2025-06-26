@@ -530,17 +530,19 @@ const StorageMessage = React.memo(({
   t: (key: string) => string; 
   isRTL: boolean; 
 }) => {
+  // Move useMemo before any early returns to comply with rules of hooks
+  const albumsToDelete = useMemo(() => 
+    subscriptionInfo ? getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed) : [],
+    [folders, subscriptionInfo, calculatedBytesUsed]
+  );
+
+  // Early return after all hooks have been called
   if (!subscriptionInfo) {
     return null;
   }
 
   const { intNumberOfSubscriptions } = subscriptionInfo;
   const usedGB = bytesToGB(calculatedBytesUsed);
-  
-  const albumsToDelete = useMemo(() => 
-    getAlbumsToDelete(folders, subscriptionInfo, calculatedBytesUsed),
-    [folders, subscriptionInfo, calculatedBytesUsed]
-  );
   
   let messageType: 'free-space' | 'free-count-exceeded' | 'free-storage-exceeded' | 'free-both-exceeded' | 'paid-warning' | 'paid-exceeded' | 'none' = 'none';
   let message = '';

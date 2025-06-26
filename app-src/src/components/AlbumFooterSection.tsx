@@ -10,6 +10,23 @@ import { DownloadModal } from "./Modals/DownloadModal";
 import { checkLoginWithRefresh, checkLoginWithoutRedirect } from "@/lib/utils";
 import { AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 
+// Type definitions for GraphQL response
+interface FolderPosition {
+  id: string;
+  profileIds: string[];
+}
+
+interface ChangeFilesResponse {
+  changeFiles: {
+    items: FolderPosition[];
+  };
+}
+
+interface GraphQLResponse {
+  data?: ChangeFilesResponse;
+  errors?: Array<{ message: string }>;
+}
+
 // FooterSection Component
 type AlbumFooterSectionProps = {
   folder: FolderType;
@@ -224,7 +241,7 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
         }),
       });
       
-      const json = await res.json();
+      const json: GraphQLResponse = await res.json();
       
       if (json.errors) {
         throw new Error(json.errors[0]?.message || "Unknown error");
@@ -232,7 +249,7 @@ export const AlbumFooterSection: React.FC<AlbumFooterSectionProps> = ({
       
       // Update local state instead of reloading the page
       const updatedItems = json?.data?.changeFiles?.items || [];
-      const updatedItem = updatedItems.find((item: any) => item.id === folder.folderPositionId);
+      const updatedItem = updatedItems.find((item: FolderPosition) => item.id === folder.folderPositionId);
       
       if (updatedItem && updatedItem.profileIds) {
         // First update local state

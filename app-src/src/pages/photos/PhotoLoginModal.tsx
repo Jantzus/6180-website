@@ -122,8 +122,9 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
 
       try {
         await cognito.send(signUpCommand);
-      } catch (e: any) {
-        if (!e.name?.includes('UsernameExistsException')) {
+      } catch (e: unknown) {
+        const error = e as { name?: string }
+        if (!error.name?.includes('UsernameExistsException')) {
           throw e;
         }
       }

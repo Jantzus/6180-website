@@ -1348,7 +1348,7 @@ export const AlbumPageStatic: React.FC<AlbumPageStaticProps> = ({
           t={t}
           language={language}
           usernameManager={usernameManager}
-          onSuccess={(_) => {
+          onSuccess={() => {
             // Automatically proceed with saving the album
             executeAlbumSave(t, folderId, albumData);
           }}

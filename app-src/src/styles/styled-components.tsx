@@ -153,13 +153,6 @@ interface DirectionalProps {
   $isRTL: boolean;
 }
 
-// Responsive mixins
-const mobile = (content: any) => css`
-  @media (max-width: ${theme.breakpoints.mobile}) {
-    ${content}
-  }
-`;
-
 // Enhanced card style with softer shadow
 const cardStyle = css`
   background-color: ${theme.colors.background.card};
@@ -262,9 +255,9 @@ export const Body = styled.div<DirectionalProps>`
   min-height: 100vh;
   position: relative;
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: calc(${HEADER_HEIGHT_MOBILE} + 20px) ${theme.spacing.sm} ${theme.spacing.sm};
-  `)}
+  }
 `;
 
 export const AppContainer = styled.div<DirectionalProps>`
@@ -275,9 +268,9 @@ export const AppContainer = styled.div<DirectionalProps>`
   position: relative;
   ${props => directionalStyles(props.$isRTL)}
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: ${theme.spacing.sm};
-  `)}
+  }
 `;
 
 export const MediaContainer = styled.div`
@@ -286,10 +279,10 @@ export const MediaContainer = styled.div`
   width: 100%;
   overflow: visible;
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: ${theme.spacing.sm} ${theme.spacing.lg} ${theme.spacing.sm};
     width: 100%;
-  `)}
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -325,9 +318,9 @@ export const FixedHeader = styled.div`
   transform: translateZ(0);
   
   /* Mobile adjustments */
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     height: ${HEADER_HEIGHT_MOBILE};
-  `)}
+  }
 `;
 
 export const FixedHeaderContent = styled.div`
@@ -339,9 +332,9 @@ export const FixedHeaderContent = styled.div`
   align-items: center;
   padding: 0 ${theme.spacing.md};
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0 ${theme.spacing.md};
-  `)}
+  }
 `;
 
 export const BrandLink = styled.a`
@@ -380,12 +373,12 @@ export const BrandSlogan = styled(BrandLink)`
     color: ${theme.colors.text.secondary}; /* Lighter hover color than before */
   }
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 8px; /* Even smaller on mobile */
     max-width: 180px; /* Reduced max width */
     text-align: right;
     margin-top: 3px; /* Smaller nudge on mobile */
-  `)}
+  }
 `;
 
 export const BrandLogo = styled.img`
@@ -427,10 +420,10 @@ export const LoginCard = styled.div`
   /* Add subtle backdrop blur for depth */
   backdrop-filter: blur(10px);
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 32px 24px 24px;
     margin: 0 16px;
-  `)}
+  }
 `;
 
 export const LoginTitle = styled.h2`
@@ -553,10 +546,10 @@ export const LayoutFilterBlock = styled.div`
   margin-bottom: 32px; /* Increased spacing before media grid */
   padding: ${theme.spacing.lg}; /* Add padding for content inside white box */
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     gap: 16px; /* Slightly more spacing on mobile for better separation */
     padding: ${theme.spacing.md}; /* Smaller padding on mobile */
-  `)}
+  }
 `;
 
 export const ControlRow = styled.div`
@@ -565,11 +558,11 @@ export const ControlRow = styled.div`
   gap: 24px; /* 24px between Columns and Filter by sections */
   flex-wrap: wrap;
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-  `)}
+  }
 `;
 
 export const ControlGroup = styled.div`
@@ -628,9 +621,9 @@ export const HeaderContent = styled.div`
   /* Enhanced: Use consistent grid spacing */
   padding: ${theme.spacing.lg};
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: ${theme.spacing.lg};
-  `)}
+  }
 `;
 
 export const HeaderControls = styled.div<{ $fullWidth?: boolean }>`
@@ -665,11 +658,11 @@ export const HeaderContainer = styled.div`
   z-index: 1;
   margin-top: 0;
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     margin-top: 0;
     flex-wrap: wrap;
     gap: ${theme.spacing.sm};
-  `)}
+  }
 `;
 
 export const RowSelectorContainer = styled.div`
@@ -941,9 +934,9 @@ export const AlbumTitle = styled.h2`
   font-size: ${theme.fontSizes.xxl};
   padding: 0;
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0;
-  `)}
+  }
 `;
 
 export const AlbumTitleStrong = styled.strong`
@@ -1063,9 +1056,9 @@ const mediaBlockStyle = css<{ $isHovered?: boolean }>`
     transform: translateY(-2px);
   `}
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     margin-bottom: ${theme.spacing.lg};
-  `)}
+  }
 `;
 
 export const MediaBlock = styled.div<{ 
@@ -1120,9 +1113,9 @@ export const LazyImageContainer = styled.div`
   height: 0;
   border-radius: ${theme.borderRadius.medium};
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding-bottom: 100%;
-  `)}
+  }
 `;
 
 // Image styles
@@ -1198,12 +1191,12 @@ export const ThumbnailWrapper = styled.div`
   flex-direction: column;
   border-radius: ${theme.borderRadius.medium};
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     min-height: 120px;
     aspect-ratio: 1/1;
     height: 0;
     padding-bottom: 100%;
-  `)}
+  }
 `;
 
 export const PlayButton = styled.div`
@@ -1228,14 +1221,14 @@ export const PlayButton = styled.div`
     border-color: transparent transparent transparent ${theme.colors.white};
   }
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     width: 40px;
     height: 40px;
     
     &::before {
       border-width: 10px 0 10px 16px;
     }
-  `)}
+  }
 `;
 
 export const MediaPreview = styled.div`
@@ -1389,10 +1382,10 @@ export const ModalContent = styled.div`
   flex-direction: column;
   align-items: center;
   
-  ${mobile(`
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: ${theme.spacing.lg};
     width: 90%;
-  `)}
+  }
 `;
 
 // Username component styles
@@ -1447,18 +1440,6 @@ export const DropdownMenu = styled.div`
   flex-direction: column;
   min-width: 180px;
   margin-top: ${theme.spacing.xs};
-`;
-
-export const FullscreenContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 10000; /* Always above header (9999) */
-  display: flex;
-  flex-direction: column;
 `;
 
 // ========== Two-Factor Authentication Components ==========
@@ -1523,26 +1504,24 @@ export const Badge = styled.div<BadgeProps>`
   position: absolute;
   z-index: 2;
   bottom: ${theme.spacing.sm};
-  left: ${(props: BadgeProps) => props.$position === 'bottomLeft' ? theme.spacing.sm : 'auto'};
-  right: ${(props: BadgeProps) => props.$position === 'bottomRight' ? theme.spacing.sm : 'auto'};
-  background: ${(props: BadgeProps) => props.$light ? 'rgba(255,255,255,0.85)' : theme.colors.overlay};
-  color: ${(props: BadgeProps) => props.$light ? 'inherit' : theme.colors.white};
-  padding: ${(props: BadgeProps) => props.$light ? '6px 12px' : '4px 8px'};
-  font-size: ${(props: BadgeProps) => props.$light ? theme.fontSizes.xs : theme.fontSizes.sm};
+  left: ${(props) => props.$position === 'bottomLeft' ? theme.spacing.sm : 'auto'};
+  right: ${(props) => props.$position === 'bottomRight' ? theme.spacing.sm : 'auto'};
+  background: ${(props) => props.$light ? 'rgba(255,255,255,0.85)' : theme.colors.overlay};
+  color: ${(props) => props.$light ? 'inherit' : theme.colors.white};
+  padding: ${(props) => props.$light ? '6px 12px' : '4px 8px'};
+  font-size: ${(props) => props.$light ? theme.fontSizes.xs : theme.fontSizes.sm};
   font-weight: 500;
-  border-radius: ${(props: BadgeProps) => props.$light ? theme.borderRadius.small : theme.borderRadius.small};
+  border-radius: ${theme.borderRadius.small};
   
-  ${mobile(`
-    padding: ${(props: BadgeProps) => props.$light ? '3px 6px' : '2px 6px'};
-    font-size: ${(props: BadgeProps) => props.$light ? '10px' : theme.fontSizes.xs};
-    bottom: ${(props: BadgeProps) => props.$light ? '8px' : theme.spacing.sm};
-    ${(props: BadgeProps) => props.$position === 'bottomRight' && props.$light && `
-      max-width: 45%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    `}
-  `)}
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 3px 6px;
+    font-size: 10px;
+    bottom: 8px;
+    max-width: 45%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 export const StatusIndicator = styled.div<{ $status: UploadStatus }>`
@@ -1862,4 +1841,3 @@ export const HeaderControlSelect = styled.select`
     background-color: ${theme.colors.grayLighter};
   }
 `;
-

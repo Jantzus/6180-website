@@ -129,7 +129,6 @@ export const processFilesBeforeUploadingToS3 = async (
         const thumbnailDataKey = `Input/Image/${baseFileName}-thumbnail.jpg`;
         const tempThumbnailKey = `temp/${thumbnailDataKey}`;
         
-        let arrayBuffer: ArrayBuffer;
         let thumbnailBlob: Blob | null = null;
         let thumbnailSize: number | null = null;
         let duration: number | null = null;
@@ -175,7 +174,7 @@ export const processFilesBeforeUploadingToS3 = async (
         
         // Convert original file to ArrayBuffer for S3 upload
         updatePhotoStatus(i, 'uploading', 0.5)
-        arrayBuffer = await file.arrayBuffer()
+        const arrayBuffer = await file.arrayBuffer()
         log(`📦 Converted file to ArrayBuffer`)
         
         // Upload original file to temp folder
