@@ -19,7 +19,7 @@ import {
 } from "@/styles/styled-components";
 
 // Main page component
-const IndexPage: React.FC = () => {
+export const IndexPage: React.FC = () => {
   // Get translation hook with all functions
   const { t, language } = useTranslation();
   
@@ -118,7 +118,7 @@ const IndexPage: React.FC = () => {
 };
 
 // SSR-safe App wrapper component
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const [storedLanguage, setStoredLanguage] = useState("en"); // Default to English for SSR
   const [isInitialized, setIsInitialized] = useState(false);
 

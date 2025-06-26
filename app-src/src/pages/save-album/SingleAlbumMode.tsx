@@ -228,7 +228,8 @@ export const SingleAlbumMode: React.FC = () => {
     enhancedLog
   );
   
-  const { cognitoUsername, publicUsername, setPublicUsername } = albumInitialization;
+  // FIXED: Extract isExistingAlbum from the albumInitialization hook
+  const { cognitoUsername, publicUsername, setPublicUsername, isExistingAlbum } = albumInitialization;
 
   // Tags management - now using the full implementation
   const tagsManager = useTagsManagement(
@@ -448,12 +449,16 @@ export const SingleAlbumMode: React.FC = () => {
     }
   }, [folderName, folderDescription]);
 
-  // Load existing files when folderId changes
+  // FIXED: Load existing files when folderId changes - only for existing albums
   useEffect(() => {
-    if (folderId) {
+    // Only fetch existing album data if this is actually an existing album (has folderId query param)
+    if (folderId && isExistingAlbum) {
+      enhancedLog(`Loading existing files for existing album: ${folderId}`);
       fetchExistingAlbumData(folderId);
+    } else if (folderId && !isExistingAlbum) {
+      enhancedLog(`New album detected with folderId: ${folderId}, skipping existing files load`);
     }
-  }, [folderId, fetchExistingAlbumData]);
+  }, [folderId, isExistingAlbum, fetchExistingAlbumData, enhancedLog]);
 
   // Update folderId when currentFolderId changes
   useEffect(() => {
@@ -976,7 +981,8 @@ export const SingleAlbumMode: React.FC = () => {
               {t('Select files to start adding or removing tags')}
             </div>
             
-            {existingFiles.length > 0 && (
+            {/* FIXED: Only show ExistingFilesSection for existing albums */}
+            {isExistingAlbum && existingFiles.length > 0 && (
               <ExistingFilesSection
                 existingFiles={existingFiles}
                 selectedExistingIndices={fileState.selectedExistingIndices}

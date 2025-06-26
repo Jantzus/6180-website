@@ -117,7 +117,7 @@ function normalizeEmail(input: string): string {
   return trimmed
 }
 
-const LoginPage = () => {
+export const LoginPage = () => {
   const [email, setEmail] = useState('')
   const [codeSent, setCodeSent] = useState(false)
   const [otpCode, setOtpCode] = useState('')
@@ -463,6 +463,9 @@ const App: React.FC = () => {
     </I18nProvider>
   );
 };
+
+// Export App as the default export
+export default App;
 
 // SSR-safe initialization
 if (typeof window !== 'undefined') {

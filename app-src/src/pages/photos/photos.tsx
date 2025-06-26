@@ -8,7 +8,7 @@ import { AlbumPageDynamic } from "./AlbumPageDynamic";
 // ============================
 
 // Wrap AlbumPageDynamic with I18nProvider
-const PhotoAlbum: React.FC = () => {
+export const PhotoAlbum: React.FC = () => {
   return (
     <I18nProvider>
       <AlbumPageDynamic />
@@ -16,5 +16,10 @@ const PhotoAlbum: React.FC = () => {
   );
 };
 
-// Initialize the app
-ReactDOM.createRoot(document.getElementById("root")!).render(<PhotoAlbum />);
+// Initialize the app - only run on client side
+if (typeof document !== "undefined") {
+  const rootElement = document.getElementById("root");
+  if (rootElement) {
+    ReactDOM.createRoot(rootElement).render(<PhotoAlbum />);
+  }
+}

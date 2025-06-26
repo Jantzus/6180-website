@@ -250,6 +250,8 @@ const AppDownloadPromotion = React.memo(({
   );
 });
 
+AppDownloadPromotion.displayName = 'AppDownloadPromotion';
+
 // Helper function to convert bytes to GB
 const bytesToGB = (bytes: number): number => {
   return bytes / (1024 * 1024 * 1024);
@@ -514,6 +516,8 @@ const AlbumDeletionPreview = React.memo(({
   );
 });
 
+AlbumDeletionPreview.displayName = 'AlbumDeletionPreview';
+
 // MEMOIZED Storage message component
 const StorageMessage = React.memo(({ 
   subscriptionInfo, 
@@ -628,7 +632,9 @@ const StorageMessage = React.memo(({
   );
 });
 
-const MyAlbums = () => {
+StorageMessage.displayName = 'StorageMessage';
+
+export const MyAlbums = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
@@ -1068,7 +1074,7 @@ const MyAlbums = () => {
 }
 
 // SSR-safe app initialization
-const MyAlbumsApp = () => {
+export const MyAlbumsApp = () => {
 
   // Render the app even during SSR, but defer client-specific features
   return (

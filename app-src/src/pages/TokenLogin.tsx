@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import ReactDOM from 'react-dom/client'
 import { I18nProvider } from "@/lib/i18n/context";
 import { useTranslation } from "@/lib/i18n/hooks";
@@ -103,7 +103,7 @@ interface TokenRedemptionError {
   error: string;
 }
 
-const TokenLoginPage = () => {
+export const TokenLoginPage = () => {
   const [status, setStatus] = useState<TokenStatus>('waiting') // Start in waiting state for SSR
   const [errorMessage, setErrorMessage] = useState('')
   const [hoverLink, setHoverLink] = useState<string | null>(null)
@@ -120,25 +120,7 @@ const TokenLoginPage = () => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr'
   }, [language, isRTL])
 
-  // Extract token and redirect from URL parameters and start redemption process
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const urlParams = new URLSearchParams(window.location.search)
-    const token = urlParams.get('token')
-    const redirect = urlParams.get('redirect') || '/home'
-    
-    if (!token) {
-      setStatus('error')
-      setErrorMessage(t('No login token provided'))
-      return
-    }
-    
-    setStatus('loading')
-    redeemToken(token, redirect)
-  }, [t])
-
-  const redeemToken = async (token: string, redirectPath: string) => {
+  const redeemToken = useCallback(async (token: string, redirectPath: string) => {
     try {
       // Call the redeem endpoint
       const response = await fetch(`${REDEEM_TOKEN_ENDPOINT}?token=${encodeURIComponent(token)}`, {
@@ -241,7 +223,25 @@ const TokenLoginPage = () => {
         setErrorMessage(t('An unexpected error occurred during login'))
       }
     }
-  }
+  }, [t])
+
+  // Extract token and redirect from URL parameters and start redemption process
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const urlParams = new URLSearchParams(window.location.search)
+    const token = urlParams.get('token')
+    const redirect = urlParams.get('redirect') || '/home'
+    
+    if (!token) {
+      setStatus('error')
+      setErrorMessage(t('No login token provided'))
+      return
+    }
+    
+    setStatus('loading')
+    redeemToken(token, redirect)
+  }, [t, redeemToken])
 
   const handleRetryLogin = () => {
     // Redirect to main login page
@@ -360,7 +360,7 @@ const TokenLoginPage = () => {
 }
 
 // SSR-safe App wrapper
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const [storedLanguage, setStoredLanguage] = useState("en"); // Default for SSR
 
   useEffect(() => {

@@ -20,40 +20,36 @@ export const AlbumPageDynamic: React.FC = () => {
   const [folderId, setFolderId] = useState<string | null>(null);
   const [cognitoUsername, setCognitoUsername] = useState<string | null>(null);
 
-  // SSR-safe URL parameter extraction function
-  const getParametersFromUrl = (): string | null => {
-    // Return null during SSR, will be handled in useEffect
-    if (typeof window === 'undefined') {
-      return null;
-    }
-    
-    console.log('getParametersFromUrl called');
-    console.log('window.location.pathname:', window.location.pathname);
-    
-    // Handle path-based format: /prefix/parameters
-    const pathSegments = window.location.pathname.split('/').filter(Boolean);
-    console.log('pathSegments:', pathSegments);
-    
-    // Skip if it's the traditional app path
-    if (pathSegments.length > 0 && pathSegments[0] === 'app') {
-      console.log('Traditional app path detected, returning null');
-      return null;
-    }
-    
-    // For /prefix/parameters format, return the parameters part
-    if (pathSegments.length === 2) {
-      console.log('Found parameters:', pathSegments[1]);
-      return pathSegments[1];
-    }
-    
-    console.log('No valid path format found, returning null');
-    return null;
-  };
-
   // Album initialization logic - moved to useEffect for SSR safety
   useEffect(() => {
     const initAlbum = async () => {
       console.log('initAlbum called');
+      
+      // SSR-safe URL parameter extraction - moved inside useEffect
+      const getParametersFromUrl = (): string | null => {
+        console.log('getParametersFromUrl called');
+        console.log('window.location.pathname:', window.location.pathname);
+        
+        // Handle path-based format: /prefix/parameters
+        const pathSegments = window.location.pathname.split('/').filter(Boolean);
+        console.log('pathSegments:', pathSegments);
+        
+        // Skip if it's the traditional app path
+        if (pathSegments.length > 0 && pathSegments[0] === 'app') {
+          console.log('Traditional app path detected, returning null');
+          return null;
+        }
+        
+        // For /prefix/parameters format, return the parameters part
+        if (pathSegments.length === 2) {
+          console.log('Found parameters:', pathSegments[1]);
+          return pathSegments[1];
+        }
+        
+        console.log('No valid path format found, returning null');
+        return null;
+      };
+      
       const parameters = getParametersFromUrl();
       console.log('Extracted parameters:', parameters);
       

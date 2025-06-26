@@ -611,7 +611,7 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     const appliedTagsWithSubtags = getAppliedTagsForSelected();
     enhancedLog(`TagsDisplay render - ${appliedTags.length} tags applied to all selected files`);
     enhancedLog(`Applied tags with subtags:`, appliedTagsWithSubtags);
-  }, [tags.length, getAppliedTagsForSelected, isTagAppliedToSelected, enhancedLog]); // FIXED: Added missing dependencies
+  }, [tags, getAppliedTagsForSelected, isTagAppliedToSelected, enhancedLog]); // FIXED: Use 'tags' instead of 'tags.length'
 
   // Hide completely if no files are selected
   if (!hasSelectedFiles()) {
