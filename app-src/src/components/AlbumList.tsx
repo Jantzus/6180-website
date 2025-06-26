@@ -12,7 +12,7 @@ import {
   AlbumDescription,
   State,
   AlbumDates
-} from "@/styles/styled-components.tsx";
+} from "@/styles/components/layout";
 import { DirectionalProps } from '@/styles/theme'
 import { theme } from "@/styles/theme";
 // Helper function to format bytes into human-readable format

@@ -102,3 +102,55 @@ export const TwoFactorAuthLabel = styled.div`
   font-size: 11px;
   color: ${theme.colors.text.secondary};
 `;
+
+
+export const ColumnsSelector = styled.select`
+  padding: 8px 12px;
+  border-radius: ${theme.borderRadius.medium}; /* Match tag styling */
+  border: 1px solid ${theme.colors.borderLight};
+  background-color: ${theme.colors.white};
+  font-size: 14px; /* Match tag font size */
+  cursor: pointer;
+  box-shadow: ${theme.boxShadow.sm}; /* Subtle shadow to match tags */
+  min-width: 60px;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: ${theme.colors.border};
+    box-shadow: ${theme.boxShadow.md};
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: ${theme.colors.primary};
+    box-shadow: ${theme.boxShadow.focusGlow};
+  }
+`;
+
+export const SelectionCheckbox = styled.div<{ $isSelected: boolean }>`
+  position: absolute;
+  top: ${theme.spacing.sm};
+  right: ${theme.spacing.sm};
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  border-radius: ${theme.borderRadius.circle};
+  background-color: ${(props) => (props.$isSelected ? theme.colors.primary : 'rgba(255, 255, 255, 0.8)')};
+  border: ${(props) => (props.$isSelected ? 'none' : `2px solid ${theme.colors.primary}`)};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: ${theme.boxShadow.selection};
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+export const Checkmark = styled.div`
+  color: ${theme.colors.white};
+  font-size: ${theme.fontSizes.sm};
+  font-weight: bold;
+`;

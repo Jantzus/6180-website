@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from '@/styles/styled-components';
+import { Input } from '@/styles/components/forms';
 import { 
   FormLabel,
 } from "@/styles/components/forms";

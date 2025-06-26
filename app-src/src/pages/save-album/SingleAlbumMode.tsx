@@ -34,10 +34,10 @@ import { UploadProgress } from "@/components/UploadProgress";
 import { PasswordDialog } from "@/components/PasswordDialog";
 import { DebugLog } from "@/components/DebugLog";
 import styled from "styled-components";
-import {
+import { 
   FixedHeader,
   FixedHeaderContent,
-} from "@/styles/styled-components";
+} from "@/styles/components/layout";
 import { 
   Body, 
 } from "@/styles/components/layout";

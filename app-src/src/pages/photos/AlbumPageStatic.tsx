@@ -45,27 +45,26 @@ import { MediaTagsFilter } from "@/components/MediaTagsFilter";
 
 // Import styled components with new layout styles
 import { 
-  // Updated brand header components with reduced padding:
   FixedHeader,
   FixedHeaderContent,
-  // Updated layout+filter control components with improved spacing:
-  ColumnsSelector,
-} from "@/styles/styled-components";
-
-import {
-  cardStyle
-} from "@/styles/globalStyles";
-import {
+  Body, 
   MediaContainer
 } from "@/styles/components/layout";
+
 import { 
-  Body, 
-} from "@/styles/components/layout";
+  ColumnsSelector,
+} from "@/styles/components/forms";
+
+import {
+  GlobalStyle,
+  cardStyle
+} from "@/styles/globalStyles";
 
 import { Button } from '@/styles/components/buttons'
-import { DirectionalProps } from '@/styles/theme'
-import { GlobalStyle } from "@/styles/globalStyles";
-import { theme } from "@/styles/theme";
+import { 
+  theme, 
+  DirectionalProps
+} from '@/styles/theme'
 
 // Import components
 import { FullscreenMediaViewer } from "./FullscreenMediaViewer";

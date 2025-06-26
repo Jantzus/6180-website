@@ -3,11 +3,11 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import { 
   LoadingPlaceholder,
   Overlay,
-  WatermarkText
-} from "@/styles/styled-components";
+} from "@/styles/components/layout";
 import { 
   LazyImageContainer, 
-  Image as StyledImage, 
+  Image, 
+  WatermarkText
 } from "@/styles/components/media";
 import { PhotoPageLazyImageProps } from "@/lib/types";
 
@@ -77,7 +77,7 @@ export const PhotoPageLazyImage: React.FC<PhotoPageLazyImageProps> = ({
   
   return (
     <LazyImageContainer onClick={onClick}>
-      <StyledImage 
+      <Image 
         src={imageSrc} 
         alt={alt} 
         className={className}

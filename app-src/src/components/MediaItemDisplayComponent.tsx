@@ -6,8 +6,10 @@ import { MediaItem } from "@/lib/types";
 import { 
   SelectionCheckbox,
   Checkmark,
+} from "@/styles/components/forms";
+import { 
   Badge
-} from "@/styles/styled-components";
+} from "@/styles/components/layout";
 
 // Media Item Component
 export const MediaItemDisplayComponent: React.FC<{

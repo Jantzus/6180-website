@@ -2,9 +2,10 @@ import { AlbumData } from "@/lib/types";
 // Import styled components
 import {
   Card, 
+  AlbumTitle, 
+  AlbumTitleStrong, 
+  DescriptionText 
 } from "@/styles/components/layout";
-
-import { AlbumTitle, AlbumTitleStrong, DescriptionText } from "@/styles/styled-components";
 
 // Album Information Component
 export const AlbumInfoComponent: React.FC<{

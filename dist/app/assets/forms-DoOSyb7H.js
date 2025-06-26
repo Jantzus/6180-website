@@ -1,17 +1,17 @@
-import{t as o,d as t,bo as e}from"./layout-D_Ibv38s.js";const i=t.div`
+import{t as o,d as e,bh as t}from"./buttons-CJB49aeq.js";const i=e.div`
   /* Enhanced: Use consistent grid spacing */
   margin-bottom: ${o.spacing.lg};
-`,s=t.label`
+`,n=e.label`
   display: block;
   /* Enhanced: Use consistent grid spacing */
   margin-bottom: ${o.spacing.md};
   font-size: ${o.fontSizes.sm};
   font-weight: 500;
   color: ${o.colors.text.primary};
-`,a=t.input`
-  ${e}
-`,c=t.textarea`
-  ${e}
+`,a=e.input`
+  ${t}
+`,c=e.textarea`
+  ${t}
   resize: vertical;
   min-height: 100px; /* Increased minimum height */
   font-family: inherit;
@@ -25,9 +25,9 @@ import{t as o,d as t,bo as e}from"./layout-D_Ibv38s.js";const i=t.div`
     font-weight: normal;
     line-height: 1.5;
   }
-`;t.input`
+`;e.input`
   display: none;
-`;const l=t.input`
+`;const l=e.input`
   width: 100%;
   padding: 12px;
   margin-bottom: 16px;
@@ -58,7 +58,7 @@ import{t as o,d as t,bo as e}from"./layout-D_Ibv38s.js";const i=t.div`
     background-color: ${o.colors.white};
     border-color: ${o.colors.borderLight};
   }
-`;t.input`
+`,d=e.input`
   width: 100%;
   padding: 10px;
   margin-bottom: ${o.spacing.sm};
@@ -66,14 +66,59 @@ import{t as o,d as t,bo as e}from"./layout-D_Ibv38s.js";const i=t.div`
   border: 1px solid ${o.colors.border};
   font-size: ${o.fontSizes.md};
   text-align: ${r=>r.$isRTL?"right":"left"};
-`;t.div`
+`;e.div`
   color: ${o.colors.danger};
   margin-bottom: ${o.spacing.sm};
   font-size: ${o.fontSizes.sm};
-`;const d=t.div`
+`;const p=e.div`
   text-align: center;
   /* Enhanced: Use consistent grid spacing */
   margin-top: ${o.spacing.lg};
   font-size: 11px;
   color: ${o.colors.text.secondary};
-`;export{i as F,l as I,d as T,s as a,a as b,c};
+`,h=e.select`
+  padding: 8px 12px;
+  border-radius: ${o.borderRadius.medium}; /* Match tag styling */
+  border: 1px solid ${o.colors.borderLight};
+  background-color: ${o.colors.white};
+  font-size: 14px; /* Match tag font size */
+  cursor: pointer;
+  box-shadow: ${o.boxShadow.sm}; /* Subtle shadow to match tags */
+  min-width: 60px;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: ${o.colors.border};
+    box-shadow: ${o.boxShadow.md};
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: ${o.colors.primary};
+    box-shadow: ${o.boxShadow.focusGlow};
+  }
+`,g=e.div`
+  position: absolute;
+  top: ${o.spacing.sm};
+  right: ${o.spacing.sm};
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  border-radius: ${o.borderRadius.circle};
+  background-color: ${r=>r.$isSelected?o.colors.primary:"rgba(255, 255, 255, 0.8)"};
+  border: ${r=>r.$isSelected?"none":`2px solid ${o.colors.primary}`};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: ${o.boxShadow.selection};
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+`,b=e.div`
+  color: ${o.colors.white};
+  font-size: ${o.fontSizes.sm};
+  font-weight: bold;
+`;export{b as C,i as F,l as I,g as S,p as T,d as U,n as a,a as b,c,h as d};

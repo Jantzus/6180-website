@@ -139,3 +139,24 @@ export const VideoItem = styled.video`
 export const MediaWrapper = styled.div`
   position: relative;
 `;
+
+// ========== Watermark Components ==========
+
+export const WatermarkText = styled.div`
+  color: ${theme.colors.white};
+  font-size: ${theme.fontSizes.xxl};
+  font-weight: bold;
+  transform: rotate(-30deg);
+  opacity: 0.7;
+  text-shadow: ${theme.boxShadow.textShadow};
+  user-select: none;
+  white-space: nowrap;
+`;
+
+// ========== Miscellaneous Components ==========
+
+export const FileInfo = styled.div`
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.text.secondary};
+  margin-bottom: 6px;
+`;

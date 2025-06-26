@@ -17,10 +17,8 @@ import { AlbumList } from "@/components/AlbumList";
 import { ProfileHeader } from "@/components/ProfileHeader";
 import { FolderType, FOLDERPOSITION_FIELD } from "@/lib/types";
 import {
-  State
-} from "@/styles/styled-components.tsx";
-import {
   AppContainer,
+  State
 } from "@/styles/components/layout";
 import { GlobalStyle } from "@/styles/globalStyles";
 

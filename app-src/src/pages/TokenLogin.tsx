@@ -7,11 +7,9 @@ import { redirectTo, generateUrl } from "@/lib/utils";
 import { API_ENDPOINT_REDEEM_TOKEN, AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import styled from 'styled-components'
 import {
+  Card,
   LegalLinksFooter,
   LegalLinkFooterButton,
-} from "@/styles/styled-components";
-import {
-  Card
 } from "@/styles/components/layout";
 
 import {

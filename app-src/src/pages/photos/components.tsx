@@ -1,7 +1,7 @@
 import React from "react";
 import { 
   SelectionBanner,
-} from "@/styles/styled-components";
+} from "@/styles/components/layout";
 
 // Selection Banner Component
 export const SelectionModeBanner: React.FC<{

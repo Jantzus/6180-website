@@ -2,13 +2,11 @@ import React, { useMemo, useEffect } from "react";
 import { 
   SelectedPhoto,
 } from "@/lib/types";
-import {
-  Message,
-} from "@/styles/styled-components";
 import {   
   Card,
   PhotoCard,
- } from '@/styles/components/layout';
+  Message,
+} from '@/styles/components/layout';
 import { 
   MediaPreview,
   MediaItem,

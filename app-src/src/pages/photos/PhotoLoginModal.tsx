@@ -9,10 +9,8 @@ import {
 import { COGNITO_CLIENT_ID, AWS_REGION, AWS_PRIVATE_GRAPHQL_ENDPOINT } from "@/lib/config";
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
 import { generateUrl } from "@/lib/utils";
-import { 
-  Modal,
-} from "@/styles/styled-components";
 import {
+  Modal,
   ModalContent
 } from "@/styles/modalStyles";
 

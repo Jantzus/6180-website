@@ -1,6 +1,19 @@
 import styled from "styled-components";
 import { Button } from "./components/buttons";
-import { theme } from "@/styles/theme";
+import { theme, ModalProps } from "@/styles/theme";
+
+export const Modal = styled.div<ModalProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${theme.colors.overlay};
+  z-index: ${props => props.$zIndex || 10000}; /* Always above header (9999) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 // Common Modal Overlay with backdrop blur
 export const ModalOverlay = styled.div`

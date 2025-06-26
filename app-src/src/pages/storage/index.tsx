@@ -13,14 +13,14 @@ import { getLanguageDirection } from '@/lib/i18n';
 import { redirectTo, generateUrl } from "@/lib/utils";
 import styled from 'styled-components'
 import {
-  LegalLinksFooter,
-  LegalLinkFooterButton,
-  Message,
   Input
-} from "@/styles/styled-components";
+} from "@/styles/components/forms";
 import {
   AppContainer,
-  Card
+  Card,
+  Message,
+  LegalLinksFooter,
+  LegalLinkFooterButton,
 } from "@/styles/components/layout";
 import { 
   Button,

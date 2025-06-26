@@ -4,12 +4,13 @@ import { getLanguageDirection } from "@/lib/i18n";
 
 // Import styled components
 import { 
-  Modal,
   UsernameInput,
+} from "@/styles/components/forms";
+import { 
   Message,
-} from "@/styles/styled-components";
-
+} from "@/styles/components/layout";
 import {
+  Modal,
   ModalContent
 } from "@/styles/modalStyles";
   

@@ -7,13 +7,11 @@ import { getLanguageDirection } from '@/lib/i18n/translations';
 import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect, redirectTo, generateUrl } from "@/lib/utils";
 import styled from 'styled-components'
 import {
+  AppContainer,
   HeaderContainer,
   Logo,
   LegalLinksFooter,
   LegalLinkFooterButton
-} from "@/styles/styled-components";
-import {
-  AppContainer
 } from "@/styles/components/layout";
 import { Button } from '@/styles/components/buttons'
 import { GlobalStyle } from "@/styles/globalStyles";

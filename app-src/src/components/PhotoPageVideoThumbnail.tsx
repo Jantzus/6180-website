@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 
-import { 
-  Badge,
+import {
   Overlay,
-  WatermarkText
-} from "@/styles/styled-components";
+  Badge,
+} from "@/styles/components/layout";
 import { 
   ThumbnailWrapper,
   PlayButton,
+  WatermarkText
 } from "@/styles/components/media";
 
 import { PhotoPageLazyImage } from "@/components/PhotoPageLazyImage"

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { 
-  DropdownMenu,
+import {
   MenuButton,
   HamburgerIcon,
   HamburgerLine,
+  DropdownMenu,
   DropdownMenuChoice
-} from "@/styles/styled-components";
+} from "@/styles/components/buttons";
+
 import { 
   Button,
 } from "@/styles/components/buttons";

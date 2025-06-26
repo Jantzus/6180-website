@@ -16,10 +16,10 @@ import {
   GearButton,
   GlobalSettingsMenu 
 } from "./GlobalSettingsMenu";
-import {
+import { 
   FixedHeader,
   FixedHeaderContent,
-} from "@/styles/styled-components";
+} from "@/styles/components/layout";
 import { 
   Body, 
 } from "@/styles/components/layout";

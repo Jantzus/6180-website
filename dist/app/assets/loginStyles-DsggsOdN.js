@@ -1,4 +1,4 @@
-import{d as o,t as e}from"./layout-D_Ibv38s.js";import{I as r}from"./forms-H2jxYTvQ.js";const a=o(r)`
+import{d as o,t as e}from"./buttons-CJB49aeq.js";import{I as r}from"./forms-DoOSyb7H.js";const a=o(r)`
   letter-spacing: 2px;
   text-align: center;
 `,d=o.p`

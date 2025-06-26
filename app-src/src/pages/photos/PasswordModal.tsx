@@ -1,9 +1,7 @@
 // Updated PasswordModal.tsx
 import { useState } from "react";
-import { 
-  Modal, 
-} from "@/styles/styled-components";
 import {
+  Modal, 
   ModalContent
 } from "@/styles/modalStyles";
 import { 

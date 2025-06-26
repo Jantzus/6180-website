@@ -207,3 +207,19 @@ export const HamburgerLine = styled.span`
   background: ${theme.colors.primary};
   width: 100%;
 `;
+
+
+export const DropdownMenu = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 9998; /* Just below header, above normal content */
+  background-color: ${theme.colors.white};
+  box-shadow: ${theme.boxShadow.md};
+  border-radius: ${theme.borderRadius.small};
+  padding: ${theme.spacing.sm};
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  margin-top: ${theme.spacing.xs};
+`;

@@ -1,9 +1,7 @@
 import { AlbumData } from "@/lib/types";
 import { 
-  Message
-} from "@/styles/styled-components";
-import { 
   MediaGrid, 
+  Message
 } from "@/styles/components/layout";
 import { MediaItemDisplayComponent } from "@/components/MediaItemDisplayComponent";
 

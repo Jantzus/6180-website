@@ -3,10 +3,12 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import styled from "styled-components";
 import { 
   Overlay,
-  WatermarkText,
   OwnerProfileLink,
   LoadingIndicator,
-} from "@/styles/styled-components";
+} from "@/styles/components/layout";
+import { 
+  WatermarkText,
+} from "@/styles/components/media";
 import { 
   Button,
 } from "@/styles/components/buttons";

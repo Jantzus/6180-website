@@ -5,13 +5,16 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import {
   ProfileHeaderContainer,
   ProfileControls,
+  PublicProfileExplanation
+} from "@/styles/components/layout";
+
+import {
   MenuButton,
   HamburgerIcon,
   HamburgerLine,
   DropdownMenu,
   DropdownMenuChoice,
-  PublicProfileExplanation
-} from "@/styles/styled-components";
+} from "@/styles/components/buttons";
 
 // Profile Header Props Interface
 export interface ProfileHeaderProps {
