@@ -236,6 +236,11 @@ const InputButton = styled.button`
   }
 `;
 
+// Interface for legacy IE touch support
+interface NavigatorWithMSPointer extends Navigator {
+  msMaxTouchPoints?: number;
+}
+
 // SSR-safe touch device hook
 const useTouchDevice = () => {
   // Default to desktop (non-touch) during SSR
@@ -244,9 +249,12 @@ const useTouchDevice = () => {
   useEffect(() => {
     const checkTouchDevice = () => {
       // Check multiple indicators for touch support
-      const hasTouch = 'ontouchstart' in window || 
-                      (navigator.maxTouchPoints && navigator.maxTouchPoints > 0) ||
-                      ((navigator as any).msMaxTouchPoints && (navigator as any).msMaxTouchPoints > 0);
+      const legacyNavigator = navigator as NavigatorWithMSPointer;
+      const hasTouch = Boolean(
+        'ontouchstart' in window || 
+        (navigator.maxTouchPoints && navigator.maxTouchPoints > 0) ||
+        (legacyNavigator.msMaxTouchPoints && legacyNavigator.msMaxTouchPoints > 0)
+      );
       setIsTouchDevice(hasTouch);
     };
     
@@ -511,11 +519,6 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     hasSelectedFiles
   } = tagsManager;
 
-  // Hide completely if no files are selected
-  if (!hasSelectedFiles()) {
-    return null;
-  }
-
   // OPTIMIZED: Memoize getTagDisplayText to ensure it updates when dependencies change
   const getTagDisplayText = useCallback((tag: TagData): string => {
     // Only show subtags if the tag is actually applied to ALL selected files
@@ -608,7 +611,12 @@ export const TagsDisplay: React.FC<TagsDisplayProps> = React.memo(({
     const appliedTagsWithSubtags = getAppliedTagsForSelected();
     enhancedLog(`TagsDisplay render - ${appliedTags.length} tags applied to all selected files`);
     enhancedLog(`Applied tags with subtags:`, appliedTagsWithSubtags);
-  }, [tags.length, getAppliedTagsForSelected, enhancedLog]); // Only log when tags count changes
+  }, [tags.length, getAppliedTagsForSelected, isTagAppliedToSelected, enhancedLog]); // FIXED: Added missing dependencies
+
+  // Hide completely if no files are selected
+  if (!hasSelectedFiles()) {
+    return null;
+  }
 
   return (
     <TagsContainer>
@@ -727,6 +735,34 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
     tags
   } = tagsManager;
 
+  // FIXED: Move all hooks to the top before any conditional logic
+  // OPTIMIZED: Memoize click handlers to prevent recreation
+  const handleSubtagClick = useCallback((subtag: SubtagData) => {
+    if (disabled) return;
+    
+    enhancedLog(`Subtag "${subtag.subtagTitle}" clicked - current state: ${isSubtagAppliedToSelected(subtag) ? 'applied to all' : 'not applied to all'}`);
+    toggleSubtagOnSelectedFiles(subtag);
+  }, [disabled, enhancedLog, isSubtagAppliedToSelected, toggleSubtagOnSelectedFiles]);
+
+  const handleDeleteSubtag = useCallback(async (subtagId: string) => {
+    if (disabled) return;
+    
+    enhancedLog(`Delete subtag initiated: ${subtagId}`);
+    const success = await deleteSubtag(subtagId);
+    if (success) {
+      enhancedLog(`Subtag successfully deleted: ${subtagId}`);
+    } else {
+      enhancedLog(`Failed to delete subtag: ${subtagId}`);
+    }
+  }, [disabled, enhancedLog, deleteSubtag]);
+
+  const handleSubmitNewSubtag = useCallback(async () => {
+    const success = await submitNewSubtag();
+    if (!success) {
+      enhancedLog("Failed to submit new subtag");
+    }
+  }, [submitNewSubtag, enhancedLog]);
+
   // Find displayed tag and its subtags - memoized
   const displayedTagData = useMemo(() => {
     const displayedTag = tags.find(t => t.id === displayedTagId);
@@ -754,33 +790,6 @@ const SubtagsDisplay: React.FC<SubtagsDisplayProps> = React.memo(({
       subtagDisplayData: sortedSubtagDisplayData
     };
   }, [tags, displayedTagId, isSubtagAppliedToSelected, subtagIdBeingDeleted]);
-
-  // OPTIMIZED: Memoize click handlers to prevent recreation
-  const handleSubtagClick = useCallback((subtag: SubtagData) => {
-    if (disabled) return;
-    
-    enhancedLog(`Subtag "${subtag.subtagTitle}" clicked - current state: ${isSubtagAppliedToSelected(subtag) ? 'applied to all' : 'not applied to all'}`);
-    toggleSubtagOnSelectedFiles(subtag);
-  }, [disabled, enhancedLog, isSubtagAppliedToSelected, toggleSubtagOnSelectedFiles]);
-
-  const handleDeleteSubtag = useCallback(async (subtagId: string) => {
-    if (disabled) return;
-    
-    enhancedLog(`Delete subtag initiated: ${subtagId}`);
-    const success = await deleteSubtag(subtagId);
-    if (success) {
-      enhancedLog(`Subtag successfully deleted: ${subtagId}`);
-    } else {
-      enhancedLog(`Failed to delete subtag: ${subtagId}`);
-    }
-  }, [disabled, enhancedLog, deleteSubtag]);
-
-  const handleSubmitNewSubtag = useCallback(async () => {
-    const success = await submitNewSubtag();
-    if (!success) {
-      enhancedLog("Failed to submit new subtag");
-    }
-  }, [submitNewSubtag, enhancedLog]);
 
   // Early return AFTER all hooks are called
   if (!displayedTagData) {

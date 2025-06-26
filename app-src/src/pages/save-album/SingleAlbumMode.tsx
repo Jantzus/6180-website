@@ -7,7 +7,7 @@ import {
   LOCAL_STORAGE_KEYS, 
   AWS_PRIVATE_GRAPHQL_ENDPOINT 
 } from "@/lib/config";
-import { checkLoginWithRefresh } from "@/lib/utils";
+import { checkLoginWithRefresh, generateUrl, redirectTo } from "@/lib/utils";
 import { prewarmCredentials } from "@/lib/s3";
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 import { useUsernameManagement } from "@/lib/useUsernameManagement";
@@ -38,14 +38,45 @@ import {
   FixedHeader,
   FixedHeaderContent,
   Body,
-  ProfileLink,
   ActionButtons,
   Button
 } from "@/styles/styled-components";
+import styled from 'styled-components';
 import { FileState, ExistingFile, AppliedTag } from "./types/album-types";
 import { AlbumService } from "./services/album.service";
 import { useTagsManagement } from "./useTagsManagement";
 import { TagsDisplay } from "./TagDisplayComponents";
+
+// ===== THEME =====
+const theme = {
+  colors: {
+    primary: "#007bff",
+    white: "#fff",
+  },
+  spacing: {
+    md: "16px",
+  },
+  borderRadius: {
+    medium: "8px",
+  }
+};
+
+// ===== STYLED COMPONENTS =====
+const BackButton = styled.button`
+  background: transparent;
+  border: 1px solid ${theme.colors.primary};
+  color: ${theme.colors.primary};
+  padding: 8px 16px;
+  border-radius: ${theme.borderRadius.medium};
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.white};
+  }
+`;
 
 // Enhanced circuit breaker with cooldown
 const useCircuitBreaker = (componentName: string, maxRenders = 50, timeWindow = 3000) => {
@@ -788,12 +819,28 @@ export const SingleAlbumMode: React.FC = () => {
       )}
       
       <FixedHeader>
-        <FixedHeaderContent>
-          <ProfileLink href="my-albums.html">
-            {t('Back to Albums')}
-          </ProfileLink>
+        <FixedHeaderContent style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          flexDirection: isRTL ? 'row-reverse' : 'row'
+        }}>
+          <div style={{ 
+            order: isRTL ? 2 : 1,
+            textAlign: isRTL ? 'right' : 'left'
+          }}>
+            <BackButton onClick={() => redirectTo(generateUrl('my-albums.html'))}>
+              {t('← Back To Albums')}
+            </BackButton>
+          </div>
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '12px',
+            order: isRTL ? 1 : 2,
+            flexDirection: isRTL ? 'row-reverse' : 'row'
+          }}>
             {/* Single album gear menu */}
             {showFolderDetails && isCreator === true && (
               <div ref={singleGearRef} style={{ position: 'relative' }}>

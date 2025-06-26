@@ -240,7 +240,7 @@ const MobileNewAlbumButton = styled.button<{ $isMobile: boolean }>`
   display: ${props => props.$isMobile ? 'flex' : 'none'};
   align-items: center;
   justify-content: center;
-  padding: 8px 12px;
+  padding: 10px 12px;
   background-color: ${theme.colors.primary};
   color: ${theme.colors.text.white};
   border: none;
@@ -263,7 +263,7 @@ const MobileNewAlbumButton = styled.button<{ $isMobile: boolean }>`
   }
 
   @media (max-width: 480px) {
-    padding: 6px 10px;
+    padding: 10px 10px;
     font-size: ${theme.fontSizes.xs};
   }
 `;

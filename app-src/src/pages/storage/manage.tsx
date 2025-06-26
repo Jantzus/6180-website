@@ -18,6 +18,7 @@ const useBrowserAPIs = () => {
 
   useEffect(() => {
     setIsClient(true);
+    // Only access browser APIs in useEffect to avoid SSR mismatch
     if (typeof window !== 'undefined') {
       setWindowObj(window);
     }
@@ -109,6 +110,49 @@ const useIntlAPIs = () => {
   }, [isClient]);
 
   return { userCountry, formatCurrency, isClient };
+};
+
+// Hook for safe URL operations
+const useURLOperations = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const getURLParams = useCallback((): URLSearchParams | null => {
+    if (!isClient || typeof window === 'undefined') return null;
+    try {
+      return new URLSearchParams(window.location.search);
+    } catch {
+      return null;
+    }
+  }, [isClient]);
+
+  const getCurrentURL = useCallback((): { origin: string; pathname: string } | null => {
+    if (!isClient || typeof window === 'undefined') {
+      return null;
+    }
+    try {
+      return {
+        origin: window.location.origin,
+        pathname: window.location.pathname
+      };
+    } catch {
+      return null;
+    }
+  }, [isClient]);
+
+  const replaceURL = useCallback((url: string): void => {
+    if (!isClient || typeof window === 'undefined' || typeof document === 'undefined') return;
+    try {
+      window.history.replaceState({}, document.title || '', url);
+    } catch {
+      // Silently fail if history API is not available
+    }
+  }, [isClient]);
+
+  return { getURLParams, getCurrentURL, replaceURL, isClient };
 };
 
 // ===== TYPE DEFINITIONS =====
@@ -438,13 +482,13 @@ class StripeService {
     paymentMethod: PaymentMethod, 
     clientSecret: string, 
     cardElement?: StripeElement,
-    windowObj?: Window | null
+    getCurrentURL?: () => { origin: string; pathname: string } | null
   ): Promise<StripePaymentResult> {
-    if (!windowObj) {
-      throw new Error('Browser environment required for payment confirmation');
-    }
-
-    const returnUrl = `${windowObj.location.origin}${windowObj.location.pathname}?payment_return=true`;
+    // SSR-safe return URL construction
+    const urlInfo = getCurrentURL?.();
+    const returnUrl = urlInfo 
+      ? `${urlInfo.origin}${urlInfo.pathname}?payment_return=true` 
+      : 'https://example.com/fallback';
 
     switch (paymentMethod) {
       case 'card':
@@ -1409,7 +1453,8 @@ const PaymentModal = ({
   // Use SSR-safe hooks
   const { window: windowObj, document: documentObj, isClient } = useBrowserAPIs();
   const { userCountry } = useIntlAPIs();
-  const localStorage = useLocalStorage();
+  const localStorageHook = useLocalStorage();
+  const { getURLParams, getCurrentURL, replaceURL } = useURLOperations();
 
   const targetTier = customGB && !isNaN(parseFloat(customGB)) 
     ? selectTierForGB(parseFloat(customGB), albumCount) 
@@ -1527,9 +1572,11 @@ const PaymentModal = ({
   // Handle payment completion from redirects - SSR safe
   useEffect(() => {
     const handlePaymentCompletion = async () => {
-      if (!isClient || !windowObj || !documentObj) return;
+      if (!isClient) return;
 
-      const urlParams = new URLSearchParams(windowObj.location.search);
+      const urlParams = getURLParams();
+      if (!urlParams) return;
+
       const paymentReturn = urlParams.get('payment_return');
       const paymentIntentClientSecret = urlParams.get('payment_intent_client_secret');
       
@@ -1540,15 +1587,18 @@ const PaymentModal = ({
           
           if (paymentIntent.status === 'succeeded') {
             // Get stored target tier
-            const storedTargetTier = localStorage.getItem('pendingSubscriptionTier');
+            const storedTargetTier = localStorageHook.getItem('pendingSubscriptionTier');
             if (storedTargetTier) {
               const prorationBehavior = (currentTier > 0 && parseInt(storedTargetTier) > currentTier) ? 'create_prorations' : 'none';
               await StripeService.updateSubscription(parseInt(storedTargetTier), prorationBehavior);
-              localStorage.removeItem('pendingSubscriptionTier');
+              localStorageHook.removeItem('pendingSubscriptionTier');
               
               // Clean up URL parameters
-              const cleanUrl = windowObj.location.href.split('?')[0];
-              windowObj.history.replaceState({}, documentObj.title || '', cleanUrl);
+              const currentUrl = getCurrentURL();
+              if (currentUrl) {
+                const cleanUrl = `${currentUrl.origin}${currentUrl.pathname}`;
+                replaceURL(cleanUrl);
+              }
               
               onPaymentSuccess();
             }
@@ -1566,7 +1616,7 @@ const PaymentModal = ({
     if (showStripe) {
       handlePaymentCompletion();
     }
-  }, [showStripe, stripe, currentTier, onPaymentSuccess, setLoading, t, isClient, windowObj, documentObj, localStorage]);
+  }, [showStripe, stripe, currentTier, onPaymentSuccess, setLoading, t, isClient, getURLParams, getCurrentURL, replaceURL, localStorageHook]);
 
   const handleStripeSubmit = async () => {
     setLoading(true);
@@ -1590,7 +1640,7 @@ const PaymentModal = ({
 
       // Store target tier for redirect-based payments
       if (getPaymentMethodConfig(selectedPaymentMethod)?.redirects) {
-        localStorage.setItem('pendingSubscriptionTier', finalTargetTier.toString());
+        localStorageHook.setItem('pendingSubscriptionTier', finalTargetTier.toString());
       }
 
       // Create payment intent with selected payment method
@@ -1609,7 +1659,7 @@ const PaymentModal = ({
         selectedPaymentMethod, 
         paymentIntent.clientSecret, 
         cardElement || undefined,
-        windowObj
+        getCurrentURL
       );
 
       const { error, paymentIntent: confirmedPayment } = result;
@@ -1767,7 +1817,7 @@ const PaymentModal = ({
 };
 
 // ===== MAIN COMPONENT =====
-const StorageManagePageContent = () => {
+export const StorageManagePageContent = () => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
   
@@ -1948,7 +1998,7 @@ const StorageManagePageContent = () => {
 
   return (
     <PageContainer $isRTL={isRTL}>
-      <div style={{ marginBottom: theme.spacing.md, textAlign: 'right' }}>
+      <div style={{ marginBottom: theme.spacing.md, textAlign: isRTL ? 'right' : 'left' }}>
         <BackButton onClick={() => redirectTo(generateUrl('my-albums.html'))}>
           {t('← Back To Albums')}
         </BackButton>
@@ -2027,16 +2077,16 @@ const StorageManagePageContent = () => {
   );
 };
 
-const StorageManagePage = () => (
+export const StorageManagePage = () => (
   <I18nProvider>
     <StorageManagePageContent />
   </I18nProvider>
 );
 
 // SSR-safe initialization
-if (typeof document !== 'undefined' && typeof window !== 'undefined') {
-  ReactDOM.createRoot(document.getElementById("root")!).render(<StorageManagePage />);
+if (typeof document !== 'undefined') {
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    ReactDOM.createRoot(rootElement).render(<StorageManagePage />);
+  }
 }
-
-// Exports for React refresh - fixes the fast refresh warnings
-export { StorageManagePage as default, StorageManagePageContent };

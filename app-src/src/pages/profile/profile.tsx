@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import ReactDOM from "react-dom/client";
 import { 
   checkLoginWithoutRedirect, 
@@ -72,15 +72,15 @@ const useSSRSafeURL = () => {
 
     // Parse URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    let publicDisplayName = urlParams.get('id');
+    const publicDisplayName = urlParams.get('id'); // Fixed: use const instead of let
     
     if (publicDisplayName) {
       setProfileName(publicDisplayName);
       return;
     }
     
-    // Check in path
-    const pathMatch = window.location.pathname.match(/\/persona\/([^\/]+)/);
+    // Check in path - Fixed: removed unnecessary escape character
+    const pathMatch = window.location.pathname.match(/\/persona\/([^/]+)/);
     if (pathMatch && pathMatch[1]) {
       setProfileName(pathMatch[1]);
       return;
@@ -128,8 +128,57 @@ const useSSRSafeDocumentTitle = (title: string) => {
   }, [title, isClient]);
 };
 
-// Main PersonaViewer Component
-const PersonaViewer: React.FC = () => {
+// Define types for GraphQL response
+interface FileReference {
+  id: string;
+  fileDisplayName?: string;
+  selectedTags?: Array<{
+    TagType: string;
+    tagTitle: string;
+    subtags: Array<{
+      TagType: string;
+      tagTitle: string;
+      subtagTitle: string;
+    }>;
+  }>;
+  file: {
+    dataInBytes?: number;
+    dataKey: string;
+    thumbnailDataKey?: string;
+    durationInSeconds?: number;
+  };
+}
+
+interface FolderPosition {
+  id: string;
+  profileIds?: string[];
+  folder: {
+    id: string;
+    albumNanoId?: string;
+    folderName?: string;
+    folderDescription?: string;
+    folderPassword?: {
+      password?: string;
+      policy?: string;
+    };
+    creatorId?: string;
+    createdAt?: number;
+    updatedAt?: number;
+    fileReferencesPage?: {
+      items: FileReference[];
+    };
+  };
+}
+
+interface PublicDisplayNameResponse {
+  ownerAccountId?: string;
+  folderPositionsPage?: {
+    items: FolderPosition[];
+  };
+}
+
+// Main PersonaViewer Component - Exported for fast refresh
+export const PersonaViewer: React.FC = () => {
   
   const [ownerItemId, setOwnerItemId] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -174,45 +223,8 @@ const PersonaViewer: React.FC = () => {
     setIsClient(true);
   }, []);
 
-  // Extract publicDisplayName from URL on component mount (client-side only)
-  useEffect(() => {
-    if (!urlIsClient || !profileName) {
-      if (urlIsClient && !profileName) {
-        setError(t('No profile name provided'));
-        setIsLoading(false);
-      }
-      return;
-    }
-    
-    fetchContactPositionBasedOnPublicDisplayName(profileName);
-  }, [urlIsClient, profileName, t]);
-
-  // Check user login status (client-side only)
-  useEffect(() => {
-    if (!isClient) return; // Skip during SSR
-    
-    const checkLogin = async () => {
-      try {
-        const token = await checkLoginWithoutRedirect();
-        if (token) {
-          setIsLoggedIn(true);
-          
-          // Extract username from token using SSR-safe decoder
-          const { username } = decodeTokenSafely(token);
-          if (username) {
-            setCognitoUsername(username);
-          }
-        }
-      } catch (err) {
-        console.error("Error checking login:", err);
-      }
-    };
-    
-    checkLogin();
-  }, [isClient]);
-
   // Function to fetch contact position based on public display name
-  const fetchContactPositionBasedOnPublicDisplayName = async (publicDisplayName: string) => {
+  const fetchContactPositionBasedOnPublicDisplayName = useCallback(async (publicDisplayName: string) => {
     setIsLoading(true);
     setError(null);
     
@@ -291,7 +303,7 @@ const PersonaViewer: React.FC = () => {
       
       // Process results
       if (result?.data?.fetchRelations?.items && result.data.fetchRelations.items.length > 0) {
-        const publicDisplayNameItem = result.data.fetchRelations.items[0];
+        const publicDisplayNameItem = result.data.fetchRelations.items[0] as PublicDisplayNameResponse;
         
         // Set owner item ID
         if (publicDisplayNameItem.ownerAccountId) {
@@ -303,9 +315,9 @@ const PersonaViewer: React.FC = () => {
           const folderPositions = publicDisplayNameItem.folderPositionsPage.items;
           
           // Transform data to match the Folder type
-          const parsedFolders: FolderType[] = folderPositions.map((item: any) => {
+          const parsedFolders: FolderType[] = folderPositions.map((item: FolderPosition) => {
             const folder = item.folder;
-            const files = folder?.fileReferencesPage?.items?.map((ref: any) => ref.file) || [];
+            const files = folder?.fileReferencesPage?.items?.map((ref: FileReference) => ref.file) || [];
             
             return {
               folderPositionId: item.id,
@@ -317,7 +329,7 @@ const PersonaViewer: React.FC = () => {
               creatorId: folder.creatorId,
               createdAt: folder.createdAt,
               updatedAt: folder.updatedAt,
-              files: files.filter((f: any) => f && f.dataKey),
+              files: files.filter((f) => f && f.dataKey),
               profileIds: item.profileIds || []
             };
           });
@@ -335,7 +347,44 @@ const PersonaViewer: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [isLoggedIn, t]); // Fixed: Added missing dependencies
+
+  // Extract publicDisplayName from URL on component mount (client-side only)
+  useEffect(() => {
+    if (!urlIsClient || !profileName) {
+      if (urlIsClient && !profileName) {
+        setError(t('No profile name provided'));
+        setIsLoading(false);
+      }
+      return;
+    }
+    
+    fetchContactPositionBasedOnPublicDisplayName(profileName);
+  }, [urlIsClient, profileName, t, fetchContactPositionBasedOnPublicDisplayName]); // Fixed: Added missing dependency
+
+  // Check user login status (client-side only)
+  useEffect(() => {
+    if (!isClient) return; // Skip during SSR
+    
+    const checkLogin = async () => {
+      try {
+        const token = await checkLoginWithoutRedirect();
+        if (token) {
+          setIsLoggedIn(true);
+          
+          // Extract username from token using SSR-safe decoder
+          const { username } = decodeTokenSafely(token);
+          if (username) {
+            setCognitoUsername(username);
+          }
+        }
+      } catch (err) {
+        console.error("Error checking login:", err);
+      }
+    };
+    
+    checkLogin();
+  }, [isClient]);
   
   // Filter folders based on search query
   const filteredFolders = useMemo(() => {

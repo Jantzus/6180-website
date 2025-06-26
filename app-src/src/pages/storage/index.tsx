@@ -34,7 +34,9 @@ const useDocumentAPI = () => {
 
   useEffect(() => {
     setIsClient(true);
-    setDocumentObj(document);
+    if (typeof document !== 'undefined') {
+      setDocumentObj(document);
+    }
   }, []);
 
   const setDocumentLang = useCallback((lang: string) => {
@@ -61,7 +63,7 @@ const useLocalStorage = () => {
   }, []);
 
   const setItem = useCallback((key: string, value: string): void => {
-    if (!isClient) return;
+    if (!isClient || typeof localStorage === 'undefined') return;
     try {
       localStorage.setItem(key, value);
     } catch {
@@ -71,7 +73,7 @@ const useLocalStorage = () => {
   }, [isClient]);
 
   const getItem = useCallback((key: string): string | null => {
-    if (!isClient) return null;
+    if (!isClient || typeof localStorage === 'undefined') return null;
     try {
       return localStorage.getItem(key);
     } catch {
@@ -192,7 +194,7 @@ function normalizeEmail(input: string): string {
   return trimmed
 }
 
-const StorageLoginPageContent = () => {
+export const StorageLoginPageContent = () => {
   const [email, setEmail] = useState('')
   const [codeSent, setCodeSent] = useState(false)
   const [otpCode, setOtpCode] = useState('')
@@ -206,7 +208,7 @@ const StorageLoginPageContent = () => {
   
   // Use SSR-safe hooks
   const { setDocumentLang, setDocumentDir } = useDocumentAPI();
-  const localStorage = useLocalStorage();
+  const localStorageHook = useLocalStorage();
   const { generateUUID } = useCryptoAPI();
   
   // Refs for input elements
@@ -263,8 +265,10 @@ const StorageLoginPageContent = () => {
 
       try {
         await cognito.send(signUpCommand)
-      } catch (e: any) {
-        if (!e.name?.includes('UsernameExistsException')) {
+      } catch (e: unknown) {
+        // Fix: Properly type the error parameter
+        const error = e as { name?: string }
+        if (!error.name?.includes('UsernameExistsException')) {
           throw e
         }
       }
@@ -312,10 +316,22 @@ const StorageLoginPageContent = () => {
 
       if (!token) throw new Error('No token received')
       
-      // Use SSR-safe localStorage
-      localStorage.setItem('idToken', token)
+      // Use SSR-safe localStorage from hook
+      localStorageHook.setItem('idToken', token)
 
-      const payload = JSON.parse(atob(token.split('.')[1]))
+      // SSR-safe token parsing
+      let payload;
+      try {
+        if (typeof atob !== 'undefined') {
+          payload = JSON.parse(atob(token.split('.')[1]))
+        } else {
+          // Fallback for environments without atob
+          payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString())
+        }
+      } catch {
+        throw new Error('Failed to parse token')
+      }
+
       const username = payload['cognito:username']
       const relationId = `${username}_____Public____Profile`
 
@@ -350,7 +366,7 @@ const StorageLoginPageContent = () => {
       const json = await gqlResponse.json()
       const displayName = json?.data?.batchGetItems?.items?.[0]?.item?.anyDisplayName
       if (displayName) {
-        localStorage.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, displayName)
+        localStorageHook.setItem(LOCAL_STORAGE_KEYS.PUBLIC_USERNAME, displayName)
       }
 
       // Redirect to storage management page after successful login
@@ -486,8 +502,8 @@ const StorageLoginPageContent = () => {
   )
 }
 
-// Wrap StorageLoginPageContent with I18nProvider - following photos.tsx pattern
-const StorageLoginPage = () => {
+// Wrap StorageLoginPageContent with I18nProvider
+export const StorageLoginPage = () => {
   return (
     <I18nProvider>
       <StorageLoginPageContent />
@@ -495,5 +511,10 @@ const StorageLoginPage = () => {
   );
 };
 
-// Render the app - same pattern as working photos.tsx
-ReactDOM.createRoot(document.getElementById('root')!).render(<StorageLoginPage />);
+// SSR-safe rendering
+if (typeof document !== 'undefined') {
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    ReactDOM.createRoot(rootElement).render(<StorageLoginPage />);
+  }
+}

@@ -59,6 +59,16 @@ interface APISubtagResponse {
   points: number;
 }
 
+// Interface for GraphQL error
+interface GraphQLError {
+  message: string;
+  locations?: Array<{
+    line: number;
+    column: number;
+  }>;
+  path?: string[];
+}
+
 // GraphQL queries and mutations
 const FETCH_TAGS_QUERY = `
   query FetchTags($fetchRelationsInput: FetchRelationsInput!) {
@@ -610,8 +620,10 @@ export const useTagsManagement = (
 
       if (result.errors) {
         console.error("GraphQL errors:", result.errors);
-        enhancedLog(`GraphQL errors: ${JSON.stringify(result.errors)}`);
-        setFetchError(`GraphQL errors: ${result.errors.map((e: any) => e.message).join(', ')}`);
+        // FIXED: Use proper type instead of any
+        const errorMessages = (result.errors as GraphQLError[]).map(e => e.message).join(', ');
+        enhancedLog(`GraphQL errors: ${errorMessages}`);
+        setFetchError(`GraphQL errors: ${errorMessages}`);
         return;
       }
 
@@ -1042,7 +1054,7 @@ export const useTagsManagement = (
     if (!hasFetchedTags.current) {
       fetchTags();
     }
-  }, []); // Empty dependency array - only run once
+  }, [fetchTags]); // FIXED: Added missing dependency
 
   // OPTIMIZED: Debounced tag refresh based on applied tags changes
   useEffect(() => {

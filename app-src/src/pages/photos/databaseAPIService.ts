@@ -10,9 +10,82 @@ import { formatTime } from '@/lib/utils';
 import { checkLoginWithoutRedirect } from "@/lib/utils";
 import { RawAPIResponse } from './rawApiTypes';
 
+// Type definitions for API response structure
+interface Subtag {
+  TagType: string;
+  tagTitle: string;
+  subtagTitle: string;
+}
+
+interface Tag {
+  TagType: string;
+  tagTitle: string;
+  subtags?: Subtag[];
+}
+
+interface FileData {
+  id: string;
+  dataKey: string;
+  thumbnailDataKey?: string;
+  durationInSeconds?: number;
+  ownerContactId?: string;
+}
+
+interface FileReference {
+  file: FileData;
+  fileDisplayName?: string;
+  selectedTags?: Tag[];
+}
+
+interface ContactItem {
+  id: string;
+  item: {
+    publicDisplayName: string;
+  };
+}
+
+interface FolderPassword {
+  policy?: string;
+  password?: string;
+}
+
+interface FolderInviteParameters {
+  usingFolderInviteGrantsRightToAddItems?: boolean;
+}
+
+interface FolderData {
+  id: string;
+  albumNanoId?: string;
+  folderName?: string;
+  creatorId?: string;
+  folderDescription?: string;
+  folderPassword?: FolderPassword;
+  folderInviteParameters?: FolderInviteParameters;
+  contactsUsingInvite?: {
+    items: ContactItem[];
+  };
+  fileReferencesPage?: {
+    items: FileReference[];
+  };
+  folderPosition?: {
+    id: string;
+    profileIds?: string[];
+  };
+}
+
+interface APIResponseData {
+  fetchRelations: {
+    items: FolderData[];
+  };
+}
+
+interface APIResponse {
+  data?: APIResponseData;
+}
+
 // Process data returned from API - DEBUG VERSION (kept for backward compatibility)
 export const processData = (
-  json: any, 
+  json: APIResponse, 
   setFolderId?: (id: string | null) => void
 ): AlbumData => {
   console.log('🔄 processData called with raw JSON:', JSON.stringify(json, null, 2));
@@ -101,7 +174,7 @@ export const processData = (
     // Build contacts map
     const contactItems = items[0]?.contactsUsingInvite?.items || [];
     console.log('👥 Processing contacts:', contactItems.length);
-    contactItems.forEach((contact: any, index: number) => {
+    contactItems.forEach((contact: ContactItem, index: number) => {
       console.log(`👤 Contact ${index}:`, JSON.stringify(contact, null, 2));
       if (contact?.id && contact?.item?.publicDisplayName) {
         contacts[contact.id] = contact.item.publicDisplayName;
@@ -113,7 +186,7 @@ export const processData = (
     const fileReferences = folder?.fileReferencesPage?.items || [];
     console.log('📸 Processing file references:', fileReferences.length);
     
-    fileReferences.forEach((ref: any, index: number) => {
+    fileReferences.forEach((ref: FileReference, index: number) => {
       console.log(`📄 File reference ${index}:`, JSON.stringify(ref, null, 2));
       
       const file = ref?.file;
@@ -139,10 +212,10 @@ export const processData = (
       // ✅ CRITICAL FIX: Parse selectedTags from the reference
       console.log(`🔍 Raw selectedTags for file ${id}:`, ref.selectedTags);
       
-      const selectedTags = ref.selectedTags?.map((tag: any) => ({
+      const selectedTags = ref.selectedTags?.map((tag: Tag) => ({
         TagType: tag.TagType,
         tagTitle: tag.tagTitle,
-        subtags: tag.subtags?.map((subtag: any) => ({
+        subtags: tag.subtags?.map((subtag: Subtag) => ({
           TagType: subtag.TagType,
           tagTitle: subtag.tagTitle,
           subtagTitle: subtag.subtagTitle
@@ -262,7 +335,7 @@ export const fetchFolderRawAPIResponse = async (
   
   try {
     // Create the input for the query format
-    let fetchRelationsInput: any;
+    let fetchRelationsInput: Record<string, unknown>;
     
     if (searchType === 'targetItemIdentifier') {
       fetchRelationsInput = {
@@ -330,7 +403,7 @@ export const fetchFolderRawAPIResponse = async (
     
     // Wait for the public API to respond first
     console.log('⏳ Waiting for public API response...');
-    let publicResult = await publicApiPromise;
+    const publicResult = await publicApiPromise;
     console.log('📥 Public API raw response:', JSON.stringify(publicResult, null, 2));
     
     let finalResult = publicResult;

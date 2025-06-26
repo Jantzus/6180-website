@@ -1,4 +1,4 @@
-import{d as r,q as Be,u as se,r as x,j as e,b as me,g as oe,a as te,o as le,R as Ee,I as Re,L as fe,p as Ie}from"./utils-2qV3otm0.js";import{u as ze,U as De}from"./UploadProgress-r2mYk3JH.js";import{G as Me,A as Le}from"./styled-components-UVQg2Kys.js";import{A as Ge}from"./AlbumList-C8Ihcaw3.js";import{L as Pe}from"./LazyImage-Ddix0i_I.js";import{R as Oe}from"./DownloadModal-Zdba_rU8.js";import{a as _e,b as Ue,c as L,d as We,h as Ye,e as Ne,s as he,f as Ke,i as be}from"./folderStructureUtils-BmdkosLC.js";import{u as Ve}from"./useFolderManagement-CkeWpL4i.js";import"./types-CyPfckSQ.js";const He=!1,s={colors:{primary:"#007bff",primaryDark:"#0056b3",danger:"#e53935",white:"#fff",grayLight:"#e0e0e0",borderLight:"#eaeaea",text:{primary:"#333",secondary:"#666",white:"#fff"}},spacing:{sm:"8px",md:"16px"},borderRadius:{small:"4px",medium:"8px",large:"16px",circle:"50%"},fontSizes:{xs:"12px",sm:"14px",lg:"18px",xl:"20px"},boxShadow:{primaryBtn:"0 4px 12px rgba(0, 123, 255, 0.2)",xl:"0 8px 24px rgba(0,0,0,0.2)"},breakpoints:{mobile:"767px"}},ce=t=>Be`
+import{d as r,q as Be,u as se,r as x,j as e,b as me,g as oe,a as te,o as le,R as Ee,I as Re,L as fe,p as Ie}from"./utils-2qV3otm0.js";import{u as ze,U as De}from"./UploadProgress-r2mYk3JH.js";import{G as Me,A as Le}from"./styled-components-CgKC-1ev.js";import{A as Ge}from"./AlbumList-DT9gls32.js";import{L as Pe}from"./LazyImage-Ddix0i_I.js";import{R as Oe}from"./DownloadModal-Zdba_rU8.js";import{a as _e,b as Ue,c as L,d as We,h as Ye,e as Ne,s as he,f as Ke,i as be}from"./folderStructureUtils-BmdkosLC.js";import{u as Ve}from"./useFolderManagement-CkeWpL4i.js";import"./types-CyPfckSQ.js";const He=!1,s={colors:{primary:"#007bff",primaryDark:"#0056b3",danger:"#e53935",white:"#fff",grayLight:"#e0e0e0",borderLight:"#eaeaea",text:{primary:"#333",secondary:"#666",white:"#fff"}},spacing:{sm:"8px",md:"16px"},borderRadius:{small:"4px",medium:"8px",large:"16px",circle:"50%"},fontSizes:{xs:"12px",sm:"14px",lg:"18px",xl:"20px"},boxShadow:{primaryBtn:"0 4px 12px rgba(0, 123, 255, 0.2)",xl:"0 8px 24px rgba(0,0,0,0.2)"},breakpoints:{mobile:"767px"}},ce=t=>Be`
   @media (max-width: ${s.breakpoints.mobile}) {
     ${t}
   }
@@ -144,7 +144,7 @@ import{d as r,q as Be,u as se,r as x,j as e,b as me,g as oe,a as te,o as le,R as
   display: ${t=>t.$isMobile?"flex":"none"};
   align-items: center;
   justify-content: center;
-  padding: 8px 12px;
+  padding: 10px 12px;
   background-color: ${s.colors.primary};
   color: ${s.colors.text.white};
   border: none;
@@ -167,7 +167,7 @@ import{d as r,q as Be,u as se,r as x,j as e,b as me,g as oe,a as te,o as le,R as
   }
 
   @media (max-width: 480px) {
-    padding: 6px 10px;
+    padding: 10px 10px;
     font-size: ${s.fontSizes.xs};
   }
 `,lt=r.button`

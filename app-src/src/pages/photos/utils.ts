@@ -6,6 +6,13 @@ import {
   generateInviteLink
 } from "@/lib/utils";
 
+// Type for GraphQL response items
+interface FolderPositionItem {
+  id: string;
+  profileIds: string[];
+  folderPositionId?: string;
+}
+
 // SSR-safe DOM element creation helper
 const createLoadingModal = (t: (key: string) => string) => {
   if (typeof document === 'undefined') return null;
@@ -660,8 +667,8 @@ export const useShareActions = (albumData: AlbumData | null, folderId: string | 
       }
       
       // Update local state
-      const updatedItems = json?.data?.changeFiles?.items || [];
-      const updatedItem = updatedItems.find((item: any) => item.folderPositionId === albumData?.folderPositionId);
+      const updatedItems: FolderPositionItem[] = json?.data?.changeFiles?.items || [];
+      const updatedItem = updatedItems.find((item: FolderPositionItem) => item.folderPositionId === albumData?.folderPositionId);
       
       if (updatedItem && updatedItem.profileIds) {
         setLocalProfileIds(updatedItem.profileIds);
