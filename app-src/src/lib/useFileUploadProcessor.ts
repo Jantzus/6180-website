@@ -68,7 +68,7 @@ export const useFileUploadProcessor = (
     };
     
     warmUpCredentials();
-  }, []); // Empty dependency array - run once on mount
+  }, [log]); // Added log to dependency array
   
   // SIMPLIFIED: Update progress tracker when selected photos change - no complex intervals
   useEffect(() => {
@@ -137,7 +137,7 @@ export const useFileUploadProcessor = (
         clearTimeout(navigationTimeoutRef.current);
       }
     };
-  }, [fileProcessingComplete, selectedPhotos.length, currentFolderId, navigateAfterUpload, log, disableAutoNavigation, isOnSaveAlbumPage]);
+  }, [fileProcessingComplete, selectedPhotos, currentFolderId, navigateAfterUpload, log, disableAutoNavigation, isOnSaveAlbumPage]);
 
   // MEMOIZED: Function to clear upload data
   const clearUploadData = useCallback(() => {
