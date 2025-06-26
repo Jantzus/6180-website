@@ -7,6 +7,7 @@ import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
 import { redirectTo, generateUrl } from "@/lib/utils";
 import { prewarmCredentials } from "@/lib/s3";
 import { LOCAL_STORAGE_KEYS } from "@/lib/config";
+import { FolderType } from "@/lib/types";
 
 // Import components
 import {
@@ -39,6 +40,16 @@ import { useFolderManagement } from "@/lib/useFolderManagement";
 // Constants
 const FREE_TIER_STORAGE_LIMIT_GB = 10;
 const MAX_PREVIEW_IMAGES = 3;
+
+// Types
+interface SubscriptionInfo {
+  intNumberOfSubscriptions: number;
+  bytesOfDataUsed: number;
+}
+
+interface FileInputAttributes extends React.InputHTMLAttributes<HTMLInputElement> {
+  webkitdirectory?: string;
+}
 
 // FIXED: Single file filtering function with minimal logging
 const isValidMediaFile = (file: File): boolean => {
@@ -104,7 +115,7 @@ const EnhancedFileInput = React.forwardRef<HTMLInputElement, {
         type="file"
         accept="image/*,video/*"
         multiple
-        {...({ webkitdirectory: "" } as any)}
+        {...({ webkitdirectory: "" } as FileInputAttributes)}
         onChange={onFolderSelection}
         style={{ display: 'none' }}
       />
@@ -250,14 +261,14 @@ const formatGB = (gb: number): string => {
 };
 
 // Memoized helper function to get albums that should be marked for deletion
-const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedBytesUsed: number): any[] => {
+const getAlbumsToDelete = (folders: FolderType[], subscriptionInfo: SubscriptionInfo | null, calculatedBytesUsed: number): FolderType[] => {
   if (!subscriptionInfo) {
     return [];
   }
 
   const { intNumberOfSubscriptions } = subscriptionInfo;
   
-  let albumsToDelete: any[] = [];
+  let albumsToDelete: FolderType[] = [];
   
   if (intNumberOfSubscriptions === 0) {
     const storageLimit = FREE_TIER_STORAGE_LIMIT_GB * 1024 * 1024 * 1024;
@@ -282,12 +293,12 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
       });
       
       let bytesToRemove = calculatedBytesUsed - storageLimit;
-      let albumsForStorageDeletion: any[] = [];
+      const albumsForStorageDeletion: FolderType[] = [];
       
       for (const folder of sortedByOldest) {
         if (bytesToRemove <= 0) break;
         
-        const albumBytes = folder.files.reduce((total: number, file: any) => {
+        const albumBytes = folder.files.reduce((total: number, file: FolderType['files'][0]) => {
           return total + (file.dataInBytes || 0);
         }, 0);
         
@@ -317,7 +328,7 @@ const getAlbumsToDelete = (folders: any[], subscriptionInfo: any, calculatedByte
       for (const folder of sortedByOldest) {
         if (bytesToRemove <= 0) break;
         
-        const albumBytes = folder.files.reduce((total: number, file: any) => {
+        const albumBytes = folder.files.reduce((total: number, file: FolderType['files'][0]) => {
           return total + (file.dataInBytes || 0);
         }, 0);
         
@@ -335,7 +346,7 @@ const AlbumDeletionPreview = React.memo(({
   albumsToDelete, 
   isRTL 
 }: { 
-  albumsToDelete: any[]; 
+  albumsToDelete: FolderType[]; 
   isRTL: boolean; 
 }) => {
 
@@ -423,7 +434,7 @@ const AlbumDeletionPreview = React.memo(({
                 maxWidth: '100%',
                 flexDirection: isRTL ? "row-reverse" : "row"
               }}>
-                {folder.files.slice(0, MAX_PREVIEW_IMAGES).map((file: any, i: number) => (
+                {folder.files.slice(0, MAX_PREVIEW_IMAGES).map((file: FolderType['files'][0], i: number) => (
                   <div key={i} style={{
                     width: '160px',
                     height: '100px',
@@ -512,9 +523,9 @@ const StorageMessage = React.memo(({
   t, 
   isRTL 
 }: { 
-  subscriptionInfo: { intNumberOfSubscriptions: number; bytesOfDataUsed: number; } | null; 
+  subscriptionInfo: SubscriptionInfo | null; 
   albumCount: number; 
-  folders: any[];
+  folders: FolderType[];
   calculatedBytesUsed: number;
   t: (key: string) => string; 
   isRTL: boolean; 
@@ -795,7 +806,7 @@ const MyAlbums = () => {
         
         // Proceed with normal file upload flow
         try {
-          await fileUploadProcessor.handleFileSelection(syntheticEvent as any, cognitoUsername);
+          await fileUploadProcessor.handleFileSelection(syntheticEvent as React.ChangeEvent<HTMLInputElement>, cognitoUsername);
         } catch (error) {
           console.error("Error in file upload:", error);
           clearFolderStructureMetadata();
@@ -815,7 +826,7 @@ const MyAlbums = () => {
       
       // Proceed with normal single album flow
       try {
-        await fileUploadProcessor.handleFileSelection(syntheticEvent as any, cognitoUsername);
+        await fileUploadProcessor.handleFileSelection(syntheticEvent as React.ChangeEvent<HTMLInputElement>, cognitoUsername);
       } catch (error) {
         console.error("Error in single album file selection:", error);
       }
@@ -859,7 +870,7 @@ const MyAlbums = () => {
           value: fileInput
         });
         
-        fileUploadProcessor.handleFileSelection(syntheticEvent as any, cognitoUsername);
+        fileUploadProcessor.handleFileSelection(syntheticEvent as unknown as React.ChangeEvent<HTMLInputElement>, cognitoUsername);
       } catch (error) {
         console.error("Error in album creation flow:", error);
         clearFolderStructureMetadata();
@@ -1037,7 +1048,7 @@ const MyAlbums = () => {
           type="file"
           accept="image/*,video/*"
           multiple
-          webkitdirectory=""
+          {...({ webkitdirectory: "" } as FileInputAttributes)}
           onChange={handleFolderSelection}
           style={{ display: 'none' }}
         />

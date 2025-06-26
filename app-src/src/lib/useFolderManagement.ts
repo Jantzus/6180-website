@@ -10,6 +10,92 @@ interface SubscriptionInfo {
   SubscriptionStatus?: string;
 }
 
+// GraphQL response type interfaces
+interface GraphQLFile {
+  dataInBytes?: number;
+  dataKey: string;
+  thumbnailDataKey?: string;
+  durationInSeconds?: number;
+}
+
+interface GraphQLTag {
+  TagType: string;
+  tagTitle: string;
+  subtags?: GraphQLSubtag[];
+}
+
+interface GraphQLSubtag {
+  TagType: string;
+  tagTitle: string;
+  subtagTitle: string;
+}
+
+interface GraphQLFileReference {
+  id: string;
+  fileDisplayName?: string;
+  selectedTags?: GraphQLTag[];
+  file: GraphQLFile;
+}
+
+interface GraphQLContact {
+  id: string;
+  item?: {
+    publicDisplayName?: string;
+  };
+}
+
+interface GraphQLFolder {
+  id: string;
+  albumNanoId?: string;
+  folderName?: string;
+  folderDescription?: string;
+  folderPassword?: {
+    password?: string;
+    policy?: string;
+  };
+  creatorId?: string;
+  createdAt?: number;
+  updatedAt?: number;
+  fileReferencesPage?: {
+    items?: GraphQLFileReference[];
+  };
+  contactsUsingInvite?: {
+    items?: GraphQLContact[];
+  };
+  folderInviteParameters?: {
+    usingFolderInviteGrantsRightToAddItems?: boolean;
+  };
+}
+
+interface GraphQLFolderPosition {
+  id: string;
+  profileIds?: string[];
+  folder: GraphQLFolder;
+}
+
+interface GraphQLFetchRelationsResponse {
+  data?: {
+    fetchRelations?: {
+      items?: GraphQLFolderPosition[];
+    };
+  };
+  errors?: Array<{ message: string }>;
+}
+
+interface GraphQLSubscriptionResponse {
+  data?: {
+    changeMySubscription?: {
+      id: string;
+      createdAt: number;
+      updatedAt: number;
+      stripeCustomerId: string;
+      SubscriptionStatus?: string;
+      intNumberOfSubscriptions: number;
+    };
+  };
+  errors?: Array<{ message: string }>;
+}
+
 // Helper function to calculate total bytes used from all folders
 const calculateTotalBytesUsed = (folders: FolderType[]): number => {
   return folders.reduce((total, folder) => {
@@ -201,7 +287,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
         body: JSON.stringify({ query: foldersQuery, variables }),
       });
 
-      const foldersJson = await foldersRes.json();
+      const foldersJson: GraphQLFetchRelationsResponse = await foldersRes.json();
 
       if (foldersJson.errors) {
         console.error("Folders GraphQL errors:", foldersJson.errors);
@@ -211,29 +297,29 @@ export const useFolderManagement = (log: (message: string) => void) => {
 
       // Process folders data
       const items = foldersJson?.data?.fetchRelations?.items || [];
-      const validItems = items.filter((item: any) => 
+      const validItems = items.filter((item: GraphQLFolderPosition) => 
         item && 
         item.id && 
         item.folder && 
         item.folder.id
       );
 
-      const parsed: FolderType[] = validItems.map((item: any) => {
+      const parsed: FolderType[] = validItems.map((item: GraphQLFolderPosition) => {
         const folder = item.folder;
         
         // UPDATED: Process fileReferencesPage items to include selectedTags
         const fileReferences = folder?.fileReferencesPage?.items || [];
         
         const files = fileReferences
-          .filter((ref: any) => ref && ref.file && ref.file.dataKey)
-          .map((ref: any) => {
+          .filter((ref: GraphQLFileReference) => ref && ref.file && ref.file.dataKey)
+          .map((ref: GraphQLFileReference) => {
             const file = ref.file;
             
             // Parse selectedTags from the reference
-            const selectedTags: SelectedTag[] = ref.selectedTags?.map((tag: any) => ({
+            const selectedTags: SelectedTag[] = ref.selectedTags?.map((tag: GraphQLTag) => ({
               TagType: tag.TagType,
               tagTitle: tag.tagTitle,
-              subtags: tag.subtags?.map((subtag: any) => ({
+              subtags: tag.subtags?.map((subtag: GraphQLSubtag) => ({
                 TagType: subtag.TagType,
                 tagTitle: subtag.tagTitle,
                 subtagTitle: subtag.subtagTitle
@@ -242,16 +328,17 @@ export const useFolderManagement = (log: (message: string) => void) => {
             
             return {
               dataKey: file.dataKey,
-              thumbnailDataKey: file.thumbnailDataKey || null,
-              durationInSeconds: file.durationInSeconds || null,
+              thumbnailDataKey: file.thumbnailDataKey || undefined,
+              durationInSeconds: file.durationInSeconds || undefined,
               dataInBytes: file.dataInBytes || 0,
-              selectedTags: selectedTags
+              selectedTags: selectedTags,
+              fileDisplayName: ref.fileDisplayName || undefined
             };
           });
       
         const contacts: Record<string, string> = {};
         if (folder?.contactsUsingInvite?.items) {
-          folder.contactsUsingInvite.items.forEach((contact: any) => {
+          folder.contactsUsingInvite.items.forEach((contact: GraphQLContact) => {
             if (contact?.id && contact?.item?.publicDisplayName) {
               contacts[contact.id] = contact.item.publicDisplayName;
             }
@@ -322,7 +409,7 @@ export const useFolderManagement = (log: (message: string) => void) => {
         body: JSON.stringify({ query: subscriptionQuery }),
       });
 
-      const subscriptionJson = await subscriptionRes.json();
+      const subscriptionJson: GraphQLSubscriptionResponse = await subscriptionRes.json();
 
       if (subscriptionJson.errors) {
         console.error("Subscription GraphQL errors:", subscriptionJson.errors);
