@@ -1,7 +1,13 @@
 import styled, { css } from "styled-components";
 import { 
   theme,
-  DirectionalProps
+  HEADER_HEIGHT,
+  HEADER_HEIGHT_MOBILE,
+  DirectionalProps,
+  BadgeProps,
+  MessageProps,
+  ModalProps,
+  StateProps
 } from './theme'
 import { 
   Button,
@@ -9,9 +15,6 @@ import {
 import { overlayStyle } from '@/styles/globalStyles'
 
 // ========== Header Height Constants ==========
-// Define header height as a constant to keep it consistent across components
-const HEADER_HEIGHT = '64px'; // Increased from 60px for better slogan visibility
-const HEADER_HEIGHT_MOBILE = '60px'; // Increased from 56px
 
 export const directionalStyles = (isRTL: boolean) => css`
   direction: ${isRTL ? 'rtl' : 'ltr'};
@@ -349,9 +352,6 @@ export const DescriptionText = styled.p`
 `;
 
 // Message styles
-interface MessageProps {
-  $type?: 'error' | 'loading' | 'info';
-}
 
 export const Message = styled.div<MessageProps>`
   text-align: center;
@@ -368,7 +368,6 @@ export const Message = styled.div<MessageProps>`
     }
   }};
 `;
-
 
 export const AlbumDescription = styled.div<DirectionalProps>`
   margin-top: ${theme.spacing.sm};
@@ -436,10 +435,6 @@ export const LoadingIndicator = styled.div`
 `;
 
 // ========== Modal & Dialog Components ==========
-
-interface ModalProps {
-  $zIndex?: number;
-}
 
 export const Modal = styled.div<ModalProps>`
   position: fixed;
@@ -529,10 +524,6 @@ export const SelectionBanner = styled.div`
 `;
 
 // Badge styles with softer delete button
-interface BadgeProps {
-  $position: 'bottomLeft' | 'bottomRight';
-  $light?: boolean;
-}
 
 export const Badge = styled.div<BadgeProps>`
   position: absolute;
@@ -628,9 +619,6 @@ export const LegalLinkFooterButton = styled.a<{ $isHovered?: boolean }>`
 `;
 
 // State components
-interface StateProps {
-  $type?: 'empty' | 'error';
-}
 
 export const State = styled.div<StateProps>`
   text-align: center; 

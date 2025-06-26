@@ -34,12 +34,43 @@ export const Button = styled.button<ButtonProps>`
   line-height: 1.4;
   height: 40px; /* Fixed height to ensure all buttons are exactly the same height */
   
+  /* Fix for mobile hover state sticking */
   &:hover {
     background-color: ${props => {
       if (props.$primary) return theme.colors.primaryDark;
       if (props.$passwordSet) return '#333333';
       return theme.colors.grayLighter;
     }};
+  }
+  
+  /* Remove hover effects on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    &:hover {
+      background-color: ${props => {
+        if (props.$primary) return props.$isHovered ? theme.colors.primaryDark : theme.colors.primary;
+        if (props.$passwordSet) return theme.colors.black;
+        return 'transparent';
+      }};
+    }
+  }
+  
+  /* Ensure active/focus states don't stick on mobile */
+  &:active,
+  &:focus {
+    outline: none;
+  }
+  
+  /* On touch devices, only show feedback during actual press */
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      background-color: ${props => {
+        if (props.$primary) return theme.colors.primaryDark;
+        if (props.$passwordSet) return '#333333';
+        return theme.colors.grayLighter;
+      }};
+      transform: scale(0.98);
+      transition: all 0.1s ease;
+    }
   }
 `;
 
@@ -56,6 +87,20 @@ export const BackButton = styled.button`
   &:hover {
     background-color: ${theme.colors.primary};
     color: ${theme.colors.white};
+  }
+  
+  /* Remove hover effects on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    &:hover {
+      background: transparent;
+      color: ${theme.colors.primary};
+    }
+    
+    &:active {
+      background-color: ${theme.colors.primary};
+      color: ${theme.colors.white};
+      transform: scale(0.98);
+    }
   }
 `;
 
@@ -98,6 +143,17 @@ export const DropdownMenuChoice = styled(Button)`
   
   &:last-of-type {
     border-bottom: none;
+  }
+  
+  /* Remove hover effects on touch devices for dropdown items too */
+  @media (hover: none) and (pointer: coarse) {
+    &:hover {
+      background: transparent;
+    }
+    
+    &:active {
+      background-color: ${theme.colors.grayLighter};
+    }
   }
 `;
 

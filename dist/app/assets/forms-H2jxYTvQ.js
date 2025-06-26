@@ -1,4 +1,4 @@
-import{t as o,d as t,bo as e}from"./layout-CDsPc4Yx.js";const i=t.div`
+import{t as o,d as t,bo as e}from"./layout-D_Ibv38s.js";const i=t.div`
   /* Enhanced: Use consistent grid spacing */
   margin-bottom: ${o.spacing.lg};
 `,s=t.label`

@@ -19,7 +19,7 @@ const FullscreenContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #000000; /* Solid black instead of rgba(0, 0, 0, 0.9) */
   z-index: 10000; /* Always above header (9999) */
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ const CloseButton = styled.button`
   }
 `;
 
-// Updated MediaContainer with proper height calculation
+// Updated MediaContainer with proper height calculation and consistent background
 export const MediaContainer = styled.div`
   flex: 1;
   display: flex;
@@ -169,8 +169,6 @@ const ZoomIndicator = styled.div<{ $visible: boolean }>`
   z-index: 5;
   pointer-events: none;
 `;
-
-
 
 export interface FullscreenMediaViewerProps {
   item: MediaItem;
@@ -460,20 +458,24 @@ export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({
         </CloseButton>
         
         <NavButtonsContainer>
-          <Button 
-            onClick={hasPrev ? onPrev : undefined}
-            disabled={!hasPrev || scale > 1}
-            $isDisabled={!hasPrev || scale > 1}
-          >
-            ←
-          </Button>
-          <Button 
-            onClick={hasNext ? onNext : undefined}
-            disabled={!hasNext || scale > 1}
-            $isDisabled={!hasNext || scale > 1}
-          >
-            →
-          </Button>
+          {hasPrev && (
+            <Button 
+              onClick={onPrev}
+              disabled={scale > 1}
+              $isDisabled={scale > 1}
+            >
+              ←
+            </Button>
+          )}
+          {hasNext && (
+            <Button 
+              onClick={onNext}
+              disabled={scale > 1}
+              $isDisabled={scale > 1}
+            >
+              →
+            </Button>
+          )}
         </NavButtonsContainer>
       </Header>
       
