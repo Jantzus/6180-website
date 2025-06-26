@@ -1,9 +1,7 @@
 import React from "react";
 import { AlbumData, PasswordPolicyEnum } from "@/lib/types";
 // Import styled components - removed Header and HeaderContent since buttons are now standalone
-import { 
-  Button
-} from "@/styles/styled-components";
+import { Button } from '@/styles/components/buttons'
 
 // Album Header Component - Now only handles password entry functionality
 export const AlbumHeader: React.FC<{

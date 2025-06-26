@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { 
-  LazyImageContainer, 
-  Image as StyledImage, 
   LoadingPlaceholder,
   Overlay,
   WatermarkText
 } from "@/styles/styled-components";
+import { 
+  LazyImageContainer, 
+  Image as StyledImage, 
+} from "@/styles/components/media";
 import { PhotoPageLazyImageProps } from "@/lib/types";
 
 // LazyImage component with watermark support

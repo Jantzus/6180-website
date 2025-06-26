@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { StyledLogoutLink } from "@/styles/styled-components"
 import { redirectTo } from "@/lib/utils";
+import styled from 'styled-components'
+import { theme } from "@/styles/theme";
 
 type LogoutButtonProps = {
   t: (key: string) => string;
 };
+
+const StyledLogoutLink = styled.a`
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.text.secondary};
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: ${theme.colors.text.primary};
+  }
+`;
 
 // SSR-safe localStorage utilities
 const useSSRSafeLocalStorage = () => {

@@ -17,14 +17,19 @@ import {
   GlobalSettingsMenu 
 } from "./GlobalSettingsMenu";
 import {
-  GlobalStyle,
   FixedHeader,
   FixedHeaderContent,
-  Body,
-  Button,
-  HeaderControlLabel,
-  HeaderControlSelect
 } from "@/styles/styled-components";
+import { 
+  Body, 
+} from "@/styles/components/layout";
+import { 
+  BackButton,
+  Button,
+} from "@/styles/components/buttons";
+
+import { GlobalStyle } from "@/styles/globalStyles";
+import { theme } from "@/styles/theme";
 import styled from 'styled-components';
 import { GlobalSettings, AppliedTag } from "./types/album-types";
 import { FileReferenceInput } from "./types/album-types";
@@ -35,34 +40,43 @@ import {
   splitArrayIntoChunks
 } from "./utils/album.utils";
 
-// ===== THEME =====
-const theme = {
-  colors: {
-    primary: "#007bff",
-    white: "#fff",
-  },
-  spacing: {
-    md: "16px",
-  },
-  borderRadius: {
-    medium: "8px",
-  }
-};
 
-// ===== STYLED COMPONENTS =====
-const BackButton = styled.button`
-  background: transparent;
-  border: 1px solid ${theme.colors.primary};
-  color: ${theme.colors.primary};
-  padding: 8px 16px;
+const HeaderControlLabel = styled.span`
+  font-size: ${theme.fontSizes.sm}; // 14px to match other header elements
+  color: ${theme.colors.text.secondary}; // Subtle gray like other controls
+  font-weight: 500;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+`;
+
+const HeaderControlSelect = styled.select`
+  padding: 6px 12px;
   border-radius: ${theme.borderRadius.medium};
+  border: 1px solid ${theme.colors.borderLight};
+  background-color: ${theme.colors.white};
+  font-size: ${theme.fontSizes.sm}; // 14px to match label
   cursor: pointer;
-  font-size: 14px;
+  box-shadow: ${theme.boxShadow.sm};
+  min-width: 60px;
   transition: all 0.2s ease;
-
+  color: ${theme.colors.text.primary};
+  
   &:hover {
-    background-color: ${theme.colors.primary};
-    color: ${theme.colors.white};
+    border-color: ${theme.colors.border};
+    box-shadow: ${theme.boxShadow.md};
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: ${theme.colors.primary};
+    box-shadow: ${theme.boxShadow.focusGlow};
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: ${theme.colors.grayLighter};
   }
 `;
 

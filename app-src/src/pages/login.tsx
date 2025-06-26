@@ -13,42 +13,32 @@ import { getLanguageDirection } from '@/lib/i18n/translations';
 import { redirectTo, generateUrl } from "@/lib/utils";
 import styled from 'styled-components'
 import {
-  GlobalStyle,
-  AppContainer,
-  Button,
   LegalLinksFooter,
   LegalLinkFooterButton,
-  Card,
-  Message
+  Message,
 } from "@/styles/styled-components";
+import {
+  AppContainer
+} from "@/styles/components/layout";
+
+import { Button } from '@/styles/components/buttons'
+import { GlobalStyle } from "@/styles/globalStyles";
+
+import {
+  OtpInput,
+  InfoText,
+  ResendWrapper,
+  ResendButton,
+  LoginCard,
+  LoginHeader,
+  LogoImage,
+  ContentWrapper
+} from "@/styles/loginStyles";
+
+
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
 
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION })
-
-// Additional styled components specific to login page
-const LoginCard = styled(Card)`
-  max-width: 400px;
-  width: 100%;
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  text-align: center;
-`;
-
-const LoginTitle = styled.h2`
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-`;
-
-const LoginHeader = styled.div`
-  margin-bottom: 24px;
-`;
-
-const LogoImage = styled.img`
-  height: 60px;
-  margin-bottom: 16px;
-`;
 
 const Input = styled.input`
   width: 100%;
@@ -60,44 +50,10 @@ const Input = styled.input`
   box-sizing: border-box;
 `;
 
-const OtpInput = styled(Input)`
-  letter-spacing: 2px;
-  text-align: center;
-`;
-
-const InfoText = styled.p`
-  font-size: 13px;
-  color: #666;
-  margin-top: 16px;
-  text-align: center;
-`;
-
-const ResendWrapper = styled.div`
-  margin-top: 16px;
-  font-size: 14px;
-  color: #666;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-`;
-
-const ResendButton = styled.button`
-  background: none;
-  border: none;
-  color: #007bff;
-  padding: 0;
-  cursor: pointer;
-  font-size: 14px;
-  text-decoration: underline;
-`;
-
-// Container components
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding: 20px;
+const LoginTitle = styled.h2`
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
 `;
 
 const CenteredContent = styled.div`

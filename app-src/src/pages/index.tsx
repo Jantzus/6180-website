@@ -5,18 +5,32 @@ import { useTranslation } from "@/lib/i18n/hooks";
 import { LanguageSelector } from "@/lib/i18n/components";
 import { getLanguageDirection } from '@/lib/i18n/translations';
 import { checkLoginWithRefreshOrRedirectToTarget, checkLoginWithoutRedirect, redirectTo, generateUrl } from "@/lib/utils";
-
+import styled from 'styled-components'
 import {
-  GlobalStyle,
-  AppContainer,
   HeaderContainer,
-  LogoContainer,
-  Button,
   Logo,
-  Headline,
   LegalLinksFooter,
   LegalLinkFooterButton
 } from "@/styles/styled-components";
+import {
+  AppContainer
+} from "@/styles/components/layout";
+import { Button } from '@/styles/components/buttons'
+import { GlobalStyle } from "@/styles/globalStyles";
+import { DirectionalProps } from '@/styles/theme'
+import { theme } from "@/styles/theme";
+
+const Headline = styled.h1`
+  font-size: ${theme.fontSizes.xxl};
+  margin: ${theme.spacing.sm} 0;
+`;
+
+const LogoContainer = styled.div<DirectionalProps>`
+  display: flex;
+  align-items: center;
+  flex-direction: ${props => props.$isRTL ? 'row' : 'row-reverse'};
+  gap: ${theme.spacing.sm};  
+`;
 
 // Main page component
 export const IndexPage: React.FC = () => {

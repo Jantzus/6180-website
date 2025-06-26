@@ -11,9 +11,9 @@ import { FolderType } from "@/lib/types";
 
 // Import components
 import {
-  GlobalStyle,
   AppContainer,
-} from "@/styles/styled-components";
+} from "@/styles/components/layout";
+import { GlobalStyle } from "@/styles/globalStyles";
 import { MyAlbumsHeader } from "./MyAlbumsHeader";
 import { AlbumsFilter } from "./AlbumsFilter";
 import { UploadProgress } from "@/components/UploadProgress";

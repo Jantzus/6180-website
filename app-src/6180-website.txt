@@ -372,7 +372,8 @@
 │   │   │   │   ├── zh-yue.json
 │   │   │   │   ├── zh.json
 │   │   │   │   └── zu.json
-│   │   │   └── translations.ts
+│   │   │   ├── translations.ts
+│   │   │   └── types.ts
 │   │   ├── s3.ts
 │   │   ├── types.ts
 │   │   ├── useFileUploadProcessor.ts
@@ -428,12 +429,40 @@
 │   │   │       └── album.utils.ts
 │   │   ├── storage
 │   │   │   ├── components
+│   │   │   │   ├── CustomGBInput.tsx
+│   │   │   │   ├── PaymentMethodSelector.tsx
+│   │   │   │   ├── PaymentModal.tsx
+│   │   │   │   ├── PlanSelectionGrid.tsx
+│   │   │   │   ├── ProRataDisplay.tsx
+│   │   │   │   ├── StorageUsageCard.tsx
+│   │   │   │   └── styled
+│   │   │   │       └── StorageStyledComponents.tsx
+│   │   │   ├── constants
+│   │   │   │   └── storageConstants.ts
 │   │   │   ├── hooks
+│   │   │   │   ├── useSSRSafeHooks.ts
+│   │   │   │   └── useSubscriptionLogic.ts
 │   │   │   ├── index.tsx
-│   │   │   └── manage.tsx
+│   │   │   ├── manage.tsx
+│   │   │   ├── services
+│   │   │   │   └── StripeService.ts
+│   │   │   ├── StorageManagePage.tsx
+│   │   │   ├── types
+│   │   │   │   └── storageTypes.ts
+│   │   │   └── utils
+│   │   │       └── storageUtils.ts
 │   │   └── TokenLogin.tsx
 │   ├── styles
-│   │   └── styled-components.tsx
+│   │   ├── components
+│   │   │   ├── buttons.tsx
+│   │   │   ├── forms.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── media.tsx
+│   │   ├── globalStyles.ts
+│   │   ├── loginStyles.ts
+│   │   ├── modalStyles.ts
+│   │   ├── theme.ts
+│   │   └── upload-styled-components.tsx
 │   └── vite-env.d.ts
 ├── storage
 │   ├── index.html
@@ -448,4 +477,4 @@
 ├── tsconfig.node.tsbuildinfo
 └── vite.config.ts
 
-27 directories, 422 files
+33 directories, 445 files

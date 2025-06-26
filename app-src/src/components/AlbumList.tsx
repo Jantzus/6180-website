@@ -10,11 +10,11 @@ import { S3_BUCKET_URL, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import { 
   PolicyIndicator, 
   AlbumDescription,
-  FileCount,
   State,
   AlbumDates
 } from "@/styles/styled-components.tsx";
-
+import { DirectionalProps } from '@/styles/theme'
+import { theme } from "@/styles/theme";
 // Helper function to format bytes into human-readable format
 const formatFileSize = (bytes: number): string => {
   if (bytes === 0) return '0 B';
@@ -191,6 +191,18 @@ const DropdownItem = styled.button<{ $isDelete?: boolean; $isRTL?: boolean }>`
     background-color: #f5f5f5;
   }
 `;
+
+
+const FileCount = styled.div<DirectionalProps>`
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.text.lighter};
+  text-align: ${props => props.$isRTL ? "right" : "right"};
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
+  display: flex;
+  justify-content: flex-end;
+`;
+
 
 const GalleryContainer = styled.div`
   width: 100%;

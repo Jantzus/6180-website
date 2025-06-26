@@ -13,14 +13,26 @@ import { getLanguageDirection } from '@/lib/i18n';
 import { redirectTo, generateUrl } from "@/lib/utils";
 import styled from 'styled-components'
 import {
-  GlobalStyle,
-  AppContainer,
-  Button,
   LegalLinksFooter,
   LegalLinkFooterButton,
-  Card,
-  Message
+  Message,
+  Input
 } from "@/styles/styled-components";
+import {
+  AppContainer,
+  Card
+} from "@/styles/components/layout";
+import { 
+  Button,
+} from "@/styles/components/buttons";
+import { GlobalStyle } from "@/styles/globalStyles";
+import {
+  OtpInput,
+  InfoText,
+  ResendWrapper,
+  ResendButton,
+  ContentWrapper
+} from "@/styles/loginStyles";
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
 
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION })
@@ -125,56 +137,6 @@ const LoginHeader = styled.div`
 const LogoImage = styled.img`
   height: 60px;
   margin-bottom: 16px;
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  box-sizing: border-box;
-`;
-
-const OtpInput = styled(Input)`
-  letter-spacing: 2px;
-  text-align: center;
-`;
-
-const InfoText = styled.p`
-  font-size: 13px;
-  color: #666;
-  margin-top: 16px;
-  text-align: center;
-`;
-
-const ResendWrapper = styled.div`
-  margin-top: 16px;
-  font-size: 14px;
-  color: #666;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-`;
-
-const ResendButton = styled.button`
-  background: none;
-  border: none;
-  color: #007bff;
-  padding: 0;
-  cursor: pointer;
-  font-size: 14px;
-  text-decoration: underline;
-`;
-
-// Container components
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding: 20px;
 `;
 
 const CenteredContent = styled.div`

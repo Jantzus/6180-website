@@ -17,10 +17,12 @@ import { AlbumList } from "@/components/AlbumList";
 import { ProfileHeader } from "@/components/ProfileHeader";
 import { FolderType, FOLDERPOSITION_FIELD } from "@/lib/types";
 import {
-  GlobalStyle,
-  AppContainer,
   State
 } from "@/styles/styled-components.tsx";
+import {
+  AppContainer,
+} from "@/styles/components/layout";
+import { GlobalStyle } from "@/styles/globalStyles";
 
 // Helper function to convert a string to searchable format
 // Similar to Swift's getSearchableString

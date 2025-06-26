@@ -10,6 +10,7 @@ import {
 } from "@/lib/utils";
 import { prewarmCredentials } from "@/lib/s3";
 import { S3_BUCKET_URL } from '@/lib/config';
+import styled from "styled-components";
 
 // Import the new shared hook
 import { useFileUploadProcessor } from "@/lib/useFileUploadProcessor";
@@ -44,21 +45,27 @@ import { MediaTagsFilter } from "@/components/MediaTagsFilter";
 
 // Import styled components with new layout styles
 import { 
-  Body, 
-  MediaContainer,
-  GlobalStyle,
   // Updated brand header components with reduced padding:
   FixedHeader,
   FixedHeaderContent,
-  BrandLink,
-  BrandLogo,
-  BrandLogoContainer,
   // Updated layout+filter control components with improved spacing:
-  LayoutFilterBlock,
-  ControlLabel,
   ColumnsSelector,
-  Button
 } from "@/styles/styled-components";
+
+import {
+  cardStyle
+} from "@/styles/globalStyles";
+import {
+  MediaContainer
+} from "@/styles/components/layout";
+import { 
+  Body, 
+} from "@/styles/components/layout";
+
+import { Button } from '@/styles/components/buttons'
+import { DirectionalProps } from '@/styles/theme'
+import { GlobalStyle } from "@/styles/globalStyles";
+import { theme } from "@/styles/theme";
 
 // Import components
 import { FullscreenMediaViewer } from "./FullscreenMediaViewer";
@@ -360,6 +367,72 @@ const albumDataToFolderType = (albumData: AlbumData): FolderType => {
     updatedAt: null
   };
 };
+
+
+export const BrandLogo = styled.img`
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  /* Image protection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
+`;
+
+const BrandLogoContainer = styled.div<DirectionalProps>`
+  display: flex;
+  align-items: center;
+  flex-direction: ${props => props.$isRTL ? 'row-reverse' : 'row'};
+  gap: ${theme.spacing.sm};
+  margin: 0;
+`;
+
+const BrandLink = styled.a`
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing.sm};
+  color: ${theme.colors.text.secondary};
+  font-size: ${theme.fontSizes.sm};
+  transition: all 0.2s ease;
+  /* Enhanced: Increased vertical padding for better visual centering */
+  padding: ${theme.spacing.md} ${theme.spacing.sm};
+  border-radius: ${theme.borderRadius.small};
+  
+  &:hover {
+    background-color: ${theme.colors.grayLighter};
+    color: ${theme.colors.text.primary};
+  }
+  
+  &:focus {
+    outline: 2px solid ${theme.colors.primary};
+    outline-offset: 2px;
+  }
+`;
+
+const LayoutFilterBlock = styled.div`
+  ${cardStyle} /* Apply white card styling */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px; /* Increased spacing before media grid */
+  padding: ${theme.spacing.lg}; /* Add padding for content inside white box */
+  
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    gap: 16px; /* Slightly more spacing on mobile for better separation */
+    padding: ${theme.spacing.md}; /* Smaller padding on mobile */
+  }
+`;
+
+const ControlLabel = styled.span`
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+`;
 
 // ============================
 // Pure Album UI Component

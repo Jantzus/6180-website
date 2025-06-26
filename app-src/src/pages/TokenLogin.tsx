@@ -7,13 +7,24 @@ import { redirectTo, generateUrl } from "@/lib/utils";
 import { API_ENDPOINT_REDEEM_TOKEN, AWS_PRIVATE_GRAPHQL_ENDPOINT, LOCAL_STORAGE_KEYS } from "@/lib/config";
 import styled from 'styled-components'
 import {
-  GlobalStyle,
-  AppContainer,
-  Button,
   LegalLinksFooter,
   LegalLinkFooterButton,
-  Card
 } from "@/styles/styled-components";
+import {
+  Card
+} from "@/styles/components/layout";
+
+import {
+  AppContainer,
+} from "@/styles/components/layout";
+
+import { Button } from '@/styles/components/buttons'
+import { GlobalStyle } from "@/styles/globalStyles";
+
+import {
+  LogoImage,
+  ContentWrapper
+} from "@/styles/loginStyles";
 
 // Styled components specific to token login page
 const TokenLoginCard = styled(Card)`
@@ -23,11 +34,6 @@ const TokenLoginCard = styled(Card)`
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
   text-align: center;
-`;
-
-const LogoImage = styled.img`
-  height: 60px;
-  margin-bottom: 16px;
 `;
 
 const StatusMessage = styled.div<{ $type: 'loading' | 'success' | 'error' }>`
@@ -68,14 +74,6 @@ const Spinner = styled.div`
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-`;
-
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding: 20px;
 `;
 
 const CenteredContent = styled.div`

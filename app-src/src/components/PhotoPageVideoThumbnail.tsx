@@ -2,12 +2,14 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
 
 import { 
-  ThumbnailWrapper,
-  PlayButton,
   Badge,
   Overlay,
   WatermarkText
 } from "@/styles/styled-components";
+import { 
+  ThumbnailWrapper,
+  PlayButton,
+} from "@/styles/components/media";
 
 import { PhotoPageLazyImage } from "@/components/PhotoPageLazyImage"
 

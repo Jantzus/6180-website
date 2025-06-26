@@ -8,6 +8,7 @@ import { S3_BUCKET_URL } from "@/lib/config";
 import { downloadPhotos } from "@/lib/fileOperations";
 import { MediaTagsFilter } from "../MediaTagsFilter";
 import { LazyImage } from "../LazyImage";
+import { MediaGrid } from "@/styles/components/layout";
 
 // Styled components for the modal
 const ModalOverlay = styled.div`
@@ -257,23 +258,6 @@ const TagsFilterSection = styled.div`
   }
 `;
 
-const MediaGrid = styled.div<{ $columns: string }>`
-  display: grid;
-  grid-template-columns: repeat(${props => props.$columns}, 1fr);
-  gap: 12px;
-  margin-top: 12px;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(${props => Math.min(parseInt(props.$columns), 3)}, 1fr);
-    gap: 8px;
-  }
-  
-  @media (max-width: 480px) {
-    grid-template-columns: repeat(${props => Math.min(parseInt(props.$columns), 2)}, 1fr);
-    gap: 6px;
-  }
-`;
-
 const MediaItemContainer = styled.div<{ $isSelected: boolean }>`
   position: relative;
   aspect-ratio: 1;
@@ -345,6 +329,7 @@ interface DownloadModalProps {
   folder: FolderType;
   onClose: () => void;
 }
+
 
 export const DownloadModal: React.FC<DownloadModalProps> = ({
   isOpen,

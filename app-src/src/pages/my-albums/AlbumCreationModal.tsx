@@ -4,84 +4,28 @@ import styled from 'styled-components';
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 
-// Styled components for the modal
-const ModalOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  padding: 20px;
-`;
+// Import shared modal components
+import {
+  ModalOverlay,
+  StandardModalContent,
+  ModalTitle,
+  ModalDescription,
+  ModalCancelButton
+} from "@/styles/modalStyles";
 
-const ModalContent = styled.div<{ $isRTL: boolean }>`
-  background: white;
-  border-radius: 16px;
-  padding: 32px;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
-  animation: modalFadeIn 0.3s ease-out;
-  
-  @media (max-width: 768px) {
-    padding: 24px;
-    margin: 20px;
-    max-width: calc(100vw - 40px);
-  }
-  
-  @keyframes modalFadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9) translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-`;
+// Import theme for consistency
+import { theme } from "@/styles/theme";
 
-const ModalTitle = styled.h2`
-  margin: 0 0 16px 0;
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-  text-align: center;
-  
-  @media (max-width: 768px) {
-    font-size: 20px;
-  }
-`;
-
-const ModalDescription = styled.p`
-  margin: 0 0 24px 0;
-  font-size: 16px;
-  color: #666;
-  line-height: 1.5;
-  text-align: center;
-  
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
-`;
-
+// Only define AlbumCreationModal-specific styled components
 const FolderPreview = styled.div`
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px 0 24px 0;
+  background: ${theme.colors.background.primary};
+  border: 1px solid ${theme.colors.borderLight};
+  border-radius: ${theme.borderRadius.medium};
+  padding: ${theme.spacing.md};
+  margin: ${theme.spacing.md} 0 ${theme.spacing.lg} 0;
   font-family: monospace;
-  font-size: 14px;
-  color: #495057;
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.text.primary};
   max-height: 150px;
   overflow-y: auto;
 `;
@@ -97,27 +41,27 @@ const FolderLine = styled.div<{ $level: number }>`
 const OptionsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: ${theme.spacing.sm};
+  margin-bottom: ${theme.spacing.lg};
 `;
 
 const OptionButton = styled.button`
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
-  border: 2px solid #e9ecef;
-  border-radius: 12px;
-  background: white;
+  gap: ${theme.spacing.sm};
+  padding: ${theme.spacing.md} ${theme.spacing.lg};
+  border: 2px solid ${theme.colors.borderLight};
+  border-radius: ${theme.borderRadius.medium};
+  background: ${theme.colors.background.card};
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 16px;
+  font-size: ${theme.fontSizes.md};
   text-align: left;
   width: 100%;
 
   &:hover {
-    border-color: #007bff;
-    background: #f8f9ff;
+    border-color: ${theme.colors.primary};
+    background: ${theme.colors.background.highlight};
     transform: translateY(-1px);
   }
 
@@ -125,14 +69,14 @@ const OptionButton = styled.button`
     transform: translateY(0);
   }
   
-  @media (max-width: 768px) {
-    padding: 14px 16px;
-    font-size: 14px;
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: ${theme.spacing.sm} ${theme.spacing.md};
+    font-size: ${theme.fontSizes.sm};
   }
 `;
 
 const OptionIcon = styled.span`
-  font-size: 20px;
+  font-size: ${theme.fontSizes.xl};
   flex-shrink: 0;
 `;
 
@@ -142,31 +86,14 @@ const OptionContent = styled.div`
 
 const OptionTitle = styled.div`
   font-weight: 600;
-  color: #333;
+  color: ${theme.colors.text.primary};
   margin-bottom: 4px;
 `;
 
 const OptionDescription = styled.div`
-  font-size: 14px;
-  color: #666;
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.text.secondary};
   line-height: 1.4;
-`;
-
-const CancelButton = styled.button`
-  width: 100%;
-  padding: 12px 24px;
-  border: 1px solid #6c757d;
-  border-radius: 8px;
-  background: transparent;
-  color: #6c757d;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background: #6c757d;
-    color: white;
-  }
 `;
 
 // Interface for folder structure
@@ -212,7 +139,7 @@ export const AlbumCreationModal: React.FC<AlbumCreationModalProps> = ({
         <FolderLine key={folder.path} $level={level}>
           <span>📁</span>
           <span>{folder.name}</span>
-          <span style={{ color: '#999', fontSize: '12px' }}>
+          <span style={{ color: theme.colors.text.lighter, fontSize: '12px' }}>
             ({folder.files.length === 1 
               ? t('{{count}} file', { count: folder.files.length.toString() })
               : t('{{count}} files', { count: folder.files.length.toString() })
@@ -228,7 +155,7 @@ export const AlbumCreationModal: React.FC<AlbumCreationModalProps> = ({
         <FolderLine key={subfolder.path} $level={level + 1}>
           <span>📁</span>
           <span>{subfolder.name}</span>
-          <span style={{ color: '#999', fontSize: '12px' }}>
+          <span style={{ color: theme.colors.text.lighter, fontSize: '12px' }}>
             ({totalFiles === 1 
               ? t('{{count}} file', { count: totalFiles.toString() })
               : t('{{count}} files', { count: totalFiles.toString() })
@@ -260,7 +187,7 @@ export const AlbumCreationModal: React.FC<AlbumCreationModalProps> = ({
 
   const modalContent = (
     <ModalOverlay onClick={onCancel}>
-      <ModalContent $isRTL={isRTL} onClick={(e) => e.stopPropagation()}>
+      <StandardModalContent $isRTL={isRTL} onClick={(e) => e.stopPropagation()}>
         <ModalTitle>{t('Create Multiple Albums?')}</ModalTitle>
         
         <ModalDescription>
@@ -293,10 +220,10 @@ export const AlbumCreationModal: React.FC<AlbumCreationModalProps> = ({
           </OptionButton>
         </OptionsContainer>
 
-        <CancelButton onClick={onCancel}>
+        <ModalCancelButton onClick={onCancel}>
           {t('Cancel')}
-        </CancelButton>
-      </ModalContent>
+        </ModalCancelButton>
+      </StandardModalContent>
     </ModalOverlay>
   );
 

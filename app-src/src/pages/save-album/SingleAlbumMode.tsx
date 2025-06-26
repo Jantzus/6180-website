@@ -33,50 +33,24 @@ import { UsernamePrompt } from "@/components/UsernamePrompt";
 import { UploadProgress } from "@/components/UploadProgress";
 import { PasswordDialog } from "@/components/PasswordDialog";
 import { DebugLog } from "@/components/DebugLog";
+import styled from "styled-components";
 import {
-  GlobalStyle,
   FixedHeader,
   FixedHeaderContent,
-  Body,
-  ActionButtons,
-  Button
 } from "@/styles/styled-components";
-import styled from 'styled-components';
+import { 
+  Body, 
+} from "@/styles/components/layout";
+import { 
+  BackButton, 
+  Button
+ } from '@/styles/components/buttons'
+import { theme } from "@/styles/theme";
+import { GlobalStyle } from "@/styles/globalStyles";
 import { FileState, ExistingFile, AppliedTag } from "./types/album-types";
 import { AlbumService } from "./services/album.service";
 import { useTagsManagement } from "./useTagsManagement";
 import { TagsDisplay } from "./TagDisplayComponents";
-
-// ===== THEME =====
-const theme = {
-  colors: {
-    primary: "#007bff",
-    white: "#fff",
-  },
-  spacing: {
-    md: "16px",
-  },
-  borderRadius: {
-    medium: "8px",
-  }
-};
-
-// ===== STYLED COMPONENTS =====
-const BackButton = styled.button`
-  background: transparent;
-  border: 1px solid ${theme.colors.primary};
-  color: ${theme.colors.primary};
-  padding: 8px 16px;
-  border-radius: ${theme.borderRadius.medium};
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: ${theme.colors.primary};
-    color: ${theme.colors.white};
-  }
-`;
 
 // Enhanced circuit breaker with cooldown
 const useCircuitBreaker = (componentName: string, maxRenders = 50, timeWindow = 3000) => {
@@ -117,6 +91,17 @@ const useCircuitBreaker = (componentName: string, maxRenders = 50, timeWindow = 
     }
   };
 };
+
+const ActionButtons = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing.xs}; /* Reduced from sm (8px) to xs (4px) */
+  /* Enhanced: Use consistent grid spacing */
+  margin-bottom: ${theme.spacing.lg};
+  width: 100%;
+  align-items: flex-end; /* Align buttons to the right side */
+  padding: 0 ${theme.spacing.sm}; /* Match the header button positioning */
+`;
 
 // Main component with all original functionality restored
 export const SingleAlbumMode: React.FC = () => {

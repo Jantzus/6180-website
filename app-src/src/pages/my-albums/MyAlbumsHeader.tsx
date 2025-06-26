@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n";
 import { redirectTo, generateUrl } from "@/lib/utils";
+import { DirectionalProps } from '@/styles/theme'
 
 // Types
 type MyAlbumsHeaderProps = {
@@ -16,10 +17,6 @@ type MyAlbumsHeaderProps = {
   onSelectFiles?: () => void; // File selection handler
   onSelectFolder?: () => void; // Folder selection handler
 };
-
-interface DirectionalProps {
-  $isRTL: boolean;
-}
 
 // SSR-safe device detection defaults
 const DEFAULT_IS_MOBILE = false;

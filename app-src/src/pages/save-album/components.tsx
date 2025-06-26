@@ -3,24 +3,33 @@ import {
   SelectedPhoto,
 } from "@/lib/types";
 import {
+  Message,
+} from "@/styles/styled-components";
+import {   
   Card,
+  PhotoCard,
+ } from '@/styles/components/layout';
+import { 
+  MediaPreview,
+  MediaItem,
+  VideoItem,
+} from "@/styles/components/media";
+
+import { 
+  FormInput,
+  FormLabel,
+  FormGroup,
+  FormTextarea
+} from "@/styles/components/forms";
+import {
   ProgressTitle,
   ProgressBarBg,
   ProgressBar,
   ProgressText,
-  PhotoCard,
   StatusIndicator,
-  MediaPreview,
-  MediaItem,
-  VideoItem,
   ProgressBar as UploadProgressBar,
-  Message,
-  Card as FolderDetails,
-  FormGroup,
-  FormLabel,
-  FormInput,
-  FormTextarea
-} from "@/styles/styled-components";
+} from "@/styles/upload-styled-components";
+
 import { useTranslation } from "@/lib/i18n/hooks";
 import { PhotoTagging } from "./TagDisplayComponents";
 
@@ -492,7 +501,7 @@ export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = Rea
   }
 
   return (
-    <FolderDetails>
+    <Card>
       <FormGroup>
         <FormLabel htmlFor="folderName">
           {t('Album Name')}
@@ -520,7 +529,7 @@ export const FolderDetailsComponent: React.FC<FolderDetailsComponentProps> = Rea
           disabled={isSavingAlbum}
         />
       </FormGroup>
-    </FolderDetails>
+    </Card>
   );
 });
 

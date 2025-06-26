@@ -5,11 +5,16 @@ import { getLanguageDirection } from "@/lib/i18n";
 // Import styled components
 import { 
   Modal,
-  ModalContent,
   UsernameInput,
   Message,
-  Button
 } from "@/styles/styled-components";
+
+import {
+  ModalContent
+} from "@/styles/modalStyles";
+  
+
+import { Button } from '@/styles/components/buttons'
 
 import { LOCAL_STORAGE_KEYS } from '@/lib/config';
 
@@ -55,15 +60,18 @@ export const UsernamePrompt: React.FC<{
 
   return (
     <Modal $zIndex={9999}>
-      <ModalContent style={{ 
-        background: '#fff',
-        padding: '30px',
-        borderRadius: '12px',
-        width: '90%',
-        maxWidth: '400px',
-        boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
-        direction: isRTL ? 'rtl' : 'ltr'
-      }}>
+      <ModalContent 
+        $isRTL={isRTL}
+        style={{ 
+          background: '#fff',
+          padding: '30px',
+          borderRadius: '12px',
+          width: '90%',
+          maxWidth: '400px',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+          direction: isRTL ? 'rtl' : 'ltr'
+        }}
+      >
         <h2 style={{ fontSize: '16px', marginBottom: '12px' }}>
           {t('Enter Username')}
         </h2>

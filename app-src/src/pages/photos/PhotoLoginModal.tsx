@@ -11,12 +11,21 @@ import { LOCAL_STORAGE_KEYS } from '@/lib/config';
 import { generateUrl } from "@/lib/utils";
 import { 
   Modal,
-  ModalContent,
-  TwoFactorAuthLabel,
+} from "@/styles/styled-components";
+import {
+  ModalContent
+} from "@/styles/modalStyles";
+
+import { 
   Button,
+} from "@/styles/components/buttons";
+
+
+import { 
   FormInput,
   FormGroup,
-} from "@/styles/styled-components";
+  TwoFactorAuthLabel,
+} from "@/styles/components/forms";
 
 // Create a new Cognito client for OTP login
 const cognito = new CognitoIdentityProviderClient({ region: AWS_REGION });
@@ -240,7 +249,10 @@ export const PhotoLoginModal: React.FC<PhotoLoginModalProps> = ({
 
   return (
     <Modal>
-      <ModalContent style={{ maxWidth: "400px", textAlign: "center", padding: "32px" }}>
+      <ModalContent 
+        $isRTL={false}
+        style={{ maxWidth: "400px", textAlign: "center", padding: "32px" }}
+      >
         <img 
           src={generateUrl("images/logo_no_background.png")}
           alt="6180 Logo" 

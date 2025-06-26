@@ -4,11 +4,13 @@ import styled from "styled-components";
 import { 
   Overlay,
   WatermarkText,
-  Button,
-  NavButtonsContainer,
   OwnerProfileLink,
   LoadingIndicator,
 } from "@/styles/styled-components";
+import { 
+  Button,
+} from "@/styles/components/buttons";
+import { theme } from "@/styles/theme";
 import { MediaItem } from "@/lib/types";
 
 const FullscreenContainer = styled.div`
@@ -211,6 +213,11 @@ const StreamingVideo: React.FC<{
     </VideoElement>
   );
 };
+
+const NavButtonsContainer = styled.div`
+  display: flex;
+  gap: ${theme.spacing.xs};
+`;
 
 // FullscreenMediaViewer component
 export const FullscreenMediaViewer: React.FC<FullscreenMediaViewerProps> = ({

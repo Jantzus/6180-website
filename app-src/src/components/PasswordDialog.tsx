@@ -5,49 +5,9 @@ import {
 import { useTranslation } from "@/lib/i18n/hooks";
 import { getLanguageDirection } from "@/lib/i18n/translations"
 import styled from "styled-components"
+import { theme, DirectionalProps } from '@/styles/theme'
+import { Button } from '@/styles/components/buttons'
 
-// ===== THEME =====
-const theme = {
-  colors: {
-    primary: "#007bff",
-    primaryDark: "#0056b3",
-    secondary: "#6c757d",
-    success: "#4caf50",
-    danger: "#e53935",
-    warning: "#ff9800",
-    light: "#f9fafb",
-    white: "#fff",
-    text: {
-      primary: "#333",
-      secondary: "#666",
-      light: "#777"
-    },
-    background: {
-      primary: "#f9fafb",
-      card: "#fff",
-      highlight: "#f0f7ff"
-    },
-    border: "#ddd",
-    grayLight: "#e0e0e0"
-  },
-  spacing: {
-    xs: "4px",
-    sm: "8px",
-    md: "16px",
-    lg: "24px",
-    xl: "32px"
-  },
-  borderRadius: {
-    small: "4px",
-    medium: "8px",
-    large: "16px"
-  },
-  boxShadow: {
-    sm: "0 1px 2px rgba(0,0,0,0.06)",
-    md: "0 1px 3px rgba(0,0,0,0.1)",
-    lg: "0 4px 10px rgba(0,0,0,0.08)"
-  }
-};
 
 // ===== STYLED COMPONENTS =====
 const PasswordOverlay = styled.div`
@@ -175,10 +135,6 @@ const ScrollableContent = styled.div`
     padding: 20px;
   }
 `;
-
-interface DirectionalProps {
-  $isRTL: boolean;
-}
 
 const DialogContent = styled.div<DirectionalProps>`
   direction: ${props => props.$isRTL ? 'rtl' : 'ltr'};
@@ -332,54 +288,6 @@ const ButtonContainer = styled.div`
   gap: ${theme.spacing.sm};
   justify-content: center;
   margin-top: ${theme.spacing.xl};
-`;
-
-interface ButtonProps {
-  $variant?: 'danger' | 'secondary' | 'success' | 'primary';
-  disabled?: boolean;
-  $size?: 'small' | 'medium' | 'large';
-}
-
-const Button = styled.button<ButtonProps>`
-  background-color: ${props => {
-    if (props.$variant === 'danger') return theme.colors.danger;
-    if (props.$variant === 'secondary') return 'transparent';
-    if (props.$variant === 'success') return theme.colors.success;
-    return theme.colors.primary;
-  }};
-  color: ${props => {
-    if (props.$variant === 'secondary') return theme.colors.primary;
-    return theme.colors.white;
-  }};
-  border: ${props => {
-    if (props.$variant === 'secondary') return `1px solid ${theme.colors.primary}`;
-    return 'none';
-  }};
-  padding: ${props => {
-    if (props.$size === 'small') return '8px 16px';
-    if (props.$size === 'large') return '16px 32px';
-    return '12px 24px';
-  }};
-  border-radius: ${theme.borderRadius.medium};
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  font-size: ${props => {
-    if (props.$size === 'small') return '14px';
-    if (props.$size === 'large') return '18px';
-    return '16px';
-  }};
-  font-weight: 500;
-  transition: all 0.2s ease;
-  opacity: ${props => props.disabled ? 0.6 : 1};
-  min-width: 100px;
-
-  &:hover:not(:disabled) {
-    background-color: ${props => {
-      if (props.$variant === 'danger') return '#c62828';
-      if (props.$variant === 'secondary') return theme.colors.background.highlight;
-      if (props.$variant === 'success') return '#388e3c';
-      return theme.colors.primaryDark;
-    }};
-  }
 `;
 
 const InfoBox = styled.div`
@@ -560,13 +468,12 @@ export const PasswordDialog: React.FC<PasswordDialogProps> = ({
             
             <ButtonContainer>
               <Button
-                $variant="secondary"
                 onClick={() => onClose()} // Don't pass selected values when canceling
               >
                 {t('Cancel')}
               </Button>
               <Button
-                $variant="primary"
+                $primary={true}
                 onClick={() => {
                   // Use "password" as default if field is empty and a password-protected option is selected
                   const finalPassword = passwordEmpty && requiresPassword(selectedOption) 

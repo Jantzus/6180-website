@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { 
   DropdownMenu,
-  Button,
   MenuButton,
   HamburgerIcon,
   HamburgerLine,
   DropdownMenuChoice
 } from "@/styles/styled-components";
+import { 
+  Button,
+} from "@/styles/components/buttons";
 import { ResponsiveHeaderProps } from "@/lib/types";
 
 // Extended props to include buttonStyle

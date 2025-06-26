@@ -2,12 +2,19 @@
 import { useState } from "react";
 import { 
   Modal, 
-  ModalContent, 
+} from "@/styles/styled-components";
+import {
+  ModalContent
+} from "@/styles/modalStyles";
+import { 
   Button,
-  TwoFactorAuthLabel,
+} from "@/styles/components/buttons";
+
+import { 
   FormInput,
   FormGroup,
-} from "@/styles/styled-components";
+  TwoFactorAuthLabel,
+} from "@/styles/components/forms";
 
 export interface PasswordModalProps {
   isOpen: boolean;
@@ -39,7 +46,10 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({
   
   return (
     <Modal>
-      <ModalContent style={{ maxWidth: "400px", textAlign: "center", padding: "32px" }}>
+      <ModalContent 
+        $isRTL={false}
+        style={{ maxWidth: "400px", textAlign: "center", padding: "32px" }}
+      >
         <h3 style={{ margin: "0 0 24px 0" }}>{t('Enter Password')}</h3>
         
         <form onSubmit={handleSubmit} style={{ width: "100%" }}>
