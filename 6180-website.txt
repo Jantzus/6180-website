@@ -16,7 +16,9 @@
 │   │   ├── folder
 │   │   │   └── index.html
 │   │   ├── images
-│   │   │   └── logo_no_background.png
+│   │   │   ├── homepage-graphic.jpg
+│   │   │   ├── logo_no_background.png
+│   │   │   └── OG-preview.jpg
 │   │   ├── privacy.html
 │   │   ├── styles
 │   │   │   └── styles.css
@@ -50,6 +52,8 @@
 │   │   │   ├── TagsFilter.tsx
 │   │   │   ├── UploadProgress.tsx
 │   │   │   └── UsernamePrompt.tsx
+│   │   ├── convertedTailwind-styles
+│   │   │   └── components
 │   │   ├── lib
 │   │   │   ├── config.ts
 │   │   │   ├── file-upload-utils.ts
@@ -374,7 +378,8 @@
 │   │   │   │   │   ├── zh-yue.json
 │   │   │   │   │   ├── zh.json
 │   │   │   │   │   └── zu.json
-│   │   │   │   └── translations.ts
+│   │   │   │   ├── translations.ts
+│   │   │   │   └── types.ts
 │   │   │   ├── s3.ts
 │   │   │   ├── types.ts
 │   │   │   ├── useFileUploadProcessor.ts
@@ -430,16 +435,45 @@
 │   │   │   │       └── album.utils.ts
 │   │   │   ├── storage
 │   │   │   │   ├── components
+│   │   │   │   │   ├── CustomGBInput.tsx
+│   │   │   │   │   ├── PaymentMethodSelector.tsx
+│   │   │   │   │   ├── PaymentModal.tsx
+│   │   │   │   │   ├── PlanSelectionGrid.tsx
+│   │   │   │   │   ├── ProRataDisplay.tsx
+│   │   │   │   │   ├── StorageUsageCard.tsx
+│   │   │   │   │   └── styled
+│   │   │   │   │       └── StorageStyledComponents.tsx
+│   │   │   │   ├── constants
+│   │   │   │   │   └── storageConstants.ts
 │   │   │   │   ├── hooks
+│   │   │   │   │   ├── useSSRSafeHooks.ts
+│   │   │   │   │   └── useSubscriptionLogic.ts
 │   │   │   │   ├── index.tsx
-│   │   │   │   └── manage.tsx
+│   │   │   │   ├── manage.tsx
+│   │   │   │   ├── services
+│   │   │   │   │   └── StripeService.ts
+│   │   │   │   ├── StorageManagePage.tsx
+│   │   │   │   ├── types
+│   │   │   │   │   └── storageTypes.ts
+│   │   │   │   └── utils
+│   │   │   │       └── storageUtils.ts
 │   │   │   └── TokenLogin.tsx
 │   │   ├── styles
-│   │   │   └── styled-components.tsx
+│   │   │   ├── components
+│   │   │   │   ├── buttons.tsx
+│   │   │   │   ├── forms.tsx
+│   │   │   │   ├── layout.tsx
+│   │   │   │   └── media.tsx
+│   │   │   ├── globalStyles.ts
+│   │   │   ├── loginStyles.ts
+│   │   │   ├── modalStyles.ts
+│   │   │   ├── theme.ts
+│   │   │   └── upload-styled-components.tsx
 │   │   └── vite-env.d.ts
 │   ├── storage
 │   │   ├── index.html
 │   │   └── manage.html
+│   ├── styles
 │   ├── test
 │   ├── testRefreshToken.html
 │   ├── token-login.html
@@ -454,4 +488,4 @@
     └── rules
         └── no-ssr-unsafe-browser-api.js
 
-30 directories, 425 files
+39 directories, 450 files
