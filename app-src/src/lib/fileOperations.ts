@@ -33,6 +33,36 @@ export const downloadPhotos = (
   }
 };
 
+// Helper function to download single file using blob method
+const downloadWithBlob = async (item: MediaItem, filename: string): Promise<boolean> => {
+  try {
+    const response = await fetch(item.url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.style.display = 'none';
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Clean up
+    window.URL.revokeObjectURL(url);
+    
+    return true;
+  } catch (error) {
+    console.warn('Blob download failed:', error);
+    return false;
+  }
+};
+
 // Mobile download handler (browser-only)
 const handleMobileDownload = (
   albumData: { mediaItems: MediaItem[], folderName: string },
@@ -103,31 +133,47 @@ const handleMobileDownload = (
         openFullscreenView(index);
       };
       
-      const downloadLink = document.createElement('a');
-      downloadLink.href = item.url;
+      const downloadButton = document.createElement('button');
+      const filename = item.fileDisplayName || `${albumData.folderName || 'media'}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
       
       const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
       if (isIOS) {
-        downloadLink.addEventListener('click', function(e) {
+        downloadButton.addEventListener('click', function(e) {
           e.preventDefault();
           document.body.removeChild(modalContainer);
           openFullscreenView(index);
         });
-        downloadLink.textContent = item.type === 'image' ? t('View Photo') : t('View Video');
+        downloadButton.textContent = item.type === 'image' ? t('View Photo') : t('View Video');
       } else {
-        downloadLink.download = `${albumData.folderName || 'media'}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
-        downloadLink.textContent = t('Select For Download');
+        downloadButton.addEventListener('click', async function(e) {
+          e.preventDefault();
+          
+          // Show loading state
+          downloadButton.textContent = t('Downloading...');
+          downloadButton.disabled = true;
+          
+          const success = await downloadWithBlob(item, filename);
+          
+          downloadButton.textContent = success ? t('Downloaded!') : t('Download Failed');
+          downloadButton.disabled = false;
+          
+          // Reset button text after a moment
+          setTimeout(() => {
+            downloadButton.textContent = t('Download');
+          }, 2000);
+        });
+        downloadButton.textContent = t('Download');
       }
       
-      downloadLink.style.cssText = `
+      downloadButton.style.cssText = `
         text-decoration: none; color: white; background-color: #006adc;
-        padding: 8px 8px; border-radius: 4px; font-size: 13px;
+        padding: 8px 8px; border: none; border-radius: 4px; font-size: 13px;
         text-align: center; width: 100%; box-sizing: border-box;
-        white-space: nowrap;
+        white-space: nowrap; cursor: pointer;
       `;
       
       downloadItem.appendChild(thumbnail);
-      downloadItem.appendChild(downloadLink);
+      downloadItem.appendChild(downloadButton);
       itemsContainer.appendChild(downloadItem);
     });
   }
@@ -197,7 +243,7 @@ const handleDesktopDownload = (
   };
   
   // Start download process
-  startDownloadProcess(items, folderName, modal, t, cancelled)
+  startDownloadProcess(items, folderName, modal, t, () => cancelled)
     .then(() => {
       if (!cancelled) {
         setTimeout(() => {
@@ -211,7 +257,7 @@ const handleDesktopDownload = (
       if (!cancelled) {
         showError(modal, t, error.message, () => {
           document.body.removeChild(modal.container);
-          // Retry with single file downloads
+          // Retry with individual downloads
           handleIndividualDownloads(items, folderName);
         });
       }
@@ -277,13 +323,13 @@ const createProgressModal = (t: (key: string) => string): ProgressModal | null =
   };
 };
 
-// Main download process (browser-only)
+// Main download process using blob method (browser-only)
 const startDownloadProcess = async (
   items: MediaItem[],
   folderName: string,
   modal: ProgressModal,
   t: (key: string) => string,
-  cancelled: boolean
+  isCancelled: () => boolean
 ) => {
   if (!isBrowser) return;
 
@@ -296,7 +342,7 @@ const startDownloadProcess = async (
   
   // Download files one by one
   for (let i = 0; i < items.length; i++) {
-    if (cancelled) return;
+    if (isCancelled()) return;
     
     const item = items[i];
     
@@ -331,18 +377,14 @@ const startDownloadProcess = async (
     modal.progressText.textContent = t(`Downloading ${i + 1} of ${items.length}: ${finalFilename}`);
     
     try {
-      // Create download link with original filename
-      const link = document.createElement('a');
-      link.href = item.url;
-      link.download = finalFilename;
-      link.style.display = 'none';
+      // Use blob method for reliable downloads
+      const success = await downloadWithBlob(item, finalFilename);
       
-      // Trigger download
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      completed++;
+      if (success) {
+        completed++;
+      } else {
+        failed++;
+      }
       
       // Small delay between downloads to prevent overwhelming the browser
       await new Promise(resolve => setTimeout(resolve, 500));
@@ -357,7 +399,7 @@ const startDownloadProcess = async (
     modal.progressBar.style.width = `${progress}%`;
   }
   
-  if (cancelled) return;
+  if (isCancelled()) return;
   
   // Show completion message
   modal.title.textContent = t('Downloads complete!');
@@ -369,31 +411,32 @@ const startDownloadProcess = async (
   
   // Auto-close after 3 seconds
   setTimeout(() => {
-    if (!cancelled && document.body.contains(modal.container)) {
+    if (!isCancelled() && document.body.contains(modal.container)) {
       document.body.removeChild(modal.container);
     }
   }, 3000);
 };
 
 // Fallback: individual file downloads (browser-only)
-const handleIndividualDownloads = (
+const handleIndividualDownloads = async (
   items: MediaItem[],
   folderName: string,
 ) => {
   if (!isBrowser) return;
 
-  items.forEach((item, index) => {
-    setTimeout(() => {
-      const link = document.createElement('a');
-      link.href = item.url;
-      link.download = item.fileDisplayName || `${folderName}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
-      link.style.display = 'none';
-      
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }, index * 500); // Stagger downloads
-  });
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    const filename = item.fileDisplayName || `${folderName}-${i + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
+    
+    // Add delay between downloads
+    await new Promise(resolve => setTimeout(resolve, i * 1000));
+    
+    try {
+      await downloadWithBlob(item, filename);
+    } catch (error) {
+      console.warn(`Failed to download file ${i + 1}:`, error);
+    }
+  }
 };
 
 // Fallback: show error message (browser-only)

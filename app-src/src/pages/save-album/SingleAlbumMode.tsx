@@ -166,6 +166,9 @@ export const SingleAlbumMode: React.FC = () => {
   const [showSingleGear, setShowSingleGear] = useState(false);
   const singleGearRef = useRef<HTMLDivElement>(null);
 
+  // FIXED: Track whether we've already set initial folder details to prevent dependency cycles
+  const hasSetInitialFolderDetails = useRef(false);
+
   // Enhanced logging function - memoized to prevent re-creation
   const enhancedLog = useCallback((message: string, data?: unknown) => {
     const timestamp = new Date().toISOString();
@@ -314,7 +317,7 @@ export const SingleAlbumMode: React.FC = () => {
     warmUpPageCredentials();
   }, []);
 
-  // Function to fetch existing album data with fileReferenceId
+  // FIXED: Function to fetch existing album data - removed problematic dependencies
   const fetchExistingAlbumData = useCallback(async (albumFolderId: string) => {
     if (!albumFolderId) return;
     
@@ -420,11 +423,16 @@ export const SingleAlbumMode: React.FC = () => {
         existingFileTagsMap: existingTagsMap
       }));
 
-      if (!folderName && folder.folderName) {
-        setFolderName(folder.folderName as string);
-      }
-      if (!folderDescription && folder.folderDescription) {
-        setFolderDescription(folder.folderDescription as string);
+      // FIXED: Only set initial folder details once to prevent dependency cycles
+      if (!hasSetInitialFolderDetails.current) {
+        if (folder.folderName) {
+          setFolderName(folder.folderName as string);
+        }
+        if (folder.folderDescription) {
+          setFolderDescription(folder.folderDescription as string);
+        }
+        hasSetInitialFolderDetails.current = true;
+        enhancedLog("Set initial folder details from fetched data");
       }
 
     } catch (error) {
@@ -432,7 +440,7 @@ export const SingleAlbumMode: React.FC = () => {
     } finally {
       setIsLoadingExistingFiles(false);
     }
-  }, [folderName, folderDescription]);
+  }, [enhancedLog]); // FIXED: Include enhancedLog but removed folderName and folderDescription dependencies
 
   // FIXED: Load existing files when folderId changes - only for existing albums
   useEffect(() => {
