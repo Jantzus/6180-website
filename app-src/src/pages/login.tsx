@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   CognitoIdentityProviderClient,
@@ -61,6 +61,16 @@ const CenteredContent = styled.div`
   align-items: center;
 `;
 
+// Enhanced OTP input with auto-verification styling
+const EnhancedOtpInput = styled(OtpInput)<{ $isAutoVerifying?: boolean }>`
+  transition: all 0.3s ease;
+  ${props => props.$isAutoVerifying && `
+    border-color: #28a745;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+    background-color: #f8fff9;
+  `}
+`;
+
 function normalizeEmail(input: string): string {
   const trimmed = input.trim().toLowerCase()
   const gmailSuffix = "@gmail.com"
@@ -76,17 +86,20 @@ export const LoginPage = () => {
   const [codeSent, setCodeSent] = useState(false)
   const [otpCode, setOtpCode] = useState('')
   const [session, setSession] = useState('')
-  const [status, setStatus] = useState<'idle' | 'sending' | 'verifying' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'verifying' | 'error' | 'auto-verifying'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [hoverLink, setHoverLink] = useState<string | null>(null)
   const [redirectPath, setRedirectPath] = useState('my-albums.html') // Default for SSR
+  const [isAutoVerifying, setIsAutoVerifying] = useState(false)
   
   // Use the i18n hook
   const { t, language, loading } = useTranslation()
   
-  // Refs for input elements
+  // Refs for input elements and auto-verification timer
   const emailInputRef = useRef<HTMLInputElement>(null)
   const otpInputRef = useRef<HTMLInputElement>(null)
+  const autoVerifyTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const verificationAttemptRef = useRef<boolean>(false)
 
   // Check if current language is RTL
   const isRTL = getLanguageDirection(language) === 'rtl'
@@ -128,69 +141,50 @@ export const LoginPage = () => {
     }
   }, [codeSent])
 
-  // Only allow numeric input for OTP code
+  // Enhanced OTP input handler with auto-verification logic
   function handleOtpChange(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value
+    
     // Only accept numbers and limit to 6 digits
     if (/^\d*$/.test(value) && value.length <= 6) {
       setOtpCode(value)
+      
+      // Clear error message when user starts typing again
+      if (errorMessage && (status === 'error' || verificationAttemptRef.current)) {
+        setErrorMessage('')
+        setStatus('idle')
+      }
     }
   }
 
-  async function sendCode() {
-    setStatus('sending')
-    setErrorMessage('')
-    const normalizedEmail = normalizeEmail(email)
+  // Handle backspace and other special keys
+  function handleOtpKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    // Allow immediate re-attempt if user presses Enter with 6 digits
+    if (e.key === 'Enter' && otpCode.length === 6) {
+      e.preventDefault()
+      if (autoVerifyTimeoutRef.current) {
+        clearTimeout(autoVerifyTimeoutRef.current)
+      }
+      confirmCode(false) // Manual verification
+    }
     
-    // Basic email validation
-    if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
-      setStatus('error')
-      setErrorMessage(t('Please enter a valid email address'))
+    // Reset verification attempt flag if user is editing after a failed attempt
+    if (e.key === 'Backspace' && verificationAttemptRef.current) {
+      verificationAttemptRef.current = false
+    }
+  }
+
+  const confirmCode = useCallback(async (isAutoVerification: boolean = false) => {
+    // Prevent multiple simultaneous verification attempts
+    if (status === 'verifying' || status === 'auto-verifying') {
       return
     }
 
-    try {
-      const signUpCommand = new SignUpCommand({
-        ClientId: COGNITO_CLIENT_ID,
-        Username: normalizedEmail,
-        Password: crypto.randomUUID(),
-        UserAttributes: [{ Name: 'email', Value: normalizedEmail }],
-      })
-
-      try {
-        await cognito.send(signUpCommand)
-      } catch (e: unknown) {
-        const error = e as { name?: string }
-        if (!error.name?.includes('UsernameExistsException')) {
-          throw e
-        }
-      }
-
-      const signInCommand = new InitiateAuthCommand({
-        ClientId: COGNITO_CLIENT_ID,
-        AuthFlow: 'CUSTOM_AUTH',
-        AuthParameters: { USERNAME: normalizedEmail },
-      })
-
-      const response = await cognito.send(signInCommand)
-
-      if (response.Session) {
-        setSession(response.Session)
-        setCodeSent(true)
-        setStatus('idle')
-      } else {
-        throw new Error('No session returned from InitiateAuth')
-      }
-    } catch (e) {
-      console.error(e)
-      setStatus('error')
-      setErrorMessage(t('Unable to send verification code. Please try again later.'))
-    }
-  }
-
-  async function confirmCode() {
-    setStatus('verifying')
+    setStatus(isAutoVerification ? 'auto-verifying' : 'verifying')
     setErrorMessage('')
+    setIsAutoVerifying(false)
+    verificationAttemptRef.current = true
+    
     const normalizedEmail = normalizeEmail(email)
 
     try {
@@ -254,7 +248,102 @@ export const LoginPage = () => {
     } catch (e) {
       console.error(e)
       setStatus('error')
+      verificationAttemptRef.current = false // Allow retry
       setErrorMessage(t('Invalid or expired verification code. Please try again or request a new code.'))
+      
+      // Focus back to input for easy correction
+      if (otpInputRef.current) {
+        otpInputRef.current.focus()
+        // Select all text for easy replacement
+        setTimeout(() => {
+          otpInputRef.current?.select()
+        }, 100)
+      }
+    }
+  }, [status, email, otpCode, session, t, redirectPath])
+
+  // Auto-verification effect when OTP reaches 6 digits
+  useEffect(() => {
+    // Clear any existing timeout
+    if (autoVerifyTimeoutRef.current) {
+      clearTimeout(autoVerifyTimeoutRef.current)
+    }
+
+    // Only auto-verify if we have 6 digits, not currently verifying, and haven't failed recently
+    if (otpCode.length === 6 && status !== 'verifying' && status !== 'auto-verifying' && !verificationAttemptRef.current) {
+      setIsAutoVerifying(true)
+      
+      // Small delay to allow for quick corrections, but fast enough to feel instant
+      autoVerifyTimeoutRef.current = setTimeout(() => {
+        confirmCode(true) // Pass true to indicate this is an auto-verification
+      }, 500)
+    } else if (otpCode.length < 6) {
+      setIsAutoVerifying(false)
+      // Reset verification attempt flag when user starts editing
+      if (verificationAttemptRef.current && otpCode.length < 6) {
+        verificationAttemptRef.current = false
+      }
+    }
+
+    // Cleanup timeout on unmount or when otpCode changes
+    return () => {
+      if (autoVerifyTimeoutRef.current) {
+        clearTimeout(autoVerifyTimeoutRef.current)
+      }
+    }
+  }, [otpCode, status, confirmCode])
+
+  async function sendCode() {
+    setStatus('sending')
+    setErrorMessage('')
+    setIsAutoVerifying(false)
+    verificationAttemptRef.current = false
+    
+    const normalizedEmail = normalizeEmail(email)
+    
+    // Basic email validation
+    if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setStatus('error')
+      setErrorMessage(t('Please enter a valid email address'))
+      return
+    }
+
+    try {
+      const signUpCommand = new SignUpCommand({
+        ClientId: COGNITO_CLIENT_ID,
+        Username: normalizedEmail,
+        Password: crypto.randomUUID(),
+        UserAttributes: [{ Name: 'email', Value: normalizedEmail }],
+      })
+
+      try {
+        await cognito.send(signUpCommand)
+      } catch (e: unknown) {
+        const error = e as { name?: string }
+        if (!error.name?.includes('UsernameExistsException')) {
+          throw e
+        }
+      }
+
+      const signInCommand = new InitiateAuthCommand({
+        ClientId: COGNITO_CLIENT_ID,
+        AuthFlow: 'CUSTOM_AUTH',
+        AuthParameters: { USERNAME: normalizedEmail },
+      })
+
+      const response = await cognito.send(signInCommand)
+
+      if (response.Session) {
+        setSession(response.Session)
+        setCodeSent(true)
+        setStatus('idle')
+      } else {
+        throw new Error('No session returned from InitiateAuth')
+      }
+    } catch (e) {
+      console.error(e)
+      setStatus('error')
+      setErrorMessage(t('Unable to send verification code. Please try again later.'))
     }
   }
 
@@ -263,6 +352,14 @@ export const LoginPage = () => {
     setCodeSent(false)
     setOtpCode('')
     setStatus('idle')
+    setIsAutoVerifying(false)
+    setErrorMessage('')
+    verificationAttemptRef.current = false
+    
+    // Clear any pending auto-verification
+    if (autoVerifyTimeoutRef.current) {
+      clearTimeout(autoVerifyTimeoutRef.current)
+    }
   }
 
   // Show a minimal loading state before i18n is ready
@@ -332,7 +429,8 @@ export const LoginPage = () => {
                   <InfoText style={{ marginBottom: '16px', color: '#555' }}>
                     {t("We sent a 6-digit code to")} <strong>{email}</strong>
                   </InfoText>
-                  <OtpInput
+                  
+                  <EnhancedOtpInput
                     ref={otpInputRef}
                     type="tel"
                     inputMode="numeric"
@@ -340,19 +438,31 @@ export const LoginPage = () => {
                     maxLength={6}
                     value={otpCode}
                     onChange={handleOtpChange}
+                    onKeyDown={handleOtpKeyDown}
                     placeholder={t('Enter 6-digit code')}
+                    $isAutoVerifying={isAutoVerifying || status === 'auto-verifying'}
                   />
+
                   <Button
                     $primary
-                    onClick={confirmCode}
-                    disabled={status === 'verifying' || otpCode.length !== 6}
-                    style={{ width: '100%', backgroundColor: '#28a745' }}
+                    onClick={() => confirmCode(false)}
+                    disabled={status === 'verifying' || status === 'auto-verifying' || otpCode.length !== 6}
+                    style={{ 
+                      width: '100%', 
+                      backgroundColor: '#28a745',
+                      opacity: (status === 'auto-verifying' || isAutoVerifying) ? 0.7 : 1
+                    }}
                   >
-                    {status === 'verifying' ? 
+                    {status === 'verifying' || status === 'auto-verifying' ? 
                       t('Verifying...') : 
                       t('Verify Code')
                     }
                   </Button>
+
+                  <InfoText style={{ fontSize: '12px', color: '#666', marginTop: '8px' }}>
+                    {t('Code will be verified automatically when you finish typing')}
+                  </InfoText>
+
                   <ResendWrapper>
                     <span>{t("Didn't receive a code?")}</span>
                     <ResendButton onClick={handleResendCode}>

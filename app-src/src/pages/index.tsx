@@ -15,19 +15,11 @@ import {
 } from "@/styles/components/layout";
 import { Button } from '@/styles/components/buttons'
 import { GlobalStyle } from "@/styles/globalStyles";
-import { DirectionalProps } from '@/styles/theme'
 import { theme } from "@/styles/theme";
 
 const Headline = styled.h1`
   font-size: ${theme.fontSizes.xxl};
   margin: ${theme.spacing.sm} 0;
-`;
-
-const LogoContainer = styled.div<DirectionalProps>`
-  display: flex;
-  align-items: center;
-  flex-direction: ${props => props.$isRTL ? 'row' : 'row-reverse'};
-  gap: ${theme.spacing.sm};  
 `;
 
 // Main page component
@@ -44,6 +36,46 @@ export const IndexPage: React.FC = () => {
     document.documentElement.lang = language;
     document.documentElement.dir = getLanguageDirection(language);
   }, [language]);
+
+  // Update dynamic meta tags based on language
+  useEffect(() => {
+    const updateMetaTags = () => {
+      // Update title based on current language
+      document.title = `${t('Save and Share Photos')} - 6180`;
+      
+      // Update description
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', t('Nothing to download. Done in seconds. Save and share photos effortlessly with 6180.'));
+      }
+      
+      // Update OG title
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) {
+        ogTitle.setAttribute('content', `${t('Save and Share Photos')} - 6180`);
+      }
+      
+      // Update OG description
+      const ogDescription = document.querySelector('meta[property="og:description"]');
+      if (ogDescription) {
+        ogDescription.setAttribute('content', t('Nothing to download. Done in seconds. Save and share photos effortlessly with 6180.'));
+      }
+      
+      // Update Twitter title
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) {
+        twitterTitle.setAttribute('content', `${t('Save and Share Photos')} - 6180`);
+      }
+      
+      // Update Twitter description
+      const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDescription) {
+        twitterDescription.setAttribute('content', t('Nothing to download. Done in seconds. Save and share photos effortlessly with 6180.'));
+      }
+    };
+    
+    updateMetaTags();
+  }, [t, language]);
 
   // Go to albums page
   const goToAlbums = async () => {
@@ -66,28 +98,51 @@ export const IndexPage: React.FC = () => {
           height: 'calc(100vh - 60px)'
         }}>
           <HeaderContainer>
-            <LogoContainer $isRTL={isRTL}>
-              <Logo 
-                src={generateUrl("images/logo_no_background.png")}
-                alt="6180 Logo"
-              />
-            </LogoContainer>
-            
+            {/* Logo moved to main content area */}
             {/* Language selector removed from header */}
           </HeaderContainer>
 
           <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', padding: '0 20px' }}>
             <Headline>
-              {t('Best Way to Save and Share Photos')}
+              {t('Save and Share Photos')}
             </Headline>
             
+            {/* Photo moved below body text and above CTA */}
+            <div style={{ 
+              marginTop: '50px',     // More spacing between headline and image
+              marginBottom: '30px',
+              display: 'flex',
+              justifyContent: 'center'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '24px',
+                padding: '16px',
+                boxShadow: '0 12px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(102, 126, 234, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.8)'
+              }}>
+                <Logo 
+                  src={generateUrl("images/homepage-graphic.jpg")}
+                  alt="6180 - Two bears sharing photos"
+                  style={{
+                    width: '280px',      // Wider golden rectangle
+                    height: '173px',     // Height (280 ÷ 1.618 = ~173)
+                    borderRadius: '16px', // Slightly smaller radius for inner image
+                    objectFit: 'contain' // Show full image without cropping
+                  }}
+                />
+              </div>
+            </div>
+
             <p style={{ 
-              fontSize: '1.1em',
+              fontSize: '0.85em',    // Slightly smaller than subheadline
               color: '#666',
               marginBottom: '30px',
-              lineHeight: '1.6'
+              lineHeight: '1.6',
+              textAlign: 'center',
+              fontStyle: 'italic'
             }}>
-              {t('Tag, revisit and send your favorite moments — by occasion, mood, or location — in seconds.')}
+              {t('Nothing to download. Done in seconds.')}
             </p>
 
             <Button 
@@ -166,8 +221,9 @@ export const App: React.FC = () => {
     if (typeof window !== 'undefined' && import.meta.env?.MODE !== 'production') {
       import('@/lib/i18n/checkTranslations').then(({ checkTranslationFiles, checkTranslationKey }) => {
         checkTranslationFiles();
-        checkTranslationKey('Best Way to Save and Share Photos');
-        checkTranslationKey('Tag, revisit and send your favorite moments — by occasion, mood, or location — in seconds.');
+        checkTranslationKey('Save and Share Photos');
+        checkTranslationKey('Nothing to download. Done in seconds.');
+        checkTranslationKey('Nothing to download. Done in seconds. Save and share photos effortlessly with 6180.');
       }).catch(console.warn);
     }
   }, []);
