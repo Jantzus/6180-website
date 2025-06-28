@@ -26,6 +26,9 @@
 │   │   └── terms.html
 │   ├── README.md
 │   ├── save-album.html
+│   ├── scripts
+│   │   ├── extractTranslationsAST.cjs
+│   │   └── translationAudit.cjs
 │   ├── src
 │   │   ├── components
 │   │   │   ├── AlbumFooterSection.tsx
@@ -62,10 +65,320 @@
 │   │   │   ├── i18n
 │   │   │   │   ├── checkTranslations.ts
 │   │   │   │   ├── components.tsx
+│   │   │   │   ├── condensed
+│   │   │   │   │   ├── aa.json
+│   │   │   │   │   ├── ab.json
+│   │   │   │   │   ├── ace.json
+│   │   │   │   │   ├── ady.json
+│   │   │   │   │   ├── af.json
+│   │   │   │   │   ├── ak.json
+│   │   │   │   │   ├── als.json
+│   │   │   │   │   ├── am.json
+│   │   │   │   │   ├── an.json
+│   │   │   │   │   ├── ang.json
+│   │   │   │   │   ├── ar.json
+│   │   │   │   │   ├── arc.json
+│   │   │   │   │   ├── arz.json
+│   │   │   │   │   ├── as.json
+│   │   │   │   │   ├── ast.json
+│   │   │   │   │   ├── av.json
+│   │   │   │   │   ├── ay.json
+│   │   │   │   │   ├── az.json
+│   │   │   │   │   ├── ba.json
+│   │   │   │   │   ├── bar.json
+│   │   │   │   │   ├── bat-smg.json
+│   │   │   │   │   ├── bcl.json
+│   │   │   │   │   ├── be-x-old.json
+│   │   │   │   │   ├── be.json
+│   │   │   │   │   ├── bg.json
+│   │   │   │   │   ├── bh.json
+│   │   │   │   │   ├── bho.json
+│   │   │   │   │   ├── bi.json
+│   │   │   │   │   ├── bjn.json
+│   │   │   │   │   ├── bm.json
+│   │   │   │   │   ├── bn.json
+│   │   │   │   │   ├── bo.json
+│   │   │   │   │   ├── bpy.json
+│   │   │   │   │   ├── br.json
+│   │   │   │   │   ├── brx.json
+│   │   │   │   │   ├── bs.json
+│   │   │   │   │   ├── bug.json
+│   │   │   │   │   ├── bxr.json
+│   │   │   │   │   ├── ca.json
+│   │   │   │   │   ├── cbk-zam.json
+│   │   │   │   │   ├── cdo.json
+│   │   │   │   │   ├── ce.json
+│   │   │   │   │   ├── ceb.json
+│   │   │   │   │   ├── ch.json
+│   │   │   │   │   ├── cho.json
+│   │   │   │   │   ├── chr.json
+│   │   │   │   │   ├── chy.json
+│   │   │   │   │   ├── ckb.json
+│   │   │   │   │   ├── co.json
+│   │   │   │   │   ├── cr.json
+│   │   │   │   │   ├── crh.json
+│   │   │   │   │   ├── cs.json
+│   │   │   │   │   ├── csb.json
+│   │   │   │   │   ├── cu.json
+│   │   │   │   │   ├── cv.json
+│   │   │   │   │   ├── cy.json
+│   │   │   │   │   ├── da.json
+│   │   │   │   │   ├── de.json
+│   │   │   │   │   ├── diq.json
+│   │   │   │   │   ├── doi.json
+│   │   │   │   │   ├── dsb.json
+│   │   │   │   │   ├── dv.json
+│   │   │   │   │   ├── dz.json
+│   │   │   │   │   ├── ee.json
+│   │   │   │   │   ├── el.json
+│   │   │   │   │   ├── eml.json
+│   │   │   │   │   ├── en.json
+│   │   │   │   │   ├── eo.json
+│   │   │   │   │   ├── es.json
+│   │   │   │   │   ├── et.json
+│   │   │   │   │   ├── eu.json
+│   │   │   │   │   ├── ext.json
+│   │   │   │   │   ├── fa.json
+│   │   │   │   │   ├── ff.json
+│   │   │   │   │   ├── fi.json
+│   │   │   │   │   ├── fiu-vro.json
+│   │   │   │   │   ├── fj.json
+│   │   │   │   │   ├── fo.json
+│   │   │   │   │   ├── fr.json
+│   │   │   │   │   ├── frp.json
+│   │   │   │   │   ├── frr.json
+│   │   │   │   │   ├── fur.json
+│   │   │   │   │   ├── fy.json
+│   │   │   │   │   ├── ga.json
+│   │   │   │   │   ├── gag.json
+│   │   │   │   │   ├── gan.json
+│   │   │   │   │   ├── gd.json
+│   │   │   │   │   ├── gl.json
+│   │   │   │   │   ├── glk.json
+│   │   │   │   │   ├── gn.json
+│   │   │   │   │   ├── gom.json
+│   │   │   │   │   ├── got.json
+│   │   │   │   │   ├── grt.json
+│   │   │   │   │   ├── gu.json
+│   │   │   │   │   ├── gv.json
+│   │   │   │   │   ├── ha.json
+│   │   │   │   │   ├── hak.json
+│   │   │   │   │   ├── haw.json
+│   │   │   │   │   ├── he.json
+│   │   │   │   │   ├── hi.json
+│   │   │   │   │   ├── hif.json
+│   │   │   │   │   ├── hne.json
+│   │   │   │   │   ├── ho.json
+│   │   │   │   │   ├── hr.json
+│   │   │   │   │   ├── hsb.json
+│   │   │   │   │   ├── ht.json
+│   │   │   │   │   ├── hu.json
+│   │   │   │   │   ├── hy.json
+│   │   │   │   │   ├── hz.json
+│   │   │   │   │   ├── ia.json
+│   │   │   │   │   ├── id.json
+│   │   │   │   │   ├── ie.json
+│   │   │   │   │   ├── ig.json
+│   │   │   │   │   ├── ii.json
+│   │   │   │   │   ├── ik.json
+│   │   │   │   │   ├── ilo.json
+│   │   │   │   │   ├── inh.json
+│   │   │   │   │   ├── io.json
+│   │   │   │   │   ├── is.json
+│   │   │   │   │   ├── it.json
+│   │   │   │   │   ├── iu.json
+│   │   │   │   │   ├── ja.json
+│   │   │   │   │   ├── jam.json
+│   │   │   │   │   ├── jbo.json
+│   │   │   │   │   ├── jv.json
+│   │   │   │   │   ├── ka.json
+│   │   │   │   │   ├── kaa.json
+│   │   │   │   │   ├── kab.json
+│   │   │   │   │   ├── kbd.json
+│   │   │   │   │   ├── kg.json
+│   │   │   │   │   ├── kha.json
+│   │   │   │   │   ├── ki.json
+│   │   │   │   │   ├── kj.json
+│   │   │   │   │   ├── kk.json
+│   │   │   │   │   ├── kl.json
+│   │   │   │   │   ├── km.json
+│   │   │   │   │   ├── kn.json
+│   │   │   │   │   ├── ko.json
+│   │   │   │   │   ├── koi.json
+│   │   │   │   │   ├── kok.json
+│   │   │   │   │   ├── kr.json
+│   │   │   │   │   ├── krc.json
+│   │   │   │   │   ├── ks.json
+│   │   │   │   │   ├── ksh.json
+│   │   │   │   │   ├── ku.json
+│   │   │   │   │   ├── kv.json
+│   │   │   │   │   ├── kw.json
+│   │   │   │   │   ├── ky.json
+│   │   │   │   │   ├── la.json
+│   │   │   │   │   ├── lad.json
+│   │   │   │   │   ├── lb.json
+│   │   │   │   │   ├── lbe.json
+│   │   │   │   │   ├── lez.json
+│   │   │   │   │   ├── lg.json
+│   │   │   │   │   ├── li.json
+│   │   │   │   │   ├── lij.json
+│   │   │   │   │   ├── lmo.json
+│   │   │   │   │   ├── ln.json
+│   │   │   │   │   ├── lo.json
+│   │   │   │   │   ├── lrc.json
+│   │   │   │   │   ├── lt.json
+│   │   │   │   │   ├── ltg.json
+│   │   │   │   │   ├── lus.json
+│   │   │   │   │   ├── lv.json
+│   │   │   │   │   ├── mag.json
+│   │   │   │   │   ├── mai.json
+│   │   │   │   │   ├── map-bms.json
+│   │   │   │   │   ├── mdf.json
+│   │   │   │   │   ├── mg.json
+│   │   │   │   │   ├── mh.json
+│   │   │   │   │   ├── mhr.json
+│   │   │   │   │   ├── mi.json
+│   │   │   │   │   ├── min.json
+│   │   │   │   │   ├── mk.json
+│   │   │   │   │   ├── ml.json
+│   │   │   │   │   ├── mn.json
+│   │   │   │   │   ├── mni.json
+│   │   │   │   │   ├── mo.json
+│   │   │   │   │   ├── mr.json
+│   │   │   │   │   ├── mrj.json
+│   │   │   │   │   ├── ms.json
+│   │   │   │   │   ├── mt.json
+│   │   │   │   │   ├── mus.json
+│   │   │   │   │   ├── mwl.json
+│   │   │   │   │   ├── mwr.json
+│   │   │   │   │   ├── my.json
+│   │   │   │   │   ├── myv.json
+│   │   │   │   │   ├── mzn.json
+│   │   │   │   │   ├── na.json
+│   │   │   │   │   ├── nah.json
+│   │   │   │   │   ├── nap.json
+│   │   │   │   │   ├── nds-nl.json
+│   │   │   │   │   ├── nds.json
+│   │   │   │   │   ├── ne.json
+│   │   │   │   │   ├── new.json
+│   │   │   │   │   ├── ng.json
+│   │   │   │   │   ├── nl.json
+│   │   │   │   │   ├── nn.json
+│   │   │   │   │   ├── no.json
+│   │   │   │   │   ├── nov.json
+│   │   │   │   │   ├── nrm.json
+│   │   │   │   │   ├── nso.json
+│   │   │   │   │   ├── nv.json
+│   │   │   │   │   ├── ny.json
+│   │   │   │   │   ├── oc.json
+│   │   │   │   │   ├── olo.json
+│   │   │   │   │   ├── om.json
+│   │   │   │   │   ├── or.json
+│   │   │   │   │   ├── os.json
+│   │   │   │   │   ├── pa.json
+│   │   │   │   │   ├── pag.json
+│   │   │   │   │   ├── pam.json
+│   │   │   │   │   ├── pap.json
+│   │   │   │   │   ├── pcd.json
+│   │   │   │   │   ├── pdc.json
+│   │   │   │   │   ├── pfl.json
+│   │   │   │   │   ├── pi.json
+│   │   │   │   │   ├── pih.json
+│   │   │   │   │   ├── pl.json
+│   │   │   │   │   ├── pms.json
+│   │   │   │   │   ├── pnb.json
+│   │   │   │   │   ├── pnt.json
+│   │   │   │   │   ├── ps.json
+│   │   │   │   │   ├── pt.json
+│   │   │   │   │   ├── qu.json
+│   │   │   │   │   ├── rm.json
+│   │   │   │   │   ├── rmy.json
+│   │   │   │   │   ├── rn.json
+│   │   │   │   │   ├── ro.json
+│   │   │   │   │   ├── roa-rup.json
+│   │   │   │   │   ├── roa-tara.json
+│   │   │   │   │   ├── ru.json
+│   │   │   │   │   ├── rue.json
+│   │   │   │   │   ├── rw.json
+│   │   │   │   │   ├── sa.json
+│   │   │   │   │   ├── sah.json
+│   │   │   │   │   ├── sat.json
+│   │   │   │   │   ├── sc.json
+│   │   │   │   │   ├── scn.json
+│   │   │   │   │   ├── sco.json
+│   │   │   │   │   ├── sd.json
+│   │   │   │   │   ├── se.json
+│   │   │   │   │   ├── sg.json
+│   │   │   │   │   ├── sh.json
+│   │   │   │   │   ├── si.json
+│   │   │   │   │   ├── simple.json
+│   │   │   │   │   ├── sk.json
+│   │   │   │   │   ├── sl.json
+│   │   │   │   │   ├── sm.json
+│   │   │   │   │   ├── sn.json
+│   │   │   │   │   ├── so.json
+│   │   │   │   │   ├── sq.json
+│   │   │   │   │   ├── sr.json
+│   │   │   │   │   ├── srn.json
+│   │   │   │   │   ├── ss.json
+│   │   │   │   │   ├── st.json
+│   │   │   │   │   ├── stq.json
+│   │   │   │   │   ├── su.json
+│   │   │   │   │   ├── sv.json
+│   │   │   │   │   ├── sw.json
+│   │   │   │   │   ├── szl.json
+│   │   │   │   │   ├── ta.json
+│   │   │   │   │   ├── tcy.json
+│   │   │   │   │   ├── te.json
+│   │   │   │   │   ├── tet.json
+│   │   │   │   │   ├── tg.json
+│   │   │   │   │   ├── th.json
+│   │   │   │   │   ├── ti.json
+│   │   │   │   │   ├── tk.json
+│   │   │   │   │   ├── tl.json
+│   │   │   │   │   ├── tn.json
+│   │   │   │   │   ├── to.json
+│   │   │   │   │   ├── tpi.json
+│   │   │   │   │   ├── tr.json
+│   │   │   │   │   ├── ts.json
+│   │   │   │   │   ├── tt.json
+│   │   │   │   │   ├── tum.json
+│   │   │   │   │   ├── tw.json
+│   │   │   │   │   ├── ty.json
+│   │   │   │   │   ├── tyv.json
+│   │   │   │   │   ├── udm.json
+│   │   │   │   │   ├── ug.json
+│   │   │   │   │   ├── uk.json
+│   │   │   │   │   ├── ur.json
+│   │   │   │   │   ├── uz.json
+│   │   │   │   │   ├── ve.json
+│   │   │   │   │   ├── vec.json
+│   │   │   │   │   ├── vep.json
+│   │   │   │   │   ├── vi.json
+│   │   │   │   │   ├── vls.json
+│   │   │   │   │   ├── vo.json
+│   │   │   │   │   ├── wa.json
+│   │   │   │   │   ├── war.json
+│   │   │   │   │   ├── wo.json
+│   │   │   │   │   ├── wuu.json
+│   │   │   │   │   ├── xal.json
+│   │   │   │   │   ├── xh.json
+│   │   │   │   │   ├── xmf.json
+│   │   │   │   │   ├── yi.json
+│   │   │   │   │   ├── yo.json
+│   │   │   │   │   ├── yue.json
+│   │   │   │   │   ├── za.json
+│   │   │   │   │   ├── zea.json
+│   │   │   │   │   ├── zh-classical.json
+│   │   │   │   │   ├── zh-min-nan.json
+│   │   │   │   │   ├── zh-yue.json
+│   │   │   │   │   ├── zh.json
+│   │   │   │   │   └── zu.json
 │   │   │   │   ├── context.tsx
 │   │   │   │   ├── hooks.tsx
 │   │   │   │   ├── index.ts
 │   │   │   │   ├── styled.tsx
+│   │   │   │   ├── terms copy.ts
 │   │   │   │   ├── terms.ts
 │   │   │   │   ├── transformTranslations.cjs
 │   │   │   │   ├── translations
@@ -474,7 +787,6 @@
 │   │   ├── index.html
 │   │   └── manage.html
 │   ├── styles
-│   ├── test
 │   ├── testRefreshToken.html
 │   ├── token-login.html
 │   ├── tsconfig.app.json
@@ -488,4 +800,4 @@
     └── rules
         └── no-ssr-unsafe-browser-api.js
 
-39 directories, 450 files
+40 directories, 761 files
