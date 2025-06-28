@@ -119,7 +119,9 @@ export const IndexPage: React.FC = () => {
                 borderRadius: '24px',
                 padding: '16px',
                 boxShadow: '0 12px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(102, 126, 234, 0.1)',
-                border: '1px solid rgba(255, 255, 255, 0.8)'
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                // Enhanced elevation with subtle additional shadow
+                filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.04))'
               }}>
                 <Logo 
                   src={generateUrl("images/homepage-graphic.jpg")}
@@ -127,7 +129,7 @@ export const IndexPage: React.FC = () => {
                   style={{
                     width: '280px',      // Wider golden rectangle
                     height: '173px',     // Height (280 ÷ 1.618 = ~173)
-                    borderRadius: '16px', // Slightly smaller radius for inner image
+                    borderRadius: '20px', // Increased to better echo the card shape (24px - 4px for visual harmony)
                     objectFit: 'contain' // Show full image without cropping
                   }}
                 />

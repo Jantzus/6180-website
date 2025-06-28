@@ -63,7 +63,7 @@ const downloadWithBlob = async (item: MediaItem, filename: string): Promise<bool
   }
 };
 
-// Mobile download handler (browser-only)
+// Mobile download handler (browser-only) - Unified behavior for all mobile devices
 const handleMobileDownload = (
   albumData: { mediaItems: MediaItem[], folderName: string },
   t: (key: string) => string,
@@ -134,36 +134,14 @@ const handleMobileDownload = (
       };
       
       const downloadButton = document.createElement('button');
-      const filename = item.fileDisplayName || `${albumData.folderName || 'media'}-${index + 1}.${item.type === 'image' ? 'jpg' : 'mp4'}`;
       
-      const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
-      if (isIOS) {
-        downloadButton.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.body.removeChild(modalContainer);
-          openFullscreenView(index);
-        });
-        downloadButton.textContent = item.type === 'image' ? t('View Photo') : t('View Video');
-      } else {
-        downloadButton.addEventListener('click', async function(e) {
-          e.preventDefault();
-          
-          // Show loading state
-          downloadButton.textContent = t('Downloading...');
-          downloadButton.disabled = true;
-          
-          const success = await downloadWithBlob(item, filename);
-          
-          downloadButton.textContent = success ? t('Downloaded!') : t('Download Failed');
-          downloadButton.disabled = false;
-          
-          // Reset button text after a moment
-          setTimeout(() => {
-            downloadButton.textContent = t('Download');
-          }, 2000);
-        });
-        downloadButton.textContent = t('Download');
-      }
+      // Unified behavior for all mobile devices - just open fullscreen view
+      downloadButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.removeChild(modalContainer);
+        openFullscreenView(index);
+      });
+      downloadButton.textContent = item.type === 'image' ? t('View Photo') : t('View Video');
       
       downloadButton.style.cssText = `
         text-decoration: none; color: white; background-color: #006adc;

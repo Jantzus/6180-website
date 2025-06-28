@@ -61,6 +61,32 @@ const CenteredContent = styled.div`
   align-items: center;
 `;
 
+// Enhanced Login Card with improved elevation effects
+const EnhancedLoginCard = styled(LoginCard)`
+  /* Enhanced elevation styling */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: white;
+  position: relative;
+  
+  /* Subtle gradient border effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(0,0,0,0.05));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+`;
+
 // Enhanced OTP input with auto-verification styling
 const EnhancedOtpInput = styled(OtpInput)<{ $isAutoVerifying?: boolean }>`
   transition: all 0.3s ease;
@@ -383,7 +409,7 @@ export const LoginPage = () => {
       <AppContainer $isRTL={isRTL}>
         <ContentWrapper>
           <CenteredContent>
-            <LoginCard>
+            <EnhancedLoginCard>
               <LoginHeader>
                 <LogoImage 
                   src={generateUrl("images/logo_no_background.png")}
@@ -421,7 +447,7 @@ export const LoginPage = () => {
                     }
                   </Button>
                   <InfoText>
-                    {t("We'll email you a one-time code to verify it's really you")}
+                    {t("We'll email you a one-time account access code")}
                   </InfoText>
                 </>
               ) : (
@@ -471,7 +497,7 @@ export const LoginPage = () => {
                   </ResendWrapper>
                 </>
               )}
-            </LoginCard>
+            </EnhancedLoginCard>
           </CenteredContent>
           
           <LegalLinksFooter>

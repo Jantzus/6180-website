@@ -20,7 +20,8 @@ class FocusedTranslationAuditor {
     // Configurable paths
     this.srcPath = path.resolve(options.srcPath || './src');
     this.languagesPath = path.resolve(options.languagesPath || './src/lib/i18n/translations');
-    this.outputPath = path.resolve(options.outputPath || './translation-audit-report.json');
+    this.outputDir = path.resolve(options.outputDir || './translationAudit');
+    this.outputPath = path.join(this.outputDir, 'translation-audit-report.json');
     this.excludePaths = options.excludePaths || ['node_modules', '.git', 'dist', 'build', '.next', 'coverage'];
     
     // All translation keys found in code
@@ -54,12 +55,26 @@ class FocusedTranslationAuditor {
       scanStartTime: Date.now()
     };
     
+    // Ensure output directory exists
+    this.ensureOutputDirectory();
+    
     console.log('🔍 Starting FOCUSED Translation Audit (t, tSync, tAsync only)...');
     console.log(`📁 Source path: ${this.srcPath}`);
     console.log(`📚 Languages path: ${this.languagesPath}`);
+    console.log(`📊 Output directory: ${this.outputDir}`);
     console.log(`🎯 Target functions: ${Array.from(this.translationFunctions).join(', ')}`);
     console.log(`📊 Exclude paths: ${this.excludePaths.join(', ')}`);
     console.log('='.repeat(60));
+  }
+
+  /**
+   * Ensure output directory exists
+   */
+  ensureOutputDirectory() {
+    if (!fs.existsSync(this.outputDir)) {
+      fs.mkdirSync(this.outputDir, { recursive: true });
+      console.log(`📁 Created output directory: ${this.outputDir}`);
+    }
   }
 
   /**
@@ -815,6 +830,7 @@ class FocusedTranslationAuditor {
     console.log(`   ✅ Provides precise line numbers for each translation call`);
     console.log(`   ✅ Tracks function usage statistics`);
     console.log(`   ✅ Identifies dynamic and complex key patterns`);
+    console.log(`   ✅ All diagnostic files saved to: ${this.outputDir}`);
   }
 
   /**
@@ -854,8 +870,9 @@ class FocusedTranslationAuditor {
         scanDurationMs: Date.now() - this.stats.scanStartTime,
         srcPath: this.srcPath,
         languagesPath: this.languagesPath,
+        outputDir: this.outputDir,
         targetFunctions: Array.from(this.translationFunctions),
-        features: ['focused_functions', 'line_numbers', 'position_tracking', 'dynamic_key_detection']
+        features: ['focused_functions', 'line_numbers', 'position_tracking', 'dynamic_key_detection', 'unused_keys_list']
       },
       summary: {
         keysInCode: this.keysInCode.size,
@@ -896,7 +913,7 @@ class FocusedTranslationAuditor {
   }
 
   /**
-   * Save additional detailed reports with line numbers
+   * Save additional detailed reports with line numbers in translationAudit folder
    */
   saveDetailedReports(sampleLang) {
     const files = [];
@@ -926,10 +943,38 @@ class FocusedTranslationAuditor {
         }).sort((a, b) => b.usageCount - a.usageCount)
       };
       
-      const missingFile = path.resolve('./missing-keys-focused.json');
+      const missingFile = path.join(this.outputDir, 'missing-keys-focused.json');
       fs.writeFileSync(missingFile, JSON.stringify(missingReport, null, 2));
       files.push(`missing-keys-focused.json (${missingKeys.length} keys)`);
     }
+
+    // ALL UNUSED KEYS REPORT - Complete list for all languages
+    const allUnusedReport = {
+      summary: {
+        description: "Complete list of all unused translation keys across all languages",
+        generatedAt: new Date().toISOString(),
+        totalLanguages: this.allLanguages.length
+      },
+      unusedKeysByLanguage: {}
+    };
+
+    for (const [langCode, unusedKeys] of this.unusedTranslations) {
+      if (unusedKeys.length > 0) {
+        const translations = this.languageFiles.get(langCode);
+        allUnusedReport.unusedKeysByLanguage[langCode] = {
+          totalUnusedKeys: unusedKeys.length,
+          keys: unusedKeys.map(key => ({
+            key: key,
+            value: translations[key] || '',
+            estimatedSize: (key.length + (translations[key] || '').length) * 2 // rough byte estimate
+          })).sort((a, b) => a.key.localeCompare(b.key))
+        };
+      }
+    }
+
+    const allUnusedFile = path.join(this.outputDir, 'all-unused-keys.json');
+    fs.writeFileSync(allUnusedFile, JSON.stringify(allUnusedReport, null, 2));
+    files.push(`all-unused-keys.json (complete list for all languages)`);
     
     // Dynamic keys report
     const dynamicKeys = Array.from(this.keyContextMap.entries())
@@ -951,13 +996,64 @@ class FocusedTranslationAuditor {
         }))
       };
       
-      const dynamicFile = path.resolve('./dynamic-keys-report.json');
+      const dynamicFile = path.join(this.outputDir, 'dynamic-keys-report.json');
       fs.writeFileSync(dynamicFile, JSON.stringify(dynamicReport, null, 2));
       files.push(`dynamic-keys-report.json (${dynamicKeys.length} dynamic keys)`);
     }
+
+    // Inconsistent keys report
+    if (this.inconsistentKeys.size > 0) {
+      const inconsistentReport = {
+        summary: {
+          totalInconsistentKeys: this.inconsistentKeys.size,
+          description: "Keys that exist in some languages but not others",
+          generatedAt: new Date().toISOString()
+        },
+        inconsistentKeys: Array.from(this.inconsistentKeys).sort().map(key => {
+          const languageStatus = {};
+          for (const [langCode, translations] of this.languageFiles) {
+            languageStatus[langCode] = {
+              exists: key in translations,
+              value: translations[key] || null
+            };
+          }
+          return {
+            key: key,
+            languageStatus: languageStatus,
+            missingInLanguages: this.allLanguages.filter(lang => !(key in this.languageFiles.get(lang))),
+            existsInLanguages: this.allLanguages.filter(lang => key in this.languageFiles.get(lang))
+          };
+        })
+      };
+      
+      const inconsistentFile = path.join(this.outputDir, 'inconsistent-keys-report.json');
+      fs.writeFileSync(inconsistentFile, JSON.stringify(inconsistentReport, null, 2));
+      files.push(`inconsistent-keys-report.json (${this.inconsistentKeys.size} inconsistent keys)`);
+    }
+
+    // Duplicate translations report
+    if (this.duplicateKeys.size > 0) {
+      const duplicateReport = {
+        summary: {
+          totalDuplicateGroups: this.duplicateKeys.size,
+          description: "Potential duplicate translations (same value, different keys)",
+          generatedAt: new Date().toISOString()
+        },
+        duplicateGroups: Array.from(this.duplicateKeys.entries()).map(([value, keys]) => ({
+          sharedValue: value,
+          duplicateKeys: keys,
+          keyCount: keys.length,
+          estimatedSavings: value.length * (keys.length - 1) * 2 // rough byte estimate if consolidated
+        })).sort((a, b) => b.estimatedSavings - a.estimatedSavings)
+      };
+      
+      const duplicateFile = path.join(this.outputDir, 'duplicate-translations-report.json');
+      fs.writeFileSync(duplicateFile, JSON.stringify(duplicateReport, null, 2));
+      files.push(`duplicate-translations-report.json (${this.duplicateKeys.size} duplicate groups)`);
+    }
     
     if (files.length > 0) {
-      console.log(`📄 Additional focused reports saved:`);
+      console.log(`📄 Additional focused reports saved to ${this.outputDir}:`);
       files.forEach(file => console.log(`   • ${file}`));
     }
   }
@@ -987,6 +1083,7 @@ class FocusedTranslationAuditor {
       console.log(`\n🎉 Focused translation audit complete!`);
       console.log(`⏱️  Total time: ${((Date.now() - this.stats.scanStartTime) / 1000).toFixed(2)}s`);
       console.log(`🎯 Only t(), tSync(), and tAsync() calls were analyzed`);
+      console.log(`📁 All reports saved to: ${this.outputDir}`);
       
     } catch (error) {
       console.error('❌ Audit failed:', error.message);

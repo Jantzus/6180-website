@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "totalDuplicateGroups": 3,
+    "description": "Potential duplicate translations (same value, different keys)",
+    "generatedAt": "2025-06-28T12:33:34.243Z"
+  },
+  "duplicateGroups": [
+    {
+      "sharedValue": "sinam xabiili baalisa",
+      "duplicateKeys": [
+        "Delete My Copy",
+        "Album Password Policy"
+      ],
+      "keyCount": 2,
+      "estimatedSavings": 42
+    },
+    {
+      "sharedValue": "sinam xabiili",
+      "duplicateKeys": [
+        "User",
+        "Submit"
+      ],
+      "keyCount": 2,
+      "estimatedSavings": 26
+    },
+    {
+      "sharedValue": "baxa",
+      "duplicateKeys": [
+        "Share",
+        "Save"
+      ],
+      "keyCount": 2,
+      "estimatedSavings": 8
+    }
+  ]
+}

@@ -1,53 +1,63 @@
 // eslint-plugin-no-ssr-unsafe/index.js
 
 const noSSRUnsafeBrowserApi = require('./rules/no-ssr-unsafe-browser-api.js');
+const noSSRNonDeterministic = require('./rules/no-ssr-nondeterministic-expressions.js');
+const noSSRAsyncInRender = require('./rules/no-ssr-async-in-render.js');
 
 module.exports = {
   meta: {
     name: 'eslint-plugin-no-ssr-unsafe',
-    version: '2.0.0'
+    version: '2.1.0'  // bumped version to reflect new rules
   },
   rules: {
-    'no-ssr-unsafe-browser-api': noSSRUnsafeBrowserApi
+    'no-ssr-unsafe-browser-api': noSSRUnsafeBrowserApi,
+    'no-ssr-nondeterministic-expressions': noSSRNonDeterministic,
+    'no-ssr-async-in-render': noSSRAsyncInRender,
   },
   configs: {
-    // Standard configuration - recommended for most projects
+    // Recommended configuration enabling all three rules
     recommended: {
       plugins: ['no-ssr-unsafe'],
       rules: {
         'no-ssr-unsafe/no-ssr-unsafe-browser-api': ['error', {
-          allowGuarded: true,        // Allow typeof window !== 'undefined' 
-          strictMode: false,         // Standard checking
-          utilityLeniency: true      // Be lenient with utility files
-        }]
+          allowGuarded: true,
+          strictMode: false,
+          utilityLeniency: true
+        }],
+        'no-ssr-unsafe/no-ssr-nondeterministic-expressions': 'error',
+        'no-ssr-unsafe/no-ssr-async-in-render': 'error'
       }
     },
-    
-    // Strict configuration - for teams wanting maximum safety
+
+    // Strict configuration (same behavior, just more explicit)
     strict: {
       plugins: ['no-ssr-unsafe'],
       rules: {
         'no-ssr-unsafe/no-ssr-unsafe-browser-api': ['error', {
-          allowGuarded: true,        // Still allow guards
-          strictMode: true,          // Stricter checking
-          utilityLeniency: false     // Flag utility files too
-        }]
+          allowGuarded: true,
+          strictMode: true,
+          utilityLeniency: false
+        }],
+        'no-ssr-unsafe/no-ssr-nondeterministic-expressions': 'error',
+        'no-ssr-unsafe/no-ssr-async-in-render': 'error'
       }
     },
-    
-    // Lenient configuration - for existing codebases with many utilities
+
+    // Lenient configuration for legacy codebases
     lenient: {
       plugins: ['no-ssr-unsafe'],
       rules: {
         'no-ssr-unsafe/no-ssr-unsafe-browser-api': ['warn', {
-          allowGuarded: true,        // Allow guards
-          strictMode: false,         // Standard checking
-          utilityLeniency: true      // Very lenient with utilities
-        }]
+          allowGuarded: true,
+          strictMode: false,
+          utilityLeniency: true
+        }],
+        'no-ssr-unsafe/no-ssr-nondeterministic-expressions': 'warn',
+        'no-ssr-unsafe/no-ssr-async-in-render': 'warn'
       }
     },
-    
-    // Migration configuration - for gradually adopting the rule
+
+    // Migration configuration for gradual rollout
     migration: {
       plugins: ['no-ssr-unsafe'],
       rules: {
@@ -55,7 +65,9 @@ module.exports = {
           allowGuarded: true,
           strictMode: false,
           utilityLeniency: true
-        }]
+        }],
+        'no-ssr-unsafe/no-ssr-nondeterministic-expressions': 'warn',
+        'no-ssr-unsafe/no-ssr-async-in-render': 'warn'
       }
     }
   }
