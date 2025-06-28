@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ekapadet eo eka gauwok omo dogor kainang me. Kapita ekapadet eko etaen",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Eplan mo eko kapacitet me ekapadet eo ewok ino mo ena ama ituga ra billing period",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ekea foto eñ ek añ process. Emij process iet nañ foto rej kana continue.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Emij bill mo {{amount}} tata aran bwe en jeban me nañ kor me aelon."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Emij bill mo {{amount}} tata aran bwe en jeban me nañ kor me aelon.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ekaan e plan ea omomit en neb omo. Ebwe kona ekaan men opet ko ak ekaan ke toon amoun.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Emej duge folder omo igot subfolder. Ebwe memej ekaan duge itok album ngkai jikin subfolder, ak akor kopa mij duge album?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Zwiga zwa pulane kha mataga madzhuku zwi shuma nga mulaini wa tshifhinga tshavho tsha u bveledzela mbadelo",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Mataga aya a zwi kongolose zwa vhathu vha zwino. Ri khou humbela uri ni nange mataga makulu",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Foṱo dzo ḓi sa koni u thomwa. Ni nga khou bvela phanḓa nga foṱo dzo ḓi thomwaho zwavhuḓi.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ni ḓo bviselelwa {{amount}} ṅwedzi na ṅwedzi nga iyi nḓila ya u bvisa arali a ni si i shandukise."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ni ḓo bviselelwa {{amount}} ṅwedzi na ṅwedzi nga iyi nḓila ya u bvisa arali a ni si i shandukise.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Nangani pulani ye i ṱuṱuwedza zwithu zwine na zwi ṱoda. Ni nga nanga u bva kha zwiṅwe zwa fhasi kana u dzhenisa tshimalo tsha vhunwe.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ri vhona uri foldara yanu ina dzifoldara dzi ṱukuni. Ni khou funesa u ita album yo fhambanaho kha foldara yo ṱukuni nnyi na nnyi, kana ni vhone dzino dzose sa album nthihi?"
 }

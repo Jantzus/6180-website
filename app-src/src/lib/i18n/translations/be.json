@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Гэтай ёмістасці недастаткова для вашага бягучага выкарыстання. Калі ласка, выберыце большую ёмістасць",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Змены плана да меншай ёмістасці ўступаюць у сілу ў канцы вашага бягучага перыяду разліку",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Некаторыя фота не змаглі быць апрацаваныя. Вы можаце працягваць з паспяхова апрацаванымі фота.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Вам будзе аўтаматычна спагнацца {{amount}} штомесяц з гэтага спосабу аплаты, калі вы яго не зменіце."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Вам будзе аўтаматычна спагнацца {{amount}} штомесяц з гэтага спосабу аплаты, калі вы яго не зменіце.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Выберыце план, які найлепш адпавядае вашым патрэбам. Вы можаце выбраць з варыянтаў ніжэй ці ўвесці ўласную суму.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мы заўважылі, што ваша папка ўтрымлівае падпапкі. Ці хочаце вы стварыць асобны альбом для кожнай падпапкі, ці разглядаць іх усе як адзін альбом?"
 }

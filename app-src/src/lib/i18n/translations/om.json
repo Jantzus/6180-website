@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Dandeettiin kun itti fayyadama ammee keessan hin gaʼu. Mee dandeettii guddaa filachuu",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Jijjiirraan karoora gara dandeettii xiqqaatti dhuma yeroo kaffaltii yeroo ammaa keessanii keessatti hojii irra ooluu",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Suuraawwan tokko tokko hin oolfamne. Suuraawwan milkaa'inaan oolfaman waliin ittifufa dandeessa.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Akka kanfalti kanaaf jijjiruu keessatti kaffalti {{amount}} ji'aan ji'aan ofumaan sirraa ni kaafama."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Akka kanfalti kanaaf jijjiruu keessatti kaffalti {{amount}} ji'aan ji'aan ofumaan sirraa ni kaafama.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Karoora fedhii kee wajjin walitti dhufu filadhu. Filannoowwan armaan gadii keessaa filachuu ykn herrega dhuunfaa galchuu ni dandeessa.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Galmeensa keessan galmeensota xiqqoo qabaachuu hubanne. Galmeensa xiqqoo tokkoo tokkoof album garaa garaa uumuu barbaadduu moo hunda album tokkotti ilaaluu barbaadduu?"
 }

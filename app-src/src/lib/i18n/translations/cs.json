@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Tato kapacita není dostačující pro vaše současné použití. Vyberte prosím větší kapacitu",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Změny plánu na menší kapacitu nabývají účinnosti na konci vašeho současného fakturačního období",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Některé fotografie nemohly být zpracovány. Můžete pokračovat s úspěšně zpracovanými fotografiemi.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Pokud tuto platební metodu nezměníte, bude vám automaticky účtováno {{amount}} měsíčně."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Pokud tuto platební metodu nezměníte, bude vám automaticky účtováno {{amount}} měsíčně.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Vyberte plán, který nejlépe vyhovuje vašim potřebám. Můžete si vybrat z možností níže nebo zadat vlastní částku.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Všimli jsme si, že vaše složka obsahuje podsložky. Chcete vytvořit samostatné album pro každou podsložku, nebo je všechny považovat za jedno album?"
 }

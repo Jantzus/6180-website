@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Dát kapasitehta ii leat doarvái du dálá geavahussii. Vállje stuorát kapasitehta",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Plána rievdadusat unni kapasitehtii váldojuvvojit boahttevaš du dálá regnodáhpáhusa loahpas",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Muhtun govat eai sáhttán gieđahallat. Don sáhtát joatkit buridit gieđahallojuvvon govaiguin.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Dus fállet automátalaččat {{amount}} mánotbadji dán maksanvuogi bokte jus it rievdat dan."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Dus fállet automátalaččat {{amount}} mánotbadji dán maksanvuogi bokte jus it rievdat dan.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Vállje plána mii buoremusat heiveha du dárbbašiiguin. Don sáhtát válljet vuolábeali molssaeavttuid rájes dahje čállit iežat hárrái.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mii leat oidnon ahte du máhpas leat vuollimáhpat. Háliidat-go ráhkadit sierra albuma juohke vuollimáhpii, vai gieđahallat visuid ovtta albumin?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kapasitas ko indak cukuik untuak pangunaannyo kini. Tolong piliah kapasitas nan labiah gadang",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Parubahan rancangan ka kapasitas nan labiah kaciak mulai di ujuang masa tagihan kini",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sabagian foto indak bisa diproses. Awak bisa malanjuikan jo foto nan sudah berhasil diproses.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Awak akan ditagiah {{amount}} tiok bulan sacaro otomatis jo cara bayar nan ko kecuali awak tukar."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Awak akan ditagiah {{amount}} tiok bulan sacaro otomatis jo cara bayar nan ko kecuali awak tukar.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilihlah rancangan nang paling cocok jo kabutuahan awak. Awak bisa miliah dari pilihan di bawah ko atau mamasuakan jumlah custom.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami caliak bahwa folder awak baisiko subfolder. Awak indak nak mambuek album tapisah untuak satiok subfolder, atau mangganggokan samuonyo sabagai album tunggal?"
 }

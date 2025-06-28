@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ikike a erughi iji mee ihe ị na-eji ugbu a. Biko họrọ ikike ka ukwu",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Mgbanwe atụmatụ gaa na ikike nta na-arụ ọrụ na njedebe nke oge ịkwụ ụgwọ gị ugbu a",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ụfọdụ foto enweghị ike ka a hazie. Ị nwere ike ịga n'ihu na foto ndị ahaziri nke ọma.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A ga-eji usoro ụgwọ a na-agbapụta gị {{amount}} kwa ọnwa ozugbo ma ọ bụrụ na ị gbanweghị ya."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A ga-eji usoro ụgwọ a na-agbapụta gị {{amount}} kwa ọnwa ozugbo ma ọ bụrụ na ị gbanweghị ya.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Họrọ atụmatụ kacha dakọrọ mkpa gị. Ị nwere ike ịhọrọ site na nhọrọ ndị dị n'okpuru ma ọ bụ tinye ego nke gị.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Anyị chọpụtara na nchekwa gị nwere ụmụ nchekwa. Ị ga-achọ ịmepụta ọba foto dị iche iche maka ụmụ nchekwa ọ bụla, ka ị ga-ele ha niile dị ka ọba foto naanị otu?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Die Kapazidäd is ned gnuh für dai Benudsung. Biddschee wähl e gresseri Kapazidäd",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Planännerunge zu ere klenere Kapazidäd nemme Effekt am End vo dainer aktuellere Rechnungsperiod",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "E paar Bilder hen nit verarbeitet werre kinne. Du kannsch weider mache mit de Bilder wu gudd verarbeitet worre sin.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du wersch automatic {{amount}} alle Monat iwwer die Zahlungsmethode verrechent wann de se net ennersch."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du wersch automatic {{amount}} alle Monat iwwer die Zahlungsmethode verrechent wann de se net ennersch.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wähl de Plan aus wo am beschte zu deine Bedierfniss passt. Du kannscht aus de Optione unne wähle oder e eije Betrag eingebe.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir hen bemerkt dass dei Ordner Unnerordner hot. Witt du fer jeede Unnerordner e eije Album mache odder sie all als ääs Album behandle?"
 }

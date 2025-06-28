@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "An dalc'h-mañ n'eo ket a-walc'h evit ho implij bremanel. Dibabit un dalc'h brasoc'h",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Kemmoù ar cynllun d'un dalc'h bihanoc'h a zeu da vat e dibenn ho prantad fakturiañ red",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Luc'hskeudennoù zo n'eus ket gallet bezañ steudet. Gallout a rit padout gant ar c'heudennoù steudet mat.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Facturet e viot {{amount}} bep miz ent em doare-se paeañ ma ne cheñchit ket anezhañ."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Facturet e viot {{amount}} bep miz ent em doare-se paeañ ma ne cheñchit ket anezhañ.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Dibabit ar plan a glot ar gwellañ gant ho ezhommoù. Gallout a rit dibab eus an dibaboù dindan pe ensoc'hañ un neuz personelaet.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Diwezhañ hon eus ez eus teuliadoù-hag-izel en ho teuliad. Ha fellout a ra deoc'h krouiñ un albom ar wahân evit pep teuliad-hag-izel, pe kas anezho oll evel un albom hepken?"
 }

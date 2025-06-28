@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "இந்த திறன் உங்கள் தற்போதைய பயன்பாட்டிற்கு போதுமானதல்ல. தயவுசெய்து பெரிய திறனைத் தேர்ந்தெடுக்கவும்",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "சிறிய திறனுக்கான திட்ட மாற்றங்கள் உங்கள் தற்போதைய பில்லிங் காலத்தின் முடிவில் நடைமுறைக்கு வரும்",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "சில புகைப்படங்களை செயலாக்க முடியவில்லை। வெற்றிகரமாக செயலாக்கப்பட்ட புகைப்படங்களுடன் நீங்கள் தொடரலாம்.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "இந்த பேமெண்ட் முறையை நீங்கள் மாற்றாத வரை மாதம் {{amount}} தானாகவே பில் செய்யப்படும்."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "இந்த பேமெண்ட் முறையை நீங்கள் மாற்றாத வரை மாதம் {{amount}} தானாகவே பில் செய்யப்படும்.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "உங்கள் தேவைகளுக்கு மிகவும் பொருத்தமான திட்டத்தைத் தேர்வு செய்யுங்கள். கீழே உள்ள விருப்பங்களிலிருந்து தேர்வு செய்யலாம் அல்லது தனிப்பயன் தொகையை உள்ளிடலாம்.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "உங்கள் கோப்புறையில் துணை கோப்புறைகள் உள்ளன என்பதை நாங்கள் கவனித்தோம். ஒவ்வொரு துணை கோப்புறைக்கும் தனி ஆல்பம் உருவாக்க விரும்புகிறீர்களா அல்லது அனைத்தையும் ஒரே ஆல்பமாக கருத விரும்புகிறீர்களா?"
 }

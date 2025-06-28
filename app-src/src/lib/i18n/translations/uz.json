@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kichikroq quvvatga plan o'zgarishlari sizning hozirgi to'lov davriningiz oxirida kuchga kiradi",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Bu quvvat sizning hozirgi foydalanishingiz uchun yetarli emas. Iltimos, kattaroq quvvatni tanlang",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Baʼzi rasmlar qayta ishlanmadi. Muvaffaqiyatli qayta ishlangan rasmlar bilan davom etishingiz mumkin.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Agar ushbu to'lov usulini o'zgartirmasangiz, oylik {{amount}} avtomatik ravishda to'lanadi."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Agar ushbu to'lov usulini o'zgartirmasangiz, oylik {{amount}} avtomatik ravishda to'lanadi.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ehtiyojlaringizga eng mos keladigan rejani tanlang. Quyidagi variantlardan tanlashingiz yoki o'zingizning summangizni kiritishingiz mumkin.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sizning papkangizda papkachalar borligini ko'rdik. Har bir papkacha uchun alohida albom yaratishni xohlaysizmi yoki ularning barchasini bitta albom sifatida ko'rishni xohlaysizmi?"
 }

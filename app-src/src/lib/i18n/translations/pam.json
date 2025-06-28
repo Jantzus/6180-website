@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ing kapasidad a ini ali ya makasapat keng miyayaus mong pagamit ngeni. Pipilinan me ing metung a mas maragul a kapasidad",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Deng panlawe king planu king madalumdum a kapasidad magigising king wakas ning kasalungsungan mung billing period",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Deting larawan e ra mituki i-process. Malyari ku mung magpatuloy keng masaganang me-process a larawan.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Mayayakit ke otomatiku ning {{amount}} balang bulan keng paralan da king pagbayad iti nung e mu babagyun."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Mayayakit ke otomatiku ning {{amount}} balang bulan keng paralan da king pagbayad iti nung e mu babagyun.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilien ing plan a pekamalagung makatupad kareng pamilangu yu. Malyari yung mamilii kareng options king lalam o mag-enter ning sarili yung halaga.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Miras mi na ing folder yu atin yang mga subfolder. Buri mung gawan album a bukud ing balang subfolder, o pansamantalang treating dang pisan antimong metung a album?"
 }

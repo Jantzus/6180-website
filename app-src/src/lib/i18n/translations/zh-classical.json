@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "減至較小容量之計劃變更將於現行計費週期終了時生效",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "此容量不足以應所需。請選較大之容量",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "或有圖像未能處理。君可用已善處理之圖像續之。",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "汝若弗改此付費之法，每月自動扣汝{{amount}}。"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "汝若弗改此付費之法，每月自動扣汝{{amount}}。",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "擇最適爾所需之策。可自下列選項擇之，或入自定額數。",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "吾等見爾夾中有子夾。欲為各子夾創單冊，抑視諸為一冊？"
 }

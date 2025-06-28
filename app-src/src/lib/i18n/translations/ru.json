@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Этой мощности недостаточно для вашего текущего использования. Пожалуйста, выберите большую мощность",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Изменения плана на меньшую мощность вступают в силу в конце вашего текущего расчетного периода",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Некоторые фотографии не удалось обработать. Вы можете продолжить с успешно обработанными фотографиями.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "С вас будет автоматически списываться {{amount}} ежемесячно с этого способа оплаты, если вы его не измените."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "С вас будет автоматически списываться {{amount}} ежемесячно с этого способа оплаты, если вы его не измените.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Выберите план, который лучше всего соответствует вашим потребностям. Вы можете выбрать из вариантов ниже или ввести собственную сумму.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мы заметили, что ваша папка содержит подпапки. Хотите ли вы создать отдельный альбом для каждой подпапки или рассматривать их все как один альбом?"
 }

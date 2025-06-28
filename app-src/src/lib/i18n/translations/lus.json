@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Thil hmang theihna tenau zawka plan tidanglamnate hi i billing hun tawpah hian a thawk ang",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "He thil hmang theihna hi i hmanna tûr ang a tawk lo. Lian zawk thil hmang theihna duh rawh",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Photo thenkhat hi process theih loh a ni. Process thiam tah chu i hmang thei dawn nia.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "He payment method hi i thlak loh chuan thla tin {{amount}} automatic-in bill-in a ni ang."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "He payment method hi i thlak loh chuan thla tin {{amount}} automatic-in bill-in a ni ang.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kan hmu a, i folder ah hian subfolder te a awm. Subfolder tinte tan album dang i siam duh em, a nih loh leh a vaiin album pakhat angin i ngai duh em?"
 }

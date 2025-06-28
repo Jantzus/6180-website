@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kapasitas nyoe hana cukup keu peugot droeneuh. Pileh kapasitas nyang leubeh rayeuk",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Parubahan pakét ka kapasitas nyang leubeh ubit galak mulai bak akhé masa tagéhan jino",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Nyang bèë fòto hana jeuët geu-proses. Droëneuh jeuët teruskan ngön fòto nyang ka geu-proses jeuët.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Droëneuh geutamah bayeue {{amount}} seutiëp bulan ngön cara bayeue nyoe kecuali droëneuh ganti."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Droëneuh geutamah bayeue {{amount}} seutiëp bulan ngön cara bayeue nyoe kecuali droëneuh ganti.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilihlah rencana yang paling cocok dengan kebutuhan Anda. Anda dapat memilih dari opsi di bawah ini atau memasukkan jumlah khusus.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kamoe meupeulara bahwa folder droeneuh na subfolder. Kamoe galak jiteuka album khusus keu tiep subfolder, atawa kira jadiken saboh album mantong?"
 }

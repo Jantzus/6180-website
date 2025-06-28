@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "This capacity is not enough for how you use it now. Please choose a bigger capacity",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Plan changes to a smaller size take effect when your current billing time ends",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Some photos could not be processed. You can continue with the successfully processed photos.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "You will be automatically billed {{amount}} monthly on this payment method unless you change it."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "You will be automatically billed {{amount}} monthly on this payment method unless you change it.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?"
 }

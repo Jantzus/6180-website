@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Šis talpos nepakanka jūsų dabartiniam naudojimui. Prašome pasirinkti didesnę talpą",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Plano keitimai į mažesnę talpą įsigalioja dabartinio jūsų atsiskaitymo laikotarpio pabaigoje",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Kai kurių nuotraukų nepavyko apdoroti. Galite tęsti su sėkmingai apdorotomis nuotraukomis.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jums bus automatiškai taikomas {{amount}} mokestis kas mėnesį šiuo mokėjimo būdu, jei jo nekeičiate."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jums bus automatiškai taikomas {{amount}} mokestis kas mėnesį šiuo mokėjimo būdu, jei jo nekeičiate.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pasirinkite planą, kuris geriausiai tinka jūsų poreikiams. Galite pasirinkti iš toliau pateiktų variantų arba įvesti pasirinktinę sumą.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pastebėjome, kad jūsų aplanke yra poaplankių. Ar norėtumėte sukurti atskirą albumą kiekvienam poaplankiui, ar juos visus traktuoti kaip vieną albumą?"
 }

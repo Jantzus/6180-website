@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "छोट शक्ति म योजना परिवर्तन अहाँक वर्तमान बिलिंग अवधि क अंत म प्रभावी होइत छै",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "इ शक्ति अहाँक वर्तमान उपयोग क लेल कम छै। कृपया एकटा पैघ शक्ति चुनू",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "कुछ फोटो प्रोसेस नै हो सकलै। अहाँ सफल रूप सं प्रोसेस भेल फोटो सब क साथ आगू बढ़ सकै छी।",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "जब तक अहाँ एकरा नै बदलब ताब तक एह भुगतान विधि स मासिक {{amount}} अपने आप काटल जेतै।"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "जब तक अहाँ एकरा नै बदलब ताब तक एह भुगतान विधि स मासिक {{amount}} अपने आप काटल जेतै।",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "हम देखल बानी कि आपके फोल्डर में सब-फोल्डर अछि। की आप हरेक सब-फोल्डर खातिर अलग एल्बम बनावे चाहैत छी, या सब्भके एक एल्बम मानी चाहैत छी?"
 }

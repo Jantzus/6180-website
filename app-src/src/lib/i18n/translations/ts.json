@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Matimba lawa ma nga ringaneleli matirhiselo ya wena ya sweswi. Hi kombela u hlawula matimba lamakulu",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ku cinca ka pulani eka matimba lamatsongo ku suka eku heleni ka nkarhi wa wena wa sweswi wa ku hakela",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Swifaniso swin'wana a swi ngheniseki ku tirhisiwa. U nga ya emahlweni na swifaniso leswi tirhisiweke kahle.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "U nga vekiwa {{amount}} nhweti yin'wana na yin'wana eka ndlela leyi ya ku hakela handle ko ku yi cinca."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "U nga vekiwa {{amount}} nhweti yin'wana na yin'wana eka ndlela leyi ya ku hakela handle ko ku yi cinca.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Hlawula marangahanye lawa ya antswisiweke kahle hi swiviko swa wena. U nga hlawula eka tinyangho ta laha hansi kumbe u teka xikalo xa wena.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hi vona leswaku fayela ya wena yi na tifayela letitsongo. Xana u lava ku endla album yo hambana eka fayela yin'wana ni yin'wana yo tsongo, kumbe ku yi khoma hinkwayo tanihi album yin'we?"
 }

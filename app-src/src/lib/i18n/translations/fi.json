@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Tämä kapasiteetti ei riitä nykyiseen käyttöösi. Valitse suurempi kapasiteetti",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Suunnitelman muutokset pienempään kapasiteettiin astuvat voimaan nykyisen laskutusjakson lopussa",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Joitakin kuvia ei voitu käsitellä. Voit jatkaa onnistuneesti käsitellyillä kuvilla.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sinua laskutetaan automaattisesti {{amount}} kuukausittain tästä maksutavasta, ellet muuta sitä."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sinua laskutetaan automaattisesti {{amount}} kuukausittain tästä maksutavasta, ellet muuta sitä.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Valitse tarpeisiisi parhaiten sopiva suunnitelma. Voit valita alla olevista vaihtoehdoista tai syöttää mukautetun summan.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Havaitsimme, että kansiossasi on alikansioita. Haluaisitko luoda erillisen albumin jokaiselle alikansialle vai käsitellä niitä kaikkia yhtenä albumina?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "थ्व क्षमता छिगु अयाकल्व तःने मादुइ। दयाकः थ्व जुइ क्षमता तःगु",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "इजि क्षमता तः प्लान बदल छिगु बिलिङ्ग वा तःगु",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "गुगु किपा प्रसेस यायेमाखु। छिं फलामतं प्रसेस जुयाच किपाइगु अग्रसर यायेत।",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "छिं थगु पेमेंट मेथड आह्वान्या मखु नं दिसं {{amount}} अटोमेटिक बिल जुइ।"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "छिं थगु पेमेंट मेथड आह्वान्या मखु नं दिसं {{amount}} अटोमेटिक बिल जुइ।",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "छिमिं दुगुं सिरी जकतं खनेद्य योजना आम्हे। छिमिं तलेज्याव गुज्याव तय् खनेत ग्वारापि निकुन इका निजी रकम बियातं ग्वाराँ।",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "छिमिं फोल्डर न सबफोल्डर दु जकतं तुलाक्व। छिमिं जक जक सबफोल्डर न वकूयाव अल्बम वनातं खनेयेतं द्यू वा छियो सकलांत वकूगु अल्बम द्यू वा खने?"
 }

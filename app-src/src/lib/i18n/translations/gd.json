@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Chan eil an comas seo gu leòr airson ur cleachdadh làithreach. Feuch an tagh sibh comas nas motha",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Bidh atharrachaidhean plana gu comas nas lugha a' tighinn gu buil aig deireadh na h-ùine billaidh làithreach agaibh",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Cha b' urrainn cuid a dhealbhan a ghiùlan. Faodaidh sibh leantainn orra leis na dealbhan a chaidh an giùlan gu soirbheachail.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Thèid {{amount}} a thogail uaibh gu fèin-ghluasadach gach mìos air an dòigh-pàighidh seo mur caochail sibh e."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Thèid {{amount}} a thogail uaibh gu fèin-ghluasadach gach mìos air an dòigh-pàighidh seo mur caochail sibh e.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tagh am plana as fheàrr a fhreagras do na feumalachdan agad. Faodaidh tu taghadh às na roghainnean gu h-ìosal no suim àraidh a chur a-steach.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mhothaich sinn gu bheil fo-phasgan sa phasgan agad. Am bu toil leat clàr air leth a chruthachadh airson gach fo-phasgan, no am làimhseachadh gu lèir mar aon chlàr?"
 }

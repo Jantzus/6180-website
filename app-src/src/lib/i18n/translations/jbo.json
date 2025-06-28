@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "ti'e zbasu cumki cu na banzu lo do ca'o pilno. ko cuxna lo zenba cumki",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "cu'e plani galfi lo cmalu cumki cu mulno ca lo fanmo be lo ca jdini ciska temci pe do",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "loi pixra na kakne lo nu galfi. do kakne lo nu co'e sepi'o loi pixra poi pu snada galfi",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "do ba'o pleji lo ka {{amount}} masno lo ti mujgau pagbu poi na'e do galfi"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "do ba'o pleji lo ka {{amount}} masno lo ti mujgau pagbu poi na'e do galfi",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "cuxna le plani poi zmadu lo ka mapti do'i nitcu .i ka'e cuxna fi lo se cuxna poi cnita gi'a cu'u lo zifre poi do djica",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "mi viska lo du'u do datni bakfu cu se vasru lo cmarafsi datni bakfu .i xu do djica lo nu finti lo drata se jdice bakfu kei ro cmarafsi datni bakfu .i ja xu do djica lo nu jdice ro sepi'o ta lo pa se jdice bakfu"
 }

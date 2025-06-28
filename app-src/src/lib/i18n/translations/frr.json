@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Jüdeer kapaziteet ees ei nuch för juu aktuel geböök. Bitje wel en gratter kapaziteet",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Plandraaugen tu en letjerer kapaziteet kaam bi't ien faan juu aktuel riageningstidj tu't wirkel",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Enkelt Bialer kön ei bewerket wurd. Du kanst mä a gud bewerket Bialer widermaken.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du waast automatisch {{amount}} maantelk üüb detdiar betaalmeetood rekent, auer du't feraneest."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du waast automatisch {{amount}} maantelk üüb detdiar betaalmeetood rekent, auer du't feraneest.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wääl dät plan ütj wat am bäst tu diin nööden paast. Dü könst ütj a opsioonen ünerne wääle of en aanj betrag iidrääge.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Witj haa uunfunjen det diin uurder önerfooldern hää. Skel dü för eeder önerfoolder en eegen album mååge, afte ulje tunaamen as ian album bihanel?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kapasitas ini tidak mencukupi untuk penggunaan Anda saat ini. Silakan pilih kapasitas yang lebih besar",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Perubahan paket ke kapasitas yang lebih kecil berlaku pada akhir periode penagihan Anda saat ini",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Beberapa foto tidak dapat diproses. Anda dapat melanjutkan dengan foto yang berhasil diproses.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Anda akan secara otomatis ditagih {{amount}} bulanan pada metode pembayaran ini kecuali Anda mengubahnya."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Anda akan secara otomatis ditagih {{amount}} bulanan pada metode pembayaran ini kecuali Anda mengubahnya.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilih paket yang paling sesuai dengan kebutuhan Anda. Anda dapat memilih dari opsi di bawah ini atau memasukkan jumlah khusus.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami melihat bahwa folder Anda berisi subfolder. Apakah Anda ingin membuat album terpisah untuk setiap subfolder, atau menganggap semuanya sebagai satu album?"
 }

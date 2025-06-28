@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "ܗܢܐ ܚܝܠܐ ܠܐ ܣܦܩ ܠܚܘܝܒܟ ܗܫܝܐ. ܒܥܐ ܓܒܝ ܚܝܠܐ ܪܒܐ",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "ܫܘܚܠܦܐ ܕܡܚܫܒܬܐ ܠܚܝܠܐ ܙܥܘܪܐ ܡܚܕܪܝܢ ܒܣܘܦܐ ܕܙܒܢܐ ܕܚܘܫܒܢܐ ܗܫܝܐ",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ܐܢܫܝܢ ܨܘܪ̈ܬܐ ܠܐ ܐܬܬܥܒܕ. ܡܨܝܐ ܐܢܬ ܕܬܩܦ ܥܡ ܨܘܪ̈ܬܐ ܕܐܬܬܥܒܕ ܒܡܦܠܚܘܬܐ.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ܐܢܬ ܬܬܬܚܫܒ ܐܘܛܘܡܛܝܟܐܝܬ {{amount}} ܒܟܠ ܝܪܚܐ ܒܗܢܐ ܕܘܟܬܐ ܕܦܘܪܥܢܐ ܐܠܐ ܐܢ ܬܫܚܠܦܝܗ."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ܐܢܬ ܬܬܬܚܫܒ ܐܘܛܘܡܛܝܟܐܝܬ {{amount}} ܒܟܠ ܝܪܚܐ ܒܗܢܐ ܕܘܟܬܐ ܕܦܘܪܥܢܐ ܐܠܐ ܐܢ ܬܫܚܠܦܝܗ.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ܓܒܝ ܬܪܥܝܬܐ ܕܫܦܪܐ ܠܣܢܝܩܘܬܟ. ܡܫܟܚ ܐܢܬ ܠܡܓܒܝܘ ܡܢ ܓܘܒܝܐ ܕܠܬܚܬ ܐܘ ܠܡܥܠܘ ܡܢܝܢܐ ܕܝܠܟ.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ܚܙܝܢܢ ܕܣܦܩܘܟ ܐܝܬ ܒܗ ܣܦܪ̈ܐ ܙܥܘܪ̈ܐ. ܨܒܐ ܐܢܬ ܠܡܥܒܕ ܐܠܒܘܡ ܦܪܝܫܐ ܠܟܠ ܣܦܪܐ ܙܥܘܪܐ، ܐܘ ܠܡܚܫܒ ܟܠܗܘܢ ܐܝܟ ܐܠܒܘܡ ܚܕ؟"
 }

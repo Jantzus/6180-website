@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "A kapasitei ya no e noti foe yu yusi nownow. Taki wan moro bigi kapasitei",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Plan kenki anga smakru kapasitei den kumu wroko na den en fu yu nownow bil tem",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Suma foto no ben kan prosesi. Yu kan go taki nanga den foto san ben prosesi bun.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Yu o bay {{amount}} ala mun na ala dis payment method efru yu no chensi en."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Yu o bay {{amount}} ala mun na ala dis payment method efru yu no chensi en.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kisi den plan di e kba bun fu yu. Yu kan kisi fun den presi dya na ondro of tyari wan eginsi taki.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wi si tak yu folder ab subfolder den. Yu wan meki wan apari album fu ala subfolder, efru yu wan behandel den ala leki wan album?"
 }

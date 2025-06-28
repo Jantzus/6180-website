@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "O lenei malosi e le sasa mo kou faaaogaina nei. Faamolemole filifili se malosi lapoaao",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "O suiga o fuafuaga i se malosi laiti e amata i le iuga o lou taimi e ave ai totogi nei",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "O ata ata na le mafai ona faia. E mafai ona e faaauau i ata na faia lelei.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O le a otometi ona aveina {{amount}} masina uma i lenei auala e totogi ai pe afai ae te le suia."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O le a otometi ona aveina {{amount}} masina uma i lenei auala e totogi ai pe afai ae te le suia.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Filifili le fuafuaga e sili ona fetaui ma lou manaʻoga. E mafai ona e filifilia mai filifiliga i lalo pe tuu se aofa faʻapitoa.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Na matou matauina o lo outou faila o loo i ai faila laiti. E te manao e fai se ata tusi eseese mo faila laiti taitasi, pe faia uma i se ata tusi e tasi?"
 }

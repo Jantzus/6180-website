@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "ความจุนี้ไม่เพียงพอสำหรับการใช้งานปัจจุบันของคุณ โปรดเลือกความจุที่ใหญ่กว่า",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "การเปลี่ยนแปลงแผนไปสู่ความจุที่เล็กลงจะมีผลในตอนท้ายของรอบการเรียกเก็บเงินปัจจุบันของคุณ",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ไม่สามารถประมวลผลภาพบางภาพได้ คุณสามารถดำเนินการต่อกับภาพที่ประมวลผลสำเร็จแล้ว",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "คุณจะถูกเรียกเก็บเงิน {{amount}} รายเดือนโดยอัตโนมัติในวิธีการชำระเงินนี้ เว้นแต่คุณจะเปลี่ยนแปลง"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "คุณจะถูกเรียกเก็บเงิน {{amount}} รายเดือนโดยอัตโนมัติในวิธีการชำระเงินนี้ เว้นแต่คุณจะเปลี่ยนแปลง",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "เลือกแผนที่เหมาะสมที่สุดกับความต้องการของคุณ คุณสามารถเลือกจากตัวเลือกด้านล่างหรือป้อนจำนวนเงินที่กำหนดเอง",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "เราสังเกตเห็นว่าโฟลเดอร์ของคุณมีโฟลเดอร์ย่อย คุณต้องการสร้างอัลบั้มแยกสำหรับแต่ละโฟลเดอร์ย่อยหรือถือว่าทั้งหมดเป็นอัลบั้มเดียว?"
 }

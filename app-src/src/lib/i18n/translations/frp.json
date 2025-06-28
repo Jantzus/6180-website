@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Cela capacitât est pas prod por voutron usâjo d'ora. Se vos plât chouèsésséd una capacitât ples granta",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Los changiaments de plan vers una capacitât ples petiôta pregnont èfèt a la fin de voutron pèriôdo de facturacion d'ora",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quârques fôtos ont pas possu étre travâlyês. Vos povéd continuar avouéc les fôtos travâlyês ben.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos sarèd ôtomaticament facturâ {{amount}} per môs avouéc ceta mètoda de payement a muens que vos la changiéd."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos sarèd ôtomaticament facturâ {{amount}} per môs avouéc ceta mètoda de payement a muens que vos la changiéd.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chouèsésséd lo plan que vos convint lo miux. Vos pouéd chouèsir entre les ôpcionis d'aval ou boutar una soma pèrsonalisâye.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nos avon remarquiê que voutron dossiér contint des sots-dossiérs. Éyérâd-vos crèyér un album sèparâ por châque sot-dossiér, ou ben los tractar tôs coment un sôl album ?"
 }

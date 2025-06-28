@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Na qebiliyyet şıma karê rocane rê kêm o. Yew qebiliyyetê gırd weçine",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Qebiliyyetê werdiye ra vurnayişê plani peyniya dewhira şıma qeydkerdışi de tesir kena",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Tayê resiman nêbiyê prosese biyê. Ti şenê bi resimê ke bi serkewtiş prosese biyê dewam kerê.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "To nê roşka peredayişi nıvuriyayê de her aşme otomatik {{amount}} keno hesab, eke nıvuriyayê."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "To nê roşka peredayişi nıvuriyayê de her aşme otomatik {{amount}} keno hesab, eke nıvuriyayê.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Plana ke teşiya şıma rê hesyena weçinê. Şıma eşkenê opsiyanê cêrênan ra weçinê ya zi yew raqamo xısusi binusê.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ma diyê ke foldera şıma de subfolderan esta. Şıma wazenê her subfoldera rê yew albumo xıso vırazê ya zi pêroyan yew album hesıbnê?"
 }

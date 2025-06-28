@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Мы къэпсалъэр уишӏагъэм папщӏэ. Нахьыбэ къэпсалъэ хэт",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ичъагъ къэпсалъэм хэкIыгъуэ зауэшхуэхэр уи ахъшэм и упщIэм екIуэкIуа",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Фотогъэхэр щыIэкъым прохэсс ящIэным. Гъэсэныгъэм ыкъэфэгъэгъуа фотогъэхэм ыкъэлъытэм папщIэ.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Сыт {{amount}} масэкIэ автоматически хэлъыкъуэкIэ, идэжын егъэджэкъуэкIэрэ."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Сыт {{amount}} масэкIэ автоматически хэлъыкъуэкIэ, идэжын егъэджэкъуэкIэрэ.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Уи лъэпкъым кӀыхьащэ план зэхэзылъ къыхэх. Мыщ къыпэфӀэщагъэхэм щыщ зыхэхьэжын плъэкӀыщт е пшэхэр итхьэм къамэ улъэс шӀугъуэу къэтхь.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "УипэблэкIым субпапкэу иIащэмэ хъурыт. Непэ субпапкэм зэ пшэхэр альбом хэгъэхьын плъэкIыщта, яхьэлбо псом хуэгъэкIуэ альбом хэгъэхьын плъэкIыщта?"
 }

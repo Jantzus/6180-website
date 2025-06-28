@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Tämä mahollizus ei riittä nykyzeh kävutökselleh. Valitkas suurembi mahollizus",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Planinmuutokset vähtäsempäh mahollizuteh tuldah voimah nykyzeh lastukaudel lopus",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Muutamii kuvii ei voinuh käsittellä. Voijat jatkua menestynyövesti käsitellyjen kuvien kera.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sinul veloittas avtomatizesti {{amount}} kuu tuossa maksamistavassa jollet sid vaihe."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sinul veloittas avtomatizesti {{amount}} kuu tuossa maksamistavassa jollet sid vaihe.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Valitkit suunnitelmu, konzu paremmin sobi sinun tarpeisih. Sah valita alah olevien variantoin keskes eli kirjutat oman summan.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mie nägemme jotta teidän kansiossa ovat alakansiet. Tuatto luatie erillizen albumin jokahizes alakansieh vai pitiä niitä kaikkuie yhenä albumina?"
 }

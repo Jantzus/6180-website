@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Disse Kapazitäit is nit genöich foar jou aktuelle Gebrük. Bitte wääl ne grattere Kapazitäit",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Planverännernge tou n litjere Kapazitäit wäide am Eende fon jou aktualle Riekeningstied wirksam",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Smuke Bielden kuuden nit ferbäädet wuude. Du koast mid do fultuurich ferbäädede Bielden fääregon.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du wäärst automatisk {{amount}} moanadlk ap disse Betaalmethode anroand, uutgeneemen du ännerst se."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du wäärst automatisk {{amount}} moanadlk ap disse Betaalmethode anroand, uutgeneemen du ännerst se.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wääl dän Plan uut dän am bäste tou dien Bedienewen past. Du koast uut do Optione ünner uutwääle of n eigen Betrag ienräike.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wi hebbe sään, dät dien Uurnere Ünneruurnere hät. Moatest du foar aal Ünneruurnere äiwen Album moakje of aal as aan Album behoandlelje?"
 }

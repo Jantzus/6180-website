@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Esta kapasidat no es bastante para tu uzo aktual. Por favor eskoje una kapasidat mas grande",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Los kambyos del plan a una kapasidat mas chika toman efekto al final de tu peryodo de fakturasyon aktual",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Algunas fotos no pudieron ser procesadas. Puedesh kontinar kon las fotos prosesadas kon eksito.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se te va a kograr automatikamente {{amount}} kada mes en este metodo de pago si no lo trokas."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se te va a kograr automatikamente {{amount}} kada mes en este metodo de pago si no lo trokas.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Eskojed el plan ke se ajusti mizor a vuestras nesesidades. Podesh eskojer entre las opsiones de avajo o meter una kantidad personalizada.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vimos ke vuesta karpeta tyene subkarpetas. Kerech krear un album separado para kada subkarpeta, o tratar a todas komo un solo album?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ари аҵакы ҟашәа уҟазышь дылшом. Ианҵәажәык еиҳау аҵакы",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ажәаша аҵак ирҧштәуп ураҧштәу ианҵәажәык дзыгәаҳауа",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Афотосуа ригалашәеит ауп. Инарбаанӷьоуп афотосуа рынагӷьозар ҟалап.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Шәҟәы {{amount}} амза иулагылан шәҟәы, шәара иала рҵашәарақәа аҟынтә иуахәтәуп."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Шәҟәы {{amount}} амза иулагылан шәҟәы, шәара иала рҵашәарақәа аҟынтә иуахәтәуп.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ашҭа иара план ианыхрзаалоу избаауп. Иара азхапшратә уасаҳауарҩуа ишырҧисуоит е ашыгырҩштәы хара-хара аҳәынтәи ҳашаз шәнатәуп.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Иарбан иҳазҿаҧы апапкақәа ҿаҩымҳәеит. Апапка хшыҷлеиҕыцыбжь альбом ашьақәырҳа зыхдыл арабарцәаартык, мамзаргьы альбом акы зегьы ҳцәырҳ мамзаргьы?"
 }

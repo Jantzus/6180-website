@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "یہ صلاحیت تمہارے موجودہ استعمال کے لیے کافی نہیں ہے۔ مہربانی کر کے زیادہ صلاحیت منتخب کریں",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "کم صلاحیت ناز پلان تبدیلی تہ موجودہ بلنگ دورس ختم زان واری اثر",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "کینہہ فوٹو پروسیس نِہ تھیوٚو ہېکہ۔ تُہہِ کامیابی سان پروسیس گوٚمتی فوٹو سان جاری تھاونہٕ ہېکو۔",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "یاہ پیمینٹ میتھڈ تبدیل نِہ کرو آو تے ہر مہینٕ {{amount}} آپ سے آپ کٹ یِن۔"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "یاہ پیمینٹ میتھڈ تبدیل نِہ کرو آو تے ہر مہینٕ {{amount}} آپ سے آپ کٹ یِن۔",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "تِم ضروریاتن سیت مِلِوِن پلان چُھنِو۔ تِم ہیتِس آپشنی ہُنز اَنتِخاب کَرتھ ہیکوُ یا پھِر کسٹم مقدار دِتھ ہیکوُ۔",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "اَسہِ ویٛچھ ذِ تُہنِز فولڈر مَنٛز سب فولڈر چھِ۔ کیاہ تُہہِ ہر سب فولڈرس لِیہِ الگ ایلبم بناونُک کریوان، یا تِمن سٲریین یِتھ پیٹھ اکس ایلبم شِمار کریوان؟"
 }

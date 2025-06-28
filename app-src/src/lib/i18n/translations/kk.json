@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Бұл қуаттылық сіздің ағымдағы пайдалануыңызға жеткіліксіз. Үлкенірек қуаттылық таңдаңыз",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Кіші қуаттылыққа жоспар өзгерістері ағымдағы есеп айырысу кезеңіңіздің соңында қолданысқа енеді",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Кейбір фотосуреттер өңделмеді. Сіз сәтті өңделген фотосуреттермен жалғастыра аласыз.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Сіз төлем тәсілін өзгертпесеңіз, бұл төлем әдісімен ай сайын {{amount}} автоматты түрде есептеледі."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Сіз төлем тәсілін өзгертпесеңіз, бұл төлем әдісімен ай сайын {{amount}} автоматты түрде есептеледі.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Қажеттіліктеріңізге ең сай келетін жоспарды таңдаңыз. Төмендегі нұсқалардан таңдай аласыз немесе өзіңіздің сомаңызды енгізе аласыз.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Қапшығыңызда ішкі қапшықтар бар екенін байқадық. Әр ішкі қапшыққа арналған жеке альбом жасағыңыз келе ме, әлде бәрін бір альбом ретінде қарағыңыз келе ме?"
 }

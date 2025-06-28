@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kái kàu khah-sè iông-liông ê kè-ōe pian-tōng tī lí chit-má ê siu-hùi kî-kan kiat-sok chiah ū hāu-la̍t",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Chit-ê iông-liông tùi lí chit-má ê sú-iong bô-kàu. Chhiáⁿ kéng-toā ê iông-liông",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ū-kóa siòng-phìⁿ bē-tàng chù-lí. Lí ē-tàng kā sêng-kong chù-lí ê siòng-phìⁿ kè-sio̍k.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Nā-sī lí bô kái chit-ê hù-khoán hong-sek, múi kòe-goe̍h to-ē chū-tōng khiú {{amount}}."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Nā-sī lí bô kái chit-ê hù-khoán hong-sek, múi kòe-goe̍h to-ē chū-tōng khiú {{amount}}.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "kám-chióng siōng ha̍h lí ê sū-iàu ê kè-ōe. Lí ē-tàng tī ē-bīn ê soan-chóng lāi-bīn chún, a̍h-sī su-ji̍p chū-tēng ê kim-gia̍h.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Goán tī-tio̍h lí ê tóng-àn-kiáⁿ lāi-bīn ū chú-tóng-àn-kiáⁿ. Lí beh kā ta̍k-ê chú-tóng-àn-kiáⁿ lóng chò chiah-ê siòng-phoe, iah-sī kā in lóng tòng-chò chit-pún siòng-phoe?"
 }

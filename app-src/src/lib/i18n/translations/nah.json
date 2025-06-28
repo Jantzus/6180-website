@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Inēi neīltīlīz ahmo mimati īmā motekitīnemi axkān. Ximitztlatlahtlauhtīa ma tiknexti huēiyakaēl neīltīlīz",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Tlachihuāltiliztli tlapatliliztli huēiyākayōl ītlāhuēlīlōca oncān moctli īmoxōchitlāhuīl tepoztlahuīlli cāhuitl",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Cequi ixpictin ahmo huelittaque momachilhui. Huel timohuicaz ic'quemeh imixpictin ohuelittaque momachilhuique.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Momachtiloz automaticamente {{amount}} metzli ic'nin metodo de pago ahmo ticpatlaz."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Momachtiloz automaticamente {{amount}} metzli ic'nin metodo de pago ahmo ticpatlaz.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tlaxtlahuili in tlen cualli nepantlahtoa ihuicpa motequipacho. Huel titlaxtlahuilisque ipan in tlen nican tlani onoc ahnozo tiquittazque cequi tlahuilli.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tiquittaque moxolalpan oncateh nepantlalpame. Ticnequi ticchihuazqueh cē album nepantlatzintli ipan cē nepantlaltic, ahnozo nochi ticmatizqueh cē album?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Вишкыт кужмезлыкы планысь воштэмъёсыз нуналлы вельде марто кемемъёс дырья кутске",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Та кужмезлык али тырми тӥ сямен уже серти. Курад, кузьыт кужмезлык ӧжытэ",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Мукетъёс фотоос доронтытэк. Тон но доронтыса фотоосын косыны быгатыськод.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Тэ та сьӧм сётон ной воштытэ огыт ке, тыныд ар {{amount}} автоматически басьтись."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Тэ та сьӧм сётон ной воштытэ огыт ке, тыныд ар {{amount}} автоматически басьтись.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Тӥ колянъёслы медаз умой план бӧрйыны. Ӵукна кылдэм вариантъёслэсь бӧрйыны луоз яке шӧдӥсь суммаез пыртыны луоз.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ми учкыдӥм тӥ папканы пытьы папкаосыз улыны. Тӥ кызьы пытьы папкалы сыӵе альбом лэсьтыны луод я быронысьтыз огзы альбомен карыны луод?"
 }

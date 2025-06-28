@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Planan vajehtused väht maholleisutte söttuba väghe nügüdläžen maksmižperiodan lopus",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Necidä maholleisuded ei ole tarbiž nügüdläžes kävutamižes. Valikat sured maholleisuded",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Eraz fotoid ei voind käziktoitta. Voitud jätkata hüvin käziktoittud fotoidenke.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Teid makstetadas avtomatišešti {{amount}} kut tuš maksandan čugunke, jol ed vaiče sidä."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Teid makstetadas avtomatišešti {{amount}} kut tuš maksandan čugunke, jol ed vaiče sidä.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Valigat plan, kuti paremba sobiše teiden tarbhid. Voite valita alaižiden variantiden keskes vai panda ičeze summ.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mö nägimme miše teiden kanskas oma alakansad. Tahtoiško lujitta eriline al'bom kaikuččele alakansale vai pidat kaikid ühteks al'bomaks?"
 }

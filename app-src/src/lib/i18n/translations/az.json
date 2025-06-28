@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Bu tutum sizin hazırkı istifadəniz üçün kifayət etmir. Zəhmət olmasa daha böyük tutum seçin",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Kiçik tutuma plan dəyişiklikləri cari faktura dövrünüzün sonunda qüvvəyə minir",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Bəzi şəkillər emal edilə bilmədi. Uğurla emal edilmiş şəkillərlə davam edə bilərsiniz.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bu ödəniş metodunda hər ay avtomatik olaraq {{amount}} çıxılacaq, onu dəyişməsəniz."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bu ödəniş metodunda hər ay avtomatik olaraq {{amount}} çıxılacaq, onu dəyişməsəniz.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ehtiyaclarınıza ən uyğun gələn planı seçin. Aşağıdakı variantlardan seçə bilər və ya fərdi məbləğ daxil edə bilərsiniz.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Qovluğunuzda alt qovluqlar olduğunu gördük. Hər alt qovluq üçün ayrı albom yaratmaq istəyirsiniz, yoxsa hamısını bir albom kimi görmək istəyirsiniz?"
 }

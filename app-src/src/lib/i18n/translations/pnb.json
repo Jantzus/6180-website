@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "ایہ صلاحیت تہاڈے موجودہ استعمال لئی ناکافی اے۔ مہربانی کر کے زیادہ صلاحیت چنو",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "چھوٹی صلاحیت وچ پلان تبدیلیاں تہاڈے موجودہ بلنگ دور دے اخیر وچ لاگو ہوندیاں نیں",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "کجھ فوٹو پروسیس نئیں ہو سکے۔ تسی کامیابی نال پروسیس ہون والے فوٹو نال جاری رکھ سکدے او۔",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "تہانوں ایس پیمنٹ میتھڈ تے ہر مہینے {{amount}} آپ سے آپ بل آئے گا جے تسی ایہہ نئیں بدلدے۔"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "تہانوں ایس پیمنٹ میتھڈ تے ہر مہینے {{amount}} آپ سے آپ بل آئے گا جے تسی ایہہ نئیں بدلدے۔",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "اوہ پلان چنو جو تہاڈی لوڑاں نال سبتوں بہتر میچ کرے۔ تسی تھلے دتے آپشن وچوں چن سکدے او یا کسٹم رقم پا سکدے او۔",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "اساں ویکھیا اے کہ تہاڈے فولڈر وچ سب فولڈر نیں۔ کی تسی ہر سب فولڈر لئی وکھرا ایلبم بناؤنا چاؤندے او، یا سب نوں اک ایلبم سمجھنا چاؤندے او?"
 }

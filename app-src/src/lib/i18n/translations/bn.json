@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "এই ধারণক্ষমতা আপনার বর্তমান ব্যবহারের জন্য অপ্রতুল। অনুগ্রহ করে একটি বড় ধারণক্ষমতা নির্বাচন করুন",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "ছোট ধারণক্ষমতায় পরিকল্পনা পরিবর্তনগুলি আপনার বর্তমান বিলিং পিরিয়ডের শেষে কার্যকর হবে",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "কিছু ছবি প্রক্রিয়া করা যায়নি। আপনি সফলভাবে প্রক্রিয়াকৃত ছবিগুলো নিয়ে এগিয়ে যেতে পারেন।",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "আপনি এই পেমেন্ট পদ্ধতি পরিবর্তন না করলে প্রতি মাসে স্বয়ংক্রিয়ভাবে {{amount}} বিল করা হবে।"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "আপনি এই পেমেন্ট পদ্ধতি পরিবর্তন না করলে প্রতি মাসে স্বয়ংক্রিয়ভাবে {{amount}} বিল করা হবে।",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "আপনার প্রয়োজনের সাথে সবচেয়ে ভালো মানানসই প্ল্যানটি বেছে নিন। আপনি নিচের অপশনগুলো থেকে বেছে নিতে পারেন অথবা একটি কাস্টম পরিমাণ দিতে পারেন।",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "আমরা লক্ষ্য করেছি যে আপনার ফোল্ডারে সাবফোল্ডার রয়েছে। আপনি কি প্রতিটি সাবফোল্ডারের জন্য আলাদা অ্যালবাম তৈরি করতে চান, নাকি সবগুলিকে একটি অ্যালবাম হিসেবে বিবেচনা করতে চান?"
 }

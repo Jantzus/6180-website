@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ta kapacita nie je dość wiôlgô dlô waszégò aktualny używaniô. Wëbierzëce więtszi kapacitã",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Zmiënë planë na mniészą kapacitã wlejazą w żëcé na kùńcu waszégò aktualnego òbrachónkòwégò czasu",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Niżle fòtki në mògłë òstac òbrobjone. Mòżesz jic dolny z fòtkama, co òstałë dobrze òbrobjone.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti bãdzesz aùtomatno òbcążowóny {{amount}} co miesiąc na tim metòdie płatnosc, jeżle ga nie zmienisz."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti bãdzesz aùtomatno òbcążowóny {{amount}} co miesiąc na tim metòdie płatnosc, jeżle ga nie zmienisz.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wëbierzë plan, jaczi najlépjy paszëje do waszëch trzébów. Mòżesce wëbrac ze òpcëji niżi abò wpisac swòjã sumã.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Widzëmë, że twòja teczka mô pòdteczkë. Chcesz ùsôdzcë apartné albumë dlô kòżdi pòdteczkë, czë òbchòdzëc z niemi jakno z jednóm albumem?"
 }

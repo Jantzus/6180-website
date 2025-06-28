@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "茲蜀個容量對汝現在其使用無夠。請選擇蜀個較大其容量",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "改到較細其容量其計劃蜀汝現在其收費期間尾爾生效",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "茲蜀齊相片無法處理。汝討用成功處理其相片繼續。",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "汝若袂改茲其付款方式，逐月會自動扣收{{amount}}。"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "汝若袂改茲其付款方式，逐月會自動扣收{{amount}}。",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "選擇最合汝需要其計劃。汝會當對下面其選項選擇或者輸入自定義其數量。",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "阮發現汝其文件夾有子文件夾。汝卜對每蜀箇子文件夾創建單獨其相册，抑是都當作蜀箇相册？"
 }

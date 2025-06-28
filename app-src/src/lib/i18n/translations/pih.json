@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Dis kapasitii nort enaf fo yor kyurrent yuus. Plees seledt a laarja kapasitii",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Plaan chienjs tuwa smala kapasitii teek efekt aet dii end f yor kyurent bilin piryiod",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sam foetas cuud nort prosesed. Yuu kuin kontiinyuu wiith dem foetas we prosesed gud.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Yuu wi bee bild outomaatik {{amount}} echi muuns pan dis piemint methid onles yuu cheenj it."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Yuu wi bee bild outomaatik {{amount}} echi muuns pan dis piemint methid onles yuu cheenj it.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chuus di plaan we bess soot yor niids. Yorlye ken chuus fum di opshiins bilow or entyr a kastim amoun.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wii si dat yorlye foeldyr gat subfoeldyrs. Yorlye waant maek a sepyret aelbym fe iich subfoeldyr, o triet em orl es wan aelbym?"
 }

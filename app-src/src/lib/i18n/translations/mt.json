@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Din il-kapaċità mhix biżżejjed għall-użu attwali tiegħek. Jekk jogħġbok agħżel kapaċità akbar",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Il-bidliet tal-pjan għal kapaċità iżgħar jieħdu seħer fl-aħħar tal-perjodu ta' kontabbiltà attwali tiegħek",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Xi ftit ritratti ma setgħux jiġu pproċessati. Tista' tkompli bil-ritratti li ġew ipproċessati b'suċċess.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se tiġi mċarġat awtomatikament {{amount}} kull xahar fuq dan il-metodu ta' ħlas għajr jekk tibdlu."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se tiġi mċarġat awtomatikament {{amount}} kull xahar fuq dan il-metodu ta' ħlas għajr jekk tibdlu.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Agħżel il-pjan li jgħaddi l-aħjar mal-bżonnijiet tiegħek. Tista' tagħżel mill-għażliet ta' hawn isfel jew iddaħħal ammont personalizzat.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Innota li l-folder tiegħek fiha sottofolder. Tixtieq toħloq album separat għal kull sottofolder, jew tittratthom kollha bħala album wieħed?"
 }

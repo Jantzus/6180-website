@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Questa capacitad n'è betg avunda per vossa diever actuela. Tschernì per plaschair ina capacitad pli gronda",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Midadas da plan ad ina capacitad pli pitschna entran en vigur a la fin da voss temp da facturaziun actual",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Tschertgas fotografias n'èn betg pudidas vegnir elavuradas. Ti pos cuntinuar cun las fotografias elavuradas cun success.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti vegns chargjà automaticamain {{amount}} per mais cun questa metoda da pajament nun che ti la midas."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti vegns chargjà automaticamain {{amount}} per mais cun questa metoda da pajament nun che ti la midas.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tschernì il plan che sa drizza il meglier a tes basegns. Ti poust tscherner da las opziuns sutvart u endatar ina summa persunalisada.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nus avain remarquà che tia cartella cuntegna sutcartallas. Vuls ti crear in album separà per mintga sutcartalla u tractar tuttas sco in album?"
 }

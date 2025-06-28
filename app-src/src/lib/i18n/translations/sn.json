@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Uku kushandisa hakukwane pakushandisa kwenyu kwave. Ndapota sarudzai hukuru",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Kuchinja kwezvinyorwa kuenda kuhukuru diki zvinotanga kupfuma pakupera kwenguva yako yokubvisa muripo",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Mamwe mafoto haana kukwanisa kugadziriswa. Munogona kuenderera mberi nemafoto akagadziriswa zvakanaka.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Muchakuchiwa {{amount}} gwa negwa negwa nemutoo uyu wokubhadhara kunze kwekunge muchishandura."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Muchakuchiwa {{amount}} gwa negwa negwa nemutoo uyu wokubhadhara kunze kwekunge muchishandura.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Sarudza hurongwa hunokwanira zvaunoda zvakanyanya. Unogona kusarudza kubva kune zvisarudzwa zviri pazasi kana kuisa mari yaunoda.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Takaona kuti dhairekitori renyu rine madhairekitori maduku. Munoda kugadzira album rakaparadzana kune rimwe nerimwe dhairekitori duku here, kana kuitenderedza ose sealbum rimwe chete?"
 }

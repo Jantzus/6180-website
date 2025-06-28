@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Sta capacità non g'è abbastanza pe l'ause tune de mò. Pe piacere scacchie 'na capacità cchiù granne",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Le cangiaminde d'u piane a 'na capacità cchiù piccenne pigghiane effette a 'a fine d'u periode de fatturazione attuale",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Certe fore no onne putute essere processate. Puè cundenuà cu le fore processate bbuene.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Te vène addebitete automaticamende {{amount}} ogne mise cu stu metode de pagamende si non ge lu cange."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Te vène addebitete automaticamende {{amount}} ogne mise cu stu metode de pagamende si non ge lu cange.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Scacchie 'u piane ca se confà cchiù megghie a le necessità toje. Puè scacchià tra le opzione aqquà sotte o mettere 'nu 'mporte personalizzate.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Amme viste ca 'a cartelle toje tène sottecartelle. Vuè crejà n'album separate pu ogne sottecartelle, o tratà tutte accume a n'album sole?"
 }

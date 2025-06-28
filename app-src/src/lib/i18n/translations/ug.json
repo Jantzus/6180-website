@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "كىچىك قابىلىيەتكە پىلان ئۆزگەرتىلىشلىرى نۆۋەتتىكى ھېسابلىشىش مۇددىتىڭىزنىڭ ئاخىرىدا كۈچكە كىرىدۇ",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "بۇ قابىلىيەت سىزنىڭ نۆۋەتتىكى ئىشلىتىشىڭىزگە يەتمەيدۇ. چوڭراق قابىلىيەتنى تاللاڭ",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "بەزى رەسىملەرنى بىر تەرەپ قىلغىلى بولمىدى. مۇۋەپپەقىيەتلىك بىر تەرەپ قىلىنغان رەسىملەر بىلەن داۋاملاشتۇرالايسىز.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "بۇ تۆلەم ئۇسۇلىنى ئۆزگەرتمىسىڭىز، ھەر ئايدا {{amount}} ئاپتوماتىك ھەساپلىنىدۇ."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "بۇ تۆلەم ئۇسۇلىنى ئۆزگەرتمىسىڭىز، ھەر ئايدا {{amount}} ئاپتوماتىك ھەساپلىنىدۇ.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ئېھتىياجىڭىزغا ئەڭ ماس كېلىدىغان پىلانىنى تاللاڭ. تۆۋەندىكى تاللاشلاردىن تاللىيالايسىز ياكى ئۆزەڭىزنىڭ مىقدارىڭىزنى كىرگۈزىڭ.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "بىز سىزنىڭ ھۆججەت قىسقۇچىڭىزدا كىچىك ھۆججەت قىسقۇچلار بارلىقىنى بايقىدۇق. ھەر بىر كىچىك ھۆججەت قىسقۇچى ئۈچۈن ئايرىم ئالبوم قۇرماقچىمۇ، ياكى ھەممىسىنى بىر ئالبوم دەپ قارىماقچىمۇ؟"
 }

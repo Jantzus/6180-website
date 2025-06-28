@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ĉi tiu kapacito ne sufiĉas por via nuna uzado. Bonvolu elekti pli grandan kapacito",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Planaj ŝanĝoj al pli malgranda kapacito efektiviĝas je la fino de via nuna faktura periodo",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Iuj fotoj ne povis esti prilaboritaj. Vi povas daŭrigi kun la sukcese prilaboritaj fotoj.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vi estos aŭtomate pagigata {{amount}} monate per ĉi tiu pagmetodo, krom se vi ŝanĝas ĝin."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vi estos aŭtomate pagigata {{amount}} monate per ĉi tiu pagmetodo, krom se vi ŝanĝas ĝin.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Elektu la planon kiu plej bone konvenas al viaj bezonoj. Vi povas elekti el la opcioj sube aŭ enigi propran sumon.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ni rimarkis, ke via dosierujo enhavas subdosierujojn. Ĉu vi volas krei apartan albumon por ĉiu subdosierujo, aŭ trakti ĉiujn kiel unu albumon?"
 }

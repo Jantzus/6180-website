@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ka changkham u plan da ka jingthei nym uba poi hi ba pyni ka dur ka snem ka snur",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ka jingthei ka ban poi ka long ka jingjoit ha ka dur ka snem. Jingkyrdan ka jingthei ba kylluid",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ka snem kaba da ym long doit sha. Ba snem ma long doit bru da ka shim sngewbha noh.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ba kti ha snem payment method ka ym long jaloi ha kti shim {{amount}} shim ka ruh automatic ka doit ang."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ba kti ha snem payment method ka ym long jaloi ha kti shim {{amount}} shim ka ruh automatic ka doit ang.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nga ne pyrthei bad ki subfolder don ha jinglung folder. La por sha main album tang tang ki subfolder syngkhoit syngkhoit, namar la por sha main tre ki tang tang ban album tynrai?"
 }

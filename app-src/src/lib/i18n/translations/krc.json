@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Бу кючню тамырха ишлетиулюню къача этмейди. Тилейбиз, улуракъ кючню сайлагъыз",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Кичи кючлюкге план тюрлендирилери халиха тӧлеу заманыны ахырында иш бла башлайдыла",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Бир къач фотола иштемлерге боллукъдула. Шо онгураулу иштемленген фоточарыгъа келечи къурау боллукъсуз.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Бу төлеу жолун тюрлендирмесең, ай сайын {{amount}} автоматла алына эди болур."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Бу төлеу жолун тюрлендирмесең, ай сайын {{amount}} автоматла алына эди болур.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Керекликиге эм игилиге келген планны тандаргъа. Тёбенги вариантладан тандарга боллукъсуз неда ючгюн сан саларга боллукъсуз.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Бизде кёрдюкле сизни папканызда суб-папкаланы барладыла. Хар суб-папкага башха альбом этерге излейсизми, неда барысын да бир альбом этип кёрерге излейсизми?"
 }

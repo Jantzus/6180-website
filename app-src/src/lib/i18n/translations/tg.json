@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ин қувват барои истифодаи ҷориатон кофӣ нест. Лутфан қувваи калонтарро интихоб кунед",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Тағйироти нақша ба қувваи хурдтар дар охири давраи ҷории ҳисобдории шумо татбиқ мешавад",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Баъзе аксҳо коркард карда нашуданд. Шумо метавонед бо аксҳои бомуваффақият коркардшуда идома диҳед.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Агар шумо онро тағйир надиҳед, дар ин тарзи пардохт ҳар моҳ {{amount}} худкор кашида мешавад."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Агар шумо онро тағйир надиҳед, дар ин тарзи пардохт ҳар моҳ {{amount}} худкор кашида мешавад.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Нақшаеро интихоб кунед, ки ба ниёзҳои шумо беҳтарин мувофиқат мекунад. Шумо метавонед аз вариантҳои зерин интихоб кунед ё маблағи дилхоҳ дохил кунед.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мо таваҷҷӯҳ кардем, ки ҷузвдони шумо дорои зерҷузвдонҳо мебошад. Мехоҳед барои ҳар зерҷузвдон албоми алоҳида эҷод кунед ё ҳамаашонро ҳамчун як албом баррасӣ кунед?"
 }

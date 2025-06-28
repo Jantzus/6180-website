@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ti capacitá ne es suficient por vor actual usach. Ples selectez un capacitá plu grand",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Cambiamentes del plan vers un capacitá plu parvi prende effecte al fine de vor actual periode de facturament",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quelc fotos ne possed esser processat. Vu posse continuar con li fotos processat con sucesse.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vu va esser automaticmen billat {{amount}} mensualmen per ti-ci metode de pagament ceptat si vu changea it."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vu va esser automaticmen billat {{amount}} mensualmen per ti-ci metode de pagament ceptat si vu changea it.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Selectez li plan quel maxim conveni a vor besonias. Vu posse selecter ex li optiones infra o intrar un summa customar.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Noi ha remarcat que vor dossier contene sub-dossiers. Vole vu crear un album separat por cadat sub-dossier, o tractar les omni quam un sol album?"
 }

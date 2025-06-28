@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Les chandjemints di plan viè ene pus ptite capacité prindront efet al fén di vosse période di facturation do moumint",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Cisse capacité ci n' est nén assez po vos eployaedje do moumint. Tchoezixhoz ene pus grande capacité",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Wice fotos èn ont stî traitî. Vos ploz continuwer avou les fotos traitîs a pont.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos sårèz otomaticmint faitré {{amount}} tchake moes so cisse metôde di payumint ci a muens qui vos l' candjîz."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos sårèz otomaticmint faitré {{amount}} tchake moes so cisse metôde di payumint ci a muens qui vos l' candjîz.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tchwezixhoz l' plan ki vs convént l' mî. Vos ploz tchwezi dins les tchûzes cial ou mete ene some da vosse.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nos avans mårtchî ki vosse ridant a des sor-ridants. Voloz-ve fer on album sepåré po tchaeke sor-ridant, ou les prinde tos come èn seu album?"
 }

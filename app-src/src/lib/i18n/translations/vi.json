@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Các thay đổi gói về dung lượng nhỏ hơn có hiệu lực vào cuối kỳ thanh toán hiện tại của bạn",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Dung lượng này không đủ cho việc sử dụng hiện tại của bạn. Vui lòng chọn dung lượng lớn hơn",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Một số ảnh không thể được xử lý. Bạn có thể tiếp tục với những ảnh đã được xử lý thành công.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bạn sẽ được tự động tính phí {{amount}} hàng tháng theo phương thức thanh toán này trừ khi bạn thay đổi nó."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bạn sẽ được tự động tính phí {{amount}} hàng tháng theo phương thức thanh toán này trừ khi bạn thay đổi nó.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chọn gói dịch vụ phù hợp nhất với nhu cầu của bạn. Bạn có thể chọn từ các tùy chọn bên dưới hoặc nhập số tiền tùy chỉnh.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Chúng tôi nhận thấy thư mục của bạn chứa các thư mục con. Bạn có muốn tạo album riêng cho từng thư mục con hay coi tất cả như một album?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Cha nel y toilley shoh dy liooar son dty ymmyd jiu. Reih toilley smoo my sailt",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ta caghlaaghyn plannee gys toilley sloo cur roish ec jerrey dty hraa billal t'ayn nish",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Cha row kuse jeh ny jallooyyn yn obbyr oc. Foddee oo goll er oaie lesh ny jallooyyn va soie magh dy mie.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bee oo er nyn gowraghey dy seyr-obbragh {{amount}} dagh mee er y dooghys eeckee shoh mannagh vod shiu eh y chaghey."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bee oo er nyn gowraghey dy seyr-obbragh {{amount}} dagh mee er y dooghys eeckee shoh mannagh vod shiu eh y chaghey.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Reih yn coyrle share ta freayll rish ny femeyn ayd. Foddee oo reih veih ny reihyn heese ny cur stiagh sym erbee.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Honnick shin dy vel fo-hostyn ayns y hostyl ayd. Vel oo gearree albym er lheh y chroo son dagh fo-hostyl, ny ad ooilley y reill myr un albym?"
 }

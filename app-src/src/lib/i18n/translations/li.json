@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Dees kapasiteit is neet zat veur eur hudige gebroek. Kees asjebleef 'n groetere kapasiteit",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Planaanpassinge nao 'n kléinder kapasiteit weure aktief op 't ènj van eur hudige rekeningperiode",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sommige foto's kóste neet verwirk waere. Geer kint mèt de succesvol verwirkte foto's verdergaon.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Geer waert automatisch {{amount}} per maondj in rekening gebraach op dees betaolmjethod tenzij geer 't verangert."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Geer waert automatisch {{amount}} per maondj in rekening gebraach op dees betaolmjethod tenzij geer 't verangert.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kees de plaan die 't bès by dien behoefte pas. Geer kint keze oet de opties hiejónger of e aangepas bedraag inveure.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Veer höbbe gezeen detteu dien map submaps haet. Wells te veur edere submap en aparte album make, of ze allemaal as ein album behanjele?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "මෙම ධාරිතාව ඔබගේ වර්තමාන භාවිතය සඳහා ප්‍රමාණවත් නොවේ. කරුණාකර විශාල ධාරිතාවක් තෝරන්න",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "කුඩා ධාරිතාවකට සැලසුම් වෙනස්කම් ඔබගේ වර්තමාන බිල්පත් කාලසීමාවේ අවසානයේ බලාත්මක වේ",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "සමහර ඡායාරූප සැකසිය නොහැකි විය. සාර්ථකව සැකසූ ඡායාරූප සමඟ ඔබට ඉදිරියට යා හැක.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ඔබ එය වෙනස් නොකරන්නේ නම් මෙම ගෙවීම් ක්‍රමයේ මාසිකව {{amount}} ස්වයංක්‍රීයව බිල් කරනු ලැබේ."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ඔබ එය වෙනස් නොකරන්නේ නම් මෙම ගෙවීම් ක්‍රමයේ මාසිකව {{amount}} ස්වයංක්‍රීයව බිල් කරනු ලැබේ.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ඔබගේ අවශ්‍යතාවන්ට වඩාත්ම සුදුසු සැලැස්ම තෝරන්න. ඔබට පහත විකල්පවලින් තෝරාගත හෝ අභිරුචි ප්‍රමාණයක් ඇතුල් කළ හැකිය.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ඔබගේ ෆෝල්ඩරයේ උප ෆෝල්ඩර ඇති බව අපි දුටුවෙමු. ඔබට සෑම උප ෆෝල්ඩරයක් සඳහාම වෙනම ඇල්බමයක් නිර්මාණය කිරීමට අවශ්‍යද නැතහොත් ඒ සියල්ල එක් ඇල්බමයක් ලෙස සැලකීමට අවශ්‍යද?"
 }

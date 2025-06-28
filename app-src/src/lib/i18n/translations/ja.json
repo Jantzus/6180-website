@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "この容量では現在のご利用に不足しています。より大きな容量を選択してください",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "小さな容量へのプラン変更は、現在の請求期間の終了時に有効になります",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "一部の写真を処理できませんでした。正常に処理された写真で続行できます。",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "この支払い方法を変更しない限り、毎月{{amount}}が自動的に課金されます。"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "この支払い方法を変更しない限り、毎月{{amount}}が自動的に課金されます。",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ニーズに最も適したプランをお選びください。以下のオプションから選択するか、カスタム金額を入力できます。",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "フォルダにサブフォルダが含まれていることに気づきました。各サブフォルダに対して個別のアルバムを作成しますか、それとも全てを一つのアルバムとして扱いますか？"
 }

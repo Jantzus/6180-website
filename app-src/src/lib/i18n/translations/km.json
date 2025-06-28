@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "សមត្ថភាពនេះមិនគ្រប់គ្រាន់សម្រាប់ការប្រើប្រាស់បច្ចុប្បន្នរបស់អ្នកទេ។ សូមជ្រើសរើសសមត្ថភាពធំជាងមុន",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "ការផ្លាស់ប្តូរផែនការទៅកាន់សមត្ថភាពតូចជាងនេះចាប់ផ្តើមដំណើរការនៅចុងបញ្ចប់នៃរយៈពេលចេញវិក័យប័ត្របច្ចុប្បន្នរបស់អ្នក",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "រូបថតមួយចំនួនមិនអាចដំណើរការបាន។ អ្នកអាចបន្តជាមួយរូបថតដែលដំណើរការបានជោគជ័យ។",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "អ្នកនឹងត្រូវបានគិតប្រាក់{{amount}} ជារៀងរាល់ខែដោយស្វ័យប្រវត្តិនៅលើវិធីសាស្រ្តបង់ប្រាក់នេះ លុះត្រាតែអ្នកផ្លាស់ប្តូរវា។"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "អ្នកនឹងត្រូវបានគិតប្រាក់{{amount}} ជារៀងរាល់ខែដោយស្វ័យប្រវត្តិនៅលើវិធីសាស្រ្តបង់ប្រាក់នេះ លុះត្រាតែអ្នកផ្លាស់ប្តូរវា។",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ជ្រើសរើសគម្រោងដែលសមនឹងតម្រូវការរបស់អ្នកបំផុត។ អ្នកអាចជ្រើសរើសពីជម្រើសខាងក្រោម ឬបញ្ចូលចំនួនផ្ទាល់ខ្លួន។",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "យើងបានកត់សម្គាល់ឃើញថាថតឯកសាររបស់អ្នកមានថតរង។ តើអ្នកចង់បង្កើតអាល់ប៊ុមដាច់ដោយឡែកសម្រាប់ថតរងនីមួយៗ ឬព្យាបាលវាទាំងអស់ជាអាល់ប៊ុមមួយ?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Matla ana ha a lekane bakeng sa tshebediso ya hao ya hajwale. Ka kopo khetha matla a maholo",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Diphetoho tsa moralo ho ya bonyenyane di sebetsa qetellong ya nako ya hao ya hajoale ya ho lefella",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ditshwantsho tse ding ha di kgone ho sebetswa. O ka tswela pele ka ditshwantsho tse sebetsweng hantle.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O tla lefshwa {{amount}} kgwedi le kgwedi ka mokgwa ona wa ho lefella ntle le ha o o fetolang."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O tla lefshwa {{amount}} kgwedi le kgwedi ka mokgwa ona wa ho lefella ntle le ha o o fetolang.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Khetha moralo o lumellanang hantle le ditlhoko tsa hao. O ka khetha ho tloha ho dikgetho tse tlase kapa o tsenye palo ya hao.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Re bone hore folder ya hao e na le di-subfolder. Na o batla ho etsa album e ikgethileng bakeng sa subfolder ka nngwe, kapa ho e sebetsa kaofela e le album e le nngwe?"
 }

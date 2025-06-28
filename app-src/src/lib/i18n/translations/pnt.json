@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Τούτον τον δυναμικόν ίντ' αρκετόν για την χρήσιν σας τη σήμερον. Σας παρακαλάμε διαλέξετε έναν μεγαλύτερον δυναμικόν",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Οι αλλαγέντα του σχεδίονος σα μικρότερον δυναμικόν αρχίζουν σον τέλος τη περιόδονος σας τη τωρινής της χρεώσεως",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Μερικέν εικόνας ουκ εδυνήθημεν επεξεργαστείν. Δύνασαι συνεχίσαι με τας επιτυχώς επεξεργασθείσας εικόνας.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Θα σας χρεώνεται αυτόματα {{amount}} μηναίως σε αυτόν τον τρόπο πληρωμής εκτός αν τον αλλάξετε."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Θα σας χρεώνεται αυτόματα {{amount}} μηναίως σε αυτόν τον τρόπο πληρωμής εκτός αν τον αλλάξετε.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Διαλέξετε το σχέδιον που καλλίταν σας βολεύει. Μπορείτε να διαλέξετε απτά επιλογές και κάτου η να βάλετε έναν ποσό.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Εκαταλάβαμε ότι ο φάκελός σας περιέχει υποφακέλους. Θα θέλατε να δημιουργήσετε ξεχωριστό άλμπουμ για κάθε υποφάκελο ή να τα αντιμετωπίσετε όλα ως ένα άλμπουμ;"
 }

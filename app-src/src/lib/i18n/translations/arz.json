@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "السعة دي مش كفاية للاستخدام بتاعك دلوقتي. اختار سعة أكبر",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "تغييرات الخطة للسعة الأصغر هتشتغل في آخر فترة الدفع دلوقتي",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "شوية صور مقدرتش تتعمل. ممكن تكمل بالصور اللى اتعملت كويس.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "هيتم خصم {{amount}} كل شهر أوتوماتيكي من الطريقة دي إلا لو غيرتها."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "هيتم خصم {{amount}} كل شهر أوتوماتيكي من الطريقة دي إلا لو غيرتها.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "اختار الخطة اللي تناسب احتياجاتك أكتر. ممكن تختار من الاختيارات اللي تحت أو تدخل مبلغ مخصوص.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "احنا لاحظنا إن الفولدر بتاعك فيه فولدرات صغيرة. عايز تعمل ألبوم منفصل لكل فولدر صغير، ولا تخليهم كلهم ألبوم واحد؟"
 }

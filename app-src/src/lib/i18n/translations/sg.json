@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Tene wâlï tî kusala âla wâlï sô tî mo kêtê sô. Yâ mo ke mo suâ kusala tî kêtê kêtê",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Wâlï tî saré tî kusala âla wâlï tî kêtê leke kôbela tî kamâta tî kôdë sô âla",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ayeke sô fôto ti si bâa mo sango. Î kôn kiri gare na sô fôto ti nyên sango nzônî.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Î ôko bara bôndöngö tî karângö {{amount}} asô-ngû na usôro tî dîngö sô ni nde sî bâa î bûngbi lo."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Î ôko bara bôndöngö tî karângö {{amount}} asô-ngû na usôro tî dîngö sô ni nde sî bâa î bûngbi lo.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Yângâ na dûmandâ tî kolyâ tî mbênî âla. Mo sô ga bâara tî molongo-na kê mo sô kîri tî somgö na.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tî yângâ lo na folda tî mo sô na sindo tî molongo. Mo yângâ sépéré na album wou pèa sindo tî molongo, mo tôngâ ködörö tî sô na album ôko?"
 }

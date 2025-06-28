@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ubushobozi bw'aha ntibuhagije gukoresha iri kurayakoresha. Nyamuneka hitamo ubushobozi bunini",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Impinduka z'igishingantahe ku bushobozi bunini zikomeza mu mpera z'igihe c'ubwo ukusunurwa bihari",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Amafoto amwe ntabasha gukurikirana. Urashobora gukomeza n'amafoto akurikirana neza.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Uzofatirwa mu buryo bwa otomatike {{amount}} buri kwezi muri ubu buryo bwo kwishyura utabanje ubuhindura."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Uzofatirwa mu buryo bwa otomatike {{amount}} buri kwezi muri ubu buryo bwo kwishyura utabanje ubuhindura.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Hitamo igitegeko kibana cyane n'ibyo ukeneye. Ushobora guhitamo mu mahitamo ari munsi cyangwa kwinjiza ikigereranyo cyawe.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Twabonye ko ububiko bwawe bufise ububiko buto. Wifuza gukora albumu y'ukwayo kuri buri bubiko buto, cyangwa kubyicuza byose nk'albumu imwe?"
 }

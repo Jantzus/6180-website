@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Henda rúmd er ikki nóg til tína núverandi nýtslu. Vinarliga vel eitt størri rúmd",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Broytingar av ætlan til eitt minni rúmd taka virki í enda av tíni núverandi rokningartíð",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Nakrar myndir kundu ikki viðgera. Tú kanst halda fram við myndunum, ið vórðu viðgeraðar væl.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Tú verður avtomatiskt gjaldfíggjaður {{amount}} hvønn mánað fyri hesa betingarhátt, uttan tú broytir hann."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Tú verður avtomatiskt gjaldfíggjaður {{amount}} hvønn mánað fyri hesa betingarhátt, uttan tú broytir hann.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Vel viðurskiftið sum best hóvar til tínar tørv. Tú kanst velja úr møguleikunum niðanfyri ella skriva eitt tillagað tal.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vit hava lagt merki til at tín mappan inniheldur undirmappur. Vilt tú upprætta eitt serstakt album fyri hvørja undirmapu, ella handfara tær allar sum eitt album?"
 }

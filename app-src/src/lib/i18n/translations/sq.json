@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kjo kapacitet është e pamjaftueshme për përdorimin tuaj aktual. Ju lutem zgjidhni një kapacitet më të madh",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ndryshimet e planit në një kapacitet më të vogël hyjnë në fuqi në fund të periudhës suaj aktuale të faturimit",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Disa foto nuk mund të përpunoheshin. Mund të vazhdoni me fotot e përpunuara me sukses.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Do të faturohet automatikisht {{amount}} mujore në këtë metodë pagese përveç nëse e ndryshoni atë."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Do të faturohet automatikisht {{amount}} mujore në këtë metodë pagese përveç nëse e ndryshoni atë.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Zgjidhni planin që përputhet më mirë me nevojat tuaja. Mund të zgjidhni nga opsionet më poshtë ose të fusni një shumë të personalizuar.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vumë re se dosja juaj përmban nëndosje. Dëshironi të krijoni një album të veçantë për çdo nëndosje, apo t'i trajtoni të gjitha si një album?"
 }

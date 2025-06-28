@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "अयं शक्तिः भवतः वर्तमानस्य उपयोगस्य कृते अपर्याप्तः अस्ति। कृपया बृहत्तरं शक्तिं चिनुतु",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "लघुशक्तौ योजनापरिवर्तनानि भवतः वर्तमानस्य शुल्ककालस्य अन्ते प्रभावकारीणि भवन्ति",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "कानिचित् चित्राणि संस्कारयितुं न शक्यन्ते स्म। भवान् सफलतया संस्कृतैः चित्रैः सह अग्रे गच्छितुं शक्नोति।",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "भवान् एतत् न परिवर्तयेत् यावत् तावत् अस्यां भुक्तिप्रणाल्यां मासिकं {{amount}} स्वयं गणना भविष्यति।"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "भवान् एतत् न परिवर्तयेत् यावत् तावत् अस्यां भुक्तिप्रणाल्यां मासिकं {{amount}} स्वयं गणना भविष्यति।",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "स्वकीयावश्यकतानुकूलं योजनां चिनुत। अधोलिखितविकल्पेभ्यः चयनं कर्तुं वा स्वकीयं धनराशिं प्रविष्टुं वा शक्नुयात्।",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "वयं पश्यामः भवत् निदेशिकायाम् उप-निदेशिकाः सन्ति। भवान् प्रतिउप-निदेशिकायाम् पृथक् सङ्गीतसङ्ग्रहं कर्तुम् इच्छति किं वा सर्वान् एक सङ्गीतसङ्ग्रहे गणयितुम् इच्छति?"
 }

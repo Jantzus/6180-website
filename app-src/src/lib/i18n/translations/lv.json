@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Šī jauda nav pietiekama jūsu pašreizējai lietošanai. Lūdzu izvēlieties lielāku jaudu",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Plāna izmaiņas uz mazāku jaudu stājas spēkā jūsu pašreizējā norēķinu perioda beigās",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Dažas fotogrāfijas nevarēja apstrādāt. Varat turpināt ar veiksmīgi apstrādātajām fotogrāfijām.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jums tiks automātiski aprēķināts {{amount}} katru mēnesi ar šo maksājumu metodi, ja to nemainīsiet."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jums tiks automātiski aprēķināts {{amount}} katru mēnesi ar šo maksājumu metodi, ja to nemainīsiet.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Izvēlieties plānu, kas vislabāk atbilst jūsu vajadzībām. Varat izvēlēties no tālāk redzamajiem variantiem vai ievadīt pielāgotu summu.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mēs pamanījām, ka jūsu mapē ir apakšmapes. Vai vēlaties izveidot atsevišķu albumu katrai apakšmapei, vai apskatīt tās visas kā vienu albumu?"
 }

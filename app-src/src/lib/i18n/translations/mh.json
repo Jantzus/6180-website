@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kapaciti eo ejjeḷọk ñan am ko jerbal in. Kiiō kapaciti retio",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Kaamej in plan ko kapaciti retio rej jikin kein jerbal ainikien keememej in billing",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Jõñõul photo rej jab kōnaan process. Kwōj kōnaan bar juon ko photo ro process lok.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Kwōj naaj bil-tok {{amount}} kōjjet ñan an jikin kōnaan em wōt jen kwōj jino oktak."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Kwōj naaj bil-tok {{amount}} kōjjet ñan an jikin kōnaan em wōt jen kwōj jino oktak.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kōmman plan eo ekkar melā ṇa aikuj ro ām. Kwōj kōnke kōmman jān nā option kein ioon e kōnke kōmman nien ām.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Komij emman ilo folder an rej lōñ subfolder ro ien. Kwōj kōnke kommane album ettolōk ñan detet in subfolder, ak kwōj kōnke kommane ir katak eolōk wōn album?"
 }

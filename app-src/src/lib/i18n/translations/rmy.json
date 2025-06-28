@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kado shakti tumaro akanasko lacharipe ande nani. Keren buteder shakti",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Planoski butimaskeriben andre tumne buteder shakti shukar keren palal ande tumaro vaxtuno leski shkutibe",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Varesave kher našti sas te keren xulipe. Tu šaj ačhes pale khere so kerde mizhe xulipe.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Tu avesa automatic vašt bill {{amount}} sako šon pe kothe payment method ašti na save keres o."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Tu avesa automatic vašt bill {{amount}} sako šon pe kothe payment method ašti na save keres o.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Bašav oda plano savo mai šukar phirel tuke. šaj bašaves le opcijonendyr telal vai te čhives jekh šukar amor.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Dikhlem hoj tiro folder si le subfolderencar. Kames te kerel vaš album vaš folder, vai te kerel le savorencar jekh album?"
 }

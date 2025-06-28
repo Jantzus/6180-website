@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Sèta capacitè la é brîsa abàstanza par al vôster adòver d'incù. Par piasìr sciuglì una capacitè piò grànda",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "I cambiament dal pian a na capacitè piò cicia i vànen in efèt a la fén dal vôster piriòd d'adèss ad faturazion",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quarégg fòt a n pödévan mìa vesser làuret. A podéf cuntinuêr cun e fòt làurede bän.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A saré carghé automaticament {{amount}} al més con stè metòd ed pagamänt a mänco che a n al cambié."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A saré carghé automaticament {{amount}} al més con stè metòd ed pagamänt a mänco che a n al cambié.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Sernì al pian che al va mei par i tò bisgogn. At pù sernì da j opziòn qui sòta o meter un importo personalizzä.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Avémm vist che al vòst cartèl al gh'à dèinter di sòtcartèl. Vulì fèr un album sepèrê per ògun sòtcartèl, o tratêr tót còm un album sòl?"
 }

@@ -1,171 +1,65 @@
 {
   "summary": {
-    "totalMissingKeys": 13,
+    "totalMissingKeys": 4,
     "language": "aa",
     "description": "Keys used in t(), tSync(), or tAsync() calls but missing from aa.json",
-    "generatedAt": "2025-06-28T17:46:02.220Z"
+    "generatedAt": "2025-06-28T20:06:37.252Z"
   },
   "missingKeys": [
     {
-      "key": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
+      "key": "Edit",
       "usages": [
         {
-          "file": "src/pages/storage/StorageManagePage.tsx",
-          "line": 229,
-          "column": 12,
-          "context": "t"
-        },
-        {
-          "file": "src/pages/storage/manage.tsx",
-          "line": 229,
-          "column": 12,
-          "context": "t"
-        }
-      ],
-      "usageCount": 2,
-      "files": [
-        "src/pages/storage/StorageManagePage.tsx",
-        "src/pages/storage/manage.tsx"
-      ],
-      "functions": [
-        "t"
-      ],
-      "context": {
-        "file": "src/pages/storage/manage.tsx",
-        "context": "t",
-        "type": "static",
-        "position": {
-          "line": 229,
-          "column": 12,
-          "position": 8623
-        }
-      },
-      "priority": "LOW"
-    },
-    {
-      "key": "Additional authentication required. Please follow the prompts to complete payment.",
-      "usages": [
-        {
-          "file": "src/pages/storage/components/PaymentModal.tsx",
-          "line": 198,
-          "column": 15,
-          "context": "t"
-        },
-        {
-          "file": "src/pages/storage/components/PaymentModal.tsx",
-          "line": 198,
-          "column": 15,
-          "context": "t"
-        }
-      ],
-      "usageCount": 2,
-      "files": [
-        "src/pages/storage/components/PaymentModal.tsx"
-      ],
-      "functions": [
-        "t"
-      ],
-      "context": {
-        "file": "src/pages/storage/components/PaymentModal.tsx",
-        "context": "t",
-        "type": "static",
-        "position": {
-          "line": 198,
-          "column": 15,
-          "position": 6206
-        }
-      },
-      "priority": "LOW"
-    },
-    {
-      "key": "Payment is being processed. You will receive confirmation once completed.",
-      "usages": [
-        {
-          "file": "src/pages/storage/components/PaymentModal.tsx",
-          "line": 202,
-          "column": 15,
-          "context": "t"
-        },
-        {
-          "file": "src/pages/storage/components/PaymentModal.tsx",
-          "line": 202,
-          "column": 15,
-          "context": "t"
-        }
-      ],
-      "usageCount": 2,
-      "files": [
-        "src/pages/storage/components/PaymentModal.tsx"
-      ],
-      "functions": [
-        "t"
-      ],
-      "context": {
-        "file": "src/pages/storage/components/PaymentModal.tsx",
-        "context": "t",
-        "type": "static",
-        "position": {
-          "line": 202,
-          "column": 15,
-          "position": 6437
-        }
-      },
-      "priority": "LOW"
-    },
-    {
-      "key": "Let others scan this QR code with their phone camera to instantly access your album",
-      "usages": [
-        {
-          "file": "src/components/Modals/QRCodeModal.tsx",
-          "line": 81,
-          "column": 12,
+          "file": "src/components/AlbumList.tsx",
+          "line": 590,
+          "column": 28,
           "context": "t"
         }
       ],
       "usageCount": 1,
       "files": [
-        "src/components/Modals/QRCodeModal.tsx"
+        "src/components/AlbumList.tsx"
       ],
       "functions": [
         "t"
       ],
       "context": {
-        "file": "src/components/Modals/QRCodeModal.tsx",
+        "file": "src/components/AlbumList.tsx",
         "context": "t",
         "type": "static",
         "position": {
-          "line": 81,
-          "column": 12,
-          "position": 2033
+          "line": 590,
+          "column": 28,
+          "position": 18760
         }
       },
       "priority": "LOW"
     },
     {
-      "key": "QR Code could not be generated. Please use the link sharing option instead.",
+      "key": "Edit Album",
       "usages": [
         {
-          "file": "src/components/Modals/QRCodeModal.tsx",
-          "line": 124,
-          "column": 23,
+          "file": "src/components/AlbumList.tsx",
+          "line": 613,
+          "column": 30,
           "context": "t"
         }
       ],
       "usageCount": 1,
       "files": [
-        "src/components/Modals/QRCodeModal.tsx"
+        "src/components/AlbumList.tsx"
       ],
       "functions": [
         "t"
       ],
       "context": {
-        "file": "src/components/Modals/QRCodeModal.tsx",
+        "file": "src/components/AlbumList.tsx",
         "context": "t",
         "type": "static",
         "position": {
-          "line": 124,
-          "column": 23,
-          "position": 3555
+          "line": 613,
+          "column": 30,
+          "position": 19801
         }
       },
       "priority": "LOW"
@@ -200,93 +94,6 @@
       "priority": "LOW"
     },
     {
-      "key": "visit this page on a desktop computer to download all photos and videos at once",
-      "usages": [
-        {
-          "file": "src/lib/fileOperations.ts",
-          "line": 167,
-          "column": 5,
-          "context": "t"
-        }
-      ],
-      "usageCount": 1,
-      "files": [
-        "src/lib/fileOperations.ts"
-      ],
-      "functions": [
-        "t"
-      ],
-      "context": {
-        "file": "src/lib/fileOperations.ts",
-        "context": "t",
-        "type": "static",
-        "position": {
-          "line": 167,
-          "column": 5,
-          "position": 5956
-        }
-      },
-      "priority": "LOW"
-    },
-    {
-      "key": "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?",
-      "usages": [
-        {
-          "file": "src/pages/my-albums/AlbumCreationModal.tsx",
-          "line": 194,
-          "column": 12,
-          "context": "t"
-        }
-      ],
-      "usageCount": 1,
-      "files": [
-        "src/pages/my-albums/AlbumCreationModal.tsx"
-      ],
-      "functions": [
-        "t"
-      ],
-      "context": {
-        "file": "src/pages/my-albums/AlbumCreationModal.tsx",
-        "context": "t",
-        "type": "static",
-        "position": {
-          "line": 194,
-          "column": 12,
-          "position": 5472
-        }
-      },
-      "priority": "LOW"
-    },
-    {
-      "key": "Some photos could not be processed. You can continue with the successfully processed photos.",
-      "usages": [
-        {
-          "file": "src/pages/save-album/SingleAlbumMode.tsx",
-          "line": 908,
-          "column": 22,
-          "context": "t"
-        }
-      ],
-      "usageCount": 1,
-      "files": [
-        "src/pages/save-album/SingleAlbumMode.tsx"
-      ],
-      "functions": [
-        "t"
-      ],
-      "context": {
-        "file": "src/pages/save-album/SingleAlbumMode.tsx",
-        "context": "t",
-        "type": "static",
-        "position": {
-          "line": 908,
-          "column": 22,
-          "position": 30267
-        }
-      },
-      "priority": "LOW"
-    },
-    {
       "key": "{{tagTitle}}  |  {{subtags}}",
       "usages": [
         {
@@ -311,93 +118,6 @@
           "line": 541,
           "column": 12,
           "position": 13898
-        }
-      },
-      "priority": "LOW"
-    },
-    {
-      "key": "This capacity is insufficient for your current usage. Please select a larger capacity.",
-      "usages": [
-        {
-          "file": "src/pages/storage/components/CustomGBInput.tsx",
-          "line": 118,
-          "column": 12,
-          "context": "t"
-        }
-      ],
-      "usageCount": 1,
-      "files": [
-        "src/pages/storage/components/CustomGBInput.tsx"
-      ],
-      "functions": [
-        "t"
-      ],
-      "context": {
-        "file": "src/pages/storage/components/CustomGBInput.tsx",
-        "context": "t",
-        "type": "static",
-        "position": {
-          "line": 118,
-          "column": 12,
-          "position": 4011
-        }
-      },
-      "priority": "LOW"
-    },
-    {
-      "key": "Plan changes to a smaller capacity take effect at the end of your current billing period.",
-      "usages": [
-        {
-          "file": "src/pages/storage/components/CustomGBInput.tsx",
-          "line": 131,
-          "column": 12,
-          "context": "t"
-        }
-      ],
-      "usageCount": 1,
-      "files": [
-        "src/pages/storage/components/CustomGBInput.tsx"
-      ],
-      "functions": [
-        "t"
-      ],
-      "context": {
-        "file": "src/pages/storage/components/CustomGBInput.tsx",
-        "context": "t",
-        "type": "static",
-        "position": {
-          "line": 131,
-          "column": 12,
-          "position": 4444
-        }
-      },
-      "priority": "LOW"
-    },
-    {
-      "key": "You will be automatically billed {{amount}} monthly on this payment method unless you change it.",
-      "usages": [
-        {
-          "file": "src/pages/storage/components/PaymentModal.tsx",
-          "line": 249,
-          "column": 14,
-          "context": "t"
-        }
-      ],
-      "usageCount": 1,
-      "files": [
-        "src/pages/storage/components/PaymentModal.tsx"
-      ],
-      "functions": [
-        "t"
-      ],
-      "context": {
-        "file": "src/pages/storage/components/PaymentModal.tsx",
-        "context": "t",
-        "type": "static",
-        "position": {
-          "line": 249,
-          "column": 14,
-          "position": 8053
         }
       },
       "priority": "LOW"

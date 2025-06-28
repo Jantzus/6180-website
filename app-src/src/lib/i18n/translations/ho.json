@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Dispela kapasiti i no nap long yupela yusim nau. Plis yupela luksave wanpela bikpela kapasiti",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ol senisim long plan long liklik kapasiti bai stat long pinis blong billing taim nau",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Samthing fotot i no save prosesim. Yu save kontinyu wetem ol fotot we i bin prosesim gud.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bae yu pay {{amount}} evri manis long dispela payment method sapos yu no senisim em."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bae yu pay {{amount}} evri manis long dispela payment method sapos yu no senisim em.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Jusum plan we i gud long yu. Yu save jusum long ol opsyen ya o putim wan kastom amawn.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mifala i lukim se folder blong yu i gat ol smol folder insaed. Yu wantem mekem separet album long evri smol folder, o treatim olsem long wan album nomo?"
 }

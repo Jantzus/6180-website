@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Bokgoni bjo ga bo lekaneng bakeng sa tirišo ya gago ya lehono. Ka kgopelo, kgetha bokgoni bo bogolo",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Diphetogo tša morwalo go ya go bokgoni bo bonyenyane di šoma mafelong a nako ya gago ya bjale ya letheko",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Dinepe tše dingwe ga di a kgonega go šomišwa. O ka ya pele ka dinepe tšeo di šomišitšwego gabotse.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O tla lefelwa ka go itiragalela {{amount}} kgwedi le kgwedi ka mokgwa wo wa go lefela ge o sa o fetolego."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O tla lefelwa ka go itiragalela {{amount}} kgwedi le kgwedi ka mokgwa wo wa go lefela ge o sa o fetolego.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kgetho leano le le swanetseng dinyakwa tsa gago ka mo go kaone. O ka kgetha go tšwa go dikgetho tše di ka tlase goba o tsenya tekanyo ya motho ka noši.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Re lemogile gore sengwalwana sa gago se na le dikarolokgolo. Na o rata go hlola albamo ye e aroganeng go karolokgolo ye nngwe le ye nngwe, goba go di swara ka moka bjalo ka albamo ye tee?"
 }

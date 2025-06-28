@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "קיבולת זו אינה מספיקה לשימושך הנוכחי. אנא בחר קיבולת גדולה יותר",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "שינויי תוכנית לקיבולת קטנה יותר נכנסים לתוקף בסוף תקופת החיוב הנוכחית שלך",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "חלק מהתמונות לא ניתן היה לעבד. אתה יכול להמשיך עם התמונות שעובדו בהצלחה.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "יחויב ממך באופן אוטומטי {{amount}} חודשית באמצעי התשלום הזה אלא אם כן תשנה אותו."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "יחויב ממך באופן אוטומטי {{amount}} חודשית באמצעי התשלום הזה אלא אם כן תשנה אותו.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "בחרו את התוכנית המתאימה ביותר לצרכיכם. אתם יכולים לבחור מהאפשרויות למטה או להכניס סכום מותאם אישית.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "שמנו לב שהתיקייה שלכם מכילה תת-תיקיות. האם תרצו ליצור אלבום נפרד לכל תת-תיקייה, או להתייחס לכולן כאלבום אחד?"
 }

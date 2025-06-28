@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Awood-kani uma filna isticmaalkaaga hadda. Fadlan xulo awood ka weyn",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Beddelada qorshaha ilaa awood yar ayaa dhaqangala dhammaadka xilliyada bill-gareenkaaga hada",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sawirro qaar lama hawl galin karo. Waxaad ku sii wadi kartaa sawirrada si guul leh loo hawl galiyay.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Lacag ahaan {{amount}} bishii waa lagaaga qaadayaa habkan lacag bixinta ah haddii aadan beddelin."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Lacag ahaan {{amount}} bishii waa lagaaga qaadayaa habkan lacag bixinta ah haddii aadan beddelin.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Dooro qorshaha ugu fiican baahiyahaaga. Waxaad ka doorsan kartaa doorashooyinka hoose ama ku gelisaa qaddar gaar ah.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Waxaan ogaaday in galka aad leedahay uu leeyahay galo-hoose. Ma rabaa inaad abuurto album gaar ah galka kasta oo hoose, mise waxaad rabaa inaad u tixgalisaa dhammaantood hal album?"
 }

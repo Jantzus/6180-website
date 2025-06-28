@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Saa nhyehyɛe nsakrae a ɛkɔ tumi ketewa no bɛhyɛ ase wɔ wo sika aboro a ɛrekɔ so yi awiei",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Saa aban a ɛwɔ ha yi nnuru wɔ deɛ wokyɛne ba fi mu no so. Yɛsrɛ wo paw deɛ ɛkɛseɛ",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Mfoni binom antumi ansi anhwɛ. Wobɛtumi akɔ so afe mfoni a wɔanya so yiye no.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Wɔbɛka wo {{amount}} ɔsram biara wɔ sika-tua kwan yi so gye sɛ woyɛ sakra."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Wɔbɛka wo {{amount}} ɔsram biara wɔ sika-tua kwan yi so gye sɛ woyɛ sakra.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Yi nhyehyɛe a ɛbɛyɛ yiye ama wo ahiade no. Wobetumi ayi afi nneɛma a wɔaka ase yi mu anaasɛ wode atodia biako akɔ mu.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Yehuu sɛ wo nkwanta no wɔ nkwanta nketewa. Wobɛpɛ sɛ woyɛ albom baako ma nkwanta nketewa biara, anaasɛ wobɛfa nyinaa sɛ albom baako?"
 }

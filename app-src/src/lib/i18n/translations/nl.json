@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Deze capaciteit is ontoereikend voor uw huidige gebruik. Selecteer alstublieft een grotere capaciteit",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Planwijzigingen naar een kleinere capaciteit worden van kracht aan het einde van uw huidige factureringsperiode",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sommige foto's konden niet verwerkt worden. Je kunt doorgaan met de succesvol verwerkte foto's.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Je wordt automatisch {{amount}} maandelijks gedebiteerd via deze betaalmethode tenzij je het verandert."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Je wordt automatisch {{amount}} maandelijks gedebiteerd via deze betaalmethode tenzij je het verandert.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kies het plan dat het beste bij uw behoeften past. U kunt kiezen uit de onderstaande opties of een aangepast bedrag invoeren.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We hebben gemerkt dat uw map submappen bevat. Wilt u een apart album maken voor elke submap, of ze allemaal als één album behandelen?"
 }

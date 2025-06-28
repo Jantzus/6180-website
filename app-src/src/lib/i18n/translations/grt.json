@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Gõtõ nii parik dõngre sa're mõndogiri nii niido nii sae' billing period ko're ni",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Na dõngre parik nii tõmõdka ko're bona mãsãna. Parik gõtõ nõk nii jõn",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Photo lagphakao prosese dangbei. Sukhruwadi prosese dambai photo nani samne thakrang.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Nang-ni sago paisa khabakhon nangoni nade dambai chaini hangma thang {{amount}} automatic bill dang."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Nang-ni sago paisa khabakhon nangoni nade dambai chaini hangma thang {{amount}} automatic bill dang.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Gou sak manha dak albumbu mahan sasen gou folderao. Folderhu mboua ko albumbu mahan sak ni gou bije, ya albumbu gitai ni bije?"
 }

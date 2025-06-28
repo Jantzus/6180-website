@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Šyuo vietupas napītkrīta jiusu pašreizejam lītuošonai. Lyudzu izvielejit leloku vietupas",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Plāna izmieņas iz mozoku vietupas īkuoms vaikuotuos jiusu pašreizejuo apmoksys perioda beigūs",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Daži atti nava izadavuši apstruodēt. Varat turpynuot ar atsim, kas sekmīgi apstruodēti.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jums tiks automatiskai aprēķynuots {{amount}} katru mieneši ar šū maksīšonys paņēmumu, ka tū namainīsit."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jums tiks automatiskai aprēķynuots {{amount}} katru mieneši ar šū maksīšonys paņēmumu, ka tū namainīsit.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Izavielejit planu, kas vyslebuok atbylst jiusu vajadziebom. Varit izavieleit nu apstuodinejim a zameik a varit īvadeit sovu summu.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mes pamaniejom, ka jiusu mapi ir apakšmapi. Vai gribit radeit atsevišku albumu kotrys apakšmapis, a voi juos vysus izavierīt kai vīnu albumu?"
 }

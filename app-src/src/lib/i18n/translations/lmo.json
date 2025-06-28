@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Quela capacità lì la è minga abastanza per el vostro dopor adèss. Per piasè sceglì ona capacità pussee granda",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "I cambiament del plan a ona capacità pussee piscina fan efecc a la fin del voster period de faturazion atuai",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quaich föt a pòden minga vess processad. Te podet andà vanti con i föt processad ben.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Te vegnarét cargad automaticament {{amount}} ogni mes con sto metod de pagament, se no te l cambiet."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Te vegnarét cargad automaticament {{amount}} ogni mes con sto metod de pagament, se no te l cambiet.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Scerni el pian che 'l va mei per i tò besògn. Te pòdet scerni di opzion de qua sot o meter dent un import personalizada.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Avemm vìst che la tò cartèla la gh'ha denter di sot-cartèl. Te voeurt fà un album separà per ògni sot-cartèl, o trattài tùcc come un album domà?"
 }

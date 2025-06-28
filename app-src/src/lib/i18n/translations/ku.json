@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ev qabilîyet ji bo bikaranîna te ya niha ne bes e. Ji kerema xwe qabilîyeteke mezintir hilbijêre",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Guhertinên planê ji bo qabilîyeteke piçûktir di dawiya dema firotanê ya te ya niha de derdikeve holê",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Hin wêne nehatin pêvajo kirin. Tu dikarî bi wêneyên ku bi awayekî baş hatine pêvajo kirin bidomînî.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Heger tu vê rêbaza dravdanê neguherînî, dê di vê rêbazê de mehane {{amount}} otomatîk ji te were girtin."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Heger tu vê rêbaza dravdanê neguherînî, dê di vê rêbazê de mehane {{amount}} otomatîk ji te were girtin.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Plana ku herî baş li hewceyên te dihê hilbijêre. Tu dikarî ji vebijarkên jêrîn hilbijêrî an jî pêrek taybet binivîsî.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Me dît ku peldanka te de binpeldank hene. Tu dixwazî ji bo her binpeldankê albûmek cuda biafirînî an jî wan hemûyan wek yek albûm bihesibînî?"
 }

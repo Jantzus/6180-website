@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "ئەم توانایە بۆ بەکارهێنانی ئێستاتان تەواو نییە. تکایە توانایەکی گەورەتر هەڵبژێرن",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "گۆڕانکاریەکانی پلان بۆ توانایەکی بچووکتر لە کۆتایی خولی پارەدانی ئێستاتاندا دەست پێدەکات",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "هەندێک وێنە نەتوانران پڕۆسێس بکرێن. دەتوانیت بە وێنە سەرکەوتووەکان بەردەوام بیت.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "لە ڕێگای ئەم شێوازەی پارەدانەوە مانگانە {{amount}} خۆکارانە لێت دەکرێتەوە ئەگەر نەیگۆڕیت."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "لە ڕێگای ئەم شێوازەی پارەدانەوە مانگانە {{amount}} خۆکارانە لێت دەکرێتەوە ئەگەر نەیگۆڕیت.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ئەو پلانە هەڵبژێرە کە باشترین لە گەڵ پێداویستیەکانت دەگونجێت. دەتوانیت لە بژاردەکانی خوارەوە هەڵبژێریت یان ڕێژەیەکی تایبەت بنووسیت.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "تێبینیمان کرد کە فۆڵدەرەکەت ژێر فۆڵدەری تێدایە. ئایا دەتەوێت ئەلبومێکی جیا بۆ هەر ژێر فۆڵدەرێک دروست بکەیت، یان هەموویان وەک یەک ئەلبوم مامەڵەیان لەگەڵ بکەیت؟"
 }

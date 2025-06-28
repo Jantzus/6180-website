@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Heyv naket om cv em orvs omvlkvt vtekat omeks. Enhoporretv rakkat vkvsvs",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Esplan-yvlket nak vfvstvket omof mvhakv tares witetv esticakat emunket omat mv tvlwv",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Hoktvlwv 'stvlke omat sekosatsken omekot os. Monkv herkv sekosatstut stomitat vpohets.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Este hoktvlwv omvlkvn opunvyeckv nokcosakeko tayet {{amount}} hvse-vteken svm hofunen ometskvres."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Este hoktvlwv omvlkvn opunvyeckv nokcosakeko tayet {{amount}} hvse-vteken svm hofunen ometskvres.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Plan makkat em vhakv 'tat heren ayat kerrit hokkolen. Pohyat naken ayat komat hokkolen monkat momis 'sēn hervt holwayēcakat.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pohyēt mvhakvkē estvlke hoktaren pum hecicēt os. Hoktare hvmkuswv em album etecakkvlke tayan omat, momen matvpomof hvmken omat album hvmken omēn pohyaciceye tayan omat?"
 }

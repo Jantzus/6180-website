@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "𐌸𐌰𐍄𐌰 𐌼𐌰𐌷𐍄𐍃 𐌽𐌹𐍃𐍄 𐌲𐌰𐌽𐌰𐌷 𐌸𐌴𐌹𐌽𐌰𐌹 𐌽𐌿 𐌱𐍂𐌿𐌺𐌾𐌰𐌹. 𐌱𐌹𐌳𐌾𐌰 𐌲𐌰𐍅𐌰𐌻𐌴𐌹 𐌼𐌰𐌹𐌶𐌹𐌽 𐌼𐌰𐌷𐍄",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "𐍅𐌰𐌽𐌳𐌴𐌹𐌽𐍃 𐍂𐌰𐌳𐌴𐌹𐌽𐍃 𐌳𐌿 𐌼𐌹𐌽𐌽𐌹𐌽 𐌼𐌰𐌷𐍄 𐌹𐌽 𐌻𐌴𐌹𐌺𐌰 𐌻𐌰𐌲𐌾𐌰𐌽𐌳 𐌹𐌽 𐌰𐌽𐌳𐌾𐌰 𐌽𐌿 𐍃𐌰𐌺𐌾𐍉𐍃 𐌼𐌴𐌻𐌰",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "𐍃𐌿𐌼𐌰𐌹 𐍆𐍂𐌰𐌼𐌰𐌻𐌴𐌹𐌺𐍉𐍃 𐌽𐌹 𐌼𐌰𐌷𐍄𐌴𐌳𐌿𐌽 𐌿𐍃𐍅𐌰𐌿𐍂𐌷𐍄𐌰𐌹 𐍅𐌰𐌹𐍂𐌸𐌰𐌽. 𐌼𐌰𐌲𐌿𐍄 𐍆𐌰𐌿𐍂𐌰𐌲𐌰𐌲𐌲𐌰𐌽 𐌼𐌹𐌸 𐌸𐌰𐌹𐌼 𐍅𐌰𐌹𐌻 𐌿𐍃𐍅𐌰𐌿𐍂𐌷𐍄𐌰𐌹𐌼 𐍆𐍂𐌰𐌼𐌰𐌻𐌴𐌹𐌺𐍉𐌼.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "𐌸𐌿 𐍅𐌰𐌹𐍂𐌸𐌹𐍃 𐍃𐌹𐌻𐌱𐌰𐍃𐌺𐌰𐍂𐌰𐌱𐌰 {{amount}} 𐌼𐌴𐌽𐍉𐌸𐍃 𐌰𐌽𐌰 𐌸𐌰𐌼𐌼𐌰 𐍃𐌺𐌰𐍄𐍄𐌹𐍃 𐌲𐌹𐌻𐌳𐌰𐌹𐍃 𐌽𐌹𐌱𐌰 𐌹𐌽𐌼𐌰𐌹𐌳𐌴𐌹𐍃."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "𐌸𐌿 𐍅𐌰𐌹𐍂𐌸𐌹𐍃 𐍃𐌹𐌻𐌱𐌰𐍃𐌺𐌰𐍂𐌰𐌱𐌰 {{amount}} 𐌼𐌴𐌽𐍉𐌸𐍃 𐌰𐌽𐌰 𐌸𐌰𐌼𐌼𐌰 𐍃𐌺𐌰𐍄𐍄𐌹𐍃 𐌲𐌹𐌻𐌳𐌰𐌹𐍃 𐌽𐌹𐌱𐌰 𐌹𐌽𐌼𐌰𐌹𐌳𐌴𐌹𐍃.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "𐍅𐌰𐌻𐌾𐌰𐌹𐌸 𐌸𐌰𐌽𐌰 𐌷𐌰𐌽𐌳𐌿𐌲 𐌸𐍉𐌴𐌹 𐌱𐌰𐍄𐌹𐍃𐍄 𐌸𐌴𐌹𐌽𐌰𐌹𐌼 𐌸𐌰𐌿𐍂𐍆𐍄𐌿𐌼. 𐌼𐌰𐌲𐍄 𐍅𐌰𐌻𐌾𐌰𐌽 𐌿𐍃 𐍅𐌰𐌿𐍂𐍃𐍄𐍅𐌰𐌼 𐌳𐌰𐌻𐌰𐌸 𐌰𐌹𐌸𐌸𐌰𐌿 𐌹𐌽𐌲𐌰𐌲𐌲𐌰𐌽 𐍃𐌹𐌻𐌱𐌰𐌽𐌰 𐍂𐌰𐌸𐌾𐍉.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "𐌲𐌰𐍃𐌰𐌹𐍈𐌰𐌽 𐌸𐌰𐍄𐌴𐌹 𐌸𐌴𐌹𐌽 𐌼𐌰𐍀𐍀𐌰 𐌷𐌰𐌱𐌰𐌹𐌸 𐌿𐍆𐌰𐍂 𐌼𐌰𐍀𐍀𐍉𐍃. 𐍅𐌹𐌻𐌴𐌹𐍃 𐌲𐌰𐍃𐌺𐌰𐍀𐌾𐌰𐌽 𐍃𐌿𐌽𐌳𐍂𐍉 𐌰𐌻𐌱𐌿𐌼 𐍆𐌰𐌿𐍂 𐌷𐍅𐌰𐍂𐌾𐌰𐌹 𐌿𐍆𐌰𐍂 𐌼𐌰𐍀𐍀𐌰𐌹, 𐌸𐌰𐌿 𐌷𐌰𐌽𐌳𐍅𐌾𐌰𐌽 𐌰𐌻𐌻𐌰 𐍃𐍅𐌴 𐌰𐌹𐌽 𐌰𐌻𐌱𐌿𐌼?"
 }

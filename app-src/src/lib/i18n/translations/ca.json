@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Aquesta capacitat és insuficient per al vostre ús actual. Si us plau, seleccioneu una capacitat més gran",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Els canvis del pla a una capacitat menor tenen efecte al final del vostre període de facturació actual",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Algunes fotos no s'han pogut processar. Podeu continuar amb les fotos processades amb èxit.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se us carregarà automàticament {{amount}} mensualment en aquest mètode de pagament tret que el canvieu."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se us carregarà automàticament {{amount}} mensualment en aquest mètode de pagament tret que el canvieu.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Trieu el pla que millor s'adapti a les vostres necessitats. Podeu seleccionar entre les opcions següents o introduir un import personalitzat.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hem observat que la vostra carpeta conté subcarpetes. Voleu crear un àlbum separat per a cada subcarpeta o tractar-les totes com un sol àlbum?"
 }

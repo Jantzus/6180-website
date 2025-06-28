@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Mphamvu iyi sikukwanira pa kagwiritsidwe kako kapano. Chonde sankhani mphamvu yayikulu",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Kusintha kwa mapulani kupita ku mphamvu yaying'ono kumayamba kumapeto kwa nthawi yanu ya kubwereza bill",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Zithunzi zina sizingathe kukonzedwa. Mutha kupitiriza ndi zithunzi zomwe zakonzedwa bwino.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Mudzalipiritsidwa {{amount}} pachakumalo chiyani chilichonse pamtundu uwu wolipirira mukangositha."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Mudzalipiritsidwa {{amount}} pachakumalo chiyani chilichonse pamtundu uwu wolipirira mukangositha.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Sankhani dongosolo limene likuyendera kwambiri zosowa zanu. Mutha kusankha kuchokera pa zisankho pansipa kapena kulowetsa ndalama zachikhalidwe.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tazindikira kuti chikwatu chanu chili ndi zikwatu zazing'ono. Kodi mukufuna kupanga chithunzi chosiyana pa chikwatu chilichonse cha zazing'ono, kapena kuwona zonse ngati chithunzi chimodzi?"
 }

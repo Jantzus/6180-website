@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Suliinermut una anernissuitsoq nalinginnavaat. Angisuumik anernissuitsoq toqqaruk",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Planimik allanillit anernissuitsoq angisuusaarmuamut ataasivaa ilulirisassaanngitsumik billingeqarnikkut anernissuitsoq ataasivaa",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Assiit assilirijit annertusineqanngilaq. Annertusineqarsimasoq assilinit atorlugu inissisit.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "{{amount}} ataasiaqatigiinneqassavutit qaammatip-akunnani ulluni una tigulersinneqarpit saniatigut."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "{{amount}} ataasiaqatigiinneqassavutit qaammatip-akunnani ulluni una tigulersinneqarpit saniatigut.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Toqqaateqarpit atorsinnaassusillit piqqusivissatik angijumik. Ataani toqqaateqarnerit atortillugu toqqaateqarsissavutit ammunalu pisinnaasanik allagit.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Takukuvugut mappin-ni mappisinik piqqusivissanik. Toqqaateqarpit mappisinik piqqusivissanik kimmilluunniit atuisumik, aammalu tamarmik atausinnik toqqaateqartumik?"
 }

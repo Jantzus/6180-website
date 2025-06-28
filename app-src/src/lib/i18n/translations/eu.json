@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ahalmen hau ez da nahikoa zure egungo erabilerarako. Mesedez, hautatu ahalmen handiagoa",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ahalmen txikiago batera egindako plan aldaketak zure oraingo fakturazio aldiaren amaieran hartzen dute indarrean",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Argazki batzuk ezin izan dira prozesatu. Behar bezala prozesatu diren argazkiekin jarraitu dezakezu.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Hilero {{amount}} kobratuko zaizkie ordainketa-metodo honetan automatikoki, aldatzen ez baduzue."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Hilero {{amount}} kobratuko zaizkie ordainketa-metodo honetan automatikoki, aldatzen ez baduzue.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Aukeratu zure beharretara hobekien egokitzen den plana. Beheko aukeretatik hautatu dezakezu edo zure kopuru pertsonalizatua sartu.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Konturatu gara zure karpeta azpikarpetak dituela. Azpikarpeta bakoitzarentzat albuma banandu bat sortu nahi al duzu, ala denak albuma bakarra balira bezala tratatu?"
 }

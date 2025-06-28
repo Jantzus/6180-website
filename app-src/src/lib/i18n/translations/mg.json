@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Tsy ampy ity fahaiza-manao ity amin'ny fampiasanao ankehitriny. Safidio ny fahaiza-manao lehibe kokoa",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ny fanovana ny drafitra ho amin'ny fahaiza-manao kely kokoa dia manomboka amin'ny fiafaran'ny vanim-potoana faktiora ankehitriny",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ny sary sasany dia tsy voavoatra. Afaka manohy amin'ny sary voavoatra tsara ianao.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Halaina aminao {{amount}} isam-bolana amin'ity fomba fandoavam-bola ity raha tsy ovainao."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Halaina aminao {{amount}} isam-bolana amin'ity fomba fandoavam-bola ity raha tsy ovainao.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Misafidiana ny drafitra izay mifanaraka tsara indrindra amin'ny filànanao. Afaka misafidy amin'ireo safidy etsy ambany ianao na mampiditra vola manokana.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nahatsikaritsika fa misy sobosary ao amin'ny lahatahiry. Te hamorona rakitahiry manokana ho an'ny sobosary tsirairay ve ianao sa hihevitra azy rehetra ho rakitahiry iray?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "პლანიშ ცილათუნუალეფი ნაკნებ ძალადს კოვერენ შკი ქიმ დროშა ქორთუაშე ნაკნებ ხარჯუალათუ ბუტუას",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "ათე ძალადი მუ ტყვა ლალუას გიჸირალუშო. გოჸალინე, დიდი ძალადი ირჩია",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "გიშ სურეთეფი ნაწილობა ვერ უნღუ. შკინ ოკომერე თინა სურეთეფით ნაწილობალით რე.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ცია გორაფშ ეფუალქციშ ხერე გან ვერ ღეყან ენა, შინა ღორსალე {{amount}} ავტომატურო ღეკუწონი რენ."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ცია გორაფშ ეფუალქციშ ხერე გან ვერ ღეყან ენა, შინა ღორსალე {{amount}} ავტომატურო ღეკუწონი რენ.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "გურეთ რე პლანი ოჯახის შენს ჭირაფას სხვებუ რე ზემუხუ. ზოთ შალიხედეთ არ ხული ხოზერი რელოშე რე შენს ფულიშე რაოდენობა ღვლეთ შალიძურით.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ღიმი რე დოვნა რე შქენი დისკერტი კანჯაშე კანჯეფი რე ირინუ შქენ. შქენ ღაშკუნი რე ხოლე კანჯანოზე არებული დისკერტი მუსუნეთ რე თემუე კანჯი რე ხოლე რე უღუ რე მუშა ხეშა ხუწი რე უღუ დისკერტი მუზუნეთ?"
 }

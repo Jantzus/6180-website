@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Izinguquko zohlelo oluya emandleni amancane zithatha umthelela ekupheleni kwenkathi yobhayili lwamanje",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Amandla la awanele ekusebenziseni kwakho kwamanje. Ngicela ukhethe amandla amakhulu",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ezinye izithombe azikwazanga ukucutshungulwa. Ungaqhubeka nezithombe ezicutshungulwe ngempumelelo.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Uzobhadelwa i-{{amount}} njalo ngenyanga ngale ndlela yokukhokha ngaphandle kokuthi uyiyishintshe."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Uzobhadelwa i-{{amount}} njalo ngenyanga ngale ndlela yokukhokha ngaphandle kokuthi uyiyishintshe.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Khetha isicwangciso esisondeleyo kakhulu ekusizeni kwakho. Ungakhetha kusukela ezinhlangothini ezingezansi noma ufake inani elikhethekile.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sibone ukuthi ifolda yakho iqukethe amafolda amancane. Ingabe ufuna ukwenza i-albamu ehlukene kufolda encane ngayinye, noma ukuwaphatha wonke njengealbhamu elilodwa?"
 }

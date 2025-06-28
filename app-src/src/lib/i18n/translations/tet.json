@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kapasidade ida ne'e la bele mai ajuda ba ita nia uza iha tempu ida ne'e. Favór hili kapasidade nebe boot liu",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Mudansa planu ba kapasidade ki ki'ik liu hahu hodi hato'o iha remate tempu faturasaun nebe daudaun",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Foto balun la bele prosesa. Ó bele kontinua ho foto sira-ne'ebé prosesa ho suksesu.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ó sei automatikamente fo selu {{amount}} fulan kada iha metodu pagamentu ida-ne'e saluu se ó la muda."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ó sei automatikamente fo selu {{amount}} fulan kada iha metodu pagamentu ida-ne'e saluu se ó la muda.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Hili planu ne'ebé di'ak liu ba ita-nia presiza. Bele hili husi opsaun sira iha kraik ka tau montante ida ne'ebé ita hakarak.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ami hatene katak ita-nia pasta iha pasta ki'ik sira. Ita hakarak kria album ida-idak ba pasta ki'ik ida-ida, ka konsidera sira hotu hanesan album ida deit?"
 }

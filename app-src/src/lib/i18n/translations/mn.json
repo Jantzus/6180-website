@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Энэ хүчин чадал таны одоогийн хэрэглээнд хүрэхгүй байна. Илүү том хүчин чадал сонгоно уу",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Бага хүчин чадал руу төлөвлөгөө өөрчлөх нь таны одоогийн төлбөрийн хугацааны төгсгөлд хүчин төгөлдөр болно",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Зарим зургийг боловсруулж чадсангүй. Та амжилттай боловсруулсан зургуудаар үргэлжлүүлж болно.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Та энэ төлбөрийн аргыг өөрчлөхгүй бол сар бүр {{amount}}-г автоматаар тооцно."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Та энэ төлбөрийн аргыг өөрчлөхгүй бол сар бүр {{amount}}-г автоматаар тооцно.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Өөрийн хэрэгцээнд хамгийн тохирох төлөвлөгөөг сонгоно уу. Доорх сонголтуудаас сонгож болно эсвэл захиалгат дүнгээ оруулж болно.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Таны хавтасанд дэд хавтас байгааг бид анзаарлаа. Та дэд хавтас бүрт тусдаа цомог үүсгэхийг хүсэж байна уу эсвэл бүгдийг нэг цомог болгон үзэхийг хүсэж байна уу?"
 }

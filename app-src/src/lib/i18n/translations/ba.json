@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Был мөмкинлек һеҙҙең ағымдағы ҡулланыуығыҙ өсөн етәрле түгел. Зинһар, ҙурыраҡ мөмкинлек һайлағыҙ",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Бәләкәй мөмкинлеккә план үҙгәртеүҙәре ағымдағы түләү сиклегеңдең аҙағында ғәмәлгә кереүҙе",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ҡайһы бер фото эшкәртелмәне. Уңышлы эшкәртелгән фотолар менән дауам итә алаһығыҙ.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Һеҙ быны үҙгәртмәгән саҡта, был түләү ысулында айҙары {{amount}} автоматик рәүештә түләтеләсәк."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Һеҙ быны үҙгәртмәгән саҡта, был түләү ысулында айҙары {{amount}} автоматик рәүештә түләтеләсәк.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Үҙегеҙҙең ихтыяжығыҙға тап килгән планды һайлағыҙ. Аҫтағы вариантарҙан һайлай йәки махсус күләм индерә алаһығыҙ.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Беҙ күрҙек, һеҙҙең папкала асты папкалар бар. Һеҙ һәр асты папка өсөн айырым альбом яһарға теләйһегеҙме, йәки барыһын ла бер альбом итеп ҡарарға теләйһегеҙме?"
 }

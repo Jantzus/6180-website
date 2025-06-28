@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Àwọn ayìpadà ètò sí agbara kékeré máa ń ṣiṣẹ́ ní òpin akókò ìsanwó rẹ lọ́wọ́lọ́wọ́",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Agbara yìí kò tó fún lílò rẹ lọ́wọ́lọ́wọ́. Jọ̀wọ́ yan agbara tó tóbi jù",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Àwọn àwòrán kan kò lè ṣeéṣe. O lè tẹ̀síwájú pẹ̀lú àwọn àwòrán tí a ṣe lóríire.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A ó gba owó {{amount}} lójúmọ̀ lórí ọ̀nà isanwó yìí láàifọwọ́sí àyàfi tí o bá yí i padà."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A ó gba owó {{amount}} lójúmọ̀ lórí ọ̀nà isanwó yìí láàifọwọ́sí àyàfi tí o bá yí i padà.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Yan eto to dara ju fun awon iwulo yin. E le yan lati inu awon aṣayan ti o wa ni isale yi tabi ki e tẹ iye owo akanṣe sinu.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "A ṣakiyesi pe folda yin ni awon subfolder ninu. Ṣe o fe ṣe apo-orin ọtọtọ fun subfolder kọọkan, tabi ka gbogbo wọn ṣe apo-orin kan?"
 }

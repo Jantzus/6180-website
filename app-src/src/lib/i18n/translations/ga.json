@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Níl an toilleadh seo leordhóthanach do d'úsáid reatha. Roghnaigh toilleadh níos mó le do thoil",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Tógann athruithe plean go toilleadh níos lú éifeacht ag deireadh do thréimhse reatha billíochta",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ní fhéadfaí roinnt grianghraf a phróiseáil. Is féidir leat leanúint ar aghaidh leis na grianghraif a próiseáladh go rathúil.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Gheobhaidh tú bille go huathoibríoch {{amount}} go míosúil ar an modh íocaíochta seo mura n-athraíonn tú é."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Gheobhaidh tú bille go huathoibríoch {{amount}} go míosúil ar an modh íocaíochta seo mura n-athraíonn tú é.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Roghnaigh an plean is fearr a fhóireann do do chuid riachtanas. Is féidir leat rogha a dhéanamh as na roghanna thíos nó suim shaincheaptha a iontráil.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Thug muid faoi deara go bhfuil fofhillteáin sa fhillteán agat. Ar mhaith leat albam ar leith a chruthú do gach fofhillteán, nó iad go léir a chaitheamh mar albam amháin?"
 }

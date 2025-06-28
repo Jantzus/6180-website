@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "ᐅᓇ ᐱᔪᓐᓇᐅᑦ ᐊᑐᐃᓐᓇᐅᓪᓚᕆᙱᑦᑐᖅ ᐅᓪᓗᒥ ᐊᑐᖅᑕᐅᔪᓄᑦ. ᐊᖏᓂᖅᓴᒥᒃ ᐱᔪᓐᓇᐅᑦ ᓂᕈᐊᖅᑐᒃᓴᐅᕗᑎᑦ",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "ᐱᓕᕆᖅᑕᐅᔪᑦ ᐊᓯᔾᔨᕈᑎᒃᓴᐃᑦ ᒥᑭᓂᖅᓴᐅᔪᒧᑦ ᐱᔪᓐᓇᐅᑎᒧᑦ ᐊᑐᖅᑕᐅᕙᓪᓕᐊᓕᖅᐳᑦ ᐅᓪᓗᒥᐅᑕᐅᔪᒥ ᖃᓄᐃᓕᖓᔪᖅ ᐊᑭᓕᖅᑐᓕᕆᓂᐅᑉ ᐃᓱᐊᓂ",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ᐊᓯᖏᑦ ᐊᔾᔭᐅᖅᑐᑦ ᐊᑐᐃᓐᓇᖅᑎᑕᐅᔪᓐᓇᙱᑦᑐᑦ. ᐊᑐᐃᓐᓇᖅᑎᑕᐅᔪᓐᓇᖅᑐᓂᒃ ᐊᔾᔭᐅᖅᑐᓂᒃ ᐊᑐᕈᓐᓇᖅᐳᑎᑦ.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ᐊᑐᖅᑕᐅᔪᒃᑯᑦ ᐊᖏᖃᑎᒌᓐᓂᕐᒧᑦ ᑮᓇᐅᔭᖅᑎᑦᑎᓂᖅ {{amount}} ᑕᖅᑲᒃᑯᑦ ᐱᔭᒃᓴᖅᑎᑕᐅᓂᐊᖅᐳᑎᑦ ᐊᓯᔾᔨᖅᑎᑕᐃᓕᒪᓂᖓᓄᑦ."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ᐊᑐᖅᑕᐅᔪᒃᑯᑦ ᐊᖏᖃᑎᒌᓐᓂᕐᒧᑦ ᑮᓇᐅᔭᖅᑎᑦᑎᓂᖅ {{amount}} ᑕᖅᑲᒃᑯᑦ ᐱᔭᒃᓴᖅᑎᑕᐅᓂᐊᖅᐳᑎᑦ ᐊᓯᔾᔨᖅᑎᑕᐃᓕᒪᓂᖓᓄᑦ.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ᐅᖅᑲᖅᑐᒃᑯᑦ ᐸᓪᓕᐊᑎᑦᑎᓂᖅ ᐱᔪᒪᔭᐅᔪᓂᒃ ᐅᖃᖅᓯᒪᔪᓂᒃ ᓇᓂᓯᔪᒪᒐᔭᖅᐳᑦ. ᐊᒃᑐᐃᓂᖃᖅᑐᒃᑯᑦ ᐱᔪᒪᒍᓐᓇᖅᑐᑎᑦ ᐊᑖᒍᑦ ᑕᐃᒪᓐᓇ ᐅᕝᕙᓘᓐᓃᑦ ᐃᓛᒃᑰᖅᑐᒃᑯᑦ ᐃᓱᒪᒋᔭᐅᔪᓂᒃ ᐅᖃᖅᓯᒪᔪᓂᒃ.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ᐅᕙᒍᑦ ᑕᑯᔪᒪᔭᕗᑦ ᐃᖃᐃᖅᓯᒪᔪᖃᖅᑐᒥᒃ ᐃᓂᖃᖅᑐᒥᒃ ᐃᓂᐅᑉ ᐃᓗᐊᓂ ᐃᓂᓕᐅᖅᓯᒪᔪᓂᒃ. ᐊᑐᐃᓐᓇᐅᔪᒥᒃ ᐱᔨᑦᑎᖅᑐᒥᒃ ᐃᓂᓕᐅᖅᓯᒪᔪᓕᒫᓂᒃ ᐅᕝᕙᓘᓐᓃᑦ ᐊᑕᐅᓯᐅᓗᐊᖅᑐᒥᒃ ᐊᑐᖅᑐᒍᑦ?"
 }

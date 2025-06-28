@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Această capacitate este insuficientă pentru utilizarea dumneavoastră actuală. Vă rugăm să selectați o capacitate mai mare",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Modificările planului la o capacitate mai mică intră în vigoare la sfârșitul perioadei dumneavoastră actuale de facturare",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Unele fotografii nu au putut fi procesate. Puteți continua cu fotografiile procesate cu succes.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Veți fi facturat automat {{amount}} lunar prin această metodă de plată dacă nu o schimbați."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Veți fi facturat automat {{amount}} lunar prin această metodă de plată dacă nu o schimbați.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Alegeți planul care se potrivește cel mai bine nevoilor dumneavoastră. Puteți selecta din opțiunile de mai jos sau introduce o sumă personalizată.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Am observat că dosarul dumneavoastră conține subdosare. Doriți să creați un album separat pentru fiecare subdosar sau să le tratați pe toate ca un singur album?"
 }

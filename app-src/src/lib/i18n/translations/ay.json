@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Aka ch'aman janiw apnaqañamatakikix askikiti. Jukamp jach'a ch'ama ajllit",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Ch'iqïr ch'amaru mayjt'awinakaxa jichha phaxsiru tukuyañkama sarantañani",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Yaqhip fotogramas jan jiyatäkxiti. Suma askiw photogramas ukamp sarantañ uñjasta.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sapa phaxsi {{amount}} payañapataki aka manqha thakhi ukamprakiw jan mayjt'ayañkamax."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sapa phaxsi {{amount}} payañapataki aka manqha thakhi ukamprakiw jan mayjt'ayañkamax.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Munäwimp plan ajlla amtawipa thuqt uñatäwisa. Aka aynakatp chhijllasmawa jan ukax mä sapa jakhu uchasiñamawa.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Uñt'ayxañanwa carpeta ukax subfoldernakani utjita. Sapa subfolder ukana mayspach álbum luraña muntta, jan ukax taynakana mayni álbum hiña apnaqaña?"
 }

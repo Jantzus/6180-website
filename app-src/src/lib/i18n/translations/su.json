@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Kapasitas ieu teu cukup pikeun pamakéan anjeun ayeuna. Mangga pilih kapasitas nu leuwih ageung",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Parobahan paket ka kapasitas nu leuwih alit bakal efektif di ahir jaman tagihan anjeun ayeuna",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sababaraha poto teu tiasa diolah. Anjeun tiasa neruskeun sareng poto anu parantos hasil diolah.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Anjeun bakal otomatis ditagihkeun {{amount}} bulanan ku metode pamayaran ieu iwal mun anjeun ngarobah éta."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Anjeun bakal otomatis ditagihkeun {{amount}} bulanan ku metode pamayaran ieu iwal mun anjeun ngarobah éta.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilih rencana anu pangalusna cocog sareng kabutuhan anjeun. Anjeun tiasa milih tina pilihan di handap atanapi lebetkeun jumlah khusus.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami ningali yén map anjeun ngandung submap. Naha anjeun hoyong ngadamel album anu misah pikeun unggal submap, atanapi nganggap sadayana salaku hiji album?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Makoki oyo ezali ya koki te mpo na bosaléli na yo ya sik'oyo. Pona makoki minene",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Mbongwana ya mipango ya elongo na makoki mike ekosalema na nsuka ya eleko ya mbongo oyo ezali",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Bafóto mosusu ekokaki kosálama te. Okoki kokoba na bafóto oyo esálami malamu.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Okofúta automátiquement {{amount}} sanza nsúká na mosálá yáyo ya kófúta sóko obóngóla yangó té."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Okofúta automátiquement {{amount}} sanza nsúká na mosálá yáyo ya kófúta sóko obóngóla yangó té.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Poná plan oyo ekolanda malamu bamposa na yo. Okoki kopona kati na maponami ya na nse to kokɔtisa mbongo ya yo moko.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tomonaki ete dossier na yo ezali na ba-sousdossier. Olingi kosala album ekeseni mpo na sousdossier moko na moko, to komona yango nyonso lokola album moko?"
 }

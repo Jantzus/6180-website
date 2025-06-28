@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Te hoho'a nei i roto i te mana iti ake e tīmata ai i te pau o tō taime totongi nei",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Teie mana nei aita e rave iti hoho'a nei oe. Te hupe atu nei ia oe e tauturu mai i teie mana ati",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ētāhi taʻoto i ʻore roa e nehenehe te faanahonaho. Ua nehenehe to ʻoe e faanahonaho i nā taʻoto i faanahonaho hia.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "E fa'ahia hia oe i {{amount}} i te ava'e hia i teie huru fa'a'ineine ia e ore oe e 'änī."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "E fa'ahia hia oe i {{amount}} i te ava'e hia i teie huru fa'a'ineine ia e ore oe e 'änī.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Hīroa i te rauturu e hamani roa nei i tō mau hinaaro. 'Ua hiki ia 'oe te hīroa i roto i nā koho nei mai raro nei rānei rā, te uru atu i te moni maita'i.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ua 'ite mātou e, 'o tō fā'aufau nei 'ua 'i roto ra nā fā'aufau 'iti. 'Ua here 'oe e hāmani i te 'ālipamu motuhia noa'tu no te fā'aufau 'iti taitahi, 'aita rānei rā e fa'a'ite ia rātou 'atoa 'ei 'ālipamu ho'ē?"
 }

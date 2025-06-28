@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "اي ظرفيت شمه فعلي استفاده ره كافي نينه. لطفا يته گپ ترˇ ظرفيت انتخاو بكيد",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "طرح تغييرات كه كوچكترˇ ظرفيت سي اثر دارنه شمه فعليˇ پولگيري دوره ني آخر",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "یه چن تا عکس نتونسته پردازش ببه. شما تونيد وا عکسان کي موفقيت آميز پردازش ببه دوام بديد.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ایسا پولی دئن طریقه گر شما نِخانیدش، هر ماه {{amount}} خودکار ازتو کأسه بنه."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ایسا پولی دئن طریقه گر شما نِخانیدش، هر ماه {{amount}} خودکار ازتو کأسه بنه.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "اون طرح بینین که شیما رق احتیاجون جی بهتره. شیما تونین ای گزینه یان رو ری انتخاب بکونین یا خودتون مبلغ وارد بکونین.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ما دی‌دیمون که شیما فولدر دله زیرفولدریان هسه. شیمه خانین هر زیرفولدر ری یه جدا آلبوم بسازین یا همه شه یه آلبوم بونین؟"
 }

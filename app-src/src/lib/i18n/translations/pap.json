@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "E kapasitat aki no ta sufisiente pa bo uso aktual. Por fabor skohe un kapasitat mas grandi",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Cambio di plan pa kapasitat mas chikito ta tuma efekto na final di bo periodo di fakturashon aktual",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Algun fòto no por a wordo prosesá. Bo por kontinuá ku e fòtonan ku a wordo prosesá bon.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Lo bolbe huña bill automatikamente {{amount}} na luna riba e metodo di pago aki si no bo kambié."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Lo bolbe huña bill automatikamente {{amount}} na luna riba e metodo di pago aki si no bo kambié.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Skoge e plan ku ta konbini miho ku bo nesesidadnan. Bo por skoge for di e opshonnan aki bou of puntra un kantidat personalisa.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nos a nota ku bo folder tin subfolders. Bo ke krea un album separá pa cada subfolder, of trata tur huntu komo un album?"
 }

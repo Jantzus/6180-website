@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ку хăнăхăв хальхи усă курнă тăрăх ситмест. Аллинчен пысăк хăнăхăв суйласа илěр",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Пĕчĕкрех хăнăхăва план улăштарăвĕсем хальхи укĕ панă вăхăтăн вĕçĕнче çĕклеме тытăнаççĕ",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Хăш-пĕр сăнсем ĕçлетеçĕ хывмарĕç. Эсир ăнланса ĕçленĕ сăнсемпе малалла тăвăçĕ.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Эсир ун улăштарма пулсан, ку түлев мелĕпе уйăхĕнче {{amount}} автоматла кăларса илеççĕ."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Эсир ун улăштарма пулсан, ку түлев мелĕпе уйăхĕнче {{amount}} автоматла кăларса илеççĕ.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Сирĕн кирлĕ план суйларăр. Аялхи вариантсенчен суйма пултаратăр е хăвăр тĕплĕвĕ кĕртетĕр.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Эпир курнă тĕлĕпе сирĕн папкăра субпапкăсем пур. Сирĕн кăшни субпапка валли уйăрăм альбом тунă тесе килет-и, тата пурне те пĕр альбом шутласа кăна килет-и?"
 }

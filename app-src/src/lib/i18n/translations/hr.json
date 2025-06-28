@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Ovaj kapacitet nije dovoljan za vašu trenutnu upotrebu. Molimo odaberite veći kapacitet",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Promjene plana na manji kapacitet stupaju na snagu na kraju vašeg trenutnog obračunskog perioda",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Neke fotografije nisu mogle biti obrađene. Možete nastaviti s uspješno obrađenim fotografijama.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bit ćete automatski naplaćivani {{amount}} mjesečno ovim načinom plaćanja osim ako ga ne promijenite."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bit ćete automatski naplaćivani {{amount}} mjesečno ovim načinom plaćanja osim ako ga ne promijenite.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Odaberite plan koji najbolje odgovara vašim potrebama. Možete birati iz opcija ispod ili unijeti prilagođeni iznos.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Primijetili smo da vaša mapa sadrži podmape. Želite li kreirati zasebni album za svaku podmapu ili ih sve tretirati kao jedan album?"
 }

@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Okapaseti oku taka pitwa kovene vyovyo omunatje. Kapara ohandi okukoromba okapaseti okajemba",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Omutundu gwa omaano kovakombanda okapi tuu gwa landula muvakuwonale ovene vya vyovyo omunatje",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Eepandu dimbandu ka tika kwa lombwedakamo. Ove ukwenu okukutya nomitumbelo yoomatumbeke gumwe.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ove oupitwa oukapitaike {{amount}} okukutya omwetameni ni okuti ove ka sikunyene."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ove oupitwa oukapitaike {{amount}} okukutya omwetameni ni okuti ove ka sikunyene.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kethera plan itje tji ri kombanda ondjira yoye. Otwa urikwa ku hongera munda kombada yimwe itji ri munene kapa ku tjanga omutjingo ngwao.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Twa kuvara kuti folder yenu ine ma subfolder. Munoda mukuru-gore album rimwe chete pane chimwe nechimwe cheziri subfolder here, kana kuita zvese sealbum rimwe chete?"
 }

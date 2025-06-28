@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Makinu yai yikadi ko kutula ya maku masumbu. Tambula makinu manene",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Mayele ma plan yi kanga makinu mandi yididi ku nsuka ya kizunga kia vutula zaku yau",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Samu bilili kenda kosi kuvwa viakila. Ngeye kenda kuvwa kutala ye bilili biobi biakila malamu.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ngeye tuku futa {{amount}} kila siku moon ye kima bilonga ye ku futa ka ko sakolaka yau ko."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ngeye tuku futa {{amount}} kila siku moon ye kima bilonga ye ku futa ka ko sakolaka yau ko.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Bonga ya longokani ke yikwenda ye bonga ya zola kua meno maku. Ozali na kaka ya sobola kuna bandeko ya se nto ya kota ya solo yaku.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tumonokele ye folder yaku ikwenda na ma subfolder. Olingi na bosala album yomoko na subfolder yonso, to kokanisa yango nioso kaka lokola album moko?"
 }

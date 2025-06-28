@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Bu kuwwat sizin häzirki ulanyşyňyz üçin ýeterlik däl. Köprek kuwwat saýlaň",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Kiçi kuwwata plan üýtgeşmeleri häzirki hasap döwrüňiziň ahyrynda güýje girýär",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Käbir suratlary işlenip bilmedi. Üstünlikli işlenen suratlar bilen dowam edip bilersiňiz.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bu töleg usulyny üýtgetmeseňiz, her aý awtomatiki {{amount}} hasaplandyrylar."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bu töleg usulyny üýtgetmeseňiz, her aý awtomatiki {{amount}} hasaplandyrylar.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Zerurlyklaryňyza iň laýyk gelýän meýilnamany saýlaň. Aşakdaky wariantlardan saýlap bilersiňiz ýa-da özbaşdak mukdaryny girizbiňi.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Papkañyzda subpapkalaryň bardygyny görýäris. Her subpapka üçin aýratyn albom döretmek isleýärsiňizmi ýa-da hemmesini bir albom hökmünde göresmek isleýärsiňizmi?"
 }

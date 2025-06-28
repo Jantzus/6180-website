@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Sta capacità nun è abbastanza pû vostru usu attuali. Pi favuri scigliti na capacità chiù granni",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Li canciamenti dû pianu a na capacità cchiù picciula piglinu effettu â fini dû vostru periudu di fatturazzioni attuali",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Certi ritratti nun pòttiru èssiri prucissati. Poi cuntinuari cû ritratti prucissati beni.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti vèniri addebitatu automaticamente {{amount}} ogni misi cu stu mètudu di pagamentu siddu nun lu canciassi."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti vèniri addebitatu automaticamente {{amount}} ogni misi cu stu mètudu di pagamentu siddu nun lu canciassi.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Scegghî lu pianu ca si nni va megghiu pî tô bisogni. Poi scegghiri dî sciddhi di sutta o mittiri na summa pirsunalizzata.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vidìmu ca la tò cartedda cunzisti suttacarteddi. Voi criari n'àlbum spartittu pi ognuna suttacartedda, o trattalli tutti comu n'àlbum sulu?"
 }

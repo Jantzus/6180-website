@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "چھوٹی صلاحیت میں منصوبہ تبدیلیاں آپ کے موجودہ بلنگ دور کے اختتام پر مؤثر ہوتی ہیں",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "یہ صلاحیت آپ کے موجودہ استعمال کے لیے ناکافی ہے۔ براہ کرم ایک بڑی صلاحیت منتخب کریں",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "کچھ تصاویر پروسیس نہیں ہو سکیں۔ آپ کامیابی سے پروسیس ہونے والی تصاویر کے ساتھ جاری رکھ سکتے ہیں۔",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "جب تک آپ اسے تبدیل نہیں کرتے اس ادائیگی کے طریقے سے ماہانہ {{amount}} خودکار طور پر بل کیا جائے گا۔"
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "جب تک آپ اسے تبدیل نہیں کرتے اس ادائیگی کے طریقے سے ماہانہ {{amount}} خودکار طور پر بل کیا جائے گا۔",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "اپنی ضروریات کے مطابق بہترین پلان منتخب کریں۔ آپ نیچے کے اختیارات میں سے منتخب کر سکتے ہیں یا کسٹم رقم داخل کر سکتے ہیں۔",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ہم نے دیکھا ہے کہ آپ کے فولڈر میں ذیلی فولڈرز ہیں۔ کیا آپ ہر ذیلی فولڈر کے لیے الگ البم بنانا چاہتے ہیں، یا سب کو ایک البم کے طور پر دیکھنا چاہتے ہیں؟"
 }

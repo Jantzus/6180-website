@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Denne kapacitet er utilstrækkelig til dit nuværende forbrug. Vælg venligst en større kapacitet",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Planændringer til en mindre kapacitet træder i kraft ved slutningen af din nuværende faktureringsperiode",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Nogle billeder kunne ikke behandles. Du kan fortsætte med de billeder, der blev behandlet korrekt.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du vil automatisk blive opkrævet {{amount}} månedligt på denne betalingsmetode, medmindre du ændrer den."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du vil automatisk blive opkrævet {{amount}} månedligt på denne betalingsmetode, medmindre du ændrer den.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Vælg den plan, der bedst passer til dine behov. Du kan vælge fra mulighederne nedenfor eller indtaste et brugerdefineret beløb.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vi har bemærket, at din mappe indeholder undermapper. Vil du oprette et separat album for hver undermappe, eller behandle dem alle som ét album?"
 }

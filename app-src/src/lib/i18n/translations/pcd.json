@@ -485,5 +485,7 @@
   "This capacity is insufficient for your current usage. Please select a larger capacity.": "Chelle capacité-chi al n'est point assez pour votr usache d'asteur. S'i vous plait piken-ne eune capacité pus grosse",
   "Plan changes to a smaller capacity take effect at the end of your current billing period.": "Chés chanjemints d'plan à n'plus ptite capacité prennent effèt à l'fin d'votr péryeude d'facturation d'adcheure",
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quèques fotes i ont poin pu éte machinées. Vos povez continuer aveuc chés fotes machinées à succès.",
-  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos srez automatiquement eud facturé {{amount}} chaque mois aveuc chéte méthode ed payement à muens que vous l'changichiz."
+  "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos srez automatiquement eud facturé {{amount}} chaque mois aveuc chéte méthode ed payement à muens que vous l'changichiz.",
+  "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chouaîsissez ch'plan qu'i collé ch'mieux à vos bésouains. Os pouvez chouaîsir d'vant chs optiouns ichi-bas ou mette eune somme à vous.",
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "J'avons r'marqué qu'vosse dossier al contint des sous-dossiers. Voulez-vous créer un album à part pour chaque sous-dossier, ou les traiter tous comme un seul album?"
 }
