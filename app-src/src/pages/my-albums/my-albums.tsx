@@ -344,6 +344,7 @@ const getAlbumsToDelete = (folders: FolderType[], subscriptionInfo: Subscription
 };
 
 // Optimized component to display albums marked for deletion with LIMITED image previews
+// Optimized component to display albums marked for deletion with LIMITED image previews
 const AlbumDeletionPreview = React.memo(({ 
   albumsToDelete, 
   isRTL 
@@ -351,167 +352,186 @@ const AlbumDeletionPreview = React.memo(({
   albumsToDelete: FolderType[]; 
   isRTL: boolean; 
 }) => {
-
   const { t } = useTranslation();
+  const [isClient, setIsClient] = useState(false);
+
+  // SSR-safe client detection
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Pre-compute all formatted dates safely
+  const albumsWithFormattedDates = useMemo(() => {
+    if (!isClient) {
+      return albumsToDelete.map(folder => ({ ...folder, formattedDate: null }));
+    }
+    
+    return albumsToDelete.map(folder => ({
+      ...folder,
+      formattedDate: folder.createdAt ? new Date(folder.createdAt).toLocaleDateString() : null
+    }));
+  }, [albumsToDelete, isClient]);
 
   if (albumsToDelete.length === 0) return null;
 
   return (
     <div style={{ marginTop: '16px' }}>
-      {albumsToDelete.map((folder) => (
-        <div key={folder.folderId} style={{ 
-          marginBottom: '20px',
-          direction: isRTL ? "rtl" : "ltr"
-        }}>
-          <div style={{
-            background: '#fff',
-            border: '2px solid #dc3545',
-            borderRadius: '12px',
-            padding: '20px',
-            position: 'relative',
-            overflow: 'hidden',
-            opacity: '0.85'
-          }}>
+      {albumsWithFormattedDates.map((folder) => {
 
-            <div style={{ 
-              marginTop: '30px',
-              marginBottom: '16px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              flexDirection: isRTL ? "row-reverse" : "row"
+        return (
+          <div key={folder.folderId} style={{ 
+            marginBottom: '20px',
+            direction: isRTL ? "rtl" : "ltr"
+          }}>
+            <div style={{
+              background: '#fff',
+              border: '2px solid #dc3545',
+              borderRadius: '12px',
+              padding: '20px',
+              position: 'relative',
+              overflow: 'hidden',
+              opacity: '0.85'
             }}>
               <div style={{ 
+                marginTop: '30px',
+                marginBottom: '16px',
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: isRTL ? "flex-end" : "flex-start"
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                flexDirection: isRTL ? "row-reverse" : "row"
               }}>
-                <h3 style={{
-                  fontSize: '18px',
-                  margin: '0 0 4px 0',
-                  color: '#dc3545',
-                  fontWeight: 'bold'
+                <div style={{ 
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: isRTL ? "flex-end" : "flex-start"
                 }}>
-                  {folder.folderName || "Untitled Album"}
-                </h3>
-                <div style={{
-                  fontSize: '13px',
-                  color: '#666',
-                  textAlign: isRTL ? 'right' : 'left'
-                }}>
-                  {folder.createdAt && (
-                    <div>{t('Created')}: {new Date(folder.createdAt).toLocaleDateString()}</div>
-                  )}
-                  <div>
-                    {folder.files.length === 1 
-                      ? t('{{count}} file', { count: folder.files.length.toString() })
-                      : t('{{count}} files', { count: folder.files.length.toString() })
-                    }
+                  <h3 style={{
+                    fontSize: '18px',
+                    margin: '0 0 4px 0',
+                    color: '#dc3545',
+                    fontWeight: 'bold'
+                  }}>
+                    {folder.folderName || "Untitled Album"}
+                  </h3>
+                  <div style={{
+                    fontSize: '13px',
+                    color: '#666',
+                    textAlign: isRTL ? 'right' : 'left'
+                  }}>
+                    {folder.formattedDate && (
+                      <div>{t('Created')}: {folder.formattedDate}</div>
+                    )}
+                    <div>
+                      {folder.files.length === 1 
+                        ? t('{{count}} file', { count: folder.files.length.toString() })
+                        : t('{{count}} files', { count: folder.files.length.toString() })
+                      }
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {folder.folderDescription && folder.folderDescription.length > 1 && (
-              <div style={{
-                fontSize: '14px',
-                color: '#555',
-                marginBottom: '16px',
-                textAlign: isRTL ? 'right' : 'left',
-                fontStyle: 'italic'
-              }}>
-                {folder.folderDescription}
-              </div>
-            )}
+              {folder.folderDescription && folder.folderDescription.length > 1 && (
+                <div style={{
+                  fontSize: '14px',
+                  color: '#555',
+                  marginBottom: '16px',
+                  textAlign: isRTL ? 'right' : 'left',
+                  fontStyle: 'italic'
+                }}>
+                  {folder.folderDescription}
+                </div>
+              )}
 
-            <div style={{ width: '100%', position: 'relative' }}>
-              <div style={{
-                display: 'flex',
-                overflowX: 'auto',
-                gap: '12px',
-                paddingBottom: '8px',
-                msOverflowStyle: 'none',
-                scrollbarWidth: 'thin',
-                WebkitOverflowScrolling: 'touch',
-                maxWidth: '100%',
-                flexDirection: isRTL ? "row-reverse" : "row"
-              }}>
-                {folder.files.slice(0, MAX_PREVIEW_IMAGES).map((file: FolderType['files'][0], i: number) => (
-                  <div key={i} style={{
-                    width: '160px',
-                    height: '100px',
-                    flexShrink: 0,
-                    position: 'relative',
-                    borderRadius: '6px',
-                    overflow: 'hidden',
-                    border: '2px solid #dc3545'
-                  }}>
-                    <LazyImage
-                      thumbnailDataKey={file.thumbnailDataKey}
-                      dataKey={file.dataKey}
-                      alt={t('Thumbnail')}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover'
-                      }}
-                    />
+              <div style={{ width: '100%', position: 'relative' }}>
+                <div style={{
+                  display: 'flex',
+                  overflowX: 'auto',
+                  gap: '12px',
+                  paddingBottom: '8px',
+                  msOverflowStyle: 'none',
+                  scrollbarWidth: 'thin',
+                  WebkitOverflowScrolling: 'touch',
+                  maxWidth: '100%',
+                  flexDirection: isRTL ? "row-reverse" : "row"
+                }}>
+                  {folder.files.slice(0, MAX_PREVIEW_IMAGES).map((file: FolderType['files'][0], i: number) => (
+                    <div key={i} style={{
+                      width: '160px',
+                      height: '100px',
+                      flexShrink: 0,
+                      position: 'relative',
+                      borderRadius: '6px',
+                      overflow: 'hidden',
+                      border: '2px solid #dc3545'
+                    }}>
+                      <LazyImage
+                        thumbnailDataKey={file.thumbnailDataKey}
+                        dataKey={file.dataKey}
+                        alt={t('Thumbnail')}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover'
+                        }}
+                      />
+                      <div style={{
+                        position: 'absolute',
+                        top: '0',
+                        left: '0',
+                        right: '0',
+                        bottom: '0',
+                        background: 'rgba(220, 53, 69, 0.3)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'white',
+                        fontSize: '24px'
+                      }}>
+                        ❌
+                      </div>
+                    </div>
+                  ))}
+                  
+                  {folder.files.length > MAX_PREVIEW_IMAGES && (
                     <div style={{
-                      position: 'absolute',
-                      top: '0',
-                      left: '0',
-                      right: '0',
-                      bottom: '0',
-                      background: 'rgba(220, 53, 69, 0.3)',
+                      width: '160px',
+                      height: '100px',
+                      flexShrink: 0,
+                      position: 'relative',
+                      borderRadius: '6px',
+                      border: '2px dashed #dc3545',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: 'white',
-                      fontSize: '24px'
+                      backgroundColor: '#f8f9fa',
+                      color: '#dc3545',
+                      fontSize: '14px',
+                      fontWeight: 'bold'
                     }}>
-                      ❌
+                      +{folder.files.length - MAX_PREVIEW_IMAGES} more
                     </div>
-                  </div>
-                ))}
+                  )}
+                </div>
                 
-                {folder.files.length > MAX_PREVIEW_IMAGES && (
+                {folder.files.length > 2 && (
                   <div style={{
-                    width: '160px',
-                    height: '100px',
-                    flexShrink: 0,
-                    position: 'relative',
-                    borderRadius: '6px',
-                    border: '2px dashed #dc3545',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: '#f8f9fa',
-                    color: '#dc3545',
-                    fontSize: '14px',
-                    fontWeight: 'bold'
-                  }}>
-                    +{folder.files.length - MAX_PREVIEW_IMAGES} more
-                  </div>
+                    position: 'absolute',
+                    [isRTL ? "left" : "right"]: 0,
+                    top: 0,
+                    bottom: 8,
+                    width: '30px',
+                    background: isRTL
+                      ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
+                      : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
+                    pointerEvents: 'none'
+                  }} />
                 )}
               </div>
-              
-              {folder.files.length > 2 && (
-                <div style={{
-                  position: 'absolute',
-                  [isRTL ? "left" : "right"]: 0,
-                  top: 0,
-                  bottom: 8,
-                  width: '30px',
-                  background: isRTL
-                    ? "linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.9))"
-                    : "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9))",
-                  pointerEvents: 'none'
-                }} />
-              )}
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 });

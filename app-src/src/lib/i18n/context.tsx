@@ -1,5 +1,5 @@
 // src/lib/i18n/context.tsx
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode, useCallback } from 'react';
 import { 
   t,
   tSync,
@@ -99,7 +99,7 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
   }, [initialLanguage, preloadLanguages]); // Added preloadLanguages to dependency array
 
   // Handle language changes
-  const changeLang = async (lang: SupportedLanguage) => {
+  const changeLang = useCallback(async (lang: SupportedLanguage) => {
     console.log(`Changing language to: ${lang}`); // Debug log
     setLoading(true);
     
@@ -116,25 +116,34 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   // Synchronous translate function that uses the cached translations
-  const translate = (key: string, params?: Record<string, string | number>): string => {
+  const translate = useCallback((key: string, params?: Record<string, string | number>): string => {
     return tSync(key, params);
-  };
+  }, []);
 
-  // Asynchronous translate function that can load translations on demand
-  const translateAsync = async (key: string, params?: Record<string, string | number>): Promise<string> => {
-    return await t(key, params);
-  };
+  // SSR-safe async translation function that doesn't encourage await in render
+  // Instead, it takes a callback to handle the result
+  const loadTranslation = useCallback((
+    key: string, 
+    callback: (translation: string) => void,
+    params?: Record<string, string | number>
+  ): void => {
+    t(key, params).then(callback).catch(error => {
+      console.error('Translation loading failed:', error);
+      // Fallback to sync translation
+      callback(tSync(key, params));
+    });
+  }, []);
 
   // Context value
   const value: I18nContextType = {
     t: translate,
-    tAsync: translateAsync,
+    loadTranslation, // Changed from tAsync to loadTranslation
     language,
     setLanguage: changeLang,
-    languages: getAvailableLanguages(),
+    languages: getAvailableLanguages(), // Assuming this returns the correct format
     loading,
     isSSR
   };

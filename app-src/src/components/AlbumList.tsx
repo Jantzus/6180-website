@@ -587,7 +587,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             }
                           }}
                         >
-                          {t('Edit Files')}
+                          {t('Edit')}
                         </EditButton>
                         <DropdownMenu
                           $isRTL={isRTL}
@@ -597,12 +597,20 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                         >
                           <DropdownItem
                             $isRTL={isRTL}
+                            onClick={(_) => {
+                              // Claude TODO: Add photos by clicking pulling up a file picker. Then, going to save-album with this file as the folderId
+                            }}
+                          >
+                            {t('Add Photos')}
+                          </DropdownItem>
+                          <DropdownItem
+                            $isRTL={isRTL}
                             onClick={(e) => {
                               e.stopPropagation();
                               handleEditNavigation(folder.folderId);
                             }}
                           >
-                            {t('Edit Files or Album Settings')}
+                            {t('Edit Album')}
                           </DropdownItem>
                           <DropdownItem
                             $isRTL={isRTL}
