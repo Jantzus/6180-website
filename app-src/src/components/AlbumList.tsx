@@ -131,6 +131,9 @@ const DropdownContainer = styled.div`
 
 // Changed from styled.a to styled.button to avoid nested anchor tags
 const EditButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12px;
   color: #2196f3;
   text-decoration: none;
@@ -142,6 +145,15 @@ const EditButton = styled.button`
   &:hover {
     text-decoration: underline;
   }
+`;
+
+// Add the DropdownArrow component (same as MyAlbumsHeader)
+const DropdownArrow = styled.svg<{ $isOpen: boolean }>`
+  width: 12px;
+  height: 12px;
+  transform: ${props => props.$isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+  transition: transform 0.2s ease;
+  opacity: 0.6;
 `;
 
 // Changed from styled.a to styled.button to avoid nested anchor tags
@@ -159,8 +171,8 @@ const DeleteButton = styled.button`
   }
 `;
 
-const DropdownMenu = styled.div<{ $isRTL: boolean }>`
-  display: none;
+const DropdownMenu = styled.div<{ $isRTL: boolean; $isOpen: boolean }>`
+  display: ${props => props.$isOpen ? 'block' : 'none'};
   position: absolute;
   top: 100%;
   right: ${props => props.$isRTL ? "auto" : 0};
@@ -295,6 +307,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
   // SSR-safe state management
   const [isClient, setIsClient] = useState(false);
+  
+  // Track which dropdown is open (only one can be open at a time)
+  const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
 
   // Reference to keep track of active dropdown menu
   const activeDropdownRef = useRef<HTMLElement | null>(null);
@@ -327,57 +342,57 @@ export const AlbumList: React.FC<AlbumListProps> = ({
 
     // Function to close active dropdown
     function closeActiveDropdown() {
+      setOpenDropdownId(null);
       if (activeDropdownRef.current) {
-        activeDropdownRef.current.style.display = "none";
         activeDropdownRef.current = null;
       }
     }
 
-    // Handle scroll events only - removed document click handler
+    // Handle scroll events and document clicks
     function handleScroll() {
       closeActiveDropdown();
     }
 
-    // Add only scroll event listener if window is available
+    function handleClickOutside(event: MouseEvent) {
+      // Check if the click is outside any dropdown
+      const clickedElement = event.target as Element;
+      const isDropdownClick = clickedElement.closest('[data-dropdown-container]');
+      
+      if (!isDropdownClick) {
+        closeActiveDropdown();
+      }
+    }
+
+    // Add event listeners if window is available
     if (typeof window !== 'undefined') {
-      window.addEventListener("scroll", handleScroll, true); // Use capture phase to detect all scrolling
+      window.addEventListener("scroll", handleScroll, true);
+      document.addEventListener("mousedown", handleClickOutside);
       
       // Clean up
       return () => {
         window.removeEventListener("scroll", handleScroll, true);
+        document.removeEventListener("mousedown", handleClickOutside);
       };
     }
   }, [isClient]);
 
   // Function to toggle dropdown visibility
-  const toggleDropdown = (e: React.MouseEvent, dropdownElement: HTMLElement) => {
+  const toggleDropdown = (e: React.MouseEvent, folderId: string) => {
     e.preventDefault();
     e.stopPropagation();
     
     if (!isClient) return;
     
-    // If there's already an open dropdown and it's not this one, close it
-    if (activeDropdownRef.current && activeDropdownRef.current !== dropdownElement) {
-      activeDropdownRef.current.style.display = "none";
-    }
-    
-    // Toggle current dropdown
-    const isVisible = dropdownElement.style.display === "block";
-    dropdownElement.style.display = isVisible ? "none" : "block";
-    
-    // Update the active dropdown reference
-    activeDropdownRef.current = isVisible ? null : dropdownElement;
+    // Toggle the dropdown for this specific folder
+    setOpenDropdownId(prevId => prevId === folderId ? null : folderId);
   };
 
   // Handler for "Add Photos" button click
   const handleAddPhotosClick = React.useCallback((folderId: string) => {
     if (!isClient) return;
 
-    // Close any open dropdown
-    if (activeDropdownRef.current) {
-      activeDropdownRef.current.style.display = "none";
-      activeDropdownRef.current = null;
-    }
+    // Close dropdown
+    setOpenDropdownId(null);
 
     // Call the parent's add photos handler
     if (onAddPhotos) {
@@ -389,11 +404,8 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   const handleDeleteButtonClick = (folderPositionId: string) => {
     if (!isClient) return;
 
-    // Close any open dropdown
-    if (activeDropdownRef.current) {
-      activeDropdownRef.current.style.display = "none";
-      activeDropdownRef.current = null;
-    }
+    // Close dropdown
+    setOpenDropdownId(null);
     
     // Use the browser's native confirm dialog if available
     const confirmDelete = showConfirmDialog(t('Are you sure you want to delete this album? This action cannot be undone.'));
@@ -436,7 +448,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     if (!isClient) return;
 
     // Check if dropdown is open
-    const isDropdownOpen = activeDropdownRef.current && activeDropdownRef.current.style.display === "block";
+    const isDropdownOpen = openDropdownId === folderId;
     
     // Check if any modal is open for this folder
     const isModalOpen = folderModalStates[folderId] || false;
@@ -458,6 +470,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   // SSR-safe edit navigation handler
   const handleEditNavigation = (folderId: string) => {
     if (!isClient) return;
+    
+    // Close dropdown
+    setOpenDropdownId(null);
     
     // Clear album-related localStorage data before navigating to edit
     clearAlbumStorageData();
@@ -576,6 +591,9 @@ export const AlbumList: React.FC<AlbumListProps> = ({
           folder.folderName
         );
 
+        // Check if this dropdown is open
+        const isDropdownOpen = openDropdownId === folder.folderId;
+
         return (
           <Container key={folder.folderId} $isRTL={isRTL}>            
             <AlbumLink onClick={() => handleAlbumClick(inviteLink, folder.folderId)}>
@@ -597,19 +615,28 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                   
                   <ActionSection $isRTL={isRTL}>
                     {isCreator ? (
-                      <DropdownContainer>
+                      <DropdownContainer data-dropdown-container>
                         <EditButton
-                          onClick={(e) => {
-                            const dropdownMenu = e.currentTarget.nextElementSibling as HTMLElement;
-                            if (dropdownMenu) {
-                              toggleDropdown(e, dropdownMenu);
-                            }
-                          }}
+                          onClick={(e) => toggleDropdown(e, folder.folderId)}
                         >
-                          {t('Edit Album')} ▼
+                          {t('Edit Album')}
+                          <DropdownArrow 
+                            $isOpen={isDropdownOpen}
+                            viewBox="0 0 12 12"
+                          >
+                            <path 
+                              d="M2.5 4.5L6 8L9.5 4.5" 
+                              stroke="currentColor" 
+                              strokeWidth="1.5" 
+                              fill="none" 
+                              strokeLinecap="round" 
+                              strokeLinejoin="round"
+                            />
+                          </DropdownArrow>
                         </EditButton>
                         <DropdownMenu
                           $isRTL={isRTL}
+                          $isOpen={isDropdownOpen}
                           onClick={(e) => {
                             e.stopPropagation();
                           }}
