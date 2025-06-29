@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Swifaniso swin'wana a swi ngheniseki ku tirhisiwa. U nga ya emahlweni na swifaniso leswi tirhisiweke kahle.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "U nga vekiwa {{amount}} nhweti yin'wana na yin'wana eka ndlela leyi ya ku hakela handle ko ku yi cinca.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Hlawula marangahanye lawa ya antswisiweke kahle hi swiviko swa wena. U nga hlawula eka tinyangho ta laha hansi kumbe u teka xikalo xa wena.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hi vona leswaku fayela ya wena yi na tifayela letitsongo. Xana u lava ku endla album yo hambana eka fayela yin'wana ni yin'wana yo tsongo, kumbe ku yi khoma hinkwayo tanihi album yin'we?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hi vona leswaku fayela ya wena yi na tifayela letitsongo. Xana u lava ku endla album yo hambana eka fayela yin'wana ni yin'wana yo tsongo, kumbe ku yi khoma hinkwayo tanihi album yin'we?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Hikokwalaho ka swipimelo swa theknoloji, ku nga ti rhendzeriwa bulk downloads eka ti browser ta mobile, naswona tinhlanganiso tin'wana ti nga ha nga ti rhendzeriwa.<br><br>Ku rhendzela swifaniso hinkwaswo na tinhlanganiso ka nkarhi wun'we:",
+  "Edit": "Lulamisa",
+  "Edit Album": "Lulamisa album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Cinca xivumbeko xa album",
+  "Upload in progress": "Upload yi nga eka famba",
+  "Album Progress": "Nhluvukiso wa album",
+  "Adding Photos to Album": "Ku engetela swifaniso eka album",
+  "Creating New Album": "Ku tumbuluxa album yintsha",
+  "Uploading your photos...": "Ku faka swifaniso swa wena...",
+  "Cancel Upload": "Khansela upload"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sommige foto's kóste neet verwirk waere. Geer kint mèt de succesvol verwirkte foto's verdergaon.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Geer waert automatisch {{amount}} per maondj in rekening gebraach op dees betaolmjethod tenzij geer 't verangert.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kees de plaan die 't bès by dien behoefte pas. Geer kint keze oet de opties hiejónger of e aangepas bedraag inveure.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Veer höbbe gezeen detteu dien map submaps haet. Wells te veur edere submap en aparte album make, of ze allemaal as ein album behanjele?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Veer höbbe gezeen detteu dien map submaps haet. Wells te veur edere submap en aparte album make, of ze allemaal as ein album behanjele?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Waeges technische beperkengen waere bulk-downloads in mobile browsers neet ongersjtönt, en óngere videos kinne euvelig neet gedownload waere.<br><br>Om alle foto's en videos tegere te downloade:",
+  "Edit": "Bewèrke",
+  "Edit Album": "Album bewèrke",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albuminstèllinge bewirke",
+  "Upload in progress": "Upload gaojt door",
+  "Album Progress": "Albumveurdering",
+  "Adding Photos to Album": "Foto's aan album toevoege",
+  "Creating New Album": "Nuuj album make",
+  "Uploading your photos...": "Dien foto's waere opgelaaje...",
+  "Cancel Upload": "Upload ofbreike"
 }

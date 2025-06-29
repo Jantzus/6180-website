@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quàich fòto a peulo pa esse përcessà. It peule continuè con le fòto përcessà da bin.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A sarà caricà automaticament {{amount}} mèis con sto mètod ëd pagament a meno che a lo cangia.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chëris ël pian che a va mej për ij tò bezògn. It peule cherne da j'opsion sota ò mete un import përsonalisà.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "I l'oma vist che toa cartel a conten dij sot-cartel. It veule fé un album separà për ògni sot-cartel, o trateje tùit com un album sol?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "I l'oma vist che toa cartel a conten dij sot-cartel. It veule fé un album separà për ògni sot-cartel, o trateje tùit com un album sol?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "A causa 'd limitassion tècniche, ij download ëd massa an sij navigator mobil a son pa suportà, e quàich video a peul esse nen dëscariàse.<br><br>Për dëscariè tute le fòto e ij video 'n na vira:",
+  "Edit": "Modifiché",
+  "Edit Album": "Modifiché album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Modìfica ampostassion album",
+  "Upload in progress": "Cargament an cors",
+  "Album Progress": "Progres album",
+  "Adding Photos to Album": "Giontand fòto a l'album",
+  "Creating New Album": "Creassion d'un album neuv",
+  "Uploading your photos...": "Cargand le tò fòto...",
+  "Cancel Upload": "Anulé l'upload"
 }

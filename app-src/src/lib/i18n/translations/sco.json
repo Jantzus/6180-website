@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Some photaes cuidna be processed. Ye can continue wi the successfu processed photaes.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ye'll be automatically billed {{amount}} monthly on this payment method unless ye chynge it.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chuise the plan that best fits yer needs. Ye can select frae the options ablow or enter a custom amoont.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We noticed yer folder contains subfolders. Wad ye like tae create a separate album for ilka subfolder, or treat them aw as ane album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We noticed yer folder contains subfolders. Wad ye like tae create a separate album for ilka subfolder, or treat them aw as ane album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Acause o technical limitations, bulk downloads on mobile browsers arnae supportit, an sum videos micht nae download.<br><br>Tae download aw photaes an videos at yince:",
+  "Edit": "Eedit",
+  "Edit Album": "Eedit album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edit album settins",
+  "Upload in progress": "Upload on the go",
+  "Album Progress": "Album progress",
+  "Adding Photos to Album": "Addin photaes tae album",
+  "Creating New Album": "Makin new album",
+  "Uploading your photos...": "Uploadin yer photaes...",
+  "Cancel Upload": "Cancel upload"
 }

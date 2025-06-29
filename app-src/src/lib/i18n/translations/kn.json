@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ಕೆಲವು ಫೋಟೋಗಳನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗಲಿಲ್ಲ. ಯಶಸ್ವಿಯಾಗಿ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾದ ಫೋಟೋಗಳೊಂದಿಗೆ ಮುಂದುವರಿಸಬಹುದು.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ನೀವು ಇದನ್ನು ಬದಲಾಯಿಸದ ಹೊರತು ಈ ಪಾವತಿ ವಿಧಾನದಲ್ಲಿ ಮಾಸಿಕ {{amount}} ನಿಮಗೆ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಬಿಲ್ ಮಾಡಲಾಗುತ್ತದೆ।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ನಿಮ್ಮ ಅಗತ್ಯಗಳಿಗೆ ಅತ್ಯುತ್ತಮವಾಗಿ ಹೊಂದಿಕೆಯಾಗುವ ಯೋಜನೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ. ನೀವು ಕೆಳಗಿನ ಆಯ್ಕೆಗಳಿಂದ ಆಯ್ಕೆಮಾಡಬಹುದು ಅಥವಾ ಕಸ್ಟಮ್ ಮೊತ್ತವನ್ನು ನಮೂದಿಸಬಹುದು।",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ನಿಮ್ಮ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಉಪಫೋಲ್ಡರ್‌ಗಳಿವೆ ಎಂದು ನಾವು ಗಮನಿಸಿದ್ದೇವೆ. ಪ್ರತಿ ಉಪಫೋಲ್ಡರ್‌ಗೆ ಪ್ರತ್ಯೇಕ ಆಲ್ಬಂ ರಚಿಸಲು ಬಯಸುತ್ತೀರಾ ಅಥವಾ ಎಲ್ಲವನ್ನೂ ಒಂದೇ ಆಲ್ಬಂ ಎಂದು ಪರಿಗಣಿಸಲು ಬಯಸುತ್ತೀರಾ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ನಿಮ್ಮ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಉಪಫೋಲ್ಡರ್‌ಗಳಿವೆ ಎಂದು ನಾವು ಗಮನಿಸಿದ್ದೇವೆ. ಪ್ರತಿ ಉಪಫೋಲ್ಡರ್‌ಗೆ ಪ್ರತ್ಯೇಕ ಆಲ್ಬಂ ರಚಿಸಲು ಬಯಸುತ್ತೀರಾ ಅಥವಾ ಎಲ್ಲವನ್ನೂ ಒಂದೇ ಆಲ್ಬಂ ಎಂದು ಪರಿಗಣಿಸಲು ಬಯಸುತ್ತೀರಾ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ತಾಂತ್ರಿಕ ಮಿತಿಗಳಿಂದ, ಮೊಬೈಲ್ ಬ್ರೌಸರ್‌ಗಳಲ್ಲಿ ಬಲ್ಕ್ ಡೌನ್‌ಲೋಡ್‌ಗಳು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ, ಮತ್ತು ಕೆಲವು ವೀಡಿಯೊಗಳು ಡೌನ್‌ಲೋಡ್ ಆಗದೇ ಇರಬಹುದು.<br><br>ಎಲ್ಲಾ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಒಮ್ಮೆಲಿಗೆ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು, ದಯವಿಟ್ಟು:",
+  "Edit": "ಸಂಪಾದಿಸು",
+  "Edit Album": "ಆಲ್ಬಂ ಸಂಪಾದಿಸು",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ಆಲ್ಬಮ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಸಂಪಾದಿಸಿ",
+  "Upload in progress": "ಅಪ್‌ಲೋಡ್ ಪ್ರಗತಿಯಲ್ಲಿದೆ",
+  "Album Progress": "ಆಲ್ಬಮ್ ಪ್ರಗತಿ",
+  "Adding Photos to Album": "ಆಲ್ಬಮ್‌ಗೆ ಫೋಟೋಗಳನ್ನು ಸೇರಿಸುವುದು",
+  "Creating New Album": "ಹೊಸ ಆಲ್ಬಮ್ ರಚಿಸಲಾಗುತ್ತಿದೆ",
+  "Uploading your photos...": "ನಿಮ್ಮ ಫೋಟೋಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+  "Cancel Upload": "ಅಪ್‌ಲೋಡ್ ರದ್ದುಮಾಡಿ"
 }

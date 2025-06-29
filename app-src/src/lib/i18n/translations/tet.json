@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Foto balun la bele prosesa. Ó bele kontinua ho foto sira-ne'ebé prosesa ho suksesu.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ó sei automatikamente fo selu {{amount}} fulan kada iha metodu pagamentu ida-ne'e saluu se ó la muda.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Hili planu ne'ebé di'ak liu ba ita-nia presiza. Bele hili husi opsaun sira iha kraik ka tau montante ida ne'ebé ita hakarak.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ami hatene katak ita-nia pasta iha pasta ki'ik sira. Ita hakarak kria album ida-idak ba pasta ki'ik ida-ida, ka konsidera sira hotu hanesan album ida deit?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ami hatene katak ita-nia pasta iha pasta ki'ik sira. Ita hakarak kria album ida-idak ba pasta ki'ik ida-ida, ka konsidera sira hotu hanesan album ida deit?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Tanba limitasaun tekniku nian, download barak iha navigator móvel sira la suporta, no video balun bele la download.<br><br>Atu download foto hotu no video sira bainhira ida deit:",
+  "Edit": "Edita",
+  "Edit Album": "Edita álbum",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edita preferensia album nian",
+  "Upload in progress": "Upload lao dadaun",
+  "Album Progress": "Progressu album nian",
+  "Adding Photos to Album": "Hatama foto sira ba album",
+  "Creating New Album": "Halo album foun",
+  "Uploading your photos...": "Upload ita-nia foto sira...",
+  "Cancel Upload": "Hasai upload"
 }

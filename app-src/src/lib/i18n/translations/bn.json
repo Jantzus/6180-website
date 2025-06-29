@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "কিছু ছবি প্রক্রিয়া করা যায়নি। আপনি সফলভাবে প্রক্রিয়াকৃত ছবিগুলো নিয়ে এগিয়ে যেতে পারেন।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "আপনি এই পেমেন্ট পদ্ধতি পরিবর্তন না করলে প্রতি মাসে স্বয়ংক্রিয়ভাবে {{amount}} বিল করা হবে।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "আপনার প্রয়োজনের সাথে সবচেয়ে ভালো মানানসই প্ল্যানটি বেছে নিন। আপনি নিচের অপশনগুলো থেকে বেছে নিতে পারেন অথবা একটি কাস্টম পরিমাণ দিতে পারেন।",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "আমরা লক্ষ্য করেছি যে আপনার ফোল্ডারে সাবফোল্ডার রয়েছে। আপনি কি প্রতিটি সাবফোল্ডারের জন্য আলাদা অ্যালবাম তৈরি করতে চান, নাকি সবগুলিকে একটি অ্যালবাম হিসেবে বিবেচনা করতে চান?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "আমরা লক্ষ্য করেছি যে আপনার ফোল্ডারে সাবফোল্ডার রয়েছে। আপনি কি প্রতিটি সাবফোল্ডারের জন্য আলাদা অ্যালবাম তৈরি করতে চান, নাকি সবগুলিকে একটি অ্যালবাম হিসেবে বিবেচনা করতে চান?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "কারিগরি সীমাবদ্ধতার কারণে, মোবাইল ব্রাউজারে বাল্ক ডাউনলোড সমর্থিত নয়, এবং কিছু ভিডিও ডাউনলোড নাও হতে পারে।<br><br>সমস্ত ফটো এবং ভিডিও একসাথে ডাউনলোড করতে, অনুগ্রহ করে:",
+  "Edit": "সম্পাদনা",
+  "Edit Album": "অ্যালবাম সম্পাদনা",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "অ্যালবাম সেটিংস সম্পাদনা করুন",
+  "Upload in progress": "আপলোড চলমান",
+  "Album Progress": "অ্যালবাম অগ্রগতি",
+  "Adding Photos to Album": "অ্যালবামে ছবি যোগ করা হচ্ছে",
+  "Creating New Album": "নতুন অ্যালবাম তৈরি করা হচ্ছে",
+  "Uploading your photos...": "আপনার ছবি আপলোড করা হচ্ছে...",
+  "Cancel Upload": "আপলোড বাতিল করুন"
 }

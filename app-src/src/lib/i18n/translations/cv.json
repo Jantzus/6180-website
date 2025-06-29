@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Хăш-пĕр сăнсем ĕçлетеçĕ хывмарĕç. Эсир ăнланса ĕçленĕ сăнсемпе малалла тăвăçĕ.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Эсир ун улăштарма пулсан, ку түлев мелĕпе уйăхĕнче {{amount}} автоматла кăларса илеççĕ.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Сирĕн кирлĕ план суйларăр. Аялхи вариантсенчен суйма пултаратăр е хăвăр тĕплĕвĕ кĕртетĕр.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Эпир курнă тĕлĕпе сирĕн папкăра субпапкăсем пур. Сирĕн кăшни субпапка валли уйăрăм альбом тунă тесе килет-и, тата пурне те пĕр альбом шутласа кăна килет-и?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Эпир курнă тĕлĕпе сирĕн папкăра субпапкăсем пур. Сирĕн кăшни субпапка валли уйăрăм альбом тунă тесе килет-и, тата пурне те пĕр альбом шутласа кăна килет-и?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техника çитĕнĕвĕсем пулсан, мобиль браузерсенче пысăк татăнусем тĕрĕслемĕç, тата хăш-пĕр видео та татăнмасĕрĕ пулма пултараççĕ.<br><br>Пурте ĕнерчĕксене тата видеосене пĕр хут татăнма:",
+  "Edit": "Улӑштар",
+  "Edit Album": "Альбом улӑштар",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом ӗҫсен тӳрлетессе",
+  "Upload in progress": "Ҫитерӗвӗ йӗркелет",
+  "Album Progress": "Альбом алға илнӗвӗ",
+  "Adding Photos to Album": "Альбома фотосем хуши",
+  "Creating New Album": "Ҫӗнӗ альбом тума",
+  "Uploading your photos...": "Санӑн фотосемпе ҫитерӗвӗ...",
+  "Cancel Upload": "Ҫитерӗвӗ пӑрахасси"
 }

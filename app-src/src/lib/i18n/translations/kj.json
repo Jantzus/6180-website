@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Eelu foto ka tika kwa lombweda. Ove ukwenu okuteya nomafoto gayehe omunene.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ove ukwapitwa {{amount}} omweri gwose, sha ehokololo nduu omwa okati okuhamena omo.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kethera plan itje ri kombanda ondjira yoye. Otwa urikwa ku hongera munda kombada yimwe itji ri munene kapa ku tjanga omutjingo ngwao.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tukavara kuti folder yenu ine ma subfolder. Munoda mukurugarire album rimwechete pane chimwe nechimwe chesari subfolder here, kana kuita zvese sealbum rimwe?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tukavara kuti folder yenu ine ma subfolder. Munoda mukurugarire album rimwechete pane chimwe nechimwe chesari subfolder here, kana kuita zvese sealbum rimwe?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ondundu yoteknika ndhuno, bulk downloads mo mobile browsers taka ilapwa, nokumwe video taka download.<br><br>Kutja omufoto yoye navideo kuyehe kelike nkenge:",
+  "Edit": "Vikuaha",
+  "Edit Album": "Vikuaha album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Etelela album setting",
+  "Upload in progress": "Upload oti na okukala",
+  "Album Progress": "Album okukala",
+  "Adding Photos to Album": "Etelela eipindi ko album",
+  "Creating New Album": "Euvako album eipya",
+  "Uploading your photos...": "Kuvurura eipindi yove...",
+  "Cancel Upload": "Uumbula upload"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Mõningaid fotosid ei õnnestunud töödelda. Saate jätkata edukalt töödeldud fotodega.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Teilt võetakse automaatselt {{amount}} kuus selle makseviisi kaudu, kui te seda ei muuda.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Valige plaan, mis sobib teie vajadustega kõige paremini. Võite valida allolevate valikute seast või sisestada kohandatud summa.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Märkasime, et teie kaust sisaldab alamkaustu. Kas soovite luua iga alamkausta jaoks eraldi albumi või käsitleda neid kõiki ühe albumina?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Märkasime, et teie kaust sisaldab alamkaustu. Kas soovite luua iga alamkausta jaoks eraldi albumi või käsitleda neid kõiki ühe albumina?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Tehniliste piirangute tõttu ei toetata mobiilbrauserites hulgiallalaadimisi ja mõned videod ei pruugi alla laadida.<br><br>Kõigi fotode ja videote korraga allalaadimiseks palun:",
+  "Edit": "Muuda",
+  "Edit Album": "Muuda albumit",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Muuda albumi seadeid",
+  "Upload in progress": "Üleslaadimine käigus",
+  "Album Progress": "Albumi progress",
+  "Adding Photos to Album": "Fotode lisamine albumisse",
+  "Creating New Album": "Uue albumi loomine",
+  "Uploading your photos...": "Sinu fotosid laaditakse üles...",
+  "Cancel Upload": "Tühista üleslaadimine"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Wasu hotuna ba za a iya sarrafa su ba. Za ku iya ci gaba da hotunan da aka yi nasara sarrafa.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Za a biya muku kuɗi {{amount}} kowane wata ta wannan hanyar biyan kuɗi sai dai in kun canja ta.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Zaɓi tsarin da ya fi dacewa da bukatunka. Kuna iya zaɓa daga zaɓuɓɓukan da ke ƙasa ko shigar da adadin da kuke so.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mun lura cewa babban fayil dinku yana dauke da kananan fayiloli. Kuna son ku kirkiro daban-daban album ga kowane kananan fayil, ko kuyi da su duka kamar album daya?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mun lura cewa babban fayil dinku yana dauke da kananan fayiloli. Kuna son ku kirkiro daban-daban album ga kowane kananan fayil, ko kuyi da su duka kamar album daya?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Saboda takunkumi na fasaha, ba a samun raka downloads sau da yawa a kan mobile browsers ba, kuma wasu bidiyo za su iya ba a saukewa ba.<br><br>Don sauke dukkan hotuna da bidiyo a lokaci guda, da fatan:",
+  "Edit": "Gyara",
+  "Edit Album": "Gyara albam",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Gyara saitunan album",
+  "Upload in progress": "Ana aiwatar da uploading",
+  "Album Progress": "Ci gaban album",
+  "Adding Photos to Album": "Kara hotuna zuwa album",
+  "Creating New Album": "Yin sabon album",
+  "Uploading your photos...": "Ana aiwatar da hotunanku...",
+  "Cancel Upload": "Soke uploading"
 }

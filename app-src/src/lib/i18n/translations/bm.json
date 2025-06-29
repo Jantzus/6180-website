@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Natakuru dɔ te se ka kɛ. I bɛ se ka taa a kɔ ni natakuru minnu kɛra kosɛbɛ ye.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "I bɛna sara {{amount}} kalo kalo ka bɔ i sara kɛcogo kɔrɔ la, ni i ma yɛlɛma.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Sugandi ni ladonni dɔn min bɛna bɛn ka ɲɛ i ka magow ma. I bɛ sɛbɛn ni sugandili ninnu dun na walima i ka jateminɛ kɛ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "An y'a ko i ka ɲɛgɛso kɔnɔ, sigicɛmandɔgɔw bɛ. I b'a fɛ k'album danfalen kɛ sigicɛmandɔgɔ kelen-kelen kama, walima k'u bɛɛ lajɛ album kelen-kelen-na de ye wa?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "An y'a ko i ka ɲɛgɛso kɔnɔ, sigicɛmandɔgɔw bɛ. I b'a fɛ k'album danfalen kɛ sigicɛmandɔgɔ kelen-kelen kama, walima k'u bɛɛ lajɛ album kelen-kelen-na de ye wa?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Sabali k'a ye fɛnɛlɛcogo dɔnniya ye, jɛman jagamaraw telen telefoni kɛminɛnanw kɔnɔ tɛ dɛmɛ, ani biɛw dɔw bɛ se ka kɛ u ma tɛmɛn.<br><br>Walasa ko ja dɔnniya ni biɛw bɛɛ ye yɔrɔ kelen na, aw ye:",
+  "Edit": "Ka yɛlɛma",
+  "Edit Album": "Album ka yɛlɛma",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Ɔrɔmu labɛnni sera",
+  "Upload in progress": "Upload bɛ ka kɛ",
+  "Album Progress": "Ɔrɔmu bamananw",
+  "Adding Photos to Album": "Ɔrɔmu foto ɲɛnabɔli",
+  "Creating New Album": "Ɔrɔmu kura dilan",
+  "Uploading your photos...": "I ka foto ɲɛnabɔli...",
+  "Cancel Upload": "Upload bɔsi"
 }

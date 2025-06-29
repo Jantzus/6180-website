@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Algunas fotos no pudieron ser procesadas. Puedes continuar con las fotos procesadas exitosamente.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se te cobrará automáticamente {{amount}} mensuales en este método de pago a menos que lo cambies.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Elija el plan que mejor se adapte a sus necesidades. Puede seleccionar entre las opciones a continuación o ingresar una cantidad personalizada.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Notamos que su carpeta contiene subcarpetas. ¿Le gustaría crear un álbum separado para cada subcarpeta o tratarlas todas como un solo álbum?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Notamos que su carpeta contiene subcarpetas. ¿Le gustaría crear un álbum separado para cada subcarpeta o tratarlas todas como un solo álbum?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Debido a limitaciones técnicas, las descargas masivas en navegadores móviles no son compatibles, y algunos videos pueden no descargarse.<br><br>Para descargar todas las fotos y videos de una vez, por favor:",
+  "Edit": "Editar",
+  "Edit Album": "Editar álbum",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Editar configuración del álbum",
+  "Upload in progress": "Subida en progreso",
+  "Album Progress": "Progreso del álbum",
+  "Adding Photos to Album": "Añadiendo fotos al álbum",
+  "Creating New Album": "Creando nuevo álbum",
+  "Uploading your photos...": "Subiendo tus fotos...",
+  "Cancel Upload": "Cancelar subida"
 }

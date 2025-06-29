@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ʻOku ʻikai ke faʻa ngāue ʻaki ha ngaahi ʻātā. Te ke faʻa ʻalu pe mo e ngaahi ʻātā naʻe ngāue lelei.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Te ke totongi'i otomātiki koe 'i he {{amount}} māhina kotoa pe 'i he founga totongi ni ke 'ikai te ke liliu ia.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Fili 'a e polokalama 'oku sai taha mo ho'o fi'ema'u. 'Oku ke lava ke fili mei he ngaahi filí 'oku 'i lalo ni pe ke hu ha va'inga fakamakehe.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Na'e 'ilo 'e kimautolu ko ho'o faile 'oku 'i ai ha ngaahi faile si'isi'i. 'Oku ke fiema'u ke ngaohi ha 'ālipamu kehekehe ma faile si'isi'i kotoa pe, pe ke fakatokanga'i 'akinautolu kotoa pe ko ha 'ālipamu pe taha?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Na'e 'ilo 'e kimautolu ko ho'o faile 'oku 'i ai ha ngaahi faile si'isi'i. 'Oku ke fiema'u ke ngaohi ha 'ālipamu kehekehe ma faile si'isi'i kotoa pe, pe ke fakatokanga'i 'akinautolu kotoa pe ko ha 'ālipamu pe taha?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ko e meʻa ʻi he ngaahi taʻofi fakafonua, ʻoku ʻikai aʻusia ʻae ngaahi toʻo lahi ʻi he ngaahi polokalama fefonongaʻaki, pea ko e ngaahi vitio niʻihi ʻe ʻikai ke toʻo.<br><br>Ke toʻo ʻae ngaahi fakaʻilonga mo e ngaahi vitio kotoa pe ʻi he taimi pe taha:",
+  "Edit": "Liliu",
+  "Edit Album": "Liliu ʻālipamu",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Fetongi 'a e ngaahi fakatakamilo 'ālipamu",
+  "Upload in progress": "Hiki hake 'oku fai",
+  "Album Progress": "Hoko hake 'o e ʻālipamu",
+  "Adding Photos to Album": "Fakaputa ngaahi anga ki he ʻālipamu",
+  "Creating New Album": "Ngaohi 'ālipamu fo'ou",
+  "Uploading your photos...": "Hiki hake ho'o anga...",
+  "Cancel Upload": "Fakatapuni 'a e hiki hake"
 }

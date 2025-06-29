@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ụfọdụ foto enweghị ike ka a hazie. Ị nwere ike ịga n'ihu na foto ndị ahaziri nke ọma.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A ga-eji usoro ụgwọ a na-agbapụta gị {{amount}} kwa ọnwa ozugbo ma ọ bụrụ na ị gbanweghị ya.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Họrọ atụmatụ kacha dakọrọ mkpa gị. Ị nwere ike ịhọrọ site na nhọrọ ndị dị n'okpuru ma ọ bụ tinye ego nke gị.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Anyị chọpụtara na nchekwa gị nwere ụmụ nchekwa. Ị ga-achọ ịmepụta ọba foto dị iche iche maka ụmụ nchekwa ọ bụla, ka ị ga-ele ha niile dị ka ọba foto naanị otu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Anyị chọpụtara na nchekwa gị nwere ụmụ nchekwa. Ị ga-achọ ịmepụta ọba foto dị iche iche maka ụmụ nchekwa ọ bụla, ka ị ga-ele ha niile dị ka ọba foto naanị otu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "N'ihi mgbochi nka teknụzụ, bulk downloads na mobile browsers anaghị akwado, ụfọdụ videos nwere ike agaghị ebudata.<br><br>Iji budata foto na vidiyo niile n'otu oge, biko:",
+  "Edit": "Dezie",
+  "Edit Album": "Dezie album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Dezie ntọala album",
+  "Upload in progress": "Upload na-aga n'ihu",
+  "Album Progress": "Ọganihu album",
+  "Adding Photos to Album": "Ịgbakwunye foto na album",
+  "Creating New Album": "Ịmepụta album ọhụrụ",
+  "Uploading your photos...": "Na-ebugo foto gị...",
+  "Cancel Upload": "Kagbuo upload"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Won nattuuji woodrii waɗde. A waawi gasaade e nattuuji moƴƴinaaɗi no haani.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A feeñaa e jaajol {{amount}} leydi feeñde ndee haa so waylaano ɗum.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Suɓo daartol nden mijooma e ceeɗol maa. Aɗa waawi suɓde e suuɗe ɗee yeeso walaa naatde limoore woodi.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Min njiyii dossiire maa ena woodi dossiire weeɓe. Aɗa yiɗi waɗude albomu gadanu kala dossiire weere, walla ndaɗude ɗum fof albomu go'o?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Min njiyii dossiire maa ena woodi dossiire weeɓe. Aɗa yiɗi waɗude albomu gadanu kala dossiire weere, walla ndaɗude ɗum fof albomu go'o?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Sabbu wanooji ko fannuuji ɗii, downloads mawnguuji e ceeddooji ceeriiɗi alaa njaafoojinii, haa yimɓe widiyooji maa waawaa aw downloads ɗee.<br><br>Ngam downloads nattuuji fof e widiyooji fof e sahaa gootal, tiiɗno:",
+  "Edit": "Taƴto",
+  "Edit Album": "Taƴto alboom",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Taƴto teelte albomuuji",
+  "Upload in progress": "Yaylagol e golle",
+  "Album Progress": "Kuurorol albomuuji",
+  "Adding Photos to Album": "Ɓeydu nate to albomuuji",
+  "Creating New Album": "Mbaɗi albomuuji hesere",
+  "Uploading your photos...": "Naylagol nate maa...",
+  "Cancel Upload": "Haaytu yaylagol"
 }

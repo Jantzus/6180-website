@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Nakrar myndir kundu ikki viðgera. Tú kanst halda fram við myndunum, ið vórðu viðgeraðar væl.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Tú verður avtomatiskt gjaldfíggjaður {{amount}} hvønn mánað fyri hesa betingarhátt, uttan tú broytir hann.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Vel viðurskiftið sum best hóvar til tínar tørv. Tú kanst velja úr møguleikunum niðanfyri ella skriva eitt tillagað tal.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vit hava lagt merki til at tín mappan inniheldur undirmappur. Vilt tú upprætta eitt serstakt album fyri hvørja undirmapu, ella handfara tær allar sum eitt album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vit hava lagt merki til at tín mappan inniheldur undirmappur. Vilt tú upprætta eitt serstakt album fyri hvørja undirmapu, ella handfara tær allar sum eitt album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Orsakað av tekniskum avmarkingum eru fjøldanerlendingar ikki undirskáldar á telefonnetkarum, og onkur videor kunnu vera ikki nerlandar.<br><br>Fyri at nerla allar myndirnar og videolarnar í einum:",
+  "Edit": "Rætta",
+  "Edit Album": "Rætta album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Anbrea album stillingar",
+  "Upload in progress": "Upplegging í gongd",
+  "Album Progress": "Album framfarir",
+  "Adding Photos to Album": "Bíleggjar myndir til album",
+  "Creating New Album": "Skapar nýtt album",
+  "Uploading your photos...": "Sender upp tínar myndir...",
+  "Cancel Upload": "Avlýs upplegging"
 }

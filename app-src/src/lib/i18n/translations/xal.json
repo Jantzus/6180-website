@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Зүрүд зарм боловсруулҗ ядсн уга. Амжилттайгаар боловсруулсн зүрүдлә цааран үргәлҗенә болнач.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Энә төләм арһ солһҗ оруулхш уга бол сар болһн {{amount}} автоматар авна.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Нин херәгл мааритн төслиг hарад авх. Доралaн сoнголт дороһин hарж hуугaд аваx болнo.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Бидн узсн болв та нарын папкт дотор папквүд бәәнә. Папк бүрт тускар альбом буулвх уу, эс гихәд бүгдиг нег альбом кев узх уу?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Бидн узсн болв та нарын папкт дотор папквүд бәәнә. Папк бүрт тускар альбом буулвх уу, эс гихәд бүгдиг нег альбом кев узх уу?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникин хяслхнаһан улмар, кевтлхдг цуһарчд их хүвлһнәр татх дольгдшгоһоо уга, заһасу видеоһар татх ядшгоһоо уга.<br><br>Бүк зургуд болн видеоһинь нег дунд татхын тул:",
+  "Edit": "Засх",
+  "Edit Album": "Альбом засх",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом көдлмшин засх",
+  "Upload in progress": "Ширдх болҗ одна",
+  "Album Progress": "Альбом хөдлмш",
+  "Adding Photos to Album": "Альбомд зургуд нэмх",
+  "Creating New Album": "Шин альбом бүтәх",
+  "Uploading your photos...": "Чини зургудыг ширдх...",
+  "Cancel Upload": "Ширдхиг цуцлх"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ditshwantsho dingwe ga di a kgona go dirisiwa. O ka tswelela ka ditshwantsho tse di dirisitsweng sentle.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O tla duelwa {{amount}} kgwedi le kgwedi ka mokgwa ono wa go duela go sena go o fetola.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kgetheng leano le le siametseng ditlhokego tsa gago sentle. O ka kgetha mo dikhethong tse di fa tlase kgotsa o tsenya palo ya motho ka nosho.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Re lemogile gore foldera ya gago e na le difoldera tse di kwa tlase. A o batla go dira album e e kgethileng go foldera nngwe le nngwe e e kwa tlase, kgotsa go di rwala tsotlhe jaaka album e le nngwe?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Re lemogile gore foldera ya gago e na le difoldera tse di kwa tlase. A o batla go dira album e e kgethileng go foldera nngwe le nngwe e e kwa tlase, kgotsa go di rwala tsotlhe jaaka album e le nngwe?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ka lebaka la dikgoreletso tsa theknoloji, dithekesetso tse dintsi mo dibourasareng tsa diselefouno ga di tshegetiwe, mme dibidio dingwe di ka nna tsa se thekesetse.<br><br>Go thekesetsa ditshwantsho tsotlhe le dibidio ka nako e le nngwe:",
+  "Edit": "Fetola",
+  "Edit Album": "Fetola album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Baakanya dipeakanyo tsa album",
+  "Upload in progress": "Go tsenywa go a tswelela",
+  "Album Progress": "Kgolo ya album",
+  "Adding Photos to Album": "Go tsenya ditšhwantsho go album",
+  "Creating New Album": "Go dira album e ntšha",
+  "Uploading your photos...": "Go tsenywa ditšhwantsho tsa gago...",
+  "Cancel Upload": "Khansela go tsenywa"
 }

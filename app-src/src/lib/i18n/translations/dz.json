@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "པར་ཁ་ཤས་ཀྱིས་སྦྱོར་བ་བྱེད་ཐུབ་མ་བྱུང་། ཁྱེད་ཀྱིས་སྦྱོར་བ་ལེགས་པར་བྱས་པའི་པར་ཚུ་དང་མུ་མཐུད་བྱེད་ཆོག",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ཁྱེད་ཀྱིས་དེ་མ་བསྒྱུར་བ་ཡིན་ན། ཟླ་བ་རེ་བཞིན་{{amount}}རང་འགུལ་ངང་འདི་ལས་འདེམས་ཐབས་ཀྱིས་ཐོབ་ཐང་ལེན་ངེས།",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ཁྱོད་རང་གི་དགོས་མཁོ་དང་འཚམ་པའི་འཆར་གཞི་བདམས། ཁྱོད་ཀྱིས་འོག་གི་གདམ་ཀ་ཚུ་ལས་བདམས་ཆོག་ཡང་ན་རང་སའི་གོང་ཚད་བཅུག་ཆོག",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ངེད་ཀྱིས་མཐོང་སྟེ་ཁྱོད་རང་གི་སྣོད་འཇུག་ནང་ལ་ཡན་ལག་སྣོད་འཇུག་ཚུ་ཡོད། ཡན་ལག་སྣོད་འཇུག་རེ་རེ་ལུ་སོ་སོ་རའི་འཕྲུལ་པར་སྣོད་ཅིག་གསར་བཟོ་འབད་ནི་ལུ་དགའ་ག་ཡང་ན་ཚུ་གིས་ཧྲིལ་བུ་འཕྲུལ་པར་སྣོད་གཅིག་སྦེ་བྱིན་ནི་ལུ་དགའ་ག?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ངེད་ཀྱིས་མཐོང་སྟེ་ཁྱོད་རང་གི་སྣོད་འཇུག་ནང་ལ་ཡན་ལག་སྣོད་འཇུག་ཚུ་ཡོད། ཡན་ལག་སྣོད་འཇུག་རེ་རེ་ལུ་སོ་སོ་རའི་འཕྲུལ་པར་སྣོད་ཅིག་གསར་བཟོ་འབད་ནི་ལུ་དགའ་ག་ཡང་ན་ཚུ་གིས་ཧྲིལ་བུ་འཕྲུལ་པར་སྣོད་གཅིག་སྦེ་བྱིན་ནི་ལུ་དགའ་ག?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ལག་རྩལ་གྱི་ཚད་ལྡན་ལས་བརྟེན། ལག་ཐོག་ལྟ་ཆས་ནང་ལུ་ཚོགས་པའི་ཕབ་ལེན་རམ་འདེགས་མི་འབད་ཞིང་། ཝི་ཌི་ཡོ་ལ་ལུ་ཅིག་ཕབ་ལེན་འབད་མི་ཚུགསཔ་འོང་།<br><br>འདྲ་པར་དང་ཝི་ཌི་ཡོ་ཆ་མཉམ་ལུ་ཕབ་ལེན་འབད་ནིའི་དོན་ལུ།:",
+  "Edit": "རྩོམ་སྒྲིག",
+  "Edit Album": "འདེམས་ཚན་རྩོམ་སྒྲིག",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "འདེམས་ཚན་སྒྲིག་སྟངས་རྩོམ་སྒྲིག",
+  "Upload in progress": "ཡར་འདེགས་པ་བྱེད་པ།",
+  "Album Progress": "འདེམས་ཚན་གྱི་འཕེལ་བ།",
+  "Adding Photos to Album": "འདེམས་ཚན་ལ་པར་འཇོག་པ།",
+  "Creating New Album": "འདེམས་ཚན་གསར་པ་གསོ་བ།",
+  "Uploading your photos...": "ཁྱེད་རང་གི་པར་ཡར་འདེགས་པ།",
+  "Cancel Upload": "ཡར་འདེགས་འདོར་བ།"
 }

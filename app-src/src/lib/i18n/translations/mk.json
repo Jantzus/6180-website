@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Некои фотографии не можеа да се обработат. Можете да продолжите со успешно обработените фотографии.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Автоматски ќе ви се наплатува {{amount}} месечно со овој метод на плаќање освен ако не го промените.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Изберете го планот што најдобро одговара на вашите потреби. Можете да избирате од опциите подолу или да внесете приспособена сума.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Забележавме дека вашата папка содржи потпапки. Дали сакате да креирате посебен албум за секоја потпапка или да ги третирате сите како еден албум?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Забележавме дека вашата папка содржи потпапки. Дали сакате да креирате посебен албум за секоја потпапка или да ги третирате сите како еден албум?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Поради технички ограничувања, масовните преземања во мобилни прелистувачи не се поддржани, и некои видеа можеби нема да се преземат.<br><br>За да преземете ги сите фотографии и видеа одеднаш:",
+  "Edit": "Уреди",
+  "Edit Album": "Уреди албум",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Уреди поставки на албумот",
+  "Upload in progress": "Прикачувањето е во тек",
+  "Album Progress": "Напредок на албумот",
+  "Adding Photos to Album": "Додавање слики во албумот",
+  "Creating New Album": "Креирање нов албум",
+  "Uploading your photos...": "Се прикачуваат вашите слики...",
+  "Cancel Upload": "Откажи прикачување"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Alcune foto non sono state elaborate. Puoi continuare con le foto elaborate con successo.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti verrà addebitato automaticamente {{amount}} mensili su questo metodo di pagamento a meno che non lo cambi.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Scegli il piano che meglio si adatta alle tue esigenze. Puoi selezionare tra le opzioni qui sotto o inserire un importo personalizzato.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Abbiamo notato che la tua cartella contiene sottocartelle. Vorresti creare un album separato per ogni sottocartella o trattarle tutte come un unico album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Abbiamo notato che la tua cartella contiene sottocartelle. Vorresti creare un album separato per ogni sottocartella o trattarle tutte come un unico album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "A causa di limitazioni tecniche, i download in massa non sono supportati sui browser mobili e alcuni video potrebbero non essere scaricati.<br><br>Per scaricare tutte le foto e i video in una volta, per favore:",
+  "Edit": "Modifica",
+  "Edit Album": "Modifica album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Modifica impostazioni album",
+  "Upload in progress": "Caricamento in corso",
+  "Album Progress": "Avanzamento album",
+  "Adding Photos to Album": "Aggiunta foto all'album",
+  "Creating New Album": "Creazione nuovo album",
+  "Uploading your photos...": "Caricamento delle tue foto...",
+  "Cancel Upload": "Annulla caricamento"
 }

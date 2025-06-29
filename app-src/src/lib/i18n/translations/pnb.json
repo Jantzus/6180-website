@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "کجھ فوٹو پروسیس نئیں ہو سکے۔ تسی کامیابی نال پروسیس ہون والے فوٹو نال جاری رکھ سکدے او۔",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "تہانوں ایس پیمنٹ میتھڈ تے ہر مہینے {{amount}} آپ سے آپ بل آئے گا جے تسی ایہہ نئیں بدلدے۔",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "اوہ پلان چنو جو تہاڈی لوڑاں نال سبتوں بہتر میچ کرے۔ تسی تھلے دتے آپشن وچوں چن سکدے او یا کسٹم رقم پا سکدے او۔",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "اساں ویکھیا اے کہ تہاڈے فولڈر وچ سب فولڈر نیں۔ کی تسی ہر سب فولڈر لئی وکھرا ایلبم بناؤنا چاؤندے او، یا سب نوں اک ایلبم سمجھنا چاؤندے او?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "اساں ویکھیا اے کہ تہاڈے فولڈر وچ سب فولڈر نیں۔ کی تسی ہر سب فولڈر لئی وکھرا ایلبم بناؤنا چاؤندے او، یا سب نوں اک ایلبم سمجھنا چاؤندے او?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "تکنیکی پابندیاں دی وجہ توں، موبائل برائوزراں اُتے بلک ڈاون لوڈ سپورٹ نئیں ہن، تے کجھ ویڈیو ڈاون لوڈ نئیں ہو سکدے۔<br><br>سارے فوٹو تے ویڈیو اک نال ڈاون لوڈ کرن لئی:",
+  "Edit": "تبدیل",
+  "Edit Album": "البم تبدیل",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ایلبم سیٹنگز تبدیل کرو",
+  "Upload in progress": "اپ لوڈ جاری اے",
+  "Album Progress": "ایلبم پیش قدمی",
+  "Adding Photos to Album": "ایلبم وچ فوٹو پان",
+  "Creating New Album": "نواں ایلبم بنانا",
+  "Uploading your photos...": "تہاڈیاں فوٹواں اپ لوڈ ہو راہیاں نیں...",
+  "Cancel Upload": "اپ لوڈ منسوخ کرو"
 }

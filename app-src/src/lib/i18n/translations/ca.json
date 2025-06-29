@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Algunes fotos no s'han pogut processar. Podeu continuar amb les fotos processades amb èxit.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se us carregarà automàticament {{amount}} mensualment en aquest mètode de pagament tret que el canvieu.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Trieu el pla que millor s'adapti a les vostres necessitats. Podeu seleccionar entre les opcions següents o introduir un import personalitzat.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hem observat que la vostra carpeta conté subcarpetes. Voleu crear un àlbum separat per a cada subcarpeta o tractar-les totes com un sol àlbum?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hem observat que la vostra carpeta conté subcarpetes. Voleu crear un àlbum separat per a cada subcarpeta o tractar-les totes com un sol àlbum?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Per limitacions tècniques, les descàrregues massives en navegadors mòbils no són compatibles, i alguns vídeos podrien no descarregar-se.<br><br>Per descarregar totes les fotos i vídeos de cop, si us plau:",
+  "Edit": "Edita",
+  "Edit Album": "Edita l'àlbum",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edita la configuració de l'àlbum",
+  "Upload in progress": "Pujada en curs",
+  "Album Progress": "Progrés de l'àlbum",
+  "Adding Photos to Album": "Afegint fotos a l'àlbum",
+  "Creating New Album": "Creant nou àlbum",
+  "Uploading your photos...": "Pujant les teves fotos...",
+  "Cancel Upload": "Cancel·la la pujada"
 }

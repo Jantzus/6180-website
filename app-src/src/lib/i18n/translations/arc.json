@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ܐܢܫܝܢ ܨܘܪ̈ܬܐ ܠܐ ܐܬܬܥܒܕ. ܡܨܝܐ ܐܢܬ ܕܬܩܦ ܥܡ ܨܘܪ̈ܬܐ ܕܐܬܬܥܒܕ ܒܡܦܠܚܘܬܐ.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ܐܢܬ ܬܬܬܚܫܒ ܐܘܛܘܡܛܝܟܐܝܬ {{amount}} ܒܟܠ ܝܪܚܐ ܒܗܢܐ ܕܘܟܬܐ ܕܦܘܪܥܢܐ ܐܠܐ ܐܢ ܬܫܚܠܦܝܗ.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ܓܒܝ ܬܪܥܝܬܐ ܕܫܦܪܐ ܠܣܢܝܩܘܬܟ. ܡܫܟܚ ܐܢܬ ܠܡܓܒܝܘ ܡܢ ܓܘܒܝܐ ܕܠܬܚܬ ܐܘ ܠܡܥܠܘ ܡܢܝܢܐ ܕܝܠܟ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ܚܙܝܢܢ ܕܣܦܩܘܟ ܐܝܬ ܒܗ ܣܦܪ̈ܐ ܙܥܘܪ̈ܐ. ܨܒܐ ܐܢܬ ܠܡܥܒܕ ܐܠܒܘܡ ܦܪܝܫܐ ܠܟܠ ܣܦܪܐ ܙܥܘܪܐ، ܐܘ ܠܡܚܫܒ ܟܠܗܘܢ ܐܝܟ ܐܠܒܘܡ ܚܕ؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ܚܙܝܢܢ ܕܣܦܩܘܟ ܐܝܬ ܒܗ ܣܦܪ̈ܐ ܙܥܘܪ̈ܐ. ܨܒܐ ܐܢܬ ܠܡܥܒܕ ܐܠܒܘܡ ܦܪܝܫܐ ܠܟܠ ܣܦܪܐ ܙܥܘܪܐ، ܐܘ ܠܡܚܫܒ ܟܠܗܘܢ ܐܝܟ ܐܠܒܘܡ ܚܕ؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ܡܛܠ ܬܚܘܡ̈ܐ ܬܟܢܝܐ، ܢܚܬܐ ܣܓܝܐܐ ܒܡܥܒܪ̈ܢܐ ܚܕ̈ܕܐ ܠܐ ܡܣܬܝܟܐ، ܘܚܕ̈ܢܐ ܚܙܘ̈ܐ ܠܐ ܢܚܬܝܢ.<br><br>ܠܢܚܬܐ ܟܠܗܘܢ ܨܠܡ̈ܐ ܘܚܙܘ̈ܐ ܒܚܕܐ ܙܒܢܐ، ܒܒܥܘ:",
+  "Edit": "ܫܘܚܠܦܐ",
+  "Edit Album": "ܫܘܚܠܦܐ ܐܠܒܘܡܐ",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ܫܚܠܦ ܬܘܩܢ̈ܐ ܕܐܠܒܘܡܐ",
+  "Upload in progress": "ܣܠܩܐ ܒܗܘܐ",
+  "Album Progress": "ܩܕܡܬܐ ܕܐܠܒܘܡܐ",
+  "Adding Photos to Album": "ܐܘܣܦܬܐ ܨܘܪ̈ܬܐ ܠܐܠܒܘܡܐ",
+  "Creating New Album": "ܒܪܝܬܐ ܕܐܠܒܘܡܐ ܚܕܬܐ",
+  "Uploading your photos...": "ܨܘܪ̈ܬܟ ܣܠܩ...",
+  "Cancel Upload": "ܒܛܠ ܣܠܩܐ"
 }

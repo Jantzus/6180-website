@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Néhány fotó nem dolgozható fel. Folytathatja a sikeresen feldolgozott fotókkal.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Automatikusan ki lesz számlázva {{amount}} havonta ezzel a fizetési móddal, hacsak nem változtatja meg.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Válassza ki az igényeinek leginkább megfelelő tervet. Választhat a lenti lehetőségek közül, vagy megadhat egy egyéni összeget.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Észrevettük, hogy a mappájában almappák vannak. Szeretne külön albumot létrehozni minden almappához, vagy az összeset egy albumként kezelni?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Észrevettük, hogy a mappájában almappák vannak. Szeretne külön albumot létrehozni minden almappához, vagy az összeset egy albumként kezelni?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Technikai korlátozások miatt a tömeges letöltések nem támogatottak mobil böngészőkben, és egyes videók esetleg nem töltődnek le.<br><br>Az összes fénykép és videó egyszerre történő letöltéséhez kérjük:",
+  "Edit": "Szerkesztés",
+  "Edit Album": "Album szerkesztése",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album beállítások szerkesztése",
+  "Upload in progress": "Feltöltés folyamatban",
+  "Album Progress": "Album előrehaladása",
+  "Adding Photos to Album": "Fotók hozzáadása az albumhoz",
+  "Creating New Album": "Új album létrehozása",
+  "Uploading your photos...": "Fotóid feltöltése...",
+  "Cancel Upload": "Feltöltés megszakítása"
 }

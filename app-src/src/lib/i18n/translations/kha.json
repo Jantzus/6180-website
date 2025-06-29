@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ka snem kaba da ym long doit sha. Ba snem ma long doit bru da ka shim sngewbha noh.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ba kti ha snem payment method ka ym long jaloi ha kti shim {{amount}} shim ka ruh automatic ka doit ang.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nga ne pyrthei bad ki subfolder don ha jinglung folder. La por sha main album tang tang ki subfolder syngkhoit syngkhoit, namar la por sha main tre ki tang tang ban album tynrai?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nga ne pyrthei bad ki subfolder don ha jinglung folder. La por sha main album tang tang ki subfolder syngkhoit syngkhoit, namar la por sha main tre ki tang tang ban album tynrai?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ka jingiaid technical ba leh, mobile browsers ka bulk downloads ym sngew da, bad video la lada download ong thei.",
+  "Edit": "Sniewbha",
+  "Edit Album": "Album sniewbha",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Jingpynlong album ka jingiarap",
+  "Upload in progress": "Upload la ia buh",
+  "Album Progress": "Album ka jingkynmaw",
+  "Adding Photos to Album": "Album kha jingkhasi tam",
+  "Creating New Album": "Album tharki jingpyniap",
+  "Uploading your photos...": "Nga jingkhasi upload la iai...",
+  "Cancel Upload": "Upload cancel kaba"
 }

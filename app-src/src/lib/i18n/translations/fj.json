@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Na rawa ni vakatotoki vakadodonu eso na icoicoi. O rawa ni qaravi kina na icoicoi ka vakatotoki vinaka.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O na charge tikoga vua {{amount}} kada vula ena dauvula sai oqo ke ko sega ni cakacaka kina.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Digitaka na veivakaukauwataki e yaga tale vei kemuni. O rawa ni digitaka mai na ka era sa tiko ena loma se vakatara tiko na ivalavala duadua.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sa raica meda na nomu ikatuba ena kena koto kei ira na vale saucoko. O vinakata me oti ka cakava e dua na kacilaba vata kei na vale saucoko kece, se vakadewataka kece me dua na kacilaba?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sa raica meda na nomu ikatuba ena kena koto kei ira na vale saucoko. O vinakata me oti ka cakava e dua na kacilaba vata kei na vale saucoko kece, se vakadewataka kece me dua na kacilaba?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ni rawa ni veivakayacori ni iTaukei e rui, na veisau ni download e mobile browser sega ni vakarautaki, kei na eso na video e rawa ni sega ni download.<br><br>Me download kina na kacivi kei na video kece e dua na gauna:",
+  "Edit": "Vukea",
+  "Edit Album": "Vukea na album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Vukea tiko na album setting",
+  "Upload in progress": "Upload e ca mai rawa",
+  "Album Progress": "Album ka yaco",
+  "Adding Photos to Album": "Vakarau na icake ni mata ki album",
+  "Creating New Album": "Vakarau na album vou",
+  "Uploading your photos...": "Vakarau na nomuni icake ni mata...",
+  "Cancel Upload": "Vakadua na upload"
 }

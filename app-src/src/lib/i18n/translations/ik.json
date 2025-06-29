@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Atla assuniat piqqusimangitchut. Piqqusisimavlutit piqqusivallruit assunianik.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "{{amount}} siku iłaqulirutigiñ miaaqsiḷuni atausiñaġnik tatqeqsimayun ukani taigurusiyauvaktun.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Anuksraun plan naluagmiñiaqtun iñuusimi. Uksrauyun anuksraukmat ciku atanich ukuranic qimmiq ikayuami.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Iññiġich folder-ni subfolder-nik itqanaich. Tukuaq separet album aullartikłuni itchaq subfolder-mun, maligaurlutin atchakun album atausiñun?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Iññiġich folder-ni subfolder-nik itqanaich. Tukuaq separet album aullartikłuni itchaq subfolder-mun, maligaurlutin atchakun album atausiñun?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Teknical limitationich nalarutnun, bulk downloadich mobile browserani supportaich nigiktut, videosich ilaat downloadituat ilaverutniq.<br><br>Agninich pictureat aglu videoseat downloadivaq atauhini:",
+  "Edit": "Atchitchuq",
+  "Edit Album": "Album atchitchuq",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album ayamiksirutin aullarigiñ",
+  "Upload in progress": "Upload pisuruk",
+  "Album Progress": "Album pisalluani",
+  "Adding Photos to Album": "Album aullariŋit atirruani",
+  "Creating New Album": "Album nutaan saniruaq",
+  "Uploading your photos...": "Atiñanun aullariñit pisaluriñ...",
+  "Cancel Upload": "Upload nalumairuq"
 }

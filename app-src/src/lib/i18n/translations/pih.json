@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sam foetas cuud nort prosesed. Yuu kuin kontiinyuu wiith dem foetas we prosesed gud.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Yuu wi bee bild outomaatik {{amount}} echi muuns pan dis piemint methid onles yuu cheenj it.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chuus di plaan we bess soot yor niids. Yorlye ken chuus fum di opshiins bilow or entyr a kastim amoun.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wii si dat yorlye foeldyr gat subfoeldyrs. Yorlye waant maek a sepyret aelbym fe iich subfoeldyr, o triet em orl es wan aelbym?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wii si dat yorlye foeldyr gat subfoeldyrs. Yorlye waant maek a sepyret aelbym fe iich subfoeldyr, o triet em orl es wan aelbym?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Bekaa uv teknikel limitieshuns, bulk downloads pan mobail browsas norf suported, en sam widiios miet norf download.<br><br>Fua download arl fotos en widiios wans:",
+  "Edit": "Edit",
+  "Edit Album": "Edit album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edyut album setting dem",
+  "Upload in progress": "Upload a gwaan",
+  "Album Progress": "Album progress",
+  "Adding Photos to Album": "Add foto dem to album",
+  "Creating New Album": "Mek new album",
+  "Uploading your photos...": "Upload yu foto dem...",
+  "Cancel Upload": "Cancel upload"
 }

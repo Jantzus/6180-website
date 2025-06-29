@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Kra n tugniwin ur zmiren ara ad ttwaseknirent. Tzemreḍ ad tkemmleḍ s tugniwin-nni yettwaseknirent akken iwata.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ad twaled s wudem awurman {{amount}} yal aggur s uɣawas n lexlaṣ-a ma yella ur t-tbeddiled ara.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Fren aɣawas i yesɛan atig yelhan ɣer wulawen-ik. Tzemreḍ ad tferneḍ seg yifran yellan daw-a neɣ ad tsekcmeḍ adrim i tebɣiḍ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nwala belli akaram-nwen deg-s akaram umeẓẓiyen. Tebɣiḍ ad txelqeḍ albumu yemgaraden i yal akaram umeẓẓi, neɣ ad ten-twaliḍ am yiwen n albumu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nwala belli akaram-nwen deg-s akaram umeẓẓiyen. Tebɣiḍ ad txelqeḍ albumu yemgaraden i yal akaram umeẓẓi, neɣ ad ten-twaliḍ am yiwen n albumu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "S lmendad n ttiknulujit, asider s waṭas deg yiminigen n uziraz ur yettusefrak ara, dɣa kra n tvidyutin zemren ur d-ttusidrent ara.<br><br>I usider n meṛṛa tugniwin d tvidyutin s yiwet n tikelt:",
+  "Edit": "Ẓreg",
+  "Edit Album": "Ẓreg album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Ẓreg iɣewwaṛen n udiwenni",
+  "Upload in progress": "Azdam yetteddu",
+  "Album Progress": "Asfar n udiwenni",
+  "Adding Photos to Album": "Rnu tugniwin ɣer udiwenni",
+  "Creating New Album": "Rnu adiwenni amaynut",
+  "Uploading your photos...": "Azdam n tugniwin-inek...",
+  "Cancel Upload": "Sefsex azdam"
 }

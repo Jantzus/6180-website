@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Tchiques portraits n'ount pon pu êt' moulinnés. Ou pout continner avé les portraits moulinnés à succès.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ou s'sa automatiquement chèrgi {{amount}} chaque meis sou c'méthode dé paiement la à muens qu'ou n'chang'chiz.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chouaîsissez l'plan qu'i s'accorde l'mieux à vos bésouains. Vos pouvez chouaîsir ès optiouns ichi-bas ou entrer eune somme pèrsonnalisée.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "J'avons r'marqué qu'votre dossiyé contient des souos-dossiyés. Voulez-vous créer un album séparé pouor chaque souos-dossiyé, ou les traiter tous comme un seul album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "J'avons r'marqué qu'votre dossiyé contient des souos-dossiyés. Voulez-vous créer un album séparé pouor chaque souos-dossiyé, ou les traiter tous comme un seul album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "À cause des lînmitations techniques, les télèchèrgements en vrac sus les navigateux mobiles n'sont pon supouortés, et tchiques vidéos pourraient pon s'télèchèrgi.<br><br>Pou télèchèrgi touos les portraits et vidéos en eune fais:",
+  "Edit": "Êditer",
+  "Edit Album": "Êditer album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Êditer les confîgurations d'album",
+  "Upload in progress": "Montement en cours",
+  "Album Progress": "Progression d'album",
+  "Adding Photos to Album": "Ajoutant des portraits à l'album",
+  "Creating New Album": "Créant un noeuvé album",
+  "Uploading your photos...": "Montant tes portraits...",
+  "Cancel Upload": "Anniuller l'montement"
 }

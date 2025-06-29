@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "कानिचित् चित्राणि संस्कारयितुं न शक्यन्ते स्म। भवान् सफलतया संस्कृतैः चित्रैः सह अग्रे गच्छितुं शक्नोति।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "भवान् एतत् न परिवर्तयेत् यावत् तावत् अस्यां भुक्तिप्रणाल्यां मासिकं {{amount}} स्वयं गणना भविष्यति।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "स्वकीयावश्यकतानुकूलं योजनां चिनुत। अधोलिखितविकल्पेभ्यः चयनं कर्तुं वा स्वकीयं धनराशिं प्रविष्टुं वा शक्नुयात्।",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "वयं पश्यामः भवत् निदेशिकायाम् उप-निदेशिकाः सन्ति। भवान् प्रतिउप-निदेशिकायाम् पृथक् सङ्गीतसङ्ग्रहं कर्तुम् इच्छति किं वा सर्वान् एक सङ्गीतसङ्ग्रहे गणयितुम् इच्छति?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "वयं पश्यामः भवत् निदेशिकायाम् उप-निदेशिकाः सन्ति। भवान् प्रतिउप-निदेशिकायाम् पृथक् सङ्गीतसङ्ग्रहं कर्तुम् इच्छति किं वा सर्वान् एक सङ्गीतसङ्ग्रहे गणयितुम् इच्छति?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "तान्त्रिकसीमनां कारणात्, मोबाइलब्राह्मणेषु बहुडाउनलोडान् न समर्थयन्ति, किञ्चित् विडियोषु डाउनलोडितुं न शक्नुवन्ति।<br><br>सर्वाणि चित्राणि विडियोश्च एकदा डाउनलोडितुं:",
+  "Edit": "सम्पादयतु",
+  "Edit Album": "संगीतसङ्ग्रहः सम्पादयतु",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "गीतसङ्ग्रह व्यवस्थापनानि सम्पादयतु",
+  "Upload in progress": "उद्भारणं चलति",
+  "Album Progress": "गीतसङ्ग्रह प्रगतिः",
+  "Adding Photos to Album": "गीतसङ्ग्रहे चित्राणि योजयति",
+  "Creating New Album": "नूतन गीतसङ्ग्रह रचयति",
+  "Uploading your photos...": "भवतः चित्राणि उद्भृत्य...",
+  "Cancel Upload": "उद्भारणं निवारयतु"
 }

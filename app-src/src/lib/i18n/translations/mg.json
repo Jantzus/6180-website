@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ny sary sasany dia tsy voavoatra. Afaka manohy amin'ny sary voavoatra tsara ianao.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Halaina aminao {{amount}} isam-bolana amin'ity fomba fandoavam-bola ity raha tsy ovainao.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Misafidiana ny drafitra izay mifanaraka tsara indrindra amin'ny filànanao. Afaka misafidy amin'ireo safidy etsy ambany ianao na mampiditra vola manokana.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nahatsikaritsika fa misy sobosary ao amin'ny lahatahiry. Te hamorona rakitahiry manokana ho an'ny sobosary tsirairay ve ianao sa hihevitra azy rehetra ho rakitahiry iray?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nahatsikaritsika fa misy sobosary ao amin'ny lahatahiry. Te hamorona rakitahiry manokana ho an'ny sobosary tsirairay ve ianao sa hihevitra azy rehetra ho rakitahiry iray?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Noho ny fetrany ara-teknika, ny fampidinana be dia be amin'ny navigateur finday dia tsy tohana, ary ny horonan-tsary sasany dia mety tsy azo alaina.<br><br>Handray ny sary rehetra sy ny horonan-tsary indray mandeha:",
+  "Edit": "Hanova",
+  "Edit Album": "Hanova ny alboma",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Hanova ny firafitry ny rakitra",
+  "Upload in progress": "Ny fampidirana dia mandeha",
+  "Album Progress": "Fandrosoana ny rakitra",
+  "Adding Photos to Album": "Fanampiana sary ao amin'ny rakitra",
+  "Creating New Album": "Mamorona rakitra vaovao",
+  "Uploading your photos...": "Mampiditra ny sarinao...",
+  "Cancel Upload": "Ajanona ny fampidirana"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Varios fotos no puede ser procesa. Puede tu continua con el mga fotos na procesa bien.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ansina automatico maga-charge {{amount}} kada mes na este metodo de pago si no lo cambia.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Escoge el plan que mejor ta encaja con tu necesidades. Puede tu escoge del mga opcion abajo o entra un cantidad custom.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ya mira nosotros que tu folder tiene mga subfolder. Quiere tu hace un album separao para cada subfolder, o trata con todos como un album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ya mira nosotros que tu folder tiene mga subfolder. Quiere tu hace un album separao para cada subfolder, o trata con todos como un album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Por limitaciones tecnico, el mga descarga masivo na mobile browsers no ta soporta, y algunos videos puede no descarga.<br><br>Para descarga todo el mga foto y videos de una vez, por favor:",
+  "Edit": "Edita",
+  "Edit Album": "Edita album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edita el configuracion del album",
+  "Upload in progress": "Upload ya andando",
+  "Album Progress": "Progreso del album",
+  "Adding Photos to Album": "Añadiendo fotos na album",
+  "Creating New Album": "Haciendo nuebo album",
+  "Uploading your photos...": "Subiendo el tuyo mga foto...",
+  "Cancel Upload": "Cancela el upload"
 }

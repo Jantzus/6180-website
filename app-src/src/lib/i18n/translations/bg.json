@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Някои снимки не можаха да бъдат обработени. Можете да продължите с успешно обработените снимки.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ще ви се начислява автоматично {{amount}} месечно чрез този метод на плащане, освен ако не го промените.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Изберете плана, който най-добре отговаря на вашите нужди. Можете да изберете от опциите по-долу или да въведете персонализирана сума.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Забелязахме, че вашата папка съдържа подпапки. Бихте ли искали да създадете отделен албум за всяка подпапка или да ги третирате всички като един албум?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Забелязахме, че вашата папка съдържа подпапки. Бихте ли искали да създадете отделен албум за всяка подпапка или да ги третирате всички като един албум?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Поради технически ограничения, масовите изтегляния в мобилни браузъри не се поддържат и някои видеоклипове може да не се изтеглят.<br><br>За да изтеглите всички снимки и видеоклипове наведнъж, моля:",
+  "Edit": "Редактиране",
+  "Edit Album": "Редактиране на албум",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Редактиране на настройките на албума",
+  "Upload in progress": "Качването е в ход",
+  "Album Progress": "Прогрес на албума",
+  "Adding Photos to Album": "Добавяне на снимки в албума",
+  "Creating New Album": "Създаване на нов албум",
+  "Uploading your photos...": "Качват се вашите снимки...",
+  "Cancel Upload": "Отказ на качването"
 }

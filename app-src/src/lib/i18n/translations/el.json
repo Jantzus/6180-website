@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Μερικές φωτογραφίες δεν μπόρεσαν να επεξεργαστούν. Μπορείτε να συνεχίσετε με τις φωτογραφίες που επεξεργάστηκαν επιτυχώς.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Θα χρεώνεστε αυτόματα {{amount}} μηνιαίως σε αυτήν τη μέθοδο πληρωμής εκτός αν την αλλάξετε.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Επιλέξτε το πλάνο που ταιριάζει καλύτερα στις ανάγκες σας. Μπορείτε να επιλέξετε από τις παρακάτω επιλογές ή να εισαγάγετε ένα προσαρμοσμένο ποσό.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Παρατηρήσαμε ότι ο φάκελός σας περιέχει υποφακέλους. Θα θέλατε να δημιουργήσετε ξεχωριστό άλμπουμ για κάθε υποφάκελο ή να τα αντιμετωπίσετε όλα ως ένα άλμπουμ;"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Παρατηρήσαμε ότι ο φάκελός σας περιέχει υποφακέλους. Θα θέλατε να δημιουργήσετε ξεχωριστό άλμπουμ για κάθε υποφάκελο ή να τα αντιμετωπίσετε όλα ως ένα άλμπουμ;",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Λόγω τεχνικών περιορισμών, οι μαζικές λήψεις σε κινητά προγράμματα περιήγησης δεν υποστηρίζονται και ορισμένα βίντεο ενδέχεται να μην κατέβουν.<br><br>Για να κατεβάσετε όλες τις φωτογραφίες και τα βίντεο μαζί, παρακαλώ:",
+  "Edit": "Επεξεργασία",
+  "Edit Album": "Επεξεργασία άλμπουμ",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Επεξεργασία ρυθμίσεων άλμπουμ",
+  "Upload in progress": "Μεταφόρτωση σε εξέλιξη",
+  "Album Progress": "Πρόοδος άλμπουμ",
+  "Adding Photos to Album": "Προσθήκη φωτογραφιών στο άλμπουμ",
+  "Creating New Album": "Δημιουργία νέου άλμπουμ",
+  "Uploading your photos...": "Μεταφορτώνονται οι φωτογραφίες σας...",
+  "Cancel Upload": "Ακύρωση μεταφόρτωσης"
 }

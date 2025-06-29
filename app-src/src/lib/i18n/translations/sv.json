@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Vissa foton kunde inte bearbetas. Du kan fortsätta med de framgångsrikt bearbetade fotona.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du kommer att automatiskt debiteras {{amount}} månadsvis på denna betalningsmetod såvida du inte ändrar den.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Välj den plan som bäst passar dina behov. Du kan välja från alternativen nedan eller ange ett anpassat belopp.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vi märkte att din mapp innehåller undermappar. Vill du skapa ett separat album för varje undermapp, eller behandla dem alla som ett album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vi märkte att din mapp innehåller undermappar. Vill du skapa ett separat album för varje undermapp, eller behandla dem alla som ett album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "På grund av tekniska begränsningar stöds inte massladningar i mobila webbläsare, och vissa videor kanske inte laddas ner.<br><br>För att ladda ner alla foton och videor på en gång:",
+  "Edit": "Redigera",
+  "Edit Album": "Redigera album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Redigera albuminställningar",
+  "Upload in progress": "Uppladdning pågår",
+  "Album Progress": "Albumframsteg",
+  "Adding Photos to Album": "Lägger till bilder i album",
+  "Creating New Album": "Skapar nytt album",
+  "Uploading your photos...": "Laddar upp dina bilder...",
+  "Cancel Upload": "Avbryt uppladdning"
 }

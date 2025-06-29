@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Иктешыже фотовлак дасалаш огыт лий. Эр дасыме фотовлакым дене ончычкош кодаш кеч.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Тиде шуко панымо йӧным вашталыде гын, {{amount}} тӱняжым автоматически алынет.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Тый кӱлешан план савырен ӱжо. Ӱлен шупшашыште нерген савыра кертат але тыгай шотлык пыртен кертат.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мемнан ужына, тыгайда папкашкы субпапкаш улыт. Кажне субпапкалан сынден альбом ышташ ыле, але чылашым иктыже альбом семын ончышаш ыле?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мемнан ужына, тыгайда папкашкы субпапкаш улыт. Кажне субпапкалан сынден альбом ышташ ыле, але чылашым иктыже альбом семын ончышаш ыле?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникаште кучедалма годым, мобиль браузер-влакыште шуко файлым налмаш огыл лий, ден могай видео-влак налалт огыт кет.<br><br>Чыла сурет-влак ден видео-влакым иктыже налаш:",
+  "Edit": "Тӧрлаташ",
+  "Edit Album": "Альбом тӧрлаташ",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом ӱшаныме йӧн вашталташ",
+  "Upload in progress": "Шыжаш кертеш",
+  "Album Progress": "Альбом шуйышо мер",
+  "Adding Photos to Album": "Альбом фото ешаш",
+  "Creating New Album": "У альбом ыштыме",
+  "Uploading your photos...": "Тыйын фото-влакетшыжаш...",
+  "Cancel Upload": "Шыжашым чарнаш"
 }

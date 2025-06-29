@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Amafoto amwe ntabasha gukurikirana. Urashobora gukomeza n'amafoto akurikirana neza.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Uzofatirwa mu buryo bwa otomatike {{amount}} buri kwezi muri ubu buryo bwo kwishyura utabanje ubuhindura.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Hitamo igitegeko kibana cyane n'ibyo ukeneye. Ushobora guhitamo mu mahitamo ari munsi cyangwa kwinjiza ikigereranyo cyawe.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Twabonye ko ububiko bwawe bufise ububiko buto. Wifuza gukora albumu y'ukwayo kuri buri bubiko buto, cyangwa kubyicuza byose nk'albumu imwe?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Twabonye ko ububiko bwawe bufise ububiko buto. Wifuza gukora albumu y'ukwayo kuri buri bubiko buto, cyangwa kubyicuza byose nk'albumu imwe?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Kubera imbogamizi z'ikoranabuhanga, gufata byinshi kuri mushakisha mu rugendo ntibishoboka, kandi amashusho amwe ashobora kutajya.<br><br>Gufata amafoto yose n'amashusho mu gihe kimwe:",
+  "Edit": "Hindura",
+  "Edit Album": "Hindura album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Guhindura amategeko y'album",
+  "Upload in progress": "Gukuramo biragenda",
+  "Album Progress": "Iterambere ry'album",
+  "Adding Photos to Album": "Kongera amafoto muri album",
+  "Creating New Album": "Kurema album nshasha",
+  "Uploading your photos...": "Kuraguza amafoto yawe...",
+  "Cancel Upload": "Hagarika gukuramo"
 }

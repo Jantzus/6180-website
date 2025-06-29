@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "或有圖像未能處理。君可用已善處理之圖像續之。",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "汝若弗改此付費之法，每月自動扣汝{{amount}}。",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "擇最適爾所需之策。可自下列選項擇之，或入自定額數。",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "吾等見爾夾中有子夾。欲為各子夾創單冊，抑視諸為一冊？"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "吾等見爾夾中有子夾。欲為各子夾創單冊，抑視諸為一冊？",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "因技術限制，行動瀏覽器不支援批量下載，且或有視頻無法下載。<br><br>欲一次下載所有相片與視頻，請：",
+  "Edit": "編輯",
+  "Edit Album": "編輯相冊",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "編輯相冊設定",
+  "Upload in progress": "上傳中",
+  "Album Progress": "相冊進度",
+  "Adding Photos to Album": "向相冊添加照片",
+  "Creating New Album": "創建新相冊",
+  "Uploading your photos...": "正在上傳您的照片...",
+  "Cancel Upload": "取消上傳"
 }

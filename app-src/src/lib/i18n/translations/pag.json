@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Diad agagana so photo na andi naproseso. Labay mo so nanengneng na manbansag so nasukses so naproseso.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Maautomat ya ma-bill ka so {{amount}} tep bulan ed dayta payment method no aliwan mo man ya.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Piliem so plan ya lawlaw manabi ed saray kailangan yo. Mabalin a pilien mo ed saray options diad baba o ikabil so custom ya amount.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Naantipon mi so folder yo et may mga subfolder. Kabalin mo ed gawa so walay album para ed saman subfolder, o pakabat da amin ya san album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Naantipon mi so folder yo et may mga subfolder. Kabalin mo ed gawa so walay album para ed saman subfolder, o pakabat da amin ya san album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Sikato ya mga limitasyon na tekniko, so mga bulk na download ed mobile browsers ag masupport, tan pigara ya video ag manlapud madownload.<br><br>Para madownload amin ya litrato tan video ed sablay:",
+  "Edit": "Edit",
+  "Edit Album": "Edit album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "I-edit so mga setting na album",
+  "Upload in progress": "Ag-upload pay",
+  "Album Progress": "Progress na album",
+  "Adding Photos to Album": "Ibagay so foto ed album",
+  "Creating New Album": "Ag-arámid so báro na album",
+  "Uploading your photos...": "Ag-upload na foto mo...",
+  "Cancel Upload": "Kanselaren so upload"
 }

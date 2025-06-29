@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Wakin runakunap siq'inkuna mana ruway atikurqanchu. Allinta ruwasqa siq'inkunawan qatiy atikunki.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Kay qullqi quy ñanninta manam t'ikranki chayqa sapa killapi {{amount}} kikinmanta qullqichasqa kanki.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Munayniykiman aswan allin kaq planata akllay. Uraypi kaq akllanakunamanta akllayta atinki utaq kikinpa yupayniykita churay.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Riqsirqanki, simiykipi uchuy simiykuna kanku. Sapa uchuy simiykunapaq sapalla albumta ruwayta munanki icha llapantachus huk albumhina ruwayta munanki?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Riqsirqanki, simiykipi uchuy simiykuna kanku. Sapa uchuy simiykunapaq sapalla albumta ruwayta munanki icha llapantachus huk albumhina ruwayta munanki?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Técnico harkasqa kananrayku, mobile navegadorkunapi achka download nisqakunaqa mana yanapasqachu, chaymanta wakin videokuna mana downloadakuymanchu.<br><br>Llapa fotokunata videokunatapas huk kutilla downloadanapaq:",
+  "Edit": "Ruray",
+  "Edit Album": "Album ruray",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album churanakunata llamkachiy",
+  "Upload in progress": "Wichariy puriyun",
+  "Album Progress": "Albumpa ñawpaqman riy",
+  "Adding Photos to Album": "Albumman siq'ikunata yapana",
+  "Creating New Album": "Musuq albumta rurana",
+  "Uploading your photos...": "Siq'ikunaykita wicharispa...",
+  "Cancel Upload": "Wicharayta hark'ay"
 }

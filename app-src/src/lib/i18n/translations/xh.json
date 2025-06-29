@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ezinye iifoto azikwazanga ukucutshungulwa. Ungaqhubeka neefoto ezicutshungulwe ngempumelelo.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Uya kubhatelwa i-{{amount}} ngenyanga ngenyanga kule ndlela yokuhlawula ngaphandle kokuba uyayitshintsha.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Khetha isicwangciso esisondeleyo kakhulu kwiimfuno zakho. Ungakhetha kuzithethi zangezantsi okanye ungenise isixa esiqhelekileyo.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sibonile ukuba ifolda yakho iqulathe iifolda ezincinci. Ingaba ufuna ukwenza i-albhamu eyahlukeneyo kwifolda encinci nganye, okanye uziphendele zonke njenge-albhamu enye?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sibonile ukuba ifolda yakho iqulathe iifolda ezincinci. Ingaba ufuna ukwenza i-albhamu eyahlukeneyo kwifolda encinci nganye, okanye uziphendele zonke njenge-albhamu enye?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ngenxa yemiqobo yobuchwepheshe, ukufaka okuninzi kwii-browsers zefowuni azixhaswa, yaye ezo video zinokuba azikufakeki.<br><br>Ukufaka zonke iifoto nezifanekiso ngexesha elinye:",
+  "Edit": "Hlela",
+  "Edit Album": "Hlela i-album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Hlela izicwangciso ze-album",
+  "Upload in progress": "Ukufakela phezulu kuyaqhubeka",
+  "Album Progress": "Inkqubela phambili ye-album",
+  "Adding Photos to Album": "Ukongeza iifoto kwi-album",
+  "Creating New Album": "Idala i-album entsha",
+  "Uploading your photos...": "Ukufakela phezulu iifoto zakho...",
+  "Cancel Upload": "Rhoxisa ukufakela phezulu"
 }

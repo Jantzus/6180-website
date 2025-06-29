@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "loi pixra na kakne lo nu galfi. do kakne lo nu co'e sepi'o loi pixra poi pu snada galfi",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "do ba'o pleji lo ka {{amount}} masno lo ti mujgau pagbu poi na'e do galfi",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "cuxna le plani poi zmadu lo ka mapti do'i nitcu .i ka'e cuxna fi lo se cuxna poi cnita gi'a cu'u lo zifre poi do djica",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "mi viska lo du'u do datni bakfu cu se vasru lo cmarafsi datni bakfu .i xu do djica lo nu finti lo drata se jdice bakfu kei ro cmarafsi datni bakfu .i ja xu do djica lo nu jdice ro sepi'o ta lo pa se jdice bakfu"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "mi viska lo du'u do datni bakfu cu se vasru lo cmarafsi datni bakfu .i xu do djica lo nu finti lo drata se jdice bakfu kei ro cmarafsi datni bakfu .i ja xu do djica lo nu jdice ro sepi'o ta lo pa se jdice bakfu",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "tezu'e lo snura steci kei lo vlipa kibdu'a cu na se zanru gi'e cumki lo ka na se kibdu'a<br><br>lo ka se kibdu'a ro lo pixra be'o jo'u vidru kei pa roi:",
+  "Edit": "galfi",
+  "Edit Album": "galfi lo sanga girzu",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "galfi lo sanga girzu tcila",
+  "Upload in progress": "lo cpacu cu cabra",
+  "Album Progress": "lo sanga girzu farvi",
+  "Adding Photos to Album": "co'e punji lo pixra lo sanga girzu",
+  "Creating New Album": "finti lo cnino sanga girzu",
+  "Uploading your photos...": "lo do pixra cu cpacu",
+  "Cancel Upload": "na'e cpacu"
 }

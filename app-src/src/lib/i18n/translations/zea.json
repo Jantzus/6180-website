@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sommige foto's kosten nie bewerkt worre. Je ku verdergaon mit de foto's die god bewerkt bint.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Je zult automatisch {{amount}} per maond in rekening ebracht worre op deze betaalmethode tenzij je 'm verandert.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kies 'e plan da 't beste by je behoeften past. Je kunne kieze uut de opties 'ieronder of een angepast bedragh invoeren.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We èn gemerrekt da joun map submaps byhoudt. Willie j'n aport album moakn vo elke submap, of ze allemaal as ièn album behandeln?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We èn gemerrekt da joun map submaps byhoudt. Willie j'n aport album moakn vo elke submap, of ze allemaal as ièn album behandeln?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Wegens technische beperkengen worren bulkdownloads in mobiele browsers nie ondersteund, en sommege video's kunen meugelijk nie edownload worren.<br><br>Om alle foto's en video's tegelijk te downloaden:",
+  "Edit": "Bewirke",
+  "Edit Album": "Album bewirke",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albuminstellieng'n bewirk'n",
+  "Upload in progress": "Upload an 'e gank",
+  "Album Progress": "Albumvoortgank",
+  "Adding Photos to Album": "Foto's an album toevoegn",
+  "Creating New Album": "Nuuw album maak'n",
+  "Uploading your photos...": "Je foto's worre upgeload...",
+  "Cancel Upload": "Upload annuleern"
 }

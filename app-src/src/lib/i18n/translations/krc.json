@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Бир къач фотола иштемлерге боллукъдула. Шо онгураулу иштемленген фоточарыгъа келечи къурау боллукъсуз.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Бу төлеу жолун тюрлендирмесең, ай сайын {{amount}} автоматла алына эди болур.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Керекликиге эм игилиге келген планны тандаргъа. Тёбенги вариантладан тандарга боллукъсуз неда ючгюн сан саларга боллукъсуз.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Бизде кёрдюкле сизни папканызда суб-папкаланы барладыла. Хар суб-папкага башха альбом этерге излейсизми, неда барысын да бир альбом этип кёрерге излейсизми?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Бизде кёрдюкле сизни папканызда суб-папкаланы барладыла. Хар суб-папкага башха альбом этерге излейсизми, неда барысын да бир альбом этип кёрерге излейсизми?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техник чеклелюгюн себебинден, мобиль браузерлерде топлу жюклемеле къоллау этилмейдиле, алай бир нече видео жюклемей да къалыр.<br><br>Бютеу фотоланы эм видеоланы бир заманда жюклемек учун:",
+  "Edit": "Джюрютюу",
+  "Edit Album": "Альбом джюрютюу",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом параметрлерин тюрлендириу",
+  "Upload in progress": "Джукълау барады",
+  "Album Progress": "Альбом алып барыу",
+  "Adding Photos to Album": "Альбомгъа суретле къошуу",
+  "Creating New Album": "Джангы альбом джасау",
+  "Uploading your photos...": "Сизин суретлериңиз джукълау болады...",
+  "Cancel Upload": "Джукълауну токтатыу"
 }

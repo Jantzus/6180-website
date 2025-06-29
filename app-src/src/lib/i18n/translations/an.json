@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Qualques fotos no se han puesto procesar. Puetz continar con as fotos procesadas con exito.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se te cobrará automaticament {{amount}} mensualments en iste metodo de pago sino lo cambias.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Triga o plan que millor s'achuste a las tuyas necesidaz. Puetz trigar d'entre las opcions d'abaixo u meter una cantidat personalizada.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hemos viu que a carpeta tienga subcarpetas. Te gusta creyar un album a parte pa cada subcarpeta, u tractar-las totas como un solo album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hemos viu que a carpeta tienga subcarpetas. Te gusta creyar un album a parte pa cada subcarpeta, u tractar-las totas como un solo album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Por limitacions tecnicas, as descargas masivas en navegadors mobils no son admitidas, y qualques videos pueden no descargar-se.<br><br>Ta descargar todas as fotos y videos a la vegada, por favor:",
+  "Edit": "Editar",
+  "Edit Album": "Editar álbum",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Editar configuración d'álbum",
+  "Upload in progress": "Puyada en curso",
+  "Album Progress": "Progreso de l'álbum",
+  "Adding Photos to Album": "Adhibir fotos a l'álbum",
+  "Creating New Album": "Creyando un nuebo álbum",
+  "Uploading your photos...": "Puyando las tuyas fotos...",
+  "Cancel Upload": "Cancelar puyada"
 }

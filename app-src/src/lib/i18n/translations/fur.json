@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Cualchi foto no si à podût processa. Tu puedis lâ indevant cui fotis processadis cun sucès.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti vignarâs cjargât in automatic {{amount}} ogni mês cun chest sisteme di paiament se no tu lu cambiis.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Sielzi il plan che si adatte miôr a lis tôs necessitâts. Tu puedis sielzi tra lis opzions ca sot o inserî une cifre personalizade.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "O vin viodût che la tô cartele e conten sot-cartelis. Vuelistu creâ un album separât par ogni sot-cartele, o tratâlis dutes come un album singul?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "O vin viodût che la tô cartele e conten sot-cartelis. Vuelistu creâ un album separât par ogni sot-cartele, o tratâlis dutes come un album singul?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Par limitazions tecnichis, i discjamaments massîfs sui navegadôrs mobil no son supuartâts, e cualchi video al podarès no jessi discjamât.<br><br>Par discjamâ dutis lis fotos e i video intune volte, par plasê:",
+  "Edit": "Modificâ",
+  "Edit Album": "Modificâ album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Cambie lis impostazions dal album",
+  "Upload in progress": "Upload in cors",
+  "Album Progress": "Progress dal album",
+  "Adding Photos to Album": "Zontâ fotos al album",
+  "Creating New Album": "Creâ un gnûf album",
+  "Uploading your photos...": "Metint sù lis tôs fotos...",
+  "Cancel Upload": "Anule upload"
 }

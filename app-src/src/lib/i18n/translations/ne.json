@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "केही तस्बिरहरू प्रशोधन गर्न सकिएन। तपाईंले सफलतापूर्वक प्रशोधन गरिएका तस्बिरहरूसँग जारी राख्न सक्नुहुन्छ।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "तपाईंले यसलाई नबदलेसम्म यो भुगतान विधिमा मासिक {{amount}} स्वचालित रूपमा बिल गरिनेछ।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "तपाईंको आवश्यकताहरूसँग राम्रोसँग मेल खाने योजना छान्नुहोस्। तपाईं तलका विकल्पहरूबाट छान्न सक्नुहुन्छ वा कस्टम रकम प्रविष्ट गर्न सक्नुहुन्छ।",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "हामीले तपाईंको फोल्डरमा सबफोल्डरहरू भएको देख्यौं। के तपाईं प्रत्येक सबफोल्डरको लागि छुट्टै एल्बम सिर्जना गर्न चाहनुहुन्छ, वा ती सबैलाई एउटै एल्बमको रूपमा व्यवहार गर्न चाहनुहुन्छ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "हामीले तपाईंको फोल्डरमा सबफोल्डरहरू भएको देख्यौं। के तपाईं प्रत्येक सबफोल्डरको लागि छुट्टै एल्बम सिर्जना गर्न चाहनुहुन्छ, वा ती सबैलाई एउटै एल्बमको रूपमा व्यवहार गर्न चाहनुहुन्छ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "प्राविधिक सीमितताहरूका कारण, मोबाइल ब्राउजरहरूमा बल्क डाउनलोडहरू समर्थित छैनन्, र केही भिडियोहरू डाउनलोड नहुन सक्छन्।<br><br>सबै फोटोहरू र भिडियोहरू एकैचोटि डाउनलोड गर्न:",
+  "Edit": "सम्पादन गर्नुहोस्",
+  "Edit Album": "एल्बम सम्पादन गर्नुहोस्",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "एल्बम सेटिङहरू सम्पादन गर्नुहोस्",
+  "Upload in progress": "अपलोड भइरहेको छ",
+  "Album Progress": "एल्बम प्रगति",
+  "Adding Photos to Album": "एल्बममा तस्बिरहरू थप्दै",
+  "Creating New Album": "नयाँ एल्बम सिर्जना गर्दै",
+  "Uploading your photos...": "तपाईंका तस्बिरहरू अपलोड भइरहेका छन्...",
+  "Cancel Upload": "अपलोड रद्द गर्नुहोस्"
 }

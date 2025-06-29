@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quârques fôtos ont pas possu étre travâlyês. Vos povéd continuar avouéc les fôtos travâlyês ben.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos sarèd ôtomaticament facturâ {{amount}} per môs avouéc ceta mètoda de payement a muens que vos la changiéd.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chouèsésséd lo plan que vos convint lo miux. Vos pouéd chouèsir entre les ôpcionis d'aval ou boutar una soma pèrsonalisâye.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nos avon remarquiê que voutron dossiér contint des sots-dossiérs. Éyérâd-vos crèyér un album sèparâ por châque sot-dossiér, ou ben los tractar tôs coment un sôl album ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nos avon remarquiê que voutron dossiér contint des sots-dossiérs. Éyérâd-vos crèyér un album sèparâ por châque sot-dossiér, ou ben los tractar tôs coment un sôl album ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Per des limitacions tècnicas, los tèlèchargements en massa sont pas supôrtâs sur los navigators mobiles, et quârques vidèos pôvont pas se tèlèchargiér.<br><br>Por tèlèchargiér totes les fôtos et vidèos d'un côp, volyéd:",
+  "Edit": "Changiér",
+  "Edit Album": "Changiér l'album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Changiér los paramètres de l'album",
+  "Upload in progress": "Tèlèchargement en cours",
+  "Album Progress": "Progression de l'album",
+  "Adding Photos to Album": "Apondre de fôtos a l'album",
+  "Creating New Album": "Crèacion d'un novél album",
+  "Uploading your photos...": "Tèlèchargement de vos fôtos...",
+  "Cancel Upload": "Annuler lo tèlèchargement"
 }

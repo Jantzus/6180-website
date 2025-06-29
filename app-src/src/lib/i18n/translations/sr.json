@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Неке фотографије нису могле бити обрађене. Можете наставити са успешно обрађеним фотографијама.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Биће вам аутоматски наплаћено {{amount}} месечно на овај начин плаћања осим ако га не промените.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Изаберите план који најбоље одговара вашим потребама. Можете бирати из опција испод или унети прилагођени износ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Приметили смо да ваша мапа садржи подмапе. Желите ли да креирате засебан албум за сваку подмапу или да их све третирате као један албум?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Приметили смо да ваша мапа садржи подмапе. Желите ли да креирате засебан албум за сваку подмапу или да их све третирате као један албум?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Због техничких ограничења, групно преузимање није подржано на мобилним прегледачима, а неки видео снимци се можда неће преузети.<br><br>За преузимање свих фотографија и видео снимака одједном:",
+  "Edit": "Уреди",
+  "Edit Album": "Уреди албум",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Уреди поставке албума",
+  "Upload in progress": "Отпремање у току",
+  "Album Progress": "Напредак албума",
+  "Adding Photos to Album": "Додавање фотографија у албум",
+  "Creating New Album": "Креирање новог албума",
+  "Uploading your photos...": "Отпремају се ваше фотографије...",
+  "Cancel Upload": "Откажи отпремање"
 }

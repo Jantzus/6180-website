@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Muhtun govat eai sáhttán gieđahallat. Don sáhtát joatkit buridit gieđahallojuvvon govaiguin.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Dus fállet automátalaččat {{amount}} mánotbadji dán maksanvuogi bokte jus it rievdat dan.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Vállje plána mii buoremusat heiveha du dárbbašiiguin. Don sáhtát válljet vuolábeali molssaeavttuid rájes dahje čállit iežat hárrái.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mii leat oidnon ahte du máhpas leat vuollimáhpat. Háliidat-go ráhkadit sierra albuma juohke vuollimáhpii, vai gieđahallat visuid ovtta albumin?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mii leat oidnon ahte du máhpas leat vuollimáhpat. Háliidat-go ráhkadit sierra albuma juohke vuollimáhpii, vai gieđahallat visuid ovtta albumin?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Teknihkalaš rádjai dihte, storabut viežžangieđahallamat mobile čállinbálvváin eai doarjut, ja muhtin videdat sáhttet ballat viežžat.<br><br>Visot govvidettiin ja videaid viežžat ovttaváhkku:",
+  "Edit": "Rievdat",
+  "Edit Album": "Rievdat albuma",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Rievdadit albuma ásahusat",
+  "Upload in progress": "Báhčin manná",
+  "Album Progress": "Albuma ovdáneapmi",
+  "Adding Photos to Album": "Lasegovas gováid albumii",
+  "Creating New Album": "Rud albuma huksen",
+  "Uploading your photos...": "Báhčin du gováid...",
+  "Cancel Upload": "Báhčin geasat"
 }

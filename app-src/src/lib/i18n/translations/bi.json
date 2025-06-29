@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Samfala foto i no save prosesim. Yu save kontinu wetem ol foto we i bin prosesim gud.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bae yu pem {{amount}} evri manis long dispela we blong pem, sapos yu no senisim.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Jusum plan we i fitem gud long nid blong yu. Yu save jusum long ol opsyen daon o putim wan kastom amawn.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mifala i lukum se folder blong yu i gat ol smol folder insaed. Yu wantem mekem separet album long evri smol folder, o treatim olsem long wan album nomo?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mifala i lukum se folder blong yu i gat ol smol folder insaed. Yu wantem mekem separet album long evri smol folder, o treatim olsem long wan album nomo?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "From teknikel limitesen, bulk daonlod long mobael braosa ol i no sapotim, mo sam video ol i save no daonlod.<br><br>Blong daonlod olgeta foto mo video wantaem, plis:",
+  "Edit": "Editim",
+  "Edit Album": "Editim album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Jenisim album setting",
+  "Upload in progress": "Upload i go long",
+  "Album Progress": "Album progress",
+  "Adding Photos to Album": "Putim foto long album",
+  "Creating New Album": "Mekim niufala album",
+  "Uploading your photos...": "Upload blong yu foto i go long...",
+  "Cancel Upload": "Stopin upload"
 }

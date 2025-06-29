@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Bazı fotoğraflar işlenip olmadı. Tabıslı işlengen fotoğraflar menen davamlaşıp bilesiñ.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bu tólem usılında aysırı {{amount}} avtomatik alınatın, eger onı ózmesseñ.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ózińiz kerekliliklerine eń yaqsı kelgen planı saylan. Tómendegi variantlar irshen saylay alasiz yamasa óz púlińizdi kire alasiz.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Biz kórdik ki, sizlerdíń papkasında astí papkalar bar. Ár astí papka ushín ayrí albom jaratíw isleysizshe ma, yáki bárshlnń bir albom retinde kóriw isleysizshe ma?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Biz kórdik ki, sizlerdíń papkasında astí papkalar bar. Ár astí papka ushín ayrí albom jaratíw isleysizshe ma, yáki bárshlnń bir albom retinde kóriw isleysizshe ma?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Texnik shektewlerden, mobil brauzerlerde toptan indirmeler qollanılmaydı, hám keybir videolar indirip alınmaw múmkin.<br><br>Barlıq foto hám videolardı birden indirip alıw ushın:",
+  "Edit": "Özgertüw",
+  "Edit Album": "Album özgertüw",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albom parametrlerini óñdew",
+  "Upload in progress": "Júklemek davamında",
+  "Album Progress": "Albom jetiskeni",
+  "Adding Photos to Album": "Albumğa suretler qosıw",
+  "Creating New Album": "Taza albom jasaw",
+  "Uploading your photos...": "Siziñ suretleriñizdi júklemek...",
+  "Cancel Upload": "Júklemekti toqtatıw"
 }

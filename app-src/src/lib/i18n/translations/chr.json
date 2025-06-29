@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ᎤᏲ ᎦᏙᎯ ᎠᏅᏏᏓ ᎦᏲᎾ ᎠᏗᏔᎳᏗᏢ. ᎤᏍᏗ ᎠᏗᏔᎳᏗᏢ ᎠᏍᎦᏯ ᎬᏗ ᏗᏎᏊᏩᏛᎲ ᎠᏃᎸᏓᏢ ᎤᏣᎨᏎᏍᏗ.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ᎾᎿ ᏚᏳᏁᎵᏙᏗ ᏗᎧᎿᏩᏛᏍᏗ ᎢᎦ ᎢᎾᏫᏂᎴᎾ ᎬᏗ {{amount}} ᏥᎾᏪᏎᎸᏗ ᎠᎴ ᏓᏂᎸᏫᏍᏗᏍᎬ ᏤᏙᎵᏍᏗᏍᎬ ᏗᎧᎿᏩᏛᏍᏗ.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ᎠᏍᏛᎭ ᎠᎴ ᎩᎳᎦ ᎠᏍᏓᏅᏖᏗᏢ ᎡᎳᏁᎸᎩ ᏗᎾᏓᎴᏢᏍᎦ ᎠᏘᏯᏛ. ᏗᏍᏕᎵᏍᎩ ᎠᏓᏪᎳᏗ ᎦᎷᏨᎮᏗ ᎠᎴ ᎤᎬᏍᏗ ᎠᏎᏍᏙᏗ ᏗᎾᏙᏢᏒ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ᎦᏬᎯᏍᏙᏗ ᎠᎭᏫ ᏗᎧᎳᎩᏛ ᏧᏬᏂᏛ ᎠᏍᎦᏯ ᎤᏣᏘ. ᎠᎭᏫ ᏗᎧᎳᎩᏛ ᏧᏬᏂᏛ ᎤᏪᏘ ᏍᏚᏂᏙᏗ ᏕᏪᏪᎸ ᏍᏛᎭᏊ ᎨᏒ ᏙᎩᎳᏣᏓ ᏍᏚᏂᏙᏗ ᎠᎾᏟᏍᏙᏗ ᎨᏒ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ᎦᏬᎯᏍᏙᏗ ᎠᎭᏫ ᏗᎧᎳᎩᏛ ᏧᏬᏂᏛ ᎠᏍᎦᏯ ᎤᏣᏘ. ᎠᎭᏫ ᏗᎧᎳᎩᏛ ᏧᏬᏂᏛ ᎤᏪᏘ ᏍᏚᏂᏙᏗ ᏕᏪᏪᎸ ᏍᏛᎭᏊ ᎨᏒ ᏙᎩᎳᏣᏓ ᏍᏚᏂᏙᏗ ᎠᎾᏟᏍᏙᏗ ᎨᏒ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ᏗᏂᎳᏫᏍᏓᏁᏗ ᏚᎾᏙᏢᏁᏗ ᎾᎿ ᎠᎴ, ᏍᏩᏰᎳᏍᏗ ᏕᏍᏆᏞᏍᏗ ᎾᎯᏳ ᏗᏂᏍᏚᏓᎸᏗ ᎾᎯᏳ ᏗᏣᏓᏢᏍᏔᏅᎯ ᏥᏌ ᎠᎴ ᏚᏳᏩᏛᎲ ᏂᎦᎥ ᎠᎴ ᎤᏲᎢ ᏗᏓᏓᏩᏛᏍᏗ ᎾᎯᏳ ᏥᏌ ᏚᏳᏩᏛᎲ ᎠᎴ.<br><br>ᏧᎵᏍᏓᏁᏗ ᎦᏙᎯ ᎠᎴ ᏗᏓᏓᏩᏛᏍᏗ ᎦᏙᎯ ᎢᏯᏛᏁᎯ:",
+  "Edit": "ᏗᎪᏪᎳᏅ",
+  "Edit Album": "ᏗᏘᏍᏗ ᏗᎪᏪᎳᏅ",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ᏗᏘᏍᏗ ᏗᏍᏗᏆᎶᏍᏓᏁᏟ ᎦᏫᏚᎯ",
+  "Upload in progress": "ᎦᎵᎪᎢ ᎦᎸᎳᏗ ᎯᎠ",
+  "Album Progress": "ᏗᏘᏍᏗ ᎠᎾᏓᏛᏅᎢ",
+  "Adding Photos to Album": "ᏗᏘᏍᏗ ᎤᏍᏗ ᎠᏓᏪᎸᏗ",
+  "Creating New Album": "ᎢᏤ ᏗᏘᏍᏗ ᏂᎪᏪᎳ",
+  "Uploading your photos...": "ᎤᏍᏗ ᎧᏂᏌᎳᏗ ᎦᎵᎪᎢ...",
+  "Cancel Upload": "ᎦᎵᎪᎢ ᏗᎦᏉᏙᎢ"
 }

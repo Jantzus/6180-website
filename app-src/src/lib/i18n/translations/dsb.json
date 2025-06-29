@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Někotare fota njejsu se mogli wobźěłaś. Móžośo z wuspěšnje wobźěłanymi fotami pókšacowaś.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Buźośo awtomatiski {{amount}} mjasecnje pśez toś tu płaśeńsku metodu wobcěłowani, jolic ju njezměniśo.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wubjeŕśo plan, kótaryž nejlěpjej wašym trěbam wótpowědujo. Móžośo z opcijow dołojce wubraś abo swójsku sumu zapódaś.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Smy wobglědali, až waša zarědowanka pódžarědowanki wopśimujo. Cośo separatny album za kuždnu pódžarědowanku napóraś alo wšykne ako jaden album źiwaś?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Smy wobglědali, až waša zarědowanka pódžarědowanki wopśimujo. Cośo separatny album za kuždnu pódžarědowanku napóraś alo wšykne ako jaden album źiwaś?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Dla techniskich wobgranicowanjow se masowe ześěgnjenja we mobilnych wobglědowakach njepódpěraju, a někake wideo njemógu se ześěgnuś.<br><br>Aby wšykne fota a wideo naraz ześěgnuł:",
+  "Edit": "Wobźěłać",
+  "Edit Album": "Album wobźěłać",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Nastajenja albuma wobźěłaś",
+  "Upload in progress": "Nagraśe běžy",
+  "Album Progress": "Póstup albuma",
+  "Adding Photos to Album": "Wobrazow k albumoju pśidawaś",
+  "Creating New Album": "Nowy album napóraś",
+  "Uploading your photos...": "Twóje wobrazow se nagrawaju...",
+  "Cancel Upload": "Nagraśe pśetergnuś"
 }

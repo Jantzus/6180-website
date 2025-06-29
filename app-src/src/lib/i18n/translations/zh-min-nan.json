@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ū-kóa siòng-phìⁿ bē-tàng chù-lí. Lí ē-tàng kā sêng-kong chù-lí ê siòng-phìⁿ kè-sio̍k.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Nā-sī lí bô kái chit-ê hù-khoán hong-sek, múi kòe-goe̍h to-ē chū-tōng khiú {{amount}}.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "kám-chióng siōng ha̍h lí ê sū-iàu ê kè-ōe. Lí ē-tàng tī ē-bīn ê soan-chóng lāi-bīn chún, a̍h-sī su-ji̍p chū-tēng ê kim-gia̍h.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Goán tī-tio̍h lí ê tóng-àn-kiáⁿ lāi-bīn ū chú-tóng-àn-kiáⁿ. Lí beh kā ta̍k-ê chú-tóng-àn-kiáⁿ lóng chò chiah-ê siòng-phoe, iah-sī kā in lóng tòng-chò chit-pún siòng-phoe?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Goán tī-tio̍h lí ê tóng-àn-kiáⁿ lāi-bīn ū chú-tóng-àn-kiáⁿ. Lí beh kā ta̍k-ê chú-tóng-àn-kiáⁿ lóng chò chiah-ê siòng-phoe, iah-sī kā in lóng tòng-chò chit-pún siòng-phoe?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "In-ūi ki-su̍t hān-chè, chhiúⁿ-ki phòng-būn-khì bô chi-chhî phe-liōng hā-chài, koh-ū chiah-kóa iáⁿ-phìⁿ mā ū-khó-lêng bē-tàng hā-chài.<br><br>Beh chit-pái hā-chài chiah-kóa siòng-phìⁿ kap iáⁿ-phìⁿ, chhiáⁿ:",
+  "Edit": "Pian-chi̍p",
+  "Edit Album": "Pian-chi̍p siòng-phò͘",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Pian-chi sio̍h-pho͘ siat-tēng",
+  "Upload in progress": "Chiūⁿ-thuân tī chìn-hêng",
+  "Album Progress": "Sio̍h-pho͘ chìn-tō͘",
+  "Adding Photos to Album": "Kā siòng-phìⁿ ka tī sio̍h-pho͘",
+  "Creating New Album": "Kàu sin ê sio̍h-pho͘",
+  "Uploading your photos...": "Teh chiūⁿ-thuân lí ê siòng-phìⁿ...",
+  "Cancel Upload": "Chhui-siau chiūⁿ-thuân"
 }

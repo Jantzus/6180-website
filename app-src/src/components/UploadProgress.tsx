@@ -99,7 +99,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
         return allFilesComplete ? t('Processing complete') : t('File processing');
       case 'uploading':
       default:
-        return allFilesComplete ? t('Upload complete') : t('Upload progress');
+        return allFilesComplete ? t('Upload complete') : t('Upload in progress');
     }
   };
 
@@ -226,7 +226,7 @@ export const UploadProgress: React.FC<UploadProgressProps> = ({
             marginBottom: 6 
           }}>
             <span style={{ fontSize: 14, color: "#555" }}>
-              {t('Overall progress')}: {Math.round(displayProgress)}%
+              {t('Album Progress')}: {Math.round(displayProgress)}%
             </span>
             <span style={{ fontSize: 14, color: "#555" }}>
               {t('Complete')}: {displayComplete} / {displayTotal} 

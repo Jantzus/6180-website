@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Jõñõul photo rej jab kōnaan process. Kwōj kōnaan bar juon ko photo ro process lok.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Kwōj naaj bil-tok {{amount}} kōjjet ñan an jikin kōnaan em wōt jen kwōj jino oktak.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kōmman plan eo ekkar melā ṇa aikuj ro ām. Kwōj kōnke kōmman jān nā option kein ioon e kōnke kōmman nien ām.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Komij emman ilo folder an rej lōñ subfolder ro ien. Kwōj kōnke kommane album ettolōk ñan detet in subfolder, ak kwōj kōnke kommane ir katak eolōk wōn album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Komij emman ilo folder an rej lōñ subfolder ro ien. Kwōj kōnke kommane album ettolōk ñan detet in subfolder, ak kwōj kōnke kommane ir katak eolōk wōn album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "An technical limitations ra, bulk downloads ilo mobile browsers ejjelọk ra support kōn, im juon video rein ejjelọk ra kōmman download.<br><br>In download jerbal photo ro video wōt:",
+  "Edit": "Kapeel",
+  "Edit Album": "Kapeel album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Kōjerbali album ko",
+  "Upload in progress": "Upload ej bók",
+  "Album Progress": "Album em progress",
+  "Adding Photos to Album": "Ejjerbal jikin album",
+  "Creating New Album": "Wōnmanlọk album kappok",
+  "Uploading your photos...": "Kejjerbal an jikin...",
+  "Cancel Upload": "Kōjatōl upload"
 }

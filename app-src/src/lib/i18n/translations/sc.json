@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Calesisisias fotografias non ant podidu èssere protzessadas. Podes sighire cun sas fotografias protzessadas a bene.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "As a èssire carrigadu automaticamente {{amount}} cada mese cun custu metòdu de pagamentu si no lu cambiache.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ischerta su pranu chi s'ammustat megius a sas necesidades tuas. Podes seberare intre sas optziones de bassu o insertare una cantidade personalizada.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Amus bidu chi sa cartella tua tenet suttacartedlas. Boles creare unu àlbum separadu pro sa cussenya suttacartedla, o trattare totu como unu àlbum issolu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Amus bidu chi sa cartella tua tenet suttacartedlas. Boles creare unu àlbum separadu pro sa cussenya suttacartedla, o trattare totu como unu àlbum issolu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Pro limitatziones tènnicas, is download de massa in is navigadores mòbiles non sunt suportados, e calchi video podet non èssere iscarrigadu.<br><br>Pro iscarrigare totu is fotos e is video in una borta:",
+  "Edit": "Modìfica",
+  "Edit Album": "Modìfica album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Modìfica is cunfiguratzionis de s'album",
+  "Upload in progress": "Su carrigamentu est andende",
+  "Album Progress": "Progressu de s'album",
+  "Adding Photos to Album": "Agiunghende fotos a s'album",
+  "Creating New Album": "Creende album nou",
+  "Uploading your photos...": "Carrighende is fotos tuas...",
+  "Cancel Upload": "Annullare su carrigamentu"
 }

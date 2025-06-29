@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Nokre bilete kunne ikkje behandlast. Du kan fortsetja med bileta som vart behandla.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du vil bli automatisk fakturert {{amount}} månedleg på denne betalingsmåten med mindre du endrar den.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Vel planen som passar best til behova dine. Du kan velje frå vala nedanfor eller skrive inn eige sum.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vi la merke til at mappa di inneheld undermapper. Vil du lage eit eige album for kvar undermappe, eller behandle dei alle som eitt album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vi la merke til at mappa di inneheld undermapper. Vil du lage eit eige album for kvar undermappe, eller behandle dei alle som eitt album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "På grunn av tekniske avgrensingar er ikkje samlasta nedlastingar støtta i mobile nettlesarar, og nokre videoar vil kanskje ikkje lastast ned.<br><br>For å lasta ned alle bilete og videoar samstundes:",
+  "Edit": "Endre",
+  "Edit Album": "Endre album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Rediger albuminnstillingar",
+  "Upload in progress": "Opplasting pågår",
+  "Album Progress": "Albumframgang",
+  "Adding Photos to Album": "Legg til bilete i album",
+  "Creating New Album": "Lager nytt album",
+  "Uploading your photos...": "Lastar opp bileta dine...",
+  "Cancel Upload": "Avbryt opplasting"
 }

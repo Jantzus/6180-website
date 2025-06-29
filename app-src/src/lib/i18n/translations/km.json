@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "រូបថតមួយចំនួនមិនអាចដំណើរការបាន។ អ្នកអាចបន្តជាមួយរូបថតដែលដំណើរការបានជោគជ័យ។",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "អ្នកនឹងត្រូវបានគិតប្រាក់{{amount}} ជារៀងរាល់ខែដោយស្វ័យប្រវត្តិនៅលើវិធីសាស្រ្តបង់ប្រាក់នេះ លុះត្រាតែអ្នកផ្លាស់ប្តូរវា។",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ជ្រើសរើសគម្រោងដែលសមនឹងតម្រូវការរបស់អ្នកបំផុត។ អ្នកអាចជ្រើសរើសពីជម្រើសខាងក្រោម ឬបញ្ចូលចំនួនផ្ទាល់ខ្លួន។",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "យើងបានកត់សម្គាល់ឃើញថាថតឯកសាររបស់អ្នកមានថតរង។ តើអ្នកចង់បង្កើតអាល់ប៊ុមដាច់ដោយឡែកសម្រាប់ថតរងនីមួយៗ ឬព្យាបាលវាទាំងអស់ជាអាល់ប៊ុមមួយ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "យើងបានកត់សម្គាល់ឃើញថាថតឯកសាររបស់អ្នកមានថតរង។ តើអ្នកចង់បង្កើតអាល់ប៊ុមដាច់ដោយឡែកសម្រាប់ថតរងនីមួយៗ ឬព្យាបាលវាទាំងអស់ជាអាល់ប៊ុមមួយ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ដោយសារតែការកំណត់បច្ចេកទេស ការទាញយកជាច្រើននៅលើកម្មវិធីរុករកតាមទូរសព្ទមិនត្រូវបានគាំទ្រ ហើយវីដេអូមួយចំនួនអាចនឹងមិនទាញយកបាន។<br><br>ដើម្បីទាញយករូបថត និងវីដេអូទាំងអស់ក្នុងពេលតែមួយ សូម:",
+  "Edit": "កែប្រែ",
+  "Edit Album": "កែប្រែអាល់ប៊ុម",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "កែសម្រួលការកំណត់អាល់ប៊ុម",
+  "Upload in progress": "ការផ្ទុកឡើងកំពុងដំណើរការ",
+  "Album Progress": "ការវិវឌ្ឍន៍អាល់ប៊ុម",
+  "Adding Photos to Album": "បន្ថែមរូបភាពទៅអាល់ប៊ុម",
+  "Creating New Album": "កំពុងបង្កើតអាល់ប៊ុមថ្មី",
+  "Uploading your photos...": "កំពុងផ្ទុកឡើងរូបភាពរបស់អ្នក...",
+  "Cancel Upload": "បោះបង់ការផ្ទុកឡើង"
 }

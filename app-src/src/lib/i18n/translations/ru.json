@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Некоторые фотографии не удалось обработать. Вы можете продолжить с успешно обработанными фотографиями.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "С вас будет автоматически списываться {{amount}} ежемесячно с этого способа оплаты, если вы его не измените.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Выберите план, который лучше всего соответствует вашим потребностям. Вы можете выбрать из вариантов ниже или ввести собственную сумму.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мы заметили, что ваша папка содержит подпапки. Хотите ли вы создать отдельный альбом для каждой подпапки или рассматривать их все как один альбом?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мы заметили, что ваша папка содержит подпапки. Хотите ли вы создать отдельный альбом для каждой подпапки или рассматривать их все как один альбом?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Из-за технических ограничений массовые загрузки в мобильных браузерах не поддерживаются, и некоторые видео могут не загрузиться.<br><br>Чтобы скачать все фото и видео сразу:",
+  "Edit": "Править",
+  "Edit Album": "Править альбом",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Редактировать настройки альбома",
+  "Upload in progress": "Загрузка выполняется",
+  "Album Progress": "Прогресс альбома",
+  "Adding Photos to Album": "Добавление фотографий в альбом",
+  "Creating New Album": "Создание нового альбома",
+  "Uploading your photos...": "Загружаются ваши фотографии...",
+  "Cancel Upload": "Отменить загрузку"
 }

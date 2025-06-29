@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ገለ ፎቶታት ክቕየሩ ኣይከኣሉን። ብዓወት ዝተቐየሩ ፎቶታት ይዝከም ከም ዝቕጽል ትኽእል ኢኻ።",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ንዝህ ናይ ክፍሊት ኣገባብ ዘይቀይርኻ እንተኾንካ ብወሩ {{amount}} ቀደም ሓሳብ ክወሰድ ኢዩ።",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ድሌትኩም ምሳ ዝበለጸ ዝመስል ውጥን ምረጹ። ካብቶም ኣብ ታሕቲ ዘለዉ ኣማራጺታት ክትመርጹ ኣሎኹም ወይ ናትኹም ሓደ ገንዘብ ክትገብሩ ትኽእሉ።",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ፋይልኻ ንኡስ ፋይላት ከም ዘለዎ ተዓዚብናዮ። ንነፍሲ ወከፍ ንኡስ ፋይል ናይ ግቡእ ኣልበም ክትፈጥር ትደሊ ድዩ፣ ወይስ ንኹሎም ከም ሓደ ኣልበም ክትሓስቦም ትደሊ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ፋይልኻ ንኡስ ፋይላት ከም ዘለዎ ተዓዚብናዮ። ንነፍሲ ወከፍ ንኡስ ፋይል ናይ ግቡእ ኣልበም ክትፈጥር ትደሊ ድዩ፣ ወይስ ንኹሎም ከም ሓደ ኣልበም ክትሓስቦም ትደሊ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ቴክኒካዊ ገደባት ምኽንያት፡ ኣብ ሞባይል ብራውዘራት ብዝሒ ዳውንሎድ ዝድገፍ አይኮነን፡ ገለ ቪድዮታት እውን ክዳውንሎድ የይክእሉን።<br><br>ኩሎም ፎቶታትን ቪድዮታትን ብሓንሳብ ንምዳውንሎድ፡",
+  "Edit": "ምእራም",
+  "Edit Album": "አልበም ምእራም",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "የአልበም ቅንብሮች አርትኦት",
+  "Upload in progress": "ምስል መላክ በሂደት ላይ",
+  "Album Progress": "የአልበም እድገት",
+  "Adding Photos to Album": "ናብ አልበም ስእሊ ምውሳእ",
+  "Creating New Album": "ሓዲሽ ኣልበም ምፍጣር",
+  "Uploading your photos...": "ስእልኻ ምስእላክ...",
+  "Cancel Upload": "ምስል መላክ ሰርዝ"
 }

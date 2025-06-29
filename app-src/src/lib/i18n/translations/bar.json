@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "A poor Fotos han ned kenna bearrbeit werdn. Du kannst weida macha mid de erfolgreich bearrbeittn Fotos.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Dir werdts automatisch {{amount}} monatlich auf der Zahlungsmethode verrechnet wenns ned änderts.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wähl den Plan aus, der am bestn zu deinen Bedürfnisse passt. Du kannst aus de Optionen unt auswähln oder an eigenen Betrag eingeben.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir ham gsehn dass dein Ordner Unterordner hat. Willst für jedn Unterordner an eigens Album machn oder alle zsamm als oas Album behandln?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir ham gsehn dass dein Ordner Unterordner hat. Willst für jedn Unterordner an eigens Album machn oder alle zsamm als oas Album behandln?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Weng technische Beschränkungen wern Massn-Downloads auf mobile Browser ned unterstützt, und a poor Videos kennan vielleicht ned olagedn wern.<br><br>Um olle Fotis und Videos auf amoi z'lodn, bittsche:",
+  "Edit": "Bearbeiten",
+  "Edit Album": "Album bearbeiten",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album-Einstellunga bearbeiten",
+  "Upload in progress": "Upload lafft",
+  "Album Progress": "Album-Fortschritt",
+  "Adding Photos to Album": "Bilder zum Album dazuagebn",
+  "Creating New Album": "Neis Album erstön",
+  "Uploading your photos...": "Deine Bilder werdn aufegladn...",
+  "Cancel Upload": "Upload abbrechn"
 }

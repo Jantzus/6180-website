@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ไม่สามารถประมวลผลภาพบางภาพได้ คุณสามารถดำเนินการต่อกับภาพที่ประมวลผลสำเร็จแล้ว",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "คุณจะถูกเรียกเก็บเงิน {{amount}} รายเดือนโดยอัตโนมัติในวิธีการชำระเงินนี้ เว้นแต่คุณจะเปลี่ยนแปลง",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "เลือกแผนที่เหมาะสมที่สุดกับความต้องการของคุณ คุณสามารถเลือกจากตัวเลือกด้านล่างหรือป้อนจำนวนเงินที่กำหนดเอง",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "เราสังเกตเห็นว่าโฟลเดอร์ของคุณมีโฟลเดอร์ย่อย คุณต้องการสร้างอัลบั้มแยกสำหรับแต่ละโฟลเดอร์ย่อยหรือถือว่าทั้งหมดเป็นอัลบั้มเดียว?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "เราสังเกตเห็นว่าโฟลเดอร์ของคุณมีโฟลเดอร์ย่อย คุณต้องการสร้างอัลบั้มแยกสำหรับแต่ละโฟลเดอร์ย่อยหรือถือว่าทั้งหมดเป็นอัลบั้มเดียว?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "เนื่องจากข้อจำกัดทางเทคนิค การดาวน์โหลดจำนวนมากในเบราว์เซอร์มือถือไม่ได้รับการสนับสนุน และวิดีโอบางรายการอาจดาวน์โหลดไม่ได้<br><br>หากต้องการดาวน์โหลดรูปภาพและวิดีโอทั้งหมดพร้อมกัน:",
+  "Edit": "แก้ไข",
+  "Edit Album": "แก้ไขอัลบั้ม",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "แก้ไขการตั้งค่าอัลบั้ม",
+  "Upload in progress": "กำลังอัปโหลด",
+  "Album Progress": "ความคืบหน้าของอัลบั้ม",
+  "Adding Photos to Album": "การเพิ่มรูปภาพลงในอัลบั้ม",
+  "Creating New Album": "กำลังสร้างอัลบั้มใหม่",
+  "Uploading your photos...": "กำลังอัปโหลดรูปภาพของคุณ...",
+  "Cancel Upload": "ยกเลิกการอัปโหลด"
 }

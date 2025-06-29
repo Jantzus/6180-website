@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Joitakin kuvia ei voitu käsitellä. Voit jatkaa onnistuneesti käsitellyillä kuvilla.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sinua laskutetaan automaattisesti {{amount}} kuukausittain tästä maksutavasta, ellet muuta sitä.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Valitse tarpeisiisi parhaiten sopiva suunnitelma. Voit valita alla olevista vaihtoehdoista tai syöttää mukautetun summan.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Havaitsimme, että kansiossasi on alikansioita. Haluaisitko luoda erillisen albumin jokaiselle alikansialle vai käsitellä niitä kaikkia yhtenä albumina?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Havaitsimme, että kansiossasi on alikansioita. Haluaisitko luoda erillisen albumin jokaiselle alikansialle vai käsitellä niitä kaikkia yhtenä albumina?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Teknisten rajoitusten vuoksi joukkolataukset mobiiliselaimissa eivät ole tuettuja, ja jotkin videot eivät ehkä lataudu.<br><br>Ladataksesi kaikki kuvat ja videot kerralla, ole hyvä:",
+  "Edit": "Muokkaa",
+  "Edit Album": "Muokkaa albumia",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Muokkaa albumin asetuksia",
+  "Upload in progress": "Lataus käynnissä",
+  "Album Progress": "Albumin edistyminen",
+  "Adding Photos to Album": "Kuvien lisääminen albumiin",
+  "Creating New Album": "Luodaan uutta albumia",
+  "Uploading your photos...": "Ladataan kuviasi...",
+  "Cancel Upload": "Peruuta lataus"
 }

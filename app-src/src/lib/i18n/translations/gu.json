@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "કેટલાક ફોટા પ્રોસેસ કરી શકાયા નથી. તમે સફળતાપૂર્વક પ્રોસેસ થયેલા ફોટા સાથે આગળ વધી શકો છો.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "જ્યાં સુધી તમે તેને બદલશો નહીં ત્યાં સુધી આ ચુકવણી પદ્ધતિ પર તમને આપમેળે માસિક {{amount}} બિલ આવશે.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "તમારી જરૂરિયાતોને શ્રેષ્ઠ રીતે અનુકૂળ આવતી યોજના પસંદ કરો. તમે નીચેના વિકલ્પોમાંથી પસંદ કરી શકો છો અથવા કસ્ટમ રકમ દાખલ કરી શકો છો.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "અમે નોંધ્યું છે કે તમારા ફોલ્ડરમાં સબફોલ્ડર છે. શું તમે દરેક સબફોલ્ડર માટે અલગ આલ્બમ બનાવવા માગો છો, અથવા તે બધાને એક આલ્બમ તરીકે ગણવા માગો છો?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "અમે નોંધ્યું છે કે તમારા ફોલ્ડરમાં સબફોલ્ડર છે. શું તમે દરેક સબફોલ્ડર માટે અલગ આલ્બમ બનાવવા માગો છો, અથવા તે બધાને એક આલ્બમ તરીકે ગણવા માગો છો?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "તકનીકી મર્યાદાઓને કારણે, મોબાઇલ બ્રાઉઝર્સ પર બલ્ક ડાઉનલોડ્સ સપોર્ટેડ નથી, અને કેટલાક વિડિયો ડાઉનલોડ ન પણ થાય.<br><br>બધા ફોટો અને વિડિયો એક સાથે ડાઉનલોડ કરવા માટે, મહેરબાની કરીને:",
+  "Edit": "સંપાદન",
+  "Edit Album": "આલ્બમ સંપાદન",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "આલ્બમ સેટિંગ્સ સંપાદિત કરો",
+  "Upload in progress": "અપલોડ ચાલુ છે",
+  "Album Progress": "આલ્બમ પ્રગતિ",
+  "Adding Photos to Album": "આલ્બમમાં ફોટા ઉમેરવા",
+  "Creating New Album": "નવું આલ્બમ બનાવી રહ્યું છે",
+  "Uploading your photos...": "તમારા ફોટા અપલોડ કરી રહ્યું છે...",
+  "Cancel Upload": "અપલોડ રદ કરો"
 }

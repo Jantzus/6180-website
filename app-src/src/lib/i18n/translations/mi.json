@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Kāore i taea ētahi whakaahua te whakatikatika. Ka taea e koe te whakamau me ngā whakaahua i whakatikatika pai ai.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ka utua koe {{amount}} ki tenei tahua utu hēnei marama hēnei marama, kore ai koe e whakarereke ai.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kōwhiri te mahere he pai rawa mō ōu hiahia. Ka taea e koe te kōwhiri i ngā kōwhiringa nei rānei rānei he tahua ritenga rānei.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kua kitea e mātou he raina iti kei roto i tō kōpaki. He hiahia koe ki te hanga pukapuka raina tawhiti mō ia raina iti, kōwhiringa rānei ki te whakarite katoa hei pukapuka kotahi?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kua kitea e mātou he raina iti kei roto i tō kōpaki. He hiahia koe ki te hanga pukapuka raina tawhiti mō ia raina iti, kōwhiringa rānei ki te whakarite katoa hei pukapuka kotahi?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Nā ngā herenga hangarau, kāore nga tikiake rahi ki ngā kaitirotiro taputapu ā-ringa e tautokona, ā he reo whakaata hoki pea kāore e tikiake.<br><br>Hei tiki i nga whakaahua katoa me nga reo whakaata i te taima kotahi:",
+  "Edit": "Whakarerekē",
+  "Edit Album": "Whakarerekē kōpaki",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Whakatikatika ngā tautuhinga kōpaki",
+  "Upload in progress": "Tukuake nei",
+  "Album Progress": "Ahunga kōpaki",
+  "Adding Photos to Album": "Te tāpiri whakaahua ki te kōpaki",
+  "Creating New Album": "Te hanga kōpaki hou",
+  "Uploading your photos...": "Te tuku whakaahua...",
+  "Cancel Upload": "Whakakore tukuake"
 }

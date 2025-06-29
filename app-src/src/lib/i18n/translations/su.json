@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sababaraha poto teu tiasa diolah. Anjeun tiasa neruskeun sareng poto anu parantos hasil diolah.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Anjeun bakal otomatis ditagihkeun {{amount}} bulanan ku metode pamayaran ieu iwal mun anjeun ngarobah éta.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilih rencana anu pangalusna cocog sareng kabutuhan anjeun. Anjeun tiasa milih tina pilihan di handap atanapi lebetkeun jumlah khusus.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami ningali yén map anjeun ngandung submap. Naha anjeun hoyong ngadamel album anu misah pikeun unggal submap, atanapi nganggap sadayana salaku hiji album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami ningali yén map anjeun ngandung submap. Naha anjeun hoyong ngadamel album anu misah pikeun unggal submap, atanapi nganggap sadayana salaku hiji album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Alatan watesna téknis, unduh bulk dina panyungsi sélulér henteu dirojong, sareng sababaraha pidéo tiasa henteu diunduh.<br><br>Pikeun ngunduh sadaya poto sareng pidéo sakaligus:",
+  "Edit": "Édit",
+  "Edit Album": "Édit album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Édit setélan album",
+  "Upload in progress": "Upload keur lumangsung",
+  "Album Progress": "Kamajuan album",
+  "Adding Photos to Album": "Nambih poto ka album",
+  "Creating New Album": "Nyieun album anyar",
+  "Uploading your photos...": "Ngunggah poto anjeun...",
+  "Cancel Upload": "Bolaykeun upload"
 }

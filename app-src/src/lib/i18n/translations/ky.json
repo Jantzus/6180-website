@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Кээ бир сүрөттөр иштетилбей калды. Ийгиликтүү иштетилген сүрөттөр менен улантсаңыз болот.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Эгер бул төлөм ыкмасын өзгөртпөсөңүз, ай сайын {{amount}} автоматтык түрдө чегилет.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Керектөөлөрүңүзгө эң ылайыктуу пландын тандаңыз. Төмөнкү варианттардан тандасаңыз же өзүңүздүн суммаңызды киргизе аласыз.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Сиздин папканызда суб-папкалар бар экенин байкадык. Ар бир суб-папка үчүн өзүнчө альбом түзүүнү каалайсызбы же баарын бир альбом катары карагыңыз келеби?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Сиздин папканызда суб-папкалар бар экенин байкадык. Ар бир суб-папка үчүн өзүнчө альбом түзүүнү каалайсызбы же баарын бир альбом катары карагыңыз келеби?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникалык чектөөлөрдөн улам, мобилдик браузерлерде топтом жүктөө колдоого алынбайт жана кээ бир видеолор жүктөлбөшү мүмкүн.<br><br>Бардык сүрөттөрдү жана видеолорду бир эле учурда жүктөп алуу үчүн:",
+  "Edit": "Оңдоо",
+  "Edit Album": "Альбом оңдоо",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом параметрлерин оңдоо",
+  "Upload in progress": "Жүктөө улануда",
+  "Album Progress": "Альбом прогресси",
+  "Adding Photos to Album": "Альбомго сүрөттөрдү кошуу",
+  "Creating New Album": "Жаңы альбом түзүү",
+  "Uploading your photos...": "Сиздин сүрөттөрүңүз жүктөлүүдө...",
+  "Cancel Upload": "Жүктөөнү токтотуу"
 }

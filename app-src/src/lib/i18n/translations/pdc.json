@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Eeniche Biller hen net verarbeit werre kenne. Du kannscht weider mache mit de Biller wu gut verarbeit wore sin.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du werscht automatisch {{amount}} alle Mond uff denne Zahlungsmeethod verechent wanns net ennersch.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wehle de Plan aus dee am bescht zu deine Bedierfniss basst. Du kannscht aus de Optione uff de Boddm wähle odder e eije Betrag eijäwe.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir hen gemarrickd ass dei Ordner Unnerdler hot. Wit du fer yeeder Unnerdler en eije Album mache, odder sie all als ee Album behannle?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir hen gemarrickd ass dei Ordner Unnerdler hot. Wit du fer yeeder Unnerdler en eije Album mache, odder sie all als ee Album behannle?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Wegne technische Beschränkungen warre Masse-Downloads uff mobile Browser net unnerschdidzt, un manche Videos kenne meeglich net runnerglade warre.<br><br>Um alli Bilder un Videos uff eemol ze lade:",
+  "Edit": "Ennere",
+  "Edit Album": "Album ennere",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album-Eestellinge ennere",
+  "Upload in progress": "Upload am lafe",
+  "Album Progress": "Album-Fortschritt",
+  "Adding Photos to Album": "Bilder zum Album dezu donn",
+  "Creating New Album": "Nei Album schaffe",
+  "Uploading your photos...": "Dei Bilder warre ufgelade...",
+  "Cancel Upload": "Upload ennere"
 }

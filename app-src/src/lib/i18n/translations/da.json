@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Nogle billeder kunne ikke behandles. Du kan fortsætte med de billeder, der blev behandlet korrekt.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du vil automatisk blive opkrævet {{amount}} månedligt på denne betalingsmetode, medmindre du ændrer den.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Vælg den plan, der bedst passer til dine behov. Du kan vælge fra mulighederne nedenfor eller indtaste et brugerdefineret beløb.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vi har bemærket, at din mappe indeholder undermapper. Vil du oprette et separat album for hver undermappe, eller behandle dem alle som ét album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vi har bemærket, at din mappe indeholder undermapper. Vil du oprette et separat album for hver undermappe, eller behandle dem alle som ét album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "På grund af tekniske begrænsninger understøttes massedownloads ikke i mobile browsere, og nogle videoer downloader muligvis ikke.<br><br>For at downloade alle billeder og videoer på én gang, venligst:",
+  "Edit": "Rediger",
+  "Edit Album": "Rediger album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Rediger album indstillinger",
+  "Upload in progress": "Upload i gang",
+  "Album Progress": "Album fremskridt",
+  "Adding Photos to Album": "Tilføjer billeder til album",
+  "Creating New Album": "Opretter nyt album",
+  "Uploading your photos...": "Uploader dine billeder...",
+  "Cancel Upload": "Annuller upload"
 }

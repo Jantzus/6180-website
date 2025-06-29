@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Фотогъэхэр щыIэкъым прохэсс ящIэным. Гъэсэныгъэм ыкъэфэгъэгъуа фотогъэхэм ыкъэлъытэм папщIэ.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Сыт {{amount}} масэкIэ автоматически хэлъыкъуэкIэ, идэжын егъэджэкъуэкIэрэ.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Уи лъэпкъым кӀыхьащэ план зэхэзылъ къыхэх. Мыщ къыпэфӀэщагъэхэм щыщ зыхэхьэжын плъэкӀыщт е пшэхэр итхьэм къамэ улъэс шӀугъуэу къэтхь.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "УипэблэкIым субпапкэу иIащэмэ хъурыт. Непэ субпапкэм зэ пшэхэр альбом хэгъэхьын плъэкIыщта, яхьэлбо псом хуэгъэкIуэ альбом хэгъэхьын плъэкIыщта?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "УипэблэкIым субпапкэу иIащэмэ хъурыт. Непэ субпапкэм зэ пшэхэр альбом хэгъэхьын плъэкIыщта, яхьэлбо псом хуэгъэкIуэ альбом хэгъэхьын плъэкIыщта?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникэ хабзэхэм къыщыгъуэм, мобильнэ браузерхэм щыщ къетхыкI къигъэсэбэпхэр къэгъуэттэйхэп, видеохэр зэрыгъэхэр зэрыщытхыкIыфи.<br><br>Сурэтхэрэ видеохэрэ псори зы щапхъэ къытхыкIыну:",
+  "Edit": "Зэтххэ",
+  "Edit Album": "Альбом зэтххэ",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом къэгъэлъагъуныгъэхэр къэухьурэ",
+  "Upload in progress": "ТхыгъэкӀыныгъэ кӀэлъыкӀорэ",
+  "Album Progress": "Альбом ахъолэбзэрэр",
+  "Adding Photos to Album": "Альбом ышъхьафэхэр дэтын",
+  "Creating New Album": "Альбом къэтхъурэ",
+  "Uploading your photos...": "Шъхьафэхэр къытхыгъэкӀыныгъэ...",
+  "Cancel Upload": "ТхыгъэкӀыныгъэ гъэтэджын"
 }

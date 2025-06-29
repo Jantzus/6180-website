@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Varesave kher našti sas te keren xulipe. Tu šaj ačhes pale khere so kerde mizhe xulipe.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Tu avesa automatic vašt bill {{amount}} sako šon pe kothe payment method ašti na save keres o.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Bašav oda plano savo mai šukar phirel tuke. šaj bašaves le opcijonendyr telal vai te čhives jekh šukar amor.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Dikhlem hoj tiro folder si le subfolderencar. Kames te kerel vaš album vaš folder, vai te kerel le savorencar jekh album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Dikhlem hoj tiro folder si le subfolderencar. Kames te kerel vaš album vaš folder, vai te kerel le savorencar jekh album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Technicitko vazbipaskiri palgal, pharipen downloadura dre mobile browserendar nane kerdine, thaj varikane videourja na šaj te sikaven.<br><br>Te sikaves sa slikipi thaj videourji jekhetane:",
+  "Edit": "Zhuvel",
+  "Edit Album": "Zhuvel album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Vas album paramètri",
+  "Upload in progress": "Upload o džal",
+  "Album Progress": "Album o napredok",
+  "Adding Photos to Album": "Bichavas album ande",
+  "Creating New Album": "Kerdol nevo album",
+  "Uploading your photos...": "Kerdol tiro bichavas...",
+  "Cancel Upload": "Kerdol zuralo upload"
 }

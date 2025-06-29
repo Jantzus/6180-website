@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Bazı fotoğraflar işlenemedi. Başarıyla işlenen fotoğraflarla devam edebilirsiniz.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bu ödeme yöntemini değiştirmediğiniz sürece aylık {{amount}} otomatik olarak tahsil edilecektir.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "İhtiyaçlarınıza en uygun planı seçin. Aşağıdaki seçenekler arasından seçim yapabilir veya özel bir miktar girebilirsiniz.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Klasörünüzün alt klasörler içerdiğini fark ettik. Her alt klasör için ayrı albüm oluşturmak mı istiyorsunuz yoksa hepsini tek albüm olarak mı değerlendirmek istiyorsunuz?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Klasörünüzün alt klasörler içerdiğini fark ettik. Her alt klasör için ayrı albüm oluşturmak mı istiyorsunuz yoksa hepsini tek albüm olarak mı değerlendirmek istiyorsunuz?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Teknik kısıtlamalar nedeniyle, mobil tarayıcılarda toplu indirmeler desteklenmez ve bazı videolar indirilmeyebilir.<br><br>Tüm fotoğrafları ve videoları aynı anda indirmek için:",
+  "Edit": "Düzenle",
+  "Edit Album": "Albümü düzenle",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albüm ayarlarını düzenle",
+  "Upload in progress": "Yükleme devam ediyor",
+  "Album Progress": "Albüm ilerlemesi",
+  "Adding Photos to Album": "Albüme fotoğraf ekleme",
+  "Creating New Album": "Yeni albüm oluşturuluyor",
+  "Uploading your photos...": "Fotoğraflarınız yükleniyor...",
+  "Cancel Upload": "Yüklemeyi iptal et"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Guon foto's koene net ferwurke wurde. Jo kinne fierder gean mei de suksesfol ferwurke foto's.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jo wurde automatysk {{amount}} moanliks by dizze betellingsmetoade ôfskreaun, útsein jo feroarje it.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kies it plan dat it bêste by jo behoeften past. Jo kinne kieze út de opsjes hjirûnder of in oanpast bedrach ynfiere.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wy hawwe sjoen dat jo map submappen befettet. Wolle jo in apart album meitsje foar elke submap, of se allegear as ien album behannеlje?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wy hawwe sjoen dat jo map submappen befettet. Wolle jo in apart album meitsje foar elke submap, of se allegear as ien album behannеlje?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Fanwegen technyske beheiningen wurde bulkdownloads yn mobile browsers net stipe, en guon fideo's kinne mooglik net downloade wurde.<br><br>Om alle foto's en fideo's yn ien kear te downloaden, asjebleaft:",
+  "Edit": "Bewurkje",
+  "Edit Album": "Album bewurkje",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albumynstellingen bewurkje",
+  "Upload in progress": "Upload oan'e gong",
+  "Album Progress": "Albumfoargong",
+  "Adding Photos to Album": "Foto's oan album tafoegje",
+  "Creating New Album": "Nij album oanmeitsje",
+  "Uploading your photos...": "Jo foto's wurde opladen...",
+  "Cancel Upload": "Upload ôfbrekke"
 }

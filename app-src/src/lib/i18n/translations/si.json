@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "සමහර ඡායාරූප සැකසිය නොහැකි විය. සාර්ථකව සැකසූ ඡායාරූප සමඟ ඔබට ඉදිරියට යා හැක.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ඔබ එය වෙනස් නොකරන්නේ නම් මෙම ගෙවීම් ක්‍රමයේ මාසිකව {{amount}} ස්වයංක්‍රීයව බිල් කරනු ලැබේ.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ඔබගේ අවශ්‍යතාවන්ට වඩාත්ම සුදුසු සැලැස්ම තෝරන්න. ඔබට පහත විකල්පවලින් තෝරාගත හෝ අභිරුචි ප්‍රමාණයක් ඇතුල් කළ හැකිය.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ඔබගේ ෆෝල්ඩරයේ උප ෆෝල්ඩර ඇති බව අපි දුටුවෙමු. ඔබට සෑම උප ෆෝල්ඩරයක් සඳහාම වෙනම ඇල්බමයක් නිර්මාණය කිරීමට අවශ්‍යද නැතහොත් ඒ සියල්ල එක් ඇල්බමයක් ලෙස සැලකීමට අවශ්‍යද?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ඔබගේ ෆෝල්ඩරයේ උප ෆෝල්ඩර ඇති බව අපි දුටුවෙමු. ඔබට සෑම උප ෆෝල්ඩරයක් සඳහාම වෙනම ඇල්බමයක් නිර්මාණය කිරීමට අවශ්‍යද නැතහොත් ඒ සියල්ල එක් ඇල්බමයක් ලෙස සැලකීමට අවශ්‍යද?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "තාක්ෂණික සීමාවන් නිසා, ජංගම බ්‍රවුසරවල තොග බාගත කිරීම් සඳහා සහාය නොදක්වන අතර, සමහර වීඩියෝ බාගත නොවිය හැක.<br><br>සියලුම ඡායාරූප සහ වීඩියෝ එකවර බාගත කිරීමට:",
+  "Edit": "සංස්කරණය",
+  "Edit Album": "ඇල්බමය සංස්කරණය",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ඇල්බම් සැකසීම් සම්පාදනය කරන්න",
+  "Upload in progress": "උඩුගත කිරීම ක්‍රියාත්මක වේ",
+  "Album Progress": "ඇල්බම් ප්‍රගතිය",
+  "Adding Photos to Album": "ඇල්බමයට ඡායාරූප එකතු කිරීම",
+  "Creating New Album": "නව ඇල්බමයක් නිර්මාණය කිරීම",
+  "Uploading your photos...": "ඔබගේ ඡායාරූප උඩුගත කරමින්...",
+  "Cancel Upload": "උඩුගත කිරීම අවලංගු කරන්න"
 }

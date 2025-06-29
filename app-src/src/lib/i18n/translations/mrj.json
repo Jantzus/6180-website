@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Мӹндыр фоточым обработайыман ӧвӧл. Тый сайын обработайыме фоточым дене кӱлеш кодаш кӧн.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Тиде рӱдӧ-влакым улыштарде огыт гын, тӱнь {{amount}} автоматически кӹзӹт кӹдалташ ок толеш.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Шкешӹн колышан планым ойыр. Ӱлнӹ вариантвлӓ гӹц ойырен кердӓт ӓлӓ шкет суммым пыртен кердӓт.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мымнан ужнаш, тидӹ папкаштӹ субпапкавлӓ улыт. Кажнӹ субпапкалан сӹндӹн альбом ышташ гын-кӧ, ӓлӹ опцаланым иктӹжӹ альбом семӹн анчашаш гын-кӧ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мымнан ужнаш, тидӹ папкаштӹ субпапкавлӓ улыт. Кажнӹ субпапкалан сӹндӹн альбом ышташ гын-кӧ, ӓлӹ опцаланым иктӹжӹ альбом семӹн анчашаш гын-кӧ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникыштӹ ышыжзӹ верысӹ, мобиль браузервлӓштӹ шукы файлым ныҥӹ ынзӹ лиймӹ, дӓ лӓкӓ видео нӹлӓш ынзӹ кӓшӓнӹт.<br><br>Вем суреткӹм дӓ видеокӹм иктыжӹ ныҥӓш:",
+  "Edit": "Тӧрлатӓш",
+  "Edit Album": "Альбом тӧрлатӓш",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом келыштарымашвлӓ полшы",
+  "Upload in progress": "Кычыры кертеш",
+  "Album Progress": "Альбом кайык шуйкы",
+  "Adding Photos to Album": "Альбом фото ешаш",
+  "Creating New Album": "У альбом ыштымы",
+  "Uploading your photos...": "Тыйын фото-влӓ кычыры...",
+  "Cancel Upload": "Кычырым чарналаш"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Μερικέν εικόνας ουκ εδυνήθημεν επεξεργαστείν. Δύνασαι συνεχίσαι με τας επιτυχώς επεξεργασθείσας εικόνας.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Θα σας χρεώνεται αυτόματα {{amount}} μηναίως σε αυτόν τον τρόπο πληρωμής εκτός αν τον αλλάξετε.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Διαλέξετε το σχέδιον που καλλίταν σας βολεύει. Μπορείτε να διαλέξετε απτά επιλογές και κάτου η να βάλετε έναν ποσό.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Εκαταλάβαμε ότι ο φάκελός σας περιέχει υποφακέλους. Θα θέλατε να δημιουργήσετε ξεχωριστό άλμπουμ για κάθε υποφάκελο ή να τα αντιμετωπίσετε όλα ως ένα άλμπουμ;"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Εκαταλάβαμε ότι ο φάκελός σας περιέχει υποφακέλους. Θα θέλατε να δημιουργήσετε ξεχωριστό άλμπουμ για κάθε υποφάκελο ή να τα αντιμετωπίσετε όλα ως ένα άλμπουμ;",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Επειδή τ' τεχνικόν περιορισμούς, τα μαζικά κατεβάσματα σον κινητά περιηγητικά προγράμματα ντεν υποστηρίζονται, και κανένα βίντεο μπορεί να μην κατεβαίνει.<br><br>Για να κατεβάσετ' όλα τα φωτογραφίας και βίντεο μα ντα:",
+  "Edit": "Άλλαξον",
+  "Edit Album": "Άλλαξον άλμπουμ",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Άλλαξ' τα ρυθμίσματα τ' άλμπουμ",
+  "Upload in progress": "Ανέβασμαν τραβά",
+  "Album Progress": "Πρόοδος τ' άλμπουμ",
+  "Adding Photos to Album": "Προσθέτουμαι φωτογραφίες σ' άλμπουμ",
+  "Creating New Album": "Ποιούμαι άλμπουμ καινούριον",
+  "Uploading your photos...": "Ανεβάζου τα φωτογραφίες σ'...",
+  "Cancel Upload": "Ακυρώνω τ' ανέβασμαν"
 }

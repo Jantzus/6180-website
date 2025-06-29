@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Một số ảnh không thể được xử lý. Bạn có thể tiếp tục với những ảnh đã được xử lý thành công.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bạn sẽ được tự động tính phí {{amount}} hàng tháng theo phương thức thanh toán này trừ khi bạn thay đổi nó.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chọn gói dịch vụ phù hợp nhất với nhu cầu của bạn. Bạn có thể chọn từ các tùy chọn bên dưới hoặc nhập số tiền tùy chỉnh.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Chúng tôi nhận thấy thư mục của bạn chứa các thư mục con. Bạn có muốn tạo album riêng cho từng thư mục con hay coi tất cả như một album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Chúng tôi nhận thấy thư mục của bạn chứa các thư mục con. Bạn có muốn tạo album riêng cho từng thư mục con hay coi tất cả như một album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Do hạn chế kỹ thuật, tải xuống hàng loạt trên trình duyệt di động không được hỗ trợ và một số video có thể không tải được.<br><br>Để tải xuống tất cả ảnh và video cùng lúc:",
+  "Edit": "Sửa đổi",
+  "Edit Album": "Sửa đổi album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Chỉnh sửa cài đặt album",
+  "Upload in progress": "Đang tải lên",
+  "Album Progress": "Tiến độ album",
+  "Adding Photos to Album": "Thêm ảnh vào album",
+  "Creating New Album": "Tạo album mới",
+  "Uploading your photos...": "Đang tải lên ảnh của bạn...",
+  "Cancel Upload": "Hủy tải lên"
 }

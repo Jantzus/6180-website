@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sabagian foto indak bisa diproses. Awak bisa malanjuikan jo foto nan sudah berhasil diproses.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Awak akan ditagiah {{amount}} tiok bulan sacaro otomatis jo cara bayar nan ko kecuali awak tukar.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilihlah rancangan nang paling cocok jo kabutuahan awak. Awak bisa miliah dari pilihan di bawah ko atau mamasuakan jumlah custom.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami caliak bahwa folder awak baisiko subfolder. Awak indak nak mambuek album tapisah untuak satiok subfolder, atau mangganggokan samuonyo sabagai album tunggal?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami caliak bahwa folder awak baisiko subfolder. Awak indak nak mambuek album tapisah untuak satiok subfolder, atau mangganggokan samuonyo sabagai album tunggal?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Dek sabab katerbatasan teknologi, unduhan baraja di browser mobile indak didukung, dan babarapo video mungkin indak bisa diunduh.<br><br>Untuak mangunduh sadonyo foto dan video sakali:",
+  "Edit": "Suntiang",
+  "Edit Album": "Suntiang album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Sunting pangaturan album",
+  "Upload in progress": "Upload lagi berjalan",
+  "Album Progress": "Kamajuan album",
+  "Adding Photos to Album": "Manambah foto ka album",
+  "Creating New Album": "Mambuek album baru",
+  "Uploading your photos...": "Maunggah foto ang...",
+  "Cancel Upload": "Batalan upload"
 }

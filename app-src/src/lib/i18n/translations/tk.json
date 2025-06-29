@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Käbir suratlary işlenip bilmedi. Üstünlikli işlenen suratlar bilen dowam edip bilersiňiz.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bu töleg usulyny üýtgetmeseňiz, her aý awtomatiki {{amount}} hasaplandyrylar.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Zerurlyklaryňyza iň laýyk gelýän meýilnamany saýlaň. Aşakdaky wariantlardan saýlap bilersiňiz ýa-da özbaşdak mukdaryny girizbiňi.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Papkañyzda subpapkalaryň bardygyny görýäris. Her subpapka üçin aýratyn albom döretmek isleýärsiňizmi ýa-da hemmesini bir albom hökmünde göresmek isleýärsiňizmi?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Papkañyzda subpapkalaryň bardygyny görýäris. Her subpapka üçin aýratyn albom döretmek isleýärsiňizmi ýa-da hemmesini bir albom hökmünde göresmek isleýärsiňizmi?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Tehniki çäklendirmeler sebäpli, mobil brauzerlerde köp sanly yuklemek goldanylmaýar we käbir wideolar ýüklenmezlik edip biler.<br><br>Ähli suratlary we wideolary birdenkeden ýüklemek üçin:",
+  "Edit": "Üýtget",
+  "Edit Album": "Album üýtget",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album sazlamalaryny üýtget",
+  "Upload in progress": "Ýüklemek dowam edýär",
+  "Album Progress": "Album ösüşi",
+  "Adding Photos to Album": "Alboma surat goşmak",
+  "Creating New Album": "Täze album döretmek",
+  "Uploading your photos...": "Suratlarynyz ýüklenýär...",
+  "Cancel Upload": "Ýüklemegi goýbolsun etmek"
 }

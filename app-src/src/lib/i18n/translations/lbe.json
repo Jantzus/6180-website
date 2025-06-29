@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ххяйми фоточру хъиривъас цивзаравай. Аву хъиривъас кӀанзабкьуй фоточрулухъ улагьайсса хъанай.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Бу патал усул къайирасса буруй сари {{amount}} автомат улхун патал увкӀун ина гьан.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Цуб лазимсса хъири пландал харжлай лавай. Ялай къа хъиривал хъири варинталай чинал хъири чун миналдаса малуб сума ккаккайди лавай.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Нагь ккай цурбуй хьу папкалул чинай лувчуну папкашисса. Цукку лувчуну папкалив личIисса альбом ккайдилай ляй ссайра цай цукку битаврил папкал кIанттул бургьунссариврил альбом ляйсса цайба лай?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Нагь ккай цурбуй хьу папкалул чинай лувчуну папкашисса. Цукку лувчуну папкалив личIисса альбом ккайдилай ляй ссайра цай цукку битаврил папкал кIанттул бургьунссариврил альбом ляйсса цайба лай?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникияв доначивал ава, мобильнавай браузеррий букулав лагрурай тажвар авайир дакъар, арди кIива видеоба лагруй дакъар хьурай шай.<br><br>Жува ссурчи ва видеоба цай вихьинай лагрурай:",
+  "Edit": "ЛъазабгӀан",
+  "Edit Album": "Альбом лъазабгӀан",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом параметрру хъирив хьун",
+  "Upload in progress": "Чулихун дур",
+  "Album Progress": "Альбом хьун мурад",
+  "Adding Photos to Album": "Альбом хъунттайнал тIулай",
+  "Creating New Album": "Ццаннав альбом хьуну",
+  "Uploading your photos...": "Ттул хъунттал чулихуну...",
+  "Cancel Upload": "Чулихунну цIунизе"
 }

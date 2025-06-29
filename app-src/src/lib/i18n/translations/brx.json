@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "गासे फोटो प्रोसेस होनो हायो। नोंथांना मोनगोनां प्रोसेस होफायो फोटो आव लांगो दावदोंनो हाय।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "नोंथांना बे पेमेंट मेथड सोलायनो हायो जाबाव दै म्हान्या {{amount}} अफिनैया बिल होनो हाय।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "बेयो दैखैलाब जे नोंथांग फोल्डारआव सबफोल्डार मेनाय। नां गासै सबफोल्डार हाबाव अरा अरा एल्बाम सासिन्नाय चान्दो न, या खालासेयाव मित एल्बाम मानसिन्नाय चान्दो न?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "बेयो दैखैलाब जे नोंथांग फोल्डारआव सबफोल्डार मेनाय। नां गासै सबफोल्डार हाबाव अरा अरा एल्बाम सासिन्नाय चान्दो न, या खालासेयाव मित एल्बाम मानसिन्नाय चान्दो न?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "तकनीकी सीमाआं गामायनि फोरमाय, मोबाइल ब्राउजारआव bulk downloads सपोर्ट जायो, आरो मोनसे video download जायो हागोन।<br><br>गासैयो photo आरो video मिथाङावफोर download खालामनो गोनां:",
+  "Edit": "सुजुबनाय",
+  "Edit Album": "आलबाम सुजुबनाय",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "एलबाम सेटिंग फोरमाय",
+  "Upload in progress": "अपलोड होनाय गासै",
+  "Album Progress": "एलबाम प्रगती",
+  "Adding Photos to Album": "एलबामाव फोटो जाबाय",
+  "Creating New Album": "गोदान एलबाम सोरजि",
+  "Uploading your photos...": "नोङा फोटो अपलोड होनाय...",
+  "Cancel Upload": "अपलोड कैंसेल माय"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "یه چن تا عکس نتونسته پردازش ببه. شما تونيد وا عکسان کي موفقيت آميز پردازش ببه دوام بديد.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ایسا پولی دئن طریقه گر شما نِخانیدش، هر ماه {{amount}} خودکار ازتو کأسه بنه.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "اون طرح بینین که شیما رق احتیاجون جی بهتره. شیما تونین ای گزینه یان رو ری انتخاب بکونین یا خودتون مبلغ وارد بکونین.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ما دی‌دیمون که شیما فولدر دله زیرفولدریان هسه. شیمه خانین هر زیرفولدر ری یه جدا آلبوم بسازین یا همه شه یه آلبوم بونین؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ما دی‌دیمون که شیما فولدر دله زیرفولدریان هسه. شیمه خانین هر زیرفولدر ری یه جدا آلبوم بسازین یا همه شه یه آلبوم بونین؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "تکنیکی محدودیت‌ئن دلیل، موبایل مرورگریشه ميئن bulk downloads پشتیبانی نه‌بی، و مأ ویدیوؤنه څخه بعضی هم download نه‌بؤنه.<br><br>همه عکس‌ؤن و ویدیوؤن ایته‌ته download کردن ره:",
+  "Edit": "دچین",
+  "Edit Album": "آلبوم دچین",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "آلبوم تنظیمات ویرایش",
+  "Upload in progress": "آپلود در حال انجام",
+  "Album Progress": "پیشرفت آلبوم",
+  "Adding Photos to Album": "عکس‌ها به آلبوم اضافه کردن",
+  "Creating New Album": "آلبوم جدید ایجاد کردن",
+  "Uploading your photos...": "عکس‌هاتون آپلود کردن...",
+  "Cancel Upload": "آپلود لغو کردن"
 }

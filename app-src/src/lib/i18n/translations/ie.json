@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quelc fotos ne possed esser processat. Vu posse continuar con li fotos processat con sucesse.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vu va esser automaticmen billat {{amount}} mensualmen per ti-ci metode de pagament ceptat si vu changea it.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Selectez li plan quel maxim conveni a vor besonias. Vu posse selecter ex li optiones infra o intrar un summa customar.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Noi ha remarcat que vor dossier contene sub-dossiers. Vole vu crear un album separat por cadat sub-dossier, o tractar les omni quam un sol album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Noi ha remarcat que vor dossier contene sub-dossiers. Vole vu crear un album separat por cadat sub-dossier, o tractar les omni quam un sol album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "A caus de limitationes technic, bulk-downloads in mobile browsers ne es supportat, e quelc videos possibilmen ne va esser downloadat.<br><br>Por downloadar omni photos e videos in un-a vice, plis:",
+  "Edit": "Redacter",
+  "Edit Album": "Redacter album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Redacter paramètres del album",
+  "Upload in progress": "Cargament in curso",
+  "Album Progress": "Progresse del album",
+  "Adding Photos to Album": "Aditente fotografías al album",
+  "Creating New Album": "Creante nov album",
+  "Uploading your photos...": "Cargant vostri fotografías...",
+  "Cancel Upload": "Cancellar cargament"
 }

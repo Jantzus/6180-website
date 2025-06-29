@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Kuch photo process nai ho saki. Aap safalta se process hui photo ke saath jaari rakh sakte hain.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jab tak aap isse nahi badloge tab tak is payment method par aapse automatic monthly {{amount}} bill hoga.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Apna jarrurat ke anusar sabse badhiya plan choose karo. Aap niche ke options me se choose kar sakte hai ya phir custom amount dal sakte hai.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hum dekha hai ki aapka folder me subfolders hai. Ka aap har subfolder ke liye alag album banana chahte hai, ya sab ko ek album ke roop me dekhna chahte hai?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hum dekha hai ki aapka folder me subfolders hai. Ka aap har subfolder ke liye alag album banana chahte hai, ya sab ko ek album ke roop me dekhna chahte hai?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Technical limitation ke kaaran, mobile browsers me bulk downloads supported nahi hai, aur kuch videos download nahi ho sakte.<br><br>Saare photos aur videos ek saath download karne ke liye:",
+  "Edit": "Edit",
+  "Edit Album": "Album edit",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album settings badlo",
+  "Upload in progress": "Upload chal rahal hai",
+  "Album Progress": "Album ki progress",
+  "Adding Photos to Album": "Album me photo dal rahe hain",
+  "Creating New Album": "Naya album banana",
+  "Uploading your photos...": "Aapka photo upload ho rahe hain...",
+  "Cancel Upload": "Upload cancel karo"
 }

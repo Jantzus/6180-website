@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Einige Fotos konnten nicht verarbeitet werden. Sie können mit den erfolgreich verarbeiteten Fotos fortfahren.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sie werden automatisch {{amount}} monatlich über diese Zahlungsmethode belastet, außer Sie ändern sie.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wählen Sie den Plan aus, der am besten zu Ihren Bedürfnissen passt. Sie können aus den folgenden Optionen auswählen oder einen benutzerdefinierten Betrag eingeben.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wir haben bemerkt, dass Ihr Ordner Unterordner enthält. Möchten Sie für jeden Unterordner ein separates Album erstellen oder alle als ein Album behandeln?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wir haben bemerkt, dass Ihr Ordner Unterordner enthält. Möchten Sie für jeden Unterordner ein separates Album erstellen oder alle als ein Album behandeln?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Aufgrund technischer Beschränkungen werden Massen-Downloads in mobilen Browsern nicht unterstützt, und einige Videos können möglicherweise nicht heruntergeladen werden.<br><br>Um alle Fotos und Videos auf einmal herunterzuladen, bitte:",
+  "Edit": "Bearbeiten",
+  "Edit Album": "Album bearbeiten",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album-Einstellungen bearbeiten",
+  "Upload in progress": "Upload läuft",
+  "Album Progress": "Album-Fortschritt",
+  "Adding Photos to Album": "Fotos zum Album hinzufügen",
+  "Creating New Album": "Neues Album erstellen",
+  "Uploading your photos...": "Deine Fotos werden hochgeladen...",
+  "Cancel Upload": "Upload abbrechen"
 }

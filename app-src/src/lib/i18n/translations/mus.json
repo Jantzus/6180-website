@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Hoktvlwv 'stvlke omat sekosatsken omekot os. Monkv herkv sekosatstut stomitat vpohets.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Este hoktvlwv omvlkvn opunvyeckv nokcosakeko tayet {{amount}} hvse-vteken svm hofunen ometskvres.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Plan makkat em vhakv 'tat heren ayat kerrit hokkolen. Pohyat naken ayat komat hokkolen monkat momis 'sēn hervt holwayēcakat.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pohyēt mvhakvkē estvlke hoktaren pum hecicēt os. Hoktare hvmkuswv em album etecakkvlke tayan omat, momen matvpomof hvmken omat album hvmken omēn pohyaciceye tayan omat?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pohyēt mvhakvkē estvlke hoktaren pum hecicēt os. Hoktare hvmkuswv em album etecakkvlke tayan omat, momen matvpomof hvmken omat album hvmken omēn pohyaciceye tayan omat?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Teknoloci omvlketv eteropotte ocake omkvt, afoketvnke vnokeckv computer mokkv sekon omat, afoketv estomis mv video hvmkat omvlkv okekakon onayēs.<br><br>Nak honnvhket afoketv omvlkvt hvmke tayan omat:",
+  "Edit": "Afvcke",
+  "Edit Album": "Album afvcke",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album inamákko íssi",
+  "Upload in progress": "Upload icvfēkos",
+  "Album Progress": "Album áyupv",
+  "Adding Photos to Album": "Album hoktuce ohfvnkvt os",
+  "Creating New Album": "Album mucvset osiyvt os",
+  "Uploading your photos...": "Ce hoktuce em ohfvnkvt os...",
+  "Cancel Upload": "Upload ohvntakseko"
 }

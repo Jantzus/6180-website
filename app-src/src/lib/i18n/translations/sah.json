@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Аайы ойуулар таһаарыллыбатахтара. Эн тугу таһаарыллыбыт ойууларынан салгыы сөп.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Бу төлүү көрүҥэ өссө суоллар {{amount}} автоматынан алынааччыларыыт, эн туһугар уларытыахтарыныы.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Эн сөп түбэһэр планы талыы. Ала баар варианттардан талыахтаахын эбэтэр эйиэхэ сөп түбэһэр ахчаанын киллэрэххитин сөп.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Эһиги көрдүбүт папканыгар субпапкалар баарын. Хас да субпапкаҕа тус тус альбом оҥорорго баҕарабыт дуо атын барыларын биир альбом диэн санаарга баҕарабыт дуо?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Эһиги көрдүбүт папканыгар субпапкалар баарын. Хас да субпапкаҕа тус тус альбом оҥорорго баҕарабыт дуо атын барыларын биир альбом диэн санаарга баҕарабыт дуо?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техническэй ситиһиилэринэн мобильнай браузердарга үрдүк иhиннэриигэ туhаныы суох, onu көрүү кыыллар иhэри ылбатах сөп.<br><br>Бары суруктары уонна кыыллары биир дьаһанынан иhэргэ:",
+  "Edit": "Көннөрүү",
+  "Edit Album": "Альбом көннөрүү",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом туруоруутугар уларытыы",
+  "Upload in progress": "Киллэрии көстөр",
+  "Album Progress": "Альбом сайдыыта",
+  "Adding Photos to Album": "Альбомга фотото кэбистээ",
+  "Creating New Album": "Саҥа альбом оҥоруу",
+  "Uploading your photos...": "Эйиэхэ фотоҕу киллэрии...",
+  "Cancel Upload": "Киллэрии соҕотор"
 }

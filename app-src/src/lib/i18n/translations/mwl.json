@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Alguas fotos nun pudiran ser percesadas. Puodes cuntinar cun las fotos percesadas cun éisito.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Serás cobrado automaticamente {{amount}} por més neste método de pagamiento a nun ser que l mudes.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Çcuolhe l plano que melhor se afeça a las sues nessidades. Puode çcuolher de las oupeçones de baixo ou antroduzi-r ua cantidade personalizada.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Reparemos que la bossa carteirinha ten subcarteirinhas. Quierdes criar un álbun apartado para cada subcarteirinha, o tratá-las todas cumo un solo álbun?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Reparemos que la bossa carteirinha ten subcarteirinhas. Quierdes criar un álbun apartado para cada subcarteirinha, o tratá-las todas cumo un solo álbun?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Por limitaçones técnicas, las çcargas an massa an nabegadores móbiles nun son suportadas, i alguns bídeos puoden nun çcarregar.<br><br>Para çcarregar todas las fotos i bídeos de úna beç:",
+  "Edit": "Altarar",
+  "Edit Album": "Altarar álbun",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Eiditar cunfiguraçones de l álbun",
+  "Upload in progress": "Carregamento an curso",
+  "Album Progress": "Progresso de l álbun",
+  "Adding Photos to Album": "Adicionando fotos al álbun",
+  "Creating New Album": "Criando nuobo álbun",
+  "Uploading your photos...": "Carregando las tuas fotos...",
+  "Cancel Upload": "Scancelar carregamento"
 }

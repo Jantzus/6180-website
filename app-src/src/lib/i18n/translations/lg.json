@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Bifaananyi ebimu tebyasobodde kukozesebwa. Osobola okugenda mu maaso n'ebifaananyi ebyakozesebwa obulungi.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ojja kumalibwamu {{amount}} buli mwezi ku nkola eno ey'okusasula nga tolwanyizza.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Londa olukungaanya oluteleemu olwimu okusanyukiramu omukuttu gwo. Osobola okulonda ku magezi awo owa wansi oba okuyingiza omuwendo omulala.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tulabise nga ekitundu kyo kirimu ebitundu ebitono. Oyagala okukola ekyapa eky'enjawulo ku buli kitundu ekitono, oba okukwata byonna ng'ekyapa ekimu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tulabise nga ekitundu kyo kirimu ebitundu ebitono. Oyagala okukola ekyapa eky'enjawulo ku buli kitundu ekitono, oba okukwata byonna ng'ekyapa ekimu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Olw'okuziyiza mu by'obukugu, okussa ebintu bingi ku mikutu gya ssimboyi tebukolebwa, ne viidiiyo ezimu ziyinza obutakka.<br><br>Okussa ebifaananyi ne viidiiyo zonna olumu:",
+  "Edit": "Kyusa",
+  "Edit Album": "Kyusa album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Longoosa enteekateeka z'ekyama",
+  "Upload in progress": "Okutakako kugenda mu maaso",
+  "Album Progress": "Enkulaakulana ya kyama",
+  "Adding Photos to Album": "Okwongereza bifaananyi mu kyama",
+  "Creating New Album": "Okukola ekyama ekipya",
+  "Uploading your photos...": "Okutakayo bifaananyi byo...",
+  "Cancel Upload": "Sazaamu okutakako"
 }

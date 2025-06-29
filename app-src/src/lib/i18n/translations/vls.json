@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sommigte foto's kostn nie verwerkn wordn. Gy ku verdergoan mè de foto's da good verwerkn zyn.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Gy goat automatisch {{amount}} per moand gefoaktureerd wordn ip die betolingsmethode tenzji gy 't verandert.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kiest de plan da best by joun behoefte past. Gy keunet kieze van de opties hierônder of e speciaal bedrag ingeven.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We èn gemerkt da joen map submaps byhoudt. Wilde je een aport album moakn vo elke submap, of ze allemaal als ièn album behandeln?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We èn gemerkt da joen map submaps byhoudt. Wilde je een aport album moakn vo elke submap, of ze allemaal als ièn album behandeln?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Deur technische beperkingen wordn bulkdownloads ip mobiele browsers nie oundersteund, en sommigste video's kunn meuglik nie gedownload wordn.<br><br>Om alle foto's en video's tegelik te downloaden:",
+  "Edit": "Bewerkn",
+  "Edit Album": "Album bewerkn",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albuminstelliengn bewerkn",
+  "Upload in progress": "Upload bezig",
+  "Album Progress": "Albumveurdering",
+  "Adding Photos to Album": "Foto's an album toevoegn",
+  "Creating New Album": "Nuuw album makn",
+  "Uploading your photos...": "Je foto's wordn upgeload...",
+  "Cancel Upload": "Upload annuleer'n"
 }

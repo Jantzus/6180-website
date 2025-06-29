@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "E puer Fotoen konnten net verarbecht ginn. Dir kënnt mat de successful verarbechte Fotoen weiderfueren.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Dir gitt automatesch {{amount}} all Mount op dëser Bezuelungsmethod verechent, außer Dir ännert se.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Sicht de Plan eraus deen am beschten zu Äre Bedierfnesser passt. Dir kënnt aus de Optiounen hei drënner wielen oder e personaliséierte Betrag aginn.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir hunn ëmmerkt datt Ären Dossier Ënnerdossieren enthält. Wëllt Dir e separaten Album fir all Ënnerdossier erstellen oder se all als een Album behandelen?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir hunn ëmmerkt datt Ären Dossier Ënnerdossieren enthält. Wëllt Dir e separaten Album fir all Ënnerdossier erstellen oder se all als een Album behandelen?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Wéinst techneschen Aschränkungen ginn Bulk-Downloads op mobilen Browseren net ënnerstëtzt, an e puer Videoen kënnen eventuell net erofgelueden ginn.<br><br>Fir all Fotoen a Videoen op eemol erofzelueden:",
+  "Edit": "Änneren",
+  "Edit Album": "Album änneren",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album-Astellungen änneren",
+  "Upload in progress": "Upload am Gaang",
+  "Album Progress": "Album-Fortschrëtt",
+  "Adding Photos to Album": "Fotoen zum Album bäisetzen",
+  "Creating New Album": "Neit Album uleeën",
+  "Uploading your photos...": "Deng Fotoen ginn eropgelueden...",
+  "Cancel Upload": "Upload ofbriechen"
 }

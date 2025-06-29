@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Radheed le sawirran ma cagiibin karo. Wad wadasi kartaa sawirrada si fiican loo cagiibay.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Baahi kaddaakti {{amount}} asbuuc wali fiyah tani baahi laguma diyaarin hadday kaddaan ma baddashid.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Saaddu dafariita ku sitto hamishsha. Yaabni deenna yellu masaddafiito wo gabira masaaddita daa.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Dankal faniisuuk qasiiseh-qasiiseh dabarni. Kull-qasiiseh tee dafara album gabu yabbiita, ya kull-qasiiseh tee waakla album gabu yabbita?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Dankal faniisuuk qasiiseh-qasiiseh dabarni. Kull-qasiiseh tee dafara album gabu yabbiita, ya kull-qasiiseh tee waakla album gabu yabbita?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Faqqa teknikal ah, dabannooyinku mobile browsers kuma taageeraan, videooyinkana qaar ma soo degaan.<br><br>Si aad u soo degto sawirrada iyo fiidiyooyinka oo dhan hal mar, fadlan:",
+  "Edit": "Horfed",
+  "Edit Album": "Horfed Alboom",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album hakimtooyah bixiy",
+  "Upload in progress": "Upload kee waqte kinna",
+  "Album Progress": "Album giddo",
+  "Adding Photos to Album": "Album-te suwwar geddo",
+  "Creating New Album": "Album kee sama",
+  "Uploading your photos...": "Suwwar gadda upload kee...",
+  "Cancel Upload": "Upload kee goobi"
 }

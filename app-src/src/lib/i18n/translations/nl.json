@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sommige foto's konden niet verwerkt worden. Je kunt doorgaan met de succesvol verwerkte foto's.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Je wordt automatisch {{amount}} maandelijks gedebiteerd via deze betaalmethode tenzij je het verandert.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kies het plan dat het beste bij uw behoeften past. U kunt kiezen uit de onderstaande opties of een aangepast bedrag invoeren.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We hebben gemerkt dat uw map submappen bevat. Wilt u een apart album maken voor elke submap, of ze allemaal als één album behandelen?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We hebben gemerkt dat uw map submappen bevat. Wilt u een apart album maken voor elke submap, of ze allemaal als één album behandelen?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Vanwege technische beperkingen worden bulkdownloads op mobiele browsers niet ondersteund, en sommige video's kunnen mogelijk niet gedownload worden.<br><br>Om alle foto's en video's tegelijk te downloaden:",
+  "Edit": "Bewerken",
+  "Edit Album": "Album bewerken",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album-instellingen bewerken",
+  "Upload in progress": "Upload bezig",
+  "Album Progress": "Albumvoortgang",
+  "Adding Photos to Album": "Foto's toevoegen aan album",
+  "Creating New Album": "Nieuw album aanmaken",
+  "Uploading your photos...": "Je foto's worden geüpload...",
+  "Cancel Upload": "Upload annuleren"
 }

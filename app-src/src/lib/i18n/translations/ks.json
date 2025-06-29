@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "کینہہ فوٹو پروسیس نِہ تھیوٚو ہېکہ۔ تُہہِ کامیابی سان پروسیس گوٚمتی فوٹو سان جاری تھاونہٕ ہېکو۔",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "یاہ پیمینٹ میتھڈ تبدیل نِہ کرو آو تے ہر مہینٕ {{amount}} آپ سے آپ کٹ یِن۔",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "تِم ضروریاتن سیت مِلِوِن پلان چُھنِو۔ تِم ہیتِس آپشنی ہُنز اَنتِخاب کَرتھ ہیکوُ یا پھِر کسٹم مقدار دِتھ ہیکوُ۔",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "اَسہِ ویٛچھ ذِ تُہنِز فولڈر مَنٛز سب فولڈر چھِ۔ کیاہ تُہہِ ہر سب فولڈرس لِیہِ الگ ایلبم بناونُک کریوان، یا تِمن سٲریین یِتھ پیٹھ اکس ایلبم شِمار کریوان؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "اَسہِ ویٛچھ ذِ تُہنِز فولڈر مَنٛز سب فولڈر چھِ۔ کیاہ تُہہِ ہر سب فولڈرس لِیہِ الگ ایلبم بناونُک کریوان، یا تِمن سٲریین یِتھ پیٹھ اکس ایلبم شِمار کریوان؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "تکنیکی پابندیؤن کِس وجہ ، موبائل براؤزرن منز bulk downloads سپورٹ چھِ نہٕ کرنہٕ یوان، تہٕ کانہہ videos download نہٕ بٲنی سگہٕ۔<br><br>تمام فوٹو تہٕ videos أکہِ لٹہِ download کرنہٕ خٲطرہٕ، مہربأنی کٔرتھ:",
+  "Edit": "تبدیل کرُن",
+  "Edit Album": "آلبم تبدیل کرُن",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "آلبم سیٹِنگَن ہیرِپھیر",
+  "Upload in progress": "اپ لوڈ کام چھُ گژھان",
+  "Album Progress": "آلبم ترقی",
+  "Adding Photos to Album": "آلبمس منز تصویری شامل کران",
+  "Creating New Album": "نو آلبم بناون",
+  "Uploading your photos...": "تُہندی تصاویری اپ لوڈ کران...",
+  "Cancel Upload": "اپ لوڈ منسوخ کرو"
 }

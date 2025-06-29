@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quaedam imagines tractari non potuerunt. Pergere potes cum imaginibus feliciter tractatis.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Automatice ratus eris {{amount}} mensis per hanc rationem solutionis nisi eam mutes.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Eligite consilium quod optime vestris necessitatibus convenit. Potestis eligere ex optionibus infra vel summam propriam inserere.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Animadvertimus loculum tuum subloculos continere. Visne pro quoque subloculo album separatum creare an omnes tamquam unum album tractare?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Animadvertimus loculum tuum subloculos continere. Visne pro quoque subloculo album separatum creare an omnes tamquam unum album tractare?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Propter limitationes technicas, downloads cumulati in navigationibus mobilibus non adiuvantur, et nonnulla video non transferri possunt.<br><br>Ut omnes imagines et video semel transferantur:",
+  "Edit": "Recensere",
+  "Edit Album": "Recensere album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Corrigere institutiones album",
+  "Upload in progress": "Onustum procedit",
+  "Album Progress": "Progressus album",
+  "Adding Photos to Album": "Imagines ad album addere",
+  "Creating New Album": "Creane novum album",
+  "Uploading your photos...": "Imagines tuae onerantur...",
+  "Cancel Upload": "Tollere onustum"
 }

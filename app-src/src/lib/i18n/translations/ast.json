@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Dalgunes semeyes nun pudieron procesase. Pues continuar coles semeyes procesaes con ésitu.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Pasarás a pagar {{amount}} mensualmente d'esta forma de pagu, nun lu cambies.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Escueyi'l plan que meyor s'axuste a les tos necesidaes. Pues escoyer ente les opciones d'abaxo o meter una cantidá personalizada.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Decatemos que la to carpeta contién subcarpetes. ¿Prestaríate crear un album separtáu pa cada subcarpeta, o tratar a toes como un solu album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Decatemos que la to carpeta contién subcarpetes. ¿Prestaríate crear un album separtáu pa cada subcarpeta, o tratar a toes como un solu album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Por limitaciones técniques, les descargues masives en restoladores móviles nun tán sofitaes, y dalgunos vídeos podríen nun descargase.<br><br>Pa descargar toles semeyes y vídeos d'una vegada, por favor:",
+  "Edit": "Editar",
+  "Edit Album": "Editar álbum",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Editar configuración del álbum",
+  "Upload in progress": "Xubida en cursu",
+  "Album Progress": "Progresu del álbum",
+  "Adding Photos to Album": "Amestando semeyes al álbum",
+  "Creating New Album": "Creando álbum nuevu",
+  "Uploading your photos...": "Xubiendo les tos semeyes...",
+  "Cancel Upload": "Cancelar xubida"
 }

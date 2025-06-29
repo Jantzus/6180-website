@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Baadhi ya picha hazikuweza kusindikwa. Unaweza kuendelea na picha zilizosindikwa kwa ufanisi.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Utalipiwa kiotomatiki {{amount}} kila mwezi kwa njia hii ya malipo ila ukiibadilisha.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chagua mpango unaofaa zaidi mahitaji yako. Unaweza kuchagua kutoka kwa chaguo zilizo hapa chini au kuingiza kiasi maalum.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tuliona kuwa folda yako ina folda ndogo. Je, ungependa kuunda albamu tofauti kwa kila folda ndogo, au kuziona zote kama albamu moja?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tuliona kuwa folda yako ina folda ndogo. Je, ungependa kuunda albamu tofauti kwa kila folda ndogo, au kuziona zote kama albamu moja?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Kwa sababu ya vikwazo vya kiufundi, upakuaji wa wingi kwenye vivinjari vya rununu havitumiki, na baadhi ya video haziwezi kupakuliwa.<br><br>Ili kupakua picha na video zote kwa wakati mmoja:",
+  "Edit": "Hariri",
+  "Edit Album": "Hariri albamu",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Hariri mipangilio ya album",
+  "Upload in progress": "Upakiaji unaendelea",
+  "Album Progress": "Maendeleo ya album",
+  "Adding Photos to Album": "Kuongeza picha kwenye album",
+  "Creating New Album": "Kuunda album mpya",
+  "Uploading your photos...": "Kupakia picha zako...",
+  "Cancel Upload": "Ghairi upakiaji"
 }

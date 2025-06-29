@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Certi ritratti nun pòttiru èssiri prucissati. Poi cuntinuari cû ritratti prucissati beni.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti vèniri addebitatu automaticamente {{amount}} ogni misi cu stu mètudu di pagamentu siddu nun lu canciassi.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Scegghî lu pianu ca si nni va megghiu pî tô bisogni. Poi scegghiri dî sciddhi di sutta o mittiri na summa pirsunalizzata.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vidìmu ca la tò cartedda cunzisti suttacarteddi. Voi criari n'àlbum spartittu pi ognuna suttacartedda, o trattalli tutti comu n'àlbum sulu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vidìmu ca la tò cartedda cunzisti suttacarteddi. Voi criari n'àlbum spartittu pi ognuna suttacartedda, o trattalli tutti comu n'àlbum sulu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Pi limitazzioni tècnichi, li download di massa nti li navigaturi mòbbili nun sù suppurtati, e certi videu putìssiru nun scarricarisi.<br><br>Pi scarricarisi tutti li fotu e li videu 'nzemi:",
+  "Edit": "Cancia",
+  "Edit Album": "Cancia album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Cancia li mpustazzioni di l'album",
+  "Upload in progress": "Caricamentu n corsu",
+  "Album Progress": "Progressu di l'album",
+  "Adding Photos to Album": "Agghiuncennu fotu a l'album",
+  "Creating New Album": "Crijannu album novu",
+  "Uploading your photos...": "Caricandu li tò fotu...",
+  "Cancel Upload": "Scancella u caricamentu"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "An ibang mga retrato dai na-proseso. Makapadagos ka sa mga retrato na marayong na-proseso.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Mababayadan ka nin automatiko nin {{amount}} kada bulan sa hiling na paraan kan pagbayad kun dai mo babaguhon.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Piliwon an plano na pinakasalama sa inyong mga pangangailangan. Pwedeng pumili sa mga opsyon sa ibaba o maglagay kan custom na kantidad.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nakua namin na an inyong folder igwang mga subfolder. Gusto ninyo gumibo kan naka-apod na album para sa kada subfolder, o ituring sinda gabos bilang sarong album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nakua namin na an inyong folder igwang mga subfolder. Gusto ninyo gumibo kan naka-apod na album para sa kada subfolder, o ituring sinda gabos bilang sarong album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Dahil sa mga limitasyon na tekniko, an mga bulk na download sa mobile browser dai suportado, asin an iba na mga video pwedeng dai ma-download.<br><br>Para ma-download an gabos na mga litrato asin video na sabay-sabay, tabi:",
+  "Edit": "Liwat",
+  "Edit Album": "Liwat kan Album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "I-edit an mga setting kan album",
+  "Upload in progress": "Nag-uupload pa",
+  "Album Progress": "Progreso kan album",
+  "Adding Photos to Album": "Pagdugang nin mga retrato sa album",
+  "Creating New Album": "Naggigibo nin bagong album",
+  "Uploading your photos...": "Nag-uupload nin saimong mga retrato...",
+  "Cancel Upload": "Kanselaron an upload"
 }

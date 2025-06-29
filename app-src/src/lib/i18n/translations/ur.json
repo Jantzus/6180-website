@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "کچھ تصاویر پروسیس نہیں ہو سکیں۔ آپ کامیابی سے پروسیس ہونے والی تصاویر کے ساتھ جاری رکھ سکتے ہیں۔",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "جب تک آپ اسے تبدیل نہیں کرتے اس ادائیگی کے طریقے سے ماہانہ {{amount}} خودکار طور پر بل کیا جائے گا۔",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "اپنی ضروریات کے مطابق بہترین پلان منتخب کریں۔ آپ نیچے کے اختیارات میں سے منتخب کر سکتے ہیں یا کسٹم رقم داخل کر سکتے ہیں۔",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ہم نے دیکھا ہے کہ آپ کے فولڈر میں ذیلی فولڈرز ہیں۔ کیا آپ ہر ذیلی فولڈر کے لیے الگ البم بنانا چاہتے ہیں، یا سب کو ایک البم کے طور پر دیکھنا چاہتے ہیں؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ہم نے دیکھا ہے کہ آپ کے فولڈر میں ذیلی فولڈرز ہیں۔ کیا آپ ہر ذیلی فولڈر کے لیے الگ البم بنانا چاہتے ہیں، یا سب کو ایک البم کے طور پر دیکھنا چاہتے ہیں؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "تکنیکی محدودیت کی وجہ سے، موبائل براؤزرز پر بلک ڈاؤن لوڈ کی حمایت نہیں ہے، اور کچھ ویڈیوز ڈاؤن لوڈ نہیں ہو سکتے۔<br><br>تمام تصاویر اور ویڈیوز کو ایک ساتھ ڈاؤن لوڈ کرنے کے لیے:",
+  "Edit": "ترمیم",
+  "Edit Album": "البم کی ترمیم",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "البم کی سیٹنگز میں ترمیم کریں",
+  "Upload in progress": "اپ لوڈ جاری ہے",
+  "Album Progress": "البم کی پیش قدمی",
+  "Adding Photos to Album": "البم میں تصاویر شامل کرنا",
+  "Creating New Album": "نیا البم بنانا",
+  "Uploading your photos...": "آپ کی تصاویر اپ لوڈ ہو رہی ہیں...",
+  "Cancel Upload": "اپ لوڈ منسوخ کریں"
 }

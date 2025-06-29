@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Kelka fotaji ne povus esar procesata. Vu povas durar kun fotaji procesata sucesoze.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vu facturigesos automatike {{amount}} chadamonate per ca pag-metodo excepte se vu chanjas ol.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Selektez la plano qua maxime konvenas a vua bezoni. Vu povas selektar de la opcioni infre o enirar kustoma quanto.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ni remerkis ke vua dossiero kontenas sub-dosieri. Ka vu volas krear apartita albumo por dum sub-dossiero, od regardar omni quale un albumo?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ni remerkis ke vua dossiero kontenas sub-dosieri. Ka vu volas krear apartita albumo por dum sub-dossiero, od regardar omni quale un albumo?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Pro teknikal limitaji, multa downloadagi en mobila navigilari ne suportesar, e kelka videaji forsan ne downloadesos.<br><br>Por downloasar omna fotaji e videaji unafoje, voluntez:",
+  "Edit": "Redaktar",
+  "Edit Album": "Redaktar albumo",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Redaktar ajusti di album",
+  "Upload in progress": "Kargado durantas",
+  "Album Progress": "Progresar di album",
+  "Adding Photos to Album": "Adjuntar fotografuri ad album",
+  "Creating New Album": "Kreante nova album",
+  "Uploading your photos...": "Karganta vua fotografuri...",
+  "Cancel Upload": "Nuligar kargado"
 }

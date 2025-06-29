@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sume mētengdas ne mihton bēon þurhworht. Þū miht ymbe faran mid þǣm wel-þurhworhtum mētengdum.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Þū bist selfwillende {{amount}} mōnþlīce on þissum gieldes wisan gebilled nemne þū hit āwende.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ceose þone rǣd þe betst þīnum neōdum gemet. Þū meaht ceosan of þām cystum beneoþan oþþe insettan āgenne tal.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wē geseah þæt þīn mæppe hafaþ undermaeppan. Wilt þū āgenne ælbum wyrcan for ælcre undermæppm oððe ealle swā āne ælbum healdan?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wē geseah þæt þīn mæppe hafaþ undermaeppan. Wilt þū āgenne ælbum wyrcan for ælcre undermæppm oððe ealle swā āne ælbum healdan?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "For tēcniscum geþrecednesse, micelra hlædinga on handlicum sēcendum ne sind understandan, and sumu fægnræsas ne magon hlædan.<br><br>Tō hlædenne ealla lēohtrǣsas and fægnræsas ætsomne, ic bidde:",
+  "Edit": "Adiht",
+  "Edit Album": "Adiht album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Āndrǣdan albumes gesetnessa",
+  "Upload in progress": "Upload onǣrende",
+  "Album Progress": "Albumes forþgang",
+  "Adding Photos to Album": "Foto tō albume ēacung",
+  "Creating New Album": "Nīewe albume wyrcende",
+  "Uploading your photos...": "Þīn fotu upload...",
+  "Cancel Upload": "Upload forwyrdan"
 }

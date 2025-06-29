@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Kaikuories puotraikos negal būt apduorbtuos. Galėt tęst so sėkmėngā apduorbtoms puotraikoms.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jūs būsėt automatėškā mūkāmi {{amount}} kas miegūo par šėtuo mokėjėmu būdu, jāgū nakeisėt.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pasėrinkėt plana, katros gerausē tėnka jūsu poreikius. Galėt pasėrėnktė ėš variantu žemiau a ėvestė sava soma.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pasematėm, kad jūsu aplanks turi pogrupiu. Nuorėt sokortė atskėra albuma kožnā pogrupau, a vėsks kaip vėina albuma?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pasematėm, kad jūsu aplanks turi pogrupiu. Nuorėt sokortė atskėra albuma kožnā pogrupau, a vėsks kaip vėina albuma?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Diel teknėniu aprėbuojėmu, masėnė atsėsūntėnėma mobileliuosa naršīkliuosa niera palaikuoma, ė katruos video gal nasėsūnts.<br><br>Atsėsūst vėsus paveikslus ė video ėš karta, prašuom:",
+  "Edit": "Redaguotė",
+  "Edit Album": "Redaguotė albumą",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Taisītė albūma nastātīmos",
+  "Upload in progress": "Ėkrovėms īr vāksta",
+  "Album Progress": "Albūma vērtėjėms",
+  "Adding Photos to Album": "Pridedams paveikslus i albūmą",
+  "Creating New Album": "Taisoms naus albūms",
+  "Uploading your photos...": "Īkruovamos tava paveikslus...",
+  "Cancel Upload": "Atšaukti ėkrovėmą"
 }

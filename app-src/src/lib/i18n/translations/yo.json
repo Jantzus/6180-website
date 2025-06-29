@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Àwọn àwòrán kan kò lè ṣeéṣe. O lè tẹ̀síwájú pẹ̀lú àwọn àwòrán tí a ṣe lóríire.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "A ó gba owó {{amount}} lójúmọ̀ lórí ọ̀nà isanwó yìí láàifọwọ́sí àyàfi tí o bá yí i padà.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Yan eto to dara ju fun awon iwulo yin. E le yan lati inu awon aṣayan ti o wa ni isale yi tabi ki e tẹ iye owo akanṣe sinu.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "A ṣakiyesi pe folda yin ni awon subfolder ninu. Ṣe o fe ṣe apo-orin ọtọtọ fun subfolder kọọkan, tabi ka gbogbo wọn ṣe apo-orin kan?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "A ṣakiyesi pe folda yin ni awon subfolder ninu. Ṣe o fe ṣe apo-orin ọtọtọ fun subfolder kọọkan, tabi ka gbogbo wọn ṣe apo-orin kan?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Nitorí àwọn àsèdéédé imọ̀-ẹrọ, àwọn gbígbà-sọ̀kalẹ̀ líra ní àwọn ẹ̀rọ asáwákiri alágbèéká kò ní àtìlẹ́yìn, àti pé àwọn fídíò kan le maa má gbà-sọ̀kalẹ̀.<br><br>Láti gbà gbogbo àwọn fọ́tò àti àwọn fídíò kalẹ̀ ní ẹ̀ẹ̀kan:",
+  "Edit": "Àtúnṣe",
+  "Edit Album": "Àtúnṣe albọ́mù",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Ṣatunṣe àwọn ètò àlbọ́mù",
+  "Upload in progress": "Gbigbé sókè ń lọ",
+  "Album Progress": "Ìlọsíwájú àlbọ́mù",
+  "Adding Photos to Album": "Fifi àwọn fọ́tò kún àlbọ́mù",
+  "Creating New Album": "Ṣíṣẹ̀dá àlbọ́mù tuntun",
+  "Uploading your photos...": "Ń gbé àwọn fọ́tò rẹ sókè...",
+  "Cancel Upload": "Fagilee gbigbé sókè"
 }

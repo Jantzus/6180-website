@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Naa éšeeséhe'ėstse'e ésáa'éne mohtatamóvaheo'o. Népėhéváne néto'seve'hameha.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Hó'honehe {{amount}} mȧhpe nehetónová'e véhpéhe hóhtáva éohkėhévatámová'e sáa'ėstȯhéva.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Plan hestāna mo'hetanohe heše hemȧhpe-veho. Naa hohpȧhévenotove hestāma hōhtsetā'e na'estse nėhéno'e hetaneo'o heešetāna.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "É-némene'sevȧhešėhétohe nėhešėhestoo'o éheše-amȧhoohta. Naa hetane-amȧhoohta hetséšėxhéve-hóhtaotse hoo'ēse-amȧhoohta hétanéšeého-stȧhovāne?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "É-némene'sevȧhešėhétohe nėhešėhestoo'o éheše-amȧhoohta. Naa hetane-amȧhoohta hetséšėxhéve-hóhtaotse hoo'ēse-amȧhoohta hétanéšeého-stȧhovāne?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Éšetoa'etȯhonóne évetótáxetaneo'o hóe'ne, bulk downloads náaheme móxe'ōhtove browsers ná'ōhtse éveōhtonoo'e, tó'se mō'ȯhkéehe videos ho'évone nanóhetȯhehe.<br><br>Tósa'e vo'omō'e táxemēševēške tó'se videos nanó'seonéehehe:",
+  "Edit": "Hóhkêha'e",
+  "Edit Album": "Album hóhkêha'e",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album éestsėhéstȯxe va'ne",
+  "Upload in progress": "Upload éhešėhéve",
+  "Album Progress": "Album éestsehevestȯtse",
+  "Adding Photos to Album": "Album éšeévaʼe éno'sétȯxe'ohe",
+  "Creating New Album": "Esevone album énonetsėhéstȯtse",
+  "Uploading your photos...": "Hetéeme-ma'táhéhehe évéhné-éstse...",
+  "Cancel Upload": "Upload énéstȯxe'ohe"
 }

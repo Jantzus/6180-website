@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "কিছুমান ফটো প্ৰক্ৰিয়া কৰিব পৰা নগ'ল। আপুনি সফলভাৱে প্ৰক্ৰিয়া কৰা ফটোবোৰৰ সৈতে আগবাঢ়িব পাৰে।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "আপুনি এই পেমেণ্ট পদ্ধতি নসলাই নিদিলে প্ৰতিমাহে {{amount}} স্বয়ংক্ৰিয়ভাৱে বিল কৰা হ'ব।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "আপোনাৰ প্ৰয়োজনৰ সৈতে সৰ্বোত্তমভাৱে খাপ খোৱা পৰিকল্পনা বাছক। আপুনি তলৰ বিকল্পসমূহৰ পৰা বাছি ল'ব পাৰে বা এটা কাষ্টম পৰিমাণ দিব পাৰে।",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "আমি দেখিলোঁ যে আপোনাৰ ফোল্ডাৰত উপফোল্ডাৰ আছে। আপুনি প্ৰতিটো উপফোল্ডাৰৰ বাবে পৃথক এলবাম সৃষ্টি কৰিব বিচাৰে নে সকলোকে এটা এলবাম হিচাপে ব্যৱহাৰ কৰিব বিচাৰে?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "আমি দেখিলোঁ যে আপোনাৰ ফোল্ডাৰত উপফোল্ডাৰ আছে। আপুনি প্ৰতিটো উপফোল্ডাৰৰ বাবে পৃথক এলবাম সৃষ্টি কৰিব বিচাৰে নে সকলোকে এটা এলবাম হিচাপে ব্যৱহাৰ কৰিব বিচাৰে?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "কাৰিকৰী সীমাবদ্ধতাৰ বাবে, মোবাইল ব্ৰাউজাৰত বাল্ক ডাউনলোড সমৰ্থিত নহয়, আৰু কিছুমান ভিডিঅ' ডাউনলোড নহ'বও পাৰে।<br><br>সকলো ফটো আৰু ভিডিঅ' একেলগে ডাউনলোড কৰিবলৈ, অনুগ্ৰহ কৰি:",
+  "Edit": "সম্পাদনা",
+  "Edit Album": "এলবাম সম্পাদনা",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "এলবামৰ ছেটিংছ সম্পাদনা কৰক",
+  "Upload in progress": "আপলোড চলি আছে",
+  "Album Progress": "এলবামৰ অগ্ৰগতি",
+  "Adding Photos to Album": "এলবামত ফটো যোগ কৰি থকা",
+  "Creating New Album": "নতুন এলবাম সৃষ্টি কৰি থকা",
+  "Uploading your photos...": "আপোনাৰ ফটোসমূহ আপলোড কৰি থকা হৈছে...",
+  "Cancel Upload": "আপলোড বাতিল কৰক"
 }

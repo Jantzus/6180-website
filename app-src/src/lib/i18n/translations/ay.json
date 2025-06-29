@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Yaqhip fotogramas jan jiyatäkxiti. Suma askiw photogramas ukamp sarantañ uñjasta.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sapa phaxsi {{amount}} payañapataki aka manqha thakhi ukamprakiw jan mayjt'ayañkamax.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Munäwimp plan ajlla amtawipa thuqt uñatäwisa. Aka aynakatp chhijllasmawa jan ukax mä sapa jakhu uchasiñamawa.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Uñt'ayxañanwa carpeta ukax subfoldernakani utjita. Sapa subfolder ukana mayspach álbum luraña muntta, jan ukax taynakana mayni álbum hiña apnaqaña?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Uñt'ayxañanwa carpeta ukax subfoldernakani utjita. Sapa subfolder ukana mayspach álbum luraña muntta, jan ukax taynakana mayni álbum hiña apnaqaña?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Técnico limitacionanak layku, móvil navegadoranakan jilpachi apkatañanaka jan yanapt'atakiti, ukatx mä qhawqha video apkatatäkaspas janiw apkatatäkchiti.<br><br>Taqi uñacht'awinaka ukat videonakas mayaki apkatañataki, sum:",
+  "Edit": "Chantañar",
+  "Edit Album": "Álbum chantañar",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Álbum configuraciones wakichañataki",
+  "Upload in progress": "Jaqayaña saräwi",
+  "Album Progress": "Álbum sarayaña",
+  "Adding Photos to Album": "Álbum-ar fotos yapxataña",
+  "Creating New Album": "Machaq álbum lurañ",
+  "Uploading your photos...": "Fotos-am jaqayaña...",
+  "Cancel Upload": "Jaqayaña jark'aqaña"
 }

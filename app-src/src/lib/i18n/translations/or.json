@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "କେତେକ ଫଟୋ ପ୍ରକ୍ରିୟା କରାଯାଇ ପାରିଲା ନାହିଁ। ଆପଣ ସଫଳତାର ସହ ପ୍ରକ୍ରିୟା ହୋଇଥିବା ଫଟୋ ସହିତ ଆଗେଇ ଯାଇ ପାରିବେ।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ଆପଣ ଏହାକୁ ପରିବର୍ତ୍ତନ ନ କରିବା ପର୍ଯ୍ୟନ୍ତ ଏହି ପେମେଣ୍ଟ ପଦ୍ଧତିରେ ମାସିକ {{amount}} ସ୍ୱୟଂଚାଳିତ ଭାବରେ ବିଲ କରାଯିବ।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ଆପଣଙ୍କ ଆବଶ୍ୟକତା ସହିତ ସର୍ବୋତ୍ତମ ମେଳ ଖାଉଥିବା ଯୋଜନା ବାଛନ୍ତୁ। ଆପଣ ନିମ୍ନ ବିକଳ୍ପଗୁଡ଼ିକରୁ ବାଛି ପାରିବେ କିମ୍ବା ଏକ କଷ୍ଟମ୍ ପରିମାଣ ପ୍ରବେଶ କରିପାରିବେ।",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ଆମେ ଦେଖିଲୁ ଯେ ଆପଣଙ୍କ ଫୋଲ୍ଡରରେ ଉପଫୋଲ୍ଡର ଅଛି। ଆପଣ ପ୍ରତ୍ୟେକ ଉପଫୋଲ୍ଡର ପାଇଁ ଅଲଗା ଆଲବମ୍ ସୃଷ୍ଟି କରିବାକୁ ଚାହାଁନ୍ତି କି ସମସ୍ତଙ୍କୁ ଗୋଟିଏ ଆଲବମ୍ ଭାବରେ ବ୍ୟବହାର କରିବାକୁ ଚାହାଁନ୍ତି?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ଆମେ ଦେଖିଲୁ ଯେ ଆପଣଙ୍କ ଫୋଲ୍ଡରରେ ଉପଫୋଲ୍ଡର ଅଛି। ଆପଣ ପ୍ରତ୍ୟେକ ଉପଫୋଲ୍ଡର ପାଇଁ ଅଲଗା ଆଲବମ୍ ସୃଷ୍ଟି କରିବାକୁ ଚାହାଁନ୍ତି କି ସମସ୍ତଙ୍କୁ ଗୋଟିଏ ଆଲବମ୍ ଭାବରେ ବ୍ୟବହାର କରିବାକୁ ଚାହାଁନ୍ତି?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ଯାନ୍ତ୍ରିକ ସୀମିତତା କାରଣରୁ, ମୋବାଇଲ୍ ବ୍ରାଉଜରରେ ବଲ୍କ ଡାଉନଲୋଡ୍ ସମର୍ଥିତ ନୁହେଁ, ଏବଂ କିଛି ଭିଡ଼ିଓ ଡାଉନଲୋଡ୍ ହୋଇ ନପାରେ।<br><br>ସମସ୍ତ ଫଟୋ ଓ ଭିଡ଼ିଓ ଥରେ ଡାଉନଲୋଡ୍ କରିବାକୁ:",
+  "Edit": "ସମ୍ପାଦନା",
+  "Edit Album": "ଆଲବମ ସମ୍ପାଦନା",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ଆଲବମ୍ ସେଟିଂସ ସମ୍ପାଦନା କରନ୍ତୁ",
+  "Upload in progress": "ଅପଲୋଡ଼ ଚାଲିଛି",
+  "Album Progress": "ଆଲବମ୍ ପ୍ରଗତି",
+  "Adding Photos to Album": "ଆଲବମରେ ଫଟୋ ଯୋଗ କରିବା",
+  "Creating New Album": "ନୂତନ ଆଲବମ୍ ସୃଷ୍ଟି କରୁଛି",
+  "Uploading your photos...": "ଆପଣଙ୍କ ଫଟୋ ଅପଲୋଡ଼ ହେଉଛି...",
+  "Cancel Upload": "ଅପଲୋଡ଼ ବାତିଲ କରନ୍ତୁ"
 }

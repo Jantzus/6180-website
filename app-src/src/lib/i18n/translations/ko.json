@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "일부 사진을 처리할 수 없었습니다. 성공적으로 처리된 사진으로 계속 진행할 수 있습니다.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "이 결제 방법을 변경하지 않는 한 매월 {{amount}}가 자동으로 청구됩니다.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "귀하의 필요에 가장 적합한 플랜을 선택하세요. 아래 옵션에서 선택하거나 맞춤 금액을 입력할 수 있습니다.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "폴더에 하위 폴더가 포함되어 있음을 확인했습니다. 각 하위 폴더마다 별도의 앨범을 만드시겠습니까, 아니면 모두 하나의 앨범으로 처리하시겠습니까?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "폴더에 하위 폴더가 포함되어 있음을 확인했습니다. 각 하위 폴더마다 별도의 앨범을 만드시겠습니까, 아니면 모두 하나의 앨범으로 처리하시겠습니까?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "기술적 제한으로 인해 모바일 브라우저에서 일괄 다운로드가 지원되지 않으며, 일부 동영상이 다운로드되지 않을 수 있습니다.<br><br>모든 사진과 동영상을 한 번에 다운로드하려면:",
+  "Edit": "편집",
+  "Edit Album": "앨범 편집",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "앨범 설정 편집",
+  "Upload in progress": "업로드 중",
+  "Album Progress": "앨범 진행률",
+  "Adding Photos to Album": "앨범에 사진 추가 중",
+  "Creating New Album": "새 앨범 만들기",
+  "Uploading your photos...": "사진을 업로드하는 중...",
+  "Cancel Upload": "업로드 취소"
 }

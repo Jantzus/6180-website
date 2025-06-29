@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Algunas fotos no pudieron ser procesadas. Puedesh kontinar kon las fotos prosesadas kon eksito.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se te va a kograr automatikamente {{amount}} kada mes en este metodo de pago si no lo trokas.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Eskojed el plan ke se ajusti mizor a vuestras nesesidades. Podesh eskojer entre las opsiones de avajo o meter una kantidad personalizada.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vimos ke vuesta karpeta tyene subkarpetas. Kerech krear un album separado para kada subkarpeta, o tratar a todas komo un solo album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vimos ke vuesta karpeta tyene subkarpetas. Kerech krear un album separado para kada subkarpeta, o tratar a todas komo un solo album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Por limitasiones teknolojika, las deskargas masivas en navegadores mobiles non son suportadas, i algunos videos pueden non deskargarse.<br><br>Para deskargar todas las fotos i videos de una vez:",
+  "Edit": "Editar",
+  "Edit Album": "Editar albume",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Editar konfigurasiones del album",
+  "Upload in progress": "Kargamento en kurso",
+  "Album Progress": "Progreso del album",
+  "Adding Photos to Album": "Metiendo fotos al album",
+  "Creating New Album": "Kreyando muevo album",
+  "Uploading your photos...": "Kargando tus fotos...",
+  "Cancel Upload": "Anular kargamento"
 }

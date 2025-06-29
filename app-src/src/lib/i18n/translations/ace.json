@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Nyang bèë fòto hana jeuët geu-proses. Droëneuh jeuët teruskan ngön fòto nyang ka geu-proses jeuët.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Droëneuh geutamah bayeue {{amount}} seutiëp bulan ngön cara bayeue nyoe kecuali droëneuh ganti.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilihlah rencana yang paling cocok dengan kebutuhan Anda. Anda dapat memilih dari opsi di bawah ini atau memasukkan jumlah khusus.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kamoe meupeulara bahwa folder droeneuh na subfolder. Kamoe galak jiteuka album khusus keu tiep subfolder, atawa kira jadiken saboh album mantong?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kamoe meupeulara bahwa folder droeneuh na subfolder. Kamoe galak jiteuka album khusus keu tiep subfolder, atawa kira jadiken saboh album mantong?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Karena keterbatasan teknis, unduhan massal di browser mobile tidak didukung, dan beberapa video mungkin tidak dapat diunduh.<br><br>Untuk mengunduh semua foto dan video sekaligus, silakan:",
+  "Edit": "Peubah",
+  "Edit Album": "Peubah Album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Peubah Aturan Album",
+  "Upload in progress": "Upload nyang teungoh jaroe",
+  "Album Progress": "Kamajuan Album",
+  "Adding Photos to Album": "Tamah Gamba keu Album",
+  "Creating New Album": "Peugot Album Barô",
+  "Uploading your photos...": "Lagi upload gamba droeneuh...",
+  "Cancel Upload": "Bateuë Upload"
 }

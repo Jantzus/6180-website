@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ní fhéadfaí roinnt grianghraf a phróiseáil. Is féidir leat leanúint ar aghaidh leis na grianghraif a próiseáladh go rathúil.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Gheobhaidh tú bille go huathoibríoch {{amount}} go míosúil ar an modh íocaíochta seo mura n-athraíonn tú é.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Roghnaigh an plean is fearr a fhóireann do do chuid riachtanas. Is féidir leat rogha a dhéanamh as na roghanna thíos nó suim shaincheaptha a iontráil.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Thug muid faoi deara go bhfuil fofhillteáin sa fhillteán agat. Ar mhaith leat albam ar leith a chruthú do gach fofhillteán, nó iad go léir a chaitheamh mar albam amháin?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Thug muid faoi deara go bhfuil fofhillteáin sa fhillteán agat. Ar mhaith leat albam ar leith a chruthú do gach fofhillteán, nó iad go léir a chaitheamh mar albam amháin?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "De bharr teorainneacha teicniúla, ní thacaítear le híoslódálacha ollmhóra ar bhrabhsálaithe móibíleacha, agus b'fhéidir nach n-íoslódálfaidh roinnt físeán.<br><br>Chun na grianghraif agus físeáin go léir a íoslódáil in éineacht, le do thoil:",
+  "Edit": "Cuir in eagar",
+  "Edit Album": "Cuir an t-albam in eagar",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Cuir socruithe an albam in eagar",
+  "Upload in progress": "Uaslódáil ar siúl",
+  "Album Progress": "Dul chun cinn an albam",
+  "Adding Photos to Album": "Grianghraif a chur leis an albam",
+  "Creating New Album": "Albam nua a chruthú",
+  "Uploading your photos...": "Do ghrianghraif á n-uaslódáil...",
+  "Cancel Upload": "Cealaigh an uaslódáil"
 }

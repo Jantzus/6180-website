@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Einigi Fotos händ nöt chönne verarbeitet werde. Du chasch wiitermache mit de erfolgriich verarbeitete Fotos.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Dir wärd automatisch {{amount}} monatlech uf dere Zahlungsmethode charged usser dir änderet se.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wehl dr Plan us wo zu dyyne Bedürfniss passt. Du chasch us de Optione underhalb wehle oder es eigets Betrag ygäh.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir hän gseh dass dyy Ordner Unterordner het. Wetsch für jede Unterordner es eigets Album mache oder alli zämme als eis Album behandle?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir hän gseh dass dyy Ordner Unterordner het. Wetsch für jede Unterordner es eigets Album mache oder alli zämme als eis Album behandle?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Wäge tächnische Ygränkige wärded Masse-Downloads uf mobile Browser nid unterstützt, und einigi Videos lönd sich vilicht nid abelade.<br><br>För alli Fotis und Videos uf einisch z'lade, bitte:",
+  "Edit": "Bearbeite",
+  "Edit Album": "Album bearbeite",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album-Iistellige bearbeite",
+  "Upload in progress": "Upload läuft",
+  "Album Progress": "Album-Fortschritt",
+  "Adding Photos to Album": "Fotis zum Album hinzuefüege",
+  "Creating New Album": "Nöis Album erstelle",
+  "Uploading your photos...": "Dini Fotis wäred ufeglade...",
+  "Cancel Upload": "Upload abbräche"
 }

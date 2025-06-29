@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Мукӧд фотоэз эз вермыны дасьтыны. Тэ верманныд дасьтӧм фотоэзкӧд водзӧ нуӧдны.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Сідзкӧт тэ тайӧ сьӧм сетан ног улыштӧгыд тіянлысь {{amount}} воас кык-кодзыд.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Видзӧдлӧй план, кӧда бурджыка лӧсялӧ тіян колянаныслы. Тӧданныд бӧрйыны улісь вариантъяслысь либӧ пыртны асьныд сумма.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Тэ аддзим, мый тіян папкалын кичӧсь папкаяс эмӧсь. Кӧсъянныд-ӧ быд кичӧсь папкалы сідз альбом вӧчны, эли ставсӧ öтик альбомӧн лыддьыны?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Тэ аддзим, мый тіян папкалын кичӧсь папкаяс эмӧсь. Кӧсъянныд-ӧ быд кичӧсь папкалы сідз альбом вӧчны, эли ставсӧ öтик альбомӧн лыддьыны?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникаись лöдзöмъяс понда, мобильнöй браузерын öткодь уна файл ньöбны позьтöм, да мукöд видеоыс тшöтш оз ньöбны.<br><br>Став фотоес да видеоес öтик пöрйö ньöбны медым:",
+  "Edit": "Вежӧртны",
+  "Edit Album": "Альбом вежӧртны",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом кужӧмъяс вежны",
+  "Upload in progress": "Видзӧдӧм мунӧ",
+  "Album Progress": "Альбом водзӧ мунӧм",
+  "Adding Photos to Album": "Альбомӧ фото содтӧм",
+  "Creating New Album": "Выль альбом лöсьöдöм",
+  "Uploading your photos...": "Тіян фотоясӧ видзӧдӧм...",
+  "Cancel Upload": "Видзӧдӧм дугдӧдны"
 }

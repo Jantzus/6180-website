@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ಕೆಲವು ಫೋಟೋ ಪ್ರೊಸೆಸ್ ಮಲ್ಪುವರೆ ಆಪುಜಿ। ಈರ್ ಕಾರ್ಯಕ್ರಮದ ಪ್ರೊಸೆಸ್ ಆತಿನ ಫೋಟೋಲೆನ್ ಮುಂದುವರೆಸುಪುದು.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ಈ ಪೇಮಂಟ್ ವಿಧಾನೊನು ಬದಲಾವೆ ಮಲ್ಪಂದಿತ್ತೆ ಪ್ರತಿ ತಿಂಗೊಟು {{amount}} ಕಸ್ತುರ್ಬಾಗಿ ಬಿಲ್ ಆಪುಂಡು।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ನಮ್ಮ ತಿಳ್ಯೊಂದು ತುಮಿನ ಫೋಲ್ಡರ್‌ದ ಸಬ್‌ಫೋಲ್ಡರ್‌ಲು ಇತ್ತಿನವು. ತುಮಿಗ್ ಸಬ್‌ಫೋಲ್ಡರ್‌ಗೆಲೆಕ್ ವೇತ್ಯಾರಿ ಆಲ್ಬಂ ಮಲ್ಪೊಣ ಬಯ್ಪಾದ್, ಅತ್ತಿ ಅವೆಲ್ಯಾನ್ ಒಂಜೇ ಆಲ್ಬಂ ಅಂಚ್ ಗಣಿಪೊಣ ಬಯ್ಪಾದ್?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ನಮ್ಮ ತಿಳ್ಯೊಂದು ತುಮಿನ ಫೋಲ್ಡರ್‌ದ ಸಬ್‌ಫೋಲ್ಡರ್‌ಲು ಇತ್ತಿನವು. ತುಮಿಗ್ ಸಬ್‌ಫೋಲ್ಡರ್‌ಗೆಲೆಕ್ ವೇತ್ಯಾರಿ ಆಲ್ಬಂ ಮಲ್ಪೊಣ ಬಯ್ಪಾದ್, ಅತ್ತಿ ಅವೆಲ್ಯಾನ್ ಒಂಜೇ ಆಲ್ಬಂ ಅಂಚ್ ಗಣಿಪೊಣ ಬಯ್ಪಾದ್?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ತಾಂತ್ರಿಕ ಮಿತಿಲೆದ್ ಮೂಲಕ, ಮೊಬೈಲ್ ಬ್ರೌಸರ್‌ಲೆಡ್ ಬಲ್ಕ್ ಡೌನ್‌ಲೋಡ್‌ಲು ಬೆಂಬಲ ಇಜ್ಜಿ, ಬೊಕ್ಕ ಕೆಲವು ವೀಡಿಯೊಲು ಡೌನ್‌ಲೋಡ್ ಆಪಿನ್ನ್ ಆತಿಜಿ.<br><br>ಮಾತಾ ಪೊಟೊಲು ಬೊಕ್ಕ ವೀಡಿಯೊಲು ಒಟ್ಟಿಗ್ ಡೌನ್‌ಲೋಡ್ ಮಲ್ಪೆರ್:",
+  "Edit": "ಸಂಪಾದನೆ",
+  "Edit Album": "ಆಲ್ಬಂ ಸಂಪಾದನೆ",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ಆಲ್ಬಂ ಸೆಟ್ಟಿಂಗ್‌ಲೆನ್ ಎಡಿಟ್ ಮಲ್ಪುಲೆ",
+  "Upload in progress": "ಅಪ್‌ಲೋಡ್ ನಡತ್ತಿದ್ಯಂದ್",
+  "Album Progress": "ಆಲ್ಬಂ ಪ್ರಗತಿ",
+  "Adding Photos to Album": "ಆಲ್ಬಂಗ್ ಫೋಟೋ ಲೆನ್ ಸೇರ್ಕ್",
+  "Creating New Album": "ಪೊಸ ಆಲ್ಬಂ ಮಲ್ಪುವುದು",
+  "Uploading your photos...": "ಈರ್ ಫೋಟೋ ಲೆನ್ ಅಪ್‌ಲೋಡ್ ಮಲ್ಪುವುದು...",
+  "Cancel Upload": "ಅಪ್‌ಲೋಡ್ ರದ್ದು ಮಲ್ಪುಲೆ"
 }

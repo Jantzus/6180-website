@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sawetara foto ora bisa diproses. Panjenengan bisa nglanjutake karo foto sing wis kasil diproses.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sampeyan bakal diwenehi tagihan otomatis {{amount}} saben wulan karo cara bayar iki yen ora diganti.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilih paket sing paling cocok karo kabutuhan panjenengan. Panjenengan bisa milih saka pilihan ing ngisor iki utawa nglebokake jumlah khusus.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kita weruh yen folder sampeyan ana subfolder. Arep nggawe album kapisah kanggo saben subfolder, apa dianggep kabeh dadi siji album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kita weruh yen folder sampeyan ana subfolder. Arep nggawe album kapisah kanggo saben subfolder, apa dianggep kabeh dadi siji album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Mergo ana watesan teknis, download akeh nang browser mobile ora didukung, lan sawetara video bisa uga ora iso didownload.<br><br>Kanggo ndownload kabeh foto lan video bebarengan:",
+  "Edit": "Sunting",
+  "Edit Album": "Sunting album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Nyunting setelan album",
+  "Upload in progress": "Upload lagi mlaku",
+  "Album Progress": "Kemajuan album",
+  "Adding Photos to Album": "Nambah foto nyang album",
+  "Creating New Album": "Nggawe album anyar",
+  "Uploading your photos...": "Ngunggah foto sampeyan...",
+  "Cancel Upload": "Batal upload"
 }

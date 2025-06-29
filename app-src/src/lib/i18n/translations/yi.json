@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "עטלעכע פֿאָטאָס קען נישט געװאָרן פּראָצעסירט. איר קענט פֿאָרזעצן מיט די סוקסעספול פּראָצעסירטע פֿאָטאָס.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "איר װעט אױטאָמאַטיש געביל װערן {{amount}} מאָנאַטלעך אױף דעם צאָלונג־מעטאָד אױסער איר ענדערט עס.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "קלייַבט דעם פּלאַן וואָס פּאַסט בעסטער צו אײַערע באַדערפֿענישן. איר קענט אויסקלײַבן פֿון די אָפּציעס אונטן אָדער אַרײַנלייגן אַ מנהגדיק סומע.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "מיר האָבן געמערקט אַז אײַער טעקע אַנטהאַלט אונטער־טעקעס. וואָלט איר ווילן שאַפֿן אַ באַזונדער אַלבאָם פֿאַר יעדער אונטער־טעקע, אָדער האַנדלען מיט זיי אַלע ווי איין אַלבאָם?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "מיר האָבן געמערקט אַז אײַער טעקע אַנטהאַלט אונטער־טעקעס. וואָלט איר ווילן שאַפֿן אַ באַזונדער אַלבאָם פֿאַר יעדער אונטער־טעקע, אָדער האַנדלען מיט זיי אַלע ווי איין אַלבאָם?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "צוליב טעכנישע באגרענעצונגען ווערן מאסן-דאַונלאָודס אויף מאָביל בראַוזערס נישט געשטיצט, און עטלעכע ווידעאָס מעגן נישט אראפלאדן.<br><br>צו אראפלאדן אלע פאטאס און ווידעאָס אין איין מאל:",
+  "Edit": "רעדאַקטירן",
+  "Edit Album": "רעדאַקטירן אלבאם",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "רעדאַקטירן אלבום סעטטינגס",
+  "Upload in progress": "אַרויפֿלאָדן איז אין גאַנג",
+  "Album Progress": "אלבום פּראָגרעס",
+  "Adding Photos to Album": "צוגעבן פֿאָטאָס צום אלבום",
+  "Creating New Album": "שאַפֿן נײַע אלבום",
+  "Uploading your photos...": "ארויפֿלאָדן דיינע פֿאָטאָס...",
+  "Cancel Upload": "באָטלען אַרויפֿלאָדן"
 }

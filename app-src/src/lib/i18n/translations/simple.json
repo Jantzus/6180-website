@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Some photos could not be processed. You can continue with the successfully processed photos.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "You will be automatically billed {{amount}} monthly on this payment method unless you change it.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Because of technical problems, downloading many things at once is not supported on mobile web browsers, and some videos might not download.<br><br>To download all photos and videos at the same time, please:",
+  "Edit": "Edit",
+  "Edit Album": "Edit Album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edit album settings",
+  "Upload in progress": "Upload happening now",
+  "Album Progress": "Album progress",
+  "Adding Photos to Album": "Adding photos to album",
+  "Creating New Album": "Making new album",
+  "Uploading your photos...": "Uploading your photos...",
+  "Cancel Upload": "Cancel upload"
 }

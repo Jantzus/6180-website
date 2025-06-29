@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Photo kaniohmi ka ahoba he keyu. Ahoba achukma ho a ish ai itunowa he anumpesh.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ish biheli {{amount}} hvsh ittatuklo ka ish ayoksochi tokkali ish tok changakma chiyohmi hosh.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Plan ish atobakmvt ish ahullashke. Ishtia holisso takla ya ish atobakma chukma hoke.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pi foida ya holisso in aiasha nukshopa hosh itukshila tuk. Nukshopa in kaniohmi ka album achahaka ikba chim anukshayvchi o, keyukmut mominchit achufa ka album chiyuhma chim anukshayvchi o?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pi foida ya holisso in aiasha nukshopa hosh itukshila tuk. Nukshopa in kaniohmi ka album achahaka ikba chim anukshayvchi o, keyukmut mominchit achufa ka album chiyuhma chim anukshayvchi o?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Tipolitika pisa pulla, nitak shini holba bulka download ut mobile browsers ya nowa ik tuklo, anonti video kaniohmi ut ik download hinla hoke.<br><br>Shilombish moma ik video moma ik download chi ka:",
+  "Edit": "Atosholi",
+  "Edit Album": "Album atosholi",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album isht im apelikchi",
+  "Upload in progress": "Upload ai itunowa",
+  "Album Progress": "Album im ahullochaka",
+  "Adding Photos to Album": "Album a shalli oha bohli",
+  "Creating New Album": "Album himona ikbi",
+  "Uploading your photos...": "Chi shalli a uploadi...",
+  "Cancel Upload": "Upload ik im anoli"
 }

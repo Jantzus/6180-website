@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Okufoto oko ka tika uuwadja pemulike. Ove okutya nomafoto ayehe ogo omomunene ayuuvadja pemulike.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ove ukutya nomahona ayehe {{amount}} omutenya otopetela epundanyene ova kane omano maatokwato.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Rongo lala plan he ya adhika ra komu pera ko ra sho. Ka adhika kaa to ra rongo ra options ta pira e urana ka e pira kaa ta custom amount e sho.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ngai gi ri purun da folder nge ya pera po subfolder kanga. Kanga pera nga gi ra wan purun giba nga adhiya album he di kanga subfolder ngaina, nga kanga gi yanga ta purun ra wan album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ngai gi ri purun da folder nge ya pera po subfolder kanga. Kanga pera nga gi ra wan purun giba nga adhiya album he di kanga subfolder ngaina, nga kanga gi yanga ta purun ra wan album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Po ku hala okusivulu a kompyuta, ku na download uye gi mobile browsers ka na ndiki, mo sam video maka bika download ko.<br><br>Etu download foto yoye navideo ku kelike:",
+  "Edit": "Longisa",
+  "Edit Album": "Longisa album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Vulithela album ko setting",
+  "Upload in progress": "Upload yali kwa henda",
+  "Album Progress": "Album progress",
+  "Adding Photos to Album": "Vika yali vura foto ko album",
+  "Creating New Album": "Vura album ya ngiini",
+  "Uploading your photos...": "Upload yomu foto...",
+  "Cancel Upload": "Tila upload"
 }

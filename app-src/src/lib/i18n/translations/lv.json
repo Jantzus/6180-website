@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Dažas fotogrāfijas nevarēja apstrādāt. Varat turpināt ar veiksmīgi apstrādātajām fotogrāfijām.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jums tiks automātiski aprēķināts {{amount}} katru mēnesi ar šo maksājumu metodi, ja to nemainīsiet.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Izvēlieties plānu, kas vislabāk atbilst jūsu vajadzībām. Varat izvēlēties no tālāk redzamajiem variantiem vai ievadīt pielāgotu summu.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mēs pamanījām, ka jūsu mapē ir apakšmapes. Vai vēlaties izveidot atsevišķu albumu katrai apakšmapei, vai apskatīt tās visas kā vienu albumu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mēs pamanījām, ka jūsu mapē ir apakšmapes. Vai vēlaties izveidot atsevišķu albumu katrai apakšmapei, vai apskatīt tās visas kā vienu albumu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Tehnisko ierobežojumu dēļ lielapjoma lejupielādes mobilajās pārlūkprogrammās netiek atbalstītas, un daži videoklipi var netikt lejupielādēti.<br><br>Lai vienlaikus lejupielādētu visas fotogrāfijas un videoklipus:",
+  "Edit": "Labot",
+  "Edit Album": "Labot albumu",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Rediģēt albuma iestatījumus",
+  "Upload in progress": "Augšupielāde notiek",
+  "Album Progress": "Albuma progress",
+  "Adding Photos to Album": "Fotogrāfiju pievienošana albumam",
+  "Creating New Album": "Veido jaunu albumu",
+  "Uploading your photos...": "Augšupielāde jūsu fotogrāfijas...",
+  "Cancel Upload": "Atcelt augšupielādi"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Zithunzi zina zosatha kukonzedwa. Mutha kupitiriza ndi zithunzi zimene zakonzedwa bwino.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Mudzalipidwa {{amount}} pachakumalo chiyani chilichonse pamtundu uwu wolipirira mukangositha.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Sankani pulogalamu imene yagwilikana kwambili ndi zofunika zanu. Mungasankhe pakati pa zosankha izi zapansi kapena kuyika ndalama zanu.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Taona kuti chikwatu chanu chali ndi zikwatu zazing'ono. Mukufuna kupanga albamu yosiyana pa chikwatu chazing'ono chilichonse, kapena kuchita zonsezi ngati albamu imodzi?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Taona kuti chikwatu chanu chali ndi zikwatu zazing'ono. Mukufuna kupanga albamu yosiyana pa chikwatu chazing'ono chilichonse, kapena kuchita zonsezi ngati albamu imodzi?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Chifukwa cha zolinga za ukadaulo, kutsitsa zambiri pa msakatuli a pa foni sikuthandizidwa, ndipo makanema ena sangatsitsidwe.<br><br>Kutsitsa zithunzi zonse ndi makanema nthawi imodzi:",
+  "Edit": "Sinthana",
+  "Edit Album": "Sinthana album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Sinthani masettings a album",
+  "Upload in progress": "Upload ikuyenda patsogolo",
+  "Album Progress": "Chitukuko cha album",
+  "Adding Photos to Album": "Kuwonjezera zithunzi mu album",
+  "Creating New Album": "Kupanga album yatsopano",
+  "Uploading your photos...": "Kukweza zithunzi zanu...",
+  "Cancel Upload": "Letsani kukweza"
 }

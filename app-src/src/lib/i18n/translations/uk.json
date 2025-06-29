@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Деякі фотографії не вдалося обробити. Ви можете продовжити з успішно обробленими фотографіями.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "З вас автоматично стягуватиметься {{amount}} щомісяця з цього способу оплати, якщо ви його не зміните.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Оберіть план, який найкраще відповідає вашим потребам. Ви можете вибрати з варіантів нижче або ввести власну суму.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ми помітили, що ваша папка містить підпапки. Чи хочете ви створити окремий альбом для кожної підпапки, чи розглядати їх усі як один альбом?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ми помітили, що ваша папка містить підпапки. Чи хочете ви створити окремий альбом для кожної підпапки, чи розглядати їх усі як один альбом?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Через технічні обмеження масове завантаження в мобільних браузерах не підтримується, і деякі відео можуть не завантажитися.<br><br>Щоб завантажити всі фото та відео одразу:",
+  "Edit": "Редагувати",
+  "Edit Album": "Редагувати альбом",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Редагувати налаштування альбому",
+  "Upload in progress": "Завантаження триває",
+  "Album Progress": "Прогрес альбому",
+  "Adding Photos to Album": "Додавання фотографій до альбому",
+  "Creating New Album": "Створення нового альбому",
+  "Uploading your photos...": "Завантажуються ваші фотографії...",
+  "Cancel Upload": "Скасувати завантаження"
 }

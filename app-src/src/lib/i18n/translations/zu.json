@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ezinye izithombe azikwazanga ukucutshungulwa. Ungaqhubeka nezithombe ezicutshungulwe ngempumelelo.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Uzobhadelwa i-{{amount}} njalo ngenyanga ngale ndlela yokukhokha ngaphandle kokuthi uyiyishintshe.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Khetha isicwangciso esisondeleyo kakhulu ekusizeni kwakho. Ungakhetha kusukela ezinhlangothini ezingezansi noma ufake inani elikhethekile.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sibone ukuthi ifolda yakho iqukethe amafolda amancane. Ingabe ufuna ukwenza i-albamu ehlukene kufolda encane ngayinye, noma ukuwaphatha wonke njengealbhamu elilodwa?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sibone ukuthi ifolda yakho iqukethe amafolda amancane. Ingabe ufuna ukwenza i-albamu ehlukene kufolda encane ngayinye, noma ukuwaphatha wonke njengealbhamu elilodwa?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ngenxa yemikhawulo yobuchwepheshe, ukukhipha okuningi kwama-browser amaselula akusekelwa, futhi amanye amavidiyo kungenzeka angakhipheki.<br><br>Ukukhipha zonke izithombe namavidiyo kanye:",
+  "Edit": "Hlela",
+  "Edit Album": "Hlela i-albhamu",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Hlela izilungiselelo ze-album",
+  "Upload in progress": "Ukulayisha kuyaqhubeka",
+  "Album Progress": "Inkqubela phambili ye-album",
+  "Adding Photos to Album": "Ukwengeza izithombe ku-album",
+  "Creating New Album": "Idala i-album entsha",
+  "Uploading your photos...": "Kulayishwa izithombe zakho...",
+  "Cancel Upload": "Khansela ukulayisha"
 }

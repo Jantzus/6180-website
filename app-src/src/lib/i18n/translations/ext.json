@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Algunas fotos nu han podiu sel procesás. Pueis continual cun las fotos procesás con éšitu.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se te cobrará automáticamenti {{amount}} mensualis en esti métodu de pagu a nu sel que lu cambies.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Escuehi el planu que mejol s'ajusti a tus necesidais. Pueis escuehi entri las ocionis d'abaju u metri una cantidá personalizada.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hemos visiu qu'el cartapaciu tieni subcartapacios. ¿Te gustaria creal un álbumi separau pa cada subcartapaciu, u tratallus a toos comu un solu álbumi?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hemos visiu qu'el cartapaciu tieni subcartapacios. ¿Te gustaria creal un álbumi separau pa cada subcartapaciu, u tratallus a toos comu un solu álbumi?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Por limitacionis técnicas, las descargas masivas en navegaoris móvilis nu son suportás, i alguns vídeos puein nu descargasi.<br><br>Pa descargar tolas las fotus i vídeos d'una vegá, por favol:",
+  "Edit": "Idital",
+  "Edit Album": "Idital álbumi",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edital configuración del álbun",
+  "Upload in progress": "Subía en cursu",
+  "Album Progress": "Progresu del álbun",
+  "Adding Photos to Album": "Añadiendu fotos al álbun",
+  "Creating New Album": "Criandu álbun nuevu",
+  "Uploading your photos...": "Subiendu las tus fotos...",
+  "Cancel Upload": "Cancelal subía"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Maciira mamwe ma mahiko matingi gũthondeithio. No ũgwatia na mahiko marĩa matondeithirio wega.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ũgaakorwo uri kurĩhwo {{amount}} mweri wothe na njĩra ĩno ya kũrĩha tiga ũkorwo ũragarũra.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tuura mubango urĩa ũkwagĩrĩra mũno. No ũthure kuuma harĩ ũthuurani wa gũkũ thĩ kana ũikĩre mbeeca ciaku mwene.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tuonete ati folder yaku iri na ma subfolder. Niwenda guthondeka album ya kwega kuri o subfolder, kana kumerera othe ta album imwe?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tuonete ati folder yaku iri na ma subfolder. Niwenda guthondeka album ya kwega kuri o subfolder, kana kumerera othe ta album imwe?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Nĩ ũndũ wa mĩhaka ya ũrutanĩ, gũcookia mũno kũrĩ burauza cia simu gũtiagĩrĩirwo, na amwe ma mathikiri mahota gũtiga gũcookio.<br><br>Nĩguo ũcokie mbũkũ ciothe na mathikiri rĩĩnga:",
+  "Edit": "Hindũra",
+  "Edit Album": "Hindũra album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Handũra itũũra rĩa mbuku",
+  "Upload in progress": "Upload ĩrĩ na mbere",
+  "Album Progress": "Gũthiĩ kwa mbere kwa mbuku",
+  "Adding Photos to Album": "Kũongereria mbwiri mbuku-inĩ",
+  "Creating New Album": "Gũthondeka mbuku njerũ",
+  "Uploading your photos...": "Gũcururia mbwiri ciaku...",
+  "Cancel Upload": "Tiga upload"
 }

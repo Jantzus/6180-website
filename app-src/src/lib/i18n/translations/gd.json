@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Cha b' urrainn cuid a dhealbhan a ghiùlan. Faodaidh sibh leantainn orra leis na dealbhan a chaidh an giùlan gu soirbheachail.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Thèid {{amount}} a thogail uaibh gu fèin-ghluasadach gach mìos air an dòigh-pàighidh seo mur caochail sibh e.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tagh am plana as fheàrr a fhreagras do na feumalachdan agad. Faodaidh tu taghadh às na roghainnean gu h-ìosal no suim àraidh a chur a-steach.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mhothaich sinn gu bheil fo-phasgan sa phasgan agad. Am bu toil leat clàr air leth a chruthachadh airson gach fo-phasgan, no am làimhseachadh gu lèir mar aon chlàr?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mhothaich sinn gu bheil fo-phasgan sa phasgan agad. Am bu toil leat clàr air leth a chruthachadh airson gach fo-phasgan, no am làimhseachadh gu lèir mar aon chlàr?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Air sgàth cuingeachaidhean teicnigeach, chan eil luchdachadh-sìos mòr air brabhsairean gluasadach a' faighinn taic, agus dh'fhaodadh nach luchdaich cuid de bhidiothan sìos.<br><br>Gus na dealbhan is na bhidiothan uile a luchdachadh sìos aig an aon àm:",
+  "Edit": "Deasaich",
+  "Edit Album": "Deasaich an albam",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Deasaich roghainnean an albam",
+  "Upload in progress": "Luchdadh suas a' dol air adhart",
+  "Album Progress": "Adhartas an albam",
+  "Adding Photos to Album": "A' cur dealbhan ris an albam",
+  "Creating New Album": "A' cruthachadh albam ùr",
+  "Uploading your photos...": "A' luchdadh suas do dhealbhan...",
+  "Cancel Upload": "Cuir dheth an luchdadh suas"
 }

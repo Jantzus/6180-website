@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Photo thenkhat hi process theih loh a ni. Process thiam tah chu i hmang thei dawn nia.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "He payment method hi i thlak loh chuan thla tin {{amount}} automatic-in bill-in a ni ang.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kan hmu a, i folder ah hian subfolder te a awm. Subfolder tinte tan album dang i siam duh em, a nih loh leh a vaiin album pakhat angin i ngai duh em?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kan hmu a, i folder ah hian subfolder te a awm. Subfolder tinte tan album dang i siam duh em, a nih loh leh a vaiin album pakhat angin i ngai duh em?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Technical limitation avangin, mobile browser-ah bulk download-te hi support an ni lo va, video thenkhat download theih loh a ni thei bawk.<br><br>Photo leh video zawng zawng vawi khat chauh download tur chuan:",
+  "Edit": "Siamtu",
+  "Edit Album": "Album siamtu",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album setting siamtha rawh",
+  "Upload in progress": "Upload a lo zel",
+  "Album Progress": "Album tihian",
+  "Adding Photos to Album": "Album ah photo dah belh",
+  "Creating New Album": "Album thar siam mek",
+  "Uploading your photos...": "I photo upload mek...",
+  "Cancel Upload": "Upload cancel rawh"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "En samun foto ka tika wa dilo. Ove wa tika wa kondja okwi foto yena omunene okwa dilo.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ove wa wa oupitwa {{amount}} omweri gwose ni oshiwana omo sha okuhakana omo, ka tika wa okusikunye.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Nan planba he ke mba gbabu danga fande. Ga samu dira diri bo nanaa ndau he biye vaa kaa nan ndau nga vaa fo.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ga samu dira diri ke folder ga raa subfolders. Ga ro biye album he ke ga ba subfolders adi ndu a, vaa kaa ga dira bo album sanda?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ga samu dira diri ke folder ga raa subfolders. Ga ro biye album he ke ga ba subfolders adi ndu a, vaa kaa ga dira bo album sanda?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Teknika limitasionti ko, masa download gi mobile browsers ti tuklo, mo sam video hila yan ti tuklo.<br><br>Para unload todu gui'e ri'etrato yan video gi un sakkan:",
+  "Edit": "Karkartata",
+  "Edit Album": "Karkartata album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Ba album setting dem ba vura ba",
+  "Upload in progress": "Upload yoro ba ka dem",
+  "Album Progress": "Album progress",
+  "Adding Photos to Album": "Ba photo ba da na album",
+  "Creating New Album": "Ba album ya sika ba vura",
+  "Uploading your photos...": "Ba photo na anu ba da...",
+  "Cancel Upload": "Ba upload ba hani"
 }

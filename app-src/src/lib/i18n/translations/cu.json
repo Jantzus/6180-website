@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Нѣкаꙗ ѻбраꙁи не мощаахѫ обрабатати сѧ᙮ Можеши продльжавати съ ѻбраꙁи иже добрѣ обработани сѫтъ᙮",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ты будеши автоматично наплащавае {{amount}} мѣсѧчьно на семь способѣ плащенїꙗ· ащe не поврѣдиши и꙽",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Избери планъ иже наилѣпѣ подобаѥтъ твоимъ потребамъ. Можеши избрати отъ избранѥ долѣ или въвести своѥ число.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Видѣхомъ ꙗко твоꙗ папка дрьжитъ подъпапки. Хощеши ли створити особьнъ алъбомъ для всѣкыѩ подъпапки, или мьнѣти вься ꙗко единъ алъбомъ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Видѣхомъ ꙗко твоꙗ папка дрьжитъ подъпапки. Хощеши ли створити особьнъ алъбомъ для всѣкыѩ подъпапки, или мьнѣти вься ꙗко единъ алъбомъ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Рачиѭ техничьскыихъ прѣдѣлъ, съборьна съписаниꙗ въ подвижьныихъ съмотрьникъ не подъдрьжимаѭтъсѧ, и нѣции видѣоси не мощьни съписати сѧ.<br><br>Да съпишеши вьсѩ образи и видѣоси въкоупѣ:",
+  "Edit": "Исправити",
+  "Edit Album": "Исправити алъбом",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Исправити настроѩ алъбома",
+  "Upload in progress": "Въсылани сѫщи",
+  "Album Progress": "Прѣуспѣѩ алъбома",
+  "Adding Photos to Album": "Прибавлѩ образи въ алъбомъ",
+  "Creating New Album": "Творѩ новъ алъбомъ",
+  "Uploading your photos...": "Твоѩ образи въсылани сѫтъ...",
+  "Cancel Upload": "Отъврьгноути въсылани"
 }

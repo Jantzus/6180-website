@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "சில புகைப்படங்களை செயலாக்க முடியவில்லை। வெற்றிகரமாக செயலாக்கப்பட்ட புகைப்படங்களுடன் நீங்கள் தொடரலாம்.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "இந்த பேமெண்ட் முறையை நீங்கள் மாற்றாத வரை மாதம் {{amount}} தானாகவே பில் செய்யப்படும்.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "உங்கள் தேவைகளுக்கு மிகவும் பொருத்தமான திட்டத்தைத் தேர்வு செய்யுங்கள். கீழே உள்ள விருப்பங்களிலிருந்து தேர்வு செய்யலாம் அல்லது தனிப்பயன் தொகையை உள்ளிடலாம்.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "உங்கள் கோப்புறையில் துணை கோப்புறைகள் உள்ளன என்பதை நாங்கள் கவனித்தோம். ஒவ்வொரு துணை கோப்புறைக்கும் தனி ஆல்பம் உருவாக்க விரும்புகிறீர்களா அல்லது அனைத்தையும் ஒரே ஆல்பமாக கருத விரும்புகிறீர்களா?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "உங்கள் கோப்புறையில் துணை கோப்புறைகள் உள்ளன என்பதை நாங்கள் கவனித்தோம். ஒவ்வொரு துணை கோப்புறைக்கும் தனி ஆல்பம் உருவாக்க விரும்புகிறீர்களா அல்லது அனைத்தையும் ஒரே ஆல்பமாக கருத விரும்புகிறீர்களா?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "தொழில்நுட்ப வரம்புகளால், மொபைல் உலாவிகளில் மொத்த பதிவிறக்கங்கள் ஆதரிக்கப்படவில்லை, மேலும் சில வீடியோக்கள் பதிவிறக்கம் செய்யப்படாமல் போகலாம்.<br><br>அனைத்து புகைப்படங்களையும் வீடியோக்களையும் ஒரே நேரத்தில் பதிவிறக்கம் செய்ய:",
+  "Edit": "தொகு",
+  "Edit Album": "ஆல்பத்தைத் தொகு",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ஆல்பம் அமைப்புகளைத் திருத்தவும்",
+  "Upload in progress": "பதிவேற்றம் நடைபெறுகிறது",
+  "Album Progress": "ஆல்பம் முன்னேற்றம்",
+  "Adding Photos to Album": "ஆல்பத்தில் புகைப்படங்களைச் சேர்க்கிறது",
+  "Creating New Album": "புதிய ஆல்பம் உருவாக்கப்படுகிறது",
+  "Uploading your photos...": "உங்கள் புகைப்படங்கள் பதிவேற்றப்படுகின்றன...",
+  "Cancel Upload": "பதிவேற்றத்தை ரத்துசெய்"
 }

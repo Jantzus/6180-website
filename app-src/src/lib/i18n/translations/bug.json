@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Na rupa lonto dekpa makallaui diprosese. Ikamui bisa makapadecceng purina purina na lonto-lonto allaui diprosese.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ikamui paksa otomatis ditagih {{amount}} tiap bulanna ri cara bayaranna ini apa kada diubah.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Piliʻi rencana to palinge laʻbui riolo kabutuhan mu. Muʻekko miliʻi ari pilihan ri awa e maggauk jumlah custom.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Taremo riala bahwa folder mu riolo subfolder. Malaku ri battu album cappureng untuk tiap subfolder, dekkuak ri padagi semuanna album secada?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Taremo riala bahwa folder mu riolo subfolder. Malaku ri battu album cappureng untuk tiap subfolder, dekkuak ri padagi semuanna album secada?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Narekko alasana teknise, unduhan masale ri browser mobile dekto didukung, siagang silarung video dekdeto bisa naunduh.<br><br>Narekko muunduh punna gambare siagang video silarung waktu, coba:",
+  "Edit": "Edit",
+  "Edit Album": "Edit album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Pabbarue setting album",
+  "Upload in progress": "Upload lagi jalan",
+  "Album Progress": "Kemajuan album",
+  "Adding Photos to Album": "Nambai foto ri album",
+  "Creating New Album": "Pammaua album baru",
+  "Uploading your photos...": "Mau-upload foto tanu...",
+  "Cancel Upload": "Battui upload"
 }

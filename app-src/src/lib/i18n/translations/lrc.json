@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "یه چن تا عکس نتونسته پردازش ببه. شما تونيد وا عکسان کي موفقيت آميز پردازش ببه دوام بديد.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ایسا پولی دئن طریقه گر شما نِخانیدش، هر ماه {{amount}} خودکار ازتو کأسه بنه.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "اۊن طرح ئەنتخاڤ ئەکید کە بىۊنە ٱشتیاجاتتە. شىمایە ٱسۊ گوزینە یٱ ژئیر جایە ٱنتخاڤ ئەکید یا پولی خۊتوندی دا.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ئه‌ما دی‌یمون که فولده‌رتو ذ زیرفولده‌ر هه‌سه. شیمایه خونیت هر زیرفولده‌رری یه جیا آلبوم بساڤیت یا همه‌شونه یه آلبوم بونیت؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ئه‌ما دی‌یمون که فولده‌رتو ذ زیرفولده‌ر هه‌سه. شیمایه خونیت هر زیرفولده‌رری یه جیا آلبوم بساڤیت یا همه‌شونه یه آلبوم بونیت؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "واسه قدغنیا تکنیکی، بیل داونلودا د موبایل براوزریا نبؤن پشتیان بیئه، و گل ڤیدیویا نشؤن هم داونلود ببؤن.<br><br>واسه داونلود کردن همه عسگیا و ڤیدیویا د یه واری:",
+  "Edit": "ویرایشت",
+  "Edit Album": "آلبوم ویرایشت",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ویرایش تنظیمات آلبوم",
+  "Upload in progress": "بارگذاری در حال انجام",
+  "Album Progress": "پیشرفت آلبوم",
+  "Adding Photos to Album": "اضافه کردن عکس‌ها به آلبوم",
+  "Creating New Album": "ایجاد آلبوم جدید",
+  "Uploading your photos...": "عکس‌هاتون آپلود کردن...",
+  "Cancel Upload": "لغو بارگذاری"
 }

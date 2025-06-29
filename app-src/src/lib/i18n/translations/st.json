@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ditshwantsho tse ding ha di kgone ho sebetswa. O ka tswela pele ka ditshwantsho tse sebetsweng hantle.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O tla lefshwa {{amount}} kgwedi le kgwedi ka mokgwa ona wa ho lefella ntle le ha o o fetolang.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Khetha moralo o lumellanang hantle le ditlhoko tsa hao. O ka khetha ho tloha ho dikgetho tse tlase kapa o tsenye palo ya hao.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Re bone hore folder ya hao e na le di-subfolder. Na o batla ho etsa album e ikgethileng bakeng sa subfolder ka nngwe, kapa ho e sebetsa kaofela e le album e le nngwe?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Re bone hore folder ya hao e na le di-subfolder. Na o batla ho etsa album e ikgethileng bakeng sa subfolder ka nngwe, kapa ho e sebetsa kaofela e le album e le nngwe?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ka lebaka la ditekanyetso tsa theknoloji, dikopane tse ngata dibrowseng tsa mobile ha di tshehetswe, mme divideo tse ding di ka se kopane.<br><br>Ho kopana ditshwantsho tsohle le divideo ka nako e le nngwe:",
+  "Edit": "Fetola",
+  "Edit Album": "Fetola album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Fetola disetting tsa album",
+  "Upload in progress": "Upload e ntse e tsoela pele",
+  "Album Progress": "Tsoelo-pele ea album",
+  "Adding Photos to Album": "Ho eketsa difoto albumeng",
+  "Creating New Album": "Ho etsa album e ncha",
+  "Uploading your photos...": "Ho kenya difoto tsa hao...",
+  "Cancel Upload": "Hlahloba upload"
 }

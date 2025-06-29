@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Iuj fotoj ne povis esti prilaboritaj. Vi povas daŭrigi kun la sukcese prilaboritaj fotoj.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vi estos aŭtomate pagigata {{amount}} monate per ĉi tiu pagmetodo, krom se vi ŝanĝas ĝin.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Elektu la planon kiu plej bone konvenas al viaj bezonoj. Vi povas elekti el la opcioj sube aŭ enigi propran sumon.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ni rimarkis, ke via dosierujo enhavas subdosierujojn. Ĉu vi volas krei apartan albumon por ĉiu subdosierujo, aŭ trakti ĉiujn kiel unu albumon?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ni rimarkis, ke via dosierujo enhavas subdosierujojn. Ĉu vi volas krei apartan albumon por ĉiu subdosierujo, aŭ trakti ĉiujn kiel unu albumon?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Pro teknikaj limigoj, amasaj elŝutoj en poŝtelefonaj retumiloj ne estas subtenataj, kaj iuj videoj eble ne elŝutiĝos.<br><br>Por elŝuti ĉiujn fotojn kaj videojn samtempe, bonvolu:",
+  "Edit": "Redakti",
+  "Edit Album": "Redakti albumon",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Redakti albumajn agordojn",
+  "Upload in progress": "Alŝuto procesas",
+  "Album Progress": "Progreso de albumo",
+  "Adding Photos to Album": "Aldonante fotojn al albumo",
+  "Creating New Album": "Kreante novan albumon",
+  "Uploading your photos...": "Alŝutante viajn fotojn...",
+  "Cancel Upload": "Nuligi alŝuton"
 }

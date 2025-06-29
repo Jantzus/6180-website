@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ځینې انځورونه ونه شول چې پروسس شي. تاسو کولی شئ د هغو انځورونو سره دوام ورکړئ چې بریالي پروسس شوي.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "که تاسو دا د تادیاتو طریقه نه بدلوی نو درته به هره میاشت په اوتومات ډول {{amount}} بل راشي.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "هغه پلان غوره کړئ چې ستاسو د اړتیاوو سره غوره پورې اړوند وي. تاسو کولی شئ د لاندې اختیارونو څخه غوره کړئ یا د ځان غوښتنې مقدار داخل کړئ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "موږ ولیدل چې ستاسو فولډر فرعي فولډرونه لري. ایا تاسو غواړئ د هر فرعي فولډر لپاره جلا البوم جوړ کړئ، یا ټول یې د یوه البوم په توګه وګڼئ؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "موږ ولیدل چې ستاسو فولډر فرعي فولډرونه لري. ایا تاسو غواړئ د هر فرعي فولډر لپاره جلا البوم جوړ کړئ، یا ټول یې د یوه البوم په توګه وګڼئ؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "د تخنیکي محدودیتونو له امله، په ګرځنده کتونکو کې د ډله ایز ښکته کولو ملاتړ نشته، او ځینې ویډیوګانې نشي ښکته کیدلی.<br><br>د ټولو انځورونو او ویډیوګانو په یوځل ښکته کولو لپاره:",
+  "Edit": "سمول",
+  "Edit Album": "البوم سمول",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "د البم امستنې بدلول",
+  "Upload in progress": "پورته کول روان دي",
+  "Album Progress": "د البم پرمختګ",
+  "Adding Photos to Album": "د البم ته انځورونه ورگډول",
+  "Creating New Album": "د نوی البم جوړول",
+  "Uploading your photos...": "ستاسو انځورونه پورته کېږي...",
+  "Cancel Upload": "پورته کول ردول"
 }

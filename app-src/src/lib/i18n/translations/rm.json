@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Tschertgas fotografias n'èn betg pudidas vegnir elavuradas. Ti pos cuntinuar cun las fotografias elavuradas cun success.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ti vegns chargjà automaticamain {{amount}} per mais cun questa metoda da pajament nun che ti la midas.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tschernì il plan che sa drizza il meglier a tes basegns. Ti poust tscherner da las opziuns sutvart u endatar ina summa persunalisada.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nus avain remarquà che tia cartella cuntegna sutcartallas. Vuls ti crear in album separà per mintga sutcartalla u tractar tuttas sco in album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nus avain remarquà che tia cartella cuntegna sutcartallas. Vuls ti crear in album separà per mintga sutcartalla u tractar tuttas sco in album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Perquai da limitaziuns technicas na vegnan downloads da massa betg sustegnids en navigaturs mobils, e videos tscherts pudessan eventualmain betg vegnir chargià si.<br><br>Per chargiar si tut las fotografia e videos d'ina giada:",
+  "Edit": "Modifitgar",
+  "Edit Album": "Modifitgar album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Modifitgar las preferenzas da l'album",
+  "Upload in progress": "Upload è en curs",
+  "Album Progress": "Progress da l'album",
+  "Adding Photos to Album": "Agiuntar fotogrfias a l'album",
+  "Creating New Album": "Crear in album nov",
+  "Uploading your photos...": "Chargiond tias fotografias...",
+  "Cancel Upload": "Interrumper upload"
 }

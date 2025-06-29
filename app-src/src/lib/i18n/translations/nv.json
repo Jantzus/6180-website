@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Eeʼ doo bééhóziní azkání łeh. Bééhóziní naaki nááná áko bee naásh bee naáshneelíí.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Díí bee yooʼááh éí naat'a'íí nayiiłniilgo bee {{amount}} hodoo jį́ naaghan naat'a'íí nayiiłniilgo.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Naanish bee naháázh nihił hólǫ́ dóó saad bee ákót'éhígíí. Bee akót'éego ádáádoolįįł kóó da or baa ákót'éego bee íínił dooleeł.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Shinaałʼaanii bééhániih naashááłʼígíí biih yishhááł. Naashááłʼígíí tʼáá bee ałtso naashááłʼígíí daʼałʼííłgo, éí bee álboma daʼałʼííłgo binahjį daats'í?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Shinaałʼaanii bééhániih naashááłʼígíí biih yishhááł. Naashááłʼígíí tʼáá bee ałtso naashááłʼígíí daʼałʼííłgo, éí bee álboma daʼałʼííłgo binahjį daats'í?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Béésh bee naalnish bitsʼáádoo ádaalyaaígíí bikáʼ ání, naanáhoot biih adíílííł éí bee akʼeʼelchíhí bee naalnish yikáadoo nááná da, áádóó naanáhootʼé áłah ádaalyaa da.<br><br>Éets'áá dóó naanáhootʼé áłahji tsʼída tʼáá álaahgo adíílííł:",
+  "Edit": "Atah adlą́",
+  "Edit Album": "Album atah adlą́",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album beenahaz'ąąd ałhaa'íígíí",
+  "Upload in progress": "Ał'ąą béésh áłchíní",
+  "Album Progress": "Album baahádzidígíí",
+  "Adding Photos to Album": "Album bíí ałchiní beeʼelch'íkʼǫ",
+  "Creating New Album": "Album ániid diné beeʼelch'íí",
+  "Uploading your photos...": "Nih beeʼelch'íí ał'ąą béésh...",
+  "Cancel Upload": "Ał'ąą béésh áłchíní doo"
 }

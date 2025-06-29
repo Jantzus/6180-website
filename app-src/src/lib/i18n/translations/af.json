@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sommige foto's kon nie verwerk word nie. Jy kan voortgaan met die suksesvol verwerkte foto's.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jy sal outomaties {{amount}} maandeliks op hierdie betaalmetode gedebiteer word tensy jy dit verander.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kies die plan wat die beste by jou behoeftes pas. Jy kan uit die opsies hieronder kies of 'n pasgemaakte bedrag invoer.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ons het opgemerk dat jou vouer submapppe bevat. Sou jy 'n afsonderlike album vir elke subvouer wou skep, of hulle almal as een album behandel?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ons het opgemerk dat jou vouer submapppe bevat. Sou jy 'n afsonderlike album vir elke subvouer wou skep, of hulle almal as een album behandel?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Weens tegniese beperkings word grootmaat-aflaaie op mobiele blaaiers nie ondersteun nie, en sommige video's laai dalk nie af nie.<br><br>Om alle foto's en video's gelyktydig af te laai, asseblief:",
+  "Edit": "Redigeer",
+  "Edit Album": "Redigeer Album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Wysig Album Instellings",
+  "Upload in progress": "Oplaai is besig",
+  "Album Progress": "Album Vordering",
+  "Adding Photos to Album": "Foto's by album voeg",
+  "Creating New Album": "Nuwe album skep",
+  "Uploading your photos...": "Jou foto's word opgelaai...",
+  "Cancel Upload": "Kanselleer oplaai"
 }

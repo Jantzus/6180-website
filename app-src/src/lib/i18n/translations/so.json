@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sawirro qaar lama hawl galin karo. Waxaad ku sii wadi kartaa sawirrada si guul leh loo hawl galiyay.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Lacag ahaan {{amount}} bishii waa lagaaga qaadayaa habkan lacag bixinta ah haddii aadan beddelin.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Dooro qorshaha ugu fiican baahiyahaaga. Waxaad ka doorsan kartaa doorashooyinka hoose ama ku gelisaa qaddar gaar ah.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Waxaan ogaaday in galka aad leedahay uu leeyahay galo-hoose. Ma rabaa inaad abuurto album gaar ah galka kasta oo hoose, mise waxaad rabaa inaad u tixgalisaa dhammaantood hal album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Waxaan ogaaday in galka aad leedahay uu leeyahay galo-hoose. Ma rabaa inaad abuurto album gaar ah galka kasta oo hoose, mise waxaad rabaa inaad u tixgalisaa dhammaantood hal album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Sababo ah xaddidaadaha farsamada, soo-dejinta badan ee mobile browsers lama taageero, qaar ka mid ah fiidiyooyinkana lama soo-dejin karo.<br><br>In sawirrada iyo fiidiyaoyinka oo dhan hal mar loo soo-dejiyyo:",
+  "Edit": "Wax ka beddel",
+  "Edit Album": "Wax ka beddel album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Wax ka beddel dejinta albumka",
+  "Upload in progress": "Upload ayaa socda",
+  "Album Progress": "Horumarka albumka",
+  "Adding Photos to Album": "Xayaha sawirrada albumka",
+  "Creating New Album": "Abuurista album cusub",
+  "Uploading your photos...": "Soo gelinta sawirradaada...",
+  "Cancel Upload": "Jooji upload-ka"
 }

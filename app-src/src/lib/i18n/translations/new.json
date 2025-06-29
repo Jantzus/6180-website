@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "गुगु किपा प्रसेस यायेमाखु। छिं फलामतं प्रसेस जुयाच किपाइगु अग्रसर यायेत।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "छिं थगु पेमेंट मेथड आह्वान्या मखु नं दिसं {{amount}} अटोमेटिक बिल जुइ।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "छिमिं दुगुं सिरी जकतं खनेद्य योजना आम्हे। छिमिं तलेज्याव गुज्याव तय् खनेत ग्वारापि निकुन इका निजी रकम बियातं ग्वाराँ।",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "छिमिं फोल्डर न सबफोल्डर दु जकतं तुलाक्व। छिमिं जक जक सबफोल्डर न वकूयाव अल्बम वनातं खनेयेतं द्यू वा छियो सकलांत वकूगु अल्बम द्यू वा खने?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "छिमिं फोल्डर न सबफोल्डर दु जकतं तुलाक्व। छिमिं जक जक सबफोल्डर न वकूयाव अल्बम वनातं खनेयेतं द्यू वा छियो सकलांत वकूगु अल्बम द्यू वा खने?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "तकनीकी सीमताया कारणं, मोबाइल ब्राउजरय् bulk downloads समर्थन छु मखु, धाय् काइ videos downloads यान्मा खन।<br><br>सब्बै फोटो धाय् videos न्ह्यक् पासा downloads यानु कागु:",
+  "Edit": "सम्पादन",
+  "Edit Album": "एल्बम सम्पादन",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "एल्बम सेटिंग सम्पादन यानादिसा",
+  "Upload in progress": "अपलोड थन् दुल्लाच्वं",
+  "Album Progress": "एल्बम प्रगति",
+  "Adding Photos to Album": "एल्बम्य किपा थन् दुल्लाच्वं",
+  "Creating New Album": "एल्बम प्यागु बनाल्य",
+  "Uploading your photos...": "छिगु किपा अपलोड थन् दुल्लाच्वं...",
+  "Cancel Upload": "अपलोड निसाफु यानादिसा"
 }

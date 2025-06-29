@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "E paar Bilder hen nit verarbeitet werre kinne. Du kannsch weider mache mit de Bilder wu gudd verarbeitet worre sin.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Du wersch automatic {{amount}} alle Monat iwwer die Zahlungsmethode verrechent wann de se net ennersch.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wähl de Plan aus wo am beschte zu deine Bedierfniss passt. Du kannscht aus de Optione unne wähle oder e eije Betrag eingebe.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir hen bemerkt dass dei Ordner Unnerordner hot. Witt du fer jeede Unnerordner e eije Album mache odder sie all als ääs Album behandle?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mir hen bemerkt dass dei Ordner Unnerordner hot. Witt du fer jeede Unnerordner e eije Album mache odder sie all als ääs Album behandle?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Weje technische Beschränkunge werre Masse-Downloads uff mobile Browser nit unnerstützt, un manche Videos kenne vielleicht nit erogelade werre.<br><br>Um alli Fotze un Videos uff oimol ze lade:",
+  "Edit": "Ännere",
+  "Edit Album": "Album ännere",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album-Eistellunge bearbeite",
+  "Upload in progress": "Upload laft",
+  "Album Progress": "Album-Fortschritt",
+  "Adding Photos to Album": "Bilder zum Album dazu donn",
+  "Creating New Album": "Nai Album schaffe",
+  "Uploading your photos...": "Dei Bilder werre ufgelade...",
+  "Cancel Upload": "Upload abbrechä"
 }

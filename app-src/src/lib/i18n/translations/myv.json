@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Мезяра фотот апак обработить. Пара обработазь фототнэде молемс.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Тонк свал чартыть {{amount}} ковонь ванфтса тя пандома методонди, аф полафтодак.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Кочказо планонть кона сехте вадрясто анокстынесы таргат. Тынк ульнесь парсте стямс алце варианттнэде эли саемс эсьтейть ярмак.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Минь неенек што тонь папканть саворт папканзо улить. Арить сави папкас мезе эсь альбомот тейнемс эли весенень ве альбом лецьке вадемс?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Минь неенек што тонь папканть саворт папканзо улить. Арить сави папкас мезе эсь альбомот тейнемс эли весенень ве альбом лецьке вадемс?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникань шарфтомань коряс, мобильной браузертнесэ покш файлтнень ёвтамось арась тиеме, ды мезъяк видеотне апак ёвто кадовольхть.<br><br>Весе фотнень ды видеотнень вейкинестэ ёвтамо:",
+  "Edit": "Витнемс",
+  "Edit Album": "Альбом витнемс",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбомонь лувтувкстнэ витнемс",
+  "Upload in progress": "Лиснемась молы",
+  "Album Progress": "Альбомонь икелев молема",
+  "Adding Photos to Album": "Альбомс артовкстнэ поладома",
+  "Creating New Album": "Одсто альбом теемс",
+  "Uploading your photos...": "Тонь артовкстнэ лисневи...",
+  "Cancel Upload": "Лиснемать лоткавтомс"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Xi ftit ritratti ma setgħux jiġu pproċessati. Tista' tkompli bil-ritratti li ġew ipproċessati b'suċċess.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Se tiġi mċarġat awtomatikament {{amount}} kull xahar fuq dan il-metodu ta' ħlas għajr jekk tibdlu.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Agħżel il-pjan li jgħaddi l-aħjar mal-bżonnijiet tiegħek. Tista' tagħżel mill-għażliet ta' hawn isfel jew iddaħħal ammont personalizzat.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Innota li l-folder tiegħek fiha sottofolder. Tixtieq toħloq album separat għal kull sottofolder, jew tittratthom kollha bħala album wieħed?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Innota li l-folder tiegħek fiha sottofolder. Tixtieq toħloq album separat għal kull sottofolder, jew tittratthom kollha bħala album wieħed?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Minħabba limitazzjonijiet tekniċi, it-tniżżiliet bil-massa fuq browsers mobbli mhumiex appoġġati, u xi videjiet setgħu ma jitniżżlux.<br><br>Biex tniżżel il-fotografiji u l-videjiet kollha flimkien:",
+  "Edit": "Editja",
+  "Edit Album": "Editja album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Editja l-issettjiet tal-album",
+  "Upload in progress": "Upload għaddej",
+  "Album Progress": "Progress tal-album",
+  "Adding Photos to Album": "Żieda ta' stampi fl-album",
+  "Creating New Album": "Qed jinħoloq album ġdid",
+  "Uploading your photos...": "Qed jittella' l-istampi tiegħek...",
+  "Cancel Upload": "Ikkanċella l-upload"
 }

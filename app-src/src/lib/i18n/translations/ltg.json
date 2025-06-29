@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Daži atti nava izadavuši apstruodēt. Varat turpynuot ar atsim, kas sekmīgi apstruodēti.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jums tiks automatiskai aprēķynuots {{amount}} katru mieneši ar šū maksīšonys paņēmumu, ka tū namainīsit.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Izavielejit planu, kas vyslebuok atbylst jiusu vajadziebom. Varit izavieleit nu apstuodinejim a zameik a varit īvadeit sovu summu.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mes pamaniejom, ka jiusu mapi ir apakšmapi. Vai gribit radeit atsevišku albumu kotrys apakšmapis, a voi juos vysus izavierīt kai vīnu albumu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mes pamaniejom, ka jiusu mapi ir apakšmapi. Vai gribit radeit atsevišku albumu kotrys apakšmapis, a voi juos vysus izavierīt kai vīnu albumu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Dieļ tehniskūs īrūbežuojumu, masu lejuplāde mobilajūs puorlūku nav atbaļsteita, i daži video varātu nalejupluodētīs.<br><br>Lai lejuplādātu vysus atielus i video vīnā reizā:",
+  "Edit": "Izmaineit",
+  "Edit Album": "Izmaineit albumu",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Reidžeit albuma īstatejumus",
+  "Upload in progress": "Īkrovums nūteik",
+  "Album Progress": "Albuma progress",
+  "Adding Photos to Album": "Dalejums fotogrāfiju albūmā",
+  "Creating New Album": "Jauns albums taiseits",
+  "Uploading your photos...": "Īkrovuojam jūsu fotogrāfijas...",
+  "Cancel Upload": "Atsaukt īkrovumu"
 }

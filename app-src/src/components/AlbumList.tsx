@@ -15,6 +15,7 @@ import {
 } from "@/styles/components/layout";
 import { DirectionalProps } from '@/styles/theme'
 import { theme } from "@/styles/theme";
+
 // Helper function to format bytes into human-readable format
 const formatFileSize = (bytes: number): string => {
   if (bytes === 0) return '0 B';
@@ -268,7 +269,7 @@ const ThumbnailWrapper = styled.div`
 // Type for translation function
 type TranslationFunction = (key: string, options?: { count?: string }) => string;
 
-// Props for the unified AlbumList component
+// Props for the unified AlbumList component - SIMPLIFIED: Removed contextual progress props
 export interface AlbumListProps {
   folders: FolderType[];
   setFolders?: React.Dispatch<React.SetStateAction<FolderType[]>>;
@@ -276,9 +277,10 @@ export interface AlbumListProps {
   isUploading?: boolean;
   cognitoUsername: string | null;
   isProfileView?: boolean;
+  onAddPhotos?: (folderId: string) => void;
 }
 
-// The unified AlbumList component
+// The unified AlbumList component - SIMPLIFIED: Removed contextual progress support
 export const AlbumList: React.FC<AlbumListProps> = ({
   folders,
   setFolders,
@@ -286,6 +288,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
   isUploading = false,
   cognitoUsername,
   isProfileView = false,
+  onAddPhotos,
 }) => {
   const { t, language } = useTranslation();
   const isRTL = getLanguageDirection(language) === "rtl";
@@ -365,6 +368,22 @@ export const AlbumList: React.FC<AlbumListProps> = ({
     // Update the active dropdown reference
     activeDropdownRef.current = isVisible ? null : dropdownElement;
   };
+
+  // Handler for "Add Photos" button click
+  const handleAddPhotosClick = React.useCallback((folderId: string) => {
+    if (!isClient) return;
+
+    // Close any open dropdown
+    if (activeDropdownRef.current) {
+      activeDropdownRef.current.style.display = "none";
+      activeDropdownRef.current = null;
+    }
+
+    // Call the parent's add photos handler
+    if (onAddPhotos) {
+      onAddPhotos(folderId);
+    }
+  }, [isClient, onAddPhotos]);
 
   // New function to initiate delete process with system dialog - SSR-safe
   const handleDeleteButtonClick = (folderPositionId: string) => {
@@ -558,7 +577,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
         );
 
         return (
-          <Container key={folder.folderId} $isRTL={isRTL}>
+          <Container key={folder.folderId} $isRTL={isRTL}>            
             <AlbumLink onClick={() => handleAlbumClick(inviteLink, folder.folderId)}>
               <AlbumCard>
                 <HeaderSection $isRTL={isRTL}>
@@ -587,7 +606,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                             }
                           }}
                         >
-                          {t('Edit')}
+                          {t('Edit Album')} ▼
                         </EditButton>
                         <DropdownMenu
                           $isRTL={isRTL}
@@ -597,8 +616,10 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                         >
                           <DropdownItem
                             $isRTL={isRTL}
-                            onClick={(_) => {
-                              // Claude TODO: Add photos by clicking pulling up a file picker. Then, going to save-album with this file as the folderId
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              handleAddPhotosClick(folder.folderId);
                             }}
                           >
                             {t('Add Photos')}
@@ -610,7 +631,7 @@ export const AlbumList: React.FC<AlbumListProps> = ({
                               handleEditNavigation(folder.folderId);
                             }}
                           >
-                            {t('Edit Album')}
+                            {t('Edit Album Settings')}
                           </DropdownItem>
                           <DropdownItem
                             $isRTL={isRTL}

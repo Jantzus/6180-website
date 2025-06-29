@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Որոշ լուսանկարներ չկարողացան մշակվել: Կարող եք շարունակել հաջողությամբ մշակված լուսանկարներով:",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ձեզանից ամիսը {{amount}} ինքնաբերաբար կգանձվի այս վճարման եղանակով՝ եթե այն չփոխեք:",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ընտրեք ծրագիրը, որը լավագույնս համապատասխանում է ձեր կարիքներին: Կարող եք ընտրել ստորև բերված տարբերակներից կամ մուտքագրել կամարական գումար:",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Մենք նկատեցինք, որ ձեր պանակը պարունակում է ենթապանակներ: Ցանկանու՞մ եք ստեղծել առանձին ալբոմ յուրաքանչյուր ենթապանակի համար, թե՞ բոլորին դիտարկել որպես մեկ ալբոմ:"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Մենք նկատեցինք, որ ձեր պանակը պարունակում է ենթապանակներ: Ցանկանու՞մ եք ստեղծել առանձին ալբոմ յուրաքանչյուր ենթապանակի համար, թե՞ բոլորին դիտարկել որպես մեկ ալբոմ:",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Տեխնիկական սահմանափակումների պատճառով՝ բալկ ներբեռնումները չեն աջակցվում բջջային զննարկիչներում, և որոշ տեսանյութեր կարող են չներբեռնվել:<br><br>Բոլոր լուսանկարներն ու տեսանյութերը միանգամից ներբեռնելու համար:",
+  "Edit": "Խմբագրել",
+  "Edit Album": "Խմբագրել ալբոմը",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Խմբագրել ալբոմի կարգավորումները",
+  "Upload in progress": "Վերբեռնումը շարունակվում է",
+  "Album Progress": "Ալբոմի առաջընթաց",
+  "Adding Photos to Album": "Լուսանկարներ ավելացնել ալբոմին",
+  "Creating New Album": "Նոր ալբոմ ստեղծում",
+  "Uploading your photos...": "Ձեր լուսանկարները վերբեռնվում են...",
+  "Cancel Upload": "Չեղարկել վերբեռնումը"
 }

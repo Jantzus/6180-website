@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Tselje fotografii nu putură să fijă processate. Putsits să continuats cu fotografiile cu success processate.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Va eatsã automaticmente facturatã {{amount}} mãsãrku cu atia mãsurã di plãtitsã nã o feritsi.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Alidžeti planul care si potrivešti tsi maj buni di nevoljli a voastri. Puteti si alidžeti di la optsiunlje di maj ghjosu or si bãgãts unã sumã personalizatã.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vidurãm cã dosarul a vostru yini sut-dosari. Vreți sã faceți un album separat pi tuti sut-dosarii, yrãu sã li faceți tuts ca un album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Vidurãm cã dosarul a vostru yini sut-dosari. Vreți sã faceți un album separat pi tuti sut-dosarii, yrãu sã li faceți tuts ca un album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Prin limitãri tehnicy, discãrcãrili di masã nu sînt sustenuti tu navigatorlji mobileari, shi unely videoi s-ar putera sã nu si discarcã.<br><br>Cã sã discarcãm toti imaginli shi videoy deaoadatã:",
+  "Edit": "Alãxescu",
+  "Edit Album": "Alãxescu album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Adreadzã ampostãrãle a albumlui",
+  "Upload in progress": "Ncãrcarea merge",
+  "Album Progress": "Progresul albumului",
+  "Adding Photos to Album": "Bãgând poze tu album",
+  "Creating New Album": "Făcând album nou",
+  "Uploading your photos...": "Shi bãgã pozili tale...",
+  "Cancel Upload": "Anulează ncãrcarea"
 }

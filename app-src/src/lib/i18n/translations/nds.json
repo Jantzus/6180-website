@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Somlige Biller kunnen nich verarbeidt warrn. Du kannst mit de Biller wiedermaken, de good verarbeidt worrn sünd.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ji warrt automaatsch {{amount}} monatlik op disse Betaalmethode afschrevn, wenn ji ehr nich ännert.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wähl den Plan ut, de an best to dien Bedürfnisse passt. Du kannst ut de Optionen ünner utwählen oder en egen Betrag ingeven.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wi hebbt markt, dat dien Ornder Ünnerornern in sik hett. Wullt du för elk Ünnerornern en egen Album maken, oder se all as een Album behanneln?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Wi hebbt markt, dat dien Ornder Ünnerornern in sik hett. Wullt du för elk Ünnerornern en egen Album maken, oder se all as een Album behanneln?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Wegen technische Grensen warrt Massa-Downloads op mobile Browser nich ünnerstütt, un enkelte Videos köönt villicht nich dalladen warrn.<br><br>Um all Fotos un Videos op eenmaal dalladen:",
+  "Edit": "Ännern",
+  "Edit Album": "Album ännern",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album-Instellen ännern",
+  "Upload in progress": "Upload löppt",
+  "Album Progress": "Album-Vörankommen",
+  "Adding Photos to Album": "Biller to't Album toböögen",
+  "Creating New Album": "Nieg Album opstellen",
+  "Uploading your photos...": "Dien Biller warrt hoogladen...",
+  "Cancel Upload": "Upload afbreken"
 }

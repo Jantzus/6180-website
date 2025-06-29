@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Wice fotos èn ont stî traitî. Vos ploz continuwer avou les fotos traitîs a pont.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos sårèz otomaticmint faitré {{amount}} tchake moes so cisse metôde di payumint ci a muens qui vos l' candjîz.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tchwezixhoz l' plan ki vs convént l' mî. Vos ploz tchwezi dins les tchûzes cial ou mete ene some da vosse.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nos avans mårtchî ki vosse ridant a des sor-ridants. Voloz-ve fer on album sepåré po tchaeke sor-ridant, ou les prinde tos come èn seu album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nos avans mårtchî ki vosse ridant a des sor-ridants. Voloz-ve fer on album sepåré po tchaeke sor-ridant, ou les prinde tos come èn seu album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "A cåze des limitåcions tecnikes, les tetchårdjaedjes so masse so les betchteus mobiles èn sont nén sopoirtés, eyet des kekès videyo polèt èn nén si tetchårdji.<br><br>Po tetchårdji totes les fotoes eyet videyo d' on côp:",
+  "Edit": "Candjî",
+  "Edit Album": "Candjî album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Candjî les apontiaedjès di l'album",
+  "Upload in progress": "Tcherdjaedje en alaedje",
+  "Album Progress": "Avancaedje di l'album",
+  "Adding Photos to Album": "Radjouter des imådjes å album",
+  "Creating New Album": "Ahivant on novea album",
+  "Uploading your photos...": "Tcherdjant vos imådjes...",
+  "Cancel Upload": "Rinoncî å tcherdjaedje"
 }

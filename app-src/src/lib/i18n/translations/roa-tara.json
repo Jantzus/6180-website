@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Certe fore no onne putute essere processate. Puè cundenuà cu le fore processate bbuene.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Te vène addebitete automaticamende {{amount}} ogne mise cu stu metode de pagamende si non ge lu cange.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Scacchie 'u piane ca se confà cchiù megghie a le necessità toje. Puè scacchià tra le opzione aqquà sotte o mettere 'nu 'mporte personalizzate.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Amme viste ca 'a cartelle toje tène sottecartelle. Vuè crejà n'album separate pu ogne sottecartelle, o tratà tutte accume a n'album sole?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Amme viste ca 'a cartelle toje tène sottecartelle. Vuè crejà n'album separate pu ogne sottecartelle, o tratà tutte accume a n'album sole?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Pe limitaziune tecniche, le download massicce sus a le browser mobile non g'avene suppuertate, e quacche video pò non g'avè 'a scarecà.<br><br>Pe scarecà tutte le foto e le video 'nzieme:",
+  "Edit": "Cangie",
+  "Edit Album": "Cangie album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Cange le 'mpostaziune de l'album",
+  "Upload in progress": "'U carecamende stè sciute",
+  "Album Progress": "Progresse de l'album",
+  "Adding Photos to Album": "Aggiunge le fote a l'album",
+  "Creating New Album": "Stoche a fà 'nu album nuève",
+  "Uploading your photos...": "Ste a careche le fote toie...",
+  "Cancel Upload": "Scangèlle 'u carecamende"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ބައެއް ފޮޓޯތައް ޕްރޮސެސް ކުރެވެނީ ނޫނެވެ. ކާމިޔާބުކަމާއެކު ޕްރޮސެސް ކުރެވުނު ފޮޓޯތަކުން ކުރިއަށް ދާންވާނެއެވެ।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "މި ޕޭމަންޓް މެތަޑް ބަދަލު ނުކުރައްވާ ހާލަތުގައި މަހަކު {{amount}} އޮޓޮމެޓިކް ކޮށް ބިލު ކުރާނެއެވެ.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ތިޔަބޭފުޅުންގެ ބޭނުންތަކާ އެންމެ އެކަށޭނަ ޕްލޭނެއް އިހުތިޔާރުކުރައްވާ. ތިރީގައިވާ އިހުތިޔާރުތަކުގެ ތެރެއިން އިހުތިޔާރުކުރެވޭނެ ނުވަތަ ރަގަޅު އަދަދެއް ލިޔެއްވާށެވެ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "އިންތިޒާރުކުރަމެވެ ތިބާގެ ފޯލްޑަރުގައި ސަބް ފޯލްޑަރުތަކެއް ހުރި ކަމުގައި ފާހަގަ ކުރެވިއްޖެ។ ކޮންމެ ސަބް ފޯލްޑަރަކަށް ވަކި އެލްބަމެއް އުފެއްދާލަން ބޭނުންހެއްޔެވެ، ނުވަތަ ހުރިހާ އެއްޗެއް އެއް އެލްބަމަކަށް ބަލާލަން ބޭނުންހެއްޔެވެ؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "އިންތިޒާރުކުރަމެވެ ތިބާގެ ފޯލްޑަރުގައި ސަބް ފޯލްޑަރުތަކެއް ހުރި ކަމުގައި ފާހަގަ ކުރެވިއްޖެ។ ކޮންމެ ސަބް ފޯލްޑަރަކަށް ވަކި އެލްބަމެއް އުފެއްދާލަން ބޭނުންހެއްޔެވެ، ނުވަތަ ހުރިހާ އެއްޗެއް އެއް އެލްބަމަކަށް ބަލާލަން ބޭނުންހެއްޔެވެ؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ފަނީ ސުލޫކީ މަޙުދޫދުކަން ސަބަބުން، މޮބައިލް ބްރައުޒަރުގައި ބަލްކް ޑައުންލޯޑް ނުކުރެވެއެވެ، އަދި ބައެއް ވީޑިއޯ ޑައުންލޯޑް ނުވުން މުމްކިން.<br><br>ހުރިހާ ފޮޓޯ އަދި ވީޑިއޯ އެއް ފަހަރަށް ޑައުންލޯޑް ކުރުމަށް:",
+  "Edit": "އެޑިޓް",
+  "Edit Album": "އެލްބަމް އެޑިޓް",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "އެލްބަމުގެ ޝާއިކުސް އެޑިޓް ކުރާ",
+  "Upload in progress": "އަޕްލޯޑް ކުރަމުންދެވި",
+  "Album Progress": "އެލްބަމުގެ ކުރިއެރުން",
+  "Adding Photos to Album": "އެލްބަމަށް ފޮޓޯ އަޅާ",
+  "Creating New Album": "އާ އެލްބަމެއް ހަދާ",
+  "Uploading your photos...": "ތިބާގެ ފޮޓޯތައް އަޕްލޯޑް ކުރަމުން...",
+  "Cancel Upload": "އަޕްލޯޑް ކެންސަލް ކުރާ"
 }

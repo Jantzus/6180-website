@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ekea foto eñ ek añ process. Emij process iet nañ foto rej kana continue.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Emij bill mo {{amount}} tata aran bwe en jeban me nañ kor me aelon.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ekaan e plan ea omomit en neb omo. Ebwe kona ekaan men opet ko ak ekaan ke toon amoun.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Emej duge folder omo igot subfolder. Ebwe memej ekaan duge itok album ngkai jikin subfolder, ak akor kopa mij duge album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Emej duge folder omo igot subfolder. Ebwe memej ekaan duge itok album ngkai jikin subfolder, ak akor kopa mij duge album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "A eben engame ko teknik, bulk download eo mobile browser enag eo aron ra a, me eo video emei enag eo mo download.<br><br>Ngami mo download picture keke me video e nako iet:",
+  "Edit": "Atuni",
+  "Edit Album": "Atuni album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Uranga album setting",
+  "Upload in progress": "Upload ekewowo",
+  "Album Progress": "Album kamakuri",
+  "Adding Photos to Album": "Album ko itsidudu photo",
+  "Creating New Album": "Ebok album omo",
+  "Uploading your photos...": "Upload ko an photo...",
+  "Cancel Upload": "Kani upload"
 }

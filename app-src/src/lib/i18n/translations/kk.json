@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Кейбір фотосуреттер өңделмеді. Сіз сәтті өңделген фотосуреттермен жалғастыра аласыз.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Сіз төлем тәсілін өзгертпесеңіз, бұл төлем әдісімен ай сайын {{amount}} автоматты түрде есептеледі.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Қажеттіліктеріңізге ең сай келетін жоспарды таңдаңыз. Төмендегі нұсқалардан таңдай аласыз немесе өзіңіздің сомаңызды енгізе аласыз.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Қапшығыңызда ішкі қапшықтар бар екенін байқадық. Әр ішкі қапшыққа арналған жеке альбом жасағыңыз келе ме, әлде бәрін бір альбом ретінде қарағыңыз келе ме?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Қапшығыңызда ішкі қапшықтар бар екенін байқадық. Әр ішкі қапшыққа арналған жеке альбом жасағыңыз келе ме, әлде бәрін бір альбом ретінде қарағыңыз келе ме?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникалық шектеулер салдарынан мобильді браузерлерде жаппай жүктеулер қолдау таппайды, ал кейбір бейнелер жүктелмеуі мүмкін.<br><br>Барлық фотосуреттер мен бейнелерді бір мезгілде жүктеу үшін:",
+  "Edit": "Өңдеу",
+  "Edit Album": "Альбомды өңдеу",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом параметрлерін өңдеу",
+  "Upload in progress": "Жүктеу орындалуда",
+  "Album Progress": "Альбом прогресі",
+  "Adding Photos to Album": "Альбомға фотосуреттер қосу",
+  "Creating New Album": "Жаңа альбом жасау",
+  "Uploading your photos...": "Сіздің фотосуреттеріңізді жүктеу...",
+  "Cancel Upload": "Жүктеуді болдырмау"
 }

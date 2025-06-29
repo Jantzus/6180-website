@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sampela piksa i no inap long mekim prosesi. Yu ken go yet wantaim ol piksa we mekim prosesi gud.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bai ol i salem yu {{amount}} olgeta mun long dispela payment method sapos yu no senisim em.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Yu ken makim plan we i no gud tru long ol samting yu laikim. Yu ken makim long ol askin i stap daun o makim wanpla namba yu yet.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mipela i lukim olsem folder bilong yu i gat ol liklik folder insait. Yu laik mekim separet album long olgeta wan wan liklik folder, o tretim olgeta olsem wan tasol album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mipela i lukim olsem folder bilong yu i gat ol liklik folder insait. Yu laik mekim separet album long olgeta wan wan liklik folder, o tretim olgeta olsem wan tasol album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Long wari bilong ol tecnical limitation, bulk downloads long mobile browsers i no gat sapot, na sampela videos i ken no download.<br><br>Long downloadim olgeta foto na videos wantaim:",
+  "Edit": "Senisim",
+  "Edit Album": "Senisim album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Senisim album setting",
+  "Upload in progress": "Upload i go long",
+  "Album Progress": "Album progress",
+  "Adding Photos to Album": "Putim piksa long album",
+  "Creating New Album": "Mekim niupela album",
+  "Uploading your photos...": "Upload blong yu piksa i go...",
+  "Cancel Upload": "Kilim upload"
 }

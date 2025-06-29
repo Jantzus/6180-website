@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Neke fotografije nisu mogle biti obrađene. Možete nastaviti sa uspješno obrađenim fotografijama.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bit ćete automatski naplaćivani {{amount}} mjesečno ovim načinom plaćanja osim ako ga ne promijenite.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Odaberite plan koji najbolje odgovara vašim potrebama. Možete birati iz opcija ispod ili unijeti prilagođeni iznos.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Primijetili smo da vaša mapa sadrži podmape. Želite li kreirati zasebni album za svaku podmapu ili ih sve tretirati kao jedan album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Primijetili smo da vaša mapa sadrži podmape. Želite li kreirati zasebni album za svaku podmapu ili ih sve tretirati kao jedan album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Zbog tehničkih ograničenja, skupno preuzimanje nije podržano na mobilnim preglednicima, a neki videozapisi se možda neće preuzeti.<br><br>Za preuzimanje svih fotografija i videozapisa odjednom:",
+  "Edit": "Uredi",
+  "Edit Album": "Uredi album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Uredi postavke albuma",
+  "Upload in progress": "Upload u toku",
+  "Album Progress": "Napredak albuma",
+  "Adding Photos to Album": "Dodavanje fotografija u album",
+  "Creating New Album": "Kreiranje novog albuma",
+  "Uploading your photos...": "Učitavanje vaših fotografija...",
+  "Cancel Upload": "Prekini upload"
 }

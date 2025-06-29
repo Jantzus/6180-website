@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Чамдыклар фотолар боловсуруп болбас турган. Силер чедишкен боловсуруп фотоларын-биле уламчылаарың болур.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Бо төлбе аргазын солуур мень болурга, ай-ла {{amount}} автоматынак алыр силер.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Бодуңарның херектериңерге эң эки олчулуг планны соңгаар. Адаанда турар вариантылардан соңгап болур силер база бодуңарның акшаңарны киирер силер.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Бис көрдүвүс силерниң папкаңарда суб-папкалар бар. Силер бүрү суб-папкаже тускай альбом кылырын сагынып турар силер оон-даа опта бүгүнү бир альбом кылып санаарын сагынып турар силер?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Бис көрдүвүс силерниң папкаңарда суб-папкалар бар. Силер бүрү суб-папкаже тускай альбом кылырын сагынып турар силер оон-даа опта бүгүнү бир альбом кылып санаарын сагынып турар силер?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техниктиг дүрүмнерниң ул-домей, мобиль браузерлерде хөй садып алырда дөмейлешпес, база чамдык видеолар садып албас болур.<br><br>Бүгү сүрүглерни база видеоларны база чыып садып алырда:",
+  "Edit": "Өскертир",
+  "Edit Album": "Альбом өскертир",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом тургузуунуң өскертир",
+  "Upload in progress": "Ажыл ап-ла үнүп турар",
+  "Album Progress": "Альбом эрткени",
+  "Adding Photos to Album": "Альбомче черликтерни нэмээр",
+  "Creating New Album": "Чаа альбом кылыр",
+  "Uploading your photos...": "Силернин черликтерни ширдип турар...",
+  "Cancel Upload": "Ажылды соксар"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ni allwyd prosesu rhai lluniau. Gallwch barhau gyda'r lluniau a brosesiwyd yn llwyddiannus.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Byddwch yn cael eich bilio'n awtomatig {{amount}} yn fisol ar y dull talu hwn oni bai eich bod yn ei newid.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Dewiswch y cynllun sy'n gweddu orau i'ch anghenion. Gallwch ddewis o'r opsiynau isod neu roi swm arferol.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sylwon ni fod eich ffolder yn cynnwys is-ffolderi. A hoffech chi greu albwm ar wahân ar gyfer pob is-ffolder, neu eu trin i gyd fel un albwm?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Sylwon ni fod eich ffolder yn cynnwys is-ffolderi. A hoffech chi greu albwm ar wahân ar gyfer pob is-ffolder, neu eu trin i gyd fel un albwm?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Oherwydd cyfyngiadau technegol, nid yw lawrlwytho swmp ar borwyr symudol yn cael ei gefnogi, ac efallai na fydd rhai fideos yn lawrlwytho.<br><br>I lawrlwytho'r holl luniau a fideos ar unwaith, os gwelwch yn dda:",
+  "Edit": "Golygu",
+  "Edit Album": "Golygu'r albwm",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Golygu gosodiadau'r albwm",
+  "Upload in progress": "Llwytho i fyny ar y gweill",
+  "Album Progress": "Cynnydd yr albwm",
+  "Adding Photos to Album": "Ychwanegu lluniau at yr albwm",
+  "Creating New Album": "Creu albwm newydd",
+  "Uploading your photos...": "Llwytho'ch lluniau i fyny...",
+  "Cancel Upload": "Canslo'r llwytho"
 }

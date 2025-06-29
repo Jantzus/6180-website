@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Algumas fotos não puderam ser processadas. Você pode continuar com as fotos processadas com sucesso.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Você será cobrado automaticamente {{amount}} mensalmente neste método de pagamento a menos que o altere.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Escolha o plano que melhor se adequa às suas necessidades. Pode selecionar entre as opções abaixo ou inserir um valor personalizado.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Notámos que a sua pasta contém subpastas. Gostaria de criar um álbum separado para cada subpasta ou tratá-las todas como um álbum?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Notámos que a sua pasta contém subpastas. Gostaria de criar um álbum separado para cada subpasta ou tratá-las todas como um álbum?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Devido a limitações técnicas, downloads em massa não são suportados em navegadores móveis, e alguns vídeos podem não ser baixados.<br><br>Para baixar todas as fotos e vídeos de uma vez:",
+  "Edit": "Editar",
+  "Edit Album": "Editar álbum",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Editar configurações do álbum",
+  "Upload in progress": "Carregamento em andamento",
+  "Album Progress": "Progresso do álbum",
+  "Adding Photos to Album": "Adicionando fotos ao álbum",
+  "Creating New Album": "Criando novo álbum",
+  "Uploading your photos...": "Enviando suas fotos...",
+  "Cancel Upload": "Cancelar carregamento"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "አንዳንድ ምስሎች ሊሠሩ አልቻሉም። በተሳካ ሁኔታ ከተሠሩት ምስሎች ጋር መቀጠል ይችላሉ።",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "በዚህ የመክፈያ ዘዴ በየወሩ {{amount}} በራስ-ሰር ይከፈላሉ እስካላቀያየሩት ድረስ።",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ለፍላጎትዎ የሚስማማውን እቅድ ይምረጡ። ከታች ካሉት አማራጮች መምረጥ ወይም ብጁ መጠን ማስገባት ይችላሉ።",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "አቃፊዎ ንዑስ አቃፊዎችን እንደያዘ አስተዋልን። ለእያንዳንዱ ንዑስ አቃፊ ተናጠል አልበም መፍጠር ይፈልጋሉ፣ ወይስ ሁሉንም በአንድ አልበም ማስተናገድ ይፈልጋሉ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "አቃፊዎ ንዑስ አቃፊዎችን እንደያዘ አስተዋልን። ለእያንዳንዱ ንዑስ አቃፊ ተናጠል አልበም መፍጠር ይፈልጋሉ፣ ወይስ ሁሉንም በአንድ አልበም ማስተናገድ ይፈልጋሉ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "በቴክኒካዊ ገደቦች ምክንያት፣ በሞባይል ብራውዘሮች ላይ በጅምላ ማውረድ አይደገፍም፣ እና አንዳንድ ቪዲዮዎች ላይወርዱ ይችላሉ።<br><br>ሁሉንም ፎቶዎችን እና ቪዲዮዎችን በአንድ ጊዜ ለማውረድ፣ እባክዎ:",
+  "Edit": "አርም",
+  "Edit Album": "አልበም አርም",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "የአልበም ቅንብሮችን አርትዕ",
+  "Upload in progress": "ምስል መላክ በሂደት ላይ",
+  "Album Progress": "የአልበም እድገት",
+  "Adding Photos to Album": "ወደ አልበም ፎቶዎችን መጨመር",
+  "Creating New Album": "አዲስ አልበም መፍጠር",
+  "Uploading your photos...": "ፎቶዎችዎን እያወጡ ነው...",
+  "Cancel Upload": "ምስል መላክ ሰርዝ"
 }

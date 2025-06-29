@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Kelke fotos nok pove es prosesed. Vu pove kontiue kun li fotos kel prosesed gud.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vu va es automatikmen faturad {{amount}} kada mes per ti metode de pagas aven si vu changea it.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Selekte li planum kel maxim bon adapte a vos besonias. Vu posse selekter de li optiones sub-ja o introdukter un quantitá personalised.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nus observat ke vos foldere kontene sub-folderes. Vu vol krear un album separat por kad sub-foldere, o traktar les omni kom un album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nus observat ke vos foldere kontene sub-folderes. Vu vol krear un album separat por kad sub-foldere, o traktar les omni kom un album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Kause de teknik limitationes, bulk downloads sur mobile browsers es non supportat, e alkan videos pote non esser downloadat.<br><br>Por downloadar omni fotos e videos simul:",
+  "Edit": "Redakte",
+  "Edit Album": "Redakte album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Redakte album-konfigures",
+  "Upload in progress": "Kargament es fungante",
+  "Album Progress": "Progrese del album",
+  "Adding Photos to Album": "Adicione fotos al album",
+  "Creating New Album": "Krea nov album",
+  "Uploading your photos...": "Kargante vostri fotos...",
+  "Cancel Upload": "Kanselar kargament"
 }

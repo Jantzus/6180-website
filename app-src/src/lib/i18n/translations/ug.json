@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "بەزى رەسىملەرنى بىر تەرەپ قىلغىلى بولمىدى. مۇۋەپپەقىيەتلىك بىر تەرەپ قىلىنغان رەسىملەر بىلەن داۋاملاشتۇرالايسىز.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "بۇ تۆلەم ئۇسۇلىنى ئۆزگەرتمىسىڭىز، ھەر ئايدا {{amount}} ئاپتوماتىك ھەساپلىنىدۇ.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ئېھتىياجىڭىزغا ئەڭ ماس كېلىدىغان پىلانىنى تاللاڭ. تۆۋەندىكى تاللاشلاردىن تاللىيالايسىز ياكى ئۆزەڭىزنىڭ مىقدارىڭىزنى كىرگۈزىڭ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "بىز سىزنىڭ ھۆججەت قىسقۇچىڭىزدا كىچىك ھۆججەت قىسقۇچلار بارلىقىنى بايقىدۇق. ھەر بىر كىچىك ھۆججەت قىسقۇچى ئۈچۈن ئايرىم ئالبوم قۇرماقچىمۇ، ياكى ھەممىسىنى بىر ئالبوم دەپ قارىماقچىمۇ؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "بىز سىزنىڭ ھۆججەت قىسقۇچىڭىزدا كىچىك ھۆججەت قىسقۇچلار بارلىقىنى بايقىدۇق. ھەر بىر كىچىك ھۆججەت قىسقۇچى ئۈچۈن ئايرىم ئالبوم قۇرماقچىمۇ، ياكى ھەممىسىنى بىر ئالبوم دەپ قارىماقچىمۇ؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "تېخنىكىلىق چەكلىمىلەر سەۋەبىدىن، كۆچمە توركۆرگۈلەردە توپ چۈشۈرۈش قوللىمايدۇ، ۋە بەزى سىنلارنى چۈشۈرەلمەسلىك مۇمكىن.<br><br>بارلىق سۈرەت ۋە سىنلارنى بىرلا چۈشۈرۈش ئۈچۈن:",
+  "Edit": "تۈزىتىش",
+  "Edit Album": "ئالبوم تۈزىتىش",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ئالبوم تەڭشەكلىرىنى تەھرىرلەش",
+  "Upload in progress": "يۈكلەش داۋاملىشىۋاتىدۇ",
+  "Album Progress": "ئالبوم ئىلگىرىلىشى",
+  "Adding Photos to Album": "ئالبومغا رەسىم قوشۇش",
+  "Creating New Album": "يېڭى ئالبوم قۇرۇش",
+  "Uploading your photos...": "رەسىملىرىڭىزنى يۈكلەۋاتىدۇ...",
+  "Cancel Upload": "يۈكلەشنى بىكار قىلىش"
 }

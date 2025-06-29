@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Mõnõ pilte ei saaq tüütellä. Tii saat jätkata häste tüüteldütte piltõgaq.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sinnaq lätt automaatsõlt {{amount}} igakuu sääl maksmisviisil, ku tõd uma muudatuq.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Valiq plaani, miä parõmba uma tiijä vajaguisi mano. Saat valiq alt olevide vaihõlõmmõ hulgast vai pandaq uma summa sisse.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mäq nägemiq, et tiia kaust um alukaustaiga. Kas tahat tettäq iga alukaust jaos uma albumi vai kätet noid kõikiq üten albumin?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mäq nägemiq, et tiia kaust um alukaustaiga. Kas tahat tettäq iga alukaust jaos uma albumi vai kätet noid kõikiq üten albumin?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Tehnilisi piiranguisi peräst äi toet'a hulgiallalaamiisi mobiilisihi veebilehtselüürihi, ja mõnõq videóq äi pruugiq alla laadiq.<br><br>Kõikõ piltõ ja videõ kõrra alla laadmisõs:",
+  "Edit": "Muutma",
+  "Edit Album": "Albumit muutma",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albumi sätetüisi muutmaq",
+  "Upload in progress": "Ülesladminõ käeb",
+  "Album Progress": "Albumi saamminõ",
+  "Adding Photos to Album": "Piltõ albummi lisamõnõ",
+  "Creating New Album": "Vahtsõt albummi luumõnõ",
+  "Uploading your photos...": "Sinu piltõ ülesladmõnõ...",
+  "Cancel Upload": "Katkõstaq ülesladminõ"
 }

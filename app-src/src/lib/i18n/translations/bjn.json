@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Babarapa poto kada pina diproses. Ikam kawa manerusakan lawan poto-poto nang sukses diproses.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ikam akan ditagih {{amount}} tiap bulan sacara otomatis di cara bayar ini kalau kada diubah.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilih paplan nang paling cucuk lawan kabutuhan pian. Pian kawa mamilih matan pilihan di bawah ni atawa mamasukakan jumlah nang custom.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami mamiriks bahwa folder pian baisi subfolder. Pian handak mambuat album tatungga untuk tiap-tiap subfolder, atawa manjadikan samunyaan album tunggal?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami mamiriks bahwa folder pian baisi subfolder. Pian handak mambuat album tatungga untuk tiap-tiap subfolder, atawa manjadikan samunyaan album tunggal?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Karena katabatasan teknologi, unduhan bahanakan di browser mobile kada didukung, wan babarapa video bisa aja kada taulah diunduh.<br><br>Untuk maunduh samunyaan poto wan video sakaligus, muhun:",
+  "Edit": "Malah",
+  "Edit Album": "Malah Album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Ubah pengaturan album",
+  "Upload in progress": "Upload lagi jalan",
+  "Album Progress": "Kemajuan album",
+  "Adding Photos to Album": "Nambaahi foto ka album",
+  "Creating New Album": "Mambuhat album hanyar",
+  "Uploading your photos...": "Manyurukkan foto pian...",
+  "Cancel Upload": "Batukan upload"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Beberapa foto tidak dapat diproses. Anda dapat melanjutkan dengan foto yang berhasil diproses.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Anda akan secara otomatis ditagih {{amount}} bulanan pada metode pembayaran ini kecuali Anda mengubahnya.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilih paket yang paling sesuai dengan kebutuhan Anda. Anda dapat memilih dari opsi di bawah ini atau memasukkan jumlah khusus.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami melihat bahwa folder Anda berisi subfolder. Apakah Anda ingin membuat album terpisah untuk setiap subfolder, atau menganggap semuanya sebagai satu album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami melihat bahwa folder Anda berisi subfolder. Apakah Anda ingin membuat album terpisah untuk setiap subfolder, atau menganggap semuanya sebagai satu album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Karena keterbatasan teknis, unduhan massal di browser mobile tidak didukung, dan beberapa video mungkin tidak dapat diunduh.<br><br>Untuk mengunduh semua foto dan video sekaligus, silakan:",
+  "Edit": "Sunting",
+  "Edit Album": "Sunting Album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edit pengaturan album",
+  "Upload in progress": "Upload sedang berlangsung",
+  "Album Progress": "Kemajuan album",
+  "Adding Photos to Album": "Menambahkan foto ke album",
+  "Creating New Album": "Membuat album baru",
+  "Uploading your photos...": "Mengunggah foto Anda...",
+  "Cancel Upload": "Batalkan upload"
 }

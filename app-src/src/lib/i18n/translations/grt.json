@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Photo lagphakao prosese dangbei. Sukhruwadi prosese dambai photo nani samne thakrang.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Nang-ni sago paisa khabakhon nangoni nade dambai chaini hangma thang {{amount}} automatic bill dang.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Gou sak manha dak albumbu mahan sasen gou folderao. Folderhu mboua ko albumbu mahan sak ni gou bije, ya albumbu gitai ni bije?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Gou sak manha dak albumbu mahan sasen gou folderao. Folderhu mboua ko albumbu mahan sak ni gou bije, ya albumbu gitai ni bije?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Technical kãmãkãrã dangua, mobile browser-o bulk downloads support jokã nonga, bad video khura jokã download jokã thei nonga.<br><br>Photograph ek video jõmõnte siŋte download:",
+  "Edit": "Edak",
+  "Edit Album": "Album edak",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Album settings oñaña doga",
+  "Upload in progress": "Upload thina gidinga",
+  "Album Progress": "Album ojha badani",
+  "Adding Photos to Album": "Album anga giryanga kam goyao",
+  "Creating New Album": "Noa album onangdoka",
+  "Uploading your photos...": "Nidang giryanga upload thina...",
+  "Cancel Upload": "Upload cancel goya"
 }

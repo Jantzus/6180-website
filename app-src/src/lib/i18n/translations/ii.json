@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ꀮꀳꄊꀋꀷꌶꂵꀋꆣ། ꀮꀳꄊꐱꀷꌶꂵꃅꑌꉬꂵꌠ꒤ꑳꂷ꓏ꆹ꒤ꑳ꒫ꑭ꒤ꐨ꓏ꑳ꒫ꐊ꒤ꀀ꒤ꐨ꒤ꀮꀳꐊ꓏ꆹ꒤ꑳ꒫。",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ꀮꐊꊌꐨ ꊿꀊꌣ ꀻꊭꉏ ꀻꆳꈀꌠꐊꊌꉨꁵꈨ {{amount}} ꁊꈀꌠꐊꊌꉨ꓏꒤ꑳ꓏ꆹꈺꉢꄈꌠꌊꈶꌊꐊꌠꆹ꓏ꀻꊭꉏ।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ꇮꈨꋊꋠꌋꐊꃷꑴꃅ。ꇪꋅꑭꋊꃅꊰꂴꏃꑌꋍꅺꐨꑟꉬꂻ。",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ꉪꀧꌧꑌꋌꇬꏦꄸꌒꀨꄉꇬꏦꄉꃢꄹꁧ。ꇪꋅꐥꄉꌒꇬꏦꄉꃹꑤꑍꊌꄧꇯꏤꀨꉙꏢꑭꇪꋅꐨꑟꄸꌒꇬꏦꑟꇬꏦꐺꑰꆹꂻ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ꉪꀧꌧꑌꋌꇬꏦꄸꌒꀨꄉꇬꏦꄉꃢꄹꁧ。ꇪꋅꐥꄉꌒꇬꏦꄉꃹꑤꑍꊌꄧꇯꏤꀨꉙꏢꑭꇪꋅꐨꑟꄸꌒꇬꏦꑟꇬꏦꐺꑰꆹꂻ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ꌬꌠꀋꉬꃅꇐꑌꉬ，ꇗꄉꈨꎭꃅꊿꃀꉻꇗꄉꎭꅍꀋꐽ，ꃅꍣꀋꃅꎬꑌꃅꎺꇙꀋꊌ。<br><br>ꋍꊇꏦꅍꃅꎬꑌꇗꄉꌠꋍ：",
+  "Edit": "ꆹꌠ",
+  "Edit Album": "ꀠꇤꌋ ꆹꌠ",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ꎻꌦꄮꌠ ꉼꌟ ꎆꇉ",
+  "Upload in progress": "ꏦꌒ ꌠꅪ ꀊ",
+  "Album Progress": "ꎻꌦꄮꌠ ꀰꊿ",
+  "Adding Photos to Album": "ꎻꌦꄮꌠ ꃀꀪ ꃅꃴ",
+  "Creating New Album": "ꈝꎻꌦꄮꌠ ꆏ",
+  "Uploading your photos...": "ꅍ ꃀꀪ ꏦꌒ ꀊ...",
+  "Cancel Upload": "ꏦꌒ ꂾꀋ"
 }

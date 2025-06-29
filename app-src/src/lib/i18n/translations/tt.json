@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Кайбер фоторесемнәр эшкәртелә алмады. Сез уңышлы эшкәртелгән фотолар белән дәвам итә аласыз.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Сез бу түләү ысулын үзгәртмәсәгез, ай саен {{amount}} автоматик рәвештә алына.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Үзегезнең ихтыяҗларына иң яраклы планны сайлагыз. Төбәндәге вариантлардан сайлый яки үзегезнең күләмегезне кертә аласыз.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Без күрдек, сезнең папкагызда суб-папкалар бар. Сез һәр суб-папка өчен аерым альбом ясарга телисезме, әллә барысын да бер альбом итеп карарга телисезме?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Без күрдек, сезнең папкагызда суб-папкалар бар. Сез һәр суб-папка өчен аерым альбом ясарга телисезме, әллә барысын да бер альбом итеп карарга телисезме?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техник чикләүләр аркасында, мобиль браузерларда күпле йөкләүләр ярдәм ителми, һәм кайбер видеолар йөкләнмәс мөмкин.<br><br>Барлык фоторезәмнәрне һәм видеоларны бер үк вакытта йөкләү өчен:",
+  "Edit": "Үзгәртү",
+  "Edit Album": "Альбом үзгәртү",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом көйләүләрен үзгәртү",
+  "Upload in progress": "Йөкләү дәвам итә",
+  "Album Progress": "Альбом алга барышы",
+  "Adding Photos to Album": "Альбомга фоторҙар өҫтәү",
+  "Creating New Album": "Яңы альбом ясау",
+  "Uploading your photos...": "Сезнең фоторҙарыгыҙ йөкләнә...",
+  "Cancel Upload": "Йөкләүне туҡтатыу"
 }

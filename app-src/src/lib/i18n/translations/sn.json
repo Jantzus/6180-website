@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Mamwe mafoto haana kukwanisa kugadziriswa. Munogona kuenderera mberi nemafoto akagadziriswa zvakanaka.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Muchakuchiwa {{amount}} gwa negwa negwa nemutoo uyu wokubhadhara kunze kwekunge muchishandura.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Sarudza hurongwa hunokwanira zvaunoda zvakanyanya. Unogona kusarudza kubva kune zvisarudzwa zviri pazasi kana kuisa mari yaunoda.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Takaona kuti dhairekitori renyu rine madhairekitori maduku. Munoda kugadzira album rakaparadzana kune rimwe nerimwe dhairekitori duku here, kana kuitenderedza ose sealbum rimwe chete?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Takaona kuti dhairekitori renyu rine madhairekitori maduku. Munoda kugadzira album rakaparadzana kune rimwe nerimwe dhairekitori duku here, kana kuitenderedza ose sealbum rimwe chete?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Nokuda kwezvirambidzo zvetekinoroji, kudhawunirodha chakawanda pamabhurauza enhare hazvidzivisiwe, uye mamwe mavhidhiyo angasadhawunirodha.<br><br>Kudhawunirodha mifananidzo yose nemavhidhiyo panguva imwe chete:",
+  "Edit": "Gadzirisa",
+  "Edit Album": "Gadzirisa album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Gadzirisa masettings ealbum",
+  "Upload in progress": "Upload iri kufamba",
+  "Album Progress": "Kufambira mberi kwealbum",
+  "Adding Photos to Album": "Kugadzira mafoto mualbum",
+  "Creating New Album": "Kugadzira album idzva",
+  "Uploading your photos...": "Kukwira mafoto ako...",
+  "Cancel Upload": "Kanzera upload"
 }

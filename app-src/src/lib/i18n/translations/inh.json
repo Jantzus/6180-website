@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ДӀа суртах дӀахӀотта ца хилачар. Хьуна ахча дуккха сурташца хьалха йола хила ду.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Хьуна {{amount}} автоматически дола ду хӀинца доаний мел тӀехьаза кхаьчара яц хилча.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Хьан лууш йолу план харжа. Лахахь йолу вариантал чохь харжа мегал я хьайна а дувцал а дида мегал.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Хьан папках дукха жима папкаш лелаш хилла дагайна. Хьуна массех папка массех альбом дахачо лайкх а, тахьча масса цхьа альбом санна эца ма?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Хьан папках дукха жима папкаш лелаш хилла дагайна. Хьуна массех папка массех альбом дахачо лайкх а, тахьча масса цхьа альбом санна эца ма?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техникин дозанаш долуш, мобилийн браузераш юкъе къамел дезаш дац хилар, цхьан видеоаш къамел дезаш дац хила тешам беш.<br><br>Дакъалеца суьрташ а видеоаш а цхьан хана къамел дезаш:",
+  "Edit": "Хувца",
+  "Edit Album": "Альбом хувца",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом параметрах хувца",
+  "Upload in progress": "Чуяхар йиллар йо",
+  "Album Progress": "Альбом хьожийташ",
+  "Adding Photos to Album": "Альбом сурташ тIетоха",
+  "Creating New Album": "Керда альбом хьакхолла",
+  "Uploading your photos...": "Хьан суртийн чуяхар ю...",
+  "Cancel Upload": "Чуяхар дӀадаккха"
 }

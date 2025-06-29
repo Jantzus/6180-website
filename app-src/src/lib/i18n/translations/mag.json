@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "कुछ फोटो प्रोसेस नै हो सकलै। अहाँ सफल रूप सं प्रोसेस भेल फोटो सब क साथ आगू बढ़ सकै छी।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "जब तक अहाँ एकरा नै बदलब ताब तक एह भुगतान विधि स मासिक {{amount}} अपने आप काटल जेतै।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "हम देखल बानी कि आपके फोल्डर में सब-फोल्डर अछि। की आप हरेक सब-फोल्डर खातिर अलग एल्बम बनावे चाहैत छी, या सब्भके एक एल्बम मानी चाहैत छी?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "हम देखल बानी कि आपके फोल्डर में सब-फोल्डर अछि। की आप हरेक सब-फोल्डर खातिर अलग एल्बम बनावे चाहैत छी, या सब्भके एक एल्बम मानी चाहैत छी?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "तकनीकी सीमा क कारण, मोबाइल ब्राउजर म bulk downloads समर्थित नै है, आ कुछ videos download नै हो सकत।<br><br>सब्बै photos आ videos एक साथै download करै क लै:",
+  "Edit": "संपादन",
+  "Edit Album": "एल्बम संपादन",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "एल्बम सेटिंग एडिट करीं",
+  "Upload in progress": "अपलोड चालू बा",
+  "Album Progress": "एल्बम प्रगति",
+  "Adding Photos to Album": "एल्बम में फोटो जोड़ रहल बा",
+  "Creating New Album": "नयका एल्बम बनावल जा रहल बा",
+  "Uploading your photos...": "अहाँक फोटो अपलोड हो रहल बा...",
+  "Cancel Upload": "अपलोड रद्द करीं"
 }

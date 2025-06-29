@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "有啲相唔能夠處理到。你可以用成功處理咗嘅相繼續。",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "要係你唔改呢個付款方式嘅話，每個月會自動扣你{{amount}}。",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "揀一個最符合你需要嘅計劃。你可以喺下面嘅選項入面揀，或者輸入自定義嘅數量。",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "我哋發現你嘅資料夾入面有子資料夾。你想唔想為每個子資料夾整個分開嘅相簿，定係將佢哋全部當做一個相簿？"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "我哋發現你嘅資料夾入面有子資料夾。你想唔想為每個子資料夾整個分開嘅相簿，定係將佢哋全部當做一個相簿？",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "由於技術限制，手機瀏覽器唔支持批量下載，而且有啲視頻可能下載唔到。<br><br>想一次過下載晒啲相同視頻，請：",
+  "Edit": "編輯",
+  "Edit Album": "編輯相簿",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "編輯相簿設定",
+  "Upload in progress": "上傳中",
+  "Album Progress": "相簿進度",
+  "Adding Photos to Album": "加相片入去相簿",
+  "Creating New Album": "整新相簿",
+  "Uploading your photos...": "上傳你嗰相片...",
+  "Cancel Upload": "取消上傳"
 }

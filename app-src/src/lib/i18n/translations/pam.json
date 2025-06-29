@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Deting larawan e ra mituki i-process. Malyari ku mung magpatuloy keng masaganang me-process a larawan.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Mayayakit ke otomatiku ning {{amount}} balang bulan keng paralan da king pagbayad iti nung e mu babagyun.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilien ing plan a pekamalagung makatupad kareng pamilangu yu. Malyari yung mamilii kareng options king lalam o mag-enter ning sarili yung halaga.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Miras mi na ing folder yu atin yang mga subfolder. Buri mung gawan album a bukud ing balang subfolder, o pansamantalang treating dang pisan antimong metung a album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Miras mi na ing folder yu atin yang mga subfolder. Buri mung gawan album a bukud ing balang subfolder, o pansamantalang treating dang pisan antimong metung a album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Uling king mga pamarakal king teknolohiya, ing bulk download king mobile browsers e ya susuporta, at ing aliwang video maging e la madownload.<br><br>Ba rang idownload lahat ng larawan at video king metung a panahon:",
+  "Edit": "Alilan",
+  "Edit Album": "Alilan album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "I-edit la reng setting ning album",
+  "Upload in progress": "Malyari ne ing upload",
+  "Album Progress": "Progress ning album",
+  "Adding Photos to Album": "Mitudtud foto king album",
+  "Creating New Album": "Magagawa yang bayung album",
+  "Uploading your photos...": "Miupload la reng larawan mu...",
+  "Cancel Upload": "I-cancel ye ing upload"
 }

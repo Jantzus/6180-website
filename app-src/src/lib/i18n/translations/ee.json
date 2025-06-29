@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Foto aɖewo mete ŋu wowɔ dzi o. Àte ŋu ayi edzi kple foto siwo wowɔ edzi dedie.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Woaxe fe {{amount}} ɣleti sia ɣleti le fexefe mɔnu sia dzi ne mètrɔe o.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tia ɖoɖo si sɔ kple wò nuhiahiãwo wu. Àte ŋu atia tso tiatia siwo le ete la me alo aŋlɔ wò ŋutɔ wò ga home.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Míekpɔ be wò agbalẽdzraɖoƒe me nyawo me agbalẽdzraɖoƒe suewo le. Ɖe nàdi be yeatsɔ agbalẽdzraɖoƒe sue ɖesiaɖe awɔ nudzɔdzɔgbalẽ ɖeka ɖe sia ɖe, alo yeabu wo katã abe nudzɔdzɔgbalẽ ɖeka ko ene?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Míekpɔ be wò agbalẽdzraɖoƒe me nyawo me agbalẽdzraɖoƒe suewo le. Ɖe nàdi be yeatsɔ agbalẽdzraɖoƒe sue ɖesiaɖe awɔ nudzɔdzɔgbalẽ ɖeka ɖe sia ɖe, alo yeabu wo katã abe nudzɔdzɔgbalẽ ɖeka ko ene?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Le mɔ̃ɖaɖa siwo le teknoloji ŋu ta la, womedoa alɔ bulk downloading le mobile browser-wo dzi o, eye video aɖewo ate ŋu agatrɔ be womaɖi wo o.<br><br>Be nàɖi foto kple video siwo katã le afi ɖeka:",
+  "Edit": "Trɔ asi",
+  "Edit Album": "Trɔ album asi",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Trɔ album ɖoɖowo",
+  "Upload in progress": "Upload le yiyim",
+  "Album Progress": "Album ŋgɔgbe",
+  "Adding Photos to Album": "Album me foto kpekpe tsɔtsɔ",
+  "Creating New Album": "Album yeye wɔwɔ",
+  "Uploading your photos...": "Wò fotowo le upload ge...",
+  "Cancel Upload": "Tso upload ɖi"
 }

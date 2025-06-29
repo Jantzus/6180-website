@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Yiengh vih doiq ma boij ok ginhgangj. Mwngz vuen ok gwen bae sinhdaengz coenz do vih.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Feiz miz mwngz boij bae ginhgangj doenghwenz {{amount}} aya, doenghwenz mwngz ma boux ndaw daeuj.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Gou goenq daiq seizlawz lwg cingz rox miz haemh. Mwngz seizdaej lo bouxcuengh siucouh caeuq doengh.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Rox gou genq dah goenq daiq vunz miz boux doengcaeuq. Rox bouxndeq mbouj lo gou song gij albumbu ndoi goenq, iek bouxndeq mbouj lo albumbu bit neix?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Rox gou genq dah goenq daiq vunz miz boux doengcaeuq. Rox bouxndeq mbouj lo gou song gij albumbu ndoi goenq, iek bouxndeq mbouj lo albumbu bit neix?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Youq gijsulh soengj ndaej youhraez, mobile cawzlaeuz lij gou bulk downloads buh hingqdaeuj, aenvih yienxlaiz videoz youq lwg gou buh haeuj buh daeuj.<br><br>Yawj guh downloads bouxboux huhyaek roengz videoz ndaw aen fanj:",
+  "Edit": "Gaiqbiuj",
+  "Edit Album": "Gaiqbiuj album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Gaiq album co soenghdaeuj",
+  "Upload in progress": "Ging dwk sang haenx",
+  "Album Progress": "Album gincuengh",
+  "Adding Photos to Album": "Roxnyomj guh sang album",
+  "Creating New Album": "Boux aen album",
+  "Uploading your photos...": "Ging dwk neix roxnyomj...",
+  "Cancel Upload": "Ceiq dwk sang"
 }

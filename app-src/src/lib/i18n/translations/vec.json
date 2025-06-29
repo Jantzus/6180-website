@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Qualche foto no le podeva mia èssar processà. Te poi andar vanti con łe foto processà ben.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Te sarè carghà automaticamente {{amount}} ogni mese co sto metodo de pagamento se no te lo cambi.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Serni el pian che va meio par i to bisogni. Te poi sernir da le opziòn qua soto o mètar un inporto personalizà.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Gavemo visto che ła tua cartèła ła contien soto-cartèłe. Vuto crear un album separà par ogni soto-cartèła, o tratarłe tute come un album soło?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Gavemo visto che ła tua cartèła ła contien soto-cartèłe. Vuto crear un album separà par ogni soto-cartèła, o tratarłe tute come un album soło?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Par limitazsion tècniche, i download de masa sui navegadori mobil no xe suportà, e qualche video el podarìa no vegnir scaricà.<br><br>Par scaricàr tute le foto e i video in una volta:",
+  "Edit": "Canbia",
+  "Edit Album": "Canbia album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Modìfica inpostasion album",
+  "Upload in progress": "Caregamento in corso",
+  "Album Progress": "Progreso album",
+  "Adding Photos to Album": "Xontando foto a l'album",
+  "Creating New Album": "Creassion de un album novo",
+  "Uploading your photos...": "Semo drio caregar le to foto...",
+  "Cancel Upload": "Anula el caregamento"
 }

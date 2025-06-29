@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Suuraawwan tokko tokko hin oolfamne. Suuraawwan milkaa'inaan oolfaman waliin ittifufa dandeessa.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Akka kanfalti kanaaf jijjiruu keessatti kaffalti {{amount}} ji'aan ji'aan ofumaan sirraa ni kaafama.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Karoora fedhii kee wajjin walitti dhufu filadhu. Filannoowwan armaan gadii keessaa filachuu ykn herrega dhuunfaa galchuu ni dandeessa.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Galmeensa keessan galmeensota xiqqoo qabaachuu hubanne. Galmeensa xiqqoo tokkoo tokkoof album garaa garaa uumuu barbaadduu moo hunda album tokkotti ilaaluu barbaadduu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Galmeensa keessan galmeensota xiqqoo qabaachuu hubanne. Galmeensa xiqqoo tokkoo tokkoof album garaa garaa uumuu barbaadduu moo hunda album tokkotti ilaaluu barbaadduu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Daangaalee teeknoloojii sababa godhameef, baayyina gadi fe'uumsaa browseriiwwan mobayilii irratti hin deeggaramu, akkasumas viidiyoowwan tokko tokko hin fe'amanii danda'u.<br><br>Suuraalee hundii fi viidiyoowwan al tokko yeroo tokkotti fe'uuf:",
+  "Edit": "Gulali",
+  "Edit Album": "Album gulali",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Qindaa'ina albamoota gulaaluu",
+  "Upload in progress": "Fe'uu adeemsa irratti",
+  "Album Progress": "Adeemsa albamoota",
+  "Adding Photos to Album": "Suura albaamootta keessa galchuu",
+  "Creating New Album": "Albaama haaraa uumuu",
+  "Uploading your photos...": "Suura kee fe'uu irratti...",
+  "Cancel Upload": "Fe'uu dhiisi"
 }

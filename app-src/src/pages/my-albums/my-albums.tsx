@@ -16,11 +16,13 @@ import {
 import { GlobalStyle } from "@/styles/globalStyles";
 import { MyAlbumsHeader } from "./MyAlbumsHeader";
 import { AlbumsFilter } from "./AlbumsFilter";
-import { UploadProgress } from "@/components/UploadProgress";
 import { AlbumList } from "@/components/AlbumList";
 import { LazyImage } from "@/components/LazyImage";
 
-// Import the new components and utilities
+// Import the new centralized upload modal
+import { CentralizedUploadModal } from "./CentralizedUploadModal";
+
+// Import the album creation modal and utilities
 import { AlbumCreationModal, FolderStructure } from "./AlbumCreationModal";
 import { 
   analyzeFolderStructure, 
@@ -343,7 +345,6 @@ const getAlbumsToDelete = (folders: FolderType[], subscriptionInfo: Subscription
   return albumsToDelete;
 };
 
-// Optimized component to display albums marked for deletion with LIMITED image previews
 // Optimized component to display albums marked for deletion with LIMITED image previews
 const AlbumDeletionPreview = React.memo(({ 
   albumsToDelete, 
@@ -669,6 +670,10 @@ export const MyAlbums = () => {
   // Add state to track if this is a new album creation
   const [isCreatingNewAlbum, setIsCreatingNewAlbum] = useState(false);
   
+  // NEW: Centralized upload modal state
+  const [showUploadModal, setShowUploadModal] = useState(false);
+  const [uploadingAlbumName, setUploadingAlbumName] = useState<string | null>(null);
+  
   // Add ref for folder input
   const folderInputRef = useRef<HTMLInputElement>(null);
   
@@ -699,60 +704,64 @@ export const MyAlbums = () => {
     }
   });
   
-  // FIXED: File upload processor with minimal logging and new album tracking
-  const fileUploadProcessor = useFileUploadProcessor(
-    (folderId) => {
-      // SSR-safe metadata operations
-      if (!isClient) return;
-      
-      try {
-        // Check if we have folder structure metadata for multi-album processing
-        const metadata = getFolderStructureMetadata();
-        if (metadata) {
-          const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
-          if (storedPhotos) {
-            const selectedPhotos = JSON.parse(storedPhotos);
-            const albumGroups = createAlbumGroupsFromSelectedPhotos(selectedPhotos);
+  // UPDATED: Custom navigation function for the useFileUploadProcessor hook
+  const navigateAfterUpload = useCallback((uploadedFolderId: string | null) => {
+    if (!isClient) return;
+    
+    try {
+      // Check if we have folder structure metadata for multi-album processing
+      const metadata = getFolderStructureMetadata();
+      if (metadata) {
+        const storedPhotos = localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_PHOTOS);
+        if (storedPhotos) {
+          const selectedPhotos = JSON.parse(storedPhotos);
+          const albumGroups = createAlbumGroupsFromSelectedPhotos(selectedPhotos);
+          
+          if (albumGroups.length > 1) {
+            const multiAlbumData = albumGroups.map(group => ({
+              name: group.name,
+              selectedPhotos: group.selectedPhotos,
+              folderPath: group.folderPath
+            }));
             
-            if (albumGroups.length > 1) {
-              const multiAlbumData = albumGroups.map(group => ({
-                name: group.name,
-                selectedPhotos: group.selectedPhotos,
-                folderPath: group.folderPath
-              }));
-              
-              localStorage.setItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA, JSON.stringify(multiAlbumData));
-              clearFolderStructureMetadata();
-              redirectTo("save-album.html?mode=multiple");
-              return;
-            } else {
-              clearFolderStructureMetadata();
-            }
+            localStorage.setItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA, JSON.stringify(multiAlbumData));
+            clearFolderStructureMetadata();
+            redirectTo("save-album.html?mode=multiple");
+            return;
           } else {
             clearFolderStructureMetadata();
           }
-        }
-      } catch (error) {
-        console.error('Error processing multi-album data:', error);
-        if (typeof clearFolderStructureMetadata === 'function') {
+        } else {
           clearFolderStructureMetadata();
         }
       }
-      
-      // Normal single album navigation
-      // If this was initiated as a new album, don't include folderId in URL
-      if (isCreatingNewAlbum) {
-        setIsCreatingNewAlbum(false); // Reset the flag
-        redirectTo("save-album.html");
-      } else if (folderId) {
-        const targetUrl = `save-album.html?folderId=${encodeURIComponent(folderId)}`;
-        redirectTo(targetUrl);
-      } else {
-        redirectTo("save-album.html");
+    } catch (error) {
+      console.error('Error processing multi-album data:', error);
+      if (typeof clearFolderStructureMetadata === 'function') {
+        clearFolderStructureMetadata();
       }
-    },
-    false
-  );
+    }
+    
+    // FIXED: Use isCreatingNewAlbum to determine navigation path
+    if (isCreatingNewAlbum) {
+      // Creating a new album - navigate without folderId
+      setIsCreatingNewAlbum(false); // Reset the flag
+      console.log(`🎯 Navigating to save-album for new album`);
+      redirectTo("save-album.html");
+    } else if (uploadedFolderId) {
+      // Adding photos to existing album - navigate with folderId
+      const targetUrl = `save-album.html?folderId=${encodeURIComponent(uploadedFolderId)}`;
+      console.log(`🎯 Navigating to save-album with folderId: ${uploadedFolderId}`);
+      redirectTo(targetUrl);
+    } else {
+      // Fallback
+      console.log(`🎯 Fallback navigation to save-album`);
+      redirectTo("save-album.html");
+    }
+  }, [isClient, isCreatingNewAlbum]);
+
+  // FIXED: File upload processor with minimal logging and new album tracking
+  const fileUploadProcessor = useFileUploadProcessor(navigateAfterUpload, false);
   
   const {
     fileInputRef,
@@ -760,7 +769,28 @@ export const MyAlbums = () => {
     isProcessingFiles,
     progressTracker,
     setSelectedPhotos,
+    clearUploadData,
   } = fileUploadProcessor;
+
+  // NEW: Show/hide upload modal based on upload state
+  useEffect(() => {
+    if ((isUploading || isProcessingFiles) && !showUploadModal) {
+      setShowUploadModal(true);
+    }
+  }, [isUploading, isProcessingFiles, showUploadModal]);
+
+  // NEW: Clear upload modal when upload completes
+  useEffect(() => {
+    if (!isUploading && !isProcessingFiles && showUploadModal) {
+      // Keep modal visible for a brief moment to show completion
+      const timer = setTimeout(() => {
+        setShowUploadModal(false);
+        setUploadingAlbumName(null);
+      }, 2000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isUploading, isProcessingFiles, showUploadModal]);
 
   // SSR-safe credential prewarming
   useEffect(() => {
@@ -793,6 +823,62 @@ export const MyAlbums = () => {
     [filteredFolders, albumsToDeleteIds]
   );
 
+  // NEW: Handler for adding photos to existing albums
+  const handleAddPhotosToExistingAlbum = useCallback((folderId: string) => {
+    if (!isClient) return;
+    
+    try {
+      console.log(`🎯 Starting Add Photos flow for existing album: ${folderId}`);
+      
+      // Find the album name for the modal
+      const targetAlbum = folders.find(folder => folder.folderId === folderId);
+      const albumName = targetAlbum?.folderName || 'Untitled Album';
+      
+      // Set this as adding to an existing album (not creating new)
+      setIsCreatingNewAlbum(false);
+      
+      // Set the album name for the modal
+      setUploadingAlbumName(albumName);
+      
+      // Clear any previous album groups and metadata - SSR-safe
+      clearUserAlbumPreference();
+      clearFolderStructureMetadata();
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.MULTI_ALBUM_DATA);
+      
+      // Clear selected photos when adding to existing album
+      setSelectedPhotos([]);
+
+      // Use the file picker with the specific folder ID
+      // This will trigger the upload process and then navigate to save-album
+      fileUploadProcessor.openFilePicker(folderId);
+      
+      console.log(`📂 Opened file picker to add photos to album: ${folderId}`);
+    } catch (error) {
+      console.error("Error opening file picker for existing album:", error);
+      alert("Sorry, there was an error opening the file picker. Please try again.");
+    }
+  }, [fileUploadProcessor, setSelectedPhotos, isClient, folders]);
+
+  // NEW: Cancel upload handler
+  const handleCancelUpload = useCallback(() => {
+    try {
+      // Clear upload data and reset states
+      clearUploadData();
+      setShowUploadModal(false);
+      setUploadingAlbumName(null);
+      setIsCreatingNewAlbum(false);
+      
+      console.log('Upload cancelled by user');
+    } catch (error) {
+      console.error('Error cancelling upload:', error);
+    }
+  }, [clearUploadData]);
+
+  // NEW: Hide modal handler
+  const handleHideModal = useCallback(() => {
+    setShowUploadModal(false);
+  }, []);
+
   // FIXED: Enhanced file selection with single-pass filtering and minimal logging
   const handleFileSelection = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!isClient) return false;
@@ -800,6 +886,11 @@ export const MyAlbums = () => {
     const files = Array.from(e.target.files || []);
     if (!files.length) {
       return false;
+    }
+
+    // Set uploading album name for new albums
+    if (!uploadingAlbumName) {
+      setUploadingAlbumName(null); // null indicates new album
     }
 
     // FIXED: Single-pass file filtering - no redundant calculations
@@ -861,7 +952,7 @@ export const MyAlbums = () => {
     }
     
     return true;
-  }, [fileUploadProcessor, cognitoUsername, isClient]);
+  }, [fileUploadProcessor, cognitoUsername, isClient, uploadingAlbumName]);
 
   // Album creation choice handler
   const handleAlbumCreationChoice = useCallback((choice: 'separate' | 'combined', files: File[], folderStructure: FolderStructure) => {
@@ -946,6 +1037,11 @@ export const MyAlbums = () => {
       // Set the new album flag if folderId is null (new album)
       setIsCreatingNewAlbum(folderId === null);
       
+      // Clear album name if creating new album
+      if (folderId === null) {
+        setUploadingAlbumName(null);
+      }
+      
       // Clear any previous album groups and metadata - SSR-safe
       clearUserAlbumPreference();
       clearFolderStructureMetadata();
@@ -1008,22 +1104,6 @@ export const MyAlbums = () => {
           onSelectFolder={handleSelectFolder}
         />
 
-        {/* Upload progress */}
-        {(isUploading || isProcessingFiles) && (
-          <div style={{ width: '100%', marginBottom: '20px' }}>
-            <UploadProgress 
-              progressTracker={progressTracker}
-              isUploading={isUploading}
-              isProcessingFiles={isProcessingFiles}
-              isRTL={getLanguageDirection(language) === "rtl"}
-              style={{ marginTop: '20px' }}
-              context="uploading"
-              showSuccessMessage={true}
-              showErrorMessage={true}
-            />
-          </div>
-        )}
-
         {/* Storage limit message */}
         {folders.length > 3 && (
           <StorageMessage 
@@ -1061,6 +1141,7 @@ export const MyAlbums = () => {
           isUploading={isUploading}
           cognitoUsername={cognitoUsername}
           isProfileView={false}
+          onAddPhotos={handleAddPhotosToExistingAlbum}
         />
         
         {/* Enhanced File Input with both file and folder support */}
@@ -1079,6 +1160,20 @@ export const MyAlbums = () => {
           {...({ webkitdirectory: "" } as FileInputAttributes)}
           onChange={handleFolderSelection}
           style={{ display: 'none' }}
+        />
+
+        {/* NEW: Centralized Upload Progress Modal */}
+        <CentralizedUploadModal
+          isVisible={showUploadModal}
+          albumName={uploadingAlbumName}
+          progressTracker={progressTracker}
+          isUploading={isUploading}
+          isProcessingFiles={isProcessingFiles}
+          isRTL={isRTL}
+          onCancel={handleCancelUpload}
+          onHide={handleHideModal}
+          canCancel={true}
+          t={t}
         />
 
         {/* Album Creation Modal */}

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "هەندێک وێنە نەتوانران پڕۆسێس بکرێن. دەتوانیت بە وێنە سەرکەوتووەکان بەردەوام بیت.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "لە ڕێگای ئەم شێوازەی پارەدانەوە مانگانە {{amount}} خۆکارانە لێت دەکرێتەوە ئەگەر نەیگۆڕیت.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ئەو پلانە هەڵبژێرە کە باشترین لە گەڵ پێداویستیەکانت دەگونجێت. دەتوانیت لە بژاردەکانی خوارەوە هەڵبژێریت یان ڕێژەیەکی تایبەت بنووسیت.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "تێبینیمان کرد کە فۆڵدەرەکەت ژێر فۆڵدەری تێدایە. ئایا دەتەوێت ئەلبومێکی جیا بۆ هەر ژێر فۆڵدەرێک دروست بکەیت، یان هەموویان وەک یەک ئەلبوم مامەڵەیان لەگەڵ بکەیت؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "تێبینیمان کرد کە فۆڵدەرەکەت ژێر فۆڵدەری تێدایە. ئایا دەتەوێت ئەلبومێکی جیا بۆ هەر ژێر فۆڵدەرێک دروست بکەیت، یان هەموویان وەک یەک ئەلبوم مامەڵەیان لەگەڵ بکەیت؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "بەهۆی سنووری تەکنیکی، داگرتنی کۆمەڵە لە وێبگەڕەکانی مۆبایل پشتگیری ناکرێت، وە ئەگەری ئەوە هەیە هەندێک ڤیدیۆ دانەگیرێن.<br><br>بۆ داگرتنی هەموو وێنە و ڤیدیۆکان لەیەک کاتدا، تکایە:",
+  "Edit": "دەستکاری",
+  "Edit Album": "دەستکاری ئەلبوم",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ڕێکخستنەکانی ئەلبوم دەستکاری بکە",
+  "Upload in progress": "بارکردن بەردەوامە",
+  "Album Progress": "پێشکەوتنی ئەلبوم",
+  "Adding Photos to Album": "زیادکردنی وێنە بۆ ئەلبوم",
+  "Creating New Album": "دروستکردنی ئەلبومی نوێ",
+  "Uploading your photos...": "وێنەکانت بارکراون...",
+  "Cancel Upload": "بارکردن هەڵوەشاندنەوە"
 }

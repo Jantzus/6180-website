@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "חלק מהתמונות לא ניתן היה לעבד. אתה יכול להמשיך עם התמונות שעובדו בהצלחה.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "יחויב ממך באופן אוטומטי {{amount}} חודשית באמצעי התשלום הזה אלא אם כן תשנה אותו.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "בחרו את התוכנית המתאימה ביותר לצרכיכם. אתם יכולים לבחור מהאפשרויות למטה או להכניס סכום מותאם אישית.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "שמנו לב שהתיקייה שלכם מכילה תת-תיקיות. האם תרצו ליצור אלבום נפרד לכל תת-תיקייה, או להתייחס לכולן כאלבום אחד?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "שמנו לב שהתיקייה שלכם מכילה תת-תיקיות. האם תרצו ליצור אלבום נפרד לכל תת-תיקייה, או להתייחס לכולן כאלבום אחד?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "בגלל מגבלות טכניות, הורדות מקובצות בדפדפנים ניידים אינן נתמכות, וחלק מהסרטונים עלולים שלא להוריד.<br><br>כדי להוריד את כל התמונות והסרטונים בבת אחת, אנא:",
+  "Edit": "עריכה",
+  "Edit Album": "עריכת אלבום",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "עריכת הגדרות האלבום",
+  "Upload in progress": "העלאה בתהליך",
+  "Album Progress": "התקדמות האלבום",
+  "Adding Photos to Album": "הוספת תמונות לאלבום",
+  "Creating New Album": "יצירת אלבום חדש",
+  "Uploading your photos...": "מעלה את התמונות שלך...",
+  "Cancel Upload": "ביטול ההעלאה"
 }

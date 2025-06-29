@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Зарим зургууд боловсруулжа шадагүй байна. Та амжилттай боловсруулжа зургуудаар үргэлжлүүлжэ болоно.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Энэ төлбөриин аргые үгы хубиралгүй бол сарын {{amount}} автоматаар тооцогдоно.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ööriin kheregte khamgiin sayikhan tyyrshan songogshe. Ta dorokhiin songokhiinhoos songoj bolokho yoswaal ööriin düngede oruulaad bolokho.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Bide tanai foldorto subfolder baigaa-g kharbhai. Subfolder bolgon deer tulad album khekheg-ii songokhom uu aimgai buugeed neg album gedeg khelheg-ii?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Bide tanai foldorto subfolder baigaa-g kharbhai. Subfolder bolgon deer tulad album khekheg-ii songokhom uu aimgai buugeed neg album gedeg khelheg-ii?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техническэ хязгаарлалтануудай тухай, мобильн браузеринуудта олон зүйл татаха дэмжэгдэжэ байхагүй, зарим видео татагдаж болохогүй.<br><br>Бүхы зураг болон видеог нэгэн зэрэг татахын тулд, гуйя:",
+  "Edit": "Засаха",
+  "Edit Album": "Альбом засаха",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом тохиргоо засаха",
+  "Upload in progress": "Ашаалга ябагдаж байна",
+  "Album Progress": "Альбом ахинамай",
+  "Adding Photos to Album": "Альбом зураг нэмэжэ байна",
+  "Creating New Album": "Шэнэ альбом бүтээжэ байна",
+  "Uploading your photos...": "Таны зургуудые ашаалжа байна...",
+  "Cancel Upload": "Ашаалгые болибо"
 }

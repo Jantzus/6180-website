@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Дакотры фотографії ся не подарило опрацовати. Можете продовжовати з успішно опрацованыма фотографіями.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Вам ся будзе автоматічно стягувати {{amount}} мїсячно з того способу плаченя, кидь го не змінитe.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Выберіть план, котрый найліпше одповідать вашым потребам. Можете выбрати із варіантів ниже або увести властну суму.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Заувадили сьме, же ваша папка обсягує підпапкы. Хочете створити окремый албум про кожду підпапку, або їх вшыткы розглядати як єден албум?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Заувадили сьме, же ваша папка обсягує підпапкы. Хочете створити окремый албум про кожду підпапку, або їх вшыткы розглядати як єден албум?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Через технічны обмеджіня, масовы завантажіня в мобілных браузерах ся не підпорують, а дакотры відеа ся неможуть завантажыти.<br><br>Жебы завантажыти вшыткы фотографії і відеа назараз:",
+  "Edit": "Едітовати",
+  "Edit Album": "Едітовати альбом",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Едітовати наставлїня албуму",
+  "Upload in progress": "Загрузка в ходу",
+  "Album Progress": "Прогрес албуму",
+  "Adding Photos to Album": "Додаваня фотографій до албуму",
+  "Creating New Album": "Творіня нового албуму",
+  "Uploading your photos...": "Загружують ся ваші фотографії...",
+  "Cancel Upload": "Одмінити загрузку"
 }

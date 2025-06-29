@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Некаторыя фота не змаглі быць апрацаваныя. Вы можаце працягваць з паспяхова апрацаванымі фота.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Вам будзе аўтаматычна спагнацца {{amount}} штомесяц з гэтага спосабу аплаты, калі вы яго не зменіце.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Выберыце план, які найлепш адпавядае вашым патрэбам. Вы можаце выбраць з варыянтаў ніжэй ці ўвесці ўласную суму.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мы заўважылі, што ваша папка ўтрымлівае падпапкі. Ці хочаце вы стварыць асобны альбом для кожнай падпапкі, ці разглядаць іх усе як адзін альбом?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Мы заўважылі, што ваша папка ўтрымлівае падпапкі. Ці хочаце вы стварыць асобны альбом для кожнай падпапкі, ці разглядаць іх усе як адзін альбом?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "З-за тэхнічных абмежаванняў, масавая загрузка ў мабільных браўзерах не падтрымліваецца, і некаторыя відэа могуць не загружацца.<br><br>Каб загрузіць усе фота і відэа адначасова, калі ласка:",
+  "Edit": "Рэдагаваць",
+  "Edit Album": "Рэдагаваць альбом",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Рэдагаваць налады альбома",
+  "Upload in progress": "Загрузка ў ходзе",
+  "Album Progress": "Прагрэс альбома",
+  "Adding Photos to Album": "Дадаванне фатографій у альбом",
+  "Creating New Album": "Стварэнне новага альбома",
+  "Uploading your photos...": "Загружаюцца вашыя фатаграфіі...",
+  "Cancel Upload": "Адмяніць загрузку"
 }

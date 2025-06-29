@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Eraz fotoid ei voind käziktoitta. Voitud jätkata hüvin käziktoittud fotoidenke.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Teid makstetadas avtomatišešti {{amount}} kut tuš maksandan čugunke, jol ed vaiče sidä.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Valigat plan, kuti paremba sobiše teiden tarbhid. Voite valita alaižiden variantiden keskes vai panda ičeze summ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mö nägimme miše teiden kanskas oma alakansad. Tahtoiško lujitta eriline al'bom kaikuččele alakansale vai pidat kaikid ühteks al'bomaks?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Mö nägimme miše teiden kanskas oma alakansad. Tahtoiško lujitta eriline al'bom kaikuččele alakansale vai pidat kaikid ühteks al'bomaks?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Tehnižiden röunidusiden tagut bulk-latused mobile-browser'iš ei keriše tukemas, i eraz videoloiden mülü ei voi lataškandale.<br><br>Kaikkiden kuviden da videoloiden üht'aigašhe lataškan:",
+  "Edit": "Toižetada",
+  "Edit Album": "Toižetada al'bomad",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Redakcije al'boman järgendused",
+  "Upload in progress": "Zagruzka mäni",
+  "Album Progress": "Al'boman ezimänd",
+  "Adding Photos to Album": "Al'bomha fotoid ližandamine",
+  "Creating New Album": "Uzh al'bom säudamine",
+  "Uploading your photos...": "Sinun fotod zagruzitadas...",
+  "Cancel Upload": "Heitta zagruzka"
 }

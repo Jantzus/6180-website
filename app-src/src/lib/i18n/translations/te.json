@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "కొన్ని ఫోటోలు ప్రాసెస్ చేయలేకపోయాయి. మీరు విజయవంతంగా ప్రాసెస్ చేయబడిన ఫోటోలతో కొనసాగించవచ్చు.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "మీరు దీన్ని మార్చుకోకపోతే ఈ చెల్లింపు పద్ధతిలో నెలవారీ {{amount}} స్వయంచాలకంగా బిల్ చేయబడుతుంది.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "మీ అవసరాలకు బాగా సరిపోయే ప్లాన్‌ను ఎంచుకోండి. మీరు క్రింది ఎంపికలలో నుండి ఎంచుకోవచ్చు లేదా కస్టమ్ మొత్తాన్ని నమోదు చేయవచ్చు.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "మీ ఫోల్డర్‌లో సబ్‌ఫోల్డర్‌లు ఉన్నాయని మేము గమనించాము. మీరు ప్రతి సబ్‌ఫోల్డర్‌కు ప్రత్యేక ఆల్బమ్ సృష్టించాలని అనుకుంటున్నారా లేదా వాటన్నింటినీ ఒకే ఆల్బమ్‌గా పరిగణించాలని అనుకుంటున్నారా?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "మీ ఫోల్డర్‌లో సబ్‌ఫోల్డర్‌లు ఉన్నాయని మేము గమనించాము. మీరు ప్రతి సబ్‌ఫోల్డర్‌కు ప్రత్యేక ఆల్బమ్ సృష్టించాలని అనుకుంటున్నారా లేదా వాటన్నింటినీ ఒకే ఆల్బమ్‌గా పరిగణించాలని అనుకుంటున్నారా?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "సాంకేతిక పరిమితుల కారణంగా, మొబైల్ బ్రౌజర్‌లలో బల్క్ డౌన్‌లోడ్‌లు మద్దతివ్వబడవు, మరియు కొన్ని వీడియోలు డౌన్‌లోడ్ కాకపోవచ్చు.<br><br>అన్ని ఫోటోలు మరియు వీడియోలను ఒకేసారి డౌన్‌లోడ్ చేయడానికి:",
+  "Edit": "మార్చు",
+  "Edit Album": "ఆల్బమ్ మార్చు",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ఆల్బమ్ సెట్టింగులను సవరించండి",
+  "Upload in progress": "అప్‌లోడ్ కొనసాగుతోంది",
+  "Album Progress": "ఆల్బమ్ పురోగతి",
+  "Adding Photos to Album": "ఆల్బమ్‌కు ఫోటోలను జోడిస్తోంది",
+  "Creating New Album": "కొత్త ఆల్బమ్ సృష్టిస్తోంది",
+  "Uploading your photos...": "మీ ఫోటోలను అప్‌లోడ్ చేస్తోంది...",
+  "Cancel Upload": "అప్‌లోడ్‌ను రద్దుచేయి"
 }

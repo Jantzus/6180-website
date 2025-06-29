@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quèques fotes i ont poin pu éte machinées. Vos povez continuer aveuc chés fotes machinées à succès.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos srez automatiquement eud facturé {{amount}} chaque mois aveuc chéte méthode ed payement à muens que vous l'changichiz.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Chouaîsissez ch'plan qu'i collé ch'mieux à vos bésouains. Os pouvez chouaîsir d'vant chs optiouns ichi-bas ou mette eune somme à vous.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "J'avons r'marqué qu'vosse dossier al contint des sous-dossiers. Voulez-vous créer un album à part pour chaque sous-dossier, ou les traiter tous comme un seul album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "J'avons r'marqué qu'vosse dossier al contint des sous-dossiers. Voulez-vous créer un album à part pour chaque sous-dossier, ou les traiter tous comme un seul album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "À cause d'chés limitacions téchniques, chés téléchargements in vrac sus chés navigateus mobiles n'sont point soutenus, et quèques vidéos peuv't point s'téléchargi.<br><br>Pour téléchargi toutes chés photos et vidéos in un côp:",
+  "Edit": "Modifier",
+  "Edit Album": "Modifier album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Canger chés réglages d'album",
+  "Upload in progress": "Upload ėd train d'aller",
+  "Album Progress": "Progression d'album",
+  "Adding Photos to Album": "Ajoutant chés photos à l'album",
+  "Creating New Album": "Créant un nouvé album",
+  "Uploading your photos...": "Montant tes photos...",
+  "Cancel Upload": "Anniuller l'upload"
 }

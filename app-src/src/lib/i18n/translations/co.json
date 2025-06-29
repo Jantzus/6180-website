@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Alcune foto ùn anu pussutu esse trattate. Pudete cuntinuà cù e foto trattate bè.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Sarete caricatu automaticamente {{amount}} ogni mese nantu à stu metudu di pagamentu senza chì u cambiate.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Sceglite u pianu chì si adatta megliu à e vostre esigenze. Pudete selezziunà trà l'opzioni quì sottu o inserisce una quantità persunalizata.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Avemu nutatu chì a vostra cartula cuntene sottucartule. Vulete creà un album separatu per ogni sottucartula, o trattà tutte cum'è un album unicu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Avemu nutatu chì a vostra cartula cuntene sottucartule. Vulete creà un album separatu per ogni sottucartula, o trattà tutte cum'è un album unicu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Per e limitazioni tecniche, i scaricamenti di massa nantu à i navigatori mobili ùn sò micca sustinuti, è alcuni video ponu ùn esse micca scaricati.<br><br>Per scaricà tutte e foto è i video in una volta, per piacè:",
+  "Edit": "Cambià",
+  "Edit Album": "Cambià l'album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Mudificà e preferenze di l'album",
+  "Upload in progress": "Caricamentu in corsu",
+  "Album Progress": "Prugressu di l'album",
+  "Adding Photos to Album": "Aghjunghje foto à l'album",
+  "Creating New Album": "Creendu un album novu",
+  "Uploading your photos...": "Caricamentu di e vostre foto...",
+  "Cancel Upload": "Annullà u caricamentu"
 }

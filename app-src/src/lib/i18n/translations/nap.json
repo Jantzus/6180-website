@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Cierti ritratte nun se ponno prucessa'. Può cuntinua' cu' e ritratte ca s'hanno prucessa' bbuone.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Te vène addebitato automaticamente {{amount}} ogne mese cu' 'sto metodo 'e pagamento si nun 'o cagne.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Scieglie 'o piano ca se confà meglio a lle necessità toje. Puozze fa' 'a scelta 'ncopp 'e opzione d'abbascio o mmette n'impuorto personalizzato.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "'E visto ca 'a cartella toja tene sottocartelle. Vuó' crià n'album separato pe' ogne sottocartella, o trattà tutte comme n'album sulo?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "'E visto ca 'a cartella toja tene sottocartelle. Vuó' crià n'album separato pe' ogne sottocartella, o trattà tutte comme n'album sulo?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Pe' limitaziune tecniche, 'e scaricamiente 'e massa int' 'e navigatore mobile nun so' supputate, e quacche video putesse nun se scarecà.<br><br>Pe' scarecà tutte 'e foto e video 'nzieme:",
+  "Edit": "Cagna",
+  "Edit Album": "Cagna album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Cagna 'e mpostaziune 'e l'album",
+  "Upload in progress": "'O caricamiento sta ghienno",
+  "Album Progress": "Progresso 'e l'album",
+  "Adding Photos to Album": "Azzeccanne foto a l'album",
+  "Creating New Album": "Facenno nu album nuovo",
+  "Uploading your photos...": "Stongo a careca' 'e foto toie...",
+  "Cancel Upload": "Scancellà o caricamiento"
 }

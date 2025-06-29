@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Foṱo dzo ḓi sa koni u thomwa. Ni nga khou bvela phanḓa nga foṱo dzo ḓi thomwaho zwavhuḓi.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ni ḓo bviselelwa {{amount}} ṅwedzi na ṅwedzi nga iyi nḓila ya u bvisa arali a ni si i shandukise.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Nangani pulani ye i ṱuṱuwedza zwithu zwine na zwi ṱoda. Ni nga nanga u bva kha zwiṅwe zwa fhasi kana u dzhenisa tshimalo tsha vhunwe.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ri vhona uri foldara yanu ina dzifoldara dzi ṱukuni. Ni khou funesa u ita album yo fhambanaho kha foldara yo ṱukuni nnyi na nnyi, kana ni vhone dzino dzose sa album nthihi?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ri vhona uri foldara yanu ina dzifoldara dzi ṱukuni. Ni khou funesa u ita album yo fhambanaho kha foldara yo ṱukuni nnyi na nnyi, kana ni vhone dzino dzose sa album nthihi?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Nga ha u vhulafhi ha theknolodzhi, u downolada zwinzhi kha browser dza mobile a zwi khou thevhelwa, nahone vhidio dzinwe a dzi nga vhi na u downolada.<br><br>U downolada zwifanyiso zwothe na vhidio tshifhingani tshithihi:",
+  "Edit": "Khwinisa",
+  "Edit Album": "Khwinisa album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Lugisela zwiṱukanyo zwa album",
+  "Upload in progress": "Upload i khou tamela",
+  "Album Progress": "Mbuelelo ya album",
+  "Adding Photos to Album": "U engedza zwifanyiso kha album",
+  "Creating New Album": "U itela album itswa",
+  "Uploading your photos...": "Hu khou faka zwifanyiso zwaṋu...",
+  "Cancel Upload": "Khansela upload"
 }

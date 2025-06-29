@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Siha na litritratu ti siña ma-prosesa. Siña hao fumanaogue yan i ma-prosesa na maolek na litritratu.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Para un-charge hao {{amount}} kada mes gi halom payment method na para taya' un-tungo'.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ayek i plan na mas makakonveniente para hao. Siña un ayek guine i mga opsiyon gi papa pat un chule' un custom na kantida.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hita na i folder-mu gaige yan diferentes na subfolder sigi. Malago' hao na un cho'gue separao na album para kada subfolder, pat tratahu sigi i todu nu un album ha'?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Hita na i folder-mu gaige yan diferentes na subfolder sigi. Malago' hao na un cho'gue separao na album para kada subfolder, pat tratahu sigi i todu nu un album ha'?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Para limitasion tekniku, guaha massa download gi mobile browsers ni ti suportidu, ya pago' video siha kao ti siña ma download.<br><br>Para u ma download todu i ritratu yan video siha gi un biahi, fan:",
+  "Edit": "Atulai",
+  "Edit Album": "Atulai album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edita album settings",
+  "Upload in progress": "Upload ongoing",
+  "Album Progress": "Album progress",
+  "Adding Photos to Album": "Chule' ritratu gi album",
+  "Creating New Album": "Fumatna nuebu na album",
+  "Uploading your photos...": "Chule' siha na ritratu-mu gi upload...",
+  "Cancel Upload": "Kanselayi upload"
 }

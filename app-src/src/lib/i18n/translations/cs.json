@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Některé fotografie nemohly být zpracovány. Můžete pokračovat s úspěšně zpracovanými fotografiemi.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Pokud tuto platební metodu nezměníte, bude vám automaticky účtováno {{amount}} měsíčně.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Vyberte plán, který nejlépe vyhovuje vašim potřebám. Můžete si vybrat z možností níže nebo zadat vlastní částku.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Všimli jsme si, že vaše složka obsahuje podsložky. Chcete vytvořit samostatné album pro každou podsložku, nebo je všechny považovat za jedno album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Všimli jsme si, že vaše složka obsahuje podsložky. Chcete vytvořit samostatné album pro každou podsložku, nebo je všechny považovat za jedno album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Kvůli technickým omezením nejsou hromadná stahování v mobilních prohlížečích podporována a některá videa se nemusí stáhnout.<br><br>Pro stažení všech fotografií a videí najednou prosím:",
+  "Edit": "Editovat",
+  "Edit Album": "Editovat album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Upravit nastavení alba",
+  "Upload in progress": "Nahrávání probíhá",
+  "Album Progress": "Pokrok alba",
+  "Adding Photos to Album": "Přidávání fotografií do alba",
+  "Creating New Album": "Vytváření nového alba",
+  "Uploading your photos...": "Nahrávání vašich fotografií...",
+  "Cancel Upload": "Zrušit nahrávání"
 }

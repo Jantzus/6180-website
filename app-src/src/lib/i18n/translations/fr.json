@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Certaines photos n'ont pas pu être traitées. Vous pouvez continuer avec les photos traitées avec succès.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vous serez automatiquement facturé {{amount}} mensuellement avec cette méthode de paiement sauf si vous la changez.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Choisissez le plan qui correspond le mieux à vos besoins. Vous pouvez sélectionner parmi les options ci-dessous ou saisir un montant personnalisé.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nous avons remarqué que votre dossier contient des sous-dossiers. Aimeriez-vous créer un album séparé pour chaque sous-dossier ou les traiter tous comme un seul album ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nous avons remarqué que votre dossier contient des sous-dossiers. Aimeriez-vous créer un album séparé pour chaque sous-dossier ou les traiter tous comme un seul album ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "En raison de limitations techniques, les téléchargements en vrac ne sont pas pris en charge sur les navigateurs mobiles, et certaines vidéos peuvent ne pas se télécharger.<br><br>Pour télécharger toutes les photos et vidéos en une fois, veuillez:",
+  "Edit": "Modifier",
+  "Edit Album": "Modifier l'album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Modifier les paramètres de l'album",
+  "Upload in progress": "Téléversement en cours",
+  "Album Progress": "Progression de l'album",
+  "Adding Photos to Album": "Ajout de photos à l'album",
+  "Creating New Album": "Création d'un nouvel album",
+  "Uploading your photos...": "Téléversement de vos photos...",
+  "Cancel Upload": "Annuler le téléversement"
 }

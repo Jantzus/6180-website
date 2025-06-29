@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ētāhi taʻoto i ʻore roa e nehenehe te faanahonaho. Ua nehenehe to ʻoe e faanahonaho i nā taʻoto i faanahonaho hia.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "E fa'ahia hia oe i {{amount}} i te ava'e hia i teie huru fa'a'ineine ia e ore oe e 'änī.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Hīroa i te rauturu e hamani roa nei i tō mau hinaaro. 'Ua hiki ia 'oe te hīroa i roto i nā koho nei mai raro nei rānei rā, te uru atu i te moni maita'i.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ua 'ite mātou e, 'o tō fā'aufau nei 'ua 'i roto ra nā fā'aufau 'iti. 'Ua here 'oe e hāmani i te 'ālipamu motuhia noa'tu no te fā'aufau 'iti taitahi, 'aita rānei rā e fa'a'ite ia rātou 'atoa 'ei 'ālipamu ho'ē?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ua 'ite mātou e, 'o tō fā'aufau nei 'ua 'i roto ra nā fā'aufau 'iti. 'Ua here 'oe e hāmani i te 'ālipamu motuhia noa'tu no te fā'aufau 'iti taitahi, 'aita rānei rā e fa'a'ite ia rātou 'atoa 'ei 'ālipamu ho'ē?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "No te pû ʻapiʻapi tekinito, ʻaita te ʻapiʻapi rahi i roto i te ʻamuitahiraa fēni ʻe tauturu ʻia, ʻaita hoi te mau viteo atu i rahi.<br><br>No te ʻapiʻapi ʻia ato te mau kiʻi ʻe te viteo atoa i te taime hoʻe:",
+  "Edit": "Tairi",
+  "Edit Album": "Tairi ʻālipamu",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Fa'a'ē i te hō'ē'ē 'ālipamu",
+  "Upload in progress": "Hiki hōrue nei",
+  "Album Progress": "Te hōrue'ā 'ālipamu",
+  "Adding Photos to Album": "Hō'ē ra'a ki te ʻālipamu",
+  "Creating New Album": "Hāmani hou i te ʻālipamu",
+  "Uploading your photos...": "Hiki hōrue nei i to mau ra'a...",
+  "Cancel Upload": "Fa'atere i te hiki hōrue"
 }

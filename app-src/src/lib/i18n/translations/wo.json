@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Nataal yo nekk du ñuy def ci seen yëre. Mën nga tàmbalee ak nataal yi ñu def ci seen yëre bu baax.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Dañu lay jëf {{amount}} weer wi ci yëre fexe bi ba ngeen bàyyiku ko.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Tànn jërema yi am solo ak yéeneen ñi bëgg nga. Mën nga tànn ci ak natë yi ñu jéllisi walla duggal ab xaalis yu wuut.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nu gise ne li sa jàpp mi am benn jàpp yu ndaw. Danga bëgg sosoo albumu ku wuute ak kenn ku yépp, mbaa sosoo albumu bu benn ak ñépp?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nu gise ne li sa jàpp mi am benn jàpp yu ndaw. Danga bëgg sosoo albumu ku wuute ak kenn ku yépp, mbaa sosoo albumu bu benn ak ñépp?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ngir xañ bu ñu fexe ci teknik yi, téléchargement yu bari ci navigateur bu mobile xamul ko, ak nit xam ne video yu ndaw ñoo xam ñu lépp ken télécharger.<br><br>Ngir télécharger nataal ak video yëpp ci benn siiru:",
+  "Edit": "Soppi",
+  "Edit Album": "Soppi album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Soppi jumptaliin yi ci album",
+  "Upload in progress": "Upload bi dafa ci yoon wi",
+  "Album Progress": "Yokkute album bi",
+  "Adding Photos to Album": "Yokk nataal yi ci album bi",
+  "Creating New Album": "Jëfandikoo album bu bees",
+  "Uploading your photos...": "Upload nataal yi nga am...",
+  "Cancel Upload": "Kheussal upload bi"
 }

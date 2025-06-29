@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Delowow a-lemmyn ny allsa y processya. Yma hwi able dhe vysya gans an delowow a veu processys yn tiek.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jyllys a vydh hwi {{amount}} mis-fynten war'n fordh dylansow ma marnas hwi ow chaunjya'n.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Dewisyewgh an towlen a vag gwella dhe'gas edhomow. Agas a yll dewis a'n dewisyow a-woles po korra hanter reb.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ny welsyn fors erel a'n jynn dowlen yw ynni. A vynnowgh hwi gwul albom dyffrans rag pubonan anethans, po aga delevya oll avel albom onan?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Ny welsyn fors erel a'n jynn dowlen yw ynni. A vynnowgh hwi gwul albom dyffrans rag pubonan anethans, po aga delevya oll avel albom onan?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Rak limitacyonsow teknogel, ny's res owth ri downloadyow lies war beurroryon kelmysklyow, ha videos yll bos ny vyth downloadys.<br><br>Rag downloadya pub skeusen ha video yn onen:",
+  "Edit": "Chanjya",
+  "Edit Album": "Chanjya album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Chanjya dewisyansow an album",
+  "Upload in progress": "Ugyans ow pos",
+  "Album Progress": "Avonsyansow an album",
+  "Adding Photos to Album": "Keworra skeusennyow dhe'n album",
+  "Creating New Album": "Gwruthyl album nowydh",
+  "Uploading your photos...": "Ow karga agas skeusennyow...",
+  "Cancel Upload": "Hedhi an ugyans"
 }

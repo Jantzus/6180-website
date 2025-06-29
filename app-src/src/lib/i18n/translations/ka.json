@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ზოგიერთი ფოტო ვერ დამუშავდა. შეგიძლიათ გააგრძელოთ წარმატებით დამუშავებული ფოტოებით.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ამ გადახდის მეთოდით ყოველთვიურად ავტომატურად მოგეწერებათ {{amount}} თუ მას არ შეცვლით.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "აირჩიეთ გეგმა, რომელიც ყველაზე კარგად შეესაბამება თქვენს საჭიროებებს. შეგიძლიათ აირჩიოთ ქვემოთ მოცემული ვარიანტებიდან ან შეიტანოთ მორგებული თანხა.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ჩვენ შევნიშნეთ, რომ თქვენს საქაღალდეში ქვესაქაღალდეები არის. გსურთ თითოეული ქვესაქაღალდისთვის ცალკე ალბომი შექმნათ, თუ ყველა ერთ ალბომად განიხილოთ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ჩვენ შევნიშნეთ, რომ თქვენს საქაღალდეში ქვესაქაღალდეები არის. გსურთ თითოეული ქვესაქაღალდისთვის ცალკე ალბომი შექმნათ, თუ ყველა ერთ ალბომად განიხილოთ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ტექნიკური შეზღუდვების გამო, ობიექტური ჩამოტვირთვა მობილურ ბრაუზერებში არ არის მხარდაჭერილი და ზოგიერთი ვიდეო შეიძლება არ ჩამოიტვირთოს.<br><br>ყველა ფოტოსა და ვიდეოს ერთდროულად ჩამოსატვირთად:",
+  "Edit": "რედაქტირება",
+  "Edit Album": "ალბომის რედაქტირება",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ალბომის პარამეტრების რედაქტირება",
+  "Upload in progress": "ატვირთვა მიმდინარეობს",
+  "Album Progress": "ალბომის პროგრესი",
+  "Adding Photos to Album": "ფოტოების ალბომში დამატება",
+  "Creating New Album": "ახალი ალბომის შექმნა",
+  "Uploading your photos...": "თქვენი ფოტოების ატვირთვა...",
+  "Cancel Upload": "ატვირთვის გაუქმება"
 }

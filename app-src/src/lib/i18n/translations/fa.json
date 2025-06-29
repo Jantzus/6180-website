@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "برخی از عکس‌ها قابل پردازش نبودند. می‌توانید با عکس‌هایی که با موفقیت پردازش شده‌اند ادامه دهید.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "به طور خودکار ماهانه {{amount}} از این روش پرداخت کسر خواهد شد مگر اینکه آن را تغییر دهید.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "طرحی را انتخاب کنید که بهترین انطباق با نیازهای شما دارد. می‌توانید از گزینه‌های زیر انتخاب کنید یا مبلغ دلخواه وارد کنید.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "متوجه شدیم که پوشه شما دارای زیرپوشه‌هایی است. آیا می‌خواهید برای هر زیرپوشه آلبوم جداگانه‌ای ایجاد کنید یا همه را به عنوان یک آلبوم در نظر بگیرید؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "متوجه شدیم که پوشه شما دارای زیرپوشه‌هایی است. آیا می‌خواهید برای هر زیرپوشه آلبوم جداگانه‌ای ایجاد کنید یا همه را به عنوان یک آلبوم در نظر بگیرید؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "به دلیل محدودیت‌های فنی، دانلود گروهی در مرورگرهای موبایل پشتیبانی نمی‌شود و ممکن است برخی ویدیوها دانلود نشوند.<br><br>برای دانلود همه عکس‌ها و ویدیوها به یکباره، لطفاً:",
+  "Edit": "ویرایش",
+  "Edit Album": "ویرایش آلبوم",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ویرایش تنظیمات آلبوم",
+  "Upload in progress": "بارگذاری در حال انجام",
+  "Album Progress": "پیشرفت آلبوم",
+  "Adding Photos to Album": "افزودن عکس‌ها به آلبوم",
+  "Creating New Album": "ایجاد آلبوم جدید",
+  "Uploading your photos...": "در حال بارگذاری عکس‌هایتان...",
+  "Cancel Upload": "لغو بارگذاری"
 }

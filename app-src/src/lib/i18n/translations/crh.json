@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Bazı fotolar işlemlenip olmadı. Muvaffaqiyetle işlenen fotolarnen davamına bilirsiniz.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bu ödeme usulinde er ay avtomatik olarak {{amount}} kesılecek, eger onu degiştirmezsen.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "İhtiyaçlarıñızğa eñ yaxşı kelgen planı saylan. Aşağıdaki variantlardan sayla bilirsiñiz yaki öz mablegni kire bilirsiñiz.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Biz körük ki, sizniñ papkañızda alt papkalar bar. Her alt papka için ayrı albom yaratmaq istersiñizmi, yoxsa epsinini bir albom kibi qaramaq istersiñizmi?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Biz körük ki, sizniñ papkañızda alt papkalar bar. Her alt papka için ayrı albom yaratmaq istersiñizmi, yoxsa epsinini bir albom kibi qaramaq istersiñizmi?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Teknik çektirmelere köre, mobil brauzerlarda kitle indirmeler desteklenmey, ve bazı videolar indirilmey bile.<br><br>Bütün fotoğraflar ve videolarni birden indirmek için, lütfen:",
+  "Edit": "Deñiştir",
+  "Edit Album": "Albom deñiştir",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albom ayarlarını redakte et",
+  "Upload in progress": "Yüklemek davamında",
+  "Album Progress": "Albom ilerlemesi",
+  "Adding Photos to Album": "Albomğa resimler qoşmaq",
+  "Creating New Album": "Yañı albom yaratmaq",
+  "Uploading your photos...": "Siziñ resimleriniz yüklene...",
+  "Cancel Upload": "Yüklemekni bekar etmek"
 }

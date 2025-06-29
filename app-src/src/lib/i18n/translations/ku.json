@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Hin wêne nehatin pêvajo kirin. Tu dikarî bi wêneyên ku bi awayekî baş hatine pêvajo kirin bidomînî.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Heger tu vê rêbaza dravdanê neguherînî, dê di vê rêbazê de mehane {{amount}} otomatîk ji te were girtin.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Plana ku herî baş li hewceyên te dihê hilbijêre. Tu dikarî ji vebijarkên jêrîn hilbijêrî an jî pêrek taybet binivîsî.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Me dît ku peldanka te de binpeldank hene. Tu dixwazî ji bo her binpeldankê albûmek cuda biafirînî an jî wan hemûyan wek yek albûm bihesibînî?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Me dît ku peldanka te de binpeldank hene. Tu dixwazî ji bo her binpeldankê albûmek cuda biafirînî an jî wan hemûyan wek yek albûm bihesibînî?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ji ber sînoriyên teknîkî, daxistinên komî li gera mobîl nayên piştgirîkirin, û dibe ku hin vîdyo neyên daxistin.<br><br>Ji bo daxistina hemû wêne û vîdyoyan bi carinan:",
+  "Edit": "Biguhêre",
+  "Edit Album": "Albûm biguhêre",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Mîhengên albûmê biguherîne",
+  "Upload in progress": "Barkirin diçe",
+  "Album Progress": "Pêşveçûna albûmê",
+  "Adding Photos to Album": "Li albûmê wêne zêdekirin",
+  "Creating New Album": "Albûmê nû çêkirin",
+  "Uploading your photos...": "Wêneyên te tên barkirin...",
+  "Cancel Upload": "Barkirin betal bike"
 }

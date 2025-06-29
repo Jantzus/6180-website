@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Гьайи фотояр гьахъ авайдач. Куьн къачуначи авай гъидач фотоярилай хъувуз лезва.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ахпа бу пайдин усул къифедач ялан вацӀ {{amount}} автоматикдиз алукьарай.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Гьи лазимдин чиз план интихаб ави. Лацӏуз вариантар чинай интихаб авай йа сутӏра сумма кказдай мумкин я.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Амай кюрда авуна туй папкадин субпапкайар авай лугьуз. Гьар субпапкадин вач альбом авурна малумда я вири цӀийи альбом авурна малумда?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Амай кюрда авуна туй папкадин субпапкайар авай лугьуз. Гьар субпапкадин вач альбом авурна малумда я вири цӀийи альбом авурна малумда?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техника лимитар сабабрай, мобил браузерриз топлу скачиваниар ийидач я, кьанвал видеоар скачива авайвач хьайидач.<br><br>Гьаммай суратар ва видеоар са вахтунда скачива авун:",
+  "Edit": "Дуьзар",
+  "Edit Album": "Албом дуьзар",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Албом настройкаяр вичин",
+  "Upload in progress": "Кьвезвай авур",
+  "Album Progress": "Албом ахтармишвилай",
+  "Adding Photos to Album": "Албом суратар кьвезвай",
+  "Creating New Album": "Цlийи албом авуну",
+  "Uploading your photos...": "Вун суратар кьвезавай...",
+  "Cancel Upload": "Кьвезаваз хьун"
 }

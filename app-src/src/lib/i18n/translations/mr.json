@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "काही फोटो प्रोसेस करता आले नाहीत. यशस्वीरित्या प्रोसेस झालेल्या फोटोंसह पुढे जाऊ शकता.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "आपण हे बदलल्याशिवाय या पेमेंट पद्धतीवर दर महिन्याला {{amount}} आपोआप बिल केले जाईल.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "तुमच्या गरजांनुसार सर्वोत्तम योजना निवडा. तुम्ही खालील पर्यायांमधून निवडू शकता किंवा एक सानुकूल रक्कम एंटर करू शकता.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "आम्ही लक्षात घेतले की तुमच्या फोल्डरमध्ये सबफोल्डर आहेत. तुम्हाला प्रत्येक सबफोल्डरसाठी स्वतंत्र अल्बम बनवायचा आहे का, किंवा त्या सर्वांना एक अल्बम मानायचे आहे?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "आम्ही लक्षात घेतले की तुमच्या फोल्डरमध्ये सबफोल्डर आहेत. तुम्हाला प्रत्येक सबफोल्डरसाठी स्वतंत्र अल्बम बनवायचा आहे का, किंवा त्या सर्वांना एक अल्बम मानायचे आहे?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "तांत्रिक मर्यादांमुळे, मोबाइल ब्राउझरवर बल्क डाउनलोड समर्थित नाहीत, आणि काही व्हिडिओ डाउनलोड होणार नाहीत.<br><br>सर्व फोटो आणि व्हिडिओ एकाच वेळी डाउनलोड करण्यासाठी:",
+  "Edit": "संपादन",
+  "Edit Album": "अल्बम संपादन",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "अल्बम सेटिंग्स संपादित करा",
+  "Upload in progress": "अपलोड चालू आहे",
+  "Album Progress": "अल्बम प्रगती",
+  "Adding Photos to Album": "अल्बममध्ये फोटो जोडत आहे",
+  "Creating New Album": "नवीन अल्बम तयार करत आहे",
+  "Uploading your photos...": "तुमचे फोटो अपलोड होत आहेत...",
+  "Cancel Upload": "अपलोड रद्द करा"
 }

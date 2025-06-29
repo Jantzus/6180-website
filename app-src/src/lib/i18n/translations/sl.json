@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Nekaterih fotografij ni bilo mogoče obdelati. Lahko nadaljujete z uspešno obdelanimi fotografijami.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Samodejno vam bo zaračunano {{amount}} mesečno na tem načinu plačila, razen če ga ne spremenite.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Izberite načrt, ki se najbolje prilega vašim potrebam. Lahko izbirate med spodnjimi možnostmi ali vnesete prilagojeno vsoto.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Opazili smo, da vaša mapa vsebuje podmape. Ali želite ustvariti ločen album za vsako podmapo ali jih vse obravnavati kot en album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Opazili smo, da vaša mapa vsebuje podmape. Ali želite ustvariti ločen album za vsako podmapo ali jih vse obravnavati kot en album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Zaradi tehničnih omejitev skupinsko prenašanje v mobilnih brskalnikih ni podprto in nekateri videoposnetki se morda ne bodo prenesli.<br><br>Za prenos vseh fotografij in videoposnetkov hkrati:",
+  "Edit": "Uredi",
+  "Edit Album": "Uredi album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Uredi nastavitve albuma",
+  "Upload in progress": "Nalaganje poteka",
+  "Album Progress": "Napredek albuma",
+  "Adding Photos to Album": "Dodajanje fotografij v album",
+  "Creating New Album": "Ustvarjanje novega albuma",
+  "Uploading your photos...": "Nalaganje vaših fotografij...",
+  "Cancel Upload": "Prekini nalaganje"
 }

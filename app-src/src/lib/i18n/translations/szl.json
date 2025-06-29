@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Niykere fota niy szły ôbrôbiś. Možesz dalij iś ze fotami co były dobrze ôbrôbione.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bydzie ci automatycznie pobiyrano {{amount}} miesiyncznie za pomocůn tyj metody płatnosti, iba ja niy zmiyniysz.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Wybier plan, co najlepj pasuje do twoich potrzeb. Możes wybrać ze opcyji niżyj abo wpisać swoja suma.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Zauważylim, że twoja teczka mo podteczki. Chcesz zrobić podzie album dlŏ kożdyj podteczki, czy potraktować je wszyjstkie jak jeden album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Zauważylim, że twoja teczka mo podteczki. Chcesz zrobić podzie album dlŏ kożdyj podteczki, czy potraktować je wszyjstkie jak jeden album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ze względu na ograniczynia techniczne, pobranie zbiorcze we przegladarkach mobilnych niy je obsugiwane, a niyktyro filmy mogu sie niy pobrać.<br><br>Coby pobrać wszyjstkie fotki i filmy jednocześnie:",
+  "Edit": "Edycja",
+  "Edit Album": "Edycja albůmu",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edytuj sztalōnki albumu",
+  "Upload in progress": "Sztalowanie sie robi",
+  "Album Progress": "Postōmp albumu",
+  "Adding Photos to Album": "Przidowaniy zdiyńć do albumu",
+  "Creating New Album": "Robiynie nowygo albumu",
+  "Uploading your photos...": "Wrzucowaniy twoje zdjyńća...",
+  "Cancel Upload": "Ôdwołać sztalowanie"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ບາງຮູບຖ່າຍບໍ່ສາມາດປະມວນຜົນໄດ້. ທ່ານສາມາດສືບຕໍ່ດ້ວຍຮູບຖ່າຍທີ່ປະມວນຜົນໄດ້ສຳເລັດ.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ທ່ານຈະຖືກເກັບເງິນອັດຕະໂນມັດ {{amount}} ປະຈຳເດືອນໃນວິທີການຈ່າຍເງິນນີ້ ຫາກບໍ່ປ່ຽນແປງມັນ.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "ເລືອກແຜນທີ່ເໝາະສົມກັບຄວາມຕ້ອງການຂອງເຈົ້າຫຼາຍທີ່ສຸດ. ເຈົ້າສາມາດເລືອກຈາກທາງເລືອກຂ້າງລຸ່ມນີ້ ຫຼື ປ້ອນຈຳນວນທີ່ກຳນົດເອງ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ພວກເຮົາສັງເກດເຫັນວ່າໂຟນເດີຂອງເຈົ້າມີໂຟນເດີຍ່ອຍ. ເຈົ້າຕ້ອງການສ້າງອາລະບໍ້າແຍກຕ່າງຫາກສຳລັບໂຟນເດີຍ່ອຍແຕ່ລະອັນບໍ, ຫຼືຖືພວກມັນທັງໝົດເປັນອາລະບໍ້າດຽວ?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "ພວກເຮົາສັງເກດເຫັນວ່າໂຟນເດີຂອງເຈົ້າມີໂຟນເດີຍ່ອຍ. ເຈົ້າຕ້ອງການສ້າງອາລະບໍ້າແຍກຕ່າງຫາກສຳລັບໂຟນເດີຍ່ອຍແຕ່ລະອັນບໍ, ຫຼືຖືພວກມັນທັງໝົດເປັນອາລະບໍ້າດຽວ?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "ເນື່ອງຈາກຂໍ້ຈຳກັດທາງເຕັກນິກ, ການດາວໂຫຼດຫຼາຍໃນບາວເຊີມືຖືບໍ່ໄດ້ຮັບການສະໜັບສະໜູນ, ແລະວິດີໂອບາງອັນອາດຈະບໍ່ໄດ້ດາວໂຫຼດ.<br><br>ເພື່ອດາວໂຫຼດຮູບພາບແລະວິດີໂອທັງໝົດໃນຄັ້ງດຽວ:",
+  "Edit": "ແກ້ໄຂ",
+  "Edit Album": "ແກ້ໄຂອາລະບໍ້າ",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "ແກ້ໄຂການຕັ້ງຄ່າອາລະບໍ້າ",
+  "Upload in progress": "ກຳລັງອັບໂຫລດ",
+  "Album Progress": "ຄວາມກ້າວໜ້າອາລະບໍ້າ",
+  "Adding Photos to Album": "ການເພີ່ມຮູບຖ່າຍໃສ່ອາລະບໍ້າ",
+  "Creating New Album": "ກຳລັງສ້າງອາລະບໍ້າໃໝ່",
+  "Uploading your photos...": "ກຳລັງອັບໂຫລດຮູບຖ່າຍຂອງທ່ານ...",
+  "Cancel Upload": "ຍົກເລີກການອັບໂຫລດ"
 }

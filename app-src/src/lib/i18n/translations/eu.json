@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Argazki batzuk ezin izan dira prozesatu. Behar bezala prozesatu diren argazkiekin jarraitu dezakezu.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Hilero {{amount}} kobratuko zaizkie ordainketa-metodo honetan automatikoki, aldatzen ez baduzue.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Aukeratu zure beharretara hobekien egokitzen den plana. Beheko aukeretatik hautatu dezakezu edo zure kopuru pertsonalizatua sartu.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Konturatu gara zure karpeta azpikarpetak dituela. Azpikarpeta bakoitzarentzat albuma banandu bat sortu nahi al duzu, ala denak albuma bakarra balira bezala tratatu?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Konturatu gara zure karpeta azpikarpetak dituela. Azpikarpeta bakoitzarentzat albuma banandu bat sortu nahi al duzu, ala denak albuma bakarra balira bezala tratatu?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Mugaketa teknikoak direla eta, deskarga masiboak ez dira onartzen mugikorreko nabigatzaileetan, eta bideo batzuk agian ez dira deskargatuko.<br><br>Argazki eta bideo guztiak batera deskargatzeko, mesedez:",
+  "Edit": "Editatu",
+  "Edit Album": "Editatu albuma",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albumaren ezarpenak editatu",
+  "Upload in progress": "Igoera abian",
+  "Album Progress": "Albumaren aurrerapena",
+  "Adding Photos to Album": "Argazkiak albumera gehitzen",
+  "Creating New Album": "Album berria sortzen",
+  "Uploading your photos...": "Zure argazkiak igotzen...",
+  "Cancel Upload": "Igoera ezeztatu"
 }

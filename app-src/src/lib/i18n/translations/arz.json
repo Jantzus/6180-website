@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "شوية صور مقدرتش تتعمل. ممكن تكمل بالصور اللى اتعملت كويس.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "هيتم خصم {{amount}} كل شهر أوتوماتيكي من الطريقة دي إلا لو غيرتها.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "اختار الخطة اللي تناسب احتياجاتك أكتر. ممكن تختار من الاختيارات اللي تحت أو تدخل مبلغ مخصوص.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "احنا لاحظنا إن الفولدر بتاعك فيه فولدرات صغيرة. عايز تعمل ألبوم منفصل لكل فولدر صغير، ولا تخليهم كلهم ألبوم واحد؟"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "احنا لاحظنا إن الفولدر بتاعك فيه فولدرات صغيرة. عايز تعمل ألبوم منفصل لكل فولدر صغير، ولا تخليهم كلهم ألبوم واحد؟",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "علشان القيود التقنية، التحميلات المجمعة على المتصفحات الموبايل مش متاحة، وبعض الفيديوهات ممكن متتحملش.<br><br>علشان تحمل كل الصور والفيديوهات مرة واحدة، لو سمحت:",
+  "Edit": "تعديل",
+  "Edit Album": "تعديل الألبوم",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "تعديل إعدادات الألبوم",
+  "Upload in progress": "الرفع شغال",
+  "Album Progress": "تقدم الألبوم",
+  "Adding Photos to Album": "إضافة صور للألبوم",
+  "Creating New Album": "إنشاء ألبوم جديد",
+  "Uploading your photos...": "بيرفع صورك...",
+  "Cancel Upload": "إلغي الرفع"
 }

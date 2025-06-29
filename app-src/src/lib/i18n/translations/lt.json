@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Kai kurių nuotraukų nepavyko apdoroti. Galite tęsti su sėkmingai apdorotomis nuotraukomis.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Jums bus automatiškai taikomas {{amount}} mokestis kas mėnesį šiuo mokėjimo būdu, jei jo nekeičiate.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pasirinkite planą, kuris geriausiai tinka jūsų poreikiams. Galite pasirinkti iš toliau pateiktų variantų arba įvesti pasirinktinę sumą.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pastebėjome, kad jūsų aplanke yra poaplankių. Ar norėtumėte sukurti atskirą albumą kiekvienam poaplankiui, ar juos visus traktuoti kaip vieną albumą?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Pastebėjome, kad jūsų aplanke yra poaplankių. Ar norėtumėte sukurti atskirą albumą kiekvienam poaplankiui, ar juos visus traktuoti kaip vieną albumą?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Dėl techninių apribojimų, masinis atsisiuntimas mobiliuose naršyklėse nepalaikomas, ir kai kurie vaizdo įrašai gali nebūti atsisiųsti.<br><br>Norint atsisiųsti visas nuotraukas ir vaizdo įrašus iš karto:",
+  "Edit": "Redaguoti",
+  "Edit Album": "Redaguoti albumą",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Redaguoti albumo nustatymus",
+  "Upload in progress": "Įkėlimas vyksta",
+  "Album Progress": "Albumo pažanga",
+  "Adding Photos to Album": "Nuotraukų pridėjimas į albumą",
+  "Creating New Album": "Kuriamas naujas albumas",
+  "Uploading your photos...": "Įkeliamos jūsų nuotraukos...",
+  "Cancel Upload": "Atšaukti įkėlimą"
 }

@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ҡайһы бер фото эшкәртелмәне. Уңышлы эшкәртелгән фотолар менән дауам итә алаһығыҙ.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Һеҙ быны үҙгәртмәгән саҡта, был түләү ысулында айҙары {{amount}} автоматик рәүештә түләтеләсәк.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Үҙегеҙҙең ихтыяжығыҙға тап килгән планды һайлағыҙ. Аҫтағы вариантарҙан һайлай йәки махсус күләм индерә алаһығыҙ.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Беҙ күрҙек, һеҙҙең папкала асты папкалар бар. Һеҙ һәр асты папка өсөн айырым альбом яһарға теләйһегеҙме, йәки барыһын ла бер альбом итеп ҡарарға теләйһегеҙме?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Беҙ күрҙек, һеҙҙең папкала асты папкалар бар. Һеҙ һәр асты папка өсөн айырым альбом яһарға теләйһегеҙме, йәки барыһын ла бер альбом итеп ҡарарға теләйһегеҙме?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Техник сикләүҙәр аркаһында, мобиль браузерҙарҙа йыйынтыҡ күсереүҙәр эшләмәй, һәм ниндәйҙер видеолар күсерелмәҫкә мөмкин.<br><br>Барлыҡ фотоларҙы һәм видеоларҙы бер үк ваҡытта күсереү өсөн, зинһар:",
+  "Edit": "Төҙәтеү",
+  "Edit Album": "Альбом төҙәтеү",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом көйләүҙәрен үҙгәртеү",
+  "Upload in progress": "Йөкләү барған",
+  "Album Progress": "Альбом алға киткәне",
+  "Adding Photos to Album": "Альбомға фоторҙар өҫтәү",
+  "Creating New Album": "Яңы альбом төҙөү",
+  "Uploading your photos...": "Һеҙҙең фоторҙарығыҙ йөкләнә...",
+  "Cancel Upload": "Йөкләүҙе туҡтатыу"
 }

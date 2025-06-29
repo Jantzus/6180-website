@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Quauques fòtos an pas poscut èsser tractadas. Podètz continar amb las fòtos tractadas amb succès.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Vos seràs automaticament facturat {{amount}} mesadièr sus aqueste metòde de pagament levat que lo cambiatz.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Causissètz lo plan que correspond lo melhor a vòstres besonhs. Podètz seleccionar entre las opcions çaijós o picar un montant personalizat.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Avèm remarcat que vòstre dorsièr conten dels soslinhatges. Volètz crear un album separat per cada soslinhatge, o los tractar totes coma un sol album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Avèm remarcat que vòstre dorsièr conten dels soslinhatges. Volètz crear un album separat per cada soslinhatge, o los tractar totes coma un sol album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "A causa de las limitacions tecnicas, los telecargaments en massa subre navigadors mobils son pas suportats, e qualques vidèos pòdon pas se telecargar.<br><br>Per telecargar totas las fòtos e vidèos en un còp:",
+  "Edit": "Modificar",
+  "Edit Album": "Modificar album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Modificar la configuracion de l'album",
+  "Upload in progress": "Cargament en cors",
+  "Album Progress": "Progression de l'album",
+  "Adding Photos to Album": "Apondon de fòtos a l'album",
+  "Creating New Album": "Creacion d'un album nòu",
+  "Uploading your photos...": "Cargament de vòstras fòtos...",
+  "Cancel Upload": "Anullar lo cargament"
 }

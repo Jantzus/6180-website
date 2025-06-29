@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Cha row kuse jeh ny jallooyyn yn obbyr oc. Foddee oo goll er oaie lesh ny jallooyyn va soie magh dy mie.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Bee oo er nyn gowraghey dy seyr-obbragh {{amount}} dagh mee er y dooghys eeckee shoh mannagh vod shiu eh y chaghey.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Reih yn coyrle share ta freayll rish ny femeyn ayd. Foddee oo reih veih ny reihyn heese ny cur stiagh sym erbee.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Honnick shin dy vel fo-hostyn ayns y hostyl ayd. Vel oo gearree albym er lheh y chroo son dagh fo-hostyl, ny ad ooilley y reill myr un albym?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Honnick shin dy vel fo-hostyn ayns y hostyl ayd. Vel oo gearree albym er lheh y chroo son dagh fo-hostyl, ny ad ooilley y reill myr un albym?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Kyndagh rish conaantyssyn eddyrvoiragh, cha nel download bolk er jeeidagh er jeeigyn gleashtagh, as foddee shiartanse video gyn download.<br><br>Dy yannoo download jeh ooilley ny jalloo as video ec y traa cheddin:",
+  "Edit": "Reaghey",
+  "Edit Album": "Reaghey yn albym",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Caghlaa reihyssyn yn albym",
+  "Upload in progress": "Laadey seose er y raad",
+  "Album Progress": "Toshiaght yn albym",
+  "Adding Photos to Album": "Cur jeianyn rish yn albym",
+  "Creating New Album": "Croo albym noa",
+  "Uploading your photos...": "Dty yeeianyn goll seose...",
+  "Cancel Upload": "Cur ass laadey seose"
 }

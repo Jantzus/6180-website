@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Dili ma-process ang ubang mga litrato. Mahimo nimong ipadayon ang mga litrato nga malampusong na-process.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Automatikong ma-charge ka og {{amount}} kada bulan sa kining payment method gawas kon usbon nimo.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilia ang plano nga labing mohaum sa imong mga panginahanglan. Makahimo kang mopili gikan sa mga kapilian sa ubos o magsulod ug custom nga kantidad.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Namatikdan namo nga ang imong folder adunay mga subfolder. Gusto ba nimo nga maghimo ug bulag nga album para sa matag subfolder, o itratar silang tanan isip usa ka album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Namatikdan namo nga ang imong folder adunay mga subfolder. Gusto ba nimo nga maghimo ug bulag nga album para sa matag subfolder, o itratar silang tanan isip usa ka album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Tungod sa mga limitasyon sa teknolohiya, ang mga bulk nga download sa mobile browsers dili suportado, ug ang ubang mga video mahimong dili ma-download.<br><br>Aron ma-download ang tanan nga mga litrato ug mga video sa kasamtangan, palihog:",
+  "Edit": "Usbon",
+  "Edit Album": "Usbon ang album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Usba ang mga setting sa album",
+  "Upload in progress": "Nag-upload pa",
+  "Album Progress": "Progreso sa album",
+  "Adding Photos to Album": "Pagdugang og mga litrato sa album",
+  "Creating New Album": "Naghimo og bag-ong album",
+  "Uploading your photos...": "Nag-upload sa imong mga litrato...",
+  "Cancel Upload": "Kanselaha ang upload"
 }

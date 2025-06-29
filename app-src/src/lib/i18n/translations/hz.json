@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Eepandu dimbandu ka tika kwa lombwedakamo. Ove ukwenu okukutya nomitumbelo yoomatumbeke gumwe.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ove oupitwa oukapitaike {{amount}} okukutya omwetameni ni okuti ove ka sikunyene.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Kethera plan itje tji ri kombanda ondjira yoye. Otwa urikwa ku hongera munda kombada yimwe itji ri munene kapa ku tjanga omutjingo ngwao.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Twa kuvara kuti folder yenu ine ma subfolder. Munoda mukuru-gore album rimwe chete pane chimwe nechimwe cheziri subfolder here, kana kuita zvese sealbum rimwe chete?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Twa kuvara kuti folder yenu ine ma subfolder. Munoda mukuru-gore album rimwe chete pane chimwe nechimwe cheziri subfolder here, kana kuita zvese sealbum rimwe chete?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ondunge yoteknika ndhimba, bulk downloads mo mobile browsers taka ningwa, nokumwe ovideo ponganda taka download.<br><br>Ngaashi omufoto nomavideo avehe nu kange, tuu:",
+  "Edit": "Okuvanduka",
+  "Edit Album": "Album okuvanduka",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Kuvurura album kondjano",
+  "Upload in progress": "Upload okuya",
+  "Album Progress": "Album okukuurura",
+  "Adding Photos to Album": "Vurura ombano ko album",
+  "Creating New Album": "Vura album ipya",
+  "Uploading your photos...": "Vurura ombano yoye...",
+  "Cancel Upload": "Hinda upload"
 }

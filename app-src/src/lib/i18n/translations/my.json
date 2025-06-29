@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "ဓာတ်ပုံအချို့ကို လုပ်ဆောင်နိုင်ခဲ့မပါ။ အောင်မြင်စွာ လုပ်ဆောင်ပြီးသည့် ဓာတ်ပုံများဖြင့် ဆက်လက် လုပ်ဆောင်နိုင်ပါသည်။",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "ဤငွေပေးချေမှုနည်းလမ်းကို မပြောင်းလဲပါက လစဉ် {{amount}} အလိုအလျောက် ကောက်ခံမည်ဖြစ်သည်။",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "သင့်လိုအပ်ချက်များနှင့် အကောင်းဆုံးကိုက်ညီမည့် အစီအစဉ်ကို ရွေးချယ်ပါ။ အောက်ပါရွေးချယ်စရာများမှ ရွေးချယ်နိုင်သည် သို့မဟုတ် စိတ်ကြိုက်ပမာဏကို ထည့်သွင်းနိုင်သည်။",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "သင့်ဖိုင်တွဲတွင် အပိုင်းဖိုင်တွဲများပါဝင်ကြောင်း ကျွန်ုပ်တို့သတိပြုမိပါသည်။ အပိုင်းဖိုင်တွဲတစ်ခုချင်းစီအတွက် သီးခြားအယ်လ်ဘမ်ဖန်တီးလိုပါသလား၊ သို့မဟုတ် အားလုံးကို အယ်လ်ဘမ်တစ်ခုအဖြစ် သတ်မှတ်လိုပါသလား။"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "သင့်ဖိုင်တွဲတွင် အပိုင်းဖိုင်တွဲများပါဝင်ကြောင်း ကျွန်ုပ်တို့သတိပြုမိပါသည်။ အပိုင်းဖိုင်တွဲတစ်ခုချင်းစီအတွက် သီးခြားအယ်လ်ဘမ်ဖန်တီးလိုပါသလား၊ သို့မဟုတ် အားလုံးကို အယ်လ်ဘမ်တစ်ခုအဖြစ် သတ်မှတ်လိုပါသလား။",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "နည်းပညာကန့်သတ်ချက်များကြောင့် မိုဘိုင်းဘရောက်ဇာများတွင် အစုလိုက်ဒေါင်းလုပ်မှုများကို ပံ့ပိုးမထားပါ၊ ဗီဒီယိုအချို့ကိုလည်း ဒေါင်းလုပ်မရနိုင်ပါ။<br><br>ဓာတ်ပုံများနှင့် ဗီဒီယိုများအားလုံးကို တစ်ပြိုင်နက် ဒေါင်းလုပ်ရန်:",
+  "Edit": "တည်းဖြတ်",
+  "Edit Album": "အယ်လ်ဘမ် တည်းဖြတ်",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "အယ်လ်ဘမ်ဆက်တင်များကို တည်းဖြတ်ရန်",
+  "Upload in progress": "အပ်လုပ်ဒ်တင်နေဆဲ",
+  "Album Progress": "အယ်လ်ဘမ်တိုးတက်မှု",
+  "Adding Photos to Album": "အယ်လ်ဘမ်တွင် ဓာတ်ပုံများထည့်နေခြင်း",
+  "Creating New Album": "အယ်လ်ဘမ်အသစ်ပြုလုပ်နေခြင်း",
+  "Uploading your photos...": "သင့်ဓာတ်ပုံများကို အပ်လုပ်ဒ်လုပ်နေပါသည်...",
+  "Cancel Upload": "အပ်လုပ်ဒ်ကို ပယ်ဖျက်ရန်"
 }

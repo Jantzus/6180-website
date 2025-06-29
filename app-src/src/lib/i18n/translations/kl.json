@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Assiit assilirijit annertusineqanngilaq. Annertusineqarsimasoq assilinit atorlugu inissisit.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "{{amount}} ataasiaqatigiinneqassavutit qaammatip-akunnani ulluni una tigulersinneqarpit saniatigut.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Toqqaateqarpit atorsinnaassusillit piqqusivissatik angijumik. Ataani toqqaateqarnerit atortillugu toqqaateqarsissavutit ammunalu pisinnaasanik allagit.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Takukuvugut mappin-ni mappisinik piqqusivissanik. Toqqaateqarpit mappisinik piqqusivissanik kimmilluunniit atuisumik, aammalu tamarmik atausinnik toqqaateqartumik?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Takukuvugut mappin-ni mappisinik piqqusivissanik. Toqqaateqarpit mappisinik piqqusivissanik kimmilluunniit atuisumik, aammalu tamarmik atausinnik toqqaateqartumik?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Pitsaassusillit pingaarnersaat pissutigalugit, mobile browserit bulk downloadit ataatsimoorsinnaanngilaq, video-llu ilaat downloadeqanngilaq.<br><br>Assiliinnut takutillugit video-llu tamaasa ataatsimik downloadeqarnerisigut:",
+  "Edit": "Peerullugi",
+  "Edit Album": "Album peerullugi",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Albumi atassuseqarnerat inuusillugit",
+  "Upload in progress": "Isissut allanngortut",
+  "Album Progress": "Albumi sivullertitaq",
+  "Adding Photos to Album": "Albummut assinik illiussuit",
+  "Creating New Album": "Album nutaaq sennaatitaaq",
+  "Uploading your photos...": "Assinnik ilinniageqarpit...",
+  "Cancel Upload": "Issisut naalakkat"
 }

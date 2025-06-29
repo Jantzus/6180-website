@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Афотосуа ригалашәеит ауп. Инарбаанӷьоуп афотосуа рынагӷьозар ҟалап.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Шәҟәы {{amount}} амза иулагылан шәҟәы, шәара иала рҵашәарақәа аҟынтә иуахәтәуп.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Ашҭа иара план ианыхрзаалоу избаауп. Иара азхапшратә уасаҳауарҩуа ишырҧисуоит е ашыгырҩштәы хара-хара аҳәынтәи ҳашаз шәнатәуп.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Иарбан иҳазҿаҧы апапкақәа ҿаҩымҳәеит. Апапка хшыҷлеиҕыцыбжь альбом ашьақәырҳа зыхдыл арабарцәаартык, мамзаргьы альбом акы зегьы ҳцәырҳ мамзаргьы?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Иарбан иҳазҿаҧы апапкақәа ҿаҩымҳәеит. Апапка хшыҷлеиҕыцыбжь альбом ашьақәырҳа зыхдыл арабарцәаартык, мамзаргьы альбом акы зегьы ҳцәырҳ мамзаргьы?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Атехникатә ҿыцқәа рыла, амобильтә браузерқәашьҭахь амассатә ркра ҿыц ауп, видеоқәак зегьы ҿыцтәылоп.<br><br>Асахьақәеи авидеоқәеи зегьы рыҿыцра:",
+  "Edit": "Аџьара",
+  "Edit Album": "Аџьара альбом",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Альбом апараметрқәа ариашәырхара",
+  "Upload in progress": "Иашәу аԥсуеит",
+  "Album Progress": "Альбом ахьырҵеит",
+  "Adding Photos to Album": "Альбом аҟны асахьақәа ацҵара",
+  "Creating New Album": "Ахьаа альбом иҟатәуеит",
+  "Uploading your photos...": "Шәара асахьақәа иашәуеит...",
+  "Cancel Upload": "Иашәу гәырбахуп"
 }

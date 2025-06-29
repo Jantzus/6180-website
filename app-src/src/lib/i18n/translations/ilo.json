@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Dadduma a retrato ket saan a naproseso. Mabalinmo ti agtuloy kadagiti naballigi a naproseso a retrato.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Maautomat a ma-bill ka iti {{amount}} iti tunggal bulan iti daytoy a pamay-an ti panagbayad no saan mo a baliwan dayta.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilien ti plano a kasayaatan a makasayaat kadagiti kasapulanyo. Makapilikayo manipud kadagiti pagpilian iti baba wenno mangiserrek iti nangnangruna a gatad.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nakitami a ti folder mo ket addaan kadagiti subfolder. Kayatmo kadi ti agaramid iti naisina nga album para iti tunggal subfolder, wenno pakitratoen ida amin a kas maysa nga album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Nakitami a ti folder mo ket addaan kadagiti subfolder. Kayatmo kadi ti agaramid iti naisina nga album para iti tunggal subfolder, wenno pakitratoen ida amin a kas maysa nga album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Gapu kadagiti limitasion a tekniko, saan a nasuportaan dagiti bulk nga agdownload kadagiti mobile browsers, ken mabalin a saan nga agdownload ti dadduma a video.<br><br>Tapno madownload amin dagiti retrato ken video iti maysa a gundaway:",
+  "Edit": "Urnosen",
+  "Edit Album": "Urnosen ti album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Urnosen dagiti setting ti album",
+  "Upload in progress": "Ti upload ket agtultuloy pay",
+  "Album Progress": "Panagrang-ay ti album",
+  "Adding Photos to Album": "Mangikabil kadagiti retrato iti album",
+  "Creating New Album": "Mangaramid ti baro nga album",
+  "Uploading your photos...": "Ikarkarga dagiti retratom...",
+  "Cancel Upload": "Ikansel ti upload"
 }

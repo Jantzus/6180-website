@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "O ata ata na le mafai ona faia. E mafai ona e faaauau i ata na faia lelei.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "O le a otometi ona aveina {{amount}} masina uma i lenei auala e totogi ai pe afai ae te le suia.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Filifili le fuafuaga e sili ona fetaui ma lou manaʻoga. E mafai ona e filifilia mai filifiliga i lalo pe tuu se aofa faʻapitoa.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Na matou matauina o lo outou faila o loo i ai faila laiti. E te manao e fai se ata tusi eseese mo faila laiti taitasi, pe faia uma i se ata tusi e tasi?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Na matou matauina o lo outou faila o loo i ai faila laiti. E te manao e fai se ata tusi eseese mo faila laiti taitasi, pe faia uma i se ata tusi e tasi?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ona o faigata tau faatekinolosi, fa'apipi'i tele i luga o so'otaga fe'iloaki telefoni e leai se lagolago, ma nisi vitio atonu le fa'apipi'i.<br><br>Ina ia fa'apipi'i ata uma ma vitio uma i le taimi e tasi:",
+  "Edit": "Suia",
+  "Edit Album": "Suia le album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Fesuia'i fa'atino o le album",
+  "Upload in progress": "O le fa'apipi'i nei",
+  "Album Progress": "Alualu o le album",
+  "Adding Photos to Album": "Fa'aopoopo ata i le album",
+  "Creating New Album": "Faia le album fou",
+  "Uploading your photos...": "Tu'u a'e au ata...",
+  "Cancel Upload": "Faaleaogaina le fa'apipi'i"
 }

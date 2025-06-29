@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Fots alsekes no petöls pelabön. Kanol padunön ko fots pelabons tefiko.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Dil pekomipön {{amount}} muliko su betivameted at eke no votükol osi.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Välolös plani kel matülon löfiko benosevös oli. Kanol valön de valems sür u kanol setön moni speziköl.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Observobs das rägivadom ola binons rägivadoms. Vilol-li jaföl lbümi votik pro rägivadom alik, u ols tön lbümi bal?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Observobs das rägivadom ola binons rägivadoms. Vilol-li jaföl lbümi votik pro rägivadom alik, u ols tön lbümi bal?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Ob teikonik moükams, bigikam dalaboms in mobik braulas no padätoms, e sums vidils no kanoms dalabükön.<br><br>Ad dalabükön balidi magodis e vidilis valik:",
+  "Edit": "Redakön",
+  "Edit Album": "Redakön laibümi",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Redakön paramis laibüma",
+  "Upload in progress": "Nuilod palisülon",
+  "Album Progress": "Fölik laibüma",
+  "Adding Photos to Album": "Nükovön bildis ad laibüm",
+  "Creating New Album": "Jafön nuliko laibümi",
+  "Uploading your photos...": "Nuilodol oli bidis...",
+  "Cancel Upload": "Nuilön nuilodi"
 }

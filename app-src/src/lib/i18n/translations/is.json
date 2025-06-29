@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Ekki var hægt að vinna úr sumum myndum. Þú getur haldið áfram með myndirnar sem tókst að vinna úr.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Þú verður sjálfkrafa rukkaður um {{amount}} mánaðarlega á þessa greiðslumáta nema þú breytir því.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Veldu áætlunina sem hentar þínum þörfum best. Þú getur valið úr valkostunum hér að neðan eða slegið inn sérsniðna upphæð.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Við tókum eftir að mappan þín inniheldur undirmöppur. Viltu búa til aðskilið albúm fyrir hverja undirmöppu eða meðhöndla þær allar sem eitt albúm?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Við tókum eftir að mappan þín inniheldur undirmöppur. Viltu búa til aðskilið albúm fyrir hverja undirmöppu eða meðhöndla þær allar sem eitt albúm?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Vegna tæknilegra takmarkana eru magnniðurhal í farsímavöfrum ekki studd og sum myndbönd gætu ekki halast niður.<br><br>Til að hala öllum myndum og myndskeiðum niður í einu, vinsamlegast:",
+  "Edit": "Breyta",
+  "Edit Album": "Breyta albúmi",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Breyta stillingum albúms",
+  "Upload in progress": "Innsending í gangi",
+  "Album Progress": "Framvinda albúms",
+  "Adding Photos to Album": "Bæti myndum við albúm",
+  "Creating New Album": "Búa til nýtt albúm",
+  "Uploading your photos...": "Sendi upp myndirnar þínar...",
+  "Cancel Upload": "Hætta við innsendingu"
 }

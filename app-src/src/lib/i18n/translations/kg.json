@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Samu bilili kenda kosi kuvwa viakila. Ngeye kenda kuvwa kutala ye bilili biobi biakila malamu.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Ngeye tuku futa {{amount}} kila siku moon ye kima bilonga ye ku futa ka ko sakolaka yau ko.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Bonga ya longokani ke yikwenda ye bonga ya zola kua meno maku. Ozali na kaka ya sobola kuna bandeko ya se nto ya kota ya solo yaku.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tumonokele ye folder yaku ikwenda na ma subfolder. Olingi na bosala album yomoko na subfolder yonso, to kokanisa yango nioso kaka lokola album moko?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Tumonokele ye folder yaku ikwenda na ma subfolder. Olingi na bosala album yomoko na subfolder yonso, to kokanisa yango nioso kaka lokola album moko?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Mu diambu dya minkinu yi tekiniki, mindobolo miawombo va navigatè ya mobil kadi yayi sukamunu ko, ayi mavideo masi maka bika koboko ko.<br><br>Mu kudobola zinzo zioso ayi mavideo mu thangu yimosi:",
+  "Edit": "Bongisa",
+  "Edit Album": "Bongisa album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Longola bisalelo ya album",
+  "Upload in progress": "Upload ezali kosala",
+  "Album Progress": "Bokoli ya album",
+  "Adding Photos to Album": "Kotia bilili na album",
+  "Creating New Album": "Kesa album ya sika",
+  "Uploading your photos...": "Kotinda bilili bieno...",
+  "Cancel Upload": "Kandula upload"
 }

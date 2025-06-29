@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "एकच्चि चित्तानि संस्कारणीयानि न अभवुन्। त्वं सफलतया संस्कृतेहि चित्तेहि सह आगच्छितुं शक्कोसि।",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "इमं पेमेंट मेथडं न चेञ्जेथ यावा तावा मासो मासो {{amount}} ऑटोमेटिक बिल्ल भविस्सति।",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "अत्तनो अनुकूल योजनं चिनोहि। हेट्ठा वरणसु चिनित्वा वा पच्चत्तं रासिं वा पविसित्वा करोतु।",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "मय देखिम कि तुह्ह फोल्डरे उपफोल्डर सन्ति। कस्स तुम्ह प्रतिसुपफोल्डरस्स पृथकल्बम करोति, वा सर्वानि एकल्बमरूपे गच्छति?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "मय देखिम कि तुह्ह फोल्डरे उपफोल्डर सन्ति। कस्स तुम्ह प्रतिसुपफोल्डरस्स पृथकल्बम करोति, वा सर्वानि एकल्बमरूपे गच्छति?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "तकनीकाण सीमित्तानं कारणें, मोबाइल ब्राउझरे वव्वुद डाउनलोड समत्थित नत्थि, आ कतिपयानि वीडियो डाउनलोड न भवित्वा।<br><br>सवाणि छायाचित्रानि आ वीडियो एकसमये डाउनलोडित्तुं:",
+  "Edit": "सम्पादेतु",
+  "Edit Album": "संगीतकट्ठता सम्पादेतु",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "सङ्गीतकट्ठ सम्पादन करोति",
+  "Upload in progress": "उप्पलोड चलति",
+  "Album Progress": "सङ्गीतकट्ठ प्रगति",
+  "Adding Photos to Album": "सङ्गीतकट्ठ चित्राणि योजयति",
+  "Creating New Album": "नवीन सङ्गीतकट्ठ निर्माण करोति",
+  "Uploading your photos...": "तव चित्राणि उप्पलोड होन्ति...",
+  "Cancel Upload": "उप्पलोड निरस्स करोति"
 }

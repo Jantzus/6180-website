@@ -487,5 +487,16 @@
   "Some photos could not be processed. You can continue with the successfully processed photos.": "Sesetengah foto tidak dapat diproses. Anda boleh meneruskan dengan foto yang berjaya diproses.",
   "You will be automatically billed {{amount}} monthly on this payment method unless you change it.": "Anda akan dibilkan secara automatik {{amount}} bulanan pada kaedah pembayaran ini melainkan anda menukarnya.",
   "Choose the plan that best fits your needs. You can select from the options below or enter a custom amount.": "Pilih pelan yang paling sesuai dengan keperluan anda. Anda boleh memilih daripada pilihan di bawah atau masukkan jumlah tersuai.",
-  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami perhatikan bahawa folder anda mengandungi subfolder. Adakah anda mahu membuat album berasingan untuk setiap subfolder, atau menganggap semuanya sebagai satu album?"
+  "We noticed your folder contains subfolders. Would you like to create a separate album for each subfolder, or treat them all as one album?": "Kami perhatikan bahawa folder anda mengandungi subfolder. Adakah anda mahu membuat album berasingan untuk setiap subfolder, atau menganggap semuanya sebagai satu album?",
+  "Due to technical limitations, bulk downloads on mobile browsers aren't supported, and some videos may not download.<br><br>To download all photos and videos at once, please:": "Kerana had teknikal, muat turun pukal pada pelayar mudah alih tidak disokong, dan sesetengah video mungkin tidak dimuat turun.<br><br>Untuk memuat turun semua foto dan video sekaligus:",
+  "Edit": "Sunting",
+  "Edit Album": "Sunting Album",
+  "{{tagTitle}}  |  {{subtags}}": "{{tagTitle}}  |  {{subtags}}",
+  "Edit Album Settings": "Edit tetapan album",
+  "Upload in progress": "Muat naik sedang dijalankan",
+  "Album Progress": "Kemajuan album",
+  "Adding Photos to Album": "Menambah foto ke album",
+  "Creating New Album": "Mencipta album baharu",
+  "Uploading your photos...": "Memuat naik foto anda...",
+  "Cancel Upload": "Batal muat naik"
 }
